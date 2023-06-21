@@ -6,7 +6,12 @@ import Page from "./Page";
 import Teaser from "./Teaser";
 import Feature from "./Feature";
 import Grid from "./Grid";
-import Header from "./Header";
+import Header from "./Header/Header";
+import HeaderMenu from "./HeaderMenu";
+import MenuLink from "./MenuLink";
+import Config from "./Config";
+import Layout from "./Layout";
+import Footer from "./Footer";
 
 const components = {
   feature: Feature,
@@ -14,10 +19,15 @@ const components = {
   teaser: Teaser,
   page: Page,
   Header: Header,
+  config: Config,
+  layout: Layout,
+  header_menu: HeaderMenu,
+  menu_link: MenuLink,
+  footer: Footer,
 };
 
 storyblokInit({
-  accessToken: "gasBbmVVImrrTRQLlShorwtt",
+  accessToken: process.env.accessToken,
   use: [apiPlugin],
   components,
 });

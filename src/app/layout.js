@@ -3,7 +3,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 
 storyblokInit({
-  accessToken: "gasBbmVVImrrTRQLlShorwtt",
+  accessToken: process.env.accessToken,
   use: [apiPlugin],
 });
 
