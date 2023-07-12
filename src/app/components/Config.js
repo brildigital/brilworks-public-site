@@ -113,7 +113,7 @@ const Config = ({ blok }) => {
                     <a href="javascript:void(0);" className="headerArrow_flex">
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
-                        <img src="images/down-arrow.png" alt="down arrow" />
+                        <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
                     </a>
                   </div>
@@ -199,7 +199,7 @@ const Config = ({ blok }) => {
     //         <Link href="/">
     //           {/* <a> */}
     //           <img
-    //             src="images/logo.png"
+    //             src="/images/logo.png"
     //             alt="Brilworks Logo"
     //             width="206"
     //             height="62"

@@ -15,7 +15,7 @@ const Honors = () => {
                   rel="nofollow noopener"
                 >
                   <div className="award_sec8_img1">
-                    <img src="images/review-adalo.png" alt="adalo expert" />
+                    <img src="/images/review-adalo.png" alt="adalo expert" />
                   </div>
 
                   <div className="review-text">
@@ -36,7 +36,7 @@ const Honors = () => {
                 >
                   <div className="award_sec8_img1">
                     <img
-                      src="images/review-top-software-developers.png"
+                      src="/images/review-top-software-developers.png"
                       alt="top software developers"
                     />
                   </div>
@@ -53,7 +53,7 @@ const Honors = () => {
             <div className="swiper-slide">
               <div className="award ng-scope">
                 <div className="award_sec8_img1">
-                  <img src="images/review-liferay.png" alt="Liferay Partner" />
+                  <img src="/images/review-liferay.png" alt="Liferay Partner" />
                 </div>
 
                 <div className="review-text">
@@ -72,7 +72,7 @@ const Honors = () => {
                   rel="nofollow noopener"
                 >
                   <div className="award_sec8_img1">
-                    <img src="images/review-clutch.png" alt="Clutch Reviews" />
+                    <img src="/images/review-clutch.png" alt="Clutch Reviews" />
                   </div>
 
                   <div className="review-text">
@@ -93,7 +93,7 @@ const Honors = () => {
                 >
                   <div className="award_sec8_img1">
                     <img
-                      src="images/review-blockchain.png"
+                      src="/images/review-blockchain.png"
                       alt="SiliconIndia Blockchain Development Company"
                     />
                   </div>
@@ -116,7 +116,7 @@ const Honors = () => {
                 >
                   <div className="award_sec8_img1">
                     <img
-                      src="images/review-ambitionbox.png"
+                      src="/images/review-ambitionbox.png"
                       alt="AmbitionBox Rating"
                     />
                   </div>
@@ -139,7 +139,7 @@ const Honors = () => {
                 >
                   <div className="award_sec8_img1">
                     <img
-                      src="images/review-glassdoor.png"
+                      src="/images/review-glassdoor.png"
                       alt="SiliconIndia Blockchain Development Company"
                     />
                   </div>

@@ -2,14 +2,18 @@
 import { getStoryblokApi } from "@storyblok/react";
 import Layout from "../../components/Layout";
 import { StoryblokComponent } from "@storyblok/react";
+import Header from "@/app/components/Header/Header";
+import HomePageFooter from "@/app/components/Homepage/HomePageFooter";
 
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
   return (
-    <Layout story={data?.config}>
+    <>
+      <Header />
       <StoryblokComponent blok={data?.story?.content} />
-    </Layout>
+      <HomePageFooter />
+    </>
   );
 }
 

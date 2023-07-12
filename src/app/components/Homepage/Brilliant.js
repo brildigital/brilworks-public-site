@@ -17,7 +17,10 @@ const Brilliant = () => {
 
         <div className="flex items-center justify-center gap-[20px] about_btn transition pt-[32px]">
           <div className="about_txt">
-            <a href="https://www.brilworks.com/about-us/" className="text-[21px]">
+            <a
+              href="https://www.brilworks.com/about-us/"
+              className="text-[21px]"
+            >
               About Us
             </a>
           </div>
@@ -26,7 +29,7 @@ const Brilliant = () => {
               decoding="async"
               loading="lazy"
               className="black_aerrow alignnone wp-image-28 size-full"
-              src="images/black_aerrow-1.png"
+              src="/images/black_aerrow-1.png"
               alt="arrow"
               width="46"
               height="18"
@@ -35,7 +38,7 @@ const Brilliant = () => {
               decoding="async"
               loading="lazy"
               className="gradiant_aerrow alignnone wp-image-29 size-full"
-              src="images/arrow-gradiant.png"
+              src="/images/arrow-gradiant.png"
               alt="arrow"
               width="46"
               height="18"

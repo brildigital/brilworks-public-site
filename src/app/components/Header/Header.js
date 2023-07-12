@@ -1,5 +1,6 @@
 "use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import Image from "next/image";
 
 const Header = ({ blok }) => {
   return (
@@ -17,12 +18,12 @@ const Header = ({ blok }) => {
           <div className="header_width padding_header">
             <div className="header_main_flex">
               <div className="header_logo">
-                <a href="index.htm">
-                  <img
-                    src="images/logo.png"
+                <a href="/home">
+                  <Image
+                    src="/images/logo.png"
+                    width={206}
+                    height={62}
                     alt="Brilworks Logo"
-                    width="206"
-                    height="62"
                     className="alignnone size-full wp-image-15"
                   />
                 </a>
@@ -38,7 +39,7 @@ const Header = ({ blok }) => {
                   <a href="javascript:void(0);" className="headerArrow_flex">
                     <p>SOLUTIONS</p>
                     <div className="arrow_size">
-                      <img src="images/down-arrow.png" alt="down arrow" />
+                      <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
                   </a>
                 </div>
@@ -49,7 +50,7 @@ const Header = ({ blok }) => {
                   <a href="javascript:void(0);" className="headerArrow_flex">
                     <p>TECHNOLOGIES</p>
                     <div className="arrow_size">
-                      <img src="images/down-arrow.png" alt="down arrow" />
+                      <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
                   </a>
                 </div>
@@ -80,7 +81,7 @@ const Header = ({ blok }) => {
                 <a href="industry/fintech-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/FINTECH.png" alt="fintech" />
+                      <img src="/images/FINTECH.png" alt="fintech" />
                     </div>
                     <p>FINTECH</p>
                   </div>
@@ -89,7 +90,7 @@ const Header = ({ blok }) => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
-                        src="images/MEDIA-ENTERTAINMENT.png"
+                        src="/images/MEDIA-ENTERTAINMENT.png"
                         alt="media & entertainment"
                       />
                     </div>
@@ -100,7 +101,7 @@ const Header = ({ blok }) => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
-                        src="images/FLEET-MANAGEMENT-GPS.png"
+                        src="/images/FLEET-MANAGEMENT-GPS.png"
                         alt="fleet management + gps"
                       />
                     </div>
@@ -110,7 +111,7 @@ const Header = ({ blok }) => {
                 <a href="industry/healthcare-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/HEALTHCARE.png" alt="healthcare" />
+                      <img src="/images/HEALTHCARE.png" alt="healthcare" />
                     </div>
                     <p>HEALTHCARE</p>
                   </div>
@@ -129,7 +130,7 @@ const Header = ({ blok }) => {
                 <a href="hire-reactjs-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/REACT.JS.svg" alt="reactjs" />
+                      <img src="/images/REACT.JS.svg" alt="reactjs" />
                     </div>
                     <p>REACT.JS</p>
                   </div>
@@ -137,7 +138,7 @@ const Header = ({ blok }) => {
                 <a href="hire-java-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/JAVA.svg" alt="java development" />
+                      <img src="/images/JAVA.svg" alt="java development" />
                     </div>
                     <p>JAVA</p>
                   </div>
@@ -145,7 +146,7 @@ const Header = ({ blok }) => {
                 <a href="hire-nodejs-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/NODE.JS.svg" alt="nodejs" />
+                      <img src="/images/NODE.JS.svg" alt="nodejs" />
                     </div>
                     <p>NODE.JS</p>
                   </div>
@@ -153,7 +154,7 @@ const Header = ({ blok }) => {
                 <a href="hire-react-native-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="images/REACT-NATIVE.svg" alt="react native" />
+                      <img src="/images/REACT-NATIVE.svg" alt="react native" />
                     </div>
                     <p>REACT NATIVE</p>
                   </div>
@@ -162,7 +163,7 @@ const Header = ({ blok }) => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
-                        src="images/AWS-DEVELOPMENT.svg"
+                        src="/images/AWS-DEVELOPMENT.svg"
                         alt="aws development"
                       />
                     </div>
@@ -173,7 +174,7 @@ const Header = ({ blok }) => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
-                        src="images/UIUX-DEVELOPMENT.svg"
+                        src="/images/UIUX-DEVELOPMENT.svg"
                         alt="ui-ux development"
                       />
                     </div>
@@ -184,7 +185,7 @@ const Header = ({ blok }) => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
-                        src="images/BLOCKCHAIN-DEVELOPMENT.svg"
+                        src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
                         alt="blockchain development"
                       />
                     </div>
@@ -211,7 +212,7 @@ const Header = ({ blok }) => {
                         id="accordionMaster"
                         className="article-title"
                         role="button"
-                        tabindex="0"
+                        tabIndex="0"
                       >
                         <i></i>TECHNOLOGIES
                       </p>
@@ -220,7 +221,7 @@ const Header = ({ blok }) => {
                           <div className="menu_mob_flex">
                             <p>REACT.JS</p>
                             <div className="mega_menu_icon">
-                              <img src="images/REACT.JS.svg" alt="reactjs" />
+                              <img src="/images/REACT.JS.svg" alt="reactjs" />
                             </div>
                           </div>
                         </a>
@@ -231,7 +232,7 @@ const Header = ({ blok }) => {
                             <p>JAVA</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/JAVA.svg"
+                                src="/images/JAVA.svg"
                                 alt="java development"
                               />
                             </div>
@@ -243,7 +244,7 @@ const Header = ({ blok }) => {
                           <div className="menu_mob_flex">
                             <p>NODE.JS</p>
                             <div className="mega_menu_icon">
-                              <img src="images/NODE.JS.svg" alt="nodejs" />
+                              <img src="/images/NODE.JS.svg" alt="nodejs" />
                             </div>
                           </div>
                         </a>
@@ -254,7 +255,7 @@ const Header = ({ blok }) => {
                             <p>REACT NATIVE</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/REACT-NATIVE.svg"
+                                src="/images/REACT-NATIVE.svg"
                                 alt="react native"
                               />
                             </div>
@@ -267,7 +268,7 @@ const Header = ({ blok }) => {
                             <p>AWS DEVELOPMENT</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/AWS-DEVELOPMENT.svg"
+                                src="/images/AWS-DEVELOPMENT.svg"
                                 alt="aws development"
                               />
                             </div>
@@ -280,7 +281,7 @@ const Header = ({ blok }) => {
                             <p>UI/UX DEVELOPMENT</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/UIUX-DEVELOPMENT.svg"
+                                src="/images/UIUX-DEVELOPMENT.svg"
                                 alt="ui-ux development"
                               />
                             </div>
@@ -293,7 +294,7 @@ const Header = ({ blok }) => {
                             <p>BLOCKCHAIN DEVELOPMENT</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/BLOCKCHAIN-DEVELOPMENT.svg"
+                                src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
                                 alt="blockchain development"
                               />
                             </div>
@@ -311,7 +312,7 @@ const Header = ({ blok }) => {
                         id="accordionMaster4"
                         className="article-title"
                         role="button"
-                        tabindex="0"
+                        tabIndex="0"
                       >
                         <i></i>SOLUTIONS
                       </p>
@@ -320,7 +321,7 @@ const Header = ({ blok }) => {
                           <div className="menu_mob_flex">
                             <p>FINTECH</p>
                             <div className="mega_menu_icon">
-                              <img src="images/FINTECH.png" alt="fintech" />
+                              <img src="/images/FINTECH.png" alt="fintech" />
                             </div>
                           </div>
                         </a>
@@ -331,7 +332,7 @@ const Header = ({ blok }) => {
                             <p>MEDIA & ENTERTAINMENT</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/MEDIA-ENTERTAINMENT.png"
+                                src="/images/MEDIA-ENTERTAINMENT.png"
                                 alt="media & entertainment"
                               />
                             </div>
@@ -344,7 +345,7 @@ const Header = ({ blok }) => {
                             <p>FLEET MANAGEMENT + GPS</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/FLEET-MANAGEMENT-GPS.png"
+                                src="/images/FLEET-MANAGEMENT-GPS.png"
                                 alt="fleet management + gps"
                               />
                             </div>
@@ -357,7 +358,7 @@ const Header = ({ blok }) => {
                             <p>HEALTHCARE</p>
                             <div className="mega_menu_icon">
                               <img
-                                src="images/HEALTHCARE.png"
+                                src="/images/HEALTHCARE.png"
                                 alt="healthcare"
                               />
                             </div>
@@ -400,10 +401,10 @@ const Header = ({ blok }) => {
                 </div>
                 <div className="flex_grid-40_header_menu">
                   <div className="header_img1 padding_bottom_2 hidden-xs">
-                    <img src="images/blog-1.jpg" />
+                    <img src="/images/blog-1.jpg" />
                   </div>
                   <div className="header_img1">
-                    <img src="images/blog-2.jpg" />
+                    <img src="/images/blog-2.jpg" />
                   </div>
                 </div>
               </div>
