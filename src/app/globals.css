@@ -61,8 +61,7 @@ a:hover {
 }
 @font-face {
   font-family: bw_gradual_demoblack_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff2)
-      format("woff2"),
+  src: url(/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff2) format("woff2"),
     url(/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff) format("woff");
   font-weight: 400;
   font-style: normal;
@@ -76,8 +75,7 @@ a:hover {
 }
 @font-face {
   font-family: bw_gradual_demobold_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff2)
-      format("woff2"),
+  src: url(/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff2) format("woff2"),
     url(/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff) format("woff");
   font-weight: 400;
   font-style: normal;
@@ -93,8 +91,7 @@ a:hover {
   font-family: bw_gradual_demoxbdit;
   src: url(/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff2)
       format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff)
-      format("woff");
+    url(/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -107,8 +104,7 @@ a:hover {
 }
 @font-face {
   font-family: bw_gradual_demolight_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff2)
-      format("woff2"),
+  src: url(/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff2) format("woff2"),
     url(/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff) format("woff");
   font-weight: 400;
   font-style: normal;
@@ -236,7 +232,18 @@ a {
 }
 .rotate_right {
   -webkit-animation: rotationRight 10s infinite linear;
+  animation: rotationRight 10s infinite linear;
 }
+@keyframes rotationRight {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
 @-webkit-keyframes rotationRight {
   from {
     -webkit-transform: rotate(0deg);
@@ -248,10 +255,10 @@ a {
 }
 .rotate_img {
   position: absolute;
-  top: -26%;
+  top: -6%;
   right: 3%;
-  width: 14%;
   z-index: -1;
+  width: 150px;
 }
 .style_sec3_swiper_home {
   width: 86%;
