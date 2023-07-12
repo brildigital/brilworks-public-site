@@ -32,14 +32,14 @@ const Config = ({ blok }) => {
                         blok={nestedBlok}
                         key={nestedBlok._uid}
                       />
-                      <div class="mega_menu" id="mainMenuWrapperSolution">
-                        <div class="menu_wrapper">
-                          <div class="mega_menu_width">
-                            <div class="mega_menu_style">
-                              <div class="mega_menu_txt">
+                      <div className="mega_menu" id="mainMenuWrapperSolution">
+                        <div className="menu_wrapper">
+                          <div className="mega_menu_width">
+                            <div className="mega_menu_style">
+                              <div className="mega_menu_txt">
                                 <a href="industry/fintech-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/FINTECH.png"
                                         alt="fintech"
@@ -49,8 +49,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </a>
                                 <a href="industry/media-entertainment-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/MEDIA-ENTERTAINMENT.png"
                                         alt="media & entertainment"
@@ -60,8 +60,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </a>
                                 <a href="industry/fleet-management-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/FLEET-MANAGEMENT-GPS.png"
                                         alt="fleet management + gps"
@@ -71,8 +71,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </a>
                                 <a href="industry/healthcare-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/HEALTHCARE.png"
                                         alt="healthcare"
