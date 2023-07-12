@@ -1,17 +1,7 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-
-const Header = ({ blok }) => {
+const Header = () => {
   return (
     <header>
       <div class="header">
-        <div
-          className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10"
-          {...storyblokEditable({ blok })}
-        >
-          {blok.links?.map((nestedBlok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-          ))}
-        </div>
         <div class="sec1_header">
           <div class="header_width padding_header">
             <div class="header_main_flex">

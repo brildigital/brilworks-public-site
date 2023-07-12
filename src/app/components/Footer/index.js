@@ -6,7 +6,7 @@ const Footer = () => (
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
-    <div className=" py-12 mx-auto max-w-7xl lg:py-16 px-12 lg:px-20">
+    {/* <div className=" py-12 mx-auto max-w-7xl lg:py-16 px-12 lg:px-20">
       <div className="grid md:grid-cols-4 md:gap-8 grid-cols-2">
         <div className="mt-12 md:mt-0">
           <h3 className="text-xs font-semibold tracking-wider text-blue-600 uppercase">
@@ -269,7 +269,7 @@ const Footer = () => (
           .
         </span>
       </div>
-    </div>
+    </div> */}
   </footer>
 );
 
