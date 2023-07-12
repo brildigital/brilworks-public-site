@@ -1,0 +1,32 @@
+"use client";
+import { getStoryblokApi } from "@storyblok/react";
+import Layout from "../../components/Layout";
+import { StoryblokComponent } from "@storyblok/react";
+
+export default async function Page(props) {
+  const { params } = props || {};
+  const { props: data } = await fetchData(params);
+  return (
+    <Layout story={data?.config}>
+      <StoryblokComponent blok={data?.story?.content} />
+    </Layout>
+  );
+}
+
+export async function fetchData(params) {
+  let slug = params?.slug ? `blog/${params.slug}` : "home";
+  const storyblokApi = getStoryblokApi();
+
+  let sbParams = { version: "draft", resolve_links: "url" };
+
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  let { data: config } = await storyblokApi.get("cdn/stories/config");
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+      config: config ? config.story : false,
+    },
+    revalidate: 3600,
+  };
+}
