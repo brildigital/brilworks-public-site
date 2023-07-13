@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TechTeamText } from "./BigText";
 
 const ExtensionOfTeam = () => {
@@ -51,10 +52,10 @@ const ExtensionOfTeam = () => {
                     <div className="accordion-body">
                       <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                         <div className="about_txt">
-                          <a href="" className="text-[21px]">
+                          <Link href="" className="text-[21px]">
                             {" "}
                             Java
-                          </a>
+                          </Link>
                         </div>
                         <div className="aerrow relative">
                           <img
@@ -79,10 +80,10 @@ const ExtensionOfTeam = () => {
                       </div>
                       <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                         <div className="about_txt">
-                          <a href="" className="text-[21px]">
+                          <Link href="" className="text-[21px]">
                             {" "}
                             Node.Js
-                          </a>
+                          </Link>
                         </div>
                         <div className="aerrow relative">
                           <img
@@ -138,9 +139,9 @@ const ExtensionOfTeam = () => {
                     <div className="accordion-body">
                       <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                         <div className="about_txt">
-                          <a href="" className="text-[21px]">
+                          <Link href="" className="text-[21px]">
                             React.Js
-                          </a>
+                          </Link>
                         </div>
                         <div className="aerrow relative">
                           <img
@@ -196,9 +197,9 @@ const ExtensionOfTeam = () => {
                       <div className="accordion-body">
                         <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                           <div className="about_txt">
-                            <a href="" className="text-[21px]">
+                            <Link href="" className="text-[21px]">
                               AWS Development Services
-                            </a>
+                            </Link>
                           </div>
                           <div className="aerrow relative">
                             <img
@@ -255,9 +256,9 @@ const ExtensionOfTeam = () => {
                       <div className="accordion-body">
                         <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                           <div className="about_txt">
-                            <a href="" className="text-[21px]">
+                            <Link href="" className="text-[21px]">
                               React Native{" "}
-                            </a>
+                            </Link>
                           </div>
                           <div className="aerrow relative">
                             <img
@@ -283,9 +284,9 @@ const ExtensionOfTeam = () => {
 
                         <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                           <div className="about_txt">
-                            <a href="" className="text-[21px]">
+                            <Link href="" className="text-[21px]">
                               Block Chain and Solidity
-                            </a>
+                            </Link>
                           </div>
                           <div className="aerrow relative">
                             <img
@@ -342,9 +343,9 @@ const ExtensionOfTeam = () => {
                       <div className="accordion-body">
                         <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
                           <div className="about_txt">
-                            <a href="" className="text-[21px]">
+                            <Link href="" className="text-[21px]">
                               UI/UX Designer
-                            </a>
+                            </Link>
                           </div>
                           <div className="aerrow relative">
                             <img

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const HomePageFooter = () => {
   return (
@@ -14,28 +15,28 @@ const HomePageFooter = () => {
               </div>
               <div className="social_media">
                 <div className="social_media_img">
-                  <a href="https://www.facebook.com/brilwork/" target="_blank">
+                  <Link href="https://www.facebook.com/brilwork/" target="_blank">
                     <img src="images/fb.png" alt="Brilworks on Facebook" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a
+                  <Link
                     href="https://www.instagram.com/brilworkssoftware/"
                     target="_blank"
                   >
                     <img src="images/insta.png" alt="Brilworks on Instagram" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a
+                  <Link
                     href=" https://www.youtube.com/@brilworks7633"
                     target="_blank"
                   >
                     <img src="images/youtube.png" alt="Brilworks on YouTube" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a
+                  <Link
                     href=" https://www.linkedin.com/company/brilworks/"
                     target="_blank"
                   >
@@ -43,28 +44,28 @@ const HomePageFooter = () => {
                       src="images/linkedin.png"
                       alt="Brilworks on LinkedIn"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a href="https://dribbble.com/Brilworks" target="_blank">
+                  <Link href="https://dribbble.com/Brilworks" target="_blank">
                     <img src="images/social.png" alt="Brilworks on Dribble" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a
+                  <Link
                     href="https://www.behance.net/hellobrilworks"
                     target="_blank"
                   >
                     <img src="images/behance.png" alt="Brilworks on Behance" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="social_media_img">
-                  <a
+                  <Link
                     href="https://www.upwork.com/ag/brilworks/"
                     target="_blank"
                   >
                     <img src="images/up-01.png" alt="Brilworks on Upwork" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="add_loc_email">
@@ -82,7 +83,7 @@ const HomePageFooter = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
-                    <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
+                    <Link href="mailto:sales@brilworks.com">sales@brilworks.com</Link>
                   </li>
                 </ul>
                 <div className="quick_link">
@@ -90,7 +91,7 @@ const HomePageFooter = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
-                    <a href="tel:919313644148">+91 9313644148</a>
+                    <Link href="tel:919313644148">+91 9313644148</Link>
                   </li>
                 </ul>
               </div>
@@ -101,33 +102,33 @@ const HomePageFooter = () => {
               </div>
               <ul className="footer_link">
                 <li>
-                  <a href="index.htm" className="active">
+                  <Link href="index.htm" className="active">
                     {" "}
                     Home{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="contact-us/index.htm"> Contact Us </a>
+                  <Link href="contact-us/index.htm"> Contact Us </Link>
                 </li>
                 <li>
-                  <a href="portfolio/index.htm"> Portfolio </a>
+                  <Link href="portfolio/index.htm"> Portfolio </Link>
                 </li>
                 <li>
-                  <a href="about-us/index.htm"> About </a>
+                  <Link href="about-us/index.htm"> About </Link>
                 </li>
                 <li>
-                  <a href="our-process/index.htm"> Our Process </a>
+                  <Link href="our-process/index.htm"> Our Process </Link>
                 </li>
                 <li>
-                  <a href="blog/index.htm"> Blogs </a>
+                  <Link href="blog/index.htm"> Blogs </Link>
                 </li>
               </ul>
               <div className="footer">
-                <a href="career/index.htm">
+                <Link href="career/index.htm">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
             <div>
@@ -136,24 +137,24 @@ const HomePageFooter = () => {
               </div>
               <ul className="footer_link">
                 <li>
-                  <a href="industry/fintech-software-development/index.htm">
+                  <Link href="industry/fintech-software-development/index.htm">
                     Fintech
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="industry/fleet-management-software-development/index.htm">
+                  <Link href="industry/fleet-management-software-development/index.htm">
                     Fleet Management + GPS
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="industry/healthcare-software-development/index.htm">
+                  <Link href="industry/healthcare-software-development/index.htm">
                     Health Care
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="industry/media-entertainment-software-development/index.htm">
+                  <Link href="industry/media-entertainment-software-development/index.htm">
                     Media & Entertainment
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -163,32 +164,32 @@ const HomePageFooter = () => {
               </div>
               <ul className="footer_link">
                 <li>
-                  <a href="hire-java-developer/index.htm"> Java </a>
+                  <Link href="hire-java-developer/index.htm"> Java </Link>
                 </li>
                 <li>
-                  <a href="hire-nodejs-developer/index.htm"> Nodejs </a>
+                  <Link href="hire-nodejs-developer/index.htm"> Nodejs </Link>
                 </li>
                 <li>
-                  <a href="hire-reactjs-developer/index.htm"> Reactjs </a>
+                  <Link href="hire-reactjs-developer/index.htm"> Reactjs </Link>
                 </li>
                 <li>
-                  <a href="hire-react-native-developer/index.htm">
+                  <Link href="hire-react-native-developer/index.htm">
                     React Native
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="hire-aws-developer/index.htm"> AWS Development </a>
+                  <Link href="hire-aws-developer/index.htm"> AWS Development </Link>
                 </li>
                 <li>
-                  <a href="hire-ui-ux-designer/index.htm">
+                  <Link href="hire-ui-ux-designer/index.htm">
                     {" "}
                     UI/UX Development{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="hire-blockchain-developer/index.htm">
+                  <Link href="hire-blockchain-developer/index.htm">
                     Blockchain Development
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -200,12 +201,12 @@ const HomePageFooter = () => {
               <p>© 2023 BRILWORKS</p>
             </div>
             <div className="footer_txt_flex2">
-              <a href="javascript:void(0);">
+              <Link href="javascript:void(0);">
                 <p className="transition">Terms of Service</p>
-              </a>
-              <a href="javascript:void(0);">
+              </Link>
+              <Link href="javascript:void(0);">
                 <p className="transition">Privacy Policy</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

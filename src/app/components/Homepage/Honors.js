@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HonorText } from "./BigText";
 
 const Honors = () => {
@@ -9,7 +10,7 @@ const Honors = () => {
           <div className="swiper-wrapper">
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://www.adalo.com/experts/brilworks-software"
                   target="_blank"
                   rel="nofollow noopener"
@@ -23,13 +24,13 @@ const Honors = () => {
                       Adalo Expert No-Code
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
                   target="_blank"
                   rel="nofollow noopener"
@@ -46,7 +47,7 @@ const Honors = () => {
                       Top Software Companies
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -66,7 +67,7 @@ const Honors = () => {
 
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://clutch.co/profile/brilworks-software#summary"
                   target="_blank"
                   rel="nofollow noopener"
@@ -80,13 +81,13 @@ const Honors = () => {
                       Clutch 9.9 Ratings
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://technology.siliconindia.com/ranking/10-most-promising-blockchain-development-companies-%C2%AD-2022-rid-1689.html"
                   target="_blank"
                   rel="nofollow noopener"
@@ -103,13 +104,13 @@ const Honors = () => {
                       Silicon India Promising Company
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://www.ambitionbox.com/overview/brilworks-overview"
                   target="_blank"
                   rel="nofollow noopener"
@@ -126,13 +127,13 @@ const Honors = () => {
                       AmbitionBox Rating
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="swiper-slide">
               <div className="award ng-scope">
-                <a
+                <Link
                   href="https://www.glassdoor.co.in/Overview/Working-at-Brilworks-EI_IE3883160.11,20.htm"
                   target="_blank"
                   rel="nofollow noopener"
@@ -149,7 +150,7 @@ const Honors = () => {
                       Glassdoor 4.8 Ratings
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
