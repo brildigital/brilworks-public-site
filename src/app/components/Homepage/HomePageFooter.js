@@ -15,8 +15,11 @@ const HomePageFooter = () => {
               </div>
               <div className="social_media">
                 <div className="social_media_img">
-                  <Link href="https://www.facebook.com/brilwork/" target="_blank">
-                    <img src="images/fb.png" alt="Brilworks on Facebook" />
+                  <Link
+                    href="https://www.facebook.com/brilwork/"
+                    target="_blank"
+                  >
+                    <img src="/images/fb.png" alt="Brilworks on Facebook" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -24,7 +27,7 @@ const HomePageFooter = () => {
                     href="https://www.instagram.com/brilworkssoftware/"
                     target="_blank"
                   >
-                    <img src="images/insta.png" alt="Brilworks on Instagram" />
+                    <img src="/images/insta.png" alt="Brilworks on Instagram" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -32,7 +35,7 @@ const HomePageFooter = () => {
                     href=" https://www.youtube.com/@brilworks7633"
                     target="_blank"
                   >
-                    <img src="images/youtube.png" alt="Brilworks on YouTube" />
+                    <img src="/images/youtube.png" alt="Brilworks on YouTube" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -41,14 +44,14 @@ const HomePageFooter = () => {
                     target="_blank"
                   >
                     <img
-                      src="images/linkedin.png"
+                      src="/images/linkedin.png"
                       alt="Brilworks on LinkedIn"
                     />
                   </Link>
                 </div>
                 <div className="social_media_img">
                   <Link href="https://dribbble.com/Brilworks" target="_blank">
-                    <img src="images/social.png" alt="Brilworks on Dribble" />
+                    <img src="/images/social.png" alt="Brilworks on Dribble" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -56,7 +59,7 @@ const HomePageFooter = () => {
                     href="https://www.behance.net/hellobrilworks"
                     target="_blank"
                   >
-                    <img src="images/behance.png" alt="Brilworks on Behance" />
+                    <img src="/images/behance.png" alt="Brilworks on Behance" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -64,7 +67,7 @@ const HomePageFooter = () => {
                     href="https://www.upwork.com/ag/brilworks/"
                     target="_blank"
                   >
-                    <img src="images/up-01.png" alt="Brilworks on Upwork" />
+                    <img src="/images/up-01.png" alt="Brilworks on Upwork" />
                   </Link>
                 </div>
               </div>
@@ -83,7 +86,9 @@ const HomePageFooter = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
-                    <Link href="mailto:sales@brilworks.com">sales@brilworks.com</Link>
+                    <Link href="mailto:sales@brilworks.com">
+                      sales@brilworks.com
+                    </Link>
                   </li>
                 </ul>
                 <div className="quick_link">
@@ -178,7 +183,10 @@ const HomePageFooter = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="hire-aws-developer/index.htm"> AWS Development </Link>
+                  <Link href="hire-aws-developer/index.htm">
+                    {" "}
+                    AWS Development{" "}
+                  </Link>
                 </li>
                 <li>
                   <Link href="hire-ui-ux-designer/index.htm">

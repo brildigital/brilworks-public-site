@@ -32,14 +32,14 @@ const Config = ({ blok }) => {
                         blok={nestedBlok}
                         key={nestedBlok._uid}
                       />
-                      <div class="mega_menu" id="mainMenuWrapperSolution">
-                        <div class="menu_wrapper">
-                          <div class="mega_menu_width">
-                            <div class="mega_menu_style">
-                              <div class="mega_menu_txt">
+                      <div className="mega_menu" id="mainMenuWrapperSolution">
+                        <div className="menu_wrapper">
+                          <div className="mega_menu_width">
+                            <div className="mega_menu_style">
+                              <div className="mega_menu_txt">
                                 <Link href="industry/fintech-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/FINTECH.png"
                                         alt="fintech"
@@ -49,8 +49,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </Link>
                                 <Link href="industry/media-entertainment-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/MEDIA-ENTERTAINMENT.png"
                                         alt="media & entertainment"
@@ -60,8 +60,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </Link>
                                 <Link href="industry/fleet-management-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/FLEET-MANAGEMENT-GPS.png"
                                         alt="fleet management + gps"
@@ -71,8 +71,8 @@ const Config = ({ blok }) => {
                                   </div>
                                 </Link>
                                 <Link href="industry/healthcare-software-development/index.htm">
-                                  <div class="flex_mega_menu">
-                                    <div class="flex_30_mega_menu">
+                                  <div className="flex_mega_menu">
+                                    <div className="flex_30_mega_menu">
                                       <img
                                         src="img/HEALTHCARE.png"
                                         alt="healthcare"
@@ -119,7 +119,7 @@ const Config = ({ blok }) => {
                     >
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
-                        <img src="images/down-arrow.png" alt="down arrow" />
+                        <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
                     </Link>
                   </div>
@@ -207,7 +207,7 @@ const Config = ({ blok }) => {
     //         <Link href="/">
     //           {/* <Link> */}
     //           <img
-    //             src="images/logo.png"
+    //             src="/images/logo.png"
     //             alt="Brilworks Logo"
     //             width="206"
     //             height="62"

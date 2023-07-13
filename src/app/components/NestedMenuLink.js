@@ -8,7 +8,7 @@ const NestedMenuLink = ({ blok }) => (
     className="uppercase"
   >
     {blok?.logo?.filename && (
-      <div class="flex_30_mega_menu">
+      <div className="flex_30_mega_menu">
         <img src={blok?.logo?.filename} width="60" alt="fintech" />
       </div>
     )}

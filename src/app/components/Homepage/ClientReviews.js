@@ -10,7 +10,7 @@ const ClientReviews = () => {
             decoding="async"
             loading="lazy"
             className="rotate_right alignnone"
-            src="images/Verified-Review-image.png"
+            src="/images/Verified-Review-image.png"
             alt="verified review"
             width="215"
             height="215"

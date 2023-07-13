@@ -13,6 +13,7 @@ import Config from "./Config";
 import Layout from "./Layout";
 import Footer from "./Footer";
 import Article from "./Article";
+import PopularArticles from "./PopularArticles";
 
 const components = {
   feature: Feature,
@@ -25,7 +26,8 @@ const components = {
   header_menu: HeaderMenu,
   menu_link: MenuLink,
   footer: Footer,
-  Article: Article,
+  article: Article,
+  popular_articles: PopularArticles,
 };
 
 storyblokInit({
