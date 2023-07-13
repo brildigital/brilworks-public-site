@@ -1,22 +1,12 @@
-"use client";
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
-const Header = ({ blok }) => {
+const Header = () => {
   return (
     <header>
-      <div className="header">
-        <div
-          className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10"
-          {...storyblokEditable({ blok })}
-        >
-          {blok?.links?.map((nestedBlok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-          ))}
-        </div>
-        <div className="sec1_header">
-          <div className="header_width padding_header">
-            <div className="header_main_flex">
-              <div className="header_logo">
+      <div class="header">
+        <div class="sec1_header">
+          <div class="header_width padding_header">
+            <div class="header_main_flex">
+              <div class="header_logo">
                 <a href="index.htm">
                   <img
                     src="images/logo.png"

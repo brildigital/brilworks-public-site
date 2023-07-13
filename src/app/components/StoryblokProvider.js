@@ -12,6 +12,7 @@ import MenuLink from "./MenuLink";
 import Config from "./Config";
 import Layout from "./Layout";
 import Footer from "./Footer";
+import Article from "./Article";
 
 const components = {
   feature: Feature,
@@ -24,6 +25,7 @@ const components = {
   header_menu: HeaderMenu,
   menu_link: MenuLink,
   footer: Footer,
+  Article: Article,
 };
 
 storyblokInit({

@@ -1,7 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import Link from "next/link";
 
-const MenuLink = ({ blok }) => (
+const NestedMenuLink = ({ blok }) => (
   <Link
     href={blok.link.cached_url}
     {...storyblokEditable(blok)}
@@ -15,4 +15,4 @@ const MenuLink = ({ blok }) => (
     {blok.name}
   </Link>
 );
-export default MenuLink;
+export default NestedMenuLink;

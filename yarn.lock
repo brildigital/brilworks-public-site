@@ -2111,6 +2111,11 @@ storyblok-js-client@^5.11.1:
   resolved "https://registry.npmjs.org/storyblok-js-client/-/storyblok-js-client-5.12.0.tgz"
   integrity sha512-g096AwVtRfs+epfvuiQlI4RDTRcn+/h+WxkWQd8rm95MnRzgZMo1LJcg9NQU8Hy172dvrcjH2+DBsPxw0NAoYw==
 
+storyblok-rich-text-react-renderer@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.npmjs.org/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.8.0.tgz#9a33d4004d7c0bf35d6c12717cad49100ad62758"
+  integrity sha512-qaCbVS16GR4jjOmNhQ43GTU0MpB0obPnJ8niErD+VnO2rgmF+uyvC1fZliSjRhkmTEkisDoHe/YlCH/Rn11SJw==
+
 streamsearch@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz"

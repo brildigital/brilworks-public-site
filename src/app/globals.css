@@ -4,7 +4,7 @@
 
 body {
   overflow-x: hidden;
-  background-image: url(/images/bg.png);
+  background-image: url(/public/images/bg.png);
   background-repeat: repeat;
   background-size: contain;
 }
