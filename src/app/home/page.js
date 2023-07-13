@@ -14,6 +14,7 @@ import Footer from "../components/Footer/index";
 import ExtensionOfTeam from "../components/Homepage/ExtensionOfTeam";
 import SeeingBelieving from "../components/Homepage/SeeingBelieving";
 import AutoSlidesFooter from "../components/Homepage/AutoSlidesFooter";
+import { BestAdvocateText } from "../components/Homepage/BigText";
 
 const page = () => {
   useEffect(() => {
@@ -103,6 +104,7 @@ const page = () => {
       <Header />
       <GameChanger />
       <Brilliant />
+      <BestAdvocateText />
       <ClientReviews />
       <DomainWorking />
       <ExtensionOfTeam />

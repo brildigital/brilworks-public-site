@@ -41,7 +41,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="img/FINTECH.png"
+                                        src="images/FINTECH.png"
                                         alt="fintech"
                                       />
                                     </div>
@@ -52,7 +52,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="img/MEDIA-ENTERTAINMENT.png"
+                                        src="images/MEDIA-ENTERTAINMENT.png"
                                         alt="media & entertainment"
                                       />
                                     </div>
@@ -63,7 +63,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="img/FLEET-MANAGEMENT-GPS.png"
+                                        src="images/FLEET-MANAGEMENT-GPS.png"
                                         alt="fleet management + gps"
                                       />
                                     </div>
@@ -74,7 +74,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="img/HEALTHCARE.png"
+                                        src="images/HEALTHCARE.png"
                                         alt="healthcare"
                                       />
                                     </div>

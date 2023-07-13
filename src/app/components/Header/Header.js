@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Header = () => {
+  const pathname = usePathname();
+
   const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
   const [scrollDirection, setScrollDirection] = useState("down");
 
@@ -71,7 +74,13 @@ const Header = () => {
                 </Link>
               </div>
               <div className="project_pages">
-                <div className="portfolio header_font hidden-xs project_pages_none">
+                <div
+                  className={
+                    pathname === "/portfolio"
+                      ? "portfolio header_font hidden-xs project_pages_none page-active"
+                      : "portfolio header_font hidden-xs project_pages_none"
+                  }
+                >
                   <Link href="portfolio">PORTFOLIO</Link>
                 </div>
                 <div

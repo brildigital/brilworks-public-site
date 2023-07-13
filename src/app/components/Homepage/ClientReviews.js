@@ -1,9 +1,8 @@
-import { BestAdvocateText } from "./BigText";
+
 
 const ClientReviews = () => {
   return (
     <div className="container mx-auto px-[15px]">
-      <BestAdvocateText />
       <div className="xl:mt-[80px] mt-[40px] relative">
         <div className="rotate_img">
           <img

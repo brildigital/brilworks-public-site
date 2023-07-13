@@ -3,7 +3,7 @@ import { getStoryblokApi } from "@storyblok/react";
 import Layout from "../../components/Layout";
 import { StoryblokComponent } from "@storyblok/react";
 import Header from "@/app/components/Header/Header";
-import HomePageFooter from "@/app/components/Homepage/HomePageFooter";
+import Footer from "@/app/components/Footer";
 
 export default async function Page(props) {
   const { params } = props || {};
@@ -12,7 +12,7 @@ export default async function Page(props) {
     <>
       <Header />
       <StoryblokComponent blok={data?.story?.content} />
-      <HomePageFooter />
+      <Footer />
     </>
   );
 }
