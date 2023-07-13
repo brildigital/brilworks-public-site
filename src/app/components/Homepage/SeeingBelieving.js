@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BelievingText } from "./BigText";
 
 const SeeingBelieving = () => {
@@ -9,7 +10,7 @@ const SeeingBelieving = () => {
         <div className="swiper-container" id="swiper-portfolio">
           <div className="swiper-wrapper">
             <div className="swiper-slide">
-              <a href="">
+              <Link href="">
                 <img
                   className="alignnone wp-image-45 size-full"
                   src="https://www.brilworks.com/wp-content/uploads/2023/01/Vugo.jpg"
@@ -30,10 +31,10 @@ const SeeingBelieving = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="swiper-slide">
-              <a href="https://www.brilworks.com/portfolio/trackimo/">
+              <Link href="https://www.brilworks.com/portfolio/trackimo/">
                 <img
                   className="alignnone wp-image-47 size-full"
                   src="https://www.brilworks.com/wp-content/uploads/2023/01/Trackimo.jpg"
@@ -54,10 +55,10 @@ const SeeingBelieving = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="swiper-slide">
-              <a href="https://www.brilworks.com/portfolio/orokii/">
+              <Link href="https://www.brilworks.com/portfolio/orokii/">
                 <img
                   className="alignnone wp-image-48 size-full"
                   src="https://www.brilworks.com/wp-content/uploads/2023/01/Orokii.jpg"
@@ -78,10 +79,10 @@ const SeeingBelieving = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="swiper-slide">
-              <a href="https://www.brilworks.com/portfolio/eccocar/">
+              <Link href="https://www.brilworks.com/portfolio/eccocar/">
                 <img
                   className="alignnone wp-image-49 size-full"
                   src="https://www.brilworks.com/wp-content/uploads/2023/01/Eccocar.jpg"
@@ -103,11 +104,11 @@ const SeeingBelieving = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <div className="swiper-slide">
-              <a href="https://www.brilworks.com/portfolio/rastrack/">
+              <Link href="https://www.brilworks.com/portfolio/rastrack/">
                 <img
                   className="alignnone wp-image-50 size-full"
                   src="https://www.brilworks.com/wp-content/uploads/2023/01/Rastrack.jpg"
@@ -128,7 +129,7 @@ const SeeingBelieving = () => {
                     </p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -137,12 +138,12 @@ const SeeingBelieving = () => {
       <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
         <div className="flex items-center justify-center gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
           <div className="about_txt">
-            <a
+            <Link
               href="https://www.brilworks.com/about-us/"
               className="text-[21px]"
             >
               View all works
-            </a>
+            </Link>
           </div>
           <div className="aerrow relative">
             <img
@@ -167,12 +168,12 @@ const SeeingBelieving = () => {
         </div>
         <div className="flex items-center justify-center gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
           <div className="about_txt">
-            <a
+            <Link
               href="https://www.brilworks.com/about-us/"
               className="text-[21px]"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
           <div className="aerrow relative">
             <img

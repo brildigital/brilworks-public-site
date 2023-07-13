@@ -1,71 +1,113 @@
 "use client";
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const Header = ({ blok }) => {
+const Header = () => {
+  const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState("down");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newScrollDirection =
+        lastScrolledPosition > window.scrollY ? "up" : "down";
+      setScrollDirection(newScrollDirection);
+      setLastScrolledPosition(window.scrollY);
+
+      console.log(newScrollDirection, "scroll direction");
+
+      if (window.scrollY > 150 && newScrollDirection === "down") {
+        if (
+          !document
+            .querySelector("header .header")
+            .classList.contains("header-hide")
+        ) {
+          document.querySelector("header .header").classList.add("header-hide");
+        }
+      }
+
+      if (newScrollDirection === "up") {
+        if (
+          document
+            .querySelector("header .header")
+            .classList.contains("header-hide")
+        ) {
+          document
+            .querySelector("header .header")
+            .classList.remove("header-hide");
+        }
+      }
+
+      if (window.scrollY > 150) {
+        document
+          .querySelector("header .header")
+          .classList.add("header-bg-white");
+      } else {
+        document
+          .querySelector("header .header")
+          .classList.remove("header-bg-white");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrolledPosition]);
+
   return (
     <header>
-      <div className="header">
-        <div
-          className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10"
-          {...storyblokEditable({ blok })}
-        >
-          {blok?.links?.map((nestedBlok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-          ))}
-        </div>
-        <div className="sec1_header">
-          <div className="header_width padding_header">
-            <div className="header_main_flex">
-              <div className="header_logo">
-                <a href="/home">
-                  <Image
-                    src="/images/logo.png"
-                    width={206}
-                    height={62}
+      <div class="header">
+        <div class="sec1_header">
+          <div class="header_width padding_header">
+            <div class="header_main_flex">
+              <div class="header_logo">
+                <Link href="index.htm">
+                  <img
+                    src="images/logo.png"
                     alt="Brilworks Logo"
                     className="alignnone size-full wp-image-15"
                   />
-                </a>
+                </Link>
               </div>
               <div className="project_pages">
                 <div className="portfolio header_font hidden-xs project_pages_none">
-                  <a href="portfolio/index.htm">PORTFOLIO</a>
+                  <Link href="portfolio">PORTFOLIO</Link>
                 </div>
                 <div
                   className="solutions header_font hidden-xs project_pages_none"
                   id="triggerNavigationSolution"
                 >
-                  <a href="javascript:void(0);" className="headerArrow_flex">
+                  <Link href="javascript:void(0);" className="headerArrow_flex">
                     <p>SOLUTIONS</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <div
                   className="header_font hidden-xs project_pages_none"
                   id="triggerNavigationtechnology"
                 >
-                  <a href="javascript:void(0);" className="headerArrow_flex">
+                  <Link href="javascript:void(0);" className="headerArrow_flex">
                     <p>TECHNOLOGIES</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
-                  </a>
+                  </Link>
                 </div>
-                <a href="contact-us/index.htm">
+                <Link href="contact-us/index.htm">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">LET&apos;S TALK</p>
                   </div>
-                </a>
+                </Link>
                 <div className="nav_btn" id="triggerNavigationmenu">
-                  <a href="javascript:void(0);">
+                  <Link href="javascript:void(0);">
                     <div className="btn_1">
                       <div className="bar transition top"></div>
                       <div className="bar transition bottom"></div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -78,15 +120,15 @@ const Header = ({ blok }) => {
           <div className="mega_menu_width">
             <div className="mega_menu_style">
               <div className="mega_menu_txt">
-                <a href="industry/fintech-software-development/index.htm">
+                <Link href="industry/fintech-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/FINTECH.png" alt="fintech" />
                     </div>
                     <p>FINTECH</p>
                   </div>
-                </a>
-                <a href="industry/media-entertainment-software-development/index.htm">
+                </Link>
+                <Link href="industry/media-entertainment-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -96,8 +138,8 @@ const Header = ({ blok }) => {
                     </div>
                     <p>MEDIA & ENTERTAINMENT</p>
                   </div>
-                </a>
-                <a href="industry/fleet-management-software-development/index.htm">
+                </Link>
+                <Link href="industry/fleet-management-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -107,15 +149,15 @@ const Header = ({ blok }) => {
                     </div>
                     <p>FLEET MANAGEMENT + GPS</p>
                   </div>
-                </a>
-                <a href="industry/healthcare-software-development/index.htm">
+                </Link>
+                <Link href="industry/healthcare-software-development/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/HEALTHCARE.png" alt="healthcare" />
                     </div>
                     <p>HEALTHCARE</p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -127,39 +169,39 @@ const Header = ({ blok }) => {
           <div className="mega_menu_width">
             <div className="mega_menu_style">
               <div className="mega_menu_txt">
-                <a href="hire-reactjs-developer/index.htm">
+                <Link href="hire-reactjs-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT.JS.svg" alt="reactjs" />
                     </div>
                     <p>REACT.JS</p>
                   </div>
-                </a>
-                <a href="hire-java-developer/index.htm">
+                </Link>
+                <Link href="hire-java-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/JAVA.svg" alt="java development" />
                     </div>
                     <p>JAVA</p>
                   </div>
-                </a>
-                <a href="hire-nodejs-developer/index.htm">
+                </Link>
+                <Link href="hire-nodejs-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/NODE.JS.svg" alt="nodejs" />
                     </div>
                     <p>NODE.JS</p>
                   </div>
-                </a>
-                <a href="hire-react-native-developer/index.htm">
+                </Link>
+                <Link href="hire-react-native-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT-NATIVE.svg" alt="react native" />
                     </div>
                     <p>REACT NATIVE</p>
                   </div>
-                </a>
-                <a href="hire-aws-developer/index.htm">
+                </Link>
+                <Link href="hire-aws-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -169,8 +211,8 @@ const Header = ({ blok }) => {
                     </div>
                     <p>AWS DEVELOPMENT</p>
                   </div>
-                </a>
-                <a href="hire-ui-ux-designer/index.htm">
+                </Link>
+                <Link href="hire-ui-ux-designer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -180,8 +222,8 @@ const Header = ({ blok }) => {
                     </div>
                     <p>UI/UX DEVELOPMENT</p>
                   </div>
-                </a>
-                <a href="hire-blockchain-developer/index.htm">
+                </Link>
+                <Link href="hire-blockchain-developer/index.htm">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -191,7 +233,7 @@ const Header = ({ blok }) => {
                     </div>
                     <p>BLOCKCHAIN DEVELOPMENT</p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -217,17 +259,17 @@ const Header = ({ blok }) => {
                         <i></i>TECHNOLOGIES
                       </p>
                       <div className="accordion-content">
-                        <a href="hire-reactjs-developer/index.htm">
+                        <Link href="hire-reactjs-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>REACT.JS</p>
                             <div className="mega_menu_icon">
                               <img src="/images/REACT.JS.svg" alt="reactjs" />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-java-developer/index.htm">
+                        <Link href="hire-java-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>JAVA</p>
                             <div className="mega_menu_icon">
@@ -237,20 +279,20 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-nodejs-developer/index.htm">
+                        <Link href="hire-nodejs-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>NODE.JS</p>
                             <div className="mega_menu_icon">
                               <img src="/images/NODE.JS.svg" alt="nodejs" />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-react-native-developer/index.htm">
+                        <Link href="hire-react-native-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>REACT NATIVE</p>
                             <div className="mega_menu_icon">
@@ -260,10 +302,10 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-aws-developer/index.htm">
+                        <Link href="hire-aws-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>AWS DEVELOPMENT</p>
                             <div className="mega_menu_icon">
@@ -273,10 +315,10 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-ui-ux-designer/index.htm">
+                        <Link href="hire-ui-ux-designer/index.htm">
                           <div className="menu_mob_flex">
                             <p>UI/UX DEVELOPMENT</p>
                             <div className="mega_menu_icon">
@@ -286,10 +328,10 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="hire-blockchain-developer/index.htm">
+                        <Link href="hire-blockchain-developer/index.htm">
                           <div className="menu_mob_flex">
                             <p>BLOCKCHAIN DEVELOPMENT</p>
                             <div className="mega_menu_icon">
@@ -299,7 +341,7 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </article>
                   </div>
@@ -317,17 +359,17 @@ const Header = ({ blok }) => {
                         <i></i>SOLUTIONS
                       </p>
                       <div className="accordion-content">
-                        <a href="industry/fintech-software-development/index.htm">
+                        <Link href="industry/fintech-software-development/index.htm">
                           <div className="menu_mob_flex">
                             <p>FINTECH</p>
                             <div className="mega_menu_icon">
                               <img src="/images/FINTECH.png" alt="fintech" />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="industry/media-entertainment-software-development/index.htm">
+                        <Link href="industry/media-entertainment-software-development/index.htm">
                           <div className="menu_mob_flex">
                             <p>MEDIA & ENTERTAINMENT</p>
                             <div className="mega_menu_icon">
@@ -337,10 +379,10 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="industry/fleet-management-software-development/index.htm">
+                        <Link href="industry/fleet-management-software-development/index.htm">
                           <div className="menu_mob_flex">
                             <p>FLEET MANAGEMENT + GPS</p>
                             <div className="mega_menu_icon">
@@ -350,10 +392,10 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className="accordion-content">
-                        <a href="industry/healthcare-software-development/index.htm">
+                        <Link href="industry/healthcare-software-development/index.htm">
                           <div className="menu_mob_flex">
                             <p>HEALTHCARE</p>
                             <div className="mega_menu_icon">
@@ -363,40 +405,40 @@ const Header = ({ blok }) => {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </article>
                   </div>
 
                   <div className="menu_txt1">
-                    <a href="our-process/index.htm">
+                    <Link href="our-process/index.htm">
                       <p>OUR PROCESS</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu_txt1">
-                    <a href="portfolio/index.htm">
+                    <Link href="portfolio/index.htm">
                       <p>PORTFOLIO</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu_txt1">
-                    <a href="about-us/index.htm">
+                    <Link href="about-us/index.htm">
                       <p>ABOUT</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu_txt1">
-                    <a href="career/index.htm">
+                    <Link href="career/index.htm">
                       <p>CAREER</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu_txt1">
-                    <a href="contact-us/index.htm">
+                    <Link href="contact-us/index.htm">
                       <p>CONTACT</p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu_txt1">
-                    <a href="blog/index.htm">
+                    <Link href="blog/index.htm">
                       <p>BLOGS</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex_grid-40_header_menu">

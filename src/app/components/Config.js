@@ -37,7 +37,7 @@ const Config = ({ blok }) => {
                           <div className="mega_menu_width">
                             <div className="mega_menu_style">
                               <div className="mega_menu_txt">
-                                <a href="industry/fintech-software-development/index.htm">
+                                <Link href="industry/fintech-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -47,8 +47,8 @@ const Config = ({ blok }) => {
                                     </div>
                                     <p>FINTECH</p>
                                   </div>
-                                </a>
-                                <a href="industry/media-entertainment-software-development/index.htm">
+                                </Link>
+                                <Link href="industry/media-entertainment-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -58,8 +58,8 @@ const Config = ({ blok }) => {
                                     </div>
                                     <p>MEDIA & ENTERTAINMENT</p>
                                   </div>
-                                </a>
-                                <a href="industry/fleet-management-software-development/index.htm">
+                                </Link>
+                                <Link href="industry/fleet-management-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -69,8 +69,8 @@ const Config = ({ blok }) => {
                                     </div>
                                     <p>FLEET MANAGEMENT + GPS</p>
                                   </div>
-                                </a>
-                                <a href="industry/healthcare-software-development/index.htm">
+                                </Link>
+                                <Link href="industry/healthcare-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -80,7 +80,7 @@ const Config = ({ blok }) => {
                                     </div>
                                     <p>HEALTHCARE</p>
                                   </div>
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </div>
@@ -99,36 +99,42 @@ const Config = ({ blok }) => {
                     className="solutions header_font hidden-xs project_pages_none"
                     id="triggerNavigationSolution"
                   >
-                    <a href="javascript:void(0);" className="headerArrow_flex">
+                    <Link
+                      href="javascript:void(0);"
+                      className="headerArrow_flex"
+                    >
                       <p>SOLUTIONS</p>
                       <div className="arrow_size">
                         <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div
                     className="header_font hidden-xs project_pages_none"
                     id="triggerNavigationtechnology"
                   >
-                    <a href="javascript:void(0);" className="headerArrow_flex">
+                    <Link
+                      href="javascript:void(0);"
+                      className="headerArrow_flex"
+                    >
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
                         <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
-                    </a>
+                    </Link>
                   </div>
-                  <a href="contact-us/index.htm">
+                  <Link href="contact-us/index.htm">
                     <div className="header_sec1_txt2 hidden-xs">
                       <p className="transition">LET&apos;S TALK</p>
                     </div>
-                  </a>
+                  </Link>
                   <div className="nav_btn" id="triggerNavigationmenu">
-                    <a href="javascript:void(0);">
+                    <Link href="javascript:void(0);">
                       <div className="btn_1">
                         <div className="bar transition top"></div>
                         <div className="bar transition bottom"></div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -169,10 +175,12 @@ const Config = ({ blok }) => {
             </div>
             <div className="our_work flex items-center justify-end gap-[16px]">
               <p>
-                <a href="https://www.brilworks.com/contact-us/">GET IN TOUCH</a>
+                <Link href="https://www.brilworks.com/contact-us/">
+                  GET IN TOUCH
+                </Link>
               </p>
               <p>
-                <a href="">
+                <Link href="">
                   <img
                     decoding="async"
                     loading="lazy"
@@ -182,7 +190,7 @@ const Config = ({ blok }) => {
                     width="49"
                     height="49"
                   />
-                </a>
+                </Link>
               </p>
             </div>
           </div>
@@ -197,7 +205,7 @@ const Config = ({ blok }) => {
     //     <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
     //       <div className="flex justify-start lg:w-0 lg:flex-1">
     //         <Link href="/">
-    //           {/* <a> */}
+    //           {/* <Link> */}
     //           <img
     //             src="/images/logo.png"
     //             alt="Brilworks Logo"
@@ -205,7 +213,7 @@ const Config = ({ blok }) => {
     //             height="62"
     //             className="alignnone size-full wp-image-15"
     //           />
-    //           {/* </a> */}
+    //           {/* </Link> */}
     //         </Link>
     //       </div>
     //       {blok?.header_menu?.map((nestedBlok) => (

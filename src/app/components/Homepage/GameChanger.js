@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const GameChanger = () => {
   return (
     <div className="relative">
@@ -31,10 +33,12 @@ const GameChanger = () => {
           </div>
           <div className="our_work flex items-center justify-end gap-[16px]">
             <p>
-              <a href="https://www.brilworks.com/contact-us/">GET IN TOUCH</a>
+              <Link href="https://www.brilworks.com/contact-us/">
+                GET IN TOUCH
+              </Link>
             </p>
             <p>
-              <a href="">
+              <Link href="">
                 <img
                   decoding="async"
                   loading="lazy"
@@ -44,7 +48,7 @@ const GameChanger = () => {
                   width="49"
                   height="49"
                 />
-              </a>
+              </Link>
             </p>
           </div>
         </div>

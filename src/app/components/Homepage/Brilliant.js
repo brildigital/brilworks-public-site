@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ActionNResultText } from "./BigText";
 
 const Brilliant = () => {
@@ -17,12 +18,12 @@ const Brilliant = () => {
 
         <div className="flex items-center justify-center gap-[20px] about_btn transition pt-[32px]">
           <div className="about_txt">
-            <a
+            <Link
               href="https://www.brilworks.com/about-us/"
               className="text-[21px]"
             >
               About Us
-            </a>
+            </Link>
           </div>
           <div className="aerrow relative">
             <img
