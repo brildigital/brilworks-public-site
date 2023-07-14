@@ -1,7 +1,92 @@
+"use client";
 import Link from "next/link";
+import { useEffect } from "react";
+import Swiper from "swiper";
+import "swiper/css";
 import ClientReviews from "../Homepage/ClientReviews";
 
 const ContactUs = () => {
+  useEffect(() => {
+    const initSwipers = () => {
+      new Swiper("#swiper-client-review", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1920: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+
+      new Swiper("#swiper-portfolio", {
+        loop: true,
+        slidesPerView: 3,
+        paginationClickable: true,
+        centeredSlides: true,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1920: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+
+      new Swiper(".swiper-review", {
+        loop: true,
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1475: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          991: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          575: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    };
+    initSwipers();
+  }, []);
   return (
     <>
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
@@ -198,7 +283,7 @@ const ContactUs = () => {
                 </div>
 
                 <div className="steps_service">
-                  <div className="no_flex">
+                  <div className="no_flex ">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
                         <p>Progress</p>

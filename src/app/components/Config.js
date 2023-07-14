@@ -13,7 +13,7 @@ const Config = ({ blok }) => {
                 <div className="header_logo">
                   <Link href="/">
                     <Image
-                      src="/images/logo.png"
+                      src="images/logo.png"
                       alt="Brilworks Logo"
                       width="206"
                       height="62"
@@ -105,7 +105,7 @@ const Config = ({ blok }) => {
                     >
                       <p>SOLUTIONS</p>
                       <div className="arrow_size">
-                        <img src="/images/down-arrow.png" alt="down arrow" />
+                        <img src="images/down-arrow.png" alt="down arrow" />
                       </div>
                     </Link>
                   </div>
@@ -119,7 +119,7 @@ const Config = ({ blok }) => {
                     >
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
-                        <img src="/images/down-arrow.png" alt="down arrow" />
+                        <img src="images/down-arrow.png" alt="down arrow" />
                       </div>
                     </Link>
                   </div>
@@ -146,7 +146,7 @@ const Config = ({ blok }) => {
         <div className="home_sec1_img">
           <img
             className="size-full"
-            src="/images/banner.jpg"
+            src="images/banner.jpg"
             // width="auto"
             // height="auto"
             alt="homepage banner"
@@ -175,9 +175,7 @@ const Config = ({ blok }) => {
             </div>
             <div className="our_work flex items-center justify-end gap-[16px]">
               <p>
-                <Link href="https://www.brilworks.com/contact-us/">
-                  GET IN TOUCH
-                </Link>
+                <Link href="contact-us">GET IN TOUCH</Link>
               </p>
               <p>
                 <Link href="">
@@ -185,7 +183,7 @@ const Config = ({ blok }) => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone wp-image-24 size-full"
-                    src="/images/our-work.png"
+                    src="images/our-work.png"
                     alt="9 dots"
                     width="49"
                     height="49"
@@ -207,7 +205,7 @@ const Config = ({ blok }) => {
     //         <Link href="/">
     //           {/* <Link> */}
     //           <img
-    //             src="/images/logo.png"
+    //             src="images/logo.png"
     //             alt="Brilworks Logo"
     //             width="206"
     //             height="62"

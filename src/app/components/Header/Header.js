@@ -65,7 +65,7 @@ const Header = () => {
           <div class="header_width padding_header">
             <div class="header_main_flex">
               <div class="header_logo">
-                <Link href="index.htm">
+                <Link href="/">
                   <img
                     src="images/logo.png"
                     alt="Brilworks Logo"
@@ -107,7 +107,7 @@ const Header = () => {
                     </div>
                   </Link>
                 </div>
-                <Link href="contact-us/index.htm">
+                <Link href="contact-us">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">LET&apos;S TALK</p>
                   </div>

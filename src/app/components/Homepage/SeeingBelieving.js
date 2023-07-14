@@ -13,7 +13,7 @@ const SeeingBelieving = () => {
               <Link href="">
                 <img
                   className="alignnone wp-image-45 size-full"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/Vugo.jpg"
+                  src="images/Vugo.jpg"
                   alt="vugo"
                 />
 
@@ -37,7 +37,7 @@ const SeeingBelieving = () => {
               <Link href="https://www.brilworks.com/portfolio/trackimo/">
                 <img
                   className="alignnone wp-image-47 size-full"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/Trackimo.jpg"
+                  src="images/Trackimo.jpg"
                   alt="trackimo"
                 />
 
@@ -61,7 +61,7 @@ const SeeingBelieving = () => {
               <Link href="https://www.brilworks.com/portfolio/orokii/">
                 <img
                   className="alignnone wp-image-48 size-full"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/Orokii.jpg"
+                  src="images/Orokii(1).jpg"
                   alt="orokii"
                 />
 
@@ -85,7 +85,7 @@ const SeeingBelieving = () => {
               <Link href="https://www.brilworks.com/portfolio/eccocar/">
                 <img
                   className="alignnone wp-image-49 size-full"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/Eccocar.jpg"
+                  src="images/Eccocar(1).jpg"
                   alt="eccocar"
                 />
 
@@ -111,7 +111,7 @@ const SeeingBelieving = () => {
               <Link href="https://www.brilworks.com/portfolio/rastrack/">
                 <img
                   className="alignnone wp-image-50 size-full"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/Rastrack.jpg"
+                  src="images/Rastrack(1).jpg"
                   alt="rastrack"
                 />
 
@@ -138,10 +138,7 @@ const SeeingBelieving = () => {
       <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
         <div className="flex items-center justify-center gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
           <div className="about_txt">
-            <Link
-              href="https://www.brilworks.com/about-us/"
-              className="text-[21px]"
-            >
+            <Link href="portfolio" className="text-[21px]">
               View all works
             </Link>
           </div>
@@ -150,7 +147,7 @@ const SeeingBelieving = () => {
               decoding="async"
               loading="lazy"
               className="black_aerrow alignnone wp-image-28 size-full"
-              src="/images/black_aerrow-1.png"
+              src="images/black_aerrow-1.png"
               alt="arrow"
               width="46"
               height="18"
@@ -159,7 +156,7 @@ const SeeingBelieving = () => {
               decoding="async"
               loading="lazy"
               className="gradiant_aerrow alignnone wp-image-29 size-full"
-              src="/images/arrow-gradiant.png"
+              src="images/arrow-gradiant.png"
               alt="arrow"
               width="46"
               height="18"
@@ -168,10 +165,7 @@ const SeeingBelieving = () => {
         </div>
         <div className="flex items-center justify-center gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
           <div className="about_txt">
-            <Link
-              href="https://www.brilworks.com/about-us/"
-              className="text-[21px]"
-            >
+            <Link href="contact-us" className="text-[21px]">
               Contact Us
             </Link>
           </div>
@@ -180,7 +174,7 @@ const SeeingBelieving = () => {
               decoding="async"
               loading="lazy"
               className="black_aerrow alignnone wp-image-28 size-full"
-              src="/images/black_aerrow-1.png"
+              src="images/black_aerrow-1.png"
               alt="arrow"
               width="46"
               height="18"
@@ -189,7 +183,7 @@ const SeeingBelieving = () => {
               decoding="async"
               loading="lazy"
               className="gradiant_aerrow alignnone wp-image-29 size-full"
-              src="/images/arrow-gradiant.png"
+              src="images/arrow-gradiant.png"
               alt="arrow"
               width="46"
               height="18"

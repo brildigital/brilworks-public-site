@@ -11,10 +11,7 @@ const Footer = () => {
           <div className="footer_grid">
             <div>
               <div className="footer_logo">
-                <img
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/logo-white.png"
-                  alt="Brilworks Logo"
-                />
+                <img src="images/logo-white.png" alt="Brilworks Logo" />
               </div>
               <div className="social_media">
                 <div className="social_media_img">
@@ -111,19 +108,15 @@ const Footer = () => {
               <ul className="footer_link">
                 <li>
                   <Link
-                    href="/home"
-                    className={
-                      pathname === "/home" || pathname === "/"
-                        ? "page-active"
-                        : ""
-                    }
+                    href="/"
+                    className={pathname === "/" ? "page-active" : ""}
                   >
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/contact-us"
+                    href="contact-us"
                     className={pathname === "/contact-us" ? "page-active" : ""}
                   >
                     Contact Us
@@ -139,21 +132,33 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/about-us"
+                    href="about-us"
                     className={pathname === "/about-us" ? "page-active" : ""}
                   >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="our-process/index.htm"> Our Process </Link>
+                  <Link
+                    href="our-process"
+                    className={pathname === "/our-process" ? "page-active" : ""}
+                  >
+                    {" "}
+                    Our Process{" "}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="blog/index.htm"> Blogs </Link>
+                  <Link
+                    href="blog"
+                    className={pathname === "/blog" ? "page-active" : ""}
+                  >
+                    {" "}
+                    Blogs{" "}
+                  </Link>
                 </li>
               </ul>
               <div className="footer">
-                <Link href="career/index.htm">
+                <Link href="career">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>
                   </div>
@@ -208,14 +213,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="hire-aws-developer/index.htm">
-                    {" "}
-                    AWS Development{" "}
+                    AWS Development
                   </Link>
                 </li>
                 <li>
                   <Link href="hire-ui-ux-designer/index.htm">
-                    {" "}
-                    UI/UX Development{" "}
+                    UI/UX Development
                   </Link>
                 </li>
                 <li>

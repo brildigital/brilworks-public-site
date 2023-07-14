@@ -1,5 +1,3 @@
-
-
 const ClientReviews = () => {
   return (
     <div className="container mx-auto px-[15px]">
@@ -9,7 +7,7 @@ const ClientReviews = () => {
             decoding="async"
             loading="lazy"
             className="rotate_right alignnone"
-            src="/images/Verified-Review-image.png"
+            src="images/Verified-Review-image.png"
             alt="verified review"
             width="215"
             height="215"
@@ -18,7 +16,7 @@ const ClientReviews = () => {
 
         <div className="home_sec3_box overflow-hidden">
           <div className="dots_flex w-100 px-[30px]">
-            <div className="dots"></div>
+            <div className="dots md:ml-8"></div>
             <div className="dots"></div>
             <div className="dots"></div>
           </div>

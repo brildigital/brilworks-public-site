@@ -22,15 +22,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="https://www.brilworks.com/wp-content/uploads/2023/01/Fintech.jpg"
+                      src="images/Fintech.jpg"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcset="
-                        https://www.brilworks.com/wp-content/uploads/2023/01/Fintech-275x300.jpg   275w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/Fintech-940x1024.jpg  940w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/Fintech-768x836.jpg   768w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/Fintech.jpg          1010w
+                        images/Fintech-275x300.jpg   275w,
+                        images/Fintech-940x1024.jpg  940w,
+                        images/Fintech-768x836.jpg   768w,
+                        images/Fintech.jpg          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -47,15 +47,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="https://www.brilworks.com/wp-content/uploads/2023/01/healthcare-275x300.jpg"
+                      src="images/healthcare-275x300.jpg"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcset="
-                        https://www.brilworks.com/wp-content/uploads/2023/01/healthcare-275x300.jpg   275w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/healthcare-940x1024.jpg  940w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/healthcare-768x836.jpg   768w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/healthcare.jpg          1010w
+                        images/healthcare-275x300.jpg   275w,
+                        images/healthcare-940x1024.jpg  940w,
+                        images/healthcare-768x836.jpg   768w,
+                        images/healthcare.jpg          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -72,15 +72,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="https://www.brilworks.com/wp-content/uploads/2023/01/New-Project-3-275x300.jpg"
+                      src="images/New-Project-3-275x300.jpg"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcset="
-                        https://www.brilworks.com/wp-content/uploads/2023/01/New-Project-3-275x300.jpg   275w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/New-Project-3-940x1024.jpg  940w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/New-Project-3-768x836.jpg   768w,
-                        https://www.brilworks.com/wp-content/uploads/2023/01/New-Project-3.jpg          1010w
+                        images/New-Project-3-275x300.jpg   275w,
+                        images/New-Project-3-940x1024.jpg  940w,
+                        images/New-Project-3-768x836.jpg   768w,
+                        images/New-Project-3.jpg          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -98,15 +98,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="https://www.brilworks.com/wp-content/uploads/2023/02/1-275x300.jpg"
+                      src="images/1-275x300.jpg"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcset="
-                        https://www.brilworks.com/wp-content/uploads/2023/02/1-275x300.jpg   275w,
-                        https://www.brilworks.com/wp-content/uploads/2023/02/1-940x1024.jpg  940w,
-                        https://www.brilworks.com/wp-content/uploads/2023/02/1-768x836.jpg   768w,
-                        https://www.brilworks.com/wp-content/uploads/2023/02/1.jpg          1010w
+                        images/1-275x300.jpg   275w,
+                        images/1-940x1024.jpg  940w,
+                        images/1-768x836.jpg   768w,
+                        images/1.jpg          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />

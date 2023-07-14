@@ -6,7 +6,7 @@ const GameChanger = () => {
       <div className="home_sec1_img">
         <img
           className="size-full"
-          src="/images/banner.jpg"
+          src="images/banner.jpg"
           alt="homepage banner"
         />
       </div>
@@ -33,17 +33,15 @@ const GameChanger = () => {
           </div>
           <div className="our_work flex items-center justify-end gap-[16px]">
             <p>
-              <Link href="https://www.brilworks.com/contact-us/">
-                GET IN TOUCH
-              </Link>
+              <Link href="contact-us">GET IN TOUCH</Link>
             </p>
             <p>
-              <Link href="">
+              <Link href="contact-us">
                 <img
                   decoding="async"
                   loading="lazy"
                   className="alignnone wp-image-24 size-full"
-                  src="/images/our-work.png"
+                  src="images/our-work.png"
                   alt="9 dots"
                   width="49"
                   height="49"

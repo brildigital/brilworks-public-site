@@ -4,7 +4,7 @@
 
 body {
   overflow-x: hidden;
-  background-image: url(../../public/images/bg.png);
+  background-image: url(/images/bg.png);
   background-repeat: repeat;
   background-size: contain;
 }
@@ -306,7 +306,7 @@ a {
   width: auto;
   margin: 0 0 auto;
 }
-.page-active{
+.page-active {
   color: var(--main_color) !important;
 }
 .menu .accordion-container .content-entry i {
@@ -1123,7 +1123,7 @@ textarea.form-control-txt {
 }
 .noText li::before {
   content: "";
-  background-image: url(../../public/images/done-01-1.png);
+  background-image: url(/images/done-01-1.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 16px;
@@ -1227,7 +1227,7 @@ textarea.form-control-txt {
 }
 .no_flex::before {
   content: "";
-  background-image: url(https://www.brilworks.com/wp-content/uploads/2023/01/icons2-11.png);
+  background-image: url(/images/icons2-11.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 10%;
@@ -1241,7 +1241,7 @@ textarea.form-control-txt {
 }
 .no_flex::after {
   content: "";
-  background-image: url(https://www.brilworks.com/wp-content/uploads/2023/01/icons2-12.png);
+  background-image: url(/images/icons2-12.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 10%;
@@ -2030,7 +2030,7 @@ textarea.form-control-txt {
     width: 83%;
   }
   .sec7_service_grid {
-    gap: 2rem;
+    gap: 2.5rem;
   }
   .contact_text_call p {
     font-size: 3.2rem;
