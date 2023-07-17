@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer_grid">
             <div>
               <div className="footer_logo">
-                <img src="images/logo-white.png" alt="Brilworks Logo" />
+                <img src="/images/logo-white.png" alt="Brilworks Logo" />
               </div>
               <div className="social_media">
                 <div className="social_media_img">
@@ -19,7 +19,7 @@ const Footer = () => {
                     href="https://www.facebook.com/brilwork/"
                     target="_blank"
                   >
-                    <img src="images/fb.png" alt="Brilworks on Facebook" />
+                    <img src="/images/fb.png" alt="Brilworks on Facebook" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -27,7 +27,7 @@ const Footer = () => {
                     href="https://www.instagram.com/brilworkssoftware/"
                     target="_blank"
                   >
-                    <img src="images/insta.png" alt="Brilworks on Instagram" />
+                    <img src="/images/insta.png" alt="Brilworks on Instagram" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -35,7 +35,7 @@ const Footer = () => {
                     href=" https://www.youtube.com/@brilworks7633"
                     target="_blank"
                   >
-                    <img src="images/youtube.png" alt="Brilworks on YouTube" />
+                    <img src="/images/youtube.png" alt="Brilworks on YouTube" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -44,14 +44,14 @@ const Footer = () => {
                     target="_blank"
                   >
                     <img
-                      src="images/linkedin.png"
+                      src="/images/linkedin.png"
                       alt="Brilworks on LinkedIn"
                     />
                   </Link>
                 </div>
                 <div className="social_media_img">
                   <Link href="https://dribbble.com/Brilworks" target="_blank">
-                    <img src="images/social.png" alt="Brilworks on Dribble" />
+                    <img src="/images/social.png" alt="Brilworks on Dribble" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -59,7 +59,7 @@ const Footer = () => {
                     href="https://www.behance.net/hellobrilworks"
                     target="_blank"
                   >
-                    <img src="images/behance.png" alt="Brilworks on Behance" />
+                    <img src="/images/behance.png" alt="Brilworks on Behance" />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -67,7 +67,7 @@ const Footer = () => {
                     href="https://www.upwork.com/ag/brilworks/"
                     target="_blank"
                   >
-                    <img src="images/up-01.png" alt="Brilworks on Upwork" />
+                    <img src="/images/up-01.png" alt="Brilworks on Upwork" />
                   </Link>
                 </div>
               </div>
@@ -116,7 +116,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="contact-us"
+                    href="/contact-us"
                     className={pathname === "/contact-us" ? "page-active" : ""}
                   >
                     Contact Us
@@ -132,7 +132,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="about-us"
+                    href="/about-us"
                     className={pathname === "/about-us" ? "page-active" : ""}
                   >
                     About
@@ -140,25 +140,23 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="our-process"
+                    href="/our-process"
                     className={pathname === "/our-process" ? "page-active" : ""}
                   >
-                    {" "}
-                    Our Process{" "}
+                    Our Process
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="blog"
+                    href="/blog"
                     className={pathname === "/blog" ? "page-active" : ""}
                   >
-                    {" "}
-                    Blogs{" "}
+                    Blogs
                   </Link>
                 </li>
               </ul>
               <div className="footer">
-                <Link href="career">
+                <Link href="/career">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>
                   </div>
@@ -171,22 +169,52 @@ const Footer = () => {
               </div>
               <ul className="footer_link">
                 <li>
-                  <Link href="industry/fintech-software-development/index.htm">
+                  <Link
+                    href="/industry/fintech-software-development"
+                    className={
+                      pathname === "/industry/fintech-software-development"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     Fintech
                   </Link>
                 </li>
                 <li>
-                  <Link href="industry/fleet-management-software-development/index.htm">
+                  <Link
+                    href="/industry/fleet-management-software-development"
+                    className={
+                      pathname ===
+                      "/industry/fleet-management-software-development"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     Fleet Management + GPS
                   </Link>
                 </li>
                 <li>
-                  <Link href="industry/healthcare-software-development/index.htm">
+                  <Link
+                    href="/industry/healthcare-software-development"
+                    className={
+                      pathname === "/industry/healthcare-software-development"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     Health Care
                   </Link>
                 </li>
                 <li>
-                  <Link href="industry/media-entertainment-software-development/index.htm">
+                  <Link
+                    href="/industry/media-entertainment-software-development"
+                    className={
+                      pathname ===
+                      "/industry/media-entertainment-software-development"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     Media & Entertainment
                   </Link>
                 </li>
@@ -198,31 +226,78 @@ const Footer = () => {
               </div>
               <ul className="footer_link">
                 <li>
-                  <Link href="hire-java-developer/index.htm"> Java </Link>
+                  <Link
+                    href="/hire-java-developer"
+                    className={
+                      pathname === "/hire-java-developer" ? "page-active" : ""
+                    }
+                  >
+                    Java
+                  </Link>
                 </li>
                 <li>
-                  <Link href="hire-nodejs-developer/index.htm"> Nodejs </Link>
+                  <Link
+                    href="/hire-nodejs-developer"
+                    className={
+                      pathname === "/hire-nodejs-developer" ? "page-active" : ""
+                    }
+                  >
+                    Nodejs
+                  </Link>
                 </li>
                 <li>
-                  <Link href="hire-reactjs-developer/index.htm"> Reactjs </Link>
+                  <Link
+                    href="/hire-reactjs-developer"
+                    className={
+                      pathname === "/hire-reactjs-developer"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
+                    Reactjs
+                  </Link>
                 </li>
                 <li>
-                  <Link href="hire-react-native-developer/index.htm">
+                  <Link
+                    href="/hire-react-native-developer"
+                    className={
+                      pathname === "/hire-react-native-developer"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     React Native
                   </Link>
                 </li>
                 <li>
-                  <Link href="hire-aws-developer/index.htm">
+                  <Link
+                    href="/hire-aws-developer"
+                    className={
+                      pathname === "/hire-aws-developer" ? "page-active" : ""
+                    }
+                  >
                     AWS Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="hire-ui-ux-designer/index.htm">
+                  <Link
+                    href="/hire-ui-ux-designer"
+                    className={
+                      pathname === "/hire-ui-ux-designer" ? "page-active" : ""
+                    }
+                  >
                     UI/UX Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="hire-blockchain-developer/index.htm">
+                  <Link
+                    href="/hire-blockchain-developer"
+                    className={
+                      pathname === "/hire-blockchain-developer"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
                     Blockchain Development
                   </Link>
                 </li>

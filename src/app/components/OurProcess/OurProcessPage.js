@@ -10,7 +10,7 @@ const OurProcessPage = () => {
             <p>
               <img
                 className="how_works_img alignnone"
-                src="images/work-baner.png"
+                src="/images/work-baner.png"
                 alt="our process"
               />
             </p>
@@ -26,7 +26,7 @@ const OurProcessPage = () => {
                     <div className="imgebreakets">
                       <img
                         className="alignnone"
-                        src="images/1.png"
+                        src="/images/1.png"
                         alt="curley bracket"
                       />
                     </div>
@@ -36,7 +36,7 @@ const OurProcessPage = () => {
                     <div className="imgebreakets">
                       <img
                         className="alignnone"
-                        src="images/2.png"
+                        src="/images/2.png"
                         alt="curley bracket"
                       />
                     </div>
@@ -78,7 +78,7 @@ const OurProcessPage = () => {
                   decoding="async"
                   loading="lazy"
                   className="border_redius20 alignnone"
-                  src="images/time1.png"
+                  src="/images/time1.png"
                   alt="Project Development"
                 />
               </div>
@@ -94,7 +94,7 @@ const OurProcessPage = () => {
                     >
                       <img
                         className="alignnone"
-                        src="images/explore-arrow-01.png"
+                        src="/images/explore-arrow-01.png"
                         alt="down arrow"
                         width="72"
                         height="72"
@@ -110,7 +110,7 @@ const OurProcessPage = () => {
                   decoding="async"
                   loading="lazy"
                   className="border_redius20 alignnone"
-                  src="images/time2.png"
+                  src="/images/time2.png"
                   alt="Team Extension"
                 />
               </div>
@@ -123,7 +123,7 @@ const OurProcessPage = () => {
                     <Link href="#workSec5" className="__mPS2id _mPS2id-h">
                       <img
                         className="alignnone"
-                        src="images/explore-arrow-01.png"
+                        src="/images/explore-arrow-01.png"
                         alt="down arrow"
                         width="72"
                         height="72"
@@ -187,7 +187,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Requirements-Analysis.png"
+                                src="/images/Requirements-Analysis.png"
                                 alt="Requirements-Analysis"
                               />
                             </div>
@@ -280,7 +280,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Prototype-or-MVP.png"
+                                src="/images/Prototype-or-MVP.png"
                                 alt="Prototype-or-MVP"
                               />
                             </div>
@@ -354,7 +354,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Design-Sprint.png"
+                                src="/images/Design-Sprint.png"
                                 alt="Design-Sprint"
                               />
                             </div>
@@ -433,7 +433,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Development-Sprint.png"
+                                src="/images/Development-Sprint.png"
                                 alt="Development-Sprint"
                               />
                             </div>
@@ -527,7 +527,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Quality-Assurance.png"
+                                src="/images/Quality-Assurance.png"
                                 alt="Quality-Assurance"
                               />
                             </div>
@@ -625,7 +625,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Implementation-Deployment.png"
+                                src="/images/Implementation-Deployment.png"
                                 alt="Implementation-Deployment"
                               />
                             </div>
@@ -715,7 +715,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Maintenance-Support.png"
+                                src="/images/Maintenance-Support.png"
                                 alt="Maintenance-Support"
                               />
                             </div>
@@ -789,7 +789,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/requirements-analysis-1-226x300.jpg"
+                          src="/images/requirements-analysis-1-226x300.jpg"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -802,7 +802,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/Prototype.jpg"
+                          src="/images/Prototype.jpg"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -815,7 +815,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/design-sprint.jpg"
+                          src="/images/design-sprint.jpg"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -829,7 +829,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/end-to-end.png"
+                          src="/images/end-to-end.png"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -842,7 +842,7 @@ const OurProcessPage = () => {
                       aria-labelledby="accordion-five-tab"
                     >
                       <div className="team_img">
-                        <img src="images/quality.jpg" alt="quality" />
+                        <img src="/images/quality.jpg" alt="quality" />
                       </div>
                     </div>
 
@@ -854,7 +854,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/implementation-Deployment.jpg"
+                          src="/images/implementation-Deployment.jpg"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -868,7 +868,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/maintenance-and-Support.jpg"
+                          src="/images/maintenance-and-Support.jpg"
                           alt="requirements-analysis"
                         />
                       </div>
@@ -913,7 +913,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/Screening-and-Shortlisting-1.jpg"
+                          src="/images/Screening-and-Shortlisting-1.jpg"
                           alt=""
                         />
                       </div>
@@ -926,7 +926,7 @@ const OurProcessPage = () => {
                       aria-labelledby="accordion-two-ourteam-tab"
                     >
                       <div className="team_img">
-                        <img src="images/language-proficiency.jpg" alt="" />
+                        <img src="/images/language-proficiency.jpg" alt="" />
                       </div>
                     </div>
 
@@ -938,7 +938,7 @@ const OurProcessPage = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="images/aptitude-test-recruitment-assessment.jpg"
+                          src="/images/aptitude-test-recruitment-assessment.jpg"
                           alt=""
                         />
                       </div>
@@ -951,7 +951,7 @@ const OurProcessPage = () => {
                       aria-labelledby="accordion-four-ourteam-tab"
                     >
                       <div className="team_img">
-                        <img src="images/technical-evaluation-1.jpg" alt="" />
+                        <img src="/images/technical-evaluation-1.jpg" alt="" />
                       </div>
                     </div>
 
@@ -962,7 +962,7 @@ const OurProcessPage = () => {
                       aria-labelledby="accordion-five-ourteam-tab"
                     >
                       <div className="team_img">
-                        <img src="images/team-extension.jpg" alt="" />
+                        <img src="/images/team-extension.jpg" alt="" />
                       </div>
                     </div>
                   </div>
@@ -999,7 +999,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Screening-Shortlisting.png"
+                                src="/images/Screening-Shortlisting.png"
                                 alt="Screening-Shortlisting"
                               />
                             </div>
@@ -1083,7 +1083,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Language-Proficiency.png"
+                                src="/images/Language-Proficiency.png"
                                 alt="Language-Proficiency"
                               />
                             </div>
@@ -1176,7 +1176,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Aptitude-Assessment.png"
+                                src="/images/Aptitude-Assessment.png"
                                 alt="Aptitude-Assessment"
                               />
                             </div>
@@ -1254,7 +1254,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Technical-Evaluation.png"
+                                src="/images/Technical-Evaluation.png"
                                 alt="Technical-Evaluation"
                               />
                             </div>
@@ -1336,7 +1336,7 @@ const OurProcessPage = () => {
 
                             <div className="number_icon_img">
                               <img
-                                src="images/Team-Extension.png"
+                                src="/images/Team-Extension.png"
                                 alt="Team-Extension"
                               />
                             </div>

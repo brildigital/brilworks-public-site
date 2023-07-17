@@ -11,12 +11,12 @@ const Portfolio = () => {
               <p>
                 <img
                   className="hidden-xs alignnone wp-image-252 size-medium"
-                  src="images/Banner_portfolio.jpg"
+                  src="/images/Banner_portfolio.jpg"
                   alt="portfolio"
                 />
                 <img
                   className="visible-xs alignnone"
-                  src="images/portfolio-mobile-size.jpg"
+                  src="/images/portfolio-mobile-size.jpg"
                   alt="portfolio"
                 />
               </p>
@@ -54,19 +54,17 @@ const Portfolio = () => {
             </div>
             <div className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="https://www.brilworks.com/portfolio/vugo/">
+                <Link href="/portfolio/vugo/">
                   <img
                     className="alignnone"
-                    src="images/right_arrow.png"
+                    src="/images/right_arrow.png"
                     alt=""
                   />
                 </Link>
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="https://www.brilworks.com/portfolio/vugo/">
-                    Know More
-                  </Link>
+                  <Link href="/portfolio/vugo/">Know More</Link>
                 </p>
               </div>
             </div>
@@ -77,7 +75,7 @@ const Portfolio = () => {
                 <div className="porfolio_sec1_img relative">
                   <img
                     className="alignnone"
-                    src="images/vugo-1.jpg"
+                    src="/images/vugo-1.jpg"
                     alt="vugo"
                   />
                 </div>
@@ -93,7 +91,7 @@ const Portfolio = () => {
                 <div className="porfolio_sec1_img relative">
                   <img
                     className="alignnone"
-                    src="images/rastrack.jpg"
+                    src="/images/rastrack.jpg"
                     alt="Rastrack"
                   />
                 </div>
@@ -119,7 +117,7 @@ const Portfolio = () => {
                 <Link href="https://www.brilworks.com/portfolio/rastrack/">
                   <img
                     className="alignnone"
-                    src="images/right_arrow.png"
+                    src="/images/right_arrow.png"
                     alt=""
                   />
                 </Link>
@@ -156,7 +154,7 @@ const Portfolio = () => {
                 <Link href="https://www.brilworks.com/portfolio/orokii/">
                   <img
                     className="alignnone"
-                    src="images/right_arrow.png"
+                    src="/images/right_arrow.png"
                     alt=""
                   />
                 </Link>
@@ -174,7 +172,7 @@ const Portfolio = () => {
                 <div className="porfolio_sec1_img relative">
                   <img
                     className="alignnone"
-                    src="images/orokii.jpg"
+                    src="/images/orokii.jpg"
                     alt="Orokii"
                   />
                 </div>
@@ -190,7 +188,7 @@ const Portfolio = () => {
                 <div className="porfolio_sec1_img relative">
                   <img
                     className="alignnone"
-                    src="images/Eccocar.jpg"
+                    src="/images/Eccocar.jpg"
                     alt="Eccocar"
                   />
                 </div>
@@ -217,7 +215,7 @@ const Portfolio = () => {
                 <Link href="https://www.brilworks.com/portfolio/eccocar/">
                   <img
                     className="alignnone"
-                    src="images/right_arrow.png"
+                    src="/images/right_arrow.png"
                     alt=""
                   />
                 </Link>
@@ -254,7 +252,7 @@ const Portfolio = () => {
                 <Link href="https://www.brilworks.com/portfolio/trackimo/">
                   <img
                     className="alignnone"
-                    src="images/right_arrow.png"
+                    src="/images/right_arrow.png"
                     alt=""
                   />
                 </Link>
@@ -274,7 +272,7 @@ const Portfolio = () => {
                 <div className="porfolio_sec1_img relative">
                   <img
                     className="alignnone"
-                    src="images/GPS_Trackers_Devices-Uses2-1.jpg"
+                    src="/images/GPS_Trackers_Devices-Uses2-1.jpg"
                     alt="Trackimo"
                   />
                 </div>

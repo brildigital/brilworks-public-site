@@ -33,7 +33,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/06/Thumbnail-Best-Node.js-Open-Source-Projects-in-GitHub.svg"
+                    src="/images/Thumbnail-Best-Node.js-Open-Source-Projects-in-GitHub.svg"
                     alt=""
                   />
                 </div>
@@ -57,7 +57,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/06/Thumbnail-Cross-platform-app-dev0.svg"
+                    src="/images/Thumbnail-Cross-platform-app-dev0.svg"
                     alt=""
                   />
                 </div>
@@ -81,7 +81,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/06/Thumbnail-VR0.svg"
+                    src="/images/Thumbnail-VR0.svg"
                     alt=""
                   />
                 </div>
@@ -105,7 +105,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/06/Thumbnail-Rapid.svg"
+                    src="/images/Thumbnail-Rapid.svg"
                     alt=""
                   />
                 </div>
@@ -129,7 +129,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/05/Thumbnail-Fintech.svg"
+                    src="/images/Thumbnail-Fintech.svg"
                     alt=""
                   />
                 </div>
@@ -153,7 +153,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/06/Thumbnail-VR0.svg"
+                    src="/images/Thumbnail-VR0.svg"
                     alt=""
                   />
                 </div>
@@ -177,7 +177,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/05/Thumbnail-Strapi-leads.svg"
+                    src="/images/Thumbnail-Strapi-leads.svg"
                     alt=""
                   />
                 </div>
@@ -201,7 +201,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/05/Thumbnail-Nest-JS-vs-Spring-framework.svg"
+                    src="/images/Thumbnail-Nest-JS-vs-Spring-framework.svg"
                     alt=""
                   />
                 </div>
@@ -225,7 +225,7 @@ const Blog = () => {
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="https://www.brilworks.com/wp-content/uploads/2023/05/Thumbnail-Custom-web-development.svg"
+                    src="/images/Thumbnail-Custom-web-development.svg"
                     alt=""
                   />
                 </div>

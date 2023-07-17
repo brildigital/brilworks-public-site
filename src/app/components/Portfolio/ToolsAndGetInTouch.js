@@ -20,7 +20,7 @@ const ToolsAndGetInTouch = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone"
-                    src="images/jira.png"
+                    src="/images/jira.png"
                     alt="jira"
                     width="90"
                     height="90"
@@ -36,7 +36,7 @@ const ToolsAndGetInTouch = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone"
-                    src="images/gitHub.png"
+                    src="/images/gitHub.png"
                     alt="GitHub"
                     width="90"
                     height="90"
@@ -52,7 +52,7 @@ const ToolsAndGetInTouch = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone"
-                    src="images/miro.png"
+                    src="/images/miro.png"
                     alt="Miro"
                     width="90"
                     height="90"
@@ -68,7 +68,7 @@ const ToolsAndGetInTouch = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone"
-                    src="images/Google-Meet.png"
+                    src="/images/Google-Meet.png"
                     alt="Google Meet"
                     width="90"
                     height="90"
@@ -84,7 +84,7 @@ const ToolsAndGetInTouch = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone"
-                    src="images/slack.png"
+                    src="/images/slack.png"
                     alt="Slack"
                     width="90"
                     height="90"
@@ -101,7 +101,7 @@ const ToolsAndGetInTouch = () => {
                     loading="lazy"
                     className="alignnone"
                     img
-                    src="images/confluence.png"
+                    src="/images/confluence.png"
                     alt="Confluence"
                     width="90"
                     height="90"
@@ -117,12 +117,12 @@ const ToolsAndGetInTouch = () => {
                 <p>
                   <img
                     className="ready_main web_img alignnone"
-                    src="images/ready.png"
+                    src="/images/ready.png"
                     alt="get in touch"
                   />
                   <img
                     className="mobile_img border_redius20 alignnone"
-                    src="images/ready_mobile.jpg"
+                    src="/images/ready_mobile.jpg"
                     alt="get in touch"
                   />
                 </p>
@@ -137,7 +137,7 @@ const ToolsAndGetInTouch = () => {
                       <Link href="contact-us">
                         <img
                           className="alignnone"
-                          src="images/right_arrow.png"
+                          src="/images/right_arrow.png"
                           alt=""
                         />
                       </Link>

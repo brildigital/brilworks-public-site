@@ -169,7 +169,7 @@ const ContactUs = () => {
                 <div className="btn_paddinng contact_btn btn_flex">
                   <div className="formBtn_icon">
                     <p>
-                      <img src="images/right_arrow.png" alt="arrow" />
+                      <img src="/images/right_arrow.png" alt="arrow" />
                     </p>
                   </div>
                   <p>
@@ -254,7 +254,7 @@ const ContactUs = () => {
             <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="images/people-01.png" alt="people" className="" />
+                  <img src="/images/people-01.png" alt="people" className="" />
                 </div>
                 <div className="steps_service">
                   <div className="no_flex">
@@ -276,7 +276,7 @@ const ContactUs = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
-                    src="images/progress-01.png"
+                    src="/images/progress-01.png"
                     alt="progress"
                     className=""
                   />
@@ -301,7 +301,7 @@ const ContactUs = () => {
 
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="images/passion-01.png" alt="passion" className="" />
+                  <img src="/images/passion-01.png" alt="passion" className="" />
                 </div>
                 <div className="steps_service">
                   <div className="no_flex">
@@ -333,7 +333,7 @@ const ContactUs = () => {
             <div className="logowhite">
               <img
                 className="alignnone"
-                src="images/logo-vector-white.png"
+                src="/images/logo-vector-white.png"
                 alt="brilworks logo"
                 width="73"
                 height="124"
@@ -344,7 +344,7 @@ const ContactUs = () => {
                 <div className="contact_icon">
                   <img
                     className="alignnone"
-                    src="images/call.png"
+                    src="/images/call.png"
                     alt="Mobile"
                   />
                 </div>
@@ -358,7 +358,7 @@ const ContactUs = () => {
                 <div className="contact_icon">
                   <img
                     className="alignnone"
-                    src="images/email.png"
+                    src="/images/email.png"
                     alt="Email"
                   />
                 </div>
@@ -374,7 +374,7 @@ const ContactUs = () => {
                 <div className="contact_icon">
                   <img
                     className="alignnone"
-                    src="images/skype.png"
+                    src="/images/skype.png"
                     alt="Skype"
                   />
                 </div>
@@ -476,7 +476,7 @@ const ContactUs = () => {
                       <div className="btn_paddinng contact_btn btn_flex">
                         <div className="formBtn_icon">
                           <p>
-                            <img src="images/right_arrow.png" alt="arrow" />
+                            <img src="/images/right_arrow.png" alt="arrow" />
                           </p>
                         </div>
                         <p>

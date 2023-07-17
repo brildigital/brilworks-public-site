@@ -24,7 +24,7 @@ const AboutUs = () => {
                 <img
                   decoding="async"
                   className="alignnone wp-image-189 size-full"
-                  src="images/down-arrow(1).png"
+                  src="/images/down-arrow(1).png"
                   alt="down arrow"
                   width="62"
                   height="62"
@@ -38,7 +38,7 @@ const AboutUs = () => {
                 decoding="async"
                 loading="lazy"
                 className="alignnone wp-image-188 size-full"
-                src="images/banner-1.jpg"
+                src="/images/banner-1.jpg"
                 alt="team working"
                 width="882"
                 height="589"
@@ -89,7 +89,7 @@ const AboutUs = () => {
                 decoding="async"
                 loading="lazy"
                 className="alignnone wp-image-191 size-full"
-                src="images/vision.jpg"
+                src="/images/vision.jpg"
                 alt="vision"
                 width="965"
                 height="625"
@@ -215,7 +215,7 @@ const AboutUs = () => {
                         decoding="async"
                         loading="lazy"
                         className="alignnone wp-image-208 size-full"
-                        src={"images/trustworthy.png"}
+                        src={"/images/trustworthy.png"}
                         alt="Trustworthy Partnership"
                         width="142"
                         height="142"
@@ -260,7 +260,7 @@ const AboutUs = () => {
                         decoding="async"
                         loading="lazy"
                         className="alignnone wp-image-213 size-full"
-                        src={"images/high-caliber.png"}
+                        src={"/images/high-caliber.png"}
                         alt="High Caliber Talent"
                         width="142"
                         height="142"
@@ -309,7 +309,7 @@ const AboutUs = () => {
                         decoding="async"
                         loading="lazy"
                         className="alignnone wp-image-212 size-full"
-                        src={"images/growth.png"}
+                        src={"/images/growth.png"}
                         alt="Growth Mindset"
                         width="142"
                         height="142"
@@ -426,12 +426,12 @@ const AboutUs = () => {
             <div className="aerrow relative">
               <img
                 className="black_aerrow alignnone wp-image-28 size-full"
-                src="images/black_aerrow-1.png"
+                src="/images/black_aerrow-1.png"
                 alt="arrow"
               />
               <img
                 className="gradiant_aerrow alignnone wp-image-29 size-full"
-                src="images/arrow-gradiant.png"
+                src="/images/arrow-gradiant.png"
                 alt="arrow"
               />
             </div>
@@ -440,7 +440,7 @@ const AboutUs = () => {
           <div className="md:mt-[5rem] mt-[2rem]">
             <img
               className="alignnone wp-image-190 size-full"
-              src="images/team-image.png"
+              src="/images/team-image.png"
               alt="Brilworks team"
             />
           </div>
