@@ -29,7 +29,7 @@ const Blog = () => {
 
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -45,7 +45,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">June 14, 2023</Link>
+                      <Link href="/blog/blogInner">June 14, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -69,7 +69,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">June 8, 2023</Link>
+                      <Link href="/blog/blogInner">June 8, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -93,7 +93,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">June 7, 2023</Link>
+                      <Link href="/blog/blogInner">June 7, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -117,7 +117,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">June 5, 2023</Link>
+                      <Link href="/blog/blogInner">June 5, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -141,7 +141,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">May 31, 2023</Link>
+                      <Link href="/blog/blogInner">May 31, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -165,7 +165,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">June 7, 2023</Link>
+                      <Link href="/blog/blogInner">June 7, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -189,7 +189,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">May 30, 2023</Link>
+                      <Link href="/blog/blogInner">May 30, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -213,7 +213,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">May 26, 2023</Link>
+                      <Link href="/blog/blogInner">May 26, 2023</Link>
                     </p>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ const Blog = () => {
             </div>
 
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="">
+              <Link href="/blog/blogInner">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
@@ -238,7 +238,7 @@ const Blog = () => {
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="">May 25, 2023</Link>
+                      <Link href="/blog/blogInner">May 25, 2023</Link>
                     </p>
                   </div>
                 </div>

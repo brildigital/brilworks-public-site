@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import HomepageContactForm from "../Homepage/HomepageContactForm";
 
 const Career = () => {
   return (
@@ -84,7 +85,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div class="mx-auto mx-[16px] md:my-[8rem] my-[3rem]">
+            <div class="mx-auto mx-[16px] md:my-[8rem] my-[3rem] w-4/5">
               <img
                 src="/images/career.jpg"
                 alt="career"
@@ -632,201 +633,7 @@ const Career = () => {
           class="md:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto px-[15px]"
           id="section10"
         >
-          <div class="home_sec3_box">
-            <div class="dots_flex">
-              <div class="dots"></div>
-              <div class="dots"></div>
-              <div class="dots"></div>
-            </div>
-            <div class="background">
-              <div class="style_sec10_swiper_home">
-                <div class="sec10_flex_row">
-                  <div class="sec10_basis_50 order_2">
-                    <div class="sec10_txt1">
-                      <p>Do you want to work with us?</p>
-                      <p>Please fill in your details</p>
-                    </div>
-                    <div
-                      class="wpcf7 no-js"
-                      id="wpcf7-f719-p96-o1"
-                      lang="en-US"
-                      dir="ltr"
-                    >
-                      <div class="screen-reader-response">
-                        <p
-                          role="status"
-                          aria-live="polite"
-                          aria-atomic="true"
-                        ></p>
-                        <ul></ul>
-                      </div>
-                      <form
-                        action="/#wpcf7-f719-p96-o1"
-                        method="post"
-                        class="wpcf7-form init"
-                        aria-label="Contact form"
-                        novalidate="novalidate"
-                        data-status="init"
-                      >
-                        <div class="form-group">
-                          <p>
-                            <label class="label_name">Name*</label>
-                            <br />
-                            <span
-                              class="wpcf7-form-control-wrap"
-                              data-name="text-807"
-                            >
-                              <input
-                                size="40"
-                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
-                                aria-required="true"
-                                aria-invalid="false"
-                                value=""
-                                type="text"
-                                name="text-807"
-                              />
-                            </span>
-                          </p>
-                        </div>
-                        <div class="form-group">
-                          <p>
-                            <label class="label_name">Contact No*</label>
-                            <br />
-                            <span
-                              class="wpcf7-form-control-wrap"
-                              data-name="text-8070"
-                            >
-                              <input
-                                size="40"
-                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
-                                aria-required="true"
-                                aria-invalid="false"
-                                value=""
-                                type="text"
-                                name="text-8070"
-                              />
-                            </span>
-                          </p>
-                        </div>
-                        <div class="form-group">
-                          <p>
-                            <label class="label_name">Email Id*</label>
-                            <br />
-                            <span
-                              class="wpcf7-form-control-wrap"
-                              data-name="email-866"
-                            >
-                              <input
-                                size="40"
-                                class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control-txt"
-                                aria-required="true"
-                                aria-invalid="false"
-                                value=""
-                                type="email"
-                                name="email-866"
-                              />
-                            </span>
-                          </p>
-                        </div>
-                        <div class="form-group">
-                          <p>
-                            <label class="label_name">Message</label>
-                            <br />
-                            <span
-                              class="wpcf7-form-control-wrap"
-                              data-name="textarea-797"
-                            >
-                              <textarea
-                                cols="1"
-                                rows="2"
-                                class="wpcf7-form-control wpcf7-textarea form-control-txt"
-                                id="message"
-                                aria-invalid="false"
-                                name="textarea-797"
-                              ></textarea>
-                            </span>
-                          </p>
-                        </div>
-                        <div class="btn_paddinng">
-                          <div type="submit" class="home_ready_sec transition">
-                            <p>
-                              <input
-                                class="wpcf7-form-control has-spinner wpcf7-submit home_btn"
-                                id="submit"
-                                type="submit"
-                                value="Submit"
-                              />
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="wpcf7-response-output"
-                          aria-hidden="true"
-                        ></div>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="sec10_basis_50 order_1">
-                    <div class="sec10_txt1">
-                      <p>Values that Guide Us</p>
-                    </div>
-                    <div class="form_grid">
-                      <div>
-                        <div class="w-[70px] mb-[10px]">
-                          <img
-                            src="/images/Stronger-Together.png"
-                            alt="Stronger Together"
-                          />
-                        </div>
-                        <div class="year">
-                          <p>Stronger Together</p>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="number">
-                          <div class="w-[70px] mb-[10px]">
-                            <img
-                              src="/images/Passion-Over-Perfectionism.png"
-                              alt="Stronger Together"
-                            />
-                          </div>
-                        </div>
-                        <div class="year">
-                          <p>Passion Over Perfectionism</p>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="w-[70px] mb-[10px]">
-                          <img
-                            src="/images/Future-focused.png"
-                            alt="Stronger Together"
-                          />
-                        </div>
-                        <div class="year">
-                          <p>
-                            Future-
-                            <br />
-                            focused
-                          </p>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="w-[70px] mb-[10px]">
-                          <img
-                            src="/images/Continuous-Improvement.png"
-                            alt="Stronger Together"
-                          />
-                        </div>
-                        <div class="year">
-                          <p>Continuous Improvement</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <HomepageContactForm />
         </div>
       </section>
     </>

@@ -1,7 +1,40 @@
+"use client";
+import "swiper/css";
 import Link from "next/link";
 import { BelievingText } from "./BigText";
+import { useEffect } from "react";
+import Swiper from "swiper";
 
 const SeeingBelieving = () => {
+  useEffect(() => {
+    const initSwipers = () => {
+      new Swiper("#swiper-portfolio", {
+        loop: true,
+        slidesPerView: 3,
+        paginationClickable: true,
+        centeredSlides: true,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1920: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    };
+    initSwipers();
+  }, []);
+
   return (
     <>
       <BelievingText />
@@ -10,7 +43,7 @@ const SeeingBelieving = () => {
         <div className="swiper-container" id="swiper-portfolio">
           <div className="swiper-wrapper">
             <div className="swiper-slide">
-              <Link href="">
+              <Link href="/portfolio/vugo/">
                 <img
                   className="alignnone wp-image-45 size-full"
                   src="/images/Vugo.jpg"

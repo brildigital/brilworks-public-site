@@ -135,7 +135,11 @@ const Header = () => {
   return (
     <header>
       <div class="header">
-        <div class="sec1_header">
+        <div
+          class={`sec1_header ${
+            isPopupMenuActive && window.scrollY > 150 ? "bg-white" : ""
+          }`}
+        >
           <div class="header_width padding_header">
             <div class="header_main_flex">
               <div class="header_logo">
@@ -207,7 +211,9 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`popup_overlay ${isPopupMenuActive ? "active-menu" : ""}`}
+        className={`popup_overlay ${
+          isPopupMenuActive && isSolutionMenuActive ? "active-menu" : ""
+        }`}
         id="mainMenuWrapperpopup"
         onClick={handleNavigationPopupClick}
       ></div>
@@ -272,7 +278,9 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`popup_overlay ${isPopupMenuActive ? "active-menu" : ""}`}
+        className={`popup_overlay ${
+          isPopupMenuActive && isTechnologyMenuActive ? "active-menu" : ""
+        }`}
         id="mainMenuWrapperpopup"
         onClick={handleNavigationPopupClick}
       ></div>

@@ -305,7 +305,7 @@ a {
   justify-content: space-between;
 }
 .header_logo {
-  width: auto;
+  width: 12%;
   margin: 0 0 auto;
 }
 .page-active {
@@ -413,9 +413,9 @@ a {
 .menu .accordion-container {
   border-bottom: 1px solid gray;
 }
-.menu .accordion-container p:hover{
+.menu .accordion-container p:hover {
   color: #00b6cf;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .accordion-container,
@@ -834,6 +834,14 @@ textarea.form-control-txt {
   border: 1px solid #f0f0f0;
   width: fit-content;
 }
+.home_ready_sec:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 196, 200, 1) 34%,
+    rgba(0, 221, 185, 1) 56%
+  ) !important;
+  border: 1px solid #00dfb8;
+}
 .wpcf7-form div[type="submit"],
 .wpcf7-form div[type="submit"] * {
   cursor: pointer;
@@ -1229,11 +1237,25 @@ textarea.form-control-txt {
   line-height: var(--line_height_1_2);
   font-family: var(--extra_bold);
 }
+
+.expert-developers-block {
+  background: linear-gradient(
+    147deg,
+    rgba(28, 185, 213, 1) 12%,
+    rgba(67, 223, 219, 1) 32%,
+    rgba(67, 223, 219, 1) 60%,
+    rgba(0, 222, 175, 1) 84%
+  );
+  padding: 2rem 2rem;
+  text-align: center;
+  border-radius: 33px;
+}
 .contact_box img {
   width: 65px;
   margin: 0 auto;
   padding: 3rem 0 2rem;
 }
+
 .steps_service {
   display: flex;
   align-items: center;

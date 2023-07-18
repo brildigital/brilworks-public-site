@@ -1,4 +1,5 @@
 "use client";
+import "swiper/css";
 import { useEffect } from "react";
 import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import Swiper from "swiper";
@@ -22,61 +23,6 @@ const ClientReviews = () => {
             spaceBetween: 30,
           },
           767: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
-
-      new Swiper("#swiper-portfolio", {
-        loop: true,
-        slidesPerView: 3,
-        paginationClickable: true,
-        centeredSlides: true,
-        spaceBetween: 20,
-        autoplay: 5000,
-        speed: 300,
-        breakpoints: {
-          1920: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1028: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          767: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
-
-      new Swiper(".swiper-review", {
-        loop: true,
-        slidesPerView: 4,
-        paginationClickable: true,
-        spaceBetween: 20,
-        autoplay: 5000,
-        speed: 300,
-        breakpoints: {
-          1475: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1028: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          991: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          767: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          575: {
             slidesPerView: 1,
             spaceBetween: 10,
           },

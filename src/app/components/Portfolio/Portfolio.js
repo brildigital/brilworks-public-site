@@ -64,7 +64,7 @@ const Portfolio = () => {
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="/portfolio/vugo/">Know More</Link>
+                  <Link href="/portfolio/vugo">Know More</Link>
                 </p>
               </div>
             </div>

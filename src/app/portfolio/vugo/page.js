@@ -1,14 +1,14 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import AutoSlidesFooter from "@/app/components/Homepage/AutoSlidesFooter";
-import PortfolioInner from "@/app/components/Portfolio/PortfolioInner";
+import PortfolioInnerVugo from "@/app/components/Portfolio/PortfolioInnerVugo";
 import Link from "next/link";
 
 const page = () => {
   return (
     <>
       <Header />
-      <PortfolioInner />
+      <PortfolioInnerVugo />
       <AutoSlidesFooter />
       <Footer />
     </>

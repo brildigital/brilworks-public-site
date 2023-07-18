@@ -1,7 +1,47 @@
+"use client";
+import "swiper/css";
 import Link from "next/link";
 import { HonorText } from "./BigText";
+import Swiper from "swiper";
+import { useEffect } from "react";
 
 const Honors = () => {
+  useEffect(() => {
+    const initSwipers = () => {
+      new Swiper(".swiper-review", {
+        loop: true,
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1475: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          991: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          575: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    };
+    initSwipers();
+  }, []);
+
   return (
     <>
       <HonorText />

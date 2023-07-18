@@ -8,28 +8,6 @@ import ClientReviews from "../Homepage/ClientReviews";
 const ContactUs = () => {
   useEffect(() => {
     const initSwipers = () => {
-      new Swiper("#swiper-client-review", {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
-        autoplay: 5000,
-        speed: 300,
-        breakpoints: {
-          1920: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          1028: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          767: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
-
       new Swiper("#swiper-portfolio", {
         loop: true,
         slidesPerView: 3,
@@ -301,7 +279,11 @@ const ContactUs = () => {
 
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/passion-01.png" alt="passion" className="" />
+                  <img
+                    src="/images/passion-01.png"
+                    alt="passion"
+                    className=""
+                  />
                 </div>
                 <div className="steps_service">
                   <div className="no_flex">
