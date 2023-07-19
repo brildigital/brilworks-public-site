@@ -1,0 +1,99 @@
+import React from "react";
+
+const SolutionContactForm = () => {
+  return (
+    <div
+      className="mx-auto px-[15px] sec3_width_home md:py-[6rem] py-[4rem]"
+      id="section10_service"
+    >
+      <div className="bg_grey rounded-[30px] bg-[#ededed]">
+        <div className="like_flex">
+          <div className="like_basis basis-[50%]">
+            <div className="like_text bold home_sec2_txt3">
+              <p className="!w-full">
+                TAKE THE FIRST STEP BY FILLING OUT THIS QUICK FORM.
+              </p>
+            </div>
+          </div>
+          <div className="like_basis_form basis-[50%]">
+            <div className="contact_form">
+              <div
+                className="wpcf7 js"
+                id="wpcf7-f695-p456-o2"
+                lang="en-US"
+                dir="ltr"
+              >
+                <form action="" method="post" className="wpcf7-form init">
+                  <div className="form-group">
+                    <p>
+                      <label className="label_name"> Name*</label>
+                      <br />
+                      <span className="wpcf7-form-control-wrap">
+                        <input
+                          size="40"
+                          className="form-control-txt"
+                          value=""
+                          type="text"
+                          name="text-737"
+                        />
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="form-group">
+                    <p>
+                      <label className="label_name">Mobile*</label>
+                      <br />
+                      <span className="wpcf7-form-control-wrap">
+                        <input
+                          size="40"
+                          className="form-control-txt"
+                          value=""
+                          type="tel"
+                          name="tel-336"
+                        />
+                      </span>
+                    </p>
+                  </div>
+                  <div className="form-group">
+                    <p>
+                      <label className="label_name"> Email *</label>
+                      <br />
+                      <span className="wpcf7-form-control-wrap">
+                        <input
+                          size="40"
+                          className="form-control-txt"
+                          value=""
+                          type="email"
+                          name="email-160"
+                        />
+                      </span>
+                    </p>
+                  </div>
+                  <div className="btn_paddinng contact_btn btn_flex">
+                    <div className="formBtn_icon">
+                      <p>
+                        <img src="/images/right_arrow.png" alt="arrow" />
+                      </p>
+                    </div>
+                    <p>
+                      <input
+                        className="send_btn"
+                        id="submit"
+                        type="submit"
+                        value="submit"
+                      />
+                      <span className="wpcf7-spinner"></span>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SolutionContactForm;

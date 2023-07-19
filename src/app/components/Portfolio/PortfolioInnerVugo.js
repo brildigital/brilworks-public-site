@@ -3,7 +3,7 @@ import { BestAdvocateText } from "../Homepage/BigText";
 import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 
-const PortfolioInner = () => {
+const PortfolioInnerVugo = () => {
   return (
     <>
       <section className="portfolio">
@@ -101,16 +101,16 @@ const PortfolioInner = () => {
                 <div className="w-[85%] text-left">
                   <div className="service_title">
                     <p className="border-0 pt-[2rem]">
-                      Identifying the Business Needs
+                      Understanding the Requirement
                     </p>
                   </div>
                   <div className="home_sec2_txt4">
                     <p className="!leading-snug !text-left">
-                      Vugo reached out to us for developing an advertising
-                      platform that includes an interactive dashboard for
-                      details analytics. The objective of the project was to
-                      understand rider behavior, and the types of ads they watch
-                      while displaying user analysis with accuracy.
+                      When asked to create an interactive tablet app for in-car
+                      entertainment, we were tasked with creating something that
+                      enabled both the admin as well as the rider to browse
+                      through their favorite content while being exposed to ads
+                      that would be relevant to them.
                     </p>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ const PortfolioInner = () => {
           </div>
 
           <div className="md:w-[73%] w-[100%] mx-auto text-center home_sec2_txt4">
-            <p className="!pt-0">
+            <p className="!pt-0 !text-[1.5rem]">
               Our team helped Vugo achieve its product vision. We worked with
               them from the very beginning by creating a detailed strategy that
               was designed specifically for them, and we worked together to turn
@@ -429,4 +429,4 @@ const PortfolioInner = () => {
   );
 };
 
-export default PortfolioInner;
+export default PortfolioInnerVugo;

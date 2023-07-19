@@ -155,7 +155,7 @@ const Header = () => {
               </div>
               <div className="project_pages">
                 <div
-                  className={`portfolio header_font hidden-xs project_pages_none
+                  className={`portfolio header_font hidden-xs project_pages_none-1 
                     ${pathname === "/portfolio" ? " page-active" : ""}`}
                 >
                   <Link href="/portfolio">PORTFOLIO</Link>
@@ -230,7 +230,15 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/FINTECH.png" alt="fintech" />
                     </div>
-                    <p>FINTECH</p>
+                    <p
+                      className={`${
+                        pathname === "/industry/fintech-software-development"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      FINTECH
+                    </p>
                   </div>
                 </Link>
                 <Link href="/industry/media-entertainment-software-development">
@@ -241,7 +249,16 @@ const Header = () => {
                         alt="media & entertainment"
                       />
                     </div>
-                    <p>MEDIA & ENTERTAINMENT</p>
+                    <p
+                      className={`${
+                        pathname ===
+                        "/industry/media-entertainment-software-development"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      MEDIA & ENTERTAINMENT
+                    </p>
                   </div>
                 </Link>
                 <Link href="/industry/fleet-management-software-development">
@@ -269,7 +286,15 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/HEALTHCARE.png" alt="healthcare" />
                     </div>
-                    <p>HEALTHCARE</p>
+                    <p
+                      className={
+                        pathname === "/industry/healthcare-software-development"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      HEALTHCARE
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -297,7 +322,15 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT.JS.svg" alt="reactjs" />
                     </div>
-                    <p>REACT.JS</p>
+                    <p
+                      className={
+                        pathname === "/hire-reactjs-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      REACT.JS
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-java-developer">
@@ -305,7 +338,13 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/JAVA.svg" alt="java development" />
                     </div>
-                    <p>JAVA</p>
+                    <p
+                      className={
+                        pathname === "/hire-java-developer" ? "page-active" : ""
+                      }
+                    >
+                      JAVA
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-nodejs-developer">
@@ -313,7 +352,15 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/NODE.JS.svg" alt="nodejs" />
                     </div>
-                    <p>NODE.JS</p>
+                    <p
+                      className={
+                        pathname === "/hire-nodejs-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      NODE.JS
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-react-native-developer">
@@ -321,7 +368,15 @@ const Header = () => {
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT-NATIVE.svg" alt="react native" />
                     </div>
-                    <p>REACT NATIVE</p>
+                    <p
+                      className={
+                        pathname === "/hire-react-native-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      REACT NATIVE
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-aws-developer">
@@ -332,7 +387,13 @@ const Header = () => {
                         alt="aws development"
                       />
                     </div>
-                    <p>AWS DEVELOPMENT</p>
+                    <p
+                      className={
+                        pathname === "/hire-aws-developer" ? "page-active" : ""
+                      }
+                    >
+                      AWS DEVELOPMENT
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-ui-ux-designer">
@@ -343,7 +404,13 @@ const Header = () => {
                         alt="ui-ux development"
                       />
                     </div>
-                    <p>UI/UX DEVELOPMENT</p>
+                    <p
+                      className={
+                        pathname === "/hire-ui-ux-designer" ? "page-active" : ""
+                      }
+                    >
+                      UI/UX DEVELOPMENT
+                    </p>
                   </div>
                 </Link>
                 <Link href="/hire-blockchain-developer">
@@ -354,7 +421,15 @@ const Header = () => {
                         alt="blockchain development"
                       />
                     </div>
-                    <p>BLOCKCHAIN DEVELOPMENT</p>
+                    <p
+                      className={
+                        pathname === "/hire-blockchain-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      BLOCKCHAIN DEVELOPMENT
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -371,11 +446,7 @@ const Header = () => {
             <div className="padding_menu_header">
               <div className="flex_row_header_menu">
                 <div className="flex_grid-60_header_menu">
-                  <div
-                    id="accordion"
-                    className="accordion-container"
-                    onClick={handleAccordionTab3Click}
-                  >
+                  <div id="accordion" className="accordion-container">
                     <article
                       className={`content-entry home_txt3 ${
                         isTab3Open ? "open" : ""
@@ -387,13 +458,22 @@ const Header = () => {
                         className="article-title"
                         role="button"
                         tabindex="0"
+                        onClick={handleAccordionTab3Click}
                       >
                         <i></i>TECHNOLOGIES
                       </p>
                       <div className="accordion-content">
                         <Link href="/hire-reactjs-developer">
                           <div className="menu_mob_flex">
-                            <p>REACT.JS</p>
+                            <p
+                              className={
+                                pathname === "/hire-reactjs-developer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              REACT.JS
+                            </p>
                             <div className="mega_menu_icon">
                               <img src="/images/REACT.JS.svg" alt="reactjs" />
                             </div>
@@ -403,7 +483,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-java-developer">
                           <div className="menu_mob_flex">
-                            <p>JAVA</p>
+                            <p
+                              className={
+                                pathname === "/hire-java-developer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              JAVA
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/JAVA.svg"
@@ -416,7 +504,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-nodejs-developer">
                           <div className="menu_mob_flex">
-                            <p>NODE.JS</p>
+                            <p
+                              className={
+                                pathname === "/hire-nodejs-developer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              NODE.JS
+                            </p>
                             <div className="mega_menu_icon">
                               <img src="/images/NODE.JS.svg" alt="nodejs" />
                             </div>
@@ -426,7 +522,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-react-native-developer">
                           <div className="menu_mob_flex">
-                            <p>REACT NATIVE</p>
+                            <p
+                              className={
+                                pathname === "/hire-react-native-developer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              REACT NATIVE
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/REACT-NATIVE.svg"
@@ -439,7 +543,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-aws-developer">
                           <div className="menu_mob_flex">
-                            <p>AWS DEVELOPMENT</p>
+                            <p
+                              className={
+                                pathname === "/hire-aws-developer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              AWS DEVELOPMENT
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/AWS-DEVELOPMENT.svg"
@@ -452,7 +564,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-ui-ux-designer">
                           <div className="menu_mob_flex">
-                            <p>UI/UX DEVELOPMENT</p>
+                            <p
+                              className={
+                                pathname === "/hire-ui-ux-designer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              UI/UX DEVELOPMENT
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/UIUX-DEVELOPMENT.svg"
@@ -465,7 +585,15 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/hire-blockchain-developer">
                           <div className="menu_mob_flex">
-                            <p>BLOCKCHAIN DEVELOPMENT</p>
+                            <p
+                              className={
+                                pathname === "/hire-blockchain-designer"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              BLOCKCHAIN DEVELOPMENT
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
@@ -477,11 +605,7 @@ const Header = () => {
                       </div>
                     </article>
                   </div>
-                  <div
-                    id="accordion"
-                    className="accordion-container"
-                    onClick={handleAccordionTab4Click}
-                  >
+                  <div id="accordion" className="accordion-container">
                     <article
                       className={`content-entry home_txt3 ${
                         isTab4Open ? "open" : ""
@@ -493,13 +617,23 @@ const Header = () => {
                         className="article-title"
                         role="button"
                         tabindex="0"
+                        onClick={handleAccordionTab4Click}
                       >
                         <i></i>SOLUTIONS
                       </p>
                       <div className="accordion-content">
                         <Link href="/industry/fintech-software-development">
                           <div className="menu_mob_flex">
-                            <p>FINTECH</p>
+                            <p
+                              className={
+                                pathname ===
+                                "/industry/fintech-software-development"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              FINTECH
+                            </p>
                             <div className="mega_menu_icon">
                               <img src="/images/FINTECH.png" alt="fintech" />
                             </div>
@@ -509,7 +643,16 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/industry/media-entertainment-software-development">
                           <div className="menu_mob_flex">
-                            <p>MEDIA & ENTERTAINMENT</p>
+                            <p
+                              className={
+                                pathname ===
+                                "/industry/media-entertainment-software-development"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              MEDIA & ENTERTAINMENT
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/MEDIA-ENTERTAINMENT.png"
@@ -522,7 +665,16 @@ const Header = () => {
                       <div className="accordion-content">
                         <Link href="/industry/fleet-management-software-development">
                           <div className="menu_mob_flex">
-                            <p>FLEET MANAGEMENT + GPS</p>
+                            <p
+                              className={
+                                pathname ===
+                                "/industry/fleet-management-software-development"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              FLEET MANAGEMENT + GPS
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/FLEET-MANAGEMENT-GPS.png"
@@ -533,17 +685,18 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link
-                          href="/industry/healthcare-software-development"
-                          className={
-                            pathname ===
-                            "/industry/healthcare-software-development"
-                              ? "page-active"
-                              : ""
-                          }
-                        >
+                        <Link href="/industry/healthcare-software-development">
                           <div className="menu_mob_flex">
-                            <p>HEALTHCARE</p>
+                            <p
+                              className={
+                                pathname ===
+                                "/industry/healthcare-software-development"
+                                  ? "page-active"
+                                  : ""
+                              }
+                            >
+                              HEALTHCARE
+                            </p>
                             <div className="mega_menu_icon">
                               <img
                                 src="/images/HEALTHCARE.png"
@@ -558,49 +711,62 @@ const Header = () => {
 
                   <div className="menu_txt1">
                     <Link href="/our-process">
-                      <p>OUR PROCESS</p>
+                      <p
+                        className={
+                          pathname === "/our-process" ? "page-active" : ""
+                        }
+                      >
+                        OUR PROCESS
+                      </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link
-                      href="/portfolio"
-                      className={pathname === "/portfolio" ? "page-active" : ""}
-                    >
-                      <p>PORTFOLIO</p>
+                    <Link href="/portfolio">
+                      <p
+                        className={
+                          pathname === "/portfolio" ? "page-active" : ""
+                        }
+                      >
+                        PORTFOLIO
+                      </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link
-                      href="/about-us"
-                      className={pathname === "/about-us" ? "page-active" : ""}
-                    >
-                      <p>ABOUT</p>
+                    <Link href="/about-us">
+                      <p
+                        className={
+                          pathname === "/about-us" ? "page-active" : ""
+                        }
+                      >
+                        ABOUT
+                      </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link
-                      href="/career"
-                      className={pathname === "/career" ? "page-active" : ""}
-                    >
-                      <p>CAREER</p>
+                    <Link href="/career">
+                      <p
+                        className={pathname === "/career" ? "page-active" : ""}
+                      >
+                        CAREER
+                      </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link
-                      href="/contact-us"
-                      className={
-                        pathname === "/contact-us" ? "page-active" : ""
-                      }
-                    >
-                      <p>CONTACT</p>
+                    <Link href="/contact-us">
+                      <p
+                        className={
+                          pathname === "/contact-us" ? "page-active" : ""
+                        }
+                      >
+                        CONTACT
+                      </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link
-                      href="/blog"
-                      className={pathname === "/blog" ? "page-active" : ""}
-                    >
-                      <p>BLOGS</p>
+                    <Link href="/blog">
+                      <p className={pathname === "/blog" ? "page-active" : ""}>
+                        BLOGS
+                      </p>
                     </Link>
                   </div>
                 </div>

@@ -45,6 +45,7 @@ a:hover {
 html {
   scroll-behavior: smooth;
 }
+
 img {
   width: 100%;
   max-width: 100%;
@@ -484,6 +485,7 @@ a {
 }
 
 .menu_txt1 p:hover,
+.project_pages_none-1:hover,
 .menu .accordion-container .article-title:hover {
   color: var(--main_menu_hover_color);
   transition: all 0.4s ease-in-out;
@@ -903,6 +905,15 @@ textarea.form-control-txt {
   overflow-x: hidden;
   background: #f0f3f3;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
 .track {
   white-space: nowrap;
   width: 100%;
@@ -1084,7 +1095,7 @@ textarea.form-control-txt {
   padding-top: 1.5rem;
 }
 .faq-bottom .accordion-button {
-  font-size: var(--font_24);
+  font-size: var(--font_21);
   font-family: var(--bold) !important;
   padding: 1.2rem 2rem;
   color: var(--color_black) !important;
@@ -1092,9 +1103,16 @@ textarea.form-control-txt {
   border: 0 !important;
 }
 .faq-bottom .accordion-body {
-  color: grey;
-  font-size: var(--font_21);
+  color: var(--color_black);
+  font-size: 1.2rem;
   font-family: var(--regular);
+}
+
+.faq-bottom .accordion-body a:hover {
+  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .faq-bottom .accordion-item {
   border-radius: 20px !important;
@@ -1115,7 +1133,6 @@ textarea.form-control-txt {
   font-size: var(--font_16) !important;
 }
 .service_description p {
-  border-bottom: 1px solid #80808038;
   padding-bottom: 1rem;
   min-height: 161px;
 }
@@ -1160,6 +1177,9 @@ textarea.form-control-txt {
 
 .contact_btn {
   margin: 2rem auto 0 0 !important;
+  transition: all 0.5s ease-in-out;
+}
+.contact_btn_solution {
   transition: all 0.5s ease-in-out;
 }
 .contact_form .btn_paddinng {
@@ -1415,6 +1435,21 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
+.portfolio_title p {
+  font-family: var(--extra_bold);
+  font-size: var(--font_28);
+}
+
+.fintech-portfolio-sec {
+  font-family: var(--regular);
+  font-size: 1.8rem;
+}
+
+.fintech-portfolio-content {
+  font-family: var(--medium);
+  color: var(--color_black);
+  padding-top: 1.5rem;
+}
 .portflio_flex_40 {
   flex-basis: 40%;
 }

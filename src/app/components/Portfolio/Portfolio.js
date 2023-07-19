@@ -64,7 +64,7 @@ const Portfolio = () => {
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="/portfolio/vugo">Know More</Link>
+                  <Link href="/portfolio/vugo/">Know More</Link>
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Portfolio = () => {
             </div>
             <div className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="https://www.brilworks.com/portfolio/rastrack/">
+                <Link href="/portfolio/rastrack/">
                   <img
                     className="alignnone"
                     src="/images/right_arrow.png"
@@ -124,9 +124,7 @@ const Portfolio = () => {
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="https://www.brilworks.com/portfolio/rastrack/">
-                    Know More
-                  </Link>
+                  <Link href="/portfolio/rastrack/">Know More</Link>
                 </p>
               </div>
             </div>
@@ -151,7 +149,7 @@ const Portfolio = () => {
             </div>
             <div className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="https://www.brilworks.com/portfolio/orokii/">
+                <Link href="/portfolio/orokii/">
                   <img
                     className="alignnone"
                     src="/images/right_arrow.png"
@@ -160,9 +158,7 @@ const Portfolio = () => {
                 </Link>
               </div>
               <div className="portfolio_know_more_txt">
-                <Link href="https://www.brilworks.com/portfolio/orokii/">
-                  Know More
-                </Link>
+                <Link href="/portfolio/orokii/">Know More</Link>
               </div>
             </div>
           </div>
@@ -212,7 +208,7 @@ const Portfolio = () => {
             </div>
             <div className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="https://www.brilworks.com/portfolio/eccocar/">
+                <Link href="/portfolio/eccocar/">
                   <img
                     className="alignnone"
                     src="/images/right_arrow.png"
@@ -222,9 +218,7 @@ const Portfolio = () => {
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="https://www.brilworks.com/portfolio/eccocar/">
-                    Know More
-                  </Link>
+                  <Link href="/portfolio/eccocar/">Know More</Link>
                 </p>
               </div>
             </div>
@@ -249,7 +243,7 @@ const Portfolio = () => {
             </div>
             <div className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="https://www.brilworks.com/portfolio/trackimo/">
+                <Link href="/portfolio/trackimo/">
                   <img
                     className="alignnone"
                     src="/images/right_arrow.png"
@@ -259,9 +253,7 @@ const Portfolio = () => {
               </div>
               <div className="portfolio_know_more_txt">
                 <p>
-                  <Link href="https://www.brilworks.com/portfolio/trackimo/">
-                    Know More
-                  </Link>
+                  <Link href="/portfolio/trackimo/">Know More</Link>
                 </p>
               </div>
             </div>
