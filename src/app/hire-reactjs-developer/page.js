@@ -1,13 +1,13 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 import AutoSlidesFooter from "../components/Homepage/AutoSlidesFooter";
-import ReactTechnology from "../components/Technologies/ReactTechnology";
+import ReactJSTechnology from "../components/Technologies/ReactJSTechnology";
 
 const page = () => {
   return (
     <>
       <Header />
-      <ReactTechnology />
+      <ReactJSTechnology />
       <AutoSlidesFooter />
       <Footer />
     </>

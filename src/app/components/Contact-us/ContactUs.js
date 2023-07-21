@@ -6,6 +6,7 @@ import "swiper/css";
 import ClientReviews from "../Homepage/ClientReviews";
 
 const ContactUs = () => {
+  const isMobile = window.innerWidth < 767;
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-portfolio", {
@@ -85,14 +86,15 @@ const ContactUs = () => {
             <div>
               <form action="" method="post" className="wpcf7-form init">
                 <div className="form-group">
-                  <p>
-                    <label className="label_name">First &amp; Last Name*</label>
+                  <p className={isMobile && "py-4"}>
+                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                      First &amp; Last Name*
+                    </label>
                     <br />
                     <span className="wpcf7-form-control-wrap">
                       <input
                         size="40"
                         className="form-control-txt"
-                        value=""
                         type="text"
                         name="text-737"
                       />
@@ -100,14 +102,15 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p>
-                    <label className="label_name">Work Email Address*</label>
+                  <p className={isMobile && "py-4"}>
+                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                      Work Email Address*
+                    </label>
                     <br />
                     <span className="wpcf7-form-control-wrap">
                       <input
                         size="40"
                         className="form-control-txt"
-                        value=""
                         type="email"
                         name="email-160"
                       />
@@ -115,14 +118,15 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p>
-                    <label className="label_name">Phone Number*</label>
+                  <p className={isMobile && "py-4"}>
+                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                      Phone Number*
+                    </label>
                     <br />
                     <span className="wpcf7-form-control-wrap">
                       <input
                         size="40"
                         className="form-control-txt"
-                        value=""
                         type="tel"
                         name="tel-336"
                       />
@@ -130,14 +134,16 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p>
-                    <label className="label_name">Your Message</label>
+                  <p className={isMobile && "py-4"}>
+                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                      Your Message
+                    </label>
                     <br />
-                    <span className="wpcf7-form-control-wrap">
+                    <span className="wpcf7-form-control-wrap mt-4">
                       <textarea
                         cols="1"
                         rows="2"
-                        className="form-control-txt"
+                        className="form-control-txt mt"
                         id="message"
                         name="textarea-62"
                       ></textarea>
@@ -392,8 +398,8 @@ const ContactUs = () => {
                   >
                     <form action="" method="post" className="wpcf7-form init">
                       <div className="form-group">
-                        <p>
-                          <label className="label_name">
+                        <p className={isMobile && "py-4"}>
+                          <label className={`label_name ${isMobile && "pb-2"}`}>
                             First &amp; Last Name*
                           </label>
                           <br />
@@ -401,7 +407,6 @@ const ContactUs = () => {
                             <input
                               size="40"
                               className="form-control-txt"
-                              value=""
                               type="text"
                               name="text-737"
                             />
@@ -409,8 +414,8 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p>
-                          <label className="label_name">
+                        <p className={isMobile && "py-4"}>
+                          <label className={`label_name ${isMobile && "pb-2"}`}>
                             Work Email Address*
                           </label>
                           <br />
@@ -418,7 +423,6 @@ const ContactUs = () => {
                             <input
                               size="40"
                               className="form-control-txt"
-                              value=""
                               type="email"
                               name="email-160"
                             />
@@ -426,14 +430,15 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p>
-                          <label className="label_name">Phone Number*</label>
+                        <p className={isMobile && "py-4"}>
+                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                            Phone Number*
+                          </label>
                           <br />
                           <span className="wpcf7-form-control-wrap">
                             <input
                               size="40"
                               className="form-control-txt"
-                              value=""
                               type="tel"
                               name="tel-336"
                             />
@@ -441,14 +446,18 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p>
-                          <label className="label_name">Your Message</label>
+                        <p className={isMobile && "py-4"}>
+                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                            Your Message
+                          </label>
                           <br />
-                          <span className="wpcf7-form-control-wrap">
+                          <span className="wpcf7-form-control-wrap mt-4">
                             <textarea
                               cols="1"
                               rows="2"
-                              className="form-control-txt"
+                              className={`form-control-txt ${
+                                isMobile && "mt-4"
+                              }`}
                               id="message"
                               name="textarea-62"
                             ></textarea>

@@ -379,7 +379,7 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-aws-developer">
+                <Link href="/hire-aws-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -587,7 +587,7 @@ const Header = () => {
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-blockchain-designer"
+                                pathname === "/hire-blockchain-developer"
                                   ? "page-active"
                                   : ""
                               }

@@ -136,7 +136,10 @@ const OurProcessPage = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end">
+        <div
+          className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end"
+          id="workSec4"
+        >
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
               <p className="md:!w-[74%] !w-full p-0">
@@ -880,7 +883,10 @@ const OurProcessPage = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div
+          className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end"
+          id="workSec5"
+        >
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
               <p className="md:!w-[74%] !w-full p-0">

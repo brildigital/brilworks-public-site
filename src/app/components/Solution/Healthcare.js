@@ -601,7 +601,7 @@ const HealthCare = () => {
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div
                     id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 ml-8 w-full"
+                    className="d-block accordion nav nav-tabs !mb-0 md:ml-8 w-full"
                     role="tablist"
                   >
                     <div

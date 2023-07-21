@@ -67,7 +67,7 @@ const SeeingBelieving = () => {
               </Link>
             </div>
             <div className="swiper-slide">
-              <Link href="https://www.brilworks.com/portfolio/trackimo/">
+              <Link href="/portfolio/trackimo/">
                 <img
                   className="alignnone wp-image-47 size-full"
                   src="/images/Trackimo.jpg"
@@ -91,7 +91,7 @@ const SeeingBelieving = () => {
               </Link>
             </div>
             <div className="swiper-slide">
-              <Link href="https://www.brilworks.com/portfolio/orokii/">
+              <Link href="/portfolio/orokii/">
                 <img
                   className="alignnone wp-image-48 size-full"
                   src="/images/Orokii(1).jpg"
@@ -115,7 +115,7 @@ const SeeingBelieving = () => {
               </Link>
             </div>
             <div className="swiper-slide">
-              <Link href="https://www.brilworks.com/portfolio/eccocar/">
+              <Link href="/portfolio/eccocar/">
                 <img
                   className="alignnone wp-image-49 size-full"
                   src="/images/Eccocar(1).jpg"
@@ -141,7 +141,7 @@ const SeeingBelieving = () => {
             </div>
 
             <div className="swiper-slide">
-              <Link href="https://www.brilworks.com/portfolio/rastrack/">
+              <Link href="/portfolio/rastrack/">
                 <img
                   className="alignnone wp-image-50 size-full"
                   src="/images/Rastrack(1).jpg"

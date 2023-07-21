@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
 
 const HomepageContactForm = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <div className="home_sec3_box">
@@ -26,8 +27,10 @@ const HomepageContactForm = () => {
                 >
                   <form action="" method="post" className="wpcf7-form init">
                     <div className="form-group">
-                      <p>
-                        <label className="label_name">Name*</label>
+                      <p className={isMobile && "py-4"}>
+                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                          Name*
+                        </label>
                         <br />
                         <span
                           className="wpcf7-form-control-wrap"
@@ -38,7 +41,6 @@ const HomepageContactForm = () => {
                             className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
                             aria-required="true"
                             aria-invalid="false"
-                            value=""
                             type="text"
                             name="text-807"
                           />
@@ -46,8 +48,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p>
-                        <label className="label_name">Company*</label>
+                      <p className={isMobile && "py-4"}>
+                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                          Company*
+                        </label>
                         <br />
                         <span
                           className="wpcf7-form-control-wrap"
@@ -58,7 +62,6 @@ const HomepageContactForm = () => {
                             className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
                             aria-required="true"
                             aria-invalid="false"
-                            value=""
                             type="text"
                             name="text-8070"
                           />
@@ -66,8 +69,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p>
-                        <label className="label_name">Email Id*</label>
+                      <p className={isMobile && "py-4"}>
+                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                          Email Id*
+                        </label>
                         <br />
                         <span
                           className="wpcf7-form-control-wrap"
@@ -78,7 +83,6 @@ const HomepageContactForm = () => {
                             className="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control-txt"
                             aria-required="true"
                             aria-invalid="false"
-                            value=""
                             type="email"
                             name="email-866"
                           />
@@ -86,8 +90,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p>
-                        <label className="label_name">Message</label>
+                      <p className={isMobile && "py-4"}>
+                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                          Message
+                        </label>
                         <br />
                         <span
                           className="wpcf7-form-control-wrap"
@@ -96,7 +102,9 @@ const HomepageContactForm = () => {
                           <textarea
                             cols="1"
                             rows="2"
-                            className="wpcf7-form-control wpcf7-textarea form-control-txt"
+                            className={`wpcf7-form-control wpcf7-textarea form-control-txt ${
+                              isMobile && "mt-4"
+                            }`}
                             id="message"
                             aria-invalid="false"
                             name="textarea-797"
@@ -104,7 +112,7 @@ const HomepageContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="btn_paddinng">
+                    <div className="btn_paddinng pt-4">
                       <div type="submit" className="home_ready_sec transition">
                         <p>
                           <input
