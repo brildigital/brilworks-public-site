@@ -1,6 +1,8 @@
 "use client";
+import { useMediaQuery } from "react-responsive";
+
 const TechnologyContactForm = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div
       className="mx-auto sec3_width_home md:py-[4rem] py-[2rem]"

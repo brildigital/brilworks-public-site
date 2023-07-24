@@ -4,9 +4,10 @@ import MediaNEntertainmentFAQs from "./MediaNEntertainmentFAQs";
 import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
+import { useMediaQuery } from "react-responsive";
 
 const MediaAndEntertainment = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section className="portfolio mt-[6rem]">

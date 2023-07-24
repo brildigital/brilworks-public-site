@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 const GameChanger = () => {
-  const isMobile = window.innerWidth < 414;
+  const isMobile = useMediaQuery({ maxWidth: 414 });
   return (
     <div className="relative">
       <div className="home_sec1_img">

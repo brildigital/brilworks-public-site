@@ -16,7 +16,7 @@ const ReactJSTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/react-banner.png"
+                src="/images/react-banner.png"
                 alt="our process"
               />
             </p>

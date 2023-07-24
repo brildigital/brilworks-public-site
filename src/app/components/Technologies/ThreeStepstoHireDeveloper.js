@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 const ThreeStepstoHireDeveloper = () => {
   const pathname = usePathname();
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <section className="">
       <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">

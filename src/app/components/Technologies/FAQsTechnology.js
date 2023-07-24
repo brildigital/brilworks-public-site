@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 const FAQsTechnology = () => {
   const pathname = usePathname();
-  const isMobile = window.innerWidth > 786;
+
   return (
     <div className="sec3_width_home faq-bottom mb-[5rem] pt-0">
       <div className="service_sec3 md:text-center text-left">

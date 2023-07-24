@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 
 const ReactNativeDevelopers = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">

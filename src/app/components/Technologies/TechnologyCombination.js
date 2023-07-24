@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 const TechnologyCombination = () => {
   const pathname = usePathname();
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
     <div className="mx-auto service_width">

@@ -767,7 +767,7 @@ const BlogInner = () => {
                   <li aria-level="1">
                     <span>
                       It allows for multi-platform app development that can run
-                      on Android, iOS, macOS, and Windows.&nbsp;
+                      on Android, iOS, macOS, and Windows. &nbsp;
                     </span>
                   </li>
                   <li aria-level="1">

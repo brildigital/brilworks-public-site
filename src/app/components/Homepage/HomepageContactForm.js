@@ -1,7 +1,8 @@
 "use client";
+import { useMediaQuery } from "react-responsive";
 
 const HomepageContactForm = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <div className="home_sec3_box">

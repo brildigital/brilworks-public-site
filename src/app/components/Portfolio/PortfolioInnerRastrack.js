@@ -2,10 +2,11 @@
 import Link from "next/link";
 import { BestAdvocateText } from "../Homepage/BigText";
 import ClientReviews from "../Homepage/ClientReviews";
+import { useMediaQuery } from "react-responsive";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 
 const PortfolioInnerRastrack = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section className="portfolio">

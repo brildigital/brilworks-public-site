@@ -15,7 +15,7 @@ const BlockchainTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/block-chain.png"
+                src="/images/block-chain.png"
                 alt="Blockchain banner"
               />
             </p>
