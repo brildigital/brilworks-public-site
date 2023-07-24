@@ -15,7 +15,7 @@ const AWSTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/AWS.webp"
+                src="/images/AWS.webp"
                 alt="AWS banner"
               />
             </p>

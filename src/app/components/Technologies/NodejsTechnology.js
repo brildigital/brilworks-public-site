@@ -16,7 +16,7 @@ const NodejsTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/nord-services-banner.png"
+                src="/images/nord-services-banner.png"
                 alt="Node banner"
               />
             </p>

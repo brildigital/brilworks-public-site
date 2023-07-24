@@ -13,7 +13,7 @@ const Config = ({ blok }) => {
                 <div className="header_logo">
                   <Link href="/">
                     <Image
-                      src="images/logo.png"
+                      src="/images/logo.png"
                       alt="Brilworks Logo"
                       width="206"
                       height="62"
@@ -41,7 +41,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="images/FINTECH.png"
+                                        src="/images/FINTECH.png"
                                         alt="fintech"
                                       />
                                     </div>
@@ -52,7 +52,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="images/MEDIA-ENTERTAINMENT.png"
+                                        src="/images/MEDIA-ENTERTAINMENT.png"
                                         alt="media & entertainment"
                                       />
                                     </div>
@@ -63,7 +63,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="images/FLEET-MANAGEMENT-GPS.png"
+                                        src="/images/FLEET-MANAGEMENT-GPS.png"
                                         alt="fleet management + gps"
                                       />
                                     </div>
@@ -74,7 +74,7 @@ const Config = ({ blok }) => {
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
-                                        src="images/HEALTHCARE.png"
+                                        src="/images/HEALTHCARE.png"
                                         alt="healthcare"
                                       />
                                     </div>
@@ -105,7 +105,7 @@ const Config = ({ blok }) => {
                     >
                       <p>SOLUTIONS</p>
                       <div className="arrow_size">
-                        <img src="images/down-arrow.png" alt="down arrow" />
+                        <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
                     </Link>
                   </div>
@@ -119,7 +119,7 @@ const Config = ({ blok }) => {
                     >
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
-                        <img src="images/down-arrow.png" alt="down arrow" />
+                        <img src="/images/down-arrow.png" alt="down arrow" />
                       </div>
                     </Link>
                   </div>
@@ -146,7 +146,7 @@ const Config = ({ blok }) => {
         <div className="home_sec1_img">
           <img
             className="size-full"
-            src="images/banner.jpg"
+            src="/images/banner.jpg"
             // width="auto"
             // height="auto"
             alt="homepage banner"
@@ -183,7 +183,7 @@ const Config = ({ blok }) => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone wp-image-24 size-full"
-                    src="images/our-work.png"
+                    src="/images/our-work.png"
                     alt="9 dots"
                     width="49"
                     height="49"
@@ -205,7 +205,7 @@ const Config = ({ blok }) => {
     //         <Link href="/">
     //           {/* <Link> */}
     //           <img
-    //             src="images/logo.png"
+    //             src="/images/logo.png"
     //             alt="Brilworks Logo"
     //             width="206"
     //             height="62"

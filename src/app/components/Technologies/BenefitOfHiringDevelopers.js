@@ -1,9 +1,10 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
 
 const BenefitOfHiringDevelopers = () => {
   const pathname = usePathname();
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className="mx-auto service_width md:py-[6rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
       <div className="end-To-end">

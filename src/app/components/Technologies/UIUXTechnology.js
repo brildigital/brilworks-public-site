@@ -15,7 +15,7 @@ const UIUXTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/2-ui-ux.png"
+                src="/images/2-ui-ux.png"
                 alt="React Native banner"
               />
             </p>

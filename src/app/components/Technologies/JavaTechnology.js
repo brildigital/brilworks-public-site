@@ -16,7 +16,7 @@ const JavaTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/java-services-banner.png"
+                src="/images/java-services-banner.png"
                 alt="our process"
               />
             </p>

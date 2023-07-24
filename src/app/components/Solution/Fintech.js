@@ -4,9 +4,10 @@ import FintechFAQs from "./FintechFAQs";
 import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
+import { useMediaQuery } from "react-responsive";
 
 const Fintech = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section className="portfolio mt-[6rem]">

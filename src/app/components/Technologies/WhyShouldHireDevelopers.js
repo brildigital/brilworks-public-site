@@ -1,9 +1,9 @@
 "use client";
-
+import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
-const isMobile = window.innerWidth < 767;
 
 const WhyShouldHireDevelopers = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const pathname = usePathname();
   return (
     <section className="service_width linear-gradient-bg">

@@ -9,7 +9,7 @@ const Blogs = () => {
         <div className="blog-box overflow-hidden">
           <Link href="">
             <img
-              src="images/Thumbnail-VR0.svg"
+              src="/images/Thumbnail-VR0.svg"
               className="vc_gitem-zone-img"
               alt="Banner - Apple Vision Pro vs. Meta Quest 3"
             />
@@ -24,7 +24,7 @@ const Blogs = () => {
         <div className="blog-box overflow-hidden">
           <Link href="">
             <img
-              src="images/Thumbnail-Rapid.svg "
+              src="/images/Thumbnail-Rapid.svg "
               className="vc_gitem-zone-img"
               alt="Banner-Rapid app development"
             />
@@ -39,7 +39,7 @@ const Blogs = () => {
         <div className="blog-box overflow-hidden">
           <Link href="">
             <img
-              src="images/Thumbnail-sendgrid-vs-mailgun.svg"
+              src="/images/Thumbnail-sendgrid-vs-mailgun.svg"
               className="vc_gitem-zone-img"
               alt="Banner-sendgrid vs mailgun"
             />
@@ -64,7 +64,7 @@ const Blogs = () => {
             decoding="async"
             loading="lazy"
             className="black_aerrow alignnone wp-image-28 size-full"
-            src="images/black_aerrow-1.png"
+            src="/images/black_aerrow-1.png"
             alt="arrow"
             width="46"
             height="18"
@@ -73,7 +73,7 @@ const Blogs = () => {
             decoding="async"
             loading="lazy"
             className="gradiant_aerrow alignnone wp-image-29 size-full"
-            src="images/arrow-gradiant.png"
+            src="/images/arrow-gradiant.png"
             alt="arrow"
             width="46"
             height="18"

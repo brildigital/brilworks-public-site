@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Swiper from "swiper";
 import "swiper/css";
+import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 
 const ContactUs = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-portfolio", {

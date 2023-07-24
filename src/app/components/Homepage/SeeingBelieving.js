@@ -5,9 +5,10 @@ import Link from "next/link";
 import { BelievingText } from "./BigText";
 import { useEffect } from "react";
 import Swiper from "swiper";
+import { useMediaQuery } from "react-responsive";
 
 const SeeingBelieving = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
     const initSwipers = () => {

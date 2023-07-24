@@ -3,9 +3,10 @@ import "swiper/css";
 import { useEffect } from "react";
 import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import Swiper from "swiper";
+import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = () => {
-  const isMobile = window.innerWidth < 767;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-client-review", {

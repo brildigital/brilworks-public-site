@@ -15,7 +15,7 @@ const ReactNativeTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="images/REACT-NATIVE-banner.png"
+                src="/images/REACT-NATIVE-banner.png"
                 alt="React Native banner"
               />
             </p>
