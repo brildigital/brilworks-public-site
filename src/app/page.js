@@ -1,18 +1,31 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
+import HomePage from "./home/page";
 import StoryblokStory from "@storyblok/react/story";
+import Layout from "./components/Layout";
 
 export default async function Home() {
-  const { data } = await fetchData();
+  const { props: data } = await fetchData();
   return (
-    <div>
-      <StoryblokStory story={data?.story} />
-    </div>
+    // <Layout story={data?.config}>
+    //   <StoryblokStory story={data?.story} />
+    // </Layout>
+    <HomePage />
   );
 }
 
-export async function fetchData() {
-  let sbParams = { version: "draft" };
-
+export async function fetchData(slug) {
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams);
+
+  let sbParams = { version: "draft", resolve_links: "url" };
+
+  let { data } = await storyblokApi.get(`cdn/stories/home`, sbParams);
+  let { data: config } = await storyblokApi.get("cdn/stories/config");
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+      config: config ? config.story : false,
+    },
+    revalidate: 3600,
+  };
 }

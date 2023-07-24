@@ -1,0 +1,161 @@
+import Link from "next/link";
+
+const ToolsAndGetInTouch = () => {
+  return (
+    <>
+      <div className="service_width">
+        <div className="">
+          <div className="sec6_work work_padding">
+            <div className="end-To-end">
+              <div className="endTO_text home_sec2_txt3">
+                <p className="md:!w-[74%] !w-full">
+                  TOOLS WE USE TO MANAGE OUR WORKFLOW
+                </p>
+              </div>
+            </div>
+            <div className="jira_icon_flex">
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    src="/images/jira.png"
+                    alt="jira"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">Jira</p>
+                </div>
+              </div>
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    src="/images/gitHub.png"
+                    alt="GitHub"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">GitHub</p>
+                </div>
+              </div>
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    src="/images/miro.png"
+                    alt="Miro"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">Miro</p>
+                </div>
+              </div>
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    src="/images/Google-Meet.png"
+                    alt="Google Meet"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">Google Meet</p>
+                </div>
+              </div>
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    src="/images/slack.png"
+                    alt="Slack"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">Slack</p>
+                </div>
+              </div>
+              <div className="icon_logo">
+                <div className="jira_icon_img">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone"
+                    img
+                    src="/images/confluence.png"
+                    alt="Confluence"
+                    width="90"
+                    height="90"
+                  />
+                </div>
+                <div className="jira_textTitle service_title">
+                  <p className="ng-binding">Confluence</p>
+                </div>
+              </div>
+            </div>
+            <div className="ready_sec">
+              <div className="ready_img relative">
+                <p>
+                  <img
+                    className="ready_main web_img alignnone"
+                    src="/images/ready.png"
+                    alt="get in touch"
+                  />
+                  <img
+                    className="mobile_img border_redius20 alignnone"
+                    src="/images/ready_mobile.jpg"
+                    alt="get in touch"
+                  />
+                </p>
+                <div className="redy_title home_sec2_txt3">
+                  <p className="!w-full">
+                    READY TO DEVELOP YOUR SUCCESS STORY WITH US?
+                  </p>
+                </div>
+                <div className="get_touch">
+                  <div className="get_flex ml-14">
+                    <div className="get_icon">
+                      <Link href="contact-us">
+                        <img
+                          className="alignnone"
+                          src="/images/right_arrow.png"
+                          alt=""
+                        />
+                      </Link>
+                    </div>
+                    <div className="get_text">
+                      <p>
+                        <Link href="contact-us">Get in Touch</Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ToolsAndGetInTouch;
