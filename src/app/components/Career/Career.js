@@ -439,7 +439,7 @@ const Career = () => {
           </p>
         </div>
 
-        <div class="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[30px]">
+        <div class="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-[30px]">
           <div class="hover_class relative">
             <div class="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div class="home_txt3">

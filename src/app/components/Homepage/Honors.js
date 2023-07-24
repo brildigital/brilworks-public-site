@@ -1,16 +1,19 @@
 "use client";
 import "swiper/css";
+import "swiper/css/pagination";
 import Link from "next/link";
 import { HonorText } from "./BigText";
 import Swiper from "swiper";
 import { useEffect } from "react";
 
 const Honors = () => {
+  const isMobile = window.innerWidth < 767;
   useEffect(() => {
     const initSwipers = () => {
       new Swiper(".swiper-review", {
-        loop: true,
-        slidesPerView: 4,
+        loop: isMobile ? false : true,
+        slidesPerView: isMobile ? 1 : 4,
+        pagination: true,
         paginationClickable: true,
         spaceBetween: 20,
         autoplay: 5000,
@@ -46,7 +49,7 @@ const Honors = () => {
     <>
       <HonorText />
       <div className="w-[90%] mx-auto">
-        <div className="swiper-container swiper-review">
+        <div className="swiper-container swiper-review pl-3 mr-2">
           <div className="swiper-wrapper">
             <div className="swiper-slide">
               <div className="award ng-scope">

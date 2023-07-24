@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+const isMobile = window.innerWidth < 767;
 
 const WhyShouldHireDevelopers = () => {
   const pathname = usePathname();
@@ -18,7 +19,11 @@ const WhyShouldHireDevelopers = () => {
                 </div>
               </div>
 
-              <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+              <p
+                className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                  isMobile && "!text-[1rem]"
+                } `}
+              >
                 Just as React is the hottest framework for frontend today, we’re
                 the hottest React JS Development Company that can help you
                 develop quality React applications in no time. Our Reactjs
@@ -38,7 +43,11 @@ const WhyShouldHireDevelopers = () => {
                     </div>
                   </div>
 
-                  <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                  <p
+                    className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                      isMobile && "!text-[1rem]"
+                    } `}
+                  >
                     Whether you are looking for enterprise-level business
                     solutions or just to build a compelling product, our java
                     developers can help you get unstuck and stay on track. From
@@ -62,7 +71,11 @@ const WhyShouldHireDevelopers = () => {
                         </div>
                       </div>
 
-                      <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                      <p
+                        className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                          isMobile && "!text-[1rem]"
+                        } `}
+                      >
                         Node.js development is a very exciting field and we take
                         pride in being Node experts. Our talent helps companies
                         who have not had the experience yet of benefiting from
@@ -82,7 +95,11 @@ const WhyShouldHireDevelopers = () => {
                             </div>
                           </div>
 
-                          <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                          <p
+                            className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                              isMobile && "!text-[1rem]"
+                            } `}
+                          >
                             React Native has taken the world by storm and
                             rightly so. It’s fast, flexible, and cost-effective.
                             We leverage React Native to deliver brilliant &
@@ -105,7 +122,11 @@ const WhyShouldHireDevelopers = () => {
                                 </div>
                               </div>
 
-                              <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                              <p
+                                className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                                  isMobile && "!text-[1rem]"
+                                } `}
+                              >
                                 We truly understand how important it is to have
                                 a stable, predictable, and cost-effective
                                 technology infrastructure. Our AWS experts
@@ -129,7 +150,11 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
                                   </div>
 
-                                  <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                                  <p
+                                    className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                                      isMobile && "!text-[1rem]"
+                                    } `}
+                                  >
                                     We leverage our expertise to help you
                                     achieve a dazzling presence and superior
                                     brand value. Our top-notch designers can
@@ -149,7 +174,11 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
                                   </div>
 
-                                  <p className="p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3">
+                                  <p
+                                    className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                                      isMobile && "!text-[1rem]"
+                                    } `}
+                                  >
                                     As a leading blockchain development company,
                                     our solutions help you focus on creating
                                     exceptional platforms that are scalable,
@@ -179,7 +208,9 @@ const WhyShouldHireDevelopers = () => {
             {pathname === "/hire-reactjs-developer" ? (
               <>
                 <div>
-                  <div className="number xl:text-[70px] text-[44px]">65+</div>
+                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                    65+
+                  </div>
                   <p className="year border-0 py-[1rem]">
                     React.js <br />
                     Projects Completed
@@ -187,7 +218,9 @@ const WhyShouldHireDevelopers = () => {
                 </div>
 
                 <div>
-                  <div className="number xl:text-[70px] text-[44px]">30+</div>
+                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                    30+
+                  </div>
                   <p className="year border-0 py-[1rem]">
                     React.js
                     <br />
@@ -200,7 +233,7 @@ const WhyShouldHireDevelopers = () => {
                 {pathname === "/hire-java-developer" ? (
                   <>
                     <div>
-                      <div className="number xl:text-[70px] text-[44px]">
+                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                         50+
                       </div>
                       <p className="year border-0 py-[1rem]">
@@ -210,7 +243,7 @@ const WhyShouldHireDevelopers = () => {
                     </div>
 
                     <div>
-                      <div className="number xl:text-[70px] text-[44px]">
+                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                         30+
                       </div>
                       <p className="year border-0 py-[1rem]">
@@ -225,7 +258,7 @@ const WhyShouldHireDevelopers = () => {
                     {pathname === "/hire-nodejs-developer" ? (
                       <>
                         <div>
-                          <div className="number xl:text-[70px] text-[44px]">
+                          <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                             50+
                           </div>
                           <p className="year border-0 py-[1rem]">
@@ -235,7 +268,7 @@ const WhyShouldHireDevelopers = () => {
                         </div>
 
                         <div>
-                          <div className="number xl:text-[70px] text-[44px]">
+                          <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                             30+
                           </div>
                           <p className="year border-0 py-[1rem]">
@@ -250,7 +283,7 @@ const WhyShouldHireDevelopers = () => {
                         {pathname === "/hire-react-native-developer" ? (
                           <>
                             <div>
-                              <div className="number xl:text-[70px] text-[44px]">
+                              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                 30+
                               </div>
                               <p className="year border-0 py-[1rem]">
@@ -260,7 +293,7 @@ const WhyShouldHireDevelopers = () => {
                             </div>
 
                             <div>
-                              <div className="number xl:text-[70px] text-[44px]">
+                              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                 20+
                               </div>
                               <p className="year border-0 py-[1rem]">
@@ -275,7 +308,7 @@ const WhyShouldHireDevelopers = () => {
                             {pathname === "/hire-aws-developer" ? (
                               <>
                                 <div>
-                                  <div className="number xl:text-[70px] text-[44px]">
+                                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                     50+
                                   </div>
                                   <p className="year border-0 py-[1rem]">
@@ -285,7 +318,7 @@ const WhyShouldHireDevelopers = () => {
                                 </div>
 
                                 <div>
-                                  <div className="number xl:text-[70px] text-[44px]">
+                                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                     10+
                                   </div>
                                   <p className="year border-0 py-[1rem]">
@@ -300,7 +333,7 @@ const WhyShouldHireDevelopers = () => {
                                 {pathname === "/hire-ui-ux-designer" ? (
                                   <>
                                     <div>
-                                      <div className="number xl:text-[70px] text-[44px]">
+                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                         45+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -310,7 +343,7 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
 
                                     <div>
-                                      <div className="number xl:text-[70px] text-[44px]">
+                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                         10+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -323,7 +356,7 @@ const WhyShouldHireDevelopers = () => {
                                 ) : (
                                   <>
                                     <div>
-                                      <div className="number xl:text-[70px] text-[44px]">
+                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                         40+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -334,7 +367,7 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
 
                                     <div>
-                                      <div className="number xl:text-[70px] text-[44px]">
+                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
                                         15+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -357,12 +390,16 @@ const WhyShouldHireDevelopers = () => {
             )}
 
             <div>
-              <div className="number xl:text-[70px] text-[44px]">60%</div>
+              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                60%
+              </div>
               <p className="year border-0 py-[1rem]">Savings In Salaries</p>
             </div>
 
             <div>
-              <div className="number xl:text-[70px] text-[44px]">+4/-4</div>
+              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                +4/-4
+              </div>
               <p className="year border-0 py-[1rem]">
                 Available to Work
                 <br />
@@ -371,7 +408,9 @@ const WhyShouldHireDevelopers = () => {
             </div>
 
             <div>
-              <div className="number xl:text-[70px] text-[44px]">48-72</div>
+              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                48-72
+              </div>
               <p className="year border-0 py-[1rem]">
                 Hours to Fill Most
                 <br />
@@ -380,7 +419,9 @@ const WhyShouldHireDevelopers = () => {
             </div>
 
             <div>
-              <div className="number xl:text-[70px] text-[44px]">98%</div>
+              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                98%
+              </div>
               <p className="year border-0 py-[1rem]">
                 Project Success
                 <br />

@@ -68,13 +68,13 @@ const ThreeStepstoHireDeveloper = () => {
             )}
 
             <div>
-              <p className="!p-0 md:text-[21px] text-center text-[16px]">
+              <p className="!p-0 md:text-[21px] md:text-center text-[16px] !text-left">
                 IN JUST 3 EASY STEPS
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-[3rem]">
+          <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[3rem] gap-4">
             <div className="contact_box">
               <div className="mx-auto">
                 <img
@@ -199,7 +199,7 @@ const ThreeStepstoHireDeveloper = () => {
                 </p>
               </div>
               <Link href="#section10_service">
-                <p className="xl:!text-[21px] lg:!text-[18px]">
+                <p className="xl:!text-[21px] lg:!text-[18px] !px-0">
                   Schedule A Developer Interview
                 </p>
               </Link>

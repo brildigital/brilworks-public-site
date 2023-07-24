@@ -257,7 +257,7 @@ const PortfolioInnerTrackimo = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto mb-[32px] mt-[128px]">
+          <div className="sec6_title text-center p-0 mx-auto mb-[32px] md:mt-[4rem] mt-4">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 

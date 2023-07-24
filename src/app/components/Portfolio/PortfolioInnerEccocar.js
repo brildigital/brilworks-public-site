@@ -20,7 +20,7 @@ const PortfolioInnerEccocar = () => {
           </div>
 
           <div className="porfolio_inner ">
-            <p className="!w-3/4">
+            <p className="md:!w-3/4">
               Eccocar is a SaaS Company that provides technology for rental cars
               to adapt to new mobility trends and offers a mobility service on
               demand. Eccocar digitizes rent-a-car and new on-demand mobility
@@ -121,7 +121,7 @@ const PortfolioInnerEccocar = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -182,14 +182,14 @@ const PortfolioInnerEccocar = () => {
           </div>
 
           <div className="md:w-[73%] w-[100%] mx-auto text-center home_sec2_txt4">
-            <p className="!pt-0 !text-[1.5rem]">
+            <p className="!pt-0 md:!text-[1.5rem] !text-left md:!text-center">
               Thanks to our expertise in fleet management software development,
               we were able to solve the complex problem of connecting fleets to
               suppliers and clients.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[32px] md:mt-[64px] mt-[32px]">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -226,7 +226,7 @@ const PortfolioInnerEccocar = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto mb-[32px] mt-[128px]">
+          <div className="sec6_title text-center p-0 mx-auto md:mb-[32px] md:mt-[4rem]">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 
@@ -327,7 +327,7 @@ const PortfolioInnerEccocar = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="container mx-auto px-[15px]">
+          <div className="container mx-auto">
             <BestAdvocateText />
             <ClientReviews />
           </div>

@@ -125,7 +125,7 @@ const PortfolioInnerVugo = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -239,7 +239,7 @@ const PortfolioInnerVugo = () => {
           </div>
 
           <div className="md:w-[73%] w-[100%] mx-auto text-center home_sec2_txt4">
-            <p className="!pt-0 !text-[1.5rem]">
+            <p className="!pt-0 md:!text-[1.5rem] !text-left md:!text-center">
               Our team helped Vugo achieve its product vision. We worked with
               them from the very beginning by creating a detailed strategy that
               was designed specifically for them, and we worked together to turn
@@ -314,7 +314,7 @@ const PortfolioInnerVugo = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto mb-[32px] mt-[128px]">
+          <div className="sec6_title text-center p-0 mx-auto md:mb-[32px] md:mt-[4rem]">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 
@@ -394,7 +394,7 @@ const PortfolioInnerVugo = () => {
             </div>
           </div>
 
-          <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem]">
+          <div className="md:pt-[4rem] md:pb-[6rem] pt-[2rem] pb-[2rem]">
             <div className="portfolio_know_more md:mx-auto ml-0">
               <div className="get_icon">
                 <Link href="/about-us/">
@@ -415,10 +415,8 @@ const PortfolioInnerVugo = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="container mx-auto px-[15px]">
-            <BestAdvocateText />
-            <ClientReviews />
-          </div>
+          <BestAdvocateText />
+          <ClientReviews />
 
           <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px]">
             <HomepageContactForm />

@@ -1,7 +1,6 @@
-
 const FintechFAQs = () => {
   return (
-    <div className="sec3_width_home faq-bottom mb-[5rem]">
+    <div className="sec3_width_home faq-bottom mb-[5rem] pt-2">
       <div className="service_sec3 md:text-center text-left">
         <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
           FAQs

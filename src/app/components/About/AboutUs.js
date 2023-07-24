@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 const AboutUs = () => {
@@ -8,7 +9,7 @@ const AboutUs = () => {
           <div className="basis-3/6 md:order-1 order-2">
             <div className="home_sec2_txt1 text_left">
               <p>
-                Your tech partner in a
+                Your tech partner in a{" "}
                 <span className="abc">fast changing world.</span>
               </p>
             </div>

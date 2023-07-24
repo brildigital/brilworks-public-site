@@ -118,7 +118,7 @@ const PortfolioInnerOrokii = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -226,7 +226,7 @@ const PortfolioInnerOrokii = () => {
           </div>
 
           <div className="md:w-[73%] w-[100%] mx-auto text-center home_sec2_txt4">
-            <p className="!pt-0 !text-[1.5rem]">
+            <p className="!pt-0 md:!text-[1.5rem] !text-left md:!text-center">
               Team Brilworks was delighted to be partnered with Orokii in
               bringing their innovative mobile application. We were able to
               create a seamless, secure, and instantly settled payment
@@ -270,7 +270,7 @@ const PortfolioInnerOrokii = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto mb-[32px] mt-[128px]">
+          <div className="sec6_title text-center p-0 mx-auto mb-[32px] md:mt-[4rem]">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 

@@ -1,9 +1,11 @@
+"use client";
 import Link from "next/link";
 import { BestAdvocateText } from "../Homepage/BigText";
 import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 
 const PortfolioInnerRastrack = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <section className="portfolio">
@@ -120,7 +122,7 @@ const PortfolioInnerRastrack = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -230,7 +232,7 @@ const PortfolioInnerRastrack = () => {
           </div>
 
           <div className="md:w-[73%] w-[100%] mx-auto text-center home_sec2_txt4">
-            <p className="!pt-0 !text-[1.5rem]">
+            <p className="!pt-0 md:!text-[1.5rem] !text-left md:!text-center">
               We strived to be a reliable partner for their team by working in
               their time zone, providing them with complete flexibility and
               quality service. Together we made Rastrack’s vision a reality and
@@ -239,7 +241,7 @@ const PortfolioInnerRastrack = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[32px] md:mt-[64px] mt-[32px]">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -290,12 +292,16 @@ const PortfolioInnerRastrack = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto mb-[32px] mt-[128px]">
+          <div className="sec6_title text-center p-0 mx-auto md:mb-[32px] md:mt-[4rem]">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 
           <div className="md:px-[0px] px-[15px]">
-            <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
+            <div
+              className={`grid md:grid-cols-3 grid-cols-1 sec7_service_grid ${
+                isMobile && "!gap-0"
+              }`}
+            >
               <div className="contact_box">
                 <div className="mx-auto">
                   <img src="/images/people-01.png" alt="people" className="" />

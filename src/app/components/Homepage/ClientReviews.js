@@ -5,6 +5,7 @@ import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import Swiper from "swiper";
 
 const ClientReviews = () => {
+  const isMobile = window.innerWidth < 767;
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-client-review", {
@@ -47,7 +48,9 @@ const ClientReviews = () => {
         </div>
 
         <div className="home_sec3_box overflow-hidden">
-          <div className="dots_flex w-100 px-[30px]">
+          <div
+            className={`dots_flex w-100 md:px-[30px] ${isMobile && "mx-4"} `}
+          >
             <div className="dots md:ml-8"></div>
             <div className="dots"></div>
             <div className="dots"></div>

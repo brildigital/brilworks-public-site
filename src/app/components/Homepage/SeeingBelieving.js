@@ -1,16 +1,19 @@
 "use client";
 import "swiper/css";
+import "swiper/css/pagination";
 import Link from "next/link";
 import { BelievingText } from "./BigText";
 import { useEffect } from "react";
 import Swiper from "swiper";
 
 const SeeingBelieving = () => {
+  const isMobile = window.innerWidth < 767;
+
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-portfolio", {
-        loop: true,
-        slidesPerView: 3,
+        loop: isMobile ? false : true,
+        slidesPerView: isMobile ? 1 : 3,
         paginationClickable: true,
         centeredSlides: true,
         spaceBetween: 20,
@@ -42,7 +45,7 @@ const SeeingBelieving = () => {
       <div className="w-[90%] mx-auto">
         <div className="swiper-container" id="swiper-portfolio">
           <div className="swiper-wrapper">
-            <div className="swiper-slide">
+            <div className="swiper-slide !bg-[#2cbc89]">
               <Link href="/portfolio/vugo/">
                 <img
                   className="alignnone wp-image-45 size-full"
@@ -55,7 +58,7 @@ const SeeingBelieving = () => {
                     <h2>VUGO</h2>
                   </div>
                   <div className="portfolio-desc">
-                    <p>
+                    <p className={isMobile && "h-[200px]"}>
                       Founded in 2015, Vugo is the first company to develop
                       in-car advertising for the rideshare marketplace.
                       Headquartered in Minneapolis, Minnesota, Vugo develops
@@ -66,7 +69,7 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div className="swiper-slide">
+            <div className="swiper-slide !bg-[#e8eed5]">
               <Link href="/portfolio/trackimo/">
                 <img
                   className="alignnone wp-image-47 size-full"
@@ -79,7 +82,7 @@ const SeeingBelieving = () => {
                     <h2>TRACKIMO</h2>
                   </div>
                   <div className="portfolio-desc">
-                    <p>
+                    <p className={isMobile && "h-[200px]"}>
                       Trackimo specializes in highly reliable and effective
                       tracking solutions. The company's end-to-end global IoT
                       platform provides personal safety and tracking solutions
@@ -90,7 +93,7 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div className="swiper-slide">
+            <div className="swiper-slide !bg-[#377df8]">
               <Link href="/portfolio/orokii/">
                 <img
                   className="alignnone wp-image-48 size-full"
@@ -103,7 +106,7 @@ const SeeingBelieving = () => {
                     <h2>OROKII</h2>
                   </div>
                   <div className="portfolio-desc">
-                    <p>
+                    <p className={isMobile && "h-[200px]"}>
                       Orokii is an on-demand platform that allows you to send
                       cross-border payments anywhere in the world at real-time
                       prices. Orokii is making domestic and cross-border
@@ -114,7 +117,7 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div className="swiper-slide">
+            <div className="swiper-slide !bg-[#f13134]">
               <Link href="/portfolio/eccocar/">
                 <img
                   className="alignnone wp-image-49 size-full"
@@ -127,7 +130,7 @@ const SeeingBelieving = () => {
                     <h2>ECCOCAR</h2>
                   </div>
                   <div className="portfolio-desc">
-                    <p>
+                    <p className={isMobile && "h-[200px]"}>
                       Eccocar is a SaaS Company that provides technology for
                       rental cars to adapt to new mobility trends and offers a
                       mobility service on demand. Eccocar digitizes rent-a-car
@@ -140,7 +143,7 @@ const SeeingBelieving = () => {
               </Link>
             </div>
 
-            <div className="swiper-slide">
+            <div className="swiper-slide !bg-[#2cbc89]">
               <Link href="/portfolio/rastrack/">
                 <img
                   className="alignnone wp-image-50 size-full"
@@ -153,12 +156,12 @@ const SeeingBelieving = () => {
                     <h2>RASTRACK</h2>
                   </div>
                   <div className="portfolio-desc">
-                    <p>
-                      Orokii is an on-demand platform that allows you to send
-                      cross-border payments anywhere in the world at real-time
-                      prices. Orokii is making domestic and cross-border
-                      payments cheaper, faster, and safer using blockchain
-                      technology.
+                    <p className={isMobile && "h-[200px]"}>
+                      Rastrack is a satellite tracking and real-time monitoring
+                      company which helps owners track their vehicles with
+                      detailed analysis. Rastrack specializes in the control and
+                      satellite monitoring of assets or individuals using
+                      networking technologies.
                     </p>
                   </div>
                 </div>
@@ -168,7 +171,7 @@ const SeeingBelieving = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
+      <div className="flex md:!items-center !text-left md:!justify-center !justify-start lg:gap-[80px] gap-[20px] flex-col sm:flex-row md: mt-4mt-8">
         <div className="flex items-center justify-center gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
           <div className="about_txt">
             <Link href="portfolio" className="text-[21px]">

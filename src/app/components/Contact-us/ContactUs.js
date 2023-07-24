@@ -70,12 +70,16 @@ const ContactUs = () => {
     <>
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
         <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full">
-          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-            <p className="uppercase">
+          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
+            <p
+              className={`uppercase m-0 !w-10/12 ${
+                isMobile && "p-0 !text-left !w-full"
+              }`}
+            >
               Drop Us a Message and Let Our Team Help With Your Project
             </p>
           </div>
-          <div className="noText">
+          <div className="noText md:pt-2">
             <ul>
               <li>No strings attached.</li>
               <li>No obligation to hire.</li>
@@ -86,7 +90,7 @@ const ContactUs = () => {
             <div>
               <form action="" method="post" className="wpcf7-form init">
                 <div className="form-group">
-                  <p className={isMobile && "py-4"}>
+                  <p className={isMobile && "pt-4"}>
                     <label className={`label_name ${isMobile && "pb-2"}`}>
                       First &amp; Last Name*
                     </label>
@@ -102,7 +106,7 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "py-4"}>
+                  <p className={isMobile && "pt-4"}>
                     <label className={`label_name ${isMobile && "pb-2"}`}>
                       Work Email Address*
                     </label>
@@ -118,7 +122,7 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "py-4"}>
+                  <p className={isMobile && "pt-4"}>
                     <label className={`label_name ${isMobile && "pb-2"}`}>
                       Phone Number*
                     </label>
@@ -134,7 +138,7 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "py-4"}>
+                  <p className={isMobile && "pt-4"}>
                     <label className={`label_name ${isMobile && "pb-2"}`}>
                       Your Message
                     </label>
@@ -170,52 +174,52 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full background_contact">
+        <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[2rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full background_contact">
           <div className="drop_basis">
             <div className="drop_title home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-              <p className="white_text uppercase">
+              <p className="white_text uppercase !w-full">
                 Ready to scale your business to new heights?
               </p>
             </div>
             <div className="ready_content">
-              <div className="ready_content_sec home_sec2_txt4">
-                <p className="white_text">
+              <div className="ready_content_sec home_sec2_txt4 pt-2">
+                <p className="white_text !text-left">
                   Just fill out the form, and let our experts look after the
                   rest. Here’s what will happen next:
                 </p>
               </div>
-              <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text contact_title">
+              <div className="ready_content_list home_sec2_txt4 ">
+                <p className="white_text contact_title !text-left">
                   1. Initiating Contact
                 </p>
-                <p className="white_text">
+                <p className="white_text !text-left">
                   We will contact you within 24 business hours.
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text contact_title">
+                <p className="white_text !text-left contact_title">
                   2. Share Your Requirement
                 </p>
-                <p className="white_text">
+                <p className="white_text !text-left">
                   Tell us exactly what you’re looking for and how would you like
                   our team to help you further. Our technical team will evaluate
                   your requirement and reach back to you with a project plan
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text contact_title">
+                <p className="white_text !text-left contact_title">
                   3. Sign Non-Disclosure Agreement
                 </p>
-                <p className="white_text">
+                <p className="white_text !text-left">
                   Signing an NDA is like putting your idea in a safe deposit
                   box. Be rest assured about any privacy concerns.
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text contact_title">
+                <p className="white_text !text-left contact_title">
                   4. Estimated Budget/Cost
                 </p>
-                <p className="white_text">
+                <p className="white_text !text-left">
                   After analyzing your requirement in-detail we will get back to
                   you with an estimated budget/cost and estimated time required
                   for successful project completion.
@@ -311,10 +315,12 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="service_width contact_sec3">
+        <div className="service_width contact_sec3 md:!pt-4 pt-1 ">
           <div className="just_call_sec">
             <div className="home_sec2_txt3 contact_bold text-center">
-              <p className="textUpercase">JUST A CALL AWAY</p>
+              <p className="textUpercase md:!text-center !text-left !w-full">
+                JUST A CALL AWAY
+              </p>
             </div>
           </div>
           <div className="contact_details background relative">

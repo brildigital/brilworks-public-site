@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import MediaNEntertainmentFAQs from "./MediaNEntertainmentFAQs";
 import SolutionContactForm from "./SolutionContactForm";
@@ -5,6 +6,7 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 
 const MediaAndEntertainment = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -495,14 +497,14 @@ const MediaAndEntertainment = () => {
             <div className="endTO_text home_sec2_txt3">
               <p className="!w-full p-0">
                 LEVERAGE OUR COMPREHENSIVE SOLUTIONS TO
-                <br />
+                {!isMobile && <br />}
                 DEVELOP MEDIA & ENTERTAINMENT APPS
               </p>
             </div>
           </div>
 
           <div className="endTO_text_content home_sec2_txt4">
-            <p>
+            <p className="md:!text-center !text-left">
               Elevate your audience engagement and improve customer retention
               with ease. We bring extensive knowledge of the media and
               entertainment industry to help you increase your global reach and
@@ -609,14 +611,14 @@ const MediaAndEntertainment = () => {
             <div className="endTO_text home_sec2_txt3">
               <p className="!w-full p-0">
                 FEATURES THAT ELEVATE OUR MEDIA
-                <br />
+                {!isMobile && <br />}
                 AND ENTERTAINMENT SOFTWARE
               </p>
             </div>
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid grid-cols-2 md:gap-[40px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -665,7 +667,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Live Chatting</p>
+                    <p>Live {isMobile && <br />}Chatting</p>
                   </div>
                 </div>
               </div>
@@ -733,7 +735,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 07.</div>
                   <div className="service_title">
-                    <p>Interactive UI/UX</p>
+                    <p>Interactive {isMobile && <br />}UI/UX</p>
                   </div>
                 </div>
               </div>
@@ -762,14 +764,18 @@ const MediaAndEntertainment = () => {
               <div>
                 <div className="end-To-end pt-8">
                   <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
-                    <p className="!w-full pb-0">
+                    <p className="!w-full md:p-0 p-3">
                       WHAT MAKES BRILWORKS THE BEST ENTERTAINMENT APP
                       DEVELOPMENT COMPANY?
                     </p>
                   </div>
                 </div>
 
-                <p className="p-font text-center my-[2rem]">
+                <p
+                  className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
+                    isMobile && "!text-[1rem]"
+                  } `}
+                >
                   We specialize in creating world-class entertainment apps to
                   help you increase engagement and retain your customers over a
                   longer period of time. Get ready to elevate your app to the
@@ -777,45 +783,69 @@ const MediaAndEntertainment = () => {
                   solutions.
                 </p>
 
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 xl:gap-[3.5rem] gap-[2rem]">
+                <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-[3.5rem] gap-x-3 gap-y-4 p-3">
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
                       GDPR
                     </div>
                     <p className="year border-0 py-[1rem]">Compliant Apps</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
                       APPEALING
                     </div>
                     <p className="year border-0 py-[1rem]">UI/UX Experience</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
                       Expert
                     </div>
                     <p className="year border-0 py-[1rem]">Knowledge</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
                       AGILE
                     </div>
                     <p className="year border-0 py-[1rem]">Centric Model</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
                       SECURITY
                     </div>
                     <p className="year border-0 py-[1rem]">-First Approach</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
-                      UNPARALLELEED
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[20px]"
+                      }`}
+                    >
+                      UNPARALLELED
                     </div>
                     <p className="year border-0 py-[1rem]">Code Quality</p>
                   </div>

@@ -45,7 +45,7 @@ const JavaDevelopers = () => {
                   </div>
                 </div>
                 <div className="service_description border-b-[1px]">
-                  <p className="h-[150px]">
+                  <p className="md:h-[150px] h-[190px]">
                     Nirmal has 7+ years of experience in software development.
                     He has worked in designing system architectures and
                     solutions for rapid scaling. He has a demonstrated history

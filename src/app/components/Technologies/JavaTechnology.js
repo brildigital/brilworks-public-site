@@ -131,7 +131,7 @@ const JavaTechnology = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img

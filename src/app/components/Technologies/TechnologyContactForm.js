@@ -25,10 +25,8 @@ const TechnologyContactForm = () => {
               >
                 <form action="" method="post" className="wpcf7-form init">
                   <div className="form-group">
-                    <p className={isMobile && "py-4"}>
-                      <label className={`label_name ${isMobile && "pb-2"}`}>
-                        Name*
-                      </label>
+                    <p className={isMobile && "pt-4"}>
+                      <label className="label_name">Name*</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
                         <input
@@ -42,10 +40,8 @@ const TechnologyContactForm = () => {
                   </div>
 
                   <div className="form-group">
-                    <p className={isMobile && "py-4"}>
-                      <label className={`label_name ${isMobile && "pb-2"}`}>
-                        Mobile*
-                      </label>
+                    <p className={isMobile && "pt-4"}>
+                      <label className="label_name">Mobile*</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
                         <input
@@ -58,10 +54,8 @@ const TechnologyContactForm = () => {
                     </p>
                   </div>
                   <div className="form-group">
-                    <p className={isMobile && "py-4"}>
-                      <label className={`label_name ${isMobile && "pb-2"}`}>
-                        Email *
-                      </label>
+                    <p className={isMobile && "pt-4"}>
+                      <label className="label_name">Email *</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
                         <input

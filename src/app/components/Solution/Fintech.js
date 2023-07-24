@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import FintechFAQs from "./FintechFAQs";
 import SolutionContactForm from "./SolutionContactForm";
@@ -5,6 +6,7 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 
 const Fintech = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -54,7 +56,14 @@ const Fintech = () => {
                   Our fintech software development services are built to drive
                   business transformation and maximize ROI.
                 </p>
-                <div className="flex align-middle pt-[4rem]">
+
+                <div
+                  className={`flex ${
+                    isMobile
+                      ? "md:gap-8 md:mt-[50px] flex-wrap"
+                      : "align-middle pt-[4rem]"
+                  }`}
+                >
                   <div className="btn_paddinng contact_btn btn_flex">
                     <div className="formBtn_icon">
                       <p>
@@ -881,7 +890,7 @@ const Fintech = () => {
                   </div>
                 </div>
 
-                <div className="w-full my-[6rem]">
+                <div className="w-full md:my-[6rem] mb-12">
                   <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                     <div className="formBtn_icon">
                       <p>
@@ -914,7 +923,7 @@ const Fintech = () => {
           </div>
 
           <div className="service_grid_img">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[40px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
@@ -1072,7 +1081,11 @@ const Fintech = () => {
                 <div className="formBtn_icon">
                   <p>
                     <Link href="#section10_service">
-                      <img src="/images/icons-05.png" alt="arrow" />{" "}
+                      <img
+                        src="/images/icons-05.png"
+                        className="!w-full"
+                        alt="arrow"
+                      />{" "}
                     </Link>
                   </p>
                 </div>
@@ -1087,7 +1100,7 @@ const Fintech = () => {
 
           <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
             <div class="portfolio_health_sec1 w-full">
-              <div class="flex direction-row gap-[2rem] align-middle mb-0">
+              <div class="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
                 <div class="health_sec1_flex_40 order_2">
                   <div class=" portfolio_title">
                     <p>OUR PORTFOLIO</p>
@@ -1143,19 +1156,22 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="lg:py-[6rem] md:py-[6rem] py-[4rem]">
+          <div className="lg:py-[6rem] md:py-[4rem] py-[2rem]">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
-                    <p className="!w-full pb-0">
-                      WHY SHOULD YOU CHOOSE US FOR <br />
-                      FINTECH SOFTWARE DEVELOPMENT?
+                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                    <p className="!w-full md:p-0 p-3">
+                      WHY SHOULD YOU CHOOSE US FOR FINTECH SOFTWARE DEVELOPMENT?
                     </p>
                   </div>
                 </div>
 
-                <p className="p-font text-center my-[2rem]">
+                <p
+                  className={`p-font md:text-center text-left ${
+                    isMobile && "!text-[1rem]"
+                  } md:my-[2rem] mt-[2rem] pl-3`}
+                >
                   We offer next-gen fintech solutions, which allow you to
                   embrace innovation, improve efficiency, and comply with
                   regulations. Our fintech software developers are always ready
@@ -1164,9 +1180,13 @@ const Fintech = () => {
                   industry.
                 </p>
 
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 xl:gap-[3.5rem] gap-[2rem]">
+                <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-[3.5rem] gap-[2rem] p-4">
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       100%
                     </div>
                     <p className="year border-0 py-[1rem]">
@@ -1177,7 +1197,13 @@ const Fintech = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">30+</div>
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
+                      30+
+                    </div>
                     <p className="year border-0 py-[1rem]">
                       Fintech
                       <br />
@@ -1186,7 +1212,11 @@ const Fintech = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       100%
                     </div>
                     <p className="year border-0 py-[1rem]">
@@ -1197,21 +1227,35 @@ const Fintech = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       AGILE
                     </div>
                     <p className="year border-0 py-[1rem]">Development Team</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       EXPERT
                     </div>
                     <p className="year border-0 py-[1rem]">Knowledge</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">API</div>
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
+                      API
+                    </div>
                     <p className="year border-0 py-[1rem]">
                       Third-party API Development & Integration
                     </p>

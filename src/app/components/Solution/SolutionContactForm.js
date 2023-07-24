@@ -32,7 +32,6 @@ const SolutionContactForm = () => {
                         <input
                           size="40"
                           className="form-control-txt"
-                          value=""
                           type="text"
                           name="text-737"
                         />
@@ -48,7 +47,6 @@ const SolutionContactForm = () => {
                         <input
                           size="40"
                           className="form-control-txt"
-                          value=""
                           type="tel"
                           name="tel-336"
                         />
@@ -63,7 +61,6 @@ const SolutionContactForm = () => {
                         <input
                           size="40"
                           className="form-control-txt"
-                          value=""
                           type="email"
                           name="email-160"
                         />

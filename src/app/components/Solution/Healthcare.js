@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
@@ -5,6 +6,7 @@ import SolutionEngagementModal from "./SolutionEngagementModal";
 import HealthcareFAQs from "./HealthcareFAQs";
 
 const HealthCare = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -808,7 +810,7 @@ const HealthCare = () => {
                   </div>
                 </div>
 
-                <div className="w-full my-[6rem]">
+                <div className="w-full md:my-[6rem] mb-12">
                   <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                     <div className="formBtn_icon">
                       <p>
@@ -830,7 +832,7 @@ const HealthCare = () => {
         </div>
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
-          <div className="pl-[8rem] w-[90%] ">
+          <div className="md:pl-[8rem] w-[90%]">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3">
                 <p className="!w-full p-0">
@@ -840,7 +842,7 @@ const HealthCare = () => {
             </div>
 
             <div className="endTO_text_content home_sec2_txt4">
-              <p className="!text-[1.5rem]">
+              <p className="md:!text-[1.5rem] md:!text-center !text-[1rem] !text-left">
                 By utilizing our expertise in working with various players in
                 the healthcare industry, we provide healthcare application
                 development services that make your product a crucial part of
@@ -948,15 +950,19 @@ const HealthCare = () => {
               <div>
                 <div className="end-To-end pt-8">
                   <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
-                    <p className="!w-full pb-0">
-                      WHAT MAKES BRILWORKS THE <br />
-                      BEST HEALTHCARE SOFTWARE <br />
+                    <p className="!w-full md:p-0 p-3">
+                      WHAT MAKES BRILWORKS THE {!isMobile && <br />}
+                      BEST HEALTHCARE SOFTWARE {!isMobile && <br />}
                       COMPANY?
                     </p>
                   </div>
                 </div>
 
-                <p className="p-font text-center my-[2rem]">
+                <p
+                  className={`p-font md:text-center text-left md:my-[2rem] p-3 ${
+                    isMobile && "!text-[1rem]"
+                  } `}
+                >
                   It is no secret that innovation and technology play important
                   roles in the healthcare industry. We help healthcare
                   organizations innovate and transform their business in a way
@@ -964,45 +970,45 @@ const HealthCare = () => {
                   patients.
                 </p>
 
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 xl:gap-[3.5rem] gap-[2rem]">
+                <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-[3.5rem] gap-[2rem] p-2">
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div className="number xl:!text-[34px] !text-[20px]">
                       HIPAA & GDPR
                     </div>
                     <p className="year border-0 py-[1rem]">Compliant Apps</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div className="number xl:!text-[34px] !text-[20px]">
                       EXPERIENCE
                     </div>
                     <p className="year border-0 py-[1rem]">Proven mHealth</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div className="number xl:!text-[34px] !text-[20px]">
                       AGILE
                     </div>
                     <p className="year border-0 py-[1rem]">Centric Model</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div className="number xl:!text-[34px] !text-[20px]">
                       SECURITY
                     </div>
                     <p className="year border-0 py-[1rem]">First Approach</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div className="number xl:!text-[34px] !text-[20px]">
                       UNPARALLELED
                     </div>
                     <p className="year border-0 py-[1rem]">Code Quality</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
-                      WELL-PLANNED
+                    <div className="number xl:!text-[34px] !text-[20px]">
+                      &nbsp; &nbsp;WELL-PLANNED
                     </div>
                     <p className="year border-0 py-[1rem]">Architecture</p>
                   </div>
@@ -1028,7 +1034,7 @@ const HealthCare = () => {
         </div>
 
         <div className="mx-auto mt-[6rem] md:pt-[6rem] pt-[4rem] workpadd_borderTop service_width end-to-end">
-          <div class="flex direction-row gap-[2rem] align-middle mb-0">
+          <div class="flex md:flex-row flex-col md:gap-[2rem] align-middle mb-0">
             <div class="health_sec1_flex_40 order_2">
               <div class=" portfolio_title">
                 <p>OUR PORTFOLIO</p>

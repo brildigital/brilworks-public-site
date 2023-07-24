@@ -1,14 +1,15 @@
+"use client";
 import Link from "next/link";
 
 const ReactNativeDevelopers = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
         <div className="endTO_text home_sec2_txt3">
           <p className="!w-full p-0">
             HIRE REACT NATIVE DEVELOPERS TO BUILD
-            <br />
-            FEATURE-RICH MOBILE APPLICATIONS
+            <br /> FEATURE-RICH MOBILE APPLICATIONS
           </p>
         </div>
       </div>

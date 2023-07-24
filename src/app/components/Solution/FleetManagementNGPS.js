@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import FleetManagmentFAQs from "./FleetManagmentFAQs";
 import SolutionContactForm from "./SolutionContactForm";
@@ -5,6 +6,7 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 
 const FleetManagementNGPS = () => {
+  const isMobile = window.innerWidth < 767;
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -480,7 +482,11 @@ const FleetManagementNGPS = () => {
                 </div>
 
                 <div className="w-full mt-[3rem]">
-                  <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
+                  <div
+                    className={`btn_paddinng contact_btn_solution btn_flex !mx-auto ${
+                      isMobile && "!px-[10px] !py-[14px]"
+                    }`}
+                  >
                     <div className="formBtn_icon">
                       <p>
                         <Link href="#section10_service">
@@ -774,7 +780,7 @@ const FleetManagementNGPS = () => {
                   </div>
                 </div>
 
-                <div className="w-full my-[6rem]">
+                <div className="w-full md:my-[6rem] mb-12">
                   <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                     <div className="formBtn_icon">
                       <p>
@@ -1019,25 +1025,33 @@ const FleetManagementNGPS = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
-                    <p className="!w-full pb-0">
-                      WHY CHOOSE US FOR FLEET <br />
-                      MANAGEMENT SOFTWARE <br />
+                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                    <p className="!w-full  md:p-0 p-3">
+                      WHY CHOOSE US FOR FLEET {!isMobile && <br />}
+                      MANAGEMENT SOFTWARE {!isMobile && <br />}
                       DEVELOPMENT?
                     </p>
                   </div>
                 </div>
 
-                <p className="p-font text-center my-[2rem]">
+                <p
+                  className={`p-font md:text-center text-left ${
+                    isMobile && "!text-[1rem]"
+                  } md:my-[2rem] mt-[1rem] p-3`}
+                >
                   We know it can be frustrating to keep track of all your
                   vehicles on the road, but with our fleet management software
                   and GPS tracking system, we make it easier than ever to keep
                   track of all your moves.
                 </p>
 
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 xl:gap-[3.5rem] gap-[2rem]">
+                <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-[3.5rem] gap-[2rem] p-4">
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       ROUND
                     </div>
                     <p className="year border-0 py-[1rem]">
@@ -1048,7 +1062,11 @@ const FleetManagementNGPS = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       AGILE
                     </div>
                     <p className="year border-0 py-[1rem]">
@@ -1059,14 +1077,22 @@ const FleetManagementNGPS = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       EXPERT
                     </div>
                     <p className="year border-0 py-[1rem]">Knowledge</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       USER
                     </div>
                     <p className="year border-0 py-[1rem]">
@@ -1076,14 +1102,22 @@ const FleetManagementNGPS = () => {
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       ON TIME
                     </div>
                     <p className="year border-0 py-[1rem]">Delivery</p>
                   </div>
 
                   <div>
-                    <div className="number xl:text-[34px] text-[24px]">
+                    <div
+                      className={`number xl:text-[34px] text-[24px] ${
+                        isMobile && "!text-[24px]"
+                      }`}
+                    >
                       SECURITY
                     </div>
                     <p className="year border-0 py-[1rem]">

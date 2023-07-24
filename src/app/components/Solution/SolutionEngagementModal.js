@@ -11,7 +11,7 @@ const SolutionEngagementModal = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-[3rem]">
+          <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[3rem] ">
             <div className="contact_box">
               <div className="mx-auto">
                 <img src="/images/people-01.png" alt="people" className="" />
@@ -80,7 +80,7 @@ const SolutionEngagementModal = () => {
             </div>
           </div>
 
-          <div className="w-full py-[6rem]">
+          <div className="w-full md:py-[6rem] py-4">
             <div className="btn_paddinng btn_flex !mx-auto">
               <div className="formBtn_icon">
                 <Link href="#section10_service">

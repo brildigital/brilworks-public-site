@@ -4,24 +4,32 @@ import { usePathname } from "next/navigation";
 
 const TechnologyCombination = () => {
   const pathname = usePathname();
+  const isMobile = window.innerWidth < 767;
 
   return (
     <div className="mx-auto service_width">
       <div className="service_sec3 md:text-center text-left">
         {pathname === "/hire-reactjs-developer" ? (
           <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-            THE RIGHT REACT JS COMBINATIONS
-            <br />
+            THE RIGHT REACT JS COMBINATIONS {!isMobile && <br />}
             JUST FOR YOU
           </p>
         ) : (
           <>
-            {pathname === "/hire-java-developer" && (
+            {pathname === "/hire-java-developer" ? (
               <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                FULL STACK JAVA DEVELOPMENT TO
-                <br />
+                FULL STACK JAVA DEVELOPMENT TO {!isMobile && <br />}
                 LEVEL UP YOUR WEB APPS
               </p>
+            ) : (
+              <>
+                {pathname === "/hire-nodejs-developer" && (
+                  <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+                    Hire STACK NODE JS DEVELOPER TO {!isMobile && <br />}
+                    AMP IT UP A NOTCH
+                  </p>
+                )}
+              </>
             )}
           </>
         )}
@@ -160,7 +168,7 @@ const TechnologyCombination = () => {
                       <p>React Java Developer</p>
                     </div>
                     <div className="hire_data_sec">
-                      <p className="md:h-[120px] h-[150px]">
+                      <p className="md:h-[120px] h-[170px]">
                         Modernize your projects with a React-driven website and
                         Java backend. We’ll create an app that’s visually
                         beautiful, full of features, and works on every device.
@@ -241,7 +249,7 @@ const TechnologyCombination = () => {
       </div>
 
       <div className="section8_service py-[5rem]">
-        <div className="btn_flex mt-[4rem]">
+        <div className={`btn_flex mt-[4rem] ${isMobile && "!px-8 !py-2"}`}>
           <div className="chat_icon">
             <img src="/images/hire-hand.png" alt="hire hand" />
           </div>

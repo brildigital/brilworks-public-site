@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="bg_black">
         <div className="footer_width footer_padding">
           <div className="footer_grid">
-            <div>
+            <div className=" grid-area-one">
               <div className="footer_logo">
                 <img src="/images/logo-white.png" alt="Brilworks Logo" />
               </div>
@@ -94,14 +94,14 @@ const Footer = () => {
                 <div className="quick_link">
                   <p>CONTACT</p>
                 </div>
-                <ul className="footer_link">
+                <ul className="footer_link pb-4">
                   <li>
                     <Link href="tel:919313644148">+91 9313644148</Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="grid-area-two">
               <div className="quick_link">
                 <p>QUICK LINKS</p>
               </div>
@@ -163,7 +163,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div>
+            <div className="grid-area-three">
               <div className="quick_link">
                 <p>SOLUTIONS</p>
               </div>
@@ -220,7 +220,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="grid-area-four">
               <div className="quick_link">
                 <p>TECHNOLOGIES</p>
               </div>

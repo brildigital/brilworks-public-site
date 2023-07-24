@@ -27,7 +27,7 @@ const HomepageContactForm = () => {
                 >
                   <form action="" method="post" className="wpcf7-form init">
                     <div className="form-group">
-                      <p className={isMobile && "py-4"}>
+                      <p className={isMobile && "pb-4"}>
                         <label className={`label_name ${isMobile && "pb-2"}`}>
                           Name*
                         </label>
@@ -48,7 +48,7 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "py-4"}>
+                      <p className={isMobile && "pb-4"}>
                         <label className={`label_name ${isMobile && "pb-2"}`}>
                           Company*
                         </label>
@@ -69,7 +69,7 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "py-4"}>
+                      <p className={isMobile && "pb-4"}>
                         <label className={`label_name ${isMobile && "pb-2"}`}>
                           Email Id*
                         </label>
@@ -90,7 +90,7 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "py-4"}>
+                      <p className={isMobile && "pb-4"}>
                         <label className={`label_name ${isMobile && "pb-2"}`}>
                           Message
                         </label>
