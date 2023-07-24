@@ -1,9 +1,39 @@
-import { BestAdvocateText } from "./BigText";
+"use client";
+import "swiper/css";
+import { useEffect } from "react";
+import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
+import Swiper from "swiper";
 
 const ClientReviews = () => {
+  const isMobile = window.innerWidth < 767;
+  useEffect(() => {
+    const initSwipers = () => {
+      new Swiper("#swiper-client-review", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1920: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    };
+    initSwipers();
+  }, []);
   return (
     <div className="container mx-auto px-[15px]">
-      <BestAdvocateText />
       <div className="xl:mt-[80px] mt-[40px] relative">
         <div className="rotate_img">
           <img
@@ -18,8 +48,10 @@ const ClientReviews = () => {
         </div>
 
         <div className="home_sec3_box overflow-hidden">
-          <div className="dots_flex w-100 px-[30px]">
-            <div className="dots"></div>
+          <div
+            className={`dots_flex w-100 md:px-[30px] ${isMobile && "mx-4"} `}
+          >
+            <div className="dots md:ml-8"></div>
             <div className="dots"></div>
             <div className="dots"></div>
           </div>
@@ -117,25 +149,7 @@ const ClientReviews = () => {
           </div>
         </div>
       </div>
-
-      <div className="md:pt-[128px] pt-[32px]">
-        <div className="clutch-widget">
-          <iframe
-            id="iframe-0.7673398699825025"
-            style={{
-              border: "none",
-              overflow: "hidden",
-              display: "block",
-              height: "357px",
-            }}
-            title="&#091;iFrameSizer&#093;iframe-0.7673398699825025:0:0:mouseleave:674:121812"
-            src="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/"
-            height="375px"
-            scrolling="no"
-            className="mx-auto w-[100%]"
-          ></iframe>
-        </div>
-      </div>
+      <BrilworksSoftwareReview />
     </div>
   );
 };

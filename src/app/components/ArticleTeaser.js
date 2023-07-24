@@ -18,12 +18,12 @@ const ArticleTeaser = ({ article }) => {
         </div>
         <div className="mt-4">
           <Link href={`/blog/${article.slug}`}>
-            <a
+            <Link
               className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
               title="read more"
             >
               Read More »
-            </a>
+            </Link>
           </Link>
         </div>
       </div>

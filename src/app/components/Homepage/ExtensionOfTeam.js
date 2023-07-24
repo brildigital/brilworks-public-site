@@ -50,7 +50,7 @@ const ExtensionOfTeam = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
                           <Link href="" className="text-[21px]">
                             {" "}
@@ -78,7 +78,7 @@ const ExtensionOfTeam = () => {
                           />
                         </div>
                       </div>
-                      <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
                           <Link href="" className="text-[21px]">
                             {" "}
@@ -137,7 +137,7 @@ const ExtensionOfTeam = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
                           <Link href="" className="text-[21px]">
                             React.Js
@@ -195,7 +195,7 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                           <div className="about_txt">
                             <Link href="" className="text-[21px]">
                               AWS Development Services
@@ -254,7 +254,7 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                           <div className="about_txt">
                             <Link href="" className="text-[21px]">
                               React Native{" "}
@@ -282,7 +282,7 @@ const ExtensionOfTeam = () => {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                           <div className="about_txt">
                             <Link href="" className="text-[21px]">
                               Block Chain and Solidity
@@ -341,7 +341,7 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition pt-[32px]">
+                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                           <div className="about_txt">
                             <Link href="" className="text-[21px]">
                               UI/UX Designer
@@ -380,15 +380,15 @@ const ExtensionOfTeam = () => {
                   decoding="async"
                   loading="lazy"
                   className="alignnone wp-image-40 size-full !ml-auto"
-                  src="https://www.brilworks.com/wp-content/uploads/2023/01/team.jpg"
+                  src="/images/team.jpg"
                   alt="Teamwork"
                   width="1011"
                   height="1101"
                   srcset="
-                    https://www.brilworks.com/wp-content/uploads/2023/01/team.jpg          1011w,
-                    https://www.brilworks.com/wp-content/uploads/2023/01/team-275x300.jpg   275w,
-                    https://www.brilworks.com/wp-content/uploads/2023/01/team-940x1024.jpg  940w,
-                    https://www.brilworks.com/wp-content/uploads/2023/01/team-768x836.jpg   768w
+                    /images/team.jpg          1011w,
+                    /images/team-275x300.jpg   275w,
+                    /images/team-940x1024.jpg  940w,
+                    /images/team-768x836.jpg   768w
                   "
                   sizes="(max-width: 1011px) 100vw, 1011px"
                 />

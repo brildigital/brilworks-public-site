@@ -1,12 +1,55 @@
+"use client";
+import "swiper/css";
+import "swiper/css/pagination";
 import Link from "next/link";
 import { HonorText } from "./BigText";
+import Swiper from "swiper";
+import { useEffect } from "react";
 
 const Honors = () => {
+  const isMobile = window.innerWidth < 767;
+  useEffect(() => {
+    const initSwipers = () => {
+      new Swiper(".swiper-review", {
+        loop: isMobile ? false : true,
+        slidesPerView: isMobile ? 1 : 4,
+        pagination: true,
+        paginationClickable: true,
+        spaceBetween: 20,
+        autoplay: 5000,
+        speed: 300,
+        breakpoints: {
+          1475: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1028: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          991: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          575: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    };
+    initSwipers();
+  }, []);
+
   return (
     <>
       <HonorText />
       <div className="w-[90%] mx-auto">
-        <div className="swiper-container swiper-review">
+        <div className="swiper-container swiper-review pl-3 mr-2">
           <div className="swiper-wrapper">
             <div className="swiper-slide">
               <div className="award ng-scope">

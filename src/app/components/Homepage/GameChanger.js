@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 
 const GameChanger = () => {
+  const isMobile = window.innerWidth < 414;
   return (
     <div className="relative">
       <div className="home_sec1_img">
@@ -31,14 +33,16 @@ const GameChanger = () => {
               <span className="ez-toc-section-end"></span>
             </h1>
           </div>
-          <div className="our_work flex items-center justify-end gap-[16px]">
+          <div
+            className={`our_work flex items-center justify-end gap-4 ${
+              isMobile && "!pt-4"
+            }`}
+          >
             <p>
-              <Link href="https://www.brilworks.com/contact-us/">
-                GET IN TOUCH
-              </Link>
+              <Link href="/contact-us">GET IN TOUCH</Link>
             </p>
             <p>
-              <Link href="">
+              <Link href="/contact-us">
                 <img
                   decoding="async"
                   loading="lazy"
