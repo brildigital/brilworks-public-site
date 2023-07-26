@@ -460,7 +460,7 @@ const Header = () => {
                         tabindex="0"
                         onClick={handleAccordionTab3Click}
                       >
-                        TECHNOLOGIES
+                        <i></i>TECHNOLOGIES
                       </p>
                       <div className="accordion-content">
                         <Link href="/hire-reactjs-developer">
@@ -619,7 +619,7 @@ const Header = () => {
                         tabindex="0"
                         onClick={handleAccordionTab4Click}
                       >
-                        SOLUTIONS
+                        <i></i>SOLUTIONS
                       </p>
                       <div className="accordion-content">
                         <Link href="/industry/fintech-software-development">

@@ -9,14 +9,10 @@ body {
   background-size: contain;
   width: 100%;
 }
-a,
-a:focus,
-a:hover {
-  text-decoration: none !important;
-}
+
 p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 :root {
@@ -60,11 +56,13 @@ img {
   object-fit: cover;
 }
 a,
+a:focus,
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--color_black) !important;
   color: inherit !important;
 }
+
 @font-face {
   font-family: bw_gradual_demoblack;
   src: url(/fonts/bwgradualdemo/bwgradualdemo-black.html) format("woff2"),
@@ -163,10 +161,6 @@ a:hover {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color_black);
-}
-a {
-  text-decoration: none;
-  color: unset;
 }
 
 .header.header-bg-white {
@@ -494,11 +488,7 @@ a {
   border-radius: 30px;
   display: none;
 }
-/* .mega_menu {
-  position: fixed;
-  width: 100%;
-  z-index: 9;
-} */
+
 .mega_menu_width {
   width: 90%;
   margin: 0 auto;
