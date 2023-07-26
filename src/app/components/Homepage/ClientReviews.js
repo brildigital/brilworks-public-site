@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
   useEffect(() => {
     const initSwipers = () => {
       new Swiper("#swiper-client-review", {
@@ -50,9 +51,11 @@ const ClientReviews = () => {
 
         <div className="home_sec3_box overflow-hidden">
           <div
-            className={`dots_flex w-100 md:px-[30px] ${isMobile && "mx-4"} `}
+            className={`dots_flex w-100 md:px-[30px] ${
+              isMobile ? "!mx-4" : ""
+            } `}
           >
-            <div className="dots md:ml-8"></div>
+            <div className="dots md:ml-8 ml-4"></div>
             <div className="dots"></div>
             <div className="dots"></div>
           </div>

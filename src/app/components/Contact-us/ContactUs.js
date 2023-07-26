@@ -1,72 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useEffect } from "react";
-import Swiper from "swiper";
-import "swiper/css";
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  useEffect(() => {
-    const initSwipers = () => {
-      new Swiper("#swiper-portfolio", {
-        loop: true,
-        slidesPerView: 3,
-        paginationClickable: true,
-        centeredSlides: true,
-        spaceBetween: 20,
-        autoplay: 5000,
-        speed: 300,
-        breakpoints: {
-          1920: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1028: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          767: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
 
-      new Swiper(".swiper-review", {
-        loop: true,
-        slidesPerView: 4,
-        paginationClickable: true,
-        spaceBetween: 20,
-        autoplay: 5000,
-        speed: 300,
-        breakpoints: {
-          1475: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1028: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          991: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          767: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          575: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
-    };
-    initSwipers();
-  }, []);
   return (
     <>
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
@@ -74,7 +13,7 @@ const ContactUs = () => {
           <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
             <p
               className={`uppercase m-0 !w-10/12 ${
-                isMobile && "p-0 !text-left !w-full"
+                isMobile ? "p-0 !text-left !w-full" : ""
               }`}
             >
               Drop Us a Message and Let Our Team Help With Your Project
@@ -91,8 +30,8 @@ const ContactUs = () => {
             <div>
               <form action="" method="post" className="wpcf7-form init">
                 <div className="form-group">
-                  <p className={isMobile && "pt-4"}>
-                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                  <p className={isMobile ? "pt-4" : ""}>
+                    <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
                       First &amp; Last Name*
                     </label>
                     <br />
@@ -107,8 +46,8 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "pt-4"}>
-                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                  <p className={isMobile ? "pt-4" : ""}>
+                    <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
                       Work Email Address*
                     </label>
                     <br />
@@ -123,8 +62,8 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "pt-4"}>
-                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                  <p className={isMobile ? "pt-4" : ""}>
+                    <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
                       Phone Number*
                     </label>
                     <br />
@@ -139,8 +78,8 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="form-group">
-                  <p className={isMobile && "pt-4"}>
-                    <label className={`label_name ${isMobile && "pb-2"}`}>
+                  <p className={isMobile ? "pt-4" : ""}>
+                    <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
                       Your Message
                     </label>
                     <br />
@@ -405,8 +344,10 @@ const ContactUs = () => {
                   >
                     <form action="" method="post" className="wpcf7-form init">
                       <div className="form-group">
-                        <p className={isMobile && "py-4"}>
-                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                        <p className={isMobile ? "py-4" : ""}>
+                          <label
+                            className={`label_name ${isMobile ? "pb-2" : ""}`}
+                          >
                             First &amp; Last Name*
                           </label>
                           <br />
@@ -421,8 +362,10 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p className={isMobile && "py-4"}>
-                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                        <p className={isMobile ? "py-4" : ""}>
+                          <label
+                            className={`label_name ${isMobile ? "pb-2" : ""}`}
+                          >
                             Work Email Address*
                           </label>
                           <br />
@@ -437,8 +380,10 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p className={isMobile && "py-4"}>
-                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                        <p className={isMobile ? "py-4" : ""}>
+                          <label
+                            className={`label_name ${isMobile ? "pb-2" : ""}`}
+                          >
                             Phone Number*
                           </label>
                           <br />
@@ -453,8 +398,10 @@ const ContactUs = () => {
                         </p>
                       </div>
                       <div className="form-group">
-                        <p className={isMobile && "py-4"}>
-                          <label className={`label_name ${isMobile && "pb-2"}`}>
+                        <p className={isMobile ? "py-4" : ""}>
+                          <label
+                            className={`label_name ${isMobile ? "pb-2" : ""}`}
+                          >
                             Your Message
                           </label>
                           <br />
@@ -463,7 +410,7 @@ const ContactUs = () => {
                               cols="1"
                               rows="2"
                               className={`form-control-txt ${
-                                isMobile && "mt-4"
+                                isMobile ? "mt-4" : ""
                               }`}
                               id="message"
                               name="textarea-62"

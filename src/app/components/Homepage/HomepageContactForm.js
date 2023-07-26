@@ -28,8 +28,10 @@ const HomepageContactForm = () => {
                 >
                   <form action="" method="post" className="wpcf7-form init">
                     <div className="form-group">
-                      <p className={isMobile && "pb-4"}>
-                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                      <p className={isMobile ? "pb-4" : ""}>
+                        <label
+                          className={`label_name ${isMobile ? "pb-2" : ""}`}
+                        >
                           Name*
                         </label>
                         <br />
@@ -49,8 +51,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "pb-4"}>
-                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                      <p className={isMobile ? "pb-4" : ""}>
+                        <label
+                          className={`label_name ${isMobile ? "pb-2" : ""}`}
+                        >
                           Company*
                         </label>
                         <br />
@@ -70,8 +74,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "pb-4"}>
-                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                      <p className={isMobile ? "pb-4" : ""}>
+                        <label
+                          className={`label_name ${isMobile ? "pb-2" : ""}`}
+                        >
                           Email Id*
                         </label>
                         <br />
@@ -91,8 +97,10 @@ const HomepageContactForm = () => {
                       </p>
                     </div>
                     <div className="form-group">
-                      <p className={isMobile && "pb-4"}>
-                        <label className={`label_name ${isMobile && "pb-2"}`}>
+                      <p className={isMobile ? "pb-4" : ""}>
+                        <label
+                          className={`label_name ${isMobile ? "pb-2" : ""}`}
+                        >
                           Message
                         </label>
                         <br />
@@ -104,7 +112,7 @@ const HomepageContactForm = () => {
                             cols="1"
                             rows="2"
                             className={`wpcf7-form-control wpcf7-textarea form-control-txt ${
-                              isMobile && "mt-4"
+                              isMobile ? "mt-4" : ""
                             }`}
                             id="message"
                             aria-invalid="false"

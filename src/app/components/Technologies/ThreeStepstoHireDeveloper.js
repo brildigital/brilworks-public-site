@@ -304,19 +304,19 @@ const ThreeStepstoHireDeveloper = () => {
                       !isMobile && "border-r-[1px]  border-r-[#80808085] "
                     } md:p-8 p-6`}
                   >
-                    <div class="md:align-middle">
+                    <div className="md:align-middle">
                       <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
                         $18 <br />
                         Hourly (USD)
                       </p>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -328,13 +328,13 @@ const ThreeStepstoHireDeveloper = () => {
                         </p>
                       </div>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -344,13 +344,13 @@ const ThreeStepstoHireDeveloper = () => {
                         <p className="pricing-desc-text">Dedicated developer</p>
                       </div>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -371,19 +371,19 @@ const ThreeStepstoHireDeveloper = () => {
                         : "border-r-[1px] border-r-[#80808085]"
                     }  md:p-8 p-6`}
                   >
-                    <div class="sec8_service_txt1 txt_center">
+                    <div className="sec8_service_txt1 txt_center">
                       <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
                         $2500 <br />
                         Monthly (USD)
                       </p>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -395,13 +395,13 @@ const ThreeStepstoHireDeveloper = () => {
                         </p>
                       </div>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -413,12 +413,12 @@ const ThreeStepstoHireDeveloper = () => {
                     </div>
 
                     <div className="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -437,19 +437,19 @@ const ThreeStepstoHireDeveloper = () => {
                       isMobile && " border-t-[1px] border-t-[#80808085]"
                     }  md:p-8 p-6`}
                   >
-                    <div class="sec8_service_txt1 txt_center">
+                    <div className="sec8_service_txt1 txt_center">
                       <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
                         $12000 <br />
                         Monthly (USD)
                       </p>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -497,13 +497,13 @@ const ThreeStepstoHireDeveloper = () => {
                         </p>
                       </div>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"
@@ -515,13 +515,13 @@ const ThreeStepstoHireDeveloper = () => {
                         </p>
                       </div>
                     </div>
-                    <div class="pricing-desc">
-                      <div class="flex align-middle gap-3 pt-4">
+                    <div className="pricing-desc">
+                      <div className="flex align-middle gap-3 pt-4">
                         <p>
                           <img
                             decoding="async"
                             loading="lazy"
-                            class="w-[30px]"
+                            className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
                             width="23"

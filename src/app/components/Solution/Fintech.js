@@ -1100,52 +1100,52 @@ const Fintech = () => {
           </div>
 
           <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
-            <div class="portfolio_health_sec1 w-full">
-              <div class="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
-                <div class="health_sec1_flex_40 order_2">
-                  <div class=" portfolio_title">
+            <div className="portfolio_health_sec1 w-full">
+              <div className="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
+                <div className="health_sec1_flex_40 order_2">
+                  <div className=" portfolio_title">
                     <p>OUR PORTFOLIO</p>
                   </div>
                   <br />
-                  <div class="fintech-portfolio-sec">
+                  <div className="fintech-portfolio-sec">
                     <p>
                       Reliant Business Valuations <br /> Software Development
                     </p>
                   </div>
 
                   <div>
-                    <p class="w-3/5 fintech-portfolio-content">
+                    <p className="w-3/5 fintech-portfolio-content">
                       New-age financing software developed for small businesses
                       and services companies.
                     </p>
                   </div>
-                  <div class="sp-8 w-fit py-[2rem]">
-                    <div class="btn_flex">
-                      <div class="arrow_icon">
+                  <div className="sp-8 w-fit py-[2rem]">
+                    <div className="btn_flex">
+                      <div className="arrow_icon">
                         <img
                           decoding="async"
                           loading="lazy"
-                          class="alignnone"
+                          className="alignnone"
                           src="/images/right_arrow.png"
                           alt="arrow"
                           width="10"
                           height="17"
                         />
                       </div>
-                      <div class="xl:!text-[21px] lg:!text-[18px]">
-                        <p class="align-left">
+                      <div className="xl:!text-[21px] lg:!text-[18px]">
+                        <p className="align-left">
                           <Link href="/portfolio/">Know More</Link>
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="health_sec1_flex_60 order_1">
-                  <div class="about_sec1_img1">
+                <div className="health_sec1_flex_60 order_1">
+                  <div className="about_sec1_img1">
                     <img
                       decoding="async"
                       loading="lazy"
-                      class="alignnone"
+                      className="alignnone"
                       src="/images/reliant-img.png"
                       alt="Reliant"
                       width="815"
@@ -1170,7 +1170,7 @@ const Fintech = () => {
 
                 <p
                   className={`p-font md:text-center text-left ${
-                    isMobile && "!text-[1rem]"
+                    isMobile ? "!text-[1rem]" : ""
                   } md:my-[2rem] mt-[2rem] pl-3`}
                 >
                   We offer next-gen fintech solutions, which allow you to
@@ -1185,7 +1185,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       100%
@@ -1200,7 +1200,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       30+
@@ -1215,7 +1215,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       100%
@@ -1230,7 +1230,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       AGILE
@@ -1241,7 +1241,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       EXPERT
@@ -1252,7 +1252,7 @@ const Fintech = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       API

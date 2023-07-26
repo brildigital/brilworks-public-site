@@ -134,15 +134,15 @@ const Header = () => {
 
   return (
     <header>
-      <div class="header">
+      <div className="header">
         <div
-          class={`sec1_header ${
+          className={`sec1_header ${
             isPopupMenuActive && window.scrollY > 150 ? "bg-white" : ""
           }`}
         >
-          <div class="header_width padding_header">
-            <div class="header_main_flex">
-              <div class="header_logo">
+          <div className="header_width padding_header">
+            <div className="header_main_flex">
+              <div className="header_logo">
                 <Link href="/">
                   <img
                     src="/images/logo.png"
@@ -168,7 +168,7 @@ const Header = () => {
                   onClick={handleNavigationSolutionClick}
                 >
                   <Link href="javascript:void(0);" className="headerArrow_flex">
-                    <p>SOLUTIONS</p>
+                    <p className="!mb-0">SOLUTIONS</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
@@ -182,7 +182,7 @@ const Header = () => {
                   onClick={handleNavigationTechnologyClick}
                 >
                   <Link href="javascript:void(0);" className="headerArrow_flex">
-                    <p>TECHNOLOGIES</p>
+                    <p className="!mb-0">TECHNOLOGIES</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
                     </div>
@@ -460,7 +460,7 @@ const Header = () => {
                         tabindex="0"
                         onClick={handleAccordionTab3Click}
                       >
-                        <i></i>TECHNOLOGIES
+                        TECHNOLOGIES
                       </p>
                       <div className="accordion-content">
                         <Link href="/hire-reactjs-developer">
@@ -619,7 +619,7 @@ const Header = () => {
                         tabindex="0"
                         onClick={handleAccordionTab4Click}
                       >
-                        <i></i>SOLUTIONS
+                        SOLUTIONS
                       </p>
                       <div className="accordion-content">
                         <Link href="/industry/fintech-software-development">

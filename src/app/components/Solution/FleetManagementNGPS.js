@@ -485,7 +485,7 @@ const FleetManagementNGPS = () => {
                 <div className="w-full mt-[3rem]">
                   <div
                     className={`btn_paddinng contact_btn_solution btn_flex !mx-auto ${
-                      isMobile && "!px-[10px] !py-[14px]"
+                      isMobile ? "!px-[10px] !py-[14px]" : ""
                     }`}
                   >
                     <div className="formBtn_icon">
@@ -1037,7 +1037,7 @@ const FleetManagementNGPS = () => {
 
                 <p
                   className={`p-font md:text-center text-left ${
-                    isMobile && "!text-[1rem]"
+                    isMobile ? "!text-[1rem]" : ""
                   } md:my-[2rem] mt-[1rem] p-3`}
                 >
                   We know it can be frustrating to keep track of all your
@@ -1050,7 +1050,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       ROUND
@@ -1065,7 +1065,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       AGILE
@@ -1080,7 +1080,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       EXPERT
@@ -1091,7 +1091,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       USER
@@ -1105,7 +1105,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       ON TIME
@@ -1116,7 +1116,7 @@ const FleetManagementNGPS = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[24px]"
+                        isMobile ? "!text-[24px]" : ""
                       }`}
                     >
                       SECURITY
