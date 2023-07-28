@@ -28,7 +28,7 @@ const ReactJSTechnology = () => {
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone wp-image-258 "
+                        className="alignnone wp-image-258 "
                         src="/images/1.png"
                         alt="curly bracket"
                         width="24"
@@ -44,7 +44,7 @@ const ReactJSTechnology = () => {
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone wp-image-258 "
+                        className="alignnone wp-image-258 "
                         src="/images/2.png"
                         alt="curly bracket"
                         width="24"

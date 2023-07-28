@@ -1,0 +1,136 @@
+.work-swiper{
+    .swiper{
+       width: 90% !important;
+       .swiper-wrapper{
+           padding: 0 0 4rem!important;
+        }
+    }
+}
+.work-swiper{
+    .swiper-slide-next{
+       margin-top: 4rem!important;
+    }
+}
+
+.work-swiper{
+    .slide-style{
+        padding: 3rem 2rem;
+        border-radius: 30px;
+    }
+}
+
+
+.work-swiper{
+    .portfolio-title{
+        font-size: var(--font_32);
+        font-family: var(--medium);
+        color: var(--color_black);
+        padding: 1rem 0;
+    }
+    .portfolio-desc{
+        font-size: var(--font_16);
+        font-family: var(--regular);
+        color: var(--color_black);
+    }
+    
+}
+.work-swiper{
+    .desc-height{
+        height: 200px !important;
+    }
+}
+
+.work-swiper{
+    .swiper-pagination-bullet{
+        margin: 0 5px!important;
+        width: 10px;
+        height: 10px;
+    }
+    .swiper-pagination-bullet-active{
+        opacity: 1;
+        background: var(--main_color);
+    }
+}
+
+
+
+
+
+.honors-swiper{
+    .swiper{
+        width: 90%;
+        .swiper-wrapper{
+            padding: 0 0 4rem!important;
+        }
+    }
+}
+.honors-swiper{
+    .swiper-slide{
+        padding: 0 15px;
+    }
+}
+.honors-swiper{
+    .swiper-pagination-bullet{
+        margin: 0 5px!important;
+        width: 10px;
+        height: 10px;
+    }
+    .swiper-pagination-bullet-active{
+        opacity: 1;
+        background: var(--main_color);
+    }
+}
+
+.award {
+    transition: all 0.6s ease;
+  }
+.award {
+  padding: 3rem 0;
+  background-color: #fff;
+  -webkit-box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
+  -moz-box-shadow: -9px 10px 5px 0 rgba(117, 117, 117, 0.39);
+  box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
+  border-radius: 18px;
+  border: 1px solid #80808040;
+  margin: 1.5rem 0;
+}
+.award:hover {
+  transform: scale(1.03);
+}
+.award_sec8_img1 {
+  width: 63%;
+  max-height: 150px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+}
+.award .review-text p {
+  font-family: var(--regular);
+  color: var(--color_black);
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .work-swiper{
+        .swiper-slide-next{
+           margin-top: 0!important;
+        }
+    }
+    .work-swiper{
+        .swiper-wrapper{
+            padding: 0 0 4rem!important;
+        }
+    }
+    .slide-style{
+        padding: 2rem 1rem;
+    }
+    .portfolio-home{
+        height: 287px!important;
+    }
+    .award{
+        padding: 2rem 0;
+    }
+}
+

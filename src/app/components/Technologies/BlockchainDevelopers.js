@@ -274,7 +274,7 @@ const BlockchainDevelopers = () => {
                     <img
                       decoding="async"
                       loading="lazy"
-                      class="w-[75px] rounded-[40px]"
+                      className="w-[75px] rounded-[40px]"
                       src="/images/jagat-e1681882821165-150x150.jpeg"
                       alt="UiUXDesigner"
                       width="300"

@@ -36,7 +36,7 @@ const GameChanger = () => {
           </div>
           <div
             className={`our_work flex items-center justify-end gap-4 ${
-              isMobile && "!pt-4"
+              isMobile ? "!pt-4" : ""
             }`}
           >
             <p>

@@ -250,7 +250,7 @@ const TechnologyCombination = () => {
       </div>
 
       <div className="section8_service py-[5rem]">
-        <div className={`btn_flex mt-[4rem] ${isMobile && "!px-8 !py-2"}`}>
+        <div className={`btn_flex mt-[4rem] ${isMobile ? "!px-8 !py-2" : ""}`}>
           <div className="chat_icon">
             <img src="/images/hire-hand.png" alt="hire hand" />
           </div>

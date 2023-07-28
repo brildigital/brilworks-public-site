@@ -28,7 +28,7 @@ const HealthCare = () => {
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone wp-image-258 "
+                        className="alignnone wp-image-258 "
                         src="/images/1.png"
                         alt="curly bracket"
                         width="24"
@@ -44,7 +44,7 @@ const HealthCare = () => {
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone wp-image-258 "
+                        className="alignnone wp-image-258 "
                         src="/images/2.png"
                         alt="curly bracket"
                         width="24"
@@ -961,7 +961,7 @@ const HealthCare = () => {
 
                 <p
                   className={`p-font md:text-center text-left md:my-[2rem] p-3 ${
-                    isMobile && "!text-[1rem]"
+                    isMobile ? "!text-[1rem]" : ""
                   } `}
                 >
                   It is no secret that innovation and technology play important
@@ -1035,13 +1035,13 @@ const HealthCare = () => {
         </div>
 
         <div className="mx-auto mt-[6rem] md:pt-[6rem] pt-[4rem] workpadd_borderTop service_width end-to-end">
-          <div class="flex md:flex-row flex-col md:gap-[2rem] align-middle mb-0">
-            <div class="health_sec1_flex_40 order_2">
-              <div class=" portfolio_title">
+          <div className="flex md:flex-row flex-col md:gap-[2rem] align-middle mb-0">
+            <div className="health_sec1_flex_40 order_2">
+              <div className=" portfolio_title">
                 <p>OUR PORTFOLIO</p>
               </div>
               <br />
-              <div class="fintech-portfolio-sec">
+              <div className="fintech-portfolio-sec">
                 <p>
                   Endometriose
                   <br />
@@ -1050,38 +1050,38 @@ const HealthCare = () => {
               </div>
 
               <div>
-                <p class="w-3/5 fintech-portfolio-content">
+                <p className="w-3/5 fintech-portfolio-content">
                   Endometriosis free consultation app for patients to easily
                   reach out to expert doctors in the field.
                 </p>
               </div>
-              <div class="sp-8 w-fit py-[2rem]">
-                <div class="btn_flex">
-                  <div class="arrow_icon">
+              <div className="sp-8 w-fit py-[2rem]">
+                <div className="btn_flex">
+                  <div className="arrow_icon">
                     <img
                       decoding="async"
                       loading="lazy"
-                      class="alignnone"
+                      className="alignnone"
                       src="/images/right_arrow.png"
                       alt="arrow"
                       width="10"
                       height="17"
                     />
                   </div>
-                  <div class="xl:!text-[21px] lg:!text-[18px]">
-                    <p class="align-left">
+                  <div className="xl:!text-[21px] lg:!text-[18px]">
+                    <p className="align-left">
                       <Link href="/portfolio/">Know More</Link>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="health_sec1_flex_60 order_1">
-              <div class="about_sec1_img1">
+            <div className="health_sec1_flex_60 order_1">
+              <div className="about_sec1_img1">
                 <img
                   decoding="async"
                   loading="lazy"
-                  class="alignnone rounded-3xl"
+                  className="alignnone rounded-3xl"
                   src="/images/endo-app-ab-sofort-1-1500x630-1.jpg"
                   alt="Reliant"
                   width="815"

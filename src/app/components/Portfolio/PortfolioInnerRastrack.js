@@ -300,7 +300,7 @@ const PortfolioInnerRastrack = () => {
           <div className="md:px-[0px] px-[15px]">
             <div
               className={`grid md:grid-cols-3 grid-cols-1 sec7_service_grid ${
-                isMobile && "!gap-0"
+                isMobile ? "!gap-0" : ""
               }`}
             >
               <div className="contact_box">

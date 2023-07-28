@@ -288,7 +288,7 @@ const UIUXDesigners = () => {
                     <img
                       decoding="async"
                       loading="lazy"
-                      class="w-[75px] rounded-[40px]"
+                      className="w-[75px] rounded-[40px]"
                       src="/images/Luv-Sakariya-150x150.jpg"
                       alt="UiUXDesigner"
                       width="300"

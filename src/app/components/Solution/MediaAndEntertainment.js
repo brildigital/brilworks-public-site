@@ -668,7 +668,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Live {isMobile && <br />}Chatting</p>
+                    <p>Live {isMobile ? <br /> : ""}Chatting</p>
                   </div>
                 </div>
               </div>
@@ -736,7 +736,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 07.</div>
                   <div className="service_title">
-                    <p>Interactive {isMobile && <br />}UI/UX</p>
+                    <p>Interactive {isMobile ? <br /> : ""}UI/UX</p>
                   </div>
                 </div>
               </div>
@@ -774,7 +774,7 @@ const MediaAndEntertainment = () => {
 
                 <p
                   className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                    isMobile && "!text-[1rem]"
+                    isMobile ? "!text-[1rem]" : ""
                   } `}
                 >
                   We specialize in creating world-class entertainment apps to
@@ -788,7 +788,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       GDPR
@@ -799,7 +799,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       APPEALING
@@ -810,7 +810,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       Expert
@@ -821,7 +821,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       AGILE
@@ -832,7 +832,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       SECURITY
@@ -843,7 +843,7 @@ const MediaAndEntertainment = () => {
                   <div>
                     <div
                       className={`number xl:text-[34px] text-[24px] ${
-                        isMobile && "!text-[20px]"
+                        isMobile ? "!text-[20px]" : ""
                       }`}
                     >
                       UNPARALLELED

@@ -18,7 +18,7 @@ const BenefitOfHiringDevelopers = () => {
       <div className="endTO_text_content home_sec2_txt4 mb-[5rem] ">
         <p
           className={`md:px-[6rem] medium-font ${
-            isMobile && "text-start"
+            isMobile ? "text-start" : ""
           } md:!text-[1.3rem]`}
         >
           Hiring a dedicated development team from a{" "}

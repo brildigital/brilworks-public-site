@@ -21,7 +21,7 @@ const WhyShouldHireDevelopers = () => {
 
               <p
                 className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                  isMobile && "!text-[1rem]"
+                  isMobile ? "!text-[1rem]" : ""
                 } `}
               >
                 Just as React is the hottest framework for frontend today, we’re
@@ -45,7 +45,7 @@ const WhyShouldHireDevelopers = () => {
 
                   <p
                     className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                      isMobile && "!text-[1rem]"
+                      isMobile ? "!text-[1rem]" : ""
                     } `}
                   >
                     Whether you are looking for enterprise-level business
@@ -73,7 +73,7 @@ const WhyShouldHireDevelopers = () => {
 
                       <p
                         className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                          isMobile && "!text-[1rem]"
+                          isMobile ? "!text-[1rem]" : ""
                         } `}
                       >
                         Node.js development is a very exciting field and we take
@@ -97,7 +97,7 @@ const WhyShouldHireDevelopers = () => {
 
                           <p
                             className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                              isMobile && "!text-[1rem]"
+                              isMobile ? "!text-[1rem]" : ""
                             } `}
                           >
                             React Native has taken the world by storm and
@@ -124,7 +124,7 @@ const WhyShouldHireDevelopers = () => {
 
                               <p
                                 className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                                  isMobile && "!text-[1rem]"
+                                  isMobile ? "!text-[1rem]" : ""
                                 } `}
                               >
                                 We truly understand how important it is to have
@@ -152,7 +152,7 @@ const WhyShouldHireDevelopers = () => {
 
                                   <p
                                     className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                                      isMobile && "!text-[1rem]"
+                                      isMobile ? "!text-[1rem]" : ""
                                     } `}
                                   >
                                     We leverage our expertise to help you
@@ -176,7 +176,7 @@ const WhyShouldHireDevelopers = () => {
 
                                   <p
                                     className={`p-font md:text-center text-left md:my-[2rem] mt-[2rem] pl-3 ${
-                                      isMobile && "!text-[1rem]"
+                                      isMobile ? "!text-[1rem]" : ""
                                     } `}
                                   >
                                     As a leading blockchain development company,
