@@ -732,7 +732,7 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link href="/about-us">
+                    <Link href={`/about-us/`}>
                       <p
                         className={
                           pathname === "/about-us" ? "page-active" : ""

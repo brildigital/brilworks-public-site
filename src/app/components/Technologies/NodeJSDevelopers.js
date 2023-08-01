@@ -1,6 +1,17 @@
+"use client"
 import Link from "next/link";
 
 const NodeJSDevelopers = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
@@ -133,7 +144,13 @@ const NodeJSDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Juned
                         </Link>
                       </p>
@@ -270,7 +287,13 @@ const NodeJSDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Lavesh
                         </Link>
                       </p>
@@ -411,7 +434,13 @@ const NodeJSDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Minal
                         </Link>
                       </p>

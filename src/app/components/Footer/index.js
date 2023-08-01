@@ -86,9 +86,7 @@ const Footer = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
-                    <Link href="mailto:sales@brilworks.com">
-                      sales@brilworks.com
-                    </Link>
+                    <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
                   </li>
                 </ul>
                 <div className="quick_link">
@@ -96,7 +94,7 @@ const Footer = () => {
                 </div>
                 <ul className="footer_link pb-4">
                   <li>
-                    <Link href="tel:919313644148">+91 9313644148</Link>
+                    <a href="tel:919313644148">+91 9313644148</a>
                   </li>
                 </ul>
               </div>

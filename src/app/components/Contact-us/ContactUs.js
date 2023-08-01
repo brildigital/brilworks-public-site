@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 
@@ -284,7 +283,7 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <Link href="tel:919313644148">+91 93136 44148</Link>
+                    <a href="tel:919313644148">+91 93136 44148</a>
                   </p>
                 </div>
               </div>
@@ -298,9 +297,7 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <Link href="mailto:sales@brilworks.com">
-                      sales@brilworks.com
-                    </Link>
+                    <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
                   </p>
                 </div>
               </div>
@@ -314,9 +311,9 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <Link href="skype:cid.d74c89a9ff70ee92">
+                    <a href="skype:cid.d74c89a9ff70ee92">
                       cid.d74c89a9ff70ee92
-                    </Link>
+                    </a>
                   </p>
                 </div>
               </div>

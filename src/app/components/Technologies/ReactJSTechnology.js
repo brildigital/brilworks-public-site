@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import ReactJSDevelopers from "./ReactJSDevelopers";
 import FAQsTechnology from "./FAQsTechnology";
@@ -8,6 +9,17 @@ import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 
 const ReactJSTechnology = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -67,7 +79,10 @@ const ReactJSTechnology = () => {
           <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   <p className="p-0 !ml-[0] !w-full">
                     Hire ReactJS Developers to Fire Up Your Frontend
                   </p>
@@ -87,13 +102,19 @@ const ReactJSTechnology = () => {
                 <div className="flex md:gap-8 md:mt-[50px] flex-wrap">
                   <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                     <div className="formBtn_icon">
-                      <Link href="#pricing">
+                      <Link
+                        href="#pricing"
+                        onClick={(e) => scrollToSection(e, "pricing")}
+                      >
                         <p>
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </Link>
                     </div>
-                    <Link href="#pricing">
+                    <Link
+                      href="#pricing"
+                      onClick={(e) => scrollToSection(e, "pricing")}
+                    >
                       <p className="xl:!text-[21px] lg:!text-[18px]">
                         Plan & Pricing
                       </p>
@@ -102,13 +123,19 @@ const ReactJSTechnology = () => {
 
                   <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                     <div className="formBtn_icon">
-                      <Link href="#section10_service">
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
                         <p>
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </Link>
                     </div>
-                    <Link href="#section10_service">
+                    <Link
+                      href="#section10_service"
+                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    >
                       <p className="xl:!text-[21px] lg:!text-[18px]">
                         Hire React.js Developers
                       </p>
@@ -285,13 +312,19 @@ const ReactJSTechnology = () => {
           <div className="w-full md:my-[60px] my-[40px]">
             <div className="btn_paddinng btn_flex !mx-auto">
               <div className="formBtn_icon">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   <p>
                     <img src="/images/icons-05.png" alt="call" />
                   </p>
                 </Link>
               </div>
-              <Link href="#section10_service">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
                 <p className="xl:!text-[21px] lg:!text-[18px]">
                   Get A Quote For Your Project
                 </p>

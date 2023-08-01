@@ -122,13 +122,13 @@ export const SalesEmailText = () => {
       <div className="md:text-center">
         <div className="home_sec2_txt1">
           <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            <Link href="tel:919313644148">+91 93136 44148</Link>
+            <a href="tel:919313644148">+91 93136 44148</a>
           </p>
         </div>
 
         <div className="home_sec2_txt2">
           <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            <Link href="mailto:sales@brilworks.com">sales@brilworks.com</Link>
+            <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
           </p>
         </div>
       </div>
