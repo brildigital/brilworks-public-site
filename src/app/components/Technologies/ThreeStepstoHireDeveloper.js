@@ -6,6 +6,17 @@ import { useMediaQuery } from "react-responsive";
 const ThreeStepstoHireDeveloper = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section className="">
       <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
@@ -199,7 +210,10 @@ const ThreeStepstoHireDeveloper = () => {
                   <img src="/images/icons2-04.png" alt="call" />
                 </p>
               </div>
-              <Link href="#section10_service">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
                 <p className="xl:!text-[21px] lg:!text-[18px] !px-0">
                   Schedule A Developer Interview
                 </p>
@@ -552,7 +566,10 @@ const ThreeStepstoHireDeveloper = () => {
             </div>
             <div className="chat_btn_technology">
               <p className="transition ng-binding">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   {pathname === "/hire-reactjs-developer" ? (
                     "Hire React.js Developers"
                   ) : (

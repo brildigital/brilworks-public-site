@@ -1,6 +1,17 @@
+"use client"
 import Link from "next/link";
 
 const SolutionEngagementModal = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section>
       <div className="xl:mt-[76px] lg:mt-[60px] md:mt-[32px] mt-[16px] ">
@@ -83,13 +94,19 @@ const SolutionEngagementModal = () => {
           <div className="w-full md:py-[6rem] py-4">
             <div className="btn_paddinng btn_flex !mx-auto">
               <div className="formBtn_icon">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   <p>
                     <img src="/images/right_arrow.png" alt="call" />
                   </p>
                 </Link>
               </div>
-              <Link href="#section10_service">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
                 <p className="xl:!text-[21px] lg:!text-[18px]">Know More</p>
               </Link>
             </div>

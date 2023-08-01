@@ -1,4 +1,4 @@
-import Head from "next/head";
+"use client";
 import Link from "next/link";
 
 const AboutUs = () => {
@@ -21,7 +21,17 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="about_sec1_btn">
-              <Link href="#service_sec2" className="__mPS2id _mPS2id-h">
+              <Link
+                href="#service_sec2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("service_sec2").scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                scroll={true}
+                className="__mPS2id _mPS2id-h"
+              >
                 <img
                   decoding="async"
                   className="alignnone wp-image-189 size-full"
@@ -420,7 +430,7 @@ const AboutUs = () => {
 
           <div className="flex items-center justify-center gap-[20px] about_btn transition md:pt-[32px] pt-[0px]">
             <div className="about_txt">
-              <Link href="about-us" className="md:text-[32px] text-[20px]">
+              <Link href="/about-us/" className="md:text-[32px] text-[20px]">
                 Join Our Team
               </Link>
             </div>
@@ -456,7 +466,7 @@ const AboutUs = () => {
               </div>
               <div className="sec7_about_btn">
                 <p>
-                  <Link href="contact-us">Get in touch</Link>
+                  <Link href="/contact-us/">Get in touch</Link>
                 </p>
               </div>
             </div>

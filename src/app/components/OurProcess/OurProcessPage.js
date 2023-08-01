@@ -1,7 +1,18 @@
+"use client"
 import Link from "next/link";
 import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
 
 const OurProcessPage = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -90,6 +101,7 @@ const OurProcessPage = () => {
                   <div className="down_arrow">
                     <Link
                       href="#workSec4"
+                      onClick={(e) => scrollToSection(e, "workSec4")}
                       className="__mPS2id _mPS2id-h mPS2id-highlight mPS2id-highlight-first mPS2id-highlight-last"
                     >
                       <img
@@ -120,7 +132,11 @@ const OurProcessPage = () => {
                     <p>Our Process for Team Extension</p>
                   </div>
                   <div className="down_arrow">
-                    <Link href="#workSec5" className="__mPS2id _mPS2id-h">
+                    <Link
+                      href="#workSec5"
+                      onClick={(e) => scrollToSection(e, "workSec5")}
+                      className="__mPS2id _mPS2id-h"
+                    >
                       <img
                         className="alignnone"
                         src="/images/explore-arrow-01.png"

@@ -6,6 +6,16 @@ import { useMediaQuery } from "react-responsive";
 const TechnologyCombination = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="mx-auto service_width">
@@ -257,19 +267,30 @@ const TechnologyCombination = () => {
           <div className="chat_btn_technology">
             <p className="transition ng-binding ">
               {pathname === "/hire-reactjs-developer" ? (
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   Hire Full Stack Reactjs Developers
                 </Link>
               ) : (
                 <>
                   {pathname === "/hire-java-developer" ? (
-                    <Link href="#section10_service">
+                    <Link
+                      href="#section10_service"
+                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    >
                       Hire Full Stack Java Developers
                     </Link>
                   ) : (
                     <>
                       {pathname === "/hire-nodejs-developer" ? (
-                        <Link href="#section10_service">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                        >
                           Hire Full Stack Nodejs Developers
                         </Link>
                       ) : null}

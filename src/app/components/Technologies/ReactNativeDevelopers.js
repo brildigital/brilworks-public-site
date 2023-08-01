@@ -1,9 +1,19 @@
 "use client";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 
 const ReactNativeDevelopers = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
@@ -121,7 +131,13 @@ const ReactNativeDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Juned
                         </Link>
                       </p>
@@ -244,7 +260,13 @@ const ReactNativeDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Dinesh
                         </Link>
                       </p>
@@ -361,7 +383,13 @@ const ReactNativeDevelopers = () => {
                     </div>
                     <div className="chat_btn">
                       <p className="transition ng-binding">
-                        <Link href="#section10_service" className="">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                          className=""
+                        >
                           Hire Kinjal
                         </Link>
                       </p>

@@ -8,6 +8,16 @@ import { useMediaQuery } from "react-responsive";
 
 const HealthCare = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <section className="portfolio mt-[6rem]">
@@ -86,13 +96,21 @@ const HealthCare = () => {
                 <div className="btn_paddinng contact_btn btn_flex pt-[3rem]">
                   <div className="formBtn_icon">
                     <p>
-                      <Link href="#section10_service">
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
                         <img src="/images/right_arrow.png" alt="arrow" />
                       </Link>
                     </p>
                   </div>
                   <p className="xl:!text-[21px] lg:!text-[18px]">
-                    <Link href="#section10_service">Request For Proposal</Link>
+                    <Link
+                      href="#section10_service"
+                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    >
+                      Request For Proposal
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -514,12 +532,20 @@ const HealthCare = () => {
                   <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                     <div className="formBtn_icon">
                       <p>
-                        <Link href="#section10_service">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                        >
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </Link>
                       </p>
                     </div>
-                    <Link href="#section10_service">
+                    <Link
+                      href="#section10_service"
+                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    >
                       <p className="xl:!text-[21px] lg:!text-[18px]">
                         Build My Healthcare App
                       </p>
@@ -815,12 +841,20 @@ const HealthCare = () => {
                   <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                     <div className="formBtn_icon">
                       <p>
-                        <Link href="#section10_service">
+                        <Link
+                          href="#section10_service"
+                          onClick={(e) =>
+                            scrollToSection(e, "section10_service")
+                          }
+                        >
                           <img src="/images/icons2-04.png" alt="arrow" />
                         </Link>
                       </p>
                     </div>
-                    <Link href="#section10_service">
+                    <Link
+                      href="#section10_service"
+                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    >
                       <p className="xl:!text-[21px] lg:!text-[18px]">
                         Speak with Our Experts
                       </p>
@@ -932,13 +966,19 @@ const HealthCare = () => {
           <div className="w-full md:my-[60px] my-[40px]">
             <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
               <div className="formBtn_icon">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   <p>
                     <img src="/images/icons-05.png" alt="call" />
                   </p>
                 </Link>
               </div>
-              <Link href="#section10_service">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
                 <p className="xl:!text-[21px] lg:!text-[18px]">
                   Let’s get in touch
                 </p>
@@ -1021,13 +1061,19 @@ const HealthCare = () => {
           <div className="w-full pb-[6rem]">
             <div className="btn_paddinng btn_flex !mx-auto">
               <div className="formBtn_icon">
-                <Link href="#section10_service">
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
                   <p>
                     <img src="/images/right_arrow.png" alt="arrow" />
                   </p>
                 </Link>
               </div>
-              <Link href="#section10_service">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
                 <p className="xl:!text-[21px] lg:!text-[18px]">Work with us</p>
               </Link>
             </div>

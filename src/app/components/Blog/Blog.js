@@ -29,23 +29,25 @@ const Blog = () => {
 
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
             <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-              <Link href="/blog/blogInner">
+              <Link href="/blog/healthcare-trends-to-watch">
                 <div className="sec9_img1">
                   <img
                     className="rounded-[20px]"
-                    src="/images/Thumbnail-Best-Node.js-Open-Source-Projects-in-GitHub.svg"
+                    src="/images/Thumbnail-Healthcare-trends.svg"
                     alt=""
                   />
                 </div>
                 <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
                   <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
                     <p className="entry-title default-max-width aspect-[518/116]">
-                      Best Node.js Open Source Projects in GitHub
+                      Healthcare Trends to Watch
                     </p>
                   </div>
                   <div className="sec9_txt2 mt-[1.5rem]">
                     <p>
-                      <Link href="/blog/blogInner">June 14, 2023</Link>
+                      <Link href="/blog/healthcare-trends-to-watch">
+                        July 21, 2023
+                      </Link>
                     </p>
                   </div>
                 </div>

@@ -1,6 +1,17 @@
+"use client";
 import Link from "next/link";
 
 const BlogInner = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <section className="mt-[6rem] px-[16px]">
@@ -27,6 +38,12 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#Cross-Platform_App_Development_An_Overview"
+                        onClick={(e) =>
+                          scrollToSection(
+                            e,
+                            "Cross-Platform_App_Development_An_Overview"
+                          )
+                        }
                         title="Cross-Platform App Development: An Overview"
                       >
                         Cross-Platform App Development: An Overview
@@ -36,6 +53,12 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#What_is_Cross_Platform_App_Development"
+                        onClick={(e) =>
+                          scrollToSection(
+                            e,
+                            "Cross-What_is_Cross_Platform_App_Development"
+                          )
+                        }
                         title="What is Cross Platform App Development?"
                       >
                         What is Cross Platform App Development?
@@ -45,6 +68,12 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#Programming_Languages_Used_in_Cross-Platform_Development"
+                        onClick={(e) =>
+                          scrollToSection(
+                            e,
+                            "Programming_Languages_Used_in_Cross-Platform_Development"
+                          )
+                        }
                         title="Programming Languages Used in Cross-Platform Development"
                       >
                         Programming Languages Used in Cross-Platform Development
@@ -54,6 +83,12 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#The_Role_of_Framework_in_Cross-Platform_App_Development"
+                        onClick={(e) =>
+                          scrollToSection(
+                            e,
+                            "Programming_Languages_Used_in_Cross-Platform_Development"
+                          )
+                        }
                         title="The Role of Framework in Cross-Platform App Development"
                       >
                         The Role of Framework in Cross-Platform App Development
@@ -63,6 +98,12 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-noneh"
                         href="#Best_Frameworks_For_Cross_Platform_App_Development_in_2023"
+                        onClick={(e) =>
+                          scrollToSection(
+                            e,
+                            "Best_Frameworks_For_Cross_Platform_App_Development_in_2023"
+                          )
+                        }
                         title="Best Frameworks For Cross Platform App Development in 2023"
                       >
                         Best Frameworks For Cross Platform App Development in
@@ -73,6 +114,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#1_React_Native"
+                        onClick={(e) => scrollToSection(e, "1_React_Native")}
                         title="1. React Native"
                       >
                         1. React Native
@@ -82,6 +124,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#2_Flutter"
+                        onClick={(e) => scrollToSection(e, "2_Flutter")}
                         title="2. Flutter"
                       >
                         2. Flutter
@@ -91,6 +134,9 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#3_Kotlin_Multiplatform_Mobile"
+                        onClick={(e) =>
+                          scrollToSection(e, "3_Kotlin_Multiplatform_Mobile")
+                        }
                         title="3. Kotlin Multiplatform Mobile"
                       >
                         3. Kotlin Multiplatform Mobile
@@ -100,6 +146,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#4_Net_MAUIXamarin"
+                        onClick={(e) => scrollToSection(e, "4_Net_MAUIXamarin")}
                         title="4. .Net MAUI(Xamarin)"
                       >
                         4. .Net MAUI(Xamarin)
@@ -109,6 +156,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#5_Cordova"
+                        onClick={(e) => scrollToSection(e, "5_Cordova")}
                         title="5. Cordova"
                       >
                         5. Cordova
@@ -118,6 +166,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#6_Ionic"
+                        onClick={(e) => scrollToSection(e, "6_Ionic")}
                         title="6. Ionic"
                       >
                         6. Ionic
@@ -127,6 +176,7 @@ const BlogInner = () => {
                       <Link
                         className="!text-[#444444] shadow-none underline-none"
                         href="#Conclusion"
+                        onClick={(e) => scrollToSection(e, "Conclusion")}
                         title="Conclusion"
                       >
                         Conclusion
