@@ -1,8 +1,20 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 
 const Career = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <section>
@@ -31,7 +43,11 @@ const Career = () => {
             <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
               <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
                 <div className="about_txt">
-                  <Link href="/career/#section7_career" className="text-[21px]">
+                  <Link
+                    href="#section7_career"
+                    className="text-[21px]"
+                    onClick={(e) => scrollToSection(e, "section7_career")}
+                  >
                     Explore Open Positions
                   </Link>
                 </div>
@@ -58,7 +74,11 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
                 <div className="about_txt">
-                  <Link href="/career/#section10" className="text-[21px]">
+                  <Link
+                    href="#section10"
+                    className="text-[21px]"
+                    onClick={(e) => scrollToSection(e, "section10")}
+                  >
                     Join Our Team
                   </Link>
                 </div>

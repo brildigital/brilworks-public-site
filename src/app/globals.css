@@ -2092,6 +2092,13 @@ textarea.form-control-txt {
   line-height: 28px;
   overflow: hidden;
 }
+.blog-title {
+  font-family: var(--bold);
+  font-size: var(--font_48) !important;
+  color: var(--black_font);
+  line-height: 1.2 !important;
+}
+
 .single-author-bio .single-author-bio-text p {
   font-size: 16px;
   line-height: 26px;
@@ -2104,6 +2111,8 @@ textarea.form-control-txt {
   margin-bottom: 7px;
   font-weight: 700;
 }
+
+
 
 @media only screen and (max-width: 1680px) {
   .home_txt2 p {

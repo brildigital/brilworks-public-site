@@ -1,4 +1,5 @@
 import parse from "html-react-parser";
+import "./Blogstyle.scss";
 
 const Article = ({ blok }) => {
   return (
@@ -17,8 +18,8 @@ const Article = ({ blok }) => {
           </div>
         </div>
 
-        <div className="text-center lg:w-2/3 w-full">
-          <h1 className="title-font text-left sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        <div className="text-center md:!w-2/4 lg:w-2/3 w-full">
+          <h1 className="title-font blog-title text-left sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
             {blok.title}
           </h1>
           {/* <h1 className="title-font sm:text-3xl text-2xl mb-4 font-medium ">

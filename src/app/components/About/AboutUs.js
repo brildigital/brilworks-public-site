@@ -430,7 +430,7 @@ const AboutUs = () => {
 
           <div className="flex items-center justify-center gap-[20px] about_btn transition md:pt-[32px] pt-[0px]">
             <div className="about_txt">
-              <Link href="/about-us/" className="md:text-[32px] text-[20px]">
+              <Link href="/career/" className="md:text-[32px] text-[20px]">
                 Join Our Team
               </Link>
             </div>
