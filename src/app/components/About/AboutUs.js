@@ -53,7 +53,7 @@ const AboutUs = () => {
                 alt="team working"
                 width="882"
                 height="589"
-                srcset="
+                srcSet="
                     /images/banner-1.jpg         882w,
                     /images/banner-1-300x200.jpg 300w,
                     /images/banner-1-768x513.jpg 768w
@@ -104,7 +104,7 @@ const AboutUs = () => {
                 alt="vision"
                 width="965"
                 height="625"
-                srcset="
+                srcSet="
                     images/vision.jpg         965w,
                     images/vision-300x194.jpg 300w,
                     images/vision-768x497.jpg 768w

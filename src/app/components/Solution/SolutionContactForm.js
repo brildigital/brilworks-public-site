@@ -78,7 +78,7 @@ const SolutionContactForm = () => {
                         className="send_btn"
                         id="submit"
                         type="submit"
-                        value="submit"
+                       
                       />
                       <span className="wpcf7-spinner"></span>
                     </p>

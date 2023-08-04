@@ -43,7 +43,7 @@ const AWSDevelopers = () => {
                       alt="Vicky"
                       width="300"
                       height="300"
-                      srcset="/images/vicky-1-300x300.jpg 300w,
+                      srcSet="/images/vicky-1-300x300.jpg 300w,
                                /images/vicky-1-150x150.jpg 150w,
                                 /images/vicky-1.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"
@@ -227,7 +227,7 @@ const AWSDevelopers = () => {
                       alt="Colin"
                       width="300"
                       height="300"
-                      srcset="/images/colin-300x300.jpg 300w,
+                      srcSet="/images/colin-300x300.jpg 300w,
                                /images/colin-150x150.jpg 150w,
                                 /images/colin.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"

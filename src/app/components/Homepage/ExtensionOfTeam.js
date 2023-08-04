@@ -384,7 +384,7 @@ const ExtensionOfTeam = () => {
                   alt="Teamwork"
                   width="1011"
                   height="1101"
-                  srcset="
+                  srcSet="
                     /images/team.jpg          1011w,
                     /images/team-275x300.jpg   275w,
                     /images/team-940x1024.jpg  940w,

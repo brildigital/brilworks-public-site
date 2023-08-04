@@ -892,6 +892,11 @@ textarea.form-control-txt {
   font-family: var(--bold);
   color: var(--color_black);
 }
+.number_home{
+  font-size: 65px;
+  font-family: var(--bold);
+  color: var(--color_black);
+}
 #content .wpb_alert p:last-child,
 #content .wpb_text_column :last-child,
 #content .wpb_text_column p:last-child,

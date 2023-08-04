@@ -42,7 +42,7 @@ const ReactNativeDevelopers = () => {
                       alt="Juned Lanja"
                       width="300"
                       height="300"
-                      srcset="/images/juned-300x300.jpg 300w,
+                      srcSet="/images/juned-300x300.jpg 300w,
                                /images/juned-150x150.jpg 150w,
                                 /images/juned.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"

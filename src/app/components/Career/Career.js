@@ -105,7 +105,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="mx-auto mx-[16px] md:my-[8rem] my-[3rem] w-4/5">
+            <div className="mx-auto md:my-[8rem] my-[3rem] w-4/5">
               <img
                 src="/images/career.jpg"
                 alt="career"

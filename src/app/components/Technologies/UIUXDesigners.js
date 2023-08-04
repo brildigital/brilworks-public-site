@@ -316,7 +316,7 @@ const UIUXDesigners = () => {
                       alt="UiUXDesigner"
                       width="300"
                       height="300"
-                      srcset="/images/Luv-Sakariya-150x150.jpg 150w, 
+                      srcSet="/images/Luv-Sakariya-150x150.jpg 150w, 
                       /images/Luv-Sakariya-300x300.jpg 300w, 
                       /images/Luv-Sakariya-1024x1024.jpg 1024w, 
                       /images/Luv-Sakariya-768x768.jpg 768w,

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 
 const JavaDevelopers = () => {
@@ -43,7 +43,7 @@ const JavaDevelopers = () => {
                       alt="Juned Lanja"
                       width="300"
                       height="300"
-                      srcset="/images/Nirmal-300x300.png 300w,
+                      srcSet="/images/Nirmal-300x300.png 300w,
                                /images/Nirmal-150x150.png 150w,
                                 /images/Nirmal.png 500w"
                       sizes="(max-width: 300px) 100vw, 300px"
@@ -181,7 +181,7 @@ const JavaDevelopers = () => {
                       alt="Rajesh"
                       width="300"
                       height="300"
-                      srcset="/images/rajesh-rathva-300x300.jpg 300w,
+                      srcSet="/images/rajesh-rathva-300x300.jpg 300w,
                                /images/rajesh-rathva-150x150.jpg 150w,
                                 /images/rajesh-rathva.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"

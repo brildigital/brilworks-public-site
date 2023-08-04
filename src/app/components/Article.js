@@ -261,7 +261,6 @@ const Article = ({ blok }) => {
                           <input
                             className="form-control-txt"
                             id="name"
-                            value=""
                             type="text"
                           />
                         </span>
@@ -272,11 +271,7 @@ const Article = ({ blok }) => {
                         <label className="label_name">Email*</label>
                         <br />
                         <span>
-                          <input
-                            className="form-control-txt"
-                            id="email"
-                            value=""
-                          />
+                          <input className="form-control-txt" id="email" />
                         </span>
                       </p>
                     </div>
@@ -301,7 +296,7 @@ const Article = ({ blok }) => {
                         </p>
                       </div>
                       <p>
-                        <input id="submit" type="submit" value="Submit" />
+                        <input id="submit" type="submit" />
                       </p>
                     </div>
                   </form>
@@ -377,7 +372,7 @@ const Article = ({ blok }) => {
           {blogData?.length
             ? blogData.map(({ slug, name, content }, index) => (
                 <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-                  <Link href={`/blog/${slug}`}>
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]}`}>
                     <div className="sec9_img1">
                       <img
                         className="rounded-[20px]"
@@ -393,7 +388,7 @@ const Article = ({ blok }) => {
                       </div>
                       <div className="sec9_txt2 mt-[1.5rem]">
                         <p>
-                          <Link href={`/blog/${slug}`}>
+                          <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                             {content?.PublishedDate}
                           </Link>
                         </p>

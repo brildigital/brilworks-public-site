@@ -27,7 +27,7 @@ const TechnologyContactForm = () => {
               >
                 <form action="" method="post" className="wpcf7-form init">
                   <div className="form-group">
-                    <p className={isMobile ?"pt-4":""}>
+                    <p className={isMobile ? "pt-4" : ""}>
                       <label className="label_name">Name*</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
@@ -42,7 +42,7 @@ const TechnologyContactForm = () => {
                   </div>
 
                   <div className="form-group">
-                    <p className={isMobile ?"pt-4":""}>
+                    <p className={isMobile ? "pt-4" : ""}>
                       <label className="label_name">Mobile*</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
@@ -56,7 +56,7 @@ const TechnologyContactForm = () => {
                     </p>
                   </div>
                   <div className="form-group">
-                    <p className={isMobile ?"pt-4":""}>
+                    <p className={isMobile ? "pt-4" : ""}>
                       <label className="label_name">Email *</label>
                       <br />
                       <span className="wpcf7-form-control-wrap">
@@ -76,12 +76,7 @@ const TechnologyContactForm = () => {
                       </p>
                     </div>
                     <p>
-                      <input
-                        className="send_btn"
-                        id="submit"
-                        type="submit"
-                        value="Inquire Now"
-                      />
+                      <input className="send_btn" id="submit" type="submit" />
                       <span className="wpcf7-spinner"></span>
                     </p>
                   </div>

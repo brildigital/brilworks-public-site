@@ -17,7 +17,7 @@ const ArticleTeaser = ({ article }) => {
           {render(article.teaser)}
         </div>
         <div className="mt-4">
-          <Link href={`/blog/${article.slug}`}>
+          <Link as={`/blog/${article.slug}`} href={`/blog/[slug]`}>
             <Link
               className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
               title="read more"

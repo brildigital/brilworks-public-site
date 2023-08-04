@@ -99,10 +99,7 @@ const Config = ({ blok }) => {
                     className="solutions header_font hidden-xs project_pages_none"
                     id="triggerNavigationSolution"
                   >
-                    <Link
-                      href="javascript:void(0);"
-                      className="headerArrow_flex"
-                    >
+                    <Link href="" className="headerArrow_flex">
                       <p>SOLUTIONS</p>
                       <div className="arrow_size">
                         <img src="/images/down-arrow.png" alt="down arrow" />
@@ -113,10 +110,7 @@ const Config = ({ blok }) => {
                     className="header_font hidden-xs project_pages_none"
                     id="triggerNavigationtechnology"
                   >
-                    <Link
-                      href="javascript:void(0);"
-                      className="headerArrow_flex"
-                    >
+                    <Link href="" className="headerArrow_flex">
                       <p>TECHNOLOGIES</p>
                       <div className="arrow_size">
                         <img src="/images/down-arrow.png" alt="down arrow" />
@@ -129,7 +123,7 @@ const Config = ({ blok }) => {
                     </div>
                   </Link>
                   <div className="nav_btn" id="triggerNavigationmenu">
-                    <Link href="javascript:void(0);">
+                    <Link href="">
                       <div className="btn_1">
                         <div className="bar transition top"></div>
                         <div className="bar transition bottom"></div>

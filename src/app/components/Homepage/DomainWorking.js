@@ -26,7 +26,7 @@ const DomainWorking = () => {
                       alt="fintech app"
                       width="1010"
                       height="1100"
-                      srcset="
+                      srcSet="
                         /images/Fintech-275x300.jpg   275w,
                         /images/Fintech-940x1024.jpg  940w,
                         /images/Fintech-768x836.jpg   768w,
@@ -51,7 +51,7 @@ const DomainWorking = () => {
                       alt="fintech app"
                       width="1010"
                       height="1100"
-                      srcset="
+                      srcSet="
                         /images/healthcare-275x300.jpg   275w,
                         /images/healthcare-940x1024.jpg  940w,
                         /images/healthcare-768x836.jpg   768w,
@@ -76,7 +76,7 @@ const DomainWorking = () => {
                       alt="fintech app"
                       width="1010"
                       height="1100"
-                      srcset="
+                      srcSet="
                         /images/New-Project-3-275x300.jpg   275w,
                         /images/New-Project-3-940x1024.jpg  940w,
                         /images/New-Project-3-768x836.jpg   768w,
@@ -102,7 +102,7 @@ const DomainWorking = () => {
                       alt="fintech app"
                       width="1010"
                       height="1100"
-                      srcset="
+                      srcSet="
                         /images/1-275x300.jpg   275w,
                         /images/1-940x1024.jpg  940w,
                         /images/1-768x836.jpg   768w,

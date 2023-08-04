@@ -33,7 +33,7 @@ const Blogs = () => {
         {blogData?.length
           ? blogData.map(({ slug, name, content }, index) => (
               <div className="blog-box overflow-hidden">
-                <Link href={`/blog/${slug}`}>
+                <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                   <img
                     src={content?.Image?.filename}
                     alt={content?.Image?.alt}
