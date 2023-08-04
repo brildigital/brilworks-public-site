@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import Image from "next/image";

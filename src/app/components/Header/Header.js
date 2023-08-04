@@ -772,10 +772,10 @@ const Header = () => {
                 </div>
                 <div className="flex_grid-40_header_menu">
                   <div className="header_img1 pb-2 hidden-xs">
-                    <img src="/images/blog-1.jpg" />
+                    <img src="/images/blog-1.jpg" alt="" />
                   </div>
                   <div className="header_img1">
-                    <img src="/images/blog-2.jpg" />
+                    <img src="/images/blog-2.jpg" alt="" />
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { render } from "storyblok-rich-text-react-renderer";
 

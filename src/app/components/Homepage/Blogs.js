@@ -32,7 +32,7 @@ const Blogs = () => {
       <div className="w-[90%] blog-home mx-auto">
         {blogData?.length
           ? blogData.map(({ slug, name, content }, index) => (
-              <div className="blog-box overflow-hidden">
+              <div key={index} className="blog-box overflow-hidden">
                 <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                   <img
                     src={content?.Image?.filename}

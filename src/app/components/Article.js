@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import StoryblokClient from "storyblok-js-client";
 import parse from "html-react-parser";
@@ -371,7 +372,10 @@ const Article = ({ blok }) => {
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
           {blogData?.length
             ? blogData.map(({ slug, name, content }, index) => (
-                <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
+                <div
+                  key={index}
+                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                >
                   <Link as={`/blog/${slug}`} href={`/blog/[slug]}`}>
                     <div className="sec9_img1">
                       <img

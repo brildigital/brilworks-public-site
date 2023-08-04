@@ -19,6 +19,7 @@ const BlogInner = () => {
           <img
             decoding="async"
             src="/images/Banner_Cross-platform-app-dev0.svg"
+            alt="Cross-platform-app-dev"
             className="rounded-[30px]"
           />
         </div>
