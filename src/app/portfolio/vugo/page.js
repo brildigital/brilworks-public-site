@@ -8,7 +8,7 @@ const page = () => {
     <>
       <Header />
       <PortfolioInnerVugo />
-      <AutoSlidesFooter />
+
       <Footer />
     </>
   );

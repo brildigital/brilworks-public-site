@@ -49,7 +49,7 @@ const FAQsTechnology = () => {
                 data-bs-parent="#accordionExampleother"
               >
                 <div className="accordion-body">
-                  <div className="w-11/12">
+                  <div>
                     The average experience of React.js developers hired through
                     us is of mid-senior level, which is 3+ years.
                   </div>
@@ -84,7 +84,7 @@ const FAQsTechnology = () => {
                 data-bs-parent="#accordionExampleother"
               >
                 <div className="accordion-body">
-                  <div className="w-11/12">
+                  <div>
                     In as few as 2-5 business days, we can quickly and
                     efficiently assign a React js developer to your project.
                   </div>
@@ -121,7 +121,7 @@ const FAQsTechnology = () => {
                 data-bs-parent="#accordionExampleother"
               >
                 <div className="accordion-body">
-                  <div className="w-11/12">
+                  <div>
                     Hiring dedicated React js developers for your team is a good
                     idea if you want to ensure that tasks are completed on time
                     and with the highest degree of quality, have the option of
@@ -162,7 +162,7 @@ const FAQsTechnology = () => {
                 data-bs-parent="#accordionExampleother"
               >
                 <div className="accordion-body">
-                  <div className="w-11/12">
+                  <div>
                     Yes, we offer support and maintenance services to help you
                     keep your product running smoothly after it has been
                     deployed. This includes bug fixes, security maintenance,
@@ -209,7 +209,7 @@ const FAQsTechnology = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="w-11/12">
+                      <div>
                         You can hire Java backend developers from Brilworks to
                         easily extend your web development team. We match up
                         great talent with your requirements, then help you find
@@ -249,7 +249,7 @@ const FAQsTechnology = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="w-11/12">
+                      <div>
                         In as few as 2-5 business days, we can quickly and
                         efficiently assign a Java developer to your project.
                       </div>
@@ -285,7 +285,7 @@ const FAQsTechnology = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="w-11/12">
+                      <div>
                         You should be looking for a Java developer who has the
                         skills to work on any project, has a passion for coding,
                         and enjoys learning new technologies. A strong candidate
@@ -325,7 +325,7 @@ const FAQsTechnology = () => {
                     data-bs-parent="#accordionExampleother"
                   >
                     <div className="accordion-body">
-                      <div className="w-11/12">
+                      <div>
                         Our comprehensive vetting process means that there is no
                         need to worry about missing out on a great candidate.
                         Additionally, we are always looking to make sure that
@@ -374,7 +374,7 @@ const FAQsTechnology = () => {
                           data-bs-parent="#accordionExampleother"
                         >
                           <div className="accordion-body">
-                            <div className="w-11/12">
+                            <div>
                               We thoroughly evaluate Node.js developers’ logical
                               reasoning abilities, communication skills, and
                               their ability to write well-documented and clean
@@ -412,7 +412,7 @@ const FAQsTechnology = () => {
                           data-bs-parent="#accordionExampleother"
                         >
                           <div className="accordion-body">
-                            <div className="w-11/12">
+                            <div>
                               Hiring a NodeJS developer from us will cost you
                               approximately $2500 a month, depending on the
                               skillset and experience of the candidate.
@@ -450,7 +450,7 @@ const FAQsTechnology = () => {
                           data-bs-parent="#accordionExampleother"
                         >
                           <div className="accordion-body">
-                            <div className="w-11/12">
+                            <div>
                               Yes, we offer a 48-hour no-risk trial period, so
                               you can test the resource before making a
                               decision.
@@ -488,7 +488,7 @@ const FAQsTechnology = () => {
                           data-bs-parent="#accordionExampleother"
                         >
                           <div className="accordion-body">
-                            <div className="w-11/12">
+                            <div>
                               The Nodejs developer must have a definite
                               knowledge of both relational databases like MySQL,
                               MariaDB, and No SQL databases like MongoDB, and
@@ -537,7 +537,7 @@ const FAQsTechnology = () => {
                               data-bs-parent="#accordionExampleother"
                             >
                               <div className="accordion-body">
-                                <div className="w-11/12">
+                                <div>
                                   A React Native developer is responsible for
                                   building native applications for Android, iOS,
                                   and macOS. They have the ability to create UI
@@ -577,7 +577,7 @@ const FAQsTechnology = () => {
                               data-bs-parent="#accordionExampleother"
                             >
                               <div className="accordion-body">
-                                <div className="w-11/12">
+                                <div>
                                   It is safe to say that React Native gives you
                                   the best of both worlds. Convenient and
                                   cross-platform, it will enable you to build
@@ -616,7 +616,7 @@ const FAQsTechnology = () => {
                               data-bs-parent="#accordionExampleother"
                             >
                               <div className="accordion-body">
-                                <div className="w-11/12">
+                                <div>
                                   An easy and convenient way to hire a React
                                   Native Developer from Brilworks is by sharing
                                   your requirements. Once you fill out the
@@ -658,7 +658,7 @@ const FAQsTechnology = () => {
                               data-bs-parent="#accordionExampleother"
                             >
                               <div className="accordion-body">
-                                <div className="w-11/12">
+                                <div>
                                   You will have 100% ownership of the project
                                   and all its resource including NDA, copyright,
                                   source code, intellectual property rights, and
@@ -697,7 +697,7 @@ const FAQsTechnology = () => {
                               data-bs-parent="#accordionExampleother"
                             >
                               <div className="accordion-body">
-                                <div className="w-11/12">
+                                <div>
                                   We understand that every project requires
                                   different skills, and we are always looking
                                   for ways to bring you the best developers to
@@ -751,7 +751,7 @@ const FAQsTechnology = () => {
                                   data-bs-parent="#accordionExampleother"
                                 >
                                   <div className="accordion-body">
-                                    <div className="w-11/12">
+                                    <div>
                                       You can hire AWS developers from Brilworks
                                       to easily extend your web development
                                       team. We match up great talent with your
@@ -795,7 +795,7 @@ const FAQsTechnology = () => {
                                   data-bs-parent="#accordionExampleother"
                                 >
                                   <div className="accordion-body">
-                                    <div className="w-11/12">
+                                    <div>
                                       Yes, it’s completely free. We allow this
                                       free time period to evaluate whether we’re
                                       the right fit for your project. If you’re
@@ -840,7 +840,7 @@ const FAQsTechnology = () => {
                                   data-bs-parent="#accordionExampleother"
                                 >
                                   <div className="accordion-body">
-                                    <div className="w-11/12">
+                                    <div>
                                       Our developers do all the heavy lifting
                                       for you and take over executing the work
                                       while giving you the freedom to focus on
@@ -884,7 +884,7 @@ const FAQsTechnology = () => {
                                   data-bs-parent="#accordionExampleother"
                                 >
                                   <div className="accordion-body">
-                                    <div className="w-11/12">
+                                    <div>
                                       You need to choose an AWS partner that can
                                       help you understand the development
                                       process & technical challenges, what is
@@ -928,7 +928,7 @@ const FAQsTechnology = () => {
                                   data-bs-parent="#accordionExampleother"
                                 >
                                   <div className="accordion-body">
-                                    <div className="w-11/12">
+                                    <div>
                                       Yes, we do offer post-launch maintenance
                                       and support. This includes bug fixes,
                                       security maintenance, minor changes,
@@ -982,7 +982,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           Our UI UX designers understand the
                                           value of user experience and are
                                           committed to creating a powerful web
@@ -1023,7 +1023,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           Yes, we do understand the importance
                                           of finding someone who is a good fit
                                           for your organization. Therefore, we
@@ -1067,7 +1067,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           You will have 100% ownership of the
                                           project and all its resource including
                                           NDA, copyright, source code,
@@ -1110,7 +1110,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           We understand that every project
                                           requires different skills, and we are
                                           always looking for ways to bring you
@@ -1163,7 +1163,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           Yes, you can hire a Blockchain app
                                           developer in a full-time capacity. We
                                           have a team of Blockchain experts, who
@@ -1206,7 +1206,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           One of the biggest benefits of
                                           Blockchain is its ability to automate
                                           processes. Rather than relying on a
@@ -1250,7 +1250,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           Smart contract development is a
                                           blockchain technology that allows you
                                           to develop customized smart contracts.
@@ -1294,7 +1294,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           When it comes to picking out a
                                           Blockchain development company to work
                                           with, there are many factors that go
@@ -1339,7 +1339,7 @@ const FAQsTechnology = () => {
                                       data-bs-parent="#accordionExampleother"
                                     >
                                       <div className="accordion-body">
-                                        <div className="w-11/12">
+                                        <div>
                                           Agile project management is key to
                                           keeping clients, teams, and managers
                                           informed of the work being done. In

@@ -8,7 +8,7 @@ const page = () => {
     <>
       <Header />
       <Fintech />
-      <AutoSlidesFooter />
+
       <Footer />
     </>
   );

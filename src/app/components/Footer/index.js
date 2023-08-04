@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
 
 const Footer = () => {
   const pathname = usePathname();
   return (
     <>
+      <AutoSlidesFooter />
       <div className="bg_black">
         <div className="footer_width footer_padding">
           <div className="footer_grid">

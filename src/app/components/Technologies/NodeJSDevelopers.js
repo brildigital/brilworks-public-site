@@ -133,7 +133,7 @@ const NodeJSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -276,7 +276,7 @@ const NodeJSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -423,7 +423,7 @@ const NodeJSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"

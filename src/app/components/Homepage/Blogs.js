@@ -1,27 +1,55 @@
+"use client";
 import Link from "next/link";
+import StoryblokClient from "storyblok-js-client";
 import { BlogText } from "./BigText";
+import { useEffect, useState } from "react";
+
+const Storyblok = new StoryblokClient({
+  accessToken: process.env.accessToken,
+});
 
 const Blogs = () => {
+  const [blogData, setBlogData] = useState(null);
+
+  useEffect(() => {
+    Storyblok.get("cdn/stories/", {
+      // starts_with: "blog/",       // If want to fetch data from blogs
+      starts_with: "blogs-list/",
+      per_page: 3,
+      version: "draft" || "published",
+    })
+      .then((response) => {
+        setBlogData(response.data?.stories);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
       <BlogText />
       <div className="w-[90%] blog-home mx-auto">
-        <div className="blog-box overflow-hidden">
-          <Link href="">
-            <img
-              src="/images/Thumbnail-VR0.svg"
-              className="vc_gitem-zone-img"
-              alt="Banner - Apple Vision Pro vs. Meta Quest 3"
-            />
-            <div>
-              <h4 className="xl:text-[32px]">
-                Apple Vision Pro vs Meta Quest 3
-              </h4>
-            </div>
-          </Link>
-        </div>
+        {blogData?.length
+          ? blogData.map(({ slug, name, content }, index) => (
+              <div className="blog-box overflow-hidden">
+                <Link href={`/blog/${slug}`}>
+                  <img
+                    src={content?.Image?.filename}
+                    alt={content?.Image?.alt}
+                    className="vc_gitem-zone-img"
+                  />
+                  <div className="p-[10px]">
+                    <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                      {name}
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+            ))
+          : null}
 
-        <div className="blog-box overflow-hidden">
+        {/* <div className="blog-box overflow-hidden">
           <Link href="">
             <img
               src="/images/Thumbnail-Rapid.svg "
@@ -50,12 +78,12 @@ const Blogs = () => {
               </h4>
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
 
       <div className="flex items-center justify-center gap-[20px] about_btn transition pt-[32px]">
         <div className="about_txt">
-          <Link href="blog" className="text-[21px]">
+          <Link href="/blog" className="text-[21px]">
             Read More
           </Link>
         </div>
