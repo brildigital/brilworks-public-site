@@ -6,7 +6,7 @@ const ExtensionOfTeam = () => {
     <>
       <TechTeamText />
       <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%]">
-        <div className="accordion-tab-section">
+        <div className="accordion-tab-section homepage-extension-team">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">
               <div className="sec6_title xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[26px] text-[24px]">
@@ -33,7 +33,7 @@ const ExtensionOfTeam = () => {
                 >
                   <h2 className="accordion-header" id="headingOne">
                     <button
-                      className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
+                      className="accordion-button xl:text-[1.8rem] md:text-[26px] text-[16px]"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
@@ -52,8 +52,10 @@ const ExtensionOfTeam = () => {
                     <div className="accordion-body">
                       <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
-                          <Link href="" className="text-[21px]">
-                            {" "}
+                          <Link
+                            href="/hire-java-developer"
+                            className="text-[24px]"
+                          >
                             Java
                           </Link>
                         </div>
@@ -80,8 +82,10 @@ const ExtensionOfTeam = () => {
                       </div>
                       <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
-                          <Link href="" className="text-[21px]">
-                            {" "}
+                          <Link
+                            href="/hire-nodejs-developer"
+                            className="text-[24px]"
+                          >
                             Node.Js
                           </Link>
                         </div>
@@ -120,7 +124,7 @@ const ExtensionOfTeam = () => {
                 >
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                      className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -139,7 +143,10 @@ const ExtensionOfTeam = () => {
                     <div className="accordion-body">
                       <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
                         <div className="about_txt">
-                          <Link href="" className="text-[21px]">
+                          <Link
+                            href="/hire-reactjs-developer"
+                            className="text-[24px]"
+                          >
                             React.Js
                           </Link>
                         </div>
@@ -166,207 +173,216 @@ const ExtensionOfTeam = () => {
                       </div>
                     </div>
                   </div>
-
-                  <div
-                    className="accordion-item"
-                    data-bs-toggle="tab"
-                    data-bs-target="#accordion-three"
-                    type="button"
-                    role="tab"
-                    aria-controls="accordion-three"
-                    aria-selected="false"
-                  >
-                    <h2 className="accordion-header" id="headingThree">
-                      <button
-                        className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        Cloud Services
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseThree"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExampleother"
+                </div>
+                <div
+                  className="accordion-item"
+                  data-bs-toggle="tab"
+                  data-bs-target="#accordion-three"
+                  type="button"
+                  role="tab"
+                  aria-controls="accordion-three"
+                  aria-selected="false"
+                >
+                  <h2 className="accordion-header" id="headingThree">
+                    <button
+                      className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
                     >
-                      <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
-                          <div className="about_txt">
-                            <Link href="" className="text-[21px]">
-                              AWS Development Services
-                            </Link>
-                          </div>
-                          <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                          </div>
+                      Cloud Services
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExampleother"
+                  >
+                    <div className="accordion-body">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <div className="about_txt">
+                          <Link
+                            href="/hire-aws-developer"
+                            className="text-[24px]"
+                          >
+                            AWS Development Services
+                          </Link>
+                        </div>
+                        <div className="aerrow relative">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="black_aerrow alignnone wp-image-28 size-full"
+                            src="/images/black_aerrow-1.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="gradiant_aerrow alignnone wp-image-29 size-full"
+                            src="/images/arrow-gradiant.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div
-                    className="accordion-item"
-                    data-bs-toggle="tab"
-                    data-bs-target="#accordion-four"
-                    type="button"
-                    role="tab"
-                    aria-controls="accordion-four"
-                    aria-selected="false"
-                  >
-                    <h2 className="accordion-header" id="headingFour">
-                      <button
-                        className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour"
-                        aria-expanded="false"
-                        aria-controls="collapseFour"
-                      >
-                        Mobile App Developer
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseFour"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingFour"
-                      data-bs-parent="#accordionExampleother"
+                </div>
+                <div
+                  className="accordion-item"
+                  data-bs-toggle="tab"
+                  data-bs-target="#accordion-four"
+                  type="button"
+                  role="tab"
+                  aria-controls="accordion-four"
+                  aria-selected="false"
+                >
+                  <h2 className="accordion-header" id="headingFour">
+                    <button
+                      className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
                     >
-                      <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
-                          <div className="about_txt">
-                            <Link href="" className="text-[21px]">
-                              React Native{" "}
-                            </Link>
-                          </div>
-                          <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                          </div>
+                      Mobile App Developer
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExampleother"
+                  >
+                    <div className="accordion-body">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <div className="about_txt">
+                          <Link
+                            href="/hire-react-native-developer"
+                            className="text-[24px]"
+                          >
+                            React Native
+                          </Link>
                         </div>
+                        <div className="aerrow relative">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="black_aerrow alignnone wp-image-28 size-full"
+                            src="/images/black_aerrow-1.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="gradiant_aerrow alignnone wp-image-29 size-full"
+                            src="/images/arrow-gradiant.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
+                        </div>
+                      </div>
 
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
-                          <div className="about_txt">
-                            <Link href="" className="text-[21px]">
-                              Block Chain and Solidity
-                            </Link>
-                          </div>
-                          <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                          </div>
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <div className="about_txt">
+                          <Link
+                            href="/hire-blockchain-developer"
+                            className="text-[24px]"
+                          >
+                            Block Chain and Solidity
+                          </Link>
+                        </div>
+                        <div className="aerrow relative">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="black_aerrow alignnone wp-image-28 size-full"
+                            src="/images/black_aerrow-1.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="gradiant_aerrow alignnone wp-image-29 size-full"
+                            src="/images/arrow-gradiant.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div
-                    className="accordion-item"
-                    data-bs-toggle="tab"
-                    data-bs-target="#accordion-five"
-                    type="button"
-                    role="tab"
-                    aria-controls="accordion-five"
-                    aria-selected="false"
-                  >
-                    <h2 className="accordion-header" id="headingFive">
-                      <button
-                        className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive"
-                        aria-expanded="false"
-                        aria-controls="collapseFive"
-                      >
-                        UI/UX Design
-                      </button>
-                    </h2>
-                    <div
-                      id="collapseFive"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingFive"
-                      data-bs-parent="#accordionExampleother"
+                </div>
+                <div
+                  className="accordion-item"
+                  data-bs-toggle="tab"
+                  data-bs-target="#accordion-five"
+                  type="button"
+                  role="tab"
+                  aria-controls="accordion-five"
+                  aria-selected="false"
+                >
+                  <h2 className="accordion-header" id="headingFive">
+                    <button
+                      className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
                     >
-                      <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
-                          <div className="about_txt">
-                            <Link href="" className="text-[21px]">
-                              UI/UX Designer
-                            </Link>
-                          </div>
-                          <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                          </div>
+                      UI/UX Design
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFive"
+                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExampleother"
+                  >
+                    <div className="accordion-body">
+                      <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <div className="about_txt">
+                          <Link
+                            href="/hire-ui-ux-designer"
+                            className="text-[24px]"
+                          >
+                            UI/UX Designer
+                          </Link>
+                        </div>
+                        <div className="aerrow relative">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="black_aerrow alignnone wp-image-28 size-full"
+                            src="/images/black_aerrow-1.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            className="gradiant_aerrow alignnone wp-image-29 size-full"
+                            src="/images/arrow-gradiant.png"
+                            alt="arrow"
+                            width="46"
+                            height="18"
+                          />
                         </div>
                       </div>
                     </div>

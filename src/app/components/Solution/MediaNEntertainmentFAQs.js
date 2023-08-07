@@ -44,7 +44,7 @@ const MediaNEntertainmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   As a well-known entertainment app development company, we
                   provide our clients with the most sophisticated media &{" "}
                   <strong>
@@ -91,7 +91,7 @@ const MediaNEntertainmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   The time it takes to develop a media app is highly dependent
                   on what functionality the app has, what features it will
                   possess, and its use case.
@@ -129,7 +129,7 @@ const MediaNEntertainmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Yes, we do provide custom development services for media and
                   entertainment software. We create solutions tailored to the
                   requirements of your organization.
@@ -166,7 +166,7 @@ const MediaNEntertainmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   In a world where consumers are always on the go, mobile
                   applications are quickly becoming the standard for
                   entertainment apps. Whether it is social media or messaging
@@ -206,7 +206,7 @@ const MediaNEntertainmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   There are many things to consider if you want to build a
                   dating app like Tinder: A strong matching algorithm and
                   geo-location features are two of them.

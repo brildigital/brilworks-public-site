@@ -13,6 +13,12 @@ const Storyblok = new StoryblokClient({
 const Article = ({ blok }) => {
   const [blogData, setBlogData] = useState(null);
 
+  // useEffect(() => {
+  //   document.getElementById("scroll-win").scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  // });
+
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
       starts_with: "blogs-list/",
@@ -28,7 +34,7 @@ const Article = ({ blok }) => {
   }, []);
 
   return (
-    <section className="mt-[6rem] px-[16px]">
+    <section className="mt-[6rem]" id="scroll-win">
       <div className="w-[88%] mx-auto">
         <img
           className="rounded-[30px]"
@@ -38,7 +44,7 @@ const Article = ({ blok }) => {
       </div>
 
       <div className="2xl:w-[88%] w-[98%] mx-auto">
-        <div className="lg:flex block gap-[3rem]">
+        <div className="lg:flex block gap-[4rem]">
           <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem]">
             <div className="p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative">
               <div className="">
@@ -46,7 +52,8 @@ const Article = ({ blok }) => {
                   Table of Contents
                 </p>
               </div>
-              <nav className="!border-t-[0px] text-[21px] blog-nav">
+              <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
+                {parse(blok?.table_content)}
                 {/* <ul className="ez-toc-list ez-toc-list-level-1">
                   <li className="!p-0 text-[95%] !border-0 leading-[1.6]">
                     <Link
@@ -201,20 +208,19 @@ const Article = ({ blok }) => {
           </div>
           <div className="basis-[50%]">
             <div className="service_sec3">
-              <div className="home_sec2_txt4 blog-cat mb-[30px] mt-[10px]">
+              <div className="home_sec2_txt4 blog-cat mt-[10px]">
                 <p className="p-0"> {blok?.subtitle}</p>
               </div>
-              <div className="home_sec2_txt3">
+              <div className="home_sec2_txt3 py-[2.5rem]">
                 <h1 className="entry-title default-max-width">{blok?.title}</h1>
               </div>
             </div>
-            <br />
             <div className="blog_content post_details_content ">
               {parse(blok?.content)}
             </div>
 
             {/* ********************Author Detail***************************** */}
-            {/* <div className="single-author-bio">
+            <div className="single-author-bio">
               <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                 <div className="img-blk">
                   <img
@@ -229,8 +235,8 @@ const Article = ({ blok }) => {
               <div className="single-author-bio-text">
                 <h3>
                   <Link
-                    href={`${parse(blok?.author_linkedIn?.url)}`}
-                    title="Visit Lavesh Katariya’s website"
+                    href={`${blok?.author_linkedIn?.url}`}
+                    title={`Visit ${blok?.author} website`}
                     rel="author external"
                   >
                     {blok?.author}
@@ -238,7 +244,7 @@ const Article = ({ blok }) => {
                 </h3>
                 <p>{blok?.author_desc}</p>
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div className="basis-[25%]">
@@ -376,7 +382,7 @@ const Article = ({ blok }) => {
                   key={index}
                   className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
                 >
-                  <Link as={`/blog/${slug}`} href={`/blog/[slug]}`}>
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                     <div className="sec9_img1">
                       <img
                         className="rounded-[20px]"

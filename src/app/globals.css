@@ -580,6 +580,10 @@ a:hover {
   font-family: var(--medium);
   color: var(--color_black);
 }
+.about_txt_domain a {
+  font-family: var(--regular);
+  color: var(--color_black);
+}
 .transition {
   transition: all 0.6s ease;
 }
@@ -605,6 +609,13 @@ a:hover {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.about_btn:hover .about_txt_domain a:hover {
+  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .carousel_widget__card {
   background-color: #fff;
   border-radius: 3px;
@@ -615,6 +626,11 @@ a:hover {
   min-height: 215px;
   padding: 17px 20px 19px;
   text-decoration: none;
+
+  border-radius: 10px !important;
+  border: 1px solid #00dfb8 !important;
+  position: relative !important;
+  z-index: 9 !important;
 }
 
 .solutions_img img {
@@ -636,14 +652,15 @@ a:hover {
   background-color: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
-
   font-family: var(--medium);
   color: var(--color_black) !important;
-  padding: 2.5rem 0rem !important;
-  border-bottom: 1px solid #80808038 !important;
+  padding: 2rem 0rem !important;
+  /* border-bottom: 1px solid #80808038 !important; */
 }
+
 .accordion .accordion-body {
-  font-family: var(--medium);
+  font-size: var(--font_24);
+  font-family: var(--regular);
   color: var(--color_black);
   padding-bottom: 1rem;
   width: fit-content;
@@ -892,7 +909,7 @@ textarea.form-control-txt {
   font-family: var(--bold);
   color: var(--color_black);
 }
-.number_home{
+.number_home {
   font-size: 65px;
   font-family: var(--bold);
   color: var(--color_black);
@@ -977,6 +994,8 @@ textarea.form-control-txt {
 }
 
 .bg_black {
+  margin: 0;
+  padding: 0;
   background-color: #000;
 }
 .footer_padding {
@@ -1673,6 +1692,7 @@ textarea.form-control-txt {
 .ready_sec .home_sec2_txt3 p {
   font-family: var(--extra_bold);
 }
+
 .get_touch {
   position: absolute;
   bottom: 20%;
@@ -2097,7 +2117,15 @@ textarea.form-control-txt {
 .post_details_content h2 {
   line-height: var(--line_height_1_2);
   font-family: var(--medium);
-  font-size: 24px;
+  font-size: 2.9rem;
+  font-weight: 700 !important;
+}
+.post_details_content h3 {
+  line-height: var(--line_height_1_2);
+  font-family: var(--medium);
+  font-size: 2.4rem;
+  padding: 2rem 0;
+  font-weight: 700 !important;
 }
 .post_details_content p {
   font-size: var(--font_24);
@@ -2285,6 +2313,9 @@ textarea.form-control-txt {
   }
   .sec6_title p {
     font-size: 2.5rem;
+  }
+  .ready_sec {
+    padding: 6rem 0;
   }
   .portfolio_sec1_txt1 p {
     font-size: 46px;

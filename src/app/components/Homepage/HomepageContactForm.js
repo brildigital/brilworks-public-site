@@ -1,8 +1,69 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import Loader from "./Loader";
 
 const HomepageContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [respMessage, setRespMessage] = useState("");
+
+  const url = process.env.googleSheetURL;
+
+  // const DataSubmit = () => {
+  //   const url =
+  //     "https://script.google.com/macros/s/AKfycbxWZFV_BRhZMkOGoCuvq21dGfbhic-uzXxB_hR6iwdI-Ua_F6LXe8DeCEQjkXixtNrN/exec";
+  //   let form = document.getElementById("homepageForm");
+
+  //   form.addEventListener("submit", (e) => {
+  //     e.target.btnSubmit.innerHTML = "Submitting...";
+  //     let formData = new FormData(form);
+  //     fetch(url, {
+  //       method: "POST",
+  //       body: formData,
+  //     })
+  //       .then((res) => res.text())
+  //       .then((finalResp) => {
+  //         e.target.btnSubmit.innerHTML = "Submit";
+  //         document.getElementById("sucess_msg").innerHTML = finalResp;
+  //         formData.reset();
+  //         setTimeout(() => {
+  //           document.getElementById("sucess_msg").innerHTML = "";
+  //         }, 5000);
+  //       });
+  //     e.preventDefault();
+  //   });
+  // };
+
+  const clearMessage = () => {
+    setTimeout(() => {
+      setRespMessage("");
+    }, 5000);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const form = e.target;
+    const formData = new FormData(form);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.text())
+      .then((finalResp) => {
+        setRespMessage(finalResp);
+        formData.reset();
+        setIsSubmitting(false);
+        clearMessage();
+      })
+      .catch((err) => {
+        setIsSubmitting(false);
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className="home_sec3_box">
@@ -26,7 +87,12 @@ const HomepageContactForm = () => {
                   lang="en-US"
                   dir="ltr"
                 >
-                  <form action="" method="post" className="wpcf7-form init">
+                  <form
+                    method="post"
+                    className="wpcf7-form init"
+                    id="homepageForm"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="form-group">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
@@ -45,7 +111,7 @@ const HomepageContactForm = () => {
                             aria-required="true"
                             aria-invalid="false"
                             type="text"
-                            name="text-807"
+                            name="name"
                           />
                         </span>
                       </p>
@@ -68,7 +134,7 @@ const HomepageContactForm = () => {
                             aria-required="true"
                             aria-invalid="false"
                             type="text"
-                            name="text-8070"
+                            name="company"
                           />
                         </span>
                       </p>
@@ -91,7 +157,7 @@ const HomepageContactForm = () => {
                             aria-required="true"
                             aria-invalid="false"
                             type="email"
-                            name="email-866"
+                            name="email"
                           />
                         </span>
                       </p>
@@ -116,19 +182,27 @@ const HomepageContactForm = () => {
                             }`}
                             id="message"
                             aria-invalid="false"
-                            name="textarea-797"
+                            name="message"
                           ></textarea>
                         </span>
                       </p>
                     </div>
+                    <div className="success-msg" id="sucess_msg">
+                      {respMessage}
+                    </div>
                     <div className="btn_paddinng pt-4">
-                      <div type="submit" className="home_ready_sec transition">
-                        <p>
-                          <input
-                            className="wpcf7-form-control has-spinner wpcf7-submit home_btn"
-                            id="submit"
-                            type="submit"
-                          />
+                      <div className="home_ready_sec transition  !w-[115px]">
+                        <p className="flex align-middle justify-center">
+                          {isSubmitting ? (
+                            <Loader />
+                          ) : (
+                            <input
+                              // className="wpcf7-form-control has-spinner wpcf7-submit home_btn"
+                              id="submit"
+                              name="btnSubmit"
+                              type="submit"
+                            />
+                          )}
                         </p>
                       </div>
                     </div>
