@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Homepage</title>
         </Head>
         <body suppressHydrationWarning={true}>{children}</body>
         <Script

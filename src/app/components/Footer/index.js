@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="bg_black">
         <div className="footer_width footer_padding">
           <div className="footer_grid">
-            <div className=" grid-area-one">
+            <div className="grid-area-one">
               <div className="footer_logo">
                 <img src="/images/logo-white.png" alt="Brilworks Logo" />
               </div>
@@ -94,67 +94,73 @@ const Footer = () => {
                 <div className="quick_link">
                   <p>CONTACT</p>
                 </div>
-                <ul className="footer_link pb-4">
+                <ul className="footer_link">
                   <li>
                     <a href="tel:919313644148">+91 9313644148</a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="grid-area-two">
+            <div className="grid-area-two md:pl-8">
               <div className="quick_link">
                 <p>QUICK LINKS</p>
               </div>
-              <ul className="footer_link">
-                <li>
-                  <Link
-                    href="/"
-                    className={pathname === "/" ? "page-active" : ""}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact-us"
-                    className={pathname === "/contact-us" ? "page-active" : ""}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/portfolio"
-                    className={pathname === "/portfolio" ? "page-active" : ""}
-                  >
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about-us"
-                    className={pathname === "/about-us" ? "page-active" : ""}
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/our-process"
-                    className={pathname === "/our-process" ? "page-active" : ""}
-                  >
-                    Our Process
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className={pathname === "/blog" ? "page-active" : ""}
-                  >
-                    Blogs
-                  </Link>
-                </li>
-              </ul>
+              <div>
+                <ul className="footer_link">
+                  <li>
+                    <Link
+                      href="/"
+                      className={pathname === "/" ? "page-active" : ""}
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact-us"
+                      className={
+                        pathname === "/contact-us" ? "page-active" : ""
+                      }
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/portfolio"
+                      className={pathname === "/portfolio" ? "page-active" : ""}
+                    >
+                      Portfolio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about-us"
+                      className={pathname === "/about-us" ? "page-active" : ""}
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/our-process"
+                      className={
+                        pathname === "/our-process" ? "page-active" : ""
+                      }
+                    >
+                      Our Process
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blog"
+                      className={pathname === "/blog" ? "page-active" : ""}
+                    >
+                      Blogs
+                    </Link>
+                  </li>
+                </ul>
+              </div>
               <div className="footer">
                 <Link href="/career">
                   <div className="header_sec1_txt2 hidden-xs">
@@ -167,141 +173,147 @@ const Footer = () => {
               <div className="quick_link">
                 <p>SOLUTIONS</p>
               </div>
-              <ul className="footer_link">
-                <li>
-                  <Link
-                    href="/industry/fintech-software-development"
-                    className={
-                      pathname === "/industry/fintech-software-development"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Fintech
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industry/fleet-management-software-development"
-                    className={
-                      pathname ===
-                      "/industry/fleet-management-software-development"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Fleet Management + GPS
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industry/healthcare-software-development"
-                    className={
-                      pathname === "/industry/healthcare-software-development"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Health Care
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industry/media-entertainment-software-development"
-                    className={
-                      pathname ===
-                      "/industry/media-entertainment-software-development"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Media & Entertainment
-                  </Link>
-                </li>
-              </ul>
+              <div>
+                <ul className="footer_link">
+                  <li>
+                    <Link
+                      href="/industry/fintech-software-development"
+                      className={
+                        pathname === "/industry/fintech-software-development"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Fintech
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industry/fleet-management-software-development"
+                      className={
+                        pathname ===
+                        "/industry/fleet-management-software-development"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Fleet Management + GPS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industry/healthcare-software-development"
+                      className={
+                        pathname === "/industry/healthcare-software-development"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Health Care
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industry/media-entertainment-software-development"
+                      className={
+                        pathname ===
+                        "/industry/media-entertainment-software-development"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Media & Entertainment
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="grid-area-four">
+            <div className="grid-area-four md:pl-12">
               <div className="quick_link">
                 <p>TECHNOLOGIES</p>
               </div>
-              <ul className="footer_link">
-                <li>
-                  <Link
-                    href="/hire-java-developer"
-                    className={
-                      pathname === "/hire-java-developer" ? "page-active" : ""
-                    }
-                  >
-                    Java
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-nodejs-developer"
-                    className={
-                      pathname === "/hire-nodejs-developer" ? "page-active" : ""
-                    }
-                  >
-                    Nodejs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-reactjs-developer"
-                    className={
-                      pathname === "/hire-reactjs-developer"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Reactjs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-react-native-developer"
-                    className={
-                      pathname === "/hire-react-native-developer"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    React Native
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-aws-developer"
-                    className={
-                      pathname === "/hire-aws-developer" ? "page-active" : ""
-                    }
-                  >
-                    AWS Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-ui-ux-designer"
-                    className={
-                      pathname === "/hire-ui-ux-designer" ? "page-active" : ""
-                    }
-                  >
-                    UI/UX Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hire-blockchain-developer"
-                    className={
-                      pathname === "/hire-blockchain-developer"
-                        ? "page-active"
-                        : ""
-                    }
-                  >
-                    Blockchain Development
-                  </Link>
-                </li>
-              </ul>
+              <div>
+                <ul className="footer_link">
+                  <li>
+                    <Link
+                      href="/hire-java-developer"
+                      className={
+                        pathname === "/hire-java-developer" ? "page-active" : ""
+                      }
+                    >
+                      Java
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-nodejs-developer"
+                      className={
+                        pathname === "/hire-nodejs-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Nodejs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-reactjs-developer"
+                      className={
+                        pathname === "/hire-reactjs-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Reactjs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-react-native-developer"
+                      className={
+                        pathname === "/hire-react-native-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      React Native
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-aws-developer"
+                      className={
+                        pathname === "/hire-aws-developer" ? "page-active" : ""
+                      }
+                    >
+                      AWS Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-ui-ux-designer"
+                      className={
+                        pathname === "/hire-ui-ux-designer" ? "page-active" : ""
+                      }
+                    >
+                      UI/UX Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/hire-blockchain-developer"
+                      className={
+                        pathname === "/hire-blockchain-developer"
+                          ? "page-active"
+                          : ""
+                      }
+                    >
+                      Blockchain Development
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

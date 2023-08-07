@@ -41,7 +41,7 @@ const FintechFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Fintech is short for financial technology. It is a term used
                   to describe the application, design, and development of new
                   financial technology products. Fintech helps not just in terms
@@ -79,7 +79,7 @@ const FintechFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Fintech software developers are the individuals responsible
                   for designing, building, and deploying fintech solutions using
                   various technology stacks. Our expert fintech software
@@ -119,7 +119,7 @@ const FintechFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   The time taken depends on the complexity of the project. Our
                   skilled team of developers will first create a comprehensive
                   roadmap for your app and tailor it towards your goals and
@@ -158,7 +158,7 @@ const FintechFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Fintech solutions provide the ability to make multi-banking
                   transactions and enhanced functionalities of banking apps. By
                   building such a system, you can automate business tasks and

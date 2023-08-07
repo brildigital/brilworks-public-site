@@ -2,14 +2,18 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 import HomePage from "./home/page";
 import StoryblokStory from "@storyblok/react/story";
 import Layout from "./components/Layout";
+import Head from "next/head";
 
 export default async function Home() {
   const { props: data } = await fetchData();
   return (
-    // <Layout story={data?.config}>
-    //   <StoryblokStory story={data?.story} />
-    // </Layout>
-    <HomePage />
+    <>
+      
+      {/* <Layout story={data?.config}>
+        <StoryblokStory story={data?.story} />
+      </Layout> */}
+      <HomePage />
+    </>
   );
 }
 

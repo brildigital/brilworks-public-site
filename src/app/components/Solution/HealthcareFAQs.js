@@ -41,7 +41,7 @@ const HealthcareFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Healthcare software development is the process of developing
                   mobile apps or web apps for both patients and medical
                   professionals. With our healthcare software development
@@ -81,7 +81,7 @@ const HealthcareFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Yes, we do provide custom healthcare software development
                   services. We create solutions tailored to the requirements of
                   your healthcare organization.
@@ -119,7 +119,7 @@ const HealthcareFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   When in the process of choosing a healthcare software
                   development service, you need to keep in mind your
                   requirements and expectations. You need to choose a company
@@ -162,7 +162,7 @@ const HealthcareFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Yes, we do follow HIPAA standards. We take security seriously
                   and implement the highest levels of quality assurance.
                 </div>
@@ -198,7 +198,7 @@ const HealthcareFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Implementing mHealth apps in healthcare organizations enables
                   professionals to deliver care more efficiently, reducing costs
                   associated with transportation and hospital admission. They

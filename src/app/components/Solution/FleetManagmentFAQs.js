@@ -43,7 +43,7 @@ const FleetManagmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   The fleet management software is a dynamic platform for
                   managing your fleet and its components, including cars,
                   trucks, and vans. It can track vehicle movement, fuel
@@ -83,7 +83,7 @@ const FleetManagmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Yes, we do provide custom development services for fleet
                   management software solutions. We create solutions tailored to
                   the requirements of your organization.
@@ -121,7 +121,7 @@ const FleetManagmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Fleet management is the backbone of most companies. Fleet
                   management systems should have robust reporting, customizable
                   dashboards, and analytics to generate actionable insights, GPS
@@ -160,7 +160,7 @@ const FleetManagmentFAQs = () => {
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
-                <div className="w-11/12">
+                <div>
                   Fleet management helps to keep vehicles organized, in good
                   working order, and running as efficiently as possible.
                   Tracking the location of all vehicles in your fleet can help

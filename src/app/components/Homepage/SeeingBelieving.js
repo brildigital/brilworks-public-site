@@ -23,7 +23,7 @@ const SeeingBelieving = () => {
           navigation
           pagination={{ clickable: true }}
         >
-          <SwiperSlide>
+          <SwiperSlide className="portfolio_slides_homepage">
             <div className="slide-style !bg-[#2cbc89]">
               <Link href="/portfolio/vugo/">
                 <img
@@ -48,8 +48,13 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
+            <div class="md:!px-8 md:!text-left outer-portfolio-title">
+              <p class="portfolio-title-new">
+                <Link href="/portfolio/vugo/">VUGO</Link>
+              </p>
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className="portfolio_slides_homepage">
             <div className="slide-style !bg-[#e8eed5]">
               <Link href="/portfolio/trackimo/">
                 <img
@@ -74,8 +79,13 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
+            <div class="md:!px-8 md:!text-left outer-portfolio-title">
+              <p class="portfolio-title-new">
+                <Link href="/portfolio/trackimo/">TRACKIMO</Link>
+              </p>
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className="portfolio_slides_homepage">
             <div className="slide-style !bg-[#377df8]">
               <Link href="/portfolio/orokii/">
                 <img
@@ -100,8 +110,13 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
+            <div class="md:!px-8 md:!text-left outer-portfolio-title">
+              <p class="portfolio-title-new">
+                <Link href="/portfolio/orokii/">OROKII</Link>
+              </p>
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className="portfolio_slides_homepage">
             <div className="slide-style !bg-[#f13134]">
               <Link href="/portfolio/eccocar/">
                 <img
@@ -127,8 +142,13 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
+            <div class="md:!px-8 md:!text-left outer-portfolio-title">
+              <p class="portfolio-title-new">
+                <Link href="/portfolio/eccocar/">ECCOCAR</Link>
+              </p>
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className="portfolio_slides_homepage">
             <div className="slide-style !bg-[#2cbc89]">
               <Link href="/portfolio/rastrack/">
                 <img
@@ -151,6 +171,11 @@ const SeeingBelieving = () => {
                   </div>
                 </div>
               </Link>
+            </div>
+            <div class="md:!px-8 md:!text-left outer-portfolio-title">
+              <p class="portfolio-title-new">
+                <Link href="/portfolio/rastrack/">RASTRACK</Link>
+              </p>
             </div>
           </SwiperSlide>
         </Swiper>

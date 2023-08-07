@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
@@ -6,6 +7,12 @@ const GameChanger = () => {
   const isMobile = useMediaQuery({ maxWidth: 414 });
   return (
     <div className="relative">
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Welcome to Payments, Deals</title>
+        <meta name="description" content="This is sample content" />
+        <meta name="keywords" content="keyword content" />
+      </Head>
       <div className="home_sec1_img">
         <img
           className="size-full"
