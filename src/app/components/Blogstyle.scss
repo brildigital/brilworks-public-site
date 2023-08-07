@@ -1,0 +1,45 @@
+.blog_content{
+    ul{
+        li{
+            list-style: disc !important;
+        }
+    }
+}
+
+
+.blog_content{
+    div{
+        p{
+            span{
+                a{
+                    padding: 7px 15px;
+                    color: black;
+                    background-color: #ffffff;
+                    border-radius: 33px;
+                }
+            }
+        }
+    }    
+}
+
+
+.blog_content {
+    blockquote{
+        padding: 0;
+        position: relative;
+        margin: var(--global--spacing-vertical) 0 var(--global--spacing-vertical) var(--global--spacing-horizontal);
+    }
+    blockquote p{
+        letter-spacing: var(--global--letter-spacing);
+        font-size: 1.25rem;
+        font-style: normal;
+        line-height: 1.7;
+    }
+    blockquote::before{
+        content: "“ ";
+        font-size: 1.25rem;
+        line-height: 1.7;
+        position: absolute;
+        left: calc(-0.5 * var(--global--spacing-horizontal));
+    }
+}

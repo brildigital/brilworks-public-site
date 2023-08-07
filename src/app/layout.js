@@ -4,7 +4,6 @@ import Script from "next/script";
 import Head from "next/head";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-import Link from "next/link";
 
 storyblokInit({
   accessToken: process.env.accessToken,
@@ -28,7 +27,6 @@ export default function RootLayout({ children }) {
           crossorigin="anonymous"
         ></Script>
       </html>
-      
     </StoryblokProvider>
   );
 }

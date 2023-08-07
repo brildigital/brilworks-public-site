@@ -167,7 +167,7 @@ const Header = () => {
                   id="triggerNavigationSolution"
                   onClick={handleNavigationSolutionClick}
                 >
-                  <Link href="javascript:void(0);" className="headerArrow_flex">
+                  <Link href="" className="headerArrow_flex">
                     <p className="!mb-0">SOLUTIONS</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
@@ -181,7 +181,7 @@ const Header = () => {
                   id="triggerNavigationtechnology"
                   onClick={handleNavigationTechnologyClick}
                 >
-                  <Link href="javascript:void(0);" className="headerArrow_flex">
+                  <Link href="" className="headerArrow_flex">
                     <p className="!mb-0">TECHNOLOGIES</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
@@ -198,7 +198,7 @@ const Header = () => {
                   id="triggerNavigationmenu"
                   onClick={handleTriggerNavigationMenuClick}
                 >
-                  <Link href="javascript:void(0);">
+                  <Link href="">
                     <div className="btn_1">
                       <div className="bar transition top"></div>
                       <div className="bar transition bottom"></div>
@@ -457,7 +457,7 @@ const Header = () => {
                         id="accordionMaster"
                         className="article-title"
                         role="button"
-                        tabindex="0"
+                        tabIndex="0"
                         onClick={handleAccordionTab3Click}
                       >
                         <i></i>TECHNOLOGIES
@@ -616,7 +616,7 @@ const Header = () => {
                         id="accordionMaster4"
                         className="article-title"
                         role="button"
-                        tabindex="0"
+                        tabIndex="0"
                         onClick={handleAccordionTab4Click}
                       >
                         <i></i>SOLUTIONS
@@ -772,10 +772,10 @@ const Header = () => {
                 </div>
                 <div className="flex_grid-40_header_menu">
                   <div className="header_img1 pb-2 hidden-xs">
-                    <img src="/images/blog-1.jpg" />
+                    <img src="/images/blog-1.jpg" alt="" />
                   </div>
                   <div className="header_img1">
-                    <img src="/images/blog-2.jpg" />
+                    <img src="/images/blog-2.jpg" alt="" />
                   </div>
                 </div>
               </div>

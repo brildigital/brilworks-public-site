@@ -1,8 +1,20 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 
 const Career = () => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <section>
@@ -31,7 +43,11 @@ const Career = () => {
             <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
               <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
                 <div className="about_txt">
-                  <Link href="/career/#section7_career" className="text-[21px]">
+                  <Link
+                    href="#section7_career"
+                    className="text-[21px]"
+                    onClick={(e) => scrollToSection(e, "section7_career")}
+                  >
                     Explore Open Positions
                   </Link>
                 </div>
@@ -58,7 +74,11 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
                 <div className="about_txt">
-                  <Link href="/career/#section10" className="text-[21px]">
+                  <Link
+                    href="#section10"
+                    className="text-[21px]"
+                    onClick={(e) => scrollToSection(e, "section10")}
+                  >
                     Join Our Team
                   </Link>
                 </div>
@@ -85,7 +105,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="mx-auto mx-[16px] md:my-[8rem] my-[3rem] w-4/5">
+            <div className="mx-auto md:my-[8rem] my-[3rem] w-4/5">
               <img
                 src="/images/career.jpg"
                 alt="career"
@@ -143,11 +163,11 @@ const Career = () => {
                   <p>4.7 / 5.0</p>
                 </div>
                 <div className="flex items-center gap-[12px]">
-                  <img src="/images/icons-06.png" className="w-[25px]" />
-                  <img src="/images/icons-06.png" className="w-[25px]" />
-                  <img src="/images/icons-06.png" className="w-[25px]" />
-                  <img src="/images/icons-06.png" className="w-[25px]" />
-                  <img src="/images/icons-06.png" className="w-[25px]" />
+                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
+                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
+                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
+                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
+                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
                 </div>
                 <div className="header_font">
                   <p>Powered by</p>
@@ -213,22 +233,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -247,22 +272,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -281,22 +311,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -315,22 +350,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -349,22 +389,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -383,22 +428,27 @@ const Career = () => {
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                         <img
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
+                          alt=""
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -414,11 +464,11 @@ const Career = () => {
                     </div>
                     <div className="flex items-center gap-[2rem]">
                       <div className="star hidden">
-                        <img src="/images/icons-06.png" />
-                        <img src="/images/icons-06.png" />
-                        <img src="/images/icons-06.png" />
-                        <img src="/images/icons-06.png" />
-                        <img src="/images/icons-06.png" />
+                        <img src="/images/icons-06.png" alt="" />
+                        <img src="/images/icons-06.png" alt="" />
+                        <img src="/images/icons-06.png" alt="" />
+                        <img src="/images/icons-06.png" alt="" />
+                        <img src="/images/icons-06.png" alt="" />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
                         <p>4.7</p>

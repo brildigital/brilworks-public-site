@@ -19,6 +19,7 @@ const BlogInner = () => {
           <img
             decoding="async"
             src="/images/Banner_Cross-platform-app-dev0.svg"
+            alt="Cross-platform-app-dev"
             className="rounded-[30px]"
           />
         </div>
@@ -453,7 +454,7 @@ const BlogInner = () => {
                       alt="google-trends-cross-platform"
                       width="558"
                       height="387"
-                      srcset="
+                      srcSet="
                       /images/google-trends-cross-platform.png         558w,
                       /images/google-trends-cross-platform-300x208.png 300w
                     "
@@ -1114,7 +1115,6 @@ const BlogInner = () => {
                             <input
                               className="form-control-txt"
                               id="name"
-                              value=""
                               type="text"
                             />
                           </span>
@@ -1125,11 +1125,7 @@ const BlogInner = () => {
                           <label className="label_name">Email*</label>
                           <br />
                           <span>
-                            <input
-                              className="form-control-txt"
-                              id="email"
-                              value=""
-                            />
+                            <input className="form-control-txt" id="email" />
                           </span>
                         </p>
                       </div>
@@ -1154,7 +1150,7 @@ const BlogInner = () => {
                           </p>
                         </div>
                         <p>
-                          <input id="submit" type="submit" value="Submit" />
+                          <input id="submit" type="submit" />
                         </p>
                       </div>
                     </form>

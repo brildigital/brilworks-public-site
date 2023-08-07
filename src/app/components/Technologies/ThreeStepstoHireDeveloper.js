@@ -80,7 +80,7 @@ const ThreeStepstoHireDeveloper = () => {
             )}
 
             <div>
-              <p className="!p-0 md:text-[21px] md:text-center text-[16px] !text-left">
+              <p className="!p-0 md:text-[21px] md:!text-center text-[16px] !text-left">
                 IN JUST 3 EASY STEPS
               </p>
             </div>
@@ -96,7 +96,7 @@ const ThreeStepstoHireDeveloper = () => {
                 />
               </div>
               <div className="steps_service">
-                <div className="no_flex">
+                <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
                       <p>Tell Us Your Requirements</p>
@@ -123,7 +123,7 @@ const ThreeStepstoHireDeveloper = () => {
               </div>
 
               <div className="steps_service">
-                <div className="no_flex">
+                <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
                       <p>Screen & Shortlist the Right Fit</p>
@@ -149,7 +149,7 @@ const ThreeStepstoHireDeveloper = () => {
                 />
               </div>
               <div className="steps_service">
-                <div className="no_flex">
+                <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
                       <p>Onboard Talent</p>
@@ -319,7 +319,7 @@ const ThreeStepstoHireDeveloper = () => {
                     } md:p-8 p-6`}
                   >
                     <div className="md:align-middle">
-                      <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
+                      <p className="pricing-amount">
                         $18 <br />
                         Hourly (USD)
                       </p>
@@ -386,7 +386,7 @@ const ThreeStepstoHireDeveloper = () => {
                     }  md:p-8 p-6`}
                   >
                     <div className="sec8_service_txt1 txt_center">
-                      <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
+                      <p className="pricing-amount">
                         $2500 <br />
                         Monthly (USD)
                       </p>
@@ -452,7 +452,7 @@ const ThreeStepstoHireDeveloper = () => {
                     }  md:p-8 p-6`}
                   >
                     <div className="sec8_service_txt1 txt_center">
-                      <p className="md:text-[2rem] text-[1.4rem] !text-left pricing-amount">
+                      <p className="pricing-amount">
                         $12000 <br />
                         Monthly (USD)
                       </p>

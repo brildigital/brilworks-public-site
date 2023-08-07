@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
 
 const Footer = () => {
   const pathname = usePathname();
   return (
     <>
+      <AutoSlidesFooter />
       <div className="bg_black">
         <div className="footer_width footer_padding">
           <div className="footer_grid">
@@ -309,10 +311,10 @@ const Footer = () => {
               <p>© 2023 BRILWORKS</p>
             </div>
             <div className="footer_txt_flex2">
-              <Link href="javascript:void(0);">
+              <Link href="" onClick={(e) => e.preventDefault()}>
                 <p className="transition">Terms of Service</p>
               </Link>
-              <Link href="javascript:void(0);">
+              <Link href="" onClick={(e) => e.preventDefault()}>
                 <p className="transition">Privacy Policy</p>
               </Link>
             </div>

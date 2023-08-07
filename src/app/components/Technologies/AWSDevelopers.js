@@ -43,7 +43,7 @@ const AWSDevelopers = () => {
                       alt="Vicky"
                       width="300"
                       height="300"
-                      srcset="/images/vicky-1-300x300.jpg 300w,
+                      srcSet="/images/vicky-1-300x300.jpg 300w,
                                /images/vicky-1-150x150.jpg 150w,
                                 /images/vicky-1.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"
@@ -89,7 +89,7 @@ const AWSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -181,7 +181,7 @@ const AWSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -227,7 +227,7 @@ const AWSDevelopers = () => {
                       alt="Colin"
                       width="300"
                       height="300"
-                      srcset="/images/colin-300x300.jpg 300w,
+                      srcSet="/images/colin-300x300.jpg 300w,
                                /images/colin-150x150.jpg 150w,
                                 /images/colin.jpg 500w"
                       sizes="(max-width: 300px) 100vw, 300px"
@@ -276,7 +276,7 @@ const AWSDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"

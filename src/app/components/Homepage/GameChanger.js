@@ -25,7 +25,7 @@ const GameChanger = () => {
           </p>
         </div>
         <div className="our_btn_flex">
-          <div className="home_txt3 mt-[38px]">
+          <div className="home_txt3 pt-12">
             <h1>
               <span className="ez-toc-section"></span>We build stunning digital
               solutions for global brands

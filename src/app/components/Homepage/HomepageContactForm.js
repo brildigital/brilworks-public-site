@@ -128,7 +128,6 @@ const HomepageContactForm = () => {
                             className="wpcf7-form-control has-spinner wpcf7-submit home_btn"
                             id="submit"
                             type="submit"
-                            value="Submit"
                           />
                         </p>
                       </div>
@@ -150,7 +149,7 @@ const HomepageContactForm = () => {
                 </div>
                 <div className="form_grid">
                   <div>
-                    <div className="number">
+                    <div className="number_home">
                       <p data-max="8">8+</p>
                     </div>
                     <div className="year">
@@ -162,7 +161,7 @@ const HomepageContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="number">
+                    <div className="number_home">
                       <p data-max="98">98%</p>
                     </div>
                     <div className="year">
@@ -174,7 +173,7 @@ const HomepageContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="number">
+                    <div className="number_home">
                       <p data-max="60">60+</p>
                     </div>
                     <div className="year">
@@ -186,7 +185,7 @@ const HomepageContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="number">
+                    <div className="number_home">
                       <p data-max="120">120+</p>
                     </div>
                     <div className="year">

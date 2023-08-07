@@ -131,7 +131,7 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -268,7 +268,7 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"
@@ -316,7 +316,7 @@ const UIUXDesigners = () => {
                       alt="UiUXDesigner"
                       width="300"
                       height="300"
-                      srcset="/images/Luv-Sakariya-150x150.jpg 150w, 
+                      srcSet="/images/Luv-Sakariya-150x150.jpg 150w, 
                       /images/Luv-Sakariya-300x300.jpg 300w, 
                       /images/Luv-Sakariya-1024x1024.jpg 1024w, 
                       /images/Luv-Sakariya-768x768.jpg 768w,
@@ -413,7 +413,7 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                     <div className="chat_icon">
                       <img
                         src="/images/hire-hand.png"

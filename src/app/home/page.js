@@ -9,7 +9,6 @@ import DomainWorking from "../components/Homepage/DomainWorking";
 import Footer from "../components/Footer/index";
 import ExtensionOfTeam from "../components/Homepage/ExtensionOfTeam";
 import SeeingBelieving from "../components/Homepage/SeeingBelieving";
-import AutoSlidesFooter from "../components/Homepage/AutoSlidesFooter";
 import { BestAdvocateText } from "../components/Homepage/BigText";
 
 const page = () => {
@@ -26,7 +25,6 @@ const page = () => {
       <Honors />
       <Blogs />
       <ContactUs />
-      <AutoSlidesFooter />
       <Footer />
     </>
   );

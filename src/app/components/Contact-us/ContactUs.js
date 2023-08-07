@@ -104,7 +104,7 @@ const ContactUs = () => {
                       className="send_btn"
                       id="submit"
                       type="submit"
-                      value="Send me a Proposal"
+                      
                     />
                   </p>
                 </div>
@@ -426,7 +426,7 @@ const ContactUs = () => {
                             className="send_btn"
                             id="submit"
                             type="submit"
-                            value="Inquire Now"
+                           
                           />
                         </p>
                       </div>

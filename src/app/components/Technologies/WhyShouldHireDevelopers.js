@@ -208,7 +208,11 @@ const WhyShouldHireDevelopers = () => {
             {pathname === "/hire-reactjs-developer" ? (
               <>
                 <div>
-                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                  <div
+                    className={`number xl:text-[70px] md:!text-[57px] ${
+                      isMobile ? "text-[33px]" : ""
+                    }`}
+                  >
                     65+
                   </div>
                   <p className="year border-0 py-[1rem]">
@@ -218,7 +222,11 @@ const WhyShouldHireDevelopers = () => {
                 </div>
 
                 <div>
-                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                  <div
+                    className={`number xl:text-[70px] md:!text-[57px] ${
+                      isMobile ? "text-[33px]" : ""
+                    }`}
+                  >
                     30+
                   </div>
                   <p className="year border-0 py-[1rem]">
@@ -233,7 +241,11 @@ const WhyShouldHireDevelopers = () => {
                 {pathname === "/hire-java-developer" ? (
                   <>
                     <div>
-                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                      <div
+                        className={`number xl:text-[70px] md:!text-[57px] ${
+                          isMobile ? "text-[33px]" : ""
+                        }`}
+                      >
                         50+
                       </div>
                       <p className="year border-0 py-[1rem]">
@@ -243,7 +255,11 @@ const WhyShouldHireDevelopers = () => {
                     </div>
 
                     <div>
-                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                      <div
+                        className={`number xl:text-[70px] md:!text-[57px] ${
+                          isMobile ? "text-[33px]" : ""
+                        }`}
+                      >
                         30+
                       </div>
                       <p className="year border-0 py-[1rem]">
@@ -258,7 +274,11 @@ const WhyShouldHireDevelopers = () => {
                     {pathname === "/hire-nodejs-developer" ? (
                       <>
                         <div>
-                          <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                          <div
+                            className={`number xl:text-[70px] md:!text-[57px] ${
+                              isMobile ? "text-[33px]" : ""
+                            }`}
+                          >
                             50+
                           </div>
                           <p className="year border-0 py-[1rem]">
@@ -268,7 +288,11 @@ const WhyShouldHireDevelopers = () => {
                         </div>
 
                         <div>
-                          <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                          <div
+                            className={`number xl:text-[70px] md:!text-[57px] ${
+                              isMobile ? "text-[33px]" : ""
+                            }`}
+                          >
                             30+
                           </div>
                           <p className="year border-0 py-[1rem]">
@@ -283,7 +307,11 @@ const WhyShouldHireDevelopers = () => {
                         {pathname === "/hire-react-native-developer" ? (
                           <>
                             <div>
-                              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                              <div
+                                className={`number xl:text-[70px] md:!text-[57px] ${
+                                  isMobile ? "text-[33px]" : ""
+                                }`}
+                              >
                                 30+
                               </div>
                               <p className="year border-0 py-[1rem]">
@@ -293,7 +321,11 @@ const WhyShouldHireDevelopers = () => {
                             </div>
 
                             <div>
-                              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                              <div
+                                className={`number xl:text-[70px] md:!text-[57px] ${
+                                  isMobile ? "text-[33px]" : ""
+                                }`}
+                              >
                                 20+
                               </div>
                               <p className="year border-0 py-[1rem]">
@@ -308,7 +340,11 @@ const WhyShouldHireDevelopers = () => {
                             {pathname === "/hire-aws-developer" ? (
                               <>
                                 <div>
-                                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                  <div
+                                    className={`number xl:text-[70px] md:!text-[57px] ${
+                                      isMobile ? "text-[33px]" : ""
+                                    }`}
+                                  >
                                     50+
                                   </div>
                                   <p className="year border-0 py-[1rem]">
@@ -318,7 +354,11 @@ const WhyShouldHireDevelopers = () => {
                                 </div>
 
                                 <div>
-                                  <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                  <div
+                                    className={`number xl:text-[70px] md:!text-[57px] ${
+                                      isMobile ? "text-[33px]" : ""
+                                    }`}
+                                  >
                                     10+
                                   </div>
                                   <p className="year border-0 py-[1rem]">
@@ -333,7 +373,11 @@ const WhyShouldHireDevelopers = () => {
                                 {pathname === "/hire-ui-ux-designer" ? (
                                   <>
                                     <div>
-                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                      <div
+                                        className={`number xl:text-[70px] md:!text-[57px] ${
+                                          isMobile ? "text-[33px]" : ""
+                                        }`}
+                                      >
                                         45+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -343,7 +387,11 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
 
                                     <div>
-                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                      <div
+                                        className={`number xl:text-[70px] md:!text-[57px] ${
+                                          isMobile ? "text-[33px]" : ""
+                                        }`}
+                                      >
                                         10+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -356,7 +404,11 @@ const WhyShouldHireDevelopers = () => {
                                 ) : (
                                   <>
                                     <div>
-                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                      <div
+                                        className={`number xl:text-[70px] md:!text-[57px] ${
+                                          isMobile ? "text-[33px]" : ""
+                                        }`}
+                                      >
                                         40+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -367,7 +419,11 @@ const WhyShouldHireDevelopers = () => {
                                     </div>
 
                                     <div>
-                                      <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+                                      <div
+                                        className={`number xl:text-[70px] md:!text-[57px] ${
+                                          isMobile ? "text-[33px]" : ""
+                                        }`}
+                                      >
                                         15+
                                       </div>
                                       <p className="year border-0 py-[1rem]">
@@ -390,14 +446,22 @@ const WhyShouldHireDevelopers = () => {
             )}
 
             <div>
-              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+              <div
+                className={`number xl:text-[70px] md:!text-[57px] ${
+                  isMobile ? "text-[33px]" : ""
+                }`}
+              >
                 60%
               </div>
               <p className="year border-0 py-[1rem]">Savings In Salaries</p>
             </div>
 
             <div>
-              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+              <div
+                className={`number xl:text-[70px] md:!text-[57px] ${
+                  isMobile ? "text-[33px]" : ""
+                }`}
+              >
                 +4/-4
               </div>
               <p className="year border-0 py-[1rem]">
@@ -408,7 +472,11 @@ const WhyShouldHireDevelopers = () => {
             </div>
 
             <div>
-              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+              <div
+                className={`number xl:text-[70px] md:!text-[57px] ${
+                  isMobile ? "text-[33px]" : ""
+                }`}
+              >
                 48-72
               </div>
               <p className="year border-0 py-[1rem]">
@@ -419,7 +487,11 @@ const WhyShouldHireDevelopers = () => {
             </div>
 
             <div>
-              <div className="number xl:text-[70px] md:text-[44px] !text-[33px]">
+              <div
+                className={`number xl:text-[70px] md:!text-[57px] ${
+                  isMobile ? "text-[33px]" : ""
+                }`}
+              >
                 98%
               </div>
               <p className="year border-0 py-[1rem]">
