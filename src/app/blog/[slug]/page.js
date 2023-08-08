@@ -6,12 +6,6 @@ import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
 import Head from "next/head";
 
-export const metadata = {
-  title: "Blog - Brilworks Software",
-  description:
-    "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
-};
-
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
