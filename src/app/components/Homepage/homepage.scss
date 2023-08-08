@@ -29,6 +29,12 @@
     }
 
 }
+.client-review-msg{
+    font-family: var(--regular) !important;
+    line-height: 1.4 !important;
+    font-size: 1.8rem !important;
+}
+
 .homepage-extension-team{
     .accordion-body{
         padding: 0px;
@@ -72,17 +78,6 @@
 
 
 .work-swiper{
-    // .slide-style:hover{
-    //     .portfolio-desc{
-    //         display: block!important;
-    //     }
-    //     .portfolio-title{
-    //         display: block!important;
-    //     }
-    //     .portfolio-title-new{
-    //         display: none!important;
-    //     }
-    // }
     .portfolio-title{
         display: none !important;
         font-size: var(--font_32);
@@ -111,7 +106,7 @@
     }
 }
 
-.work-swiper{
+.work-swiper, .software-review-container{
     .swiper-pagination-bullet{
         margin: 0 5px!important;
         width: 10px;
@@ -192,6 +187,52 @@
     color: #000;
     font-family: var(--medium);
     font-size: 1rem;
+}
+
+.software-review-head{
+    padding: 8rem 0 0rem;
+    .clutch-widget{
+        p{
+            font-size: 2rem;            
+        }
+        .clutch-power{
+            position: relative;
+            left: 50px;
+        }
+    }
+}
+.software-review-container{
+    .home_sec3_box{
+        border-radius: 10px!important;
+    }
+    .clutch-swiper .dots_flex {
+        background: transparent !important;
+        gap: 0.5rem !important;
+        .dots{
+            width: 6px !important;
+            height: 6px !important;
+        }
+    }
+    .clutch-swiper .white-background {
+        padding: 0px 15px 0px 10px !important;
+    }
+    .clutch_content{
+        min-height: 120px !important;
+    }
+    .clutch_position {
+        margin-bottom: 20px;
+        height: 60px;
+    }
+    .clutch_position p {
+        font-size: 14px;
+    }
+    .swiper-wrapper{
+        padding-bottom: 4rem!important;
+    }
+    .swiper-pagination{
+        margin-top: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 767px) {

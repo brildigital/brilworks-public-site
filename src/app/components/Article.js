@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 import "./Blogstyle.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import BlogContactForm from "./Blog/BlogContactForm";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.accessToken,
@@ -12,12 +13,6 @@ const Storyblok = new StoryblokClient({
 
 const Article = ({ blok }) => {
   const [blogData, setBlogData] = useState(null);
-
-  // useEffect(() => {
-  //   document.getElementById("scroll-win").scrollIntoView({
-  //     behavior: "smooth",
-  //   });
-  // });
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
@@ -45,7 +40,7 @@ const Article = ({ blok }) => {
 
       <div className="2xl:w-[88%] w-[98%] mx-auto">
         <div className="lg:flex block gap-[4rem]">
-          <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem]">
+          <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
             <div className="p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative">
               <div className="">
                 <p className="text-[#00dfb8] text-[24px] text-[500]">
@@ -219,7 +214,7 @@ const Article = ({ blok }) => {
               {parse(blok?.content)}
             </div>
 
-            {/* ********************Author Detail***************************** */}
+            {/* ********************Author Detail******************************/}
             <div className="single-author-bio">
               <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                 <div className="img-blk">
@@ -248,68 +243,7 @@ const Article = ({ blok }) => {
           </div>
 
           <div className="basis-[25%]">
-            <div className="get_in_touch blog_padding">
-              <div className="">
-                <p className="gradiant md:!text-4xl">Get In Touch</p>
-              </div>
-              <br />
-
-              <div className="post_details_content">
-                <p>Contact us for your software development requirements</p>
-              </div>
-              <div className="blog-contact-form">
-                <div>
-                  <form>
-                    <div className="form-group">
-                      <p>
-                        <label className="label_name">Name*</label>
-                        <br />
-                        <span>
-                          <input
-                            className="form-control-txt"
-                            id="name"
-                            type="text"
-                          />
-                        </span>
-                      </p>
-                    </div>
-                    <div className="form-group">
-                      <p>
-                        <label className="label_name">Email*</label>
-                        <br />
-                        <span>
-                          <input className="form-control-txt" id="email" />
-                        </span>
-                      </p>
-                    </div>
-                    <div className="form-group">
-                      <p>
-                        <label className="label_name">Message*</label>
-                        <br />
-                        <span>
-                          <textarea
-                            cols="1"
-                            rows="2"
-                            className="form-control-txt"
-                            id="message"
-                          ></textarea>
-                        </span>
-                      </p>
-                    </div>
-                    <div className="btn_paddinng contact_btn btn_flex">
-                      <div>
-                        <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
-                        </p>
-                      </div>
-                      <p>
-                        <input id="submit" type="submit" />
-                      </p>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+            <BlogContactForm />
           </div>
 
           {/* <div className="text-center md:!w-2/4 lg:w-2/3 w-full"> */}
@@ -408,54 +342,6 @@ const Article = ({ blok }) => {
                 </div>
               ))
             : null}
-
-          {/* <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-            <Link href="/blog/blogInner">
-              <div className="sec9_img1">
-                <img
-                  className="rounded-[20px]"
-                  src="/images/Thumbnail-Cross-platform-app-dev0.svg"
-                  alt=""
-                />
-              </div>
-              <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                  <p className="entry-title default-max-width aspect-[518/116]">
-                    Cross Platform App Development: Best Frameworks in 2023
-                  </p>
-                </div>
-                <div className="sec9_txt2 mt-[1.5rem]">
-                  <p>
-                    <Link href="/blog/blogInner">June 8, 2023</Link>
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30">
-            <Link href="/blog/blogInner">
-              <div className="sec9_img1">
-                <img
-                  className="rounded-[20px]"
-                  src="/images/Thumbnail-VR0.svg"
-                  alt=""
-                />
-              </div>
-              <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                  <p className="entry-title default-max-width aspect-[518/116]">
-                    Apple Vision Pro vs Meta Quest 3
-                  </p>
-                </div>
-                <div className="sec9_txt2 mt-[1.5rem]">
-                  <p>
-                    <Link href="/blog/blogInner">June 7, 2023</Link>
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div> */}
         </div>
       </div>
     </section>

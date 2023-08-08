@@ -149,23 +149,6 @@ const Blog = () => {
               ))}
             </ul>
           </div>
-
-          {/* <div className="flex justify-center mt-[2rem]">
-            <ul className="list-none flex flex-wrap">
-              <li className="h-[40px] w-[40px] rounded-[50%] bg-[#1a1a1a] text-[#ffffff] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer">
-                1
-              </li>
-              <li className="h-[40px] w-[40px] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer">
-                2
-              </li>
-              <li className="h-[40px] w-[40px] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer">
-                3
-              </li>
-              <li className="h-[40px] w-[40px] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer">
-                4
-              </li>
-            </ul>
-          </div> */}
         </div>
       </section>
     </>

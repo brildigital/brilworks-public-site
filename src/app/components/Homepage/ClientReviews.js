@@ -46,11 +46,16 @@ const ClientReviews = () => {
                 <div className="dots"></div>
               </div>
               <div className="background">
-                <Swiper modules={[Navigation]} loop={true} slidesPerView={1}>
+                <Swiper
+                  modules={[Navigation]}
+                  loop={true}
+                  slidesPerView={1}
+                  speed={1500}
+                >
                   <SwiperSlide>
                     <div className="style_sec3_swiper_home !w-4/5 !my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                        <p className="text-left md:!text-3xl">
+                        <p className="text-left md:!text-3xl client-review-msg">
                           "I have been working with Brilworks for more than 4
                           years and could not be happier with the quality of
                           their work and the support provided. The best part is
@@ -59,7 +64,7 @@ const ClientReviews = () => {
                       </div>
                       <div className="sec3_swiper_home_flex">
                         <div className="home_sec3_txt2 text_left">
-                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px]">
+                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px] client-review-msg">
                             David Velasquez
                           </p>
                           <p className="font_style_sec3">CEO, Rastrack</p>
@@ -70,7 +75,7 @@ const ClientReviews = () => {
                   <SwiperSlide>
                     <div className="style_sec3_swiper_home !w-4/5 !my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                        <p className="text-left md:!text-3xl">
+                        <p className="text-left md:!text-3xl client-review-msg">
                           “Team Brilworks has been an absolute delight to work
                           with. They were able to take my list of prioritized
                           needs and identify the most pressing ones to solve
@@ -79,7 +84,7 @@ const ClientReviews = () => {
                       </div>
                       <div className="sec3_swiper_home_flex">
                         <div className="home_sec3_txt2 text_left">
-                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px]">
+                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px] client-review-msg">
                             Liz Bullen
                           </p>
                           <p className="font_style_sec3">Founder, Lyfecoin</p>
@@ -90,7 +95,7 @@ const ClientReviews = () => {
                   <SwiperSlide>
                     <div className="style_sec3_swiper_home !w-4/5 !my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                        <p className="text-left md:!text-3xl">
+                        <p className="text-left md:!text-3xl client-review-msg">
                           “Orokii has a special relationship with Brilworks and
                           will continue that relationship because of the
                           brilliant software engineering team the company gives
@@ -99,7 +104,7 @@ const ClientReviews = () => {
                       </div>
                       <div className="sec3_swiper_home_flex">
                         <div className="home_sec3_txt2 text_left">
-                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px]">
+                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px] client-review-msg">
                             Bisi
                           </p>
                           <p className="font_style_sec3">Founder, Orokii</p>
@@ -110,7 +115,7 @@ const ClientReviews = () => {
                   <SwiperSlide>
                     <div className="style_sec3_swiper_home !w-4/5 !my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                        <p className="text-left md:!text-3xl">
+                        <p className="text-left md:!text-3xl client-review-msg">
                           “I absolutely loving working with the Brilworks team
                           because their communication is top-notch. I really
                           value their partnership, transparency in processes and
@@ -120,7 +125,7 @@ const ClientReviews = () => {
                       </div>
                       <div className="sec3_swiper_home_flex">
                         <div className="home_sec3_txt2 text_left">
-                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px]">
+                          <p className="xl:text-[24px] lg:text-[22px] md:text-[20px] text-[18px] client-review-msg">
                             Edwin
                           </p>
                           <p className="font_style_sec3">Founder, Tekstride</p>

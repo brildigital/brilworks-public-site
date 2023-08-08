@@ -19,6 +19,9 @@ const Honors = () => {
           modules={[Pagination]}
           slidesPerView={isMobile ? 1 : 4}
           pagination={{ clickable: true }}
+          slidesPerGroup={isMobile ? 1 : 4}
+          loopFillGroupWithBlank={true}
+          speed={1500}
           breakpoints={{
             1475: {
               slidesPerView: 4,
@@ -59,36 +62,26 @@ const Honors = () => {
           <SwiperSlide>
             <div className="award ng-scope">
               <Link
-                href="https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
+                href="https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd"
                 target="_blank"
                 rel="nofollow noopener"
               >
                 <div className="award_sec8_img1">
                   <img
-                    src="/images/review-top-software-developers.png"
-                    alt="top software developers"
+                    className="alignnone !w-[120px]"
+                    src="/images/select-tier-service-partner-light-1.png"
+                    alt="AWS Partner"
+                    width="120"
+                    height="120"
                   />
                 </div>
 
                 <div className="review-text">
                   <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
-                    Top Software Companies
+                    AWS Partner
                   </p>
                 </div>
               </Link>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="award ng-scope">
-              <div className="award_sec8_img1">
-                <img src="/images/review-liferay.png" alt="Liferay Partner" />
-              </div>
-
-              <div className="review-text">
-                <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
-                  Liferay Silver Service Partner
-                </p>
-              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -101,7 +94,6 @@ const Honors = () => {
                 <div className="award_sec8_img1">
                   <img src="/images/review-clutch.png" alt="Clutch Reviews" />
                 </div>
-
                 <div className="review-text">
                   <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
                     Clutch 9.9 Ratings
@@ -111,22 +103,22 @@ const Honors = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="award ng-scope">
+            <div className="award ng-scope !py-8">
               <Link
-                href="https://technology.siliconindia.com/ranking/10-most-promising-blockchain-development-companies-%C2%AD-2022-rid-1689.html"
+                href="https://www.designrush.com/agency/profile/brilworks-software"
                 target="_blank"
                 rel="nofollow noopener"
               >
                 <div className="award_sec8_img1">
                   <img
-                    src="/images/review-blockchain.png"
-                    alt="SiliconIndia Blockchain Development Company"
+                    className="w-[80%]"
+                    src="/images/Top-Mobile-App-Development-Company2.svg"
+                    alt="Top Mobile App Development Company"
                   />
                 </div>
-
                 <div className="review-text">
                   <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
-                    Silicon India Promising Company
+                    Top Mobile App Development Company
                   </p>
                 </div>
               </Link>
@@ -171,6 +163,65 @@ const Honors = () => {
                 <div className="review-text">
                   <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
                     Glassdoor 4.8 Ratings
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="award ng-scope">
+              <div className="award_sec8_img1">
+                <img src="/images/review-liferay.png" alt="Liferay Partner" />
+              </div>
+
+              <div className="review-text">
+                <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                  Liferay Silver Service Partner
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="award ng-scope">
+              <Link
+                href="https://technology.siliconindia.com/ranking/10-most-promising-blockchain-development-companies-%C2%AD-2022-rid-1689.html"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <div className="award_sec8_img1">
+                  <img
+                    src="/images/review-blockchain.png"
+                    alt="SiliconIndia Blockchain Development Company"
+                  />
+                </div>
+
+                <div className="review-text">
+                  <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                    Silicon India Promising Company
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="award ng-scope">
+              <Link
+                href="https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <div className="award_sec8_img1">
+                  <img
+                    src="/images/review-top-software-developers.png"
+                    alt="top software developers"
+                  />
+                </div>
+
+                <div className="review-text">
+                  <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                    Top Software Companies
                   </p>
                 </div>
               </Link>

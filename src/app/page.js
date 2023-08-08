@@ -2,13 +2,18 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 import HomePage from "./home/page";
 import StoryblokStory from "@storyblok/react/story";
 import Layout from "./components/Layout";
-import Head from "next/head";
+
+export const metadata = {
+  title: "Mobile App & Software Development Company | Brilworks",
+  description:
+    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+};
 
 export default async function Home() {
   const { props: data } = await fetchData();
+
   return (
     <>
-      
       {/* <Layout story={data?.config}>
         <StoryblokStory story={data?.story} />
       </Layout> */}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 
 const SolutionEngagementModal = () => {
@@ -25,7 +25,11 @@ const SolutionEngagementModal = () => {
           <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[3rem] ">
             <div className="contact_box">
               <div className="mx-auto">
-                <img src="/images/people-01.png" alt="people" className="" />
+                <img
+                  src="/images/Dedicated-Development-Team.png"
+                  alt="people"
+                  className="md:!w-[92px]"
+                />
               </div>
               <div className="steps_service">
                 <div className="no_flex">
@@ -47,7 +51,11 @@ const SolutionEngagementModal = () => {
 
             <div className="contact_box">
               <div className="mx-auto">
-                <img src="/images/progress-01.png" alt="progress" />
+                <img
+                  src="/images/Team-Extension-2.png"
+                  alt="progress"
+                  className="md:!w-[92px]"
+                />
               </div>
 
               <div className="steps_service">
@@ -70,7 +78,11 @@ const SolutionEngagementModal = () => {
 
             <div className="contact_box">
               <div className="mx-auto">
-                <img src="/images/passion-01.png" alt="passion" className="" />
+                <img
+                  src="/images/Project-Based-Model-1.png"
+                  alt="passion"
+                  className="md:!w-[92px]"
+                />
               </div>
               <div className="steps_service">
                 <div className="no_flex">

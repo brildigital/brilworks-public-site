@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
-import AutoSlidesFooter from "../components/Homepage/AutoSlidesFooter";
 import AWSTechnology from "../components/Technologies/AWSTechnology";
 
+export const metadata = {
+  title: "AWS Development Company | Hire AWS Certified Developers | Brilworks",
+  description:
+    "Brilworks' AWS development services contain Consulting, App Development, Cloud Migration, DevOps, and Managed Services. Hire AWS Lambda and Kinesis developers.",
+};
 const page = () => {
   return (
     <>

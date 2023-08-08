@@ -1,8 +1,12 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
-import AutoSlidesFooter from "@/app/components/Homepage/AutoSlidesFooter";
 import PortfolioInnerEccocar from "@/app/components/Portfolio/PortfolioInnerEccocar";
 
+export const metadata = {
+  title: "Eccocar - Portfolio | Fleet Payment Solution |Brilworks Software",
+  description:
+    "Check out Brilworks's work for Eccocar. How we helped Eccocar to build a payment gateway system and integrated their platform with Stripe to collect payments.",
+};
 const page = () => {
   return (
     <>
