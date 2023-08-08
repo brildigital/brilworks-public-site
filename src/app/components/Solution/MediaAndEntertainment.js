@@ -49,8 +49,8 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width lg:py-[6rem] py-[4rem]">
-          <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
+        <div className="mx-auto service_width  lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+          <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="uppercase p-0 !ml-[0] !w-full">
@@ -68,7 +68,7 @@ const MediaAndEntertainment = () => {
                   entertainment & media industry.
                 </p>
 
-                <div className="btn_paddinng contact_btn btn_flex pt-[3rem]">
+                <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
                   <div className="formBtn_icon">
                     <p>
                       <Link
@@ -95,7 +95,7 @@ const MediaAndEntertainment = () => {
 
         <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
+            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
               <p className="!w-full p-0">
                 DELIGHT YOUR USERS WITH <br />
                 OUR ENTERTAINMENT SOFTWARE SOLUTIONS
@@ -103,7 +103,7 @@ const MediaAndEntertainment = () => {
             </div>
           </div>
 
-          <div className="mx-auto px-[15px] pt-[32px]">
+          <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
@@ -407,7 +407,7 @@ const MediaAndEntertainment = () => {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
+                <div className="lg:w-6/12 w-full">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"

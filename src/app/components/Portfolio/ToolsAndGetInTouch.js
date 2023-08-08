@@ -5,7 +5,7 @@ const ToolsAndGetInTouch = () => {
     <>
       <div className="service_width">
         <div className="">
-          <div className="sec6_work work_padding">
+          <div className="sec6_work work_padding !py-[0] sm:!py-[3rem]">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3">
                 <p className="md:!w-[74%] !w-full">
@@ -112,7 +112,7 @@ const ToolsAndGetInTouch = () => {
                 </div>
               </div>
             </div>
-            <div className="ready_sec">
+            <div className="ready_sec sm:!py-[6rem] !py-[2rem]">
               <div className="ready_img relative">
                 <p>
                   <img

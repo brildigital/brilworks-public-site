@@ -3,7 +3,7 @@ import React from "react";
 const DomainWorking = () => {
   return (
     <>
-      <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%]">
+      <div className="mx-auto px-[15px] md:pt-[128px] sm:pt-[32px] pt-[60px] sm:w-[92%] w-[100%]">
         <div className="accordion-tab-section homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

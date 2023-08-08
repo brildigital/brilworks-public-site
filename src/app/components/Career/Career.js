@@ -34,14 +34,14 @@ const Career = () => {
             </div>
 
             <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
-              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light !w-[94%]">
+              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light f-light !w-[100%]">
                 A place where brilliant minds come together, to collaborate and
                 create products with a common goal of making them innovative,
                 appealing, and efficient while having truckloads of fun!
               </p>
             </div>
 
-            <div className="flex items-center justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
+            <div className="flex sm:items-center items-start justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
               <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
                 <div className="about_txt">
                   <Link
@@ -106,7 +106,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="mx-auto md:my-[8rem] my-[3rem] w-4/5">
+            <div className="mx-auto md:my-[8rem] my-[3rem] w-4/ w-full">
               <img
                 src="/images/career.jpg"
                 alt="career"
@@ -132,7 +132,7 @@ const Career = () => {
             </div>
 
             <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
-              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light !w-[94%]">
+              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full font-light f-light">
                 To us, the people and the collaborative working style are key
                 drivers of engagement. It’s our aim to create a welcoming
                 environment in which employees are empowered to achieve their

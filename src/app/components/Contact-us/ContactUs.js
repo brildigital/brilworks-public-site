@@ -306,7 +306,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="service_width contact_sec3 md:!pt-4 pt-1 ">
+        <div className="service_width contact_sec3 md:!pt-[100px] pt-1">
           <div className="just_call_sec">
             <div className="home_sec2_txt3 contact_bold text-center">
               <p className="textUpercase md:!text-center !text-left !w-full">
@@ -475,6 +475,18 @@ const ContactUs = () => {
                         {respMessage}
                       </div>
                       <div className="btn_paddinng contact_btn btn_flex">
+                        <div className="formBtn_icon">
+                          <p>
+                            <img src="/images/right_arrow.png" alt="arrow" />
+                          </p>
+                        </div>
+                        <p>
+                          <input
+                            className="send_btn"
+                            id="submit"
+                            type="submit"
+                          />
+                        </p>
                         {isSubmitting ? (
                           <Loader />
                         ) : (

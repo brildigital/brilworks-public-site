@@ -49,8 +49,8 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width lg:py-[6rem] py-[4rem]">
-          <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
+        <div className="mx-auto service_width lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+          <div className="flex !flex-col lg:!flex-row gap-[1.5rem] sm:gap-[3.5rem] ">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="uppercase p-0 !ml-[0] !w-full">
@@ -72,7 +72,7 @@ const Fintech = () => {
                   className={`flex ${
                     isMobile
                       ? "md:gap-8 md:mt-[50px] flex-wrap"
-                      : "align-middle pt-[4rem]"
+                      : "align-middle gap-4"
                   }`}
                 >
                   <div className="btn_paddinng contact_btn btn_flex">
@@ -125,9 +125,9 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
+            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
               <p className="!w-full p-0">
                 OUR END-TO-END FINTECH SOFTWARE
                 <br />
@@ -136,7 +136,7 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="mx-auto px-[15px] pt-[32px]">
+          <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
@@ -439,7 +439,7 @@ const Fintech = () => {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
+                <div className="lg:w-6/12 w-full mt-[0px]">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -556,7 +556,7 @@ const Fintech = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
+            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
               <p className="!w-full p-0">
                 INDUSTRY-SPECIFIC
                 <br />
@@ -564,7 +564,7 @@ const Fintech = () => {
               </p>
             </div>
           </div>
-          <div className="mx-auto px-[15px] pt-[32px] ">
+          <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
                 <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
@@ -972,8 +972,8 @@ const Fintech = () => {
                   <img
                     loading="lazy"
                     className=""
-                    src="/images/Real-time-Content-Feeds.png"
-                    alt="Real-time Content Feeds"
+                    src="/images/Fraud-Detection-Software.png"
+                    alt="Fraud-Detection-Software"
                   />
                 </div>
 
@@ -998,8 +998,8 @@ const Fintech = () => {
                   <img
                     loading="lazy"
                     className=""
-                    src="/images/Multilingual-Support.png"
-                    alt="Multilingual Support"
+                    src="/images/Financial-Reporting-Software.png"
+                    alt="Financial-Reporting-Software"
                   />
                 </div>
 
@@ -1023,8 +1023,8 @@ const Fintech = () => {
                 <div className="basis-[15%]">
                   <img
                     className=""
-                    src="/images/Live-Chatting.png"
-                    alt="Live Chatting"
+                    src="/images/Financial-Risk-Management.png"
+                    alt="Financial-Risk-Management"
                   />
                 </div>
 
@@ -1048,8 +1048,8 @@ const Fintech = () => {
                 <div className="basis-[15%]">
                   <img
                     className="alignnone wp-image-285 size-full"
-                    src="/images/Secure-Payment-Gateways.png"
-                    alt="Secure Payment Gateways"
+                    src="/images/Financial-CRM-software.png"
+                    alt="Financial-CRM-software"
                   />
                 </div>
 
@@ -1073,8 +1073,8 @@ const Fintech = () => {
                 <div className="basis-[15%]">
                   <img
                     className="alignnone wp-image-285 size-full"
-                    src="/images/IoT-Integration.png"
-                    alt="IoT Integration"
+                    src="/images/Background-Check-Software.png"
+                    alt="Background-Check-Software"
                   />
                 </div>
 
@@ -1098,8 +1098,8 @@ const Fintech = () => {
                 <div className="basis-[15%]">
                   <img
                     className="alignnone wp-image-285 size-full"
-                    src="/images/Push-Notifications.png"
-                    alt="Push Notifications"
+                    src="/images/Sales-Forecasting-Softwaref.png"
+                    alt="Sales-Forecasting-Softwaref"
                   />
                 </div>
 
