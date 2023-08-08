@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import Link from "next/link";
 import "./OurProcessStyle.scss";
 import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
@@ -62,7 +63,7 @@ const OurProcessPage = () => {
         <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
           <div className="basis-[45%]">
             <div className="home_sec2_txt3 like_text">
-              <p className="uppercase p-0 !ml-[0]">
+              <p className="uppercase p-0 !ml-[0] lg:!w-[92%] !w-[100%]">
                 Time Tested Processes for All Your Project Needs
               </p>
             </div>

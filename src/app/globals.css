@@ -659,7 +659,9 @@ a:hover {
 .accordion .accordion-item {
   border-bottom: 1px solid #80808038 !important;
 }
-
+.accordion .accordion-body > p{margin-bottom: 20px !important;}
+.contact_btn.btn-margin-top-0{margin-top: 0 !important;}
+.tech-tags .idea_title.work_sec2_txt4 p{font-size: 16px !important;}
 .accordion .accordion-body {
   font-size: var(--font_24);
   font-family: var(--regular);
@@ -669,6 +671,7 @@ a:hover {
   line-height: 2.5rem;
   padding: 1rem 0rem;
 }
+.font-light.f-light{font-family: var(--light) !important;}
 .sec6_title p {
   font-family: var(--regular);
   color: var(--color_black);
@@ -938,6 +941,7 @@ textarea.form-control-txt {
 .footer_logo img {
   max-width: 236px;
 }
+
 .footer {
   padding-top: 2rem;
 }
@@ -1009,9 +1013,9 @@ textarea.form-control-txt {
 }
 .footer_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  gap: 5rem;
-  align-items: baseline;
+  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  gap: 10rem;
+  align-items: start;
 }
 .social_media {
   display: flex;
@@ -1097,7 +1101,9 @@ textarea.form-control-txt {
   align-items: center;
   gap: 2rem;
 }
-
+.sec9_service_style .number{
+  font-size: 34px;
+}
 .sec9_service_style {
   background: #1cb9d5;
   background: linear-gradient(
@@ -1188,7 +1194,7 @@ textarea.form-control-txt {
   min-height: 161px;
 }
 .flexbasis_idea .ideaBg_class p {
-  font-size: var(--font_16) !important;
+  font-size: var(--font_21) !important;
 }
 .home_sec3_box1 .style_sec3_swiper_home p {
   font-size: var(--font_16);
@@ -1873,6 +1879,8 @@ textarea.form-control-txt {
   left: 0%;
   z-index: 999;
   width: 100%;
+  height: 100%;
+  display: flex;
 }
 .about_sec4_70 {
   bottom: auto;
@@ -2040,7 +2048,7 @@ textarea.form-control-txt {
   line-height: var(--line_height_1);
 }
 .number_icon_img {
-  width: 30px;
+  width: 34px;
 }
 .end-to-end .accordion-button::after {
   content: none;
@@ -2048,6 +2056,7 @@ textarea.form-control-txt {
 .end-to-end .accordion .accordion-button,
 .end-to-end .accordion .card-header {
   padding: 1.5rem 0rem !important;
+  border-bottom: 1px solid #80808038!important;
 }
 .end-to-end .accordion-button > div > div {
   font-family: var(--bold);
@@ -2433,6 +2442,14 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 1366px) {
+  .no_flex_tech::after {
+    width: 11%;
+    right: 0%;
+  }
+  .no_flex_tech::before {
+      width: 11%;
+      left: 0%;
+  }
   .home_txt3 h1 {
     font-size: 1.8rem;
   }
@@ -2545,6 +2562,17 @@ textarea.form-control-txt {
     font-size: 1.1rem !important;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .footer_grid>div:nth-child(2) {
+    margin-top: 60px;
+  }
+  .footer_grid>div:nth-child(3) {
+       margin-top: 60px;
+  }
+  .footer_grid>div:nth-child(4) {
+        margin-top: 60px;
+  }
+}
 @media only screen and (max-width: 1152px) {
   /* .header_logo {
     width: 45%;
@@ -2642,6 +2670,9 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 1024px) {
+  .about_box_style {
+    padding: 3rem 2rem;
+  }
   .header_width {
     width: 90%;
   }
@@ -2747,12 +2778,23 @@ textarea.form-control-txt {
     max-width: 124px;
   }
 }
+@media only screen and (min-width: 768px) {
+  .footer_grid>div:nth-child(2) {
+    padding-left: 6rem;
+    }
+  .footer_grid>div:nth-child(3) {
+    padding-left: 2rem;
+  }
+  .footer_grid>div:nth-child(4) {
+    padding-left: 3rem;
+  }
+}
 @media only screen and (max-width: 767px) {
   .header_logo {
     width: 45%;
   }
   .padding_menu_header {
-    padding: 7rem 0 0 0;
+    padding: 4rem 0 0 0;
   }
   .padding_menu_header .accordion-content {
     width: 100%;
@@ -2810,9 +2852,11 @@ textarea.form-control-txt {
   }
   .grid-area-two {
     grid-area: two;
+    margin-top: 30px;
   }
   .grid-area-three {
     grid-area: three;
+    margin-top: 30px;
   }
   .grid-area-four {
     grid-area: four;

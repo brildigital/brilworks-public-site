@@ -75,8 +75,8 @@ const AWSTechnology = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width lg:py-[6rem] py-[4rem]">
-          <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
+        <div className="mx-auto service_width lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+          <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
                 <Link

@@ -30,7 +30,7 @@ const SolutionContactForm = () => {
 
   return (
     <div
-      className="mx-auto px-[15px] sec3_width_home md:py-[6rem] py-[4rem]"
+      className="mx-auto px-[15px] sec3_width_home md:py-[6rem] py-[4rem] w-"
       id="section10_service"
     >
       <div className="bg_grey rounded-[30px] bg-[#ededed]">

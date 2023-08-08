@@ -116,7 +116,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="xl:py-[8rem] lg:py-[6rem] md:py-[4rem] py-[4rem] mx-[15px]">
+      <section className="xl:py-[8rem] sm:pb- lg:py-[6rem] md:py-[4rem] pb-[1rem] py-[4rem] mx-[15px]">
         <div className="home_sec2_txt1 md:text-center text-left">
           <p>Enabling greatness through</p>
         </div>

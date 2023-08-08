@@ -20,7 +20,7 @@ const ThreeStepstoHireDeveloper = () => {
   return (
     <section className="">
       <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
-        <div className="service_width mx-auto md:px-[0px] px-[15px]">
+        <div className="service_width mx-auto md:px-[0px]">
           <div className="service_sec3 md:text-center text-left">
             {pathname === "/hire-reactjs-developer" ? (
               <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">

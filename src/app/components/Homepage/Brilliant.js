@@ -6,7 +6,7 @@ const Brilliant = () => {
     <div className="container mx-auto md:py-[128px] md:px-[0] py-[40px] px-[15px]">
       <div className="md:text-center">
         <ActionNResultText />
-        <div className="home_sec2_txt3 home_sec2_txt3_style py-[32px] md:w-[80%] md:mx-auto">
+        <div className="home_sec2_txt3 home_sec2_txt3_style sm:py-[32px] py-[16px] md:w-[80%] md:mx-auto">
           <p className="homepage-text xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light !w-[94%]">
             Welcome to Brilworks – a tech-first company with a passion to create
             great products for businesses around the world. We’re agile and
@@ -16,7 +16,7 @@ const Brilliant = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-[20px] about_btn transition pt-[32px]">
+        <div className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px]">
           <div className="about_txt">
             <Link href="about-us" className="text-[21px]">
               About Us

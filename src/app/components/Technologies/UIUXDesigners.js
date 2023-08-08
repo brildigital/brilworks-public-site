@@ -71,7 +71,7 @@ const UIUXDesigners = () => {
                     <p>Expertise in</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology">
+                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology tech-tags">
                   <div className="flexbasis_idea">
                     <div className="ideaBg_class bg-[#dcf9f0]">
                       <div className="idea_title work_sec2_txt4">
@@ -209,7 +209,7 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology">
+                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology tech-tags">
                   <div className="flexbasis_idea">
                     <div className="ideaBg_class bg-[#dcecff]">
                       <div className="idea_title work_sec2_txt4">
@@ -353,7 +353,7 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology">
+                <div className="flex items-center gap-[1rem] flex-row flex-wrap custome_height_technology tech-tags">
                   <div className="flexbasis_idea">
                     <div className="ideaBg_class bg-[#dcf9f0]">
                       <div className="idea_title work_sec2_txt4">
