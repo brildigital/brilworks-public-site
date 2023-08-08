@@ -37,7 +37,7 @@ const Blogs = () => {
                   <img
                     src={content?.Image?.filename}
                     alt={content?.Image?.alt}
-                    className="vc_gitem-zone-img"
+                    className="vc_gitem-zone-img rounded-[20px]"
                   />
                   <div className="p-[10px]">
                     <h4 className="xl:text-[24px] mb-[10px] leading-8">

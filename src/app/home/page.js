@@ -10,21 +10,16 @@ import Footer from "../components/Footer/index";
 import ExtensionOfTeam from "../components/Homepage/ExtensionOfTeam";
 import SeeingBelieving from "../components/Homepage/SeeingBelieving";
 import { BestAdvocateText } from "../components/Homepage/BigText";
-import Head from "next/head";
+
+export const metadata = {
+  title: "Mobile App & Software Development Company | Brilworks",
+  description:
+    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+};
 
 const page = () => {
   return (
     <>
-      <Head>
-        <title>
-          iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple
-        </title>
-        <meta
-          name="description"
-          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-          key="desc"
-        />
-      </Head>
       <Header />
       <GameChanger />
       <Brilliant />

@@ -4,12 +4,17 @@ import Layout from "../../components/Layout";
 import { StoryblokComponent } from "@storyblok/react";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
+import Head from "next/head";
 
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
   return (
     <>
+      <Head>
+        <title>{data.story.name}</title>
+        <meta name="description" content="Description section" />
+      </Head>
       <Header />
       <StoryblokComponent blok={data?.story?.content} />
       <Footer />

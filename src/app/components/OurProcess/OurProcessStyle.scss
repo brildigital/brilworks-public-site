@@ -1,0 +1,30 @@
+
+.our_process_page{
+    .our-process-endToEnd{
+        .accordion-item
+            .active{
+                padding: 1rem 1.5rem;
+                margin-top: 0;
+                border-radius: 20px;
+                border-bottom: transparent;
+                border: 1px solid var(--main_color) !important;
+                background-color: var(--white_color) !important;
+            
+        }
+    }
+}
+// .accordion-tab-section .our-process-endToEnd{
+//     .accordion-item{
+//         .active{
+//             border-radius: 30px;
+//             border: 1px solid springgreen
+//         }
+//         .accordion-header{
+//             .accordion-button{
+//                 .image_toggle{
+//                     display: none !important;
+//                 }
+//             }
+//         }
+//     }
+// }

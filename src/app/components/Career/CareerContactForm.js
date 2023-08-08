@@ -1,40 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import Loader from "./Loader";
+import Loader from "../Homepage/Loader";
 
-const HomepageContactForm = () => {
+const CareerContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
 
   const url = process.env.googleSheetURL;
-
-  // const DataSubmit = () => {
-  //   const url =
-  //     "https://script.google.com/macros/s/AKfycbxWZFV_BRhZMkOGoCuvq21dGfbhic-uzXxB_hR6iwdI-Ua_F6LXe8DeCEQjkXixtNrN/exec";
-  //   let form = document.getElementById("homepageForm");
-
-  //   form.addEventListener("submit", (e) => {
-  //     e.target.btnSubmit.innerHTML = "Submitting...";
-  //     let formData = new FormData(form);
-  //     fetch(url, {
-  //       method: "POST",
-  //       body: formData,
-  //     })
-  //       .then((res) => res.text())
-  //       .then((finalResp) => {
-  //         e.target.btnSubmit.innerHTML = "Submit";
-  //         document.getElementById("sucess_msg").innerHTML = finalResp;
-  //         formData.reset();
-  //         setTimeout(() => {
-  //           document.getElementById("sucess_msg").innerHTML = "";
-  //         }, 5000);
-  //       });
-  //     e.preventDefault();
-  //   });
-  // };
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -77,7 +52,7 @@ const HomepageContactForm = () => {
               <div className="sec10_basis_50 order_2">
                 <div className="sec10_txt1">
                   <p>
-                    Contact us to build the right product with the right team.
+                    Do you want to work with us? Please fill in your details
                   </p>
                 </div>
                 <div
@@ -195,12 +170,7 @@ const HomepageContactForm = () => {
                           {isSubmitting ? (
                             <Loader />
                           ) : (
-                            <input
-                              // className="wpcf7-form-control has-spinner wpcf7-submit home_btn"
-                              id="submit"
-                              name="btnSubmit"
-                              type="submit"
-                            />
+                            <input id="submit" name="btnSubmit" type="submit" />
                           )}
                         </p>
                       </div>
@@ -214,58 +184,86 @@ const HomepageContactForm = () => {
               </div>
               <div className="sec10_basis_50 order_1">
                 <div className="sec10_txt1">
-                  <p>
-                    Top-rated software
-                    <br />
-                    development company
-                  </p>
+                  <p>Values that Guide Us</p>
                 </div>
                 <div className="form_grid">
                   <div>
-                    <div className="number_home">
-                      <p data-max="8">8+</p>
+                    <div class="w-[30%]">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        class="alignnone"
+                        src="/images/Stronger-Together.png"
+                        alt="Stronger Together"
+                        width="60"
+                        height="60"
+                      />
                     </div>
                     <div className="year">
                       <p>
-                        Years of
+                        Stronger
                         <br />
-                        experience
+                        Together
                       </p>
                     </div>
                   </div>
                   <div>
-                    <div className="number_home">
-                      <p data-max="98">98%</p>
+                    <div class="w-[30%]">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        class="alignnone"
+                        src="/images/Passion-Over-Perfectionism.png"
+                        alt="Passion Over Perfectionism"
+                        width="60"
+                        height="60"
+                      />
                     </div>
                     <div className="year">
                       <p>
-                        Project
+                        Passion Over
                         <br />
-                        Success Rate
+                        Perfectionism
                       </p>
                     </div>
                   </div>
                   <div>
-                    <div className="number_home">
-                      <p data-max="60">60+</p>
+                    <div class="w-[30%]">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        class="alignnone"
+                        src="/images/Future-focused.png"
+                        alt="Future-focused"
+                        width="60"
+                        height="60"
+                      />
                     </div>
                     <div className="year">
                       <p>
-                        Professional
+                        Future-
                         <br />
-                        employee
+                        focused
                       </p>
                     </div>
                   </div>
                   <div>
-                    <div className="number_home">
-                      <p data-max="120">120+</p>
+                    <div class="w-[30%]">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        class="alignnone"
+                        src="/images/Continuous-Improvement.png"
+                        alt="Continuous Improvement"
+                        width="60"
+                        height="60"
+                      />
                     </div>
                     <div className="year">
                       <p>
-                        Applications
+                        Continuous
                         <br />
-                        Developed
+                        Improvement
                       </p>
                     </div>
                   </div>
@@ -279,4 +277,4 @@ const HomepageContactForm = () => {
   );
 };
 
-export default HomepageContactForm;
+export default CareerContactForm;

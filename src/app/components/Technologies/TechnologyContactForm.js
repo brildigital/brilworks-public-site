@@ -1,8 +1,48 @@
 "use client";
 import { useMediaQuery } from "react-responsive";
+import Loader from "../Homepage/Loader";
+import { useState } from "react";
 
 const TechnologyContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [respMessage, setRespMessage] = useState("");
+
+  const url = process.env.googleSheetURL;
+
+  const clearMessage = () => {
+    setTimeout(() => {
+      setRespMessage("");
+    }, 5000);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const form = e.target;
+    const formData = new FormData(form);
+    const currentRoute = window.location.pathname;
+
+    formData.append("route", currentRoute);
+
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        res.text();
+      })
+      .then((finalResp) => {
+        setRespMessage(finalResp);
+        setIsSubmitting(false);
+        clearMessage();
+      })
+      .catch((err) => {
+        setIsSubmitting(false);
+        console.log(err);
+      });
+  };
+
   return (
     <div
       className="mx-auto sec3_width_home md:py-[4rem] py-[2rem]"
@@ -25,7 +65,11 @@ const TechnologyContactForm = () => {
                 lang="en-US"
                 dir="ltr"
               >
-                <form action="" method="post" className="wpcf7-form init">
+                <form
+                  method="post"
+                  className="wpcf7-form init"
+                  onSubmit={handleSubmit}
+                >
                   <div className="form-group">
                     <p className={isMobile ? "pt-4" : ""}>
                       <label className="label_name">Name*</label>
@@ -35,7 +79,7 @@ const TechnologyContactForm = () => {
                           size="40"
                           className="form-control-txt"
                           type="text"
-                          name="text-737"
+                          name="name"
                         />
                       </span>
                     </p>
@@ -49,8 +93,8 @@ const TechnologyContactForm = () => {
                         <input
                           size="40"
                           className="form-control-txt"
-                          type="tel"
-                          name="tel-336"
+                          type="number"
+                          name="phone"
                         />
                       </span>
                     </p>
@@ -64,21 +108,34 @@ const TechnologyContactForm = () => {
                           size="40"
                           className="form-control-txt"
                           type="email"
-                          name="email-160"
+                          name="email"
                         />
                       </span>
                     </p>
                   </div>
                   <div className="contact_btn btn_flex ">
-                    <div className="formBtn_icon">
-                      <p>
-                        <img src="/images/right_arrow.png" alt="arrow" />
-                      </p>
-                    </div>
-                    <p>
-                      <input className="send_btn" id="submit" type="submit" />
-                      <span className="wpcf7-spinner"></span>
-                    </p>
+                    {isSubmitting ? (
+                      <Loader />
+                    ) : (
+                      <>
+                        <div className="formBtn_icon">
+                          <p>
+                            <img src="/images/right_arrow.png" alt="arrow" />
+                          </p>
+                        </div>
+                        <p>
+                          <input
+                            className="send_btn"
+                            id="submit"
+                            name="btnSubmit"
+                            type="submit"
+                          />
+                        </p>
+                      </>
+                    )}
+                  </div>
+                  <div className="success-msg" id="sucess_msg">
+                    {respMessage}
                   </div>
                 </form>
               </div>

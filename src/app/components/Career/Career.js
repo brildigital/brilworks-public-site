@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import HomepageContactForm from "../Homepage/HomepageContactForm";
+import CareerContactForm from "./CareerContactForm";
+
 
 const Career = () => {
   const scrollToSection = (e, sectionId) => {
@@ -680,10 +681,10 @@ const Career = () => {
         </div>
 
         <div
-          className="md:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto px-[15px]"
+          className="md:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto"
           id="section10"
         >
-          <HomepageContactForm />
+          <CareerContactForm />
         </div>
       </section>
     </>

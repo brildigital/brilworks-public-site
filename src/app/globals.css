@@ -655,7 +655,9 @@ a:hover {
   font-family: var(--medium);
   color: var(--color_black) !important;
   padding: 2rem 0rem !important;
-  /* border-bottom: 1px solid #80808038 !important; */
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #80808038 !important;
 }
 
 .accordion .accordion-body {

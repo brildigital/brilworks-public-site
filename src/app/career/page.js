@@ -2,6 +2,12 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer";
 import Career from "../components/Career/Career";
 
+export const metadata = {
+  title: "Career | Join the World of Brilliance | Brilworks Software",
+  description:
+    "Explore the current open positions at Brilworks. Join the team of brilliant minds by sending your application today! Connect at hello@brilworks.com for any query.",
+};
+
 const page = () => {
   return (
     <>

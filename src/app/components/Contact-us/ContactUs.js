@@ -1,10 +1,45 @@
 "use client";
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
+import { useState } from "react";
+import Loader from "../Homepage/Loader";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [respMessage, setRespMessage] = useState("");
 
+  const url = process.env.googleSheetURL;
+
+  const clearMessage = () => {
+    setTimeout(() => {
+      setRespMessage("");
+    }, 5000);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        res.text();
+      })
+      .then((finalResp) => {
+        setRespMessage(finalResp);
+        setIsSubmitting(false);
+        clearMessage();
+      })
+      .catch((err) => {
+        setIsSubmitting(false);
+        console.log(err);
+      });
+  };
   return (
     <>
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
@@ -27,7 +62,11 @@ const ContactUs = () => {
           </div>
           <div className="contact_form">
             <div>
-              <form action="" method="post" className="wpcf7-form init">
+              <form
+                method="post"
+                className="wpcf7-form init"
+                onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <p className={isMobile ? "pt-4" : ""}>
                     <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
@@ -39,7 +78,7 @@ const ContactUs = () => {
                         size="40"
                         className="form-control-txt"
                         type="text"
-                        name="text-737"
+                        name="name"
                       />
                     </span>
                   </p>
@@ -55,7 +94,7 @@ const ContactUs = () => {
                         size="40"
                         className="form-control-txt"
                         type="email"
-                        name="email-160"
+                        name="email"
                       />
                     </span>
                   </p>
@@ -70,8 +109,8 @@ const ContactUs = () => {
                       <input
                         size="40"
                         className="form-control-txt"
-                        type="tel"
-                        name="tel-336"
+                        type="text"
+                        name="phone"
                       />
                     </span>
                   </p>
@@ -88,25 +127,34 @@ const ContactUs = () => {
                         rows="2"
                         className="form-control-txt mt"
                         id="message"
-                        name="textarea-62"
+                        name="message"
                       ></textarea>
                     </span>
                   </p>
                 </div>
                 <div className="btn_paddinng contact_btn btn_flex">
-                  <div className="formBtn_icon">
-                    <p>
-                      <img src="/images/right_arrow.png" alt="arrow" />
-                    </p>
-                  </div>
-                  <p>
-                    <input
-                      className="send_btn"
-                      id="submit"
-                      type="submit"
-                      
-                    />
-                  </p>
+                  {isSubmitting ? (
+                    <Loader />
+                  ) : (
+                    <>
+                      <div className="formBtn_icon">
+                        <p>
+                          <img src="/images/right_arrow.png" alt="arrow" />
+                        </p>
+                      </div>
+                      <p>
+                        <input
+                          className="send_btn"
+                          id="submit"
+                          type="submit"
+                          name="btnSubmit"
+                        />
+                      </p>
+                    </>
+                  )}
+                </div>
+                <div className="success-msg" id="sucess_msg">
+                  {respMessage}
                 </div>
               </form>
             </div>
@@ -181,7 +229,11 @@ const ContactUs = () => {
             <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/people-01.png" alt="people" className="" />
+                  <img
+                    src="/images/people-01.png"
+                    alt="people"
+                    className="md:!w-[92px]"
+                  />
                 </div>
                 <div className="steps_service">
                   <div className="no_flex">
@@ -205,7 +257,7 @@ const ContactUs = () => {
                   <img
                     src="/images/progress-01.png"
                     alt="progress"
-                    className=""
+                    className="md:!w-[92px]"
                   />
                 </div>
 
@@ -231,7 +283,7 @@ const ContactUs = () => {
                   <img
                     src="/images/passion-01.png"
                     alt="passion"
-                    className=""
+                    className="md:!w-[92px]"
                   />
                 </div>
                 <div className="steps_service">
@@ -339,7 +391,11 @@ const ContactUs = () => {
                     lang="en-US"
                     dir="ltr"
                   >
-                    <form action="" method="post" className="wpcf7-form init">
+                    <form
+                      method="post"
+                      className="wpcf7-form init"
+                      onSubmit={handleSubmit}
+                    >
                       <div className="form-group">
                         <p className={isMobile ? "py-4" : ""}>
                           <label
@@ -353,7 +409,7 @@ const ContactUs = () => {
                               size="40"
                               className="form-control-txt"
                               type="text"
-                              name="text-737"
+                              name="name"
                             />
                           </span>
                         </p>
@@ -371,7 +427,7 @@ const ContactUs = () => {
                               size="40"
                               className="form-control-txt"
                               type="email"
-                              name="email-160"
+                              name="email"
                             />
                           </span>
                         </p>
@@ -388,8 +444,8 @@ const ContactUs = () => {
                             <input
                               size="40"
                               className="form-control-txt"
-                              type="tel"
-                              name="tel-336"
+                              type="text"
+                              name="phone"
                             />
                           </span>
                         </p>
@@ -410,25 +466,37 @@ const ContactUs = () => {
                                 isMobile ? "mt-4" : ""
                               }`}
                               id="message"
-                              name="textarea-62"
+                              name="message"
                             ></textarea>
                           </span>
                         </p>
                       </div>
+                      <div className="success-msg" id="sucess_msg">
+                        {respMessage}
+                      </div>
                       <div className="btn_paddinng contact_btn btn_flex">
-                        <div className="formBtn_icon">
-                          <p>
-                            <img src="/images/right_arrow.png" alt="arrow" />
-                          </p>
-                        </div>
-                        <p>
-                          <input
-                            className="send_btn"
-                            id="submit"
-                            type="submit"
-                           
-                          />
-                        </p>
+                        {isSubmitting ? (
+                          <Loader />
+                        ) : (
+                          <>
+                            <div className="formBtn_icon">
+                              <p>
+                                <img
+                                  src="/images/right_arrow.png"
+                                  alt="arrow"
+                                />
+                              </p>
+                            </div>
+                            <p>
+                              <input
+                                className="send_btn"
+                                name="btnSubmit"
+                                id="submit"
+                                type="submit"
+                              />
+                            </p>
+                          </>
+                        )}
                       </div>
                     </form>
                   </div>

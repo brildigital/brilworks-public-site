@@ -5,7 +5,6 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import { BelievingText } from "./BigText";
 import { Pagination } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "react-responsive";
 
@@ -19,7 +18,10 @@ const SeeingBelieving = () => {
         <Swiper
           modules={[Pagination]}
           spaceBetween={50}
+          speed={1500}
           slidesPerView={isMobile ? 1 : 3}
+          slidesPerGroup={isMobile ? 1 : 2}
+          loopFillGroupWithBlank={true}
           navigation
           pagination={{ clickable: true }}
         >
