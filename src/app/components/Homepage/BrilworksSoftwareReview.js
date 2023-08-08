@@ -58,13 +58,14 @@ const BrilworksSoftwareReview = () => {
             className="mx-auto w-[100%]"
           ></iframe>
         </div> */}
-        <div class="software-review-head">
-          <div class="sec4_main_home">
-            <div class="py-[5rem]">
-              <div class="clutch-widget">
+        <div className="software-review-head">
+          <div className="sec4_main_home">
+            <div className="py-[5rem]">
+              <div className="clutch-widget">
                 <p>
-                  <span class="md:!text-[45px] !font-bold">Reviews</span> / 5.0{" "}
-                  <span class="star_clutch !text-[20px]">
+                  <span className="md:!text-[45px] !font-bold">Reviews</span> /
+                  5.0{" "}
+                  <span className="star_clutch !text-[20px]">
                     <FontAwesomeIcon
                       icon={faStar}
                       style={{ color: "#fbd000" }}
@@ -88,7 +89,7 @@ const BrilworksSoftwareReview = () => {
                   </span>
                 </p>
 
-                <div class="clutch-power">
+                <div className="clutch-power">
                   <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
                     <p className="!text-[1rem] flex items-baseline">
                       Powered by
@@ -118,23 +119,23 @@ const BrilworksSoftwareReview = () => {
           {reviewData?.length
             ? reviewData?.map((dataItem, index) => (
                 <SwiperSlide key={index}>
-                  <div class="wpb_wrapper">
-                    <div class="clutch-swiper home_sec3_box">
-                      <div class="dots_flex">
-                        <div class="dots !bg-[#00dfb8]"></div>
-                        <div class="dots"></div>
-                        <div class="dots"></div>
+                  <div className="wpb_wrapper">
+                    <div className="clutch-swiper home_sec3_box">
+                      <div className="dots_flex">
+                        <div className="dots !bg-[#00dfb8]"></div>
+                        <div className="dots"></div>
+                        <div className="dots"></div>
                       </div>
-                      <div class="white-background">
-                        <div class="clutch_content">
+                      <div className="white-background">
+                        <div className="clutch_content">
                           <p>{dataItem.content.content}</p>
                         </div>
-                        <div class="clutch_author">
-                          <div class="clutch_img"></div>
-                          <div class="clutch_position">
+                        <div className="clutch_author">
+                          <div className="clutch_img"></div>
+                          <div className="clutch_position">
                             <p>{dataItem.content.author}</p>
                             <p>
-                              <span class="star_clutch">
+                              <span className="star_clutch">
                                 <FontAwesomeIcon
                                   icon={faStar}
                                   style={{ color: "#fbd000" }}

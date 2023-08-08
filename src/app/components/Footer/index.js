@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
 
 const Footer = () => {
@@ -332,6 +333,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <TawkMessengerReact
+          propertyId={`${process.env.tawkPropertyId}`}
+          widgetId={`${process.env.tawkWidgetId}`}
+        />
       </div>
     </>
   );
