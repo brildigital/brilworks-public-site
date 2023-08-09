@@ -1,22 +1,50 @@
-"use client";
-import { getStoryblokApi } from "@storyblok/react";
-import Layout from "../../components/Layout";
-import { StoryblokComponent } from "@storyblok/react";
+// "use client";
+// import { getStoryblokApi } from "@storyblok/react";
+import { getStoryblokApi } from "@storyblok/react/rsc";
+import StoryblokStory from "@storyblok/react/story";
+// import Layout from "../../components/Layout";
+// import { StoryblokComponent } from "@storyblok/react/rsc";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
 import Head from "next/head";
 
+// export async function generateMetadata(props, parent) {
+//   // read route params
+//   // const id = params.id;
+
+//   // fetch data
+//   // const product = await fetch(`https://.../${id}`).then((res) => res.json());
+//   console.log("props", props);
+//   // console.log("parent", parent);
+//   // optionally access and extend (rather than replace) parent metadata
+//   const previousImages = (await parent).openGraph?.images || [];
+
+//   return {
+//     title: props?.story?.name || "This is fallback",
+//     openGraph: {
+//       images: ["/some-specific-page-image.jpg", ...previousImages],
+//     },
+//   };
+// }
+
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
+  console.log("data", data);
+  if (!data?.story) {
+    return null;
+  }
   return (
     <>
-      <Head>
+      <head>
         <title>{data?.story?.name}</title>
-        <meta name="description" content="Description contest is written here" />
-      </Head>
+        <meta
+          name="description"
+          content="DesignRush has announced top mobile app development companies for July 2023 and Brilworks Software has achieved 3rd position."
+        />
+      </head>
       <Header />
-      <StoryblokComponent blok={data?.story?.content} />
+      <StoryblokStory story={data?.story} />
       <Footer />
     </>
   );

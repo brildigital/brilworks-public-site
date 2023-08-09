@@ -15,6 +15,9 @@ export const metadata = {
   title: "Mobile App & Software Development Company | Brilworks",
   description:
     "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+  alternates: {
+    canonical: "https://brilworks.com/",
+  },
 };
 
 const page = () => {
