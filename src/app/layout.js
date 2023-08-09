@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import Script from "next/script";
-import Head from "next/head";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 
