@@ -475,18 +475,6 @@ const ContactUs = () => {
                         {respMessage}
                       </div>
                       <div className="btn_paddinng contact_btn btn_flex">
-                        <div className="formBtn_icon">
-                          <p>
-                            <img src="/images/right_arrow.png" alt="arrow" />
-                          </p>
-                        </div>
-                        <p>
-                          <input
-                            className="send_btn"
-                            id="submit"
-                            type="submit"
-                          />
-                        </p>
                         {isSubmitting ? (
                           <Loader />
                         ) : (

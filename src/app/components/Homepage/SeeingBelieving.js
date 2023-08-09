@@ -22,7 +22,6 @@ const SeeingBelieving = () => {
           slidesPerView={isMobile ? 1 : 3}
           slidesPerGroup={isMobile ? 1 : 2}
           loopFillGroupWithBlank={true}
-          navigation
           pagination={{ clickable: true }}
         >
           <SwiperSlide className="portfolio_slides_homepage">

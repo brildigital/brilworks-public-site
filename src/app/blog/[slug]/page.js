@@ -12,8 +12,8 @@ export default async function Page(props) {
   return (
     <>
       <Head>
-        <title>{data.story.name}</title>
-        <meta name="description" content="Description section" />
+        <title>{data?.story?.name}</title>
+        <meta name="description" content="Description contest is written here" />
       </Head>
       <Header />
       <StoryblokComponent blok={data?.story?.content} />

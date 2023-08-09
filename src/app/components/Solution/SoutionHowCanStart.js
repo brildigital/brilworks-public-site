@@ -4,7 +4,7 @@ const SoutionHowCanStart = () => {
   return (
     <>
       <section className="solution_gradiant md:py-[4rem] py-[4rem]">
-        <div className="sm:w-[90%] mx-auto !w-full px-[15px]">
+        <div className="sm:!w-[90%] mx-auto w-full px-[15px]">
           <div className="service_sec3 md:text-center text-left">
             <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] !pt-0">
               HOW CAN YOU GET STARTED?

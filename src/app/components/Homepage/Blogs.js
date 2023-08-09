@@ -50,7 +50,7 @@ const Blogs = () => {
           : null}
 
         {/* <div className="blog-box overflow-hidden">
-          <Link href="">
+          <Link href="javascript:void(0)">
             <img
               src="/images/Thumbnail-Rapid.svg "
               className="vc_gitem-zone-img"
@@ -65,7 +65,7 @@ const Blogs = () => {
         </div>
 
         <div className="blog-box overflow-hidden">
-          <Link href="">
+          <Link href="javascript:void(0)">
             <img
               src="/images/Thumbnail-sendgrid-vs-mailgun.svg"
               className="vc_gitem-zone-img"
