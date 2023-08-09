@@ -1,13 +1,39 @@
 "use client";
 import Link from "next/link";
+import "./solutionStyle.scss";
 import FleetManagmentFAQs from "./FleetManagmentFAQs";
 import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
 
 const FleetManagementNGPS = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isAccordionActive, setAccordionActive] = useState(1);
+  const [isAccordionOpen, setAccordionOpen] = useState(true);
+
+  const [isAccordionActive2, setAccordionActive2] = useState(1);
+  const [isAccordionOpen2, setAccordionOpen2] = useState(true);
+
+  const handleAccordianceClick = (accordanceNumber) => {
+    if (isAccordionActive === accordanceNumber) {
+      setAccordionOpen(!isAccordionOpen);
+    } else {
+      setAccordionOpen(true);
+    }
+    setAccordionActive(accordanceNumber);
+  };
+
+  const handleAccordianceClick2 = (accordanceNumber2) => {
+    if (isAccordionActive2 === accordanceNumber2) {
+      setAccordionOpen2(!isAccordionOpen2);
+    } else {
+      setAccordionOpen2(true);
+    }
+    setAccordionActive2(accordanceNumber2);
+  };
+
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
     const targetSection = document.getElementById(sectionId);
@@ -20,7 +46,7 @@ const FleetManagementNGPS = () => {
   };
   return (
     <>
-      <section className="portfolio mt-[6rem]">
+      <section className="portfolio mt-[6rem] solution-accordion">
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
@@ -113,302 +139,477 @@ const FleetManagementNGPS = () => {
                     role="tablist"
                   >
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-one"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-one"
-                      aria-selected="true"
+                      className={`${
+                        isAccordionActive == 1 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(1);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingOne">
-                        <button
-                          className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              Fleet Telematics Solutions
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Fleet-Telematics-Solutions-1.png"
-                                alt="Fleet Telematics Solutions"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseOne"
-                        className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-one"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-one"
+                        aria-selected="true"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Our extensive fleet telematics solution is designed
-                            for large vehicle fleets and uses real-time sensor
-                            data, video analytics, and in-car computers to help
-                            you optimize the driving efficiency of your
-                            vehicles.
-                          </p>
+                        <h2 className="accordion-header" id="headingOne">
+                          <button
+                            className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                          >
+                            {isAccordionActive == 1 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Fleet Telematics Solutions
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Telematics-Solutions-1.png"
+                                      alt="Fleet Telematics Solutions"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Telematics-Solutions-1.png"
+                                      alt="Fleet Telematics Solutions"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Fleet Telematics Solutions
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseOne"
+                          className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingOne"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Our extensive fleet telematics solution is
+                              designed for large vehicle fleets and uses
+                              real-time sensor data, video analytics, and in-car
+                              computers to help you optimize the driving
+                              efficiency of your vehicles.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-two"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-two"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive == 2 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(2);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingTwo">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              GPS Fleet Tracking
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/GPS-Fleet-Tracking.png"
-                                alt="GPS Fleet Tracking"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseTwo"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-two"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-two"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            We’re smarter than most fleet managers. Our software
-                            developers have extensive experience in
-                            fleet-tracking solutions. Through a combination of
-                            real-time GPS tracking, route optimization, and
-                            manual regrouping, our proprietary software allows
-                            you to easily monitor your fleet anywhere, while on
-                            the move.
-                          </p>
+                        <h2 className="accordion-header" id="headingTwo">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                          >
+                            {isAccordionActive == 2 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    GPS Fleet Tracking
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/GPS-Fleet-Tracking.png"
+                                      alt="GPS Fleet Tracking"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/GPS-Fleet-Tracking.png"
+                                      alt="GPS Fleet Tracking"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    GPS Fleet Tracking
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseTwo"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingTwo"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              We’re smarter than most fleet managers. Our
+                              software developers have extensive experience in
+                              fleet-tracking solutions. Through a combination of
+                              real-time GPS tracking, route optimization, and
+                              manual regrouping, our proprietary software allows
+                              you to easily monitor your fleet anywhere, while
+                              on the move.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-three"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-three"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive == 3 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(3);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingThree">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
-                          aria-expanded="false"
-                          aria-controls="collapseThree"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              Fuel Consumption Control Apps
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Fuel-Consumption-Control-Apps.png"
-                                alt="Fuel Consumption Control Apps"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseThree"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-three"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-three"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Our fuel consumption control apps can collect and
-                            analyze data from your fleet to help you optimize
-                            fuel efficiency. Integrations with telematics and
-                            vehicle tracking systems let organizations ensure
-                            compliance with corporate policies, knowing that the
-                            whole supply chain has been accounted for.
-                          </p>
+                        <h2 className="accordion-header" id="headingThree">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                          >
+                            {isAccordionActive == 3 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Fuel Consumption Control Apps
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fuel-Consumption-Control-Apps.png"
+                                      alt="Fuel Consumption Control Apps"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fuel-Consumption-Control-Apps.png"
+                                      alt="Fuel Consumption Control Apps"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Fuel Consumption Control Apps
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseThree"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingThree"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Our fuel consumption control apps can collect and
+                              analyze data from your fleet to help you optimize
+                              fuel efficiency. Integrations with telematics and
+                              vehicle tracking systems let organizations ensure
+                              compliance with corporate policies, knowing that
+                              the whole supply chain has been accounted for.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-four"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-four"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive == 4 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(4);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingFour">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
-                          aria-expanded="false"
-                          aria-controls="collapseFour"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              Fleet Management Integration
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Fleet-Management-Integration.png"
-                                alt="Fleet Management Integration"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseFour"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingFour"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-four"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-four"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Easily generate reports on mileage to prevent the
-                            occurrence of vehicle downtime due to lack of
-                            maintenance. CFMS also allows you to record daily
-                            expenses, track accurate vehicle utilization
-                            history, and promote ride-sharing incentives
-                            available in various cities across the country.
-                          </p>
+                        <h2 className="accordion-header" id="headingFour">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour"
+                            aria-expanded="false"
+                            aria-controls="collapseFour"
+                          >
+                            {isAccordionActive == 4 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Fleet Management Integration
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Management-Integration.png"
+                                      alt="Fleet Management Integration"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Management-Integration.png"
+                                      alt="Fleet Management Integration"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Fleet Management Integration
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseFour"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingFour"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Easily generate reports on mileage to prevent the
+                              occurrence of vehicle downtime due to lack of
+                              maintenance. CFMS also allows you to record daily
+                              expenses, track accurate vehicle utilization
+                              history, and promote ride-sharing incentives
+                              available in various cities across the country.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-five"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-five"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive == 5 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(5);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingFive">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseFive"
-                          aria-expanded="false"
-                          aria-controls="collapseFive"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              Driver Management & Safety
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Driver-Management-Safety.png"
-                                alt="Driver Management Safety"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseFive"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingFive"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-five"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-five"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            With its in-vehicle monitoring and reporting system,
-                            you can monitor driving behavior, boost safety and
-                            efficiency by reducing tailgating, assist drivers to
-                            reduce fatigue, and minimize idle-time.
-                          </p>
+                        <h2 className="accordion-header" id="headingFive">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive"
+                            aria-expanded="false"
+                            aria-controls="collapseFive"
+                          >
+                            {isAccordionActive == 5 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Driver Management & Safety
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Driver-Management-Safety.png"
+                                      alt="Driver Management Safety"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Driver-Management-Safety.png"
+                                      alt="Driver Management Safety"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Driver Management & Safety
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseFive"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingFive"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              With its in-vehicle monitoring and reporting
+                              system, you can monitor driving behavior, boost
+                              safety and efficiency by reducing tailgating,
+                              assist drivers to reduce fatigue, and minimize
+                              idle-time.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-six"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-six"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive == 6 && isAccordionOpen
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick(6);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingSix">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSix"
-                          aria-expanded="false"
-                          aria-controls="collapseSix"
-                        >
-                          <div className="flex justify-between w-full">
-                            <div className="text-[24px]">
-                              Fleet Maintenance & Predictions
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Fleet-Maintenance-Predictions.png"
-                                alt="Fleet Maintenance Predictions"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseSix"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingSix"
-                        data-bs-parent="#accordionEndtoEnd"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-six"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-six"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Aggregate, monitor, and analyze data to trigger
-                            timely maintenance reminders, optimize service
-                            visits and simplify scheduling routine repairs.
-                          </p>
+                        <h2 className="accordion-header" id="headingSix">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix"
+                            aria-expanded="false"
+                            aria-controls="collapseSix"
+                          >
+                            {isAccordionActive == 6 && isAccordionOpen ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Fleet Maintenance & Predictions
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Maintenance-Predictions.png"
+                                      alt="Fleet Maintenance Predictions"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Fleet-Maintenance-Predictions.png"
+                                      alt="Fleet Maintenance Predictions"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Fleet Maintenance & Predictions
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseSix"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingSix"
+                          data-bs-parent="#accordionEndtoEnd"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Aggregate, monitor, and analyze data to trigger
+                              timely maintenance reminders, optimize service
+                              visits and simplify scheduling routine repairs.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -610,197 +811,313 @@ const FleetManagementNGPS = () => {
                     role="tablist"
                   >
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-seven"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-seven"
-                      aria-selected="true"
+                      className={`${
+                        isAccordionActive2 == 1 && isAccordionOpen2
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick2(1);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingSeven">
-                        <button
-                          className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseSeven"
-                          aria-expanded="true"
-                          aria-controls="collapseSeven"
-                        >
-                          <div className="flex justify-between w-[99%]">
-                            <div className="text-[24px]">
-                              Traffic Management Software
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Traffic-Management-Software.png"
-                                alt="Traffic-Management-Software"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseSeven"
-                        className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingSeven"
-                        data-bs-parent="#accordionindustry"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-seven"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-seven"
+                        aria-selected="true"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Never be caught out by unexpected road conditions.
-                            Our traffic management software lets your team stay
-                            informed and updated by providing real-time
-                            visibility, insight, and control.
-                          </p>
+                        <h2 className="accordion-header" id="headingSeven">
+                          <button
+                            className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven"
+                            aria-expanded="true"
+                            aria-controls="collapseSeven"
+                          >
+                            {isAccordionActive2 == 1 && isAccordionOpen2 ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Traffic Management Software
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Traffic-Management-Software.png"
+                                      alt="Traffic-Management-Software"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Traffic-Management-Software.png"
+                                      alt="Traffic-Management-Software"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Traffic Management Software
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseSeven"
+                          className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingSeven"
+                          data-bs-parent="#accordionindustry"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Never be caught out by unexpected road conditions.
+                              Our traffic management software lets your team
+                              stay informed and updated by providing real-time
+                              visibility, insight, and control.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-eight"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-eight"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive2 == 2 && isAccordionOpen2
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick2(2);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingEight">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseEight"
-                          aria-expanded="false"
-                          aria-controls="collapseEight"
-                        >
-                          <div className="flex justify-between w-[99%]">
-                            <div className="text-[24px]">
-                              Delivery Management Software
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Delivery-Management-Software.png"
-                                alt="Delivery-Management-Software"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseEight"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingEight"
-                        data-bs-parent="#accordionindustry"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-eight"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-eight"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Our online POS system makes managing consignment
-                            paperwork, sending real-time notifications, and
-                            creating delivery records easy!
-                          </p>
+                        <h2 className="accordion-header" id="headingEight">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseEight"
+                            aria-expanded="false"
+                            aria-controls="collapseEight"
+                          >
+                            {isAccordionActive2 == 2 && isAccordionOpen2 ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Delivery Management Software
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Delivery-Management-Software.png"
+                                      alt="Delivery-Management-Software"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Delivery-Management-Software.png"
+                                      alt="Delivery-Management-Software"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Delivery Management Software
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseEight"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingEight"
+                          data-bs-parent="#accordionindustry"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Our online POS system makes managing consignment
+                              paperwork, sending real-time notifications, and
+                              creating delivery records easy!
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-nine"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-nine"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive2 == 3 && isAccordionOpen2
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick2(3);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingNine">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseNine"
-                          aria-expanded="false"
-                          aria-controls="collapseNine"
-                        >
-                          <div className="flex justify-between w-[99%]">
-                            <div className="text-[24px]">
-                              Transportation Software
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Transportation-Software.png"
-                                alt="Transportation-Software"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseNine"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingNine"
-                        data-bs-parent="#accordionindustry"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-nine"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-nine"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Let our software will deliver information about the
-                            fastest, cheapest, and most convenient ways for you
-                            to transport goods. We bring you the greatest value
-                            in pricing and cost savings every time you move
-                            goods.
-                          </p>
+                        <h2 className="accordion-header" id="headingNine">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseNine"
+                            aria-expanded="false"
+                            aria-controls="collapseNine"
+                          >
+                            {isAccordionActive2 == 3 && isAccordionOpen2 ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Transportation Software
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Transportation-Software.png"
+                                      alt="Transportation-Software"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Transportation-Software.png"
+                                      alt="Transportation-Software"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Transportation Software
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseNine"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingNine"
+                          data-bs-parent="#accordionindustry"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Let our software will deliver information about
+                              the fastest, cheapest, and most convenient ways
+                              for you to transport goods. We bring you the
+                              greatest value in pricing and cost savings every
+                              time you move goods.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      className="accordion-item"
-                      data-bs-toggle="tab"
-                      data-bs-target="#accordion-ten"
-                      type="button"
-                      role="tab"
-                      aria-controls="accordion-ten"
-                      aria-selected="false"
+                      className={`${
+                        isAccordionActive2 == 4 && isAccordionOpen2
+                          ? "item-accordion"
+                          : ""
+                      } `}
+                      onClick={() => {
+                        handleAccordianceClick2(4);
+                      }}
                     >
-                      <h2 className="accordion-header" id="headingTen">
-                        <button
-                          className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTen"
-                          aria-expanded="false"
-                          aria-controls="collapseTen"
-                        >
-                          <div className="flex justify-between w-[99%]">
-                            <div className="text-[24px]">
-                              Supply Chain Management Software
-                            </div>
-
-                            <div className="number_icon_img">
-                              <img
-                                src="/images/Supply-Chain-Management-Software.png"
-                                alt="Supply-Chain-Management-Software"
-                              />
-                            </div>
-                          </div>
-                        </button>
-                      </h2>
                       <div
-                        id="collapseTen"
-                        className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingTen"
-                        data-bs-parent="#accordionindustry"
+                        className="accordion-item"
+                        data-bs-toggle="tab"
+                        data-bs-target="#accordion-ten"
+                        type="button"
+                        role="tab"
+                        aria-controls="accordion-ten"
+                        aria-selected="false"
                       >
-                        <div className="accordion-body">
-                          <p className="mb-[1rem] text-[20px]">
-                            Our supply chain tracking services make it easy to
-                            track, manage and maintain the movement of all your
-                            inventory, making sure that you’re aware of its
-                            location at all times.
-                          </p>
+                        <h2 className="accordion-header" id="headingTen">
+                          <button
+                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTen"
+                            aria-expanded="false"
+                            aria-controls="collapseTen"
+                          >
+                            {isAccordionActive2 == 4 && isAccordionOpen2 ? (
+                              <>
+                                <div className="flex justify-between w-full">
+                                  <div className="text-[24px]">
+                                    Supply Chain Management Software
+                                  </div>
+
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Supply-Chain-Management-Software.png"
+                                      alt="Supply-Chain-Management-Software"
+                                    />
+                                  </div>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="flex w-full">
+                                  <div className="number_icon_img">
+                                    <img
+                                      src="/images/Supply-Chain-Management-Software.png"
+                                      alt="Supply-Chain-Management-Software"
+                                    />
+                                  </div>
+                                  <div className="text-[24px] ml-5">
+                                    Supply Chain Management Software
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseTen"
+                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                          aria-labelledby="headingTen"
+                          data-bs-parent="#accordionindustry"
+                        >
+                          <div className="accordion-body">
+                            <p className="mb-[1rem] text-[20px]">
+                              Our supply chain tracking services make it easy to
+                              track, manage and maintain the movement of all
+                              your inventory, making sure that you’re aware of
+                              its location at all times.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

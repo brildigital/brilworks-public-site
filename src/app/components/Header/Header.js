@@ -167,7 +167,7 @@ const Header = () => {
                   id="triggerNavigationSolution"
                   onClick={handleNavigationSolutionClick}
                 >
-                  <Link href="" className="headerArrow_flex">
+                  <Link href="javascript:void(0);" className="headerArrow_flex">
                     <p className="!mb-0">SOLUTIONS</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
@@ -181,7 +181,7 @@ const Header = () => {
                   id="triggerNavigationtechnology"
                   onClick={handleNavigationTechnologyClick}
                 >
-                  <Link href="" className="headerArrow_flex">
+                  <Link href="javascript:void(0);" className="headerArrow_flex">
                     <p className="!mb-0">TECHNOLOGIES</p>
                     <div className="arrow_size">
                       <img src="/images/down-arrow.png" alt="down arrow" />
@@ -198,7 +198,7 @@ const Header = () => {
                   id="triggerNavigationmenu"
                   onClick={handleTriggerNavigationMenuClick}
                 >
-                  <Link href="">
+                  <Link href="javascript:void(0);">
                     <div className="btn_1">
                       <div className="bar transition top"></div>
                       <div className="bar transition bottom"></div>
@@ -772,10 +772,10 @@ const Header = () => {
                 </div>
                 <div className="flex_grid-40_header_menu">
                   <div className="header_img1 pb-2 hidden-xs">
-                    <img src="/images/blog-1.jpg" alt="" />
+                    <img src="/images/blog-2.jpg" alt="" />
                   </div>
                   <div className="header_img1">
-                    <img src="/images/blog-2.jpg" alt="" />
+                    <img src="/images/blog-1.jpg" alt="" />
                   </div>
                 </div>
               </div>

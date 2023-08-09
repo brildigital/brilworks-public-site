@@ -22,7 +22,7 @@ const GameChanger = () => {
       </div>
       <div className="sec1_txt_position">
         <div className="home_txt1">
-          <p>We are</p>
+          <p className="md:!text-[4rem]">We are</p>
         </div>
         <div className="home_txt2">
           <p>

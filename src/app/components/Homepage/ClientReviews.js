@@ -1,13 +1,16 @@
 "use client";
 import "swiper/css";
 import "./homepage.scss";
-import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+// import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const pathname = usePathname();
   return (
     <div className="container mx-auto px-[15px]">
       <div className="xl:mt-[80px] mt-[40px] relative">
@@ -24,7 +27,16 @@ const ClientReviews = () => {
         </div>
         <div className="flex flex-wrap align-middle gap-6  justify-center">
           {/* <div className="!w-2/5"> */}
-          <div>
+          <div className="cursor-pointer">
+            {/* <span className="video-play-icon">
+              <span className="play-icon-img hover:!hidden">
+                <img src="/images/icon_play_new.svg" alt="Play Icon" />
+              </span>
+              <span className="play-icon-img !hidden hover:!block">
+                <img src="/images/icon_play.svg" alt="Play-Icon-new" />
+              </span>
+            </span> */}
+
             <video
               className="!rounded-[30px]"
               src={"/video/david_ceo_feedback.mp4"}
@@ -34,7 +46,13 @@ const ClientReviews = () => {
             />
           </div>
           {/* </div> */}
-          <div className="md:!w-2/4 w-full">
+          <div
+            className={`${
+              pathname === "/" || pathname === "/home"
+                ? "md:!w-2/4"
+                : "md:!w-[51%]"
+            } w-full`}
+          >
             <div className="home_sec3_box overflow-hidden">
               <div
                 className={`dots_flex w-100 md:px-[30px] ${
@@ -47,7 +65,8 @@ const ClientReviews = () => {
               </div>
               <div className="background">
                 <Swiper
-                  modules={[Navigation]}
+                  // modules={[Navigation]}
+                  // navigation={true}
                   loop={true}
                   slidesPerView={1}
                   speed={1500}

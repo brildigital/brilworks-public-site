@@ -8,6 +8,13 @@
         }
     }
 }
+.video-play-icon{
+    position: absolute;
+    width: 6%;
+    left: 22%;
+    top: 38%;
+}
+
 .homepage-work-domain, .homepage-extension-team{
     .accordion-item {
           border-bottom: 1px solid #80808038 !important ;
@@ -34,7 +41,37 @@
     line-height: 1.4 !important;
     font-size: 1.8rem !important;
 }
+.client-review-swipers{
+    .swiper-button-prev{
+        position: absolute;
+        right: 3rem;
+        bottom: 10%;
+        top: unset;
+        height: auto;
+        width: auto;
+    }
+    .swiper-button-next{
+        // position: absolute;
+        // right: 3rem;
+        // bottom: 10%;
+        // top: unset;
+        // height: auto;
+        // width: auto;
+        top: unset;
+        position: absolute;
+        right: 6rem;
+        left: unset;
+        bottom: 6%;
+        height: 5%;
+        width: 3%;
+        background: aquamarine;
+        border-radius: 30px;
+        padding: 15px;
+        cursor: pointer;
 
+    }
+
+}
 .homepage-extension-team{
     .accordion-body{
         padding: 0px;

@@ -93,7 +93,7 @@ const BrilworksSoftwareReview = () => {
                     <p className="!text-[1rem] flex items-baseline">
                       Powered by
                       <img
-                        className="w-[70px]"
+                        className="w-[70px] ml-1"
                         src="https://www.brilworks.com/wp-content/uploads/2023/05/clutch-img.svg"
                         alt="clutch"
                       />
@@ -107,8 +107,8 @@ const BrilworksSoftwareReview = () => {
         <Swiper
           className="!w-{90%]"
           modules={[Pagination]}
-          spaceBetween={21}
-          slidesPerView={4}
+          spaceBetween={isMobile ? 10 : 21}
+          slidesPerView={isMobile ? 1 : 4}
           slidesPerGroup={isMobile ? 1 : 4}
           loopFillGroupWithBlank={true}
           speed={1500}
