@@ -6,6 +6,22 @@ export const metadata = {
   title: "Career | Join the World of Brilliance | Brilworks Software",
   description:
     "Explore the current open positions at Brilworks. Join the team of brilliant minds by sending your application today! Connect at hello@brilworks.com for any query.",
+  openGraph: {
+    title: "Career | Join the World of Brilliance | Brilworks Software",
+    description:
+      "Explore the current open positions at Brilworks. Join the team of brilliant minds by sending your application today! Connect at hello@brilworks.com for any query.",
+    url: "/career/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/career/",
+  },
 };
 
 const page = () => {

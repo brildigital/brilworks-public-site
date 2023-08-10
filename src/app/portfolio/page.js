@@ -6,6 +6,22 @@ export const metadata = {
   title: "Portfolio - Web and Mobile App Development | Brilworks",
   description:
     "Our experienced team has delivered a wide range of projects. Check out our portfolio of web & mobile development projects from diverse sectors.",
+  openGraph: {
+    title: "Portfolio - Web and Mobile App Development | Brilworks",
+    description:
+      "Our experienced team has delivered a wide range of projects. Check out our portfolio of web & mobile development projects from diverse sectors.",
+    url: "/portfolio/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/portfolio/",
+  },
 };
 
 const page = () => {

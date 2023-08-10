@@ -1830,6 +1830,15 @@ textarea.form-control-txt {
   color: #01b5d0;
   font-size: 70px;
 }
+.get_in_touch_hover {
+  font-size: var(--font_16);
+  font-family: var(--medium);
+  color: var(--black_font);
+}
+.get_in_touch_hover:hover {
+  color: #48d0b8;
+  transition: all 0.4s ease-in-out;
+}
 .year p {
   width: 70%;
 }
@@ -1976,6 +1985,11 @@ textarea.form-control-txt {
   font-family: var(--medium) !important;
 }
 
+.space_flex {
+  display: flex;
+  align-items: self-end;
+  justify-content: space-between;
+}
 .sec1_txt_position .our_btn_flex .home_txt3 h1 {
   font-size: var(--font_32);
   font-family: var(--light);

@@ -42,36 +42,67 @@
     font-size: 1.8rem !important;
 }
 .client-review-swipers{
+
+   .swiper-button-next{
+    position: absolute;
+    right: 5rem;
+    bottom: 10%;
+    top: unset;
+    height: auto;
+    width: auto;
+    }
+
+    .swiper-button-next::before{
+        content: ''!important;
+        background: 0 0!important;
+        background-image: url(/images/blue-right-arrow.png)!important;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        width: 60px;
+        height: 60px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        border: 1px solid transparent;
+    }
+
+    .swiper-button-next:hover::before{
+        background-image: url(/images/right-arrow.png)!important;
+    }
+      
+    .swiper-button-next::after {
+        display: none;
+    }
+
     .swiper-button-prev{
         position: absolute;
-        right: 3rem;
+        right: -22rem;
         bottom: 10%;
         top: unset;
         height: auto;
         width: auto;
     }
-    .swiper-button-next{
-        // position: absolute;
-        // right: 3rem;
-        // bottom: 10%;
-        // top: unset;
-        // height: auto;
-        // width: auto;
-        top: unset;
-        position: absolute;
-        right: 6rem;
-        left: unset;
-        bottom: 6%;
-        height: 5%;
-        width: 3%;
-        background: aquamarine;
-        border-radius: 30px;
-        padding: 15px;
-        cursor: pointer;
 
+    .swiper-button-prev::before{
+        content: ''!important;
+        background: 0 0!important;
+        background-image: url(/images/blue-left-arrow.png)!important;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        width: 60px;
+        height: 60px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        border: 1px solid transparent;
     }
-
+    .swiper-button-prev:hover::before{
+        background-image: url(/images/left-arrow.png)!important;
+    }
+      
+    .swiper-button-prev::after {
+        display: none;
+    }
 }
+
 .homepage-extension-team{
     .accordion-body{
         padding: 0px;
@@ -86,6 +117,7 @@
         }
     }
 }
+
 .work-swiper{
     .swiper-slide-next{
        margin-top: 4rem!important;
@@ -319,6 +351,14 @@
         .portfolio-title-new{
             display: none!important;
         }
+    }
+    .client-review-msg{
+            font-family: var(--regular) !important;
+            line-height: 1.4 !important;
+            font-size: 1.2rem !important;
+    }
+    .software-review-head{
+        padding: 2rem 0 0rem;
     }
 }
 

@@ -6,7 +6,6 @@ import StoryblokStory from "@storyblok/react/story";
 // import { StoryblokComponent } from "@storyblok/react/rsc";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
-import Head from "next/head";
 
 // export async function generateMetadata(props, parent) {
 //   // read route params
@@ -27,21 +26,68 @@ import Head from "next/head";
 //   };
 // }
 
+export const metadata = {
+  openGraph: {
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+    creator: "@_Brilworks",
+  },
+};
+
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
-  console.log("data", data);
   if (!data?.story) {
     return null;
   }
   return (
     <>
       <head>
-        <title>{data?.story?.name}</title>
+        <title>{data?.story?.content?.metatags?.title}</title>
         <meta
           name="description"
-          content="DesignRush has announced top mobile app development companies for July 2023 and Brilworks Software has achieved 3rd position."
+          content={data?.story?.content?.metatags?.description}
         />
+        <link
+          rel="canonical"
+          href={`https://brilworks.com/blog/${data?.story?.slug}/`}
+        />
+        <meta
+          property="og:title"
+          content={data?.story?.content?.metatags?.title}
+        ></meta>
+        <meta
+          property="og:url"
+          content={`https://brilworks.com/blog/${data?.story?.slug}/`}
+        ></meta>
+        <meta
+          name="og:description"
+          content={data?.story?.content?.metatags?.description}
+        />
+        <meta
+          property="article:publisher"
+          content="https://www.facebook.com/brilwork/"
+        ></meta>
+        <meta name="author" content={data?.story?.content?.author}></meta>
+        <meta
+          name="twitter:image"
+          content={data?.story?.content?.image?.filename}
+        ></meta>
+        <meta name="twitter:label1" content="Written by"></meta>
+        <meta
+          name="twitter:data1"
+          content={data?.story?.content?.author}
+        ></meta>
+        <meta name="twitter:label2" content="Est. reading time"></meta>
+        <meta
+          name="twitter:data2"
+          content={`${data?.story?.content?.reading_time_in_minutes} minutes`}
+        ></meta>
       </head>
       <Header />
       <StoryblokStory story={data?.story} />

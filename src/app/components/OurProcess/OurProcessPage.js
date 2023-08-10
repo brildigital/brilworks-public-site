@@ -1248,9 +1248,9 @@ const OurProcessPage = () => {
                           className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
+                          data-bs-target="#collapseOne-ourteam"
                           aria-expanded="true"
-                          aria-controls="collapseOne"
+                          aria-controls="collapseOne-ourteam"
                         >
                           {isAccordionActive2 == 1 && isAccordionOpen2 ? (
                             <>
@@ -1285,9 +1285,9 @@ const OurProcessPage = () => {
                         </button>
                       </h2>
                       <div
-                        id="collapseOne"
+                        id="collapseOne-ourteam"
                         className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingOne"
+                        aria-labelledby="headingOne-ourteam"
                         data-bs-parent="#accordionourProcess"
                       >
                         <div className="accordion-body">
@@ -1361,9 +1361,9 @@ const OurProcessPage = () => {
                           className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
+                          data-bs-target="#collapseTwo-ourteam"
                           aria-expanded="false"
-                          aria-controls="collapseTwo"
+                          aria-controls="collapseTwo-ourteam"
                         >
                           {isAccordionActive2 == 2 && isAccordionOpen2 ? (
                             <>
@@ -1398,9 +1398,9 @@ const OurProcessPage = () => {
                         </button>
                       </h2>
                       <div
-                        id="collapseTwo"
+                        id="collapseTwo-ourteam"
                         className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingTwo"
+                        aria-labelledby="headingTwo-ourteam"
                         data-bs-parent="#accordionourProcess"
                       >
                         <div className="accordion-body">
@@ -1483,9 +1483,9 @@ const OurProcessPage = () => {
                           className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapseThree"
+                          data-bs-target="#collapseThree-ourteam"
                           aria-expanded="false"
-                          aria-controls="collapseThree"
+                          aria-controls="collapseThree-ourteam"
                         >
                           {isAccordionActive2 == 3 && isAccordionOpen2 ? (
                             <>
@@ -1522,9 +1522,9 @@ const OurProcessPage = () => {
                         </button>
                       </h2>
                       <div
-                        id="collapseThree"
+                        id="collapseThree-ourteam"
                         className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingThree"
+                        aria-labelledby="headingThree-ourteam"
                         data-bs-parent="#accordionourProcess"
                       >
                         <div className="accordion-body">
@@ -1592,9 +1592,9 @@ const OurProcessPage = () => {
                           className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapseFour"
+                          data-bs-target="#collapseFour-ourteam"
                           aria-expanded="false"
-                          aria-controls="collapseFour"
+                          aria-controls="collapseFour-ourteam"
                         >
                           {isAccordionActive2 == 4 && isAccordionOpen2 ? (
                             <>
@@ -1629,9 +1629,9 @@ const OurProcessPage = () => {
                         </button>
                       </h2>
                       <div
-                        id="collapseFour"
+                        id="collapseFour-ourteam"
                         className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingFour"
+                        aria-labelledby="headingFour-ourteam"
                         data-bs-parent="#accordionourProcess"
                       >
                         <div className="accordion-body">
@@ -1705,9 +1705,9 @@ const OurProcessPage = () => {
                           className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                           type="button"
                           data-bs-toggle="collapse"
-                          data-bs-target="#collapseFive"
+                          data-bs-target="#collapseFive-ourteam"
                           aria-expanded="false"
-                          aria-controls="collapseFive"
+                          aria-controls="collapseFive-ourteam"
                         >
                           {isAccordionActive2 == 5 && isAccordionOpen2 ? (
                             <>
@@ -1742,9 +1742,9 @@ const OurProcessPage = () => {
                         </button>
                       </h2>
                       <div
-                        id="collapseFive"
+                        id="collapseFive-ourteam"
                         className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                        aria-labelledby="headingFive"
+                        aria-labelledby="headingFive-ourteam"
                         data-bs-parent="#accordionourProcess"
                       >
                         <div className="accordion-body">

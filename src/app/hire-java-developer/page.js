@@ -6,6 +6,27 @@ export const metadata = {
   title: "Java Development Company | Hire Trusted Java Experts",
   description:
     "Brilworks's Java software development services include Consulting, Web, App, Spring Core & Spring Boot. Hire dedicated Java developers.",
+  openGraph: {
+    title: "Java Development Company | Hire Trusted Java Experts",
+    description:
+      "Brilworks's Java software development services include Consulting, Web, App, Spring Core & Spring Boot. Hire dedicated Java developers.",
+    url: "/hire-java-developer/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/1.png",
+      },
+    ],
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/hire-java-developer/",
+  },
 };
 
 const page = () => {

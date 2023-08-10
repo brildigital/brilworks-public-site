@@ -6,6 +6,27 @@ export const metadata = {
   title: "React JS Development Company | Hire ReactJS Developer",
   description:
     "We offer ReactJS development services for Enterprise, Custom Apps, Front-End, Migration & Integration, Support & Maintenance. Hire a React developer today.",
+  openGraph: {
+    title: "React JS Development Company | Hire ReactJS Developer",
+    description:
+      "We offer ReactJS development services for Enterprise, Custom Apps, Front-End, Migration & Integration, Support & Maintenance. Hire a React developer today.",
+    url: "/hire-reactjs-developer/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/1.png",
+      },
+    ],
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/hire-reactjs-developer/",
+  },
 };
 
 const page = () => {

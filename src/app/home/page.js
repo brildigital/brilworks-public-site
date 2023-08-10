@@ -15,6 +15,24 @@ export const metadata = {
   title: "Mobile App & Software Development Company | Brilworks",
   description:
     "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+  openGraph: {
+    title: "Mobile App & Software Development Company | Brilworks",
+    description:
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    url: "/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/banner.jpg",
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
   alternates: {
     canonical: "https://brilworks.com/",
   },

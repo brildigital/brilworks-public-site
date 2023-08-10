@@ -46,7 +46,13 @@ const Article = ({ blok }) => {
         <div className="2xl:w-[88%] w-[98%] mx-auto">
           <div className="lg:flex block gap-[4rem]">
             <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
-              <div className="p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative">
+              <div
+                className={`${
+                  blok.table_content
+                    ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
+                    : "!hidden"
+                }`}
+              >
                 <div className="">
                   <p className="text-[#00dfb8] text-[24px] text-[500]">
                     Table of Contents

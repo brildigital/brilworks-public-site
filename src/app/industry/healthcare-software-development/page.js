@@ -6,11 +6,38 @@ export const metadata = {
   title: "Custom Healthcare Software & App Development Company | Brilworks",
   description:
     "Healthcare software developers at Brilworks build medical software for patient monitoring, telemedicine & prescription app, EMR/EHR platform. Hire our engineer today!",
+  openGraph: {
+    title: "Custom Healthcare Software & App Development Company | Brilworks",
+    description:
+      "Healthcare software developers at Brilworks build medical software for patient monitoring, telemedicine & prescription app, EMR/EHR platform. Hire our engineer today!",
+    url: "/industry/healthcare-software-development/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/explore-arrow-01.png",
+      },
+    ],
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/industry/healthcare-software-development/",
+  },
 };
 
 const page = () => {
   return (
     <>
+      <head>
+        <meta
+          property="article:publisher"
+          content="https://www.facebook.com/brilwork/"
+        />
+      </head>
       <Header />
       <HealthCare />
       <Footer />

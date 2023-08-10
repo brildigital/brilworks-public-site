@@ -60,11 +60,24 @@ const BrilworksSoftwareReview = () => {
         </div> */}
         <div className="software-review-head">
           <div className="sec4_main_home">
-            <div className="py-[5rem]">
+            <div
+              className={`md:py-[5rem] py-[2rem]  ${isMobile ? "!pr-12" : ""} `}
+            >
               <div className="clutch-widget">
                 <p>
-                  <span className="md:!text-[45px] !font-bold">Reviews</span> /
-                  5.0{" "}
+                  <span className="md:!text-[45px] !font-bold text-[25px]">
+                    Reviews
+                  </span>
+                  <>
+                    {isMobile ? (
+                      <>
+                        /<br /> 5.0 <br />
+                      </>
+                    ) : (
+                      <>/ 5.0</>
+                    )}
+                  </>
+
                   <span className="star_clutch !text-[20px]">
                     <FontAwesomeIcon
                       icon={faStar}
@@ -91,7 +104,11 @@ const BrilworksSoftwareReview = () => {
 
                 <div className="clutch-power">
                   <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
-                    <p className="!text-[1rem] flex items-baseline">
+                    <p
+                      className={`!text-[1rem] flex items-baseline ${
+                        isMobile ? "flex-col" : ""
+                      } `}
+                    >
                       Powered by
                       <img
                         className="w-[70px] ml-1"
@@ -112,7 +129,7 @@ const BrilworksSoftwareReview = () => {
           slidesPerView={isMobile ? 1 : 4}
           slidesPerGroup={isMobile ? 1 : 4}
           loopFillGroupWithBlank={true}
-          speed={1500}
+          speed={isMobile ?1000 :1500}
           loop={true}
           pagination={{ clickable: true }}
         >
@@ -120,7 +137,7 @@ const BrilworksSoftwareReview = () => {
             ? reviewData?.map((dataItem, index) => (
                 <SwiperSlide key={index}>
                   <div className="wpb_wrapper">
-                    <div className="clutch-swiper home_sec3_box">
+                    <div className="clutch-swiper home_sec3_box mr-[1px]">
                       <div className="dots_flex">
                         <div className="dots !bg-[#00dfb8]"></div>
                         <div className="dots"></div>

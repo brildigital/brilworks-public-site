@@ -7,20 +7,32 @@ export const metadata = {
   title: "AWS Development Company | Hire AWS Certified Developers | Brilworks",
   description:
     "Brilworks' AWS development services contain Consulting, App Development, Cloud Migration, DevOps, and Managed Services. Hire AWS Lambda and Kinesis developers.",
+  openGraph: {
+    title:
+      "AWS Development Company | Hire AWS Certified Developers | Brilworks",
+    description:
+      "Brilworks' AWS development services contain Consulting, App Development, Cloud Migration, DevOps, and Managed Services. Hire AWS Lambda and Kinesis developers.",
+    url: "/hire-aws-developer/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/1.png",
+      },
+    ],
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/hire-aws-developer/",
+  },
 };
 const page = () => {
   return (
     <>
-      <Head>
-        <title>
-          iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple
-        </title>
-        <meta
-          name="description"
-          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-          key="desc"
-        />
-      </Head>
       <Header />
       <AWSTechnology />
 
