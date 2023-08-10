@@ -65,6 +65,7 @@ const SolutionContactForm = () => {
                           className="form-control-txt"
                           type="text"
                           name="name"
+                          required
                         />
                       </span>
                     </p>
@@ -78,8 +79,9 @@ const SolutionContactForm = () => {
                         <input
                           size="40"
                           className="form-control-txt"
-                          type="text"
+                          type="number"
                           name="phone"
+                          required
                         />
                       </span>
                     </p>
@@ -94,9 +96,13 @@ const SolutionContactForm = () => {
                           className="form-control-txt"
                           type="email"
                           name="email"
+                          required
                         />
                       </span>
                     </p>
+                  </div>
+                  <div className="success-msg" id="sucess_msg">
+                    {respMessage}
                   </div>
                   <div className="btn_paddinng contact_btn btn_flex">
                     {isSubmitting ? (
@@ -114,13 +120,11 @@ const SolutionContactForm = () => {
                             id="submit"
                             name="btnSubmit"
                             type="submit"
+                            disabled={isSubmitting}
                           />
                         </p>
                       </>
                     )}
-                  </div>
-                  <div className="success-msg" id="sucess_msg">
-                    {respMessage}
                   </div>
                 </form>
               </div>

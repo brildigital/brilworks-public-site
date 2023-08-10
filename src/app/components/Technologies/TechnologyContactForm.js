@@ -80,6 +80,7 @@ const TechnologyContactForm = () => {
                           className="form-control-txt"
                           type="text"
                           name="name"
+                          required
                         />
                       </span>
                     </p>
@@ -95,6 +96,7 @@ const TechnologyContactForm = () => {
                           className="form-control-txt"
                           type="number"
                           name="phone"
+                          required
                         />
                       </span>
                     </p>
@@ -109,9 +111,13 @@ const TechnologyContactForm = () => {
                           className="form-control-txt"
                           type="email"
                           name="email"
+                          required
                         />
                       </span>
                     </p>
+                  </div>
+                  <div className="success-msg" id="sucess_msg">
+                    {respMessage}
                   </div>
                   <div className="contact_btn btn_flex ">
                     {isSubmitting ? (
@@ -129,13 +135,11 @@ const TechnologyContactForm = () => {
                             id="submit"
                             name="btnSubmit"
                             type="submit"
+                            disabled={isSubmitting}
                           />
                         </p>
                       </>
                     )}
-                  </div>
-                  <div className="success-msg" id="sucess_msg">
-                    {respMessage}
                   </div>
                 </form>
               </div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Loader from "../Homepage/Loader";
 
@@ -58,6 +58,7 @@ const BlogContactForm = () => {
                     id="name"
                     type="text"
                     name="name"
+                    required
                   />
                 </span>
               </p>
@@ -72,6 +73,7 @@ const BlogContactForm = () => {
                     id="email"
                     type="email"
                     name="email"
+                    required
                   />
                 </span>
               </p>
@@ -87,9 +89,13 @@ const BlogContactForm = () => {
                     className="form-control-txt"
                     id="message"
                     name="message"
+                    required
                   ></textarea>
                 </span>
               </p>
+            </div>
+            <div className="success-msg" id="sucess_msg">
+              {respMessage}
             </div>
             <div className="btn_paddinng contact_btn btn_flex">
               {isSubmitting ? (
@@ -102,13 +108,15 @@ const BlogContactForm = () => {
                     </p>
                   </div>
                   <p>
-                    <input id="submit" type="submit" name="btnSubmit" />
+                    <input
+                      id="submit"
+                      type="submit"
+                      name="btnSubmit"
+                      disabled={isSubmitting}
+                    />
                   </p>
                 </>
               )}
-            </div>
-            <div className="success-msg" id="sucess_msg">
-              {respMessage}
             </div>
           </form>
         </div>

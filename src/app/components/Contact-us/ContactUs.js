@@ -79,6 +79,7 @@ const ContactUs = () => {
                         className="form-control-txt"
                         type="text"
                         name="name"
+                        required
                       />
                     </span>
                   </p>
@@ -95,6 +96,7 @@ const ContactUs = () => {
                         className="form-control-txt"
                         type="email"
                         name="email"
+                        required
                       />
                     </span>
                   </p>
@@ -109,8 +111,9 @@ const ContactUs = () => {
                       <input
                         size="40"
                         className="form-control-txt"
-                        type="text"
+                        type="number"
                         name="phone"
+                        required
                       />
                     </span>
                   </p>
@@ -132,6 +135,9 @@ const ContactUs = () => {
                     </span>
                   </p>
                 </div>
+                <div className="success-msg" id="sucess_msg">
+                  {respMessage}
+                </div>
                 <div className="btn_paddinng contact_btn btn_flex">
                   {isSubmitting ? (
                     <Loader />
@@ -148,13 +154,11 @@ const ContactUs = () => {
                           id="submit"
                           type="submit"
                           name="btnSubmit"
+                          disabled={isSubmitting}
                         />
                       </p>
                     </>
                   )}
-                </div>
-                <div className="success-msg" id="sucess_msg">
-                  {respMessage}
                 </div>
               </form>
             </div>
@@ -410,6 +414,7 @@ const ContactUs = () => {
                               className="form-control-txt"
                               type="text"
                               name="name"
+                              required
                             />
                           </span>
                         </p>
@@ -428,6 +433,7 @@ const ContactUs = () => {
                               className="form-control-txt"
                               type="email"
                               name="email"
+                              required
                             />
                           </span>
                         </p>
@@ -444,8 +450,9 @@ const ContactUs = () => {
                             <input
                               size="40"
                               className="form-control-txt"
-                              type="text"
+                              type="number"
                               name="phone"
+                              required
                             />
                           </span>
                         </p>
@@ -493,6 +500,7 @@ const ContactUs = () => {
                                 name="btnSubmit"
                                 id="submit"
                                 type="submit"
+                                disabled={isSubmitting}
                               />
                             </p>
                           </>
