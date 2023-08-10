@@ -42,33 +42,53 @@ export const metadata = {
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
+
   if (!data?.story) {
     return null;
   }
   return (
     <>
       <head>
-        <title>{data?.story?.content?.metatags?.title}</title>
+        <title>
+          {data?.story?.content?.metatags?.title || data?.story?.content?.title}
+        </title>
+
         <meta
           name="description"
           content={data?.story?.content?.metatags?.description}
         />
+
         <link
           rel="canonical"
           href={`https://brilworks.com/blog/${data?.story?.slug}/`}
         />
+
         <meta
           property="og:title"
-          content={data?.story?.content?.metatags?.title}
+          content={data?.story?.content?.metatags?.og_title}
         ></meta>
+
         <meta
           property="og:url"
           content={`https://brilworks.com/blog/${data?.story?.slug}/`}
         ></meta>
+
         <meta
           name="og:description"
-          content={data?.story?.content?.metatags?.description}
+          content={
+            data?.story?.content?.metatags?.og_description ||
+            data?.story?.content?.metatags?.description
+          }
         />
+
+        <meta
+          property="og:image"
+          content={
+            data?.story?.content?.metatags?.og_image ||
+            data?.story?.content?.image?.filename
+          }
+        />
+
         <meta
           property="article:publisher"
           content="https://www.facebook.com/brilwork/"
@@ -76,7 +96,10 @@ export default async function Page(props) {
         <meta name="author" content={data?.story?.content?.author}></meta>
         <meta
           name="twitter:image"
-          content={data?.story?.content?.image?.filename}
+          content={
+            data?.story?.content?.metatags?.twitter_image ||
+            data?.story?.content?.image?.filename
+          }
         ></meta>
         <meta name="twitter:label1" content="Written by"></meta>
         <meta
