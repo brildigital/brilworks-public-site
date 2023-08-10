@@ -190,7 +190,7 @@ const PortfolioInnerEccocar = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[32px] md:mt-[64px] mt-[32px] the-result">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -227,7 +227,7 @@ const PortfolioInnerEccocar = () => {
             </div>
           </div>
 
-          <div className="sec6_title text-center p-0 mx-auto md:mb-[32px] md:mt-[4rem]">
+          <div className="sec6_title text-center p-0 mx-auto md:mb-[32px] !mt-[32px] md:mt-[4rem]">
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 

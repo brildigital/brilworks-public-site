@@ -31,8 +31,8 @@ const GameChanger = () => {
             Changers
           </p>
         </div>
-        <div className="our_btn_flex space_flex">
-          <div className="home_txt3 pt-12 md:w-[60%]">
+        <div className="our_btn_flex flex lg:items-center items-end justify-between xl:!pt-12 !pt-0">
+          <div className="home_txt3 home_txt3_top_padding md:max-w-[760px]">
             <h1>
               <span className="ez-toc-section"></span>We build stunning digital
               solutions for global brands and startups which deﬁne their

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-image: url(/images/bg.png);
   background-repeat: repeat;
   background-size: contain;
@@ -665,12 +665,17 @@ a:hover {
 .accordion .accordion-body > p {
   margin-bottom: 20px !important;
 }
+.the-result .service_description p{
+  font-size: var(--font_21) !important;
+    font-family: var(--medium) !important;
+}
 .contact_btn.btn-margin-top-0 {
   margin-top: 0 !important;
 }
 .tech-tags .idea_title.work_sec2_txt4 p {
   font-size: 16px !important;
 }
+.accordion-item:last-of-type{border-radius: 0px;}
 .accordion .accordion-body {
   font-size: var(--font_24);
   font-family: var(--regular);
@@ -1984,12 +1989,6 @@ textarea.form-control-txt {
 .home_txt3 p {
   font-family: var(--medium) !important;
 }
-
-.space_flex {
-  display: flex;
-  align-items: self-end;
-  justify-content: space-between;
-}
 .sec1_txt_position .our_btn_flex .home_txt3 h1 {
   font-size: var(--font_32);
   font-family: var(--light);
@@ -2439,7 +2438,7 @@ textarea.form-control-txt {
     font-size: 43px;
   }
   .portfolio_know_more {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .service_title p {
     font-size: 1.4rem;
@@ -2467,6 +2466,9 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 1366px) {
+  .home_txt3_top_padding {
+    padding-top: 1rem;
+}
   .no_flex_tech::after {
     width: 11%;
     right: 0%;
@@ -2513,6 +2515,7 @@ textarea.form-control-txt {
   .home_sec2_txt3 p,
   .blog .home_sec2_txt3 h1 {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
   .sec1_service p img {
     height: 50vh;
@@ -2619,8 +2622,8 @@ textarea.form-control-txt {
     font-size: 3rem;
   }
   .home_txt3 h1 {
-    line-height: 2rem;
-    font-size: 1.5rem;
+    line-height: 2rem !important;
+    font-size: 1.2rem !important;
   }
   .about_vision .sec10_txt1,
   .sec10_basis_50 .sec10_txt1 {
@@ -2749,6 +2752,7 @@ textarea.form-control-txt {
   .portfolio_sec1_txt1 p {
     padding-bottom: 1rem;
     font-size: 33px;
+    line-height: normal;
   }
   .portfolio_description_width {
     width: 100%;
@@ -2803,6 +2807,10 @@ textarea.form-control-txt {
     max-width: 124px;
   }
 }
+@media only screen and (max-width: 980px) and (min-width: 768px)  {
+  .home_txt2 p{font-size: 5rem !important;}
+}
+
 @media only screen and (min-width: 768px) {
   .footer_grid > div:nth-child(2) {
     padding-left: 6rem;
@@ -2815,6 +2823,13 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 767px) {
+  .style_sec3_swiper_home{padding: 2rem 0 !important;}
+  .homepage-work-domain .accordion-header .accordion-button {font-size: 1.4rem !important;}
+  .accordion .accordion-body{font-size: 18px;}
+  .blog-box h4{font-size: 1.2rem;line-height: normal;}
+  .home_txt3.home_txt3_top_padding br{
+    display: none;
+  }
   .header_logo {
     width: 45%;
   }
@@ -2845,8 +2860,12 @@ textarea.form-control-txt {
     font-size: 2.6rem;
   }
   .our_work {
-    padding-top: 7rem;
+    padding-top: 7rem !important;
     padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: right
   }
   .our_btn_flex {
     flex-direction: column;
@@ -2951,7 +2970,7 @@ textarea.form-control-txt {
 
   .contact_details {
     padding: 2rem 1rem;
-    width: 90%;
+    width: 100%;
   }
   .contact_icon {
     width: 12%;
@@ -2985,7 +3004,7 @@ textarea.form-control-txt {
   }
   .rotate_img {
     top: -4%;
-    right: 0%;
+    right: 5%;
     width: 27%;
     z-index: 2;
   }

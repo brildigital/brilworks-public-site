@@ -247,7 +247,7 @@ const PortfolioInnerVugo = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px] the-result">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -394,7 +394,7 @@ const PortfolioInnerVugo = () => {
             </div>
           </div>
 
-          <div className="md:pt-[4rem] md:pb-[6rem] pt-[2rem] pb-[2rem]">
+          <div className="md:pt-[4rem] pt-[2rem]">
             <div className="portfolio_know_more md:mx-auto ml-0">
               <div className="get_icon">
                 <Link href="/about-us/">

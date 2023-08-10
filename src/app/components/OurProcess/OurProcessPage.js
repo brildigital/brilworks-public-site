@@ -197,7 +197,7 @@ const OurProcessPage = () => {
           </p>
         </div>
 
-        <div className="mx-auto px-[15px] xl:pt-[128px] md:pt-[60px] pt-[32px]">
+        <div className="mx-auto xl:pt-[128px] md:pt-[60px] pt-[32px]">
           <div className="accordion-tab-section our-process-endToEnd">
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full">
@@ -1147,7 +1147,7 @@ const OurProcessPage = () => {
           </p>
         </div>
 
-        <div className="mx-auto px-[15px] xl:pt-[128px] md:pt-[60px] pt-[32px]">
+        <div className="mx-auto px xl:pt-[128px] md:pt-[60px] pt-[32px]">
           <div className="accordion-tab-section our-process-endToEnd2">
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full md:mt-[0px] mb-[30px]">

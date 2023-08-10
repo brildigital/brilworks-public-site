@@ -208,7 +208,7 @@ const PortfolioInnerTrackimo = () => {
             <p>THE RESULT</p>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-[32px] md:mt-[64px] mt-[32px] the-result">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img

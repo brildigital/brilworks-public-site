@@ -116,7 +116,7 @@ const NodejsTechnology = () => {
                       href="#pricing"
                       onClick={(e) => scrollToSection(e, "pricing")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Plan & Pricing
                       </p>
                     </Link>
@@ -137,7 +137,7 @@ const NodejsTechnology = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Hire Node.js Developers
                       </p>
                     </Link>
@@ -326,7 +326,7 @@ const NodejsTechnology = () => {
                 href="#section10_service"
                 onClick={(e) => scrollToSection(e, "section10_service")}
               >
-                <p className="xl:!text-[21px] lg:!text-[18px]">
+                <p className="xl:!text-[20px] lg:!text-[18px]">
                   Get A Quote For Your Project
                 </p>
               </Link>

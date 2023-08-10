@@ -17,7 +17,7 @@ const SeeingBelieving = () => {
       <div className="work-swiper">
         <Swiper
           modules={[Pagination]}
-          spaceBetween={50}
+          spaceBetween={30}
           speed={1500}
           slidesPerView={isMobile ? 1 : 3}
           slidesPerGroup={isMobile ? 1 : 2}

@@ -18,6 +18,8 @@ const Storyblok = new StoryblokClient({
 
 const BrilworksSoftwareReview = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1025 });
 
   const [reviewData, setReviewData] = useState(null);
 
@@ -39,7 +41,7 @@ const BrilworksSoftwareReview = () => {
   return (
     <>
       <div
-        className="software-review-container !px-8"
+        className="software-review-container "
         // className="md:pt-[128px] pt-[32px]"
       >
         {/* <div className="clutch-widget">
@@ -58,7 +60,7 @@ const BrilworksSoftwareReview = () => {
             className="mx-auto w-[100%]"
           ></iframe>
         </div> */}
-        <div className="software-review-head">
+        <div className="software-review-head lg:!pt-[8rem] !pt-[0rem]">
           <div className="sec4_main_home">
             <div
               className={`md:py-[5rem] py-[2rem]  ${isMobile ? "!pr-12" : ""} `}
@@ -102,7 +104,7 @@ const BrilworksSoftwareReview = () => {
                   </span>
                 </p>
 
-                <div className="clutch-power">
+                <div className="clutch-power lg:!relative !static mt-[20px]">
                   <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
                     <p
                       className={`!text-[1rem] flex items-baseline ${
@@ -126,10 +128,12 @@ const BrilworksSoftwareReview = () => {
           className="!w-{90%]"
           modules={[Pagination]}
           spaceBetween={isMobile ? 10 : 21}
-          slidesPerView={isMobile ? 1 : 4}
+          slidesPerView={
+            isMobile ? 1 : 4 && isTablet ? 3 : 3 && isDesktop ? 4 : 3
+          }
           slidesPerGroup={isMobile ? 1 : 4}
           loopFillGroupWithBlank={true}
-          speed={isMobile ?1000 :1500}
+          speed={isMobile ? 1000 : 1500}
           loop={true}
           pagination={{ clickable: true }}
         >

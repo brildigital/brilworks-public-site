@@ -104,7 +104,7 @@ const FleetManagementNGPS = () => {
                       </Link>
                     </p>
                   </div>
-                  <p className="xl:!text-[21px] lg:!text-[18px]">
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
                     <Link
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
@@ -723,7 +723,7 @@ const FleetManagementNGPS = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Build My Fleet Management Software
                       </p>
                     </Link>
@@ -1142,7 +1142,7 @@ const FleetManagementNGPS = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Speak with Our Experts
                       </p>
                     </Link>
@@ -1497,7 +1497,7 @@ const FleetManagementNGPS = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="xl:!text-[21px] lg:!text-[18px]">
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
                     Work with us
                   </p>
                 </Link>
