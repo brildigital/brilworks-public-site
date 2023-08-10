@@ -27,7 +27,7 @@ const MediaNEntertainmentFAQs = () => {
           >
             <h2 className="accordion-header" id="headingOne">
               <button
-                className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
