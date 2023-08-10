@@ -7,12 +7,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import BlogContactForm from "./Blog/BlogContactForm";
 import Head from "next/head";
+import { useMediaQuery } from "react-responsive";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.accessToken,
 });
 
 const Article = ({ blok }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [blogData, setBlogData] = useState(null);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const Article = ({ blok }) => {
       <Head>
         <title>{blok.title}</title>
       </Head>
-      <section className="mt-[6rem]" id="scroll-win">
+      <section className="mt-[6rem] mx-[15px] blog-inner" id="scroll-win">
         <div className="w-[88%] mx-auto">
           <img
             className="rounded-[30px]"
@@ -45,173 +47,27 @@ const Article = ({ blok }) => {
 
         <div className="2xl:w-[88%] w-[98%] mx-auto">
           <div className="lg:flex block gap-[4rem]">
-            <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
-              <div
-                className={`${
-                  blok.table_content
-                    ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
-                    : "!hidden"
-                }`}
-              >
-                <div className="">
-                  <p className="text-[#00dfb8] text-[24px] text-[500]">
-                    Table of Contents
-                  </p>
+            {isMobile ? null : (
+              <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
+                <div
+                  className={`${
+                    blok.table_content
+                      ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
+                      : "!hidden"
+                  }`}
+                >
+                  <div className="">
+                    <p className="text-[#00dfb8] text-[24px] text-[500]">
+                      Table of Contents
+                    </p>
+                  </div>
+                  <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
+                    {parse(blok?.table_content)}
+                  </nav>
                 </div>
-                <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
-                  {parse(blok?.table_content)}
-                  {/* <ul className="ez-toc-list ez-toc-list-level-1">
-                  <li className="!p-0 text-[95%] !border-0 leading-[1.6]">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#Cross-Platform_App_Development_An_Overview"
-                      onClick={(e) =>
-                        scrollToSection(
-                          e,
-                          "Cross-Platform_App_Development_An_Overview"
-                        )
-                      }
-                      title="Cross-Platform App Development: An Overview"
-                    >
-                      Cross-Platform App Development: An Overview
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#What_is_Cross_Platform_App_Development"
-                      onClick={(e) =>
-                        scrollToSection(
-                          e,
-                          "Cross-What_is_Cross_Platform_App_Development"
-                        )
-                      }
-                      title="What is Cross Platform App Development?"
-                    >
-                      What is Cross Platform App Development?
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#Programming_Languages_Used_in_Cross-Platform_Development"
-                      onClick={(e) =>
-                        scrollToSection(
-                          e,
-                          "Programming_Languages_Used_in_Cross-Platform_Development"
-                        )
-                      }
-                      title="Programming Languages Used in Cross-Platform Development"
-                    >
-                      Programming Languages Used in Cross-Platform Development
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#The_Role_of_Framework_in_Cross-Platform_App_Development"
-                      onClick={(e) =>
-                        scrollToSection(
-                          e,
-                          "Programming_Languages_Used_in_Cross-Platform_Development"
-                        )
-                      }
-                      title="The Role of Framework in Cross-Platform App Development"
-                    >
-                      The Role of Framework in Cross-Platform App Development
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-noneh"
-                      href="#Best_Frameworks_For_Cross_Platform_App_Development_in_2023"
-                      onClick={(e) =>
-                        scrollToSection(
-                          e,
-                          "Best_Frameworks_For_Cross_Platform_App_Development_in_2023"
-                        )
-                      }
-                      title="Best Frameworks For Cross Platform App Development in 2023"
-                    >
-                      Best Frameworks For Cross Platform App Development in 2023
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#1_React_Native"
-                      onClick={(e) => scrollToSection(e, "1_React_Native")}
-                      title="1. React Native"
-                    >
-                      1. React Native
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#2_Flutter"
-                      onClick={(e) => scrollToSection(e, "2_Flutter")}
-                      title="2. Flutter"
-                    >
-                      2. Flutter
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#3_Kotlin_Multiplatform_Mobile"
-                      onClick={(e) =>
-                        scrollToSection(e, "3_Kotlin_Multiplatform_Mobile")
-                      }
-                      title="3. Kotlin Multiplatform Mobile"
-                    >
-                      3. Kotlin Multiplatform Mobile
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#4_Net_MAUIXamarin"
-                      onClick={(e) => scrollToSection(e, "4_Net_MAUIXamarin")}
-                      title="4. .Net MAUI(Xamarin)"
-                    >
-                      4. .Net MAUI(Xamarin)
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#5_Cordova"
-                      onClick={(e) => scrollToSection(e, "5_Cordova")}
-                      title="5. Cordova"
-                    >
-                      5. Cordova
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#6_Ionic"
-                      onClick={(e) => scrollToSection(e, "6_Ionic")}
-                      title="6. Ionic"
-                    >
-                      6. Ionic
-                    </Link>
-                  </li>
-                  <li className="!p-0 text-[95%] !border-0">
-                    <Link
-                      className="!text-[#444444] shadow-none underline-none"
-                      href="#Conclusion"
-                      onClick={(e) => scrollToSection(e, "Conclusion")}
-                      title="Conclusion"
-                    >
-                      Conclusion
-                    </Link>
-                  </li>
-                </ul> */}
-                </nav>
               </div>
-            </div>
+            )}
+
             <div className="basis-[50%]">
               <div className="service_sec3">
                 <div className="home_sec2_txt4 blog-cat mt-[10px]">
