@@ -111,6 +111,7 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="name"
+                            required
                           />
                         </span>
                       </p>
@@ -134,6 +135,7 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="company"
+                            required
                           />
                         </span>
                       </p>
@@ -157,6 +159,7 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="email"
                             name="email"
+                            required
                           />
                         </span>
                       </p>
@@ -200,6 +203,7 @@ const HomepageContactForm = () => {
                               id="submit"
                               name="btnSubmit"
                               type="submit"
+                              disabled={isSubmitting}
                             />
                           )}
                         </p>

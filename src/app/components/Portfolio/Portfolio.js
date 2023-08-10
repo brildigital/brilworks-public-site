@@ -1,14 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import ToolsAndGetInTouch from "./ToolsAndGetInTouch";
-import Head from "next/head";
 
 const Portfolio = () => {
   return (
     <div>
-      <Head>
-        <title>Portfolio page</title>
-      </Head>
       <section className="portfolio">
         <div className="mx-auto service_width">
           <div className="banner_padding">
