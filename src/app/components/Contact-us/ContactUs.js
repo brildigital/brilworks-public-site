@@ -379,12 +379,14 @@ const ContactUs = () => {
 
         <ClientReviews />
 
-        <div className="mx-auto px-[15px] sec3_width_home pt-24">
+        <div className="mx-auto sec3_width_home pt-24">
           <div className="bg_grey">
             <div className="like_flex">
               <div className="like_basis">
                 <div className="like_text bold home_sec2_txt3">
-                  <p>LIKE WHAT YOU SEE? LET’S GET STARTED THEN!</p>
+                  <p className="!w-full">
+                    LIKE WHAT YOU SEE? LET’S GET STARTED THEN!
+                  </p>
                 </div>
               </div>
               <div className="like_basis_form">

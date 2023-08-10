@@ -242,7 +242,7 @@ const PortfolioInnerRastrack = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[32px] md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[32px] md:mt-[64px] mt-[32px] the-result">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -398,7 +398,7 @@ const PortfolioInnerRastrack = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="container mx-auto px-[15px]">
+          <div className="mx-auto">
             <BestAdvocateText />
             <ClientReviews />
           </div>

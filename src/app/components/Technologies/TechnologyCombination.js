@@ -74,7 +74,7 @@ const TechnologyCombination = () => {
                       <p>React Node Developer</p>
                     </div>
                     <div className="hire_data_sec">
-                      <p className="h-[120px]">
+                      <p className="md:h-[120px] min-h-[120px]">
                         React Node is a powerful combination of the two popular
                         JavaScript technologies, Reactjs and Node.js. Hire React
                         Node developer from us to add amazing functionality and
@@ -102,7 +102,7 @@ const TechnologyCombination = () => {
                           <p>Java Angular Developer</p>
                         </div>
                         <div className="hire_data_sec">
-                          <p className="md:h-[120px] h-[150px]">
+                          <p className="md:h-[120px] min-h-[150px]">
                             With the combination of Angular and Java
                             technologies, you can use end-to-end full-stack
                             development to get a fast and powerful web
@@ -133,7 +133,7 @@ const TechnologyCombination = () => {
                               <p>Node React Developer</p>
                             </div>
                             <div className="hire_data_sec">
-                              <p className="md:h-[120px] h-[140px]">
+                              <p className="md:h-[120px] min-h-[140px]">
                                 This master combination of our full stack Node
                                 js and React js will help you build complex apps
                                 with a clean codebase and great performance.
@@ -179,7 +179,7 @@ const TechnologyCombination = () => {
                       <p>React Java Developer</p>
                     </div>
                     <div className="hire_data_sec">
-                      <p className="md:h-[120px] h-[170px]">
+                      <p className="md:h-[120px] min-h-[170px]">
                         Modernize your projects with a React-driven website and
                         Java backend. We’ll create an app that’s visually
                         beautiful, full of features, and works on every device.
@@ -209,7 +209,7 @@ const TechnologyCombination = () => {
                           <p>Java React Developer</p>
                         </div>
                         <div className="hire_data_sec">
-                          <p className="md:h-[120px] h-[140px]">
+                          <p className="md:h-[120px] min-h-[140px]">
                             We bring you React’s great front-end for your users
                             and provide Java’s robust backend to rapidly build
                             your solution. Our full stack experts are
@@ -238,7 +238,7 @@ const TechnologyCombination = () => {
                               <p>Node Angular Developer</p>
                             </div>
                             <div className="hire_data_sec">
-                              <p className="md:h-[120px] h-[150px]">
+                              <p className="md:h-[120px] min-h-[150px]">
                                 This powerful duo of full stack Node js +
                                 Angular can design an engaging and interactive
                                 user interface that interacts with the backend

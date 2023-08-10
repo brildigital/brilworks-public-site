@@ -36,7 +36,7 @@ const HealthcareFAQs = () => {
             </h2>
             <div
               id="collapseOne"
-              className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+              className="accordion-collapse collapse show  xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExampleother"
             >

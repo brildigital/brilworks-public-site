@@ -236,7 +236,7 @@ const PortfolioInnerOrokii = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 grid-cols-2 md:mt-[64px] mt-[32px]">
+          <div className="grid md:grid-cols-2 grid-cols-2 md:mt-[64px] mt-[32px] the-result">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -372,7 +372,7 @@ const PortfolioInnerOrokii = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="container mx-auto px-[15px]">
+          <div className="">
             <BestAdvocateText />
             <ClientReviews />
           </div>

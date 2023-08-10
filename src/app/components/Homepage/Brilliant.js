@@ -7,7 +7,7 @@ const Brilliant = () => {
       <div className="md:text-center">
         <ActionNResultText />
         <div className="home_sec2_txt3 home_sec2_txt3_style sm:py-[32px] py-[16px] md:w-[80%] md:mx-auto">
-          <p className="homepage-text xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light !w-[94%]">
+          <p className="homepage-text xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light lg:!w-[94%] !w-full">
             Welcome to Brilworks – a tech-first company with a passion to create
             great products for businesses around the world. We’re agile and
             transparent in our processes, take care of our customers like

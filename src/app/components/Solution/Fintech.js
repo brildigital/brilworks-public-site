@@ -114,7 +114,7 @@ const Fintech = () => {
                         </Link>
                       </p>
                     </div>
-                    <p className="xl:!text-[21px] lg:!text-[18px]">
+                    <p className="xl:!text-[20px] lg:!text-[18px]">
                       <Link
                         href="#section10_service"
                         onClick={(e) => scrollToSection(e, "section10_service")}
@@ -136,7 +136,7 @@ const Fintech = () => {
                         </Link>
                       </p>
                     </div>
-                    <p className="xl:!text-[21px] lg:!text-[18px]">
+                    <p className="xl:!text-[20px] lg:!text-[18px]">
                       <Link
                         href="#section10_service"
                         onClick={(e) => scrollToSection(e, "section10_service")}
@@ -749,7 +749,7 @@ const Fintech = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Build My Fintech App
                       </p>
                     </Link>
@@ -1338,7 +1338,7 @@ const Fintech = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Speak with Our Experts
                       </p>
                     </Link>
@@ -1534,7 +1534,7 @@ const Fintech = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="xl:!text-[21px] lg:!text-[18px]">
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
                     Let's get in touch
                   </p>
                 </Link>
@@ -1575,7 +1575,7 @@ const Fintech = () => {
                           height="17"
                         />
                       </div>
-                      <div className="xl:!text-[21px] lg:!text-[18px]">
+                      <div className="xl:!text-[20px] lg:!text-[18px]">
                         <p className="align-left">
                           <Link href="/portfolio/">Know More</Link>
                         </p>
@@ -1717,7 +1717,7 @@ const Fintech = () => {
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
                   <p>
-                    <img src="/images/icons2-04.png" alt="call" />
+                    <img src="/images/right_arrow.png" alt="call" />
                   </p>
                 </Link>
               </div>
@@ -1725,7 +1725,7 @@ const Fintech = () => {
                 href="#section10_service"
                 onClick={(e) => scrollToSection(e, "section10_service")}
               >
-                <p className="xl:!text-[21px] lg:!text-[18px]">Work with us</p>
+                <p className="xl:!text-[20px] lg:!text-[18px]">Work with us</p>
               </Link>
             </div>
           </div>

@@ -131,7 +131,7 @@ const HealthCare = () => {
                       </Link>
                     </p>
                   </div>
-                  <p className="xl:!text-[21px] lg:!text-[18px]">
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
                     <Link
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
@@ -158,7 +158,7 @@ const HealthCare = () => {
             </div>
           </div>
 
-          <div className="mx-auto px-[15px] pt-[32px]">
+          <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
@@ -751,7 +751,7 @@ const HealthCare = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Build My Healthcare App
                       </p>
                     </Link>
@@ -1177,7 +1177,7 @@ const HealthCare = () => {
                       href="#section10_service"
                       onClick={(e) => scrollToSection(e, "section10_service")}
                     >
-                      <p className="xl:!text-[21px] lg:!text-[18px]">
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
                         Speak with Our Experts
                       </p>
                     </Link>
@@ -1301,7 +1301,7 @@ const HealthCare = () => {
                 href="#section10_service"
                 onClick={(e) => scrollToSection(e, "section10_service")}
               >
-                <p className="xl:!text-[21px] lg:!text-[18px]">
+                <p className="xl:!text-[20px] lg:!text-[18px]">
                   Let’s get in touch
                 </p>
               </Link>
@@ -1396,7 +1396,7 @@ const HealthCare = () => {
                 href="#section10_service"
                 onClick={(e) => scrollToSection(e, "section10_service")}
               >
-                <p className="xl:!text-[21px] lg:!text-[18px]">Work with us</p>
+                <p className="xl:!text-[20px] lg:!text-[18px]">Work with us</p>
               </Link>
             </div>
           </div>
@@ -1436,7 +1436,7 @@ const HealthCare = () => {
                       height="17"
                     />
                   </div>
-                  <div className="xl:!text-[21px] lg:!text-[18px]">
+                  <div className="xl:!text-[20px] lg:!text-[18px]">
                     <p className="align-left">
                       <Link href="/portfolio/">Know More</Link>
                     </p>

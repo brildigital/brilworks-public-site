@@ -24,7 +24,7 @@ const FintechFAQs = () => {
           >
             <h2 className="accordion-header" id="headingOne">
               <button
-                className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
+                className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
@@ -36,7 +36,7 @@ const FintechFAQs = () => {
             </h2>
             <div
               id="collapseOne"
-              className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+              className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExampleother"
             >

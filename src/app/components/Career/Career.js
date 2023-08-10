@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import CareerContactForm from "./CareerContactForm";
-
+import BrilworksCareerReview from "./BrilworksCareerReview";
 
 const Career = () => {
   const scrollToSection = (e, sectionId) => {
@@ -19,7 +19,7 @@ const Career = () => {
   return (
     <>
       <section>
-        <div className="container mx-auto md:py-[128px] md:px-[0] py-[90px] px-[15px]">
+        <div className="container mx-auto md:pt-[128px] md:px-[0] pt-[90px] px-[15px]">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
               <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
@@ -186,9 +186,9 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="sm:w-[93%] w-full px-[16px] mx-auto">
+      <section className="sm:w-[93%] w-full mx-auto px-[15px]">
         <div>
-          <div className="clutch-widget">
+          {/* <div className="clutch-widget">
             <iframe
               id="iframe-0.7673398699825025"
               style={{
@@ -203,7 +203,8 @@ const Career = () => {
               scrolling="no"
               className="mx-auto w-[100%]"
             ></iframe>
-          </div>
+          </div> */}
+          <BrilworksCareerReview />
         </div>
       </section>
 

@@ -214,7 +214,7 @@ const ThreeStepstoHireDeveloper = () => {
                 href="#section10_service"
                 onClick={(e) => scrollToSection(e, "section10_service")}
               >
-                <p className="xl:!text-[21px] lg:!text-[18px] !px-0">
+                <p className="xl:!text-[20px] lg:!text-[18px] !px-0">
                   Schedule A Developer Interview
                 </p>
               </Link>

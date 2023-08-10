@@ -114,10 +114,10 @@ const DomainWorking = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-6/12 w-full">
+            <div className="lg:w-6/12">
               <div
                 id="accordionExample"
-                className="d-block accordion nav nav-tabs !mb-0"
+                className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
                 role="tablist"
               >
                 <div
