@@ -1,14 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
 import Link from "next/link";
 import ToolsAndGetInTouch from "./ToolsAndGetInTouch";
 import Head from "next/head";
 import { useEffect } from "react";
 
 const Portfolio = () => {
-  useEffect(() => {
-    document.querySelector(".scroll-shadows").scrollTop = 100;
-  });
   return (
     <div className="scroll-shadows">
       <section className="portfolio">
