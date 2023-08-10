@@ -6,6 +6,28 @@ export const metadata = {
   title: "Our Process | How We Work | Brilworks Software",
   description:
     "We are a top software development firm that satisfies the demands of every client, from sourcing the right people to managing end-to-end projects.",
+  openGraph: {
+    title: "Our Process | How We Work | Brilworks Software",
+    description:
+      "We are a top software development firm that satisfies the demands of every client, from sourcing the right people to managing end-to-end projects.",
+
+    url: "/our-process/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    images: [
+      {
+        url: "/images/Prototype.jpg",
+      },
+    ],
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/our-process/",
+  },
 };
 
 const page = () => {

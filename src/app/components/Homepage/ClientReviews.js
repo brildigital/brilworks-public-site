@@ -2,14 +2,16 @@
 import "swiper/css";
 import "./homepage.scss";
 import "swiper/css/navigation";
-// import { Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [isVideoPause, setVideoPause] = useState(true);
   const pathname = usePathname();
   return (
     <div className="container mx-auto px-[15px]">
@@ -26,26 +28,26 @@ const ClientReviews = () => {
           />
         </div>
         <div className="flex flex-wrap align-middle gap-6  justify-center">
-          {/* <div className="!w-2/5"> */}
           <div className="cursor-pointer">
-            {/* <span className="video-play-icon">
-              <span className="play-icon-img hover:!hidden">
-                <img src="/images/icon_play_new.svg" alt="Play Icon" />
-              </span>
-              <span className="play-icon-img !hidden hover:!block">
-                <img src="/images/icon_play.svg" alt="Play-Icon-new" />
-              </span>
-            </span> */}
+            <span className="video-play-icon">
+              {isVideoPause ? (
+                <span className="play-icon-img hover:!hidden">
+                  <img src="/images/icon_play_new.svg" alt="Play Icon" />
+                </span>
+              ) : null}
+            </span>
 
-            <video
-              className="!rounded-[30px]"
-              src={"/video/david_ceo_feedback.mp4"}
-              controls
-              width="320"
-              height="200"
-            />
+            <div onClick={() => setVideoPause(!isVideoPause)}>
+              <video
+                className="!rounded-[30px]"
+                src={"/video/david_ceo_feedback.mp4"}
+                controls
+                width="320"
+                height="200"
+              />
+            </div>
           </div>
-          {/* </div> */}
+
           <div
             className={`${
               pathname === "/" || pathname === "/home"
@@ -65,14 +67,14 @@ const ClientReviews = () => {
               </div>
               <div className="background">
                 <Swiper
-                  // modules={[Navigation]}
-                  // navigation={true}
-                  loop={true}
+                  className="client-review-swipers"
+                  modules={[Navigation]}
+                  navigation={isMobile ? false : true}
                   slidesPerView={1}
-                  speed={1500}
+                  speed={isMobile ? 1000 : 1500}
                 >
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 !my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           "I have been working with Brilworks for more than 4
@@ -92,7 +94,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 !my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “Team Brilworks has been an absolute delight to work
@@ -112,7 +114,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 !my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “Orokii has a special relationship with Brilworks and
@@ -132,7 +134,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 !my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “I absolutely loving working with the Brilworks team

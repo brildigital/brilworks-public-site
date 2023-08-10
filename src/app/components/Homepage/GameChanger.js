@@ -31,22 +31,21 @@ const GameChanger = () => {
             Changers
           </p>
         </div>
-        <div className="our_btn_flex">
-          <div className="home_txt3 pt-12">
+        <div className="our_btn_flex space_flex">
+          <div className="home_txt3 pt-12 md:w-[60%]">
             <h1>
               <span className="ez-toc-section"></span>We build stunning digital
-              solutions for global brands
-              <br />
-              and startups which deﬁne their success.
+              solutions for global brands and startups which deﬁne their
+              success.
               <span className="ez-toc-section-end"></span>
             </h1>
           </div>
           <div
-            className={`our_work flex items-center justify-end gap-4 ${
+            className={`our_work flex items-center justify-end !gap-4 ${
               isMobile ? "!pt-4" : ""
             }`}
           >
-            <p>
+            <p className="get_in_touch_hover">
               <Link href="/contact-us">GET IN TOUCH</Link>
             </p>
             <p>

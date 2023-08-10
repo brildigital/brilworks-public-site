@@ -6,6 +6,23 @@ export const metadata = {
   title: "Orokii - Portfolio | Cross-Border Payments | Brilworks Software",
   description:
     "Check out Brilworks's work for Orokii. How we helped Orokii to build a custom fintech application with faster & secure transactions.",
+  openGraph: {
+    title: "Orokii - Portfolio | Cross-Border Payments | Brilworks Software",
+    description:
+      "Check out Brilworks's work for Orokii. How we helped Orokii to build a custom fintech application with faster & secure transactions.",
+
+    url: "/portfolio/orokii/",
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    locale: "en-US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@_Brilworks",
+  },
+  alternates: {
+    canonical: "https://brilworks.com/portfolio/orokii/",
+  },
 };
 
 const page = () => {

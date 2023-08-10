@@ -324,10 +324,10 @@ const Footer = () => {
               <p>© 2023 BRILWORKS</p>
             </div>
             <div className="footer_txt_flex2">
-              <Link href="javascript:void(0)">
+              <Link href="#" onClick={(e) => e.preventDefault()}>
                 <p className="transition">Terms of Service</p>
               </Link>
-              <Link href="javascript:void(0)" onClick={(e) => e.preventDefault()}>
+              <Link href="#" onClick={(e) => e.preventDefault()}>
                 <p className="transition">Privacy Policy</p>
               </Link>
             </div>
