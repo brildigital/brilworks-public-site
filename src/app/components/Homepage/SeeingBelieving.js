@@ -183,7 +183,10 @@ const SeeingBelieving = () => {
       </div>
 
       <div className="flex md:!items-center !text-left md:!justify-center !justify-start lg:gap-[80px] gap-[20px] flex-col sm:flex-row mt-4 mx-[15px]">
-        <div className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
+        <Link
+          href="portfolio"
+          className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
+        >
           <div className="about_txt">
             <Link href="portfolio" className="text-[21px]">
               View all works
@@ -209,8 +212,11 @@ const SeeingBelieving = () => {
               height="18"
             />
           </div>
-        </div>
-        <div className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]">
+        </Link>
+        <Link
+          href="contact-us"
+          className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
+        >
           <div className="about_txt">
             <Link href="contact-us" className="text-[21px]">
               Contact Us
@@ -236,7 +242,7 @@ const SeeingBelieving = () => {
               height="18"
             />
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );

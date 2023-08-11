@@ -16,28 +16,28 @@ const FintechFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-one"
+            data-bs-target="#accordion-fintech"
             type="button"
             role="tab"
-            aria-controls="accordion-one"
+            aria-controls="accordion-fintech"
             aria-selected="true"
           >
-            <h2 className="accordion-header" id="headingOne">
+            <h2 className="accordion-header" id="headingfintech">
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target="#collapsefintech"
                 aria-expanded="false"
-                aria-controls="collapseOne"
+                aria-controls="collapsefintech"
               >
                 What is FinTech?
               </button>
             </h2>
             <div
-              id="collapseOne"
+              id="collapsefintech"
               className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingOne"
+              aria-labelledby="headingfintech"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -54,28 +54,28 @@ const FintechFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-two"
+            data-bs-target="#accordion-fin-software"
             type="button"
             role="tab"
-            aria-controls="accordion-two"
+            aria-controls="accordion-fin-software"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingTwo">
+            <h2 className="accordion-header" id="headingfin-software">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapsefin-software"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapsefin-software"
               >
                 What does a fintech software developer do?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapsefin-software"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingTwo"
+              aria-labelledby="headingfin-software"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -94,28 +94,28 @@ const FintechFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-three"
+            data-bs-target="#accordion-fintech-software-my"
             type="button"
             role="tab"
-            aria-controls="accordion-three"
+            aria-controls="accordion-fintech-software-my"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingThree">
+            <h2 className="accordion-header" id="headingfintech-software-my">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
+                data-bs-target="#collapsefintech-software-my"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapsefintech-software-my"
               >
                 How long will it take for you to develop my Fintech Software?
               </button>
             </h2>
             <div
-              id="collapseThree"
+              id="collapsefintech-software-my"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingThree"
+              aria-labelledby="headingfintech-software-my"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -132,29 +132,29 @@ const FintechFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-four"
+            data-bs-target="#accordion-fin-software-solution"
             type="button"
             role="tab"
-            aria-controls="accordion-four"
+            aria-controls="accordion-fin-software-solution"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFour">
+            <h2 className="accordion-header" id="headingfin-software-solution">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
+                data-bs-target="#collapsefin-software-solution"
                 aria-expanded="false"
-                aria-controls="collapseFour"
+                aria-controls="collapsefin-software-solution"
               >
                 What are the main advantages of building a fintech software
                 solution?
               </button>
             </h2>
             <div
-              id="collapseFour"
+              id="collapsefin-software-solution"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFour"
+              aria-labelledby="headingfin-software-solution"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">

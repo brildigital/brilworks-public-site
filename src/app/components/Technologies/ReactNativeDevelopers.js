@@ -119,29 +119,25 @@ const ReactNativeDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Juned</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Juned
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -248,29 +244,25 @@ const ReactNativeDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Dinesh</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Dinesh
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -371,29 +363,25 @@ const ReactNativeDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[5rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Kinjal</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Kinjal
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

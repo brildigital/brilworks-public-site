@@ -18,28 +18,28 @@ const FleetManagmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-one"
+            data-bs-target="#accordion-fleet-one"
             type="button"
             role="tab"
-            aria-controls="accordion-one"
+            aria-controls="accordion-fleet-one"
             aria-selected="true"
           >
-            <h2 className="accordion-header" id="headingOne">
+            <h2 className="accordion-header" id="headingfleet-One">
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target="#collapsefleet-One"
                 aria-expanded="false"
-                aria-controls="collapseOne"
+                aria-controls="collapsefleet-One"
               >
                 What is fleet management software?
               </button>
             </h2>
             <div
-              id="collapseOne"
+              id="collapsefleet-One"
               className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingOne"
+              aria-labelledby="headingfleet-One"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -57,29 +57,29 @@ const FleetManagmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-two"
+            data-bs-target="#accordion-fleet-two"
             type="button"
             role="tab"
-            aria-controls="accordion-two"
+            aria-controls="accordion-fleet-two"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingTwo">
+            <h2 className="accordion-header" id="headingfleet-Two">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapsefleet-Two"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapsefleet-Two"
               >
                 Do you provide custom fleet management software development
                 services?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapsefleet-Two"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingTwo"
+              aria-labelledby="headingfleet-Two"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -95,29 +95,29 @@ const FleetManagmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-three"
+            data-bs-target="#accordion-fleet-three"
             type="button"
             role="tab"
-            aria-controls="accordion-three"
+            aria-controls="accordion-fleet-three"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingThree">
+            <h2 className="accordion-header" id="headingfleet-Three">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
+                data-bs-target="#collapsefleet-Three"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapsefleet-Three"
               >
                 What are some of the main features a fleet management system
                 must have?
               </button>
             </h2>
             <div
-              id="collapseThree"
+              id="collapsefleet-Three"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingThree"
+              aria-labelledby="headingfleet-Three"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -135,28 +135,28 @@ const FleetManagmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-four"
+            data-bs-target="#accordion-fleet-four"
             type="button"
             role="tab"
-            aria-controls="accordion-four"
+            aria-controls="accordion-fleet-four"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFour">
+            <h2 className="accordion-header" id="headingfleet-Four">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
+                data-bs-target="#collapsefleet-Four"
                 aria-expanded="false"
-                aria-controls="collapseFour"
+                aria-controls="collapsefleet-Four"
               >
                 Why is fleet management a necessity?
               </button>
             </h2>
             <div
-              id="collapseFour"
+              id="collapsefleet-Four"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFour"
+              aria-labelledby="headingfleet-Four"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">

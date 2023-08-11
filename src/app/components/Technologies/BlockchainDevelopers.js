@@ -124,29 +124,25 @@ const BlockchainDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Parth</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Parth
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -254,29 +250,25 @@ const BlockchainDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Ankur</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Ankur
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -394,29 +386,25 @@ const BlockchainDevelopers = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Jagat</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Jagat
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

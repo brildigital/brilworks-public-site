@@ -16,28 +16,28 @@ const HealthcareFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-one"
+            data-bs-target="#accordion-healthcare-one"
             type="button"
             role="tab"
-            aria-controls="accordion-one"
+            aria-controls="accordion-healthcare-one"
             aria-selected="true"
           >
-            <h2 className="accordion-header" id="headingOne">
+            <h2 className="accordion-header" id="headinghealthcare-One">
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target="#collapsehealthcare-One"
                 aria-expanded="false"
-                aria-controls="collapseOne"
+                aria-controls="collapsehealthcare-One"
               >
                 What is healthcare software development?
               </button>
             </h2>
             <div
-              id="collapseOne"
+              id="collapsehealthcare-One"
               className="accordion-collapse collapse show  xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingOne"
+              aria-labelledby="headinghealthcare-One"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -56,28 +56,28 @@ const HealthcareFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-two"
+            data-bs-target="#accordion-healthcare-two"
             type="button"
             role="tab"
-            aria-controls="accordion-two"
+            aria-controls="accordion-healthcare-two"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingTwo">
+            <h2 className="accordion-header" id="headinghealthcare-Two">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapsehealthcare-Two"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapsehealthcare-Two"
               >
                 Do you provide custom healthcare software development?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapsehealthcare-Two"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingTwo"
+              aria-labelledby="headinghealthcare-Two"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -93,29 +93,29 @@ const HealthcareFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-three"
+            data-bs-target="#accordion-healthcare-three"
             type="button"
             role="tab"
-            aria-controls="accordion-three"
+            aria-controls="accordion-healthcare-three"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingThree">
+            <h2 className="accordion-header" id="headinghealthcare-Three">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
+                data-bs-target="#collapsehealthcare-Three"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapsehealthcare-Three"
               >
                 How do I choose the right healthcare software development
                 company?
               </button>
             </h2>
             <div
-              id="collapseThree"
+              id="collapsehealthcare-Three"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingThree"
+              aria-labelledby="headinghealthcare-Three"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -136,29 +136,29 @@ const HealthcareFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-four"
+            data-bs-target="#accordion-healthcare-four"
             type="button"
             role="tab"
-            aria-controls="accordion-four"
+            aria-controls="accordion-healthcare-four"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFour">
+            <h2 className="accordion-header" id="headinghealthcare-Four">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
+                data-bs-target="#collapsehealthcare-Four"
                 aria-expanded="false"
-                aria-controls="collapseFour"
+                aria-controls="collapsehealthcare-Four"
               >
                 Do your healthcare software development services follow HIPAA
                 compliance?
               </button>
             </h2>
             <div
-              id="collapseFour"
+              id="collapsehealthcare-Four"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFour"
+              aria-labelledby="headinghealthcare-Four"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -173,28 +173,28 @@ const HealthcareFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-five"
+            data-bs-target="#accordion-healthcare-five"
             type="button"
             role="tab"
-            aria-controls="accordion-five"
+            aria-controls="accordion-healthcare-five"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFive">
+            <h2 className="accordion-header" id="headinghealthcare-Five">
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFive"
+                data-bs-target="#collapsehealthcare-Five"
                 aria-expanded="false"
-                aria-controls="collapseFive"
+                aria-controls="collapsehealthcare-Five"
               >
                 What are the benefits of mHealth apps?
               </button>
             </h2>
             <div
-              id="collapseFive"
+              id="collapsehealthcare-Five"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFive"
+              aria-labelledby="headinghealthcare-Five"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">

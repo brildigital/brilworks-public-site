@@ -98,47 +98,47 @@ const JavaTechnology = () => {
                 </p>
 
                 <div className="flex md:gap-8 md:mt-[50px] flex-wrap">
-                  <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                    <div className="formBtn_icon">
+                  <Link
+                    href="#pricing"
+                    onClick={(e) => scrollToSection(e, "pricing")}
+                  >
+                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
+                      <div className="formBtn_icon">
+                        <p>
+                          <img src="/images/right_arrow.png" alt="arrow" />
+                        </p>
+                      </div>
                       <Link
                         href="#pricing"
                         onClick={(e) => scrollToSection(e, "pricing")}
                       >
-                        <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Plan & Pricing
                         </p>
                       </Link>
                     </div>
-                    <Link
-                      href="#pricing"
-                      onClick={(e) => scrollToSection(e, "pricing")}
-                    >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Plan & Pricing
-                      </p>
-                    </Link>
-                  </div>
+                  </Link>
 
-                  <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                    <div className="formBtn_icon">
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                  >
+                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
+                      <div className="formBtn_icon">
+                        <p>
+                          <img src="/images/right_arrow.png" alt="arrow" />
+                        </p>
+                      </div>
                       <Link
                         href="#section10_service"
                         onClick={(e) => scrollToSection(e, "section10_service")}
                       >
-                        <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Hire Java Developers
                         </p>
                       </Link>
                     </div>
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Hire Java Developers
-                      </p>
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -317,26 +317,26 @@ const JavaTechnology = () => {
           </div>
 
           <div className="w-full md:my-[60px] my-[40px]">
-            <div className="btn_paddinng btn_flex !mx-auto">
-              <div className="formBtn_icon">
+            <Link
+              href="#section10_service"
+              onClick={(e) => scrollToSection(e, "section10_service")}
+            >
+              <div className="btn_paddinng btn_flex !mx-auto">
+                <div className="formBtn_icon">
+                  <p>
+                    <img src="/images/icons-05.png" alt="call" />
+                  </p>
+                </div>
                 <Link
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
+                    Get A Quote For Your Project
                   </p>
                 </Link>
               </div>
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
-                <p className="xl:!text-[20px] lg:!text-[18px]">
-                  Get A Quote For Your Project
-                </p>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
 

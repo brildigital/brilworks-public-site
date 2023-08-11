@@ -119,27 +119,26 @@ const HealthCare = () => {
                   accessibility issues by offering remote consultations and
                   telehealth solutions.
                 </p>
-
-                <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
-                  <div className="formBtn_icon">
-                    <p>
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
+                  <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
+                    <div className="formBtn_icon">
+                      <p>
+                        <img src="/images/right_arrow.png" alt="arrow" />
+                      </p>
+                    </div>
+                    <p className="xl:!text-[20px] lg:!text-[18px]">
                       <Link
                         href="#section10_service"
                         onClick={(e) => scrollToSection(e, "section10_service")}
                       >
-                        <img src="/images/right_arrow.png" alt="arrow" />
+                        Request For Proposal
                       </Link>
                     </p>
                   </div>
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      Request For Proposal
-                    </Link>
-                  </p>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -734,28 +733,26 @@ const HealthCare = () => {
                 </div>
 
                 <div className="w-full mt-[3rem]">
-                  <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                    <div className="formBtn_icon">
-                      <p>
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                        >
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                  >
+                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
+                      <div className="formBtn_icon">
+                        <p>
                           <img src="/images/right_arrow.png" alt="arrow" />
-                        </Link>
-                      </p>
+                        </p>
+                      </div>
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Build My Healthcare App
+                        </p>
+                      </Link>
                     </div>
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Build My Healthcare App
-                      </p>
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1160,28 +1157,26 @@ const HealthCare = () => {
                 </div>
 
                 <div className="w-full md:my-[6rem] mb-12">
-                  <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                    <div className="formBtn_icon">
-                      <p>
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                        >
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                  >
+                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
+                      <div className="formBtn_icon">
+                        <p>
                           <img src="/images/icons2-04.png" alt="arrow" />
-                        </Link>
-                      </p>
+                        </p>
+                      </div>
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Speak with Our Experts
+                        </p>
+                      </Link>
                     </div>
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Speak with Our Experts
-                      </p>
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1286,26 +1281,26 @@ const HealthCare = () => {
           </div>
 
           <div className="w-full md:my-[60px] my-[40px]">
-            <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-              <div className="formBtn_icon">
+            <Link
+              href="#section10_service"
+              onClick={(e) => scrollToSection(e, "section10_service")}
+            >
+              <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
+                <div className="formBtn_icon">
+                  <p>
+                    <img src="/images/icons-05.png" alt="call" />
+                  </p>
+                </div>
                 <Link
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
+                    Let’s get in touch
                   </p>
                 </Link>
               </div>
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
-                <p className="xl:!text-[20px] lg:!text-[18px]">
-                  Let’s get in touch
-                </p>
-              </Link>
-            </div>
+            </Link>
           </div>
 
           <div className="lg:pt-[8rem] lg:pb-[6rem] md:py-[6rem] py-[4rem] workpadd_borderTop">
@@ -1424,24 +1419,24 @@ const HealthCare = () => {
                 </p>
               </div>
               <div className="sp-8 w-fit py-[2rem]">
-                <div className="btn_flex">
-                  <div className="arrow_icon">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone"
-                      src="/images/right_arrow.png"
-                      alt="arrow"
-                      width="10"
-                      height="17"
-                    />
+                <Link href="/portfolio/">
+                  <div className="btn_flex">
+                    <div className="arrow_icon">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="alignnone"
+                        src="/images/right_arrow.png"
+                        alt="arrow"
+                        width="10"
+                        height="17"
+                      />
+                    </div>
+                    <div className="xl:!text-[20px] lg:!text-[18px]">
+                      <p className="align-left">Know More</p>
+                    </div>
                   </div>
-                  <div className="xl:!text-[20px] lg:!text-[18px]">
-                    <p className="align-left">
-                      <Link href="/portfolio/">Know More</Link>
-                    </p>
-                  </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="health_sec1_flex_60 order_1">

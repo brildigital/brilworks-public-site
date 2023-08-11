@@ -131,29 +131,26 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  {" "}
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Nidhi</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Nidhi
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -268,29 +265,25 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Neha</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Neha
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -413,29 +406,25 @@ const UIUXDesigners = () => {
                   </div>
                 </div>
                 <div className="pt-[4rem]">
-                  <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                    <div className="chat_icon">
-                      <img
-                        src="/images/hire-hand.png"
-                        alt="hand"
-                        width="28"
-                        height="44"
-                      />
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                    className=""
+                  >
+                    <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+                      <div className="chat_icon">
+                        <img
+                          src="/images/hire-hand.png"
+                          alt="hand"
+                          width="28"
+                          height="44"
+                        />
+                      </div>
+                      <div className="chat_btn">
+                        <p className="transition ng-binding">Hire Sumeet</p>
+                      </div>
                     </div>
-                    <div className="chat_btn">
-                      <p className="transition ng-binding">
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                          className=""
-                        >
-                          Hire Sumeet
-                        </Link>
-                      </p>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

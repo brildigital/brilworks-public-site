@@ -151,7 +151,10 @@ const DomainWorking = () => {
                       Revolutionize the financial world with a robust & secure
                       fintech app that solves real-life problems.
                     </div>
-                    <div className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]">
+                    <a
+                      href="/industry/fintech-software-development"
+                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
+                    >
                       <div className="about_txt_domain">
                         <a
                           className=""
@@ -180,7 +183,7 @@ const DomainWorking = () => {
                           height="18"
                         />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div
@@ -214,7 +217,10 @@ const DomainWorking = () => {
                       Implement digital solutions that are poised to transform
                       the healthcare industry.
                     </div>
-                    <div className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]">
+                    <a
+                      href="/industry/healthcare-software-development"
+                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
+                    >
                       <div className="about_txt_domain">
                         <a
                           className=""
@@ -243,7 +249,7 @@ const DomainWorking = () => {
                           height="18"
                         />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div
@@ -277,7 +283,10 @@ const DomainWorking = () => {
                       From ticketing to online video, we’ll help you improve the
                       way you engage and entertain.
                     </div>
-                    <div className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]">
+                    <a
+                      href="/industry/media-entertainment-software-development"
+                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
+                    >
                       <div className="about_txt_domain">
                         <a
                           className=""
@@ -306,7 +315,7 @@ const DomainWorking = () => {
                           height="18"
                         />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
 
@@ -341,7 +350,10 @@ const DomainWorking = () => {
                       Simplify fleet management with solutions that let you
                       manage workflows with GPS tracking.
                     </div>
-                    <div className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]">
+                    <a
+                      href="/industry/fleet-management-software-development"
+                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
+                    >
                       <div className="about_txt_domain">
                         <a
                           className=""
@@ -370,7 +382,7 @@ const DomainWorking = () => {
                           height="18"
                         />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

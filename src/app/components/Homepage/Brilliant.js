@@ -16,7 +16,10 @@ const Brilliant = () => {
           </p>
         </div>
 
-        <div className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px]">
+        <Link
+          href="about-us"
+          className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px]"
+        >
           <div className="about_txt">
             <Link href="about-us" className="text-[21px]">
               About Us
@@ -42,7 +45,7 @@ const Brilliant = () => {
               height="18"
             />
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

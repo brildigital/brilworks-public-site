@@ -104,24 +104,24 @@ const SolutionEngagementModal = () => {
           </div>
 
           <div className="w-full md:py-[6rem] py-4">
-            <div className="btn_paddinng btn_flex !mx-auto">
-              <div className="formBtn_icon">
+            <Link
+              href="#section10_service"
+              onClick={(e) => scrollToSection(e, "section10_service")}
+            >
+              <div className="btn_paddinng btn_flex !mx-auto">
+                <div className="formBtn_icon">
+                  <p>
+                    <img src="/images/right_arrow.png" alt="call" />
+                  </p>
+                </div>
                 <Link
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p>
-                    <img src="/images/right_arrow.png" alt="call" />
-                  </p>
+                  <p className="xl:!text-[20px] lg:!text-[18px]">Know More</p>
                 </Link>
               </div>
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
-                <p className="xl:!text-[20px] lg:!text-[18px]">Know More</p>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
