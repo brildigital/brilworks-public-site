@@ -103,7 +103,7 @@ const Honors = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="award ng-scope !py-8">
+            <div className="award ng-scope">
               <Link
                 href="https://www.designrush.com/agency/profile/brilworks-software"
                 target="_blank"
@@ -118,7 +118,28 @@ const Honors = () => {
                 </div>
                 <div className="review-text">
                   <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
-                    Top Mobile App Development Company
+                    DesignRush Top Company
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="award ng-scope ">
+              <Link
+                href="https://www.dotcms.com/partners/brilworks"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <div className="award_sec8_img1">
+                  <img
+                    src="/images/dotcms-logo-300x118.jpg"
+                    alt="dotCMS logo"
+                  />
+                </div>
+                <div className="review-text">
+                  <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                    dotCMS Partner
                   </p>
                 </div>
               </Link>

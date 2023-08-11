@@ -116,12 +116,16 @@ const TechnologyContactForm = () => {
                       </span>
                     </p>
                   </div>
-                  <div className="success-msg" id="sucess_msg">
+
+                  <div className="success-msg m-8" id="sucess_msg">
                     {respMessage}
                   </div>
-                  <div className="contact_btn btn_flex ">
+
+                  <div className="contact_btn_technology  btn_flex !w-50%]">
                     {isSubmitting ? (
-                      <Loader />
+                      <div className="formBtn_icon send_btn w-[80px] flex align-middle justify-center h-[30px] mt-[10px]">
+                        <Loader />
+                      </div>
                     ) : (
                       <>
                         <div className="formBtn_icon">

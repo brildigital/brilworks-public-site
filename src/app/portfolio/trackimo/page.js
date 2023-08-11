@@ -29,7 +29,6 @@ const page = () => {
     <>
       <Header />
       <PortfolioInnerTrackimo />
-
       <Footer />
     </>
   );
