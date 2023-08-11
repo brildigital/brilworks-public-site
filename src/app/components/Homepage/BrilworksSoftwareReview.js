@@ -96,7 +96,7 @@ const BrilworksSoftwareReview = () => {
                       Powered by
                       <img
                         className="w-[70px] ml-1"
-                        src="https://www.brilworks.com/wp-content/uploads/2023/05/clutch-img.svg"
+                        src="/images/clutch-img.svg"
                         alt="clutch"
                       />
                     </p>
