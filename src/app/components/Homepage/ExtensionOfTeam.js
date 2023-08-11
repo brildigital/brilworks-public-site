@@ -51,7 +51,10 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <Link
+                          href="/hire-java-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-java-developer"
@@ -80,8 +83,11 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]">
+                        </Link>
+                        <Link
+                          href="/hire-nodejs-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-nodejs-developer"
@@ -110,7 +116,7 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -142,7 +148,10 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]">
+                        <Link
+                          href="/hire-reactjs-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-reactjs-developer"
@@ -171,7 +180,7 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -203,7 +212,10 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]">
+                        <Link
+                          href="/hire-aws-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-aws-developer"
@@ -232,7 +244,7 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -264,7 +276,10 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]">
+                        <Link
+                          href="/hire-react-native-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-react-native-developer"
@@ -293,9 +308,12 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
 
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]">
+                        <Link
+                          href="/hire-blockchain-developer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-blockchain-developer"
@@ -324,7 +342,7 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -356,7 +374,10 @@ const ExtensionOfTeam = () => {
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
-                        <div className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]">
+                        <Link
+                          href="/hire-ui-ux-designer"
+                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                        >
                           <div className="about_txt">
                             <Link
                               href="/hire-ui-ux-designer"
@@ -385,7 +406,7 @@ const ExtensionOfTeam = () => {
                               height="18"
                             />
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>

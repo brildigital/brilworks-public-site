@@ -19,28 +19,31 @@ const MediaNEntertainmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-one"
+            data-bs-target="#accordion-media-entertainment-one"
             type="button"
             role="tab"
-            aria-controls="accordion-one"
+            aria-controls="accordion-media-entertainment-one"
             aria-selected="true"
           >
-            <h2 className="accordion-header" id="headingOne">
+            <h2
+              className="accordion-header"
+              id="headingmedia-entertainment-one"
+            >
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
+                data-bs-target="#collapsemedia-entertainment-one"
                 aria-expanded="false"
-                aria-controls="collapseOne"
+                aria-controls="collapsemedia-entertainment-one"
               >
                 What sorts of media and entertainment software do you develop?
               </button>
             </h2>
             <div
-              id="collapseOne"
+              id="collapsemedia-entertainment-one"
               className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingOne"
+              aria-labelledby="headingmedia-entertainment-one"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -65,29 +68,32 @@ const MediaNEntertainmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-two"
+            data-bs-target="#accordion-media-entertainment-two"
             type="button"
             role="tab"
-            aria-controls="accordion-two"
+            aria-controls="accordion-media-entertainment-two"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingTwo">
+            <h2
+              className="accordion-header"
+              id="headingmedia-entertainment-two"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapsemedia-entertainment-two"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapsemedia-entertainment-two"
               >
                 How long does it take to develop a media & entertainment
                 software app?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapsemedia-entertainment-two"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingTwo"
+              aria-labelledby="headingmedia-entertainment-two"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -103,29 +109,32 @@ const MediaNEntertainmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-three"
+            data-bs-target="#accordion-media-entertainment-three"
             type="button"
             role="tab"
-            aria-controls="accordion-three"
+            aria-controls="accordion-media-entertainment-three"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingThree">
+            <h2
+              className="accordion-header"
+              id="headingmedia-entertainment-Three"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
+                data-bs-target="#collapsemedia-entertainment-Three"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapsemedia-entertainment-Three"
               >
                 Do you provide custom media & entertainment software
                 development?
               </button>
             </h2>
             <div
-              id="collapseThree"
+              id="collapsemedia-entertainment-Three"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingThree"
+              aria-labelledby="headingmedia-entertainment-Three"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -141,28 +150,31 @@ const MediaNEntertainmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-four"
+            data-bs-target="#accordion-media-entertainment-four"
             type="button"
             role="tab"
-            aria-controls="accordion-four"
+            aria-controls="accordion-media-entertainment-four"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFour">
+            <h2
+              className="accordion-header"
+              id="headingmedia-entertainment-Four"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
+                data-bs-target="#collapsemedia-entertainment-Four"
                 aria-expanded="false"
-                aria-controls="collapseFour"
+                aria-controls="collapsemedia-entertainment-Four"
               >
                 What is better for entertainment apps: mobile or web?
               </button>
             </h2>
             <div
-              id="collapseFour"
+              id="collapsemedia-entertainment-Four"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFour"
+              aria-labelledby="headingmedia-entertainment-Four"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">
@@ -181,28 +193,31 @@ const MediaNEntertainmentFAQs = () => {
           <div
             className="accordion-item"
             data-bs-toggle="tab"
-            data-bs-target="#accordion-four"
+            data-bs-target="#accordion-media-entertainment-five"
             type="button"
             role="tab"
-            aria-controls="accordion-four"
+            aria-controls="accordion-media-entertainment-five"
             aria-selected="false"
           >
-            <h2 className="accordion-header" id="headingFour">
+            <h2
+              className="accordion-header"
+              id="headingmedia-entertainment-five"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseFive"
+                data-bs-target="#collapsemedia-entertainment-Five"
                 aria-expanded="false"
-                aria-controls="collapseFive"
+                aria-controls="collapsemedia-entertainment-Five"
               >
                 What do I need to build a dating app like Tinder?
               </button>
             </h2>
             <div
-              id="collapseFive"
+              id="collapsemedia-entertainment-Five"
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-              aria-labelledby="headingFour"
+              aria-labelledby="headingmedia-entertainment-five"
               data-bs-parent="#accordionExampleother"
             >
               <div className="accordion-body">

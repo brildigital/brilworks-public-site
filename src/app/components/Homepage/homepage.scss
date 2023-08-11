@@ -12,9 +12,9 @@
 
 .video-play-icon {
     position: absolute;
-    width: 6%;
-    left: 22%;
-    top: 38%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .homepage-work-domain,
@@ -54,7 +54,7 @@
     .swiper-button-next {
         position: absolute;
         right: 5rem;
-        bottom: 10%;
+        bottom: 17%;
         top: unset;
         height: auto;
         width: auto;
@@ -85,7 +85,7 @@
         position: absolute;
         right: 170px;
         left: unset;
-        bottom: 10%;
+        bottom: 17%;
         top: unset;
         height: auto;
         width: auto;

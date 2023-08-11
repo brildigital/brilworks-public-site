@@ -428,7 +428,10 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-center gap-[20px] about_btn transition md:pt-[32px] pt-[0px]">
+          <Link
+            href="/career/"
+            className="flex items-center justify-center gap-[20px] about_btn transition md:pt-[32px] pt-[0px]"
+          >
             <div className="about_txt">
               <Link href="/career/" className="md:text-[32px] text-[20px]">
                 Join Our Team
@@ -446,7 +449,7 @@ const AboutUs = () => {
                 alt="arrow"
               />
             </div>
-          </div>
+          </Link>
 
           <div className="md:mt-[5rem] mt-[2rem]">
             <img

@@ -32,7 +32,10 @@ const PortfolioInnerRastrack = () => {
           </div>
 
           <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem]">
-            <div className="portfolio_know_more md:mx-auto ml-0">
+            <Link
+              href="https://rastrack.com"
+              className="portfolio_know_more md:mx-auto ml-0"
+            >
               <div className="get_icon">
                 <Link href="https://rastrack.com">
                   <img
@@ -47,7 +50,7 @@ const PortfolioInnerRastrack = () => {
                   <Link href="https://rastrack.com">Visit Website</Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="mx-auto">
@@ -378,7 +381,10 @@ const PortfolioInnerRastrack = () => {
           </div>
 
           <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem]">
-            <div className="portfolio_know_more md:mx-auto ml-0">
+            <Link
+              href="/about-us/"
+              className="portfolio_know_more md:mx-auto ml-0"
+            >
               <div className="get_icon">
                 <Link href="/about-us/">
                   <img
@@ -393,7 +399,7 @@ const PortfolioInnerRastrack = () => {
                   <Link href="/about-us/">About Us </Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>

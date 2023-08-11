@@ -27,8 +27,8 @@ const ClientReviews = () => {
             height="215"
           />
         </div>
-        <div className="flex flex-wrap align-middle gap-6  justify-center">
-          <div className="cursor-pointer">
+        <div className="flex flex-wrap align-middle gap-6  justify-center video-slider">
+          <div className="cursor-pointer relative">
             <span className="video-play-icon">
               {isVideoPause && !isMobile ? (
                 <span className="play-icon-img hover:!hidden">
@@ -52,10 +52,10 @@ const ClientReviews = () => {
             className={`${
               pathname === "/" || pathname === "/home"
                 ? "md:!w-2/4"
-                : "md:!w-[51%]"
+                : "md:!w-2/4"
             } w-full`}
           >
-            <div className="home_sec3_box overflow-hidden">
+            <div className="home_sec3_box overflow-hidden ">
               <div
                 className={`dots_flex w-100 md:px-[30px] ${
                   isMobile ? "!mx-4" : ""

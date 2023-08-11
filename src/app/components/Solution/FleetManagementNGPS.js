@@ -92,27 +92,26 @@ const FleetManagementNGPS = () => {
                   with the help of our custom fleet management app software
                   development services
                 </p>
-
-                <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
-                  <div className="formBtn_icon">
-                    <p>
+                <Link
+                  href="#section10_service"
+                  onClick={(e) => scrollToSection(e, "section10_service")}
+                >
+                  <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
+                    <div className="formBtn_icon">
+                      <p>
+                        <img src="/images/right_arrow.png" alt="arrow" />
+                      </p>
+                    </div>
+                    <p className="xl:!text-[20px] lg:!text-[18px]">
                       <Link
                         href="#section10_service"
                         onClick={(e) => scrollToSection(e, "section10_service")}
                       >
-                        <img src="/images/right_arrow.png" alt="arrow" />
+                        Request For Proposal
                       </Link>
                     </p>
                   </div>
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      Request For Proposal
-                    </Link>
-                  </p>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -702,32 +701,30 @@ const FleetManagementNGPS = () => {
                 </div>
 
                 <div className="w-full mt-[3rem]">
-                  <div
-                    className={`btn_paddinng contact_btn_solution btn_flex !mx-auto ${
-                      isMobile ? "!px-[10px] !py-[14px]" : ""
-                    }`}
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
                   >
-                    <div className="formBtn_icon">
-                      <p>
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                        >
-                          <img src="/images/right_arrow.png" alt="arrow" />
-                        </Link>
-                      </p>
-                    </div>
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
+                    <div
+                      className={`btn_paddinng contact_btn_solution btn_flex !mx-auto ${
+                        isMobile ? "!px-[10px] !py-[14px]" : ""
+                      }`}
                     >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Build My Fleet Management Software
-                      </p>
-                    </Link>
-                  </div>
+                      <div className="formBtn_icon">
+                        <p>
+                          <img src="/images/right_arrow.png" alt="arrow" />
+                        </p>
+                      </div>
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Build My Fleet Management Software
+                        </p>
+                      </Link>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1125,28 +1122,26 @@ const FleetManagementNGPS = () => {
                 </div>
 
                 <div className="w-full md:my-[6rem] mb-12">
-                  <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                    <div className="formBtn_icon">
-                      <p>
-                        <Link
-                          href="#section10_service"
-                          onClick={(e) =>
-                            scrollToSection(e, "section10_service")
-                          }
-                        >
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                  >
+                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
+                      <div className="formBtn_icon">
+                        <p>
                           <img src="/images/icons2-04.png" alt="arrow" />
-                        </Link>
-                      </p>
+                        </p>
+                      </div>
+                      <Link
+                        href="#section10_service"
+                        onClick={(e) => scrollToSection(e, "section10_service")}
+                      >
+                        <p className="xl:!text-[20px] lg:!text-[18px]">
+                          Speak with Our Experts
+                        </p>
+                      </Link>
                     </div>
-                    <Link
-                      href="#section10_service"
-                      onClick={(e) => scrollToSection(e, "section10_service")}
-                    >
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Speak with Our Experts
-                      </p>
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1482,26 +1477,26 @@ const FleetManagementNGPS = () => {
             </div>
 
             <div className="w-full pt-[4rem]">
-              <div className="btn_paddinng btn_flex !mx-auto">
-                <div className="formBtn_icon">
+              <Link
+                href="#section10_service"
+                onClick={(e) => scrollToSection(e, "section10_service")}
+              >
+                <div className="btn_paddinng btn_flex !mx-auto">
+                  <div className="formBtn_icon">
+                    <p>
+                      <img src="/images/right_arrow.png" alt="call" />
+                    </p>
+                  </div>
                   <Link
                     href="#section10_service"
                     onClick={(e) => scrollToSection(e, "section10_service")}
                   >
-                    <p>
-                      <img src="/images/right_arrow.png" alt="call" />
+                    <p className="xl:!text-[20px] lg:!text-[18px]">
+                      Work with us
                     </p>
                   </Link>
                 </div>
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    Work with us
-                  </p>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

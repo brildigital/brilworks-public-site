@@ -111,7 +111,7 @@ const Honors = () => {
               >
                 <div className="award_sec8_img1">
                   <img
-                    className="w-[80%]"
+                    className="w-[150px]"
                     src="/images/Top-Mobile-App-Development-Company2.svg"
                     alt="Top Mobile App Development Company"
                   />

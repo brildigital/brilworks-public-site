@@ -53,7 +53,7 @@ const Portfolio = () => {
                 self-driving mobility services tomorrow.
               </p>
             </div>
-            <div className="portfolio_know_more">
+            <Link href="/portfolio/vugo/" className="portfolio_know_more">
               <div className="get_icon">
                 <Link href="/portfolio/vugo/">
                   <img
@@ -68,7 +68,7 @@ const Portfolio = () => {
                   <Link href="/portfolio/vugo/">Know More</Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="portflio_flex_60">
             <div className="">
@@ -113,7 +113,7 @@ const Portfolio = () => {
                 assets or individuals using networking technologies.
               </p>
             </div>
-            <div className="portfolio_know_more">
+            <Link href="/portfolio/rastrack/" className="portfolio_know_more">
               <div className="get_icon">
                 <Link href="/portfolio/rastrack/">
                   <img
@@ -128,7 +128,7 @@ const Portfolio = () => {
                   <Link href="/portfolio/rastrack/">Know More</Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -148,7 +148,7 @@ const Portfolio = () => {
                 fees in the industry.
               </p>
             </div>
-            <div className="portfolio_know_more">
+            <Link href="/portfolio/orokii/" className="portfolio_know_more">
               <div className="get_icon">
                 <Link href="/portfolio/orokii/">
                   <img
@@ -161,7 +161,7 @@ const Portfolio = () => {
               <div className="portfolio_know_more_txt">
                 <Link href="/portfolio/orokii/">Know More</Link>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="portflio_flex_60">
             <div className="">
@@ -207,7 +207,7 @@ const Portfolio = () => {
                 Dealers and Fleet Managers.
               </p>
             </div>
-            <div className="portfolio_know_more">
+            <Link href="/portfolio/eccocar/" className="portfolio_know_more">
               <div className="get_icon">
                 <Link href="/portfolio/eccocar/">
                   <img
@@ -222,7 +222,7 @@ const Portfolio = () => {
                   <Link href="/portfolio/eccocar/">Know More</Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -242,7 +242,7 @@ const Portfolio = () => {
                 worldwide, indoors and outdoors.
               </p>
             </div>
-            <div className="portfolio_know_more">
+            <Link href="/portfolio/trackimo/" className="portfolio_know_more">
               <div className="get_icon">
                 <Link href="/portfolio/trackimo/">
                   <img
@@ -257,7 +257,7 @@ const Portfolio = () => {
                   <Link href="/portfolio/trackimo/">Know More</Link>
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="portflio_flex_60">
             <div className="">

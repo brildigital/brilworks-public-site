@@ -42,7 +42,11 @@ const Career = () => {
             </div>
 
             <div className="flex sm:items-center items-start justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
-              <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
+              <Link
+                href="#section7_career"
+                onClick={(e) => scrollToSection(e, "section7_career")}
+                className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
+              >
                 <div className="about_txt">
                   <Link
                     href="#section7_career"
@@ -72,8 +76,12 @@ const Career = () => {
                     height="18"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]">
+              </Link>
+              <Link
+                href="#section10"
+                onClick={(e) => scrollToSection(e, "section10")}
+                className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
+              >
                 <div className="about_txt">
                   <Link
                     href="#section10"
@@ -103,7 +111,7 @@ const Career = () => {
                     height="18"
                   />
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="mx-auto md:my-[8rem] my-[3rem] w-4/ w-full">
@@ -465,12 +473,32 @@ const Career = () => {
                       <p>Career Opportunities</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
-                      <div className="star hidden">
-                        <img src="/images/icons-06.png" alt="" />
-                        <img src="/images/icons-06.png" alt="" />
-                        <img src="/images/icons-06.png" alt="" />
-                        <img src="/images/icons-06.png" alt="" />
-                        <img src="/images/icons-06.png" alt="" />
+                      <div className="flex items-center gap-[12px]">
+                        <img
+                          src="/images/icons-06.png"
+                          alt=""
+                          className="md:w-[25px] w-[13px]"
+                        />
+                        <img
+                          src="/images/icons-06.png"
+                          alt=""
+                          className="md:w-[25px] w-[13px]"
+                        />
+                        <img
+                          src="/images/icons-06.png"
+                          alt=""
+                          className="md:w-[25px] w-[13px]"
+                        />
+                        <img
+                          src="/images/icons-06.png"
+                          alt=""
+                          className="md:w-[25px] w-[13px]"
+                        />
+                        <img
+                          src="/images/icons-06.png"
+                          alt=""
+                          className="md:w-[25px] w-[13px]"
+                        />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
                         <p>4.7</p>

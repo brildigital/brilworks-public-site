@@ -359,8 +359,8 @@ a:hover {
 .menu .accordion-container {
   border-bottom: 1px solid gray;
 }
-.menu .accordion-container p:hover {
-  color: #00b6cf;
+.menu .accordion-container p:hover ,.accordion-content:hover  p{
+  color: #00b6cf !important;
   transition: all 0.4s ease-in-out;
 }
 
@@ -607,16 +607,13 @@ a:hover {
   place-content: center;
   cursor: pointer;
 }
-.about_btn:hover .aerrow {
-  transform: translateX(25%);
-}
 .about_btn:hover .about_txt a:hover {
   background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.about_btn:hover .about_txt_domain a:hover {
+.about_btn:hover .about_txt_domain a:hover,.about_btn:hover .about_txt_domain,.about_btn:hover .about_txt {
   background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -647,6 +644,10 @@ a:hover {
 }
 .collapse {
   visibility: visible !important;
+}
+.video-slider video{width: 525px;height: 525px;background: #000;}
+.video-slider .home_sec3_box.overflow-hidden {
+  height: 517px;
 }
 .accordion .accordion-item,
 .accordion,
@@ -1343,6 +1344,9 @@ textarea.form-control-txt {
     rgba(17, 222, 186, 1) 84%
   );
 }
+.background_contact .ready_content_list .p-style,.background_contact .ready_content_sec .p-style{
+  font-size: 20px;
+}
 .home_sec2_txt4 p {
   font-size: var(--font_21);
   font-family: var(--regular);
@@ -1713,7 +1717,6 @@ textarea.form-control-txt {
 }
 
 .ready_img {
-  width: fit-content;
   margin: 0 auto;
   transition: all 0.6s ease-in-out;
 }
@@ -2570,6 +2573,13 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 1280px) {
+  .rotate_img{right: 0;}
+  .video-slider video{
+    width: 394px;
+  }
+  .video-slider .client-review-msg{
+    font-size: 1.6rem !important;
+  }
   .home_txt2 p {
     font-size: 9rem;
   }
@@ -2709,6 +2719,10 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 1024px) {
+  .video-slider video{width: 304px}
+  .video-slider .client-review-msg{font-size: 1.3rem !important;}
+  .client-review-swipers .swiper-button-next{right: 3rem !important;bottom: 10% !important;}
+  .client-review-swipers .swiper-button-prev{right: 140px !important;bottom: 10% !important;}
   .about_box_style {
     padding: 3rem 2rem;
   }
@@ -2836,6 +2850,9 @@ textarea.form-control-txt {
   }
 }
 @media only screen and (max-width: 767px) {
+  .video-slider .home_sec3_box.overflow-hidden{
+    height: unset;
+  }
   .style_sec3_swiper_home {
     padding: 2rem 0 !important;
   }
@@ -3028,7 +3045,7 @@ textarea.form-control-txt {
     top: -4%;
     right: 5%;
     width: 27%;
-    z-index: 2;
+    z-index: 0;
   }
   .sec1_txt_position .our_btn_flex .home_txt3 h1 {
     font-size: 1.2rem;

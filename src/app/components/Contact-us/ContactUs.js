@@ -174,7 +174,7 @@ const ContactUs = () => {
             </div>
             <div className="ready_content">
               <div className="ready_content_sec home_sec2_txt4 pt-2">
-                <p className="white_text !text-left">
+                <p className="white_text !text-left p-style">
                   Just fill out the form, and let our experts look after the
                   rest. Here’s what will happen next:
                 </p>
@@ -183,7 +183,7 @@ const ContactUs = () => {
                 <p className="white_text contact_title !text-left">
                   1. Initiating Contact
                 </p>
-                <p className="white_text !text-left">
+                <p className="white_text !text-left p-style">
                   We will contact you within 24 business hours.
                 </p>
               </div>
@@ -191,7 +191,7 @@ const ContactUs = () => {
                 <p className="white_text !text-left contact_title">
                   2. Share Your Requirement
                 </p>
-                <p className="white_text !text-left">
+                <p className="white_text !text-left p-style">
                   Tell us exactly what you’re looking for and how would you like
                   our team to help you further. Our technical team will evaluate
                   your requirement and reach back to you with a project plan
@@ -201,7 +201,7 @@ const ContactUs = () => {
                 <p className="white_text !text-left contact_title">
                   3. Sign Non-Disclosure Agreement
                 </p>
-                <p className="white_text !text-left">
+                <p className="white_text !text-left p-style">
                   Signing an NDA is like putting your idea in a safe deposit
                   box. Be rest assured about any privacy concerns.
                 </p>
@@ -210,7 +210,7 @@ const ContactUs = () => {
                 <p className="white_text !text-left contact_title">
                   4. Estimated Budget/Cost
                 </p>
-                <p className="white_text !text-left">
+                <p className="white_text !text-left p-style">
                   After analyzing your requirement in-detail we will get back to
                   you with an estimated budget/cost and estimated time required
                   for successful project completion.
@@ -379,7 +379,7 @@ const ContactUs = () => {
 
         <ClientReviews />
 
-        <div className="mx-auto sec3_width_home pt-24">
+        <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem]">
           <div className="bg_grey">
             <div className="like_flex">
               <div className="like_basis">
