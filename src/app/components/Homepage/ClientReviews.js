@@ -30,7 +30,7 @@ const ClientReviews = () => {
         <div className="flex flex-wrap align-middle gap-6  justify-center">
           <div className="cursor-pointer">
             <span className="video-play-icon">
-              {isVideoPause ? (
+              {isVideoPause && !isMobile ? (
                 <span className="play-icon-img hover:!hidden">
                   <img src="/images/icon_play_new.svg" alt="Play Icon" />
                 </span>

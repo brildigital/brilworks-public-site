@@ -42,7 +42,6 @@ const BrilworksSoftwareReview = () => {
     <>
       <div
         className="software-review-container "
-        // className="md:pt-[128px] pt-[32px]"
       >
         {/* <div className="clutch-widget">
           <iframe
@@ -81,26 +80,11 @@ const BrilworksSoftwareReview = () => {
                   </>
 
                   <span className="star_clutch !text-[20px]">
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      style={{ color: "#fbd000" }}
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      style={{ color: "#fbd000" }}
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      style={{ color: "#fbd000" }}
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      style={{ color: "#fbd000" }}
-                    />
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      style={{ color: "#fbd000" }}
-                    />
+                    <FontAwesomeIcon icon={faStar} className="review_stars" />
+                    <FontAwesomeIcon icon={faStar} className="review_stars" />
+                    <FontAwesomeIcon icon={faStar} className="review_stars" />
+                    <FontAwesomeIcon icon={faStar} className="review_stars" />
+                    <FontAwesomeIcon icon={faStar} className="review_stars" />
                   </span>
                 </p>
 
@@ -159,23 +143,23 @@ const BrilworksSoftwareReview = () => {
                               <span className="star_clutch">
                                 <FontAwesomeIcon
                                   icon={faStar}
-                                  style={{ color: "#fbd000" }}
+                                  className="review_stars"
                                 />
                                 <FontAwesomeIcon
                                   icon={faStar}
-                                  style={{ color: "#fbd000" }}
+                                  className="review_stars"
                                 />
                                 <FontAwesomeIcon
                                   icon={faStar}
-                                  style={{ color: "#fbd000" }}
+                                  className="review_stars"
                                 />
                                 <FontAwesomeIcon
                                   icon={faStar}
-                                  style={{ color: "#fbd000" }}
+                                  className="review_stars"
                                 />
                                 <FontAwesomeIcon
                                   icon={faStar}
-                                  style={{ color: "#fbd000" }}
+                                  className="review_stars"
                                 />
                               </span>
                             </p>

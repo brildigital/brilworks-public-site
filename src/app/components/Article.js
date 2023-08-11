@@ -37,11 +37,15 @@ const Article = ({ blok }) => {
         <title>{blok.title}</title>
       </Head>
       <section className="mt-[6rem] mx-[15px] blog-inner" id="scroll-win">
-        <div className="w-[88%] mx-auto">
+        <div className="md:w-[88%] mx-auto w-full">
           <img
-            className="rounded-[30px]"
+            className="md:rounded-[30px] rounded-[15px]"
             alt={blok?.image?.alt}
-            src={blok?.image?.filename}
+            src={`${
+              isMobile
+                ? blok?.mobile_banner?.filename || blok?.image?.filename
+                : blok?.image?.filename
+            }`}
           />
         </div>
 
