@@ -98,7 +98,6 @@ const BrilworksCareerReview = () => {
                           </div>
                         </div>
                       </div>
-                      ;
                     </div>
                   </SwiperSlide>
                 ))

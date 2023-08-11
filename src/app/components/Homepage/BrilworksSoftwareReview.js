@@ -40,9 +40,7 @@ const BrilworksSoftwareReview = () => {
 
   return (
     <>
-      <div
-        className="software-review-container "
-      >
+      <div className="software-review-container ">
         {/* <div className="clutch-widget">
           <iframe
             id="iframe-0.7673398699825025"
@@ -65,7 +63,7 @@ const BrilworksSoftwareReview = () => {
               className={`md:py-[5rem] py-[2rem]  ${isMobile ? "!pr-12" : ""} `}
             >
               <div className="clutch-widget">
-                <p>
+                <p className="md:mr-0 mr-8">
                   <span className="md:!text-[45px] !font-bold text-[25px]">
                     Reviews
                   </span>
@@ -88,7 +86,7 @@ const BrilworksSoftwareReview = () => {
                   </span>
                 </p>
 
-                <div className="clutch-power lg:!relative !static mt-[20px]">
+                <div className="clutch-power lg:!relative !static mt-[20px] md:mr-0 ml-8">
                   <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
                     <p
                       className={`!text-[1rem] flex items-baseline ${
@@ -120,8 +118,9 @@ const BrilworksSoftwareReview = () => {
           speed={isMobile ? 1000 : 1500}
           loop={true}
           pagination={{ clickable: true }}
+          dynamic
         >
-          {reviewData?.length
+          {reviewData?.length > 0
             ? reviewData?.map((dataItem, index) => (
                 <SwiperSlide key={index}>
                   <div className="wpb_wrapper">

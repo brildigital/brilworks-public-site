@@ -64,24 +64,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-java-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                         <Link
@@ -97,24 +99,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-nodejs-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                       </div>
@@ -161,24 +165,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-reactjs-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                       </div>
@@ -225,24 +231,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-aws-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                       </div>
@@ -289,24 +297,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-react-native-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
 
@@ -323,24 +333,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-blockchain-developer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                       </div>
@@ -387,24 +399,26 @@ const ExtensionOfTeam = () => {
                             </Link>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="black_aerrow alignnone wp-image-28 size-full"
-                              src="/images/black_aerrow-1.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              className="gradiant_aerrow alignnone wp-image-29 size-full"
-                              src="/images/arrow-gradiant.png"
-                              alt="arrow"
-                              width="46"
-                              height="18"
-                            />
+                            <Link href="/hire-ui-ux-designer">
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="black_aerrow alignnone wp-image-28 size-full"
+                                src="/images/black_aerrow-1.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                              <img
+                                decoding="async"
+                                loading="lazy"
+                                className="gradiant_aerrow alignnone wp-image-29 size-full"
+                                src="/images/arrow-gradiant.png"
+                                alt="arrow"
+                                width="46"
+                                height="18"
+                              />
+                            </Link>
                           </div>
                         </Link>
                       </div>

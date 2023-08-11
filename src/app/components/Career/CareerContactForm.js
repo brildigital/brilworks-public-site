@@ -86,6 +86,7 @@ const CareerContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="name"
+                            required
                           />
                         </span>
                       </p>
@@ -109,6 +110,7 @@ const CareerContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="company"
+                            required
                           />
                         </span>
                       </p>
@@ -132,6 +134,7 @@ const CareerContactForm = () => {
                             aria-invalid="false"
                             type="email"
                             name="email"
+                            required
                           />
                         </span>
                       </p>
@@ -161,14 +164,16 @@ const CareerContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="success-msg" id="sucess_msg">
+                    <div className="success-msg h-4" id="sucess_msg">
                       {respMessage}
                     </div>
                     <div className="btn_paddinng pt-4">
                       <div className="home_ready_sec transition  !w-[115px]">
                         <p className="flex align-middle justify-center">
                           {isSubmitting ? (
-                            <Loader />
+                            <div className="py-[4px] px-[30px]">
+                              <Loader />
+                            </div>
                           ) : (
                             <input id="submit" name="btnSubmit" type="submit" />
                           )}

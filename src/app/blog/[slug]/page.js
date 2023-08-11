@@ -65,7 +65,10 @@ export default async function Page(props) {
 
         <meta
           property="og:title"
-          content={data?.story?.content?.metatags?.og_title}
+          content={
+            data?.story?.content?.metatags?.og_title ||
+            data?.story?.content?.title
+          }
         ></meta>
 
         <meta
