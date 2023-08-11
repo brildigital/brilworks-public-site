@@ -26,28 +26,28 @@ const ExtensionOfTeam = () => {
                   <div
                     className="accordion-item"
                     data-bs-toggle="tab"
-                    data-bs-target="#accordion-one"
+                    data-bs-target="#accordion-growth-one"
                     type="button"
                     role="tab"
-                    aria-controls="accordion-one"
+                    aria-controls="accordion-growth-one"
                     aria-selected="true"
                   >
-                    <h2 className="accordion-header" id="headingOne">
+                    <h2 className="accordion-header" id="headinggrowth-One">
                       <button
                         className="accordion-button xl:text-[1.8rem] md:text-[26px] text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
+                        data-bs-target="#collapsegrowth-One"
                         aria-expanded="true"
-                        aria-controls="collapseOne"
+                        aria-controls="collapsegrowth-One"
                       >
                         Backend Developer
                       </button>
                     </h2>
                     <div
-                      id="collapseOne"
+                      id="collapsegrowth-One"
                       className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingOne"
+                      aria-labelledby="headinggrowth-One"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
@@ -123,28 +123,28 @@ const ExtensionOfTeam = () => {
                   <div
                     className="accordion-item"
                     data-bs-toggle="tab"
-                    data-bs-target="#accordion-two"
+                    data-bs-target="#accordion-growth-two"
                     type="button"
                     role="tab"
-                    aria-controls="accordion-two"
+                    aria-controls="accordion-growth-two"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headingTwo">
+                    <h2 className="accordion-header" id="headinggrowth-Two">
                       <button
                         className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo"
+                        data-bs-target="#collapsegrowth-Two"
                         aria-expanded="false"
-                        aria-controls="collapseTwo"
+                        aria-controls="collapsegrowth-Two"
                       >
                         Frontend Developer
                       </button>
                     </h2>
                     <div
-                      id="collapseTwo"
+                      id="collapsegrowth-Two"
                       className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingTwo"
+                      aria-labelledby="headinggrowth-Two"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
@@ -187,28 +187,28 @@ const ExtensionOfTeam = () => {
                   <div
                     className="accordion-item"
                     data-bs-toggle="tab"
-                    data-bs-target="#accordion-three"
+                    data-bs-target="#accordion-growth-three"
                     type="button"
                     role="tab"
-                    aria-controls="accordion-three"
+                    aria-controls="accordion-growth-three"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headingThree">
+                    <h2 className="accordion-header" id="headinggrowth-Three">
                       <button
                         className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
+                        data-bs-target="#collapsegrowth-Three"
                         aria-expanded="false"
-                        aria-controls="collapseThree"
+                        aria-controls="collapsegrowth-Three"
                       >
                         Cloud Services
                       </button>
                     </h2>
                     <div
-                      id="collapseThree"
+                      id="collapsegrowth-Three"
                       className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingThree"
+                      aria-labelledby="headinggrowth-Three"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
@@ -251,28 +251,28 @@ const ExtensionOfTeam = () => {
                   <div
                     className="accordion-item"
                     data-bs-toggle="tab"
-                    data-bs-target="#accordion-four"
+                    data-bs-target="#accordion-growth-four"
                     type="button"
                     role="tab"
-                    aria-controls="accordion-four"
+                    aria-controls="accordion-growth-four"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headingFour">
+                    <h2 className="accordion-header" id="headinggrowth-Four">
                       <button
                         className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour"
+                        data-bs-target="#collapsegrowth-Four"
                         aria-expanded="false"
-                        aria-controls="collapseFour"
+                        aria-controls="collapsegrowth-Four"
                       >
                         Mobile App Developer
                       </button>
                     </h2>
                     <div
-                      id="collapseFour"
+                      id="collapsegrowth-Four"
                       className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingFour"
+                      aria-labelledby="headinggrowth-Four"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
@@ -349,28 +349,28 @@ const ExtensionOfTeam = () => {
                   <div
                     className="accordion-item"
                     data-bs-toggle="tab"
-                    data-bs-target="#accordion-five"
+                    data-bs-target="#accordion-growth-five"
                     type="button"
                     role="tab"
-                    aria-controls="accordion-five"
+                    aria-controls="accordion-growth-five"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headingFive">
+                    <h2 className="accordion-header" id="headinggrowth-Five">
                       <button
                         className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive"
+                        data-bs-target="#collapsegrowth-Five"
                         aria-expanded="false"
-                        aria-controls="collapseFive"
+                        aria-controls="collapsegrowth-Five"
                       >
                         UI/UX Design
                       </button>
                     </h2>
                     <div
-                      id="collapseFive"
+                      id="collapsegrowth-Five"
                       className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                      aria-labelledby="headingFive"
+                      aria-labelledby="headinggrowth-Five"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">

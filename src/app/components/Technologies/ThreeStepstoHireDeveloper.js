@@ -204,21 +204,22 @@ const ThreeStepstoHireDeveloper = () => {
           </div>
 
           <div className="w-full md:my-[100px] my-[40px]">
-            <div className="btn_paddinng btn_flex !mx-auto">
-              <div className="formBtn_icon">
-                <p>
-                  <img src="/images/icons2-04.png" alt="call" />
-                </p>
-              </div>
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
+            <Link
+              href="#section10_service"
+              onClick={(e) => scrollToSection(e, "section10_service")}
+            >
+              <div className="btn_paddinng btn_flex !mx-auto">
+                <div className="formBtn_icon">
+                  <p>
+                    <img src="/images/icons2-04.png" alt="call" />
+                  </p>
+                </div>
+
                 <p className="xl:!text-[20px] lg:!text-[18px] !px-0">
                   Schedule A Developer Interview
                 </p>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -555,58 +556,63 @@ const ThreeStepstoHireDeveloper = () => {
         </div>
 
         <div className="pt-[5rem]">
-          <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-            <div className="chat_icon">
-              <img
-                src="/images/hire-hand.png"
-                alt="hand"
-                width="28"
-                height="44"
-              />
+          <Link
+            href="#section10_service"
+            onClick={(e) => scrollToSection(e, "section10_service")}
+          >
+            <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
+              <div className="chat_icon">
+                <img
+                  src="/images/hire-hand.png"
+                  alt="hand"
+                  width="28"
+                  height="44"
+                />
+              </div>
+              <div className="chat_btn_technology xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
+                <p className="transition ng-binding">
+                  <Link
+                    href="#section10_service"
+                    onClick={(e) => scrollToSection(e, "section10_service")}
+                  >
+                    {pathname === "/hire-reactjs-developer" ? (
+                      "Hire React.js Developers"
+                    ) : (
+                      <>
+                        {pathname === "/hire-java-developer" ? (
+                          "Hire Java Developers"
+                        ) : (
+                          <>
+                            {pathname === "/hire-nodejs-developer" ? (
+                              "Hire Node.js Developers"
+                            ) : (
+                              <>
+                                {pathname === "/hire-react-native-developer" ? (
+                                  "Hire React Native Developers"
+                                ) : (
+                                  <>
+                                    {pathname === "/hire-aws-developer" ? (
+                                      "Hire AWS Developers"
+                                    ) : (
+                                      <>
+                                        {pathname === "/hire-ui-ux-designer"
+                                          ? "Hire UI UX Designers"
+                                          : "Hire Blockchain Developers"}
+                                      </>
+                                    )}
+                                  </>
+                                )}
+                              </>
+                            )}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div className="chat_btn_technology">
-              <p className="transition ng-binding">
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  {pathname === "/hire-reactjs-developer" ? (
-                    "Hire React.js Developers"
-                  ) : (
-                    <>
-                      {pathname === "/hire-java-developer" ? (
-                        "Hire Java Developers"
-                      ) : (
-                        <>
-                          {pathname === "/hire-nodejs-developer" ? (
-                            "Hire Node.js Developers"
-                          ) : (
-                            <>
-                              {pathname === "/hire-react-native-developer" ? (
-                                "Hire React Native Developers"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-aws-developer" ? (
-                                    "Hire AWS Developers"
-                                  ) : (
-                                    <>
-                                      {pathname === "/hire-ui-ux-designer"
-                                        ? "Hire UI UX Designers"
-                                        : "Hire Blockchain Developers"}
-                                    </>
-                                  )}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </Link>
-              </p>
-            </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
