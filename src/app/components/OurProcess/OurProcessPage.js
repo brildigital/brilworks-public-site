@@ -46,7 +46,9 @@ const OurProcessPage = () => {
           <p>
             <img
               className="how_works_img alignnone"
-              src="/images/work-baner.png"
+              src={
+                "https://a.storyblok.com/f/219851/1398x780/2fdaa336f4/work-baner.png"
+              }
               alt="our process"
             />
           </p>
@@ -1049,7 +1051,9 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
-                        src="/images/Prototype.jpg"
+                        src={
+                          "https://a.storyblok.com/f/219851/692x920/07ee0875cf/prototype.jpg"
+                        }
                         alt="requirements-analysis"
                       />
                     </div>
@@ -1076,7 +1080,7 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
-                        src="/images/end-to-end.png"
+                        src={`https://a.storyblok.com/f/219851/692x920/6553d4ab22/end-to-end.png`}
                         alt="requirements-analysis"
                       />
                     </div>

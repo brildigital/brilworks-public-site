@@ -38,7 +38,7 @@ const Config = ({ blok }) => {
                           <div className="mega_menu_width">
                             <div className="mega_menu_style">
                               <div className="mega_menu_txt">
-                                <Link href="industry/fintech-software-development/index.htm">
+                                <Link href="/industry/fintech-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -49,7 +49,7 @@ const Config = ({ blok }) => {
                                     <p>FINTECH</p>
                                   </div>
                                 </Link>
-                                <Link href="industry/media-entertainment-software-development/index.htm">
+                                <Link href="/industry/media-entertainment-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -60,7 +60,7 @@ const Config = ({ blok }) => {
                                     <p>MEDIA & ENTERTAINMENT</p>
                                   </div>
                                 </Link>
-                                <Link href="industry/fleet-management-software-development/index.htm">
+                                <Link href="/industry/fleet-management-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -71,7 +71,7 @@ const Config = ({ blok }) => {
                                     <p>FLEET MANAGEMENT + GPS</p>
                                   </div>
                                 </Link>
-                                <Link href="industry/healthcare-software-development/index.htm">
+                                <Link href="/industry/healthcare-software-development/index.htm">
                                   <div className="flex_mega_menu">
                                     <div className="flex_30_mega_menu">
                                       <img
@@ -126,7 +126,7 @@ const Config = ({ blok }) => {
                       </div>
                     </Link>
                   </div>
-                  <Link href="contact-us/index.htm">
+                  <Link href="/contact-us/i">
                     <div className="header_sec1_txt2 hidden-xs">
                       <p className="transition">LET&apos;S TALK</p>
                     </div>

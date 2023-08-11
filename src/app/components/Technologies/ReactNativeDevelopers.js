@@ -49,8 +49,8 @@ const ReactNativeDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Juned</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Juned</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. React Native Developer
                     </p>
                   </div>
@@ -165,8 +165,8 @@ const ReactNativeDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Dinesh</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Dinesh</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. React Native Developer
                     </p>
                   </div>
@@ -289,8 +289,8 @@ const ReactNativeDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Kinjal</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Kinjal</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. React Native Developer
                     </p>
                   </div>

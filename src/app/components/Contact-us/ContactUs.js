@@ -31,7 +31,7 @@ const ContactUs = () => {
         res.text();
       })
       .then((finalResp) => {
-        setRespMessage(finalResp);
+        setRespMessage("Your response is submitted successfully.");
         setIsSubmitting(false);
         clearMessage();
       })
@@ -135,12 +135,14 @@ const ContactUs = () => {
                     </span>
                   </p>
                 </div>
-                <div className="success-msg" id="sucess_msg">
+                <div className="success-msg h-4" id="sucess_msg">
                   {respMessage}
                 </div>
                 <div className="btn_paddinng contact_btn btn_flex">
                   {isSubmitting ? (
-                    <Loader />
+                    <div className="py-[8px] px-[41px]">
+                      <Loader />
+                    </div>
                   ) : (
                     <>
                       <div className="formBtn_icon">
@@ -480,12 +482,14 @@ const ContactUs = () => {
                           </span>
                         </p>
                       </div>
-                      <div className="success-msg" id="sucess_msg">
+                      <div className="success-msg h-4" id="sucess_msg">
                         {respMessage}
                       </div>
                       <div className="btn_paddinng contact_btn btn_flex">
                         {isSubmitting ? (
-                          <Loader />
+                          <div className="py-[8px] px-[41px]">
+                            <Loader />
+                          </div>
                         ) : (
                           <>
                             <div className="formBtn_icon">

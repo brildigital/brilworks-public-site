@@ -11,6 +11,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import FetchDataSpinner from "./FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.accessToken,
@@ -116,60 +117,64 @@ const BrilworksSoftwareReview = () => {
           slidesPerGroup={isMobile ? 1 : 4}
           loopFillGroupWithBlank={true}
           speed={isMobile ? 1000 : 1500}
-          loop={true}
+          loop={false}
+          shouldSwiperUpdate={true}
           pagination={{ clickable: true }}
-          dynamic
         >
-          {reviewData?.length > 0
-            ? reviewData?.map((dataItem, index) => (
-                <SwiperSlide key={index}>
-                  <div className="wpb_wrapper">
-                    <div className="clutch-swiper home_sec3_box mr-[1px]">
-                      <div className="dots_flex">
-                        <div className="dots !bg-[#00dfb8]"></div>
-                        <div className="dots"></div>
-                        <div className="dots"></div>
+          {reviewData?.length > 0 ? (
+            reviewData?.map((dataItem, index) => (
+              <SwiperSlide key={index}>
+                <div className="wpb_wrapper">
+                  <div className="clutch-swiper home_sec3_box mr-[1px]">
+                    <div className="dots_flex">
+                      <div className="dots !bg-[#00dfb8]"></div>
+                      <div className="dots"></div>
+                      <div className="dots"></div>
+                    </div>
+                    <div className="white-background">
+                      <div className="clutch_content">
+                        <p>{dataItem?.content?.content}</p>
                       </div>
-                      <div className="white-background">
-                        <div className="clutch_content">
-                          <p>{dataItem.content.content}</p>
-                        </div>
-                        <div className="clutch_author">
-                          <div className="clutch_img"></div>
-                          <div className="clutch_position">
-                            <p>{dataItem.content.author}</p>
-                            <p>
-                              <span className="star_clutch">
-                                <FontAwesomeIcon
-                                  icon={faStar}
-                                  className="review_stars"
-                                />
-                                <FontAwesomeIcon
-                                  icon={faStar}
-                                  className="review_stars"
-                                />
-                                <FontAwesomeIcon
-                                  icon={faStar}
-                                  className="review_stars"
-                                />
-                                <FontAwesomeIcon
-                                  icon={faStar}
-                                  className="review_stars"
-                                />
-                                <FontAwesomeIcon
-                                  icon={faStar}
-                                  className="review_stars"
-                                />
-                              </span>
-                            </p>
-                          </div>
+                      <div className="clutch_author">
+                        <div className="clutch_img"></div>
+                        <div className="clutch_position">
+                          <p>{dataItem?.content?.author}</p>
+                          <p>
+                            <span className="star_clutch">
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="review_stars"
+                              />
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="review_stars"
+                              />
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="review_stars"
+                              />
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="review_stars"
+                              />
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="review_stars"
+                              />
+                            </span>
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </SwiperSlide>
-              ))
-            : null}
+                </div>
+              </SwiperSlide>
+            ))
+          ) : (
+            <div className="flex align-middle justify-center">
+              <FetchDataSpinner />
+            </div>
+          )}
         </Swiper>
       </div>
     </>

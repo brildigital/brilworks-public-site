@@ -48,8 +48,8 @@ const NodeJSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Juned</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Juned</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Node.js Developer
                     </p>
                   </div>
@@ -179,8 +179,8 @@ const NodeJSDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Lavesh</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Lavesh</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>
@@ -321,8 +321,8 @@ const NodeJSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Minal</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Minal</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Node.js Engineer
                     </p>
                   </div>

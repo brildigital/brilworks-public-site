@@ -49,8 +49,8 @@ const ReactJSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Juned Lanja</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Juned Lanja</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>
@@ -192,8 +192,10 @@ const ReactJSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Minal Vaghashiya</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">
+                      Minal Vaghashiya
+                    </p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Software Engineer
                     </p>
                   </div>
@@ -327,8 +329,8 @@ const ReactJSDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Lavesh Katariya</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Lavesh Katariya</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>

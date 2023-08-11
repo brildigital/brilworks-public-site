@@ -26,7 +26,9 @@ const BlockchainTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/block-chain.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1398x780/cf08cd7d7d/block-chain.png"
+                }
                 alt="Blockchain banner"
               />
             </p>

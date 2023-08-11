@@ -52,7 +52,9 @@ const FleetManagementNGPS = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/Banner-with-radius.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1398x780/02507493b4/banner-with-radius.png"
+                }
                 alt="our process"
               />
             </p>
@@ -1160,7 +1162,9 @@ const FleetManagementNGPS = () => {
 
             <div className="my-[40px]">
               <img
-                src="/images/image-3-1.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1401x701/28098868b7/image-3-1.png"
+                }
                 alt="MEDIA &amp; ENTERTAINMENT APPS"
               />
             </div>

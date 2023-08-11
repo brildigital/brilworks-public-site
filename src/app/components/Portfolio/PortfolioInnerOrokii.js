@@ -60,7 +60,9 @@ const PortfolioInnerOrokii = () => {
                       decoding="async"
                       loading="lazy"
                       className="border_redius20 alignnone"
-                      src="/images/Identifying-the-Business-Needs-1.jpg"
+                      src={
+                        "https://a.storyblok.com/f/219851/692x362/34d16e1fa9/identifying-the-business-needs-1.jpg"
+                      }
                       alt="Identifying the Business Needs"
                       width="691"
                       height="361"

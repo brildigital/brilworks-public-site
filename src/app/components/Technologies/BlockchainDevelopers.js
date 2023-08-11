@@ -45,8 +45,8 @@ const BlockchainDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Parth</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Parth</p>
+                    <p className="font_style_sec3 ng-binding !font-bold ">
                       Blockchain Developer
                     </p>
                   </div>
@@ -170,8 +170,8 @@ const BlockchainDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Ankur</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Ankur</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Mid-Sr. Blockchain Developer
                     </p>
                   </div>
@@ -297,8 +297,8 @@ const BlockchainDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Jagat</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Jagat</p>
+                    <p className="font_style_sec3 ng-binding !font-bold ">
                       Jr. Blockchain Developer
                     </p>
                   </div>

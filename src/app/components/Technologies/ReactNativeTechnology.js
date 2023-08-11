@@ -26,7 +26,9 @@ const ReactNativeTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/REACT-NATIVE-banner.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1398x780/5c508e3cb0/react-native-banner.png"
+                }
                 alt="React Native banner"
               />
             </p>

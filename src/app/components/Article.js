@@ -6,8 +6,8 @@ import "./Blogstyle.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import BlogContactForm from "./Blog/BlogContactForm";
-import Head from "next/head";
 import { useMediaQuery } from "react-responsive";
+import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.accessToken,
@@ -18,7 +18,7 @@ const Article = ({ blok }) => {
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
 
-  const justTest = blok?.content;
+  const blogTableOfContent = blok?.content;
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
@@ -36,7 +36,7 @@ const Article = ({ blok }) => {
 
   useEffect(() => {
     const parser = new DOMParser();
-    const doc = parser.parseFromString(justTest, "text/html");
+    const doc = parser.parseFromString(blogTableOfContent, "text/html");
     const headings = Array.from(
       doc.querySelectorAll("h1, h2, h3, h4, h5, h6")
     ).map((heading) => {
@@ -45,13 +45,29 @@ const Article = ({ blok }) => {
       return { level, text };
     });
     setHeadings(headings);
-  }, [justTest]);
+  }, [blogTableOfContent]);
+
+  useEffect(() => {
+    // Add temporary IDs to the headings for smooth scrolling
+    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    headings.forEach((heading, index) => {
+      heading.id = `temp-section-${index}`;
+    });
+  }, []); // Run once after component mounts
+
+  function handleTableOfContentLinkClick(event) {
+    event.preventDefault();
+
+    const targetId = event.target.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <>
-      <Head>
-        <title>{blok.title}</title>
-      </Head>
       <section className="mt-[6rem] mx-[15px] blog-inner" id="scroll-win">
         <div className="md:w-[88%] mx-auto w-full">
           <img
@@ -71,7 +87,7 @@ const Article = ({ blok }) => {
               <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
                 <div
                   className={`${
-                    blok.table_content
+                    headings?.length
                       ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
                       : "!hidden"
                   }`}
@@ -83,15 +99,25 @@ const Article = ({ blok }) => {
                   </div>
                   <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
                     <ul>
-                      {headings.length
-                        ? headings.map((heading) => (
-                            <li key={heading.text}>
-                              <a href={`#${heading.id}`}>{heading.text}</a>
-                              {heading.subheadings &&
-                                renderTableOfContents(heading.subheadings)}
-                            </li>
-                          ))
-                        : null}
+                      {headings?.length ? (
+                        headings.map((heading, index) => (
+                          <li key={index}>
+                            <Link
+                              href={`#temp-section-${index + 1}`} // Temporary IDs
+                              onClick={handleTableOfContentLinkClick}
+                            >
+                              {heading.text}
+                            </Link>
+                            {/* <a href={`#${heading.id}`}>{heading?.text}</a> */}
+                            {heading.subheadings &&
+                              renderTableOfContents(heading?.subheadings)}
+                          </li>
+                        ))
+                      ) : (
+                        <div className="flex align-middle justify-center">
+                          <FetchDataSpinner />
+                        </div>
+                      )}
                     </ul>
                     {/* {parse(blok?.table_content)} */}
                   </nav>
@@ -105,7 +131,7 @@ const Article = ({ blok }) => {
                   <p className="p-0"> {blok?.subtitle}</p>
                 </div>
                 <div className="home_sec2_txt3 pt-[2.5rem]">
-                  <h1 className="entry-title default-max-width">
+                  <h1 className="entry-title default-max-width md:!text-[3rem]">
                     {blok?.title}
                   </h1>
                 </div>

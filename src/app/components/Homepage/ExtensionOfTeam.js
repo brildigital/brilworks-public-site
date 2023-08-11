@@ -433,14 +433,16 @@ const ExtensionOfTeam = () => {
                   decoding="async"
                   loading="lazy"
                   className="alignnone wp-image-40 size-full !ml-auto !w-full"
-                  src="/images/team.jpg"
+                  src={
+                    "https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg"
+                  }
                   alt="Teamwork"
                   width="1011"
                   height="1101"
                   srcSet="
-                    /images/team.jpg          1011w,
+                    {`https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg`}          1011w,
                     /images/team-275x300.jpg   275w,
-                    /images/team-940x1024.jpg  940w,
+                    {`https://a.storyblok.com/f/219851/940x1024/226903f3e2/team-940x1024.jpg`}  940w,
                     /images/team-768x836.jpg   768w
                   "
                   sizes="(max-width: 1011px) 100vw, 1011px"

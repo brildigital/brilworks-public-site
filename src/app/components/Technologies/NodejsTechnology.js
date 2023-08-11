@@ -28,7 +28,7 @@ const NodejsTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/nord-services-banner.png"
+                src={"https://a.storyblok.com/f/219851/1398x780/f539ccd77f/node-services-banner.png"}
                 alt="Node banner"
               />
             </p>

@@ -40,7 +40,9 @@ const MediaAndEntertainment = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/media-1.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1398x780/98db6f1ff8/media-1.png"
+                }
                 alt="our process"
               />
             </p>
@@ -605,7 +607,9 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="/images/OTT-Streaming-Apps-bg.png"
+                          src={
+                            "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png"
+                          }
                           alt="OTT Streaming Apps"
                         />
                       </div>
@@ -727,7 +731,9 @@ const MediaAndEntertainment = () => {
 
           <div className="my-[40px]">
             <img
-              src="/images/image-3-1.webp"
+              src={
+                "https://a.storyblok.com/f/219851/1401x701/1bb92f5739/image-3-1.webp"
+              }
               alt="MEDIA &amp; ENTERTAINMENT APPS"
             />
           </div>
