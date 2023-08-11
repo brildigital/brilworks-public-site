@@ -727,7 +727,7 @@ const MediaAndEntertainment = () => {
 
           <div className="my-[40px]">
             <img
-              src="https://www.brilworks.com/wp-content/uploads/2023/04/image-3-1.webp"
+              src="/images/image-3-1.webp"
               alt="MEDIA &amp; ENTERTAINMENT APPS"
             />
           </div>
