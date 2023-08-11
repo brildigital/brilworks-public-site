@@ -16,6 +16,9 @@ const Storyblok = new StoryblokClient({
 const Article = ({ blok }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [blogData, setBlogData] = useState(null);
+  const [headings, setHeadings] = useState([]);
+
+  const justTest = blok?.content;
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
@@ -30,6 +33,19 @@ const Article = ({ blok }) => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(justTest, "text/html");
+    const headings = Array.from(
+      doc.querySelectorAll("h1, h2, h3, h4, h5, h6")
+    ).map((heading) => {
+      const level = parseInt(heading.tagName.slice(1), 10);
+      const text = heading.textContent;
+      return { level, text };
+    });
+    setHeadings(headings);
+  }, [justTest]);
 
   return (
     <>
@@ -66,7 +82,18 @@ const Article = ({ blok }) => {
                     </p>
                   </div>
                   <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
-                    {parse(blok?.table_content)}
+                    <ul>
+                      {headings.length
+                        ? headings.map((heading) => (
+                            <li key={heading.text}>
+                              <a href={`#${heading.id}`}>{heading.text}</a>
+                              {heading.subheadings &&
+                                renderTableOfContents(heading.subheadings)}
+                            </li>
+                          ))
+                        : null}
+                    </ul>
+                    {/* {parse(blok?.table_content)} */}
                   </nav>
                 </div>
               </div>
@@ -77,7 +104,7 @@ const Article = ({ blok }) => {
                 <div className="home_sec2_txt4 blog-cat mt-[10px]">
                   <p className="p-0"> {blok?.subtitle}</p>
                 </div>
-                <div className="home_sec2_txt3 py-[2.5rem]">
+                <div className="home_sec2_txt3 pt-[2.5rem]">
                   <h1 className="entry-title default-max-width">
                     {blok?.title}
                   </h1>

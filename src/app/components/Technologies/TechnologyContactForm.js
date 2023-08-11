@@ -33,7 +33,7 @@ const TechnologyContactForm = () => {
         res.text();
       })
       .then((finalResp) => {
-        setRespMessage(finalResp);
+        setRespMessage("Your response is submitted successfully.");
         setIsSubmitting(false);
         clearMessage();
       })
@@ -117,13 +117,13 @@ const TechnologyContactForm = () => {
                     </p>
                   </div>
 
-                  <div className="success-msg m-8" id="sucess_msg">
+                  <div className="success-msg mb-6 mt-2 h-2" id="sucess_msg">
                     {respMessage}
                   </div>
 
-                  <div className="contact_btn_technology  btn_flex !w-50%]">
+                  <div className="contact_btn_technology btn_flex !w-50%]">
                     {isSubmitting ? (
-                      <div className="formBtn_icon send_btn w-[80px] flex align-middle justify-center h-[30px] mt-[10px]">
+                      <div className="formBtn_icon send_btn w-[100px] flex align-middle justify-center h-[35px] mt-[12px]">
                         <Loader />
                       </div>
                     ) : (

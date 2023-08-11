@@ -137,7 +137,7 @@ const Header = () => {
       <div className="header">
         <div
           className={`sec1_header ${
-            isPopupMenuActive && window.scrollY > 150 ? "bg-white" : ""
+            isPopupMenuActive && window.scrollY > 150 || isMainMenuActive ? "bg-white" : ""
           }`}
         >
           <div className="header_width padding_header">

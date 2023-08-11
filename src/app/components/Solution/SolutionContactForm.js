@@ -7,6 +7,12 @@ const SolutionContactForm = () => {
 
   const url = process.env.googleSheetURL;
 
+  const clearMessage = () => {
+    setTimeout(() => {
+      setRespMessage("");
+    }, 5000);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -101,20 +107,22 @@ const SolutionContactForm = () => {
                       </span>
                     </p>
                   </div>
-                  <div className="success-msg" id="sucess_msg">
+                  <div className="success-msg h-4" id="sucess_msg">
                     {respMessage}
                   </div>
                   <div className="btn_paddinng contact_btn btn_flex">
                     {isSubmitting ? (
-                      <Loader />
+                      <div className="py-[8px] px-[41px]">
+                        <Loader />
+                      </div>
                     ) : (
                       <>
-                        <div className="formBtn_icon">
-                          <p>
+                        <div className="formBtn_icon grid-flow-row">
+                          <p >
                             <img src="/images/right_arrow.png" alt="arrow" />
                           </p>
                         </div>
-                        <p>
+                        <p c>
                           <input
                             className="send_btn"
                             id="submit"
