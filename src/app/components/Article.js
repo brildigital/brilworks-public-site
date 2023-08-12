@@ -37,9 +37,7 @@ const Article = ({ blok }) => {
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(blogTableOfContent, "text/html");
-    const headings = Array.from(
-      doc.querySelectorAll("h1, h2, h3, h4, h5, h6")
-    ).map((heading) => {
+    const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
       const level = parseInt(heading.tagName.slice(1), 10);
       const text = heading.textContent;
       return { level, text };
@@ -49,11 +47,11 @@ const Article = ({ blok }) => {
 
   useEffect(() => {
     // Add temporary IDs to the headings for smooth scrolling
-    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const headings = document.querySelectorAll("h2");
     headings.forEach((heading, index) => {
       heading.id = `temp-section-${index}`;
     });
-  }, []); // Run once after component mounts
+  }, []);
 
   function handleTableOfContentLinkClick(event) {
     event.preventDefault();
@@ -103,12 +101,11 @@ const Article = ({ blok }) => {
                         headings.map((heading, index) => (
                           <li key={index}>
                             <Link
-                              href={`#temp-section-${index + 1}`} // Temporary IDs
+                              href={`#temp-section-${index}`}
                               onClick={handleTableOfContentLinkClick}
                             >
                               {heading.text}
                             </Link>
-                            {/* <a href={`#${heading.id}`}>{heading?.text}</a> */}
                             {heading.subheadings &&
                               renderTableOfContents(heading?.subheadings)}
                           </li>
@@ -171,18 +168,6 @@ const Article = ({ blok }) => {
             <div className="basis-[25%]">
               <BlogContactForm />
             </div>
-
-            {/* <div className="text-center md:!w-2/4 lg:w-2/3 w-full"> */}
-            {/* <h1 className="title-font blog-title text-left sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              {blok.title}
-            </h1> */}
-            {/* <h1 className="title-font sm:text-3xl text-2xl mb-4 font-medium ">
-            {blok.subtitle}
-          </h1> */}
-            {/* <div className="mb-8 leading-relaxed text-justify">
-              {parse(blok.content)}
-            </div> */}
-            {/* </div> */}
           </div>
         </div>
 
