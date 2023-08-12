@@ -440,10 +440,10 @@ const ExtensionOfTeam = () => {
                   width="1011"
                   height="1101"
                   srcSet="
-                    {`https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg`}          1011w,
-                    /images/team-275x300.jpg   275w,
-                    {`https://a.storyblok.com/f/219851/940x1024/226903f3e2/team-940x1024.jpg`}  940w,
-                    /images/team-768x836.jpg   768w
+                  https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg          1011w,
+                  /images/team-275x300.jpg   275w,
+                  https://a.storyblok.com/f/219851/940x1024/226903f3e2/team-940x1024.jpg  940w,
+                  /images/team-768x836.jpg   768w
                   "
                   sizes="(max-width: 1011px) 100vw, 1011px"
                 />

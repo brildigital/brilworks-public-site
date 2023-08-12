@@ -49,7 +49,9 @@ const ClientReviews = () => {
               {reviewIndex === 0 ? (
                 <video
                   className="!rounded-[30px]"
-                  src={"/video/david_ceo_feedback.mp4"}
+                  src={
+                    "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4"
+                  }
                   controls
                   loading="lazy"
                   width="320"
@@ -58,7 +60,9 @@ const ClientReviews = () => {
               ) : reviewIndex === 1 ? (
                 <video
                   className="!rounded-[30px]"
-                  src={"/video/Liz_feedback.mp4"}
+                  src={
+                    "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
+                  }
                   controls
                   loading="lazy"
                   width="320"
@@ -67,7 +71,9 @@ const ClientReviews = () => {
               ) : reviewIndex === 2 ? (
                 <video
                   className="!rounded-[30px]"
-                  src={"/video/bisi_trim.mp4"}
+                  src={
+                    "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4"
+                  }
                   controls
                   loading="lazy"
                   width="320"
@@ -76,7 +82,9 @@ const ClientReviews = () => {
               ) : reviewIndex === 3 ? (
                 <video
                   className="!rounded-[30px]"
-                  src={"/video/Edwin_feedback.mp4"}
+                  src={
+                    "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4"
+                  }
                   controls
                   loading="lazy"
                   width="320"
