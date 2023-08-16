@@ -188,9 +188,9 @@ const SeeingBelieving = () => {
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">
-            <Link href="portfolio" className="text-[21px]">
+            <p href="portfolio" className="change_link text-[21px]">
               View all works
-            </Link>
+            </p>
           </div>
           <div className="aerrow relative">
             <img
@@ -218,9 +218,9 @@ const SeeingBelieving = () => {
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">
-            <Link href="contact-us" className="text-[21px]">
+            <p href="contact-us" className="change_link text-[21px]">
               Contact Us
-            </Link>
+            </p>
           </div>
           <div className="aerrow relative">
             <img

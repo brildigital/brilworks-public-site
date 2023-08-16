@@ -112,14 +112,10 @@ const BlockchainTechnology = () => {
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#pricing"
-                        onClick={(e) => scrollToSection(e, "pricing")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Plan & Pricing
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Plan & Pricing
+                      </p>
                     </div>
                   </Link>
 
@@ -133,14 +129,10 @@ const BlockchainTechnology = () => {
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Hire Blockchain Developers
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Hire Blockchain Developers
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -328,14 +320,10 @@ const BlockchainTechnology = () => {
                     <img src="/images/icons-05.png" alt="call" />
                   </p>
                 </div>
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    Get A Quote For Your Project
-                  </p>
-                </Link>
+
+                <p className="xl:!text-[20px] lg:!text-[18px]">
+                  Get A Quote For Your Project
+                </p>
               </div>
             </Link>
           </div>

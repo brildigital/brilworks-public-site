@@ -17,35 +17,31 @@ const Brilliant = () => {
         </div>
 
         <Link
-          href="about-us"
+          href="/about-us"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px]"
         >
           <div className="about_txt">
-            <Link href="/about-us" className="text-[21px]">
-              About Us
-            </Link>
+            <p className="change_link text-[21px]">About Us</p>
           </div>
           <div className="aerrow relative">
-            <Link href="/about-us">
-              <img
-                decoding="async"
-                loading="lazy"
-                className="black_aerrow alignnone wp-image-28 size-full"
-                src="/images/black_aerrow-1.png"
-                alt="arrow"
-                width="46"
-                height="18"
-              />
-              <img
-                decoding="async"
-                loading="lazy"
-                className="gradiant_aerrow alignnone wp-image-29 size-full"
-                src="/images/arrow-gradiant.png"
-                alt="arrow"
-                width="46"
-                height="18"
-              />
-            </Link>
+            <img
+              decoding="async"
+              loading="lazy"
+              className="black_aerrow alignnone wp-image-28 size-full"
+              src="/images/black_aerrow-1.png"
+              alt="arrow"
+              width="46"
+              height="18"
+            />
+            <img
+              decoding="async"
+              loading="lazy"
+              className="gradiant_aerrow alignnone wp-image-29 size-full"
+              src="/images/arrow-gradiant.png"
+              alt="arrow"
+              width="46"
+              height="18"
+            />
           </div>
         </Link>
       </div>

@@ -32,12 +32,6 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <head>
-        <meta
-          property="article:publisher"
-          content="https://www.facebook.com/brilwork/"
-        />
-      </head>
       <Header />
       <HealthCare />
       <Footer />

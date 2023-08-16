@@ -105,12 +105,7 @@ const FleetManagementNGPS = () => {
                       </p>
                     </div>
                     <p className="xl:!text-[20px] lg:!text-[18px]">
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        Request For Proposal
-                      </Link>
+                      Request For Proposal
                     </p>
                   </div>
                 </Link>
@@ -717,14 +712,10 @@ const FleetManagementNGPS = () => {
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Build My Fleet Management Software
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Build My Fleet Management Software
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -1134,14 +1125,10 @@ const FleetManagementNGPS = () => {
                           <img src="/images/icons2-04.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Speak with Our Experts
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Speak with Our Experts
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -1491,14 +1478,10 @@ const FleetManagementNGPS = () => {
                       <img src="/images/right_arrow.png" alt="call" />
                     </p>
                   </div>
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <p className="xl:!text-[20px] lg:!text-[18px]">
-                      Work with us
-                    </p>
-                  </Link>
+
+                  <p className="xl:!text-[20px] lg:!text-[18px]">
+                    Work with us
+                  </p>
                 </div>
               </Link>
             </div>

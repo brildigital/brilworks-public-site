@@ -273,33 +273,16 @@ const TechnologyCombination = () => {
             <div className="chat_btn_technology">
               <p className="transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
                 {pathname === "/hire-reactjs-developer" ? (
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    Hire Full Stack Reactjs Developers
-                  </Link>
+                  "Hire Full Stack Reactjs Developers"
                 ) : (
                   <>
                     {pathname === "/hire-java-developer" ? (
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        Hire Full Stack Java Developers
-                      </Link>
+                      "Hire Full Stack Java Developers"
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer" ? (
-                          <Link
-                            href="#section10_service"
-                            onClick={(e) =>
-                              scrollToSection(e, "section10_service")
-                            }
-                          >
-                            Hire Full Stack Nodejs Developers
-                          </Link>
-                        ) : null}
+                        {pathname === "/hire-nodejs-developer"
+                          ? "Hire Full Stack Nodejs Developers"
+                          : null}
                       </>
                     )}
                   </>

@@ -27,6 +27,7 @@ const BlogContactForm = () => {
       .then((finalResp) => {
         setRespMessage(finalResp);
         setIsSubmitting(false);
+        form.reset();
         clearMessage();
       })
       .catch((err) => {
@@ -97,7 +98,11 @@ const BlogContactForm = () => {
             <div className="success-msg h-5" id="sucess_msg">
               {respMessage}
             </div>
-            <div className="btn_paddinng contact_btn btn_flex">
+            <button
+              className="btn_paddinng contact_btn btn_flex"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? (
                 <div className="py-[4px] px-[30px]">
                   <Loader />
@@ -109,17 +114,12 @@ const BlogContactForm = () => {
                       <img src="/images/right_arrow.png" alt="arrow" />
                     </p>
                   </div>
-                  <p>
-                    <input
-                      id="submit"
-                      type="submit"
-                      name="btnSubmit"
-                      disabled={isSubmitting}
-                    />
+                  <p id="submit" name="btnSubmit">
+                    Submit
                   </p>
                 </>
               )}
-            </div>
+            </button>
           </form>
         </div>
       </div>

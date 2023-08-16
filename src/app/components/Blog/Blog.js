@@ -121,9 +121,7 @@ const Blog = () => {
                     </div>
                     <div className="sec9_txt2 mt-[1.5rem]">
                       <p>
-                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                          {content?.PublishedDate}
-                        </Link>
+                        {content?.PublishedDate}
                       </p>
                     </div>
                   </div>

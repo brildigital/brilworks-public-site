@@ -433,9 +433,9 @@ const AboutUs = () => {
             className="flex items-center justify-center gap-[20px] about_btn transition md:pt-[32px] pt-[0px]"
           >
             <div className="about_txt">
-              <Link href="/career/" className="md:text-[32px] text-[20px]">
+              <p className="change_link md:text-[32px] text-[20px]">
                 Join Our Team
-              </Link>
+              </p>
             </div>
             <div className="aerrow relative">
               <img

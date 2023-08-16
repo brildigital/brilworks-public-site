@@ -571,44 +571,39 @@ const ThreeStepstoHireDeveloper = () => {
               </div>
               <div className="chat_btn_technology xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
                 <p className="transition ng-binding">
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    {pathname === "/hire-reactjs-developer" ? (
-                      "Hire React.js Developers"
-                    ) : (
-                      <>
-                        {pathname === "/hire-java-developer" ? (
-                          "Hire Java Developers"
-                        ) : (
-                          <>
-                            {pathname === "/hire-nodejs-developer" ? (
-                              "Hire Node.js Developers"
-                            ) : (
-                              <>
-                                {pathname === "/hire-react-native-developer" ? (
-                                  "Hire React Native Developers"
-                                ) : (
-                                  <>
-                                    {pathname === "/hire-aws-developer" ? (
-                                      "Hire AWS Developers"
-                                    ) : (
-                                      <>
-                                        {pathname === "/hire-ui-ux-designer"
-                                          ? "Hire UI UX Designers"
-                                          : "Hire Blockchain Developers"}
-                                      </>
-                                    )}
-                                  </>
-                                )}
-                              </>
-                            )}
-                          </>
-                        )}
-                      </>
-                    )}
-                  </Link>
+                  {pathname === "/hire-reactjs-developer" ? (
+                    "Hire React.js Developers"
+                  ) : (
+                    <>
+                      {pathname === "/hire-java-developer" ? (
+                        "Hire Java Developers"
+                      ) : (
+                        <>
+                          {pathname === "/hire-nodejs-developer" ? (
+                            "Hire Node.js Developers"
+                          ) : (
+                            <>
+                              {pathname === "/hire-react-native-developer" ? (
+                                "Hire React Native Developers"
+                              ) : (
+                                <>
+                                  {pathname === "/hire-aws-developer" ? (
+                                    "Hire AWS Developers"
+                                  ) : (
+                                    <>
+                                      {pathname === "/hire-ui-ux-designer"
+                                        ? "Hire UI UX Designers"
+                                        : "Hire Blockchain Developers"}
+                                    </>
+                                  )}
+                                </>
+                              )}
+                            </>
+                          )}
+                        </>
+                      )}
+                    </>
+                  )}
                 </p>
               </div>
             </div>

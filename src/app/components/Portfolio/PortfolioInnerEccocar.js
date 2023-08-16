@@ -36,18 +36,14 @@ const PortfolioInnerEccocar = () => {
               className="portfolio_know_more md:mx-auto ml-0"
             >
               <div className="get_icon">
-                <Link href="https://eccocar.com">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
               <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="https://eccocar.com">Visit Website</Link>
-                </p>
+                <p>Visit Website</p>
               </div>
             </Link>
           </div>
@@ -316,19 +312,13 @@ const PortfolioInnerEccocar = () => {
               className="portfolio_know_more md:mx-auto ml-0"
             >
               <div className="get_icon">
-                <Link href="/about-us/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="/about-us/">About Us </Link>
-                </p>
-              </div>
+              <p>About Us</p>
             </Link>
           </div>
 

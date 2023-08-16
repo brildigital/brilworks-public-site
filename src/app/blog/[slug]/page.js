@@ -1,30 +1,7 @@
-// "use client";
-// import { getStoryblokApi } from "@storyblok/react";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
-// import Layout from "../../components/Layout";
-// import { StoryblokComponent } from "@storyblok/react/rsc";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
-
-// export async function generateMetadata(props, parent) {
-//   // read route params
-//   // const id = params.id;
-
-//   // fetch data
-//   // const product = await fetch(`https://.../${id}`).then((res) => res.json());
-//   console.log("props", props);
-//   // console.log("parent", parent);
-//   // optionally access and extend (rather than replace) parent metadata
-//   const previousImages = (await parent).openGraph?.images || [];
-
-//   return {
-//     title: props?.story?.name || "This is fallback",
-//     openGraph: {
-//       images: ["/some-specific-page-image.jpg", ...previousImages],
-//     },
-//   };
-// }
 
 export const metadata = {
   openGraph: {
@@ -91,11 +68,6 @@ export default async function Page(props) {
             data?.story?.content?.image?.filename
           }
         />
-
-        <meta
-          property="article:publisher"
-          content="https://www.facebook.com/brilwork/"
-        ></meta>
         <meta name="author" content={data?.story?.content?.author}></meta>
         <meta
           name="twitter:image"

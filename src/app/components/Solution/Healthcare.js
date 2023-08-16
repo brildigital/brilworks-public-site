@@ -130,12 +130,7 @@ const HealthCare = () => {
                       </p>
                     </div>
                     <p className="xl:!text-[20px] lg:!text-[18px]">
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        Request For Proposal
-                      </Link>
+                      Request For Proposal
                     </p>
                   </div>
                 </Link>
@@ -743,14 +738,10 @@ const HealthCare = () => {
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Build My Healthcare App
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Build My Healthcare App
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -1167,14 +1158,10 @@ const HealthCare = () => {
                           <img src="/images/icons2-04.png" alt="arrow" />
                         </p>
                       </div>
-                      <Link
-                        href="#section10_service"
-                        onClick={(e) => scrollToSection(e, "section10_service")}
-                      >
-                        <p className="xl:!text-[20px] lg:!text-[18px]">
-                          Speak with Our Experts
-                        </p>
-                      </Link>
+
+                      <p className="xl:!text-[20px] lg:!text-[18px]">
+                        Speak with Our Experts
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -1291,14 +1278,10 @@ const HealthCare = () => {
                     <img src="/images/icons-05.png" alt="call" />
                   </p>
                 </div>
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    Let’s get in touch
-                  </p>
-                </Link>
+
+                <p className="xl:!text-[20px] lg:!text-[18px]">
+                  Let’s get in touch
+                </p>
               </div>
             </Link>
           </div>

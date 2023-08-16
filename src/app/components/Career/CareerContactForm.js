@@ -30,6 +30,7 @@ const CareerContactForm = () => {
       .then((finalResp) => {
         setRespMessage(finalResp);
         setIsSubmitting(false);
+        form.reset();
         clearMessage();
       })
       .catch((err) => {
