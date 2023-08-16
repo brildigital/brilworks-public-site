@@ -33,6 +33,7 @@ const ContactUs = () => {
       .then((finalResp) => {
         setRespMessage("Your response is submitted successfully.");
         setIsSubmitting(false);
+        form.reset();
         clearMessage();
       })
       .catch((err) => {
@@ -138,7 +139,11 @@ const ContactUs = () => {
                 <div className="success-msg h-4" id="sucess_msg">
                   {respMessage}
                 </div>
-                <div className="btn_paddinng contact_btn btn_flex">
+                <button
+                  className="btn_paddinng contact_btn btn_flex"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? (
                     <div className="py-[8px] px-[41px]">
                       <Loader />
@@ -150,18 +155,12 @@ const ContactUs = () => {
                           <img src="/images/right_arrow.png" alt="arrow" />
                         </p>
                       </div>
-                      <p>
-                        <input
-                          className="send_btn"
-                          id="submit"
-                          type="submit"
-                          name="btnSubmit"
-                          disabled={isSubmitting}
-                        />
+                      <p className="send_btn" id="submit" name="btnSubmit">
+                        Submit
                       </p>
                     </>
                   )}
-                </div>
+                </button>
               </form>
             </div>
           </div>
@@ -485,7 +484,11 @@ const ContactUs = () => {
                       <div className="success-msg h-4" id="sucess_msg">
                         {respMessage}
                       </div>
-                      <div className="btn_paddinng contact_btn btn_flex">
+                      <button
+                        className="btn_paddinng contact_btn btn_flex"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
                         {isSubmitting ? (
                           <div className="py-[8px] px-[41px]">
                             <Loader />
@@ -500,18 +503,16 @@ const ContactUs = () => {
                                 />
                               </p>
                             </div>
-                            <p>
-                              <input
-                                className="send_btn"
-                                name="btnSubmit"
-                                id="submit"
-                                type="submit"
-                                disabled={isSubmitting}
-                              />
+                            <p
+                              className="send_btn"
+                              name="btnSubmit"
+                              id="submit"
+                            >
+                              Submit
                             </p>
                           </>
                         )}
-                      </div>
+                      </button>
                     </form>
                   </div>
                 </div>

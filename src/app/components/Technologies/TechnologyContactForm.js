@@ -35,6 +35,7 @@ const TechnologyContactForm = () => {
       .then((finalResp) => {
         setRespMessage("Your response is submitted successfully.");
         setIsSubmitting(false);
+        form.reset();
         clearMessage();
       })
       .catch((err) => {
@@ -121,7 +122,11 @@ const TechnologyContactForm = () => {
                     {respMessage}
                   </div>
 
-                  <div className="contact_btn_technology btn_flex !w-50%]">
+                  <button
+                    className="contact_btn_technology btn_flex !w-50%]"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <div className="py-[8px] px-[41px]">
                         <Loader />
@@ -133,18 +138,12 @@ const TechnologyContactForm = () => {
                             <img src="/images/right_arrow.png" alt="arrow" />
                           </p>
                         </div>
-                        <p>
-                          <input
-                            className="send_btn"
-                            id="submit"
-                            name="btnSubmit"
-                            type="submit"
-                            disabled={isSubmitting}
-                          />
+                        <p className="send_btn" id="submit" name="btnSubmit">
+                          Submit
                         </p>
                       </>
                     )}
-                  </div>
+                  </button>
                 </form>
               </div>
             </div>

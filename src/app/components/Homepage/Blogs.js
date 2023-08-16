@@ -58,9 +58,9 @@ const Blogs = () => {
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px] px-[16px]"
         >
           <div className="about_txt">
-            <Link href="/blog" className="text-[21px]">
+            <p  className="change_link text-[21px]">
               Read More
-            </Link>
+            </p>
           </div>
           <div className="aerrow relative">
             <img

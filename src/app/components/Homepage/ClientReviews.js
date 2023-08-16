@@ -14,7 +14,6 @@ const ClientReviews = () => {
   const [isVideoPause, setVideoPause] = useState(true);
   const [reviewIndex, setReviewIndex] = useState(0);
   const pathname = usePathname();
-  console.log(reviewIndex);
 
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
@@ -121,7 +120,7 @@ const ClientReviews = () => {
                   speed={isMobile ? 1000 : 1500}
                 >
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-6">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           "I have been working with Brilworks for more than 4
@@ -141,7 +140,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-6">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “Team Brilworks has been an absolute delight to work
@@ -161,7 +160,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-6">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “Orokii has a special relationship with Brilworks and
@@ -181,7 +180,7 @@ const ClientReviews = () => {
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <div className="style_sec3_swiper_home !w-4/5 md:!my-8">
+                    <div className="style_sec3_swiper_home !w-4/5 md:!my-6">
                       <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                         <p className="text-left md:!text-3xl client-review-msg">
                           “I absolutely loving working with the Brilworks team

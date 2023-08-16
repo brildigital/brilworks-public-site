@@ -157,33 +157,30 @@ const DomainWorking = () => {
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
-                        <Link href="/industry/fintech-software-development">
+                        <p href="/industry/fintech-software-development">
                           Know more
-                        </Link>
+                        </p>
                       </div>
                       <div className="aerrow relative">
-                        <Link href="/industry/fintech-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="black_aerrow alignnone wp-image-28 size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
-                        <Link href="/industry/fintech-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            class="gradiant_aerrow alignnone wp-image-29 size-full"
-                            src="/images/arrow-gradiant.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="black_aerrow alignnone wp-image-28 size-full"
+                          src="/images/black_aerrow-1.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
+
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          src="/images/arrow-gradiant.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
                       </div>
                     </Link>
                   </div>
@@ -224,36 +221,33 @@ const DomainWorking = () => {
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
-                        <Link
-                          className=""
+                        <p
+                          className="change_link"
                           href="/industry/healthcare-software-development"
                         >
                           Know more
-                        </Link>
+                        </p>
                       </div>
                       <div className="aerrow relative">
-                        <Link href="/industry/healthcare-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="black_aerrow alignnone wp-image-28 size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
-                        <Link href="/industry/healthcare-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            class="gradiant_aerrow alignnone wp-image-29 size-full"
-                            src="/images/arrow-gradiant.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="black_aerrow alignnone wp-image-28 size-full"
+                          src="/images/black_aerrow-1.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
+
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          src="/images/arrow-gradiant.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
                       </div>
                     </Link>
                   </div>
@@ -294,36 +288,27 @@ const DomainWorking = () => {
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
-                        <Link
-                          className=""
-                          href="/industry/media-entertainment-software-development"
-                        >
-                          Know more
-                        </Link>
+                        <p className="change_link">Know more</p>
                       </div>
                       <div className="aerrow relative">
-                        <Link href="/industry/media-entertainment-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="black_aerrow alignnone wp-image-28 size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
-                        <Link href="/industry/media-entertainment-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            class="gradiant_aerrow alignnone wp-image-29 size-full"
-                            src="/images/arrow-gradiant.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="black_aerrow alignnone wp-image-28 size-full"
+                          src="/images/black_aerrow-1.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          src="/images/arrow-gradiant.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
                       </div>
                     </Link>
                   </div>
@@ -365,33 +350,27 @@ const DomainWorking = () => {
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
-                        <Link href="/industry/fleet-management-software-development">
-                          Know more
-                        </Link>
+                        <p>Know more</p>
                       </div>
                       <div className="aerrow relative">
-                        <Link href="/industry/fleet-management-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="black_aerrow alignnone wp-image-28 size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
-                        <Link href="/industry/fleet-management-software-development">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            class="gradiant_aerrow alignnone wp-image-29 size-full"
-                            src="/images/arrow-gradiant.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </Link>
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="black_aerrow alignnone wp-image-28 size-full"
+                          src="/images/black_aerrow-1.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          src="/images/arrow-gradiant.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
                       </div>
                     </Link>
                   </div>

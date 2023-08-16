@@ -25,11 +25,11 @@ const BrilworksCareerReview = () => {
         "This has just been like one of the dream companies to work in.",
     },
     {
-      reviewer: "Software Developer",
+      reviewer: "Ui/Ux Designer",
       description: "Good work-life balance and supportive team members.",
     },
     {
-      reviewer: "Software Developer",
+      reviewer: "Team Lead(Technical)",
       description:
         "Challenging work, motivating clients, supportive management & great co-workers.",
     },
@@ -49,7 +49,7 @@ const BrilworksCareerReview = () => {
             slidesPerGroup={isMobile ? 1 : 3}
             loopFillGroupWithBlank={true}
             speed={1500}
-            loop={true}
+            loop={false}
             pagination={{ clickable: true }}
           >
             {careerReviewData?.length

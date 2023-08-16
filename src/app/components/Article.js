@@ -242,11 +242,7 @@ const Article = ({ blok }) => {
                           </p>
                         </div>
                         <div className="sec9_txt2 mt-[1.5rem]">
-                          <p>
-                            <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                              {content?.PublishedDate}
-                            </Link>
-                          </p>
+                          <p>{content?.PublishedDate}</p>
                         </div>
                       </div>
                     </Link>

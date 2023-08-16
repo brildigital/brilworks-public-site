@@ -114,12 +114,9 @@ const SolutionEngagementModal = () => {
                     <img src="/images/right_arrow.png" alt="call" />
                   </p>
                 </div>
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
+               
                   <p className="xl:!text-[20px] lg:!text-[18px]">Know More</p>
-                </Link>
+               
               </div>
             </Link>
           </div>

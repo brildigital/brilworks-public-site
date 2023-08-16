@@ -29,7 +29,7 @@ const Portfolio = () => {
           <div className="sec6_title">
             <p>SEE TEAM BRILLIANT IN ACTION</p>
           </div>
-          <div className="portfolio_sec1_txt2 portfolio_sec1_border">
+          <div className="portfolio_sec1_txt2 portfolio_sec1_border ">
             <p>
               Our portfolio of digital experiences helps companies win in the
               industry.
@@ -55,19 +55,13 @@ const Portfolio = () => {
             </div>
             <Link href="/portfolio/vugo/" className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="/portfolio/vugo/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="/portfolio/vugo/">Know More</Link>
-                </p>
-              </div>
+              <p>Know More</p>
             </Link>
           </div>
           <div className="portflio_flex_60">
@@ -115,19 +109,13 @@ const Portfolio = () => {
             </div>
             <Link href="/portfolio/rastrack/" className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="/portfolio/rastrack/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="/portfolio/rastrack/">Know More</Link>
-                </p>
-              </div>
+              <p>Know More</p>
             </Link>
           </div>
         </div>
@@ -150,17 +138,13 @@ const Portfolio = () => {
             </div>
             <Link href="/portfolio/orokii/" className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="/portfolio/orokii/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <Link href="/portfolio/orokii/">Know More</Link>
-              </div>
+              <p>Know More</p>
             </Link>
           </div>
           <div className="portflio_flex_60">
@@ -209,19 +193,13 @@ const Portfolio = () => {
             </div>
             <Link href="/portfolio/eccocar/" className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="/portfolio/eccocar/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="/portfolio/eccocar/">Know More</Link>
-                </p>
-              </div>
+              <p>Know More</p>
             </Link>
           </div>
         </div>
@@ -244,19 +222,14 @@ const Portfolio = () => {
             </div>
             <Link href="/portfolio/trackimo/" className="portfolio_know_more">
               <div className="get_icon">
-                <Link href="/portfolio/trackimo/">
-                  <img
-                    className="alignnone"
-                    src="/images/right_arrow.png"
-                    alt=""
-                  />
-                </Link>
+                <img
+                  className="alignnone"
+                  src="/images/right_arrow.png"
+                  alt=""
+                />
               </div>
-              <div className="portfolio_know_more_txt">
-                <p>
-                  <Link href="/portfolio/trackimo/">Know More</Link>
-                </p>
-              </div>
+
+              <p href="/portfolio/trackimo/">Know More</p>
             </Link>
           </div>
           <div className="portflio_flex_60">

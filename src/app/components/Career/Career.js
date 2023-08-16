@@ -48,13 +48,9 @@ const Career = () => {
                 className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
               >
                 <div className="about_txt">
-                  <Link
-                    href="#section7_career"
-                    className="text-[21px]"
-                    onClick={(e) => scrollToSection(e, "section7_career")}
-                  >
+                  <p className="change_link text-[21px]">
                     Explore Open Positions
-                  </Link>
+                  </p>
                 </div>
                 <div className="aerrow relative">
                   <img
@@ -83,13 +79,7 @@ const Career = () => {
                 className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
               >
                 <div className="about_txt">
-                  <Link
-                    href="#section10"
-                    className="text-[21px]"
-                    onClick={(e) => scrollToSection(e, "section10")}
-                  >
-                    Join Our Team
-                  </Link>
+                  <p className="change_link text-[21px]">Join Our Team</p>
                 </div>
                 <div className="aerrow relative">
                   <img
@@ -114,7 +104,7 @@ const Career = () => {
               </Link>
             </div>
 
-            <div className="mx-auto md:my-[8rem] my-[3rem] w-4/ w-full">
+            <div className="mx-auto md:my-[8rem] my-[3rem] !w-5/6">
               <img
                 src="/images/career.jpg"
                 alt="career"
@@ -176,7 +166,11 @@ const Career = () => {
                   <img src="/images/icons-06.png" alt="" className="w-[25px]" />
                   <img src="/images/icons-06.png" alt="" className="w-[25px]" />
                   <img src="/images/icons-06.png" alt="" className="w-[25px]" />
-                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
+                  <img
+                    src="/images/icons-6.7.png"
+                    alt=""
+                    className="w-[17.5px]"
+                  />
                 </div>
                 <div className="header_font">
                   <p>Powered by</p>
@@ -261,8 +255,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.8.png"
+                          className="md:w-[20px] w-[10.5px]"
                           alt=""
                         />
                       </div>
@@ -300,8 +294,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.8.png"
+                          className="md:w-[20px] w-[10.5px]"
                           alt=""
                         />
                       </div>
@@ -339,8 +333,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.6.png"
+                          className="md:w-[15px] w-[8px]"
                           alt=""
                         />
                       </div>
@@ -378,8 +372,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.7.png"
+                          className="md:w-[17.5px] w-[9.1px]"
                           alt=""
                         />
                       </div>
@@ -417,8 +411,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.7.png"
+                          className="md:w-[17.5px] w-[9.1px]"
                           alt=""
                         />
                       </div>
@@ -456,8 +450,8 @@ const Career = () => {
                           alt=""
                         />
                         <img
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
+                          src="/images/icons-6.5.png"
+                          className="md:w-[12.5px] w-[6.5px]"
                           alt=""
                         />
                       </div>
@@ -495,9 +489,9 @@ const Career = () => {
                           className="md:w-[25px] w-[13px]"
                         />
                         <img
-                          src="/images/icons-06.png"
+                          src="/images/icons-6.7.png"
+                          className="md:w-[17.5px] w-[9.1px]"
                           alt=""
-                          className="md:w-[25px] w-[13px]"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">

@@ -591,11 +591,13 @@ a:hover {
   left: 0;
   opacity: 0;
 }
-.about_txt a {
+.about_txt a,
+.about_txt .change_link {
   font-family: var(--medium);
   color: var(--color_black);
 }
-.about_txt_domain a {
+
+.about_txt_domain a, .about_txt_domain .change_link {
   font-family: var(--regular);
   color: var(--color_black);
 }
@@ -615,12 +617,14 @@ a:hover {
   place-content: center;
   cursor: pointer;
 }
-.about_btn:hover .about_txt a:hover {
+.about_btn:hover .about_txt a:hover,
+.about_btn:hover .about_txt .change_link:hover {
   background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .about_btn:hover .about_txt_domain a:hover,
 .about_btn:hover .about_txt_domain,
 .about_btn:hover .about_txt {

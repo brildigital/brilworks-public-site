@@ -26,6 +26,7 @@ const SolutionContactForm = () => {
       .then((finalResp) => {
         setRespMessage(finalResp);
         setIsSubmitting(false);
+        form.reset();
         clearMessage();
       })
       .catch((err) => {
@@ -110,7 +111,11 @@ const SolutionContactForm = () => {
                   <div className="success-msg h-4" id="sucess_msg">
                     {respMessage}
                   </div>
-                  <div className="btn_paddinng contact_btn btn_flex">
+                  <button
+                    className="btn_paddinng contact_btn btn_flex"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <div className="py-[8px] px-[41px]">
                         <Loader />
@@ -122,18 +127,12 @@ const SolutionContactForm = () => {
                             <img src="/images/right_arrow.png" alt="arrow" />
                           </p>
                         </div>
-                        <p c>
-                          <input
-                            className="send_btn"
-                            id="submit"
-                            name="btnSubmit"
-                            type="submit"
-                            disabled={isSubmitting}
-                          />
+                        <p className="send_btn" id="submit" name="btnSubmit">
+                          Submit
                         </p>
                       </>
                     )}
-                  </div>
+                  </button>
                 </form>
               </div>
             </div>
