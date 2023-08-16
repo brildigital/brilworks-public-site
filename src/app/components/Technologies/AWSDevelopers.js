@@ -50,8 +50,10 @@ const AWSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Vicky</p>
-                    <p className="font_style_sec3 ng-binding">AWS Architect</p>
+                    <p className="!text-[1.5rem] !font-bold">Vicky</p>
+                    <p className="font_style_sec3 ng-binding !font-bold ">
+                      AWS Architect
+                    </p>
                   </div>
                 </div>
                 <div className="service_description border-b-[1px]">
@@ -135,8 +137,8 @@ const AWSDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Vivek</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Vivek</p>
+                    <p className="font_style_sec3 ng-binding !font-bold ">
                       Jr. AWS Developer
                     </p>
                   </div>
@@ -226,8 +228,8 @@ const AWSDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Colin</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Colin</p>
+                    <p className="font_style_sec3 ng-binding !font-bold ">
                       Sr. AWS Developer
                     </p>
                   </div>

@@ -52,7 +52,9 @@ const Fintech = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/fintech-1.png"
+                src={
+                  "https://a.storyblok.com/f/219851/1398x780/99204abf86/fintech-1.png"
+                }
                 alt="our process"
               />
             </p>
@@ -681,7 +683,9 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="/images/2-12.png"
+                          src={
+                            "https://a.storyblok.com/f/219851/693x771/b3c39a5900/2-12.png"
+                          }
                           alt="Insurance app development"
                         />
                       </div>
@@ -709,7 +713,9 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="/images/Fintech-Software-Security-Compliance.jpg"
+                          src={
+                            "https://a.storyblok.com/f/219851/693x771/6f75c05158/fintech-software-security-compliance.jpg"
+                          }
                           alt="Fintech-Software-Security-Compliance"
                         />
                       </div>
@@ -781,7 +787,9 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
-                          src="/images/2-13.png"
+                          src={
+                            "https://a.storyblok.com/f/219851/693x771/c05c991634/2-13.png"
+                          }
                           alt="fintech-software-developments"
                         />
                       </div>

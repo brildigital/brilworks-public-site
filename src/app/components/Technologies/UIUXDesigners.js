@@ -45,8 +45,8 @@ const UIUXDesigners = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Nidhi</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Nidhi</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. UI UX Designer
                     </p>
                   </div>
@@ -178,8 +178,8 @@ const UIUXDesigners = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Neha</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Neha</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Mid-Sr. UI UX Designer
                     </p>
                   </div>
@@ -318,8 +318,8 @@ const UIUXDesigners = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Sumeet</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Sumeet</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Ui UX Designer
                     </p>
                   </div>

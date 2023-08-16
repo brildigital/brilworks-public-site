@@ -12,7 +12,15 @@ import { useState } from "react";
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isVideoPause, setVideoPause] = useState(true);
+  const [reviewIndex, setReviewIndex] = useState(0);
   const pathname = usePathname();
+  console.log(reviewIndex);
+
+  const handleSlideChange = (swiper) => {
+    const activeSlideIndex = swiper.activeIndex;
+    setReviewIndex(activeSlideIndex);
+  };
+
   return (
     <div className="container mx-auto px-[15px]">
       <div className="xl:mt-[80px] mt-[40px] relative">
@@ -38,13 +46,51 @@ const ClientReviews = () => {
             </span>
 
             <div onClick={() => setVideoPause(!isVideoPause)}>
-              <video
-                className="!rounded-[30px]"
-                src={"/video/david_ceo_feedback.mp4"}
-                controls
-                width="320"
-                height="200"
-              />
+              {reviewIndex === 0 ? (
+                <video
+                  className="!rounded-[30px]"
+                  src={
+                    "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4"
+                  }
+                  controls
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                />
+              ) : reviewIndex === 1 ? (
+                <video
+                  className="!rounded-[30px]"
+                  src={
+                    "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
+                  }
+                  controls
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                />
+              ) : reviewIndex === 2 ? (
+                <video
+                  className="!rounded-[30px]"
+                  src={
+                    "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4"
+                  }
+                  controls
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                />
+              ) : reviewIndex === 3 ? (
+                <video
+                  className="!rounded-[30px]"
+                  src={
+                    "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4"
+                  }
+                  controls
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                />
+              ) : null}
             </div>
           </div>
 
@@ -70,6 +116,7 @@ const ClientReviews = () => {
                   className="client-review-swipers"
                   modules={[Navigation]}
                   navigation={isMobile ? false : true}
+                  onSlideChange={handleSlideChange}
                   slidesPerView={1}
                   speed={isMobile ? 1000 : 1500}
                 >

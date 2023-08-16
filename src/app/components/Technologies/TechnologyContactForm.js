@@ -123,7 +123,7 @@ const TechnologyContactForm = () => {
 
                   <div className="contact_btn_technology btn_flex !w-50%]">
                     {isSubmitting ? (
-                      <div className="formBtn_icon send_btn w-[100px] flex align-middle justify-center h-[35px] mt-[12px]">
+                      <div className="py-[8px] px-[41px]">
                         <Loader />
                       </div>
                     ) : (

@@ -134,7 +134,7 @@ const ToolsAndGetInTouch = () => {
                 <div className="get_touch">
                   <div className="get_flex ml-14">
                     <div className="get_icon">
-                      <Link href="contact-us">
+                      <Link href="/contact-us/">
                         <img
                           className="alignnone"
                           src="/images/right_arrow.png"
@@ -144,7 +144,7 @@ const ToolsAndGetInTouch = () => {
                     </div>
                     <div className="get_text">
                       <p>
-                        <Link href="contact-us">Get in Touch</Link>
+                        <Link href="/contact-us/">Get in Touch</Link>
                       </p>
                     </div>
                   </div>

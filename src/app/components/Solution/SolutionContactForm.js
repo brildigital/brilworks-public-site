@@ -118,7 +118,7 @@ const SolutionContactForm = () => {
                     ) : (
                       <>
                         <div className="formBtn_icon grid-flow-row">
-                          <p >
+                          <p>
                             <img src="/images/right_arrow.png" alt="arrow" />
                           </p>
                         </div>

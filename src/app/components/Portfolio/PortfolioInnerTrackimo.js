@@ -93,7 +93,9 @@ const PortfolioInnerTrackimo = () => {
                       decoding="async"
                       loading="lazy"
                       className="border_redius20 alignnone"
-                      src="/images/The-Challenge-1.jpg"
+                      src={
+                        "https://a.storyblok.com/f/219851/692x362/5974c22aa5/the-challenge-1.jpg"
+                      }
                       alt="Understanding the Requirement"
                       width="691"
                       height="361"

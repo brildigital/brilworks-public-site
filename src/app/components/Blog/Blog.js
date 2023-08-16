@@ -2,6 +2,7 @@
 import StoryblokClient from "storyblok-js-client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.accessToken,
@@ -149,6 +150,11 @@ const Blog = () => {
               ))}
             </ul>
           </div>
+          {!currentItems.length && (
+            <div className="flex align-middle justify-center pb-20">
+              <FetchDataSpinner />
+            </div>
+          )}
         </div>
       </section>
     </>

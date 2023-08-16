@@ -454,7 +454,9 @@ const AboutUs = () => {
           <div className="md:mt-[5rem] mt-[2rem]">
             <img
               className="alignnone wp-image-190 size-full"
-              src="/images/team-image.png"
+              src={
+                "https://a.storyblok.com/f/219851/1920x1195/e16b4f5cd2/team-image.png"
+              }
               alt="Brilworks team"
             />
           </div>

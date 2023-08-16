@@ -152,7 +152,7 @@ const DomainWorking = () => {
                       Revolutionize the financial world with a robust & secure
                       fintech app that solves real-life problems.
                     </div>
-                    <a
+                    <Link
                       href="/industry/fintech-software-development"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
@@ -185,7 +185,7 @@ const DomainWorking = () => {
                           />
                         </Link>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div
@@ -219,7 +219,7 @@ const DomainWorking = () => {
                       Implement digital solutions that are poised to transform
                       the healthcare industry.
                     </div>
-                    <a
+                    <Link
                       href="/industry/healthcare-software-development"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
@@ -255,7 +255,7 @@ const DomainWorking = () => {
                           />
                         </Link>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div
@@ -289,7 +289,7 @@ const DomainWorking = () => {
                       From ticketing to online video, we’ll help you improve the
                       way you engage and entertain.
                     </div>
-                    <a
+                    <Link
                       href="/industry/media-entertainment-software-development"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
@@ -325,7 +325,7 @@ const DomainWorking = () => {
                           />
                         </Link>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -360,7 +360,7 @@ const DomainWorking = () => {
                       Simplify fleet management with solutions that let you
                       manage workflows with GPS tracking.
                     </div>
-                    <a
+                    <Link
                       href="/industry/fleet-management-software-development"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
@@ -393,7 +393,7 @@ const DomainWorking = () => {
                           />
                         </Link>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

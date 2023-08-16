@@ -50,8 +50,8 @@ const JavaDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Nirmal</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Nirmal</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>
@@ -184,8 +184,8 @@ const JavaDevelopers = () => {
                     />
                   </div>
                   <div className="home_sec3_txt2">
-                    <p>Rajesh</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Rajesh</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>
@@ -323,8 +323,8 @@ const JavaDevelopers = () => {
                   </div>
 
                   <div className="home_sec3_txt2">
-                    <p>Neha</p>
-                    <p className="font_style_sec3 ng-binding">
+                    <p className="!text-[1.5rem] !font-bold">Neha</p>
+                    <p className="font_style_sec3 ng-binding !font-bold">
                       Sr. Software Engineer
                     </p>
                   </div>

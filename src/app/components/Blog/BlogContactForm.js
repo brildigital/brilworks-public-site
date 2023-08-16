@@ -94,12 +94,14 @@ const BlogContactForm = () => {
                 </span>
               </p>
             </div>
-            <div className="success-msg" id="sucess_msg">
+            <div className="success-msg h-5" id="sucess_msg">
               {respMessage}
             </div>
             <div className="btn_paddinng contact_btn btn_flex">
               {isSubmitting ? (
-                <Loader />
+                <div className="py-[4px] px-[30px]">
+                  <Loader />
+                </div>
               ) : (
                 <>
                   <div>
