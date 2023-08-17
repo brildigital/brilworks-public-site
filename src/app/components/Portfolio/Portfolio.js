@@ -17,7 +17,9 @@ const Portfolio = () => {
                 />
                 <img
                   className="visible-xs alignnone"
-                  src="/images/portfolio-mobile-size.jpg"
+                  src={
+                    "https://a.storyblok.com/f/219851/1080x1080/f9390a380b/portfolio-mobile-size.jpg"
+                  }
                   alt="portfolio"
                 />
               </p>

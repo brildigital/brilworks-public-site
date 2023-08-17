@@ -60,7 +60,7 @@ const SeeingBelieving = () => {
               <Link href="/portfolio/trackimo/">
                 <img
                   className="alignnone wp-image-47 !rounded-[25px]"
-                  src="/images/Trackimo.jpg"
+                  src={"https://a.storyblok.com/f/219851/500x375/f472daac29/trackimo.jpg"}
                   alt="trackimo"
                 />
 
