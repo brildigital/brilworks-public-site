@@ -26,7 +26,7 @@ const UIUXTechnology = () => {
             <p>
               <img
                 className="h-[46vh] rounded-[20px]"
-                src="/images/2-ui-ux.png"
+                src="https://a.storyblok.com/f/219851/1398x780/6814715c8b/2-ui-ux.png"
                 alt="React Native banner"
               />
             </p>

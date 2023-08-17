@@ -1093,7 +1093,10 @@ const OurProcessPage = () => {
                     aria-labelledby="accordion-five-tab"
                   >
                     <div className="team_img">
-                      <img src="/images/quality.jpg" alt="quality" />
+                      <img
+                        src="https://a.storyblok.com/f/219851/692x920/d5d12b1dd4/quality.jpg"
+                        alt="quality"
+                      />
                     </div>
                   </div>
 
@@ -1119,7 +1122,9 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
-                        src="/images/maintenance-and-Support.jpg"
+                        src={
+                          "https://a.storyblok.com/f/219851/692x920/f1915dbc83/maintenance-and-support.jpg"
+                        }
                         alt="requirements-analysis"
                       />
                     </div>

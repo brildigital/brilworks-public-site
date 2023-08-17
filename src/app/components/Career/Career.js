@@ -106,7 +106,7 @@ const Career = () => {
 
             <div className="mx-auto md:my-[8rem] my-[3rem] !w-5/6">
               <img
-                src="/images/career.jpg"
+                src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
                 alt="career"
                 className="rounded-[36px]"
               />
