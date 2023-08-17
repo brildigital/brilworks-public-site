@@ -5,9 +5,10 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 
 storyblokInit({
-  accessToken: process.env.accessToken,
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
   use: [apiPlugin],
 });
+
 
 export default function RootLayout({ children }) {
   if (!children) {

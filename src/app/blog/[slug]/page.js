@@ -98,7 +98,7 @@ export async function fetchData(params) {
   let slug = params?.slug ? `blog/${params.slug}` : "home";
   const storyblokApi = getStoryblokApi();
 
-  let sbParams = { version: process.env.storyblokVersion, resolve_links: "url" };
+  let sbParams = { version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION, resolve_links: "url" };
 
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
   let { data: config } = await storyblokApi.get("cdn/stories/config");
