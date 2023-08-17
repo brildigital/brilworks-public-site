@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
-  accessToken: process.env.accessToken,
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
 const BrilworksSoftwareReview = () => {
@@ -26,10 +26,9 @@ const BrilworksSoftwareReview = () => {
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
-      // starts_with: "blog/",       // If want to fetch data from blogs
       starts_with: "software-review/",
       per_page: 20,
-      version: "draft" || "published",
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     })
       .then((response) => {
         setReviewData(response.data?.stories);

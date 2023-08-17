@@ -175,7 +175,7 @@ const DomainWorking = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
                           width="46"
@@ -242,7 +242,7 @@ const DomainWorking = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
                           width="46"
@@ -303,7 +303,7 @@ const DomainWorking = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
                           width="46"
@@ -365,7 +365,7 @@ const DomainWorking = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          class="gradiant_aerrow alignnone wp-image-29 size-full"
+                          className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
                           width="46"

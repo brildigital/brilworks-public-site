@@ -26,17 +26,17 @@ export default function RootLayout({ children }) {
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-M4XXLBF')`}</Script>
+            })(window,document,'script','dataLayer','${process.env.googleTagManagerID}')`}</Script>
           <Script
             async
-            src="https://tag.clearbitscripts.com/v1/pk_f9fe6debac833207b03cd37c138854ec/tags.js"
+            src={`${process.env.clearbitScript_URL}`}
             referrerpolicy="strict-origin-when-cross-origin"
           ></Script>
         </head>
         <body suppressHydrationWarning={true}>
           <noscript>
             <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-M4XXLBF"
+              src={`https://www.googletagmanager.com/ns.html?id=${process.env.googleTagManagerID}`}
               height="0"
               width="0"
               style={{

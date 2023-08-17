@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
-  accessToken: process.env.accessToken,
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
 const ITEMS_PER_PAGE = 9;
@@ -32,7 +32,7 @@ const Blog = () => {
       // starts_with: "blog/",       // If want to fetch data from blogs
       starts_with: "blogs-list/",
       per_page: 100,
-      version: "draft",
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     })
       .then((response) => {
         setBlogData(response.data?.stories);
@@ -120,9 +120,7 @@ const Blog = () => {
                       </p>
                     </div>
                     <div className="sec9_txt2 mt-[1.5rem]">
-                      <p>
-                        {content?.PublishedDate}
-                      </p>
+                      <p>{content?.PublishedDate}</p>
                     </div>
                   </div>
                 </Link>

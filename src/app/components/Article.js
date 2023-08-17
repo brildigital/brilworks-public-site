@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
-  accessToken: process.env.accessToken,
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
 const Article = ({ blok }) => {
@@ -24,7 +24,7 @@ const Article = ({ blok }) => {
     Storyblok.get("cdn/stories/", {
       starts_with: "blogs-list/",
       per_page: 3,
-      version: "draft",
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     })
       .then((response) => {
         setBlogData(response.data?.stories);

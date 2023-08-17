@@ -2,13 +2,15 @@
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const TechnologyContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
+  const pathname = usePathname();
 
-  const url = process.env.googleSheetURL;
+  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -21,9 +23,7 @@ const TechnologyContactForm = () => {
     setIsSubmitting(true);
     const form = e.target;
     const formData = new FormData(form);
-    const currentRoute = window.location.pathname;
-
-    formData.append("route", currentRoute);
+    formData.append("route", pathname);
 
     fetch(url, {
       method: "POST",
