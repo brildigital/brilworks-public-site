@@ -29,7 +29,6 @@ const Blog = () => {
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
-      // starts_with: "blog/",       // If want to fetch data from blogs
       starts_with: "blogs-list/",
       per_page: 100,
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
