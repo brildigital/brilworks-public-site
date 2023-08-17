@@ -2,39 +2,16 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "./Loader";
+import { usePathname } from "next/navigation";
 
 const HomepageContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
 
-  const url = process.env.googleSheetURL;
-
-  // const DataSubmit = () => {
-  //   const url =
-  //     "https://script.google.com/macros/s/AKfycbxWZFV_BRhZMkOGoCuvq21dGfbhic-uzXxB_hR6iwdI-Ua_F6LXe8DeCEQjkXixtNrN/exec";
-  //   let form = document.getElementById("homepageForm");
-
-  //   form.addEventListener("submit", (e) => {
-  //     e.target.btnSubmit.innerHTML = "Submitting...";
-  //     let formData = new FormData(form);
-  //     fetch(url, {
-  //       method: "POST",
-  //       body: formData,
-  //     })
-  //       .then((res) => res.text())
-  //       .then((finalResp) => {
-  //         e.target.btnSubmit.innerHTML = "Submit";
-  //         document.getElementById("sucess_msg").innerHTML = finalResp;
-  //         formData.reset();
-  //         setTimeout(() => {
-  //           document.getElementById("sucess_msg").innerHTML = "";
-  //         }, 5000);
-  //       });
-  //     e.preventDefault();
-  //   });
-  // };
+  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -47,6 +24,7 @@ const HomepageContactForm = () => {
     setIsSubmitting(true);
     const form = e.target;
     const formData = new FormData(form);
+    formData.append("route", pathname);
     fetch(url, {
       method: "POST",
       body: formData,

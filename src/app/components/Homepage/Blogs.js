@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
-  accessToken: process.env.accessToken,
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
 const Blogs = () => {
@@ -17,7 +17,7 @@ const Blogs = () => {
       // starts_with: "blog/",       // If want to fetch data from blogs
       starts_with: "blogs-list/",
       per_page: 3,
-      version: "draft" || "published",
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     })
       .then((response) => {
         setBlogData(response.data?.stories);
@@ -58,9 +58,7 @@ const Blogs = () => {
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px] px-[16px]"
         >
           <div className="about_txt">
-            <p  className="change_link text-[21px]">
-              Read More
-            </p>
+            <p className="change_link text-[21px]">Read More</p>
           </div>
           <div className="aerrow relative">
             <img

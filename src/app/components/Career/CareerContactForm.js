@@ -2,14 +2,16 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
+import { usePathname } from "next/navigation";
 
 const CareerContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
 
-  const url = process.env.googleSheetURL;
+  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -22,6 +24,7 @@ const CareerContactForm = () => {
     setIsSubmitting(true);
     const form = e.target;
     const formData = new FormData(form);
+    formData.append("route", pathname);
     fetch(url, {
       method: "POST",
       body: formData,
@@ -194,11 +197,11 @@ const CareerContactForm = () => {
                 </div>
                 <div className="form_grid">
                   <div>
-                    <div class="w-[30%]">
+                    <div className="w-[30%]">
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone"
+                        className="alignnone"
                         src="/images/Stronger-Together.png"
                         alt="Stronger Together"
                         width="60"
@@ -214,11 +217,11 @@ const CareerContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div class="w-[30%]">
+                    <div className="w-[30%]">
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone"
+                        className="alignnone"
                         src="/images/Passion-Over-Perfectionism.png"
                         alt="Passion Over Perfectionism"
                         width="60"
@@ -234,11 +237,11 @@ const CareerContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div class="w-[30%]">
+                    <div className="w-[30%]">
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone"
+                        className="alignnone"
                         src="/images/Future-focused.png"
                         alt="Future-focused"
                         width="60"
@@ -254,11 +257,11 @@ const CareerContactForm = () => {
                     </div>
                   </div>
                   <div>
-                    <div class="w-[30%]">
+                    <div className="w-[30%]">
                       <img
                         decoding="async"
                         loading="lazy"
-                        class="alignnone"
+                        className="alignnone"
                         src="/images/Continuous-Improvement.png"
                         alt="Continuous Improvement"
                         width="60"

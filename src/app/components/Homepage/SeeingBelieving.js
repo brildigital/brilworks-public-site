@@ -49,8 +49,8 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div class="md:!px-8 md:!text-left outer-portfolio-title">
-              <p class="portfolio-title-new">
+            <div className="md:!px-8 md:!text-left outer-portfolio-title">
+              <p className="portfolio-title-new">
                 <Link href="/portfolio/vugo/">VUGO</Link>
               </p>
             </div>
@@ -80,8 +80,8 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div class="md:!px-8 md:!text-left outer-portfolio-title">
-              <p class="portfolio-title-new">
+            <div className="md:!px-8 md:!text-left outer-portfolio-title">
+              <p className="portfolio-title-new">
                 <Link href="/portfolio/trackimo/">TRACKIMO</Link>
               </p>
             </div>
@@ -111,8 +111,8 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div class="md:!px-8 md:!text-left outer-portfolio-title">
-              <p class="portfolio-title-new">
+            <div className="md:!px-8 md:!text-left outer-portfolio-title">
+              <p className="portfolio-title-new">
                 <Link href="/portfolio/orokii/">OROKII</Link>
               </p>
             </div>
@@ -143,8 +143,8 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div class="md:!px-8 md:!text-left outer-portfolio-title">
-              <p class="portfolio-title-new">
+            <div className="md:!px-8 md:!text-left outer-portfolio-title">
+              <p className="portfolio-title-new">
                 <Link href="/portfolio/eccocar/">ECCOCAR</Link>
               </p>
             </div>
@@ -173,8 +173,8 @@ const SeeingBelieving = () => {
                 </div>
               </Link>
             </div>
-            <div class="md:!px-8 md:!text-left outer-portfolio-title">
-              <p class="portfolio-title-new">
+            <div className="md:!px-8 md:!text-left outer-portfolio-title">
+              <p className="portfolio-title-new">
                 <Link href="/portfolio/rastrack/">RASTRACK</Link>
               </p>
             </div>

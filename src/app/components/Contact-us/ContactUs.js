@@ -3,13 +3,14 @@ import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 import { useState } from "react";
 import Loader from "../Homepage/Loader";
+import { usePathname } from "next/navigation";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
-
-  const url = process.env.googleSheetURL;
+  const pathname = usePathname();
+  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -22,6 +23,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
     const form = e.target;
     const formData = new FormData(form);
+    formData.append("route", pathname);
 
     fetch(url, {
       method: "POST",

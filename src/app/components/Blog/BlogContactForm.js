@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import Loader from "../Homepage/Loader";
+import { usePathname } from "next/navigation";
 
 const BlogContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
+  const pathname = usePathname();
 
-  const url = process.env.googleSheetURL;
+  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -19,6 +21,7 @@ const BlogContactForm = () => {
     setIsSubmitting(true);
     const form = e.target;
     const formData = new FormData(form);
+    formData.append("route", pathname);
     fetch(url, {
       method: "POST",
       body: formData,

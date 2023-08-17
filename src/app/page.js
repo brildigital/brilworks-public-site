@@ -46,7 +46,10 @@ export default async function Home() {
 export async function fetchData(slug) {
   const storyblokApi = getStoryblokApi();
 
-  let sbParams = { version: "draft", resolve_links: "url" };
+  let sbParams = {
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    resolve_links: "url",
+  };
 
   let { data } = await storyblokApi.get(`cdn/stories/home`, sbParams);
   let { data: config } = await storyblokApi.get("cdn/stories/config");
