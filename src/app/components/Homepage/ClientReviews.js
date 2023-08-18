@@ -18,6 +18,7 @@ const ClientReviews = () => {
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
     setReviewIndex(activeSlideIndex);
+    setVideoPause(true);
   };
 
   return (
