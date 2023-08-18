@@ -10,11 +10,11 @@ export const metadata = {
     title: "Blockchain Development Company | Hire Blockchain App Developer",
     description:
       "Hire Blockchain developers from Brilworks for blockchain app development services such as Consultation. MVP, DApp, Smart Contracts, NFT Marketplace & custom solutions.",
-    url: "/hire-blockchain-developer/",
+    url: "https://brilworks.com/hire-blockchain-developer/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/1.png",
+        url: "https://brilworks.com/images/1.png",
       },
     ],
     locale: "en-US",

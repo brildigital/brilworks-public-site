@@ -10,11 +10,11 @@ export const metadata = {
     title: "React JS Development Company | Hire ReactJS Developer",
     description:
       "We offer ReactJS development services for Enterprise, Custom Apps, Front-End, Migration & Integration, Support & Maintenance. Hire a React developer today.",
-    url: "/hire-reactjs-developer/",
+    url: "https://brilworks.com/hire-reactjs-developer/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/1.png",
+        url: "https://brilworks.com/images/1.png",
       },
     ],
     locale: "en-US",

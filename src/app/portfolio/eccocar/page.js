@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Check out Brilworks's work for Eccocar. How we helped Eccocar to build a payment gateway system and integrated their platform with Stripe to collect payments.",
 
-    url: "/portfolio/eccocar/",
+    url: "https://brilworks.com/portfolio/eccocar/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",

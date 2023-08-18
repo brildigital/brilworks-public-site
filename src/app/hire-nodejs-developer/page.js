@@ -10,11 +10,11 @@ export const metadata = {
     title: "Node JS Development Company | Hire Nodejs Developer",
     description:
       "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
-    url: "/hire-nodejs-developer/",
+    url: "https://brilworks.com/hire-nodejs-developer/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/1.png",
+        url: "https://brilworks.com/images/1.png",
       },
     ],
     locale: "en-US",

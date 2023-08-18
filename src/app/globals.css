@@ -597,7 +597,8 @@ a:hover {
   color: var(--color_black);
 }
 
-.about_txt_domain a, .about_txt_domain .change_link {
+.about_txt_domain a,
+.about_txt_domain .change_link {
   font-family: var(--regular);
   color: var(--color_black);
 }
@@ -886,7 +887,8 @@ a:hover {
 }
 input.form-control-txt,
 textarea.form-control-txt {
-  padding: 2rem 2rem 0.5rem 0;
+  padding: 0rem 2rem 0.5rem 0;
+  margin-top: 2rem;
   background: 0 0;
   border: none;
   outline: none;

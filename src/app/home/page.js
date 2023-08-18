@@ -19,11 +19,11 @@ export const metadata = {
     title: "Mobile App & Software Development Company | Brilworks",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
-    url: "/",
+    url: "https://brilworks.com/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/banner.jpg",
+        url: "https://brilworks.com/images/banner.jpg",
       },
     ],
     locale: "en-US",

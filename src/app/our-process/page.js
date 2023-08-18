@@ -11,11 +11,11 @@ export const metadata = {
     description:
       "We are a top software development firm that satisfies the demands of every client, from sourcing the right people to managing end-to-end projects.",
 
-    url: "/our-process/",
+    url: "https://brilworks.com/our-process/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/Prototype.jpg",
+        url: "https://brilworks.com/images/Prototype.jpg",
       },
     ],
     locale: "en-US",
