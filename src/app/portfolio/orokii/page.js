@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Check out Brilworks's work for Orokii. How we helped Orokii to build a custom fintech application with faster & secure transactions.",
 
-    url: "/portfolio/orokii/",
+    url: "https://brilworks.com/portfolio/orokii/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",

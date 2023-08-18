@@ -10,11 +10,11 @@ export const metadata = {
     title: "Custom Healthcare Software & App Development Company | Brilworks",
     description:
       "Healthcare software developers at Brilworks build medical software for patient monitoring, telemedicine & prescription app, EMR/EHR platform. Hire our engineer today!",
-    url: "/industry/healthcare-software-development/",
+    url: "https://brilworks.com/industry/healthcare-software-development/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "/images/explore-arrow-01.png",
+        url: "https://brilworks.com/images/explore-arrow-01.png",
       },
     ],
     locale: "en-US",
