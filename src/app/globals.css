@@ -1060,6 +1060,15 @@ textarea.form-control-txt {
   gap: 10rem;
   align-items: start;
 }
+
+.footer_width .footer_grid .grid-area-one ul,
+.footer_width .footer_grid .grid-area-two ul,
+.footer_width .footer_grid .grid-area-three ul,
+.footer_width .footer_grid .grid-area-four ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .social_media {
   display: flex;
   align-items: center;
