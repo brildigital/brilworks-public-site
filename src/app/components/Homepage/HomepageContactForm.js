@@ -5,13 +5,25 @@ import Loader from "./Loader";
 import { usePathname } from "next/navigation";
 
 const HomepageContactForm = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const pathname = usePathname();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    message: "",
+  });
 
-  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -19,27 +31,34 @@ const HomepageContactForm = () => {
     }, 5000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const form = e.target;
-    const formData = new FormData(form);
-    formData.append("route", pathname);
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.text())
-      .then((finalResp) => {
-        setRespMessage(finalResp);
-        setIsSubmitting(false);
-        form.reset();
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}api/home-career`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
+      );
+
+      if (response.ok) {
+        setFormData({ name: "", company: "", email: "", message: "" });
+        setRespMessage("Your response is submitted successfully.");
         clearMessage();
-      })
-      .catch((err) => {
-        setIsSubmitting(false);
-        console.log(err);
-      });
+      } else {
+        setRespMessage("Something went wrong!");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error sending email", error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,12 +84,7 @@ const HomepageContactForm = () => {
                   lang="en-US"
                   dir="ltr"
                 >
-                  <form
-                    method="post"
-                    className="wpcf7-form init"
-                    id="homepageForm"
-                    onSubmit={handleSubmit}
-                  >
+                  <form className="wpcf7-form init" onSubmit={handleSubmit}>
                     <div className="form-group">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
@@ -90,7 +104,9 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="name"
+                            value={formData.name}
                             required
+                            onChange={handleChange}
                           />
                         </span>
                       </p>
@@ -114,7 +130,9 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="text"
                             name="company"
+                            value={formData.company}
                             required
+                            onChange={handleChange}
                           />
                         </span>
                       </p>
@@ -138,7 +156,9 @@ const HomepageContactForm = () => {
                             aria-invalid="false"
                             type="email"
                             name="email"
+                            value={formData.email}
                             required
+                            onChange={handleChange}
                           />
                         </span>
                       </p>
@@ -164,6 +184,8 @@ const HomepageContactForm = () => {
                             id="message"
                             aria-invalid="false"
                             name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                           ></textarea>
                         </span>
                       </p>
@@ -171,7 +193,7 @@ const HomepageContactForm = () => {
                     <div className="success-msg h-4" id="sucess_msg">
                       {respMessage}
                     </div>
-                    <div className="btn_paddinng pt-4">
+                    <button className="btn_paddinng pt-4">
                       <div className="home_ready_sec transition  !w-[115px]">
                         <p className="flex align-middle justify-center">
                           {isSubmitting ? (
@@ -189,7 +211,7 @@ const HomepageContactForm = () => {
                           )}
                         </p>
                       </div>
-                    </div>
+                    </button>
                     <div
                       className="wpcf7-response-output"
                       aria-hidden="true"

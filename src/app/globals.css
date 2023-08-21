@@ -3233,4 +3233,8 @@ textarea.form-control-txt {
   .year {
     font-size: 1rem;
   }
+  input.form-control-txt,
+  textarea.form-control-txt {
+    margin-top: 1rem !important;
+  }
 }

@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import ReactNativeDevelopers from "./ReactNativeDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 
 const ReactNativeTechnology = () => {
   const scrollToSection = (e, sectionId) => {
@@ -334,7 +334,7 @@ const ReactNativeTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
@@ -312,7 +312,7 @@ const AWSTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );

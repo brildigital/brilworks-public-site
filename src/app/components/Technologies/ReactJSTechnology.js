@@ -2,11 +2,11 @@
 import Link from "next/link";
 import ReactJSDevelopers from "./ReactJSDevelopers";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 
 const ReactJSTechnology = () => {
   const scrollToSection = (e, sectionId) => {
@@ -330,7 +330,7 @@ const ReactJSTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );

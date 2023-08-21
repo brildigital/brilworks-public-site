@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
 import JavaDevelopers from "./JavaDevelopers";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 
 const JavaTechnology = () => {
   const scrollToSection = (e, sectionId) => {
@@ -341,7 +341,7 @@ const JavaTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );
