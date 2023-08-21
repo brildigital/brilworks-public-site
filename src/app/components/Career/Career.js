@@ -675,14 +675,12 @@ const Career = () => {
         <div className="mt-[2rem]">
           <iframe
             loading="lazy"
-            src="https://brilworks.kekahire.com/api/embedjobs/71b6b7a2-333a-47bc-81ca-11d00c4be18f"
+            src="https://brilworks.keka.com/careers/api/embedjobs/71b6b7a2-333a-47bc-81ca-11d00c4be18f"
             width="100%"
             height="100%"
             frameborder="0"
             className="md:w-[80%] w-full mx-auto h-[85vh] md:p-[2rem] p-0"
-          >
-            {/* <br /> */}
-          </iframe>
+          ></iframe>
         </div>
       </section>
 

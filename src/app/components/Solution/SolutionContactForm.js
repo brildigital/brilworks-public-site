@@ -3,11 +3,22 @@ import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 
 const SolutionContactForm = () => {
+  const pathname = usePathname();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
-  const pathname = usePathname();
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
 
-  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const clearMessage = () => {
     setTimeout(() => {
@@ -15,27 +26,34 @@ const SolutionContactForm = () => {
     }, 5000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const form = e.target;
-    const formData = new FormData(form);
-    formData.append("route", pathname);
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.text())
-      .then((finalResp) => {
-        setRespMessage(finalResp);
-        setIsSubmitting(false);
-        form.reset();
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}api/techSolution`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
+      );
+
+      if (response.ok) {
+        setFormData({ name: "", phone: "", email: "" });
+        setRespMessage("Your response is submitted successfully.");
         clearMessage();
-      })
-      .catch((err) => {
-        setIsSubmitting(false);
-        console.log(err);
-      });
+      } else {
+        setRespMessage("Something went wrong!");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error sending email", error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,7 +66,14 @@ const SolutionContactForm = () => {
           <div className="like_basis basis-[50%]">
             <div className="like_text bold home_sec2_txt3">
               <p className="!w-full">
-                TAKE THE FIRST STEP BY FILLING OUT THIS QUICK FORM.
+                {pathname === "/industry/fintech-software-development" ||
+                pathname ===
+                  "/industry/media-entertainment-software-development" ||
+                pathname ===
+                  "/industry/fleet-management-software-development" ||
+                pathname === "/industry/healthcare-software-development"
+                  ? " TAKE THE FIRST STEP BY FILLING OUT THIS QUICK FORM."
+                  : "  CONNECT WITH US TO GET A 48 HOURS RISK-FREE TRIAL"}
               </p>
             </div>
           </div>
@@ -60,11 +85,7 @@ const SolutionContactForm = () => {
                 lang="en-US"
                 dir="ltr"
               >
-                <form
-                  method="post"
-                  className="wpcf7-form init"
-                  onSubmit={handleSubmit}
-                >
+                <form className="wpcf7-form init" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <p>
                       <label className="label_name"> Name*</label>
@@ -75,7 +96,9 @@ const SolutionContactForm = () => {
                           className="form-control-txt"
                           type="text"
                           name="name"
+                          value={formData.name}
                           required
+                          onChange={handleChange}
                         />
                       </span>
                     </p>
@@ -91,7 +114,9 @@ const SolutionContactForm = () => {
                           className="form-control-txt"
                           type="number"
                           name="phone"
+                          value={formData.phone}
                           required
+                          onChange={handleChange}
                         />
                       </span>
                     </p>
@@ -106,7 +131,9 @@ const SolutionContactForm = () => {
                           className="form-control-txt"
                           type="email"
                           name="email"
+                          value={formData.email}
                           required
+                          onChange={handleChange}
                         />
                       </span>
                     </p>

@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import UIUXDesigners from "./UIUXDesigners";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 
 const UIUXTechnology = () => {
   const scrollToSection = (e, sectionId) => {
@@ -303,7 +303,7 @@ const UIUXTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );

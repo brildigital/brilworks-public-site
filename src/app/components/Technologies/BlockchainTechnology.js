@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import FAQsTechnology from "./FAQsTechnology";
-import TechnologyContactForm from "./TechnologyContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import BlockchainDevelopers from "./BlockchainDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 
 const BlockchainTechnology = () => {
   const scrollToSection = (e, sectionId) => {
@@ -338,7 +338,7 @@ const BlockchainTechnology = () => {
 
       <WhyShouldHireDevelopers />
 
-      <TechnologyContactForm />
+      <SolutionContactForm />
       <FAQsTechnology />
     </>
   );
