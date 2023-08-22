@@ -25,7 +25,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/hire-java-developer/",
+    canonical: "https://www.brilworks.com/hire-java-developer/",
   },
 };
 

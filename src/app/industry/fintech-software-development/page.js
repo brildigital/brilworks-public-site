@@ -26,7 +26,8 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/industry/fintech-software-development/",
+    canonical:
+      "https://www.brilworks.com/industry/fintech-software-development/",
   },
 };
 

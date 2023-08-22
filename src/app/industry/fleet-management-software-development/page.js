@@ -25,7 +25,8 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/industry/fleet-management-software-development/",
+    canonical:
+      "https://www.brilworks.com/industry/fleet-management-software-development/",
   },
 };
 

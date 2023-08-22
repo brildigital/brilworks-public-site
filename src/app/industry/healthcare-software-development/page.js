@@ -25,7 +25,8 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/industry/healthcare-software-development/",
+    canonical:
+      "https://www.brilworks.com/industry/healthcare-software-development/",
   },
 };
 

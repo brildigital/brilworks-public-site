@@ -27,7 +27,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/hire-aws-developer/",
+    canonical: "https://www.brilworks.com/hire-aws-developer/",
   },
 };
 const page = () => {
