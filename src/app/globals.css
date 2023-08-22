@@ -2643,6 +2643,28 @@ textarea.form-control-txt {
     font-size: 1.1rem !important;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .our-engagement-models .no_flex::after,.our-engagement-models .no_flex_tech::after {
+    right: -4%;
+  }
+  .our-engagement-models .no_flex::before ,.our-engagement-models .no_flex_tech::before {
+    left: -4%;
+  }
+}
+@media only screen and (max-width: 1279px) {
+  .our-engagement-models .no_flex::after,.our-engagement-models .no_flex_tech::after {
+    background-position: right;
+    right: -10px !important;
+    background-size: auto !important;
+    top: -12px !important;
+  }
+  .our-engagement-models .no_flex::before ,.our-engagement-models .no_flex_tech::before {
+      background-position: left; 
+      left:  -10px !important;
+      background-size: auto !important;
+      top:  -12px !important;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .footer_grid > div:nth-child(2) {
     margin-top: 60px;
