@@ -14,7 +14,6 @@ export async function GET() {
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     copyright: `© ${new Date().getFullYear()} BRILWORKS`,
     language: "en",
-    pubDate: new Date(),
   });
 
   // Calculate adjustedDate and sort storyData from newest to oldest
