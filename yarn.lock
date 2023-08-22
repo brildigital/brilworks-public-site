@@ -12,7 +12,7 @@
   resolved "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@babel/runtime@^7.20.7":
+"@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0":
   version "7.22.6"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.6.tgz"
   integrity sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==
@@ -581,6 +581,18 @@ damerau-levenshtein@^1.0.8:
   version "1.0.8"
   resolved "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
+
+date-fns-tz@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/date-fns-tz/-/date-fns-tz-2.0.0.tgz"
+  integrity sha512-OAtcLdB9vxSXTWHdT8b398ARImVwQMyjfYGkKD2zaGpHseG2UPHbHjXELReErZFxWdSLph3c2zOaaTyHfOhERQ==
+
+date-fns@>=2.0.0:
+  version "2.30.0"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.30.0.tgz"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 debug@^3.2.7:
   version "3.2.7"
@@ -1705,6 +1717,18 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
+mime-db@~1.25.0:
+  version "1.25.0"
+  resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.25.0.tgz"
+  integrity sha512-5k547tI4Cy+Lddr/hdjNbBEWBwSl8EBc5aSdKvedav8DReADgWJzcYiktaRIw3GtGC1jjwldXtTzvqJZmtvC7w==
+
+mime-types@2.1.13:
+  version "2.1.13"
+  resolved "https://registry.npmjs.org/mime-types/-/mime-types-2.1.13.tgz"
+  integrity sha512-ryBDp1Z/6X90UvjUK3RksH0IBPM137T7cmg4OgD5wQBojlAiUwuok0QeELkim/72EtcYuNlmbkrcGuxj3Kl0YQ==
+  dependencies:
+    mime-db "~1.25.0"
+
 mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/mimic-fn/-/mimic-fn-2.1.0.tgz"
@@ -2191,6 +2215,14 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rss@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/rss/-/rss-1.2.2.tgz"
+  integrity sha512-xUhRTgslHeCBeHAqaWSbOYTydN2f0tAzNXvzh3stjz7QDhQMzdgHf3pfgNIngeytQflrFPfy6axHilTETr6gDg==
+  dependencies:
+    mime-types "2.1.13"
+    xml "1.0.1"
+
 run-applescript@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/run-applescript/-/run-applescript-5.0.0.tgz"
@@ -2289,9 +2321,14 @@ source-map-js@^1.0.2, "source-map-js@>=0.6.2 <2.0.0":
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 storyblok-js-client@^5.11.1:
-  version "5.12.0"
-  resolved "https://registry.npmjs.org/storyblok-js-client/-/storyblok-js-client-5.12.0.tgz"
-  integrity sha512-g096AwVtRfs+epfvuiQlI4RDTRcn+/h+WxkWQd8rm95MnRzgZMo1LJcg9NQU8Hy172dvrcjH2+DBsPxw0NAoYw==
+  version "5.14.4"
+  resolved "https://registry.npmjs.org/storyblok-js-client/-/storyblok-js-client-5.14.4.tgz"
+  integrity sha512-9yY33tvfO3Cbe25h/l6K0T3IxJeOOyGl/pCwsd55woT0ZEBhIiEZoMumpRsyLjD5AedW9KXLbLjMXhHazkepCA==
+
+storyblok-js-client@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/storyblok-js-client/-/storyblok-js-client-6.0.0.tgz"
+  integrity sha512-NVk2r3EhKJ3Uh+wlPccfvgxyUSv0/LW20tifgkTV8JiIwHT9L/hvAnP8vxEZ+xrLCSskQ6ZrN+0p5WjGrv9WXw==
 
 storyblok-rich-text-react-renderer@^2.8.0:
   version "2.9.0"
@@ -2641,6 +2678,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+xml@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/xml/-/xml-1.0.1.tgz"
+  integrity sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==
 
 yallist@^4.0.0:
   version "4.0.0"
