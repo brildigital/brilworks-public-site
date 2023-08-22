@@ -10,11 +10,11 @@ export const metadata = {
     title: "React Native Development Company | Hire React Native App Developer",
     description:
       "React Native app development services include Consultation, Cross-Platform, Migration, Maintenance & Support, Testing & Audit. Hire React Native developer now.",
-    url: "https://brilworks.com/hire-react-native-developer/",
+    url: "https://www.brilworks.com/hire-react-native-developer/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/1.png",
+        url: "https://www.brilworks.com/images/1.png",
       },
     ],
     locale: "en-US",

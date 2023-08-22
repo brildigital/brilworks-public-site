@@ -12,11 +12,11 @@ const PortfolioInnerRastrack = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <p>
+            <h1 className="!text-[2.5rem] fontfamily-ebold ">
               How Brilworks Helped Rastrack
               <br />
               Improve their Fleet’s Efficiency
-            </p>
+            </h1>
           </div>
           <div className="mb-[64px]">
             <img className="alignnone" src="/images/rastrack.jpg" alt="vugo" />

@@ -10,7 +10,7 @@ export const metadata = {
     title: "Career | Join the World of Brilliance | Brilworks Software",
     description:
       "Explore the current open positions at Brilworks. Join the team of brilliant minds by sending your application today! Connect at hello@brilworks.com for any query.",
-    url: "https://brilworks.com/career/",
+    url: "https://www.brilworks.com/career/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",

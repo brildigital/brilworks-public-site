@@ -8,7 +8,7 @@ export default async function sitemap() {
     const dateObj = new Date(story?.content?.PublishedDate);
     const adjustedDate = addMinutes(dateObj, 330);
     return {
-      url: `https://www.brilworks.com/blog/${story.slug}`,
+      url: `https://www.brilworks.com/blog/${story.slug}/`,
       lastModified: adjustedDate,
     };
   });

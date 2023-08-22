@@ -10,7 +10,7 @@ export const metadata = {
     title: "Trackimo - Portfolio | Real-Time Tracking | Brilworks Software",
     description:
       "Check out Brilworks's work for Trackimo. How we helped Trackimo to develop a software solution for all the GPS/GSM/Wifi-based tracking approaches.",
-    url: "https://brilworks.com/portfolio/trackimo/",
+    url: "https://www.brilworks.com/portfolio/trackimo/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",

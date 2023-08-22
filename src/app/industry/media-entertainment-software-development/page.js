@@ -10,11 +10,11 @@ export const metadata = {
     title: "Media and Entertainment App & Software Development Company",
     description:
       "Hire entertainment app & web developers from Brilworks to build feature-rich applications for OTT, Music, Photo, Ticket Booking, and Gaming. Contact our experts now.",
-    url: "https://brilworks.com/industry/media-entertainment-software-development/",
+    url: "https://www.brilworks.com/industry/media-entertainment-software-development/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/explore-arrow-01.png",
+        url: "https://www.brilworks.com/images/explore-arrow-01.png",
       },
     ],
     locale: "en-US",
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical:
-      "https://brilworks.com/industry/media-entertainment-software-development/",
+      "https://www.brilworks.com/industry/media-entertainment-software-development/",
   },
 };
 

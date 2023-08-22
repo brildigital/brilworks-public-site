@@ -14,7 +14,7 @@ export const metadata = {
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/explore-arrow-01.png",
+        url: "https://www.brilworks.com/images/explore-arrow-01.png",
       },
     ],
     locale: "en-US",

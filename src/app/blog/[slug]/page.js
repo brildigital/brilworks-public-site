@@ -37,7 +37,7 @@ export default async function Page(props) {
 
         <link
           rel="canonical"
-          href={`https://brilworks.com/blog/${data?.story?.slug}/`}
+          href={`https://www.brilworks.com/blog/${data?.story?.slug}/`}
         />
 
         <meta
@@ -50,7 +50,7 @@ export default async function Page(props) {
 
         <meta
           property="og:url"
-          content={`https://brilworks.com/blog/${data?.story?.slug}/`}
+          content={`https://www.brilworks.com/blog/${data?.story?.slug}/`}
         ></meta>
 
         <meta
@@ -98,7 +98,10 @@ export async function fetchData(params) {
   let slug = params?.slug ? `blog/${params.slug}` : "home";
   const storyblokApi = getStoryblokApi();
 
-  let sbParams = { version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION, resolve_links: "url" };
+  let sbParams = {
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    resolve_links: "url",
+  };
 
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
   let { data: config } = await storyblokApi.get("cdn/stories/config");

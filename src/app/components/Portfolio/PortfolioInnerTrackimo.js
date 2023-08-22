@@ -9,11 +9,11 @@ const PortfolioInnerTrackimo = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <p>
+            <h1 className="!text-[2.5rem] fontfamily-ebold ">
               How We Helped Trackimo Build A Smart
               <br />
               Software Solution
-            </p>
+            </h1>
           </div>
           <div className="mb-[64px]">
             <img
