@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/contact-us/",
+    canonical: "https://www.brilworks.com/contact-us/",
   },
 };
 const page = () => {

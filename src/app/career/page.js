@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/career/",
+    canonical: "https://www.brilworks.com/career/",
   },
 };
 
