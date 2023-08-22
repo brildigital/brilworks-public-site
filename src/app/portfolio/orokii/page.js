@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Check out Brilworks's work for Orokii. How we helped Orokii to build a custom fintech application with faster & secure transactions.",
 
-    url: "https://brilworks.com/portfolio/orokii/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/orokii/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -21,7 +21,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/portfolio/orokii/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/orokii/`,
   },
 };
 

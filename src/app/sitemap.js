@@ -8,14 +8,14 @@ export default async function sitemap() {
     const dateObj = new Date(story?.content?.PublishedDate);
     const adjustedDate = addMinutes(dateObj, 330);
     return {
-      url: `https://www.brilworks.com/blog/${story.slug}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
       lastModified: adjustedDate,
     };
   });
 
   return [
     {
-      url: "https://www.brilworks.com/",
+      url: process.env.NEXT_PUBLIC_BASE_URL,
       lastModified: new Date(),
     },
     ...blog,

@@ -10,7 +10,7 @@ export const metadata = {
     title: "Portfolio - Web and Mobile App Development | Brilworks",
     description:
       "Our experienced team has delivered a wide range of projects. Check out our portfolio of web & mobile development projects from diverse sectors.",
-    url: "https://brilworks.com/portfolio/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/portfolio/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/`,
   },
 };
 

@@ -105,9 +105,9 @@ const AboutUs = () => {
                 width="965"
                 height="625"
                 srcSet="
-                    images/vision.jpg         965w,
-                    images/vision-300x194.jpg 300w,
-                    images/vision-768x497.jpg 768w
+                    /images/vision.jpg 965w,
+                    /images/vision-300x194.jpg 300w,
+                    /images/vision-768x497.jpg 768w
                   "
                 sizes="(max-width: 965px) 100vw, 965px"
               />

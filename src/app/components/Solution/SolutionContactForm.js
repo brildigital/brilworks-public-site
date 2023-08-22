@@ -32,7 +32,7 @@ const SolutionContactForm = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}api/techSolution`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/techSolution`,
         {
           method: "POST",
           header: {

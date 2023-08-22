@@ -10,11 +10,11 @@ const PortfolioInnerEccocar = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <p>
+            <h1 className="!text-[2.5rem] fontfamily-ebold ">
               See How Team Brilliant Built A Payment
               <br />
               Gateway for Eccocar
-            </p>
+            </h1>
           </div>
           <div className="mb-[64px]">
             <img className="alignnone" src="/images/Eccocar.jpg" alt="vugo" />

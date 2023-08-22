@@ -11,7 +11,7 @@ export const metadata = {
     title: "Blog - Brilworks Software",
     description:
       "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
-    url: "https://brilworks.com/blog/",
+    url: "`${process.env.NEXT_PUBLIC_BASE_URL}blog/",
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -21,7 +21,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/blog/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/`,
   },
 };
 

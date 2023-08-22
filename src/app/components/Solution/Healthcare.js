@@ -73,9 +73,9 @@ const HealthCare = () => {
                       />
                     </div>
                     <div>
-                      <p className="uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      <h1 className="font-style-solution-head uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                         HEALTHCARE
-                      </p>
+                      </h1>
                     </div>
                     <div>
                       <img
@@ -90,10 +90,10 @@ const HealthCare = () => {
                     </div>
                   </div>
                   <div className="how-we flex items-center gap-[1rem]">
-                    <p className="uppercase xl:text-[4rem] lg:text-[60px] md:text-[50px] sm:text-[55px] text-[30px] !leading-none">
+                    <h1 className="font-style-solution-head2  uppercase xl:text-[4rem] lg:text-[60px] md:text-[50px] sm:text-[55px] text-[30px] !leading-none">
                       SOFTWARE <br />
                       DEVELOPMENT
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </div>

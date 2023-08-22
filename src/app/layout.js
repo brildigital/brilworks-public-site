@@ -9,7 +9,6 @@ storyblokInit({
   use: [apiPlugin],
 });
 
-
 export default function RootLayout({ children }) {
   if (!children) {
     return "";
@@ -22,6 +21,7 @@ export default function RootLayout({ children }) {
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
           />
+          <meta name="robots" content="noindex,nofollow" />
 
           <Script id="tag-manager">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

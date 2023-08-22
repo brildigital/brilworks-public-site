@@ -37,7 +37,7 @@ const CareerContactForm = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}api/home-career`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
         {
           method: "POST",
           header: {

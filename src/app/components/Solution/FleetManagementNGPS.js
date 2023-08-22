@@ -62,14 +62,14 @@ const FleetManagementNGPS = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <p className="uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                    <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       FLEET MANAGEMENT
-                    </p>
+                    </h1>
                   </div>
                   <div className="how-we flex items-center gap-[1rem]">
-                    <p className="uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                    <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       SOFTWARE DEVELOPMENT
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </div>
