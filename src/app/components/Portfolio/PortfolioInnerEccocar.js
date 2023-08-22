@@ -231,12 +231,12 @@ const PortfolioInnerEccocar = () => {
           </div>
 
           <div className="md:px-[0px] px-[15px]">
-            <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
                   <img src="/images/people-01.png" alt="people" className="" />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -262,7 +262,7 @@ const PortfolioInnerEccocar = () => {
                   />
                 </div>
 
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -287,7 +287,7 @@ const PortfolioInnerEccocar = () => {
                     className=""
                   />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
