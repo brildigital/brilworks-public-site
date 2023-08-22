@@ -37,7 +37,7 @@ export default async function Page(props) {
 
         <link
           rel="canonical"
-          href={`https://www.brilworks.com/blog/${data?.story?.slug}/`}
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
         />
 
         <meta
@@ -50,7 +50,7 @@ export default async function Page(props) {
 
         <meta
           property="og:url"
-          content={`https://www.brilworks.com/blog/${data?.story?.slug}/`}
+          content={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
         ></meta>
 
         <meta

@@ -24,4 +24,3 @@ Disallow: /services-ui-ux/*
 Disallow: /services-video/*
 Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
-Disallow: /dev.brilworks.com/

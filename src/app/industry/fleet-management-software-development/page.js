@@ -10,11 +10,11 @@ export const metadata = {
     title: "GPS & Fleet Management Software Development Services | Brilworks",
     description:
       "Brilworks is a fleet and GPS tracking system development company specializing in custom & feature-rich solutions to manage vehicles, drivers, traffic & supply chain.",
-    url: "/industry/fleet-management-software-development/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://www.brilworks.com/images/explore-arrow-01.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
       },
     ],
     locale: "en-US",
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical:
-      "https://www.brilworks.com/industry/fleet-management-software-development/",
+      `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
   },
 };
 

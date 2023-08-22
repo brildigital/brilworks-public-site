@@ -10,7 +10,7 @@ export const metadata = {
     title: "Contact Us | Web and Mobile App Development | Brilworks",
     description:
       "Contact us now for your web and mobile app development needs. Our tech team will come back to you within 24 hours.",
-    url: "https://www.brilworks.com/contact-us/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}contact-us/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/contact-us/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}contact-us/`,
   },
 };
 const page = () => {

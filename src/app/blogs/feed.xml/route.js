@@ -7,9 +7,9 @@ export async function GET() {
   const blogListData = await getbloglist();
 
   const feed = new RSS({
-    feed_url: "https://www.brilworks.com/feed.xml/",
+    feed_url: `${process.env.NEXT_PUBLIC_BASE_URL}feed.xml/`,
     title: "Mobile App & Software Development Company | Brilworks",
-    site_url: "https://www.brilworks.com/",
+    site_url: process.env.NEXT_PUBLIC_BASE_URL,
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     copyright: `© ${new Date().getFullYear()} BRILWORKS`,
@@ -41,8 +41,8 @@ export async function GET() {
     feed.item({
       title: blog?.content?.metatags?.title,
       description: blog?.content?.metatags?.description,
-      guid: `https://www.brilworks.com/${blog?.full_slug}/`,
-      url: `https://www.brilworks.com/${blog?.full_slug}/`,
+      guid: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
       date: blog.adjustedDate,
       author: blog?.content?.author,
       enclosure: {

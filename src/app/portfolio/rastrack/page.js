@@ -10,7 +10,7 @@ export const metadata = {
     title: "Rastrack - Portfolio | Satellite Tracking | Brilworks Software",
     description:
       "Check out Brilworks's work for Rastrack. How we helped Rastrack to improve their fleet’s efficiency to update fleet information, predict cost and profit.",
-    url: "https://www.brilworks.com/portfolio/rastrack/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/rastrack/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/portfolio/rastrack/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/rastrack/`,
   },
 };
 const page = () => {

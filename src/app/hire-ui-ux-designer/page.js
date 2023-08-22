@@ -10,11 +10,11 @@ export const metadata = {
     title: "UI UX Design Company | Hire Dedicated UI UX Designer",
     description:
       "Hire UI/UX designers from Brilworks for the stunning user experience & user interface designing services like Consulting, Strategy, Mockups, Wireframe and Prototyping.",
-    url: "https://www.brilworks.com/hire-ui-ux-designer/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://www.brilworks.com/images/1.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,
       },
     ],
     locale: "en-US",
@@ -25,7 +25,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://www.brilworks.com/hire-ui-ux-designer/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
   },
 };
 
