@@ -43,10 +43,7 @@ const MediaAndEntertainment = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       MEDIA & ENTERTAINMENT
-                    </h1>
-                  </div>
-                  <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      <br />
                       APP DEVELOPMENT
                     </h1>
                   </div>

@@ -16,13 +16,12 @@ const Career = () => {
             <div className="home_sec2_txt1">
               <h1 className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
+                <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
+                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                    World of Brilliance
+                  </p>
+                </div>
               </h1>
-            </div>
-
-            <div className="home_sec2_txt2">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                World of Brilliance
-              </p>
             </div>
 
             <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
