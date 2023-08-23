@@ -137,7 +137,9 @@ const Header = () => {
       <div className="header">
         <div
           className={`sec1_header ${
-            isPopupMenuActive && window.scrollY > 150 || isMainMenuActive ? "bg-white" : ""
+            (isPopupMenuActive && window.scrollY > 150) || isMainMenuActive
+              ? "bg-white"
+              : ""
           }`}
         >
           <div className="header_width padding_header">
@@ -156,9 +158,9 @@ const Header = () => {
               <div className="project_pages">
                 <div
                   className={`portfolio header_font hidden-xs project_pages_none-1 
-                    ${pathname === "/portfolio" ? " page-active" : ""}`}
+                    ${pathname === "/portfolio/" ? " page-active" : ""}`}
                 >
-                  <Link href="/portfolio">PORTFOLIO</Link>
+                  <Link href="/portfolio/">PORTFOLIO</Link>
                 </div>
                 <div
                   className={`solutions header_font hidden-xs project_pages_none ${
@@ -196,7 +198,7 @@ const Header = () => {
                     </div>
                   </Link>
                 </div>
-                <Link href="/contact-us">
+                <Link href="/contact-us/">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">LET&apos;S TALK</p>
                   </div>
@@ -233,14 +235,14 @@ const Header = () => {
           <div className="mega_menu_width">
             <div className="mega_menu_style">
               <div className="mega_menu_txt">
-                <Link href="/industry/fintech-software-development">
+                <Link href="/industry/fintech-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/FINTECH.png" alt="fintech" />
                     </div>
                     <p
                       className={`${
-                        pathname === "/industry/fintech-software-development"
+                        pathname === "/industry/fintech-software-development/"
                           ? "page-active"
                           : ""
                       }`}
@@ -249,7 +251,7 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/industry/media-entertainment-software-development">
+                <Link href="/industry/media-entertainment-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -260,7 +262,7 @@ const Header = () => {
                     <p
                       className={`${
                         pathname ===
-                        "/industry/media-entertainment-software-development"
+                        "/industry/media-entertainment-software-development/"
                           ? "page-active"
                           : ""
                       }`}
@@ -269,7 +271,7 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/industry/fleet-management-software-development">
+                <Link href="/industry/fleet-management-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -280,7 +282,7 @@ const Header = () => {
                     <p
                       className={
                         pathname ===
-                        "/industry/fleet-management-software-development"
+                        "/industry/fleet-management-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -289,14 +291,15 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/industry/healthcare-software-development">
+                <Link href="/industry/healthcare-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/HEALTHCARE.png" alt="healthcare" />
                     </div>
                     <p
                       className={
-                        pathname === "/industry/healthcare-software-development"
+                        pathname ===
+                        "/industry/healthcare-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -325,14 +328,14 @@ const Header = () => {
           <div className="mega_menu_width">
             <div className="mega_menu_style">
               <div className="mega_menu_txt">
-                <Link href="/hire-reactjs-developer">
+                <Link href="/hire-reactjs-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT.JS.svg" alt="reactjs" />
                     </div>
                     <p
                       className={
-                        pathname === "/hire-reactjs-developer"
+                        pathname === "/hire-reactjs-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -341,28 +344,30 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-java-developer">
+                <Link href="/hire-java-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/JAVA.svg" alt="java development" />
                     </div>
                     <p
                       className={
-                        pathname === "/hire-java-developer" ? "page-active" : ""
+                        pathname === "/hire-java-developer/"
+                          ? "page-active"
+                          : ""
                       }
                     >
                       JAVA
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-nodejs-developer">
+                <Link href="/hire-nodejs-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/NODE.JS.svg" alt="nodejs" />
                     </div>
                     <p
                       className={
-                        pathname === "/hire-nodejs-developer"
+                        pathname === "/hire-nodejs-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -371,14 +376,14 @@ const Header = () => {
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-react-native-developer">
+                <Link href="/hire-react-native-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img src="/images/REACT-NATIVE.svg" alt="react native" />
                     </div>
                     <p
                       className={
-                        pathname === "/hire-react-native-developer"
+                        pathname === "/hire-react-native-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -397,14 +402,14 @@ const Header = () => {
                     </div>
                     <p
                       className={
-                        pathname === "/hire-aws-developer" ? "page-active" : ""
+                        pathname === "/hire-aws-developer/" ? "page-active" : ""
                       }
                     >
                       AWS DEVELOPMENT
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-ui-ux-designer">
+                <Link href="/hire-ui-ux-designer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -414,14 +419,16 @@ const Header = () => {
                     </div>
                     <p
                       className={
-                        pathname === "/hire-ui-ux-designer" ? "page-active" : ""
+                        pathname === "/hire-ui-ux-designer/"
+                          ? "page-active"
+                          : ""
                       }
                     >
                       UI/UX DEVELOPMENT
                     </p>
                   </div>
                 </Link>
-                <Link href="/hire-blockchain-developer">
+                <Link href="/hire-blockchain-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
@@ -431,7 +438,7 @@ const Header = () => {
                     </div>
                     <p
                       className={
-                        pathname === "/hire-blockchain-developer"
+                        pathname === "/hire-blockchain-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -471,11 +478,11 @@ const Header = () => {
                         <i></i>TECHNOLOGIES
                       </p>
                       <div className="accordion-content">
-                        <Link href="/hire-reactjs-developer">
+                        <Link href="/hire-reactjs-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-reactjs-developer"
+                                pathname === "/hire-reactjs-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -489,11 +496,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-java-developer">
+                        <Link href="/hire-java-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-java-developer"
+                                pathname === "/hire-java-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -510,11 +517,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-nodejs-developer">
+                        <Link href="/hire-nodejs-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-nodejs-developer"
+                                pathname === "/hire-nodejs-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -528,11 +535,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-react-native-developer">
+                        <Link href="/hire-react-native-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-react-native-developer"
+                                pathname === "/hire-react-native-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -549,11 +556,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-aws-developer">
+                        <Link href="/hire-aws-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-aws-developer"
+                                pathname === "/hire-aws-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -570,11 +577,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-ui-ux-designer">
+                        <Link href="/hire-ui-ux-designer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-ui-ux-designer"
+                                pathname === "/hire-ui-ux-designer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -591,11 +598,11 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/hire-blockchain-developer">
+                        <Link href="/hire-blockchain-developer/">
                           <div className="menu_mob_flex">
                             <p
                               className={
-                                pathname === "/hire-blockchain-developer"
+                                pathname === "/hire-blockchain-developer/"
                                   ? "page-active"
                                   : ""
                               }
@@ -630,12 +637,12 @@ const Header = () => {
                         <i></i>SOLUTIONS
                       </p>
                       <div className="accordion-content">
-                        <Link href="/industry/fintech-software-development">
+                        <Link href="/industry/fintech-software-development/">
                           <div className="menu_mob_flex">
                             <p
                               className={
                                 pathname ===
-                                "/industry/fintech-software-development"
+                                "/industry/fintech-software-development/"
                                   ? "page-active"
                                   : ""
                               }
@@ -649,12 +656,12 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/industry/media-entertainment-software-development">
+                        <Link href="/industry/media-entertainment-software-development/">
                           <div className="menu_mob_flex">
                             <p
                               className={
                                 pathname ===
-                                "/industry/media-entertainment-software-development"
+                                "/industry/media-entertainment-software-development/"
                                   ? "page-active"
                                   : ""
                               }
@@ -671,12 +678,12 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/industry/fleet-management-software-development">
+                        <Link href="/industry/fleet-management-software-development/">
                           <div className="menu_mob_flex">
                             <p
                               className={
                                 pathname ===
-                                "/industry/fleet-management-software-development"
+                                "/industry/fleet-management-software-development/"
                                   ? "page-active"
                                   : ""
                               }
@@ -693,12 +700,12 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="accordion-content">
-                        <Link href="/industry/healthcare-software-development">
+                        <Link href="/industry/healthcare-software-development/">
                           <div className="menu_mob_flex">
                             <p
                               className={
                                 pathname ===
-                                "/industry/healthcare-software-development"
+                                "/industry/healthcare-software-development/"
                                   ? "page-active"
                                   : ""
                               }
@@ -718,10 +725,10 @@ const Header = () => {
                   </div>
 
                   <div className="menu_txt1">
-                    <Link href="/our-process">
+                    <Link href="/our-process/">
                       <p
                         className={
-                          pathname === "/our-process" ? "page-active" : ""
+                          pathname === "/our-process/" ? "page-active" : ""
                         }
                       >
                         OUR PROCESS
@@ -729,10 +736,10 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link href="/portfolio">
+                    <Link href="/portfolio/">
                       <p
                         className={
-                          pathname === "/portfolio" ? "page-active" : ""
+                          pathname === "/portfolio/" ? "page-active" : ""
                         }
                       >
                         PORTFOLIO
@@ -743,7 +750,7 @@ const Header = () => {
                     <Link href={`/about-us/`}>
                       <p
                         className={
-                          pathname === "/about-us" ? "page-active" : ""
+                          pathname === "/about-us/" ? "page-active" : ""
                         }
                       >
                         ABOUT
@@ -751,19 +758,19 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link href="/career">
+                    <Link href="/career/">
                       <p
-                        className={pathname === "/career" ? "page-active" : ""}
+                        className={pathname === "/career/" ? "page-active" : ""}
                       >
                         CAREER
                       </p>
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link href="/contact-us">
+                    <Link href="/contact-us/">
                       <p
                         className={
-                          pathname === "/contact-us" ? "page-active" : ""
+                          pathname === "/contact-us/" ? "page-active" : ""
                         }
                       >
                         CONTACT
@@ -771,8 +778,8 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="menu_txt1">
-                    <Link href="/blog">
-                      <p className={pathname === "/blog" ? "page-active" : ""}>
+                    <Link href="/blog/">
+                      <p className={pathname === "/blog/" ? "page-active" : ""}>
                         BLOGS
                       </p>
                     </Link>

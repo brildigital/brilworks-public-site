@@ -153,11 +153,11 @@ const DomainWorking = () => {
                       fintech app that solves real-life problems.
                     </div>
                     <Link
-                      href="/industry/fintech-software-development"
+                      href="/industry/fintech-software-development/"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
-                        <p href="/industry/fintech-software-development">
+                        <p href="/industry/fintech-software-development/">
                           Know more
                         </p>
                       </div>
@@ -217,13 +217,13 @@ const DomainWorking = () => {
                       the healthcare industry.
                     </div>
                     <Link
-                      href="/industry/healthcare-software-development"
+                      href="/industry/healthcare-software-development/"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
                         <p
                           className="change_link"
-                          href="/industry/healthcare-software-development"
+                          href="/industry/healthcare-software-development/"
                         >
                           Know more
                         </p>
@@ -284,7 +284,7 @@ const DomainWorking = () => {
                       way you engage and entertain.
                     </div>
                     <Link
-                      href="/industry/media-entertainment-software-development"
+                      href="/industry/media-entertainment-software-development/"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">
@@ -346,7 +346,7 @@ const DomainWorking = () => {
                       manage workflows with GPS tracking.
                     </div>
                     <Link
-                      href="/industry/fleet-management-software-development"
+                      href="/industry/fleet-management-software-development/"
                       className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
                     >
                       <div className="about_txt_domain">

@@ -11,7 +11,7 @@ export const metadata = {
     title: "Blog - Brilworks Software",
     description:
       "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
-    url: "`${process.env.NEXT_PUBLIC_BASE_URL}blog/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",

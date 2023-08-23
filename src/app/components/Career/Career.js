@@ -3,28 +3,18 @@ import Link from "next/link";
 import React from "react";
 import CareerContactForm from "./CareerContactForm";
 import BrilworksCareerReview from "./BrilworksCareerReview";
+import { scrollToSection } from "../lib/commonfunction";
 
 const Career = () => {
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <>
       <section>
         <div className="container mx-auto md:pt-[128px] md:px-[0] pt-[90px] px-[15px]">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+              <h1 className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
-              </p>
+              </h1>
             </div>
 
             <div className="home_sec2_txt2">

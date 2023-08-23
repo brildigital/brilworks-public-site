@@ -14,7 +14,7 @@ const FAQsTechnology = () => {
       </div>
 
       <div>
-        {pathname === "/hire-reactjs-developer" ? (
+        {pathname === "/hire-reactjs-developer/" ? (
           <div
             id="accordionExampleother"
             className="d-block accordion nav nav-tabs"
@@ -175,7 +175,7 @@ const FAQsTechnology = () => {
           </div>
         ) : (
           <>
-            {pathname === "/hire-java-developer" ? (
+            {pathname === "/hire-java-developer/" ? (
               <div
                 id="accordionExampleother"
                 className="d-block accordion nav nav-tabs"
@@ -339,7 +339,7 @@ const FAQsTechnology = () => {
               </div>
             ) : (
               <>
-                {pathname === "/hire-nodejs-developer" ? (
+                {pathname === "/hire-nodejs-developer/" ? (
                   <>
                     <div
                       id="accordionExampleother"
@@ -501,7 +501,7 @@ const FAQsTechnology = () => {
                   </>
                 ) : (
                   <>
-                    {pathname === "/hire-react-native-developer" ? (
+                    {pathname === "/hire-react-native-developer/" ? (
                       <>
                         <div
                           id="accordionExampleother"
@@ -712,7 +712,7 @@ const FAQsTechnology = () => {
                       </>
                     ) : (
                       <>
-                        {pathname === "/hire-aws-developer" ? (
+                        {pathname === "/hire-aws-developer/" ? (
                           <>
                             <div
                               id="accordionExampleother"
@@ -943,7 +943,7 @@ const FAQsTechnology = () => {
                           </>
                         ) : (
                           <>
-                            {pathname === "/hire-ui-ux-designer" ? (
+                            {pathname === "/hire-ui-ux-designer/" ? (
                               <>
                                 <div
                                   id="accordionExampleother"

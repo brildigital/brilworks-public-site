@@ -46,10 +46,10 @@ const GameChanger = () => {
             }`}
           >
             <p className="get_in_touch_hover">
-              <Link href="/contact-us">GET IN TOUCH</Link>
+              <Link href="/contact-us/">GET IN TOUCH</Link>
             </p>
             <p>
-              <Link href="/contact-us">
+              <Link href="/contact-us/">
                 <img
                   decoding="async"
                   loading="lazy"

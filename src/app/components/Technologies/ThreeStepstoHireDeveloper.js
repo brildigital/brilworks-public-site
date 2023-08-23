@@ -2,46 +2,37 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
+import { scrollToSection } from "../lib/commonfunction";
 
 const ThreeStepstoHireDeveloper = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <section className="">
       <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
         <div className="service_width mx-auto md:px-[0px]">
           <div className="service_sec3 md:text-center text-left">
-            {pathname === "/hire-reactjs-developer" ? (
+            {pathname === "/hire-reactjs-developer/" ? (
               <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                 HIRE REACT JS DEVELOPERS
               </p>
             ) : (
               <>
-                {pathname === "/hire-java-developer" ? (
+                {pathname === "/hire-java-developer/" ? (
                   <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                     HIRE JAVA DEVELOPERS
                   </p>
                 ) : (
                   <>
-                    {pathname === "/hire-nodejs-developer" ? (
+                    {pathname === "/hire-nodejs-developer/" ? (
                       <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                         HIRE Node JS DEVELOPERS
                       </p>
                     ) : (
                       <>
                         {" "}
-                        {pathname === "/hire-react-native-developer" ? (
+                        {pathname === "/hire-react-native-developer/" ? (
                           <>
                             <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                               HIRE REACT NATIVE DEVELOPERS
@@ -49,7 +40,7 @@ const ThreeStepstoHireDeveloper = () => {
                           </>
                         ) : (
                           <>
-                            {pathname === "/hire-aws-developer" ? (
+                            {pathname === "/hire-aws-developer/" ? (
                               <>
                                 <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                                   HIRE AWS DEVELOPERS
@@ -57,7 +48,7 @@ const ThreeStepstoHireDeveloper = () => {
                               </>
                             ) : (
                               <>
-                                {pathname === "/hire-ui-ux-designer" ? (
+                                {pathname === "/hire-ui-ux-designer/" ? (
                                   <>
                                     <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                                       HIRE UI UX DESIGNERS
@@ -157,31 +148,29 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="service_description text-center mob_center">
                       <p>
                         We match you with a{" "}
-                        {pathname === "/hire-reactjs-developer" ? (
+                        {pathname === "/hire-reactjs-developer/" ? (
                           "React js Developer"
                         ) : (
                           <>
-                            {pathname === "/hire-java-developer" ? (
+                            {pathname === "/hire-java-developer/" ? (
                               "Java Developer"
                             ) : (
                               <>
-                                {pathname === "/hire-nodejs-D" ? (
+                                {pathname === "/hire-nodejs-developer/" ? (
                                   "Node js Developer"
                                 ) : (
                                   <>
-                                    {" "}
                                     {pathname ===
-                                    "/hire-react-native-developer" ? (
+                                    "/hire-react-native-developer/" ? (
                                       "React Native Developer"
                                     ) : (
                                       <>
-                                        {" "}
-                                        {pathname === "/hire-aws-developer" ? (
+                                        {pathname === "/hire-aws-developer/" ? (
                                           "AWS Developer"
                                         ) : (
                                           <>
-                                            {" "}
-                                            {pathname === "/hire-ui-ux-designer"
+                                            {pathname ===
+                                            "/hire-ui-ux-designer/"
                                               ? "UI UX Designers"
                                               : "Blockchain Developer"}
                                           </>
@@ -230,7 +219,7 @@ const ThreeStepstoHireDeveloper = () => {
       >
         <div className="end-To-end">
           <div className="endTO_text home_sec2_txt3">
-            {pathname === "/hire-reactjs-developer" ? (
+            {pathname === "/hire-reactjs-developer/" ? (
               <p className="!w-full p-0">
                 CHOOSE OUR REACT.JS DEVELOPMENT
                 <br />
@@ -238,7 +227,7 @@ const ThreeStepstoHireDeveloper = () => {
               </p>
             ) : (
               <>
-                {pathname === "/hire-java-developer" ? (
+                {pathname === "/hire-java-developer/" ? (
                   <p className="!w-full p-0">
                     CHOOSE OUR JAVA DEVELOPMENT
                     <br />
@@ -246,7 +235,7 @@ const ThreeStepstoHireDeveloper = () => {
                   </p>
                 ) : (
                   <>
-                    {pathname === "/hire-nodejs-developer" ? (
+                    {pathname === "/hire-nodejs-developer/" ? (
                       <p className="!w-full p-0">
                         CHOOSE OUR NODE.JS DEVELOPMENT
                         <br />
@@ -254,7 +243,7 @@ const ThreeStepstoHireDeveloper = () => {
                       </p>
                     ) : (
                       <>
-                        {pathname === "/hire-react-native-developer" ? (
+                        {pathname === "/hire-react-native-developer/" ? (
                           <p className="!w-full p-0">
                             CHOOSE OUR REACT NATIVE DEVELOPMENT
                             <br />
@@ -262,7 +251,7 @@ const ThreeStepstoHireDeveloper = () => {
                           </p>
                         ) : (
                           <>
-                            {pathname === "/hire-aws-developer" ? (
+                            {pathname === "/hire-aws-developer/" ? (
                               <p className="!w-full p-0">
                                 CHOOSE OUR AWS DEVELOPMENT
                                 <br />
@@ -270,7 +259,7 @@ const ThreeStepstoHireDeveloper = () => {
                               </p>
                             ) : (
                               <>
-                                {pathname === "/hire-ui-ux-designer" ? (
+                                {pathname === "/hire-ui-ux-designer/" ? (
                                   <p className="!w-full p-0">
                                     CHOOSE OUR UI-UX DESIGN
                                     <br />
@@ -473,30 +462,30 @@ const ThreeStepstoHireDeveloper = () => {
                         </p>
                         <p className="pricing-desc-text">
                           Build a team of 5+{" "}
-                          {pathname === "/hire-reactjs-developer" ? (
+                          {pathname === "/hire-reactjs-developer/" ? (
                             "React js developers"
                           ) : (
                             <>
-                              {pathname === "/hire-java-developer" ? (
+                              {pathname === "/hire-java-developer/" ? (
                                 "Java developers"
                               ) : (
                                 <>
-                                  {pathname === "/hire-nodejs-developer" ? (
+                                  {pathname === "/hire-nodejs-developer/" ? (
                                     "Node js developers"
                                   ) : (
                                     <>
                                       {pathname ===
-                                      "/hire-react-native-developer" ? (
+                                      "/hire-react-native-developer/" ? (
                                         "React Native developers"
                                       ) : (
                                         <>
                                           {pathname ===
-                                          "/hire-aws-developer" ? (
+                                          "/hire-aws-developer/" ? (
                                             "AWS developers"
                                           ) : (
                                             <>
                                               {pathname ===
-                                              "/hire-ui-ux-designer"
+                                              "/hire-ui-ux-designer/"
                                                 ? "UI/UX designers"
                                                 : "Blockchain developers"}
                                             </>
@@ -571,27 +560,27 @@ const ThreeStepstoHireDeveloper = () => {
               </div>
               <div className="chat_btn_technology xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
                 <p className="transition ng-binding">
-                  {pathname === "/hire-reactjs-developer" ? (
+                  {pathname === "/hire-reactjs-developer/" ? (
                     "Hire React.js Developers"
                   ) : (
                     <>
-                      {pathname === "/hire-java-developer" ? (
+                      {pathname === "/hire-java-developer/" ? (
                         "Hire Java Developers"
                       ) : (
                         <>
-                          {pathname === "/hire-nodejs-developer" ? (
+                          {pathname === "/hire-nodejs-developer/" ? (
                             "Hire Node.js Developers"
                           ) : (
                             <>
-                              {pathname === "/hire-react-native-developer" ? (
+                              {pathname === "/hire-react-native-developer/" ? (
                                 "Hire React Native Developers"
                               ) : (
                                 <>
-                                  {pathname === "/hire-aws-developer" ? (
+                                  {pathname === "/hire-aws-developer/" ? (
                                     "Hire AWS Developers"
                                   ) : (
                                     <>
-                                      {pathname === "/hire-ui-ux-designer"
+                                      {pathname === "/hire-ui-ux-designer/"
                                         ? "Hire UI UX Designers"
                                         : "Hire Blockchain Developers"}
                                     </>

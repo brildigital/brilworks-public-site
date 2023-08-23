@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./OurProcessStyle.scss";
 import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
 import { useState } from "react";
+import { scrollToSection } from "../lib/commonfunction";
 
 const OurProcessPage = () => {
   const [isAccordionActive, setAccordionActive] = useState(1);
@@ -29,16 +30,7 @@ const OurProcessPage = () => {
     setAccordionActive2(accordanceNumber2);
   };
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  
   return (
     <section className="portfolio mt-[6rem] our_process_page">
       <div className="mx-auto service_width">
