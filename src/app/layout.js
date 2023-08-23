@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
           />
-          {process.env.NODE_ENV !== "production" ? (
+          {process.env.VERCEL_ENV !== "production" ? (
             <meta name="robots" content="noindex,nofollow" />
           ) : null}
 
