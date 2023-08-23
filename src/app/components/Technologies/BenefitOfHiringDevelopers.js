@@ -22,27 +22,27 @@ const BenefitOfHiringDevelopers = () => {
           } md:!text-[1.3rem]`}
         >
           Hiring a dedicated development team from a{" "}
-          {pathname === "/hire-reactjs-developer" ? (
+          {pathname === "/hire-reactjs-developer/" ? (
             "React JS"
           ) : (
             <>
-              {pathname === "/hire-java-developer" ? (
+              {pathname === "/hire-java-developer/" ? (
                 "Java"
               ) : (
                 <>
-                  {pathname === "/hire-nodejs-developer" ? (
+                  {pathname === "/hire-nodejs-developer/" ? (
                     "Node JS"
                   ) : (
                     <>
-                      {pathname === "/hire-react-native-developer" ? (
+                      {pathname === "/hire-react-native-developer/" ? (
                         "React Native"
                       ) : (
                         <>
-                          {pathname === "/hire-aws-developer" ? (
+                          {pathname === "/hire-aws-developer/" ? (
                             "AWS"
                           ) : (
                             <>
-                              {pathname === "/hire-ui-ux-designer"
+                              {pathname === "/hire-ui-ux-designer/"
                                 ? "UI UX"
                                 : "Blockchain"}
                             </>

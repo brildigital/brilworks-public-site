@@ -2,39 +2,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
+import { scrollToSection } from "../lib/commonfunction";
 
 const TechnologyCombination = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div className="mx-auto service_width">
       <div className="service_sec3 md:text-center text-left">
-        {pathname === "/hire-reactjs-developer" ? (
+        {pathname === "/hire-reactjs-developer/" ? (
           <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
             THE RIGHT REACT JS COMBINATIONS {!isMobile && <br />}
             JUST FOR YOU
           </p>
         ) : (
           <>
-            {pathname === "/hire-java-developer" ? (
+            {pathname === "/hire-java-developer/" ? (
               <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                 FULL STACK JAVA DEVELOPMENT TO {!isMobile && <br />}
                 LEVEL UP YOUR WEB APPS
               </p>
             ) : (
               <>
-                {pathname === "/hire-nodejs-developer" && (
+                {pathname === "/hire-nodejs-developer/" && (
                   <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                     Hire STACK NODE JS DEVELOPER TO {!isMobile && <br />}
                     AMP IT UP A NOTCH
@@ -56,7 +47,7 @@ const TechnologyCombination = () => {
                 <div className="dots"></div>
               </div>
               <div className="background-hover border-t-[1px]  border-[#00dfb8] ">
-                {pathname === "/hire-reactjs-developer" ? (
+                {pathname === "/hire-reactjs-developer/" ? (
                   <div className="style_sec3_swiper_home">
                     <div className="flex gap-[1rem] pb-[2rem]">
                       <img
@@ -84,7 +75,7 @@ const TechnologyCombination = () => {
                   </div>
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer" ? (
+                    {pathname === "/hire-java-developer/" ? (
                       <div className="style_sec3_swiper_home">
                         <div className="flex gap-[1rem] pb-[2rem]">
                           <img
@@ -115,7 +106,7 @@ const TechnologyCombination = () => {
                       </div>
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer" && (
+                        {pathname === "/hire-nodejs-developer/" && (
                           <div className="style_sec3_swiper_home">
                             <div className="flex gap-[1rem] pb-[2rem]">
                               <img
@@ -161,7 +152,7 @@ const TechnologyCombination = () => {
                 <div className="dots"></div>
               </div>
               <div className="background-hover border-t-[1px]  border-[#00dfb8]">
-                {pathname === "/hire-reactjs-developer" ? (
+                {pathname === "/hire-reactjs-developer/" ? (
                   <div className="style_sec3_swiper_home">
                     <div className="flex gap-[1rem] pb-[2rem]">
                       <img
@@ -191,7 +182,7 @@ const TechnologyCombination = () => {
                   </div>
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer" ? (
+                    {pathname === "/hire-java-developer/" ? (
                       <div className="style_sec3_swiper_home">
                         <div className="flex gap-[1rem] pb-[2rem]">
                           <img
@@ -220,7 +211,7 @@ const TechnologyCombination = () => {
                       </div>
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer" && (
+                        {pathname === "/hire-nodejs-developer/" && (
                           <div className="style_sec3_swiper_home">
                             <div className="flex gap-[1rem] pb-[2rem]">
                               <img
@@ -272,15 +263,15 @@ const TechnologyCombination = () => {
             </div>
             <div className="chat_btn_technology">
               <p className="transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
-                {pathname === "/hire-reactjs-developer" ? (
+                {pathname === "/hire-reactjs-developer/" ? (
                   "Hire Full Stack Reactjs Developers"
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer" ? (
+                    {pathname === "/hire-java-developer/" ? (
                       "Hire Full Stack Java Developers"
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer"
+                        {pathname === "/hire-nodejs-developer/"
                           ? "Hire Full Stack Nodejs Developers"
                           : null}
                       </>

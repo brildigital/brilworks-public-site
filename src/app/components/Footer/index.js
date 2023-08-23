@@ -118,9 +118,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/contact-us"
+                      href="/contact-us/"
                       className={
-                        pathname === "/contact-us" ? "page-active" : ""
+                        pathname === "/contact-us/" ? "page-active" : ""
                       }
                     >
                       Contact Us
@@ -128,25 +128,25 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/portfolio"
-                      className={pathname === "/portfolio" ? "page-active" : ""}
+                      href="/portfolio/"
+                      className={pathname === "/portfolio/" ? "page-active" : ""}
                     >
                       Portfolio
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/about-us"
-                      className={pathname === "/about-us" ? "page-active" : ""}
+                      href="/about-us/"
+                      className={pathname === "/about-us/" ? "page-active" : ""}
                     >
                       About
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/our-process"
+                      href="/our-process/"
                       className={
-                        pathname === "/our-process" ? "page-active" : ""
+                        pathname === "/our-process/" ? "page-active" : ""
                       }
                     >
                       Our Process
@@ -154,8 +154,8 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/blog"
-                      className={pathname === "/blog" ? "page-active" : ""}
+                      href="/blog/"
+                      className={pathname === "/blog/" ? "page-active" : ""}
                     >
                       Blogs
                     </Link>
@@ -163,7 +163,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="footer">
-                <Link href="/career">
+                <Link href="/career/">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>
                   </div>
@@ -178,9 +178,9 @@ const Footer = () => {
                 <ul className="footer_link">
                   <li>
                     <Link
-                      href="/industry/fintech-software-development"
+                      href="/industry/fintech-software-development/"
                       className={
-                        pathname === "/industry/fintech-software-development"
+                        pathname === "/industry/fintech-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -190,10 +190,10 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/industry/fleet-management-software-development"
+                      href="/industry/fleet-management-software-development/"
                       className={
                         pathname ===
-                        "/industry/fleet-management-software-development"
+                        "/industry/fleet-management-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -203,9 +203,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/industry/healthcare-software-development"
+                      href="/industry/healthcare-software-development/"
                       className={
-                        pathname === "/industry/healthcare-software-development"
+                        pathname === "/industry/healthcare-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -215,10 +215,10 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/industry/media-entertainment-software-development"
+                      href="/industry/media-entertainment-software-development/"
                       className={
                         pathname ===
-                        "/industry/media-entertainment-software-development"
+                        "/industry/media-entertainment-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -237,9 +237,9 @@ const Footer = () => {
                 <ul className="footer_link">
                   <li>
                     <Link
-                      href="/hire-java-developer"
+                      href="/hire-java-developer/"
                       className={
-                        pathname === "/hire-java-developer" ? "page-active" : ""
+                        pathname === "/hire-java-developer/" ? "page-active" : ""
                       }
                     >
                       Java
@@ -247,9 +247,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-nodejs-developer"
+                      href="/hire-nodejs-developer/"
                       className={
-                        pathname === "/hire-nodejs-developer"
+                        pathname === "/hire-nodejs-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -259,9 +259,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-reactjs-developer"
+                      href="/hire-reactjs-developer/"
                       className={
-                        pathname === "/hire-reactjs-developer"
+                        pathname === "/hire-reactjs-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -271,9 +271,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-react-native-developer"
+                      href="/hire-react-native-developer/"
                       className={
-                        pathname === "/hire-react-native-developer"
+                        pathname === "/hire-react-native-developer/"
                           ? "page-active"
                           : ""
                       }
@@ -283,9 +283,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-aws-developer"
+                      href="/hire-aws-developer/"
                       className={
-                        pathname === "/hire-aws-developer" ? "page-active" : ""
+                        pathname === "/hire-aws-developer/" ? "page-active" : ""
                       }
                     >
                       AWS Development
@@ -293,9 +293,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-ui-ux-designer"
+                      href="/hire-ui-ux-designer/"
                       className={
-                        pathname === "/hire-ui-ux-designer" ? "page-active" : ""
+                        pathname === "/hire-ui-ux-designer/" ? "page-active" : ""
                       }
                     >
                       UI/UX Development
@@ -303,9 +303,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/hire-blockchain-developer"
+                      href="/hire-blockchain-developer/"
                       className={
-                        pathname === "/hire-blockchain-developer"
+                        pathname === "/hire-blockchain-developer/"
                           ? "page-active"
                           : ""
                       }

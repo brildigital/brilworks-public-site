@@ -9,7 +9,7 @@ const WhyShouldHireDevelopers = () => {
     <section className="service_width linear-gradient-bg">
       <div className="lg:py-[6rem] md:py-[4rem] py-[2rem]">
         <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
-          {pathname === "/hire-reactjs-developer" ? (
+          {pathname === "/hire-reactjs-developer/" ? (
             <>
               <div className="end-To-end">
                 <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -33,7 +33,7 @@ const WhyShouldHireDevelopers = () => {
             </>
           ) : (
             <>
-              {pathname === "/hire-java-developer" ? (
+              {pathname === "/hire-java-developer/" ? (
                 <>
                   <div className="end-To-end">
                     <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -60,7 +60,7 @@ const WhyShouldHireDevelopers = () => {
                 </>
               ) : (
                 <>
-                  {pathname === "/hire-nodejs-developer" ? (
+                  {pathname === "/hire-nodejs-developer/" ? (
                     <>
                       <div className="end-To-end">
                         <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -84,7 +84,7 @@ const WhyShouldHireDevelopers = () => {
                     </>
                   ) : (
                     <>
-                      {pathname === "/hire-react-native-developer" ? (
+                      {pathname === "/hire-react-native-developer/" ? (
                         <>
                           <div className="end-To-end">
                             <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -111,7 +111,7 @@ const WhyShouldHireDevelopers = () => {
                         </>
                       ) : (
                         <>
-                          {pathname === "/hire-aws-developer" ? (
+                          {pathname === "/hire-aws-developer/" ? (
                             <>
                               <div className="end-To-end">
                                 <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -139,7 +139,7 @@ const WhyShouldHireDevelopers = () => {
                             </>
                           ) : (
                             <>
-                              {pathname === "/hire-ui-ux-designer" ? (
+                              {pathname === "/hire-ui-ux-designer/" ? (
                                 <>
                                   <div className="end-To-end">
                                     <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
@@ -205,7 +205,7 @@ const WhyShouldHireDevelopers = () => {
           )}
 
           <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-[3.5rem] gap-[2rem] p-4">
-            {pathname === "/hire-reactjs-developer" ? (
+            {pathname === "/hire-reactjs-developer/" ? (
               <>
                 <div>
                   <div
@@ -238,7 +238,7 @@ const WhyShouldHireDevelopers = () => {
               </>
             ) : (
               <>
-                {pathname === "/hire-java-developer" ? (
+                {pathname === "/hire-java-developer/" ? (
                   <>
                     <div>
                       <div
@@ -271,7 +271,7 @@ const WhyShouldHireDevelopers = () => {
                   </>
                 ) : (
                   <>
-                    {pathname === "/hire-nodejs-developer" ? (
+                    {pathname === "/hire-nodejs-developer/" ? (
                       <>
                         <div>
                           <div
@@ -304,7 +304,7 @@ const WhyShouldHireDevelopers = () => {
                       </>
                     ) : (
                       <>
-                        {pathname === "/hire-react-native-developer" ? (
+                        {pathname === "/hire-react-native-developer/" ? (
                           <>
                             <div>
                               <div
@@ -337,7 +337,7 @@ const WhyShouldHireDevelopers = () => {
                           </>
                         ) : (
                           <>
-                            {pathname === "/hire-aws-developer" ? (
+                            {pathname === "/hire-aws-developer/" ? (
                               <>
                                 <div>
                                   <div
@@ -370,7 +370,7 @@ const WhyShouldHireDevelopers = () => {
                               </>
                             ) : (
                               <>
-                                {pathname === "/hire-ui-ux-designer" ? (
+                                {pathname === "/hire-ui-ux-designer/" ? (
                                   <>
                                     <div>
                                       <div

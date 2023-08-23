@@ -66,12 +66,12 @@ const SolutionContactForm = () => {
           <div className="like_basis basis-[50%]">
             <div className="like_text bold home_sec2_txt3">
               <p className="!w-full">
-                {pathname === "/industry/fintech-software-development" ||
+                {pathname === "/industry/fintech-software-development/" ||
                 pathname ===
-                  "/industry/media-entertainment-software-development" ||
+                  "/industry/media-entertainment-software-development/" ||
                 pathname ===
-                  "/industry/fleet-management-software-development" ||
-                pathname === "/industry/healthcare-software-development"
+                  "/industry/fleet-management-software-development/" ||
+                pathname === "/industry/healthcare-software-development/"
                   ? " TAKE THE FIRST STEP BY FILLING OUT THIS QUICK FORM."
                   : "  CONNECT WITH US TO GET A 48 HOURS RISK-FREE TRIAL"}
               </p>
