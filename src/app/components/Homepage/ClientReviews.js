@@ -96,7 +96,7 @@ const ClientReviews = () => {
 
           <div
             className={`${
-              pathname === "/" || pathname === "/home"
+              pathname === "/" || pathname === "/home/"
                 ? "md:!w-2/4"
                 : "md:!w-2/4"
             } w-full`}

@@ -7,6 +7,7 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
+import { scrollToSection } from "../lib/commonfunction";
 
 const Fintech = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -34,16 +35,7 @@ const Fintech = () => {
     setAccordionActive2(accordanceNumber2);
   };
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  
   return (
     <>
       <section className="portfolio mt-[6rem] solution-accordion">

@@ -7,6 +7,7 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
+import { scrollToSection } from "../lib/commonfunction";
 
 const MediaAndEntertainment = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -22,16 +23,6 @@ const MediaAndEntertainment = () => {
     setAccordionActive(accordanceNumber);
   };
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <>
       <section className="portfolio mt-[6rem] solution-accordion">

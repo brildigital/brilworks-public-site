@@ -52,12 +52,12 @@ const ExtensionOfTeam = () => {
                     >
                       <div className="accordion-body">
                         <Link
-                          href="/hire-java-developer"
+                          href="/hire-java-developer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
                         >
                           <div className="about_txt">
                             <p
-                              href="/hire-java-developer"
+                              href="/hire-java-developer/"
                               className="change_link text-[24px]"
                             >
                               Java
@@ -90,14 +90,14 @@ const ExtensionOfTeam = () => {
                         >
                           <div className="about_txt">
                             <p
-                              href="/hire-nodejs-developer"
+                              href="/hire-nodejs-developer/"
                               className="change_link text-[24px]"
                             >
                               Node.Js
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <p href="/hire-nodejs-developer">
+                            <p href="/hire-nodejs-developer/">
                               <img
                                 decoding="async"
                                 loading="lazy"
@@ -151,7 +151,7 @@ const ExtensionOfTeam = () => {
                     >
                       <div className="accordion-body">
                         <Link
-                          href="/hire-reactjs-developer"
+                          href="/hire-reactjs-developer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
                         >
                           <div className="about_txt">
@@ -210,7 +210,7 @@ const ExtensionOfTeam = () => {
                     >
                       <div className="accordion-body">
                         <Link
-                          href="/hire-aws-developer"
+                          href="/hire-aws-developer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
                         >
                           <div className="about_txt">
@@ -271,7 +271,7 @@ const ExtensionOfTeam = () => {
                     >
                       <div className="accordion-body">
                         <Link
-                          href="/hire-react-native-developer"
+                          href="/hire-react-native-developer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
                         >
                           <div className="about_txt">
@@ -302,12 +302,12 @@ const ExtensionOfTeam = () => {
                         </Link>
 
                         <Link
-                          href="/hire-blockchain-developer"
+                          href="/hire-blockchain-developer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
                         >
                           <div className="about_txt">
                             <p
-                              href="/hire-blockchain-developer"
+                              href="/hire-blockchain-developer/"
                               className="change_link text-[24px]"
                             >
                               Block Chain and Solidity
@@ -366,7 +366,7 @@ const ExtensionOfTeam = () => {
                     >
                       <div className="accordion-body">
                         <Link
-                          href="/hire-ui-ux-designer"
+                          href="/hire-ui-ux-designer/"
                           className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
                         >
                           <div className="about_txt">

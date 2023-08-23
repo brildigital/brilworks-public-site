@@ -54,7 +54,7 @@ const Blogs = () => {
       </div>
       {blogData?.length ? (
         <Link
-          href="/blog"
+          href="/blog/"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition pt-[32px] px-[16px]"
         >
           <div className="about_txt">

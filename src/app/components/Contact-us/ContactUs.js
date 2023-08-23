@@ -1,61 +1,23 @@
 "use client";
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
-import { useState } from "react";
-import Loader from "../Homepage/Loader";
-import { usePathname } from "next/navigation";
 import ContactUsEmailForm from "./ContactUsEmailForm";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [respMessage, setRespMessage] = useState("");
-  const pathname = usePathname();
-  const url = process.env.NEXT_PUBLIC_GOOGLESHEET_URL;
 
-  const clearMessage = () => {
-    setTimeout(() => {
-      setRespMessage("");
-    }, 5000);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const form = e.target;
-    const formData = new FormData(form);
-    formData.append("route", pathname);
-
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => {
-        res.text();
-      })
-      .then((finalResp) => {
-        setRespMessage("Your response is submitted successfully.");
-        setIsSubmitting(false);
-        form.reset();
-        clearMessage();
-      })
-      .catch((err) => {
-        setIsSubmitting(false);
-        console.log(err);
-      });
-  };
   return (
     <>
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
         <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full">
           <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
-            <p
-              className={`uppercase m-0 !w-10/12 ${
+            <h1
+              className={`uppercase m-0 !w-10/12 contact_bold-head ${
                 isMobile ? "p-0 !text-left !w-full" : ""
               }`}
             >
               Drop Us a Message and Let Our Team Help With Your Project
-            </p>
+            </h1>
           </div>
           <div className="noText md:pt-2">
             <ul>

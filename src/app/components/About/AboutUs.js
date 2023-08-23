@@ -8,10 +8,10 @@ const AboutUs = () => {
         <div className="flex md:flex-row flex-col items-center gap-[2rem]">
           <div className="basis-3/6 md:order-1 order-2">
             <div className="home_sec2_txt1 text_left">
-              <p>
+              <h1 className="headstyle-other-page ">
                 Your tech partner in a{" "}
                 <span className="abc">fast changing world.</span>
-              </p>
+              </h1>
             </div>
             <div className="home_txt3 md:mt-[3rem] mt-[3rem]">
               <p>

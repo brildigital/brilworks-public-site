@@ -1,17 +1,8 @@
 "use client";
 import Link from "next/link";
+import { scrollToSection } from "../lib/commonfunction";
 
 const SolutionEngagementModal = () => {
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const targetSection = document.getElementById(sectionId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
   return (
     <section>
       <div className="xl:mt-[76px] lg:mt-[60px] md:mt-[32px] mt-[16px] ">
