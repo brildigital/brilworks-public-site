@@ -49,26 +49,26 @@ const OurProcessPage = () => {
                 <div className="how-we flex items-center gap-[1rem]">
                   <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
                     How We
+                    <div className="how-we flex items-center gap-[1rem]">
+                      <div className="imgebreakets">
+                        <img
+                          className="alignnone"
+                          src="/images/1.png"
+                          alt="curley bracket"
+                        />
+                      </div>
+                      <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
+                        Work
+                      </h1>
+                      <div className="imgebreakets">
+                        <img
+                          className="alignnone"
+                          src="/images/2.png"
+                          alt="curley bracket"
+                        />
+                      </div>
+                    </div>
                   </h1>
-                </div>
-                <div className="how-we flex items-center gap-[1rem]">
-                  <div className="imgebreakets">
-                    <img
-                      className="alignnone"
-                      src="/images/1.png"
-                      alt="curley bracket"
-                    />
-                  </div>
-                  <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
-                    Work
-                  </h1>
-                  <div className="imgebreakets">
-                    <img
-                      className="alignnone"
-                      src="/images/2.png"
-                      alt="curley bracket"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
