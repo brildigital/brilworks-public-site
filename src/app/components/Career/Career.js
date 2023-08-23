@@ -4,8 +4,10 @@ import React from "react";
 import CareerContactForm from "./CareerContactForm";
 import BrilworksCareerReview from "./BrilworksCareerReview";
 import { scrollToSection } from "../lib/commonfunction";
+import { useMediaQuery } from "react-responsive";
 
 const Career = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section>
@@ -504,7 +506,7 @@ const Career = () => {
         </div>
 
         <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-[30px]">
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Flexible Timings</p>
@@ -535,8 +537,8 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
+            <div className="!p-[1.5rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Medical Insurance Cover</p>
               </div>
@@ -565,7 +567,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Holidays & Time off</p>
@@ -594,7 +596,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Team Building</p>
@@ -620,7 +622,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Learning & Development</p>
