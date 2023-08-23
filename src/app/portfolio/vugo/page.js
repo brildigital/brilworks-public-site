@@ -9,8 +9,8 @@ export const metadata = {
   openGraph: {
     title: "Vugo - Portfolio | Car Advertising | Brilworks Software",
     description:
-    "Check out Brilworks's work for Vugo. How we helped Vugo to create a unique in-car advertising application and increase in driver earnings and advertiser queries.",
-    url: "https://brilworks.com/portfolio/vugo/",
+      "Check out Brilworks's work for Vugo. How we helped Vugo to create a unique in-car advertising application and increase in driver earnings and advertiser queries.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/vugo/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/portfolio/vugo/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/vugo/`,
   },
 };
 

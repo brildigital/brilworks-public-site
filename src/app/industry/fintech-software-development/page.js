@@ -11,11 +11,11 @@ export const metadata = {
     description:
       "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
 
-    url: "https://brilworks.com/industry/fintech-software-development/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/explore-arrow-01.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
       },
     ],
     locale: "en-US",
@@ -26,7 +26,8 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/industry/fintech-software-development/",
+    canonical:
+      `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
   },
 };
 

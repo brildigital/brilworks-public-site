@@ -10,11 +10,11 @@ export const metadata = {
     title: "Java Development Company | Hire Trusted Java Experts",
     description:
       "Brilworks's Java software development services include Consulting, Web, App, Spring Core & Spring Boot. Hire dedicated Java developers.",
-    url: "https://brilworks.com/hire-java-developer/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-java-developer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/1.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,
       },
     ],
     locale: "en-US",
@@ -25,7 +25,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/hire-java-developer/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}hire-java-developer/`,
   },
 };
 

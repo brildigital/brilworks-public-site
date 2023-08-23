@@ -12,11 +12,11 @@ export const metadata = {
       "AWS Development Company | Hire AWS Certified Developers | Brilworks",
     description:
       "Brilworks' AWS development services contain Consulting, App Development, Cloud Migration, DevOps, and Managed Services. Hire AWS Lambda and Kinesis developers.",
-    url: "https://brilworks.com/hire-aws-developer/",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: "https://brilworks.com/images/1.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,
       },
     ],
     locale: "en-US",
@@ -27,7 +27,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: "https://brilworks.com/hire-aws-developer/",
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
   },
 };
 const page = () => {

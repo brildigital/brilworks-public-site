@@ -86,7 +86,7 @@ const ThreeStepstoHireDeveloper = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[3rem] gap-4">
+          <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
             <div className="contact_box">
               <div className="mx-auto">
                 <img
@@ -95,7 +95,7 @@ const ThreeStepstoHireDeveloper = () => {
                   className="Tell Us Your Requirements"
                 />
               </div>
-              <div className="steps_service">
+              <div className="steps_service flex items-center justify-center">
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
@@ -122,7 +122,7 @@ const ThreeStepstoHireDeveloper = () => {
                 />
               </div>
 
-              <div className="steps_service">
+              <div className="steps_service flex items-center justify-center">
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
@@ -148,7 +148,7 @@ const ThreeStepstoHireDeveloper = () => {
                   className=""
                 />
               </div>
-              <div className="steps_service">
+              <div className="steps_service flex items-center justify-center">
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">

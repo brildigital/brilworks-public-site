@@ -35,13 +35,16 @@ const ContactUsEmailForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/contact-us`, {
-        method: "POST",
-        header: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, page: pathname }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/contact-us`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
+      );
 
       if (response.ok) {
         setFormData({ name: "", email: "", phone: "", message: "" });

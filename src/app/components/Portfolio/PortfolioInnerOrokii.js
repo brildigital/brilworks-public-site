@@ -10,11 +10,11 @@ const PortfolioInnerOrokii = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <p>
+          <h1 className="!text-[2.5rem] fontfamily-ebold ">
               How Our Experts Helped Orokii Build a
               <br />
               Custom Fintech Application
-            </p>
+            </h1>
           </div>
           <div className="mb-[64px]">
             <img className="alignnone" src="/images/orokii.jpg" alt="vugo" />
@@ -277,12 +277,12 @@ const PortfolioInnerOrokii = () => {
           </div>
 
           <div className="md:px-[0px] px-[15px]">
-            <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
                   <img src="/images/people-01.png" alt="people" className="" />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -308,7 +308,7 @@ const PortfolioInnerOrokii = () => {
                   />
                 </div>
 
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -333,7 +333,7 @@ const PortfolioInnerOrokii = () => {
                     className=""
                   />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">

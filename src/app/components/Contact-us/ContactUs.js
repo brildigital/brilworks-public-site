@@ -134,7 +134,7 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 grid-cols-1 sec7_service_grid">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
@@ -143,7 +143,7 @@ const ContactUs = () => {
                     className="md:!w-[92px]"
                   />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -169,7 +169,7 @@ const ContactUs = () => {
                   />
                 </div>
 
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex ">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
@@ -194,7 +194,7 @@ const ContactUs = () => {
                     className="md:!w-[92px]"
                   />
                 </div>
-                <div className="steps_service">
+                <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
