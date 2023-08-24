@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://www.brilworks.com/vugo/",
+      "destination": "https://www.brilworks.com/portfolio/vugo/",
+      "statusCode": 301
+    }
+  ]
+}
