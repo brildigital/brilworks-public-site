@@ -65,7 +65,7 @@ const nextConfig = {
       },
       {
         source: `/hackers-optimized-user-experience/`,
-        destination: `/blog-list/`,
+        destination: `/blog/`,
         statusCode: 301,
       },
       {
