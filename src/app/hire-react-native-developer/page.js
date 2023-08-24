@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical:
-      `${process.env.NEXT_PUBLIC_BASE_URL}/hire-react-native-developer/`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}hire-react-native-developer/`,
   },
 };
 

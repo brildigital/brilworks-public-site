@@ -1,4 +1,557 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { trailingSlash: true };
+const nextConfig = {
+  trailingSlash: true,
+  redirects: async () => {
+    return [
+      {
+        source: `/vugo/`,
+        destination: `/portfolio/vugo/`,
+        statusCode: 301,
+      },
+      {
+        source: `/accelevents/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blockchain/`,
+        destination: `/hire-blockchain-developer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/studyme/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/about-brilworks/`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-app-development/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-design/`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/mobile-app-development/`,
+        destination: `/hire-react-native-developer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/gps-tracking-app-development/`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/email-marketing-software-development/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/video-streaming-app-development/`,
+        destination: `/industry/media-entertainment-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/hackers-optimized-user-experience/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-paymentgateway`,
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/gps-tracking/`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/careers/`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/accelevents-portfolio/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/mobile-application-studyme/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/vugo-portfolio/`,
+        destination: `/portfolio/vugo/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-ui-ux/`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/service-details/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/company/`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/hello-world/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-video/`,
+        destination: `/industry/media-entertainment-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/video-technology/services-gps`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-paymentgateway`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/sample-page/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/services-gps`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/accelevents-portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/services-gps`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/home-2/services-gps`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/vugo-portfolio`,
+        destination: `/portfolio/vugo/`,
+        statusCode: 301,
+      },
+      {
+        source: `/service-details/company`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-services/services-ui-ux`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-ui-ux`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/home-2/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-services/`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/services-email`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/services-ui-ux`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/email-sms/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/accelevents-portfolio/services-email`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/project-stompai/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/project-trackimo/`,
+        destination: `/portfolio/trackimo/`,
+        statusCode: 301,
+      },
+      {
+        source: `/aws-cloud-consulting-services/`,
+        destination: `/hire-aws-developer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/payment-gateway-integration/`,
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/video-technology/`,
+        destination: `/industry/media-entertainment-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/javascript-service/`,
+        destination: `/hire-java-developer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/java-development/`,
+        destination: `/hire-java-developer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/project-accelevents/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career-2/`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-ui-ux/services-email`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio-eccocar/`,
+        destination: `/portfolio/eccocar/`,
+        statusCode: 301,
+      },
+      {
+        source: `/video-technology/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/service`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/service`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/careers/service`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact/service`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-services/service`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-email/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/service`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/home-2/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/vugo-portfolio/service`,
+        destination: `/portfolio/vugo/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-chat/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-chat`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/email-sms/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/service`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-paymentgateway/service`,
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/company/service`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-email`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/accelevents-portfolio/company`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-ui-ux/service`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-chat/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/gps-tracking/service`,
+        destination: `/industry/fleet-management-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/service-details/service`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/hackers-optimized-user-experience-3/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/studyme-portfolio/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolios/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/payment-gateway-development/:slug*`,
+        has: [
+          {
+            type: "query",
+            key: "utm_source",
+            value: "sportsa.com",
+          },
+        ],
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/company`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-video`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/company`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-email`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-gps`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/company/services-gps`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/company/services-email`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/company/services-ui-ux`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/discover-`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/best-no-code-app-builders/`,
+        destination: `/blog/best-no-code-tools//`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/page/4/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/page/2/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/author/admin/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/careers/company`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-services/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blockchain/contact-us/`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-ui-ux`,
+        destination: `/hire-ui-ux-designer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/company`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/ui-ux-services/portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/vugo-portfolio/portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+    ];
+  },
+};
 
 module.exports = nextConfig;

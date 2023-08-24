@@ -4,8 +4,10 @@ import React from "react";
 import CareerContactForm from "./CareerContactForm";
 import BrilworksCareerReview from "./BrilworksCareerReview";
 import { scrollToSection } from "../lib/commonfunction";
+import { useMediaQuery } from "react-responsive";
 
 const Career = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section>
@@ -14,13 +16,12 @@ const Career = () => {
             <div className="home_sec2_txt1">
               <h1 className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
+                <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
+                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                    World of Brilliance
+                  </p>
+                </div>
               </h1>
-            </div>
-
-            <div className="home_sec2_txt2">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                World of Brilliance
-              </p>
             </div>
 
             <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
@@ -504,7 +505,7 @@ const Career = () => {
         </div>
 
         <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-[30px]">
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Flexible Timings</p>
@@ -535,8 +536,8 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
+            <div className="!p-[1.5rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Medical Insurance Cover</p>
               </div>
@@ -565,7 +566,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Holidays & Time off</p>
@@ -594,7 +595,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Team Building</p>
@@ -620,7 +621,7 @@ const Career = () => {
             </div>
           </div>
 
-          <div className="hover_class relative">
+          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Learning & Development</p>

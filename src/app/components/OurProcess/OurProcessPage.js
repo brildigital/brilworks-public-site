@@ -30,7 +30,6 @@ const OurProcessPage = () => {
     setAccordionActive2(accordanceNumber2);
   };
 
-  
   return (
     <section className="portfolio mt-[6rem] our_process_page">
       <div className="mx-auto service_width">
@@ -48,28 +47,28 @@ const OurProcessPage = () => {
             <div className="flex self-end justify-between w-[90%] mx-auto">
               <div className="txt">
                 <div className="how-we flex items-center gap-[1rem]">
-                  <p className="uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
+                  <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
                     How We
-                  </p>
-                </div>
-                <div className="how-we flex items-center gap-[1rem]">
-                  <div className="imgebreakets">
-                    <img
-                      className="alignnone"
-                      src="/images/1.png"
-                      alt="curley bracket"
-                    />
-                  </div>
-                  <p className="uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
-                    Work
-                  </p>
-                  <div className="imgebreakets">
-                    <img
-                      className="alignnone"
-                      src="/images/2.png"
-                      alt="curley bracket"
-                    />
-                  </div>
+                    <div className="how-we flex items-center gap-[1rem]">
+                      <div className="imgebreakets">
+                        <img
+                          className="alignnone"
+                          src="/images/1.png"
+                          alt="curley bracket"
+                        />
+                      </div>
+                      <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
+                        Work
+                      </h1>
+                      <div className="imgebreakets">
+                        <img
+                          className="alignnone"
+                          src="/images/2.png"
+                          alt="curley bracket"
+                        />
+                      </div>
+                    </div>
+                  </h1>
                 </div>
               </div>
             </div>

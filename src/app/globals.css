@@ -802,7 +802,7 @@ a:hover {
     rgba(67, 223, 219, 1) 60%,
     rgba(0, 222, 175, 1) 84%
   );
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 28px 28px;
 }
 
 .chat_btn_technology {
@@ -827,7 +827,7 @@ a:hover {
     rgba(67, 223, 219, 1) 60%,
     rgba(0, 222, 175, 1) 84%
   );
-  border-radius: 0 0 0 30px;
+  border-radius: 0 0 0 28px;
 }
 .pricing_grid .two:hover {
   background: rgb(28, 185, 213);
@@ -849,7 +849,7 @@ a:hover {
     rgba(67, 223, 219, 1) 60%,
     rgba(0, 222, 175, 1) 84%
   );
-  border-radius: 0 0 30px 0;
+  border-radius: 0 0 28px 0;
 }
 
 .pricing-amount {
@@ -2353,6 +2353,15 @@ textarea.form-control-txt {
   margin-bottom: 7px;
   font-weight: 700;
 }
+.kinderland .privacy-policy ol,
+.kinderland .terms-of-use ol {
+  margin-left: 1.5rem;
+}
+.kinderland .privacy-policy ol li,
+.kinderland .terms-of-use ol li {
+  list-style: decimal !important;
+  font-weight: 700;
+}
 
 @media only screen and (max-width: 1680px) {
   .home_txt2 p {
@@ -3292,6 +3301,12 @@ textarea.form-control-txt {
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
   }
+  .pricing_grid .one:hover {
+    border-radius: 0 !important;
+  }
+  .pricing_grid .three:hover {
+    border-radius: 0 0 28px 28px !important;
+  }
   .pricing-desc-text {
     font-size: var(--font_16);
     font-family: var(--medium);
@@ -3314,5 +3329,9 @@ textarea.form-control-txt {
     line-height: var(--line_height_1_2) !important;
     padding: 0 !important;
     font-size: 1.4rem !important;
+  }
+  .faq-bottom .accordion-item {
+    padding: 1rem !important;
+    margin-bottom: 15px !important;
   }
 }
