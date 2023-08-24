@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/vugo/",
-      "destination": "/portfolio/vugo/",
-      "statusCode": 301
-    }
-  ]
-}
