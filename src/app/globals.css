@@ -2360,7 +2360,25 @@ textarea.form-control-txt {
 .kinderland .privacy-policy ol li,
 .kinderland .terms-of-use ol li {
   list-style: decimal !important;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.kinderland p a {
+  text-decoration: underline !important;
+  word-break: break-all;
+}
+
+.kinderland p span a {
+  text-decoration: unset !important;
+}
+.kinderland p span a:hover {
+  text-decoration: unset !important;
+  background-color: unset !important;
+}
+.kinderland p a:hover {
+  text-decoration: underline !important;
+  word-break: break-all;
+  background-color: rgb(227, 227, 227);
 }
 
 @media only screen and (max-width: 1680px) {
