@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
+import { scrollEffect } from "../lib/commonfunction";
 
 const SeeingBelieving = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -22,10 +23,19 @@ const SeeingBelieving = () => {
     dataFetch();
   }, []);
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <BelievingText />
-      <div className="work-swiper">
+      <div className="work-swiper reveal">
         <Swiper
           modules={[Pagination]}
           spaceBetween={30}

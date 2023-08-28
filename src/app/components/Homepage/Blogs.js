@@ -4,6 +4,7 @@ import StoryblokClient from "storyblok-js-client";
 import { BlogText } from "./BigText";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -27,10 +28,19 @@ const Blogs = () => {
       });
   }, []);
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <BlogText />
-      <div className="w-[90%] blog-home mx-auto">
+      <div className="w-[90%] blog-home mx-auto reveal">
         {blogData?.length ? (
           blogData.map(({ slug, name, content }, index) => (
             <div key={index} className="blog-box overflow-hidden">

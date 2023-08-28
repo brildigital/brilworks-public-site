@@ -15,7 +15,7 @@ const BlockchainDevelopers = () => {
         </div>
       </div>
 
-      <div className="grid xl:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-[2rem]">
+      <div className="grid xl:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-[2rem] reveal">
         <div className="border-1 border-[#80808038] rounded-[30px]">
           <div className="home_sec3_box1">
             <div className="dots_flex">

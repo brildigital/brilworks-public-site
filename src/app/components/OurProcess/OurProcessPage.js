@@ -2,8 +2,8 @@
 import Link from "next/link";
 import "./OurProcessStyle.scss";
 import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
-import { useState } from "react";
-import { scrollToSection } from "../lib/commonfunction";
+import { useEffect, useState } from "react";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 
 const OurProcessPage = () => {
   const [isAccordionActive, setAccordionActive] = useState(1);
@@ -29,6 +29,15 @@ const OurProcessPage = () => {
     }
     setAccordionActive2(accordanceNumber2);
   };
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
 
   return (
     <section className="portfolio mt-[6rem] our_process_page">
@@ -57,9 +66,7 @@ const OurProcessPage = () => {
                           alt="curley bracket"
                         />
                       </div>
-                      <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
-                        Work
-                      </h1>
+                      Work
                       <div className="imgebreakets">
                         <img
                           className="alignnone"
@@ -99,7 +106,7 @@ const OurProcessPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto service_width pb-[4rem]">
+      <div className="mx-auto service_width pb-[4rem] reveal">
         <div className="flex !flex-col md:!flex-row items-start gap-[1rem]">
           <div className="our_img_text_sec relative">
             <div className="our_img">
@@ -171,7 +178,7 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end"
+        className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end reveal"
         id="workSec4"
       >
         <div className="end-To-end">
@@ -1128,7 +1135,7 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end"
+        className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal"
         id="workSec5"
       >
         <div className="end-To-end">

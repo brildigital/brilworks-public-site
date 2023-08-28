@@ -11,11 +11,9 @@ Disallow: /gps-tracking/*
 Disallow: /service-details/*
 Disallow: /vugo-portfolio/*
 Disallow: /brilworks/*
-Disallow: /career/*
 Disallow: /careers/*
 Disallow: /company/*
 Disallow: /contact/*
-Disallow: /contact-us/*
 Disallow: /services-chat/*
 Disallow: /services-email/*
 Disallow: /services-gps/*
@@ -24,3 +22,6 @@ Disallow: /services-ui-ux/*
 Disallow: /services-video/*
 Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
+
+Sitemap: https://www.brilworks.com/sitemap_index.xml
+Sitemap: https://www.brilworks.com/sitemap.xml

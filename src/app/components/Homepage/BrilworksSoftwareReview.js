@@ -12,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -34,6 +35,15 @@ const BrilworksSoftwareReview = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
   }, []);
 
   return (
@@ -105,7 +115,7 @@ const BrilworksSoftwareReview = () => {
           </div>
         </div>
         <Swiper
-          className="!w-{90%]"
+          className="!w-{90%] reveal"
           modules={[Pagination]}
           spaceBetween={isMobile ? 10 : 21}
           loopFillGroupWithBlank={true}

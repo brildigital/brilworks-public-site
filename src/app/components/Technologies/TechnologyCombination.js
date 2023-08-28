@@ -37,7 +37,7 @@ const TechnologyCombination = () => {
         )}
       </div>
 
-      <div className="grid xl:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-[4rem]">
+      <div className="grid xl:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-[4rem] reveal">
         <div className="hire_sec1_service_50">
           <div className="react-technology">
             <div className="relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]">

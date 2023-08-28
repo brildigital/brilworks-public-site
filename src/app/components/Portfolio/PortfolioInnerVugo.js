@@ -50,7 +50,7 @@ const PortfolioInnerVugo = () => {
             </Link>
           </div>
 
-          <div className="mx-auto">
+          <div className="mx-auto reveal">
             <div className="flex flex-wrap identifying-understanding">
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
@@ -123,7 +123,7 @@ const PortfolioInnerVugo = () => {
             <p>HOW BRILWORKS HELPED VUGO ACHIEVE ITS OBJECTIVES?</p>
           </div>
 
-          <div className="service_grid_img">
+          <div className="service_grid_img reveal">
             <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[50px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
@@ -246,7 +246,7 @@ const PortfolioInnerVugo = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px] the-result">
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-[32px] md:mt-[64px] mt-[32px] the-result reveal">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -317,7 +317,7 @@ const PortfolioInnerVugo = () => {
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 
-          <div className="md:px-[0px] px-[15px]">
+          <div className="md:px-[0px] px-[15px] reveal">
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
@@ -416,7 +416,7 @@ const PortfolioInnerVugo = () => {
           <BestAdvocateText />
           <ClientReviews />
 
-          <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px]">
+          <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
             <HomepageContactForm />
           </div>
         </div>

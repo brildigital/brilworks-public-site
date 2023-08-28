@@ -1,13 +1,23 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import CareerContactForm from "./CareerContactForm";
 import BrilworksCareerReview from "./BrilworksCareerReview";
-import { scrollToSection } from "../lib/commonfunction";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useMediaQuery } from "react-responsive";
 
 const Career = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <section>
@@ -102,34 +112,35 @@ const Career = () => {
                 className="rounded-[36px]"
               />
             </div>
-
-            <div className="home_sec2_txt1">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                At Brilworks,
-              </p>
-            </div>
-
-            <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
-              <div className="home_sec2_txt2">
+            <div className="reveal">
+              <div className="home_sec2_txt1">
                 <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                  It’s all about the
+                  At Brilworks,
                 </p>
               </div>
-              <div className="home_sec2_txt1 txt_center border-[#000000] border-b-[5px]">
-                <p>people</p>
+
+              <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
+                <div className="home_sec2_txt2">
+                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                    It’s all about the
+                  </p>
+                </div>
+                <div className="home_sec2_txt1 txt_center border-[#000000] border-b-[5px]">
+                  <p>people</p>
+                </div>
+              </div>
+
+              <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
+                <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full font-light f-light">
+                  To us, the people and the collaborative working style are key
+                  drivers of engagement. It’s our aim to create a welcoming
+                  environment in which employees are empowered to achieve their
+                  fullest potential.
+                </p>
               </div>
             </div>
 
-            <div className="home_sec2_txt3 home_sec2_txt3_style md:w-[80%] md:mx-auto">
-              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full font-light f-light">
-                To us, the people and the collaborative working style are key
-                drivers of engagement. It’s our aim to create a welcoming
-                environment in which employees are empowered to achieve their
-                fullest potential.
-              </p>
-            </div>
-
-            <div className="md:my-[8rem] my-[3rem] !mb-0">
+            <div className="md:my-[8rem] my-[3rem] !mb-0 reveal">
               <div>
                 <div className="home_sec2_txt1">
                   <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
@@ -179,7 +190,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="sm:w-[93%] w-full mx-auto px-[15px]">
+      <section className="sm:w-[93%] w-full mx-auto px-[15px] reveal">
         <div>
           {/* <div className="clutch-widget">
             <iframe
@@ -201,7 +212,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem]">
+      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal">
         <div className="border-1 border-[#80808075] lg:p-[6rem] sm:p-[3rem] p-[1rem] rounded-[25px]">
           <div className="flex md:flex-row flex-col">
             <div className="basis-[35%]">
@@ -497,7 +508,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem]">
+      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal">
         <div className="home_sec2_txt1 md:text-center text-left md:mb-[80px] mb-[40px]">
           <p>
             <span className="abc">Why should you</span> join us?
@@ -654,7 +665,7 @@ const Career = () => {
       </section>
 
       <section
-        className="w-[93%] mx-auto md:my-[8rem] my-[4rem]"
+        className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal"
         id="section7_career"
       >
         <div className="home_sec2_txt1 md:text-center text-left">
@@ -675,8 +686,8 @@ const Career = () => {
         </div>
       </section>
 
-      <section>
-        <div className="container mx-auto px-[15px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
+      <section className="reveal">
+        <div className="container mx-auto px-[15px] xl:mb-[64px] lg:mb-[80px] mb-[32px] ">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
               <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">

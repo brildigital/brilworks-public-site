@@ -10,7 +10,7 @@ const MediaNEntertainmentFAQs = () => {
         </p>
       </div>
 
-      <div>
+      <div className="reveal">
         <div
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs"

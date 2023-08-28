@@ -2,9 +2,19 @@
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 import ContactUsEmailForm from "./ContactUsEmailForm";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
 
   return (
     <>
@@ -89,7 +99,7 @@ const ContactUs = () => {
 
       <section>
         <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
-          <div className="service_width mx-auto md:px-[0px] px-[15px]">
+          <div className="service_width mx-auto md:px-[0px] px-[15px] reveal">
             <div className="service_sec3 md:text-center text-left">
               <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                 WHAT MAKES US BRILLIANT?
@@ -176,7 +186,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="service_width contact_sec3 md:!pt-[100px] pt-1">
+        <div className="service_width contact_sec3 md:!pt-[100px] pt-1 reveal">
           <div className="just_call_sec">
             <div className="home_sec2_txt3 contact_bold text-center">
               <p className="textUpercase md:!text-center !text-left !w-full">
@@ -245,7 +255,7 @@ const ContactUs = () => {
 
         <ClientReviews />
 
-        <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem]">
+        <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem] reveal">
           <div className="bg_grey">
             <div className="like_flex">
               <div className="like_basis">

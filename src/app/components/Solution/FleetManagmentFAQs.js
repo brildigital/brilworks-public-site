@@ -12,7 +12,7 @@ const FleetManagmentFAQs = () => {
       <div>
         <div
           id="accordionExampleother"
-          className="d-block accordion nav nav-tabs"
+          className="d-block accordion nav nav-tabs reveal"
           role="tablist"
         >
           <div

@@ -6,8 +6,8 @@ import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import HealthcareFAQs from "./HealthcareFAQs";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-import { scrollToSection } from "../lib/commonfunction";
+import { useEffect, useState } from "react";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 
 const HealthCare = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -36,6 +36,15 @@ const HealthCare = () => {
     setAccordionActive2(accordanceNumber2);
   };
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <section className="portfolio mt-[6rem] solution-accordion">
@@ -52,37 +61,30 @@ const HealthCare = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <div>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-258 "
-                        src="/images/1.png"
-                        alt="curly bracket"
-                        width="24"
-                        height="94"
-                      />
-                    </div>
-                    <div>
-                      <h1 className="font-style-solution-head uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      <div className="flex items-center">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="w-[auto]"
+                          src="/images/1.png"
+                          alt="curly bracket"
+                          width="24"
+                          height="94"
+                        />
                         HEALTHCARE
-                      </h1>
-                    </div>
-                    <div>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-258 "
-                        src="/images/2.png"
-                        alt="curly bracket"
-                        width="24"
-                        height="94"
-                      />
-                    </div>
-                  </div>
-                  <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head2  uppercase xl:text-[4rem] lg:text-[60px] md:text-[50px] sm:text-[55px] text-[30px] !leading-none">
-                      SOFTWARE <br />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="w-[auto]"
+                          src="/images/2.png"
+                          alt="curly bracket"
+                          width="24"
+                          height="94"
+                        />
+                      </div>
+                      SOFTWARE
+                      <br />
                       DEVELOPMENT
                     </h1>
                   </div>
@@ -97,7 +99,8 @@ const HealthCare = () => {
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="uppercase p-0 !ml-[0] !w-full">
-                  CUSTOM HEALTHCARE SOFTWARE DEVELOPMENT THAT <br />
+                  CUSTOM HEALTHCARE SOFTWARE DEVELOPMENT THAT{" "}
+                  {isMobile ? <br /> : null}
                   PUTS YOUR PATIENTS FIRST.
                 </p>
               </div>
@@ -143,7 +146,7 @@ const HealthCare = () => {
             </div>
           </div>
 
-          <div className="mx-auto pt-[32px]">
+          <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
@@ -751,7 +754,7 @@ const HealthCare = () => {
               </p>
             </div>
           </div>
-          <div className="mx-auto sm:pt-[32px] pt-[0px]">
+          <div className="mx-auto sm:pt-[32px] pt-[0px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
                 <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
@@ -1161,7 +1164,7 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
           <div className="md:pl-[8rem] w-[90%]">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3">
@@ -1278,7 +1281,7 @@ const HealthCare = () => {
           </div>
 
           <div className="lg:pt-[8rem] lg:pb-[6rem] md:py-[6rem] py-[4rem] workpadd_borderTop">
-            <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
+            <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
                   <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
@@ -1371,7 +1374,7 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto mt-[6rem] md:pt-[6rem] pt-[4rem] workpadd_borderTop service_width end-to-end">
+        <div className="mx-auto mt-[6rem] md:pt-[6rem] pt-[4rem] workpadd_borderTop service_width end-to-end reveal">
           <div className="flex md:flex-row flex-col md:gap-[2rem] align-middle mb-0">
             <div className="health_sec1_flex_40 order_2">
               <div className=" portfolio_title">

@@ -1,12 +1,24 @@
+"use client";
 import Link from "next/link";
 import { ActionNResultText } from "./BigText";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Brilliant = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <div className="container mx-auto md:py-[128px] md:px-[0] py-[40px] px-[15px]">
       <div className="md:text-center">
         <ActionNResultText />
-        <div className="home_sec2_txt3 home_sec2_txt3_style sm:py-[32px] py-[16px] md:w-[80%] md:mx-auto">
+        <div className="home_sec2_txt3 home_sec2_txt3_style sm:py-[32px] py-[16px] md:w-[80%] md:mx-auto reveal">
           <p className="homepage-text xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light lg:!w-[94%] !w-full">
             Welcome to Brilworks – a tech-first company with a passion to create
             great products for businesses around the world. We’re agile and
