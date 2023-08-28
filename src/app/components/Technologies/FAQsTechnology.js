@@ -17,7 +17,7 @@ const FAQsTechnology = () => {
         {pathname === "/hire-reactjs-developer/" ? (
           <div
             id="accordionExampleother"
-            className="d-block accordion nav nav-tabs"
+            className="d-block accordion nav nav-tabs reveal"
             role="tablist"
           >
             <div
@@ -178,7 +178,7 @@ const FAQsTechnology = () => {
             {pathname === "/hire-java-developer/" ? (
               <div
                 id="accordionExampleother"
-                className="d-block accordion nav nav-tabs"
+                className="d-block accordion nav nav-tabs reveal"
                 role="tablist"
               >
                 <div
@@ -343,7 +343,7 @@ const FAQsTechnology = () => {
                   <>
                     <div
                       id="accordionExampleother"
-                      className="d-block accordion nav nav-tabs"
+                      className="d-block accordion nav nav-tabs reveal"
                       role="tablist"
                     >
                       <div
@@ -505,7 +505,7 @@ const FAQsTechnology = () => {
                       <>
                         <div
                           id="accordionExampleother"
-                          className="d-block accordion nav nav-tabs"
+                          className="d-block accordion nav nav-tabs reveal"
                           role="tablist"
                         >
                           <div
@@ -716,7 +716,7 @@ const FAQsTechnology = () => {
                           <>
                             <div
                               id="accordionExampleother"
-                              className="d-block accordion nav nav-tabs"
+                              className="d-block accordion nav nav-tabs reveal"
                               role="tablist"
                             >
                               <div
@@ -947,7 +947,7 @@ const FAQsTechnology = () => {
                               <>
                                 <div
                                   id="accordionExampleother"
-                                  className="d-block accordion nav nav-tabs"
+                                  className="d-block accordion nav nav-tabs reveal"
                                   role="tablist"
                                 >
                                   <div
@@ -1128,7 +1128,7 @@ const FAQsTechnology = () => {
                               <>
                                 <div
                                   id="accordionExampleother"
-                                  className="d-block accordion nav nav-tabs"
+                                  className="d-block accordion nav nav-tabs reveal"
                                   role="tablist"
                                 >
                                   <div

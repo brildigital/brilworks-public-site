@@ -6,8 +6,8 @@ import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-import { scrollToSection } from "../lib/commonfunction";
+import { useEffect, useState } from "react";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 
 const MediaAndEntertainment = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -22,6 +22,15 @@ const MediaAndEntertainment = () => {
     }
     setAccordionActive(accordanceNumber);
   };
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
 
   return (
     <>
@@ -102,7 +111,7 @@ const MediaAndEntertainment = () => {
             </div>
           </div>
 
-          <div className="mx-auto pt-[32px]">
+          <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
@@ -688,7 +697,7 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
               <p className="!w-full p-0">
@@ -806,7 +815,7 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end ">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
               <p className="!w-full p-0">
@@ -817,7 +826,7 @@ const MediaAndEntertainment = () => {
             </div>
           </div>
 
-          <div className="service_grid_img">
+          <div className="service_grid_img reveal">
             <div className="grid grid-cols-2 md:gap-[40px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
@@ -959,7 +968,7 @@ const MediaAndEntertainment = () => {
             </div>
           </div>
 
-          <div className="lg:py-[6rem] md:py-[6rem] py-[4rem]">
+          <div className="lg:py-[6rem] md:py-[6rem] py-[4rem] reveal">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">

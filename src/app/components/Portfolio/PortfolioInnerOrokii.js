@@ -1,16 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import Link from "next/link";
 import { BestAdvocateText } from "../Homepage/BigText";
 import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const PortfolioInnerOrokii = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-          <h1 className="!text-[2.5rem] fontfamily-ebold ">
+            <h1 className="!text-[2.5rem] fontfamily-ebold ">
               How Our Experts Helped Orokii Build a
               <br />
               Custom Fintech Application
@@ -47,7 +59,7 @@ const PortfolioInnerOrokii = () => {
             </Link>
           </div>
 
-          <div className="mx-auto">
+          <div className="mx-auto reveal">
             <div className="flex flex-wrap identifying-understanding">
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
@@ -119,7 +131,7 @@ const PortfolioInnerOrokii = () => {
             <p>HOW BRILWORKS HELPED OROKII ACHIEVE ITS GOALS?</p>
           </div>
 
-          <div className="service_grid_img">
+          <div className="service_grid_img reveal">
             <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
@@ -237,7 +249,7 @@ const PortfolioInnerOrokii = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 grid-cols-2 md:mt-[64px] mt-[32px] the-result">
+          <div className="grid md:grid-cols-2 grid-cols-2 md:mt-[64px] mt-[32px] the-result reveal">
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
@@ -276,7 +288,7 @@ const PortfolioInnerOrokii = () => {
             <p>WHAT MAKES US BRILLIANT?</p>
           </div>
 
-          <div className="md:px-[0px] px-[15px]">
+          <div className="md:px-[0px] px-[15px] reveal">
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
@@ -377,7 +389,7 @@ const PortfolioInnerOrokii = () => {
             <ClientReviews />
           </div>
 
-          <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px]">
+          <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
             <HomepageContactForm />
           </div>
         </div>

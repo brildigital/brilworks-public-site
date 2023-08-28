@@ -61,7 +61,7 @@ const SolutionContactForm = () => {
       className="mx-auto px-[15px] sec3_width_home md:py-[6rem] py-[4rem]"
       id="section10_service"
     >
-      <div className="bg_grey rounded-[30px] bg-[#ededed]">
+      <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
         <div className="like_flex">
           <div className="like_basis basis-[50%]">
             <div className="like_text bold home_sec2_txt3">

@@ -1,10 +1,20 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const DomainWorking = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
   return (
     <>
-      <div className="mx-auto px-[15px] md:pt-[128px] sm:pt-[32px] pt-[60px] sm:w-[92%] w-[100%]">
+      <div className="mx-auto px-[15px] md:pt-[128px] sm:pt-[32px] pt-[60px] sm:w-[92%] w-[100%] reveal">
         <div className="accordion-tab-section homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

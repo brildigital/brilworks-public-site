@@ -7,9 +7,18 @@ import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import NodeJSDevelopers from "./NodeJSDevelopers";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
-import { scrollToSection } from "../lib/commonfunction";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
+import { useEffect } from "react";
 
 const NodejsTechnology = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
 
   return (
     <>
@@ -28,37 +37,29 @@ const NodejsTechnology = () => {
             <div className="service_sec1_position">
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
-                  <div className="how-we flex items-center gap-[1rem]">
-                    <div>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-258 "
-                        src="/images/1.png"
-                        alt="curly bracket"
-                        width="24"
-                        height="94"
-                      />
-                    </div>
-                    <div>
-                      <h1 className="font-style-solution-head uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                  <div className="how-we flex fle items-center gap-[1rem]">
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      <div className="flex items-center">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="w-[auto]"
+                          src="/images/1.png"
+                          alt="curly bracket"
+                          width="24"
+                          height="94"
+                        />
                         NODE.JS
-                      </h1>
-                    </div>
-                    <div>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-258 "
-                        src="/images/2.png"
-                        alt="curly bracket"
-                        width="24"
-                        height="94"
-                      />
-                    </div>
-                  </div>
-                  <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head2 uppercase xl:text-[4rem] lg:text-[60px] md:text-[50px] sm:text-[55px] text-[30px] !leading-none">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="w-[auto]"
+                          src="/images/2.png"
+                          alt="curly bracket"
+                          width="24"
+                          height="94"
+                        />
+                      </div>
                       DEVELOPMENT <br />
                       COMPANY
                     </h1>
@@ -143,7 +144,7 @@ const NodejsTechnology = () => {
             </div>
           </div>
 
-          <div className="service_grid_img">
+          <div className="service_grid_img reveal">
             <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">

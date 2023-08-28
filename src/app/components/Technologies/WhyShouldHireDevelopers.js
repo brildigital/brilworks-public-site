@@ -6,7 +6,7 @@ const WhyShouldHireDevelopers = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const pathname = usePathname();
   return (
-    <section className="service_width linear-gradient-bg">
+    <section className="service_width linear-gradient-bg reveal">
       <div className="lg:py-[6rem] md:py-[4rem] py-[2rem]">
         <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
           {pathname === "/hire-reactjs-developer/" ? (

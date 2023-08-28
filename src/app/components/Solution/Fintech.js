@@ -6,8 +6,8 @@ import SolutionContactForm from "./SolutionContactForm";
 import SoutionHowCanStart from "./SoutionHowCanStart";
 import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-import { scrollToSection } from "../lib/commonfunction";
+import { useEffect, useState } from "react";
+import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 
 const Fintech = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -34,6 +34,15 @@ const Fintech = () => {
     }
     setAccordionActive2(accordanceNumber2);
   };
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
 
   return (
     <>
@@ -127,7 +136,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
               <p className="!w-full p-0">
@@ -734,7 +743,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
               <p className="!w-full p-0">
@@ -1330,7 +1339,7 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="service_grid_img">
+          <div className="service_grid_img reveal">
             <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[20px]">
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
@@ -1508,7 +1517,7 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+          <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
             <div className="portfolio_health_sec1 w-full">
               <div className="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
                 <div className="health_sec1_flex_40 order_2">
@@ -1566,7 +1575,7 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="lg:py-[6rem] md:py-[4rem] py-[2rem]">
+          <div className="lg:py-[6rem] md:py-[4rem] py-[2rem] reveal">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
