@@ -45,6 +45,8 @@ const OurProcessPage = () => {
         <div className="relative">
           <p>
             <img
+              loading="lazy"
+              decoding="async"
               className="how_works_img alignnone"
               src={
                 "https://a.storyblok.com/f/219851/1398x780/2fdaa336f4/work-baner.png"
@@ -61,6 +63,8 @@ const OurProcessPage = () => {
                     <div className="how-we flex items-center gap-[1rem]">
                       <div className="imgebreakets">
                         <img
+                          loading="lazy"
+                          decoding="async"
                           className="alignnone"
                           src="/images/1.png"
                           alt="curley bracket"
@@ -69,6 +73,8 @@ const OurProcessPage = () => {
                       Work
                       <div className="imgebreakets">
                         <img
+                          loading="lazy"
+                          decoding="async"
                           className="alignnone"
                           src="/images/2.png"
                           alt="curley bracket"
@@ -130,6 +136,8 @@ const OurProcessPage = () => {
                     className="__mPS2id _mPS2id-h mPS2id-highlight mPS2id-highlight-first mPS2id-highlight-last"
                   >
                     <img
+                      loading="lazy"
+                      decoding="async"
                       className="alignnone"
                       src="/images/explore-arrow-01.png"
                       alt="down arrow"
@@ -163,6 +171,8 @@ const OurProcessPage = () => {
                     className="__mPS2id _mPS2id-h"
                   >
                     <img
+                      loading="lazy"
+                      decoding="async"
                       className="alignnone"
                       src="/images/explore-arrow-01.png"
                       alt="down arrow"
@@ -242,6 +252,8 @@ const OurProcessPage = () => {
                                 </div>
                                 <div className="number_icon_img image_toggle">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Requirements-Analysis.png"
                                     alt="Requirements-Analysis"
                                   />
@@ -253,6 +265,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img image_toggle">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Requirements-Analysis.png"
                                     alt="Requirements-Analysis"
                                   />
@@ -365,6 +379,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Prototype-or-MVP.png"
                                     alt="Prototype-or-MVP"
                                   />
@@ -376,6 +392,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Prototype-or-MVP.png"
                                     alt="Prototype-or-MVP"
                                   />
@@ -466,6 +484,8 @@ const OurProcessPage = () => {
                                 <div className="text-[24px]">Design Sprint</div>
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Design-Sprint.png"
                                     alt="Design-Sprint"
                                   />
@@ -477,6 +497,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Design-Sprint.png"
                                     alt="Design-Sprint"
                                   />
@@ -574,6 +596,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Development-Sprint.png"
                                     alt="Development-Sprint"
                                   />
@@ -585,6 +609,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Development-Sprint.png"
                                     alt="Development-Sprint"
                                   />
@@ -699,6 +725,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Quality-Assurance.png"
                                     alt="Quality-Assurance"
                                   />
@@ -710,6 +738,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Quality-Assurance.png"
                                     alt="Quality-Assurance"
                                   />
@@ -826,6 +856,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Implementation-Deployment.png"
                                     alt="Implementation-Deployment"
                                   />
@@ -837,6 +869,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Implementation-Deployment.png"
                                     alt="Implementation-Deployment"
                                   />
@@ -945,6 +979,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Maintenance-Support.png"
                                     alt="Maintenance-Support"
                                   />
@@ -956,6 +992,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Maintenance-Support.png"
                                     alt="Maintenance-Support"
                                   />
@@ -1036,6 +1074,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/requirements-analysis-1-226x300.jpg"
                         alt="requirements-analysis"
                       />
@@ -1049,6 +1089,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={
                           "https://a.storyblok.com/f/219851/692x920/07ee0875cf/prototype.jpg"
                         }
@@ -1064,6 +1106,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/design-sprint.jpg"
                         alt="requirements-analysis"
                       />
@@ -1078,6 +1122,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={`https://a.storyblok.com/f/219851/692x920/6553d4ab22/end-to-end.png`}
                         alt="requirements-analysis"
                       />
@@ -1092,6 +1138,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="https://a.storyblok.com/f/219851/692x920/d5d12b1dd4/quality.jpg"
                         alt="quality"
                       />
@@ -1106,6 +1154,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/implementation-Deployment.jpg"
                         alt="requirements-analysis"
                       />
@@ -1120,6 +1170,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={
                           "https://a.storyblok.com/f/219851/692x920/f1915dbc83/maintenance-and-support.jpg"
                         }
@@ -1170,6 +1222,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/Screening-and-Shortlisting-1.jpg"
                         alt=""
                       />
@@ -1183,7 +1237,12 @@ const OurProcessPage = () => {
                     aria-labelledby="accordion-two-ourteam-tab"
                   >
                     <div className="team_img">
-                      <img src="/images/language-proficiency.jpg" alt="" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/language-proficiency.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
 
@@ -1195,6 +1254,8 @@ const OurProcessPage = () => {
                   >
                     <div className="team_img">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/aptitude-test-recruitment-assessment.jpg"
                         alt=""
                       />
@@ -1208,7 +1269,12 @@ const OurProcessPage = () => {
                     aria-labelledby="accordion-four-ourteam-tab"
                   >
                     <div className="team_img">
-                      <img src="/images/technical-evaluation-1.jpg" alt="" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/technical-evaluation-1.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
 
@@ -1219,7 +1285,12 @@ const OurProcessPage = () => {
                     aria-labelledby="accordion-five-ourteam-tab"
                   >
                     <div className="team_img">
-                      <img src="/images/team-extension.jpg" alt="" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/team-extension.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -1268,6 +1339,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Screening-Shortlisting.png"
                                     alt="Screening-Shortlisting"
                                   />
@@ -1279,6 +1352,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Screening-Shortlisting.png"
                                     alt="Screening-Shortlisting"
                                   />
@@ -1381,6 +1456,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Language-Proficiency.png"
                                     alt="Language-Proficiency"
                                   />
@@ -1392,6 +1469,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Language-Proficiency.png"
                                     alt="Language-Proficiency"
                                   />
@@ -1503,6 +1582,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Aptitude-Assessment.png"
                                     alt="Aptitude-Assessment"
                                   />
@@ -1514,6 +1595,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Aptitude-Assessment.png"
                                     alt="Aptitude-Assessment"
                                   />
@@ -1612,6 +1695,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Technical-Evaluation.png"
                                     alt="Technical-Evaluation"
                                   />
@@ -1623,6 +1708,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Technical-Evaluation.png"
                                     alt="Technical-Evaluation"
                                   />
@@ -1725,6 +1812,8 @@ const OurProcessPage = () => {
 
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Team-Extension.png"
                                     alt="Team-Extension"
                                   />
@@ -1736,6 +1825,8 @@ const OurProcessPage = () => {
                               <div className="flex w-full">
                                 <div className="number_icon_img">
                                   <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src="/images/Team-Extension.png"
                                     alt="Team-Extension"
                                   />

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -146,12 +147,12 @@ const Header = () => {
             <div className="header_main_flex">
               <div className="header_logo">
                 <Link href="/">
-                  <img
+                  <Image
                     src="/images/logo.png"
                     alt="Brilworks Logo"
                     width="206"
                     height="62"
-                    className="alignnone size-full wp-image-15"
+                    // className="alignnone size-full wp-image-15"
                   />
                 </Link>
               </div>

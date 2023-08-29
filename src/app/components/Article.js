@@ -79,6 +79,8 @@ const Article = ({ blok }) => {
       <section className="mt-[6rem] mx-[15px] blog-inner" id="scroll-win">
         <div className="md:w-[88%] mx-auto w-full">
           <img
+            decoding="async"
+            loading="lazy"
             className="md:rounded-[30px] rounded-[15px]"
             alt={blok?.image?.alt}
             src={`${
@@ -152,6 +154,8 @@ const Article = ({ blok }) => {
                 <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                   <div className="img-blk">
                     <img
+                      decoding="async"
+                      loading="lazy"
                       src={blok?.author_img?.filename}
                       width="96"
                       height="96"
@@ -240,6 +244,8 @@ const Article = ({ blok }) => {
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <div className="sec9_img1">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           className="rounded-[20px]"
                           src={content?.Image?.filename}
                           alt={content?.Image?.alt}

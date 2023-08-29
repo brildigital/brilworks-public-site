@@ -26,6 +26,8 @@ const UIUXTechnology = () => {
           <div className="relative">
             <p>
               <img
+                loading="lazy"
+                decoding="async"
                 className="h-[46vh] rounded-[20px]"
                 src="https://a.storyblok.com/f/219851/1398x780/6814715c8b/2-ui-ux.png"
                 alt="React Native banner"
@@ -146,6 +148,7 @@ const UIUXTechnology = () => {
                 <div className="basis-[15%]">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="/images/UI-UX-Consulting-Services-1.png"
                     alt="UI UX Consulting Services"
                   />
@@ -170,6 +173,7 @@ const UIUXTechnology = () => {
                 <div className="basis-[15%]">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src="/images/UI-UX-Design-Services-1.png"
                     alt="UI UX Design Services"
                   />
@@ -194,7 +198,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    loading="lazy"
+                    decoding="async"
                     src="/images/UX-Strategy.png"
                     alt="UX Strategy"
                   />
@@ -219,6 +224,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone wp-image-285 size-full"
                     src="/images/frontend.png"
                     alt="Mockups Designing"
@@ -243,6 +250,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Wireframe-and-Prototyping-1.png"
                     alt="Wireframe and Prototyping"

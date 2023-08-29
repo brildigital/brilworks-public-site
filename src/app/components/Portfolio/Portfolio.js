@@ -22,16 +22,22 @@ const Portfolio = () => {
             <div className="sec1_service relative">
               <p>
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="hidden-xs alignnone wp-image-252 size-medium"
-                  src="/images/Banner_portfolio.jpg"
-                  alt="portfolio"
+                  src={
+                    "https://a.storyblok.com/f/219851/1398x781/d140e56982/banner_portfolio.jpg"
+                  }
+                  alt="Portfolio Banner"
                 />
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="visible-xs alignnone"
                   src={
                     "https://a.storyblok.com/f/219851/1080x1080/f9390a380b/portfolio-mobile-size.jpg"
                   }
-                  alt="portfolio"
+                  alt="Portfolio Banner"
                 />
               </p>
             </div>
@@ -82,6 +88,8 @@ const Portfolio = () => {
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone"
                     src="/images/vugo-1.jpg"
                     alt="vugo"
@@ -98,6 +106,8 @@ const Portfolio = () => {
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone"
                     src="/images/rastrack.jpg"
                     alt="Rastrack"
@@ -165,6 +175,8 @@ const Portfolio = () => {
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone"
                     src="/images/orokii.jpg"
                     alt="Orokii"
@@ -181,6 +193,8 @@ const Portfolio = () => {
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone"
                     src="/images/Eccocar.jpg"
                     alt="Eccocar"
@@ -250,6 +264,8 @@ const Portfolio = () => {
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone"
                     src="/images/GPS_Trackers_Devices-Uses2-1.jpg"
                     alt="Trackimo"
