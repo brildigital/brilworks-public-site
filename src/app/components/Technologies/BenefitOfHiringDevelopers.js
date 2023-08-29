@@ -15,7 +15,7 @@ const BenefitOfHiringDevelopers = () => {
         </div>
       </div>
 
-      <div className="endTO_text_content home_sec2_txt4 mb-[5rem] ">
+      <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
         <p
           className={`md:px-[6rem] medium-font ${
             isMobile ? "text-start" : ""
@@ -62,7 +62,7 @@ const BenefitOfHiringDevelopers = () => {
         </p>
       </div>
 
-      <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-[2rem] gap-y-16">
+      <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-[2rem] gap-y-16 reveal">
         <div className="text-center benefit-developer-effect">
           <img
             src="/images/Dedicated-Resources-On-Demand.png"

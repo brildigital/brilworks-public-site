@@ -1,8 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import Link from "next/link";
 import ToolsAndGetInTouch from "./ToolsAndGetInTouch";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Portfolio = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
   return (
     <div>
       <section className="portfolio">
@@ -39,7 +50,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="portflio_flex_row service_width">
+        <div className="portflio_flex_row service_width reveal">
           <div className="portflio_flex_40">
             <div className="portfolio_sec1_txt1">
               <p>
@@ -81,7 +92,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="portflio_flex_row portfolio_sec service_width">
+        <div className="portflio_flex_row portfolio_sec service_width reveal">
           <div className="portflio_flex_60 order_2">
             <div className="">
               <div className="portfolio_color_style">
@@ -122,7 +133,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="portflio_flex_row service_width">
+        <div className="portflio_flex_row service_width reveal">
           <div className="portflio_flex_40">
             <div className="portfolio_sec1_txt1">
               <p>
@@ -164,7 +175,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="portflio_flex_row portfolio_sec service_width">
+        <div className="portflio_flex_row portfolio_sec service_width reveal">
           <div className="portflio_flex_60 order_2">
             <div className="">
               <div className="portfolio_color_style">
@@ -206,7 +217,7 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="portflio_flex_row service_width">
+        <div className="portflio_flex_row service_width reveal">
           <div className="portflio_flex_40">
             <div className="portfolio_sec1_txt1">
               <p>

@@ -77,7 +77,7 @@ const ThreeStepstoHireDeveloper = () => {
             </div>
           </div>
 
-          <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
+          <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models reveal">
             <div className="contact_box">
               <div className="mx-auto">
                 <img
@@ -292,7 +292,7 @@ const ThreeStepstoHireDeveloper = () => {
           </p>
         </div>
 
-        <div className="hire_sec1_service_50">
+        <div className="hire_sec1_service_50 reveal">
           <div className="react-technology">
             <div className="relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]">
               <div className="endTO_text_content home_sec2_txt4 py-6">

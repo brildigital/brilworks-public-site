@@ -5,7 +5,7 @@ import { scrollToSection } from "../lib/commonfunction";
 const SolutionEngagementModal = () => {
   return (
     <section>
-      <div className="xl:mt-[76px] lg:mt-[60px] md:mt-[32px] mt-[16px] ">
+      <div className="xl:mt-[76px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
         <div className="service_width mx-auto md:px-[0px] px-[15px] py-8 workpadd_borderTop">
           <div className="service_sec3 md:text-center text-left">
             <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
@@ -13,7 +13,7 @@ const SolutionEngagementModal = () => {
             </p>
           </div>
 
-          <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
+          <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models reveal">
             <div className="contact_box">
               <div className="mx-auto">
                 <img

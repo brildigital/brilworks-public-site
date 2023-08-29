@@ -12,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -19,8 +20,6 @@ const Storyblok = new StoryblokClient({
 
 const BrilworksSoftwareReview = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ maxWidth: 1024 });
-  const isDesktop = useMediaQuery({ minWidth: 1025 });
 
   const [reviewData, setReviewData] = useState(null);
 
@@ -36,6 +35,15 @@ const BrilworksSoftwareReview = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
   }, []);
 
   return (
@@ -107,18 +115,32 @@ const BrilworksSoftwareReview = () => {
           </div>
         </div>
         <Swiper
-          className="!w-{90%]"
+          className="!w-{90%] reveal"
           modules={[Pagination]}
           spaceBetween={isMobile ? 10 : 21}
-          slidesPerView={
-            isMobile ? 1 : 4 && isTablet ? 3 : 3 && isDesktop ? 4 : 3
-          }
-          slidesPerGroup={isMobile ? 1 : 4}
           loopFillGroupWithBlank={true}
           speed={isMobile ? 1000 : 1500}
           loop={false}
           shouldSwiperUpdate={true}
           pagination={{ clickable: true }}
+          breakpoints={{
+            1475: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+            },
+            1024: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+            767: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+            575: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+          }}
         >
           {reviewData?.length > 0 ? (
             reviewData?.map((dataItem, index) => (

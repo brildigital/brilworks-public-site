@@ -3,7 +3,6 @@ import Link from "next/link";
 import { scrollToSection } from "../lib/commonfunction";
 
 const JavaDevelopers = () => {
-
   return (
     <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
@@ -16,7 +15,7 @@ const JavaDevelopers = () => {
         </div>
       </div>
 
-      <div className="grid xl:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-[2rem]">
+      <div className="grid xl:grid-cols-3 md:grid-cols-1 grid-cols-1 gap-[2rem] reveal">
         <div className="border-1 border-[#80808038] rounded-[30px]">
           <div className="home_sec3_box1">
             <div className="dots_flex">

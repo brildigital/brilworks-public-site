@@ -1,7 +1,17 @@
 "use client";
 import Link from "next/link";
+import { useEffect } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const AboutUs = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
   return (
     <>
       <section className="w-[90%] mx-auto xl:my-[9rem] lg:my-[9rem] md:my-[6rem] my-[6rem] mb-[1rem]">
@@ -82,7 +92,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="md:w-[90%] w-full mx-auto xl:pt-[10rem] lg:pt-[8rem] md:pt-[6rem] sm:pt-[4rem] relative about_sec2">
+        <div className="md:w-[90%] w-full mx-auto xl:pt-[10rem] lg:pt-[8rem] md:pt-[6rem] sm:pt-[4rem] relative about_sec2 reveal">
           <div className="">
             <div className="about_vision md:[0px] mb-[30px]">
               <div className="sec6_title">
@@ -137,7 +147,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[6rem] gap-[2rem] md:w-[70%] w-full px-[15px] mx-auto about_sec2_grid md:my-[100px] my-[40px] margin-top">
+        <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[6rem] gap-[2rem] md:w-[70%] w-full px-[15px] mx-auto about_sec2_grid md:my-[100px] my-[40px] margin-top reveal">
           <div>
             <div className="number">
               <p data-max="8">
@@ -210,7 +220,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="md:w-[90%] w-full mx-auto">
+        <div className="md:w-[90%] w-full mx-auto reveal">
           <div className="xl:gap-[64px] lg:gap-[32px] gap-[40px] about_sec4 lg:flex-row flex-col flex mt-[5rem]">
             <div className="about_sec4_row relative first_row lg:w-1/3 w-full">
               <div className="about_sec4_3">
@@ -354,7 +364,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:my-[128px] md:my-[80px] my-[60px]">
+        <div className="lg:my-[128px] md:my-[80px] my-[60px] reveal">
           <div className="home_sec2_txt1 md:text-center text-left">
             <p>Trusted by companies</p>
           </div>
@@ -420,7 +430,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="career">
+        <div className="career reveal">
           <div className="home_sec2_txt3 md:text-center text-left">
             <p className="md:!w-[78%] !w-full md:!text-[2rem] !text-[1.3rem]">
               Talent wins games, but teamwork and intelligence win
@@ -461,7 +471,7 @@ const AboutUs = () => {
             />
           </div>
 
-          <div className="xl:mt-[8rem] lg:mt-[6rem] md:mt-[4rem] mt-[2rem]">
+          <div className="xl:mt-[8rem] lg:mt-[6rem] md:mt-[4rem] mt-[2rem] reveal">
             <div className="sec7_box_style md:w-[60%] w-full">
               <div className="home_sec2_txt1 md:text-center text-left">
                 <p>Let’s build something</p>

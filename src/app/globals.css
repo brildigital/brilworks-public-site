@@ -183,6 +183,9 @@ a:hover {
   color: #fff;
   line-height: inherit !important;
 }
+.font-style-solution-head.line-height-normal {
+  line-height: normal !important;
+}
 .font-style-solution-head2 {
   font-family: var(--extra_bold);
   color: #fff;
@@ -2360,7 +2363,37 @@ textarea.form-control-txt {
 .kinderland .privacy-policy ol li,
 .kinderland .terms-of-use ol li {
   list-style: decimal !important;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.kinderland p a {
+  text-decoration: underline !important;
+  word-break: break-all;
+}
+
+.kinderland p span a {
+  text-decoration: unset !important;
+}
+.kinderland p span a:hover {
+  text-decoration: unset !important;
+  background-color: unset !important;
+}
+.kinderland p a:hover {
+  text-decoration: underline !important;
+  word-break: break-all;
+  background-color: rgb(227, 227, 227);
+}
+/* scroll effect */
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1680px) {

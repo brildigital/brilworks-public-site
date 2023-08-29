@@ -8,6 +8,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { useEffect, useState } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const Honors = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +21,19 @@ const Honors = () => {
     dataFetch();
   }, []);
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <HonorText />
-      <div className="honors-swiper">
+      <div className="honors-swiper reveal">
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}

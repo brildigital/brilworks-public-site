@@ -7,7 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { scrollEffect } from "../lib/commonfunction";
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -21,9 +22,18 @@ const ClientReviews = () => {
     setVideoPause(true);
   };
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <div className="container mx-auto px-[15px]">
-      <div className="xl:mt-[80px] mt-[40px] relative">
+      <div className="xl:mt-[80px] mt-[40px] relative reveal">
         <div className="rotate_img">
           <img
             decoding="async"
@@ -207,6 +217,7 @@ const ClientReviews = () => {
           </div>
         </div>
       </div>
+
       <BrilworksSoftwareReview />
     </div>
   );

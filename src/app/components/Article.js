@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
+import { scrollEffect } from "./lib/commonfunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -32,6 +33,15 @@ const Article = ({ blok }) => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
   }, []);
 
   useEffect(() => {
@@ -172,7 +182,7 @@ const Article = ({ blok }) => {
         </div>
 
         <div>
-          <div className="ready_sec">
+          <div className="ready_sec reveal">
             <div className="ready_img relative">
               <p>
                 <img
@@ -213,7 +223,7 @@ const Article = ({ blok }) => {
           </div>
         </div>
 
-        <div className="md:w-[94%] w-full mx-auto">
+        <div className="md:w-[94%] w-full mx-auto reveal">
           <div className="service_sec3">
             <div className="home_sec2_txt3">
               <p className="!ml-0 extra_bold !w-full">You might also like</p>
