@@ -1,40 +1,19 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-
-const AdminEmail = process.env.EMAIL;
-const AdminPassKey = process.env.EMAIL_PASSWORD;
+import { createHubSpotContact } from "..";
 
 export async function POST(req, res) {
   if (req.method === "POST") {
     const payload = await req.json();
-    const { name, email, message, page } = payload;
-
-    //   Create a nodemailer transporter with your email service settings
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: AdminEmail,
-        pass: AdminPassKey,
-      },
-    });
-
-    const mailOptions = {
-      from: email,
-      to: process.env.RECEIVER_EMAIL, // receivers
-      subject: "Contact Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\nPage: ${page}`,
-    };
-
     try {
-      await transporter.sendMail(mailOptions);
+      await createHubSpotContact(payload);
       return NextResponse.json(
-        { message: "Email sent successfully" },
+        { message: "Form submitted successfully" },
         { status: 200 }
       );
     } catch (error) {
-      console.error("Error sending email", error);
+      console.error("Error creating contact", error);
       return NextResponse.json(
-        { message: "Error sending email" },
+        { message: "Error submitting form" },
         { status: 500 }
       );
     }
