@@ -16,7 +16,6 @@ const Blogs = () => {
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
-      // starts_with: "blog/",       // If want to fetch data from blogs
       starts_with: "blogs-list/",
       per_page: 3,
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
@@ -32,7 +31,6 @@ const Blogs = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };

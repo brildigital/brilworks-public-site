@@ -37,8 +37,6 @@ const ClientReviews = () => {
       <div className="xl:mt-[80px] mt-[40px] relative reveal">
         <div className="rotate_img">
           <Image
-            decoding="async"
-            loading="lazy"
             className="rotate_right alignnone"
             src="/images/Verified-Review-image.png"
             alt="verified review"

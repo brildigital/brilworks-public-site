@@ -131,7 +131,7 @@ const ToolsAndGetInTouch = () => {
                         loading="lazy"
                         className="alignnone"
                         src="/images/right_arrow.png"
-                        alt=""
+                        alt="right arrow"
                       />
                     </Link>
                   </div>

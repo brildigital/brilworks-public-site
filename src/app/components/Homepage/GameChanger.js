@@ -12,8 +12,8 @@ const GameChanger = () => {
           className="w-full"
           src={`https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg`}
           alt="homepage banner"
-          width={1920}
-          height={1000}
+          width={isMobile ? 550 : 1920}
+          height={isMobile ? 283 : 1000}
         />
       </div>
       <div className="sec1_txt_position">
