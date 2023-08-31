@@ -51,11 +51,15 @@ const TechnologyCombination = () => {
                   <div className="style_sec3_swiper_home">
                     <div className="flex gap-[1rem] pb-[2rem]">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/3-1.png"
                         alt="reactjs"
                         className="w-[76px]"
                       />
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/js-1.png"
                         alt="nodejs"
                         className="w-[76px]"
@@ -79,11 +83,15 @@ const TechnologyCombination = () => {
                       <div className="style_sec3_swiper_home">
                         <div className="flex gap-[1rem] pb-[2rem]">
                           <img
+                            decoding="async"
+                            loading="lazy"
                             src="/images/java_logo.png"
                             alt="java"
                             className="w-[76px]"
                           />
                           <img
+                            decoding="async"
+                            loading="lazy"
                             src="/images/angular_logo.png"
                             alt="angularjs"
                             className="w-[76px]"
@@ -110,11 +118,15 @@ const TechnologyCombination = () => {
                           <div className="style_sec3_swiper_home">
                             <div className="flex gap-[1rem] pb-[2rem]">
                               <img
+                                decoding="async"
+                                loading="lazy"
                                 src="/images/js-1.png"
                                 alt="nodejs"
                                 className="w-[76px]"
                               />
                               <img
+                                decoding="async"
+                                loading="lazy"
                                 src="/images/3-1.png"
                                 alt="reactjs"
                                 className="w-[76px]"
@@ -156,11 +168,15 @@ const TechnologyCombination = () => {
                   <div className="style_sec3_swiper_home">
                     <div className="flex gap-[1rem] pb-[2rem]">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/3-1.png"
                         alt="reactjs"
                         className="w-[76px]"
                       />
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/java_logo.png"
                         alt="java"
                         className="w-[76px]"
@@ -186,11 +202,15 @@ const TechnologyCombination = () => {
                       <div className="style_sec3_swiper_home">
                         <div className="flex gap-[1rem] pb-[2rem]">
                           <img
+                            decoding="async"
+                            loading="lazy"
                             src="/images/java_logo.png"
                             alt="java"
                             className="w-[76px]"
                           />
                           <img
+                            decoding="async"
+                            loading="lazy"
                             src="/images/3-1.png"
                             alt="reactjs"
                             className="w-[76px]"
@@ -215,11 +235,15 @@ const TechnologyCombination = () => {
                           <div className="style_sec3_swiper_home">
                             <div className="flex gap-[1rem] pb-[2rem]">
                               <img
+                                decoding="async"
+                                loading="lazy"
                                 src="/images/js-1.png"
                                 alt="nodejs"
                                 className="w-[76px]"
                               />
                               <img
+                                decoding="async"
+                                loading="lazy"
                                 src="/images/angular_logo.png"
                                 alt="angularjs"
                                 className="w-[76px]"
@@ -259,7 +283,12 @@ const TechnologyCombination = () => {
             className={`btn_flex mt-[4rem] ${isMobile ? "!px-8 !py-2" : ""}`}
           >
             <div className="chat_icon">
-              <img src="/images/hire-hand.png" alt="hire hand" />
+              <img
+                decoding="async"
+                loading="lazy"
+                src="/images/hire-hand.png"
+                alt="hire hand"
+              />
             </div>
             <div className="chat_btn_technology">
               <p className="transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">

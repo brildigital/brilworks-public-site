@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
-import { scrollEffect } from "./lib/commonfunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -35,14 +34,17 @@ const Article = ({ blok }) => {
       });
   }, []);
 
-  useEffect(() => {
-    scrollEffect();
-    window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", scrollEffect);
-    };
-  }, []);
+  function modifyImagesWithLazyLoading(html) {
+    return parse(html, {
+      replace: (node, index) => {
+        if (node.type === "tag" && node.name === "img") {
+          node.attribs.loading = "lazy";
+          node.attribs.decoding = "async";
+        }
+        return node;
+      },
+    });
+  }
 
   useEffect(() => {
     const parser = new DOMParser();
@@ -146,7 +148,8 @@ const Article = ({ blok }) => {
                 </div>
               </div>
               <div className="blog_content post_details_content ">
-                {parse(blok?.content)}
+                {/* {parse(blok?.content)} */}
+                {modifyImagesWithLazyLoading(blok?.content)}
               </div>
 
               {/* ********************Author Detail******************************/}
@@ -186,15 +189,19 @@ const Article = ({ blok }) => {
         </div>
 
         <div>
-          <div className="ready_sec reveal">
+          <div className="ready_sec">
             <div className="ready_img relative">
               <p>
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="ready_main web_img alignnone"
                   src="/images/ready.png"
                   alt="get in touch"
                 />
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="mobile_img border_redius20 alignnone"
                   src="/images/ready_mobile.jpg"
                   alt="get in touch"
@@ -210,6 +217,8 @@ const Article = ({ blok }) => {
                   <div className="get_icon">
                     <Link href="/contact-us/">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         className="alignnone"
                         src="/images/right_arrow.png"
                         alt=""
@@ -227,7 +236,7 @@ const Article = ({ blok }) => {
           </div>
         </div>
 
-        <div className="md:w-[94%] w-full mx-auto reveal">
+        <div className="md:w-[94%] w-full mx-auto">
           <div className="service_sec3">
             <div className="home_sec2_txt3">
               <p className="!ml-0 extra_bold !w-full">You might also like</p>

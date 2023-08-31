@@ -76,7 +76,12 @@ const Honors = () => {
                     rel="nofollow noopener"
                   >
                     <div className="award_sec8_img1">
-                      <img src="/images/review-adalo.png" alt="adalo expert" />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/review-adalo.png"
+                        alt="adalo expert"
+                      />
                     </div>
 
                     <div className="review-text">
@@ -96,6 +101,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         className="alignnone !w-[120px]"
                         src="/images/select-tier-service-partner-light-1.png"
                         alt="AWS Partner"
@@ -121,6 +128,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/review-clutch.png"
                         alt="Clutch Reviews"
                       />
@@ -142,6 +151,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         className="w-[150px]"
                         src="/images/Top-Mobile-App-Development-Company2.svg"
                         alt="Top Mobile App Development Company"
@@ -164,6 +175,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/dotcms-logo-300x118.jpg"
                         alt="dotCMS logo"
                       />
@@ -185,6 +198,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/review-ambitionbox.png"
                         alt="AmbitionBox Rating"
                       />
@@ -207,6 +222,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/review-glassdoor.png"
                         alt="SiliconIndia Blockchain Development Company"
                       />
@@ -225,6 +242,8 @@ const Honors = () => {
                 <div className="award ng-scope">
                   <div className="award_sec8_img1">
                     <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/review-liferay.png"
                       alt="Liferay Partner"
                     />
@@ -247,6 +266,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/review-blockchain.png"
                         alt="SiliconIndia Blockchain Development Company"
                       />
@@ -269,6 +290,8 @@ const Honors = () => {
                   >
                     <div className="award_sec8_img1">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/review-top-software-developers.png"
                         alt="top software developers"
                       />

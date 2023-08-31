@@ -17,6 +17,8 @@ const SolutionEngagementModal = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Dedicated-Development-Team.png"
                   alt="people"
                   className="md:!w-[92px]"
@@ -43,6 +45,8 @@ const SolutionEngagementModal = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Team-Extension-2.png"
                   alt="progress"
                   className="md:!w-[92px]"
@@ -70,6 +74,8 @@ const SolutionEngagementModal = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Project-Based-Model-1.png"
                   alt="passion"
                   className="md:!w-[92px]"
@@ -102,7 +108,12 @@ const SolutionEngagementModal = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/right_arrow.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/right_arrow.png"
+                      alt="arrow"
+                    />
                   </p>
                 </div>
 

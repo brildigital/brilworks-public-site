@@ -14,7 +14,12 @@ const Footer = () => {
           <div className="footer_grid">
             <div className="grid-area-one">
               <div className="footer_logo">
-                <img src="/images/logo-white.png" alt="Brilworks Logo" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/logo-white.png"
+                  alt="Brilworks Logo"
+                />
               </div>
               <div className="social_media">
                 <div className="social_media_img">
@@ -22,7 +27,12 @@ const Footer = () => {
                     href="https://www.facebook.com/brilwork/"
                     target="_blank"
                   >
-                    <img src="/images/fb.png" alt="Brilworks on Facebook" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/fb.png"
+                      alt="Brilworks on Facebook"
+                    />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -30,7 +40,12 @@ const Footer = () => {
                     href="https://www.instagram.com/brilworkssoftware/"
                     target="_blank"
                   >
-                    <img src="/images/insta.png" alt="Brilworks on Instagram" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/insta.png"
+                      alt="Brilworks on Instagram"
+                    />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -38,7 +53,12 @@ const Footer = () => {
                     href=" https://www.youtube.com/@brilworks7633"
                     target="_blank"
                   >
-                    <img src="/images/youtube.png" alt="Brilworks on YouTube" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/youtube.png"
+                      alt="Brilworks on YouTube"
+                    />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -47,6 +67,8 @@ const Footer = () => {
                     target="_blank"
                   >
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src="/images/linkedin.png"
                       alt="Brilworks on LinkedIn"
                     />
@@ -54,7 +76,12 @@ const Footer = () => {
                 </div>
                 <div className="social_media_img">
                   <Link href="https://dribbble.com/Brilworks" target="_blank">
-                    <img src="/images/social.png" alt="Brilworks on Dribble" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/social.png"
+                      alt="Brilworks on Dribble"
+                    />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -62,7 +89,12 @@ const Footer = () => {
                     href="https://www.behance.net/hellobrilworks"
                     target="_blank"
                   >
-                    <img src="/images/behance.png" alt="Brilworks on Behance" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/behance.png"
+                      alt="Brilworks on Behance"
+                    />
                   </Link>
                 </div>
                 <div className="social_media_img">
@@ -70,7 +102,12 @@ const Footer = () => {
                     href="https://www.upwork.com/ag/brilworks/"
                     target="_blank"
                   >
-                    <img src="/images/up-01.png" alt="Brilworks on Upwork" />
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/images/up-01.png"
+                      alt="Brilworks on Upwork"
+                    />
                   </Link>
                 </div>
               </div>
@@ -129,7 +166,9 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/portfolio/"
-                      className={pathname === "/portfolio/" ? "page-active" : ""}
+                      className={
+                        pathname === "/portfolio/" ? "page-active" : ""
+                      }
                     >
                       Portfolio
                     </Link>
@@ -205,7 +244,8 @@ const Footer = () => {
                     <Link
                       href="/industry/healthcare-software-development/"
                       className={
-                        pathname === "/industry/healthcare-software-development/"
+                        pathname ===
+                        "/industry/healthcare-software-development/"
                           ? "page-active"
                           : ""
                       }
@@ -239,7 +279,9 @@ const Footer = () => {
                     <Link
                       href="/hire-java-developer/"
                       className={
-                        pathname === "/hire-java-developer/" ? "page-active" : ""
+                        pathname === "/hire-java-developer/"
+                          ? "page-active"
+                          : ""
                       }
                     >
                       Java
@@ -295,7 +337,9 @@ const Footer = () => {
                     <Link
                       href="/hire-ui-ux-designer/"
                       className={
-                        pathname === "/hire-ui-ux-designer/" ? "page-active" : ""
+                        pathname === "/hire-ui-ux-designer/"
+                          ? "page-active"
+                          : ""
                       }
                     >
                       UI/UX Development

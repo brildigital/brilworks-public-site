@@ -4,6 +4,7 @@ import "./OurProcessStyle.scss";
 import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
+import Image from "next/image";
 
 const OurProcessPage = () => {
   const [isAccordionActive, setAccordionActive] = useState(1);
@@ -44,14 +45,14 @@ const OurProcessPage = () => {
       <div className="mx-auto service_width">
         <div className="relative">
           <p>
-            <img
-              loading="lazy"
-              decoding="async"
+            <Image
               className="how_works_img alignnone"
               src={
                 "https://a.storyblok.com/f/219851/1398x780/2fdaa336f4/work-baner.png"
               }
               alt="our process"
+              width={1398}
+              height={780}
             />
           </p>
           <div className="service_sec1_position">
@@ -62,22 +63,22 @@ const OurProcessPage = () => {
                     How We
                     <div className="how-we flex items-center gap-[1rem]">
                       <div className="imgebreakets">
-                        <img
-                          loading="lazy"
-                          decoding="async"
+                        <Image
                           className="alignnone"
                           src="/images/1.png"
                           alt="curley bracket"
+                          width={690}
+                          height={360}
                         />
                       </div>
                       Work
                       <div className="imgebreakets">
-                        <img
-                          loading="lazy"
-                          decoding="async"
+                        <Image
                           className="alignnone"
                           src="/images/2.png"
                           alt="curley bracket"
+                          width={690}
+                          height={360}
                         />
                       </div>
                     </div>
@@ -135,9 +136,7 @@ const OurProcessPage = () => {
                     onClick={(e) => scrollToSection(e, "workSec4")}
                     className="__mPS2id _mPS2id-h mPS2id-highlight mPS2id-highlight-first mPS2id-highlight-last"
                   >
-                    <img
-                      loading="lazy"
-                      decoding="async"
+                    <Image
                       className="alignnone"
                       src="/images/explore-arrow-01.png"
                       alt="down arrow"
@@ -170,9 +169,7 @@ const OurProcessPage = () => {
                     onClick={(e) => scrollToSection(e, "workSec5")}
                     className="__mPS2id _mPS2id-h"
                   >
-                    <img
-                      loading="lazy"
-                      decoding="async"
+                    <Image
                       className="alignnone"
                       src="/images/explore-arrow-01.png"
                       alt="down arrow"

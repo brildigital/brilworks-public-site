@@ -44,6 +44,7 @@ const AboutUs = () => {
               >
                 <img
                   decoding="async"
+                  loading="lazy"
                   className="alignnone wp-image-189 size-full"
                   src="/images/down-arrow(1).png"
                   alt="down arrow"
@@ -449,11 +450,15 @@ const AboutUs = () => {
             </div>
             <div className="aerrow relative">
               <img
+                decoding="async"
+                loading="lazy"
                 className="black_aerrow alignnone wp-image-28 size-full"
                 src="/images/black_aerrow-1.png"
                 alt="arrow"
               />
               <img
+                decoding="async"
+                loading="lazy"
                 className="gradiant_aerrow alignnone wp-image-29 size-full"
                 src="/images/arrow-gradiant.png"
                 alt="arrow"
@@ -463,6 +468,8 @@ const AboutUs = () => {
 
           <div className="md:mt-[5rem] mt-[2rem]">
             <img
+              decoding="async"
+              loading="lazy"
               className="alignnone wp-image-190 size-full"
               src={
                 "https://a.storyblok.com/f/219851/1920x1195/e16b4f5cd2/team-image.png"

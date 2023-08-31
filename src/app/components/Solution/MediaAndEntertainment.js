@@ -39,6 +39,8 @@ const MediaAndEntertainment = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
                   "https://a.storyblok.com/f/219851/1398x780/98db6f1ff8/media-1.png"
@@ -88,7 +90,12 @@ const MediaAndEntertainment = () => {
                   <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
                     <div className="formBtn_icon">
                       <p>
-                        <img src="/images/right_arrow.png" alt="arrow" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/right_arrow.png"
+                          alt="arrow"
+                        />
                       </p>
                     </div>
                     <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -157,6 +164,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/OTT-Streaming-Apps.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -168,6 +177,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/OTT-Streaming-Apps.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -235,6 +246,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Music-Streaming-Apps.png"
                                       alt="Music Streaming Apps"
                                     />
@@ -246,6 +259,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Music-Streaming-Apps.png"
                                       alt="Music Streaming Apps"
                                     />
@@ -313,6 +328,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Photo-Editing-Sharing-Apps.png"
                                       alt=" Photo Editing & Sharing Apps"
                                     />
@@ -324,6 +341,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Photo-Editing-Sharing-Apps.png"
                                       alt=" Photo Editing & Sharing Apps"
                                     />
@@ -391,6 +410,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Ticket-Booking-Portals.png"
                                       alt="Ticket Booking Portals"
                                     />
@@ -402,6 +423,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Ticket-Booking-Portals.png"
                                       alt="Ticket Booking Portals"
                                     />
@@ -468,6 +491,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Gaming-apps.png"
                                       alt="Gaming apps"
                                     />
@@ -479,6 +504,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Gaming-apps.png"
                                       alt="Gaming apps"
                                     />
@@ -546,6 +573,8 @@ const MediaAndEntertainment = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Content-Aggregation-Apps.png"
                                       alt="  Content Aggregation Apps"
                                     />
@@ -557,6 +586,8 @@ const MediaAndEntertainment = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Content-Aggregation-Apps.png"
                                       alt="  Content Aggregation Apps"
                                     />
@@ -599,6 +630,8 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src={
                             "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png"
                           }
@@ -614,6 +647,8 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Music-Streaming-Apps.jpg"
                           alt="Music Streaming Apps"
                         />
@@ -627,6 +662,8 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/photoediting.jpg"
                           alt="Photo Editing & Sharing Apps"
                         />
@@ -641,6 +678,8 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/tickets-booking-portal.jpg"
                           alt="Ticket Booking Portals"
                         />
@@ -654,7 +693,12 @@ const MediaAndEntertainment = () => {
                       aria-labelledby="accordion-five-tab"
                     >
                       <div className="team_img">
-                        <img src="/images/gaming-apps.jpg" alt="Gaming apps" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/gaming-apps.jpg"
+                          alt="Gaming apps"
+                        />
                       </div>
                     </div>
 
@@ -666,6 +710,8 @@ const MediaAndEntertainment = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Content-Aggregation-Apps.jpg"
                           alt="Content Aggregation Apps"
                         />
@@ -682,7 +728,12 @@ const MediaAndEntertainment = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />{" "}
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />{" "}
                         </p>
                       </div>
 
@@ -719,6 +770,8 @@ const MediaAndEntertainment = () => {
 
           <div className="my-[40px]">
             <img
+              decoding="async"
+              loading="lazy"
               src={
                 "https://a.storyblok.com/f/219851/1401x701/1bb92f5739/image-3-1.webp"
               }
@@ -729,6 +782,8 @@ const MediaAndEntertainment = () => {
           <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[4rem]">
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Subscription-Management.png"
                 alt="Subscription Management"
                 className="w-[50px] mx-auto"
@@ -740,6 +795,8 @@ const MediaAndEntertainment = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Multichannel-Distribution.png"
                 alt="Multichannel Distribution"
                 className="w-[50px] mx-auto"
@@ -751,6 +808,8 @@ const MediaAndEntertainment = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Digital-Asset-Management.png"
                 alt="Digital Asset Management"
                 className="w-[50px] mx-auto"
@@ -762,6 +821,8 @@ const MediaAndEntertainment = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/OTT-Content.png"
                 alt="OTT Content
               Delivery Solutions"
@@ -774,6 +835,8 @@ const MediaAndEntertainment = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Data-Management-Solution.png"
                 alt="Data Management Solution"
                 className="w-[50px] mx-auto"
@@ -785,6 +848,8 @@ const MediaAndEntertainment = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Media-Streaming-Services-Solutions.png"
                 alt="Media Streaming Services & Solutions"
                 className="w-[50px] mx-auto"
@@ -803,7 +868,12 @@ const MediaAndEntertainment = () => {
               <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons2-04.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons2-04.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 
@@ -831,8 +901,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Real-time-Content-Feeds.png"
                     alt="Real-time Content Feeds"
                   />
@@ -849,8 +919,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Multilingual-Support.png"
                     alt="Multilingual Support"
                   />
@@ -867,6 +937,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className=""
                     src="/images/Live-Chatting.png"
                     alt="Live Chatting"
@@ -884,6 +956,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Secure-Payment-Gateways.png"
                     alt="Secure Payment Gateways"
@@ -901,6 +975,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/IoT-Integration.png"
                     alt="IoT Integration"
@@ -918,6 +994,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Push-Notifications.png"
                     alt="Push Notifications"
@@ -935,6 +1013,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Interactive-UIUX.png"
                     alt="Interactive UI/UX"
@@ -952,6 +1032,8 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Social-Media-Integration.png"
                     alt="Social Media Integration"
@@ -1071,7 +1153,12 @@ const MediaAndEntertainment = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons2-04.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons2-04.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

@@ -9,6 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -35,7 +36,7 @@ const ClientReviews = () => {
     <div className="container mx-auto px-[15px]">
       <div className="xl:mt-[80px] mt-[40px] relative reveal">
         <div className="rotate_img">
-          <img
+          <Image
             decoding="async"
             loading="lazy"
             className="rotate_right alignnone"
@@ -69,12 +70,12 @@ const ClientReviews = () => {
                 />
               ) : reviewIndex === 1 ? (
                 <video
+                  loading="lazy"
                   className="!rounded-[30px]"
                   src={
                     "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
                   }
                   controls
-                  loading="lazy"
                   width="320"
                   height="200"
                 />

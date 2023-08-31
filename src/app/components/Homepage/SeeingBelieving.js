@@ -55,8 +55,8 @@ const SeeingBelieving = () => {
                 <div className="slide-style !bg-[#2cbc89]">
                   <Link href="/portfolio/vugo/">
                     <img
-                      loading="lazy"
                       decoding="async"
+                      loading="lazy"
                       className="alignnone wp-image-45 size-full rounded-[25px]"
                       src="https://a.storyblok.com/f/219851/500x375/77c04adb56/vugo.jpg"
                       alt="vugo"
@@ -88,8 +88,8 @@ const SeeingBelieving = () => {
                 <div className="slide-style !bg-[#e8eed5]">
                   <Link href="/portfolio/trackimo/">
                     <img
-                      loading="lazy"
                       decoding="async"
+                      loading="lazy"
                       className="alignnone wp-image-47 !rounded-[25px]"
                       src={
                         "https://a.storyblok.com/f/219851/500x375/f472daac29/trackimo.jpg"
@@ -123,8 +123,8 @@ const SeeingBelieving = () => {
                 <div className="slide-style !bg-[#377df8]">
                   <Link href="/portfolio/orokii/">
                     <img
-                      loading="lazy"
                       decoding="async"
+                      loading="lazy"
                       className="alignnone wp-image-48 size-full !rounded-[25px]"
                       src="/images/Orokii(1).jpg"
                       alt="orokii"
@@ -156,8 +156,8 @@ const SeeingBelieving = () => {
                 <div className="slide-style !bg-[#f13134]">
                   <Link href="/portfolio/eccocar/">
                     <img
-                      loading="lazy"
                       decoding="async"
+                      loading="lazy"
                       className="alignnone wp-image-49 size-full !rounded-[25px]"
                       src="https://a.storyblok.com/f/219851/500x375/8707c8ae6a/eccocar-1.jpg"
                       alt="eccocar"
@@ -191,8 +191,8 @@ const SeeingBelieving = () => {
                 <div className="slide-style !bg-[#2cbc89]">
                   <Link href="/portfolio/rastrack/">
                     <img
-                      loading="lazy"
                       decoding="async"
+                      loading="lazy"
                       className="alignnone wp-image-50 size-full !rounded-[25px]"
                       src="/images/Rastrack(1).jpg"
                       alt="rastrack"

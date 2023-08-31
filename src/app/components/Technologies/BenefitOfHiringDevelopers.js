@@ -65,6 +65,8 @@ const BenefitOfHiringDevelopers = () => {
       <div className="grid xl:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-[2rem] gap-y-16 reveal">
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Dedicated-Resources-On-Demand.png"
             alt="Dedicated Resources On-Demand"
             className="w-[50px] mx-auto"
@@ -76,6 +78,8 @@ const BenefitOfHiringDevelopers = () => {
 
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Emergency-Support.png"
             alt="Emergency Support"
             className="w-[50px] mx-auto"
@@ -87,6 +91,8 @@ const BenefitOfHiringDevelopers = () => {
 
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Scalable-Projects.png"
             alt="Scalable Projects"
             className="w-[50px] mx-auto"
@@ -98,6 +104,8 @@ const BenefitOfHiringDevelopers = () => {
 
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Quick-Turnaround-Time.png"
             alt="Quick-Turnaround Time"
             className="w-[50px] mx-auto"
@@ -109,6 +117,8 @@ const BenefitOfHiringDevelopers = () => {
 
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Complete-Autonomy.png"
             alt="Complete Autonomy"
             className="w-[50px] mx-auto"
@@ -120,6 +130,8 @@ const BenefitOfHiringDevelopers = () => {
 
         <div className="text-center benefit-developer-effect">
           <img
+            decoding="async"
+            loading="lazy"
             src="/images/Quality-Infrastructure.png"
             alt="Quality Infrastructure"
             className="w-[50px] mx-auto"

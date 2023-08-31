@@ -75,9 +75,11 @@ const Portfolio = () => {
             <Link href="/portfolio/vugo/" className="portfolio_know_more">
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <p>Know More</p>
@@ -133,9 +135,11 @@ const Portfolio = () => {
             <Link href="/portfolio/rastrack/" className="portfolio_know_more">
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <p>Know More</p>
@@ -162,9 +166,11 @@ const Portfolio = () => {
             <Link href="/portfolio/orokii/" className="portfolio_know_more">
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <p>Know More</p>
@@ -221,9 +227,11 @@ const Portfolio = () => {
             <Link href="/portfolio/eccocar/" className="portfolio_know_more">
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <p>Know More</p>
@@ -250,9 +258,11 @@ const Portfolio = () => {
             <Link href="/portfolio/trackimo/" className="portfolio_know_more">
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
 

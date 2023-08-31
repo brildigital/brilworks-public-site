@@ -6,6 +6,7 @@ import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const PortfolioInnerEccocar = () => {
   useEffect(() => {
@@ -29,7 +30,13 @@ const PortfolioInnerEccocar = () => {
             </h1>
           </div>
           <div className="mb-[64px]">
-            <img className="alignnone" src="/images/Eccocar.jpg" alt="vugo" />
+            <img
+              decoding="async"
+              loading="lazy"
+              className="alignnone"
+              src="/images/Eccocar.jpg"
+              alt="vugo"
+            />
           </div>
 
           <div className="porfolio_inner ">
@@ -49,9 +56,11 @@ const PortfolioInnerEccocar = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">
@@ -65,9 +74,7 @@ const PortfolioInnerEccocar = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/Identifying-the-Business-Needs-2.jpg"
                       alt="Identifying the Business Needs"
@@ -94,9 +101,7 @@ const PortfolioInnerEccocar = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/Understanding-the-Requirement-2.jpg"
                       alt="Understanding the Requirement"
@@ -137,8 +142,8 @@ const PortfolioInnerEccocar = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Stripe-Integration.png"
                     alt="Feature-rich Application"
                   />
@@ -163,8 +168,8 @@ const PortfolioInnerEccocar = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Geo-locations.png"
                     alt="Assured On-time Delivery"
                   />
@@ -205,6 +210,8 @@ const PortfolioInnerEccocar = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/eccocar-1.png"
                   alt="2x"
@@ -221,6 +228,8 @@ const PortfolioInnerEccocar = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/eccocar-2.png"
                   alt="advertiser queries"
@@ -246,7 +255,12 @@ const PortfolioInnerEccocar = () => {
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/people-01.png" alt="people" className="" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/people-01.png"
+                    alt="people"
+                  />
                 </div>
                 <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
@@ -268,9 +282,10 @@ const PortfolioInnerEccocar = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/progress-01.png"
                     alt="progress"
-                    className=""
                   />
                 </div>
 
@@ -294,9 +309,10 @@ const PortfolioInnerEccocar = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/passion-01.png"
                     alt="passion"
-                    className=""
                   />
                 </div>
                 <div className="steps_service flex items-center justify-center">
@@ -325,9 +341,11 @@ const PortfolioInnerEccocar = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <p>About Us</p>
