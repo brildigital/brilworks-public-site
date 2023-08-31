@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import { scrollToSection } from "../lib/commonfunction";
+import Image from "next/image";
 
 const ThreeStepstoHireDeveloper = () => {
   const pathname = usePathname();
@@ -81,6 +82,8 @@ const ThreeStepstoHireDeveloper = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/icons2-01-1.png"
                   alt="people"
                   className="Tell Us Your Requirements"
@@ -107,9 +110,10 @@ const ThreeStepstoHireDeveloper = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/icons2-02.png"
                   alt="Screen & Shortlist the Right Fit"
-                  className=""
                 />
               </div>
 
@@ -134,9 +138,10 @@ const ThreeStepstoHireDeveloper = () => {
             <div className="contact_box">
               <div className="mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/icons2-03.png"
                   alt="Onboard Talent"
-                  className=""
                 />
               </div>
               <div className="steps_service flex items-center justify-center">
@@ -200,7 +205,12 @@ const ThreeStepstoHireDeveloper = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons2-04.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons2-04.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 
@@ -317,9 +327,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -335,9 +343,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -351,9 +357,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -384,9 +388,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -402,9 +404,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -419,9 +419,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -450,9 +448,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -504,9 +500,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -522,9 +516,7 @@ const ThreeStepstoHireDeveloper = () => {
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
                         <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
                             alt="right"
@@ -551,7 +543,7 @@ const ThreeStepstoHireDeveloper = () => {
           >
             <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
               <div className="chat_icon">
-                <img
+                <Image
                   src="/images/hire-hand.png"
                   alt="hand"
                   width="28"

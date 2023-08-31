@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { scrollToSection } from "../lib/commonfunction";
+import Image from "next/image";
 
 const NodeJSDevelopers = () => {
   return (
@@ -26,7 +27,7 @@ const NodeJSDevelopers = () => {
               <div className="style_sec3_swiper_home !pt-4">
                 <div className="flex items-center gap-[1rem]">
                   <div className="swiper_sec3_img1">
-                    <img
+                    <Image
                       className="w-[75px] rounded-[40px]"
                       src="/images/juned-300x300.jpg"
                       alt="Juned Lanja"
@@ -55,7 +56,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="py-[1rem] flex items-center gap-[1rem]">
                   <p>
-                    <img
+                    <Image
                       className="w-[21px]"
                       src="/images/icons-06.png"
                       alt="star"
@@ -99,7 +100,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons2-05.png"
                       alt="right"
                       width="23"
@@ -112,7 +113,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons-08.png"
                       alt="time"
                       width="22"
@@ -131,7 +132,7 @@ const NodeJSDevelopers = () => {
                   >
                     <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                       <div className="chat_icon">
-                        <img
+                        <Image
                           src="/images/hire-hand.png"
                           alt="hand"
                           width="28"
@@ -160,7 +161,7 @@ const NodeJSDevelopers = () => {
               <div className="style_sec3_swiper_home !pt-4">
                 <div className="flex items-center gap-[1rem]">
                   <div className="swiper_sec3_img1">
-                    <img
+                    <Image
                       className="w-[75px] rounded-[40px]"
                       src="/images/lavesh.jpg"
                       alt="Lavesh"
@@ -186,7 +187,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="py-[1rem] flex items-center gap-[1rem]">
                   <p>
-                    <img
+                    <Image
                       className="w-[21px]"
                       src="/images/icons-06.png"
                       alt="star"
@@ -238,7 +239,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons2-05.png"
                       alt="right"
                       width="23"
@@ -251,7 +252,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons-08.png"
                       alt="time"
                       width="22"
@@ -270,7 +271,7 @@ const NodeJSDevelopers = () => {
                   >
                     <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                       <div className="chat_icon">
-                        <img
+                        <Image
                           src="/images/hire-hand.png"
                           alt="hand"
                           width="28"
@@ -299,7 +300,7 @@ const NodeJSDevelopers = () => {
               <div className="style_sec3_swiper_home !pt-4">
                 <div className="flex items-center gap-[1rem]">
                   <div className="swiper_sec3_img1">
-                    <img
+                    <Image
                       className="w-[75px] rounded-[40px]"
                       src="/images/minal-300x300.jpg"
                       alt="Minal Vaghashiya"
@@ -328,7 +329,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="py-[1rem] flex items-center gap-[1rem]">
                   <p>
-                    <img
+                    <Image
                       className="w-[21px]"
                       src="/images/icons-06.png"
                       alt="star"
@@ -381,7 +382,7 @@ const NodeJSDevelopers = () => {
 
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons2-05.png"
                       alt="right"
                       width="23"
@@ -394,7 +395,7 @@ const NodeJSDevelopers = () => {
                 </div>
                 <div className="flex items-center gap-[1rem] pt-[1rem]">
                   <p>
-                    <img
+                    <Image
                       src="/images/icons-08.png"
                       alt="time"
                       width="22"
@@ -413,7 +414,7 @@ const NodeJSDevelopers = () => {
                   >
                     <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
                       <div className="chat_icon">
-                        <img
+                        <Image
                           src="/images/hire-hand.png"
                           alt="hand"
                           width="28"

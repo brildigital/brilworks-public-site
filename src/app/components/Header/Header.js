@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -146,7 +147,7 @@ const Header = () => {
             <div className="header_main_flex">
               <div className="header_logo">
                 <Link href="/">
-                  <img
+                  <Image
                     src="/images/logo.png"
                     alt="Brilworks Logo"
                     width="206"
@@ -176,7 +177,12 @@ const Header = () => {
                   >
                     <p className="!mb-0">SOLUTIONS</p>
                     <div className="arrow_size">
-                      <img src="/images/down-arrow.png" alt="down arrow" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/down-arrow.png"
+                        alt="down arrow"
+                      />
                     </div>
                   </Link>
                 </div>
@@ -194,7 +200,12 @@ const Header = () => {
                   >
                     <p className="!mb-0">TECHNOLOGIES</p>
                     <div className="arrow_size">
-                      <img src="/images/down-arrow.png" alt="down arrow" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/down-arrow.png"
+                        alt="down arrow"
+                      />
                     </div>
                   </Link>
                 </div>
@@ -238,7 +249,12 @@ const Header = () => {
                 <Link href="/industry/fintech-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/FINTECH.png" alt="fintech" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/FINTECH.png"
+                        alt="fintech"
+                      />
                     </div>
                     <p
                       className={`${
@@ -255,6 +271,8 @@ const Header = () => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/MEDIA-ENTERTAINMENT.png"
                         alt="media & entertainment"
                       />
@@ -275,6 +293,8 @@ const Header = () => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/FLEET-MANAGEMENT-GPS.png"
                         alt="fleet management + gps"
                       />
@@ -294,7 +314,12 @@ const Header = () => {
                 <Link href="/industry/healthcare-software-development/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/HEALTHCARE.png" alt="healthcare" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/HEALTHCARE.png"
+                        alt="healthcare"
+                      />
                     </div>
                     <p
                       className={
@@ -331,7 +356,12 @@ const Header = () => {
                 <Link href="/hire-reactjs-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/REACT.JS.svg" alt="reactjs" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/REACT.JS.svg"
+                        alt="reactjs"
+                      />
                     </div>
                     <p
                       className={
@@ -347,7 +377,12 @@ const Header = () => {
                 <Link href="/hire-java-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/JAVA.svg" alt="java development" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/JAVA.svg"
+                        alt="java development"
+                      />
                     </div>
                     <p
                       className={
@@ -363,7 +398,12 @@ const Header = () => {
                 <Link href="/hire-nodejs-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/NODE.JS.svg" alt="nodejs" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/NODE.JS.svg"
+                        alt="nodejs"
+                      />
                     </div>
                     <p
                       className={
@@ -379,7 +419,12 @@ const Header = () => {
                 <Link href="/hire-react-native-developer/">
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
-                      <img src="/images/REACT-NATIVE.svg" alt="react native" />
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/REACT-NATIVE.svg"
+                        alt="react native"
+                      />
                     </div>
                     <p
                       className={
@@ -396,6 +441,8 @@ const Header = () => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/AWS-DEVELOPMENT.svg"
                         alt="aws development"
                       />
@@ -413,6 +460,8 @@ const Header = () => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/UIUX-DEVELOPMENT.svg"
                         alt="ui-ux development"
                       />
@@ -432,6 +481,8 @@ const Header = () => {
                   <div className="flex_mega_menu">
                     <div className="flex_30_mega_menu">
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
                         alt="blockchain development"
                       />
@@ -490,7 +541,12 @@ const Header = () => {
                               REACT.JS
                             </p>
                             <div className="mega_menu_icon">
-                              <img src="/images/REACT.JS.svg" alt="reactjs" />
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/REACT.JS.svg"
+                                alt="reactjs"
+                              />
                             </div>
                           </div>
                         </Link>
@@ -509,6 +565,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/JAVA.svg"
                                 alt="java development"
                               />
@@ -529,7 +587,12 @@ const Header = () => {
                               NODE.JS
                             </p>
                             <div className="mega_menu_icon">
-                              <img src="/images/NODE.JS.svg" alt="nodejs" />
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/NODE.JS.svg"
+                                alt="nodejs"
+                              />
                             </div>
                           </div>
                         </Link>
@@ -548,6 +611,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/REACT-NATIVE.svg"
                                 alt="react native"
                               />
@@ -569,6 +634,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/AWS-DEVELOPMENT.svg"
                                 alt="aws development"
                               />
@@ -590,6 +657,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/UIUX-DEVELOPMENT.svg"
                                 alt="ui-ux development"
                               />
@@ -611,6 +680,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
                                 alt="blockchain development"
                               />
@@ -650,7 +721,12 @@ const Header = () => {
                               FINTECH
                             </p>
                             <div className="mega_menu_icon">
-                              <img src="/images/FINTECH.png" alt="fintech" />
+                              <img
+                                loading="lazy"
+                                decoding="async"
+                                src="/images/FINTECH.png"
+                                alt="fintech"
+                              />
                             </div>
                           </div>
                         </Link>
@@ -670,6 +746,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/MEDIA-ENTERTAINMENT.png"
                                 alt="media & entertainment"
                               />
@@ -692,6 +770,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/FLEET-MANAGEMENT-GPS.png"
                                 alt="fleet management + gps"
                               />
@@ -714,6 +794,8 @@ const Header = () => {
                             </p>
                             <div className="mega_menu_icon">
                               <img
+                                loading="lazy"
+                                decoding="async"
                                 src="/images/HEALTHCARE.png"
                                 alt="healthcare"
                               />
@@ -787,10 +869,20 @@ const Header = () => {
                 </div>
                 <div className="flex_grid-40_header_menu">
                   <div className="header_img1 pb-2 hidden-xs">
-                    <img src="/images/blog-2.jpg" alt="" />
+                    <Image
+                      src="/images/blog-2.jpg"
+                      alt="fintech"
+                      width={491}
+                      height={276}
+                    />
                   </div>
                   <div className="header_img1">
-                    <img src="/images/blog-1.jpg" alt="" />
+                    <Image
+                      src="/images/blog-1.jpg"
+                      alt="Healthcare"
+                      width={491}
+                      height={276}
+                    />
                   </div>
                 </div>
               </div>

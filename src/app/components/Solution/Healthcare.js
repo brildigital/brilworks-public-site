@@ -8,6 +8,7 @@ import HealthcareFAQs from "./HealthcareFAQs";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
+import Image from "next/image";
 
 const HealthCare = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -52,6 +53,8 @@ const HealthCare = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src="/images/Types-of-Healthcare-Apps-2.webp"
                 alt="our process"
@@ -63,9 +66,7 @@ const HealthCare = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -73,9 +74,7 @@ const HealthCare = () => {
                           height="94"
                         />
                         HEALTHCARE
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -120,7 +119,12 @@ const HealthCare = () => {
                   <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
                     <div className="formBtn_icon">
                       <p>
-                        <img src="/images/right_arrow.png" alt="arrow" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/right_arrow.png"
+                          alt="arrow"
+                        />
                       </p>
                     </div>
                     <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -192,6 +196,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-03.png"
                                       alt="Telemedicine Software Developments"
                                     />
@@ -203,6 +209,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-03.png"
                                       alt="Telemedicine Software Developments"
                                     />
@@ -269,6 +277,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-06.png"
                                       alt="Remote Patient Monitoring Software"
                                     />
@@ -280,6 +290,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-06.png"
                                       alt="Remote Patient Monitoring Software"
                                     />
@@ -350,6 +362,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-09.png"
                                       alt="mPrescription App Development"
                                     />
@@ -361,6 +375,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-09.png"
                                       alt="mPrescription App Development"
                                     />
@@ -429,6 +445,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-08.png"
                                       alt="Patient Engagement Solutions"
                                     />
@@ -440,6 +458,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-08.png"
                                       alt="Patient Engagement Solutions"
                                     />
@@ -509,6 +529,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-10.png"
                                       alt="IoT Healthcare Software"
                                     />
@@ -520,6 +542,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-10.png"
                                       alt="IoT Healthcare Software"
                                     />
@@ -590,6 +614,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-04.png"
                                       alt="Electronic Medical Record Software"
                                     />
@@ -601,6 +627,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-04.png"
                                       alt="Electronic Medical Record Software"
                                     />
@@ -645,6 +673,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Telemedicine-Software-Developments.jpg"
                           alt="Telemedicine-Software-Developments"
                         />
@@ -658,6 +688,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Remote-Patient-Monitoring-Software.jpg"
                           alt="Remote-Patient-Monitoring-Software"
                         />
@@ -671,6 +703,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/mPrescription-App-Development.jpg"
                           alt="mPrescription-App-Development.jpg"
                         />
@@ -685,6 +719,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Patient-Engagement-Solutions.jpg"
                           alt="Patient-Engagement-Solutions"
                         />
@@ -699,6 +735,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/IoT-Healthcare-Software.jpg"
                           alt="IoT-Healthcare-Software"
                         />
@@ -713,6 +751,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Electronic-Medical-Record-Software.jpg"
                           alt="Electronic-Medical-Record-Software"
                         />
@@ -729,7 +769,12 @@ const HealthCare = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -767,6 +812,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/burgerAsset-50.jpg"
                           alt="Healthacre Provider"
                         />
@@ -780,6 +827,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Pharmaceutical-Companies.jpg"
                           alt="Pharmaceutical Companies"
                         />
@@ -793,6 +842,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Medical-Device-Manufacturers.jpg"
                           alt="Medical Device Manufacturers"
                         />
@@ -807,6 +858,8 @@ const HealthCare = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Healthcare-Startups.jpg"
                           alt="Healthcare Startups"
                         />
@@ -857,6 +910,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-05.png"
                                       alt="Healthcare Providers"
                                     />
@@ -868,6 +923,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-05.png"
                                       alt="Healthcare Providers"
                                     />
@@ -936,6 +993,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-02.png"
                                       alt="Pharmaceutical Companies"
                                     />
@@ -947,6 +1006,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-02.png"
                                       alt="Pharmaceutical Companies"
                                     />
@@ -1016,6 +1077,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-11.png"
                                       alt="Medical Device Manufacturers"
                                     />
@@ -1027,6 +1090,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-11.png"
                                       alt="Medical Device Manufacturers"
                                     />
@@ -1095,6 +1160,8 @@ const HealthCare = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-07.png"
                                       alt="Healthcare Startups"
                                     />
@@ -1106,6 +1173,8 @@ const HealthCare = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/healthcare-07.png"
                                       alt="Healthcare Startups"
                                     />
@@ -1149,7 +1218,12 @@ const HealthCare = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/icons2-04.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/icons2-04.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -1188,6 +1262,8 @@ const HealthCare = () => {
 
           <div className="my-[40px]">
             <img
+              decoding="async"
+              loading="lazy"
               src="/images/Types-of-Healthcare-Apps.png"
               alt="MEDIA &amp; ENTERTAINMENT APPS"
             />
@@ -1196,6 +1272,8 @@ const HealthCare = () => {
           <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[2rem]">
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Appointment-scheduling-applications.png"
                 alt="Appointment scheduling applications"
                 className="w-[32%] mx-auto"
@@ -1207,6 +1285,8 @@ const HealthCare = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Medication-intake-tracking-apps.png"
                 alt="Medication intake tracking apps"
                 className="w-[32%]  mx-auto"
@@ -1218,6 +1298,8 @@ const HealthCare = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Home-health-monitoring-apps.png"
                 alt="Home health monitoring apps"
                 className="w-[32%]  mx-auto"
@@ -1229,6 +1311,8 @@ const HealthCare = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Caregiver-management-apps.png"
                 alt="Caregiver management apps"
                 className="w-[32%] mx-auto"
@@ -1240,6 +1324,8 @@ const HealthCare = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Drug-inventory-tracking-apps.png"
                 alt="Drug inventory tracking apps"
                 className="w-[32%] mx-auto"
@@ -1251,6 +1337,8 @@ const HealthCare = () => {
 
             <div className="text-center">
               <img
+                decoding="async"
+                loading="lazy"
                 src="/images/Wearable-tech-apps.png"
                 alt="Wearable tech apps"
                 className="w-[32%] mx-auto"
@@ -1269,7 +1357,12 @@ const HealthCare = () => {
               <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 
@@ -1360,7 +1453,12 @@ const HealthCare = () => {
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
                   <p>
-                    <img src="/images/right_arrow.png" alt="arrow" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/right_arrow.png"
+                      alt="arrow"
+                    />
                   </p>
                 </Link>
               </div>
@@ -1399,9 +1497,7 @@ const HealthCare = () => {
                 <Link href="/portfolio/">
                   <div className="btn_flex">
                     <div className="arrow_icon">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         className="alignnone"
                         src="/images/right_arrow.png"
                         alt="arrow"
@@ -1418,9 +1514,7 @@ const HealthCare = () => {
             </div>
             <div className="health_sec1_flex_60 order_1">
               <div className="about_sec1_img1">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone rounded-3xl"
                   src="/images/endo-app-ab-sofort-1-1500x630-1.jpg"
                   alt="Reliant"

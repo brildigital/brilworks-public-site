@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TechTeamText } from "./BigText";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const ExtensionOfTeam = () => {
   useEffect(() => {
@@ -75,18 +76,14 @@ const ExtensionOfTeam = () => {
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"
@@ -109,18 +106,14 @@ const ExtensionOfTeam = () => {
                           </div>
                           <div className="aerrow relative">
                             <p href="/hire-nodejs-developer/">
-                              <img
-                                decoding="async"
-                                loading="lazy"
+                              <Image
                                 className="black_aerrow alignnone wp-image-28 size-full"
                                 src="/images/black_aerrow-1.png"
                                 alt="arrow"
                                 width="46"
                                 height="18"
                               />
-                              <img
-                                decoding="async"
-                                loading="lazy"
+                              <Image
                                 className="gradiant_aerrow alignnone wp-image-29 size-full"
                                 src="/images/arrow-gradiant.png"
                                 alt="arrow"
@@ -169,18 +162,14 @@ const ExtensionOfTeam = () => {
                             <p className="change_link text-[24px]">React.Js</p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"
@@ -230,18 +219,14 @@ const ExtensionOfTeam = () => {
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"
@@ -291,18 +276,14 @@ const ExtensionOfTeam = () => {
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"
@@ -325,18 +306,14 @@ const ExtensionOfTeam = () => {
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"
@@ -386,18 +363,14 @@ const ExtensionOfTeam = () => {
                             </p>
                           </div>
                           <div className="aerrow relative">
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="black_aerrow alignnone wp-image-28 size-full"
                               src="/images/black_aerrow-1.png"
                               alt="arrow"
                               width="46"
                               height="18"
                             />
-                            <img
-                              decoding="async"
-                              loading="lazy"
+                            <Image
                               className="gradiant_aerrow alignnone wp-image-29 size-full"
                               src="/images/arrow-gradiant.png"
                               alt="arrow"

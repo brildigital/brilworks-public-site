@@ -51,6 +51,8 @@ const FleetManagementNGPS = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
                   "https://a.storyblok.com/f/219851/1398x780/02507493b4/banner-with-radius.png"
@@ -98,7 +100,12 @@ const FleetManagementNGPS = () => {
                   <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
                     <div className="formBtn_icon">
                       <p>
-                        <img src="/images/right_arrow.png" alt="arrow" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/right_arrow.png"
+                          alt="arrow"
+                        />
                       </p>
                     </div>
                     <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -168,6 +175,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Telematics-Solutions-1.png"
                                       alt="Fleet Telematics Solutions"
                                     />
@@ -179,6 +188,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Telematics-Solutions-1.png"
                                       alt="Fleet Telematics Solutions"
                                     />
@@ -247,6 +258,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/GPS-Fleet-Tracking.png"
                                       alt="GPS Fleet Tracking"
                                     />
@@ -258,6 +271,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/GPS-Fleet-Tracking.png"
                                       alt="GPS Fleet Tracking"
                                     />
@@ -328,6 +343,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fuel-Consumption-Control-Apps.png"
                                       alt="Fuel Consumption Control Apps"
                                     />
@@ -339,6 +356,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fuel-Consumption-Control-Apps.png"
                                       alt="Fuel Consumption Control Apps"
                                     />
@@ -408,6 +427,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Management-Integration.png"
                                       alt="Fleet Management Integration"
                                     />
@@ -419,6 +440,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Management-Integration.png"
                                       alt="Fleet Management Integration"
                                     />
@@ -488,6 +511,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Driver-Management-Safety.png"
                                       alt="Driver Management Safety"
                                     />
@@ -499,6 +524,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Driver-Management-Safety.png"
                                       alt="Driver Management Safety"
                                     />
@@ -567,6 +594,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Maintenance-Predictions.png"
                                       alt="Fleet Maintenance Predictions"
                                     />
@@ -578,6 +607,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fleet-Maintenance-Predictions.png"
                                       alt="Fleet Maintenance Predictions"
                                     />
@@ -618,6 +649,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Fleet-Telematics-Solutions.jpg"
                           alt="Fleet Telematics Solutions"
                         />
@@ -631,6 +664,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Delivery-Management-Software.jpg"
                           alt="Delivery Management Software"
                         />
@@ -644,6 +679,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Fuel-Consumption-Control-Apps.jpg"
                           alt="Fuel Consumption Control Apps"
                         />
@@ -658,6 +695,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Fleet-Management-Integration.jpg"
                           alt="Fleet Management Integration"
                         />
@@ -672,6 +711,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Driver-Management-Safety.jpg"
                           alt="Driver Management Safety"
                         />
@@ -686,6 +727,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Fleet-Maintenance-Predictions.jpg"
                           alt="Fleet Maintenance Predictions"
                         />
@@ -706,7 +749,12 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -744,6 +792,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Traffic-Management-Software.jpg"
                           alt="Traffic-Management-Software"
                         />
@@ -757,6 +807,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/GPS-Fleet-Tracking.jpg"
                           alt="GPS-Fleet-Tracking"
                         />
@@ -770,6 +822,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Transportation-Software.jpg"
                           alt="Transportation-Software"
                         />
@@ -784,6 +838,8 @@ const FleetManagementNGPS = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Supply-Chain-Management-Software.jpg"
                           alt="Supply-Chain-Management-Software"
                         />
@@ -834,6 +890,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Traffic-Management-Software.png"
                                       alt="Traffic-Management-Software"
                                     />
@@ -845,6 +903,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Traffic-Management-Software.png"
                                       alt="Traffic-Management-Software"
                                     />
@@ -912,6 +972,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Delivery-Management-Software.png"
                                       alt="Delivery-Management-Software"
                                     />
@@ -923,6 +985,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Delivery-Management-Software.png"
                                       alt="Delivery-Management-Software"
                                     />
@@ -989,6 +1053,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Transportation-Software.png"
                                       alt="Transportation-Software"
                                     />
@@ -1000,6 +1066,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Transportation-Software.png"
                                       alt="Transportation-Software"
                                     />
@@ -1068,6 +1136,8 @@ const FleetManagementNGPS = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Supply-Chain-Management-Software.png"
                                       alt="Supply-Chain-Management-Software"
                                     />
@@ -1079,6 +1149,8 @@ const FleetManagementNGPS = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Supply-Chain-Management-Software.png"
                                       alt="Supply-Chain-Management-Software"
                                     />
@@ -1119,7 +1191,12 @@ const FleetManagementNGPS = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/icons2-04.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/icons2-04.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -1146,6 +1223,8 @@ const FleetManagementNGPS = () => {
 
             <div className="my-[40px]">
               <img
+                decoding="async"
+                loading="lazy"
                 src={
                   "https://a.storyblok.com/f/219851/1401x701/28098868b7/image-3-1.png"
                 }
@@ -1156,6 +1235,8 @@ const FleetManagementNGPS = () => {
             <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[4rem]">
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Streamlines-Business-Processes.png"
                   alt="Streamlines-Business-Processes"
                   className="w-[32%] mx-auto"
@@ -1167,6 +1248,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Generates-Valuable-Insights.png"
                   alt="Generates-Valuable-Insights"
                   className="w-[32%] mx-auto"
@@ -1178,6 +1261,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Lowers-Operational-Costs.png"
                   alt="Lowers Operational Costs"
                   className="w-[32%] mx-auto"
@@ -1189,6 +1274,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Improves-Fleet-Efficiency.png"
                   alt="Imporoves Fleet Efficiency"
                   className="w-[50px] mx-auto"
@@ -1200,6 +1287,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Extends-Vehicle-Lifeline.png"
                   alt="Extends Vehicle Lifeline"
                   className="w-[50px] mx-auto"
@@ -1211,6 +1300,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Maximizes-Driver-Safety.png"
                   alt="Maximizes Driver Safety"
                   className="w-[50px] mx-auto"
@@ -1236,6 +1327,8 @@ const FleetManagementNGPS = () => {
             <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[4rem] reveal">
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Real-time-GPS-vehicle-tracking.png"
                   alt="Real-time GPS vehicle tracking"
                   className="w-[32%] mx-auto"
@@ -1247,6 +1340,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Route-History-Optimization.png"
                   alt="Route History & Optimization"
                   className="w-[32%] mx-auto"
@@ -1258,6 +1353,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Accident-Detection-Management.png"
                   alt="Lowers Operational Costs"
                   className="w-[32%] mx-auto"
@@ -1271,6 +1368,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Automated-Alerts.png"
                   alt=" Automated Alerts"
                   className="w-[50px] mx-auto"
@@ -1282,6 +1381,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Historical-Fleet-Data.png"
                   alt="Historical Fleet Data"
                   className="w-[50px] mx-auto"
@@ -1293,6 +1394,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Engine-Diagnostics.png"
                   alt="Maximizes Driver Safety"
                   className="w-[50px] mx-auto"
@@ -1304,6 +1407,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Offline-Tracking.png"
                   alt="Offline Tracking"
                   className="w-[50px] mx-auto"
@@ -1315,6 +1420,8 @@ const FleetManagementNGPS = () => {
 
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Trend-Analysis.png"
                   alt="Trend Analysis"
                   className="w-[50px] mx-auto"
@@ -1325,6 +1432,8 @@ const FleetManagementNGPS = () => {
               </div>
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Cloud-Based.png"
                   alt="Cloud Based                  "
                   className="w-[50px] mx-auto"
@@ -1335,6 +1444,8 @@ const FleetManagementNGPS = () => {
               </div>
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/API-Integration.png"
                   alt="API Integration"
                   className="w-[50px] mx-auto"
@@ -1345,6 +1456,8 @@ const FleetManagementNGPS = () => {
               </div>
               <div className="text-center">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   src="/images/Analytics-Reporting.png"
                   alt="Analytics & Reporting"
                   className="w-[50px] mx-auto"
@@ -1472,7 +1585,12 @@ const FleetManagementNGPS = () => {
                 <div className="btn_paddinng btn_flex !mx-auto">
                   <div className="formBtn_icon">
                     <p>
-                      <img src="/images/right_arrow.png" alt="call" />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/right_arrow.png"
+                        alt="call"
+                      />
                     </p>
                   </div>
 

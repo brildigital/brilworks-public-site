@@ -9,6 +9,7 @@ import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const NodejsTechnology = () => {
   useEffect(() => {
@@ -27,6 +28,8 @@ const NodejsTechnology = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
                   "https://a.storyblok.com/f/219851/1398x780/f539ccd77f/node-services-banner.png"
@@ -40,9 +43,7 @@ const NodejsTechnology = () => {
                   <div className="how-we flex fle items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -50,9 +51,7 @@ const NodejsTechnology = () => {
                           height="94"
                         />
                         NODE.JS
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -102,7 +101,12 @@ const NodejsTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
                       <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -118,7 +122,12 @@ const NodejsTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -149,6 +158,7 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/consultacy.png"
                     alt="Node.js Consulting"
@@ -173,6 +183,7 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/migration-1.png"
                     alt="Node.js API Development & Integration"
@@ -198,6 +209,8 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className=""
                     src="/images/plugin.png"
                     alt="Node.js Plugin Development"
@@ -222,6 +235,8 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/migration.png"
                     alt="Node.js Migration"
@@ -246,6 +261,8 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/web.png"
                     alt="Node.js Enterprise Web Apps"
@@ -271,6 +288,8 @@ const NodejsTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/end-to-end-node.png"
                     alt="Node.js End-to-end Solutions"
@@ -303,7 +322,12 @@ const NodejsTechnology = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

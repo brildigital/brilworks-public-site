@@ -138,7 +138,12 @@ const BlogContactForm = () => {
                 <>
                   <div>
                     <p>
-                      <img src="/images/right_arrow.png" alt="arrow" />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/right_arrow.png"
+                        alt="arrow"
+                      />
                     </p>
                   </div>
                   <p id="submit" name="btnSubmit">

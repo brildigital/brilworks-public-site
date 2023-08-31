@@ -107,6 +107,8 @@ const Career = () => {
 
             <div className="mx-auto md:my-[8rem] my-[3rem] !w-5/6">
               <img
+                decoding="async"
+                loading="lazy"
                 src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
                 alt="career"
                 className="rounded-[36px]"
@@ -164,13 +166,39 @@ const Career = () => {
                   <p>4.7 / 5.0</p>
                 </div>
                 <div className="flex items-center gap-[12px]">
-                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
-                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
-                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
-                  <img src="/images/icons-06.png" alt="" className="w-[25px]" />
                   <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/icons-06.png"
+                    alt="star"
+                    className="w-[25px]"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/icons-06.png"
+                    alt="star"
+                    className="w-[25px]"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/icons-06.png"
+                    alt="star"
+                    className="w-[25px]"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/icons-06.png"
+                    alt="star"
+                    className="w-[25px]"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/icons-6.7.png"
-                    alt=""
+                    alt="star"
                     className="w-[17.5px]"
                   />
                 </div>
@@ -179,6 +207,8 @@ const Career = () => {
                 </div>
                 <div className="w-[200px]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/ambitions_logo.png"
                     alt="ambitionbox reviews"
                     className=""
@@ -220,6 +250,8 @@ const Career = () => {
                 <p>Powered by</p>
                 <div className="w-[122px]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/svgviewer-output-1.png"
                     alt="glassdoor reviews"
                   />
@@ -237,29 +269,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.8.png"
                           className="md:w-[20px] w-[10.5px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -276,29 +318,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.8.png"
                           className="md:w-[20px] w-[10.5px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -315,29 +367,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.6.png"
                           className="md:w-[15px] w-[8px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -354,29 +416,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.7.png"
                           className="md:w-[17.5px] w-[9.1px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -393,29 +465,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.7.png"
                           className="md:w-[17.5px] w-[9.1px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -432,29 +514,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
                           className="md:w-[25px] w-[13px]"
-                          alt=""
+                          alt="star"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.5.png"
                           className="md:w-[12.5px] w-[6.5px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -471,29 +563,39 @@ const Career = () => {
                     <div className="flex items-center gap-[2rem]">
                       <div className="flex items-center gap-[12px]">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
-                          alt=""
+                          alt="star"
                           className="md:w-[25px] w-[13px]"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
-                          alt=""
+                          alt="star"
                           className="md:w-[25px] w-[13px]"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
-                          alt=""
+                          alt="star"
                           className="md:w-[25px] w-[13px]"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-06.png"
-                          alt=""
+                          alt="star"
                           className="md:w-[25px] w-[13px]"
                         />
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/icons-6.7.png"
                           className="md:w-[17.5px] w-[9.1px]"
-                          alt=""
+                          alt="star"
                         />
                       </div>
                       <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
@@ -523,10 +625,17 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
-                  <img src="/images/black_aerrow-1.png" alt="arrow" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                  />
                 </div>
                 <div className="sec6_career_img1">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Flexible-Timings-.png"
                     alt="Flexible Timings"
                   />
@@ -554,10 +663,17 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
-                  <img src="/images/black_aerrow-1.png" alt="arrow" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                  />
                 </div>
                 <div className="sec6_career_img1">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Medical-Insurance-Cover.png"
                     alt="Medical Insurance Cover"
                   />
@@ -584,10 +700,17 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
-                  <img src="/images/black_aerrow-1.png" alt="arrow" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                  />
                 </div>
                 <div className="sec6_career_img1">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Holidays-Time-off-.png"
                     alt="Holidays Time off"
                   />
@@ -613,10 +736,20 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
-                  <img src="/images/black_aerrow-1.png" alt="arrow" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                  />
                 </div>
                 <div className="sec6_career_img1">
-                  <img src="/images/Team-Building.png" alt="Team Building" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/Team-Building.png"
+                    alt="Team Building"
+                  />
                 </div>
               </div>
             </div>
@@ -639,10 +772,17 @@ const Career = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
-                  <img src="/images/black_aerrow-1.png" alt="arrow" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                  />
                 </div>
                 <div className="sec6_career_img1">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Learning-Development.png"
                     alt="Learning Development"
                   />

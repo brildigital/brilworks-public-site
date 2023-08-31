@@ -13,8 +13,10 @@ const SoutionHowCanStart = () => {
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[2rem] reveal">
           <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
+              decoding="async"
+              loading="lazy"
               src="/images/burgerAsset-120.png"
-              alt=""
+              alt="asset"
               className="w-[62px] py-[1rem]"
             />
 
@@ -32,6 +34,8 @@ const SoutionHowCanStart = () => {
 
           <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
+              decoding="async"
+              loading="lazy"
               src="/images/burgerAsset-130.png"
               alt="Consultation"
               className="w-[62px] py-[1rem]"
@@ -51,6 +55,8 @@ const SoutionHowCanStart = () => {
 
           <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
+              decoding="async"
+              loading="lazy"
               src="/images/burgerAsset-140.png"
               alt="Get a Budget Estimate"
               className="w-[62px] py-[1rem]"
@@ -70,6 +76,8 @@ const SoutionHowCanStart = () => {
 
           <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
+              decoding="async"
+              loading="lazy"
               src="/images/burgerAsset-150.png"
               alt="Project Kickoff"
               className="w-[62px] py-[1rem]"

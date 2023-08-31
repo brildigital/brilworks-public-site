@@ -5,6 +5,7 @@ import { BlogText } from "./BigText";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -45,10 +46,12 @@ const Blogs = () => {
           blogData.map(({ slug, name, content }, index) => (
             <div key={index} className="blog-box overflow-hidden">
               <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                <img
+                <Image
                   src={content?.Image?.filename}
                   alt={content?.Image?.alt}
                   className="vc_gitem-zone-img rounded-[20px]"
+                  width={550}
+                  height={283}
                 />
                 <div className="p-[10px]">
                   <h4 className="xl:text-[24px] mb-[10px] leading-8">{name}</h4>
@@ -71,18 +74,14 @@ const Blogs = () => {
             <p className="change_link text-[21px]">Read More</p>
           </div>
           <div className="aerrow relative">
-            <img
-              decoding="async"
-              loading="lazy"
+            <Image
               className="black_aerrow alignnone wp-image-28 size-full"
               src="/images/black_aerrow-1.png"
               alt="arrow"
               width="46"
               height="18"
             />
-            <img
-              decoding="async"
-              loading="lazy"
+            <Image
               className="gradiant_aerrow alignnone wp-image-29 size-full"
               src="/images/arrow-gradiant.png"
               alt="arrow"

@@ -1,5 +1,5 @@
 "use client";
-import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
@@ -7,17 +7,13 @@ const GameChanger = () => {
   const isMobile = useMediaQuery({ maxWidth: 414 });
   return (
     <div className="relative">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>Welcome to Payments, Deals</title>
-        <meta name="description" content="This is sample content" />
-        <meta name="keywords" content="keyword content" />
-      </Head>
       <div className="home_sec1_img">
-        <img
+        <Image
           className="w-full"
           src={`https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg`}
           alt="homepage banner"
+          width={1920}
+          height={1000}
         />
       </div>
       <div className="sec1_txt_position">
@@ -50,9 +46,7 @@ const GameChanger = () => {
             </p>
             <p>
               <Link href="/contact-us/">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone wp-image-24 size-full"
                   src="/images/our-work.png"
                   alt="9 dots"

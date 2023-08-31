@@ -9,6 +9,7 @@ import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const JavaTechnology = () => {
   useEffect(() => {
@@ -26,6 +27,8 @@ const JavaTechnology = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
                   "https://a.storyblok.com/f/219851/1398x780/93d59fc963/java-services-banner.png"
@@ -39,9 +42,7 @@ const JavaTechnology = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -49,9 +50,7 @@ const JavaTechnology = () => {
                           height="94"
                         />
                         JAVA
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -99,7 +98,12 @@ const JavaTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -116,7 +120,12 @@ const JavaTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -147,6 +156,7 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/Technology-04.png"
                     alt="Java Consulting"
@@ -172,6 +182,7 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/Technology-05.png"
                     alt="Java Web Development"
@@ -199,7 +210,8 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Technology-06.png"
                     alt="Java Software Development"
                   />
@@ -226,6 +238,8 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Technology-07.png"
                     alt="Spring Core Development"
@@ -250,6 +264,8 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Technology-08.png"
                     alt="Java App Development"
@@ -277,6 +293,8 @@ const JavaTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Technology-09.png"
                     alt="Java Full Stack Development"
@@ -310,7 +328,12 @@ const JavaTechnology = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

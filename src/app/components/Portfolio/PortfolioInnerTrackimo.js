@@ -5,12 +5,12 @@ import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const PortfolioInnerTrackimo = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -28,6 +28,8 @@ const PortfolioInnerTrackimo = () => {
           </div>
           <div className="mb-[64px]">
             <img
+              decoding="async"
+              loading="lazy"
               className="alignnone"
               src="/images/GPS_Trackers_Devices-Uses2-1.jpg"
               alt="vugo"
@@ -50,9 +52,11 @@ const PortfolioInnerTrackimo = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">
@@ -66,9 +70,7 @@ const PortfolioInnerTrackimo = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/Identifying-the-Business-Needs-3.jpg"
                       alt="Identifying the Business Needs"
@@ -96,9 +98,7 @@ const PortfolioInnerTrackimo = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src={
                         "https://a.storyblok.com/f/219851/692x362/5974c22aa5/the-challenge-1.jpg"
@@ -140,8 +140,8 @@ const PortfolioInnerTrackimo = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/1 (1).png"
                     alt="Feature-rich Application"
                   />
@@ -160,8 +160,8 @@ const PortfolioInnerTrackimo = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/burgerAsset-150-2.png"
                     alt="Assured On-time Delivery"
                   />
@@ -180,7 +180,8 @@ const PortfolioInnerTrackimo = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    decoding="async"
+                    loading="lazy"
                     src="/images/3.png"
                     alt="Integration of Quick Payments"
                   />
@@ -224,6 +225,8 @@ const PortfolioInnerTrackimo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/Trackimo-3.png"
                   alt="2x"
@@ -240,6 +243,8 @@ const PortfolioInnerTrackimo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/Icons-03.png"
                   alt="advertiser queries"
@@ -255,6 +260,8 @@ const PortfolioInnerTrackimo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/Icons-02.png"
                   alt="better marketing spending"
@@ -277,7 +284,12 @@ const PortfolioInnerTrackimo = () => {
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/people-01.png" alt="people" className="" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/people-01.png"
+                    alt="people"
+                  />
                 </div>
                 <div className="steps_service  flex items-center justify-center">
                   <div className="no_flex">
@@ -299,9 +311,10 @@ const PortfolioInnerTrackimo = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/progress-01.png"
                     alt="progress"
-                    className=""
                   />
                 </div>
 
@@ -325,9 +338,10 @@ const PortfolioInnerTrackimo = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/passion-01.png"
                     alt="passion"
-                    className=""
                   />
                 </div>
                 <div className="steps_service flex items-center justify-center">
@@ -356,9 +370,11 @@ const PortfolioInnerTrackimo = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">
