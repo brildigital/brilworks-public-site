@@ -6,13 +6,13 @@ import { useMediaQuery } from "react-responsive";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const PortfolioInnerRastrack = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -29,7 +29,13 @@ const PortfolioInnerRastrack = () => {
             </h1>
           </div>
           <div className="mb-[64px]">
-            <img className="alignnone" src="/images/rastrack.jpg" alt="vugo" />
+            <img
+              decoding="async"
+              loading="lazy"
+              className="alignnone"
+              src="/images/rastrack.jpg"
+              alt="vugo"
+            />
           </div>
 
           <div className="porfolio_inner">
@@ -48,9 +54,11 @@ const PortfolioInnerRastrack = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">
@@ -64,9 +72,7 @@ const PortfolioInnerRastrack = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/Identifying-the-Business-Needs.jpg"
                       alt="Identifying the Business Needs"
@@ -94,9 +100,7 @@ const PortfolioInnerRastrack = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/Understanding-the-Requirement.jpg"
                       alt="Understanding the Requirement"
@@ -136,8 +140,8 @@ const PortfolioInnerRastrack = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Dedicated-Technology-Experts.png"
                     alt="Feature-rich Application"
                   />
@@ -162,8 +166,8 @@ const PortfolioInnerRastrack = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/On-time-Delivery.png"
                     alt="Assured On-time Delivery"
                   />
@@ -187,7 +191,8 @@ const PortfolioInnerRastrack = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    decoding="async"
+                    loading="lazy"
                     src="/images/Enabled-Automation.png"
                     alt="Integration of Quick Payments"
                   />
@@ -211,6 +216,8 @@ const PortfolioInnerRastrack = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Predictive-Analysis.png"
                     alt="Selecting the Right Technology"
@@ -255,6 +262,8 @@ const PortfolioInnerRastrack = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/rastrack-1.png"
                   alt="2x"
@@ -271,6 +280,8 @@ const PortfolioInnerRastrack = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/rastrack-2.png"
                   alt="advertiser queries"
@@ -287,6 +298,8 @@ const PortfolioInnerRastrack = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/rastrack-3.png"
                   alt="better marketing spending"
@@ -314,7 +327,12 @@ const PortfolioInnerRastrack = () => {
             >
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/people-01.png" alt="people" className="" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/people-01.png"
+                    alt="people"
+                  />
                 </div>
                 <div className="steps_service  flex items-center justify-center">
                   <div className="no_flex">
@@ -336,9 +354,10 @@ const PortfolioInnerRastrack = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/progress-01.png"
                     alt="progress"
-                    className=""
                   />
                 </div>
 
@@ -362,9 +381,10 @@ const PortfolioInnerRastrack = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/passion-01.png"
                     alt="passion"
-                    className=""
                   />
                 </div>
                 <div className="steps_service flex items-center justify-center">
@@ -393,9 +413,11 @@ const PortfolioInnerRastrack = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">

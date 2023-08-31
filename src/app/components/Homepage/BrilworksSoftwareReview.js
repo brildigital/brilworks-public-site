@@ -103,6 +103,8 @@ const BrilworksSoftwareReview = () => {
                     >
                       Powered by
                       <img
+                        decoding="async"
+                        loading="lazy"
                         className="w-[70px] ml-1"
                         src="/images/clutch-img.svg"
                         alt="clutch"

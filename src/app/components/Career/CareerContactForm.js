@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const CareerContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -225,9 +226,7 @@ const CareerContactForm = () => {
                 <div className="form_grid">
                   <div>
                     <div className="w-[30%]">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         className="alignnone"
                         src="/images/Stronger-Together.png"
                         alt="Stronger Together"
@@ -245,9 +244,7 @@ const CareerContactForm = () => {
                   </div>
                   <div>
                     <div className="w-[30%]">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         className="alignnone"
                         src="/images/Passion-Over-Perfectionism.png"
                         alt="Passion Over Perfectionism"
@@ -265,9 +262,7 @@ const CareerContactForm = () => {
                   </div>
                   <div>
                     <div className="w-[30%]">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         className="alignnone"
                         src="/images/Future-focused.png"
                         alt="Future-focused"
@@ -285,9 +280,7 @@ const CareerContactForm = () => {
                   </div>
                   <div>
                     <div className="w-[30%]">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         className="alignnone"
                         src="/images/Continuous-Improvement.png"
                         alt="Continuous Improvement"

@@ -9,6 +9,7 @@ import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const ReactJSTechnology = () => {
   useEffect(() => {
@@ -27,6 +28,8 @@ const ReactJSTechnology = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src="/images/react-banner.png"
                 alt="our process"
@@ -38,9 +41,7 @@ const ReactJSTechnology = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -48,9 +49,7 @@ const ReactJSTechnology = () => {
                           height="94"
                         />
                         REACT JS
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -99,7 +98,12 @@ const ReactJSTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -115,7 +119,12 @@ const ReactJSTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -145,6 +154,7 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/Enterprise-App-Development.png"
                     alt="ReactJS for Enterprise App Development"
@@ -169,6 +179,7 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/Custom-App-Development.png"
                     alt="ReactJS for Custom App Development"
@@ -193,6 +204,8 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className=""
                     src="/images/frontend.png"
                     alt="ReactJS for Front-End Development"
@@ -218,6 +231,8 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/migration-1.png"
                     alt="ReactJS Website Migration & Integration"
@@ -243,6 +258,8 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/ui-ux-1.png"
                     alt="ReactJS UI/UX Development"
@@ -268,6 +285,8 @@ const ReactJSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/support.png"
                     alt="ReactJS Support & Maintenance"
@@ -300,7 +319,12 @@ const ReactJSTechnology = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

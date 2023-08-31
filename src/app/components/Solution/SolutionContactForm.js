@@ -154,7 +154,12 @@ const SolutionContactForm = () => {
                       <>
                         <div className="formBtn_icon grid-flow-row">
                           <p>
-                            <img src="/images/right_arrow.png" alt="arrow" />
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/right_arrow.png"
+                              alt="arrow"
+                            />
                           </p>
                         </div>
                         <p className="send_btn" id="submit" name="btnSubmit">

@@ -107,6 +107,8 @@ const Blog = () => {
                 <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                   <div className="sec9_img1">
                     <img
+                      decoding="async"
+                      loading="lazy"
                       className="rounded-[20px]"
                       src={content?.Image?.filename}
                       alt={content?.Image?.alt}

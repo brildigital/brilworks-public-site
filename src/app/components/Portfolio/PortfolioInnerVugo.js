@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BestAdvocateText } from "../Homepage/BigText";
 import ClientReviews from "../Homepage/ClientReviews";
 import HomepageContactForm from "../Homepage/HomepageContactForm";
+import Image from "next/image";
 
 const PortfolioInnerVugo = () => {
   return (
@@ -17,8 +18,10 @@ const PortfolioInnerVugo = () => {
           </div>
           <div className="mb-[64px]">
             <img
+              loading="lazy"
+              decoding="async"
               className="alignnone"
-              src="/images/portfolio-banner2.webp"
+              src="https://a.storyblok.com/f/219851/1474x700/4607635c67/portfolio-banner2.webp"
               alt="vugo"
             />
           </div>
@@ -39,9 +42,11 @@ const PortfolioInnerVugo = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">
@@ -55,9 +60,7 @@ const PortfolioInnerVugo = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/identifying-new.png"
                       alt="Identifying the Business Needs"
@@ -86,9 +89,7 @@ const PortfolioInnerVugo = () => {
               <div className="lg:w-6/12 w-full lg:px-[10px] px-[0px] lg:pb-[0px] pb-[30px]">
                 <div>
                   <div className="our_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="border_redius20 alignnone"
                       src="/images/understanding-new.png"
                       alt="Understanding the Requirement"
@@ -129,7 +130,7 @@ const PortfolioInnerVugo = () => {
                 <div className="basis-[15%]">
                   <img
                     loading="lazy"
-                    className=""
+                    decoding="async"
                     src="/images/burgerAsset-110-1.png"
                     alt="Feature-rich Application"
                   />
@@ -155,7 +156,7 @@ const PortfolioInnerVugo = () => {
                 <div className="basis-[15%]">
                   <img
                     loading="lazy"
-                    className=""
+                    decoding="async"
                     src="/images/burgerAsset-140-2.png"
                     alt="Assured On-time Delivery"
                   />
@@ -179,7 +180,8 @@ const PortfolioInnerVugo = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    loading="lazy"
+                    decoding="async"
                     src="/images/burgerAsset-130-2.png"
                     alt="Integration of Quick Payments"
                   />
@@ -205,6 +207,8 @@ const PortfolioInnerVugo = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     className="alignnone wp-image-285 size-full"
                     src="/images/burgerAsset-150-2.png"
                     alt="Selecting the Right Technology"
@@ -250,6 +254,8 @@ const PortfolioInnerVugo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="alignnone"
                   src="/images/burgerAsset-200.png"
                   alt="2x"
@@ -266,6 +272,8 @@ const PortfolioInnerVugo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="alignnone"
                   src="/images/burgerAsset-210.png"
                   alt="advertiser queries"
@@ -282,6 +290,8 @@ const PortfolioInnerVugo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="alignnone"
                   src="/images/burgerAsset-220.png"
                   alt="better marketing spending"
@@ -298,6 +308,8 @@ const PortfolioInnerVugo = () => {
             <div className="text-center">
               <div className="w-[22%] mx-auto">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="alignnone"
                   src="/images/burgerAsset-230.png"
                   alt="insights"
@@ -321,7 +333,12 @@ const PortfolioInnerVugo = () => {
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
               <div className="contact_box">
                 <div className="mx-auto">
-                  <img src="/images/people-01.png" alt="people" className="" />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/people-01.png"
+                    alt="people"
+                  />
                 </div>
                 <div className="steps_service flex items-center justify-center">
                   <div className="no_flex">
@@ -343,9 +360,10 @@ const PortfolioInnerVugo = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src="/images/progress-01.png"
                     alt="progress"
-                    className=""
                   />
                 </div>
 
@@ -369,9 +387,10 @@ const PortfolioInnerVugo = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src="/images/passion-01.png"
                     alt="passion"
-                    className=""
                   />
                 </div>
                 <div className="steps_service flex items-center justify-center">
@@ -400,9 +419,11 @@ const PortfolioInnerVugo = () => {
             >
               <div className="get_icon">
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="alignnone"
                   src="/images/right_arrow.png"
-                  alt=""
+                  alt="right arrow"
                 />
               </div>
               <div className="portfolio_know_more_txt">

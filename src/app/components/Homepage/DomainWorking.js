@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import Image from "next/image";
 
 const DomainWorking = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -172,9 +172,7 @@ const DomainWorking = () => {
                         </p>
                       </div>
                       <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="black_aerrow alignnone wp-image-28 size-full"
                           src="/images/black_aerrow-1.png"
                           alt="arrow"
@@ -182,9 +180,7 @@ const DomainWorking = () => {
                           height="18"
                         />
 
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
@@ -239,9 +235,7 @@ const DomainWorking = () => {
                         </p>
                       </div>
                       <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="black_aerrow alignnone wp-image-28 size-full"
                           src="/images/black_aerrow-1.png"
                           alt="arrow"
@@ -301,18 +295,14 @@ const DomainWorking = () => {
                         <p className="change_link">Know more</p>
                       </div>
                       <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="black_aerrow alignnone wp-image-28 size-full"
                           src="/images/black_aerrow-1.png"
                           alt="arrow"
                           width="46"
                           height="18"
                         />
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"
@@ -363,18 +353,14 @@ const DomainWorking = () => {
                         <p>Know more</p>
                       </div>
                       <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="black_aerrow alignnone wp-image-28 size-full"
                           src="/images/black_aerrow-1.png"
                           alt="arrow"
                           width="46"
                           height="18"
                         />
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="gradiant_aerrow alignnone wp-image-29 size-full"
                           src="/images/arrow-gradiant.png"
                           alt="arrow"

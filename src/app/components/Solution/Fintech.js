@@ -8,6 +8,7 @@ import SolutionEngagementModal from "./SolutionEngagementModal";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
+import Image from "next/image";
 
 const Fintech = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -51,6 +52,8 @@ const Fintech = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
                   "https://a.storyblok.com/f/219851/1398x780/99204abf86/fintech-1.png"
@@ -107,7 +110,12 @@ const Fintech = () => {
                     <div className="btn_paddinng contact_btn btn_flex">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
                       <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -122,7 +130,12 @@ const Fintech = () => {
                     <div className="btn_paddinng contact_btn btn_flex">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
                       <p className="xl:!text-[20px] lg:!text-[18px]">
@@ -193,6 +206,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Custom-Fintech-Software-Developments.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -204,6 +219,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Custom-Fintech-Software-Developments.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -270,6 +287,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Banking-App-Development.png"
                                       alt="Music Streaming Apps"
                                     />
@@ -281,6 +300,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Banking-App-Development.png"
                                       alt="Music Streaming Apps"
                                     />
@@ -350,6 +371,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Insurance-App-Development.png"
                                       alt=" Photo Editing & Sharing Apps"
                                     />
@@ -361,6 +384,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Insurance-App-Development.png"
                                       alt=" Photo Editing & Sharing Apps"
                                     />
@@ -429,6 +454,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wallet-App-Development.png"
                                       alt="Ticket Booking Portals"
                                     />
@@ -440,6 +467,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wallet-App-Development.png"
                                       alt="Ticket Booking Portals"
                                     />
@@ -507,6 +536,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fintech-Software-Security-Compliance.png"
                                       alt="Gaming apps"
                                     />
@@ -518,6 +549,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Fintech-Software-Security-Compliance.png"
                                       alt="Gaming apps"
                                     />
@@ -585,6 +618,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/FinOps-Services.png"
                                       alt="  Content Aggregation Apps"
                                     />
@@ -596,6 +631,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/FinOps-Services.png"
                                       alt="  Content Aggregation Apps"
                                     />
@@ -640,6 +677,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/custom-fintech-software-developments.jpg"
                           alt="fintech-software-developments"
                         />
@@ -653,6 +692,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/banking-app-development.jpg"
                           alt="Banking Apps"
                         />
@@ -666,6 +707,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src={
                             "https://a.storyblok.com/f/219851/693x771/b3c39a5900/2-12.png"
                           }
@@ -682,6 +725,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/wallet-app-development.jpg"
                           alt="Wallet App Development"
                         />
@@ -696,6 +741,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src={
                             "https://a.storyblok.com/f/219851/693x771/6f75c05158/fintech-software-security-compliance.jpg"
                           }
@@ -712,6 +759,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/FinOps-Services-1.jpg"
                           alt="FinOps Services Apps"
                         />
@@ -728,7 +777,12 @@ const Fintech = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -766,6 +820,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src={
                             "https://a.storyblok.com/f/219851/693x771/c05c991634/2-13.png"
                           }
@@ -781,7 +837,12 @@ const Fintech = () => {
                       aria-labelledby="accordion-eight-tab"
                     >
                       <div className="team_img">
-                        <img src="/images/Lending.jpg" alt="Banking Apps" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/Lending.jpg"
+                          alt="Banking Apps"
+                        />
                       </div>
                     </div>
 
@@ -793,6 +854,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/consumer-banking.jpg"
                           alt="consumer-banking"
                         />
@@ -807,6 +870,8 @@ const Fintech = () => {
                     >
                       <div className="team_img">
                         <img
+                          decoding="async"
+                          loading="lazy"
                           src="/images/Personal-Finance.jpg"
                           alt="Personal Finance"
                         />
@@ -820,7 +885,12 @@ const Fintech = () => {
                       aria-labelledby="accordion-eleven-tab"
                     >
                       <div className="team_img">
-                        <img src="/images/payment.jpg" alt="payment" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/payment.jpg"
+                          alt="payment"
+                        />
                       </div>
                     </div>
 
@@ -831,7 +901,12 @@ const Fintech = () => {
                       aria-labelledby="accordion-tweleve-tab"
                     >
                       <div className="team_img">
-                        <img src="/images/insurance.jpg" alt="Insurance" />
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/insurance.jpg"
+                          alt="Insurance"
+                        />
                       </div>
                     </div>
                   </div>
@@ -879,6 +954,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wealth-Management.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -890,6 +967,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wealth-Management.png"
                                       alt="OTT Streaming Apps"
                                     />
@@ -954,6 +1033,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Lending.png"
                                       alt="Lending"
                                     />
@@ -965,6 +1046,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Lending.png"
                                       alt="Lending"
                                     />
@@ -1032,6 +1115,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Consumer-Banking.png"
                                       alt="Consumer Banking"
                                     />
@@ -1043,6 +1128,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Consumer-Banking.png"
                                       alt="Consumer Banking"
                                     />
@@ -1110,6 +1197,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Personal-Finance.png"
                                       alt="Personal Finance"
                                     />
@@ -1121,6 +1210,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Personal-Finance.png"
                                       alt="Personal Finance"
                                     />
@@ -1186,6 +1277,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Payment.png"
                                       alt="Payment"
                                     />
@@ -1197,6 +1290,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Payment.png"
                                       alt="Payment"
                                     />
@@ -1261,6 +1356,8 @@ const Fintech = () => {
 
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wealth-Management.png"
                                       alt="Wealth Management"
                                     />
@@ -1272,6 +1369,8 @@ const Fintech = () => {
                                 <div className="flex w-full">
                                   <div className="number_icon_img">
                                     <img
+                                      decoding="async"
+                                      loading="lazy"
                                       src="/images/Wealth-Management.png"
                                       alt="Wealth Management"
                                     />
@@ -1313,7 +1412,12 @@ const Fintech = () => {
                     <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/icons2-04.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/icons2-04.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -1344,8 +1448,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Fraud-Detection-Software.png"
                     alt="Fraud-Detection-Software"
                   />
@@ -1370,8 +1474,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
-                    className=""
                     src="/images/Financial-Reporting-Software.png"
                     alt="Financial-Reporting-Software"
                   />
@@ -1396,6 +1500,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className=""
                     src="/images/Financial-Risk-Management.png"
                     alt="Financial-Risk-Management"
@@ -1421,6 +1527,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Financial-CRM-software.png"
                     alt="Financial-CRM-software"
@@ -1446,6 +1554,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Background-Check-Software.png"
                     alt="Background-Check-Software"
@@ -1471,6 +1581,8 @@ const Fintech = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Sales-Forecasting-Softwaref.png"
                     alt="Sales-Forecasting-Softwaref"
@@ -1502,6 +1614,8 @@ const Fintech = () => {
                   <div className="formBtn_icon">
                     <p>
                       <img
+                        decoding="async"
+                        loading="lazy"
                         src="/images/icons-05.png"
                         className="!w-full"
                         alt="arrow"
@@ -1541,9 +1655,7 @@ const Fintech = () => {
                     <Link href="/portfolio/">
                       <div className="btn_flex">
                         <div className="arrow_icon">
-                          <img
-                            decoding="async"
-                            loading="lazy"
+                          <Image
                             className="alignnone"
                             src="/images/right_arrow.png"
                             alt="arrow"
@@ -1560,9 +1672,7 @@ const Fintech = () => {
                 </div>
                 <div className="health_sec1_flex_60 order_1">
                   <div className="about_sec1_img1">
-                    <img
-                      decoding="async"
-                      loading="lazy"
+                    <Image
                       className="alignnone"
                       src="/images/reliant-img.png"
                       alt="Reliant"
@@ -1692,7 +1802,12 @@ const Fintech = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/right_arrow.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/right_arrow.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

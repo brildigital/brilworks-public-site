@@ -10,7 +10,6 @@ const ContactUs = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -110,6 +109,8 @@ const ContactUs = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/people-01.png"
                     alt="people"
                     className="md:!w-[92px]"
@@ -135,6 +136,8 @@ const ContactUs = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/progress-01.png"
                     alt="progress"
                     className="md:!w-[92px]"
@@ -161,6 +164,8 @@ const ContactUs = () => {
               <div className="contact_box">
                 <div className="mx-auto">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     src="/images/passion-01.png"
                     alt="passion"
                     className="md:!w-[92px]"
@@ -197,6 +202,8 @@ const ContactUs = () => {
           <div className="contact_details background relative">
             <div className="logowhite">
               <img
+                decoding="async"
+                loading="lazy"
                 className="alignnone"
                 src="/images/logo-vector-white.png"
                 alt="brilworks logo"
@@ -208,6 +215,8 @@ const ContactUs = () => {
               <div className="contact_iconText_flex">
                 <div className="contact_icon">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone"
                     src="/images/call.png"
                     alt="Mobile"
@@ -222,6 +231,8 @@ const ContactUs = () => {
               <div className="contact_iconText_flex">
                 <div className="contact_icon">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone"
                     src="/images/email.png"
                     alt="Email"
@@ -236,6 +247,8 @@ const ContactUs = () => {
               <div className="contact_iconText_flex">
                 <div className="contact_icon">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone"
                     src="/images/skype.png"
                     alt="Skype"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const ToolsAndGetInTouch = () => {
@@ -15,9 +16,7 @@ const ToolsAndGetInTouch = () => {
           <div className="jira_icon_flex">
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
                   src="/images/jira.png"
                   alt="jira"
@@ -31,9 +30,7 @@ const ToolsAndGetInTouch = () => {
             </div>
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
                   src="/images/gitHub.png"
                   alt="GitHub"
@@ -47,9 +44,7 @@ const ToolsAndGetInTouch = () => {
             </div>
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
                   src="/images/miro.png"
                   alt="Miro"
@@ -63,9 +58,7 @@ const ToolsAndGetInTouch = () => {
             </div>
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
                   src="/images/Google-Meet.png"
                   alt="Google Meet"
@@ -79,9 +72,7 @@ const ToolsAndGetInTouch = () => {
             </div>
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
                   src="/images/slack.png"
                   alt="Slack"
@@ -95,11 +86,8 @@ const ToolsAndGetInTouch = () => {
             </div>
             <div className="icon_logo">
               <div className="jira_icon_img">
-                <img
-                  decoding="async"
-                  loading="lazy"
+                <Image
                   className="alignnone"
-                  img
                   src="/images/confluence.png"
                   alt="Confluence"
                   width="90"
@@ -115,11 +103,15 @@ const ToolsAndGetInTouch = () => {
             <div className="ready_img relative">
               <p>
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="ready_main web_img alignnone"
                   src="/images/ready.png"
                   alt="get in touch"
                 />
                 <img
+                  decoding="async"
+                  loading="lazy"
                   className="mobile_img border_redius20 alignnone"
                   src="/images/ready_mobile.jpg"
                   alt="get in touch"
@@ -135,9 +127,11 @@ const ToolsAndGetInTouch = () => {
                   <div className="get_icon">
                     <Link href="/contact-us/">
                       <img
+                        decoding="async"
+                        loading="lazy"
                         className="alignnone"
                         src="/images/right_arrow.png"
-                        alt=""
+                        alt="right arrow"
                       />
                     </Link>
                   </div>

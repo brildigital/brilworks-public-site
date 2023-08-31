@@ -8,6 +8,7 @@ import UIUXDesigners from "./UIUXDesigners";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const UIUXTechnology = () => {
   useEffect(() => {
@@ -26,6 +27,8 @@ const UIUXTechnology = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src="https://a.storyblok.com/f/219851/1398x780/6814715c8b/2-ui-ux.png"
                 alt="React Native banner"
@@ -37,9 +40,7 @@ const UIUXTechnology = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -47,9 +48,7 @@ const UIUXTechnology = () => {
                           height="94"
                         />
                         UI/UX DESIGN
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -98,7 +97,12 @@ const UIUXTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -115,7 +119,12 @@ const UIUXTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -145,6 +154,7 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/UI-UX-Consulting-Services-1.png"
                     alt="UI UX Consulting Services"
@@ -169,6 +179,7 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/UI-UX-Design-Services-1.png"
                     alt="UI UX Design Services"
@@ -194,7 +205,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    decoding="async"
+                    loading="lazy"
                     src="/images/UX-Strategy.png"
                     alt="UX Strategy"
                   />
@@ -219,6 +231,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/frontend.png"
                     alt="Mockups Designing"
@@ -243,6 +257,8 @@ const UIUXTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/Wireframe-and-Prototyping-1.png"
                     alt="Wireframe and Prototyping"
@@ -275,7 +291,12 @@ const UIUXTechnology = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 

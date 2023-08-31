@@ -8,6 +8,7 @@ import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import AWSDevelopers from "./AWSDevelopers";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const AWSTechnology = () => {
   useEffect(() => {
@@ -26,6 +27,8 @@ const AWSTechnology = () => {
           <div className="relative">
             <p>
               <img
+                decoding="async"
+                loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src="/images/AWS.webp"
                 alt="AWS banner"
@@ -37,9 +40,7 @@ const AWSTechnology = () => {
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
                       <div className="flex items-center">
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/1.png"
                           alt="curly bracket"
@@ -47,9 +48,7 @@ const AWSTechnology = () => {
                           height="94"
                         />
                         AWS
-                        <img
-                          decoding="async"
-                          loading="lazy"
+                        <Image
                           className="w-[auto]"
                           src="/images/2.png"
                           alt="curly bracket"
@@ -98,7 +97,12 @@ const AWSTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -115,7 +119,12 @@ const AWSTechnology = () => {
                     <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
                       <div className="formBtn_icon">
                         <p>
-                          <img src="/images/right_arrow.png" alt="arrow" />
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/right_arrow.png"
+                            alt="arrow"
+                          />
                         </p>
                       </div>
 
@@ -145,6 +154,7 @@ const AWSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/AWS-Development-Consulting.png"
                     alt="AWS Development Consulting"
@@ -170,6 +180,7 @@ const AWSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
                     loading="lazy"
                     src="/images/AWS-App-Development-Services.png"
                     alt="AWS App Development Services"
@@ -197,7 +208,8 @@ const AWSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
-                    className=""
+                    decoding="async"
+                    loading="lazy"
                     src="/images/AWS-Cloud-Migration-Services.png"
                     alt="AWS Cloud Migration Services"
                   />
@@ -223,6 +235,8 @@ const AWSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/DevOps-AWS-Services.png"
                     alt="DevOps AWS Services"
@@ -250,6 +264,8 @@ const AWSTechnology = () => {
               <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
                 <div className="basis-[15%]">
                   <img
+                    decoding="async"
+                    loading="lazy"
                     className="alignnone wp-image-285 size-full"
                     src="/images/AWS-Managed-Services.png"
                     alt="AWS Managed Services"
@@ -283,7 +299,12 @@ const AWSTechnology = () => {
               <div className="btn_paddinng btn_flex !mx-auto">
                 <div className="formBtn_icon">
                   <p>
-                    <img src="/images/icons-05.png" alt="call" />
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/icons-05.png"
+                      alt="call"
+                    />
                   </p>
                 </div>
 
