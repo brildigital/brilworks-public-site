@@ -1222,7 +1222,7 @@ const OurProcessPage = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/Screening-and-Shortlisting-1.jpg"
-                        alt=""
+                        alt="Screening-and-Shortlisting"
                       />
                     </div>
                   </div>
@@ -1238,7 +1238,7 @@ const OurProcessPage = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/language-proficiency.jpg"
-                        alt=""
+                        alt="language-proficiency"
                       />
                     </div>
                   </div>
@@ -1254,7 +1254,7 @@ const OurProcessPage = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/aptitude-test-recruitment-assessment.jpg"
-                        alt=""
+                        alt="aptitude-test"
                       />
                     </div>
                   </div>
@@ -1270,7 +1270,7 @@ const OurProcessPage = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/technical-evaluation-1.jpg"
-                        alt=""
+                        alt="technical-evaluation"
                       />
                     </div>
                   </div>
@@ -1286,7 +1286,7 @@ const OurProcessPage = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/team-extension.jpg"
-                        alt=""
+                        alt="team-extension"
                       />
                     </div>
                   </div>

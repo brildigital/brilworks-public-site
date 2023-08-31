@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
+import Image from "next/image";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -17,6 +18,7 @@ const Article = ({ blok }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const blogTableOfContent = blok?.content;
 
@@ -55,7 +57,7 @@ const Article = ({ blok }) => {
       return { level, text };
     });
     setHeadings(headings);
-  }, [blogTableOfContent]);
+  }, [blogTableOfContent, !isLoading]);
 
   useEffect(() => {
     // Add temporary IDs to the headings for smooth scrolling
@@ -63,7 +65,7 @@ const Article = ({ blok }) => {
     headings.forEach((heading, index) => {
       heading.id = `temp-section-${index}`;
     });
-  }, []);
+  }, [!isLoading]);
 
   function handleTableOfContentLinkClick(event) {
     event.preventDefault();
@@ -75,6 +77,14 @@ const Article = ({ blok }) => {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   }
+
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
 
   return (
     <>
@@ -94,98 +104,105 @@ const Article = ({ blok }) => {
         </div>
 
         <div className="2xl:w-[88%] w-[98%] mx-auto">
-          <div className="lg:flex block gap-[4rem]">
-            {isMobile ? null : (
-              <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
-                <div
-                  className={`${
-                    headings?.length
-                      ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
-                      : "!hidden"
-                  }`}
-                >
-                  <div className="">
-                    <p className="text-[#00dfb8] text-[24px] text-[500]">
-                      Table of Contents
-                    </p>
-                  </div>
-                  <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
-                    <ul>
-                      {headings?.length ? (
-                        headings.map((heading, index) => (
-                          <li key={index}>
-                            <Link
-                              href={`#temp-section-${index}`}
-                              onClick={handleTableOfContentLinkClick}
-                            >
-                              {heading.text}
-                            </Link>
-                            {heading.subheadings &&
-                              renderTableOfContents(heading?.subheadings)}
-                          </li>
-                        ))
-                      ) : (
-                        <div className="flex align-middle justify-center">
-                          <FetchDataSpinner />
-                        </div>
-                      )}
-                    </ul>
-                    {/* {parse(blok?.table_content)} */}
-                  </nav>
-                </div>
-              </div>
-            )}
-
-            <div className="basis-[50%]">
-              <div className="service_sec3">
-                <div className="home_sec2_txt4 blog-cat mt-[10px]">
-                  <p className="p-0"> {blok?.subtitle}</p>
-                </div>
-                <div className="home_sec2_txt3 pt-[2.5rem]">
-                  <h1 className="entry-title default-max-width md:!text-[3rem]">
-                    {blok?.title}
-                  </h1>
-                </div>
-              </div>
-              <div className="blog_content post_details_content ">
-                {/* {parse(blok?.content)} */}
-                {modifyImagesWithLazyLoading(blok?.content)}
-              </div>
-
-              {/* ********************Author Detail******************************/}
-              <div className="single-author-bio">
-                <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
-                  <div className="img-blk">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src={blok?.author_img?.filename}
-                      width="96"
-                      height="96"
-                      alt={blok?.author_img?.alt}
-                      className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
-                    />
+          {isLoading ? (
+            <div className="flex align-middle justify-center p-24">
+              <FetchDataSpinner />
+            </div>
+          ) : (
+            <div className="lg:flex block gap-[4rem]">
+              {isMobile ? null : (
+                <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
+                  <div
+                    className={`${
+                      headings?.length
+                        ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
+                        : "!hidden"
+                    }`}
+                  >
+                    <div className="">
+                      <p className="text-[#00dfb8] text-[24px] text-[500]">
+                        Table of Contents
+                      </p>
+                    </div>
+                    <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
+                      <ul>
+                        {headings?.length ? (
+                          headings.map((heading, index) => (
+                            <li key={index}>
+                              <Link
+                                href={`#temp-section-${index}`}
+                                onClick={handleTableOfContentLinkClick}
+                              >
+                                {heading.text}
+                              </Link>
+                              {heading.subheadings &&
+                                renderTableOfContents(heading?.subheadings)}
+                            </li>
+                          ))
+                        ) : (
+                          <div className="flex align-middle justify-center">
+                            <FetchDataSpinner />
+                          </div>
+                        )}
+                      </ul>
+                      {/* {parse(blok?.table_content)} */}
+                    </nav>
                   </div>
                 </div>
-                <div className="single-author-bio-text">
-                  <h3>
-                    <Link
-                      href={`${blok?.author_linkedIn?.url}`}
-                      title={`Visit ${blok?.author} website`}
-                      rel="author external"
-                    >
-                      {blok?.author}
-                    </Link>
-                  </h3>
-                  <p>{blok?.author_desc}</p>
+              )}
+
+              <div className="basis-[50%]">
+                <div className="service_sec3">
+                  <div className="home_sec2_txt4 blog-cat mt-[10px]">
+                    <p className="p-0"> {blok?.subtitle}</p>
+                  </div>
+                  <div className="home_sec2_txt3 pt-[2.5rem]">
+                    <h1 className="entry-title default-max-width md:!text-[3rem]">
+                      {blok?.title}
+                    </h1>
+                  </div>
+                </div>
+                <div className="blog_content post_details_content ">
+                  {modifyImagesWithLazyLoading(blok?.content)}
+
+                  {/* {parse(blok?.content)} */}
+                </div>
+
+                {/* ********************Author Detail******************************/}
+                <div className="single-author-bio">
+                  <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
+                    <div className="img-blk">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src={blok?.author_img?.filename}
+                        width="96"
+                        height="96"
+                        alt={blok?.author_img?.alt}
+                        className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
+                      />
+                    </div>
+                  </div>
+                  <div className="single-author-bio-text">
+                    <h3>
+                      <Link
+                        href={`${blok?.author_linkedIn?.url}`}
+                        title={`Visit ${blok?.author} website`}
+                        rel="author external"
+                      >
+                        {blok?.author}
+                      </Link>
+                    </h3>
+                    <p>{blok?.author_desc}</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="basis-[25%]">
-              <BlogContactForm />
+              <div className="basis-[25%]">
+                <BlogContactForm />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div>
@@ -221,7 +238,7 @@ const Article = ({ blok }) => {
                         loading="lazy"
                         className="alignnone"
                         src="/images/right_arrow.png"
-                        alt=""
+                        alt="right arrow"
                       />
                     </Link>
                   </div>
@@ -243,37 +260,45 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
-            {blogData?.length
-              ? blogData.map(({ slug, name, content }, index) => (
-                  <div
-                    key={index}
-                    className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <div className="sec9_img1">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="rounded-[20px]"
-                          src={content?.Image?.filename}
-                          alt={content?.Image?.alt}
-                        />
+          <div
+            className={`grid ${
+              isLoading ? null : "xl:grid-cols-3 md:grid-cols-2"
+            } grid-cols-1 items-center gap-[2rem]`}
+          >
+            {blogData?.length && !isLoading ? (
+              blogData.map(({ slug, name, content }, index) => (
+                <div
+                  key={index}
+                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                >
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                    <div className="sec9_img1">
+                      <Image
+                        className="rounded-[20px]"
+                        src={content?.Image?.filename}
+                        alt={content?.Image?.alt}
+                        width={550}
+                        height={283}
+                      />
+                    </div>
+                    <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                      <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
+                        <p className="entry-title default-max-width aspect-[518/116]">
+                          {name}
+                        </p>
                       </div>
-                      <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                        <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                          <p className="entry-title default-max-width aspect-[518/116]">
-                            {name}
-                          </p>
-                        </div>
-                        <div className="sec9_txt2 mt-[1.5rem]">
-                          <p>{content?.PublishedDate}</p>
-                        </div>
+                      <div className="sec9_txt2 mt-[1.5rem]">
+                        <p>{content?.PublishedDate}</p>
                       </div>
-                    </Link>
-                  </div>
-                ))
-              : null}
+                    </div>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <div className="flex align-middle justify-center p-24">
+                <FetchDataSpinner />
+              </div>
+            )}
           </div>
         </div>
       </section>
