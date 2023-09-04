@@ -88,7 +88,7 @@
         line-height: 1.6;
         margin: 0;
         overflow: hidden;
-
+        padding-left: 0!important;
         li {
             font-size: 95%;
             padding: 0 !important;
@@ -100,15 +100,15 @@
                 text-decoration: underline;
             }
 
-            a {
-                color: #444;
-                box-shadow: none;
-                text-decoration: none;
-                text-shadow: none;
-                display: inline-flex;
-                align-items: stretch;
-                flex-wrap: nowrap;
-            }
+            // a {
+            //     color: #444;
+            //     box-shadow: none;
+            //     text-decoration: none;
+            //     text-shadow: none;
+            //     display: inline-flex;
+            //     align-items: stretch;
+            //     flex-wrap: nowrap;
+            // }
 
             a:hover {
                 text-decoration: underline !important;
