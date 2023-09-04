@@ -72,14 +72,18 @@ const Blogs = () => {
             <p className="change_link text-[21px]">Read More</p>
           </div>
           <div className="aerrow relative">
-            <Image
+            <img
+              decoding="async"
+              loading="lazy"
               className="black_aerrow alignnone wp-image-28 size-full"
               src="/images/black_aerrow-1.png"
               alt="arrow"
               width="46"
               height="18"
             />
-            <Image
+            <img
+              decoding="async"
+              loading="lazy"
               className="gradiant_aerrow alignnone wp-image-29 size-full"
               src="/images/arrow-gradiant.png"
               alt="arrow"
