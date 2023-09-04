@@ -1,9 +1,28 @@
 import { NextResponse } from "next/server";
 import { createHubSpotContact } from "..";
 
+export async function GET() {
+  return NextResponse.json({ message: "This Worked", success: true });
+}
+
 export async function POST(req, res) {
   if (req.method === "POST") {
     const payload = await req.json();
+
+    // const transporter = nodemailer.createTransport({
+    //   service: "Gmail",
+    //   auth: {
+    //     user: AdminEmail,
+    //     pass: AdminPassKey,
+    //   },
+    // });
+
+    // const mailOptions = {
+    //   from: email,
+    //   to: process.env.RECEIVER_EMAIL, // receivers
+    //   subject: "Contact Form Submission",
+    //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}\nPage: ${page}`,
+    // };
 
     try {
       await createHubSpotContact(payload);
