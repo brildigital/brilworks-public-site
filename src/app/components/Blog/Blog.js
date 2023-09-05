@@ -53,36 +53,41 @@ const Blog = () => {
         console.log(error);
       }
     };
-
     fetchData();
   }, []);
 
+  const searchBlog = async () => {
+    try {
+      const response = await Storyblok.get("cdn/stories/", {
+        starts_with: "blog/",
+        per_page: 100,
+        version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      });
+
+      const filteredData = response.data?.stories.filter(
+        (item) =>
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (item.content &&
+            item.content.content
+              .toLowerCase()
+              .includes(searchQuery.toLowerCase()))
+      );
+      setSearchResults(filteredData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const searchBlog = async () => {
-      try {
-        const response = await Storyblok.get("cdn/stories/", {
-          starts_with: "blog/",
-          per_page: 100,
-          version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-        });
-
-        const filteredData = response.data?.stories.filter(
-          (item) =>
-            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            (item.content &&
-              item.content.content
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase()))
-        );
-
-        setSearchResults(filteredData);
-        setSearchBtnClick(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    searchBlog().then(() => setIsLoading(false));
+    if (searchQuery) {
+      const delayDebounceFn = setTimeout(() => {
+        searchBlog();
+      }, 1000);
+      return () => clearTimeout(delayDebounceFn);
+    } else {
+      searchBlog();
+      setSearchBtnClick(false);
+    }
   }, [searchQuery]);
 
   const handleSearchSubmit = (e) => {
