@@ -286,6 +286,10 @@ a:hover {
 .page-active {
   color: var(--main_color) !important;
 }
+
+.blog-tab-content a.page-active {
+  color: var(--main_color) !important;
+}
 .menu .accordion-container .content-entry i {
   top: 40%;
   transform: translateY(-50%);
