@@ -61,7 +61,11 @@ const ContactUsEmailForm = () => {
   };
   return (
     <div>
-      <form className="wpcf7-form init" onSubmit={handleSubmit}>
+      <form
+        className="wpcf7-form init"
+        id="contact-page-form"
+        onSubmit={handleSubmit}
+      >
         <div className="form-group">
           <p className={isMobile ? "pt-4" : ""}>
             <label className={`label_name ${isMobile ? "pb-2" : ""}`}>

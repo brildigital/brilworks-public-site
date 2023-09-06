@@ -19,6 +19,7 @@ const Article = ({ blok }) => {
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeLink, setActiveLink] = useState(null);
 
   const blogTableOfContent = blok?.content;
 
@@ -67,16 +68,51 @@ const Article = ({ blok }) => {
     });
   }, [!isLoading]);
 
-  function handleTableOfContentLinkClick(event) {
-    event.preventDefault();
+  const handleTableOfContentLinkClick = (e, index) => {
+    setActiveLink(index);
+    e.preventDefault();
 
-    const targetId = event.target.getAttribute("href");
+    const targetId = e.target.getAttribute("href");
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const headingPositions = headings.map((heading, index) => {
+        const targetElement = document.getElementById(`temp-section-${index}`);
+
+        if (targetElement) {
+          return {
+            id: `${index}`,
+            offsetTop: targetElement.offsetTop,
+          };
+        }
+        return null;
+      });
+
+      // Find the first heading whose offsetTop is greater than or equal to scrollY
+      const activeHeadingIndex = headingPositions.find(
+        (position) => position !== null && position.offsetTop >= scrollY
+      );
+      // Set the active link to the ID of the active heading
+      if (activeHeadingIndex) {
+        setActiveLink(activeHeadingIndex.id);
+      }
+    };
+
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [headings]);
 
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
@@ -115,23 +151,28 @@ const Article = ({ blok }) => {
                   <div
                     className={`${
                       headings?.length
-                        ? " p-[20px] bg-[#f9f9f9] border-1 border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
+                        ? " pl-5 py-4 bg-[#f9f9f9] border-1 !border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
                         : "!hidden"
                     }`}
                   >
-                    <div className="">
-                      <p className="text-[#00dfb8] text-[24px] text-[500]">
+                    <div className="mb-2">
+                      <p className="text-[#00dfb8] text-[24px] font-medium">
                         Table of Contents
                       </p>
                     </div>
-                    <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav">
+                    <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav overflow-auto max-h-[calc(100vh_-_180px)]">
                       <ul>
                         {headings?.length ? (
                           headings.map((heading, index) => (
                             <li key={index}>
                               <Link
                                 href={`#temp-section-${index}`}
-                                onClick={handleTableOfContentLinkClick}
+                                onClick={(e) =>
+                                  handleTableOfContentLinkClick(e, index)
+                                }
+                                className={`${
+                                  index == activeLink ? "page-active" : ""
+                                }`}
                               >
                                 {heading.text}
                               </Link>
@@ -305,4 +346,5 @@ const Article = ({ blok }) => {
     </>
   );
 };
+
 export default Article;

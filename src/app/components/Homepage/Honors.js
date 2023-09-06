@@ -119,6 +119,106 @@ const Honors = () => {
                   </Link>
                 </div>
               </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="award ng-scope">
+                  <Link
+                    href="https://clutch.co/profile/brilworks-software#highlights"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <div className="award_sec8_img1">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="w-[150px]"
+                        src="/images/top_clutch.co_software_developers_gaming_india.png"
+                        alt="Clutch Game Reviews"
+                      />
+                    </div>
+                    <div className="review-text">
+                      <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                        Gaming India
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="award ng-scope">
+                  <Link
+                    href="https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <div className="award_sec8_img1">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="w-[110px]"
+                        src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
+                        alt="Clutch Reviews"
+                      />
+                    </div>
+                    <div className="review-text">
+                      <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                        App Development Company
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="award ng-scope">
+                  <Link
+                    href="https://clutch.co/profile/brilworks-software#highlights"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <div className="award_sec8_img1">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="w-[150px]"
+                        src="/images/top_clutch.co_software_developers_gps_navigation__gis_india.png"
+                        alt="Clutch GPS, Navigation & GIS Reviews"
+                      />
+                    </div>
+                    <div className="review-text">
+                      <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                        GPS, Navigation & GIS India
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="award ng-scope">
+                  <Link
+                    href="https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <div className="award_sec8_img1">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="w-[110px]"
+                        src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
+                        alt="Clutch Reviews"
+                      />
+                    </div>
+                    <div className="review-text">
+                      <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                        Software Developers
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </SwiperSlide>
+
               <SwiperSlide>
                 <div className="award ng-scope">
                   <Link
