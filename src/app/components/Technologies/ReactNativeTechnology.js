@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect } from "react";
 import FAQsTechnology from "./FAQsTechnology";
+import TechnologyDevelopers from "./TechnologyDevelopers";
+import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
-import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
-import ReactNativeDevelopers from "./ReactNativeDevelopers";
-import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import { useEffect } from "react";
-import Image from "next/image";
 
 const ReactNativeTechnology = () => {
   useEffect(() => {
@@ -341,7 +341,7 @@ const ReactNativeTechnology = () => {
           </div>
         </div>
 
-        <ReactNativeDevelopers />
+        <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
       </section>

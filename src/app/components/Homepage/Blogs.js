@@ -1,31 +1,28 @@
 "use client";
 import Link from "next/link";
-import StoryblokClient from "storyblok-js-client";
 import { BlogText } from "./BigText";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonfunction";
 import Image from "next/image";
-
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
+import { getbloglist } from "../lib/getblog";
+import { useMediaQuery } from "react-responsive";
 
 const Blogs = () => {
   const [blogData, setBlogData] = useState(null);
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  async function fetchData() {
+    try {
+      const blogData = await getbloglist(!isTablet ? 3 : 2);
+      setBlogData(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
-    Storyblok.get("cdn/stories/", {
-      starts_with: "blogs-list/",
-      per_page: 3,
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    })
-      .then((response) => {
-        setBlogData(response.data?.stories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetchData();
   }, []);
 
   useEffect(() => {

@@ -1,20 +1,20 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect } from "react";
 import FAQsTechnology from "./FAQsTechnology";
+import TechnologyDevelopers from "./TechnologyDevelopers";
+import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
-import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
-import AWSDevelopers from "./AWSDevelopers";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import { useEffect } from "react";
-import Image from "next/image";
 
 const AWSTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -316,7 +316,7 @@ const AWSTechnology = () => {
           </div>
         </div>
 
-        <AWSDevelopers />
+        <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
       </section>

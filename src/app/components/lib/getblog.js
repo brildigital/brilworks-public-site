@@ -8,6 +8,7 @@ export async function getblog() {
   let stories = await Storyblok.get("cdn/stories", {
     starts_with: "blog/",
     per_page: 100,
+    cv: Math.random(),
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     // sort_by: "first_published_at:",
   });
@@ -15,12 +16,31 @@ export async function getblog() {
   return storyData;
 }
 
-export async function getbloglist() {
+export async function getbloglist(prop) {
   let stories = await Storyblok.get("cdn/stories", {
     starts_with: "blogs-list/",
-    per_page: 100,
+    per_page: prop,
+    cv: Math.random(),
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   });
   const storyData = stories.data.stories;
   return storyData;
+}
+
+export async function searchBlog(query) {
+  const response = await Storyblok.get("cdn/stories/", {
+    starts_with: "blog/",
+    per_page: 100,
+    cv: Math.random(),
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+  });
+
+  const filteredData = response.data?.stories.filter(
+    (item) =>
+      item.name.toLowerCase().includes(query.toLowerCase()) ||
+      (item.content &&
+        item.content.content.toLowerCase().includes(query.toLowerCase()))
+  );
+
+  return filteredData;
 }
