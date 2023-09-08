@@ -316,7 +316,7 @@ const ThreeStepstoHireDeveloper = () => {
                   <div
                     className={`one ${
                       !isMobile && "border-r-[1px] border-r-[#80808085] "
-                    } md:p-4 lg-p-8 p-6`}
+                    } md:p-4 lg:p-8 p-6`}
                   >
                     <div className="md:align-middle">
                       <p className="pricing-amount">
@@ -377,7 +377,7 @@ const ThreeStepstoHireDeveloper = () => {
                       isMobile
                         ? " border-t-[1px] border-t-[#80808085]"
                         : "border-r-[1px] border-r-[#80808085]"
-                    }  md:p-4 lg-p-8 p-6`}
+                    }  md:p-4 lg:p-8 p-6`}
                   >
                     <div className="sec8_service_txt1 txt_center">
                       <p className="pricing-amount">
@@ -387,7 +387,7 @@ const ThreeStepstoHireDeveloper = () => {
                     </div>
                     <div className="pricing-desc">
                       <div className="flex align-middle gap-3 pt-4">
-                        <p>
+                        <p className="inline-block">
                           <Image
                             className="w-[30px]"
                             src="/images/icons2-05.png"
@@ -437,7 +437,7 @@ const ThreeStepstoHireDeveloper = () => {
                   <div
                     className={`three ${
                       isMobile && " border-t-[1px] border-t-[#80808085]"
-                    }  md:p-4 lg-p-8 p-6`}
+                    }  md:p-4 lg:p-8 p-6`}
                   >
                     <div className="sec8_service_txt1 txt_center">
                       <p className="pricing-amount">

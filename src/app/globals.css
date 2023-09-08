@@ -870,6 +870,11 @@ a:hover {
   color: var(--color_black);
   text-align: left;
 }
+.pricing-desc p img {
+  width: 30px;
+  margin-top: 5px;
+  max-width: unset !important;
+}
 
 .benefit-developer-effect {
   transition: all 0.6s ease-in-out;
@@ -2630,7 +2635,7 @@ textarea.form-control-txt {
     font-size: 4rem;
   }
   .menu .accordion-container .article-title {
-    font-size: 1.8rem;
+    font-size: var(--font_36);
   }
   .service_description p {
     font-size: 1.1rem;
@@ -3025,6 +3030,9 @@ textarea.form-control-txt {
     border-radius: 15px;
     margin: 0 auto;
   }
+  .pricing-desc p img {
+    width: 25px;
+  }
 }
 @media only screen and (max-width: 991px) {
   .header_font a,
@@ -3404,5 +3412,8 @@ textarea.form-control-txt {
   .faq-bottom .accordion-item {
     padding: 1rem !important;
     margin-bottom: 15px !important;
+  }
+  .pricing-desc p img {
+    margin-top: 0;
   }
 }
