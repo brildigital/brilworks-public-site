@@ -810,7 +810,7 @@ const Fintech = () => {
           <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
+                <div className="lg:w-6/12 w-full md:mt-[0px] md:mb-4 lg:mb-0 mt-[30px]">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -914,7 +914,7 @@ const Fintech = () => {
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div
                     id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 md:ml-8 w-full"
+                    className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
                     role="tablist"
                   >
                     <div

@@ -105,7 +105,7 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0">
               <div className="contact_box">
                 <div className="mx-auto">
                   <img

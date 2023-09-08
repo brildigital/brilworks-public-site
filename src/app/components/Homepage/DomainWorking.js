@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
+import "./homepage.scss";
 import { scrollEffect } from "../lib/commonfunction";
 import Image from "next/image";
 

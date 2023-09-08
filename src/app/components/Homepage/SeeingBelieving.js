@@ -13,6 +13,7 @@ import { scrollEffect } from "../lib/commonfunction";
 
 const SeeingBelieving = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const dataFetch = () => {
@@ -26,7 +27,7 @@ const SeeingBelieving = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -40,7 +41,7 @@ const SeeingBelieving = () => {
           modules={[Pagination]}
           spaceBetween={30}
           speed={1500}
-          slidesPerView={isMobile ? 1 : 3}
+          slidesPerView={isMobile ? 1 : `${isTablet ? 2 : 3}`}
           slidesPerGroup={isMobile ? 1 : 2}
           loopFillGroupWithBlank={true}
           pagination={{ clickable: true }}
