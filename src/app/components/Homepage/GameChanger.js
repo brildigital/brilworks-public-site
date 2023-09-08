@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 
 const GameChanger = () => {
   const isMobile = useMediaQuery({ maxWidth: 414 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   return (
     <div className="relative">
       <div className="home_sec1_img">
@@ -31,8 +32,8 @@ const GameChanger = () => {
           <div className="home_txt3 home_txt3_top_padding md:max-w-[760px]">
             <h1>
               <span className="ez-toc-section"></span>We build stunning digital
-              solutions for global brands and startups which deﬁne their
-              success.
+              solutions for global brands{isTablet && <br />} and startups which
+              deﬁne their success.
               <span className="ez-toc-section-end"></span>
             </h1>
           </div>

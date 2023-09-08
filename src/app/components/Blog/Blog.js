@@ -1,19 +1,15 @@
 "use client";
-import StoryblokClient from "storyblok-js-client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { useMediaQuery } from "react-responsive";
-
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
-
-const ITEMS_PER_PAGE = 9;
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { getbloglist, searchBlog } from "../lib/getblog";
 
 const Blog = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [blogData, setBlogData] = useState(null);
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const ITEMS_PER_PAGE = isTablet ? 8 : 9;
+  const [blogData, setBlogData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -40,38 +36,22 @@ const Blog = () => {
     window.scrollTo({ top: 0 });
   }, [currentPage, searchQuery]);
 
+  async function fetchData() {
+    try {
+      const blogData = await getbloglist(100);
+      setBlogData(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await Storyblok.get("cdn/stories/", {
-          starts_with: "blogs-list/",
-          per_page: 100,
-          version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-        });
-        setBlogData(response.data?.stories);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     fetchData();
   }, []);
 
-  const searchBlog = async () => {
+  const handleBlogSearch = async (searchQuery) => {
     try {
-      const response = await Storyblok.get("cdn/stories/", {
-        starts_with: "blog/",
-        per_page: 100,
-        version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      });
-
-      const filteredData = response.data?.stories.filter(
-        (item) =>
-          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          (item.content &&
-            item.content.content
-              .toLowerCase()
-              .includes(searchQuery.toLowerCase()))
-      );
+      const filteredData = await searchBlog(searchQuery);
       setSearchResults(filteredData);
     } catch (error) {
       console.log(error);
@@ -81,11 +61,11 @@ const Blog = () => {
   useEffect(() => {
     if (searchQuery) {
       const delayDebounceFn = setTimeout(() => {
-        searchBlog();
+        handleBlogSearch(searchQuery);
       }, 1000);
       return () => clearTimeout(delayDebounceFn);
     } else {
-      searchBlog();
+      handleBlogSearch(searchQuery);
       setSearchBtnClick(false);
     }
   }, [searchQuery]);
@@ -182,7 +162,7 @@ const Blog = () => {
                           <img
                             decoding="async"
                             loading="lazy"
-                            className="rounded-[20px]"
+                            className="rounded-[30px]"
                             src={
                               searchBtnClick
                                 ? content?.mobile_banner?.filename

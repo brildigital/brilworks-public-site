@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect } from "react";
 import FAQsTechnology from "./FAQsTechnology";
-import BlockchainDevelopers from "./BlockchainDevelopers";
+import TechnologyDevelopers from "./TechnologyDevelopers";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import Image from "next/image";
 
 const BlockchainTechnology = () => {
   useEffect(() => {
@@ -345,7 +345,7 @@ const BlockchainTechnology = () => {
           </div>
         </div>
 
-        <BlockchainDevelopers />
+        <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
       </section>

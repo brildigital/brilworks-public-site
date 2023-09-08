@@ -4,9 +4,11 @@ import { usePathname } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 const Footer = () => {
   const pathname = usePathname();
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   return (
     <>
       <AutoSlidesFooter />
