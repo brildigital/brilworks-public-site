@@ -5,10 +5,9 @@ const Storyblok = new StoryblokClient({
 });
 
 export async function getDeveloperData(prop) {
-  console.log(prop);
   let stories = await Storyblok.get("cdn/stories/", {
     starts_with: `developers/${prop}`,
-    per_page: 3,
+    per_page: 4,
     cv: Math.random(),
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   });

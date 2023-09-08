@@ -20,7 +20,6 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  /* user-drag: none; */
 }
 :root {
   --black_font: "bw_gradual_demoblack";
@@ -2727,6 +2726,15 @@ textarea.form-control-txt {
     width: 100%;
     font-size: 1.1rem !important;
   }
+  .flex_mega_menu {
+    padding: 2px 0;
+  }
+  .flex_mega_menu img {
+    width: 50px;
+  }
+  .padding_menu_header {
+    padding: 6rem 0 0 0;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .our-engagement-models .no_flex::after,
@@ -2754,21 +2762,21 @@ textarea.form-control-txt {
     top: -12px !important;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1153px) {
   .footer_grid > div:nth-child(2) {
     margin-top: 60px;
+    padding-left: 6rem;
   }
   .footer_grid > div:nth-child(3) {
+    padding-left: 2rem;
     margin-top: 60px;
   }
   .footer_grid > div:nth-child(4) {
     margin-top: 60px;
   }
 }
+
 @media only screen and (max-width: 1152px) {
-  /* .header_logo {
-    width: 45%;
-  } */
   .menu .accordion-container .article-title,
   .menu_txt1 p {
     font-size: 1.5rem;
@@ -2792,9 +2800,6 @@ textarea.form-control-txt {
   .about_vision .sec10_txt1,
   .sec10_basis_50 .sec10_txt1 {
     font-size: 1.2rem;
-  }
-  .footer_grid {
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
   }
   .service_width {
     width: 85%;
@@ -2862,7 +2867,29 @@ textarea.form-control-txt {
     line-height: 2rem;
     font-size: 1.5rem;
   }
+  .footer_grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four .";
+    gap: 5rem;
+    row-gap: 1rem;
+  }
+  .footer_grid > div:nth-child(2) {
+    margin-top: 60px;
+    padding-left: 3rem;
+  }
+  .footer_grid > div:nth-child(3) {
+    margin-top: 60px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(4) {
+    margin-top: 60px;
+    padding-left: 3rem;
+  }
 }
+
 @media only screen and (max-width: 1024px) {
   .video-slider video {
     width: 304px;
@@ -2981,6 +3008,23 @@ textarea.form-control-txt {
   .blog_padding {
     margin-bottom: 4rem;
   }
+  .padding_menu_header {
+    padding: 6rem 0 0 0;
+  }
+  .pricing-amount {
+    font-size: var(--font_28);
+  }
+  input.form-control-txt,
+  textarea.form-control-txt {
+    padding: 0rem 2rem 0.5rem 0 !important;
+    margin-top: 1rem !important;
+  }
+  .bg_grey {
+    background-color: #f2f5f9;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
 }
 @media only screen and (max-width: 991px) {
   .header_font a,
@@ -2997,17 +3041,6 @@ textarea.form-control-txt {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .footer_grid > div:nth-child(2) {
-    padding-left: 6rem;
-  }
-  .footer_grid > div:nth-child(3) {
-    padding-left: 2rem;
-  }
-  .footer_grid > div:nth-child(4) {
-    padding-left: 3rem;
-  }
-}
 @media only screen and (max-width: 767px) {
   .video-slider .home_sec3_box.overflow-hidden {
     height: unset;
@@ -3094,11 +3127,9 @@ textarea.form-control-txt {
   }
   .grid-area-two {
     grid-area: two;
-    margin-top: 30px;
   }
   .grid-area-three {
     grid-area: three;
-    margin-top: 30px;
   }
   .grid-area-four {
     grid-area: four;
@@ -3113,11 +3144,20 @@ textarea.form-control-txt {
     gap: 1rem;
     row-gap: 1rem;
   }
+  .footer_grid > div:nth-child(2) {
+    margin-top: 30px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(3) {
+    margin-top: 30px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(4) {
+    margin-top: 0;
+    padding-left: 0rem;
+  }
   .quick_link {
     padding-bottom: 1rem;
-  }
-  .award {
-    padding: 2rem 0;
   }
   .pricing-amount {
     font-family: var(--bold) !important;
@@ -3183,7 +3223,6 @@ textarea.form-control-txt {
     margin: 0 auto;
   }
   .bg_grey {
-    background-color: #f2f5f9;
     padding: 2rem 1rem;
     border-radius: 15px;
     margin: 0 auto;
@@ -3191,9 +3230,7 @@ textarea.form-control-txt {
   .social_media {
     width: 72% !important;
   }
-  .footer_grid {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  }
+
   .sec1_service p img {
     height: unset;
   }
@@ -3346,9 +3383,6 @@ textarea.form-control-txt {
   }
   .pricing-desc-text {
     font-size: var(--font_16);
-    font-family: var(--medium);
-    color: var(--color_black);
-    text-align: left;
   }
   .pricing-amount br {
     display: block !important;
