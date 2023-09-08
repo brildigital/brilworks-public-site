@@ -1,21 +1,21 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect } from "react";
 import FAQsTechnology from "./FAQsTechnology";
-import JavaDevelopers from "./JavaDevelopers";
-import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
+import TechnologyDevelopers from "./TechnologyDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
-import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
+import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
+import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import { useEffect } from "react";
-import Image from "next/image";
 
 const JavaTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -345,7 +345,7 @@ const JavaTechnology = () => {
           </div>
         </div>
 
-        <JavaDevelopers />
+        <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
 

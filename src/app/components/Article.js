@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import StoryblokClient from "storyblok-js-client";
 import parse from "html-react-parser";
 import "./Blogstyle.scss";
 import Link from "next/link";
@@ -9,13 +8,11 @@ import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import Image from "next/image";
-
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
+import { getbloglist } from "./lib/getblog";
 
 const Article = ({ blok }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,18 +20,17 @@ const Article = ({ blok }) => {
 
   const blogTableOfContent = blok?.content;
 
+  async function fetchData() {
+    try {
+      const blogData = await getbloglist(isTablet ? 2 : 3);
+      setBlogData(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
-    Storyblok.get("cdn/stories/", {
-      starts_with: "blogs-list/",
-      per_page: 3,
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    })
-      .then((response) => {
-        setBlogData(response.data?.stories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetchData();
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
