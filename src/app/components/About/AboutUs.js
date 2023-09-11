@@ -7,7 +7,7 @@ const AboutUs = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -16,7 +16,7 @@ const AboutUs = () => {
     <>
       <section className="w-[90%] mx-auto xl:my-[9rem] lg:my-[9rem] md:my-[6rem] my-[6rem] mb-[1rem]">
         <div className="flex md:flex-row flex-col items-center gap-[2rem]">
-          <div className="basis-3/6 md:order-1 order-2">
+          <div className="basis-3/6 md:!order-1 lg:!order-1 !order-2">
             <div className="home_sec2_txt1 text_left">
               <h1 className="headstyle-other-page ">
                 Your tech partner in a{" "}
@@ -54,7 +54,7 @@ const AboutUs = () => {
               </Link>
             </div>
           </div>
-          <div className="basis-3/6 md:!order-2 order-1">
+          <div className="basis-3/6 md:!order-2 lg:!order-2 !order-1">
             <div className="about_sec1_img1">
               <img
                 decoding="async"

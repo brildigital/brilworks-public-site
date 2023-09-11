@@ -3033,6 +3033,9 @@ textarea.form-control-txt {
   .pricing-desc p img {
     width: 25px;
   }
+  .faq-bottom .accordion-item {
+    padding: 1rem !important;
+  }
 }
 @media only screen and (max-width: 991px) {
   .header_font a,

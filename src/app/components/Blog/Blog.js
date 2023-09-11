@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getbloglist, searchBlog } from "../lib/getblog";
+import BlogCategories from "./BlogCategories";
+import { usePathname } from "next/navigation";
 
 const Blog = () => {
+  const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
@@ -13,8 +16,11 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [tagSearchResult, setTagSearchResult] = useState([]);
+  const [searchedBlogTags, setSearchedBlogTags] = useState([]);
   const [searchBtnClick, setSearchBtnClick] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [categoryClickName, setCategoryClickName] = useState(null);
 
   const totalItems = blogData?.length || 0;
   const searchTotalItem = searchResults?.length || 0;
@@ -36,22 +42,45 @@ const Blog = () => {
     window.scrollTo({ top: 0 });
   }, [currentPage, searchQuery]);
 
-  async function fetchData() {
-    try {
-      const blogData = await getbloglist(100);
-      setBlogData(blogData);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const blogData = await getbloglist(100);
+        setBlogData(blogData);
+      } catch (error) {
+        console.error(error);
+      }
     }
+    fetchData();
+  }, []);
+
+  function handleBlogTagclick(query) {
+    const filteredDataN = searchResults.filter((item) =>
+      item.content?.subtitle.toLowerCase().includes(query?.toLowerCase())
+    );
+    setTagSearchResult(filteredDataN);
   }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    handleBlogTagclick(categoryClickName);
+  }, [categoryClickName]);
 
   const handleBlogSearch = async (searchQuery) => {
     try {
       const filteredData = await searchBlog(searchQuery);
+
+      const uniqueSubtitles = new Set();
+      const filteredSubtitles = [];
+
+      for (const story of filteredData) {
+        const subtitle = story.content?.subtitle;
+
+        if (subtitle && !uniqueSubtitles.has(subtitle)) {
+          uniqueSubtitles.add(subtitle);
+          filteredSubtitles.push(subtitle);
+        }
+      }
+      setSearchedBlogTags(filteredSubtitles);
       setSearchResults(filteredData);
     } catch (error) {
       console.log(error);
@@ -67,6 +96,7 @@ const Blog = () => {
     } else {
       handleBlogSearch(searchQuery);
       setSearchBtnClick(false);
+      setCategoryClickName(null);
     }
   }, [searchQuery]);
 
@@ -104,7 +134,10 @@ const Blog = () => {
             <p className="!ml-0 extra_bold !w-full">LATEST FROM THE TEAM</p>
           </div>
           <div className="md:w-2/6 w-full lg:w-1/4">
-            <form className="md:pb-0 pb-12" onSubmit={handleSearchSubmit}>
+            <form
+              className="md:pb-0 lg:pb-12 pb-4"
+              onSubmit={handleSearchSubmit}
+            >
               <div class="find-blog-search-box border-[#00DDB9] border-[1px]">
                 <div class="w-full flex relative flex-wrap items-stretch">
                   <input
@@ -130,97 +163,131 @@ const Blog = () => {
             </form>
           </div>
         </div>
-
-        {isLoading ? (
-          <div className="flex align-middle justify-center p-20">
-            <FetchDataSpinner />
-          </div>
-        ) : (
+        {searchBtnClick || pathname === "/blog/blog-list/" ? (
           <>
-            <div
-              className={`grid ${
-                searchBtnClick && searchCurrentItems.length === 0
-                  ? "grid-cols-1"
-                  : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
-              } gap-[2rem]`}
-            >
-              {searchBtnClick && searchCurrentItems.length === 0 ? (
-                <div className="home_sec2_txt4 !p-12 !block">
-                  <p className="!text-[24px]">
-                    No data match with your search result
-                  </p>
-                </div>
-              ) : (
-                (searchBtnClick ? searchCurrentItems : currentItems).map(
-                  ({ slug, name, content }, index) => (
-                    <div
-                      key={index}
-                      className="border-[1px] border-[#80808038] rounded-[30px] sec9_data_style blog_flex_30"
-                    >
-                      <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                        <div className="sec9_img1">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="rounded-[30px]"
-                            src={
-                              searchBtnClick
-                                ? content?.mobile_banner?.filename
-                                : content?.Image?.filename
-                            }
-                            alt={
-                              content?.mobile_banner?.alt ||
-                              content?.Image?.alt ||
-                              "Blog List banner"
-                            }
-                          />
-                        </div>
-                        <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
-                          <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                            <p className="entry-title default-max-width aspect-[518/116]">
-                              {name}
-                            </p>
-                          </div>
-
-                          <div className="sec9_txt2 mt-[1.5rem]">
-                            <p>{content?.PublishedDate || "DD MM, YYYY"}</p>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  )
-                )
-              )}
-            </div>
-            <div className="flex justify-center mt-[2rem]">
-              <ul className="list-none flex flex-wrap">
-                {Array.from({
-                  length: Math.ceil(
-                    searchQuery.length
-                      ? searchTotalItem / ITEMS_PER_PAGE
-                      : totalItems / ITEMS_PER_PAGE
-                  ),
-                }).map((_, index) => (
-                  <li
-                    key={index}
-                    className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                      currentPage === index + 1
-                        ? " bg-[#1a1a1a] text-[#ffffff]"
-                        : ""
-                    }`}
-                    onClick={() => setCurrentPage(index + 1)}
-                  >
-                    {index + 1}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {!currentItems.length && !isLoading && !searchBtnClick && (
+            {isLoading ? (
               <div className="flex align-middle justify-center p-20">
                 <FetchDataSpinner />
               </div>
+            ) : (
+              <>
+                {searchedBlogTags.length > 0 && searchBtnClick && (
+                  <div className="blog_category w-full flex flex-row flex-wrap gap-4 pb-4">
+                    {searchedBlogTags.map((tag, index) => (
+                      <div
+                        className={`Blog_category_head p-2 min-[320px]:text-[16px] md:text-[21px] cursor-pointer border-[#00DDB9] border-[1.5px]  hover:bg-[#00DDB9] hover:text-white ${
+                          categoryClickName === tag
+                            ? "bg-[#00DDB9] text-white"
+                            : ""
+                        }`}
+                        key={index}
+                        onClick={() =>
+                          categoryClickName === tag
+                            ? setCategoryClickName(null)
+                            : setCategoryClickName(tag)
+                        }
+                      >
+                        <p className="min-[320px]:text-[16px] md:text-[21px]">
+                          {tag}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div
+                  className={`grid ${
+                    searchBtnClick && searchCurrentItems.length === 0
+                      ? "grid-cols-1"
+                      : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
+                  } gap-[2rem]`}
+                >
+                  {searchBtnClick && searchCurrentItems.length === 0 ? (
+                    <div className="home_sec2_txt4 !p-12 !block">
+                      <p className="!text-[24px]">
+                        No data match with your search result
+                      </p>
+                    </div>
+                  ) : (
+                    (tagSearchResult.length > 0
+                      ? tagSearchResult
+                      : searchBtnClick
+                      ? searchCurrentItems
+                      : currentItems
+                    ).map(({ slug, name, content }, index) => (
+                      <div
+                        key={index}
+                        className="border-[1px] border-[#80808038] rounded-[30px] sec9_data_style blog_flex_30"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <div className="sec9_img1">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              className="rounded-[30px]"
+                              src={
+                                searchBtnClick
+                                  ? content?.mobile_banner?.filename
+                                  : content?.Image?.filename
+                              }
+                              alt={
+                                content?.mobile_banner?.alt ||
+                                content?.Image?.alt ||
+                                "Blog List banner"
+                              }
+                            />
+                          </div>
+                          <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
+                            <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
+                              <p className="entry-title default-max-width aspect-[518/116]">
+                                {name}
+                              </p>
+                            </div>
+
+                            <div className="sec9_txt2 mt-[1.5rem]">
+                              <p>{content?.PublishedDate || "DD MM, YYYY"}</p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+                  )}
+                </div>
+                <div className="flex justify-center mt-[2rem]">
+                  {!categoryClickName && (
+                    <ul className="list-none flex flex-wrap">
+                      {Array.from({
+                        length: Math.ceil(
+                          searchQuery.length
+                            ? searchTotalItem / ITEMS_PER_PAGE
+                            : totalItems / ITEMS_PER_PAGE
+                        ),
+                      }).map((_, index) => (
+                        <li
+                          key={index}
+                          className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                            currentPage === index + 1
+                              ? " bg-[#1a1a1a] text-[#ffffff]"
+                              : ""
+                          }`}
+                          onClick={() => setCurrentPage(index + 1)}
+                        >
+                          {index + 1}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                {!currentItems.length && !isLoading && !searchBtnClick && (
+                  <div className="flex align-middle justify-center p-20">
+                    <FetchDataSpinner />
+                  </div>
+                )}
+              </>
             )}
           </>
+        ) : (
+          <BlogCategories />
         )}
       </div>
     </section>
