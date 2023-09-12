@@ -55,16 +55,6 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
-    if (
-      (isSolutionMenuActive || isTechnologyMenuActive) &&
-      window.scrollY > 150
-    ) {
-      setIsSolutionMenuActive(false);
-      setIsTechnologyMenuActive(false);
-    }
-  }, [window.scrollY > 150]);
-
   // May be used in future if some issue with drop down menu
 
   const handleNavigationPopupClick = () => {
