@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Blogs = () => {
   const [blogData, setBlogData] = useState(null);
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
 
   async function fetchData() {
     try {

@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
                 <div className="social_media_img">
                   <Link
-                    href=" https://www.youtube.com/@brilworks7633"
+                    href="https://www.youtube.com/@brilworks"
                     target="_blank"
                   >
                     <img

@@ -58,7 +58,7 @@ const BlogContactForm = () => {
   };
 
   return (
-    <div className="get_in_touch blog_padding">
+    <div className="get_in_touch blog_padding overflow-auto max-h-[calc(100vh_-_100px)]">
       <div className="">
         <p className="gradiant md:!text-4xl">Get In Touch</p>
       </div>
@@ -69,7 +69,7 @@ const BlogContactForm = () => {
       </div>
       <div className="blog-contact-form">
         <div>
-          <form onSubmit={handleSubmit}>
+          <form id="Blogpage-contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <p>
                 <label className="label_name">Name*</label>

@@ -48,7 +48,7 @@ const ClientReviews = () => {
           <div className="cursor-pointer relative">
             <span className="video-play-icon">
               {isVideoPause && !isMobile ? (
-                <span className="play-icon-img hover:!hidden">
+                <span className="play-icon-img">
                   <img src="/images/icon_play_new.svg" alt="Play Icon" />
                 </span>
               ) : null}

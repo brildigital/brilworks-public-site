@@ -227,7 +227,7 @@ const SeeingBelieving = () => {
 
       <div className="flex md:!items-center !text-left md:!justify-center !justify-start lg:gap-[80px] gap-[20px] flex-col sm:flex-row mt-4 mx-[15px]">
         <Link
-          href="portfolio"
+          href="/portfolio/"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">
@@ -257,7 +257,7 @@ const SeeingBelieving = () => {
           </div>
         </Link>
         <Link
-          href="contact-us"
+          href="/contact-us/"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">

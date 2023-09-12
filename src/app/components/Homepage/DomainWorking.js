@@ -15,7 +15,7 @@ const DomainWorking = () => {
   }, []);
   return (
     <>
-      <div className="mx-auto px-[15px] md:pt-[128px] sm:pt-[32px] pt-[60px] sm:w-[92%] w-[100%] reveal">
+      <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
         <div className="accordion-tab-section homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">
@@ -126,7 +126,7 @@ const DomainWorking = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-6/12">
+            <div className="lg:w-6/12 w-full md:mt-4">
               <div
                 id="accordionExample"
                 className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"

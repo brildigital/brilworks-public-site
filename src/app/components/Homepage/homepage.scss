@@ -348,6 +348,11 @@
     }
   }
 }
+@media only screen and (max-width: 1080px) and (min-width: 768px) {
+  .video-play-icon {
+    display: none;
+  }
+}
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .work-swiper {
     .swiper-slide-next {
