@@ -802,7 +802,7 @@ const HealthCare = () => {
           <div className="mx-auto sm:pt-[32px] pt-[0px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px] md:mb-4 lg:mb-0">
+                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px] md:mb-12 lg:mb-0">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"

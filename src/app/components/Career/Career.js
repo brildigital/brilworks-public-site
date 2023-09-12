@@ -844,7 +844,7 @@ const Career = () => {
         </div>
 
         <div
-          className="md:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto"
+          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto"
           id="section10"
         >
           <CareerContactForm />

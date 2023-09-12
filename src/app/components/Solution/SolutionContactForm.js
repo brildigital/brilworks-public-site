@@ -85,7 +85,7 @@ const SolutionContactForm = () => {
                 lang="en-US"
                 dir="ltr"
               >
-                <form className="wpcf7-form init" onSubmit={handleSubmit}>
+                <form className="wpcf7-form init" id="solution-contact-form" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <p>
                       <label className="label_name"> Name*</label>

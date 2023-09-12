@@ -446,12 +446,11 @@ a:hover {
 }
 .accordion-content {
   transition: all 0.6s ease-in-out;
-}
-.accordion-content {
-  width: 78%;
+  width: 95%;
   height: 0;
   overflow: hidden;
 }
+
 .menu_txt1 {
   padding: 2rem 0 1rem 0;
   border-bottom: 1px solid gray;
@@ -3035,6 +3034,12 @@ textarea.form-control-txt {
   }
   .faq-bottom .accordion-item {
     padding: 1rem !important;
+  }
+  .menu .open .accordion-content {
+    padding-left: 1rem;
+  }
+  .accordion-content {
+    width: 98%;
   }
 }
 @media only screen and (max-width: 991px) {

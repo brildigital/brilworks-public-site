@@ -1206,7 +1206,7 @@ const OurProcessPage = () => {
         <div className="mx-auto px xl:pt-[128px] md:pt-[60px] pt-[32px]">
           <div className="accordion-tab-section our-process-endToEnd2">
             <div className="flex flex-wrap">
-              <div className="lg:w-6/12 w-full md:mt-[0px] mb-[30px]">
+              <div className="lg:w-6/12 w-full md:mt-[0px] mb-[40px]">
                 <div
                   className="tab-content lg:w-[90%] w-full"
                   id="nav-tabContent"

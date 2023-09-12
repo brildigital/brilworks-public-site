@@ -144,7 +144,7 @@ const TechnologyDevelopers = () => {
                             <div className="py-[1rem] flex items-center gap-[1rem]">
                               <p>
                                 <Image
-                                  className="w-[21px]"
+                                  className="w-[15px] lg:w-[21px]"
                                   src="/images/icons-06.png"
                                   alt="star"
                                   width="22"
@@ -186,6 +186,7 @@ const TechnologyDevelopers = () => {
                         <div className="flex items-center gap-[1rem] pt-[1rem]">
                           <p>
                             <Image
+                              className="md:w-[15px] xl:w-full"
                               src="/images/icons2-05.png"
                               alt="right"
                               width="23"
@@ -201,6 +202,7 @@ const TechnologyDevelopers = () => {
                         <div className="flex items-center gap-[1rem] pt-[1rem]">
                           <p>
                             <Image
+                              className="md:w-[15px] xl:w-full"
                               src="/images/icons-08.png"
                               alt="time"
                               width="22"

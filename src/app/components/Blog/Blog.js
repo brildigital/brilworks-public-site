@@ -172,13 +172,13 @@ const Blog = () => {
             ) : (
               <>
                 {searchedBlogTags.length > 0 && searchBtnClick && (
-                  <div className="blog_category w-full flex flex-row flex-wrap gap-4 pb-4">
+                  <div className="blog_category w-full flex flex-row flex-wrap gap-3 pb-4">
                     {searchedBlogTags.map((tag, index) => (
                       <div
-                        className={`Blog_category_head p-2 min-[320px]:text-[16px] md:text-[21px] cursor-pointer border-[#00DDB9] border-[1.5px]  hover:bg-[#00DDB9] hover:text-white ${
+                        className={`Blog_category_head p-2 min-[320px]:text-[16px] md:text-[21px] cursor-pointer border-[#00DDB9] border-[1px]  hover:bg-[#00DDB9] hover:text-white ${
                           categoryClickName === tag
                             ? "bg-[#00DDB9] text-white"
-                            : ""
+                            : "bg-transparent text-black"
                         }`}
                         key={index}
                         onClick={() =>

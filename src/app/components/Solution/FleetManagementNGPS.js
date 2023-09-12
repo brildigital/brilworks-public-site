@@ -782,7 +782,7 @@ const FleetManagementNGPS = () => {
           <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mb-4 lg:mb-0">
+                <div className="lg:w-6/12 w-full md:mb-12 lg:mb-0">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -1473,7 +1473,7 @@ const FleetManagementNGPS = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
                     <p className="!w-full  md:p-0 p-3">
                       WHY CHOOSE US FOR FLEET {!isMobile && <br />}
                       MANAGEMENT SOFTWARE {!isMobile && <br />}

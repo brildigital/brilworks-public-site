@@ -12,7 +12,7 @@ const WhyShouldHireDevelopers = () => {
           {pathname === "/hire-reactjs-developer/" ? (
             <>
               <div className="end-To-end">
-                <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                   <p className="!w-full md:p-0 p-3 ">
                     WHY SHOULD YOU HIRE REACT JS DEVELOPERS FROM BRILWORKS?
                   </p>
@@ -36,7 +36,7 @@ const WhyShouldHireDevelopers = () => {
               {pathname === "/hire-java-developer/" ? (
                 <>
                   <div className="end-To-end">
-                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                       <p className="!w-full md:p-0 p-3 ">
                         WHY SHOULD YOU HIRE JAVA DEVELOPERS FROM BRILWORKS?
                       </p>
@@ -63,7 +63,7 @@ const WhyShouldHireDevelopers = () => {
                   {pathname === "/hire-nodejs-developer/" ? (
                     <>
                       <div className="end-To-end">
-                        <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                        <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                           <p className="!w-full md:p-0 p-3 ">
                             WHY SHOULD YOU HIRE NODE.JS DEVELOPERS FROM
                             BRILWORKS?
@@ -87,7 +87,7 @@ const WhyShouldHireDevelopers = () => {
                       {pathname === "/hire-react-native-developer/" ? (
                         <>
                           <div className="end-To-end">
-                            <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                            <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                               <p className="!w-full md:p-0 p-3 ">
                                 WHY SHOULD YOU HIRE REACT NATIVE DEVELOPERS FROM
                                 BRILWORKS?
@@ -114,7 +114,7 @@ const WhyShouldHireDevelopers = () => {
                           {pathname === "/hire-aws-developer/" ? (
                             <>
                               <div className="end-To-end">
-                                <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                                <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                                   <p className="!w-full md:p-0 p-3 ">
                                     WHY SHOULD YOU HIRE AWS DEVELOPERS FROM
                                     BRILWORKS?
@@ -142,7 +142,7 @@ const WhyShouldHireDevelopers = () => {
                               {pathname === "/hire-ui-ux-designer/" ? (
                                 <>
                                   <div className="end-To-end">
-                                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                                       <p className="!w-full md:p-0 p-3 ">
                                         WHY SHOULD YOU HIRE UI UX DEVELOPERS
                                         FROM BRILWORKS?
@@ -166,7 +166,7 @@ const WhyShouldHireDevelopers = () => {
                               ) : (
                                 <>
                                   <div className="end-To-end">
-                                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                                    <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[3rem]">
                                       <p className="!w-full md:p-0 p-3">
                                         WHY SHOULD YOU HIRE BLOCKCHAIN
                                         DEVELOPERS FROM BRILWORKS?

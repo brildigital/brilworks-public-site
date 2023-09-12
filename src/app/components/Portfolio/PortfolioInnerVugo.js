@@ -37,7 +37,7 @@ const PortfolioInnerVugo = () => {
 
           <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem]">
             <Link
-              href="https://govugo.com"
+              href="https://www.govugo.com/"
               className="portfolio_know_more md:mx-auto ml-0"
             >
               <div className="get_icon">
