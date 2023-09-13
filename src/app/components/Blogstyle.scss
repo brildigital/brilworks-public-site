@@ -123,16 +123,4 @@
     position: relative;
     border: none;
   }
-  .btn_blog_category ::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    width: 10px;
-    height: 30px;
-    transition: var(--comman-transition);
-  }
-  .btn_blog_category :hover::before {
-    width: 95%;
-    border-bottom: 3px solid var(--main_menu_hover_color);
-  }
 }

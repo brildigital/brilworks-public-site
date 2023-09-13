@@ -46,7 +46,7 @@ const ExtensionOfTeam = () => {
                   >
                     <h2 className="accordion-header" id="headinggrowth-One">
                       <button
-                        className="accordion-button xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                        className="accordion-button xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-One"
