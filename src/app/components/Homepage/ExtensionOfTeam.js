@@ -137,7 +137,7 @@ const ExtensionOfTeam = () => {
                   >
                     <h2 className="accordion-header" id="headinggrowth-Two">
                       <button
-                        className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Two"
@@ -192,7 +192,7 @@ const ExtensionOfTeam = () => {
                   >
                     <h2 className="accordion-header" id="headinggrowth-Three">
                       <button
-                        className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Three"
@@ -249,7 +249,7 @@ const ExtensionOfTeam = () => {
                   >
                     <h2 className="accordion-header" id="headinggrowth-Four">
                       <button
-                        className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Four"
@@ -336,7 +336,7 @@ const ExtensionOfTeam = () => {
                   >
                     <h2 className="accordion-header" id="headinggrowth-Five">
                       <button
-                        className="accordion-button collapsed xl:text-[1.8rem] md:text-[26px] text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Five"
