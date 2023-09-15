@@ -83,7 +83,7 @@
 .blog-tab-content {
   color: var(--black_color);
   font-size: var(--font_21);
-  font-family: var(--regular);
+  font-family: unset !important;
   border: none;
   margin: 0;
   padding-top: 1rem;
@@ -122,5 +122,16 @@
     cursor: pointer;
     position: relative;
     border: none;
+  }
+}
+
+.blog_flex_30:hover {
+  .entry-title {
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .publish_date {
+    font-weight: 600;
+    color: #ffffff !important;
   }
 }

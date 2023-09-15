@@ -334,15 +334,21 @@
     margin-top: 10px;
   }
 }
+.accordion-item {
+  a:hover {
+    .aerrow {
+      .black_aerrow {
+        opacity: 0 !important;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 1280px) and (min-width: 768px) {
   .accordion-item {
     a:hover {
       .aerrow {
         .black_aerrow {
           opacity: 0 !important;
-        }
-        .gradiant_aerrow {
-          top: -4px;
         }
       }
     }
@@ -436,5 +442,14 @@
 
   .software-review-head {
     padding: 2rem 0 0rem;
+  }
+  .accordion-item {
+    a:hover {
+      .aerrow {
+        .black_aerrow {
+          opacity: 0 !important;
+        }
+      }
+    }
   }
 }
