@@ -115,7 +115,7 @@ const Header = () => {
         }
       }
 
-      if (window.scrollY > 150) {
+      if (window.scrollY > 30) {
         document
           .querySelector("header .header")
           .classList.add("header-bg-white");
@@ -138,7 +138,7 @@ const Header = () => {
       <div className="header">
         <div
           className={`sec1_header ${
-            (isPopupMenuActive && window.scrollY > 150) || isMainMenuActive
+            (isPopupMenuActive && window.scrollY > 30) || isMainMenuActive
               ? "bg-white"
               : ""
           }`}

@@ -12,7 +12,7 @@ import { getbloglist } from "./lib/getblog";
 
 const Article = ({ blok }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -152,7 +152,7 @@ const Article = ({ blok }) => {
                     }`}
                   >
                     <div className="mb-2">
-                      <p className="text-[#00dfb8] text-[24px] font-medium">
+                      <p className="text-[#00dfb8] text-[24px] font-medium !font-[unset]">
                         Table of Contents
                       </p>
                     </div>
@@ -191,10 +191,10 @@ const Article = ({ blok }) => {
               <div className="basis-[50%]">
                 <div className="service_sec3">
                   <div className="home_sec2_txt4 blog-cat mt-[10px]">
-                    <p className="p-0"> {blok?.subtitle}</p>
+                    <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
                   </div>
                   <div className="home_sec2_txt3 pt-[2.5rem]">
-                    <h1 className="entry-title default-max-width md:!text-[3rem]">
+                    <h1 className="entry-title default-max-width md:!text-[3rem] font-bold !font-[unset]">
                       {blok?.title}
                     </h1>
                   </div>
@@ -325,7 +325,7 @@ const Article = ({ blok }) => {
                         </p>
                       </div>
                       <div className="sec9_txt2 mt-[1.5rem]">
-                        <p>{content?.PublishedDate}</p>
+                        <p className="publish_date">{content?.PublishedDate}</p>
                       </div>
                     </div>
                   </Link>

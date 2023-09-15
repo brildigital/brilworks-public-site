@@ -12,7 +12,7 @@ import {
 
 const Blog = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [blogData, setBlogData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -197,6 +197,7 @@ const Blog = () => {
                       placeholder="What are you looking for?"
                       autoComplete="off"
                       onChange={(e) => setSearchQuery(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -308,7 +309,9 @@ const Blog = () => {
                           </div>
 
                           <div className="sec9_txt2 mt-[1.5rem]">
-                            <p>{content?.PublishedDate}</p>
+                            <p className="publish_date">
+                              {content?.PublishedDate}
+                            </p>
                           </div>
                         </div>
                       </Link>
@@ -365,13 +368,15 @@ const Blog = () => {
                         </div>
                         <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
                           <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                            <p className="entry-title default-max-width aspect-[518/116]">
+                            <p className="entry-title default-max-width aspect-[518/116] ">
                               {name}
                             </p>
                           </div>
 
                           <div className="sec9_txt2 mt-[1.5rem]">
-                            <p>{content?.PublishedDate || "DD MM, YYYY"}</p>
+                            <p className="publish_date">
+                              {content?.PublishedDate || "DD MM, YYYY"}
+                            </p>
                           </div>
                         </div>
                       </Link>
