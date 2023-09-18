@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import ReactJSDevelopers from "./ReactJSDevelopers";
+import TechnologyDevelopers from "./TechnologyDevelopers";
 import FAQsTechnology from "./FAQsTechnology";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
@@ -15,7 +15,6 @@ const ReactJSTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -336,7 +335,7 @@ const ReactJSTechnology = () => {
           </div>
         </div>
 
-        <ReactJSDevelopers />
+        <TechnologyDevelopers />
         <BenefitOfHiringDevelopers />
 
         <TechnologyCombination />

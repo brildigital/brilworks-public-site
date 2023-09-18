@@ -115,7 +115,7 @@ const Header = () => {
         }
       }
 
-      if (window.scrollY > 150) {
+      if (window.scrollY > 30) {
         document
           .querySelector("header .header")
           .classList.add("header-bg-white");
@@ -138,7 +138,7 @@ const Header = () => {
       <div className="header">
         <div
           className={`sec1_header ${
-            (isPopupMenuActive && window.scrollY > 150) || isMainMenuActive
+            (isPopupMenuActive && window.scrollY > 30) || isMainMenuActive
               ? "bg-white"
               : ""
           }`}
@@ -157,11 +157,16 @@ const Header = () => {
                 </Link>
               </div>
               <div className="project_pages">
-                <div
-                  className={`portfolio header_font hidden-xs project_pages_none-1 
-                    ${pathname === "/portfolio/" ? " page-active" : ""}`}
-                >
-                  <Link href="/portfolio/">PORTFOLIO</Link>
+                <div className="portfolio header_font hidden-xs project_pages_none-1 ">
+                  <Link href="/portfolio/">
+                    <p
+                      className={`!mb-0 ${
+                        pathname === "/portfolio/" ? "page-active" : ""
+                      }`}
+                    >
+                      PORTFOLIO
+                    </p>
+                  </Link>
                 </div>
                 <div
                   className={`solutions header_font hidden-xs project_pages_none ${

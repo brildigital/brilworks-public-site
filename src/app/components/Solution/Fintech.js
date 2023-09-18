@@ -810,7 +810,7 @@ const Fintech = () => {
           <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
+                <div className="lg:w-6/12 w-full md:mt-[0px] md:mb-12 lg:mb-0 mt-[30px]">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -914,7 +914,7 @@ const Fintech = () => {
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div
                     id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 md:ml-8 w-full"
+                    className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
                     role="tablist"
                   >
                     <div
@@ -1689,7 +1689,7 @@ const Fintech = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
                     <p className="!w-full md:p-0 p-3">
                       WHY SHOULD YOU CHOOSE US FOR FINTECH SOFTWARE DEVELOPMENT?
                     </p>

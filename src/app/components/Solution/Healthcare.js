@@ -802,7 +802,7 @@ const HealthCare = () => {
           <div className="mx-auto sm:pt-[32px] pt-[0px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
+                <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px] md:mb-12 lg:mb-0">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -870,7 +870,7 @@ const HealthCare = () => {
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div
                     id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 md:ml-8 w-full"
+                    className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
                     role="tablist"
                   >
                     <div
@@ -1239,7 +1239,7 @@ const HealthCare = () => {
         </div>
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
-          <div className="md:pl-[8rem] w-[90%]">
+          <div className="lg:pl-[8rem] md:pl-0 lg:w-[90%] md:w-full">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3">
                 <p className="!w-full p-0">
@@ -1276,7 +1276,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Appointment-scheduling-applications.png"
                 alt="Appointment scheduling applications"
-                className="w-[32%] mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Appointment scheduling applications
@@ -1289,7 +1289,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Medication-intake-tracking-apps.png"
                 alt="Medication intake tracking apps"
-                className="w-[32%]  mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Medication intake tracking apps
@@ -1302,7 +1302,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Home-health-monitoring-apps.png"
                 alt="Home health monitoring apps"
-                className="w-[32%]  mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Home health monitoring apps
@@ -1315,7 +1315,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Caregiver-management-apps.png"
                 alt="Caregiver management apps"
-                className="w-[32%] mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Caregiver management apps
@@ -1328,7 +1328,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Drug-inventory-tracking-apps.png"
                 alt="Drug inventory tracking apps"
-                className="w-[32%] mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Drug inventory tracking apps
@@ -1341,7 +1341,7 @@ const HealthCare = () => {
                 loading="lazy"
                 src="/images/Wearable-tech-apps.png"
                 alt="Wearable tech apps"
-                className="w-[32%] mx-auto"
+                className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
               />
               <p className="mt-[20px] lg:text-[20px] text-[14px]">
                 Wearable tech apps

@@ -58,21 +58,23 @@ const BlogContactForm = () => {
   };
 
   return (
-    <div className="get_in_touch blog_padding">
+    <div className="get_in_touch blog_padding overflow-auto max-h-[calc(100vh_-_100px)]">
       <div className="">
-        <p className="gradiant md:!text-4xl">Get In Touch</p>
+        <p className="gradiant md:!text-4xl !font-[unset]">Get In Touch</p>
       </div>
       <br />
 
       <div className="post_details_content">
-        <p>Contact us for your software development requirements</p>
+        <p className="!font-[unset]">
+          Contact us for your software development requirements
+        </p>
       </div>
       <div className="blog-contact-form">
         <div>
-          <form onSubmit={handleSubmit}>
+          <form id="Blogpage-contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <p>
-                <label className="label_name">Name*</label>
+                <label className="label_name !font-[unset]">Name*</label>
                 <br />
                 <span>
                   <input
@@ -89,7 +91,7 @@ const BlogContactForm = () => {
             </div>
             <div className="form-group">
               <p>
-                <label className="label_name">Email*</label>
+                <label className="label_name !font-[unset]">Email*</label>
                 <br />
                 <span>
                   <input
@@ -106,7 +108,7 @@ const BlogContactForm = () => {
             </div>
             <div className="form-group">
               <p>
-                <label className="label_name">Message*</label>
+                <label className="label_name !font-[unset]">Message*</label>
                 <br />
                 <span>
                   <textarea
@@ -122,7 +124,7 @@ const BlogContactForm = () => {
                 </span>
               </p>
             </div>
-            <div className="success-msg h-5" id="sucess_msg">
+            <div className="success-msg h-5 !font-[unset]" id="sucess_msg">
               {respMessage}
             </div>
             <button

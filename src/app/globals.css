@@ -20,7 +20,6 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  /* user-drag: none; */
 }
 :root {
   --black_font: "bw_gradual_demoblack";
@@ -447,12 +446,11 @@ a:hover {
 }
 .accordion-content {
   transition: all 0.6s ease-in-out;
-}
-.accordion-content {
-  width: 78%;
+  width: 95%;
   height: 0;
   overflow: hidden;
 }
+
 .menu_txt1 {
   padding: 2rem 0 1rem 0;
   border-bottom: 1px solid gray;
@@ -871,6 +869,11 @@ a:hover {
   color: var(--color_black);
   text-align: left;
 }
+.pricing-desc p img {
+  width: 30px;
+  margin-top: 5px;
+  max-width: unset !important;
+}
 
 .benefit-developer-effect {
   transition: all 0.6s ease-in-out;
@@ -1262,7 +1265,7 @@ textarea.form-control-txt {
 
 .section8_service .btn_flex_dev {
   padding: 8px 90px;
-  border-radius: 33px;
+  border-radius: 30px;
   gap: 1rem;
 }
 .service_description p {
@@ -1365,7 +1368,7 @@ textarea.form-control-txt {
     rgba(0, 196, 200, 1) 34%,
     rgba(0, 221, 185, 1) 56%
   );
-  border-radius: 33px;
+  border-radius: 30px;
   border: 1px solid #00dfb8;
   margin: 0 auto;
   gap: 1rem;
@@ -1388,7 +1391,7 @@ textarea.form-control-txt {
   justify-content: center;
   width: fit-content;
   padding: 14px 30px;
-  border-radius: 33px;
+  border-radius: 30px;
   border: 1px solid #00dfb8;
   margin: 0 auto;
   gap: 1rem;
@@ -1462,6 +1465,7 @@ textarea.form-control-txt {
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+.sec9_data_style:hover
 
 .expert-developers-block {
   background: linear-gradient(
@@ -2631,7 +2635,7 @@ textarea.form-control-txt {
     font-size: 4rem;
   }
   .menu .accordion-container .article-title {
-    font-size: 1.8rem;
+    font-size: var(--font_36);
   }
   .service_description p {
     font-size: 1.1rem;
@@ -2727,6 +2731,15 @@ textarea.form-control-txt {
     width: 100%;
     font-size: 1.1rem !important;
   }
+  .flex_mega_menu {
+    padding: 2px 0;
+  }
+  .flex_mega_menu img {
+    width: 50px;
+  }
+  .padding_menu_header {
+    padding: 6rem 0 0 0;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .our-engagement-models .no_flex::after,
@@ -2754,21 +2767,21 @@ textarea.form-control-txt {
     top: -12px !important;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1153px) {
   .footer_grid > div:nth-child(2) {
     margin-top: 60px;
+    padding-left: 6rem;
   }
   .footer_grid > div:nth-child(3) {
+    padding-left: 2rem;
     margin-top: 60px;
   }
   .footer_grid > div:nth-child(4) {
     margin-top: 60px;
   }
 }
+
 @media only screen and (max-width: 1152px) {
-  /* .header_logo {
-    width: 45%;
-  } */
   .menu .accordion-container .article-title,
   .menu_txt1 p {
     font-size: 1.5rem;
@@ -2792,9 +2805,6 @@ textarea.form-control-txt {
   .about_vision .sec10_txt1,
   .sec10_basis_50 .sec10_txt1 {
     font-size: 1.2rem;
-  }
-  .footer_grid {
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
   }
   .service_width {
     width: 85%;
@@ -2862,7 +2872,29 @@ textarea.form-control-txt {
     line-height: 2rem;
     font-size: 1.5rem;
   }
+  .footer_grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four .";
+    gap: 5rem;
+    row-gap: 1rem;
+  }
+  .footer_grid > div:nth-child(2) {
+    margin-top: 60px;
+    padding-left: 3rem;
+  }
+  .footer_grid > div:nth-child(3) {
+    margin-top: 60px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(4) {
+    margin-top: 60px;
+    padding-left: 3rem;
+  }
 }
+
 @media only screen and (max-width: 1024px) {
   .video-slider video {
     width: 304px;
@@ -2981,6 +3013,35 @@ textarea.form-control-txt {
   .blog_padding {
     margin-bottom: 4rem;
   }
+  .padding_menu_header {
+    padding: 6rem 0 0 0;
+  }
+  .pricing-amount {
+    font-size: var(--font_28);
+  }
+  input.form-control-txt,
+  textarea.form-control-txt {
+    padding: 0rem 2rem 0.5rem 0 !important;
+    margin-top: 1rem !important;
+  }
+  .bg_grey {
+    background-color: #f2f5f9;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+  .pricing-desc p img {
+    width: 25px;
+  }
+  .faq-bottom .accordion-item {
+    padding: 1rem !important;
+  }
+  .menu .open .accordion-content {
+    padding-left: 1rem;
+  }
+  .accordion-content {
+    width: 98%;
+  }
 }
 @media only screen and (max-width: 991px) {
   .header_font a,
@@ -2997,17 +3058,6 @@ textarea.form-control-txt {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .footer_grid > div:nth-child(2) {
-    padding-left: 6rem;
-  }
-  .footer_grid > div:nth-child(3) {
-    padding-left: 2rem;
-  }
-  .footer_grid > div:nth-child(4) {
-    padding-left: 3rem;
-  }
-}
 @media only screen and (max-width: 767px) {
   .video-slider .home_sec3_box.overflow-hidden {
     height: unset;
@@ -3094,11 +3144,9 @@ textarea.form-control-txt {
   }
   .grid-area-two {
     grid-area: two;
-    margin-top: 30px;
   }
   .grid-area-three {
     grid-area: three;
-    margin-top: 30px;
   }
   .grid-area-four {
     grid-area: four;
@@ -3113,11 +3161,20 @@ textarea.form-control-txt {
     gap: 1rem;
     row-gap: 1rem;
   }
+  .footer_grid > div:nth-child(2) {
+    margin-top: 30px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(3) {
+    margin-top: 30px;
+    padding-left: 0rem;
+  }
+  .footer_grid > div:nth-child(4) {
+    margin-top: 0;
+    padding-left: 0rem;
+  }
   .quick_link {
     padding-bottom: 1rem;
-  }
-  .award {
-    padding: 2rem 0;
   }
   .pricing-amount {
     font-family: var(--bold) !important;
@@ -3183,7 +3240,6 @@ textarea.form-control-txt {
     margin: 0 auto;
   }
   .bg_grey {
-    background-color: #f2f5f9;
     padding: 2rem 1rem;
     border-radius: 15px;
     margin: 0 auto;
@@ -3191,9 +3247,7 @@ textarea.form-control-txt {
   .social_media {
     width: 72% !important;
   }
-  .footer_grid {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  }
+
   .sec1_service p img {
     height: unset;
   }
@@ -3346,9 +3400,6 @@ textarea.form-control-txt {
   }
   .pricing-desc-text {
     font-size: var(--font_16);
-    font-family: var(--medium);
-    color: var(--color_black);
-    text-align: left;
   }
   .pricing-amount br {
     display: block !important;
@@ -3370,5 +3421,8 @@ textarea.form-control-txt {
   .faq-bottom .accordion-item {
     padding: 1rem !important;
     margin-bottom: 15px !important;
+  }
+  .pricing-desc p img {
+    margin-top: 0;
   }
 }

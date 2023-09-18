@@ -782,7 +782,7 @@ const FleetManagementNGPS = () => {
           <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full">
+                <div className="lg:w-6/12 w-full md:mb-12 lg:mb-0">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
@@ -850,7 +850,7 @@ const FleetManagementNGPS = () => {
                 <div className="lg:w-6/12 w-full mb-[10px] ">
                   <div
                     id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 md:ml-8 w-full"
+                    className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
                     role="tablist"
                   >
                     <div
@@ -1232,14 +1232,14 @@ const FleetManagementNGPS = () => {
               />
             </div>
 
-            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[4rem]">
+            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 md:gap-[2rem] gap-[4rem]">
               <div className="text-center">
                 <img
                   decoding="async"
                   loading="lazy"
                   src="/images/Streamlines-Business-Processes.png"
                   alt="Streamlines-Business-Processes"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Streamlines Business Processes
@@ -1252,7 +1252,7 @@ const FleetManagementNGPS = () => {
                   loading="lazy"
                   src="/images/Generates-Valuable-Insights.png"
                   alt="Generates-Valuable-Insights"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Generates Valuable Insights
@@ -1265,7 +1265,7 @@ const FleetManagementNGPS = () => {
                   loading="lazy"
                   src="/images/Lowers-Operational-Costs.png"
                   alt="Lowers Operational Costs"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Lowers Operational Costs
@@ -1324,14 +1324,14 @@ const FleetManagementNGPS = () => {
               </div>
             </div>
 
-            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-[4rem] reveal">
+            <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 md:gap-[2rem] gap-[4rem] reveal">
               <div className="text-center">
                 <img
                   decoding="async"
                   loading="lazy"
                   src="/images/Real-time-GPS-vehicle-tracking.png"
                   alt="Real-time GPS vehicle tracking"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Real-time GPS vehicle tracking
@@ -1344,7 +1344,7 @@ const FleetManagementNGPS = () => {
                   loading="lazy"
                   src="/images/Route-History-Optimization.png"
                   alt="Route History & Optimization"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Route History &<br /> Optimization
@@ -1357,7 +1357,7 @@ const FleetManagementNGPS = () => {
                   loading="lazy"
                   src="/images/Accident-Detection-Management.png"
                   alt="Lowers Operational Costs"
-                  className="w-[32%] mx-auto"
+                  className="w-[32%] md:w-[24%] lg:w-[32%] mx-auto"
                 />
                 <p className="mt-[20px] lg:text-[20px] text-[14px]">
                   Accident <br />
@@ -1473,7 +1473,7 @@ const FleetManagementNGPS = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[4.5rem]">
+                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
                     <p className="!w-full  md:p-0 p-3">
                       WHY CHOOSE US FOR FLEET {!isMobile && <br />}
                       MANAGEMENT SOFTWARE {!isMobile && <br />}

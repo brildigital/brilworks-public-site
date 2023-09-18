@@ -3,10 +3,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
-import Image from "next/image";
+
 
 const Footer = () => {
   const pathname = usePathname();
+
   return (
     <>
       <AutoSlidesFooter />
@@ -28,7 +29,9 @@ const Footer = () => {
                     href="https://www.facebook.com/brilwork/"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/fb.png"
                       alt="Brilworks on Facebook"
                       width={24}
@@ -41,7 +44,9 @@ const Footer = () => {
                     href="https://www.instagram.com/brilworkssoftware/"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/insta.png"
                       alt="Brilworks on Instagram"
                       width={24}
@@ -51,10 +56,12 @@ const Footer = () => {
                 </div>
                 <div className="social_media_img">
                   <Link
-                    href=" https://www.youtube.com/@brilworks7633"
+                    href="https://www.youtube.com/@brilworks"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/youtube.png"
                       alt="Brilworks on YouTube"
                       width={24}
@@ -67,7 +74,9 @@ const Footer = () => {
                     href=" https://www.linkedin.com/company/brilworks/"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/linkedin.png"
                       alt="Brilworks on LinkedIn"
                       width={24}
@@ -77,7 +86,9 @@ const Footer = () => {
                 </div>
                 <div className="social_media_img">
                   <Link href="https://dribbble.com/Brilworks" target="_blank">
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/social.png"
                       alt="Brilworks on Dribble"
                       width={24}
@@ -90,7 +101,9 @@ const Footer = () => {
                     href="https://www.behance.net/hellobrilworks"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/behance.png"
                       alt="Brilworks on Behance"
                       width={24}
@@ -103,7 +116,9 @@ const Footer = () => {
                     href="https://www.upwork.com/ag/brilworks/"
                     target="_blank"
                   >
-                    <Image
+                    <img
+                      decoding="async"
+                      loading="lazy"
                       src="/images/up-01.png"
                       alt="Brilworks on Upwork"
                       width={24}

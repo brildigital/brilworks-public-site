@@ -13,6 +13,7 @@ import { scrollEffect } from "../lib/commonfunction";
 
 const SeeingBelieving = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const dataFetch = () => {
@@ -26,7 +27,7 @@ const SeeingBelieving = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -40,7 +41,7 @@ const SeeingBelieving = () => {
           modules={[Pagination]}
           spaceBetween={30}
           speed={1500}
-          slidesPerView={isMobile ? 1 : 3}
+          slidesPerView={isMobile ? 1 : `${isTablet ? 2 : 3}`}
           slidesPerGroup={isMobile ? 1 : 2}
           loopFillGroupWithBlank={true}
           pagination={{ clickable: true }}
@@ -226,7 +227,7 @@ const SeeingBelieving = () => {
 
       <div className="flex md:!items-center !text-left md:!justify-center !justify-start lg:gap-[80px] gap-[20px] flex-col sm:flex-row mt-4 mx-[15px]">
         <Link
-          href="portfolio"
+          href="/portfolio/"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">
@@ -256,7 +257,7 @@ const SeeingBelieving = () => {
           </div>
         </Link>
         <Link
-          href="contact-us"
+          href="/contact-us/"
           className="flex items-center sm:justify-center justify-start gap-[20px] about_btn transition lg:mt-[60px] mt-[16px]"
         >
           <div className="about_txt">

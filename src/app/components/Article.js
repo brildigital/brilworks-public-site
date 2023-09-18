@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import StoryblokClient from "storyblok-js-client";
 import parse from "html-react-parser";
 import "./Blogstyle.scss";
 import Link from "next/link";
@@ -9,13 +8,11 @@ import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import Image from "next/image";
-
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
+import { getbloglist } from "./lib/getblog";
 
 const Article = ({ blok }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,18 +20,17 @@ const Article = ({ blok }) => {
 
   const blogTableOfContent = blok?.content;
 
+  async function fetchData() {
+    try {
+      const blogData = await getbloglist(isTablet ? 2 : 3);
+      setBlogData(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
-    Storyblok.get("cdn/stories/", {
-      starts_with: "blogs-list/",
-      per_page: 3,
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    })
-      .then((response) => {
-        setBlogData(response.data?.stories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetchData();
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
@@ -156,7 +152,7 @@ const Article = ({ blok }) => {
                     }`}
                   >
                     <div className="mb-2">
-                      <p className="text-[#00dfb8] text-[24px] font-medium">
+                      <p className="text-[#00dfb8] text-[24px] font-medium !font-[unset]">
                         Table of Contents
                       </p>
                     </div>
@@ -195,10 +191,10 @@ const Article = ({ blok }) => {
               <div className="basis-[50%]">
                 <div className="service_sec3">
                   <div className="home_sec2_txt4 blog-cat mt-[10px]">
-                    <p className="p-0"> {blok?.subtitle}</p>
+                    <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
                   </div>
                   <div className="home_sec2_txt3 pt-[2.5rem]">
-                    <h1 className="entry-title default-max-width md:!text-[3rem]">
+                    <h1 className="entry-title default-max-width md:!text-[3rem] font-bold !font-[unset]">
                       {blok?.title}
                     </h1>
                   </div>
@@ -329,7 +325,7 @@ const Article = ({ blok }) => {
                         </p>
                       </div>
                       <div className="sec9_txt2 mt-[1.5rem]">
-                        <p>{content?.PublishedDate}</p>
+                        <p className="publish_date">{content?.PublishedDate}</p>
                       </div>
                     </div>
                   </Link>

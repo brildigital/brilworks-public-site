@@ -1,20 +1,20 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect } from "react";
 import FAQsTechnology from "./FAQsTechnology";
+import TechnologyDevelopers from "./TechnologyDevelopers";
+import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
+import SolutionContactForm from "../Solution/SolutionContactForm";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
-import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
-import UIUXDesigners from "./UIUXDesigners";
-import SolutionContactForm from "../Solution/SolutionContactForm";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import { useEffect } from "react";
-import Image from "next/image";
 
 const UIUXTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -308,7 +308,7 @@ const UIUXTechnology = () => {
           </div>
         </div>
 
-        <UIUXDesigners />
+        <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
       </section>
