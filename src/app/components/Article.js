@@ -9,8 +9,10 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getbloglist } from "./lib/getblog";
+import { usePathname } from "next/navigation";
 
 const Article = ({ blok }) => {
+  const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
@@ -22,7 +24,7 @@ const Article = ({ blok }) => {
 
   async function fetchData() {
     try {
-      const blogData = await getbloglist(isTablet ? 2 : 3);
+      const blogData = await getbloglist(isTablet ? 3 : 4);
       setBlogData(blogData);
     } catch (error) {
       console.error(error);
@@ -194,12 +196,12 @@ const Article = ({ blok }) => {
                     <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
                   </div>
                   <div className="home_sec2_txt3 pt-[2.5rem]">
-                    <h1 className="entry-title default-max-width md:!text-[3rem] font-bold !font-[unset]">
+                    <h1 className="entry-title default-max-width md:!text-[3rem] font-semibold !font-[unset]">
                       {blok?.title}
                     </h1>
                   </div>
                 </div>
-                <div className="blog_content post_details_content ">
+                <div className="blog_content post_details_content">
                   {modifyImagesWithLazyLoading(blok?.content)}
 
                   {/* {parse(blok?.content)} */}
@@ -303,34 +305,39 @@ const Article = ({ blok }) => {
             } grid-cols-1 items-center gap-[2rem]`}
           >
             {blogData?.length && !isLoading ? (
-              blogData.map(({ slug, name, content }, index) => (
-                <div
-                  key={index}
-                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
-                >
-                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                    <div className="sec9_img1">
-                      <Image
-                        className="rounded-[20px]"
-                        src={content?.Image?.filename}
-                        alt={content?.Image?.alt}
-                        width={550}
-                        height={283}
-                      />
-                    </div>
-                    <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                      <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                        <p className="entry-title default-max-width aspect-[518/116]">
-                          {name}
-                        </p>
+              blogData
+                .filter(({ slug }) => !pathname.includes(slug))
+                .slice(0, `${isTablet ? 2 : 3}`)
+                .map(({ slug, name, content }, index) => (
+                  <div
+                    key={index}
+                    className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                  >
+                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                      <div className="sec9_img1">
+                        <Image
+                          className="rounded-[30px]"
+                          src={content?.Image?.filename}
+                          alt={content?.Image?.alt}
+                          width={550}
+                          height={283}
+                        />
                       </div>
-                      <div className="sec9_txt2 mt-[1.5rem]">
-                        <p className="publish_date">{content?.PublishedDate}</p>
+                      <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                        <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
+                          <p className="entry-title default-max-width aspect-[518/116]">
+                            {name}
+                          </p>
+                        </div>
+                        <div className="sec9_txt2 mt-[1.5rem]">
+                          <p className="publish_date">
+                            {content?.PublishedDate}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              ))
+                    </Link>
+                  </div>
+                ))
             ) : (
               <div className="flex align-middle justify-center p-24">
                 <FetchDataSpinner />
