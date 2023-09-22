@@ -782,7 +782,7 @@ const FleetManagementNGPS = () => {
           <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
-                <div className="lg:w-6/12 w-full md:mb-12 lg:mb-0">
+                <div className="lg:w-6/12 w-full mb-12 lg:mb-0">
                   <div className="tab-content" id="nav-tabContent">
                     <div
                       className="tab-pane fade show active"
