@@ -8,10 +8,6 @@
   }
 }
 
-.blog-inner .service_sec3 .home_sec2_txt3 h1 {
-  font-size: 30px;
-}
-
 .blog_content {
   padding: 1rem 0 2rem 0;
 
@@ -39,12 +35,29 @@
   a {
     word-wrap: break-word;
   }
+  p {
+    word-wrap: break-word;
+  }
   img {
     width: unset;
+  }
+  table {
+    width: auto !important;
   }
 }
 
 .expert-developers-block {
+  background: linear-gradient(
+    147deg,
+    rgba(28, 185, 213, 1) 12%,
+    rgba(67, 223, 219, 1) 32%,
+    rgba(67, 223, 219, 1) 60%,
+    rgba(0, 222, 175, 1) 84%
+  );
+  padding: 2rem 2rem;
+  text-align: center;
+  border-radius: 33px;
+  line-height: 2;
   span {
     a {
       padding: 7px 15px;

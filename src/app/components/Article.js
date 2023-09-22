@@ -196,7 +196,7 @@ const Article = ({ blok }) => {
                     <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
                   </div>
                   <div className="home_sec2_txt3 pt-[2.5rem]">
-                    <h1 className="entry-title default-max-width md:!text-[3rem] font-semibold !font-[unset]">
+                    <h1 className="entry-title default-max-width !text-[2rem]  font-bold !font-[unset]">
                       {blok?.title}
                     </h1>
                   </div>
