@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
-  images:{
-    domains:["a.storyblok.com"]
+  images: {
+    domains: ["a.storyblok.com"],
   },
   redirects: async () => {
     return [
@@ -551,6 +551,112 @@ const nextConfig = {
       {
         source: `/vugo-portfolio/portfolio`,
         destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/home/portfolio/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/home/contact-us/`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/page/3/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/payment-gateway-development/`,
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/category/nodejs/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/hackers-optimized-user-experience-2/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/best-no-code-app-tools/`,
+        destination: `/blog/best-no-code-tools/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/top-10-websites-build-using-react-js/`,
+        destination: `/blog/top-10-websites-built-using-react-js/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-paymentgateway/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-chat/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/chat-application/portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+
+      {
+        source: `/contact/`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/service-details/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-chat/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-email/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/services-gps/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/brilworks/portfolio`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/unlocking-blockchain-interoperability-for-healthcare/`,
+        destination: `/`,
         statusCode: 301,
       },
     ];

@@ -58,7 +58,7 @@ const BlogContactForm = () => {
   };
 
   return (
-    <div className="get_in_touch blog_padding overflow-auto max-h-[calc(100vh_-_100px)]">
+    <div className="get_in_touch blog_padding overflow-auto lg:max-h-[calc(100vh_-_100px)]">
       <div className="">
         <p className="gradiant md:!text-4xl !font-[unset]">Get In Touch</p>
       </div>
