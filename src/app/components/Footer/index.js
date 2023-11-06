@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import AutoSlidesFooter from "../Homepage/AutoSlidesFooter";
 
-
 const Footer = () => {
   const pathname = usePathname();
 
@@ -142,6 +141,8 @@ const Footer = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
+                    <a href="mailto:sales@brilworks.com">hr@brilworks.com</a>
+                    <br />
                     <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
                   </li>
                 </ul>

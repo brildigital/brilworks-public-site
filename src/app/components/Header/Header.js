@@ -365,7 +365,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/REACT.JS.svg"
-                        alt="reactjs"
+                        alt="reactjs_image_main"
                       />
                     </div>
                     <p
@@ -386,7 +386,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/JAVA.svg"
-                        alt="java development"
+                        alt="java_image_main"
                       />
                     </div>
                     <p
@@ -407,7 +407,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/NODE.JS.svg"
-                        alt="nodejs"
+                        alt="nodejs_image_main"
                       />
                     </div>
                     <p
@@ -428,7 +428,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/REACT-NATIVE.svg"
-                        alt="react native"
+                        alt="react_native_image_main"
                       />
                     </div>
                     <p
@@ -449,7 +449,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/AWS-DEVELOPMENT.svg"
-                        alt="aws development"
+                        alt="aws_development_image_main"
                       />
                     </div>
                     <p
@@ -468,7 +468,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/UIUX-DEVELOPMENT.svg"
-                        alt="ui-ux development"
+                        alt="ui-ux_development_image_main"
                       />
                     </div>
                     <p
@@ -489,7 +489,7 @@ const Header = () => {
                         loading="lazy"
                         decoding="async"
                         src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
-                        alt="blockchain development"
+                        alt="blockchain_development_image_main"
                       />
                     </div>
                     <p
@@ -550,7 +550,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/REACT.JS.svg"
-                                alt="reactjs"
+                                alt="reactjs_image"
                               />
                             </div>
                           </div>
@@ -573,7 +573,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/JAVA.svg"
-                                alt="java development"
+                                alt="java_image"
                               />
                             </div>
                           </div>
@@ -596,7 +596,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/NODE.JS.svg"
-                                alt="nodejs"
+                                alt="nodejs_image"
                               />
                             </div>
                           </div>
@@ -619,7 +619,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/REACT-NATIVE.svg"
-                                alt="react native"
+                                alt="react_native_image"
                               />
                             </div>
                           </div>
@@ -642,7 +642,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/AWS-DEVELOPMENT.svg"
-                                alt="aws development"
+                                alt="aws_development_image"
                               />
                             </div>
                           </div>
@@ -665,7 +665,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/UIUX-DEVELOPMENT.svg"
-                                alt="ui-ux development"
+                                alt="ui-ux_development_image"
                               />
                             </div>
                           </div>
@@ -688,7 +688,7 @@ const Header = () => {
                                 loading="lazy"
                                 decoding="async"
                                 src="/images/BLOCKCHAIN-DEVELOPMENT.svg"
-                                alt="blockchain development"
+                                alt="blockchain_development_image"
                               />
                             </div>
                           </div>
