@@ -141,7 +141,7 @@ const Footer = () => {
                 </div>
                 <ul className="footer_link">
                   <li>
-                    <a href="mailto:sales@brilworks.com">hr@brilworks.com</a>
+                    <a href="mailto:hr@brilworks.com">hr@brilworks.com</a>
                     <br />
                     <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
                   </li>
