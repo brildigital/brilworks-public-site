@@ -19,8 +19,8 @@ const Article = ({ blok }) => {
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState(null);
-
-  const blogTableOfContent = blok?.content;
+  const blogTableOfContent =
+    blok?.content + blok.Content_1 + blok.Content_2 + blok.Content_3 || "";
 
   async function fetchData() {
     try {
@@ -122,8 +122,127 @@ const Article = ({ blok }) => {
 
   return (
     <>
-      <section className="mt-[6rem] mx-[15px] blog-inner" id="scroll-win">
-        <div className="md:w-[88%] mx-auto w-full">
+      <section className="md:w-[50%] w-[90%] md:mt-[10rem] mt-[6rem] md:mx-auto mx-[15px]">
+        <div className="">
+          <div className="w-full inline-flex flex-wrap align-middle mb-4">
+            <span className="blog-navigation">
+              <Link href="/">Brilworks</Link>
+            </span>
+            <span className="self-center md:mx-2 mx-1 mt-[2px]">
+              <Image
+                className="black_aerrow alignnone !w-[20px] size-full"
+                src="/images/black_aerrow-1.png"
+                alt="arrow"
+                width="20"
+                height="10"
+              />
+            </span>
+            <span className="blog-navigation">
+              <Link href="/blog">Blog</Link>
+            </span>
+
+            {blok?.category && (
+              <>
+                <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                  <Image
+                    className="black_aerrow alignnone !w-[20px] size-full"
+                    src="/images/black_aerrow-1.png"
+                    alt="arrow"
+                    width="20"
+                    height="10"
+                  />
+                </span>
+                <span className="blog-navigation">
+                  <Link href="#">{blok?.category}</Link>
+                </span>
+              </>
+            )}
+
+            <span className="self-center md:mx-2 mx-1 mt-[2px]">
+              <Image
+                className="black_aerrow alignnone !w-[20px] size-full"
+                src="/images/black_aerrow-1.png"
+                alt="arrow"
+                width="20"
+                height="10"
+              />
+            </span>
+            <span>{blok?.title}</span>
+          </div>
+          <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] font-bold !font-[unset] !mb-7">
+            {blok?.title}
+          </h1>
+          {blok?.teaser !== blok.title ? (
+            <p className="italic text-[20px] !mb-6 leading-7">{blok?.teaser}</p>
+          ) : (
+            ""
+          )}
+          {/* <p className="italic text-[20px] !mb-6 leading-7">{blok?.teaser}</p> */}
+
+          <div className="flex md:items-end items-start md:flex-row flex-col justify-between w-full gap-1 mb-10">
+            <div className="flex items-start ml-2">
+              <img
+                decoding="async"
+                loading="lazy"
+                src={blok?.author_img?.filename}
+                width="20"
+                height="20"
+                alt={blok?.author_img?.alt}
+                className="!rounded-full photo  !w-14 !h-14"
+              />
+              <div>
+                <Link
+                  className="text-[20px] font-bold ml-2"
+                  href={`${blok?.author_linkedIn?.url}`}
+                  title={`Posts by ${blok?.author}`}
+                >
+                  {blok?.author}
+                </Link>
+                <br />
+                <span className="ml-2">{blok.PublishedDate}</span>
+              </div>
+            </div>
+            <div className=" flex md:flex-row flex-col md:items-end items-start ml-2 md:mt-0 mt-2 justify-end mr-2 gap-1">
+              <div className="flex justify-between align-middle md:mr-2">
+                <span className=" !w-5 !h-5 mr-1 mt-[2px] ml-[2px]">
+                  <Image src="/images/clock_icon.png" width="50" height="50" />
+                </span>
+                {blok.reading_time_in_minutes} mins read
+              </div>
+              <div className="flex justify-between align-middle">
+                <span className="!w-6 !h-6 mr-1">
+                  <Image
+                    src="/images/calendar_icon.png"
+                    width="100"
+                    height="100"
+                  />
+                </span>
+                Last updated {blok.PublishedDate}
+              </div>
+            </div>
+          </div>
+          <div className="w-full mb-10">
+            <img
+              decoding="async"
+              loading="lazy"
+              className="md:rounded-[30px] rounded-[15px]"
+              alt={blok?.image?.alt}
+              src={blok?.mobile_banner?.filename}
+            />
+          </div>
+          {blok.Quick_Summary && (
+            <div className="mb-2 text-[20px] text-left font-normal italic leading-9">
+              <span className="font-semibold text-[#00c4c8]">
+                Quick Summary:-{" "}
+              </span>
+              {blok.Quick_Summary}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="mx-[15px] blog-inner" id="scroll-win">
+        {/* <div className="md:w-[60%] mx-auto w-full mt-8">
           <img
             decoding="async"
             loading="lazy"
@@ -135,7 +254,7 @@ const Article = ({ blok }) => {
                 : blok?.image?.filename
             }`}
           />
-        </div>
+        </div> */}
 
         <div className="2xl:w-[88%] w-[98%] mx-auto">
           {isLoading ? (
@@ -143,22 +262,22 @@ const Article = ({ blok }) => {
               <FetchDataSpinner />
             </div>
           ) : (
-            <div className="lg:flex block gap-[4rem]">
+            <div className="lg:flex block gap-[1rem]">
               {isMobile ? null : (
-                <div className="basis-[25%] lg:sticky static h-fit top-0 blog-left py-[4rem] ">
+                <div className="basis-[20%] h-fit blog-left px-3 top-[6rem] blog_padding">
                   <div
                     className={`${
                       headings?.length
-                        ? " pl-5 py-4 bg-[#f9f9f9] border-1 !border-[#aaa] table !w-auto mb-[1rem] rounded-[4px] relative"
+                        ? "!pl-2 !py-2 bg-[#f9f9f9] border-1 !border-[#aaa] table !w-full mb-[1rem] rounded-[4px] table-content"
                         : "!hidden"
                     }`}
                   >
                     <div className="mb-2">
-                      <p className="text-[#00dfb8] text-[24px] font-medium !font-[unset]">
+                      <p className="text-[#00dfb8] text-[18px] font-medium !font-[unset]">
                         Table of Contents
                       </p>
                     </div>
-                    <nav className="blog-tab-content !py-4 !border-t-[0px] text-[21px] blog-nav overflow-auto max-h-[calc(100vh_-_180px)]">
+                    <nav className="blog-tab-content !py-4 !border-t-[0px] text-[17px] blog-nav overflow-auto max-h-[calc(100vh_-_180px)]">
                       <ul>
                         {headings?.length ? (
                           headings.map((heading, index) => (
@@ -190,8 +309,8 @@ const Article = ({ blok }) => {
                 </div>
               )}
 
-              <div className="basis-[50%]">
-                <div className="service_sec3">
+              <div className="basis-[60%]">
+                {/* <div className="service_sec3">
                   <div className="home_sec2_txt4 blog-cat mt-[10px]">
                     <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
                   </div>
@@ -200,11 +319,30 @@ const Article = ({ blok }) => {
                       {blok?.title}
                     </h1>
                   </div>
-                </div>
+                </div> */}
+
                 <div className="blog_content post_details_content">
                   {modifyImagesWithLazyLoading(blok?.content)}
+                </div>
+                <div className={`${blok?.CTA_1 ? "blog_content_CTA_1" : ""}`}>
+                  {parse(blok?.CTA_1 || "")}
+                </div>
+                <div className="blog_content_new">
+                  {parse(blok?.Content_1 || "")}
+                </div>
 
-                  {/* {parse(blok?.content)} */}
+                <div className={`${blok?.CTA_1 ? "blog_content_CTA_2" : ""}`}>
+                  {parse(blok?.CTA_2 || "")}
+                </div>
+                <div className="blog_content_new">
+                  {parse(blok?.Content_2 || "")}
+                </div>
+
+                <div className={`${blok?.CTA_1 ? "blog_content_CTA_3" : ""}`}>
+                  {parse(blok?.CTA_3 || "")}
+                </div>
+                <div className="blog_content_new">
+                  {parse(blok?.Content_3 || "")}
                 </div>
 
                 {/* ********************Author Detail******************************/}
@@ -232,12 +370,12 @@ const Article = ({ blok }) => {
                         {blok?.author}
                       </Link>
                     </h3>
-                    <p>{blok?.author_desc}</p>
+                    <p className="text-[18px]">{blok?.author_desc}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="basis-[25%]">
+              <div className="basis-[20%] md:px-3">
                 <BlogContactForm />
               </div>
             </div>
