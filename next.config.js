@@ -659,6 +659,61 @@ const nextConfig = {
         destination: `/`,
         statusCode: 301,
       },
+      {
+        source: `/home/`,
+        destination: `/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/category/java/`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/payment-gateway-integration/company`,
+        destination: `/industry/fintech-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/guards/auth.guard`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/optimize-your-nest-js-app-performance-with-these-practices/app.controller`,
+        destination: `/blog/optimize-your-nest-js-app-performance-with-these-practices/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/optimize-your-nest-js-app-performance-with-these-practices/app.module`,
+        destination: `/blog/optimize-your-nest-js-app-performance-with-these-practices/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/optimize-your-nest-js-app-performance-with-these-practices/guards/auth.guard`,
+        destination: `/blog/optimize-your-nest-js-app-performance-with-these-practices/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/optimize-your-nest-js-app-performance-with-these-practices/users/users.module`,
+        destination: `/blog/optimize-your-nest-js-app-performance-with-these-practices/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/react-native-best-practices/styles.ts`,
+        destination: `/blog/react-native-best-practices/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/users/users.module`,
+        destination: `/blog/`,
+        statusCode: 301,
+      },
+      {
+        source: `/our-process/%60$%7Bprocess.env.NEXT_PUBLIC_BASE_URL%7Dour-process/`,
+        destination: `/our-process/`,
+        statusCode: 301,
+      },
     ];
   },
 };
