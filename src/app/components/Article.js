@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: 1023 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
@@ -122,122 +122,129 @@ const Article = ({ blok }) => {
 
   return (
     <>
-      <section className="md:w-[50%] w-[90%] md:mt-[10rem] mt-[6rem] md:mx-auto mx-[15px]">
-        <div className="">
-          <div className="w-full inline-flex flex-wrap align-middle mb-4">
-            <span className="blog-navigation">
-              <Link href="/">Brilworks</Link>
-            </span>
-            <span className="self-center md:mx-2 mx-1 mt-[2px]">
-              <Image
-                className="black_aerrow alignnone !w-[20px] size-full"
-                src="/images/black_aerrow-1.png"
-                alt="arrow"
-                width="20"
-                height="10"
-              />
-            </span>
-            <span className="blog-navigation">
-              <Link href="/blog">Blog</Link>
-            </span>
+      <section className="flex md:mt-[10rem] mt-[6rem] md:mx-auto align-middle justify-center">
+        <div className="2xl:w-[88%] w-[98%] lg:flex block align-middle justify-center mx-[15px]">
+          <div className="gap-[1rem] basis-[60%]">
+            <div className="w-full inline-flex flex-wrap align-middle mb-4">
+              <span className="blog-navigation">
+                <Link href="/">Brilworks</Link>
+              </span>
+              <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                <Image
+                  className="black_aerrow alignnone !w-[20px] size-full"
+                  src="/images/black_aerrow-1.png"
+                  alt="arrow"
+                  width="20"
+                  height="10"
+                />
+              </span>
+              <span className="blog-navigation">
+                <Link href="/blog">Blog</Link>
+              </span>
 
-            {blok?.category && (
-              <>
-                <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                  <Image
-                    className="black_aerrow alignnone !w-[20px] size-full"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="20"
-                    height="10"
-                  />
-                </span>
-                <span className="blog-navigation">
-                  <Link href="#">{blok?.category}</Link>
-                </span>
-              </>
+              {blok?.category && (
+                <>
+                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                    <Image
+                      className="black_aerrow alignnone !w-[20px] size-full"
+                      src="/images/black_aerrow-1.png"
+                      alt="arrow"
+                      width="20"
+                      height="10"
+                    />
+                  </span>
+                  <span className="blog-navigation">
+                    <Link href="#">{blok?.category}</Link>
+                  </span>
+                </>
+              )}
+
+              <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                <Image
+                  className="black_aerrow alignnone !w-[20px] size-full"
+                  src="/images/black_aerrow-1.png"
+                  alt="arrow"
+                  width="20"
+                  height="10"
+                />
+              </span>
+              <span>{blok?.title}</span>
+            </div>
+            <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] font-bold !font-[unset] !mb-7">
+              {blok?.title}
+            </h1>
+            {blok?.teaser !== blok.title ? (
+              <p className="italic text-[20px] !mb-6 leading-7">
+                {blok?.teaser}
+              </p>
+            ) : (
+              ""
             )}
 
-            <span className="self-center md:mx-2 mx-1 mt-[2px]">
-              <Image
-                className="black_aerrow alignnone !w-[20px] size-full"
-                src="/images/black_aerrow-1.png"
-                alt="arrow"
-                width="20"
-                height="10"
-              />
-            </span>
-            <span>{blok?.title}</span>
-          </div>
-          <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] font-bold !font-[unset] !mb-7">
-            {blok?.title}
-          </h1>
-          {blok?.teaser !== blok.title ? (
-            <p className="italic text-[20px] !mb-6 leading-7">{blok?.teaser}</p>
-          ) : (
-            ""
-          )}
-          {/* <p className="italic text-[20px] !mb-6 leading-7">{blok?.teaser}</p> */}
-
-          <div className="flex md:items-end items-start md:flex-row flex-col justify-between w-full gap-1 mb-10">
-            <div className="flex items-start ml-2">
+            <div className="flex xl:items-end items-start xl:flex-row flex-col justify-between w-full gap-1 mb-10">
+              <div className="flex items-start ml-2">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src={blok?.author_img?.filename}
+                  width="20"
+                  height="20"
+                  alt={blok?.author_img?.alt}
+                  className="!rounded-full photo  !w-14 !h-14"
+                />
+                <div>
+                  <Link
+                    className="text-[20px] font-bold ml-2"
+                    href={`${blok?.author_linkedIn?.url}`}
+                    title={`Posts by ${blok?.author}`}
+                  >
+                    {blok?.author}
+                  </Link>
+                  <br />
+                  <span className="ml-2">{blok.PublishedDate}</span>
+                </div>
+              </div>
+              <div className=" flex xl:flex-row flex-col xl:items-end items-start ml-2 md:mt-0 mt-2 justify-end mr-2 gap-1">
+                <div className="flex justify-between align-middle md:mr-2">
+                  <span className=" !w-5 !h-5 mr-1 mt-[2px] ml-[2px]">
+                    <Image
+                      src="/images/clock_icon.png"
+                      width="50"
+                      height="50"
+                    />
+                  </span>
+                  {blok.reading_time_in_minutes} mins read
+                </div>
+                <div className="flex justify-between align-middle">
+                  <span className="!w-6 !h-6 mr-1">
+                    <Image
+                      src="/images/calendar_icon.png"
+                      width="100"
+                      height="100"
+                    />
+                  </span>
+                  Last updated {blok.PublishedDate}
+                </div>
+              </div>
+            </div>
+            <div className="w-full mb-10">
               <img
                 decoding="async"
                 loading="lazy"
-                src={blok?.author_img?.filename}
-                width="20"
-                height="20"
-                alt={blok?.author_img?.alt}
-                className="!rounded-full photo  !w-14 !h-14"
+                className="md:rounded-[30px] rounded-[15px]"
+                alt={blok?.image?.alt}
+                src={blok?.mobile_banner?.filename}
               />
-              <div>
-                <Link
-                  className="text-[20px] font-bold ml-2"
-                  href={`${blok?.author_linkedIn?.url}`}
-                  title={`Posts by ${blok?.author}`}
-                >
-                  {blok?.author}
-                </Link>
-                <br />
-                <span className="ml-2">{blok.PublishedDate}</span>
-              </div>
             </div>
-            <div className=" flex md:flex-row flex-col md:items-end items-start ml-2 md:mt-0 mt-2 justify-end mr-2 gap-1">
-              <div className="flex justify-between align-middle md:mr-2">
-                <span className=" !w-5 !h-5 mr-1 mt-[2px] ml-[2px]">
-                  <Image src="/images/clock_icon.png" width="50" height="50" />
+            {blok.Quick_Summary && (
+              <div className="mb-2 text-[20px] text-left font-normal italic leading-9">
+                <span className="font-semibold text-[#00c4c8]">
+                  Quick Summary:-{" "}
                 </span>
-                {blok.reading_time_in_minutes} mins read
+                {blok?.Quick_Summary}
               </div>
-              <div className="flex justify-between align-middle">
-                <span className="!w-6 !h-6 mr-1">
-                  <Image
-                    src="/images/calendar_icon.png"
-                    width="100"
-                    height="100"
-                  />
-                </span>
-                Last updated {blok.PublishedDate}
-              </div>
-            </div>
+            )}
           </div>
-          <div className="w-full mb-10">
-            <img
-              decoding="async"
-              loading="lazy"
-              className="md:rounded-[30px] rounded-[15px]"
-              alt={blok?.image?.alt}
-              src={blok?.mobile_banner?.filename}
-            />
-          </div>
-          {blok.Quick_Summary && (
-            <div className="mb-2 text-[20px] text-left font-normal italic leading-9">
-              <span className="font-semibold text-[#00c4c8]">
-                Quick Summary:-{" "}
-              </span>
-              {blok.Quick_Summary}
-            </div>
-          )}
         </div>
       </section>
 

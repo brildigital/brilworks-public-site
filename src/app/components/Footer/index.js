@@ -391,6 +391,9 @@ const Footer = () => {
               <Link href="#" onClick={(e) => e.preventDefault()}>
                 <p className="transition">Privacy Policy</p>
               </Link>
+              <Link href="/site-map/">
+                <p className="transition">Sitemap</p>
+              </Link>
             </div>
           </div>
         </div>
