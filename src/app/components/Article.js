@@ -13,7 +13,8 @@ import { usePathname } from "next/navigation";
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 1023 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isBigMobile = useMediaQuery({ maxWidth: 1023 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
@@ -122,9 +123,9 @@ const Article = ({ blok }) => {
 
   return (
     <>
-      <section className="flex md:mt-[10rem] mt-[6rem] md:mx-auto align-middle justify-center">
+      <section className="flex md:mt-[9rem] mt-[6rem] md:mx-auto align-middle justify-center">
         <div className="2xl:w-[88%] w-[98%] lg:flex block align-middle justify-center mx-[15px]">
-          <div className="gap-[1rem] basis-[60%]">
+          <div className="gap-[1rem] basis-[58%]">
             <div className="w-full inline-flex flex-wrap align-middle mb-4">
               <span className="blog-navigation">
                 <Link href="/">Brilworks</Link>
@@ -170,18 +171,18 @@ const Article = ({ blok }) => {
               </span>
               <span>{blok?.title}</span>
             </div>
-            <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] font-bold !font-[unset] !mb-7">
+            <h1 className="entry-title default-max-width md:!text-[2.5rem] !text-[2rem] font-bold !font-[unset] !mb-7">
               {blok?.title}
             </h1>
-            {blok?.teaser !== blok.title ? (
+            {/* {blok?.teaser !== blok.title ? (
               <p className="italic text-[20px] !mb-6 leading-7">
                 {blok?.teaser}
               </p>
             ) : (
               ""
-            )}
+            )} */}
 
-            <div className="flex xl:items-end items-start xl:flex-row flex-col justify-between w-full gap-1 mb-10">
+            <div className="flex xl:items-end items-start xl:flex-row flex-col justify-between w-full gap-1 mb-5">
               <div className="flex items-start ml-2">
                 <img
                   decoding="async"
@@ -190,7 +191,7 @@ const Article = ({ blok }) => {
                   width="20"
                   height="20"
                   alt={blok?.author_img?.alt}
-                  className="!rounded-full photo  !w-14 !h-14"
+                  className="!rounded-full photo !w-14 !h-14"
                 />
                 <div>
                   <Link
@@ -227,13 +228,17 @@ const Article = ({ blok }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full mb-10">
+            <div className="w-full mb-4 blog-image">
               <img
                 decoding="async"
                 loading="lazy"
-                className="md:rounded-[30px] rounded-[15px]"
+                className="md:rounded-[30px] rounded-[15px] !max-h-[230px]"
                 alt={blok?.image?.alt}
-                src={blok?.mobile_banner?.filename}
+                src={
+                  isMobile
+                    ? blok?.mobile_banner?.filename
+                    : blok?.image?.filename || blok?.mobile_banner?.filename
+                }
               />
             </div>
             {blok.Quick_Summary && (
@@ -270,7 +275,7 @@ const Article = ({ blok }) => {
             </div>
           ) : (
             <div className="lg:flex block gap-[1rem]">
-              {isMobile ? null : (
+              {isBigMobile ? null : (
                 <div className="basis-[20%] h-fit blog-left px-3 top-[6rem] blog_padding">
                   <div
                     className={`${
