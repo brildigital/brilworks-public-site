@@ -202,7 +202,7 @@ const Article = ({ blok }) => {
                     {blok?.author}
                   </Link>
                   <br />
-                  <span className="ml-2">{blok.PublishedDate}</span>
+                  <span className="ml-2">{blok?.PublishedDate}</span>
                 </div>
               </div>
               <div className=" flex xl:flex-row flex-col xl:items-end items-start ml-2 md:mt-0 mt-2 justify-end mr-2 gap-1">
@@ -214,7 +214,7 @@ const Article = ({ blok }) => {
                       height="50"
                     />
                   </span>
-                  {blok.reading_time_in_minutes} mins read
+                  {blok?.reading_time_in_minutes} mins read
                 </div>
                 <div className="flex justify-between align-middle">
                   <span className="!w-6 !h-6 mr-1">
@@ -224,7 +224,7 @@ const Article = ({ blok }) => {
                       height="100"
                     />
                   </span>
-                  Last updated {blok.PublishedDate}
+                  Last updated {blok?.PublishedDate}
                 </div>
               </div>
             </div>
