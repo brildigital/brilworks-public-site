@@ -58,14 +58,14 @@ const BlogContactForm = () => {
   };
 
   return (
-    <div className="get_in_touch blog_padding overflow-auto lg:max-h-[calc(100vh_-_100px)]">
+    <div className="get_in_touch blog_padding !pl-4 !pr-0 !py-4 overflow-auto lg:max-h-[calc(100vh_-_100px)]">
       <div className="">
-        <p className="gradiant md:!text-4xl !font-[unset]">Get In Touch</p>
+        <p className="gradiant md:!text-2xl !font-[unset] font-medium">Get In Touch</p>
       </div>
       <br />
 
       <div className="post_details_content">
-        <p className="!font-[unset]">
+        <p className="!font-[unset] !text-lg">
           Contact us for your software development requirements
         </p>
       </div>
@@ -74,8 +74,8 @@ const BlogContactForm = () => {
           <form id="Blogpage-contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <p>
-                <label className="label_name !font-[unset]">Name*</label>
-                <br />
+                {/* <label className="label_name !font-[unset]">Name*</label>
+                <br /> */}
                 <span>
                   <input
                     className="form-control-txt"
@@ -85,14 +85,15 @@ const BlogContactForm = () => {
                     value={formData.name}
                     required
                     onChange={handleChange}
+                    placeholder="Name*"
                   />
                 </span>
               </p>
             </div>
             <div className="form-group">
               <p>
-                <label className="label_name !font-[unset]">Email*</label>
-                <br />
+                {/* <label className="label_name !font-[unset]">Email*</label>
+                <br /> */}
                 <span>
                   <input
                     className="form-control-txt"
@@ -102,14 +103,15 @@ const BlogContactForm = () => {
                     value={formData.email}
                     required
                     onChange={handleChange}
+                    placeholder="Email*"
                   />
                 </span>
               </p>
             </div>
             <div className="form-group">
               <p>
-                <label className="label_name !font-[unset]">Message*</label>
-                <br />
+                {/* <label className="label_name !font-[unset]">Message*</label> */}
+                {/* <br /> */}
                 <span>
                   <textarea
                     cols="1"
@@ -120,6 +122,7 @@ const BlogContactForm = () => {
                     value={formData.message}
                     required
                     onChange={handleChange}
+                    placeholder="Message*"
                   ></textarea>
                 </span>
               </p>

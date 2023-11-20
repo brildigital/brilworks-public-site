@@ -714,6 +714,11 @@ const nextConfig = {
         destination: `/our-process/`,
         statusCode: 301,
       },
+      {
+        source: `/industry/media-entertainment-software-development/%09/industry/media-entertainment-software-development/`,
+        destination: "/industry/media-entertainment-software-development/",
+        statusCode: 301,
+      },
     ];
   },
 };
