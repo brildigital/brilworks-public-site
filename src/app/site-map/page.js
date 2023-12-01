@@ -22,6 +22,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Site Map | Brilworks Software",
+    description:
+      "Explore our site map page to find information about who we are and who we work with, and details about our software development services.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

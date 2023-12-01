@@ -2,7 +2,7 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    domains: [`a.storyblok.com`],
+    domains: ["a.storyblok.com"],
   },
   redirects: async () => {
     return [
@@ -430,9 +430,9 @@ const nextConfig = {
         source: `/payment-gateway-development/:slug*`,
         has: [
           {
-            type: `query`,
-            key: `utm_source`,
-            value: `sportsa.com`,
+            type: "query",
+            key: "utm_source",
+            value: "sportsa.com",
           },
         ],
         destination: `/industry/fintech-software-development/`,
