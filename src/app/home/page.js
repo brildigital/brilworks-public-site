@@ -41,6 +41,28 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <head>
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Brilworks",
+            "url": "https://www.brilworks.com",
+            "logo": "https://www.brilworks.com/images/logo.png",
+            "sameAs": [
+              "https://www.facebook.com/brilwork",
+              "https://www.linkedin.com/company/brilworks",
+              "https://www.instagram.com/brilworkssoftware",
+              "https://www.youtube.com/@brilworks",
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "<sales@brilworks.com>",
+            },
+          }`}
+        </script>
+      </head>
       <Header />
       <GameChanger />
       <Brilliant />

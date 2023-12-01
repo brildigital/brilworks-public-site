@@ -3,13 +3,13 @@ import Header from "@/app/components/Header/Header";
 import HealthCare from "@/app/components/Solution/Healthcare";
 
 export const metadata = {
-  title: "Custom Healthcare Software & App Development Company | Brilworks",
+  title: "Healthcare Software Development Services",
   description:
-    "Healthcare software developers at Brilworks build medical software for patient monitoring, telemedicine & prescription app, EMR/EHR platform. Hire our engineer today!",
+    "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
   openGraph: {
-    title: "Custom Healthcare Software & App Development Company | Brilworks",
+    title: "Healthcare Software Development Services",
     description:
-      "Healthcare software developers at Brilworks build medical software for patient monitoring, telemedicine & prescription app, EMR/EHR platform. Hire our engineer today!",
+      "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/healthcare-software-development/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -21,12 +21,14 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Healthcare Software Development Services",
+    description:
+      "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
   alternates: {
-    canonical:
-      `${process.env.NEXT_PUBLIC_BASE_URL}industry/healthcare-software-development/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/healthcare-software-development/`,
   },
 };
 

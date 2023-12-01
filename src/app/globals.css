@@ -1216,7 +1216,7 @@ textarea.form-control-txt {
     rgba(253, 246, 227, 1) 88%
   );
 }
-.solution_gradiant .contact-p p {
+.solution_gradiant .contact-p h3 {
   font-size: var(--font_21);
   font-family: var(--bold);
   color: var(--black_font);
@@ -1294,9 +1294,9 @@ textarea.form-control-txt {
   padding: 2rem 0 !important;
   font-size: 2.6rem !important;
 }
-.home_sec2_txt3 p {
+/* .home_sec2_txt3 p {
   color: var(--black_font);
-}
+} */
 .noText {
   padding: 3rem 0 2rem;
 }
@@ -1540,7 +1540,8 @@ textarea.form-control-txt {
   top: 12px;
   right: -5%;
 }
-.developer_sec6_title p {
+.developer_sec6_title p,
+.developer_sec6_title h3 {
   font-size: var(--font_21) !important;
   font-family: var(--bold) !important;
   color: var(--black_font) !important;
@@ -1671,10 +1672,6 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
-.portfolio_title p {
-  font-family: var(--extra_bold);
-  font-size: var(--font_28);
-}
 
 .fintech-portfolio-sec {
   font-family: var(--regular);
@@ -1779,7 +1776,8 @@ textarea.form-control-txt {
   text-align: center;
   padding-top: 2rem;
 }
-.service_title p {
+.service_title p,
+.service_title h3 {
   font-size: var(--font_24);
   font-family: var(--bold);
   color: var(--color_black) !important;
@@ -2168,7 +2166,8 @@ textarea.form-control-txt {
   padding: 1.5rem 0rem !important;
   /* border-bottom: 1px solid #80808038!important; */
 }
-.end-to-end .accordion-button > div > div {
+.end-to-end .accordion-button > div > div,
+.end-to-end .accordion-button > div > h3 {
   font-family: var(--bold);
 }
 .end-to-end .team_img img {
@@ -2276,6 +2275,13 @@ textarea.form-control-txt {
   opacity: 1;
 }
 
+.solutions h2 {
+  font-family: var(--extra_bold);
+  font-size: var(--font_48);
+  color: var(--black_font);
+  line-height: var(--line_height_1);
+}
+
 @media only screen and (max-width: 1680px) {
   .home_txt2 p {
     font-size: 12.625rem;
@@ -2299,7 +2305,8 @@ textarea.form-control-txt {
   .contact_icon {
     width: 8%;
   }
-  .service_title p {
+  .service_title p,
+  .service_title h3 {
     font-size: 1.3rem;
   }
   .no_flex::after {
@@ -2339,10 +2346,12 @@ textarea.form-control-txt {
   .service_description p {
     font-size: 1.1rem;
   }
-  .developer_sec6_title p {
+  .developer_sec6_title p,
+  .developer_sec6_title h3 {
     font-size: 1.3rem;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 2.6rem;
   }
@@ -2356,7 +2365,8 @@ textarea.form-control-txt {
   .portfolio_sec1_txt1 p {
     font-size: 46px;
   }
-  .service_title p {
+  .service_title p,
+  .service_title h3 {
     font-size: 1.3rem;
   }
   .home_sec2_txt4 p {
@@ -2420,10 +2430,12 @@ textarea.form-control-txt {
   .service_description p {
     font-size: 1rem;
   }
-  .developer_sec6_title p {
+  .developer_sec6_title p,
+  .developer_sec6_title h3 {
     font-size: 1.2rem;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 2.2rem;
   }
@@ -2443,7 +2455,8 @@ textarea.form-control-txt {
   .portfolio_know_more {
     font-size: 1.1rem;
   }
-  .service_title p {
+  .service_title p,
+  .service_title h3 {
     font-size: 1.4rem;
   }
   .home_sec2_txt4 p {
@@ -2512,10 +2525,12 @@ textarea.form-control-txt {
   .service_description p {
     font-size: 1.1rem;
   }
-  .developer_sec6_title p {
+  .developer_sec6_title p,
+  .developer_sec6_title h3 {
     font-size: 1.1rem;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 2.5rem;
     line-height: 1.2;
@@ -2584,7 +2599,8 @@ textarea.form-control-txt {
   .jira_icon_flex {
     gap: 4rem;
   }
-  .service_title p {
+  .service_title p,
+  .service_title h3 {
     font-size: 1.1rem;
   }
   .home_sec2_txt1 p,
@@ -2688,6 +2704,7 @@ textarea.form-control-txt {
     padding: 8rem 0;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 2rem;
   }
@@ -2819,6 +2836,7 @@ textarea.form-control-txt {
     padding: 6rem 0;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 1.6rem;
   }
@@ -3087,6 +3105,7 @@ textarea.form-control-txt {
     padding: 5rem 0 4rem;
   }
   .home_sec2_txt3 p,
+  .solutions h2,
   .blog .home_sec2_txt3 h1 {
     font-size: 1.4rem;
     text-align: left;
@@ -3297,5 +3316,8 @@ textarea.form-control-txt {
   }
   .pricing-desc p img {
     margin-top: 0;
+  }
+  .fintech-portfolio-sec {
+    font-size: 1.2rem;
   }
 }

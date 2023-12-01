@@ -64,8 +64,8 @@ const SolutionContactForm = () => {
       <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
         <div className="like_flex">
           <div className="like_basis basis-[50%]">
-            <div className="like_text bold home_sec2_txt3">
-              <p className="!w-full">
+            <div className="like_text bold home_sec2_txt3 solutions">
+              <h2 className="!w-full py-10">
                 {pathname === "/industry/fintech-software-development/" ||
                 pathname ===
                   "/industry/media-entertainment-software-development/" ||
@@ -74,7 +74,7 @@ const SolutionContactForm = () => {
                 pathname === "/industry/healthcare-software-development/"
                   ? " TAKE THE FIRST STEP BY FILLING OUT THIS QUICK FORM."
                   : "  CONNECT WITH US TO GET A 48 HOURS RISK-FREE TRIAL"}
-              </p>
+              </h2>
             </div>
           </div>
           <div className="like_basis_form basis-[50%]">
@@ -85,7 +85,11 @@ const SolutionContactForm = () => {
                 lang="en-US"
                 dir="ltr"
               >
-                <form className="wpcf7-form init" id="solution-contact-form" onSubmit={handleSubmit}>
+                <form
+                  className="wpcf7-form init"
+                  id="solution-contact-form"
+                  onSubmit={handleSubmit}
+                >
                   <div className="form-group">
                     <p>
                       <label className="label_name"> Name*</label>

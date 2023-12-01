@@ -52,10 +52,10 @@ const MediaAndEntertainment = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      MEDIA & ENTERTAINMENT
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      MEDIA AND ENTERTAINMENT SOFTWARE
                       <br />
-                      APP DEVELOPMENT
+                      DEVELOPMENT COMPANY
                     </h1>
                   </div>
                 </div>
@@ -110,11 +110,11 @@ const MediaAndEntertainment = () => {
 
         <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
-              <p className="!w-full p-0">
-                DELIGHT YOUR USERS WITH <br />
-                OUR ENTERTAINMENT SOFTWARE SOLUTIONS
-              </p>
+            <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
+              <h2 className="!w-full p-0">
+                OUR MEDIA AND ENTERTAINMENT <br />
+                SOFTWARE SOLUTIONS
+              </h2>
             </div>
           </div>
 
@@ -146,7 +146,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-one"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingOne">
+                        <div className="accordion-header" id="headingOne">
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -158,9 +158,9 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 1 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     OTT Streaming Apps
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -183,14 +183,14 @@ const MediaAndEntertainment = () => {
                                       alt="OTT Streaming Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     OTT Streaming Apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseOne"
                           className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -228,7 +228,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-two"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTwo">
+                        <div className="accordion-header" id="headingTwo">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -240,9 +240,9 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 2 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Music Streaming Apps
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -265,14 +265,14 @@ const MediaAndEntertainment = () => {
                                       alt="Music Streaming Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Music Streaming Apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTwo"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -310,7 +310,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-three"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingThree">
+                        <div className="accordion-header" id="headingThree">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -322,9 +322,9 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 3 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Photo Editing & Sharing Apps
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -347,14 +347,14 @@ const MediaAndEntertainment = () => {
                                       alt=" Photo Editing & Sharing Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Photo Editing & Sharing Apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseThree"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -392,7 +392,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-four"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFour">
+                        <div className="accordion-header" id="headingFour">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -404,9 +404,9 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 4 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Ticket Booking Portals
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -429,14 +429,14 @@ const MediaAndEntertainment = () => {
                                       alt="Ticket Booking Portals"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Ticket Booking Portals
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFour"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -475,7 +475,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-five"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFive">
+                        <div className="accordion-header" id="headingFive">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -487,7 +487,7 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 5 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">Gaming apps</div>
+                                  <h3 className="text-[24px]">Gaming apps</h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -510,14 +510,14 @@ const MediaAndEntertainment = () => {
                                       alt="Gaming apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Gaming apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFive"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -555,7 +555,7 @@ const MediaAndEntertainment = () => {
                         aria-controls="accordion-six"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingSix">
+                        <div className="accordion-header" id="headingSix">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -567,9 +567,9 @@ const MediaAndEntertainment = () => {
                             {isAccordionActive == 6 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Content Aggregation Apps
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -592,14 +592,14 @@ const MediaAndEntertainment = () => {
                                       alt="  Content Aggregation Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Content Aggregation Apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseSix"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -750,12 +750,12 @@ const MediaAndEntertainment = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions">
+              <h2 className="!w-full p-0">
                 LEVERAGE OUR COMPREHENSIVE SOLUTIONS TO
                 {!isMobile && <br />}
                 DEVELOP MEDIA & ENTERTAINMENT APPS
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -887,12 +887,12 @@ const MediaAndEntertainment = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end ">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions">
+              <h2 className="!w-full p-0">
                 FEATURES THAT ELEVATE OUR MEDIA
                 {!isMobile && <br />}
                 AND ENTERTAINMENT SOFTWARE
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -911,7 +911,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>Real-time Content Feeds</p>
+                    <h3>Real-time Content Feeds</h3>
                   </div>
                 </div>
               </div>
@@ -929,7 +929,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>Multilingual Support</p>
+                    <h3>Multilingual Support</h3>
                   </div>
                 </div>
               </div>
@@ -948,7 +948,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Live {isMobile ? <br /> : ""}Chatting</p>
+                    <h3>Live {isMobile ? <br /> : ""}Chatting</h3>
                   </div>
                 </div>
               </div>
@@ -967,7 +967,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>Secure Payment Gateways</p>
+                    <h3>Secure Payment Gateways</h3>
                   </div>
                 </div>
               </div>
@@ -986,7 +986,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>IoT Integration</p>
+                    <h3>IoT Integration</h3>
                   </div>
                 </div>
               </div>
@@ -1005,7 +1005,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>Push Notifications</p>
+                    <h3>Push Notifications</h3>
                   </div>
                 </div>
               </div>
@@ -1024,7 +1024,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 07.</div>
                   <div className="service_title">
-                    <p>Interactive {isMobile ? <br /> : ""}UI/UX</p>
+                    <h3>Interactive {isMobile ? <br /> : ""}UI/UX</h3>
                   </div>
                 </div>
               </div>
@@ -1043,7 +1043,7 @@ const MediaAndEntertainment = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 08.</div>
                   <div className="service_title">
-                    <p>Social Media Integration</p>
+                    <h3>Social Media Integration</h3>
                   </div>
                 </div>
               </div>
@@ -1054,11 +1054,11 @@ const MediaAndEntertainment = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0">
-                    <p className="!w-full md:p-0 p-3">
+                  <div className="endTO_text home_sec2_txt3 solutions mt-[4rem] mb-0">
+                    <h2 className="!w-full md:p-0 p-3">
                       WHAT MAKES BRILWORKS THE BEST ENTERTAINMENT APP
                       DEVELOPMENT COMPANY?
-                    </p>
+                    </h2>
                   </div>
                 </div>
 
@@ -1103,7 +1103,7 @@ const MediaAndEntertainment = () => {
                         isMobile ? "!text-[20px]" : ""
                       }`}
                     >
-                      Expert
+                      EXPERT
                     </div>
                     <p className="year border-0 py-[1rem]">Knowledge</p>
                   </div>

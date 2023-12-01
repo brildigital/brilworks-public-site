@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
                 <div className="social_media_img">
                   <Link
-                    href=" https://www.linkedin.com/company/brilworks/"
+                    href="https://www.linkedin.com/company/brilworks/"
                     target="_blank"
                   >
                     <img
