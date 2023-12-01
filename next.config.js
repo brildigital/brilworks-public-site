@@ -2,7 +2,7 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    domains: ["a.storyblok.com"],
+    domains: [`a.storyblok.com`],
   },
   redirects: async () => {
     return [
@@ -430,9 +430,9 @@ const nextConfig = {
         source: `/payment-gateway-development/:slug*`,
         has: [
           {
-            type: "query",
-            key: "utm_source",
-            value: "sportsa.com",
+            type: `query`,
+            key: `utm_source`,
+            value: `sportsa.com`,
           },
         ],
         destination: `/industry/fintech-software-development/`,
@@ -715,8 +715,99 @@ const nextConfig = {
         statusCode: 301,
       },
       {
-        source: `/industry/media-entertainment-software-development/%09/industry/media-entertainment-software-development/`,
-        destination: "/industry/media-entertainment-software-development/",
+        source: `/industry/media-entertainment-software-development/www.brilworks.com/industry/media-entertainment-software-development/`,
+        destination: `/industry/media-entertainment-software-development/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-paymentgateway`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-video`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-gps`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/portfolio`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-video`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/about`,
+        destination: `/about-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/contact-us`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/career`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-ui-ux`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-email`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-chat`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-paymentgateway`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/career/services-chat`,
+        destination: `/career/`,
+        statusCode: 301,
+      },
+
+      {
+        source: `/portfolio/career`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-email`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/contact-us/services-gps`,
+        destination: `/contact-us/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/services-chat`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/portfolio`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
     ];

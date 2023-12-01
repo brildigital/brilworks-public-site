@@ -3,13 +3,13 @@ import Header from "@/app/components/Header/Header";
 import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
 
 export const metadata = {
-  title: "Media and Entertainment App & Software Development Company",
+  title: "Media and Entertainment Software Development Service",
   description:
-    "Hire entertainment app & web developers from Brilworks to build feature-rich applications for OTT, Music, Photo, Ticket Booking, and Gaming. Contact our experts now.",
+    "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
   openGraph: {
-    title: "Media and Entertainment App & Software Development Company",
+    title: "Media and Entertainment Software Development Service",
     description:
-      "Hire entertainment app & web developers from Brilworks to build feature-rich applications for OTT, Music, Photo, Ticket Booking, and Gaming. Contact our experts now.",
+      "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -21,12 +21,14 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Media and Entertainment Software Development Service",
+    description:
+      "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
   alternates: {
-    canonical:
-      `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
   },
 };
 

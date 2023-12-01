@@ -22,6 +22,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
+    title: "Mobile App & Software Development Company | Brilworks",
+    description:
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

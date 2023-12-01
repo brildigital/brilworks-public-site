@@ -55,10 +55,8 @@ const Fintech = () => {
                 decoding="async"
                 loading="lazy"
                 className="h-[46vh] rounded-[20px]"
-                src={
-                  "https://a.storyblok.com/f/219851/1398x780/99204abf86/fintech-1.png"
-                }
-                alt="our process"
+                src="https://a.storyblok.com/f/219851/1398x780/a844d90b96/fintech-1.webp"
+                alt="Fintech Software Development services"
               />
             </p>
             <div className="service_sec1_position">
@@ -151,12 +149,12 @@ const Fintech = () => {
 
         <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
+              <h2 className="!w-full p-0">
                 OUR END-TO-END FINTECH SOFTWARE
                 <br />
                 DEVELOPMENT SERVICES
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -188,7 +186,7 @@ const Fintech = () => {
                         aria-controls="accordion-one"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingOne">
+                        <div className="accordion-header" id="headingOne">
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -200,9 +198,9 @@ const Fintech = () => {
                             {isAccordionActive == 1 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Custom Fintech Software Developments
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -225,14 +223,14 @@ const Fintech = () => {
                                       alt="OTT Streaming Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Custom Fintech Software Developments
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseOne"
                           className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -269,7 +267,7 @@ const Fintech = () => {
                         aria-controls="accordion-two"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTwo">
+                        <div className="accordion-header" id="headingTwo">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -281,9 +279,9 @@ const Fintech = () => {
                             {isAccordionActive == 2 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Banking App Development
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -306,14 +304,14 @@ const Fintech = () => {
                                       alt="Music Streaming Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Banking App Development
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTwo"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -353,7 +351,7 @@ const Fintech = () => {
                         aria-controls="accordion-three"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingThree">
+                        <div className="accordion-header" id="headingThree">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -365,9 +363,9 @@ const Fintech = () => {
                             {isAccordionActive == 3 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Insurance App Development
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -390,14 +388,14 @@ const Fintech = () => {
                                       alt=" Photo Editing & Sharing Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Insurance App Development
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseThree"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -436,7 +434,7 @@ const Fintech = () => {
                         aria-controls="accordion-four"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFour">
+                        <div className="accordion-header" id="headingFour">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -448,9 +446,9 @@ const Fintech = () => {
                             {isAccordionActive == 4 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Wallet App Development
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -473,14 +471,14 @@ const Fintech = () => {
                                       alt="Ticket Booking Portals"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Wallet App Development
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFour"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -518,7 +516,7 @@ const Fintech = () => {
                         aria-controls="accordion-five"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFive">
+                        <div className="accordion-header" id="headingFive">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -530,9 +528,9 @@ const Fintech = () => {
                             {isAccordionActive == 5 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Fintech Software Security
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -555,14 +553,14 @@ const Fintech = () => {
                                       alt="Gaming apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Fintech Software Security
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFive"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -600,7 +598,7 @@ const Fintech = () => {
                         aria-controls="accordion-six"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingSix">
+                        <div className="accordion-header" id="headingSix">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -612,9 +610,9 @@ const Fintech = () => {
                             {isAccordionActive == 6 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     FinOps Services
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -637,14 +635,14 @@ const Fintech = () => {
                                       alt="  Content Aggregation Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     FinOps Services
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseSix"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -679,8 +677,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/custom-fintech-software-developments.jpg"
-                          alt="fintech-software-developments"
+                          src="/images/custom-fintech-software-developments.webp"
+                          alt="Custom fintech software development"
                         />
                       </div>
                     </div>
@@ -694,8 +692,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/banking-app-development.jpg"
-                          alt="Banking Apps"
+                          src="/images/banking-app-development.webp"
+                          alt="Banking App Development"
                         />
                       </div>
                     </div>
@@ -710,9 +708,9 @@ const Fintech = () => {
                           decoding="async"
                           loading="lazy"
                           src={
-                            "https://a.storyblok.com/f/219851/693x771/b3c39a5900/2-12.png"
+                            "https://a.storyblok.com/f/219851/693x771/11cc51501f/insurance-app.webp"
                           }
-                          alt="Insurance app development"
+                          alt="Insurance App Development"
                         />
                       </div>
                     </div>
@@ -727,7 +725,7 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/wallet-app-development.jpg"
+                          src="/images/wallet-app-development.webp"
                           alt="Wallet App Development"
                         />
                       </div>
@@ -743,10 +741,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src={
-                            "https://a.storyblok.com/f/219851/693x771/6f75c05158/fintech-software-security-compliance.jpg"
-                          }
-                          alt="Fintech-Software-Security-Compliance"
+                          src="https://a.storyblok.com/f/219851/693x771/d32e55e62e/fintech-software-security-compliance.webp"
+                          alt="Fintech Software Security"
                         />
                       </div>
                     </div>
@@ -761,8 +757,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/FinOps-Services-1.jpg"
-                          alt="FinOps Services Apps"
+                          src="https://a.storyblok.com/f/219851/693x771/dc9f2c8c32/finops-services-1.webp"
+                          alt="FinOps Services"
                         />
                       </div>
                     </div>
@@ -799,12 +795,12 @@ const Fintech = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
+              <h2 className="!w-full p-0">
                 INDUSTRY-SPECIFIC
                 <br />
                 FINTECH SOFTWARE DEVELOPMENT
-              </p>
+              </h2>
             </div>
           </div>
           <div className="mx-auto pt-[32px]">
@@ -823,9 +819,9 @@ const Fintech = () => {
                           decoding="async"
                           loading="lazy"
                           src={
-                            "https://a.storyblok.com/f/219851/693x771/c05c991634/2-13.png"
+                            "https://a.storyblok.com/f/219851/693x771/6b6231f495/wealth-mgmt.webp"
                           }
-                          alt="fintech-software-developments"
+                          alt="Wealth Management"
                         />
                       </div>
                     </div>
@@ -840,8 +836,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/Lending.jpg"
-                          alt="Banking Apps"
+                          src="/images/Lending.webp"
+                          alt="Lending"
                         />
                       </div>
                     </div>
@@ -856,8 +852,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/consumer-banking.jpg"
-                          alt="consumer-banking"
+                          src="/images/consumer-banking.webp"
+                          alt="Consumer Banking"
                         />
                       </div>
                     </div>
@@ -872,7 +868,7 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/Personal-Finance.jpg"
+                          src="/images/Personal-Finance.webp"
                           alt="Personal Finance"
                         />
                       </div>
@@ -888,8 +884,8 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/payment.jpg"
-                          alt="payment"
+                          src="/images/payment.webp"
+                          alt="Payment"
                         />
                       </div>
                     </div>
@@ -904,7 +900,7 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/insurance.jpg"
+                          src="/images/insurance.webp"
                           alt="Insurance"
                         />
                       </div>
@@ -936,7 +932,7 @@ const Fintech = () => {
                         aria-controls="accordion-seven"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingSeven">
+                        <div className="accordion-header" id="headingSeven">
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -948,9 +944,9 @@ const Fintech = () => {
                             {isAccordionActive2 == 1 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Wealth Management
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -973,14 +969,14 @@ const Fintech = () => {
                                       alt="OTT Streaming Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Wealth Management
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseSeven"
                           className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1017,7 +1013,7 @@ const Fintech = () => {
                         aria-controls="accordion-eight"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingEight">
+                        <div className="accordion-header" id="headingEight">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1029,7 +1025,7 @@ const Fintech = () => {
                             {isAccordionActive2 == 2 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">Lending</div>
+                                  <h3 className="text-[24px]">Lending</h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1052,14 +1048,12 @@ const Fintech = () => {
                                       alt="Lending"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
-                                    Lending
-                                  </div>
+                                  <h3 className="text-[24px] ml-5">Lending</h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseEight"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1097,7 +1091,7 @@ const Fintech = () => {
                         aria-controls="accordion-nine"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingNine">
+                        <div className="accordion-header" id="headingNine">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1109,9 +1103,9 @@ const Fintech = () => {
                             {isAccordionActive2 == 3 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Consumer Banking
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1134,14 +1128,14 @@ const Fintech = () => {
                                       alt="Consumer Banking"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Consumer Banking
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseNine"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1179,7 +1173,7 @@ const Fintech = () => {
                         aria-controls="accordion-ten"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTen">
+                        <div className="accordion-header" id="headingTen">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1191,9 +1185,9 @@ const Fintech = () => {
                             {isAccordionActive2 == 4 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Personal Finance
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1216,14 +1210,14 @@ const Fintech = () => {
                                       alt="Personal Finance"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Personal Finance
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTen"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1261,7 +1255,7 @@ const Fintech = () => {
                         aria-controls="accordion-eleven"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingEleven">
+                        <div className="accordion-header" id="headingEleven">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1273,7 +1267,7 @@ const Fintech = () => {
                             {isAccordionActive2 == 5 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">Payment</div>
+                                  <h3 className="text-[24px]">Payment</h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1296,14 +1290,12 @@ const Fintech = () => {
                                       alt="Payment"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
-                                    Payment
-                                  </div>
+                                  <h3 className="text-[24px] ml-5">Payment</h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseEleven"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1340,7 +1332,7 @@ const Fintech = () => {
                         aria-controls="accordion-tweleve"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTwelve">
+                        <div className="accordion-header" id="headingTwelve">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1352,7 +1344,7 @@ const Fintech = () => {
                             {isAccordionActive2 == 6 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">Insurance</div>
+                                  <h3 className="text-[24px]">Insurance</h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1375,14 +1367,14 @@ const Fintech = () => {
                                       alt="Wealth Management"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Insurance
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTwelve"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1434,12 +1426,12 @@ const Fintech = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions">
+              <h2 className="!w-full p-0">
                 HOW OUR INNOVATIVE PRODUCTS HELP
                 <br />
                 FINTECH SOLUTION COMPANIES
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -1458,7 +1450,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>Fraud Detection Software</p>
+                    <h3>Fraud Detection Software</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1484,7 +1476,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>Financial Reporting Software</p>
+                    <h3>Financial Reporting Software</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1511,7 +1503,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Financial Risk Management</p>
+                    <h3>Financial Risk Management</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1538,7 +1530,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>Financial CRM software</p>
+                    <h3>Financial CRM software</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1565,7 +1557,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>Background Check Software</p>
+                    <h3>Background Check Software</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1592,7 +1584,7 @@ const Fintech = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>Sales Forecasting Software</p>
+                    <h3>Sales Forecasting Software</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -1635,8 +1627,8 @@ const Fintech = () => {
             <div className="portfolio_health_sec1 w-full">
               <div className="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
                 <div className="health_sec1_flex_40 order_2">
-                  <div className=" portfolio_title">
-                    <p>OUR PORTFOLIO</p>
+                  <div className="solutions">
+                    <h2>OUR PORTFOLIO</h2>
                   </div>
                   <br />
                   <div className="fintech-portfolio-sec">
@@ -1652,7 +1644,7 @@ const Fintech = () => {
                     </p>
                   </div>
                   <div className="sp-8 w-fit py-[2rem]">
-                    <Link href="/portfolio/">
+                    <Link href="/portfolio/" target="_blank" rel="noopener noreferrer">
                       <div className="btn_flex">
                         <div className="arrow_icon">
                           <Image
@@ -1675,7 +1667,7 @@ const Fintech = () => {
                     <Image
                       className="alignnone"
                       src="/images/reliant-img.png"
-                      alt="Reliant"
+                      alt="Reliant Business Valuations Software Development"
                       width="815"
                       height="523"
                     />
@@ -1689,10 +1681,10 @@ const Fintech = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
-                    <p className="!w-full md:p-0 p-3">
+                  <div className="endTO_text home_sec2_txt3 solutions mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
+                    <h2 className="!w-full md:p-0 p-3">
                       WHY SHOULD YOU CHOOSE US FOR FINTECH SOFTWARE DEVELOPMENT?
-                    </p>
+                    </h2>
                   </div>
                 </div>
 

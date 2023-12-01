@@ -1,16 +1,21 @@
 "use client";
 import Link from "next/link";
 import { scrollToSection } from "../lib/commonfunction";
+import { usePathname } from "next/navigation";
 
 const SolutionEngagementModal = () => {
+  const pathname = usePathname();
   return (
     <section>
       <div className="xl:mt-[76px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
         <div className="service_width mx-auto md:px-[0px] px-[15px] py-8 workpadd_borderTop">
-          <div className="service_sec3 md:text-center text-left">
-            <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-              OUR ENGAGEMENT MODELS
-            </p>
+          <div className="service_sec3 md:text-center text-left solutions">
+            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-8">
+              {pathname ===
+              "/industry/media-entertainment-software-development/"
+                ? "EXPLORE OUR ENGAGEMENT MODELS"
+                : "OUR ENGAGEMENT MODELS"}
+            </h2>
           </div>
 
           <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models reveal">
@@ -28,7 +33,7 @@ const SolutionEngagementModal = () => {
                 <div className="no_flex">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Dedicated Development Team</p>
+                      <h3>Dedicated Development Team</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
@@ -57,7 +62,7 @@ const SolutionEngagementModal = () => {
                 <div className="no_flex">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Team Extension</p>
+                      <h3>Team Extension</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
@@ -85,7 +90,7 @@ const SolutionEngagementModal = () => {
                 <div className="no_flex">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Project-Based Model</p>
+                      <h3>Project-Based Model</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>

@@ -64,10 +64,10 @@ const FleetManagementNGPS = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head uppercase xl:text-[70px] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      FLEET MANAGEMENT
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      FLEET MANAGEMENT SOFTWARE
                       <br />
-                      SOFTWARE DEVELOPMENT
+                      DEVELOPMENT COMPANY
                     </h1>
                   </div>
                 </div>
@@ -120,12 +120,12 @@ const FleetManagementNGPS = () => {
 
         <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end ">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3 lg:!mb-[3rem] !mb-0">
-              <p className="!w-full p-0">
+            <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
+              <h2 className="!w-full p-0">
                 INCREASE YOUR FLEET’S EFFICIENCY WITH OUR
                 <br />
                 FLEET MANAGEMENT SOFTWARE SOLUTIONS
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -157,7 +157,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-one"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingOne">
+                        <div className="accordion-header" id="headingOne">
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -169,9 +169,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 1 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Fleet Telematics Solutions
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -194,14 +194,14 @@ const FleetManagementNGPS = () => {
                                       alt="Fleet Telematics Solutions"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Fleet Telematics Solutions
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseOne"
                           className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -240,7 +240,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-two"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTwo">
+                        <div className="accordion-header" id="headingTwo">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -252,9 +252,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 2 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     GPS Fleet Tracking
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -277,14 +277,14 @@ const FleetManagementNGPS = () => {
                                       alt="GPS Fleet Tracking"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     GPS Fleet Tracking
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTwo"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -325,7 +325,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-three"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingThree">
+                        <div className="accordion-header" id="headingThree">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -337,9 +337,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 3 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Fuel Consumption Control Apps
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -362,14 +362,14 @@ const FleetManagementNGPS = () => {
                                       alt="Fuel Consumption Control Apps"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Fuel Consumption Control Apps
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseThree"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -409,7 +409,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-four"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFour">
+                        <div className="accordion-header" id="headingFour">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -421,9 +421,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 4 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Fleet Management Integration
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -446,14 +446,14 @@ const FleetManagementNGPS = () => {
                                       alt="Fleet Management Integration"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Fleet Management Integration
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFour"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -493,7 +493,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-five"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingFive">
+                        <div className="accordion-header" id="headingFive">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -505,9 +505,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 5 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Driver Management & Safety
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -530,14 +530,14 @@ const FleetManagementNGPS = () => {
                                       alt="Driver Management Safety"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Driver Management & Safety
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseFive"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -576,7 +576,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-six"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingSix">
+                        <div className="accordion-header" id="headingSix">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -588,9 +588,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive == 6 && isAccordionOpen ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Fleet Maintenance & Predictions
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -613,14 +613,14 @@ const FleetManagementNGPS = () => {
                                       alt="Fleet Maintenance Predictions"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Fleet Maintenance & Predictions
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseSix"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -771,12 +771,12 @@ const FleetManagementNGPS = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
-                OTHER CUSTOM FLEET MANAGEMENT SOFTWARE
+            <div className="endTO_text home_sec2_txt3 solutions">
+              <h2 className="!w-full p-0">
+                CUSTOM FLEET MANAGEMENT SOFTWARE
                 <br />
-                DEVELOPMENT SERVICES WE OFFER
-              </p>
+                SERVICES
+              </h2>
             </div>
           </div>
           <div className="mx-auto pt-[32px] reveal">
@@ -872,7 +872,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-seven"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingSeven">
+                        <div className="accordion-header" id="headingSeven">
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -884,9 +884,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive2 == 1 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Traffic Management Software
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -909,14 +909,14 @@ const FleetManagementNGPS = () => {
                                       alt="Traffic-Management-Software"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Traffic Management Software
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseSeven"
                           className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -954,7 +954,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-eight"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingEight">
+                        <div className="accordion-header" id="headingEight">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -966,9 +966,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive2 == 2 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Delivery Management Software
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -991,14 +991,14 @@ const FleetManagementNGPS = () => {
                                       alt="Delivery-Management-Software"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Delivery Management Software
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseEight"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1035,7 +1035,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-nine"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingNine">
+                        <div className="accordion-header" id="headingNine">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1047,9 +1047,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive2 == 3 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Transportation Software
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1072,14 +1072,14 @@ const FleetManagementNGPS = () => {
                                       alt="Transportation-Software"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Transportation Software
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseNine"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1118,7 +1118,7 @@ const FleetManagementNGPS = () => {
                         aria-controls="accordion-ten"
                         aria-selected="false"
                       >
-                        <h2 className="accordion-header" id="headingTen">
+                        <div className="accordion-header" id="headingTen">
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -1130,9 +1130,9 @@ const FleetManagementNGPS = () => {
                             {isAccordionActive2 == 4 && isAccordionOpen2 ? (
                               <>
                                 <div className="flex justify-between w-full">
-                                  <div className="text-[24px]">
+                                  <h3 className="text-[24px]">
                                     Supply Chain Management Software
-                                  </div>
+                                  </h3>
 
                                   <div className="number_icon_img">
                                     <img
@@ -1155,14 +1155,14 @@ const FleetManagementNGPS = () => {
                                       alt="Supply-Chain-Management-Software"
                                     />
                                   </div>
-                                  <div className="text-[24px] ml-5">
+                                  <h3 className="text-[24px] ml-5">
                                     Supply Chain Management Software
-                                  </div>
+                                  </h3>
                                 </div>
                               </>
                             )}
                           </button>
-                        </h2>
+                        </div>
                         <div
                           id="collapseTen"
                           className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -1212,12 +1212,12 @@ const FleetManagementNGPS = () => {
 
           <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
             <div className="end-To-end">
-              <div className="endTO_text home_sec2_txt3">
-                <p className="!w-full p-0">
+              <div className="endTO_text home_sec2_txt3 solutions">
+                <h2 className="!w-full p-0">
                   THE BENEFITS OF HAVING FLEET
                   <br />
                   MANAGEMENT SOFTWARE
-                </p>
+                </h2>
               </div>
             </div>
 
@@ -1226,7 +1226,7 @@ const FleetManagementNGPS = () => {
                 decoding="async"
                 loading="lazy"
                 src={
-                  "https://a.storyblok.com/f/219851/1401x701/28098868b7/image-3-1.png"
+                  "https://a.storyblok.com/f/219851/1401x701/00f12955d1/benefit-fleet-mgmt.webp"
                 }
                 alt="MEDIA &amp; ENTERTAINMENT APPS"
               />
@@ -1315,12 +1315,12 @@ const FleetManagementNGPS = () => {
 
           <div className="mx-auto md:pt-[6rem] py-[4rem] end-to-end">
             <div className="end-To-end">
-              <div className="endTO_text home_sec2_txt3">
-                <p className="!w-full p-0">
-                  COUNT ON US TO BUILD A FEATURE-RICH
+              <div className="endTO_text home_sec2_txt3 solutions">
+                <h2 className="!w-full p-0">
+                  COUNT ON US TO BUILD FEATURE-RICH
                   <br />
                   FLEET TRACKING SYSTEM
-                </p>
+                </h2>
               </div>
             </div>
 
@@ -1473,12 +1473,12 @@ const FleetManagementNGPS = () => {
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
-                  <div className="endTO_text home_sec2_txt3 mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
-                    <p className="!w-full  md:p-0 p-3">
+                  <div className="endTO_text home_sec2_txt3 solutions mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
+                    <h2 className="!w-full md:p-0 p-3">
                       WHY CHOOSE US FOR FLEET {!isMobile && <br />}
                       MANAGEMENT SOFTWARE {!isMobile && <br />}
                       DEVELOPMENT?
-                    </p>
+                    </h2>
                   </div>
                 </div>
 
