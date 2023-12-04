@@ -212,6 +212,7 @@ const Article = ({ blok }) => {
                       src="/images/clock_icon.png"
                       width="50"
                       height="50"
+                      alt="Clock icon"
                     />
                   </span>
                   {blok?.reading_time_in_minutes} mins read
@@ -222,6 +223,7 @@ const Article = ({ blok }) => {
                       src="/images/calendar_icon.png"
                       width="100"
                       height="100"
+                      alt="Calendar icon"
                     />
                   </span>
                   Last updated {blok?.PublishedDate}

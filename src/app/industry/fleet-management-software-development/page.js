@@ -3,13 +3,13 @@ import Header from "@/app/components/Header/Header";
 import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
 
 export const metadata = {
-  title: "GPS & Fleet Management Software Development Services | Brilworks",
+  title: "Fleet Management Software Development Services",
   description:
-    "Brilworks is a fleet and GPS tracking system development company specializing in custom & feature-rich solutions to manage vehicles, drivers, traffic & supply chain.",
+    "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
   openGraph: {
-    title: "GPS & Fleet Management Software Development Services | Brilworks",
+    title: "Fleet Management Software Development Services",
     description:
-      "Brilworks is a fleet and GPS tracking system development company specializing in custom & feature-rich solutions to manage vehicles, drivers, traffic & supply chain.",
+      "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -21,12 +21,14 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Fleet Management Software Development Services",
+    description:
+      "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
   alternates: {
-    canonical:
-      `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
   },
 };
 

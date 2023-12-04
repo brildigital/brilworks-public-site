@@ -4,10 +4,10 @@ const SoutionHowCanStart = () => {
   return (
     <section className="solution_gradiant md:py-[4rem] py-[4rem]">
       <div className="sm:!w-[90%] mx-auto w-full px-[15px]">
-        <div className="service_sec3 md:text-center text-left">
-          <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] !pt-0">
+        <div className="service_sec3 solutions md:text-center text-left pb-8">
+          <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] !pt-0">
             HOW CAN YOU GET STARTED?
-          </p>
+          </h2>
         </div>
 
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[2rem] reveal">
@@ -21,7 +21,7 @@ const SoutionHowCanStart = () => {
             />
 
             <div className="contact-p">
-              <p className="">Contact Us</p>
+              <h3>Contact Us</h3>
             </div>
 
             <div className="service_description">
@@ -42,7 +42,7 @@ const SoutionHowCanStart = () => {
             />
 
             <div className="contact-p">
-              <p className="">Consultation</p>
+              <h3>Consultation</h3>
             </div>
 
             <div className="service_description">
@@ -63,7 +63,7 @@ const SoutionHowCanStart = () => {
             />
 
             <div className="contact-p">
-              <p className="">Get a Budget Estimate</p>
+              <h3>Get a Budget Estimate</h3>
             </div>
 
             <div className="service_description">
@@ -84,7 +84,7 @@ const SoutionHowCanStart = () => {
             />
 
             <div className="contact-p">
-              <p className="">Project Kickoff</p>
+              <h3>Project Kickoff</h3>
             </div>
 
             <div className="service_description">

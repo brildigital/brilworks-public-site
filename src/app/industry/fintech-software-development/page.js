@@ -3,11 +3,11 @@ import Header from "@/app/components/Header/Header";
 import Fintech from "@/app/components/Solution/Fintech";
 
 export const metadata = {
-  title: "Fintech Software Development | Financial Software Development",
+  title: "Fintech Software Development Services",
   description:
     "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
   openGraph: {
-    title: "Fintech Software Development | Financial Software Development",
+    title: "Fintech Software Development Services",
     description:
       "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
 
@@ -22,12 +22,14 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Fintech Software Development Services",
+    description:
+      "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
   alternates: {
-    canonical:
-      `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
   },
 };
 

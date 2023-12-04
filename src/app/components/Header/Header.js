@@ -168,6 +168,17 @@ const Header = () => {
                     </p>
                   </Link>
                 </div>
+                <div className="portfolio header_font hidden-xs project_pages_none-1 ">
+                  <Link href="/blog/">
+                    <p
+                      className={`!mb-0 ${
+                        pathname === "/blog/" ? "page-active" : ""
+                      }`}
+                    >
+                      BLOG
+                    </p>
+                  </Link>
+                </div>
                 <div
                   className={`solutions header_font hidden-xs project_pages_none ${
                     isSolutionMenuActive ? "active" : ""
