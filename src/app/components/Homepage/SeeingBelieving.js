@@ -65,7 +65,7 @@ const SeeingBelieving = () => {
 
                     <div className="portfolio-home">
                       <div className="portfolio-title">
-                        <h2>VUGO</h2>
+                        <h3>1. VUGO</h3>
                       </div>
                       <div className="portfolio-desc">
                         <p className="desc-height">
@@ -80,9 +80,9 @@ const SeeingBelieving = () => {
                   </Link>
                 </div>
                 <div className="md:!px-8 md:!text-left outer-portfolio-title">
-                  <p className="portfolio-title-new">
-                    <Link href="/portfolio/vugo/">VUGO</Link>
-                  </p>
+                  <Link href="/portfolio/vugo/">
+                    <h3 className="portfolio-title-new">1. VUGO</h3>
+                  </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide className="portfolio_slides_homepage">
@@ -100,7 +100,7 @@ const SeeingBelieving = () => {
 
                     <div className="portfolio-home">
                       <div className="portfolio-title">
-                        <h2>TRACKIMO</h2>
+                        <h3>2. TRACKIMO</h3>
                       </div>
                       <div className="portfolio-desc">
                         <p className="desc-height">
@@ -115,9 +115,9 @@ const SeeingBelieving = () => {
                   </Link>
                 </div>
                 <div className="md:!px-8 md:!text-left outer-portfolio-title">
-                  <p className="portfolio-title-new">
-                    <Link href="/portfolio/trackimo/">TRACKIMO</Link>
-                  </p>
+                  <Link href="/portfolio/trackimo/">
+                    <h3 className="portfolio-title-new">2. TRACKIMO</h3>
+                  </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide className="portfolio_slides_homepage">
@@ -133,7 +133,7 @@ const SeeingBelieving = () => {
 
                     <div className="portfolio-home">
                       <div className="portfolio-title">
-                        <h2>OROKII</h2>
+                        <h3>3. OROKII</h3>
                       </div>
                       <div className="portfolio-desc">
                         <p className="desc-height">
@@ -148,9 +148,9 @@ const SeeingBelieving = () => {
                   </Link>
                 </div>
                 <div className="md:!px-8 md:!text-left outer-portfolio-title">
-                  <p className="portfolio-title-new">
-                    <Link href="/portfolio/orokii/">OROKII</Link>
-                  </p>
+                  <Link href="/portfolio/orokii/">
+                    <h3 className="portfolio-title-new">3. OROKII</h3>
+                  </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide className="portfolio_slides_homepage">
@@ -166,7 +166,7 @@ const SeeingBelieving = () => {
 
                     <div className="portfolio-home">
                       <div className="portfolio-title">
-                        <h2>ECCOCAR</h2>
+                        <h3>4. ECCOCAR</h3>
                       </div>
                       <div className="portfolio-desc">
                         <p className="desc-height">
@@ -183,9 +183,9 @@ const SeeingBelieving = () => {
                   </Link>
                 </div>
                 <div className="md:!px-8 md:!text-left outer-portfolio-title">
-                  <p className="portfolio-title-new">
-                    <Link href="/portfolio/eccocar/">ECCOCAR</Link>
-                  </p>
+                  <Link href="/portfolio/eccocar/">
+                    <h3 className="portfolio-title-new"> 4. ECCOCAR</h3>
+                  </Link>
                 </div>
               </SwiperSlide>
               <SwiperSlide className="portfolio_slides_homepage">
@@ -200,7 +200,7 @@ const SeeingBelieving = () => {
                     />
                     <div className="portfolio-home">
                       <div className="portfolio-title">
-                        <h2>RASTRACK</h2>
+                        <h3>5. RASTRACK</h3>
                       </div>
                       <div className="portfolio-desc">
                         <p className="desc-height">
@@ -215,9 +215,9 @@ const SeeingBelieving = () => {
                   </Link>
                 </div>
                 <div className="md:!px-8 md:!text-left outer-portfolio-title">
-                  <p className="portfolio-title-new">
-                    <Link href="/portfolio/rastrack/">RASTRACK</Link>
-                  </p>
+                  <Link href="/portfolio/rastrack/">
+                    <h3 className="portfolio-title-new">5. RASTRACK</h3>
+                  </Link>
                 </div>
               </SwiperSlide>
             </>

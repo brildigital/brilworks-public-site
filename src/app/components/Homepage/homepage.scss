@@ -343,6 +343,15 @@
     }
   }
 }
+
+.big-text-stroke {
+  font-family: var(--regular);
+  color: var(--color_black);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--black_font);
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 768px) {
   .accordion-item {
     a:hover {

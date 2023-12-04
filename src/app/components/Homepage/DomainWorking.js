@@ -34,15 +34,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="/images/Fintech.jpg"
+                      src="/images/Fintech-275x300.webp"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcSet="
-                        /images/Fintech-275x300.jpg   275w,
-                        /images/Fintech-940x1024.jpg  940w,
-                        /images/Fintech-768x836.jpg   768w,
-                        /images/Fintech.jpg          1010w
+                        /images/Fintech-275x300.webp   275w,
+                        /images/Fintech-940x1024.webp  940w,
+                        /images/Fintech-768x836.webp   768w,
+                        /images/Fintech.webp         1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -59,15 +59,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="/images/healthcare-275x300.jpg"
+                      src="/images/healthcare-275x300.webp"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcSet="
-                        /images/healthcare-275x300.jpg   275w,
-                        /images/healthcare-940x1024.jpg  940w,
-                        /images/healthcare-768x836.jpg   768w,
-                        /images/healthcare.jpg          1010w
+                        /images/healthcare-275x300.webp   275w,
+                        /images/healthcare-940x1024.webp  940w,
+                        /images/healthcare-768x836.webp   768w,
+                        /images/healthcare.webp          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -84,15 +84,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="/images/New-Project-3-275x300.jpg"
+                      src="/images/media-entertainment-275x300.webp"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcSet="
-                        /images/New-Project-3-275x300.jpg   275w,
-                        /images/New-Project-3-940x1024.jpg  940w,
-                        /images/New-Project-3-768x836.jpg   768w,
-                        /images/New-Project-3.jpg          1010w
+                        /images/media-entertainment-275x300.webp   275w,
+                        /images/media-entertainment-940x1024.webp  940w,
+                        /images/media-entertainment-768x836.webp   768w,
+                        /images/media-entertainment.webp          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -110,15 +110,15 @@ const DomainWorking = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-32 size-full"
-                      src="/images/1-275x300.jpg"
+                      src="/images/Fleet-mgmt-275x300.webp"
                       alt="fintech app"
                       width="1010"
                       height="1100"
                       srcSet="
-                        /images/1-275x300.jpg   275w,
-                        /images/1-940x1024.jpg  940w,
-                        /images/1-768x836.jpg   768w,
-                        /images/1.jpg          1010w
+                        /images/Fleet-mgmt-275x300.webp   275w,
+                        /images/Fleet-mgmt-940x1024.webp  940w,
+                        /images/Fleet-mgmt-768x836.webp   768w,
+                        /images/Fleet-mgmt.webp          1010w
                       "
                       sizes="(max-width: 1010px) 100vw, 1010px"
                     />
@@ -141,7 +141,7 @@ const DomainWorking = () => {
                   aria-controls="accordion-one"
                   aria-selected="true"
                 >
-                  <h2 className="accordion-header" id="headingOne">
+                  <h3 className="accordion-header" id="headingOne">
                     <button
                       className="accordion-button"
                       type="button"
@@ -150,9 +150,9 @@ const DomainWorking = () => {
                       aria-expanded="true"
                       aria-controls="collapseOne"
                     >
-                      Fintech
+                      1. Fintech
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseOne"
                     className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -201,7 +201,7 @@ const DomainWorking = () => {
                   aria-controls="accordion-two"
                   aria-selected="false"
                 >
-                  <h2 className="accordion-header" id="headingTwo">
+                  <h3 className="accordion-header" id="headingTwo">
                     <button
                       className="accordion-button collapsed  "
                       type="button"
@@ -210,9 +210,9 @@ const DomainWorking = () => {
                       aria-expanded="false"
                       aria-controls="collapseTwo"
                     >
-                      Health Care
+                      2. Health Care
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseTwo"
                     className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -266,7 +266,7 @@ const DomainWorking = () => {
                   aria-controls="accordion-three"
                   aria-selected="false"
                 >
-                  <h2 className="accordion-header" id="headingThree">
+                  <h3 className="accordion-header" id="headingThree">
                     <button
                       className="accordion-button collapsed  "
                       type="button"
@@ -275,9 +275,9 @@ const DomainWorking = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Media & Entertainment
+                      3. Media & Entertainment
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseThree"
                     className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
@@ -324,7 +324,7 @@ const DomainWorking = () => {
                   aria-controls="accordion-four"
                   aria-selected="false"
                 >
-                  <h2 className="accordion-header" id="headingFour">
+                  <h3 className="accordion-header" id="headingFour">
                     <button
                       className="accordion-button collapsed  "
                       type="button"
@@ -333,9 +333,9 @@ const DomainWorking = () => {
                       aria-expanded="false"
                       aria-controls="collapseFour"
                     >
-                      Fleet Management + GPS
+                      4. Fleet Management + GPS
                     </button>
-                  </h2>
+                  </h3>
                   <div
                     id="collapseFour"
                     className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"

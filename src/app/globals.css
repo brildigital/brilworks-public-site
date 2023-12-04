@@ -739,7 +739,9 @@ a:hover {
 .font-light.f-light {
   font-family: var(--light) !important;
 }
-.sec6_title p {
+.sec6_title p,
+.sec6_title h2 {
+  font-size: var(--font_48);
   font-family: var(--regular);
   color: var(--color_black);
 }
@@ -1652,11 +1654,7 @@ textarea.form-control-txt {
 .service_sec3 .home_sec2_txt3 .extra_bold {
   font-family: var(--extra_bold);
 }
-.sec6_title p {
-  font-size: var(--font_48);
-  font-family: var(--regular);
-  color: var(--color_black);
-}
+
 .portfolio .head-title {
   font-size: var(--font_48);
   font-family: var(--extra_bold);
@@ -1671,7 +1669,6 @@ textarea.form-control-txt {
   font-family: var(--medium);
   color: var(--color_black);
 }
-
 
 .fintech-portfolio-sec {
   font-family: var(--regular);
@@ -1861,7 +1858,8 @@ textarea.form-control-txt {
   );
 }
 .home_sec2_txt1 p,
-.home_sec2_txt1 h1 {
+.home_sec2_txt1 h1,
+.home_sec2_txt1 h2 {
   font-size: var(--font_96);
   font-family: var(--regular);
   color: var(--color_black);
@@ -2289,6 +2287,7 @@ textarea.form-control-txt {
   .home_txt1 p,
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 5rem;
@@ -2356,6 +2355,7 @@ textarea.form-control-txt {
     font-size: 2.6rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 2.5rem;
   }
@@ -2377,6 +2377,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 {
     font-size: 4rem;
@@ -2440,6 +2441,7 @@ textarea.form-control-txt {
     font-size: 2.2rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 2rem;
   }
@@ -2539,6 +2541,7 @@ textarea.form-control-txt {
     height: 50vh;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.8rem;
   }
@@ -2605,6 +2608,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.5rem;
@@ -2719,6 +2723,7 @@ textarea.form-control-txt {
     padding-top: 6rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.7rem;
   }
@@ -2740,6 +2745,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.8rem;
@@ -2851,7 +2857,8 @@ textarea.form-control-txt {
   .sec3_width_home {
     padding-top: 4rem;
   }
-  .sec6_title p {
+  .sec6_title p,
+  .sec6_title h2 {
     font-size: 1.5rem;
   }
   .portfolio_sec1_txt1 p {
@@ -2868,6 +2875,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3rem;
@@ -3164,6 +3172,7 @@ textarea.form-control-txt {
     padding: 3rem 0 1rem;
   } */
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.6rem;
   }
@@ -3232,6 +3241,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 2.2rem;
