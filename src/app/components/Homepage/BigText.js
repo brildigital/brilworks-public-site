@@ -4,15 +4,11 @@ export const ActionNResultText = () => {
   return (
     <>
       <div className="home_sec2_txt1">
-        <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+        <h2>
           Brilliant in thought,
-        </p>
-      </div>
-
-      <div className="home_sec2_txt2">
-        <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-          Action &amp; Results!
-        </p>
+          <br />
+          <span className="big-text-stroke">Action and Results!</span>
+        </h2>
       </div>
     </>
   );
@@ -22,15 +18,11 @@ export const BestAdvocateText = () => {
   return (
     <div className="md:text-center mb-4 ml-4">
       <div className="home_sec2_txt1">
-        <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+        <h2>
           Our clients are the
-        </p>
-      </div>
-
-      <div className="home_sec2_txt2">
-        <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-          best advocates
-        </p>
+          <br />
+          <span className="big-text-stroke">best advocates</span>
+        </h2>
       </div>
     </div>
   );
@@ -41,15 +33,11 @@ export const TechTeamText = () => {
     <div className="container mx-auto px-[15px] md:pt-[128px] pt-[40px]">
       <div className="md:text-center">
         <div className="home_sec2_txt1">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+          <h2>
             A seamless extension
-          </p>
-        </div>
-
-        <div className="home_sec2_txt2">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            Of Your Tech Team.
-          </p>
+            <br />
+            <span className="big-text-stroke">Of Your Tech Team.</span>
+          </h2>
         </div>
       </div>
     </div>
@@ -61,15 +49,11 @@ export const BelievingText = () => {
     <div className="container mx-auto px-[15px] xl:pt-[128px] lg:pt-[80px] pt-[40px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
       <div className="md:text-center">
         <div className="home_sec2_txt1">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+          <h2>
             Because Seeing is
-          </p>
-        </div>
-
-        <div className="home_sec2_txt2">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            Believing.
-          </p>
+            <br />
+            <span className="big-text-stroke"> Believing.</span>
+          </h2>
         </div>
       </div>
     </div>
@@ -81,15 +65,11 @@ export const HonorText = () => {
     <div className="container mx-auto px-[15px] xl:pt-[128px] lg:pt-[80px] pt-[40px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
       <div className="md:text-center">
         <div className="home_sec2_txt1">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+          <h2>
             We’re pleased to share
-          </p>
-        </div>
-
-        <div className="home_sec2_txt2">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            some of the honors
-          </p>
+            <br />
+            <span className="big-text-stroke"> some of the honors</span>
+          </h2>
         </div>
       </div>
     </div>
@@ -101,15 +81,11 @@ export const BlogText = () => {
     <div className="container mx-auto px-[15px] xl:pt-[128px] lg:pt-[80px] pt-[40px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
       <div className="md:text-center">
         <div className="home_sec2_txt1">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+          <h2>
             Get Insights from the
-          </p>
-        </div>
-
-        <div className="home_sec2_txt2">
-          <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-            Brilworks blog.
-          </p>
+            <br />
+            <span className="big-text-stroke"> Brilworks blog.</span>
+          </h2>
         </div>
       </div>
     </div>

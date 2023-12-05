@@ -33,11 +33,31 @@ export const metadata = {
 };
 
 const page = () => {
+  const breadCrumbList = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.brilworks.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Media And Entertainment Software Development Company",
+      },
+    ],
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+      />
       <Header />
       <MediaAndEntertainment />
-
       <Footer />
     </>
   );

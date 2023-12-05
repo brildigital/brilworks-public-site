@@ -12,6 +12,8 @@ const FintechFAQs = () => {
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs"
           role="tablist"
+          itemscope="true"
+          itemtype="https://schema.org/FAQPage"
         >
           <div
             className="accordion-item"
@@ -21,8 +23,15 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fintech"
             aria-selected="true"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfintech">
+            <h2
+              className="accordion-header"
+              id="headingfintech"
+              itemprop="name"
+            >
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -40,8 +49,13 @@ const FintechFAQs = () => {
               aria-labelledby="headingfintech"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Fintech is short for financial technology. It is a term used
                   to describe the application, design, and development of new
                   financial technology products. Fintech helps not just in terms
@@ -59,8 +73,15 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fin-software"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfin-software">
+            <h2
+              className="accordion-header"
+              id="headingfin-software"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -78,8 +99,13 @@ const FintechFAQs = () => {
               aria-labelledby="headingfin-software"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Fintech software developers are the individuals responsible
                   for designing, building, and deploying fintech solutions using
                   various technology stacks. Our expert fintech software
@@ -99,8 +125,15 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fintech-software-my"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfintech-software-my">
+            <h2
+              className="accordion-header"
+              id="headingfintech-software-my"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -118,8 +151,13 @@ const FintechFAQs = () => {
               aria-labelledby="headingfintech-software-my"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   The time taken depends on the complexity of the project. Our
                   skilled team of developers will first create a comprehensive
                   roadmap for your app and tailor it towards your goals and
@@ -137,8 +175,15 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fin-software-solution"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfin-software-solution">
+            <h2
+              className="accordion-header"
+              id="headingfin-software-solution"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -157,8 +202,13 @@ const FintechFAQs = () => {
               aria-labelledby="headingfin-software-solution"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Fintech solutions provide the ability to make multi-banking
                   transactions and enhanced functionalities of banking apps. By
                   building such a system, you can automate business tasks and
