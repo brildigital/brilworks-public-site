@@ -1952,11 +1952,12 @@ textarea.form-control-txt {
   padding: 4rem 3rem 2rem;
   border-radius: 40px;
 }
-.about_sec4 .height_about p {
+.about_sec4 .height_about h3 {
   height: 220px;
   line-height: 1.1;
 }
-.sec4_about p {
+.sec4_about p,
+.sec4_about h3 {
   transition: all ease-in-out 0.5s;
   font-size: 3.75rem;
   font-family: var(--regular);
@@ -2277,7 +2278,7 @@ textarea.form-control-txt {
   font-family: var(--extra_bold);
   font-size: var(--font_48);
   color: var(--black_font);
-  line-height: var(--line_height_1);
+  line-height: var(--line_height_1_2);
 }
 
 @media only screen and (max-width: 1680px) {
@@ -2382,10 +2383,12 @@ textarea.form-control-txt {
   .sec7_box_style .home_sec2_txt2 {
     font-size: 4rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3.5rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3.5rem;
   }
   .sec9_txt1 p {
@@ -2473,10 +2476,12 @@ textarea.form-control-txt {
   .year p {
     width: 76%;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3rem;
   }
   .about_sec4_txt4 .sec10_txt1 p {
@@ -2554,16 +2559,18 @@ textarea.form-control-txt {
   .about_vision {
     padding: 7rem 4rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.75rem;
   }
-  .about_sec4 .height_about p {
+  .about_sec4 .height_about h3 {
     height: 140px;
   }
   .about_sec4 .sec6_career_img1 {
     width: 110px;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.75rem;
   }
   .about_sec4_txt4 .sec10_txt1 p {
@@ -2613,10 +2620,12 @@ textarea.form-control-txt {
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.5rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.1rem !important;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.1rem !important;
   }
   .about_sec4 .sec10_txt1 p {

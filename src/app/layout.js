@@ -13,6 +13,25 @@ export default function RootLayout({ children }) {
   if (!children) {
     return "";
   }
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Brilworks",
+    url: "https://www.brilworks.com",
+    logo: "https://www.brilworks.com/images/logo.png",
+    sameAs: [
+      "https://www.facebook.com/brilwork",
+      "https://www.linkedin.com/company/brilworks",
+      "https://www.instagram.com/brilworkssoftware",
+      "https://www.youtube.com/@brilworks",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: "<sales@brilworks.com>",
+    },
+  };
+
   return (
     <StoryblokProvider>
       <html lang="en">
@@ -51,6 +70,10 @@ export default function RootLayout({ children }) {
               ></Script>
             </>
           )}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+          />
         </head>
         <body suppressHydrationWarning={true}>
           {process.env.VERCEL_ENV === "production" && (

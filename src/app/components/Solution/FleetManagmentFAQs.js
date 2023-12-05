@@ -14,6 +14,8 @@ const FleetManagmentFAQs = () => {
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs reveal"
           role="tablist"
+          itemscope="true"
+          itemtype="https://schema.org/FAQPage"
         >
           <div
             className="accordion-item"
@@ -23,8 +25,15 @@ const FleetManagmentFAQs = () => {
             role="tab"
             aria-controls="accordion-fleet-one"
             aria-selected="true"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfleet-One">
+            <h2
+              className="accordion-header"
+              id="headingfleet-One"
+              itemprop="name"
+            >
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -42,8 +51,13 @@ const FleetManagmentFAQs = () => {
               aria-labelledby="headingfleet-One"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   The fleet management software is a dynamic platform for
                   managing your fleet and its components, including cars,
                   trucks, and vans. It can track vehicle movement, fuel
@@ -62,8 +76,15 @@ const FleetManagmentFAQs = () => {
             role="tab"
             aria-controls="accordion-fleet-two"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfleet-Two">
+            <h2
+              className="accordion-header"
+              id="headingfleet-Two"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -82,8 +103,13 @@ const FleetManagmentFAQs = () => {
               aria-labelledby="headingfleet-Two"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Yes, we do provide custom development services for fleet
                   management software solutions. We create solutions tailored to
                   the requirements of your organization.
@@ -100,8 +126,15 @@ const FleetManagmentFAQs = () => {
             role="tab"
             aria-controls="accordion-fleet-three"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfleet-Three">
+            <h2
+              className="accordion-header"
+              id="headingfleet-Three"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -120,8 +153,13 @@ const FleetManagmentFAQs = () => {
               aria-labelledby="headingfleet-Three"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Fleet management is the backbone of most companies. Fleet
                   management systems should have robust reporting, customizable
                   dashboards, and analytics to generate actionable insights, GPS
@@ -140,8 +178,15 @@ const FleetManagmentFAQs = () => {
             role="tab"
             aria-controls="accordion-fleet-four"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headingfleet-Four">
+            <h2
+              className="accordion-header"
+              id="headingfleet-Four"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -159,8 +204,13 @@ const FleetManagmentFAQs = () => {
               aria-labelledby="headingfleet-Four"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Fleet management helps to keep vehicles organized, in good
                   working order, and running as efficiently as possible.
                   Tracking the location of all vehicles in your fleet can help

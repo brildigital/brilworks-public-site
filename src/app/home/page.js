@@ -42,32 +42,24 @@ export const metadata = {
 };
 
 const page = () => {
-  const organization = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Brilworks",
-    url: "https://www.brilworks.com",
-    logo: "https://www.brilworks.com/images/logo.png",
-    sameAs: [
-      "https://www.facebook.com/brilwork",
-      "https://www.linkedin.com/company/brilworks",
-      "https://www.instagram.com/brilworkssoftware",
-      "https://www.youtube.com/@brilworks",
+  const breadCrumbList = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+      },
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: "<sales@brilworks.com>",
-    },
   };
+
   return (
     <>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
-        />
-      </head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+      />
       <Header />
       <GameChanger />
       <Brilliant />

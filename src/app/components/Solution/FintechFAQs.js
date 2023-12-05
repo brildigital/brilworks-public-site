@@ -12,7 +12,7 @@ const FintechFAQs = () => {
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs"
           role="tablist"
-          itemscope
+          itemscope="true"
           itemtype="https://schema.org/FAQPage"
         >
           <div
@@ -23,7 +23,7 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fintech"
             aria-selected="true"
-            itemscope
+            itemscope="true"
             itemprop="mainEntity"
             itemtype="https://schema.org/Question"
           >
@@ -51,7 +51,7 @@ const FintechFAQs = () => {
             >
               <div
                 className="accordion-body"
-                itemscope
+                itemscope="true"
                 itemprop="acceptedAnswer"
                 itemtype="https://schema.org/Answer"
               >
@@ -73,7 +73,7 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fin-software"
             aria-selected="false"
-            itemscope
+            itemscope="true"
             itemprop="mainEntity"
             itemtype="https://schema.org/Question"
           >
@@ -98,11 +98,13 @@ const FintechFAQs = () => {
               className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
               aria-labelledby="headingfin-software"
               data-bs-parent="#accordionExampleother"
-              itemscope
-              itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer"
             >
-              <div className="accordion-body">
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
                 <div itemprop="text">
                   Fintech software developers are the individuals responsible
                   for designing, building, and deploying fintech solutions using
@@ -123,7 +125,7 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fintech-software-my"
             aria-selected="false"
-            itemscope
+            itemscope="true"
             itemprop="mainEntity"
             itemtype="https://schema.org/Question"
           >
@@ -151,7 +153,7 @@ const FintechFAQs = () => {
             >
               <div
                 className="accordion-body"
-                itemscope
+                itemscope="true"
                 itemprop="acceptedAnswer"
                 itemtype="https://schema.org/Answer"
               >
@@ -173,7 +175,7 @@ const FintechFAQs = () => {
             role="tab"
             aria-controls="accordion-fin-software-solution"
             aria-selected="false"
-            itemscope
+            itemscope="true"
             itemprop="mainEntity"
             itemtype="https://schema.org/Question"
           >
@@ -202,7 +204,7 @@ const FintechFAQs = () => {
             >
               <div
                 className="accordion-body"
-                itemscope
+                itemscope="true"
                 itemprop="acceptedAnswer"
                 itemtype="https://schema.org/Answer"
               >

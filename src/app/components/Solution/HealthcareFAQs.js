@@ -12,6 +12,8 @@ const HealthcareFAQs = () => {
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs"
           role="tablist"
+          itemscope="true"
+          itemtype="https://schema.org/FAQPage"
         >
           <div
             className="accordion-item"
@@ -21,8 +23,15 @@ const HealthcareFAQs = () => {
             role="tab"
             aria-controls="accordion-healthcare-one"
             aria-selected="true"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headinghealthcare-One">
+            <h2
+              className="accordion-header"
+              id="headinghealthcare-One"
+              itemprop="name"
+            >
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -40,8 +49,13 @@ const HealthcareFAQs = () => {
               aria-labelledby="headinghealthcare-One"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Healthcare software development is the process of developing
                   mobile apps or web apps for both patients and medical
                   professionals. With our healthcare software development
@@ -61,8 +75,15 @@ const HealthcareFAQs = () => {
             role="tab"
             aria-controls="accordion-healthcare-two"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headinghealthcare-Two">
+            <h2
+              className="accordion-header"
+              id="headinghealthcare-Two"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -80,8 +101,13 @@ const HealthcareFAQs = () => {
               aria-labelledby="headinghealthcare-Two"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Yes, we do provide custom healthcare software development
                   services. We create solutions tailored to the requirements of
                   your healthcare organization.
@@ -98,8 +124,15 @@ const HealthcareFAQs = () => {
             role="tab"
             aria-controls="accordion-healthcare-three"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headinghealthcare-Three">
+            <h2
+              className="accordion-header"
+              id="headinghealthcare-Three"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -118,8 +151,13 @@ const HealthcareFAQs = () => {
               aria-labelledby="headinghealthcare-Three"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   When in the process of choosing a healthcare software
                   development service, you need to keep in mind your
                   requirements and expectations. You need to choose a company
@@ -141,8 +179,15 @@ const HealthcareFAQs = () => {
             role="tab"
             aria-controls="accordion-healthcare-four"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headinghealthcare-Four">
+            <h2
+              className="accordion-header"
+              id="headinghealthcare-Four"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -161,8 +206,13 @@ const HealthcareFAQs = () => {
               aria-labelledby="headinghealthcare-Four"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Yes, we do follow HIPAA standards. We take security seriously
                   and implement the highest levels of quality assurance.
                 </div>
@@ -178,8 +228,15 @@ const HealthcareFAQs = () => {
             role="tab"
             aria-controls="accordion-healthcare-five"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
-            <h2 className="accordion-header" id="headinghealthcare-Five">
+            <h2
+              className="accordion-header"
+              id="headinghealthcare-Five"
+              itemprop="name"
+            >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                 type="button"
@@ -197,8 +254,13 @@ const HealthcareFAQs = () => {
               aria-labelledby="headinghealthcare-Five"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Implementing mHealth apps in healthcare organizations enables
                   professionals to deliver care more efficiently, reducing costs
                   associated with transportation and hospital admission. They
