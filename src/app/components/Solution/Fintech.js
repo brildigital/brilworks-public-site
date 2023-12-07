@@ -852,7 +852,7 @@ const Fintech = () => {
                         <img
                           decoding="async"
                           loading="lazy"
-                          src="/images/consumer-banking.webp"
+                          src="/images/Consumer-banking.webp"
                           alt="Consumer Banking"
                         />
                       </div>
@@ -1644,7 +1644,11 @@ const Fintech = () => {
                     </p>
                   </div>
                   <div className="sp-8 w-fit py-[2rem]">
-                    <Link href="/portfolio/" target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href="/portfolio/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <div className="btn_flex">
                         <div className="arrow_icon">
                           <Image

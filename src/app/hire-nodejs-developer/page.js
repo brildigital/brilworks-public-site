@@ -1,13 +1,14 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 import NodejsTechnology from "../components/Technologies/NodejsTechnology";
+import { generateBreadcrumb } from "../components/lib/schemaCode";
 
 export const metadata = {
-  title: "Node JS Development Company | Hire Nodejs Developer",
+  title: "Hire NodeJS Developers",
   description:
     "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
   openGraph: {
-    title: "Node JS Development Company | Hire Nodejs Developer",
+    title: "Hire NodeJS Developers",
     description:
       "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-nodejs-developer/`,
@@ -21,6 +22,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Hire NodeJS Developers",
+    description:
+      "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -32,6 +36,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb("Hire NodeJS Developers"),
+        }}
+      />
       <Header />
       <NodejsTechnology />
 

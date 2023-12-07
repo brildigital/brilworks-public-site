@@ -1,15 +1,16 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 import UIUXTechnology from "../components/Technologies/UIUXTechnology";
+import { generateBreadcrumb } from "../components/lib/schemaCode";
 
 export const metadata = {
-  title: "UI UX Design Company | Hire Dedicated UI UX Designer",
+  title: "Hire UI UX Designers",
   description:
-    "Hire UI/UX designers from Brilworks for the stunning user experience & user interface designing services like Consulting, Strategy, Mockups, Wireframe and Prototyping.",
+    "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
   openGraph: {
-    title: "UI UX Design Company | Hire Dedicated UI UX Designer",
+    title: "Hire UI UX Designers",
     description:
-      "Hire UI/UX designers from Brilworks for the stunning user experience & user interface designing services like Consulting, Strategy, Mockups, Wireframe and Prototyping.",
+      "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -21,6 +22,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Hire UI UX Designers",
+    description:
+      "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -32,9 +36,14 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb("Hire UI UX Designers"),
+        }}
+      />
       <Header />
       <UIUXTechnology />
-
       <Footer />
     </>
   );

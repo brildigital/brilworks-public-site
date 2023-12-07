@@ -1,6 +1,7 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Media and Entertainment Software Development Service",
@@ -33,28 +34,15 @@ export const metadata = {
 };
 
 const page = () => {
-  const breadCrumbList = {
-    "@context": "https://schema.org/",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.brilworks.com/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Media And Entertainment Software Development Company",
-      },
-    ],
-  };
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb(
+            "Media And Entertainment Software Development Company"
+          ),
+        }}
       />
       <Header />
       <MediaAndEntertainment />

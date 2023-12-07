@@ -8,10 +8,10 @@ const BenefitOfHiringDevelopers = () => {
   return (
     <div className="mx-auto service_width md:py-[6rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
       <div className="end-To-end">
-        <div className="endTO_text home_sec2_txt3 m-0">
-          <p className="!w-full md:p-0">
+        <div className="endTO_text solutions m-0">
+          <h2 className="!w-full py-8">
             BENEFITS OF HIRING DEDICATED DEVELOPERS
-          </p>
+          </h2>
         </div>
       </div>
 

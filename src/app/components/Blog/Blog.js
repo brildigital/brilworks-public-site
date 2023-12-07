@@ -183,10 +183,9 @@ const Blog = () => {
                 <div class="w-full flex relative flex-wrap items-stretch">
                   <input
                     type="submit"
-                    className="w-auto right-[1rem] !left-[unset] top-[18%] btn btn-search btn-primary bor border-[1px]
-                     hover:border-[#00dfb8] focus:ring focus:outline-none focus:border-[#00dfb8] focus:!ring-[#00C4C8] active:border-[#00dfb8] 
-                     text-uppercase text-sm absolute bg-gradient-to-r from-[#00C4C8] to-[#00DDB9] font-medium border-[#00dfb8]"
-                    value="search"
+                    className="w-auto right-[1rem] !left-[unset] top-[15%] btn btn-search font-semibold text-base !text-white border
+                     hover:border-[#00dfb8] focus:ring focus:outline-none focus:border-[#00dfb8] focus:!ring-[#00C4C8] active:border-[#00dfb8] absolute bg-gradient-to-r from-[#00C4C8] to-[#00DDB9]"
+                    value="SEARCH"
                   />
                   <div class="form-outline w-full">
                     <input

@@ -30,10 +30,8 @@ const JavaTechnology = () => {
                 decoding="async"
                 loading="lazy"
                 className="h-[46vh] rounded-[20px]"
-                src={
-                  "https://a.storyblok.com/f/219851/1398x780/93d59fc963/java-services-banner.png"
-                }
-                alt="our process"
+                src="https://a.storyblok.com/f/219851/1398x780/853f3f930e/java-services-banner.webp"
+                alt="Java banner"
               />
             </p>
             <div className="service_sec1_position">
@@ -41,7 +39,8 @@ const JavaTechnology = () => {
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      <div className="flex items-center">
+                      HIRE
+                      <div className="flex items-center gap-1">
                         <Image
                           className="w-[auto]"
                           src="/images/1.png"
@@ -58,8 +57,7 @@ const JavaTechnology = () => {
                           height="94"
                         />
                       </div>
-                      DEVELOPMENT <br />
-                      COMPANY
+                      DEVELOPERS
                     </h1>
                   </div>
                 </div>
@@ -142,12 +140,12 @@ const JavaTechnology = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text solutions">
+              <h2 className="!w-full p-0">
                 ENHANCE YOUR APPLICATIONS WITH OUR
                 <br />
                 JAVA DEVELOPMENT SERVICES.
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -166,7 +164,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>Java Consulting</p>
+                    <h3>Java Consulting</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -192,7 +190,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>Java Web Development</p>
+                    <h3>Java Web Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -220,7 +218,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Java Software Development</p>
+                    <h3>Java Software Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -249,7 +247,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>Spring Core Development</p>
+                    <h3>Spring Core Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -275,7 +273,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>Java App Development</p>
+                    <h3>Java App Development</h3>
                   </div>
 
                   <div className="service_description">
@@ -304,7 +302,7 @@ const JavaTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>Java Full Stack Development</p>
+                    <h3>Java Full Stack Development</h3>
                   </div>
                   <div className="service_description">
                     <p>

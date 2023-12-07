@@ -7,10 +7,10 @@ const FAQsTechnology = () => {
 
   return (
     <div className="sec3_width_home faq-bottom mb-[5rem] pt-0">
-      <div className="service_sec3 md:text-center text-left">
-        <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+      <div className="solutions md:text-center text-left">
+        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] py-10">
           FAQs
-        </p>
+        </h2>
       </div>
 
       <div>
@@ -19,6 +19,8 @@ const FAQsTechnology = () => {
             id="accordionExampleother"
             className="d-block accordion nav nav-tabs reveal"
             role="tablist"
+            itemscope="true"
+            itemtype="https://schema.org/FAQPage"
           >
             <div
               className="accordion-item"
@@ -28,8 +30,11 @@ const FAQsTechnology = () => {
               role="tab"
               aria-controls="accordion-one"
               aria-selected="true"
+              itemscope="true"
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
             >
-              <h2 className="accordion-header" id="headingOne">
+              <h2 className="accordion-header" id="headingOne" itemprop="name">
                 <button
                   className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                   type="button"
@@ -48,8 +53,13 @@ const FAQsTechnology = () => {
                 aria-labelledby="headingOne"
                 data-bs-parent="#accordionExampleother"
               >
-                <div className="accordion-body">
-                  <div>
+                <div
+                  className="accordion-body"
+                  itemscope="true"
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <div itemprop="text">
                     The average experience of React.js developers hired through
                     us is of mid-senior level, which is 3+ years.
                   </div>
@@ -64,8 +74,11 @@ const FAQsTechnology = () => {
               role="tab"
               aria-controls="accordion-two"
               aria-selected="false"
+              itemscope="true"
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
             >
-              <h2 className="accordion-header" id="headingTwo">
+              <h2 className="accordion-header" id="headingTwo" itemprop="name">
                 <button
                   className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                   type="button"
@@ -83,8 +96,13 @@ const FAQsTechnology = () => {
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExampleother"
               >
-                <div className="accordion-body">
-                  <div>
+                <div
+                  className="accordion-body"
+                  itemscope="true"
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <div itemprop="text">
                     In as few as 2-5 business days, we can quickly and
                     efficiently assign a React js developer to your project.
                   </div>
@@ -100,8 +118,15 @@ const FAQsTechnology = () => {
               role="tab"
               aria-controls="accordion-three"
               aria-selected="false"
+              itemscope="true"
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
             >
-              <h2 className="accordion-header" id="headingThree">
+              <h2
+                className="accordion-header"
+                id="headingThree"
+                itemprop="name"
+              >
                 <button
                   className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                   type="button"
@@ -120,8 +145,13 @@ const FAQsTechnology = () => {
                 aria-labelledby="headingThree"
                 data-bs-parent="#accordionExampleother"
               >
-                <div className="accordion-body">
-                  <div>
+                <div
+                  className="accordion-body"
+                  itemscope="true"
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <div itemprop="text">
                     Hiring dedicated React js developers for your team is a good
                     idea if you want to ensure that tasks are completed on time
                     and with the highest degree of quality, have the option of
@@ -141,8 +171,11 @@ const FAQsTechnology = () => {
               role="tab"
               aria-controls="accordion-four"
               aria-selected="false"
+              itemscope="true"
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
             >
-              <h2 className="accordion-header" id="headingFour">
+              <h2 className="accordion-header" id="headingFour" itemprop="name">
                 <button
                   className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                   type="button"
@@ -161,8 +194,13 @@ const FAQsTechnology = () => {
                 aria-labelledby="headingFour"
                 data-bs-parent="#accordionExampleother"
               >
-                <div className="accordion-body">
-                  <div>
+                <div
+                  className="accordion-body"
+                  itemscope="true"
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <div itemprop="text">
                     Yes, we offer support and maintenance services to help you
                     keep your product running smoothly after it has been
                     deployed. This includes bug fixes, security maintenance,
@@ -180,6 +218,8 @@ const FAQsTechnology = () => {
                 id="accordionExampleother"
                 className="d-block accordion nav nav-tabs reveal"
                 role="tablist"
+                itemscope="true"
+                itemtype="https://schema.org/FAQPage"
               >
                 <div
                   className="accordion-item"
@@ -190,7 +230,11 @@ const FAQsTechnology = () => {
                   aria-controls="accordion-one"
                   aria-selected="true"
                 >
-                  <h2 className="accordion-header" id="headingOne">
+                  <h2
+                    className="accordion-header"
+                    id="headingOne"
+                    itemprop="name"
+                  >
                     <button
                       className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                       type="button"
@@ -208,8 +252,13 @@ const FAQsTechnology = () => {
                     aria-labelledby="headingOne"
                     data-bs-parent="#accordionExampleother"
                   >
-                    <div className="accordion-body">
-                      <div>
+                    <div
+                      className="accordion-body"
+                      itemscope="true"
+                      itemprop="acceptedAnswer"
+                      itemtype="https://schema.org/Answer"
+                    >
+                      <div itemprop="text">
                         You can hire Java backend developers from Brilworks to
                         easily extend your web development team. We match up
                         great talent with your requirements, then help you find
@@ -228,8 +277,15 @@ const FAQsTechnology = () => {
                   role="tab"
                   aria-controls="accordion-two"
                   aria-selected="false"
+                  itemscope="true"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
                 >
-                  <h2 className="accordion-header" id="headingTwo">
+                  <h2
+                    className="accordion-header"
+                    id="headingTwo"
+                    itemprop="name"
+                  >
                     <button
                       className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                       type="button"
@@ -248,8 +304,13 @@ const FAQsTechnology = () => {
                     aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExampleother"
                   >
-                    <div className="accordion-body">
-                      <div>
+                    <div
+                      className="accordion-body"
+                      itemscope="true"
+                      itemprop="acceptedAnswer"
+                      itemtype="https://schema.org/Answer"
+                    >
+                      <div itemprop="text">
                         In as few as 2-5 business days, we can quickly and
                         efficiently assign a Java developer to your project.
                       </div>
@@ -265,8 +326,15 @@ const FAQsTechnology = () => {
                   role="tab"
                   aria-controls="accordion-three"
                   aria-selected="false"
+                  itemscope="true"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
                 >
-                  <h2 className="accordion-header" id="headingThree">
+                  <h2
+                    className="accordion-header"
+                    id="headingThree"
+                    itemprop="name"
+                  >
                     <button
                       className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                       type="button"
@@ -284,8 +352,13 @@ const FAQsTechnology = () => {
                     aria-labelledby="headingThree"
                     data-bs-parent="#accordionExampleother"
                   >
-                    <div className="accordion-body">
-                      <div>
+                    <div
+                      className="accordion-body"
+                      itemscope="true"
+                      itemprop="acceptedAnswer"
+                      itemtype="https://schema.org/Answer"
+                    >
+                      <div itemprop="text">
                         You should be looking for a Java developer who has the
                         skills to work on any project, has a passion for coding,
                         and enjoys learning new technologies. A strong candidate
@@ -304,8 +377,15 @@ const FAQsTechnology = () => {
                   role="tab"
                   aria-controls="accordion-four"
                   aria-selected="false"
+                  itemscope="true"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
                 >
-                  <h2 className="accordion-header" id="headingFour">
+                  <h2
+                    className="accordion-header"
+                    id="headingFour"
+                    itemprop="name"
+                  >
                     <button
                       className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                       type="button"
@@ -324,8 +404,13 @@ const FAQsTechnology = () => {
                     aria-labelledby="headingFour"
                     data-bs-parent="#accordionExampleother"
                   >
-                    <div className="accordion-body">
-                      <div>
+                    <div
+                      className="accordion-body"
+                      itemscope="true"
+                      itemprop="acceptedAnswer"
+                      itemtype="https://schema.org/Answer"
+                    >
+                      <div itemprop="text">
                         Our comprehensive vetting process means that there is no
                         need to worry about missing out on a great candidate.
                         Additionally, we are always looking to make sure that
@@ -345,6 +430,8 @@ const FAQsTechnology = () => {
                       id="accordionExampleother"
                       className="d-block accordion nav nav-tabs reveal"
                       role="tablist"
+                      itemscope="true"
+                      itemtype="https://schema.org/FAQPage"
                     >
                       <div
                         className="accordion-item"
@@ -355,7 +442,11 @@ const FAQsTechnology = () => {
                         aria-controls="accordion-one"
                         aria-selected="true"
                       >
-                        <h2 className="accordion-header" id="headingOne">
+                        <h2
+                          className="accordion-header"
+                          id="headingOne"
+                          itemprop="name"
+                        >
                           <button
                             className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -373,8 +464,13 @@ const FAQsTechnology = () => {
                           aria-labelledby="headingOne"
                           data-bs-parent="#accordionExampleother"
                         >
-                          <div className="accordion-body">
-                            <div>
+                          <div
+                            className="accordion-body"
+                            itemscope="true"
+                            itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer"
+                          >
+                            <div itemprop="text">
                               We thoroughly evaluate Node.js developers’ logical
                               reasoning abilities, communication skills, and
                               their ability to write well-documented and clean
@@ -391,8 +487,15 @@ const FAQsTechnology = () => {
                         role="tab"
                         aria-controls="accordion-two"
                         aria-selected="false"
+                        itemscope="true"
+                        itemprop="mainEntity"
+                        itemtype="https://schema.org/Question"
                       >
-                        <h2 className="accordion-header" id="headingTwo">
+                        <h2
+                          className="accordion-header"
+                          id="headingTwo"
+                          itemprop="name"
+                        >
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -411,8 +514,13 @@ const FAQsTechnology = () => {
                           aria-labelledby="headingTwo"
                           data-bs-parent="#accordionExampleother"
                         >
-                          <div className="accordion-body">
-                            <div>
+                          <div
+                            className="accordion-body"
+                            itemscope="true"
+                            itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer"
+                          >
+                            <div itemprop="text">
                               Hiring a NodeJS developer from us will cost you
                               approximately $2500 a month, depending on the
                               skillset and experience of the candidate.
@@ -429,8 +537,15 @@ const FAQsTechnology = () => {
                         role="tab"
                         aria-controls="accordion-three"
                         aria-selected="false"
+                        itemscope="true"
+                        itemprop="mainEntity"
+                        itemtype="https://schema.org/Question"
                       >
-                        <h2 className="accordion-header" id="headingThree">
+                        <h2
+                          className="accordion-header"
+                          id="headingThree"
+                          itemprop="name"
+                        >
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -449,8 +564,13 @@ const FAQsTechnology = () => {
                           aria-labelledby="headingThree"
                           data-bs-parent="#accordionExampleother"
                         >
-                          <div className="accordion-body">
-                            <div>
+                          <div
+                            className="accordion-body"
+                            itemscope="true"
+                            itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer"
+                          >
+                            <div itemprop="text">
                               Yes, we offer a 48-hour no-risk trial period, so
                               you can test the resource before making a
                               decision.
@@ -467,8 +587,15 @@ const FAQsTechnology = () => {
                         role="tab"
                         aria-controls="accordion-four"
                         aria-selected="false"
+                        itemscope="true"
+                        itemprop="mainEntity"
+                        itemtype="https://schema.org/Question"
                       >
-                        <h2 className="accordion-header" id="headingFour">
+                        <h2
+                          className="accordion-header"
+                          id="headingFour"
+                          itemprop="name"
+                        >
                           <button
                             className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                             type="button"
@@ -487,8 +614,13 @@ const FAQsTechnology = () => {
                           aria-labelledby="headingFour"
                           data-bs-parent="#accordionExampleother"
                         >
-                          <div className="accordion-body">
-                            <div>
+                          <div
+                            className="accordion-body"
+                            itemscope="true"
+                            itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer"
+                          >
+                            <div itemprop="text">
                               The Nodejs developer must have a definite
                               knowledge of both relational databases like MySQL,
                               MariaDB, and No SQL databases like MongoDB, and
@@ -507,6 +639,8 @@ const FAQsTechnology = () => {
                           id="accordionExampleother"
                           className="d-block accordion nav nav-tabs reveal"
                           role="tablist"
+                          itemscope="true"
+                          itemtype="https://schema.org/FAQPage"
                         >
                           <div
                             className="accordion-item"
@@ -517,7 +651,11 @@ const FAQsTechnology = () => {
                             aria-controls="accordion-one"
                             aria-selected="true"
                           >
-                            <h2 className="accordion-header" id="headingOne">
+                            <h2
+                              className="accordion-header"
+                              id="headingOne"
+                              itemprop="name"
+                            >
                               <button
                                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
                                 type="button"
@@ -536,8 +674,13 @@ const FAQsTechnology = () => {
                               aria-labelledby="headingOne"
                               data-bs-parent="#accordionExampleother"
                             >
-                              <div className="accordion-body">
-                                <div>
+                              <div
+                                className="accordion-body"
+                                itemscope="true"
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                              >
+                                <div itemprop="text">
                                   A React Native developer is responsible for
                                   building native applications for Android, iOS,
                                   and macOS. They have the ability to create UI
@@ -556,8 +699,15 @@ const FAQsTechnology = () => {
                             role="tab"
                             aria-controls="accordion-two"
                             aria-selected="false"
+                            itemscope="true"
+                            itemprop="mainEntity"
+                            itemtype="https://schema.org/Question"
                           >
-                            <h2 className="accordion-header" id="headingTwo">
+                            <h2
+                              className="accordion-header"
+                              id="headingTwo"
+                              itemprop="name"
+                            >
                               <button
                                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                                 type="button"
@@ -576,8 +726,13 @@ const FAQsTechnology = () => {
                               aria-labelledby="headingTwo"
                               data-bs-parent="#accordionExampleother"
                             >
-                              <div className="accordion-body">
-                                <div>
+                              <div
+                                className="accordion-body"
+                                itemscope="true"
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                              >
+                                <div itemprop="text">
                                   It is safe to say that React Native gives you
                                   the best of both worlds. Convenient and
                                   cross-platform, it will enable you to build
@@ -596,8 +751,15 @@ const FAQsTechnology = () => {
                             role="tab"
                             aria-controls="accordion-three"
                             aria-selected="false"
+                            itemscope="true"
+                            itemprop="mainEntity"
+                            itemtype="https://schema.org/Question"
                           >
-                            <h2 className="accordion-header" id="headingThree">
+                            <h2
+                              className="accordion-header"
+                              id="headingThree"
+                              itemprop="name"
+                            >
                               <button
                                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                                 type="button"
@@ -615,8 +777,13 @@ const FAQsTechnology = () => {
                               aria-labelledby="headingThree"
                               data-bs-parent="#accordionExampleother"
                             >
-                              <div className="accordion-body">
-                                <div>
+                              <div
+                                className="accordion-body"
+                                itemscope="true"
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                              >
+                                <div itemprop="text">
                                   An easy and convenient way to hire a React
                                   Native Developer from Brilworks is by sharing
                                   your requirements. Once you fill out the
@@ -637,8 +804,15 @@ const FAQsTechnology = () => {
                             role="tab"
                             aria-controls="accordion-four"
                             aria-selected="false"
+                            itemscope="true"
+                            itemprop="mainEntity"
+                            itemtype="https://schema.org/Question"
                           >
-                            <h2 className="accordion-header" id="headingFour">
+                            <h2
+                              className="accordion-header"
+                              id="headingFour"
+                              itemprop="name"
+                            >
                               <button
                                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                                 type="button"
@@ -657,8 +831,13 @@ const FAQsTechnology = () => {
                               aria-labelledby="headingFour"
                               data-bs-parent="#accordionExampleother"
                             >
-                              <div className="accordion-body">
-                                <div>
+                              <div
+                                className="accordion-body"
+                                itemscope="true"
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                              >
+                                <div itemprop="text">
                                   You will have 100% ownership of the project
                                   and all its resource including NDA, copyright,
                                   source code, intellectual property rights, and
@@ -676,8 +855,15 @@ const FAQsTechnology = () => {
                             role="tab"
                             aria-controls="accordion-five"
                             aria-selected="false"
+                            itemscope="true"
+                            itemprop="mainEntity"
+                            itemtype="https://schema.org/Question"
                           >
-                            <h2 className="accordion-header" id="headingFive">
+                            <h2
+                              className="accordion-header"
+                              id="headingFive"
+                              itemprop="name"
+                            >
                               <button
                                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
                                 type="button"
@@ -696,8 +882,13 @@ const FAQsTechnology = () => {
                               aria-labelledby="headingFive"
                               data-bs-parent="#accordionExampleother"
                             >
-                              <div className="accordion-body">
-                                <div>
+                              <div
+                                className="accordion-body"
+                                itemscope="true"
+                                itemprop="acceptedAnswer"
+                                itemtype="https://schema.org/Answer"
+                              >
+                                <div itemprop="text">
                                   We understand that every project requires
                                   different skills, and we are always looking
                                   for ways to bring you the best developers to
@@ -718,6 +909,8 @@ const FAQsTechnology = () => {
                               id="accordionExampleother"
                               className="d-block accordion nav nav-tabs reveal"
                               role="tablist"
+                              itemscope="true"
+                              itemtype="https://schema.org/FAQPage"
                             >
                               <div
                                 className="accordion-item"
@@ -727,10 +920,14 @@ const FAQsTechnology = () => {
                                 role="tab"
                                 aria-controls="accordion-one"
                                 aria-selected="true"
+                                itemscope="true"
+                                itemprop="mainEntity"
+                                itemtype="https://schema.org/Question"
                               >
                                 <h2
                                   className="accordion-header"
                                   id="headingOne"
+                                  itemprop="name"
                                 >
                                   <button
                                     className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
@@ -750,8 +947,13 @@ const FAQsTechnology = () => {
                                   aria-labelledby="headingOne"
                                   data-bs-parent="#accordionExampleother"
                                 >
-                                  <div className="accordion-body">
-                                    <div>
+                                  <div
+                                    className="accordion-body"
+                                    itemscope="true"
+                                    itemprop="acceptedAnswer"
+                                    itemtype="https://schema.org/Answer"
+                                  >
+                                    <div itemprop="text">
                                       You can hire AWS developers from Brilworks
                                       to easily extend your web development
                                       team. We match up great talent with your
@@ -771,10 +973,14 @@ const FAQsTechnology = () => {
                                 role="tab"
                                 aria-controls="accordion-two"
                                 aria-selected="false"
+                                itemscope="true"
+                                itemprop="mainEntity"
+                                itemtype="https://schema.org/Question"
                               >
                                 <h2
                                   className="accordion-header"
                                   id="headingTwo"
+                                  itemprop="name"
                                 >
                                   <button
                                     className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -794,8 +1000,13 @@ const FAQsTechnology = () => {
                                   aria-labelledby="headingTwo"
                                   data-bs-parent="#accordionExampleother"
                                 >
-                                  <div className="accordion-body">
-                                    <div>
+                                  <div
+                                    className="accordion-body"
+                                    itemscope="true"
+                                    itemprop="acceptedAnswer"
+                                    itemtype="https://schema.org/Answer"
+                                  >
+                                    <div itemprop="text">
                                       Yes, it’s completely free. We allow this
                                       free time period to evaluate whether we’re
                                       the right fit for your project. If you’re
@@ -816,10 +1027,14 @@ const FAQsTechnology = () => {
                                 role="tab"
                                 aria-controls="accordion-three"
                                 aria-selected="false"
+                                itemscope="true"
+                                itemprop="mainEntity"
+                                itemtype="https://schema.org/Question"
                               >
                                 <h2
                                   className="accordion-header"
                                   id="headingThree"
+                                  itemprop="name"
                                 >
                                   <button
                                     className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -839,8 +1054,13 @@ const FAQsTechnology = () => {
                                   aria-labelledby="headingThree"
                                   data-bs-parent="#accordionExampleother"
                                 >
-                                  <div className="accordion-body">
-                                    <div>
+                                  <div
+                                    className="accordion-body"
+                                    itemscope="true"
+                                    itemprop="acceptedAnswer"
+                                    itemtype="https://schema.org/Answer"
+                                  >
+                                    <div itemprop="text">
                                       Our developers do all the heavy lifting
                                       for you and take over executing the work
                                       while giving you the freedom to focus on
@@ -860,10 +1080,14 @@ const FAQsTechnology = () => {
                                 role="tab"
                                 aria-controls="accordion-four"
                                 aria-selected="false"
+                                itemscope="true"
+                                itemprop="mainEntity"
+                                itemtype="https://schema.org/Question"
                               >
                                 <h2
                                   className="accordion-header"
                                   id="headingFour"
+                                  itemprop="name"
                                 >
                                   <button
                                     className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -883,8 +1107,13 @@ const FAQsTechnology = () => {
                                   aria-labelledby="headingFour"
                                   data-bs-parent="#accordionExampleother"
                                 >
-                                  <div className="accordion-body">
-                                    <div>
+                                  <div
+                                    className="accordion-body"
+                                    itemscope="true"
+                                    itemprop="acceptedAnswer"
+                                    itemtype="https://schema.org/Answer"
+                                  >
+                                    <div itemprop="text">
                                       You need to choose an AWS partner that can
                                       help you understand the development
                                       process & technical challenges, what is
@@ -904,10 +1133,14 @@ const FAQsTechnology = () => {
                                 role="tab"
                                 aria-controls="accordion-five"
                                 aria-selected="false"
+                                itemscope="true"
+                                itemprop="mainEntity"
+                                itemtype="https://schema.org/Question"
                               >
                                 <h2
                                   className="accordion-header"
                                   id="headingFive"
+                                  itemprop="name"
                                 >
                                   <button
                                     className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -927,8 +1160,13 @@ const FAQsTechnology = () => {
                                   aria-labelledby="headingFive"
                                   data-bs-parent="#accordionExampleother"
                                 >
-                                  <div className="accordion-body">
-                                    <div>
+                                  <div
+                                    className="accordion-body"
+                                    itemscope="true"
+                                    itemprop="acceptedAnswer"
+                                    itemtype="https://schema.org/Answer"
+                                  >
+                                    <div itemprop="text">
                                       Yes, we do offer post-launch maintenance
                                       and support. This includes bug fixes,
                                       security maintenance, minor changes,
@@ -949,6 +1187,8 @@ const FAQsTechnology = () => {
                                   id="accordionExampleother"
                                   className="d-block accordion nav nav-tabs reveal"
                                   role="tablist"
+                                  itemscope="true"
+                                  itemtype="https://schema.org/FAQPage"
                                 >
                                   <div
                                     className="accordion-item"
@@ -958,10 +1198,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-one"
                                     aria-selected="true"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingOne"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
@@ -981,8 +1225,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingOne"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           Our UI UX designers understand the
                                           value of user experience and are
                                           committed to creating a powerful web
@@ -999,10 +1248,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-two"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingTwo"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1022,8 +1275,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingTwo"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           Yes, we do understand the importance
                                           of finding someone who is a good fit
                                           for your organization. Therefore, we
@@ -1043,10 +1301,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-three"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingThree"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1066,8 +1328,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingThree"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           You will have 100% ownership of the
                                           project and all its resource including
                                           NDA, copyright, source code,
@@ -1086,10 +1353,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-four"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingFour"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1109,8 +1380,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingFour"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           We understand that every project
                                           requires different skills, and we are
                                           always looking for ways to bring you
@@ -1130,6 +1406,8 @@ const FAQsTechnology = () => {
                                   id="accordionExampleother"
                                   className="d-block accordion nav nav-tabs reveal"
                                   role="tablist"
+                                  itemscope="true"
+                                  itemtype="https://schema.org/FAQPage"
                                 >
                                   <div
                                     className="accordion-item"
@@ -1139,10 +1417,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-one"
                                     aria-selected="true"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingOne"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1162,8 +1444,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingOne"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           Yes, you can hire a Blockchain app
                                           developer in a full-time capacity. We
                                           have a team of Blockchain experts, who
@@ -1182,10 +1469,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-two"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingTwo"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1205,8 +1496,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingTwo"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           One of the biggest benefits of
                                           Blockchain is its ability to automate
                                           processes. Rather than relying on a
@@ -1227,10 +1523,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-three"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingThree"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1249,8 +1549,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingThree"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           Smart contract development is a
                                           blockchain technology that allows you
                                           to develop customized smart contracts.
@@ -1270,10 +1575,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-four"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingFour"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1293,8 +1602,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingFour"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           When it comes to picking out a
                                           Blockchain development company to work
                                           with, there are many factors that go
@@ -1315,10 +1629,14 @@ const FAQsTechnology = () => {
                                     role="tab"
                                     aria-controls="accordion-five"
                                     aria-selected="false"
+                                    itemscope="true"
+                                    itemprop="mainEntity"
+                                    itemtype="https://schema.org/Question"
                                   >
                                     <h2
                                       className="accordion-header"
                                       id="headingFive"
+                                      itemprop="name"
                                     >
                                       <button
                                         className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -1338,8 +1656,13 @@ const FAQsTechnology = () => {
                                       aria-labelledby="headingFive"
                                       data-bs-parent="#accordionExampleother"
                                     >
-                                      <div className="accordion-body">
-                                        <div>
+                                      <div
+                                        className="accordion-body"
+                                        itemscope="true"
+                                        itemprop="acceptedAnswer"
+                                        itemtype="https://schema.org/Answer"
+                                      >
+                                        <div itemprop="text">
                                           Agile project management is key to
                                           keeping clients, teams, and managers
                                           informed of the work being done. In

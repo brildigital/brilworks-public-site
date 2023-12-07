@@ -1,6 +1,7 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import HealthCare from "@/app/components/Solution/Healthcare";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Healthcare Software Development Services",
@@ -33,28 +34,15 @@ export const metadata = {
 };
 
 const page = () => {
-  const breadCrumbList = {
-    "@context": "https://schema.org/",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.brilworks.com/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Healthcare Software Development Services",
-      },
-    ],
-  };
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb(
+            "Healthcare Software Development Services"
+          ),
+        }}
       />
       <Header />
       <HealthCare />
