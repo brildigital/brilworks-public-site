@@ -38,8 +38,9 @@ const AWSTechnology = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      <div className="flex items-center">
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] ">
+                      HIRE
+                      <div className="flex items-center gap-2">
                         <Image
                           className="w-[auto]"
                           src="/images/1.png"
@@ -56,8 +57,7 @@ const AWSTechnology = () => {
                           height="94"
                         />
                       </div>
-                      DEVELOPMENT <br />
-                      COMPANY
+                      DEVELOPERS
                     </h1>
                   </div>
                 </div>
@@ -141,11 +141,8 @@ const AWSTechnology = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
-                Seamlessly Transition to the Cloud with Our AWS Development
-                Services
-              </p>
+            <div className="endTO_text solutions">
+              <h2 className="!w-full p-0">Our AWS Development Services</h2>
             </div>
           </div>
 
@@ -164,7 +161,7 @@ const AWSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>AWS Development Consulting</p>
+                    <h3>AWS Development Consulting</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -190,7 +187,7 @@ const AWSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>AWS App Development Services</p>
+                    <h3>AWS App Development Services</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -218,7 +215,7 @@ const AWSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>AWS Cloud Migration Services</p>
+                    <h3>AWS Cloud Migration Services</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -246,7 +243,7 @@ const AWSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>DevOps AWS Services</p>
+                    <h3>DevOps AWS Services</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -275,7 +272,7 @@ const AWSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>AWS Managed Services</p>
+                    <h3>AWS Managed Services</h3>
                   </div>
 
                   <div className="service_description">

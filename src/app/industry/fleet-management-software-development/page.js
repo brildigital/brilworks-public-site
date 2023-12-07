@@ -1,6 +1,7 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Fleet Management Software Development Services",
@@ -33,28 +34,15 @@ export const metadata = {
 };
 
 const page = () => {
-  const breadCrumbList = {
-    "@context": "https://schema.org/",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.brilworks.com/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Fleet Manangement Software Development Company",
-      },
-    ],
-  };
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb(
+            "Fleet Manangement Software Development Company"
+          ),
+        }}
       />
       <Header />
       <FleetManagementNGPS />

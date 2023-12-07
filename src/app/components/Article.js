@@ -174,13 +174,6 @@ const Article = ({ blok }) => {
             <h1 className="entry-title default-max-width md:!text-[2.5rem] !text-[2rem] font-bold !font-[unset] !mb-7">
               {blok?.title}
             </h1>
-            {/* {blok?.teaser !== blok.title ? (
-              <p className="italic text-[20px] !mb-6 leading-7">
-                {blok?.teaser}
-              </p>
-            ) : (
-              ""
-            )} */}
 
             <div className="flex xl:items-end items-start xl:flex-row flex-col justify-between w-full gap-1 mb-5">
               <div className="flex items-start ml-2">
@@ -320,20 +313,47 @@ const Article = ({ blok }) => {
                       {/* {parse(blok?.table_content)} */}
                     </nav>
                   </div>
+                  <div>
+                    <div className="flex gap-2">
+                      <Link
+                        target="_blank"
+                        href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
+                      >
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/fb-share.svg"
+                          alt="Facebook blog share"
+                        />
+                      </Link>
+                      <Link
+                        target="_blank"
+                        href={`https://twitter.com/share?url=https://www.brilworks.com${pathname}`}
+                      >
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/twitter-share.svg"
+                          alt="Twitter blog share"
+                        />
+                      </Link>
+                      <Link
+                        target="_blank"
+                        href={`https://in.linkedin.com/share?url=https://www.brilworks.com${pathname}`}
+                      >
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          src="/images/linkedin-share.svg"
+                          alt="LinkedIn blog share"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               )}
 
               <div className="basis-[60%]">
-                {/* <div className="service_sec3">
-                  <div className="home_sec2_txt4 blog-cat mt-[10px]">
-                    <p className="p-0 !font-[unset]"> {blok?.subtitle}</p>
-                  </div>
-                  <div className="home_sec2_txt3 pt-[2.5rem]">
-                    <h1 className="entry-title default-max-width !text-[2rem]  font-bold !font-[unset]">
-                      {blok?.title}
-                    </h1>
-                  </div>
-                </div> */}
 
                 <div className="blog_content post_details_content">
                   {modifyImagesWithLazyLoading(blok?.content)}

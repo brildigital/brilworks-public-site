@@ -65,7 +65,7 @@ export default async function Page(props) {
           property="og:image"
           content={
             data?.story?.content?.metatags?.og_image ||
-            data?.story?.content?.image?.filename
+            data?.story?.content?.mobile_banner?.filename
           }
         />
         <meta name="author" content={data?.story?.content?.author}></meta>
@@ -73,7 +73,7 @@ export default async function Page(props) {
           name="twitter:image"
           content={
             data?.story?.content?.metatags?.twitter_image ||
-            data?.story?.content?.image?.filename
+            data?.story?.content?.mobile_banner?.filename
           }
         ></meta>
         <meta name="twitter:label1" content="Written by"></meta>

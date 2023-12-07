@@ -31,9 +31,7 @@ const NodejsTechnology = () => {
                 decoding="async"
                 loading="lazy"
                 className="h-[46vh] rounded-[20px]"
-                src={
-                  "https://a.storyblok.com/f/219851/1398x780/f539ccd77f/node-services-banner.png"
-                }
+                src="https://a.storyblok.com/f/219851/1398x780/812879bd1e/node-services-banner.webp"
                 alt="Node banner"
               />
             </p>
@@ -42,7 +40,8 @@ const NodejsTechnology = () => {
                 <div className="txt">
                   <div className="how-we flex fle items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      <div className="flex items-center">
+                      HIRE
+                      <div className="flex items-center gap-1">
                         <Image
                           className="w-[auto]"
                           src="/images/1.png"
@@ -50,7 +49,7 @@ const NodejsTechnology = () => {
                           width="24"
                           height="94"
                         />
-                        NODE.JS
+                        NODEJS
                         <Image
                           className="w-[auto]"
                           src="/images/2.png"
@@ -59,8 +58,7 @@ const NodejsTechnology = () => {
                           height="94"
                         />
                       </div>
-                      DEVELOPMENT <br />
-                      COMPANY
+                      DEVELOPERS
                     </h1>
                   </div>
                 </div>
@@ -78,8 +76,7 @@ const NodejsTechnology = () => {
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
                   <p className="p-0 !ml-[0] !w-full">
-                    HIRE OUR NODE JS DEVELOPMENT COMPANY TO POWER UP YOUR
-                    BACKEND
+                    HIRE OUR NODEJS DEVELOPMENT COMPANY TO POWER UP YOUR BACKEND
                   </p>
                 </Link>
               </div>
@@ -144,12 +141,12 @@ const NodejsTechnology = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text solutions">
+              <h2 className="!w-full p-0">
                 DRIVE TRANSFORMATION CHANGE WITH OUR NODE JS
                 <br />
                 DEVELOPMENT SERVICES
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -168,7 +165,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>Node.js Consulting</p>
+                    <h3>Node.js Consulting</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -193,7 +190,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>Node.js API Development & Integration</p>
+                    <h3>Node.js API Development & Integration</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -220,7 +217,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>Node.js Plugin Development</p>
+                    <h3>Node.js Plugin Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -246,7 +243,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>Node.js Migration</p>
+                    <h3>Node.js Migration</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -272,7 +269,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>Node.js Enterprise Web Apps</p>
+                    <h3>Node.js Enterprise Web Apps</h3>
                   </div>
 
                   <div className="service_description">
@@ -299,7 +296,7 @@ const NodejsTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>Node.js End-to-end Solutions</p>
+                    <h3>Node.js End-to-end Solutions</h3>
                   </div>
                   <div className="service_description">
                     <p>

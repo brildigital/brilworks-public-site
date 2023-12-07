@@ -13,69 +13,45 @@ const ThreeStepstoHireDeveloper = () => {
     <section className="">
       <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
         <div className="service_width mx-auto md:px-[0px]">
-          <div className="service_sec3 md:text-center text-left">
-            {pathname === "/hire-reactjs-developer/" ? (
-              <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                HIRE REACT JS DEVELOPERS
+          <div className="service_sec3 solutions md:text-center text-left">
+            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+              {pathname === "/hire-reactjs-developer/" ? (
+                "HIRE REACT JS DEVELOPERS"
+              ) : (
+                <>
+                  {pathname === "/hire-java-developer/" ? (
+                    "HIRE JAVA DEVELOPERS"
+                  ) : (
+                    <>
+                      {pathname === "/hire-nodejs-developer/" ? (
+                        "HIRE Node JS DEVELOPERS"
+                      ) : (
+                        <>
+                          {pathname === "/hire-react-native-developer/" ? (
+                            "HIRE REACT NATIVE DEVELOPERS"
+                          ) : (
+                            <>
+                              {pathname === "/hire-aws-developer/" ? (
+                                "HIRE AWS DEVELOPERS"
+                              ) : (
+                                <>
+                                  {pathname === "/hire-ui-ux-designer/"
+                                    ? "HIRE UI UX DESIGNERS"
+                                    : "HIRE BLOCKCHAIN DEVELOPERS"}
+                                </>
+                              )}
+                            </>
+                          )}
+                        </>
+                      )}
+                    </>
+                  )}
+                </>
+              )}
+              <p className="md:text-[21px] md:!text-center text-[16px] !text-left">
+                IN 3 SIMPLE STEPS
               </p>
-            ) : (
-              <>
-                {pathname === "/hire-java-developer/" ? (
-                  <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                    HIRE JAVA DEVELOPERS
-                  </p>
-                ) : (
-                  <>
-                    {pathname === "/hire-nodejs-developer/" ? (
-                      <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                        HIRE Node JS DEVELOPERS
-                      </p>
-                    ) : (
-                      <>
-                        {" "}
-                        {pathname === "/hire-react-native-developer/" ? (
-                          <>
-                            <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                              HIRE REACT NATIVE DEVELOPERS
-                            </p>
-                          </>
-                        ) : (
-                          <>
-                            {pathname === "/hire-aws-developer/" ? (
-                              <>
-                                <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                                  HIRE AWS DEVELOPERS
-                                </p>
-                              </>
-                            ) : (
-                              <>
-                                {pathname === "/hire-ui-ux-designer/" ? (
-                                  <>
-                                    <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                                      HIRE UI UX DESIGNERS
-                                    </p>
-                                  </>
-                                ) : (
-                                  <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                                    HIRE BLOCKCHAIN DEVELOPERS
-                                  </p>
-                                )}
-                              </>
-                            )}
-                          </>
-                        )}
-                      </>
-                    )}
-                  </>
-                )}
-              </>
-            )}
-
-            <div>
-              <p className="!p-0 md:text-[21px] md:!text-center text-[16px] !text-left">
-                IN JUST 3 EASY STEPS
-              </p>
-            </div>
+            </h2>
           </div>
 
           <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0 reveal">
@@ -93,7 +69,7 @@ const ThreeStepstoHireDeveloper = () => {
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Tell Us Your Requirements</p>
+                      <h3>Tell Us Your Requirements</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
@@ -121,7 +97,7 @@ const ThreeStepstoHireDeveloper = () => {
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Screen & Shortlist the Right Fit</p>
+                      <h3>Screen & Shortlist the Right Fit</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
@@ -148,7 +124,7 @@ const ThreeStepstoHireDeveloper = () => {
                 <div className="no_flex_tech">
                   <div className="no_flex_height">
                     <div className="developer_sec6_title text-center mob_center">
-                      <p>Onboard Talent</p>
+                      <h3>Onboard Talent</h3>
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
@@ -228,70 +204,44 @@ const ThreeStepstoHireDeveloper = () => {
         id="pricing"
       >
         <div className="end-To-end">
-          <div className="endTO_text home_sec2_txt3">
-            {pathname === "/hire-reactjs-developer/" ? (
-              <p className="!w-full p-0">
-                CHOOSE OUR REACT.JS DEVELOPMENT
-                <br />
-                SERVICES AS PER YOUR NEEDS
-              </p>
-            ) : (
-              <>
-                {pathname === "/hire-java-developer/" ? (
-                  <p className="!w-full p-0">
-                    CHOOSE OUR JAVA DEVELOPMENT
-                    <br />
-                    SERVICES AS PER YOUR NEEDS
-                  </p>
-                ) : (
-                  <>
-                    {pathname === "/hire-nodejs-developer/" ? (
-                      <p className="!w-full p-0">
-                        CHOOSE OUR NODE.JS DEVELOPMENT
-                        <br />
-                        SERVICES AS PER YOUR NEEDS
-                      </p>
-                    ) : (
-                      <>
-                        {pathname === "/hire-react-native-developer/" ? (
-                          <p className="!w-full p-0">
-                            CHOOSE OUR REACT NATIVE DEVELOPMENT
-                            <br />
-                            SERVICES AS PER YOUR NEEDS
-                          </p>
-                        ) : (
-                          <>
-                            {pathname === "/hire-aws-developer/" ? (
-                              <p className="!w-full p-0">
-                                CHOOSE OUR AWS DEVELOPMENT
-                                <br />
-                                SERVICES AS PER YOUR NEEDS
-                              </p>
-                            ) : (
-                              <>
-                                {pathname === "/hire-ui-ux-designer/" ? (
-                                  <p className="!w-full p-0">
-                                    CHOOSE OUR UI-UX DESIGN
-                                    <br />
-                                    SERVICES AS PER YOUR NEEDS
-                                  </p>
-                                ) : (
-                                  <p className="!w-full p-0">
-                                    CHOOSE OUR BLOCKCHAIN DEVELOPMENT
-                                    <br />
-                                    SERVICES AS PER YOUR NEEDS
-                                  </p>
-                                )}
-                              </>
-                            )}
-                          </>
-                        )}
-                      </>
-                    )}
-                  </>
-                )}
-              </>
-            )}
+          <div className="endTO_text solutions">
+            <h2 className="!w-full p-0">
+              {pathname === "/hire-reactjs-developer/" ? (
+                "HIRE REACT.JS DEVELOPERS"
+              ) : (
+                <>
+                  {pathname === "/hire-java-developer/" ? (
+                    "HIRE JAVA DEVELOPERS"
+                  ) : (
+                    <>
+                      {pathname === "/hire-nodejs-developer/" ? (
+                        "HIRE NODE.JS DEVELOPERS"
+                      ) : (
+                        <>
+                          {pathname === "/hire-react-native-developer/" ? (
+                            "            HIRE REACT NATIVE DEVELOPERS"
+                          ) : (
+                            <>
+                              {pathname === "/hire-aws-developer/" ? (
+                                "HIRE AWS DEVELOPERS"
+                              ) : (
+                                <>
+                                  {pathname === "/hire-ui-ux-designer/"
+                                    ? " HIRE UI-UX DESIGNERS"
+                                    : "HIRE BLOCKCHAIN DEVELOPERS"}
+                                </>
+                              )}
+                            </>
+                          )}
+                        </>
+                      )}
+                    </>
+                  )}
+                </>
+              )}
+              <br />
+              AS PER YOUR NEED
+            </h2>
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
+import { organization, website } from "./components/lib/schemaCode";
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -13,24 +14,6 @@ export default function RootLayout({ children }) {
   if (!children) {
     return "";
   }
-  const organization = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Brilworks",
-    url: "https://www.brilworks.com",
-    logo: "https://www.brilworks.com/images/logo.png",
-    sameAs: [
-      "https://www.facebook.com/brilwork",
-      "https://www.linkedin.com/company/brilworks",
-      "https://www.instagram.com/brilworkssoftware",
-      "https://www.youtube.com/@brilworks",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: "<sales@brilworks.com>",
-    },
-  };
 
   return (
     <StoryblokProvider>
@@ -74,6 +57,10 @@ export default function RootLayout({ children }) {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+          />
         </head>
         <body suppressHydrationWarning={true}>
           {process.env.VERCEL_ENV === "production" && (
@@ -105,6 +92,7 @@ export default function RootLayout({ children }) {
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
           crossorigin="anonymous"
+          strategy="lazyOnload"
         ></Script>
       </html>
     </StoryblokProvider>
