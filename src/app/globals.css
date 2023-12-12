@@ -285,10 +285,6 @@ a:hover {
 .page-active {
   color: var(--main_color) !important;
 }
-
-.blog-tab-content a.page-active {
-  color: var(--main_color) !important;
-}
 .menu .accordion-container .content-entry i {
   top: 40%;
   transform: translateY(-50%);
@@ -2221,12 +2217,7 @@ textarea.form-control-txt {
 .blog-nav {
   font-family: var(--regular);
 }
-.blog_padding {
-  margin-top: 2rem;
-  position: sticky;
-  top: 6rem;
-  height: fit-content;
-}
+
 .service_sec3 .home_sec2_txt3 h1 {
   font-family: var(--bold);
   font-size: var(--font_48);
@@ -2916,10 +2907,6 @@ textarea.form-control-txt {
   }
   .single-author-bio .single-author-bio-text {
     max-width: unset;
-  }
-  .blog_padding {
-    margin-bottom: 4rem;
-    position: static;
   }
   .padding_menu_header {
     padding: 6rem 0 0 0;

@@ -179,15 +179,15 @@ const Blog = () => {
               className="md:pb-0 lg:pb-12 pb-4"
               onSubmit={handleSearchSubmit}
             >
-              <div class="find-blog-search-box border-[#00DDB9] border-[1px]">
-                <div class="w-full flex relative flex-wrap items-stretch">
+              <div className="find-blog-search-box border-[#00DDB9] border-[1px]">
+                <div className="w-full flex relative flex-wrap items-stretch">
                   <input
                     type="submit"
                     className="w-auto right-[1rem] !left-[unset] top-[15%] btn btn-search font-semibold text-base !text-white border
                      hover:border-[#00dfb8] focus:ring focus:outline-none focus:border-[#00dfb8] focus:!ring-[#00C4C8] active:border-[#00dfb8] absolute bg-gradient-to-r from-[#00C4C8] to-[#00DDB9]"
                     value="SEARCH"
                   />
-                  <div class="form-outline w-full">
+                  <div className="form-outline w-full">
                     <input
                       type="text"
                       id="serachValue"
