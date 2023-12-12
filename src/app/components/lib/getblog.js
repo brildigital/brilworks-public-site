@@ -37,10 +37,10 @@ export async function searchBlog(query) {
 
   const filteredData = response.data?.stories.filter(
     (item) =>
-      item.name.toLowerCase().includes(query.toLowerCase()) ||
-      (item.content &&
-        item.content.content.toLowerCase().includes(query.toLowerCase())) ||
-      item.content?.subtitle.toLowerCase().includes(query.toLowerCase())
+      item?.name?.toLowerCase().includes(query?.toLowerCase()) ||
+      (item?.content &&
+        item?.content?.content?.toLowerCase().includes(query?.toLowerCase())) ||
+      item?.content?.subtitle?.toLowerCase().includes(query?.toLowerCase())
   );
 
   return filteredData;
@@ -54,7 +54,7 @@ export async function blogCategoryData(query) {
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   });
   const filteredData = response.data?.stories.filter((item) =>
-    item.content?.subtitle.toLowerCase().includes(query.toLowerCase())
+    item?.content?.subtitle?.toLowerCase().includes(query?.toLowerCase())
   );
   return filteredData;
 }
@@ -72,7 +72,7 @@ export async function blogCategoryList() {
   const filteredSubtitles = [];
 
   for (const story of blogStories) {
-    const subtitle = story.content?.subtitle;
+    const subtitle = story?.content?.subtitle;
 
     if (subtitle && !uniqueSubtitles.has(subtitle)) {
       uniqueSubtitles.add(subtitle);

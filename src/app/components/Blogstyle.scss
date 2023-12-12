@@ -1,7 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Merriweather:ital,wght@1,400;1,700&display=swap");
+
+@font-face {
+  font-family: "Graphik";
+  src: url(/fonts/Graphik-Regular.woff2) format("woff2"),
+    url(/fonts/Graphik-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url(/fonts/Graphik-Medium.woff2) format("woff2"),
+    url(/fonts/Graphik-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url(/fonts/Graphik-Semibold.woff2) format("woff2"),
+    url(/fonts/Graphik-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 .blog-navigation {
   font-weight: 500;
   a {
-    color: black;
+    font-family: "Graphik" !important;
+    color: #000 !important;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
   }
@@ -10,8 +40,25 @@
   }
 }
 
+.blog-initial {
+  h1 {
+    font-family: "Assistant", sans-serif !important;
+  }
+  .font-graphik {
+    font-family: "Graphik" !important;
+  }
+  .post-summary {
+    font-family: "Merriweather", serif;
+    color: #000 !important;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px !important;
+    margin-bottom: 36px;
+  }
+}
+
 .blog_content {
-  padding: 1rem 0 2rem 0;
+  font-family: "Graphik" !important;
   div {
     p {
       span {
@@ -57,6 +104,7 @@
     position: relative;
     margin: var(--global--spacing-vertical) 0 var(--global--spacing-vertical)
       var(--global--spacing-horizontal);
+    font-family: "Merriweather", serif !important;
   }
 
   blockquote p {
@@ -65,12 +113,14 @@
     font-style: normal;
     line-height: 1.7 !important;
     font-weight: 400;
+    font-family: "Merriweather", serif !important;
   }
 
   blockquote::before {
     content: "“ ";
     font-size: 1.25rem;
-    line-height: 1.7;
+    font-family: "Merriweather", serif !important;
+    line-height: 1.7 !important;
     position: absolute;
     left: calc(-0.5 * var(--global--spacing-horizontal));
   }
@@ -81,7 +131,7 @@
   padding: 2rem 2rem;
   text-align: center;
   border-radius: 33px;
-  line-height: 32px;
+  line-height: 32px !important;
   span {
     a {
       font-weight: 700 !important;
@@ -101,37 +151,60 @@
 }
 
 .blog-tab-content {
-  color: var(--black_color);
-  font-size: var(--font_21);
-  font-family: unset !important;
-  border: none;
-  margin: 0;
-  padding-top: 1rem;
+  background: #fff;
+  border: 1px solid #00ddb9;
+  box-shadow: 4px 4px 0 #00c4c8;
+  padding: 12px 0 12px 10px;
 
-  ul,
-  ol {
+  p {
+    font-family: "Assistant", sans-serif !important;
+    line-height: 23px !important;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+  }
+
+  ul {
+    font-family: "Graphik" !important;
+    color: #000 !important;
     background: 0 0;
     list-style: none;
-    line-height: 1.6;
+    line-height: 1.6 !important;
     margin: 0;
-    margin-right: 10px;
-    overflow: hidden;
-    padding-left: 0 !important;
+    padding-right: 12 !important;
     li {
-      font-size: 95%;
-      padding: 0 !important;
-      line-height: 1.6 !important;
-      border: 0px !important;
+      font-family: "Graphik" !important;
+      color: #000 !important;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px !important;
+      color: #222;
+      margin: 0 0 8px !important;
+      position: relative;
 
       &:hover {
         cursor: pointer;
         text-decoration: underline;
+      }
+      a.page-active {
+        color: var(--main_color) !important;
       }
       a:hover {
         text-decoration: underline !important;
       }
     }
   }
+}
+
+.blog-get-in-touch {
+  background: #fff;
+  border: 1px solid #00ddb9 !important;
+  box-shadow: 0 5px 40px 0 rgba(212, 221, 245, 0.9) !important;
+  border-radius: 3px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 20px !important;
 }
 
 .blog_category {
@@ -157,12 +230,8 @@
   }
 }
 
-.table-content {
-  box-shadow: 4px 4px 0 #00c4c8;
-}
-
 .post_details_content h3 {
-  line-height: var(--line_height_1_2);
+  line-height: var(--line_height_1_2) !important;
   font-size: 2.4rem;
   padding: 2rem 0;
 }
@@ -249,7 +318,7 @@
 }
 .single-author-bio-text {
   color: #9d9d9d;
-  line-height: 28px;
+  line-height: 28px !important;
   overflow: hidden;
 }
 .blog-title {
@@ -261,12 +330,12 @@
 
 .single-author-bio .single-author-bio-text p {
   font-size: 19px;
-  line-height: 32px;
+  line-height: 32px !important;
   color: #000;
 }
 .single-author-bio .single-author-bio-text h3 {
   font-size: 25px;
-  line-height: 38px;
+  line-height: 38px !important;
   color: #000;
   margin-bottom: 7px;
   font-weight: 700;
@@ -285,25 +354,46 @@
     width: 100% !important;
     margin-bottom: 20px;
     p {
+      font-family: "Graphik" !important;
+      color: #000 !important;
       margin-bottom: 0 !important;
+      span {
+        font-family: "Graphik" !important;
+      }
     }
   }
   p {
+    font-family: "Graphik" !important;
+    color: #000 !important;
     word-wrap: break-word;
     font-size: 19px !important;
     line-height: 32px !important;
     margin-bottom: 20px !important;
+    span {
+      font-family: "Graphik" !important;
+      color: #000 !important;
+      word-wrap: break-word;
+      font-size: 19px !important;
+      line-height: 32px !important;
+      margin-bottom: 20px !important;
+    }
   }
   h2 {
+    font-family: "Assistant", sans-serif !important;
+    color: #000 !important;
     font-size: 30px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700;
     span {
+      font-family: "Assistant", sans-serif !important;
+      color: #000 !important;
       font-size: 32px !important;
       line-height: 40px !important;
       font-weight: 700;
       strong {
+        font-family: "Assistant", sans-serif !important;
+        color: #000 !important;
         font-size: 32px !important;
         line-height: 40px !important;
         font-weight: 700 !important;
@@ -311,14 +401,20 @@
     }
   }
   h3 {
+    font-family: "Assistant", sans-serif !important;
+    color: #000 !important;
     font-size: 26px !important;
     line-height: 32px !important;
     margin-bottom: 20px !important;
     font-weight: 500;
     span {
+      font-family: "Assistant", sans-serif !important;
+      color: #000 !important;
       font-size: 28px !important;
       line-height: 34px !important;
       strong {
+        font-family: "Assistant", sans-serif !important;
+        color: #000 !important;
         font-size: 28px !important;
         line-height: 34px !important;
       }
@@ -327,6 +423,7 @@
   ul,
   ol {
     a {
+      font-family: "Merriweather", serif !important;
       color: #00c4c8 !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -339,15 +436,17 @@
     }
 
     li {
+      font-family: "Merriweather", serif !important;
       padding-left: 34px;
       padding-bottom: 12px;
       list-style: none !important;
       list-style-type: none !important;
       position: relative;
-      font-size: 20px;
-      line-height: 38px;
+      font-size: 20px !important;
+      line-height: 38px !important;
       margin-left: 0;
-      font-style: italic;
+      font-style: italic !important;
+      color: #000 !important;
       &::before {
         content: "";
         width: 20px;
@@ -359,11 +458,13 @@
         position: absolute;
       }
       span {
+        font-family: "Merriweather", serif !important;
         font-style: italic !important;
       }
     }
     span {
       font-style: italic !important;
+      font-family: "Merriweather", serif !important;
     }
   }
 }
@@ -380,11 +481,13 @@
   p {
     word-wrap: break-word;
   }
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .blog-inner .blog_content_CTA_1 {
   margin-bottom: 30px;
+  font-family: "Graphik";
+  color: #000 !important;
   font-size: 19px;
   background: linear-gradient(
     147deg,
@@ -397,6 +500,7 @@
   border-radius: 30px;
   a {
     font-weight: 700;
+    font-family: "Graphik";
     text-decoration: underline !important;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
