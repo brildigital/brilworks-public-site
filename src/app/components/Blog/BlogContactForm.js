@@ -58,10 +58,10 @@ const BlogContactForm = () => {
   };
 
   return (
-    <div className="sticky top-[110px] z-[99] !mb-6 overflow-auto lg:max-h-[calc(100vh_-_100px)]">
+    <div className="sticky top-[110px] z-[99] !mb-6 overflow-auto lg:max-h-[calc(100vh_-_110px)]">
       <div className="blog-get-in-touch">
         <div className=" mt-2">
-          <p className="gradiant md:!text-2xl !text-lg font-medium font-graphik">
+          <p className="gradiant !text-[24px] font-medium font-graphik">
             Get In Touch
           </p>
         </div>
