@@ -116,7 +116,7 @@ const Article = ({ blok }) => {
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 1100);
 
     return () => clearTimeout(loadingTimeout);
   }, []);
@@ -124,7 +124,7 @@ const Article = ({ blok }) => {
   return (
     <div className="md:mt-[9rem] mt-[6rem] blog-main">
       {isLoading ? (
-        <div className="flex items-center justify-center !p-60">
+        <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
         </div>
       ) : (
