@@ -27,6 +27,11 @@
   font-display: swap;
 }
 
+.blog-main{
+  ul,ol{
+    padding-left: 0 !important;
+  }
+}
 .blog-navigation {
   font-weight: 500;
   a {

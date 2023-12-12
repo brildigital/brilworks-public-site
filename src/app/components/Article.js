@@ -122,10 +122,10 @@ const Article = ({ blok }) => {
   }, []);
 
   return (
-    <div className="md:mt-[9rem] mt-[6rem]">
+    <div className="md:mt-[9rem] mt-[6rem] blog-main">
       <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
         <div className="flex flex-wrap -mx-4">
-          <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-8 mb-6 !px-4 min-h-[1px] w-full">
+          <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
             <div className="slg:w-[calc(100%_-_170px)]">
               <div
                 className="w-full inline-flex flex-wrap items-center mb-3"
@@ -239,7 +239,7 @@ const Article = ({ blok }) => {
         </div>
         <div className="flex flex-wrap -mx-4">
           <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
-            <div className="h-auto relative md:mb-8 mb-6 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
+            <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
               <img
                 decoding="async"
                 loading="lazy"
@@ -252,22 +252,16 @@ const Article = ({ blok }) => {
                 }
               />
             </div>
-
-            <div>
-              <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left italic">
-                <span className="font-bold text-[#00c4c8]">
-                  Quick Summary:-{" "}
-                </span>
-                Choosing the right JavaScript frameworks is a real confusion.
-                Especially when you have a lot of options that are super
-                resourceful and capable of facilitating the project
-                requirements. But choosing the one for the right set of projects
-                demands knowledge of several critical aspects. We have covered
-                some of the essential points in this post by making a fair
-                comparison of Angular vs React.
-                {blok?.Quick_Summary}
+            {blok?.Quick_Summary && (
+              <div>
+                <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left italic">
+                  <span className="font-bold text-[#00c4c8]">
+                    Quick Summary:-{" "}
+                  </span>
+                  {blok?.Quick_Summary}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -516,7 +510,7 @@ const Article = ({ blok }) => {
           </div>
           <div
             className={`grid ${
-              isLoading ?"": "xl:grid-cols-3 md:grid-cols-2"
+              isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
             } grid-cols-1 items-center
                     gap-[2rem]`}
           >
