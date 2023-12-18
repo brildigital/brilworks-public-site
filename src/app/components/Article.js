@@ -14,7 +14,6 @@ import { usePathname } from "next/navigation";
 const Article = ({ blok }) => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isBigMobile = useMediaQuery({ maxWidth: 1023 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
@@ -123,7 +122,7 @@ const Article = ({ blok }) => {
 
   return (
     <div className="md:mt-[9rem] mt-[6rem] blog-main">
-      {isLoading ? (
+      {!blok || isLoading ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
         </div>
@@ -332,7 +331,10 @@ const Article = ({ blok }) => {
                       <Link
                         target="_blank"
                         className="!mr-4"
-                        href={`https://twitter.com/share?url=https://www.brilworks.com${pathname}`}
+                        href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
+                          .split("")
+                          .splice(0, pathname.length - 1)
+                          .join("")}`}
                       >
                         <img
                           decoding="async"

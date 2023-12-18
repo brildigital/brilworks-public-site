@@ -25,7 +25,7 @@ export default function Error({ error, reset }) {
             <h3 className="text-[3rem] pb-[3rem] text-center ">
               Something went wrong!
             </h3>
-            <div className="w-[25%] inline-flex justify-center align-middle p-3 rounded bg-black text-white">
+            <div className="w-[30%] inline-flex justify-center align-middle p-3 rounded bg-black text-white">
               <button className="text-[18px]" onClick={() => reset()}>
                 Try again
               </button>

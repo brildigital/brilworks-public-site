@@ -79,7 +79,7 @@ const BlogContactForm = () => {
                 <p>
                   <span>
                     <input
-                      className="form-control-txt"
+                      className="form-control-txt !w-full"
                       id="name"
                       type="text"
                       name="name"
@@ -95,7 +95,7 @@ const BlogContactForm = () => {
                 <p>
                   <span>
                     <input
-                      className="form-control-txt"
+                      className="form-control-txt !w-full"
                       id="email"
                       type="email"
                       name="email"
@@ -113,7 +113,7 @@ const BlogContactForm = () => {
                     <textarea
                       cols="1"
                       rows="2"
-                      className="form-control-txt"
+                      className="form-control-txt !w-full"
                       id="message"
                       name="message"
                       value={formData.message}

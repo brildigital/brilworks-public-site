@@ -220,12 +220,6 @@
   .Blog_category_head {
     font-family: var(--medium);
   }
-  .btn_blog_category {
-    padding: 8px;
-    cursor: pointer;
-    position: relative;
-    border: none;
-  }
 }
 
 .blog_flex_30:hover {
@@ -490,11 +484,9 @@
   p {
     word-wrap: break-word;
   }
-  margin-bottom: 20px;
 }
 
 .blog-inner .blog_content_CTA_1 {
-  margin-bottom: 30px;
   font-family: "Graphik";
   color: #000 !important;
   font-size: 19px;
