@@ -40,7 +40,7 @@ export async function searchBlog(query) {
       item?.name?.toLowerCase().includes(query?.toLowerCase()) ||
       (item?.content &&
         item?.content?.content?.toLowerCase().includes(query?.toLowerCase())) ||
-      item?.content?.subtitle?.toLowerCase().includes(query?.toLowerCase())
+      item?.content?.category?.toLowerCase().includes(query?.toLowerCase())
   );
 
   return filteredData;
@@ -54,9 +54,31 @@ export async function blogCategoryData(query) {
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   });
   const filteredData = response.data?.stories.filter((item) =>
-    item?.content?.subtitle?.toLowerCase().includes(query?.toLowerCase())
+    item?.content?.category?.toLowerCase().includes(query?.toLowerCase())
   );
   return filteredData;
+}
+
+export async function singlePopularBlog() {
+  try {
+    let stories = await Storyblok.get("cdn/stories", {
+      starts_with: "blog/",
+      per_page: 100,
+      cv: Math.random(),
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    });
+
+    const storyData = stories.data.stories;
+    // Filter the data to include only items with priority field equal to 1
+    const OnePopularData = storyData.filter(
+      (item) => item && +item?.content?.Priority === 1
+    );
+
+    return OnePopularData;
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    return [];
+  }
 }
 
 export async function blogCategoryList() {
@@ -68,19 +90,19 @@ export async function blogCategoryList() {
   });
   const blogStories = response.data?.stories;
 
-  const uniqueSubtitles = new Set();
-  const filteredSubtitles = [];
+  const uniqueCategory = new Set();
+  const filteredCategory = [];
 
   for (const story of blogStories) {
-    const subtitle = story?.content?.subtitle;
+    const category = story?.content?.category;
 
-    if (subtitle && !uniqueSubtitles.has(subtitle)) {
-      uniqueSubtitles.add(subtitle);
-      filteredSubtitles.push(subtitle);
+    if (category && !uniqueCategory.has(category)) {
+      uniqueCategory.add(category);
+      filteredCategory.push(category);
     }
   }
 
-  return filteredSubtitles.sort((a, b) =>
+  return filteredCategory.sort((a, b) =>
     a.localeCompare(b, undefined, { sensitivity: "base" })
   );
 }

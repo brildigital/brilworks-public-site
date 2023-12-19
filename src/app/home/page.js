@@ -10,6 +10,7 @@ import Footer from "../components/Footer/index";
 import ExtensionOfTeam from "../components/Homepage/ExtensionOfTeam";
 import SeeingBelieving from "../components/Homepage/SeeingBelieving";
 import { BestAdvocateText } from "../components/Homepage/BigText";
+import { homepageFAQ } from "../components/lib/schemaCode";
 
 export const metadata = {
   title: "Mobile App & Software Development Company",
@@ -59,6 +60,10 @@ const page = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
       <Header />
       <GameChanger />

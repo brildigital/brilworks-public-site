@@ -27,9 +27,13 @@
   font-display: swap;
 }
 
-.blog-main{
-  ul,ol{
+.blog-main {
+  ul,
+  ol {
     padding-left: 0 !important;
+  }
+  .container {
+    max-width: 1280px !important;
   }
 }
 .blog-navigation {
@@ -177,7 +181,7 @@
     list-style: none;
     line-height: 1.6 !important;
     margin: 0;
-    padding-right: 12 !important;
+    padding-right: 12px !important;
     li {
       font-family: "Graphik" !important;
       color: #000 !important;
@@ -215,12 +219,6 @@
 .blog_category {
   .Blog_category_head {
     font-family: var(--medium);
-  }
-  .btn_blog_category {
-    padding: 8px;
-    cursor: pointer;
-    position: relative;
-    border: none;
   }
 }
 
@@ -486,11 +484,9 @@
   p {
     word-wrap: break-word;
   }
-  margin-bottom: 20px;
 }
 
 .blog-inner .blog_content_CTA_1 {
-  margin-bottom: 30px;
   font-family: "Graphik";
   color: #000 !important;
   font-size: 19px;
