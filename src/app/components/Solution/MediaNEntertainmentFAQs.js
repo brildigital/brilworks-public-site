@@ -15,6 +15,8 @@ const MediaNEntertainmentFAQs = () => {
           id="accordionExampleother"
           className="d-block accordion nav nav-tabs"
           role="tablist"
+          itemscope="true"
+          itemtype="https://schema.org/FAQPage"
         >
           <div
             className="accordion-item"
@@ -24,10 +26,14 @@ const MediaNEntertainmentFAQs = () => {
             role="tab"
             aria-controls="accordion-media-entertainment-one"
             aria-selected="true"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
             <h2
               className="accordion-header"
               id="headingmedia-entertainment-one"
+              itemprop="name"
             >
               <button
                 className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
@@ -46,8 +52,13 @@ const MediaNEntertainmentFAQs = () => {
               aria-labelledby="headingmedia-entertainment-one"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   As a well-known entertainment app development company, we
                   provide our clients with the most sophisticated media &{" "}
                   <strong>
@@ -73,10 +84,14 @@ const MediaNEntertainmentFAQs = () => {
             role="tab"
             aria-controls="accordion-media-entertainment-two"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
             <h2
               className="accordion-header"
               id="headingmedia-entertainment-two"
+              itemprop="name"
             >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -96,8 +111,13 @@ const MediaNEntertainmentFAQs = () => {
               aria-labelledby="headingmedia-entertainment-two"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   The time it takes to develop a media app is highly dependent
                   on what functionality the app has, what features it will
                   possess, and its use case.
@@ -114,10 +134,14 @@ const MediaNEntertainmentFAQs = () => {
             role="tab"
             aria-controls="accordion-media-entertainment-three"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
             <h2
               className="accordion-header"
               id="headingmedia-entertainment-Three"
+              itemprop="name"
             >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -137,8 +161,13 @@ const MediaNEntertainmentFAQs = () => {
               aria-labelledby="headingmedia-entertainment-Three"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   Yes, we do provide custom development services for media and
                   entertainment software. We create solutions tailored to the
                   requirements of your organization.
@@ -155,10 +184,14 @@ const MediaNEntertainmentFAQs = () => {
             role="tab"
             aria-controls="accordion-media-entertainment-four"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
             <h2
               className="accordion-header"
               id="headingmedia-entertainment-Four"
+              itemprop="name"
             >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -177,8 +210,13 @@ const MediaNEntertainmentFAQs = () => {
               aria-labelledby="headingmedia-entertainment-Four"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   In a world where consumers are always on the go, mobile
                   applications are quickly becoming the standard for
                   entertainment apps. Whether it is social media or messaging
@@ -198,10 +236,14 @@ const MediaNEntertainmentFAQs = () => {
             role="tab"
             aria-controls="accordion-media-entertainment-five"
             aria-selected="false"
+            itemscope="true"
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
           >
             <h2
               className="accordion-header"
               id="headingmedia-entertainment-five"
+              itemprop="name"
             >
               <button
                 className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
@@ -220,8 +262,13 @@ const MediaNEntertainmentFAQs = () => {
               aria-labelledby="headingmedia-entertainment-five"
               data-bs-parent="#accordionExampleother"
             >
-              <div className="accordion-body">
-                <div>
+              <div
+                className="accordion-body"
+                itemscope="true"
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div itemprop="text">
                   There are many things to consider if you want to build a
                   dating app like Tinder: A strong matching algorithm and
                   geo-location features are two of them.

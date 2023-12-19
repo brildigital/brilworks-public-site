@@ -20,16 +20,16 @@ const ContactUs = () => {
       <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
         <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full">
           <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
-            <h1
+            <h2
               className={`uppercase m-0 !w-10/12 contact_bold-head ${
                 isMobile ? "p-0 !text-left !w-full" : ""
               }`}
             >
               Drop Us a Message and Let Our Team Help With Your Project
-            </h1>
+            </h2>
           </div>
           <div className="noText md:pt-2">
-            <ul>
+            <ul className="!pl-0">
               <li>No strings attached.</li>
               <li>No obligation to hire.</li>
               <li>No commitment from you.</li>
@@ -42,10 +42,10 @@ const ContactUs = () => {
 
         <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[2rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full background_contact">
           <div className="drop_basis">
-            <div className="drop_title home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-              <p className="white_text uppercase !w-full">
+            <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
+              <h2 className="white_text uppercase !w-full py-8">
                 Ready to scale your business to new heights?
-              </p>
+              </h2>
             </div>
             <div className="ready_content">
               <div className="ready_content_sec home_sec2_txt4 pt-2">
@@ -99,10 +99,10 @@ const ContactUs = () => {
       <section>
         <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
           <div className="service_width mx-auto md:px-[0px] px-[15px] reveal">
-            <div className="service_sec3 md:text-center text-left">
-              <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+            <div className="solutions md:text-center text-left py-10">
+              <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                 WHAT MAKES US BRILLIANT?
-              </p>
+              </h2>
             </div>
 
             <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0">
@@ -120,7 +120,7 @@ const ContactUs = () => {
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
-                        <p>People</p>
+                        <h3>1. People</h3>
                       </div>
                       <div className="service_description text-center mob_center">
                         <p>
@@ -148,7 +148,7 @@ const ContactUs = () => {
                   <div className="no_flex ">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
-                        <p>Progress</p>
+                        <h3>2. Progress</h3>
                       </div>
                       <div className="service_description text-center mob_center">
                         <p>
@@ -175,7 +175,7 @@ const ContactUs = () => {
                   <div className="no_flex">
                     <div className="no_flex_height">
                       <div className="developer_sec6_title text-center mob_center">
-                        <p>Passion</p>
+                        <h3>3. Passion</h3>
                       </div>
                       <div className="service_description text-center mob_center">
                         <p>
@@ -193,10 +193,10 @@ const ContactUs = () => {
 
         <div className="service_width contact_sec3 md:!pt-[100px] pt-1 reveal">
           <div className="just_call_sec">
-            <div className="home_sec2_txt3 contact_bold text-center">
-              <p className="textUpercase md:!text-center !text-left !w-full">
+            <div className="solutions text-center py-8">
+              <h2 className="textUpercase md:!text-center !text-left !w-full">
                 JUST A CALL AWAY
-              </p>
+              </h2>
             </div>
           </div>
           <div className="contact_details background relative">
@@ -265,17 +265,23 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-
+        <div className="just_call_sec">
+          <div className="solutions text-center py-8">
+            <h2 className="uppercase md:!text-center !text-left !w-full">
+              Client Testimonials
+            </h2>
+          </div>
+        </div>
         <ClientReviews />
 
         <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem] reveal">
           <div className="bg_grey">
             <div className="like_flex">
               <div className="like_basis">
-                <div className="like_text bold home_sec2_txt3">
-                  <p className="!w-full">
+                <div className="like_text bold solutions py-8">
+                  <h2 className="!w-full">
                     LIKE WHAT YOU SEE? LET’S GET STARTED THEN!
-                  </p>
+                  </h2>
                 </div>
               </div>
               <div className="like_basis_form">

@@ -285,10 +285,6 @@ a:hover {
 .page-active {
   color: var(--main_color) !important;
 }
-
-.blog-tab-content a.page-active {
-  color: var(--main_color) !important;
-}
 .menu .accordion-container .content-entry i {
   top: 40%;
   transform: translateY(-50%);
@@ -739,7 +735,9 @@ a:hover {
 .font-light.f-light {
   font-family: var(--light) !important;
 }
-.sec6_title p {
+.sec6_title p,
+.sec6_title h2 {
+  font-size: var(--font_48);
   font-family: var(--regular);
   color: var(--color_black);
 }
@@ -1652,11 +1650,7 @@ textarea.form-control-txt {
 .service_sec3 .home_sec2_txt3 .extra_bold {
   font-family: var(--extra_bold);
 }
-.sec6_title p {
-  font-size: var(--font_48);
-  font-family: var(--regular);
-  color: var(--color_black);
-}
+
 .portfolio .head-title {
   font-size: var(--font_48);
   font-family: var(--extra_bold);
@@ -1671,7 +1665,6 @@ textarea.form-control-txt {
   font-family: var(--medium);
   color: var(--color_black);
 }
-
 
 .fintech-portfolio-sec {
   font-family: var(--regular);
@@ -1861,7 +1854,8 @@ textarea.form-control-txt {
   );
 }
 .home_sec2_txt1 p,
-.home_sec2_txt1 h1 {
+.home_sec2_txt1 h1,
+.home_sec2_txt1 h2 {
   font-size: var(--font_96);
   font-family: var(--regular);
   color: var(--color_black);
@@ -1954,11 +1948,12 @@ textarea.form-control-txt {
   padding: 4rem 3rem 2rem;
   border-radius: 40px;
 }
-.about_sec4 .height_about p {
+.about_sec4 .height_about h3 {
   height: 220px;
   line-height: 1.1;
 }
-.sec4_about p {
+.sec4_about p,
+.sec4_about h3 {
   transition: all ease-in-out 0.5s;
   font-size: 3.75rem;
   font-family: var(--regular);
@@ -2222,12 +2217,7 @@ textarea.form-control-txt {
 .blog-nav {
   font-family: var(--regular);
 }
-.blog_padding {
-  margin-top: 2rem;
-  position: sticky;
-  top: 6rem;
-  height: fit-content;
-}
+
 .service_sec3 .home_sec2_txt3 h1 {
   font-family: var(--bold);
   font-size: var(--font_48);
@@ -2279,7 +2269,7 @@ textarea.form-control-txt {
   font-family: var(--extra_bold);
   font-size: var(--font_48);
   color: var(--black_font);
-  line-height: var(--line_height_1);
+  line-height: var(--line_height_1_2);
 }
 
 @media only screen and (max-width: 1680px) {
@@ -2289,6 +2279,7 @@ textarea.form-control-txt {
   .home_txt1 p,
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 5rem;
@@ -2356,6 +2347,7 @@ textarea.form-control-txt {
     font-size: 2.6rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 2.5rem;
   }
@@ -2377,14 +2369,17 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 {
     font-size: 4rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3.5rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3.5rem;
   }
   .sec9_txt1 p {
@@ -2440,6 +2435,7 @@ textarea.form-control-txt {
     font-size: 2.2rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 2rem;
   }
@@ -2471,10 +2467,12 @@ textarea.form-control-txt {
   .year p {
     width: 76%;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 3rem;
   }
   .about_sec4_txt4 .sec10_txt1 p {
@@ -2539,6 +2537,7 @@ textarea.form-control-txt {
     height: 50vh;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.8rem;
   }
@@ -2551,16 +2550,18 @@ textarea.form-control-txt {
   .about_vision {
     padding: 7rem 4rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.75rem;
   }
-  .about_sec4 .height_about p {
+  .about_sec4 .height_about h3 {
     height: 140px;
   }
   .about_sec4 .sec6_career_img1 {
     width: 110px;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.75rem;
   }
   .about_sec4_txt4 .sec10_txt1 p {
@@ -2605,14 +2606,17 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.5rem;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.1rem !important;
   }
-  .sec4_about p {
+  .sec4_about p,
+  .sec4_about h3 {
     font-size: 2.1rem !important;
   }
   .about_sec4 .sec10_txt1 p {
@@ -2719,6 +2723,7 @@ textarea.form-control-txt {
     padding-top: 6rem;
   }
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.7rem;
   }
@@ -2740,6 +2745,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.8rem;
@@ -2851,7 +2857,8 @@ textarea.form-control-txt {
   .sec3_width_home {
     padding-top: 4rem;
   }
-  .sec6_title p {
+  .sec6_title p,
+  .sec6_title h2 {
     font-size: 1.5rem;
   }
   .portfolio_sec1_txt1 p {
@@ -2868,6 +2875,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3rem;
@@ -2899,10 +2907,6 @@ textarea.form-control-txt {
   }
   .single-author-bio .single-author-bio-text {
     max-width: unset;
-  }
-  .blog_padding {
-    margin-bottom: 4rem;
-    position: static;
   }
   .padding_menu_header {
     padding: 6rem 0 0 0;
@@ -3164,6 +3168,7 @@ textarea.form-control-txt {
     padding: 3rem 0 1rem;
   } */
   .sec6_title p,
+  .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.6rem;
   }
@@ -3232,6 +3237,7 @@ textarea.form-control-txt {
   }
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
+  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 2.2rem;

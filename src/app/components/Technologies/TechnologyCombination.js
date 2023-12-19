@@ -10,26 +10,26 @@ const TechnologyCombination = () => {
 
   return (
     <div className="mx-auto service_width">
-      <div className="service_sec3 md:text-center text-left">
+      <div className="solutions md:text-center text-left py-8">
         {pathname === "/hire-reactjs-developer/" ? (
-          <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+          <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
             THE RIGHT REACT JS COMBINATIONS {!isMobile && <br />}
             JUST FOR YOU
-          </p>
+          </h2>
         ) : (
           <>
             {pathname === "/hire-java-developer/" ? (
-              <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+              <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
                 FULL STACK JAVA DEVELOPMENT TO {!isMobile && <br />}
                 LEVEL UP YOUR WEB APPS
-              </p>
+              </h2>
             ) : (
               <>
                 {pathname === "/hire-nodejs-developer/" && (
-                  <p className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                    Hire STACK NODE JS DEVELOPER TO {!isMobile && <br />}
+                  <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+                    HIRE STACK NODE JS DEVELOPER TO {!isMobile && <br />}
                     AMP IT UP A NOTCH
-                  </p>
+                  </h2>
                 )}
               </>
             )}
@@ -66,7 +66,7 @@ const TechnologyCombination = () => {
                       />
                     </div>
                     <div className="developer_sec6_title mb-2">
-                      <p>React Node Developer</p>
+                      <p>1. React Node Developer</p>
                     </div>
                     <div className="hire_data_sec">
                       <p className="md:h-[120px] min-h-[120px]">
@@ -98,7 +98,7 @@ const TechnologyCombination = () => {
                           />
                         </div>
                         <div className="developer_sec6_title mb-2">
-                          <p>Java Angular Developer</p>
+                          <p>1. Java Angular Developer</p>
                         </div>
                         <div className="hire_data_sec">
                           <p className="md:min-h-[144px] min-h-[150px]">
@@ -133,7 +133,7 @@ const TechnologyCombination = () => {
                               />
                             </div>
                             <div className="developer_sec6_title mb-2">
-                              <p>Node React Developer</p>
+                              <p>1. Node React Developer</p>
                             </div>
                             <div className="hire_data_sec">
                               <p className="md:min-h-[120px] min-h-[120px]">
@@ -183,7 +183,7 @@ const TechnologyCombination = () => {
                       />
                     </div>
                     <div className="developer_sec6_title mb-2">
-                      <p>React Java Developer</p>
+                      <p>2. React Java Developer</p>
                     </div>
                     <div className="hire_data_sec">
                       <p className="md:h-[120px] min-h-[120px]">
@@ -217,7 +217,7 @@ const TechnologyCombination = () => {
                           />
                         </div>
                         <div className="developer_sec6_title mb-2">
-                          <p>Java React Developer</p>
+                          <p>2. Java React Developer</p>
                         </div>
                         <div className="hire_data_sec">
                           <p className="md:min-h-[144px] min-h-[150px]">
@@ -250,7 +250,7 @@ const TechnologyCombination = () => {
                               />
                             </div>
                             <div className="developer_sec6_title mb-2">
-                              <p>Node Angular Developer</p>
+                              <p>2. Node Angular Developer</p>
                             </div>
                             <div className="hire_data_sec">
                               <p className="md:min-h-[120px] min-h-[150px]">

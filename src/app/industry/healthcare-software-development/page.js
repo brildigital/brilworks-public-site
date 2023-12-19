@@ -1,6 +1,7 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import HealthCare from "@/app/components/Solution/Healthcare";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Healthcare Software Development Services",
@@ -35,6 +36,14 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb(
+            "Healthcare Software Development Services"
+          ),
+        }}
+      />
       <Header />
       <HealthCare />
       <Footer />

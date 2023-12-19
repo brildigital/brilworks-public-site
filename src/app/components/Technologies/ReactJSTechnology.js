@@ -30,8 +30,8 @@ const ReactJSTechnology = () => {
                 decoding="async"
                 loading="lazy"
                 className="h-[46vh] rounded-[20px]"
-                src="/images/react-banner.png"
-                alt="our process"
+                src="/images/react-banner.webp"
+                alt="React banner"
               />
             </p>
             <div className="service_sec1_position">
@@ -39,6 +39,7 @@ const ReactJSTechnology = () => {
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                      HIRE
                       <div className="flex items-center">
                         <Image
                           className="w-[auto]"
@@ -47,7 +48,7 @@ const ReactJSTechnology = () => {
                           width="24"
                           height="94"
                         />
-                        REACT JS
+                        REACTJS
                         <Image
                           className="w-[auto]"
                           src="/images/2.png"
@@ -56,8 +57,7 @@ const ReactJSTechnology = () => {
                           height="94"
                         />
                       </div>
-                      DEVELOPMENT <br />
-                      COMPANY
+                      DEVELOPERS
                     </h1>
                   </div>
                 </div>
@@ -139,12 +139,12 @@ const ReactJSTechnology = () => {
         </div>
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
+            <div className="endTO_text solutions">
+              <h2 className="!w-full p-0">
                 Build Feature-rich Frontend Applications With
                 <br />
                 Our React Development Services
-              </p>
+              </h2>
             </div>
           </div>
 
@@ -163,7 +163,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>ReactJS for Enterprise App Development</p>
+                    <h3>ReactJS for Enterprise App Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -188,7 +188,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>ReactJS for Custom App Development</p>
+                    <h3>ReactJS for Custom App Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -214,7 +214,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>ReactJS for Front-End Development</p>
+                    <h3>ReactJS for Front-End Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -241,7 +241,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>ReactJS Website Migration & Integration</p>
+                    <h3>ReactJS Website Migration & Integration</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -268,7 +268,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>ReactJS UI/UX Development</p>
+                    <h3>ReactJS UI/UX Development</h3>
                   </div>
 
                   <div className="service_description">
@@ -295,7 +295,7 @@ const ReactJSTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>ReactJS Support & Maintenance</p>
+                    <h3>ReactJS Support & Maintenance</h3>
                   </div>
                   <div className="service_description">
                     <p>

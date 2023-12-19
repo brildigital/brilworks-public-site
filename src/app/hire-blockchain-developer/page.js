@@ -1,15 +1,16 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 import BlockchainTechnology from "../components/Technologies/BlockchainTechnology";
+import { generateBreadcrumb } from "../components/lib/schemaCode";
 
 export const metadata = {
-  title: "Blockchain Development Company | Hire Blockchain App Developer",
+  title: "Hire Blockchain Developers",
   description:
-    "Hire Blockchain developers from Brilworks for blockchain app development services such as Consultation. MVP, DApp, Smart Contracts, NFT Marketplace & custom solutions.",
+    "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
   openGraph: {
-    title: "Blockchain Development Company | Hire Blockchain App Developer",
+    title: "Hire Blockchain Developers",
     description:
-      "Hire Blockchain developers from Brilworks for blockchain app development services such as Consultation. MVP, DApp, Smart Contracts, NFT Marketplace & custom solutions.",
+      "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-blockchain-developer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -21,6 +22,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "Hire Blockchain Developers",
+    description:
+      "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -32,6 +36,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb("Hire Blockchain Developers"),
+        }}
+      />
       <Header />
       <BlockchainTechnology />
       <Footer />

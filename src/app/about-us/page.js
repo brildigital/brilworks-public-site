@@ -3,14 +3,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
 
 export const metadata = {
-  title: "About Us | Software Development Company | Brilworks",
+  title: "About Us - Brilworks",
   description:
-    "Brilworks is a top software development company with highly qualified professionals. We provide end-to-end solutions for software development services.",
-
+    "Software development services and end-to-end solutions at Brilworks. Explore further on our About page for more information.",
   openGraph: {
-    title: "About Us | Software Development Company | Brilworks",
+    title: "About Us - Brilworks",
     description:
-      "Brilworks is a top software development company with highly qualified professionals. We provide end-to-end solutions for software development services.",
+      "Software development services and end-to-end solutions at Brilworks. Explore further on our About page for more information.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}about-us/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
@@ -22,6 +21,10 @@ export const metadata = {
     type: "article",
   },
   twitter: {
+    title: "About Us - Brilworks",
+    description:
+      "Software development services and end-to-end solutions at Brilworks. Explore further on our About page for more information.",
+
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -31,8 +34,30 @@ export const metadata = {
 };
 
 const page = () => {
+  const breadCrumbList = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.brilworks.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Us",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
+      />
       <Header />
       <AboutUs />
       <Footer />

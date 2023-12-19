@@ -23,11 +23,11 @@ const ExtensionOfTeam = () => {
             <div className="lg:w-6/12 w-full">
               <div className=" !mb-0 lg:w-[90%] w-full">
                 <div className="sec6_title xl:text-[48px] lg:text-[32px] md:text-[28px] sm:text-[26px] text-[24px]">
-                  <p>
-                    Intelligent teams that drive
+                  <h2>
+                    Our Services drive
                     <br />
                     sustainable growth.
-                  </p>
+                  </h2>
                 </div>
 
                 <div
@@ -44,33 +44,33 @@ const ExtensionOfTeam = () => {
                     aria-controls="accordion-growth-one"
                     aria-selected="true"
                   >
-                    <h2 className="accordion-header" id="headinggrowth-One">
+                    <h3 className="accordion-header" id="headinggrowth-One">
                       <button
-                        className="accordion-button xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
+                        className="accordion-button xl:!text-[1.8rem] md:!text-[26px] !text-[22px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-One"
                         aria-expanded="true"
                         aria-controls="collapsegrowth-One"
                       >
-                        Backend Developer
+                        1. Backend Developer
                       </button>
-                    </h2>
+                    </h3>
                     <div
                       id="collapsegrowth-One"
-                      className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                      className="accordion-collapse collapse show"
                       aria-labelledby="headinggrowth-One"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
                         <Link
                           href="/hire-java-developer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
+                          className="flex items-center gap-[20px] about_btn transition"
                         >
                           <div className="about_txt">
                             <p
                               href="/hire-java-developer/"
-                              className="change_link text-[24px]"
+                              className="change_link md:text-[24px] text-[22px]"
                             >
                               Java
                             </p>
@@ -94,12 +94,12 @@ const ExtensionOfTeam = () => {
                         </Link>
                         <Link
                           href="/hire-nodejs-developer"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                          className="flex items-center gap-[20px] about_btn transition py-[20px]"
                         >
                           <div className="about_txt">
                             <p
                               href="/hire-nodejs-developer/"
-                              className="change_link text-[24px]"
+                              className="change_link md:text-[24px] text-[22px]"
                             >
                               Node.Js
                             </p>
@@ -135,31 +135,33 @@ const ExtensionOfTeam = () => {
                     aria-controls="accordion-growth-two"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headinggrowth-Two">
+                    <h3 className="accordion-header" id="headinggrowth-Two">
                       <button
-                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[22px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Two"
                         aria-expanded="false"
                         aria-controls="collapsegrowth-Two"
                       >
-                        Frontend Developer
+                        2. Frontend Developer
                       </button>
-                    </h2>
+                    </h3>
                     <div
                       id="collapsegrowth-Two"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headinggrowth-Two"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
                         <Link
                           href="/hire-reactjs-developer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                          className="flex items-center gap-[20px] about_btn transition pb-[20px]"
                         >
                           <div className="about_txt">
-                            <p className="change_link text-[24px]">React.Js</p>
+                            <p className="change_link md:text-[24px] text-[22px]">
+                              React.Js
+                            </p>
                           </div>
                           <div className="aerrow relative">
                             <Image
@@ -190,31 +192,31 @@ const ExtensionOfTeam = () => {
                     aria-controls="accordion-growth-three"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headinggrowth-Three">
+                    <h3 className="accordion-header" id="headinggrowth-Three">
                       <button
-                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[22px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Three"
                         aria-expanded="false"
                         aria-controls="collapsegrowth-Three"
                       >
-                        Cloud Services
+                        3. Cloud Services
                       </button>
-                    </h2>
+                    </h3>
                     <div
                       id="collapsegrowth-Three"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headinggrowth-Three"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
                         <Link
                           href="/hire-aws-developer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                          className="flex items-center gap-[20px] about_btn transition pb-[20px]"
                         >
                           <div className="about_txt">
-                            <p className="change_link text-[24px]">
+                            <p className="change_link md:text-[24px] text-[22px]">
                               AWS Development Services
                             </p>
                           </div>
@@ -247,31 +249,31 @@ const ExtensionOfTeam = () => {
                     aria-controls="accordion-growth-four"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headinggrowth-Four">
+                    <h3 className="accordion-header" id="headinggrowth-Four">
                       <button
-                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[22px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Four"
                         aria-expanded="false"
                         aria-controls="collapsegrowth-Four"
                       >
-                        Mobile App Developer
+                        4. Mobile App Developer
                       </button>
-                    </h2>
+                    </h3>
                     <div
                       id="collapsegrowth-Four"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headinggrowth-Four"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
                         <Link
                           href="/hire-react-native-developer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px]"
+                          className="flex items-center gap-[20px] about_btn transition pb-[20px]"
                         >
                           <div className="about_txt">
-                            <p className="change_link text-[24px]">
+                            <p className="change_link md:text-[24px] text-[22px]">
                               React Native
                             </p>
                           </div>
@@ -295,12 +297,12 @@ const ExtensionOfTeam = () => {
 
                         <Link
                           href="/hire-blockchain-developer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                          className="flex items-center gap-[20px] about_btn transition pb-[20px]"
                         >
                           <div className="about_txt">
                             <p
                               href="/hire-blockchain-developer/"
-                              className="change_link text-[24px]"
+                              className="change_link md:text-[24px] text-[22px]"
                             >
                               Block Chain and Solidity
                             </p>
@@ -334,31 +336,31 @@ const ExtensionOfTeam = () => {
                     aria-controls="accordion-growth-five"
                     aria-selected="false"
                   >
-                    <h2 className="accordion-header" id="headinggrowth-Five">
+                    <h3 className="accordion-header" id="headinggrowth-Five">
                       <button
-                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[16px]"
+                        className="accordion-button collapsed xl:!text-[1.8rem] md:!text-[26px] !text-[22px]"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapsegrowth-Five"
                         aria-expanded="false"
                         aria-controls="collapsegrowth-Five"
                       >
-                        UI/UX Design
+                        5. UI/UX Design
                       </button>
-                    </h2>
+                    </h3>
                     <div
                       id="collapsegrowth-Five"
-                      className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headinggrowth-Five"
                       data-bs-parent="#accordionExampleother"
                     >
                       <div className="accordion-body">
                         <Link
                           href="/hire-ui-ux-designer/"
-                          className="flex items-center gap-[20px] about_btn transition md:pt-[32px] pt-[10px] sm:mb-[0px] mb-[20px]"
+                          className="flex items-center gap-[20px] about_btn transition pb-[20px]"
                         >
                           <div className="about_txt">
-                            <p className="change_link text-[24px]">
+                            <p className="change_link md:text-[24px] text-[22px]">
                               UI/UX Designer
                             </p>
                           </div>
@@ -392,16 +394,16 @@ const ExtensionOfTeam = () => {
                   loading="lazy"
                   className="alignnone wp-image-40 size-full !ml-auto !w-full"
                   src={
-                    "https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg"
+                    "https://a.storyblok.com/f/219851/1011x1101/a2929139da/team-img.webp"
                   }
                   alt="Teamwork"
                   width="1011"
                   height="1101"
                   srcSet="
-                  https://a.storyblok.com/f/219851/1011x1101/9cd5e19328/team.jpg          1011w,
-                  /images/team-275x300.jpg   275w,
-                  https://a.storyblok.com/f/219851/940x1024/226903f3e2/team-940x1024.jpg  940w,
-                  https://a.storyblok.com/f/219851/768x836/6cafddfead/team-768x836.jpg   768w
+                  https://a.storyblok.com/f/219851/1011x1101/a2929139da/team-img.webp          1011w,
+                  /images/team-275x300.webp   275w,
+                  https://a.storyblok.com/f/219851/940x1024/a45f992bf1/team-940x1024.webp  940w,
+                  https://a.storyblok.com/f/219851/768x836/36f87ab39c/team-768x836.webp   768w
                   "
                   sizes="(max-width: 1011px) 100vw, 1011px"
                 />

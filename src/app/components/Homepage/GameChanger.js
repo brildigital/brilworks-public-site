@@ -29,12 +29,10 @@ const GameChanger = () => {
           </p>
         </div>
         <div className="our_btn_flex flex lg:items-center items-end justify-between xl:!pt-12 !pt-0">
-          <div className="home_txt3 home_txt3_top_padding md:max-w-[760px]">
+          <div className="home_txt3 home_txt3_top_padding md:max-w-[825px]">
             <h1>
-              <span className="ez-toc-section"></span>We build stunning digital
-              solutions for global brands{isTablet && <br />} and startups which
-              deﬁne their success.
-              <span className="ez-toc-section-end"></span>
+              Our software development company creates vital digital solutions
+              for global brands{isTablet && <br />} and startups to succeed.
             </h1>
           </div>
           <div

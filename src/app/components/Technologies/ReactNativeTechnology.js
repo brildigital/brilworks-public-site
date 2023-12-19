@@ -30,7 +30,7 @@ const ReactNativeTechnology = () => {
                 loading="lazy"
                 className="h-[46vh] rounded-[20px]"
                 src={
-                  "https://a.storyblok.com/f/219851/1398x780/5c508e3cb0/react-native-banner.png"
+                  "https://a.storyblok.com/f/219851/1398x780/080c2075ed/react-native-banner.webp"
                 }
                 alt="React Native banner"
               />
@@ -40,7 +40,8 @@ const ReactNativeTechnology = () => {
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
                     <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      <div className="flex items-center">
+                      HIRE
+                      <div className="flex items-center gap-1">
                         <Image
                           className="w-[auto]"
                           src="/images/1.png"
@@ -57,8 +58,7 @@ const ReactNativeTechnology = () => {
                           height="94"
                         />
                       </div>
-                      DEVELOPMENT <br />
-                      COMPANY
+                      DEVELOPERS
                     </h1>
                   </div>
                 </div>
@@ -143,11 +143,10 @@ const ReactNativeTechnology = () => {
 
         <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text home_sec2_txt3">
-              <p className="!w-full p-0">
-                Build Top-notch Cross-platform Mobile Applications Using Our
-                React Native Development Company
-              </p>
+            <div className="endTO_text solutions">
+              <h2 className="!w-full p-0">
+                Create cross-platform mobile apps with React Native
+              </h2>
             </div>
           </div>
 
@@ -166,7 +165,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <p>React Native App Consultation</p>
+                    <h3>React Native App Consultation</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -192,7 +191,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <p>React Native Cross-Platform App Development</p>
+                    <h3>React Native Cross-Platform App Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -220,7 +219,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <p>React Native Migration</p>
+                    <h3>React Native Migration</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -247,7 +246,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <p>React Native App Maintenance & Support</p>
+                    <h3>React Native App Maintenance & Support</h3>
                   </div>
                   <div className="service_description">
                     <p>
@@ -274,7 +273,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <p>React Native UI/UX Development</p>
+                    <h3>React Native UI/UX Development</h3>
                   </div>
 
                   <div className="service_description">
@@ -301,7 +300,7 @@ const ReactNativeTechnology = () => {
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <p>React Native Testing & Audit</p>
+                    <h3>React Native Testing & Audit</h3>
                   </div>
                   <div className="service_description">
                     <p>

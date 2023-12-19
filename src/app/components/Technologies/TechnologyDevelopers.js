@@ -67,15 +67,15 @@ const TechnologyDevelopers = () => {
       <div className="end-To-end">
         {techDeveloperData?.length ? (
           techDeveloperData.map(({ content, id }, index) => (
-            <div className="endTO_text home_sec2_txt3" key={id}>
+            <div className="endTO_text solutions" key={id}>
               {index === 0 && (
-                <p
+                <h2
                   className={`${
-                    pathname === "/hire-java-developer/" ? "!w-full" : null
+                    pathname === "/hire-java-developer/" ? "!w-full" : ""
                   } p-0`}
                 >
                   {content?.Display_text}
-                </p>
+                </h2>
               )}
             </div>
           ))

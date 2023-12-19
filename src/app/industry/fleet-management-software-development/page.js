@@ -1,6 +1,7 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header/Header";
 import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Fleet Management Software Development Services",
@@ -35,6 +36,14 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb(
+            "Fleet Manangement Software Development Company"
+          ),
+        }}
+      />
       <Header />
       <FleetManagementNGPS />
       <Footer />
