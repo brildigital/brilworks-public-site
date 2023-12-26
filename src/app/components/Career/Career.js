@@ -630,6 +630,8 @@ const Career = () => {
                     loading="lazy"
                     src="/images/black_aerrow-1.png"
                     alt="arrow"
+                    width="46"
+                    height="18"
                   />
                 </div>
                 <div className="sec6_career_img1">
@@ -668,6 +670,8 @@ const Career = () => {
                     loading="lazy"
                     src="/images/black_aerrow-1.png"
                     alt="arrow"
+                    width="46"
+                    height="18"
                   />
                 </div>
                 <div className="sec6_career_img1">
@@ -705,6 +709,8 @@ const Career = () => {
                     loading="lazy"
                     src="/images/black_aerrow-1.png"
                     alt="arrow"
+                    width="46"
+                    height="18"
                   />
                 </div>
                 <div className="sec6_career_img1">
@@ -741,6 +747,8 @@ const Career = () => {
                     loading="lazy"
                     src="/images/black_aerrow-1.png"
                     alt="arrow"
+                    width="46"
+                    height="18"
                   />
                 </div>
                 <div className="sec6_career_img1">
@@ -777,6 +785,8 @@ const Career = () => {
                     loading="lazy"
                     src="/images/black_aerrow-1.png"
                     alt="arrow"
+                    width="46"
+                    height="18"
                   />
                 </div>
                 <div className="sec6_career_img1">

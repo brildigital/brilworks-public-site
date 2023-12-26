@@ -174,7 +174,9 @@ const Article = ({ blok }) => {
                             title="Go to the Web App Development category."
                             href="#"
                           >
-                            {blok?.category}
+                            {blok?.category === "Cloud DevOps and Data"
+                              ? "Cloud, DevOps and Data"
+                              : blok?.category}
                           </Link>
                         </span>
                       </>
