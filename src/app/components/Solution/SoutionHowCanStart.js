@@ -11,7 +11,7 @@ const SoutionHowCanStart = () => {
         </div>
 
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[2rem] reveal">
-          <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
+          <div className="!border rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
               decoding="async"
               loading="lazy"
@@ -32,7 +32,7 @@ const SoutionHowCanStart = () => {
             </div>
           </div>
 
-          <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
+          <div className="!border rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
               decoding="async"
               loading="lazy"
@@ -53,7 +53,7 @@ const SoutionHowCanStart = () => {
             </div>
           </div>
 
-          <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
+          <div className="!border rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
               decoding="async"
               loading="lazy"
@@ -74,7 +74,7 @@ const SoutionHowCanStart = () => {
             </div>
           </div>
 
-          <div className="border-1 rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
+          <div className="!border rounded-[30px] border-[#00dfb8] bg-[#fff] py-[4rem] px-[2rem]">
             <img
               decoding="async"
               loading="lazy"

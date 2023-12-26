@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
-import FAQsTechnology from "./FAQsTechnology";
+import JavaFAQs from "./TechnologyFAQ";
 import TechnologyDevelopers from "./TechnologyDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
@@ -74,7 +74,7 @@ const JavaTechnology = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="p-0 !ml-[0] !w-full">
+                  <p className="!p-0 !ml-[0] !w-full">
                     HIRE JAVA DEVELOPER TO STAY IN SYNC WITH BACKEND
                   </p>
                 </Link>
@@ -355,7 +355,7 @@ const JavaTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FAQsTechnology />
+      <JavaFAQs />
     </>
   );
 };

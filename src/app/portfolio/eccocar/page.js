@@ -1,6 +1,8 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import PortfolioInnerEccocar from "@/app/components/Portfolio/PortfolioInnerEccocar";
+import dynamic from "next/dynamic";
+
+const PortfolioInnerEccocar = dynamic(() =>
+  import("@/app/components/Portfolio/PortfolioInnerEccocar")
+);
 
 export const metadata = {
   title: "Eccocar - Portfolio | Fleet Payment Solution |Brilworks Software",
@@ -25,13 +27,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return (
-    <>
-      <Header />
-      <PortfolioInnerEccocar />
-      <Footer />
-    </>
-  );
+  return <PortfolioInnerEccocar />;
 };
 
 export default page;

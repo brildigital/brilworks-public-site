@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import UIUXTechnology from "../components/Technologies/UIUXTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const UIUXTechnology = dynamic(() =>
+  import("../components/Technologies/UIUXTechnology")
+);
 
 export const metadata = {
   title: "Hire UI UX Designers",
@@ -42,9 +44,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire UI UX Designers"),
         }}
       />
-      <Header />
       <UIUXTechnology />
-      <Footer />
     </>
   );
 };

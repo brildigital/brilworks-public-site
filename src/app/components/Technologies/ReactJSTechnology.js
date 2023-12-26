@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import TechnologyDevelopers from "./TechnologyDevelopers";
-import FAQsTechnology from "./FAQsTechnology";
+import ReactJSFAQs from "./TechnologyFAQ";
 import BenefitOfHiringDevelopers from "./BenefitOfHiringDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
 import ThreeStepstoHireDeveloper from "./ThreeStepstoHireDeveloper";
@@ -73,7 +73,7 @@ const ReactJSTechnology = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="p-0 !ml-[0] !w-full">
+                  <p className="!p-0 !ml-[0] !w-full">
                     Hire ReactJS Developers to Fire Up Your Frontend
                   </p>
                 </Link>
@@ -346,7 +346,7 @@ const ReactJSTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FAQsTechnology />
+      <ReactJSFAQs />
     </>
   );
 };

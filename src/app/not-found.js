@@ -1,11 +1,8 @@
 "use client";
-import Footer from "./components/Footer";
-import Header from "./components/Header/Header";
 
 export default function NotFound({ error, reset }) {
   return (
     <div>
-      <Header />
       <div className="flex align-middle justify-center md:pt-20 pt-18">
         <div className="flex-container">
           <div className="text-center">
@@ -33,7 +30,6 @@ export default function NotFound({ error, reset }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import Portfolio from "../components/Portfolio/Portfolio";
+import dynamic from "next/dynamic";
+
+const Portfolio = dynamic(() => import("../components/Portfolio/Portfolio"));
 
 export const metadata = {
   title: "Portfolio - Web and Mobile App Development | Brilworks",
@@ -25,13 +25,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div>
-      <Header />
-      <Portfolio />
-      <Footer />
-    </div>
-  );
+  return <Portfolio />;
 };
 
 export default page;

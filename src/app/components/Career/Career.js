@@ -243,7 +243,7 @@ const Career = () => {
       </section>
 
       <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal">
-        <div className="border-1 border-[#80808075] lg:p-[6rem] sm:p-[3rem] p-[1rem] rounded-[25px]">
+        <div className="border border-[#80808075] lg:p-[6rem] sm:p-[3rem] p-[1rem] rounded-[25px]">
           <div className="flex md:flex-row flex-col">
             <div className="basis-[35%]">
               <div className="flex items-center gap-[16px]">
@@ -619,7 +619,7 @@ const Career = () => {
 
         <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-[30px]">
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Flexible Timings</p>
               </div>
@@ -657,7 +657,7 @@ const Career = () => {
           </div>
 
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="!p-[1.5rem] rounded-[40px] border-1 border-[#80808075]">
+            <div className="!p-[1.5rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Medical Insurance Cover</p>
               </div>
@@ -694,7 +694,7 @@ const Career = () => {
           </div>
 
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Holidays & Time off</p>
               </div>
@@ -730,7 +730,7 @@ const Career = () => {
           </div>
 
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Team Building</p>
               </div>
@@ -766,7 +766,7 @@ const Career = () => {
           </div>
 
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border-1 border-[#80808075]">
+            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
                 <p className="min-h-[128px]">Learning & Development</p>
               </div>

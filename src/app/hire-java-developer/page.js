@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import JavaTechnology from "../components/Technologies/JavaTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const JavaTechnology = dynamic(() =>
+  import("../components/Technologies/JavaTechnology")
+);
 
 export const metadata = {
   title: "Hire Java Developers",
@@ -42,9 +44,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire Java Developers"),
         }}
       />
-      <Header />
       <JavaTechnology />
-      <Footer />
     </>
   );
 };

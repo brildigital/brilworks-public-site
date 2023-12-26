@@ -199,15 +199,20 @@ const CareerContactForm = () => {
                     <div className="success-msg h-4" id="sucess_msg">
                       {respMessage}
                     </div>
-                    <button className="btn_paddinng pt-4">
-                      <div className="home_ready_sec transition  !w-[115px]">
+                    <button className="btn_paddinng mt-4">
+                      <div className="home_ready_sec transition !w-[115px]">
                         <p className="flex align-middle justify-center">
                           {isSubmitting ? (
                             <div className="py-[4px] px-[30px]">
                               <Loader />
                             </div>
                           ) : (
-                            <input id="submit" name="btnSubmit" type="submit" />
+                            <input
+                              id="submit"
+                              name="btnSubmit"
+                              type="submit"
+                              className="!cursor-pointer"
+                            />
                           )}
                         </p>
                       </div>
