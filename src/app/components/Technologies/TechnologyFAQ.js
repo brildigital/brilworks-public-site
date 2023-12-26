@@ -230,88 +230,89 @@ const TechnologyFAQ = () => {
           FAQs
         </h2>
       </div>
+      <div className="reveal">
+        <div itemscope="true" itemtype="https://schema.org/FAQPage">
+          {pathname === "/hire-reactjs-developer/" &&
+            reactJSFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
 
-      <div>
-        {pathname === "/hire-reactjs-developer/" &&
-          reactJSFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
+          {pathname === "/hire-java-developer/" &&
+            javaFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
+          {pathname === "/hire-nodejs-developer/" &&
+            nodeJSFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
+          {pathname === "/hire-react-native-developer/" &&
+            reactNativeFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
+          {pathname === "/hire-aws-developer/" &&
+            awsFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
 
-        {pathname === "/hire-java-developer/" &&
-          javaFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
-        {pathname === "/hire-nodejs-developer/" &&
-          nodeJSFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
-        {pathname === "/hire-react-native-developer/" &&
-          reactNativeFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
-        {pathname === "/hire-aws-developer/" &&
-          awsFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
+          {pathname === "/hire-ui-ux-designer/" &&
+            uiuxFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
 
-        {pathname === "/hire-ui-ux-designer/" &&
-          uiuxFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
-
-        {pathname === "/hire-blockchain-developer/" &&
-          blockchainFAQData.map((faq) => (
-            <FAQAccordion
-              key={faq.id}
-              id={faq.id}
-              question={faq.question}
-              answer={faq.answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
+          {pathname === "/hire-blockchain-developer/" &&
+            blockchainFAQData.map((faq) => (
+              <FAQAccordion
+                key={faq.id}
+                id={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
+        </div>
       </div>
     </div>
   );
