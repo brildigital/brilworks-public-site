@@ -1,12 +1,29 @@
 .homepage-work-domain {
-  .accordion-header {
-    .accordion-button {
-      font-size: 1.8rem;
-    }
+  button {
+    font-family: var(--medium);
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  .accordion-body,
+  .about_txt_domain {
+    font-size: var(--font_24);
+    font-family: var(--regular);
+  }
+}
 
-    .accordion-body {
-      font-family: var(--regular);
-    }
+.homepage-extension-team {
+  button {
+    font-family: var(--light);
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  .accordion-body {
+    font-size: var(--font_24);
+    font-family: var(--regular);
   }
 }
 
@@ -15,31 +32,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.homepage-work-domain,
-.homepage-extension-team {
-  .accordion-item {
-    border-bottom: 1px solid #80808038 !important;
-  }
-
-  .accordion-button {
-    padding-right: 1.5rem !important;
-  }
-
-  .accordion-button:not(.collapsed)::after {
-    transform: scale(2) rotate(unset) !important;
-    -webkit-transform: scale(2);
-    -webkit-transform: rotate(unset);
-    background-image: url("/images/minus_icon.png") !important;
-  }
-
-  .accordion-button::after {
-    transform: scale(2) rotate(unset) !important;
-    -webkit-transform: scale(2);
-    -webkit-transform: rotate(unset);
-    background-image: url("/images/plus_icon.png") !important;
-  }
 }
 
 .client-review-msg {
@@ -379,6 +371,17 @@
 @media only screen and (max-width: 767px) {
   .client-review-msg {
     font-size: 1.2rem !important;
+  }
+  .homepage-work-domain,
+  .homepage-extension-team {
+    h3 {
+      font-size: var(--font_21);
+    }
+    .accordion-body,
+    .about_txt_domain {
+      font-size: var(--font_16);
+      font-family: var(--regular);
+    }
   }
 
   .style_sec3_swiper_home {

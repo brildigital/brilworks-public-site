@@ -1,7 +1,6 @@
-import React from "react";
-import Blog from "../components/Blog/Blog";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
+import dynamic from "next/dynamic";
+
+const Blog = dynamic(() => import("../components/Blog/Blog"));
 
 export const metadata = {
   title: "Blog - Brilworks Software",
@@ -28,9 +27,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <Header />
       <Blog />
-      <Footer />
     </>
   );
 };

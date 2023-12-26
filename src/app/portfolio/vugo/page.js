@@ -1,6 +1,8 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import PortfolioInnerVugo from "@/app/components/Portfolio/PortfolioInnerVugo";
+import dynamic from "next/dynamic";
+
+const PortfolioInnerVugo = dynamic(() =>
+  import("@/app/components/Portfolio/PortfolioInnerVugo")
+);
 
 export const metadata = {
   title: "Vugo - Portfolio | Car Advertising | Brilworks Software",
@@ -25,13 +27,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <Header />
-      <PortfolioInnerVugo />
-      <Footer />
-    </>
-  );
+  return <PortfolioInnerVugo />;
 };
 
 export default page;

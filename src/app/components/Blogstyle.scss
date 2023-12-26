@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Merriweather:ital,wght@1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap");
 
 @font-face {
   font-family: "Graphik";
@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "merriweatheritalic";
+  src: url(/fonts/merriweather-regularitalic-webfont.woff2) format("woff2"),
+    url(/fonts/merriweather-regularitalic-webfont.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .blog-main {
   ul,
   ol {
@@ -48,6 +57,14 @@
     color: var(--main_color) !important;
   }
 }
+.blog-search-btn {
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 2px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
 .blog-initial {
   h1 {
@@ -57,7 +74,7 @@
     font-family: "Graphik" !important;
   }
   .post-summary {
-    font-family: "Merriweather", serif;
+    font-family: "merriweatheritalic" !important;
     color: #000 !important;
     font-weight: 400;
     font-size: 20px;
@@ -113,7 +130,7 @@
     position: relative;
     margin: var(--global--spacing-vertical) 0 var(--global--spacing-vertical)
       var(--global--spacing-horizontal);
-    font-family: "Merriweather", serif !important;
+    font-family: "merriweatheritalic" !important;
   }
 
   blockquote p {
@@ -122,13 +139,13 @@
     font-style: normal;
     line-height: 1.7 !important;
     font-weight: 400;
-    font-family: "Merriweather", serif !important;
+    font-family: "merriweatheritalic" !important;
   }
 
   blockquote::before {
     content: "“ ";
     font-size: 1.25rem;
-    font-family: "Merriweather", serif !important;
+    font-family: "merriweatheritalic" !important;
     line-height: 1.7 !important;
     position: absolute;
     left: calc(-0.5 * var(--global--spacing-horizontal));
@@ -426,7 +443,7 @@
   ul,
   ol {
     a {
-      font-family: "Merriweather", serif !important;
+      font-family: "merriweatheritalic" !important;
       color: #00c4c8 !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -439,7 +456,7 @@
     }
 
     li {
-      font-family: "Merriweather", serif !important;
+      font-family: "merriweatheritalic" !important;
       padding-left: 34px;
       padding-bottom: 12px;
       list-style: none !important;
@@ -461,13 +478,15 @@
         position: absolute;
       }
       span {
-        font-family: "Merriweather", serif !important;
+        font-family: "merriweatheritalic" !important;
         font-style: italic !important;
+        color: #000 !important;
       }
     }
     span {
       font-style: italic !important;
-      font-family: "Merriweather", serif !important;
+      font-family: "merriweatheritalic" !important;
+      color: #000 !important;
     }
   }
 }

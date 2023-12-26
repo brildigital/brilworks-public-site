@@ -1,6 +1,8 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import OurProcessPage from "../components/OurProcess/OurProcessPage";
+import dynamic from "next/dynamic";
+
+const OurProcessPage = dynamic(() =>
+  import("../components/OurProcess/OurProcessPage")
+);
 
 export const metadata = {
   title: "Our Process | How We Work | Brilworks Software",
@@ -31,13 +33,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <Header />
-      <OurProcessPage />
-      <Footer />
-    </>
-  );
+  return <OurProcessPage />;
 };
 
 export default page;

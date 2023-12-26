@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import BlockchainTechnology from "../components/Technologies/BlockchainTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const BlockchainTechnology = dynamic(() =>
+  import("../components/Technologies/BlockchainTechnology")
+);
 
 export const metadata = {
   title: "Hire Blockchain Developers",
@@ -42,9 +44,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire Blockchain Developers"),
         }}
       />
-      <Header />
       <BlockchainTechnology />
-      <Footer />
     </>
   );
 };

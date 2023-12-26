@@ -457,6 +457,8 @@ const AboutUs = () => {
                 className="black_aerrow alignnone wp-image-28 size-full"
                 src="/images/black_aerrow-1.png"
                 alt="arrow"
+                width="46"
+                height="18"
               />
               <img
                 decoding="async"
@@ -464,6 +466,8 @@ const AboutUs = () => {
                 className="gradiant_aerrow alignnone wp-image-29 size-full"
                 src="/images/arrow-gradiant.png"
                 alt="arrow"
+                width="46"
+                height="18"
               />
             </div>
           </Link>

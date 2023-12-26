@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import ReactJSTechnology from "../components/Technologies/ReactJSTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const ReactJSTechnology = dynamic(() =>
+  import("../components/Technologies/ReactJSTechnology")
+);
 
 export const metadata = {
   title: "Hire ReactJS Developers",
@@ -37,15 +39,13 @@ export const metadata = {
 const page = () => {
   return (
     <>
-        <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBreadcrumb("Hire ReactJS Developers"),
         }}
       />
-      <Header />
       <ReactJSTechnology />
-      <Footer />
     </>
   );
 };

@@ -1,7 +1,9 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import HealthCare from "@/app/components/Solution/Healthcare";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+
+const HealthCare = dynamic(() =>
+  import("@/app/components/Solution/Healthcare")
+);
 
 export const metadata = {
   title: "Healthcare Software Development Services",
@@ -44,9 +46,7 @@ const page = () => {
           ),
         }}
       />
-      <Header />
       <HealthCare />
-      <Footer />
     </>
   );
 };

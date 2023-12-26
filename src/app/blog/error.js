@@ -1,13 +1,8 @@
 "use client";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-
 export default function Error({ error, reset }) {
   return (
     <div>
-      <Header />
-
       <div className="flex align-middle justify-center pt-20">
         <div className="flex-container">
           <div className="text-center">
@@ -33,7 +28,6 @@ export default function Error({ error, reset }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

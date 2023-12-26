@@ -96,11 +96,11 @@ const TechnologyDevelopers = () => {
             ({ content, id }, index) =>
               index > 0 && (
                 <div
-                  className="border-1 border-[#80808038] rounded-[30px]"
+                  className="border border-[#80808038] rounded-[30px]"
                   key={id}
                 >
                   <div className="home_sec3_box1">
-                    <div className="dots_flex">
+                    <div className="dots_flex !rounded-[30px]">
                       <div className="dots"></div>
                       <div className="dots"></div>
                       <div className="dots"></div>

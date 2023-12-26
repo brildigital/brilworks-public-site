@@ -3,13 +3,15 @@
 import parse from "html-react-parser";
 import "./Blogstyle.scss";
 import Link from "next/link";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import BlogContactForm from "./Blog/BlogContactForm";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
-import Image from "next/image";
 import { getbloglist } from "./lib/getblog";
 import { usePathname } from "next/navigation";
+
+const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
@@ -121,7 +123,7 @@ const Article = ({ blok }) => {
   }, []);
 
   return (
-    <div className="md:mt-[9rem] mt-[6rem] blog-main">
+    <div className="md:mt-[8rem] mt-[6rem] blog-main">
       {!blok || isLoading ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
@@ -172,7 +174,9 @@ const Article = ({ blok }) => {
                             title="Go to the Web App Development category."
                             href="#"
                           >
-                            {blok?.category}
+                            {blok?.category === "Cloud DevOps and Data"
+                              ? "Cloud, DevOps and Data"
+                              : blok?.category}
                           </Link>
                         </span>
                       </>
@@ -188,7 +192,7 @@ const Article = ({ blok }) => {
                     </span>
                     <span className="font-graphik">{blok?.title}</span>
                   </div>
-                  <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] !font-bold !mb-4">
+                  <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] !font-bold !mb-5 leading-[57px] -tracking-[.52px]">
                     {blok?.title}
                   </h1>
                 </div>
@@ -345,7 +349,8 @@ const Article = ({ blok }) => {
                       </Link>
                       <Link
                         target="_blank"
-                        href={`https://in.linkedin.com/share?url=https://www.brilworks.com${pathname}`}
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.brilworks.com${pathname}`}
+                        // href={`https://in.linkedin.com/share?url=https://www.brilworks.com${pathname}`}
                       >
                         <img
                           decoding="async"

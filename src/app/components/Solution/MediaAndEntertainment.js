@@ -1,32 +1,101 @@
 "use client";
 import Link from "next/link";
-import "./solutionStyle.scss";
-import MediaNEntertainmentFAQs from "./MediaNEntertainmentFAQs";
-import SolutionContactForm from "./SolutionContactForm";
-import SoutionHowCanStart from "./SoutionHowCanStart";
-import SolutionEngagementModal from "./SolutionEngagementModal";
+import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
+import AccordionItem from "./AccordionItem";
+
+const MediaNEntertainmentFAQs = dynamic(() => import("./SolutionFAQ"));
+const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
+const SoutionHowCanStart = dynamic(() => import("./SoutionHowCanStart"));
+const SolutionEngagementModal = dynamic(() =>
+  import("./SolutionEngagementModal")
+);
 
 const MediaAndEntertainment = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [isAccordionActive, setAccordionActive] = useState(1);
-  const [isAccordionOpen, setAccordionOpen] = useState(true);
+  const [open, setOpen] = useState(1);
 
-  const handleAccordianceClick = (accordanceNumber) => {
-    if (isAccordionActive === accordanceNumber) {
-      setAccordionOpen(!isAccordionOpen);
-    } else {
-      setAccordionOpen(true);
-    }
-    setAccordionActive(accordanceNumber);
-  };
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
+  const mediaEntertainmentAccordionItems = [
+    {
+      index: 1,
+      title: "OTT Streaming Apps",
+      imageSrc: "/images/OTT-Streaming-Apps.png",
+      content:
+        "Leverage our proven domain expertise along with cutting-edge technologies to create a streaming service that is as fast as it is instantly accessible.",
+    },
+    {
+      index: 2,
+      title: "Music Streaming Apps",
+      imageSrc: "/images/Music-Streaming-Apps.png",
+      content:
+        "Make the way to the melodies of your music streaming app. Our powerful backend helps you manage thousands of active listeners without any interruption or issue.",
+    },
+    {
+      index: 3,
+      title: " Photo Editing & Sharing Apps",
+      imageSrc: "/images/Photo-Editing-Sharing-Apps.png",
+      content:
+        "Become one of the most used photo editing and sharing apps. We help you create an Instagram-like app with your own photo editing and sharing features.",
+    },
+    {
+      index: 4,
+      title: "Ticket Booking Portals",
+      imageSrc: "/images/Ticket-Booking-Portals.png",
+      content:
+        "We develop ticket booking portals for all kinds of events including movie theatres, live concerts, sports matches, etc. Our team is focused on providing a seamless ticket-booking experience to eager fans.",
+    },
+    {
+      index: 5,
+      title: "Gaming apps",
+      imageSrc: "/images/Gaming-apps.png",
+      content:
+        "We create gaming apps across platforms and genres. In the world of gaming, we are known for our stable infrastructure, technical speed, efficient development process, and cutting-edge technology.",
+    },
+    {
+      index: 6,
+      title: "Content Aggregation Apps",
+      imageSrc: "/images/Content-Aggregation-Apps.png",
+      content:
+        "These apps are the new way to get quality content and videos. We are a trusted app aggregator providing a one-stop solution for customers and businesses to quickly find high-quality databases on any topic or industry.",
+    },
+  ];
+
+  const mediaEntertainmentImageSources = [
+    {
+      imageSource:
+        "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png",
+      imageAlt: "OTT Streaming Apps",
+    },
+    {
+      imageSource: "/images/Music-Streaming-Apps.jpg",
+      imageAlt: "Music Streaming Apps",
+    },
+    {
+      imageSource: "/images/photoediting.jpg",
+      imageAlt: "Photo Editing & Sharing Apps",
+    },
+    {
+      imageSource: "/images/tickets-booking-portal.jpg",
+      imageAlt: "Ticket Booking Portals",
+    },
+    {
+      imageSource: "/images/gaming-apps.jpg",
+      imageAlt: "Gaming apps",
+    },
+    {
+      imageSource: "/images/Content-Aggregation-Apps.jpg",
+      imageAlt: "Content Aggregation Apps",
+    },
+  ];
 
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -68,7 +137,7 @@ const MediaAndEntertainment = () => {
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
-                <p className="uppercase p-0 !ml-[0] !w-full">
+                <p className="uppercase !p-0 !ml-[0] !w-full">
                   MEDIA AND ENTERTAINMENT APP DEVELOPMENT SERVICES FOR THE
                   ULTIMATE USER EXPERIENCE.
                 </p>
@@ -122,601 +191,42 @@ const MediaAndEntertainment = () => {
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
-                  <div
-                    id="accordionEndtoEnd"
-                    className="d-block accordion nav nav-tabs !mb-0 lg:w-[90%] w-full"
-                    role="tablist"
-                  >
-                    <div
-                      className={`${
-                        isAccordionActive == 1 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(1);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-one"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-one"
-                        aria-selected="true"
-                      >
-                        <div className="accordion-header" id="headingOne">
-                          <button
-                            className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne"
-                            aria-expanded="true"
-                            aria-controls="collapseOne"
-                          >
-                            {isAccordionActive == 1 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    OTT Streaming Apps
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/OTT-Streaming-Apps.png"
-                                      alt="OTT Streaming Apps"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/OTT-Streaming-Apps.png"
-                                      alt="OTT Streaming Apps"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    OTT Streaming Apps
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseOne"
-                          className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingOne"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Leverage our proven domain expertise along with
-                              cutting-edge technologies to create a streaming
-                              service that is as fast as it is instantly
-                              accessible.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 2 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(2);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-two"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-two"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingTwo">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="collapseTwo"
-                          >
-                            {isAccordionActive == 2 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Music Streaming Apps
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Music-Streaming-Apps.png"
-                                      alt="Music Streaming Apps"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Music-Streaming-Apps.png"
-                                      alt="Music Streaming Apps"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Music Streaming Apps
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseTwo"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingTwo"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Make the sway to the melodies of your music
-                              streaming app. Our powerful backend helps you
-                              manage thousands of active listeners without any
-                              interruption or issue.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 3 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(3);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-three"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-three"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingThree">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree"
-                            aria-expanded="false"
-                            aria-controls="collapseThree"
-                          >
-                            {isAccordionActive == 3 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Photo Editing & Sharing Apps
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Photo-Editing-Sharing-Apps.png"
-                                      alt=" Photo Editing & Sharing Apps"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Photo-Editing-Sharing-Apps.png"
-                                      alt=" Photo Editing & Sharing Apps"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Photo Editing & Sharing Apps
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseThree"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingThree"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Become one of the most used photo editing and
-                              sharing apps. We help you create an Instagram-like
-                              app with your own photo editing and sharing
-                              features.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 4 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(4);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-four"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-four"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingFour">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour"
-                            aria-expanded="false"
-                            aria-controls="collapseFour"
-                          >
-                            {isAccordionActive == 4 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Ticket Booking Portals
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Ticket-Booking-Portals.png"
-                                      alt="Ticket Booking Portals"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Ticket-Booking-Portals.png"
-                                      alt="Ticket Booking Portals"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Ticket Booking Portals
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseFour"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingFour"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We develop ticket booking portals for all kinds of
-                              events including movie theatres, live concerts,
-                              sports matches, etc. Our team is focused on
-                              providing a seamless ticket-booking experience to
-                              eager fans.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 5 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(5);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-five"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-five"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingFive">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive"
-                            aria-expanded="false"
-                            aria-controls="collapseFive"
-                          >
-                            {isAccordionActive == 5 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">Gaming apps</h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Gaming-apps.png"
-                                      alt="Gaming apps"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Gaming-apps.png"
-                                      alt="Gaming apps"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Gaming apps
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseFive"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingFive"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We create gaming apps across platforms and genres.
-                              In the world of gaming, we are known for our
-                              stable infrastructure, technical speed, efficient
-                              development process, and cutting-edge technology.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 6 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(6);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-six"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-six"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingSix">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSix"
-                            aria-expanded="false"
-                            aria-controls="collapseSix"
-                          >
-                            {isAccordionActive == 6 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Content Aggregation Apps
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Content-Aggregation-Apps.png"
-                                      alt="  Content Aggregation Apps"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/Content-Aggregation-Apps.png"
-                                      alt="  Content Aggregation Apps"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Content Aggregation Apps
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseSix"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingSix"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              These apps are the new way to get quality content
-                              and videos. We are a trusted app aggregator
-                              providing a one-stop solution for customers and
-                              businesses to quickly find high-quality databases
-                              on any topic or industry.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="accordion !mb-0 lg:w-[90%] w-full">
+                    {mediaEntertainmentAccordionItems.map((item) => (
+                      <AccordionItem
+                        key={item.index}
+                        index={item.index}
+                        title={item.title}
+                        imageSrc={item.imageSrc}
+                        content={item.content}
+                        handleOpen={handleOpen}
+                        open={open}
+                      />
+                    ))}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full">
-                  <div className="tab-content" id="nav-tabContent">
-                    <div
-                      className="tab-pane fade show active"
-                      id="accordion-one"
-                      role="tabpanel"
-                      aria-labelledby="accordion-one-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src={
-                            "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png"
-                          }
-                          alt="OTT Streaming Apps"
-                        />
+                  <div>
+                    {mediaEntertainmentImageSources.map((imageItem, index) => (
+                      <div
+                        key={index}
+                        className={`fade-image ${
+                          (index === 0 && (open === 1 || open === 0)) ||
+                          (index !== 0 && open === index + 1)
+                            ? "active"
+                            : "hidden"
+                        }`}
+                      >
+                        <div className="team_img">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src={imageItem.imageSource}
+                            alt={imageItem.imageAlt}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-two"
-                      role="tabpanel"
-                      aria-labelledby="accordion-two-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Music-Streaming-Apps.jpg"
-                          alt="Music Streaming Apps"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-three"
-                      role="tabpanel"
-                      aria-labelledby="accordion-three-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/photoediting.jpg"
-                          alt="Photo Editing & Sharing Apps"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-four"
-                      role="tabpanel"
-                      aria-labelledby="accordion-four-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/tickets-booking-portal.jpg"
-                          alt="Ticket Booking Portals"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-five"
-                      role="tabpanel"
-                      aria-labelledby="accordion-five-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/gaming-apps.jpg"
-                          alt="Gaming apps"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-six"
-                      role="tabpanel"
-                      aria-labelledby="accordion-six-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Content-Aggregation-Apps.jpg"
-                          alt="Content Aggregation Apps"
-                        />
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -1083,7 +593,7 @@ const MediaAndEntertainment = () => {
                     >
                       GDPR
                     </div>
-                    <p className="year border-0 py-[1rem]">Compliant Apps</p>
+                    <p className="year !border-0 py-[1rem]">Compliant Apps</p>
                   </div>
 
                   <div>
@@ -1094,7 +604,7 @@ const MediaAndEntertainment = () => {
                     >
                       APPEALING
                     </div>
-                    <p className="year border-0 py-[1rem]">UI/UX Experience</p>
+                    <p className="year !border-0 py-[1rem]">UI/UX Experience</p>
                   </div>
 
                   <div>
@@ -1105,7 +615,7 @@ const MediaAndEntertainment = () => {
                     >
                       EXPERT
                     </div>
-                    <p className="year border-0 py-[1rem]">Knowledge</p>
+                    <p className="year !border-0 py-[1rem]">Knowledge</p>
                   </div>
 
                   <div>
@@ -1116,7 +626,7 @@ const MediaAndEntertainment = () => {
                     >
                       AGILE
                     </div>
-                    <p className="year border-0 py-[1rem]">Centric Model</p>
+                    <p className="year !border-0 py-[1rem]">Centric Model</p>
                   </div>
 
                   <div>
@@ -1127,7 +637,7 @@ const MediaAndEntertainment = () => {
                     >
                       SECURITY
                     </div>
-                    <p className="year border-0 py-[1rem]">-First Approach</p>
+                    <p className="year !border-0 py-[1rem]">First Approach</p>
                   </div>
 
                   <div>
@@ -1138,7 +648,7 @@ const MediaAndEntertainment = () => {
                     >
                       UNPARALLELED
                     </div>
-                    <p className="year border-0 py-[1rem]">Code Quality</p>
+                    <p className="year !border-0 py-[1rem]">Code Quality</p>
                   </div>
                 </div>
               </div>

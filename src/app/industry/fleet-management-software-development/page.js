@@ -1,7 +1,9 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+
+const FleetManagementNGPS = dynamic(() =>
+  import("@/app/components/Solution/FleetManagementNGPS")
+);
 
 export const metadata = {
   title: "Fleet Management Software Development Services",
@@ -44,9 +46,7 @@ const page = () => {
           ),
         }}
       />
-      <Header />
       <FleetManagementNGPS />
-      <Footer />
     </>
   );
 };

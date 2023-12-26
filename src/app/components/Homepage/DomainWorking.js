@@ -1,11 +1,19 @@
 "use client";
-import Link from "next/link";
-import { useEffect } from "react";
 import "./homepage.scss";
-import { scrollEffect } from "../lib/commonfunction";
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Icon, scrollEffect } from "../lib/commonfunction";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
 
 const DomainWorking = () => {
+  const [open, setOpen] = useState(1);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -16,18 +24,14 @@ const DomainWorking = () => {
   return (
     <>
       <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
-        <div className="accordion-tab-section homepage-work-domain">
+        <div className="homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">
-              <div
-                className="tab-content d-flex justify-content-center align-items-center h-100"
-                id="nav-tabContent"
-              >
+              <div className="tab-content d-flex justify-content-center align-items-center h-100">
                 <div
-                  className="tab-pane fade show active"
-                  id="accordion-one"
-                  role="tabpanel"
-                  aria-labelledby="accordion-one-tab"
+                  className={`fade-image ${
+                    open === 1 || open === 0 ? "active" : "hidden"
+                  }`}
                 >
                   <div className="solutions_img">
                     <img
@@ -49,10 +53,7 @@ const DomainWorking = () => {
                   </div>
                 </div>
                 <div
-                  className="tab-pane fade"
-                  id="accordion-two"
-                  role="tabpanel"
-                  aria-labelledby="accordion-two-tab"
+                  className={`fade-image ${open === 2 ? "active" : "hidden"}`}
                 >
                   <div className="solutions_img">
                     <img
@@ -74,10 +75,7 @@ const DomainWorking = () => {
                   </div>
                 </div>
                 <div
-                  className="tab-pane fade"
-                  id="accordion-three"
-                  role="tabpanel"
-                  aria-labelledby="accordion-three-tab"
+                  className={`fade-image ${open === 3 ? "active" : "hidden"}`}
                 >
                   <div className="solutions_img">
                     <img
@@ -100,10 +98,7 @@ const DomainWorking = () => {
                 </div>
 
                 <div
-                  className="tab-pane fade"
-                  id="accordion-four"
-                  role="tabpanel"
-                  aria-labelledby="accordion-four-tab"
+                  className={`fade-image ${open === 4 ? "active" : "hidden"}`}
                 >
                   <div className="solutions_img">
                     <img
@@ -126,253 +121,183 @@ const DomainWorking = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-6/12 w-full md:mt-4">
-              <div
-                id="accordionExample"
-                className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
-                role="tablist"
-              >
-                <div
-                  className="accordion-item"
-                  data-bs-toggle="tab"
-                  data-bs-target="#accordion-one"
-                  type="button"
-                  role="tab"
-                  aria-controls="accordion-one"
-                  aria-selected="true"
+            <div className="lg:w-6/12 w-full">
+              <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+                <AccordionHeader
+                  onClick={() => handleOpen(1)}
+                  className={`py-6 ${open === 1 ? "border-none" : ""}`}
                 >
-                  <h3 className="accordion-header" id="headingOne">
-                    <button
-                      className="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      1. Fintech
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseOne"
-                    className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">
-                      Revolutionize the financial world with a robust & secure
-                      fintech app that solves real-life problems.
-                    </div>
-                    <Link
-                      href="/industry/fintech-software-development/"
-                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
-                    >
-                      <div className="about_txt_domain">
-                        <p href="/industry/fintech-software-development/">
-                          Know more
-                        </p>
-                      </div>
-                      <div className="aerrow relative">
-                        <Image
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-
-                        <Image
-                          className="gradiant_aerrow alignnone wp-image-29 size-full"
-                          src="/images/arrow-gradiant.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
-                    </Link>
+                  <h3> 1. Fintech</h3>
+                </AccordionHeader>
+                <AccordionBody className={open === 1 ? "border-b" : ""}>
+                  <div className="accordion-body">
+                    Revolutionize the financial world with a robust & secure
+                    fintech app that solves real-life problems.
                   </div>
-                </div>
-                <div
-                  className="accordion-item"
-                  data-bs-toggle="tab"
-                  data-bs-target="#accordion-two"
-                  type="button"
-                  role="tab"
-                  aria-controls="accordion-two"
-                  aria-selected="false"
+                  <Link
+                    href="/industry/fintech-software-development/"
+                    className="flex items-center gap-[20px] about_btn transition py-3"
+                  >
+                    <div className="about_txt">
+                      <p className="change_link md:text-[24px] text-[20px]">
+                        Know more
+                      </p>
+                    </div>
+                    <div className="aerrow relative">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="black_aerrow alignnone wp-image-28 size-full"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="gradiant_aerrow alignnone wp-image-29 size-full"
+                        src="/images/arrow-gradiant.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                    </div>
+                  </Link>
+                </AccordionBody>
+              </Accordion>
+              <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
+                <AccordionHeader
+                  onClick={() => handleOpen(2)}
+                  className={`py-6 ${open === 2 ? "border-none" : ""}`}
                 >
-                  <h3 className="accordion-header" id="headingTwo">
-                    <button
-                      className="accordion-button collapsed  "
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      2. Health Care
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseTwo"
-                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">
-                      Implement digital solutions that are poised to transform
-                      the healthcare industry.
-                    </div>
-                    <Link
-                      href="/industry/healthcare-software-development/"
-                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
-                    >
-                      <div className="about_txt_domain">
-                        <p
-                          className="change_link"
-                          href="/industry/healthcare-software-development/"
-                        >
-                          Know more
-                        </p>
-                      </div>
-                      <div className="aerrow relative">
-                        <Image
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="gradiant_aerrow alignnone wp-image-29 size-full"
-                          src="/images/arrow-gradiant.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
-                    </Link>
+                  <h3> 2. Health Care</h3>
+                </AccordionHeader>
+                <AccordionBody className={open === 2 ? "border-b" : ""}>
+                  <div className="accordion-body">
+                    Implement digital solutions that are poised to transform the
+                    healthcare industry.
                   </div>
-                </div>
-                <div
-                  className="accordion-item"
-                  data-bs-toggle="tab"
-                  data-bs-target="#accordion-three"
-                  type="button"
-                  role="tab"
-                  aria-controls="accordion-three"
-                  aria-selected="false"
+                  <Link
+                    href="/industry/healthcare-software-development/"
+                    className="flex items-center gap-[20px] about_btn transition py-3"
+                  >
+                    <div className="about_txt">
+                      <p className="change_link md:text-[24px] text-[20px]">
+                        Know more
+                      </p>
+                    </div>
+                    <div className="aerrow relative">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="black_aerrow alignnone wp-image-28 size-full"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="gradiant_aerrow alignnone wp-image-29 size-full"
+                        src="/images/arrow-gradiant.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                    </div>
+                  </Link>
+                </AccordionBody>
+              </Accordion>
+              <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
+                <AccordionHeader
+                  onClick={() => handleOpen(3)}
+                  className={`py-6 ${open === 3 ? "border-none" : ""}`}
                 >
-                  <h3 className="accordion-header" id="headingThree">
-                    <button
-                      className="accordion-button collapsed  "
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      3. Media & Entertainment
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseThree"
-                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">
-                      From ticketing to online video, we’ll help you improve the
-                      way you engage and entertain.
-                    </div>
-                    <Link
-                      href="/industry/media-entertainment-software-development/"
-                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
-                    >
-                      <div className="about_txt_domain">
-                        <p className="change_link">Know more</p>
-                      </div>
-                      <div className="aerrow relative">
-                        <Image
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                        <Image
-                          className="gradiant_aerrow alignnone wp-image-29 size-full"
-                          src="/images/arrow-gradiant.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
-                    </Link>
+                  <h3> 3. Media & Entertainment</h3>
+                </AccordionHeader>
+                <AccordionBody className={open === 3 ? "border-b" : ""}>
+                  <div className="accordion-body">
+                    From ticketing to online video, we’ll help you improve the
+                    way you engage and entertain.
                   </div>
-                </div>
-
-                <div
-                  className="accordion-item"
-                  data-bs-toggle="tab"
-                  data-bs-target="#accordion-four"
-                  type="button"
-                  role="tab"
-                  aria-controls="accordion-four"
-                  aria-selected="false"
+                  <Link
+                    href="/industry/media-entertainment-software-development/"
+                    className="flex items-center gap-[20px] about_btn transition py-3"
+                  >
+                    <div className="about_txt">
+                      <p className="change_link md:text-[24px] text-[20px]">
+                        Know more
+                      </p>
+                    </div>
+                    <div className="aerrow relative">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="black_aerrow alignnone wp-image-28 size-full"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="gradiant_aerrow alignnone wp-image-29 size-full"
+                        src="/images/arrow-gradiant.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                    </div>
+                  </Link>
+                </AccordionBody>
+              </Accordion>
+              <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
+                <AccordionHeader
+                  onClick={() => handleOpen(4)}
+                  className={`py-6 ${open === 4 ? "border-none" : ""}`}
                 >
-                  <h3 className="accordion-header" id="headingFour">
-                    <button
-                      className="accordion-button collapsed  "
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="false"
-                      aria-controls="collapseFour"
-                    >
-                      4. Fleet Management + GPS
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseFour"
-                    className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                    aria-labelledby="headingFour"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">
-                      Simplify fleet management with solutions that let you
-                      manage workflows with GPS tracking.
-                    </div>
-                    <Link
-                      href="/industry/fleet-management-software-development/"
-                      className="flex items-center gap-[20px] about_btn transition md:pt-[12px] pb-[24px]"
-                    >
-                      <div className="about_txt_domain">
-                        <p>Know more</p>
-                      </div>
-                      <div className="aerrow relative">
-                        <Image
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                        <Image
-                          className="gradiant_aerrow alignnone wp-image-29 size-full"
-                          src="/images/arrow-gradiant.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
-                    </Link>
+                  <h3> 4. Fleet Management + GPS</h3>
+                </AccordionHeader>
+                <AccordionBody className={open === 4 ? "border-b" : ""}>
+                  <div className="accordion-body">
+                    Simplify fleet management with solutions that let you manage
+                    workflows with GPS tracking.
                   </div>
-                </div>
-              </div>
+                  <Link
+                    href="/industry/fleet-management-software-development/"
+                    className="flex items-center gap-[20px] about_btn transition py-3"
+                  >
+                    <div className="about_txt">
+                      <p className="change_link md:text-[24px] text-[20px]">
+                        Know more
+                      </p>
+                    </div>
+                    <div className="aerrow relative">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="black_aerrow alignnone wp-image-28 size-full"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="gradiant_aerrow alignnone wp-image-29 size-full"
+                        src="/images/arrow-gradiant.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
+                      />
+                    </div>
+                  </Link>
+                </AccordionBody>
+              </Accordion>
             </div>
           </div>
         </div>
