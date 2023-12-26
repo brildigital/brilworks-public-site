@@ -400,7 +400,11 @@ const NewHeader = () => {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6">
-      <Link href="/portfolio/" className="header_font flex items-center">
+      <Link
+        href="/portfolio/"
+        className="header_font flex items-center"
+        onClick={() => setOpenNav(false)}
+      >
         <p
           className={`!mb-0 ${
             pathname === "/portfolio/" ? "page-active" : "hover:text-[#00dfb8]"
@@ -410,7 +414,11 @@ const NewHeader = () => {
         </p>
       </Link>
 
-      <Link href="/blog/" className="header_font flex items-center">
+      <Link
+        href="/blog/"
+        className="header_font flex items-center"
+        onClick={() => setOpenNav(false)}
+      >
         <p
           className={`!mb-0 ${
             pathname === "/blog/" ? "page-active" : "hover:text-[#00dfb8]"
@@ -428,7 +436,10 @@ const NewHeader = () => {
           <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center !w-[unset] outline-none pt-2 my-1">
             <Link
               href="#"
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenNav(false);
+              }}
               className="flex items-center header_font"
             >
               <p className="!mb-0 hover:text-[#00dfb8]">SOLUTIONS</p>
@@ -558,7 +569,10 @@ const NewHeader = () => {
           <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center outline-none !w-[unset] pt-2 my-1">
             <Link
               href="#"
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenNav(false);
+              }}
               className="flex items-center header_font"
             >
               <p className="!mb-0 hover:text-[#00dfb8]">TECHNOLOGIES</p>
@@ -738,7 +752,7 @@ const NewHeader = () => {
         </MenuList>
       </Menu>
 
-      <Link href="/contact-us/">
+      <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
         <div className="header_sec1_txt2 hidden-xs">
           <p className="transition">LET&apos;S TALK</p>
         </div>
