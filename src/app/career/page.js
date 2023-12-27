@@ -1,6 +1,6 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
-import Career from "../components/Career/Career";
+import dynamic from "next/dynamic";
+
+const Career = dynamic(() => import("../components/Career/Career"));
 
 export const metadata = {
   title: "Career | Join the World of Brilliance | Brilworks Software",
@@ -25,13 +25,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <Header />
-      <Career />
-      <Footer />
-    </>
-  );
+  return <Career />;
 };
 
 export default page;

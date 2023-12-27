@@ -183,7 +183,7 @@ const WhyShouldHireDevelopers = () => {
                   <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                     65+
                   </div>
-                  <p className="year border-0 py-[1rem]">
+                  <p className="year !border-0 py-[1rem]">
                     React.js <br />
                     Projects Completed
                   </p>
@@ -193,7 +193,7 @@ const WhyShouldHireDevelopers = () => {
                   <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                     30+
                   </div>
-                  <p className="year border-0 py-[1rem]">
+                  <p className="year !border-0 py-[1rem]">
                     React.js
                     <br />
                     Experts Onboard
@@ -208,7 +208,7 @@ const WhyShouldHireDevelopers = () => {
                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                         50+
                       </div>
-                      <p className="year border-0 py-[1rem]">
+                      <p className="year !border-0 py-[1rem]">
                         Java <br />
                         Projects Completed
                       </p>
@@ -218,7 +218,7 @@ const WhyShouldHireDevelopers = () => {
                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                         30+
                       </div>
-                      <p className="year border-0 py-[1rem]">
+                      <p className="year !border-0 py-[1rem]">
                         Java
                         <br />
                         Experts Onboard
@@ -233,7 +233,7 @@ const WhyShouldHireDevelopers = () => {
                           <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                             50+
                           </div>
-                          <p className="year border-0 py-[1rem]">
+                          <p className="year !border-0 py-[1rem]">
                             Node.js <br />
                             Projects Completed
                           </p>
@@ -243,7 +243,7 @@ const WhyShouldHireDevelopers = () => {
                           <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                             30+
                           </div>
-                          <p className="year border-0 py-[1rem]">
+                          <p className="year !border-0 py-[1rem]">
                             Node.js
                             <br />
                             Experts Onboard
@@ -258,7 +258,7 @@ const WhyShouldHireDevelopers = () => {
                               <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                 30+
                               </div>
-                              <p className="year border-0 py-[1rem]">
+                              <p className="year !border-0 py-[1rem]">
                                 React Native <br />
                                 Projects Completed
                               </p>
@@ -268,7 +268,7 @@ const WhyShouldHireDevelopers = () => {
                               <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                 20+
                               </div>
-                              <p className="year border-0 py-[1rem]">
+                              <p className="year !border-0 py-[1rem]">
                                 React Native
                                 <br />
                                 Experts Onboard
@@ -283,7 +283,7 @@ const WhyShouldHireDevelopers = () => {
                                   <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                     50+
                                   </div>
-                                  <p className="year border-0 py-[1rem]">
+                                  <p className="year !border-0 py-[1rem]">
                                     AWS <br />
                                     Projects Completed
                                   </p>
@@ -293,7 +293,7 @@ const WhyShouldHireDevelopers = () => {
                                   <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                     10+
                                   </div>
-                                  <p className="year border-0 py-[1rem]">
+                                  <p className="year !border-0 py-[1rem]">
                                     AWS Experts
                                     <br />
                                     Onboard
@@ -308,7 +308,7 @@ const WhyShouldHireDevelopers = () => {
                                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                         45+
                                       </div>
-                                      <p className="year border-0 py-[1rem]">
+                                      <p className="year !border-0 py-[1rem]">
                                         UI UX Design <br />
                                         Projects Completed
                                       </p>
@@ -318,7 +318,7 @@ const WhyShouldHireDevelopers = () => {
                                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                         10+
                                       </div>
-                                      <p className="year border-0 py-[1rem]">
+                                      <p className="year !border-0 py-[1rem]">
                                         UI UX
                                         <br />
                                         Experts Onboard
@@ -331,7 +331,7 @@ const WhyShouldHireDevelopers = () => {
                                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                         40+
                                       </div>
-                                      <p className="year border-0 py-[1rem]">
+                                      <p className="year !border-0 py-[1rem]">
                                         Blockchain
                                         <br />
                                         Projects Completed
@@ -342,7 +342,7 @@ const WhyShouldHireDevelopers = () => {
                                       <div className="number xl:text-[70px] md:!text-[57px] text-[33px]">
                                         15+
                                       </div>
-                                      <p className="year border-0 py-[1rem]">
+                                      <p className="year !border-0 py-[1rem]">
                                         Blockchain
                                         <br />
                                         Experts Onboard
@@ -369,7 +369,7 @@ const WhyShouldHireDevelopers = () => {
               >
                 60%
               </div>
-              <p className="year border-0 py-[1rem]">Savings In Salaries</p>
+              <p className="year !border-0 py-[1rem]">Savings In Salaries</p>
             </div>
 
             <div>
@@ -380,7 +380,7 @@ const WhyShouldHireDevelopers = () => {
               >
                 +4/-4
               </div>
-              <p className="year border-0 py-[1rem]">
+              <p className="year !border-0 py-[1rem]">
                 Available to Work
                 <br />
                 in Your Timezone
@@ -395,7 +395,7 @@ const WhyShouldHireDevelopers = () => {
               >
                 48-72
               </div>
-              <p className="year border-0 py-[1rem]">
+              <p className="year !border-0 py-[1rem]">
                 Hours to Fill Most
                 <br />
                 Roles
@@ -410,7 +410,7 @@ const WhyShouldHireDevelopers = () => {
               >
                 98%
               </div>
-              <p className="year border-0 py-[1rem]">
+              <p className="year !border-0 py-[1rem]">
                 Project Success
                 <br />
                 Rate

@@ -1,7 +1,9 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+
+const MediaAndEntertainment = dynamic(() =>
+  import("@/app/components/Solution/MediaAndEntertainment")
+);
 
 export const metadata = {
   title: "Media and Entertainment Software Development Service",
@@ -44,9 +46,7 @@ const page = () => {
           ),
         }}
       />
-      <Header />
       <MediaAndEntertainment />
-      <Footer />
     </>
   );
 };

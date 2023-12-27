@@ -1,6 +1,8 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import PortfolioInnerTrackimo from "@/app/components/Portfolio/PortfolioInnerTrackimo";
+import dynamic from "next/dynamic";
+
+const PortfolioInnerTrackimo = dynamic(() =>
+  import("@/app/components/Portfolio/PortfolioInnerTrackimo")
+);
 
 export const metadata = {
   title: "Trackimo - Portfolio | Real-Time Tracking | Brilworks Software",
@@ -25,13 +27,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <Header />
-      <PortfolioInnerTrackimo />
-      <Footer />
-    </>
-  );
+  return <PortfolioInnerTrackimo />;
 };
 
 export default page;

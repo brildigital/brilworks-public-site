@@ -1,6 +1,6 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import Sitemap from "../components/Sitemap/Sitemap";
+import dynamic from "next/dynamic";
+
+const Sitemap = dynamic(() => import("../components/Sitemap/Sitemap"));
 
 export const metadata = {
   title: "Site Map | Brilworks Software",
@@ -36,9 +36,9 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Sitemap />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

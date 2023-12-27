@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import NodejsTechnology from "../components/Technologies/NodejsTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const NodejsTechnology = dynamic(() =>
+  import("../components/Technologies/NodejsTechnology")
+);
 
 export const metadata = {
   title: "Hire NodeJS Developers",
@@ -42,10 +44,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire NodeJS Developers"),
         }}
       />
-      <Header />
       <NodejsTechnology />
-
-      <Footer />
     </>
   );
 };

@@ -1,9 +1,12 @@
-import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import { organization, website } from "./components/lib/schemaCode";
+
+const Header = dynamic(() => import("./components/Header/Header"));
+const Footer = dynamic(() => import("./components/Footer"));
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -28,12 +31,15 @@ export default function RootLayout({ children }) {
           ) : null}
           {process.env.VERCEL_ENV === "production" && (
             <>
-              <Script id="tag-manager">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              <Script
+                defer
+                id="tag-manager"
+              >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
            })(window,document,'script','dataLayer','${process.env.googleTagManagerID}')`}</Script>
-              <Script id="facebook-pixel-tracker">
+              {/* <Script defer id="facebook-pixel-tracker">
                 {`!function(f,b,e,v,n,t,s)
              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -45,7 +51,7 @@ export default function RootLayout({ children }) {
              fbq('init', '${process.env.facebook_pixelID}');
              fbq('track', 'PageView');
              `}
-              </Script>
+              </Script> */}
               <Script
                 async
                 src={`${process.env.clearbitScript_URL}`}
@@ -86,14 +92,10 @@ export default function RootLayout({ children }) {
               </noscript>
             </>
           )}
+          <Header />
           {children}
+          <Footer />
         </body>
-        <Script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-          crossorigin="anonymous"
-          strategy="lazyOnload"
-        ></Script>
       </html>
     </StoryblokProvider>
   );

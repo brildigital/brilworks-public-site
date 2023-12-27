@@ -64,7 +64,7 @@ const HomepageContactForm = () => {
   return (
     <>
       <div className="home_sec3_box">
-        <div className="dots_flex">
+        <div className="dots_flex !rounded-[30px]">
           <div className="dots"></div>
           <div className="dots"></div>
           <div className="dots"></div>
@@ -193,7 +193,7 @@ const HomepageContactForm = () => {
                     <div className="success-msg h-4" id="sucess_msg">
                       {respMessage}
                     </div>
-                    <button className="btn_paddinng pt-4">
+                    <button className="btn_paddinng mt-4">
                       <div className="home_ready_sec transition  !w-[115px]">
                         <p className="flex align-middle justify-center">
                           {isSubmitting ? (

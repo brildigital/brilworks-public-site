@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
-import FAQsTechnology from "./FAQsTechnology";
+import UIUXFAQs from "./TechnologyFAQ";
 import TechnologyDevelopers from "./TechnologyDevelopers";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
 import SolutionContactForm from "../Solution/SolutionContactForm";
@@ -74,7 +74,7 @@ const UIUXTechnology = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="p-0 !ml-[0] !w-full">
+                  <p className="!p-0 !ml-[0] !w-full">
                     Hire UI UX Designers to Create Exceptional User Experience
                   </p>
                 </Link>
@@ -318,7 +318,7 @@ const UIUXTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FAQsTechnology />
+      <UIUXFAQs />
     </>
   );
 };

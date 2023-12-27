@@ -1,7 +1,9 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import ReactNativeTechnology from "../components/Technologies/ReactNativeTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const ReactNativeTechnology = dynamic(() =>
+  import("../components/Technologies/ReactNativeTechnology")
+);
 
 export const metadata = {
   title: "Hire React Native Developers",
@@ -43,9 +45,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire React Native Developers"),
         }}
       />
-      <Header />
       <ReactNativeTechnology />
-      <Footer />
     </>
   );
 };

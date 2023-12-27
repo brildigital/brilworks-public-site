@@ -5,104 +5,96 @@ const Storyblok = new StoryblokClient({
 });
 
 export async function getblog() {
-  let stories = await Storyblok.get("cdn/stories", {
-    starts_with: "blog/",
-    per_page: 100,
-    cv: Math.random(),
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    // sort_by: "first_published_at:",
-  });
+  let stories = await Storyblok.get(
+    "cdn/stories",
+    {
+      starts_with: "blog/",
+      per_page: 100,
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      // sort_by: "first_published_at:",
+    },
+    {
+      next: { revalidate: 7200 },
+    }
+  );
   const storyData = stories.data.stories;
   return storyData;
+}
+
+export async function getblogData(
+  page_no,
+  limit_per_page,
+  filter_category,
+  search_query
+) {
+  // Define the base parameters for the API call
+  let apiParams = {
+    starts_with: "blog/",
+    page: page_no || 1,
+    per_page: limit_per_page || 9,
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+  };
+
+  // Check if filter_category is present in props
+  if (filter_category) {
+    // If filter_category is present, add filter_query to apiParams
+    apiParams.filter_query = {
+      category: {
+        in: filter_category,
+      },
+    };
+  }
+  if (search_query) {
+    // If search_query is present, add search_term to apiParams
+    apiParams.search_term = search_query;
+  }
+
+  // Make the API call with the constructed parameters
+  let stories = await Storyblok.get("cdn/stories", apiParams, {
+    next: { revalidate: 3600 },
+  });
+
+  return {
+    storyData: stories.data.stories,
+    totalData: stories.total,
+  };
 }
 
 export async function getbloglist(prop) {
-  let stories = await Storyblok.get("cdn/stories", {
-    starts_with: "blogs-list/",
-    per_page: prop,
-    cv: Math.random(),
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-  });
+  let stories = await Storyblok.get(
+    "cdn/stories",
+    {
+      starts_with: "blogs-list/",
+      per_page: prop,
+      cv: Math.random(),
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    },
+    {
+      next: { revalidate: 3600 },
+    }
+  );
   const storyData = stories.data.stories;
   return storyData;
 }
 
-export async function searchBlog(query) {
-  const response = await Storyblok.get("cdn/stories/", {
-    starts_with: "blog/",
-    per_page: 100,
-    cv: Math.random(),
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-  });
+// export async function singlePopularBlog() {
+//   try {
+//     let stories = await Storyblok.get("cdn/stories", {
+//       starts_with: "blog/",
+//       per_page: 100,
+//       cv: Math.random(),
+//       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+//     });
 
-  const filteredData = response.data?.stories.filter(
-    (item) =>
-      item?.name?.toLowerCase().includes(query?.toLowerCase()) ||
-      (item?.content &&
-        item?.content?.content?.toLowerCase().includes(query?.toLowerCase())) ||
-      item?.content?.category?.toLowerCase().includes(query?.toLowerCase())
-  );
+//     const storyData = stories.data.stories;
+//     // Filter the data to include only items with priority field equal to 1
+//     const OnePopularData = storyData.filter(
+//       (item) => item && +item?.content?.Priority === 1
+//     );
 
-  return filteredData;
-}
-
-export async function blogCategoryData(query) {
-  const response = await Storyblok.get("cdn/stories/", {
-    starts_with: "blog/",
-    per_page: 100,
-    cv: Math.random(),
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-  });
-  const filteredData = response.data?.stories.filter((item) =>
-    item?.content?.category?.toLowerCase().includes(query?.toLowerCase())
-  );
-  return filteredData;
-}
-
-export async function singlePopularBlog() {
-  try {
-    let stories = await Storyblok.get("cdn/stories", {
-      starts_with: "blog/",
-      per_page: 100,
-      cv: Math.random(),
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    });
-
-    const storyData = stories.data.stories;
-    // Filter the data to include only items with priority field equal to 1
-    const OnePopularData = storyData.filter(
-      (item) => item && +item?.content?.Priority === 1
-    );
-
-    return OnePopularData;
-  } catch (error) {
-    console.error("Error fetching blog data:", error);
-    return [];
-  }
-}
-
-export async function blogCategoryList() {
-  const response = await Storyblok.get("cdn/stories/", {
-    starts_with: "blog/",
-    per_page: 100,
-    cv: Math.random(),
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-  });
-  const blogStories = response.data?.stories;
-
-  const uniqueCategory = new Set();
-  const filteredCategory = [];
-
-  for (const story of blogStories) {
-    const category = story?.content?.category;
-
-    if (category && !uniqueCategory.has(category)) {
-      uniqueCategory.add(category);
-      filteredCategory.push(category);
-    }
-  }
-
-  return filteredCategory.sort((a, b) =>
-    a.localeCompare(b, undefined, { sensitivity: "base" })
-  );
-}
+//     return OnePopularData;
+//   } catch (error) {
+//     console.error("Error fetching blog data:", error);
+//     return [];
+//   }
+// }

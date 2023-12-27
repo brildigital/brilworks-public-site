@@ -1,6 +1,6 @@
-import ContactUs from "../components/Contact-us/ContactUs";
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
+import dynamic from "next/dynamic";
+
+const ContactUs = dynamic(() => import("../components/Contact-us/ContactUs"));
 
 export const metadata = {
   title: "Contact Us - Brilworks",
@@ -51,9 +51,7 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
-      <Header />
       <ContactUs />
-      <Footer />
     </>
   );
 };

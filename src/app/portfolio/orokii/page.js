@@ -1,6 +1,7 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import PortfolioInnerOrokii from "@/app/components/Portfolio/PortfolioInnerOrokii";
+import dynamic from "next/dynamic";
+const PortfolioInnerOrokii = dynamic(() =>
+  import("@/app/components/Portfolio/PortfolioInnerOrokii")
+);
 
 export const metadata = {
   title: "Orokii - Portfolio | Cross-Border Payments | Brilworks Software",
@@ -26,13 +27,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <Header />
-      <PortfolioInnerOrokii />
-      <Footer />
-    </>
-  );
+  return <PortfolioInnerOrokii />;
 };
 
 export default page;

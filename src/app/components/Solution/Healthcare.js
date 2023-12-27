@@ -1,41 +1,149 @@
 "use client";
 import Link from "next/link";
-import "./solutionStyle.scss";
-import SolutionContactForm from "./SolutionContactForm";
-import SoutionHowCanStart from "./SoutionHowCanStart";
-import SolutionEngagementModal from "./SolutionEngagementModal";
-import HealthcareFAQs from "./HealthcareFAQs";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import Image from "next/image";
+import AccordionItem from "./AccordionItem";
+
+const HealthcareFAQs = dynamic(() => import("./SolutionFAQ"));
+const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
+const SoutionHowCanStart = dynamic(() => import("./SoutionHowCanStart"));
+const SolutionEngagementModal = dynamic(() =>
+  import("./SolutionEngagementModal")
+);
 
 const HealthCare = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const [isAccordionActive, setAccordionActive] = useState(1);
-  const [isAccordionOpen, setAccordionOpen] = useState(true);
+  const [open, setOpen] = useState(1);
+  const [open2, setOpen2] = useState(1);
 
-  const [isAccordionActive2, setAccordionActive2] = useState(1);
-  const [isAccordionOpen2, setAccordionOpen2] = useState(true);
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+  const handleOpen2 = (value) => setOpen2(open2 === value ? 0 : value);
 
-  const handleAccordianceClick = (accordanceNumber) => {
-    if (isAccordionActive === accordanceNumber) {
-      setAccordionOpen(!isAccordionOpen);
-    } else {
-      setAccordionOpen(true);
-    }
-    setAccordionActive(accordanceNumber);
-  };
+  const healthcareUpperAccordionItems = [
+    {
+      index: 1,
+      title: "Telemedicine Software Developments",
+      imageSrc: "/images/healthcare-03.png",
+      content:
+        "Our custom healthcare software development services include application development, custom reporting, and real-time data interaction.",
+    },
+    {
+      index: 2,
+      title: "Remote Patient Monitoring Software",
+      imageSrc: "/images/healthcare-06.png",
+      content:
+        "With remote monitoring software, doctors can monitor patients’ health remotely via virtual care or vitals captured through wearable devices and IoT sensors. This improves patient outcomes by providing healthcare professionals with better tools to provide superior care at the most appropriate time.",
+    },
+    {
+      index: 3,
+      title: "mPrescription App Development",
+      imageSrc: "/images/healthcare-09.png",
+      content:
+        "We help simplify medication management by providing prescription mobile apps to store patient data, medical history, allergies, and prescriptions. Our apps are trusted by both doctors and patients alike.",
+    },
+    {
+      index: 4,
+      title: "Patient Engagement Solutions",
+      imageSrc: "/images/healthcare-08.png",
+      content:
+        "Your patients are a priority and we’ll help you create systems that deliver great care, improve patient satisfaction and increase revenue. Our patient engagement solutions allow patients and healthcare providers to connect anywhere and anytime with great ease.",
+    },
+    {
+      index: 5,
+      title: "IoT Healthcare Software",
+      imageSrc: "/images/healthcare-10.png",
+      content:
+        "Our IoT software helps doctors make better decisions faster. It captures relevant patient information through smart sensors, then analyses it in real-time to generate valuable insights. We develop applications that empower doctors and medical staff with accurate and valuable patient data.",
+    },
+    {
+      index: 6,
+      title: "Electronic Medical Record Software",
+      imageSrc: "/images/healthcare-04.png",
+      content:
+        "Growing patient expectations requires doctors to not just interact with their patients, but also provide them with efficient and comprehensive care. With our software, you can leverage your existing EMR/EHR platform to maximize clinical productivity and interact with patients via patient portals.",
+    },
+  ];
 
-  const handleAccordianceClick2 = (accordanceNumber2) => {
-    if (isAccordionActive2 === accordanceNumber2) {
-      setAccordionOpen2(!isAccordionOpen2);
-    } else {
-      setAccordionOpen2(true);
-    }
-    setAccordionActive2(accordanceNumber2);
-  };
+  const healthcareUpperImageSources = [
+    {
+      imageSource: "/images/Telemedicine-Software-Developments.jpg",
+      imageAlt: "Telemedicine-Software-Developments",
+    },
+    {
+      imageSource: "/images/Remote-Patient-Monitoring-Software.jpg",
+      imageAlt: "Remote-Patient-Monitoring-Software",
+    },
+    {
+      imageSource: "/images/mPrescription-App-Development.jpg",
+      imageAlt: "mPrescription-App-Development.jpg",
+    },
+    {
+      imageSource: "/images/Patient-Engagement-Solutions.jpg",
+      imageAlt: "Patient-Engagement-Solutions",
+    },
+    {
+      imageSource: "/images/IoT-Healthcare-Software.jpg",
+      imageAlt: "IoT-Healthcare-Software",
+    },
+    {
+      imageSource: "/images/Electronic-Medical-Record-Software.jpg",
+      imageAlt: "Electronic-Medical-Record-Software",
+    },
+  ];
+
+  const healthcareLowerAccordionItems = [
+    {
+      index: 1,
+      title: "Healthcare Providers",
+      imageSrc: "/images/healthcare-05.png",
+      content:
+        "We assist healthcare providers to automate medical workflows, simplify tedious tasks and increase patient satisfaction. Improve your hospital efficiency and uptime while streamlining daily processes.",
+    },
+    {
+      index: 2,
+      title: "Pharmaceutical Companies",
+      imageSrc: "/images/healthcare-02.png",
+      content:
+        "We believe that bringing together the best software options for pharma research and development can help you achieve your goals. Our team assists you from the outset of your drug development projects to the end of each phase in your clinical trial.",
+    },
+    {
+      index: 3,
+      title: "Medical Device Manufacturers",
+      imageSrc: "/images/healthcare-11.png",
+      content:
+        "Medical device manufacturers are at the forefront of innovation, rapidly transforming how healthcare is delivered. Our software helps medical device manufacturers bring new functionality to their products.",
+    },
+    {
+      index: 4,
+      title: "Healthcare Startups",
+      imageSrc: "/images/healthcare-07.png",
+      content:
+        "We’re committed to helping healthcare startups bring their incredible ideas to life. From medicine to medicine delivery, health technology is changing at an exponential rate. Our team of experts uses their experience and expertise to deliver software solutions that are agile, scalable, reliable, and secure.",
+    },
+  ];
+
+  const healthcareLowerImageSources = [
+    {
+      imageSource: "/images/burgerAsset-50.jpg",
+      imageAlt: "Healthacre Provider",
+    },
+    {
+      imageSource: "/images/Pharmaceutical-Companies.jpg",
+      imageAlt: "Pharmaceutical Companies",
+    },
+    {
+      imageSource: "/images/Medical-Device-Manufacturers.jpg",
+      imageAlt: "Medical Device Manufacturers",
+    },
+    {
+      imageSource: "/images/Healthcare-Startups.jpg",
+      imageAlt: "Healthcare Startups",
+    },
+  ];
 
   useEffect(() => {
     scrollEffect();
@@ -97,7 +205,7 @@ const HealthCare = () => {
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
-                <p className="uppercase p-0 !ml-[0] !w-full">
+                <p className="uppercase !p-0 !ml-[0] !w-full">
                   CUSTOM HEALTHCARE SOFTWARE DEVELOPMENT THAT{" "}
                   {isMobile ? <br /> : null}
                   PUTS YOUR PATIENTS FIRST.
@@ -154,610 +262,42 @@ const HealthCare = () => {
             <div className="accordion-tab-section">
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
-                  <div
-                    id="accordionEndtoEnd"
-                    className="d-block accordion nav nav-tabs !mb-0 lg:w-[90%] w-full"
-                    role="tablist"
-                  >
-                    <div
-                      className={`${
-                        isAccordionActive == 1 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(1);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-one"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-one"
-                        aria-selected="true"
-                      >
-                        <div className="accordion-header" id="headingOne">
-                          <button
-                            className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne"
-                            aria-expanded="true"
-                            aria-controls="collapseOne"
-                          >
-                            {isAccordionActive == 1 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Telemedicine Software Developments
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-03.png"
-                                      alt="Telemedicine Software Developments"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-03.png"
-                                      alt="Telemedicine Software Developments"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Telemedicine Software Developments
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseOne"
-                          className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingOne"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Our custom fintech software development services
-                              include application development, custom reporting,
-                              and real-time data interaction.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 2 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(2);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-two"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-two"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingTwo">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="collapseTwo"
-                          >
-                            {isAccordionActive == 2 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Remote Patient Monitoring Software
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-06.png"
-                                      alt="Remote Patient Monitoring Software"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-06.png"
-                                      alt="Remote Patient Monitoring Software"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Remote Patient Monitoring Software
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseTwo"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingTwo"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              With remote monitoring software, doctors can
-                              monitor patients’ health remotely via virtual care
-                              or vitals captured through wearable devices and
-                              IoT sensors. This improves patient outcomes by
-                              providing healthcare professionals with better
-                              tools to provide superior care at the most
-                              appropriate time.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 3 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(3);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-three"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-three"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingThree">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree"
-                            aria-expanded="false"
-                            aria-controls="collapseThree"
-                          >
-                            {isAccordionActive == 3 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    mPrescription App Development
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-09.png"
-                                      alt="mPrescription App Development"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-09.png"
-                                      alt="mPrescription App Development"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    mPrescription App Development
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseThree"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingThree"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We help simplify medication management by
-                              providing prescription mobile apps to store
-                              patient data, medical history, allergies, and
-                              prescriptions. Our apps are trusted by both
-                              doctors and patients alike.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 4 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(4);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-four"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-four"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingFour">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour"
-                            aria-expanded="false"
-                            aria-controls="collapseFour"
-                          >
-                            {isAccordionActive == 4 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Patient Engagement Solutions
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-08.png"
-                                      alt="Patient Engagement Solutions"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-08.png"
-                                      alt="Patient Engagement Solutions"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Patient Engagement Solutions
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseFour"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingFour"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Your patients are a priority and we’ll help you
-                              create systems that deliver great care, improve
-                              patient satisfaction and increase revenue. Our
-                              patient engagement solutions allow patients and
-                              healthcare providers to connect anywhere and
-                              anytime with great ease.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 5 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(5);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-five"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-five"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingFive">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive"
-                            aria-expanded="false"
-                            aria-controls="collapseFive"
-                          >
-                            {isAccordionActive == 5 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    IoT Healthcare Software
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-10.png"
-                                      alt="IoT Healthcare Software"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-10.png"
-                                      alt="IoT Healthcare Software"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    IoT Healthcare Software
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseFive"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingFive"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Our IoT software helps doctors make better
-                              decisions faster. It captures relevant patient
-                              information through smart sensors, then analyses
-                              it in real-time to generate valuable insights. We
-                              develop applications that empower doctors and
-                              medical staff with accurate and valuable patient
-                              data.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive == 6 && isAccordionOpen
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick(6);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-six"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-six"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingSix">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSix"
-                            aria-expanded="false"
-                            aria-controls="collapseSix"
-                          >
-                            {isAccordionActive == 6 && isAccordionOpen ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Electronic Medical Record Software
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-04.png"
-                                      alt="Electronic Medical Record Software"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-04.png"
-                                      alt="Electronic Medical Record Software"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Electronic Medical Record Software
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseSix"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingSix"
-                          data-bs-parent="#accordionEndtoEnd"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Growing patient expectations requires doctors to
-                              not just interact with their patients, but also
-                              provide them with efficient and comprehensive
-                              care. With our software, you can leverage your
-                              existing EMR/EHR platform to maximize clinical
-                              productivity and interact with patients via
-                              patient portals.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="accordion !mb-0 lg:w-[90%] w-full">
+                    {healthcareUpperAccordionItems.map((item) => (
+                      <AccordionItem
+                        key={item.index}
+                        index={item.index}
+                        title={item.title}
+                        imageSrc={item.imageSrc}
+                        content={item.content}
+                        handleOpen={handleOpen}
+                        open={open}
+                      />
+                    ))}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full">
-                  <div className="tab-content" id="nav-tabContent">
-                    <div
-                      className="tab-pane fade show active"
-                      id="accordion-one"
-                      role="tabpanel"
-                      aria-labelledby="accordion-one-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Telemedicine-Software-Developments.jpg"
-                          alt="Telemedicine-Software-Developments"
-                        />
+                  <div>
+                    {healthcareUpperImageSources.map((imageItem, index) => (
+                      <div
+                        key={index}
+                        className={`fade-image ${
+                          (index === 0 && (open === 1 || open === 0)) ||
+                          (index !== 0 && open === index + 1)
+                            ? "active"
+                            : "hidden"
+                        }`}
+                      >
+                        <div className="team_img">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src={imageItem.imageSource}
+                            alt={imageItem.imageAlt}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-two"
-                      role="tabpanel"
-                      aria-labelledby="accordion-two-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Remote-Patient-Monitoring-Software.jpg"
-                          alt="Remote-Patient-Monitoring-Software"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-three"
-                      role="tabpanel"
-                      aria-labelledby="accordion-three-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/mPrescription-App-Development.jpg"
-                          alt="mPrescription-App-Development.jpg"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-four"
-                      role="tabpanel"
-                      aria-labelledby="accordion-four-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Patient-Engagement-Solutions.jpg"
-                          alt="Patient-Engagement-Solutions"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-five"
-                      role="tabpanel"
-                      aria-labelledby="accordion-five-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/IoT-Healthcare-Software.jpg"
-                          alt="IoT-Healthcare-Software"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-six"
-                      role="tabpanel"
-                      aria-labelledby="accordion-six-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Electronic-Medical-Record-Software.jpg"
-                          alt="Electronic-Medical-Record-Software"
-                        />
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -803,410 +343,42 @@ const HealthCare = () => {
             <div className="accordion-tab-section">
               <div className="flex flex-wrap ">
                 <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px] mb-12 lg:mb-0">
-                  <div className="tab-content" id="nav-tabContent">
-                    <div
-                      className="tab-pane fade show active"
-                      id="accordion-seven"
-                      role="tabpanel"
-                      aria-labelledby="accordion-seven-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/burgerAsset-50.jpg"
-                          alt="Healthacre Provider"
-                        />
+                  <div>
+                    {healthcareLowerImageSources.map((imageItem, index) => (
+                      <div
+                        key={index}
+                        className={`fade-image ${
+                          (index === 0 && (open2 === 1 || open2 === 0)) ||
+                          (index !== 0 && open2 === index + 1)
+                            ? "active"
+                            : "hidden"
+                        }`}
+                      >
+                        <div className="team_img">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src={imageItem.imageSource}
+                            alt={imageItem.imageAlt}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-eight"
-                      role="tabpanel"
-                      aria-labelledby="accordion-eight-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Pharmaceutical-Companies.jpg"
-                          alt="Pharmaceutical Companies"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-nine"
-                      role="tabpanel"
-                      aria-labelledby="accordion-nine-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Medical-Device-Manufacturers.jpg"
-                          alt="Medical Device Manufacturers"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      className="tab-pane fade"
-                      id="accordion-ten"
-                      role="tabpanel"
-                      aria-labelledby="accordion-ten-tab"
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/Healthcare-Startups.jpg"
-                          alt="Healthcare Startups"
-                        />
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full mb-[10px]">
-                  <div
-                    id="accordionindustry"
-                    className="d-block accordion nav nav-tabs !mb-0 lg:ml-8 w-full"
-                    role="tablist"
-                  >
-                    <div
-                      className={`${
-                        isAccordionActive2 == 1 && isAccordionOpen2
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick2(1);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-seven"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-seven"
-                        aria-selected="true"
-                      >
-                        <div className="accordion-header" id="headingSeven">
-                          <button
-                            className="accordion-button xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSeven"
-                            aria-expanded="true"
-                            aria-controls="collapseSeven"
-                          >
-                            {isAccordionActive2 == 1 && isAccordionOpen2 ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Healthcare Providers
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-05.png"
-                                      alt="Healthcare Providers"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-05.png"
-                                      alt="Healthcare Providers"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Healthcare Providers
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseSeven"
-                          className="accordion-collapse collapse show xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingSeven"
-                          data-bs-parent="#accordionindustry"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We assist healthcare providers to automate medical
-                              workflows, simplify tedious tasks and increase
-                              patient satisfaction. Improve your hospital
-                              efficiency and uptime while streamlining daily
-                              processes.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive2 == 2 && isAccordionOpen2
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick2(2);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-eight"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-eight"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingEight">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseEight"
-                            aria-expanded="false"
-                            aria-controls="collapseEight"
-                          >
-                            {isAccordionActive2 == 2 && isAccordionOpen2 ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Pharmaceutical Companies
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-02.png"
-                                      alt="Pharmaceutical Companies"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-02.png"
-                                      alt="Pharmaceutical Companies"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Pharmaceutical Companies
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseEight"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingEight"
-                          data-bs-parent="#accordionindustry"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We believe that bringing together the best
-                              software options for pharma research and
-                              development can help you achieve your goals. Our
-                              team assists you from the outset of your drug
-                              development projects to the end of each phase in
-                              your clinical trial.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive2 == 3 && isAccordionOpen2
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick2(3);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-nine"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-nine"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingNine">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseNine"
-                            aria-expanded="false"
-                            aria-controls="collapseNine"
-                          >
-                            {isAccordionActive2 == 3 && isAccordionOpen2 ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Medical Device Manufacturers
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-11.png"
-                                      alt="Medical Device Manufacturers"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-11.png"
-                                      alt="Medical Device Manufacturers"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Medical Device Manufacturers
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseNine"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingNine"
-                          data-bs-parent="#accordionindustry"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              Medical device manufacturers are at the forefront
-                              of innovation, rapidly transforming how healthcare
-                              is delivered. Our software helps medical device
-                              manufacturers bring new functionality to their
-                              products.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`${
-                        isAccordionActive2 == 4 && isAccordionOpen2
-                          ? "item-accordion"
-                          : ""
-                      } `}
-                      onClick={() => {
-                        handleAccordianceClick2(4);
-                      }}
-                    >
-                      <div
-                        className="accordion-item"
-                        data-bs-toggle="tab"
-                        data-bs-target="#accordion-ten"
-                        type="button"
-                        role="tab"
-                        aria-controls="accordion-ten"
-                        aria-selected="false"
-                      >
-                        <div className="accordion-header" id="headingTen">
-                          <button
-                            className="accordion-button collapsed xl:text-[32px] md:text-[26px] text-[16px]"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseTen"
-                            aria-expanded="false"
-                            aria-controls="collapseTen"
-                          >
-                            {isAccordionActive2 == 4 && isAccordionOpen2 ? (
-                              <>
-                                <div className="flex justify-between w-full">
-                                  <h3 className="text-[24px]">
-                                    Healthcare Startups
-                                  </h3>
-
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-07.png"
-                                      alt="Healthcare Startups"
-                                    />
-                                  </div>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                <div className="flex w-full">
-                                  <div className="number_icon_img">
-                                    <img
-                                      decoding="async"
-                                      loading="lazy"
-                                      src="/images/healthcare-07.png"
-                                      alt="Healthcare Startups"
-                                    />
-                                  </div>
-                                  <h3 className="text-[24px] ml-5">
-                                    Healthcare Startups
-                                  </h3>
-                                </div>
-                              </>
-                            )}
-                          </button>
-                        </div>
-                        <div
-                          id="collapseTen"
-                          className="accordion-collapse collapse xl:text-[24px] lg:text-[22px] md:text-[20px] text-[16px]"
-                          aria-labelledby="headingTen"
-                          data-bs-parent="#accordionindustry"
-                        >
-                          <div className="accordion-body">
-                            <p className="mb-[1rem] text-[20px]">
-                              We’re committed to helping healthcare startups
-                              bring their incredible ideas to life. From
-                              medicine to medicine delivery, health technology
-                              is changing at an exponential rate. Our team of
-                              experts uses their experience and expertise to
-                              deliver software solutions that are agile,
-                              scalable, reliable, and secure.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="accordion !mb-0 lg:ml-8 w-full">
+                    {healthcareLowerAccordionItems.map((item) => (
+                      <AccordionItem
+                        key={item.index}
+                        index={item.index}
+                        title={item.title}
+                        imageSrc={item.imageSrc}
+                        content={item.content}
+                        handleOpen={handleOpen2}
+                        open={open2}
+                      />
+                    ))}
                   </div>
                 </div>
 
@@ -1403,42 +575,42 @@ const HealthCare = () => {
                     <div className="number xl:!text-[34px] !text-[20px]">
                       HIPAA & GDPR
                     </div>
-                    <p className="year border-0 py-[1rem]">Compliant Apps</p>
+                    <p className="year !border-0 py-[1rem]">Compliant Apps</p>
                   </div>
 
                   <div>
                     <div className="number xl:!text-[34px] !text-[20px]">
                       EXPERIENCE
                     </div>
-                    <p className="year border-0 py-[1rem]">Proven mHealth</p>
+                    <p className="year !border-0 py-[1rem]">Proven mHealth</p>
                   </div>
 
                   <div>
                     <div className="number xl:!text-[34px] !text-[20px]">
                       AGILE
                     </div>
-                    <p className="year border-0 py-[1rem]">Centric Model</p>
+                    <p className="year !border-0 py-[1rem]">Centric Model</p>
                   </div>
 
                   <div>
                     <div className="number xl:!text-[34px] !text-[20px]">
                       SECURITY
                     </div>
-                    <p className="year border-0 py-[1rem]">First Approach</p>
+                    <p className="year !border-0 py-[1rem]">First Approach</p>
                   </div>
 
                   <div>
                     <div className="number xl:!text-[34px] !text-[20px]">
                       UNPARALLELED
                     </div>
-                    <p className="year border-0 py-[1rem]">Code Quality</p>
+                    <p className="year !border-0 py-[1rem]">Code Quality</p>
                   </div>
 
                   <div>
                     <div className="number xl:!text-[34px] !text-[20px]">
                       &nbsp; &nbsp;WELL-PLANNED
                     </div>
-                    <p className="year border-0 py-[1rem]">Architecture</p>
+                    <p className="year !border-0 py-[1rem]">Architecture</p>
                   </div>
                 </div>
               </div>

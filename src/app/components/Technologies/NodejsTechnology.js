@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
-import FAQsTechnology from "./FAQsTechnology";
+import NodeJSFAQs from "./TechnologyFAQ";
 import TechnologyDevelopers from "./TechnologyDevelopers";
 import TechnologyCombination from "./TechnologyCombination";
 import WhyShouldHireDevelopers from "./WhyShouldHireDevelopers";
@@ -75,7 +75,7 @@ const NodejsTechnology = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="p-0 !ml-[0] !w-full">
+                  <p className="!p-0 !ml-[0] !w-full">
                     HIRE OUR NODEJS DEVELOPMENT COMPANY TO POWER UP YOUR BACKEND
                   </p>
                 </Link>
@@ -348,7 +348,7 @@ const NodejsTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FAQsTechnology />
+      <NodeJSFAQs />
     </>
   );
 };

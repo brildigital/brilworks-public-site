@@ -1,7 +1,5 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
-import Header from "@/app/components/Header/Header";
-import Footer from "@/app/components/Footer";
 
 export const metadata = {
   openGraph: {
@@ -87,9 +85,7 @@ export default async function Page(props) {
           content={`${data?.story?.content?.reading_time_in_minutes} minutes`}
         ></meta>
       </head>
-      <Header />
       <StoryblokStory story={data?.story} />
-      <Footer />
     </>
   );
 }

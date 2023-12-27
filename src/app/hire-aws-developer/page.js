@@ -1,8 +1,9 @@
-import Head from "next/head";
-import Footer from "../components/Footer";
-import Header from "../components/Header/Header";
-import AWSTechnology from "../components/Technologies/AWSTechnology";
+import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
+
+const AWSTechnology = dynamic(() =>
+  import("../components/Technologies/AWSTechnology")
+);
 
 export const metadata = {
   title: "Hire AWS Developers",
@@ -42,9 +43,7 @@ const page = () => {
           __html: generateBreadcrumb("Hire AWS Developers"),
         }}
       />
-      <Header />
       <AWSTechnology />
-      <Footer />
     </>
   );
 };

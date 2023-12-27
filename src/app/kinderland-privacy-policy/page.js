@@ -1,6 +1,6 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
-import Kinderland from "../components/Kinderland/Kinderland";
+import dynamic from "next/dynamic";
+
+const Kinderland = dynamic(() => import("../components/Kinderland/Kinderland"));
 
 const page = () => {
   return (
@@ -10,9 +10,7 @@ const page = () => {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <Header />
       <Kinderland />
-      <Footer />
     </>
   );
 };

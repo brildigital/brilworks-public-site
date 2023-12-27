@@ -1,16 +1,24 @@
-import Header from "../components/Header/Header";
-import Blogs from "../components/Homepage/Blogs";
-import Honors from "../components/Homepage/Honors";
-import Brilliant from "../components/Homepage/Brilliant";
-import ContactUs from "../components/Homepage/ContactUs";
-import GameChanger from "../components/Homepage/GameChanger";
-import ClientReviews from "../components/Homepage/ClientReviews";
-import DomainWorking from "../components/Homepage/DomainWorking";
-import Footer from "../components/Footer/index";
-import ExtensionOfTeam from "../components/Homepage/ExtensionOfTeam";
-import SeeingBelieving from "../components/Homepage/SeeingBelieving";
+import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../components/Homepage/BigText";
 import { homepageFAQ } from "../components/lib/schemaCode";
+
+const HomepageBlog = dynamic(() => import("../components/Homepage/Blogs"));
+const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
+const Honors = dynamic(() => import("../components/Homepage/Honors"));
+const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
+const GameChanger = dynamic(() => import("../components/Homepage/GameChanger"));
+const ClientReviews = dynamic(() =>
+  import("../components/Homepage/ClientReviews")
+);
+const DomainWorking = dynamic(() =>
+  import("../components/Homepage/DomainWorking")
+);
+const ExtensionOfTeam = dynamic(() =>
+  import("../components/Homepage/ExtensionOfTeam")
+);
+const SeeingBelieving = dynamic(() =>
+  import("../components/Homepage/SeeingBelieving")
+);
 
 export const metadata = {
   title: "Mobile App & Software Development Company",
@@ -65,7 +73,6 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
-      <Header />
       <GameChanger />
       <Brilliant />
       <BestAdvocateText />
@@ -74,9 +81,8 @@ const page = () => {
       <ExtensionOfTeam />
       <SeeingBelieving />
       <Honors />
-      <Blogs />
+      <HomepageBlog />
       <ContactUs />
-      <Footer />
     </>
   );
 };

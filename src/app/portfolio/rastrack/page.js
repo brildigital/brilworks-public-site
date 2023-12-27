@@ -1,6 +1,8 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header/Header";
-import PortfolioInnerRastrack from "@/app/components/Portfolio/PortfolioInnerRastrack";
+import dynamic from "next/dynamic";
+
+const PortfolioInnerRastrack = dynamic(() =>
+  import("@/app/components/Portfolio/PortfolioInnerRastrack")
+);
 
 export const metadata = {
   title: "Rastrack - Portfolio | Satellite Tracking | Brilworks Software",
@@ -24,14 +26,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return (
-    <>
-      <Header />
-      <PortfolioInnerRastrack />
-
-      <Footer />
-    </>
-  );
+  return <PortfolioInnerRastrack />;
 };
 
 export default page;
