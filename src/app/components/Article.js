@@ -252,8 +252,6 @@ const Article = ({ blok }) => {
               <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
                 <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
                   <img
-                    decoding="async"
-                    loading="lazy"
                     className="rounded-[15px] !max-h-[288px] !h-auto !object-cover"
                     alt={blok?.image?.alt}
                     src={
@@ -261,7 +259,7 @@ const Article = ({ blok }) => {
                         ? blok?.mobile_banner?.filename
                         : blok?.image?.filename || blok?.mobile_banner?.filename
                     }
-                  />
+                  />  
                 </div>
                 {blok?.Quick_Summary && (
                   <div>
