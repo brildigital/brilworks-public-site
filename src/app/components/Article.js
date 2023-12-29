@@ -5,22 +5,27 @@ import "./Blogstyle.scss";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import { getbloglist } from "./lib/getblog";
 import { usePathname } from "next/navigation";
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
+const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
+  const targetRef = useRef();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState(null);
+
   const blogTableOfContent =
     blok?.content + blok.Content_1 + blok.Content_2 + blok.Content_3 || "";
 
@@ -124,7 +129,7 @@ const Article = ({ blok }) => {
 
   return (
     <div className="md:mt-[8rem] mt-[6rem] blog-main">
-      {!blok || isLoading ? (
+      {!blok ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
         </div>
@@ -192,12 +197,12 @@ const Article = ({ blok }) => {
                     </span>
                     <span className="font-graphik">{blok?.title}</span>
                   </div>
-                  <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] !font-bold !mb-5 leading-[57px] -tracking-[.52px]">
+                  <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] !font-bold !mb-5 md:leading-[57px] leading-[44px] -tracking-[.52px]">
                     {blok?.title}
                   </h1>
                 </div>
                 <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2">
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-between">
                     <img
                       decoding="async"
                       loading="lazy"
@@ -259,7 +264,7 @@ const Article = ({ blok }) => {
                         ? blok?.mobile_banner?.filename
                         : blok?.image?.filename || blok?.mobile_banner?.filename
                     }
-                  />  
+                  />
                 </div>
                 {blok?.Quick_Summary && (
                   <div>
@@ -367,52 +372,59 @@ const Article = ({ blok }) => {
                     <div className="md:w-3/4 w-full !float-left">
                       <div className="h-full w-full box-border !px-4">
                         <div className="h-full flex flex-col">
-                          <div className="blog_content post_details_content">
+                          <div
+                            className="blog_content post_details_content"
+                            ref={targetRef}
+                          >
                             {modifyImagesWithLazyLoading(blok?.content)}
-                          </div>
-                          {blok?.CTA_1 && (
-                            <div
-                              className={`${
-                                blok?.CTA_1 ? "blog_content_CTA_1" : ""
-                              }`}
-                            >
-                              {parse(blok?.CTA_1 || "")}
-                            </div>
-                          )}
+                            {blok?.CTA_1 && (
+                              <div
+                                className={`${
+                                  blok?.CTA_1 ? "blog_content_CTA_1" : ""
+                                }`}
+                              >
+                                {parse(blok?.CTA_1 || "")}
+                              </div>
+                            )}
 
-                          {blok?.Content_1 && (
-                            <div className="blog_content_new">
-                              {parse(blok?.Content_1 || "")}
-                            </div>
-                          )}
-                          {blok?.CTA_2 && (
-                            <div
-                              className={`${
-                                blok?.CTA_2 ? "blog_content_CTA_2" : ""
-                              }`}
-                            >
-                              {parse(blok?.CTA_2 || "")}
-                            </div>
-                          )}
-                          {blok?.Content_2 && (
-                            <div className="blog_content_new">
-                              {parse(blok?.Content_2 || "")}
-                            </div>
-                          )}
-                          {blok?.CTA_3 && (
-                            <div
-                              className={`${
-                                blok?.CTA_3 ? "blog_content_CTA_3" : ""
-                              }`}
-                            >
-                              {parse(blok?.CTA_3 || "")}
-                            </div>
-                          )}
-                          {blok?.Content_3 && (
-                            <div className="blog_content_new">
-                              {parse(blok?.Content_3 || "")}
-                            </div>
-                          )}
+                            {blok?.Content_1 && (
+                              <div className="blog_content_new">
+                                {parse(blok?.Content_1 || "")}
+                              </div>
+                            )}
+                            {blok?.CTA_2 && (
+                              <div
+                                className={`${
+                                  blok?.CTA_2 ? "blog_content_CTA_2" : ""
+                                }`}
+                              >
+                                {parse(blok?.CTA_2 || "")}
+                              </div>
+                            )}
+                            {blok?.Content_2 && (
+                              <div className="blog_content_new">
+                                {parse(blok?.Content_2 || "")}
+                              </div>
+                            )}
+                            {blok?.CTA_3 && (
+                              <div
+                                className={`${
+                                  blok?.CTA_3 ? "blog_content_CTA_3" : ""
+                                }`}
+                              >
+                                {parse(blok?.CTA_3 || "")}
+                              </div>
+                            )}
+                            {blok?.Content_3 && (
+                              <div className="blog_content_new">
+                                {parse(blok?.Content_3 || "")}
+                              </div>
+                            )}
+                            <Tooltip
+                              blogAuthor={blok?.author}
+                              targetRef={targetRef}
+                            />
+                          </div>
 
                           {/* ********************Author Detail******************************/}
                           <div className="single-author-bio">
