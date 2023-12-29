@@ -75,90 +75,123 @@ a:hover {
 
 @font-face {
   font-family: bw_gradual_demoblack;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-black.html) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-black.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.html)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demoblack_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demobold;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-bold.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-bold.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demobold_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demoextrabold;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demoxbdit;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff2)
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff2)
       format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff) format("woff");
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demolight;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-light.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-light.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-light.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-light.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demolight_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demomedium;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-medium.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-medium.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-medium.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-medium.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demomedium_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff2)
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff2)
       format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff) format("woff");
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demoregular;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-regular.woff2) format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-regular.woff) format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regular.woff2)
+      format("woff2"),
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regular.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: bw_gradual_demoregular_italic;
-  src: url(/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff2)
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff2)
       format("woff2"),
-    url(/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff) format("woff");
+    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff)
+      format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 ::-webkit-scrollbar {
   width: 7px;
