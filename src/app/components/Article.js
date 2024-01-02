@@ -421,10 +421,10 @@ const Article = ({ blok }) => {
                                 {parse(blok?.Content_3 || "")}
                               </div>
                             )}
-                            <Tooltip
+                            {/* <Tooltip
                               blogAuthor={blok?.author}
                               targetRef={targetRef}
-                            />
+                            /> */}
                           </div>
 
                           {/* ********************Author Detail******************************/}
