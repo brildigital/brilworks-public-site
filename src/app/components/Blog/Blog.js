@@ -249,7 +249,11 @@ const Blog = () => {
                 key={index}
                 className="border-[1px] border-[#80808038] rounded-[30px] sec9_data_style blog_flex_30"
               >
-                <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                <Link
+                  as={`/blog/${slug}`}
+                  href={`/blog/[slug]`}
+                  prefetch={true}
+                >
                   <div className="sec9_img1">
                     <Image
                       decoding="async"

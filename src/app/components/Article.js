@@ -5,13 +5,11 @@ import "./Blogstyle.scss";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import { getbloglist } from "./lib/getblog";
 import { usePathname } from "next/navigation";
-import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -217,6 +215,8 @@ const Article = ({ blok }) => {
                         className="md:text-[20px] text-base font-bold"
                         href={`${blok?.author_linkedIn?.url}`}
                         title={`Posts by ${blok?.author}`}
+                        target="_blank"
+                        rel="author external"
                       >
                         {blok?.author}
                       </Link>
@@ -257,6 +257,7 @@ const Article = ({ blok }) => {
               <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
                 <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
                   <img
+                    priority={true}
                     className="rounded-[15px] !max-h-[288px] !h-auto !object-cover"
                     alt={blok?.image?.alt}
                     src={
@@ -447,6 +448,7 @@ const Article = ({ blok }) => {
                                   href={`${blok?.author_linkedIn?.url}`}
                                   title={`Visit ${blok?.author} website`}
                                   className="font-graphik"
+                                  target="_blank"
                                   rel="author external"
                                 >
                                   {blok?.author}
@@ -545,7 +547,12 @@ const Article = ({ blok }) => {
                         key={index}
                         className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
                       >
-                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                        <Link
+                          as={`/blog/${slug}`}
+                          href={`/blog/[slug]`}
+                          target="_blank"
+                          rel="external"
+                        >
                           <div className="sec9_img1">
                             <Image
                               className="rounded-[30px]"
@@ -584,4 +591,4 @@ const Article = ({ blok }) => {
   );
 };
 
-export default Article;
+export default memo(Article);

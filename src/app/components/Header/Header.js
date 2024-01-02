@@ -777,7 +777,7 @@ const NewHeader = () => {
                     alt="Brilworks Logo"
                     width="206"
                     height="62"
-                    priority={false}
+                    priority={true}
                     className="alignnone size-full wp-image-15"
                   />
                 </Link>
