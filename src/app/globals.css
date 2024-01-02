@@ -23,10 +23,8 @@ img {
 }
 :root {
   --black_font: "bw_gradual_demoblack";
-  --black_italic: "black_italic";
   --bold: "bw_gradual_demobold";
   --extra_bold: "bw_gradual_demoextrabold";
-  --bold_italic: "bw_gradual_demobold_italic";
   --light: "bw_gradual_demolight";
   --medium: "bw_gradual_demomedium";
   --regular: "bw_gradual_demoregular";
@@ -75,39 +73,18 @@ a:hover {
 
 @font-face {
   font-family: bw_gradual_demoblack;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.html)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.woff)
-      format("woff");
+  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.woff)
+    format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: bw_gradual_demoblack_italic;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-blackitalic.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: bw_gradual_demobold;
   src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff2)
       format("woff2"),
     url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: bw_gradual_demobold_italic;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bolditalic.woff)
       format("woff");
   font-weight: 400;
   font-style: normal;
@@ -124,16 +101,6 @@ a:hover {
   font-display: swap;
 }
 @font-face {
-  font-family: bw_gradual_demoxbdit;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabolditalic.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: bw_gradual_demolight;
   src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-light.woff2)
       format("woff2"),
@@ -143,16 +110,7 @@ a:hover {
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: bw_gradual_demolight_italic;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-lightitalic.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: bw_gradual_demomedium;
   src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-medium.woff2)
@@ -163,16 +121,7 @@ a:hover {
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: bw_gradual_demomedium_italic;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-mediumitalic.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: bw_gradual_demoregular;
   src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regular.woff2)
@@ -183,16 +132,7 @@ a:hover {
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: bw_gradual_demoregular_italic;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regularitalic.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -307,26 +247,6 @@ a:hover {
 .page-active {
   color: var(--main_color) !important;
 }
-.menu .accordion-container .content-entry i {
-  top: 40%;
-  transform: translateY(-50%);
-}
-.accordion-container .content-entry i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 8px;
-  font-style: normal;
-  font-size: 1.625em;
-  color: var(--black_font);
-  font-family: var(--light);
-}
-.accordion-container .content-entry i:before {
-  content: "+";
-}
-.accordion-container .content-entry.open i:before {
-  content: "- ";
-}
 
 .item-accordion {
   border-bottom: transparent;
@@ -368,42 +288,10 @@ a:hover {
   background-color: #52403c;
   margin: 12px auto;
 }
-.nav_btn.active .top {
-  -webkit-transform: translateY(6px) rotateZ(45deg);
-  -moz-transform: translateY(6px) rotateZ(45deg);
-  -ms-transform: translateY(6px) rotateZ(45deg);
-  -o-transform: translateY(6px) rotateZ(45deg);
-  transform: translateY(11px) rotateZ(45deg);
-}
-.nav_btn.active .bottom {
-  -webkit-transform: translateY(-2px) rotateZ(-45deg);
-  -moz-transform: translateY(-2px) rotateZ(-45deg);
-  -ms-transform: translateY(-2px) rotateZ(-45deg);
-  -o-transform: translateY(-2px) rotateZ(-45deg);
-  transform: translateY(-2px) rotateZ(-45deg);
-}
 
-.menu.active-menu {
-  top: 0%;
-}
-.menu {
-  position: fixed;
-  left: 0;
-  top: 110%;
-  overflow-y: scroll !important;
-  z-index: 9999;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  transition: all 0.6s ease;
-  background-color: #fff;
-}
 .width_90 {
   width: 88%;
   margin: 0 auto;
-}
-.padding_menu_header {
-  padding: 9rem 0 0 0;
 }
 .flex_row_header_menu {
   display: flex;
@@ -418,55 +306,15 @@ a:hover {
   flex-basis: 40%;
 }
 
-.menu .accordion-container {
-  border-bottom: 1px solid gray;
-}
-.menu .accordion-container p:hover,
-.accordion-content:hover p {
-  color: #00b6cf !important;
-  transition: all 0.4s ease-in-out;
-}
-
-.accordion-container,
 #description {
   width: 100%;
   border-radius: 0;
 }
-.content-entry {
-  transition: all 0.6s ease-in-out;
-}
-.menu .accordion-container .article-title {
-  display: block;
-  position: relative;
-  margin: 0;
-  cursor: pointer;
-  font-size: var(--font_36);
-  font-family: var(--medium);
-  color: var(--color_black);
-  padding: 1.5rem 0rem 2rem 0;
-  width: 95%;
-}
-.menu .open .accordion-content {
-  transition: all 0.6s ease;
-  height: fit-content;
-  padding-bottom: 10px;
-  padding-left: 3rem;
-}
+
 .menu_mob_flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.menu .accordion-container p {
-  padding-bottom: 0;
-}
-.accordion-container p {
-  font-size: var(--font_24);
-  font-family: var(--medium);
-  color: var(--color_black);
-  padding-bottom: 1rem;
-  width: fit-content;
-  line-height: 2.5rem;
 }
 .mega_menu_icon {
   display: block;
@@ -474,13 +322,6 @@ a:hover {
 .mega_menu_icon {
   width: 60px;
 }
-.accordion-content {
-  transition: all 0.6s ease-in-out;
-  width: 95%;
-  height: 0;
-  overflow: hidden;
-}
-
 .menu_txt1 {
   padding: 1.5rem 0 1.5rem 0;
   border-bottom: 1px solid gray;
@@ -492,8 +333,7 @@ a:hover {
 }
 
 .menu_txt1 p:hover,
-.project_pages_none-1:hover,
-.menu .accordion-container .article-title:hover {
+.project_pages_none-1:hover {
   color: var(--main_menu_hover_color);
   transition: all 0.4s ease-in-out;
 }
@@ -533,36 +373,7 @@ a:hover {
   visibility: visible;
   z-index: 99;
 }
-#mainMenuWrapperSolution {
-  left: 55%;
-}
-.mega_menu.active-menu {
-  overflow: visible;
-  opacity: 1;
-  display: block;
-}
-.mega_menu.active-menu {
-  top: 100px;
-}
-.mega_menu {
-  position: fixed;
-  top: -150%;
-  left: 63%;
-  z-index: 999 !important;
-  width: 22% !important;
-  overflow: hidden;
-  transition: all 0.6s ease;
-  background-color: #fff;
-  opacity: 0;
-  border-radius: 30px;
-  display: none;
-}
 
-.mega_menu_width {
-  width: 90%;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
 .flex_mega_menu {
   display: flex;
   align-items: center;
@@ -572,27 +383,13 @@ a:hover {
 .flex_mega_menu img {
   width: 50px;
 }
-/* .flex_30_mega_menu {
-  flex-basis: 20%;
-} */
-/* .flex_mega_menu p {
-  flex-basis: 80%;
-} */
+
 .mega_menu_txt p {
   font-size: var(--font_16);
   font-family: var(--medium);
   color: var(--color_black);
   line-height: 2.5;
   /* padding: 0 10px; */
-}
-
-.menu .accordion-container {
-  border-bottom: 1px solid gray;
-}
-.accordion-container,
-#description {
-  width: 100%;
-  border-radius: 0;
 }
 
 .sec1_txt_position {
@@ -772,9 +569,7 @@ a:hover {
   font-family: var(--regular);
   color: var(--color_black);
 }
-#accordionExampleother .accordion-button {
-  font-family: var(--light);
-}
+
 .blog-home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
@@ -1098,6 +893,9 @@ textarea.form-control-txt {
   margin: 0;
   padding: 0;
   background-color: #000;
+}
+.bg_black a {
+  cursor: pointer !important;
 }
 .footer_padding {
   padding: 5rem 0;
@@ -2542,9 +2340,7 @@ textarea.form-control-txt {
   .content {
     font-size: 4rem;
   }
-  .menu .accordion-container .article-title {
-    font-size: var(--font_36);
-  }
+
   .service_description p {
     font-size: 1.1rem;
   }
@@ -2654,9 +2450,6 @@ textarea.form-control-txt {
   .flex_mega_menu img {
     width: 40px;
   }
-  .padding_menu_header {
-    padding: 6rem 0 0 0;
-  }
 }
 @media only screen and (min-width: 1280px) {
   .our-engagement-models .no_flex::after,
@@ -2699,7 +2492,6 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1152px) {
-  .menu .accordion-container .article-title,
   .menu_txt1 p {
     font-size: 1.5rem;
   }
@@ -2933,9 +2725,6 @@ textarea.form-control-txt {
   .single-author-bio .single-author-bio-text {
     max-width: unset;
   }
-  .padding_menu_header {
-    padding: 6rem 0 0 0;
-  }
   .pricing-amount {
     font-size: var(--font_28);
   }
@@ -2955,12 +2744,6 @@ textarea.form-control-txt {
   }
   .faq-bottom .accordion-item {
     padding: 1rem !important;
-  }
-  .menu .open .accordion-content {
-    padding-left: 1rem;
-  }
-  .accordion-content {
-    width: 98%;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -3000,20 +2783,6 @@ textarea.form-control-txt {
   }
   .header_logo {
     width: 45%;
-  }
-  .padding_menu_header {
-    padding: 4rem 0 0 0;
-  }
-  .padding_menu_header .accordion-content {
-    width: 100%;
-  }
-  .menu .open .accordion-content {
-    padding-left: 0;
-  }
-  .menu .open .accordion-content p {
-    padding-bottom: 0;
-    font-size: 1rem !important;
-    line-height: 1.3;
   }
   .hidden-xs {
     display: none;
@@ -3189,9 +2958,6 @@ textarea.form-control-txt {
     font-family: var(--light);
     color: var(--color_black);
   }
-  /* .portfolio .sec6_title {
-    padding: 3rem 0 1rem;
-  } */
   .sec6_title p,
   .sec6_title h2,
   .portfolio .head-title {

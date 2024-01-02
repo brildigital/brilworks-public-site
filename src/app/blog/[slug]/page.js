@@ -1,5 +1,6 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
+import { cache } from "react";
 
 export const metadata = {
   openGraph: {
@@ -90,7 +91,7 @@ export default async function Page(props) {
   );
 }
 
-export async function fetchData(params) {
+export const fetchData = cache(async (params) => {
   let slug = params?.slug ? `blog/${params.slug}` : "home";
   const storyblokApi = getStoryblokApi();
 
@@ -109,4 +110,4 @@ export async function fetchData(params) {
     },
     revalidate: 3600,
   };
-}
+});
