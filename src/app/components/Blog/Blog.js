@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getblogData } from "../lib/getblog";
+import Image from "next/image";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -151,76 +152,74 @@ const Blog = () => {
           <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
             <div>
               <button
-                className={`Blog_category_head transition duration-600 ease-in-out !px-6 !py-2 min-[320px]:text-[16px] !rounded-[4px] md:text-[21px] cursor-pointer ${
+                className={`Blog_category_head transition duration-600 ease-in-out lg:!px-5 px-4 !py-2 !rounded-[4px] cursor-pointer ${
                   blogCategory === ""
                     ? "bg-[#00DDB9] text-white"
                     : "hover:!text-[#00b6cf]"
                 }`}
                 onClick={() => setBlogCategory("")}
               >
-                <p className="min-[320px]:text-[15px] md:text-[18px]">All</p>
+                <p className="text-[15px] lg:text-[18px]">All</p>
               </button>
               <button
-                className={`Blog_category_head ease-in-out duration-300 !px-4 !py-2 min-[320px]:text-[15px] md:text-[18px] cursor-pointer !rounded-[4px] ${
+                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Product Engineering"
                     ? "bg-[#00DDB9] text-white"
                     : "hover:!text-[#00b6cf]"
                 }`}
                 onClick={() => setBlogCategory("Product Engineering")}
               >
-                <p className="min-[320px]:text-[15px] md:text-[18px]">
+                <p className="text-[15px] lg:text-[18px]">
                   Product Engineering
                 </p>
               </button>
               <button
-                className={`Blog_category_head ease-in-out duration-300 !px-4 !py-2 min-[320px]:text-[15px] md:text-[18px] cursor-pointer !rounded-[4px] ${
+                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Cloud DevOps and Data"
                     ? "bg-[#00DDB9] text-white"
                     : "hover:!text-[#00b6cf]"
                 }`}
                 onClick={() => setBlogCategory("Cloud DevOps and Data")}
               >
-                <p className="min-[320px]:text-[15px] md:text-[18px]">
+                <p className="text-[15px] lg:text-[18px]">
                   Cloud, DevOps and Data
                 </p>
               </button>
               <button
-                className={`Blog_category_head ease-in-out duration-300 !px-4 !py-2 min-[320px]:text-[15px] md:text-[18px] cursor-pointer !rounded-[4px] ${
+                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Technology Practices"
                     ? "bg-[#00DDB9] text-white"
                     : "hover:!text-[#00b6cf]"
                 }`}
                 onClick={() => setBlogCategory("Technology Practices")}
               >
-                <p className="min-[320px]:text-[15px] md:text-[18px]">
+                <p className="text-[15px] lg:text-[18px]">
                   Technology Practices
                 </p>
               </button>
               <button
-                className={`Blog_category_head ease-in-out duration-300 !px-4 !py-2 min-[320px]:text-[15px] md:text-[18px] cursor-pointer !rounded-[4px] ${
+                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "News & Insights"
                     ? "bg-[#00DDB9] text-white"
                     : "hover:!text-[#00b6cf]"
                 }`}
                 onClick={() => setBlogCategory("News & Insights")}
               >
-                <p className="min-[320px]:text-[15px] md:text-[18px]">
-                  News & Insights
-                </p>
+                <p className="text-[15px] lg:text-[18px]">News & Insights</p>
               </button>
             </div>
           </div>
           <div className="w-full sxl:w-2/6">
             <form className="md:pb-0 !pb-4" onSubmit={handleSubmit}>
               <div className="find-blog-search-box border-[#00DDB9] border-[1px]">
-                <div className="w-full flex relative flex-wrap items-stretch">
+                <div className="w-full inline-flex relative flex-wrap items-center justify-end">
                   <input
                     type="submit"
-                    className="w-auto right-[1rem] !left-[unset] top-[9%] blog-search-btn btn-search font-semibold text-base !text-white border
+                    className="w-auto !mr-2 mt-[2px] blog-search-btn btn-search font-semibold text-base !text-white border !cursor-pointer
                      hover:border-[#00dfb8] focus:ring focus:outline-none focus:border-[#00dfb8] focus:!ring-[#00C4C8] active:border-[#00dfb8] absolute bg-gradient-to-r from-[#00C4C8] to-[#00DDB9]"
                     value="SEARCH"
                   />
-                  <div className="form-outline w-full">
+                  <div className="w-full">
                     <input
                       type="text"
                       id="serachValue"
@@ -250,9 +249,13 @@ const Blog = () => {
                 key={index}
                 className="border-[1px] border-[#80808038] rounded-[30px] sec9_data_style blog_flex_30"
               >
-                <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                <Link
+                  as={`/blog/${slug}`}
+                  href={`/blog/[slug]`}
+                  prefetch={true}
+                >
                   <div className="sec9_img1">
-                    <img
+                    <Image
                       decoding="async"
                       loading="lazy"
                       className="rounded-[30px]"
@@ -265,6 +268,8 @@ const Blog = () => {
                         content?.Image?.alt ||
                         "Blog List banner"
                       }
+                      width="450"
+                      height="230"
                     />
                   </div>
                   <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
