@@ -32,7 +32,6 @@ const ReactJSTechnology = () => {
                 className="h-[46vh] rounded-[20px]"
                 src="/images/react-banner.webp"
                 alt="React banner"
-                srcset="/images/react-banner.webp 275×154, /images/react-banner.webp 660×368"
               />
             </p>
             <div className="service_sec1_position">
@@ -44,28 +43,18 @@ const ReactJSTechnology = () => {
                       <div className="flex items-center">
                         <Image
                           className="w-[auto]"
-                          // src="/images/1.png"
+                          src="/images/1.png"
                           alt="curly bracket"
                           width="24"
                           height="94"
-                          srcset="
-                          /_next/image/?url=%2Fimages%2F1.png&w=32&q=75 1x,
-                          /_next/image/?url=%2Fimages%2F1.png&w=48&q=75 2x
-                        "
-                          src="/_next/image/?url=%2Fimages%2F1.png&w=48&q=75"
                         />
                         REACTJS
                         <Image
-                          className="w-[auto] "
-                          // src="/images/2.png"
-                          src="/_next/image/?url=%2Fimages%2F2.png&w=48&q=75"
+                          className="w-[auto]"
+                          src="/images/2.png"
                           alt="curly bracket"
                           width="24"
                           height="94"
-                          srcset="
-                          /_next/image/?url=%2Fimages%2F2.png&w=32&q=75 1x,
-                          /_next/image/?url=%2Fimages%2F2.png&w=48&q=75 2x
-                        "
                         />
                       </div>
                       DEVELOPERS
