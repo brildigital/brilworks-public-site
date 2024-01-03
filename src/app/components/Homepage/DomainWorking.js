@@ -48,7 +48,7 @@ const DomainWorking = () => {
                         /images/Fintech-768x836.webp   768w,
                         /images/Fintech.webp         1010w
                       "
-                      sizes="(max-width: 1010px) 100vw, 1010px"
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
                     />
                   </div>
                 </div>

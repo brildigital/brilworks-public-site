@@ -55,6 +55,7 @@ const page = () => {
   return (
     <>
       <script
+        defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />

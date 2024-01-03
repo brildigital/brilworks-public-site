@@ -38,6 +38,7 @@ const page = () => {
   return (
     <>
       <script
+        defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBreadcrumb("Hire AWS Developers"),

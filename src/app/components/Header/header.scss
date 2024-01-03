@@ -51,6 +51,10 @@
       font-size: 1rem;
     }
   }
+  @media screen and (max-width: 767px) {
+    padding-left: 1rem !important;
+    width: 100%;
+  }
 }
 .megamenu {
   p:hover {
