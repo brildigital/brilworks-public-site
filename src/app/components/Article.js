@@ -256,15 +256,18 @@ const Article = ({ blok }) => {
             <div className="flex flex-wrap -mx-4">
               <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
                 <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
-                  <img
+                  <Image
                     priority={true}
                     className="rounded-[15px] !max-h-[288px] !h-auto !object-cover"
                     alt={blok?.image?.alt}
+                    width={isMobile ? 343 : 758}
+                    height={isMobile ? 177 : 169}
                     src={
                       isMobile
                         ? blok?.mobile_banner?.filename
                         : blok?.image?.filename || blok?.mobile_banner?.filename
                     }
+                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
                   />
                 </div>
                 {blok?.Quick_Summary && (
