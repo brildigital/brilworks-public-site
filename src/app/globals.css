@@ -385,7 +385,8 @@ a:hover {
 }
 
 .about_txt_domain a,
-.about_txt_domain .change_link {
+.about_txt_domain .change_link,
+.why_text {
   font-family: var(--regular);
   color: var(--color_black);
 }
@@ -1902,7 +1903,6 @@ textarea.form-control-txt {
 .end-to-end .accordion .accordion-button,
 .end-to-end .accordion .card-header {
   padding: 1.5rem 0rem !important;
-  /* border-bottom: 1px solid #80808038!important; */
 }
 .end-to-end .accordion-button > div > div,
 .end-to-end .accordion-button > div > h3 {
@@ -1946,19 +1946,6 @@ textarea.form-control-txt {
   font-size: var(--font_48);
   color: var(--black_font);
   width: 100%;
-}
-.home_sec2_txt4.blog-cat {
-  background: #cbdbfe;
-  width: fit-content;
-  padding: 13px 20px;
-  border-radius: 32px;
-}
-.blog-left p {
-  font-family: var(--regular) !important;
-  line-height: 1.2 !important;
-}
-.blog-nav {
-  font-family: var(--regular);
 }
 
 .service_sec3 .home_sec2_txt3 h1 {

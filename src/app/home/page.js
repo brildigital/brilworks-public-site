@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../components/Homepage/BigText";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import GameChanger from "../components/Homepage/GameChanger";
+import HomepageWhyChooseUs from "../components/Homepage/HomepageWhyChooseUs";
 
 const HomepageBlog = dynamic(() => import("../components/Homepage/Blogs"));
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
@@ -83,6 +84,7 @@ const page = () => {
       <ExtensionOfTeam />
       <SeeingBelieving />
       <Honors />
+      <HomepageWhyChooseUs />
       <HomepageBlog />
       <ContactUs />
     </>

@@ -323,7 +323,6 @@ const Article = ({ blok }) => {
                         </div>
                       )}
                     </ul>
-                    {/* </nav> */}
                   </div>
                   <div className="!mt-7">
                     <div className="flex items-start flex-wrap">
@@ -336,6 +335,8 @@ const Article = ({ blok }) => {
                           decoding="async"
                           loading="lazy"
                           src="/images/fb-share.svg"
+                          width="43"
+                          height="43"
                           alt="Facebook blog share"
                         />
                       </Link>
@@ -351,18 +352,21 @@ const Article = ({ blok }) => {
                           decoding="async"
                           loading="lazy"
                           src="/images/twitter-share.svg"
+                          width="43"
+                          height="43"
                           alt="Twitter blog share"
                         />
                       </Link>
                       <Link
                         target="_blank"
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.brilworks.com${pathname}`}
-                        // href={`https://in.linkedin.com/share?url=https://www.brilworks.com${pathname}`}
                       >
                         <img
                           decoding="async"
                           loading="lazy"
                           src="/images/linkedin-share.svg"
+                          width="43"
+                          height="43"
                           alt="LinkedIn blog share"
                         />
                       </Link>
@@ -424,10 +428,10 @@ const Article = ({ blok }) => {
                                 {parse(blok?.Content_3 || "")}
                               </div>
                             )}
-                            {/* <Tooltip
+                            <Tooltip
                               blogAuthor={blok?.author}
                               targetRef={targetRef}
-                            /> */}
+                            />
                           </div>
 
                           {/* ********************Author Detail******************************/}

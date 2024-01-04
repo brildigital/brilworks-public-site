@@ -26,6 +26,24 @@ export const BestAdvocateText = () => {
   );
 };
 
+export const DomainWorkingText = () => {
+  return (
+    <div className="container mx-auto px-[15px] md:pt-[128px] pt-[40px]">
+      <div className="md:text-center">
+        <div className="home_sec2_txt1">
+          <h2>
+            Innovate Your Landscape with
+            <br />
+            <span className="big-text-stroke">
+              Expert Software Development Services.
+            </span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const TechTeamText = () => {
   return (
     <div className="container mx-auto px-[15px] md:pt-[128px] pt-[40px]">

@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Icon, scrollEffect } from "../lib/commonfunction";
+import { DomainWorkingText } from "./BigText";
 import {
   Accordion,
   AccordionHeader,
@@ -23,6 +24,7 @@ const DomainWorking = () => {
   }, []);
   return (
     <>
+      <DomainWorkingText />
       <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
