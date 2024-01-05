@@ -54,7 +54,7 @@ const Blog = () => {
   };
 
   return (
-    <section className="md:mt-[8rem]  mt-[6rem] px-[16px]">
+    <section className="md:mt-[8rem] mt-[6rem] px-[16px]">
       <div className="container !max-w-[1220px] md:w-[94%] blog !mx-auto">
         <div className="service_sec3 blog-head lg:!mb-10 !mb-5">
           <div className="home_sec2_txt3 !text-center !mb-4">

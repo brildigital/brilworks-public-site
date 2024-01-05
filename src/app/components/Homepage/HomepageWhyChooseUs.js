@@ -43,12 +43,12 @@ const HomepageWhyChooseUs = () => {
           <h2 className="">Why Choose Us?</h2>
         </div>
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 md:p-6 !pt-0">
-          {whyChooseUscontent.map((data, index) => (
+          {whyChooseUscontent.map(({ title, description }, index) => (
             <Card className="shadow-lg shadow-black-500/50" key={index}>
               <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
-                {data.title}
+                {title}
               </h4>
-              <CardBody className="p-4 why_text">{data.description}</CardBody>
+              <CardBody className="p-4 why_text">{description}</CardBody>
             </Card>
           ))}
         </div>

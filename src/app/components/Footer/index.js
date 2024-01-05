@@ -216,6 +216,14 @@ const Footer = () => {
                       Blogs
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/gist/"
+                      className={pathname === "/gist/" ? "page-active" : ""}
+                    >
+                      Gist
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer">
