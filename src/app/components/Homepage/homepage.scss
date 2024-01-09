@@ -1,4 +1,5 @@
-.homepage-work-domain {
+.homepage-work-domain,
+.homepage-extension-team {
   button {
     font-family: var(--medium);
     font-weight: 400;
@@ -10,22 +11,16 @@
   .about_txt_domain {
     font-size: var(--font_24);
     font-family: var(--regular);
-    line-height: 2rem !important;
+    line-height: 2.25rem !important;
+  }
+  .about_btn {
+    line-height: 2rem;
   }
 }
 
 .homepage-extension-team {
   button {
-    font-family: var(--light);
-    font-weight: 400;
-  }
-  h3 {
-    font-size: 1.8rem;
-  }
-  .accordion-body {
-    font-size: var(--font_24);
-    font-family: var(--regular);
-    line-height: 2rem !important;
+    font-family: var(--light) !important;
   }
 }
 
