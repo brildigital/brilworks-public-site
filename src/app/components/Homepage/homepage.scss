@@ -10,6 +10,7 @@
   .about_txt_domain {
     font-size: var(--font_24);
     font-family: var(--regular);
+    line-height: 2rem !important;
   }
 }
 
@@ -24,6 +25,7 @@
   .accordion-body {
     font-size: var(--font_24);
     font-family: var(--regular);
+    line-height: 2rem !important;
   }
 }
 
@@ -381,6 +383,7 @@
     .about_txt_domain {
       font-size: var(--font_16);
       font-family: var(--regular);
+      line-height: 1.5rem !important;
     }
   }
 
