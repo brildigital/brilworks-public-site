@@ -45,7 +45,7 @@
 }
 
 .blog-main {
-  a{
+  a {
     cursor: pointer !important;
   }
   ul,
@@ -274,12 +274,12 @@
   font-size: 20px;
   font-family: unset !important;
   color: var(--black_font);
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .post_details_content ul > li:last-child,
 .post_details_content ol > li:last-child {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .single-author-bio .img-blk-wrapper .img-blk {
@@ -464,7 +464,7 @@
     li {
       font-family: "merriweatheritalic" !important;
       padding-left: 34px;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       list-style: none !important;
       list-style-type: none !important;
       position: relative;
@@ -508,10 +508,12 @@
   }
   p {
     word-wrap: break-word;
+    margin-bottom: 0 !important;
   }
 }
 
-.blog-inner .blog_content_CTA_1 {
+.blog-inner .blog_content_CTA_1,
+.blog-inner .blog_content_CTA_3 {
   font-family: "Graphik";
   color: #000 !important;
   font-size: 19px;
@@ -530,9 +532,9 @@
     text-decoration: underline !important;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
+    color: #ffffff !important;
     &:hover {
-      color: #ffffff !important;
-      // text-decoration: underline;
+      color: var(--color_black) !important;
     }
   }
 }

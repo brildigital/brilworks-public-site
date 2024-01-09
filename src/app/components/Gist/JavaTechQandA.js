@@ -18,7 +18,7 @@ const JavaTechQandA = () => {
     const fetchQandAData = async () => {
       try {
         const nodeTechData = await getTechQandA(
-          "aws",
+          "java",
           currentPage,
           ITEMS_PER_PAGE
         );

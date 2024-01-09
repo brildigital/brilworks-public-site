@@ -3,10 +3,11 @@ import React from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import BlogContactForm from "../Blog/BlogContactForm";
 
 const TechQandAContent = ({ data }) => {
   return (
-    <div className="md:pt-[8rem] pt-[6rem] pb-8 blog-main bg-white">
+    <div className="md:pt-[8rem] pt-[6rem] pb-8 blog-main bg-white technical-QA-page">
       {!data ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
@@ -14,7 +15,7 @@ const TechQandAContent = ({ data }) => {
       ) : (
         <div className="container mx-auto my-0 !px-4">
           <div className="flex flex-row-reverse flex-wrap ">
-            <div className="w-5/6 basis-auto px-3 max-w-full">
+            <div className="w-3/4 basis-auto px-3 max-w-full">
               <div className="border-x border-t border-gray-300">
                 <h2 className="border-b border-gray-300 font-bold lg:text-3xl md:text-2xl text-xl p-4 break-words">
                   {data.name}
@@ -24,9 +25,9 @@ const TechQandAContent = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="w-1/6 basis-auto max-w-full">
-              <div className="my-7 sticky">
-                <div className="flex items-start flex-wrap">
+            <div className="w-1/4 basis-auto max-w-full">
+              <div className="my-3 sticky">
+                <div className="flex items-center justify-center flex-wrap mb-1">
                   <Link
                     href="https://www.facebook.com/brilwork/"
                     target="_blank"
@@ -70,6 +71,7 @@ const TechQandAContent = ({ data }) => {
                   </Link>
                 </div>
               </div>
+              <BlogContactForm />
             </div>
           </div>
         </div>

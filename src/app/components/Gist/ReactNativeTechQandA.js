@@ -18,7 +18,7 @@ const ReactNativeTechQandA = () => {
     const fetchQandAData = async () => {
       try {
         const nodeTechData = await getTechQandA(
-          "aws",
+          "react-native",
           currentPage,
           ITEMS_PER_PAGE
         );
