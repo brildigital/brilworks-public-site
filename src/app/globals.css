@@ -444,8 +444,7 @@ a:hover {
   border: 0 !important;
   background-color: transparent;
 }
-.accordion .accordion-button,
-.accordion .card-header {
+.accordion .accordion-button {
   background-color: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
@@ -1897,16 +1896,8 @@ textarea.form-control-txt {
 .number_icon_img {
   width: 34px;
 }
-.end-to-end .accordion-button::after {
-  content: none;
-}
-.end-to-end .accordion .accordion-button,
-.end-to-end .accordion .card-header {
+.end-to-end .accordion .accordion-button {
   padding: 1.5rem 0rem !important;
-}
-.end-to-end .accordion-button > div > div,
-.end-to-end .accordion-button > div > h3 {
-  font-family: var(--bold);
 }
 .end-to-end .team_img img {
   border-radius: 30px;
@@ -2348,9 +2339,6 @@ textarea.form-control-txt {
     width: 100%;
     font-size: 1.1rem !important;
   }
-  /* .flex_mega_menu {
-    padding: 2px 0;
-  } */
   .flex_mega_menu img {
     width: 40px;
   }
@@ -2539,8 +2527,7 @@ textarea.form-control-txt {
     line-height: 2rem;
     font-size: 1.2rem;
   }
-  .accordion .accordion-button,
-  .accordion .card-header {
+  .accordion .accordion-button {
     padding: 1.5rem 0rem !important;
   }
   .accordion {
