@@ -842,7 +842,7 @@ const NewHeader = () => {
                   <div className="basis-2/5">
                     <div className="header_img1 py-4 hidden-xs">
                       <Image
-                        src="/images/blog-2.jpg"
+                        src="/images/blog-2.webp"
                         alt="fintech"
                         width={491}
                         height={276}
@@ -850,7 +850,7 @@ const NewHeader = () => {
                     </div>
                     <div className="header_img1">
                       <Image
-                        src="/images/blog-1.jpg"
+                        src="/images/blog-1.webp"
                         alt="Healthcare"
                         width={491}
                         height={276}

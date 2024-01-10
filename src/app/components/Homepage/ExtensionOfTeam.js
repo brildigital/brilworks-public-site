@@ -378,7 +378,7 @@ const ExtensionOfTeam = () => {
                   https://a.storyblok.com/f/219851/940x1024/a45f992bf1/team-940x1024.webp  940w,
                   https://a.storyblok.com/f/219851/768x836/36f87ab39c/team-768x836.webp   768w
                   "
-                  sizes="(max-width: 1011px) 100vw, 1011px"
+                  sizes="(min-width: 1040px) 46.02vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
                 />
               </div>
             </div>

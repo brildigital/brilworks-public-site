@@ -1,12 +1,13 @@
 import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../components/Homepage/BigText";
 import { homepageFAQ } from "../components/lib/schemaCode";
+import GameChanger from "../components/Homepage/GameChanger";
+import HomepageWhyChooseUs from "../components/Homepage/HomepageWhyChooseUs";
 
 const HomepageBlog = dynamic(() => import("../components/Homepage/Blogs"));
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
 const Honors = dynamic(() => import("../components/Homepage/Honors"));
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
-const GameChanger = dynamic(() => import("../components/Homepage/GameChanger"));
 const ClientReviews = dynamic(() =>
   import("../components/Homepage/ClientReviews")
 );
@@ -66,10 +67,12 @@ const page = () => {
   return (
     <>
       <script
+        defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
       <script
+        defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
@@ -81,6 +84,7 @@ const page = () => {
       <ExtensionOfTeam />
       <SeeingBelieving />
       <Honors />
+      <HomepageWhyChooseUs />
       <HomepageBlog />
       <ContactUs />
     </>

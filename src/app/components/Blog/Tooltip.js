@@ -13,12 +13,12 @@ const Tooltip = ({ blogAuthor, targetRef }) => {
   useEffect(() => {
     const handleSelection = () => {
       const selection = window.getSelection();
-      const isMobile = window.innerWidth;
+      const isTabletScreen = window.innerWidth;
       if (
         selection.rangeCount > 0 &&
         selection.type === "Range" &&
         targetRef.current.contains(selection.anchorNode) &&
-        isMobile > 1023
+        isTabletScreen > 979
       ) {
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();

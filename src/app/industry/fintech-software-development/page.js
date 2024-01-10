@@ -38,6 +38,7 @@ const page = () => {
   return (
     <>
       <script
+        defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBreadcrumb("Fintech Software Development Services"),
