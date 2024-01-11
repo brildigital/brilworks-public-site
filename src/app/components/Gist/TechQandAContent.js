@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import "./Giststyle.scss";
 import parse from "html-react-parser";
 import Link from "next/link";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import BlogContactForm from "../Blog/BlogContactForm";
+import CopyToClipboard from "./CopyToClipboard";
 
 const TechQandAContent = ({ data }) => {
+  let data_count = 0;
   return (
     <div className="md:pt-[8rem] pt-[6rem] pb-8 blog-main bg-white technical-QA-page">
       {!data ? (
@@ -14,64 +17,90 @@ const TechQandAContent = ({ data }) => {
         </div>
       ) : (
         <div className="container mx-auto my-0 !px-4">
-          <div className="flex flex-row-reverse flex-wrap ">
-            <div className="w-3/4 basis-auto px-3 max-w-full">
-              <div className="border-x border-t border-gray-300">
+          <div className="flex lg:flex-row-reverse flex-col md:flex-row flex-wrap ">
+            <div className="md:w-3/4 w-full md:basis-auto md:px-3 max-w-full">
+              <div className="border border-gray-300">
                 <h2 className="border-b border-gray-300 font-bold lg:text-3xl md:text-2xl text-xl p-4 break-words">
                   {data.name}
                 </h2>
-                <div className="pl-4 pt-5 tech-content break-words">
-                  {parse(data.content.content.content) || ""}
+                <div className="p-4 tech-content break-words">
+                  {parse(data?.content?.content, {
+                    replace: (domNode) => {
+                      if (domNode.type === "tag" && domNode.name === "code") {
+                        const codeBlockRef = useRef();
+                        ++data_count;
+                        return (
+                          <div
+                            className="relative md:pt-0 pt-6"
+                            ref={codeBlockRef}
+                          >
+                            {domNode.children.map((child, index) => (
+                              <React.Fragment key={index}>
+                                {child.data}
+                              </React.Fragment>
+                            ))}
+
+                            <CopyToClipboard
+                              textRef={codeBlockRef}
+                              dataIndex={data_count}
+                            />
+                          </div>
+                        );
+                      }
+                    },
+                  }) || ""}
                 </div>
               </div>
             </div>
-            <div className="w-1/4 basis-auto max-w-full">
-              <div className="my-3 sticky">
-                <div className="flex items-center justify-center flex-wrap mb-1">
-                  <Link
-                    href="https://www.facebook.com/brilwork/"
-                    target="_blank"
-                    className="!mr-4"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/fb-share.svg"
-                      width="43"
-                      height="43"
-                      alt="Facebook blog share"
-                    />
-                  </Link>
-                  <Link
-                    target="_blank"
-                    className="!mr-4"
-                    href="https://twitter.com/_Brilworks"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/twitter-share.svg"
-                      width="43"
-                      height="43"
-                      alt="Twitter blog share"
-                    />
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/company/brilworks/"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/linkedin-share.svg"
-                      width="43"
-                      height="43"
-                      alt="LinkedIn blog share"
-                    />
-                  </Link>
+            <div className="md:w-1/4 w-full md:basis-auto md:px-3 max-w-full ">
+              <div className=" md:sticky md:top-[110px]">
+                <div className="md:my-3 my-10">
+                  <div className="flex items-center justify-center flex-wrap mb-1">
+                    <Link
+                      href="https://www.facebook.com/brilwork/"
+                      target="_blank"
+                      className="!mr-4"
+                    >
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/fb-share.svg"
+                        width="43"
+                        height="43"
+                        alt="Facebook blog share"
+                      />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      className="!mr-4"
+                      href="https://twitter.com/_Brilworks"
+                    >
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/twitter-share.svg"
+                        width="43"
+                        height="43"
+                        alt="Twitter blog share"
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.linkedin.com/company/brilworks/"
+                      target="_blank"
+                    >
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/linkedin-share.svg"
+                        width="43"
+                        height="43"
+                        alt="LinkedIn blog share"
+                      />
+                    </Link>
+                  </div>
                 </div>
+                <BlogContactForm />
               </div>
-              <BlogContactForm />
             </div>
           </div>
         </div>

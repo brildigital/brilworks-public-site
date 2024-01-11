@@ -14,8 +14,10 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [blogCategory, setBlogCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const blogData = await getblogData(
         currentPage,
@@ -28,6 +30,9 @@ const Blog = () => {
     } catch (error) {
       console.error(error);
     }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
   };
 
   useEffect(() => {
@@ -238,12 +243,16 @@ const Blog = () => {
         </div>
         <div
           className={`grid ${
-            !blogDataPerPage?.length
+            isLoading || !blogDataPerPage?.length
               ? "grid-cols-1"
               : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
           } gap-[2rem]`}
         >
-          {blogDataPerPage?.length ? (
+          {isLoading ? (
+            <div className="flex align-middle justify-center p-28">
+              <FetchDataSpinner />
+            </div>
+          ) : blogDataPerPage?.length ? (
             blogDataPerPage.map(({ slug, name, content }, index) => (
               <div
                 key={index}
@@ -301,7 +310,9 @@ const Blog = () => {
           )}
         </div>
 
-        {blogDataPerPage?.length ? (
+        {isLoading ? (
+          ""
+        ) : blogDataPerPage?.length ? (
           <div className="flex justify-center mt-[2rem]">
             <ul className="list-none flex flex-wrap">
               <li

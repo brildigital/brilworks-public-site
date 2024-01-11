@@ -26,6 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive": "9.0.2",
+    "react-tooltip": "5.25.1",
     "rss": "1.2.2",
     "sass": "1.64.1",
     "storyblok-js-client": "6.0.0",

@@ -216,7 +216,8 @@ const Footer = () => {
                       Blogs
                     </Link>
                   </li>
-                  {process.env.VERCEL_ENV !== "production" ? (
+                  {process.env.NEXT_PUBLIC_BASE_URL !==
+                    "https://www.brilworks.com/" && (
                     <li>
                       <Link
                         href="/gist/"
@@ -225,8 +226,6 @@ const Footer = () => {
                         Gist
                       </Link>
                     </li>
-                  ) : (
-                    ""
                   )}
                 </ul>
               </div>
@@ -394,7 +393,7 @@ const Footer = () => {
         <div className="footer_last_width">
           <div className="footer_txt_flex">
             <div className="footer_txt_style">
-              <p>© 2023 BRILWORKS</p>
+              <p>© 2024 BRILWORKS</p>
             </div>
             <div className="footer_txt_flex2">
               <Link href="#" onClick={(e) => e.preventDefault()}>
