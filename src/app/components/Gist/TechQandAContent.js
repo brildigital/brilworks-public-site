@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import "./Giststyle.scss";
 import parse from "html-react-parser";
 import Link from "next/link";
@@ -27,12 +27,12 @@ const TechQandAContent = ({ data }) => {
                   {parse(data?.content?.content, {
                     replace: (domNode) => {
                       if (domNode.type === "tag" && domNode.name === "code") {
-                        const codeBlockRef = useRef();
                         ++data_count;
                         return (
                           <div
                             className="relative md:pt-0 pt-6"
-                            ref={codeBlockRef}
+                            id={`code-block-${data_count}`}
+                            key={data_count}
                           >
                             {domNode.children.map((child, index) => (
                               <React.Fragment key={index}>
@@ -41,7 +41,7 @@ const TechQandAContent = ({ data }) => {
                             ))}
 
                             <CopyToClipboard
-                              textRef={codeBlockRef}
+                              textId={`code-block-${data_count}`}
                               dataIndex={data_count}
                             />
                           </div>

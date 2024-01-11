@@ -4,20 +4,29 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Tooltip } from "react-tooltip";
 
-const CopyToClipboard = ({ textRef, dataIndex }) => {
+const CopyToClipboard = ({ textId, dataIndex }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
-    if (textRef.current) {
+    const element = document.getElementById(textId);
+    if (element) {
+      const newElement = document.createElement("pre");
+      newElement.textContent = element.textContent.replace(
+        "Copy to clipboard",
+        ""
+      );
+      document.body.appendChild(newElement);
+
       const range = document.createRange();
-      range.selectNode(textRef.current);
+      range.selectNode(newElement);
       window.getSelection().removeAllRanges();
       window.getSelection().addRange(range);
       // Execute the copy command
       document.execCommand("copy");
       // Clean up the selection
       window.getSelection().removeAllRanges();
+      document.body.removeChild(newElement);
       // Update state to indicate that the text has been copied
       setCopied(true);
       // Reset the copied state after a short delay
