@@ -393,7 +393,7 @@ const Footer = () => {
         <div className="footer_last_width">
           <div className="footer_txt_flex">
             <div className="footer_txt_style">
-              <p>© 2024 BRILWORKS</p>
+              <p>© {new Date().getFullYear()} BRILWORKS</p>
             </div>
             <div className="footer_txt_flex2">
               <Link href="#" onClick={(e) => e.preventDefault()}>
