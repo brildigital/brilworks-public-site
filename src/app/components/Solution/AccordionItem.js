@@ -39,7 +39,7 @@ const AccordionItem = ({
               alt={`${title} icon`}
             />
           </div>
-          <h3 className="text-[24px]">{title}</h3>
+          <h3 className="md:text-[24px] text-[20px]">{title}</h3>
         </div>
       </AccordionHeader>
       <AccordionBody className="py-0">

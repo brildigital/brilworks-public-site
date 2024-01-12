@@ -2664,6 +2664,8 @@ textarea.form-control-txt {
   }
   .accordion .accordion-body {
     font-size: 18px;
+    line-height: 2rem;
+    padding: 0;
   }
   .blog-box h4 {
     font-size: 1.2rem;

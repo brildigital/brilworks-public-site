@@ -48,9 +48,10 @@ const JavaTechQandA = () => {
               Java Q & N
             </h1>
             <p className="md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
+              A community of devoted Java enthusiasts dedicated to assisting
+              fellow Java enthusiasts. Explore how Brilworks contributes to
+              uplifting the Java community by addressing the most crucial,
+              common, unique, and unparalleled Java questions.
             </p>
           </div>
         </div>

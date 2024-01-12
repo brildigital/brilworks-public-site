@@ -48,9 +48,10 @@ const ReactNativeTechQandA = () => {
               React Native Q & N
             </h1>
             <p className="md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
+              Greetings to the React Native community! Streamline your
+              problem-solving process by exploring our solutions for all your
+              React Native technical queries. Brilworks's React Native community
+              is on a mission to eliminate errors and bugs from your code.
             </p>
           </div>
         </div>

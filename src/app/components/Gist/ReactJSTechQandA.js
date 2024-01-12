@@ -48,9 +48,10 @@ const ReactJSTechQandA = () => {
               ReactJS Q & N
             </h1>
             <p className="md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
+              A group of passionate React enthusiasts committed to assisting
+              fellow React enthusiasts. Discover how Brilworks contributes to
+              uplifting the React community by addressing the most crucial,
+              common, unique, and unprecedented React queries.
             </p>
           </div>
         </div>
