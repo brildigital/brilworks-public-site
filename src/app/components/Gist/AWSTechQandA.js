@@ -48,9 +48,11 @@ const AWSTechQandA = () => {
               AWS Q & N
             </h1>
             <p className="md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
+              If you find yourself entangled in complex development scenarios,
+              you've arrived at the perfect destination. Our Cloud developers
+              have documented their experiences in tackling various queries.
+              Discover practical solutions to your Cloud computing errors
+              through our straightforward and well-crafted solutions.
             </p>
           </div>
         </div>

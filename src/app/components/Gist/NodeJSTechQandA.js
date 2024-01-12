@@ -48,9 +48,11 @@ const NodeJSTechQandA = () => {
               NodeJS Q & N
             </h1>
             <p className="md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
+              Greetings to the Node.js community! Enhance your efficiency in
+              resolving issues by exploring our comprehensive solutions for all
+              your Node.js technical inquiries. The Brilworks Node community is
+              dedicated to a mission of eliminating errors and bugs from your
+              code.
             </p>
           </div>
         </div>
