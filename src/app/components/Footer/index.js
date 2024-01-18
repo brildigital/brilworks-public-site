@@ -229,7 +229,7 @@ const Footer = () => {
                   )}
                 </ul>
               </div>
-              <div className="footer">
+              <div className="footer_btn pt-8">
                 <Link href="/career/">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>
@@ -295,6 +295,13 @@ const Footer = () => {
                     </Link>
                   </li>
                 </ul>
+              </div>
+              <div className="footer_btn pt-8">
+                <Link href="/login/">
+                  <div className="header_sec1_txt2 hidden-xs">
+                    <p className="transition">Log In</p>
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="grid-area-four md:pl-12">

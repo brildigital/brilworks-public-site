@@ -313,7 +313,7 @@ const Blog = () => {
         {isLoading ? (
           ""
         ) : blogDataPerPage?.length ? (
-          <div className="flex justify-center mt-[2rem]">
+          <div className="flex justify-center my-[2rem]">
             <ul className="list-none flex flex-wrap">
               <li
                 className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${

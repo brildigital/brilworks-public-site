@@ -150,7 +150,7 @@ const BlogContactForm = () => {
             type="submit"
             disabled={isSubmitting}
           >
-            {false ? (
+            {isSubmitting ? (
               <div className="py-[4px] px-[30px]">
                 <Loader />
               </div>

@@ -224,7 +224,7 @@ const TechnologyFAQ = () => {
   ];
 
   return (
-    <div className="sec3_width_home faq-bottom mb-[5rem] pt-0">
+    <div className="sec3_width_home faq-bottom mb-[5rem] pt-0 pb-10">
       <div className="solutions md:text-center text-left">
         <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] py-10">
           FAQs

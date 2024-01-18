@@ -752,9 +752,6 @@ textarea.form-control-txt {
   max-width: 236px;
 }
 
-.footer {
-  padding-top: 2rem;
-}
 .marquee {
   position: relative;
   width: 100vw;
@@ -894,11 +891,9 @@ textarea.form-control-txt {
 }
 .header_sec1_txt2 p:hover {
   border: 1px solid #00dfb8;
-  background: 0 0;
-}
-.footer .header_sec1_txt2 p:hover {
-  border: 1px solid #00dfb8;
   background: transparent;
+}
+.footer_btn .header_sec1_txt2 p:hover {
   color: var(--white_color);
 }
 .footer_last_width {
