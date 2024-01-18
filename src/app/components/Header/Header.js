@@ -20,56 +20,58 @@ import { Icon } from "../lib/commonfunction";
 
 const NewHeader = () => {
   const pathname = usePathname();
-  const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState("down");
+  // const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
+  // const [scrollDirection, setScrollDirection] = useState("down");
   const [openNav, setOpenNav] = useState(false);
+  const [serviceMenuOpen, setServiceMenuOpen] = useState(1);
+  const [nestedMenu, setNestedMenu] = useState("");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const newScrollDirection =
-        lastScrolledPosition > window.scrollY ? "up" : "down";
-      setScrollDirection(newScrollDirection);
-      setLastScrolledPosition(window.scrollY);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const newScrollDirection =
+  //       lastScrolledPosition > window.scrollY ? "up" : "down";
+  //     setScrollDirection(newScrollDirection);
+  //     setLastScrolledPosition(window.scrollY);
 
-      if (window.scrollY > 150 && newScrollDirection === "down") {
-        if (
-          !document
-            .querySelector("header .header")
-            .classList.contains("header-hide")
-        ) {
-          document.querySelector("header .header").classList.add("header-hide");
-        }
-      }
+  //     if (window.scrollY > 150 && newScrollDirection === "down") {
+  //       if (
+  //         !document
+  //           .querySelector("header .header")
+  //           .classList.contains("header-hide")
+  //       ) {
+  //         document.querySelector("header .header").classList.add("header-hide");
+  //       }
+  //     }
 
-      if (newScrollDirection === "up") {
-        if (
-          document
-            .querySelector("header .header")
-            .classList.contains("header-hide")
-        ) {
-          document
-            .querySelector("header .header")
-            .classList.remove("header-hide");
-        }
-      }
+  //     if (newScrollDirection === "up") {
+  //       if (
+  //         document
+  //           .querySelector("header .header")
+  //           .classList.contains("header-hide")
+  //       ) {
+  //         document
+  //           .querySelector("header .header")
+  //           .classList.remove("header-hide");
+  //       }
+  //     }
 
-      if (window.scrollY > 30) {
-        document
-          .querySelector("header .header")
-          .classList.add("header-bg-white");
-      } else {
-        document
-          .querySelector("header .header")
-          .classList.remove("header-bg-white");
-      }
-    };
+  //     if (window.scrollY > 30) {
+  //       document
+  //         .querySelector("header .header")
+  //         .classList.add("header-bg-white");
+  //     } else {
+  //       document
+  //         .querySelector("header .header")
+  //         .classList.remove("header-bg-white");
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrolledPosition]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrolledPosition]);
 
   useEffect(() => {
     window.addEventListener(
@@ -398,6 +400,241 @@ const NewHeader = () => {
     </ul>
   );
 
+  const servicesList = (
+    <div className="flex h-max !text-blue-gray-900 mx-auto outline-0 w-[80%]">
+      <div className="basis-1/4 border-r border-[#80808054]">
+        <Menu placement="right" allowHover>
+          <MenuHandler>
+            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+              <Link
+                href="#"
+                className="flex items-center justify-between gap-2"
+              >
+                <p>Devops and Cloud</p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </Link>
+            </MenuItem>
+          </MenuHandler>
+          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto mt-20 rounded-none !w-3/5">
+            <div className="grid grid-cols-2 gap-4 items-center pl-4">
+              <MenuItem>
+                <p>AWS Consulting</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+              <MenuItem>
+                <p>Docker & Kuberneties Consulting</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+              <MenuItem>
+                <p>Devops Consulting</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+            </div>
+          </MenuList>
+        </Menu>
+        <Menu placement="right" allowHover>
+          <MenuHandler>
+            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+              <Link
+                href="#"
+                className="flex items-center justify-between gap-2"
+              >
+                <p>Product Engineering</p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </Link>
+            </MenuItem>
+          </MenuHandler>
+          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto -mt-4 rounded-none !w-3/5">
+            <div className="grid grid-cols-2 gap-4 items-center pl-4">
+              <MenuItem>
+                <p>Product Engineering & Development</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+              <MenuItem>
+                <p>Digital Experience</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+            </div>
+          </MenuList>
+        </Menu>
+        <Menu placement="right" allowHover>
+          <MenuHandler>
+            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+              <Link
+                href="#"
+                className="flex items-center justify-between gap-2"
+              >
+                <p>AI/ML</p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </Link>
+            </MenuItem>
+          </MenuHandler>
+          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto -mt-8 rounded-none !w-3/5">
+            <div className="grid grid-cols-2 gap-4 items-center pl-4">
+              <MenuItem>
+                <p>Generative AI</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+              <MenuItem>
+                <p>RPA (Robotic Process Automation)</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+              <MenuItem>
+                <p>Mlops</p>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
+                  totam! Est veniam sapiente doloribus natus minus aut in sequi
+                  tempora similique eius.
+                </p>
+              </MenuItem>
+            </div>
+          </MenuList>
+        </Menu>
+        <Menu placement="right" allowHover>
+          <MenuHandler>
+            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+              <Link
+                href="#"
+                className="flex items-center justify-between gap-2"
+              >
+                <p>Staff Augmentation</p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </Link>
+            </MenuItem>
+          </MenuHandler>
+          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block -mt-24 overflow-auto rounded-none !w-3/5">
+            <div className="grid grid-cols-3 gap-4 items-center pl-4">
+              <MenuItem>
+                <p>React.JS</p>
+                <p>Hire ReactJS Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>Java</p>
+                <p>Hire Java Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>Node.JS</p>
+                <p>Hire NodeJS Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>React Native</p>
+                <p>Hire React Native Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>AWS Development</p>
+                <p>Hire AWS Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>UI/UX Development</p>
+                <p>Hire UI/UX Developer</p>
+              </MenuItem>
+              <MenuItem>
+                <p>Blockchain Development</p>
+                <p>Hire Blockchain Developer</p>
+              </MenuItem>
+            </div>
+          </MenuList>
+        </Menu>
+      </div>
+    </div>
+  );
+
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6">
       <Link
@@ -427,13 +664,49 @@ const NewHeader = () => {
           BLOG
         </p>
       </Link>
-
       <Menu
         placement="bottom"
         dismiss={{ itemPress: true, ancestorScroll: true }}
       >
         <MenuHandler>
-          <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center !w-[unset] outline-none pt-2 my-1">
+          <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center !w-[unset] outline-none pt-2 my-1 px-0">
+            <Link
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenNav(false);
+              }}
+              className="flex items-center header_font"
+            >
+              <p className="!mb-0 hover:text-[#00dfb8]">SERVICES</p>
+              <svg
+                className="w-4 h-2 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </Link>
+          </MenuItem>
+        </MenuHandler>
+        <MenuList className="hidden lg:block w-full overflow-hidden bg-white mt-3 menu-shadow rounded-none">
+          {servicesList}
+        </MenuList>
+      </Menu>
+      <Menu
+        placement="bottom"
+        dismiss={{ itemPress: true, ancestorScroll: true }}
+      >
+        <MenuHandler>
+          <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center !w-[unset] outline-none pt-2 my-1 px-0">
             <Link
               href="#"
               onClick={(e) => {
@@ -566,7 +839,7 @@ const NewHeader = () => {
         dismiss={{ itemPress: true, ancestorScroll: true }}
       >
         <MenuHandler>
-          <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center outline-none !w-[unset] pt-2 my-1">
+          <MenuItem className="hover:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 flex items-center outline-none !w-[unset] pt-2 my-1 px-0">
             <Link
               href="#"
               onClick={(e) => {
@@ -761,8 +1034,8 @@ const NewHeader = () => {
   );
   return (
     <header>
-      <div className="header">
-        <div className="">
+      <div className="header header-bg-white">
+        <div>
           <Navbar
             className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none ${
               openNav ? "!fixed h-[100vh] bg-white" : "bg-transparent"
