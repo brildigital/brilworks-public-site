@@ -1,10 +1,18 @@
 "use client";
 import "./Loginstyle.scss";
 import Image from "next/image";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Loader from "../Homepage/Loader";
+import { signIn, signOut } from "next-auth/react";
 
 const Login = () => {
+
+  const handleSignIn = async (provider) => {
+    const result = await signIn(provider, { callbackUrl: "/dashboard" }); 
+    if (result?.url) {
+      router.push(result.url);
+    }
+  };
   return (
     <div className="bg-white pt-[8rem] pb-8 xl:px-32 md:px-16 px-8 mx-auto login-page">
       <div className="flex flex-wrap">
@@ -12,7 +20,6 @@ const Login = () => {
           <div className="border border-[#00b6cf] rounded-[7px] xl:p-10 lg:p-7 p-5">
             <form className="flex flex-col items-center justify-center">
               <h2 className="font-bold text-2xl mb-4">Login</h2>
-
               <div className="relative w-full h-10 mb-4">
                 <input
                   class="peer w-full h-full border-t-0 bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
@@ -89,7 +96,10 @@ const Login = () => {
 
                 <div className="lg:!mt-7 mt-4">
                   <div className="flex flex-wrap items-center justify-center lg:gap-4 gap-2">
-                    <div className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50">
+                    <div
+                      className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50"
+                      onClick={() => handleSignIn("facebook")}
+                    >
                       <Image
                         src="/images/fb-share.svg"
                         width="43"
@@ -97,7 +107,10 @@ const Login = () => {
                         alt="Facebook login"
                       />
                     </div>
-                    <div className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50">
+                    <div
+                      className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50"
+                      onClick={() => handleSignIn("google")}
+                      >
                       <Image
                         src="/images/Google_icon.svg"
                         width="43"
@@ -105,15 +118,18 @@ const Login = () => {
                         alt="Google login"
                       />
                     </div>
-                    <div className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50">
+                    {/* <div className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50">
                       <Image
                         src="/images/twitter-share.svg"
                         width="43"
                         height="43"
                         alt="Twitter login"
                       />
-                    </div>
-                    <div className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50">
+                    </div> */}
+                    <div
+                      className="border border-gray-300 lg:p-4 p-2 rounded-[7px] cursor-pointer shadow-none hover:shadow-lg hover:shadow-[#00b6cf]-500/50"
+                      onClick={() => handleSignIn("linkedin")}
+                    >
                       <Image
                         src="/images/linkedin-share.svg"
                         width="43"
@@ -133,6 +149,7 @@ const Login = () => {
             className=""
             width="1440"
             height="1000"
+            alt=""
           />
         </div>
       </div>

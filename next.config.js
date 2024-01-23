@@ -2,7 +2,12 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    domains: ["a.storyblok.com"],
+    domains: [
+      "a.storyblok.com",
+      "lh3.googleusercontent.com",
+      "media.licdn.com",
+      "platform-lookaside.fbsbx.com",
+    ],
   },
   redirects: async () => {
     return [
