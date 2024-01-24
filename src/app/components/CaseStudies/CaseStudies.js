@@ -8,23 +8,23 @@ const CaseStudies = () => {
   const techQandNData = [
     {
       title: "Accelevent",
-      linkUrl: "accelevent",
+      linkUrl: "accelevent/",
     },
     {
       title: "Endo",
-      linkUrl: "endo",
+      linkUrl: "endo/",
     },
     {
       title: "Nick Academy",
-      linkUrl: "nickacademy",
+      linkUrl: "nickacademy/",
     },
     {
       title: "Orokii",
-      linkUrl: "orokii",
+      linkUrl: "orokii/",
     },
     {
       title: "Reliant",
-      linkUrl: "reliant",
+      linkUrl: "reliant/",
     },
 
     {
@@ -67,41 +67,29 @@ const CaseStudies = () => {
       </div>
       <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 md:p-6 !pt-0">
-          {techQandNData.map(
-            ({ title, imageSrc, imageAlt, linkUrl }, index) => (
-              <Link href={linkUrl} key={index}>
-                <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
-                  <CardBody className="p-8">
-                    <div className="md:w-14 w-10 mb-4">
+          {techQandNData.map(({ title, linkUrl }, index) => (
+            <Link href={linkUrl} key={index}>
+              <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
+                <CardBody className="p-8">
+                  <h2 className="text-2xl why_text font-bold mb-7">{title}</h2>
+                  <div className="inline-flex gap-4 why_text font-bold ">
+                    <p className="!text-[#00b6cf]">Know more</p>
+                    <div className="aerrow relative">
                       <img
-                        src={imageSrc}
-                        alt={imageAlt}
-                        // width={50}
-                        // height={50}
+                        decoding="async"
+                        loading="lazy"
+                        className="black_aerrow alignnone wp-image-28 size-full"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="46"
+                        height="18"
                       />
                     </div>
-                    <h2 className="text-2xl why_text font-bold mb-7">
-                      {title}
-                    </h2>
-                    <div className="inline-flex gap-4 why_text font-bold ">
-                      <p className="!text-[#00b6cf]">Know more</p>
-                      <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              </Link>
-            )
-          )}
+                  </div>
+                </CardBody>
+              </Card>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
