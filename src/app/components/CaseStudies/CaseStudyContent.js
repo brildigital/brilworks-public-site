@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const CaseStudyContent = () => {
   const pathname = usePathname();
   const caseStudiesView = {
     accelevent:
@@ -20,7 +20,6 @@ const page = () => {
   };
   const lastWord = pathname.split("/").reverse()[1];
   const pdfLink = caseStudiesView[lastWord];
-
   return (
     <div className="portfolio mt-[6rem] mx-auto h-[100vh]">
       <iframe
@@ -34,4 +33,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CaseStudyContent;
