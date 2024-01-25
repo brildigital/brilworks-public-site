@@ -1,6 +1,5 @@
 "use client";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useRef } from "react";
 
 const CaseStudyContent = () => {
   const pathname = usePathname();
@@ -20,38 +19,10 @@ const CaseStudyContent = () => {
   };
   const lastWord = pathname.split("/").reverse()[1];
   const pdfLink = caseStudiesView[lastWord];
-  const iframeRef = useRef(null);
-  useEffect(() => {
-    // Set focus to the iframe once the component mounts
-    if (iframeRef.current) {
-      iframeRef.current.focus();
-    }
-
-    // Optional: Add event listeners for keyboard controls
-    const handleKeyDown = (event) => {
-      switch (event.key) {
-        case "ArrowUp":
-          iframeRef.current.contentWindow.scrollBy(0, -10);
-          break;
-        case "ArrowDown":
-          iframeRef.current.contentWindow.scrollBy(0, 10);
-          break;
-        // Add more cases for other keys if needed
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
 
   return (
     <div className="portfolio mt-[6rem] mx-auto h-[100vh]">
       <iframe
-        ref={iframeRef}
         src={`${pdfLink}#toolbar=0&navpanes=0&scrollbar=0`}
         frameBorder="0"
         scrolling="auto"

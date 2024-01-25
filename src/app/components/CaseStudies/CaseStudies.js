@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Card, CardBody } from "@material-tailwind/react";
 
 const CaseStudies = () => {
-  const techQandNData = [
+  const caseStudyData = [
     {
       title: "Accelevent",
       linkUrl: "accelevent/",
@@ -29,15 +29,15 @@ const CaseStudies = () => {
 
     {
       title: "ServiceBuddy",
-      linkUrl: "servicebuddy",
+      linkUrl: "servicebuddy/",
     },
     {
       title: "TrackIMO",
-      linkUrl: "trackimo",
+      linkUrl: "trackimo/",
     },
     {
       title: "Vugo",
-      linkUrl: "vugo",
+      linkUrl: "vugo/",
     },
   ];
 
@@ -67,7 +67,7 @@ const CaseStudies = () => {
       </div>
       <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 md:p-6 !pt-0">
-          {techQandNData.map(({ title, linkUrl }, index) => (
+          {caseStudyData.map(({ title, linkUrl }, index) => (
             <Link href={linkUrl} key={index}>
               <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
                 <CardBody className="p-8">
