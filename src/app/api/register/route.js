@@ -9,6 +9,7 @@ export async function POST(req, res) {
     }
     const body = await req.json();
     const { email, username, password } = body;
+    console.log(email, username, password);
 
     const existingUser = await prismadb.user.findUnique({
       where: {
@@ -27,12 +28,12 @@ export async function POST(req, res) {
 
     const user = await prismadb.user.create({
       data: {
-        email,
+        email: email,
         name: username,
-        hashedPassword,
-        emailVerified: new Date(),
+        password: hashedPassword,
       },
     });
+    console.log("Login user created", user);
     return NextResponse.json({ user }, { status: 200 });
   } catch (error) {
     return NextResponse.json(

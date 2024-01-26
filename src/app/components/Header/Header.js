@@ -765,7 +765,7 @@ const NewHeader = () => {
         <div className="">
           <Navbar
             className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none ${
-              openNav ? "!fixed h-[100vh] bg-white" : "bg-transparent"
+              openNav ? "!fixed h-[100vh] bg-white" : "shadow-none bg-transparent"
             }
           `}
           >

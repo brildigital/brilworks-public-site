@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import { organization, website } from "./components/lib/schemaCode";
+import { NextAuthProvider } from "./provider";
 
 const Header = dynamic(() => import("./components/Header/Header"));
 const Footer = dynamic(() => import("./components/Footer"));
@@ -95,7 +96,7 @@ export default function RootLayout({ children }) {
             </>
           )}
           <Header />
-          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
           <Footer />
         </body>
       </html>
