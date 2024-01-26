@@ -5,7 +5,6 @@ import Image from "next/image";
 import { getSession, signIn, useSession } from "next-auth/react";
 import React, { useCallback, useState } from "react";
 import Loader from "../Homepage/Loader";
-import { signIn, signOut } from "next-auth/react";
 
 const Login = () => {
   const session = useSession();
