@@ -1,9 +1,8 @@
 import NextAuth from "next-auth";
-import prisma from "../../../lib/prismadb";
-// import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import prismadb from "../../../lib/prismadb";
+// import { PrismaAdapter } from "@next-auth/prismadb-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
-import { NextResponse } from "next/server";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 import LinkedInProvider from "next-auth/providers/linkedin";
@@ -21,7 +20,7 @@ export const authOptions = {
           name: profile.name,
           email: profile.email,
           image: profile.picture,
-          role: profile.email === "manish.s@brilworks.com" ? "admin" : "guest",
+          role: profile.email === process.env.SENDGRID_DEFAULT_FROM_EMAIL ? "ADMIN" : "GUEST",
         };
       },
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
@@ -58,7 +57,7 @@ export const authOptions = {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Email and password required");
         }
-        const user = await prisma.user.findUnique({
+        const user = await prismadb.user.findUnique({
           where: {
             email: credentials.email,
           },
@@ -76,10 +75,7 @@ export const authOptions = {
         if (!isCorrectPassword) {
           throw new Error("Invalid credentials");
         }
-
-        console.log("Logged in user", user);
-
-        return NextResponse.json({ user });
+        return user;
       },
     }),
   ],
@@ -96,7 +92,7 @@ export const authOptions = {
     },
     jwt: async ({ token, user }) => {
       if (token?.email) {
-        token.user = await prisma.user.findUnique({
+        token.user = await prismadb.user.findUnique({
           where: {
             email: token.email,
           },
@@ -122,10 +118,10 @@ export const authOptions = {
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
 
-async function saveUserDataToDatabase(user) {
+export async function saveUserDataToDatabase(user) {
   try {
     const { email, id, name, image, role } = user.user;
-    const existingUser = await prisma.user.findUnique({
+    const existingUser = await prismadb.user.findUnique({
       where: { email: email },
     });
 
@@ -135,7 +131,7 @@ async function saveUserDataToDatabase(user) {
       );
 
       if (isNewProvider) {
-        await prisma.user.update({
+        await prismadb.user.update({
           where: { email: email },
           data: {
             socialAccounts: {
@@ -145,7 +141,7 @@ async function saveUserDataToDatabase(user) {
         });
       }
     } else {
-      await prisma.user.create({
+      await prismadb.user.create({
         data: {
           userId: id,
           email: email,

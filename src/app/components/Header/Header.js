@@ -764,7 +764,7 @@ const NewHeader = () => {
       <div className="header">
         <div className="">
           <Navbar
-            className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none ${
+            className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 ${
               openNav ? "!fixed h-[100vh] bg-white" : "shadow-none bg-transparent"
             }
           `}
