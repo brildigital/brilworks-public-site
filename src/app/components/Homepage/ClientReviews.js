@@ -1,6 +1,6 @@
 "use client";
 import "swiper/css";
-import "./homepage.scss";
+import "../../styles/Homepage.scss";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -216,8 +216,10 @@ const ClientReviews = () => {
           </div>
         </div>
       </div>
-
-      <BrilworksSoftwareReview />
+      {pathname !== "/ai-ml-development-services/" &&
+        pathname !== "/devops-consulting-services/" && (
+          <BrilworksSoftwareReview />
+        )}
     </div>
   );
 };

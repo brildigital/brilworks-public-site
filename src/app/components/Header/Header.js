@@ -1,5 +1,5 @@
 "use client";
-import "./header.scss";
+import "../../styles/Header.scss";
 import React, { useEffect, useState } from "react";
 import {
   Navbar,
@@ -20,58 +20,7 @@ import { Icon } from "../lib/commonfunction";
 
 const NewHeader = () => {
   const pathname = usePathname();
-  // const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
-  // const [scrollDirection, setScrollDirection] = useState("down");
   const [openNav, setOpenNav] = useState(false);
-  const [serviceMenuOpen, setServiceMenuOpen] = useState(1);
-  const [nestedMenu, setNestedMenu] = useState("");
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const newScrollDirection =
-  //       lastScrolledPosition > window.scrollY ? "up" : "down";
-  //     setScrollDirection(newScrollDirection);
-  //     setLastScrolledPosition(window.scrollY);
-
-  //     if (window.scrollY > 150 && newScrollDirection === "down") {
-  //       if (
-  //         !document
-  //           .querySelector("header .header")
-  //           .classList.contains("header-hide")
-  //       ) {
-  //         document.querySelector("header .header").classList.add("header-hide");
-  //       }
-  //     }
-
-  //     if (newScrollDirection === "up") {
-  //       if (
-  //         document
-  //           .querySelector("header .header")
-  //           .classList.contains("header-hide")
-  //       ) {
-  //         document
-  //           .querySelector("header .header")
-  //           .classList.remove("header-hide");
-  //       }
-  //     }
-
-  //     if (window.scrollY > 30) {
-  //       document
-  //         .querySelector("header .header")
-  //         .classList.add("header-bg-white");
-  //     } else {
-  //       document
-  //         .querySelector("header .header")
-  //         .classList.remove("header-bg-white");
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [lastScrolledPosition]);
 
   useEffect(() => {
     window.addEventListener(
@@ -359,6 +308,94 @@ const NewHeader = () => {
           </Link>
         </AccordionBody>
       </Accordion>
+      <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
+        <AccordionHeader
+          onClick={() => handleOpen(3)}
+          className={`accordion-title py-6 ${open === 3 ? "border-none" : ""}`}
+        >
+          <p>SERVICES</p>
+        </AccordionHeader>
+        <AccordionBody className={open === 2 ? "border-b border-gray-500" : ""}>
+          <Link href="#" onClick={() => setOpenNav(false)}>
+            <div className="menu_mob_flex mega-menu-content">
+              <p className={pathname === "#" ? "page-active" : ""}>
+                PRODUCT ENGINEERING
+              </p>
+              <div className="mega_menu_icon">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/FINTECH.png"
+                  alt="fintech"
+                />
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="/devops-consulting-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content">
+              <p
+                className={
+                  pathname === "/devops-consulting-services/"
+                    ? "page-active"
+                    : ""
+                }
+              >
+                DEVOPS AND CLOUD
+              </p>
+              <div className="mega_menu_icon">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/MEDIA-ENTERTAINMENT.png"
+                  alt="media & entertainment"
+                />
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="/ai-ml-development-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content">
+              <p
+                className={
+                  pathname === "/ai-ml-development-services/"
+                    ? "page-active"
+                    : ""
+                }
+              >
+                AI/ML
+              </p>
+              <div className="mega_menu_icon">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/FLEET-MANAGEMENT-GPS.png"
+                  alt="fleet management + gps"
+                />
+              </div>
+            </div>
+          </Link>
+          <Link href="#" onClick={() => setOpenNav(false)}>
+            <div className="menu_mob_flex mega-menu-content">
+              <p className={pathname === "#" ? "page-active" : ""}>
+                STAFF AUGMENTATION
+              </p>
+              <div className="mega_menu_icon">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/HEALTHCARE.png"
+                  alt="healthcare"
+                />
+              </div>
+            </div>
+          </Link>
+        </AccordionBody>
+      </Accordion>
       <div className="menu_txt1">
         <Link href="/our-process/" onClick={() => setOpenNav(false)}>
           <p className={pathname === "/our-process/" ? "page-active" : ""}>
@@ -407,8 +444,9 @@ const NewHeader = () => {
           <MenuHandler>
             <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
               <Link
-                href="#"
+                href="/devops-consulting-services/"
                 className="flex items-center justify-between gap-2"
+                onClick={() => setOpenNav(false)}
               >
                 <p>Devops and Cloud</p>
                 <div class="-rotate-90">
@@ -516,8 +554,9 @@ const NewHeader = () => {
           <MenuHandler>
             <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
               <Link
-                href="#"
+                href="/ai-ml-development-services/"
                 className="flex items-center justify-between gap-2"
+                onClick={() => setOpenNav(false)}
               >
                 <p>AI/ML</p>
                 <div class="-rotate-90">
@@ -636,7 +675,7 @@ const NewHeader = () => {
   );
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-4 lg:gap-6">
       <Link
         href="/portfolio/"
         className="header_font flex items-center"
@@ -697,8 +736,144 @@ const NewHeader = () => {
             </Link>
           </MenuItem>
         </MenuHandler>
-        <MenuList className="hidden lg:block w-full overflow-hidden bg-white mt-3 menu-shadow rounded-none">
-          {servicesList}
+        <MenuList
+          dismissible
+          className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
+        >
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/industry/fintech-software-development/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu">
+                <p
+                  className={`${
+                    pathname === "/industry/fintech-software-development/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  PRODUCT ENGINEERING
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/industry/media-entertainment-software-development/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu">
+                <p
+                  className={`${
+                    pathname ===
+                    "/industry/media-entertainment-software-development/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  DEVOPS AND CLOUD
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] hover:border-[#00dfb8]">
+            <Link href="/industry/fleet-management-software-development/">
+              <div className="flex_mega_menu">
+                <div>
+                  <p
+                    className={
+                      pathname ===
+                      "/industry/fleet-management-software-development/"
+                        ? "page-active"
+                        : ""
+                    }
+                  >
+                    AI/ML
+                  </p>
+                </div>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+            <Link href="/industry/healthcare-software-development/">
+              <div className="flex_mega_menu justify-between">
+                <p
+                  className={
+                    pathname === "/industry/healthcare-software-development/"
+                      ? "page-active"
+                      : ""
+                  }
+                >
+                  STAFF AUGMENTATION
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
         </MenuList>
       </Menu>
       <Menu
@@ -1046,7 +1221,7 @@ const NewHeader = () => {
               <div className="header_logo">
                 <Link href="/">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/brilworks-logo.png"
                     alt="Brilworks Logo"
                     width="206"
                     height="62"

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { getbloglist } from "../lib/getblog";
 import { useMediaQuery } from "react-responsive";
 
-const Blogs = () => {
+const HomePageBlogs = () => {
   const [blogData, setBlogData] = useState(null);
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
 
@@ -36,10 +36,13 @@ const Blogs = () => {
   return (
     <>
       <BlogText />
-      <div className="w-[90%] blog-home mx-auto reveal">
+      <div className="container mx-auto w-[90%] blog-home reveal">
         {blogData?.length ? (
           blogData.map(({ slug, name, content }, index) => (
-            <div key={index} className="blog-box overflow-hidden">
+            <div
+              key={index}
+              className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+            >
               <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                 <Image
                   src={content?.Image?.filename}
@@ -94,4 +97,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default HomePageBlogs;

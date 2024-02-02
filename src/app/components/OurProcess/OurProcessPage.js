@@ -4,7 +4,7 @@ import ToolsAndGetInTouch from "../Portfolio/ToolsAndGetInTouch";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
 import Image from "next/image";
-import AccordionItem from "../Solution/AccordionItem";
+import AccordionCustomStyle from "../Common/AccordionCustomStyle";
 
 const OurProcessPage = () => {
   const [open, setOpen] = useState(1);
@@ -15,11 +15,12 @@ const OurProcessPage = () => {
 
   const ourProcessUpperAccordionItems = [
     {
-      index: 1,
       title: "Requirements Analysis",
-      imageSrc: "/images/Requirements-Analysis.png",
+      iconSrc: "/images/Requirements-Analysis.png",
       content:
         "We follow a rigorous process of requirement analysis in which we go through the business needs using various techniques. It includes end-to-end sessions with the client team and project team.",
+      imageSrc: "/images/requirements-analysis-1-226x300.jpg",
+      imageAlt: "requirements-analysis",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class bg-[#dcecff]">
@@ -55,11 +56,13 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 2,
       title: "Prototype or MVP",
-      imageSrc: "/images/Prototype-or-MVP.png",
+      iconSrc: "/images/Prototype-or-MVP.png",
       content:
         "After identifying the business needs and understanding the market, we develop the product with the help of our industry experts and create a minimum viable product to verify its usability.",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/692x920/07ee0875cf/prototype.jpg",
+      imageAlt: "Prototype",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -83,11 +86,12 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 3,
       title: "Design Sprint",
-      imageSrc: "/images/Design-Sprint.png",
+      iconSrc: "/images/Design-Sprint.png",
       content:
         "When planning your product, we ensure that user experience is at the core of our development. Our best practices have led to a flow of product development that enriches user experience.",
+      imageSrc: "/images/design-sprint.jpg",
+      imageAlt: "Design spirit",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class bg-[#dcecff]">
@@ -117,11 +121,13 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 4,
       title: "Development Sprint",
-      imageSrc: "/images/Development-Sprint.png",
+      iconSrc: "/images/Development-Sprint.png",
       content:
         "We work together to ensure the delivery of the product is on time while ensuring that all the intended features are in place. We ensure the delivery of a stable build before a launch. Internal demos ensure that we are ready for testing prior to any release.",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/692x920/6553d4ab22/end-to-end.png",
+      imageAlt: "End to end development",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -164,11 +170,13 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 5,
       title: "Quality Assurance",
-      imageSrc: "/images/Quality-Assurance.png",
+      iconSrc: "/images/Quality-Assurance.png",
       content:
         "Our quality assurance team supports our developers by testing the product in various environments and scenarios. Our testing experts test across all the product requirements through both automated and manual approaches. We ensure that the entire product is properly tested before going to market.",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/692x920/d5d12b1dd4/quality.jpg",
+      imageAlt: "Quality Analysis",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -204,11 +212,12 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 6,
       title: "Implementation & Deployment",
-      imageSrc: "/images/Implementation-Deployment.png",
+      iconSrc: "/images/Implementation-Deployment.png",
       content:
         "When the software is ready for release, we orchestrate the build from sprint to the staging server. This allows us to test the product in a live environment thereby removing any risk of failure. Once everyone is satisfied, we take the product live.",
+      imageSrc: "/images/implementation-Deployment.jpg",
+      imageAlt: "Implemnetation Deployment",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class bg-[#dcecff]">
@@ -238,11 +247,13 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 7,
       title: "Maintenance & Support",
-      imageSrc: "/images/Maintenance-Support.png",
+      iconSrc: "/images/Maintenance-Support.png",
       content:
         "Maintenance keeps the application running smoothly by providing 24x7x365 days support for complete peace of mind. It’s the best way to ensure that your new app is up-to-date and secure, which means users will continue to love it.",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/692x920/f1915dbc83/maintenance-and-support.jpg",
+      imageAlt: "Maintenance and Support",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap pb-4">
           <div className="ideaBg_class bg-[#dcecff]">
@@ -273,48 +284,14 @@ const OurProcessPage = () => {
     },
   ];
 
-  const ourProcessUpperImageSources = [
-    {
-      imageSource: "/images/requirements-analysis-1-226x300.jpg",
-      imageAlt: "requirements-analysis",
-    },
-    {
-      imageSource:
-        "https://a.storyblok.com/f/219851/692x920/07ee0875cf/prototype.jpg",
-      imageAlt: "Prototype",
-    },
-    {
-      imageSource: "/images/design-sprint.jpg",
-      imageAlt: "Design spirit",
-    },
-    {
-      imageSource:
-        "https://a.storyblok.com/f/219851/692x920/6553d4ab22/end-to-end.png",
-      imageAlt: "End to end development",
-    },
-    {
-      imageSource:
-        "https://a.storyblok.com/f/219851/692x920/d5d12b1dd4/quality.jpg",
-      imageAlt: "Quality Analysis",
-    },
-    {
-      imageSource: "/images/implementation-Deployment.jpg",
-      imageAlt: "Implemnetation Deployment",
-    },
-    {
-      imageSource:
-        "https://a.storyblok.com/f/219851/692x920/f1915dbc83/maintenance-and-support.jpg",
-      imageAlt: "Maintenance and Support",
-    },
-  ];
-
   const ourProcessLowerAccordionItems = [
     {
-      index: 1,
       title: "Screening & Shortlisting",
-      imageSrc: "/images/Screening-Shortlisting.png",
+      iconSrc: "/images/Screening-Shortlisting.png",
       content:
         "Phase I begins with sorting, filtering, and assessing candidates against our stringent criteria. This helps us to determine the best candidates for each role.",
+      imageSrc: "/images/Screening-and-Shortlisting-1.jpg",
+      imageAlt: "Screening-and-Shortlisting",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -344,11 +321,12 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 2,
       title: "Language Proficiency",
-      imageSrc: "/images/Language-Proficiency.png",
+      iconSrc: "/images/Language-Proficiency.png",
       content:
         "We test each candidate’s language proficiency through a series of assessments to understand their speaking, writing, and collaboration skills.",
+      imageSrc: "/images/language-proficiency.jpg",
+      imageAlt: "language-proficiency",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap">
           <div className="ideaBg_class  bg-[#dbebff]">
@@ -384,11 +362,12 @@ const OurProcessPage = () => {
       ),
     },
     {
-      index: 3,
       title: " Aptitude Assessment",
-      imageSrc: "/images/Aptitude-Assessment.png",
+      iconSrc: "/images/Aptitude-Assessment.png",
       content:
         "Each candidate is given a timed aptitude test to help assess their decision-making, problem-solving, and critical thinking skills. These tests help us determine if they have the skills you are looking for. We also use this test as an indicator of how well they will fit into your company culture.",
+      imageSrc: "/images/aptitude-test-recruitment-assessment.jpg",
+      imageAlt: "aptitude-test",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap">
           <div className="ideaBg_class bg-[#dcecff]">
@@ -414,9 +393,11 @@ const OurProcessPage = () => {
     {
       index: 4,
       title: "Technical Evaluation",
-      imageSrc: "/images/Technical-Evaluation.png",
+      iconSrc: "/images/Technical-Evaluation.png",
       content:
         "We conduct rigorous skill review tests to review your technical capabilities and professional knowledge",
+      imageSrc: "/images/technical-evaluation-1.jpg",
+      imageAlt: "technical-evaluation",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -448,9 +429,11 @@ const OurProcessPage = () => {
     {
       index: 5,
       title: "Team Extension",
-      imageSrc: "/images/Team-Extension.png",
+      iconSrc: "/images/Team-Extension.png",
       content:
         "The final matchmaking process to connect you with the right talent for your business. Our mission is to keep your project on track by providing you with the skills and talent you need.",
+      imageSrc: "/images/team-extension.jpg",
+      imageAlt: "team-extension",
       processTags: (
         <div className="flex items-center gap-[1rem] flex-wrap">
           <div className="ideaBg_class  bg-[#dcecff]">
@@ -472,53 +455,6 @@ const OurProcessPage = () => {
       ),
     },
   ];
-
-  const ourProcessLowerImageSources = [
-    {
-      imageSource: "/images/Screening-and-Shortlisting-1.jpg",
-      imageAlt: "Screening-and-Shortlisting",
-    },
-    {
-      imageSource: "/images/language-proficiency.jpg",
-      imageAlt: "language-proficiency",
-    },
-    {
-      imageSource: "/images/aptitude-test-recruitment-assessment.jpg",
-      imageAlt: "aptitude-test",
-    },
-    {
-      imageSource: "/images/technical-evaluation-1.jpg",
-      imageAlt: "technical-evaluation",
-    },
-    {
-      imageSource: "/images/team-extension.jpg",
-      imageAlt: "team-extension",
-    },
-  ];
-
-  const [isAccordionActive, setAccordionActive] = useState(1);
-  const [isAccordionOpen, setAccordionOpen] = useState(true);
-
-  const [isAccordionActive2, setAccordionActive2] = useState(1);
-  const [isAccordionOpen2, setAccordionOpen2] = useState(true);
-
-  const handleAccordianceClick = (accordanceNumber) => {
-    if (isAccordionActive === accordanceNumber) {
-      setAccordionOpen(!isAccordionOpen);
-    } else {
-      setAccordionOpen(true);
-    }
-    setAccordionActive(accordanceNumber);
-  };
-
-  const handleAccordianceClick2 = (accordanceNumber2) => {
-    if (isAccordionActive2 === accordanceNumber2) {
-      setAccordionOpen2(!isAccordionOpen2);
-    } else {
-      setAccordionOpen2(true);
-    }
-    setAccordionActive2(accordanceNumber2);
-  };
 
   useEffect(() => {
     scrollEffect();
@@ -698,42 +634,46 @@ const OurProcessPage = () => {
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full">
                 <div className="accordion !mb-0 lg:w-[90%] w-full">
-                  {ourProcessUpperAccordionItems.map((item, index) => (
-                    <AccordionItem
-                      key={index}
-                      index={item.index}
-                      title={item.title}
-                      imageSrc={item.imageSrc}
-                      content={item.content}
-                      processTags={item.processTags}
-                      handleOpen={handleOpen}
-                      open={open}
-                    />
-                  ))}
+                  {ourProcessUpperAccordionItems.map(
+                    ({ title, content, processTags, iconSrc }, index) => (
+                      <AccordionCustomStyle
+                        key={index}
+                        index={index + 1}
+                        title={title}
+                        iconSrc={iconSrc}
+                        content={content}
+                        processTags={processTags}
+                        handleOpen={handleOpen}
+                        open={open}
+                      />
+                    )
+                  )}
                 </div>
               </div>
               <div className="lg:w-6/12 w-full md:mt-[0px] mt-[30px]">
                 <div>
-                  {ourProcessUpperImageSources.map((imageItem, index) => (
-                    <div
-                      key={index}
-                      className={`fade-image ${
-                        (index === 0 && (open === 1 || open === 0)) ||
-                        (index !== 0 && open === index + 1)
-                          ? "active"
-                          : "hidden"
-                      }`}
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src={imageItem.imageSource}
-                          alt={imageItem.imageAlt}
-                        />
+                  {ourProcessUpperAccordionItems.map(
+                    ({ imageSrc, imageAlt }, index) => (
+                      <div
+                        key={index}
+                        className={`fade-image ${
+                          (index === 0 && (open === 1 || open === 0)) ||
+                          (index !== 0 && open === index + 1)
+                            ? "active"
+                            : "hidden"
+                        }`}
+                      >
+                        <div className="team_img">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src={imageSrc}
+                            alt={imageAlt}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -766,42 +706,46 @@ const OurProcessPage = () => {
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full md:mt-[0px] mb-[40px]">
                 <div>
-                  {ourProcessLowerImageSources.map((imageItem, index) => (
-                    <div
-                      key={index}
-                      className={`fade-image ${
-                        (index === 0 && (open2 === 1 || open2 === 0)) ||
-                        (index !== 0 && open2 === index + 1)
-                          ? "active"
-                          : "hidden"
-                      }`}
-                    >
-                      <div className="team_img">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src={imageItem.imageSource}
-                          alt={imageItem.imageAlt}
-                        />
+                  {ourProcessLowerAccordionItems.map(
+                    ({ imageSrc, imageAlt }, index) => (
+                      <div
+                        key={index}
+                        className={`fade-image ${
+                          (index === 0 && (open2 === 1 || open2 === 0)) ||
+                          (index !== 0 && open2 === index + 1)
+                            ? "active"
+                            : "hidden"
+                        }`}
+                      >
+                        <div className="team_img">
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src={imageSrc}
+                            alt={imageAlt}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  )}
                 </div>
               </div>
 
               <div className="lg:w-6/12 w-full">
                 <div className="accordion !mb-0 lg:ml-8 w-full">
-                  {ourProcessLowerAccordionItems.map((item, index) => (
-                    <AccordionItem
-                      key={index}
-                      index={item.index}
-                      title={item.title}
-                      imageSrc={item.imageSrc}
-                      content={item.content}
-                      handleOpen={handleOpen2}
-                      open={open2}
-                    />
-                  ))}
+                  {ourProcessLowerAccordionItems.map(
+                    ({ title, content, iconSrc }, index) => (
+                      <AccordionCustomStyle
+                        key={index}
+                        index={index + 1}
+                        title={title}
+                        iconSrc={iconSrc}
+                        content={content}
+                        handleOpen={handleOpen2}
+                        open={open2}
+                      />
+                    )
+                  )}
                 </div>
               </div>
             </div>

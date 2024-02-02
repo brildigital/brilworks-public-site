@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import parse from "html-react-parser";
-import "./Blogstyle.scss";
+import "../styles/Blogstyle.scss";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
