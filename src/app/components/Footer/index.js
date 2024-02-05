@@ -229,7 +229,7 @@ const Footer = () => {
                   )}
                 </ul>
               </div>
-              <div className="footer">
+              <div className="footer !pt-4">
                 <Link href="/career/">
                   <div className="header_sec1_txt2 hidden-xs">
                     <p className="transition">We’re Hiring!</p>

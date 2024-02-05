@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "./Giststyle.scss";
+import "../../styles/Giststyle.scss";
 import parse from "html-react-parser";
 import Link from "next/link";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";

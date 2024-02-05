@@ -6,14 +6,18 @@
 }
 
 /* Style JavaScript code snippets inside the tech-content div */
-.tech-content pre.language-javascript {
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 1em;
-  overflow-x: auto;
-  font-size: 14px;
-  margin-bottom: 16px;
-  border-left: solid 6px var(--main_menu_hover_color);
+.tech-content {
+  pre.language-javascript,
+  pre.language-markup,
+  pre.language-java {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1em;
+    overflow-x: auto;
+    font-size: 14px;
+    margin-bottom: 16px;
+    border-left: solid 6px var(--main_menu_hover_color);
+  }
 }
 
 /* Style code blocks within the pre tag */

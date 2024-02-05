@@ -6,7 +6,7 @@ const AutoSlidesFooter = () => {
   const pathname = usePathname();
   return (
     <>
-      <div className={`footer ${pathname.includes("/gist/") ? "!pt-0" : ""}`}>
+      <div className="footer">
         <div className="marquee">
           <div className="track">
             <div className="content">

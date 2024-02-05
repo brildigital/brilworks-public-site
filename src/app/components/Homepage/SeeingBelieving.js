@@ -1,5 +1,5 @@
 "use client";
-import "./homepage.scss";
+import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
@@ -36,7 +36,7 @@ const SeeingBelieving = () => {
   return (
     <>
       <BelievingText />
-      <div className="work-swiper reveal">
+      <div className="container mx-auto work-swiper reveal">
         <Swiper
           modules={[Pagination]}
           spaceBetween={30}

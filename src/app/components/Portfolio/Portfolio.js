@@ -4,8 +4,11 @@ import Link from "next/link";
 import ToolsAndGetInTouch from "./ToolsAndGetInTouch";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 const Portfolio = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -15,29 +18,22 @@ const Portfolio = () => {
     };
   }, []);
   return (
-    <div>
+    <div className="container mx-auto">
       <section className="portfolio">
         <div className="mx-auto service_width">
           <div className="banner_padding">
             <div className="sec1_service relative">
               <p>
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="hidden-xs alignnone wp-image-252 size-medium"
+                <Image
                   src={
-                    "https://a.storyblok.com/f/219851/1398x781/d140e56982/banner_portfolio.jpg"
+                    isMobile
+                      ? "https://a.storyblok.com/f/219851/1080x1080/8e827beb35/portfolio-mobile-size.webp"
+                      : "https://a.storyblok.com/f/219851/1398x781/55093620b7/banner-portfolio.webp"
                   }
-                  alt="Portfolio Banner"
-                />
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  className="visible-xs alignnone"
-                  src={
-                    "https://a.storyblok.com/f/219851/1080x1080/f9390a380b/portfolio-mobile-size.jpg"
-                  }
-                  alt="Portfolio Banner"
+                  width={isMobile ? 400 : 1080}
+                  height={isMobile ? 300 : 400}
+                  alt="Portfolio banner"
+                  sizes="100vw"
                 />
               </p>
             </div>
@@ -45,7 +41,7 @@ const Portfolio = () => {
         </div>
 
         <div className="service_width">
-          <div className="sec6_title">
+          <div className="sec6_title md:!pt-24">
             <h1 className="head-title">SEE TEAM BRILLIANT IN ACTION</h1>
           </div>
           <div className="portfolio_sec1_txt2 portfolio_sec1_border ">
@@ -277,7 +273,7 @@ const Portfolio = () => {
                     loading="lazy"
                     decoding="async"
                     className="alignnone"
-                    src="/images/GPS_Trackers_Devices-Uses2-1.jpg"
+                    src="/images/gps-trackers-devices-uses2-1.webp"
                     alt="Trackimo"
                   />
                 </div>

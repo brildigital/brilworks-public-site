@@ -3,8 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardBody } from "@material-tailwind/react";
+import { useMediaQuery } from "react-responsive";
 
 const MainGist = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const techQandNData = [
     {
       title: "AWS",
@@ -45,9 +47,10 @@ const MainGist = () => {
           className="h-[46vh] rounded-[20px]"
           src="/images/gist-banner.webp"
           alt="Tech Q&A banner"
-          width={1300}
-          height={400}
+          width={isMobile ? 330 : 1300}
+          height={isMobile ? 200 : 400}
           priority={true}
+          sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
         />
         <div className="absolute bottom-1/4 w-full text-center mx-auto">
           <div className="how-we">
@@ -67,9 +70,7 @@ const MainGist = () => {
           {techQandNData.map(
             ({ title, imageSrc, imageAlt, linkUrl }, index) => (
               <Link href={linkUrl} key={index}>
-                <Card
-                  className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer"
-                >
+                <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
                   <CardBody className="p-8">
                     <div className="md:w-14 w-10 mb-4">
                       <Image

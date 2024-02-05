@@ -1,6 +1,6 @@
 "use client";
 import "swiper/css";
-import "./homepage.scss";
+import "../../styles/Homepage.scss";
 import "swiper/css/pagination";
 import Link from "next/link";
 import { HonorText } from "./BigText";
@@ -9,9 +9,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonfunction";
+import { usePathname } from "next/navigation";
 
 const Honors = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
   useEffect(() => {
     const dataFetch = () => {
       setTimeout(() => {
@@ -31,7 +33,11 @@ const Honors = () => {
   }, []);
 
   return (
-    <>
+    <div
+      className={`container mx-auto ${
+        pathname === "/" ? "bg-transparent" : "pb-[52px] header_sec1_txt2]"
+      }`}
+    >
       <HonorText />
       <div className="honors-swiper reveal">
         <Swiper
@@ -409,7 +415,7 @@ const Honors = () => {
           )}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import AccordionItem from "./AccordionItem";
+import AccordionCustomStyle from "../Common/AccordionCustomStyle";
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -24,122 +24,86 @@ const FleetManagementNGPS = () => {
 
   const fleetUpperAccordionItems = [
     {
-      index: 1,
       title: "Fleet Telematics Solutions",
-      imageSrc: "/images/Fleet-Telematics-Solutions-1.png",
+      iconSrc: "/images/Fleet-Telematics-Solutions-1.png",
       content:
-        " Our extensive fleet telematics solution is designed for large vehicle fleets and uses real-time sensor data, video analytics, and in-car computers to help you optimize the driving efficiency of your vehicles.",
-    },
-    {
-      index: 2,
-      title: "GPS Fleet Tracking",
-      imageSrc: "/images/GPS-Fleet-Tracking.png",
-      content:
-        "    We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
-    },
-    {
-      index: 3,
-      title: "Fuel Consumption Control Apps",
-      imageSrc: "/images/Fuel-Consumption-Control-Apps.png",
-      content:
-        "Our fuel consumption control apps can collect and analyze data from your fleet to help you optimize fuel efficiency. Integrations with telematics and vehicle tracking systems let organizations ensure compliance with corporate policies, knowing that the whole supply chain has been accounted for.",
-    },
-    {
-      index: 4,
-      title: "Fleet Management Integration",
-      imageSrc: "/images/Fleet-Management-Integration.png",
-      content:
-        "Easily generate reports on mileage to prevent the occurrence of vehicle downtime due to lack of maintenance. CFMS also allows you to record daily expenses, track accurate vehicle utilization history, and promote ride-sharing incentives available in various cities across the country.",
-    },
-    {
-      index: 5,
-      title: "Driver Management & Safety",
-      imageSrc: "/images/Driver-Management-Safety.png",
-      content:
-        "With its in-vehicle monitoring and reporting system, you can monitor driving behavior, boost safety and efficiency by reducing tailgating, assist drivers to reduce fatigue, and minimize idle-time.",
-    },
-    {
-      index: 6,
-      title: "Fleet Maintenance & Predictions",
-      imageSrc: "/images/Fleet-Maintenance-Predictions.png",
-      content:
-        "Aggregate, monitor, and analyze data to trigger timely maintenance reminders, optimize service visits and simplify scheduling routine repairs.",
-    },
-  ];
-
-  const fleetUpperImageSources = [
-    {
-      imageSource: "/images/Fleet-Telematics-Solutions.jpg",
+        "Our extensive fleet telematics solution is designed for large vehicle fleets and uses real-time sensor data, video analytics, and in-car computers to help you optimize the driving efficiency of your vehicles.",
+      imageSrc: "/images/Fleet-Telematics-Solutions.jpg",
       imageAlt: "Fleet Telematics Solutions",
     },
     {
-      imageSource: "/images/Delivery-Management-Software.jpg",
+      title: "GPS Fleet Tracking",
+      iconSrc: "/images/GPS-Fleet-Tracking.png",
+      content:
+        "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
+      imageSrc: "/images/Delivery-Management-Software.jpg",
       imageAlt: "Delivery Management Software",
     },
     {
-      imageSource: "/images/Fuel-Consumption-Control-Apps.jpg",
+      title: "Fuel Consumption Control Apps",
+      iconSrc: "/images/Fuel-Consumption-Control-Apps.png",
+      content:
+        "Our fuel consumption control apps can collect and analyze data from your fleet to help you optimize fuel efficiency. Integrations with telematics and vehicle tracking systems let organizations ensure compliance with corporate policies, knowing that the whole supply chain has been accounted for.",
+      imageSrc: "/images/Fuel-Consumption-Control-Apps.jpg",
       imageAlt: "Fuel Consumption Control Apps",
     },
     {
-      imageSource: "/images/Fleet-Management-Integration.jpg",
+      title: "Fleet Management Integration",
+      iconSrc: "/images/Fleet-Management-Integration.png",
+      content:
+        "Easily generate reports on mileage to prevent the occurrence of vehicle downtime due to lack of maintenance. CFMS also allows you to record daily expenses, track accurate vehicle utilization history, and promote ride-sharing incentives available in various cities across the country.",
+      imageSrc: "/images/Fleet-Management-Integration.jpg",
       imageAlt: "Fleet Management Integration",
     },
     {
-      imageSource: "/images/Driver-Management-Safety.jpg",
+      title: "Driver Management & Safety",
+      iconSrc: "/images/Driver-Management-Safety.png",
+      content:
+        "With its in-vehicle monitoring and reporting system, you can monitor driving behavior, boost safety and efficiency by reducing tailgating, assist drivers to reduce fatigue, and minimize idle-time.",
+      imageSrc: "/images/Driver-Management-Safety.jpg",
       imageAlt: "Driver Management Safety",
     },
     {
-      imageSource: "/images/Fleet-Maintenance-Predictions.jpg",
+      title: "Fleet Maintenance & Predictions",
+      iconSrc: "/images/Fleet-Maintenance-Predictions.png",
+      content:
+        "Aggregate, monitor, and analyze data to trigger timely maintenance reminders, optimize service visits and simplify scheduling routine repairs.",
+      imageSrc: "/images/Fleet-Maintenance-Predictions.jpg",
       imageAlt: "Fleet Maintenance Predictions",
     },
   ];
 
   const fleetLowerAccordionItems = [
     {
-      index: 1,
       title: "Traffic Management Software",
-      imageSrc: "/images/Traffic-Management-Software.png",
+      iconSrc: "/images/Traffic-Management-Software.png",
       content:
         "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.",
-    },
-    {
-      index: 2,
-      title: "Delivery Management Software",
-      imageSrc: "/images/Delivery-Management-Software.png",
-      content:
-        " Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
-    },
-    {
-      index: 3,
-      title: "Transportation Software",
-      imageSrc: "/images/Transportation-Software.png",
-      content:
-        "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
-    },
-    {
-      index: 4,
-      title: "Supply Chain Management Software",
-      imageSrc: "/images/Supply-Chain-Management-Software.png",
-      content:
-        "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
-    },
-  ];
-
-  const fleetLowerImageSources = [
-    {
-      imageSource: "/images/Traffic-Management-Software.jpg",
+      imageSrc: "/images/Traffic-Management-Software.jpg",
       imageAlt: "Traffic-Management-Software",
     },
     {
-      imageSource: "/images/GPS-Fleet-Tracking.jpg",
+      title: "Delivery Management Software",
+      iconSrc: "/images/Delivery-Management-Software.png",
+      content:
+        "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
+      imageSrc: "/images/GPS-Fleet-Tracking.jpg",
       imageAlt: "GPS-Fleet-Tracking",
     },
     {
-      imageSource: "/images/Transportation-Software.jpg",
+      title: "Transportation Software",
+      iconSrc: "/images/Transportation-Software.png",
+      content:
+        "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
+      imageSrc: "/images/Transportation-Software.jpg",
       imageAlt: "Transportation-Software",
     },
     {
-      imageSource: "/images/Supply-Chain-Management-Software.jpg",
+      title: "Supply Chain Management Software",
+      iconSrc: "/images/Supply-Chain-Management-Software.png",
+      content:
+        "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
+      imageSrc: "/images/Supply-Chain-Management-Software.jpg",
       imageAlt: "Supply-Chain-Management-Software",
     },
   ];
@@ -243,41 +207,45 @@ const FleetManagementNGPS = () => {
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:w-[90%] w-full">
-                    {fleetUpperAccordionItems.map((item) => (
-                      <AccordionItem
-                        key={item.index}
-                        index={item.index}
-                        title={item.title}
-                        imageSrc={item.imageSrc}
-                        content={item.content}
-                        handleOpen={handleOpen}
-                        open={open}
-                      />
-                    ))}
+                    {fleetUpperAccordionItems.map(
+                      ({ title, iconSrc, content }, index) => (
+                        <AccordionCustomStyle
+                          key={index}
+                          index={index + 1}
+                          title={title}
+                          iconSrc={iconSrc}
+                          content={content}
+                          handleOpen={handleOpen}
+                          open={open}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full">
                   <div>
-                    {fleetUpperImageSources.map((imageItem, index) => (
-                      <div
-                        key={index}
-                        className={`fade-image ${
-                          (index === 0 && (open === 1 || open === 0)) ||
-                          (index !== 0 && open === index + 1)
-                            ? "active"
-                            : "hidden"
-                        }`}
-                      >
-                        <div className="team_img">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src={imageItem.imageSource}
-                            alt={imageItem.imageAlt}
-                          />
+                    {fleetUpperAccordionItems.map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open === 1 || open === 0)) ||
+                            (index !== 0 && open === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="team_img">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src={imageSrc}
+                              alt={imageAlt}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </div>
 
@@ -328,41 +296,45 @@ const FleetManagementNGPS = () => {
               <div className="flex flex-wrap ">
                 <div className="lg:w-6/12 w-full mb-12 lg:mb-0">
                   <div>
-                    {fleetLowerImageSources.map((imageItem, index) => (
-                      <div
-                        key={index}
-                        className={`fade-image ${
-                          (index === 0 && (open2 === 1 || open2 === 0)) ||
-                          (index !== 0 && open2 === index + 1)
-                            ? "active"
-                            : "hidden"
-                        }`}
-                      >
-                        <div className="team_img">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src={imageItem.imageSource}
-                            alt={imageItem.imageAlt}
-                          />
+                    {fleetLowerAccordionItems.map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open2 === 1 || open2 === 0)) ||
+                            (index !== 0 && open2 === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="team_img">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src={imageSrc}
+                              alt={imageAlt}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full mb-[10px] ">
                   <div className="accordion !mb-0 lg:ml-8 w-full">
-                    {fleetLowerAccordionItems.map((item) => (
-                      <AccordionItem
-                        key={item.index}
-                        index={item.index}
-                        title={item.title}
-                        imageSrc={item.imageSrc}
-                        content={item.content}
-                        handleOpen={handleOpen2}
-                        open={open2}
-                      />
-                    ))}
+                    {fleetLowerAccordionItems.map(
+                      ({ title, iconSrc, content }, index) => (
+                        <AccordionCustomStyle
+                          key={index}
+                          index={index + 1}
+                          title={title}
+                          iconSrc={iconSrc}
+                          content={content}
+                          handleOpen={handleOpen2}
+                          open={open2}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
 

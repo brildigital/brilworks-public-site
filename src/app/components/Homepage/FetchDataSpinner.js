@@ -1,4 +1,4 @@
-import "./FetchDataSpinner.css";
+import "../../styles/FetchDataSpinner.css";
 
 const FetchDataSpinner = () => {
   return (
