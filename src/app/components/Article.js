@@ -10,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import { getbloglist } from "./lib/getblog";
 import { usePathname } from "next/navigation";
+import { notNewTabRedirect } from "./lib/constants";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -49,7 +50,9 @@ const Article = ({ blok }) => {
         }
 
         if (node.type === "tag" && node.name === "a") {
-          node.attribs.target = "_blank";
+          if (!notNewTabRedirect.includes(node.attribs.href)) {
+            node.attribs.target = "_blank";
+          }
           if (
             node.attribs.href &&
             !node.attribs.href.includes("brilworks.com")

@@ -563,7 +563,7 @@ const NewHeader = () => {
             </Link>
           </MenuItem>
           <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-            <Link href="/industry/healthcare-software-development/">
+            <Link href="#">
               <div className="flex_mega_menu w-full justify-between">
                 <p
                 // className={
