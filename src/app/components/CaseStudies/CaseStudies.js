@@ -3,8 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardBody } from "@material-tailwind/react";
+import { useMediaQuery } from "react-responsive";
 
 const CaseStudies = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const caseStudyData = [
     {
       title: "Accelevent",
@@ -48,9 +50,10 @@ const CaseStudies = () => {
           className="h-[46vh] rounded-[20px]"
           src="/images/gist-banner.webp"
           alt="Case studies"
-          width={1300}
-          height={400}
+          width={isMobile ? 330 : 1300}
+          height={isMobile ? 200 : 400}
           priority={true}
+          sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
         />
         <div className="absolute bottom-1/4 w-full text-center mx-auto">
           <div className="how-we">

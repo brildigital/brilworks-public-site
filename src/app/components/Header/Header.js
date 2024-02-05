@@ -315,83 +315,47 @@ const NewHeader = () => {
         >
           <p>SERVICES</p>
         </AccordionHeader>
-        <AccordionBody className={open === 2 ? "border-b border-gray-500" : ""}>
+        <AccordionBody className={open === 3 ? "border-b border-gray-500" : ""}>
           <Link href="#" onClick={() => setOpenNav(false)}>
-            <div className="menu_mob_flex mega-menu-content">
-              <p className={pathname === "#" ? "page-active" : ""}>
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p className={pathname === "#" && "page-active"}>
                 PRODUCT ENGINEERING
               </p>
-              <div className="mega_menu_icon">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/images/FINTECH.png"
-                  alt="fintech"
-                />
-              </div>
             </div>
           </Link>
           <Link
             href="/devops-consulting-services/"
             onClick={() => setOpenNav(false)}
           >
-            <div className="menu_mob_flex mega-menu-content">
+            <div className="menu_mob_flex mega-menu-content py-4">
               <p
                 className={
-                  pathname === "/devops-consulting-services/"
-                    ? "page-active"
-                    : ""
+                  pathname === "/devops-consulting-services/" && "page-active"
                 }
               >
                 DEVOPS AND CLOUD
               </p>
-              <div className="mega_menu_icon">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/images/MEDIA-ENTERTAINMENT.png"
-                  alt="media & entertainment"
-                />
-              </div>
             </div>
           </Link>
           <Link
             href="/ai-ml-development-services/"
             onClick={() => setOpenNav(false)}
           >
-            <div className="menu_mob_flex mega-menu-content">
+            <div className="menu_mob_flex mega-menu-content py-4">
               <p
                 className={
-                  pathname === "/ai-ml-development-services/"
-                    ? "page-active"
-                    : ""
+                  pathname === "/ai-ml-development-services/" && "page-active"
                 }
               >
                 AI/ML
               </p>
-              <div className="mega_menu_icon">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/images/FLEET-MANAGEMENT-GPS.png"
-                  alt="fleet management + gps"
-                />
-              </div>
             </div>
           </Link>
           <Link href="#" onClick={() => setOpenNav(false)}>
-            <div className="menu_mob_flex mega-menu-content">
-              <p className={pathname === "#" ? "page-active" : ""}>
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p className={pathname === "#" && "page-active"}>
                 STAFF AUGMENTATION
               </p>
-              <div className="mega_menu_icon">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/images/HEALTHCARE.png"
-                  alt="healthcare"
-                />
-              </div>
             </div>
           </Link>
         </AccordionBody>
@@ -435,243 +399,6 @@ const NewHeader = () => {
         </Link>
       </div>
     </ul>
-  );
-
-  const servicesList = (
-    <div className="flex h-max !text-blue-gray-900 mx-auto outline-0 w-[80%]">
-      <div className="basis-1/4 border-r border-[#80808054]">
-        <Menu placement="right" allowHover>
-          <MenuHandler>
-            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-              <Link
-                href="/devops-consulting-services/"
-                className="flex items-center justify-between gap-2"
-                onClick={() => setOpenNav(false)}
-              >
-                <p>Devops and Cloud</p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </Link>
-            </MenuItem>
-          </MenuHandler>
-          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto mt-20 rounded-none !w-3/5">
-            <div className="grid grid-cols-2 gap-4 items-center pl-4">
-              <MenuItem>
-                <p>AWS Consulting</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-              <MenuItem>
-                <p>Docker & Kuberneties Consulting</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-              <MenuItem>
-                <p>Devops Consulting</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-            </div>
-          </MenuList>
-        </Menu>
-        <Menu placement="right" allowHover>
-          <MenuHandler>
-            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-              <Link
-                href="#"
-                className="flex items-center justify-between gap-2"
-              >
-                <p>Product Engineering</p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </Link>
-            </MenuItem>
-          </MenuHandler>
-          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto -mt-4 rounded-none !w-3/5">
-            <div className="grid grid-cols-2 gap-4 items-center pl-4">
-              <MenuItem>
-                <p>Product Engineering & Development</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-              <MenuItem>
-                <p>Digital Experience</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-            </div>
-          </MenuList>
-        </Menu>
-        <Menu placement="right" allowHover>
-          <MenuHandler>
-            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-              <Link
-                href="/ai-ml-development-services/"
-                className="flex items-center justify-between gap-2"
-                onClick={() => setOpenNav(false)}
-              >
-                <p>AI/ML</p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </Link>
-            </MenuItem>
-          </MenuHandler>
-          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block overflow-y-auto -mt-8 rounded-none !w-3/5">
-            <div className="grid grid-cols-2 gap-4 items-center pl-4">
-              <MenuItem>
-                <p>Generative AI</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-              <MenuItem>
-                <p>RPA (Robotic Process Automation)</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-              <MenuItem>
-                <p>Mlops</p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, ex praesentium. Maiores ut quia adipisci, ea fugiat
-                  totam! Est veniam sapiente doloribus natus minus aut in sequi
-                  tempora similique eius.
-                </p>
-              </MenuItem>
-            </div>
-          </MenuList>
-        </Menu>
-        <Menu placement="right" allowHover>
-          <MenuHandler>
-            <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-              <Link
-                href="#"
-                className="flex items-center justify-between gap-2"
-              >
-                <p>Staff Augmentation</p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </Link>
-            </MenuItem>
-          </MenuHandler>
-          <MenuList className="p-0 border-none !shadow-none outline-0 focus:outline-none z-[999] hidden lg:block -mt-24 overflow-auto rounded-none !w-3/5">
-            <div className="grid grid-cols-3 gap-4 items-center pl-4">
-              <MenuItem>
-                <p>React.JS</p>
-                <p>Hire ReactJS Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>Java</p>
-                <p>Hire Java Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>Node.JS</p>
-                <p>Hire NodeJS Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>React Native</p>
-                <p>Hire React Native Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>AWS Development</p>
-                <p>Hire AWS Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>UI/UX Development</p>
-                <p>Hire UI/UX Developer</p>
-              </MenuItem>
-              <MenuItem>
-                <p>Blockchain Development</p>
-                <p>Hire Blockchain Developer</p>
-              </MenuItem>
-            </div>
-          </MenuList>
-        </Menu>
-      </div>
-    </div>
   );
 
   const navList = (
@@ -741,17 +468,14 @@ const NewHeader = () => {
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link
-              href="/industry/fintech-software-development/"
-              className="flex items-center justify-between gap-2"
-            >
-              <div className="flex_mega_menu">
+            <Link href="#" className="flex items-center justify-between gap-2">
+              <div className="flex_mega_menu w-full justify-between">
                 <p
-                  className={`${
-                    pathname === "/industry/fintech-software-development/"
-                      ? "page-active"
-                      : ""
-                  }`}
+                // className={`${
+                //   pathname === "/industry/fintech-software-development/"
+                //     ? "page-active"
+                //     : ""
+                // }`}
                 >
                   PRODUCT ENGINEERING
                 </p>
@@ -776,16 +500,13 @@ const NewHeader = () => {
           </MenuItem>
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
-              href="/industry/media-entertainment-software-development/"
+              href="/devops-consulting-services/"
               className="flex items-center justify-between gap-2"
             >
-              <div className="flex_mega_menu">
+              <div className="flex_mega_menu w-full justify-between">
                 <p
                   className={`${
-                    pathname ===
-                    "/industry/media-entertainment-software-development/"
-                      ? "page-active"
-                      : ""
+                    pathname === "/devops-consulting-services/" && "page-active"
                   }`}
                 >
                   DEVOPS AND CLOUD
@@ -809,16 +530,14 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] hover:border-[#00dfb8]">
-            <Link href="/industry/fleet-management-software-development/">
-              <div className="flex_mega_menu">
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link href="/ai-ml-development-services/">
+              <div className="flex_mega_menu w-full justify-between">
                 <div>
                   <p
                     className={
-                      pathname ===
-                      "/industry/fleet-management-software-development/"
-                        ? "page-active"
-                        : ""
+                      pathname === "/ai-ml-development-services/" &&
+                      "page-active"
                     }
                   >
                     AI/ML
@@ -843,15 +562,15 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
             <Link href="/industry/healthcare-software-development/">
-              <div className="flex_mega_menu justify-between">
+              <div className="flex_mega_menu w-full justify-between">
                 <p
-                  className={
-                    pathname === "/industry/healthcare-software-development/"
-                      ? "page-active"
-                      : ""
-                  }
+                // className={
+                //   pathname === "/industry/healthcare-software-development/"
+                //     ? "page-active"
+                //     : ""
+                // }
                 >
                   STAFF AUGMENTATION
                 </p>

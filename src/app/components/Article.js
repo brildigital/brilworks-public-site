@@ -47,6 +47,18 @@ const Article = ({ blok }) => {
           node.attribs.loading = "lazy";
           node.attribs.decoding = "async";
         }
+
+        if (node.type === "tag" && node.name === "a") {
+          node.attribs.target = "_blank";
+          if (
+            node.attribs.href &&
+            !node.attribs.href.includes("brilworks.com")
+          ) {
+            node.attribs.rel = "nofollow noopener";
+          } else {
+            node.attribs.rel = "noopener";
+          }
+        }
         return node;
       },
     });
@@ -267,7 +279,7 @@ const Article = ({ blok }) => {
                         ? blok?.mobile_banner?.filename
                         : blok?.image?.filename || blok?.mobile_banner?.filename
                     }
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   />
                 </div>
                 {blok?.Quick_Summary && (
@@ -391,13 +403,15 @@ const Article = ({ blok }) => {
                                   blok?.CTA_1 ? "blog_content_CTA_1" : ""
                                 }`}
                               >
-                                {parse(blok?.CTA_1 || "")}
+                                {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
                               </div>
                             )}
 
                             {blok?.Content_1 && (
                               <div className="blog_content_new">
-                                {parse(blok?.Content_1 || "")}
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_1 || ""
+                                )}
                               </div>
                             )}
                             {blok?.CTA_2 && (
@@ -406,26 +420,32 @@ const Article = ({ blok }) => {
                                   blok?.CTA_2 ? "blog_content_CTA_2" : ""
                                 }`}
                               >
-                                {parse(blok?.CTA_2 || "")}
+                                {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
                               </div>
                             )}
                             {blok?.Content_2 && (
                               <div className="blog_content_new">
-                                {parse(blok?.Content_2 || "")}
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_2 || ""
+                                )}
                               </div>
                             )}
                             {blok?.CTA_3 && (
                               <div
                                 className={`${
-                                  blok?.CTA_3 ? "blog_content_CTA_3" : ""
+                                  blok?.CTA_3?.includes("<img")
+                                    ? ""
+                                    : "blog_content_CTA_3"
                                 }`}
                               >
-                                {parse(blok?.CTA_3 || "")}
+                                {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
                               </div>
                             )}
                             {blok?.Content_3 && (
                               <div className="blog_content_new">
-                                {parse(blok?.Content_3 || "")}
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_3 || ""
+                                )}
                               </div>
                             )}
                             <Tooltip

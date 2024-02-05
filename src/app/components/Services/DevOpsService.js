@@ -38,7 +38,7 @@ const DevOpsService = () => {
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
                 priority={true}
-                sizes="100vw"
+              // sizes="100vw"
               />
             )}
           </div>
