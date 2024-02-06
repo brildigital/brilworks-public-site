@@ -9,7 +9,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const CaseStudies = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [caseStudyData, setCaseStudyData] = useState();
+  const [caseStudyData, setCaseStudyData] = useState("");
   const [totalCaseStudies, setTotalCaseStudies] = useState(0);
 
   useEffect(() => {
