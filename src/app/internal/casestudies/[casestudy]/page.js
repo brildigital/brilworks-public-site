@@ -1,4 +1,4 @@
-import { getStoryblokApi } from "@storyblok/react";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 import CaseStudyContent from "@/app/components/CaseStudies/CaseStudyContent";
 
 export const metadata = {

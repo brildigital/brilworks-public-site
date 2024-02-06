@@ -1,5 +1,3 @@
-"use client";
-
 const CaseStudyContent = ({ data }) => {
   return (
     <div className="portfolio mt-[6rem] mx-auto h-[100vh]">
