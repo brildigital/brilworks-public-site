@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Insightful case studies showcase real-world challenges, innovative solutions, and measurable impact, providing invaluable lessons for diverse industries and professionals.",
   openGraph: {
-    title: "Case studies",
+    title: "Case Studies",
     description:
       "Insightful case studies showcase real-world challenges, innovative solutions, and measurable impact, providing invaluable lessons for diverse industries and professionals.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
@@ -19,7 +19,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Case studies",
+    title: "Case Studies",
     description:
       "Insightful case studies showcase real-world challenges, innovative solutions, and measurable impact, providing invaluable lessons for diverse industries and professionals.",
     card: "summary_large_image",
