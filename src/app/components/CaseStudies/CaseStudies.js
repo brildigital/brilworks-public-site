@@ -13,6 +13,18 @@ const CaseStudies = () => {
       linkUrl: "accelevent/",
     },
     {
+      title: "AI Enabled Podcast",
+      linkUrl: "ai-enabled-podcast/",
+    },
+    {
+      title: "AI Generated PDF Summary",
+      linkUrl: "ai-generated-pdf-summary/",
+    },
+    {
+      title: "AI Generated Slide",
+      linkUrl: "ai-generated-slide/",
+    },
+    {
       title: "Endo",
       linkUrl: "endo/",
     },
@@ -58,7 +70,7 @@ const CaseStudies = () => {
         <div className="absolute bottom-1/4 w-full text-center mx-auto">
           <div className="how-we">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Case studies
+              Case Studies
             </h1>
             <p className="md:mx-auto mx-4 md:max-w-[70%]">
               Insightful case studies showcase real-world challenges, innovative
