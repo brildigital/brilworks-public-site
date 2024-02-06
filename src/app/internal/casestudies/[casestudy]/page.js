@@ -1,4 +1,3 @@
-"use client";
 import { getStoryblokApi } from "@storyblok/react";
 import CaseStudyContent from "@/app/components/CaseStudies/CaseStudyContent";
 
