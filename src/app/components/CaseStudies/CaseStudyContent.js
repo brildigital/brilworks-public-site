@@ -6,6 +6,12 @@ const CaseStudyContent = () => {
   const caseStudiesView = {
     accelevent:
       "https://a.storyblok.com/f/219851/x/7a8ad88280/accelvents_eventtech.pdf",
+    "ai-enabled-podcast":
+      "https://a.storyblok.com/f/219851/x/e567a7cece/ai_enabled_podcast.pdf",
+    "ai-generated-pdf-summary":
+      "https://a.storyblok.com/f/219851/x/73f5c88b06/ai_generated_pdf_summarry.pdf",
+    "ai-generated-slide":
+      "https://a.storyblok.com/f/219851/x/a76f07a3c3/ai_generated_slide.pdf",
     endo: "https://a.storyblok.com/f/219851/x/2d89c66e48/endo_health.pdf",
     nickacademy:
       "https://a.storyblok.com/f/219851/x/56b75c9118/nick-academy_childeducation.pdf",
