@@ -152,7 +152,7 @@ const Blog = () => {
         )} */}
       </div>
 
-      <div className="md:w-[94%] w-full mx-auto">
+      <div className="container md:w-[94%] w-full mx-auto">
         <div className="flex sxl:flex-row flex-col-reverse !mt-4">
           <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
             <div>

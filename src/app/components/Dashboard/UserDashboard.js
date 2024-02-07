@@ -9,7 +9,7 @@ import { getRoleBasedUserContent } from "../lib/getRoleBasedUserContent";
 import { Card, CardBody } from "@material-tailwind/react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
-const GuestDashboard = () => {
+const UserDashboard = () => {
   const router = useRouter();
   const session = useSession();
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -21,7 +21,6 @@ const GuestDashboard = () => {
   if (session?.status === "unauthenticated") {
     router.push("/login/");
   }
-
   useEffect(() => {
     const fetchUserContent = async () => {
       try {
@@ -39,7 +38,7 @@ const GuestDashboard = () => {
   }, []);
 
   return (
-    <section className="portfolio mt-[6rem]">
+    <section className="portfolio pt-[6rem]">
       <div className="service_width relative flex items-left justify-center ">
         <div className="bg-green-300 rounded-lg shadow-lg">
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -94,8 +93,12 @@ const GuestDashboard = () => {
           {contentData?.length ? (
             contentData.map(({ name, slug, content }, index) => (
               <>
-                {content?.RoleAccessible?.includes("GUEST") ? (
-                  <Link href="#" key={index}>
+                {content?.RoleAccessible?.includes("USER") ? (
+                  <Link
+                    as={`/dashboard/${slug}`}
+                    href={`/dashboard/[slug]`}
+                    key={index}
+                  >
                     <Card className="shadow-lg shadow-[#00b6cf]-500/50 border border-gray-300 hover:border-[#00b6cf]">
                       <div className="sec9_img1">
                         <Image
@@ -198,4 +201,4 @@ const GuestDashboard = () => {
   );
 };
 
-export default GuestDashboard;
+export default UserDashboard;

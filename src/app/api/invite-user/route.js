@@ -68,14 +68,30 @@ export async function POST(req, res) {
       where: { email: email },
     });
 
-    if (existingUser && emailType === "VERIFY") {
-      throw new Error("User already invited");
-    }
-
-    if (existingUser) {
-      if (emailType === "VERIFY") {
-        throw new Error("User already invited");
-      } else if (emailType === "RESET") {
+    if (emailType === "VERIFY") {
+      if (existingUser) {
+        await prismadb.user.update({
+          where: { email: existingUser.email },
+          data: {
+            role,
+            name: email,
+            verifyToken: hashedToken,
+            verifyTokenExpiry: expirationDate,
+          },
+        });
+      } else {
+        await prismadb.user.create({
+          data: {
+            email,
+            role,
+            verifyToken: hashedToken,
+            verifyTokenExpiry: expirationDate,
+            name: email,
+          },
+        });
+      }
+    } else {
+      if (existingUser) {
         await prismadb.user.update({
           where: { email: existingUser.email },
           data: {
@@ -84,16 +100,6 @@ export async function POST(req, res) {
           },
         });
       }
-    } else if (!existingUser && emailType === "VERIFY") {
-      await prismadb.user.create({
-        data: {
-          email,
-          role,
-          verifyToken: hashedToken,
-          verifyTokenExpiry: expirationDate,
-          name: "New user",
-        },
-      });
     }
 
     try {

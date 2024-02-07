@@ -1,20 +1,24 @@
 "use client";
 import React from "react";
 import { useSession } from "next-auth/react";
-import GuestDashboard from "../components/Dashboard/GuestDashboard";
+import UserDashboard from "../components/Dashboard/UserDashboard";
 import InvitedUserDashboard from "../components/Dashboard/InvitedUserDashboard";
 import AdminDashboard from "../components/Dashboard/AdminDashboard";
 import FetchDataSpinner from "../components/Homepage/FetchDataSpinner";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const RoleBasedView = {
-    GUEST: GuestDashboard,
+    USER: UserDashboard,
     ADMIN: AdminDashboard,
     INVITEDUSER: InvitedUserDashboard,
   };
-  const SelectedView = RoleBasedView[session?.user?.role] || null;
+  const SelectedView = session?.user?.role
+    ? RoleBasedView[session?.user?.role]
+    : router.push("/login");
   return (
     <>
       {SelectedView ? (

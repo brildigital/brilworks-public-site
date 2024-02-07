@@ -14,7 +14,7 @@ const Config = ({ blok }) => {
                 <div className="header_logo">
                   <Link href="/">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/brilworks-logo.png"
                       alt="Brilworks Logo"
                       width="206"
                       height="62"

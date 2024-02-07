@@ -1,55 +1,38 @@
 import NextAuth from "next-auth";
 import prismadb from "../../../lib/prismadb";
-// import { PrismaAdapter } from "@next-auth/prismadb-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
-import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
-import LinkedInProvider from "next-auth/providers/linkedin";
 
 export const authOptions = {
   providers: [
-    FacebookProvider({
-      clientId: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.NEXT_PUBLIC_FACEBOOK_CLIENT_SECRET,
-    }),
     GoogleProvider({
       profile(profile) {
+        if (!profile.email.endsWith("@brilworks.com")) {
+          throw new Error(
+            "You are not allowed to login using Google SSO with this email domain."
+          );
+        }
+
         return {
           id: profile.sub,
           name: profile.name,
           email: profile.email,
           image: profile.picture,
-          role: profile.email === process.env.SENDGRID_DEFAULT_FROM_EMAIL ? "ADMIN" : "GUEST",
+          role:
+            profile.email === process.env.SENDGRID_DEFAULT_FROM_EMAIL
+              ? "ADMIN"
+              : "USER",
         };
       },
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
     }),
-    LinkedInProvider({
-      clientId: process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_ID || "",
-      clientSecret: process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_SECRET || "",
-      client: { token_endpoint_auth_method: "client_secret_post" },
-      issuer: "https://www.linkedin.com",
-      profile: (profile) => ({
-        id: profile.sub,
-        name: profile.name,
-        email: profile.email,
-        image: profile.picture,
-      }),
-      wellKnown:
-        "https://www.linkedin.com/oauth/.well-known/openid-configuration",
-      authorization: {
-        params: {
-          scope: "openid profile email",
-        },
-      },
-    }),
     CredentialsProvider({
       name: "Credentials",
       id: "credentials",
       credentials: {
-        email: { label: "email", type: "email" },
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
 
@@ -85,6 +68,10 @@ export const authOptions = {
   },
   debug: process.env.NODE_ENV === "development",
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signOut: "/login",
+    error: "/not-found", // Error code passed in query string as ?error=
+  },
   callbacks: {
     async signIn(user, account, profile) {
       await saveUserDataToDatabase(user);
@@ -126,7 +113,7 @@ export async function saveUserDataToDatabase(user) {
     });
 
     if (existingUser) {
-      const isNewProvider = !existingUser.socialAccounts?.includes(
+      const isNewProvider = !existingUser.loginProvider?.includes(
         user.account.provider
       );
 
@@ -134,9 +121,7 @@ export async function saveUserDataToDatabase(user) {
         await prismadb.user.update({
           where: { email: email },
           data: {
-            socialAccounts: {
-              push: user.account.provider,
-            },
+            loginProvider: user.account.provider,
           },
         });
       }
@@ -147,7 +132,7 @@ export async function saveUserDataToDatabase(user) {
           email: email,
           name: name,
           profilePicture: image,
-          socialAccounts: [user.account.provider],
+          loginProvider: user.account.provider,
           role: role,
         },
       });

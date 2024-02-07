@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import AccordionItem from "./AccordionItem";
+import AccordionCustomStyle from "../Common/AccordionCustomStyle";
 
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -24,74 +24,53 @@ const Fintech = () => {
 
   const fintechUpperAccordionItems = [
     {
-      index: 1,
       title: "Custom Fintech Software Developments",
-      imageSrc: "/images/Custom-Fintech-Software-Developments.png",
+      iconSrc: "/images/Custom-Fintech-Software-Developments.png",
       content:
         "Our custom fintech software development services include application development, custom reporting, and real-time data interaction.",
-    },
-    {
-      index: 2,
-      title: "Banking App Development",
-      imageSrc: "/images/Banking-App-Development.png",
-      content:
-        "Develop applications such as digital wallets or mobile banking apps with our fintech app development services that let you expand your digital footprint by making it easier for your clients to do banking from any device, at any time.",
-    },
-    {
-      index: 3,
-      title: "Insurance App Development",
-      imageSrc: "/images/Insurance-App-Development.png",
-      content:
-        "We know that customer experience is an essential part of building a successful InsurTech app. Our team specializes in custom insurance application development, with no compromises on quality or usability.",
-    },
-    {
-      index: 4,
-      title: "Wallet App Development",
-      imageSrc: "/images/Wallet-App-Development.png",
-      content:
-        "Giving customers the ability to pay with a smartphone-specific digital wallet is an easy way to encourage loyalty and ensure customer satisfaction.",
-    },
-    {
-      index: 5,
-      title: "Fintech Software Security",
-      imageSrc: "/images/Fintech-Software-Security-Compliance.png",
-      content:
-        "We work with you to ensure your application remains up and running. Whether it’s in server management, data security, or continuous monitoring.",
-    },
-    {
-      index: 6,
-      title: "FinOps Services",
-      imageSrc: "/images/FinOps-Services.png",
-      content:
-        "With the right cloud cost management, your business can scale effectively and avoid cost overheads. From managing your cloud custodian services to proactive detection of technology costs to constructing agile, scalable solutions for you, our fintech software developers manage it all.",
-    },
-  ];
-
-  const fintechUpperImageSources = [
-    {
-      imageSource: "/images/custom-fintech-software-developments.webp",
+      imageSrc: "/images/custom-fintech-software-developments.webp",
       imageAlt: "Custom fintech software development",
     },
     {
-      imageSource: "/images/banking-app-development.webp",
+      title: "Banking App Development",
+      iconSrc: "/images/Banking-App-Development.png",
+      content:
+        "Develop applications such as digital wallets or mobile banking apps with our fintech app development services that let you expand your digital footprint by making it easier for your clients to do banking from any device, at any time.",
+      imageSrc: "/images/banking-app-development.webp",
       imageAlt: "Banking App Development",
     },
     {
-      imageSource:
+      title: "Insurance App Development",
+      iconSrc: "/images/Insurance-App-Development.png",
+      content:
+        "We know that customer experience is an essential part of building a successful InsurTech app. Our team specializes in custom insurance application development, with no compromises on quality or usability.",
+      imageSrc:
         "https://a.storyblok.com/f/219851/693x771/11cc51501f/insurance-app.webp",
       imageAlt: "Insurance App Development",
     },
     {
-      imageSource: "/images/wallet-app-development.webp",
+      title: "Wallet App Development",
+      iconSrc: "/images/Wallet-App-Development.png",
+      content:
+        "Giving customers the ability to pay with a smartphone-specific digital wallet is an easy way to encourage loyalty and ensure customer satisfaction.",
+      imageSrc: "/images/wallet-app-development.webp",
       imageAlt: "Wallet App Development",
     },
     {
-      imageSource:
+      title: "Fintech Software Security",
+      iconSrc: "/images/Fintech-Software-Security-Compliance.png",
+      content:
+        "We work with you to ensure your application remains up and running. Whether it’s in server management, data security, or continuous monitoring.",
+      imageSrc:
         "https://a.storyblok.com/f/219851/693x771/d32e55e62e/fintech-software-security-compliance.webp",
       imageAlt: "Fintech Software Security",
     },
     {
-      imageSource:
+      title: "FinOps Services",
+      iconSrc: "/images/FinOps-Services.png",
+      content:
+        "With the right cloud cost management, your business can scale effectively and avoid cost overheads. From managing your cloud custodian services to proactive detection of technology costs to constructing agile, scalable solutions for you, our fintech software developers manage it all.",
+      imageSrc:
         "https://a.storyblok.com/f/219851/693x771/dc9f2c8c32/finops-services-1.webp",
       imageAlt: "FinOps Services",
     },
@@ -99,73 +78,52 @@ const Fintech = () => {
 
   const fintechLowerAccordionItems = [
     {
-      index: 1,
       title: "Wealth Management",
-      imageSrc: "/images/Wealth-Management.png",
+      iconSrc: "/images/Wealth-Management.png",
       content:
         "We build fintech apps to better manage financial assets, seek insight into consumer trends and improve communication.",
-    },
-    {
-      index: 2,
-      title: "Lending",
-      imageSrc: "/images/Lending.png",
-      content:
-        "We build technology solutions to enhance your operations and automate and improve your lending processes to facilitate instant loan approval, KYC verification, and consumer eligibility checks.",
-    },
-    {
-      index: 3,
-      title: "Consumer Banking",
-      imageSrc: "/images/Consumer-Banking.png",
-      content:
-        "We create and deploy the most advanced and secure banking solutions that enable customers to help customer service, predict the future, and smoothen out operations.",
-    },
-    {
-      index: 4,
-      title: " Personal Finance",
-      imageSrc: "/images/Personal-Finance.png",
-      content:
-        "We develop software for personal finance, in a way that’s both simple and powerful. Our goal is to help users better manage their savings and investments.",
-    },
-    {
-      index: 5,
-      title: "Payment",
-      imageSrc: "/images/Payment.png",
-      content:
-        "Our portfolio encompasses a suite of financial technology that is designed to bring transparency, safety, and control to the payments system.",
-    },
-    {
-      index: 6,
-      title: "Insurance",
-      imageSrc: "/images/Wealth-Management.png",
-      content:
-        "Fintech is changing the insurance industry, so we’re changing the way it works for you. Our fintech products help insurance companies improve customer engagement, underwriting process, claims processing, and fraud detection.",
-    },
-  ];
-
-  const fintechLowerImageSources = [
-    {
-      imageSource:
+      imageSrc:
         "https://a.storyblok.com/f/219851/693x771/6b6231f495/wealth-mgmt.webp",
       imageAlt: "Wealth Management",
     },
     {
-      imageSource: "/images/Lending.webp",
+      title: "Lending",
+      iconSrc: "/images/Lending.png",
+      content:
+        "We build technology solutions to enhance your operations and automate and improve your lending processes to facilitate instant loan approval, KYC verification, and consumer eligibility checks.",
+      imageSrc: "/images/Lending.webp",
       imageAlt: "Lending",
     },
     {
-      imageSource: "/images/Consumer-banking.webp",
+      title: "Consumer Banking",
+      iconSrc: "/images/Consumer-Banking.png",
+      content:
+        "We create and deploy the most advanced and secure banking solutions that enable customers to help customer service, predict the future, and smoothen out operations.",
+      imageSrc: "/images/Consumer-banking.webp",
       imageAlt: "Consumer Banking",
     },
     {
-      imageSource: "/images/Personal-Finance.webp",
+      title: " Personal Finance",
+      iconSrc: "/images/Personal-Finance.png",
+      content:
+        "We develop software for personal finance, in a way that’s both simple and powerful. Our goal is to help users better manage their savings and investments.",
+      imageSrc: "/images/Personal-Finance.webp",
       imageAlt: "Personal Finance",
     },
     {
-      imageSource: "/images/payment.webp",
+      title: "Payment",
+      iconSrc: "/images/Payment.png",
+      content:
+        "Our portfolio encompasses a suite of financial technology that is designed to bring transparency, safety, and control to the payments system.",
+      imageSrc: "/images/payment.webp",
       imageAlt: "Payment",
     },
     {
-      imageSource: "/images/insurance.webp",
+      title: "Insurance",
+      iconSrc: "/images/Wealth-Management.png",
+      content:
+        "Fintech is changing the insurance industry, so we’re changing the way it works for you. Our fintech products help insurance companies improve customer engagement, underwriting process, claims processing, and fraud detection.",
+      imageSrc: "/images/insurance.webp",
       imageAlt: "Insurance",
     },
   ];
@@ -297,42 +255,46 @@ const Fintech = () => {
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:w-[90%] w-full">
-                    {fintechUpperAccordionItems.map((item) => (
-                      <AccordionItem
-                        key={item.index}
-                        index={item.index}
-                        title={item.title}
-                        imageSrc={item.imageSrc}
-                        content={item.content}
-                        handleOpen={handleOpen}
-                        open={open}
-                      />
-                    ))}
+                    {fintechUpperAccordionItems.map(
+                      ({ title, iconSrc, content }, index) => (
+                        <AccordionCustomStyle
+                          key={index}
+                          index={index + 1}
+                          title={title}
+                          iconSrc={iconSrc}
+                          content={content}
+                          handleOpen={handleOpen}
+                          open={open}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
 
                 <div className="lg:w-6/12 w-full mt-[0px]">
                   <div>
-                    {fintechUpperImageSources.map((imageItem, index) => (
-                      <div
-                        key={index}
-                        className={`fade-image ${
-                          (index === 0 && (open === 1 || open === 0)) ||
-                          (index !== 0 && open === index + 1)
-                            ? "active"
-                            : "hidden"
-                        }`}
-                      >
-                        <div className="team_img">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src={imageItem.imageSource}
-                            alt={imageItem.imageAlt}
-                          />
+                    {fintechUpperAccordionItems.map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open === 1 || open === 0)) ||
+                            (index !== 0 && open === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="team_img">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src={imageSrc}
+                              alt={imageAlt}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </div>
 
@@ -379,41 +341,45 @@ const Fintech = () => {
               <div className="flex flex-wrap ">
                 <div className="lg:w-6/12 w-full md:mt-[0px] mb-12 lg:mb-0 mt-[30px]">
                   <div>
-                    {fintechLowerImageSources.map((imageItem, index) => (
-                      <div
-                        key={index}
-                        className={`fade-image ${
-                          (index === 0 && (open2 === 1 || open2 === 0)) ||
-                          (index !== 0 && open2 === index + 1)
-                            ? "active"
-                            : "hidden"
-                        }`}
-                      >
-                        <div className="team_img">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src={imageItem.imageSource}
-                            alt={imageItem.imageAlt}
-                          />
+                    {fintechLowerAccordionItems.map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open2 === 1 || open2 === 0)) ||
+                            (index !== 0 && open2 === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="team_img">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src={imageSrc}
+                              alt={imageAlt}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:ml-8 w-full">
-                    {fintechLowerAccordionItems.map((item) => (
-                      <AccordionItem
-                        key={item.index}
-                        index={item.index}
-                        title={item.title}
-                        imageSrc={item.imageSrc}
-                        content={item.content}
-                        handleOpen={handleOpen2}
-                        open={open2}
-                      />
-                    ))}
+                    {fintechLowerAccordionItems.map(
+                      ({ title, content, iconSrc }, index) => (
+                        <AccordionCustomStyle
+                          key={index}
+                          index={index + 1}
+                          title={title}
+                          iconSrc={iconSrc}
+                          content={content}
+                          handleOpen={handleOpen2}
+                          open={open2}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
 

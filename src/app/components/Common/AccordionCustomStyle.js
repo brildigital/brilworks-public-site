@@ -6,10 +6,10 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 
-const AccordionItem = ({
+const AccordionCustomStyle = ({
   index,
   title,
-  imageSrc,
+  iconSrc,
   content,
   handleOpen,
   open,
@@ -22,9 +22,7 @@ const AccordionItem = ({
     >
       <AccordionHeader
         onClick={() => handleOpen(index)}
-        className={`py-6 ${
-          open === index || open === index + 1 ? "border-none" : ""
-        }`}
+        className={`py-6 ${open === index ? "border-none" : ""}`}
       >
         <div
           className={`flex w-full ${
@@ -35,7 +33,7 @@ const AccordionItem = ({
             <img
               decoding="async"
               loading="lazy"
-              src={imageSrc}
+              src={iconSrc}
               alt={`${title} icon`}
             />
           </div>
@@ -52,4 +50,4 @@ const AccordionItem = ({
   );
 };
 
-export default AccordionItem;
+export default AccordionCustomStyle;

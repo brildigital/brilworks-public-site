@@ -2,12 +2,24 @@
 import React, { useState } from "react";
 import "./Dashboard.scss";
 import { Dialog, DialogHeader, DialogBody } from "@material-tailwind/react";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const InviteModal = ({ handleOpen, open, setOpen }) => {
   const [inviteEmail, setInviteEmail] = useState("");
   const [role, setRole] = useState("select");
+  const [isLoading, setIsLoading] = useState(false);
+  const [resmessage, setResMessage] = useState("");
 
-  const handleSendEmail = async () => {
+  const clearMessage = () => {
+    setTimeout(() => {
+      setResMessage("");
+    }, 5000);
+  };
+
+  const handleSendEmail = async (e) => {
+    e.preventDefault();
+
+    setIsLoading(true);
     const formData = {
       email: inviteEmail,
       role: role,
@@ -19,13 +31,18 @@ const InviteModal = ({ handleOpen, open, setOpen }) => {
         method: "POST",
         body: JSON.stringify(formData),
       }).then((res) => {
-        res?.ok ? setOpen(false) : "";
+        if (res?.ok) {
+          setResMessage("Email sent successfully");
+          clearMessage();
+          setInviteEmail("");
+          setRole("");
+        }
+        setIsLoading(false);
       });
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
-    setInviteEmail("");
-    setRole("select");
     setOpen(false);
   };
 
@@ -50,58 +67,74 @@ const InviteModal = ({ handleOpen, open, setOpen }) => {
         </svg>
       </div>
       <DialogBody>
-        <div className="mb-4">
-          <label htmlFor="email" className="font-semibold mb-2">
-            Email
-          </label>
-          <br />
-          <input
-            className="w-full border border-black rounded-lg mt-2 p-2"
-            type="email"
-            id="email"
-            placeholder="john@gmail.com"
-            value={inviteEmail}
-            onChange={(e) => setInviteEmail(e.target.value)}
-            required
-          />
-        </div>
+        <form onSubmit={handleSendEmail}>
+          <div className="mb-4">
+            <label htmlFor="email" className="font-semibold mb-2">
+              Email
+            </label>
+            <br />
+            <input
+              className="w-full border border-black rounded-lg mt-2 p-2"
+              type="email"
+              id="email"
+              placeholder="john@gmail.com"
+              value={inviteEmail}
+              onChange={(e) => setInviteEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="mb-4">
-          <label htmlFor="role" className="font-semibold mb-2">
-            Role
-          </label>
-          <br />
-          <select
-            className="w-full items-center border border-black rounded-lg mt-2 p-2"
-            id="role"
-            name="role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-          >
-            <option value="select" disabled>
-              Select role
-            </option>
-            <option value="ADMIN">Admin</option>
-            <option value="GUEST">Guest</option>
-            <option value="INVITEDUSER">Invited User</option>
-          </select>
-        </div>
+          <div className="mb-4">
+            <label htmlFor="role" className="font-semibold mb-2">
+              Role
+            </label>
+            <br />
+            <select
+              className="w-full items-center border border-black rounded-lg mt-2 p-2"
+              id="role"
+              name="role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              required
+            >
+              <option value="select" disabled>
+                Select role
+              </option>
+              <option value="ADMIN">Admin</option>
+              <option value="USER">{`User (Within organization)`}</option>
+              <option value="INVITEDUSER">{`Invited User (Outside organization)`}</option>
+            </select>
+          </div>
+          <p className="pl-4 text-base font-medium text-black">{resmessage}</p>
+          <div className="flex items-center justify-between gap-3">
+            {!isLoading && (
+              <button
+                className="!rounded-[7px] shadow-none hover:shadow-md !text-lg border border-black p-4 font-bold !py-2 !w-full hover:text-black"
+                onClick={handleOpen}
+              >
+                Cancel
+              </button>
+            )}
+
+            <button
+              type="submit"
+              className="btn_flex ease-in-out !rounded-[7px] !text-lg text-white font-bold !py-2 !w-full hover:text-black hover:border hover:border-[#00b6cf]"
+              // onClick={}
+            >
+              {isLoading ? (
+                <>
+                  <div className="small-spinner">
+                    <FetchDataSpinner size={"la-sm"} />
+                  </div>{" "}
+                  Sending
+                </>
+              ) : (
+                "Send"
+              )}
+            </button>
+          </div>
+        </form>
       </DialogBody>
-      <div className="flex items-center justify-between gap-3 p-4">
-        <button
-          className="!rounded-[7px] shadow-none hover:shadow-md !text-lg border border-black p-4 font-bold !py-2 !w-full hover:text-black"
-          onClick={handleOpen}
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          className="btn_flex ease-in-out !rounded-[7px] !text-lg text-white font-bold !py-2 !w-full hover:text-black hover:border hover:border-[#00b6cf]"
-          onClick={handleSendEmail}
-        >
-          Send
-        </button>
-      </div>
     </Dialog>
   );
 };

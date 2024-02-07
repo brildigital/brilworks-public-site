@@ -3,7 +3,14 @@ import prismadb from "../../lib/prismadb";
 
 export async function GET(req, res) {
   try {
-    const users = await prismadb.user.findMany();
+    const users = await prismadb.user.findMany({
+      where: {
+        email: {
+          not: process.env.SENDGRID_DEFAULT_FROM_EMAIL,
+        },
+      },
+    });
+
     return NextResponse.json({ users }, { status: 200 });
   } catch (error) {
     console.error(error);

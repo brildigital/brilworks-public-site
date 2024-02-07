@@ -1,0 +1,15 @@
+export const notNewTabRedirect = [
+  `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}industry/healthcare-software-development/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-reactjs-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-java-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-nodejs-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-react-native-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-blockchain-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}devops-consulting-services/`,
+];

@@ -1,5 +1,5 @@
 "use client";
-import "./homepage.scss";
+import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";

@@ -42,7 +42,7 @@ img {
   --font_120: 6.5rem;
   --font_250: 13.625rem;
   --color_black: #1a1a1a;
-  --white_color: white;
+  --white_color: #ffffff;
   --main_color: #00dfb8;
   --main_menu_hover_color: #00b6cf;
   --stars_color: #fbd000;
@@ -751,7 +751,6 @@ textarea.form-control-txt {
 .footer_logo img {
   max-width: 236px;
 }
-
 .marquee {
   position: relative;
   width: 100vw;
@@ -2424,7 +2423,7 @@ textarea.form-control-txt {
   }
   .sec3_width_home {
     width: 76%;
-    padding-top: 6rem;
+    padding-top: 5rem;
   }
   .sec6_title p,
   .sec6_title h2,
@@ -2558,7 +2557,7 @@ textarea.form-control-txt {
     justify-content: left;
   }
   .sec3_width_home {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
   .sec6_title p,
   .sec6_title h2 {
