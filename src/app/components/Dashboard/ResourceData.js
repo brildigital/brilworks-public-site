@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 import { Tooltip } from "react-tooltip";
 import { useSession } from "next-auth/react";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const ResourceData = ({ data }) => {
   const [copied, setCopied] = useState(false);
   const { data: session } = useSession();
-  console.log(session);
 
   const handleCopyUrl = () => {
     const currentUrl = window.location.href;

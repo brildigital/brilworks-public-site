@@ -106,7 +106,7 @@ const InviteModal = ({ handleOpen, open, setOpen }) => {
             </select>
           </div>
           <p className="pl-4 text-base font-medium text-black">{resmessage}</p>
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center justify-between gap-3 pt-4">
             {!isLoading && (
               <button
                 className="!rounded-[7px] shadow-none hover:shadow-md !text-lg border border-black p-4 font-bold !py-2 !w-full hover:text-black"
@@ -119,7 +119,6 @@ const InviteModal = ({ handleOpen, open, setOpen }) => {
             <button
               type="submit"
               className="btn_flex ease-in-out !rounded-[7px] !text-lg text-white font-bold !py-2 !w-full hover:text-black hover:border hover:border-[#00b6cf]"
-              // onClick={}
             >
               {isLoading ? (
                 <>

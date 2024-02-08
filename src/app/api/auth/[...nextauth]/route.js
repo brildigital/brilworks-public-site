@@ -7,6 +7,7 @@ import GoogleProvider from "next-auth/providers/google";
 export const authOptions = {
   providers: [
     GoogleProvider({
+      params: { ux_mode: "popup" },
       profile(profile) {
         if (!profile.email.endsWith("@brilworks.com")) {
           throw new Error(
@@ -66,7 +67,7 @@ export const authOptions = {
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
-  debug: process.env.NODE_ENV === "development",
+  debug: process.env.NODE_ENV === "production",
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signOut: "/login",

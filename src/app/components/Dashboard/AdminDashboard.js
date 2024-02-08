@@ -48,9 +48,8 @@ const AdminDashboard = () => {
           currentPage,
           ITEMS_PER_PAGE
         );
-        console.log(allowedUserData);
-        setContentData(allowedUserData.storyData);
-        setTotalContentData(allowedUserData.totalData);
+        setContentData(allowedUserData?.storyData);
+        setTotalContentData(allowedUserData?.totalData);
       } catch (error) {
         console.error(error);
       }
