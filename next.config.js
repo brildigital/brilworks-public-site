@@ -6,12 +6,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
   },
   images: {
-    domains: [
-      "a.storyblok.com",
-      "lh3.googleusercontent.com",
-      "media.licdn.com",
-      "platform-lookaside.fbsbx.com",
-    ],
+    domains: ["a.storyblok.com", "lh3.googleusercontent.com"],
   },
   redirects: async () => {
     return [
