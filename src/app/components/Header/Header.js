@@ -931,8 +931,8 @@ const NewHeader = () => {
       <div className="header header-bg-white">
         <div>
           <Navbar
-            className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none ${
-              openNav ? "!fixed h-[100vh] bg-white" : "bg-transparent"
+            className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 ${
+              openNav ? "!fixed h-[100vh] bg-white" : "shadow-none bg-transparent"
             }
           `}
           >

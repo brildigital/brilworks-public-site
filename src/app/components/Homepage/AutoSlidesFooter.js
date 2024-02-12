@@ -1,9 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
 const AutoSlidesFooter = () => {
-  const pathname = usePathname();
   return (
     <>
       <div className="footer">

@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
+  },
   images: {
-    domains: ["a.storyblok.com"],
+    domains: ["a.storyblok.com", "lh3.googleusercontent.com"],
   },
   redirects: async () => {
     return [
