@@ -7,7 +7,7 @@ const Page = () => {
   const { data: session } = useSession();
   return (
     <div>
-      <Dashboard role={session?.data?.role} />
+      <Dashboard role={session?.user?.role} />
     </div>
   );
 };
