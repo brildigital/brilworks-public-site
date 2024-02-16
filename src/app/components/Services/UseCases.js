@@ -51,20 +51,6 @@ const UseCases = () => {
       title: "AI for Retail & e-Commerce",
       iconSrc: "/images/cart.png",
       value: "retain-e-commerce",
-      imageSrc: "/images/rectangle-14.webp",
-      heading:
-        "Embrace adaptive and Personalized Learning Journeys, Grading & Scheduling, all Powered by AI.",
-      listDescription: [
-        "Free up educators' time for personalized interaction by automating grading, scheduling, and data analysis.",
-        "Adapt educational content to individual student needs with AI-powered platforms, maximizing learning outcomes.",
-        "With AI-driven insights and tools, swiftly generates personalized learning materials in accordance with each student's progress.",
-        "Implement a virtual tutor powered by AI, providing individualized feedback and guidance to students in real time.",
-      ],
-    },
-    {
-      title: "AI for Education",
-      iconSrc: "/images/graduation-hat.png",
-      value: "education",
       imageSrc: "/images/rectangle-15.webp",
       heading:
         "Personalize, Support, Protect, Optimize and provide smarter Deliveries and Services with Smart AI Solutions.",
@@ -73,6 +59,20 @@ const UseCases = () => {
         "Implement AI-powered chatbots for 24/7 support, resolving inquiries efficiently and improving customer satisfaction.",
         "Identify fraudulent transactions in real time, protecting businesses from financial losses.",
         "Optimizes delivery routes, warehouse operations, and picking processes, leading to faster and more efficient deliveries.",
+      ],
+    },
+    {
+      title: "AI for Education",
+      iconSrc: "/images/graduation-hat.png",
+      value: "education",
+      imageSrc: "/images/rectangle-14.webp",
+      heading:
+        "Embrace adaptive and Personalized Learning Journeys, Grading & Scheduling, all Powered by AI.",
+      listDescription: [
+        "Free up educators' time for personalized interaction by automating grading, scheduling, and data analysis.",
+        "Adapt educational content to individual student needs with AI-powered platforms, maximizing learning outcomes.",
+        "With AI-driven insights and tools, swiftly generates personalized learning materials in accordance with each student's progress.",
+        "Implement a virtual tutor powered by AI, providing individualized feedback and guidance to students in real time.",
       ],
     },
     {
