@@ -71,6 +71,34 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
+  const whyChooseUsDigitalExperience = [
+    {
+      title: "Award-Winning Expertise",
+      description:
+        "Recognized for innovation and excellence by Clutch, Techreviewer, and more.",
+    },
+    {
+      title: "Human-Centered Approach",
+      description:
+        "We prioritize understanding your unique needs and building solutions that resonate.",
+    },
+    {
+      title: "Agile & Collaborative",
+      description:
+        "We work closely with your team, ensuring open communication and swift adjustments.",
+    },
+    {
+      title: "End-to-End Support",
+      description:
+        "We offer a full spectrum of services, from ideation to implementation and ongoing maintenance.",
+    },
+    {
+      title: "Scalable & Secure",
+      description:
+        "Our solutions are built with future growth and industry-leading security standards in mind.",
+    },
+  ];
+
   return (
     <div
       className={`container mx-auto w-[90%] ${
@@ -82,7 +110,7 @@ const HomepageWhyChooseUs = () => {
           <h2>Why Choose Us?</h2>
         </div>
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0">
-          {pathname !== "/devops-consulting-services/" &&
+          {(pathname === "/" || pathname === "/ai-ml-development-services/") &&
             whyChooseUscontent.map(({ title, description }, index) => (
               <Card className="shadow-lg shadow-black-500/50" key={index}>
                 <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
@@ -104,6 +132,19 @@ const HomepageWhyChooseUs = () => {
                 </CardBody>
               </Card>
             ))}
+          {pathname === "/digital-experience-services/" &&
+            whyChooseUsDigitalExperience.map(
+              ({ title, description }, index) => (
+                <Card className="shadow-lg shadow-black-500/50" key={index}>
+                  <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
+                    {title}
+                  </h4>
+                  <CardBody className="p-4 why_text lg:w-4/5 ">
+                    {description}
+                  </CardBody>
+                </Card>
+              )
+            )}
         </div>
       </div>
     </div>

@@ -21,24 +21,46 @@ const OurServices = () => {
 
   const AIMLAccordionData = [
     {
-      title: "1. Real-Time Image and Video Processing",
-      content: "Instantly analyze and interpret visual data.",
+      title: "1. Generative AI Solutions",
+      content:
+        "With years of experience in Generative AI Development, our team has worked across various industies. At Brilworks, we utilize state-of-the-art tools in generative AI development with one goal in mind: to revolutionize how businesses operate and innovate.",
+      imageSrc: "/images/generative-ai.webp",
+      imageAlt: "Generative AI img",
     },
     {
-      title: "2. Predictive Analytics",
-      content: "Instantly analyze and interpret visual data.",
+      title: "2. AI-Based Product Development",
+      content:
+        "Optimize operations, drive growth, and stay ahead of the curve with our top-tier AI solutions. Our advanced software, powered by cutting-edge Generative AI Development, solves complex problems and provides invaluable insights.",
+      imageSrc: "/images/ai-based-product.webp",
+      imageAlt: "AI-Based Product dev img",
     },
     {
-      title: "3. Customizable Solutions",
-      content: "Instantly analyze and interpret visual data.",
+      title: "3. Machine Learning Expertise",
+      content:
+        "Move beyond conventional machine learning approaches. We understand that each business is unique, which is why we collaborate closely with you to develop customized ML models that align with your specific objectives and challenges.",
+      imageSrc: "/images/ml-expertise.webp",
+      imageAlt: "ML expertise img",
     },
     {
-      title: "4. Seamless Integration",
-      content: "Instantly analyze and interpret visual data.",
+      title: "4. Computer Vision Solutions",
+      content:
+        "With our intelligent computer vision solutions object detection, tracking, and image classification are seamlessly integrated to provide your company with unparalleled vision capabilities.",
+      imageSrc: "/images/computer-vision.webp",
+      imageAlt: "Computer vision img",
     },
     {
-      title: "5. Data-Driven Insights",
-      content: "Instantly analyze and interpret visual data.",
+      title: "5. Natural Language Processing (NLP)",
+      content:
+        "Our advanced NLP solutions bridge the gap between systems and humans, automate processes. Leverage cutting-edge AI to gain a competitive edge through data-driven insights powered by our sophisticated NLP technologies.",
+      imageSrc: "/images/nlp.webp",
+      imageAlt: "Natural lan. processing img",
+    },
+    {
+      title: "6. AI Chatbot Development",
+      content:
+        "Enhance your customer support experience effortlessly with AI-powered advanced chatbots. Provide round-the-clock support using state-of-the-art AI technology to ensure personalized assistance and heightened customer satisfaction.",
+      imageSrc: "/images/ai-chatbot-dev.webp",
+      imageAlt: "AI-chatbot-dev img",
     },
   ];
 
@@ -46,24 +68,85 @@ const OurServices = () => {
     {
       title: "1. DevOps Implementation",
       content: "Our DevOps services are designed to guide you through.",
+      imageSrc: "/images/devops-concept-software-development.webp",
+      imageAlt: "Devops service img",
     },
     {
       title: "2. DevOps Automation",
       content: "Our DevOps services are designed to guide you through.",
+      imageSrc: "/images/devops-concept-software-development.webp",
+      imageAlt: "Devops service img",
     },
     {
       title: "3. DevOps Services",
       content: "Our DevOps services are designed to guide you through.",
+      imageSrc: "/images/devops-concept-software-development.webp",
+      imageAlt: "Devops service img",
     },
     {
       title: "4. DevOps Release Management",
       content: "Our DevOps services are designed to guide you through.",
+      imageSrc: "/images/devops-concept-software-development.webp",
+      imageAlt: "Devops service img",
     },
     {
       title: "5. Continuous Integration & Delivery (CI/CD)",
       content: "Our DevOps services are designed to guide you through.",
+      imageSrc: "/images/devops-concept-software-development.webp",
+      imageAlt: "Devops service img",
     },
   ];
+
+  const DigitalExperienceAccordionData = [
+    {
+      title: "1. Digital Experience Strategy",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+    {
+      title: "2. Experience Design & Development",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+    {
+      title: "3. Content Management & Personalization",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+    {
+      title: "4. Marketing Automation & Analytics",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+    {
+      title: "5. Commerce & Payment Integration",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+    {
+      title: "6. Integration & API Development",
+      content:
+        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
+      imageSrc: "/images/digital-ex-img.webp",
+      imageAlt: "Digital experience img",
+    },
+  ];
+
+  const showDataBasedOnPathname = {
+    "/ai-ml-development-services/": AIMLAccordionData,
+    "/devops-consulting-services/": DevOpsAccordionData,
+    "/digital-experience-services/": DigitalExperienceAccordionData,
+  };
 
   return (
     <div className="container mx-auto sm:w-[90%] w-[100%] lg:mt-5">
@@ -77,25 +160,37 @@ const OurServices = () => {
               <div className="tab-content d-flex justify-content-center align-items-center h-100">
                 <div>
                   <div className="services_img md:pt-8">
-                    <Image
-                      className="alignnone wp-image-32 size-full"
-                      src={
-                        pathname === "/ai-ml-development-services/"
-                          ? "/images/realtime-video-image.webp"
-                          : "/images/devops-concept-software-development.webp"
-                      }
-                      alt="our-services-img"
-                      width="640"
-                      height="505"
-                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-                    />
+                    {showDataBasedOnPathname[pathname].map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open === 1 || open === 0)) ||
+                            (index !== 0 && open === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="solutions_img">
+                            <Image
+                              className="alignnone wp-image-32 size-full"
+                              src={imageSrc}
+                              alt={imageAlt}
+                              width="640"
+                              height="505"
+                              sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                            />
+                          </div>
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
             </div>
             <div className="lg:w-6/12 w-full">
-              {pathname === "/ai-ml-development-services/" &&
-                AIMLAccordionData.map(({ title, content }, index) => (
+              {showDataBasedOnPathname[pathname].map(
+                ({ title, content }, index) => (
                   <AccordionCustomIcon
                     index={index + 1}
                     key={index + 1}
@@ -104,18 +199,8 @@ const OurServices = () => {
                     handleOpen={handleOpen}
                     open={open}
                   />
-                ))}
-              {pathname === "/devops-consulting-services/" &&
-                DevOpsAccordionData.map(({ title, content }, index) => (
-                  <AccordionCustomIcon
-                    index={index + 1}
-                    key={index + 1}
-                    title={title}
-                    content={content}
-                    handleOpen={handleOpen}
-                    open={open}
-                  />
-                ))}
+                )
+              )}
             </div>
           </div>
         </div>
