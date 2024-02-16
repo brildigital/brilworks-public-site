@@ -42,7 +42,7 @@ img {
   --font_120: 6.5rem;
   --font_250: 13.625rem;
   --color_black: #1a1a1a;
-  --white_color: white;
+  --white_color: #ffffff;
   --main_color: #00dfb8;
   --main_menu_hover_color: #00b6cf;
   --stars_color: #fbd000;
@@ -235,7 +235,7 @@ a:hover {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 99999;
+  z-index: 999;
   transition: all 0.6s ease;
   width: 100%;
 }
@@ -751,10 +751,6 @@ textarea.form-control-txt {
 .footer_logo img {
   max-width: 236px;
 }
-
-.footer {
-  padding-top: 2rem;
-}
 .marquee {
   position: relative;
   width: 100vw;
@@ -894,11 +890,9 @@ textarea.form-control-txt {
 }
 .header_sec1_txt2 p:hover {
   border: 1px solid #00dfb8;
-  background: 0 0;
-}
-.footer .header_sec1_txt2 p:hover {
-  border: 1px solid #00dfb8;
   background: transparent;
+}
+.footer_btn .header_sec1_txt2 p:hover {
   color: var(--white_color);
 }
 .footer_last_width {
@@ -2429,7 +2423,7 @@ textarea.form-control-txt {
   }
   .sec3_width_home {
     width: 76%;
-    padding-top: 6rem;
+    padding-top: 5rem;
   }
   .sec6_title p,
   .sec6_title h2,
@@ -2563,7 +2557,7 @@ textarea.form-control-txt {
     justify-content: left;
   }
   .sec3_width_home {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
   .sec6_title p,
   .sec6_title h2 {

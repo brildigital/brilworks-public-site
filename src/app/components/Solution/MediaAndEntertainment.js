@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonfunction";
-import AccordionItem from "./AccordionItem";
+import AccordionCustomStyle from "../Common/AccordionCustomStyle";
 
 const MediaNEntertainmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -21,73 +21,52 @@ const MediaAndEntertainment = () => {
 
   const mediaEntertainmentAccordionItems = [
     {
-      index: 1,
       title: "OTT Streaming Apps",
-      imageSrc: "/images/OTT-Streaming-Apps.png",
+      iconSrc: "/images/OTT-Streaming-Apps.png",
       content:
         "Leverage our proven domain expertise along with cutting-edge technologies to create a streaming service that is as fast as it is instantly accessible.",
-    },
-    {
-      index: 2,
-      title: "Music Streaming Apps",
-      imageSrc: "/images/Music-Streaming-Apps.png",
-      content:
-        "Make the way to the melodies of your music streaming app. Our powerful backend helps you manage thousands of active listeners without any interruption or issue.",
-    },
-    {
-      index: 3,
-      title: " Photo Editing & Sharing Apps",
-      imageSrc: "/images/Photo-Editing-Sharing-Apps.png",
-      content:
-        "Become one of the most used photo editing and sharing apps. We help you create an Instagram-like app with your own photo editing and sharing features.",
-    },
-    {
-      index: 4,
-      title: "Ticket Booking Portals",
-      imageSrc: "/images/Ticket-Booking-Portals.png",
-      content:
-        "We develop ticket booking portals for all kinds of events including movie theatres, live concerts, sports matches, etc. Our team is focused on providing a seamless ticket-booking experience to eager fans.",
-    },
-    {
-      index: 5,
-      title: "Gaming apps",
-      imageSrc: "/images/Gaming-apps.png",
-      content:
-        "We create gaming apps across platforms and genres. In the world of gaming, we are known for our stable infrastructure, technical speed, efficient development process, and cutting-edge technology.",
-    },
-    {
-      index: 6,
-      title: "Content Aggregation Apps",
-      imageSrc: "/images/Content-Aggregation-Apps.png",
-      content:
-        "These apps are the new way to get quality content and videos. We are a trusted app aggregator providing a one-stop solution for customers and businesses to quickly find high-quality databases on any topic or industry.",
-    },
-  ];
-
-  const mediaEntertainmentImageSources = [
-    {
-      imageSource:
+      imageSrc:
         "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png",
       imageAlt: "OTT Streaming Apps",
     },
     {
-      imageSource: "/images/Music-Streaming-Apps.jpg",
+      title: "Music Streaming Apps",
+      iconSrc: "/images/Music-Streaming-Apps.png",
+      content:
+        "Make the way to the melodies of your music streaming app. Our powerful backend helps you manage thousands of active listeners without any interruption or issue.",
+      imageSrc: "/images/Music-Streaming-Apps.jpg",
       imageAlt: "Music Streaming Apps",
     },
     {
-      imageSource: "/images/photoediting.jpg",
+      title: " Photo Editing & Sharing Apps",
+      iconSrc: "/images/Photo-Editing-Sharing-Apps.png",
+      content:
+        "Become one of the most used photo editing and sharing apps. We help you create an Instagram-like app with your own photo editing and sharing features.",
+      imageSrc: "/images/photoediting.jpg",
       imageAlt: "Photo Editing & Sharing Apps",
     },
     {
-      imageSource: "/images/tickets-booking-portal.jpg",
+      title: "Ticket Booking Portals",
+      iconSrc: "/images/Ticket-Booking-Portals.png",
+      content:
+        "We develop ticket booking portals for all kinds of events including movie theatres, live concerts, sports matches, etc. Our team is focused on providing a seamless ticket-booking experience to eager fans.",
+      imageSrc: "/images/tickets-booking-portal.jpg",
       imageAlt: "Ticket Booking Portals",
     },
     {
-      imageSource: "/images/gaming-apps.jpg",
+      title: "Gaming apps",
+      iconSrc: "/images/Gaming-apps.png",
+      content:
+        "We create gaming apps across platforms and genres. In the world of gaming, we are known for our stable infrastructure, technical speed, efficient development process, and cutting-edge technology.",
+      imageSrc: "/images/gaming-apps.jpg",
       imageAlt: "Gaming apps",
     },
     {
-      imageSource: "/images/Content-Aggregation-Apps.jpg",
+      title: "Content Aggregation Apps",
+      iconSrc: "/images/Content-Aggregation-Apps.png",
+      content:
+        "These apps are the new way to get quality content and videos. We are a trusted app aggregator providing a one-stop solution for customers and businesses to quickly find high-quality databases on any topic or industry.",
+      imageSrc: "/images/Content-Aggregation-Apps.jpg",
       imageAlt: "Content Aggregation Apps",
     },
   ];
@@ -192,41 +171,45 @@ const MediaAndEntertainment = () => {
               <div className="flex flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:w-[90%] w-full">
-                    {mediaEntertainmentAccordionItems.map((item) => (
-                      <AccordionItem
-                        key={item.index}
-                        index={item.index}
-                        title={item.title}
-                        imageSrc={item.imageSrc}
-                        content={item.content}
-                        handleOpen={handleOpen}
-                        open={open}
-                      />
-                    ))}
+                    {mediaEntertainmentAccordionItems.map(
+                      ({ title, content, iconSrc }, index) => (
+                        <AccordionCustomStyle
+                          key={index}
+                          index={index + 1}
+                          title={title}
+                          iconSrc={iconSrc}
+                          content={content}
+                          handleOpen={handleOpen}
+                          open={open}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
                 <div className="lg:w-6/12 w-full">
                   <div>
-                    {mediaEntertainmentImageSources.map((imageItem, index) => (
-                      <div
-                        key={index}
-                        className={`fade-image ${
-                          (index === 0 && (open === 1 || open === 0)) ||
-                          (index !== 0 && open === index + 1)
-                            ? "active"
-                            : "hidden"
-                        }`}
-                      >
-                        <div className="team_img">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src={imageItem.imageSource}
-                            alt={imageItem.imageAlt}
-                          />
+                    {mediaEntertainmentAccordionItems.map(
+                      ({ imageSrc, imageAlt }, index) => (
+                        <div
+                          key={index}
+                          className={`fade-image ${
+                            (index === 0 && (open === 1 || open === 0)) ||
+                            (index !== 0 && open === index + 1)
+                              ? "active"
+                              : "hidden"
+                          }`}
+                        >
+                          <div className="team_img">
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src={imageSrc}
+                              alt={imageAlt}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    )}
                   </div>
                 </div>
 

@@ -191,7 +191,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="service_width contact_sec3 md:!pt-[100px] pt-1 reveal">
+        <div className="service_width contact_sec3 md:!pt-[100px] !pt-1 reveal">
           <div className="just_call_sec">
             <div className="solutions text-center py-8">
               <h2 className="textUpercase md:!text-center !text-left !w-full">
@@ -267,7 +267,7 @@ const ContactUs = () => {
         </div>
         <div className="just_call_sec">
           <div className="solutions text-center py-8">
-            <h2 className="uppercase md:!text-center !text-left !w-full">
+            <h2 className="uppercase md:!text-center !text-left ml-4 !w-full">
               Client Testimonials
             </h2>
           </div>

@@ -152,7 +152,7 @@ const Blog = () => {
         )} */}
       </div>
 
-      <div className="md:w-[94%] w-full mx-auto">
+      <div className="container md:w-[94%] w-full mx-auto">
         <div className="flex sxl:flex-row flex-col-reverse !mt-4">
           <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
             <div>
@@ -313,7 +313,7 @@ const Blog = () => {
         {isLoading ? (
           ""
         ) : blogDataPerPage?.length ? (
-          <div className="flex justify-center mt-[2rem]">
+          <div className="flex justify-center my-[2rem]">
             <ul className="list-none flex flex-wrap">
               <li
                 className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${

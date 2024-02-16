@@ -3,7 +3,7 @@ export const organization = {
   "@type": "Organization",
   name: "Brilworks",
   url: "https://www.brilworks.com",
-  logo: "https://www.brilworks.com/images/logo.png",
+  logo: "https://www.brilworks.com/images/brilworks-logo.png",
   sameAs: [
     "https://www.facebook.com/brilwork",
     "https://www.linkedin.com/company/brilworks",

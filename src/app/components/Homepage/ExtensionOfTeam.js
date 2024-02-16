@@ -27,7 +27,7 @@ const ExtensionOfTeam = () => {
   return (
     <>
       <TechTeamText />
-      <div className="mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
+      <div className="container mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
         <div className="homepage-extension-team">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">
