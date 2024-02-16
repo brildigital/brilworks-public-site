@@ -308,13 +308,16 @@ const Footer = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="footer_btn pt-4">
-                    <Link href="/login/">
-                      <div className="header_sec1_txt2 hidden-xs">
-                        <p className="transition">Log In</p>
-                      </div>
-                    </Link>
-                  </div>
+                  {process.env.NEXT_PUBLIC_BASE_URL !==
+                    "https://www.brilworks.com/" && (
+                    <div className="footer_btn pt-4">
+                      <Link href="/login/">
+                        <div className="header_sec1_txt2 hidden-xs">
+                          <p className="transition">Log In</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )}
                 </div>
                 <div className="grid-area-four md:pl-12">
                   <div className="quick_link">
