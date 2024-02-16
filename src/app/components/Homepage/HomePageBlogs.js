@@ -41,7 +41,7 @@ const HomePageBlogs = () => {
           blogData.map(({ slug, name, content }, index) => (
             <div
               key={index}
-              className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+              className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
             >
               <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                 <Image
