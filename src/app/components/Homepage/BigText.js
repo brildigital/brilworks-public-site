@@ -78,7 +78,7 @@ export const BelievingText = () => {
 
 export const HonorText = () => {
   return (
-    <div className="container mx-auto px-[15px] xl:pt-[128px] lg:pt-[80px] pt-[40px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
+    <div className="container mx-auto px-[15px] lg:pt-[80px] pt-[40px] xl:mb-[64px] lg:mb-[80px] mb-[32px]">
       <div className="md:text-center">
         <div className="home_sec2_txt1">
           <h2>

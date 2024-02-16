@@ -308,7 +308,21 @@ const NewHeader = () => {
           </Link>
         </AccordionBody>
       </Accordion>
-      <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
+      <div className="menu_txt1">
+        <Link
+          href="/ai-ml-development-services/"
+          onClick={() => setOpenNav(false)}
+        >
+          <p
+            className={
+              pathname === "/ai-ml-development-services/" ? "page-active" : ""
+            }
+          >
+            AI/ML SERVICE
+          </p>
+        </Link>
+      </div>
+      {/* <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(3)}
           className={`accordion-title py-6 ${open === 3 ? "border-none" : ""}`}
@@ -316,9 +330,16 @@ const NewHeader = () => {
           <p>SERVICES</p>
         </AccordionHeader>
         <AccordionBody className={open === 3 ? "border-b border-gray-500" : ""}>
-          <Link href="#" onClick={() => setOpenNav(false)}>
+          <Link
+            href="/digital-experience-services/"
+            onClick={() => setOpenNav(false)}
+          >
             <div className="menu_mob_flex mega-menu-content py-4">
-              <p className={pathname === "#" && "page-active"}>
+              <p
+                className={
+                  pathname === "/digital-experience-services/" && "page-active"
+                }
+              >
                 PRODUCT ENGINEERING
               </p>
             </div>
@@ -359,7 +380,7 @@ const NewHeader = () => {
             </div>
           </Link>
         </AccordionBody>
-      </Accordion>
+      </Accordion> */}
       <div className="menu_txt1">
         <Link href="/our-process/" onClick={() => setOpenNav(false)}>
           <p className={pathname === "/our-process/" ? "page-active" : ""}>
@@ -402,7 +423,7 @@ const NewHeader = () => {
   );
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-4 lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6">
       <Link
         href="/portfolio/"
         className="header_font flex items-center"
@@ -430,7 +451,22 @@ const NewHeader = () => {
           BLOG
         </p>
       </Link>
-      <Menu
+      <Link
+        href="/ai-ml-development-services/"
+        className="header_font flex items-center"
+        onClick={() => setOpenNav(false)}
+      >
+        <p
+          className={`!mb-0 ${
+            pathname === "/ai-ml-development-services/"
+              ? "page-active"
+              : "hover:text-[#00dfb8]"
+          }`}
+        >
+          AI/ML SERVICES
+        </p>
+      </Link>
+      {/* <Menu
         placement="bottom"
         dismiss={{ itemPress: true, ancestorScroll: true }}
       >
@@ -468,14 +504,17 @@ const NewHeader = () => {
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link href="#" className="flex items-center justify-between gap-2">
+            <Link
+              href="/digital-experience-services/"
+              className="flex items-center justify-between gap-2"
+            >
               <div className="flex_mega_menu w-full justify-between">
                 <p
-                // className={`${
-                //   pathname === "/industry/fintech-software-development/"
-                //     ? "page-active"
-                //     : ""
-                // }`}
+                  className={`${
+                    pathname === "/digital-experience-service/"
+                      ? "page-active"
+                      : ""
+                  }`}
                 >
                   PRODUCT ENGINEERING
                 </p>
@@ -566,11 +605,11 @@ const NewHeader = () => {
             <Link href="#">
               <div className="flex_mega_menu w-full justify-between">
                 <p
-                // className={
-                //   pathname === "/industry/healthcare-software-development/"
-                //     ? "page-active"
-                //     : ""
-                // }
+                  className={
+                    pathname === "/industry/healthcare-software-development/"
+                      ? "page-active"
+                      : ""
+                  }
                 >
                   STAFF AUGMENTATION
                 </p>
@@ -594,7 +633,7 @@ const NewHeader = () => {
             </Link>
           </MenuItem>
         </MenuList>
-      </Menu>
+      </Menu> */}
       <Menu
         placement="bottom"
         dismiss={{ itemPress: true, ancestorScroll: true }}
@@ -932,7 +971,9 @@ const NewHeader = () => {
         <div>
           <Navbar
             className={`sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 ${
-              openNav ? "!fixed h-[100vh] bg-white" : "shadow-none bg-transparent"
+              openNav
+                ? "!fixed h-[100vh] bg-white"
+                : "shadow-none bg-transparent"
             }
           `}
           >

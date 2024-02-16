@@ -10,10 +10,11 @@ const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
 );
 const OurServices = dynamic(() => import("./OurServices"));
+const UseCases = dynamic(() => import("./UseCases"));
+const KeyBenefits = dynamic(() => import("./KeyBenefits"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
-const TechStack = dynamic(() => import("./TechStack"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
@@ -23,7 +24,7 @@ const AIMLService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="services mt-[4rem] mx-auto">
+    <div className="services pt-[4rem] mx-auto">
       <div>
         <div className="relative">
           <div className="home_sec1_img">
@@ -41,7 +42,7 @@ const AIMLService = () => {
               />
             )}
           </div>
-          <div className="sec1_txt_position md:!top-[13%] lg:!top-[20%] !top-[15%]">
+          <div className="sec1_txt_position !top-[15%]">
             <h1 className="mb-[30px] md:mb-[20px] lg:mb-[30px] w-full md:w-1/2">
               Advance Your Business with AI/ML and Computer Vision
             </h1>
@@ -64,11 +65,12 @@ const AIMLService = () => {
       </div>
 
       <OurServices />
-      <HomepageWhyChooseUs />
+      <UseCases />
+      <KeyBenefits />
       <Honors />
       <ContactBlock />
-      <TechStack />
-      <IndustriesWeHelp />
+      <TechStackWeUse />
+      <HomepageWhyChooseUs />
       <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />

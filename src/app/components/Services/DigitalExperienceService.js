@@ -20,7 +20,7 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const DevOpsService = () => {
+const DigitalExperienceService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   return (
@@ -33,23 +33,23 @@ const DevOpsService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/DevOps-banner.webp`}
-                alt="ALML banner"
+                src={`/images/digital-experience.webp`}
+                alt="Digital experience banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
                 priority={true}
-              // sizes="100vw"
               />
             )}
           </div>
           <div className="sec1_txt_position !left-[5%] !top-[15%]">
             <h1 className="mb-[30px] w-full md:w-1/2">
-              DevOps Consulting Services
+              Digital Experience Services
             </h1>
             <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              We build you a smooth-running CI/CD pipeline, so you can ship
-              updates faster, test smarter, deploy smoothly, and gain a
-              competitive edge.
+              At Brilworks, we empower startups & businesses to spark and
+              enhance their digital journeys with our comprehensive suite of
+              digital experience services combined with intelligent solutions
+              and engineering expertise.
             </p>
             <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
               <div className="header_sec1_txt2">
@@ -111,4 +111,4 @@ const DevOpsService = () => {
   );
 };
 
-export default DevOpsService;
+export default DigitalExperienceService;

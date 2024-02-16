@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 const Page = () => {
   const { data: session } = useSession();
   return (
-    <div>
+    <div className="!bg-white">
       <Dashboard role={session?.user?.role} />
     </div>
   );
