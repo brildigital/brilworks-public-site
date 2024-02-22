@@ -308,21 +308,7 @@ const NewHeader = () => {
           </Link>
         </AccordionBody>
       </Accordion>
-      <div className="menu_txt1">
-        <Link
-          href="/ai-ml-development-services/"
-          onClick={() => setOpenNav(false)}
-        >
-          <p
-            className={
-              pathname === "/ai-ml-development-services/" ? "page-active" : ""
-            }
-          >
-            AI/ML SERVICE
-          </p>
-        </Link>
-      </div>
-      {/* <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
+      <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(3)}
           className={`accordion-title py-6 ${open === 3 ? "border-none" : ""}`}
@@ -330,7 +316,7 @@ const NewHeader = () => {
           <p>SERVICES</p>
         </AccordionHeader>
         <AccordionBody className={open === 3 ? "border-b border-gray-500" : ""}>
-          <Link
+          {/* <Link
             href="/digital-experience-services/"
             onClick={() => setOpenNav(false)}
           >
@@ -341,6 +327,21 @@ const NewHeader = () => {
                 }
               >
                 PRODUCT ENGINEERING
+              </p>
+            </div>
+          </Link> */}
+
+          <Link
+            href="/ai-ml-development-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/ai-ml-development-services/" && "page-active"
+                }
+              >
+                AI/ML
               </p>
             </div>
           </Link>
@@ -358,29 +359,15 @@ const NewHeader = () => {
               </p>
             </div>
           </Link>
-          <Link
-            href="/ai-ml-development-services/"
-            onClick={() => setOpenNav(false)}
-          >
-            <div className="menu_mob_flex mega-menu-content py-4">
-              <p
-                className={
-                  pathname === "/ai-ml-development-services/" && "page-active"
-                }
-              >
-                AI/ML
-              </p>
-            </div>
-          </Link>
-          <Link href="#" onClick={() => setOpenNav(false)}>
+          {/* <Link href="#" onClick={() => setOpenNav(false)}>
             <div className="menu_mob_flex mega-menu-content py-4">
               <p className={pathname === "#" && "page-active"}>
                 STAFF AUGMENTATION
               </p>
             </div>
-          </Link>
+          </Link> */}
         </AccordionBody>
-      </Accordion> */}
+      </Accordion>
       <div className="menu_txt1">
         <Link href="/our-process/" onClick={() => setOpenNav(false)}>
           <p className={pathname === "/our-process/" ? "page-active" : ""}>
@@ -451,22 +438,7 @@ const NewHeader = () => {
           BLOG
         </p>
       </Link>
-      <Link
-        href="/ai-ml-development-services/"
-        className="header_font flex items-center"
-        onClick={() => setOpenNav(false)}
-      >
-        <p
-          className={`!mb-0 ${
-            pathname === "/ai-ml-development-services/"
-              ? "page-active"
-              : "hover:text-[#00dfb8]"
-          }`}
-        >
-          AI/ML SERVICES
-        </p>
-      </Link>
-      {/* <Menu
+      <Menu
         placement="bottom"
         dismiss={{ itemPress: true, ancestorScroll: true }}
       >
@@ -503,7 +475,7 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
-          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+          {/* <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
               href="/digital-experience-services/"
               className="flex items-center justify-between gap-2"
@@ -536,39 +508,7 @@ const NewHeader = () => {
                 </div>
               </div>
             </Link>
-          </MenuItem>
-          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link
-              href="/devops-consulting-services/"
-              className="flex items-center justify-between gap-2"
-            >
-              <div className="flex_mega_menu w-full justify-between">
-                <p
-                  className={`${
-                    pathname === "/devops-consulting-services/" && "page-active"
-                  }`}
-                >
-                  DEVOPS AND CLOUD
-                </p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link href="/ai-ml-development-services/">
               <div className="flex_mega_menu w-full justify-between">
@@ -602,6 +542,39 @@ const NewHeader = () => {
             </Link>
           </MenuItem>
           <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+            <Link
+              href="/devops-consulting-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/devops-consulting-services/" && "page-active"
+                  }`}
+                >
+                  DEVOPS AND CLOUD
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          {/* 
+          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
             <Link href="#">
               <div className="flex_mega_menu w-full justify-between">
                 <p
@@ -631,9 +604,9 @@ const NewHeader = () => {
                 </div>
               </div>
             </Link>
-          </MenuItem>
+          </MenuItem> */}
         </MenuList>
-      </Menu> */}
+      </Menu>
       <Menu
         placement="bottom"
         dismiss={{ itemPress: true, ancestorScroll: true }}
