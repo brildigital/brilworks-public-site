@@ -9,15 +9,15 @@ const ContactBlock = () => {
     "/ai-ml-development-services/":
       "Don't let cost hold you back. Our industry-leading AI/ML services are within reach.",
     "/devops-consulting-services/":
-      "Lorem ipsum dolor sit amet consectetur. Malesuada augue nunc ultrices convallis urna. Mattis viverra purus faucibus risus mus lorem sit.",
+      "Transform your development, achieve DevOps success - Get your free Brilworks consultation today!",
     "/digital-experience-services/": "Ready to spark your digital revolution?",
   };
 
   return (
     <div className="container w-[90%] mx-auto md:py-12 py-4">
       <div className="background !rounded-2xl md:p-8 p-4 reveal">
-        <div className="solutions mx-auto flex flex-col items-center justify-center md:w-11/12 w-full">
-          <p className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-2xl md: leading-[54px] text-center pb-7">
+        <div className="solutions mx-auto flex flex-col items-center justify-center md:w-4/5 w-full">
+          <p className="md:!text-3xl text-2xl md: leading-[54px] text-center pb-7">
             {contactText[pathname]}
           </p>
 

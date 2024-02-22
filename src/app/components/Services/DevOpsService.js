@@ -11,7 +11,7 @@ const HomepageWhyChooseUs = dynamic(() =>
 );
 const DevOpsShipFaster = dynamic(() => import("./DevOpsShipFaster"));
 const OurServices = dynamic(() => import("./OurServices"));
-const TechStack = dynamic(() => import("./TechStack"));
+const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
@@ -22,7 +22,6 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const DevOpsService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   return (
     <div className="services pt-[4rem] mx-auto">
       <div>
@@ -38,7 +37,6 @@ const DevOpsService = () => {
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
                 priority={true}
-              // sizes="100vw"
               />
             )}
           </div>
@@ -58,49 +56,17 @@ const DevOpsService = () => {
                 </p>
               </div>
             </Link>
-            {!isMobile && !isTablet && (
-              <div>
-                <DevOpsShipFaster />
-              </div>
-            )}
           </div>
         </div>
       </div>
-      {(isMobile || isTablet) && (
-        <div className="mt-10 md:mt-0">
-          <div className="container w-[90%] mx-auto md:py-4 py-4">
-            <div className="background !rounded-2xl p-4">
-              <h2 className="text-center !text-2xl mx-auto my-6">
-                Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting
-                for Modern Businesses
-              </h2>
-              <p className="text-lg text-center mx-auto">
-                We're a leading DevOps consulting service company dedicated to
-                building high-performing software delivery pipelines that
-                streamline your workflow, accelerate releases, and empower your
-                teams.
-              </p>
-              <br />
-              <p className="text-lg text-center mx-auto !mb-4">
-                Our expert consultants work alongside your team to identify your
-                unique challenges and design a pipeline tailored to address your
-                unique needs. We leverage the latest tools and cutting-edge
-                technologies, from GitLab CI/CD to containerization solutions,
-                to create a system that aligns perfectly with your specific
-                needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-      <div className="sxl:mt-[30%]">
-        <OurServices />
-      </div>
+
+      <DevOpsShipFaster />
+      <OurServices />
 
       <HomepageWhyChooseUs />
       <Honors />
       <ContactBlock />
-      <TechStack />
+      <TechStackWeUse />
       <IndustriesWeHelp />
       <BestAdvocateText />
       <ClientReviews />
