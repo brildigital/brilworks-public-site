@@ -644,7 +644,7 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/industry/fintech-software-development/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -667,7 +667,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/industry/media-entertainment-software-development/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -691,7 +691,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link href="/industry/fleet-management-software-development/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -715,7 +715,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/industry/healthcare-software-development/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -777,7 +777,7 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-reactjs-developer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -798,7 +798,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-java-developer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -819,7 +819,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-nodejs-developer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -840,7 +840,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-react-native-developer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -863,7 +863,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-aws-developer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -884,7 +884,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-ui-ux-designer/">
               <div className="flex_mega_menu">
                 <div className=" ">
@@ -905,7 +905,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:border-[#00dfb8]">
+          <MenuItem className="flex items-center gap-4 py-2 px-2 mega_menu_txt border-b border-[#80808054] last:border-b-0 hover:bg-[#c6fff0]">
             <Link href="/hire-blockchain-developer/">
               <div className="flex_mega_menu">
                 <div className="basis-1/6">
