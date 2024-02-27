@@ -2,9 +2,9 @@ import React from "react";
 
 const DevOpsShipFaster = () => {
   return (
-    <div className="slg:mt-[5%] lg:mt-[5%] xl:-mt-[4%] mt-[30px] md:mt-[10px] mx-auto w-[90%]">
+    <div className="slg:mt-[5%] lg:mt-[5%] xl:-mt-[4%] 2xl:-mt-[10%] mt-[30px] md:mt-[10px] mx-auto w-[90%]">
       <div className='bg-[url("/images/section-bg.svg")] bg-cover bg-no-repeat rounded-[38px] xl:p-14 py-8'>
-        <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8">
+        <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]">
           Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for
           Modern Businesses
         </h2>
