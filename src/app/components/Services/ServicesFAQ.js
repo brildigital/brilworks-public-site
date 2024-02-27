@@ -58,6 +58,38 @@ const ServicesFAQ = () => {
         "Yes, our AI/ML solutions are designed to be adaptable to various industries, including finance, healthcare, media & entertainment, retail & e-commerce, education, logistics, and marketing, among others.",
     },
   ];
+
+  const DevOpsFAQData = [
+    {
+      question:
+        "1. What is DevOps consulting, and how can it benefit my business?",
+      answer:
+        "DevOps consulting helps bridge the gap between development and operations teams. Our experts implement automation, collaboration tools, and cultural changes to optimize your release cycles, improve software quality, and boost innovation. This translates to faster time to market, reduced costs, and happier customers.",
+    },
+    {
+      question:
+        "2. I'm already using some DevOps tools. Do I still need consulting?",
+      answer:
+        "Absolutely! While tools can automate tasks, successful DevOps requires a holistic approach which includes processes, people, and culture. Our consultants don't just recommend tools; they analyze your existing setup, identify bottlenecks, and design a customized DevOps strategy that integrates seamlessly with your workflow and maximizes the value of your existing tools.",
+    },
+    {
+      question: "3. What types of DevOps engagements do you offer?",
+      answer:
+        "We offer a range of flexible engagements to cater to your specific needs. We can provide short-term assessments and recommendations, ongoing DevOps coaching and support, or full-fledged implementation of your DevOps strategy. We also specialize in cloud migration, continuous integration/continuous delivery (CI/CD) pipelines, and containerization technologies like Docker and Kubernetes.",
+    },
+    {
+      question: "4. How much does your DevOps consulting cost?",
+      answer:
+        "The cost of our services depends on the scope and complexity of your project. We offer transparent pricing models based on hourly rates, fixed-price engagements, or hybrid approaches. We'll work with you to understand your budget and tailor a solution that delivers maximum value within your constraints.",
+    },
+    {
+      question:
+        "5. How can I be sure your DevOps consulting will be successful?",
+      answer:
+        "We have a proven track record of helping businesses achieve their DevOps goals. We leverage our extensive experience, industry best practices, and agile methodologies to ensure successful project outcomes. We also collaborate closely with you throughout the engagement, ensuring complete transparency and alignment with your expectations.",
+    },
+  ];
+
   const DigitalExperienceFAQData = [
     {
       question:
@@ -78,33 +110,9 @@ const ServicesFAQ = () => {
     },
   ];
 
-  const fintechFAQData = [
-    {
-      question: "What is FinTech?",
-      answer:
-        "Fintech is short for financial technology. It is a term used to describe the application, design, and development of new financial technology products. Fintech helps not just in terms of business applications but also includes software for accounting, payments, payroll, and asset management.",
-    },
-    {
-      question: "What does a fintech software developer do?",
-      answer:
-        "Fintech software developers are the individuals responsible for designing, building, and deploying fintech solutions using various technology stacks. Our expert fintech software developers can help you build cutting-edge fintech solutions with the latest technologies, resources, and strategies to develop software that adapts to change.",
-    },
-    {
-      question: "How long will it take for you to develop my Fintech Software?",
-      answer:
-        "The time taken depends on the complexity of the project. Our skilled team of developers will first create a comprehensive roadmap for your app and tailor it towards your goals and objectives.",
-    },
-    {
-      question:
-        "What are the main advantages of building a fintech software solution?",
-      answer:
-        "Fintech solutions provide the ability to make multi-banking transactions and enhanced functionalities of banking apps. By building such a system, you can automate business tasks and processes and enable secure transactions.",
-    },
-  ];
-
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
-    "/devops-consulting-services/": fintechFAQData,
+    "/devops-consulting-services/": DevOpsFAQData,
     "/digital-experience-services/": DigitalExperienceFAQData,
   };
 

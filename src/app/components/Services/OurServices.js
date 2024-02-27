@@ -67,32 +67,44 @@ const OurServices = () => {
   const DevOpsAccordionData = [
     {
       title: "1. DevOps Implementation",
-      content: "Our DevOps services are designed to guide you through.",
+      content:
+        "At Brilworks, our DevOps services are designed to guide you through a successful transformation, ensuring efficiency and reliability in your software development lifecycle.",
       imageSrc: "/images/devops-concept-software-development.webp",
       imageAlt: "Devops service img",
     },
     {
       title: "2. DevOps Automation",
-      content: "Our DevOps services are designed to guide you through.",
-      imageSrc: "/images/devops-concept-software-development.webp",
-      imageAlt: "Devops service img",
+      content:
+        "Accelerate your testing, deployments, and feedback loops by designing and implementing robust CI/CD pipelines. Our expertise ensures you deliver value to your customers faster than ever before.",
+      imageSrc: "/images/devops-automatic.webp",
+      imageAlt: "Devops Automatic img",
     },
     {
       title: "3. DevOps Services",
-      content: "Our DevOps services are designed to guide you through.",
-      imageSrc: "/images/devops-concept-software-development.webp",
-      imageAlt: "Devops service img",
+      content:
+        "Address your specific challenges, from infrastructure as code to containerization and cloud adoption. Our expert team deploys tailored solutions that drive tangible results for your unique requirements.",
+      imageSrc: "/images/devops-service.webp",
+      imageAlt: "Devops services img",
     },
     {
       title: "4. DevOps Release Management",
-      content: "Our DevOps services are designed to guide you through.",
-      imageSrc: "/images/devops-concept-software-development.webp",
-      imageAlt: "Devops service img",
+      content:
+        "Streamline your release process with automated deployments, rollback plans, and robust testing strategies. We assist you in achieving efficient and reliable releases.",
+      imageSrc: "/images/devops-release-mgmt.webp",
+      imageAlt: "Devops release mgmt img",
     },
     {
       title: "5. Continuous Integration & Delivery (CI/CD)",
-      content: "Our DevOps services are designed to guide you through.",
-      imageSrc: "/images/devops-concept-software-development.webp",
+      content:
+        "Construct a seamless CI/CD pipeline integrating testing, builds, and deployments. Foster a culture of continuous improvement, accelerating your release cycles.",
+      imageSrc: "/images/devops-ci-cd-delivery.webp",
+      imageAlt: "Devops CICD delivery img",
+    },
+    {
+      title: "6. Deployment Services",
+      content:
+        "Eliminate manual deployments and ensure consistent, reliable rollouts across all environments. Gain peace of mind knowing that every release is executed flawlessly with our expert guidance.",
+      imageSrc: "/images/devops-deployment.webp",
       imageAlt: "Devops service img",
     },
   ];
