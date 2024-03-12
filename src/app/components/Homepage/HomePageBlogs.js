@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonfunction";
 import Image from "next/image";
-import { getbloglist } from "../lib/getblog";
+import { getblogData } from "../lib/getblog";
 import { useMediaQuery } from "react-responsive";
 
 const HomePageBlogs = () => {
@@ -14,8 +14,8 @@ const HomePageBlogs = () => {
 
   async function fetchData() {
     try {
-      const blogData = await getbloglist(!isTablet ? 3 : 2);
-      setBlogData(blogData);
+      const blogData = await getblogData(1, !isTablet ? 3 : 2);
+      setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
     }
@@ -45,8 +45,8 @@ const HomePageBlogs = () => {
             >
               <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                 <Image
-                  src={content?.Image?.filename}
-                  alt={content?.Image?.alt}
+                  src={content?.mobile_banner?.filename}
+                  alt={content?.mobile_banner?.alt}
                   className="vc_gitem-zone-img rounded-[20px]"
                   width={550}
                   height={283}

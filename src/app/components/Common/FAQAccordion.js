@@ -11,24 +11,24 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
     open={open === id}
     icon={<Icon id={id} open={open} />}
     className="accordion-item"
-    itemscope="true"
-    itemprop="mainEntity"
+    itemScope="true"
+    itemProp="mainEntity"
     itemtype="https://schema.org/Question"
   >
     <AccordionHeader
       onClick={() => handleOpen(id)}
       className="accordion-button"
     >
-      <h2 itemprop="name">{question}</h2>
+      <h2 itemProp="name">{question}</h2>
     </AccordionHeader>
     <AccordionBody>
       <div
         className="accordion-body"
-        itemscope="true"
-        itemprop="acceptedAnswer"
+        itemScope="true"
+        itemProp="acceptedAnswer"
         itemtype="https://schema.org/Answer"
       >
-        <div itemprop="text">{answer}</div>
+        <div itemProp="text">{answer}</div>
       </div>
     </AccordionBody>
   </Accordion>
