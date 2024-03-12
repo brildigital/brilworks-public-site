@@ -124,7 +124,7 @@ const BrilworksSoftwareReview = () => {
           loopFillGroupWithBlank={true}
           speed={isMobile ? 1000 : 1500}
           loop={false}
-          shouldSwiperUpdate={true}
+          shouldswiperupdate={true}
           pagination={{ clickable: true }}
           breakpoints={{
             1475: {

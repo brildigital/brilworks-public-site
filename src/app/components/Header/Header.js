@@ -316,21 +316,6 @@ const NewHeader = () => {
           <p>SERVICES</p>
         </AccordionHeader>
         <AccordionBody className={open === 3 ? "border-b border-gray-500" : ""}>
-          {/* <Link
-            href="/digital-experience-services/"
-            onClick={() => setOpenNav(false)}
-          >
-            <div className="menu_mob_flex mega-menu-content py-4">
-              <p
-                className={
-                  pathname === "/digital-experience-services/" && "page-active"
-                }
-              >
-                PRODUCT ENGINEERING
-              </p>
-            </div>
-          </Link> */}
-
           <Link
             href="/ai-ml-development-services/"
             onClick={() => setOpenNav(false)}
@@ -346,6 +331,20 @@ const NewHeader = () => {
             </div>
           </Link>
           <Link
+            href="/aws-consulting-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/aws-consulting-services/" && "page-active"
+                }
+              >
+                AWS CONSULTING
+              </p>
+            </div>
+          </Link>
+          <Link
             href="/devops-consulting-services/"
             onClick={() => setOpenNav(false)}
           >
@@ -356,6 +355,20 @@ const NewHeader = () => {
                 }
               >
                 DEVOPS AND CLOUD
+              </p>
+            </div>
+          </Link>
+          <Link
+            href="/digital-experience-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/digital-experience-services/" && "page-active"
+                }
+              >
+                DIGITAL EXPERIENCE
               </p>
             </div>
           </Link>
@@ -475,40 +488,6 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
-          {/* <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link
-              href="/digital-experience-services/"
-              className="flex items-center justify-between gap-2"
-            >
-              <div className="flex_mega_menu w-full justify-between">
-                <p
-                  className={`${
-                    pathname === "/digital-experience-service/"
-                      ? "page-active"
-                      : ""
-                  }`}
-                >
-                  PRODUCT ENGINEERING
-                </p>
-                <div class="-rotate-90">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </Link>
-          </MenuItem> */}
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link href="/ai-ml-development-services/">
               <div className="flex_mega_menu w-full justify-between">
@@ -541,7 +520,39 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/aws-consulting-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/aws-consulting-services/" && "page-active"
+                  }`}
+                >
+                  AWS CONSULTING
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
               href="/devops-consulting-services/"
               className="flex items-center justify-between gap-2"
@@ -573,6 +584,41 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+            <Link
+              href="/digital-experience-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/digital-experience-service/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  DIGITAL EXPERIENCE
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+
           {/* 
           <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
             <Link href="#">

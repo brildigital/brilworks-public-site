@@ -11,6 +11,7 @@ const ContactBlock = () => {
     "/devops-consulting-services/":
       "Transform your development, achieve DevOps success - Get your free Brilworks consultation today!",
     "/digital-experience-services/": "Ready to spark your digital revolution?",
+    "/aws-consulting-services/": "Ready to spark your digital revolution?",
   };
 
   return (

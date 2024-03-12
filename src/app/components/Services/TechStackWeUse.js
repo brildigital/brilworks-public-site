@@ -126,10 +126,6 @@ const TechStackWeUse = () => {
       imageSrc: "/images/git-icon.png",
     },
     {
-      title: "Mercurial",
-      imageSrc: "/images/mercurial.png",
-    },
-    {
       title: "RDS",
       imageSrc: "/images/aws-rds.png",
     },
@@ -139,10 +135,117 @@ const TechStackWeUse = () => {
     },
   ];
 
+  const DigitalExperienceTechStack = [
+    {
+      title: "React",
+      imageSrc: "/images/React-icon.png",
+    },
+    {
+      title: "Angular",
+      imageSrc: "/images/Angular.png",
+    },
+    {
+      title: "Vue.js",
+      imageSrc: "/images/Vue.png",
+    },
+    {
+      title: "Node.js",
+      imageSrc: "/images/Node-logo.png",
+    },
+    {
+      title: "Python",
+      imageSrc: "/images/python-logo.svg",
+    },
+    {
+      title: "Pardot",
+      imageSrc: "/images/pardot-img.png",
+    },
+    {
+      title: "MySQL",
+      imageSrc: "/images/MySql.png",
+    },
+    {
+      title: "PostgreSQL",
+      imageSrc: "/images/postgresql-svgrepo.png",
+    },
+    {
+      title: "MongoDB",
+      imageSrc: "/images/mongodb-svgrepo.png",
+    },
+    {
+      title: "AWS",
+      imageSrc: "/images/aws-tech.webp",
+    },
+    {
+      title: "Azure",
+      imageSrc: "/images/azure-tech.svg",
+    },
+    {
+      title: "Figma",
+      imageSrc: "/images/figma.png",
+    },
+    {
+      title: "Sketch",
+      imageSrc: "/images/sketch-svgrepo.png",
+    },
+    {
+      title: "Adobe XD",
+      imageSrc: "/images/adobe-xd.png",
+    },
+    {
+      title: "Hubspot",
+      imageSrc: "/images/hubspot-svgrepo.png",
+    },
+    {
+      title: "GCS",
+      imageSrc: "/images/gcp-svgrepo-com.png",
+    },
+    {
+      title: "Marketo",
+      imageSrc: "/images/marketo-svgrepo.png",
+    },
+    {
+      title: "Google Analytics",
+      imageSrc: "/images/google-analytics-svgrepo.png",
+    },
+    {
+      title: "Adobe Analytics",
+      imageSrc: "/images/adobe-analytics.png",
+    },
+  ];
+
+  const AWSConsultingTechStack = [
+    {
+      title: "Terraform",
+      imageSrc: "/images/terraform-svgrepo-com.png",
+    },
+    {
+      title: "Jenkins",
+      imageSrc: "/images/jenkins-svgrepo-com.png",
+    },
+    {
+      title: "AWS Security Hub",
+      imageSrc: "/images/aws-security.png",
+    },
+    {
+      title: "AWS CloudFormation",
+      imageSrc: "/images/aws-cloudformation.png",
+    },
+    {
+      title: "Ansible",
+      imageSrc: "/images/Ansible_logo.png",
+    },
+    {
+      title: "CloudWatch",
+      imageSrc: "/images/aws-cloudwatch.png",
+    },
+  ];
+
   const showTechStack = {
     "/ai-ml-development-services/": AIMLTechStack,
     "/devops-consulting-services/": DevOpsTechStack,
-    "/digital-experience-services/": AIMLTechStack,
+    "/digital-experience-services/": DigitalExperienceTechStack,
+    "/aws-consulting-services/": AWSConsultingTechStack,
   };
 
   return (
@@ -154,7 +257,10 @@ const TechStackWeUse = () => {
         <div className="reveal">
           <div
             className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] ${
-              pathname === "/devops-consulting-services/" ? "w-full md:w-4/5" : ""
+              pathname === "/devops-consulting-services/" ||
+              pathname === "/digital-experience-services/"
+                ? "w-full md:w-4/5"
+                : ""
             }`}
           >
             {showTechStack[pathname].map(({ title, imageSrc }, index) => (

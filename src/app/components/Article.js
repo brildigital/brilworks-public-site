@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { memo, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./Homepage/FetchDataSpinner";
-import { getbloglist } from "./lib/getblog";
+import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 
@@ -30,8 +30,8 @@ const Article = ({ blok }) => {
 
   async function fetchData() {
     try {
-      const blogData = await getbloglist(isTablet ? 3 : 4);
-      setBlogData(blogData);
+      const blogData = await getblogData(1, isTablet ? 3 : 4);
+      setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
     }
@@ -586,8 +586,8 @@ const Article = ({ blok }) => {
                           <div className="sec9_img1">
                             <Image
                               className="rounded-[30px]"
-                              src={content?.Image?.filename}
-                              alt={content?.Image?.alt}
+                              src={content?.mobile_banner?.filename}
+                              alt={content?.mobile_banner?.alt}
                               width={550}
                               height={283}
                             />

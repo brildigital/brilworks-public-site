@@ -144,7 +144,7 @@ const SolutionFAQ = () => {
       </div>
 
       <div className="reveal">
-        <div itemscope="true" itemtype="https://schema.org/FAQPage">
+        <div itemScope="true" itemtype="https://schema.org/FAQPage">
           {pathname === "/industry/fintech-software-development/" &&
             fintechFAQData.map(({ question, answer }, index) => (
               <FAQAccordion
