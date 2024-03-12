@@ -15,7 +15,6 @@ const HomePageBlogs = () => {
   async function fetchData() {
     try {
       const blogData = await getblogData(1, !isTablet ? 3 : 2);
-      console.log(blogData.storyData);
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
