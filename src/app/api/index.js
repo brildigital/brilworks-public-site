@@ -38,18 +38,37 @@ export async function createHubSpotContact(payload) {
 }
 
 export async function sendDataToSlack(payload) {
-  const { name, email, phone, message, page, company } = payload;
+  const { name, email, phone, message, company } = payload;
 
   const data = {
     channel: process.env.SLACK_CHANNEL_ID,
-    text: `    Email: ${email || ""} \t
-    Name: ${name || ""} \t
-    Company: ${company || ""} \t
-    Phone: ${phone || ""} \t
-    Message: ${message || ""} \t
-    Website: ${
-      `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace("/", "")}` || ""
-    }`,
+    blocks: [
+      {
+        type: "rich_text",
+        elements: [
+          {
+            type: "rich_text_section",
+            elements: [
+              {
+                type: "text",
+                text: "\nEmail: ",
+              },
+              {
+                type: "link",
+                url: "mailto:" + `${email || ""}`,
+                text: `${email || ""}`,
+              },
+              {
+                type: "text",
+                text: `\nName: ${name || ""}\nCompany: ${
+                  company || ""
+                }\nPhone: ${phone || ""}\nMessage: ${message || ""}`,
+              },
+            ],
+          },
+        ],
+      },
+    ],
   };
   const headers = {
     Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
