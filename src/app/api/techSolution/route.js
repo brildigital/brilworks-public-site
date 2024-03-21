@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createHubSpotContact } from "..";
+import { createHubSpotContact, sendDataToSlack } from "..";
 
 export async function POST(req, res) {
   if (req.method === "POST") {
@@ -7,6 +7,7 @@ export async function POST(req, res) {
 
     try {
       await createHubSpotContact(payload);
+      await sendDataToSlack(payload);
       return NextResponse.json(
         { message: "Form submitted successfully" },
         { status: 200 }
