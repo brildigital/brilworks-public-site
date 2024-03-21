@@ -1,3 +1,6 @@
+import axios from "axios";
+import { NextResponse } from "next/server";
+
 export async function createHubSpotContact(payload) {
   const { name, email, phone, message, page, company } = payload;
 
@@ -31,5 +34,45 @@ export async function createHubSpotContact(payload) {
   } catch (error) {
     console.error("Error submitting form", error);
     return error;
+  }
+}
+
+export async function sendDataToSlack(payload) {
+  const { name, email, phone, message, page, company } = payload;
+
+  const data = {
+    channel: process.env.SLACK_CHANNEL_ID,
+    text: `    Email: ${email || ""} \t
+    Name: ${name || ""} \t
+    Company: ${company || ""} \t
+    Phone: ${phone || ""} \t
+    Message: ${message || ""} \t
+    Website: ${
+      `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace("/", "")}` || ""
+    }`,
+  };
+  const headers = {
+    Authorization: `Bearer ${process.env.SLACK_TOKEN}`,
+    "Content-Type": "application/json; charset=utf-8",
+  };
+
+  try {
+    const response = await axios.post(`${process.env.SLACK_URL}`, data, {
+      headers,
+    });
+    console.log(response);
+    const responseData = response.data;
+    if (!responseData.ok) {
+      console.error(`Error: ${responseData.error}`);
+      return NextResponse.json({ message: responseData.error });
+    } else {
+      return NextResponse.json({ data: responseData }, { status: 200 });
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json(
+      { error: "An error occurred while sending the message to Slack." },
+      { status: 500 }
+    );
   }
 }
