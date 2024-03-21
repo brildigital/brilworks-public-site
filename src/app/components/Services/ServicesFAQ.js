@@ -110,10 +110,29 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const AWSConsultingFAQData = [
+    {
+      question: "1. What is AWS consulting?",
+      answer:
+        "AWS consulting is the process of helping businesses design, build, and manage their workloads on Amazon Web Services (AWS). This can include a variety of services, such as cloud strategy and architecture, cloud migration, application modernization, DevOps, security and compliance, cost optimization, and managed services.",
+    },
+    {
+      question: "2. Why should I use AWS consulting services?",
+      answer:
+        "By leveraging our deep understanding of AWS, we can help you avoid common migration pitfalls and optimize your cloud usage for faster performance, enhanced security, and significant cost savings. We can also streamline your launch process and ensure your infrastructure is configured for maximum efficiency, saving you time and money in the long run.",
+    },
+    {
+      question: "3. How much does AWS consulting cost?",
+      answer:
+        "The cost of AWS consulting services varies depending on the size and scope of your project. However, we offer free consultations so you can get an estimate of the cost before you commit to anything.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
     "/digital-experience-services/": DigitalExperienceFAQData,
+    "/aws-consulting-services/": AWSConsultingFAQData,
   };
 
   return (
@@ -126,7 +145,7 @@ const ServicesFAQ = () => {
 
       <div className="reveal">
         {
-          <div itemscope="true" itemtype="https://schema.org/FAQPage">
+          <div itemScope="true" itemtype="https://schema.org/FAQPage">
             {showDataBasedOnPathname[pathname].map(
               ({ question, answer }, index) => (
                 <FAQAccordion

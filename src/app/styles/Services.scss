@@ -35,7 +35,7 @@
     height: 100px;
   }
   .faq-bottom {
-    h2[itemprop="name"] {
+    h2[itemProp="name"] {
       font-size: 24px;
       line-height: 32px;
     }
@@ -58,7 +58,7 @@
       margin: 0 auto;
     }
     .faq-bottom {
-      h2[itemprop="name"] {
+      h2[itemProp="name"] {
         font-size: 20px;
       }
     }
@@ -90,7 +90,7 @@
       -webkit-text-stroke-width: 1 !important;
     }
     .faq-bottom {
-      h2[itemprop="name"] {
+      h2[itemProp="name"] {
         font-size: 18px;
       }
     }

@@ -120,37 +120,89 @@ const OurServices = () => {
     {
       title: "2. Experience Design & Development",
       content:
-        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
-      imageSrc: "/images/digital-ex-img.webp",
-      imageAlt: "Digital experience img",
+        "Craft seamless and captivating interfaces across web, mobile, and emerging platforms.",
+      imageSrc: "/images/digital-experience-dev.webp",
+      imageAlt: "Experience design dev img",
     },
     {
       title: "3. Content Management & Personalization",
       content:
-        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
-      imageSrc: "/images/digital-ex-img.webp",
-      imageAlt: "Digital experience img",
+        "Deliver dynamic, targeted content that resonates with every individual.",
+      imageSrc: "/images/content-mgmt.webp",
+      imageAlt: "Content Mgmt img",
     },
     {
       title: "4. Marketing Automation & Analytics",
       content:
-        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
-      imageSrc: "/images/digital-ex-img.webp",
-      imageAlt: "Digital experience img",
+        "Streamline your campaigns and measure impact with data-driven insights.",
+      imageSrc: "/images/marketing-automation.webp",
+      imageAlt: "Marketing Automation img",
     },
     {
       title: "5. Commerce & Payment Integration",
       content:
-        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
-      imageSrc: "/images/digital-ex-img.webp",
-      imageAlt: "Digital experience img",
+        "Build frictionless shopping experiences that convert every click.",
+      imageSrc: "/images/e-commerce-payment.webp",
+      imageAlt: "Commerce Payment img",
     },
     {
       title: "6. Integration & API Development",
       content:
-        "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
-      imageSrc: "/images/digital-ex-img.webp",
-      imageAlt: "Digital experience img",
+        "Connect your systems seamlessly for a unified customer journey.",
+      imageSrc: "/images/integartion-api-dev.webp",
+      imageAlt: "Integration API img",
+    },
+  ];
+
+  const AWSConsultingAccordionData = [
+    {
+      title: "1. Expert Guidance",
+      content:
+        "Our team of certified AWS professionals possesses deep technical expertise and industry knowledge, enabling us to tailor solutions that meet your unique needs and objectives.",
+      imageSrc: "/images/expert-guidance.webp",
+      imageAlt: "Expert guidance img",
+    },
+    {
+      title: "2. Cloud Migration & Modernization",
+      content:
+        "Leverage our proven methodologies to seamlessly migrate your on-premises workloads to the cloud, modernize legacy applications, and optimize your existing cloud infrastructure.",
+      imageSrc: "/images/cloud-migration.webp",
+      imageAlt: "Cloud migration img",
+    },
+    {
+      title: "3. Architecture & Design",
+      content:
+        "We craft secure, scalable, and cost-effective architectures that align with your business goals and ensure long-term success on AWS.",
+      imageSrc: "/images/architec-design.webp",
+      imageAlt: "Architect design img",
+    },
+    {
+      title: "4. Development & DevOps",
+      content:
+        "Our skilled developers and DevOps engineers build, deploy, and manage your cloud applications with best practices and automation to streamline operations.",
+      imageSrc: "/images/development-devops.webp",
+      imageAlt: "Development DevOps img",
+    },
+    {
+      title: "5. Security & Compliance",
+      content:
+        "We prioritize your data security and regulatory compliance with robust security solutions and expert guidance on navigating complex compliance requirements.",
+      imageSrc: "/images/security-compliance.webp",
+      imageAlt: "Security compliance img",
+    },
+    {
+      title: "6. Cost Optimization",
+      content:
+        "Achieve optimal cloud spending with our cost optimization strategies, helping you identify and eliminate cost inefficiencies and maximize your ROI.",
+      imageSrc: "/images/cost-optimize.webp",
+      imageAlt: "Cost Optimization img",
+    },
+    {
+      title: "7. Managed Services",
+      content:
+        "Let us handle the ongoing management of your AWS environment, freeing you to focus on your core business while we ensure performance and security.",
+      imageSrc: "/images/managed-services.webp",
+      imageAlt: "Managed Services img",
     },
   ];
 
@@ -158,14 +210,22 @@ const OurServices = () => {
     "/ai-ml-development-services/": AIMLAccordionData,
     "/devops-consulting-services/": DevOpsAccordionData,
     "/digital-experience-services/": DigitalExperienceAccordionData,
+    "/aws-consulting-services/": AWSConsultingAccordionData,
   };
 
   return (
-    <div className="container mx-auto sm:w-[90%] w-[100%] lg:mt-5">
-      <h2 className="md:text-center text-left ml-4 md:py-10 py-6">
-        Our Services
-      </h2>
+    <div
+      className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-5 ${
+        pathname === "/digital-experience-services/" ||
+        pathname === "/aws-consulting-services/"
+          ? "xl:!-mt-[15%]"
+          : ""
+      }`}
+    >
       <div className="px-[15px] md:pb-[52px] pb-10 reveal">
+        <h2 className="md:text-center text-left ml-4 md:py-10 py-6">
+          Our Services
+        </h2>
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

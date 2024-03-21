@@ -99,6 +99,29 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
+  const whyChooseUsAWSConsulting = [
+    {
+      title: "Proven Track Record",
+      description:
+        "We have a successful history of delivering value to businesses of all sizes across diverse industries.",
+    },
+    {
+      title: "Customer-Centric Approach",
+      description:
+        "We prioritize close collaboration and open communication, ensuring your satisfaction every step of the way.",
+    },
+    {
+      title: "Innovation & Expertise",
+      description:
+        "Our team stays ahead of the curve with the latest AWS technologies and best practices, bringing continuous value to your cloud journey.",
+    },
+    {
+      title: "Scalability & Flexibility",
+      description:
+        "We adapt to your evolving needs, readily scaling our services to support your growth and changing priorities.",
+    },
+  ];
+
   return (
     <div
       className={`container mx-auto w-[90%] ${
@@ -109,7 +132,13 @@ const HomepageWhyChooseUs = () => {
         <div className="solutions md:py-8 py-6 flex md:items-center md:justify-center justify-start items-start">
           <h2>Why Choose Us?</h2>
         </div>
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0">
+        <div
+          className={`grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
+            pathname === "/aws-consulting-services/"
+              ? "xl:grid-cols-2 lg:w-2/3 mx-auto"
+              : "xl:grid-cols-3"
+          } `}
+        >
           {(pathname === "/" || pathname === "/ai-ml-development-services/") &&
             whyChooseUscontent.map(({ title, description }, index) => (
               <Card className="shadow-lg shadow-black-500/50" key={index}>
@@ -145,6 +174,18 @@ const HomepageWhyChooseUs = () => {
                 </Card>
               )
             )}
+
+          {pathname === "/aws-consulting-services/" &&
+            whyChooseUsAWSConsulting.map(({ title, description }, index) => (
+              <Card className="shadow-lg shadow-black-500/50" key={index}>
+                <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
+                  {title}
+                </h4>
+                <CardBody className="p-4 why_text lg:w-4/5 ">
+                  {description}
+                </CardBody>
+              </Card>
+            ))}
         </div>
       </div>
     </div>
