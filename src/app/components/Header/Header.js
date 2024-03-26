@@ -372,6 +372,66 @@ const NewHeader = () => {
               </p>
             </div>
           </Link>
+          <Link
+            href="/product-engineering-development-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/product-engineering-development-services/" &&
+                  "page-active"
+                }
+              >
+                PRODUCT ENGINEERING
+              </p>
+            </div>
+          </Link>
+          <Link
+            href="/kubernates-consulting-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/kubernates-consulting-services/" &&
+                  "page-active"
+                }
+              >
+                KUBERNATES CONSULTING
+              </p>
+            </div>
+          </Link>
+          <Link
+            href="/application-development/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/application-development/" && "page-active"
+                }
+              >
+                APPLICATION DEVELOPMENT
+              </p>
+            </div>
+          </Link>
+          <Link
+            href="/product-engineering-development-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/saas-application-development-services/" &&
+                  "page-active"
+                }
+              >
+                SAAS APPLICATION DEVELOPMENT
+              </p>
+            </div>
+          </Link>
+
           {/* <Link href="#" onClick={() => setOpenNav(false)}>
             <div className="menu_mob_flex mega-menu-content py-4">
               <p className={pathname === "#" && "page-active"}>
@@ -584,7 +644,7 @@ const NewHeader = () => {
               </div>
             </Link>
           </MenuItem>
-          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+          <MenuItem className="p-2 mega_menu_txt  border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
               href="/digital-experience-services/"
               className="flex items-center justify-between gap-2"
@@ -592,12 +652,149 @@ const NewHeader = () => {
               <div className="flex_mega_menu w-full justify-between">
                 <p
                   className={`${
-                    pathname === "/digital-experience-service/"
+                    pathname === "/digital-experience-services/"
                       ? "page-active"
                       : ""
                   }`}
                 >
                   DIGITAL EXPERIENCE
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/product-engineering-development-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/product-engineering-development-services/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  PRODUCT ENGINEERING
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/kubernates-consulting-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/kubernates-consulting-services/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  KUBERNATES CONSULTING
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/application-development-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/application-development-services/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  APPLICATION DEVELOPMENT
+                </p>
+                <div class="-rotate-90">
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </MenuItem>
+          <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+            <Link
+              href="/saas-application-development-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/saas-application-development-services/"
+                      ? "page-active"
+                      : ""
+                  }`}
+                >
+                  SAAS APPLICATION DEVELOPMENT
                 </p>
                 <div class="-rotate-90">
                   <svg

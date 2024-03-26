@@ -122,6 +122,149 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
+  const whyChooseUsKubernatesConsulting = [
+    {
+      title: "Transparency and support",
+      description:
+        "We prioritize clear and constant communication throughout the entire process, ensuring you are involved and informed in every step. ",
+    },
+    {
+      title: "Proven track record",
+      description:
+        "We have empowered businesses across several domains with tailored Kubernetes solutions, helping them achieve an average 30% improvement and 40% reduction in downtime.",
+    },
+    {
+      title: "Certified team",
+      description:
+        "As a leading Kubernetes consulting service provider, we house a team of certified experts who hold certification from reputed organizations.",
+    },
+    {
+      title: "Scalable team",
+      description:
+        "Gain the advantage of a flexible team structure that allows Brilworks to adjust resource allocation based on your specific project requirements.",
+    },
+    {
+      title: "Domain Expertise",
+      description:
+        "Our engineers specialize in architecting, deploying, and optimizing Kubernetes solutions tailored to meet the unique needs of our clients across industries.",
+    },
+    {
+      title: "Agile Development",
+      description:
+        "Our agile approach to Kubernetes implementation breaks down projects into smaller, interactive cycles, enabling you to gain value from your investment sooner.",
+    },
+  ];
+
+  const whyChooseUsProductEngineering = [
+    {
+      title: "Expert Team",
+      description:
+        "Skilled engineers with a wealth of experience to every project, ensuring successful product development from concept to launch.",
+    },
+    {
+      title: "Agile Approach",
+      description:
+        "We use a flexible, iterative development process to adapt to your needs and deliver high-quality results quickly.",
+    },
+    {
+      title: "Quality Focus",
+      description:
+        "We are committed to delivering exceptional products. Our rigorous testing processes ensure your product is reliable, bug-free, and exceeds expectations.",
+    },
+    {
+      title: "Scalable Solutions",
+      description:
+        "We build products that can grow with your business. Our solutions are designed to be adaptable and integrate seamlessly with future needs.",
+    },
+    {
+      title: "On-Time Delivery",
+      description:
+        "Our efficient processes and clear communication ensure your project is delivered on time and within budget.",
+    },
+    {
+      title: "Transparent Communication",
+      description:
+        "We believe in open communication throughout the development process. You'll always be informed and involved in every step of the product's journey.",
+    },
+  ];
+
+  const whyChooseUsApplicationDev = [
+    {
+      title: "Experienced Team",
+      description:
+        "Our team of skilled developers possesses a deep understanding of diverse technologies and platforms.",
+    },
+    {
+      title: "Client-Centric Approach",
+      description:
+        "We collaborate closely with you to understand your unique vision and business goals.",
+    },
+    {
+      title: "Scalable Solutions",
+      description:
+        "We build applications that grow with your business, ensuring long-term value.",
+    },
+    {
+      title: "Transparent Communication",
+      description:
+        "We keep you informed throughout the development process, fostering trust and collaboration.",
+    },
+    {
+      title: "Proven Track Record",
+      description:
+        "We have a history of successful project completions, delivering exceptional results for clients across various industries.",
+    },
+    {
+      title: "Competitive Rates",
+      description:
+        "We offer competitive pricing models to fit your budget and project requirements.",
+    },
+  ];
+
+  const whyChooseUsSaasApplicationDev = [
+    {
+      title: "Fast Track Your Idea",
+      description:
+        "We don't just code, we co-create. Our experts refine your vision and propel it through efficient development, all under one roof.",
+    },
+    {
+      title: "UX Obsessed Design",
+      description:
+        "We craft interfaces that captivate users while building fortresses around your data. Your SaaS will be both stunning and secure.",
+    },
+    {
+      title: "Scalable Architecture from Day One",
+      description:
+        "Forget costly overhauls – your application seamlessly adapts to your ever-expanding needs. We design your SaaS to flex with your growth.",
+    },
+    {
+      title: "Future-Proof Tech Stack Expertise",
+      description:
+        "We stay ahead of the curve, leveraging cutting-edge technology to create a future-proof SaaS. Stay competitive with a solution that never goes out of style.",
+    },
+    {
+      title: "Collaborative Development for Success",
+      description:
+        "We're not just developers; we're your partners in success. Clear communication and collaboration ensure your vision becomes a reality.",
+    },
+    {
+      title: "Continuous Innovation for Your SaaS",
+      description:
+        "We offer ongoing support and maintenance, constantly evolving it to meet changing needs and user demands.",
+    },
+  ];
+
+  const showDataBasedOnPathname = {
+    "/ai-ml-development-services/": whyChooseUscontent,
+    "/devops-consulting-services/": whyChooseUsDevOps,
+    "/digital-experience-services/": whyChooseUsDigitalExperience,
+    "/aws-consulting-services/": whyChooseUsAWSConsulting,
+    "/kubernates-consulting-services/": whyChooseUsKubernatesConsulting,
+    "/product-engineering-development-services/": whyChooseUsProductEngineering,
+    "/application-development-services/": whyChooseUsApplicationDev,
+    "/saas-application-development-services/": whyChooseUsSaasApplicationDev,
+  };
+
   return (
     <div
       className={`container mx-auto w-[90%] ${
@@ -130,7 +273,19 @@ const HomepageWhyChooseUs = () => {
     >
       <div className="background !rounded-2xl md:px-8 lg:px-12 md:!pb-8 lg:!pb-12 px-4 pb-4 reveal">
         <div className="solutions md:py-8 py-6 flex md:items-center md:justify-center justify-start items-start">
-          <h2>Why Choose Us?</h2>
+          {pathname === "/application-development-services/" ? (
+            <h2 className="text-center w-2/3">
+              Why Choose Brilworks for your App Development Needs?
+            </h2>
+          ) : (
+            <>
+              {pathname === "/saas-application-development-services/" ? (
+                <h2 className="text-center w-2/3">Here's what sets us apart</h2>
+              ) : (
+                <h2>Why Choose Us?</h2>
+              )}
+            </>
+          )}
         </div>
         <div
           className={`grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
@@ -139,53 +294,29 @@ const HomepageWhyChooseUs = () => {
               : "xl:grid-cols-3"
           } `}
         >
-          {(pathname === "/" || pathname === "/ai-ml-development-services/") &&
-            whyChooseUscontent.map(({ title, description }, index) => (
+          {pathname === "/" &&
+            whyChooseUscontent?.map(({ title, description }, index) => (
               <Card className="shadow-lg shadow-black-500/50" key={index}>
                 <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
                   {title}
                 </h4>
-                <CardBody className="p-4 why_text lg:w-4/5">
+                <CardBody className="p-4 why_text lg:w-11/12">
                   {description}
                 </CardBody>
               </Card>
             ))}
-          {pathname === "/devops-consulting-services/" &&
-            whyChooseUsDevOps.map(({ title, description }, index) => (
+          {showDataBasedOnPathname[pathname]?.map(
+            ({ title, description }, index) => (
               <Card className="shadow-lg shadow-black-500/50" key={index}>
                 <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
                   {title}
                 </h4>
-                <CardBody className="p-4 why_text lg:w-4/5 ">
+                <CardBody className="p-4 why_text lg:w-11/12">
                   {description}
                 </CardBody>
               </Card>
-            ))}
-          {pathname === "/digital-experience-services/" &&
-            whyChooseUsDigitalExperience.map(
-              ({ title, description }, index) => (
-                <Card className="shadow-lg shadow-black-500/50" key={index}>
-                  <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
-                    {title}
-                  </h4>
-                  <CardBody className="p-4 why_text lg:w-4/5 ">
-                    {description}
-                  </CardBody>
-                </Card>
-              )
-            )}
-
-          {pathname === "/aws-consulting-services/" &&
-            whyChooseUsAWSConsulting.map(({ title, description }, index) => (
-              <Card className="shadow-lg shadow-black-500/50" key={index}>
-                <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
-                  {title}
-                </h4>
-                <CardBody className="p-4 why_text lg:w-4/5 ">
-                  {description}
-                </CardBody>
-              </Card>
-            ))}
+            )
+          )}
         </div>
       </div>
     </div>
