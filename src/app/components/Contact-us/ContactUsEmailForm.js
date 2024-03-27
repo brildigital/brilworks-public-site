@@ -107,7 +107,7 @@ const ContactUsEmailForm = () => {
         <div className="form-group">
           <p className={isMobile ? "pt-4" : ""}>
             <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
-              Phone Number*
+              Phone Number
             </label>
             <br />
             <span className="wpcf7-form-control-wrap">
@@ -117,7 +117,6 @@ const ContactUsEmailForm = () => {
                 type="number"
                 name="phone"
                 value={formData.phone}
-                required
                 onChange={handleChange}
               />
             </span>

@@ -206,25 +206,220 @@ const OurServices = () => {
     },
   ];
 
+  const KubernatesConsultingAccordionData = [
+    {
+      title: "1. Kubernetes Consultation",
+      content:
+        "Our expert consultants guide you through every stage, from assessing your readiness to optimizing your deployment. We plan a tailored roadmap, whether it's modernizing legacy apps or building scalable cloud-native solutions.",
+      imageSrc: "/images/kubernate-consultation.webp",
+      imageAlt: "Kubernetes consultation img",
+    },
+    {
+      title: "2. Kubernetes Application Development & Migration",
+      content:
+        "Build and deploy containerized applications on Kubernetes with expert guidance. Streamline your development process and optimize delivery for efficiency.",
+      imageSrc: "/images/kubernate-app-dev.webp",
+      imageAlt: "Kubernetes Application img",
+    },
+    {
+      title: "3. DevSecOps - Enabling Security & Compliance",
+      content:
+        "Integrate security and compliance into your DevOps pipeline. Develop secure applications and meet industry regulations with expert assistance, ensuring peace of mind.",
+      imageSrc: "/images/kubernates-devsec.webp",
+      imageAlt: "DevSecOps img",
+    },
+    {
+      title: "4. Kubernetes Professional Support",
+      content:
+        "Get 24/7 support from certified Kubernetes professionals. Keep your clusters running smoothly, troubleshoot issues swiftly, and optimize deployments for peak performance.",
+      imageSrc: "/images/kubernate-professional.webp",
+      imageAlt: "Development DevOps img",
+    },
+    {
+      title: "5. Kubernetes Training",
+      content:
+        "Equip your developers with the knowledge and skills to master Kubernetes. Comprehensive training programs cover all aspects, from fundamental concepts to advanced topics, fostering success with the platform.",
+      imageSrc: "/images/kubernate-training.webp",
+      imageAlt: "Security compliance img",
+    },
+  ];
+
+  const ProductEngineeringAccordionData = [
+    {
+      title: "1. Product Conceptualization and Ideation",
+      content:
+        "Innovation is exciting, but the journey from concept to creation can be complex. We'll partner with you to transform your vision into a clear, actionable plan. We analyze technical feasibility and market trends, ensuring your product is viable and successful in the long run.",
+      imageSrc: "/images/pd-1.webp",
+      imageAlt: "Product Conceptualization img",
+    },
+    {
+      title: "2. Prototype Development",
+      content:
+        "Have a groundbreaking idea for a software product? Don't get stuck in the planning stage. Our rapid prototyping service brings your vision to life – quickly and affordably. We work efficiently to deliver prototypes in a matter of days, not months.",
+      imageSrc: "/images/pd-2.webp",
+      imageAlt: "Prototype Development img",
+    },
+    {
+      title: "3. Product Design and Engineering",
+      content:
+        "We combine user-centric design with robust engineering to create intuitive, scalable, and future-proof software solutions. Our expert designers and engineers collaborate seamlessly to bridge the gap between imagination and innovation.",
+      imageSrc: "/images/pd-3.webp",
+      imageAlt: "Product Design img",
+    },
+    {
+      title: "4. Quality Assurance and Testing",
+      content:
+        "Ship with confidence.  We go beyond functionality testing, ensuring exceptional performance, security, and user experience. Our QA and Testing services meticulously examine your software, identifying and eliminating bugs.",
+      imageSrc: "/images/pd-4.webp",
+      imageAlt: "Quality Assurance img",
+    },
+    {
+      title: "5. Post-Launch Support and Maintenance",
+      content:
+        "Bug fixes, updates, and ongoing optimization - we've got you covered. We keep your software optimized and up-to-date, ensuring peak performance and a seamless user experience.",
+      imageSrc: "/images/pd-5.webp",
+      imageAlt: "Post-Launch Support img",
+    },
+    {
+      title: "6. UI/UX development services",
+      content:
+        "Don't just build software, create unforgettable experiences. Our UI/UX design alchemists transform ideas into intuitive interfaces and captivating user journeys. We stay ahead of design trends, crafting UIs that are not only beautiful but scalable and adaptable.",
+      imageSrc: "/images/pd-6.webp",
+      imageAlt: "UI/UX development img",
+    },
+    {
+      title: "7. Application development services",
+      content:
+        "From concept to creation, we're with you every step of the way. We collaborate closely with you to understand your vision, translate it into a concrete plan, and deliver a final product that exceeds expectations.",
+      imageSrc: "/images/pd-7.webp",
+      imageAlt: "Application development img",
+    },
+  ];
+
+  const SaaSApplicationDevAccordionData = [
+    {
+      title: "1. Idea productization and brand design",
+      content:
+        "We help you refine your concept, develop a compelling brand identity, and create a clear roadmap for your SaaS.",
+      imageSrc: "/images/saas-1.webp",
+      imageAlt: "Idea productization img",
+    },
+    {
+      title: "2. SaaS consulting",
+      content:
+        "Expert guidance throughout your SaaS journey, from initial concept to market launch. We help you define your product strategy, identify market fit, and create a winning business model.",
+      imageSrc: "/images/saas-2.webp",
+      imageAlt: "SaaS consulting img",
+    },
+    {
+      title: "3. SaaS architecture design",
+      content:
+        "We design scalable and secure architectures that can support your growth and ensure a reliable user experience.",
+      imageSrc: "/images/saas-3.webp",
+      imageAlt: "SaaS architecture img",
+    },
+    {
+      title: "4. SaaS application development",
+      content:
+        "Our skilled developers leverage cutting-edge technologies to build high-performing and secure SaaS applications.",
+      imageSrc: "/images/saas-4.webp",
+      imageAlt: "SaaS application dev img",
+    },
+    {
+      title: "5. SaaS Support and maintenance",
+      content:
+        "Bug fixes, updates, and ongoing optimization - we've got you covered. We keep your software optimized and up-to-date, ensuring peak performance and a seamless user experience.",
+      imageSrc: "/images/saas-5.webp",
+      imageAlt: "SaaS Support img",
+    },
+    {
+      title: "6. SaaS Platform migration",
+      content:
+        "We ensure a smooth transition to your new SaaS home. Our team seamlessly migrates your software from on-premise servers or another platform, minimizing downtime and ensuring a successful move to the cloud.",
+      imageSrc: "/images/saas-6.webp",
+      imageAlt: "SaaS Platform migration img",
+    },
+    {
+      title: "7. API development",
+      content:
+        "We connect your software to the world. Our developers build robust APIs that allow your software to communicate with other applications, fostering data exchange and creating a more integrated ecosystem for your business.",
+      imageSrc: "/images/saas-7.webp",
+      imageAlt: "API development img",
+    },
+  ];
+
+  const ApplicationDevAccordionData = [
+    {
+      title: "1. Web application development",
+      content:
+        "Build secure, scalable web apps that streamline your operations and enhance user experiences.",
+      imageSrc: "/images/app-dev-1.webp",
+      imageAlt: "Web dev img",
+    },
+    {
+      title: "2. Mobile Application development",
+      content:
+        "Build secure, scalable web apps that streamline your operations and enhance user experiences.",
+      imageSrc: "/images/app-dev-2.webp",
+      imageAlt: "Mobile Application dev img",
+    },
+    {
+      title: "3. Enterprise application development",
+      content:
+        "Robust enterprise-grade solutions to improve efficiency and collaboration within your organization",
+      imageSrc: "/images/app-dev-3.webp",
+      imageAlt: "Enterprise application dev img",
+    },
+    {
+      title: "4. Saas Platform Migration & Support",
+      content:
+        "Migrate your software smoothly and securely to the cloud with our expert migration services.",
+      imageSrc: "/images/app-dev-4.webp",
+      imageAlt: "Saas application dev img",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLAccordionData,
     "/devops-consulting-services/": DevOpsAccordionData,
     "/digital-experience-services/": DigitalExperienceAccordionData,
     "/aws-consulting-services/": AWSConsultingAccordionData,
+    "/kubernates-consulting-services/": KubernatesConsultingAccordionData,
+    "/product-engineering-development-services/":
+      ProductEngineeringAccordionData,
+    "/application-development-services/": ApplicationDevAccordionData,
+    "/saas-application-development-services/": SaaSApplicationDevAccordionData,
   };
 
   return (
     <div
       className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-5 ${
         pathname === "/digital-experience-services/" ||
-        pathname === "/aws-consulting-services/"
+        pathname === "/aws-consulting-services/" ||
+        pathname === "/kubernates-consulting-services/" ||
+        pathname === "/product-enginnering-development-services/"
           ? "xl:!-mt-[15%]"
           : ""
       }`}
     >
       <div className="px-[15px] md:pb-[52px] pb-10 reveal">
         <h2 className="md:text-center text-left ml-4 md:py-10 py-6">
-          Our Services
+          {pathname === "/kubernates-consulting-services/" ? (
+            "Kubernetes Consulting Services by Brilworks"
+          ) : (
+            <>
+              {pathname === "/product-engineering-development-services/" ||
+              pathname === "/saas-application-development-services/" ? (
+                "Our Product Development Services"
+              ) : (
+                <>
+                  {pathname === "/application-development-services/"
+                    ? "Our offerings"
+                    : "Our Services"}
+                </>
+              )}
+            </>
+          )}
         </h2>
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
