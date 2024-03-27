@@ -241,7 +241,7 @@ const TechStackWeUse = () => {
     },
   ];
 
-  const KubernatesConsultingTechStack = [
+  const KubernetesConsultingTechStack = [
     {
       title: "Kubernetes",
       imageSrc: "/images/kubernetes-seeklogocom.webp",
@@ -281,7 +281,7 @@ const TechStackWeUse = () => {
     "/devops-consulting-services/": DevOpsTechStack,
     "/digital-experience-services/": DigitalExperienceTechStack,
     "/aws-consulting-services/": AWSConsultingTechStack,
-    "/kubernates-consulting-services/": KubernatesConsultingTechStack,
+    "/kubernetes-consulting-services/": KubernetesConsultingTechStack,
   };
 
   return (
@@ -295,7 +295,7 @@ const TechStackWeUse = () => {
             className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] ${
               pathname === "/devops-consulting-services/" ||
               pathname === "/digital-experience-services/" ||
-              pathname === "/kubernates-consulting-services/"
+              pathname === "/kubernetes-consulting-services/"
                 ? "w-full md:w-4/5"
                 : ""
             }`}

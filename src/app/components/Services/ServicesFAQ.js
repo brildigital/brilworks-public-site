@@ -128,7 +128,7 @@ const ServicesFAQ = () => {
     },
   ];
 
-  const KubernatesConsultingFAQData = [
+  const KubernetesConsultingFAQData = [
     {
       question: "1. What is Kubernetes?",
       answer:
@@ -244,15 +244,100 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const GenerativeAIFAQData = [
+    {
+      question: "1. How much does it cost to develop a generative AI solution?",
+      answer:
+        "The cost of generative AI development depends on several factors, like the complexity of the project, the size and expertise of the development team, and the ongoing maintenance needs. However, to give you a ballpark figure, a basic application might range from $50,000 to $150,000, while feature-rich solutions with advanced functionalities can reach $400,000 or more.  We at Brilworks offer free consultations to assess your specific needs and provide a tailored quote.",
+    },
+    {
+      question:
+        "2. Why choose Brilworks for Generative AI development services?",
+      answer: (
+        <>
+          <span>
+            There are many reasons to choose Brilworks for your generative AI
+            project. Here are just a few:
+          </span>
+          <li>
+            We focus on building AI solutions that solve real business problems,
+            not just showcase technology.
+          </li>
+          <li>
+            Our team of experienced AI developers and data scientists have a
+            proven track record of success in diverse industries.
+          </li>
+          <li>
+            We prioritize clear communication and transparency throughout the
+            development process.
+          </li>
+          <li>
+            We offer competitive pricing and flexible engagement models to fit
+            your budget.
+          </li>
+          <li>
+            We are committed to building ethical and responsible AI solutions.
+          </li>
+        </>
+      ),
+    },
+    {
+      question: "3. How much does it cost to develop software?",
+      answer:
+        "The development timeline for a generative AI solution can vary depending on the project's complexity. However, you can expect the process to take anywhere from 3 to 12 months.  This timeframe includes data collection and preparation, model training, testing and refinement, and integration with your existing systems.  We work closely with you to establish realistic timelines and milestones throughout the project.",
+    },
+  ];
+
+  const LowCodeNoCodeFAQData = [
+    {
+      question: "1. What is Low-Code No-Code development?",
+      answer:
+        "Low-Code No-Code development allows you to build applications with minimal coding or no coding at all.",
+    },
+    {
+      question: "2. Is Low-Code No-Code development right for my business?",
+      answer:
+        "Low-Code No-Code is a great fit for businesses of all sizes looking to build custom applications quickly and efficiently.",
+    },
+    {
+      question:
+        "3. What kind of applications can I build with Low-Code No-Code?",
+      answer:
+        "You can build a wide range of applications, from internal tools to customer-facing solutions.",
+    },
+  ];
+
+  const ERPNextFAQData = [
+    {
+      question: "1. How long does it typically take to customize ERPNext?",
+      answer:
+        "The timeline for customization depends on the complexity of your needs. However, we provide realistic estimates during the consultation and keep you informed throughout the process. We also offer agile development methodologies to ensure flexibility and adapt to your changing requirements.",
+    },
+    {
+      question:
+        "2. What if I'm not sure what customizations I need for ERPNext?",
+      answer:
+        "During the consultation, our experienced team will discuss your business processes, challenges, and goals to identify areas where customization can benefit you. Based on our understanding, we'll recommend specific customization options to address your unique needs.",
+    },
+    {
+      question: "3. How much does ERPNext customization cost?",
+      answer:
+        "The cost of customization depends on the complexity of your needs. However, we offer transparent pricing. You can schedule a free consultation to discuss your requirements and we will provide a detailed quote outlining the specific costs associated with your desired customizations. In addition, we offer flexible engagement models to fit your budget, including hourly rates or fixed-price projects.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
     "/digital-experience-services/": DigitalExperienceFAQData,
     "/aws-consulting-services/": AWSConsultingFAQData,
-    "/kubernates-consulting-services/": KubernatesConsultingFAQData,
+    "/kubernetes-consulting-services/": KubernetesConsultingFAQData,
     "/product-engineering-development-services/": ProductEngineeringFAQData,
     "/application-development-services/": ApplicationDevFAQData,
     "/saas-application-development-services/": SaasApplicationDevFAQData,
+    "/generative-ai-development-services/": GenerativeAIFAQData,
+    "/low-code-no-code-development-services/": LowCodeNoCodeFAQData,
+    "/erp-next-development-services/": ERPNextFAQData,
   };
 
   return (

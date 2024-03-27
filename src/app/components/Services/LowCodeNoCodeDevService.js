@@ -19,7 +19,7 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const ProductEngineeringDevService = () => {
+const LowCodeNoCodeDevService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className="services pt-[4rem] mx-auto">
@@ -31,7 +31,7 @@ const ProductEngineeringDevService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/product-engineering-banner.webp`}
+                src={`/images/lowcode-banner.webp`}
                 alt="Product engineering banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
@@ -41,19 +41,19 @@ const ProductEngineeringDevService = () => {
           </div>
           <div className="sec1_txt_position !left-[5%] !top-[10%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
-              Product Engineering & Development Service
+              Low Code No Code Development Services
             </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-7/12">
-              From concept to creation, we partner with you throughout your
-              engineering product development journey. Are you looking for a
-              reliable partner to navigate the complexities of product
-              engineering and development? Our team of experts brings innovative
-              solutions to every stage.
+            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
+              Turn ideas into reality faster than ever before with our
+              no-code/low-code development services.  At Brilworks, we're a
+              leading Low-Code No-Code Development Company, empowering
+              businesses to build custom applications without the need for
+              extensive coding knowledge.
             </p>
             <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">
-                  Get Free Consultation
+                  Schedule a call
                 </p>
               </div>
             </Link>
@@ -75,4 +75,4 @@ const ProductEngineeringDevService = () => {
   );
 };
 
-export default ProductEngineeringDevService;
+export default LowCodeNoCodeDevService;
