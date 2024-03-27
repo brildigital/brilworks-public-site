@@ -96,11 +96,56 @@ const IndustriesWeHelp = () => {
       imageAlt: "travel-icon",
     },
   ];
+  const ProductEngineeringWeHelp = [
+    {
+      title: "Healthcare",
+      imageSrc: "/images/cardio.png",
+      imageAlt: "healthcare-icon",
+    },
+    {
+      title: "Fintech",
+      imageSrc: "/images/fintech-icon.png",
+      imageAlt: "fintech-icon",
+    },
+    {
+      title: "Retail",
+      imageSrc: "/images/retails.png",
+      imageAlt: "retail-icon",
+    },
+    {
+      title: "Media & Entertainment",
+      imageSrc: "/images/entertainment.png",
+      imageAlt: "media-entertainment-icon",
+    },
+    {
+      title: "Logistics",
+      imageSrc: "/images/logistics.png",
+      imageAlt: "logistic-icon",
+    },
+    {
+      title: "Oil & Gas",
+      imageSrc: "/images/shopping.png",
+      imageAlt: "logistic-icon",
+    },
+    {
+      title: "Telecoms",
+      imageSrc: "/images/telecom.png",
+      imageAlt: "telecom-icon",
+    },
+    {
+      title: "Manufaturing",
+      imageSrc: "/images/industry.png",
+      imageAlt: "manufaturing-icon",
+    },
+  ];
 
   const showDataBasedOnPathname = {
     "/devops-consulting-services/": DevopsIndutryWeHelp,
     "/digital-experience-services/": DigitalIndutryWeHelp,
     "/aws-consulting-services/": DigitalIndutryWeHelp,
+    "/kubernates-consulting-services/": DigitalIndutryWeHelp,
+    "/product-engineering-development-services/": ProductEngineeringWeHelp,
+    "/saas-application-development-services/": ProductEngineeringWeHelp,
   };
 
   return (
@@ -113,6 +158,10 @@ const IndustriesWeHelp = () => {
           <div
             className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] w-full ${
               pathname === "/devops-consulting-services/" ? "md:w-1/2" : ""
+            } ${
+              pathname === "/saas-application-development-services/"
+                ? "md:w-4/5"
+                : ""
             }`}
           >
             {showDataBasedOnPathname[pathname].map(

@@ -241,11 +241,47 @@ const TechStackWeUse = () => {
     },
   ];
 
+  const KubernatesConsultingTechStack = [
+    {
+      title: "Kubernetes",
+      imageSrc: "/images/kubernetes-seeklogocom.webp",
+    },
+    {
+      title: "Docker",
+      imageSrc: "/images/docker-svgrepo-com.png",
+    },
+    {
+      title: "AWS",
+      imageSrc: "/images/aws-tech.webp",
+    },
+    {
+      title: "ELK Stack",
+      imageSrc: "/images/elk-stack.png",
+    },
+    {
+      title: "Jenkins",
+      imageSrc: "/images/jenkins-svgrepo-com.png",
+    },
+    {
+      title: "GitLab CI/CD",
+      imageSrc: "/images/machine-learning-tech.png",
+    },
+    {
+      title: "Terraform",
+      imageSrc: "/images/terraform-svgrepo-com.png",
+    },
+    {
+      title: "Amazon (ECR)",
+      imageSrc: "/images/ecr.png",
+    },
+  ];
+
   const showTechStack = {
     "/ai-ml-development-services/": AIMLTechStack,
     "/devops-consulting-services/": DevOpsTechStack,
     "/digital-experience-services/": DigitalExperienceTechStack,
     "/aws-consulting-services/": AWSConsultingTechStack,
+    "/kubernates-consulting-services/": KubernatesConsultingTechStack,
   };
 
   return (
@@ -258,7 +294,8 @@ const TechStackWeUse = () => {
           <div
             className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] ${
               pathname === "/devops-consulting-services/" ||
-              pathname === "/digital-experience-services/"
+              pathname === "/digital-experience-services/" ||
+              pathname === "/kubernates-consulting-services/"
                 ? "w-full md:w-4/5"
                 : ""
             }`}

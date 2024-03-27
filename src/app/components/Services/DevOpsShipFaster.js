@@ -1,26 +1,65 @@
+"use client";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const DevOpsShipFaster = () => {
+  const pathname = usePathname();
+
+  const devOpsData = {
+    heading:
+      "Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for Modern Businesses",
+    para1:
+      "We're a leading DevOps consulting service company dedicated to building high-performing software delivery pipelines that streamline your workflow, accelerate releases, and empower your teams.",
+    para2:
+      " Our expert consultants work alongside your team to identify your unique challenges and design a pipeline tailored to address your unique needs. We leverage the latest tools and cutting-edge technologies, from GitLab CI/CD to containerization solutions, to create a system that aligns perfectly with your specific needs.",
+  };
+  const productEngineeringData = {
+    heading:
+      "Build High-Performance Products with Our Product Engineering Services",
+    para1:
+      "  We combine cutting-edge technology with a deep understanding of user needs to deliver exceptional solutions that push boundaries and leave a lasting impression. Let's craft an innovative product that stands out in a crowded marketplace.",
+  };
+
+  const saasApplicationDevData = {
+    heading: "Your Trusted Partner for Next-Gen SaaS Development",
+    para1:
+      "At Briworks, we’re a team of award-winning SaaS architect and developers with proven track record of building secure, scalable, and user-centric cloud applications.",
+    para2:
+      "We leverage the latest technology and industry best practices to deliver future proof  solutions that optimize your operations, drive growth, and captivate users. Partner with us and experience the difference - expertise, agility, and dedication to your success.",
+  };
+
+  const applicationDevData = {
+    heading: "Your Innovation Partner in Cutting-Edge Development",
+    para1:
+      "We're more than just developers. Our team of elite engineers and strategists become an extension of yours, collaborating to develop groundbreaking solutions on any platform.",
+    para2:
+      "Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch.",
+  };
+
+  const showDataBasedOnPathname = {
+    "/devops-consulting-services/": devOpsData,
+    "/product-engineering-development-services/": productEngineeringData,
+    "/saas-application-development-services/": saasApplicationDevData,
+    "/application-development-services/": applicationDevData,
+  };
+
+  const { heading, para1, para2 } = showDataBasedOnPathname[pathname];
+
   return (
     <div className="slg:mt-[5%] lg:mt-[5%] xl:-mt-[4%] 2xl:-mt-[10%] mt-[30px] md:mt-[10px] mx-auto w-[90%]">
       <div className='bg-[url("/images/section-bg.svg")] bg-cover bg-no-repeat rounded-[38px] xl:p-14 py-8'>
         <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]">
-          Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for
-          Modern Businesses
+          {heading}
         </h2>
         <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
-          We're a leading DevOps consulting service company dedicated to
-          building high-performing software delivery pipelines that streamline
-          your workflow, accelerate releases, and empower your teams.
+          {para1}
         </p>
         <br />
-        <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
-          Our expert consultants work alongside your team to identify your
-          unique challenges and design a pipeline tailored to address your
-          unique needs. We leverage the latest tools and cutting-edge
-          technologies, from GitLab CI/CD to containerization solutions, to
-          create a system that aligns perfectly with your specific needs.
-        </p>
+        {para2 && (
+          <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
+            {para2}
+          </p>
+        )}
       </div>
     </div>
   );
