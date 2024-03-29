@@ -40,6 +40,28 @@
       line-height: 32px;
     }
   }
+  @media screen and (max-width: 1536px) {
+    .sec1_txt_position {
+      h1 {
+        font-size: 60px;
+        line-height: 60px;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .sec1_txt_position {
+      h1 {
+        font-size: 48px;
+        line-height: 50px;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
   @media screen and (max-width: 1024px) {
     .sec1_txt_position {
       h1 {

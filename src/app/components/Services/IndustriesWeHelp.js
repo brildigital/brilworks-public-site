@@ -21,7 +21,6 @@ const IndustriesWeHelp = () => {
       imageSrc: "/images/online-education.png",
       imageAlt: "education-icon",
     },
-
     {
       title: "Retail",
       imageSrc: "/images/retails.png",
@@ -139,13 +138,94 @@ const IndustriesWeHelp = () => {
     },
   ];
 
+  const GenerativeAIWeHelp = [
+    {
+      title: "Healthcare",
+      imageSrc: "/images/cardio.png",
+      imageAlt: "healthcare-icon",
+    },
+    {
+      title: "Fintech",
+      imageSrc: "/images/fintech-icon.png",
+      imageAlt: "fintech-icon",
+    },
+    {
+      title: "Restaurant",
+      imageSrc: "/images/food-restaurant.png",
+      imageAlt: "food-icon",
+    },
+    {
+      title: "Ecommerce",
+      imageSrc: "/images/shopping.png",
+      imageAlt: "ecommerce-icon",
+    },
+    {
+      title: "Logistics",
+      imageSrc: "/images/logistics.png",
+      imageAlt: "logistic-icon",
+    },
+    {
+      title: "Social Networking",
+      imageSrc: "/images/social-networking.png",
+      imageAlt: "ecommerce-icon",
+    },
+    {
+      title: "Games & Sports",
+      imageSrc: "/images/game-sports.png",
+      imageAlt: "sports-icon",
+    },
+    {
+      title: "Travel",
+      imageSrc: "/images/travels.png",
+      imageAlt: "travel-icon",
+    },
+    {
+      title: "Aviation",
+      imageSrc: "/images/aviation.png",
+      imageAlt: "travel-icon",
+    },
+    {
+      title: "Real Estate",
+      imageSrc: "/images/find.png",
+      imageAlt: "real-estate-icon",
+    },
+    {
+      title: "Education",
+      imageSrc: "/images/online-education.png",
+      imageAlt: "education-icon",
+    },
+    {
+      title: "On-Demand",
+      imageSrc: "/images/on-demand.png",
+      imageAlt: "education-icon",
+    },
+    {
+      title: "Entertainment",
+      imageSrc: "/images/entertainment.png",
+      imageAlt: "media-entertainment-icon",
+    },
+    {
+      title: "Government",
+      imageSrc: "/images/government.png",
+      imageAlt: "gov-icon",
+    },
+    {
+      title: "Agriculture",
+      imageSrc: "/images/agriculture.png",
+      imageAlt: "agriculture-icon",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/devops-consulting-services/": DevopsIndutryWeHelp,
     "/digital-experience-services/": DigitalIndutryWeHelp,
     "/aws-consulting-services/": DigitalIndutryWeHelp,
-    "/kubernates-consulting-services/": DigitalIndutryWeHelp,
+    "/kubernetes-consulting-services/": DigitalIndutryWeHelp,
     "/product-engineering-development-services/": ProductEngineeringWeHelp,
     "/saas-application-development-services/": ProductEngineeringWeHelp,
+    "/generative-ai-development-services/": GenerativeAIWeHelp,
+    "/low-code-no-code-development-services/": GenerativeAIWeHelp,
+    "/erp-next-development-services/": GenerativeAIWeHelp,
   };
 
   return (

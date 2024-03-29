@@ -19,7 +19,7 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const KubernatesConsultingService = () => {
+const KubernetesConsultingService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className="services pt-[4rem] mx-auto">
@@ -31,8 +31,8 @@ const KubernatesConsultingService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/kubernates-banner.webp`}
-                alt="Kubernates Consulting banner"
+                src={`/images/kubernetes-banner.webp`}
+                alt="Kubernetes Consulting banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
                 priority={true}
@@ -74,4 +74,4 @@ const KubernatesConsultingService = () => {
   );
 };
 
-export default KubernatesConsultingService;
+export default KubernetesConsultingService;
