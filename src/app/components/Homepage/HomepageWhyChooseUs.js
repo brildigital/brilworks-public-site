@@ -122,7 +122,7 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
-  const whyChooseUsKubernatesConsulting = [
+  const whyChooseUsKubernetesConsulting = [
     {
       title: "Transparency and support",
       description:
@@ -254,15 +254,101 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
+  const whyChooseUsGenerativeAI = [
+    {
+      title: "Beyond Automation, Embrace Innovation",
+      description:
+        "We don't just automate tasks; we empower your AI to generate entirely new content, concepts, and ideas. ",
+    },
+    {
+      title: "We Speak Your Language, and AI's",
+      description:
+        "Our team of AI experts bridge the gap between your domain knowledge and the complex world of generative models.",
+    },
+    {
+      title: "Agility at the Core",
+      description:
+        "We stay ahead of the curve, continuously refining our techniques and integrating the latest advancements.  Your project benefits from cutting-edge technology without the learning curve.",
+    },
+    {
+      title: "Scalable AI solutions",
+      description:
+        "The world is constantly evolving, and your AI shouldn't be left behind. Our solutions are built to scale and adapt alongside your business.",
+    },
+    {
+      title: "AI for Everyone",
+      description:
+        "We're not just developers; we're your partners in success. Clear communication and collaboration ensure your vision becomes a reality.",
+    },
+  ];
+  const whyChooseUsLowCodeNoCode = [
+    {
+      title: "Unmatched Expertise",
+      description:
+        "Our team boasts seasoned professionals with deep experience in Low-Code No-Code development.",
+    },
+    {
+      title: "Agility and Speed",
+      description:
+        "Get your applications up and running faster than ever before, with minimal coding requirements.",
+    },
+    {
+      title: "Cost-Effectiveness",
+      description:
+        "Eliminate the high costs associated with traditional software development projects.",
+    },
+    {
+      title: "Scalability and Flexibility",
+      description:
+        "Build applications that adapt and grow alongside your business needs.",
+    },
+    {
+      title: "User-Friendly Platform",
+      description:
+        "Our intuitive platform empowers both technical and non-technical users to create powerful applications.",
+    },
+  ];
+
+  const whyChooseUsERPNextDev = [
+    {
+      title: "Expert Storytellers",
+      description:
+        "We're not just data visualization developers; we're data storytellers. We go beyond creating charts and graphs; we craft compelling narratives that resonate with your audience and drive action.",
+    },
+    {
+      title: "Unmatched Tool Expertise",
+      description:
+        "We are well-versed in industry-leading platforms like Power BI and Tableau, allowing us to tailor solutions that perfectly match your specific needs and data ecosystem.",
+    },
+    {
+      title: "Actionable Insights, Delivered",
+      description:
+        "Our focus is on delivering actionable insights, not just beautiful dashboards. We work closely with you to understand your business goals and translate data into clear, actionable recommendations.",
+    },
+    {
+      title: "Data Visualization with Impact",
+      description:
+        "We don't just develop dashboards; we design them for impact. Our team creates visually stunning and interactive dashboards that are easy to understand and navigate, ensuring maximum user engagement.",
+    },
+    {
+      title: "Agile & Collaborative Approach",
+      description:
+        "We believe in a collaborative approach, working closely with your team throughout the development process to ensure your vision comes to life.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": whyChooseUscontent,
     "/devops-consulting-services/": whyChooseUsDevOps,
     "/digital-experience-services/": whyChooseUsDigitalExperience,
     "/aws-consulting-services/": whyChooseUsAWSConsulting,
-    "/kubernates-consulting-services/": whyChooseUsKubernatesConsulting,
+    "/kubernetes-consulting-services/": whyChooseUsKubernetesConsulting,
     "/product-engineering-development-services/": whyChooseUsProductEngineering,
     "/application-development-services/": whyChooseUsApplicationDev,
     "/saas-application-development-services/": whyChooseUsSaasApplicationDev,
+    "/generative-ai-development-services/": whyChooseUsGenerativeAI,
+    "/low-code-no-code-development-services/": whyChooseUsLowCodeNoCode,
+    "/erp-next-development-services/": whyChooseUsERPNextDev,
   };
 
   return (

@@ -206,40 +206,40 @@ const OurServices = () => {
     },
   ];
 
-  const KubernatesConsultingAccordionData = [
+  const KubernetesConsultingAccordionData = [
     {
       title: "1. Kubernetes Consultation",
       content:
         "Our expert consultants guide you through every stage, from assessing your readiness to optimizing your deployment. We plan a tailored roadmap, whether it's modernizing legacy apps or building scalable cloud-native solutions.",
-      imageSrc: "/images/kubernate-consultation.webp",
+      imageSrc: "/images/kubernetes-consultation.webp",
       imageAlt: "Kubernetes consultation img",
     },
     {
       title: "2. Kubernetes Application Development & Migration",
       content:
         "Build and deploy containerized applications on Kubernetes with expert guidance. Streamline your development process and optimize delivery for efficiency.",
-      imageSrc: "/images/kubernate-app-dev.webp",
+      imageSrc: "/images/kubernetes-app-dev.webp",
       imageAlt: "Kubernetes Application img",
     },
     {
       title: "3. DevSecOps - Enabling Security & Compliance",
       content:
         "Integrate security and compliance into your DevOps pipeline. Develop secure applications and meet industry regulations with expert assistance, ensuring peace of mind.",
-      imageSrc: "/images/kubernates-devsec.webp",
+      imageSrc: "/images/kubernetes-devsec.webp",
       imageAlt: "DevSecOps img",
     },
     {
       title: "4. Kubernetes Professional Support",
       content:
         "Get 24/7 support from certified Kubernetes professionals. Keep your clusters running smoothly, troubleshoot issues swiftly, and optimize deployments for peak performance.",
-      imageSrc: "/images/kubernate-professional.webp",
+      imageSrc: "/images/kubernetes-professional.webp",
       imageAlt: "Development DevOps img",
     },
     {
       title: "5. Kubernetes Training",
       content:
         "Equip your developers with the knowledge and skills to master Kubernetes. Comprehensive training programs cover all aspects, from fundamental concepts to advanced topics, fostering success with the platform.",
-      imageSrc: "/images/kubernate-training.webp",
+      imageSrc: "/images/kubernetes-training.webp",
       imageAlt: "Security compliance img",
     },
   ];
@@ -379,24 +379,155 @@ const OurServices = () => {
     },
   ];
 
+  const GenerativeAIAccordionData = [
+    {
+      title: "1. Generative AI Consulting",
+      content:
+        "Feeling overwhelmed by the possibilities of generative AI? Our team of experts can help. We will guide you through a strategic assesment, identifying areas where generative AI can deliver most significant impact for your business.",
+      imageSrc: "/images/generative-ai-1.webp",
+      imageAlt: "Generative ai img",
+    },
+    {
+      title: "2. Generative AI Model Development",
+      content:
+        "Don't settle for generic solutions.  Our team of engineers and data scientists builds custom generative AI models designed to address your unique challenges.",
+      imageSrc: "/images/generative-ai-2.webp",
+      imageAlt: "Mobile Application dev img",
+    },
+    {
+      title: "3. Generative AI Integration",
+      content:
+        "Get the most out of your AI investment with seamless integration.  Our team takes care of the technical complexities, ensuring your custom generative AI model integrates smoothly into your existing workflows and systems.",
+      imageSrc: "/images/generative-ai-3.webp",
+      imageAlt: "Generative AI Integration img",
+    },
+    {
+      title: "4. Upgrade and maintenance",
+      content:
+        "Your generative AI model is an investment that needs nurturing.  Our team provides ongoing support and maintenance to ensure your model continues to function at peak performance.",
+      imageSrc: "/images/generative-ai-4.webp",
+      imageAlt: "Upgrade and maintenance img",
+    },
+    {
+      title: "5. AI Model fine tuning",
+      content:
+        "As your business evolves, so should your AI model.  Our experts offer AI model fine-tuning services, meticulously adjusting the model to adapt to new data, user feedback, or changing business objectives.",
+      imageSrc: "/images/generative-ai-5.webp",
+      imageAlt: "Saas application dev img",
+    },
+    {
+      title: "6. Generative AI model replication ",
+      content:
+        "Need your groundbreaking AI model in multiple locations or applications?  Our team can handle generative AI model replication, ensuring your custom solution is efficiently deployed across your entire organization. ",
+      imageSrc: "/images/generative-ai-6.webp",
+      imageAlt: "Generative replication img",
+    },
+  ];
+
+  const LowCodeNoCodeAccordionData = [
+    {
+      title: "1. Low-Code App Development",
+      content:
+        "Build powerful applications using intuitive visual interfaces and pre-built components.",
+      imageSrc: "/images/low-code-1.webp",
+      imageAlt: "Web dev img",
+    },
+    {
+      title: "2. No-Code Development",
+      content:
+        "Simplify app creation for business users with drag-and-drop functionality and pre-configured workflows.",
+      imageSrc: "/images/low-code-2.webp",
+      imageAlt: "Mobile Application dev img",
+    },
+    {
+      title: "3. Low-Code No-Code Platform",
+      content:
+        "Leverage our comprehensive platform with everything you need to design, develop, and deploy apps seamlessly.",
+      imageSrc: "/images/low-code-3.webp",
+      imageAlt: "Enterprise application dev img",
+    },
+    {
+      title: "4. Low-Code No-Code Solutions",
+      content:
+        "We craft tailored solutions that address your unique business challenges, from process automation to data management.",
+      imageSrc: "/images/low-code-4.webp",
+      imageAlt: "Saas application dev img",
+    },
+    {
+      title: "5. Low-Code No-Code Software Development Services",
+      content:
+        "Our expert developers can bridge the gap between your vision and reality, using code when necessary.",
+      imageSrc: "/images/low-code-5.webp",
+      imageAlt: "Saas application dev img",
+    },
+  ];
+
+  const ERPNextDevAccordionData = [
+    {
+      title: "1. Custom Module Development",
+      content:
+        "Build functionalities unique to your business processes that go beyond ERPNext's default features.",
+      imageSrc: "/images/erp-next-1.webp",
+      imageAlt: "Custom Module Development img",
+    },
+    {
+      title: "2. Workflow Automation",
+      content:
+        "Streamline complex workflows and eliminate repetitive tasks with custom automation solutions.",
+      imageSrc: "/images/erp-next-2.webp",
+      imageAlt: "Automation img",
+    },
+    {
+      title: "3. Seamless Integrations",
+      content:
+        "Connect ERPNext to your existing CRM, e-commerce platform, or accounting software for a unified data flow.",
+      imageSrc: "/images/erp-next-3.webp",
+      imageAlt: "Seamless Integrations img",
+    },
+    {
+      title: "4. Data Migration & Security",
+      content:
+        "Migrate your data smoothly from legacy systems and implement robust security measures to safeguard your information.",
+      imageSrc: "/images/erp-next-4.webp",
+      imageAlt: "Data Migration img",
+    },
+    {
+      title: "5. Custom Reporting & Dashboards",
+      content:
+        "Gain deeper business insights with custom reports and dashboards tailored to your specific needs.",
+      imageSrc: "/images/erp-next-5.webp",
+      imageAlt: "Custom Reporting img",
+    },
+    {
+      title: "6. Comprehensive Support & Maintenance",
+      content:
+        "Benefit from expert guidance during implementation, ongoing technical support, and regular system maintenance for optimal performance.",
+      imageSrc: "/images/erp-next-6.webp",
+      imageAlt: "Comprehensive Support dev img",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLAccordionData,
     "/devops-consulting-services/": DevOpsAccordionData,
     "/digital-experience-services/": DigitalExperienceAccordionData,
     "/aws-consulting-services/": AWSConsultingAccordionData,
-    "/kubernates-consulting-services/": KubernatesConsultingAccordionData,
+    "/kubernetes-consulting-services/": KubernetesConsultingAccordionData,
     "/product-engineering-development-services/":
       ProductEngineeringAccordionData,
     "/application-development-services/": ApplicationDevAccordionData,
     "/saas-application-development-services/": SaaSApplicationDevAccordionData,
+    "/generative-ai-development-services/": GenerativeAIAccordionData,
+    "/low-code-no-code-development-services/": LowCodeNoCodeAccordionData,
+    "/erp-next-development-services/": ERPNextDevAccordionData,
   };
 
   return (
     <div
-      className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-5 ${
+      className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-10 ${
         pathname === "/digital-experience-services/" ||
         pathname === "/aws-consulting-services/" ||
-        pathname === "/kubernates-consulting-services/" ||
+        pathname === "/kubernetes-consulting-services/" ||
         pathname === "/product-enginnering-development-services/"
           ? "xl:!-mt-[15%]"
           : ""
@@ -404,18 +535,23 @@ const OurServices = () => {
     >
       <div className="px-[15px] md:pb-[52px] pb-10 reveal">
         <h2 className="md:text-center text-left ml-4 md:py-10 py-6">
-          {pathname === "/kubernates-consulting-services/" ? (
+          {pathname === "/kubernetes-consulting-services/" ? (
             "Kubernetes Consulting Services by Brilworks"
           ) : (
             <>
-              {pathname === "/product-engineering-development-services/" ||
-              pathname === "/saas-application-development-services/" ? (
+              {pathname === "/product-engineering-development-services/" ? (
                 "Our Product Development Services"
               ) : (
                 <>
-                  {pathname === "/application-development-services/"
-                    ? "Our offerings"
-                    : "Our Services"}
+                  {pathname === "/application-development-services/" ? (
+                    "Our offerings"
+                  ) : (
+                    <>
+                      {pathname === "/generative-ai-development-services/"
+                        ? "Our Generative AI Development Services"
+                        : "Our Services"}
+                    </>
+                  )}
                 </>
               )}
             </>
