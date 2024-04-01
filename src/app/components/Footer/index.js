@@ -158,7 +158,10 @@ const Footer = () => {
                     </div>
                     <ul className="footer_link">
                       <li>
-                        <a href="tel:919313644148">+91 9313644148</a>
+                        For career:{" "}
+                        <a href="tel:919313644148">+91 91068 10920</a>
+                        <br />
+                        For sales: <a href="tel:919313644148">+91 9313644148</a>
                       </li>
                     </ul>
                   </div>

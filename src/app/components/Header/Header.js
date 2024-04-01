@@ -461,7 +461,7 @@ const NewHeader = () => {
                   "page-active"
                 }
               >
-                LOW CODE NO CODE DEVELOPMENT
+                LOW-CODE NO-CODE DEVELOPMENT
               </p>
             </div>
           </Link>
@@ -864,7 +864,7 @@ const NewHeader = () => {
                     "page-active"
                   }`}
                 >
-                  LOW CODE NO CODE DEVELOPMENT
+                  LOW-CODE NO-CODE DEVELOPMENT
                 </p>
               </div>
             </Link>
