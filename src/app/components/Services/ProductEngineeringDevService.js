@@ -50,7 +50,7 @@ const ProductEngineeringDevService = () => {
               engineering and development? Our team of experts brings innovative
               solutions to every stage.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">
                   Get Free Consultation

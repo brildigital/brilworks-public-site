@@ -49,7 +49,7 @@ const GenerativeAIDevService = () => {
               passionate experts who craft bespoke AI applications tailored to
               your unique needs.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">Let's Build</p>
               </div>

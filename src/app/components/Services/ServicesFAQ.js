@@ -326,6 +326,83 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const BusinessIntelligenceFAQData = [
+    {
+      question: "1. How can your BI services benefit my business?",
+      answer: (
+        <>
+          Our business intelligence (BI) services can benefit your business in
+          several ways, including:
+          <div>
+            <span className="font-bold">Improved decision-making:&nbsp;</span>By
+            providing real-time insights into your data, BI allows you to make
+            data-driven decisions that are more likely to lead to success.
+          </div>
+          <div>
+            <span className="font-bold">
+              Increased efficiency and productivity:&nbsp;
+            </span>
+            BI can help you identify areas for optimization and streamline
+            processes, leading to a more efficient and productive workforce.
+          </div>
+          <div>
+            <span className="font-bold">
+              Enhanced customer satisfaction:&nbsp;
+            </span>
+            BI can help you gain a deeper understanding of your customers and
+            their needs, enabling you to tailor your products and services for
+            better satisfaction.
+          </div>
+          <div>
+            <span className="font-bold">Reduced costs:&nbsp;</span>BI can help
+            you identify areas for cost savings and improve your return on
+            investment (ROI).
+          </div>
+          <div>
+            <span className="font-bold">Competitive advantage:&nbsp;</span>By
+            leveraging the power of data analytics, you can gain a strategic
+            edge over your competition.
+          </div>
+        </>
+      ),
+    },
+    {
+      question: "2. Do I need a specific data infrastructure for BI?",
+      answer:
+        "Not necessarily. While a well-defined data warehouse or data lake can be beneficial, many BI solutions can work with existing data sources. We can assess your current infrastructure and propose the best approach for your needs.",
+    },
+    {
+      question: "3. What kind of data can be used for BI?",
+      answer:
+        "Almost any data relevant to your business operations can be used for BI. This includes sales data, customer data, marketing data, financial data, operational data, and more.",
+    },
+    {
+      question: "4. What BI tools do you use?",
+      answer:
+        "We have expertise in a wide range of BI tools, including Power BI, Tableau, Qlik, and others. We will choose the best tool or combination of tools to fit your specific needs and budget.",
+    },
+    {
+      question: "5. How long does it take to implement a BI solution?",
+      answer:
+        "The implementation timeframe varies depending on the scope and complexity of your project. We will work with you to understand your needs and create a realistic timeline.",
+    },
+    {
+      question: "6. Do you offer ongoing support after implementation?",
+      answer:
+        "Yes, we offer ongoing support and maintenance to ensure your BI solution continues to meet your evolving needs. We can provide training to your staff, help you integrate new data sources, and update your dashboards as your business grows.",
+    },
+    {
+      question: "7. What are your fees for BI services?",
+      answer:
+        "Our fees are tailored to your specific project requirements. We offer a variety of engagement models, including fixed-fee projects, hourly rates, and retainer agreements.",
+    },
+    {
+      question: "8. How can I get started with BI?",
+      answer:
+        "Contact us today for a free consultation. We can discuss your business goals and challenges and create a customized BI plan that helps you unlock the power of your data.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -338,6 +415,7 @@ const ServicesFAQ = () => {
     "/generative-ai-development-services/": GenerativeAIFAQData,
     "/low-code-no-code-development-services/": LowCodeNoCodeFAQData,
     "/erp-next-development-services/": ERPNextFAQData,
+    "/business-intelligence-services/": BusinessIntelligenceFAQData,
   };
 
   return (

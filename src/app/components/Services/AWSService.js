@@ -50,7 +50,7 @@ const AWSService = () => {
               cloud? Look no further than our comprehensive suite of AWS
               consulting services, designed to guide you every step of the way.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">
                   Let’s Get Started

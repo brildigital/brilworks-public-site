@@ -49,7 +49,7 @@ const DigitalExperienceService = () => {
               digital experience services combined with intelligent solutions
               and engineering expertise.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">
                   Let’s Get Started

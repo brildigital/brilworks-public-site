@@ -48,7 +48,7 @@ const ApplicationDevelopmentService = () => {
               design, develop, and maintain custom software solutions that drive
               results.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">CONTACT US</p>
               </div>
