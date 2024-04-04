@@ -48,7 +48,7 @@ const SaaSApplicationDevelopmentService = () => {
               for forward-thinking companies. Let us help you achieve your
               design goals with clean, scalable code.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">Get a Quote</p>
               </div>

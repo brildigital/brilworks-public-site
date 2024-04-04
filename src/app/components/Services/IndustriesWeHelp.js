@@ -226,6 +226,7 @@ const IndustriesWeHelp = () => {
     "/generative-ai-development-services/": GenerativeAIWeHelp,
     "/low-code-no-code-development-services/": GenerativeAIWeHelp,
     "/erp-next-development-services/": GenerativeAIWeHelp,
+    "/business-intelligence-services/": GenerativeAIWeHelp,
   };
 
   return (

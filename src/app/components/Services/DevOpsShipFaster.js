@@ -44,6 +44,7 @@ const DevOpsShipFaster = () => {
     "/generative-ai-development-services/": applicationDevData,
     "/erp-next-development-services/": applicationDevData,
     "/low-code-no-code-development-services/": applicationDevData,
+    "/business-intelligence-services/": applicationDevData,
   };
 
   const { heading, para1, para2 } = showDataBasedOnPathname[pathname];

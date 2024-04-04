@@ -5,12 +5,12 @@ import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
 import { useMediaQuery } from "react-responsive";
 import { BestAdvocateText } from "../Homepage/BigText";
+import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
 );
 const OurServices = dynamic(() => import("./OurServices"));
-const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
@@ -19,7 +19,7 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const KubernetesConsultingService = () => {
+const BusinessDevelopmentService = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className="services pt-[4rem] mx-auto">
@@ -31,39 +31,36 @@ const KubernetesConsultingService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/kubernetes-banner.webp`}
-                alt="Kubernetes Consulting banner"
+                src={`/images/business-dev-banner.webp`}
+                alt="Business Intelligence banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
                 priority={true}
               />
             )}
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[15%]">
-            <h1 className="mb-[30px] w-full md:w-1/2">
-              Achieve resilience, scale, and savings
+          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+            <h1 className="mb-[30px] w-full md:w-3/5">
+              Business Intelligence Services
             </h1>
             <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              Boost your DevOps journey with our Kubernetes consulting service.
-              Our experts plan a roadmap to achieve rapid deployments and
-              seamless upgrades with our proven Kubernetes consulting services.
+              We provide a comprehensive suite of business intelligence services
+              to transform your raw data into actionable insights and empower
+              your organization with expert business intelligence (BI) services.
             </p>
             <Link href="/contact-us/">
               <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Let’s Get Started
-                </p>
+                <p className="transition uppercase !text-base">contact us</p>
               </div>
             </Link>
           </div>
         </div>
       </div>
-
+      <DevOpsShipFaster />
       <OurServices />
       <HomepageWhyChooseUs />
       <Honors />
       <ContactBlock />
-      <TechStackWeUse />
       <IndustriesWeHelp />
       <BestAdvocateText />
       <ClientReviews />
@@ -74,4 +71,4 @@ const KubernetesConsultingService = () => {
   );
 };
 
-export default KubernetesConsultingService;
+export default BusinessDevelopmentService;

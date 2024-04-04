@@ -26,6 +26,8 @@ const ContactBlock = () => {
       "Build your dream app - Start your free Low-Code No-Code trial today!",
     "/erp-next-development-services/":
       "Schedule a consultation with our BI development team and discover how we can turn information overload into actionable insights.",
+    "/business-intelligence-services/":
+      "Businesses today are drowning in data. But data itself isn't enough. You need the expertise to extract meaningful insights that drive informed decisions and strategic growth.",
   };
 
   return (
@@ -96,9 +98,16 @@ const ContactBlock = () => {
                                     ) : (
                                       <>
                                         {pathname ===
-                                        "/erp-next-development-services/"
-                                          ? "Talk to us"
-                                          : "Let’s Get Started"}
+                                        "/erp-next-development-services/" ? (
+                                          "Talk to us"
+                                        ) : (
+                                          <>
+                                            {pathname ===
+                                            "/business-intelligence-services/"
+                                              ? "Talk to our expert"
+                                              : "Let’s Get Started"}
+                                          </>
+                                        )}
                                       </>
                                     )}
                                   </>

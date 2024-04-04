@@ -507,6 +507,58 @@ const OurServices = () => {
     },
   ];
 
+  const BusinessIntelligenceAccordionData = [
+    {
+      title: "1. BI Strategy & Roadmap Development",
+      content:
+        "We work collaboratively to define your BI goals, assess your data landscape, and create a customized roadmap for success.",
+      imageSrc: "/images/bi-1.webp",
+      imageAlt: "Custom Module Development img",
+    },
+    {
+      title: "2. Data Lake & Data Warehouse Architecture",
+      content:
+        "We design and implement robust data storage solutions tailored to your specific needs and scalability requirements.",
+      imageSrc: "/images/bi-2.webp",
+      imageAlt: "Automation img",
+    },
+    {
+      title: "3. Advanced Data Integration & Cleansing",
+      content:
+        "Our experts ensure your data is accurate, consistent, and ready for analysis through cutting-edge integration and cleansing techniques.",
+      imageSrc: "/images/bi-3.webp",
+      imageAlt: "Seamless Integrations img",
+    },
+    {
+      title: "4. Self-Service BI & Data Governance",
+      content:
+        "We empower your users with self-service BI tools while establishing robust data governance frameworks for data security and quality.",
+      imageSrc: "/images/bi-4.webp",
+      imageAlt: "Data Migration img",
+    },
+    {
+      title: "5. Custom Analytics Dashboard Development",
+      content:
+        "Our team creates interactive dashboards tailored to your KPIs, providing real-time insights at your fingertips.",
+      imageSrc: "/images/bi-5.webp",
+      imageAlt: "Custom Reporting img",
+    },
+    {
+      title: "6. Predictive Analytics & Machine Learning",
+      content:
+        "We leverage advanced analytics and machine learning to uncover hidden patterns, predict future trends, and optimize business processes.",
+      imageSrc: "/images/bi-6.webp",
+      imageAlt: "Comprehensive Support dev img",
+    },
+    {
+      title: "7. Power BI & Tableau Expertise",
+      content:
+        "Our team is proficient in leading BI platforms like Power BI and Tableau to deliver the best solution for your organization.",
+      imageSrc: "/images/bi-7.webp",
+      imageAlt: "Comprehensive Support dev img",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLAccordionData,
     "/devops-consulting-services/": DevOpsAccordionData,
@@ -520,6 +572,7 @@ const OurServices = () => {
     "/generative-ai-development-services/": GenerativeAIAccordionData,
     "/low-code-no-code-development-services/": LowCodeNoCodeAccordionData,
     "/erp-next-development-services/": ERPNextDevAccordionData,
+    "/business-intelligence-services/": BusinessIntelligenceAccordionData,
   };
 
   return (
@@ -547,9 +600,15 @@ const OurServices = () => {
                     "Our offerings"
                   ) : (
                     <>
-                      {pathname === "/generative-ai-development-services/"
-                        ? "Our Generative AI Development Services"
-                        : "Our Services"}
+                      {pathname === "/generative-ai-development-services/" ? (
+                        "Our Generative AI Development Services"
+                      ) : (
+                        <>
+                          {pathname === "/business-intelligence-services/"
+                            ? "Business Intelligence Services by Brilworks"
+                            : "Our Services"}
+                        </>
+                      )}
                     </>
                   )}
                 </>

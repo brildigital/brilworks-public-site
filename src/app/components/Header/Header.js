@@ -373,6 +373,21 @@ const NewHeader = () => {
             </div>
           </Link>
           <Link
+            href="/business-intelligence-services/"
+            onClick={() => setOpenNav(false)}
+          >
+            <div className="menu_mob_flex mega-menu-content py-4">
+              <p
+                className={
+                  pathname === "/business-intelligence-services/" &&
+                  "page-active"
+                }
+              >
+                BUSINESS INTELLIGENCE
+              </p>
+            </div>
+          </Link>
+          <Link
             href="/erp-next-development-services/"
             onClick={() => setOpenNav(false)}
           >
@@ -418,7 +433,6 @@ const NewHeader = () => {
               </p>
             </div>
           </Link>
-
           <Link
             href="/generative-ai-development-services/"
             onClick={() => setOpenNav(false)}
@@ -816,6 +830,23 @@ const NewHeader = () => {
               </MenuItem>
             </MenuList>
           </Menu>
+          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+            <Link
+              href="/business-intelligence-services/"
+              className="flex items-center justify-between gap-2"
+            >
+              <div className="flex_mega_menu w-full justify-between">
+                <p
+                  className={`${
+                    pathname === "/business-intelligence-services/" &&
+                    "page-active"
+                  }`}
+                >
+                  BUSINESS INTELLIGENCE
+                </p>
+              </div>
+            </Link>
+          </MenuItem>
 
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
@@ -847,11 +878,12 @@ const NewHeader = () => {
                     "page-active"
                   }`}
                 >
-                  GENEARTIVE AI DEVELOPMENT
+                  GENERATIVE AI DEVELOPMENT
                 </p>
               </div>
             </Link>
           </MenuItem>
+
           <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
             <Link
               href="/low-code-no-code-development-services/"

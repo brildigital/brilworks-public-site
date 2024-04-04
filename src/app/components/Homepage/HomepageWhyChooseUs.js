@@ -337,6 +337,29 @@ const HomepageWhyChooseUs = () => {
     },
   ];
 
+  const whyChooseUsBusinessIntelligence = [
+    {
+      title: "Advanced Analytics",
+      description:
+        "We go beyond basic reporting, employing machine learning and artificial intelligence (AI) to uncover hidden patterns and predict future trends.",
+    },
+    {
+      title: "Stay Ahead of the Curve",
+      description:
+        "Our team constantly explores and implements the latest BI tools and technologies to ensure you have a future-proof solution.",
+    },
+    {
+      title: "Real-Time Analytics",
+      description:
+        "Leverage the power of in-memory computing and real-time data pipelines for instant insights that fuel faster decision-making.",
+    },
+    {
+      title: "Exceptional User Experiences",
+      description:
+        "Our data visualization experts create intuitive and interactive dashboards that bring your data to life for users of all technical abilities.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": whyChooseUscontent,
     "/devops-consulting-services/": whyChooseUsDevOps,
@@ -349,6 +372,7 @@ const HomepageWhyChooseUs = () => {
     "/generative-ai-development-services/": whyChooseUsGenerativeAI,
     "/low-code-no-code-development-services/": whyChooseUsLowCodeNoCode,
     "/erp-next-development-services/": whyChooseUsERPNextDev,
+    "/business-intelligence-services/": whyChooseUsBusinessIntelligence,
   };
 
   return (
@@ -375,7 +399,8 @@ const HomepageWhyChooseUs = () => {
         </div>
         <div
           className={`grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
-            pathname === "/aws-consulting-services/"
+            pathname === "/aws-consulting-services/" ||
+            pathname === "/business-intelligence-services/"
               ? "xl:grid-cols-2 lg:w-2/3 mx-auto"
               : "xl:grid-cols-3"
           } `}

@@ -49,7 +49,7 @@ const DevOpsService = () => {
               updates faster, test smarter, deploy smoothly, and gain a
               competitive edge.
             </p>
-            <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
+            <Link href="/contact-us/">
               <div className="header_sec1_txt2">
                 <p className="transition uppercase !text-base">
                   Let’s Get Started
