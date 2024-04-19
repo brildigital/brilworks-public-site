@@ -123,7 +123,7 @@ const IndustriesWeHelp = () => {
     },
     {
       title: "Oil & Gas",
-      imageSrc: "/images/shopping.png",
+      imageSrc: "/images/oil-gas.png",
       imageAlt: "logistic-icon",
     },
     {
