@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
-const Kinderland = dynamic(() =>
-  import("../components/PrivacyPolicy/Kinderland")
+const HealthVault = dynamic(() =>
+  import("../components/PrivacyPolicy/HealthVault")
 );
 
 const page = () => {
@@ -12,7 +12,7 @@ const page = () => {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <Kinderland />
+      <HealthVault />
     </>
   );
 };
