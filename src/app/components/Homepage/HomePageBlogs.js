@@ -5,16 +5,35 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonfunction";
 import Image from "next/image";
-import { getblogData } from "../lib/getblog";
+import { getblogDataCategorization } from "../lib/getblog";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
 
 const HomePageBlogs = () => {
   const [blogData, setBlogData] = useState(null);
+  const pathname = usePathname();
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+
+  const blogDataBasedOnPath = {
+    "/aws-consulting-services/": "aws-consulting",
+    "/ai-ml-development-services/": "ai-ml",
+    "/devops-consulting-services/": "devops-consulting",
+    "/erp-next-development-services/": "erp-next",
+    "/application-development-services": "application-development",
+    "/kubernetes-consulting-services/": "kubernetes-consulting",
+    "/generative-ai-development-services/": "generative-ai",
+    "/digital-experience-services/": "digital-experience",
+    "/low-code-no-code-development-services/": "low-code-no-code",
+    "/product-engineering-development-services/":
+      "product-engineering-development",
+    "/saas-application-development-services/": "saas-application-development",
+    "/business-intelligence-services/": "business-intelligence",
+  };
 
   async function fetchData() {
     try {
-      const blogData = await getblogData(1, !isTablet ? 3 : 2);
+      const blogData = await getblogDataCategorization(1, !isTablet ? 3 : 2);
+      // pathname === "/" ? null : blogDataBasedOnPath[pathname]
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);

@@ -11,6 +11,11 @@ import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
+import {
+  blogAuthor,
+  calculateReadingTime,
+  formattedDate,
+} from "./lib/commonfunction";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -27,6 +32,8 @@ const Article = ({ blok }) => {
 
   const blogTableOfContent =
     blok?.content + blok.Content_1 + blok.Content_2 + blok.Content_3 || "";
+
+  const readingTime = calculateReadingTime(blogTableOfContent);
 
   async function fetchData() {
     try {
@@ -140,6 +147,8 @@ const Article = ({ blok }) => {
     return () => clearTimeout(loadingTimeout);
   }, []);
 
+  const author = blogAuthor(blok?.BlogAuthor);
+
   return (
     <div className="md:mt-[8rem] mt-[6rem] blog-main">
       {!blok ? (
@@ -219,25 +228,29 @@ const Article = ({ blok }) => {
                     <img
                       decoding="async"
                       loading="lazy"
-                      src={blok?.author_img?.filename}
+                      src={author?.authorImage || blok?.author_img?.filename}
                       width="20"
                       height="20"
-                      alt={blok?.author_img?.alt}
+                      alt={author?.name || blok?.author_img?.alt}
                       className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
                     />
                     <div className="pl-[10px] font-graphik">
                       <Link
                         className="md:text-[20px] text-base font-bold"
-                        href={`${blok?.author_linkedIn?.url}`}
-                        title={`Posts by ${blok?.author}`}
+                        href={
+                          author?.authorLinkedIn || blok?.author_linkedIn?.url
+                        }
+                        title={`Posts by ${author?.name || blok?.author}`}
                         target="_blank"
                         rel="author external"
                       >
-                        {blok?.author}
+                        {author?.name || blok?.author}
                       </Link>
                       <br />
                       <span className="font-graphik">
-                        {blok?.PublishedDate}
+                        {blok?.Published
+                          ? formattedDate(blok?.Published)
+                          : blok?.PublishedDate}
                       </span>
                     </div>
                   </div>
@@ -251,7 +264,7 @@ const Article = ({ blok }) => {
                           alt="Clock icon"
                         />
                       </span>
-                      {blok?.reading_time_in_minutes} mins read
+                      {readingTime} mins read
                     </div>
                     <div className="flex sxl:items-center items-start font-graphik">
                       <span className="!w-6 !h-6 mr-1">
@@ -262,7 +275,10 @@ const Article = ({ blok }) => {
                           alt="Calendar icon"
                         />
                       </span>
-                      Last updated {blok?.PublishedDate}
+                      Last updated{" "}
+                      {blok?.Published
+                        ? formattedDate(blok?.Published)
+                        : blok?.PublishedDate}
                     </div>
                   </div>
                 </div>
@@ -452,7 +468,7 @@ const Article = ({ blok }) => {
                               </div>
                             )}
                             <Tooltip
-                              blogAuthor={blok?.author}
+                              blogAuthor={author?.name || blok?.author}
                               targetRef={targetRef}
                             />
                           </div>
@@ -464,10 +480,13 @@ const Article = ({ blok }) => {
                                 <img
                                   decoding="async"
                                   loading="lazy"
-                                  src={blok?.author_img?.filename}
+                                  src={
+                                    author?.authorImage ||
+                                    blok?.author_img?.filename
+                                  }
                                   width="96"
                                   height="96"
-                                  alt={blok?.author_img?.alt}
+                                  alt={author?.name || blok?.author_img?.alt}
                                   className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                 />
                               </div>
@@ -475,17 +494,22 @@ const Article = ({ blok }) => {
                             <div className="single-author-bio-text">
                               <h3>
                                 <Link
-                                  href={`${blok?.author_linkedIn?.url}`}
-                                  title={`Visit ${blok?.author} website`}
+                                  href={`${
+                                    author?.authorLinkedIn ||
+                                    blok?.author_linkedIn?.url
+                                  }`}
+                                  title={`Visit ${
+                                    author?.name || blok?.author
+                                  } website`}
                                   className="font-graphik"
                                   target="_blank"
                                   rel="author external"
                                 >
-                                  {blok?.author}
+                                  {author?.name || blok?.author}
                                 </Link>
                               </h3>
                               <p className="text-[18px] font-graphik">
-                                {blok?.author_desc}
+                                {author?.authorDesc || blok?.author_desc}
                               </p>
                             </div>
                           </div>
