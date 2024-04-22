@@ -64,7 +64,7 @@ const BlogContactForm = () => {
       <div
         className={`w-full border ${
           isBlogPage
-            ? "sticky top-[110px] z-[99] !mb-6 overflow-auto lg:max-h-[calc(100vh_-_110px)] blog-get-in-touch"
+            ? "sticky top-[110px] !mb-6 overflow-auto lg:max-h-[calc(100vh_-_110px)] blog-get-in-touch"
             : "border-gray-300"
         } p-4`}
       >
