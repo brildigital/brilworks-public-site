@@ -39,7 +39,7 @@ export async function getblogData(
   if (filter_category) {
     // If filter_category is present, add filter_query to apiParams
     apiParams.filter_query = {
-      category: {
+      Category: {
         in: filter_category,
       },
     };
