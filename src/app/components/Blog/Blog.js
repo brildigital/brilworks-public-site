@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getblogData } from "../lib/getblog";
 import Image from "next/image";
+import { formattedDate } from "../lib/commonfunction";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -290,7 +291,9 @@ const Blog = () => {
 
                     <div className="sec9_txt2 mt-[1.5rem]">
                       <p className="publish_date">
-                        {content?.PublishedDate || "DD MM, YYYY"}
+                        {content.Published
+                          ? formattedDate(content?.Published)
+                          : content.PublishedDate || "DD MM, YYYY"}
                       </p>
                     </div>
                   </div>

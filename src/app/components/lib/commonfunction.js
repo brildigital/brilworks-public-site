@@ -46,3 +46,87 @@ export function Icon({ id, open }) {
     </svg>
   );
 }
+
+export const formattedDate = (dateString) => {
+  const date = new Date(dateString);
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const month = monthNames[date.getMonth()];
+
+  // Get the day
+  const day = date.getDate();
+
+  // Get the year
+  const year = date.getFullYear();
+
+  // Format the date
+  return `${month} ${day}, ${year}`;
+};
+
+export const blogAuthor = (authorName) => {
+  const authorData = [
+    {
+      name: "Hitesh Umaletiya",
+      authorImage:
+        "https://a.storyblok.com/f/219851/150x150/9caa5563dc/hitesh-150x150.jpg",
+      authorLinkedIn: "https://www.linkedin.com/in/hitesh-umaletiya-266a6077/",
+      authorDesc:
+        "Co-founder of Brilworks. As technology futurists, we love helping startups turn their ideas into reality. Our expertise spans startups to SMEs, and we're dedicated to their success.",
+    },
+    {
+      name: "Vikas Singh",
+      authorImage:
+        "https://a.storyblok.com/f/219851/800x800/35b061522a/vikas.jpg",
+      authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
+      authorDesc:
+        "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
+    },
+    {
+      name: "Lavesh Katariya",
+      authorImage:
+        "https://a.storyblok.com/f/219851/150x150/271c9290a8/lavesh-150x150.jpg",
+      authorLinkedIn: "https://www.linkedin.com/in/laveshkatariya/",
+      authorDesc:
+        "With over 8 years of experience in the MERN stack, I specialize in building robust and scalable web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, my passion for clean code and innovative problem-solving ensures high-quality solutions.",
+    },
+    {
+      name: "Colin Shah",
+      authorImage:
+        "https://a.storyblok.com/f/219851/150x150/474bc68c3f/colin-150x150.jpg",
+      authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
+      authorDesc:
+        "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",
+    },
+  ];
+
+  const selectedAuthor = authorData.find(
+    (author) => author?.name === authorName
+  );
+
+  return selectedAuthor;
+};
+
+export const calculateReadingTime = (content) => {
+  // Average reading speed in words per minute (adjust as needed)
+  const wordsPerMinute = 200;
+
+  // Calculate the number of words in the content
+  const wordCount = content.split(/\s+/).length / 2;
+
+  // Calculate the reading time in minutes
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+
+  return readingTime;
+};

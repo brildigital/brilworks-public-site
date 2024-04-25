@@ -5,16 +5,38 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonfunction";
 import Image from "next/image";
-import { getblogData } from "../lib/getblog";
+import { getblogDataCategorization } from "../lib/getblog";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
 
 const HomePageBlogs = () => {
   const [blogData, setBlogData] = useState(null);
+  const pathname = usePathname();
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+
+  const blogDataBasedOnPath = {
+    "/aws-consulting-services/": "aws-consulting",
+    "/ai-ml-development-services/": "ai-ml",
+    "/devops-consulting-services/": "devops-consulting",
+    // "/erp-next-development-services/": "erp-next",
+    "/application-development-services": "application-development",
+    "/kubernetes-consulting-services/": "kubernetes-consulting",
+    "/generative-ai-development-services/": "generative-ai",
+    "/digital-experience-services/": "digital-experience",
+    // "/low-code-no-code-development-services/": "low-code-no-code",
+    "/product-engineering-development-services/":
+      "product-engineering-development",
+    "/saas-application-development-services/": "saas-application-development",
+    // "/business-intelligence-services/": "business-intelligence",
+  };
 
   async function fetchData() {
     try {
-      const blogData = await getblogData(1, !isTablet ? 3 : 2);
+      const blogData = await getblogDataCategorization(
+        1,
+        !isTablet ? 3 : 2,
+        pathname === "/" ? null : blogDataBasedOnPath[pathname]
+      );
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
@@ -38,25 +60,58 @@ const HomePageBlogs = () => {
       <BlogText />
       <div className="container mx-auto w-[90%] blog-home reveal">
         {blogData?.length ? (
-          blogData.map(({ slug, name, content }, index) => (
-            <div
-              key={index}
-              className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-            >
-              <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                <Image
-                  src={content?.mobile_banner?.filename}
-                  alt={content?.mobile_banner?.alt}
-                  className="vc_gitem-zone-img rounded-[20px]"
-                  width={550}
-                  height={283}
-                />
-                <div className="p-[10px]">
-                  <h4 className="xl:text-[24px] mb-[10px] leading-8">{name}</h4>
+          blogData.map(({ slug, name, content }, index) => {
+            if (
+              content &&
+              (content.Priority == 1 ||
+                content.Priority == 2 ||
+                content.Priority == 3)
+            ) {
+              return (
+                <div
+                  key={index}
+                  className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                >
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                    <Image
+                      src={content?.mobile_banner?.filename}
+                      alt={content?.mobile_banner?.alt}
+                      className="vc_gitem-zone-img rounded-[20px]"
+                      width={550}
+                      height={283}
+                    />
+                    <div className="p-[10px]">
+                      <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                        {name}
+                      </h4>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
-            </div>
-          ))
+              );
+            } else {
+              return (
+                <div
+                  key={index}
+                  className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                >
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                    <Image
+                      src={content?.mobile_banner?.filename}
+                      alt={content?.mobile_banner?.alt}
+                      className="vc_gitem-zone-img rounded-[20px]"
+                      width={550}
+                      height={283}
+                    />
+                    <div className="p-[10px]">
+                      <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                        {name}
+                      </h4>
+                    </div>
+                  </Link>
+                </div>
+              );
+            }
+          })
         ) : (
           <div className="flex align-middle justify-center">
             <FetchDataSpinner />

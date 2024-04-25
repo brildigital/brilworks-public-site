@@ -317,16 +317,17 @@ const NewHeader = () => {
         </AccordionHeader>
         <AccordionBody className={open === 3 ? "border-b border-gray-500" : ""}>
           <Link
-            href="/ai-ml-development-services/"
+            href="/business-intelligence-services/"
             onClick={() => setOpenNav(false)}
           >
             <div className="menu_mob_flex mega-menu-content py-4">
               <p
                 className={
-                  pathname === "/ai-ml-development-services/" && "page-active"
+                  pathname === "/business-intelligence-services/" &&
+                  "page-active"
                 }
               >
-                AI/ML
+                BI CONSULTING
               </p>
             </div>
           </Link>
@@ -358,6 +359,7 @@ const NewHeader = () => {
               </p>
             </div>
           </Link>
+
           <Link
             href="/digital-experience-services/"
             onClick={() => setOpenNav(false)}
@@ -373,17 +375,16 @@ const NewHeader = () => {
             </div>
           </Link>
           <Link
-            href="/business-intelligence-services/"
+            href="/ai-ml-development-services/"
             onClick={() => setOpenNav(false)}
           >
             <div className="menu_mob_flex mega-menu-content py-4">
               <p
                 className={
-                  pathname === "/business-intelligence-services/" &&
-                  "page-active"
+                  pathname === "/ai-ml-development-services/" && "page-active"
                 }
               >
-                BUSINESS INTELLIGENCE
+                AI/ML DEVELOPMENT
               </p>
             </div>
           </Link>
@@ -398,7 +399,7 @@ const NewHeader = () => {
                   "page-active"
                 }
               >
-                ERPNEXT DEVELOPMENT
+                ERP NEXT DEVELOPMENT
               </p>
             </div>
           </Link>
@@ -610,22 +611,137 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
-          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link href="/ai-ml-development-services/">
-              <div className="flex_mega_menu w-full justify-between">
-                <div>
-                  <p
-                    className={
-                      pathname === "/ai-ml-development-services/" &&
-                      "page-active"
-                    }
-                  >
-                    AI/ML
-                  </p>
+          <Menu
+            placement="right-start"
+            dismiss={{ itemPress: true, ancestorScroll: true }}
+            allowHover={true}
+            offset={{ mainAxis: 13 }}
+            className="bg-gray"
+          >
+            <MenuHandler>
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p>PRODUCT ENGINEERING</p>
+                    <div class="-rotate-90">
+                      <svg
+                        width="12"
+                        height="8"
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </MenuItem>
+              </MenuItem>
+            </MenuHandler>
+            <MenuList
+              dismissible
+              className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
+            >
+              <MenuItem className="p-2 mega_menu_txt  border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <Link
+                  href="/digital-experience-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname === "/digital-experience-services/"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      DIGITAL EXPERIENCE
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <Link
+                  href="/erp-next-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname === "/erp-next-development-services/" &&
+                        "page-active"
+                      }`}
+                    >
+                      ERP NEXT DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <Link
+                  href="/application-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname === "/application-development-services/"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      APPLICATION DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <Link
+                  href="/saas-application-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname === "/saas-application-development-services/"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      SAAS APPLICATION DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+              <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+                <Link
+                  href="/product-engineering-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname ===
+                        "/product-engineering-development-services/"
+                          ? "page-active"
+                          : ""
+                      }`}
+                    >
+                      PRODUCT ENGINEERING & DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Menu>
 
           <Menu
             placement="right"
@@ -638,7 +754,80 @@ const NewHeader = () => {
               <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex_mega_menu w-full justify-between">
-                    <p>DEVOPS AND CLOUD</p>
+                    <p>AI CONSULTING</p>
+                    <div class="-rotate-90">
+                      <svg
+                        width="12"
+                        height="8"
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </MenuItem>
+            </MenuHandler>
+            <MenuList
+              dismissible
+              className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
+            >
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <Link
+                  href="/ai-ml-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={
+                        pathname === "/ai-ml-development-services/" &&
+                        "page-active"
+                      }
+                    >
+                      AI/ML DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+              <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
+                <Link
+                  href="/generative-ai-development-services/"
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p
+                      className={`${
+                        pathname === "/generative-ai-development-services/" &&
+                        "page-active"
+                      }`}
+                    >
+                      GENERATIVE AI DEVELOPMENT
+                    </p>
+                  </div>
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+
+          <Menu
+            placement="right"
+            dismiss={{ itemPress: true, ancestorScroll: true }}
+            allowHover={true}
+            offset={{ mainAxis: 13 }}
+            className="bg-gray"
+          >
+            <MenuHandler>
+              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex_mega_menu w-full justify-between">
+                    <p>CLOUD CONSULTING</p>
                     <div class="-rotate-90">
                       <svg
                         width="12"
@@ -718,118 +907,6 @@ const NewHeader = () => {
             </MenuList>
           </Menu>
 
-          <Menu
-            placement="right"
-            dismiss={{ itemPress: true, ancestorScroll: true }}
-            allowHover={true}
-            offset={{ mainAxis: 13 }}
-            className="bg-gray"
-          >
-            <MenuHandler>
-              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex_mega_menu w-full justify-between">
-                    <p>PRODUCT ENGINEERING</p>
-                    <div class="-rotate-90">
-                      <svg
-                        width="12"
-                        height="8"
-                        viewBox="0 0 12 8"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M2.00033 0.666016L6.00033 4.66602L10.0003 0.666016L11.3337 1.99935L6.00033 7.33268L0.666992 1.99935L2.00033 0.666016Z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </MenuItem>
-            </MenuHandler>
-            <MenuList
-              dismissible
-              className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
-            >
-              <MenuItem className="p-2 mega_menu_txt  border-b border-[#80808054] hover:bg-[#c6fff0]">
-                <Link
-                  href="/digital-experience-services/"
-                  className="flex items-center justify-between gap-2"
-                >
-                  <div className="flex_mega_menu w-full justify-between">
-                    <p
-                      className={`${
-                        pathname === "/digital-experience-services/"
-                          ? "page-active"
-                          : ""
-                      }`}
-                    >
-                      DIGITAL EXPERIENCE
-                    </p>
-                  </div>
-                </Link>
-              </MenuItem>
-
-              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-                <Link
-                  href="/application-development-services/"
-                  className="flex items-center justify-between gap-2"
-                >
-                  <div className="flex_mega_menu w-full justify-between">
-                    <p
-                      className={`${
-                        pathname === "/application-development-services/"
-                          ? "page-active"
-                          : ""
-                      }`}
-                    >
-                      APPLICATION DEVELOPMENT
-                    </p>
-                  </div>
-                </Link>
-              </MenuItem>
-              <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-                <Link
-                  href="/saas-application-development-services/"
-                  className="flex items-center justify-between gap-2"
-                >
-                  <div className="flex_mega_menu w-full justify-between">
-                    <p
-                      className={`${
-                        pathname === "/saas-application-development-services/"
-                          ? "page-active"
-                          : ""
-                      }`}
-                    >
-                      SAAS APPLICATION DEVELOPMENT
-                    </p>
-                  </div>
-                </Link>
-              </MenuItem>
-              <MenuItem className="p-2 mega_menu_txt hover:bg-[#c6fff0]">
-                <Link
-                  href="/product-engineering-development-services/"
-                  className="flex items-center justify-between gap-2"
-                >
-                  <div className="flex_mega_menu w-full justify-between">
-                    <p
-                      className={`${
-                        pathname ===
-                        "/product-engineering-development-services/"
-                          ? "page-active"
-                          : ""
-                      }`}
-                    >
-                      PRODUCT ENGINEERING & DEVELOPMENT
-                    </p>
-                  </div>
-                </Link>
-              </MenuItem>
-            </MenuList>
-          </Menu>
           <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
             <Link
               href="/business-intelligence-services/"
@@ -842,43 +919,7 @@ const NewHeader = () => {
                     "page-active"
                   }`}
                 >
-                  BUSINESS INTELLIGENCE
-                </p>
-              </div>
-            </Link>
-          </MenuItem>
-
-          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link
-              href="/erp-next-development-services/"
-              className="flex items-center justify-between gap-2"
-            >
-              <div className="flex_mega_menu w-full justify-between">
-                <p
-                  className={`${
-                    pathname === "/erp-next-development-services/" &&
-                    "page-active"
-                  }`}
-                >
-                  ERP NEXT DEVELOPMENT
-                </p>
-              </div>
-            </Link>
-          </MenuItem>
-
-          <MenuItem className="p-2 mega_menu_txt border-b border-[#80808054] hover:bg-[#c6fff0]">
-            <Link
-              href="/generative-ai-development-services/"
-              className="flex items-center justify-between gap-2"
-            >
-              <div className="flex_mega_menu w-full justify-between">
-                <p
-                  className={`${
-                    pathname === "/generative-ai-development-services/" &&
-                    "page-active"
-                  }`}
-                >
-                  GENERATIVE AI DEVELOPMENT
+                  BI CONSULTING
                 </p>
               </div>
             </Link>

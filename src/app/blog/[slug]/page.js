@@ -1,3 +1,4 @@
+import { calculateReadingTime } from "@/app/components/lib/commonfunction";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import { cache } from "react";
@@ -22,6 +23,13 @@ export default async function Page(props) {
   if (!data?.story) {
     return null;
   }
+
+  const totalDataWord =
+    data?.story?.content?.content +
+    data?.story?.content?.Content_1 +
+    data?.story?.content?.Content_2 +
+    data?.story?.content?.Content_3;
+
   return (
     <>
       <head>
@@ -83,7 +91,7 @@ export default async function Page(props) {
         <meta name="twitter:label2" content="Est. reading time"></meta>
         <meta
           name="twitter:data2"
-          content={`${data?.story?.content?.reading_time_in_minutes} minutes`}
+          content={`${calculateReadingTime(totalDataWord)} minutes`}
         ></meta>
       </head>
       <StoryblokStory story={data?.story} />
