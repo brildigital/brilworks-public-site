@@ -611,6 +611,7 @@ const NewHeader = () => {
           dismissible
           className="flex flex-col z-10 rounded-[10px] min-w-[180px] mt-5 py-1 menu-shadow"
         >
+          <MenuItem></MenuItem>
           <Menu
             placement="right-start"
             dismiss={{ itemPress: true, ancestorScroll: true }}
