@@ -3,6 +3,9 @@
     padding-left: 40px !important;
     li {
       list-style: disc !important;
+      &:last-child {
+        margin-bottom: 10px;
+      }
     }
   }
 }
