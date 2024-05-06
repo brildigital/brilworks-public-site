@@ -3504,3 +3504,7 @@ textarea.form-control-txt {
 .position-unset {
   position: unset !important;
 }
+
+.we_are_hiring svg {
+  height: auto;
+}
