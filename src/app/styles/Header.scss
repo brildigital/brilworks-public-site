@@ -56,9 +56,9 @@
     width: 100%;
   }
 }
-.megamenu {
-  p:hover {
-    color: var(--main_menu_hover_color);
-    transition: all 0.4s ease-in-out;
-  }
+.mega-menu-items-group {
+  display: grid;
+  gap: 7rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  flex: 1 1;
 }

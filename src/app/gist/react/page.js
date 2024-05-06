@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const ReactJSTechQandA = dynamic(() =>
-  import("@/app/components/Gist/ReactJSTechQandA")
+  import('@/app/components/Gist/ReactJSTechQandA'),
 );
 
 const page = () => {

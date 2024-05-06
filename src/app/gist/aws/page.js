@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const AWSTechQandA = dynamic(() =>
-  import("@/app/components/Gist/AWSTechQandA")
+  import('@/app/components/Gist/AWSTechQandA'),
 );
 
 const page = () => {
