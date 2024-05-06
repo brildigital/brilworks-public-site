@@ -43,7 +43,7 @@ const ContactUsEmailForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...formData, page: pathname }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -69,7 +69,7 @@ const ContactUsEmailForm = () => {
         <div className="form-group">
           <p className={isMobile ? "pt-4" : ""}>
             <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
-              First &amp; Last Name*
+              First/Last Name*
             </label>
             <br />
             <span className="wpcf7-form-control-wrap">
@@ -88,7 +88,7 @@ const ContactUsEmailForm = () => {
         <div className="form-group">
           <p className={isMobile ? "pt-4" : ""}>
             <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
-              Work Email Address*
+              Business Email Address*
             </label>
             <br />
             <span className="wpcf7-form-control-wrap">
@@ -125,7 +125,7 @@ const ContactUsEmailForm = () => {
         <div className="form-group">
           <p className={isMobile ? "pt-4" : ""}>
             <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
-              Your Message
+              About Your Project
             </label>
             <br />
             <span className="wpcf7-form-control-wrap mt-4">
@@ -154,21 +154,9 @@ const ContactUsEmailForm = () => {
               <Loader />
             </div>
           ) : (
-            <>
-              <div className="formBtn_icon">
-                <p>
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/right_arrow.png"
-                    alt="arrow"
-                  />
-                </p>
-              </div>
-              <p className="send_btn" id="submit" name="btnSubmit">
-                Submit
-              </p>
-            </>
+            <p className="send_btn" id="submit" name="btnSubmit">
+              SUBMIT INQUIRY
+            </p>
           )}
         </button>
       </form>
