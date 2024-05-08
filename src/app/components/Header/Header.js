@@ -23,7 +23,7 @@ const NewHeader = () => {
   return (
     <header>
       <div className="header header-bg-white">
-        <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent">
+        <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold">
           <div className="flex items-center justify-between !text-blue-gray-900 lg:w-[90%] w-[88%] mx-auto">
             <div className="header_logo">
               <Link href="/">
