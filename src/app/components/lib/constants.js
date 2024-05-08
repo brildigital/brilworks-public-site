@@ -122,23 +122,23 @@ const servicesMenuItems = [
       },
     ],
   },
-  {
-    name: 'Integration',
-    subSections: [
-      {
-        name: 'HubSpot',
-        path: '#',
-      },
-      {
-        name: 'Stripe',
-        path: '#',
-      },
-      {
-        name: 'Square',
-        path: '#',
-      },
-    ],
-  },
+  // {
+  //   name: 'Integration',
+  //   subSections: [
+  //     {
+  //       name: 'HubSpot',
+  //       path: '#',
+  //     },
+  //     {
+  //       name: 'Stripe',
+  //       path: '#',
+  //     },
+  //     {
+  //       name: 'Square',
+  //       path: '#',
+  //     },
+  //   ],
+  // },
 ];
 
 const industryMenuItems = [
@@ -146,19 +146,19 @@ const industryMenuItems = [
     name: 'INDUSTRY',
     subSections: [
       {
-        name: 'FINTECH',
+        name: 'Fintech',
         path: '/industry/fintech-software-development/',
       },
       {
-        name: 'MEDIA & ENTERTAINMENT',
+        name: 'Media & Entertainment',
         path: '/industry/media-entertainment-software-development/',
       },
       {
-        name: 'FLEET MANAGEMENT + GPS',
+       name: 'Fleet Management + Gps',
         path: '/industry/fleet-management-software-development/',
       },
       {
-        name: 'HEALTHCARE',
+        name: 'Healthcare',
         path: '/industry/healthcare-software-development/',
       },
     ],
@@ -170,15 +170,15 @@ const hireTeamMenuItems = [
     name: 'Frontend Development',
     subSections: [
       {
-        name: 'REACT.JS',
+        name: 'React.Js',
         path: '/hire-reactjs-developer/',
       },
       {
-        name: 'REACT NATIVE',
+        name: 'React Native',
         path: '/hire-react-native-developer/',
       },
       {
-        name: 'UI/UX DEVELOPMENT',
+        name: 'UI/UX Development',
         path: '/hire-ui-ux-designer/',
       },
     ],
@@ -187,11 +187,11 @@ const hireTeamMenuItems = [
     name: 'Backend Development',
     subSections: [
       {
-        name: 'JAVA',
+        name: 'Java',
         path: '/hire-java-developer/',
       },
       {
-        name: 'NODE.JS',
+        name: 'Node.Js',
         path: '/hire-nodejs-developer/',
       },
     ],
@@ -200,16 +200,16 @@ const hireTeamMenuItems = [
     name: 'Cloud Development',
     subSections: [
       {
-        name: 'AWS DEVELOPMENT',
+        name: 'AWS Development',
         path: '/hire-aws-developer/',
       },
     ],
   },
   {
-    name: 'Emerging Technologies',
+    name: 'EMERGING TECHNOLOGIES',
     subSections: [
       {
-        name: 'BLOCKCHAIN DEVELOPMENT',
+        name: 'Blockchain Development',
         path: '/hire-blockchain-developer/',
       },
     ],
