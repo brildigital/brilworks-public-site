@@ -113,15 +113,15 @@ const servicesMenuItems = [
     subSections: [
       {
         name: "Frappe Development",
-        path: "#",
+        path: "/frappe-development-services/",
       },
       {
         name: "Adalo Development",
-        path: "#",
+        path: "/adalo-development-services/",
       },
       {
         name: "FlutterFlow Development",
-        path: "#",
+        path: "/flutterflow-development-services/",
       },
       {
         name: "Low-code/No-code Development",
@@ -161,7 +161,7 @@ const industryMenuItems = [
         path: "/industry/media-entertainment-software-development/",
       },
       {
-        name: "Fleet Management + Gps",
+        name: "Fleet Management + GPS",
         path: "/industry/fleet-management-software-development/",
       },
       {
@@ -177,7 +177,7 @@ const hireTeamMenuItems = [
     name: "FRONTEND DEVELOPMENT",
     subSections: [
       {
-        name: "React.Js",
+        name: "React.JS",
         path: "/hire-reactjs-developer/",
       },
       {
@@ -202,7 +202,7 @@ const hireTeamMenuItems = [
         path: "/hire-java-developer/",
       },
       {
-        name: "Node.Js",
+        name: "Node.JS",
         path: "/hire-nodejs-developer/",
       },
       {

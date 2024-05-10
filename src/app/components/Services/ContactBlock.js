@@ -28,6 +28,12 @@ const ContactBlock = () => {
       "Schedule a consultation with our BI development team and discover how we can turn information overload into actionable insights.",
     "/business-intelligence-services/":
       "Businesses today are drowning in data. But data itself isn't enough. You need the expertise to extract meaningful insights that drive informed decisions and strategic growth.",
+    "/frappe-development-services/":
+      "Ready to take your business to the next level with our Frappe development services?",
+    "/flutterflow-development-services/":
+      "Ready to Build Your Dream App? Let's discuss how our Flutterflow development expertise can help.",
+    "/adalo-development-services/":
+      "Ready to transform your ideas into reality? Contact us today to discuss your project and take the first step toward success.",
   };
 
   return (
@@ -103,7 +109,9 @@ const ContactBlock = () => {
                                         ) : (
                                           <>
                                             {pathname ===
-                                            "/business-intelligence-services/"
+                                              "/business-intelligence-services/" ||
+                                            pathname ===
+                                              "/frappe-development-services/"
                                               ? "Talk to our expert"
                                               : "Let’s Get Started"}
                                           </>

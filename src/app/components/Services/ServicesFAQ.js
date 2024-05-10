@@ -403,6 +403,108 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const FrappeDevelopmentFAQData = [
+    {
+      question: "1. What is Frappe?",
+      answer:
+        "Frappe is an open-source framework used for rapid application development, particularly for building ERP (Enterprise Resource Planning) systems.",
+    },
+    {
+      question:
+        "2. Can you customize Frappe applications to suit our specific business requirements?",
+      answer:
+        "Yes, we specialize in customizing Frappe application development to align with our clients' businesses' unique needs.",
+    },
+    {
+      question: "3. How do you ensure the security of Frappe applications?",
+      answer:
+        "We follow best practices in software development and employ robust security measures to safeguard our applications against potential threats and vulnerabilities.",
+    },
+    {
+      question:
+        "4. What kind of support do you offer after the development phase?",
+      answer:
+        "We provide continuous support and maintenance services to ensure the smooth functioning of Frappe applications post-development. Our team is round-the-clock and available to address any issues or concerns that may arise.",
+    },
+  ];
+
+  const FlutterFlowFAQData = [
+    {
+      question: "1. What is Flutterflow?",
+      answer:
+        "Flutterflow is a revolutionary tool that empowers businesses to create high-quality mobile and web apps without writing mountains of code.",
+    },
+    {
+      question:
+        "2. What is your engagement model for FlutterFlow development projects?",
+      answer:
+        "We offer flexible engagement models to cater to your specific needs. We can work on a fixed-price basis for well-defined projects, or an hourly rate for ongoing development and maintenance.",
+    },
+    {
+      question:
+        "3. Do you sign Non-Disclosure Agreements (NDAs) to protect our confidential ideas?",
+      answer:
+        "We understand the importance of confidentiality and are happy to sign an NDA before project commencement.",
+    },
+    {
+      question:
+        "4. What kind of support do you offer after the development phase?",
+      answer:
+        "The development timeline depends on the complexity of your app's features and functionalities. However, FlutterFlow's visual development approach often leads to faster development times compared to traditional coding methods. We can provide a more accurate estimate after discussing your project in detail.",
+    },
+    {
+      question: "5. How much does it cost to develop a FlutterFlow app?",
+      answer:
+        "Similar to timelines, the cost of development varies based on project complexity, features, and required resources. We offer competitive rates and can provide a custom quote based on your specific needs.",
+    },
+    {
+      question:
+        "6. What are the advantages of choosing your company for FlutterFlow development?",
+      answer:
+        "Our team consists of experienced FlutterFlow developers who can leverage the platform's capabilities to create high-performing and visually stunning apps. We stay updated with the latest trends and best practices to ensure your app is future-proof.",
+    },
+    {
+      question:
+        "7. Can you integrate complex functionalities or custom code into FlutterFlow apps?",
+      answer:
+        "Yes, our developers are skilled in integrating custom code written in Dart to extend FlutterFlow's functionalities and achieve your desired features.",
+    },
+    {
+      question:
+        "8. Do you offer any post-development support or maintenance services?",
+      answer:
+        "We understand that app development is an ongoing process. We offer comprehensive support plans to ensure your app functions smoothly and receives timely updates as needed.",
+    },
+  ];
+
+  const AdaloFAQData = [
+    {
+      question: "1. What is Adalo?",
+      answer:
+        "Adalo is a no-code platform that allows users to build powerful mobile and web applications without the need for extensive coding knowledge.",
+    },
+    {
+      question: "2. How long does it take to develop an Adalo app?",
+      answer:
+        "The timeline for developing an Adalo app depends on various factors, including the complexity of the project and the specific requirements. We work closely with our clients to establish realistic timelines and ensure timely delivery.",
+    },
+    {
+      question: "3. Do you provide ongoing support for Adalo apps?",
+      answer:
+        "Yes, we offer maintenance and support services to ensure your app remains functional and optimized even after launch. Our team is here to address any issues and implement updates as needed.",
+    },
+    {
+      question: "4. Can you integrate third-party services into Adalo apps?",
+      answer:
+        "We have extensive experience integrating a wide range of third-party services to enhance the functionality of Adalo apps and meet our client's unique needs.",
+    },
+    {
+      question: "5. Do you offer UI/UX design services for Adalo apps?",
+      answer:
+        "Yes, we provide comprehensive UI/UX design services to create visually stunning and user-friendly interfaces for Adalo apps. Our goal is to deliver an exceptional user experience that keeps your audience engaged.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -416,6 +518,9 @@ const ServicesFAQ = () => {
     "/low-code-no-code-development-services/": LowCodeNoCodeFAQData,
     "/erp-next-development-services/": ERPNextFAQData,
     "/business-intelligence-services/": BusinessIntelligenceFAQData,
+    "/frappe-development-services/": FrappeDevelopmentFAQData,
+    "/flutterflow-development-services/": FlutterFlowFAQData,
+    "/adalo-development-services/": AdaloFAQData,
   };
 
   return (
