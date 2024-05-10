@@ -3,9 +3,9 @@ import {
   MenuHandler,
   MenuItem as MaterialMenuItem,
   MenuList,
-} from '@material-tailwind/react';
-import React from 'react';
-import MenuItem from './MenuItem';
+} from "@material-tailwind/react";
+import React from "react";
+import MenuItem from "./MenuItem";
 
 const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
   return (
@@ -60,11 +60,11 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
             }`}
           >
             {menuItems.map((mainSection) => (
-              <div key={mainSection.name} className="flex flex-col gap-6">
-                <span className="font-semibold text-base break-words uppercase">
+              <div key={mainSection.name} className="flex flex-col gap-3">
+                <span className="font-semibold text-base break-words">
                   {mainSection.name}
                 </span>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
                   {mainSection.subSections
                     .filter((subSection) => !subSection.hideInHeader)
                     .map((subSection) => (

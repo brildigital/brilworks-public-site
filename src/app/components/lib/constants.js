@@ -16,109 +16,116 @@ export const notNewTabRedirect = [
 
 const servicesMenuItems = [
   {
-    name: 'Cooperation Model',
+    name: "COOPERATION MODEL",
     subSections: [
       {
-        name: 'Staff Augmentation',
-        path: '/staff-augmentation',
-      },
-    ],
-  },
-
-  {
-    name: 'Artificial Intelligence',
-    subSections: [
-      {
-        name: 'Generative AI',
-        path: '/generative-ai-development-services/',
+        name: "Staff Augmentation",
+        path: "/staff-augmentation",
       },
       {
-        name: 'AI/ML Development',
-        path: '/ai-ml-development-services/',
+        name: "Dedicated Team",
+        path: "#",
+      },
+      {
+        name: "Rapid Digitisation",
+        path: "/digital-experience-services/",
       },
     ],
   },
   {
-    name: 'Product Engineering',
+    name: "ARTIFICIAL INTELLIGENCE",
     subSections: [
       {
-        name: 'Product Engineering & Development',
-        path: '/product-engineering-development-services/',
+        name: "Generative AI",
+        path: "/generative-ai-development-services/",
       },
       {
-        name: 'SaaS Application Development',
-        path: '/saas-application-development-services/',
+        name: "AI/ML Development",
+        path: "/ai-ml-development-services/",
       },
       {
-        name: 'Application Development',
-        path: '/application-development-services/',
-      },
-      {
-        name: 'Digital Experience',
-        path: '/digital-experience-services/',
-      },
-      {
-        name: 'ERP Next Development',
-        path: '/erp-next-development-services/',
+        name: "Gen AI Poc & GenAI MVP",
+        path: "#",
       },
     ],
   },
   {
-    name: 'Data Engineering & Business Intelligence',
+    name: "PRODUCT ENGINEERING",
     subSections: [
       {
-        name: 'Data Pipelining',
-        path: '#',
+        name: "Product Engineering & Development",
+        path: "/product-engineering-development-services/",
       },
       {
-        name: 'Data Analytics',
-        path: '#',
+        name: "SaaS Application Development",
+        path: "/saas-application-development-services/",
       },
       {
-        name: 'Power BI',
-        path: '#',
+        name: "Application Development",
+        path: "/application-development-services/",
       },
+      // {
+      //   name: "ERP Next Development",
+      //   path: "/erp-next-development-services/",
+      // },
       {
-        name: 'BI Consulting',
-        path: '/business-intelligence-services/',
+        name: "App Moderniser",
+        path: "#",
       },
     ],
   },
   {
-    name: 'DevOps & Cloud',
+    name: "DATA & BI",
     subSections: [
       {
-        name: 'AWS Consulting',
-        path: '/aws-consulting-services/',
+        name: "BI Consulting",
+        path: "/business-intelligence-services/",
       },
       {
-        name: 'DevOps Consulting',
-        path: '/devops-consulting-services/',
+        name: "Power BI",
+        path: "#",
       },
       {
-        name: 'Kubernetes Consulting',
-        path: '/kubernetes-consulting-services/',
+        name: "Data Engineering",
+        path: "#",
       },
     ],
   },
   {
-    name: 'Low-code No-code Development',
+    name: "DevOps & Cloud",
     subSections: [
       {
-        name: 'Frappe Development',
-        path: '#',
+        name: "AWS Consulting",
+        path: "/aws-consulting-services/",
       },
       {
-        name: 'Adalo Development',
-        path: '#',
+        name: "DevOps Consulting",
+        path: "/devops-consulting-services/",
       },
       {
-        name: 'FlutterFlow Development',
-        path: '#',
+        name: "Kubernetes Consulting",
+        path: "/kubernetes-consulting-services/",
+      },
+    ],
+  },
+  {
+    name: "LOW-CODE/NO-CODE DEVELOPMENT",
+    subSections: [
+      {
+        name: "Frappe Development",
+        path: "#",
       },
       {
-        name: 'Low-code No-code Development',
-        path: '/low-code-no-code-development-services/',
+        name: "Adalo Development",
+        path: "#",
+      },
+      {
+        name: "FlutterFlow Development",
+        path: "#",
+      },
+      {
+        name: "Low-code/No-code Development",
+        path: "/low-code-no-code-development-services/",
       },
     ],
   },
@@ -143,23 +150,23 @@ const servicesMenuItems = [
 
 const industryMenuItems = [
   {
-    name: 'INDUSTRY',
+    name: "INDUSTRY",
     subSections: [
       {
-        name: 'Fintech',
-        path: '/industry/fintech-software-development/',
+        name: "Fintech",
+        path: "/industry/fintech-software-development/",
       },
       {
-        name: 'Media & Entertainment',
-        path: '/industry/media-entertainment-software-development/',
+        name: "Media & Entertainment",
+        path: "/industry/media-entertainment-software-development/",
       },
       {
-       name: 'Fleet Management + Gps',
-        path: '/industry/fleet-management-software-development/',
+        name: "Fleet Management + Gps",
+        path: "/industry/fleet-management-software-development/",
       },
       {
-        name: 'Healthcare',
-        path: '/industry/healthcare-software-development/',
+        name: "Healthcare",
+        path: "/industry/healthcare-software-development/",
       },
     ],
   },
@@ -167,50 +174,58 @@ const industryMenuItems = [
 
 const hireTeamMenuItems = [
   {
-    name: 'Frontend Development',
+    name: "FRONTEND DEVELOPMENT",
     subSections: [
       {
-        name: 'React.Js',
-        path: '/hire-reactjs-developer/',
+        name: "React.Js",
+        path: "/hire-reactjs-developer/",
       },
       {
-        name: 'React Native',
-        path: '/hire-react-native-developer/',
+        name: "React Native",
+        path: "/hire-react-native-developer/",
       },
       {
-        name: 'UI/UX Development',
-        path: '/hire-ui-ux-designer/',
+        name: "Flutter",
+        path: "#",
+      },
+      {
+        name: "UI/UX Development",
+        path: "/hire-ui-ux-designer/",
       },
     ],
   },
   {
-    name: 'Backend Development',
+    name: "BACKEND DEVELOPMENT",
     subSections: [
       {
-        name: 'Java',
-        path: '/hire-java-developer/',
+        name: "Java",
+        path: "/hire-java-developer/",
       },
       {
-        name: 'Node.Js',
-        path: '/hire-nodejs-developer/',
+        name: "Node.Js",
+        path: "/hire-nodejs-developer/",
       },
-    ],
-  },
-  {
-    name: 'Cloud Development',
-    subSections: [
       {
-        name: 'AWS Development',
-        path: '/hire-aws-developer/',
+        name: "Python",
+        path: "/hire-nodejs-developer/",
       },
     ],
   },
   {
-    name: 'EMERGING TECHNOLOGIES',
+    name: "CLOUD DEVELOPMENT",
     subSections: [
       {
-        name: 'Blockchain Development',
-        path: '/hire-blockchain-developer/',
+        name: "AWS Certified Developers",
+        path: "/hire-aws-developer/",
+      },
+    ],
+  },
+  {
+    name: "EMERGING TECHNOLOGIES",
+    subSections: [
+      {
+        name: "Blockchain Development",
+        path: "/hire-blockchain-developer/",
       },
     ],
   },
@@ -218,53 +233,53 @@ const hireTeamMenuItems = [
 
 export const menuItems = [
   {
-    name: 'OUR WORK',
-    path: '/portfolio/',
+    name: "OUR WORK",
+    path: "/portfolio/",
   },
   {
-    name: 'SERVICES',
-    path: '',
-    heading: '',
+    name: "SERVICES",
+    path: "",
+    heading: "",
     menuItems: servicesMenuItems,
     isMegaMenu: true,
   },
   {
-    name: 'INDUSTRY',
-    path: '',
-    heading: 'All Industries',
+    name: "INDUSTRY",
+    path: "",
+    heading: "All Industries",
     menuItems: industryMenuItems,
     isMegaMenu: true,
   },
   {
-    name: 'HIRE TEAM',
-    path: '',
-    heading: 'Technologies',
+    name: "HIRE TEAM",
+    path: "",
+    heading: "Technologies",
     menuItems: hireTeamMenuItems,
     isMegaMenu: true,
   },
   {
-    name: 'BLOGS',
-    path: '/blog/',
+    name: "BLOGS",
+    path: "/blog/",
     hideInHeader: true,
   },
   {
-    name: 'OUR PROCESS',
-    path: '/our-process/',
+    name: "OUR PROCESS",
+    path: "/our-process/",
     hideInHeader: true,
   },
   {
-    name: 'ABOUT',
-    path: '/about-us/',
+    name: "ABOUT",
+    path: "/about-us/",
     hideInHeader: true,
   },
   {
-    name: 'CAREER',
-    path: '/career/',
+    name: "CAREER",
+    path: "/career/",
     hideInHeader: true,
   },
   {
-    name: 'CONTACT',
-    path: '/contact-us/',
+    name: "CONTACT",
+    path: "/contact-us/",
     hideInHeader: true,
   },
 ];
