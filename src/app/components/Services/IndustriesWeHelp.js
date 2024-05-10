@@ -216,6 +216,39 @@ const IndustriesWeHelp = () => {
     },
   ];
 
+  const FrappeWeHelp = [
+    {
+      title: "Manufaturing",
+      imageSrc: "/images/industry.png",
+      imageAlt: "manufaturing-icon",
+    },
+    {
+      title: "Entertainment",
+      imageSrc: "/images/entertainment.png",
+      imageAlt: "media-entertainment-icon",
+    },
+    {
+      title: "Healthcare",
+      imageSrc: "/images/cardio.png",
+      imageAlt: "healthcare-icon",
+    },
+    {
+      title: "Education",
+      imageSrc: "/images/online-education.png",
+      imageAlt: "education-icon",
+    },
+    {
+      title: "Fintech",
+      imageSrc: "/images/fintech-icon.png",
+      imageAlt: "fintech-icon",
+    },
+    {
+      title: "Ecommerce",
+      imageSrc: "/images/shopping.png",
+      imageAlt: "ecommerce-icon",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/devops-consulting-services/": DevopsIndutryWeHelp,
     "/digital-experience-services/": DigitalIndutryWeHelp,
@@ -227,6 +260,9 @@ const IndustriesWeHelp = () => {
     "/low-code-no-code-development-services/": GenerativeAIWeHelp,
     "/erp-next-development-services/": GenerativeAIWeHelp,
     "/business-intelligence-services/": GenerativeAIWeHelp,
+    "/frappe-development-services/": FrappeWeHelp,
+    "/flutterflow-development-services/": FrappeWeHelp,
+    "/adalo-development-services/": FrappeWeHelp,
   };
 
   return (

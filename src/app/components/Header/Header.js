@@ -16,7 +16,7 @@ const NewHeader = () => {
   useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 767 && setOpenNav(false),
+      () => window.innerWidth >= 767 && setOpenNav(false)
     );
   }, []);
 
@@ -62,7 +62,7 @@ const NewHeader = () => {
                           setOpenNav={setOpenNav}
                           menuItems={menu.menuItems}
                         />
-                      ),
+                      )
                     )}
                   <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
                     <div className="header_sec1_txt2 hidden-xs">

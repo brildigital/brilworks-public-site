@@ -359,6 +359,94 @@ const HomepageWhyChooseUs = () => {
         "Our data visualization experts create intuitive and interactive dashboards that bring your data to life for users of all technical abilities.",
     },
   ];
+  const whyChooseUsFrappee = [
+    {
+      title: "Develop custom solutions",
+      description:
+        "We build custom applications tailored precisely to your workflows, giving your business a leg up.",
+    },
+    {
+      title: "Frappe integrations",
+      description:
+        "We will break down data silos and streamline information flow by integrating your Frappe system with other applications.",
+    },
+    {
+      title: "Round-the-clock support",
+      description:
+        "We'll handle ongoing Frappe support and maintenance so you can focus on running your business with peace of mind.",
+    },
+    {
+      title: "Expertise",
+      description:
+        "Our team comprises expert Frappe developers with extensive experience in delivering high-quality solutions.",
+    },
+    {
+      title: "Client-Centric Approach",
+      description:
+        "We prioritize client satisfaction and work closely with you to ensure that our solutions meet your expectations.",
+    },
+    {
+      title: "Personalized Attention",
+      description:
+        "Receive personalized attention from our dedicated support team, who are committed to understanding your specific needs and providing tailored solutions to meet them.",
+    },
+  ];
+
+  const whyChooseUsFlutterflow = [
+    {
+      title: "Top talent",
+      description:
+        "We have the best Flutter talent who have rich experience in Flutter web and app development.",
+    },
+    {
+      title: "Dedicate expert",
+      description:
+        "Vetted expert who becomes an integral part of your team in just 48 hours.",
+    },
+    {
+      title: "Flexible engagement model",
+      description:
+        "Choose the pricing model that best suits you: fixed fees for predictable costs or hourly billing.",
+    },
+    {
+      title: "Faster Development",
+      description:
+        "Get your app to market quicker with our expertise in FlutterFlow's rapid development tools.",
+    },
+    {
+      title: "Expert Developers",
+      description:
+        "Our team consists of highly skilled FlutterFlow developers who stay up-to-date on the latest features and best practices.",
+    },
+    {
+      title: "Enhanced UX Focus",
+      description:
+        "We prioritize user experience by crafting intuitive and visually appealing UIs with FlutterFlow.",
+    },
+  ];
+
+  const whyChooseUsAdalo = [
+    {
+      title: "Expertise",
+      description:
+        "Our team consists of experienced Adalo developers who are passionate about delivering excellence.",
+    },
+    {
+      title: "Creativity",
+      description:
+        "We think outside the box to create innovative solutions that set your app apart.",
+    },
+    {
+      title: "Client-Centric Approach",
+      description:
+        "Your satisfaction is our top priority, and we strive to exceed your expectations at every step.",
+    },
+    {
+      title: "Timely Delivery",
+      description:
+        "We understand the importance of deadlines and work diligently to deliver projects on time and within budget.",
+    },
+  ];
 
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": whyChooseUscontent,
@@ -373,6 +461,9 @@ const HomepageWhyChooseUs = () => {
     "/low-code-no-code-development-services/": whyChooseUsLowCodeNoCode,
     "/erp-next-development-services/": whyChooseUsERPNextDev,
     "/business-intelligence-services/": whyChooseUsBusinessIntelligence,
+    "/frappe-development-services/": whyChooseUsFrappee,
+    "/flutterflow-development-services/": whyChooseUsFlutterflow,
+    "/adalo-development-services/": whyChooseUsAdalo,
   };
 
   return (
@@ -392,7 +483,15 @@ const HomepageWhyChooseUs = () => {
               {pathname === "/saas-application-development-services/" ? (
                 <h2 className="text-center w-2/3">Here's what sets us apart</h2>
               ) : (
-                <h2>Why Choose Us?</h2>
+                <>
+                  {pathname === "/frappe-development-services/" ? (
+                    <h2 className="text-center w-full">
+                      Why Choose Brilworks for Frappe Development ?
+                    </h2>
+                  ) : (
+                    <h2>Why Choose Us?</h2>
+                  )}
+                </>
               )}
             </>
           )}
@@ -400,7 +499,8 @@ const HomepageWhyChooseUs = () => {
         <div
           className={`grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
             pathname === "/aws-consulting-services/" ||
-            pathname === "/business-intelligence-services/"
+            pathname === "/business-intelligence-services/" ||
+            pathname === "/adalo-development-services/"
               ? "xl:grid-cols-2 lg:w-2/3 mx-auto"
               : "xl:grid-cols-3"
           } `}
