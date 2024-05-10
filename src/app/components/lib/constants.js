@@ -24,7 +24,7 @@ const servicesMenuItems = [
       },
       {
         name: "Dedicated Team",
-        path: "#",
+        path: "/dedicated-team/",
       },
       {
         name: "Rapid Digitisation",
