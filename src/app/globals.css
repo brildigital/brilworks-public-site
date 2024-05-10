@@ -3484,7 +3484,7 @@ textarea.form-control-txt {
   background: linear-gradient(277.16deg, #02E1B8 0.58%, #00B5D4 100%);
 }
 
-.service_detail_card_border:hover {
+.dedicated_team_card, .service_detail_card_border:hover {
   background: linear-gradient(180deg, #02E1B8 0%, #00B5D4 100%);
   box-shadow: 0px 2px 6px 0px #00000033;
 }
