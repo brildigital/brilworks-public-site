@@ -3,15 +3,21 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
-const DigitalAccelerationBanner = dynamic(() => import("./DigitalAccelerationBanner"));
-const DigitalAccelerationBenefits = dynamic(() => import("./DigitalAccelerationBenefits"));
-const WhyDigitalAcceleration = dynamic(() => import("./WhyDigitalAcceleration"));
+const RapidDigitizationBanner = dynamic(() =>
+  import("./RapidDigitizationBanner"),
+);
+const RapidDigitizationBenefits = dynamic(() =>
+  import("./RapidDigitizationBenefits"),
+);
+const WhyRapidDigitization = dynamic(() => import("./WhyRapidDigitization"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const DigitalAccelerationPlans = dynamic(() => import("./DigitalAccelerationPlans"));
+const RapidDigitizationPlans = dynamic(() =>
+  import("./RapidDigitizationPlans"),
+);
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
-const DigitalAccelerationFAQ = dynamic(() => import("./DigitalAccelerationFAQ"));
+const RapidDigitizationFAQ = dynamic(() => import("./RapidDigitizationFAQ"));
 
-const DigitalAcceleration = () => {
+const RapidDigitization = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -22,7 +28,7 @@ const DigitalAcceleration = () => {
 
   return (
     <div className="services pt-20 ">
-      <DigitalAccelerationBanner />
+      <RapidDigitizationBanner />
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
           <p className="text-5xl text-center font-bold">
@@ -45,10 +51,10 @@ const DigitalAcceleration = () => {
         </div>
       </div>
       <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-8">
-        <WhyDigitalAcceleration />
+        <WhyRapidDigitization />
       </div>
       <div className="lg:px-[70px] px-8">
-        <DigitalAccelerationBenefits />
+        <RapidDigitizationBenefits />
       </div>
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
@@ -68,13 +74,13 @@ const DigitalAcceleration = () => {
         <BestAdvocateText />
         <ClientReviews />
       </div>
-      <DigitalAccelerationPlans />
+      <RapidDigitizationPlans />
       <div className="bg-[#F3FDFF]">
         <TechStackWeUse />
       </div>
-      <DigitalAccelerationFAQ />
+      <RapidDigitizationFAQ />
     </div>
   );
 };
 
-export default DigitalAcceleration;
+export default RapidDigitization;

@@ -36,7 +36,7 @@ const ServiceItem = ({ image, title }) => (
   </div>
 );
 
-const WhyDigitalAcceleration = () => {
+const WhyRapidDigitization = () => {
   return (
     <div className="md:py-[6rem] py-[4rem] end-to-end">
       <div className="endTO_text solutions">
@@ -64,4 +64,4 @@ const WhyDigitalAcceleration = () => {
   );
 };
 
-export default WhyDigitalAcceleration;
+export default WhyRapidDigitization;

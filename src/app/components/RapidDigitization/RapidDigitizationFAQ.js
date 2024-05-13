@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import FAQAccordion from "../Common/FAQAccordion";
 import "../../styles/Services.scss";
 
-const DigitalAccelerationFAQ = () => {
+const RapidDigitizationFAQ = () => {
   const [open, setOpen] = useState(1);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
@@ -59,4 +59,4 @@ const DigitalAccelerationFAQ = () => {
   );
 };
 
-export default DigitalAccelerationFAQ;
+export default RapidDigitizationFAQ;

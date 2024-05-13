@@ -42,7 +42,7 @@ const ServiceItem = ({ description, title }) => (
   </div>
 );
 
-const DigitalAccelerationBenefits = () => {
+const RapidDigitizationBenefits = () => {
   return (
     <div className="md:py-[6rem] py-[4rem] end-to-end">
       <div className="endTO_text solutions">
@@ -61,4 +61,4 @@ const DigitalAccelerationBenefits = () => {
   );
 };
 
-export default DigitalAccelerationBenefits;
+export default RapidDigitizationBenefits;
