@@ -40,7 +40,7 @@ const serviceItems = [
 const ServiceItem = ({ image, title }) => (
   <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white">
     <Svgs name={image} />
-    <p className="text-[29px] font-bold">{title}</p>
+    <p className="text-2xl font-bold">{title}</p>
   </div>
 );
 
@@ -63,7 +63,7 @@ const WhyDedicatedTeam = () => {
           href="/contact-us/"
           className="linear-gradient-background w-fit p-[2px]"
         >
-          <button className="bg-white py-5 px-9 !text-base">
+          <button className="bg-white py-5 px-9 !text-base uppercase">
             Let’s discuss your project
           </button>
         </Link>

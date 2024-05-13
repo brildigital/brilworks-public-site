@@ -3,19 +3,20 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+
 const RapidDigitizationBanner = dynamic(() =>
-  import("./RapidDigitizationBanner"),
-);
-const RapidDigitizationBenefits = dynamic(() =>
-  import("./RapidDigitizationBenefits"),
+  import("./RapidDigitizationBanner")
 );
 const WhyRapidDigitization = dynamic(() => import("./WhyRapidDigitization"));
+const RapidDigitizationBenefits = dynamic(() =>
+  import("./RapidDigitizationBenefits")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const RapidDigitizationPlans = dynamic(() =>
-  import("./RapidDigitizationPlans"),
+  import("./RapidDigitizationPlans")
 );
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
-const RapidDigitizationFAQ = dynamic(() => import("./RapidDigitizationFAQ"));
+const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
 
 const RapidDigitization = () => {
   useEffect(() => {
@@ -27,11 +28,11 @@ const RapidDigitization = () => {
   }, []);
 
   return (
-    <div className="services pt-20 ">
+    <div className="services pt-20 medium-font">
       <RapidDigitizationBanner />
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl text-center font-bold">
+          <p className="text-5xl leading-tight text-center font-bold">
             Digital Acceleration Service: Strategic <br />
             Solutions, Transformative Results
           </p>
@@ -58,13 +59,13 @@ const RapidDigitization = () => {
       </div>
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl text-center max-w-7xl">
+          <p className="text-5xl leading-tight text-center max-w-7xl">
             Let us guide you through every step of your digital transformation
             journey. Partner with us to unleash the full potential of your
             business in the digital era.
           </p>
           <div className="flex justify-center mt-10">
-            <button className="bg-white py-5 px-9 border border-black">
+            <button className="bg-white py-5 px-9 border border-colorBlack uppercase">
               Get started today
             </button>
           </div>
@@ -78,7 +79,7 @@ const RapidDigitization = () => {
       <div className="bg-[#F3FDFF]">
         <TechStackWeUse />
       </div>
-      <RapidDigitizationFAQ />
+      <ServicesFAQ />
     </div>
   );
 };

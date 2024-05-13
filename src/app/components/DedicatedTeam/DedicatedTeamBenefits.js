@@ -37,7 +37,7 @@ const ServiceItem = ({ description, title }) => (
   <div className="rounded-lg border cursor-pointer dedicated_team_card p-[2px]">
     <div className="flex flex-col gap-3 p-4 bg-white h-full rounded-lg">
       <h2 className="!text-2xl font-bold">{title}</h2>
-      <p className="text-base">{description}</p>
+      <p className="text-base text-colorGray">{description}</p>
     </div>
   </div>
 );
@@ -48,7 +48,7 @@ const DedicatedTeamBenefits = () => {
       <div className="endTO_text solutions">
         <h2 className="!w-full p-0">Benefits of Hiring a Dedicated Team</h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
         {benefits.map((item) => (
           <ServiceItem
             key={item.title}

@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const MenuItem = ({ path, onClick, name, className }) => {
   const pathname = usePathname();
@@ -9,7 +9,7 @@ const MenuItem = ({ path, onClick, name, className }) => {
     <Link href={path} onClick={onClick} className={className}>
       <p
         className={`!mb-0 w-full whitespace-nowrap ${
-          pathname === path ? 'page-active' : 'hover:text-[#00dfb8]'
+          pathname === path ? "page-active" : "hover:text-[#00dfb8]"
         }`}
       >
         {name}
