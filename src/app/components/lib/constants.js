@@ -20,7 +20,7 @@ const servicesMenuItems = [
     subSections: [
       {
         name: "Staff Augmentation",
-        path: "/staff-augmentation",
+        path: "/staff-augmentation/",
       },
       {
         name: "Dedicated Team",
