@@ -27,8 +27,8 @@ const servicesMenuItems = [
         path: "/dedicated-team/",
       },
       {
-        name: "Rapid Digitisation",
-        path: "/digital-experience-services/",
+        name: "Rapid Digitalization",
+        path: "/rapid-digitalization/",
       },
     ],
   },
@@ -69,7 +69,7 @@ const servicesMenuItems = [
       //   path: "/erp-next-development-services/",
       // },
       {
-        name: "App Moderniser",
+        name: "App Modernizer",
         path: "#",
       },
     ],

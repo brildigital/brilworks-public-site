@@ -1,6 +1,6 @@
 import React from "react";
 
-const DigitalAccelerationBanner = () => {
+const RapidDigitizationBanner = () => {
   return (
     <div className="py-20 flex xl:flex-row  flex-col justify-between px-[70px] gap-20">
       <div className="flex flex-col gap-10 xl:w-[854px]">
@@ -38,4 +38,4 @@ const DigitalAccelerationBanner = () => {
   );
 };
 
-export default DigitalAccelerationBanner;
+export default RapidDigitizationBanner;

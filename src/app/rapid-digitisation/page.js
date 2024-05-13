@@ -1,12 +1,12 @@
 import React from "react";
-import DigitalAcceleration from "../components/DigitalAcceleration";
+import RapidDigitization from "../components/RapidDigitization";
 
 export const metadata = {
-  title: "Digital Acceleration",
+  title: "Rapid Digitisation",
   description:
     "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
   openGraph: {
-    title: "Digital Acceleration",
+    title: "Rapid Digitisation",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
@@ -20,7 +20,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Digital Acceleration",
+    title: "Rapid Digitisation",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     card: "summary_large_image",
@@ -34,7 +34,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className="!bg-colorWhite">
-      <DigitalAcceleration />
+      <RapidDigitization />
     </div>
   );
 };
