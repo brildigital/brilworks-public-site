@@ -505,6 +505,75 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const StaffAugmentationFAQData = [
+    {
+      question: "1. What is an IT staff augmentation?",
+      answer:
+        "TIT staff augmentation is the practice of supplementing your existing IT team with temporary or permanent IT professionals. This can help you address specific skill gaps, manage workload fluctuations, and complete projects on time and within budget. By leveraging IT staff augmentation, your business can gain access to a wider talent pool, improve operational efficiency, and achieve your IT goals more effectively.",
+    },
+    {
+      question: "2. What are the costs associated with IT staff augmentation?",
+      answer:
+        "The cost of IT staff augmentation will vary depending on the experience level of the professionals you need, the duration of the engagement, and your location.",
+    },
+    {
+      question:
+        "3. What IT staff augmentation models and pricing options do you offer?",
+      answer: `We understand the importance of flexibility. That's why we offer three different IT staff augmentation models to fit your project needs and budget: Dedicated Developer (monthly basis), Hourly Basis (pay-as-you-go), and Time and Material (T&M) Model (transparent cost estimation).`,
+    },
+  ];
+
+  const RapidDigitalisationFAQData = [
+    {
+      question: "1. How do you ensure alignment with our business objectives?",
+      answer:
+        "Our digital experts work closely with your team to understand your business goals and challenges, ensuring that our solutions are strategically aligned with your objectives.",
+    },
+    {
+      question:
+        "2. What technologies do you leverage for digital acceleration?",
+      answer:
+        "We harness a wide range of technologies, including AI, cloud computing, IoT, blockchain, and more, to drive innovation and digital transformation for our clients",
+    },
+    {
+      question:
+        "3. How do you measure the success of digital acceleration initiatives?",
+      answer:
+        "We establish key performance indicators (KPIs) and metrics aligned with your business goals to track the success and impact of our digital acceleration efforts.",
+    },
+    {
+      question:
+        "4. Can you provide ongoing support and maintenance post-implementation?",
+      answer:
+        "Yes, we offer comprehensive support and maintenance services to ensure the continued success and optimization of your digital initiatives post-implementation.",
+    },
+  ];
+
+  const DedicatedTeamFAQData = [
+    {
+      question: "1. How do you ensure the security of our project?",
+      answer:
+        "We follow industry best practices for security, including secure coding, data encryption, and regular security audits, to safeguard your project from potential threats.",
+    },
+    {
+      question:
+        "2. Can we scale the team up or down based on project requirements?",
+      answer:
+        "Absolutely. Our flexible engagement model allows you to scale the team as needed, ensuring optimal resource utilization and cost-effectiveness.",
+    },
+    {
+      question:
+        "3. What level of involvement will we have in the development process?",
+      answer:
+        "We believe in collaborative development. You will have regular meetings, access to project management tools, and opportunities for feedback throughout the development cycle.",
+    },
+    {
+      question: "4. What happens if we encounter issues post-launch?",
+      answer:
+        "Our support and maintenance services ensure that we're there for you even after the project is deployed. We provide timely assistance and updates to address any issues and keep your software running smoothly.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -521,6 +590,9 @@ const ServicesFAQ = () => {
     "/frappe-development-services/": FrappeDevelopmentFAQData,
     "/flutterflow-development-services/": FlutterFlowFAQData,
     "/adalo-development-services/": AdaloFAQData,
+    "/staff-augmentation/": StaffAugmentationFAQData,
+    "/dedicated-team/": DedicatedTeamFAQData,
+    "/rapid-digitalization/": RapidDigitalisationFAQData,
   };
 
   return (

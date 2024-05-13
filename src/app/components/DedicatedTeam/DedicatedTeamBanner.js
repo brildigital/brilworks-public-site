@@ -12,26 +12,26 @@ const DedicatedTeamBanner = () => {
           committed to delivering tailored solutions that meet your unique
           business needs.
         </p>
-        <button className="linear-gradient-background w-fit px-5 py-4">
+        <button className="linear-gradient-background w-fit px-5 py-4 uppercase">
           Get a Dedicated team
         </button>
       </div>
       <div className="grid md:grid-cols-2 gap-5 flex-none">
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">
           <span className="text-[70px]">8+</span>
-          <p className="text-[29px] font-bold">Years of Experience</p>
+          <p className="text-2xl">Years of Experience</p>
         </div>
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">
           <span className="text-[70px]">100+</span>
-          <p className="text-[29px] font-bold">Experts</p>
+          <p className="text-2xl">Experts</p>
         </div>
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">
           <span className="text-[70px]">250+</span>
-          <p className="text-[29px] font-bold">Projects</p>
+          <p className="text-2xl">Projects</p>
         </div>
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">
           <span className="text-[70px]">98%</span>
-          <p className="text-[29px] font-bold">Client Satisfaction</p>
+          <p className="text-2xl">Client Satisfaction</p>
         </div>
       </div>
     </div>

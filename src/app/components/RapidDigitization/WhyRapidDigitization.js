@@ -32,7 +32,7 @@ const serviceItems = [
 const ServiceItem = ({ image, title }) => (
   <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white">
     <Svgs name={image} />
-    <p className="text-[29px] font-bold">{title}</p>
+    <p className="text-2xl font-bold">{title}</p>
   </div>
 );
 
@@ -45,7 +45,7 @@ const WhyRapidDigitization = () => {
           Services?
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
         {serviceItems.map((item) => (
           <ServiceItem key={item.title} title={item.title} image={item.image} />
         ))}
@@ -55,7 +55,7 @@ const WhyRapidDigitization = () => {
           href="/contact-us/"
           className="linear-gradient-background w-fit p-[2px]"
         >
-          <button className="bg-white py-5 px-9 !text-base">
+          <button className="bg-white py-5 px-9 !text-base uppercase">
             Let’s discuss your project
           </button>
         </Link>

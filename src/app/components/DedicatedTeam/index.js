@@ -3,31 +3,23 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+
 const DedicatedTeamBanner = dynamic(() => import("./DedicatedTeamBanner"));
 const DedicatedTeamBenefits = dynamic(() => import("./DedicatedTeamBenefits"));
 const WhyDedicatedTeam = dynamic(() => import("./WhyDedicatedTeam"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const DedicatedTeamPlans = dynamic(() => import("./DedicatedTeamPlans"));
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
-const DedicatedTeamFAQ = dynamic(() => import("./DedicatedTeamFAQ"));
+const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
 
 const DedicatedTeam = () => {
-  useEffect(() => {
-    scrollEffect();
-    window.addEventListener("scroll", scrollEffect);
-    return () => {
-      window.removeEventListener("scroll", scrollEffect);
-    };
-  }, []);
-
   return (
-    <div className="services pt-20 ">
+    <div className="services pt-20 medium-font">
       <DedicatedTeamBanner />
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl text-center font-bold">
-            Dedicated Team Service: Tailored <br /> Solutions, Seamless
-            Collaboration
+          <p className="text-5xl leading-tight text-center font-bold md:w-2/3 w-full">
+            Dedicated Team Service: Tailored Solutions, Seamless Collaboration
           </p>
           <div className="flex flex-col gap-8 mt-10 text-2xl max-w-7xl text-center">
             <p>
@@ -51,14 +43,14 @@ const DedicatedTeam = () => {
       </div>
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl text-center max-w-7xl">
+          <p className="text-5xl leading-tight text-center max-w-7xl">
             Let us tailor a team to suit your specific needs,
             <br /> ensuring seamless collaboration, exceptional quality, <br />
             and unparalleled results. Experience the difference a dedicated team
             can make
           </p>
           <div className="flex justify-center mt-10">
-            <button className="bg-white py-5 px-9 border border-black">
+            <button className="bg-white py-5 px-9 border border-black uppercase">
               Get started today
             </button>
           </div>
@@ -72,7 +64,7 @@ const DedicatedTeam = () => {
       <div className="bg-[#F3FDFF]">
         <TechStackWeUse />
       </div>
-      <DedicatedTeamFAQ />
+      <ServicesFAQ />
     </div>
   );
 };

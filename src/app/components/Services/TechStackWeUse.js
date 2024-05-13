@@ -359,7 +359,7 @@ const TechStackWeUse = () => {
     "/kubernetes-consulting-services/": KubernetesConsultingTechStack,
     "/staff-augmentation/": StaffAugmentation,
     "/dedicated-team/": StaffAugmentation,
-    "/rapid-digitisation/": StaffAugmentation,
+    "/rapid-digitalization/": StaffAugmentation,
   };
 
   return (
