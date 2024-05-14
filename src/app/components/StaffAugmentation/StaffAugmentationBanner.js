@@ -2,12 +2,12 @@ import React from "react";
 
 const StaffAugmentationBanner = () => {
   return (
-    <div className="py-20 flex xl:flex-row  flex-col justify-between px-[70px] gap-20">
-      <div className="flex flex-col gap-10 xl:w-[754px]">
-        <h2 className="!text-[70px] !leading-[84px] break-words">
+    <div className="md:py-20 py-10 flex xl:flex-row flex-col justify-between lg:px-[70px] px-8 gap-20">
+      <div className="flex flex-col gap-10 xl:w-[854px]">
+        <h2 className="break-words header-title">
           IT Staff Augmentation Service
         </h2>
-        <p className="text-2xl text-[#504F4F]">
+        <p className="md:text-2xl text-xl text-[#504F4F]">
           Access a global pool of experts for the niche skillset you need. Our
           IT Staff augmentation service offers a strategic solution to bridge
           the talent gap and incorporate immediate expertise into your team.

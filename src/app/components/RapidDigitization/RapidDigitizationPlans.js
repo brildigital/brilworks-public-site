@@ -23,7 +23,7 @@ const RapidDigitizationPlans = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="px-[70px] md:py-[6rem] py-16 end-to-end">
+    <div className="md:px-[70px] px-8 md:py-[6rem] py-16 end-to-end">
       <div className="endTO_text solutions">
         <h2 className="!w-full p-0">
           Flexible & Predictable Costs: Find the Right IT Staff

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+import "../../styles/Services.scss";
 
 const StaffAugmentationBanner = dynamic(() =>
   import("./StaffAugmentationBanner")

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+import "../../styles/Services.scss";
 
 const RapidDigitizationBanner = dynamic(() =>
   import("./RapidDigitizationBanner")
@@ -31,12 +32,12 @@ const RapidDigitization = () => {
     <div className="services pt-20 medium-font">
       <RapidDigitizationBanner />
       <div className="lg:px-[70px] px-8">
-        <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl leading-tight text-center font-bold">
+        <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-5 flex items-center justify-center flex-col">
+          <p className="md:text-5xl text-3xl leading-tight md:text-center font-bold">
             Digital Acceleration Service: Strategic <br />
             Solutions, Transformative Results
           </p>
-          <div className="flex flex-col gap-8 mt-10 text-2xl max-w-7xl text-center">
+          <div className="flex flex-col gap-8 mt-10 text-2xl md:max-w-7xl md:text-center">
             <p>
               Partner with us to embark on a journey of digital transformation.
               Our seasoned experts in digital strategy, technology, and
@@ -59,13 +60,13 @@ const RapidDigitization = () => {
       </div>
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl leading-tight text-center max-w-7xl">
+          <p className="md:text-5xl text-3xl leading-tight md:text-center md:max-w-7xl">
             Let us guide you through every step of your digital transformation
             journey. Partner with us to unleash the full potential of your
             business in the digital era.
           </p>
           <div className="flex justify-center mt-10">
-            <button className="bg-white py-5 px-9 border border-colorBlack uppercase">
+            <button className="bg-white py-5 md:px-9 px-3 border border-colorBlack uppercase whitespace-nowrap">
               Get started today
             </button>
           </div>

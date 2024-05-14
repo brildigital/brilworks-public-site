@@ -12,14 +12,14 @@ const ServiceCard = ({ title, description }) => (
 
 const WhyStaffAugmentation = () => {
   return (
-    <div className="px-[70px] md:py-[6rem] py-[4rem] end-to-end">
+    <div className="md:px-[70px] px-8 md:py-24 py-12 end-to-end">
       <div className="endTO_text solutions">
         <h2 className="!w-full p-0">
           Why Brilworks For IT Staff Augmentation Service
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 gap-20 mt-16">
-        <div className="flex flex-col gap-20">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8">
+        <div className="flex flex-col md:gap-20">
           <ServiceCard
             title="Cost-effective"
             description="With our IT staff augmentation services, you gain access to the talent you need without the burden of overhead costs associated with traditional hiring processes."
@@ -36,7 +36,7 @@ const WhyStaffAugmentation = () => {
         <div className="m-auto why_staff_augmentation">
           <Svgs name="staff-augmentation-service" />
         </div>
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col md:gap-20">
           <ServiceCard
             title="Seamless Staffing"
             description="We connect you with pre-vetted, highly skilled professionals who can seamlessly integrate into your existing team."

@@ -2,12 +2,12 @@ import React from "react";
 
 const DedicatedTeamBanner = () => {
   return (
-    <div className="py-20 flex xl:flex-row  flex-col justify-between px-[70px] gap-20">
-      <div className="flex flex-col gap-10 xl:w-[754px]">
-        <h2 className="!text-[70px] !leading-[84px] break-words">
+    <div className="md:py-20 py-10 flex xl:flex-row flex-col justify-between lg:px-[70px] px-8 gap-20">
+      <div className="flex flex-col gap-10 xl:w-[854px]">
+        <h2 className="break-words header-title">
           Dedicated Software Development Team
         </h2>
-        <p className="text-2xl text-[#504F4F]">
+        <p className="md:text-2xl text-xl text-[#504F4F]">
           Our team, comprised of expert developers with diverse expertise, is
           committed to delivering tailored solutions that meet your unique
           business needs.
