@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getblogData } from "../lib/getblog";
 import Image from "next/image";
-import { formattedDate } from "../lib/commonfunction";
+import { formattedDate } from "../lib/commonFunction";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });

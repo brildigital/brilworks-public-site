@@ -8,7 +8,7 @@ import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { scrollEffect } from "../lib/commonfunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 
 const ClientReviews = () => {
@@ -216,10 +216,10 @@ const ClientReviews = () => {
           </div>
         </div>
       </div>
-      {pathname !== "/ai-ml-development-services/" &&
-        pathname !== "/devops-consulting-services/" && (
-          <BrilworksSoftwareReview />
-        )}
+      {!pathname.includes("services") &&
+        pathname !== "/staff-augmentation/" &&
+        pathname !== "/dedicated-team/" &&
+        pathname !== "/rapid-digitalization/" && <BrilworksSoftwareReview />}
     </div>
   );
 };

@@ -2,8 +2,11 @@
 import "../../styles/Services.scss";
 import React from "react";
 import TabVertical from "../Common/TabVertical";
+import { usePathname } from "next/navigation";
 
 const UseCases = () => {
+  const pathname = usePathname();
+
   const AIUseCaseData = [
     {
       title: "AI for Fintech",
@@ -105,14 +108,114 @@ const UseCases = () => {
     },
   ];
 
+  const GenerativeAIUseCaseData = [
+    {
+      title: "Image generation",
+      iconSrc: "/images/img-generation.png",
+      value: "image-generation",
+      imageSrc: "/images/genAI-use-case-1.webp",
+      heading:
+        "Generate a steady stream of fresh visuals for websites, social media, presentations, and marketing materials.",
+      listDescription: [
+        "Develop custom imagery that perfectly embodies the essence of your campaigns.",
+        "Showcase your products in a whole new light. Generate product images that only look stunning.",
+        "Generate captivating photos that capture the essence of a location, its culture, and its natural beauty, inspiring them to book their next adventure.",
+        "Create eye-catching posters, trailers, and social media content that reflects the vibrancy and energy of your film, show, or musical event.",
+      ],
+    },
+    {
+      title: "Content creation",
+      iconSrc: "/images/content.png",
+      value: "healthcare",
+      imageSrc: "/images/genAI-use-case-2.webp",
+      heading:
+        "Create a powerful marketing strategy that combines human creativity and strategic thinking with AI.",
+      listDescription: [
+        "Generate personalized product recommendations, targeted ad copy, and dynamic product descriptions.",
+        "Craft targeted ads and marketing materials that resonate with specific demographics and user segments.",
+        "Generate customized proposals, reports, and marketing materials.",
+        "Create personalized tutorials, onboarding experiences, and in-app messages.",
+        "Develop personalized property descriptions, virtual tours, and targeted marketing materials.",
+      ],
+    },
+    {
+      title: "Software development with AI",
+      iconSrc: "/images/SD-with-AI.png",
+      value: "media-entertainment",
+      imageSrc: "/images/genAI-use-case-3.webp",
+      heading:
+        "Free up your developers' time by automating tedious tasks like code generation, testing, and debugging.",
+      listDescription: [
+        "Code generation with Gen AI allows developers to focus on complex logic rather than writing repetitive code.",
+        "Gen AI can analyze user data and feedback to identify feature needs and suggest improvements.",
+        "Gen AI automates tasks like regulatory compliance checks and data analysis.",
+        "Gen AI streamlines the creation of medical software by automating code generation and compliance checks.",
+      ],
+    },
+    {
+      title: "Document and image analysis",
+      iconSrc: "/images/doc-img-analysis.png",
+      value: "retain-e-commerce",
+      imageSrc: "/images/genAI-use-case-4.webp",
+      heading:
+        "Extract key information from invoices, receipts, contracts, and other documents with unmatched speed and accuracy.",
+      listDescription: [
+        "Gen AI can analyze vast amounts of legal documents, including case files, contracts, and litigation research materials. It can identify key information, extract relevant clauses, and summarize complex legal concepts.",
+        "Gen AI can analyze financial documents like loan applications, credit reports, and investment proposals with incredible accuracy. It can identify inconsistencies, flag potential risks, and ensure compliance with complex regulations.",
+        "Gen AI can accurately analyze medical scans, X-rays, and MRIs. It can detect abnormalities, highlight areas of concern, assisting doctors in more precise diagnoses.",
+      ],
+    },
+    {
+      title: "Media translation service",
+      iconSrc: "/images/media.png",
+      value: "education",
+      imageSrc: "/images/genAI-use-case-5.webp",
+      heading:
+        "Translate your marketing materials, websites, videos, and other content with speed and precision.",
+      listDescription: [
+        "Go beyond literal translations. Gen AI understands cultural nuances and adapts content (movies, TV shows) to resonate with global audiences.",
+        "Enhance the gaming experience for a global audience. Gen AI can translate game content (text, dialogue).",
+        "Gen AI translates documents (announcements, training materials) while maintaining your brand voice and message integrity.",
+        "Break down language barriers in education. Gen AI translates e-learning materials.",
+      ],
+    },
+    {
+      title: "Round-the-clock customer service",
+      iconSrc: "/images/round-the-clock.png",
+      value: "logistic",
+      imageSrc: "/images/genAI-use-case-6.webp",
+      heading:
+        "Offer your customers 24/7, always-on support powered by intelligent AI.",
+      listDescription: [
+        "AI-powered assistants can answer customer questions about product features, specifications, and compatibility in real-time.",
+        "Gen AI can analyze vast amounts of marketing campaign data in real-time.",
+        "Implement AI-powered chatbots or virtual assistants that can answer basic medical questions.",
+        "Gen AI can personalize learning experiences by generating content tailored to student needs and progress.",
+      ],
+    },
+  ];
+
   return (
     <div className="container services md:w-[90%] w-full mx-auto md:py-12 pb-14">
       <div className="!rounded-2xl">
         <h2 className="md:text-center text-left ml-4 !mb-8">
-          What are the Usecases of AI ?
+          {pathname === "/generative-ai-development-services/"
+            ? "What are some common generative AI use cases?"
+            : "What are the Usecases of AI?"}
         </h2>
         <div className="reveal">
-          <TabVertical initialTabValue={"fintech"} data={AIUseCaseData} />
+          <TabVertical
+            initialTabValue={
+              pathname === "/generative-ai-development-services/"
+                ? "image-generation"
+                : "fintech"
+            }
+            data={
+              pathname === "/generative-ai-development-services/"
+                ? GenerativeAIUseCaseData
+                : AIUseCaseData
+            }
+          />
         </div>
       </div>
     </div>

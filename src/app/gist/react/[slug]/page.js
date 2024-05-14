@@ -1,6 +1,6 @@
-"use client";
-import TechQandAContent from "@/app/components/Gist/TechQandAContent";
-import { getStoryblokApi } from "@storyblok/react";
+'use client';
+import TechQandAContent from '@/app/components/Gist/TechQandAContent';
+import { getStoryblokApi } from '@storyblok/react';
 
 export default async function Page(props) {
   const { params } = props || {};
@@ -22,12 +22,12 @@ export const fetchData = async (params) => {
 
   let sbParams = {
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    resolve_links: "url",
+    resolve_links: 'url',
   };
 
   const { data } = await storyblokApi.get(
     `cdn/stories/gist/react/${params?.slug}`,
-    sbParams
+    sbParams,
   );
 
   return {

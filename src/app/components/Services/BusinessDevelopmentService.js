@@ -50,7 +50,9 @@ const BusinessDevelopmentService = () => {
             </p>
             <Link href="/contact-us/">
               <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">contact us</p>
+                <p className="transition uppercase !text-base">
+                  Talk to an Expert
+                </p>
               </div>
             </Link>
           </div>

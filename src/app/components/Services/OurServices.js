@@ -1,7 +1,7 @@
 import "../../styles/Homepage.scss";
 import React from "react";
 import { useEffect, useState } from "react";
-import { scrollEffect } from "../lib/commonfunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import AccordionCustomIcon from "../Common/AccordionCustomIcon";
 import { usePathname } from "next/navigation";
@@ -559,6 +559,118 @@ const OurServices = () => {
     },
   ];
 
+  const FrappeDevAccordionData = [
+    {
+      title: "Custom Frappe Application Development",
+      content:
+        "Our services cover everything you need for Frappe application development. This includes analyzing your needs, designing custom apps, testing them thoroughly, deploying them smoothly, and providing ongoing support. We'll work closely with you to make sure everything fits your needs perfectly, giving your business efficient and reliable solutions.",
+      imageSrc: "/images/frapee-1.webp",
+      imageAlt: "Custom Frappe Application Development img",
+    },
+    {
+      title: "Frappe ERP Customization",
+      content:
+        "Our experts then customize and configure your ERP to match your unique workflows and data requirements. If needed, we'll securely migrate your data from your existing system. Finally, we ensure that your tailored ERP is both secure and optimized for top performance, guaranteeing smooth operations for your business.",
+      imageSrc: "/images/frapee-2.webp",
+      imageAlt: "Frappe ERP customization img",
+    },
+    {
+      title: "Frappe Module Development",
+      content:
+        "Our comprehensive services start with a Functionality Gap Analysis, where we identify any missing features in your Frappe setup. Our skilled developers then design and develop a custom Frappe module to fill these gaps and meet your specific needs.",
+      imageSrc: "/images/frapee-3.webp",
+      imageAlt: "Frappe Module Dev img",
+    },
+    {
+      title: "Frappe Integration Services",
+      content:
+        "Our team focuses on Seamless Integration Development, building secure and effective connections between your Frappe system and chosen applications. We handle Data Mapping & Synchronization to guarantee seamless data flow, eradicating redundancy and silos.",
+      imageSrc: "/images/frapee-4.webp",
+      imageAlt: "Frappe Integration img",
+    },
+    {
+      title: "Frappe Support and Maintenance",
+      content:
+        "Our services include proactive System Monitoring & Updates to maintain performance and security of your Frappe system, with timely implementation of updates. For any issues, our team offers prompt Bug Fixes & Troubleshooting to ensure smooth operation.",
+      imageSrc: "/images/frapee-5.webp",
+      imageAlt: "Frappe Support and Maintenance mg",
+    },
+  ];
+  const FlutteFlowDevAccordionData = [
+    {
+      title: "Flutter web development",
+      content:
+        "Our experts leverage Flutterflow, a visual development platform, to create stunning and feature-rich web apps with an expedited development process.",
+      imageSrc: "/images/flutterflow-1.webp",
+      imageAlt: "Flutter Flutter img",
+    },
+    {
+      title: "Flutterflow app development",
+      content:
+        "We provide access to a dedicated team of highly skilled Flutter developers who possess in-depth knowledge and experience to bring your web app vision to life.",
+      imageSrc: "/images/flutterflow-2.webp",
+      imageAlt: "Flutterflow app img",
+    },
+    {
+      title: "Hire dedicated Flutter developers",
+      content:
+        "Get access to dedicated developers with proven experience in building successful Flutter projects. Our team is comprised of highly skilled developers who can tackle any development challenge.",
+      imageSrc: "/images/flutterflow-3.webp",
+      imageAlt: "Hire Flutter developer img",
+    },
+    {
+      title: "MVP development",
+      content:
+        "Validate your app concept quickly and efficiently by leveraging our expertise in creating minimum viable products (MVPs).",
+      imageSrc: "/images/flutterflow-4.webp",
+      imageAlt: "Frappe Integration img",
+    },
+    {
+      title: "Custom app development",
+      content:
+        "We don't believe in a one-size-fits-all approach. Our team will craft a bespoke web app tailored to your specific needs and functionalities.",
+      imageSrc: "/images/flutterflow-5.webp",
+      imageAlt: "Frappe Support and Maintenance img",
+    },
+    {
+      title: "Advanced integrations",
+      content:
+        "Seamlessly integrate your web app with essential services like Firebase, Stripe, and third-party APIs to unlock powerful features and functionalities.",
+      imageSrc: "/images/flutterflow-6.webp",
+      imageAlt: "Advanced integrations img",
+    },
+  ];
+  const AdaloDevAccordionData = [
+    {
+      title: "Custom Adalo App Development",
+      content:
+        "Our experts leverage Adalo, a visual development platform, to create stunning and feature-rich web apps with an expedited development process.",
+      imageSrc: "/images/adalo-1.webp",
+      imageAlt: "Custom Adalo App Development img",
+    },
+    {
+      title: "UI/UX Design",
+      content:
+        "Engaging and user-friendly interfaces that enhance the overall app experience.",
+      imageSrc: "/images/adalo-2.webp",
+      imageAlt: "UI/UX Design img",
+    },
+    {
+      title: "Integration Services",
+      content:
+        "Seamlessly integrate third-party services to enhance functionality.",
+      imageSrc: "/images/adalo-3.webp",
+      imageAlt: "Integration Services img",
+    },
+    {
+      title: "Maintenance and Support",
+      content:
+        "Continuous support is needed to ensure your app remains up-to-date and optimized.",
+      imageSrc: "/images/adalo-4.webp",
+      imageAlt: "Maintenance and Support img",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLAccordionData,
     "/devops-consulting-services/": DevOpsAccordionData,
@@ -573,6 +685,9 @@ const OurServices = () => {
     "/low-code-no-code-development-services/": LowCodeNoCodeAccordionData,
     "/erp-next-development-services/": ERPNextDevAccordionData,
     "/business-intelligence-services/": BusinessIntelligenceAccordionData,
+    "/frappe-development-services/": FrappeDevAccordionData,
+    "/flutterflow-development-services/": FlutteFlowDevAccordionData,
+    "/adalo-development-services/": AdaloDevAccordionData,
   };
 
   return (
@@ -596,7 +711,8 @@ const OurServices = () => {
                 "Our Product Development Services"
               ) : (
                 <>
-                  {pathname === "/application-development-services/" ? (
+                  {pathname === "/application-development-services/" ||
+                  pathname === "/adalo-development-services/" ? (
                     "Our offerings"
                   ) : (
                     <>
@@ -604,9 +720,22 @@ const OurServices = () => {
                         "Our Generative AI Development Services"
                       ) : (
                         <>
-                          {pathname === "/business-intelligence-services/"
-                            ? "Business Intelligence Services by Brilworks"
-                            : "Our Services"}
+                          {pathname === "/business-intelligence-services/" ? (
+                            "Business Intelligence Services by Brilworks"
+                          ) : (
+                            <>
+                              {pathname === "/frappe-development-services/" ? (
+                                "Frappe Development Services We Offer"
+                              ) : (
+                                <>
+                                  {pathname ===
+                                  "/flutterflow-development-services/"
+                                    ? "Flutterflow Development Services We Offer"
+                                    : "Our Services"}
+                                </>
+                              )}
+                            </>
+                          )}
                         </>
                       )}
                     </>

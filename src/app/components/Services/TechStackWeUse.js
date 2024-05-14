@@ -5,6 +5,81 @@ import React from "react";
 
 const TechStackWeUse = () => {
   const pathname = usePathname();
+  const StaffAugmentation = [
+    {
+      title: "React",
+      imageSrc: "/images/React-icon.png",
+    },
+    {
+      title: "Angular",
+      imageSrc: "/images/Angular.png",
+    },
+    {
+      title: "Vue.js",
+      imageSrc: "/images/Vue.png",
+    },
+    {
+      title: "Node.js",
+      imageSrc: "/images/Node-logo.png",
+    },
+    {
+      title: "Python",
+      imageSrc: "/images/python-logo.svg",
+    },
+    {
+      title: "MySQL",
+      imageSrc: "/images/MySql.png",
+    },
+    {
+      title: "PostgreSQL",
+      imageSrc: "/images/postgresql-svgrepo.png",
+    },
+    {
+      title: "MongoDB",
+      imageSrc: "/images/mongodb-svgrepo.png",
+    },
+    {
+      title: "AWS",
+      imageSrc: "/images/aws-tech.webp",
+    },
+    {
+      title: "Figma",
+      imageSrc: "/images/figma.png",
+    },
+    {
+      title: "Adobe XD",
+      imageSrc: "/images/adobe-xd.png",
+    },
+    {
+      title: "GitLab",
+      imageSrc: "/images/machine-learning-tech.png",
+    },
+    {
+      title: "Github",
+      imageSrc: "/images/github-svgrepo-com.png",
+    },
+    {
+      title: "Bitbucket",
+      imageSrc: "/images/bitbucket-svgrepo-com.png",
+    },
+    {
+      title: "Kubernetes",
+      imageSrc: "/images/kubernetes-seeklogocom.webp",
+    },
+    {
+      title: "DevOps",
+      imageSrc: "/images/devops-tech.webp",
+    },
+    {
+      title: "Tableau",
+      imageSrc: "/images/tableau.webp",
+    },
+    {
+      title: "DynamoDB",
+      imageSrc: "/images/aws-dynamodb-svgrepo-com.png",
+    },
+  ];
+
   const AIMLTechStack = [
     {
       title: "Python",
@@ -282,6 +357,9 @@ const TechStackWeUse = () => {
     "/digital-experience-services/": DigitalExperienceTechStack,
     "/aws-consulting-services/": AWSConsultingTechStack,
     "/kubernetes-consulting-services/": KubernetesConsultingTechStack,
+    "/staff-augmentation/": StaffAugmentation,
+    "/dedicated-team/": StaffAugmentation,
+    "/rapid-digitalization/": StaffAugmentation,
   };
 
   return (
@@ -300,10 +378,10 @@ const TechStackWeUse = () => {
                 : ""
             }`}
           >
-            {showTechStack[pathname].map(({ title, imageSrc }, index) => (
+            {showTechStack[pathname]?.map(({ title, imageSrc }) => (
               <div
                 className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
-                key={index}
+                key={title}
               >
                 <Image
                   src={imageSrc}

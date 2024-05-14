@@ -15,7 +15,7 @@ import {
   blogAuthor,
   calculateReadingTime,
   formattedDate,
-} from "./lib/commonfunction";
+} from "./lib/commonFunction";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -185,7 +185,7 @@ const Article = ({ blok }) => {
                       </Link>
                     </span>
 
-                    {blok?.category && (
+                    {blok?.Category && (
                       <>
                         <span className="self-center md:mx-2 mx-1 mt-[2px]">
                           <Image
@@ -201,9 +201,9 @@ const Article = ({ blok }) => {
                             title="Go to the Web App Development category."
                             href="#"
                           >
-                            {blok?.category === "Cloud DevOps and Data"
+                            {blok?.Category === "Cloud DevOps and Data"
                               ? "Cloud, DevOps and Data"
-                              : blok?.category}
+                              : blok?.Category}
                           </Link>
                         </span>
                       </>
@@ -318,7 +318,7 @@ const Article = ({ blok }) => {
           <div className="container max-w-[1280px] mx-auto my-0 !px-4">
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
-                <div className="sticky top-[110px] !pb-5 z-[99]">
+                <div className="sticky top-[110px] !pb-5">
                   <div
                     className={`${
                       headings?.length

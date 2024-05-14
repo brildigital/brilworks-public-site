@@ -3,7 +3,9 @@ import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 import ContactUsEmailForm from "./ContactUsEmailForm";
 import { useEffect } from "react";
-import { scrollEffect } from "../lib/commonfunction";
+import { scrollEffect } from "../lib/commonFunction";
+import Svgs from "../Svgs";
+import Link from "next/link";
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -21,11 +23,11 @@ const ContactUs = () => {
         <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full">
           <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
             <h2
-              className={`uppercase m-0 !w-10/12 contact_bold-head ${
+              className={`uppercase m-0 contact_bold-head ${
                 isMobile ? "p-0 !text-left !w-full" : ""
               }`}
             >
-              Drop Us a Message and Let Our Team Help With Your Project
+              Let’s discuss your project
             </h2>
           </div>
           <div className="noText md:pt-2">
@@ -35,8 +37,8 @@ const ContactUs = () => {
               <li>No commitment from you.</li>
             </ul>
           </div>
-          <div className="contact_form">
-            <ContactUsEmailForm />
+          <div className="contact_form inquiry">
+            <ContactUsEmailForm inquiryForm={true} />
           </div>
         </div>
 
@@ -49,43 +51,43 @@ const ContactUs = () => {
             </div>
             <div className="ready_content">
               <div className="ready_content_sec home_sec2_txt4 pt-2">
-                <p className="white_text !text-left p-style">
+                <p className="white_text !text-left md:!text-xl !text-base p-style">
                   Just fill out the form, and let our experts look after the
                   rest. Here’s what will happen next:
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4 ">
-                <p className="white_text contact_title !text-left">
+                <p className="white_text contact_title md:!text-2xl !text-xl  !text-left">
                   1. Initiating Contact
                 </p>
-                <p className="white_text !text-left p-style">
+                <p className="white_text !text-left md:!text-xl !text-base p-style">
                   We will contact you within 24 business hours.
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left contact_title">
+                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
                   2. Share Your Requirement
                 </p>
-                <p className="white_text !text-left p-style">
+                <p className="white_text !text-left md:!text-xl !text-base p-style">
                   Tell us exactly what you’re looking for and how would you like
                   our team to help you further. Our technical team will evaluate
                   your requirement and reach back to you with a project plan
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left contact_title">
+                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
                   3. Sign Non-Disclosure Agreement
                 </p>
-                <p className="white_text !text-left p-style">
+                <p className="white_text !text-left md:!text-xl !text-base p-style">
                   Signing an NDA is like putting your idea in a safe deposit
                   box. Be rest assured about any privacy concerns.
                 </p>
               </div>
               <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left contact_title">
+                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
                   4. Estimated Budget/Cost
                 </p>
-                <p className="white_text !text-left p-style">
+                <p className="white_text !text-left md:!text-xl !text-base p-style">
                   After analyzing your requirement in-detail we will get back to
                   you with an estimated budget/cost and estimated time required
                   for successful project completion.
@@ -95,9 +97,21 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-
+      <section className="xl:mt-24 lg:mt-[60px] mt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
+        <div className="bg-[#01B6D3] medium-font w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
+          <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
+            For career inquiry email us on <strong>hr@brilworks.com</strong>
+          </h2>
+          <Link
+            href="/career/"
+            className="flex gap-3 items-center bg-white md:p-4 p-3 font-semibold whitespace-nowrap"
+          >
+            SEARCH OPENINGS <Svgs name="up-right-arrow" />
+          </Link>
+        </div>
+      </section>
       <section>
-        <div className="xl:mt-[96px] lg:mt-[60px] md:mt-[32px] mt-[16px]">
+        <div className="xl:mt-24 lg:mt-[60px] md:mt-8 mt-4">
           <div className="service_width mx-auto md:px-[0px] px-[15px] reveal">
             <div className="solutions md:text-center text-left py-10">
               <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
@@ -292,7 +306,7 @@ const ContactUs = () => {
                     lang="en-US"
                     dir="ltr"
                   >
-                    <ContactUsEmailForm />
+                    <ContactUsEmailForm inquiryForm={false} />
                   </div>
                 </div>
               </div>

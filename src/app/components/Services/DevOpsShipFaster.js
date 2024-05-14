@@ -28,6 +28,14 @@ const DevOpsShipFaster = () => {
       "We leverage the latest technology and industry best practices to deliver future proof  solutions that optimize your operations, drive growth, and captivate users. Partner with us and experience the difference - expertise, agility, and dedication to your success.",
   };
 
+  const generativeAIData = {
+    heading: "Transform Your Business with Generative AI",
+    para1:
+      "Unlock the vast potential of generative AI to creatively revolutionize how your business operates. Whether it's generating original content, designing innovative applications, or creating novel customer experiences, generative AI serves as a catalyst for significant productivity improvements and operational transformation. Utilize Amazon's Bedrock and Foundation Models, available through SageMaker Jumpstart, to train your models using your own internal data while maintaining its confidentiality.",
+    para2:
+      "At Brilworks, we offer the depth of experience and technical expertise needed to launch or scale your generative AI initiatives effectively. Whether you are beginning your AI journey or seeking to enhance your existing model's infrastructure, our team is equipped to guide you through every step of the process, ensuring tailored solutions that drive real results.",
+  };
+
   const applicationDevData = {
     heading: "Your Innovation Partner in Cutting-Edge Development",
     para1:
@@ -36,15 +44,37 @@ const DevOpsShipFaster = () => {
       "Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch.",
   };
 
+  const frappeDevelopmentData = {
+    heading: "Frappe Development Solutions by Brilworks",
+    para1:
+      "Missing a Frappe feature? We'll plug the gap. We're the architects you've been searching for – from customizing existing Frappe applications to developing bespoke solutions from scratch, we have the expertise to meet your unique requirements.",
+  };
+
+  const flutterFlowDevelopmentData = {
+    heading:
+      "We offer premium Flutterflow development services to turn your dreams into reality",
+    para1:
+      "Our FlutterFlow development services include FlutterFlow web and app development. Hire pre-vetted Flutter developers from Brilworks to work with your own team. Contact us today and hire top-rated Flutter experts in just 48 hours.",
+  };
+
+  const adaloDevelopmentData = {
+    heading: "Your Adalo Partner: Our Development Services",
+    para1:
+      "As a leading Adalo development company, we thrive on creating tailored solutions that cater to our clients' diverse needs. Our team of skilled developers combines technical prowess with creative flair to build apps that not only meet but exceed expectations.",
+  };
+
   const showDataBasedOnPathname = {
     "/devops-consulting-services/": devOpsData,
     "/product-engineering-development-services/": productEngineeringData,
     "/saas-application-development-services/": saasApplicationDevData,
     "/application-development-services/": applicationDevData,
-    "/generative-ai-development-services/": applicationDevData,
+    "/generative-ai-development-services/": generativeAIData,
     "/erp-next-development-services/": applicationDevData,
     "/low-code-no-code-development-services/": applicationDevData,
     "/business-intelligence-services/": applicationDevData,
+    "/frappe-development-services/": frappeDevelopmentData,
+    "/flutterflow-development-services/": flutterFlowDevelopmentData,
+    "/adalo-development-services/": adaloDevelopmentData,
   };
 
   const { heading, para1, para2 } = showDataBasedOnPathname[pathname];
@@ -55,12 +85,12 @@ const DevOpsShipFaster = () => {
         <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]">
           {heading}
         </h2>
-        <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
+        <p className="md:text-2xl text-lg md:text-center text-left w-11/12 mx-auto">
           {para1}
         </p>
         <br />
         {para2 && (
-          <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
+          <p className="md:text-2xl text-lg md:text-center text-left w-11/12 mx-auto">
             {para2}
           </p>
         )}

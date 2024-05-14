@@ -1,63 +1,34 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 
 const GameChanger = () => {
-  const isMobile = useMediaQuery({ maxWidth: 414 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   return (
-    <div className="relative">
-      <div className="home_sec1_img">
-        <Image
-          className="w-full h-auto"
-          src={`https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg`}
-          alt="homepage banner"
-          width={isMobile ? 550 : 1920}
-          height={isMobile ? 283 : 1000}
-          priority={true}
-          sizes="100vw"
-        />
-      </div>
-      <div className="sec1_txt_position">
+    <div className="home_header pt-28 flex flex-col justify-center relative">
+      <div className="flex-1 flex flex-col justify-center text-center">
         <div className="home_txt1">
-          <p className="md:!text-[4rem]">We are</p>
-        </div>
-        <div className="home_txt2">
-          <p>
-            Game
-            <br />
-            Changers
+          <p className="text-6xl font-semibold">
+            Providing Nextgen Technology Solutions <br />
+            for your next leap
           </p>
         </div>
-        <div className="our_btn_flex flex lg:items-center items-end justify-between xl:!pt-12 !pt-0">
-          <div className="home_txt3 home_txt3_top_padding md:max-w-[825px]">
-            <h1>
-              Our software development company creates vital digital solutions
-              for global brands{isTablet && <br />} and startups to succeed.
-            </h1>
-          </div>
-          <div
-            className={`our_work flex items-center justify-end !gap-4 ${
-              isMobile ? "!pt-4" : ""
-            }`}
-          >
-            <p className="get_in_touch_hover">
-              <Link href="/contact-us/">GET IN TOUCH</Link>
-            </p>
-            <p>
-              <Link href="/contact-us/">
-                <Image
-                  className="alignnone wp-image-24 size-full"
-                  src="/images/our-work.png"
-                  alt="9 dots"
-                  width="49"
-                  height="49"
-                />
-              </Link>
-            </p>
-          </div>
+        <div className="flex justify-center w-full mt-10">
+          <Link href="/contact-us/" className="!w-fit">
+            <div className="header_sec1_txt2">
+              <p className="transition uppercase">Free Consultation</p>
+            </div>
+          </Link>
         </div>
+      </div>
+      <div className="flex-none home_txt3 home_txt3_top_padding px-6 py-5">
+        <h1 className="!text-2xl flex gap-2 flex-wrap">
+          <Link href="/ai-ml-development-services/">AI</Link> |
+          <Link href="/business-intelligence-services/">BI</Link> |
+          <Link href="/aws-consulting-services/">Cloud</Link> |
+          {process.env.NEXT_PUBLIC_BASE_URL !==
+            "https://www.brilworks.com/" && <Link href="#">Data |</Link>}
+          <Link href="/low-code-no-code-development-services/">Low-code</Link>|
+          <Link href="/product-engineering-development-services/">Product</Link>
+        </h1>
       </div>
     </div>
   );

@@ -1,32 +1,32 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useMediaQuery } from "react-responsive";
-import { scrollToSection } from "../lib/commonfunction";
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useMediaQuery } from 'react-responsive';
+import { scrollToSection } from '../lib/commonFunction';
 
 const TechnologyCombination = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="mx-auto service_width">
-      <div className="solutions md:text-center text-left py-8">
-        {pathname === "/hire-reactjs-developer/" ? (
-          <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+    <div className='mx-auto service_width'>
+      <div className='solutions md:text-center text-left py-8'>
+        {pathname === '/hire-reactjs-developer/' ? (
+          <h2 className='uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]'>
             THE RIGHT REACT JS COMBINATIONS {!isMobile && <br />}
             JUST FOR YOU
           </h2>
         ) : (
           <>
-            {pathname === "/hire-java-developer/" ? (
-              <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+            {pathname === '/hire-java-developer/' ? (
+              <h2 className='uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]'>
                 FULL STACK JAVA DEVELOPMENT TO {!isMobile && <br />}
                 LEVEL UP YOUR WEB APPS
               </h2>
             ) : (
               <>
-                {pathname === "/hire-nodejs-developer/" && (
-                  <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+                {pathname === '/hire-nodejs-developer/' && (
+                  <h2 className='uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]'>
                     HIRE STACK NODE JS DEVELOPER TO {!isMobile && <br />}
                     AMP IT UP A NOTCH
                   </h2>
@@ -37,39 +37,39 @@ const TechnologyCombination = () => {
         )}
       </div>
 
-      <div className="grid xl:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-[4rem] reveal md:px-[3rem] lg:px-0">
-        <div className="hire_sec1_service_50">
-          <div className="react-technology">
-            <div className="relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]">
-              <div className="dots_flex">
-                <div className="dots"></div>
-                <div className="dots"></div>
-                <div className="dots"></div>
+      <div className='grid xl:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-[4rem] reveal md:px-[3rem] lg:px-0'>
+        <div className='hire_sec1_service_50'>
+          <div className='react-technology'>
+            <div className='relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]'>
+              <div className='dots_flex'>
+                <div className='dots'></div>
+                <div className='dots'></div>
+                <div className='dots'></div>
               </div>
-              <div className="background-hover border-t-[1px]  border-[#00dfb8] ">
-                {pathname === "/hire-reactjs-developer/" ? (
-                  <div className="style_sec3_swiper_home">
-                    <div className="flex gap-[1rem] pb-[2rem]">
+              <div className='background-hover border-t-[1px]  border-[#00dfb8] '>
+                {pathname === '/hire-reactjs-developer/' ? (
+                  <div className='style_sec3_swiper_home'>
+                    <div className='flex gap-[1rem] pb-[2rem]'>
                       <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/3-1.png"
-                        alt="reactjs"
-                        className="w-[76px]"
+                        decoding='async'
+                        loading='lazy'
+                        src='/images/3-1.png'
+                        alt='reactjs'
+                        className='w-[76px]'
                       />
                       <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/js-1.png"
-                        alt="nodejs"
-                        className="w-[76px]"
+                        decoding='async'
+                        loading='lazy'
+                        src='/images/js-1.png'
+                        alt='nodejs'
+                        className='w-[76px]'
                       />
                     </div>
-                    <div className="developer_sec6_title mb-2">
+                    <div className='developer_sec6_title mb-2'>
                       <p>1. React Node Developer</p>
                     </div>
-                    <div className="hire_data_sec">
-                      <p className="md:h-[120px] min-h-[120px]">
+                    <div className='hire_data_sec'>
+                      <p className='md:h-[120px] min-h-[120px]'>
                         React Node is a powerful combination of the two popular
                         JavaScript technologies, Reactjs and Node.js. Hire React
                         Node developer from us to add amazing functionality and
@@ -79,29 +79,29 @@ const TechnologyCombination = () => {
                   </div>
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer/" ? (
-                      <div className="style_sec3_swiper_home">
-                        <div className="flex gap-[1rem] pb-[2rem]">
+                    {pathname === '/hire-java-developer/' ? (
+                      <div className='style_sec3_swiper_home'>
+                        <div className='flex gap-[1rem] pb-[2rem]'>
                           <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/java_logo.png"
-                            alt="java"
-                            className="w-[76px]"
+                            decoding='async'
+                            loading='lazy'
+                            src='/images/java_logo.png'
+                            alt='java'
+                            className='w-[76px]'
                           />
                           <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/angular_logo.png"
-                            alt="angularjs"
-                            className="w-[76px]"
+                            decoding='async'
+                            loading='lazy'
+                            src='/images/angular_logo.png'
+                            alt='angularjs'
+                            className='w-[76px]'
                           />
                         </div>
-                        <div className="developer_sec6_title mb-2">
+                        <div className='developer_sec6_title mb-2'>
                           <p>1. Java Angular Developer</p>
                         </div>
-                        <div className="hire_data_sec">
-                          <p className="md:min-h-[144px] min-h-[150px]">
+                        <div className='hire_data_sec'>
+                          <p className='md:min-h-[144px] min-h-[150px]'>
                             With the combination of Angular and Java
                             technologies, you can use end-to-end full-stack
                             development to get a fast and powerful web
@@ -114,29 +114,29 @@ const TechnologyCombination = () => {
                       </div>
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer/" && (
-                          <div className="style_sec3_swiper_home">
-                            <div className="flex gap-[1rem] pb-[2rem]">
+                        {pathname === '/hire-nodejs-developer/' && (
+                          <div className='style_sec3_swiper_home'>
+                            <div className='flex gap-[1rem] pb-[2rem]'>
                               <img
-                                decoding="async"
-                                loading="lazy"
-                                src="/images/js-1.png"
-                                alt="nodejs"
-                                className="w-[76px]"
+                                decoding='async'
+                                loading='lazy'
+                                src='/images/js-1.png'
+                                alt='nodejs'
+                                className='w-[76px]'
                               />
                               <img
-                                decoding="async"
-                                loading="lazy"
-                                src="/images/3-1.png"
-                                alt="reactjs"
-                                className="w-[76px]"
+                                decoding='async'
+                                loading='lazy'
+                                src='/images/3-1.png'
+                                alt='reactjs'
+                                className='w-[76px]'
                               />
                             </div>
-                            <div className="developer_sec6_title mb-2">
+                            <div className='developer_sec6_title mb-2'>
                               <p>1. Node React Developer</p>
                             </div>
-                            <div className="hire_data_sec">
-                              <p className="md:min-h-[120px] min-h-[120px]">
+                            <div className='hire_data_sec'>
+                              <p className='md:min-h-[120px] min-h-[120px]'>
                                 This master combination of our full stack Node
                                 js and React js will help you build complex apps
                                 with a clean codebase and great performance.
@@ -155,38 +155,38 @@ const TechnologyCombination = () => {
             </div>
           </div>
         </div>
-        <div className="hire_sec1_service_50">
-          <div className="react-technology">
-            <div className="relative z-10 rounded-[30px] !border-[1px]  border-[#00dfb8]">
-              <div className="dots_flex">
-                <div className="dots"></div>
-                <div className="dots"></div>
-                <div className="dots"></div>
+        <div className='hire_sec1_service_50'>
+          <div className='react-technology'>
+            <div className='relative z-10 rounded-[30px] !border-[1px]  border-[#00dfb8]'>
+              <div className='dots_flex'>
+                <div className='dots'></div>
+                <div className='dots'></div>
+                <div className='dots'></div>
               </div>
-              <div className="background-hover border-t-[1px]  border-[#00dfb8]">
-                {pathname === "/hire-reactjs-developer/" ? (
-                  <div className="style_sec3_swiper_home">
-                    <div className="flex gap-[1rem] pb-[2rem]">
+              <div className='background-hover border-t-[1px]  border-[#00dfb8]'>
+                {pathname === '/hire-reactjs-developer/' ? (
+                  <div className='style_sec3_swiper_home'>
+                    <div className='flex gap-[1rem] pb-[2rem]'>
                       <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/3-1.png"
-                        alt="reactjs"
-                        className="w-[76px]"
+                        decoding='async'
+                        loading='lazy'
+                        src='/images/3-1.png'
+                        alt='reactjs'
+                        className='w-[76px]'
                       />
                       <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/java_logo.png"
-                        alt="java"
-                        className="w-[76px]"
+                        decoding='async'
+                        loading='lazy'
+                        src='/images/java_logo.png'
+                        alt='java'
+                        className='w-[76px]'
                       />
                     </div>
-                    <div className="developer_sec6_title mb-2">
+                    <div className='developer_sec6_title mb-2'>
                       <p>2. React Java Developer</p>
                     </div>
-                    <div className="hire_data_sec">
-                      <p className="md:h-[120px] min-h-[120px]">
+                    <div className='hire_data_sec'>
+                      <p className='md:h-[120px] min-h-[120px]'>
                         Modernize your projects with a React-driven website and
                         Java backend. We’ll create an app that’s visually
                         beautiful, full of features, and works on every device.
@@ -198,29 +198,29 @@ const TechnologyCombination = () => {
                   </div>
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer/" ? (
-                      <div className="style_sec3_swiper_home">
-                        <div className="flex gap-[1rem] pb-[2rem]">
+                    {pathname === '/hire-java-developer/' ? (
+                      <div className='style_sec3_swiper_home'>
+                        <div className='flex gap-[1rem] pb-[2rem]'>
                           <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/java_logo.png"
-                            alt="java"
-                            className="w-[76px]"
+                            decoding='async'
+                            loading='lazy'
+                            src='/images/java_logo.png'
+                            alt='java'
+                            className='w-[76px]'
                           />
                           <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/3-1.png"
-                            alt="reactjs"
-                            className="w-[76px]"
+                            decoding='async'
+                            loading='lazy'
+                            src='/images/3-1.png'
+                            alt='reactjs'
+                            className='w-[76px]'
                           />
                         </div>
-                        <div className="developer_sec6_title mb-2">
+                        <div className='developer_sec6_title mb-2'>
                           <p>2. Java React Developer</p>
                         </div>
-                        <div className="hire_data_sec">
-                          <p className="md:min-h-[144px] min-h-[150px]">
+                        <div className='hire_data_sec'>
+                          <p className='md:min-h-[144px] min-h-[150px]'>
                             We bring you React’s great front-end for your users
                             and provide Java’s robust backend to rapidly build
                             your solution. Our full stack experts are
@@ -231,29 +231,29 @@ const TechnologyCombination = () => {
                       </div>
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer/" && (
-                          <div className="style_sec3_swiper_home">
-                            <div className="flex gap-[1rem] pb-[2rem]">
+                        {pathname === '/hire-nodejs-developer/' && (
+                          <div className='style_sec3_swiper_home'>
+                            <div className='flex gap-[1rem] pb-[2rem]'>
                               <img
-                                decoding="async"
-                                loading="lazy"
-                                src="/images/js-1.png"
-                                alt="nodejs"
-                                className="w-[76px]"
+                                decoding='async'
+                                loading='lazy'
+                                src='/images/js-1.png'
+                                alt='nodejs'
+                                className='w-[76px]'
                               />
                               <img
-                                decoding="async"
-                                loading="lazy"
-                                src="/images/angular_logo.png"
-                                alt="angularjs"
-                                className="w-[76px]"
+                                decoding='async'
+                                loading='lazy'
+                                src='/images/angular_logo.png'
+                                alt='angularjs'
+                                className='w-[76px]'
                               />
                             </div>
-                            <div className="developer_sec6_title mb-2">
+                            <div className='developer_sec6_title mb-2'>
                               <p>2. Node Angular Developer</p>
                             </div>
-                            <div className="hire_data_sec">
-                              <p className="md:min-h-[120px] min-h-[150px]">
+                            <div className='hire_data_sec'>
+                              <p className='md:min-h-[120px] min-h-[150px]'>
                                 This powerful duo of full stack Node js +
                                 Angular can design an engaging and interactive
                                 user interface that interacts with the backend
@@ -274,34 +274,34 @@ const TechnologyCombination = () => {
         </div>
       </div>
 
-      <div className="section8_service py-[5rem]">
+      <div className='section8_service py-[5rem]'>
         <Link
-          href="#section10_service"
-          onClick={(e) => scrollToSection(e, "section10_service")}
+          href='#section10_service'
+          onClick={(e) => scrollToSection(e, 'section10_service')}
         >
           <div
-            className={`btn_flex mt-[4rem] ${isMobile ? "!px-8 !py-2" : ""}`}
+            className={`btn_flex mt-[4rem] ${isMobile ? '!px-8 !py-2' : ''}`}
           >
-            <div className="chat_icon">
+            <div className='chat_icon'>
               <img
-                decoding="async"
-                loading="lazy"
-                src="/images/hire-hand.png"
-                alt="hire hand"
+                decoding='async'
+                loading='lazy'
+                src='/images/hire-hand.png'
+                alt='hire hand'
               />
             </div>
-            <div className="chat_btn_technology">
-              <p className="transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
-                {pathname === "/hire-reactjs-developer/" ? (
-                  "Hire Full Stack Reactjs Developers"
+            <div className='chat_btn_technology'>
+              <p className='transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]'>
+                {pathname === '/hire-reactjs-developer/' ? (
+                  'Hire Full Stack Reactjs Developers'
                 ) : (
                   <>
-                    {pathname === "/hire-java-developer/" ? (
-                      "Hire Full Stack Java Developers"
+                    {pathname === '/hire-java-developer/' ? (
+                      'Hire Full Stack Java Developers'
                     ) : (
                       <>
-                        {pathname === "/hire-nodejs-developer/"
-                          ? "Hire Full Stack Nodejs Developers"
+                        {pathname === '/hire-nodejs-developer/'
+                          ? 'Hire Full Stack Nodejs Developers'
                           : null}
                       </>
                     )}
