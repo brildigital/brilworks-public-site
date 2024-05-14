@@ -24,7 +24,7 @@ const DedicatedTeamPlans = () => {
 
   return (
     <div
-      className='px-[70px] md:py-[6rem] py-16 end-to-end'
+      className='md:px-[70px] px-8 md:py-24 py-16 end-to-end'
     >
       <div className='endTO_text solutions'>
         <h2 className='!w-full p-0'>

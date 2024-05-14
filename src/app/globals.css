@@ -3484,7 +3484,8 @@ textarea.form-control-txt {
   background: linear-gradient(277.16deg, #02E1B8 0.58%, #00B5D4 100%);
 }
 
-.dedicated_team_card, .service_detail_card_border:hover {
+.dedicated_team_card,
+.service_detail_card_border:hover {
   background: linear-gradient(180deg, #02E1B8 0%, #00B5D4 100%);
   box-shadow: 0px 2px 6px 0px #00000033;
 }
@@ -3499,6 +3500,7 @@ textarea.form-control-txt {
 
 .why_staff_augmentation svg {
   width: 100%;
+  height: fit-content;
 }
 
 .position-unset {
@@ -3507,4 +3509,18 @@ textarea.form-control-txt {
 
 .we_are_hiring svg {
   height: auto;
+}
+
+.header-title {
+  font-size: 70px;
+  line-height: 84px;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 40px;
+    /* Adjust as needed for smaller screens */
+    line-height: 50px;
+    /* Adjust as needed for smaller screens */
+  }
 }

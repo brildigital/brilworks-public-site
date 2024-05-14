@@ -62,14 +62,14 @@ const ServiceItem = ({ image, title }) => (
 
 const UpskillStaffAugmentation = () => {
   return (
-    <div className="md:py-[6rem] py-[4rem] end-to-end">
+    <div className="md:py-24 py-12 end-to-end">
       <div className="endTO_text solutions">
         <h2 className="!w-full md:!w-2/3 p-0 mx-auto">
           Upskill Your Workforce with IT Staff Augmentation Service
         </h2>
       </div>
-      <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
-        <p className="!text-[1.2rem] !text-[#504F4F]">
+      <div className="endTO_text_content home_sec2_txt4 mb-20">
+        <p className="!text-[1.2rem] !text-[#504F4F] md:!text-center !text-left">
           With our tailored staff augmentation solutions, you can quickly fill
           skill gaps and tackle critical projects.
           <br />

@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
-import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+import "../../styles/Services.scss";
 
 const DedicatedTeamBanner = dynamic(() => import("./DedicatedTeamBanner"));
 const DedicatedTeamBenefits = dynamic(() => import("./DedicatedTeamBenefits"));
@@ -18,10 +18,10 @@ const DedicatedTeam = () => {
       <DedicatedTeamBanner />
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl leading-tight text-center font-bold md:w-2/3 w-full">
+          <p className="md:text-5xl text-3xl leading-tight md:text-center font-bold md:w-2/3 w-full">
             Dedicated Team Service: Tailored Solutions, Seamless Collaboration
           </p>
-          <div className="flex flex-col gap-8 mt-10 text-2xl max-w-7xl text-center">
+          <div className="flex flex-col gap-8 mt-10 md:text-2xl text-xl max-w-7xl md:text-center">
             <p>
               Hire skilled developers, designers, project managers, and quality
               assurance specialists who work exclusively on your project within
@@ -43,14 +43,14 @@ const DedicatedTeam = () => {
       </div>
       <div className="lg:px-[70px] px-8">
         <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
-          <p className="text-5xl leading-tight text-center max-w-7xl">
+          <p className="md:text-5xl text-2xl leading-tight md:text-center md:max-w-7xl">
             Let us tailor a team to suit your specific needs,
             <br /> ensuring seamless collaboration, exceptional quality, <br />
             and unparalleled results. Experience the difference a dedicated team
             can make
           </p>
           <div className="flex justify-center mt-10">
-            <button className="bg-white py-5 px-9 border border-black uppercase">
+            <button className="bg-white py-5 md:px-9 px-3 whitespace-nowrap border border-black uppercase">
               Get started today
             </button>
           </div>
