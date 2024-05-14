@@ -1,25 +1,24 @@
-import GenerativeAIDevService from "../components/Services/GenerativeAIDevService";
+import dynamic from "next/dynamic";
+
+const BrilworksPrivacyPolicy = dynamic(() =>
+  import("../components/PrivacyPolicy/BrilworksPrivacyPolicy")
+);
 
 export const metadata = {
-  title: "Generative AI Services",
+  title: "Brilworks Privacy Policy",
   description:
     "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
   openGraph: {
-    title: "Generative AI Services",
+    title: "Brilworks Privacy Policy",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName: "Mobile App & Software Development Company | Brilworks",
-    images: [
-      {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/generative-ai-banner.webp`,
-      },
-    ],
     locale: "en-US",
     type: "website",
   },
   twitter: {
-    title: "Generative AI Services",
+    title: "Brilworks Privacy Policy",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
     card: "summary_large_image",
@@ -32,9 +31,14 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="!bg-colorWhite">
-      <GenerativeAIDevService />
-    </div>
+    <>
+      {process.env.VERCEL_ENV === "production" ? (
+        <head>
+          <meta name="robots" content="noindex, nofollow" />
+        </head>
+      ) : null}
+      <BrilworksPrivacyPolicy />
+    </>
   );
 };
 
