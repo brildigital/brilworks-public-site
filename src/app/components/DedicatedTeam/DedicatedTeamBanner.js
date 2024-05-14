@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Link from "next/link";
 
 const DedicatedTeamBanner = () => {
   return (
@@ -12,9 +14,16 @@ const DedicatedTeamBanner = () => {
           committed to delivering tailored solutions that meet your unique
           business needs.
         </p>
-        <button className="linear-gradient-background w-fit px-5 py-4 uppercase">
-          Get a Dedicated team
-        </button>
+        <Link
+          href="/contact-us/"
+          className="bg-unset hover:!bg-colorWhite !mb-4"
+        >
+          <div className="header_sec1_txt2">
+            <p className="transition uppercase !text-base">
+              Get a Dedicated team
+            </p>
+          </div>
+        </Link>
       </div>
       <div className="grid md:grid-cols-2 gap-5 flex-none">
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">

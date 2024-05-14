@@ -36,15 +36,15 @@ const servicesMenuItems = [
     name: "ARTIFICIAL INTELLIGENCE",
     subSections: [
       {
-        name: "Generative AI",
+        name: "Generative AI Development",
         path: "/generative-ai-development-services/",
       },
       {
         name: "AI/ML Development",
         path: "/ai-ml-development-services/",
       },
-      {
-        name: "Gen AI Poc & GenAI MVP",
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
+        name: "GenAI POC & MVP",
         path: "#",
       },
     ],
@@ -68,8 +68,8 @@ const servicesMenuItems = [
       //   name: "ERP Next Development",
       //   path: "/erp-next-development-services/",
       // },
-      {
-        name: "App Modernizer",
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
+        name: "Application Modernization",
         path: "#",
       },
     ],
@@ -81,11 +81,11 @@ const servicesMenuItems = [
         name: "BI Consulting",
         path: "/business-intelligence-services/",
       },
-      {
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
         name: "Power BI",
         path: "#",
       },
-      {
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
         name: "Data Engineering",
         path: "#",
       },
@@ -184,7 +184,7 @@ const hireTeamMenuItems = [
         name: "React Native",
         path: "/hire-react-native-developer/",
       },
-      {
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
         name: "Flutter",
         path: "#",
       },
@@ -205,9 +205,9 @@ const hireTeamMenuItems = [
         name: "Node.JS",
         path: "/hire-nodejs-developer/",
       },
-      {
+      process.env.NEXT_PUBLIC_BASE_URL !== "https://www.brilworks.com/" && {
         name: "Python",
-        path: "/hire-nodejs-developer/",
+        path: "#",
       },
     ],
   },

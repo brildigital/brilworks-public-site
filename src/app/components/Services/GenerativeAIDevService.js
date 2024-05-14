@@ -6,6 +6,7 @@ import "../../styles/Services.scss";
 import { useMediaQuery } from "react-responsive";
 import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import UseCases from "./UseCases";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -59,6 +60,7 @@ const GenerativeAIDevService = () => {
       </div>
       <DevOpsShipFaster />
       <OurServices />
+      <UseCases />
       <HomepageWhyChooseUs />
       <Honors />
       <ContactBlock />

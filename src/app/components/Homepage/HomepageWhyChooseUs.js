@@ -489,7 +489,15 @@ const HomepageWhyChooseUs = () => {
                       Why Choose Brilworks for Frappe Development ?
                     </h2>
                   ) : (
-                    <h2>Why Choose Us?</h2>
+                    <>
+                      {pathname === "/generative-ai-development-services/" ? (
+                        <h2 className="text-center w-full">
+                          Here's what sets us apart
+                        </h2>
+                      ) : (
+                        <h2>Why Choose Us?</h2>
+                      )}
+                    </>
                   )}
                 </>
               )}

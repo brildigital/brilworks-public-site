@@ -423,10 +423,10 @@ const Footer = () => {
                   <p>© {new Date().getFullYear()} BRILWORKS</p>
                 </div>
                 <div className="footer_txt_flex2">
-                  <Link href="#" onClick={(e) => e.preventDefault()}>
+                  <Link href="/terms-and-conditions/">
                     <p className="transition">Terms of Service</p>
                   </Link>
-                  <Link href="#" onClick={(e) => e.preventDefault()}>
+                  <Link href="/privacy-policy/">
                     <p className="transition">Privacy Policy</p>
                   </Link>
                   <Link href="/site-map/">

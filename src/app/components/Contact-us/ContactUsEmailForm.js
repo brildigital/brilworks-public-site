@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 
-const ContactUsEmailForm = () => {
+const ContactUsEmailForm = ({ inquiryForm }) => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,7 +43,7 @@ const ContactUsEmailForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ ...formData, page: pathname }),
-        },
+        }
       );
 
       if (response.ok) {
@@ -145,7 +145,7 @@ const ContactUsEmailForm = () => {
           {respMessage}
         </div>
         <button
-          className="btn_paddinng contact_btn btn_flex"
+          className={`btn_paddinng contact_btn btn_flex`}
           type="submit"
           disabled={isSubmitting}
         >
@@ -154,9 +154,33 @@ const ContactUsEmailForm = () => {
               <Loader />
             </div>
           ) : (
-            <p className="send_btn" id="submit" name="btnSubmit">
-              SUBMIT INQUIRY
-            </p>
+            <>
+              {inquiryForm ? (
+                <p
+                  className="send_btn !rounded-none"
+                  id="submit"
+                  name="btnSubmit"
+                >
+                  SUBMIT INQUIRY
+                </p>
+              ) : (
+                <>
+                  <div className="formBtn_icon grid-flow-row">
+                    <p>
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="/images/right_arrow.png"
+                        alt="arrow"
+                      />
+                    </p>
+                  </div>
+                  <p className="send_btn" id="submit" name="btnSubmit">
+                    Submit
+                  </p>
+                </>
+              )}
+            </>
           )}
         </button>
       </form>

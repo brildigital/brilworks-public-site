@@ -13,24 +13,21 @@ const GameChanger = () => {
         </div>
         <div className="flex justify-center w-full mt-10">
           <Link href="/contact-us/" className="!w-fit">
-            <div className="header_sec1_txt2 hidden-xs">
+            <div className="header_sec1_txt2">
               <p className="transition uppercase">Free Consultation</p>
             </div>
           </Link>
         </div>
       </div>
-      <div className="flex-none home_txt3 home_txt3_top_padding px-3 py-5">
+      <div className="flex-none home_txt3 home_txt3_top_padding px-6 py-5">
         <h1 className="!text-2xl flex gap-2 flex-wrap">
-          <Link href="/generative-ai-development-services/">AI</Link> |
-          <Link href="/product-engineering-development-services/">
-            Product Engineering
-          </Link>{" "}
-          |{" "}
-          <Link href="/business-intelligence-services/">Data Engineering</Link>{" "}
-          | <Link href="/aws-consulting-services/">Cloud</Link> |
-          <Link href="/low-code-no-code-development-services/">
-            Low-code No-code
-          </Link>
+          <Link href="/ai-ml-development-services/">AI</Link> |
+          <Link href="/business-intelligence-services/">BI</Link> |
+          <Link href="/aws-consulting-services/">Cloud</Link> |
+          {process.env.NEXT_PUBLIC_BASE_URL !==
+            "https://www.brilworks.com/" && <Link href="#">Data |</Link>}
+          <Link href="/low-code-no-code-development-services/">Low-code</Link>|
+          <Link href="/product-engineering-development-services/">Product</Link>
         </h1>
       </div>
     </div>

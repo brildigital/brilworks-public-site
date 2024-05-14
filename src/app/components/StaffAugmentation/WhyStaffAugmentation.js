@@ -12,7 +12,7 @@ const ServiceCard = ({ title, description }) => (
 
 const WhyStaffAugmentation = () => {
   return (
-    <div className="md:px-[70px] px-8 md:py-24 py-12 end-to-end">
+    <div className="md:px-[70px] px-6 md:py-24 py-12 end-to-end">
       <div className="endTO_text solutions">
         <h2 className="!w-full p-0">
           Why Brilworks For IT Staff Augmentation Service

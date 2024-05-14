@@ -28,6 +28,14 @@ const DevOpsShipFaster = () => {
       "We leverage the latest technology and industry best practices to deliver future proof  solutions that optimize your operations, drive growth, and captivate users. Partner with us and experience the difference - expertise, agility, and dedication to your success.",
   };
 
+  const generativeAIData = {
+    heading: "Transform Your Business with Generative AI",
+    para1:
+      "Unlock the vast potential of generative AI to creatively revolutionize how your business operates. Whether it's generating original content, designing innovative applications, or creating novel customer experiences, generative AI serves as a catalyst for significant productivity improvements and operational transformation. Utilize Amazon's Bedrock and Foundation Models, available through SageMaker Jumpstart, to train your models using your own internal data while maintaining its confidentiality.",
+    para2:
+      "At Brilworks, we offer the depth of experience and technical expertise needed to launch or scale your generative AI initiatives effectively. Whether you are beginning your AI journey or seeking to enhance your existing model's infrastructure, our team is equipped to guide you through every step of the process, ensuring tailored solutions that drive real results.",
+  };
+
   const applicationDevData = {
     heading: "Your Innovation Partner in Cutting-Edge Development",
     para1:
@@ -60,7 +68,7 @@ const DevOpsShipFaster = () => {
     "/product-engineering-development-services/": productEngineeringData,
     "/saas-application-development-services/": saasApplicationDevData,
     "/application-development-services/": applicationDevData,
-    "/generative-ai-development-services/": applicationDevData,
+    "/generative-ai-development-services/": generativeAIData,
     "/erp-next-development-services/": applicationDevData,
     "/low-code-no-code-development-services/": applicationDevData,
     "/business-intelligence-services/": applicationDevData,
@@ -77,12 +85,12 @@ const DevOpsShipFaster = () => {
         <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]">
           {heading}
         </h2>
-        <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
+        <p className="md:text-2xl text-lg md:text-center text-left w-11/12 mx-auto">
           {para1}
         </p>
         <br />
         {para2 && (
-          <p className="md:text-2xl text-lg md:text-center text-left md:w-4/5 w-11/12 mx-auto">
+          <p className="md:text-2xl text-lg md:text-center text-left w-11/12 mx-auto">
             {para2}
           </p>
         )}

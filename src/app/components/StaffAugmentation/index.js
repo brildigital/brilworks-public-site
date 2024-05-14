@@ -4,10 +4,8 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
 import "../../styles/Services.scss";
+import StaffAugmentationBanner from "./StaffAugmentationBanner";
 
-const StaffAugmentationBanner = dynamic(() =>
-  import("./StaffAugmentationBanner")
-);
 const WhyStaffAugmentation = dynamic(() => import("./WhyStaffAugmentation"));
 const UpskillStaffAugmentation = dynamic(() =>
   import("./UpskillStaffAugmentation")

@@ -50,7 +50,9 @@ const AdaloDevelopmentService = () => {
             </p>
             <Link href="/contact-us/">
               <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">contact us</p>
+                <p className="transition uppercase !text-base">
+                  Tell us about your project
+                </p>
               </div>
             </Link>
           </div>
