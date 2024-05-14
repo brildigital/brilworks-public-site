@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../Homepage/BigText";
 import "../../styles/Services.scss";
+import DedicatedTeamBanner from "./DedicatedTeamBanner";
 
-const DedicatedTeamBanner = dynamic(() => import("./DedicatedTeamBanner"));
 const DedicatedTeamBenefits = dynamic(() => import("./DedicatedTeamBenefits"));
 const WhyDedicatedTeam = dynamic(() => import("./WhyDedicatedTeam"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
@@ -16,8 +17,8 @@ const DedicatedTeam = () => {
   return (
     <div className="services pt-20 medium-font">
       <DedicatedTeamBanner />
-      <div className="lg:px-[70px] px-8">
-        <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
+      <div className="lg:px-[70px] px-6">
+        <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
           <p className="md:text-5xl text-3xl leading-tight md:text-center font-bold md:w-2/3 w-full">
             Dedicated Team Service: Tailored Solutions, Seamless Collaboration
           </p>
@@ -35,25 +36,25 @@ const DedicatedTeam = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-8">
+      <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-6">
         <WhyDedicatedTeam />
       </div>
-      <div className="lg:px-[70px] px-8">
+      <div className="lg:px-[70px] px-6">
         <DedicatedTeamBenefits />
       </div>
-      <div className="lg:px-[70px] px-8">
-        <div className="linear-gradient-background rounded-3xl py-10 px-12 flex items-center justify-center flex-col">
+      <div className="lg:px-[70px] px-6">
+        <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
           <p className="md:text-5xl text-2xl leading-tight md:text-center md:max-w-7xl">
             Let us tailor a team to suit your specific needs,
             <br /> ensuring seamless collaboration, exceptional quality, <br />
             and unparalleled results. Experience the difference a dedicated team
             can make
           </p>
-          <div className="flex justify-center mt-10">
-            <button className="bg-white py-5 md:px-9 px-3 whitespace-nowrap border border-black uppercase">
-              Get started today
-            </button>
-          </div>
+          <Link href="/contact-us/">
+            <div className="!bg-colorWhite px-[14px] py-[10px] mt-8 border border-colorBlack shadow-none hover:shadow-lg cursor-pointer">
+              <p className="uppercase">Get started today</p>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="bg-[#F3FDFF] py-10">

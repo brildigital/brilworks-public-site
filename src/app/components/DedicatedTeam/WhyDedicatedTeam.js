@@ -63,7 +63,7 @@ const WhyDedicatedTeam = () => {
           href="/contact-us/"
           className="linear-gradient-background w-fit p-[2px]"
         >
-          <button className="bg-white py-5 px-9 !text-base uppercase">
+          <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg cursor-pointer">
             Let’s discuss your project
           </button>
         </Link>

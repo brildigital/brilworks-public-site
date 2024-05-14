@@ -37,19 +37,19 @@ const serviceItems = [
   },
   {
     title: "AI/ML Developer",
-    image: "cardiogram-icon",
+    image: "ai-ml-icon",
   },
   {
     title: "Project Manager",
-    image: "cardiogram-icon",
+    image: "project-manager-icon",
   },
   {
     title: "DevOps Engineers",
-    image: "cardiogram-icon",
+    image: "devops-engineer-icon",
   },
   {
     title: "QA & Test Automation Engineers",
-    image: "cardiogram-icon",
+    image: "qa-test-engineer-icon",
   },
 ];
 
@@ -62,7 +62,7 @@ const ServiceItem = ({ image, title }) => (
 
 const UpskillStaffAugmentation = () => {
   return (
-    <div className="md:py-24 py-12 end-to-end">
+    <div className="md:py-24 end-to-end">
       <div className="endTO_text solutions">
         <h2 className="!w-full md:!w-2/3 p-0 mx-auto">
           Upskill Your Workforce with IT Staff Augmentation Service
@@ -86,7 +86,7 @@ const UpskillStaffAugmentation = () => {
           href="/contact-us/"
           className="linear-gradient-background w-fit p-[2px]"
         >
-          <button className="bg-white py-5 px-9 !text-base uppercase">
+          <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg">
             Schedule a Developer Interview
           </button>
         </Link>
