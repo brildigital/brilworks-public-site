@@ -9,7 +9,9 @@ import DedicatedTeamBanner from "./DedicatedTeamBanner";
 const DedicatedTeamBenefits = dynamic(() => import("./DedicatedTeamBenefits"));
 const WhyDedicatedTeam = dynamic(() => import("./WhyDedicatedTeam"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const DedicatedTeamPlans = dynamic(() => import("./DedicatedTeamPlans"));
+const ServicesPricingPlans = dynamic(() =>
+  import("../Services/ServicesPricingPlans")
+);
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
 const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
 
@@ -17,9 +19,9 @@ const DedicatedTeam = () => {
   return (
     <div className="services pt-20 medium-font">
       <DedicatedTeamBanner />
-      <div className="lg:px-[70px] px-6">
+      <div className="lg:px-[70px] px-6 pt-10 reveal">
         <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
-          <p className="md:text-5xl text-3xl leading-tight md:text-center font-bold md:w-2/3 w-full">
+          <p className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full">
             Dedicated Team Service: Tailored Solutions, Seamless Collaboration
           </p>
           <div className="flex flex-col gap-8 mt-10 md:text-2xl text-xl max-w-7xl md:text-center">
@@ -42,7 +44,7 @@ const DedicatedTeam = () => {
       <div className="lg:px-[70px] px-6">
         <DedicatedTeamBenefits />
       </div>
-      <div className="lg:px-[70px] px-6">
+      <div className="lg:px-[70px] px-6 pb-14 reveal">
         <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
           <p className="md:text-5xl text-2xl leading-tight md:text-center md:max-w-7xl">
             Let us tailor a team to suit your specific needs,
@@ -61,7 +63,7 @@ const DedicatedTeam = () => {
         <BestAdvocateText />
         <ClientReviews />
       </div>
-      <DedicatedTeamPlans />
+      <ServicesPricingPlans />
       <div className="bg-[#F3FDFF]">
         <TechStackWeUse />
       </div>

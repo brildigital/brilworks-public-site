@@ -1,11 +1,20 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import Link from "next/link";
-import { Card, CardBody } from "@material-tailwind/react";
+
+const Card = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Card),
+  { ssr: false }
+);
+const CardBody = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.CardBody),
+  { ssr: false }
+);
 
 const ReactNativeTechQandA = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });

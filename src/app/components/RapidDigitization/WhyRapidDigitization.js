@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
-import Svgs from "../Svgs";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Svgs = dynamic(() => import("../Svgs"));
 
 const serviceItems = [
   {
@@ -45,20 +48,26 @@ const WhyRapidDigitization = () => {
           Services?
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
-        {serviceItems.map((item) => (
-          <ServiceItem key={item.title} title={item.title} image={item.image} />
-        ))}
-      </div>
-      <div className="mt-20 flex w-full justify-center">
-        <Link
-          href="/contact-us/"
-          className="linear-gradient-background w-fit p-[2px]"
-        >
-          <button className="bg-white px-[14px] py-[10px] !text-base hover:shadow-lg uppercase">
-            Let’s discuss your project
-          </button>
-        </Link>
+      <div className="reveal">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
+          {serviceItems.map((item) => (
+            <ServiceItem
+              key={item.title}
+              title={item.title}
+              image={item.image}
+            />
+          ))}
+        </div>
+        <div className="mt-20 flex w-full justify-center">
+          <Link
+            href="/contact-us/"
+            className="linear-gradient-background w-fit p-[2px]"
+          >
+            <button className="bg-white px-[14px] py-[10px] !text-base hover:shadow-lg uppercase">
+              Let’s discuss your project
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

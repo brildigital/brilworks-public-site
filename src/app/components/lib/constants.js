@@ -170,6 +170,27 @@ const industryMenuItems = [
       },
     ],
   },
+  // {
+  //   name: "USE CASES",
+  //   subSections: [
+  //     {
+  //       name: "eCommerce",
+  //       path: "#",
+  //     },
+  //     {
+  //       name: "Healthcare",
+  //       path: "#",
+  //     },
+  //     {
+  //       name: "IoT",
+  //       path: "#",
+  //     },
+  //     {
+  //       name: "SAAS",
+  //       path: "#",
+  //     },
+  //   ],
+  // },
 ];
 
 const hireTeamMenuItems = [

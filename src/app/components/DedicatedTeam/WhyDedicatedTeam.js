@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
-import Svgs from "../Svgs";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const Svgs = dynamic(() => import("../Svgs"));
 
 const serviceItems = [
   {
@@ -53,20 +56,26 @@ const WhyDedicatedTeam = () => {
           Development Team ?
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
-        {serviceItems.map((item) => (
-          <ServiceItem key={item.title} title={item.title} image={item.image} />
-        ))}
-      </div>
-      <div className="mt-20 flex w-full justify-center">
-        <Link
-          href="/contact-us/"
-          className="linear-gradient-background w-fit p-[2px]"
-        >
-          <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg cursor-pointer">
-            Let’s discuss your project
-          </button>
-        </Link>
+      <div className="reveal">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+          {serviceItems.map((item) => (
+            <ServiceItem
+              key={item.title}
+              title={item.title}
+              image={item.image}
+            />
+          ))}
+        </div>
+        <div className="mt-20 flex w-full justify-center">
+          <Link
+            href="/contact-us/"
+            className="linear-gradient-background w-fit p-[2px]"
+          >
+            <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg cursor-pointer">
+              Let’s discuss your project
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

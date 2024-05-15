@@ -1,7 +1,16 @@
 "use client";
-import { Card, CardBody } from "@material-tailwind/react";
-import { usePathname } from "next/navigation";
 import React from "react";
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
+
+const Card = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Card),
+  { ssr: false }
+);
+const CardBody = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.CardBody),
+  { ssr: false }
+);
 
 const HomepageWhyChooseUs = () => {
   const pathname = usePathname();

@@ -5,13 +5,13 @@ import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
 import { useMediaQuery } from "react-responsive";
 import { BestAdvocateText } from "../Homepage/BigText";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import UseCases from "./UseCases";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
 );
+const DevOpsShipFaster = dynamic(() => import("./DevOpsShipFaster"));
 const OurServices = dynamic(() => import("./OurServices"));
+const UseCases = dynamic(() => import("./UseCases"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));

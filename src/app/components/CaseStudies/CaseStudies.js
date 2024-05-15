@@ -1,11 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Card, CardBody } from "@material-tailwind/react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { getCasestudyData } from "../lib/getStoryblokData";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+
+const Card = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Card),
+  { ssr: false }
+);
+const CardBody = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.CardBody),
+  { ssr: false }
+);
 
 const CaseStudies = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });

@@ -11,8 +11,8 @@ const UpskillStaffAugmentation = dynamic(() =>
   import("./UpskillStaffAugmentation")
 );
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const StaffAugmentationPlans = dynamic(() =>
-  import("./StaffAugmentationPlans")
+const ServicesPricingPlans = dynamic(() =>
+  import("../Services/ServicesPricingPlans")
 );
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
 const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
@@ -37,7 +37,7 @@ const StaffAugmentation = () => {
         <BestAdvocateText />
         <ClientReviews />
       </div>
-      <StaffAugmentationPlans />
+      <ServicesPricingPlans />
       <div className="bg-[#F3FDFF]">
         <TechStackWeUse />
       </div>

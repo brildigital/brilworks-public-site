@@ -2,10 +2,12 @@ import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../components/Homepage/BigText";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import GameChanger from "../components/Homepage/GameChanger";
-import HomepageWhyChooseUs from "../components/Homepage/HomepageWhyChooseUs";
 
 const HomepageBlog = dynamic(() =>
   import("../components/Homepage/HomePageBlogs")
+);
+const HomepageWhyChooseUs = dynamic(() =>
+  import("../components/Homepage/HomepageWhyChooseUs")
 );
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
 const Honors = dynamic(() => import("../components/Homepage/Honors"));

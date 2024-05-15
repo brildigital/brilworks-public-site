@@ -4,12 +4,16 @@ import "../../styles/Homepage.scss";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import BrilworksSoftwareReview from "./BrilworksSoftwareReview";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { scrollEffect } from "../lib/commonFunction";
+
+const BrilworksSoftwareReview = dynamic(() =>
+  import("./BrilworksSoftwareReview")
+);
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });

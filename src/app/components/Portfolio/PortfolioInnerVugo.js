@@ -1,9 +1,14 @@
+"use client";
 import Link from "next/link";
-import { BestAdvocateText } from "../Homepage/BigText";
-import ClientReviews from "../Homepage/ClientReviews";
-import HomepageContactForm from "../Homepage/HomepageContactForm";
 import Image from "next/image";
-import WhatMakeUsBrilliant from "./WhatMakeUsBrilliant";
+import dynamic from "next/dynamic";
+import { BestAdvocateText } from "../Homepage/BigText";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
+const HomepageContactForm = dynamic(() =>
+  import("../Homepage/HomepageContactForm")
+);
+const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerVugo = () => {
   return (
