@@ -3,26 +3,13 @@ import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { BelievingText } from "./BigText";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonFunction";
-
-const Swiper = dynamic(() => import("swiper/react").then((mod) => mod.Swiper), {
-  ssr: false,
-});
-
-const SwiperSlide = dynamic(
-  () => import("swiper/react").then((mod) => mod.SwiperSlide),
-  { ssr: false }
-);
-
-const Pagination = dynamic(
-  () => import("swiper/modules").then((mod) => mod.Pagination),
-  { ssr: false }
-);
 
 const SeeingBelieving = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });

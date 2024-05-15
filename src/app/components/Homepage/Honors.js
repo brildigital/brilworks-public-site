@@ -3,26 +3,13 @@ import "swiper/css";
 import "../../styles/Homepage.scss";
 import "swiper/css/pagination";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { HonorText } from "./BigText";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import { usePathname } from "next/navigation";
-
-const Swiper = dynamic(() => import("swiper/react").then((mod) => mod.Swiper), {
-  ssr: false,
-});
-
-const SwiperSlide = dynamic(
-  () => import("swiper/react").then((mod) => mod.SwiperSlide),
-  { ssr: false }
-);
-
-const Pagination = dynamic(
-  () => import("swiper/modules").then((mod) => mod.Pagination),
-  { ssr: false }
-);
 
 const Honors = () => {
   const [isLoading, setIsLoading] = useState(true);
