@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import { Navbar, IconButton } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
-import MegaMenu from "./MegaMenu";
 import { menuItems } from "../lib/constants";
-import SideMenu from "./SideMenu";
-import MenuItem from "./MenuItem";
-import Svgs from "../Svgs";
+import dynamic from "next/dynamic";
+
+const Svgs = dynamic(() => import("../Svgs"));
+const SideMenu = dynamic(() => import("./SideMenu"));
+const MenuItem = dynamic(() => import("./MenuItem"));
+const MegaMenu = dynamic(() => import("./MegaMenu"));
 
 const NewHeader = () => {
   const [openNav, setOpenNav] = useState(false);

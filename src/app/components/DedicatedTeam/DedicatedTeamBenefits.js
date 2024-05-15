@@ -48,7 +48,7 @@ const DedicatedTeamBenefits = () => {
       <div className="endTO_text solutions">
         <h2 className="!w-full p-0">Benefits of Hiring a Dedicated Team</h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4 reveal">
         {benefits.map((item) => (
           <ServiceItem
             key={item.title}

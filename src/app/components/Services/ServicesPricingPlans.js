@@ -19,7 +19,7 @@ const PlanBenefit = ({ description }) => (
   </div>
 );
 
-const DedicatedTeamPlans = () => {
+const ServicesPricingPlans = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
@@ -46,7 +46,7 @@ const DedicatedTeamPlans = () => {
               <div className="pricing_grid ">
                 <div
                   className={`one ${
-                    !isMobile && "border-r-[1px] border-r-[#80808085] "
+                    !isMobile && "!border-r border-r-[#80808085]"
                   } md:p-4 lg:p-8 p-6`}
                 >
                   <div className="md:align-middle">
@@ -64,7 +64,7 @@ const DedicatedTeamPlans = () => {
                 <div
                   className={`two ${
                     isMobile
-                      ? " border-t-[1px] border-t-[#80808085]"
+                      ? "!border-t border-t-[#80808085]"
                       : "border-r-[1px] border-r-[#80808085]"
                   }  md:p-4 lg:p-8 p-6`}
                 >
@@ -78,7 +78,7 @@ const DedicatedTeamPlans = () => {
                 </div>
                 <div
                   className={`three ${
-                    isMobile && " border-t-[1px] border-t-[#80808085]"
+                    isMobile && "!border-t border-t-[#80808085]"
                   }  md:p-4 lg:p-8 p-6`}
                 >
                   <div className="sec8_service_txt1 txt_center">
@@ -99,4 +99,4 @@ const DedicatedTeamPlans = () => {
   );
 };
 
-export default DedicatedTeamPlans;
+export default ServicesPricingPlans;
