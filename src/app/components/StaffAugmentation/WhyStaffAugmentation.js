@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
-import Svgs from "../Svgs";
+import dynamic from "next/dynamic";
+
+const Svgs = dynamic(() => import("../Svgs"));
 
 const ServiceCard = ({ title, description }) => (
   <div className="service_detail_card_border p-[1px] rounded-lg">
@@ -18,7 +21,7 @@ const WhyStaffAugmentation = () => {
           Why Brilworks For IT Staff Augmentation Service
         </h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
         <div className="flex flex-col md:gap-20">
           <ServiceCard
             title="Cost-effective"

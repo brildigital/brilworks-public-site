@@ -1,11 +1,13 @@
 "use client";
+import { useEffect } from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import ClientReviews from "../Homepage/ClientReviews";
 import ContactUsEmailForm from "./ContactUsEmailForm";
-import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import Svgs from "../Svgs";
-import Link from "next/link";
+
+const Svgs = dynamic(() => import("../Svgs"));
 
 const ContactUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });

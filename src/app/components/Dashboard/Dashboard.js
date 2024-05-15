@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
-import UserDashboard from "./UserDashboard";
-import AdminDashboard from "./AdminDashboard";
-import InvitedUserDashboard from "./InvitedUserDashboard";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import dynamic from "next/dynamic";
+
+const UserDashboard = dynamic(() => import("./UserDashboard"));
+const AdminDashboard = dynamic(() => import("./AdminDashboard"));
+const InvitedUserDashboard = dynamic(() => import("./InvitedUserDashboard"));
 
 const Dashboard = ({ role }) => {
   if (role === "USER") {

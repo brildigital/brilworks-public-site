@@ -27,7 +27,7 @@ const RapidDigitization = () => {
   return (
     <div className="services pt-20 medium-font">
       <RapidDigitizationBanner />
-      <div className="lg:px-[70px] px-6">
+      <div className="lg:px-[70px] px-6 pt-8 reveal">
         <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-5 flex items-center justify-center flex-col">
           <p className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full">
             Digital Acceleration Service: Strategic Solutions, Transformative
@@ -54,7 +54,7 @@ const RapidDigitization = () => {
       <div className="lg:px-[70px] px-6">
         <RapidDigitizationBenefits />
       </div>
-      <div className="lg:px-[70px] px-6">
+      <div className="lg:px-[70px] px-6 pb-10 reveal">
         <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
           <p className="md:text-5xl text-3xl !leading-tight md:text-center md:max-w-7xl">
             Let us guide you through every step of your digital transformation

@@ -3,9 +3,11 @@ import React from "react";
 import "../../styles/Giststyle.scss";
 import parse from "html-react-parser";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import BlogContactForm from "../Blog/BlogContactForm";
 import CopyToClipboard from "./CopyToClipboard";
+
+const BlogContactForm = dynamic(() => import("../Blog/BlogContactForm"));
 
 const TechQandAContent = ({ data }) => {
   let data_count = 0;

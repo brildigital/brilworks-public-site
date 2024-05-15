@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
-import Svgs from "../Svgs";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Svgs = dynamic(() => import("../Svgs"));
 
 const serviceItems = [
   {
@@ -68,28 +71,35 @@ const UpskillStaffAugmentation = () => {
           Upskill Your Workforce with IT Staff Augmentation Service
         </h2>
       </div>
-      <div className="endTO_text_content home_sec2_txt4 mb-20">
-        <p className="!text-[1.2rem] !text-[#504F4F] md:!text-center !text-left">
-          With our tailored staff augmentation solutions, you can quickly fill
-          skill gaps and tackle critical projects.
-          <br />
-          Our pre-vetted engineers seamlessly integrate with your existing team.
-        </p>
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
-        {serviceItems.map((item) => (
-          <ServiceItem key={item.title} title={item.title} image={item.image} />
-        ))}
-      </div>
-      <div className="mt-20 flex w-full justify-center">
-        <Link
-          href="/contact-us/"
-          className="linear-gradient-background w-fit p-[2px]"
-        >
-          <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg">
-            Schedule a Developer Interview
-          </button>
-        </Link>
+      <div className="reveal">
+        <div className="endTO_text_content home_sec2_txt4 mb-20">
+          <p className="!text-[1.2rem] !text-[#504F4F] md:!text-center !text-left">
+            With our tailored staff augmentation solutions, you can quickly fill
+            skill gaps and tackle critical projects.
+            <br />
+            Our pre-vetted engineers seamlessly integrate with your existing
+            team.
+          </p>
+        </div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4">
+          {serviceItems.map((item) => (
+            <ServiceItem
+              key={item.title}
+              title={item.title}
+              image={item.image}
+            />
+          ))}
+        </div>
+        <div className="mt-20 flex w-full justify-center">
+          <Link
+            href="/contact-us/"
+            className="linear-gradient-background w-fit p-[2px]"
+          >
+            <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg">
+              Schedule a Developer Interview
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

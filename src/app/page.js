@@ -36,11 +36,7 @@ export const metadata = {
 export default async function Home() {
   const { props: data } = await fetchData();
 
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  return <HomePage />;
 }
 
 export async function fetchData(slug) {

@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
 import { useMediaQuery } from "react-responsive";
 import { BestAdvocateText } from "../Homepage/BigText";
-import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
 );
+const DevOpsShipFaster = dynamic(() => import("./DevOpsShipFaster"));
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
@@ -35,7 +35,6 @@ const FrappeDevelopmentService = () => {
                 alt="Frappe Development banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
-                priority={true}
               />
             )}
           </div>
