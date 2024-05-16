@@ -10,7 +10,7 @@ export const metadata = {
     title: "Saas Application Development Services",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
   },
 };
 

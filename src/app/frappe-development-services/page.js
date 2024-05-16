@@ -8,7 +8,7 @@ export const metadata = {
     title: "Frappe Development Services",
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}frappe-development-services/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {

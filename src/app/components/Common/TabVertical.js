@@ -87,6 +87,7 @@ const TabVertical = ({ initialTabValue, data }) => {
                       width={830}
                       height={350}
                       alt={`${value}-icon`}
+                      sizes="(max-width: 767px) 414px, 830px"
                     />
                   </div>
                   <div className="lg:px-8 md:px-4 px-1">

@@ -37,8 +37,8 @@ const AIMLService = () => {
                 alt="ALML banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 648}
-                priority={true}
-                sizes="100vw"
+                priority={!isMobile}
+                sizes="(max-width: 767px) 550px, 1440px"
               />
             )}
           </div>

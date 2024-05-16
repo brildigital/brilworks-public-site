@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 import {
   Accordion,
   AccordionBody,
@@ -5,16 +7,11 @@ import {
   Drawer,
   IconButton,
 } from "@material-tailwind/react";
-import Link from "next/link";
-import React from "react";
 import { Icon } from "../lib/commonFunction";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import MenuItem from "./MenuItem";
 
 const SideMenu = ({ open, close }) => {
-  const pathname = usePathname();
   const [openSection, setOpenSection] = React.useState(0);
 
   const handleOpen = (value) => {
