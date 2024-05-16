@@ -6,11 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
+import MegaMenu from "./MegaMenu";
+import MenuItem from "./MenuItem";
 
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
-const MenuItem = dynamic(() => import("./MenuItem"));
-const MegaMenu = dynamic(() => import("./MegaMenu"));
 
 const NewHeader = () => {
   const [openNav, setOpenNav] = useState(false);
