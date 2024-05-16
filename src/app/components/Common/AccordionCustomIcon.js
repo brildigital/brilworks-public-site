@@ -1,12 +1,22 @@
-import '../../styles/Homepage.scss';
-import React from 'react';
-import Link from 'next/link';
-import { Icon } from '../lib/commonFunction';
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from '@material-tailwind/react';
+"use client";
+import "../../styles/Homepage.scss";
+import React from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Icon } from "../lib/commonFunction";
+
+const Accordion = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Accordion),
+  { ssr: false }
+);
+const AccordionHeader = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.AccordionHeader),
+  { ssr: false }
+);
+const AccordionBody = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.AccordionBody),
+  { ssr: false }
+);
 
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
@@ -31,45 +41,45 @@ const AccordionCustomIcon = ({
         <AccordionHeader
           onClick={() => handleOpen(index)}
           className={`py-6 border-[#707070] ${
-            open === index ? 'border-none' : ''
+            open === index ? "border-none" : ""
           }`}
         >
           <h3>{title}</h3>
         </AccordionHeader>
         <AccordionBody
           className={`pb-4 pt-0 ${
-            open === index ? 'border-b border-[#707070]' : ''
+            open === index ? "border-b border-[#707070]" : ""
           }`}
         >
-          <div className='accordion-body'>{content}</div>
+          <div className="accordion-body">{content}</div>
           {linkUrl && (
             <Link
               href={linkUrl}
-              className='flex items-center gap-[20px] about_btn !cursor-pointer transition py-3'
+              className="flex items-center gap-[20px] about_btn !cursor-pointer transition py-3"
             >
-              <div className='about_txt'>
-                <p className='change_link md:text-[24px] text-[20px]'>
+              <div className="about_txt">
+                <p className="change_link md:text-[24px] text-[20px]">
                   Know more
                 </p>
               </div>
-              <div className='aerrow relative'>
+              <div className="aerrow relative">
                 <img
-                  decoding='async'
-                  loading='lazy'
-                  className='black_aerrow alignnone wp-image-28 size-full'
-                  src='/images/black_aerrow-1.png'
-                  alt='arrow'
-                  width='46'
-                  height='18'
+                  decoding="async"
+                  loading="lazy"
+                  className="black_aerrow alignnone wp-image-28 size-full"
+                  src="/images/black_aerrow-1.png"
+                  alt="arrow"
+                  width="46"
+                  height="18"
                 />
                 <img
-                  decoding='async'
-                  loading='lazy'
-                  className='gradiant_aerrow alignnone wp-image-29 size-full'
-                  src='/images/arrow-gradiant.png'
-                  alt='arrow'
-                  width='46'
-                  height='18'
+                  decoding="async"
+                  loading="lazy"
+                  className="gradiant_aerrow alignnone wp-image-29 size-full"
+                  src="/images/arrow-gradiant.png"
+                  alt="arrow"
+                  width="46"
+                  height="18"
                 />
               </div>
             </Link>

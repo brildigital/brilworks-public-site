@@ -1,10 +1,19 @@
 "use client";
 import React from "react";
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
+import dynamic from "next/dynamic";
+
+const Accordion = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Accordion),
+  { ssr: false }
+);
+const AccordionHeader = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.AccordionHeader),
+  { ssr: false }
+);
+const AccordionBody = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.AccordionBody),
+  { ssr: false }
+);
 
 const AccordionCustomStyle = ({
   index,

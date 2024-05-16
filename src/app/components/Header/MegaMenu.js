@@ -17,8 +17,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
     >
       <MenuHandler>
         <MaterialMenuItem className="flex items-center !w-[unset] outline-none pt-2 my-1 px-0">
-          <button
-            type="button"
+          <div
             onClick={(e) => {
               e.preventDefault();
               setOpenNav(false);
@@ -43,7 +42,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
                 d="m1 1 4 4 4-4"
               />
             </svg>
-          </button>
+          </div>
         </MaterialMenuItem>
       </MenuHandler>
       <MenuList

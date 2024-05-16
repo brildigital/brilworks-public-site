@@ -21,9 +21,9 @@ const DedicatedTeam = () => {
       <DedicatedTeamBanner />
       <div className="lg:px-[70px] px-6 pt-10 reveal">
         <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
-          <p className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full">
+          <h2 className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full">
             Dedicated Team Service: Tailored Solutions, Seamless Collaboration
-          </p>
+          </h2>
           <div className="flex flex-col gap-8 mt-10 md:text-2xl text-xl max-w-7xl md:text-center">
             <p>
               Hire skilled developers, designers, project managers, and quality

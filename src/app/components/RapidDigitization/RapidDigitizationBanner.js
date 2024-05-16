@@ -6,9 +6,9 @@ const RapidDigitizationBanner = () => {
   return (
     <div className="md:py-20 py-10 flex xl:flex-row flex-col justify-between lg:px-[70px] px-8 gap-20">
       <div className="flex flex-col gap-10 xl:w-[854px]">
-        <h2 className="break-words header-title">
+        <h1 className="break-words header-title">
           Unlock Digital Potential with Our Digital Acceleration Services
-        </h2>
+        </h1>
         <p className="md:text-2xl text-xl text-[#504F4F]">
           Our team is dedicated to driving innovation, efficiency, and growth
           through strategic digital initiatives tailored to your unique business

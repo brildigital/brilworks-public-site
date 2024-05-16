@@ -36,7 +36,8 @@ const DevOpsService = () => {
                 alt="ALML banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}
-                priority={true}
+                priority={!isMobile}
+                sizes="(max-width: 767px) 550px, 1440px"
               />
             )}
           </div>
