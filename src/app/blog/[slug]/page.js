@@ -1,18 +1,18 @@
-import { calculateReadingTime } from '@/app/components/lib/commonFunction';
-import { getStoryblokApi } from '@storyblok/react/rsc';
-import StoryblokStory from '@storyblok/react/story';
-import { cache } from 'react';
+import { calculateReadingTime } from "@/app/components/lib/commonFunction";
+import { getStoryblokApi } from "@storyblok/react/rsc";
+import StoryblokStory from "@storyblok/react/story";
+import { cache } from "react";
 
 export const metadata = {
   openGraph: {
-    siteName: 'Mobile App & Software Development Company | Brilworks',
-    locale: 'en-US',
-    type: 'article',
+    siteName: "Mobile App & Software Development Company | Brilworks",
+    locale: "en-US",
+    type: "article",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@_Brilworks',
-    creator: '@_Brilworks',
+    card: "summary_large_image",
+    site: "@_Brilworks",
+    creator: "@_Brilworks",
   },
 };
 
@@ -38,17 +38,17 @@ export default async function Page(props) {
         </title>
 
         <meta
-          name='description'
+          name="description"
           content={data?.story?.content?.metatags?.description}
         />
 
         <link
-          rel='canonical'
+          rel="canonical"
           href={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
         />
 
         <meta
-          property='og:title'
+          property="og:title"
           content={
             data?.story?.content?.metatags?.og_title ||
             data?.story?.content?.title
@@ -56,12 +56,12 @@ export default async function Page(props) {
         ></meta>
 
         <meta
-          property='og:url'
+          property="og:url"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
         ></meta>
 
         <meta
-          name='og:description'
+          name="og:description"
           content={
             data?.story?.content?.metatags?.og_description ||
             data?.story?.content?.metatags?.description
@@ -69,28 +69,28 @@ export default async function Page(props) {
         />
 
         <meta
-          property='og:image'
+          property="og:image"
           content={
             data?.story?.content?.metatags?.og_image ||
             data?.story?.content?.mobile_banner?.filename
           }
         />
-        <meta name='author' content={data?.story?.content?.author}></meta>
+        <meta name="author" content={data?.story?.content?.author}></meta>
         <meta
-          name='twitter:image'
+          name="twitter:image"
           content={
             data?.story?.content?.metatags?.twitter_image ||
             data?.story?.content?.mobile_banner?.filename
           }
         ></meta>
-        <meta name='twitter:label1' content='Written by'></meta>
+        <meta name="twitter:label1" content="Written by"></meta>
         <meta
-          name='twitter:data1'
+          name="twitter:data1"
           content={data?.story?.content?.author}
         ></meta>
-        <meta name='twitter:label2' content='Est. reading time'></meta>
+        <meta name="twitter:label2" content="Est. reading time"></meta>
         <meta
-          name='twitter:data2'
+          name="twitter:data2"
           content={`${calculateReadingTime(totalDataWord)} minutes`}
         ></meta>
       </head>
@@ -100,16 +100,16 @@ export default async function Page(props) {
 }
 
 export const fetchData = cache(async (params) => {
-  let slug = params?.slug ? `blog/${params.slug}` : 'home';
+  let slug = params?.slug ? `blog/${params.slug}` : "home";
   const storyblokApi = getStoryblokApi();
 
   let sbParams = {
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    resolve_links: 'url',
+    resolve_links: "url",
   };
 
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-  let { data: config } = await storyblokApi.get('cdn/stories/config');
+  let { data: config } = await storyblokApi.get("cdn/stories/config");
   return {
     props: {
       story: data ? data.story : false,

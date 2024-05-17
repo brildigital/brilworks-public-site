@@ -125,12 +125,10 @@ const Author = ({ authorName }) => {
               {author?.name}
             </h2>
             <p className="md:text-[22px] lg:w-[90%] text-base">
-              {author?.name === "Vikas Singh"
-                ? "Vikas is the Chief Technology Officer (CTO) at Brilworks, leads the company's tech innovations with extensive experience in software development. He drives the team to deliver impactful digital solutions globally​."
-                : author?.authorDesc}
+              {author?.authorPageDesc || author?.authorDesc}
             </p>
             <div className="bg-[#0966C3] hover:bg-[#09509b] w-[86px] h-[30px] mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
-              <Link href={author?.authorLinkedIn}>
+              <Link href={author?.authorLinkedIn} target="_blank">
                 <Image
                   className=""
                   src="/images/LinkedIn_Logo_white.svg"

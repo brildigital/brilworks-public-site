@@ -92,6 +92,8 @@ export const blogAuthor = (authorName) => {
       authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
+      authorPageDesc:
+        "Vikas is the Chief Technology Officer (CTO) at Brilworks, leads the company's tech innovations with extensive experience in software development. He drives the team to deliver impactful digital solutions globally​.",
     },
     {
       name: "Lavesh Katariya",
