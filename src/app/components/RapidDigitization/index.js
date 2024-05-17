@@ -48,7 +48,7 @@ const RapidDigitization = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-8">
+      <div className="bg-themeLight py-10 lg:px-[70px] px-8">
         <WhyRapidDigitization />
       </div>
       <div className="lg:px-[70px] px-6">
@@ -68,11 +68,11 @@ const RapidDigitization = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[#F3FDFF] py-10">
+      <div className="bg-themeLight py-10">
         <BestAdvocateText />
         <ClientReviews />
       </div>
-      <div className="bg-[#F3FDFF]">
+      <div className="bg-themeLight">
         <TechStackWeUse />
       </div>
       <ServicesFAQ />

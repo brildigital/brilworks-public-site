@@ -558,3 +558,12 @@
     }
   }
 }
+
+.author-main-img {
+  border: 3px solid transparent;
+  background-image: linear-gradient(#ededed, #d1d1d1),
+    linear-gradient(180deg, #02e1b8 0%, #00b5d4 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 50%;
+}

@@ -1,4 +1,5 @@
 import StoryblokClient from "storyblok-js-client";
+import { convertParamsToString } from "./commonFunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -35,15 +36,56 @@ export async function getblogData(
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   };
 
-  // Check if filter_category is present in props
   if (filter_category) {
-    // If filter_category is present, add filter_query to apiParams
+    // Check if filter_category is present in props
     apiParams.filter_query = {
       Category: {
         in: filter_category,
       },
     };
   }
+  if (search_query) {
+    // If search_query is present, add search_term to apiParams
+    apiParams.search_term = search_query;
+  }
+
+  // Make the API call with the constructed parameters
+  let stories = await Storyblok.get("cdn/stories", apiParams, {
+    next: { revalidate: 3600 },
+  });
+
+  return {
+    storyData: stories.data.stories,
+    totalData: stories.total,
+  };
+}
+
+export async function getblogSpecificAuthor(
+  page_no,
+  limit_per_page,
+  filter_category,
+  search_query,
+  author_name
+) {
+  // Define the base parameters for the API call
+  let apiParams = {
+    starts_with: "blog/",
+    page: page_no || 1,
+    per_page: limit_per_page || 9,
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    filter_query: {
+      BlogAuthor: {
+        in: convertParamsToString(author_name),
+      },
+    },
+  };
+
+  if (filter_category) {
+    apiParams.filter_query.Category = {
+      in: filter_category,
+    };
+  }
+
   if (search_query) {
     // If search_query is present, add search_term to apiParams
     apiParams.search_term = search_query;

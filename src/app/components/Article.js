@@ -228,29 +228,30 @@ const Article = ({ blok }) => {
                     <img
                       decoding="async"
                       loading="lazy"
-                      src={author?.authorImage || blok?.author_img?.filename}
+                      src={author?.authorImage}
                       width="20"
                       height="20"
-                      alt={author?.name || blok?.author_img?.alt}
+                      alt={author?.name}
                       className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
                     />
                     <div className="pl-[10px] font-graphik">
                       <Link
                         className="md:text-[20px] text-base font-bold"
                         href={
-                          author?.authorLinkedIn || blok?.author_linkedIn?.url
+                          author?.name === "Vikas Singh"
+                            ? "/blog/author/vikas-singh/"
+                            : author?.name === "Hitesh Umaletiya"
+                            ? "/blog/author/hitesh-umaletiya/"
+                            : author?.authorLinkedIn
                         }
-                        title={`Posts by ${author?.name || blok?.author}`}
-                        target="_blank"
+                        title={`Posts by ${author?.name}`}
                         rel="author external"
                       >
-                        {author?.name || blok?.author}
+                        {author?.name}
                       </Link>
                       <br />
                       <span className="font-graphik">
-                        {blok?.Published
-                          ? formattedDate(blok?.Published)
-                          : blok?.PublishedDate}
+                        {formattedDate(blok?.Published)}
                       </span>
                     </div>
                   </div>
@@ -275,10 +276,7 @@ const Article = ({ blok }) => {
                           alt="Calendar icon"
                         />
                       </span>
-                      Last updated{" "}
-                      {blok?.Published
-                        ? formattedDate(blok?.Published)
-                        : blok?.PublishedDate}
+                      Last updated {formattedDate(blok?.Published)}
                     </div>
                   </div>
                 </div>
@@ -480,13 +478,10 @@ const Article = ({ blok }) => {
                                 <img
                                   decoding="async"
                                   loading="lazy"
-                                  src={
-                                    author?.authorImage ||
-                                    blok?.author_img?.filename
-                                  }
+                                  src={author?.authorImage}
                                   width="96"
                                   height="96"
-                                  alt={author?.name || blok?.author_img?.alt}
+                                  alt={author?.name}
                                   className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                 />
                               </div>
@@ -494,22 +489,22 @@ const Article = ({ blok }) => {
                             <div className="single-author-bio-text">
                               <h3>
                                 <Link
-                                  href={`${
-                                    author?.authorLinkedIn ||
-                                    blok?.author_linkedIn?.url
-                                  }`}
-                                  title={`Visit ${
-                                    author?.name || blok?.author
-                                  } website`}
+                                  href={
+                                    author?.name === "Vikas Singh"
+                                      ? "/blog/author/vikas-singh/"
+                                      : author?.name === "Hitesh Umaletiya"
+                                      ? "/blog/author/hitesh-umaletiya/"
+                                      : author?.authorLinkedIn
+                                  }
+                                  title={`View ${author?.name} website`}
                                   className="font-graphik"
-                                  target="_blank"
                                   rel="author external"
                                 >
-                                  {author?.name || blok?.author}
+                                  {author?.name}
                                 </Link>
                               </h3>
                               <p className="text-[18px] font-graphik">
-                                {author?.authorDesc || blok?.author_desc}
+                                {author?.authorDesc}
                               </p>
                             </div>
                           </div>

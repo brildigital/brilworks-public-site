@@ -130,3 +130,14 @@ export const calculateReadingTime = (content) => {
 
   return readingTime;
 };
+
+export function convertParamsToString(input) {
+  return input
+    .split("-") // Step 1: Split the string by hyphen
+    .map(
+      (
+        word // Step 2: Capitalize the first letter of each word
+      ) => word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join(" "); // Step 3: Join the words back with a space
+}
