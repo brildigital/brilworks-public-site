@@ -224,36 +224,39 @@ const Article = ({ blok }) => {
                   </h1>
                 </div>
                 <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2">
-                  <div className="flex items-center justify-between">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src={author?.authorImage || blok?.author_img?.filename}
-                      width="20"
-                      height="20"
-                      alt={author?.name || blok?.author_img?.alt}
-                      className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
-                    />
-                    <div className="pl-[10px] font-graphik">
-                      <Link
-                        className="md:text-[20px] text-base font-bold"
-                        href={
-                          author?.authorLinkedIn || blok?.author_linkedIn?.url
-                        }
-                        title={`Posts by ${author?.name || blok?.author}`}
-                        target="_blank"
-                        rel="author external"
-                      >
-                        {author?.name || blok?.author}
-                      </Link>
-                      <br />
-                      <span className="font-graphik">
-                        {blok?.Published
-                          ? formattedDate(blok?.Published)
-                          : blok?.PublishedDate}
-                      </span>
+                  {author && (
+                    <div className="flex items-center justify-between">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src={author?.authorImage}
+                        width="20"
+                        height="20"
+                        alt={author?.name}
+                        className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
+                      />
+                      <div className="pl-[10px] font-graphik">
+                        <Link
+                          className="md:text-[20px] text-base font-bold"
+                          href={
+                            author?.name === "Vikas Singh"
+                              ? "/blog/author/vikas-singh/"
+                              : author?.name === "Hitesh Umaletiya"
+                              ? "/blog/author/hitesh-umaletiya/"
+                              : author?.authorLinkedIn
+                          }
+                          title={`Posts by ${author?.name}`}
+                          rel="author external"
+                        >
+                          {author?.name}
+                        </Link>
+                        <br />
+                        <span className="font-graphik">
+                          {formattedDate(blok?.Published)}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
                     <div className="flex sxl:items-center items-start md:mr-5 font-graphik">
                       <span className=" !w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
@@ -275,10 +278,7 @@ const Article = ({ blok }) => {
                           alt="Calendar icon"
                         />
                       </span>
-                      Last updated{" "}
-                      {blok?.Published
-                        ? formattedDate(blok?.Published)
-                        : blok?.PublishedDate}
+                      Last updated {formattedDate(blok?.Published)}
                     </div>
                   </div>
                 </div>
@@ -468,51 +468,50 @@ const Article = ({ blok }) => {
                               </div>
                             )}
                             <Tooltip
-                              blogAuthor={author?.name || blok?.author}
+                              blogAuthor={author?.name || ""}
                               targetRef={targetRef}
                             />
                           </div>
 
                           {/* ********************Author Detail******************************/}
-                          <div className="single-author-bio">
-                            <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
-                              <div className="img-blk">
-                                <img
-                                  decoding="async"
-                                  loading="lazy"
-                                  src={
-                                    author?.authorImage ||
-                                    blok?.author_img?.filename
-                                  }
-                                  width="96"
-                                  height="96"
-                                  alt={author?.name || blok?.author_img?.alt}
-                                  className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
-                                />
+                          {author && (
+                            <div className="single-author-bio">
+                              <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
+                                <div className="img-blk">
+                                  <img
+                                    decoding="async"
+                                    loading="lazy"
+                                    src={author?.authorImage}
+                                    width="96"
+                                    height="96"
+                                    alt={author?.name}
+                                    className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
+                                  />
+                                </div>
+                              </div>
+                              <div className="single-author-bio-text">
+                                <h3>
+                                  <Link
+                                    href={
+                                      author?.name === "Vikas Singh"
+                                        ? "/blog/author/vikas-singh/"
+                                        : author?.name === "Hitesh Umaletiya"
+                                        ? "/blog/author/hitesh-umaletiya/"
+                                        : author?.authorLinkedIn
+                                    }
+                                    title={`View ${author?.name} website`}
+                                    className="font-graphik"
+                                    rel="author external"
+                                  >
+                                    {author?.name}
+                                  </Link>
+                                </h3>
+                                <p className="text-[18px] font-graphik">
+                                  {author?.authorDesc}
+                                </p>
                               </div>
                             </div>
-                            <div className="single-author-bio-text">
-                              <h3>
-                                <Link
-                                  href={`${
-                                    author?.authorLinkedIn ||
-                                    blok?.author_linkedIn?.url
-                                  }`}
-                                  title={`Visit ${
-                                    author?.name || blok?.author
-                                  } website`}
-                                  className="font-graphik"
-                                  target="_blank"
-                                  rel="author external"
-                                >
-                                  {author?.name || blok?.author}
-                                </Link>
-                              </h3>
-                              <p className="text-[18px] font-graphik">
-                                {author?.authorDesc || blok?.author_desc}
-                              </p>
-                            </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -92,6 +92,8 @@ export const blogAuthor = (authorName) => {
       authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
+      authorPageDesc:
+        "Vikas is the Chief Technology Officer (CTO) at Brilworks, leads the company's tech innovations with extensive experience in software development. He drives the team to deliver impactful digital solutions globally​.",
     },
     {
       name: "Lavesh Katariya",
@@ -130,3 +132,14 @@ export const calculateReadingTime = (content) => {
 
   return readingTime;
 };
+
+export function convertParamsToString(input) {
+  return input
+    .split("-") // Step 1: Split the string by hyphen
+    .map(
+      (
+        word // Step 2: Capitalize the first letter of each word
+      ) => word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join(" "); // Step 3: Join the words back with a space
+}

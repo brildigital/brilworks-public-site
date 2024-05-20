@@ -14,7 +14,7 @@ export const notNewTabRedirect = [
   `${process.env.NEXT_PUBLIC_BASE_URL}devops-consulting-services/`,
 ];
 
-const servicesMenuItems = [
+export const servicesMenuItems = [
   {
     name: "COOPERATION MODEL",
     subSections: [
@@ -148,7 +148,7 @@ const servicesMenuItems = [
   // },
 ];
 
-const industryMenuItems = [
+export const industryMenuItems = [
   {
     name: "INDUSTRY",
     subSections: [

@@ -29,16 +29,16 @@ const StaffAugmentation = () => {
   return (
     <div className="services pt-20 medium-font">
       <StaffAugmentationBanner />
-      <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-8">
+      <div className="bg-themeLight py-10 lg:px-[70px] px-8">
         <UpskillStaffAugmentation />
       </div>
       <WhyStaffAugmentation />
-      <div className="bg-[#F3FDFF] py-10">
+      <div className="bg-themeLight py-10">
         <BestAdvocateText />
         <ClientReviews />
       </div>
       <ServicesPricingPlans />
-      <div className="bg-[#F3FDFF]">
+      <div className="bg-themeLight">
         <TechStackWeUse />
       </div>
       <ServicesFAQ />

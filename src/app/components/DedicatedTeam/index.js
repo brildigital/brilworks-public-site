@@ -38,7 +38,7 @@ const DedicatedTeam = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F3FDFF] py-10 lg:px-[70px] px-6">
+      <div className="bg-themeLight py-10 lg:px-[70px] px-6">
         <WhyDedicatedTeam />
       </div>
       <div className="lg:px-[70px] px-6">
@@ -59,12 +59,12 @@ const DedicatedTeam = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[#F3FDFF] py-10">
+      <div className="bg-themeLight py-10">
         <BestAdvocateText />
         <ClientReviews />
       </div>
       <ServicesPricingPlans />
-      <div className="bg-[#F3FDFF]">
+      <div className="bg-themeLight">
         <TechStackWeUse />
       </div>
       <ServicesFAQ />

@@ -79,7 +79,6 @@ export async function sendDataToSlack(payload) {
     const response = await axios.post(`${process.env.SLACK_URL}`, data, {
       headers,
     });
-    console.log(response);
     const responseData = response.data;
     if (!responseData.ok) {
       console.error(`Error: ${responseData.error}`);

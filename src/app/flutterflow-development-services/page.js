@@ -26,7 +26,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}flutterflow-development-services/`,
   },
 };
 
