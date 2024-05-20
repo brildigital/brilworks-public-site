@@ -31,7 +31,7 @@ const BusinessDevelopmentService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/business-dev-banner.webp`}
+                src="https://a.storyblok.com/f/219851/1440x796/0d87546e9e/business-dev-banner.webp"
                 alt="Business Intelligence banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}

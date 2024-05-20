@@ -31,7 +31,7 @@ const AdaloDevelopmentService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/adalo-banner.webp`}
+                src="https://a.storyblok.com/f/219851/1440x796/a1882ce6ef/adalo-banner.webp"
                 alt="Adalo Development banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}

@@ -31,7 +31,7 @@ const DigitalExperienceService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/digital-experience-banner.webp`}
+                src="https://a.storyblok.com/f/219851/4500x2487/ee4ef3dd60/digital-experience-banner.webp"
                 alt="Digital experience banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}

@@ -79,10 +79,11 @@ const PortfolioInnerRastrack = () => {
                   <div className="our_img">
                     <Image
                       className="border_redius20 alignnone"
-                      src="/images/Identifying-the-Business-Needs.jpg"
+                      src="/images/identifying-the-business-needs.webp"
                       alt="Identifying the Business Needs"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>
@@ -107,10 +108,11 @@ const PortfolioInnerRastrack = () => {
                   <div className="our_img">
                     <Image
                       className="border_redius20 alignnone"
-                      src="/images/Understanding-the-Requirement.jpg"
+                      src="/images/understanding-the-requirement.webp"
                       alt="Understanding the Requirement"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>

@@ -26,7 +26,7 @@ const UseCases = () => {
       title: "AI for Healthcare",
       iconSrc: "/images/Group (2).png",
       value: "healthcare",
-      imageSrc: "/images/rectangle-12.png",
+      imageSrc: "/images/rectangle-12.webp",
       heading:
         "Your Holistic AI Solution for Better Care & Personalized Treatment, and 24/7 Support",
       listDescription: [

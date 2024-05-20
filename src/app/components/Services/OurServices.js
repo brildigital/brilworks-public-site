@@ -45,7 +45,8 @@ const OurServices = () => {
       title: "Computer Vision Solutions",
       content:
         "With our intelligent computer vision solutions object detection, tracking, and image classification are seamlessly integrated to provide your company with unparalleled vision capabilities.",
-      imageSrc: "/images/computer-vision.webp",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/640x562/c8e4275951/computer-vision.webp",
       imageAlt: "Computer vision img",
     },
     {
@@ -225,7 +226,8 @@ const OurServices = () => {
       title: "DevSecOps - Enabling Security & Compliance",
       content:
         "Integrate security and compliance into your DevOps pipeline. Develop secure applications and meet industry regulations with expert assistance, ensuring peace of mind.",
-      imageSrc: "/images/kubernetes-devsec.webp",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/640x505/4a2aa5f423/kubernetes-devsec.webp",
       imageAlt: "DevSecOps img",
     },
     {
@@ -308,7 +310,8 @@ const OurServices = () => {
       title: "SaaS consulting",
       content:
         "Expert guidance throughout your SaaS journey, from initial concept to market launch. We help you define your product strategy, identify market fit, and create a winning business model.",
-      imageSrc: "/images/saas-2.webp",
+      imageSrc:
+        "https://a.storyblok.com/f/219851/640x505/0ccd54d3d2/saas-2.webp",
       imageAlt: "SaaS consulting img",
     },
     {
@@ -526,7 +529,7 @@ const OurServices = () => {
       title: "Advanced Data Integration & Cleansing",
       content:
         "Our experts ensure your data is accurate, consistent, and ready for analysis through cutting-edge integration and cleansing techniques.",
-      imageSrc: "/images/bi-3.webp",
+      imageSrc: "https://a.storyblok.com/f/219851/640x505/f19d442ca9/bi-3.webp",
       imageAlt: "Seamless Integrations img",
     },
     {

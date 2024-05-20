@@ -31,7 +31,7 @@ const FlutterflowDevelopmentService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/flutterflow-banner.webp`}
+                src="https://a.storyblok.com/f/219851/1440x796/1849c045da/flutterflow-banner.webp"
                 alt="Flutterflow Development banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 796}

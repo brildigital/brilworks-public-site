@@ -6,6 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { BestAdvocateText } from "../Homepage/BigText";
+import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const HomepageContactForm = dynamic(() =>
@@ -14,6 +15,7 @@ const HomepageContactForm = dynamic(() =>
 const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerEccocar = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -80,10 +82,11 @@ const PortfolioInnerEccocar = () => {
                 <div className="our_img">
                   <Image
                     className="border_redius20 alignnone"
-                    src="/images/Identifying-the-Business-Needs-2.jpg"
+                    src="/images/identifying-the-business-needs-2.webp"
                     alt="Identifying the Business Needs"
-                    width="691"
-                    height="361"
+                    width={isMobile ? 300 : 691}
+                    height={isMobile ? 180 : 361}
+                    sizes="(max-width: 767px) 300px, 691px"
                   />
                 </div>
               </div>
@@ -107,10 +110,11 @@ const PortfolioInnerEccocar = () => {
                 <div className="our_img">
                   <Image
                     className="border_redius20 alignnone"
-                    src="/images/Understanding-the-Requirement-2.jpg"
+                    src="/images/understanding-the-requirement-2.webp"
                     alt="Understanding the Requirement"
-                    width="691"
-                    height="361"
+                    width={isMobile ? 300 : 691}
+                    height={isMobile ? 180 : 361}
+                    sizes="(max-width: 767px) 300px, 691px"
                   />
                 </div>
               </div>

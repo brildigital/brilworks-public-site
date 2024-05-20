@@ -13,7 +13,7 @@ export const metadata = {
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/business-dev-banner.webp`,
+        url: "https://a.storyblok.com/f/219851/1440x796/0d87546e9e/business-dev-banner.webp",
       },
     ],
     locale: "en-US",

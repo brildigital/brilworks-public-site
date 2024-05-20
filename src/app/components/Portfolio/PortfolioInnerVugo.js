@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../Homepage/BigText";
+import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const HomepageContactForm = dynamic(() =>
@@ -11,6 +12,7 @@ const HomepageContactForm = dynamic(() =>
 const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerVugo = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <>
       <section className="portfolio">
@@ -68,10 +70,11 @@ const PortfolioInnerVugo = () => {
                   <div className="our_img">
                     <Image
                       className="border_redius20 alignnone"
-                      src="/images/identifying-new.png"
+                      src="/images/identifying-new.webp"
                       alt="Identifying the Business Needs"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>
@@ -97,10 +100,11 @@ const PortfolioInnerVugo = () => {
                   <div className="our_img">
                     <Image
                       className="border_redius20 alignnone"
-                      src="/images/understanding-new.png"
+                      src="/images/understanding-new.webp"
                       alt="Understanding the Requirement"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>
