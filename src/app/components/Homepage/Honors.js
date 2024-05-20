@@ -138,7 +138,7 @@ const Honors = () => {
                         decoding="async"
                         loading="lazy"
                         className="w-[150px]"
-                        src="/images/top_clutch.co_software_developers_gaming_india.png"
+                        src="/images/top-clutchco-software-developers-gaming-india.webp"
                         alt="Clutch Game Reviews"
                       />
                     </div>
@@ -188,7 +188,7 @@ const Honors = () => {
                         decoding="async"
                         loading="lazy"
                         className="w-[150px]"
-                        src="/images/top_clutch.co_software_developers_gps_navigation__gis_india.png"
+                        src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
                         alt="Clutch GPS, Navigation & GIS Reviews"
                       />
                     </div>

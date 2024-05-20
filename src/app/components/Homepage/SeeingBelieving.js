@@ -92,9 +92,7 @@ const SeeingBelieving = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-47 !rounded-[25px]"
-                      src={
-                        "https://a.storyblok.com/f/219851/500x375/f472daac29/trackimo.jpg"
-                      }
+                      src="https://a.storyblok.com/f/219851/500x375/f472daac29/trackimo.jpg"
                       alt="trackimo"
                     />
 
@@ -127,7 +125,7 @@ const SeeingBelieving = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-48 size-full !rounded-[25px]"
-                      src="/images/Orokii(1).jpg"
+                      src="/images/orokii1.webp"
                       alt="orokii"
                     />
 
@@ -195,7 +193,7 @@ const SeeingBelieving = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-50 size-full !rounded-[25px]"
-                      src="/images/Rastrack(1).jpg"
+                      src="/images/rastrack1.webp"
                       alt="rastrack"
                     />
                     <div className="portfolio-home">

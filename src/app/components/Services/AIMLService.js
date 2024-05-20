@@ -33,7 +33,7 @@ const AIMLService = () => {
             ) : (
               <Image
                 className="w-full h-auto"
-                src={`/images/AIML-banner.webp`}
+                src="https://a.storyblok.com/f/219851/4500x1806/914b64af3d/aiml-banner.webp"
                 alt="ALML banner"
                 width={isMobile ? 550 : 1440}
                 height={isMobile ? 283 : 648}

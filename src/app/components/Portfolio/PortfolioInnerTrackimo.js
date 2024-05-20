@@ -5,6 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { BestAdvocateText } from "../Homepage/BigText";
 import { scrollEffect } from "../lib/commonFunction";
+import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const HomepageContactForm = dynamic(() =>
@@ -13,6 +14,7 @@ const HomepageContactForm = dynamic(() =>
 const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerTrackimo = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -36,7 +38,7 @@ const PortfolioInnerTrackimo = () => {
               decoding="async"
               loading="lazy"
               className="alignnone"
-              src="/images/GPS_Trackers_Devices-Uses2-1.jpg"
+              src="/images/gps-trackers-devices-uses2-1.webp"
               alt="vugo"
             />
           </div>
@@ -77,10 +79,11 @@ const PortfolioInnerTrackimo = () => {
                   <div className="our_img">
                     <Image
                       className="border_redius20 alignnone"
-                      src="/images/Identifying-the-Business-Needs-3.jpg"
+                      src="/images/identifying-the-business-needs-3.webp"
                       alt="Identifying the Business Needs"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>
@@ -109,8 +112,9 @@ const PortfolioInnerTrackimo = () => {
                         "https://a.storyblok.com/f/219851/692x362/5974c22aa5/the-challenge-1.jpg"
                       }
                       alt="Understanding the Requirement"
-                      width="691"
-                      height="361"
+                      width={isMobile ? 300 : 691}
+                      height={isMobile ? 180 : 361}
+                      sizes="(max-width: 767px) 300px, 691px"
                     />
                   </div>
                 </div>
