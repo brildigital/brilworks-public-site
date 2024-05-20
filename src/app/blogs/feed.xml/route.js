@@ -1,10 +1,9 @@
-import { getblog, getbloglist } from "../../components/lib/getblog";
+import { getblog } from "../../components/lib/getblog";
 import { addMinutes } from "date-fns";
 import RSS from "rss";
 
 export async function GET() {
   const storyData = await getblog();
-  const blogListData = await getbloglist();
 
   const feed = new RSS({
     feed_url: `${process.env.NEXT_PUBLIC_BASE_URL}feed.xml/`,
@@ -19,13 +18,7 @@ export async function GET() {
   // Calculate adjustedDate and sort storyData from newest to oldest
   const sortedStoryData = storyData
     .map((blog) => {
-      const matchedBlog = blogListData.find(
-        (item) => item?.slug === blog?.slug
-      );
-      const publishedAt = matchedBlog
-        ? matchedBlog?.content?.PublishedDate
-        : blog?.published_at;
-
+      const publishedAt = blog?.content?.Published || blog?.published_at;
       const dateObj = new Date(publishedAt);
       const adjustedDate = addMinutes(dateObj, 330);
 
@@ -44,7 +37,7 @@ export async function GET() {
       guid: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
       date: blog.adjustedDate,
-      author: blog?.content?.author,
+      author: blog?.content?.BlogAuthor,
       enclosure: {
         url: `${blog?.content?.image?.filename}`,
       },

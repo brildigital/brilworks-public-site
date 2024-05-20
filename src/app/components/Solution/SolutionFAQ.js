@@ -135,6 +135,14 @@ const SolutionFAQ = () => {
     },
   ];
 
+  const showDataBasedOnPathname = {
+    "/industry/fintech-software-development/": fintechFAQData,
+    "/industry/fleet-management-software-development/": fleetManagementFAQData,
+    "/industry/media-entertainment-software-development/":
+      mediaEntertainmentFAQData,
+    "/industry/healthcare-software-development/": healthcareFAQData,
+  };
+
   return (
     <div className="sec3_width_home faq-bottom md:!mb-[5rem] !mb-8 pt-2">
       <div className="service_sec3 md:text-center text-left solutions">
@@ -145,8 +153,8 @@ const SolutionFAQ = () => {
 
       <div className="reveal">
         <div itemScope="true" itemtype="https://schema.org/FAQPage">
-          {pathname === "/industry/fintech-software-development/" &&
-            fintechFAQData.map(({ question, answer }, index) => (
+          {showDataBasedOnPathname[pathname].map(
+            ({ question, answer }, index) => (
               <FAQAccordion
                 key={index + 1}
                 id={index + 1}
@@ -155,43 +163,8 @@ const SolutionFAQ = () => {
                 open={open}
                 handleOpen={handleOpen}
               />
-            ))}
-
-          {pathname === "/industry/fleet-management-software-development/" &&
-            fleetManagementFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-
-          {pathname === "/industry/media-entertainment-software-development/" &&
-            mediaEntertainmentFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-
-          {pathname === "/industry/healthcare-software-development/" &&
-            healthcareFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
+            )
+          )}
         </div>
       </div>
     </div>

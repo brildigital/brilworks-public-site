@@ -141,23 +141,6 @@ export async function getblogDataCategorization(
   };
 }
 
-export async function getbloglist(prop) {
-  let stories = await Storyblok.get(
-    "cdn/stories",
-    {
-      starts_with: "blogs-list/",
-      per_page: prop,
-      cv: Math.random(),
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    },
-    {
-      next: { revalidate: 3600 },
-    }
-  );
-  const storyData = stories.data.stories;
-  return storyData;
-}
-
 // export async function singlePopularBlog() {
 //   try {
 //     let stories = await Storyblok.get("cdn/stories", {
