@@ -9,7 +9,7 @@ const DedicatedTeamBanner = () => {
         <h1 className="break-words header-title">
           Dedicated Software Development Team
         </h1>
-        <p className="md:text-2xl text-xl text-[#504F4F]">
+        <p className="md:text-2xl text-xl text-colorGray">
           Our team, comprised of expert developers with diverse expertise, is
           committed to delivering tailored solutions that meet your unique
           business needs.

@@ -543,7 +543,7 @@ const Article = ({ blok }) => {
                     decoding="async"
                     loading="lazy"
                     className="mobile_img border_redius20 alignnone"
-                    src="/images/ready_mobile.jpg"
+                    src="/images/ready-mobile.webp"
                     alt="get in touch"
                   />
                 </p>

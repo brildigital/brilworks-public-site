@@ -9,7 +9,7 @@ const StaffAugmentationBanner = () => {
         <h1 className="break-words header-title">
           IT Staff Augmentation Service
         </h1>
-        <p className="md:text-2xl text-xl text-[#504F4F]">
+        <p className="md:text-2xl text-xl text-colorGray">
           Access a global pool of experts for the niche skillset you need. Our
           IT Staff augmentation service offers a strategic solution to bridge
           the talent gap and incorporate immediate expertise into your team.

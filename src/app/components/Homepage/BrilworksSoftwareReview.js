@@ -121,10 +121,10 @@ const BrilworksSoftwareReview = () => {
           className="!w-{90%] reveal"
           modules={[Pagination]}
           spaceBetween={isMobile ? 10 : 21}
-          loopfillgroupwithblank={true}
+          loopfillgroupwithblank="true"
           speed={isMobile ? 1000 : 1500}
           loop={false}
-          shouldswiperupdate={true}
+          shouldswiperupdate="true"
           pagination={{ clickable: true }}
           breakpoints={{
             1475: {

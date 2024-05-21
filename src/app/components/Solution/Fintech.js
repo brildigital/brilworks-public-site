@@ -191,7 +191,7 @@ const Fintech = () => {
                 <div
                   className={`flex ${
                     isMobile
-                      ? "md:gap-8 md:mt-[50px] flex-wrap"
+                      ? "flex-col md:gap-8 md:mt-[50px] flex-wrap"
                       : "align-middle gap-4"
                   }`}
                 >

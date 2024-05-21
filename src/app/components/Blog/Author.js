@@ -115,6 +115,7 @@ const Author = ({ authorName }) => {
                   width="150"
                   height="150"
                   alt={author?.name}
+                  priority
                   className="!rounded-full"
                 />
               </div>
