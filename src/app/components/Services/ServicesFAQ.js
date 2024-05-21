@@ -604,22 +604,20 @@ const ServicesFAQ = () => {
       </div>
 
       <div className="reveal">
-        {
-          <div itemScope="true" itemtype="https://schema.org/FAQPage">
-            {showDataBasedOnPathname[pathname].map(
-              ({ question, answer }, index) => (
-                <FAQAccordion
-                  key={index + 1}
-                  id={index + 1}
-                  question={question}
-                  answer={answer}
-                  open={open}
-                  handleOpen={handleOpen}
-                />
-              )
-            )}
-          </div>
-        }
+        <div itemScope={true} itemType="https://schema.org/FAQPage">
+          {showDataBasedOnPathname[pathname].map(
+            ({ question, answer }, index) => (
+              <FAQAccordion
+                key={index + 1}
+                id={index + 1}
+                question={question}
+                answer={answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            )
+          )}
+        </div>
       </div>
     </div>
   );

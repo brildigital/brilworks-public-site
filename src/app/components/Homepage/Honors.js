@@ -43,7 +43,7 @@ const Honors = () => {
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
-          loopFillGroupWithBlank={true}
+          loopfillgroupwithblank={true}
           speed={1500}
           breakpoints={{
             1475: {
