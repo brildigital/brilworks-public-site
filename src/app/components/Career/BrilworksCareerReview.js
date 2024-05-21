@@ -47,7 +47,7 @@ const BrilworksCareerReview = () => {
               isMobile ? 1 : 3 && isTablet ? 2 : 3 && isDesktop ? 3 : 3
             }
             slidesPerGroup={isMobile ? 1 : 3}
-            loopFillGroupWithBlank={true}
+            loopfillgroupwithblank={true}
             speed={1500}
             loop={false}
             pagination={{ clickable: true }}

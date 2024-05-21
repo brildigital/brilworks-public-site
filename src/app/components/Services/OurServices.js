@@ -693,6 +693,24 @@ const OurServices = () => {
     "/adalo-development-services/": AdaloDevAccordionData,
   };
 
+  const showTitleBasedOnPathname = {
+    "/kubernetes-consulting-services/":
+      "Kubernetes Consulting Services by Brilworks",
+    "/product-engineering-development-services/":
+      "Our Product Development Services",
+    "/application-development-services/": "Our offerings",
+    "/adalo-development-services/": "Our offerings",
+    "/generative-ai-development-services/":
+      "Our Generative AI Development Services",
+    "/business-intelligence-services/":
+      "Business Intelligence Services by Brilworks",
+    "/frappe-development-services/": "Frappe Development Services We Offer",
+    "/flutterflow-development-services/":
+      "Flutterflow Development Services We Offer",
+  };
+
+  const title = showTitleBasedOnPathname[pathname] || "Our Services";
+
   return (
     <div
       className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-10 ${
@@ -705,49 +723,7 @@ const OurServices = () => {
       }`}
     >
       <div className="px-[15px] md:pb-[52px] pb-10 reveal">
-        <h2 className="md:text-center text-left ml-4 md:py-10 py-6">
-          {pathname === "/kubernetes-consulting-services/" ? (
-            "Kubernetes Consulting Services by Brilworks"
-          ) : (
-            <>
-              {pathname === "/product-engineering-development-services/" ? (
-                "Our Product Development Services"
-              ) : (
-                <>
-                  {pathname === "/application-development-services/" ||
-                  pathname === "/adalo-development-services/" ? (
-                    "Our offerings"
-                  ) : (
-                    <>
-                      {pathname === "/generative-ai-development-services/" ? (
-                        "Our Generative AI Development Services"
-                      ) : (
-                        <>
-                          {pathname === "/business-intelligence-services/" ? (
-                            "Business Intelligence Services by Brilworks"
-                          ) : (
-                            <>
-                              {pathname === "/frappe-development-services/" ? (
-                                "Frappe Development Services We Offer"
-                              ) : (
-                                <>
-                                  {pathname ===
-                                  "/flutterflow-development-services/"
-                                    ? "Flutterflow Development Services We Offer"
-                                    : "Our Services"}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              )}
-            </>
-          )}
-        </h2>
+        <h2 className="md:text-center text-left ml-4 md:py-10 py-6">{title}</h2>
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

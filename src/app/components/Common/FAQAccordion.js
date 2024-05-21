@@ -22,7 +22,7 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
     className="accordion-item"
     itemScope="true"
     itemProp="mainEntity"
-    itemtype="https://schema.org/Question"
+    itemType="https://schema.org/Question"
   >
     <AccordionHeader
       onClick={() => handleOpen(id)}
@@ -35,7 +35,7 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
         className="accordion-body"
         itemScope="true"
         itemProp="acceptedAnswer"
-        itemtype="https://schema.org/Answer"
+        itemType="https://schema.org/Answer"
       >
         <div itemProp="text">{answer}</div>
       </div>

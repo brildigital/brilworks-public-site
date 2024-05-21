@@ -15,6 +15,7 @@ const SeeingBelieving = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const dataFetch = () => {
       setTimeout(() => {
@@ -43,7 +44,7 @@ const SeeingBelieving = () => {
           speed={1500}
           slidesPerView={isMobile ? 1 : `${isTablet ? 2 : 3}`}
           slidesPerGroup={isMobile ? 1 : 2}
-          loopFillGroupWithBlank={true}
+          loopfillgroupwithblank={true}
           pagination={{ clickable: true }}
         >
           {isLoading ? (

@@ -192,6 +192,18 @@ const TechnologyFAQ = () => {
     },
   ];
 
+  const showDataBasedOnPathname = {
+    "/hire-reactjs-developer/": reactJSFAQData,
+    "/hire-java-developer/": javaFAQData,
+    "/hire-nodejs-developer/": nodeJSFAQData,
+    "/hire-react-native-developer/": reactNativeFAQData,
+    "/hire-aws-developer/": awsFAQData,
+    "/hire-ui-ux-designer/": uiuxFAQData,
+    "/hire-blockchain-developer/": blockchainFAQData,
+  };
+
+  const faqData = showDataBasedOnPathname[pathname] || {};
+
   return (
     <div className="sec3_width_home faq-bottom md:!mb-[5rem] !mb-8 pt-0">
       <div className="solutions md:text-center text-left">
@@ -200,87 +212,17 @@ const TechnologyFAQ = () => {
         </h2>
       </div>
       <div className="reveal">
-        <div itemScope="true" itemtype="https://schema.org/FAQPage">
-          {pathname === "/hire-reactjs-developer/" &&
-            reactJSFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-
-          {pathname === "/hire-java-developer/" &&
-            javaFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-          {pathname === "/hire-nodejs-developer/" &&
-            nodeJSFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-          {pathname === "/hire-react-native-developer/" &&
-            reactNativeFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-          {pathname === "/hire-aws-developer/" &&
-            awsFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-
-          {pathname === "/hire-ui-ux-designer/" &&
-            uiuxFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
-
-          {pathname === "/hire-blockchain-developer/" &&
-            blockchainFAQData.map(({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
+        <div itemScope="true" itemType="https://schema.org/FAQPage">
+          {faqData.map(({ question, answer }, index) => (
+            <FAQAccordion
+              key={index + 1}
+              id={index + 1}
+              question={question}
+              answer={answer}
+              open={open}
+              handleOpen={handleOpen}
+            />
+          ))}
         </div>
       </div>
     </div>

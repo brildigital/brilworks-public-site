@@ -22,6 +22,8 @@ const Footer = () => {
                       decoding="async"
                       src="/images/logo-white.png"
                       alt="Brilworks Logo"
+                      width={220}
+                      height={70}
                     />
                   </div>
                   <div className="social_media">

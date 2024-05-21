@@ -5,6 +5,19 @@ import { useMediaQuery } from "react-responsive";
 const BenefitOfHiringDevelopers = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const showTitleBasedOnPathname = {
+    "/hire-reactjs-developer/": "React JS",
+    "/hire-java-developer/": "Java",
+    "/hire-nodejs-developer/": "Node JS",
+    "/hire-react-native-developer/": "React Native",
+    "/hire-aws-developer/": "AWS",
+    "/hire-ui-ux-designer/": "UI UX",
+    "/hire-blockchain-developer/": "Blockchain",
+  };
+
+  const title = showTitleBasedOnPathname[pathname] || {};
+
   return (
     <div className="mx-auto service_width md:py-[6rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
       <div className="end-To-end">
@@ -21,44 +34,10 @@ const BenefitOfHiringDevelopers = () => {
             isMobile ? "text-start" : ""
           } md:!text-[1.3rem]`}
         >
-          Hiring a dedicated development team from a{" "}
-          {pathname === "/hire-reactjs-developer/" ? (
-            "React JS"
-          ) : (
-            <>
-              {pathname === "/hire-java-developer/" ? (
-                "Java"
-              ) : (
-                <>
-                  {pathname === "/hire-nodejs-developer/" ? (
-                    "Node JS"
-                  ) : (
-                    <>
-                      {pathname === "/hire-react-native-developer/" ? (
-                        "React Native"
-                      ) : (
-                        <>
-                          {pathname === "/hire-aws-developer/" ? (
-                            "AWS"
-                          ) : (
-                            <>
-                              {pathname === "/hire-ui-ux-designer/"
-                                ? "UI UX"
-                                : "Blockchain"}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              )}
-            </>
-          )}{" "}
-          Development Company empowers companies across the globe to access
-          expert talent without any limitation of location. It enables you to
-          keep up with the pace of technological change while keeping your costs
-          down.
+          Hiring a dedicated development team from a {title} Development Company
+          empowers companies across the globe to access expert talent without
+          any limitation of location. It enables you to keep up with the pace of
+          technological change while keeping your costs down.
         </p>
       </div>
 

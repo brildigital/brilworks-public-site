@@ -152,7 +152,7 @@ const SolutionFAQ = () => {
       </div>
 
       <div className="reveal">
-        <div itemScope="true" itemtype="https://schema.org/FAQPage">
+        <div itemScope="true" itemType="https://schema.org/FAQPage">
           {showDataBasedOnPathname[pathname].map(
             ({ question, answer }, index) => (
               <FAQAccordion
