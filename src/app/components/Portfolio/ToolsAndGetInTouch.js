@@ -5,7 +5,7 @@ const ToolsAndGetInTouch = () => {
   return (
     <div className="service_width reveal">
       <div className="">
-        <div className="sec6_work work_padding !py-[0] sm:!py-[3rem]">
+        <div className="sec6_work work_padding !py-[0] sm:!pt-[3rem]">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
               <p className="md:!w-[74%] !w-full">
@@ -113,7 +113,7 @@ const ToolsAndGetInTouch = () => {
                   decoding="async"
                   loading="lazy"
                   className="mobile_img border_redius20 alignnone"
-                  src="/images/ready_mobile.jpg"
+                  src="/images/ready-mobile.webp"
                   alt="get in touch"
                 />
               </p>

@@ -73,7 +73,7 @@ const UpskillStaffAugmentation = () => {
       </div>
       <div className="reveal">
         <div className="endTO_text_content home_sec2_txt4 mb-20">
-          <p className="!text-[1.2rem] !text-[#504F4F] md:!text-center !text-left">
+          <p className="!text-[1.2rem] !text-colorGray md:!text-center !text-left">
             With our tailored staff augmentation solutions, you can quickly fill
             skill gaps and tackle critical projects.
             <br />

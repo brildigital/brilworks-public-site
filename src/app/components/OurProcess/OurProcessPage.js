@@ -465,7 +465,6 @@ const OurProcessPage = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
@@ -479,11 +478,12 @@ const OurProcessPage = () => {
             <Image
               className="how_works_img alignnone"
               src={
-                "https://a.storyblok.com/f/219851/1398x780/2fdaa336f4/work-baner.png"
+                "https://a.storyblok.com/f/219851/1398x780/014497fa1b/work-baner.webp"
               }
               alt="our process"
               width={1398}
               height={780}
+              sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
             />
           </p>
           <div className="service_sec1_position">
@@ -498,8 +498,8 @@ const OurProcessPage = () => {
                           className="alignnone"
                           src="/images/1.png"
                           alt="curley bracket"
-                          width={690}
-                          height={360}
+                          width="24"
+                          height="94"
                         />
                       </div>
                       Work
@@ -508,8 +508,8 @@ const OurProcessPage = () => {
                           className="alignnone"
                           src="/images/2.png"
                           alt="curley bracket"
-                          width={690}
-                          height={360}
+                          width="24"
+                          height="94"
                         />
                       </div>
                     </div>
@@ -521,11 +521,11 @@ const OurProcessPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto service_width lg:py-[8rem] py-[4rem]">
-        <div className="flex !flex-col lg:!flex-row gap-[3.5rem]">
+      <div className="mx-auto service_width lg:py-20 py-12">
+        <div className="flex !flex-col lg:!flex-row xl:gap-[3.5rem] gap-[2rem]">
           <div className="basis-[45%]">
             <div className="home_sec2_txt3 like_text">
-              <p className="uppercase p-0 !ml-[0] lg:!w-[92%] !w-[100%]">
+              <p className="uppercase !p-0 !ml-[0] lg:!w-[92%] !w-[100%]">
                 Time Tested Processes for All Your Project Needs
               </p>
             </div>
@@ -621,7 +621,7 @@ const OurProcessPage = () => {
       >
         <div className="end-To-end">
           <div className="endTO_text home_sec2_txt3">
-            <p className="md:!w-[74%] !w-full p-0">
+            <p className="md:!w-[74%] !w-full !p-0">
               OUR PROCESS FOR END-TO-END PROJECT DEVELOPMENT
             </p>
           </div>
@@ -693,7 +693,7 @@ const OurProcessPage = () => {
       >
         <div className="end-To-end">
           <div className="endTO_text home_sec2_txt3">
-            <p className="md:!w-[74%] !w-full p-0">
+            <p className="md:!w-[74%] !w-full !p-0">
               OUR PROCESS FOR TEAM EXTENSION
             </p>
           </div>

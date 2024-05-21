@@ -44,7 +44,7 @@ const SeeingBelieving = () => {
           speed={1500}
           slidesPerView={isMobile ? 1 : `${isTablet ? 2 : 3}`}
           slidesPerGroup={isMobile ? 1 : 2}
-          loopfillgroupwithblank={true}
+          loopfillgroupwithblank="true"
           pagination={{ clickable: true }}
         >
           {isLoading ? (

@@ -32,7 +32,7 @@ const Portfolio = () => {
                       ? "https://a.storyblok.com/f/219851/1080x1080/8e827beb35/portfolio-mobile-size.webp"
                       : "https://a.storyblok.com/f/219851/1398x781/55093620b7/banner-portfolio.webp"
                   }
-                  width={isMobile ? 400 : 1080}
+                  width={isMobile ? 350 : 1080}
                   height={isMobile ? 300 : 400}
                   alt="Portfolio banner"
                   sizes="100vw"

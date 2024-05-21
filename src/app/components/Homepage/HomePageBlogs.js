@@ -96,11 +96,12 @@ const HomePageBlogs = () => {
                 >
                   <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                     <Image
-                      src={content?.mobile_banner?.filename}
-                      alt={content?.mobile_banner?.alt}
+                      src={content?.mobile_banner?.filename || ""}
+                      alt={content?.mobile_banner?.alt || "Blog banner"}
                       className="vc_gitem-zone-img rounded-[20px]"
                       width={550}
                       height={283}
+                      sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
                     />
                     <div className="p-[10px]">
                       <h4 className="xl:text-[24px] mb-[10px] leading-8">

@@ -10,9 +10,11 @@ import {
 import { Icon } from "../lib/commonFunction";
 import { menuItems } from "../lib/constants";
 import MenuItem from "./MenuItem";
+import { useMediaQuery } from "react-responsive";
 
 const SideMenu = ({ open, close }) => {
   const [openSection, setOpenSection] = React.useState(0);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const handleOpen = (value) => {
     if (value !== openSection) {
@@ -124,16 +126,18 @@ const SideMenu = ({ open, close }) => {
               <Image
                 src="/images/blog-2.webp"
                 alt="fintech"
-                width={491}
-                height={276}
+                width={isMobile ? 250 : 491}
+                height={isMobile ? 150 : 276}
+                sizes="(max-width: 767px) 100vw, 491px"
               />
             </div>
             <div className="header_img1">
               <Image
                 src="/images/blog-1.webp"
                 alt="Healthcare"
-                width={491}
-                height={276}
+                width={isMobile ? 250 : 491}
+                height={isMobile ? 150 : 276}
+                sizes="(max-width: 767px) 100vw, 491px"
               />
             </div>
           </div>

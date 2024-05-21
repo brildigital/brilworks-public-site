@@ -9,7 +9,7 @@ const RapidDigitizationBanner = () => {
         <h1 className="break-words header-title">
           Unlock Digital Potential with Our Digital Acceleration Services
         </h1>
-        <p className="md:text-2xl text-xl text-[#504F4F]">
+        <p className="md:text-2xl text-xl text-colorGray">
           Our team is dedicated to driving innovation, efficiency, and growth
           through strategic digital initiatives tailored to your unique business
           objectives.

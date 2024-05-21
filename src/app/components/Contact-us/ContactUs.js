@@ -2,15 +2,13 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useMediaQuery } from "react-responsive";
-import ClientReviews from "../Homepage/ClientReviews";
-import ContactUsEmailForm from "./ContactUsEmailForm";
 import { scrollEffect } from "../lib/commonFunction";
+import ContactUsEmailForm from "./ContactUsEmailForm";
 
 const Svgs = dynamic(() => import("../Svgs"));
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ContactUs = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -21,14 +19,10 @@ const ContactUs = () => {
 
   return (
     <>
-      <section className="flex items-start flex-col md:flex-row gap-[16px] mt-[48px] md:mt-[0px]">
-        <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[4rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full">
+      <section className="flex items-start flex-col md:flex-row gap-4 mt-12 md:mt-0">
+        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-[6rem] md:p-12 !pt-16 p-4 md:basis-6/12 basis-full">
           <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
-            <h2
-              className={`uppercase m-0 contact_bold-head ${
-                isMobile ? "p-0 !text-left !w-full" : ""
-              }`}
-            >
+            <h2 className="uppercase m-0 contact_bold-head">
               Let’s discuss your project
             </h2>
           </div>
@@ -44,57 +38,55 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="xl:pt-[8rem] xl:pr-[5rem] xl:pb-[3rem] xl:pl-[8rem] lg:pt-[6rem] lg:pr-[5rem] lg:pb-[3rem] lg:pl-[8rem] md:pt-[6rem] md:pr-[3rem] md:pb-[3rem] md:pl-[3rem] pt-[2rem] pr-[1rem] pb-[1rem] pl-[1rem] md:basis-6/12 basis-full background_contact">
-          <div className="drop_basis">
-            <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-              <h2 className="white_text uppercase !w-full py-8">
-                Ready to scale your business to new heights?
-              </h2>
+        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full background_contact">
+          <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
+            <h2 className="white_text uppercase !w-full md:py-8">
+              Ready to scale your business to new heights?
+            </h2>
+          </div>
+          <div className="ready_content">
+            <div className="home_sec2_txt4 pt-2">
+              <p className="white_text !text-left md:!text-xl !text-base p-style">
+                Just fill out the form, and let our experts look after the rest.
+                Here’s what will happen next:
+              </p>
             </div>
-            <div className="ready_content">
-              <div className="ready_content_sec home_sec2_txt4 pt-2">
-                <p className="white_text !text-left md:!text-xl !text-base p-style">
-                  Just fill out the form, and let our experts look after the
-                  rest. Here’s what will happen next:
-                </p>
-              </div>
-              <div className="ready_content_list home_sec2_txt4 ">
-                <p className="white_text contact_title md:!text-2xl !text-xl  !text-left">
-                  1. Initiating Contact
-                </p>
-                <p className="white_text !text-left md:!text-xl !text-base p-style">
-                  We will contact you within 24 business hours.
-                </p>
-              </div>
-              <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
-                  2. Share Your Requirement
-                </p>
-                <p className="white_text !text-left md:!text-xl !text-base p-style">
-                  Tell us exactly what you’re looking for and how would you like
-                  our team to help you further. Our technical team will evaluate
-                  your requirement and reach back to you with a project plan
-                </p>
-              </div>
-              <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
-                  3. Sign Non-Disclosure Agreement
-                </p>
-                <p className="white_text !text-left md:!text-xl !text-base p-style">
-                  Signing an NDA is like putting your idea in a safe deposit
-                  box. Be rest assured about any privacy concerns.
-                </p>
-              </div>
-              <div className="ready_content_list home_sec2_txt4">
-                <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
-                  4. Estimated Budget/Cost
-                </p>
-                <p className="white_text !text-left md:!text-xl !text-base p-style">
-                  After analyzing your requirement in-detail we will get back to
-                  you with an estimated budget/cost and estimated time required
-                  for successful project completion.
-                </p>
-              </div>
+            <div className="ready_content_list home_sec2_txt4 ">
+              <p className="white_text contact_title md:!text-2xl !text-xl  !text-left">
+                1. Initiating Contact
+              </p>
+              <p className="white_text !text-left md:!text-xl !text-base p-style">
+                We will contact you within 24 business hours.
+              </p>
+            </div>
+            <div className="ready_content_list home_sec2_txt4">
+              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+                2. Share Your Requirement
+              </p>
+              <p className="white_text !text-left md:!text-xl !text-base p-style">
+                Tell us exactly what you’re looking for and how would you like
+                our team to help you further. Our technical team will evaluate
+                your requirement and reach back to you with a project plan
+              </p>
+            </div>
+            <div className="ready_content_list home_sec2_txt4">
+              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+                3. Sign Non-Disclosure Agreement
+              </p>
+              <p className="white_text !text-left md:!text-xl !text-base p-style">
+                Signing an NDA is like putting your idea in a safe deposit box.
+                Be rest assured about any privacy concerns.
+              </p>
+            </div>
+            <div className="ready_content_list home_sec2_txt4">
+              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+                4. Estimated Budget/Cost
+              </p>
+              <p className="white_text !text-left md:!text-xl !text-base p-style">
+                After analyzing your requirement in-detail we will get back to
+                you with an estimated budget/cost and estimated time required
+                for successful project completion.
+              </p>
             </div>
           </div>
         </div>

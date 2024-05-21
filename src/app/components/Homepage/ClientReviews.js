@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
+import FetchDataSpinner from "./FetchDataSpinner";
 
 const BrilworksSoftwareReview = dynamic(() =>
   import("./BrilworksSoftwareReview")
@@ -19,6 +20,7 @@ const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isVideoPause, setVideoPause] = useState(true);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   const pathname = usePathname();
 
   const handleSlideChange = (swiper) => {
@@ -28,6 +30,7 @@ const ClientReviews = () => {
   };
 
   useEffect(() => {
+    setIsLoaded(true);
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
     // Clean up the event listener when the component unmounts
@@ -35,6 +38,15 @@ const ClientReviews = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
+  if (!isLoaded) {
+    // Render a loading state to ensure server and client HTML match initially
+    return (
+      <div className="container mx-auto px-[15px]">
+        <FetchDataSpinner />
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-[15px]">
@@ -50,13 +62,13 @@ const ClientReviews = () => {
         </div>
         <div className="flex flex-wrap align-middle gap-6  justify-center video-slider">
           <div className="cursor-pointer relative">
-            <span className="video-play-icon">
+            <div className="video-play-icon">
               {isVideoPause && !isMobile ? (
                 <span className="play-icon-img">
                   <img src="/images/icon_play_new.svg" alt="Play Icon" />
                 </span>
               ) : null}
-            </span>
+            </div>
 
             <div onClick={() => setVideoPause(!isVideoPause)}>
               {reviewIndex === 0 ? (
