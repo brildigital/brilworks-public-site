@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import Image from "next/image";
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -125,14 +126,23 @@ const FleetManagementNGPS = () => {
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="h-[46vh] rounded-[20px]"
-                src={
-                  "https://a.storyblok.com/f/219851/1398x780/02507493b4/banner-with-radius.png"
-                }
-                alt="our process"
+              <Image
+                className="h-[46vh] md:block hidden rounded-[20px]"
+                src="https://a.storyblok.com/f/219851/1398x780/6e268b3e22/banner-with-radius.webp"
+                alt="Fleet Management services"
+                priority
+                width="1398"
+                height="780"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+              />
+              <Image
+                className="h-[300px] block md:hidden rounded-[20px]"
+                src="/images/banner-with-radius.webp"
+                alt="Fleet Management services"
+                priority
+                width="320"
+                height="250"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
               />
             </p>
             <div className="service_sec1_position">

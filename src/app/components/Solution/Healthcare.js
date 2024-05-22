@@ -124,12 +124,23 @@ const HealthCare = () => {
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="h-[46vh] rounded-[20px]"
+              <Image
+                className="h-[46vh] md:block hidden rounded-[20px]"
                 src="/images/Types-of-Healthcare-Apps-2.webp"
                 alt="Healthcare Software Development Services"
+                priority
+                width="1398"
+                height="780"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+              />
+              <Image
+                className="h-[300px] block md:hidden rounded-[20px]"
+                src="/images/Types-of-Healthcare-Apps-2.webp"
+                alt="Healthcare Software Development Services"
+                priority
+                width="320"
+                height="250"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
               />
             </p>
             <div className="service_sec1_position">

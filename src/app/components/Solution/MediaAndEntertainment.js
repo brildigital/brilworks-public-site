@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import Image from "next/image";
 
 const MediaNEntertainmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -27,8 +28,7 @@ const MediaAndEntertainment = () => {
       iconSrc: "/images/OTT-Streaming-Apps.png",
       content:
         "Leverage our proven domain expertise along with cutting-edge technologies to create a streaming service that is as fast as it is instantly accessible.",
-      imageSrc:
-        "https://a.storyblok.com/f/219851/693x770/2763b15915/ott-streaming-apps-bg.png",
+      imageSrc: "/images/ott-streaming-apps-bg.webp",
       imageAlt: "OTT Streaming Apps",
     },
     {
@@ -115,14 +115,23 @@ const MediaAndEntertainment = () => {
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="h-[46vh] rounded-[20px]"
-                src={
-                  "https://a.storyblok.com/f/219851/1398x780/98db6f1ff8/media-1.png"
-                }
-                alt="our process"
+              <Image
+                className="h-[46vh] md:block hidden rounded-[20px]"
+                src="/images/media-1.webp"
+                alt="Media and Entertainments banner"
+                priority
+                width="1398"
+                height="780"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+              />
+              <Image
+                className="h-[300px] block md:hidden rounded-[20px]"
+                src="/images/media-mobile.webp"
+                alt="Media and Entertainments banner"
+                priority
+                width="320"
+                height="250"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
               />
             </p>
             <div className="service_sec1_position">

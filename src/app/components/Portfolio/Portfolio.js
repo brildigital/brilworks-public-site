@@ -4,13 +4,11 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useMediaQuery } from "react-responsive";
 import { scrollEffect } from "../lib/commonFunction";
 
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -27,15 +25,22 @@ const Portfolio = () => {
             <div className="sec1_service relative">
               <p>
                 <Image
-                  src={
-                    isMobile
-                      ? "https://a.storyblok.com/f/219851/1080x1080/8e827beb35/portfolio-mobile-size.webp"
-                      : "https://a.storyblok.com/f/219851/1398x781/55093620b7/banner-portfolio.webp"
-                  }
-                  width={isMobile ? 350 : 1080}
-                  height={isMobile ? 300 : 400}
+                  src="https://a.storyblok.com/f/219851/1398x781/55093620b7/banner-portfolio.webp"
+                  width="1080"
+                  height="400"
                   alt="Portfolio banner"
-                  sizes="100vw"
+                  priority
+                  className="md:block hidden"
+                  sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                />
+                <Image
+                  className="block md:hidden"
+                  src="https://a.storyblok.com/f/219851/1080x1080/8e827beb35/portfolio-mobile-size.webp"
+                  width="350"
+                  height="300"
+                  alt="Portfolio banner"
+                  priority
+                  sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
                 />
               </p>
             </div>

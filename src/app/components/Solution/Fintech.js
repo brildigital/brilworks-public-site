@@ -145,12 +145,23 @@ const Fintech = () => {
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="h-[46vh] rounded-[20px]"
+              <Image
+                className="h-[46vh] md:block hidden rounded-[20px]"
                 src="https://a.storyblok.com/f/219851/1398x780/a844d90b96/fintech-1.webp"
                 alt="Fintech Software Development services"
+                priority
+                width="1398"
+                height="780"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+              />
+              <Image
+                className="h-[300px] block md:hidden rounded-[20px]"
+                src="/images/fintech-mobile.webp"
+                alt="Fintech Software Development services"
+                priority
+                width="400"
+                height="220"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
               />
             </p>
             <div className="service_sec1_position">
@@ -189,10 +200,8 @@ const Fintech = () => {
                 </p>
 
                 <div
-                  className={`flex ${
-                    isMobile
-                      ? "flex-col md:gap-8 md:mt-[50px] flex-wrap"
-                      : "align-middle gap-4"
+                  className={`flex !flex-col md:flex-row ${
+                    isMobile ? "md:gap-8 md:mt-[50px]" : "align-middle gap-4"
                   }`}
                 >
                   <Link
