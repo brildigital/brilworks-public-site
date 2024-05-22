@@ -27,7 +27,7 @@ const SaaSApplicationDevelopmentService = () => {
             <div className="banner-bg w-full block md:hidden h-[600px]"></div>
 
             <Image
-              className="w-full block md:hidden h-auto"
+              className="w-full md:block hidden h-auto"
               src="/images/product-engineering-banner.webp"
               alt="Saas Application Dev banner"
               width="1440"

@@ -278,6 +278,7 @@ const Blog = () => {
                         content?.Image?.alt ||
                         "Blog List banner"
                       }
+                      priority={index === 1}
                       width="450"
                       height="230"
                     />
