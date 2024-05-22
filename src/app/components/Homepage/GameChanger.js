@@ -6,7 +6,7 @@ const GameChanger = () => {
     <div className="home_header pt-28 flex flex-col justify-center relative">
       <div className="flex-1 flex flex-col justify-center text-center">
         <div className="home_txt1">
-          <p className="text-6xl font-semibold">
+          <p className="!font-semibold leading-none">
             Providing Nextgen Technology Solutions <br />
             for your next leap
           </p>
