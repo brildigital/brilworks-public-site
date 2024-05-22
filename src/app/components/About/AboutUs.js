@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
-import { scrollEffect } from "../lib/commonFunction";
+import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import Image from "next/image";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -33,14 +34,7 @@ const AboutUs = () => {
             <div className="about_sec1_btn">
               <Link
                 href="#service_sec2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("service_sec2").scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                scroll={true}
-                className="__mPS2id _mPS2id-h"
+                onClick={(e) => scrollToSection(e, "service_sec2")}
               >
                 <img
                   decoding="async"
@@ -58,18 +52,17 @@ const AboutUs = () => {
             <div className="about_sec1_img1">
               <img
                 decoding="async"
-                loading="lazy"
                 className="alignnone wp-image-188 size-full"
-                src="/images/banner-1.jpg"
+                src="/images/banner-1.webp"
                 alt="team working"
                 width="882"
                 height="589"
                 srcSet="
-                    /images/banner-1.jpg         882w,
-                    /images/banner-1-300x200.jpg 300w,
-                    /images/banner-1-768x513.jpg 768w
+                    /images/banner-1.webp         882w,
+                    /images/banner-1-300x200.webp 535w,
+                    /images/banner-1-768x513.webp 768w
                   "
-                sizes="(max-width: 882px) 100vw, 882px"
+                sizes="(max-width: 882px) 90vw, 882px"
               />
             </div>
           </div>
@@ -331,7 +324,7 @@ const AboutUs = () => {
                         decoding="async"
                         loading="lazy"
                         className="alignnone wp-image-212 size-full"
-                        src={"/images/growth.png"}
+                        src="/images/growth.png"
                         alt="Growth Mindset"
                         width="142"
                         height="142"

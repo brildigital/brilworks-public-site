@@ -114,7 +114,7 @@ const Portfolio = () => {
                     loading="lazy"
                     decoding="async"
                     className="alignnone"
-                    src="/images/rastrack.jpg"
+                    src="/images/rastrack.webp"
                     alt="Rastrack"
                   />
                 </div>
@@ -205,7 +205,7 @@ const Portfolio = () => {
                     loading="lazy"
                     decoding="async"
                     className="alignnone"
-                    src="/images/Eccocar.jpg"
+                    src="/images/Eccocar.webp"
                     alt="Eccocar"
                   />
                 </div>

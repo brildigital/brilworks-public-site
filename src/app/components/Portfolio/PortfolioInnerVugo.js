@@ -18,19 +18,30 @@ const PortfolioInnerVugo = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <h1 className="!text-[2.5rem] fontfamily-ebold ">
+            <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl fontfamily-ebold">
               How Brilworks Helped Vugo Create a Unique
               <br />
               In-car Advertising Application
             </h1>
           </div>
-          <div className="mb-[64px]">
-            <img
-              loading="lazy"
-              decoding="async"
-              className="alignnone"
+          <div className="md:mb-16 mb-8">
+            <Image
+              className="md:block hidden"
               src="https://a.storyblok.com/f/219851/1474x700/4607635c67/portfolio-banner2.webp"
               alt="vugo"
+              width="1474"
+              height="700"
+              priority
+              sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+            />
+            <Image
+              className="block md:hidden"
+              src="/images/portfolio-banner2-mobile.webp"
+              alt="vugo"
+              priority
+              width="400"
+              height="250"
+              sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
             />
           </div>
 

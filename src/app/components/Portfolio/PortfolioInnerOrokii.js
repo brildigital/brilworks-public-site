@@ -30,19 +30,30 @@ const PortfolioInnerOrokii = () => {
       <section className="portfolio">
         <div className="service_width">
           <div className="sec6_title text-center">
-            <h1 className="!text-[2.5rem] fontfamily-ebold ">
+            <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl fontfamily-ebold">
               How Our Experts Helped Orokii Build a
               <br />
               Custom Fintech Application
             </h1>
           </div>
-          <div className="mb-[64px]">
-            <img
-              decoding="async"
-              loading="lazy"
-              className="alignnone"
+          <div className="md:mb-16 mb-8">
+            <Image
+              className="md:block hidden"
               src="/images/orokii.jpg"
-              alt="vugo"
+              alt="Orokii"
+              width="787"
+              height="494"
+              priority
+              sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+            />
+            <Image
+              className="block md:hidden"
+              src="/images/orokii-mobile.webp"
+              alt="Orokii"
+              priority
+              width="400"
+              height="250"
+              sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
             />
           </div>
 
