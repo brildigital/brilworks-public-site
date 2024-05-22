@@ -26,12 +26,14 @@ const Blog = () => {
         blogCategory,
         searchQuery
       );
-      setIsLoading(false);
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
     } catch (error) {
       console.error(error);
     }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
   };
 
   useEffect(() => {
@@ -247,7 +249,7 @@ const Blog = () => {
               : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
           } gap-[2rem]`}
         >
-          {!blogDataPerPage?.length ? (
+          {isLoading ? (
             <div className="flex align-middle justify-center p-28">
               <FetchDataSpinner />
             </div>
@@ -310,7 +312,7 @@ const Blog = () => {
           )}
         </div>
 
-        {!blogDataPerPage?.length ? (
+        {isLoading ? (
           ""
         ) : blogDataPerPage?.length ? (
           <div className="flex justify-center my-[2rem]">
