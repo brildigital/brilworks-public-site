@@ -358,7 +358,7 @@ const TechStackWeUse = () => {
     "/aws-consulting-services/": AWSConsultingTechStack,
     "/kubernetes-consulting-services/": KubernetesConsultingTechStack,
     "/staff-augmentation/": StaffAugmentation,
-    "/dedicated-team/": StaffAugmentation,
+    "/hire-dedicated-software-development-team/": StaffAugmentation,
     "/rapid-digitalization/": StaffAugmentation,
   };
 

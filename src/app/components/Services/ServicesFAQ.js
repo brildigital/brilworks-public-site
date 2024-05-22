@@ -591,7 +591,7 @@ const ServicesFAQ = () => {
     "/flutterflow-development-services/": FlutterFlowFAQData,
     "/adalo-development-services/": AdaloFAQData,
     "/staff-augmentation/": StaffAugmentationFAQData,
-    "/dedicated-team/": DedicatedTeamFAQData,
+    "/hire-dedicated-software-development-team/": DedicatedTeamFAQData,
     "/rapid-digitalization/": RapidDigitalisationFAQData,
   };
 

@@ -24,7 +24,7 @@ export const servicesMenuItems = [
       },
       {
         name: "Dedicated Team",
-        path: "/dedicated-team/",
+        path: "/hire-dedicated-software-development-team/",
       },
       {
         name: "Rapid Digitalization",

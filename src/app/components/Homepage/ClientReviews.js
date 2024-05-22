@@ -234,7 +234,7 @@ const ClientReviews = () => {
       </div>
       {!pathname.includes("services") &&
         pathname !== "/staff-augmentation/" &&
-        pathname !== "/dedicated-team/" &&
+        pathname !== "/hire-dedicated-software-development-team/" &&
         pathname !== "/rapid-digitalization/" && <BrilworksSoftwareReview />}
     </div>
   );
