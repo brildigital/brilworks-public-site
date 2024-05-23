@@ -3036,14 +3036,6 @@ textarea.form-control-txt {
     font-size: 1.2rem;
   }
 
-  .single-author-bio {
-    display: block;
-  }
-
-  .single-author-bio .single-author-bio-text {
-    max-width: unset;
-  }
-
   .pricing-amount {
     font-size: var(--font_28);
   }

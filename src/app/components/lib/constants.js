@@ -10,8 +10,22 @@ export const notNewTabRedirect = [
   `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}hire-blockchain-developer/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}staff-augmentation/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}hire-dedicated-software-development-team/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}rapid-digitalization/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}generative-ai-development-services/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}product-engineering-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}application-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}business-intelligence-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}aws-consulting-services/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}devops-consulting-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}kubernetes-consulting-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}frappe-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}adalo-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}flutterflow-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}low-code-no-code-development-services/`,
 ];
 
 export const servicesMenuItems = [

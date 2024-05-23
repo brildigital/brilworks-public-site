@@ -411,10 +411,7 @@ const Article = ({ blok }) => {
                     <div className="md:w-3/4 w-full !float-left">
                       <div className="h-full w-full box-border !px-4">
                         <div className="h-full flex flex-col">
-                          <div
-                            className="blog_content post_details_content"
-                            ref={targetRef}
-                          >
+                          <div className="blog_content" ref={targetRef}>
                             {modifyImagesWithLazyLoading(blok?.content)}
                             {blok?.CTA_1 && (
                               <div

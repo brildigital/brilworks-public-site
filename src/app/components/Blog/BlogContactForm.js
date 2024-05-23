@@ -77,7 +77,7 @@ const BlogContactForm = () => {
             </div>
             <br />
 
-            <div className="post_details_content mb-4">
+            <div className="mb-4">
               <p className="!font-[unset] !text-lg">
                 Contact us for your software development requirements
               </p>
