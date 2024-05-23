@@ -39,7 +39,7 @@ const Author = ({ authorName }) => {
     }
     setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 300);
   };
 
   useEffect(() => {
@@ -131,7 +131,6 @@ const Author = ({ authorName }) => {
             <div className="bg-[#0966C3] hover:bg-[#09509b] w-[86px] h-[30px] mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
               <Link href={author?.authorLinkedIn} target="_blank">
                 <Image
-                  className=""
                   src="/images/LinkedIn_Logo_white.svg"
                   alt="LinkedIn"
                   width="50"

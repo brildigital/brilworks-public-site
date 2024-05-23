@@ -36,12 +36,23 @@ const ReactJSTechnology = () => {
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="h-[46vh] rounded-[20px]"
+              <Image
+                className="h-[46vh] md:block hidden rounded-[20px]"
                 src="/images/react-banner.webp"
                 alt="React banner"
+                priority
+                width="1399"
+                height="781"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+              />
+              <Image
+                className="h-[300px] block md:hidden rounded-[20px]"
+                src="/images/react-banner-768x429.webp"
+                alt="React banner"
+                priority
+                width="320"
+                height="250"
+                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
               />
             </p>
             <div className="service_sec1_position">
@@ -83,7 +94,7 @@ const ReactJSTechnology = () => {
                   href="#section10_service"
                   onClick={(e) => scrollToSection(e, "section10_service")}
                 >
-                  <p className="!p-0 !ml-[0] !w-full">
+                  <p className="uppercase !p-0 !ml-[0] !w-full">
                     Hire ReactJS Developers to Fire Up Your Frontend
                   </p>
                 </Link>

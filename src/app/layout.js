@@ -15,10 +15,6 @@ storyblokInit({
 });
 
 export default function RootLayout({ children }) {
-  // if (!children) {
-  //   return "";
-  // }
-
   return (
     <StoryblokProvider>
       <html lang="en">

@@ -54,7 +54,6 @@ const ApplicationDevelopmentService = () => {
       </div>
 
       <DevOpsShipFaster />
-
       <OurServices />
       <HomepageWhyChooseUs />
       <Honors />

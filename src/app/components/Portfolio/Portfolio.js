@@ -25,16 +25,16 @@ const Portfolio = () => {
             <div className="sec1_service relative">
               <p>
                 <Image
+                  className="md:block hidden"
                   src="https://a.storyblok.com/f/219851/1398x781/55093620b7/banner-portfolio.webp"
                   width="1080"
                   height="400"
                   alt="Portfolio banner"
                   priority
-                  className="md:block hidden"
                   sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
                 />
                 <Image
-                  className="block md:hidden"
+                  className="h-[300px] block md:hidden"
                   src="https://a.storyblok.com/f/219851/1080x1080/8e827beb35/portfolio-mobile-size.webp"
                   width="350"
                   height="300"
