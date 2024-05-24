@@ -59,21 +59,21 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
             }`}
           >
             {menuItems.map((mainSection) => (
-              <div key={mainSection.name} className="flex flex-col gap-3">
+              <div key={mainSection?.name} className="flex flex-col gap-3">
                 <span className="font-semibold text-base break-words">
-                  {mainSection.name}
+                  {mainSection?.name}
                 </span>
                 <div className="flex flex-col">
-                  {mainSection.subSections
-                    .filter((subSection) => !subSection.hideInHeader)
+                  {mainSection?.subSections
+                    .filter((subSection) => !subSection?.hideInHeader)
                     .map((subSection) => (
                       <MaterialMenuItem
-                        key={subSection.name}
+                        key={subSection?.name}
                         className="mega_menu_txt w-fit !p-0"
                       >
                         <MenuItem
-                          name={subSection.name}
-                          path={subSection.path}
+                          name={subSection?.name}
+                          path={subSection?.path}
                           onClick={() => setOpenNav(false)}
                         />
                       </MaterialMenuItem>

@@ -24,7 +24,7 @@ const UseCases = () => {
     },
     {
       title: "AI for Healthcare",
-      iconSrc: "/images/Group (2).png",
+      iconSrc: "/images/Group(2).png",
       value: "healthcare",
       imageSrc: "/images/rectangle-12.webp",
       heading:
@@ -38,7 +38,7 @@ const UseCases = () => {
     },
     {
       title: "AI for Media & Entertainment",
-      iconSrc: "/images/television 1.png",
+      iconSrc: "/images/television-1.png",
       value: "media-entertainment",
       imageSrc: "/images/rectangle-13.webp",
       heading:

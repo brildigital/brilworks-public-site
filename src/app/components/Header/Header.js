@@ -46,23 +46,23 @@ const NewHeader = () => {
                     <Svgs name="we-are-hiring" />
                   </div>
                   {menuItems
-                    .filter((menuItem) => !menuItem.hideInHeader)
+                    .filter((menuItem) => !menuItem?.hideInHeader)
                     .map((menu) =>
                       !menu?.isMegaMenu ? (
                         <MenuItem
-                          key={menu.name}
-                          name={menu.name}
-                          path={menu.path}
+                          key={menu?.name}
+                          name={menu?.name}
+                          path={menu?.path}
                           className="header_font"
                           onClick={() => setOpenNav(false)}
                         />
                       ) : (
                         <MegaMenu
-                          key={menu.name}
-                          name={menu.name}
-                          heading={menu.heading}
+                          key={menu?.name}
+                          name={menu?.name}
+                          heading={menu?.heading}
                           setOpenNav={setOpenNav}
-                          menuItems={menu.menuItems}
+                          menuItems={menu?.menuItems}
                         />
                       )
                     )}
