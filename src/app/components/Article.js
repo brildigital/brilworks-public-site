@@ -16,6 +16,7 @@ import {
   calculateReadingTime,
   formattedDate,
 } from "./lib/commonFunction";
+import BlogFAQ from "./Blog/BlogFAQ";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -23,15 +24,19 @@ const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 const Article = ({ blok }) => {
   const pathname = usePathname();
   const targetRef = useRef();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState(null);
 
+  console.log(blok?.FAQ);
   const blogTableOfContent =
-    blok?.content + blok.Content_1 + blok.Content_2 + blok.Content_3 || "";
+    blok?.content +
+      blok.Content_1 +
+      blok.Content_2 +
+      blok.Content_3 +
+      `${blok?.FAQ?.length && "<h2>FAQ</h2>"}` || "";
 
   const readingTime = calculateReadingTime(blogTableOfContent);
 
@@ -288,16 +293,21 @@ const Article = ({ blok }) => {
               <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
                 <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
                   <Image
-                    priority={true}
-                    className="rounded-[15px] !max-h-[288px] !h-auto !object-cover"
+                    className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
+                    src={blok?.mobile_banner?.filename || blok?.image?.filename}
                     alt={blok?.image?.alt}
-                    width={isMobile ? 343 : 758}
-                    height={isMobile ? 177 : 169}
-                    src={
-                      isMobile
-                        ? blok?.mobile_banner?.filename
-                        : blok?.image?.filename || blok?.mobile_banner?.filename
-                    }
+                    width="343"
+                    height="177"
+                    priority={true}
+                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                  />
+                  <Image
+                    className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
+                    src={blok?.image?.filename || blok?.mobile_banner?.filename}
+                    alt={blok?.image?.alt}
+                    width="758"
+                    height="169"
+                    priority={true}
                     sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   />
                 </div>
@@ -464,6 +474,12 @@ const Article = ({ blok }) => {
                                 )}
                               </div>
                             )}
+                            {blok?.FAQ && blok?.FAQ?.length > 0 ? (
+                              <BlogFAQ FAQData={blok?.FAQ} />
+                            ) : (
+                              ""
+                            )}
+
                             <Tooltip
                               blogAuthor={author?.name || ""}
                               targetRef={targetRef}

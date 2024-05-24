@@ -296,7 +296,8 @@
 .single-author-bio .img-blk-wrapper {
   width: 150px;
   height: 150px;
-  margin-right: 40px;
+  margin: 24px 40px 0 0;
+  margin-top: 2;
   padding: 18px;
   .img-blk {
     position: relative;
@@ -334,7 +335,7 @@
     height: 100%;
     position: absolute;
     left: -18px;
-    top: -18px;
+    top: -48px;
     background: #00ddb9;
     z-index: -1;
   }
@@ -552,6 +553,58 @@
       font-style: italic !important;
       font-family: "merriweatheritalic" !important;
       color: #000 !important;
+    }
+  }
+  .faq-bottom .accordion-button {
+    font-family: "Graphik" !important;
+    color: var(--color_black) !important;
+    border: 0 !important;
+    padding: 0 !important;
+
+    h3 {
+      font-size: 20px !important;
+      margin: 0 !important;
+      font-family: "Graphik" !important;
+      @media screen and (max-width: 767px) {
+        font-size: 18px !important;
+      }
+    }
+    p {
+      font-size: 16px !important;
+      @media screen and (max-width: 767px) {
+        font-size: 15px !important;
+      }
+    }
+  }
+
+  .faq-bottom .accordion-body {
+    color: var(--color_black);
+    font-family: "Graphik" !important;
+    p {
+      margin: 0 !important;
+      line-height: 2.5rem;
+      font-size: 16px !important;
+    }
+  }
+
+  .faq-bottom .accordion-body a:hover {
+    background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .faq-bottom .accordion-item {
+    border-radius: 4px !important;
+    border: 1px solid #00ddb9 !important;
+    padding: 20px 36px 20px 30px !important;
+    margin-bottom: 16px !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 3px 5px -1px !important;
+    div > div {
+      padding-bottom: 0;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 14px 20px 18px 15px !important;
     }
   }
 }
