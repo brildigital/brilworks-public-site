@@ -60,7 +60,7 @@
   font-weight: 500;
   a {
     font-family: "Graphik" !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
   }
@@ -90,7 +90,7 @@
   }
   .post-summary {
     font-family: "merriweatheritalic" !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     font-weight: 400;
     font-size: 20px;
     line-height: 38px !important;
@@ -111,7 +111,7 @@
             transition: all 0.6s ease;
             -webkit-transition: all 0.6s ease;
             &:hover {
-              color: #000 !important;
+              color: var(--color_black) !important;
             }
           }
         }
@@ -126,7 +126,7 @@
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     &:hover {
-      color: #000 !important;
+      color: var(--color_black) !important;
     }
     span {
       color: #00c4c8 !important;
@@ -136,7 +136,7 @@
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       &:hover {
-        color: #000 !important;
+        color: var(--color_black) !important;
       }
     }
   }
@@ -215,7 +215,7 @@
 
   ul {
     font-family: "Graphik" !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     background: 0 0;
     list-style: none;
     line-height: 1.6 !important;
@@ -223,7 +223,7 @@
     padding-right: 12px !important;
     li {
       font-family: "Graphik" !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px !important;
@@ -282,12 +282,12 @@
   p {
     font-size: 19px;
     line-height: 32px !important;
-    color: #000;
+    color: var(--color_black);
   }
   h3 {
     font-size: 25px;
     line-height: 38px !important;
-    color: #000;
+    color: var(--color_black);
     margin-bottom: 7px;
     font-weight: 700;
   }
@@ -373,7 +373,7 @@
     margin-bottom: 20px;
     p {
       font-family: "Graphik" !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       margin-bottom: 0 !important;
       span {
         font-family: "Graphik" !important;
@@ -393,7 +393,7 @@
   }
   p {
     font-family: "Graphik" !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     word-wrap: break-word;
     font-size: 19px !important;
     line-height: 32px !important;
@@ -404,7 +404,7 @@
     margin-inline-end: 0;
     span {
       font-family: "Graphik" !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       word-wrap: break-word;
       font-size: 19px !important;
       line-height: 32px !important;
@@ -413,20 +413,20 @@
   }
   h2 {
     font-family: "Assistant", sans-serif !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700 !important;
     span {
       font-family: "Assistant", sans-serif !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       font-size: 32px !important;
       line-height: 38px !important;
       font-weight: 700 !important;
       strong {
         font-family: "Assistant", sans-serif !important;
-        color: #000 !important;
+        color: var(--color_black) !important;
         font-size: 32px !important;
         line-height: 38px !important;
         font-weight: 700 !important;
@@ -435,20 +435,20 @@
   }
   h3 {
     font-family: "Assistant", sans-serif !important;
-    color: #000 !important;
+    color: var(--color_black) !important;
     font-size: 24px !important;
     line-height: 30px !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
     span {
       font-family: "Assistant", sans-serif !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       font-size: 24px !important;
       line-height: 30px !important;
       font-weight: 600 !important;
       strong {
         font-family: "Assistant", sans-serif !important;
-        color: #000 !important;
+        color: var(--color_black) !important;
         font-size: 24px !important;
         line-height: 30px !important;
         font-weight: 600 !important;
@@ -469,7 +469,7 @@
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       &:hover {
-        color: #000 !important;
+        color: var(--color_black) !important;
       }
     }
     li {
@@ -483,7 +483,7 @@
       line-height: 34px !important;
       margin-left: 0;
       font-style: italic !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       &::before {
         content: "";
         width: 20px;
@@ -497,7 +497,7 @@
       span {
         font-family: "merriweatheritalic" !important;
         font-style: italic !important;
-        color: #000 !important;
+        color: var(--color_black) !important;
       }
       p {
         font-family: "merriweatheritalic" !important;
@@ -508,14 +508,14 @@
     span {
       font-style: italic !important;
       font-family: "merriweatheritalic" !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
     }
   }
   ol {
     padding-left: 1.1em !important;
     list-style: initial !important;
     a {
-      font-family: "merriweatheritalic" !important;
+      font-family: "Graphik" !important;
       color: #00c4c8 !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -523,36 +523,31 @@
       transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       &:hover {
-        color: #000 !important;
+        color: var(--color_black) !important;
       }
     }
     li {
-      font-family: "merriweatheritalic" !important;
-      margin-bottom: 10px;
+      font-family: "Graphik" !important;
       font-size: 19px !important;
-      line-height: 34px !important;
+      line-height: 32px !important;
       margin-left: 0;
-      font-style: italic !important;
-      color: #000 !important;
+      color: var(--color_black) !important;
       &::marker {
         color: #00c4c8 !important;
         font-size: 30px !important;
       }
       span {
-        font-family: "merriweatheritalic" !important;
-        font-style: italic !important;
-        color: #000 !important;
+        font-family: "Graphik" !important;
+        color: var(--color_black) !important;
       }
       p {
-        font-family: "merriweatheritalic" !important;
-        font-style: italic !important;
+        font-family: "Graphik" !important;
         margin-bottom: 0px !important;
       }
     }
     span {
-      font-style: italic !important;
-      font-family: "merriweatheritalic" !important;
-      color: #000 !important;
+      font-family: "Graphik" !important;
+      color: var(--color_black) !important;
     }
   }
   .faq-bottom .accordion-button {
@@ -627,7 +622,7 @@
 .blog-inner .blog_content_CTA_1,
 .blog-inner .blog_content_CTA_3 {
   font-family: "Graphik";
-  color: #000 !important;
+  color: var(--color_black) !important;
   font-size: 19px;
   margin-bottom: 20px;
   background: rgb(0, 182, 207);
