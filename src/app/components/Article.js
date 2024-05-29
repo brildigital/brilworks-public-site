@@ -30,7 +30,6 @@ const Article = ({ blok }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState(null);
 
-  console.log(blok?.FAQ);
   const blogTableOfContent =
     blok?.content +
       blok.Content_1 +
@@ -231,12 +230,10 @@ const Article = ({ blok }) => {
                 <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2">
                   {author && (
                     <div className="flex items-center justify-between">
-                      <img
-                        decoding="async"
-                        loading="lazy"
+                      <Image
                         src={author?.authorImage}
-                        width="20"
-                        height="20"
+                        width="54"
+                        height="56"
                         alt={author?.name}
                         className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
                       />
@@ -264,11 +261,11 @@ const Article = ({ blok }) => {
                   )}
                   <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
                     <div className="flex sxl:items-center items-start md:mr-5 font-graphik">
-                      <span className=" !w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
+                      <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
                         <Image
                           src="/images/clock_icon.png"
-                          width="50"
-                          height="50"
+                          width="20"
+                          height="20"
                           alt="Clock icon"
                         />
                       </span>
@@ -278,8 +275,8 @@ const Article = ({ blok }) => {
                       <span className="!w-6 !h-6 mr-1">
                         <Image
                           src="/images/calendar_icon.png"
-                          width="100"
-                          height="100"
+                          width="24"
+                          height="24"
                           alt="Calendar icon"
                         />
                       </span>

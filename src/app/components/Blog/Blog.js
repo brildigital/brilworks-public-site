@@ -1,17 +1,17 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import { getblogData } from "../lib/getblog";
 import Image from "next/image";
+import { getblogData } from "../lib/getblog";
 import { formattedDate } from "../lib/commonFunction";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [blogDataPerPage, setBlogDataPerPage] = useState([]);
-  const [totalBlog, setTotalBlog] = useState();
+  const [totalBlog, setTotalBlog] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [blogCategory, setBlogCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -58,6 +58,19 @@ const Blog = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const getPageNumbers = () => {
+    const pages = [];
+    for (let i = -2; i <= 2; i++) {
+      const page = currentPage + i;
+      if (page > 0 && page <= Math.ceil(totalBlog / ITEMS_PER_PAGE)) {
+        pages.push(page);
+      }
+    }
+    return pages;
+  };
+
+  const pageNumbers = getPageNumbers();
 
   return (
     <section className="md:mt-[8rem] mt-[6rem] px-[16px]">
@@ -256,7 +269,7 @@ const Blog = () => {
           ) : blogDataPerPage?.length ? (
             blogDataPerPage.map(({ slug, name, content }, index) => (
               <div
-                key={index}
+                key={name}
                 className="border-[1px] border-[#80808038] rounded-[30px] sec9_data_style blog_flex_30"
               >
                 <Link
@@ -266,19 +279,31 @@ const Blog = () => {
                 >
                   <div className="sec9_img1">
                     <Image
-                      className="rounded-[30px]"
-                      src={
-                        content?.mobile_banner?.filename ||
-                        content?.Image?.filename
-                      }
+                      className="block md:hidden rounded-[30px]"
+                      src={content?.mobile_banner?.filename}
                       alt={
                         content?.mobile_banner?.alt ||
                         content?.Image?.alt ||
-                        "Blog List banner"
+                        `Blog-List-banner-${index + 1}`
                       }
-                      priority={index === 1}
+                      quality={40}
+                      width="300"
+                      height="150"
+                      priority={index === 0}
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                    />
+                    <Image
+                      className="hidden md:block rounded-[30px]"
+                      src={content?.mobile_banner?.filename}
+                      alt={
+                        content?.mobile_banner?.alt ||
+                        content?.Image?.alt ||
+                        `Blog-List-banner-${index + 1}`
+                      }
                       width="450"
                       height="230"
+                      priority={index === 0}
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                     />
                   </div>
                   <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
@@ -318,7 +343,7 @@ const Blog = () => {
           <div className="flex justify-center my-[2rem]">
             <ul className="list-none flex flex-wrap">
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
                   currentPage === 1 ? "opacity-50 !cursor-not-allowed" : ""
                 }`}
                 onClick={() => {
@@ -329,24 +354,19 @@ const Blog = () => {
               >
                 {"< PREV"}
               </li>
-
-              {Array.from({
-                length: Math.ceil(totalBlog / ITEMS_PER_PAGE),
-              }).map((_, index) => (
+              {pageNumbers.map((page) => (
                 <li
-                  key={index}
+                  key={page}
                   className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                    currentPage === index + 1
-                      ? " bg-[#1a1a1a] text-[#ffffff]"
-                      : ""
+                    currentPage === page ? " bg-colorBlack text-colorWhite" : ""
                   }`}
-                  onClick={() => setCurrentPage(index + 1)}
+                  onClick={() => setCurrentPage(page)}
                 >
-                  {index + 1}
+                  {page}
                 </li>
               ))}
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
                   currentPage === Math.ceil(totalBlog / ITEMS_PER_PAGE)
                     ? "!opacity-50 !cursor-not-allowed"
                     : ""

@@ -24,7 +24,7 @@ const BlogFAQ = ({ FAQData }) => {
     <div className="container w-full mx-auto faq-bottom">
       <div className="service_sec3 text-center solutions">
         <h2 className="text-left lg:text-[32px] md:text-[32px] text-[32px]">
-          FAQs
+          FAQ
         </h2>
       </div>
 

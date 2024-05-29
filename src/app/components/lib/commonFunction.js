@@ -106,7 +106,7 @@ export const blogAuthor = (authorName) => {
     {
       name: "Colin Shah",
       authorImage:
-        "https://a.storyblok.com/f/219851/150x150/474bc68c3f/colin-150x150.jpg",
+        "https://a.storyblok.com/f/219851/300x300/b9f60bcb6e/colin300x300.jpeg",
       authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
       authorDesc:
         "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",

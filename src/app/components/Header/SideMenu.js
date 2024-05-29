@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -10,11 +11,9 @@ import {
 import { Icon } from "../lib/commonFunction";
 import { menuItems } from "../lib/constants";
 import MenuItem from "./MenuItem";
-import { useMediaQuery } from "react-responsive";
 
 const SideMenu = ({ open, close }) => {
   const [openSection, setOpenSection] = React.useState(0);
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const handleOpen = (value) => {
     if (value !== openSection) {
@@ -31,8 +30,8 @@ const SideMenu = ({ open, close }) => {
           {!menuItem?.isMegaMenu ? (
             <div className="menu_txt1">
               <MenuItem
-                name={menuItem.name}
-                path={menuItem.path}
+                name={menuItem?.name}
+                path={menuItem?.path}
                 onClick={close}
               />
             </div>
@@ -65,9 +64,9 @@ const SideMenu = ({ open, close }) => {
                     <div className="flex flex-col menu_mob_flex mega-menu-content !items-start gap-2">
                       {subMenu.subSections.map((subMenuItem) => (
                         <MenuItem
-                          key={subMenuItem.name}
-                          name={subMenuItem.name}
-                          path={subMenuItem.path}
+                          key={subMenuItem?.name}
+                          name={subMenuItem?.name}
+                          path={subMenuItem?.path}
                           onClick={close}
                           className="!text-3xl"
                         />
@@ -124,19 +123,37 @@ const SideMenu = ({ open, close }) => {
           <div className="basis-2/5">
             <div className="header_img1 py-4 hidden-xs">
               <Image
+                className="block md:hidden"
                 src="/images/blog-2.webp"
                 alt="fintech"
-                width={isMobile ? 250 : 491}
-                height={isMobile ? 150 : 276}
+                width="250"
+                height="150"
+                sizes="(max-width: 767px) 100vw, 250px"
+              />
+              <Image
+                className="hidden md:block"
+                src="/images/blog-2.webp"
+                alt="fintech"
+                width="491"
+                height="276"
                 sizes="(max-width: 767px) 100vw, 491px"
               />
             </div>
             <div className="header_img1">
               <Image
+                className="block md:hidden"
                 src="/images/blog-1.webp"
                 alt="Healthcare"
-                width={isMobile ? 250 : 491}
-                height={isMobile ? 150 : 276}
+                width="250"
+                height="150"
+                sizes="(max-width: 767px) 100vw, 250px"
+              />
+              <Image
+                className="hidden md:block"
+                src="/images/blog-1.webp"
+                alt="Healthcare"
+                width="491"
+                height="276"
                 sizes="(max-width: 767px) 100vw, 491px"
               />
             </div>
