@@ -351,8 +351,6 @@ const Article = ({ blok }) => {
                             >
                               {heading.text}
                             </Link>
-                            {heading.subheadings &&
-                              renderTableOfContents(heading?.subheadings)}
                           </li>
                         ))
                       ) : (
