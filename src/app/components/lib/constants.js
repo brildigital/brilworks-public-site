@@ -193,7 +193,7 @@ export const industryMenuItems = [
       },
       {
         name: "Healthcare",
-        path: "#",
+        path: "/use-case/healthcare",
       },
       {
         name: "IoT",

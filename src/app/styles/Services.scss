@@ -118,3 +118,25 @@
     }
   }
 }
+
+.usecase {
+  font-family: var(--regular) !important;
+  h1 {
+    font-size: 75px;
+    font-family: var(--extra_bold);
+    line-height: 90px;
+  }
+  p {
+    font-size: 1.5rem;
+    font-family: var(--medium) !important;
+  }
+  h2,
+  h3 {
+    font-family: var(--extra_bold);
+    font-size: 54px;
+    line-height: 60px;
+  }
+  .big-number {
+    font-family: var(--extra_bold) !important;
+  }
+}
