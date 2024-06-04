@@ -3,10 +3,10 @@ import React from "react";
 
 const BestPractices = () => {
   return (
-    <div className="w-full md:py-24 py-10 flex justify-between lg:px-[70px] xl:px-[96px] px-8">
-      <div className="w-[45%]">
+    <div className="container mx-auto w-full lg:py-24 py-10 flex lg:flex-row gap-8 flex-col justify-between lg:!px-0 xl:px-[96px] px-8">
+      <div className="lg:w-[45%] w-full">
         <h2 className="mb-6">Best Practices</h2>
-        <p className="!text-4xl text-colorGray !mb-6">
+        <p className="lg:!text-4xl md:!text-3xl !text-xl text-colorGray !mb-6">
           Lorem ipsum dolor sit amet consectetur. Diam at m quam at. Nunc sit
           faucibus feugiat elementum sed gravida at. Semper massa nec vitae nisi
           eu.
@@ -20,20 +20,20 @@ const BestPractices = () => {
           </div>
         </Link>
       </div>
-      <div className="w-1/2 flex flex-col gap-4">
-        <div className="border border-colorBlack rounded-3xl text-[26px] font-semibold p-10 hover:bg-gradient-custom">
+      <div className="lg:w-1/2 w-full flex flex-col gap-4">
+        <div className="border border-colorBlack rounded-3xl md:text-[26px] text-xl font-semibold md:p-10 p-6 hover:bg-gradient-custom">
           AWS Consultation
         </div>
-        <div className="border border-colorBlack rounded-3xl text-[26px] font-semibold p-10 hover:bg-gradient-custom">
+        <div className="border border-colorBlack rounded-3xl md:text-[26px] text-xl font-semibold md:p-10 p-6 hover:bg-gradient-custom">
           AWS Consultation
         </div>
-        <div className="border border-colorBlack rounded-3xl text-[26px] font-semibold p-10 hover:bg-gradient-custom">
+        <div className="border border-colorBlack rounded-3xl md:text-[26px] text-xl font-semibold md:p-10 p-6 hover:bg-gradient-custom">
           AWS Consultation
         </div>
-        <div className="border border-colorBlack rounded-3xl text-[26px] font-semibold p-10 hover:bg-gradient-custom">
+        <div className="border border-colorBlack rounded-3xl md:text-[26px] text-xl font-semibold md:p-10 p-6 hover:bg-gradient-custom">
           AWS Consultation
         </div>
-        <div className="border border-colorBlack rounded-3xl text-[26px] font-semibold p-10 hover:bg-gradient-custom">
+        <div className="border border-colorBlack rounded-3xl md:text-[26px] text-xl font-semibold md:p-10 p-6 hover:bg-gradient-custom">
           AWS Consultation
         </div>
       </div>

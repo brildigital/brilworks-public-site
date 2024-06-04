@@ -125,18 +125,88 @@
     font-size: 75px;
     font-family: var(--extra_bold);
     line-height: 90px;
+
+    @media screen and ((max-width: 1080px) and (min-width: 768px)) {
+      font-size: 54px;
+      line-height: 60px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+      line-height: 45px;
+    }
   }
   p {
     font-size: 1.5rem;
     font-family: var(--medium) !important;
+    @media screen and ((max-width: 1080px) and (min-width: 768px)) {
+      font-size: 1.25rem;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 1.125rem;
+    }
   }
   h2,
   h3 {
     font-family: var(--extra_bold);
     font-size: 54px;
     line-height: 60px;
+    @media screen and ((max-width: 1080px) and (min-width: 768px)) {
+      font-size: 44px;
+      line-height: 50px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 32px;
+      line-height: 40px;
+    }
   }
   .big-number {
     font-family: var(--extra_bold) !important;
+  }
+
+  .cta-section {
+    width: 100%;
+    font-family: var(--extra_bold) !important;
+    color: var(--color_gray);
+    background: var(--color_light_gray);
+    border-radius: 42px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @media screen and ((max-width: 1080px) and (min-width: 768px)) {
+      height: 200px;
+      border-radius: 30px;
+    }
+    @media screen and (max-width: 767px) {
+      height: 120px;
+      border-radius: 24px;
+    }
+  }
+
+  .cta-section::before {
+    content: "CTA";
+    font-size: 400px;
+    line-height: 400px;
+    opacity: 8%;
+    color: var(--color_gray);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media screen and ((max-width: 1080px) and (min-width: 768px)) {
+      font-size: 260px;
+      line-height: 260px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 145px;
+      line-height: 130px;
+    }
+  }
+  .faq-bottom .accordion-item {
+    border: 1px solid #ced5e1 !important;
+  }
+  .faq-bottom .accordion-item:nth-last-child(1) {
+    margin-bottom: 0 !important;
   }
 }
