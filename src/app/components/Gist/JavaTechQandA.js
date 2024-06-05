@@ -47,7 +47,7 @@ const JavaTechQandA = () => {
           className="h-[50vh] rounded-[20px]"
           width={1300}
           height={400}
-          src="https://a.storyblok.com/f/219851/1398x780/853f3f930e/java-services-banner.webp"
+          src="https://a.storyblok.com/f/219851/1398x780/a05c27ff8d/java-services-banner.webp"
           alt="Java Tech Q&A"
           priority={true}
         />

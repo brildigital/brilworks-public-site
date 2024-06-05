@@ -3,7 +3,7 @@ import React from "react";
 
 const BestPractices = () => {
   return (
-    <div className="container mx-auto w-full lg:py-24 py-10 flex lg:flex-row gap-8 flex-col justify-between lg:!px-0 xl:px-[96px] px-8">
+    <div className="container mx-auto w-full lg:py-24 py-10 flex lg:flex-row gap-8 flex-col justify-between lg:!px-[96px] px-8">
       <div className="lg:w-[45%] w-full">
         <h2 className="mb-6">Best Practices</h2>
         <p className="lg:!text-4xl md:!text-3xl !text-xl text-colorGray !mb-6">

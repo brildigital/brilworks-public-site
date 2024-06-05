@@ -3,7 +3,7 @@ import React from "react";
 
 const GettingStarted = () => {
   return (
-    <div className="container w-full mx-auto lg:py-20 py-10 px-6 lg:px-0">
+    <div className="container w-full mx-auto lg:py-20 py-10 px-6 lg:px-[96px]">
       <h2 className="mb-8 text-center">Getting Started</h2>
       <div className="flex lg:flex-row flex-col-reverse justify-between gap-10">
         <div className="lg:w-[45%] w-full lg:py-24">
