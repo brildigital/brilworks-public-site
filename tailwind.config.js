@@ -13,7 +13,9 @@ module.exports = {
         sxl: "1200px",
       },
       colors: {
-        colorBlack: "#1a1a1a",
+        colorPrimary: "#00ddb9",
+        colorLightGray: "#f1f1f1",
+        colorBlack: "#1c1d1e",
         colorWhite: "#ffffff",
         colorGray: "#504F4F",
         themePrimary: "#00dfb8",
@@ -21,11 +23,9 @@ module.exports = {
         themeLight: "#F3FDFF",
       },
       backgroundImage: {
-        "custom-gradient":
+        "gradient-custom":
           "linear-gradient(277.16deg, #02e1b8 0.58%, #00b5d4 100%)",
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-usecase": "linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)",
       },
     },
   },

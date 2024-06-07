@@ -47,7 +47,7 @@ const NodeJSTechQandA = () => {
           className="h-[50vh] rounded-[20px]"
           width={1300}
           height={400}
-          src="https://a.storyblok.com/f/219851/1398x780/812879bd1e/node-services-banner.webp"
+          src="https://a.storyblok.com/f/219851/1398x780/f5221a3182/node-services-banner.webp"
           alt="NodeJS Tech Q&A"
           priority={true}
         />

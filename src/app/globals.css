@@ -42,7 +42,10 @@ img {
   --font_96: 6rem;
   --font_120: 6.5rem;
   --font_250: 13.625rem;
-  --color_black: #1a1a1a;
+  --color_black: #1c1d1e;
+  --color_primary: #00ddb9;
+  --color_gray: #504f4f;
+  --color_light_gray: #f1f1f1;
   --white_color: #ffffff;
   --main_color: #00dfb8;
   --main_menu_hover_color: #00b6cf;
@@ -287,7 +290,6 @@ input[type="number"] {
   background-color: var(--white_color) !important;
   margin-top: 0 !important;
   border-radius: 20px !important;
-
   button[aria-expanded="false"] {
     border: 0 !important;
   }
@@ -2259,6 +2261,11 @@ textarea.form-control-txt {
   line-height: var(--line_height_1_2);
 }
 
+.header-title {
+  font-size: 70px !important;
+  line-height: 84px !important;
+}
+
 @media only screen and (max-width: 1680px) {
   .home_txt2 p {
     font-size: 12.625rem;
@@ -2476,7 +2483,7 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt1 p {
-    font-size: 43px;
+    font-size: 42px;
   }
 
   .portfolio_know_more {
@@ -2599,7 +2606,7 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt1 p {
-    font-size: 37px;
+    font-size: 36px;
   }
 
   .about_vision {
@@ -2987,7 +2994,7 @@ textarea.form-control-txt {
 
   .portfolio_sec1_txt1 p {
     padding-bottom: 1rem;
-    font-size: 33px;
+    font-size: 32px;
     line-height: normal;
   }
 
@@ -3080,10 +3087,12 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 767px) {
+  .btn_flex {
+    padding: 14px 24px;
+  }
   .video-slider .home_sec3_box.overflow-hidden {
     height: unset;
   }
-
   .style_sec3_swiper_home {
     padding: 2rem 0 !important;
   }
@@ -3332,6 +3341,10 @@ textarea.form-control-txt {
     font-size: 1.6rem;
   }
 
+  .portfolio .sec6_title {
+    padding: 2rem 0 1rem;
+  }
+
   .portflio_flex_row {
     flex-direction: column;
     gap: 2rem;
@@ -3374,7 +3387,7 @@ textarea.form-control-txt {
 
   .portfolio .sec6_title p,
   .portfolio .head-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     text-align: left;
     line-height: var(--line_height_1_2);
     font-family: var(--extra_bold);
@@ -3460,6 +3473,10 @@ textarea.form-control-txt {
     padding: 3rem 1rem;
   }
 
+  .endTO_text {
+    margin: 0 auto 1rem;
+  }
+
   .faq-bottom .accordion-button,
   .faq-bottom .accordion-body {
     font-size: 16px;
@@ -3528,6 +3545,11 @@ textarea.form-control-txt {
   .noText li::before {
     top: 7px;
   }
+
+  .header-title {
+    font-size: 40px !important;
+    line-height: 50px !important;
+  }
 }
 
 .linear-gradient-background {
@@ -3559,18 +3581,4 @@ textarea.form-control-txt {
 
 .we_are_hiring svg {
   height: auto;
-}
-
-.header-title {
-  font-size: 70px !important;
-  line-height: 84px !important;
-}
-
-@media (max-width: 768px) {
-  .header-title {
-    font-size: 40px !important;
-    /* Adjust as needed for smaller screens */
-    line-height: 50px !important;
-    /* Adjust as needed for smaller screens */
-  }
 }

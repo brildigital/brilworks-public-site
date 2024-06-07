@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
@@ -37,27 +37,20 @@ const Blog = () => {
   };
 
   useEffect(() => {
-    if (searchQuery) {
-      const delayDebounceFn = setTimeout(() => {
+    const delayDebounceFn = setTimeout(
+      () => {
         fetchData();
-      }, 1000);
-      return () => clearTimeout(delayDebounceFn);
-    } else {
-      fetchData();
-    }
+        window.scrollTo({ top: 0 });
+      },
+      searchQuery ? 1000 : 0
+    );
+
+    return () => clearTimeout(delayDebounceFn);
   }, [currentPage, blogCategory, searchQuery]);
 
   useEffect(() => {
     setCurrentPage(1);
   }, [blogCategory]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, [currentPage]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   const getPageNumbers = () => {
     const pages = [];
@@ -229,7 +222,10 @@ const Blog = () => {
             </div>
           </div>
           <div className="w-full sxl:w-2/6">
-            <form className="md:pb-0 !pb-4" onSubmit={handleSubmit}>
+            <form
+              className="md:pb-0 !pb-4"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div className="find-blog-search-box border-[#00DDB9] border-[1px]">
                 <div className="w-full inline-flex relative flex-wrap items-center justify-end">
                   <input
