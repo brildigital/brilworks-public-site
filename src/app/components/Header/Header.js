@@ -68,7 +68,9 @@ const NewHeader = () => {
                     )}
                   <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
                     <div className="header_sec1_txt2 hidden-xs">
-                      <p className="transition">LET&apos;S TALK</p>
+                      <p className="transition !text-colorWhite hover:!text-colorBlack">
+                        LET&apos;S TALK
+                      </p>
                     </div>
                   </Link>
                 </ul>

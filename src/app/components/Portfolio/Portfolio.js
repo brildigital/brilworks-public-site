@@ -48,7 +48,7 @@ const Portfolio = () => {
         </div>
 
         <div className="service_width">
-          <div className="sec6_title md:!pt-24">
+          <div className="sec6_title !pt-8 md:!pt-24">
             <h1 className="head-title">SEE TEAM BRILLIANT IN ACTION</h1>
           </div>
           <div className="portfolio_sec1_txt2 portfolio_sec1_border ">

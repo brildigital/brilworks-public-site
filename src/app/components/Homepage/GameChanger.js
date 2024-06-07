@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Heading from "../Common/Heading";
 
 const GameChanger = () => {
   return (
@@ -14,7 +15,9 @@ const GameChanger = () => {
         <div className="flex justify-center w-full mt-10">
           <Link href="/contact-us/" className="!w-fit">
             <div className="header_sec1_txt2">
-              <p className="transition uppercase">Free Consultation</p>
+              <p className="transition uppercase font-semibold !text-colorWhite hover:!text-colorBlack">
+                Free Consultation
+              </p>
             </div>
           </Link>
         </div>

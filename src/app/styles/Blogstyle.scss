@@ -44,6 +44,10 @@
   font-display: swap;
 }
 
+.blog-background {
+  background: #f3fdff80 !important;
+}
+
 .blog-main {
   a {
     cursor: pointer !important;
@@ -59,7 +63,7 @@
 .blog-navigation {
   font-weight: 500;
   a {
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -78,18 +82,18 @@
 }
 
 .font-graphik {
-  font-family: "Graphik" !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 .blog-initial {
   h1 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
   }
   .font-graphik {
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
   }
   .post-summary {
-    font-family: "merriweatheritalic" !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     font-weight: 400;
     font-size: 20px;
@@ -99,7 +103,7 @@
 }
 
 .blog_content {
-  font-family: "Graphik" !important;
+  font-family: "Inter", sans-serif !important;
   div {
     p {
       span {
@@ -205,16 +209,16 @@
   padding: 12px 0 12px 10px;
 
   p {
-    font-family: "Assistant", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     line-height: 23px !important;
     font-size: 18px;
     font-weight: 700;
-    color: #222;
+    color: var(--color_black);
     margin: 0;
   }
 
   ul {
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     background: 0 0;
     list-style: none;
@@ -222,7 +226,7 @@
     margin: 0;
     padding-right: 12px !important;
     li {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
       font-weight: 400;
       font-size: 16px;
@@ -236,7 +240,7 @@
         text-decoration: underline;
       }
       a.page-active {
-        color: var(--main_color) !important;
+        color: var(--main_menu_hover_color) !important;
       }
       a:hover {
         text-decoration: underline !important;
@@ -372,11 +376,11 @@
     width: 100% !important;
     margin-bottom: 20px;
     p {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
       margin-bottom: 0 !important;
       span {
-        font-family: "Graphik" !important;
+        font-family: "Inter", sans-serif !important;
       }
     }
   }
@@ -392,7 +396,7 @@
     border-left: solid 6px var(--main_menu_hover_color);
   }
   p {
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     word-wrap: break-word;
     font-size: 19px !important;
@@ -403,7 +407,7 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
     span {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
       word-wrap: break-word;
       font-size: 19px !important;
@@ -412,20 +416,20 @@
     }
   }
   h2 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700 !important;
     span {
-      font-family: "Assistant", sans-serif !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
       font-size: 32px !important;
       line-height: 38px !important;
       font-weight: 700 !important;
       strong {
-        font-family: "Assistant", sans-serif !important;
+        font-family: "Inter", sans-serif !important;
         color: var(--color_black) !important;
         font-size: 32px !important;
         line-height: 38px !important;
@@ -434,20 +438,20 @@
     }
   }
   h3 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     font-size: 24px !important;
     line-height: 30px !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
     span {
-      font-family: "Assistant", sans-serif !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
       font-size: 24px !important;
       line-height: 30px !important;
       font-weight: 600 !important;
       strong {
-        font-family: "Assistant", sans-serif !important;
+        font-family: "Inter", sans-serif !important;
         color: var(--color_black) !important;
         font-size: 24px !important;
         line-height: 30px !important;
@@ -461,7 +465,7 @@
   }
   ul {
     a {
-      font-family: "merriweatheritalic" !important;
+      font-family: "Inter", sans-serif !important;
       color: #00c4c8 !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -473,7 +477,7 @@
       }
     }
     li {
-      font-family: "merriweatheritalic" !important;
+      font-family: "Inter", sans-serif !important;
       padding-left: 34px;
       padding-bottom: 10px;
       list-style: outside !important;
@@ -495,19 +499,19 @@
         position: absolute;
       }
       span {
-        font-family: "merriweatheritalic" !important;
+        font-family: "Inter", sans-serif !important;
         font-style: italic !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "merriweatheritalic" !important;
+        font-family: "Inter", sans-serif !important;
         font-style: italic !important;
         margin-bottom: 0px !important;
       }
     }
     span {
       font-style: italic !important;
-      font-family: "merriweatheritalic" !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
     }
   }
@@ -515,7 +519,7 @@
     padding-left: 1.1em !important;
     list-style: initial !important;
     a {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       color: #00c4c8 !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -527,7 +531,7 @@
       }
     }
     li {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       font-size: 19px !important;
       line-height: 32px !important;
       margin-left: 0;
@@ -537,21 +541,21 @@
         font-size: 30px !important;
       }
       span {
-        font-family: "Graphik" !important;
+        font-family: "Inter", sans-serif !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "Graphik" !important;
+        font-family: "Inter", sans-serif !important;
         margin-bottom: 0px !important;
       }
     }
     span {
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       color: var(--color_black) !important;
     }
   }
   .faq-bottom .accordion-button {
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
     color: var(--color_black) !important;
     border: 0 !important;
     padding: 0 !important;
@@ -559,7 +563,7 @@
     h3 {
       font-size: 20px !important;
       margin: 0 !important;
-      font-family: "Graphik" !important;
+      font-family: "Inter", sans-serif !important;
       @media screen and (max-width: 767px) {
         font-size: 18px !important;
       }
@@ -574,7 +578,7 @@
 
   .faq-bottom .accordion-body {
     color: var(--color_black);
-    font-family: "Graphik" !important;
+    font-family: "Inter", sans-serif !important;
     p {
       margin: 0 !important;
       line-height: 2.5rem;
@@ -621,7 +625,7 @@
 
 .blog-inner .blog_content_CTA_1,
 .blog-inner .blog_content_CTA_3 {
-  font-family: "Graphik";
+  font-family: "Inter", sans-serif;
   color: var(--color_black) !important;
   font-size: 19px;
   margin-bottom: 20px;
@@ -635,7 +639,7 @@
   border-radius: 30px;
   a {
     font-weight: 700;
-    font-family: "Graphik";
+    font-family: "Inter", sans-serif;
     text-decoration: underline !important;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;

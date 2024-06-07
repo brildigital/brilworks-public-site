@@ -154,7 +154,7 @@ const Article = ({ blok }) => {
   const author = blogAuthor(blok?.BlogAuthor);
 
   return (
-    <div className="md:mt-[8rem] mt-[6rem] blog-main">
+    <div className="blog-background md:pt-[8rem] pt-[6rem] blog-main">
       {!blok ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />

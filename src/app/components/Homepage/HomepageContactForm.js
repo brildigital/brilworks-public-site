@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "./Loader";
 import { usePathname } from "next/navigation";
@@ -84,14 +84,14 @@ const HomepageContactForm = () => {
                   lang="en-US"
                   dir="ltr"
                 >
-                  <form className="wpcf7-form init" id="homepage-contact-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <p className={isMobile ? "pb-4" : ""}>
-                        <label
-                          className={`label_name ${isMobile ? "pb-2" : ""}`}
-                        >
-                          Name*
-                        </label>
+                  <form
+                    className="wpcf7-form init"
+                    id="homepage-contact-form"
+                    onSubmit={handleSubmit}
+                  >
+                    <div className="form-group ">
+                      <p className="pb-4 md:pb-0">
+                        <label className="label_name pb-2 md:pb-0">Name*</label>
                         <br />
                         <span
                           className="wpcf7-form-control-wrap"
@@ -195,7 +195,7 @@ const HomepageContactForm = () => {
                     </div>
                     <button className="btn_paddinng mt-4">
                       <div className="home_ready_sec transition  !w-[115px]">
-                        <p className="flex align-middle justify-center">
+                        <p className="flex align-middle justify-center !text-colorBlack">
                           {isSubmitting ? (
                             <div className="py-[6px] px-[30px]">
                               <Loader />

@@ -482,7 +482,7 @@ const HomepageWhyChooseUs = () => {
       }`}
     >
       <div className="background !rounded-2xl md:px-8 lg:px-12 md:!pb-8 lg:!pb-12 px-4 pb-4 reveal">
-        <div className="solutions md:py-8 py-6 flex md:items-center md:justify-center justify-start items-start">
+        <div className="solutions md:py-8 py-6 flex md:items-center md:justify-center justify-start items-start font-bold">
           {pathname === "/application-development-services/" ? (
             <h2 className="text-center w-2/3">
               Why Choose Brilworks for your App Development Needs?
