@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Heading from "../Common/Heading";
 
 const GameChanger = () => {
   return (
