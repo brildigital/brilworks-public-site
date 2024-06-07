@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
+import "../../styles/Homepage.scss";
 
 const Accordion = dynamic(
   () => import("@material-tailwind/react").then((mod) => mod.Accordion),
@@ -27,11 +28,15 @@ const AccordionCustomStyle = ({
   return (
     <Accordion
       open={open === index}
-      className={open === index ? "item-accordion" : ""}
+      className={open === index ? "item-accordion" : "custon-style-accordion"}
     >
       <AccordionHeader
         onClick={() => handleOpen(index)}
-        className={`py-6 ${open === index ? "border-none" : ""}`}
+        className={`py-6 ${
+          open === index
+            ? "border-none"
+            : `${open === index + 1 ? "border-none" : ""}`
+        }`}
       >
         <div
           className={`flex w-full ${

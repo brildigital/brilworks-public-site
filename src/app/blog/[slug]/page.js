@@ -75,7 +75,7 @@ export default async function Page(props) {
             data?.story?.content?.mobile_banner?.filename
           }
         />
-        <meta name="author" content={data?.story?.content?.author}></meta>
+        <meta name="author" content={data?.story?.content?.BlogAuthor}></meta>
         <meta
           name="twitter:image"
           content={
@@ -86,7 +86,7 @@ export default async function Page(props) {
         <meta name="twitter:label1" content="Written by"></meta>
         <meta
           name="twitter:data1"
-          content={data?.story?.content?.author}
+          content={data?.story?.content?.BlogAuthor}
         ></meta>
         <meta name="twitter:label2" content="Est. reading time"></meta>
         <meta
