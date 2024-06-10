@@ -68,7 +68,9 @@ const BrilworksSoftwareReview = () => {
         <div className="software-review-head lg:!pt-[8rem] !pt-[0rem]">
           <div className="sec4_main_home">
             <div
-              className={`md:py-[5rem] py-[2rem]  ${isMobile ? "!pr-12" : ""} `}
+              className={`py-8 md:pb-[4rem] pb-[2rem]  ${
+                isMobile ? "!pr-12" : ""
+              } `}
             >
               <div className="clutch-widget ">
                 <h2 className="md:mr-0 mr-8">

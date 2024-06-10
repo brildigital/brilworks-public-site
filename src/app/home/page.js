@@ -82,11 +82,11 @@ const page = () => {
       />
       <GameChanger />
       <Brilliant />
-      <BestAdvocateText />
+      <SeeingBelieving />
+
       <ClientReviews />
       <DomainWorking />
       <ExtensionOfTeam />
-      <SeeingBelieving />
       <Honors />
       <HomepageWhyChooseUs />
       <HomepageBlog />

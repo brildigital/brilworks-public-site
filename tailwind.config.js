@@ -13,7 +13,7 @@ module.exports = {
         sxl: "1200px",
       },
       colors: {
-        colorPrimary: "#00ddb9",
+        themeColor: "#0D9A9A",
         colorLightGray: "#f1f1f1",
         colorBlack: "#1c1d1e",
         colorWhite: "#ffffff",

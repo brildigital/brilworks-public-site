@@ -21,9 +21,6 @@
     width: 95%;
     margin: 0 0 auto;
   }
-  .big-text-stroke {
-    -webkit-text-stroke-width: 0.5px;
-  }
   .tech-stack-circle {
     background: linear-gradient(
       180deg,
@@ -107,9 +104,6 @@
 
     h2 {
       font-size: 2rem;
-    }
-    .big-text-stroke {
-      -webkit-text-stroke-width: 1 !important;
     }
     .faq-bottom {
       h2[itemProp="name"] {

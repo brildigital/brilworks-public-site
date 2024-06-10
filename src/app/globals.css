@@ -12,20 +12,22 @@
   --regular: "Inter", sans-serif;
   --font_14: 0.875rem;
   --font_16: 1rem;
+  --font_20: 1.25rem;
   --font_21: 1.313rem;
   --font_24: 1.5rem;
   --font_28: 1.8rem;
   --font_32: 2rem;
   --font_36: 2.25rem;
+  --font_44: 2.75rem;
   --font_48: 3rem;
   --font_56: 3.5rem;
   --font_74: 4.625rem;
   --font_80: 5rem;
+  --font_84: 5.25rem;
   --font_96: 6rem;
   --font_120: 6.5rem;
   --font_250: 13.625rem;
   --theme-color: #0d9a9a; /* New color */
-  --color-black: #1c1d1e; /* New color */
   --color_black: #000000;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
@@ -50,8 +52,9 @@ html {
 body {
   overflow-x: hidden !important;
   /* background-image: url(/images/bg.png); */
-  background: #ffffff;
+  background: var(--white_color);
   /* background: #f3fdff; */
+  text-color: var(--color_black);
   background-repeat: repeat;
   background-size: contain;
   width: 100%;
@@ -178,12 +181,10 @@ input[type="number"] {
   background: var(--color_black);
 }
 
-.fontfamily-ebold {
-  font-family: var(--extra_bold);
+.main-section-padding {
+  padding: 6rem 0rem;
 }
-
 .font-style-solution-head {
-  font-family: var(--extra_bold);
   color: #fff;
   line-height: inherit !important;
 }
@@ -261,15 +262,6 @@ input[type="number"] {
   padding: 3rem 0 3rem;
   position: relative;
   z-index: 9;
-}
-
-.style_sec3_swiper_home p,
-.style_sec3_swiper_home .home_sec3_txt2 p {
-  font-family: var(--medium);
-}
-
-.style_sec3_swiper_home .font_style_sec3 {
-  font-family: var(--medium) !important;
 }
 
 .header {
@@ -383,34 +375,22 @@ input[type="number"] {
 
 .sec1_txt_position {
   position: absolute;
-  top: 18%;
+  top: 50%;
+  transform: translateY(-50%);
   left: 7%;
-  width: 90%;
 }
 
 .home_txt1 p {
-  font-size: var(--font_74);
-  font-family: var(--regular);
-  color: var(--color_black);
-}
-
-.home_txt2 p {
-  font-size: var(--font_250);
-  font-family: var(--light);
-  color: var(--color_black);
-  line-height: var(--line_height_1);
+  font-size: var(--font_84);
+  font-weight: 300;
 }
 
 .home_txt3 h1 {
-  font-size: var(--font_32);
-  font-family: var(--light);
-  color: var(--color_black);
+  font-size: var(--font_24);
 }
 
 .home_sec2_txt1 p,
 .home_sec2_txt1 h1 {
-  font-family: var(--regular);
-  color: var(--color_black);
   line-height: var(--line_height_1);
 }
 
@@ -425,7 +405,6 @@ input[type="number"] {
 .home_sec2_txt3 p {
   color: var(--black_font);
   line-height: var(--line_height_1);
-  font-family: var(--light);
 }
 
 .gradiant_aerrow {
@@ -433,19 +412,6 @@ input[type="number"] {
   top: 0;
   left: 0;
   opacity: 0;
-}
-
-.about_txt a,
-.about_txt .change_link {
-  font-family: var(--medium);
-  color: var(--color_black);
-}
-
-.about_txt_domain a,
-.about_txt_domain .change_link,
-.why_text {
-  font-family: var(--regular);
-  color: var(--color_black);
 }
 
 .transition {
@@ -468,18 +434,16 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.about_btn:hover .about_txt,
 .about_btn:hover .about_txt a:hover,
-.about_btn:hover .about_txt .change_link:hover {
-  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.about_btn:hover .about_txt_domain a:hover,
+.about_btn:hover .about_txt .change_link:hover,
 .about_btn:hover .about_txt_domain,
-.about_btn:hover .about_txt {
-  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
+.about_btn:hover .about_txt_domain a:hover {
+  background: linear-gradient(
+    to right,
+    var(--theme-color) 44%,
+    var(--theme-color) 51%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -492,14 +456,14 @@ input[type="number"] {
 }
 
 .video-slider video {
-  width: 525px;
-  height: 525px;
-  background: #000;
+  width: 442px;
+  height: 442px;
+  background: var(--color_black);
 }
 
-.video-slider .home_sec3_box.overflow-hidden {
+/* .video-slider .home_sec3_box.overflow-hidden {
   height: 517px;
-}
+} */
 
 .accordion .accordion-item,
 .accordion,
@@ -575,15 +539,13 @@ input[type="number"] {
 }
 
 .blog-box h4 {
-  font-family: var(--regular) !important;
-  color: var(--color_black) !important;
   text-align: center !important;
   padding: 1rem 0;
 }
 
 .home_sec3_box {
   border-radius: 30px;
-  border: 1px solid #00dfb8;
+  border: 1px solid var(--main_color);
   position: relative;
   z-index: 9;
 }
@@ -595,11 +557,15 @@ input[type="number"] {
 .dots_flex {
   display: flex;
   align-items: center;
-  width: 91%;
+  width: 86%;
   margin: 0 auto;
   gap: 1rem;
   padding: 1.2rem 0;
   background: #fff;
+}
+
+.video-slider .dots_flex {
+  width: 100%;
 }
 
 .dots {
@@ -610,14 +576,7 @@ input[type="number"] {
 }
 
 .background {
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
   border-radius: 0 0 30px 30px;
 }
 
@@ -989,20 +948,19 @@ textarea.form-control-txt {
 .header_sec1_txt2 p {
   font-size: var(--font_16);
   color: var(--color_black);
-  font-family: var(--medium);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5 0;
-  border: 1px solid #00c4c8;
+  border: 1px solid var(--theme-color);
   padding: 10px 14px;
   width: fit-content;
   /* background: rgb(0, 196, 200); */
-  background: #00c4c8;
+  background: var(--theme-color);
 }
 
 .header_sec1_txt2 p:hover {
-  border: 1px solid #00dfb8;
+  border: 1px solid var(--theme-color);
   background: transparent;
 }
 
@@ -1148,9 +1106,7 @@ textarea.form-control-txt {
 }
 
 .home_sec3_box1 .style_sec3_swiper_home p {
-  font-size: var(--font_16);
-  font-family: var(--medium);
-  color: var(--color_black);
+  font-size: var(--font_20);
 }
 
 .contact_bold p {
@@ -1165,9 +1121,6 @@ textarea.form-control-txt {
   font-size: 2.6rem !important;
 }
 
-/* .home_sec2_txt3 p {
-  color: var(--black_font);
-} */
 .noText {
   padding: 3rem 0 2rem;
 }
@@ -1474,8 +1427,6 @@ textarea.form-control-txt {
 .home_sec2_txt3 p,
 .blog .home_sec2_txt3 h1 {
   font-size: var(--font_48);
-  color: var(--black_font);
-  line-height: var(--line_height_1);
 }
 
 .contact_details {
@@ -1680,10 +1631,6 @@ textarea.form-control-txt {
   text-align: center;
 }
 
-.end-To-end .home_sec2_txt3 p {
-  font-family: var(--extra_bold);
-}
-
 .jira_icon_flex {
   display: flex;
   flex-wrap: wrap;
@@ -1737,10 +1684,6 @@ textarea.form-control-txt {
   left: 35%;
   width: 55%;
   transform: translate(-50%, -50%);
-}
-
-.ready_sec .home_sec2_txt3 p {
-  font-family: var(--extra_bold);
 }
 
 .get_touch {
@@ -1813,12 +1756,15 @@ textarea.form-control-txt {
 }
 
 .home_sec2_txt1 p,
-.home_sec2_txt1 h1,
-.home_sec2_txt1 h2 {
+.home_sec2_txt1 h1 {
   font-size: var(--font_96);
-  font-family: var(--regular);
-  color: var(--color_black);
   line-height: var(--line_height_1);
+}
+
+.home_sec2_txt1 h2 {
+  font-size: var(--font_44);
+  line-height: 66px;
+  font-weight: 300;
 }
 
 .abc {
@@ -1869,7 +1815,6 @@ textarea.form-control-txt {
 .career .home_sec2_txt3 p {
   line-height: var(--line_height_1_2);
   font-size: 2rem;
-  font-family: var(--light);
   width: 78%;
 }
 
@@ -1882,17 +1827,6 @@ textarea.form-control-txt {
 .sign_data {
   color: #01b5d0;
   font-size: 70px;
-}
-
-.get_in_touch_hover {
-  font-size: var(--font_16);
-  font-family: var(--medium);
-  color: var(--black_font);
-}
-
-.get_in_touch_hover:hover {
-  color: #48d0b8;
-  transition: all 0.4s ease-in-out;
 }
 
 .year p {
@@ -2053,8 +1987,7 @@ textarea.form-control-txt {
   padding: 2rem 0;
 }
 
-.home_txt3 p,
-.home_txt3 h1 {
+.home_txt3 p {
   font-size: var(--font_32);
   font-family: var(--regular);
   color: var(--color_black);
@@ -2062,16 +1995,6 @@ textarea.form-control-txt {
 
 .home_txt3 p {
   font-family: var(--medium) !important;
-}
-
-.sec1_txt_position .our_btn_flex .home_txt3 h1 {
-  font-size: var(--font_32);
-  font-family: var(--light);
-  color: var(--color_black);
-}
-
-.homepage-text {
-  font-family: var(--light) !important;
 }
 
 .sec7_about_btn:hover {
@@ -2272,14 +2195,9 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1680px) {
-  .home_txt2 p {
-    font-size: 12.625rem;
-  }
-
   .home_txt1 p,
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: var(--font_74);
@@ -2326,10 +2244,6 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1550px) {
-  .home_txt2 p {
-    font-size: 10.625rem;
-  }
-
   .home_sec2_txt2 p {
     font-size: 4rem;
   }
@@ -2390,10 +2304,13 @@ textarea.form-control-txt {
 
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 {
     font-size: 4rem;
+  }
+
+  .home_sec2_txt1 h2 {
+    font-size: var(--font_36);
   }
 
   .sec4_about p,
@@ -2416,10 +2333,6 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1440px) {
-  .home_txt2 p {
-    font-size: 10rem;
-  }
-
   .home_txt1 p {
     font-size: 4rem;
   }
@@ -2532,10 +2445,6 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1366px) {
-  .home_txt3_top_padding {
-    padding-top: 1rem;
-  }
-
   .no_flex_tech::after {
     width: 11%;
     right: 0%;
@@ -2544,10 +2453,6 @@ textarea.form-control-txt {
   .no_flex_tech::before {
     width: 11%;
     left: 0%;
-  }
-
-  .home_txt3 h1 {
-    font-size: 1.8rem;
   }
 
   .year {
@@ -2648,8 +2553,7 @@ textarea.form-control-txt {
     font-size: 1.3rem;
   }
 
-  .home_txt3 p,
-  .home_txt3 h1 {
+  .home_txt3 p {
     font-size: 1.8rem;
   }
 }
@@ -2661,14 +2565,6 @@ textarea.form-control-txt {
 
   .video-slider video {
     width: 394px;
-  }
-
-  .video-slider .client-review-msg {
-    font-size: 1.6rem !important;
-  }
-
-  .home_txt2 p {
-    font-size: 9rem;
   }
 
   .contact_text_call p {
@@ -2690,7 +2586,6 @@ textarea.form-control-txt {
 
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.5rem;
@@ -2775,17 +2670,13 @@ textarea.form-control-txt {
     padding: 11px 6px;
   }
 
-  .home_txt2 p {
-    font-size: 7.625rem;
-  }
-
   .home_txt1 p {
     font-size: 3rem;
   }
 
   .home_txt3 h1 {
     line-height: 2rem !important;
-    font-size: 1.2rem !important;
+    font-size: 1.25rem !important;
   }
 
   .about_vision .sec10_txt1,
@@ -2853,10 +2744,12 @@ textarea.form-control-txt {
 
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.8rem;
+  }
+  .home_sec2_txt1 h2 {
+    font-size: var(--font_32);
   }
 
   .about_sec2_grid .number {
@@ -2875,8 +2768,7 @@ textarea.form-control-txt {
     padding: 3rem 2rem 1rem;
   }
 
-  .home_txt3 p,
-  .home_txt3 h1 {
+  .home_txt3 p {
     line-height: 2rem;
     font-size: 1.5rem;
   }
@@ -2912,10 +2804,6 @@ textarea.form-control-txt {
     width: 304px;
   }
 
-  .video-slider .client-review-msg {
-    font-size: 1.3rem !important;
-  }
-
   .client-review-swipers .swiper-button-next {
     right: 3rem !important;
     bottom: 10% !important;
@@ -2932,15 +2820,6 @@ textarea.form-control-txt {
 
   .header_width {
     width: 90%;
-  }
-
-  .home_txt2 p {
-    font-size: 7rem;
-  }
-
-  .home_txt3 h1 {
-    line-height: 2rem;
-    font-size: 1.2rem;
   }
 
   .accordion .accordion-button {
@@ -3014,7 +2893,6 @@ textarea.form-control-txt {
 
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3rem;
@@ -3043,9 +2921,8 @@ textarea.form-control-txt {
     padding: 4rem 1rem;
   }
 
-  .home_txt3 p,
-  .home_txt3 h1 {
-    font-size: 1.2rem;
+  .home_txt3 p {
+    font-size: 1.25rem !important;
   }
 
   .pricing-amount {
@@ -3084,26 +2961,35 @@ textarea.form-control-txt {
     max-width: 124px;
   }
 }
+@media only screen and (max-width: 1080px) {
+  .main-section-padding {
+    padding: 5rem 2rem;
+  }
+}
 
-@media only screen and (max-width: 980px) and (min-width: 768px) {
-  .home_txt2 p {
-    font-size: 5rem !important;
+@media only screen and (max-width: 1080px) and (orientation: landscape) {
+  .home_sec1_img img {
+    height: 600px !important;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  .main-section-padding {
+    padding: 2.5rem 1rem;
+  }
   .btn_flex {
     padding: 14px 24px;
+  }
+  .home_txt3 h1 {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
   }
   .video-slider .home_sec3_box.overflow-hidden {
     height: unset;
   }
-  .style_sec3_swiper_home {
-    padding: 2rem 0 !important;
-  }
 
   .homepage-work-domain .accordion-header .accordion-button {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
   }
 
   .accordion .accordion-body {
@@ -3113,12 +2999,8 @@ textarea.form-control-txt {
   }
 
   .blog-box h4 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: normal;
-  }
-
-  .home_txt3.home_txt3_top_padding br {
-    display: none;
   }
 
   .header_logo {
@@ -3133,12 +3015,8 @@ textarea.form-control-txt {
     height: 94vh;
   }
 
-  .home_txt2 p {
-    font-size: 4.8rem;
-  }
-
   .home_txt1 p {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
 
   .our_work {
@@ -3150,16 +3028,7 @@ textarea.form-control-txt {
     justify-content: right;
   }
 
-  .our_btn_flex {
-    flex-direction: column;
-  }
-
-  .home_sec1_img img {
-    height: 94vh;
-  }
-
   .sec1_txt_position {
-    top: 27%;
     left: 4%;
     width: 95%;
   }
@@ -3334,12 +3203,6 @@ textarea.form-control-txt {
     z-index: 0;
   }
 
-  .sec1_txt_position .our_btn_flex .home_txt3 h1 {
-    font-size: 1.2rem;
-    font-family: var(--light);
-    color: var(--color_black);
-  }
-
   .sec6_title p,
   .sec6_title h2,
   .portfolio .head-title {
@@ -3430,10 +3293,13 @@ textarea.form-control-txt {
 
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
-  .home_sec2_txt1 h2,
   .text_transparent,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 2.2rem;
+  }
+  .home_sec2_txt1 h2 {
+    font-size: var(--font_28);
+    line-height: 40px;
   }
 
   .home_sec2_txt2 p {

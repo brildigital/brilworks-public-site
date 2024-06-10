@@ -36,9 +36,7 @@ const BlogFAQ = ({ FAQData }) => {
                 key={index + 1}
                 open={open === index + 1}
                 icon={<Icon id={index + 1} open={open} />}
-                className={`accordion-item  ${
-                  open === index + 1 ? "bg-themeLight" : "bg-colorWhite"
-                }`}
+                className="accordion-item bg-colorWhite"
                 itemScope="true"
                 itemProp="mainEntity"
                 itemType="https://schema.org/Question"

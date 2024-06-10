@@ -6,11 +6,12 @@
     font-weight: 400;
   }
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    font-weight: 600;
   }
   .accordion-body,
   .about_txt_domain {
-    font-size: var(--font_21);
+    font-size: var(--font_20);
     font-family: var(--regular);
     line-height: 1.75rem !important;
   }
@@ -30,12 +31,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.client-review-msg {
-  font-family: var(--regular) !important;
-  line-height: 1.4 !important;
-  font-size: 1.8rem !important;
 }
 
 .client-review-swipers {
@@ -335,11 +330,8 @@
 }
 
 .big-text-stroke {
-  font-family: var(--regular);
-  color: var(--color_black);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black_font);
+  color: var(--theme-color);
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 768px) {
@@ -367,14 +359,11 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .client-review-msg {
-    font-size: 1.2rem !important;
-  }
   .homepage-work-domain,
   .accordion-tab-section,
   .homepage-extension-team {
     h3 {
-      font-size: var(--font_21);
+      font-size: var(--font_20);
     }
     .accordion-body,
     .about_txt_domain {
@@ -382,10 +371,6 @@
       font-family: var(--regular);
       line-height: 1.5rem !important;
     }
-  }
-
-  .style_sec3_swiper_home {
-    padding: 0;
   }
 
   .work-swiper {
@@ -444,12 +429,6 @@
     .portfolio-title-new {
       display: none !important;
     }
-  }
-
-  .client-review-msg {
-    font-family: var(--regular) !important;
-    line-height: 1.4 !important;
-    font-size: 1.2rem !important;
   }
 
   .software-review-head {

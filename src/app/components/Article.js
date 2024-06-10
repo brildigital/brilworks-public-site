@@ -585,7 +585,7 @@ const Article = ({ blok }) => {
           </div>
 
           <div className="md:!mx-10 !mx-4">
-            <div className="!mb-12 flex flex-wrap flex-col md:!px-4">
+            <div className="!pb-16 flex flex-wrap flex-col md:!px-4">
               <div className="service_sec3">
                 <p className="home_sec2_txt3">
                   <p className="!ml-0 extra_bold !w-full">
@@ -631,7 +631,7 @@ const Article = ({ blok }) => {
                             </div>
                             <div className="sec9_txt2 mt-[1.5rem]">
                               <p className="publish_date">
-                                {content?.PublishedDate}
+                                {formattedDate(content?.Published)}
                               </p>
                             </div>
                           </div>
