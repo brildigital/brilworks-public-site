@@ -80,7 +80,7 @@ const ExtensionOfTeam = () => {
   return (
     <div className="container mx-auto main-section-padding reveal">
       <TechTeamText />
-      <div className="md:px-4 md:pt-12 pt-8 sm:w-[92%] w-[100%] reveal">
+      <div className="md:px-4 md:pt-12 pt-8 sm:w-[92%] w-[100%] mx-auto reveal">
         <div className="homepage-extension-team">
           <div className="flex flex-wrap">
             <div className="lg:w-1/2 w-full">

@@ -31,7 +31,10 @@
   --color_black: #000000;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
-  --color_light_gray: #f1f1f1;
+  --color-light-gray: #f1f1f1;
+  --border-gray: "#DEDEDE";
+  --section-bg: "#F2F3F3";
+  --footer-bg: "#F2F5F7";
   --white_color: #ffffff;
   --main_color: #00dfb8;
   --main_menu_hover_color: #00b6cf;
@@ -86,7 +89,6 @@ a,
 a:focus,
 a:hover {
   text-decoration: none !important;
-  color: var(--color_black) !important;
   color: inherit !important;
 }
 
@@ -281,7 +283,7 @@ input[type="number"] {
 }
 
 .page-active {
-  color: var(--main_color) !important;
+  color: var(--theme-color) !important;
 }
 
 .item-accordion {
@@ -377,10 +379,11 @@ input[type="number"] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 7%;
+  left: 8.5%;
 }
 
-.home_txt1 p {
+.home_txt1 p,
+.home_txt1 h1 {
   font-size: var(--font_84);
   font-weight: 300;
 }
@@ -460,10 +463,6 @@ input[type="number"] {
   height: 442px;
   background: var(--color_black);
 }
-
-/* .video-slider .home_sec3_box.overflow-hidden {
-  height: 517px;
-} */
 
 .accordion .accordion-item,
 .accordion,
@@ -674,24 +673,23 @@ input[type="number"] {
 }
 
 .style_sec10_swiper_home {
-  width: 89%;
+  width: 90%;
   margin: 0 auto;
   padding: 3rem 0;
+}
+.style_sec10_swiper_home p {
+  color: var(--white_color);
 }
 
 .sec10_flex_row {
   display: flex;
   flex-direction: row;
   flex: 1;
-  gap: 3.5rem;
+  gap: 3rem;
 }
 
 .sec10_basis_50 {
   flex-basis: 50%;
-}
-
-.sec10_basis_50 .sec10_txt1 {
-  font-family: var(--regular);
 }
 
 .about_vision .sec10_txt1,
@@ -723,13 +721,32 @@ textarea.form-control-txt {
   padding-top: 4rem;
 }
 
-.form-group {
+.form-group,
+.form-group-home {
   position: relative;
+}
+
+.form-group-home label,
+.form-group-home input {
+  color: var(--white_color);
+}
+
+.form-group-home input.form-control-txt,
+.form-group-home textarea.form-control-txt {
+  padding: 0rem 2rem 0.5rem 0;
+  margin-top: 2rem;
+  background: 0 0;
+  border: none;
+  outline: none;
+  color: var(--white_color);
+  border-bottom: 1px solid var(--white_color);
+  border-radius: 0;
+  font-size: 1rem;
+  width: 90%;
 }
 
 .label_name {
   color: var(--color_black);
-  font-family: var(--medium);
   position: absolute;
   left: 0;
   top: 20%;
@@ -740,7 +757,6 @@ textarea.form-control-txt {
   padding: 12px 30px;
   background: #f0f0f0 !important;
   border-radius: 27px;
-  font-family: var(--medium);
   border: 1px solid #f0f0f0;
   width: fit-content;
 }
@@ -794,9 +810,14 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
+.year-home {
+  font-size: var(--font_20);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--white_color) !important;
+}
+
 .year {
-  font-size: var(--font_21);
-  font-family: var(--regular);
+  font-size: var(--font_20);
   color: var(--color_black);
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--color_black);
@@ -872,77 +893,45 @@ textarea.form-control-txt {
 .bg_black {
   margin: 0;
   padding: 0;
-  background-color: #000;
 }
 
 .bg_black a {
   cursor: pointer !important;
 }
 
-.footer_padding {
-  padding: 5rem 0;
-}
-
-.footer_width {
-  width: 90%;
-  margin: 0 auto;
-}
-
 .footer_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
-  gap: 10rem;
+  gap: 5rem;
   align-items: start;
-}
-
-.footer_width .footer_grid .grid-area-one ul,
-.footer_width .footer_grid .grid-area-two ul,
-.footer_width .footer_grid .grid-area-three ul,
-.footer_width .footer_grid .grid-area-four ul {
-  padding-left: 0 !important;
-  margin-bottom: 0 !important;
 }
 
 .social_media {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-top: 2rem;
 }
 
-.add_loc_email {
-  padding-top: 2rem;
-}
-
-.add_loc_email .quick_link {
-  padding-bottom: 0;
-  padding-top: 1rem;
-}
-
-.quick_link {
+.quick_link p {
   font-size: var(--font_16);
-  font-family: var(--medium);
-  background: #00c4c8;
-  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-bottom: 2rem;
-}
-
-.footer_grid > div:nth-child(1) .footer_link li {
-  padding-top: 1rem;
+  color: var(--color_black);
+  font-weight: 700;
+  line-height: 20px !important;
+  padding-bottom: 1.25rem;
 }
 
 .footer_link li {
   font-size: var(--font_16);
-  font-family: var(--light);
-  color: var(--white_color);
-  padding-top: 1rem;
+  color: var(--color_black);
+  padding-bottom: 1.5rem;
+}
+
+.footer_link li .page-active {
+  font-weight: 700;
 }
 
 .footer_link li a:hover {
-  color: var(--main_color) !important;
+  color: var(--theme-color) !important;
 }
 
 .header_sec1_txt2 p {
@@ -986,12 +975,6 @@ textarea.form-control-txt {
   font-size: var(--font_16);
   font-family: var(--light);
   color: var(--white_color);
-}
-
-.footer_txt_flex2 {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }
 
 .sec9_service_style .number {
@@ -2194,8 +2177,38 @@ textarea.form-control-txt {
   line-height: 84px !important;
 }
 
+.why-card:hover {
+  background: url(/images/why-choose-hover-bg.svg) !important;
+  background-size: contain;
+  width: 100%;
+}
+.why-card:hover h4 {
+  color: var(--white_color);
+}
+.why-card:hover .desc {
+  color: #dbe0fb;
+}
+
+.footer-contact:hover {
+  background: var(--theme-color);
+  transition: var(--comman-transition);
+}
+.footer-contact p {
+  color: var(--color_black);
+}
+.footer-contact:hover p {
+  color: var(--white_color);
+}
+.footer-contact span {
+  color: var(--theme-color);
+}
+.footer-contact:hover span {
+  color: var(--color_black);
+}
+
 @media only screen and (max-width: 1680px) {
   .home_txt1 p,
+  .home_txt1 h1,
   .home_sec2_txt1 p,
   .home_sec2_txt1 h1,
   .text_transparent,
@@ -2253,11 +2266,7 @@ textarea.form-control-txt {
   }
 
   .footer_grid {
-    gap: 5rem;
-  }
-
-  .footer_padding {
-    padding: 4rem 0;
+    gap: 3rem;
   }
 
   .service_description p {
@@ -2333,7 +2342,8 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1440px) {
-  .home_txt1 p {
+  .home_txt1 p,
+  .home_txt1 h1 {
     font-size: 4rem;
   }
 
@@ -2643,17 +2653,7 @@ textarea.form-control-txt {
 
 @media only screen and (min-width: 1153px) {
   .footer_grid > div:nth-child(2) {
-    margin-top: 60px;
-    padding-left: 6rem;
-  }
-
-  .footer_grid > div:nth-child(3) {
     padding-left: 2rem;
-    margin-top: 60px;
-  }
-
-  .footer_grid > div:nth-child(4) {
-    margin-top: 60px;
   }
 }
 
@@ -2670,7 +2670,8 @@ textarea.form-control-txt {
     padding: 11px 6px;
   }
 
-  .home_txt1 p {
+  .home_txt1 p,
+  .home_txt1 h1 {
     font-size: 3rem;
   }
 
@@ -2784,17 +2785,14 @@ textarea.form-control-txt {
   }
 
   .footer_grid > div:nth-child(2) {
-    margin-top: 60px;
     padding-left: 3rem;
   }
 
   .footer_grid > div:nth-child(3) {
-    margin-top: 60px;
     padding-left: 0rem;
   }
 
   .footer_grid > div:nth-child(4) {
-    margin-top: 60px;
     padding-left: 3rem;
   }
 }
@@ -2965,6 +2963,9 @@ textarea.form-control-txt {
   .main-section-padding {
     padding: 5rem 2rem;
   }
+  .sec1_txt_position {
+    left: 5%;
+  }
 }
 
 @media only screen and (max-width: 1080px) and (orientation: landscape) {
@@ -3015,7 +3016,8 @@ textarea.form-control-txt {
     height: 94vh;
   }
 
-  .home_txt1 p {
+  .home_txt1 p,
+  .home_txt1 h1 {
     font-size: 2.5rem;
   }
 
@@ -3046,10 +3048,6 @@ textarea.form-control-txt {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 
-  .footer_padding {
-    padding: 2rem 0;
-  }
-
   .grid-area-one {
     grid-area: one;
   }
@@ -3061,7 +3059,6 @@ textarea.form-control-txt {
   .grid-area-three {
     grid-area: three;
   }
-
   .grid-area-four {
     grid-area: four;
   }
@@ -3077,17 +3074,22 @@ textarea.form-control-txt {
   }
 
   .footer_grid > div:nth-child(2) {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     padding-left: 0rem;
   }
 
   .footer_grid > div:nth-child(3) {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     padding-left: 0rem;
   }
 
+  .form_grid {
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
   .footer_grid > div:nth-child(4) {
-    margin-top: 0;
+    /* margin-top: 0; */
     padding-left: 0rem;
   }
 
@@ -3420,6 +3422,14 @@ textarea.form-control-txt {
   .header-title {
     font-size: 40px !important;
     line-height: 50px !important;
+  }
+
+  .why-card:hover {
+    background: var(--theme-color) !important;
+    width: 100%;
+  }
+  .footer_grid > div:nth-child(3) {
+    padding-left: 0;
   }
 }
 

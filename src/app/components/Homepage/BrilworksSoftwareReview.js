@@ -197,7 +197,7 @@ const BrilworksSoftwareReview = () => {
               </SwiperSlide>
             ))
           ) : (
-            <div className="flex align-middle justify-center">
+            <div className="flex items-center justify-center py-10">
               <FetchDataSpinner />
             </div>
           )}

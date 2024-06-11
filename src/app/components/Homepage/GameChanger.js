@@ -22,30 +22,32 @@ const GameChanger = () => {
       <div className="container mx-auto">
         <div className="sec1_txt_position">
           <div className="home_txt1">
-            <p className="xl:w-4/5 !w-full leading-tight">
+            <h1 className="xl:w-4/5 !w-full leading-tight">
               Providing&nbsp;
               <br className="mobile:hidden" />
               <span className="text-themeColor font-bold">
-                Nextgen Technology Solutions
+                Nextgen Technology <br className="mobile:block hidden" />{" "}
+                Solutions
               </span>
               &nbsp;for your next leap
-            </p>
+            </h1>
           </div>
 
           <div className="flex lg:items-center items-end justify-between xl:!pt-10 !pt-0">
-            <div className="home_txt3 pt-4 xl:pt-0">
-              <h1>
+            <div className="pt-4 xl:pt-0">
+              <p className="lg:!text-2xl !text-lg">
                 We help ramp up engineering and design capacity, speed up
                 product and MVP <br className="lg:block hidden" /> development,
                 automate processes, and cut costs.
-              </h1>
+              </p>
             </div>
           </div>
           <div className="lg:mt-12 mt-5">
             <Button label="Book Free Consultation" />
           </div>
         </div>
-        <div className="absolute md:bottom-[6%] bottom-3 md:left-[7%] left-[4%] md:px-0">
+
+        <div className="flex-none home_txt3 home_txt3_top_padding py-5 absolute md:bottom-[6%] bottom-[2%] md:left-[8.5%] left-[5%]">
           <span className="md:!text-2xl flex gap-2 flex-wrap">
             <Link
               className="hover:!text-themeColor"

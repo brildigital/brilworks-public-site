@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { SalesEmailText } from "./BigText";
+import { SalesEmailText, ScalableSolutionText } from "./BigText";
 import { scrollEffect } from "../lib/commonFunction";
 
 const HomepageContactForm = dynamic(() => import("./HomepageContactForm"));
@@ -16,12 +16,12 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <>
-      <SalesEmailText />
-      <div className="md:w-[90%] lg:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto px-[15px] reveal">
+    <div className="main-section-padding">
+      <ScalableSolutionText />
+      <div className="md:w-[90%] lg:w-[70%] w-[100%] blog-home mx-auto reveal">
         <HomepageContactForm />
       </div>
-    </>
+    </div>
   );
 };
 

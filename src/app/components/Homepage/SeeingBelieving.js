@@ -86,7 +86,7 @@ const SeeingBelieving = () => {
   ];
 
   return (
-    <div className="bg-colorLightGray">
+    <div className="bg-sectionBG">
       <div className="container mx-auto main-section-padding reveal">
         <BelievingText />
         <div className="md:w-4/5 w-full mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
@@ -94,7 +94,10 @@ const SeeingBelieving = () => {
             .slice(0, 4)
             .map(({ title, image, description, alt, link }, index) => {
               return (
-                <div className="min-w-[300px] h-full w-fit" key={index}>
+                <div
+                  className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit"
+                  key={index}
+                >
                   <Link href={link} prefetch={true}>
                     <Image
                       className="rounded-[25px]"
@@ -105,7 +108,7 @@ const SeeingBelieving = () => {
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                     />
 
-                    <div className="flex flex-col pt-4 items-start">
+                    <div className="flex flex-col p-4 items-start">
                       <div className="w-full flex items-center justify-between">
                         <div className="text-xl font-bold text-themeColor mb-1">
                           {title}

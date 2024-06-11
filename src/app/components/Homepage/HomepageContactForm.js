@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "./Loader";
 import { usePathname } from "next/navigation";
+import Button from "../Common/Button";
 
 const HomepageContactForm = () => {
   const pathname = usePathname();
@@ -62,219 +63,201 @@ const HomepageContactForm = () => {
   };
 
   return (
-    <>
-      <div className="container mx-auto home_sec3_box">
-        <div className="dots_flex !rounded-[30px]">
-          <div className="dots"></div>
-          <div className="dots"></div>
-          <div className="dots"></div>
-        </div>
-        <div className="background">
-          <div className="style_sec10_swiper_home">
-            <div className="sec10_flex_row">
-              <div className="sec10_basis_50 order_2">
-                <div className="sec10_txt1">
-                  <p>
-                    Contact us to build the right product with the right team.
-                  </p>
-                </div>
-                <div
-                  className="wpcf7 no-js"
-                  id="wpcf7-f719-p96-o1"
-                  lang="en-US"
-                  dir="ltr"
-                >
-                  <form
-                    className="wpcf7-form init"
-                    id="homepage-contact-form"
-                    onSubmit={handleSubmit}
-                  >
-                    <div className="form-group ">
-                      <p className="pb-4 md:pb-0">
-                        <label className="label_name pb-2 md:pb-0">Name*</label>
-                        <br />
-                        <span
-                          className="wpcf7-form-control-wrap"
-                          data-name="text-807"
-                        >
-                          <input
-                            size="40"
-                            className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
-                            aria-required="true"
-                            aria-invalid="false"
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            required
-                            onChange={handleChange}
-                          />
-                        </span>
-                      </p>
-                    </div>
-                    <div className="form-group">
-                      <p className={isMobile ? "pb-4" : ""}>
-                        <label
-                          className={`label_name ${isMobile ? "pb-2" : ""}`}
-                        >
-                          Company*
-                        </label>
-                        <br />
-                        <span
-                          className="wpcf7-form-control-wrap"
-                          data-name="text-8070"
-                        >
-                          <input
-                            size="40"
-                            className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
-                            aria-required="true"
-                            aria-invalid="false"
-                            type="text"
-                            name="company"
-                            value={formData.company}
-                            required
-                            onChange={handleChange}
-                          />
-                        </span>
-                      </p>
-                    </div>
-                    <div className="form-group">
-                      <p className={isMobile ? "pb-4" : ""}>
-                        <label
-                          className={`label_name ${isMobile ? "pb-2" : ""}`}
-                        >
-                          Email Id*
-                        </label>
-                        <br />
-                        <span
-                          className="wpcf7-form-control-wrap"
-                          data-name="email-866"
-                        >
-                          <input
-                            size="40"
-                            className="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control-txt"
-                            aria-required="true"
-                            aria-invalid="false"
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            required
-                            onChange={handleChange}
-                          />
-                        </span>
-                      </p>
-                    </div>
-                    <div className="form-group">
-                      <p className={isMobile ? "pb-4" : ""}>
-                        <label
-                          className={`label_name ${isMobile ? "pb-2" : ""}`}
-                        >
-                          Message
-                        </label>
-                        <br />
-                        <span
-                          className="wpcf7-form-control-wrap"
-                          data-name="textarea-797"
-                        >
-                          <textarea
-                            cols="1"
-                            rows="2"
-                            className={`wpcf7-form-control wpcf7-textarea form-control-txt ${
-                              isMobile ? "mt-4" : ""
-                            }`}
-                            id="message"
-                            aria-invalid="false"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                          ></textarea>
-                        </span>
-                      </p>
-                    </div>
-                    <div className="success-msg h-4" id="sucess_msg">
-                      {respMessage}
-                    </div>
-                    <button className="btn_paddinng mt-4">
-                      <div className="home_ready_sec transition  !w-[115px]">
-                        <p className="flex align-middle justify-center !text-colorBlack">
-                          {isSubmitting ? (
-                            <div className="py-[6px] px-[30px]">
-                              <Loader />
-                            </div>
-                          ) : (
-                            <input
-                              className="wpcf7-form-control has-spinner wpcf7-submit home_btn"
-                              id="submit"
-                              name="btnSubmit"
-                              type="submit"
-                              disabled={isSubmitting}
-                            />
-                          )}
-                        </p>
-                      </div>
-                    </button>
-                    <div
-                      className="wpcf7-response-output"
-                      aria-hidden="true"
-                    ></div>
-                  </form>
-                </div>
+    <div className="container mx-auto home_sec3_box">
+      <div className="dots_flex !rounded-[30px]">
+        <div className="dots"></div>
+        <div className="dots"></div>
+        <div className="dots"></div>
+      </div>
+      <div className="background">
+        <div className="style_sec10_swiper_home">
+          <div className="sec10_flex_row">
+            <div className="sec10_basis_50 order_2">
+              <div className="sec10_txt1">
+                <p>
+                  Contact us to build the right product with the right team.
+                </p>
               </div>
-              <div className="sec10_basis_50 order_1">
-                <div className="sec10_txt1">
-                  <p>
-                    Top-rated software
-                    <br />
-                    development company
-                  </p>
+              <div
+                className="wpcf7 no-js"
+                id="wpcf7-f719-p96-o1"
+                lang="en-US"
+                dir="ltr"
+              >
+                <form
+                  className="wpcf7-form init"
+                  id="homepage-contact-form"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="form-group-home">
+                    <p className="pb-4 md:pb-0">
+                      <label className="label_name pb-2 md:pb-0">Name*</label>
+                      <br />
+                      <span
+                        className="wpcf7-form-control-wrap"
+                        data-name="text-807"
+                      >
+                        <input
+                          size="40"
+                          className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
+                          aria-required="true"
+                          aria-invalid="false"
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          required
+                          onChange={handleChange}
+                        />
+                      </span>
+                    </p>
+                  </div>
+                  <div className="form-group-home">
+                    <p className={isMobile ? "pb-4" : ""}>
+                      <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
+                        Company*
+                      </label>
+                      <br />
+                      <span
+                        className="wpcf7-form-control-wrap"
+                        data-name="text-8070"
+                      >
+                        <input
+                          size="40"
+                          className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
+                          aria-required="true"
+                          aria-invalid="false"
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          required
+                          onChange={handleChange}
+                        />
+                      </span>
+                    </p>
+                  </div>
+                  <div className="form-group-home">
+                    <p className={isMobile ? "pb-4" : ""}>
+                      <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
+                        Email Id*
+                      </label>
+                      <br />
+                      <span
+                        className="wpcf7-form-control-wrap"
+                        data-name="email-866"
+                      >
+                        <input
+                          size="40"
+                          className="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control-txt"
+                          aria-required="true"
+                          aria-invalid="false"
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          required
+                          onChange={handleChange}
+                        />
+                      </span>
+                    </p>
+                  </div>
+                  <div className="form-group-home">
+                    <p className={isMobile ? "pb-4" : ""}>
+                      <label className={`label_name ${isMobile ? "pb-2" : ""}`}>
+                        Message
+                      </label>
+                      <br />
+                      <span
+                        className="wpcf7-form-control-wrap"
+                        data-name="textarea-797"
+                      >
+                        <textarea
+                          cols="1"
+                          rows="2"
+                          className={`wpcf7-form-control wpcf7-textarea form-control-txt ${
+                            isMobile ? "mt-4" : ""
+                          }`}
+                          id="message"
+                          aria-invalid="false"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                        ></textarea>
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="success-msg h-4 !text-colorWhite"
+                    id="sucess_msg"
+                  >
+                    {respMessage}
+                  </div>
+                  <Button
+                    className="md:my-8 my-6"
+                    id="submit"
+                    name="btnSubmit"
+                    type="submit"
+                    icon={isSubmitting ? <Loader /> : ""}
+                    label={isSubmitting ? "Submitting" : "Submit"}
+                    variant="white"
+                    disabled={isSubmitting}
+                  />
+                </form>
+              </div>
+            </div>
+            <div className="sec10_basis_50 order_1">
+              <div className="sec10_txt1">
+                <p>
+                  Top-rated software
+                  <br />
+                  development company
+                </p>
+              </div>
+              <div className="form_grid">
+                <div>
+                  <div className="number_home">
+                    <p data-max="8">8+</p>
+                  </div>
+                  <div className="year-home">
+                    <p>
+                      Years of
+                      <br />
+                      experience
+                    </p>
+                  </div>
                 </div>
-                <div className="form_grid">
-                  <div>
-                    <div className="number_home">
-                      <p data-max="8">8+</p>
-                    </div>
-                    <div className="year">
-                      <p>
-                        Years of
-                        <br />
-                        experience
-                      </p>
-                    </div>
+                <div>
+                  <div className="number_home">
+                    <p data-max="98">98%</p>
                   </div>
-                  <div>
-                    <div className="number_home">
-                      <p data-max="98">98%</p>
-                    </div>
-                    <div className="year">
-                      <p>
-                        Project
-                        <br />
-                        Success Rate
-                      </p>
-                    </div>
+                  <div className="year-home">
+                    <p>
+                      Project
+                      <br />
+                      Success Rate
+                    </p>
                   </div>
-                  <div>
-                    <div className="number_home">
-                      <p data-max="60">60+</p>
-                    </div>
-                    <div className="year">
-                      <p>
-                        Professional
-                        <br />
-                        employee
-                      </p>
-                    </div>
+                </div>
+                <div>
+                  <div className="number_home">
+                    <p data-max="60">60+</p>
                   </div>
-                  <div>
-                    <div className="number_home">
-                      <p data-max="120">120+</p>
-                    </div>
-                    <div className="year">
-                      <p>
-                        Applications
-                        <br />
-                        Developed
-                      </p>
-                    </div>
+                  <div className="year-home">
+                    <p>
+                      Professional
+                      <br />
+                      employee
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div className="number_home">
+                    <p data-max="120">120+</p>
+                  </div>
+                  <div className="year-home">
+                    <p>
+                      Applications
+                      <br />
+                      Developed
+                    </p>
                   </div>
                 </div>
               </div>
@@ -282,7 +265,7 @@ const HomepageContactForm = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

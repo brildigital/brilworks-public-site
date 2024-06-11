@@ -36,7 +36,7 @@ const AIMLService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !top-[15%]">
+          <div className="sec1_txt_position">
             <h1 className="mb-[30px] md:mb-[20px] lg:mb-[30px] w-full md:w-1/2">
               Advance Your Business with AI/ML and Computer Vision
             </h1>

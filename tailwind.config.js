@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         themeColor: "#0D9A9A",
         colorLightGray: "#f1f1f1",
+        sectionBG: "#F2F3F3",
+        footerBG: "#F2F5F7",
+        borderGray: "#DEDEDE",
         colorBlack: "#1c1d1e",
         colorWhite: "#ffffff",
         colorGray: "#504F4F",
@@ -23,6 +26,8 @@ module.exports = {
         themeLight: "#F3FDFF",
       },
       backgroundImage: {
+        "gradient-to-r":
+          "linear-gradient(to right, #0D9A9A, #0D9A9A8A, #0D9A9A40)",
         "gradient-custom":
           "linear-gradient(277.16deg, #02e1b8 0.58%, #00b5d4 100%)",
         "gradient-usecase": "linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)",

@@ -33,7 +33,7 @@ const Honors = () => {
   }, []);
 
   return (
-    <div className="bg-colorLightGray">
+    <div className="bg-sectionBG">
       <div className="container mx-auto main-section-padding reveal">
         <HonorText />
         <div className="honors-swiper reveal">
