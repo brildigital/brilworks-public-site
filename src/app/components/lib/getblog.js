@@ -13,6 +13,11 @@ export async function getblog() {
       per_page: 100,
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       // sort_by: "first_published_at:",
+      filter_query: {
+        component: {
+          in: "article",
+        },
+      },
     },
     {
       next: { revalidate: 7200 },
@@ -34,16 +39,19 @@ export async function getblogData(
     page: page_no || 1,
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    filter_query: {
+      component: {
+        in: "article",
+      },
+    },
   };
 
   if (filter_category) {
-    // Check if filter_category is present in props
-    apiParams.filter_query = {
-      Category: {
-        in: filter_category,
-      },
+    apiParams.filter_query.Category = {
+      in: filter_category,
     };
   }
+
   if (search_query) {
     // If search_query is present, add search_term to apiParams
     apiParams.search_term = search_query;
@@ -74,6 +82,9 @@ export async function getblogSpecificAuthor(
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     filter_query: {
+      component: {
+        in: "article",
+      },
       BlogAuthor: {
         in: convertParamsToString(author_name),
       },
@@ -114,17 +125,20 @@ export async function getblogDataCategorization(
     page: page_no || 1,
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    filter_query: {
+      component: {
+        in: "article",
+      },
+    },
   };
 
   // Check if filter_category is present in props
   if (filter_category) {
-    // If filter_category is present, add filter_query to apiParams
-    apiParams.filter_query = {
-      subcategory: {
-        in: filter_category,
-      },
+    apiParams.filter_query.subcategory = {
+      in: filter_category,
     };
   }
+
   if (search_query) {
     // If search_query is present, add search_term to apiParams
     apiParams.search_term = search_query;

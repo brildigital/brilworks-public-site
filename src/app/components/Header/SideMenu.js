@@ -42,11 +42,11 @@ const SideMenu = ({ open, close }) => {
             >
               <AccordionHeader
                 onClick={() => handleOpen(index)}
-                className={`group/item accordion-title py-6 hover:!text-[#00b6cf] ${
+                className={`group/item accordion-title py-6 hover:!text-themeColor ${
                   openSection === index ? "border-none" : ""
                 }`}
               >
-                <p className="group-hover/item:text-[#00dfb8]">
+                <p className="group-hover/item:text-themeColor">
                   {menuItem.name}
                 </p>
               </AccordionHeader>

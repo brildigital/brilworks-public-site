@@ -22,9 +22,9 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
               e.preventDefault();
               setOpenNav(false);
             }}
-            className="group/item flex items-center header_font hover:text-[#00dfb8]"
+            className="group/item flex items-center header_font hover:text-themeColor"
           >
-            <p className="!mb-0 group-hover/item:text-[#00dfb8] uppercase">
+            <p className="!mb-0 group-hover/item:text-themeColor uppercase">
               {name}
             </p>
             <svg

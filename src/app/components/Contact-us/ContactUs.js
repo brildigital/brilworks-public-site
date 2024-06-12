@@ -92,7 +92,7 @@ const ContactUs = () => {
         </div>
       </section>
       <section className="xl:mt-24 lg:mt-[60px] mt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
-        <div className="bg-[#01B6D3] medium-font w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
+        <div className="bg-themeColor medium-font w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
           <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
             For career inquiry email us on <strong>hr@brilworks.com</strong>
           </h2>
