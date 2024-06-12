@@ -273,13 +273,6 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="just_call_sec">
-          <div className="solutions text-center py-8">
-            <h2 className="uppercase md:!text-center !text-left ml-4 !w-full">
-              Client Testimonials
-            </h2>
-          </div>
-        </div>
         <ClientReviews />
 
         <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem] reveal">
