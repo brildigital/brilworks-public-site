@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "../../styles/Services.scss";
 import React from "react";
-import { BestAdvocateText } from "../Homepage/BigText";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -36,7 +36,7 @@ const AWSService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[15%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-1/2">
               AWS Consulting Services
             </h1>
@@ -46,13 +46,7 @@ const AWSService = () => {
               cloud? Look no further than our comprehensive suite of AWS
               consulting services, designed to guide you every step of the way.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Let’s Get Started
-                </p>
-              </div>
-            </Link>
+            <Button label="Let’s Get Started" />
           </div>
         </div>
       </div>
@@ -63,7 +57,6 @@ const AWSService = () => {
       <ContactBlock />
       <TechStackWeUse />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

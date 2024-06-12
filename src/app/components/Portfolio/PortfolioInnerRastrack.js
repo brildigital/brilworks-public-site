@@ -5,7 +5,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { scrollEffect } from "../lib/commonFunction";
-import { BestAdvocateText } from "../Homepage/BigText";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const HomepageContactForm = dynamic(() =>
@@ -336,10 +335,7 @@ const PortfolioInnerRastrack = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="mx-auto">
-            <BestAdvocateText />
-            <ClientReviews />
-          </div>
+          <ClientReviews />
 
           <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
             <HomepageContactForm />

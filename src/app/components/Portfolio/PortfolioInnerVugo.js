@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { BestAdvocateText } from "../Homepage/BigText";
 import { useMediaQuery } from "react-responsive";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
@@ -350,9 +349,7 @@ const PortfolioInnerVugo = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <BestAdvocateText />
           <ClientReviews />
-
           <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
             <HomepageContactForm />
           </div>

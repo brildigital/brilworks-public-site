@@ -2,7 +2,9 @@
 import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import "swiper/css/autoplay";
+import "swiper/css/virtual";
+import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoryblokClient from "storyblok-js-client";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -48,7 +50,7 @@ const BrilworksSoftwareReview = () => {
 
   return (
     <>
-      <div className="software-review-container ">
+      <div className="software-review-container main-section-padding w-full mx-auto">
         {/* <div className="clutch-widget">
           <iframe
             id="iframe-0.7673398699825025"
@@ -65,10 +67,10 @@ const BrilworksSoftwareReview = () => {
             className="mx-auto w-[100%]"
           ></iframe>
         </div> */}
-        <div className="software-review-head lg:!pt-[8rem] !pt-[0rem]">
+        <div className="software-review-head !pt-[0rem]">
           <div className="sec4_main_home">
             <div
-              className={`py-8 md:pb-[4rem] pb-[2rem]  ${
+              className={`py-8 md:pb-[4rem] md:pt-0 pb-[2rem]  ${
                 isMobile ? "!pr-12" : ""
               } `}
             >
@@ -120,30 +122,31 @@ const BrilworksSoftwareReview = () => {
           </div>
         </div>
         <Swiper
-          className="!w-{90%] reveal"
-          modules={[Pagination]}
+          className="!w-[95%] !mx-auto reveal"
+          modules={[Pagination, Autoplay, Virtual]}
           spaceBetween={isMobile ? 10 : 21}
+          autoplay={{ delay: 500 }}
           loopfillgroupwithblank="true"
           speed={isMobile ? 1000 : 1500}
-          loop={false}
+          loop={true}
           shouldswiperupdate="true"
           pagination={{ clickable: true }}
+          virtual
           breakpoints={{
+            1600: {
+              slidesPerView: 5,
+            },
             1475: {
               slidesPerView: 4,
-              slidesPerGroup: 4,
             },
             1024: {
               slidesPerView: 3,
-              slidesPerGroup: 3,
             },
             767: {
               slidesPerView: 2,
-              slidesPerGroup: 2,
             },
             575: {
               slidesPerView: 1,
-              slidesPerGroup: 1,
             },
           }}
         >
@@ -151,7 +154,7 @@ const BrilworksSoftwareReview = () => {
             reviewData?.map((dataItem, index) => (
               <SwiperSlide key={index}>
                 <div className="wpb_wrapper">
-                  <div className="clutch-swiper home_sec3_box mr-[1px]">
+                  <div className="clutch-swiper home_sec3_box !mx-[1px] !max-w-[335px]">
                     <div className="dots_flex">
                       <div className="dots !bg-[#00dfb8]"></div>
                       <div className="dots"></div>

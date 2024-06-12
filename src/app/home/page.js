@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { BestAdvocateText } from "../components/Homepage/BigText";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import GameChanger from "../components/Homepage/GameChanger";
 

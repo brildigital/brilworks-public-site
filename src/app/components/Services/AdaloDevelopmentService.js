@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -35,7 +35,7 @@ const AdaloDevelopmentService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               Adalo Development Services
             </h1>
@@ -44,13 +44,7 @@ const AdaloDevelopmentService = () => {
               Brilworks, we specialize in crafting intuitive and dynamic mobile
               and web applications using the powerful platform – Adalo.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Tell us about your project
-                </p>
-              </div>
-            </Link>
+            <Button label="Tell us about your project" />
           </div>
         </div>
       </div>
@@ -60,7 +54,6 @@ const AdaloDevelopmentService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

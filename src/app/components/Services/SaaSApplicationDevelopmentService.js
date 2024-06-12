@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -36,20 +36,17 @@ const SaaSApplicationDevelopmentService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[15%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
-              SaaS Application Development Services
+              SaaS Application <br />
+              Development Services
             </h1>
             <p className="!text-colorGray !mb-10 w-full md:w-1/2">
               Trusted by industry leaders, we deliver exceptional Sass solutions
               for forward-thinking companies. Let us help you achieve your
               design goals with clean, scalable code.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">Get a Quote</p>
-              </div>
-            </Link>
+            <Button label="Get a Quote" />
           </div>
         </div>
       </div>
@@ -59,7 +56,6 @@ const SaaSApplicationDevelopmentService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { BestAdvocateText } from "../Homepage/BigText";
 import { scrollEffect } from "../lib/commonFunction";
 import { useMediaQuery } from "react-responsive";
 
@@ -300,10 +299,7 @@ const PortfolioInnerTrackimo = () => {
 
           <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
 
-          <div className="container mx-auto px-[15px]">
-            <BestAdvocateText />
-            <ClientReviews />
-          </div>
+          <ClientReviews />
 
           <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
             <HomepageContactForm />

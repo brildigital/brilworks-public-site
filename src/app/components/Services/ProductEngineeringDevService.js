@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -35,7 +35,7 @@ const ProductEngineeringDevService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] md:!top-[45%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               Product Engineering & Development Service
             </h1>
@@ -46,13 +46,7 @@ const ProductEngineeringDevService = () => {
               engineering and development? Our team of experts brings innovative
               solutions to every stage.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Get Free Consultation
-                </p>
-              </div>
-            </Link>
+            <Button label="Get Free Consultation" />
           </div>
         </div>
       </div>
@@ -62,7 +56,6 @@ const ProductEngineeringDevService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -44,16 +44,7 @@ const AIMLService = () => {
               Leverage the power of AI and visual analytics to transform your
               business operation.
             </p>
-            <Link
-              href="/contact-us/"
-              className="bg-unset hover:!bg-colorWhite !mb-4"
-            >
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Let’s Get Started
-                </p>
-              </div>
-            </Link>
+            <Button label="Let’s Get Started" />
           </div>
         </div>
       </div>
@@ -65,7 +56,6 @@ const AIMLService = () => {
       <ContactBlock />
       <TechStackWeUse />
       <HomepageWhyChooseUs />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

@@ -26,8 +26,6 @@ module.exports = {
         themeLight: "#F3FDFF",
       },
       backgroundImage: {
-        "gradient-to-r":
-          "linear-gradient(to right, #0D9A9A, #0D9A9A8A, #0D9A9A40)",
         "gradient-custom":
           "linear-gradient(277.16deg, #02e1b8 0.58%, #00b5d4 100%)",
         "gradient-usecase": "linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)",

@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -39,7 +39,7 @@ const GenerativeAIDevService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] md:!top-[45%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               Generative AI Development Services
             </h1>
@@ -49,11 +49,7 @@ const GenerativeAIDevService = () => {
               passionate experts who craft bespoke AI applications tailored to
               your unique needs.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">Let's Build</p>
-              </div>
-            </Link>
+            <Button label="Let's Build" />
           </div>
         </div>
       </>
@@ -64,7 +60,6 @@ const GenerativeAIDevService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

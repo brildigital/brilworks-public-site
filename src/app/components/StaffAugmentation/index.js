@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import { BestAdvocateText } from "../Homepage/BigText";
 import "../../styles/Services.scss";
 import StaffAugmentationBanner from "./StaffAugmentationBanner";
 
@@ -33,8 +32,7 @@ const StaffAugmentation = () => {
         <UpskillStaffAugmentation />
       </div>
       <WhyStaffAugmentation />
-      <div className="bg-themeLight py-10">
-        <BestAdvocateText />
+      <div className="bg-themeLight">
         <ClientReviews />
       </div>
       <ServicesPricingPlans />

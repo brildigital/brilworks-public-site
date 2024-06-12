@@ -77,124 +77,126 @@ const ClientReviews = () => {
   ];
 
   return (
-    <div className="container mx-auto main-section-padding">
-      <BestAdvocateText />
-      <div className="relative reveal">
-        <div className="rotate_img">
-          <Image
-            className="rotate_right alignnone"
-            src="/images/Verified-Review-image.png"
-            alt="verified review"
-            width="215"
-            height="215"
-          />
-        </div>
-        <div className="flex flex-wrap items-center gap-6 justify-center video-slider">
-          <div className="cursor-pointer relative">
-            <div className="video-play-icon">
-              {isVideoPause && !isMobile ? (
-                <span className="play-icon-img">
-                  <img src="/images/icon_play_new.svg" alt="Play Icon" />
-                </span>
-              ) : null}
-            </div>
-
-            <div onClick={() => setVideoPause(!isVideoPause)}>
-              {reviewIndex === 0 ? (
-                <video
-                  className="!rounded-[30px]"
-                  src={
-                    "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4"
-                  }
-                  controls
-                  loading="lazy"
-                  width="320"
-                  height="200"
-                />
-              ) : reviewIndex === 1 ? (
-                <video
-                  loading="lazy"
-                  className="!rounded-[30px]"
-                  src={
-                    "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
-                  }
-                  controls
-                  width="320"
-                  height="200"
-                />
-              ) : reviewIndex === 2 ? (
-                <video
-                  className="!rounded-[30px]"
-                  src={
-                    "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4"
-                  }
-                  controls
-                  loading="lazy"
-                  width="320"
-                  height="200"
-                />
-              ) : reviewIndex === 3 ? (
-                <video
-                  className="!rounded-[30px]"
-                  src={
-                    "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4"
-                  }
-                  controls
-                  loading="lazy"
-                  width="320"
-                  height="200"
-                />
-              ) : null}
-            </div>
+    <>
+      <div className="container mx-auto main-section-padding !pb-0">
+        <BestAdvocateText />
+        <div className="relative reveal">
+          <div className="rotate_img">
+            <Image
+              className="rotate_right alignnone"
+              src="/images/Verified-Review-image.png"
+              alt="verified review"
+              width="215"
+              height="215"
+            />
           </div>
-
-          <div
-            className={`${
-              pathname === "/" || pathname === "/home/"
-                ? "md:!w-2/4"
-                : "md:!w-2/4"
-            } w-full`}
-          >
-            <div className="home_sec3_box overflow-hidden ">
-              <div
-                className={`dots_flex w-100 md:px-[30px] ${
-                  isMobile ? "!mx-4" : ""
-                } `}
-              >
-                <div className="dots md:ml-8 ml-4"></div>
-                <div className="dots"></div>
-                <div className="dots"></div>
+          <div className="flex flex-wrap items-center gap-6 justify-center video-slider">
+            <div className="cursor-pointer relative">
+              <div className="video-play-icon">
+                {isVideoPause && !isMobile ? (
+                  <span className="play-icon-img">
+                    <img src="/images/icon_play_new.svg" alt="Play Icon" />
+                  </span>
+                ) : null}
               </div>
-              <div className="background">
-                <Swiper
-                  className="client-review-swipers"
-                  modules={[Navigation]}
-                  navigation={isMobile ? false : true}
-                  onSlideChange={handleSlideChange}
-                  slidesPerView={1}
-                  speed={isMobile ? 1000 : 1500}
-                >
-                  {clientTestimonials.map(
-                    ({ quote, author, position }, index) => {
-                      return (
-                        <SwiperSlide key={index}>
-                          <div className="style_sec3_swiper_home !w-4/5 md:!my-6 text-colorWhite">
-                            <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                              <p className="text-left md:text-xl !leading-9 font-medium">
-                                "{quote}"
-                              </p>
-                            </div>
 
-                            <p className="xl:text-[28px] md:text-[24px] text-[20px]">
-                              {author}
-                            </p>
-                            <p className="text-base">{position}</p>
-                          </div>
-                        </SwiperSlide>
-                      );
+              <div onClick={() => setVideoPause(!isVideoPause)}>
+                {reviewIndex === 0 ? (
+                  <video
+                    className="!rounded-[30px]"
+                    src={
+                      "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4"
                     }
-                  )}
-                </Swiper>
+                    controls
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                ) : reviewIndex === 1 ? (
+                  <video
+                    loading="lazy"
+                    className="!rounded-[30px]"
+                    src={
+                      "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
+                    }
+                    controls
+                    width="320"
+                    height="200"
+                  />
+                ) : reviewIndex === 2 ? (
+                  <video
+                    className="!rounded-[30px]"
+                    src={
+                      "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4"
+                    }
+                    controls
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                ) : reviewIndex === 3 ? (
+                  <video
+                    className="!rounded-[30px]"
+                    src={
+                      "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4"
+                    }
+                    controls
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                ) : null}
+              </div>
+            </div>
+
+            <div
+              className={`${
+                pathname === "/" || pathname === "/home/"
+                  ? "md:!w-2/4"
+                  : "md:!w-2/4"
+              } w-full`}
+            >
+              <div className="home_sec3_box overflow-hidden ">
+                <div
+                  className={`dots_flex w-100 md:px-[30px] ${
+                    isMobile ? "!mx-4" : ""
+                  } `}
+                >
+                  <div className="dots md:ml-8 ml-4"></div>
+                  <div className="dots"></div>
+                  <div className="dots"></div>
+                </div>
+                <div className="background">
+                  <Swiper
+                    className="client-review-swipers"
+                    modules={[Navigation]}
+                    navigation={isMobile ? false : true}
+                    onSlideChange={handleSlideChange}
+                    slidesPerView={1}
+                    speed={isMobile ? 1000 : 1500}
+                  >
+                    {clientTestimonials.map(
+                      ({ quote, author, position }, index) => {
+                        return (
+                          <SwiperSlide key={index}>
+                            <div className="style_sec3_swiper_home !w-4/5 md:!my-6 text-colorWhite">
+                              <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
+                                <p className="text-left md:text-xl !leading-9 font-medium">
+                                  "{quote}"
+                                </p>
+                              </div>
+
+                              <p className="xl:text-[28px] md:text-[24px] text-[20px]">
+                                {author}
+                              </p>
+                              <p className="text-base">{position}</p>
+                            </div>
+                          </SwiperSlide>
+                        );
+                      }
+                    )}
+                  </Swiper>
+                </div>
               </div>
             </div>
           </div>
@@ -204,7 +206,7 @@ const ClientReviews = () => {
         pathname !== "/staff-augmentation/" &&
         pathname !== "/hire-dedicated-software-development-team/" &&
         pathname !== "/rapid-digitalization/" && <BrilworksSoftwareReview />}
-    </div>
+    </>
   );
 };
 

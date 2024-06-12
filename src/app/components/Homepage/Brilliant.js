@@ -20,9 +20,9 @@ const Brilliant = () => {
   return (
     <div className="container mx-auto main-section-padding">
       <div
-        className={isMediumScreen ? "md:px-4 sm:w-[92%] w-[100%] mx-auto" : ""}
+        className={isMediumScreen ? "md:px-12 sm:w-[90%] w-[100%] mx-auto" : ""}
       >
-        <div className="flex gap-4 lg:flex-row flex-col items-center reveal">
+        <div className="flex gap-8 lg:flex-row flex-col items-center reveal">
           <div className="lg:w-3/5 w-full">
             <ActionNResultText />
             <p className="lg:text-xl md:text-lg text-base md:!leading-[36px] lg:w-[80%]">

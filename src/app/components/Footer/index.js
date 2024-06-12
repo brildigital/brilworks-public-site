@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div className="bg-footerBG">
-      <div className="container mx-auto lg:w-[80%] main-section-padding">
+      <div className="container mx-auto lg:w-[80%] main-section-padding !pb-16">
         <div className="flex flex-col lg:flex-row">
           {/* <div className="footer_grid border-b border-borderGray"> */}
           <div className="footer_grid">
@@ -21,8 +21,8 @@ const Footer = () => {
                 </p>
                 <p className="lg:text-[26px] text-2xl lg:leading-[36px] font-semibold sxl:w-[90%] w-full">
                   Hello, we are
-                  <span className="font-bold text-themeColor">BRILLIAN’S</span>.
-                  Trying to make an effort to put the right people for you to
+                  <span className="font-bold text-themeColor"> BRILLIAN’S</span>
+                  . Trying to make an effort to put the right people for you to
                   get the best results. Just insight !!
                 </p>
               </div>
@@ -283,7 +283,7 @@ const Footer = () => {
               <p className="font-bold md:text-3xl text-xl !mb-[10px]">
                 CONTACT # <span className="">SALES</span>
               </p>
-              <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:w-3/4">
+              <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap">
                 <Link href="tel:919313644148">+91 93136 44148 </Link>/
                 <Link href="mailto:sales@brilworks.com">
                   sales@brilworks.com
@@ -294,7 +294,7 @@ const Footer = () => {
               <p className="font-bold md:text-3xl text-xl !mb-[10px]">
                 CONTACT # <span className="">CAREER</span>
               </p>
-              <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:w-3/4">
+              <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
                 <Link href="tel:919106810920">+91 91068 10920 </Link>/
                 <Link href="mailto:hr@brilworks.com"> hr@brilworks.com</Link>
               </p>
@@ -321,7 +321,7 @@ const Footer = () => {
                 className="size-full wp-image-15"
               />
             </div>
-            <div className="py-1">
+            <div className="md:py-0 py-1">
               © {new Date().getFullYear()} Brilworks. All Rights Reserved.
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:gap-8">

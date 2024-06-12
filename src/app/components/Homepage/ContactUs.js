@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { SalesEmailText, ScalableSolutionText } from "./BigText";
+import { ScalableSolutionText } from "./BigText";
 import { scrollEffect } from "../lib/commonFunction";
 
 const HomepageContactForm = dynamic(() => import("./HomepageContactForm"));

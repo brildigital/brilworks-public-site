@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import Button from "../Common/Button";
 
 const ContactUsEmailForm = ({ inquiryForm }) => {
   const pathname = usePathname();
@@ -33,31 +34,32 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setRespMessage("Your response is submitted successfully.");
 
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/contact-us`,
-        {
-          method: "POST",
-          header: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...formData, page: pathname }),
-        }
-      );
+    // try {
+    //   const response = await fetch(
+    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/contact-us`,
+    //     {
+    //       method: "POST",
+    //       header: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ ...formData, page: pathname }),
+    //     }
+    //   );
 
-      if (response.ok) {
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        setRespMessage("Your response is submitted successfully.");
-        clearMessage();
-      } else {
-        setRespMessage("Something went wrong!");
-      }
-      setIsSubmitting(false);
-    } catch (error) {
-      console.error("Error sending email", error);
-      setIsSubmitting(false);
-    }
+    //   if (response.ok) {
+    //     setFormData({ name: "", email: "", phone: "", message: "" });
+    //     setRespMessage("Your response is submitted successfully.");
+    //     clearMessage();
+    //   } else {
+    //     setRespMessage("Something went wrong!");
+    //   }
+    //   setIsSubmitting(false);
+    // } catch (error) {
+    //   console.error("Error sending email", error);
+    //   setIsSubmitting(false);
+    // }
   };
   return (
     <div>
@@ -144,45 +146,45 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
         <div className="success-msg h-4" id="sucess_msg">
           {respMessage}
         </div>
-        <button
-          className={`btn_paddinng contact_btn btn_flex`}
-          type="submit"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? (
-            <div className="py-[8px] px-[41px]">
-              <Loader />
-            </div>
-          ) : (
-            <>
-              {inquiryForm ? (
-                <p
-                  className="send_btn !rounded-none"
-                  id="submit"
-                  name="btnSubmit"
-                >
-                  SUBMIT INQUIRY
-                </p>
-              ) : (
-                <>
-                  <div className="formBtn_icon grid-flow-row">
-                    <p>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/right_arrow.png"
-                        alt="arrow"
-                      />
-                    </p>
-                  </div>
-                  <p className="send_btn" id="submit" name="btnSubmit">
-                    Submit
+        {inquiryForm ? (
+          <Button
+            className={isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8"}
+            id="submit"
+            name="btnSubmit"
+            type="submit"
+            icon={isSubmitting ? <Loader /> : ""}
+            label={isSubmitting ? "Submitting" : "Submit Inquiry"}
+            disabled={isSubmitting}
+          />
+        ) : (
+          <button
+            className={`btn_paddinng contact_btn btn_flex`}
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <div className="py-[8px] px-[41px]">
+                <Loader />
+              </div>
+            ) : (
+              <>
+                <div className="formBtn_icon grid-flow-row">
+                  <p>
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="/images/right_arrow.png"
+                      alt="arrow"
+                    />
                   </p>
-                </>
-              )}
-            </>
-          )}
-        </button>
+                </div>
+                <p className="send_btn" id="submit" name="btnSubmit">
+                  Submit
+                </p>
+              </>
+            )}
+          </button>
+        )}
       </form>
     </div>
   );

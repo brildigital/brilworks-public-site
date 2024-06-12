@@ -97,7 +97,7 @@ export const WhyChooseText = () => {
       <h2 className="md:text-center text-left">
         Why choose
         <span className="big-text-stroke"> Brilworks</span>
-        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r">
+        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-[#0D9A9A] to-[#0D9A9A40]">
           ???
         </span>
       </h2>

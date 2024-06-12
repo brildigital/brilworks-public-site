@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Button from "../Common/Button";
 
 const StaffAugmentationBanner = () => {
   return (
@@ -14,16 +15,9 @@ const StaffAugmentationBanner = () => {
           IT Staff augmentation service offers a strategic solution to bridge
           the talent gap and incorporate immediate expertise into your team.
         </p>
-        <Link
-          href="/contact-us/"
-          className="bg-unset hover:!bg-colorWhite !mb-4"
-        >
-          <div className="header_sec1_txt2">
-            <p className="transition uppercase !text-base">
-              Scale your team today
-            </p>
-          </div>
-        </Link>
+        <div>
+          <Button label="Scale your team today" />
+        </div>
       </div>
       <div className="grid md:grid-cols-2 gap-5 flex-none">
         <div className="flex flex-col gap-3 p-4 rounded-lg border cursor-pointer service_item_card hover:text-white text-center py-5 ">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -36,7 +36,7 @@ const KubernetesConsultingService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[15%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-1/2">
               Achieve resilience, scale, and savings
             </h1>
@@ -45,13 +45,7 @@ const KubernetesConsultingService = () => {
               Our experts plan a roadmap to achieve rapid deployments and
               seamless upgrades with our proven Kubernetes consulting services.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Let’s Get Started
-                </p>
-              </div>
-            </Link>
+            <Button label="Let’s Get Started" />
           </div>
         </div>
       </div>
@@ -62,7 +56,6 @@ const KubernetesConsultingService = () => {
       <ContactBlock />
       <TechStackWeUse />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

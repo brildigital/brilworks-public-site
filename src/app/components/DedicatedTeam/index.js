@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { BestAdvocateText } from "../Homepage/BigText";
 import "../../styles/Services.scss";
 import DedicatedTeamBanner from "./DedicatedTeamBanner";
 
@@ -59,8 +58,7 @@ const DedicatedTeam = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-themeLight py-10">
-        <BestAdvocateText />
+      <div className="bg-themeLight">
         <ClientReviews />
       </div>
       <ServicesPricingPlans />

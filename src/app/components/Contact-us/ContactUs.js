@@ -38,21 +38,21 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full background_contact">
+        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full bg-themeColor">
           <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-            <h2 className="white_text uppercase !w-full md:py-8">
+            <h2 className="!text-colorWhite font-extrabold uppercase !w-full md:py-8">
               Ready to scale your business to new heights?
             </h2>
           </div>
           <div className="ready_content">
             <div className="home_sec2_txt4 pt-2">
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
+              <p className="!text-colorWhite !text-left md:!text-xl !text-base p-style">
                 Just fill out the form, and let our experts look after the rest.
                 Here’s what will happen next:
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4 ">
-              <p className="white_text contact_title md:!text-2xl !text-xl  !text-left">
+              <p className="font-bold md:!text-2xl !text-xl  !text-left">
                 1. Initiating Contact
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -60,7 +60,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 2. Share Your Requirement
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -70,7 +70,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 3. Sign Non-Disclosure Agreement
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -79,7 +79,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 4. Estimated Budget/Cost
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
