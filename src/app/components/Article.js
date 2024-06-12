@@ -223,7 +223,7 @@ const Article = ({ blok }) => {
                     </span>
                     <span className="font-graphik">{blok?.title}</span>
                   </div>
-                  <h1 className="entry-title default-max-width md:!text-[3rem] !text-[2rem] !font-bold !mb-5 md:leading-[57px] leading-[44px] -tracking-[.52px]">
+                  <h1 className="entry-title default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px]">
                     {blok?.title}
                   </h1>
                 </div>
@@ -311,7 +311,7 @@ const Article = ({ blok }) => {
                 {blok?.Quick_Summary && (
                   <div>
                     <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left italic">
-                      <span className="font-bold text-[#00c4c8]">
+                      <span className="font-bold text-themeColor">
                         Quick Summary:-{" "}
                       </span>
                       {blok?.Quick_Summary}
@@ -328,9 +328,7 @@ const Article = ({ blok }) => {
                 <div className="sticky top-[110px] !pb-5">
                   <div
                     className={`${
-                      headings?.length
-                        ? "rounded-[4px] blog-tab-content"
-                        : "!hidden"
+                      headings?.length ? "blog-tab-content" : "!hidden"
                     }`}
                   >
                     <div className="flex justify-between !mb-5">
@@ -556,13 +554,13 @@ const Article = ({ blok }) => {
                   />
                 </p>
                 <div className="redy_title home_sec2_txt3">
-                  <p className="!w-full">
+                  <p className="!w-full font-bold">
                     READY TO DEVELOP YOUR SUCCESS STORY WITH US?
                   </p>
                 </div>
                 <div className="get_touch">
                   <div className="get_flex ml-14">
-                    <div className="get_icon">
+                    <div className="">
                       <Link href="/contact-us/">
                         <img
                           decoding="async"

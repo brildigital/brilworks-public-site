@@ -6,7 +6,8 @@ import {
 
 export const metadata = {
   openGraph: {
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -596,9 +596,9 @@ const ServicesFAQ = () => {
   };
 
   return (
-    <div className="container md:w-[90%] w-full mx-auto faq-bottom md:!pb-[5rem] !pb-8 pt-12 px-4">
+    <div className="container md:w-[90%] w-full mx-auto faq-bottom main-section-padding md:px-8 px-4">
       <div className="service_sec3 text-center solutions">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 pb-8">
+        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-8">
           FAQs
         </h2>
       </div>

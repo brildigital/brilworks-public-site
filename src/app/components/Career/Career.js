@@ -35,7 +35,7 @@ const Career = () => {
             </div>
 
             <div className="home_sec2_txt3 md:w-[80%] md:mx-auto">
-              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] font-light f-light !w-[100%]">
+              <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-[100%]">
                 A place where brilliant minds come together, to collaborate and
                 create products with a common goal of making them innovative,
                 appealing, and efficient while having truckloads of fun!
@@ -133,7 +133,7 @@ const Career = () => {
               </div>
 
               <div className="home_sec2_txt3 md:w-[80%] md:mx-auto">
-                <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full font-light f-light">
+                <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full">
                   To us, the people and the collaborative working style are key
                   drivers of engagement. It’s our aim to create a welcoming
                   environment in which employees are empowered to achieve their

@@ -3,10 +3,12 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { ScalableSolutionText } from "./BigText";
 import { scrollEffect } from "../lib/commonFunction";
+import { usePathname } from "next/navigation";
 
 const HomepageContactForm = dynamic(() => import("./HomepageContactForm"));
 
 const ContactUs = () => {
+  const pathname = usePathname();
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -16,7 +18,7 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <div className="main-section-padding">
+    <div className={`main-section-padding ${pathname !== "/" ? "!pt-0" : ""} `}>
       <ScalableSolutionText />
       <div className="md:w-[90%] lg:w-[70%] w-[100%] blog-home mx-auto reveal">
         <HomepageContactForm />

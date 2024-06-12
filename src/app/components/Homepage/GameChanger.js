@@ -36,9 +36,10 @@ const GameChanger = () => {
           <div className="flex lg:items-center items-end justify-between xl:!pt-10 !pt-0">
             <div className="pt-4 xl:pt-0">
               <p className="lg:!text-2xl !text-lg">
-                We help ramp up engineering and design capacity, speed up
-                product and MVP <br className="lg:block hidden" /> development,
-                automate processes, and cut costs.
+                Focused on AWS consulting and generative AI, we boost
+                engineering and design capacity,
+                <br /> hasten product and MVP timelines, automate operations,
+                and minimize expenses.
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React from "react";
+import Button from "../Common/Button";
 
 const WhatMakeUsBrilliant = () => {
   return (
@@ -91,19 +91,14 @@ const WhatMakeUsBrilliant = () => {
         </div>
       </div>
 
-      <div className="md:pt-[4rem] pt-[2rem]">
-        <Link href="/about-us/" className="portfolio_know_more md:mx-auto ml-0">
-          <div className="get_icon">
-            <img
-              decoding="async"
-              loading="lazy"
-              className="alignnone"
-              src="/images/right_arrow.png"
-              alt="right arrow"
-            />
-          </div>
-          <p>About Us</p>
-        </Link>
+      <div className="md:pt-[4rem] pt-[2rem] flex items-center justify-center">
+        <Button
+          innerClassName="flex items-center justify-center gap-1"
+          className="!pr-5"
+          redirect="/about-us/"
+          label="About Us"
+          icon="right-arrow"
+        />
       </div>
     </>
   );

@@ -14,7 +14,7 @@ export const metadata = {
     description:
       "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-nodejs-developer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,

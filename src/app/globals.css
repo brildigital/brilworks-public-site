@@ -4,9 +4,6 @@
 @tailwind utilities;
 
 :root {
-  --black_font: "Inter", sans-serif;
-  --bold: "Inter", sans-serif;
-  --extra_bold: "Inter", sans-serif;
   --light: "Inter", sans-serif;
   --medium: "Inter", sans-serif;
   --regular: "Inter", sans-serif;
@@ -33,9 +30,9 @@
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
   --color-light-gray: #f1f1f1;
-  --border-gray: "#DEDEDE";
-  --section-bg: "#F2F3F3";
-  --footer-bg: "#F2F5F7";
+  --border-gray: #dedede;
+  --section-bg: #f2f3f3;
+  --footer-bg: #f2f5f7;
   --white_color: #ffffff;
   --main_color: #00dfb8;
   --main_menu_hover_color: #00b6cf;
@@ -197,8 +194,8 @@ input[type="number"] {
 }
 
 .font-style-solution-head2 {
-  font-family: var(--extra_bold);
-  color: #fff;
+  font-weight: 800;
+  color: var(--white_color);
 }
 
 .headstyle-other-page {
@@ -302,7 +299,7 @@ input[type="number"] {
 .header_font a,
 .header_font p {
   font-size: var(--font_16);
-  font-family: var(--medium);
+
   color: var(--color_black);
 }
 
@@ -329,7 +326,6 @@ input[type="number"] {
 
 .menu_txt1 p {
   font-size: var(--font_36);
-  font-family: var(--medium);
   color: var(--color_black);
 }
 
@@ -355,7 +351,6 @@ input[type="number"] {
 
 .join_content p {
   font-size: 1.2rem;
-  font-family: var(--medium);
   color: var(--color_black);
 }
 
@@ -371,7 +366,7 @@ input[type="number"] {
 
 .mega_menu_txt p {
   font-size: var(--font_16);
-  font-family: var(--medium);
+
   color: var(--color_black);
   line-height: 2.5;
 }
@@ -403,11 +398,10 @@ input[type="number"] {
   color: var(--color_black);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black_font);
 }
 
 .home_sec2_txt3 p {
-  color: var(--black_font);
+  color: var(--color_black);
   line-height: var(--line_height_1);
 }
 
@@ -476,7 +470,7 @@ input[type="number"] {
   background-color: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
-  font-family: var(--medium);
+
   color: var(--color_black) !important;
   padding: 2rem 0rem !important;
 }
@@ -514,10 +508,6 @@ input[type="number"] {
   width: fit-content;
   line-height: 2.5rem;
   padding: 1rem 0rem;
-}
-
-.font-light.f-light {
-  font-family: var(--light) !important;
 }
 
 .sec6_title p,
@@ -594,7 +584,7 @@ input[type="number"] {
 
 .chat_btn_technology {
   font-size: var(--font_16);
-  font-family: var(--medium);
+
   color: var(--color_black);
 }
 
@@ -641,14 +631,14 @@ input[type="number"] {
 }
 
 .pricing-amount {
-  font-family: var(--bold) !important;
+  font-weight: 700 !important;
   text-align: center;
   font-size: var(--font_32);
 }
 
 .pricing-desc-text {
   font-size: var(--font_21);
-  font-family: var(--medium);
+
   color: var(--color_black);
   text-align: left;
 }
@@ -666,11 +656,10 @@ input[type="number"] {
 .benefit-developer-effect:hover {
   transform: translateY(-9%);
   transition: all 0.6s ease-in-out;
-  color: #00c4c8;
+  color: var(--theme-color);
 }
 
 .medium-font {
-  font-family: var(--medium);
 }
 
 .style_sec10_swiper_home {
@@ -779,7 +768,7 @@ textarea.form-control-txt {
 .home_btn {
   background: 0 0 !important;
   border-radius: 27px;
-  font-family: var(--medium);
+
   border: 1px solid transparent;
   font-size: 18px;
 }
@@ -801,13 +790,13 @@ textarea.form-control-txt {
 
 .number {
   font-size: 100px;
-  font-family: var(--bold);
+  font-weight: 700;
   color: var(--color_black);
 }
 
 .number_home {
   font-size: 65px;
-  font-family: var(--bold);
+  font-weight: 700;
   color: var(--color_black);
 }
 
@@ -859,13 +848,12 @@ textarea.form-control-txt {
 
 .content {
   font-size: var(--font_120);
-  font-family: var(--medium);
+
   color: var(--color_black);
 }
 
 .gradiant {
-  background: #00c4c8;
-  background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
+  background: var(--theme-color);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -957,19 +945,6 @@ textarea.form-control-txt {
   padding: 2rem 0;
 }
 
-.footer_txt_flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3rem;
-}
-
-.footer_txt_flex p {
-  font-size: var(--font_16);
-  font-family: var(--light);
-  color: var(--white_color);
-}
-
 .sec9_service_style .number {
   font-size: 34px;
 }
@@ -990,12 +965,10 @@ textarea.form-control-txt {
 .sec9_service_style .p-font {
   font-family: var(--regular);
   font-size: var(--font_21);
-  color: var(--black_font);
 }
 
 .sec9_service_style .number {
-  font-family: var(--black_font);
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--color_black);
 }
 
 .solution_gradiant {
@@ -1010,20 +983,20 @@ textarea.form-control-txt {
 
 .solution_gradiant .contact-p h3 {
   font-size: var(--font_21);
-  font-family: var(--bold);
-  color: var(--black_font);
+  font-weight: 700;
+  color: var(--color_black);
 }
 
 .solution_gradiant .service_description p {
   font-size: var(--font_21);
-  font-family: var(--medium);
+
   color: var(--color_black);
   padding-top: 1.5rem;
 }
 
 .faq-bottom .accordion-button {
   font-size: var(--font_21);
-  font-family: var(--bold) !important;
+  font-weight: 700 !important;
   padding: 1.2rem 2rem;
   color: var(--color_black) !important;
   padding: 10px 0 !important;
@@ -1052,7 +1025,7 @@ textarea.form-control-txt {
 }
 
 .linear-gradient-bg .number {
-  font-family: var(--bold);
+  font-weight: 700;
   color: var(--color_black);
 }
 
@@ -1098,7 +1071,7 @@ textarea.form-control-txt {
 
 .noText li {
   position: relative;
-  font-family: var(--medium);
+
   font-size: var(--font_24);
   margin-left: 2rem;
   list-style: none;
@@ -1107,7 +1080,7 @@ textarea.form-control-txt {
 
 .noText li::before {
   content: "";
-  background-image: url("data: image/svg+xml, %3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cg clip-path='url(%23clip0_30_12)' %3E%3Ccircle cx=' 10' cy=' 10' r=' 10' fill=' %2300C4C8' /%3E%3Cpath d=' M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill=' white' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id=' clip0_30_12' %3E%3Crect width=' 20' height=' 20' fill=' white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%230d9a9a'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: cover;
   width: 16px;
@@ -1183,7 +1156,6 @@ textarea.form-control-txt {
   margin: 0;
   font-size: 21px;
   color: var(--color_black);
-  font-family: var(--medium);
 }
 
 .contact_form.inquiry .contact_btn {
@@ -1227,7 +1199,6 @@ textarea.form-control-txt {
 .service_sec3 p {
   padding: 2.5rem 0;
   line-height: var(--line_height_1_2);
-  font-family: var(--extra_bold);
 }
 
 .sec9_img1 {
@@ -1342,8 +1313,8 @@ textarea.form-control-txt {
 .developer_sec6_title p,
 .developer_sec6_title h3 {
   font-size: var(--font_21) !important;
-  font-family: var(--bold) !important;
-  color: var(--black_font) !important;
+  font-weight: 700 !important;
+  color: var(--color_black) !important;
 }
 
 .service_description p {
@@ -1355,6 +1326,7 @@ textarea.form-control-txt {
 
 .service_width {
   width: 85%;
+  margin: 0 auto !important;
 }
 
 .sec7_service_grid {
@@ -1363,11 +1335,6 @@ textarea.form-control-txt {
 
 .contact_sec3 {
   padding: 12rem 0 10rem;
-}
-
-.service_width {
-  width: 75%;
-  margin: 0 auto !important;
 }
 
 .home_sec2_txt3 p,
@@ -1435,7 +1402,7 @@ textarea.form-control-txt {
 }
 
 .like_text p {
-  font-family: var(--extra_bold) !important;
+  font-weight: 800 !important;
   line-height: var(--line_height_1_2);
 }
 
@@ -1453,7 +1420,7 @@ textarea.form-control-txt {
 }
 
 .banner_padding {
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 
 .portfolio .sec1_service img {
@@ -1472,12 +1439,12 @@ textarea.form-control-txt {
 .portfolio .sec6_title p,
 .blog .home_sec2_txt3 h1,
 .service_sec3 .home_sec2_txt3 .extra_bold {
-  font-family: var(--extra_bold);
+  font-weight: 800;
 }
 
 .portfolio .head-title {
   font-size: var(--font_48);
-  font-family: var(--extra_bold);
+  font-weight: 800;
   color: var(--color_black);
 }
 
@@ -1488,7 +1455,7 @@ textarea.form-control-txt {
 
 .portfolio_sec1_txt2 p {
   font-size: var(--font_24);
-  font-family: var(--medium);
+
   color: var(--color_black);
 }
 
@@ -1498,7 +1465,6 @@ textarea.form-control-txt {
 }
 
 .fintech-portfolio-content {
-  font-family: var(--medium);
   color: var(--color_black);
   padding-top: 1.5rem;
 }
@@ -1517,12 +1483,13 @@ textarea.form-control-txt {
   flex: 1;
   gap: 0;
   padding: 5rem 0;
-  border-bottom: 1px solid var(--main_color);
+  border-bottom: 1px solid var(--theme-color);
 }
 
 .portfolio_sec1_txt1 p {
   font-size: 50px;
-  font-family: var(--medium);
+  font-weight: 600;
+
   color: var(--color_black);
   padding-bottom: 2rem;
 }
@@ -1538,17 +1505,11 @@ textarea.form-control-txt {
   gap: 1rem;
   width: fit-content;
   padding: 14px 30px;
-  background: #00c4c8;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 196, 200, 1) 34%,
-    rgba(0, 221, 185, 1) 56%
-  );
+  background: var(--theme-color);
   border-radius: 40px;
   font-size: var(--font_24);
-  font-family: var(--medium);
   color: var(--color_black);
-  border: 1px solid var(--main_color);
+  border: 1px solid var(--theme-color);
 }
 
 .portfolio_color_style {
@@ -1562,7 +1523,7 @@ textarea.form-control-txt {
 
 .portfolio_know_more:hover {
   background: 0 0;
-  border: 1px solid var(--main_color);
+  border: 1px solid var(--theme-color);
 }
 
 .portfolio_sec .portfolio_color_style {
@@ -1614,7 +1575,7 @@ textarea.form-control-txt {
 .service_title p,
 .service_title h3 {
   font-size: var(--font_24);
-  font-family: var(--bold);
+  font-weight: 700;
   color: var(--color_black) !important;
   border-bottom: 1px solid #8080808f;
   padding-bottom: 0.3rem !important;
@@ -1648,7 +1609,6 @@ textarea.form-control-txt {
 
 .get_text p {
   font-size: var(--font_16);
-  font-family: var(--medium);
   color: var(--color_black);
 }
 
@@ -1662,24 +1622,23 @@ textarea.form-control-txt {
 
 .porfolio_inner p {
   font-size: var(--font_24);
-  font-family: var(--medium);
+
   text-align: center;
-  color: var(--black_font);
+  color: var(--color_black);
   line-height: var(--line_height_1_2);
   width: 73%;
   margin: 0 auto;
 }
-
-.identifying-understanding .service_title p {
-  font-family: var(--bold);
+.identifying-understanding {
+  border-bottom: 1px solid var(--theme-color);
+  padding-bottom: 6rem;
 }
-
-.identifying-understanding p {
-  font-family: var(--medium);
+.identifying-understanding .service_title p {
+  font-weight: 700;
 }
 
 .workpadd_borderTop {
-  border-top: 1px solid var(--main_color);
+  border-top: 1px solid var(--theme-color);
 }
 
 .home_sec2_txt4 p {
@@ -1718,11 +1677,10 @@ textarea.form-control-txt {
   color: var(--color_black);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black_font);
+  -webkit-text-stroke-color: var(--color_black);
 }
 
 .home_sec2_txt3 p {
-  font-family: var(--medium);
   width: 74%;
   margin: 0 auto;
   padding: 2rem 0;
@@ -1787,7 +1745,7 @@ textarea.form-control-txt {
 
 .about_sec2_grid .year {
   font-size: var(--font_32);
-  font-family: var(--medium);
+
   color: var(--color_black);
   padding-top: 1rem;
   border-top: 2px solid #000;
@@ -1921,7 +1879,6 @@ textarea.form-control-txt {
 .sec7_about_btn p {
   font-size: var(--font_16);
   color: #000;
-  font-family: var(--medium);
 }
 
 .sec7_box_style .home_sec2_txt2 p {
@@ -1955,8 +1912,8 @@ textarea.form-control-txt {
 }
 
 .how-we p {
-  font-family: var(--extra_bold);
-  color: #fff;
+  font-weight: 800;
+  color: var(--white_color);
 }
 
 .service_sec1_position {
@@ -2022,7 +1979,7 @@ textarea.form-control-txt {
 .work_sec2_txt4 p {
   font-size: var(--font_21);
   font-family: var(--regular);
-  color: var(--black_font);
+  color: var(--color_black);
   line-height: var(--line_height_1);
 }
 
@@ -2050,6 +2007,9 @@ textarea.form-control-txt {
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+.blog_flex_30:hover .blog-hover > div:first-child {
+  border-bottom: 1px solid var(--white_color);
+}
 
 .blog_flex_30:hover img {
   border-bottom-right-radius: 0;
@@ -2064,16 +2024,14 @@ textarea.form-control-txt {
 
 .get_in_touch .gradiant {
   line-height: var(--line_height_1_2);
-  font-family: var(--regular);
   font-size: var(--font_48);
-  color: var(--black_font);
   width: 100%;
 }
 
 .service_sec3 .home_sec2_txt3 h1 {
-  font-family: var(--bold);
+  font-weight: 700;
   font-size: var(--font_48);
-  color: var(--black_font);
+  color: var(--color_black);
   line-height: var(--line_height_1_2);
 }
 
@@ -2122,9 +2080,9 @@ textarea.form-control-txt {
 }
 
 .solutions h2 {
-  font-family: var(--extra_bold);
+  font-weight: 800;
   font-size: var(--font_48);
-  color: var(--black_font);
+  color: var(--color_black);
   line-height: var(--line_height_1_2);
 }
 
@@ -2172,8 +2130,8 @@ textarea.form-control-txt {
     font-size: var(--font_74);
   }
 
-  .service_width {
-    width: 83%;
+  .banner_padding {
+    padding-top: 7rem;
   }
 
   .sec7_service_grid {
@@ -2333,10 +2291,6 @@ textarea.form-control-txt {
     gap: 2rem;
   }
 
-  .service_width {
-    width: 87%;
-  }
-
   .service_description p {
     font-size: 1rem;
   }
@@ -2478,7 +2432,7 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt1 p {
-    font-size: 36px;
+    font-size: var(--font_32);
   }
 
   .about_vision {
@@ -2637,10 +2591,6 @@ textarea.form-control-txt {
     font-size: 1.2rem;
   }
 
-  .service_width {
-    width: 85%;
-  }
-
   .service_description p {
     font-size: 1rem;
   }
@@ -2672,10 +2622,6 @@ textarea.form-control-txt {
   .sec6_title h2,
   .portfolio .head-title {
     font-size: 1.7rem;
-  }
-
-  .portfolio_sec1_txt1 p {
-    font-size: 34px;
   }
 
   .portfolio_sec1_border {
@@ -2828,7 +2774,7 @@ textarea.form-control-txt {
 
   .portfolio_sec1_txt1 p {
     padding-bottom: 1rem;
-    font-size: 32px;
+    font-size: var(--font_32);
     line-height: normal;
   }
 
@@ -2915,6 +2861,9 @@ textarea.form-control-txt {
   .main-section-padding {
     padding: 5rem 2rem;
   }
+  .identifying-understanding {
+    padding-bottom: 5rem;
+  }
   .sec1_txt_position {
     left: 5%;
   }
@@ -2929,6 +2878,9 @@ textarea.form-control-txt {
 @media only screen and (max-width: 767px) {
   .main-section-padding {
     padding: 2.5rem 1rem;
+  }
+  .identifying-understanding {
+    padding-bottom: 2.5rem;
   }
   .btn_flex {
     padding: 14px 24px;
@@ -3045,26 +2997,8 @@ textarea.form-control-txt {
   }
 
   .pricing-amount {
-    font-family: var(--bold) !important;
     text-align: left;
     font-size: 1.4rem !important;
-  }
-
-  .footer_txt_flex {
-    align-items: baseline;
-    justify-content: left;
-    padding: 0 0;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer_txt_flex p {
-    font-size: 0.8rem;
-  }
-
-  .flex_row_header_menu {
-    flex-direction: column;
-    gap: 2rem;
   }
 
   .noText li {
@@ -3203,7 +3137,7 @@ textarea.form-control-txt {
     font-size: 1.5rem;
     text-align: left;
     line-height: var(--line_height_1_2);
-    font-family: var(--extra_bold);
+    font-weight: 800;
   }
 
   .porfolio_inner p {

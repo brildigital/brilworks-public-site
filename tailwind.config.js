@@ -13,17 +13,17 @@ module.exports = {
         sxl: "1200px",
       },
       colors: {
-        themeColor: "#0D9A9A",
+        themeColor: "#0d9a9a",
         colorLightGray: "#f1f1f1",
-        sectionBG: "#F2F3F3",
-        footerBG: "#F2F5F7",
-        borderGray: "#DEDEDE",
+        sectionBG: "#f2f3f3",
+        footerBG: "#f2f5f7",
+        borderGray: "#dedede",
         colorBlack: "#1c1d1e",
         colorWhite: "#ffffff",
-        colorGray: "#504F4F",
+        colorGray: "#504f4f",
         themePrimary: "#00dfb8",
         themeSecondary: "#00b6cf",
-        themeLight: "#F3FDFF",
+        themeLight: "#f3fdff",
       },
       backgroundImage: {
         "gradient-custom":

@@ -2,11 +2,15 @@
   font-weight: 400;
   font-size: var(--font_16);
   font-weight: 600;
-  padding: 10px 14px;
+  padding: 12px 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1600px) {
+    padding: 10px 14px;
+    font-size: var(--font_18);
+  }
 }
 
 .button-primary {

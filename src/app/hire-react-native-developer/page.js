@@ -14,7 +14,7 @@ export const metadata = {
     description:
       "Brilworks expertise in React Native development, consultation, cross-platform migration, support, testing, and audit. Hire a React Native developer now.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-react-native-developer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,

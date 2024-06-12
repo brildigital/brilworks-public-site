@@ -28,7 +28,7 @@ const PortfolioInnerEccocar = () => {
     <section className="portfolio">
       <div className="service_width">
         <div className="sec6_title text-center">
-          <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl">
+          <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl font-bold">
             See How Team Brilliant Built A Payment
             <br />
             Gateway for Eccocar

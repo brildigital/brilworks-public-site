@@ -117,7 +117,7 @@
   font-family: var(--regular) !important;
   h1 {
     font-size: 75px;
-    font-family: var(--extra_bold);
+    font-weight: 800;
     line-height: 90px;
 
     @media screen and ((max-width: 1080px) and (min-width: 768px)) {
@@ -141,7 +141,7 @@
   }
   h2,
   h3 {
-    font-family: var(--extra_bold);
+    font-weight: 800;
     font-size: 54px;
     line-height: 60px;
     @media screen and ((max-width: 1080px) and (min-width: 768px)) {
@@ -154,12 +154,12 @@
     }
   }
   .big-number {
-    font-family: var(--extra_bold) !important;
+    font-weight: 800 !important;
   }
 
   .cta-section {
     width: 100%;
-    font-family: var(--extra_bold) !important;
+    font-weight: 800 !important;
     color: var(--color_gray);
     background: var(--color_light_gray);
     border-radius: 42px;

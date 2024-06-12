@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import Button from "../Common/Button";
 
 const BlogContactForm = () => {
   const pathname = usePathname();
@@ -145,21 +146,15 @@ const BlogContactForm = () => {
             {respMessage}
           </div>
 
-          <button
-            className="btn_flex ease-in-out !rounded-[7px] !text-lg text-white font-bold !py-2 !w-full hover:text-black hover:border hover:border-[#00b6cf]"
+          <Button
+            className="w-full"
+            id="submit"
+            name="btnSubmit"
             type="submit"
+            icon={isSubmitting ? <Loader /> : ""}
+            label={isSubmitting ? "Submitting" : "Submit"}
             disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <div className="py-[4px] px-[30px]">
-                <Loader />
-              </div>
-            ) : (
-              <p id="submit" name="btnSubmit">
-                Submit
-              </p>
-            )}
-          </button>
+          />
         </form>
       </div>
     </>

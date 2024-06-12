@@ -14,7 +14,7 @@ export const metadata = {
     description:
       "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-blockchain-developer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,

@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Contact us through email or phone for web and mobile app development services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}contact-us/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
     locale: "en-US",
     type: "article",
   },

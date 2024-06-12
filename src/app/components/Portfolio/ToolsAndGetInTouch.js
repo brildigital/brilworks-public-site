@@ -8,7 +8,7 @@ const ToolsAndGetInTouch = () => {
         <div className="sec6_work work_padding !py-[0] sm:!pt-[3rem]">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3">
-              <p className="md:!w-[74%] !w-full">
+              <p className="md:!w-[75%] !w-full font-bold">
                 TOOLS WE USE TO MANAGE OUR WORKFLOW
               </p>
             </div>
@@ -118,7 +118,7 @@ const ToolsAndGetInTouch = () => {
                 />
               </p>
               <div className="redy_title home_sec2_txt3">
-                <p className="!w-full">
+                <p className="!w-full font-bold">
                   READY TO DEVELOP YOUR SUCCESS STORY WITH US?
                 </p>
               </div>

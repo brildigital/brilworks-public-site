@@ -40,13 +40,13 @@ const ContactBlock = () => {
     <div className="container w-[90%] mx-auto md:py-12 py-4">
       <div className="background !rounded-2xl md:p-8 p-4 reveal">
         {pathname === "/kubernetes-consulting-services/" ? (
-          <p className="md:!text-5xl text-3xl md: leading-[54px] text-center pb-3">
+          <p className="md:!text-5xl text-3xl md: leading-[54px] text-center pb-3 text-colorWhite">
             Transform your operations with Kubernetes expertise.
           </p>
         ) : (
           <>
             {pathname === "/product-engineering-development-services/" ? (
-              <p className="md:!text-5xl text-3xl md: leading-[54px] text-center pb-3 mx-auto w-11/12">
+              <p className="md:!text-5xl text-3xl md: leading-[54px] text-center pb-3 mx-auto w-11/12 text-colorWhite">
                 Leverage our expertise in product engineering services to
                 optimize your product's performance.
               </p>
@@ -66,14 +66,14 @@ const ContactBlock = () => {
               pathname === "/product-engineering-development-services/"
                 ? ""
                 : "md:!text-3xl"
-            } text-2xl md: leading-[54px] text-center pb-7`}
+            } text-2xl md: leading-[54px] text-center pb-7 text-colorWhite`}
           >
             {contactText[pathname]}
           </p>
 
           <Link href="/contact-us/">
             <div className="!bg-colorWhite px-[14px] py-[10px] border border-colorBlack shadow-none hover:shadow-lg cursor-pointer">
-              <p className="uppercase ">
+              <p className="uppercase">
                 {pathname === "/kubernetes-consulting-services/" ? (
                   "SCHEDULE A CALL"
                 ) : (

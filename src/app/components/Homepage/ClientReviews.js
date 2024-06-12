@@ -78,7 +78,16 @@ const ClientReviews = () => {
 
   return (
     <>
-      <div className="container mx-auto main-section-padding !pb-0">
+      <div
+        className={`container mx-auto main-section-padding ${
+          !pathname.includes("services") ||
+          pathname !== "/staff-augmentation/" ||
+          pathname !== "/hire-dedicated-software-development-team/" ||
+          pathname !== "/rapid-digitalization/"
+            ? "!pb-0"
+            : ""
+        }`}
+      >
         <BestAdvocateText />
         <div className="relative reveal">
           <div className="rotate_img">

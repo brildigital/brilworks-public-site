@@ -3,7 +3,6 @@ Disallow: /?s=
 Disallow: /search/
 Disallow: /testimonial/
 Disallow: /category/
-Disallow: /blog/author/*
 Disallow: /blog/category/*
 Disallow: /email-sms/*
 Disallow: /studyme-portfolio/*
