@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto lg:w-[80%] main-section-padding !pb-16">
         <div className="flex flex-col lg:flex-row">
           {/* <div className="footer_grid border-b border-borderGray"> */}
-          <div className="footer_grid">
+          <div className="footer_grid border-b border-borderGray">
             <div className="grid-area-one sxl:col-span-2">
               <div className="lg:mb-10 mb-5">
                 <p className="text-2xl font-semibold !mb-[10px]">
@@ -267,18 +267,95 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {/* <div className="border-b border-borderGray pt-6"> */}
-        <div className="">
-          <Image
-            src="/images/footer-award-img.png"
-            alt="Award images"
-            width="1600"
-            height="600"
-          />
+        <div className="border-b border-borderGray py-6">
+          <p className="pb-6">Partnerships:</p>
+          <div className="footer-award flex items-center flex-wrap justify-between gap-4 xl:gap-6">
+            <Image
+              className="xl:w-fit w-[50px] xl:h-14 h-auto"
+              src="/images/select-tier-service-partner-light-1.png"
+              alt="AWS Partner"
+              width="300"
+              height="118"
+            />
+            <Image
+              className="xl:w-fit w-[80px] xl:h-10 h-auto"
+              src="/images/review-adalo.png"
+              alt="adalo expert"
+              width="300"
+              height="118"
+            />
+            <Image
+              className="xl:w-fit w-[130px] xl:h-10 h-auto"
+              src="/images/Storyblok.svg"
+              alt="Storyblok partner"
+              width="123"
+              height="26"
+            />
+            <Image
+              className="xl:w-fit w-[100px] xl:h-6 h-auto"
+              src="/images/dotCMS-logo.svg"
+              alt="dotCMS logo"
+              width="300"
+              height="118"
+            />
+            <Image
+              className="xl:w-fit md:w-[200px] w-[180px] xl:h-10 h-auto"
+              src="/images/review-liferay.png"
+              alt="Liferay Partner"
+              width="300"
+              height="118"
+            />
+          </div>
         </div>
-        {/* <div className="pt-6"> */}
-        <div className="">
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+        <div className="border-b border-borderGray py-6">
+          <p className="pb-6">Recognized by:</p>
+          <div className="footer-award flex items-center flex-wrap justify-between xl:gap-6 gap-4">
+            <Image
+              className="xl:w-[150px] md:w-[100px] w-[80px]"
+              src="/images/top-clutchco-software-developers-gaming-india.webp"
+              alt="Gaming India"
+              width="150"
+              height="162"
+            />
+            <Image
+              className="xl:w-[110px] md:w-[80px] w-[60px]"
+              src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
+              alt="App dev company award"
+              width="110"
+              height="160"
+            />
+            <Image
+              className="xl:w-[120px] md:w-[90px] w-[70px]"
+              src="/images/Top-Mobile-App-Development-Company2.webp"
+              alt="Top App dev company award"
+              width="120"
+              height="130"
+            />
+            <Image
+              className="xl:w-[150px] md:w-[100px] w-[80px]"
+              src="/images/review-top-software-developers.png"
+              alt="Top software companies logo"
+              width="150"
+              height="105"
+            />
+            <Image
+              className="xl:w-[110px] md:w-[80px] w-[60px]"
+              src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
+              alt="Top manifest review"
+              width="110"
+              height="160"
+            />
+            <Image
+              className="xl:w-[150px] md:w-[100px] w-[80px]"
+              src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
+              alt="GPS, Navigation & GIS India"
+              width="150"
+              height="162"
+            />
+          </div>
+        </div>
+        <div className="pt-6">
+          <div className="grid sxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
             <div className="footer-contact border border-borderGray rounded-[14px] p-6">
               <p className="font-bold md:text-3xl text-xl !mb-[10px]">
                 CONTACT # <span className="">SALES</span>

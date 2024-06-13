@@ -35,11 +35,11 @@ const GameChanger = () => {
 
           <div className="flex lg:items-center items-end justify-between xl:!pt-10 !pt-0">
             <div className="pt-4 xl:pt-0">
-              <p className="lg:!text-2xl !text-lg">
+              <p className="sxl:!text-2xl !text-lg">
                 Focused on AWS consulting and generative AI, we boost
                 engineering and design capacity,
-                <br /> hasten product and MVP timelines, automate operations,
-                and minimize expenses.
+                <br className="hidden lg:block" /> hasten product and MVP
+                timelines, automate operations, and minimize expenses.
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const GameChanger = () => {
           </div>
         </div>
 
-        <div className="flex-none home_txt3 home_txt3_top_padding py-5 absolute md:bottom-[6%] bottom-[2%] md:left-[8.5%] left-[5%]">
+        <div className="flex-none home_txt3 home_txt3_top_padding py-5 absolute md:bottom-[6%] bottom-[2%] sxl:left-[8.5%] left-[5%]">
           <span className="md:!text-2xl flex gap-2 flex-wrap">
             <Link
               className="hover:!text-themeColor"

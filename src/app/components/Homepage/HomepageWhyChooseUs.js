@@ -511,7 +511,7 @@ const HomepageWhyChooseUs = () => {
           )}
         </div>
         <div
-          className={`w-full md:w-[80%] mx-auto grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
+          className={`w-full xl:w-[80%] mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
             pathname === "/aws-consulting-services/" ||
             pathname === "/business-intelligence-services/" ||
             pathname === "/adalo-development-services/"
@@ -525,7 +525,7 @@ const HomepageWhyChooseUs = () => {
                 className="rounded-[30px] border border-borderGray overflow-visible h-auto"
                 key={index}
               >
-                <Card className="why-card rounded-[30px] border-none shadow-none md:px-16 px-8 md:py-12 py-8  hover:-rotate-6 transition-all duration-[0.5s]">
+                <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-6 transition-all duration-[0.5s]">
                   <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
                     {title}
                   </h4>

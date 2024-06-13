@@ -796,7 +796,7 @@ textarea.form-control-txt {
 
 .number_home {
   font-size: 65px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color_black);
 }
 
@@ -2103,6 +2103,18 @@ textarea.form-control-txt {
   color: #dbe0fb;
 }
 
+.footer-award img {
+  opacity: 1;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.footer-award img:hover {
+  opacity: 1;
+  transition: all 0.3s ease-in-out 0s;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
 .footer-contact:hover {
   background: var(--theme-color);
   transition: var(--comman-transition);
@@ -2198,6 +2210,10 @@ textarea.form-control-txt {
     font-size: 2.6rem;
   }
 
+  .style_sec3_swiper_home {
+    padding: 1.5rem 0 !important;
+  }
+
   .sec6_title p,
   .sec6_title h2,
   .portfolio .head-title {
@@ -2285,6 +2301,10 @@ textarea.form-control-txt {
   .about_vision .sec10_txt1,
   .sec10_basis_50 .sec10_txt1 {
     font-size: 1.4rem;
+  }
+
+  .style_sec3_swiper_home {
+    padding: 1rem 0 !important;
   }
 
   .sec10_flex_row {
@@ -3300,7 +3320,7 @@ textarea.form-control-txt {
   }
 
   .why-card:hover {
-    background: var(--theme-color) !important;
+    background: url(/images/why-choose-hover-bg.svg) !important;
     width: 100%;
   }
   .footer_grid > div:nth-child(3) {

@@ -188,7 +188,7 @@ const ClientReviews = () => {
                       ({ quote, author, position }, index) => {
                         return (
                           <SwiperSlide key={index}>
-                            <div className="style_sec3_swiper_home !w-4/5 md:!my-6 text-colorWhite">
+                            <div className="style_sec3_swiper_home !w-4/5 slg:!my-6 md:!my-2 text-colorWhite">
                               <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
                                 <p className="text-left md:text-xl !leading-9 font-medium">
                                   "{quote}"
