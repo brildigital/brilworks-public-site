@@ -2,7 +2,7 @@ import React from "react";
 
 const SoutionHowCanStart = () => {
   return (
-    <section className="solution_gradiant md:py-[4rem] py-[4rem]">
+    <section className="solution_gradiant xl:py-[6rem] md:py-[4rem] py-[2rem]">
       <div className="sm:!w-[90%] mx-auto w-full px-[15px]">
         <div className="service_sec3 solutions md:text-center text-left pb-8">
           <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] !pt-0">

@@ -599,37 +599,16 @@ input[type="number"] {
 }
 
 .pricing_grid .one:hover {
-  background: rgb(28, 185, 213);
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
   border-radius: 0 0 0 28px;
 }
 
 .pricing_grid .two:hover {
-  background: rgb(28, 185, 213);
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
 }
 
 .pricing_grid .three:hover {
-  background: rgb(28, 185, 213);
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
   border-radius: 0 0 28px 0;
 }
 
@@ -807,6 +786,7 @@ textarea.form-control-txt {
   font-size: var(--font_20);
   color: var(--white_color);
   padding-bottom: 1rem;
+  border-bottom: 1px solid var(--white_color);
 }
 
 .year p {

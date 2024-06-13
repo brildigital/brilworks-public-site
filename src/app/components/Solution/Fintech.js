@@ -1,10 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
@@ -181,7 +180,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem] sm:gap-[3.5rem] ">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
@@ -199,15 +198,7 @@ const Fintech = () => {
                   Our fintech software development services are built to drive
                   business transformation and maximize ROI.
                 </p>
-
-                {/* <div
-                  className={`flex !flex-col md:flex-row ${
-                    isMobile ? "md:gap-8 md:mt-[50px]" : "align-middle gap-4"
-                  }`}
-                > */}
-                <div
-                  className={`flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]`}
-                >
+                <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
                   <div>
                     <Button
                       innerClassName="flex items-center justify-center gap-1"
@@ -234,7 +225,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -293,7 +284,7 @@ const Fintech = () => {
                   </div>
                 </div>
 
-                <div className="md:mt-[6rem] sm:mt-[4rem] mt-[2rem]">
+                <div className="xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
                   <Button
                     innerClassName="flex items-center justify-center gap-1"
                     className="!pr-5"
@@ -308,7 +299,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -365,7 +356,7 @@ const Fintech = () => {
                   </div>
                 </div>
 
-                <div className="md:mt-[6rem] sm:mt-[4rem] mt-[2rem]">
+                <div className="xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
                   <Button
                     innerClassName="flex items-center justify-center gap-1"
                     className="!pr-5"
@@ -397,7 +388,7 @@ const Fintech = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions">
               <h2 className="!w-full p-0">
@@ -570,7 +561,7 @@ const Fintech = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center md:py-[6rem] sm:py-[4rem] py-[2rem]">
+            <div className="flex items-center justify-center xl:py-[6rem] md:py-[4rem] py-[2rem]">
               <Button
                 innerClassName="flex items-center justify-center gap-2"
                 className="!pr-5"

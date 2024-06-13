@@ -1,10 +1,10 @@
 "use client";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
+import Button from "../Common/Button";
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -161,7 +161,7 @@ const FleetManagementNGPS = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width  lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[50%]">
               <div className="home_sec2_txt3 like_text">
@@ -173,37 +173,27 @@ const FleetManagementNGPS = () => {
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
-                <p className="!text-left pb-8">
+                <p className="!text-left !text-base lg:!text-xl pb-8">
                   Improve your fleet’s productivity, visibility, and knowledge
                   with the help of our custom fleet management app software
                   development services
                 </p>
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <div className="btn_paddinng contact_btn btn_flex btn-margin-top-0">
-                    <div className="formBtn_icon">
-                      <p>
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/right_arrow.png"
-                          alt="arrow"
-                        />
-                      </p>
-                    </div>
-                    <p className="xl:!text-[20px] lg:!text-[18px]">
-                      Request For Proposal
-                    </p>
-                  </div>
-                </Link>
+                <div>
+                  <Button
+                    innerClassName="flex items-center justify-center gap-1"
+                    className="!pr-5"
+                    redirect="#section10_service"
+                    label="Request For Proposal"
+                    icon="right-arrow"
+                    scrollingButton
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end ">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end ">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -216,7 +206,7 @@ const FleetManagementNGPS = () => {
 
           <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center">
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:w-[90%] w-full">
                     {fleetUpperAccordionItems.map(
@@ -261,39 +251,22 @@ const FleetManagementNGPS = () => {
                   </div>
                 </div>
 
-                <div className="w-full mt-[3rem]">
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div
-                      className={`btn_paddinng contact_btn_solution btn_flex !mx-auto ${
-                        isMobile ? "!px-[10px] !py-[14px]" : ""
-                      }`}
-                    >
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Build My Fleet Management Software
-                      </p>
-                    </div>
-                  </Link>
+                <div className="xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
+                  <Button
+                    innerClassName="flex items-center justify-center gap-1"
+                    className="!pr-5"
+                    redirect="#section10_service"
+                    label="Build My Fleet Management Software"
+                    icon="right-arrow"
+                    scrollingButton
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions">
               <h2 className="!w-full p-0">
@@ -305,7 +278,7 @@ const FleetManagementNGPS = () => {
           </div>
           <div className="mx-auto pt-[32px] reveal">
             <div className="accordion-tab-section">
-              <div className="flex flex-wrap ">
+              <div className="flex flex-wrap justify-center">
                 <div className="lg:w-6/12 w-full mb-12 lg:mb-0">
                   <div>
                     {fleetLowerAccordionItems.map(
@@ -350,34 +323,38 @@ const FleetManagementNGPS = () => {
                   </div>
                 </div>
 
-                <div className="w-full md:my-[6rem] mb-12">
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/icons2-04.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Speak with Our Experts
-                      </p>
-                    </div>
-                  </Link>
+                <div className="xl:my-[6rem] md:my-[4rem] my-[2rem]">
+                  <Button
+                    innerClassName="flex items-center justify-center gap-1"
+                    className="!pr-5"
+                    redirect="#section10_service"
+                    label="Speak with Our Experts"
+                    scrollingButton
+                    icon={
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="24px"
+                        width="24px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="none"
+                          stroke-miterlimit="10"
+                          stroke-width="32"
+                          d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374z"
+                        ></path>
+                      </svg>
+                    }
+                  />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
+          <div className="mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3 solutions">
                 <h2 className="!w-full p-0">
@@ -392,9 +369,7 @@ const FleetManagementNGPS = () => {
               <img
                 decoding="async"
                 loading="lazy"
-                src={
-                  "https://a.storyblok.com/f/219851/1401x701/00f12955d1/benefit-fleet-mgmt.webp"
-                }
+                src="https://a.storyblok.com/f/219851/1401x701/00f12955d1/benefit-fleet-mgmt.webp"
                 alt="MEDIA &amp; ENTERTAINMENT APPS"
               />
             </div>
@@ -480,7 +455,7 @@ const FleetManagementNGPS = () => {
             </div>
           </div>
 
-          <div className="mx-auto md:pt-[6rem] py-[4rem] end-to-end">
+          <div className="mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] end-to-end">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3 solutions">
                 <h2 className="!w-full p-0">
@@ -636,14 +611,14 @@ const FleetManagementNGPS = () => {
             </div>
           </div>
 
-          <div className="lg:pt-[6rem] md:pt-[6rem] sm:pt-[4rem] pt-0">
+          <div className="xl:py-[6rem] md:py-[4rem] py-[2rem]">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
                   <div className="endTO_text home_sec2_txt3 solutions mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
-                    <h2 className="!w-full md:p-0 p-3">
-                      WHY CHOOSE US FOR FLEET {!isMobile && <br />}
-                      MANAGEMENT SOFTWARE {!isMobile && <br />}
+                    <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
+                      WHY CHOOSE US FOR FLEET <br className="md:block hidden" />
+                      MANAGEMENT SOFTWARE <br className="md:block hidden" />
                       DEVELOPMENT?
                     </h2>
                   </div>
@@ -743,30 +718,16 @@ const FleetManagementNGPS = () => {
                 </div>
               </div>
             </div>
-
-            <div className="w-full pt-[4rem]">
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
-                <div className="btn_paddinng btn_flex !mx-auto">
-                  <div className="formBtn_icon">
-                    <p>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/right_arrow.png"
-                        alt="call"
-                      />
-                    </p>
-                  </div>
-
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    Work with us
-                  </p>
-                </div>
-              </Link>
-            </div>
+          </div>
+          <div className="flex items-center justify-center xl:pb-[6rem] md:pb-[4rem] pb-[2rem]">
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="#section10_service"
+              label="Work with us"
+              icon="right-arrow"
+              scrollingButton
+            />
           </div>
         </div>
       </section>
