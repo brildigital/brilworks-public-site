@@ -14,7 +14,8 @@ export const metadata = {
       "Check out Brilworks's work for Eccocar. How we helped Eccocar to build a payment gateway system and integrated their platform with Stripe to collect payments.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/eccocar/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

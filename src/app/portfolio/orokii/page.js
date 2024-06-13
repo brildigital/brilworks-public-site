@@ -13,7 +13,8 @@ export const metadata = {
       "Check out Brilworks's work for Orokii. How we helped Orokii to build a custom fintech application with faster & secure transactions.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/orokii/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

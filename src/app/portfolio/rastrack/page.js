@@ -13,7 +13,8 @@ export const metadata = {
     description:
       "Check out Brilworks's work for Rastrack. How we helped Rastrack to improve their fleet’s efficiency to update fleet information, predict cost and profit.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/rastrack/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

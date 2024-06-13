@@ -9,7 +9,8 @@ export const metadata = {
     description:
       "Insightful case studies showcase real-world challenges, innovative solutions, and measurable impact, providing invaluable lessons for diverse industries and professionals.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/gist-banner.webp`,

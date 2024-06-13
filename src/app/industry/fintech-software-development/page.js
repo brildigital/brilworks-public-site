@@ -13,7 +13,7 @@ export const metadata = {
       "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,

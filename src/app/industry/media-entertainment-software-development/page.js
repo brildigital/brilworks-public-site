@@ -14,7 +14,8 @@ export const metadata = {
     description:
       "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,

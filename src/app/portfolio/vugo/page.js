@@ -13,7 +13,8 @@ export const metadata = {
     description:
       "Check out Brilworks's work for Vugo. How we helped Vugo to create a unique in-car advertising application and increase in driver earnings and advertiser queries.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/vugo/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

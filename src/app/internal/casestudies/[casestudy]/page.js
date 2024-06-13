@@ -3,7 +3,8 @@ import CaseStudyContent from "@/app/components/CaseStudies/CaseStudyContent";
 
 export const metadata = {
   openGraph: {
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -14,7 +14,8 @@ export const metadata = {
     description:
       "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
