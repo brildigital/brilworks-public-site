@@ -14,7 +14,8 @@ export const metadata = {
     description:
       "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,

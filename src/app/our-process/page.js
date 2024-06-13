@@ -14,7 +14,8 @@ export const metadata = {
       "We are a top software development firm that satisfies the demands of every client, from sourcing the right people to managing end-to-end projects.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}our-process/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/Prototype.jpg`,

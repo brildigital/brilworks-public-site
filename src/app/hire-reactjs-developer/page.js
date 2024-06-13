@@ -14,7 +14,8 @@ export const metadata = {
     description:
       "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-reactjs-developer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/1.png`,

@@ -11,7 +11,8 @@ export const metadata = {
     description:
       "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },

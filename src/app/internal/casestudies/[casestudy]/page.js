@@ -1,16 +1,17 @@
-import { getStoryblokApi } from '@storyblok/react/rsc';
-import CaseStudyContent from '@/app/components/CaseStudies/CaseStudyContent';
+import { getStoryblokApi } from "@storyblok/react/rsc";
+import CaseStudyContent from "@/app/components/CaseStudies/CaseStudyContent";
 
 export const metadata = {
   openGraph: {
-    siteName: 'Mobile App & Software Development Company | Brilworks',
-    locale: 'en-US',
-    type: 'article',
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    locale: "en-US",
+    type: "article",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@_Brilworks',
-    creator: '@_Brilworks',
+    card: "summary_large_image",
+    site: "@_Brilworks",
+    creator: "@_Brilworks",
   },
 };
 
@@ -28,17 +29,17 @@ export default async function Page(props) {
         <title>{data?.story?.name || data?.story?.content?.title}</title>
 
         <link
-          rel='canonical'
+          rel="canonical"
           href={`${process.env.NEXT_PUBLIC_BASE_URL}${data?.story?.full_slug}/`}
         />
 
         <meta
-          property='og:title'
+          property="og:title"
           content={data?.story?.name || data?.story?.content?.title}
         ></meta>
 
         <meta
-          property='og:url'
+          property="og:url"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}${data?.story?.full_slug}/`}
         ></meta>
       </head>
@@ -52,12 +53,12 @@ export const fetchData = async (params) => {
 
   let sbParams = {
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    resolve_links: 'url',
+    resolve_links: "url",
   };
 
   const { data } = await storyblokApi.get(
     `cdn/stories/internal/casestudies/${params?.casestudy}`,
-    sbParams,
+    sbParams
   );
 
   return {

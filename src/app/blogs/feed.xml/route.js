@@ -7,7 +7,7 @@ export async function GET() {
 
   const feed = new RSS({
     feed_url: `${process.env.NEXT_PUBLIC_BASE_URL}feed.xml/`,
-    title: "Mobile App & Software Development Company | Brilworks",
+    title: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     site_url: process.env.NEXT_PUBLIC_BASE_URL,
     description:
       "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",

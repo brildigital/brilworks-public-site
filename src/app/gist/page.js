@@ -11,7 +11,8 @@ export const metadata = {
     description:
       "Get every mistake you've made fixed in one location. We make an honest effort to address your technical inquiries, focusing on the developer community. Glory to Tech!",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}gist/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "article",
   },
