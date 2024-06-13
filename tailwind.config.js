@@ -12,6 +12,9 @@ module.exports = {
         slg: "980px",
         sxl: "1200px",
       },
+      fontFamily: {
+        Inter: ["Inter", "sans-serif"],
+      },
       colors: {
         themeColor: "#0d9a9a",
         colorLightGray: "#f1f1f1",

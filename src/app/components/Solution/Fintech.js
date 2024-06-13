@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import Button from "../Common/Button";
 
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -191,59 +192,42 @@ const Fintech = () => {
               </div>
             </div>
             <div className="basis-[55%]">
-              <div className="home_sec2_txt4">
-                <p className="!text-left">
+              <div className="">
+                <p className="!text-left text-base lg:text-xl">
                   Step into a new era of financial flexibility with our
                   sophisticated, intuitive & highly-secure fintech applications.
                   Our fintech software development services are built to drive
                   business transformation and maximize ROI.
                 </p>
 
-                <div
+                {/* <div
                   className={`flex !flex-col md:flex-row ${
                     isMobile ? "md:gap-8 md:mt-[50px]" : "align-middle gap-4"
                   }`}
+                > */}
+                <div
+                  className={`flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]`}
                 >
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Hire Fintech Developers
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Request For Proposal
-                      </p>
-                    </div>
-                  </Link>
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#section10_service"
+                      label="Hire Fintech Developers"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#section10_service"
+                      label="Request For Proposal"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,7 +247,7 @@ const Fintech = () => {
 
           <div className="mx-auto pt-[32px]">
             <div>
-              <div className="flex flex-wrap">
+              <div className="flex justify-center flex-wrap">
                 <div className="lg:w-6/12 w-full mb-[10px]">
                   <div className="accordion !mb-0 lg:w-[90%] w-full">
                     {fintechUpperAccordionItems.map(
@@ -309,35 +293,22 @@ const Fintech = () => {
                   </div>
                 </div>
 
-                <div className="w-full mt-[3rem]">
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Build My Fintech App
-                      </p>
-                    </div>
-                  </Link>
+                <div className="md:mt-[6rem] sm:mt-[4rem] mt-[2rem]">
+                  <Button
+                    innerClassName="flex items-center justify-center gap-1"
+                    className="!pr-5"
+                    redirect="#section10_service"
+                    label="Build My Fintech App"
+                    icon="right-arrow"
+                    scrollingButton
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
+        <div className="mx-auto service_width md:py-[6rem] sm:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -349,7 +320,7 @@ const Fintech = () => {
           </div>
           <div className="mx-auto pt-[32px]">
             <div className="accordion-tab-section">
-              <div className="flex flex-wrap ">
+              <div className="flex flex-wrap justify-center">
                 <div className="lg:w-6/12 w-full md:mt-[0px] mb-12 lg:mb-0 mt-[30px]">
                   <div>
                     {fintechLowerAccordionItems.map(
@@ -394,28 +365,32 @@ const Fintech = () => {
                   </div>
                 </div>
 
-                <div className="w-full md:my-[6rem] mb-12">
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/icons2-04.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Speak with Our Experts
-                      </p>
-                    </div>
-                  </Link>
+                <div className="md:mt-[6rem] sm:mt-[4rem] mt-[2rem]">
+                  <Button
+                    innerClassName="flex items-center justify-center gap-1"
+                    className="!pr-5"
+                    redirect="#section10_service"
+                    label="Speak with Our Experts"
+                    scrollingButton
+                    icon={
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="24px"
+                        width="24px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="none"
+                          stroke-miterlimit="10"
+                          stroke-width="32"
+                          d="M451 374c-15.88-16-54.34-39.35-73-48.76-24.3-12.24-26.3-13.24-45.4.95-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39-47.34-61.62-50.53-76.48 5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160.15 160.15 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64 54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159.09 159.09 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374z"
+                        ></path>
+                      </svg>
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -595,33 +570,32 @@ const Fintech = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full pb-[64px] pt-6">
-              <Link
-                href="#section10_service"
-                onClick={(e) => scrollToSection(e, "section10_service")}
-              >
-                <div className="btn_paddinng contact_btn_solution btn_flex !mx-auto">
-                  <div className="formBtn_icon">
-                    <p>
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        src="/images/icons-05.png"
-                        className="!w-full"
-                        alt="arrow"
-                      />
-                    </p>
-                  </div>
-
-                  <p className="xl:!text-[20px] lg:!text-[18px]">
-                    Let's get in touch
-                  </p>
-                </div>
-              </Link>
+            <div className="flex items-center justify-center md:py-[6rem] sm:py-[4rem] py-[2rem]">
+              <Button
+                innerClassName="flex items-center justify-center gap-2"
+                className="!pr-5"
+                redirect="#section10_service"
+                label="Let's get in touch"
+                scrollingButton
+                icon={
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="24px"
+                    width="24px"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
+                    <path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
+                  </svg>
+                }
+              />
             </div>
           </div>
 
-          <div className="mx-auto md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal">
+          <div className="mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal">
             <div className="portfolio_health_sec1 w-full">
               <div className="flex md:flex-row flex-col gap-[2rem] align-middle mb-0 ">
                 <div className="health_sec1_flex_40 order_2">
@@ -641,27 +615,16 @@ const Fintech = () => {
                       and services companies.
                     </p>
                   </div>
-                  <div className="sp-8 w-fit py-[2rem]">
-                    <Link
-                      href="/portfolio/"
+                  <div className="w-fit py-[2rem]">
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="/portfolio/"
+                      label="Know More"
+                      icon="right-arrow"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
-                      <div className="btn_flex">
-                        <div className="arrow_icon">
-                          <Image
-                            className="alignnone"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                            width="10"
-                            height="17"
-                          />
-                        </div>
-                        <div className="xl:!text-[20px] lg:!text-[18px]">
-                          <p className="align-left">Know More</p>
-                        </div>
-                      </div>
-                    </Link>
+                    />
                   </div>
                 </div>
                 <div className="health_sec1_flex_60 order_1">
@@ -679,12 +642,12 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="lg:py-[6rem] md:py-[4rem] py-[2rem] reveal">
+          <div className="xl:py-[6rem] md:py-[4rem] py-[2rem] reveal">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
               <div>
                 <div className="end-To-end pt-8">
                   <div className="endTO_text home_sec2_txt3 solutions mt-[4rem] mb-0 md:pt-[1rem] lg:pt-[2rem]">
-                    <h2 className="!w-full md:p-0 p-3">
+                    <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                       WHY SHOULD YOU CHOOSE US FOR FINTECH SOFTWARE DEVELOPMENT?
                     </h2>
                   </div>
@@ -788,26 +751,15 @@ const Fintech = () => {
             </div>
           </div>
 
-          <div className="w-full">
-            <Link
-              href="#section10_service"
-              onClick={(e) => scrollToSection(e, "section10_service")}
-            >
-              <div className="btn_paddinng btn_flex !mx-auto">
-                <div className="formBtn_icon">
-                  <p>
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/right_arrow.png"
-                      alt="call"
-                    />
-                  </p>
-                </div>
-
-                <p className="xl:!text-[20px] lg:!text-[18px]">Work with us</p>
-              </div>
-            </Link>
+          <div className="flex items-center justify-center xl:pb-[6rem] md:pb-[4rem] pb-[2rem]">
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="#section10_service"
+              label="Work with us"
+              icon="right-arrow"
+              scrollingButton
+            />
           </div>
         </div>
       </section>

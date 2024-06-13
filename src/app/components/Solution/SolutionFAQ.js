@@ -144,9 +144,9 @@ const SolutionFAQ = () => {
   };
 
   return (
-    <div className="sec3_width_home faq-bottom md:!mb-[5rem] !mb-8 pt-2">
+    <div className="sec3_width_home faq-bottom xl:pb-[6rem] md:pb-[4rem] pb-8">
       <div className="service_sec3 md:text-center text-left solutions">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-8">
+        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-8">
           FAQs
         </h2>
       </div>

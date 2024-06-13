@@ -45,7 +45,9 @@ const BlogFAQ = ({ FAQData }) => {
                   onClick={() => handleOpen(index + 1)}
                   className="accordion-button"
                 >
-                  <h3 itemProp="name">{Question}</h3>
+                  <h3 itemProp="name" className="font-Inter">
+                    {Question}
+                  </h3>
                 </AccordionHeader>
                 <AccordionBody>
                   <div

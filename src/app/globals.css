@@ -9,6 +9,7 @@
   --regular: "Inter", sans-serif;
   --font_14: 0.875rem;
   --font_16: 1rem;
+  --font_18: 1.125rem;
   --font_20: 1.25rem;
   --font_21: 1.313rem;
   --font_24: 1.5rem;
@@ -48,6 +49,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  font-family: "Inter", sans-serif !important;
 }
 
 body {
@@ -185,7 +187,8 @@ input[type="number"] {
   padding: 6rem 0rem;
 }
 .font-style-solution-head {
-  color: #fff;
+  font-weight: 800;
+  color: var(--white_color);
   line-height: inherit !important;
 }
 
@@ -366,7 +369,7 @@ input[type="number"] {
 
 .mega_menu_txt p {
   font-size: var(--font_16);
-
+  font-family: "Inter", sans-serif !important;
   color: var(--color_black);
   line-height: 2.5;
 }
@@ -791,7 +794,7 @@ textarea.form-control-txt {
 .number {
   font-size: 100px;
   font-weight: 700;
-  color: var(--color_black);
+  color: var(--white_color);
 }
 
 .number_home {
@@ -800,17 +803,10 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
-.year-home {
-  font-size: var(--font_20);
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--white_color) !important;
-}
-
 .year {
   font-size: var(--font_20);
-  color: var(--color_black);
+  color: var(--white_color);
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--color_black);
 }
 
 .year p {
@@ -950,25 +946,18 @@ textarea.form-control-txt {
 }
 
 .sec9_service_style {
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
   border-radius: 30px;
   padding: 1rem 0 3rem;
 }
 
 .sec9_service_style .p-font {
-  font-family: var(--regular);
-  font-size: var(--font_21);
+  color: var(--white_color);
+  font-size: var(--font_20);
 }
 
 .sec9_service_style .number {
-  border-bottom: 2px solid var(--color_black);
+  border-bottom: 2px solid var(--white_color);
 }
 
 .solution_gradiant {
@@ -1043,9 +1032,7 @@ textarea.form-control-txt {
 
 .service_description p {
   font-size: var(--font_16) !important;
-}
-
-.service_description p {
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
   min-height: 161px;
 }
@@ -1315,13 +1302,6 @@ textarea.form-control-txt {
   font-size: var(--font_21) !important;
   font-weight: 700 !important;
   color: var(--color_black) !important;
-}
-
-.service_description p {
-  font-size: var(--font_21);
-  font-family: var(--medium) !important;
-  color: var(--color_black) !important;
-  padding-top: 1.5rem;
 }
 
 .service_width {
@@ -2195,10 +2175,6 @@ textarea.form-control-txt {
     gap: 3rem;
   }
 
-  .service_description p {
-    font-size: 1.1rem;
-  }
-
   .developer_sec6_title p,
   .developer_sec6_title h3 {
     font-size: 1.3rem;
@@ -2311,10 +2287,6 @@ textarea.form-control-txt {
     gap: 2rem;
   }
 
-  .service_description p {
-    font-size: 1rem;
-  }
-
   .developer_sec6_title p,
   .developer_sec6_title h3 {
     font-size: 1.2rem;
@@ -2419,10 +2391,6 @@ textarea.form-control-txt {
 
   .content {
     font-size: 4rem;
-  }
-
-  .service_description p {
-    font-size: 1.1rem;
   }
 
   .developer_sec6_title p,
@@ -2609,10 +2577,6 @@ textarea.form-control-txt {
   .about_vision .sec10_txt1,
   .sec10_basis_50 .sec10_txt1 {
     font-size: 1.2rem;
-  }
-
-  .service_description p {
-    font-size: 1rem;
   }
 
   .contact_sec3 {
@@ -3173,7 +3137,6 @@ textarea.form-control-txt {
   }
 
   .service_description p {
-    font-size: 1rem;
     padding-top: 1rem;
   }
 

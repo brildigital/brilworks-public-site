@@ -60,7 +60,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
           >
             {menuItems.map((mainSection) => (
               <div key={mainSection?.name} className="flex flex-col gap-3">
-                <span className="font-semibold text-base break-words">
+                <span className="font-semibold text-base break-words font-Inter">
                   {mainSection?.name}
                 </span>
                 <div className="flex flex-col">

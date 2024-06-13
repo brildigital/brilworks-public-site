@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import Button from "../Common/Button";
 
 const SolutionContactForm = () => {
   const pathname = usePathname();
@@ -29,36 +30,37 @@ const SolutionContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setRespMessage("Your response is submitted successfully.");
 
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/techSolution`,
-        {
-          method: "POST",
-          header: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...formData, page: pathname }),
-        }
-      );
+    // try {
+    //   const response = await fetch(
+    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/techSolution`,
+    //     {
+    //       method: "POST",
+    //       header: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ ...formData, page: pathname }),
+    //     }
+    //   );
 
-      if (response.ok) {
-        setFormData({ name: "", phone: "", email: "" });
-        setRespMessage("Your response is submitted successfully.");
-        clearMessage();
-      } else {
-        setRespMessage("Something went wrong!");
-      }
-      setIsSubmitting(false);
-    } catch (error) {
-      console.error("Error sending email", error);
-      setIsSubmitting(false);
-    }
+    //   if (response.ok) {
+    //     setFormData({ name: "", phone: "", email: "" });
+    //     setRespMessage("Your response is submitted successfully.");
+    //     clearMessage();
+    //   } else {
+    //     setRespMessage("Something went wrong!");
+    //   }
+    //   setIsSubmitting(false);
+    // } catch (error) {
+    //   console.error("Error sending email", error);
+    //   setIsSubmitting(false);
+    // }
   };
 
   return (
     <div
-      className="mx-auto px-[15px] sec3_width_home md:py-[6rem] py-[3rem]"
+      className="mx-auto px-[15px] sec3_width_home xl:py-[6rem] md:py-[4rem] py-8"
       id="section10_service"
     >
       <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
@@ -142,36 +144,20 @@ const SolutionContactForm = () => {
                       </span>
                     </p>
                   </div>
-                  <div className="success-msg h-4" id="sucess_msg">
+                  <div className="success-msg h-4 mt-1" id="sucess_msg">
                     {respMessage}
                   </div>
-                  <button
-                    className="btn_paddinng contact_btn btn_flex"
+
+                  <Button
                     type="submit"
+                    innerClassName="flex items-center justify-center gap-2"
+                    className={
+                      isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8 !pr-5"
+                    }
+                    icon={isSubmitting ? <Loader /> : "right-arrow"}
+                    label={isSubmitting ? "Submitting" : "Submit"}
                     disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <div className="py-[8px] px-[41px]">
-                        <Loader />
-                      </div>
-                    ) : (
-                      <>
-                        <div className="formBtn_icon grid-flow-row">
-                          <p>
-                            <img
-                              decoding="async"
-                              loading="lazy"
-                              src="/images/right_arrow.png"
-                              alt="arrow"
-                            />
-                          </p>
-                        </div>
-                        <p className="send_btn" id="submit" name="btnSubmit">
-                          Submit
-                        </p>
-                      </>
-                    )}
-                  </button>
+                  />
                 </form>
               </div>
             </div>

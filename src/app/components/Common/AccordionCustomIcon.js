@@ -45,14 +45,14 @@ const AccordionCustomIcon = ({
             open === index ? "border-none" : ""
           }`}
         >
-          <h3>{title}</h3>
+          <h3 className="font-Inter">{title}</h3>
         </AccordionHeader>
         <AccordionBody
           className={`pb-4 pt-0 ${
             open === index ? "border-b border-[#707070]" : ""
           }`}
         >
-          <div className="accordion-body">{content}</div>
+          <div className="accordion-body font-Inter">{content}</div>
           {linkUrl && (
             <LinkWithArrow
               href={linkUrl}

@@ -6,12 +6,9 @@ import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
-import ContactUs from "../Homepage/ContactUs";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const HomepageContactForm = dynamic(() =>
-  import("../Homepage/HomepageContactForm")
-);
+const ContactUs = dynamic(() => import("../Homepage/ContactUs"));
 const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerRastrack = () => {
@@ -63,7 +60,7 @@ const PortfolioInnerRastrack = () => {
             </p>
           </div>
 
-          <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem] flex items-center justify-center">
+          <div className="sxl:pt-[4rem] sxl:pb-[6rem] pt-[3rem] pb-[3rem] flex items-center justify-center">
             <Button
               innerClassName="flex items-center justify-center gap-1"
               className="!pr-5"
@@ -323,7 +320,7 @@ const PortfolioInnerRastrack = () => {
 
           <WhatMakeUsBrilliant />
 
-          <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
+          <div className="workpadd_borderTop xl:mt-[6rem] md:mt-[4rem] mt-[2rem]"></div>
         </div>
         <ClientReviews />
         <ContactUs />

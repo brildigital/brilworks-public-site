@@ -2,7 +2,6 @@
 .accordion-tab-section,
 .homepage-extension-team {
   button {
-    font-family: var(--medium);
     font-weight: 400;
   }
   h3 {
@@ -12,7 +11,6 @@
   .accordion-body,
   .about_txt_domain {
     font-size: var(--font_20);
-    font-family: var(--regular);
     line-height: 1.75rem !important;
   }
   .about_btn {
@@ -137,7 +135,6 @@
   .portfolio-title {
     display: none !important;
     font-size: var(--font_32);
-    font-family: var(--medium);
     color: var(--color_black);
     padding: 1rem 0;
   }
@@ -145,7 +142,6 @@
   .portfolio-title-new {
     display: block !important;
     font-size: var(--font_32);
-    font-family: var(--medium);
     color: var(--color_black);
     padding: 1rem 0;
   }
@@ -153,7 +149,6 @@
   .portfolio-desc {
     display: none !important;
     font-size: var(--font_16);
-    font-family: var(--regular);
     color: var(--color_black);
   }
 }
@@ -236,7 +231,6 @@
 }
 
 .award .review-text p {
-  font-family: var(--regular);
   color: var(--color_black);
   padding-top: 1rem;
   text-align: center;
@@ -249,12 +243,10 @@
   text-align: center !important;
   flex-wrap: nowrap !important;
   justify-content: center !important;
-  font-family: var(--regular) !important;
 }
 
 .success-msg {
-  color: #000;
-  font-family: var(--medium);
+  color: var(--color_black);
   font-size: 1rem;
 }
 
@@ -362,7 +354,6 @@
     .accordion-body,
     .about_txt_domain {
       font-size: var(--font_16);
-      font-family: var(--regular);
       line-height: 1.5rem !important;
     }
   }

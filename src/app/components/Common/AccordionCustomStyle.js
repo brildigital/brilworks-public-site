@@ -35,7 +35,11 @@ const AccordionCustomStyle = ({
         className={`py-6 ${
           open === index
             ? "border-none"
-            : `${open === index + 1 ? "border-none" : ""}`
+            : `${
+                open === index + 1
+                  ? "border-none"
+                  : "border-b border-borderGray"
+              }`
         }`}
       >
         <div
@@ -51,12 +55,12 @@ const AccordionCustomStyle = ({
               alt={`${title} icon`}
             />
           </div>
-          <h3 className="md:text-[24px] text-[20px]">{title}</h3>
+          <h3 className="md:text-[24px] text-[20px] font-Inter">{title}</h3>
         </div>
       </AccordionHeader>
       <AccordionBody className="py-0">
         <div className="accordion-body">
-          <p className="text-[20px]">{content}</p>
+          <p className="md:text-[20px] text-[18px] font-Inter">{content}</p>
           {processTags}
         </div>
       </AccordionBody>

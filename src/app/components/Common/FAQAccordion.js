@@ -28,7 +28,9 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
       onClick={() => handleOpen(id)}
       className="accordion-button"
     >
-      <h2 itemProp="name">{question}</h2>
+      <h2 itemProp="name" className="font-Inter">
+        {question}
+      </h2>
     </AccordionHeader>
     <AccordionBody>
       <div

@@ -216,7 +216,7 @@ const HomepageContactForm = () => {
                   <div className="number_home">
                     <p data-max="8">8+</p>
                   </div>
-                  <div className="year-home">
+                  <div className="year">
                     <p>
                       Years of
                       <br />
@@ -228,7 +228,7 @@ const HomepageContactForm = () => {
                   <div className="number_home">
                     <p data-max="98">98%</p>
                   </div>
-                  <div className="year-home">
+                  <div className="year">
                     <p>
                       Project
                       <br />
@@ -240,7 +240,7 @@ const HomepageContactForm = () => {
                   <div className="number_home">
                     <p data-max="60">60+</p>
                   </div>
-                  <div className="year-home">
+                  <div className="year">
                     <p>
                       Professional
                       <br />
@@ -252,7 +252,7 @@ const HomepageContactForm = () => {
                   <div className="number_home">
                     <p data-max="120">120+</p>
                   </div>
-                  <div className="year-home">
+                  <div className="year">
                     <p>
                       Applications
                       <br />
