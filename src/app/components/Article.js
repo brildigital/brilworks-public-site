@@ -17,6 +17,7 @@ import {
   formattedDate,
 } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
+import ArticleSkeleton from "./Blog/ArticleSkeleton";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -50,6 +51,7 @@ const Article = ({ blok }) => {
 
   useEffect(() => {
     fetchData();
+    setIsLoading(false);
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
@@ -143,23 +145,16 @@ const Article = ({ blok }) => {
     };
   }, [headings]);
 
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 1100);
-
-    return () => clearTimeout(loadingTimeout);
-  }, []);
-
   const author = blogAuthor(blok?.BlogAuthor);
 
   return (
     <div className="md:mt-[8rem] mt-[6rem] blog-main">
-      {!blok ? (
-        <div className="flex items-center justify-center !py-60">
-          <FetchDataSpinner />
-        </div>
+      {isLoading ? (
+        <ArticleSkeleton />
       ) : (
+        // <div className="flex items-center justify-center !py-60">
+        //   <FetchDataSpinner />
+        // </div>
         <>
           <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
             <div className="flex flex-wrap -mx-4">
