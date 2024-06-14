@@ -48,10 +48,16 @@ const Article = ({ blok }) => {
       console.error(error);
     }
   }
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
 
   useEffect(() => {
     fetchData();
-    setIsLoading(false);
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
