@@ -1858,9 +1858,10 @@ textarea.form-control-txt {
 }
 
 .why-card:hover {
-  background: url(/images/why-choose-hover-bg.svg) !important;
-  background-size: contain;
+  background-image: url(/images/why-choose-hover-bg.svg) !important;
+  background-size: cover;
   width: 100%;
+  background-repeat: no-repeat !important;
 }
 .why-card:hover h4 {
   color: var(--white_color);
