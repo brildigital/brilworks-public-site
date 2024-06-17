@@ -562,9 +562,6 @@ input[type="number"] {
   color: var(--theme-color);
 }
 
-.medium-font {
-}
-
 .style_sec10_swiper_home {
   width: 90%;
   margin: 0 auto;
@@ -2628,7 +2625,7 @@ textarea.form-control-txt {
 }
 @media only screen and (max-width: 1080px) {
   .main-section-padding {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem !important;
   }
   .identifying-understanding {
     padding-bottom: 5rem;
@@ -2646,7 +2643,7 @@ textarea.form-control-txt {
 
 @media only screen and (max-width: 767px) {
   .main-section-padding {
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem !important;
   }
   .identifying-understanding {
     padding-bottom: 2.5rem;
@@ -3074,12 +3071,12 @@ textarea.form-control-txt {
 
 .dedicated_team_card,
 .service_detail_card_border:hover {
-  background: linear-gradient(180deg, #02e1b8 0%, #00b5d4 100%);
+  background: var(--theme-color);
   box-shadow: 0px 2px 6px 0px #00000033;
 }
 
 .service_item_card:hover {
-  background: linear-gradient(277.16deg, #02e1b8 0.58%, #00b5d4 100%);
+  background: var(--theme-color);
 }
 
 .service_item_card:hover svg * {

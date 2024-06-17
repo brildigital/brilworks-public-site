@@ -134,7 +134,7 @@ const AWSTechnology = () => {
 
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] pt-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
-            <div className="endTO_text solutions">
+            <div className="endTO_text solutions uppercase">
               <h2 className="!w-full p-0">Our AWS Development Services</h2>
             </div>
           </div>

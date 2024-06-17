@@ -90,7 +90,7 @@ const BlockchainTechnology = () => {
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
-                <p className="!p-0 !ml-[0] !w-full">
+                <p className="!p-0 !ml-[0] !w-full uppercase">
                   Hire Blockchain Developers to Build Next-Gen Decentralized
                   Applications
                 </p>
@@ -136,7 +136,7 @@ const BlockchainTechnology = () => {
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
-              <h2 className="!w-full p-0">
+              <h2 className="!w-full p-0 uppercase">
                 Enhance Your Application With Our Blockchain
                 <br /> Development Services
               </h2>

@@ -301,9 +301,7 @@ const Author = ({ authorName }) => {
           ) : (
             <>
               {blogCategory ? (
-                <p className="medium-font text-xl text-center py-28">
-                  No data found.
-                </p>
+                <p className="text-xl text-center py-28">No data found.</p>
               ) : (
                 <div className="flex align-middle justify-center p-28">
                   <FetchDataSpinner />

@@ -24,56 +24,60 @@ const RapidDigitization = () => {
   }, []);
 
   return (
-    <div className="services pt-20 medium-font">
+    <div className="services pt-20">
       <RapidDigitizationBanner />
-      <div className="lg:px-[70px] px-6 pt-8 reveal">
-        <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-5 flex items-center justify-center flex-col">
-          <h2 className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full">
-            Digital Acceleration Service: Strategic Solutions, Transformative
-            Results
-          </h2>
-          <div className="flex flex-col gap-8 mt-10 text-2xl md:max-w-7xl md:text-center">
-            <p>
-              Partner with us to embark on a journey of digital transformation.
-              Our seasoned experts in digital strategy, technology, and
-              implementation collaborate seamlessly with your team to accelerate
-              your digital initiatives.
-            </p>
-            <p className="">
-              We leverage cutting-edge technologies, data-driven insights, and
-              agile methodologies to deliver measurable results within your
-              timelines and budget.
-            </p>
+      <div className="container mx-auto">
+        <div className="sm:w-[90%] w-[100%] mx-auto px-4 xl:pb-24 md:pb-16 pb-8 reveal">
+          <div className="bg-themeColor rounded-3xl py-10 md:px-12 px-5 flex items-center justify-center flex-col">
+            <h2 className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-[90%] w-full text-colorWhite">
+              Digital Acceleration Service: Strategic Solutions, Transformative
+              Results
+            </h2>
+            <div className="flex flex-col gap-8 mt-10 text-2xl md:max-w-7xl md:text-center">
+              <p className="text-colorWhite">
+                Partner with us to embark on a journey of digital
+                transformation. Our seasoned experts in digital strategy,
+                technology, and implementation collaborate seamlessly with your
+                team to accelerate your digital initiatives.
+              </p>
+              <p className="text-colorWhite">
+                We leverage cutting-edge technologies, data-driven insights, and
+                agile methodologies to deliver measurable results within your
+                timelines and budget.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-themeLight py-10 lg:px-[70px] px-8">
+      <div className="bg-themeLight">
         <WhyRapidDigitization />
       </div>
       <div className="lg:px-[70px] px-6">
         <RapidDigitizationBenefits />
       </div>
-      <div className="lg:px-[70px] px-6 pb-10 reveal">
-        <div className="linear-gradient-background rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
-          <p className="md:text-5xl text-3xl !leading-tight md:text-center md:max-w-7xl">
-            Let us guide you through every step of your digital transformation
-            journey. Partner with us to unleash the full potential of your
-            business in the digital era.
-          </p>
-          <Link href="/contact-us/">
-            <div className="!bg-colorWhite px-[14px] py-[10px] mt-8 border border-colorBlack shadow-none hover:shadow-lg cursor-pointer">
-              <p className="uppercase">Get started today</p>
-            </div>
-          </Link>
+      <div className="container mx-auto">
+        <div className="sm:w-[90%] w-[100%] mx-auto xl:pb-[6rem] md:pb-[4rem] pb-[2rem] end-to-end reveal">
+          <div className="bg-themeColor rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
+            <p className="md:text-5xl text-3xl !leading-tight md:text-center md:max-w-7xl text-colorWhite">
+              Let us guide you through every step of your digital transformation
+              journey. Partner with us to unleash the full potential of your
+              business in the digital era.
+            </p>
+            <Link href="/contact-us/">
+              <div className="!bg-colorWhite px-[14px] py-[10px] mt-8 border border-colorBlack shadow-none hover:shadow-lg cursor-pointer">
+                <p className="uppercase">Get started today</p>
+              </div>
+            </Link>
+          </div>
         </div>
+        <div className="bg-themeLight py-10">
+          <ClientReviews />
+        </div>
+        <div className="bg-themeLight">
+          <TechStackWeUse />
+        </div>
+        <ServicesFAQ />
       </div>
-      <div className="bg-themeLight py-10">
-        <ClientReviews />
-      </div>
-      <div className="bg-themeLight">
-        <TechStackWeUse />
-      </div>
-      <ServicesFAQ />
     </div>
   );
 };

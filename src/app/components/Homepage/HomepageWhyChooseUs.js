@@ -478,30 +478,37 @@ const HomepageWhyChooseUs = () => {
 
   return (
     <div className="container mx-auto md:w-[90%] w-full main-section-padding">
-      <div className="md:px-8 lg:px-12 reveal">
+      <div
+        className={`md:px-8 lg:px-12 reveal py-10 rounded-[30px] ${
+          pathname !== "/" ? "bg-themeColor" : ""
+        }`}
+      >
         <div className="solutions md:pb-8 pb-6 flex md:items-center md:justify-center justify-start items-start font-bold">
           {pathname === "/application-development-services/" ? (
-            <h2 className="text-center w-2/3">
+            <h2 className="text-center w-2/3 !text-colorWhite">
               Why Choose Brilworks for your App Development Needs?
             </h2>
           ) : (
             <>
-              {pathname === "/saas-application-development-services/" ? (
-                <h2 className="text-center w-2/3">Here's what sets us apart</h2>
+              {pathname === "/saas-application-development-services/" ||
+              pathname === "/generative-ai-development-services/" ? (
+                <h2 className="text-center w-2/3 !text-colorWhite">
+                  Here's what sets us apart
+                </h2>
               ) : (
                 <>
                   {pathname === "/frappe-development-services/" ? (
-                    <h2 className="text-center w-full">
-                      Why Choose Brilworks for Frappe Development ?
+                    <h2 className="text-center w-full !text-colorWhite">
+                      Why Choose Brilworks for Frappe Development?
                     </h2>
                   ) : (
                     <>
-                      {pathname === "/generative-ai-development-services/" ? (
-                        <h2 className="text-center w-full">
-                          Here's what sets us apart
-                        </h2>
-                      ) : (
+                      {pathname === "/" ? (
                         <WhyChooseText />
+                      ) : (
+                        <h2 className="text-center w-full !text-colorWhite">
+                          Why Choose Brilworks?
+                        </h2>
                       )}
                     </>
                   )}

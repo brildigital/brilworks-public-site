@@ -223,7 +223,7 @@ const ThreeStepstoHireDeveloper = () => {
                       ) : (
                         <>
                           {pathname === "/hire-react-native-developer/" ? (
-                            "            HIRE REACT NATIVE DEVELOPERS"
+                            "HIRE REACT NATIVE DEVELOPERS"
                           ) : (
                             <>
                               {pathname === "/hire-aws-developer/" ? (
@@ -242,14 +242,14 @@ const ThreeStepstoHireDeveloper = () => {
                     </>
                   )}
                 </>
-              )}
-              <br />
+              )}{" "}
+              <br className="hidden md:block" />
               AS PER YOUR NEED
             </h2>
           </div>
         </div>
 
-        <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
+        <div className="endTO_text_content home_sec2_txt4 xl:mb-[6rem] md:mb-[4rem] mb-[2rem]">
           <p className="!text-[1.2rem]">
             We ensure you find the right people at the right cost for all your
             project needs.

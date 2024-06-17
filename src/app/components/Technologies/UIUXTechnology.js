@@ -141,7 +141,7 @@ const UIUXTechnology = () => {
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
-              <h2 className="!w-full p-0">
+              <h2 className="!w-full p-0 uppercase">
                 Experience the Perfect Blend of Creativity & Technology With Our
                 UI/UX Designing Services
               </h2>

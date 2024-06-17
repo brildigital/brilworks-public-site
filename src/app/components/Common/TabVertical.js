@@ -28,7 +28,7 @@ const TabVertical = ({ initialTabValue, data }) => {
         <div className="md:w-1/3 w-[35%] rounded-l-[30px] bg-themeColor lg:pl-[7%] md:pl-6 md:pr-0 pr-4 lg:pr-8 py-8">
           <div className="flex flex-col">
             <div className="flex md:items-center md:justify-center lg:justify-start md:pr-6 lg:pl-2 pl-2 lg:pr-0">
-              <h3 className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-xl font-bold text-center md:my-8 my-2 regular-font-family">
+              <h3 className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-xl font-bold text-center md:my-8 my-2 regular-font-family text-colorWhite">
                 {pathname === "/ai-ml-development-services/" && "Industries"}
               </h3>
             </div>
@@ -43,13 +43,14 @@ const TabVertical = ({ initialTabValue, data }) => {
                 >
                   <div className="flex md:items-center items-baseline justify-start lg:mb-10 mb-4 mt-2">
                     {tabValue === value ? (
-                      <div className="lg:w-[60px] w-[20px] h-[2px] bg-black fixed md:left-0 left-4 md:block hidden"></div>
+                      <div className="lg:w-[60px] w-[20px] h-[2px] bg-colorWhite fixed md:left-0 left-4 md:block hidden"></div>
                     ) : (
                       ""
                     )}
                     {!isMobile && (
                       <div className="lg:mr-4 mr-2 flex-shrink-0">
                         <Image
+                          className="invert"
                           src={iconSrc}
                           width={24}
                           height={24}
@@ -58,7 +59,7 @@ const TabVertical = ({ initialTabValue, data }) => {
                       </div>
                     )}
                     <p
-                      className={`lg:text-xl md:text-lg text-base regular-font-family break-words text-start ${
+                      className={`lg:text-xl md:text-lg text-base regular-font-family break-words text-start text-colorWhite ${
                         tabValue === value ? "font-bold" : "font-normal"
                       }`}
                     >

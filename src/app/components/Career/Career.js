@@ -24,10 +24,10 @@ const Career = () => {
         <div className="container mx-auto md:pt-[128px] md:px-[0] pt-[90px] px-[15px]">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
-              <h1 className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+              <h1 className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
                 <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
-                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
+                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
                     World of Brilliance
                   </p>
                 </div>
@@ -118,14 +118,14 @@ const Career = () => {
             </div>
             <div className="reveal">
               <div className="home_sec2_txt1">
-                <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                   At Brilworks,
                 </p>
               </div>
 
               <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
                 <div className="home_sec2_txt2">
-                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
+                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor font-bold">
                     It’s all about the
                   </p>
                 </div>
@@ -147,13 +147,13 @@ const Career = () => {
             <div className="xl:my-[6rem] md:my-[4rem] my-[2rem] !mb-0 reveal">
               <div>
                 <div className="home_sec2_txt1">
-                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                     Hear it
                   </p>
                 </div>
                 <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
                   <div className="home_sec2_txt2">
-                    <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                    <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] text-themeColor font-bold">
                       from our
                     </p>
                   </div>
@@ -846,14 +846,9 @@ const Career = () => {
         <div className="container mx-auto px-[15px]">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                Send in
-              </p>
-            </div>
-
-            <div className="home_sec2_txt2">
-              <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                your application
+              <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                <span className="font-bold text-themeColor">Send in</span> your
+                application
               </p>
             </div>
           </div>

@@ -26,9 +26,9 @@ const StaffAugmentation = () => {
   }, []);
 
   return (
-    <div className="services pt-20 medium-font">
+    <div className="services pt-20">
       <StaffAugmentationBanner />
-      <div className="bg-themeLight py-10 lg:px-[70px] px-8">
+      <div className="bg-themeLight">
         <UpskillStaffAugmentation />
       </div>
       <WhyStaffAugmentation />

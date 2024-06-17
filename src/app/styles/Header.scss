@@ -29,6 +29,9 @@
       font-size: 1.5rem;
     }
   }
+  @media screen and (max-width: 1080px) {
+    padding: 1rem 0;
+  }
 }
 
 .mega-menu-content {
@@ -46,6 +49,9 @@
     line-height: 2.5rem;
     @media screen and (max-width: 1152px) {
       font-size: 1rem;
+    }
+    @media screen and (max-width: 767px) {
+      line-height: 1.5rem;
     }
   }
   @media screen and (max-width: 767px) {

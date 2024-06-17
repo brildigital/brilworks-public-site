@@ -24,6 +24,13 @@ const ClientReviews = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const pathname = usePathname();
 
+  const showText = [
+    "/contact-us/",
+    "/staff-augmentation/",
+    "/hire-dedicated-software-development-team/",
+    "/rapid-digitalization/",
+  ];
+
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
     setReviewIndex(activeSlideIndex);
@@ -78,21 +85,20 @@ const ClientReviews = () => {
 
   return (
     <>
-      <div
-        className={`container mx-auto main-section-padding ${
-          !pathname.includes("services") ||
-          pathname !== "/staff-augmentation/" ||
-          pathname !== "/hire-dedicated-software-development-team/" ||
-          pathname !== "/rapid-digitalization/"
-            ? "!pb-0"
-            : ""
-        }`}
-      >
-        {pathname === "/contact-us/" ? (
+      <div className={`container mx-auto main-section-padding`}>
+        {showText.includes(pathname) || pathname.includes("services") ? (
           <div className="just_call_sec">
-            <div className="solutions text-center py-8">
-              <h2 className="md:!text-center !text-left !w-full">
-                CLIENT TESTIMONIALS
+            <div
+              className={`solutions text-center ${
+                pathname === "/contact-us/" ? "py-8" : "pb-8"
+              }`}
+            >
+              <h2
+                className={`md:!text-center !text-left !w-full ${
+                  pathname === "/contact-us/" ? "uppercase" : ""
+                }`}
+              >
+                Client Testimonials
               </h2>
             </div>
           </div>
@@ -169,19 +175,9 @@ const ClientReviews = () => {
               </div>
             </div>
 
-            <div
-              className={`${
-                pathname === "/" || pathname === "/home/"
-                  ? "md:!w-2/4"
-                  : "md:!w-2/4"
-              } w-full`}
-            >
+            <div className="md:!w-2/4 !w-full">
               <div className="home_sec3_box overflow-hidden ">
-                <div
-                  className={`dots_flex w-100 md:px-[30px] ${
-                    isMobile ? "!mx-4" : ""
-                  } `}
-                >
+                <div className="dots_flex md:!px-[30px] !mx-4">
                   <div className="dots md:ml-8 ml-4"></div>
                   <div className="dots"></div>
                   <div className="dots"></div>

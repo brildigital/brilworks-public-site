@@ -713,7 +713,7 @@ const OurServices = () => {
 
   return (
     <div
-      className={`container mx-auto sm:w-[90%] w-[100%] lg:mt-10 ${
+      className={`container mx-auto sm:w-[90%] w-[100%] ${
         pathname === "/digital-experience-services/" ||
         pathname === "/aws-consulting-services/" ||
         pathname === "/kubernetes-consulting-services/" ||
@@ -722,8 +722,10 @@ const OurServices = () => {
           : ""
       }`}
     >
-      <div className="px-[15px] md:pb-[52px] pb-10 reveal">
-        <h2 className="md:text-center text-left ml-4 md:py-10 py-6">{title}</h2>
+      <div className="px-4 xl:pt-24 md:pt-16 pt-8 reveal">
+        <h2 className="md:text-center text-left ml-4 xl:pb-10 md:pb-6 pb-4">
+          {title}
+        </h2>
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

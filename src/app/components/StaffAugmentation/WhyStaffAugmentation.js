@@ -15,43 +15,45 @@ const ServiceCard = ({ title, description }) => (
 
 const WhyStaffAugmentation = () => {
   return (
-    <div className="md:px-[70px] px-6 md:py-24 py-12 end-to-end">
-      <div className="endTO_text solutions">
-        <h2 className="!w-full p-0">
-          Why Brilworks For IT Staff Augmentation Service
-        </h2>
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
-        <div className="flex flex-col md:gap-20">
-          <ServiceCard
-            title="Cost-effective"
-            description="With our IT staff augmentation services, you gain access to the talent you need without the burden of overhead costs associated with traditional hiring processes."
-          />
-          <ServiceCard
-            title="Highly Skilled Developers"
-            description="By choosing us, you gain access to a pool of highly skilled developers, software engineers, business analysts, Scrum Masters, and QA specialists."
-          />
-          <ServiceCard
-            title="Domain Expertise"
-            description="Whether you operate in finance, healthcare, e-commerce, or any other sector, we have the expertise to support you."
-          />
+    <div className="container mx-auto">
+      <div className="md:w-[90%] w-full mx-auto px-6 xl:py-24 md:py-16 py-8 end-to-end">
+        <div className="endTO_text solutions">
+          <h2 className="!w-full p-0">
+            Why Brilworks For IT Staff Augmentation Service
+          </h2>
         </div>
-        <div className="m-auto why_staff_augmentation">
-          <Svgs name="staff-augmentation-service" />
-        </div>
-        <div className="flex flex-col md:gap-20">
-          <ServiceCard
-            title="Seamless Staffing"
-            description="We connect you with pre-vetted, highly skilled professionals who can seamlessly integrate into your existing team."
-          />
-          <ServiceCard
-            title="Flexibility and Scalability"
-            description="Our staff augmentation services provide unmatched flexibility. Scale your IT team up or down seamlessly to meet your project requirements and evolving business needs."
-          />
-          <ServiceCard
-            title="Dedicated Support"
-            description="Client satisfaction is our priority. We are committed to providing ongoing support and clear communication throughout your partnership with us"
-          />
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
+          <div className="flex flex-col md:gap-20">
+            <ServiceCard
+              title="Cost-effective"
+              description="With our IT staff augmentation services, you gain access to the talent you need without the burden of overhead costs associated with traditional hiring processes."
+            />
+            <ServiceCard
+              title="Highly Skilled Developers"
+              description="By choosing us, you gain access to a pool of highly skilled developers, software engineers, business analysts, Scrum Masters, and QA specialists."
+            />
+            <ServiceCard
+              title="Domain Expertise"
+              description="Whether you operate in finance, healthcare, e-commerce, or any other sector, we have the expertise to support you."
+            />
+          </div>
+          <div className="m-auto why_staff_augmentation">
+            <Svgs name="staff-augmentation-service" />
+          </div>
+          <div className="flex flex-col md:gap-20">
+            <ServiceCard
+              title="Seamless Staffing"
+              description="We connect you with pre-vetted, highly skilled professionals who can seamlessly integrate into your existing team."
+            />
+            <ServiceCard
+              title="Flexibility and Scalability"
+              description="Our staff augmentation services provide unmatched flexibility. Scale your IT team up or down seamlessly to meet your project requirements and evolving business needs."
+            />
+            <ServiceCard
+              title="Dedicated Support"
+              description="Client satisfaction is our priority. We are committed to providing ongoing support and clear communication throughout your partnership with us"
+            />
+          </div>
         </div>
       </div>
     </div>

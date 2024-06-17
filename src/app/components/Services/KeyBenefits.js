@@ -42,7 +42,7 @@ const KeyBenefits = () => {
   ];
 
   return (
-    <div className="container services md:w-[90%] w-full mx-auto md:py-12">
+    <div className="container services md:w-[90%] w-full mx-auto xl:py-24 md:py-16 py-8">
       <div>
         <h2 className="md:text-center text-left ml-4 !mb-8">Key Benefits</h2>
         <div className="reveal md:px-0 px-4">

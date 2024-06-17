@@ -37,7 +37,7 @@ const ContactBlock = () => {
   };
 
   return (
-    <div className="container w-[90%] mx-auto md:py-12 py-4">
+    <div className="container w-[90%] mx-auto xl:py-24 md:py-16 py-8">
       <div className="background !rounded-2xl md:p-8 p-4 reveal">
         {pathname === "/kubernetes-consulting-services/" ? (
           <p className="md:!text-5xl text-3xl md: leading-[54px] text-center pb-3 text-colorWhite">
