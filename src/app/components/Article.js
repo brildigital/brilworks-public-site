@@ -57,6 +57,14 @@ const Article = ({ blok }) => {
   }, []);
 
   useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
+
+  useEffect(() => {
     fetchData();
   }, []);
 
