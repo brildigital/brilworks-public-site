@@ -196,7 +196,7 @@ const UseCases = () => {
   ];
 
   return (
-    <div className="container services md:w-[90%] w-full mx-auto md:py-12 pb-14">
+    <div className="container services md:w-[90%] w-full mx-auto xl:pt-24 md:pt-16 pt-8">
       <div className="!rounded-2xl">
         <h2 className="md:text-center text-left ml-4 !mb-8">
           {pathname === "/generative-ai-development-services/"

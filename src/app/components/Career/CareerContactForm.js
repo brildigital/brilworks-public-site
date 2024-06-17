@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Button from "../Common/Button";
 
 const CareerContactForm = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -91,7 +92,7 @@ const CareerContactForm = () => {
                     id="career-contact-Form"
                     onSubmit={handleSubmit}
                   >
-                    <div className="form-group">
+                    <div className="form-group-home">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
                           className={`label_name ${isMobile ? "pb-2" : ""}`}
@@ -105,7 +106,7 @@ const CareerContactForm = () => {
                         >
                           <input
                             size="40"
-                            className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control-txt"
+                            className="form-control-txt"
                             aria-required="true"
                             aria-invalid="false"
                             type="text"
@@ -117,7 +118,7 @@ const CareerContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group-home">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
                           className={`label_name ${isMobile ? "pb-2" : ""}`}
@@ -143,7 +144,7 @@ const CareerContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group-home">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
                           className={`label_name ${isMobile ? "pb-2" : ""}`}
@@ -169,7 +170,7 @@ const CareerContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group-home">
                       <p className={isMobile ? "pb-4" : ""}>
                         <label
                           className={`label_name ${isMobile ? "pb-2" : ""}`}
@@ -196,27 +197,19 @@ const CareerContactForm = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="success-msg h-4" id="sucess_msg">
+                    <div className="text-colorWhite h-4" id="sucess_msg">
                       {respMessage}
                     </div>
-                    <button className="btn_paddinng mt-4">
-                      <div className="home_ready_sec transition !w-[115px]">
-                        <p className="flex align-middle justify-center">
-                          {isSubmitting ? (
-                            <div className="py-[4px] px-[30px]">
-                              <Loader />
-                            </div>
-                          ) : (
-                            <input
-                              id="submit"
-                              name="btnSubmit"
-                              type="submit"
-                              className="!cursor-pointer"
-                            />
-                          )}
-                        </p>
-                      </div>
-                    </button>
+                    <Button
+                      className="md:my-8 my-6"
+                      id="submit"
+                      name="btnSubmit"
+                      type="submit"
+                      icon={isSubmitting ? <Loader /> : ""}
+                      label={isSubmitting ? "Submitting" : "Submit"}
+                      variant="white"
+                      disabled={isSubmitting}
+                    />
                     <div
                       className="wpcf7-response-output"
                       aria-hidden="true"
@@ -232,7 +225,7 @@ const CareerContactForm = () => {
                   <div>
                     <div className="w-[30%]">
                       <Image
-                        className="alignnone"
+                        className="!invert"
                         src="/images/Stronger-Together.png"
                         alt="Stronger Together"
                         width="60"
@@ -250,7 +243,7 @@ const CareerContactForm = () => {
                   <div>
                     <div className="w-[30%]">
                       <Image
-                        className="alignnone"
+                        className="!invert"
                         src="/images/Passion-Over-Perfectionism.png"
                         alt="Passion Over Perfectionism"
                         width="60"
@@ -268,7 +261,7 @@ const CareerContactForm = () => {
                   <div>
                     <div className="w-[30%]">
                       <Image
-                        className="alignnone"
+                        className="!invert"
                         src="/images/Future-focused.png"
                         alt="Future-focused"
                         width="60"
@@ -286,7 +279,7 @@ const CareerContactForm = () => {
                   <div>
                     <div className="w-[30%]">
                       <Image
-                        className="alignnone"
+                        className="!invert"
                         src="/images/Continuous-Improvement.png"
                         alt="Continuous Improvement"
                         width="60"

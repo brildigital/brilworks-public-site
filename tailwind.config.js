@@ -12,15 +12,21 @@ module.exports = {
         slg: "980px",
         sxl: "1200px",
       },
+      fontFamily: {
+        Inter: ["Inter", "sans-serif"],
+      },
       colors: {
-        colorPrimary: "#00ddb9",
+        themeColor: "#0d9a9a",
         colorLightGray: "#f1f1f1",
+        sectionBG: "#f2f3f3",
+        footerBG: "#f2f5f7",
+        borderGray: "#dedede",
         colorBlack: "#1c1d1e",
         colorWhite: "#ffffff",
-        colorGray: "#504F4F",
+        colorGray: "#504f4f",
         themePrimary: "#00dfb8",
         themeSecondary: "#00b6cf",
-        themeLight: "#F3FDFF",
+        themeLight: "#f3fdff",
       },
       backgroundImage: {
         "gradient-custom":

@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -35,7 +35,7 @@ const LowCodeNoCodeDevService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               Low Code No Code Development Services
             </h1>
@@ -46,13 +46,7 @@ const LowCodeNoCodeDevService = () => {
               businesses to build custom applications without the need for
               extensive coding knowledge.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Schedule a call
-                </p>
-              </div>
-            </Link>
+            <Button label="Schedule a call" />
           </div>
         </div>
       </div>
@@ -62,7 +56,6 @@ const LowCodeNoCodeDevService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

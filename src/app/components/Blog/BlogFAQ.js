@@ -36,9 +36,7 @@ const BlogFAQ = ({ FAQData }) => {
                 key={index + 1}
                 open={open === index + 1}
                 icon={<Icon id={index + 1} open={open} />}
-                className={`accordion-item  ${
-                  open === index + 1 ? "bg-themeLight" : "bg-colorWhite"
-                }`}
+                className="accordion-item bg-colorWhite"
                 itemScope="true"
                 itemProp="mainEntity"
                 itemType="https://schema.org/Question"
@@ -47,7 +45,9 @@ const BlogFAQ = ({ FAQData }) => {
                   onClick={() => handleOpen(index + 1)}
                   className="accordion-button"
                 >
-                  <h3 itemProp="name">{Question}</h3>
+                  <h3 itemProp="name" className="font-Inter">
+                    {Question}
+                  </h3>
                 </AccordionHeader>
                 <AccordionBody>
                   <div

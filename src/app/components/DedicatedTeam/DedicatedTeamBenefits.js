@@ -44,18 +44,20 @@ const ServiceItem = ({ description, title }) => (
 
 const DedicatedTeamBenefits = () => {
   return (
-    <div className="md:py-[6rem] py-[4rem] end-to-end">
-      <div className="endTO_text solutions">
-        <h2 className="!w-full p-0">Benefits of Hiring a Dedicated Team</h2>
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4 reveal">
-        {benefits.map((item) => (
-          <ServiceItem
-            key={item.title}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+    <div className="container mx-auto">
+      <div className="sm:w-[90%] w-[100%] mx-auto xl:py-[6rem] md:py-[4rem] py-[2rem] end-to-end reveal">
+        <div className="endTO_text solutions">
+          <h2 className="!w-full p-0">Benefits of Hiring a Dedicated Team</h2>
+        </div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4 reveal">
+          {benefits.map((item) => (
+            <ServiceItem
+              key={item.title}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

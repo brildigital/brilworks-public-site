@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
 import Image from "next/image";
+import Button from "../Common/Button";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -15,16 +16,16 @@ const AboutUs = () => {
   }, []);
   return (
     <>
-      <section className="w-[90%] mx-auto xl:my-[9rem] lg:my-[9rem] md:my-[6rem] my-[6rem] mb-[1rem]">
+      <section className="w-[90%] mx-auto xl:mt-[9rem] lg:mt-[9rem] md:mt-[6rem] mt-[6rem] xl:pb-[6rem] md:pb-[4rem] pb-[2rem]">
         <div className="flex md:flex-row flex-col items-center gap-[2rem]">
           <div className="basis-3/6 md:!order-1 lg:!order-1 !order-2">
             <div className="home_sec2_txt1 text_left">
               <h2>
                 Your tech partner in a{" "}
-                <span className="abc">fast changing world.</span>
+                <span className="big-text-stroke">fast changing world.</span>
               </h2>
             </div>
-            <div className="home_txt3 md:mt-[3rem] mt-[3rem]">
+            <div className="lg:text-xl md:text-lg text-base md:!leading-[36px] lg:w-[80%] md:mt-[3rem] mt-[3rem]">
               <p>
                 We create digital experiences that drive business performance to
                 help organizations adapt to shifts in customer seek behavior and
@@ -71,29 +72,32 @@ const AboutUs = () => {
 
       <section
         id="service_sec2"
-        className="about_bg_sec2 xl:py-[8rem] lg:py-[6rem] md:py-[4rem] py-[4rem] px-[15px]"
+        className="h-full bg-themeColor xl:py-[6rem] md:py-[4rem] py-[2rem] px-4"
       >
         <div className="home_sec2_txt1 md:text-center text-left">
-          <h2>
-            Our<span className="abc"> Mission</span>
+          <h2 className="!text-colorWhite">
+            Our
+            <span className="big-text-stroke !text-colorWhite"> Mission</span>
           </h2>
         </div>
 
         <div className="home_sec2_txt3 text-center">
-          <p className="!w-full md:!w-[74%]">
+          <p className="!w-full md:!w-[74%] !text-colorWhite">
             To empower businesses and startups with exceptional products that
             wow customers.
           </p>
         </div>
 
-        <div className="md:w-[90%] w-full mx-auto xl:pt-[10rem] lg:pt-[8rem] md:pt-[6rem] sm:pt-[4rem] relative about_sec2 reveal">
+        <div className="md:w-[90%] w-full mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] relative about_sec2 reveal">
           <div className="">
             <div className="about_vision md:[0px] mb-[30px]">
               <div className="sec6_title">
-                <p className="mb-[10px]">Our Vision</p>
+                <p className="mb-[10px] !text-colorWhite font-bold">
+                  Our Vision
+                </p>
               </div>
               <div className="sec10_txt1">
-                <p>
+                <p className="text-colorWhite">
                   To become a technology partner &amp; enabler for global tech
                   startups &amp; enterprises.
                 </p>
@@ -120,12 +124,12 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="xl:py-[8rem] sm:pb- lg:py-[6rem] md:py-[4rem] pb-[1rem] py-[4rem] mx-[15px]">
+      <section className="xl:py-[6rem] md:py-[4rem] py-[2rem] mx-4">
         <div className="home_sec2_txt1 md:text-center text-left">
           <h2>
             Enabling greatness through
-            <br />
-            <span className="abc">our expertise.</span>
+            <br className="block md:hidden" />
+            <span className="big-text-stroke"> our expertise.</span>
           </h2>
         </div>
 
@@ -141,10 +145,10 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[6rem] gap-[2rem] md:w-[70%] w-full px-[15px] mx-auto about_sec2_grid md:my-[100px] my-[40px] margin-top reveal">
+        <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[6rem] gap-[2rem] md:w-[70%] w-full px-4 mx-auto about_sec2_grid xl:py-[6rem] md:py-[4rem] py-[2rem] reveal">
           <div>
             <div className="number">
-              <p data-max="8">
+              <p data-max="8" className="!text-colorBlack">
                 8<span className="sign_data"> +</span>
               </p>
             </div>
@@ -154,7 +158,7 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="number">
-              <p data-max="98">
+              <p data-max="98" className="!text-colorBlack">
                 98<span className="sign_data">%</span>
               </p>
             </div>
@@ -164,7 +168,7 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="number">
-              <p data-max="60">
+              <p data-max="60" className="!text-colorBlack">
                 60<span className="sign_data">+</span>
               </p>
             </div>
@@ -174,7 +178,7 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="number">
-              <p data-max="120">
+              <p data-max="120" className="!text-colorBlack">
                 120<span className="sign_data">+</span>
               </p>
             </div>
@@ -184,7 +188,7 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="number">
-              <p data-max="20">
+              <p data-max="20" className="!text-colorBlack">
                 20<span className="sign_data">+</span>
               </p>
             </div>
@@ -194,7 +198,9 @@ const AboutUs = () => {
           </div>
           <div>
             <div className="number">
-              <p data-max="20">20</p>
+              <p data-max="20" className="!text-colorBlack">
+                20
+              </p>
             </div>
             <div className="year">
               <p>Global locations of clients</p>
@@ -209,19 +215,20 @@ const AboutUs = () => {
 
           <div className="home_sec2_txt1 md:text-center text-left">
             <h2>
-              <span className="abc">the beliefs of</span> brilworks.
+              <span className="big-text-stroke">The beliefs of</span> brilworks.
             </h2>
           </div>
         </div>
 
         <div className="md:w-[90%] w-full mx-auto reveal">
-          <div className="xl:gap-[64px] lg:gap-[32px] gap-[40px] about_sec4 lg:flex-row flex-col flex mt-[5rem]">
-            <div className="about_sec4_row relative first_row lg:w-1/3 w-full">
+          <div className="xl:gap-[64px] lg:gap-[32px] gap-[40px] about_sec4 lg:flex-row flex-col flex xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
+            <div className="about_sec4_row relative lg:w-1/3 w-full">
               <div className="about_sec4_3">
                 <div className="about_box_style">
                   <div className="sec4_about height_about">
                     <h3>
-                      Trustworthy <span className="abc">Partnership</span>
+                      Trustworthy
+                      <span className="big-text-stroke"> Partnership</span>
                     </h3>
                   </div>
                   <div className="sec6_career_flex">
@@ -238,12 +245,13 @@ const AboutUs = () => {
                     </div>
                   </div>
                 </div>
-                <div className="about_sec4_70 first_hover">
-                  <div className="about_box_style about_bg">
+                <div className="about_sec4_70">
+                  <div className="about_box_style bril-belief">
                     <div className="about_se4_flex">
                       <div className="sec4_about">
-                        <h3>
-                          Trustworthy <span className="abc">Partnership</span>
+                        <h3 className="text-colorWhite">
+                          Trustworthy{" "}
+                          <span className="big-text-stroke">Partnership</span>
                         </h3>
                       </div>
                     </div>
@@ -261,12 +269,13 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div className="about_sec4_row relative second_row lg:w-1/3 w-full">
+            <div className="about_sec4_row relative lg:w-1/3 w-full">
               <div className="about_sec4_3 relative first_30">
                 <div className="about_box_style">
                   <div className="sec4_about height_about">
                     <h3>
-                      High&nbsp;Caliber <span className="abc">Talent</span>
+                      High&nbsp;Caliber
+                      <span className="big-text-stroke"> Talent</span>
                     </h3>
                   </div>
                   <div className="sec6_career_flex">
@@ -284,12 +293,12 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="about_sec4_70 second_hover">
-                  <div className="about_box_style about_bg">
+                  <div className="about_box_style bril-belief">
                     <div className="about_se4_flex">
                       <div className="sec4_about">
                         <h3>
                           High&nbsp;Caliber{" "}
-                          <span className="abc">
+                          <span className="big-text-stroke">
                             <br />
                             Talent
                           </span>
@@ -310,12 +319,12 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-            <div className="about_sec4_row relative third_row lg:w-1/3 w-full">
+            <div className="about_sec4_row relative lg:w-1/3 w-full">
               <div className="about_sec4_3">
                 <div className="about_box_style">
                   <div className="sec4_about height_about">
                     <h3>
-                      Growth <span className="abc">Mindset </span>
+                      Growth <span className="big-text-stroke">Mindset </span>
                     </h3>
                   </div>
                   <div className="sec6_career_flex">
@@ -333,11 +342,12 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="about_sec4_70 third_hover">
-                  <div className="about_box_style about_bg">
+                  <div className="about_box_style bril-belief">
                     <div className="about_se4_flex !pb-1.8rem">
                       <div className="sec4_about">
                         <h3>
-                          Growth <span className="abc mt-0">Mindset </span>
+                          Growth{" "}
+                          <span className="big-text-stroke mt-0">Mindset </span>
                         </h3>
                       </div>
                     </div>
@@ -358,12 +368,12 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:my-[128px] md:my-[80px] my-[60px] reveal">
+        <div className="xl:my-[6rem] md:my-[4rem] my-[2px] reveal">
           <div className="home_sec2_txt1 md:text-center text-left">
             <h2>
               Trusted by companies
-              <br />
-              <span className="abc">across industries.</span>
+              <br className="xl:hidden block" />
+              <span className="big-text-stroke"> across industries.</span>
             </h2>
           </div>
 
@@ -420,7 +430,7 @@ const AboutUs = () => {
 
         <div className="home_sec2_txt1 md:text-center text-left">
           <h2>
-            Meet the<span className="abc"> team</span>
+            Meet the<span className="big-text-stroke"> team</span>
           </h2>
         </div>
 
@@ -465,7 +475,7 @@ const AboutUs = () => {
             </div>
           </Link>
 
-          <div className="md:mt-[5rem] mt-[2rem]">
+          <div className="xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
             <img
               decoding="async"
               loading="lazy"
@@ -477,21 +487,25 @@ const AboutUs = () => {
             />
           </div>
 
-          <div className="xl:mt-[8rem] lg:mt-[6rem] md:mt-[4rem] mt-[2rem] reveal">
+          <div className="xl:mt-[6rem] md:mt-[4rem] mt-[2rem] reveal">
             <div className="sec7_box_style md:w-[60%] w-full">
               <div className="home_sec2_txt1 md:text-center text-left mb-[3rem]">
-                <h2>
+                <h2 className="text-colorWhite">
                   Let’s build something
-                  <br /> <span className="abc">great together.</span>
+                  <br />{" "}
+                  <span className="text-colorWhite font-bold">
+                    great together.
+                  </span>
                 </h2>
               </div>
 
-              <div className="sec7_about_btn">
-                <p>
-                  <Link href="/contact-us/" target="_blank" rel="noopener">
-                    Get in touch
-                  </Link>
-                </p>
+              <div className="flex items-center justify-center">
+                <Button
+                  variant="white"
+                  label="Get in touch"
+                  target="_blank"
+                  rel="noopener"
+                />
               </div>
             </div>
           </div>

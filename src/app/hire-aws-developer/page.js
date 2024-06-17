@@ -6,7 +6,7 @@ const AWSTechnology = dynamic(() =>
 );
 
 export const metadata = {
-  title: "Hire AWS Developers",
+  title: "Hire AWS Certified Developers",
   description:
     "You can hire AWS developers to transform, grow, and scale up your business - we provide Consulting, App Development, Cloud Migration, DevOps, and Managed Services.",
   openGraph: {

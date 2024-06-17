@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const HomepageWhyChooseUs = dynamic(() =>
@@ -59,7 +58,6 @@ const ERPNextDevService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

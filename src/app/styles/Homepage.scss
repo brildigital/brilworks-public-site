@@ -2,26 +2,19 @@
 .accordion-tab-section,
 .homepage-extension-team {
   button {
-    font-family: var(--medium);
     font-weight: 400;
   }
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+    font-weight: 600;
   }
   .accordion-body,
   .about_txt_domain {
-    font-size: var(--font_21);
-    font-family: var(--regular);
+    font-size: var(--font_20);
     line-height: 1.75rem !important;
   }
   .about_btn {
     line-height: 2rem;
-  }
-}
-
-.homepage-extension-team {
-  button {
-    font-family: var(--light) !important;
   }
 }
 
@@ -30,12 +23,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.client-review-msg {
-  font-family: var(--regular) !important;
-  line-height: 1.4 !important;
-  font-size: 1.8rem !important;
 }
 
 .client-review-swipers {
@@ -148,7 +135,6 @@
   .portfolio-title {
     display: none !important;
     font-size: var(--font_32);
-    font-family: var(--medium);
     color: var(--color_black);
     padding: 1rem 0;
   }
@@ -156,7 +142,6 @@
   .portfolio-title-new {
     display: block !important;
     font-size: var(--font_32);
-    font-family: var(--medium);
     color: var(--color_black);
     padding: 1rem 0;
   }
@@ -164,7 +149,6 @@
   .portfolio-desc {
     display: none !important;
     font-size: var(--font_16);
-    font-family: var(--regular);
     color: var(--color_black);
   }
 }
@@ -185,7 +169,7 @@
 
   .swiper-pagination-bullet-active {
     opacity: 1;
-    background: var(--main_color);
+    background: var(--theme-color);
   }
 }
 
@@ -214,7 +198,7 @@
 
   .swiper-pagination-bullet-active {
     opacity: 1;
-    background: var(--main_color);
+    background: var(--theme-color);
   }
 }
 
@@ -247,7 +231,6 @@
 }
 
 .award .review-text p {
-  font-family: var(--regular);
   color: var(--color_black);
   padding-top: 1rem;
   text-align: center;
@@ -260,12 +243,10 @@
   text-align: center !important;
   flex-wrap: nowrap !important;
   justify-content: center !important;
-  font-family: var(--regular) !important;
 }
 
 .success-msg {
-  color: #000;
-  font-family: var(--medium);
+  color: var(--color_black);
   font-size: 1rem;
 }
 
@@ -335,11 +316,8 @@
 }
 
 .big-text-stroke {
-  font-family: var(--regular);
-  color: var(--color_black);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black_font);
+  color: var(--theme-color);
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 768px) {
@@ -367,25 +345,17 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .client-review-msg {
-    font-size: 1.2rem !important;
-  }
   .homepage-work-domain,
   .accordion-tab-section,
   .homepage-extension-team {
     h3 {
-      font-size: var(--font_21);
+      font-size: var(--font_20);
     }
     .accordion-body,
     .about_txt_domain {
       font-size: var(--font_16);
-      font-family: var(--regular);
       line-height: 1.5rem !important;
     }
-  }
-
-  .style_sec3_swiper_home {
-    padding: 0;
   }
 
   .work-swiper {
@@ -444,12 +414,6 @@
     .portfolio-title-new {
       display: none !important;
     }
-  }
-
-  .client-review-msg {
-    font-family: var(--regular) !important;
-    line-height: 1.4 !important;
-    font-size: 1.2rem !important;
   }
 
   .software-review-head {

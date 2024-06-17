@@ -28,7 +28,11 @@ const SideMenu = ({ open, close }) => {
       {menuItems.map((menuItem, index) => (
         <li key={menuItem.name}>
           {!menuItem?.isMegaMenu ? (
-            <div className="menu_txt1">
+            <div
+              className={`menu_txt1 ${
+                menuItem?.path === "/contact-us/" ? "!border-b-0" : ""
+              }`}
+            >
               <MenuItem
                 name={menuItem?.name}
                 path={menuItem?.path}
@@ -42,11 +46,11 @@ const SideMenu = ({ open, close }) => {
             >
               <AccordionHeader
                 onClick={() => handleOpen(index)}
-                className={`group/item accordion-title py-6 hover:!text-[#00b6cf] ${
+                className={`group/item accordion-title py-6 hover:!text-themeColor ${
                   openSection === index ? "border-none" : ""
                 }`}
               >
-                <p className="group-hover/item:text-[#00dfb8]">
+                <p className="group-hover/item:text-themeColor">
                   {menuItem.name}
                 </p>
               </AccordionHeader>

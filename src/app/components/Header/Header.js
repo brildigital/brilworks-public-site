@@ -8,6 +8,7 @@ import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import MegaMenu from "./MegaMenu";
 import MenuItem from "./MenuItem";
+import Button from "../Common/Button";
 
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
@@ -26,7 +27,7 @@ const NewHeader = () => {
     <header>
       <div className="header header-bg-white">
         <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold">
-          <div className="flex items-center justify-between !text-blue-gray-900 lg:w-[90%] w-[88%] mx-auto">
+          <div className="flex items-center justify-between text-colorBlack lg:w-[90%] w-[88%] mx-auto">
             <div className="header_logo">
               <Link href="/">
                 <Image
@@ -66,11 +67,10 @@ const NewHeader = () => {
                         />
                       )
                     )}
-                  <Link href="/contact-us/" onClick={() => setOpenNav(false)}>
-                    <div className="header_sec1_txt2 hidden-xs">
-                      <p className="transition">LET&apos;S TALK</p>
-                    </div>
-                  </Link>
+                  <Button
+                    onClick={() => setOpenNav(false)}
+                    label="Let's Talk"
+                  />
                 </ul>
               </div>
               <IconButton

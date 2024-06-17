@@ -5,12 +5,10 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { scrollEffect } from "../lib/commonFunction";
-import { BestAdvocateText } from "../Homepage/BigText";
+import Button from "../Common/Button";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const HomepageContactForm = dynamic(() =>
-  import("../Homepage/HomepageContactForm")
-);
+const ContactUs = dynamic(() => import("../Homepage/ContactUs"));
 const WhatMakeUsBrilliant = dynamic(() => import("./WhatMakeUsBrilliant"));
 
 const PortfolioInnerRastrack = () => {
@@ -25,9 +23,9 @@ const PortfolioInnerRastrack = () => {
   return (
     <>
       <section className="portfolio">
-        <div className="service_width">
+        <div className="container mx-auto service_width">
           <div className="sec6_title text-center">
-            <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl fontfamily-ebold">
+            <h1 className="md:!text-[2.5rem] md:!leading-tight !text-3xl font-bold">
               How Brilworks Helped Rastrack
               <br />
               Improve their Fleet’s Efficiency
@@ -62,24 +60,14 @@ const PortfolioInnerRastrack = () => {
             </p>
           </div>
 
-          <div className="md:pt-[4rem] md:pb-[6rem] pt-[3rem] pb-[3rem]">
-            <Link
-              href="https://rastrack.com"
-              className="portfolio_know_more md:mx-auto ml-0"
-            >
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-              <div className="portfolio_know_more_txt">
-                <p>Visit Website</p>
-              </div>
-            </Link>
+          <div className="sxl:pt-[4rem] sxl:pb-[6rem] pt-[3rem] pb-[3rem] flex items-center justify-center">
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="https://rastrack.com"
+              label="Visit Website"
+              icon="right-arrow"
+            />
           </div>
 
           <div className="mx-auto reveal">
@@ -146,9 +134,7 @@ const PortfolioInnerRastrack = () => {
             </div>
           </div>
 
-          <div className="workpadd_borderTop xl:my-[8rem] lg:my-[6rem] md:my-[4rem] my-[2rem]"></div>
-
-          <div className="sec6_title text-center !p-0 md:w-[68%] w-[100%] mx-auto md:mb-[80px] mb-[80px]">
+          <div className="sec6_title text-center !p-0 md:w-[68%] w-[100%] mx-auto lg:my-24 md:my-20 my-10">
             <p>HOW BRILWORKS HELPED VUGO ACHIEVE ITS OBJECTIVES?</p>
           </div>
 
@@ -334,17 +320,10 @@ const PortfolioInnerRastrack = () => {
 
           <WhatMakeUsBrilliant />
 
-          <div className="workpadd_borderTop xl:my-[6rem] md:my-[4rem] my-[2rem]"></div>
-
-          <div className="mx-auto">
-            <BestAdvocateText />
-            <ClientReviews />
-          </div>
-
-          <div className="blog-home xl:pb-[128px] pb-[40px] mx-auto md:pt-[128px] pt-[32px] reveal">
-            <HomepageContactForm />
-          </div>
+          <div className="workpadd_borderTop xl:mt-[6rem] md:mt-[4rem] mt-[2rem]"></div>
         </div>
+        <ClientReviews />
+        <ContactUs />
       </section>
     </>
   );

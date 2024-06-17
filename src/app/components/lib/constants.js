@@ -57,10 +57,10 @@ export const servicesMenuItems = [
         name: "AI/ML Development",
         path: "/ai-ml-development-services/",
       },
-      // {
-      //   name: "GenAI POC & MVP",
-      //   path: "#",
-      // },
+      {
+        name: "GenAI POC & MVP",
+        path: "#",
+      },
     ],
   },
   {
@@ -82,10 +82,10 @@ export const servicesMenuItems = [
       //   name: "ERP Next Development",
       //   path: "/erp-next-development-services/",
       // },
-      // {
-      //   name: "Application Modernization",
-      //   path: "#",
-      // },
+      {
+        name: "Application Modernization",
+        path: "#",
+      },
     ],
   },
   {
@@ -95,14 +95,14 @@ export const servicesMenuItems = [
         name: "BI Consulting",
         path: "/business-intelligence-services/",
       },
-      // {
-      //   name: "Power BI",
-      //   path: "#",
-      // },
-      // {
-      //   name: "Data Engineering",
-      //   path: "#",
-      // },
+      {
+        name: "Power BI",
+        path: "#",
+      },
+      {
+        name: "Data Engineering",
+        path: "#",
+      },
     ],
   },
   {
@@ -184,27 +184,27 @@ export const industryMenuItems = [
       },
     ],
   },
-  // {
-  //   name: "USE CASES",
-  //   subSections: [
-  //     {
-  //       name: "eCommerce",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "Healthcare",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "IoT",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "SAAS",
-  //       path: "#",
-  //     },
-  //   ],
-  // },
+  {
+    name: "USE CASES",
+    subSections: [
+      {
+        name: "eCommerce",
+        path: "#",
+      },
+      {
+        name: "Healthcare",
+        path: "/use-case/healthcare",
+      },
+      {
+        name: "IoT",
+        path: "#",
+      },
+      {
+        name: "SAAS",
+        path: "#",
+      },
+    ],
+  },
 ];
 
 const hireTeamMenuItems = [
@@ -219,10 +219,10 @@ const hireTeamMenuItems = [
         name: "React Native",
         path: "/hire-react-native-developer/",
       },
-      // {
-      //   name: "Flutter",
-      //   path: "#",
-      // },
+      {
+        name: "Flutter",
+        path: "#",
+      },
       {
         name: "UI/UX Development",
         path: "/hire-ui-ux-designer/",
@@ -240,10 +240,10 @@ const hireTeamMenuItems = [
         name: "Node.JS",
         path: "/hire-nodejs-developer/",
       },
-      // {
-      //   name: "Python",
-      //   path: "#",
-      // },
+      {
+        name: "Python",
+        path: "#",
+      },
     ],
   },
   {

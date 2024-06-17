@@ -1,10 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
 import DevOpsShipFaster from "./DevOpsShipFaster";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -36,7 +35,7 @@ const FlutterflowDevelopmentService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               Leading Flutterflow Development Company
             </h1>
@@ -45,11 +44,7 @@ const FlutterflowDevelopmentService = () => {
               next-gen apps for SMBs and enterprises at record speed using
               Flutterflow.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">Connect Now</p>
-              </div>
-            </Link>
+            <Button label="Connect Now" />
           </div>
         </div>
       </div>
@@ -59,7 +54,6 @@ const FlutterflowDevelopmentService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

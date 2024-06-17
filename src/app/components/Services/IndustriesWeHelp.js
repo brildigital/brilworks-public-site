@@ -266,7 +266,7 @@ const IndustriesWeHelp = () => {
   };
 
   return (
-    <div className="container md:w-[90%] w-full mx-auto md:py-12 pb-14">
+    <div className="container md:w-[90%] w-full mx-auto">
       <div className="!rounded-2xl">
         <h2 className="md:text-center text-left ml-4 !mb-8">
           Industries We Help

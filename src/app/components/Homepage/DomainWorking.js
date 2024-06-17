@@ -49,125 +49,127 @@ const DomainWorking = () => {
   ];
 
   return (
-    <>
-      <DomainWorkingText />
-      <div className="container mx-auto px-[15px] md:pt-[128px] pt-[32px] sm:w-[92%] w-[100%] reveal">
-        <div className="homepage-work-domain">
-          <div className="flex flex-wrap">
-            <div className="lg:w-6/12 w-full">
-              <div className="tab-content d-flex justify-content-center align-items-center h-100">
-                <div
-                  className={`fade-image ${
-                    open === 1 || open === 0 ? "active" : "hidden"
-                  }`}
-                >
-                  <div className="solutions_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-32 size-full"
-                      src="/images/Fintech-275x300.webp"
-                      alt="fintech app"
-                      width="1010"
-                      height="1100"
-                      srcSet="
+    <div className="bg-sectionBG">
+      <div className="container mx-auto main-section-padding reveal">
+        <DomainWorkingText />
+        <div className="md:px-4 md:pt-12 pt-8 sm:w-[92%] w-[100%] mx-auto reveal">
+          <div className="homepage-work-domain">
+            <div className="flex flex-wrap">
+              <div className="lg:w-6/12 w-full">
+                <div className="tab-content d-flex justify-content-center align-items-center h-100">
+                  <div
+                    className={`fade-image ${
+                      open === 1 || open === 0 ? "active" : "hidden"
+                    }`}
+                  >
+                    <div className="solutions_img">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="alignnone wp-image-32 size-full"
+                        src="/images/Fintech-275x300.webp"
+                        alt="fintech app"
+                        width="1010"
+                        height="1100"
+                        srcSet="
                         /images/Fintech-275x300.webp   275w,
                         /images/Fintech-940x1024.webp  940w,
                         /images/Fintech-768x836.webp   768w,
                         /images/Fintech.webp         1010w
                       "
-                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-                    />
+                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={`fade-image ${open === 2 ? "active" : "hidden"}`}
-                >
-                  <div className="solutions_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-32 size-full"
-                      src="/images/healthcare-275x300.webp"
-                      alt="fintech app"
-                      width="1010"
-                      height="1100"
-                      srcSet="
+                  <div
+                    className={`fade-image ${open === 2 ? "active" : "hidden"}`}
+                  >
+                    <div className="solutions_img">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="alignnone wp-image-32 size-full"
+                        src="/images/healthcare-275x300.webp"
+                        alt="fintech app"
+                        width="1010"
+                        height="1100"
+                        srcSet="
                         /images/healthcare-275x300.webp   275w,
                         /images/healthcare-940x1024.webp  940w,
                         /images/healthcare-768x836.webp   768w,
                         /images/healthcare.webp          1010w
                       "
-                      sizes="(max-width: 1010px) 100vw, 1010px"
-                    />
+                        sizes="(max-width: 1010px) 100vw, 1010px"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={`fade-image ${open === 3 ? "active" : "hidden"}`}
-                >
-                  <div className="solutions_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-32 size-full"
-                      src="/images/media-entertainment-275x300.webp"
-                      alt="fintech app"
-                      width="1010"
-                      height="1100"
-                      srcSet="
+                  <div
+                    className={`fade-image ${open === 3 ? "active" : "hidden"}`}
+                  >
+                    <div className="solutions_img">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="alignnone wp-image-32 size-full"
+                        src="/images/media-entertainment-275x300.webp"
+                        alt="fintech app"
+                        width="1010"
+                        height="1100"
+                        srcSet="
                         /images/media-entertainment-275x300.webp   275w,
                         /images/media-entertainment-940x1024.webp  940w,
                         /images/media-entertainment-768x836.webp   768w,
                         /images/media-entertainment.webp          1010w
                       "
-                      sizes="(max-width: 1010px) 100vw, 1010px"
-                    />
+                        sizes="(max-width: 1010px) 100vw, 1010px"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  className={`fade-image ${open === 4 ? "active" : "hidden"}`}
-                >
-                  <div className="solutions_img">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-32 size-full"
-                      src="/images/Fleet-mgmt-275x300.webp"
-                      alt="fintech app"
-                      width="1010"
-                      height="1100"
-                      srcSet="
+                  <div
+                    className={`fade-image ${open === 4 ? "active" : "hidden"}`}
+                  >
+                    <div className="solutions_img">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        className="alignnone wp-image-32 size-full"
+                        src="/images/Fleet-mgmt-275x300.webp"
+                        alt="fintech app"
+                        width="1010"
+                        height="1100"
+                        srcSet="
                         /images/Fleet-mgmt-275x300.webp   275w,
                         /images/Fleet-mgmt-940x1024.webp  940w,
                         /images/Fleet-mgmt-768x836.webp   768w,
                         /images/Fleet-mgmt.webp          1010w
                       "
-                      sizes="(max-width: 1010px) 100vw, 1010px"
-                    />
+                        sizes="(max-width: 1010px) 100vw, 1010px"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="lg:w-6/12 w-full">
-              {DomainWorkingAcccordionItem.map(
-                ({ title, content, linkUrl }, index) => (
-                  <AccordionCustomIcon
-                    key={index + 2}
-                    index={index + 1}
-                    title={title}
-                    content={content}
-                    handleOpen={handleOpen}
-                    linkUrl={linkUrl}
-                    open={open}
-                  />
-                )
-              )}
+              <div className="lg:w-6/12 w-full">
+                {DomainWorkingAcccordionItem.map(
+                  ({ title, content, linkUrl }, index) => (
+                    <AccordionCustomIcon
+                      key={index + 2}
+                      index={index + 1}
+                      title={title}
+                      content={content}
+                      handleOpen={handleOpen}
+                      linkUrl={linkUrl}
+                      open={open}
+                    />
+                  )
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

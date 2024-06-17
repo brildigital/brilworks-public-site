@@ -62,7 +62,10 @@ const UsecaseFAQ = () => {
                 onClick={() => handleOpen(index + 1)}
                 className="accordion-button"
               >
-                <h3 itemProp="name" className="md:!text-2xl !text-xl">
+                <h3
+                  itemProp="name"
+                  className="md:!text-2xl !text-xl font-Inter"
+                >
                   {question}
                 </h3>
               </AccordionHeader>

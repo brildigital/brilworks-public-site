@@ -17,10 +17,10 @@
 
 .accordion-title {
   padding: 1.5rem 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--color_gray);
   p {
     font-size: var(--font_36);
-    font-family: var(--medium);
+    font-family: var(--global-font);
     color: var(--color_black);
     width: fit-content;
     font-weight: 400;
@@ -28,6 +28,9 @@
     @media screen and (max-width: 1152px) {
       font-size: 1.5rem;
     }
+  }
+  @media screen and (max-width: 1080px) {
+    padding: 1rem 0;
   }
 }
 
@@ -40,12 +43,15 @@
   overflow: hidden;
   p {
     font-size: var(--font_32);
-    font-family: var(--medium);
+    font-family: var(--global-font);
     width: fit-content;
     font-weight: 400;
     line-height: 2.5rem;
     @media screen and (max-width: 1152px) {
       font-size: 1rem;
+    }
+    @media screen and (max-width: 767px) {
+      line-height: 1.5rem;
     }
   }
   @media screen and (max-width: 767px) {
@@ -67,12 +73,13 @@
 .home_header {
   background: url("https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg");
   height: 100vh;
+  width: 100vw;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   @media only screen and (max-width: 767px) {
     height: 94vh;
   }
   @media only screen and (max-width: 980px) {
-    background: #e5e5e5;
+    height: 700px;
   }
 }

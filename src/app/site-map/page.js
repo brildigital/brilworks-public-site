@@ -35,13 +35,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      {/* <Header /> */}
-      <Sitemap />
-      {/* <Footer /> */}
-    </>
-  );
+  return <Sitemap />;
 };
 
 export default page;

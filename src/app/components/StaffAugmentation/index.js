@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import { BestAdvocateText } from "../Homepage/BigText";
 import "../../styles/Services.scss";
 import StaffAugmentationBanner from "./StaffAugmentationBanner";
 
@@ -27,14 +26,13 @@ const StaffAugmentation = () => {
   }, []);
 
   return (
-    <div className="services pt-20 medium-font">
+    <div className="services pt-20">
       <StaffAugmentationBanner />
-      <div className="bg-themeLight py-10 lg:px-[70px] px-8">
+      <div className="bg-themeLight">
         <UpskillStaffAugmentation />
       </div>
       <WhyStaffAugmentation />
-      <div className="bg-themeLight py-10">
-        <BestAdvocateText />
+      <div className="bg-themeLight">
         <ClientReviews />
       </div>
       <ServicesPricingPlans />

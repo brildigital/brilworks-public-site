@@ -1,47 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap");
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Regular.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Regular.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Medium.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Medium.woff)
-      format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Semibold.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Semibold.woff)
-      format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "merriweatheritalic";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/merriweather-regularitalic-webfont.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/merriweather-regularitalic-webfont.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.blog-background {
+  background: #f3fdff80 !important;
 }
 
 .blog-main {
@@ -59,13 +17,13 @@
 .blog-navigation {
   font-weight: 500;
   a {
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
   }
   a:hover {
-    color: var(--main_color) !important;
+    color: var(--theme-color) !important;
   }
 }
 .blog-search-btn {
@@ -78,18 +36,18 @@
 }
 
 .font-graphik {
-  font-family: "Graphik" !important;
+  font-family: var(--global-font) !important;
 }
 
 .blog-initial {
   h1 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: var(--global-font) !important;
   }
   .font-graphik {
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
   }
   .post-summary {
-    font-family: "merriweatheritalic" !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-weight: 400;
     font-size: 20px;
@@ -99,7 +57,7 @@
 }
 
 .blog_content {
-  font-family: "Graphik" !important;
+  font-family: var(--global-font) !important;
   div {
     p {
       span {
@@ -120,7 +78,7 @@
   }
   a {
     word-wrap: break-word;
-    color: #00c4c8 !important;
+    color: var(--theme-color) !important;
     font-weight: 600 !important;
     text-decoration: underline !important;
     transition: all 0.3s ease;
@@ -143,7 +101,7 @@
   blockquote,
   blockquote::before {
     background: #f4f4f4 !important;
-    border-left: solid 6px var(--main_menu_hover_color);
+    border-left: solid 6px var(--theme-color);
   }
 
   blockquote {
@@ -160,7 +118,7 @@
   blockquote::before {
     content: "\201C";
     display: block;
-    color: var(--main_menu_hover_color);
+    color: var(--theme-color);
     font-family: Georgia, serif;
     font-size: 60px;
     height: 0;
@@ -191,7 +149,7 @@
   a {
     span {
       font-weight: 700 !important;
-      color: #ffffff !important;
+      color: var(--white_color) !important;
       text-decoration: underline !important;
       border-radius: 33px;
     }
@@ -199,22 +157,22 @@
 }
 
 .blog-tab-content {
-  background: #fff;
-  border: 1px solid #00ddb9;
-  box-shadow: 4px 4px 0 #00c4c8;
+  background: var(--white_color);
+  border: 1px solid var(--theme-color);
+  box-shadow: 4px 4px 0 var(--theme-color);
   padding: 12px 0 12px 10px;
 
   p {
-    font-family: "Assistant", sans-serif !important;
+    font-family: var(--global-font) !important;
     line-height: 23px !important;
     font-size: 18px;
     font-weight: 700;
-    color: #222;
+    color: var(--color_black);
     margin: 0;
   }
 
   ul {
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     background: 0 0;
     list-style: none;
@@ -222,12 +180,12 @@
     margin: 0;
     padding-right: 12px !important;
     li {
-      font-family: "Graphik" !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px !important;
-      color: #222;
+      color: var(--color_black);
       margin: 0 0 8px !important;
       position: relative;
 
@@ -236,7 +194,7 @@
         text-decoration: underline;
       }
       a.page-active {
-        color: var(--main_color) !important;
+        color: var(--theme-color) !important;
       }
       a:hover {
         text-decoration: underline !important;
@@ -246,10 +204,9 @@
 }
 
 .blog-get-in-touch {
-  background: #fff;
-  border: 1px solid #00ddb9 !important;
+  background: Var(--white_color);
+  border: 1px solid var(--theme-color) !important;
   box-shadow: 0 5px 40px 0 rgba(212, 221, 245, 0.9) !important;
-  border-radius: 3px;
   padding: 15px;
   font-size: 14px;
   line-height: 20px !important;
@@ -257,18 +214,18 @@
 
 .blog_category {
   .Blog_category_head {
-    font-family: var(--medium);
+    font-family: var(--global-font);
   }
 }
 
 .blog_flex_30:hover {
   .entry-title {
     font-weight: 600;
-    color: #ffffff;
+    color: var(--white_color);
   }
   .publish_date {
     font-weight: 600;
-    color: #ffffff !important;
+    color: var(--white_color) !important;
   }
 }
 
@@ -280,12 +237,12 @@
     display: block !important;
   }
   p {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 32px !important;
     color: var(--color_black);
   }
   h3 {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 38px !important;
     color: var(--color_black);
     margin-bottom: 7px;
@@ -303,11 +260,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 196, 200, 1) 34%,
-      rgba(0, 221, 185, 1) 56%
-    );
+    background: var(--theme-color);
     img {
       margin: 0 auto;
       border-radius: 0;
@@ -316,6 +269,7 @@
       height: auto;
       position: absolute;
       bottom: 0;
+      z-index: 2;
     }
   }
 
@@ -326,8 +280,8 @@
     position: absolute;
     right: -18px;
     bottom: -18px;
-    background: rgba(0, 196, 200, 1);
-    z-index: -1;
+    background: var(--theme-color);
+    z-index: 1;
   }
   .img-blk:before {
     content: "";
@@ -336,8 +290,8 @@
     position: absolute;
     left: -18px;
     top: -48px;
-    background: #00ddb9;
-    z-index: -1;
+    background: var(--theme-color);
+    z-index: 1;
   }
 }
 
@@ -353,10 +307,10 @@
 }
 
 .blog-title {
-  font-family: var(--bold);
+  font-weight: 700;
   font-size: var(--font_48) !important;
-  color: var(--black_font);
-  line-height: 1.2 !important;
+  color: var(--color_black);
+  line-height: 1.1 !important;
 }
 
 // ******************************New style of blog page********************************************
@@ -372,11 +326,11 @@
     width: 100% !important;
     margin-bottom: 20px;
     p {
-      font-family: "Graphik" !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       margin-bottom: 0 !important;
       span {
-        font-family: "Graphik" !important;
+        font-family: var(--global-font) !important;
       }
     }
   }
@@ -389,13 +343,13 @@
     overflow-x: auto;
     font-size: 14px;
     margin-bottom: 16px;
-    border-left: solid 6px var(--main_menu_hover_color);
+    border-left: solid 6px var(--theme-color);
   }
   p {
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     word-wrap: break-word;
-    font-size: 19px !important;
+    font-size: 18px !important;
     line-height: 32px !important;
     margin-bottom: 20px !important;
     margin-block-start: 1em;
@@ -403,29 +357,29 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
     span {
-      font-family: "Graphik" !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       word-wrap: break-word;
-      font-size: 19px !important;
+      font-size: 18px !important;
       line-height: 32px !important;
       margin-bottom: 20px !important;
     }
   }
   h2 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700 !important;
     span {
-      font-family: "Assistant", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-size: 32px !important;
       line-height: 38px !important;
       font-weight: 700 !important;
       strong {
-        font-family: "Assistant", sans-serif !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
         font-size: 32px !important;
         line-height: 38px !important;
@@ -434,20 +388,20 @@
     }
   }
   h3 {
-    font-family: "Assistant", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-size: 24px !important;
     line-height: 30px !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
     span {
-      font-family: "Assistant", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-size: 24px !important;
       line-height: 30px !important;
       font-weight: 600 !important;
       strong {
-        font-family: "Assistant", sans-serif !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
         font-size: 24px !important;
         line-height: 30px !important;
@@ -461,8 +415,8 @@
   }
   ul {
     a {
-      font-family: "merriweatheritalic" !important;
-      color: #00c4c8 !important;
+      font-family: var(--global-font) !important;
+      color: var(--theme-color) !important;
       font-weight: 600;
       word-wrap: break-word;
       text-decoration: underline !important;
@@ -473,7 +427,7 @@
       }
     }
     li {
-      font-family: "merriweatheritalic" !important;
+      font-family: var(--global-font) !important;
       padding-left: 34px;
       padding-bottom: 10px;
       list-style: outside !important;
@@ -490,24 +444,24 @@
         height: 20px;
         left: 0;
         top: 6px;
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%2300C4C8'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%230d9a9a'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
         background-position: -460px -80px;
         position: absolute;
       }
       span {
-        font-family: "merriweatheritalic" !important;
+        font-family: var(--global-font) !important;
         font-style: italic !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "merriweatheritalic" !important;
+        font-family: var(--global-font) !important;
         font-style: italic !important;
         margin-bottom: 0px !important;
       }
     }
     span {
       font-style: italic !important;
-      font-family: "merriweatheritalic" !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
     }
   }
@@ -515,8 +469,8 @@
     padding-left: 1.8em !important;
     list-style: initial !important;
     a {
-      font-family: "Graphik" !important;
-      color: #00c4c8 !important;
+      font-family: var(--global-font) !important;
+      color: var(--theme-color) !important;
       font-weight: 600;
       word-wrap: break-word;
       text-decoration: underline !important;
@@ -527,31 +481,31 @@
       }
     }
     li {
-      font-family: "Graphik" !important;
-      font-size: 19px !important;
+      font-family: var(--global-font) !important;
+      font-size: 18px !important;
       line-height: 32px !important;
       margin-left: 0;
       color: var(--color_black) !important;
       &::marker {
-        color: #00c4c8 !important;
+        color: var(--theme-color) !important;
         font-size: 30px !important;
       }
       span {
-        font-family: "Graphik" !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "Graphik" !important;
+        font-family: var(--global-font) !important;
         margin-bottom: 0px !important;
       }
     }
     span {
-      font-family: "Graphik" !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
     }
   }
   .faq-bottom .accordion-button {
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     border: 0 !important;
     padding: 0 !important;
@@ -559,7 +513,7 @@
     h3 {
       font-size: 20px !important;
       margin: 0 !important;
-      font-family: "Graphik" !important;
+      font-family: var(--global-font) !important;
       @media screen and (max-width: 767px) {
         font-size: 18px !important;
       }
@@ -574,7 +528,7 @@
 
   .faq-bottom .accordion-body {
     color: var(--color_black);
-    font-family: "Graphik" !important;
+    font-family: var(--global-font) !important;
     p {
       margin: 0 !important;
       line-height: 2.5rem;
@@ -591,7 +545,7 @@
 
   .faq-bottom .accordion-item {
     border-radius: 4px !important;
-    border: 1px solid #00ddb9 !important;
+    border: 1px solid var(--theme-color) !important;
     padding: 20px 36px 20px 30px !important;
     margin-bottom: 16px !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0 3px 5px -1px !important;
@@ -621,9 +575,9 @@
 
 .blog-inner .blog_content_CTA_1,
 .blog-inner .blog_content_CTA_3 {
-  font-family: "Graphik";
+  font-family: var(--global-font);
   color: var(--color_black) !important;
-  font-size: 19px;
+  font-size: 18px;
   margin-bottom: 20px;
   background: rgb(0, 182, 207);
   background: linear-gradient(
@@ -635,7 +589,7 @@
   border-radius: 30px;
   a {
     font-weight: 700;
-    font-family: "Graphik";
+    font-family: var(--global-font);
     text-decoration: underline !important;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;

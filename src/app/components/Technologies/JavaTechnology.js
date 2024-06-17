@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import Button from "../Common/Button";
 
 const JavaFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -87,18 +88,13 @@ const JavaTechnology = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <p className="!p-0 !ml-[0] !w-full">
-                    HIRE JAVA DEVELOPER TO STAY IN SYNC WITH BACKEND
-                  </p>
-                </Link>
+                <p className="!p-0 !ml-[0] !w-full">
+                  HIRE JAVA DEVELOPER TO STAY IN SYNC WITH BACKEND
+                </p>
               </div>
             </div>
             <div className="basis-[55%]">
@@ -109,57 +105,34 @@ const JavaTechnology = () => {
                   your project to unforeseen heights of success.
                 </p>
 
-                <div className="flex md:gap-8 md:mt-[50px] flex-wrap">
-                  <Link
-                    href="#pricing"
-                    onClick={(e) => scrollToSection(e, "pricing")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Plan & Pricing
-                      </p>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Hire Java Developers
-                      </p>
-                    </div>
-                  </Link>
+                <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#pricing"
+                      label="Plan & Pricing"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#section10_service"
+                      label="Hire Java Developers"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
               <h2 className="!w-full p-0">
@@ -339,28 +312,28 @@ const JavaTechnology = () => {
             </div>
           </div>
 
-          <div className="w-full md:my-[60px] my-[40px]">
-            <Link
-              href="#section10_service"
-              onClick={(e) => scrollToSection(e, "section10_service")}
-            >
-              <div className="btn_paddinng btn_flex !mx-auto">
-                <div className="formBtn_icon">
-                  <p>
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/icons-05.png"
-                      alt="call"
-                    />
-                  </p>
-                </div>
-
-                <p className="xl:!text-[20px] lg:!text-[18px]">
-                  Get A Quote For Your Project
-                </p>
-              </div>
-            </Link>
+          <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
+            <Button
+              innerClassName="flex items-center justify-center gap-2"
+              className="!pr-5"
+              redirect="#section10_service"
+              label="Get A Quote For Your Project"
+              scrollingButton
+              icon={
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
+                  <path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
+                </svg>
+              }
+            />
           </div>
         </div>
 

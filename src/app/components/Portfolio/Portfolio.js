@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
+import Button from "../Common/Button";
 
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
@@ -48,7 +48,7 @@ const Portfolio = () => {
         </div>
 
         <div className="service_width">
-          <div className="sec6_title md:!pt-24">
+          <div className="sec6_title !pt-8 md:!pt-24">
             <h1 className="head-title">SEE TEAM BRILLIANT IN ACTION</h1>
           </div>
           <div className="portfolio_sec1_txt2 portfolio_sec1_border ">
@@ -75,18 +75,13 @@ const Portfolio = () => {
                 self-driving mobility services tomorrow.
               </p>
             </div>
-            <Link href="/portfolio/vugo/" className="portfolio_know_more">
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-              <p>Know More</p>
-            </Link>
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="/portfolio/vugo/"
+              label="Know More"
+              icon="right-arrow"
+            />
           </div>
           <div className="portflio_flex_60">
             <div className="">
@@ -135,18 +130,13 @@ const Portfolio = () => {
                 assets or individuals using networking technologies.
               </p>
             </div>
-            <Link href="/portfolio/rastrack/" className="portfolio_know_more">
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-              <p>Know More</p>
-            </Link>
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="/portfolio/rastrack/"
+              label="Know More"
+              icon="right-arrow"
+            />
           </div>
         </div>
 
@@ -166,18 +156,14 @@ const Portfolio = () => {
                 fees in the industry.
               </p>
             </div>
-            <Link href="/portfolio/orokii/" className="portfolio_know_more">
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-              <p>Know More</p>
-            </Link>
+
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="/portfolio/orokii/"
+              label="Know More"
+              icon="right-arrow"
+            />
           </div>
           <div className="portflio_flex_60">
             <div className="">
@@ -227,18 +213,13 @@ const Portfolio = () => {
                 Dealers and Fleet Managers.
               </p>
             </div>
-            <Link href="/portfolio/eccocar/" className="portfolio_know_more">
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-              <p>Know More</p>
-            </Link>
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="/portfolio/eccocar/"
+              label="Know More"
+              icon="right-arrow"
+            />
           </div>
         </div>
 
@@ -258,19 +239,13 @@ const Portfolio = () => {
                 worldwide, indoors and outdoors.
               </p>
             </div>
-            <Link href="/portfolio/trackimo/" className="portfolio_know_more">
-              <div className="get_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone"
-                  src="/images/right_arrow.png"
-                  alt="right arrow"
-                />
-              </div>
-
-              <p href="/portfolio/trackimo/">Know More</p>
-            </Link>
+            <Button
+              innerClassName="flex items-center justify-center gap-1"
+              className="!pr-5"
+              redirect="/portfolio/trackimo/"
+              label="Know More"
+              icon="right-arrow"
+            />
           </div>
           <div className="portflio_flex_60">
             <div className="">

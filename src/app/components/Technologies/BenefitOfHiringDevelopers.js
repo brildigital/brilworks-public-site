@@ -19,18 +19,18 @@ const BenefitOfHiringDevelopers = () => {
   const title = showTitleBasedOnPathname[pathname] || {};
 
   return (
-    <div className="mx-auto service_width md:py-[6rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
+    <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
-        <div className="endTO_text solutions m-0">
-          <h2 className="!w-full py-8">
+        <div className="solutions text-center m-0">
+          <h2 className="!w-full pb-8">
             BENEFITS OF HIRING DEDICATED DEVELOPERS
           </h2>
         </div>
       </div>
 
-      <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
+      <div className="endTO_text_content home_sec2_txt4 xl:mb-[4rem] md:mb-[3rem] md-[2rem]">
         <p
-          className={`md:px-[6rem] medium-font ${
+          className={`md:px-[6rem] ${
             isMobile ? "text-start" : ""
           } md:!text-[1.3rem]`}
         >
@@ -50,7 +50,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Dedicated Resources On-Demand"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Dedicated Resources On-Demand
           </p>
         </div>
@@ -63,7 +63,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Emergency Support"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Emergency Support
           </p>
         </div>
@@ -76,7 +76,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Scalable Projects"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Scalable Projects
           </p>
         </div>
@@ -89,7 +89,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Quick-Turnaround Time"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Quick-Turnaround Time
           </p>
         </div>
@@ -102,7 +102,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Complete Autonomy"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Complete Autonomy
           </p>
         </div>
@@ -115,7 +115,7 @@ const BenefitOfHiringDevelopers = () => {
             alt="Quality Infrastructure"
             className="w-[50px] mx-auto"
           />
-          <p className="mt-[20px] lg:text-[20px] text-[14px] medium-font">
+          <p className="mt-[20px] lg:text-[20px] text-[14px]">
             Quality Infrastructure
           </p>
         </div>

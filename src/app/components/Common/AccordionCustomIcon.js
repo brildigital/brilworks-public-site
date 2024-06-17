@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Icon } from "../lib/commonFunction";
+import LinkWithArrow from "./LinkWithArrow";
 
 const Accordion = dynamic(
   () => import("@material-tailwind/react").then((mod) => mod.Accordion),
@@ -44,45 +45,20 @@ const AccordionCustomIcon = ({
             open === index ? "border-none" : ""
           }`}
         >
-          <h3>{title}</h3>
+          <h3 className="font-Inter">{title}</h3>
         </AccordionHeader>
         <AccordionBody
           className={`pb-4 pt-0 ${
             open === index ? "border-b border-[#707070]" : ""
           }`}
         >
-          <div className="accordion-body">{content}</div>
+          <div className="accordion-body font-Inter">{content}</div>
           {linkUrl && (
-            <Link
+            <LinkWithArrow
               href={linkUrl}
-              className="flex items-center gap-[20px] about_btn !cursor-pointer transition py-3"
-            >
-              <div className="about_txt">
-                <p className="change_link md:text-[24px] text-[20px]">
-                  Know more
-                </p>
-              </div>
-              <div className="aerrow relative">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="black_aerrow alignnone wp-image-28 size-full"
-                  src="/images/black_aerrow-1.png"
-                  alt="arrow"
-                  width="46"
-                  height="18"
-                />
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="gradiant_aerrow alignnone wp-image-29 size-full"
-                  src="/images/arrow-gradiant.png"
-                  alt="arrow"
-                  width="46"
-                  height="18"
-                />
-              </div>
-            </Link>
+              label="Know More"
+              className="py-3 !mt-0"
+            />
           )}
         </AccordionBody>
       </Accordion>

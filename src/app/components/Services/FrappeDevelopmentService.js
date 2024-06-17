@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
-import { BestAdvocateText } from "../Homepage/BigText";
+import Button from "../Common/Button";
 
 const HomepageWhyChooseUs = dynamic(() =>
   import("../Homepage/HomepageWhyChooseUs")
@@ -36,7 +36,7 @@ const FrappeDevelopmentService = () => {
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
+          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
             <h1 className="mb-[30px] w-full md:w-3/5">
               A Trusted Frappe Development Company
             </h1>
@@ -46,13 +46,7 @@ const FrappeDevelopmentService = () => {
               dedicated to helping startups and SMBs thrive by providing
               top-notch development services.
             </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Consult our expert
-                </p>
-              </div>
-            </Link>
+            <Button label="Consult our expert" />
           </div>
         </div>
       </div>
@@ -62,7 +56,6 @@ const FrappeDevelopmentService = () => {
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />
-      <BestAdvocateText />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

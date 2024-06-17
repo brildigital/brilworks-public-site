@@ -136,7 +136,7 @@ const Blog = () => {
                         height="40"
                       />
                       <div className="author-info !pl-4">
-                        <h3 className="md:!text-lg !text-base font-graphik text-[#00dfb8] font-semibold">
+                        <h3 className="md:!text-lg !text-base font-graphik text-theborder-themeColor font-semibold">
                           <Link
                             className="font-semibold"
                             href={popularBlog?.content?.author_linkedIn?.url}
@@ -166,8 +166,8 @@ const Blog = () => {
               <button
                 className={`Blog_category_head transition duration-600 ease-in-out lg:!px-5 px-4 !py-2 !rounded-[4px] cursor-pointer ${
                   blogCategory === ""
-                    ? "bg-[#00DDB9] text-white"
-                    : "hover:!text-[#00b6cf]"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
                 }`}
                 onClick={() => setBlogCategory("")}
               >
@@ -176,8 +176,8 @@ const Blog = () => {
               <button
                 className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Product Engineering"
-                    ? "bg-[#00DDB9] text-white"
-                    : "hover:!text-[#00b6cf]"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
                 }`}
                 onClick={() => setBlogCategory("Product Engineering")}
               >
@@ -188,8 +188,8 @@ const Blog = () => {
               <button
                 className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Cloud DevOps and Data"
-                    ? "bg-[#00DDB9] text-white"
-                    : "hover:!text-[#00b6cf]"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
                 }`}
                 onClick={() => setBlogCategory("Cloud DevOps and Data")}
               >
@@ -200,8 +200,8 @@ const Blog = () => {
               <button
                 className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "Technology Practices"
-                    ? "bg-[#00DDB9] text-white"
-                    : "hover:!text-[#00b6cf]"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
                 }`}
                 onClick={() => setBlogCategory("Technology Practices")}
               >
@@ -212,8 +212,8 @@ const Blog = () => {
               <button
                 className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-[4px] ${
                   blogCategory === "News & Insights"
-                    ? "bg-[#00DDB9] text-white"
-                    : "hover:!text-[#00b6cf]"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
                 }`}
                 onClick={() => setBlogCategory("News & Insights")}
               >
@@ -226,13 +226,13 @@ const Blog = () => {
               className="md:pb-0 !pb-4"
               onSubmit={(e) => e.preventDefault()}
             >
-              <div className="find-blog-search-box border-[#00DDB9] border-[1px]">
+              <div className="find-blog-search-box border-themeColor border-[1px]">
                 <div className="w-full inline-flex relative flex-wrap items-center justify-end">
                   <input
                     type="submit"
                     className="w-auto !mr-2 mt-[2px] blog-search-btn btn-search font-semibold text-base !text-white border !cursor-pointer
-                     hover:border-[#00dfb8] focus:ring focus:outline-none focus:border-[#00dfb8] focus:!ring-[#00C4C8] active:border-[#00dfb8] absolute bg-gradient-to-r from-[#00C4C8] to-[#00DDB9]"
-                    value="SEARCH"
+                     hover:border-themeColor focus:ring focus:outline-none focus:border-themeColor focus:!ring-[#00C4C8] active:border-themeColor absolute bg-themeColor"
+                    value="Search"
                   />
                   <div className="w-full">
                     <input
@@ -304,7 +304,7 @@ const Blog = () => {
                   </div>
                   <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
                     <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                      <p className="entry-title default-max-width aspect-[518/116] ">
+                      <p className="entry-title default-max-width aspect-[518/116] xl:!text-[28px]">
                         {name}
                       </p>
                     </div>

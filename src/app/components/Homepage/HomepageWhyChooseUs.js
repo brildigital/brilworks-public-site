@@ -2,6 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
+import { WhyChooseText } from "./BigText";
 
 const Card = dynamic(
   () => import("@material-tailwind/react").then((mod) => mod.Card),
@@ -476,35 +477,38 @@ const HomepageWhyChooseUs = () => {
   };
 
   return (
-    <div
-      className={`container mx-auto w-[90%] ${
-        pathname === "/" ? "md:pt-24 pt-12" : "md:py-12 pt-12 pb-8"
-      }`}
-    >
-      <div className="background !rounded-2xl md:px-8 lg:px-12 md:!pb-8 lg:!pb-12 px-4 pb-4 reveal">
-        <div className="solutions md:py-8 py-6 flex md:items-center md:justify-center justify-start items-start">
+    <div className="container mx-auto md:w-[90%] w-full main-section-padding">
+      <div
+        className={`md:px-8 lg:px-12 reveal py-10 rounded-[30px] ${
+          pathname !== "/" ? "bg-themeColor" : ""
+        }`}
+      >
+        <div className="solutions md:pb-8 pb-6 flex md:items-center md:justify-center justify-start items-start font-bold">
           {pathname === "/application-development-services/" ? (
-            <h2 className="text-center w-2/3">
+            <h2 className="text-center w-2/3 !text-colorWhite">
               Why Choose Brilworks for your App Development Needs?
             </h2>
           ) : (
             <>
-              {pathname === "/saas-application-development-services/" ? (
-                <h2 className="text-center w-2/3">Here's what sets us apart</h2>
+              {pathname === "/saas-application-development-services/" ||
+              pathname === "/generative-ai-development-services/" ? (
+                <h2 className="text-center w-2/3 !text-colorWhite">
+                  Here's what sets us apart
+                </h2>
               ) : (
                 <>
                   {pathname === "/frappe-development-services/" ? (
-                    <h2 className="text-center w-full">
-                      Why Choose Brilworks for Frappe Development ?
+                    <h2 className="text-center w-full !text-colorWhite">
+                      Why Choose Brilworks for Frappe Development?
                     </h2>
                   ) : (
                     <>
-                      {pathname === "/generative-ai-development-services/" ? (
-                        <h2 className="text-center w-full">
-                          Here's what sets us apart
-                        </h2>
+                      {pathname === "/" ? (
+                        <WhyChooseText />
                       ) : (
-                        <h2>Why Choose Us?</h2>
+                        <h2 className="text-center w-full !text-colorWhite">
+                          Why Choose Brilworks?
+                        </h2>
                       )}
                     </>
                   )}
@@ -514,34 +518,37 @@ const HomepageWhyChooseUs = () => {
           )}
         </div>
         <div
-          className={`grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
+          className={`w-full xl:w-[80%] mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
             pathname === "/aws-consulting-services/" ||
             pathname === "/business-intelligence-services/" ||
             pathname === "/adalo-development-services/"
               ? "xl:grid-cols-2 lg:w-2/3 mx-auto"
-              : "xl:grid-cols-3"
+              : "xl:grid-cols-2"
           } `}
         >
           {pathname === "/" &&
             whyChooseUscontent?.map(({ title, description }, index) => (
-              <Card className="shadow-lg shadow-black-500/50" key={index}>
-                <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
-                  {title}
-                </h4>
-                <CardBody className="p-4 why_text lg:w-11/12">
-                  {description}
-                </CardBody>
-              </Card>
+              <div
+                className="rounded-[30px] border border-borderGray overflow-visible h-auto"
+                key={index}
+              >
+                <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-6 transition-all duration-[0.5s]">
+                  <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
+                    {title}
+                  </h4>
+                  <CardBody className="desc md:text-xl text-base p-4 lg:w-11/12">
+                    {description}
+                  </CardBody>
+                </Card>
+              </div>
             ))}
           {showDataBasedOnPathname[pathname]?.map(
             ({ title, description }, index) => (
               <Card className="shadow-lg shadow-black-500/50" key={index}>
-                <h4 className="text-xl why_text font-bold leading-snug text-black p-4 pb-0">
+                <h4 className="text-xl font-bold leading-snug text-black p-4 pb-0">
                   {title}
                 </h4>
-                <CardBody className="p-4 why_text lg:w-11/12">
-                  {description}
-                </CardBody>
+                <CardBody className="p-4 lg:w-11/12">{description}</CardBody>
               </Card>
             )
           )}

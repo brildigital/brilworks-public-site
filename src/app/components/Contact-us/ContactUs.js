@@ -38,21 +38,21 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full background_contact">
+        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full bg-themeColor">
           <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-            <h2 className="white_text uppercase !w-full md:py-8">
+            <h2 className="!text-colorWhite font-extrabold uppercase !w-full md:py-8">
               Ready to scale your business to new heights?
             </h2>
           </div>
           <div className="ready_content">
             <div className="home_sec2_txt4 pt-2">
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
+              <p className="!text-colorWhite !text-left md:!text-xl !text-base p-style">
                 Just fill out the form, and let our experts look after the rest.
                 Here’s what will happen next:
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4 ">
-              <p className="white_text contact_title md:!text-2xl !text-xl  !text-left">
+              <p className="font-bold md:!text-2xl !text-xl  !text-left">
                 1. Initiating Contact
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -60,7 +60,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 2. Share Your Requirement
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -70,7 +70,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 3. Sign Non-Disclosure Agreement
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -79,7 +79,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl contact_title">
+              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
                 4. Estimated Budget/Cost
               </p>
               <p className="white_text !text-left md:!text-xl !text-base p-style">
@@ -91,8 +91,8 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-      <section className="xl:mt-24 lg:mt-[60px] mt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
-        <div className="bg-[#01B6D3] medium-font w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
+      <section className="xl:pt-24 lg:pt-16 pt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
+        <div className="bg-themeColor w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
           <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
             For career inquiry email us on <strong>hr@brilworks.com</strong>
           </h2>
@@ -105,92 +105,90 @@ const ContactUs = () => {
         </div>
       </section>
       <section>
-        <div className="xl:mt-24 lg:mt-[60px] md:mt-8 mt-4">
-          <div className="service_width mx-auto md:px-[0px] px-[15px] reveal">
-            <div className="solutions md:text-center text-left py-10">
-              <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-                WHAT MAKES US BRILLIANT?
-              </h2>
+        <div className="service_width mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] md:px-0 px-4 reveal">
+          <div className="solutions md:text-center text-left py-10">
+            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
+              WHAT MAKES US BRILLIANT?
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0">
+            <div className="contact_box">
+              <div className="mx-auto">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="/images/people-01.png"
+                  alt="people"
+                  className="md:!w-[92px]"
+                />
+              </div>
+              <div className="steps_service flex items-center justify-center">
+                <div className="no_flex">
+                  <div className="no_flex_height">
+                    <div className="developer_sec6_title text-center mob_center">
+                      <h3>1. People</h3>
+                    </div>
+                    <div className="service_description text-center mob_center">
+                      <p>
+                        With our design &amp; development ninjas by our side,
+                        there’s absolutely nothing we can’t achieve.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0">
-              <div className="contact_box">
-                <div className="mx-auto">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/people-01.png"
-                    alt="people"
-                    className="md:!w-[92px]"
-                  />
-                </div>
-                <div className="steps_service flex items-center justify-center">
-                  <div className="no_flex">
-                    <div className="no_flex_height">
-                      <div className="developer_sec6_title text-center mob_center">
-                        <h3>1. People</h3>
-                      </div>
-                      <div className="service_description text-center mob_center">
-                        <p>
-                          With our design &amp; development ninjas by our side,
-                          there’s absolutely nothing we can’t achieve.
-                        </p>
-                      </div>
+            <div className="contact_box">
+              <div className="mx-auto">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="/images/progress-01.png"
+                  alt="progress"
+                  className="md:!w-[92px]"
+                />
+              </div>
+
+              <div className="steps_service flex items-center justify-center">
+                <div className="no_flex ">
+                  <div className="no_flex_height">
+                    <div className="developer_sec6_title text-center mob_center">
+                      <h3>2. Progress</h3>
+                    </div>
+                    <div className="service_description text-center mob_center">
+                      <p>
+                        We’ve built and launched more than 120+ products in 20
+                        countries across the globe.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="contact_box">
-                <div className="mx-auto">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/progress-01.png"
-                    alt="progress"
-                    className="md:!w-[92px]"
-                  />
-                </div>
-
-                <div className="steps_service flex items-center justify-center">
-                  <div className="no_flex ">
-                    <div className="no_flex_height">
-                      <div className="developer_sec6_title text-center mob_center">
-                        <h3>2. Progress</h3>
-                      </div>
-                      <div className="service_description text-center mob_center">
-                        <p>
-                          We’ve built and launched more than 120+ products in 20
-                          countries across the globe.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="contact_box">
+              <div className="mx-auto">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="/images/passion-01.png"
+                  alt="passion"
+                  className="md:!w-[92px]"
+                />
               </div>
-
-              <div className="contact_box">
-                <div className="mx-auto">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/passion-01.png"
-                    alt="passion"
-                    className="md:!w-[92px]"
-                  />
-                </div>
-                <div className="steps_service flex items-center justify-center">
-                  <div className="no_flex">
-                    <div className="no_flex_height">
-                      <div className="developer_sec6_title text-center mob_center">
-                        <h3>3. Passion</h3>
-                      </div>
-                      <div className="service_description text-center mob_center">
-                        <p>
-                          We help you move your product vision from the
-                          whiteboard to the real world.
-                        </p>
-                      </div>
+              <div className="steps_service flex items-center justify-center">
+                <div className="no_flex">
+                  <div className="no_flex_height">
+                    <div className="developer_sec6_title text-center mob_center">
+                      <h3>3. Passion</h3>
+                    </div>
+                    <div className="service_description text-center mob_center">
+                      <p>
+                        We help you move your product vision from the whiteboard
+                        to the real world.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -199,10 +197,10 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="service_width contact_sec3 md:!pt-[100px] !pt-1 reveal">
+        <div className="service_width xl:pt-[6rem] md:pt[4rem] pt-[2rem] reveal">
           <div className="just_call_sec">
-            <div className="solutions text-center py-8">
-              <h2 className="textUpercase md:!text-center !text-left !w-full">
+            <div className="solutions text-center pt-8">
+              <h2 className="md:!text-center !text-left !w-full">
                 JUST A CALL AWAY
               </h2>
             </div>
@@ -273,16 +271,9 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="just_call_sec">
-          <div className="solutions text-center py-8">
-            <h2 className="uppercase md:!text-center !text-left ml-4 !w-full">
-              Client Testimonials
-            </h2>
-          </div>
-        </div>
         <ClientReviews />
 
-        <div className="mx-auto sec3_width_home pt-24 md:!mb-[4rem] !mb-[2rem] reveal">
+        <div className="mx-auto sec3_width_home xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
           <div className="bg_grey">
             <div className="like_flex">
               <div className="like_basis">

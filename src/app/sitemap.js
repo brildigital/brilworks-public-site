@@ -6,13 +6,13 @@ export default async function sitemap() {
 
   const blog = blogListData.map((story) => {
     const publishedDateStr = story?.content?.Published;
-    const dateObj = new Date(publishedDateStr);
+    const dateObj = new Date(publishedDateStr) || new Date();
     if (isNaN(dateObj.getTime())) {
       throw new Error(`Invalid date: ${publishedDateStr}`);
     }
     const adjustedDate = addMinutes(dateObj, 330);
     return {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}${story?.full_slug}/`,
       lastModified: adjustedDate,
     };
   });
