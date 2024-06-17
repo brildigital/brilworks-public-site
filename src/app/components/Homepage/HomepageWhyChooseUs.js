@@ -479,7 +479,7 @@ const HomepageWhyChooseUs = () => {
   return (
     <div className="container mx-auto md:w-[90%] w-full main-section-padding">
       <div
-        className={`md:px-8 lg:px-12 reveal py-10 rounded-[30px] ${
+        className={`md:p-8 lg:p-12 p-4 reveal rounded-[30px] ${
           pathname !== "/" ? "bg-themeColor" : ""
         }`}
       >

@@ -155,7 +155,7 @@ const Article = ({ blok }) => {
   const author = blogAuthor(blok?.BlogAuthor);
 
   return (
-    <div className="md:mt-[8rem] mt-[6rem] blog-main">
+    <div className="md:pt-[8rem] pt-[6rem] blog-main">
       {isLoading ? (
         <ArticleSkeleton />
       ) : (

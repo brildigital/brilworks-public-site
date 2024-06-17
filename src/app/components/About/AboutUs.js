@@ -369,7 +369,7 @@ const AboutUs = () => {
         </div>
 
         <div className="xl:my-[6rem] md:my-[4rem] my-[2px] reveal">
-          <div className="home_sec2_txt1 md:text-center text-left">
+          <div className="home_sec2_txt1 md:text-center text-left md:pt-0 pt-8">
             <h2>
               Trusted by companies
               <br className="xl:hidden block" />

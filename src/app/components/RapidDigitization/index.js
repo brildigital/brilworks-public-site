@@ -56,7 +56,7 @@ const RapidDigitization = () => {
         <RapidDigitizationBenefits />
       </div>
       <div className="container mx-auto">
-        <div className="sm:w-[90%] w-[100%] mx-auto xl:pb-[6rem] md:pb-[4rem] pb-[2rem] end-to-end reveal">
+        <div className="sm:w-[90%] w-[100%] mx-auto xl:pb-[6rem] md:pb-[4rem] pb-[2rem] end-to-end reveal md:px-8 px-4">
           <div className="bg-themeColor rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
             <p className="md:text-5xl text-3xl !leading-tight md:text-center md:max-w-7xl text-colorWhite">
               Let us guide you through every step of your digital transformation
@@ -70,7 +70,7 @@ const RapidDigitization = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-themeLight py-10">
+        <div className="bg-themeLight">
           <ClientReviews />
         </div>
         <div className="bg-themeLight">

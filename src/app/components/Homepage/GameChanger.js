@@ -48,7 +48,7 @@ const GameChanger = () => {
           </div>
         </div>
 
-        <div className="flex-none home_txt3 home_txt3_top_padding md:py-5 p-0 absolute md:bottom-[6%] bottom-[2%] sxl:left-[8.5%] left-[5%]">
+        <div className="flex-none home_txt3 home_txt3_top_padding md:py-5 p-0 absolute md:bottom-[6%] bottom-[3%] sxl:left-[8.5%] left-[5%]">
           <span className="md:!text-2xl flex gap-2 flex-wrap">
             <Link
               className="hover:!text-themeColor"

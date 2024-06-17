@@ -57,10 +57,10 @@ const HomePageBlogs = () => {
   }, []);
 
   return (
-    <div className="bg-sectionBG">
+    <div className={pathname === "/" ? "bg-sectionBG" : ""}>
       <div className="container mx-auto main-section-padding reveal">
         <BlogText />
-        <div className="container mx-auto w-[90%] blog-home reveal">
+        <div className="container mx-auto md:w-[90%] w-full blog-home reveal">
           {blogData?.length ? (
             blogData.map(({ slug, name, content }, index) => {
               if (

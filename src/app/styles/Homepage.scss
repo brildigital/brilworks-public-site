@@ -176,6 +176,9 @@
 .honors-swiper {
   .swiper {
     width: 90%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
 
     .swiper-wrapper {
       padding: 0 0 4rem !important;

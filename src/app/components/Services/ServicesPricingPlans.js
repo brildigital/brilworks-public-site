@@ -31,7 +31,7 @@ const ServicesPricingPlans = () => {
             <br /> Augmentation Solution
           </h2>
         </div>
-        <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
+        <div className="endTO_text_content home_sec2_txt4 xl:mb-24 md:mb-16 mb-8">
           <p className="!text-[1.2rem]">
             Transparent pricing  | Top talent | Data Security | Dedicated client
             support

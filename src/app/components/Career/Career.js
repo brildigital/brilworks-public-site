@@ -27,7 +27,7 @@ const Career = () => {
               <h1 className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
                 <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
-                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
+                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor font-bold">
                     World of Brilliance
                   </p>
                 </div>
@@ -107,13 +107,13 @@ const Career = () => {
               </Link>
             </div>
 
-            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] !w-5/6">
+            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] md:!w-5/6 w-full">
               <img
                 decoding="async"
                 loading="lazy"
                 src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
                 alt="career"
-                className="rounded-[36px]"
+                className="md:rounded-[36px] rounded-[20px]"
               />
             </div>
             <div className="reveal">
@@ -128,8 +128,11 @@ const Career = () => {
                   <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor font-bold">
                     It’s all about the
                   </p>
+                  <div className="md:hidden block home_sec2_txt1 w-fit txt_center border-[#000000] border-b-[3px]">
+                    <p>people</p>
+                  </div>
                 </div>
-                <div className="home_sec2_txt1 txt_center border-[#000000] border-b-[5px]">
+                <div className="md:block hidden home_sec2_txt1 txt_center border-[#000000] border-b-[5px]">
                   <p>people</p>
                 </div>
               </div>
@@ -157,7 +160,7 @@ const Career = () => {
                       from our
                     </p>
                   </div>
-                  <div className="home_sec2_txt1 text-center border-[#000000] border-b-[5px]">
+                  <div className="home_sec2_txt1 text-center border-[#000000] border-b-[3px]">
                     <p>people</p>
                   </div>
                 </div>
@@ -620,7 +623,7 @@ const Career = () => {
           </p>
         </div>
 
-        <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-[30px]">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 md:gap-[30px] gap-3">
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
@@ -855,7 +858,7 @@ const Career = () => {
         </div>
 
         <div
-          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home xl:py-[6rem] md:py-[4rem] py-[2rem] mx-auto"
+          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home xl:py-[6rem] md:py-[4rem] py-[2rem] mx-auto md:px-8 px-4"
           id="section10"
         >
           <CareerContactForm />

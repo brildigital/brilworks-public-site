@@ -73,7 +73,7 @@ const ContactBlock = () => {
 
           <Link href="/contact-us/">
             <div className="!bg-colorWhite px-[14px] py-[10px] border border-colorBlack shadow-none hover:shadow-lg cursor-pointer">
-              <p className="uppercase">
+              <p className="uppercase md:text-base text-sm">
                 {pathname === "/kubernetes-consulting-services/" ? (
                   "SCHEDULE A CALL"
                 ) : (

@@ -6,7 +6,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 const ArticleSkeleton = () => {
   return (
     <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
-      <div className="md:mt-[8rem] mt-[6rem] blog-main">
+      <div className="md:pt-[8rem] pt-[6rem] blog-main">
         <div className="container max-w-[1280px] mx-auto my-0 !px-4">
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">

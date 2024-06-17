@@ -710,7 +710,7 @@ const OurProcessPage = () => {
         <div className="mx-auto pt-10">
           <div className="accordion-tab-section our-process-endToEnd2">
             <div className="flex flex-wrap">
-              <div className="lg:w-6/12 w-full md:mt-[0px]">
+              <div className="lg:w-6/12 w-full md:mt-[0px] md:mb-0 mb-8">
                 <div>
                   {ourProcessLowerAccordionItems.map(
                     ({ imageSrc, imageAlt }, index) => (
