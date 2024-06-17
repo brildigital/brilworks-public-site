@@ -48,13 +48,6 @@ const Article = ({ blok }) => {
       console.error(error);
     }
   }
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-
-    return () => clearTimeout(loadingTimeout);
-  }, []);
 
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
