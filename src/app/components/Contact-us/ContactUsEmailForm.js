@@ -2,11 +2,9 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
-import { usePathname } from "next/navigation";
 import Button from "../Common/Button";
 
 const ContactUsEmailForm = ({ inquiryForm }) => {
-  const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
@@ -34,37 +32,36 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setRespMessage("Your response is submitted successfully.");
 
-    // try {
-    //   const response = await fetch(
-    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/contact-us`,
-    //     {
-    //       method: "POST",
-    //       header: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ ...formData, page: pathname }),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/contact-us`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
+      );
 
-    //   if (response.ok) {
-    //     setFormData({ name: "", email: "", phone: "", message: "" });
-    //     setRespMessage("Your response is submitted successfully.");
-    //     clearMessage();
-    //   } else {
-    //     setRespMessage("Something went wrong!");
-    //   }
-    //   setIsSubmitting(false);
-    // } catch (error) {
-    //   console.error("Error sending email", error);
-    //   setIsSubmitting(false);
-    // }
+      if (response.ok) {
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setRespMessage("Your response is submitted successfully.");
+        clearMessage();
+      } else {
+        setRespMessage("Something went wrong!");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error sending email", error);
+      setIsSubmitting(false);
+    }
   };
   return (
     <div>
       <form
-        className="wpcf7-form init"
+        className="wpcf7-form"
         id="contactus-page-form"
         onSubmit={handleSubmit}
       >
@@ -157,33 +154,14 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
             disabled={isSubmitting}
           />
         ) : (
-          <button
-            className={`btn_paddinng contact_btn btn_flex`}
+          <Button
             type="submit"
+            innerClassName="flex items-center justify-center gap-2"
+            className={isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8 !pr-5"}
+            icon={isSubmitting ? <Loader /> : "right-arrow"}
+            label={isSubmitting ? "Submitting" : "Submit"}
             disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <div className="py-[8px] px-[41px]">
-                <Loader />
-              </div>
-            ) : (
-              <>
-                <div className="formBtn_icon grid-flow-row">
-                  <p>
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/right_arrow.png"
-                      alt="arrow"
-                    />
-                  </p>
-                </div>
-                <p className="send_btn" id="submit" name="btnSubmit">
-                  Submit
-                </p>
-              </>
-            )}
-          </button>
+          />
         )}
       </form>
     </div>

@@ -20,7 +20,7 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
     open={open === id}
     icon={<Icon id={id} open={open} />}
     className="accordion-item"
-    itemScope="true"
+    itemScope
     itemProp="mainEntity"
     itemType="https://schema.org/Question"
   >

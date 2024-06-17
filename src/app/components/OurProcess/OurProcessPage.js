@@ -532,7 +532,7 @@ const OurProcessPage = () => {
           </div>
           <div className="basis-[55%]">
             <div className="home_sec2_txt4">
-              <p className="!text-left">
+              <p className="!text-left !text-[1.2rem]">
                 Over the past decade, we’ve developed a flexible production
                 process that enables us to deliver high-quality solutions on
                 time, regardless of scale. Our experienced team offers a breadth
@@ -544,7 +544,7 @@ const OurProcessPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto service_width pb-[4rem] reveal">
+      <div className="mx-auto service_width xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
         <div className="flex !flex-col md:!flex-row items-start gap-[1rem]">
           <div className="our_img_text_sec relative">
             <div className="our_img">
@@ -616,26 +616,26 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end reveal"
+        className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal"
         id="workSec4"
       >
         <div className="end-To-end">
           <div className="endTO_text home_sec2_txt3">
-            <p className="md:!w-[74%] !w-full !p-0">
+            <p className="md:!w-[74%] !w-full !p-0 !font-bold">
               OUR PROCESS FOR END-TO-END PROJECT DEVELOPMENT
             </p>
           </div>
         </div>
 
         <div className="endTO_text_content home_sec2_txt4">
-          <p>
+          <p className="mx-auto md:!w-[74%] !w-full md:!text-xl text-base">
             We’ll understand your project needs and goals to guide you from the
             project initiation to the release phase. Depending on your goals, we
             provide consultation and an end-to-end development plan.
           </p>
         </div>
 
-        <div className="mx-auto xl:pt-[128px] md:pt-[60px] pt-[32px]">
+        <div className="mx-auto pt-10">
           <div className="accordion-tab-section our-process-endToEnd">
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full">
@@ -688,29 +688,29 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end reveal"
+        className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal"
         id="workSec5"
       >
         <div className="end-To-end">
           <div className="endTO_text home_sec2_txt3">
-            <p className="md:!w-[74%] !w-full !p-0">
+            <p className="md:!w-[74%] !w-full !p-0 !font-bold">
               OUR PROCESS FOR TEAM EXTENSION
             </p>
           </div>
         </div>
 
         <div className="endTO_text_content home_sec2_txt4">
-          <p>
+          <p className="mx-auto md:!w-[74%] !w-full md:!text-xl text-base">
             Whether you want to add a member to your existing team or build an
             entire SCRUM team from scratch, We’ll handle all the search,
             interviewing and vetting to help you find the right team members.
           </p>
         </div>
 
-        <div className="mx-auto px xl:pt-[128px] md:pt-[60px] pt-[32px]">
+        <div className="mx-auto pt-10">
           <div className="accordion-tab-section our-process-endToEnd2">
             <div className="flex flex-wrap">
-              <div className="lg:w-6/12 w-full md:mt-[0px] mb-[40px]">
+              <div className="lg:w-6/12 w-full md:mt-[0px]">
                 <div>
                   {ourProcessLowerAccordionItems.map(
                     ({ imageSrc, imageAlt }, index) => (

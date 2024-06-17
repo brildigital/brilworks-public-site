@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getDeveloperData } from "../lib/getDeveloper";
 import { usePathname } from "next/navigation";
+import Button from "../Common/Button";
 
 const TechnologyDevelopers = () => {
   const pathname = usePathname();
@@ -63,7 +64,7 @@ const TechnologyDevelopers = () => {
   }, []);
 
   return (
-    <div className="mx-auto service_width md:pb-[6rem] md:pt[4rem] py-[4rem] workpadd_borderTop end-to-end">
+    <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
         {techDeveloperData?.length ? (
           techDeveloperData.map(({ content, id }, index) => (
@@ -80,7 +81,7 @@ const TechnologyDevelopers = () => {
             </div>
           ))
         ) : (
-          <div className="w-full flex align-middle justify-center pt-8">
+          <div className="w-full flex items-center justify-center py-8">
             <FetchDataSpinner />
           </div>
         )}
@@ -121,7 +122,7 @@ const TechnologyDevelopers = () => {
                             <p className="!text-[1.5rem] !font-bold">
                               {content?.Name}
                             </p>
-                            <p className="ng-binding !font-bold">
+                            <p className="ng-binding !font-bold !text-lg">
                               {content?.Designation}
                             </p>
                           </div>
@@ -151,8 +152,10 @@ const TechnologyDevelopers = () => {
                                   height="22"
                                 />
                               </p>
-                              <div className="service_description_font_sec5">
-                                <p>Expertise in</p>
+                              <div>
+                                <p className="!text-lg font-semibold">
+                                  Expertise in
+                                </p>
                               </div>
                             </div>
                             <div
@@ -160,7 +163,7 @@ const TechnologyDevelopers = () => {
                                 pathname === "/hire-blockchain-developer/"
                                   ? "gap-[1.4rem]"
                                   : "gap-[1rem]"
-                              } flex-row flex-wrap custome_height_technology tech-tags`}
+                              } flex-row flex-wrap`}
                             >
                               {content?.Experts_In?.length ? (
                                 content?.Experts_In.map((technology, index) => (
@@ -168,8 +171,8 @@ const TechnologyDevelopers = () => {
                                     <div
                                       className={`ideaBg_class ${expertInTechnologyColor[index]}`}
                                     >
-                                      <div className="idea_title work_sec2_txt4 ">
-                                        <p>{technology}</p>
+                                      <div className="idea_title ">
+                                        <p className="!text-lg">{technology}</p>
                                       </div>
                                     </div>
                                   </div>
@@ -193,13 +196,13 @@ const TechnologyDevelopers = () => {
                               height="23"
                             />
                           </p>
-                          <div className="service_description_font_sec5">
-                            <p>
+                          <div>
+                            <p className="!text-lg">
                               {content?.Experience_in_Year}+ Years of Experience
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-center gap-[1rem] pt-[1rem]">
+                        <div className="flex items-center gap-[1rem] py-[1rem]">
                           <p>
                             <Image
                               className="md:w-[15px] xl:w-full"
@@ -209,35 +212,30 @@ const TechnologyDevelopers = () => {
                               height="22"
                             />
                           </p>
-                          <div className="service_description_font_sec5">
-                            <p>Full Time Available</p>
+                          <div>
+                            <p className="!text-lg">Full Time Available</p>
                           </div>
                         </div>
-                        <div className="pt-[5rem]">
-                          <Link
-                            href="#section10_service"
-                            onClick={(e) =>
-                              scrollToSection(e, "section10_service")
-                            }
-                          >
-                            <div className="btn_flex_dev xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-                              <div className="chat_icon">
+                        <div className="flex items-center justify-center md:py-[2rem] py-[2rem]">
+                          <Button
+                            innerClassName="flex items-center justify-center gap-2 !text-colorBlack hover:!text-colorWhite"
+                            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor"
+                            redirect="#section10_service"
+                            label={` Hire ${content?.Name}`}
+                            icon={
+                              <div className="w-[25px]">
                                 <img
                                   decoding="async"
                                   loading="lazy"
                                   src="/images/hire-hand.png"
                                   alt="hand"
-                                  width="28"
-                                  height="44"
+                                  width="20"
+                                  height="30"
                                 />
                               </div>
-                              <div className="chat_btn">
-                                <p className="transition ng-binding">
-                                  Hire {content?.Name}
-                                </p>
-                              </div>
-                            </div>
-                          </Link>
+                            }
+                            scrollingButton
+                          />
                         </div>
                       </div>
                     </div>

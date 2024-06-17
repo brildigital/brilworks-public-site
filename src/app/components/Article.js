@@ -17,6 +17,7 @@ import {
   formattedDate,
 } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
+import ArticleSkeleton from "./Blog/ArticleSkeleton";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -47,6 +48,13 @@ const Article = ({ blok }) => {
       console.error(error);
     }
   }
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -143,23 +151,16 @@ const Article = ({ blok }) => {
     };
   }, [headings]);
 
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 1100);
-
-    return () => clearTimeout(loadingTimeout);
-  }, []);
-
   const author = blogAuthor(blok?.BlogAuthor);
 
   return (
-    <div className="blog-background md:pt-[8rem] pt-[6rem] blog-main">
-      {!blok ? (
-        <div className="flex items-center justify-center !py-60">
-          <FetchDataSpinner />
-        </div>
+    <div className="md:mt-[8rem] mt-[6rem] blog-main">
+      {isLoading ? (
+        <ArticleSkeleton />
       ) : (
+        // <div className="flex items-center justify-center !py-60">
+        //   <FetchDataSpinner />
+        // </div>
         <>
           <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
             <div className="flex flex-wrap -mx-4">
@@ -223,7 +224,7 @@ const Article = ({ blok }) => {
                     </span>
                     <span className="font-graphik">{blok?.title}</span>
                   </div>
-                  <h1 className="entry-title default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px]">
+                  <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px]">
                     {blok?.title}
                   </h1>
                 </div>
@@ -622,7 +623,7 @@ const Article = ({ blok }) => {
                             />
                           </div>
                           <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                            <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
+                            <div className="border-b-[1px] border-[#80808038] py-[1rem]">
                               <p className="entry-title default-max-width aspect-[518/116]">
                                 {name}
                               </p>

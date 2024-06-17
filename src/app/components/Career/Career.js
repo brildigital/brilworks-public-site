@@ -27,7 +27,7 @@ const Career = () => {
               <h1 className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
                 Welcome to our
                 <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
-                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
                     World of Brilliance
                   </p>
                 </div>
@@ -49,7 +49,7 @@ const Career = () => {
                 className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
               >
                 <div className="about_txt">
-                  <p className="change_link text-[21px]">
+                  <p className="change_link text-[21px] font-medium">
                     Explore Open Positions
                   </p>
                 </div>
@@ -80,7 +80,9 @@ const Career = () => {
                 className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
               >
                 <div className="about_txt">
-                  <p className="change_link text-[21px]">Join Our Team</p>
+                  <p className="change_link text-[21px] font-medium">
+                    Join Our Team
+                  </p>
                 </div>
                 <div className="aerrow relative">
                   <img
@@ -105,7 +107,7 @@ const Career = () => {
               </Link>
             </div>
 
-            <div className="mx-auto md:my-[8rem] my-[3rem] !w-5/6">
+            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] !w-5/6">
               <img
                 decoding="async"
                 loading="lazy"
@@ -123,7 +125,7 @@ const Career = () => {
 
               <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
                 <div className="home_sec2_txt2">
-                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+                  <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor">
                     It’s all about the
                   </p>
                 </div>
@@ -142,7 +144,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="md:my-[8rem] my-[3rem] !mb-0 reveal">
+            <div className="xl:my-[6rem] md:my-[4rem] my-[2rem] !mb-0 reveal">
               <div>
                 <div className="home_sec2_txt1">
                   <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
@@ -242,8 +244,8 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal">
-        <div className="border border-[#80808075] lg:p-[6rem] sm:p-[3rem] p-[1rem] rounded-[25px]">
+      <section className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
+        <div className="border border-[#80808075] xl:p-[4rem] md::p-[2rem] p-[1rem] rounded-[25px]">
           <div className="flex md:flex-row flex-col">
             <div className="basis-[35%]">
               <div className="flex items-center gap-[16px]">
@@ -556,7 +558,7 @@ const Career = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
+                  <div className="flex justify-between items-center py-[1.5rem]">
                     <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
                       <p>Career Opportunities</p>
                     </div>
@@ -610,10 +612,11 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal">
+      <section className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
         <div className="home_sec2_txt1 md:text-center text-left md:mb-[80px] mb-[40px]">
           <p>
-            <span className="abc">Why should you</span> join us?
+            <span className="text-themeColor font-bold">Why should you</span>{" "}
+            join us?
           </p>
         </div>
 
@@ -621,7 +624,10 @@ const Career = () => {
           <div className={`${!isMobile ? "hover_class" : ""} relative`}>
             <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
               <div className="home_txt3">
-                <p className="min-h-[128px]">Flexible Timings</p>
+                <p className="min-h-[128px]">
+                  Flexible
+                  <br className="hidden xl:block" /> Timings
+                </p>
               </div>
               <div className="flex items-center justify-between">
                 <div className="aerrow">
@@ -645,7 +651,7 @@ const Career = () => {
               </div>
             </div>
             <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box about_bg">
+              <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
                   <p>
                     We understand your responsibilities extend beyond your work
@@ -685,7 +691,7 @@ const Career = () => {
               </div>
             </div>
             <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box about_bg">
+              <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
                   <p>
                     We have an INR 5 Lac family floater plan that doesn’t
@@ -724,7 +730,7 @@ const Career = () => {
               </div>
             </div>
             <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box about_bg">
+              <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
                   <p>
                     No matter what anyone says, your family comes first. We
@@ -762,7 +768,7 @@ const Career = () => {
               </div>
             </div>
             <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box about_bg">
+              <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
                   <p>
                     We offer an assortment of team-building workshops and
@@ -800,7 +806,7 @@ const Career = () => {
               </div>
             </div>
             <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box about_bg">
+              <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
                   <p>
                     We conduct in-house trainings, seminars, and webinars to
@@ -815,12 +821,12 @@ const Career = () => {
       </section>
 
       <section
-        className="w-[93%] mx-auto md:my-[8rem] my-[4rem] reveal"
+        className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal"
         id="section7_career"
       >
         <div className="home_sec2_txt1 md:text-center text-left">
           <p>
-            <span className="abc">Explore </span> open positions
+            <span className="big-text-stroke">Explore </span> open positions
           </p>
         </div>
 
@@ -837,7 +843,7 @@ const Career = () => {
       </section>
 
       <section className="reveal">
-        <div className="container mx-auto px-[15px] xl:mb-[64px] lg:mb-[80px] mb-[32px] ">
+        <div className="container mx-auto px-[15px]">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
               <p className="xl:text-[96px] lg:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
@@ -854,7 +860,7 @@ const Career = () => {
         </div>
 
         <div
-          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home pt-[16px] xl:pb-[128px] pb-[40px] mx-auto"
+          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home xl:py-[6rem] md:py-[4rem] py-[2rem] mx-auto"
           id="section10"
         >
           <CareerContactForm />

@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Suspense } from "react";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
@@ -93,9 +92,7 @@ export default function RootLayout({ children }) {
             </>
           )}
           <Header />
-          <Suspense fallback={<p>Loading...</p>}>
-            <NextAuthProvider>{children}</NextAuthProvider>
-          </Suspense>
+          <NextAuthProvider>{children}</NextAuthProvider>
           <Footer />
         </body>
       </html>

@@ -304,7 +304,7 @@ const Blog = () => {
                   </div>
                   <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
                     <div className="sec9_txt1 border-b-[1px] border-[#80808038] py-[1rem]">
-                      <p className="entry-title default-max-width aspect-[518/116] ">
+                      <p className="entry-title default-max-width aspect-[518/116] xl:!text-[28px]">
                         {name}
                       </p>
                     </div>

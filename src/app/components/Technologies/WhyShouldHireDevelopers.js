@@ -7,13 +7,13 @@ const WhyShouldHireDevelopers = () => {
   const pathname = usePathname();
   return (
     <section className="service_width linear-gradient-bg reveal">
-      <div className="lg:py-[6rem] md:py-[4rem] py-[2rem]">
+      <div className="">
         <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem]">
           {pathname === "/hire-reactjs-developer/" ? (
             <>
               <div className="end-To-end">
                 <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                  <h2 className="!w-full md:p-0 p-3 ">
+                  <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                     WHY SHOULD YOU HIRE REACT JS DEVELOPERS FROM BRILWORKS?
                   </h2>
                 </div>
@@ -33,7 +33,7 @@ const WhyShouldHireDevelopers = () => {
                 <>
                   <div className="end-To-end">
                     <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                      <h2 className="!w-full md:p-0 p-3 ">
+                      <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                         WHY SHOULD YOU HIRE JAVA DEVELOPERS FROM BRILWORKS?
                       </h2>
                     </div>
@@ -56,7 +56,7 @@ const WhyShouldHireDevelopers = () => {
                     <>
                       <div className="end-To-end">
                         <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                          <h2 className="!w-full md:p-0 p-3 ">
+                          <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                             WHY SHOULD YOU HIRE NODE.JS DEVELOPERS FROM
                             BRILWORKS?
                           </h2>
@@ -76,7 +76,7 @@ const WhyShouldHireDevelopers = () => {
                         <>
                           <div className="end-To-end">
                             <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                              <h2 className="!w-full md:p-0 p-3 ">
+                              <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                                 WHY SHOULD YOU HIRE REACT NATIVE DEVELOPERS FROM
                                 BRILWORKS?
                               </h2>
@@ -99,7 +99,7 @@ const WhyShouldHireDevelopers = () => {
                             <>
                               <div className="end-To-end">
                                 <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                                  <h2 className="!w-full md:p-0 p-3 ">
+                                  <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                                     WHY SHOULD YOU HIRE AWS DEVELOPERS FROM
                                     BRILWORKS?
                                   </h2>
@@ -123,7 +123,7 @@ const WhyShouldHireDevelopers = () => {
                                 <>
                                   <div className="end-To-end">
                                     <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                                      <h2 className="!w-full md:p-0 p-3 ">
+                                      <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                                         WHY SHOULD YOU HIRE UI UX DEVELOPERS
                                         FROM BRILWORKS?
                                       </h2>
@@ -143,7 +143,7 @@ const WhyShouldHireDevelopers = () => {
                                 <>
                                   <div className="end-To-end">
                                     <div className="endTO_text solutions mt-[4rem] mb-0 md:pt-[3rem]">
-                                      <h2 className="!w-full md:p-0 p-3">
+                                      <h2 className="!w-full md:p-0 p-3 !text-colorWhite">
                                         WHY SHOULD YOU HIRE BLOCKCHAIN
                                         DEVELOPERS FROM BRILWORKS?
                                       </h2>

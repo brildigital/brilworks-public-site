@@ -88,7 +88,18 @@ const ClientReviews = () => {
             : ""
         }`}
       >
-        <BestAdvocateText />
+        {pathname === "/contact-us/" ? (
+          <div className="just_call_sec">
+            <div className="solutions text-center py-8">
+              <h2 className="md:!text-center !text-left !w-full">
+                CLIENT TESTIMONIALS
+              </h2>
+            </div>
+          </div>
+        ) : (
+          <BestAdvocateText />
+        )}
+
         <div className="relative reveal">
           <div className="rotate_img">
             <Image

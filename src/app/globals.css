@@ -4,9 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --light: "Inter", sans-serif;
-  --medium: "Inter", sans-serif;
-  --regular: "Inter", sans-serif;
+  --global-font: "Inter", sans-serif;
   --font_14: 0.875rem;
   --font_16: 1rem;
   --font_18: 1.125rem;
@@ -27,6 +25,7 @@
   --font_120: 6.5rem;
   --font_250: 13.625rem;
   --theme-color: #0d9a9a; /* New color */
+  --theme-light: #f3fdff; /* New color */
   --color_black: #000000;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
@@ -49,7 +48,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--global-font) !important;
 }
 
 body {
@@ -61,7 +60,7 @@ body {
   background-repeat: repeat;
   background-size: contain;
   width: 100%;
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--global-font) !important;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -90,70 +89,6 @@ a:focus,
 a:hover {
   text-decoration: none !important;
   color: inherit !important;
-}
-
-@font-face {
-  font-family: bw_gradual_demoblack;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-black.woff)
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: bw_gradual_demobold;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-bold.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: bw_gradual_demoextrabold;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-extrabold.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: bw_gradual_demolight;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-light.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-light.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: bw_gradual_demomedium;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-medium.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-medium.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: bw_gradual_demoregular;
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regular.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/bwgradualdemo/bwgradualdemo-regular.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
 
 input::-webkit-outer-spin-button,
@@ -203,7 +138,6 @@ input[type="number"] {
 
 .headstyle-other-page {
   font-size: 4rem;
-  font-family: var(--regular);
   color: var(--color_black);
   line-height: var(--line_height_1);
 }
@@ -285,6 +219,7 @@ input[type="number"] {
 
 .page-active {
   color: var(--theme-color) !important;
+  font-weight: 700 !important;
 }
 
 .item-accordion {
@@ -324,7 +259,7 @@ input[type="number"] {
 
 .menu_txt1 {
   padding: 1.5rem 0 1.5rem 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--color_gray);
 }
 
 .menu_txt1 p {
@@ -333,7 +268,7 @@ input[type="number"] {
 }
 
 .menu_txt1 p:hover {
-  color: var(--main_menu_hover_color);
+  color: var(--theme-color);
   transition: all 0.4s ease-in-out;
 }
 
@@ -369,7 +304,7 @@ input[type="number"] {
 
 .mega_menu_txt p {
   font-size: var(--font_16);
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--global-font) !important;
   color: var(--color_black);
   line-height: 2.5;
 }
@@ -394,13 +329,6 @@ input[type="number"] {
 .home_sec2_txt1 p,
 .home_sec2_txt1 h1 {
   line-height: var(--line_height_1);
-}
-
-.home_sec2_txt2 p {
-  font-family: var(--regular);
-  color: var(--color_black);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
 }
 
 .home_sec2_txt3 p {
@@ -488,7 +416,6 @@ input[type="number"] {
 
 .the-result .service_description p {
   font-size: var(--font_21) !important;
-  font-family: var(--medium) !important;
 }
 
 .contact_btn.btn-margin-top-0 {
@@ -505,7 +432,7 @@ input[type="number"] {
 
 .accordion .accordion-body {
   font-size: var(--font_24);
-  font-family: var(--regular);
+  font-family: var(--global-font);
   color: var(--color_black);
   padding-bottom: 1rem;
   width: fit-content;
@@ -516,7 +443,6 @@ input[type="number"] {
 .sec6_title p,
 .sec6_title h2 {
   font-size: var(--font_48);
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -574,21 +500,11 @@ input[type="number"] {
 }
 
 .react-technology .background-hover:hover {
-  background: rgb(28, 185, 213);
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
   border-radius: 0 0 28px 28px;
 }
-
-.chat_btn_technology {
-  font-size: var(--font_16);
-
-  color: var(--color_black);
+.react-technology .background-hover:hover p {
+  color: var(--white_color) !important;
 }
 
 .pricing_grid {
@@ -601,6 +517,11 @@ input[type="number"] {
 .pricing_grid .one:hover {
   background: var(--theme-color);
   border-radius: 0 0 0 28px;
+}
+.pricing_grid .one:hover p,
+.pricing_grid .two:hover p,
+.pricing_grid .three:hover p {
+  color: var(--white_color);
 }
 
 .pricing_grid .two:hover {
@@ -671,7 +592,6 @@ input[type="number"] {
 
 .sec10_txt1 {
   font-size: var(--font_24);
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -697,7 +617,6 @@ textarea.form-control-txt {
 .form-group-home {
   position: relative;
 }
-
 .form-group-home label,
 .form-group-home input {
   color: var(--white_color);
@@ -773,7 +692,7 @@ textarea.form-control-txt {
 .number {
   font-size: 100px;
   font-weight: 700;
-  color: var(--white_color);
+  color: var(--white_color) !important;
 }
 
 .number_home {
@@ -901,7 +820,6 @@ textarea.form-control-txt {
   border: 1px solid var(--theme-color);
   padding: 10px 14px;
   width: fit-content;
-  /* background: rgb(0, 196, 200); */
   background: var(--theme-color);
 }
 
@@ -976,7 +894,6 @@ textarea.form-control-txt {
   color: var(--color_black);
   font-size: 1.2rem;
   line-height: 2.5rem;
-  font-family: var(--regular);
 }
 
 .faq-bottom .accordion-body a:hover {
@@ -998,27 +915,11 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
-.section8_service .btn_flex {
-  padding: 8px 90px;
-  border-radius: 33px;
-  gap: 1rem;
-}
-
-.section8_service .btn_flex_dev {
-  padding: 8px 90px;
-  border-radius: 30px;
-  gap: 1rem;
-}
-
 .service_description p {
   font-size: var(--font_16) !important;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   min-height: 161px;
-}
-
-.ideaBg_class p {
-  font-size: var(--font_21) !important;
 }
 
 .home_sec3_box1 .style_sec3_swiper_home p {
@@ -1098,24 +999,6 @@ textarea.form-control-txt {
   gap: 1rem;
 }
 
-.btn_flex_dev:hover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 14px 30px;
-  background: rgb(0, 196, 200);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 196, 200, 1) 34%,
-    rgba(0, 221, 185, 1) 56%
-  );
-  border-radius: 30px;
-  border: 1px solid #00dfb8;
-  margin: 0 auto;
-  gap: 1rem;
-}
-
 .send_btn {
   border: 1px solid transparent;
   background: transparent;
@@ -1130,19 +1013,6 @@ textarea.form-control-txt {
 }
 
 .btn_flex:hover {
-  background: transparent;
-}
-
-.btn_flex_dev {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  padding: 14px 30px;
-  border-radius: 30px;
-  border: 1px solid #00dfb8;
-  margin: 0 auto;
-  gap: 1rem;
   background: transparent;
 }
 
@@ -1420,7 +1290,6 @@ textarea.form-control-txt {
 }
 
 .fintech-portfolio-sec {
-  font-family: var(--regular);
   font-size: 1.8rem;
 }
 
@@ -1608,18 +1477,6 @@ textarea.form-control-txt {
   line-height: var(--line_height_1_2);
 }
 
-.about_bg_sec2 {
-  height: 100%;
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
-}
-
 .home_sec2_txt1 p,
 .home_sec2_txt1 h1 {
   font-size: var(--font_96);
@@ -1633,7 +1490,6 @@ textarea.form-control-txt {
 }
 
 .abc {
-  font-family: var(--regular);
   color: var(--color_black);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
@@ -1655,7 +1511,7 @@ textarea.form-control-txt {
 .about_sec2_img1 {
   position: absolute;
   right: 3%;
-  top: 20%;
+  top: 12%;
   width: 48%;
 }
 
@@ -1684,12 +1540,11 @@ textarea.form-control-txt {
 
 .about_sec2_grid .number {
   font-size: 100px;
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
 .sign_data {
-  color: #01b5d0;
+  color: var(--theme-color);
   font-size: 70px;
 }
 
@@ -1699,7 +1554,6 @@ textarea.form-control-txt {
 
 .about_sec2_grid .number {
   font-size: 100px;
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -1732,7 +1586,6 @@ textarea.form-control-txt {
 .sec4_about h3 {
   transition: all ease-in-out 0.5s;
   font-size: 3.75rem;
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -1775,14 +1628,11 @@ textarea.form-control-txt {
 
 .about_bg {
   height: auto;
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
+  background: var(--theme-color);
+}
+.bril-belief {
+  height: auto;
+  background: var(--section-bg);
 }
 
 .about_sec4 .sec10_txt1 p {
@@ -1791,7 +1641,6 @@ textarea.form-control-txt {
 
 .sec10_txt1 {
   font-size: var(--font_24);
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -1810,7 +1659,6 @@ textarea.form-control-txt {
 
 .sec9_txt1 p {
   font-size: var(--font_32);
-  font-family: var(--regular);
   color: var(--color_black);
 }
 
@@ -1818,27 +1666,7 @@ textarea.form-control-txt {
   padding: 6rem 1rem;
   border-radius: 30px;
   margin: 0 auto;
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
-}
-
-.sec7_about_btn {
-  background-color: #fff;
-  border-radius: 20px;
-  width: fit-content;
-  padding: 10px 22px;
-  margin: 0 auto;
-}
-
-.sec7_about_btn p {
-  font-size: var(--font_16);
-  color: #000;
+  background: var(--theme-color);
 }
 
 .sec7_box_style .home_sec2_txt2 p {
@@ -1852,23 +1680,7 @@ textarea.form-control-txt {
 
 .home_txt3 p {
   font-size: var(--font_32);
-  font-family: var(--regular);
   color: var(--color_black);
-}
-
-.home_txt3 p {
-  font-family: var(--medium) !important;
-}
-
-.sec7_about_btn:hover {
-  background: #1cb9d5;
-  background: linear-gradient(
-    147deg,
-    rgba(28, 185, 213, 1) 12%,
-    rgba(67, 223, 219, 1) 32%,
-    rgba(67, 223, 219, 1) 60%,
-    rgba(0, 222, 175, 1) 84%
-  );
 }
 
 .how-we p {
@@ -1902,7 +1714,6 @@ textarea.form-control-txt {
 
 .our_text p {
   color: var(--white_color);
-  font-family: var(--medium) !important;
   margin: 0 auto;
   text-align: center;
   line-height: 1.4;
@@ -1938,7 +1749,6 @@ textarea.form-control-txt {
 
 .work_sec2_txt4 p {
   font-size: var(--font_21);
-  font-family: var(--regular);
   color: var(--color_black);
   line-height: var(--line_height_1);
 }
@@ -1957,7 +1767,6 @@ textarea.form-control-txt {
 
 .sec9_txt2 p {
   font-size: var(--font_16);
-  font-family: var(--light) !important;
   color: var(--color_black) !important;
 }
 
@@ -2143,10 +1952,6 @@ textarea.form-control-txt {
 }
 
 @media only screen and (max-width: 1550px) {
-  .home_sec2_txt2 p {
-    font-size: 4rem;
-  }
-
   .content {
     font-size: 5rem;
   }
@@ -2194,7 +1999,7 @@ textarea.form-control-txt {
   }
 
   .about_sec2_img1 {
-    top: 19%;
+    top: 13%;
   }
 
   .home_sec2_txt1 p,
@@ -2602,7 +2407,7 @@ textarea.form-control-txt {
   }
 
   .about_sec2_img1 {
-    top: 23%;
+    top: 22%;
   }
 
   .home_sec2_txt1 p,
@@ -3144,10 +2949,6 @@ textarea.form-control-txt {
     line-height: 40px;
   }
 
-  .home_sec2_txt2 p {
-    font-size: 2rem;
-  }
-
   .about_sec2_grid .number {
     font-size: 43px;
   }
@@ -3176,10 +2977,6 @@ textarea.form-control-txt {
 
   .get_touch {
     top: 46%;
-  }
-
-  .sec7_about_btn {
-    margin-left: unset;
   }
 
   .sec7_box_style {

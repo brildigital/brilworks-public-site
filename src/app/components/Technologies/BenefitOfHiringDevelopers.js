@@ -19,16 +19,16 @@ const BenefitOfHiringDevelopers = () => {
   const title = showTitleBasedOnPathname[pathname] || {};
 
   return (
-    <div className="mx-auto service_width md:py-[6rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
+    <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] pb-[2rem] pt-0 workpadd_borderTop end-to-end">
       <div className="end-To-end">
-        <div className="endTO_text solutions m-0">
-          <h2 className="!w-full py-8">
+        <div className="solutions text-center m-0">
+          <h2 className="!w-full pb-8">
             BENEFITS OF HIRING DEDICATED DEVELOPERS
           </h2>
         </div>
       </div>
 
-      <div className="endTO_text_content home_sec2_txt4 mb-[5rem]">
+      <div className="endTO_text_content home_sec2_txt4 xl:mb-[4rem] md:mb-[3rem] md-[2rem]">
         <p
           className={`md:px-[6rem] medium-font ${
             isMobile ? "text-start" : ""

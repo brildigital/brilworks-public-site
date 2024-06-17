@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
+import Button from "../Common/Button";
 
 const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -29,6 +29,51 @@ const ReactJSTechnology = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
+  const richFeatures = [
+    {
+      imgSrc: "/images/Enterprise-App-Development.png",
+      imgAlt: "ReactJS for Enterprise App Development",
+      title: "ReactJS for Enterprise App Development",
+      description:
+        "Our react js development services enable you to quickly build powerful web apps that are custom-tailored to address the needs of your enterprise.",
+    },
+    {
+      imgSrc: "/images/Custom-App-Development.png",
+      imgAlt: "ReactJS for Custom App Development",
+      title: "ReactJS for Custom App Development",
+      description:
+        "Build custom web applications that are perfect for your business needs or specific project needs with the help of our ReactJS developers.",
+    },
+    {
+      imgSrc: "/images/frontend.png",
+      imgAlt: "ReactJS for Front-End Development",
+      title: "ReactJS for Front-End Development",
+      description:
+        "Our React rockstars possess a comprehensive understanding of the framework, real-time data exchange, and the best practices to build modern user interfaces with real-time data validation.",
+    },
+    {
+      imgSrc: "/images/migration-1.png",
+      imgAlt: "ReactJS Website Migration & Integration",
+      title: "ReactJS Website Migration & Integration",
+      description:
+        "Our developers will help you move over your current code and all the data in a way that does not lose any information and makes sure everything is migrated smoothly.",
+    },
+    {
+      imgSrc: "/images/ui-ux-1.png",
+      imgAlt: "ReactJS UI/UX Development",
+      title: "ReactJS UI/UX Development",
+      description:
+        "We believe that a great user experience across all devices should be the goal of any developer in the business. Our developers strive to do just that.",
+    },
+    {
+      imgSrc: "/images/support.png",
+      imgAlt: "ReactJS Support & Maintenance",
+      title: "ReactJS Support & Maintenance",
+      description:
+        "Our team of skilled developers is always ready to serve you. We offer ReactJS support and maintenance services to help our clients to stay ahead of the competition, thus increasing their market share.",
+    },
+  ];
 
   return (
     <>
@@ -86,79 +131,51 @@ const ReactJSTechnology = () => {
             </div>
           </div>
         </div>
-        <div className="mx-auto service_width lg:py-[6rem] sm:py-[4rem] py-[2rem]">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
-                <Link
-                  href="#section10_service"
-                  onClick={(e) => scrollToSection(e, "section10_service")}
-                >
-                  <p className="uppercase !p-0 !ml-[0] !w-full">
-                    Hire ReactJS Developers to Fire Up Your Frontend
-                  </p>
-                </Link>
+                <p className="uppercase !p-0 !ml-[0] !w-full">
+                  Hire ReactJS Developers to Fire Up Your Frontend
+                </p>
               </div>
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
-                <p className="!text-left !text-[1.2rem]">
+                <p className="!text-left !text-base lg:!text-xl">
                   Our experienced Reactjs developers have built and maintained
                   scalable, intuitive, and interactive applications that have
                   served millions of users. If you’re planning on using React
                   software development services, we’re the right partner for
                   you.
                 </p>
-
-                <div className="flex md:gap-8 md:mt-[50px] flex-wrap">
-                  <Link
-                    href="#pricing"
-                    onClick={(e) => scrollToSection(e, "pricing")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Plan & Pricing
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="#section10_service"
-                    onClick={(e) => scrollToSection(e, "section10_service")}
-                  >
-                    <div className="btn_paddinng contact_btn btn_flex !m-[0px]">
-                      <div className="formBtn_icon">
-                        <p>
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            src="/images/right_arrow.png"
-                            alt="arrow"
-                          />
-                        </p>
-                      </div>
-
-                      <p className="xl:!text-[20px] lg:!text-[18px]">
-                        Hire React.js Developers
-                      </p>
-                    </div>
-                  </Link>
+                <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#pricing"
+                      label="Plan & Pricing"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
+                  <div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-1"
+                      className="!pr-5"
+                      redirect="#section10_service"
+                      label="Hire ReactJS Developers"
+                      icon="right-arrow"
+                      scrollingButton
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="mx-auto service_width md:pt-[6rem] pt-[4rem] workpadd_borderTop end-to-end">
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
               <h2 className="!w-full p-0">
@@ -171,188 +188,58 @@ const ReactJSTechnology = () => {
 
           <div className="service_grid_img reveal">
             <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px] ">
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Enterprise-App-Development.png"
-                    alt="ReactJS for Enterprise App Development"
-                  />
-                </div>
+              {richFeatures.map(
+                ({ imgSrc, imgAlt, title, description }, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]"
+                  >
+                    <div className="basis-[15%]">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src={imgSrc}
+                        alt={imgAlt}
+                      />
+                    </div>
 
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 01.</div>
-                  <div className="service_title">
-                    <h3>ReactJS for Enterprise App Development</h3>
+                    <div className="service_txt basis-[85%]">
+                      <div className="service_num">&lt; 0{index}.</div>
+                      <div className="service_title">
+                        <h3>{title}</h3>
+                      </div>
+                      <div className="service_description">
+                        <p>{description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="service_description">
-                    <p>
-                      Our react js development services enable you to quickly
-                      build powerful web apps that are custom-tailored to
-                      address the needs of your enterprise.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Custom-App-Development.png"
-                    alt="ReactJS for Custom App Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 02.</div>
-                  <div className="service_title">
-                    <h3>ReactJS for Custom App Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Build custom web applications that are perfect for your
-                      business needs or specific project needs with the help of
-                      our ReactJS developers.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className=""
-                    src="/images/frontend.png"
-                    alt="ReactJS for Front-End Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 03.</div>
-                  <div className="service_title">
-                    <h3>ReactJS for Front-End Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Our React rockstars possess a comprehensive understanding
-                      of the framework, real-time data exchange, and the best
-                      practices to build modern user interfaces with real-time
-                      data validation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/migration-1.png"
-                    alt="ReactJS Website Migration & Integration"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 04.</div>
-                  <div className="service_title">
-                    <h3>ReactJS Website Migration & Integration</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Our developers will help you move over your current code
-                      and all the data in a way that does not lose any
-                      information and makes sure everything is migrated
-                      smoothly.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/ui-ux-1.png"
-                    alt="ReactJS UI/UX Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 05.</div>
-                  <div className="service_title">
-                    <h3>ReactJS UI/UX Development</h3>
-                  </div>
-
-                  <div className="service_description">
-                    <p>
-                      We believe that a great user experience across all devices
-                      should be the goal of any developer in the business. Our
-                      developers strive to do just that.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/support.png"
-                    alt="ReactJS Support & Maintenance"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 06.</div>
-                  <div className="service_title">
-                    <h3>ReactJS Support & Maintenance</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Our team of skilled developers is always ready to serve
-                      you. We offer ReactJS support and maintenance services to
-                      help our clients to stay ahead of the competition, thus
-                      increasing their market share.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                )
+              )}
             </div>
           </div>
 
-          <div className="w-full md:my-[60px] my-[40px]">
-            <Link
-              href="#section10_service"
-              onClick={(e) => scrollToSection(e, "section10_service")}
-            >
-              <div className="btn_paddinng btn_flex !mx-auto">
-                <div className="formBtn_icon">
-                  <p>
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/icons-05.png"
-                      alt="call"
-                    />
-                  </p>
-                </div>
-
-                <p className="xl:!text-[20px] lg:!text-[18px]">
-                  Get A Quote For Your Project
-                </p>
-              </div>
-            </Link>
+          <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
+            <Button
+              innerClassName="flex items-center justify-center gap-2"
+              className="!pr-5"
+              redirect="#section10_service"
+              label="Get A Quote For Your Project"
+              scrollingButton
+              icon={
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
+                  <path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
+                </svg>
+              }
+            />
           </div>
         </div>
 

@@ -17,10 +17,10 @@
 
 .accordion-title {
   padding: 1.5rem 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--color_gray);
   p {
     font-size: var(--font_36);
-    font-family: var(--medium);
+    font-family: var(--global-font);
     color: var(--color_black);
     width: fit-content;
     font-weight: 400;
@@ -40,7 +40,7 @@
   overflow: hidden;
   p {
     font-size: var(--font_32);
-    font-family: var(--medium);
+    font-family: var(--global-font);
     width: fit-content;
     font-weight: 400;
     line-height: 2.5rem;

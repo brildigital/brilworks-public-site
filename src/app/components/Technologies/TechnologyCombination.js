@@ -3,8 +3,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import { scrollToSection } from "../lib/commonFunction";
+import Button from "../Common/Button";
 
 const ContentBlock = ({ contentData }) => {
+  const pathname = usePathname();
   return (
     <div className="hire_sec1_service_50">
       <div className="react-technology">
@@ -33,7 +35,11 @@ const ContentBlock = ({ contentData }) => {
               </div>
               <div className="hire_data_sec">
                 <p
-                  className={`md:h-[${contentData.minHeight}] min-h-[${contentData.minHeight}]`}
+                  className={
+                    pathname === "/hire-java-developer/"
+                      ? "md:h-[150px] min-h-[150]"
+                      : "md:h-[120px] min-h-[120]"
+                  }
                 >
                   {contentData.description}
                 </p>
@@ -150,7 +156,7 @@ const TechnologyCombination = () => {
 
   return (
     <div className="mx-auto service_width">
-      <div className="solutions md:text-center text-left py-8">
+      <div className="solutions md:text-center text-left pb-8">
         <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
           {titleText}
         </h2>
@@ -161,29 +167,26 @@ const TechnologyCombination = () => {
         <ContentBlock contentData={secondCombinationData} />
       </div>
 
-      <div className="section8_service py-[5rem]">
-        <Link
-          href="#section10_service"
-          onClick={(e) => scrollToSection(e, "section10_service")}
-        >
-          <div
-            className={`btn_flex mt-[4rem] ${isMobile ? "!px-8 !py-2" : ""}`}
-          >
-            <div className="chat_icon">
+      <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
+        <Button
+          innerClassName="flex items-center justify-center gap-2 !text-colorBlack hover:!text-colorWhite"
+          className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor"
+          redirect="#section10_service"
+          label={buttonText}
+          icon={
+            <div className="w-[25px]">
               <img
                 decoding="async"
                 loading="lazy"
                 src="/images/hire-hand.png"
-                alt="hire hand"
+                alt="hand"
+                width="20"
+                height="30"
               />
             </div>
-            <div className="chat_btn_technology">
-              <p className="transition ng-binding xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
-                {buttonText}
-              </p>
-            </div>
-          </div>
-        </Link>
+          }
+          scrollingButton
+        />
       </div>
     </div>
   );

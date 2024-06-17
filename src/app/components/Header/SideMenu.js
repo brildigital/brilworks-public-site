@@ -28,7 +28,11 @@ const SideMenu = ({ open, close }) => {
       {menuItems.map((menuItem, index) => (
         <li key={menuItem.name}>
           {!menuItem?.isMegaMenu ? (
-            <div className="menu_txt1">
+            <div
+              className={`menu_txt1 ${
+                menuItem?.path === "/contact-us/" ? "!border-b-0" : ""
+              }`}
+            >
               <MenuItem
                 name={menuItem?.name}
                 path={menuItem?.path}

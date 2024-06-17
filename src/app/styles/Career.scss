@@ -1,46 +1,49 @@
 .career_review .clutch_content p,
 .career_review .clutch_position p:nth-child(1) {
-    font-size: var(--font_32);
-    font-family: var(--medium);
-    color: var(--color_black);
-    min-height: 200px;
+  font-size: var(--font_32);
+  font-family: var(--global-font);
+  color: var(--color_black);
+  min-height: 200px;
 }
-.career_review .clutch-swiper{
-    .white-background{
-        border-radius: 0 0 30px 30px !important;
-    }
-    .white-background:hover{
-        background: #00c4c8;
-        background: linear-gradient(90deg,rgba(0,196,200,1) 34%,rgba(0,221,185,1) 56%);
-        border-radius: 0 0 30px 30px !important;
-        border-top: 1px solid #00c4c8;
-        transition: all .6s ease-in-out;
-    }
+.career_review .clutch-swiper {
+  .white-background {
+    border-radius: 0 0 30px 30px !important;
+  }
+  .white-background:hover {
+    background: #00c4c8;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 196, 200, 1) 34%,
+      rgba(0, 221, 185, 1) 56%
+    );
+    border-radius: 0 0 30px 30px !important;
+    border-top: 1px solid #00c4c8;
+    transition: all 0.6s ease-in-out;
+  }
 }
 
 .career_review .clutch_position p:nth-child(1) {
-    min-height: unset !important;
+  min-height: unset !important;
 }
 
 .software-review-container .career_review .clutch-swiper .white-background {
-    padding: 24px !important;
+  padding: 24px !important;
 }
 
 .career_review .dots_flex {
-    border-bottom: 1px solid #00dfb8;
-    width: 100%;
-    padding: 1.2rem;
+  border-bottom: 1px solid #00dfb8;
+  width: 100%;
+  padding: 1.2rem;
 }
 
 .software-review-container .career_review .home_sec3_box {
-    border-radius: 30px !important;
+  border-radius: 30px !important;
 }
 
 @media only screen and (max-width: 1700px) {
-
-    .career_review .clutch_content p,
-    .career_review .clutch_position p:nth-child(1) {
-        font-size: 1.5rem;
-        min-height: 190px;
-    }
+  .career_review .clutch_content p,
+  .career_review .clutch_position p:nth-child(1) {
+    font-size: 1.5rem;
+    min-height: 190px;
+  }
 }

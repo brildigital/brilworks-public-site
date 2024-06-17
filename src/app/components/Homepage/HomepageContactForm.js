@@ -184,10 +184,7 @@ const HomepageContactForm = () => {
                       </span>
                     </p>
                   </div>
-                  <div
-                    className="success-msg h-4 !text-colorWhite"
-                    id="sucess_msg"
-                  >
+                  <div className="h-4 !text-colorWhite" id="sucess_msg">
                     {respMessage}
                   </div>
                   <Button

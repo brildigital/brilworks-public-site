@@ -205,9 +205,9 @@ const TechnologyFAQ = () => {
   const faqData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="sec3_width_home faq-bottom md:!mb-[5rem] !mb-8 pt-0">
+    <div className="sec3_width_home faq-bottom xl:!pb-[6rem] md:!pb-[4rem] !pb-[2rem]">
       <div className="solutions md:text-center text-left">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-4">
+        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">
           FAQs
         </h2>
       </div>

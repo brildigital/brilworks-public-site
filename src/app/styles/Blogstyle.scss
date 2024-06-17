@@ -1,49 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap");
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Regular.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Regular.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Medium.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Medium.woff)
-      format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Graphik";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Semibold.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/Graphik-Semibold.woff)
-      format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "merriweatheritalic";
-  src: url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/merriweather-regularitalic-webfont.woff2)
-      format("woff2"),
-    url(https://d2mx9f4m4ab4nu.cloudfront.net/fonts/merriweather-regularitalic-webfont.woff)
-      format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 .blog-background {
   background: #f3fdff80 !important;
 }
@@ -63,7 +17,7 @@
 .blog-navigation {
   font-weight: 500;
   a {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -82,18 +36,18 @@
 }
 
 .font-graphik {
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--global-font) !important;
 }
 
 .blog-initial {
   h1 {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
   }
   .font-graphik {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
   }
   .post-summary {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-weight: 400;
     font-size: 20px;
@@ -103,7 +57,7 @@
 }
 
 .blog_content {
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--global-font) !important;
   div {
     p {
       span {
@@ -209,7 +163,7 @@
   padding: 12px 0 12px 10px;
 
   p {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     line-height: 23px !important;
     font-size: 18px;
     font-weight: 700;
@@ -218,7 +172,7 @@
   }
 
   ul {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     background: 0 0;
     list-style: none;
@@ -226,7 +180,7 @@
     margin: 0;
     padding-right: 12px !important;
     li {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-weight: 400;
       font-size: 16px;
@@ -260,7 +214,7 @@
 
 .blog_category {
   .Blog_category_head {
-    font-family: var(--medium);
+    font-family: var(--global-font);
   }
 }
 
@@ -283,12 +237,12 @@
     display: block !important;
   }
   p {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 32px !important;
     color: var(--color_black);
   }
   h3 {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 38px !important;
     color: var(--color_black);
     margin-bottom: 7px;
@@ -372,11 +326,11 @@
     width: 100% !important;
     margin-bottom: 20px;
     p {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       margin-bottom: 0 !important;
       span {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
       }
     }
   }
@@ -392,10 +346,10 @@
     border-left: solid 6px var(--theme-color);
   }
   p {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     word-wrap: break-word;
-    font-size: 19px !important;
+    font-size: 18px !important;
     line-height: 32px !important;
     margin-bottom: 20px !important;
     margin-block-start: 1em;
@@ -403,29 +357,29 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
     span {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       word-wrap: break-word;
-      font-size: 19px !important;
+      font-size: 18px !important;
       line-height: 32px !important;
       margin-bottom: 20px !important;
     }
   }
   h2 {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700 !important;
     span {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-size: 32px !important;
       line-height: 38px !important;
       font-weight: 700 !important;
       strong {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
         font-size: 32px !important;
         line-height: 38px !important;
@@ -434,20 +388,20 @@
     }
   }
   h3 {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     font-size: 24px !important;
     line-height: 30px !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
     span {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
       font-size: 24px !important;
       line-height: 30px !important;
       font-weight: 600 !important;
       strong {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
         font-size: 24px !important;
         line-height: 30px !important;
@@ -461,7 +415,7 @@
   }
   ul {
     a {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--theme-color) !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -473,7 +427,7 @@
       }
     }
     li {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       padding-left: 34px;
       padding-bottom: 10px;
       list-style: outside !important;
@@ -495,19 +449,19 @@
         position: absolute;
       }
       span {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         font-style: italic !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         font-style: italic !important;
         margin-bottom: 0px !important;
       }
     }
     span {
       font-style: italic !important;
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
     }
   }
@@ -515,7 +469,7 @@
     padding-left: 1.8em !important;
     list-style: initial !important;
     a {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--theme-color) !important;
       font-weight: 600;
       word-wrap: break-word;
@@ -527,8 +481,8 @@
       }
     }
     li {
-      font-family: "Inter", sans-serif !important;
-      font-size: 19px !important;
+      font-family: var(--global-font) !important;
+      font-size: 18px !important;
       line-height: 32px !important;
       margin-left: 0;
       color: var(--color_black) !important;
@@ -537,21 +491,21 @@
         font-size: 30px !important;
       }
       span {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         color: var(--color_black) !important;
       }
       p {
-        font-family: "Inter", sans-serif !important;
+        font-family: var(--global-font) !important;
         margin-bottom: 0px !important;
       }
     }
     span {
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       color: var(--color_black) !important;
     }
   }
   .faq-bottom .accordion-button {
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     color: var(--color_black) !important;
     border: 0 !important;
     padding: 0 !important;
@@ -559,7 +513,7 @@
     h3 {
       font-size: 20px !important;
       margin: 0 !important;
-      font-family: "Inter", sans-serif !important;
+      font-family: var(--global-font) !important;
       @media screen and (max-width: 767px) {
         font-size: 18px !important;
       }
@@ -574,7 +528,7 @@
 
   .faq-bottom .accordion-body {
     color: var(--color_black);
-    font-family: "Inter", sans-serif !important;
+    font-family: var(--global-font) !important;
     p {
       margin: 0 !important;
       line-height: 2.5rem;
@@ -591,7 +545,7 @@
 
   .faq-bottom .accordion-item {
     border-radius: 4px !important;
-    border: 1px solid #00ddb9 !important;
+    border: 1px solid var(--theme-color) !important;
     padding: 20px 36px 20px 30px !important;
     margin-bottom: 16px !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0 3px 5px -1px !important;
@@ -621,9 +575,9 @@
 
 .blog-inner .blog_content_CTA_1,
 .blog-inner .blog_content_CTA_3 {
-  font-family: "Inter", sans-serif;
+  font-family: var(--global-font);
   color: var(--color_black) !important;
-  font-size: 19px;
+  font-size: 18px;
   margin-bottom: 20px;
   background: rgb(0, 182, 207);
   background: linear-gradient(
@@ -635,7 +589,7 @@
   border-radius: 30px;
   a {
     font-weight: 700;
-    font-family: "Inter", sans-serif;
+    font-family: var(--global-font);
     text-decoration: underline !important;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
