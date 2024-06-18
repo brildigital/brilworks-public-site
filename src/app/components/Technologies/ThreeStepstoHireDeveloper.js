@@ -249,7 +249,7 @@ const ThreeStepstoHireDeveloper = () => {
           </div>
         </div>
 
-        <div className="endTO_text_content home_sec2_txt4 xl:mb-[6rem] md:mb-[4rem] mb-[2rem]">
+        <div className="endTO_text_content home_sec2_txt4 xl:mb-[4rem] md:mb-[2rem] mb-[2rem]">
           <p className="!text-[1.2rem]">
             We ensure you find the right people at the right cost for all your
             project needs.
