@@ -17,7 +17,6 @@ import {
   formattedDate,
 } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
-import ArticleSkeleton from "./Blog/ArticleSkeleton";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -157,11 +156,10 @@ const Article = ({ blok }) => {
   return (
     <div className="md:pt-[8rem] pt-[6rem] blog-main">
       {isLoading ? (
-        <ArticleSkeleton />
+        <div className="flex items-center justify-center !py-60">
+          <FetchDataSpinner />
+        </div>
       ) : (
-        // <div className="flex items-center justify-center !py-60">
-        //   <FetchDataSpinner />
-        // </div>
         <>
           <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
             <div className="flex flex-wrap -mx-4">
@@ -536,7 +534,7 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="md:!mx-10 !mx-4">
+          <div className="container mx-auto md:!px-10 !px-4">
             <div className="ready_sec !pb-0">
               <div className="ready_img relative">
                 <p>
@@ -584,7 +582,7 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="md:!mx-10 !mx-4">
+          <div className="container mx-auto md:!px-10 !px-4">
             <div className="!pb-16 flex flex-wrap flex-col md:!px-4">
               <div className="service_sec3">
                 <p className="home_sec2_txt3">
