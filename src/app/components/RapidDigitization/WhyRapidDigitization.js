@@ -60,10 +60,7 @@ const WhyRapidDigitization = () => {
             ))}
           </div>
           <div className="xl:mt-24 md:mt-16 mt-8 flex w-full justify-center">
-            <Link
-              href="/contact-us/"
-              className="linear-gradient-background w-fit p-[2px]"
-            >
+            <Link href="/contact-us/" className="bg-themeColor w-fit p-[2px]">
               <button className="bg-white px-[14px] py-[10px] !text-base hover:shadow-lg uppercase">
                 Let’s discuss your project
               </button>

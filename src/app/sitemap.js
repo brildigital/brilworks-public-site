@@ -1,7 +1,30 @@
 import { addMinutes } from "date-fns";
 import { getblog } from "./components/lib/getblog";
+import { sitemapData } from "./components/lib/constants";
 
-export default async function sitemap() {
+export async function generateSitemaps() {
+  // Fetch the total number of products and calculate the number of sitemaps needed
+  return [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }];
+}
+
+export default async function sitemap({ id }) {
+  if (id === 0) {
+    const staticPagesData = sitemapData.map((data) => {
+      return {
+        url: `${data?.loc}`,
+        lastModified: `${data?.lastmod}`,
+      };
+    });
+
+    return [
+      {
+        url: process.env.NEXT_PUBLIC_BASE_URL,
+        lastModified: new Date(),
+      },
+      ...staticPagesData,
+    ];
+  }
+
   const blogListData = await getblog();
 
   const blog = blogListData.map((story) => {

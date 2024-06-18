@@ -38,8 +38,5 @@ storyblokInit({
 });
 
 export default function StoryblokProvider({ children }) {
-  // if (!children) {
-  //   return <ArticleSkeleton />;
-  // }
   return children;
 }

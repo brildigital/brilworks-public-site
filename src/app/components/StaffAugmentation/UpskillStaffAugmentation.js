@@ -92,10 +92,7 @@ const UpskillStaffAugmentation = () => {
             ))}
           </div>
           <div className="xl:mt-20 md:mt-16 mt-8 flex w-full justify-center">
-            <Link
-              href="/contact-us/"
-              className="linear-gradient-background w-fit p-[2px]"
-            >
+            <Link href="/contact-us/" className="bg-themeColor w-fit p-[2px]">
               <button className="bg-white px-[14px] py-[10px] !text-base uppercase hover:shadow-lg">
                 Schedule a Developer Interview
               </button>
