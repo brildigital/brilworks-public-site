@@ -318,3 +318,163 @@ export const menuItems = [
     hideInHeader: true,
   },
 ];
+
+export const sitemapData = [
+  { loc: "https://www.brilworks.com/", lastmod: "2024-05-20T05:30:00.000Z" },
+  {
+    loc: "https://www.brilworks.com/portfolio/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/contact-us/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/fintech-software-development/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/media-entertainment-software-development/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/fleet-management-software-development/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/healthcare-software-development/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-reactjs-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-java-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-nodejs-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-react-native-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-aws-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-ui-ux-designer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-blockchain-developer/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/our-process/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/about-us/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/career/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/vugo/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/trackimo/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/orokii/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/eccocar/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/rastrack/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/staff-augmentation/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-dedicated-software-development-team/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/rapid-digitalization/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/generative-ai-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-ml-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/product-engineering-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/saas-application-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/application-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/business-intelligence-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/aws-consulting-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/devops-consulting-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/kubernetes-consulting-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/frappe-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/adalo-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/flutterflow-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/low-code-no-code-development-services/",
+    lastmod: "2024-05-20T05:30:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/site-map/",
+    lastmod: "2023-12-04T05:30:00.000Z",
+  },
+];
