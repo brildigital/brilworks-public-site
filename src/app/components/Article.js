@@ -156,8 +156,10 @@ const Article = ({ blok }) => {
 
   return (
     <div className="md:pt-[8rem] pt-[6rem] blog-main">
-      {isLoading ? (
-        <ArticleSkeleton />
+      {!blok?.content ? (
+        <div className="flex items-center justify-center !py-60">
+          <FetchDataSpinner />
+        </div>
       ) : (
         // <div className="flex items-center justify-center !py-60">
         //   <FetchDataSpinner />
