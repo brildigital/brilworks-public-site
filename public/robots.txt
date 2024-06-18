@@ -23,6 +23,5 @@ Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
 Disallow: /wp-content/*
 
-Sitemap: https://www.brilworks.com/sitemap/1.xml
-Sitemap: https://www.brilworks.com/sitemap/2.xml
+Sitemap: https://www.brilworks.com/sitemap.xml
 
