@@ -31,6 +31,28 @@ const HomePageBlogs = () => {
     // "/business-intelligence-services/": "business-intelligence",
   };
 
+  const threeBlogData = [
+    {
+      title: "Essential Terms in Generative AI Explained You Must Know",
+      imageURL:
+        "https://a.storyblok.com/f/219851/550x283/6130f33899/essential-ai-terms-mobile-banner.webp",
+      slug: "essential-terms-in-generative-ai",
+    },
+    {
+      title: "How Does the Evolution of Generative AI Impact Industries?",
+      imageURL:
+        "https://a.storyblok.com/f/219851/550x283/4df17cf388/evolution-of-generative-ai.webp",
+      slug: "evolution-of-generative-ai",
+    },
+    {
+      title:
+        "A Guide to Building Efficient Solutions with the AWS Well-Architected Framework",
+      imageURL:
+        "https://a.storyblok.com/f/219851/550x283/e414bfac1e/aws-well-architected-framework.webp",
+      slug: "a-guide-to-aws-well-architected-framework",
+    },
+  ];
+
   async function fetchData() {
     try {
       const blogData = await getblogDataCategorization(
@@ -38,6 +60,7 @@ const HomePageBlogs = () => {
         !isTablet ? 3 : 2,
         pathname === "/" ? null : blogDataBasedOnPath[pathname]
       );
+      console.log(blogData.storyData);
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
@@ -61,14 +84,9 @@ const HomePageBlogs = () => {
       <div className="container mx-auto main-section-padding reveal">
         <BlogText />
         <div className="container mx-auto md:w-[90%] w-full blog-home reveal">
-          {blogData?.length ? (
-            blogData.map(({ slug, name, content }, index) => {
-              if (
-                content &&
-                (content.Priority == 1 ||
-                  content.Priority == 2 ||
-                  content.Priority == 3)
-              ) {
+          {pathname === "/" ? (
+            <>
+              {threeBlogData.map(({ slug, title, imageURL }, index) => {
                 return (
                   <div
                     key={index}
@@ -76,49 +94,84 @@ const HomePageBlogs = () => {
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
-                        src={content?.mobile_banner?.filename}
-                        alt={content?.mobile_banner?.alt}
-                        className="vc_gitem-zone-img rounded-[20px] zoom-image"
+                        src={imageURL}
+                        alt={title}
+                        className="vc_gitem-zone-img rounded-[20px]"
                         width={550}
                         height={283}
                       />
                       <div className="p-[10px]">
                         <h4 className="xl:text-[24px] mb-[10px] leading-8">
-                          {name}
+                          {title}
                         </h4>
                       </div>
                     </Link>
                   </div>
                 );
-              } else {
-                return (
-                  <div
-                    key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <Image
-                        src={content?.mobile_banner?.filename || ""}
-                        alt={content?.mobile_banner?.alt || "Blog banner"}
-                        className="vc_gitem-zone-img rounded-[20px] zoom-image"
-                        width={550}
-                        height={283}
-                        sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                      />
-                      <div className="p-[10px]">
-                        <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                          {name}
-                        </h4>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              }
-            })
+              })}
+            </>
           ) : (
-            <div className="flex align-middle justify-center">
-              <FetchDataSpinner />
-            </div>
+            <>
+              {blogData?.length ? (
+                blogData.map(({ slug, name, content }, index) => {
+                  if (
+                    content &&
+                    (content.Priority == 1 ||
+                      content.Priority == 2 ||
+                      content.Priority == 3)
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename}
+                            alt={content?.mobile_banner?.alt}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename || ""}
+                            alt={content?.mobile_banner?.alt || "Blog banner"}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                            sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <div className="flex align-middle justify-center">
+                  <FetchDataSpinner />
+                </div>
+              )}
+            </>
           )}
         </div>
         {blogData?.length ? (
