@@ -7,7 +7,7 @@ import { blogSitemapData, sitemapData } from "./components/lib/constants";
 //   return [{ id: 1 }, { id: 2 }, { id: 3 }];
 // }
 
-export default async function sitemap({ id }) {
+export default async function sitemap() {
   // if (id === 1) {
   const staticPagesData = sitemapData.map((data) => {
     return {
