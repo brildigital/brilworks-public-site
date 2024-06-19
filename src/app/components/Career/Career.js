@@ -5,6 +5,7 @@ import CareerContactForm from "./CareerContactForm";
 import BrilworksCareerReview from "./BrilworksCareerReview";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 const Career = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -108,12 +109,12 @@ const Career = () => {
             </div>
 
             <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] md:!w-5/6 w-full">
-              <img
-                decoding="async"
-                loading="lazy"
+              <Image
+                className="md:rounded-[36px] rounded-[20px]"
                 src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
                 alt="career"
-                className="md:rounded-[36px] rounded-[20px]"
+                width="1566"
+                height="682"
               />
             </div>
             <div className="reveal">

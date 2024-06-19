@@ -1,5 +1,6 @@
 "use client";
 import "../../styles/Career.scss";
+import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -36,7 +37,7 @@ const BrilworksCareerReview = () => {
   ];
 
   return (
-    <div className="software-review-container ">
+    <div className="software-review-container">
       <div className="xl:!pt-[6rem] md:!pt-[4rem] !pt-[2rem] career_review">
         <Swiper
           className="!w-{90%]"
@@ -57,7 +58,7 @@ const BrilworksCareerReview = () => {
                   <div className="wpb_wrapper">
                     <div className="clutch-swiper home_sec3_box">
                       <div className="dots_flex">
-                        <div className="dots !bg-[#00dfb8]"></div>
+                        <div className="dots !bg-themeColor"></div>
                         <div className="dots"></div>
                         <div className="dots"></div>
                       </div>
