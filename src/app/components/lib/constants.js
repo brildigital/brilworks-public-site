@@ -320,7 +320,6 @@ export const menuItems = [
 ];
 
 export const sitemapData = [
-  { loc: "https://www.brilworks.com/", lastmod: "2024-05-20T05:30:00.000Z" },
   {
     loc: "https://www.brilworks.com/portfolio/",
     lastmod: "2024-05-20T05:30:00.000Z",
