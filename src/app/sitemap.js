@@ -1,6 +1,6 @@
 import { addMinutes } from "date-fns";
 import { getblog } from "./components/lib/getblog";
-import { sitemapData } from "./components/lib/constants";
+import { blogSitemapData, sitemapData } from "./components/lib/constants";
 
 export async function generateSitemaps() {
   // Fetch the total number of products and calculate the number of sitemaps needed
@@ -15,6 +15,12 @@ export default async function sitemap({ id }) {
         lastModified: `${data?.lastmod}`,
       };
     });
+    const blog = blogSitemapData.map((data) => {
+      return {
+        url: `${data?.loc}`,
+        lastModified: `${data?.lastmod}`,
+      };
+    });
 
     return [
       {
@@ -22,6 +28,7 @@ export default async function sitemap({ id }) {
         lastModified: new Date(),
       },
       ...staticPagesData,
+      ...blog,
     ];
   }
 
@@ -33,6 +40,13 @@ export default async function sitemap({ id }) {
       lastModified: story?.published_at || new Date(),
     };
   });
+
+  // const blog = blogSitemapData.map((data) => {
+  //   return {
+  //     url: `${data?.loc}`,
+  //     lastModified: `${data?.lastmod}`,
+  //   };
+  // });
 
   return [
     {
