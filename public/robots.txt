@@ -2,8 +2,7 @@ User-agent: *
 Disallow: /?s=
 Disallow: /search/
 Disallow: /testimonial/
-Disallow: /category/
-Disallow: /blog/category/*
+Disallow: /category/*
 Disallow: /email-sms/*
 Disallow: /studyme-portfolio/*
 Disallow: /gps-tracking/*
