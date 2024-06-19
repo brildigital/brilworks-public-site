@@ -480,7 +480,6 @@ export const sitemapData = [
 ];
 
 export const blogSitemapData = [
-  { loc: "https://www.brilworks.com/", lastmod: "2024-06-19T09:29:15.686Z" },
   {
     loc: "https://www.brilworks.com/blog/essential-terms-in-generative-ai/",
     lastmod: "2024-06-14T12:40:13.399Z",
