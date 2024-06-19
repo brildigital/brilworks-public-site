@@ -480,10 +480,7 @@ export const sitemapData = [
 ];
 
 export const blogSitemapData = [
-  {
-    loc: "https://www.brilworks.com/",
-    lastmod: "2024-06-19T09:29:15.686Z",
-  },
+  { loc: "https://www.brilworks.com/", lastmod: "2024-06-19T09:29:15.686Z" },
   {
     loc: "https://www.brilworks.com/blog/essential-terms-in-generative-ai/",
     lastmod: "2024-06-14T12:40:13.399Z",
@@ -657,107 +654,215 @@ export const blogSitemapData = [
     lastmod: "2024-04-25T17:03:41.332Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/how-chatgpt-like-bots-can-help-businesses/",
-    lastmod: "2024-04-25T17:07:57.118Z",
+    loc: "https://www.brilworks.com/blog/generative-ai-exploring-the-future-of-creative-ai-applications/",
+    lastmod: "2024-05-02T12:44:30.340Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ethical-ai-in-professional-services/",
-    lastmod: "2024-04-25T17:11:43.317Z",
+    loc: "https://www.brilworks.com/blog/basics-of-scrum/",
+    lastmod: "2024-04-25T13:58:35.933Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/chatgpt-for-customer-services/",
-    lastmod: "2024-04-25T17:15:09.015Z",
+    loc: "https://www.brilworks.com/blog/optimize-performance-for-reactjs-apps/",
+    lastmod: "2024-04-25T13:57:50.582Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ai-agents-for-business-intelligence/",
-    lastmod: "2024-04-25T17:19:16.372Z",
+    loc: "https://www.brilworks.com/blog/the-manifest-most-reviewed-software-development-company/",
+    lastmod: "2024-04-25T13:57:02.212Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/data-driven-decision-making-with-ai/",
-    lastmod: "2024-04-25T17:22:26.065Z",
+    loc: "https://www.brilworks.com/blog/software-development-best-practices/",
+    lastmod: "2024-05-01T13:12:14.635Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/aws-consultants/",
-    lastmod: "2024-04-22T10:40:02.181Z",
+    loc: "https://www.brilworks.com/blog/top-software-developer-company-in-india-on-clutch/",
+    lastmod: "2024-04-25T13:54:22.681Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/what-is-serverless-architecture/",
-    lastmod: "2024-04-25T09:20:50.817Z",
+    loc: "https://www.brilworks.com/blog/debugging-react-native-apps-tools-and-techniques/",
+    lastmod: "2024-04-25T13:53:49.587Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ai-for-financial-services/",
-    lastmod: "2024-04-22T10:42:50.307Z",
+    loc: "https://www.brilworks.com/blog/neptune-vs-neo4j/",
+    lastmod: "2024-04-25T13:53:22.801Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/top-ai-tools-2024/",
-    lastmod: "2024-04-22T10:46:20.042Z",
+    loc: "https://www.brilworks.com/blog/django-vs-node-js/",
+    lastmod: "2024-05-01T13:19:33.279Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ai-for-project-management/",
-    lastmod: "2024-04-22T10:50:18.168Z",
+    loc: "https://www.brilworks.com/blog/everything-you-need-to-know-about-microservices/",
+    lastmod: "2024-05-02T14:22:27.180Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/what-is-node-js/",
-    lastmod: "2024-04-22T10:50:39.650Z",
+    loc: "https://www.brilworks.com/blog/fintech-application-developers-of-the-year-2023/",
+    lastmod: "2024-04-25T13:51:44.278Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/speech-to-text-tools/",
-    lastmod: "2024-04-22T10:56:48.415Z",
+    loc: "https://www.brilworks.com/blog/node-js-security-best-practices/",
+    lastmod: "2024-04-25T13:51:01.816Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/how-to-deploy-web-applications-on-aws/",
-    lastmod: "2024-04-22T10:58:20.325Z",
+    loc: "https://www.brilworks.com/blog/java-vs-kotlin/",
+    lastmod: "2024-04-25T13:50:34.268Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/aws-managed-services-aws-ms/",
-    lastmod: "2024-04-22T10:59:08.439Z",
+    loc: "https://www.brilworks.com/blog/how-to-use-prisma-with-express/",
+    lastmod: "2024-04-25T13:49:50.784Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/everything-about-artificial-intelligence-chatbots/",
-    lastmod: "2024-04-22T11:00:34.247Z",
+    loc: "https://www.brilworks.com/blog/lambda-expression-java/",
+    lastmod: "2024-05-02T11:43:05.745Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ai-chatbots-for-business-intelligence/",
-    lastmod: "2024-04-22T11:01:45.967Z",
+    loc: "https://www.brilworks.com/blog/exploring-storyblok-visual-editor/",
+    lastmod: "2024-04-25T13:48:30.675Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/ai-chatbots-for-sales-and-customer-services/",
-    lastmod: "2024-04-22T11:04:45.825Z",
+    loc: "https://www.brilworks.com/blog/java-11-countdown-to-end-of-support/",
+    lastmod: "2024-04-25T13:47:59.085Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/machine-learning-lifecycle-management/",
-    lastmod: "2024-04-22T11:10:00.489Z",
+    loc: "https://www.brilworks.com/blog/java-best-practices-part-2/",
+    lastmod: "2024-05-23T10:34:00.645Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/what-is-nodejs-best-use-cases/",
-    lastmod: "2024-04-22T11:12:56.489Z",
+    loc: "https://www.brilworks.com/blog/java-best-practices-part-1/",
+    lastmod: "2024-05-02T15:22:02.939Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/build-ride-sharing-app-using-react-native/",
-    lastmod: "2024-04-22T11:14:00.293Z",
+    loc: "https://www.brilworks.com/blog/brilworks-partners-with-storyblok-to-deliver-next-level-content-management-solutions/",
+    lastmod: "2024-04-25T13:12:33.726Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/aws-lambda-vs-google-cloud-functions/",
-    lastmod: "2024-04-22T11:17:06.305Z",
+    loc: "https://www.brilworks.com/blog/how-much-does-it-cost-to-build-fintech-app/",
+    lastmod: "2024-05-02T16:40:05.545Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/why-enterprises-moving-to-aws-lambda/",
-    lastmod: "2024-04-22T11:20:15.119Z",
+    loc: "https://www.brilworks.com/blog/what-is-express-js-comprehensive-guide-to-beginners/",
+    lastmod: "2024-04-26T06:00:01.296Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/aws-business-value",
-    lastmod: "2024-04-22T11:22:34.081Z",
+    loc: "https://www.brilworks.com/blog/bnpl-app-top-must-have-features/",
+    lastmod: "2024-04-25T13:22:47.516Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/choosing-node-js-over-java-for-server-side-development/",
-    lastmod: "2024-04-22T11:25:36.531Z",
+    loc: "https://www.brilworks.com/blog/react-native-best-practices/",
+    lastmod: "2024-04-25T13:19:03.753Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/what-are-the-best-aws-lambda-use-cases/",
-    lastmod: "2024-04-22T11:28:39.387Z",
+    loc: "https://www.brilworks.com/blog/designrush-announces-top-mobile-app-development-companies-for-july-2023/",
+    lastmod: "2024-04-25T13:19:55.371Z",
   },
   {
-    loc: "https://www.brilworks.com/blog/aws-managed-services-advantages/",
-    lastmod: "2024-04-22T11:30:42.847Z",
+    loc: "https://www.brilworks.com/blog/best-no-code-tools/",
+    lastmod: "2024-06-19T07:51:42.743Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/fintech-trends-to-watch-in-2023/",
+    lastmod: "2024-05-01T13:10:49.573Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill/",
+    lastmod: "2024-04-25T13:23:07.996Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/choosing-the-right-headless-cms-why-strapi-leads-the-pack/",
+    lastmod: "2024-04-25T13:23:42.206Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/what-is-rapid-application-development-a-detailed-guide/",
+    lastmod: "2024-04-25T13:24:22.132Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/spring-vs-nestjs/",
+    lastmod: "2024-05-02T14:49:03.322Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/what-is-custom-web-application-development-how-to-get-started/",
+    lastmod: "2024-04-25T13:40:45.329Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/apple-vision-pro-vs-meta-quest-3/",
+    lastmod: "2024-04-25T13:41:26.066Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/discover-storyblok-key-features-benefits-the-ultimate-choice-for-the-best-headless-cms/",
+    lastmod: "2024-04-25T13:41:57.942Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/whats-new-in-spring-boot-3-for-java-developers-in-2023/",
+    lastmod: "2024-05-02T11:56:29.942Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/headless-cms-explained-simplifying-content-management-for-modern-web-development/",
+    lastmod: "2024-05-02T16:31:42.137Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/best-node-js-open-source-projects-in-github/",
+    lastmod: "2024-04-25T13:44:07.882Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/next-js-13-drops-with-exciting-updates-find-out-whats-new/",
+    lastmod: "2024-04-25T13:44:44.999Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/discover-the-benefits-of-using-prisma-in-your-next-project/",
+    lastmod: "2024-04-25T13:45:15.737Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/top-node-js-frameworks-for-web-development/",
+    lastmod: "2024-05-02T09:11:59.639Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/react-native-vs-kotlin/",
+    lastmod: "2024-05-01T07:29:27.251Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/the-impact-of-fleet-management-app-on-your-business/",
+    lastmod: "2024-05-02T15:12:10.119Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/what-are-white-label-apps-and-popular-examples/",
+    lastmod: "2024-04-25T12:38:15.321Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/top-popular-apps-built-with-react-native/",
+    lastmod: "2024-04-25T12:09:19.598Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/top-10-websites-built-using-react-js/",
+    lastmod: "2024-04-25T12:08:26.426Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/beyond-chatgpt-trending-ai-tools/",
+    lastmod: "2024-05-02T16:16:37.322Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/top-ios-development-companies-in-2023/",
+    lastmod: "2024-04-25T11:17:57.945Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/react-vs-angular/",
+    lastmod: "2024-04-25T11:17:19.646Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/java-vs-node/",
+    lastmod: "2024-05-01T13:06:06.469Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/cross-platform-app-development-best-frameworks/",
+    lastmod: "2024-04-25T11:13:19.852Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/healthcare-trends-to-watch/",
+    lastmod: "2024-05-02T11:55:03.232Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/path-to-become-aws-partner/",
+    lastmod: "2024-06-07T07:48:23.233Z",
+  },
+  {
+    loc: "https://www.brilworks.com/blog/optimize-your-nest-js-app-performance-with-these-practices/",
+    lastmod: "2024-04-25T11:11:01.316Z",
   },
 ];
