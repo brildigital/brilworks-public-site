@@ -1,8 +1,11 @@
-import dynamic from "next/dynamic";
+import parse from "html-react-parser";
+import StoryblokClient from "storyblok-js-client";
+import "../components/PrivacyPolicy/privacypolicy.scss";
+import FetchDataSpinner from "../components/Homepage/FetchDataSpinner";
 
-const BrilworksPrivacyPolicy = dynamic(() =>
-  import("../components/PrivacyPolicy/BrilworksPrivacyPolicy")
-);
+const Storyblok = new StoryblokClient({
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+});
 
 export const metadata = {
   title: "Brilworks Privacy Policy",
@@ -30,7 +33,20 @@ export const metadata = {
   },
 };
 
-const page = () => {
+async function getPrivacyPolicy() {
+  try {
+    const res = await Storyblok.get("cdn/stories/privacy-policy", {
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    });
+    return res?.data?.story;
+  } catch (error) {
+    console.error("Error fetching terms and conditions:", error);
+    return null;
+  }
+}
+
+export default async function page() {
+  const privacyPolicyData = await getPrivacyPolicy();
   return (
     <>
       {process.env.VERCEL_ENV === "production" ? (
@@ -38,9 +54,22 @@ const page = () => {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <BrilworksPrivacyPolicy />
+      <section className="kinderland healthvault mt-[6rem] !mb-8 md:mx-[15px] w-full flex align-middle justify-center">
+        <div className="md:w-4/5 w-full md:px-0 px-4">
+          <div className="pb-3">
+            <h1 className="md:!text-[3rem] !text-[2rem]  font-semibold">
+              Privacy Policy
+            </h1>
+          </div>
+          {privacyPolicyData ? (
+            <div>{parse(privacyPolicyData?.content?.content?.content)}</div>
+          ) : (
+            <div className="flex align-middle justify-center p-24">
+              <FetchDataSpinner />
+            </div>
+          )}
+        </div>
+      </section>
     </>
   );
-};
-
-export default page;
+}

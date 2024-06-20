@@ -39,7 +39,9 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
         itemProp="acceptedAnswer"
         itemType="https://schema.org/Answer"
       >
-        <div itemProp="text">{answer}</div>
+        <div itemProp="text" className="font-Inter">
+          {answer}
+        </div>
       </div>
     </AccordionBody>
   </Accordion>
