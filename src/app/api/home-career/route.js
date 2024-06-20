@@ -44,6 +44,10 @@ export async function POST(req, res) {
       } else {
         await createHubSpotContact(payload);
         await sendDataToSlack(payload);
+        return NextResponse.json(
+          { message: "Form submitted successfully" },
+          { status: 200 }
+        );
       }
     } catch (error) {
       console.error("Error creating contact", error);
