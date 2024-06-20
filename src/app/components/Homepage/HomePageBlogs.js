@@ -47,7 +47,7 @@ const HomePageBlogs = () => {
   //   };
 
   //   const response = await fetch(
-  //     `${process.env.NEXT_PUBLIC_BASE_URL}/api/page-blog`,
+  //     `${process.env.NEXT_PUBLIC_BASE_URL}api/page-blog`,
   //     {
   //       method: "POST",
   //       headers: {
@@ -69,13 +69,12 @@ const HomePageBlogs = () => {
   // useEffect(() => {
   //   fetchData();
   // }, []);
-
   return (
     <div className={pathname === "/" ? "bg-sectionBG" : ""}>
       <div className="container mx-auto main-section-padding reveal">
         <BlogText />
         <div className="container mx-auto md:w-[90%] w-full blog-home reveal">
-          {blogResponse[pathname].length ? (
+          {blogResponse[pathname]?.length ? (
             blogResponse[pathname].map(({ slug, name, content }, index) => {
               if (
                 content &&
