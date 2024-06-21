@@ -1,16 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
+import blogResponse from "../lib/blogResponse.json";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { BlogText } from "./BigText";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { getblogDataCategorization } from "../lib/getblog";
 import LinkWithArrow from "../Common/LinkWithArrow";
-
-const blogResponse = dynamic(() => import("../lib/blogResponse.json"));
 
 const HomePageBlogs = () => {
   const pathname = usePathname();

@@ -1819,7 +1819,7 @@ textarea.form-control-txt {
 
 .kinderland p a {
   text-decoration: underline !important;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .kinderland p span a {
@@ -1833,7 +1833,7 @@ textarea.form-control-txt {
 
 .kinderland p a:hover {
   text-decoration: underline !important;
-  word-break: break-all;
+  word-break: break-word;
   background-color: rgb(227, 227, 227);
 }
 
