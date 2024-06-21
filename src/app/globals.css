@@ -1810,6 +1810,13 @@ textarea.form-control-txt {
   font-weight: 600;
 }
 
+.kinderland p,
+.kinderland a,
+.kinderland span,
+.kinderland h2 {
+  font-family: var(--global-font) !important;
+}
+
 .kinderland p a {
   text-decoration: underline !important;
   word-break: break-all;

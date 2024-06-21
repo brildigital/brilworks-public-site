@@ -11,7 +11,7 @@ const GameChanger = () => {
       <div className="home_sec1_img">
         <Image
           className="w-full md:h-[600px] xl:h-auto h-auto"
-          src={`https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg`}
+          src="https://a.storyblok.com/f/219851/1920x1000/8028e1d772/banner.jpg"
           alt="homepage banner"
           width={isMobile ? 550 : 1920}
           height={isMobile ? 283 : 1000}

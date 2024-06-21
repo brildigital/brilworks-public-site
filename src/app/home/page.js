@@ -2,15 +2,10 @@ import dynamic from "next/dynamic";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import GameChanger from "../components/Homepage/GameChanger";
 
-const HomepageBlog = dynamic(() =>
-  import("../components/Homepage/HomePageBlogs")
-);
-const HomepageWhyChooseUs = dynamic(() =>
-  import("../components/Homepage/HomepageWhyChooseUs")
-);
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
-const Honors = dynamic(() => import("../components/Homepage/Honors"));
-const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
+const SeeingBelieving = dynamic(() =>
+  import("../components/Homepage/SeeingBelieving")
+);
 const ClientReviews = dynamic(() =>
   import("../components/Homepage/ClientReviews")
 );
@@ -20,9 +15,14 @@ const DomainWorking = dynamic(() =>
 const ExtensionOfTeam = dynamic(() =>
   import("../components/Homepage/ExtensionOfTeam")
 );
-const SeeingBelieving = dynamic(() =>
-  import("../components/Homepage/SeeingBelieving")
+const Honors = dynamic(() => import("../components/Homepage/Honors"));
+const HomepageWhyChooseUs = dynamic(() =>
+  import("../components/Homepage/HomepageWhyChooseUs")
 );
+const HomepageBlog = dynamic(() =>
+  import("../components/Homepage/HomePageBlogs")
+);
+const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 
 export const metadata = {
   title: "AWS Consulting Partner | Gen AI | Product Engineering",
@@ -82,7 +82,6 @@ const page = () => {
       <GameChanger />
       <Brilliant />
       <SeeingBelieving />
-
       <ClientReviews />
       <DomainWorking />
       <ExtensionOfTeam />

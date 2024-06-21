@@ -37,8 +37,6 @@ const Article = ({ blok }) => {
       blok.Content_3 +
       `${blok?.FAQ?.length && "<h2>FAQ</h2>"}` || "";
 
-  const readingTime = calculateReadingTime(blogTableOfContent);
-
   async function fetchData() {
     try {
       const blogData = await getblogData(1, isTablet ? 3 : 4);
@@ -154,174 +152,13 @@ const Article = ({ blok }) => {
   const author = blogAuthor(blok?.BlogAuthor);
 
   return (
-    <div className="md:pt-[8rem] pt-[6rem] blog-main">
+    <div className="blog-main">
       {!blok?.content ? (
         <div className="flex items-center justify-center !py-60">
           <FetchDataSpinner />
         </div>
       ) : (
         <>
-          <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
-            <div className="flex flex-wrap -mx-4">
-              <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
-                <div className="slg:w-[calc(100%_-_170px)]">
-                  <div
-                    className="w-full inline-flex flex-wrap items-center mb-3"
-                    aria-label="Breadcrumb"
-                  >
-                    <span className="blog-navigation">
-                      <Link title="Brilworks Blog." href="/">
-                        Brilworks
-                      </Link>
-                    </span>
-                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                      <Image
-                        className="black_aerrow alignnone !w-[20px] size-full"
-                        src="/images/black_aerrow-1.png"
-                        alt="arrow"
-                        width="20"
-                        height="10"
-                      />
-                    </span>
-                    <span className="blog-navigation">
-                      <Link title="Go to Blog." href="/blog">
-                        Blog
-                      </Link>
-                    </span>
-
-                    {blok?.Category && (
-                      <>
-                        <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                          <Image
-                            className="black_aerrow alignnone !w-[20px] size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="20"
-                            height="10"
-                          />
-                        </span>
-                        <span className="blog-navigation">
-                          <Link
-                            title="Go to the Web App Development category."
-                            href="#"
-                          >
-                            {blok?.Category === "Cloud DevOps and Data"
-                              ? "Cloud, DevOps and Data"
-                              : blok?.Category}
-                          </Link>
-                        </span>
-                      </>
-                    )}
-                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                      <Image
-                        className="black_aerrow alignnone !w-[20px] size-full"
-                        src="/images/black_aerrow-1.png"
-                        alt="arrow"
-                        width="20"
-                        height="10"
-                      />
-                    </span>
-                    <span className="font-graphik">{blok?.title}</span>
-                  </div>
-                  <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px]">
-                    {blok?.title}
-                  </h1>
-                </div>
-                <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2">
-                  {author && (
-                    <div className="flex items-center justify-between">
-                      <Image
-                        src={author?.authorImage}
-                        width="54"
-                        height="56"
-                        alt={author?.name}
-                        className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
-                      />
-                      <div className="pl-[10px] font-graphik">
-                        <Link
-                          className="md:text-[20px] text-base font-bold"
-                          href={
-                            author?.name === "Vikas Singh"
-                              ? "/blog/author/vikas-singh/"
-                              : author?.name === "Hitesh Umaletiya"
-                              ? "/blog/author/hitesh-umaletiya/"
-                              : author?.authorLinkedIn
-                          }
-                          title={`Posts by ${author?.name}`}
-                          rel="author external"
-                        >
-                          {author?.name}
-                        </Link>
-                        <br />
-                        <span className="font-graphik">
-                          {formattedDate(blok?.Published)}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                  <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
-                    <div className="flex sxl:items-center items-start md:mr-5 font-graphik">
-                      <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
-                        <Image
-                          src="/images/clock_icon.png"
-                          width="20"
-                          height="20"
-                          alt="Clock icon"
-                        />
-                      </span>
-                      {readingTime} mins read
-                    </div>
-                    <div className="flex sxl:items-center items-start font-graphik">
-                      <span className="!w-6 !h-6 mr-1">
-                        <Image
-                          src="/images/calendar_icon.png"
-                          width="24"
-                          height="24"
-                          alt="Calendar icon"
-                        />
-                      </span>
-                      Last updated {formattedDate(blok?.Published)}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-wrap -mx-4">
-              <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
-                <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
-                  <Image
-                    className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                    src={blok?.mobile_banner?.filename || blok?.image?.filename}
-                    alt={blok?.image?.alt}
-                    width="343"
-                    height="177"
-                    priority={true}
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  />
-                  <Image
-                    className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                    src={blok?.image?.filename || blok?.mobile_banner?.filename}
-                    alt={blok?.image?.alt}
-                    width="758"
-                    height="169"
-                    priority={true}
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  />
-                </div>
-                {blok?.Quick_Summary && (
-                  <div>
-                    <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left italic">
-                      <span className="font-bold text-themeColor">
-                        Quick Summary:-{" "}
-                      </span>
-                      {blok?.Quick_Summary}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
           <div className="container max-w-[1280px] mx-auto my-0 !px-4">
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
@@ -594,8 +431,7 @@ const Article = ({ blok }) => {
               <div
                 className={`grid ${
                   isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
-                } grid-cols-1 items-center
-                    gap-[2rem]`}
+                } grid-cols-1 items-center gap-[2rem]`}
               >
                 {blogData?.length && !isLoading ? (
                   blogData
