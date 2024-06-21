@@ -1,0 +1,313 @@
+"use client";
+import parse from "html-react-parser";
+
+import blogResponse from "../../components/lib/blogResponse.json";
+import React, { useEffect, useState } from "react";
+import "../../styles/Services.scss";
+import BlogContactForm from "../Blog/BlogContactForm";
+import Link from "next/link";
+import BlogFAQ from "../Blog/BlogFAQ";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { usePathname } from "next/navigation";
+import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
+
+const AWSInHealthcareContentSection = ({ content, FAQData }) => {
+  const pathname = usePathname();
+  const [headings, setHeadings] = useState([]);
+  const [activeLink, setActiveLink] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const blogTableOfContent =
+    content + `${FAQData?.length && "<h2>FAQ</h2>"}` || "";
+
+  function modifyImagesWithLazyLoading(html) {
+    return parse(html, {
+      replace: (node, index) => {
+        if (node.type === "tag" && node.name === "img") {
+          node.attribs.loading = "lazy";
+          node.attribs.decoding = "async";
+        }
+
+        if (node.type === "tag" && node.name === "a") {
+          if (!notNewTabRedirect.includes(node.attribs.href)) {
+            node.attribs.target = "_blank";
+          }
+          if (
+            node.attribs.href &&
+            !node.attribs.href.includes("brilworks.com")
+          ) {
+            node.attribs.rel = "nofollow noopener";
+          } else {
+            node.attribs.rel = "noopener";
+          }
+        }
+        return node;
+      },
+    });
+  }
+
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
+
+  useEffect(() => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(blogTableOfContent, "text/html");
+    const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
+      const level = parseInt(heading.tagName.slice(1), 10);
+      const text = heading.textContent;
+      return { level, text };
+    });
+    setHeadings(headings);
+  }, [blogTableOfContent, !isLoading]);
+
+  useEffect(() => {
+    // Add temporary IDs to the headings for smooth scrolling
+    const headings = document.querySelectorAll("h2");
+    headings.forEach((heading, index) => {
+      heading.id = `temp-section-${index}`;
+    });
+  }, [!isLoading]);
+
+  const handleTableOfContentLinkClick = (e, index) => {
+    setActiveLink(index);
+    e.preventDefault();
+
+    const targetId = e.target.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const headingPositions = headings.map((heading, index) => {
+        const targetElement = document.getElementById(`temp-section-${index}`);
+
+        if (targetElement) {
+          return {
+            id: `${index}`,
+            offsetTop: targetElement.offsetTop,
+          };
+        }
+        return null;
+      });
+
+      // Find the first heading whose offsetTop is greater than or equal to scrollY
+      const activeHeadingIndex = headingPositions.find(
+        (position) => position !== null && position.offsetTop >= scrollY
+      );
+      // Set the active link to the ID of the active heading
+      if (activeHeadingIndex) {
+        setActiveLink(activeHeadingIndex.id);
+      }
+    };
+
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [headings]);
+
+  return (
+    <div className="container !max-w-[1280px] mx-auto my-0 !px-4">
+      <div className="flex flex-wrap -mx-4">
+        <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !pr-4 min-h-[1px] w-full slg:block hidden">
+          <div className="sticky top-[110px] !pb-5">
+            <div
+              className={`${headings?.length ? "blog-tab-content" : "!hidden"}`}
+            >
+              <div className="flex justify-between !mb-5">
+                <p>Table of Contents</p>
+              </div>
+              <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
+                {headings?.length ? (
+                  headings.map((heading, index) => (
+                    <li key={index}>
+                      <Link
+                        href={`#temp-section-${index}`}
+                        onClick={(e) => handleTableOfContentLinkClick(e, index)}
+                        className={`${
+                          index == activeLink ? "page-active" : ""
+                        }`}
+                      >
+                        {heading.text}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <div className="flex align-middle justify-center">
+                    <FetchDataSpinner />
+                  </div>
+                )}
+              </ul>
+            </div>
+            <div className="!mt-7">
+              <div className="flex items-start flex-wrap">
+                <Link
+                  target="_blank"
+                  href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
+                  className="!mr-4"
+                >
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/fb-share.svg"
+                    width="43"
+                    height="43"
+                    alt="Facebook blog share"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  className="!mr-4"
+                  href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
+                    .split("")
+                    .splice(0, pathname.length - 1)
+                    .join("")}`}
+                >
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/twitter-share.svg"
+                    width="43"
+                    height="43"
+                    alt="Twitter blog share"
+                  />
+                </Link>
+                <Link
+                  target="_blank"
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.brilworks.com${pathname}`}
+                >
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="/images/linkedin-share.svg"
+                    width="43"
+                    height="43"
+                    alt="LinkedIn blog share"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
+          <div className="blog-inner items-center">
+            <div className="flex -mx-4 md:flex-row flex-col">
+              <div className="md:w-3/4 w-full !float-left">
+                <div className="h-full w-full box-border !px-4">
+                  <div className="h-full flex flex-col">
+                    <div className="blog_content">
+                      {modifyImagesWithLazyLoading(content)}
+
+                      {FAQData && FAQData?.length > 0 ? (
+                        <BlogFAQ FAQData={FAQData} />
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="md:w-1/4 w-full !float-left">
+                <div className="h-full w-full box-border !pr-4 !pl-3">
+                  <div className="h-full flex flex-col">
+                    {/* <BlogContactForm /> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="container mx-auto md:!px-10 !px-4">
+          <div className="!pb-16 flex flex-wrap flex-col md:!px-4">
+            <div className="service_sec3">
+              <p className="home_sec2_txt3">
+                <p className="!ml-0 extra_bold !w-full">You might also like</p>
+              </p>
+            </div>
+            <div
+              className={`grid ${
+                isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
+              } grid-cols-1 items-center gap-[2rem]`}
+            >
+              {blogResponse === "/" ? (
+                blogResponse[0].map(({ slug, name, content }, index) => {
+                  if (
+                    content &&
+                    (content.Priority == 1 ||
+                      content.Priority == 2 ||
+                      content.Priority == 3)
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename}
+                            alt={content?.mobile_banner?.alt}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename || ""}
+                            alt={content?.mobile_banner?.alt || "Blog banner"}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                            sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <div className="flex align-middle justify-center">
+                  <FetchDataSpinner />
+                </div>
+              )}
+            </div>
+          </div>
+        </div> */}
+      </div>
+    </div>
+  );
+};
+
+export default AWSInHealthcareContentSection;
