@@ -184,27 +184,27 @@ export const industryMenuItems = [
       },
     ],
   },
-  // {
-  //   name: "USE CASES",
-  //   subSections: [
-  //     {
-  //       name: "eCommerce",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "Healthcare",
-  //       path: "/use-case/healthcare",
-  //     },
-  //     {
-  //       name: "IoT",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "SAAS",
-  //       path: "#",
-  //     },
-  //   ],
-  // },
+  {
+    name: "USE CASES",
+    subSections: [
+      {
+        name: "eCommerce",
+        path: "#",
+      },
+      {
+        name: "AWS in Healthcare",
+        path: "/use-case/aws-in-healthcare",
+      },
+      {
+        name: "IoT",
+        path: "#",
+      },
+      {
+        name: "SAAS",
+        path: "#",
+      },
+    ],
+  },
 ];
 
 const hireTeamMenuItems = [
