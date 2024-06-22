@@ -1,23 +1,20 @@
 "use client";
-import parse from "html-react-parser";
-import blogResponse from "../../components/lib/blogResponse.json";
 import React, { useEffect, useState } from "react";
-import "../../styles/Services.scss";
 import Link from "next/link";
-import BlogFAQ from "../Blog/BlogFAQ";
-import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import { usePathname } from "next/navigation";
-import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import "../../styles/Services.scss";
+import BlogFAQ from "../Blog/BlogFAQ";
+import parse from "html-react-parser";
+import { usePathname } from "next/navigation";
 import { formattedDate } from "../lib/commonFunction";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import blogResponse from "../../components/lib/blogResponse.json";
 
 const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
   const [headings, setHeadings] = useState([]);
   const [activeLink, setActiveLink] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  console.log(blogResponse["/generative-ai-development-services/"]);
 
   const blogTableOfContent =
     content + `${FAQData?.length && "<h2>FAQ</h2>"}` || "";
@@ -282,73 +279,6 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
                 </div>
               )}
             </div>
-            {/* <div
-              className={`grid ${
-                isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
-              } grid-cols-1 items-center gap-[2rem]`}
-            >
-              {blogResponse["/aws-consulting-services/"]?.length ? (
-                blogResponse["/aws-consulting-services/"].map(
-                  ({ slug, name, content }, index) => {
-                    if (
-                      content &&
-                      (content.Priority == 1 ||
-                        content.Priority == 2 ||
-                        content.Priority == 3)
-                    ) {
-                      return (
-                        <div
-                          key={index}
-                          className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                        >
-                          <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                            <Image
-                              src={content?.mobile_banner?.filename}
-                              alt={content?.mobile_banner?.alt}
-                              className="vc_gitem-zone-img rounded-[20px]"
-                              width={550}
-                              height={283}
-                            />
-                            <div className="p-[10px]">
-                              <h4 className="xl:text-[24px] mb-[10px] leading-8">
-                                {name}
-                              </h4>
-                            </div>
-                          </Link>
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div
-                          key={index}
-                          className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                        >
-                          <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                            <Image
-                              src={content?.mobile_banner?.filename || ""}
-                              alt={content?.mobile_banner?.alt || "Blog banner"}
-                              className="vc_gitem-zone-img rounded-[20px]"
-                              width={550}
-                              height={283}
-                              sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                            />
-                            <div className="p-[10px]">
-                              <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                                {name}
-                              </h4>
-                            </div>
-                          </Link>
-                        </div>
-                      );
-                    }
-                  }
-                )
-              ) : (
-                <div className="flex align-middle justify-center">
-                  <FetchDataSpinner />
-                </div>
-              )}
-            </div> */}
           </div>
         </div>
       </div>
