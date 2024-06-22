@@ -6,7 +6,6 @@ import AWSInHealthcareContentSection from "@/app/components/UseCases/AWSInHealth
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
-// const getAWSInHealthcareData = async () => {};
 async function getAWSInHealthcareData() {
   try {
     const res = await Storyblok.get("cdn/stories/use-case/aws-in-healthcare", {
@@ -32,21 +31,6 @@ export default async function page() {
         content={storyData?.main_content}
         FAQData={storyData?.faq_section}
       />
-      {/* <div className="container !max-w-[1280px] mx-auto my-0 !px-4">
-        <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
-          <div className="blog-inner items-center">
-            <div className="flex -mx-4 md:flex-row flex-col">
-              <div className="md:w-3/4 w-full !float-left">
-                <div className="h-full w-full box-border !px-4">
-                  <div className="h-full flex flex-col">
-                    <BlogFAQ FAQData={storyData?.faq_section} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 }

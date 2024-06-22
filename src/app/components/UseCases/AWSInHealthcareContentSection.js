@@ -1,22 +1,23 @@
 "use client";
 import parse from "html-react-parser";
-
 import blogResponse from "../../components/lib/blogResponse.json";
 import React, { useEffect, useState } from "react";
 import "../../styles/Services.scss";
-import BlogContactForm from "../Blog/BlogContactForm";
 import Link from "next/link";
 import BlogFAQ from "../Blog/BlogFAQ";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import { formattedDate } from "../lib/commonFunction";
 
 const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
   const [headings, setHeadings] = useState([]);
   const [activeLink, setActiveLink] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  console.log(blogResponse["/generative-ai-development-services/"]);
 
   const blogTableOfContent =
     content + `${FAQData?.length && "<h2>FAQ</h2>"}` || "";
@@ -121,7 +122,7 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   }, [headings]);
 
   return (
-    <div className="container !max-w-[1280px] mx-auto my-0 !px-4">
+    <div className="container !max-w-[1280px] mx-auto my-0 md:!px-6 px-4">
       <div className="flex flex-wrap -mx-4">
         <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !pr-4 min-h-[1px] w-full slg:block hidden">
           <div className="sticky top-[110px] !pb-5">
@@ -206,7 +207,7 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
         <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
           <div className="blog-inner items-center">
             <div className="flex -mx-4 md:flex-row flex-col">
-              <div className="md:w-3/4 w-full !float-left">
+              <div className="w-full !float-left">
                 <div className="h-full w-full box-border !px-4">
                   <div className="h-full flex flex-col">
                     <div className="blog_content">
@@ -221,20 +222,13 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/4 w-full !float-left">
-                <div className="h-full w-full box-border !pr-4 !pl-3">
-                  <div className="h-full flex flex-col">
-                    {/* <BlogContactForm /> */}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        {/* <div className="container mx-auto md:!px-10 !px-4">
-          <div className="!pb-16 flex flex-wrap flex-col md:!px-4">
+        <div className="container mx-auto md:!px-0 !px-4">
+          <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
             <div className="service_sec3">
-              <p className="home_sec2_txt3">
+              <p className="home_sec2_txt3 !pb-0 md:!pt-10 !pt-0">
                 <p className="!ml-0 extra_bold !w-full">You might also like</p>
               </p>
             </div>
@@ -243,68 +237,120 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
                 isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
               } grid-cols-1 items-center gap-[2rem]`}
             >
-              {blogResponse === "/" ? (
-                blogResponse[0].map(({ slug, name, content }, index) => {
-                  if (
-                    content &&
-                    (content.Priority == 1 ||
-                      content.Priority == 2 ||
-                      content.Priority == 3)
-                  ) {
-                    return (
-                      <div
-                        key={index}
-                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+              {blogResponse["/aws-consulting-services/"]?.length &&
+              !isLoading ? (
+                blogResponse["/aws-consulting-services/"]?.map(
+                  ({ slug, name, content }, index) => (
+                    <div
+                      key={index}
+                      className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                    >
+                      <Link
+                        as={`/blog/${slug}`}
+                        href={`/blog/[slug]`}
+                        target="_blank"
+                        rel="external"
                       >
-                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                        <div className="sec9_img1">
                           <Image
+                            className="rounded-[30px]"
                             src={content?.mobile_banner?.filename}
                             alt={content?.mobile_banner?.alt}
-                            className="vc_gitem-zone-img rounded-[20px]"
                             width={550}
                             height={283}
                           />
-                          <div className="p-[10px]">
-                            <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                        </div>
+                        <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                          <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                            <p className="entry-title default-max-width aspect-[518/116]">
                               {name}
-                            </h4>
+                            </p>
                           </div>
-                        </Link>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div
-                        key={index}
-                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                      >
-                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                          <Image
-                            src={content?.mobile_banner?.filename || ""}
-                            alt={content?.mobile_banner?.alt || "Blog banner"}
-                            className="vc_gitem-zone-img rounded-[20px]"
-                            width={550}
-                            height={283}
-                            sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                          />
-                          <div className="p-[10px]">
-                            <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                              {name}
-                            </h4>
+                          <div className="sec9_txt2 mt-[1.5rem]">
+                            <p className="publish_date">
+                              {formattedDate(content?.Published)}
+                            </p>
                           </div>
-                        </Link>
-                      </div>
-                    );
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                )
+              ) : (
+                <div className="flex items-center justify-center p-24">
+                  <FetchDataSpinner />
+                </div>
+              )}
+            </div>
+            {/* <div
+              className={`grid ${
+                isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
+              } grid-cols-1 items-center gap-[2rem]`}
+            >
+              {blogResponse["/aws-consulting-services/"]?.length ? (
+                blogResponse["/aws-consulting-services/"].map(
+                  ({ slug, name, content }, index) => {
+                    if (
+                      content &&
+                      (content.Priority == 1 ||
+                        content.Priority == 2 ||
+                        content.Priority == 3)
+                    ) {
+                      return (
+                        <div
+                          key={index}
+                          className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                        >
+                          <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                            <Image
+                              src={content?.mobile_banner?.filename}
+                              alt={content?.mobile_banner?.alt}
+                              className="vc_gitem-zone-img rounded-[20px]"
+                              width={550}
+                              height={283}
+                            />
+                            <div className="p-[10px]">
+                              <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                                {name}
+                              </h4>
+                            </div>
+                          </Link>
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div
+                          key={index}
+                          className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                        >
+                          <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                            <Image
+                              src={content?.mobile_banner?.filename || ""}
+                              alt={content?.mobile_banner?.alt || "Blog banner"}
+                              className="vc_gitem-zone-img rounded-[20px]"
+                              width={550}
+                              height={283}
+                              sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                            />
+                            <div className="p-[10px]">
+                              <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
+                                {name}
+                              </h4>
+                            </div>
+                          </Link>
+                        </div>
+                      );
+                    }
                   }
-                })
+                )
               ) : (
                 <div className="flex align-middle justify-center">
                   <FetchDataSpinner />
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

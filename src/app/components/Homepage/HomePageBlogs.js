@@ -68,6 +68,8 @@ const HomePageBlogs = () => {
   // useEffect(() => {
   //   fetchData();
   // }, []);
+  console.log(pathname);
+  console.log(blogResponse[pathname]);
   return (
     <div className={pathname === "/" ? "bg-sectionBG" : ""}>
       <div className="container mx-auto main-section-padding reveal">
