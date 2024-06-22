@@ -11,11 +11,7 @@ import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
-import {
-  blogAuthor,
-  calculateReadingTime,
-  formattedDate,
-} from "./lib/commonFunction";
+import { blogAuthor, formattedDate } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
@@ -359,7 +355,7 @@ const Article = ({ blok }) => {
                       </div>
                     </div>
                     <div className="md:w-1/4 w-full !float-left">
-                      <div className="h-full w-full box-border !pr-4 !pl-3">
+                      <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                         <div className="h-full flex flex-col">
                           <BlogContactForm />
                         </div>
@@ -371,8 +367,8 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="container mx-auto md:!px-10 !px-4">
-            <div className="ready_sec !pb-0">
+          <div className="container mx-auto md:!px-3 !px-4">
+            <div className="ready_sec !pb-0 !pt-4">
               <div className="ready_img relative">
                 <p>
                   <img
@@ -419,10 +415,10 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="container mx-auto md:!px-10 !px-4">
-            <div className="!pb-16 flex flex-wrap flex-col md:!px-4">
+          <div className="container mx-auto md:!px-3 !px-4">
+            <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
               <div className="service_sec3">
-                <p className="home_sec2_txt3">
+                <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
                   <p className="!ml-0 extra_bold !w-full">
                     You might also like
                   </p>

@@ -14,7 +14,6 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
   const [headings, setHeadings] = useState([]);
   const [activeLink, setActiveLink] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const blogTableOfContent =
     content + `${FAQData?.length && "<h2>FAQ</h2>"}` || "";
@@ -46,14 +45,6 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   }
 
   useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-
-    return () => clearTimeout(loadingTimeout);
-  }, []);
-
-  useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(blogTableOfContent, "text/html");
     const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
@@ -62,7 +53,7 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
       return { level, text };
     });
     setHeadings(headings);
-  }, [blogTableOfContent, !isLoading]);
+  }, [blogTableOfContent]);
 
   useEffect(() => {
     // Add temporary IDs to the headings for smooth scrolling
@@ -70,7 +61,7 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
     headings.forEach((heading, index) => {
       heading.id = `temp-section-${index}`;
     });
-  }, [!isLoading]);
+  }, []);
 
   const handleTableOfContentLinkClick = (e, index) => {
     setActiveLink(index);
@@ -231,11 +222,12 @@ const AWSInHealthcareContentSection = ({ content, FAQData }) => {
             </div>
             <div
               className={`grid ${
-                isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
+                !blogResponse["/aws-consulting-services/"]?.length
+                  ? ""
+                  : "xl:grid-cols-3 md:grid-cols-2"
               } grid-cols-1 items-center gap-[2rem]`}
             >
-              {blogResponse["/aws-consulting-services/"]?.length &&
-              !isLoading ? (
+              {blogResponse["/aws-consulting-services/"]?.length ? (
                 blogResponse["/aws-consulting-services/"]?.map(
                   ({ slug, name, content }, index) => (
                     <div
