@@ -72,9 +72,7 @@ const BlogContactForm = () => {
         {isBlogPage ? (
           <>
             <div className=" mt-2">
-              <p className="gradiant !text-[24px] font-medium font-graphik">
-                Get In Touch
-              </p>
+              <p className="gradiant !text-[24px] font-medium">Get In Touch</p>
             </div>
             <br />
 

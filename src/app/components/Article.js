@@ -339,13 +339,12 @@ const Article = ({ blok }) => {
                                         : author?.authorLinkedIn
                                     }
                                     title={`View ${author?.name} website`}
-                                    className="font-graphik"
                                     rel="author external"
                                   >
                                     {author?.name}
                                   </Link>
                                 </h3>
-                                <p className="text-[18px] font-graphik">
+                                <p className="text-[18px]">
                                   {author?.authorDesc}
                                 </p>
                               </div>

@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { formattedDate } from "../lib/commonFunction";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
+import { notNewTabRedirect } from "../lib/constants";
 
 const AWSInHealthcareContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
