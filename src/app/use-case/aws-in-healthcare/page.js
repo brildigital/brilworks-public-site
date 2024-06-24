@@ -48,7 +48,7 @@ async function getAWSInHealthcareData() {
     const { title_section, FAQ_section, content } = storyData?.story?.content;
     return {
       title_section: title_section[0],
-      main_content: content,
+      main_content: content?.content,
       faq_section: FAQ_section,
     };
   } catch (error) {
