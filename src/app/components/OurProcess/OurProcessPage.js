@@ -551,7 +551,7 @@ const OurProcessPage = () => {
               <img
                 decoding="async"
                 loading="lazy"
-                className="border_redius20 alignnone"
+                className="rounded-[20px] alignnone"
                 src="/images/time1.webp"
                 alt="Project Development"
               />
@@ -584,7 +584,7 @@ const OurProcessPage = () => {
               <img
                 decoding="async"
                 loading="lazy"
-                className="border_redius20 alignnone"
+                className="rounded-[20px] alignnone"
                 src="/images/time2.webp"
                 alt="Team Extension"
               />

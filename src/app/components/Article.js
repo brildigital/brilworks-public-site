@@ -373,14 +373,14 @@ const Article = ({ blok }) => {
                   <img
                     decoding="async"
                     loading="lazy"
-                    className="ready_main web_img alignnone"
+                    className="ready_main hidden md:block alignnone"
                     src="/images/ready.png"
                     alt="get in touch"
                   />
                   <img
                     decoding="async"
                     loading="lazy"
-                    className="mobile_img border_redius20 alignnone"
+                    className="block md:hidden rounded-[20px] alignnone"
                     src="/images/ready-mobile.webp"
                     alt="get in touch"
                   />

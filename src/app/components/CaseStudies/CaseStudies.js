@@ -77,13 +77,11 @@ const CaseStudies = () => {
                   prefetch={true}
                   key={index}
                 >
-                  <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
+                  <Card className="shadow-lg shadow-themeColor-500/50 border hover:border-themeColor cursor-pointer">
                     <CardBody className="p-8">
-                      <h2 className="text-2xl why_text font-bold mb-7">
-                        {name}
-                      </h2>
-                      <div className="inline-flex gap-4 why_text font-bold ">
-                        <p className="!text-[#00b6cf]">Know more</p>
+                      <h2 className="text-2xl font-bold mb-7">{name}</h2>
+                      <div className="inline-flex gap-4 font-bold ">
+                        <p className="!text-themeColor">Know more</p>
                         <div className="aerrow relative">
                           <img
                             decoding="async"

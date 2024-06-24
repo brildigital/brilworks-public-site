@@ -1,10 +1,5 @@
-import StoryblokClient from "storyblok-js-client";
-import AWSInHealthcareFirstSection from "@/app/components/UseCases/AWSInHealthcareFirstSection";
-import AWSInHealthcareContentSection from "@/app/components/UseCases/AWSInHealthcareContentSection";
-
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
+import UsecaseFirstSection from "@/app/components/UseCases/UsecaseFirstSection";
+import UsecaseContentSection from "@/app/components/UseCases/UsecaseContentSection";
 
 export const metadata = {
   title: "Generative AI in healthcare",
@@ -38,13 +33,6 @@ async function getAWSInHealthcareData() {
     const res = await fetch(url, { cache: "no-store" });
     const storyData = await res.json();
 
-    // const res = await Storyblok.get(
-    //   "cdn/stories/use-case/aws-in-healthcare",
-    //   {
-    //     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    //   }
-    //   { cache: "no-store", revalidate: { next: 3000 } }
-    // );
     const { title_section, FAQ_section, content } = storyData?.story?.content;
     return {
       title_section: title_section[0],
@@ -61,8 +49,8 @@ export default async function page() {
   const storyData = await getAWSInHealthcareData();
   return (
     <>
-      <AWSInHealthcareFirstSection data={storyData?.title_section} />
-      <AWSInHealthcareContentSection
+      <UsecaseFirstSection data={storyData?.title_section} />
+      <UsecaseContentSection
         content={storyData?.main_content}
         FAQData={storyData?.faq_section}
       />

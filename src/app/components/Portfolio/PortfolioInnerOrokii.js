@@ -80,7 +80,7 @@ const PortfolioInnerOrokii = () => {
                 <div>
                   <div className="our_img">
                     <Image
-                      className="border_redius20 alignnone"
+                      className="rounded-[20px] alignnone"
                       src="https://a.storyblok.com/f/219851/692x362/34d16e1fa9/identifying-the-business-needs-1.jpg"
                       alt="Identifying the Business Needs"
                       width={isMobile ? 300 : 691}
@@ -109,7 +109,7 @@ const PortfolioInnerOrokii = () => {
                 <div>
                   <div className="our_img">
                     <Image
-                      className="border_redius20 alignnone"
+                      className="rounded-[20px] alignnone"
                       src="/images/the-challenge.webp"
                       alt="Understanding the Requirement"
                       width={isMobile ? 300 : 691}

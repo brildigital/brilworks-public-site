@@ -122,7 +122,7 @@ const TechnologyDevelopers = () => {
                             <p className="!text-[1.5rem] !font-bold">
                               {content?.Name}
                             </p>
-                            <p className="ng-binding !font-bold !text-lg">
+                            <p className="!font-bold !text-lg">
                               {content?.Designation}
                             </p>
                           </div>

@@ -66,7 +66,7 @@ const PortfolioInnerVugo = () => {
               <div>
                 <div className="our_img">
                   <Image
-                    className="border_redius20 alignnone"
+                    className="rounded-[20px] alignnone"
                     src="/images/identifying-new.webp"
                     alt="Identifying the Business Needs"
                     width={isMobile ? 300 : 691}
@@ -96,7 +96,7 @@ const PortfolioInnerVugo = () => {
               <div>
                 <div className="our_img">
                   <Image
-                    className="border_redius20 alignnone"
+                    className="rounded-[20px] alignnone"
                     src="/images/understanding-new.webp"
                     alt="Understanding the Requirement"
                     width={isMobile ? 300 : 691}

@@ -199,7 +199,9 @@ export default async function Page(props) {
                       </Link>
                       <br />
                       <span>
-                        {formattedDate(data?.story?.content.Published)}
+                        {formattedDate(
+                          data?.story?.content.Published || new Date()
+                        )}
                       </span>
                     </div>
                   </div>
@@ -225,7 +227,8 @@ export default async function Page(props) {
                         alt="Calendar icon"
                       />
                     </span>
-                    Last updated {formattedDate(data?.story?.published_at)}
+                    Last updated{" "}
+                    {formattedDate(data?.story?.published_at || new Date())}
                   </div>
                 </div>
               </div>

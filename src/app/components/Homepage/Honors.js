@@ -194,7 +194,7 @@ const Honors = () => {
                         </div>
 
                         <div className="review-text">
-                          <p className="ng-binding xl:text-[20px] lg:text-[18px] text-[1rem]">
+                          <p className="xl:text-[20px] lg:text-[18px] text-[1rem]">
                             {data.text}
                           </p>
                         </div>
