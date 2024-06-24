@@ -187,10 +187,10 @@ export const industryMenuItems = [
   {
     name: "USE CASES",
     subSections: [
-      {
-        name: "eCommerce",
-        path: "#",
-      },
+      // {
+      //   name: "eCommerce",
+      //   path: "#",
+      // },
       {
         name: "AWS in healthcare",
         path: "/use-case/aws-in-healthcare",
@@ -199,14 +199,14 @@ export const industryMenuItems = [
         name: "Generative AI in healthcare",
         path: "/use-case/generative-ai-in-healthcare",
       },
-      {
-        name: "IoT",
-        path: "#",
-      },
-      {
-        name: "SAAS",
-        path: "#",
-      },
+      // {
+      //   name: "IoT",
+      //   path: "#",
+      // },
+      // {
+      //   name: "SAAS",
+      //   path: "#",
+      // },
     ],
   },
 ];
