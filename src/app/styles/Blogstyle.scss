@@ -16,7 +16,7 @@
   a {
     font-family: var(--global-font) !important;
     color: var(--color_black) !important;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     -webkit-transition: all 0.3s ease;
   }
   a:hover {
