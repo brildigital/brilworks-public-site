@@ -1,12 +1,9 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import "../../styles/Services.scss";
 import Button from "../Common/Button";
-import { usePathname } from "next/navigation";
 
 const UsecaseFirstSection = ({ data }) => {
-  const pathname = usePathname();
   return (
     <div className="container mx-auto">
       <div className="usecase flex mt-24">
@@ -15,7 +12,7 @@ const UsecaseFirstSection = ({ data }) => {
             <div className="lg:w-2/4 w-full">
               <h1
                 className={`!font-medium mb-6 ${
-                  pathname.includes("generative") ? "2xl:!text-[64px]" : ""
+                  data?.title.includes("Generative") ? "2xl:!text-[64px]" : ""
                 }`}
               >
                 {data?.title}
