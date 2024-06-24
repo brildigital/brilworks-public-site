@@ -32,15 +32,8 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.font-graphik {
-  font-family: var(--global-font) !important;
-}
-
 .blog-initial {
   h1 {
-    font-family: var(--global-font) !important;
-  }
-  .font-graphik {
     font-family: var(--global-font) !important;
   }
   .post-summary {
@@ -433,8 +426,8 @@
       list-style: outside !important;
       list-style-type: none !important;
       position: relative;
-      font-size: 20px !important;
-      line-height: 34px !important;
+      font-size: 18px !important;
+      line-height: 32px !important;
       margin-left: 0;
       font-style: italic !important;
       color: var(--color_black) !important;
@@ -451,17 +444,20 @@
       span {
         font-family: var(--global-font) !important;
         font-style: italic !important;
+        font-size: 18px !important;
         color: var(--color_black) !important;
       }
       p {
         font-family: var(--global-font) !important;
         font-style: italic !important;
+        font-size: 18px !important;
         margin-bottom: 0px !important;
       }
     }
     span {
       font-style: italic !important;
       font-family: var(--global-font) !important;
+      font-size: 18px !important;
       color: var(--color_black) !important;
     }
   }
@@ -483,20 +479,23 @@
     li {
       font-family: var(--global-font) !important;
       font-size: 18px !important;
-      line-height: 32px !important;
+      // line-height: 32px !important;
       margin-left: 0;
+      list-style-type: disc !important;
       color: var(--color_black) !important;
       &::marker {
         color: var(--theme-color) !important;
-        font-size: 30px !important;
+        font-size: 24px !important;
       }
       span {
         font-family: var(--global-font) !important;
         color: var(--color_black) !important;
+        font-size: 18px !important;
       }
       p {
         font-family: var(--global-font) !important;
         margin-bottom: 0px !important;
+        font-size: 18px !important;
       }
     }
     span {

@@ -35,8 +35,7 @@ const NewHeader = () => {
                   alt="Brilworks Logo"
                   width="206"
                   height="62"
-                  priority={true}
-                  className="size-full wp-image-15"
+                  priority="true"
                 />
               </Link>
             </div>

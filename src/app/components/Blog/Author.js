@@ -106,7 +106,7 @@ const Author = ({ authorName }) => {
             </span>
           </div>
         </div>
-        <div className="bg-themeLight lg:p-6 p-4 flex xl:flex-row flex-col lg:gap-8 font-graphik">
+        <div className="bg-themeLight lg:p-6 p-4 flex xl:flex-row flex-col lg:gap-8">
           <div className="author-main-img w-fit lg:mb-0 md:mb-2 mb-1">
             <div className="border-[3px] rounded-full border-colorWhite">
               <div className="xl:w-[150px] md:w-[100px] w-[50px] xl:h-[150px] md:h-[100px] h-[50px]">

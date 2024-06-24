@@ -113,7 +113,7 @@ const Blog = () => {
                         {popularBlog?.content?.title}
                       </Link>
                     </h2>
-                    <p className="md:!text-[19px] !text-[18px] !mb-3 font-graphik">
+                    <p className="md:!text-[19px] !text-[18px] !mb-3">
                       {parse(popularBlog?.content?.Quick_Summary)
                         .split(" ")
                         .splice(0, 20)
@@ -121,7 +121,7 @@ const Blog = () => {
                       ...
                     </p>
                     <p
-                      className="published-date !mb-3 md:text-[19px] !text-base font-graphik !text-gray-500"
+                      className="published-date !mb-3 md:text-[19px] !text-bas !text-gray-500"
                       date={`${popularBlog?.content?.PublishedDate}${popularBlog?.content?.reading_time_in_minutes}`}
                     >
                       {popularBlog?.content?.PublishedDate} •{" "}
@@ -136,7 +136,7 @@ const Blog = () => {
                         height="40"
                       />
                       <div className="author-info !pl-4">
-                        <h3 className="md:!text-lg !text-base font-graphik text-theborder-themeColor font-semibold">
+                        <h3 className="md:!text-lg !text-base text-theborder-themeColor font-semibold">
                           <Link
                             className="font-semibold"
                             href={popularBlog?.content?.author_linkedIn?.url}

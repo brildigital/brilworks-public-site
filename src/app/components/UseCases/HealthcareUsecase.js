@@ -20,7 +20,7 @@ const HomepageContactForm = dynamic(() =>
 const HealthcareUsecase = () => {
   return (
     <>
-      <div className="bg-colorWhite pt-20 mx-auto usecase">
+      <div className="pt-20 mx-auto usecase">
         <div className="bg-gradient-usecase">
           <div className="lg:py-20 py-10 flex flex-col items-center justify-center lg:px-[70px] px-8">
             <h1 className="font-extrabold text-center text-[75px] mb-4">

@@ -1,9 +1,7 @@
 "use client";
-import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
-import { scrollToSection } from "../lib/commonFunction";
-import Image from "next/image";
 import Button from "../Common/Button";
 
 const ThreeStepstoHireDeveloper = () => {
@@ -545,63 +543,6 @@ const ThreeStepstoHireDeveloper = () => {
             scrollingButton
           />
         </div>
-
-        {/* <div className="pt-[5rem]">
-          <Link
-            href="#section10_service"
-            onClick={(e) => scrollToSection(e, "section10_service")}
-          >
-            <div className="btn_flex xl:py-[4px] xl:px-[40px] lg:py-[4px] lg:px-[28px] md:py-[4px] md:px-[22px] !py-[4px] !px-[22px]">
-              <div className="chat_icon">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  src="/images/hire-hand.png"
-                  alt="hand"
-                  width="28"
-                  height="44"
-                />
-              </div>
-              <div className="chat_btn_technology xl:!text-[20px] lg:!text-[18px] md:!text-[15px] !text-[16px]">
-                <p className="transition ng-binding">
-                  {pathname === "/hire-reactjs-developer/" ? (
-                    "Hire React.js Developers"
-                  ) : (
-                    <>
-                      {pathname === "/hire-java-developer/" ? (
-                        "Hire Java Developers"
-                      ) : (
-                        <>
-                          {pathname === "/hire-nodejs-developer/" ? (
-                            "Hire Node.js Developers"
-                          ) : (
-                            <>
-                              {pathname === "/hire-react-native-developer/" ? (
-                                "Hire React Native Developers"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-aws-developer/" ? (
-                                    "Hire AWS Developers"
-                                  ) : (
-                                    <>
-                                      {pathname === "/hire-ui-ux-designer/"
-                                        ? "Hire UI UX Designers"
-                                        : "Hire Blockchain Developers"}
-                                    </>
-                                  )}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </p>
-              </div>
-            </div>
-          </Link>
-        </div> */}
       </div>
     </section>
   );

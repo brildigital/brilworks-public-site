@@ -77,7 +77,7 @@ const PortfolioInnerTrackimo = () => {
                 <div>
                   <div className="our_img">
                     <Image
-                      className="border_redius20 alignnone"
+                      className="rounded-[20px] alignnone"
                       src="/images/identifying-the-business-needs-3.webp"
                       alt="Identifying the Business Needs"
                       width={isMobile ? 300 : 691}
@@ -106,7 +106,7 @@ const PortfolioInnerTrackimo = () => {
                 <div>
                   <div className="our_img">
                     <Image
-                      className="border_redius20 alignnone"
+                      className="rounded-[20px] alignnone"
                       src={
                         "https://a.storyblok.com/f/219851/692x362/5974c22aa5/the-challenge-1.jpg"
                       }

@@ -184,27 +184,31 @@ export const industryMenuItems = [
       },
     ],
   },
-  // {
-  //   name: "USE CASES",
-  //   subSections: [
-  //     {
-  //       name: "eCommerce",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "Healthcare",
-  //       path: "/use-case/healthcare",
-  //     },
-  //     {
-  //       name: "IoT",
-  //       path: "#",
-  //     },
-  //     {
-  //       name: "SAAS",
-  //       path: "#",
-  //     },
-  //   ],
-  // },
+  {
+    name: "USE CASES",
+    subSections: [
+      {
+        name: "eCommerce",
+        path: "#",
+      },
+      {
+        name: "AWS in healthcare",
+        path: "/use-case/aws-in-healthcare",
+      },
+      {
+        name: "Generative AI in healthcare",
+        path: "/use-case/generative-ai-in-healthcare",
+      },
+      {
+        name: "IoT",
+        path: "#",
+      },
+      {
+        name: "SAAS",
+        path: "#",
+      },
+    ],
+  },
 ];
 
 const hireTeamMenuItems = [
