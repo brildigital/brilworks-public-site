@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
 import "../../styles/Services.scss";
+import "../../styles/Blogstyle.scss";
 import BlogFAQ from "../Blog/BlogFAQ";
-import parse from "html-react-parser";
 import { usePathname } from "next/navigation";
 import { formattedDate } from "../lib/commonFunction";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";

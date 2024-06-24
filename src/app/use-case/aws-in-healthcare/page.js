@@ -34,17 +34,21 @@ export const metadata = {
 
 async function getAWSInHealthcareData() {
   try {
-    const res = await Storyblok.get(
-      "cdn/stories/use-case/aws-in-healthcare",
-      {
-        version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      },
-      { cache: "no-store" }
-    );
-    const { title_section, FAQ_section, content } = res?.data?.story?.content;
+    const url = `https://api.storyblok.com/v2/cdn/stories/use-case/aws-in-healthcare?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const res = await fetch(url, { cache: "no-store" });
+    const storyData = await res.json();
+
+    // const res = await Storyblok.get(
+    //   "cdn/stories/use-case/aws-in-healthcare",
+    //   {
+    //     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    //   }
+    //   { cache: "no-store", revalidate: { next: 3000 } }
+    // );
+    const { title_section, FAQ_section, content } = storyData?.story?.content;
     return {
       title_section: title_section[0],
-      main_content: content?.content,
+      main_content: content,
       faq_section: FAQ_section,
     };
   } catch (error) {
@@ -52,6 +56,7 @@ async function getAWSInHealthcareData() {
     return null;
   }
 }
+
 export default async function page() {
   const storyData = await getAWSInHealthcareData();
   return (
