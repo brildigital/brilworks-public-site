@@ -12,7 +12,7 @@
   }
 }
 .blog-navigation {
-  font-weight: 500;
+  font-weight: 500 !important;
   a {
     font-family: var(--global-font) !important;
     color: var(--color_black) !important;
