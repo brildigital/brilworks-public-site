@@ -116,9 +116,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
       <div className="flex flex-wrap -mx-4">
         <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !pr-4 min-h-[1px] w-full slg:block hidden">
           <div className="sticky top-[110px] !pb-5">
-            <div
-              className={`${headings?.length ? "blog-tab-content" : "!hidden"}`}
-            >
+            <div className="blog-tab-content">
               <div className="flex justify-between !mb-5">
                 <p>Table of Contents</p>
               </div>
@@ -138,7 +136,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                     </li>
                   ))
                 ) : (
-                  <div className="flex align-middle justify-center">
+                  <div className="flex align-middle justify-center py-10">
                     <FetchDataSpinner />
                   </div>
                 )}

@@ -3,11 +3,11 @@ import {
   calculateReadingTime,
   formattedDate,
 } from "@/app/components/lib/commonFunction";
+import Link from "next/link";
+import Image from "next/image";
+import "../../styles/Blogstyle.scss";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
-import "../../styles/Blogstyle.scss";
-import Image from "next/image";
-import Link from "next/link";
 import { cache } from "react";
 
 export const metadata = {
@@ -125,6 +125,7 @@ export default async function Page(props) {
                       alt="arrow"
                       width="20"
                       height="10"
+                      priority="true"
                     />
                   </span>
                   <span className="blog-navigation">
@@ -142,6 +143,7 @@ export default async function Page(props) {
                           alt="arrow"
                           width="20"
                           height="10"
+                          priority="true"
                         />
                       </span>
                       <span className="blog-navigation">
@@ -164,6 +166,7 @@ export default async function Page(props) {
                       alt="arrow"
                       width="20"
                       height="10"
+                      priority="true"
                     />
                   </span>
                   <span>{data?.story?.content.title}</span>
@@ -181,6 +184,7 @@ export default async function Page(props) {
                       height="56"
                       alt={author?.name}
                       className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
+                      priority="true"
                     />
                     <div className="pl-[10px] ">
                       <Link
@@ -214,6 +218,7 @@ export default async function Page(props) {
                         width="20"
                         height="20"
                         alt="Clock icon"
+                        priority="true"
                       />
                     </span>
                     {calculateReadingTime(totalDataWord)} mins read
@@ -225,6 +230,7 @@ export default async function Page(props) {
                         width="24"
                         height="24"
                         alt="Calendar icon"
+                        priority="true"
                       />
                     </span>
                     Last updated{" "}
