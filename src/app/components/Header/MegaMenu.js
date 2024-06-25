@@ -51,7 +51,9 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
       >
         <div className="flex xl:ml-[15%] p-5 outline-none w-full">
           {heading && (
-            <div className="font-semibold text-base w-40 pt-2">{heading}</div>
+            <div className="font-semibold text-base w-40 pt-2 font-Inter">
+              {heading}
+            </div>
           )}
           <div
             className={`mega-menu-items-group p-3 pl-16 ${

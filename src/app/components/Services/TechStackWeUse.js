@@ -363,7 +363,13 @@ const TechStackWeUse = () => {
   };
 
   return (
-    <div className="container md:w-[90%] w-full mx-auto xl:py-24 md:py-16 py-8">
+    <div
+      className={`container md:w-[90%] w-full mx-auto ${
+        pathname === "/ai-ml-development-services/"
+          ? ""
+          : "xl:py-24 md:py-16 py-8"
+      }`}
+    >
       <div className="!rounded-2xl">
         <h2 className="md:text-center text-left ml-4 !mb-8">
           Tech Stack We Use

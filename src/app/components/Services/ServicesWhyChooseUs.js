@@ -272,11 +272,6 @@ const ServicesWhyChooseUs = () => {
         "We don't just code, we co-create. Our experts refine your vision and propel it through efficient development, all under one roof.",
     },
     {
-      title: "UX Obsessed Design",
-      description:
-        "We craft interfaces that captivate users while building fortresses around your data. Your SaaS will be both stunning and secure.",
-    },
-    {
       title: "Scalable Architecture from Day One",
       description:
         "Forget costly overhauls – your application seamlessly adapts to your ever-expanding needs. We design your SaaS to flex with your growth.",
@@ -285,6 +280,11 @@ const ServicesWhyChooseUs = () => {
       title: "Future-Proof Tech Stack Expertise",
       description:
         "We stay ahead of the curve, leveraging cutting-edge technology to create a future-proof SaaS. Stay competitive with a solution that never goes out of style.",
+    },
+    {
+      title: "UX Obsessed Design",
+      description:
+        "We craft interfaces that captivate users while building fortresses around your data. Your SaaS will be both stunning and secure.",
     },
     {
       title: "Collaborative Development for Success",
@@ -521,14 +521,16 @@ const ServicesWhyChooseUs = () => {
       <div className="md:w-[90%] w-full mx-auto px-6 xl:py-24 md:py-16 py-8 end-to-end">
         <div className="endTO_text solutions">
           {pathname === "/application-development-services/" ? (
-            <h2 className="text-center w-2/3">
+            <h2 className="text-center w-2/3 mx-auto">
               Why Choose Brilworks for your App Development Needs?
             </h2>
           ) : (
             <>
               {pathname === "/saas-application-development-services/" ||
               pathname === "/generative-ai-development-services/" ? (
-                <h2 className="text-center w-2/3">Here's what sets us apart</h2>
+                <h2 className="text-center w-2/3 mx-auto">
+                  Here's what sets us apart
+                </h2>
               ) : (
                 <>
                   {pathname === "/frappe-development-services/" ? (

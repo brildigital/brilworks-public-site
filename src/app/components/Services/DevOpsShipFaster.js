@@ -82,7 +82,15 @@ const DevOpsShipFaster = () => {
   return (
     <div className="md:mt-[5%] lg:mt-[5%] xl:-mt-[4%] 2xl:-mt-[10%] mt-[30px] mx-auto w-[90%]">
       <div className="bg-themeLight md:bg-cover md:bg-no-repeat rounded-[38px] xl:p-14 py-8">
-        <h2 className="md:w-3/5 w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]">
+        <h2
+          className={`${
+            pathname === "/product-engineering-development-services/" ||
+            pathname === "/devops-consulting-services/" ||
+            pathname === "/flutterflow-development-services/"
+              ? ""
+              : "md:w-3/5"
+          } w-[90%] md:text-center text-left mx-auto mb-8 !text-2xl !leading-10 md:!text-[2rem] lg:!text-5xl md:!leading-[52px] lg:!leading-[52px]`}
+        >
           {heading}
         </h2>
         <p className="md:text-2xl text-lg md:text-center text-left w-11/12 mx-auto">

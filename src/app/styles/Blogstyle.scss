@@ -16,7 +16,7 @@
   a {
     font-family: var(--global-font) !important;
     color: var(--color_black) !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
   }
   a:hover {
@@ -536,10 +536,7 @@
   }
 
   .faq-bottom .accordion-body a:hover {
-    background: linear-gradient(to right, #00c4c8 44%, #00ddb9 51%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--theme-color) !important;
   }
 
   .faq-bottom .accordion-item {
