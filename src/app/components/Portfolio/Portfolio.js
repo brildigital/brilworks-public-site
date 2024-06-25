@@ -229,7 +229,7 @@ const Portfolio = () => {
           </div>
 
           <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="basis-1/2 order-1 md:order-2">
+            <div className="basis-1/2">
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
                   <img
@@ -242,7 +242,7 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-            <div className="basis-1/2 order-2 md:order-1">
+            <div className="basis-1/2">
               <div className="portfolio_sec1_txt1">
                 <p>
                   A Smart
