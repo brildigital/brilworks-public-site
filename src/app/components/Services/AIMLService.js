@@ -1,19 +1,16 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
 import Button from "../Common/Button";
 
-const HomepageWhyChooseUs = dynamic(() =>
-  import("../Homepage/HomepageWhyChooseUs")
-);
 const OurServices = dynamic(() => import("./OurServices"));
 const UseCases = dynamic(() => import("./UseCases"));
 const KeyBenefits = dynamic(() => import("./KeyBenefits"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
+const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
@@ -55,7 +52,7 @@ const AIMLService = () => {
       <Honors />
       <ContactBlock />
       <TechStackWeUse />
-      <HomepageWhyChooseUs />
+      <ServicesWhyChooseUs />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />

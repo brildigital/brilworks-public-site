@@ -5,13 +5,15 @@ import { scrollEffect } from "../lib/commonFunction";
 import "../../styles/Services.scss";
 import StaffAugmentationBanner from "./StaffAugmentationBanner";
 
-const WhyStaffAugmentation = dynamic(() => import("./WhyStaffAugmentation"));
 const UpskillStaffAugmentation = dynamic(() =>
   import("./UpskillStaffAugmentation")
 );
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesPricingPlans = dynamic(() =>
   import("../Services/ServicesPricingPlans")
+);
+const ServicesWhyChooseUs = dynamic(() =>
+  import("../Services/ServicesWhyChooseUs")
 );
 const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
 const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
@@ -31,7 +33,7 @@ const StaffAugmentation = () => {
       <div className="bg-themeLight">
         <UpskillStaffAugmentation />
       </div>
-      <WhyStaffAugmentation />
+      <ServicesWhyChooseUs />
       <div className="bg-themeLight">
         <ClientReviews />
       </div>

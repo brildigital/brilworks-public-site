@@ -1,20 +1,17 @@
 "use client";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
 import "../../styles/Services.scss";
 import React from "react";
 import Button from "../Common/Button";
 
-const HomepageWhyChooseUs = dynamic(() =>
-  import("../Homepage/HomepageWhyChooseUs")
-);
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
+const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
@@ -52,7 +49,7 @@ const AWSService = () => {
       </div>
 
       <OurServices />
-      <HomepageWhyChooseUs />
+      <ServicesWhyChooseUs />
       <Honors />
       <ContactBlock />
       <TechStackWeUse />

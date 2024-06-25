@@ -1,19 +1,16 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import "../../styles/Services.scss";
 import Button from "../Common/Button";
 
-const HomepageWhyChooseUs = dynamic(() =>
-  import("../Homepage/HomepageWhyChooseUs")
-);
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
+const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
@@ -51,7 +48,7 @@ const KubernetesConsultingService = () => {
       </div>
 
       <OurServices />
-      <HomepageWhyChooseUs />
+      <ServicesWhyChooseUs />
       <Honors />
       <ContactBlock />
       <TechStackWeUse />

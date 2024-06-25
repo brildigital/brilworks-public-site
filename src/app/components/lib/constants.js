@@ -193,11 +193,11 @@ export const industryMenuItems = [
       // },
       {
         name: "AWS in healthcare",
-        path: "/use-case/aws-in-healthcare",
+        path: "/use-case/aws-in-healthcare/",
       },
       {
         name: "Generative AI in healthcare",
-        path: "/use-case/generative-ai-in-healthcare",
+        path: "/use-case/generative-ai-in-healthcare/",
       },
       // {
       //   name: "IoT",
