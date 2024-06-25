@@ -52,74 +52,24 @@ const HomepageWhyChooseUs = () => {
     <div className="container mx-auto md:w-[90%] w-full main-section-padding">
       <div className="md:p-8 lg:p-12 p-4 reveal rounded-[30px]">
         <div className="solutions md:pb-8 pb-6 flex md:items-center md:justify-center justify-start items-start font-bold">
-          {pathname === "/application-development-services/" ? (
-            <h2 className="text-center w-2/3 !text-colorWhite">
-              Why Choose Brilworks for your App Development Needs?
-            </h2>
-          ) : (
-            <>
-              {pathname === "/saas-application-development-services/" ||
-              pathname === "/generative-ai-development-services/" ? (
-                <h2 className="text-center w-2/3 !text-colorWhite">
-                  Here's what sets us apart
-                </h2>
-              ) : (
-                <>
-                  {pathname === "/frappe-development-services/" ? (
-                    <h2 className="text-center w-full !text-colorWhite">
-                      Why Choose Brilworks for Frappe Development?
-                    </h2>
-                  ) : (
-                    <>
-                      {pathname === "/" ? (
-                        <WhyChooseText />
-                      ) : (
-                        <h2 className="text-center w-full !text-colorWhite">
-                          Why Choose Brilworks?
-                        </h2>
-                      )}
-                    </>
-                  )}
-                </>
-              )}
-            </>
-          )}
+          <WhyChooseText />
         </div>
-        <div
-          className={`w-full xl:w-[80%] mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 ${
-            pathname === "/aws-consulting-services/" ||
-            pathname === "/business-intelligence-services/" ||
-            pathname === "/adalo-development-services/"
-              ? "xl:grid-cols-2 lg:w-2/3 mx-auto"
-              : "xl:grid-cols-2"
-          } `}
-        >
-          {pathname === "/" &&
-            whyChooseUscontent?.map(({ title, description }, index) => (
-              <div
-                className="rounded-[30px] border border-borderGray overflow-visible h-auto"
-                key={index}
-              >
-                <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-6 transition-all duration-[0.5s]">
-                  <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
-                    {title}
-                  </h4>
-                  <CardBody className="desc md:text-xl text-base p-4 lg:w-11/12">
-                    {description}
-                  </CardBody>
-                </Card>
-              </div>
-            ))}
-          {showDataBasedOnPathname[pathname]?.map(
-            ({ title, description }, index) => (
-              <Card className="shadow-lg shadow-black-500/50" key={index}>
-                <h4 className="text-xl font-bold leading-snug text-black p-4 pb-0">
+        <div className="w-full xl:w-[80%] mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 xl:grid-cols-2">
+          {whyChooseUscontent?.map(({ title, description }, index) => (
+            <div
+              className="rounded-[30px] border border-borderGray overflow-visible h-auto"
+              key={index}
+            >
+              <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-6 transition-all duration-[0.5s]">
+                <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
                   {title}
                 </h4>
-                <CardBody className="p-4 lg:w-11/12">{description}</CardBody>
+                <CardBody className="desc md:text-xl text-base p-4 lg:w-11/12">
+                  {description}
+                </CardBody>
               </Card>
-            )
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
