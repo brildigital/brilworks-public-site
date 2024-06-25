@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
@@ -10,6 +9,29 @@ import DevelopSuccessStory from "./DevelopSuccessStory";
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = () => {
+  const words = ["Empower. ", "Create. ", "Progress"];
+  const colorSequences = [
+    ["text-colorWhite", "text-colorBlack", "text-colorBlack"],
+    ["text-colorBlack", "text-colorWhite", "text-colorBlack"],
+    ["text-colorBlack", "text-colorBlack", "text-colorWhite"],
+  ];
+
+  const [colorClasses, setColorClasses] = useState(colorSequences[0]);
+  const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStep((prevStep) => {
+        const nextStep = (prevStep + 1) % colorSequences.length;
+        setColorClasses(colorSequences[nextStep]);
+        return nextStep;
+      });
+    }, 1000);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -18,6 +40,7 @@ const Portfolio = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
   return (
     <>
       <div className="container mx-auto">
@@ -28,16 +51,24 @@ const Portfolio = () => {
                 <p className="font-bold text-colorWhite xl:text-3xl md:text-[26px] text-2xl">
                   Case Studies
                 </p>
-                <h1 className="text-colorBlack font-bold xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                  Empower. Create.
-                  <span className="text-colorWhite"> Progress</span>
+                <h1
+                  className={`font-bold xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]`}
+                >
+                  {words.map((word, index) => (
+                    <span
+                      key={index}
+                      className={`${colorClasses[index]} transition-all duration-700`}
+                    >
+                      {word}
+                    </span>
+                  ))}
                 </h1>
               </div>
             </div>
           </div>
 
           <div className="service_width">
-            <h2 className="xl:!pt-24 md:!pt-16 !pt-8 font-bold xl:text-5xl lg:text-4xl md:text-3xl text-2xl mb-4">
+            <h2 className="xl:!pt-20 md:!pt-16 !pt-8 font-bold xl:text-5xl lg:text-4xl md:text-3xl text-2xl mb-4">
               Our Recent <span className="text-themeColor">Work</span>
             </h2>
             <p className="text-colorGray md:text-2xl text-xl">
@@ -45,8 +76,21 @@ const Portfolio = () => {
             </p>
           </div>
 
-          <div className="portflio_flex_row service_width reveal">
-            <div className="portflio_flex_40">
+          <div className="portflio_flex_row portfolio_sec service_width reveal">
+            <div className="basis-1/2">
+              <div className="portfolio_color_style">
+                <div className="porfolio_sec1_img relative">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className="alignnone"
+                    src="/images/vugo-1.jpg"
+                    alt="vugo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="basis-1/2">
               <div className="portfolio_sec1_txt1">
                 <p>
                   A Unique In-car
@@ -62,47 +106,16 @@ const Portfolio = () => {
                 </p>
               </div>
               <Button
-                innerClassName="flex items-center justify-center gap-1"
-                className="!pr-5"
+                innerClassName="flex items-center justify-center gap-2"
                 redirect="/portfolio/vugo/"
                 label="Know More"
-                icon="right-arrow"
+                icon="right-arrow-next"
               />
-            </div>
-            <div className="portflio_flex_60">
-              <div className="">
-                <div className="portfolio_color_style">
-                  <div className="porfolio_sec1_img relative">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      className="alignnone"
-                      src="/images/vugo-1.jpg"
-                      alt="vugo"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="portflio_flex_60 order_2">
-              <div className="">
-                <div className="portfolio_color_style">
-                  <div className="porfolio_sec1_img relative">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      className="alignnone"
-                      src="/images/rastrack.webp"
-                      alt="Rastrack"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="portflio_flex_40 order_1">
+          <div className="portflio_flex_row service_width reveal">
+            <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
                 <p>
                   Improve Fleet’s
@@ -117,17 +130,42 @@ const Portfolio = () => {
                 </p>
               </div>
               <Button
-                innerClassName="flex items-center justify-center gap-1"
-                className="!pr-5"
+                innerClassName="flex items-center justify-center gap-2"
                 redirect="/portfolio/rastrack/"
                 label="Know More"
-                icon="right-arrow"
+                icon="right-arrow-next"
               />
+            </div>
+            <div className="basis-1/2 order-1 md:order-2">
+              <div className="portfolio_color_style">
+                <div className="porfolio_sec1_img relative">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className="alignnone"
+                    src="/images/rastrack.webp"
+                    alt="Rastrack"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="portflio_flex_row service_width reveal">
-            <div className="portflio_flex_40">
+          <div className="portflio_flex_row portfolio_sec service_width reveal">
+            <div className="basis-1/2">
+              <div className="portfolio_color_style">
+                <div className="porfolio_sec1_img relative">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className="alignnone"
+                    src="/images/orokii.jpg"
+                    alt="Orokii"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="basis-1/2">
               <div className="portfolio_sec1_txt1">
                 <p>
                   A Custom
@@ -144,47 +182,16 @@ const Portfolio = () => {
               </div>
 
               <Button
-                innerClassName="flex items-center justify-center gap-1"
-                className="!pr-5"
+                innerClassName="flex items-center justify-center gap-2"
                 redirect="/portfolio/orokii/"
                 label="Know More"
-                icon="right-arrow"
+                icon="right-arrow-next"
               />
-            </div>
-            <div className="portflio_flex_60">
-              <div className="">
-                <div className="portfolio_color_style">
-                  <div className="porfolio_sec1_img relative">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      className="alignnone"
-                      src="/images/orokii.jpg"
-                      alt="Orokii"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="portflio_flex_60 order_2">
-              <div className="">
-                <div className="portfolio_color_style">
-                  <div className="porfolio_sec1_img relative">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      className="alignnone"
-                      src="/images/Eccocar.webp"
-                      alt="Eccocar"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="portflio_flex_40 order_1">
+          <div className="portflio_flex_row service_width reveal">
+            <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
                 <p>
                   A Payment
@@ -200,17 +207,42 @@ const Portfolio = () => {
                 </p>
               </div>
               <Button
-                innerClassName="flex items-center justify-center gap-1"
-                className="!pr-5"
+                innerClassName="flex items-center justify-center gap-2"
                 redirect="/portfolio/eccocar/"
                 label="Know More"
-                icon="right-arrow"
+                icon="right-arrow-next"
               />
+            </div>
+            <div className="basis-1/2 order-1 md:order-2">
+              <div className="portfolio_color_style">
+                <div className="porfolio_sec1_img relative">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className="alignnone"
+                    src="/images/Eccocar.webp"
+                    alt="Eccocar"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="portflio_flex_row service_width reveal">
-            <div className="portflio_flex_40">
+          <div className="portflio_flex_row portfolio_sec service_width reveal">
+            <div className="basis-1/2 order-1 md:order-2">
+              <div className="portfolio_color_style">
+                <div className="porfolio_sec1_img relative">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    className="alignnone"
+                    src="/images/gps-trackers-devices-uses2-1.webp"
+                    alt="Trackimo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
                 <p>
                   A Smart
@@ -226,27 +258,11 @@ const Portfolio = () => {
                 </p>
               </div>
               <Button
-                innerClassName="flex items-center justify-center gap-1"
-                className="!pr-5"
+                innerClassName="flex items-center justify-center gap-2"
                 redirect="/portfolio/trackimo/"
                 label="Know More"
-                icon="right-arrow"
+                icon="right-arrow-next"
               />
-            </div>
-            <div className="portflio_flex_60">
-              <div className="">
-                <div className="portfolio_color_style">
-                  <div className="porfolio_sec1_img relative">
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      className="alignnone"
-                      src="/images/gps-trackers-devices-uses2-1.webp"
-                      alt="Trackimo"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>

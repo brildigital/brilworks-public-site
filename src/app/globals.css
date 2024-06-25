@@ -1269,25 +1269,10 @@ textarea.form-control-txt {
 
 .portfolio_sec1_txt2 p {
   font-size: var(--font_24);
-
-  color: var(--color_black);
 }
 
 .fintech-portfolio-sec {
   font-size: 1.8rem;
-}
-
-.fintech-portfolio-content {
-  color: var(--color_black);
-  padding-top: 1.5rem;
-}
-
-.portflio_flex_40 {
-  flex-basis: 40%;
-}
-
-.portflio_flex_60 {
-  flex-basis: 60%;
 }
 
 .portflio_flex_row {
@@ -1296,7 +1281,6 @@ textarea.form-control-txt {
   flex: 1;
   gap: 0;
   padding: 5rem 0;
-  border-bottom: 1px solid var(--theme-color);
 }
 
 .portfolio_sec1_txt1 p {
@@ -2807,14 +2791,6 @@ textarea.form-control-txt {
     flex-direction: column;
     gap: 2rem;
     padding: 3rem 0;
-  }
-
-  .portflio_flex_40 {
-    order: 2;
-  }
-
-  .portflio_flex_60 {
-    order: 1;
   }
 
   .portfolio_color_style {

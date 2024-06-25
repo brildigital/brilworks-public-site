@@ -601,7 +601,7 @@ const Fintech = () => {
                   </div>
 
                   <div>
-                    <p className="w-3/5 fintech-portfolio-content">
+                    <p className="w-3/4 pt-6 text-lg">
                       New-age financing software developed for small businesses
                       and services companies.
                     </p>

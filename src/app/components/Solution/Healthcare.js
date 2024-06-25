@@ -612,7 +612,7 @@ const HealthCare = () => {
               </div>
 
               <div>
-                <p className="w-3/5 fintech-portfolio-content">
+                <p className="w-3/4 pt-6 text-lg">
                   Endometriosis free consultation app for patients to easily
                   reach out to expert doctors in the field.
                 </p>
