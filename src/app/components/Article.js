@@ -64,6 +64,8 @@ const Article = ({ blok }) => {
         if (node.type === "tag" && node.name === "img") {
           node.attribs.loading = "lazy";
           node.attribs.decoding = "async";
+          node.attribs.width = "736";
+          node.attribs.height = "200";
         }
 
         if (node.type === "tag" && node.name === "a") {
