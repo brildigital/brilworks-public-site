@@ -391,6 +391,8 @@ const Article = ({ blok }) => {
                     loading="lazy"
                     className="ready_main hidden md:block alignnone"
                     src="/images/ready.png"
+                    width="1260"
+                    height="390"
                     alt="get in touch"
                   />
                   <img
@@ -398,6 +400,8 @@ const Article = ({ blok }) => {
                     loading="lazy"
                     className="block md:hidden rounded-[20px] alignnone"
                     src="/images/ready-mobile.webp"
+                    width="340"
+                    height="720"
                     alt="get in touch"
                   />
                 </p>

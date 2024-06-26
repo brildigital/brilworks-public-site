@@ -126,20 +126,20 @@ const AdminDashboard = () => {
                       </div>
                       <div className="flex flex-col pt-2 empty:hidden dark:border-white/20">
                         <div className="flex w-full items-center">
-                          <div class="grow">
-                            <div class="group relative">
+                          <div className="grow">
+                            <div className="group relative">
                               <button
-                                class="flex w-full items-center gap-2 rounded-lg p-2 text-sm hover:bg-token-sidebar-surface-secondary group-ui-open:bg-token-sidebar-surface-secondary"
+                                className="flex w-full items-center gap-2 rounded-lg p-2 text-sm hover:bg-token-sidebar-surface-secondary group-ui-open:bg-token-sidebar-surface-secondary"
                                 type="button"
                               >
-                                <div class="flex-shrink-0">
-                                  <div class="flex items-center justify-center overflow-hidden rounded-full">
-                                    <div class="relative flex">
+                                <div className="flex-shrink-0">
+                                  <div className="flex items-center justify-center overflow-hidden rounded-full">
+                                    <div className="relative flex">
                                       <Image
                                         alt="User"
                                         width="32"
                                         height="32"
-                                        class="rounded-sm"
+                                        className="rounded-sm"
                                         src={
                                           session?.data?.user?.image ||
                                           "/images/reliant-img.png"
@@ -148,7 +148,7 @@ const AdminDashboard = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <div class="relative -top-px grow -space-y-px overflow-hidden text-ellipsis whitespace-nowrap text-left text-token-text-primary">
+                                <div className="relative -top-px grow -space-y-px overflow-hidden text-ellipsis whitespace-nowrap text-left text-token-text-primary">
                                   <div>
                                     {" "}
                                     {session?.data?.user?.name} (
