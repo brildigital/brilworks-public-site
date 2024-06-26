@@ -557,50 +557,26 @@ const ServicesWhyChooseUs = () => {
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
           <div className="flex flex-col md:gap-20">
-            {firstThree?.map(({ title, description }, index) => (
+            {firstThree?.map(({ title, description }) => (
               <ServiceCard
-                key={index}
+                key={title}
                 title={title}
                 description={description}
               />
             ))}
-            {/* <ServiceCard
-              title="Cost-effective"
-              description="With our IT staff augmentation services, you gain access to the talent you need without the burden of overhead costs associated with traditional hiring processes."
-            />
-            <ServiceCard
-              title="Highly Skilled Developers"
-              description="By choosing us, you gain access to a pool of highly skilled developers, software engineers, business analysts, Scrum Masters, and QA specialists."
-            />
-            <ServiceCard
-              title="Domain Expertise"
-              description="Whether you operate in finance, healthcare, e-commerce, or any other sector, we have the expertise to support you."
-            /> */}
           </div>
           <div className="m-auto why_staff_augmentation">
             <Svgs name="staff-augmentation-service" />
           </div>
 
           <div className="flex flex-col md:gap-20">
-            {remainingThree?.map(({ title, description }, index) => (
+            {remainingThree?.map(({ title, description }) => (
               <ServiceCard
-                key={index}
+                key={title}
                 title={title}
                 description={description}
               />
             ))}
-            {/* <ServiceCard
-              title="Seamless Staffing"
-              description="We connect you with pre-vetted, highly skilled professionals who can seamlessly integrate into your existing team."
-            />
-            <ServiceCard
-              title="Flexibility and Scalability"
-              description="Our staff augmentation services provide unmatched flexibility. Scale your IT team up or down seamlessly to meet your project requirements and evolving business needs."
-            />
-            <ServiceCard
-              title="Dedicated Support"
-              description="Client satisfaction is our priority. We are committed to providing ongoing support and clear communication throughout your partnership with us"
-            /> */}
           </div>
         </div>
       </div>

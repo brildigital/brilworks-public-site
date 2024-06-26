@@ -3,17 +3,14 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { Icon } from "../lib/commonFunction";
 
-const Accordion = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.Accordion),
-  { ssr: false }
+const Accordion = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.Accordion)
 );
-const AccordionHeader = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionHeader),
-  { ssr: false }
+const AccordionHeader = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionHeader)
 );
-const AccordionBody = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionBody),
-  { ssr: false }
+const AccordionBody = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionBody)
 );
 
 const UsecaseFAQ = () => {
@@ -45,7 +42,7 @@ const UsecaseFAQ = () => {
       </div>
 
       <div>
-        <div itemScope={true} itemType="https://schema.org/FAQPage">
+        <div itemScope="true" itemType="https://schema.org/FAQPage">
           {StaffAugmentationFAQData?.map(({ question, answer }, index) => (
             <Accordion
               key={index + 1}
@@ -54,7 +51,7 @@ const UsecaseFAQ = () => {
               className={`accordion-item !mb-0  ${
                 open === index + 1 ? "bg-themeLight" : "bg-colorWhite"
               }`}
-              itemScope="true"
+              itemScope
               itemProp="mainEntity"
               itemType="https://schema.org/Question"
             >

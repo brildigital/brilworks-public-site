@@ -110,7 +110,7 @@ export default async function Page(props) {
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
               <div className="slg:w-[calc(100%_-_170px)]">
                 <div
-                  className="w-full inline-flex flex-wrap items-center mb-3"
+                  className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
                   aria-label="Breadcrumb"
                 >
                   <span className="blog-navigation">
@@ -120,7 +120,7 @@ export default async function Page(props) {
                   </span>
                   <span className="self-center md:mx-2 mx-1 mt-[2px]">
                     <Image
-                      className="black_aerrow alignnone !w-[20px] size-full"
+                      className="!w-[20px]"
                       src="/images/black_aerrow-1.png"
                       alt="arrow"
                       width="20"
@@ -138,7 +138,7 @@ export default async function Page(props) {
                     <>
                       <span className="self-center md:mx-2 mx-1 mt-[2px]">
                         <Image
-                          className="black_aerrow alignnone !w-[20px] size-full"
+                          className="!w-[20px]"
                           src="/images/black_aerrow-1.png"
                           alt="arrow"
                           width="20"
@@ -161,7 +161,7 @@ export default async function Page(props) {
                   )}
                   <span className="self-center md:mx-2 mx-1 mt-[2px]">
                     <Image
-                      className="black_aerrow alignnone !w-[20px] size-full"
+                      className="!w-[20px]"
                       src="/images/black_aerrow-1.png"
                       alt="arrow"
                       width="20"
@@ -171,11 +171,11 @@ export default async function Page(props) {
                   </span>
                   <span>{data?.story?.content.title}</span>
                 </div>
-                <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px]">
+                <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
                   {data?.story?.content.title}
                 </h1>
               </div>
-              <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2">
+              <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
                 {author && (
                   <div className="flex items-center justify-between">
                     <Image
@@ -183,7 +183,7 @@ export default async function Page(props) {
                       width="54"
                       height="56"
                       alt={author?.name}
-                      className="!rounded-full photo md:!w-14 md:!h-14 !w-10 !h-10"
+                      className="!rounded-full md:!w-14 md:!h-14 !w-10 !h-10"
                       priority="true"
                     />
                     <div className="pl-[10px] ">
@@ -243,30 +243,37 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
               <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
-                <Image
-                  className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content.mobile_banner?.filename ||
-                    data?.story?.content.image?.filename
-                  }
-                  alt={data?.story?.content.image?.alt}
-                  width="343"
-                  height="177"
-                  priority={true}
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                />
-                <Image
-                  className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content.image?.filename ||
-                    data?.story?.content.mobile_banner?.filename
-                  }
-                  alt={data?.story?.content.image?.alt}
-                  width="758"
-                  height="169"
-                  priority={true}
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                />
+                {data?.story?.content.image ? (
+                  <>
+                    <Image
+                      className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
+                      src={
+                        data?.story?.content.mobile_banner?.filename ||
+                        data?.story?.content.image?.filename
+                      }
+                      alt={data?.story?.content.image?.alt}
+                      width="343"
+                      height="177"
+                      priority={true}
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      media="(max-width: 767px)"
+                    />
+                    <Image
+                      className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
+                      src={
+                        data?.story?.content.image?.filename ||
+                        data?.story?.content.mobile_banner?.filename
+                      }
+                      alt={data?.story?.content.image?.alt}
+                      width="758"
+                      height="169"
+                      priority={true}
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                    />
+                  </>
+                ) : (
+                  <div className="h-[288px]"></div>
+                )}
               </div>
               {data?.story?.content.Quick_Summary && (
                 <div>

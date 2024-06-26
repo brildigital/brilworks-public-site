@@ -202,7 +202,7 @@ const TechnologyFAQ = () => {
     "/hire-blockchain-developer/": blockchainFAQData,
   };
 
-  const faqData = showDataBasedOnPathname[pathname] || {};
+  const technologyFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
     <div className="sec3_width_home faq-bottom xl:!pb-[6rem] md:!pb-[4rem] !pb-[2rem]">
@@ -213,7 +213,7 @@ const TechnologyFAQ = () => {
       </div>
       <div className="reveal">
         <div itemScope="true" itemType="https://schema.org/FAQPage">
-          {faqData.map(({ question, answer }, index) => (
+          {technologyFAQData?.map(({ question, answer }, index) => (
             <FAQAccordion
               key={index + 1}
               id={index + 1}

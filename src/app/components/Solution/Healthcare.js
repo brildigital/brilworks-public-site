@@ -1,10 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 
 const HealthcareFAQs = dynamic(() => import("./SolutionFAQ"));
@@ -133,6 +132,7 @@ const HealthCare = () => {
                 width="1398"
                 height="780"
                 sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                media="(min-width: 768px)"
               />
               <Image
                 className="h-[300px] block md:hidden rounded-[20px]"
@@ -142,6 +142,7 @@ const HealthCare = () => {
                 width="320"
                 height="250"
                 sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                media="(max-width: 767px)"
               />
             </p>
             <div className="service_sec1_position">

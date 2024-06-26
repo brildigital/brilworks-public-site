@@ -710,6 +710,7 @@ const OurServices = () => {
   };
 
   const title = showTitleBasedOnPathname[pathname] || "Our Services";
+  const servicesAccordionData = showDataBasedOnPathname[pathname] || {};
 
   return (
     <div
@@ -732,7 +733,7 @@ const OurServices = () => {
               <div className="tab-content d-flex justify-content-center align-items-center h-100">
                 <div>
                   <div className="services_img md:pt-8">
-                    {showDataBasedOnPathname[pathname].map(
+                    {servicesAccordionData?.map(
                       ({ imageSrc, imageAlt }, index) => (
                         <div
                           key={index}
@@ -761,18 +762,16 @@ const OurServices = () => {
               </div>
             </div>
             <div className="lg:w-6/12 w-full">
-              {showDataBasedOnPathname[pathname].map(
-                ({ title, content }, index) => (
-                  <AccordionCustomIcon
-                    index={index + 1}
-                    key={index + 1}
-                    title={title}
-                    content={content}
-                    handleOpen={handleOpen}
-                    open={open}
-                  />
-                )
-              )}
+              {servicesAccordionData?.map(({ title, content }, index) => (
+                <AccordionCustomIcon
+                  index={index + 1}
+                  key={index + 1}
+                  title={title}
+                  content={content}
+                  handleOpen={handleOpen}
+                  open={open}
+                />
+              ))}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Common-component.scss";
+import "../../styles/custom-style.scss";
 import Link from "next/link";
 import { scrollToSection } from "../lib/commonFunction";
 

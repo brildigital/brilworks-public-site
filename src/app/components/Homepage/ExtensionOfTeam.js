@@ -1,22 +1,18 @@
 "use client";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { TechTeamText } from "./BigText";
 import { useEffect, useState } from "react";
 import { Icon, scrollEffect } from "../lib/commonFunction";
 import LinkWithArrow from "../Common/LinkWithArrow";
 
-const Accordion = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.Accordion),
-  { ssr: false }
+const Accordion = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.Accordion)
 );
-const AccordionHeader = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionHeader),
-  { ssr: false }
+const AccordionHeader = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionHeader)
 );
-const AccordionBody = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionBody),
-  { ssr: false }
+const AccordionBody = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionBody)
 );
 
 const ExtensionOfTeam = () => {

@@ -42,6 +42,7 @@ const PortfolioInnerEccocar = () => {
             height="494"
             priority
             sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+            media="(min-width: 768px)"
           />
           <Image
             className="block md:hidden"
@@ -51,6 +52,7 @@ const PortfolioInnerEccocar = () => {
             width="400"
             height="257"
             sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+            media="(max-width: 767px)"
           />
         </div>
 

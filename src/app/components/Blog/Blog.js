@@ -276,7 +276,11 @@ const Blog = () => {
                   <div className="sec9_img1">
                     <Image
                       className="block md:hidden rounded-[30px]"
-                      src={content?.mobile_banner?.filename}
+                      src={
+                        content?.mobile_banner?.filename
+                          ? content?.mobile_banner?.filename
+                          : "/images/not-found-image.webp"
+                      }
                       alt={
                         content?.mobile_banner?.alt ||
                         content?.Image?.alt ||
@@ -287,10 +291,15 @@ const Blog = () => {
                       height="150"
                       priority={index === 0}
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      media="(max-width: 767px)"
                     />
                     <Image
                       className="hidden md:block rounded-[30px]"
-                      src={content?.mobile_banner?.filename}
+                      src={
+                        content?.mobile_banner?.filename
+                          ? content?.mobile_banner?.filename
+                          : "/images/not-found-image.webp"
+                      }
                       alt={
                         content?.mobile_banner?.alt ||
                         content?.Image?.alt ||

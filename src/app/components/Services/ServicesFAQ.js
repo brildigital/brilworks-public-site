@@ -595,6 +595,8 @@ const ServicesFAQ = () => {
     "/rapid-digitalization/": RapidDigitalisationFAQData,
   };
 
+  const servicesFAQData = showDataBasedOnPathname[pathname] || {};
+
   return (
     <div className="container md:w-[90%] w-full mx-auto faq-bottom main-section-padding !pt-0 px-4 xl:px-12">
       <div className="service_sec3 text-center solutions">
@@ -604,19 +606,17 @@ const ServicesFAQ = () => {
       </div>
 
       <div className="reveal">
-        <div itemScope={true} itemType="https://schema.org/FAQPage">
-          {showDataBasedOnPathname[pathname].map(
-            ({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            )
-          )}
+        <div itemScope="true" itemType="https://schema.org/FAQPage">
+          {servicesFAQData?.map(({ question, answer }, index) => (
+            <FAQAccordion
+              key={index + 1}
+              id={index + 1}
+              question={question}
+              answer={answer}
+              open={open}
+              handleOpen={handleOpen}
+            />
+          ))}
         </div>
       </div>
     </div>

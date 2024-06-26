@@ -5,13 +5,11 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
 
-const Card = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.Card),
-  { ssr: false }
+const Card = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.Card)
 );
-const CardBody = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.CardBody),
-  { ssr: false }
+const CardBody = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
 const MainGist = () => {

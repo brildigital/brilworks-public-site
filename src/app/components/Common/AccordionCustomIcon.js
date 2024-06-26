@@ -1,22 +1,18 @@
 "use client";
 import "../../styles/Homepage.scss";
 import React from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Icon } from "../lib/commonFunction";
 import LinkWithArrow from "./LinkWithArrow";
 
-const Accordion = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.Accordion),
-  { ssr: false }
+const Accordion = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.Accordion)
 );
-const AccordionHeader = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionHeader),
-  { ssr: false }
+const AccordionHeader = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionHeader)
 );
-const AccordionBody = dynamic(
-  () => import("@material-tailwind/react").then((mod) => mod.AccordionBody),
-  { ssr: false }
+const AccordionBody = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionBody)
 );
 
 const CUSTOM_ANIMATION = {

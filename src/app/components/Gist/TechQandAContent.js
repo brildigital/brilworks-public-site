@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "../../styles/Giststyle.scss";
+import "../../styles/custom-style.scss";
 import parse from "html-react-parser";
 import Link from "next/link";
 import dynamic from "next/dynamic";

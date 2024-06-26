@@ -226,7 +226,7 @@ const Article = ({ blok }) => {
                       </Link>
                       <Link
                         target="_blank"
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.brilworks.com${pathname}`}
+                        href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
                       >
                         <img
                           decoding="async"
@@ -446,8 +446,15 @@ const Article = ({ blok }) => {
                           <div className="sec9_img1">
                             <Image
                               className="rounded-[30px]"
-                              src={content?.mobile_banner?.filename}
-                              alt={content?.mobile_banner?.alt}
+                              src={
+                                content?.mobile_banner?.filename
+                                  ? content?.mobile_banner?.filename
+                                  : "/images/not-found-image.webp"
+                              }
+                              alt={
+                                content?.mobile_banner?.alt ||
+                                `Banner-img-${index}`
+                              }
                               width={550}
                               height={283}
                             />

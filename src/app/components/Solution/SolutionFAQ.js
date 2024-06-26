@@ -143,6 +143,8 @@ const SolutionFAQ = () => {
     "/industry/healthcare-software-development/": healthcareFAQData,
   };
 
+  const solutionFAQData = showDataBasedOnPathname[pathname] || {};
+
   return (
     <div className="sec3_width_home faq-bottom xl:pb-[6rem] md:pb-[4rem] pb-8">
       <div className="service_sec3 md:text-center text-left solutions">
@@ -153,18 +155,16 @@ const SolutionFAQ = () => {
 
       <div className="reveal">
         <div itemScope="true" itemType="https://schema.org/FAQPage">
-          {showDataBasedOnPathname[pathname].map(
-            ({ question, answer }, index) => (
-              <FAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            )
-          )}
+          {solutionFAQData?.map(({ question, answer }, index) => (
+            <FAQAccordion
+              key={index + 1}
+              id={index + 1}
+              question={question}
+              answer={answer}
+              open={open}
+              handleOpen={handleOpen}
+            />
+          ))}
         </div>
       </div>
     </div>

@@ -134,6 +134,7 @@ const FleetManagementNGPS = () => {
                 width="1398"
                 height="780"
                 sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                media="(min-width: 768px)"
               />
               <Image
                 className="h-[300px] block md:hidden rounded-[20px]"
@@ -143,6 +144,7 @@ const FleetManagementNGPS = () => {
                 width="320"
                 height="250"
                 sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                media="(max-width: 767px)"
               />
             </p>
             <div className="service_sec1_position">

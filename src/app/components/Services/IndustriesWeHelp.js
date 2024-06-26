@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -265,6 +266,8 @@ const IndustriesWeHelp = () => {
     "/adalo-development-services/": FrappeWeHelp,
   };
 
+  const industriesHelpData = showDataBasedOnPathname[pathname] || {};
+
   return (
     <div className="container md:w-[90%] w-full mx-auto">
       <div className="!rounded-2xl">
@@ -281,26 +284,51 @@ const IndustriesWeHelp = () => {
                 : ""
             }`}
           >
-            {showDataBasedOnPathname[pathname].map(
-              ({ title, imageSrc, imageAlt }, index) => (
-                <div
-                  className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
-                  key={index}
-                >
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="w-auto md:mb-6 mb-4"
-                    width={60}
-                    height={60}
-                  />
+            {industriesHelpData?.map(({ title, imageSrc, imageAlt }, index) => (
+              <div
+                className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
+                key={index}
+              >
+                {(pathname === "/aws-consulting-services/" &&
+                  title === "Healthcare") ||
+                (pathname === "/generative-ai-development-services/" &&
+                  title === "Healthcare") ? (
+                  <Link
+                    href={
+                      pathname === "/aws-consulting-services/"
+                        ? "/use-case/aws-in-healthcare"
+                        : "/use-case/generative-ai-in-healthcare"
+                    }
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      className="w-auto mx-auto md:mb-6 mb-4"
+                      width={60}
+                      height={60}
+                    />
 
-                  <span className="text-center lg:text-2xl md:text-xl text-base">
-                    {title}
-                  </span>
-                </div>
-              )
-            )}
+                    <span className="text-center lg:text-2xl md:text-xl text-base">
+                      {title}
+                    </span>
+                  </Link>
+                ) : (
+                  <>
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt}
+                      className="w-auto md:mb-6 mb-4"
+                      width={60}
+                      height={60}
+                    />
+
+                    <span className="text-center lg:text-2xl md:text-xl text-base">
+                      {title}
+                    </span>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
