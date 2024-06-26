@@ -3,7 +3,7 @@ import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-const ArticleSkeleton = () => {
+export const ArticleSkeleton = () => {
   return (
     <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
       <div className="md:pt-[8rem] pt-[6rem] blog-main">
@@ -63,4 +63,31 @@ const ArticleSkeleton = () => {
   );
 };
 
-export default ArticleSkeleton;
+export const ContentSkeleton = () => {
+  return (
+    <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
+      <Skeleton count={10} />
+    </SkeletonTheme>
+  );
+};
+
+export const TableOfContentSkeleton = () => {
+  return (
+    <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
+      <div className="w-56">
+        <div className="shadow-[4px_4px_0px_0px_#e2e2e2]">
+          <div className="border border-[#e2e2e2] px-3 pt-[10px] pb-4">
+            <Skeleton count={10} />
+          </div>
+        </div>
+        <div className="!mt-7">
+          <div className="flex items-start flex-wrap gap-4">
+            <Skeleton circle width={43} height={43} count={1} />
+            <Skeleton circle width={43} height={43} count={1} />
+            <Skeleton circle width={43} height={43} count={1} />
+          </div>
+        </div>
+      </div>
+    </SkeletonTheme>
+  );
+};

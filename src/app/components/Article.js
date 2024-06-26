@@ -13,6 +13,10 @@ import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import { blogAuthor, formattedDate } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
+import {
+  ContentSkeleton,
+  TableOfContentSkeleton,
+} from "./Blog/ArticleSkeleton";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -159,86 +163,92 @@ const Article = ({ blok }) => {
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
                 <div className="sticky top-[110px] !pb-5">
-                  <div
-                    className={`${
-                      headings?.length ? "blog-tab-content" : "!hidden"
-                    }`}
-                  >
-                    <div className="flex justify-between !mb-5">
-                      <p>Table of Contents</p>
-                    </div>
-                    <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
-                      {headings?.length ? (
-                        headings.map((heading, index) => (
-                          <li key={index}>
-                            <Link
-                              href={`#temp-section-${index}`}
-                              onClick={(e) =>
-                                handleTableOfContentLinkClick(e, index)
-                              }
-                              className={`${
-                                index == activeLink ? "page-active" : ""
-                              }`}
-                            >
-                              {heading.text}
-                            </Link>
-                          </li>
-                        ))
-                      ) : (
-                        <div className="flex align-middle justify-center">
-                          <FetchDataSpinner />
+                  {isLoading ? (
+                    <TableOfContentSkeleton />
+                  ) : (
+                    <>
+                      <div
+                        className={`${
+                          headings?.length ? "blog-tab-content" : "!hidden"
+                        }`}
+                      >
+                        <div className="flex justify-between !mb-5">
+                          <p>Table of Contents</p>
                         </div>
-                      )}
-                    </ul>
-                  </div>
-                  <div className="!mt-7">
-                    <div className="flex items-start flex-wrap">
-                      <Link
-                        target="_blank"
-                        href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
-                        className="!mr-4"
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/fb-share.svg"
-                          width="43"
-                          height="43"
-                          alt="Facebook blog share"
-                        />
-                      </Link>
-                      <Link
-                        target="_blank"
-                        className="!mr-4"
-                        href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
-                          .split("")
-                          .splice(0, pathname.length - 1)
-                          .join("")}`}
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/twitter-share.svg"
-                          width="43"
-                          height="43"
-                          alt="Twitter blog share"
-                        />
-                      </Link>
-                      <Link
-                        target="_blank"
-                        href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/linkedin-share.svg"
-                          width="43"
-                          height="43"
-                          alt="LinkedIn blog share"
-                        />
-                      </Link>
-                    </div>
-                  </div>
+                        <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
+                          {headings?.length ? (
+                            headings.map((heading, index) => (
+                              <li key={index}>
+                                <Link
+                                  href={`#temp-section-${index}`}
+                                  onClick={(e) =>
+                                    handleTableOfContentLinkClick(e, index)
+                                  }
+                                  className={`${
+                                    index == activeLink ? "page-active" : ""
+                                  }`}
+                                >
+                                  {heading.text}
+                                </Link>
+                              </li>
+                            ))
+                          ) : (
+                            <div className="flex align-middle justify-center py-16">
+                              <FetchDataSpinner />
+                            </div>
+                          )}
+                        </ul>
+                      </div>
+                      <div className="!mt-7">
+                        <div className="flex items-start flex-wrap">
+                          <Link
+                            target="_blank"
+                            href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
+                            className="!mr-4"
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/fb-share.svg"
+                              width="43"
+                              height="43"
+                              alt="Facebook blog share"
+                            />
+                          </Link>
+                          <Link
+                            target="_blank"
+                            className="!mr-4"
+                            href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
+                              .split("")
+                              .splice(0, pathname.length - 1)
+                              .join("")}`}
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/twitter-share.svg"
+                              width="43"
+                              height="43"
+                              alt="Twitter blog share"
+                            />
+                          </Link>
+                          <Link
+                            target="_blank"
+                            href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/linkedin-share.svg"
+                              width="43"
+                              height="43"
+                              alt="LinkedIn blog share"
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
               <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
@@ -248,7 +258,11 @@ const Article = ({ blok }) => {
                       <div className="h-full w-full box-border !px-4">
                         <div className="h-full flex flex-col">
                           <div className="blog_content" ref={targetRef}>
-                            {modifyImagesWithLazyLoading(blok?.content)}
+                            {blok?.content ? (
+                              modifyImagesWithLazyLoading(blok?.content)
+                            ) : (
+                              <ContentSkeleton />
+                            )}
                             {blok?.CTA_1 && (
                               <div
                                 className={`${

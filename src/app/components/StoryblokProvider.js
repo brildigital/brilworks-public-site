@@ -1,6 +1,6 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import ArticleSkeleton from "./Blog/ArticleSkeleton";
+import { ArticleSkeleton } from "./Blog/ArticleSkeleton";
 
 /** Import your components */
 import Page from "./Page";

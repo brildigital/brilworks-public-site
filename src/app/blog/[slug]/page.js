@@ -277,7 +277,7 @@ export default async function Page(props) {
               </div>
               {data?.story?.content.Quick_Summary && (
                 <div>
-                  <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left italic">
+                  <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px]">
                     <span className="font-bold text-themeColor">
                       Quick Summary:-{" "}
                     </span>
