@@ -276,20 +276,13 @@ export default async function Page(props) {
                   <div className="h-[288px]"></div>
                 )}
               </div>
-              {data?.story?.content?.Quick_Summary ? (
-                <div>
-                  <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px] h-auto">
-                    <span className="font-bold text-themeColor">
-                      Quick Summary:-{" "}
-                    </span>
-                    {data?.story?.content?.Quick_Summary}
-                  </div>
-                </div>
-              ) : (
-                <div className="slg:w-[calc(100%_-_170px)] sxl:mb-6 mb-4">
-                  <Skeleton height={25} count={4} />
-                </div>
-              )}
+
+              <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px] h-full">
+                <span className="font-bold text-themeColor">
+                  Quick Summary:-{" "}
+                </span>
+                {data?.story?.content?.Quick_Summary}
+              </div>
             </div>
           </div>
         </div>
