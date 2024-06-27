@@ -276,13 +276,14 @@ export default async function Page(props) {
                   <div className="h-[288px]"></div>
                 )}
               </div>
-
-              <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px] h-full">
-                <span className="font-bold text-themeColor">
-                  Quick Summary:-{" "}
-                </span>
-                {data?.story?.content?.Quick_Summary}
-              </div>
+              {data?.story?.content?.Quick_Summary && (
+                <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px] h-full">
+                  <span className="font-bold text-themeColor">
+                    Quick Summary:-{" "}
+                  </span>
+                  {data?.story?.content?.Quick_Summary}
+                </div>
+              )}
             </div>
           </div>
         </div>
