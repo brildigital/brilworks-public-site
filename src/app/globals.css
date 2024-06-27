@@ -120,6 +120,9 @@ input[type="number"] {
 .main-section-padding {
   padding: 6rem 0rem;
 }
+.section-padding {
+  padding: 6rem 5%;
+}
 .font-style-solution-head {
   font-weight: 800;
   color: var(--white_color);
@@ -2548,7 +2551,10 @@ textarea.form-control-txt {
 }
 @media only screen and (max-width: 1080px) {
   .main-section-padding {
-    padding: 4rem 2rem !important;
+    padding: 4rem 2rem;
+  }
+  .section-padding {
+    padding: 4rem 2rem;
   }
   .identifying-understanding {
     padding-bottom: 5rem;
@@ -2566,7 +2572,10 @@ textarea.form-control-txt {
 
 @media only screen and (max-width: 767px) {
   .main-section-padding {
-    padding: 2rem 1rem !important;
+    padding: 2rem 1rem;
+  }
+  .section-padding {
+    padding: 2rem 1rem;
   }
   .identifying-understanding {
     padding-bottom: 2.5rem;

@@ -5,10 +5,12 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import DevelopSuccessStory from "./DevelopSuccessStory";
+import { usePathname } from "next/navigation";
 
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = () => {
+  const pathname = usePathname();
   const words = ["Empower. ", "Create. ", "Progress"];
   const colorSequences = [
     ["text-colorWhite", "text-colorBlack", "text-colorBlack"],
@@ -259,7 +261,11 @@ const Portfolio = () => {
               </div>
               <Button
                 innerClassName="flex items-center justify-center gap-2"
-                redirect="/portfolio/trackimo/"
+                redirect={
+                  pathname === "/case-studies/"
+                    ? "/case-studies/trackimo/"
+                    : "/portfolio/trackimo/"
+                }
                 label="Know More"
                 icon="right-arrow-next"
               />
