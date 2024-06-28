@@ -1,12 +1,14 @@
 import React from "react";
-import Button from "../Common/Button";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import Button from "../Common/Button";
 import ProjectOverview from "./ProjectOverview";
-import ClientBackground from "./ClientBackground";
-import TheChallenges from "./TheChallenges";
-import OurSolutionCasestudy from "./OurSolutionCasestudy";
-import KeyOutcomes from "./KeyOutcomes";
-import OtherCaseStudy from "./OtherCaseStudy";
+
+const ClientBackground = dynamic(() => import("./ClientBackground"));
+const TheChallenges = dynamic(() => import("./TheChallenges"));
+const OurSolutionCasestudy = dynamic(() => import("./OurSolutionCasestudy"));
+const KeyOutcomes = dynamic(() => import("./KeyOutcomes"));
+const OtherCaseStudy = dynamic(() => import("./OtherCaseStudy"));
 
 const CaseStudyTrackimo = () => {
   return (
@@ -38,13 +40,11 @@ const CaseStudyTrackimo = () => {
             </div>
             <div className="lg:basis-2/5">
               <Image
-                loading="lazy"
-                decoding="async"
-                className="alignnone"
                 src="/images/gps-trackers-devices-uses2-1.webp"
                 width="490"
                 height="365"
                 alt="Trackimo"
+                priority="true"
               />
             </div>
           </div>

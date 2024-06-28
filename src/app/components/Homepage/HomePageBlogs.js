@@ -69,8 +69,12 @@ const HomePageBlogs = () => {
   //   fetchData();
   // }, []);
   return (
-    <div className={pathname === "/" ? "bg-sectionBG" : ""}>
-      <div className="container mx-auto main-section-padding reveal">
+    <div
+      className={
+        pathname === "/" ? "bg-sectionBG section-padding" : "section-padding"
+      }
+    >
+      <div className="container mx-auto reveal">
         <BlogText />
         <div className="container mx-auto md:w-[90%] w-full blog-home reveal">
           {blogResponse[pathname]?.length ? (
