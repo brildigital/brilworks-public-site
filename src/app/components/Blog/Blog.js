@@ -259,7 +259,7 @@ const Blog = () => {
           } gap-[2rem]`}
         >
           {isLoading ? (
-            <div className="flex align-middle justify-center p-28">
+            <div className="flex align-middle justify-center md:!py-52 py-28">
               <FetchDataSpinner />
             </div>
           ) : blogDataPerPage?.length ? (
@@ -336,7 +336,7 @@ const Blog = () => {
               </p>
             </div>
           ) : (
-            <div className="flex align-middle justify-center p-28">
+            <div className="flex align-middle justify-center md:!py-52 py-28">
               <FetchDataSpinner />
             </div>
           )}

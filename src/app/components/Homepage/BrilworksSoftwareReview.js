@@ -111,6 +111,8 @@ const BrilworksSoftwareReview = () => {
                         decoding="async"
                         loading="lazy"
                         className="w-[70px] ml-1"
+                        width="70"
+                        height="26"
                         src="/images/clutch-img.svg"
                         alt="clutch"
                       />
