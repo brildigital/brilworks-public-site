@@ -13,7 +13,7 @@ const DevelopSuccessStory = () => {
             Tell us your project idea and get a free consultation to create an
             outstanding digital product.
           </p>
-          <div className="flex items-center lg:justify-center justify-start">
+          <div className="flex items-center md:!justify-center !justify-start">
             <Button
               innerClassName="flex items-center justify-center gap-2"
               label="Let's Discuss"

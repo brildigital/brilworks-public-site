@@ -49,10 +49,10 @@ const DomainWorking = () => {
   ];
 
   return (
-    <div className="bg-sectionBG">
-      <div className="container mx-auto main-section-padding reveal">
+    <div className="bg-sectionBG section-padding">
+      <div className="container max-w-[1280px] mx-auto reveal">
         <DomainWorkingText />
-        <div className="md:px-4 md:pt-12 pt-8 sm:w-[92%] w-[100%] mx-auto reveal">
+        <div className="md:px-4 md:pt-12 pt-8 reveal">
           <div className="homepage-work-domain">
             <div className="flex flex-wrap">
               <div className="lg:w-6/12 w-full">

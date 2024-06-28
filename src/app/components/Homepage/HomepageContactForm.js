@@ -63,7 +63,7 @@ const HomepageContactForm = () => {
   };
 
   return (
-    <div className="container mx-auto home_sec3_box">
+    <div className="container max-w-[1280px] mx-auto home_sec3_box">
       <div className="dots_flex !rounded-[30px]">
         <div className="dots"></div>
         <div className="dots"></div>

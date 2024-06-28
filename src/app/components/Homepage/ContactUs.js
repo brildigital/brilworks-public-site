@@ -18,9 +18,9 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <div className={`main-section-padding ${pathname !== "/" ? "!pt-0" : ""} `}>
+    <div className={`section-padding ${pathname !== "/" ? "!pt-0" : ""} `}>
       <ScalableSolutionText />
-      <div className="md:w-[90%] lg:w-[70%] w-[100%] blog-home mx-auto reveal">
+      <div className="md:w-[90%] lg:w-[80%] w-[100%] blog-home mx-auto reveal">
         <HomepageContactForm />
       </div>
     </div>

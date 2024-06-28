@@ -74,9 +74,9 @@ const HomePageBlogs = () => {
         pathname === "/" ? "bg-sectionBG section-padding" : "section-padding"
       }
     >
-      <div className="container mx-auto reveal">
+      <div className="container max-w-[1280px] mx-auto reveal">
         <BlogText />
-        <div className="container mx-auto md:w-[90%] w-full blog-home reveal">
+        <div className="blog-home reveal">
           {blogResponse[pathname]?.length ? (
             blogResponse[pathname].map(({ slug, name, content }, index) => {
               if (
@@ -88,7 +88,7 @@ const HomePageBlogs = () => {
                 return (
                   <div
                     key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                    className="blog-box overflow-hidden shadow-none hover:shadow-lg"
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image

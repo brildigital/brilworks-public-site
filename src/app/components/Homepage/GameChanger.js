@@ -38,7 +38,7 @@ const GameChanger = () => {
               <p className="sxl:!text-2xl !text-base">
                 Focused on AWS consulting and generative AI, we boost
                 engineering and design capacity,
-                <br className="hidden lg:block" /> hasten product and MVP
+                <br className="hidden slg:block" /> hasten product and MVP
                 timelines, automate operations, and minimize expenses.
               </p>
             </div>

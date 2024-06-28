@@ -63,10 +63,10 @@ const SeeingBelieving = () => {
   ];
 
   return (
-    <div className="bg-sectionBG">
-      <div className="container mx-auto main-section-padding reveal">
+    <div className="bg-sectionBG section-padding">
+      <div className="container mx-auto max-w-[1280px] reveal">
         <BelievingText />
-        <div className="md:w-4/5 w-full mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
+        <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
           {portfolioItems
             .slice(0, 4)
             .map(

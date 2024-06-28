@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 
 const AWSFAQs = dynamic(() => import("./TechnologyFAQ"));

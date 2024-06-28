@@ -8,7 +8,7 @@ const LinkWithArrow = ({ href, label, className }) => {
       className={`flex items-center ${className} gap-5 about_btn transition lg:mt-10 mt-4`}
     >
       <div className="about_txt">
-        <p className="change_link text-[21px] uppercase lg:!tracking-[5px] !tracking-[2px]">
+        <p className="change_link text-[21px] uppercase lg:!tracking-[5px] !tracking-[2px] font-Inter">
           {label}
         </p>
       </div>

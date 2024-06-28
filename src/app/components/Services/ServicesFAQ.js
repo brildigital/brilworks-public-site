@@ -598,25 +598,29 @@ const ServicesFAQ = () => {
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container md:w-[90%] w-full mx-auto faq-bottom main-section-padding !pt-0 px-4 xl:px-12">
-      <div className="service_sec3 text-center solutions">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-8">
-          FAQs
-        </h2>
-      </div>
+    <div className="section-padding !pt-0">
+      <div className="container max-w-[1280px] mx-auto">
+        <div className="md:w-[90%] w-full mx-auto faq-bottom">
+          <div className="service_sec3 text-center solutions">
+            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-8">
+              FAQs
+            </h2>
+          </div>
 
-      <div className="reveal">
-        <div itemScope="true" itemType="https://schema.org/FAQPage">
-          {servicesFAQData?.map(({ question, answer }, index) => (
-            <FAQAccordion
-              key={index + 1}
-              id={index + 1}
-              question={question}
-              answer={answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
+          <div className="reveal">
+            <div itemScope="true" itemType="https://schema.org/FAQPage">
+              {servicesFAQData?.map(({ question, answer }, index) => (
+                <FAQAccordion
+                  key={index + 1}
+                  id={index + 1}
+                  question={question}
+                  answer={answer}
+                  open={open}
+                  handleOpen={handleOpen}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

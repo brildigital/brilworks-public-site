@@ -28,7 +28,7 @@ const ServicesPricingPlans = () => {
         <div className="endTO_text solutions">
           <h2 className="!w-full p-0">
             Flexible & Predictable Costs: Find the Right IT Staff
-            <br /> Augmentation Solution
+            <br className="hidden md:block" /> Augmentation Solution
           </h2>
         </div>
         <div className="endTO_text_content home_sec2_txt4 xl:mb-24 md:mb-16 mb-8">

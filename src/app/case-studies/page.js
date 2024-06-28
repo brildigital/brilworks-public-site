@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
-
-const Portfolio = dynamic(() => import("../components/Portfolio/Portfolio"));
+import CaseStudies from "../components/Portfolio/CaseStudies";
 
 export const metadata = {
   title: "Case Studies | Brilworks",
@@ -26,7 +24,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Portfolio />;
+  return <CaseStudies />;
 };
 
 export default page;

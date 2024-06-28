@@ -74,70 +74,76 @@ const ExtensionOfTeam = () => {
   ];
 
   return (
-    <div className="container mx-auto main-section-padding reveal">
-      <TechTeamText />
-      <div className="md:px-4 md:pt-12 pt-8 sm:w-[92%] w-[100%] mx-auto reveal">
-        <div className="homepage-extension-team">
-          <div className="flex flex-wrap">
-            <div className="lg:w-1/2 w-full">
-              <div className="!mb-0 lg:w-[90%] w-full">
-                <div className="!text-2xl font-bold mb-8">
-                  <h2>Our Services drive sustainable growth.</h2>
-                </div>
+    <div className="section-padding">
+      <div className="container max-w-[1280px] mx-auto reveal">
+        <TechTeamText />
+        <div className="md:px-4 md:pt-12 pt-8 reveal">
+          <div className="homepage-extension-team">
+            <div className="flex flex-wrap">
+              <div className="lg:w-1/2 w-full">
+                <div className="!mb-0 lg:w-[90%] w-full">
+                  <div className="!text-2xl font-bold mb-8">
+                    <h2>Our Services drive sustainable growth.</h2>
+                  </div>
 
-                {accordionItems.map((item, index) => (
-                  <Accordion
-                    key={index + 1}
-                    open={open === index + 1}
-                    icon={<Icon id={index + 1} open={open} />}
-                  >
-                    <AccordionHeader
-                      onClick={() => handleOpen(index + 1)}
-                      className={`py-6 ${
-                        open === index + 1 ? "border-none" : ""
-                      }`}
+                  {accordionItems.map((item, index) => (
+                    <Accordion
+                      key={index + 1}
+                      open={open === index + 1}
+                      icon={<Icon id={index + 1} open={open} />}
                     >
-                      <h3>{item.title}</h3>
-                    </AccordionHeader>
-                    <AccordionBody
-                      className={`pt-0 ${open === index + 1 ? "border-b" : ""}`}
-                    >
-                      <div className="accordion-body">
-                        <p className="pb-4 pt-0">{item.description}</p>
-                        {item.links.map((link, index) => (
-                          <LinkWithArrow
-                            href={link.href}
-                            className={index > 0 ? "pt-4 !mt-0" : "!mt-0"}
-                            key={index}
-                            label={link.text}
-                          />
-                        ))}
-                      </div>
-                    </AccordionBody>
-                  </Accordion>
-                ))}
+                      <AccordionHeader
+                        onClick={() => handleOpen(index + 1)}
+                        className={`py-6 ${
+                          open === index + 1 ? "border-none" : ""
+                        }`}
+                      >
+                        <h3 className="font-Inter">{item.title}</h3>
+                      </AccordionHeader>
+                      <AccordionBody
+                        className={`pt-0 ${
+                          open === index + 1 ? "border-b" : ""
+                        }`}
+                      >
+                        <div className="accordion-body">
+                          <p className="font-Inter pb-4 pt-0">
+                            {item.description}
+                          </p>
+                          {item.links.map((link, index) => (
+                            <LinkWithArrow
+                              href={link.href}
+                              className={index > 0 ? "pt-4 !mt-0" : "!mt-0"}
+                              key={index}
+                              label={link.text}
+                            />
+                          ))}
+                        </div>
+                      </AccordionBody>
+                    </Accordion>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="lg:w-6/12 w-full">
-              <div className="solutions_img mt-4 md:mt-0">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone wp-image-40 size-full !ml-auto !w-full"
-                  src={
-                    "https://a.storyblok.com/f/219851/1011x1101/a2929139da/team-img.webp"
-                  }
-                  alt="Teamwork"
-                  width="1011"
-                  height="1101"
-                  srcSet="
+              <div className="lg:w-6/12 w-full">
+                <div className="solutions_img mt-4 md:mt-0">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="alignnone wp-image-40 size-full !ml-auto !w-full"
+                    src={
+                      "https://a.storyblok.com/f/219851/1011x1101/a2929139da/team-img.webp"
+                    }
+                    alt="Teamwork"
+                    width="1011"
+                    height="1101"
+                    srcSet="
                   https://a.storyblok.com/f/219851/1011x1101/a2929139da/team-img.webp          1011w,
                   /images/team-275x300.webp   275w,
                   https://a.storyblok.com/f/219851/940x1024/a45f992bf1/team-940x1024.webp  940w,
                   https://a.storyblok.com/f/219851/768x836/36f87ab39c/team-768x836.webp   768w
                   "
-                  sizes="(min-width: 1040px) 46.02vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-                />
+                    sizes="(min-width: 1040px) 46.02vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
+                  />
+                </div>
               </div>
             </div>
           </div>

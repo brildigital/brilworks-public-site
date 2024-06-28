@@ -139,8 +139,8 @@ const Honors = () => {
   ];
 
   return (
-    <div className="bg-sectionBG">
-      <div className="container mx-auto main-section-padding reveal">
+    <div className="bg-sectionBG section-padding">
+      <div className="container max-w-[1536px] mx-auto reveal">
         <HonorText />
         <div className="honors-swiper reveal">
           <Swiper

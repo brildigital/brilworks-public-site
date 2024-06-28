@@ -205,24 +205,28 @@ const TechnologyFAQ = () => {
   const technologyFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="sec3_width_home faq-bottom xl:!pb-[6rem] md:!pb-[4rem] !pb-[2rem]">
-      <div className="solutions md:text-center text-left">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">
-          FAQs
-        </h2>
-      </div>
-      <div className="reveal">
-        <div itemScope="true" itemType="https://schema.org/FAQPage">
-          {technologyFAQData?.map(({ question, answer }, index) => (
-            <FAQAccordion
-              key={index + 1}
-              id={index + 1}
-              question={question}
-              answer={answer}
-              open={open}
-              handleOpen={handleOpen}
-            />
-          ))}
+    <div className="xl:pb-[6rem] md:pb-[4rem] pb-8 xl:px-[5%] md:px-8 px-4">
+      <div className="container max-w-[1280px] mx-auto">
+        <div className="md:w-[90%] w-full mx-auto faq-bottom">
+          <div className="solutions md:text-center text-left">
+            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">
+              FAQs
+            </h2>
+          </div>
+          <div className="reveal">
+            <div itemScope="true" itemType="https://schema.org/FAQPage">
+              {technologyFAQData?.map(({ question, answer }, index) => (
+                <FAQAccordion
+                  key={index + 1}
+                  id={index + 1}
+                  question={question}
+                  answer={answer}
+                  open={open}
+                  handleOpen={handleOpen}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
