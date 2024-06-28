@@ -1,7 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
-
-const Fintech = dynamic(() => import("@/app/components/Solution/Fintech"));
+import Fintech from "@/app/components/Solution/Fintech";
 
 export const metadata = {
   title: "Fintech Software Development Services",

@@ -28,11 +28,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <DedicatedTeam />
-    </div>
-  );
+  return <DedicatedTeam />;
 };
 
 export default page;

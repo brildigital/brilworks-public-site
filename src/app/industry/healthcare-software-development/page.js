@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
+import HealthCare from "@/app/components/Solution/Healthcare";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
-
-const HealthCare = dynamic(() =>
-  import("@/app/components/Solution/Healthcare")
-);
 
 export const metadata = {
   title: "Healthcare Software Development Services",

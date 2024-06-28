@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const ReactNativeTechnology = dynamic(() =>
-  import("../components/Technologies/ReactNativeTechnology")
-);
+import ReactNativeTechnology from "../components/Technologies/ReactNativeTechnology";
 
 export const metadata = {
   title: "Hire React Native Developers",

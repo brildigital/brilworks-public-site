@@ -47,7 +47,7 @@ const JavaTechQandA = () => {
           height={400}
           src="https://a.storyblok.com/f/219851/1398x780/a05c27ff8d/java-services-banner.webp"
           alt="Java Tech Q&A"
-          priority={true}
+          priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">

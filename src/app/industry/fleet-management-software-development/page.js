@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
+import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
-
-const FleetManagementNGPS = dynamic(() =>
-  import("@/app/components/Solution/FleetManagementNGPS")
-);
 
 export const metadata = {
   title: "Fleet Management Software Development Services",

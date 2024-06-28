@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const ReactJSTechnology = dynamic(() =>
-  import("../components/Technologies/ReactJSTechnology")
-);
+import ReactJSTechnology from "../components/Technologies/ReactJSTechnology";
 
 export const metadata = {
   title: "Hire ReactJS Developers",

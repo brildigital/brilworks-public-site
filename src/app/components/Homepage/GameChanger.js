@@ -15,7 +15,7 @@ const GameChanger = () => {
           alt="homepage banner"
           width={isMobile ? 550 : 1920}
           height={isMobile ? 283 : 1000}
-          priority={true}
+          priority
           sizes="100vw"
         />
       </div>

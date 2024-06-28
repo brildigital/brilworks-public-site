@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const AWSTechnology = dynamic(() =>
-  import("../components/Technologies/AWSTechnology")
-);
+import AWSTechnology from "../components/Technologies/AWSTechnology";
 
 export const metadata = {
   title: "Hire AWS Certified Developers",

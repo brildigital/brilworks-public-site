@@ -47,7 +47,7 @@ const ReactNativeTechQandA = () => {
           height={400}
           src="https://a.storyblok.com/f/219851/1398x780/20378830a8/react-native-banner.webp"
           alt="React Native Tech Q&A"
-          priority={true}
+          priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">

@@ -31,7 +31,7 @@ const GenerativeAIDevService = () => {
               alt="Product engineering banner"
               width="1440"
               height="796"
-              priority={!isMobile}
+              priority
               sizes="(max-width: 767px) 550px, 1440px"
             />
           </div>

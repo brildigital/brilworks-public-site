@@ -25,7 +25,7 @@ const UsecaseFirstSection = ({ data }) => {
                 alt={data?.banner_image?.alt}
                 width="650"
                 height="390"
-                priority={true}
+                priority
               />
             </div>
           </div>

@@ -47,7 +47,7 @@ const ReactJSTechQandA = () => {
           height={400}
           src="/images/react-banner.webp"
           alt="ReactJS Tech Q&A"
-          priority={true}
+          priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">

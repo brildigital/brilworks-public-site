@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const BlockchainTechnology = dynamic(() =>
-  import("../components/Technologies/BlockchainTechnology")
-);
+import BlockchainTechnology from "../components/Technologies/BlockchainTechnology";
 
 export const metadata = {
   title: "Hire Blockchain Developers",

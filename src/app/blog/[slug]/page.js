@@ -255,7 +255,7 @@ export default async function Page(props) {
                       alt={data?.story?.content.image?.alt}
                       width="343"
                       height="177"
-                      priority={true}
+                      priority
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                       media="(max-width: 767px)"
                     />
@@ -268,7 +268,7 @@ export default async function Page(props) {
                       alt={data?.story?.content.image?.alt}
                       width="758"
                       height="169"
-                      priority={true}
+                      priority
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                     />
                   </>
@@ -277,9 +277,9 @@ export default async function Page(props) {
                 )}
               </div>
               {data?.story?.content?.Quick_Summary && (
-                <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px] h-full">
+                <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px]">
                   <span className="font-bold text-themeColor">
-                    Quick Summary:-{" "}
+                    Quick Summary:-
                   </span>
                   {data?.story?.content?.Quick_Summary}
                 </div>

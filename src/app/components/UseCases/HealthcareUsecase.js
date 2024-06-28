@@ -35,7 +35,7 @@ const HealthcareUsecase = () => {
               className="md:w-2/3 mx-auto md:pt-20 pt-10"
               src="/images/Healthcare-usecase.webp"
               alt="Healthcare usecase"
-              priority={true}
+              priority
               width="1174"
               height="479"
             />

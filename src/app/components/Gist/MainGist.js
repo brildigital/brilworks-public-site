@@ -56,7 +56,7 @@ const MainGist = () => {
           alt="Tech Q&A banner"
           width={isMobile ? 330 : 1300}
           height={isMobile ? 200 : 400}
-          priority={true}
+          priority
           sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
         />
         <div className="absolute bottom-1/4 w-full text-center mx-auto">

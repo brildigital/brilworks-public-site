@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const UIUXTechnology = dynamic(() =>
-  import("../components/Technologies/UIUXTechnology")
-);
+import UIUXTechnology from "../components/Technologies/UIUXTechnology";
 
 export const metadata = {
   title: "Hire UI UX Designers",

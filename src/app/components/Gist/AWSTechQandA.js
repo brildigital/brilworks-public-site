@@ -47,7 +47,7 @@ const AWSTechQandA = () => {
           height={400}
           src="/images/AWS.webp"
           alt="AWS Tech Q&A"
-          priority={true}
+          priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">

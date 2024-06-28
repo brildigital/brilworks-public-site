@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { generateBreadcrumb } from "../components/lib/schemaCode";
-
-const JavaTechnology = dynamic(() =>
-  import("../components/Technologies/JavaTechnology")
-);
+import JavaTechnology from "../components/Technologies/JavaTechnology";
 
 export const metadata = {
   title: "Hire Java Developers",

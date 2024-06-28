@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
+import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
-
-const MediaAndEntertainment = dynamic(() =>
-  import("@/app/components/Solution/MediaAndEntertainment")
-);
 
 export const metadata = {
   title: "Media and Entertainment Software Development Service",
