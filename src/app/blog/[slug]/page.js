@@ -104,7 +104,7 @@ export default async function Page(props) {
           content={`${calculateReadingTime(totalDataWord)} minutes`}
         ></meta>
       </head>
-      <div className="md:pt-[8rem] pt-[6rem] blog-main">
+      <div className="md:pt-[8rem] pt-[6rem] blog-main min-h-[550px]">
         <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
@@ -240,8 +240,8 @@ export default async function Page(props) {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4">
-            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 min-h-[1px] w-full">
+          <div className="flex flex-wrap -mx-4 min-h-[300px]">
+            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
               <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
                 {data?.story?.content.image ? (
                   <>

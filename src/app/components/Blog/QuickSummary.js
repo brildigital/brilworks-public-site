@@ -14,7 +14,7 @@ const QuickSummary = ({ data }) => {
   return isLoading ? (
     <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
       <div className="slg:w-[calc(100%_-_170px)] w-full sxl:mb-6 mb-4">
-        <Skeleton className="mb-[6px]" height={28} count={4} />
+        <Skeleton className="mb-[6px]" height={30} count={4} />
       </div>
     </SkeletonTheme>
   ) : (
