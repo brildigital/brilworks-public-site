@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import "../../styles/Services.scss";
 import RapidDigitizationBanner from "./RapidDigitizationBanner";
 
 const WhyRapidDigitization = dynamic(() => import("./WhyRapidDigitization"));

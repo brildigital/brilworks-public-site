@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/Homepage.scss";
 import React, { useEffect, useState } from "react";
 import { Navbar, IconButton } from "@material-tailwind/react";
 import Link from "next/link";

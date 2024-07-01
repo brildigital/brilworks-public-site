@@ -5,11 +5,9 @@ import {
 } from "@/app/components/lib/commonFunction";
 import Link from "next/link";
 import Image from "next/image";
-import "../../styles/Blogstyle.scss";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import { cache } from "react";
-import Skeleton from "react-loading-skeleton";
 
 export const metadata = {
   openGraph: {

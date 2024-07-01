@@ -1,6 +1,5 @@
 "use client";
 import "swiper/css";
-import "../../styles/Homepage.scss";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

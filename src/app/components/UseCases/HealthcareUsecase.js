@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import "../../styles/Services.scss";
 
 const ServicesUsecase = dynamic(() => import("./ServicesUsecase"));
 const UsecasesProblemAndSolution = dynamic(() =>

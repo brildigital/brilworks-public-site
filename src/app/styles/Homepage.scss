@@ -1,3 +1,10 @@
+@import "./Blogstyle.scss";
+@import "./custom-style.scss";
+@import "./Services.scss";
+@import "../components//Login/Loginstyle.scss";
+@import "../components//Dashboard/Dashboard.scss";
+@import "../components//PrivacyPolicy/privacypolicy.scss";
+
 .header {
   a {
     cursor: pointer !important;

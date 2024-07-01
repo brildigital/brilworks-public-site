@@ -1,4 +1,3 @@
-import "../../styles/Homepage.scss";
 import Link from "next/link";
 import { BelievingText } from "./BigText";
 import Image from "next/image";

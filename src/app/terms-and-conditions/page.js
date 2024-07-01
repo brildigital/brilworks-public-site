@@ -1,6 +1,5 @@
 import parse from "html-react-parser";
 import StoryblokClient from "storyblok-js-client";
-import "../components/PrivacyPolicy/privacypolicy.scss";
 import FetchDataSpinner from "../components/Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({

@@ -1,4 +1,3 @@
-import "./privacypolicy.scss";
 import parse from "html-react-parser";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
