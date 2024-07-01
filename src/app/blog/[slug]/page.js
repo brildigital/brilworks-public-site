@@ -8,6 +8,7 @@ import Image from "next/image";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import { cache } from "react";
+import { QuickSummarySkeleton } from "@/app/components/Blog/ArticleSkeleton";
 
 export const metadata = {
   openGraph: {
@@ -274,13 +275,15 @@ export default async function Page(props) {
                   <div className="h-[288px]"></div>
                 )}
               </div>
-              {data?.story?.content?.Quick_Summary && (
+              {data?.story?.content?.Quick_Summary ? (
                 <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px]">
                   <span className="font-bold text-themeColor">
                     Quick Summary:-
                   </span>
                   {data?.story?.content?.Quick_Summary}
                 </div>
+              ) : (
+                <QuickSummarySkeleton />
               )}
             </div>
           </div>
