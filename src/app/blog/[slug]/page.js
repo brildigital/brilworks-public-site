@@ -40,8 +40,7 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
-  return (
-    <>
+  return( <>
       <head>
         <title>
           {data?.story?.content?.metatags?.title || data?.story?.content?.title}
@@ -134,7 +133,7 @@ export default async function Page(props) {
                     </Link>
                   </span>
 
-                  {data?.story?.content.Category && (
+                  {/* {data?.story?.content.Category && ( */}
                     <>
                       <span className="self-center md:mx-2 mx-1 mt-[2px]">
                         <Image
@@ -158,7 +157,7 @@ export default async function Page(props) {
                         </Link>
                       </span>
                     </>
-                  )}
+                  {/* )} */}
                   <span className="self-center md:mx-2 mx-1 mt-[2px]">
                     <Image
                       className="!w-[20px]"
@@ -269,7 +268,7 @@ export default async function Page(props) {
                       priority
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                     />
-                  {/* </> */}
+
               
               </div>
 
@@ -290,8 +289,8 @@ export default async function Page(props) {
         </div>
       </div>
       <StoryblokStory story={data?.story} />
-    </>
-  );
+    </>)
+  
 }
 
 export const fetchData = cache(async (params) => {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"); */
 @tailwind base;
 @tailwind components;
 @import "./styles/FetchDataSpinner.css";
@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 :root {
-  --global-font: "Inter", sans-serif;
+  /* --global-font: "Inter", sans-serif; */
   --font_14: 0.875rem;
   --font_16: 1rem;
   --font_18: 1.125rem;
