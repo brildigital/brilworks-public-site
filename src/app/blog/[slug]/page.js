@@ -240,7 +240,7 @@ export default async function Page(props) {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4 h-[800px]">
+          <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
               <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
               
