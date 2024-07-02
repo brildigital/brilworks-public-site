@@ -52,6 +52,7 @@ export default function RootLayout({ children }) {
               </Script> */}
               <Script
                 defer 
+                id="clearbitScript"
                 src={`${process.env.clearbitScript_URL}`}
                 referrerpolicy="strict-origin-when-cross-origin"
               ></Script>
@@ -59,11 +60,13 @@ export default function RootLayout({ children }) {
           )}
           <Script
             defer
+            id="organization"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
           />
           <Script
             defer
+            id={"website"}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
           />
