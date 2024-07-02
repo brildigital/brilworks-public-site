@@ -127,7 +127,7 @@ const BrilworksSoftwareReview = () => {
           modules={[Pagination, Autoplay, Virtual]}
           spaceBetween={isMobile ? 10 : 21}
           autoplay={{ delay: 500 }}
-          loopfillgroupwithblank="true"
+          loopfillgroupwithblank
           speed={isMobile ? 1000 : 1500}
           loop={true}
           shouldswiperupdate="true"

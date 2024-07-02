@@ -35,7 +35,6 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const { props: data } = await fetchData();
 
   return <HomePage />;
 }

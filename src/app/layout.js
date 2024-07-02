@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           ) : null}
           {process.env.VERCEL_ENV === "production" && (
             <>
-              <Script
+              <Script              
                 defer
                 id="tag-manager"
               >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -51,47 +51,24 @@ export default function RootLayout({ children }) {
              `}
               </Script> */}
               <Script
-                defer
+                defer 
                 src={`${process.env.clearbitScript_URL}`}
                 referrerpolicy="strict-origin-when-cross-origin"
               ></Script>
             </>
           )}
-          <script
+          <Script
             defer
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
           />
-          <script
+          <Script
             defer
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
           />
         </head>
-        <body suppressHydrationWarning={true}>
-          {process.env.VERCEL_ENV === "production" && (
-            <>
-              <noscript>
-                <iframe
-                  src={`https://www.googletagmanager.com/ns.html?id=${process.env.googleTagManagerID}`}
-                  height="0"
-                  width="0"
-                  style={{
-                    display: "none",
-                    visibility: "hidden",
-                  }}
-                ></iframe>
-              </noscript>
-              {/* <noscript>
-                <img
-                  height="1"
-                  width="1"
-                  style={{ display: "none" }}
-                  src={`https://www.facebook.com/tr?id=${process.env.facebook_pixelID}&ev=PageView&noscript=1`}
-                />
-              </noscript> */}
-            </>
-          )}
+        <body suppressHydrationWarning={false}>
           <Header />
           <NextAuthProvider>{children}</NextAuthProvider>
           <Footer />
@@ -100,3 +77,28 @@ export default function RootLayout({ children }) {
     </StoryblokProvider>
   );
 }
+
+
+// {process.env.VERCEL_ENV === "production" && (
+//   <>
+//     <noscript>
+//       <iframe
+//         src={`https://www.googletagmanager.com/ns.html?id=${process.env.googleTagManagerID}`}
+//         height="0"
+//         width="0"
+//         style={{
+//           display: "none",
+//           visibility: "hidden",
+//         }}
+//       ></iframe>
+//     </noscript>
+//     {/* <noscript>
+//       <img
+//         height="1"
+//         width="1"
+//         style={{ display: "none" }}
+//         src={`https://www.facebook.com/tr?id=${process.env.facebook_pixelID}&ev=PageView&noscript=1`}
+//       />
+//     </noscript> */}
+//   </>
+// )}

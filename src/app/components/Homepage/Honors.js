@@ -146,7 +146,7 @@ const Honors = () => {
             modules={[Pagination, Autoplay, Virtual]}
             pagination={{ clickable: true }}
             autoplay={{ delay: 500 }}
-            loopfillgroupwithblank="true"
+            loopfillgroupwithblank
             speed={1500}
             loop={true}
             virtual
