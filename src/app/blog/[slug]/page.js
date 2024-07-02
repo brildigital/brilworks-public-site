@@ -243,8 +243,7 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4 min-h-[300px]">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
               <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
-                {data?.story?.content.image ? (
-                  <>
+              
                     <Image
                       className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                       src={
@@ -258,7 +257,7 @@ export default async function Page(props) {
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                       media="(max-width: 767px)"
                     />
-                    <Image
+                    <Image   
                       className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
                       src={
                         data?.story?.content.image?.filename ||
@@ -270,10 +269,8 @@ export default async function Page(props) {
                       priority
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                     />
-                  </>
-                ) : (
-                  <div className="h-[288px]"></div>
-                )}
+                  {/* </> */}
+              
               </div>
 
               {/* {!data?.story?.content?.Quick_Summary ? (

@@ -65,6 +65,7 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
+          node.attribs.alt="banner-image"
         }
 
         if (node.type === "tag" && node.name === "a") {
@@ -338,7 +339,7 @@ const Article = ({ blok }) => {
                                     src={author?.authorImage}
                                     width="96"
                                     height="96"
-                                    alt={author?.name}
+                                    alt={author?.name ||"author-Image" }
                                     className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                   />
                                 </div>
@@ -419,6 +420,8 @@ const Article = ({ blok }) => {
                           className="alignnone"
                           src="/images/right_arrow.png"
                           alt="right arrow"
+                          width={10}
+                          height={20}
                         />
                       </Link>
                     </div>
