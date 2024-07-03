@@ -213,6 +213,7 @@ const Article = ({ blok }) => {
                               loading="lazy"
                               src="/images/fb-share.svg"
                               width="43"
+                              unoptimized
                               height="43"
                               alt="Facebook blog share"
                             />
@@ -230,6 +231,7 @@ const Article = ({ blok }) => {
                               loading="lazy"
                               src="/images/twitter-share.svg"
                               width="43"
+                              unoptimized
                               height="43"
                               alt="Twitter blog share"
                             />
@@ -243,6 +245,7 @@ const Article = ({ blok }) => {
                               loading="lazy"
                               src="/images/linkedin-share.svg"
                               width="43"
+                              unoptimized
                               height="43"
                               alt="LinkedIn blog share"
                             />
