@@ -40,7 +40,8 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
-  return( <>
+  return (
+    <>
       <head>
         <title>
           {data?.story?.content?.metatags?.title || data?.story?.content?.title}
@@ -132,32 +133,27 @@ export default async function Page(props) {
                       Blog
                     </Link>
                   </span>
-
-                  {/* {data?.story?.content.Category && ( */}
-                    <>
-                      <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                        <Image
-                          className="!w-[20px]"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="20"
-                          height="10"
-                          priority="true"
-                        />
-                      </span>
-                      <span className="blog-navigation">
-                        <Link
-                          title="Go to the Web App Development category."
-                          href="#"
-                        >
-                          {data?.story?.content.Category ===
-                          "Cloud DevOps and Data"
-                            ? "Cloud, DevOps and Data"
-                            : data?.story?.content.Category}
-                        </Link>
-                      </span>
-                    </>
-                  {/* )} */}
+                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                    <Image
+                      className="!w-[20px]"
+                      src="/images/black_aerrow-1.png"
+                      alt="arrow"
+                      width="20"
+                      height="10"
+                      priority="true"
+                    />
+                  </span>
+                  <span className="blog-navigation">
+                    <Link
+                      title="Go to the Web App Development category."
+                      href="#"
+                    >
+                      {data?.story?.content?.Category ===
+                      "Cloud DevOps and Data"
+                        ? "Cloud, DevOps and Data"
+                        : data?.story?.content?.Category}
+                    </Link>
+                  </span>
                   <span className="self-center md:mx-2 mx-1 mt-[2px]">
                     <Image
                       className="!w-[20px]"
@@ -176,38 +172,38 @@ export default async function Page(props) {
               </div>
               <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
                 {/* {author && ( */}
-                  <div className="flex items-center justify-between">
-                    <Image
-                      src={author?.authorImage}
-                      width="54"
-                      height="56"
-                      alt={author?.name}
-                      className="!rounded-full md:!w-14 md:!h-14 !w-10 !h-10"
-                      priority="true"
-                    />
-                    <div className="pl-[10px] ">
-                      <Link
-                        className="md:text-[20px] text-base font-bold"
-                        href={
-                          author?.name === "Vikas Singh"
-                            ? "/blog/author/vikas-singh/"
-                            : author?.name === "Hitesh Umaletiya"
-                            ? "/blog/author/hitesh-umaletiya/"
-                            : author?.authorLinkedIn
-                        }
-                        title={`Posts by ${author?.name}`}
-                        rel="author external"
-                      >
-                        {author?.name}
-                      </Link>
-                      <br />
-                      <span>
-                        {formattedDate(
-                          data?.story?.content.Published || new Date()
-                        )}
-                      </span>
-                    </div>
+                <div className="flex items-center justify-between">
+                  <Image
+                    src={author?.authorImage}
+                    width="54"
+                    height="56"
+                    alt={author?.name}
+                    className="!rounded-full md:!w-14 md:!h-14 !w-10 !h-10"
+                    priority="true"
+                  />
+                  <div className="pl-[10px] ">
+                    <Link
+                      className="md:text-[20px] text-base font-bold"
+                      href={
+                        author?.name === "Vikas Singh"
+                          ? "/blog/author/vikas-singh/"
+                          : author?.name === "Hitesh Umaletiya"
+                          ? "/blog/author/hitesh-umaletiya/"
+                          : author?.authorLinkedIn
+                      }
+                      title={`Posts by ${author?.name}`}
+                      rel="author external"
+                    >
+                      {author?.name}
+                    </Link>
+                    <br />
+                    <span>
+                      {formattedDate(
+                        data?.story?.content.Published || new Date()
+                      )}
+                    </span>
                   </div>
+                </div>
                 {/* )} */}
                 <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
                   <div className="flex sxl:items-center items-start md:mr-5 ">
@@ -242,55 +238,47 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
               <div className="h-auto relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] overflow-hidden !bg-cover !bg-center">
-              
-                    <Image
-                      className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                      src={
-                        data?.story?.content.mobile_banner?.filename ||
-                        data?.story?.content.image?.filename
-                      }
-                      alt={data?.story?.content.image?.alt}
-                      width="343"
-                      height="177"
-                      priority
-                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                      media="(max-width: 767px)"
-                    />
-                    <Image   
-                      className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                      src={
-                        data?.story?.content.image?.filename ||
-                        data?.story?.content.mobile_banner?.filename
-                      }
-                      alt={data?.story?.content.image?.alt}
-                      width="758"
-                      height="169"
-                      priority
-                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                    />
-
-              
+                <Image
+                  className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
+                  src={
+                    data?.story?.content.mobile_banner?.filename ||
+                    data?.story?.content.image?.filename
+                  }
+                  alt={data?.story?.content.image?.alt}
+                  width="343"
+                  height="177"
+                  priority
+                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                  media="(max-width: 767px)"
+                />
+                <Image
+                  className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
+                  src={
+                    data?.story?.content.image?.filename ||
+                    data?.story?.content.mobile_banner?.filename
+                  }
+                  alt={data?.story?.content.image?.alt}
+                  width="758"
+                  height="169"
+                  priority
+                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                />
               </div>
 
-              {/* {!data?.story?.content?.Quick_Summary ? (
-                <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left min-h-[76px]">
-                  <span className="font-bold text-themeColor">
-                    Quick Summary:-
-                  </span>
-                  {data?.story?.content?.Quick_Summary}
+              {data?.story?.content?.Quick_Summary ? (
+                <div className="min-h-[80px]">
+                  <QuickSummary data={data?.story?.content?.Quick_Summary} />
                 </div>
-              ) : ( */}
-         { data?.story?.content?.Quick_Summary   ?     <div className="min-h-[208px]">
-              <QuickSummary data={data?.story?.content?.Quick_Summary || ""} />
-              </div>:<></>}
-              {/* )} */}
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
       </div>
       <StoryblokStory story={data?.story} />
-    </>)
-  
+    </>
+  );
 }
 
 export const fetchData = cache(async (params) => {
