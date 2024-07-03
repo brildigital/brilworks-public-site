@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import "../../styles/Services.scss";
 import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const OurServices = dynamic(() => import("./OurServices"));

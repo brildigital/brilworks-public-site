@@ -1,7 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import "../../styles/Services.scss";
 import React from "react";
 import Button from "../Common/Button";
 

@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import "../../styles/Services.scss";
 import StaffAugmentationBanner from "./StaffAugmentationBanner";
 
 const UpskillStaffAugmentation = dynamic(() =>

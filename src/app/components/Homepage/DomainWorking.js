@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/Homepage.scss";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";

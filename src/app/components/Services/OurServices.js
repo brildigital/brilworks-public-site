@@ -1,4 +1,3 @@
-import "../../styles/Homepage.scss";
 import React from "react";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";

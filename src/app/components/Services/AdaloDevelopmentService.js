@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import "../../styles/Services.scss";
 import DevOpsShipFaster from "./DevOpsShipFaster";
 import Button from "../Common/Button";
 

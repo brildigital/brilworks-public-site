@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/Homepage.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
@@ -128,7 +127,7 @@ const BrilworksSoftwareReview = () => {
           modules={[Pagination, Autoplay, Virtual]}
           spaceBetween={isMobile ? 10 : 21}
           autoplay={{ delay: 500 }}
-          loopfillgroupwithblank="true"
+          loopfillgroupwithblank
           speed={isMobile ? 1000 : 1500}
           loop={true}
           shouldswiperupdate="true"

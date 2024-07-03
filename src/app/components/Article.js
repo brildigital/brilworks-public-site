@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import parse from "html-react-parser";
-import "../styles/Blogstyle.scss";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -49,7 +48,7 @@ const Article = ({ blok }) => {
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(loadingTimeout);
   }, []);
@@ -66,6 +65,7 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
+          node.attribs.alt="banner-image"
         }
 
         if (node.type === "tag" && node.name === "a") {
@@ -265,7 +265,7 @@ const Article = ({ blok }) => {
                             ) : (
                               <ContentSkeleton />
                             )}
-                            {blok?.CTA_1 && (
+                            {blok?.CTA_1 ? (
                               <div
                                 className={`${
                                   blok?.CTA_1 ? "blog_content_CTA_1" : ""
@@ -273,16 +273,16 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
                               </div>
-                            )}
+                            ):<></>}
 
-                            {blok?.Content_1 && (
+                            {blok?.Content_1 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_1 || ""
                                 )}
                               </div>
-                            )}
-                            {blok?.CTA_2 && (
+                            ):<></>}
+                            {blok?.CTA_2 ? (
                               <div
                                 className={`${
                                   blok?.CTA_2 ? "blog_content_CTA_2" : ""
@@ -290,15 +290,15 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
                               </div>
-                            )}
-                            {blok?.Content_2 && (
+                            ):<></>}
+                            {blok?.Content_2 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_2 || ""
                                 )}
                               </div>
-                            )}
-                            {blok?.CTA_3 && (
+                            ):<></>}
+                            {blok?.CTA_3 ? (
                               <div
                                 className={`${
                                   blok?.CTA_3?.includes("<img")
@@ -308,18 +308,18 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
                               </div>
-                            )}
-                            {blok?.Content_3 && (
+                            ):<></>}
+                            {blok?.Content_3 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_3 || ""
                                 )}
                               </div>
-                            )}
+                            ):<></>}
                             {blok?.FAQ && blok?.FAQ?.length > 0 ? (
                               <BlogFAQ FAQData={blok?.FAQ} />
                             ) : (
-                              ""
+                              <></>
                             )}
 
                             <Tooltip
@@ -329,7 +329,7 @@ const Article = ({ blok }) => {
                           </div>
 
                           {/* ********************Author Detail******************************/}
-                          {author && (
+                          {author ? (
                             <div className="single-author-bio">
                               <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                                 <div className="img-blk">
@@ -339,7 +339,7 @@ const Article = ({ blok }) => {
                                     src={author?.authorImage}
                                     width="96"
                                     height="96"
-                                    alt={author?.name}
+                                    alt={author?.name ||"author-Image" }
                                     className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                   />
                                 </div>
@@ -365,7 +365,7 @@ const Article = ({ blok }) => {
                                 </p>
                               </div>
                             </div>
-                          )}
+                          ):<></>}
                         </div>
                       </div>
                     </div>
@@ -420,6 +420,8 @@ const Article = ({ blok }) => {
                           className="alignnone"
                           src="/images/right_arrow.png"
                           alt="right arrow"
+                          width={10}
+                          height={20}
                         />
                       </Link>
                     </div>
@@ -450,9 +452,9 @@ const Article = ({ blok }) => {
               >
                 {blogData?.length && !isLoading ? (
                   blogData
-                    .filter(({ slug }) => !pathname?.includes(slug))
-                    .slice(0, `${isTablet ? 2 : 3}`)
-                    .map(({ slug, name, content }, index) => (
+                    ?.filter(({ slug }) => !pathname?.includes(slug))
+                    ?.slice(0, `${isTablet ? 2 : 3}`)
+                    ?.map(({ slug, name, content }, index) => (
                       <div
                         key={index}
                         className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
@@ -499,6 +501,7 @@ const Article = ({ blok }) => {
                     <FetchDataSpinner />
                   </div>
                 )}
+                  
               </div>
             </div>
           </div>

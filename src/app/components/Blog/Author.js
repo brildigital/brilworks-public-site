@@ -10,7 +10,6 @@ import {
   convertParamsToString,
   formattedDate,
 } from "../lib/commonFunction";
-import "../../styles/Blogstyle.scss";
 
 const Author = ({ authorName }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });

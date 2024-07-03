@@ -1,6 +1,5 @@
 "use client";
 import "swiper/css";
-import "../../styles/Homepage.scss";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/virtual";
@@ -147,7 +146,7 @@ const Honors = () => {
             modules={[Pagination, Autoplay, Virtual]}
             pagination={{ clickable: true }}
             autoplay={{ delay: 500 }}
-            loopfillgroupwithblank="true"
+            loopfillgroupwithblank
             speed={1500}
             loop={true}
             virtual

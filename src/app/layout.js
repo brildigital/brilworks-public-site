@@ -1,11 +1,19 @@
 import "./globals.css";
+import "./styles/Homepage.scss";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import { organization, website } from "./components/lib/schemaCode";
 import { NextAuthProvider } from "./provider";
-
+import { Inter } from 'next/font/google'
+ 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--global-font',
+})
+ 
 const Header = dynamic(() => import("./components/Header/Header"));
 const Footer = dynamic(() => import("./components/Footer"));
 
@@ -17,7 +25,7 @@ storyblokInit({
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en">
+      <html lang="en" className={`${inter?.variable}`}>
         <head>
           <meta
             property="article:publisher"
@@ -28,7 +36,7 @@ export default function RootLayout({ children }) {
           ) : null}
           {process.env.VERCEL_ENV === "production" && (
             <>
-              <Script
+              <Script              
                 defer
                 id="tag-manager"
               >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -50,47 +58,27 @@ export default function RootLayout({ children }) {
              `}
               </Script> */}
               <Script
-                defer
+                defer 
+                id="clearbitScript"
                 src={`${process.env.clearbitScript_URL}`}
                 referrerpolicy="strict-origin-when-cross-origin"
               ></Script>
             </>
           )}
-          <script
+          <Script
             defer
+            id="organization"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
           />
-          <script
+          <Script
             defer
+            id={"website"}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
           />
         </head>
-        <body suppressHydrationWarning={true}>
-          {process.env.VERCEL_ENV === "production" && (
-            <>
-              <noscript>
-                <iframe
-                  src={`https://www.googletagmanager.com/ns.html?id=${process.env.googleTagManagerID}`}
-                  height="0"
-                  width="0"
-                  style={{
-                    display: "none",
-                    visibility: "hidden",
-                  }}
-                ></iframe>
-              </noscript>
-              {/* <noscript>
-                <img
-                  height="1"
-                  width="1"
-                  style={{ display: "none" }}
-                  src={`https://www.facebook.com/tr?id=${process.env.facebook_pixelID}&ev=PageView&noscript=1`}
-                />
-              </noscript> */}
-            </>
-          )}
+        <body suppressHydrationWarning={false}>
           <Header />
           <NextAuthProvider>{children}</NextAuthProvider>
           <Footer />
@@ -99,3 +87,28 @@ export default function RootLayout({ children }) {
     </StoryblokProvider>
   );
 }
+
+
+// {process.env.VERCEL_ENV === "production" && (
+//   <>
+//     <noscript>
+//       <iframe
+//         src={`https://www.googletagmanager.com/ns.html?id=${process.env.googleTagManagerID}`}
+//         height="0"
+//         width="0"
+//         style={{
+//           display: "none",
+//           visibility: "hidden",
+//         }}
+//       ></iframe>
+//     </noscript>
+//     {/* <noscript>
+//       <img
+//         height="1"
+//         width="1"
+//         style={{ display: "none" }}
+//         src={`https://www.facebook.com/tr?id=${process.env.facebook_pixelID}&ev=PageView&noscript=1`}
+//       />
+//     </noscript> */}
+//   </>
+// )}

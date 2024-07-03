@@ -1,5 +1,3 @@
-import "../../styles/FetchDataSpinner.css";
-
 const FetchDataSpinner = ({ size }) => {
   return (
     <div style={{ color: "#1a1a1a" }} className={`la-ball-clip-rotate ${size}`}>

@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
-
-const AboutUs = dynamic(() => import("../components/About/AboutUs"));
+import AboutUs from "../components/About/AboutUs";
 
 export const metadata = {
   title: "About Us - Brilworks",

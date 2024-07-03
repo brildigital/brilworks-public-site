@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import "./Dashboard.scss";
 import { Dialog, DialogHeader, DialogBody } from "@material-tailwind/react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 

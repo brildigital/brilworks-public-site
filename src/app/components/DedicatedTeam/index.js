@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import "../../styles/Services.scss";
 import DedicatedTeamBanner from "./DedicatedTeamBanner";
 
 const DedicatedTeamBenefits = dynamic(() => import("./DedicatedTeamBenefits"));

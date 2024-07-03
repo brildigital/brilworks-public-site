@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/Homepage.scss";
 import React from "react";
 import dynamic from "next/dynamic";
 import { Icon } from "../lib/commonFunction";

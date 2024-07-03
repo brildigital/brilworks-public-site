@@ -1,5 +1,4 @@
 "use client";
-import "../../styles/Services.scss";
 import React from "react";
 import TabVertical from "../Common/TabVertical";
 import { usePathname } from "next/navigation";

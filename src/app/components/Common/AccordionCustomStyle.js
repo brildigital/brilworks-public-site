@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import "../../styles/Homepage.scss";
 
 const Accordion = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Accordion)
