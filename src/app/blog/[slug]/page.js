@@ -280,7 +280,7 @@ export default async function Page(props) {
                   {data?.story?.content?.Quick_Summary}
                 </div>
               ) : ( */}
-                 <div className="h-[208px]">
+                 <div className="min-h-[208px]">
               <QuickSummary data={data?.story?.content?.Quick_Summary || ""} />
               </div>
               {/* )} */}
