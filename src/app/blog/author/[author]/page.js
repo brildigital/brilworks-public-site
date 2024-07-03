@@ -48,7 +48,7 @@ export default async function Page(props) {
         <meta property="og:image" content={author?.authorImage} />
         <meta name="twitter:image" content={author?.authorImage}></meta>
       </head>
-      <div className="bg-colorWhite">
+      <div>
         <Author authorName={params?.author} />
       </div>
     </>
