@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { getStoryblokApi } from "@storyblok/react/rsc";
 
 const HomePage = dynamic(() => import("./home/page"));
 
@@ -35,26 +34,5 @@ export const metadata = {
 };
 
 export default async function Home() {
-
   return <HomePage />;
-}
-
-export async function fetchData(slug) {
-  const storyblokApi = getStoryblokApi();
-
-  let sbParams = {
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    resolve_links: "url",
-  };
-
-  let { data } = await storyblokApi.get(`cdn/stories/home`, sbParams);
-  let { data: config } = await storyblokApi.get("cdn/stories/config");
-  return {
-    props: {
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
-      config: config ? config.story : false,
-    },
-    revalidate: 3600,
-  };
 }

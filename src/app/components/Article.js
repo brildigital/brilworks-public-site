@@ -65,7 +65,7 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
-          node.attribs.alt="banner-image"
+          node.attribs.alt = "banner-image";
         }
 
         if (node.type === "tag" && node.name === "a") {
@@ -276,7 +276,9 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
 
                             {blok?.Content_1 ? (
                               <div className="blog_content_new">
@@ -284,7 +286,9 @@ const Article = ({ blok }) => {
                                   blok?.Content_1 || ""
                                 )}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
                             {blok?.CTA_2 ? (
                               <div
                                 className={`${
@@ -293,14 +297,18 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
                             {blok?.Content_2 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_2 || ""
                                 )}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
                             {blok?.CTA_3 ? (
                               <div
                                 className={`${
@@ -311,14 +319,18 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
                             {blok?.Content_3 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_3 || ""
                                 )}
                               </div>
-                            ):<></>}
+                            ) : (
+                              <></>
+                            )}
                             {blok?.FAQ && blok?.FAQ?.length > 0 ? (
                               <BlogFAQ FAQData={blok?.FAQ} />
                             ) : (
@@ -340,9 +352,9 @@ const Article = ({ blok }) => {
                                     decoding="async"
                                     loading="lazy"
                                     src={author?.authorImage}
-                                    width="96"
-                                    height="96"
-                                    alt={author?.name ||"author-Image" }
+                                    width={96}
+                                    height={96}
+                                    alt={author?.name || "author-Image"}
                                     className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                   />
                                 </div>
@@ -368,7 +380,9 @@ const Article = ({ blok }) => {
                                 </p>
                               </div>
                             </div>
-                          ):<></>}
+                          ) : (
+                            <></>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -394,8 +408,8 @@ const Article = ({ blok }) => {
                     loading="lazy"
                     className="ready_main hidden md:block alignnone"
                     src="/images/ready.png"
-                    width="1260"
-                    height="390"
+                    width={1408}
+                    height={450}
                     alt="get in touch"
                   />
                   <img
@@ -408,6 +422,7 @@ const Article = ({ blok }) => {
                     alt="get in touch"
                   />
                 </p>
+
                 <div className="redy_title home_sec2_txt3">
                   <p className="!w-full font-bold">
                     READY TO DEVELOP YOUR SUCCESS STORY WITH US?
@@ -504,7 +519,6 @@ const Article = ({ blok }) => {
                     <FetchDataSpinner />
                   </div>
                 )}
-                  
               </div>
             </div>
           </div>

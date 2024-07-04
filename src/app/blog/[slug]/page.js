@@ -5,9 +5,7 @@ import {
 } from "@/app/components/lib/commonFunction";
 import Link from "next/link";
 import Image from "next/image";
-import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
-import { cache } from "react";
 import QuickSummary from "@/app/components/Blog/QuickSummary";
 
 export const metadata = {
@@ -27,7 +25,6 @@ export const metadata = {
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
-
   if (!data?.story) {
     return null;
   }
@@ -210,8 +207,8 @@ export default async function Page(props) {
                     <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
                       <Image
                         src="/images/clock_icon.png"
-                        width="20"
-                        height="20"
+                        width={32}
+                        height={32}
                         alt="Clock icon"
                         priority="true"
                       />
@@ -222,8 +219,8 @@ export default async function Page(props) {
                     <span className="!w-6 !h-6 mr-1">
                       <Image
                         src="/images/calendar_icon.png"
-                        width="24"
-                        height="24"
+                        width={32}
+                        height={32}
                         alt="Calendar icon"
                         priority="true"
                       />
@@ -245,8 +242,8 @@ export default async function Page(props) {
                     data?.story?.content.image?.filename
                   }
                   alt={data?.story?.content.image?.alt}
-                  width="343"
-                  height="177"
+                  width={828}
+                  height={426}
                   priority
                   sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   media="(max-width: 767px)"
@@ -258,8 +255,8 @@ export default async function Page(props) {
                     data?.story?.content.mobile_banner?.filename
                   }
                   alt={data?.story?.content.image?.alt}
-                  width="758"
-                  height="169"
+                  width={828}
+                  height={169}
                   priority
                   sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                 />
@@ -281,23 +278,38 @@ export default async function Page(props) {
   );
 }
 
-export const fetchData = cache(async (params) => {
-  let slug = params?.slug ? `blog/${params.slug}` : "home";
-  const storyblokApi = getStoryblokApi();
+export async function fetchData(params) {
+  try {
+    let slug = params?.slug ? `blog/${params.slug}` : "home";
+    // const storyblokApi = getStoryblokApi();
 
-  let sbParams = {
-    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    resolve_links: "url",
-  };
+    let sbParams = {
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      resolve_links: "url",
+    };
 
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-  let { data: config } = await storyblokApi.get("cdn/stories/config");
-  return {
-    props: {
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
-      config: config ? config.story : false,
-    },
-    revalidate: 3600,
-  };
-});
+    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+
+    const [storyRes, configRes] = await Promise.all([
+      fetch(storyUrl, { cache: "no-store" }),
+      fetch(configUrl, { cache: "no-store" }),
+    ]);
+
+    console.log();
+    const storyData = await storyRes.json();
+    const configData = await configRes.json();
+
+    return {
+      props: {
+        story: storyData?.story || false,
+        key: storyData?.story?.id || false,
+        config: configData?.story || false,
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
+}
