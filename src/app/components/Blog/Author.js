@@ -59,11 +59,7 @@ const Author = ({ authorName }) => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [currentPage]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
+  
   const author = blogAuthor(convertParamsToString(authorName));
 
   return (
