@@ -340,8 +340,8 @@ const Article = ({ blok }) => {
                                     decoding="async"
                                     loading="lazy"
                                     src={author?.authorImage}
-                                    width="96"
-                                    height="96"
+                                    width={96}
+                                    height={96}
                                     alt={author?.name ||"author-Image" }
                                     className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                   />
@@ -394,8 +394,8 @@ const Article = ({ blok }) => {
                     loading="lazy"
                     className="ready_main hidden md:block alignnone"
                     src="/images/ready.png"
-                    width="1260"
-                    height="390"
+                    width={1408}
+                    height={450}
                     alt="get in touch"
                   />
                   <img
@@ -408,6 +408,8 @@ const Article = ({ blok }) => {
                     alt="get in touch"
                   />
                 </p>
+                
+
                 <div className="redy_title home_sec2_txt3">
                   <p className="!w-full font-bold">
                     READY TO DEVELOP YOUR SUCCESS STORY WITH US?
