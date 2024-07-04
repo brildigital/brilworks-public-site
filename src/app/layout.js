@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           {process.env.VERCEL_ENV === "production" && (
             <>
               <Script      
-              afterInteractive        
+            strategy="afterInteractive"     
                 defer
                 id="tag-manager"
               >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
              `}
               </Script> */}
               <Script
-               afterInteractive       
+                 strategy="afterInteractive"      
                 defer 
                 id="clearbitScript"
                 src={`${process.env.clearbitScript_URL}`}
@@ -68,14 +68,14 @@ export default function RootLayout({ children }) {
             </>
           )}
           <Script
-           afterInteractive       
+           strategy="afterInteractive"        
             defer
             id="organization"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
           />
           <Script
-           afterInteractive       
+             strategy="afterInteractive"       
             defer
             id={"website"}
             type="application/ld+json"
