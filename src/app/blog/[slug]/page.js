@@ -297,7 +297,6 @@ export async function fetchData(params) {
       // fetch(configUrl, { cache: "no-store" }),
     ]);
 
-    console.log();
     const storyData = await storyRes.json();
     const configData = await configRes.json();
 
@@ -313,4 +312,11 @@ export async function fetchData(params) {
     console.error("Error fetching data:", error);
     return null;
   }
+}
+
+
+export async function generateStaticParams() {
+  const posts = await getblog()
+  return posts.map((post) => ({slug:post.slug}
+  ))
 }
