@@ -12,10 +12,10 @@ import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import { blogAuthor, formattedDate } from "./lib/commonFunction";
 import BlogFAQ from "./Blog/BlogFAQ";
-// import {
-//   ContentSkeleton,
-//   TableOfContentSkeleton,
-// } from "./Blog/ArticleSkeleton";
+import {
+  ContentSkeleton,
+  TableOfContentSkeleton,
+} from "./Blog/ArticleSkeleton";
 
 const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
@@ -26,7 +26,7 @@ const Article = ({ blok }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState(null);
 
   const blogTableOfContent =
@@ -45,13 +45,13 @@ const Article = ({ blok }) => {
     }
   }
 
-  // useEffect(() => {
-  //   const loadingTimeout = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 300);
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
 
-  //   return () => clearTimeout(loadingTimeout);
-  // }, []);
+    return () => clearTimeout(loadingTimeout);
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -65,7 +65,7 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
-          node.attribs.alt = "banner-image";
+          node.attribs.alt="banner-image"
         }
 
         if (node.type === "tag" && node.name === "a") {
@@ -165,9 +165,9 @@ const Article = ({ blok }) => {
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
                 <div className="sticky top-[110px] !pb-5">
-                  {/* {isLoading ? (
+                  {isLoading ? (
                     <TableOfContentSkeleton />
-                  ) : ( */}
+                  ) : (
                     <>
                       <div
                         className={`${
@@ -253,7 +253,7 @@ const Article = ({ blok }) => {
                         </div>
                       </div>
                     </>
-                  {/* )} */}
+                  )}
                 </div>
               </div>
               <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
@@ -263,9 +263,11 @@ const Article = ({ blok }) => {
                       <div className="h-full w-full box-border !px-4">
                         <div className="h-full flex flex-col">
                           <div className="blog_content" ref={targetRef}>
-                            
-<>{ modifyImagesWithLazyLoading(blok?.content)}</>
-                            
+                            {blok?.content ? (
+                              modifyImagesWithLazyLoading(blok?.content)
+                            ) : (
+                              <ContentSkeleton />
+                            )}
                             {blok?.CTA_1 ? (
                               <div
                                 className={`${
@@ -274,9 +276,7 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
 
                             {blok?.Content_1 ? (
                               <div className="blog_content_new">
@@ -284,9 +284,7 @@ const Article = ({ blok }) => {
                                   blok?.Content_1 || ""
                                 )}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
                             {blok?.CTA_2 ? (
                               <div
                                 className={`${
@@ -295,18 +293,14 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
                             {blok?.Content_2 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_2 || ""
                                 )}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
                             {blok?.CTA_3 ? (
                               <div
                                 className={`${
@@ -317,18 +311,14 @@ const Article = ({ blok }) => {
                               >
                                 {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
                             {blok?.Content_3 ? (
                               <div className="blog_content_new">
                                 {modifyImagesWithLazyLoading(
                                   blok?.Content_3 || ""
                                 )}
                               </div>
-                            ) : (
-                              <></>
-                            )}
+                            ):<></>}
                             {blok?.FAQ && blok?.FAQ?.length > 0 ? (
                               <BlogFAQ FAQData={blok?.FAQ} />
                             ) : (
@@ -352,7 +342,7 @@ const Article = ({ blok }) => {
                                     src={author?.authorImage}
                                     width={96}
                                     height={96}
-                                    alt={author?.name || "author-Image"}
+                                    alt={author?.name ||"author-Image" }
                                     className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                                   />
                                 </div>
@@ -378,9 +368,7 @@ const Article = ({ blok }) => {
                                 </p>
                               </div>
                             </div>
-                          ) : (
-                            <></>
-                          )}
+                          ):<></>}
                         </div>
                       </div>
                     </div>
@@ -420,6 +408,7 @@ const Article = ({ blok }) => {
                     alt="get in touch"
                   />
                 </p>
+                
 
                 <div className="redy_title home_sec2_txt3">
                   <p className="!w-full font-bold">
@@ -517,6 +506,7 @@ const Article = ({ blok }) => {
                     <FetchDataSpinner />
                   </div>
                 )}
+                  
               </div>
             </div>
           </div>
