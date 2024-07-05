@@ -7,7 +7,7 @@ const nextConfig = {
   //   ignoreDuringBuilds: true, 
   //   },
   experimental: {
-    appDir: false,
+    appDir: true,
     legacyBrowsers: false, 
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
   },
