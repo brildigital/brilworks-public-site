@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
-  swcMinify: true, 
+  // swcMinify: true, 
   // eslint: { 
   //   // Warning: This allows production builds to successfully complete even if // your project has ESLint errors. 
   //   ignoreDuringBuilds: true, 
   //   },
   experimental: {
-    appDir: true,
+    appDir: false,
     legacyBrowsers: false, 
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
   },

@@ -45,9 +45,5 @@
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {
-    "child_process": "^1.0.2",
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7",
-    "purgecss": "^6.0.0"
   }
 }
