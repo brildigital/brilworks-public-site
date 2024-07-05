@@ -295,7 +295,7 @@ export async function fetchData(params) {
     const [storyRes, configRes] = await Promise.all([
       fetch(storyUrl, { cache: "no-store" }),
       fetch(configUrl, { cache: "no-store" }),
-      // fetch(storyList, { cache: "no-store" }),
+      // fetch(configUrl, { cache: "no-store" }),
     ]);
 
     const storyData = await storyRes.json();
