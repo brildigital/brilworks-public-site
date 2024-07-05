@@ -26,7 +26,7 @@ const Blog = () => {
         blogCategory,
         searchQuery
       );
-      setBlogDataPerPage(blogData.storyData);
+      setBlogDataPerPage([...blogData.storyData]);
       setTotalBlog(blogData.totalData);
     } catch (error) {
       console.error(error);
