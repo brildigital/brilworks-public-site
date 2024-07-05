@@ -25,7 +25,7 @@ storyblokInit({
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${inter?.variable}`}>
+      <html lang="en" className={`${inter?.variable}`} >
         <head>
           <meta
             property="article:publisher"
@@ -81,8 +81,9 @@ export default function RootLayout({ children }) {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
           />
+          <link src={`index.css?version=${math.random()*10}`}></link>
         </head>
-        <body suppressHydrationWarning={false}>
+        <body >
           <Header />
           <NextAuthProvider>{children}</NextAuthProvider>
           <Footer />
