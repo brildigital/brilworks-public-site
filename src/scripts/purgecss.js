@@ -8,7 +8,6 @@ let data = [];
 
 if (!files && files.length <= 0) {
 console.log('cannot find style files to purge');
-return;
 }
 
 for (let f of files) {
