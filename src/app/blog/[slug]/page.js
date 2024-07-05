@@ -273,7 +273,7 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <StoryblokStory story={data?.story} />
+      {/* <StoryblokStory story={data?.story} /> */}
     </>
   );
 }
@@ -281,20 +281,18 @@ export default async function Page(props) {
 export async function fetchData(params) {
   try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
-    // const storyblokApi = getStoryblokApi();
 
     let sbParams = {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       resolve_links: "url",
     };
-    // const storyList = `https://api.storyblok.com/v2/cdn/stories?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
     const [storyRes, configRes] = await Promise.all([
       fetch(storyUrl, { cache: "no-store" }),
       fetch(configUrl, { cache: "no-store" }),
-      // fetch(storyList, { cache: "no-store" }),
+     
     ]);
 
     const storyData = await storyRes.json();
