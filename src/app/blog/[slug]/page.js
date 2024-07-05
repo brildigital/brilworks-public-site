@@ -168,7 +168,7 @@ export default async function Page(props) {
                 </h1>
               </div>
               <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
-                {/* {author && ( */}
+                {author && (
                 <div className="flex items-center justify-between">
                   <Image
                     src={author?.authorImage}
@@ -201,7 +201,7 @@ export default async function Page(props) {
                     </span>
                   </div>
                 </div>
-                {/* )} */}
+               )} 
                 <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
                   <div className="flex sxl:items-center items-start md:mr-5 ">
                     <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
@@ -273,7 +273,7 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      {/* <StoryblokStory story={data?.story} /> */}
+      <StoryblokStory story={data?.story} />
     </>
   );
 }
