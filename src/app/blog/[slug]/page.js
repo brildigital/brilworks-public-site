@@ -161,10 +161,10 @@ export default async function Page(props) {
                       priority="true"
                     />
                   </span>
-                  <span>{data?.story?.content.title}</span>
+                  <span>{data?.story?.content?.title}</span>
                 </div>
                 <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
-                  {data?.story?.content.title}
+                  {data?.story?.content?.title}
                 </h1>
               </div>
               <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
@@ -196,7 +196,7 @@ export default async function Page(props) {
                     <br />
                     <span>
                       {formattedDate(
-                        data?.story?.content.Published || new Date()
+                        data?.story?.content?.Published || new Date()
                       )}
                     </span>
                   </div>
@@ -238,8 +238,8 @@ export default async function Page(props) {
                 <Image
                   className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                   src={
-                    data?.story?.content.mobile_banner?.filename ||
-                    data?.story?.content.image?.filename
+                    data?.story?.content?.mobile_banner?.filename ||
+                    data?.story?.content?.image?.filename
                   }
                   alt={data?.story?.content.image?.alt}
                   width={828}
