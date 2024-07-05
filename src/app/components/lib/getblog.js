@@ -10,7 +10,7 @@ export async function getblog() {
     "cdn/stories",
     {
       starts_with: "blog/",
-      per_page: 300,
+      per_page: 100,
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       // sort_by: "first_published_at:",
       filter_query: {
