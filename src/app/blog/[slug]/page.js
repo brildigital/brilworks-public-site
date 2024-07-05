@@ -161,14 +161,14 @@ export default async function Page(props) {
                       priority="true"
                     />
                   </span>
-                  <span>{data?.story?.content.title}</span>
+                  <span>{data?.story?.content?.title}</span>
                 </div>
                 <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
-                  {data?.story?.content.title}
+                  {data?.story?.content?.title}
                 </h1>
               </div>
               <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
-                {author && (
+                {/* {author && ( */}
                 <div className="flex items-center justify-between">
                   <Image
                     src={author?.authorImage}
@@ -196,12 +196,12 @@ export default async function Page(props) {
                     <br />
                     <span>
                       {formattedDate(
-                        data?.story?.content.Published || new Date()
+                        data?.story?.content?.Published || new Date()
                       )}
                     </span>
                   </div>
                 </div>
-               )} 
+                {/* )} */}
                 <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
                   <div className="flex sxl:items-center items-start md:mr-5 ">
                     <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
@@ -238,8 +238,8 @@ export default async function Page(props) {
                 <Image
                   className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                   src={
-                    data?.story?.content.mobile_banner?.filename ||
-                    data?.story?.content.image?.filename
+                    data?.story?.content?.mobile_banner?.filename ||
+                    data?.story?.content?.image?.filename
                   }
                   alt={data?.story?.content.image?.alt}
                   width={828}
@@ -281,20 +281,22 @@ export default async function Page(props) {
 export async function fetchData(params) {
   try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
+    // const storyblokApi = getStoryblokApi();
 
     let sbParams = {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       resolve_links: "url",
     };
+
     const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
     const [storyRes, configRes] = await Promise.all([
       fetch(storyUrl, { cache: "no-store" }),
       fetch(configUrl, { cache: "no-store" }),
-     
     ]);
 
+    console.log();
     const storyData = await storyRes.json();
     const configData = await configRes.json();
 
@@ -311,4 +313,3 @@ export async function fetchData(params) {
     return null;
   }
 }
-
