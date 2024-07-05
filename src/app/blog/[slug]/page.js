@@ -9,7 +9,6 @@ import StoryblokStory from "@storyblok/react/story";
 import QuickSummary from "@/app/components/Blog/QuickSummary";
 import { getblog } from "@/app/components/lib/getblog";
 
-
 export const metadata = {
   openGraph: {
     siteName:
@@ -281,7 +280,7 @@ export default async function Page(props) {
 }
 
 export async function fetchData(params) {
-  // try {
+  try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
     // const storyblokApi = getStoryblokApi();
 
@@ -308,12 +307,12 @@ export async function fetchData(params) {
         key: storyData?.story?.id || false,
         config: configData?.story || false,
       },
-    next:{revalidate: 3600},
+      revalidate: 3600,
     };
-  // } catch (error) {
-  //   console.error("Error fetching data:", error);
-  //   return null;
-  // }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
 
 
