@@ -7,8 +7,10 @@
     "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
-  
+    "postinstall": "prisma generate",
+    "purgecss": "node ./src/scripts/purgecss.js",
+    "obfuscate": "node ./src/scripts/obfuscate.js",
+    "postbuild": "npm run purgecss && npm run obfuscate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.4.2",
