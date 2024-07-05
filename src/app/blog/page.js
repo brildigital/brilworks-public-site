@@ -27,7 +27,6 @@ export const metadata = {
 
 const page = () => {
   return <Blog />;
-  
 };
 
 export default page;
