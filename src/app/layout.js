@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
           />
-          <link src={`index.css?version=${Math.random()*10}`}></link>
+            <link href="./output.css" rel="stylesheet"/>
         </head>
         <body >
           <Header />
