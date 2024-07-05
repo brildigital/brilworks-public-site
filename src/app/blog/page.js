@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Blog = dynamic(() => import("../components/Blog/Blog"));
+// const Blog = dynamic(() => import("../components/Blog/Blog"));
 
 // export const metadata = {
 //   title: "Blog - Brilworks Software",
