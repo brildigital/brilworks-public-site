@@ -26,7 +26,7 @@ export const metadata = {
 };
 
 const page = () => {
-  // return <Blog />;
+  return <Blog />;
 };
 
 export default page;
