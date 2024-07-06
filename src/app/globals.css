@@ -4,6 +4,7 @@
 @tailwind utilities;
 @import "./styles/FetchDataSpinner.css";
 @import "./styles/Loader.css";
+@import "./output.css";
 
 
 :root {
