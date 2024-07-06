@@ -1,4 +1,7 @@
 // This function is used to navigato at particular section
+import moment from 'moment';
+import 'moment-timezone';
+
 export function scrollToSection(e, sectionId) {
   e.preventDefault();
   const targetSection = document.getElementById(sectionId);
@@ -48,31 +51,11 @@ export function Icon({ id, open }) {
 }
 
 export const formattedDate = (dateString) => {
-  const date = new Date(dateString);
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const month = monthNames[date.getMonth()];
+  // Create a Moment.js object from the input dateString
+  const momentDate = moment.utc(dateString);
 
-  // Get the day
-  const day = date.getDate();
-
-  // Get the year
-  const year = date.getFullYear();
-
-  // Format the date
-  return `${month} ${day}, ${year}`;
+  // Format the date as desired
+  return momentDate.format("MMMM D, YYYY");
 };
 
 export const blogAuthor = (authorName) => {

@@ -1,6 +1,6 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import { ArticleSkeleton } from "./Blog/ArticleSkeleton";
+import  ArticleSkeleton  from "./Blog/ArticleSkeleton";
 
 /** Import your components */
 import Page from "./Page";
@@ -13,8 +13,8 @@ import Header from "./Header/Header";
 // import Config from "./Config";
 import Layout from "./Layout";
 import Footer from "./Footer";
-import Article from "./Article";
 import PopularArticles from "./PopularArticles";
+import Article from "./Article";
 
 const components = {
   feature: Feature,
