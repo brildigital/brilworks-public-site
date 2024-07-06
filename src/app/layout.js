@@ -1,5 +1,5 @@
+import "./styles/output.css";
 import "./globals.css";
-import "./styles/Homepage.scss";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
