@@ -12,7 +12,7 @@
 }
 .header.header-bg-white {
   background-color: #ffffff !important;
-  box-shadow: 0 2px 10px -1px rgb(0 0 0 / 20%) !important;
+  box-shadow: 0 2px 10px -1px #00000033 !important;
 }
 
 .menu-shadow {
@@ -304,9 +304,9 @@
 .award {
   padding: 3rem 0;
   background-color: #fff;
-  -webkit-box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
-  -moz-box-shadow: -9px 10px 5px 0 rgba(117, 117, 117, 0.39);
-  box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
+  -webkit-box-shadow: -9px 10px 5px 0 #75757563;
+  -moz-box-shadow: -9px 10px 5px 0 #75757563;
+  box-shadow: -9px 10px 5px 0 #75757563;
   border-radius: 18px;
   border: 1px solid #80808040;
   margin: 1.5rem 0;
