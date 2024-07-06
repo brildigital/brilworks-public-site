@@ -25,7 +25,6 @@
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "html-react-parser": "4.0.0",
-    "javascript-obfuscator": "^4.1.1",
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.45",
     "next": "13.4.5",
