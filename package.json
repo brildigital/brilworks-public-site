@@ -36,7 +36,7 @@
     "react-responsive": "9.0.2",
     "react-tooltip": "5.25.1",
     "rss": "1.2.2",
-    "sass": "^1.64.1",
+    "sass": "1.64.1",
     "storyblok-js-client": "6.0.0",
     "storyblok-rich-text-react-renderer": "2.8.0",
     "swiper": "10.0.4",
