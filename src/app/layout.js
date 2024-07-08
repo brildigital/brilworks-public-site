@@ -7,7 +7,7 @@ import StoryblokProvider from "./components/StoryblokProvider";
 import { organization, website } from "./components/lib/schemaCode";
 import { NextAuthProvider } from "./provider";
 import { Inter } from 'next/font/google'
- 
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html lang="en" className={`${inter?.variable}`}>
         <head>
+        <meta name="viewport" content="width=device-width"/>
           <meta
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
