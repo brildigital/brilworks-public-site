@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
 import QuickSummary from "@/app/components/Blog/QuickSummary";
+import { getblog } from "@/app/components/lib/getblog";
 
 export const metadata = {
   openGraph: {
@@ -312,4 +313,10 @@ export async function fetchData(params) {
     console.error("Error fetching data:", error);
     return null;
   }
+}
+
+export async function generateStaticParams() {
+  const posts = await getblog()
+  return posts.map((post) => ({slug:post.slug}
+  ))
 }
