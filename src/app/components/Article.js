@@ -3,21 +3,25 @@
 import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import { memo, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import FetchDataSpinner from "./Homepage/FetchDataSpinner";
+
 import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import { blogAuthor, formattedDate } from "./lib/commonFunction";
+import BlogContactForm from "./Blog/BlogContactForm"
 import BlogFAQ from "./Blog/BlogFAQ";
-import {
-  ContentSkeleton,
-  TableOfContentSkeleton,
-} from "./Blog/ArticleSkeleton";
+import dynamic from "next/dynamic";
+import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
-const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
+// import {
+//   ContentSkeleton,
+//   TableOfContentSkeleton,
+// } from "./Blog/ArticleSkeleton";
+
+// const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
 const Article = ({ blok }) => {
@@ -26,7 +30,8 @@ const Article = ({ blok }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
+
   const [activeLink, setActiveLink] = useState(null);
 
   const blogTableOfContent =
@@ -45,13 +50,7 @@ const Article = ({ blok }) => {
     }
   }
 
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
 
-    return () => clearTimeout(loadingTimeout);
-  }, []);
 
   useEffect(() => {
     fetchData();
@@ -85,25 +84,63 @@ const Article = ({ blok }) => {
       },
     });
   }
+  const parseHTML = (htmlString) => {
+    setIsLoading(true)
+    return new Promise((resolve, reject) => {
+      try {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, "text/html");
+        const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
+          const level = parseInt(heading.tagName.slice(1), 10);
+          const text = heading.textContent;
+          return { level, text };
+        });
+        resolve(headings);
+        setIsLoading(false)
+      } catch (error) {
+        setIsLoading(false)
+        reject(error);
+      }
+    });
+  };
 
   useEffect(() => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(blogTableOfContent, "text/html");
-    const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
-      const level = parseInt(heading.tagName.slice(1), 10);
-      const text = heading.textContent;
-      return { level, text };
-    });
-    setHeadings(headings);
-  }, [blogTableOfContent, !isLoading]);
+    const fetchHeadings = async () => {
+      try {
+        const parsedHeadings = await parseHTML(blogTableOfContent);
+        setHeadings(parsedHeadings);
+      } catch (error) {
+        console.error("Error parsing HTML:", error);
+      }
+    };
 
-  useEffect(() => {
-    // Add temporary IDs to the headings for smooth scrolling
-    const headings = document.querySelectorAll("h2");
-    headings.forEach((heading, index) => {
-      heading.id = `temp-section-${index}`;
+    fetchHeadings();
+  }, [blogTableOfContent]);
+
+
+  const addTemporaryIDs = () => {
+    setIsLoading(true)
+    return new Promise((resolve) => {
+      const headings = document.querySelectorAll("h2");
+      headings.forEach((heading, index) => {
+        heading.id = `temp-section-${index}`;
+      });
+      resolve();
+     
     });
-  }, [!isLoading]);
+  };
+  useEffect(() => {
+    // Call the function and handle the promise
+    addTemporaryIDs()
+      .then(() => {
+        console.log("Temporary IDs added to headings.");
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error adding temporary IDs:", error);
+        setIsLoading(false)
+      });
+  }, []);
 
   const handleTableOfContentLinkClick = (e, index) => {
     setActiveLink(index);
@@ -155,20 +192,16 @@ const Article = ({ blok }) => {
 
   return (
     <div className="blog-main">
-      {!blok?.content ? (
-        <div className="flex items-center justify-center !py-60">
-          <FetchDataSpinner />
-        </div>
-      ) : (
+   
         <>
           <div className="container max-w-[1280px] mx-auto my-0 !px-4">
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
                 <div className="sticky top-[110px] !pb-5">
-                  {/* {isLoading ? (
+                  {isLoading ? (
                     <TableOfContentSkeleton />
                   ) : (
-                    <> */}
+                    <>
                       <div
                         className={`${
                           headings?.length ? "blog-tab-content" : "!hidden"
@@ -178,8 +211,8 @@ const Article = ({ blok }) => {
                           <p>Table of Contents</p>
                         </div>
                         <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
-                          {headings?.length ? (
-                            headings.map((heading, index) => (
+                          {/* {headings?.length ? ( */}
+                         {   headings?.map((heading, index) => (
                               <li key={index}>
                                 <Link
                                   href={`#temp-section-${index}`}
@@ -193,12 +226,12 @@ const Article = ({ blok }) => {
                                   {heading.text}
                                 </Link>
                               </li>
-                            ))
-                          ) : (
+                            ))}
+                          {/* ) : (
                             <div className="flex align-middle justify-center py-16">
                               <FetchDataSpinner />
                             </div>
-                          )}
+                          )} */}
                         </ul>
                       </div>
                       <div className="!mt-7">
@@ -252,8 +285,8 @@ const Article = ({ blok }) => {
                           </Link>
                         </div>
                       </div>
-                    {/* </>
-                  )} */}
+                    </>
+                  )}
                 </div>
               </div>
               <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
@@ -451,12 +484,12 @@ const Article = ({ blok }) => {
                 </p>
               </div>
               <div
-                className={`grid ${
-                  isLoading ? "" : "xl:grid-cols-3 md:grid-cols-2"
-                } grid-cols-1 items-center gap-[2rem]`}
+                className={`grid 
+                   xl:grid-cols-3 md:grid-cols-2
+                 grid-cols-1 items-center gap-[2rem]`}
               >
-                {blogData?.length && !isLoading ? (
-                  blogData
+          
+                {  blogData
                     ?.filter(({ slug }) => !pathname?.includes(slug))
                     ?.slice(0, `${isTablet ? 2 : 3}`)
                     ?.map(({ slug, name, content }, index) => (
@@ -501,17 +534,12 @@ const Article = ({ blok }) => {
                         </Link>
                       </div>
                     ))
-                ) : (
-                  <div className="flex items-center justify-center p-24">
-                    <FetchDataSpinner />
-                  </div>
-                )}
-                  
+              }
               </div>
             </div>
           </div>
         </>
-      )}
+
     </div>
   );
 };

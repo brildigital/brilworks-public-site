@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html lang="en" className={`${inter?.variable}`}>
         <head>
-        {/* <meta name="viewport" content="width=device-width"/> */}
+        <meta name="viewport" content="width=device-width"/>
           <meta
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
