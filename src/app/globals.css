@@ -47,6 +47,9 @@
 }
 
 html {
+
+    touch-action: manipulation;
+
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   font-family: var(--global-font) !important;
