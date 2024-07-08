@@ -84,6 +84,16 @@
       }
     }
   }
+  table
+  { th, td {
+    border: 1px solid var(--theme-color);
+     padding-left: 0.75rem;
+  }
+
+  tr:nth-child(1){
+    background-color: #f4f4f4 !important ;
+  }
+  }
   blockquote,
   blockquote::before {
     background: #f4f4f4 !important;
