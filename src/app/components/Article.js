@@ -165,10 +165,10 @@ const Article = ({ blok }) => {
             <div className="flex flex-wrap -mx-4">
               <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
                 <div className="sticky top-[110px] !pb-5">
-                  {isLoading ? (
+                  {/* {isLoading ? (
                     <TableOfContentSkeleton />
                   ) : (
-                    <>
+                    <> */}
                       <div
                         className={`${
                           headings?.length ? "blog-tab-content" : "!hidden"
@@ -252,8 +252,8 @@ const Article = ({ blok }) => {
                           </Link>
                         </div>
                       </div>
-                    </>
-                  )}
+                    {/* </>
+                  )} */}
                 </div>
               </div>
               <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
@@ -263,11 +263,11 @@ const Article = ({ blok }) => {
                       <div className="h-full w-full box-border !px-4">
                         <div className="h-full flex flex-col">
                           <div className="blog_content" ref={targetRef}>
-                            {blok?.content ? (
-                              modifyImagesWithLazyLoading(blok?.content)
-                            ) : (
+                            {/* {blok?.content ? ( */}
+                            {  modifyImagesWithLazyLoading(blok?.content)}
+                            {/* ) : (
                               <ContentSkeleton />
-                            )}
+                            )} */}
                             {blok?.CTA_1 ? (
                               <div
                                 className={`${
