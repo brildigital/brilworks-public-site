@@ -3,7 +3,7 @@ import React from "react";
 
 const QuickSummary = ({ data }) => {
   return (
-    <div className="post-summary slg:w-[calc(100%_-_170px)] w-full text-left ">
+    <div className="post-summary  w-full text-left ">
       <span className="font-bold text-themeColor">Quick Summary:-</span>
       {data}
     </div>
