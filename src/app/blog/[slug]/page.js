@@ -259,7 +259,7 @@ export default async function Page(props) {
                     data?.story?.content.image?.filename ||
                     data?.story?.content.mobile_banner?.filename
                   }
-                  quality={30}
+                  quality={100}
                
                   alt={data?.story?.content.image?.alt}
                   width={828}

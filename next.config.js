@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
+const TerserPlugin = require('terser-webpack-plugin');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: true,
+})
+
 const nextConfig = {
   trailingSlash: true,
-  swcMinify: true, 
-  // eslint: { 
-  //   // Warning: This allows production builds to successfully complete even if // your project has ESLint errors. 
-  //   ignoreDuringBuilds: true, 
-  //   },
+  swcMinify: true,
   experimental: {
     appDir: true,
     legacyBrowsers: false, 
@@ -13,6 +14,38 @@ const nextConfig = {
   },
   images: {
     domains: ["a.storyblok.com", "lh3.googleusercontent.com"],
+  },
+  webpack: (config, { dev, isServer }) => {
+    // Only apply Terser in production builds
+    if (!dev && !isServer) {
+      config.optimization.minimize = true;
+      config.optimization.minimizer = config.optimization.minimizer || [];
+      config.optimization.minimizer.push(
+        new TerserPlugin({
+          terserOptions: {
+            parse: {
+              ecma: 8,
+            },
+            compress: {
+              ecma: 5,
+              warnings: false,
+              comparisons: false,
+              inline: 2,
+            },
+            mangle: {
+              safari10: true,
+            },
+            output: {
+              ecma: 5,
+              comments: false,
+              ascii_only: true,
+            },
+          },
+          parallel: true,
+        }),
+      );
+    }
+    return config;
   },
   redirects: async () => {
     return [
@@ -824,4 +857,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig)
