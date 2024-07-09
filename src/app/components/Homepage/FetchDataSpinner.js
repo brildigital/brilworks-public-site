@@ -1,7 +1,13 @@
 const FetchDataSpinner = ({ size }) => {
   return (
-    <div style={{ color: "#1a1a1a" }} className={`la-ball-clip-rotate ${size}`}>
+    <div  className={` flex w-full justify-center items-center ${size}`}>
       <div></div>
+      <div className="loader">
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="circle"></div>
+</div>
     </div>
   );
 };

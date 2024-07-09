@@ -1,34 +1,33 @@
 "use client";
-import { useEffect, useState } from "react";
 import blogResponse from "../lib/blogResponse.json";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogText } from "./BigText";
 import { usePathname } from "next/navigation";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./FetchDataSpinner";
-import { getblogDataCategorization } from "../lib/getblog";
+// import { getblogDataCategorization } from "../lib/getblog";
 import LinkWithArrow from "../Common/LinkWithArrow";
 
 const HomePageBlogs = () => {
   const pathname = usePathname();
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
 
-  const blogDataBasedOnPath = {
-    "/aws-consulting-services/": "aws-consulting",
-    "/ai-ml-development-services/": "ai-ml",
-    "/devops-consulting-services/": "devops-consulting",
-    // "/erp-next-development-services/": "erp-next",
-    "/application-development-services": "application-development",
-    "/kubernetes-consulting-services/": "kubernetes-consulting",
-    "/generative-ai-development-services/": "generative-ai",
-    "/digital-experience-services/": "digital-experience",
-    // "/low-code-no-code-development-services/": "low-code-no-code",
-    "/product-engineering-development-services/":
-      "product-engineering-development",
-    "/saas-application-development-services/": "saas-application-development",
-    // "/business-intelligence-services/": "business-intelligence",
-  };
+  // const blogDataBasedOnPath = {
+  //   "/aws-consulting-services/": "aws-consulting",
+  //   "/ai-ml-development-services/": "ai-ml",
+  //   "/devops-consulting-services/": "devops-consulting",
+  //   // "/erp-next-development-services/": "erp-next",
+  //   "/application-development-services": "application-development",
+  //   "/kubernetes-consulting-services/": "kubernetes-consulting",
+  //   "/generative-ai-development-services/": "generative-ai",
+  //   "/digital-experience-services/": "digital-experience",
+  //   // "/low-code-no-code-development-services/": "low-code-no-code",
+  //   "/product-engineering-development-services/":
+  //     "product-engineering-development",
+  //   "/saas-application-development-services/": "saas-application-development",
+  //   // "/business-intelligence-services/": "business-intelligence",
+  // };
 
   // async function fetchData() {
   //   try {
