@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import blogResponse from "../lib/blogResponse.json";
 import Link from "next/link";
 import Image from "next/image";
