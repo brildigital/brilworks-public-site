@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const TerserPlugin = require('terser-webpack-plugin');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: true,
+})
 
 const nextConfig = {
   trailingSlash: true,
@@ -854,4 +857,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig)
