@@ -6,6 +6,7 @@ import { NextAuthProvider } from "./provider"
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { organization, website } from "./components/lib/schemaCode";
 
 const inter = Inter({
   subsets: ['latin'],
