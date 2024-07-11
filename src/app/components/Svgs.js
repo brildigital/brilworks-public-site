@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 
 
+
 const ReactIcon = dynamic(() => import('./svg/ReactIcon'));
 const JavaIcon = dynamic(() => import('./svg/JavaIcon'));
 const JavascriptIcon = dynamic(() => import('./svg/JavascriptIcon'));
@@ -29,7 +30,7 @@ const ClockIcon = dynamic(() => import('./svg/ClockIcon'));
 const MultipleClock = dynamic(() => import('./svg/MultipleClock'));
 const SettingHandIcon = dynamic(() => import('./svg/SettingHandIcon'));
 const ThumbIcon = dynamic(() => import('./svg/ThumbIcon'));
-
+ const  CardiogramIcon =  dynamic(()=>"./svg/CardiogramIcon");
 
 
 
