@@ -4,30 +4,34 @@ import UsecaseContentSection from "@/app/components/UseCases/UsecaseContentSecti
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 
 export const metadata = {
-  title: "AWS in healthcare",
-  description: "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
+  title: "Generative AI in healthcare",
+  description:
+    "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
   openGraph: {
-    title: "AWS in healthcare",
-    description: "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/aws-in-healthcare/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    title: "Generative AI in healthcare",
+    description:
+      "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/generative-ai-in-healthcare/`,
+    siteName:
+      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
     type: "website",
   },
   twitter: {
-    title: "AWS in healthcare",
-    description: "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
+    title: "Generative AI in healthcare",
+    description:
+      "At Brilworks, we specialize in AWS consulting and generative AI, enhancing engineering and design capabilities, accelerating product and MVP timelines, automating operations, and reducing costs.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/aws-in-healthcare/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/generative-ai-in-healthcare/`,
   },
 };
 
 async function getAWSInHealthcareData() {
   try {
-    const url = `https://api.storyblok.com/v2/cdn/stories/use-case/aws-in-healthcare?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const url = `https://api.storyblok.com/v2/cdn/stories/use-case/generative-ai-in-healthcare?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const res = await fetch(url, { 
       next: { revalidate: 3600 }, // Revalidate every hour
     });
@@ -44,7 +48,7 @@ async function getAWSInHealthcareData() {
       faq_section: FAQ_section,
     };
   } catch (error) {
-    console.error("Error fetching AWS in healthcare data:", error);
+    console.error("Error fetching terms and conditions:", error);
     return null;
   }
 }
