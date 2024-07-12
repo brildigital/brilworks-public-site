@@ -16,7 +16,6 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const GenerativeAIDevService = () => {
-  const isMobile = typeof window !== "undefined" ? window.innerWidth < 767 : "";
   return (
     <div className="services pt-[4rem] mx-auto">
       <>
