@@ -36,13 +36,15 @@ export default function RootLayout({ children }) {
         <body suppressHydrationWarning={true}>
           <Header />
           {/* <NextAuthProvider> */}
+          {/* <div  className="h-[100vh]"> */}
             {children}
+            {/* </div> */}
             {/* </NextAuthProvider> */}
           <Footer />
           {process.env.VERCEL_ENV === "production" && (
             <>
-              <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-              <Script src={process.env.NEXT_PUBLIC_CLEARBIT_SCRIPT_URL} strategy="lazyOnload" />
+              <GoogleTagManager gtmId={process.env.googleTagManagerID} />
+              <Script src={process.env.clearbitScript_URL} strategy="lazyOnload" />
               <Script id="organization" type="application/ld+json" strategy="lazyOnload">
                 {JSON.stringify(organization)}
               </Script>

@@ -251,7 +251,8 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <StoryblokStory story={data?.story} />
+      <div  className="min-h-[50vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
+
     </>
   );
 }
