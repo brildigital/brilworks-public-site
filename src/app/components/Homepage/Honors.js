@@ -135,6 +135,21 @@ const Honors = () => {
       imgAlt: "top software developers",
       text: "Top Software Companies",
     },
+    {
+      link: "https://clutch.co/profile/brilworks-software#summary",
+      imgSrc:"/images/global_award_spring_2024.webp",
+      imgAlt: "global award spring",
+      text: "Global Award Spring",
+      imgClass:"scale-[0.8]"
+    },
+    {
+      link: "https://clutch.co/profile/brilworks-software#summary",
+      imgSrc:"/images/global_award_2023 (1).webp",
+      imgAlt: "global award fall",
+      text: "Global Award Fall",
+      imgClass:"scale-[0.8]"
+    }
+
   ];
 
   return (

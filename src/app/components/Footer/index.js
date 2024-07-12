@@ -317,48 +317,113 @@ const Footer = () => {
           <div className="border-b border-borderGray py-6">
             <p className="pb-6">Recognized by:</p>
             <div className="footer-award flex items-center flex-wrap justify-between xl:gap-6 gap-4">
+            <Link
+              href={ "https://clutch.co/profile/brilworks-software#summary"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+            <Image
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
+                src="/images/global_award_2023 (1).webp"
+                alt="global award"
+                width="150"
+                height="162"
+                
+              />
+              </Link>
+              <Link
+              href={ "https://clutch.co/profile/brilworks-software#highlights"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/top-clutchco-software-developers-gaming-india.webp"
                 alt="Gaming India"
                 width="150"
                 height="162"
               />
+              </Link>
+              <Link
+              href={"https://themanifest.com/in/software-development/java/companies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[110px] md:w-[80px] w-[60px]"
+                className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
                 src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
                 alt="App dev company award"
                 width="110"
                 height="160"
               />
+              </Link>
+              <Link
+              href={"https://www.designrush.com/agency/profile/brilworks-software"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[120px] md:w-[90px] w-[70px]"
+                className="xl:w-[120px] scale-[0.8]  md:w-[90px] w-[70px]"
                 src="/images/Top-Mobile-App-Development-Company2.webp"
                 alt="Top App dev company award"
                 width="120"
                 height="130"
               />
+              </Link>
+              <Link
+              href={"https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/review-top-software-developers.png"
                 alt="Top software companies logo"
                 width="150"
                 height="105"
               />
+              </Link>
+              <Link
+              href={"https://themanifest.com/in/software-development/java/companies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[110px] md:w-[80px] w-[60px]"
+                className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
                 src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
                 alt="Top manifest review"
                 width="110"
                 height="160"
               />
+              </Link>
+              <Link
+              href={"https://clutch.co/profile/brilworks-software#highlights"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
+              
+
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
                 alt="GPS, Navigation & GIS India"
                 width="150"
                 height="162"
               />
+              </Link>
+              <Link
+              href={"https://clutch.co/profile/brilworks-software#summary"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
+               <Image
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
+                src="/images/global_award_spring_2024.webp"
+                alt="global award"
+                width="150"
+                height="162"
+              />
+              </Link>
             </div>
           </div>
           <div className="pt-6">
@@ -536,3 +601,122 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+const slidesData = [
+  {
+    link: "https://www.adalo.com/experts/brilworks-software",
+    imgSrc: "/images/review-adalo.png",
+    imgAlt: "adalo expert",
+    text: "Adalo Expert No-Code",
+  },
+  {
+    link: "https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd",
+    imgSrc: "/images/select-tier-service-partner-light-1.png",
+    imgAlt: "AWS Partner",
+    imgClass: "w-[120px]",
+    text: "AWS Partner",
+  },
+  {
+    link: "https://clutch.co/profile/brilworks-software#highlights",
+    imgSrc: "/images/top-clutchco-software-developers-gaming-india.webp",
+    imgAlt: "Clutch Game Reviews",
+    imgClass: "w-[150px]",
+    text: "Gaming India",
+  },
+  {
+    link: "https://themanifest.com/in/software-development/java/companies/ahmedabad",
+    imgSrc:
+      "/images/top_the_manifest_app_development_company_ahmedabad_award.png",
+    imgAlt: "App dev Company",
+    imgClass: "w-[110px]",
+    text: "App Development Company",
+  },
+  {
+    link: "https://www.storyblok.com/pl/brilworks-technology",
+    imgSrc: "/images/Storyblok.svg",
+    imgAlt: "Storyblok partner",
+    imgClass: "w-[180px]",
+    text: "Storyblok Partner",
+  },
+  {
+    link: "https://clutch.co/profile/brilworks-software#highlights",
+    imgSrc:
+      "/images/top-clutchco-software-developers-gps-navigation-gis-india.webp",
+    imgAlt: "Clutch GPS, Navigation & GIS Reviews",
+    imgClass: "w-[150px]",
+    text: "GPS, Navigation & GIS India",
+  },
+  {
+    link: "https://themanifest.com/in/software-development/java/companies/ahmedabad",
+    imgSrc:
+      "/images/top_the_manifest_software_developers_ahmedabad_2023_award.png",
+    imgAlt: "The manifest Reviews",
+    imgClass: "w-[110px]",
+    text: "Software Developers",
+  },
+  {
+    link: "https://clutch.co/profile/brilworks-software#summary",
+    imgSrc: "/images/review-clutch.png",
+    imgAlt: "Clutch Reviews",
+    text: "Clutch 9.9 Ratings",
+  },
+  {
+    link: "https://www.designrush.com/agency/profile/brilworks-software",
+    imgSrc: "/images/Top-Mobile-App-Development-Company2.webp",
+    imgAlt: "Top Mobile App Development Company",
+    imgClass: "w-[150px]",
+    text: "DesignRush Top Company",
+  },
+  {
+    link: "https://www.dotcms.com/partners/brilworks",
+    imgSrc: "/images/dotCMS-logo.svg",
+    imgAlt: "dotCMS logo",
+    imgClass: "w-[150px]",
+    text: "dotCMS Partner",
+  },
+  {
+    link: "https://www.ambitionbox.com/overview/brilworks-overview",
+    imgSrc: "/images/review-ambitionbox.png",
+    imgAlt: "AmbitionBox Rating",
+    text: "AmbitionBox Rating",
+  },
+  {
+    link: "https://www.glassdoor.co.in/Overview/Working-at-Brilworks-EI_IE3883160.11,20.htm",
+    imgSrc: "/images/review-glassdoor.png",
+    imgAlt: "Glassdoor review",
+    text: "Glassdoor 4.8 Ratings",
+  },
+  {
+    imgSrc: "/images/review-liferay.png",
+    imgAlt: "Liferay Partner",
+    text: "Liferay Silver Service Partner",
+  },
+  {
+    link: "https://technology.siliconindia.com/ranking/10-most-promising-blockchain-development-companies-%C2%AD-2022-rid-1689.html",
+    imgSrc: "/images/review-blockchain.png",
+    imgAlt: "SiliconIndia Blockchain Development Company",
+    text: "Silicon India Promising Company",
+  },
+  {
+    link: "https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad",
+    imgSrc: "/images/review-top-software-developers.png",
+    imgAlt: "top software developers",
+    text: "Top Software Companies",
+  },
+  {
+    link: "https://clutch.co/profile/brilworks-software#summary",
+    imgSrc:"/images/global_award_spring_2024.webp",
+    imgAlt: "global award spring",
+    text: "Global Award Spring",
+    imgClass:"scale-[0.8]"
+  },
+  {
+    link: "https://clutch.co/profile/brilworks-software#summary",
+    imgSrc:"/images/global_award_2023 (1).webp",
+    imgAlt: "global award fall",
+    text: "Global Award Fall",
+    imgClass:"scale-[0.8]"
+  }
+
+];
