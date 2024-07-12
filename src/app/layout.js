@@ -2,11 +2,12 @@ import './globals.css'
 import './styles/Homepage.scss'
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc"
 import StoryblokProvider from "./components/StoryblokProvider"
-import { NextAuthProvider } from "./provider"
+// import { NextAuthProvider } from "./provider"
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { organization, website } from "./components/lib/schemaCode";
+import dynamic from "next/dynamic"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,7 +21,8 @@ storyblokInit({
 })
 
 import Header from "./components/Header/Header"
-import Footer from "./components/Footer"
+
+const Footer = dynamic(() => import("./components/Footer"));
 
 export default function RootLayout({ children }) {
   return (
@@ -33,7 +35,9 @@ export default function RootLayout({ children }) {
         </head>
         <body suppressHydrationWarning={true}>
           <Header />
-          <NextAuthProvider>{children}</NextAuthProvider>
+          {/* <NextAuthProvider> */}
+            {children}
+            {/* </NextAuthProvider> */}
           <Footer />
           {process.env.VERCEL_ENV === "production" && (
             <>

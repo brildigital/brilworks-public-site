@@ -8,27 +8,53 @@ import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
 import QuickSummary from "@/app/components/Blog/QuickSummary";
 import { getblog } from "@/app/components/lib/getblog";
+import { notFound } from "next/navigation";
+import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
+import { Suspense } from "react";
 
 
-export const metadata = {
-  openGraph: {
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
-    locale: "en-US",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@_Brilworks",
-    creator: "@_Brilworks",
-  },
-};
 
+export async function generateMetadata({ params }) {
+  const data = await fetchData(params.slug);
+  const story = data?.story;
+
+  if (!story) return {};
+
+  const totalDataWord = story.content.content + story.content.Content_1 + 
+    story.content.Content_2 + story.content.Content_3;
+
+  return {
+    title: story.content.metatags?.title || story.content.title,
+    description: story.content.metatags?.description,
+    authors: [{ name: story.content.BlogAuthor }],
+    openGraph: {
+      title: story.content.metatags?.og_title || story.content.title,
+      description: story.content.metatags?.og_description || story.content.metatags?.description,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
+      images: [{ url: story.content.metatags?.og_image || story.content.mobile_banner?.filename }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: story.content.metatags?.og_title || story.content.title,
+      description: story.content.metatags?.og_description || story.content.metatags?.description,
+      images: [story.content.metatags?.twitter_image || story.content.mobile_banner?.filename],
+      creator: story.content.BlogAuthor,
+      site: '@_Brilworks',
+    },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/` },
+    other: {
+      'twitter:label1': 'Written by',
+      'twitter:data1': story.content.BlogAuthor,
+      'twitter:label2': 'Est. reading time',
+      'twitter:data2': `${calculateReadingTime(totalDataWord)} minutes`,
+    },
+  };
+}
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
   if (!data?.story) {
-    return null;
+    return notFound()
   }
 
   const totalDataWord =
@@ -41,77 +67,20 @@ export default async function Page(props) {
 
   return (
     <>
-      <head>
-        <title>
-          {data?.story?.content?.metatags?.title || data?.story?.content?.title}
-        </title>
-
-        <meta
-          name="description"
-          content={data?.story?.content?.metatags?.description}
-        />
-
-        <link
-          rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
-        />
-
-        <meta
-          property="og:title"
-          content={
-            data?.story?.content?.metatags?.og_title ||
-            data?.story?.content?.title
-          }
-        ></meta>
-
-        <meta
-          property="og:url"
-          content={`${process.env.NEXT_PUBLIC_BASE_URL}blog/${data?.story?.slug}/`}
-        ></meta>
-
-        <meta
-          name="og:description"
-          content={
-            data?.story?.content?.metatags?.og_description ||
-            data?.story?.content?.metatags?.description
-          }
-        />
-
-        <meta
-          property="og:image"
-          content={
-            data?.story?.content?.metatags?.og_image ||
-            data?.story?.content?.mobile_banner?.filename
-          }
-        />
-        <meta name="author" content={data?.story?.content?.BlogAuthor}></meta>
-        <meta
-          name="twitter:image"
-          content={
-            data?.story?.content?.metatags?.twitter_image ||
-            data?.story?.content?.mobile_banner?.filename
-          }
-        ></meta>
-        <meta name="twitter:label1" content="Written by"></meta>
-        <meta
-          name="twitter:data1"
-          content={data?.story?.content?.BlogAuthor}
-        ></meta>
-        <meta name="twitter:label2" content="Est. reading time"></meta>
-        <meta
-          name="twitter:data2"
-          content={`${calculateReadingTime(totalDataWord)} minutes`}
-        ></meta>
-      </head>
+     
       <div className="md:pt-[8rem] pt-[6rem] blog-main">
         <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
               <div className="slg:w-[calc(100%_-_170px)]">
+                
                 <div
                   className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
                   aria-label="Breadcrumb"
                 >
+                    <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
+     
+     
                   <span className="blog-navigation">
                     <Link title="Brilworks Blog." href="/">
                       Brilworks
@@ -164,6 +133,7 @@ export default async function Page(props) {
                     />
                   </span>
                   <span>{data?.story?.content?.title}</span>
+                  </Suspense>
                 </div>
                 <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
                   {data?.story?.content?.title}
@@ -237,6 +207,7 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
             <div className="h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
+            <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
                 <Image
                   className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                   src={
@@ -267,6 +238,7 @@ export default async function Page(props) {
                   priority
                   sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                 />
+                </Suspense>
               </div>
               {data?.story?.content?.Quick_Summary ? (
                 <div className="min-h-[80px]">
@@ -298,8 +270,8 @@ export async function fetchData(params) {
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl, { cache: "no-store" }),
-      fetch(configUrl, { cache: "no-store" }),
+      fetch(storyUrl,  {next: { revalidate: 3600 }}),
+      fetch(configUrl,  {next: { revalidate: 3600 }}),
     ]);
 
     console.log();

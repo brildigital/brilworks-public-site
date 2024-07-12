@@ -12,9 +12,13 @@ import Header from "./Header/Header";
 // import MenuLink from "./MenuLink";
 // import Config from "./Config";
 import Layout from "./Layout";
-import Footer from "./Footer";
-import Article from "./Article";
-import PopularArticles from "./PopularArticles";
+import dynamic from "next/dynamic";
+// const HeaderMenu = dynamic(() => import('./HeaderMenu'));
+// const MenuLink = dynamic(() => import('./MenuLink'));
+// const Config = dynamic(() => import('./Config'));
+const Footer = dynamic(() => import('./Footer'));
+const Article = dynamic(() => import('./Article'));
+const PopularArticles = dynamic(() => import('./PopularArticles'));
 
 const components = {
   feature: Feature,

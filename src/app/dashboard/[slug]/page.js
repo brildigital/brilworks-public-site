@@ -1,13 +1,14 @@
 import React from 'react';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import ResourceData from '@/app/components/Dashboard/ResourceData';
+import { notFound } from "next/navigation";
 
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
 
   if (!data) {
-    return null;
+    return notFound();
   }
 
   return (
@@ -25,14 +26,14 @@ export const fetchData = async (params) => {
     resolve_links: 'url',
   };
 
-  const { data } = await storyblokApi.get(
+  const data = await storyblokApi.get(
     `cdn/stories/dashboard/${params?.slug}`,
     sbParams,
   );
 
   return {
     props: {
-      story: data ? data.story : false,
+      story: data ? data.data?.story : false,
     },
     revalidate: 3600,
   };
