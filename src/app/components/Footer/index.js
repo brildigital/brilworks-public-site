@@ -317,48 +317,113 @@ const Footer = () => {
           <div className="border-b border-borderGray py-6">
             <p className="pb-6">Recognized by:</p>
             <div className="footer-award flex items-center flex-wrap justify-between xl:gap-6 gap-4">
+            <Link
+              href={ "https://clutch.co/profile/brilworks-software#summary"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+            <Image
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
+                src="/images/global_award_2023 (1).webp"
+                alt="global award"
+                width="150"
+                height="162"
+                
+              />
+              </Link>
+              <Link
+              href={ "https://clutch.co/profile/brilworks-software#highlights"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/top-clutchco-software-developers-gaming-india.webp"
                 alt="Gaming India"
                 width="150"
                 height="162"
               />
+              </Link>
+              <Link
+              href={"https://themanifest.com/in/software-development/java/companies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[110px] md:w-[80px] w-[60px]"
+                className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
                 src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
                 alt="App dev company award"
                 width="110"
                 height="160"
               />
+              </Link>
+              <Link
+              href={"https://www.designrush.com/agency/profile/brilworks-software"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[120px] md:w-[90px] w-[70px]"
+                className="xl:w-[120px] scale-[0.8]  md:w-[90px] w-[70px]"
                 src="/images/Top-Mobile-App-Development-Company2.webp"
                 alt="Top App dev company award"
                 width="120"
                 height="130"
               />
+              </Link>
+              <Link
+              href={"https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/review-top-software-developers.png"
                 alt="Top software companies logo"
                 width="150"
                 height="105"
               />
+              </Link>
+              <Link
+              href={"https://themanifest.com/in/software-development/java/companies/ahmedabad"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
               <Image
-                className="xl:w-[110px] md:w-[80px] w-[60px]"
+                className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
                 src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
                 alt="Top manifest review"
                 width="110"
                 height="160"
               />
+              </Link>
+              <Link
+              href={"https://clutch.co/profile/brilworks-software#highlights"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
+              
+
               <Image
-                className="xl:w-[150px] md:w-[100px] w-[80px]"
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
                 src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
                 alt="GPS, Navigation & GIS India"
                 width="150"
                 height="162"
               />
+              </Link>
+              <Link
+              href={"https://clutch.co/profile/brilworks-software#summary"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                >
+               <Image
+                className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
+                src="/images/global_award_spring_2024.webp"
+                alt="global award"
+                width="150"
+                height="162"
+              />
+              </Link>
             </div>
           </div>
           <div className="pt-6">
@@ -536,3 +601,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
