@@ -36,7 +36,9 @@ export default function RootLayout({ children }) {
         <body suppressHydrationWarning={true}>
           <Header />
           {/* <NextAuthProvider> */}
+          <div  className="min-h-[100vh]">
             {children}
+            </div>
             {/* </NextAuthProvider> */}
           <Footer />
           {process.env.VERCEL_ENV === "production" && (

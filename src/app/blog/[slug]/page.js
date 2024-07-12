@@ -251,7 +251,8 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <StoryblokStory story={data?.story} />
+      <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>      <StoryblokStory story={data?.story} /></Suspense>
+
     </>
   );
 }
