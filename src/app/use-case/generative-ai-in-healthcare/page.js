@@ -33,7 +33,7 @@ async function getAWSInHealthcareData() {
   try {
     const url = `https://api.storyblok.com/v2/cdn/stories/use-case/generative-ai-in-healthcare?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const res = await fetch(url, { 
-      next: { revalidate: 3600 }, // Revalidate every hour
+      [process.env.VERCEL_ENV === "production" ? "next" :"cache"]: process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } :  'no-store' , // Revalidate every hour
     });
 
     if (!res.ok) {
