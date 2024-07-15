@@ -191,22 +191,40 @@ export const industryMenuItems = [
       //   name: "eCommerce",
       //   path: "#",
       // },
+   
+      {
+        name: "AWS for IoT",
+        path: "/use-case/aws-in-IoT/",
+      },
       {
         name: "AWS in healthcare",
         path: "/use-case/aws-in-healthcare/",
+      },
+      // {
+      //   name: "Generative AI in Retail",
+      //   path: "/use-case/generative-ai-in-retail/",
+      // },
+      {
+        name: "Generative AI in Fintech",
+        path: "/use-case/gen-ai-in-fintech/",
       },
       {
         name: "Generative AI in healthcare",
         path: "/use-case/generative-ai-in-healthcare/",
       },
       // {
-      //   name: "IoT",
-      //   path: "#",
+      //   name: "Generative AI in Manufacturing",
+      //   path: "/use-case/generative-ai-in-manufacturing/",
       // },
       // {
-      //   name: "SAAS",
-      //   path: "#",
+      //   name: "Generative Ai in Media and Entertainment",
+      //   path: "/use-case/generative-ai-in-media-and-entertainment/",
       // },
+
+   
+
+
+     
     ],
   },
 ];
