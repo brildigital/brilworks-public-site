@@ -16,17 +16,6 @@ async function fetchWithErrorHandling(url, options) {
     return notFound();
   }
 }
-
-async function getAWSInHealthcareData(slug) {
-  const url = `https://api.storyblok.com/v2/cdn/stories/use-case/${slug}?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-  const options = {
-    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]: 
-      process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } : 'no-store'
-  };
-
-  return fetchWithErrorHandling(url, options);
-}
-
 async function getAllSlugs() {
   const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=use-case/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
   
@@ -35,9 +24,21 @@ async function getAllSlugs() {
       process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } : 'no-store'
   };
 
+
   const data = await fetchWithErrorHandling(url, options);
+
   return data.stories.map(story => story.slug.replace('use-case/', ''));
 }
+
+async function getAWSInHealthcareData(slug) {
+  const url = `https://api.storyblok.com/v2/cdn/stories/use-case/${slug}?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+  const options = {
+    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]: 
+      process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } : 'no-store'
+  };
+  return fetchWithErrorHandling(url, options);
+}
+
 
 export async function generateStaticParams() {
   try {
@@ -52,8 +53,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title, description } = storyData.story.content;
-
+    const { title ,description} = storyData.story?.content.title_section?.[0];
     return {
       title: title,
       description: description,
@@ -80,6 +80,7 @@ export async function generateMetadata({ params }) {
     return {};
   }
 }
+
 
 export default async function Page({ params }) {
 

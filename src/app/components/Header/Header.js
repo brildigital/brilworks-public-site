@@ -13,12 +13,59 @@ const MenuItem = dynamic(() => import("./MenuItem"));
 const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [menuItemSamplecopy, setMegaMenuItem] = useState(menuItems);
 
   useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 767 && setOpenNav(false)
     );
+    const fetchSlugs = async () => {
+      try {
+        const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=use-case/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+
+        const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+
+        const slugList = data.stories.map((story) => ({
+          name:
+            story.name ||
+            story.slug
+              .replaceAll("-", " ")
+              .split(" ")
+              .map(
+                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length)
+              )
+              .join(" "),
+          path: "/use-case/" + story.slug + "/",
+        }))
+        slugList.sort((a, b) => a.name.length - b.name.length);
+        menuItemSamplecopy.map((d, i) => {
+          if (d.name == "INDUSTRY") {
+            return d.menuItems.map((d2, i2) => {
+              if (d2.name == "USE CASES") {
+                d2.subSections = [...slugList];
+                return d2;
+              } else {
+                return d2;
+              }
+            });
+          } else {
+            return d;
+          }
+        });
+      } catch (error) {
+        console.error("Fetch error:", error);
+      } finally {
+      }
+
+      setMegaMenuItem([...menuItemSamplecopy]);
+    };
+
+    fetchSlugs();
   }, []);
 
   return (
@@ -43,7 +90,7 @@ const NewHeader = () => {
                   <div className="we_are_hiring hidden">
                     <Svgs name="we-are-hiring" />
                   </div>
-                  {menuItems
+                  {menuItemSamplecopy
                     ?.filter((menuItem) => !menuItem?.hideInHeader)
                     ?.map((menu) =>
                       !menu?.isMegaMenu ? (
