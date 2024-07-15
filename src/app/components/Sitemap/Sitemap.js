@@ -1,27 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import allBlogs from "../../components/lib/allBlogs.json";
-import { getblog } from "../lib/getblog";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { industryMenuItems, servicesMenuItems } from "../lib/constants";
 
 const Sitemap = () => {
-  // const [blogList, setBlogList] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const blogData = await getblog();
-  //       setBlogList(blogData);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
-
   return (
     <div className="mt-[6rem] md:mt-[9rem] my-[15px] mx-auto md:w-1/2 w-[90%]">
       <div className="flex align-middle justify-center">
