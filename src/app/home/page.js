@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import GameChanger from "../components/Homepage/GameChanger";
+import Script from "next/script";
 
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
 const SeeingBelieving = dynamic(() =>
@@ -69,13 +70,15 @@ const page = () => {
 
   return (
     <>
-      <script
+      <Script
         defer
+        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
-      <script
+      <Script
         defer
+        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
