@@ -3058,3 +3058,6 @@ textarea.form-control-txt {
     transform: scale(1) rotate(360deg);
   }
 }
+.blog_content > ul > li {
+  white-space: unset !important;
+}
