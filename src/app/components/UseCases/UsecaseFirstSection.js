@@ -14,7 +14,7 @@ const UsecaseFirstSection = ({ data }) => {
                 {data?.description}
               </p>
               <div className="lg:mt-12 mt-5">
-                <Button label={data?.button_text} />
+                <Button label={data?.button_text || "Schedule a call"} />
               </div>
             </div>
             <div className="lg:w-2/4 w-full">
