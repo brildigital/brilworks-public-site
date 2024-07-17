@@ -15,8 +15,10 @@ import { Suspense } from "react";
 
 
 export async function generateMetadata({ params }) {
-  const data = await fetchData(params.slug);
+   const { props: data } = await fetchData(params);
   const story = data?.story;
+  console.log(story.content.title , story.content.metatags?.description)
+
 
   if (!story) return {};
 
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }) {
     story.content.Content_2 + story.content.Content_3;
 
   return {
-    title: story.content.metatags?.title || story.content.title,
+    title: story.content.metatags?.title || story?.content?.title,
     description: story.content.metatags?.description,
     authors: [{ name: story.content.BlogAuthor }],
     openGraph: {

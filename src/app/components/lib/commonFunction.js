@@ -125,12 +125,16 @@ export const calculateReadingTime = (content) => {
   const wordsPerMinute = 200;
 
   // Calculate the number of words in the content
-  const wordCount = content.split(/\s+/).length / 2;
+  if(typeof content === 'string'){
+    const wordCount = content?.split(/\s+/).length / 2;
 
   // Calculate the reading time in minutes
-  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
-  return readingTime;
+    return readingTime;
+  }
+
+
 };
 
 export function convertParamsToString(input) {
