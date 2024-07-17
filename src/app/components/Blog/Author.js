@@ -16,7 +16,7 @@ const Author = ({ authorName }) => {
   // const params = useParams()
   const path = usePathname()
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
-  const ITEMS_PER_PAGnpmE = isTablet ? 8 : 9;
+  const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [blogDataPerPage, setBlogDataPerPage] = useState([]);
   const [totalBlog, setTotalBlog] = useState();
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,8 +36,10 @@ const Author = ({ authorName }) => {
       );
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
     setTimeout(() => {
       setIsLoading(false);
