@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getblogSpecificAuthor } from "../lib/getblog";
+import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import {
   blogAuthor,
@@ -12,6 +13,8 @@ import {
 } from "../lib/commonFunction";
 
 const Author = ({ authorName }) => {
+  // const params = useParams()
+  const path = usePathname()
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [blogDataPerPage, setBlogDataPerPage] = useState([]);
@@ -82,7 +85,8 @@ const Author = ({ authorName }) => {
                 height="10"
               />
             </span>
-            <span className="blog-navigation">
+            {path.includes("blog") && <> <span className="blog-navigation">
+             
               <Link href="/blog">Blog</Link>
             </span>
             <span className="self-center md:mx-2 mx-1 mt-[2px]">
@@ -93,7 +97,7 @@ const Author = ({ authorName }) => {
                 width="20"
                 height="10"
               />
-            </span>
+            </span> </>} 
             <span className="blog-navigation">
               <Link href={`/blog/author/${authorName}`}>
                 {convertParamsToString(authorName)}

@@ -216,7 +216,7 @@ export default async function Page(props) {
                     data?.story?.content?.mobile_banner?.filename ||
                     data?.story?.content?.image?.filename
                   }
-                  alt={data?.story?.content.image?.alt}
+                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
                   width={828}
                   quality={30}
                   height={169}
@@ -234,7 +234,8 @@ export default async function Page(props) {
                   }
                   quality={100}
                
-                  alt={data?.story?.content.image?.alt}
+                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
+                  
                   width={828}
                   height={169}
                   priority
