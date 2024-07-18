@@ -288,7 +288,7 @@ export async function fetchData(params) {
         key: storyData?.story?.id || false,
         config: configData?.story || false,
       },
-      revalidate: 3600,
+     
     };
   } catch (error) {
     console.error("Error fetching data:", error);
