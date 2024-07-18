@@ -4,11 +4,11 @@ import BusinessDevelopmentService from "../components/Services/BusinessDevelopme
 export const metadata = {
   title: "Business Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
   openGraph: {
     title: "Business Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}business-intelligence-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "Business Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

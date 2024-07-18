@@ -5,11 +5,11 @@ import SaaSApplicationDevelopmentService from "../components/Services/SaaSApplic
 export const metadata = {
   title: "Saas Application Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Launch powerful SaaS solutions with Brilworks' expert development services. Create scalable, user-centric applications that drive recurring revenue and customer satisfaction.",
   openGraph: {
     title: "Saas Application Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Launch powerful SaaS solutions with Brilworks' expert development services. Create scalable, user-centric applications that drive recurring revenue and customer satisfaction.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     title: "Saas Application Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Launch powerful SaaS solutions with Brilworks' expert development services. Create scalable, user-centric applications that drive recurring revenue and customer satisfaction.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

@@ -9,11 +9,11 @@ const Storyblok = new StoryblokClient({
 export const metadata = {
   title: "Brilworks Privacy Policy",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Brilworks' Privacy Policy: Learn how we protect your data and respect your privacy. Transparent information on our data collection, usage, and security practices to ensure your trust and confidence.",
   openGraph: {
     title: "Brilworks Privacy Policy",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks' Privacy Policy: Learn how we protect your data and respect your privacy. Transparent information on our data collection, usage, and security practices to ensure your trust and confidence.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}privacy-policy/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "Brilworks Privacy Policy",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks' Privacy Policy: Learn how we protect your data and respect your privacy. Transparent information on our data collection, usage, and security practices to ensure your trust and confidence.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

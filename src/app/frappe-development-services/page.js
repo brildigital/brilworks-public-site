@@ -3,11 +3,11 @@ import FrappeDevelopmentService from "../components/Services/FrappeDevelopmentSe
 export const metadata = {
   title: "Frappe Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
   openGraph: {
     title: "Frappe Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}frappe-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Frappe Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

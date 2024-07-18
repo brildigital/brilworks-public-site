@@ -3,11 +3,11 @@ import ERPNextDevService from "../components/Services/ERPNextDevService";
 export const metadata = {
   title: "ERPNext Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Streamline your business operations with Brilworks' ERPNext development. Customize and implement powerful, open-source ERP solutions tailored to your unique business needs and growth goals.",
   openGraph: {
     title: "ERPNext Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Streamline your business operations with Brilworks' ERPNext development. Customize and implement powerful, open-source ERP solutions tailored to your unique business needs and growth goals.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}erp-next-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "ERPNext Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Streamline your business operations with Brilworks' ERPNext development. Customize and implement powerful, open-source ERP solutions tailored to your unique business needs and growth goals.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

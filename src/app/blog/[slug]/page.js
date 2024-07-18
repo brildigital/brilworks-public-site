@@ -20,6 +20,7 @@ export async function generateMetadata({ params }) {
   console.log(story.content.title , story.content.metatags?.description)
 
 
+
   if (!story) return {};
 
   const totalDataWord = story.content.content + story.content.Content_1 + 

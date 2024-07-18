@@ -4,11 +4,11 @@ import StaffAugmentation from "../components/StaffAugmentation";
 export const metadata = {
   title: "Staff Augmentation",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
   openGraph: {
     title: "Staff Augmentation",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}staff-augmentation/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -18,7 +18,7 @@ export const metadata = {
   twitter: {
     title: "Staff Augmentation",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

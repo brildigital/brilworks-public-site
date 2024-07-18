@@ -3,11 +3,11 @@ import KubernetesConsultingService from "../components/Services/KubernetesConsul
 export const metadata = {
   title: "Kubernetes Consulting Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
   openGraph: {
     title: "Kubernetes Consulting Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}kubernetes-consulting-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Kubernetes Consulting Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
