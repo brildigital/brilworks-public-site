@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import BlockchainTechnology from "../components/Technologies/BlockchainTechnology";
 
 export const metadata = {
-  title: "Hire Blockchain Developers",
+  title: "Hire Blockchain Developers | Brilworks",
   description:
     "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
   openGraph: {
