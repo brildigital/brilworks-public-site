@@ -3,11 +3,11 @@ import ApplicationDevelopmentService from "../components/Services/ApplicationDev
 export const metadata = {
   title: "Application development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
   openGraph: {
     title: "Application development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}application-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Application development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

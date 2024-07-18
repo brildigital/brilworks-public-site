@@ -4,11 +4,11 @@ import AIMLService from "../components/Services/AIMLService";
 export const metadata = {
   title: "AI and ML Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
   openGraph: {
     title: "AI and ML Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "AI and ML Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

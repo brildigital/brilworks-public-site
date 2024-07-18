@@ -3,11 +3,11 @@ import AdaloDevelopmentService from "../components/Services/AdaloDevelopmentServ
 export const metadata = {
   title: "Adalo Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
   openGraph: {
     title: "Adalo Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}adalo-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Adalo Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
