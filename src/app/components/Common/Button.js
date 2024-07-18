@@ -51,7 +51,7 @@ const Button = ({
       type={type ? type : "button"}
       className={[
         `common-button gap-2 outline-none overflow-hidden whitespace-nowrap transition-all duration-300`,
-        `button-${variant}`,
+        `button-${variant} !text-[#fff]`,
         className,
       ].join(" ")}
       {...props}
