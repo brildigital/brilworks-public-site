@@ -71,12 +71,14 @@ const page = () => {
   return (
     <>
       <Script
-      strategy="lazyOnload"
+        defer
+        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
       <Script
-           strategy="lazyOnload"
+        defer
+        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />

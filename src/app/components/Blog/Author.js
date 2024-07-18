@@ -36,10 +36,8 @@ const Author = ({ authorName }) => {
       );
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
-      setIsLoading(false);
     } catch (error) {
       console.error(error);
-      setIsLoading(false);
     }
     setTimeout(() => {
       setIsLoading(false);

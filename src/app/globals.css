@@ -3061,7 +3061,6 @@ textarea.form-control-txt {
 .blog_content > ul > li {
   white-space: unset !important;
 }
-.blog_content > ul {
+.blog_content > ul  {
   padding-inline-start: 20px !important;
-
 }

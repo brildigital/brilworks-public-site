@@ -156,24 +156,6 @@ export async function getblogDataCategorization(
   };
 }
 
-// export async function singlePopularBlog() {
-//   try {
-//     let stories = await Storyblok.get("cdn/stories", {
-//       starts_with: "blog/",
-//       per_page: 100,
-//       cv: Math.random(),
-//       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-//     });
 
-//     const storyData = stories.data.stories;
-//     // Filter the data to include only items with priority field equal to 1
-//     const OnePopularData = storyData.filter(
-//       (item) => item && +item?.content?.Priority === 1
-//     );
 
-//     return OnePopularData;
-//   } catch (error) {
-//     console.error("Error fetching blog data:", error);
-//     return [];
-//   }
-// }
+
