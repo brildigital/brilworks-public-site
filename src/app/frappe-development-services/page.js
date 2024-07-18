@@ -27,7 +27,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}frappe-development-services/`,
   },
 };
 
