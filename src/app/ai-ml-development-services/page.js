@@ -2,7 +2,7 @@ import React from "react";
 import AIMLService from "../components/Services/AIMLService";
 
 export const metadata = {
-  title: "AI and ML Services",
+  title: "AI and ML Services | Brilworks",
   description:
     "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
   openGraph: {

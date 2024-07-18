@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import NodejsTechnology from "../components/Technologies/NodejsTechnology";
 
 export const metadata = {
-  title: "Hire NodeJS Developers",
+  title: "Hire NodeJS Developers | Brilworks",
   description:
     "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
   openGraph: {

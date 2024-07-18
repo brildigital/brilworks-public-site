@@ -1,7 +1,7 @@
 import LowCodeNoCodeDevService from "../components/Services/LowCodeNoCodeDevService";
 
 export const metadata = {
-  title: "Low Code No Code Development Services",
+  title: "Low Code No Code Development Services | Brilworks",
   description:
     "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding.",
   openGraph: {

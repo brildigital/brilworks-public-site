@@ -1,7 +1,7 @@
 import FrappeDevelopmentService from "../components/Services/FrappeDevelopmentService";
 
 export const metadata = {
-  title: "Frappe Development Services",
+  title: "Frappe Development Services | Brilworks",
   description:
     "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
   openGraph: {

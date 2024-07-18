@@ -2,7 +2,7 @@ import React from "react";
 import RapidDigitization from "../components/RapidDigitization";
 
 export const metadata = {
-  title: "Rapid Digitalization",
+  title: "Rapid Digitalization | Brilworks",
   description:
     "Accelerate your digital transformation with Brilworks' rapid digitalization services. Modernize your business processes and stay ahead in the digital age with our expert guidance.",
   openGraph: {

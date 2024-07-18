@@ -2,7 +2,7 @@ import React from "react";
 import DevOpsService from "../components/Services/DevOpsService";
 
 export const metadata = {
-  title: "DevOps Consulting Services",
+  title: "DevOps Consulting Services | Brilworks",
   description:
     "Accelerate your software delivery with Brilworks' DevOps consulting. Streamline processes, enhance collaboration, and achieve continuous improvement for lasting success.",
   openGraph: {

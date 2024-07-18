@@ -1,7 +1,7 @@
 import KubernetesConsultingService from "../components/Services/KubernetesConsultingService";
 
 export const metadata = {
-  title: "Kubernetes Consulting Services",
+  title: "Kubernetes Consulting Services | Brilworks",
   description:
     "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
   openGraph: {

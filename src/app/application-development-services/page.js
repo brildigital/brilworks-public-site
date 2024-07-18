@@ -1,7 +1,7 @@
 import ApplicationDevelopmentService from "../components/Services/ApplicationDevelopmentService";
 
 export const metadata = {
-  title: "Application development Services",
+  title: "Application development Services | Brilworks",
   description:
     "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
   openGraph: {

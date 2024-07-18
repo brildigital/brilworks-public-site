@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import AWSTechnology from "../components/Technologies/AWSTechnology";
 
 export const metadata = {
-  title: "Hire AWS Certified Developers",
+  title: "Hire AWS Certified Developers | Brilworks",
   description:
     "You can hire AWS developers to transform, grow, and scale up your business - we provide Consulting, App Development, Cloud Migration, DevOps, and Managed Services.",
   openGraph: {

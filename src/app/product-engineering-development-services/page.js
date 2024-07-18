@@ -2,7 +2,7 @@ import React from "react";
 import ProductEngineeringDevService from "../components/Services/ProductEngineeringDevService";
 
 export const metadata = {
-  title: "Product Engineering and Services",
+  title: "Product Engineering and Services | Brilworks",
   description:
     "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
   openGraph: {

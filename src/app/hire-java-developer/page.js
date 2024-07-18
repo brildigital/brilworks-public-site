@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import JavaTechnology from "../components/Technologies/JavaTechnology";
 
 export const metadata = {
-  title: "Hire Java Developers",
+  title: "Hire Java Developers | Brilworks",
   description:
     "Hire Java developers for seamless software development, and including expert consulting, web and app development, and Spring Core and Spring Boot expertise.",
   openGraph: {

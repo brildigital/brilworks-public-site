@@ -1,7 +1,7 @@
 import GenerativeAIDevService from "../components/Services/GenerativeAIDevService";
 
 export const metadata = {
-  title: "Generative AI Services",
+  title: "Generative AI Services | Brilworks",
   description:
     "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
   openGraph: {

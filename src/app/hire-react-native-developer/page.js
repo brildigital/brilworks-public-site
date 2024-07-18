@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import ReactNativeTechnology from "../components/Technologies/ReactNativeTechnology";
 
 export const metadata = {
-  title: "Hire React Native Developers",
+  title: "Hire React Native Developers | Brilworks",
   description:
     "Brilworks expertise in React Native development, consultation, cross-platform migration, support, testing, and audit. Hire a React Native developer now.",
   openGraph: {

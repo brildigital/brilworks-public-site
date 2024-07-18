@@ -2,7 +2,7 @@ import HealthCare from "@/app/components/Solution/Healthcare";
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
-  title: "Healthcare Software Development Services",
+  title: "Healthcare Software Development Services | Brilworks",
   description:
     "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
   openGraph: {

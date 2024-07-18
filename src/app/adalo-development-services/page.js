@@ -1,7 +1,7 @@
 import AdaloDevelopmentService from "../components/Services/AdaloDevelopmentService";
 
 export const metadata = {
-  title: "Adalo Development Services",
+  title: "Adalo Development Services | Brilworks",
   description:
     "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
   openGraph: {

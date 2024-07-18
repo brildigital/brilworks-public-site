@@ -1,7 +1,7 @@
 import FlutterflowDevelopmentService from "../components/Services/FlutterflowDevelopmentService";
 
 export const metadata = {
-  title: "Flutterflow Development Services",
+  title: "Flutterflow Development Services | Brilworks",
   description:
     "Build stunning cross-platform apps faster with Brilworks' FlutterFlow development. Leverage low-code solutions to bring your app ideas to life quickly and cost-effectively.",
   openGraph: {
