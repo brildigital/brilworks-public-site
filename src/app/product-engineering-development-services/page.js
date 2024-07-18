@@ -4,11 +4,11 @@ import ProductEngineeringDevService from "../components/Services/ProductEngineer
 export const metadata = {
   title: "Product Engineering and Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
   openGraph: {
     title: "Product Engineering and Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}product-engineering-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "Product Engineering and Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

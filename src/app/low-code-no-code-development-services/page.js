@@ -3,11 +3,11 @@ import LowCodeNoCodeDevService from "../components/Services/LowCodeNoCodeDevServ
 export const metadata = {
   title: "Low Code No Code Development Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding.",
   openGraph: {
     title: "Low Code No Code Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}low-code-no-code-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Low Code No Code Development Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

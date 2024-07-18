@@ -17,7 +17,6 @@ import { Suspense } from "react";
 export async function generateMetadata({ params }) {
    const { props: data } = await fetchData(params);
   const story = data?.story;
-  console.log(story.content.title , story.content.metatags?.description)
 
 
   if (!story) return {};

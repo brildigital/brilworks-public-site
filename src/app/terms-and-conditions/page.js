@@ -9,11 +9,11 @@ const Storyblok = new StoryblokClient({
 export const metadata = {
   title: "Brilworks Terms and Conditions",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Brilworks' Terms and Conditions: Clear guidelines for engaging our services. Understand our commitments, your rights, and the framework for our business relationship to ensure mutual success.",
   openGraph: {
     title: "Brilworks Terms and Conditions",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks' Terms and Conditions: Clear guidelines for engaging our services. Understand our commitments, your rights, and the framework for our business relationship to ensure mutual success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}terms-and-conditions/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "Brilworks Terms and Conditions",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks' Terms and Conditions: Clear guidelines for engaging our services. Understand our commitments, your rights, and the framework for our business relationship to ensure mutual success.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

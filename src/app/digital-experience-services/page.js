@@ -4,11 +4,11 @@ import DigitalExperienceService from "../components/Services/DigitalExperienceSe
 export const metadata = {
   title: "Digital Experience Services",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Elevate your customer engagement with Brilworks' Digital Experience Services. We create immersive, user-centric digital solutions that drive loyalty, conversions, and long-term business growth.",
   openGraph: {
     title: "Digital Experience Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Elevate your customer engagement with Brilworks' Digital Experience Services. We create immersive, user-centric digital solutions that drive loyalty, conversions, and long-term business growth.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}digital-experience-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -23,7 +23,7 @@ export const metadata = {
   twitter: {
     title: "Digital Experience Services",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Elevate your customer engagement with Brilworks' Digital Experience Services. We create immersive, user-centric digital solutions that drive loyalty, conversions, and long-term business growth.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
