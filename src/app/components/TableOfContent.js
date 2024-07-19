@@ -1,142 +1,86 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState, useCallback } from "react";
+import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
-import { useEffect, useState } from "react";
-const TableOfContent = ({blogTableOfContent}) => {
+const TableOfContent = ({ blogTableOfContent }) => {
   const [headings, setHeadings] = useState([]);
-  const [activeLink,setActiveLink] = useState();
+  const [activeLink, setActiveLink] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const addTemporaryIDs = () => {
-    (true)
-    return new Promise((resolve) => {
-      const headings = document.querySelectorAll("h2");
-      headings.forEach((heading, index) => {
-        heading.id = `temp-section-${index}`;
-      });
-      resolve();
-     
-    });
-  };
-
-  useEffect(() => {
-    // Call the function and handle the promise
-    addTemporaryIDs()
-      .then(() => {
-        console.log("Temporary IDs added to headings.");
-       
-      })
-      .catch((error) => {
-        console.error("Error adding temporary IDs:", error);
-       
-      });
+  const parseHTML = useCallback((htmlString) => {
+    if (typeof window === 'undefined') return [];
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    return Array.from(doc.querySelectorAll("h2")).map((heading, index) => ({
+      id: `temp-section-${index}`,
+      text: heading.textContent,
+    }));
   }, []);
 
-  const parseHTML = (htmlString) => {
-
-    return new Promise((resolve, reject) => {
-      try {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlString, "text/html");
-        const headings = Array.from(doc.querySelectorAll("h2")).map(
-          (heading) => {
-            const level = parseInt(heading.tagName.slice(1), 10);
-            const text = heading.textContent;
-            return { level, text };
-          }
-        );
-        resolve(headings);
-        (false);
-      } catch (error) {
-        (false);
-        reject(error);
-      }
-    });
-  };
-
   useEffect(() => {
-    const fetchHeadings = async () => {
-      try {
-        const parsedHeadings = await parseHTML(blogTableOfContent);
-        setHeadings(parsedHeadings);
-      } catch (error) {
-        console.error("Error parsing HTML:", error);
-      }
-    };
+    setIsLoading(true);
+    const parsedHeadings = parseHTML(blogTableOfContent);
+    setHeadings(parsedHeadings);
 
-    fetchHeadings();
-  }, [blogTableOfContent]);
+    const headingElements = document.querySelectorAll("h2");
+    headingElements.forEach((heading, index) => {
+      heading.id = `temp-section-${index}`;
+    });
 
-  const handleTableOfContentLinkClick = (e, index) => {
-    setActiveLink(index);
+    // Simulate content loading delay
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // Adjust this value as needed
+  }, [blogTableOfContent, parseHTML]);
+
+  const handleTableOfContentLinkClick = useCallback((e, index) => {
     e.preventDefault();
-
-    const targetId = e.target.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
-
+    setActiveLink(index);
+    const targetElement = document.getElementById(`temp-section-${index}`);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const headingPositions = headings.map((heading, index) => {
-        const targetElement = document.getElementById(`temp-section-${index}`);
-
-        if (targetElement) {
-          return {
-            id: `${index}`,
-            offsetTop: targetElement.offsetTop,
-          };
-        }
-        return null;
+      const activeHeading = headings.findIndex((heading, index) => {
+        const element = document.getElementById(`temp-section-${index}`);
+        return element && element.offsetTop > scrollY;
       });
-
-      // Find the first heading whose offsetTop is greater than or equal to scrollY
-      const activeHeadingIndex = headingPositions.find(
-        (position) => position !== null && position.offsetTop >= scrollY
-      );
-      // Set the active link to the ID of the active heading
-      if (activeHeadingIndex) {
-        setActiveLink(activeHeadingIndex.id);
-      }
+      setActiveLink(activeHeading > 0 ? activeHeading - 1 : 0);
     };
 
-    // Add the scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [headings]);
 
+  if (isLoading) {
+    return <TableOfContentSkeleton />;
+  }
+
+  if (headings.length === 0) return null;
+
   return (
-    <div className={`${headings?.length ? "blog-tab-content" : "!hidden"}`}>
+    <div className="blog-tab-content">
       <div className="flex justify-between !mb-5">
         <p>Table of Contents</p>
       </div>
       <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
-        {/* {headings?.length ? ( */}
-        {headings?.map((heading, index) => (
-          <li key={index}>
+        {headings.map(({ id, text }, index) => (
+          <li key={id}>
             <Link
-              href={`#temp-section-${index}`}
+              href={`#${id}`}
               onClick={(e) => handleTableOfContentLinkClick(e, index)}
-              className={`${index == activeLink ? "page-active" : ""}`}
+              className={index === activeLink ? "page-active" : ""}
             >
-              {heading.text}
+              {text}
             </Link>
           </li>
         ))}
-        {/* ) : (
-        <div className="flex align-middle justify-center py-16">
-          <FetchDataSpinner />
-        </div>
-      )} */}
       </ul>
     </div>
   );

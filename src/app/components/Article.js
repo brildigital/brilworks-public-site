@@ -6,6 +6,7 @@ import { blogAuthor, formattedDate } from "./lib/commonFunction";
 import BlogContactForm from "./Blog/BlogContactForm";
 import TableOfContent from "./TableOfContent";
 import BlogContent from "./BlogContent";
+import FetchDataSpinner from "./Homepage/FetchDataSpinner";
 
 async function RelatedPosts({ pathname }) {
   const blogData = await getblogData(1, 4);
@@ -64,7 +65,7 @@ async function RelatedPosts({ pathname }) {
 
 export default async function Article({ blok, pathname }) {
   if (!blok) {
-    return <div>Loading...</div>; // Or any other appropriate loading/error state
+    return <div><FetchDataSpinner/></div>; // Or any other appropriate loading/error state
   }
   const blogTableOfContent =
     blok?.content +
