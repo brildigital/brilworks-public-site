@@ -2,7 +2,7 @@ import React from "react";
 import BusinessDevelopmentService from "../components/Services/BusinessDevelopmentService";
 
 export const metadata = {
-  title: "Business Development Services",
+  title: "Business Development Services | Brilworks",
   description:
     "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
   openGraph: {

@@ -2,7 +2,7 @@ import React from "react";
 import DigitalExperienceService from "../components/Services/DigitalExperienceService";
 
 export const metadata = {
-  title: "Digital Experience Services",
+  title: "Digital Experience Services | Brilworks",
   description:
     "Elevate your customer engagement with Brilworks' Digital Experience Services. We create immersive, user-centric digital solutions that drive loyalty, conversions, and long-term business growth.",
   openGraph: {

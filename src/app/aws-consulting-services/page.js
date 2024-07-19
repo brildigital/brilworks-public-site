@@ -1,7 +1,7 @@
 import AWSService from "../components/Services/AWSService";
 
 export const metadata = {
-  title: "AWS CONSULTING SERVICES",
+  title: "AWS CONSULTING SERVICES | Brilworks",
   description:
     "Harness the full potential of cloud computing with Brilworks' AWS consulting. Optimize performance, reduce costs, and scale your infrastructure for long-term growth.",
   openGraph: {

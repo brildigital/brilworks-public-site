@@ -2,7 +2,7 @@ import React from "react";
 import StaffAugmentation from "../components/StaffAugmentation";
 
 export const metadata = {
-  title: "Staff Augmentation",
+  title: "Staff Augmentation | Brilworks",
   description:
     "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
   openGraph: {

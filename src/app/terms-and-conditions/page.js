@@ -7,7 +7,7 @@ const Storyblok = new StoryblokClient({
 });
 
 export const metadata = {
-  title: "Brilworks Terms and Conditions",
+  title: "Terms and Conditions | Brilworks",
   description:
     "Brilworks' Terms and Conditions: Clear guidelines for engaging our services. Understand our commitments, your rights, and the framework for our business relationship to ensure mutual success.",
   openGraph: {

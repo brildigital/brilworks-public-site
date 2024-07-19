@@ -1,7 +1,7 @@
 import ERPNextDevService from "../components/Services/ERPNextDevService";
 
 export const metadata = {
-  title: "ERPNext Development Services",
+  title: "ERPNext Development Services | Brilworks",
   description:
     "Streamline your business operations with Brilworks' ERPNext development. Customize and implement powerful, open-source ERP solutions tailored to your unique business needs and growth goals.",
   openGraph: {

@@ -2,7 +2,7 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import UIUXTechnology from "../components/Technologies/UIUXTechnology";
 
 export const metadata = {
-  title: "Hire UI UX Designers",
+  title: "Hire UI UX Designers | Brilworks",
   description:
     "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
   openGraph: {
