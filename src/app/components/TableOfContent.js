@@ -1,39 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
 const TableOfContent = ({ blogTableOfContent }) => {
-  const [headings, setHeadings] = useState([]);
   const [activeLink, setActiveLink] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const parseHTML = useCallback((htmlString) => {
+  const headings = useMemo(() => {
     if (typeof window === 'undefined') return [];
     const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, "text/html");
+    const doc = parser.parseFromString(blogTableOfContent, "text/html");
     return Array.from(doc.querySelectorAll("h2")).map((heading, index) => ({
       id: `temp-section-${index}`,
       text: heading.textContent,
     }));
-  }, []);
+  }, [blogTableOfContent]);
 
   useEffect(() => {
-    setIsLoading(true);
-    const parsedHeadings = parseHTML(blogTableOfContent);
-    setHeadings(parsedHeadings);
-
     const headingElements = document.querySelectorAll("h2");
     headingElements.forEach((heading, index) => {
       heading.id = `temp-section-${index}`;
     });
-
-    // Simulate content loading delay
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500); // Adjust this value as needed
-  }, [blogTableOfContent, parseHTML]);
+    setIsLoading(false);
+  }, [headings]);
 
   const handleTableOfContentLinkClick = useCallback((e, index) => {
     e.preventDefault();
