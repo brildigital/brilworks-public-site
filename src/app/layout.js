@@ -42,18 +42,18 @@ export default function RootLayout({ children }) {
           <Footer />
          <LoadScripts organization={organization} website={website}  gtm={process.env.googleTagManagerID} clr={process.env.clearbitScript_URL}/>
         </body>
-        {/* {process.env.VERCEL_ENV === "production" && (
+        {process.env.VERCEL_ENV !== "production" && (
             <>
-              <GoogleTagManager  gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-              <Script src={process.env.NEXT_PUBLIC_CLEARBIT_SCRIPT_URL} strategy="lazyOnload" />
-              <Script id="organization" type="application/ld+json" strategy="lazyOnload">
-                {JSON.stringify(organization)}
-              </Script>
-              <Script id="website" type="application/ld+json" strategy="lazyOnload">
-                {JSON.stringify(website)}
-              </Script>
+        <Script>
+ { window.chatBotConfig = {agentId: 316}}
+  </Script>
+  <Script
+  defer
+  id="chatbot-widget-script"
+  src="https://dev.swiftsupport.ai/ChatbotScripts/chatbotBubble.js">
+  </Script>;
             </>
-          )} */}
+          )}
       </html>
     </StoryblokProvider>
   )
