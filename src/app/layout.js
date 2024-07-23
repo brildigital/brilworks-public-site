@@ -33,6 +33,15 @@ export default function RootLayout({ children }) {
           <meta name="viewport" content="width=device-width" />
           <meta property="article:publisher" content="https://www.facebook.com/brilwork/" />
           {process.env.VERCEL_ENV !== "production" && <meta name="robots" content="noindex,nofollow" />}
+          {process.env.VERCEL_ENV !== "production" &&    <>  <Script
+            defer
+            id="chatbot"
+          >{`window.chatBotConfig = {agentId: 316}`}</Script>
+          <Script
+            defer
+            id="chatbot-widget-script"
+            src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
+          /> </>}
         </head>
         <body suppressHydrationWarning={true}>
           <Header />

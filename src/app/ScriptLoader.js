@@ -43,18 +43,7 @@ const LoadScripts = ({ organization, website, gtm, clr }) => {
 
   return (
     <>
-      {process.env.NEXT_PUBLIC_VERCEL_ENV !== "production" && (
-        <>
-          <Script id="chatbot-config">
-            {`window.chatBotConfig = {agentId: 316};`}
-          </Script>
-          <Script
-            defer
-            id="chatbot-widget-script"
-            src="https://dev.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
-          />
-        </>
-      )}
+      
     </>
   );
 };
