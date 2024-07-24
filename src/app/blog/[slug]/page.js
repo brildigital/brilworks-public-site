@@ -115,7 +115,8 @@ export default async function Page(props) {
                   <span className="blog-navigation">
                     <Link
                       title="Go to the Web App Development category."
-                      href="#"
+                      href={`/blog?cat=${data?.story?.content?.Category.replaceAll(" ",'-')}`}
+                     
                     >
                       {data?.story?.content?.Category ===
                       "Cloud DevOps and Data"
