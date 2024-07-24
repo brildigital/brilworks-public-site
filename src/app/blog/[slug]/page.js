@@ -17,8 +17,6 @@ import { Suspense } from "react";
 export async function generateMetadata({ params }) {
    const { props: data } = await fetchData(params);
   const story = data?.story;
-  console.log(story.content.title , story.content.metatags?.description)
-
 
 
   if (!story) return {};
@@ -117,7 +115,8 @@ export default async function Page(props) {
                   <span className="blog-navigation">
                     <Link
                       title="Go to the Web App Development category."
-                      href="#"
+                      href={`/blog?cat=${data?.story?.content?.Category.replaceAll(" ",'-')}`}
+                     
                     >
                       {data?.story?.content?.Category ===
                       "Cloud DevOps and Data"
@@ -289,7 +288,7 @@ export async function fetchData(params) {
         key: storyData?.story?.id || false,
         config: configData?.story || false,
       },
-     
+      revalidate: 3600,
     };
   } catch (error) {
     console.error("Error fetching data:", error);

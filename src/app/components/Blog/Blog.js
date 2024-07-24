@@ -6,9 +6,12 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData } from "../lib/getblog";
 import { formattedDate } from "../lib/commonFunction";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+
+
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [blogDataPerPage, setBlogDataPerPage] = useState([]);
   const [totalBlog, setTotalBlog] = useState(0);
@@ -16,7 +19,8 @@ const Blog = () => {
   const [blogCategory, setBlogCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const searchParams = usePathname()
+  const router = useRouter()
   const fetchData = async () => {
     setIsLoading(true);
     try {
@@ -35,7 +39,6 @@ const Blog = () => {
       setIsLoading(false);
     }, 300);
   };
-
   useEffect(() => {
     const delayDebounceFn = setTimeout(
       () => {
@@ -43,7 +46,7 @@ const Blog = () => {
         window.scrollTo({ top: 0 });
       },
       searchQuery ? 1000 : 0
-    );
+    );  
 
     return () => clearTimeout(delayDebounceFn);
   }, [currentPage, blogCategory, searchQuery]);
@@ -64,6 +67,12 @@ const Blog = () => {
   };
 
   const pageNumbers = getPageNumbers();
+
+  useEffect(()=>{
+    let cat= window.location.href.split("=")[1]
+    cat ? setBlogCategory(cat?.replaceAll("-"," ")) :setBlogCategory("") 
+    router.push(`/blog`)
+  },[searchParams])
 
   return (
     <section className="md:mt-[8rem] mt-[6rem] px-[16px]">

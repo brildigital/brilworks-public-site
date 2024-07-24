@@ -23,7 +23,7 @@ const Footer = () => {
                   <p className="lg:text-[26px] text-2xl lg:leading-[36px] font-semibold sxl:w-[90%] w-full">
                     Hello, we are
                     <span className="font-bold text-themeColor">
-                      BRILLIAN’S
+                     &nbsp; BRILLIAN’S
                     </span>
                     . Trying to make an effort to put the right people for you
                     to get the best results. Just insight !!
@@ -590,10 +590,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          {/* <TawkMessengerReact
+          <TawkMessengerReact
             propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
             widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
-          /> */}
+          />
         </div>
       </div>
     </div>
