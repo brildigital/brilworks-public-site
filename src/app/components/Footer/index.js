@@ -444,8 +444,8 @@ const Footer = () => {
                   CONTACT # <span className="">CAREER</span>
                 </p>
                 <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
-                  <Link href="tel:919106810920">+91 91068 10920 </Link>/
-                  <Link href="mailto:hr@brilworks.com"> hr@brilworks.com</Link>
+                <a href="tel:919106810920" >+91 91068 10920 </a>/
+                  <a href="mailto:hr@brilworks.com" > hr@brilworks.com</a>
                 </p>
               </div>
               <div className="p-6 border border-borderGray rounded-[14px]">
