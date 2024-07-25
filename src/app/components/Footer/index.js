@@ -433,10 +433,9 @@ const Footer = () => {
                   CONTACT # <span className="">SALES</span>
                 </p>
                 <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap">
-                  <Link href="tel:919313644148">+91 93136 44148 </Link>/
-                  <Link href="mailto:sales@brilworks.com">
-                    sales@brilworks.com
-                  </Link>
+                  
+                  <a href="tel:919313644148" >+91 93136 44148 </a>/
+                  <a href="mailto:sales@brilworks.com" > sales@brilworks.com</a>
                 </p>
               </div>
               <div className="footer-contact border border-borderGray rounded-[14px] p-6">
@@ -444,7 +443,7 @@ const Footer = () => {
                   CONTACT # <span className="">CAREER</span>
                 </p>
                 <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
-                <a href="tel:919106810920" >+91 91068 10920 </a>/
+                  <a href="tel:919106810920" >+91 91068 10920 </a>/
                   <a href="mailto:hr@brilworks.com" > hr@brilworks.com</a>
                 </p>
               </div>
