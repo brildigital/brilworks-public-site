@@ -432,11 +432,11 @@ const Footer = () => {
                 <p className="font-bold md:text-3xl text-xl !mb-[10px]">
                   CONTACT # <span className="">SALES</span>
                 </p>
+                
                 <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap">
-                  <Link href="tel:919313644148">+91 93136 44148 </Link>/
-                  <Link href="mailto:sales@brilworks.com">
-                    sales@brilworks.com
-                  </Link>
+                  
+                  <a href="tel:919313644148" >+91 93136 44148 </a>/
+                  <a href="mailto:sales@brilworks.com" > sales@brilworks.com</a>
                 </p>
               </div>
               <div className="footer-contact border border-borderGray rounded-[14px] p-6">
@@ -444,8 +444,16 @@ const Footer = () => {
                   CONTACT # <span className="">CAREER</span>
                 </p>
                 <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
-                  <Link href="tel:919106810920">+91 91068 10920 </Link>/
-                  <Link href="mailto:hr@brilworks.com"> hr@brilworks.com</Link>
+                  <a href="tel:919106810920" >+91 91068 10920 </a>/
+                  <a href="mailto:hr@brilworks.com" > hr@brilworks.com</a>
+                </p>      </div>
+              <div className="footer-contact border border-borderGray rounded-[14px] p-6">
+                <p className="font-bold md:text-3xl text-xl !mb-[10px]">
+                  CONTACT # <span className="">CAREER</span>
+                </p>
+                <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
+                  <a href="tel:919106810920" >+91 91068 10920 </a>/
+                  <a href="mailto:hr@brilworks.com" > hr@brilworks.com</a>
                 </p>
               </div>
               <div className="p-6 border border-borderGray rounded-[14px]">
@@ -590,10 +598,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          {/* <TawkMessengerReact
+          <TawkMessengerReact
             propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
             widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
-          /> */}
+          />
         </div>
       </div>
     </div>
