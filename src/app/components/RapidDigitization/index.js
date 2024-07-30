@@ -92,8 +92,7 @@ const RapidDigitization = () => {
         <div className="bg-themeLight">
           <TechStackWeUse />
         </div>
-        <ServicesFAQ />
-      
+    
       </div>
       <div className="container mx-auto md:!px-3 !px-4">
             <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
@@ -160,6 +159,8 @@ const RapidDigitization = () => {
               </div>
             </div>
           </div>
+          <ServicesFAQ />
+      
     </div>
   );
 };
