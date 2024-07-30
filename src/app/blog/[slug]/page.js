@@ -259,12 +259,10 @@ export default async function Page(props) {
     </>
   );
 }
-
 export async function fetchData(params) {
   try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
-    // const storyblokApi = getStoryblokApi();
-
+    
     let sbParams = {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       resolve_links: "url",
@@ -273,12 +271,14 @@ export async function fetchData(params) {
     const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
+    const fetchOptions ={} 
+    
+
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl,  {next: { revalidate: 3600 }}),
-      fetch(configUrl,  {next: { revalidate: 3600 }}),
+      fetch(storyUrl, fetchOptions),
+      fetch(configUrl, fetchOptions),
     ]);
 
-    console.log();
     const storyData = await storyRes.json();
     const configData = await configRes.json();
 
@@ -288,7 +288,6 @@ export async function fetchData(params) {
         key: storyData?.story?.id || false,
         config: configData?.story || false,
       },
-      revalidate: 3600,
     };
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -298,6 +297,5 @@ export async function fetchData(params) {
 
 export async function generateStaticParams() {
   const posts = await getblog()
-  return posts.map((post) => ({slug:post.slug}
-  ))
+  return posts.map((post) => ({slug: post.slug}))
 }
