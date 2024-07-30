@@ -271,7 +271,8 @@ export async function fetchData(params) {
     const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
-    const fetchOptions ={} 
+    const fetchOptions ={ next: { revalidate: 0 } };
+  
     
 
     const [storyRes, configRes] = await Promise.all([
