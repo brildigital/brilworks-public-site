@@ -1,9 +1,12 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { scrollEffect } from "../lib/commonFunction";
+import { formattedDate, scrollEffect } from "../lib/commonFunction";
 import RapidDigitizationBanner from "./RapidDigitizationBanner";
+import { useMediaQuery } from "react-responsive";
+import { getblogData } from "../lib/getblog";
+import Image from "next/image";
 
 const WhyRapidDigitization = dynamic(() => import("./WhyRapidDigitization"));
 const RapidDigitizationBenefits = dynamic(() =>
@@ -14,13 +17,27 @@ const TechStackWeUse = dynamic(() => import("../Services/TechStackWeUse"));
 const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
 
 const RapidDigitization = () => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+  const [blogData, setBlogData] = useState(null);
   useEffect(() => {
     scrollEffect();
+    fetchData();
     window.addEventListener("scroll", scrollEffect);
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
+
   }, []);
+  async function fetchData() {
+    try {
+      const blogData = await getblogData(1, isTablet ? 3 : 4 ,false,"no code");
+      setBlogData(blogData.storyData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
 
   return (
     <div className="services pt-20">
@@ -76,7 +93,73 @@ const RapidDigitization = () => {
           <TechStackWeUse />
         </div>
         <ServicesFAQ />
+      
       </div>
+      <div className="container mx-auto md:!px-3 !px-4">
+            <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
+              <div className="service_sec3">
+                <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+                  <p className="!ml-0 extra_bold !w-full">
+                    You might also like
+                  </p>
+                </p>
+              </div>
+              <div
+                className={`grid 
+                   xl:grid-cols-3 md:grid-cols-2
+                 grid-cols-1 items-center gap-[2rem]`}
+              >
+                {console.log(blogData)}
+          
+                {  blogData
+                    ?.filter(({ slug }) => true)
+                    ?.slice(0, `${isTablet ? 2 : 3}`)
+                    ?.map(({ slug, name, content }, index) => (
+                      <div
+                        key={index}
+                        className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                      >
+                        <Link
+                          as={`/blog/${slug}`}
+                          href={`/blog/[slug]`}
+                          target="_blank"
+                          rel="external"
+                        >
+                          <div className="sec9_img1">
+                            <Image
+                              className="rounded-[30px]"
+                              src={
+                                content?.mobile_banner?.filename
+                                  ? content?.mobile_banner?.filename
+                                  : "/images/not-found-image.webp"
+                              }
+                              alt={
+                                content?.mobile_banner?.alt ||
+                                `Banner-img-${index}`
+                              }
+                              width={550}
+                              height={283}
+                            />
+                          </div>
+                          <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                            <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                              <p className="entry-title default-max-width aspect-[518/116]">
+                                {name}
+                              </p>
+                            </div>
+                            <div className="sec9_txt2 mt-[1.5rem]">
+                              <p className="publish_date">
+                                {formattedDate(content?.Published)}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+              }
+              </div>
+            </div>
+          </div>
     </div>
   );
 };
