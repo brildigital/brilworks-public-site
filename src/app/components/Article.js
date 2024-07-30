@@ -16,12 +16,6 @@ import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
-// import {
-//   ContentSkeleton,
-//   TableOfContentSkeleton,
-// } from "./Blog/ArticleSkeleton";
-
-// const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
 const Article = ({ blok }) => {

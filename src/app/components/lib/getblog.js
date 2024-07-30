@@ -20,7 +20,7 @@ export async function getblog() {
       },
     },
     {
-      next: { revalidate: 7200 },
+      next: { revalidate: 0 },
     }
   );
   const storyData = stories.data.stories;
