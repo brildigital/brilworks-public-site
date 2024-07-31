@@ -1,25 +1,22 @@
 import dynamic from "next/dynamic";
-import StoryblokClient from "storyblok-js-client";
 const ExpenifyPrivacyPolicy = dynamic(() =>
   import("../components/PrivacyPolicy/ExpenifyPrivacyPolicy")
 );
 
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
 
-async function getPrivacyPolicy() {
+
+export async function getPrivacyPolicy() {
   try {
-    const res = await Storyblok.get("cdn/stories/expenify-privacy-policy", {
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      cv:Date.now()
-    });
-    return res?.data?.story;
+    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/expenify-privacy-policy?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const storyRes = await fetch(storyUrl,  {next: { revalidate: 0 }})
+    const storyData = await storyRes.json();
+    return storyData?.story;
   } catch (error) {
-    console.error("Error fetching terms and conditions:", error);
+    console.error("Error fetching data:", error);
     return null;
   }
 }
+
 
 export default async function page() {
   const privacyPolicyData = await getPrivacyPolicy();
