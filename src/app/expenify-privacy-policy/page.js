@@ -12,6 +12,7 @@ async function getPrivacyPolicy() {
   try {
     const res = await Storyblok.get("cdn/stories/expenify-privacy-policy", {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      cv:Date.now()
     });
     return res?.data?.story;
   } catch (error) {
