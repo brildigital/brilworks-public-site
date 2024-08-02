@@ -207,7 +207,7 @@ export default async function Page(props) {
           </div>
           <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
-            <div className="h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
+            <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
             <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
                 <Image
                   className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
