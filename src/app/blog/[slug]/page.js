@@ -74,7 +74,6 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
               <div className="slg:w-[calc(100%_-_170px)]">
-                
                 <div
                   className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
                   aria-label="Breadcrumb"
@@ -220,8 +219,6 @@ export default async function Page(props) {
                   width={828}
                   quality={30}
                   height={169}
-                
-
                   priority
                   sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   media="(max-width: 767px)"

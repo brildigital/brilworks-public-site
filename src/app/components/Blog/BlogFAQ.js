@@ -29,7 +29,7 @@ const BlogFAQ = ({ FAQData }) => {
         <div itemScope="true" itemType="https://schema.org/FAQPage">
           {FAQData?.length &&
             FAQData?.map(({ Question, Answer }, index) => (
-              <Accordion
+              Question && Answer   && <Accordion
                 key={index + 1}
                 open={open === index + 1}
                 icon={<Icon id={index + 1} open={open} />}
