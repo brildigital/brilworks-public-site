@@ -1,300 +1,547 @@
-import {
-  blogAuthor,
-  calculateReadingTime,
-  formattedDate,
-} from "@/app/components/lib/commonFunction";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
-import StoryblokStory from "@storyblok/react/story";
-import QuickSummary from "@/app/components/Blog/QuickSummary";
-import { getblog } from "@/app/components/lib/getblog";
-import { notFound } from "next/navigation";
-import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
-// import {  } from "react";
 
+import { memo, useEffect, useRef, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
+import { getblogData } from "./lib/getblog";
+import { usePathname } from "next/navigation";
+import { notNewTabRedirect } from "./lib/constants";
+import { blogAuthor, formattedDate } from "./lib/commonFunction";
+import BlogContactForm from "./Blog/BlogContactForm"
+import BlogFAQ from "./Blog/BlogFAQ";
+import dynamic from "next/dynamic";
+import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
-export async function generateMetadata({ params }) {
-   const { props: data } = await fetchData(params);
-  const story = data?.story;
+// import {
+//   ContentSkeleton,
+//   TableOfContentSkeleton,
+// } from "./Blog/ArticleSkeleton";
 
+// const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
+const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
-  if (!story) return {};
+const Article = ({ blok }) => {
+  const pathname = usePathname();
+  const targetRef = useRef();
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+  const [blogData, setBlogData] = useState(null);
+  const [headings, setHeadings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
-  const totalDataWord = story.content.content + story.content.Content_1 + 
-    story.content.Content_2 + story.content.Content_3;
+  const [activeLink, setActiveLink] = useState(null);
 
-  return {
-    title:`${ story.content.metatags?.title || story?.content?.title } | Brilworks`,
-    description: story.content.metatags?.description,
-    authors: [{ name: story.content.BlogAuthor }],
-    openGraph: {
-      title: story.content.metatags?.og_title || story.content.title,
-      description: story.content.metatags?.og_description || story.content.metatags?.description,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
-      images: [{ url: story.content.metatags?.og_image || story.content.mobile_banner?.filename }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: story.content.metatags?.og_title || story.content.title,
-      description: story.content.metatags?.og_description || story.content.metatags?.description,
-      images: [story.content.metatags?.twitter_image || story.content.mobile_banner?.filename],
-      creator: story.content.BlogAuthor,
-      site: '@_Brilworks',
-    },
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/` },
-    other: {
-      'twitter:label1': 'Written by',
-      'twitter:data1': story.content.BlogAuthor,
-      'twitter:label2': 'Est. reading time',
-      'twitter:data2': `${calculateReadingTime(totalDataWord)} minutes`,
-    },
-  };
-}
-export default async function Page(props) {
-  const { params } = props || {};
-  const { props: data } = await fetchData(params);
-  if (!data?.story) {
-    return notFound()
+  const blogTableOfContent =
+    blok?.content +
+      blok.Content_1 +
+      blok.Content_2 +
+      blok.Content_3 +
+      `${blok?.FAQ?.length && "<h2>FAQ</h2>"}` || "";
+
+  async function fetchData() {
+    try {
+      const blogData = await getblogData(1, isTablet ? 3 : 4);
+      setBlogData(blogData.storyData);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  const totalDataWord =
-    data?.story?.content?.content +
-    data?.story?.content?.Content_1 +
-    data?.story?.content?.Content_2 +
-    data?.story?.content?.Content_3;
 
-  const author = blogAuthor(data?.story?.content?.BlogAuthor);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function modifyImagesWithLazyLoading(html) {
+    return parse(html, {
+      replace: (node, index) => {
+        if (node.type === "tag" && node.name === "img") {
+          node.attribs.loading = "lazy";
+          node.attribs.decoding = "async";
+          node.attribs.width = "736";
+          node.attribs.height = "200";
+          node.attribs.alt="banner-image"
+        }
+
+        if (node.type === "tag" && node.name === "a") {
+          if (!notNewTabRedirect.includes(node.attribs.href)) {
+            node.attribs.target = "_blank";
+          }
+          if (
+            node.attribs.href &&
+            !node.attribs.href.includes("brilworks.com")
+          ) {
+            node.attribs.rel = "nofollow noopener";
+          } else {
+            node.attribs.rel = "noopener";
+          }
+        }
+        return node;
+      },
+    });
+  }
+  const parseHTML = (htmlString) => {
+    setIsLoading(true)
+    return new Promise((resolve, reject) => {
+      try {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, "text/html");
+        const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
+          const level = parseInt(heading.tagName.slice(1), 10);
+          const text = heading.textContent;
+          return { level, text };
+        });
+        resolve(headings);
+        setIsLoading(false)
+      } catch (error) {
+        setIsLoading(false)
+        reject(error);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const fetchHeadings = async () => {
+      try {
+        const parsedHeadings = await parseHTML(blogTableOfContent);
+        setHeadings(parsedHeadings);
+      } catch (error) {
+        console.error("Error parsing HTML:", error);
+      }
+    };
+
+    fetchHeadings();
+  }, [blogTableOfContent]);
+
+
+  const addTemporaryIDs = () => {
+    setIsLoading(true)
+    return new Promise((resolve) => {
+      const headings = document.querySelectorAll("h2");
+      headings.forEach((heading, index) => {
+        heading.id = `temp-section-${index}`;
+      });
+      resolve();
+     
+    });
+  };
+  useEffect(() => {
+    // Call the function and handle the promise
+    addTemporaryIDs()
+      .then(() => {
+        console.log("Temporary IDs added to headings.");
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error adding temporary IDs:", error);
+        setIsLoading(false)
+      });
+  }, []);
+
+  const handleTableOfContentLinkClick = (e, index) => {
+    setActiveLink(index);
+    e.preventDefault();
+
+    const targetId = e.target.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const headingPositions = headings.map((heading, index) => {
+        const targetElement = document.getElementById(`temp-section-${index}`);
+
+        if (targetElement) {
+          return {
+            id: `${index}`,
+            offsetTop: targetElement.offsetTop,
+          };
+        }
+        return null;
+      });
+
+      // Find the first heading whose offsetTop is greater than or equal to scrollY
+      const activeHeadingIndex = headingPositions.find(
+        (position) => position !== null && position.offsetTop >= scrollY
+      );
+      // Set the active link to the ID of the active heading
+      if (activeHeadingIndex) {
+        setActiveLink(activeHeadingIndex.id);
+      }
+    };
+
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [headings]);
+
+  const author = blogAuthor(blok?.BlogAuthor);
 
   return (
-    <>
-     
-      <div className="md:pt-[8rem] pt-[6rem] blog-main">
-        <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
-          <div className="flex flex-wrap -mx-4">
-            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
-              <div className="slg:w-[calc(100%_-_170px)]">
-                <div
-                  className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
-                  aria-label="Breadcrumb"
-                >
-                    < >
-     
-     
-                  <span className="blog-navigation">
-                    <Link title="Brilworks Blog." href="/">
-                      Brilworks
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span className="blog-navigation">
-                    <Link title="Go to Blog." href="/blog">
-                      Blog
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span className="blog-navigation">
-                    <Link
-                      title="Go to the Web App Development category."
-                      href={`/blog?cat=${data?.story?.content?.Category.replaceAll(" ",'-')}`}
-                     
-                    >
-                      {data?.story?.content?.Category ===
-                      "Cloud DevOps and Data"
-                        ? "Cloud, DevOps and Data"
-                        : data?.story?.content?.Category}
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span>{data?.story?.content?.title}</span>
-                  </>
+    <div className="blog-main ">
+   
+        <>
+          <div className="container max-w-[1280px] min-h-[400px] mx-auto my-0 !px-4">
+            <div className="flex flex-wrap -mx-4">
+              <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
+                <div className="sticky top-[110px] !pb-5">
+                  {isLoading ? (
+                    <TableOfContentSkeleton />
+                  ) : (
+                    <>
+                      <div
+                        className={`${
+                          headings?.length ? "blog-tab-content" : "!hidden"
+                        }`}
+                      >
+                        <div className="flex justify-between !mb-5">
+                          <p>Table of Contents</p>
+                        </div>
+                        <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
+                          {/* {headings?.length ? ( */}
+                         {   headings?.map((heading, index) => (
+                              <li key={index}>
+                                <Link
+                                  href={`#temp-section-${index}`}
+                                  onClick={(e) =>
+                                    handleTableOfContentLinkClick(e, index)
+                                  }
+                                  className={`${
+                                    index == activeLink ? "page-active" : ""
+                                  }`}
+                                >
+                                  {heading.text}
+                                </Link>
+                              </li>
+                            ))}
+                          {/* ) : (
+                            <div className="flex align-middle justify-center py-16">
+                              <FetchDataSpinner />
+                            </div>
+                          )} */}
+                        </ul>
+                      </div>
+                      <div className="!mt-7">
+                        <div className="flex items-start flex-wrap">
+                          <Link
+                            target="_blank"
+                            href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
+                            className="!mr-4"
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/fb-share.svg"
+                              width="43"
+                              unoptimized
+                              height="43"
+                              alt="Facebook blog share"
+                            />
+                          </Link>
+                          <Link
+                            target="_blank"
+                            className="!mr-4"
+                            href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
+                              .split("")
+                              .splice(0, pathname.length - 1)
+                              .join("")}`}
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/twitter-share.svg"
+                              width="43"
+                              unoptimized
+                              height="43"
+                              alt="Twitter blog share"
+                            />
+                          </Link>
+                          <Link
+                            target="_blank"
+                            href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
+                          >
+                            <img
+                              decoding="async"
+                              loading="lazy"
+                              src="/images/linkedin-share.svg"
+                              width="43"
+                              unoptimized
+                              height="43"
+                              alt="LinkedIn blog share"
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
-                <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
-                  {data?.story?.content?.title}
-                </h1>
               </div>
-              <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
-                {/* {author && ( */}
-                <div className="flex items-center justify-between">
-                  <Image
-                    src={author?.authorImage}
-                    width="54"
-                    height="56"
-                    alt={author?.name}
-                    className="!rounded-full md:!w-14 md:!h-14 !w-10 !h-10"
-                    priority="true"
+              <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
+                <div className="blog-inner items-center">
+                  <div className="flex -mx-4 md:flex-row flex-col">
+                    <div className="md:w-3/4 w-full !float-left">
+                      <div className="h-full w-full box-border !px-4">
+                        <div className="h-full flex flex-col">
+                          <div className="blog_content" ref={targetRef}>
+                            {/* {blok?.content ? ( */}
+                            {  modifyImagesWithLazyLoading(blok?.content)}
+                            {/* ) : (
+                              <ContentSkeleton />
+                            )} */}
+                            {blok?.CTA_1 ? (
+                              <div
+                                className={`${
+                                  blok?.CTA_1 ? "blog_content_CTA_1" : ""
+                                }`}
+                              >
+                                {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
+                              </div>
+                            ):<></>}
+
+                            {blok?.Content_1 ? (
+                              <div className="blog_content_new">
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_1 || ""
+                                )}
+                              </div>
+                            ):<></>}
+                            {blok?.CTA_2 ? (
+                              <div
+                                className={`${
+                                  blok?.CTA_2 ? "blog_content_CTA_2" : ""
+                                }`}
+                              >
+                                {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
+                              </div>
+                            ):<></>}
+                            {blok?.Content_2 ? (
+                              <div className="blog_content_new">
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_2 || ""
+                                )}
+                              </div>
+                            ):<></>}
+                            {blok?.CTA_3 ? (
+                              <div
+                                className={`${
+                                  blok?.CTA_3?.includes("<img")
+                                    ? ""
+                                    : "blog_content_CTA_3"
+                                }`}
+                              >
+                                {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
+                              </div>
+                            ):<></>}
+                            {blok?.Content_3 ? (
+                              <div className="blog_content_new">
+                                {modifyImagesWithLazyLoading(
+                                  blok?.Content_3 || ""
+                                )}
+                              </div>
+                            ):<></>}
+                            {blok?.FAQ && blok?.FAQ?.length > 0 ? (
+                              <BlogFAQ FAQData={blok?.FAQ} />
+                            ) : (
+                              <></>
+                            )}
+
+                            <Tooltip
+                              blogAuthor={author?.name || ""}
+                              targetRef={targetRef}
+                            />
+                          </div>
+
+                          {/* ********************Author Detail******************************/}
+                          {author ? (
+                            <div className="single-author-bio">
+                              <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
+                                <div className="img-blk">
+                                  <img
+                                    decoding="async"
+                                    loading="lazy"
+                                    src={author?.authorImage}
+                                    width={96}
+                                    height={96}
+                                    alt={author?.name ||"author-Image" }
+                                    className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
+                                  />
+                                </div>
+                              </div>
+                              <div className="single-author-bio-text">
+                                <h3>
+                                  <Link
+                                    href={
+                                      author?.name === "Vikas Singh"
+                                        ? "/blog/author/vikas-singh/"
+                                        : author?.name === "Hitesh Umaletiya"
+                                        ? "/blog/author/hitesh-umaletiya/"
+                                        : author?.authorLinkedIn
+                                    }
+                                    title={`View ${author?.name} website`}
+                                    rel="author external"
+                                  >
+                                    {author?.name}
+                                  </Link>
+                                </h3>
+                                <p className="text-[18px]">
+                                  {author?.authorDesc}
+                                </p>
+                              </div>
+                            </div>
+                          ):<></>}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="md:w-1/4 w-full !float-left">
+                      <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                        <div className="h-full flex flex-col">
+                          <BlogContactForm />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto md:!px-3 !px-4">
+            <div className="ready_sec !pb-0 !pt-4">
+              <div className="ready_img relative">
+                <p>
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="ready_main hidden md:block alignnone"
+                    src="/images/ready.png"
+                    width={1408}
+                    height={450}
+                    alt="get in touch"
                   />
-                  <div className="pl-[10px] ">
-                    <Link
-                      className="md:text-[20px] text-base font-bold"
-                      href={
-                        author?.name === "Vikas Singh"
-                          ? "/blog/author/vikas-singh/"
-                          : author?.name === "Hitesh Umaletiya"
-                          ? "/blog/author/hitesh-umaletiya/"
-                          : author?.authorLinkedIn
-                      }
-                      title={`Posts by ${author?.name}`}
-                      rel="author external"
-                    >
-                      {author?.name}
-                    </Link>
-                    <br />
-                    <span>
-                      {formattedDate(
-                        data?.story?.content?.Published || new Date()
-                      )}
-                    </span>
-                  </div>
-                </div>
-                {/* )} */}
-                <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
-                  <div className="flex sxl:items-center items-start md:mr-5 ">
-                    <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
-                      <Image
-                        src="/images/clock_icon.png"
-                        width={32}
-                        height={32}
-                        alt="Clock icon"
-                        priority="true"
-                      />
-                    </span>
-                    {calculateReadingTime(totalDataWord)} mins read
-                  </div>
-                  <div className="flex sxl:items-center items-start ">
-                    <span className="!w-6 !h-6 mr-1">
-                      <Image
-                        src="/images/calendar_icon.png"
-                        width={32}
-                        height={32}
-                        alt="Calendar icon"
-                        priority="true"
-                      />
-                    </span>
-                    Last updated{" "}
-                    {formattedDate(data?.story?.published_at || new Date())}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-4 ">
-            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
-            <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
-            < >
-                <Image
-                  className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content?.mobile_banner?.filename ||
-                    data?.story?.content?.image?.filename
-                  }
-                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
-                  width={828}
-                  quality={30}
-                  height={169}
-                  priority
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  media="(max-width: 767px)"
-                />
-                <Image
-                  className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content.image?.filename ||
-                    data?.story?.content.mobile_banner?.filename
-                  }
-                  quality={100}
-               
-                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
-                  
-                  width={828}
-                  height={169}
-                  priority
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                />
-                </>
-              </div>
-              {data?.story?.content?.Quick_Summary ? (
-                <div className="min-h-[80px]">
-                  <QuickSummary data={data?.story?.content?.Quick_Summary} />
-                </div>
-              ) : (
-                <></>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div  className="min-h-[50vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="block md:hidden rounded-[20px] alignnone"
+                    src="/images/ready-mobile.webp"
+                    width="340"
+                    height="720"
+                    alt="get in touch"
+                  />
+                </p>
+                
 
-    </>
+                <div className="redy_title home_sec2_txt3">
+                  <p className="!w-full font-bold">
+                    READY TO DEVELOP YOUR SUCCESS STORY WITH US?
+                  </p>
+                </div>
+                <div className="get_touch">
+                  <div className="get_flex ml-14">
+                    <div className="">
+                      <Link href="/contact-us/">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="alignnone"
+                          src="/images/right_arrow.png"
+                          alt="right arrow"
+                          width={10}
+                          height={20}
+                        />
+                      </Link>
+                    </div>
+                    <div className="get_text">
+                      <p>
+                        <Link href="/contact-us/">Get in Touch</Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto md:!px-3 !px-4">
+            <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
+              <div className="service_sec3">
+                <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+                  <p className="!ml-0 extra_bold !w-full">
+                    You might also like
+                  </p>
+                </p>
+              </div>
+              <div
+                className={`grid 
+                   xl:grid-cols-3 md:grid-cols-2
+                 grid-cols-1 items-center gap-[2rem]`}
+              >
+          
+                {  blogData
+                    ?.filter(({ slug }) => !pathname?.includes(slug))
+                    ?.slice(0, `${isTablet ? 2 : 3}`)
+                    ?.map(({ slug, name, content }, index) => (
+                      <div
+                        key={index}
+                        className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                      >
+                        <Link
+                          as={`/blog/${slug}`}
+                          href={`/blog/[slug]`}
+                          target="_blank"
+                          rel="external"
+                        >
+                          <div className="sec9_img1">
+                            <Image
+                              className="rounded-[30px]"
+                              src={
+                                content?.mobile_banner?.filename
+                                  ? content?.mobile_banner?.filename
+                                  : "/images/not-found-image.webp"
+                              }
+                              alt={
+                                content?.mobile_banner?.alt ||
+                                `Banner-img-${index}`
+                              }
+                              width={550}
+                              height={283}
+                            />
+                          </div>
+                          <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                            <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                              <p className="entry-title default-max-width aspect-[518/116]">
+                                {name}
+                              </p>
+                            </div>
+                            <div className="sec9_txt2 mt-[1.5rem]">
+                              <p className="publish_date">
+                                {formattedDate(content?.Published)}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+              }
+              </div>
+            </div>
+          </div>
+        </>
+
+    </div>
   );
-}
+};
 
-export async function fetchData(params) {
-  try {
-    let slug = params?.slug ? `blog/${params.slug}` : "home";
-    // const storyblokApi = getStoryblokApi();
-
-    let sbParams = {
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      resolve_links: "url",
-    };
-
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-    const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-
-    const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl,  {next: { revalidate: 3600 }}),
-      fetch(configUrl,  {next: { revalidate: 3600 }}),
-    ]);
-
-    console.log();
-    const storyData = await storyRes.json();
-    const configData = await configRes.json();
-
-    return {
-      props: {
-        story: storyData?.story || false,
-        key: storyData?.story?.id || false,
-        config: configData?.story || false,
-      },
-      revalidate: 3600,
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
-}
-
-export async function generateStaticParams() {
-  const posts = await getblog()
-  return posts.map((post) => ({slug:post.slug}
-  ))
-}
+export default memo(Article);
