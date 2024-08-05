@@ -79,8 +79,6 @@ export default async function Page(props) {
                   aria-label="Breadcrumb"
                 >
                     <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
-     
-     
                   <span className="blog-navigation">
                     <Link title="Brilworks Blog." href="/">
                       Brilworks
