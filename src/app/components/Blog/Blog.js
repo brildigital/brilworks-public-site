@@ -39,17 +39,17 @@ const Blog = () => {
       setIsLoading(false);
     }, 300);
   };
-  // useEffect(() => {
-  //   const delayDebounceFn = setTimeout(
-  //     () => {
-  //       fetchData();
-  //       window.scrollTo({ top: 0 });
-  //     },
-  //     searchQuery ? 1000 : 0
-  //   );  
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(
+      () => {
+        fetchData();
+        // window.scrollTo({ top: 0 });
+      },
+      searchQuery ? 1000 : 0
+    );  
 
-  //   return () => clearTimeout(delayDebounceFn);
-  // }, [currentPage, blogCategory, searchQuery]);
+    return () => clearTimeout(delayDebounceFn);
+  }, [currentPage, blogCategory, searchQuery]);
 
   useEffect(() => {
     setCurrentPage(1);
