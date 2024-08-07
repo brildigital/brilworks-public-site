@@ -6,7 +6,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData } from "../lib/getblog";
 import { formattedDate } from "../lib/commonFunction";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });

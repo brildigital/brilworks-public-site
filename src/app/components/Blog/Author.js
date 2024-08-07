@@ -59,9 +59,9 @@ const Author = ({ authorName }) => {
     setCurrentPage(1);
   }, [blogCategory]);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, [currentPage]);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0 });
+  // }, [currentPage]);
   
   const author = blogAuthor(convertParamsToString(authorName));
 
