@@ -268,7 +268,7 @@ export async function fetchData(params) {
       resolve_links: "url",
     };
 
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?filter_query[component][in]="article"&version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
     const fetchOptions ={ next: { revalidate: 0 } };

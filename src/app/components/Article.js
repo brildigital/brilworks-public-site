@@ -54,6 +54,7 @@ const Article = ({ blok }) => {
 
   useEffect(() => {
     fetchData();
+    getblogData()
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
