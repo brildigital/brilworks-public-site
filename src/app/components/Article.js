@@ -84,6 +84,8 @@ const Article = ({ blok }) => {
       },
     });
   }
+
+
   const parseHTML = (htmlString) => {
     setIsLoading(true)
     return new Promise((resolve, reject) => {
@@ -129,6 +131,7 @@ const Article = ({ blok }) => {
      
     });
   };
+
   useEffect(() => {
     // Call the function and handle the promise
     addTemporaryIDs()
@@ -189,6 +192,11 @@ const Article = ({ blok }) => {
   }, [headings]);
 
   const author = blogAuthor(blok?.BlogAuthor);
+
+
+  useEffect(()=>{
+     
+  },[])
 
   return (
     <div className="blog-main ">
@@ -405,7 +413,7 @@ const Article = ({ blok }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="md:w-1/4 w-full !float-left">
+                    <div className="md:w-1/4 w-full !float-left hidden lg:block">
                       <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                         <div className="h-full flex flex-col">
                           <BlogContactForm />
@@ -418,8 +426,72 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
+         
+
           <div className="container mx-auto md:!px-3 !px-4">
-            <div className="ready_sec !pb-0 !pt-4">
+            <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
+              <div className="service_sec3">
+                <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+                  <p className="!ml-0 extra_bold !w-full">
+                    You might also like
+                  </p>
+                </p>
+              </div>
+              <div
+                className={`grid  h-full
+                   xl:grid-cols-3 md:grid-cols-2
+                 grid-cols-1 items-center gap-[2rem]`}
+              >
+          
+                {  blogData
+                    ?.filter(({ slug }) => !pathname?.includes(slug))
+                    ?.slice(0, `${isTablet ? 2 : 3}`)
+                    ?.map(({ slug, name, content }, index) => (
+                      <div
+                        key={index}
+                        className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                      >
+                        <Link
+                          as={`/blog/${slug}`}
+                          href={`/blog/[slug]`}
+                          target="_blank"
+                          rel="external"
+                        >
+                          <div className="sec9_img1">
+                            <Image
+                              className="rounded-[30px]"
+                              src={
+                                content?.mobile_banner?.filename
+                                  ? content?.mobile_banner?.filename
+                                  : "/images/not-found-image.webp"
+                              }
+                              alt={
+                                content?.mobile_banner?.alt ||
+                                `Banner-img-${index}`
+                              }
+                              width={550}
+                              height={283}
+                            />
+                          </div>
+                          <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                            <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                              <p className="entry-title default-max-width aspect-[518/116]">
+                                {name}
+                              </p>
+                            </div>
+                            <div className="sec9_txt2 mt-[1.5rem]">
+                              <p className="publish_date">
+                                {formattedDate(content?.Published)}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+              }
+              </div>
+               <div className="container mx-auto md:!px-3 !px-4">
+            <div className="ready_sec !pb-0 !pt-[4rem]">
               <div className="ready_img relative">
                 <p>
                   <img
@@ -473,71 +545,17 @@ const Article = ({ blok }) => {
               </div>
             </div>
           </div>
-
-          <div className="container mx-auto md:!px-3 !px-4">
-            <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
-              <div className="service_sec3">
-                <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
-                  <p className="!ml-0 extra_bold !w-full">
-                    You might also like
-                  </p>
-                </p>
-              </div>
-              <div
-                className={`grid 
-                   xl:grid-cols-3 md:grid-cols-2
-                 grid-cols-1 items-center gap-[2rem]`}
-              >
-          
-                {  blogData
-                    ?.filter(({ slug }) => !pathname?.includes(slug))
-                    ?.slice(0, `${isTablet ? 2 : 3}`)
-                    ?.map(({ slug, name, content }, index) => (
-                      <div
-                        key={index}
-                        className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
-                      >
-                        <Link
-                          as={`/blog/${slug}`}
-                          href={`/blog/[slug]`}
-                          target="_blank"
-                          rel="external"
-                        >
-                          <div className="sec9_img1">
-                            <Image
-                              className="rounded-[30px]"
-                              src={
-                                content?.mobile_banner?.filename
-                                  ? content?.mobile_banner?.filename
-                                  : "/images/not-found-image.webp"
-                              }
-                              alt={
-                                content?.mobile_banner?.alt ||
-                                `Banner-img-${index}`
-                              }
-                              width={550}
-                              height={283}
-                            />
-                          </div>
-                          <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                            <div className="border-b-[1px] border-[#80808038] py-[1rem]">
-                              <p className="entry-title default-max-width aspect-[518/116]">
-                                {name}
-                              </p>
-                            </div>
-                            <div className="sec9_txt2 mt-[1.5rem]">
-                              <p className="publish_date">
-                                {formattedDate(content?.Published)}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
+              <div className="md:w-1/4 w-full !float-left mt-4   block lg:hidden">
+                      <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                        <div className="h-full flex flex-col">
+                          <BlogContactForm />
+                        </div>
                       </div>
-                    ))
-              }
-              </div>
+                    </div>
             </div>
+            
           </div>
+         
         </>
 
     </div>
