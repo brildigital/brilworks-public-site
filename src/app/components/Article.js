@@ -426,61 +426,7 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          {/* <div className="container mx-auto md:!px-3 !px-4">
-            <div className="ready_sec !pb-0 !pt-4">
-              <div className="ready_img relative">
-                <p>
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="ready_main hidden md:block alignnone"
-                    src="/images/ready.png"
-                    width={1408}
-                    height={450}
-                    alt="get in touch"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="block md:hidden rounded-[20px] alignnone"
-                    src="/images/ready-mobile.webp"
-                    width="340"
-                    height="720"
-                    alt="get in touch"
-                  />
-                </p>
-                
-
-                <div className="redy_title home_sec2_txt3">
-                  <p className="!w-full font-bold">
-                    READY TO DEVELOP YOUR SUCCESS STORY WITH US?
-                  </p>
-                </div>
-                <div className="get_touch">
-                  <div className="get_flex ml-14">
-                    <div className="">
-                      <Link href="/contact-us/">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="alignnone"
-                          src="/images/right_arrow.png"
-                          alt="right arrow"
-                          width={10}
-                          height={20}
-                        />
-                      </Link>
-                    </div>
-                    <div className="get_text">
-                      <p>
-                        <Link href="/contact-us/">Get in Touch</Link>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
+         
 
           <div className="container mx-auto md:!px-3 !px-4">
             <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
@@ -544,6 +490,61 @@ const Article = ({ blok }) => {
                     ))
               }
               </div>
+               <div className="container mx-auto md:!px-3 !px-4">
+            <div className="ready_sec !pb-0 !pt-[4rem]">
+              <div className="ready_img relative">
+                <p>
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="ready_main hidden md:block alignnone"
+                    src="/images/ready.png"
+                    width={1408}
+                    height={450}
+                    alt="get in touch"
+                  />
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    className="block md:hidden rounded-[20px] alignnone"
+                    src="/images/ready-mobile.webp"
+                    width="340"
+                    height="720"
+                    alt="get in touch"
+                  />
+                </p>
+                
+
+                <div className="redy_title home_sec2_txt3">
+                  <p className="!w-full font-bold">
+                    READY TO DEVELOP YOUR SUCCESS STORY WITH US?
+                  </p>
+                </div>
+                <div className="get_touch">
+                  <div className="get_flex ml-14">
+                    <div className="">
+                      <Link href="/contact-us/">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="alignnone"
+                          src="/images/right_arrow.png"
+                          alt="right arrow"
+                          width={10}
+                          height={20}
+                        />
+                      </Link>
+                    </div>
+                    <div className="get_text">
+                      <p>
+                        <Link href="/contact-us/">Get in Touch</Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
               <div className="md:w-1/4 w-full !float-left mt-4   block lg:hidden">
                       <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                         <div className="h-full flex flex-col">
