@@ -44,6 +44,7 @@ const Article = ({ blok }) => {
   async function fetchData() {
     try {
       const blogData = await getblogData(1, isTablet ? 3 : 4);
+      window.scrollTo({ top: 0 });
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
@@ -54,7 +55,7 @@ const Article = ({ blok }) => {
 
   useEffect(() => {
     fetchData();
-    getblogData()
+   
   }, []);
 
   function modifyImagesWithLazyLoading(html) {
