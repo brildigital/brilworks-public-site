@@ -84,6 +84,8 @@ const Article = ({ blok }) => {
       },
     });
   }
+
+
   const parseHTML = (htmlString) => {
     setIsLoading(true)
     return new Promise((resolve, reject) => {
@@ -129,6 +131,7 @@ const Article = ({ blok }) => {
      
     });
   };
+
   useEffect(() => {
     // Call the function and handle the promise
     addTemporaryIDs()
@@ -189,6 +192,11 @@ const Article = ({ blok }) => {
   }, [headings]);
 
   const author = blogAuthor(blok?.BlogAuthor);
+
+
+  useEffect(()=>{
+     
+  },[])
 
   return (
     <div className="blog-main ">
