@@ -43,7 +43,7 @@ const Blog = () => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
-        window.scrollTo({ top: 0 });
+        // window.scrollTo({ top: 0 });
       },
       searchQuery ? 1000 : 0
     );  

@@ -319,6 +319,17 @@
 // ******************************New style of blog page********************************************
 .blog-inner .blog_content_new,
 .blog_content {
+  p{
+    em{
+      span{
+  
+        font-style: normal !important;
+        font-size: 16px !important;
+        opacity: 0.5;
+      }
+     
+    }
+   } 
   strong {
     font-weight: 700 !important;
   }
