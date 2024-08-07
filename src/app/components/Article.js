@@ -405,7 +405,7 @@ const Article = ({ blok }) => {
                         </div>
                       </div>
                     </div>
-                    <div className="md:w-1/4 w-full !float-left">
+                    <div className="md:w-1/4 w-full !float-left  hidden lg:block">
                       <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                         <div className="h-full flex flex-col">
                           <BlogContactForm />
@@ -418,7 +418,7 @@ const Article = ({ blok }) => {
             </div>
           </div>
 
-          <div className="container mx-auto md:!px-3 !px-4">
+          {/* <div className="container mx-auto md:!px-3 !px-4">
             <div className="ready_sec !pb-0 !pt-4">
               <div className="ready_img relative">
                 <p>
@@ -472,7 +472,7 @@ const Article = ({ blok }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="container mx-auto md:!px-3 !px-4">
             <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
@@ -538,6 +538,13 @@ const Article = ({ blok }) => {
               </div>
             </div>
           </div>
+          <div className="md:w-1/4 w-full !float-left   block lg:hidden">
+                      <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                        <div className="h-full flex flex-col">
+                          <BlogContactForm />
+                        </div>
+                      </div>
+                    </div>
         </>
 
     </div>
