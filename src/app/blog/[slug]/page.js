@@ -249,32 +249,36 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <div  className="min-h-[50vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
+      <div  className="min-h-[200vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
 
     </>
   );
 }
-
 export async function fetchData(params) {
   try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
-    // const storyblokApi = getStoryblokApi();
 
     let sbParams = {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       resolve_links: "url",
     };
 
+    const storyUrl = new URL('https://api.storyblok.com/v2/cdn/stories');
+    storyUrl.searchParams.append('version', sbParams.version);
+    storyUrl.searchParams.append('resolve_links', sbParams.resolve_links);
 
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-    const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    storyUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
+    storyUrl.pathname += `/${slug}`;
+
+    const configUrl = new URL('https://api.storyblok.com/v2/cdn/stories/config');
+    configUrl.searchParams.append('version', sbParams.version);
+    configUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
 
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl,  {next: { revalidate: 3600 }}),
-      fetch(configUrl,  {next: { revalidate: 3600 }}),
+      fetch(storyUrl.toString(), {next: { revalidate: 3600 }}),
+      fetch(configUrl.toString(), {next: { revalidate: 3600 }}),
     ]);
 
-    console.log();
     const storyData = await storyRes.json();
     const configData = await configRes.json();
 
@@ -291,7 +295,6 @@ export async function fetchData(params) {
     return null;
   }
 }
-
 export async function generateStaticParams() {
   const posts = await getblog()
   return posts.map((post) => ({slug:post.slug}
