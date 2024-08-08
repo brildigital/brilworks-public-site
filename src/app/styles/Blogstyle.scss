@@ -369,7 +369,7 @@
   }
   p {
     font-family: var(--global-font) !important;
-    color: var(--color_black) !important;
+    // color: var(--color_black) !important;
     word-wrap: break-word;
     font-size: 18px !important;
     line-height: 32px !important;
@@ -380,7 +380,7 @@
     margin-inline-end: 0;
     span {
       font-family: var(--global-font) !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
       word-wrap: break-word;
       font-size: 18px !important;
       line-height: 32px !important;
@@ -389,20 +389,20 @@
   }
   h2 {
     font-family: var(--global-font) !important;
-    color: var(--color_black) !important;
+    // color: var(--color_black) !important;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 20px !important;
     font-weight: 700 !important;
     span {
       font-family: var(--global-font) !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
       font-size: 32px !important;
       line-height: 38px !important;
       font-weight: 700 !important;
       strong {
         font-family: var(--global-font) !important;
-        color: var(--color_black) !important;
+        // color: var(--color_black) !important;
         font-size: 32px !important;
         line-height: 38px !important;
         font-weight: 700 !important;
@@ -411,20 +411,20 @@
   }
   h3 {
     font-family: var(--global-font) !important;
-    color: var(--color_black) !important;
+    // color: var(--color_black) !important;
     font-size: 24px !important;
     line-height: 30px !important;
     margin-bottom: 20px !important;
     font-weight: 600 !important;
     span {
       font-family: var(--global-font) !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
       font-size: 24px !important;
       line-height: 30px !important;
       font-weight: 600 !important;
       strong {
         font-family: var(--global-font) !important;
-        color: var(--color_black) !important;
+        // color: var(--color_black) !important;
         font-size: 24px !important;
         line-height: 30px !important;
         font-weight: 600 !important;
@@ -474,7 +474,7 @@
         font-family: var(--global-font) !important;
         font-style: italic !important;
         font-size: 18px !important;
-        color: var(--color_black) !important;
+        // color: var(--color_black) !important;
       }
       p {
         font-family: var(--global-font) !important;
@@ -487,7 +487,7 @@
       font-style: italic !important;
       font-family: var(--global-font) !important;
       font-size: 18px !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
     }
   }
   ol {
@@ -511,14 +511,14 @@
       line-height: 32px !important;
       margin-left: 0;
       list-style-type: disc !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
       &::marker {
         color: var(--theme-color) !important;
         font-size: 24px !important;
       }
       span {
         font-family: var(--global-font) !important;
-        color: var(--color_black) !important;
+        // color: var(--color_black) !important;
         font-size: 18px !important;
       }
       p {
@@ -529,7 +529,7 @@
     }
     span {
       font-family: var(--global-font) !important;
-      color: var(--color_black) !important;
+      // color: var(--color_black) !important;
     }
   }
   .faq-bottom .accordion-button {
