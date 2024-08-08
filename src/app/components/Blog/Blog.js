@@ -43,8 +43,7 @@ const Blog = () => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
-        setTimeout(()=>     window.scrollTo({ top: 0 }),300)
-   
+        window.scrollTo({ top: 0 });
       },
       searchQuery ? 1000 : 0
     );  
@@ -54,6 +53,7 @@ const Blog = () => {
 
   useEffect(() => {
     setCurrentPage(1);
+  
   }, [blogCategory]);
 
   const getPageNumbers = () => {
@@ -75,8 +75,10 @@ const Blog = () => {
     router.push(`/blog`)
   },[searchParams])
 
+  
+
   return (
-    <section className="md:mt-[8rem] mt-[6rem] px-[16px]">
+    <section className="md:mt-[8rem] mt-[6rem] px-[16px] !scroll-[unset]">
       <div className="container !max-w-[1220px] md:w-[94%] blog !mx-auto">
         <div className="service_sec3 blog-head lg:!mb-10 !mb-5">
           <div className="home_sec2_txt3 !text-center !mb-4">
@@ -269,7 +271,7 @@ const Blog = () => {
           } gap-[2rem]`}
         >
           {isLoading ? (
-            <div className="flex align-middle justify-center md:!py-52 py-28">
+            <div className="flex align-middle justify-center md:!py-52 py-28 min-h-[1000px]">
               <FetchDataSpinner />
             </div>
           ) : blogDataPerPage?.length ? (
@@ -346,7 +348,7 @@ const Blog = () => {
               </p>
             </div>
           ) : (
-            <div className="flex align-middle justify-center md:!py-52 py-28">
+            <div className="flex align-middle justify-center md:!py-52 py-28 h-[100vh]">
               <FetchDataSpinner />
             </div>
           )}

@@ -13,11 +13,12 @@ import Header from "./Header/Header";
 // import Config from "./Config";
 import Layout from "./Layout";
 import dynamic from "next/dynamic";
+import Article from "./Article";
 // const HeaderMenu = dynamic(() => import('./HeaderMenu'));
 // const MenuLink = dynamic(() => import('./MenuLink'));
 // const Config = dynamic(() => import('./Config'));
 const Footer = dynamic(() => import('./Footer'));
-const Article = dynamic(() => import('./Article'));
+// const Article = dynamic(() => import('./Article'));
 const PopularArticles = dynamic(() => import('./PopularArticles'));
 
 const components = {

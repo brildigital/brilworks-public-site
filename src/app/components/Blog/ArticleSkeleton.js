@@ -77,7 +77,7 @@ export const TableOfContentSkeleton = () => {
       <div className="w-56">
         <div className="shadow-[4px_4px_0px_0px_#e2e2e2]">
           <div className="border border-[#e2e2e2] px-3 pt-[10px] pb-4">
-            <Skeleton count={10} />
+            <Skeleton count={18} />
           </div>
         </div>
         <div className="!mt-7">

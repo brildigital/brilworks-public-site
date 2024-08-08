@@ -74,14 +74,11 @@ export default async function Page(props) {
           <div className="flex flex-wrap -mx-4">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
               <div className="slg:w-[calc(100%_-_170px)]">
-                
                 <div
                   className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
                   aria-label="Breadcrumb"
                 >
                     <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
-     
-     
                   <span className="blog-navigation">
                     <Link title="Brilworks Blog." href="/">
                       Brilworks
@@ -208,7 +205,7 @@ export default async function Page(props) {
           </div>
           <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
-            <div className="h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
+            <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
             <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
                 <Image
                   className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
@@ -220,8 +217,6 @@ export default async function Page(props) {
                   width={828}
                   quality={30}
                   height={169}
-                
-
                   priority
                   sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   media="(max-width: 767px)"
@@ -254,7 +249,7 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <div  className="min-h-[50vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
+      <div  className="min-h-[200vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
 
     </>
   );
@@ -262,22 +257,26 @@ export default async function Page(props) {
 export async function fetchData(params) {
   try {
     let slug = params?.slug ? `blog/${params.slug}` : "home";
-    
+
     let sbParams = {
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       resolve_links: "url",
     };
 
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/${slug}?version=${sbParams.version}&resolve_links=${sbParams.resolve_links}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-    const configUrl = `https://api.storyblok.com/v2/cdn/stories/config?version=${sbParams.version}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const storyUrl = new URL('https://api.storyblok.com/v2/cdn/stories');
+    storyUrl.searchParams.append('version', sbParams.version);
+    storyUrl.searchParams.append('resolve_links', sbParams.resolve_links);
 
-    const fetchOptions ={ next: { revalidate: 0 } };
-  
-    
+    storyUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
+    storyUrl.pathname += `/${slug}`;
+
+    const configUrl = new URL('https://api.storyblok.com/v2/cdn/stories/config');
+    configUrl.searchParams.append('version', sbParams.version);
+    configUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
 
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl, fetchOptions),
-      fetch(configUrl, fetchOptions),
+      fetch(storyUrl.toString(), {next: { revalidate: 0 }}),
+      fetch(configUrl.toString(), {next: { revalidate: 0 }}),
     ]);
 
     const storyData = await storyRes.json();
@@ -295,8 +294,8 @@ export async function fetchData(params) {
     return null;
   }
 }
-
 export async function generateStaticParams() {
   const posts = await getblog()
-  return posts.map((post) => ({slug: post.slug}))
+  return posts.map((post) => ({slug:post.slug}
+  ))
 }

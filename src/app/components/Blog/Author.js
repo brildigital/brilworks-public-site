@@ -60,7 +60,6 @@ const Author = ({ authorName }) => {
   }, [blogCategory]);
 
   useEffect(() => {
-    
     window.scrollTo({ top: 0 });
   }, [currentPage]);
   

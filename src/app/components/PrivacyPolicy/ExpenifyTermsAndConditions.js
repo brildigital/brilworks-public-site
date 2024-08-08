@@ -7,7 +7,7 @@ const ExpenifyTermsAndConditions = ({ data }) => {
       <div className="md:w-4/5 w-full md:px-0 px-4">
         <div className="pb-4">
           <h1 className="md:!text-[3rem] !text-[2rem]  font-semibold">
-            Expenify Terms and Conditions
+          ExpenseFlow Terms and Conditions
           </h1>
         </div>
         {data ? (

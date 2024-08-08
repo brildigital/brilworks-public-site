@@ -7,7 +7,7 @@ const ExpenifyPrivacyPolicy = dynamic(() =>
 
 export async function getPrivacyPolicy() {
   try {
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/expenify-privacy-policy?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/expenseflow-privacy-policy?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const storyRes = await fetch(storyUrl,  {next: { revalidate: 0 }})
     const storyData = await storyRes.json();
     return storyData?.story;

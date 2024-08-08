@@ -41,22 +41,25 @@ const Article = ({ blok }) => {
       blok.Content_3 +
       `${blok?.FAQ?.length && "<h2>FAQ</h2>"}` || "";
 
-  async function fetchData() {
-    try {
-      const blogData = await getblogData(1, isTablet ? 3 : 4);
-      window.scrollTo({ top: 0 });
-      setBlogData(blogData.storyData);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-
 
   useEffect(() => {
+    async function fetchData() {
+      try {
+        const blogData = await getblogData(1, isTablet ? 3 : 4);
+        setBlogData(blogData.storyData);
+        
+        // Use a short timeout to ensure the content is rendered before scrolling
+        // setTimeout(() => {
+        //   restoreScrollPosition();
+        // }, 0);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  
     fetchData();
-   
   }, []);
+
 
   function modifyImagesWithLazyLoading(html) {
     return parse(html, {
@@ -86,6 +89,7 @@ const Article = ({ blok }) => {
       },
     });
   }
+
   const parseHTML = (htmlString) => {
     setIsLoading(true)
     return new Promise((resolve, reject) => {
@@ -192,6 +196,27 @@ const Article = ({ blok }) => {
 
   const author = blogAuthor(blok?.BlogAuthor);
 
+  // const saveScrollPosition = () => {
+  //   localStorage.setItem('scrollPosition', window.pageYOffset.toString());
+  // };
+  // const restoreScrollPosition = () => {
+  //   const scrollPosition = localStorage.getItem('scrollPosition');
+  //   if (scrollPosition) {
+  //     window.scrollTo(0, parseInt(scrollPosition));
+  //     localStorage.removeItem('scrollPosition');
+  //   }
+  // };
+// useEffect(() => {
+//   const handleBeforeUnload = () => {
+//     saveScrollPosition();
+//   };
+
+//   window.addEventListener('beforeunload', handleBeforeUnload);
+
+//   return () => {
+//     window.removeEventListener('beforeunload', handleBeforeUnload);
+//   };
+// }, []);
   return (
     <div className="blog-main ">
    
@@ -368,8 +393,8 @@ const Article = ({ blok }) => {
 
                       {/* ********************Author Detail******************************/}
                       {author ? (
-                        <div className="single-author-bio">
-                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
+                        <div className="single-author-bio !mb-[33px] lg:mb-[75px]">
+                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[2rem]">
                             <div className="img-blk">
                               <img
                                 decoding="async"
@@ -484,7 +509,7 @@ const Article = ({ blok }) => {
                 ))
           }
           </div>
-           <div className="container mx-auto md:!px-3 !px-4">
+           {/* <div className="container mx-auto md:!px-3 !px-4">
         <div className="ready_sec !pb-0 !pt-[4rem]">
           <div className="ready_img relative">
             <p>
@@ -538,8 +563,8 @@ const Article = ({ blok }) => {
             </div>
           </div>
         </div>
-      </div>
-          <div className="md:w-1/4 w-full !float-left mt-4   block lg:hidden">
+      </div> */}
+          <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
                   <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                     <div className="h-full flex flex-col">
                       <BlogContactForm />
