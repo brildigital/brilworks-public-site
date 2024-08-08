@@ -1,4 +1,5 @@
 .blog-main {
+ 
   background: #f3fdff80 !important;
   a {
     cursor: pointer !important;
@@ -9,6 +10,10 @@
   }
   .container {
     max-width: 1280px !important;
+  }
+  h4{
+    font-size: 20px;
+    font-weight: 700 !important;
   }
 }
 .blog-navigation {
@@ -237,7 +242,6 @@
   align-items: center;
   display: flex;
   @media screen and (max-width: 1024px) {
-    margin: 33px auto 33px 0;
     display: block !important;
   }
   p {
@@ -320,17 +324,17 @@
 // ******************************New style of blog page********************************************
 .blog-inner .blog_content_new,
 .blog_content {
-  p{
-    em{
-      span{
-  
-        font-style: normal !important;
-        font-size: 16px !important;
-        opacity: 0.5;
-      }
-     
+ p{
+  em{
+    span{
+
+      font-style: normal !important;
+      font-size: 16px !important;
+      opacity: 0.5;
     }
-   } 
+   
+  }
+ } 
   strong {
     font-weight: 700 !important;
   }
