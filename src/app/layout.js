@@ -58,12 +58,12 @@ export default function RootLayout({ children }) {
           {children}
           {/* </NextAuthProvider> */}
           <Footer />
-          <LoadScripts
+          {/* <LoadScripts
             organization={organization}
             website={website}
             gtm={process.env.googleTagManagerID}
             clr={process.env.clearbitScript_URL}
-          />
+          /> */}
         </body>
     
       </html>
