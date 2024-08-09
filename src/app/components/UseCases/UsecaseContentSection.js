@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
-import Image from "next/image";
 import BlogFAQ from "../Blog/BlogFAQ";
 import { usePathname } from "next/navigation";
-import { formattedDate } from "../lib/commonFunction";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
+const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
+const UseCaseSuggestion = dynamic(() => import("./UseCaseSuggestion"));
 
 const UsecaseContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
@@ -218,7 +218,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                 <p className="!ml-0 extra_bold !w-full">You might also like</p>
               </p>
             </div>
-            <div
+            {/* <div
               className={`grid ${
                 !blogResponse["/aws-consulting-services/"]?.length
                   ? ""
@@ -274,7 +274,13 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                   <FetchDataSpinner />
                 </div>
               )}
-            </div>
+            </div> */}
+            {pathname.includes("products")? 
+            <>
+            {/* <ProductSuggestion blogResponse={blogResponse}/> */}
+            </>
+
+             : <UseCaseSuggestion blogResponse={blogResponse}/>}
           </div>
         </div>
       </div>

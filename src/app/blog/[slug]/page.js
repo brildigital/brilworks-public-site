@@ -266,9 +266,9 @@ export async function fetchData(params) {
     const storyUrl = new URL('https://api.storyblok.com/v2/cdn/stories');
     storyUrl.searchParams.append('version', sbParams.version);
     storyUrl.searchParams.append('resolve_links', sbParams.resolve_links);
-
     storyUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
     storyUrl.pathname += `/${slug}`;
+
 
     const configUrl = new URL('https://api.storyblok.com/v2/cdn/stories/config');
     configUrl.searchParams.append('version', sbParams.version);
@@ -281,6 +281,7 @@ export async function fetchData(params) {
 
     const storyData = await storyRes.json();
     const configData = await configRes.json();
+    console.log(storyData)
 
     return {
       props: {

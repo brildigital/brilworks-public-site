@@ -393,8 +393,8 @@ const Article = ({ blok }) => {
 
                       {/* ********************Author Detail******************************/}
                       {author ? (
-                        <div className="single-author-bio !mb-[33px] lg:mb-[75px]">
-                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[2rem]">
+                        <div className="single-author-bio !flex !flex-row !mb-[33px] !mx-0 lg:mb-[75px]">
+                          <div className="img-blk-wrapper  w-[50%] flex-1 flex scale-[0.8] lg:scale-[1] lg:pb-[0rem] !pb-[2rem]">
                             <div className="img-blk">
                               <img
                                 decoding="async"
@@ -407,9 +407,10 @@ const Article = ({ blok }) => {
                               />
                             </div>
                           </div>
-                          <div className="single-author-bio-text">
+                          <div className="flex-1  w-[50%] single-author-bio-text">
                             <h3>
                               <Link
+                              className="text-[18px] lg:text-[24px]"
                                 href={
                                   author?.name === "Vikas Singh"
                                     ? "/blog/author/vikas-singh/"
@@ -423,8 +424,9 @@ const Article = ({ blok }) => {
                                 {author?.name}
                               </Link>
                             </h3>
-                            <p className="text-[18px]">
-                              {author?.authorDesc}
+                            <p className="!text-[14px] lg:text-[18px]">
+                              {/* {author?.authorDesc} */}
+                            {  "CTO at Briwlorks software"}
                             </p>
                           </div>
                         </div>

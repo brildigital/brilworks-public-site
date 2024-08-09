@@ -242,7 +242,7 @@
   align-items: center;
   display: flex;
   @media screen and (max-width: 1024px) {
-    display: block !important;
+    // display: block !important;
   }
   p {
     font-size: 18px;
