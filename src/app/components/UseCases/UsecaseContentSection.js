@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
+import dynamic from "next/dynamic";
 const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
 const UseCaseSuggestion = dynamic(() => import("./UseCaseSuggestion"));
 

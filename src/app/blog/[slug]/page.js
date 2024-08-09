@@ -281,8 +281,6 @@ export async function fetchData(params) {
 
     const storyData = await storyRes.json();
     const configData = await configRes.json();
-    console.log(storyData)
-
     return {
       props: {
         story: storyData?.story || false,
