@@ -35,12 +35,15 @@ const GameChanger = () => {
 
           <div className="flex lg:items-center items-end justify-between xl:!pt-10 !pt-0">
             <div className="pt-4 xl:pt-0">
-              <p className="sxl:!text-2xl !text-base">
-                Focused on AWS consulting and generative AI, we boost
-                engineering and design capacity,
-                <br className="hidden slg:block" /> hasten product and MVP
-                timelines, automate operations, and minimize expenses.
-              </p>
+              <h2 className="sxl:!text-2xl !text-base">
+                {/* Focused on AWS consulting and generative AI, we boost
+                engineering and design capacity, */}
+                Accelerating product timelines, optimizing AWS, and delivering Gen AI solutions,
+                <br className="hidden slg:block" /> White label apps, and Product engineering expertise in Next.js, Java, and low-code/no-code platforms.
+{/* 
+                hasten product and MVP
+                timelines, automate operations, and minimize expenses. */}
+              </h2>
             </div>
           </div>
           <div className="lg:mt-12 mt-5">
