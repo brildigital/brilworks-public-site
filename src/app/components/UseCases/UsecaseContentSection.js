@@ -118,6 +118,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
               <div className="flex justify-between !mb-5">
                 <p>Table of Contents</p>
               </div>
+              
               <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
                 {headings?.length ? (
                   headings.map((heading, index) => (
