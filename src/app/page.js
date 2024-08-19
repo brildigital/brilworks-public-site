@@ -5,11 +5,11 @@ const HomePage = dynamic(() => import("./home/page"));
 export const metadata = {
   title: "AWS Consulting Partner | Gen AI | Product Engineering",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people. We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
   openGraph: {
     title: "AWS Consulting Partner | Gen AI | Product Engineering",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     title: "AWS Consulting Partner | Gen AI | Product Engineering",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
