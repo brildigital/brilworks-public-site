@@ -276,9 +276,9 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                 </div>
               )}
             </div> */}
-            {pathname.includes("products")? 
+            {pathname.includes("product")? 
             <>
-            {/* <ProductSuggestion blogResponse={blogResponse}/> */}
+            <ProductSuggestion />
             </>
 
              : <UseCaseSuggestion blogResponse={blogResponse}/>}
