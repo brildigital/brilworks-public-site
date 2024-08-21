@@ -9,6 +9,10 @@ import { formattedDate } from "../lib/commonFunction";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
+import dynamic from "next/dynamic";
+
+const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
+const UseCaseSuggestion = dynamic(() => import("./UsecaseContentSection"));
 
 const UsecaseContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
@@ -219,7 +223,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                 <p className="!ml-0 extra_bold !w-full">You might also like</p>
               </p>
             </div>
-            <div
+            {/* <div
               className={`grid ${
                 !blogResponse["/aws-consulting-services/"]?.length
                   ? ""
@@ -275,7 +279,13 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                   <FetchDataSpinner />
                 </div>
               )}
-            </div>
+            </div> */}
+            {pathname.includes("product")? 
+            <>
+            <ProductSuggestion />
+            </>
+
+             : <UseCaseSuggestion blogResponse={blogResponse}/>}
           </div>
         </div>
       </div>
