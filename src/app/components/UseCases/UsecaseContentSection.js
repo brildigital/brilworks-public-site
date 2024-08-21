@@ -2,17 +2,14 @@
 import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
-import Image from "next/image";
 import BlogFAQ from "../Blog/BlogFAQ";
 import { usePathname } from "next/navigation";
-import { formattedDate } from "../lib/commonFunction";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
 import dynamic from "next/dynamic";
-
 const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
-const UseCaseSuggestion = dynamic(() => import("./UsecaseContentSection"));
+const UseCaseSuggestion = dynamic(() => import("./UseCaseSuggestion"));
 
 const UsecaseContentSection = ({ content, FAQData }) => {
   const pathname = usePathname();
@@ -122,7 +119,6 @@ const UsecaseContentSection = ({ content, FAQData }) => {
               <div className="flex justify-between !mb-5">
                 <p>Table of Contents</p>
               </div>
-              
               <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
                 {headings?.length ? (
                   headings.map((heading, index) => (
