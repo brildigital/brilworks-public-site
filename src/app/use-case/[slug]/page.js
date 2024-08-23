@@ -4,6 +4,7 @@ import UsecaseContentSection from "@/app/components/UseCases/UsecaseContentSecti
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { notFound } from "next/navigation";
 
+
 async function fetchWithErrorHandling(url, options) {
   try {
     const res = await fetch(url, options);
@@ -53,27 +54,27 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title,description} = storyData.story?.content?.Metatags
-    console.log(title,description)
+    const { title,description ,og_image,twitter_image} = storyData.story?.content.Metatags
+
     return {
       title: title,
       description: description,
       openGraph: {
         title: title,
         description: description,
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/${params.slug}/`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}product/${params.slug}/`,
         siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
         locale: "en-US",
         type: "website",
+        images:[{ url:og_image || mobile_banner?.filename }]
       },
+      
       twitter: {
         title: title,
         description: description,
         card: "summary_large_image",
+        images:[{ url:twitter_image   || mobile_banner?.filename }],
         site: "@_Brilworks",
-      },
-      alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/${params.slug}/`,
       },
     };
   } catch (error) {

@@ -53,7 +53,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title,description} = storyData.story?.content.Metatags
+    const { title,description ,og_image,twitter_image} = storyData.story?.content.Metatags
+
     return {
       title: title,
       description: description,
@@ -64,11 +65,14 @@ export async function generateMetadata({ params }) {
         siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
         locale: "en-US",
         type: "website",
+        images:[{ url:og_image || mobile_banner?.filename }]
       },
+      
       twitter: {
         title: title,
         description: description,
         card: "summary_large_image",
+        images:[{ url:twitter_image   || mobile_banner?.filename }],
         site: "@_Brilworks",
       },
       alternates: {
