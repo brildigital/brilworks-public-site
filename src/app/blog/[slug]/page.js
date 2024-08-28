@@ -32,13 +32,13 @@ export async function generateMetadata({ params }) {
       title: story.content.metatags?.og_title || story.content.title,
       description: story.content.metatags?.og_description || story.content.metatags?.description,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
-      images: [{ url: story.content.metatags?.og_image || story.content.mobile_banner?.filename }],
+      images: [{ url: story.content.metatags?.og_image || story.content?.mobile_banner?.filename }],
     },
     twitter: {
       card: 'summary_large_image',
       title: story.content.metatags?.og_title || story.content.title,
       description: story.content.metatags?.og_description || story.content.metatags?.description,
-      images: [story.content.metatags?.twitter_image || story.content.mobile_banner?.filename],
+      images: [story?.content.metatags?.twitter_image || story?.content?.mobile_banner?.filename],
       creator: story.content.BlogAuthor,
       site: '@_Brilworks',
     },
@@ -68,7 +68,6 @@ export default async function Page(props) {
 
   return (
     <>
-     
       <div className="md:pt-[8rem] pt-[6rem] blog-main">
         <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
           <div className="flex flex-wrap -mx-4">
@@ -113,7 +112,6 @@ export default async function Page(props) {
                     <Link
                       title="Go to the Web App Development category."
                       href={`/blog?cat=${data?.story?.content?.Category.replaceAll(" ",'-')}`}
-                     
                     >
                       {data?.story?.content?.Category ===
                       "Cloud DevOps and Data"
