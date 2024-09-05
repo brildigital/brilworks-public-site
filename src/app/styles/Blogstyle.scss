@@ -322,6 +322,9 @@
 }
 
 // ******************************New style of blog page********************************************
+
+
+
 .blog-inner .blog_content_new,
 .blog_content {
  p{
@@ -580,6 +583,17 @@
     @media screen and (max-width: 767px) {
       padding: 14px 20px 18px 15px !important;
     }
+  }
+}
+
+.blog-inner .blog_content_new  blockquote, .blog_content  blockquote {
+  margin: 0px 0px 20px 0px;
+  padding: 20px 20px 20px 50px;
+  p {
+    margin-bottom: 0 !important;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 10px 10px 10px 25px;
   }
 }
 
