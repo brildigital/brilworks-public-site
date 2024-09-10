@@ -126,15 +126,13 @@ const TeamAuthor = ({ authorName }) => {
             </div>
           
           </div>
+        </div>
+          <div>
           <div className="">
            <h2 className="font-bold md:text-[28px] text-xl md:mb-2 mb-1">
               {author?.name}
             </h2>
-            </div></div>
-          <div>
-          <h2 className="font-bold md:text-[28px] text-xl md:mb-2 mb-1">
-            About us
-            </h2>
+            </div>
             <p className="md:text-[22px] lg:w-[90%] text-base">
               {author?.authorPageDesc || author?.authorDesc}
             </p>
@@ -152,7 +150,7 @@ const TeamAuthor = ({ authorName }) => {
       <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
         <Link href={`https://wa.me/${author?.whatsapp}`} target="_blank">
           <Image
-            src="   https://cdn-icons-png.flaticon.com/512/15713/15713434.png "
+            src="https://cdn-icons-png.flaticon.com/512/15713/15713434.png "
             alt="WhatsApp"
             width="20"
             height="20"
@@ -163,7 +161,7 @@ const TeamAuthor = ({ authorName }) => {
       <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
         <Link href="#" onClick={handleEmailClick}>
           <Image
-            src="   https://cdn-icons-png.flaticon.com/512/732/732200.png "
+            src="https://cdn-icons-png.flaticon.com/512/732/732200.png "
             alt="Email"
             width="20"
             height="20"
