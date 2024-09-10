@@ -25,7 +25,7 @@ const TeamAuthor = ({ authorName }) => {
 
   const fetchAuthorData = async () => {
     try {
-      const response = await fetch(`https://api.storyblok.com/v2/cdn/stories/team/${authorName}?version=draft&token=gasBbmVVImrrTRQLlShorwtt&cv=1725958144`);
+      const response = await fetch(`https://api.storyblok.com/v2/cdn/stories/teams/${authorName}?version=draft&token=gasBbmVVImrrTRQLlShorwtt&cv=1725958144`);
       const data = await response.json();
       setAuthor(data.story.content);
     } catch (error) {
