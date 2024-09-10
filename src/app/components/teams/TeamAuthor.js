@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import { getblogSpecificAuthor } from "../lib/getblog";
+import { getblogSpecificAuthor, getblogSpecificTeam } from "../lib/getblog";
 import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import {
@@ -27,7 +27,7 @@ const TeamAuthor = ({ authorName }) => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const blogData = await getblogSpecificAuthor(
+      const blogData = await getblogSpecificTeam(
         currentPage,
         ITEMS_PER_PAGE,
         blogCategory,

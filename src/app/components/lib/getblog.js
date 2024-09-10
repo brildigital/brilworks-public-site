@@ -114,6 +114,50 @@ export async function getblogSpecificAuthor(
   };
 }
 
+export async function getblogSpecificTeam(
+  page_no,
+  limit_per_page,
+  filter_category,
+  search_query,
+  author_name
+) {
+  // Define the base parameters for the API call
+  let apiParams = {
+    starts_with: "team/",
+    page: page_no || 1,
+    per_page: limit_per_page || 9,
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    filter_query: {
+      component: {
+        in: "article",
+      },
+      BlogAuthor: {
+        in: convertParamsToString(author_name),
+      },
+    },
+  };
+
+  if (filter_category) {
+    apiParams.filter_query.Category = {
+      in: filter_category,
+    };
+  }
+
+  if (search_query) {
+    // If search_query is present, add search_term to apiParams
+    apiParams.search_term = search_query;
+  }
+
+  // Make the API call with the constructed parameters
+  let stories = await Storyblok.get("cdn/stories", apiParams, {
+    next: { revalidate: 3600 },
+  });
+
+  return {
+    storyData: stories.data.stories,
+    totalData: stories.total,
+  };
+}
 export async function getblogDataCategorization(
   page_no,
   limit_per_page,
