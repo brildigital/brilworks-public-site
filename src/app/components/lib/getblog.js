@@ -123,7 +123,7 @@ export async function getblogSpecificTeam(
 ) {
   // Define the base parameters for the API call
   let apiParams = {
-    starts_with: "team/",
+    starts_with: "blog/",
     page: page_no || 1,
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
