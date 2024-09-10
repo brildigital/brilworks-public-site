@@ -62,6 +62,10 @@ const TeamAuthor = ({ authorName }) => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [currentPage]);
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    window.location.href = `mailto:${author?.email}?subject=Hello&body=I'd like to connect with you.`;
+  };
   
   const author = blogAuthor(convertParamsToString(authorName));
 
@@ -157,7 +161,7 @@ const TeamAuthor = ({ authorName }) => {
         </Link>
       </div>
       <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
-        <Link href="#" onClick={()=>console.log('working')}>
+        <Link href="#" onClick={handleEmailClick}>
           <Image
             src="   https://cdn-icons-png.flaticon.com/512/732/732200.png "
             alt="Email"
