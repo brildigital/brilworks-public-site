@@ -3,17 +3,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import { getblogSpecificAuthor, getblogSpecificTeam } from "../lib/getblog";
+import { getblogSpecificTeam, getblogSpecificTeamMember } from "../lib/getblog";
 import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import {
-  blogAuthor,
   convertParamsToString,
   formattedDate,
 } from "../lib/commonFunction";
 
 const TeamAuthor = ({ authorName }) => {
-  // const params = useParams()
   const path = usePathname()
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
@@ -23,6 +21,21 @@ const TeamAuthor = ({ authorName }) => {
   const [blogCategory, setBlogCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [author, setAuthor] = useState(null);
+
+  const fetchAuthorData = async () => {
+    try {
+      const response = await fetch(`https://api.storyblok.com/v2/cdn/stories/team/${authorName}?version=draft&token=gasBbmVVImrrTRQLlShorwtt&cv=1725958144`);
+      const data = await response.json();
+      setAuthor(data.story.content);
+    } catch (error) {
+      console.error("Error fetching author data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAuthorData();
+  }, [authorName]);
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -62,12 +75,10 @@ const TeamAuthor = ({ authorName }) => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [currentPage]);
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    window.location.href = `mailto:${author?.email}?subject=Hello&body=I'd like to connect with you.`;
-  };
-  
-  const author = blogAuthor(convertParamsToString(authorName));
+
+  if (!author) {
+    return <div className="flex align-middle justify-center p-28"><FetchDataSpinner /></div>;
+  }
 
   return (
     <section className="md:pt-[8rem] pt-[6rem] px-[16px]">
@@ -110,65 +121,59 @@ const TeamAuthor = ({ authorName }) => {
           </div>
         </div>
         <div className="bg-themeLight lg:p-6 p-4 flex xl:flex-row flex-col lg:gap-8">
-          <div className="space-y-4 flex justify-center items-center flex-col">
           <div className="author-main-img w-fit lg:mb-0 md:mb-2 mb-1">
-            <div className="border-[3px]  rounded-full border-colorWhite">
+            <div className="border-[3px] rounded-full border-colorWhite">
               <div className="xl:w-[150px] md:w-[100px] w-[50px] xl:h-[150px] md:h-[100px] h-[50px]">
                 <Image
-                  src={author?.authorImage}
+                  src={author.Image.filename}
                   width="150"
                   height="150"
-                  alt={author?.name}
+                  alt={author.Name}
                   priority
                   className="!rounded-full"
                 />
               </div>
             </div>
-          
           </div>
-        </div>
           <div>
-          <div className="">
-           <h2 className="font-bold md:text-[28px] text-xl md:mb-2 mb-1">
-              {author?.name}
+            <h2 className="font-bold md:text-[28px] text-xl md:mb-2 mb-1">
+              {author.Name}
             </h2>
-            </div>
             <p className="md:text-[22px] lg:w-[90%] text-base">
-              {author?.authorPageDesc || author?.authorDesc}
+              {author.author_desc}
             </p>
             <div className="flex md:flex-row flex-col gap-[1rem] pt-2">
-      <div className="bg-[#0966C3] hover:bg-[#09509b] w-[86px] h-[30px] mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
-        <Link href={author?.authorLinkedIn} target="_blank">
-          <Image
-            src="/images/LinkedIn_Logo_white.svg"
-            alt="LinkedIn"
-            width="50"
-            height="15"
-          />
-        </Link>
-      </div>
-      <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
-        <Link href={`https://wa.me/${author?.whatsapp}`} target="_blank">
-          <Image
-            src="/images/wp.png"
-            alt="WhatsApp"
-            width="20"
-            height="20"
-          />
-        
-        </Link>
-      </div>
-      <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
-        <Link href="#" onClick={handleEmailClick}>
-          <Image
-      src="/images/gmail.png"
-            alt="Email"
-            width="20"
-            height="20"
-          />
-        </Link>
-      </div>
-    </div>
+            <div className="bg-[#0966C3] hover:bg-[#09509b] w-[86px] h-[30px] mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
+                <Link href={author.author_linkedIn.url} target="_blank">
+                  <Image
+                    src="/images/LinkedIn_Logo_white.svg"
+                    alt="LinkedIn"
+                    width="50"
+                    height="15"
+                  />
+                </Link>
+              </div>
+              <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
+                <Link href={`https://wa.me/${author.whatsapp}`} target="_blank">
+                  <Image
+                      src="/images/wp.png"
+                    alt="WhatsApp"
+                    width="20"
+                    height="20"
+                  />
+                </Link>
+              </div>
+              <div className=" mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
+                <Link href={`mailto:${author.email}`}>
+                  <Image
+                   src="/images/gmail.png"
+                    alt="Email"
+                    width="20"
+                    height="20"
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
