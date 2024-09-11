@@ -199,7 +199,7 @@ const TeamAuthor = ({ authorName }) => {
             <div>
             {author?.AuthorData ? modifyImagesWithLazyLoading(author.AuthorData) :<></>}
             </div>
-            <div className="flex md:flex-row flex-col gap-[1rem] pt-2">
+            <div className="flex md:flex-row  gap-[1rem] pt-2">
             <div className="bg-[#0966C3] hover:bg-[#09509b] w-[86px] h-[30px] mt-2 md:mt-3 flex items-center justify-center cursor-pointer">
                 <Link href={author.author_linkedIn.url} target="_blank">
                   <Image
