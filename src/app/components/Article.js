@@ -62,6 +62,7 @@ const Article = ({ blok }) => {
 
 
   function modifyImagesWithLazyLoading(html) {
+
     return parse(html, {
       replace: (node, index) => {
         if (node.type === "tag" && node.name === "img") {
@@ -78,7 +79,12 @@ const Article = ({ blok }) => {
           }
           if (
             node.attribs.href &&
-            !node.attribs.href.includes("brilworks.com")
+            !(
+              node.attribs.href.includes("brilworks.com") ||
+              node.attribs.href.startsWith("/") ||  // Handles relative URLs
+              node.attribs.href.includes("www.brilworks.com") ||
+              node.attribs.href.startsWith("..")
+            )
           ) {
             node.attribs.rel = "nofollow noopener";
           } else {
