@@ -48,12 +48,12 @@ export default function RootLayout({ children }) {
           vector.load("1a1e4f1f-0942-4b35-bbad-8ef11726a7e4");
         `}
           </Script>
-      {/* chat bot Script */}
+          {/* chat bot Script */}
           <>
             <Script
               defer
               id="chatbot"
-            >{`window.chatBotConfig = {agentId:155}`}</Script>
+            >{`window.chatBotConfig = {agentId:214}`}</Script>
             <Script
               defer
               id="chatbot-widget-script"
