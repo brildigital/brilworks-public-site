@@ -6,10 +6,14 @@ const page = () => {
     {
       day: "Day 1: 20th September 2024, Friday",
       schedule: [
-        { time: "11:00 PM (Thursday)", event: "Departure from Office" },
-        { time: "11:00 AM (Approx)", event: "Arrival at Kumbhalgarh" },
+        { time: "11:00 PM (Thursday)", event: "Reporting at Office" },
+        { time: "11:30 PM (Thursday)", event: "Departure from Office" },
+        { time: "12:00 PM (Expected)", event: "Arrival at Kumbhalgarh" },
         { time: "12:00 PM - 01:00 PM", event: "Lunch" },
-        { time: "02:30 PM - 04:30 PM", event: "Swimming" },
+        {
+          time: "02:30 PM - 05:00 PM",
+          event: "Kumbhalgarh Fort and Mahadev Temple",
+        },
         { time: "05:00 PM - 05:30 PM", event: "Hi-Tea" },
         { time: "07:30 PM - 09:00 PM", event: "Dinner" },
         { time: "09:00 PM - Onward", event: "Garba and Fun" },
@@ -23,7 +27,7 @@ const page = () => {
         { time: "01:30 PM - 03:00 PM", event: "Lunch" },
         {
           time: "03:00 PM - 05:00 PM",
-          event: "Kumbhalgarh Fort and Mahadev Temple",
+          event: "Swimming",
         },
         { time: "05:00 PM - 05:30 PM", event: "Hi-Tea" },
         { time: "05:30 PM - 07:30 PM", event: "Activities" },
@@ -43,12 +47,12 @@ const page = () => {
     "It is mandatory to carry a swimming costume with you. Without a proper costume you will not be allowed to use resort swimming facilities.",
     "It is mandatory to wear Company Tshirt (Black or blue) during activities.",
     "Company will bear the expenses of food and entry charges for sightseeing.",
-    "Hard drinks' cost will be borne by the company till Rs 700 max.",
     "It is compulsory to carry Aadhaar card with you.",
     "We expect everyone to behave in a respectful manner with everyone. Any kind of bullying/Unkind behaviour/impropriety would not be tolerated.",
     "Looking at the weather conditions it is suggested to carry a raincoat and warm jacket with you.",
     "It is suggested to wear comfortable shoes as there will be a lot of walking and activities.",
   ];
+
   return (
     <>
       <head>

@@ -217,7 +217,7 @@ const TeamAuthor = ({ authorName }) => {
             <div className="w-full grid sxl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
               {brilworksServices.map((service, index) => (
                 <div key={index}>
-                  <h3 className="text-center !font-medium lg:text-2xl text-xl mb-1">
+                  <h3 className="text-center !font-semibold lg:text-2xl text-xl mb-1">
                     {service.title}
                   </h3>
                   <p className="sxl:w-4/5 md:w-[90%] w-full mx-auto text-center text-colorGray lg:text-[22px] text-xl !leading-7">
@@ -246,7 +246,7 @@ const TeamAuthor = ({ authorName }) => {
               <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-8">
                 {myApproachData.map((approach, index) => (
                   <div key={index}>
-                    <h3 className="text-center !font-medium lg:text-2xl text-xl">
+                    <h3 className="text-center !font-semibold lg:text-2xl text-xl">
                       {approach.title}
                     </h3>
                     <p className="lg:w-4/5 w-full mx-auto text-center text-colorGray lg:text-[22px] text-xl !leading-7">
@@ -279,26 +279,26 @@ const TeamAuthor = ({ authorName }) => {
                   I’m always available for a conversation on how we can
                   collaborate and achieve your business goals.
                 </p>
-                <div className="lg:w-4/5 w-full flex items-center justify-start sxl:flex-row flex-col lg:gap-8 gap-5">
+                <div className="lg:w-[90%] w-full flex items-center justify-start sxl:flex-row flex-col lg:gap-8 gap-5">
                   <a
-                    href={`mailto:${author?.author?.email}`}
+                    href={`mailto:${author?.email}`}
+                    target="_blank"
                     className="w-full border-themeColor border-2 rounded-full"
                   >
                     <div className="w-full flex items-center justify-around py-[10px] pl-5 pr-3">
                       <div>
                         <Image
                           className="w-[32px]"
-                          src="/images/team-mail.svg"
+                          src="/images/team-mail-icon.png"
                           width="32"
                           height="32"
-                          alt="mail-icon"
+                          alt="whatsapp-icon"
                         />
                       </div>
 
-                      <div className="font-semibold slg:text-[22px] text-xl text-colorWhite pl-4 pr-2">
+                      <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite pl-4 pr-2">
                         {author?.email}
                       </div>
-
                       <div className="flex justify-end">
                         <Image
                           className="w-[40px]"
@@ -326,7 +326,7 @@ const TeamAuthor = ({ authorName }) => {
                         />
                       </div>
 
-                      <div className="font-semibold slg:text-[22px] text-xl text-colorWhite pl-4 pr-2">
+                      <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite pl-4 pr-2">
                         {formatPhoneNumber(author?.whatsapp)}
                       </div>
                       <div className="flex justify-end">

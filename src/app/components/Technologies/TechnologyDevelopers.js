@@ -218,8 +218,8 @@ const TechnologyDevelopers = () => {
                         </div>
                         <div className="flex items-center justify-center md:py-[2rem] py-[2rem]">
                           <Button
-                            innerClassName="flex items-center justify-center gap-2 !text-colorBlack hover:!text-colorWhite"
-                            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor"
+                            innerClassName="flex items-center justify-center gap-2"
+                            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
                             redirect="#section10_service"
                             label={` Hire ${content?.Name}`}
                             icon={

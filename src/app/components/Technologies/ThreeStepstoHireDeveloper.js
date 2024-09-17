@@ -490,8 +490,8 @@ const ThreeStepstoHireDeveloper = () => {
 
         <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
           <Button
-            innerClassName="flex items-center justify-center gap-2 !text-colorBlack hover:!text-colorWhite"
-            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor"
+            innerClassName="flex items-center justify-center gap-2"
+            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
             redirect="#section10_service"
             label={
               pathname === "/hire-reactjs-developer/" ? (

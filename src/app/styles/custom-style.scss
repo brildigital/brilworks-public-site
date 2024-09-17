@@ -51,7 +51,7 @@
 }
 
 .button-white {
-  color: var(--color_black);
+  color: var(--color_black) !important;
   background: var(--white_color);
   border: 1px solid var(--white_color);
   &:hover {
