@@ -1,9 +1,8 @@
-import Author from "@/app/components/Blog/Author";
 import {
   blogAuthor,
   convertParamsToString,
 } from "@/app/components/lib/commonFunction";
-import TeamAuthor from "@/app/components/teams/TeamAuthor";
+import TeamAuthor from "@/app/components/Teams/TeamAuthor";
 
 export const metadata = {
   openGraph: {
