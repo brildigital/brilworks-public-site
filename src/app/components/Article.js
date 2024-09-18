@@ -3,25 +3,17 @@
 import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
-
 import { memo, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-
 import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import { blogAuthor, formattedDate } from "./lib/commonFunction";
-import BlogContactForm from "./Blog/BlogContactForm"
+import BlogContactForm from "./Blog/BlogContactForm";
 import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 
-// import {
-//   ContentSkeleton,
-//   TableOfContentSkeleton,
-// } from "./Blog/ArticleSkeleton";
-
-// const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"));
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
 const Article = ({ blok }) => {
@@ -30,7 +22,7 @@ const Article = ({ blok }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const [activeLink, setActiveLink] = useState(null);
 
@@ -41,13 +33,12 @@ const Article = ({ blok }) => {
       blok.Content_3 +
       `${blok?.FAQ?.length && "<h2>FAQ</h2>"}` || "";
 
-
   useEffect(() => {
     async function fetchData() {
       try {
         const blogData = await getblogData(1, isTablet ? 3 : 4);
         setBlogData(blogData.storyData);
-        
+
         // Use a short timeout to ensure the content is rendered before scrolling
         // setTimeout(() => {
         //   restoreScrollPosition();
@@ -56,10 +47,9 @@ const Article = ({ blok }) => {
         console.error(error);
       }
     }
-  
+
     fetchData();
   }, []);
-
 
   function modifyImagesWithLazyLoading(html) {
     return parse(html, {
@@ -69,7 +59,7 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
-          node.attribs.alt="banner-image"
+          node.attribs.alt = "banner-image";
         }
 
         if (node.type === "tag" && node.name === "a") {
@@ -91,24 +81,33 @@ const Article = ({ blok }) => {
   }
 
   const parseHTML = (htmlString) => {
-    setIsLoading(true)
+    setIsLoading(true);
     return new Promise((resolve, reject) => {
       try {
         const parser = new DOMParser();
         const doc = parser.parseFromString(htmlString, "text/html");
-        const headings = Array.from(doc.querySelectorAll("h2")).map((heading) => {
-          const level = parseInt(heading.tagName.slice(1), 10);
-          const text = heading.textContent;
-          return { level, text };
-        });
+        const headings = Array.from(doc.querySelectorAll("h2")).map(
+          (heading) => {
+            const level = parseInt(heading.tagName.slice(1), 10);
+            const text = heading.textContent;
+            return { level, text };
+          }
+        );
         resolve(headings);
-        setIsLoading(false)
+        setIsLoading(false);
       } catch (error) {
-        setIsLoading(false)
+        setIsLoading(false);
         reject(error);
       }
     });
   };
+
+  function textToId(headingText) {
+    return headingText
+      .toLowerCase() // Convert to lowercase
+      .replace(/[^\w\s]/g, "") // Remove all non-word characters (punctuation, etc.)
+      .replace(/\s+/g, "-");
+  }
 
   useEffect(() => {
     const fetchHeadings = async () => {
@@ -123,28 +122,29 @@ const Article = ({ blok }) => {
     fetchHeadings();
   }, [blogTableOfContent]);
 
-
   const addTemporaryIDs = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     return new Promise((resolve) => {
       const headings = document.querySelectorAll("h2");
       headings.forEach((heading, index) => {
-        heading.id = `temp-section-${index}`;
+        let headingText = heading.textContent || heading.innerText;
+
+        let headingId = textToId(headingText);
+
+        heading.id = headingId;
       });
       resolve();
-     
     });
   };
   useEffect(() => {
     // Call the function and handle the promise
     addTemporaryIDs()
       .then(() => {
-        console.log("Temporary IDs added to headings.");
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error adding temporary IDs:", error);
-        setIsLoading(false)
+        setIsLoading(false);
       });
   }, []);
 
@@ -157,6 +157,7 @@ const Article = ({ blok }) => {
 
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", targetId);
     }
   };
 
@@ -164,11 +165,14 @@ const Article = ({ blok }) => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const headingPositions = headings.map((heading, index) => {
-        const targetElement = document.getElementById(`temp-section-${index}`);
+        let headingText = heading.text;
+
+        let headingId = textToId(headingText);
+        const targetElement = document.getElementById(`${headingId}`);
 
         if (targetElement) {
           return {
-            id: `${index}`,
+            id: `${headingId}`,
             offsetTop: targetElement.offsetTop,
           };
         }
@@ -206,21 +210,20 @@ const Article = ({ blok }) => {
   //     localStorage.removeItem('scrollPosition');
   //   }
   // };
-// useEffect(() => {
-//   const handleBeforeUnload = () => {
-//     saveScrollPosition();
-//   };
+  // useEffect(() => {
+  //   const handleBeforeUnload = () => {
+  //     saveScrollPosition();
+  //   };
 
-//   window.addEventListener('beforeunload', handleBeforeUnload);
+  //   window.addEventListener('beforeunload', handleBeforeUnload);
 
-//   return () => {
-//     window.removeEventListener('beforeunload', handleBeforeUnload);
-//   };
-// }, []);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', handleBeforeUnload);
+  //   };
+  // }, []);
+
   return (
     <div className="blog-main ">
-   
-    <>
       <div className="container max-w-[1280px] min-h-[400px] mx-auto my-0 !px-4">
         <div className="flex flex-wrap -mx-4">
           <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
@@ -239,21 +242,21 @@ const Article = ({ blok }) => {
                     </div>
                     <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
                       {/* {headings?.length ? ( */}
-                     {   headings?.map((heading, index) => (
-                          <li key={index}>
-                            <Link
-                              href={`#temp-section-${index}`}
-                              onClick={(e) =>
-                                handleTableOfContentLinkClick(e, index)
-                              }
-                              className={`${
-                                index == activeLink ? "page-active" : ""
-                              }`}
-                            >
-                              {heading.text}
-                            </Link>
-                          </li>
-                        ))}
+                      {headings?.map((heading, index) => (
+                        <li key={index}>
+                          <Link
+                            href={`#${textToId(heading?.text)}`}
+                            onClick={(e) =>
+                              handleTableOfContentLinkClick(e, index)
+                            }
+                            className={`${
+                              index == activeLink ? "page-active" : ""
+                            }`}
+                          >
+                            {heading.text}
+                          </Link>
+                        </li>
+                      ))}
                       {/* ) : (
                         <div className="flex align-middle justify-center py-16">
                           <FetchDataSpinner />
@@ -323,11 +326,8 @@ const Article = ({ blok }) => {
                   <div className="h-full w-full box-border !px-4">
                     <div className="h-full flex flex-col">
                       <div className="blog_content" ref={targetRef}>
-                        {/* {blok?.content ? ( */}
-                        {  modifyImagesWithLazyLoading(blok?.content)}
-                        {/* ) : (
-                          <ContentSkeleton />
-                        )} */}
+                        {modifyImagesWithLazyLoading(blok?.content)}
+
                         {blok?.CTA_1 ? (
                           <div
                             className={`${
@@ -336,15 +336,17 @@ const Article = ({ blok }) => {
                           >
                             {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
 
                         {blok?.Content_1 ? (
                           <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(
-                              blok?.Content_1 || ""
-                            )}
+                            {modifyImagesWithLazyLoading(blok?.Content_1 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
                         {blok?.CTA_2 ? (
                           <div
                             className={`${
@@ -353,14 +355,16 @@ const Article = ({ blok }) => {
                           >
                             {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
                         {blok?.Content_2 ? (
                           <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(
-                              blok?.Content_2 || ""
-                            )}
+                            {modifyImagesWithLazyLoading(blok?.Content_2 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
                         {blok?.CTA_3 ? (
                           <div
                             className={`${
@@ -371,14 +375,16 @@ const Article = ({ blok }) => {
                           >
                             {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
                         {blok?.Content_3 ? (
                           <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(
-                              blok?.Content_3 || ""
-                            )}
+                            {modifyImagesWithLazyLoading(blok?.Content_3 || "")}
                           </div>
-                        ):<></>}
+                        ) : (
+                          <></>
+                        )}
                         {blok?.FAQ && blok?.FAQ?.length > 0 ? (
                           <BlogFAQ FAQData={blok?.FAQ} />
                         ) : (
@@ -402,7 +408,7 @@ const Article = ({ blok }) => {
                                 src={author?.authorImage}
                                 width={96}
                                 height={96}
-                                alt={author?.name ||"author-Image" }
+                                alt={author?.name || "author-Image"}
                                 className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
                               />
                             </div>
@@ -410,7 +416,7 @@ const Article = ({ blok }) => {
                           <div className="flex-1  w-[50%] single-author-bio-text">
                             <h3>
                               <Link
-                              className="text-[18px] lg:text-[24px]"
+                                className="text-[18px] lg:text-[24px]"
                                 href={
                                   author?.name === "Vikas Singh"
                                     ? "/blog/author/vikas-singh/"
@@ -426,15 +432,15 @@ const Article = ({ blok }) => {
                             </h3>
                             <p className="lg:!hidden !block !text-[14px] lg:text-[18px]">
                               {author?.mobileDesc}
-                          
                             </p>
                             <p className=" lg:!block !hidden ">
                               {author?.authorDesc}
-                          
                             </p>
                           </div>
                         </div>
-                      ):<></>}
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -451,15 +457,11 @@ const Article = ({ blok }) => {
         </div>
       </div>
 
-     
-
       <div className="container mx-auto md:!px-3 !px-4">
         <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
           <div className="service_sec3">
             <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
-              <p className="!ml-0 extra_bold !w-full">
-                You might also like
-              </p>
+              <p className="!ml-0 extra_bold !w-full">You might also like</p>
             </p>
           </div>
           <div
@@ -467,55 +469,52 @@ const Article = ({ blok }) => {
                xl:grid-cols-3 md:grid-cols-2
              grid-cols-1 items-center gap-[2rem]`}
           >
-      
-            {  blogData
-                ?.filter(({ slug }) => !pathname?.includes(slug))
-                ?.slice(0, `${isTablet ? 2 : 3}`)
-                ?.map(({ slug, name, content }, index) => (
-                  <div
-                    key={index}
-                    className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+            {blogData
+              ?.filter(({ slug }) => !pathname?.includes(slug))
+              ?.slice(0, `${isTablet ? 2 : 3}`)
+              ?.map(({ slug, name, content }, index) => (
+                <div
+                  key={index}
+                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                >
+                  <Link
+                    as={`/blog/${slug}`}
+                    href={`/blog/[slug]`}
+                    target="_blank"
+                    rel="external"
                   >
-                    <Link
-                      as={`/blog/${slug}`}
-                      href={`/blog/[slug]`}
-                      target="_blank"
-                      rel="external"
-                    >
-                      <div className="sec9_img1">
-                        <Image
-                          className="rounded-[30px]"
-                          src={
-                            content?.mobile_banner?.filename
-                              ? content?.mobile_banner?.filename
-                              : "/images/not-found-image.webp"
-                          }
-                          alt={
-                            content?.mobile_banner?.alt ||
-                            `Banner-img-${index}`
-                          }
-                          width={550}
-                          height={283}
-                        />
+                    <div className="sec9_img1">
+                      <Image
+                        className="rounded-[30px]"
+                        src={
+                          content?.mobile_banner?.filename
+                            ? content?.mobile_banner?.filename
+                            : "/images/not-found-image.webp"
+                        }
+                        alt={
+                          content?.mobile_banner?.alt || `Banner-img-${index}`
+                        }
+                        width={550}
+                        height={283}
+                      />
+                    </div>
+                    <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                      <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                        <p className="entry-title default-max-width aspect-[518/116]">
+                          {name}
+                        </p>
                       </div>
-                      <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                        <div className="border-b-[1px] border-[#80808038] py-[1rem]">
-                          <p className="entry-title default-max-width aspect-[518/116]">
-                            {name}
-                          </p>
-                        </div>
-                        <div className="sec9_txt2 mt-[1.5rem]">
-                          <p className="publish_date">
-                            {formattedDate(content?.Published)}
-                          </p>
-                        </div>
+                      <div className="sec9_txt2 mt-[1.5rem]">
+                        <p className="publish_date">
+                          {formattedDate(content?.Published)}
+                        </p>
                       </div>
-                    </Link>
-                  </div>
-                ))
-          }
+                    </div>
+                  </Link>
+                </div>
+              ))}
           </div>
-           {/* <div className="container mx-auto md:!px-3 !px-4">
+          {/* <div className="container mx-auto md:!px-3 !px-4">
         <div className="ready_sec !pb-0 !pt-[4rem]">
           <div className="ready_img relative">
             <p>
@@ -571,19 +570,15 @@ const Article = ({ blok }) => {
         </div>
       </div> */}
           <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
-                  <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
-                    <div className="h-full flex flex-col">
-                      <BlogContactForm />
-                    </div>
-                  </div>
-                </div>
+            <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+              <div className="h-full flex flex-col">
+                <BlogContactForm />
+              </div>
+            </div>
+          </div>
         </div>
-        
       </div>
-     
-    </>
-
-</div>
+    </div>
   );
 };
 
