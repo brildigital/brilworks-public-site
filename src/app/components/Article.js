@@ -51,6 +51,21 @@ const Article = ({ blok }) => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const { hash } = window.location;
+    if (hash) {
+      const headingId = hash.replace("#", ""); // Remove the # symbol to get the ID
+      setTimeout(() => {
+        const targetElement = document.getElementById(headingId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 500);
+    }
+  }, []);
+
   function modifyImagesWithLazyLoading(html) {
     return parse(html, {
       replace: (node, index) => {
