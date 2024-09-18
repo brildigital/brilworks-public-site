@@ -4,10 +4,15 @@ import React from "react";
 const page = () => {
   const itinerary = [
     {
+      day: "19th September 2024, Thursday",
+      schedule: [
+        { time: "11:00 PM", event: "Reporting at Office" },
+        { time: "11:30 PM", event: "Departure from Office" },
+      ],
+    },
+    {
       day: "Day 1: 20th September 2024, Friday",
       schedule: [
-        { time: "11:00 PM (Thursday)", event: "Reporting at Office" },
-        { time: "11:30 PM (Thursday)", event: "Departure from Office" },
         { time: "12:00 PM (Expected)", event: "Arrival at Kumbhalgarh" },
         { time: "12:00 PM - 01:00 PM", event: "Lunch" },
         {
@@ -30,7 +35,6 @@ const page = () => {
           event: "Swimming",
         },
         { time: "05:00 PM - 05:30 PM", event: "Hi-Tea" },
-        { time: "05:30 PM - 07:30 PM", event: "Activities" },
         { time: "07:30 PM - 09:00 PM", event: "Dinner" },
       ],
     },
@@ -48,6 +52,7 @@ const page = () => {
     "It is mandatory to wear Company Tshirt (Black or blue) during activities.",
     "Company will bear the expenses of food and entry charges for sightseeing.",
     "It is compulsory to carry Aadhaar card with you.",
+    "You can also carry googles and cap with you as per your need.",
     "We expect everyone to behave in a respectful manner with everyone. Any kind of bullying/Unkind behaviour/impropriety would not be tolerated.",
     "Looking at the weather conditions it is suggested to carry a raincoat and warm jacket with you.",
     "It is suggested to wear comfortable shoes as there will be a lot of walking and activities.",
