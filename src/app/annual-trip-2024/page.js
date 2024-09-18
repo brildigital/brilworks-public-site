@@ -42,7 +42,7 @@ const page = () => {
       day: "Day 3: 22nd September 2024, Sunday",
       schedule: [
         { time: "07:30 AM - 10:00 AM", event: "Breakfast" },
-        { time: "11:00 AM", event: "Departure from Kumbhalgarh" },
+        { time: "10:00 AM", event: "Departure from Kumbhalgarh" },
       ],
     },
   ];
