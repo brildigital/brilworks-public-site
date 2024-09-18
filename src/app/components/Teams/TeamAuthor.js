@@ -279,25 +279,27 @@ const TeamAuthor = ({ authorName }) => {
                   I’m always available for a conversation on how we can
                   collaborate and achieve your business goals.
                 </p>
-                <div className="lg:w-[90%] w-full flex items-center justify-start sxl:flex-row flex-col lg:gap-8 gap-5">
+                <div className="lg:w-[90%] w-full flex items-center justify-start 2xl:flex-row flex-col lg:gap-8 gap-5">
                   <a
                     href={`mailto:${author?.email}`}
                     target="_blank"
                     className="w-full border-themeColor border-2 rounded-full"
                   >
-                    <div className="w-full flex items-center justify-around py-[10px] pl-5 pr-3">
-                      <div>
-                        <Image
-                          className="w-[32px]"
-                          src="/images/team-mail-icon.png"
-                          width="32"
-                          height="32"
-                          alt="whatsapp-icon"
-                        />
-                      </div>
+                    <div className="flex items-center justify-between py-[10px] pl-5 pr-3">
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <Image
+                            className="!w-[32px]"
+                            src="/images/team-mail-icon.png"
+                            width="32"
+                            height="32"
+                            alt="whatsapp-icon"
+                          />
+                        </div>
 
-                      <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite pl-4 pr-2">
-                        {author?.email}
+                        <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite">
+                          {author?.email}
+                        </div>
                       </div>
                       <div className="flex justify-end">
                         <Image
@@ -315,21 +317,23 @@ const TeamAuthor = ({ authorName }) => {
                     target="_blank"
                     className="w-full border-themeColor border-2 rounded-full"
                   >
-                    <div className="w-full flex items-center justify-around py-[10px] pl-5 pr-3">
-                      <div>
-                        <Image
-                          className="w-[32px]"
-                          src="/images/team-whatsapp.png"
-                          width="32"
-                          height="32"
-                          alt="whatsapp-icon"
-                        />
-                      </div>
+                    <div className="flex items-center justify-between py-[10px] pl-5 pr-3">
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <Image
+                            className="w-[32px]"
+                            src="/images/team-whatsapp.png"
+                            width="32"
+                            height="32"
+                            alt="whatsapp-icon"
+                          />
+                        </div>
 
-                      <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite pl-4 pr-2">
-                        {formatPhoneNumber(author?.whatsapp)}
+                        <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite">
+                          {formatPhoneNumber(author?.whatsapp)}
+                        </div>
                       </div>
-                      <div className="flex justify-end">
+                      <div className="flex items-center justify-end">
                         <Image
                           className="w-[40px]"
                           src="/images/arrow-down-theme.svg"
