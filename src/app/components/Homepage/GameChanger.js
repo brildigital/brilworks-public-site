@@ -8,14 +8,6 @@ const GameChanger = () => {
   const isMobile = useMediaQuery({ maxWidth: 480 });
   return (
     <div className="relative">
-      <div className="sticky md:top-[9%] top-[7%] z-10">
-        <Image
-          src="/images/Gitex Global.webp"
-          alt="upcoming-event"
-          width="1440"
-          height="80"
-        />
-      </div>
       <div className="home_sec1_img">
         <Image
           className="w-full md:h-[600px] xl:h-auto h-auto"
