@@ -64,7 +64,7 @@ const TeamAuthor = ({ authorName }) => {
 
   function extractParenthesesText(text) {
     const match = text.match(/\(([^)]+)\)/); // Regex to extract content inside parentheses
-    return match ? match[1] : null; // Return the match or null if not found
+    return match ? match[1] : text; // Return the match or null if not found
   }
 
   if (!author) {
@@ -78,31 +78,37 @@ const TeamAuthor = ({ authorName }) => {
   const brilworksServices = [
     {
       title: "Mobile App Development",
+      pageUrl: "/application-development-services/",
       description:
         "From MVPs to scalable apps, we build for iOS and Android using technologies like Flutter Flow and React Native.",
     },
     {
       title: "Generative AI & ML",
+      pageUrl: "/generative-ai-development-services/",
       description:
         "Automate processes, gain insights, and enhance decision-making with AI-driven solutions.",
     },
     {
       title: "Custom Software",
+      pageUrl: "/product-engineering-development-services/",
       description:
         "Develop tailored software for unique business needs, from web apps to enterprise platforms.",
     },
     {
       title: "Low-Code/No-Code",
+      pageUrl: "/low-code-no-code-development-services/s",
       description:
         "Accelerate product development with platforms like Adalo and Builder.ai.",
     },
     {
       title: "Cloud & DevOps",
+      pageUrl: "/aws-consulting-services/",
       description:
         "Enable cloud migrations and set up CI/CD pipelines for optimal app performance.",
     },
     {
       title: "IT Consulting & Team Augmentation",
+      pageUrl: "/staff-augmentation/",
       description:
         "Scale your team with specialized talent or seek strategic tech advice.",
     },
@@ -218,7 +224,12 @@ const TeamAuthor = ({ authorName }) => {
               {brilworksServices.map((service, index) => (
                 <div key={index}>
                   <h3 className="text-center !font-semibold lg:text-2xl text-xl mb-1">
-                    {service.title}
+                    <Link
+                      href={service.pageUrl}
+                      className="hover:!text-themeColor duration-200 ease-in-out"
+                    >
+                      {service.title}
+                    </Link>
                   </h3>
                   <p className="sxl:w-4/5 md:w-[90%] w-full mx-auto text-center text-colorGray lg:text-[22px] text-xl !leading-7">
                     {service.description}
