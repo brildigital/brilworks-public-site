@@ -8,6 +8,14 @@ const GameChanger = () => {
   const isMobile = useMediaQuery({ maxWidth: 480 });
   return (
     <div className="relative">
+      <div className="sticky md:top-[9%] top-[7%] z-10">
+        <Image
+          src="/images/Gitex Global.webp"
+          alt="upcoming-event"
+          width="1440"
+          height="80"
+        />
+      </div>
       <div className="home_sec1_img">
         <Image
           className="w-full md:h-[600px] xl:h-auto h-auto"
@@ -38,9 +46,12 @@ const GameChanger = () => {
               <h2 className="sxl:!text-2xl !text-base">
                 {/* Focused on AWS consulting and generative AI, we boost
                 engineering and design capacity, */}
-                Accelerating product timelines, optimizing AWS, and delivering Gen AI solutions,
-                <br className="hidden slg:block" /> White label apps, and Product engineering expertise in Next.js, Java, and low-code/no-code platforms.
-{/* 
+                Accelerating product timelines, optimizing AWS, and delivering
+                Gen AI solutions,
+                <br className="hidden slg:block" /> White label apps, and
+                Product engineering expertise in Next.js, Java, and
+                low-code/no-code platforms.
+                {/* 
                 hasten product and MVP
                 timelines, automate operations, and minimize expenses. */}
               </h2>
