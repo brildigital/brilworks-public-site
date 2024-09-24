@@ -356,7 +356,7 @@ const TeamAuthor = ({ authorName }) => {
                     </div>
                   </Link>
                   <button className="2xl:w-3/4 w-full bg-themeColor py-[14px] rounded-full font-semibold text-xl !leading-8 text-colorWhite border-2 border-themeColor hover:bg-transparent">
-                    Book Free Consultation
+                    <Link href="/contact-us/">Book Free Consultation</Link>
                   </button>
                 </div>
               </div>
