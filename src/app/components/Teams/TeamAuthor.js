@@ -272,7 +272,7 @@ const TeamAuthor = ({ authorName }) => {
 
         <div className="bg-[#151B21]">
           <div className="container md:w-[90%] !mx-auto">
-            <div className="lg:px-6 lg:py-16 md:py-12 py-10 px-4 flex lg:flex-row flex-col sxl:gap-20 gap-10 md:w-4/5 w-full mx-auto">
+            <div className="lg:px-6 lg:py-16 md:py-12 py-10 px-4 flex lg:flex-row flex-col sxl:gap-20 gap-10 md:w-11/12 w-full mx-auto">
               <div className="md:max-w-[324px] w-fit">
                 <Image
                   className="w-full"
@@ -286,15 +286,15 @@ const TeamAuthor = ({ authorName }) => {
                 <h2 className="text-themeColor font-semibold sxl:text-[70px] md:text-5xl text-4xl mb-5">
                   Reach Out to Me
                 </h2>
-                <p className="sxl:w-4/5 w-full text-colorWhite lg:text-[28px] text-xl md:!leading-8 !mb-5">
+                <p className="sxl:w-4/5 w-full text-colorWhite lg:text-[22px] text-xl md:!leading-8 !mb-5">
                   I’m always available for a conversation on how we can
                   collaborate and achieve your business goals.
                 </p>
-                <div className="lg:w-[90%] w-full flex items-center justify-start 2xl:flex-row flex-col lg:gap-8 gap-5">
+                <div className="w-full flex items-center justify-start 2xl:flex-row flex-col gap-5">
                   <a
                     href={`mailto:${author?.email}`}
                     target="_blank"
-                    className="w-full border-themeColor border-2 rounded-full"
+                    className="2xl:w-11/12 w-full border-themeColor border-2 rounded-full"
                   >
                     <div className="flex items-center justify-between py-[10px] pl-5 pr-3">
                       <div className="flex items-center gap-4">
@@ -308,7 +308,7 @@ const TeamAuthor = ({ authorName }) => {
                           />
                         </div>
 
-                        <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite">
+                        <div className="font-semibold text-xl !leading-5 text-colorWhite">
                           {author?.email}
                         </div>
                       </div>
@@ -326,7 +326,7 @@ const TeamAuthor = ({ authorName }) => {
                   <Link
                     href={`https://wa.me/${author.whatsapp}`}
                     target="_blank"
-                    className="w-full border-themeColor border-2 rounded-full"
+                    className="2xl:w-4/5 w-full border-themeColor border-2 rounded-full"
                   >
                     <div className="flex items-center justify-between py-[10px] pl-5 pr-3">
                       <div className="flex items-center gap-4">
@@ -340,7 +340,7 @@ const TeamAuthor = ({ authorName }) => {
                           />
                         </div>
 
-                        <div className="font-semibold slg:text-[22px] text-xl !leading-5 text-colorWhite">
+                        <div className="font-semibold text-xl !leading-5 text-colorWhite">
                           {formatPhoneNumber(author?.whatsapp)}
                         </div>
                       </div>
@@ -355,6 +355,9 @@ const TeamAuthor = ({ authorName }) => {
                       </div>
                     </div>
                   </Link>
+                  <button className="2xl:w-3/4 w-full bg-themeColor py-[14px] rounded-full font-semibold text-xl !leading-8 text-colorWhite border-2 border-themeColor hover:bg-transparent">
+                    Book Free Consultation
+                  </button>
                 </div>
               </div>
             </div>

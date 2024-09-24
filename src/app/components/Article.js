@@ -270,7 +270,9 @@ const Article = ({ blok }) => {
                               handleTableOfContentLinkClick(e, index)
                             }
                             className={`${
-                              index == activeLink ? "page-active" : ""
+                              textToId(heading?.text) == activeLink
+                                ? "page-active"
+                                : ""
                             }`}
                           >
                             {heading.text}
