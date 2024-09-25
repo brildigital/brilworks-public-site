@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import allBlogs from "../../components/lib/allBlogs.json";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { industryMenuItems, servicesMenuItems } from "../lib/constants";
 
@@ -253,13 +252,13 @@ const Sitemap = () => {
           </h3>
 
           <div className="grid gap-[10px] grid-cols-1">
-            {allBlogs.length ? (
-              allBlogs.map(({ slug, name }, index) => {
+            {blogListStaticData.length ? (
+              blogListStaticData.map(({ loc, name }, index) => {
                 return (
                   <div key={index}>
                     <li>
                       <Link
-                        as={`/blog/${slug}`}
+                        as={`/blog/${loc.split("/").filter(Boolean).pop()}/`}
                         href={`/blog/[slug]`}
                         className="font-medium"
                       >
