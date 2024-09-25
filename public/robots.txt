@@ -22,7 +22,6 @@ Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
 Disallow: /wp-content/*
 Disallow: /teams/*
-Disallow: /annual-trip-2024/
 
 Sitemap: https://www.brilworks.com/sitemap.xml
 

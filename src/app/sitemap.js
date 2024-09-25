@@ -1,4 +1,4 @@
-import { blogSitemapData, sitemapData } from "./components/lib/constants";
+import { blogListStaticData, sitemapData } from "./components/lib/constants";
 
 export default async function sitemap() {
   const staticPagesData = sitemapData.map((data) => {
@@ -7,7 +7,7 @@ export default async function sitemap() {
       lastModified: `${data?.lastmod}`,
     };
   });
-  const blog = blogSitemapData.map((data) => {
+  const blog = blogListStaticData.map((data) => {
     return {
       url: `${data?.loc}`,
       lastModified: `${data?.lastmod}`,
