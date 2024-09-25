@@ -161,7 +161,7 @@ const NewHeader = () => {
         </div>
       </header>
       <div className={pathname === "/" ? "relative" : "hidden"}>
-        <div className="fixed z-10" style={{ top: `${navbarHeight}px` }}>
+        <div className="fixed z-10 w-full" style={{ top: `${navbarHeight}px` }}>
           <Image
             src="/images/Gitex Global.webp"
             alt="upcoming-event"
