@@ -536,6 +536,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "9 Popular Architectures for Software Development You Should Know",
+    loc: "https://www.brilworks.com/blog/popular-architectures-for-software-development/",
+    lastmod: "2024-09-29T11:32:56.071Z",
+  },
+  {
+    name: "How AWS Services Streamline Real-time IoT Data Processing",
+    loc: "https://www.brilworks.com/blog/aws-services-streamline-real-time-iot-data-processing/",
+    lastmod: "2024-09-27T10:00:31.989Z",
+  },
+  {
+    name: "The State of Generative AI in 2024",
+    loc: "https://www.brilworks.com/blog/state-of-generative-ai/",
+    lastmod: "2024-09-26T11:51:21.399Z",
+  },
+  {
     name: "AWS IoT Device Management: Features and How It Works",
     loc: "https://www.brilworks.com/blog/aws-iot-device-management-features-and-how-it-works/",
     lastmod: "2024-09-17T06:11:42.185Z",
@@ -593,7 +608,7 @@ export const blogListStaticData = [
   {
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
-    lastmod: "2024-09-04T04:37:56.002Z",
+    lastmod: "2024-09-26T06:07:02.279Z",
   },
   {
     name: "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -1048,7 +1063,7 @@ export const blogListStaticData = [
   {
     name: "Best Node.js Open Source Projects in GitHub",
     loc: "https://www.brilworks.com/blog/best-node-js-open-source-projects-in-github/",
-    lastmod: "2024-08-09T11:33:54.689Z",
+    lastmod: "2024-09-27T12:08:54.770Z",
   },
   {
     name: "Next.js 13 Drops with Exciting Updates: Find Out What’s New?",
@@ -1078,7 +1093,7 @@ export const blogListStaticData = [
   {
     name: "What are White Label Apps? A Closer Look & Popular Examples",
     loc: "https://www.brilworks.com/blog/what-are-white-label-apps-and-popular-examples/",
-    lastmod: "2024-08-12T09:27:39.857Z",
+    lastmod: "2024-09-27T11:26:15.592Z",
   },
   {
     name: "Top Popular Apps Built With React Native",
