@@ -536,6 +536,11 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "GITEX Global 2024: The Ultimate Tech Innovations You Can't Miss!",
+    loc: "https://www.brilworks.com/blog/gitex-global-2024/",
+    lastmod: "2024-10-02T14:00:36.424Z",
+  },
+  {
     name: "9 Popular Architectures for Software Development You Should Know",
     loc: "https://www.brilworks.com/blog/popular-architectures-for-software-development/",
     lastmod: "2024-09-29T11:32:56.071Z",
@@ -1093,7 +1098,7 @@ export const blogListStaticData = [
   {
     name: "What are White Label Apps? A Closer Look & Popular Examples",
     loc: "https://www.brilworks.com/blog/what-are-white-label-apps-and-popular-examples/",
-    lastmod: "2024-09-27T11:26:15.592Z",
+    lastmod: "2024-10-02T05:52:38.625Z",
   },
   {
     name: "Top Popular Apps Built With React Native",
