@@ -162,12 +162,14 @@ const NewHeader = () => {
       </header>
       <div className={pathname === "/" ? "relative" : "hidden"}>
         <div className="fixed z-10 w-full" style={{ top: `${navbarHeight}px` }}>
-          <Image
-            src="/images/Gitex Global.webp"
-            alt="upcoming-event"
-            width="1440"
-            height="80"
-          />
+          <Link href="https://www.gitex.com/" target="_blank">
+            <Image
+              src="/images/Gitex Global.webp"
+              alt="upcoming-event"
+              width="1440"
+              height="80"
+            />
+          </Link>
         </div>
       </div>
     </>
