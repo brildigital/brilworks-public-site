@@ -82,6 +82,15 @@ const ClientReviews = () => {
     },
   ];
 
+  const videoSources = [
+    "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4",
+    "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4",
+    "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4",
+    "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4",
+  ];
+
+  const videoSrc = videoSources[reviewIndex];
+
   return (
     <>
       <div className="section-padding">
@@ -127,51 +136,16 @@ const ClientReviews = () => {
                 </div>
 
                 <div onClick={() => setVideoPause(!isVideoPause)}>
-                  {reviewIndex === 0 ? (
+                  {videoSrc && (
                     <video
                       className="!rounded-[30px]"
-                      src={
-                        "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4"
-                      }
+                      src={videoSrc}
                       controls
                       loading="lazy"
                       width="320"
                       height="200"
                     />
-                  ) : reviewIndex === 1 ? (
-                    <video
-                      loading="lazy"
-                      className="!rounded-[30px]"
-                      src={
-                        "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4"
-                      }
-                      controls
-                      width="320"
-                      height="200"
-                    />
-                  ) : reviewIndex === 2 ? (
-                    <video
-                      className="!rounded-[30px]"
-                      src={
-                        "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4"
-                      }
-                      controls
-                      loading="lazy"
-                      width="320"
-                      height="200"
-                    />
-                  ) : reviewIndex === 3 ? (
-                    <video
-                      className="!rounded-[30px]"
-                      src={
-                        "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4"
-                      }
-                      controls
-                      loading="lazy"
-                      width="320"
-                      height="200"
-                    />
-                  ) : null}
+                  )}
                 </div>
               </div>
 
