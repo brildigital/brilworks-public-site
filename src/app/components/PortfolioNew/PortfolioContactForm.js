@@ -37,21 +37,16 @@ const PortfolioContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      //   const response = await fetch(
-      //     `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
-      //     {
-      //       method: "POST",
-      //       header: {
-      //         "Content-Type": "application/json",
-      //       },
-      //       body: JSON.stringify({ ...formData, page: pathname }),
-      //     }
-      //   );
-      console.log(
-        "Form submit data",
-        JSON.stringify({ ...formData, page: pathname })
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
       );
-      const response = { ok: true };
 
       if (response.ok) {
         setFormData({ name: "", company: "", email: "", message: "" });

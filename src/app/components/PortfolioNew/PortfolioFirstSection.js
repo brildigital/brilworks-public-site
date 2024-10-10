@@ -22,31 +22,6 @@ const PortfolioFirstSection = ({
             <p className="md:text-xl text-lg text-colorGray !mb-6">
               {description}
             </p>
-            {/* <div className="flex flex-wrap gap-4">
-              {KeyValueBlock?.length &&
-                KeyValueBlock?.map(
-                  ({ Key, Value }, index) =>
-                    Key &&
-                    Value && (
-                      {["Talk", "expert"].some((word) => Value.includes(word)) ? (
-                        <Link
-                          className="font-medium !mb-4 text-xl"
-                          key={index}
-                          href={Value} // Replace this with the actual URL or logic to generate it
-                        >
-                          <span className="text-themeColor">{Key}</span>
-                          &nbsp;{Value}
-                        </Link>
-                      ) : (
-                        <p className="font-medium !mb-4 text-xl" key={index}>
-                        <span className="text-themeColor">{Key}</span>
-                        &nbsp;{Value}
-                      </p>
-                      )}
-                      
-                    )
-                )}
-            </div> */}
             <div className="flex flex-wrap gap-4">
               {KeyValueBlock?.length &&
                 KeyValueBlock.map(
