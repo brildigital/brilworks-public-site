@@ -90,62 +90,72 @@
 
 .portfolio-swipers {
   position: relative;
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    position: absolute;
-    bottom: 0; /* Center vertically */
-    transform: translateY(40%); /* Adjust for exact centering */
-    height: auto;
-    width: auto;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+  .swiper-pagination-bullet {
+    margin: 0 5px !important;
+    width: 10px;
+    height: 10px;
   }
 
-  .swiper-button-next {
-    right: 38%;
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--theme-color);
   }
 
-  .swiper-button-prev {
-    left: 38%; /* Align on the left side */
-  }
+  // .swiper-button-next,
+  // .swiper-button-prev {
+  //   position: absolute;
+  //   bottom: 0; /* Center vertically */
+  //   transform: translateY(40%); /* Adjust for exact centering */
+  //   height: auto;
+  //   width: auto;
+  //   -webkit-transition: all 0.3s;
+  //   transition: all 0.3s;
+  // }
 
-  .swiper-button-next::before,
-  .swiper-button-prev::before {
-    content: "" !important;
-    background: 0 0 !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    width: 60px;
-    height: 60px;
-    border: 1px solid transparent;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
+  // .swiper-button-next {
+  //   right: 30%;
+  // }
 
-  .swiper-button-next::before {
-    background-image: url(/images/p-swiper-right.svg) !important;
-    transform: rotate(0deg);
-  }
+  // .swiper-button-prev {
+  //   left: 30%; /* Align on the left side */
+  // }
 
-  .swiper-button-prev::before {
-    background-image: url(/images/p-swiper-right.svg) !important;
-    transform: rotate(180deg);
-  }
+  // .swiper-button-next::before,
+  // .swiper-button-prev::before {
+  //   content: "" !important;
+  //   background: 0 0 !important;
+  //   background-repeat: no-repeat !important;
+  //   background-size: cover !important;
+  //   width: 60px;
+  //   height: 60px;
+  //   border: 1px solid transparent;
+  //   -webkit-transition: all 0.3s;
+  //   transition: all 0.3s;
+  // }
 
-  .swiper-button-next:hover::before {
-    background-image: url(/images/p-swiper-right-theme.svg.svg) !important;
-  }
+  // .swiper-button-next::before {
+  //   background-image: url(/images/p-swiper-right.svg) !important;
+  //   transform: rotate(0deg);
+  // }
 
-  .swiper-button-prev:hover::before {
-    background-image: url(/images/p-swiper-right-theme.svg.svg) !important;
-    transform: rotate(180deg);
-  }
+  // .swiper-button-prev::before {
+  //   background-image: url(/images/p-swiper-right.svg) !important;
+  //   transform: rotate(180deg);
+  // }
 
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: none;
-  }
+  // .swiper-button-next:hover::before {
+  //   background-image: url(/images/p-swiper-right-theme.svg.svg) !important;
+  // }
+
+  // .swiper-button-prev:hover::before {
+  //   background-image: url(/images/p-swiper-right-theme.svg.svg) !important;
+  //   transform: rotate(180deg);
+  // }
+
+  // .swiper-button-next::after,
+  // .swiper-button-prev::after {
+  //   display: none;
+  // }
 }
 
 /* Add responsive styles for different screen sizes */

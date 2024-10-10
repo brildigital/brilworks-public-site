@@ -3,7 +3,6 @@ import Heading from "../HTMLComponents/Heading";
 import Button from "../Common/Button";
 
 const PortfolioCTASection = ({ ctaData }) => {
-  const { title, description, button_text } = ctaData?.[0];
   return (
     <div className="bg-themeColor">
       <div className="px-[70px] py-[60px]">
@@ -13,14 +12,16 @@ const PortfolioCTASection = ({ ctaData }) => {
               <Heading
                 type="h2"
                 className="!text-colorWhite mb-5"
-                text={title}
+                text={ctaData?.[0]?.title}
               />
-              <p className="text-colorWhite text-2xl">{description}</p>
+              <p className="text-colorWhite text-2xl">
+                {ctaData?.[0]?.description}
+              </p>
             </div>
             <div className="">
               <Button
                 innerClassName="flex items-center justify-center !text-themeColor"
-                label={button_text}
+                label={ctaData?.[0]?.button_text}
                 variant="white"
               />
             </div>

@@ -48,166 +48,148 @@ const BrilworksSoftwareReview = () => {
   }, []);
 
   return (
-    <>
-      <div className="software-review-container main-section-padding w-full mx-auto">
-        {/* <div className="clutch-widget">
-          <iframe
-            id="iframe-0.7673398699825025"
-            style={{
-              border: "none",
-              overflow: "hidden",
-              display: "block",
-              height: "357px",
-            }}
-            title="&#091;iFrameSizer&#093;iframe-0.7673398699825025:0:0:mouseleave:674:121812"
-            src="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/"
-            height="375px"
-            scrolling="no"
-            className="mx-auto w-[100%]"
-          ></iframe>
-        </div> */}
-        <div className="software-review-head !pt-[0rem]">
-          <div className="sec4_main_home">
-            <div
-              className={`py-8 md:pb-[4rem] md:pt-0 pb-[2rem]  ${
-                isMobile ? "!pr-12" : ""
-              } `}
-            >
-              <div className="clutch-widget ">
-                <h2 className="md:mr-0 mr-8">
-                  <span className="md:!text-[45px] !font-bold text-[25px]">
-                    Reviews
-                  </span>
+    <div className="software-review-container main-section-padding w-full mx-auto">
+      <div className="software-review-head !pt-[0rem]">
+        <div className="sec4_main_home">
+          <div
+            className={`py-8 md:pb-[4rem] md:pt-0 pb-[2rem]  ${
+              isMobile ? "!pr-12" : ""
+            } `}
+          >
+            <div className="clutch-widget ">
+              <h2 className="md:mr-0 mr-8">
+                <span className="md:!text-[45px] !font-bold text-[25px]">
+                  Reviews
+                </span>
 
-                  <span className="md:!text-[32px] text-[25px]">
-                    {isMobile ? (
-                      <>
-                        /<br /> 5.0 <br />
-                      </>
-                    ) : (
-                      <>/ 5.0</>
-                    )}
-                  </span>
+                <span className="md:!text-[32px] text-[25px]">
+                  {isMobile ? (
+                    <>
+                      /<br /> 5.0 <br />
+                    </>
+                  ) : (
+                    <>/ 5.0</>
+                  )}
+                </span>
 
-                  <span className="star_clutch !text-[20px]">
-                    <FontAwesomeIcon icon={faStar} className="review_stars" />
-                    <FontAwesomeIcon icon={faStar} className="review_stars" />
-                    <FontAwesomeIcon icon={faStar} className="review_stars" />
-                    <FontAwesomeIcon icon={faStar} className="review_stars" />
-                    <FontAwesomeIcon icon={faStar} className="review_stars" />
-                  </span>
-                </h2>
+                <span className="star_clutch !text-[20px]">
+                  <FontAwesomeIcon icon={faStar} className="review_stars" />
+                  <FontAwesomeIcon icon={faStar} className="review_stars" />
+                  <FontAwesomeIcon icon={faStar} className="review_stars" />
+                  <FontAwesomeIcon icon={faStar} className="review_stars" />
+                  <FontAwesomeIcon icon={faStar} className="review_stars" />
+                </span>
+              </h2>
 
-                <div className="clutch-power lg:!relative !static mt-[20px] md:mr-0 ml-8">
-                  <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
-                    <p
-                      className={`!text-[1rem] flex items-baseline ${
-                        isMobile ? "flex-col" : ""
-                      } `}
-                    >
-                      Powered by
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="w-[70px] ml-1"
-                        width="70"
-                        height="26"
-                        src="/images/clutch-img.svg"
-                        alt="clutch"
-                      />
-                    </p>
-                  </Link>
-                </div>
+              <div className="clutch-power lg:!relative !static mt-[20px] md:mr-0 ml-8">
+                <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
+                  <p
+                    className={`!text-[1rem] flex items-baseline ${
+                      isMobile ? "flex-col" : ""
+                    } `}
+                  >
+                    Powered by
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      className="w-[70px] ml-1"
+                      width="70"
+                      height="26"
+                      src="/images/clutch-img.svg"
+                      alt="clutch"
+                    />
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        <Swiper
-          className="!w-[95%] !mx-auto reveal"
-          modules={[Pagination, Autoplay, Virtual]}
-          spaceBetween={isMobile ? 10 : 21}
-          autoplay={{ delay: 500 }}
-          loopfillgroupwithblank
-          speed={isMobile ? 1000 : 1500}
-          loop={true}
-          shouldswiperupdate="true"
-          pagination={{ clickable: true }}
-          virtual
-          breakpoints={{
-            1600: {
-              slidesPerView: 5,
-            },
-            1475: {
-              slidesPerView: 4,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            767: {
-              slidesPerView: 2,
-            },
-            575: {
-              slidesPerView: 1,
-            },
-          }}
-        >
-          {reviewData?.length > 0 ? (
-            reviewData?.map((dataItem, index) => (
-              <SwiperSlide key={index}>
-                <div className="wpb_wrapper">
-                  <div className="clutch-swiper home_sec3_box !mx-[1px] !max-w-[335px]">
-                    <div className="dots_flex">
-                      <div className="dots !bg-[#00dfb8]"></div>
-                      <div className="dots"></div>
-                      <div className="dots"></div>
+      </div>
+      <Swiper
+        className="!w-[95%] !mx-auto reveal"
+        modules={[Pagination, Autoplay, Virtual]}
+        spaceBetween={isMobile ? 10 : 21}
+        autoplay={{ delay: 500 }}
+        loopfillgroupwithblank
+        speed={isMobile ? 1000 : 1500}
+        loop={true}
+        shouldswiperupdate="true"
+        pagination={{ clickable: true }}
+        virtual
+        breakpoints={{
+          1600: {
+            slidesPerView: 5,
+          },
+          1475: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          767: {
+            slidesPerView: 2,
+          },
+          575: {
+            slidesPerView: 1,
+          },
+        }}
+      >
+        {reviewData?.length > 0 ? (
+          reviewData?.map((dataItem, index) => (
+            <SwiperSlide key={index}>
+              <div className="wpb_wrapper">
+                <div className="clutch-swiper home_sec3_box !mx-[1px] !max-w-[335px]">
+                  <div className="dots_flex">
+                    <div className="dots !bg-[#00dfb8]"></div>
+                    <div className="dots"></div>
+                    <div className="dots"></div>
+                  </div>
+                  <div className="white-background">
+                    <div className="clutch_content">
+                      <p>{dataItem?.content?.content}</p>
                     </div>
-                    <div className="white-background">
-                      <div className="clutch_content">
-                        <p>{dataItem?.content?.content}</p>
-                      </div>
-                      <div className="clutch_author">
-                        <div className="clutch_img"></div>
-                        <div className="clutch_position">
-                          <p>{dataItem?.content?.author}</p>
-                          <p>
-                            <span className="star_clutch">
-                              <FontAwesomeIcon
-                                icon={faStar}
-                                className="review_stars"
-                              />
-                              <FontAwesomeIcon
-                                icon={faStar}
-                                className="review_stars"
-                              />
-                              <FontAwesomeIcon
-                                icon={faStar}
-                                className="review_stars"
-                              />
-                              <FontAwesomeIcon
-                                icon={faStar}
-                                className="review_stars"
-                              />
-                              <FontAwesomeIcon
-                                icon={faStar}
-                                className="review_stars"
-                              />
-                            </span>
-                          </p>
-                        </div>
+                    <div className="clutch_author">
+                      <div className="clutch_img"></div>
+                      <div className="clutch_position">
+                        <p>{dataItem?.content?.author}</p>
+                        <p>
+                          <span className="star_clutch">
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className="review_stars"
+                            />
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className="review_stars"
+                            />
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className="review_stars"
+                            />
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className="review_stars"
+                            />
+                            <FontAwesomeIcon
+                              icon={faStar}
+                              className="review_stars"
+                            />
+                          </span>
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))
-          ) : (
-            <div className="w-full flex items-center justify-center py-10">
-              <FetchDataSpinner />
-            </div>
-          )}
-        </Swiper>
-      </div>
-    </>
+              </div>
+            </SwiperSlide>
+          ))
+        ) : (
+          <div className="w-full flex items-center justify-center py-10">
+            <FetchDataSpinner />
+          </div>
+        )}
+      </Swiper>
+    </div>
   );
 };
 
