@@ -73,7 +73,7 @@ const HowWeDeliveredParts = ({
 
 const HowWeDeliverSection = ({ howWeDelivered }) => {
   return (
-    <div className="px-[70px] py-[60px]">
+    <div className="px-[70px] pt-[60px]">
       <div className="container max-w-[1440px] mx-auto our-work-list-icon">
         <div className="mb-[60px]">
           <Heading
@@ -97,6 +97,16 @@ const HowWeDeliverSection = ({ howWeDelivered }) => {
         )}
         {howWeDelivered?.[3] && (
           <HowWeDeliveredParts {...howWeDelivered?.[3]} />
+        )}
+        {howWeDelivered?.[4] && (
+          <HowWeDeliveredParts
+            {...howWeDelivered?.[4]}
+            className="flex-row-reverse"
+            contentBg="bg-[#02B5D6]"
+          />
+        )}
+        {howWeDelivered?.[5] && (
+          <HowWeDeliveredParts {...howWeDelivered?.[5]} />
         )}
       </div>
     </div>
