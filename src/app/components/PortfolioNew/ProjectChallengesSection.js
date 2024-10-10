@@ -15,23 +15,23 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                 text={projectChallenges?.[0]?.Title}
               />
               {projectChallenges?.[0]?.Description1 && (
-                <p className="text-colorGray text-2xl !mb-16">
+                <p className="text-colorGray text-xl !mb-12">
                   {projectChallenges?.[0]?.Description1}
                 </p>
               )}
               {projectChallenges?.[0]?.Description2 && (
-                <p className="text-colorGray text-2xl">
+                <p className="text-colorGray text-xl">
                   {projectChallenges?.[0]?.Description2}
                 </p>
               )}
             </div>
-            <div>
+            <div className="w-[15%]">
               <Image
                 className="w-auto"
                 src={projectChallenges?.[0]?.Image?.filename}
                 alt={projectChallenges?.[0]?.Image?.alt || "project-challenges"}
-                width="300"
-                height="268"
+                width="280"
+                height="248"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
               projectChallenges?.[0]?.ListItem?.map(
                 ({ Display_text }, index) =>
                   Display_text && (
-                    <li className="text-colorGray text-2xl" key={index}>
+                    <li className="text-colorGray text-xl" key={index}>
                       {Display_text}
                     </li>
                   )
