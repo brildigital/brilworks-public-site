@@ -38,9 +38,8 @@ const SuccessThroughClientEyes = () => {
 
   return (
     <div className="w-full mx-auto software-review-container">
-      <div className="container max-w-[1440px] mx-auto pl-[0px] pt-[60px]">
+      <div className="container max-w-[1440px] mx-auto pt-[60px]">
         <div className="w-full flex items-center justify-between mb-[30px]">
-          {/* <div></div> */}
           <div>
             <Heading
               type="h2"
