@@ -45,7 +45,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="container max-w-[1280px] mx-auto">
+      <div className="container max-w-[1440px] mx-auto">
         <section className="portfolio md:mt-32 mt-24">
           <div className="service_width relative flex items-center justify-center">
             <div className="!bg-gradient-custom md:h-[46vh] h-[40vh] rounded-[30px] w-full flex items-center justify-center">

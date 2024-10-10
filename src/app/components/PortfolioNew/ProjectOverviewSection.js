@@ -11,13 +11,13 @@ const ProjectOverviewSection = ({ projectOverview }) => {
           text={projectOverview?.[0]?.Title}
         />
         {projectOverview?.[0]?.Description1 && (
-          <p className="text-colorGray text-2xl !mb-5">
+          <p className="text-colorGray text-xl !mb-5">
             {projectOverview?.[0]?.Description1}
           </p>
         )}
 
         {projectOverview?.[0]?.Description2 && (
-          <p className="text-colorGray text-2xl">
+          <p className="text-colorGray text-xl">
             {projectOverview?.[0]?.Description2}
           </p>
         )}
