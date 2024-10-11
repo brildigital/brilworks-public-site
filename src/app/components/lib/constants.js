@@ -436,25 +436,50 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/blog/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/vugo/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/trackimo/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/orokii/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/eccocar/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/rastrack/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+
   {
-    loc: "https://www.brilworks.com/portfolio/vugo/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/trackimo/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/orokii/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/eccocar/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/rastrack/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/ai-powered-platform-to-simplify-podcast-creation/",
+    lastmod: "2024-10-09T13:38:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
     loc: "https://www.brilworks.com/staff-augmentation/",
