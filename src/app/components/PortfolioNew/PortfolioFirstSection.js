@@ -16,17 +16,13 @@ const PortfolioFirstSection = ({
   return (
     <div className="section-padding !pt-24">
       <div className="container max-w-[1440px] mx-auto">
-        <Heading
-          type="h1"
-          text={title}
-          className="lg:mt-16 md:mt-12 mb-4 md:mb-10"
-        />
-        <div className="flex items-center justify-between lg:flex-row flex-col-reverse md:gap-8 gap-4">
+        <div className="flex items-center justify-between lg:flex-row flex-col gap-4 lg:mt-16 md:mt-12">
           <div className="lg:basis-3/5 lg:w-3/5 w-full">
-            <p className="md:text-xl text-lg text-colorGray !mb-6">
+            <Heading type="h1" text={title} className="mb-4 md:mb-6" />
+            <p className="md:text-xl text-lg text-colorGray !mb-6 lg:w-[90%] w-full">
               {description}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-x-4 gap-y-0">
               {KeyValueBlock?.length &&
                 KeyValueBlock.map(({ Key, Value }, index) =>
                   Key && Value && Value?.match(/(.*?)\s*\((.*?)\)/)?.[2] ? (
@@ -50,14 +46,14 @@ const PortfolioFirstSection = ({
 
             <Button
               innerClassName="flex items-center justify-center gap-2"
-              className="xl:mt-20 md:mt-14 mt-8"
+              className="xl:mt-10 md:mt-8 mt-4"
               redirect="#blueprint-section"
               label={buttontext}
               icon="right-arrow-next"
               scrollingButton
             />
           </div>
-          <div className="lg:basis-2/5 lg:w-[35%] w-full">
+          <div className="lg:basis-2/5 lg:w-2/5 w-full">
             <PortfolioSwiper imagesData={images} />
           </div>
         </div>

@@ -15,12 +15,18 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                 text={projectChallenges?.[0]?.Title}
               />
               {projectChallenges?.[0]?.Description1 && (
-                <p className="text-colorGray md:text-xl text-lg md:!mb-12 !mb-6">
+                <p
+                  className={`text-colorGray md:text-xl text-lg ${
+                    projectChallenges?.[0]?.Description2
+                      ? "!mb-6"
+                      : "md:!mb-8 !mb-6"
+                  }`}
+                >
                   {projectChallenges?.[0]?.Description1}
                 </p>
               )}
               {projectChallenges?.[0]?.Description2 && (
-                <p className="text-colorGray md:text-xl text-lg">
+                <p className="text-colorGray md:text-xl text-lg md:!mb-12 !mb-6">
                   {projectChallenges?.[0]?.Description2}
                 </p>
               )}
