@@ -38,23 +38,23 @@ const SuccessThroughClientEyes = () => {
 
   return (
     <div className="w-full mx-auto software-review-container">
-      <div className="container max-w-[1440px] mx-auto pt-[60px]">
-        <div className="w-full flex items-center justify-between mb-[30px]">
+      <div className="container max-w-[1440px] mx-auto lg:pt-[60px] md:pt-16 pt-8">
+        <div className="w-full flex md:flex-row flex-col items-center justify-between px-4 mb-[30px]">
           <div>
             <Heading
               type="h2"
-              className="text-center"
+              className=""
               text="SUCCESS THROUGH OUR CLIENTS' EYES"
             />
           </div>
-          <div className="flex items-center justify-end">
+          <div className="w-full md:w-auto flex items-center justify-end">
             <Link href="https://clutch.co/profile/brilworks-software#reviews">
               <p className="text-themeColor font-semibold p-4 rounded-lg">{`View All >>`}</p>
             </Link>
           </div>
         </div>
         <Swiper
-          className="!w-full !mx-auto mb-10"
+          className="lg:!w-full !w-[95%] !mx-auto md:mb-10 mb-6"
           modules={[Pagination, Autoplay, Virtual]}
           spaceBetween={isMobile ? 10 : 21}
           autoplay={{ delay: 500 }}

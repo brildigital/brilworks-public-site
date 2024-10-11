@@ -536,14 +536,19 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Is AWS the Right Cloud Solution for Your Small Business?",
+    loc: "https://www.brilworks.com/blog/aws-for-small-business/",
+    lastmod: "2024-10-09T13:38:44.468Z",
+  },
+  {
     name: "GITEX Global 2024: The Ultimate Tech Innovations You Can't Miss!",
     loc: "https://www.brilworks.com/blog/gitex-global-2024/",
-    lastmod: "2024-10-02T14:00:36.424Z",
+    lastmod: "2024-10-04T11:59:29.844Z",
   },
   {
     name: "9 Popular Architectures for Software Development You Should Know",
     loc: "https://www.brilworks.com/blog/popular-architectures-for-software-development/",
-    lastmod: "2024-09-29T11:32:56.071Z",
+    lastmod: "2024-10-09T08:27:52.877Z",
   },
   {
     name: "How AWS Services Streamline Real-time IoT Data Processing",
@@ -813,7 +818,7 @@ export const blogListStaticData = [
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
     loc: "https://www.brilworks.com/blog/nestjs-vs-nextjs/",
-    lastmod: "2024-08-07T06:04:24.987Z",
+    lastmod: "2024-10-08T13:41:44.325Z",
   },
   {
     name: "Amazon S3: A Cloud Storage Solution for Every Business",

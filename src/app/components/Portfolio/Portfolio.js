@@ -6,6 +6,12 @@ import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import DevelopSuccessStory from "./DevelopSuccessStory";
 import { usePathname } from "next/navigation";
+import StoryblokClient from "storyblok-js-client";
+import Image from "next/image";
+
+const Storyblok = new StoryblokClient({
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+});
 
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
@@ -18,8 +24,23 @@ const Portfolio = () => {
     ["text-colorBlack", "text-colorBlack", "text-colorWhite"],
   ];
 
+  const [caseStudyData, setCaseStudyData] = useState();
   const [colorClasses, setColorClasses] = useState(colorSequences[0]);
   const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    Storyblok.get("cdn/stories/", {
+      starts_with: "portfolio/",
+      per_page: 20,
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    })
+      .then((response) => {
+        setCaseStudyData(response.data?.stories);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,7 +89,6 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-
           <div className="service_width">
             <h2 className="xl:!pt-20 md:!pt-16 !pt-8 font-bold xl:text-5xl lg:text-4xl md:text-3xl text-2xl mb-4">
               Our Recent <span className="text-themeColor">Work</span>
@@ -77,8 +97,48 @@ const Portfolio = () => {
               See how our work enable companies to excel in their industry.
             </p>
           </div>
-
-          <div className="portflio_flex_row portfolio_sec service_width reveal">
+          {caseStudyData?.length &&
+            caseStudyData?.map(({ name, content, full_slug }, index) => {
+              return (
+                <div
+                  className="portflio_flex_row portfolio_sec service_width reveal"
+                  key={index}
+                >
+                  <div
+                    className={`basis-1/2 ${
+                      (index + 1) % 2 === 0 ? "order-2 md:order-1" : ""
+                    }`}
+                  >
+                    <div className="portfolio_color_style">
+                      <div className="porfolio_sec1_img relative">
+                        <Image
+                          className="alignnone"
+                          src={content?.images?.[0]?.filename}
+                          width="302"
+                          height="240"
+                          alt={`casestudy-${index}`}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="basis-1/2">
+                    <div className="portfolio_sec1_txt1">
+                      <p>{content?.title}</p>
+                    </div>
+                    <div className="portfolio_sec1_txt2 portfolio_description_width">
+                      <p>{content?.description}</p>
+                    </div>
+                    <Button
+                      innerClassName="flex items-center justify-center gap-2"
+                      redirect={`/${full_slug}/`}
+                      label="Know More"
+                      icon="right-arrow-next"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          {/* <div className="portflio_flex_row portfolio_sec service_width reveal">
             <div className="basis-1/2">
               <div className="portfolio_color_style">
                 <div className="porfolio_sec1_img relative">
@@ -114,8 +174,7 @@ const Portfolio = () => {
                 icon="right-arrow-next"
               />
             </div>
-          </div>
-
+          </div> */}
           <div className="portflio_flex_row service_width reveal">
             <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
@@ -152,7 +211,6 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-
           <div className="portflio_flex_row portfolio_sec service_width reveal">
             <div className="basis-1/2">
               <div className="portfolio_color_style">
@@ -191,7 +249,6 @@ const Portfolio = () => {
               />
             </div>
           </div>
-
           <div className="portflio_flex_row service_width reveal">
             <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
@@ -229,7 +286,6 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
-
           <div className="portflio_flex_row portfolio_sec service_width reveal">
             <div className="basis-1/2">
               <div className="portfolio_color_style">

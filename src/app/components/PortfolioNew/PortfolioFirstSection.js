@@ -16,35 +16,35 @@ const PortfolioFirstSection = ({
   return (
     <div className="section-padding !pt-24">
       <div className="container max-w-[1440px] mx-auto">
-        <Heading type="h1" text={title} className="mt-16 mb-10" />
-        <div className="flex items-center justify-between lg:flex-row flex-col-reverse gap-8">
-          <div className="lg:basis-3/5 lg:w-3/5">
+        <Heading
+          type="h1"
+          text={title}
+          className="lg:mt-16 md:mt-12 mb-4 md:mb-10"
+        />
+        <div className="flex items-center justify-between lg:flex-row flex-col-reverse md:gap-8 gap-4">
+          <div className="lg:basis-3/5 lg:w-3/5 w-full">
             <p className="md:text-xl text-lg text-colorGray !mb-6">
               {description}
             </p>
             <div className="flex flex-wrap gap-4">
               {KeyValueBlock?.length &&
-                KeyValueBlock.map(
-                  ({ Key, Value }, index) =>
-                    Key &&
-                    Value &&
-                    (["Talk", "talk", "Expert", "expert"].some((word) =>
-                      Value.includes(word)
-                    ) ? (
-                      <Link
-                        className="font-medium !mb-4 text-xl hover:!text-themeColor"
-                        key={index}
-                        href="https://cal.com/brilworks/free-consultation?utm_source=CaseStudy&utm_medium=org&utm_campaign=SEO" // Replace this with the actual URL or logic to generate it
-                      >
-                        <span className="text-themeColor">{Key}</span>
-                        &nbsp;{Value}
-                      </Link>
-                    ) : (
-                      <p className="font-medium !mb-4 text-xl" key={index}>
-                        <span className="text-themeColor">{Key}</span>
-                        &nbsp;{Value}
-                      </p>
-                    ))
+                KeyValueBlock.map(({ Key, Value }, index) =>
+                  Key && Value && Value?.match(/(.*?)\s*\((.*?)\)/)?.[2] ? (
+                    <Link
+                      className="font-medium lg:!mb-4 text-xl hover:!text-themeColor"
+                      key={index}
+                      href={Value?.match(/\((.*?)\)/)?.[1]}
+                      target="_blank"
+                    >
+                      <span className="text-themeColor">{Key}</span>
+                      &nbsp;{Value.match(/(.*?)\s*\((.*?)\)/)?.[1]}
+                    </Link>
+                  ) : (
+                    <p className="font-medium lg:!mb-4 text-xl" key={index}>
+                      <span className="text-themeColor">{Key}</span>
+                      &nbsp;{Value}
+                    </p>
+                  )
                 )}
             </div>
 
@@ -57,7 +57,7 @@ const PortfolioFirstSection = ({
               scrollingButton
             />
           </div>
-          <div className="lg:basis-2/5 lg:w-[35%]">
+          <div className="lg:basis-2/5 lg:w-[35%] w-full">
             <PortfolioSwiper imagesData={images} />
           </div>
         </div>

@@ -12,8 +12,10 @@ const HowWeDeliveredParts = ({
   contentBg = "bg-themeColor",
 }) => {
   return (
-    <div className={`flex gap-[30px] w-full mb-[60px] ${className}`}>
-      <div className="flex-[0.25]">
+    <div
+      className={`flex flex-col lg:flex-row lg:gap-[30px] gap-5 w-full lg:mb-[60px] mb-8 ${className}`}
+    >
+      <div className="lg:flex-[0.25]">
         <Image
           className="w-full h-auto"
           src={imageData?.filename}
@@ -22,8 +24,10 @@ const HowWeDeliveredParts = ({
           height="389"
         />
       </div>
-      <div className={`${contentBg} rounded-[10px] p-10 flex-[0.75]`}>
-        <div className="w-11/12">
+      <div
+        className={`${contentBg} rounded-[10px] lg:p-10 md:p-8 p-6 lg:flex-[0.75]`}
+      >
+        <div className="lg:w-11/12 w-full">
           <Heading
             type="h3"
             text={Title}
@@ -35,7 +39,7 @@ const HowWeDeliveredParts = ({
           />
           {Description1 && (
             <p
-              className={`text-colorWhite text-xl ${
+              className={`text-colorWhite md:text-xl text-lg ${
                 Description2 ? "" : "!mb-6"
               }`}
             >
@@ -44,7 +48,7 @@ const HowWeDeliveredParts = ({
           )}
           {Description2 && (
             <p
-              className={`text-colorWhite text-xl ${
+              className={`text-colorWhite md:text-xl text-lg ${
                 Description2 ? "!mb-6" : ""
               }`}
             >
@@ -57,7 +61,7 @@ const HowWeDeliveredParts = ({
                 ({ Display_text }, index) =>
                   Display_text && (
                     <li
-                      className="text-colorWhite text-xl white-icon"
+                      className="text-colorWhite md:text-xl text-lg white-icon"
                       key={index}
                     >
                       {Display_text}
@@ -73,15 +77,15 @@ const HowWeDeliveredParts = ({
 
 const HowWeDeliverSection = ({ howWeDelivered }) => {
   return (
-    <div className="px-[70px] pt-[60px]">
+    <div className="lg:px-[70px] px-4 lg:pt-[60px] pt-8">
       <div className="container max-w-[1440px] mx-auto our-work-list-icon">
-        <div className="mb-[60px]">
+        <div className="lg:mb-[60px] mb-8">
           <Heading
             type="h2"
             className="text-center mb-5"
             text={howWeDelivered?.[0]?.Key}
           />
-          <p className="text-xl text-colorGray w-[55%] mx-auto text-center">
+          <p className="md:text-xl text-lg text-colorGray lg:w-[55%] w-full mx-auto text-center">
             {howWeDelivered?.[0]?.Value}
           </p>
         </div>
@@ -91,7 +95,7 @@ const HowWeDeliverSection = ({ howWeDelivered }) => {
         {howWeDelivered?.[2] && (
           <HowWeDeliveredParts
             {...howWeDelivered?.[2]}
-            className="flex-row-reverse"
+            className="!flex-row-reverse"
             contentBg="bg-[#02B5D6]"
           />
         )}
@@ -101,7 +105,7 @@ const HowWeDeliverSection = ({ howWeDelivered }) => {
         {howWeDelivered?.[4] && (
           <HowWeDeliveredParts
             {...howWeDelivered?.[4]}
-            className="flex-row-reverse"
+            className="!flex-row-reverse"
             contentBg="bg-[#02B5D6]"
           />
         )}

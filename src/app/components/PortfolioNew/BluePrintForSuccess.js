@@ -5,23 +5,23 @@ import PortfolioContactForm from "./PortfolioContactForm";
 const BluePrintForSuccess = ({ blueprintForSuccess }) => {
   return (
     <div id="blueprint-section" className="bg-sectionBG">
-      <div className="px-[70px] py-[60px]">
+      <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
         <div className="container max-w-[1440px] mx-auto">
-          <div className="flex gap-[30px]">
-            <div className="w-7/12">
+          <div className="flex flex-col lg:flex-row gap-[30px]">
+            <div className="lg:w-7/12 w-full">
               <Heading
                 type="h2"
                 text={blueprintForSuccess?.[0]?.Title}
-                className="!text-colorBlack !text-[40px] mb-[30px]"
+                className="!text-colorBlack mb-[30px]"
               />
-              <p className="text-colorGray text-xl !mb-6 !w-[90%]">
+              <p className="text-colorGray md:text-xl text-lg !mb-6 md:!w-full lg:!w-[90%] !w-[90%]">
                 {blueprintForSuccess?.[0]?.Description1}
               </p>
-              <p className="text-colorGray text-xl !w-[90%]">
+              <p className="text-colorGray md:text-xl text-lg md:!w-full lg:!w-[90%] !w-[90%]">
                 {blueprintForSuccess?.[0]?.Description2}
               </p>
             </div>
-            <div className="w-5/12 bg-colorWhite p-6 rounded-xl border border-themeColor">
+            <div className="lg:w-5/12  w-full bg-colorWhite p-6 rounded-xl border border-themeColor">
               <PortfolioContactForm />
             </div>
           </div>

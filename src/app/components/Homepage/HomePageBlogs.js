@@ -12,62 +12,62 @@ import LinkWithArrow from "../Common/LinkWithArrow";
 
 const HomePageBlogs = () => {
   const pathname = usePathname();
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
 
-  const blogDataBasedOnPath = {
-    "/aws-consulting-services/": "aws-consulting",
-    "/ai-ml-development-services/": "ai-ml",
-    "/devops-consulting-services/": "devops-consulting",
-    // "/erp-next-development-services/": "erp-next",
-    "/application-development-services": "application-development",
-    "/kubernetes-consulting-services/": "kubernetes-consulting",
-    "/generative-ai-development-services/": "generative-ai",
-    "/digital-experience-services/": "digital-experience",
-    // "/low-code-no-code-development-services/": "low-code-no-code",
-    "/product-engineering-development-services/":
-      "product-engineering-development",
-    "/saas-application-development-services/": "saas-application-development",
-    // "/business-intelligence-services/": "business-intelligence",
-  };
+  // const blogDataBasedOnPath = {
+  //   "/aws-consulting-services/": "aws-consulting",
+  //   "/ai-ml-development-services/": "ai-ml",
+  //   "/devops-consulting-services/": "devops-consulting",
+  //   // "/erp-next-development-services/": "erp-next",
+  //   "/application-development-services": "application-development",
+  //   "/kubernetes-consulting-services/": "kubernetes-consulting",
+  //   "/generative-ai-development-services/": "generative-ai",
+  //   "/digital-experience-services/": "digital-experience",
+  //   // "/low-code-no-code-development-services/": "low-code-no-code",
+  //   "/product-engineering-development-services/":
+  //     "product-engineering-development",
+  //   "/saas-application-development-services/": "saas-application-development",
+  //   // "/business-intelligence-services/": "business-intelligence",
+  // };
 
-  async function fetchData() {
-    try {
-      const blogData = await getblogDataCategorization(
-        1,
-        !isTablet ? 3 : 2,
-        pathname === "/" ? null : blogDataBasedOnPath[pathname]
-      );
-      blogResponse[pathname] = blogData.storyData;
+  // async function fetchData() {
+  //   try {
+  //     const blogData = await getblogDataCategorization(
+  //       1,
+  //       !isTablet ? 3 : 2,
+  //       pathname === "/" ? null : blogDataBasedOnPath[pathname]
+  //     );
+  //     blogResponse[pathname] = blogData.storyData;
 
-      if (blogData.storyData) {
-        const newData = {
-          ...blogResponse,
-          [pathname]: blogData.storyData,
-        };
+  //     if (blogData.storyData) {
+  //       const newData = {
+  //         ...blogResponse,
+  //         [pathname]: blogData.storyData,
+  //       };
 
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}api/page-blog`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ data: newData }),
-          }
-        );
+  //       const response = await fetch(
+  //         `${process.env.NEXT_PUBLIC_BASE_URL}api/page-blog`,
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify({ data: newData }),
+  //         }
+  //       );
 
-        if (!response.ok) {
-          throw new Error("Failed to update JSON file");
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  //       if (!response.ok) {
+  //         throw new Error("Failed to update JSON file");
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   return (
     <div
       className={
