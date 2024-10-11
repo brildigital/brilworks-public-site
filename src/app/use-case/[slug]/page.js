@@ -55,7 +55,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title, description } = storyData.story?.content.title_section?.[0];
+    const { title, description, og_image, twitter_image } =
+      storyData.story?.content.Metatags;
     return {
       title: title || storyData.story?.content.title,
       description: description,

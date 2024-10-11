@@ -21,9 +21,9 @@ const PortfolioSwiper = ({ imagesData }) => {
             imagesData?.map(({ filename }, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="style_sec3_swiper_home !p-0 !w-4/5">
+                  <div className="style_sec3_swiper_home !p-0 lg:!w-[95%] !w-full">
                     <Image
-                      className="!pb-14 !w-[90%] mx-auto"
+                      className="lg:!pb-10 pb-8 md:!w-[90%] mx-auto"
                       src={filename}
                       width="400"
                       height="300"

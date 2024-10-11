@@ -4,17 +4,23 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
   function getGridColClass(num) {
     switch (num) {
       case 2:
-        return { grid: "grid-cols-2", width: "w-[40%]" };
+        return { grid: "lg:grid-cols-2", width: "lg:w-[40%] w-[80%]" };
       case 3:
-        return { grid: "grid-cols-3", width: "w-[50%]" };
+        return {
+          grid: "lg:grid-cols-3 grid-cols-2",
+          width: "lg:w-[50%] w-[60%]",
+        };
       case 4:
-        return { grid: "grid-cols-4", width: "w-[60%]" };
+        return {
+          grid: "lg:grid-cols-4 grid-cols-2",
+          width: "lg:w-[60%] w-[60%]",
+        };
       case 5:
-        return { grid: "grid-cols-5", width: "w-[65%]" };
+        return { grid: "lg:grid-cols-5", width: "lg:w-[65%] w-[60%]" };
       case 6:
-        return { grid: "grid-cols-6", width: "w-[70%]" };
+        return { grid: "lg:grid-cols-6", width: "lg:w-[70%] w-[80%]" };
       default:
-        return { grid: "grid-cols-2", width: "w-[40%]" };
+        return { grid: "lg:grid-cols-2", width: "lg:w-[40%] w-[80%]" };
     }
   }
 
@@ -22,27 +28,29 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
 
   return (
     <div className="bg-sectionBG">
-      <div className="px-[70px] py-[30px]">
+      <div className="lg:px-[70px] px-4 lg:py-[30px] py-8">
         <div className="container max-w-[1440px] mx-auto">
-          <div className={`w-full items-center grid ${dynamicCSS.grid} `}>
+          <div
+            className={`w-full items-center grid ${dynamicCSS.grid} md:gap-6 lg:gap-0`}
+          >
             {processAndEnhanceBlock?.length &&
               processAndEnhanceBlock?.map(
                 ({ Key, Value }, index) =>
                   Key &&
                   Value && (
                     <div
-                      className={`w-full pl-6 mx-auto flex justify-start items-start h-full flex-col ${
+                      className={`w-full md:pl-4 lg:pl-6 mx-auto flex justify-start md:items-start items-center h-full flex-col ${
                         index === processAndEnhanceBlock?.length - 1
-                          ? "!border-r-0"
-                          : "border-r-2"
+                          ? "!border-r-0 md:!border-b-2 lg:!border-b-0"
+                          : "lg:!border-r-2 lg:!border-b-0 border-b-2"
                       } border-themeColor`}
                       key={index}
                     >
-                      <span className="text-themeColor text-[48px] leading-tight font-bold mb-4">
+                      <span className="text-themeColor lg:text-5xl md:text-[40px] text-3xl leading-tight font-bold lg:mb-4 my-4">
                         {Key}
                       </span>
                       <p
-                        className={`!mb-4 text-xl text-colorGray ${dynamicCSS.width}`}
+                        className={`!mb-4 md:text-xl text-lg md:text-left text-center text-colorGray ${dynamicCSS.width}`}
                       >
                         {Value}
                       </p>

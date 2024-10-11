@@ -41,10 +41,10 @@ export default function RootLayout({ children }) {
             id="gtm-config"
             strategy="afterInteractive"
           >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`}</Script>
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`}</Script>
         </head>
         <body suppressHydrationWarning={true}>
           {/* vector Script */}
@@ -55,17 +55,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         `}
           </Script>
           {/* chat bot Script */}
-          <>
-            <Script
-              defer
-              id="chatbot"
-            >{`window.chatBotConfig = {agentId:214}`}</Script>
-            <Script
-              defer
-              id="chatbot-widget-script"
-              src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
-            />
-          </>
+          <Script
+            defer
+            id="chatbot"
+          >{`window.chatBotConfig = {agentId:214}`}</Script>
+          <Script
+            defer
+            id="chatbot-widget-script"
+            src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
+          />
 
           <Header />
           {/* <NextAuthProvider> */}
