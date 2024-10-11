@@ -99,6 +99,7 @@ const Portfolio = () => {
           </div>
           {caseStudyData?.length &&
             caseStudyData?.map(({ name, content, full_slug }, index) => {
+              console.log((content?.description).split(" ").length);
               return (
                 <div
                   className="portflio_flex_row portfolio_sec service_width reveal"
@@ -126,7 +127,14 @@ const Portfolio = () => {
                       <p>{content?.title}</p>
                     </div>
                     <div className="portfolio_sec1_txt2 portfolio_description_width">
-                      <p>{content?.description}</p>
+                      <p>
+                        {(content?.description).split(" ").length > 31
+                          ? (content?.description)
+                              .split(" ")
+                              .slice(0, 25)
+                              .join(" ") + "..."
+                          : content?.description}
+                      </p>
                     </div>
                     <Button
                       innerClassName="flex items-center justify-center gap-2"
@@ -174,7 +182,7 @@ const Portfolio = () => {
                 icon="right-arrow-next"
               />
             </div>
-          </div> */}
+          </div>
           <div className="portflio_flex_row service_width reveal">
             <div className="basis-1/2 order-2 md:order-1">
               <div className="portfolio_sec1_txt1">
@@ -326,7 +334,7 @@ const Portfolio = () => {
                 icon="right-arrow-next"
               />
             </div>
-          </div>
+          </div> */}
         </section>
       </div>
       <DevelopSuccessStory />

@@ -114,39 +114,68 @@ const Sitemap = () => {
             OUR WORK
           </h3>
 
-          <div className="grid gap-2 md:grid-cols-3 grid-cols-2">
+          <div className="grid-cols-1">
             <div>
               <li>
-                <Link href="/portfolio/vugo/" className="font-medium">
-                  Vugo
+                <Link
+                  href="/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/"
+                  className="font-medium"
+                >
+                  An Ultimate Recruitment Referral Platform to Streamline
+                  Recruitment Efforts
                 </Link>
               </li>
             </div>
             <div>
               <li>
-                <Link href="/portfolio/rastrack/" className="font-medium">
-                  Rastrack
+                <Link
+                  href="/portfolio/innovative-platform-for-comprehensive-supply-chain-management/"
+                  className="font-medium"
+                >
+                  Innovative Platform for Comprehensive Supply Chain Management
                 </Link>
               </li>
             </div>
             <div>
               <li>
-                <Link href="/portfolio/orokii/" className="font-medium">
-                  Orokii
+                <Link
+                  href="/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/"
+                  className="font-medium"
+                >
+                  Performance Optimization of a Standalone App for a Cultural
+                  Institution
                 </Link>
               </li>
             </div>
             <div>
               <li>
-                <Link href="/portfolio/eccocar/" className="font-medium">
-                  Eccocar
+                <Link
+                  href="/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/"
+                  className="font-medium"
+                >
+                  A Powerful Inventory Management App to Reduce Order Processing
+                  Time
                 </Link>
               </li>
             </div>
             <div>
               <li>
-                <Link href="/portfolio/trackimo/" className="font-medium">
-                  Trackimo
+                <Link
+                  href="/portfolio/ai-powered-platform-to-simplify-podcast-creation/"
+                  className="font-medium"
+                >
+                  AI-Powered Platform to Simplify Podcast Creation
+                </Link>
+              </li>
+            </div>
+            <div>
+              <li>
+                <Link
+                  href="/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/"
+                  className="font-medium"
+                >
+                  AI-Driven Stock Prediction Platform to Provide Traders with
+                  Insights
                 </Link>
               </li>
             </div>

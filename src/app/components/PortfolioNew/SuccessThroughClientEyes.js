@@ -49,7 +49,9 @@ const SuccessThroughClientEyes = () => {
           </div>
           <div className="w-full md:w-auto flex items-center justify-end">
             <Link href="https://clutch.co/profile/brilworks-software#reviews">
-              <p className="text-themeColor font-semibold p-4 rounded-lg">{`View All >>`}</p>
+              <p className="text-themeColor font-semibold p-4 rounded-lg">
+                View All
+              </p>
             </Link>
           </div>
         </div>

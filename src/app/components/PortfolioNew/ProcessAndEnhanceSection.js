@@ -4,15 +4,18 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
   function getGridColClass(num) {
     switch (num) {
       case 2:
-        return { grid: "lg:grid-cols-2", width: "lg:w-[40%] w-[80%]" };
+        return {
+          grid: "md:grid-cols-2 grid-col-1",
+          width: "lg:w-[40%] w-[80%]",
+        };
       case 3:
         return {
-          grid: "lg:grid-cols-3 grid-cols-2",
+          grid: "lg:grid-cols-3 md:grid-cols-2 grid-col-1",
           width: "lg:w-[50%] w-[60%]",
         };
       case 4:
         return {
-          grid: "lg:grid-cols-4 grid-cols-2",
+          grid: "lg:grid-cols-4 md:grid-cols-2 grid-col-1",
           width: "lg:w-[60%] w-[60%]",
         };
       case 5:

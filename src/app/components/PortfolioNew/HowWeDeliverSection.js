@@ -85,7 +85,7 @@ const HowWeDeliverSection = ({ howWeDelivered }) => {
             className="text-center mb-5"
             text={howWeDelivered?.[0]?.Key}
           />
-          <p className="md:text-xl text-lg text-colorGray lg:w-[55%] w-full mx-auto text-center">
+          <p className="md:text-xl text-lg text-colorGray lg:w-4/5 w-full mx-auto text-center">
             {howWeDelivered?.[0]?.Value}
           </p>
         </div>
