@@ -13,38 +13,6 @@ const Storyblok = new StoryblokClient({
 const MoreSuccessStoriesSection = () => {
   const pathname = usePathname();
   const [caseStudyData, setCaseStudyData] = useState();
-  const suggestedCaseStudies = [
-    {
-      name: "Vugo",
-      imageSrc: "/images/vugo-1.jpg",
-      imageAlt: "Vugo img",
-      hrefUrl: "/portfolio/vugo/",
-    },
-    {
-      name: "Rastrack",
-      imageSrc: "/images/rastrack-mobile.webp",
-      imageAlt: "Rastrack img",
-      hrefUrl: "/portfolio/rastrack/",
-    },
-    {
-      name: "Orokii",
-      imageSrc: "/images/orokii-mobile.webp",
-      imageAlt: "Orokii img",
-      hrefUrl: "/portfolio/orokii/",
-    },
-    {
-      name: "Eccocar",
-      imageSrc: "/images/eccocar-mobile.webp",
-      imageAlt: "Eccocar img",
-      hrefUrl: "/portfolio/eccocar/",
-    },
-    {
-      name: "Trackimo",
-      imageSrc: "/images/gps-trackers-devices-mobile.webp",
-      imageAlt: "Trackimo img",
-      hrefUrl: "/portfolio/trackimo/",
-    },
-  ];
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
@@ -54,7 +22,6 @@ const MoreSuccessStoriesSection = () => {
     })
       .then((response) => {
         setCaseStudyData(response.data?.stories);
-        console.log(response.data?.stories);
       })
       .catch((error) => {
         console.log(error);

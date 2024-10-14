@@ -17,7 +17,7 @@ const NewHeader = () => {
   const pathname = usePathname();
   const [navbarHeight, setNavbarHeight] = useState(0);
   const [openNav, setOpenNav] = useState(false);
-  const [menuItemSamplecopy, setMegaMenuItem] = useState(menuItems);
+  const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
 
   useEffect(() => {
     window.addEventListener(
@@ -47,7 +47,7 @@ const NewHeader = () => {
           path: "/use-case/" + story.slug + "/",
         }));
         slugList.sort((a, b) => a.name.length - b.name.length);
-        menuItemSamplecopy.map((d, i) => {
+        menuItemSampleCopy.map((d, i) => {
           if (d.name == "INDUSTRY") {
             return d.menuItems.map((d2, i2) => {
               if (d2.name == "USE CASES") {
@@ -63,10 +63,8 @@ const NewHeader = () => {
         });
       } catch (error) {
         console.error("Fetch error:", error);
-      } finally {
       }
-
-      setMegaMenuItem([...menuItemSamplecopy]);
+      setMenuItemSampleCopy([...menuItemSampleCopy]);
     };
 
     fetchSlugs();
@@ -102,7 +100,7 @@ const NewHeader = () => {
                     <div className="we_are_hiring hidden">
                       <Svgs name="we-are-hiring" />
                     </div>
-                    {menuItemSamplecopy
+                    {menuItemSampleCopy
                       ?.filter((menuItem) => !menuItem?.hideInHeader)
                       ?.map((menu) =>
                         !menu?.isMegaMenu ? (
