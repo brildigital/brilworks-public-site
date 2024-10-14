@@ -280,6 +280,27 @@ const hireTeamMenuItems = [
       },
     ],
   },
+  // {
+  //   name: "LOW CODE/ NO CODE DEVELOPMENT",
+  //   subSections: [
+  //     {
+  //       name: "Flutterflow Developers",
+  //       path: "/hire-flutterflow-developer/",
+  //     },
+  //     {
+  //       name: "Bubble io Developers",
+  //       path: "/hire-bubble-io-developer/",
+  //     },
+  //     {
+  //       name: "Adalo Developers",
+  //       path: "/hire-adalo-developer/",
+  //     },
+  //     {
+  //       name: "No Code Low Code Developer",
+  //       path: "/hire-no-code-low-code-developer/",
+  //     },
+  //   ],
+  // },
 ];
 
 export const menuItems = [

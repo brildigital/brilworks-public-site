@@ -99,7 +99,6 @@ const Portfolio = () => {
           </div>
           {caseStudyData?.length &&
             caseStudyData?.map(({ name, content, full_slug }, index) => {
-              console.log((content?.description).split(" ").length);
               return (
                 <div
                   className="portflio_flex_row portfolio_sec service_width reveal"
