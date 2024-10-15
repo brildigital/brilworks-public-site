@@ -458,8 +458,8 @@ const WhyShouldHireDevelopers = () => {
   };
 
   return (
-    <section className="container max-w-[1280px] mx-auto linear-gradient-bg reveal">
-      <div className="">
+    <section className="container max-w-[1440px] mx-auto linear-gradient-bg reveal">
+      <div className="px-4">
         <div className="sec9_service_style sm:px-[4rem] px-[1rem]">
           <div className="end-To-end">
             <div className="endTO_text solutions mt-[4rem] !mb-2 md:pt-[3rem]">

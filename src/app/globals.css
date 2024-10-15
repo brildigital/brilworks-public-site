@@ -2552,11 +2552,16 @@ textarea.form-control-txt {
   .faq-bottom .accordion-item {
     padding: 1rem !important;
   }
+  /* .hiring-banner {
+    height: fit-content;
+  } */
+}
+
+@media only screen and (max-width: 1680px) {
   .hiring-banner {
     height: fit-content;
   }
 }
-
 @media only screen and (max-width: 991px) {
   .header_font a,
   .header_font p {

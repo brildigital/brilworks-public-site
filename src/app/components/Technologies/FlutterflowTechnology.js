@@ -30,11 +30,11 @@ const FlutterflowTechnology = () => {
 
   return (
     <>
-      <section className="portfolio hiring-banner lg:mt-[5.5rem] mt-[4rem]">
+      <section className="portfolio hiring-banner lg:mt-[5rem] mt-[4rem]">
         <div className="container max-w-[1440px] mx-auto">
-          <div className="flex items-center justify-center lg:flex-row flex-col-reverse lg:pt-[6%] pt-[15%] md:pt-[10%]">
+          <div className="flex items-center justify-center lg:flex-row flex-col-reverse lg:py-[4%] pt-[14%] md:pt-[8%]">
             <div className="lg:w-[80%] w-full px-4">
-              <h1 className="font-style-solution-head leading-tight lg:mt-[60px] mt-10 mb-5 xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] md:w-[85%] w-full font-medium">
+              <h1 className="font-style-solution-head leading-tight mt-10 mb-5 xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] md:w-[85%] w-full font-medium">
                 Hire Flutterflow Developer to Build Apps Faster
               </h1>
               <p className="lg:w-[85%] w-full md:text-[24px] text-xl leading-normal text-colorWhite font-normal lg:!mb-[50px] !mb-5">
@@ -121,7 +121,7 @@ const FlutterflowTechnology = () => {
       </section>
       <section className="portfolio">
         <div className="container max-w-[1440px] mx-auto">
-          <div className="xl:py-[6rem] md:py-[4rem] pt-[2rem]">
+          <div className="xl:py-[6rem] md:py-[4rem] pt-[2rem] px-4">
             <div className="end-To-end">
               <div className="endTO_text solutions uppercase">
                 <h2 className="!w-full p-0">
@@ -289,7 +289,7 @@ const FlutterflowTechnology = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center xl:pt-[4rem] md:pt-[3rem] pt-5">
+            <div className="flex items-center justify-center xl:pt-[4rem] md:pt-[3rem] py-5">
               <Button
                 innerClassName="flex items-center justify-center gap-2"
                 className="!pr-5"

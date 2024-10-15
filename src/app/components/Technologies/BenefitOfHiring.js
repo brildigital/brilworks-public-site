@@ -75,7 +75,7 @@ const BenefitOfHiring = () => {
     ],
   };
   const benefitOfHiringMobileApp = {
-    title: <>WWhy Choose Us?</>,
+    title: <>Why Choose Us?</>,
     description:
       "Hiring a dedicated development team from a Mobile App Development Company empowers companies across the globe to access expert talent without any limitation of location. It enables you to keep up with the pace of technological change while keeping your costs down.",
     points: [
@@ -99,7 +99,7 @@ const BenefitOfHiring = () => {
   const { title, description, points } = showDataBasedOnPathname[pathname];
 
   return (
-    <div className="xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+    <div className="xl:py-[6rem] md:py-[4rem] py-[2rem] px-4 workpadd_borderTop end-to-end">
       <div className="end-To-end">
         <div className="solutions text-center m-0">
           <h2 className="!w-full pb-8 uppercase">{title}</h2>
@@ -108,7 +108,7 @@ const BenefitOfHiring = () => {
 
       <div className="endTO_text_content home_sec2_txt4 xl:mb-[4rem] md:mb-[3rem] md-[2rem]">
         <p
-          className={`md:px-[6rem] ${
+          className={`md:px-[6rem] pb-8 ${
             isMobile ? "text-start" : ""
           } md:!text-[1.3rem]`}
         >

@@ -60,7 +60,7 @@ const SolutionContactForm = () => {
 
   return (
     <div
-      className="mx-auto px-4 lg:px-0 container max-w-[1280px] xl:py-[6rem] md:py-[4rem] py-8"
+      className="mx-auto !px-4 lg:px-0 container max-w-[1440px] xl:py-[6rem] md:py-[4rem] py-8"
       id="section10_service"
     >
       <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
