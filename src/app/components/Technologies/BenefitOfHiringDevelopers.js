@@ -14,6 +14,7 @@ const BenefitOfHiringDevelopers = () => {
     "/hire-aws-developer/": "AWS",
     "/hire-ui-ux-designer/": "UI UX",
     "/hire-blockchain-developer/": "Blockchain",
+    "/hire-flutterflow-developer/": "Flutterflow",
   };
 
   const title = showTitleBasedOnPathname[pathname] || {};

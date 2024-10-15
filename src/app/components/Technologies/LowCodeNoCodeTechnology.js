@@ -6,7 +6,7 @@ import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import BenefitOfHiring from "./BenefitOfHiring";
 
-const FlutterflowFAQs = dynamic(() => import("./TechnologyFAQ"));
+const LowCodeNoCodeFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const WhyShouldHireDevelopers = dynamic(() =>
   import("./WhyShouldHireDevelopers")
@@ -14,11 +14,12 @@ const WhyShouldHireDevelopers = dynamic(() =>
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
+
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
-const FlutterflowTechnology = () => {
+const LowCodeNoCodeTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -35,14 +36,13 @@ const FlutterflowTechnology = () => {
           <div className="flex items-center justify-center lg:flex-row flex-col-reverse lg:pt-[6%] pt-[15%] md:pt-[10%]">
             <div className="lg:w-[80%] w-full px-4">
               <h1 className="font-style-solution-head leading-tight lg:mt-[60px] mt-10 mb-5 xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] md:w-[85%] w-full font-medium">
-                Hire Flutterflow Developer to Build Apps Faster
+                Hire No Code Low Code Developers
               </h1>
               <p className="lg:w-[85%] w-full md:text-[24px] text-xl leading-normal text-colorWhite font-normal lg:!mb-[50px] !mb-5">
-                Hire pre-vetted and highly skilled Flutterflow developers from a
-                Flutterflow Partner Company - Brilworks. As a leading
-                FlutterFlow app development company, we provide top talent with
-                deep expertise in leveraging Flutterflow to develop next-gen
-                solutions.
+                As a top leading low code now code development agency, we
+                specialize in delivering efficient, custom software solutions.
+                Hire the best developers to build your app quickly using popular
+                low code no code tools.
               </p>
               <div className="xl:w-[80%] w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:!mb-[50px] !mb-5 gap-4 md:gap-0">
                 <div
@@ -61,7 +61,7 @@ const FlutterflowTechnology = () => {
                   className={`w-full md:min-w-[320px] flex justify-start gap-4 items-start md:items-center lg:items-start flex-row lg:!border-r lg:border-b-0 border-b border-[#17353D] lg:pb-0 pb-3`}
                 >
                   <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    500+
+                    50+
                   </span>
                   <p
                     className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite`}
@@ -73,12 +73,12 @@ const FlutterflowTechnology = () => {
                   className={`w-full md:min-w-[320px] lg:pl-8 flex justify-start gap-4 items-start md:items-center lg:items-start flex-row lg:pb-0 pb-3 md:!w-fit`}
                 >
                   <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    80+
+                    30+
                   </span>
                   <p
                     className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite`}
                   >
-                    Highly Experienced Developers
+                    Certified Developers
                   </p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const FlutterflowTechnology = () => {
                     innerClassName="flex items-center justify-center gap-1 uppercase !text-base md:text-lg"
                     className="!pr-5"
                     redirect="#section10_service"
-                    label="Hire Flutterflow Developers"
+                    label="Hire No Code Developers"
                     icon="right-arrow"
                     variant="bg-dark"
                     scrollingButton
@@ -108,13 +108,13 @@ const FlutterflowTechnology = () => {
               </div>
             </div>
             <div className="lg:w-[20%] md:w-2/5 w-3/5 mx-auto my-auto h-full">
-              <Image
+              {/* <Image
                 className=""
-                src="/images/flutterflow-logo.svg"
-                alt="Flutterflow Banner"
-                width="322"
-                height="329"
-              />
+                src="/images/bubble-logo.svg"
+                alt="Bubble Banner"
+                width="320"
+                height="320"
+              /> */}
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ const FlutterflowTechnology = () => {
             <div className="end-To-end">
               <div className="endTO_text solutions uppercase">
                 <h2 className="!w-full p-0">
-                  Explore Our Flutterflow App Development Services
+                  Explore Our Low Code Development Services
                 </h2>
               </div>
             </div>
@@ -146,13 +146,14 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 01.</div>
                     <div className="service_title">
-                      <h3>Custom App Development</h3>
+                      <h3>No-Code App Development:</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Develop stunning custom applications that adjust to fit
-                        your vision, with complete control over the features and
-                        functionalities.
+                        Build apps quickly with our expert developers, who
+                        specialize in building next-level applications with
+                        leading no-code platforms like Adalo, Flutterflow, and
+                        Bubble.io.
                       </p>
                     </div>
                   </div>
@@ -171,13 +172,14 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 02.</div>
                     <div className="service_title">
-                      <h3>App Redesign and Modernization</h3>
+                      <h3>Adalo Development:</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Modernize and redesign your existing app in less time
-                        with our Flutterflow development services for long-term
-                        success.
+                        Leverage the power of Adalo's intuitive interface. Our
+                        experts craft stunning, user-friendly apps, handling all
+                        aspects – from design to deployment – for a seamless
+                        experience.
                       </p>
                     </div>
                   </div>
@@ -196,13 +198,14 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 03.</div>
                     <div className="service_title">
-                      <h3>Flutterflow Migration</h3>
+                      <h3>Flutterflow Development:</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Migrate your existing apps (both native or hybrid)
-                        effortlessly to Flutterflow to reduce development costs
-                        and time.
+                        Get to market faster with next-level applications built
+                        using our Flutterflow development service. Our
+                        developers are skilled in building complex apps with
+                        this powerful platform.
                       </p>
                     </div>
                   </div>
@@ -222,13 +225,13 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 04.</div>
                     <div className="service_title">
-                      <h3>App Integration</h3>
+                      <h3>Bubble.io Development:</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Integrate your Flutterflow app with other systems and
-                        platforms, such as CRM, payment gateways, and social
-                        media.
+                        Our skilled developers use Bubble.io's full-stack
+                        capabilities to build complex applications that rival
+                        fully coded ones in functionality and quality.
                       </p>
                     </div>
                   </div>
@@ -240,23 +243,21 @@ const FlutterflowTechnology = () => {
                       decoding="async"
                       loading="lazy"
                       className="alignnone wp-image-285 size-full"
-                      src="/images/AWS-Managed-Services.png"
-                      alt="AWS Managed Services"
+                      src="/images/Technology-07.png"
+                      alt="Spring Core Development"
                     />
                   </div>
 
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 05.</div>
                     <div className="service_title">
-                      <h3>App Maintenance and Support</h3>
+                      <h3>Streamlined Low-Code Development: </h3>
                     </div>
-
                     <div className="service_description">
                       <p>
-                        We provide ongoing maintenance and support for
-                        Flutterflow apps, from addressing bugs, issues, and
-                        security vulnerabilities to implementing updates and
-                        enhancements.
+                        Our team combines coding expertise with low-code
+                        platforms to deliver modern apps in record time. Hire a
+                        low-code developer today to get started.
                       </p>
                     </div>
                   </div>
@@ -267,21 +268,22 @@ const FlutterflowTechnology = () => {
                     <img
                       decoding="async"
                       loading="lazy"
-                      src="/images/AWS-Development-Consulting.png"
-                      alt="Flutterflow training"
+                      className="alignnone wp-image-285 size-full"
+                      src="/images/Technology-08.png"
+                      alt="Java App Development"
                     />
                   </div>
 
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 06.</div>
                     <div className="service_title">
-                      <h3> Flutterflow Training and Consulting</h3>
+                      <h3>Low-Code Mobile App Development:</h3>
                     </div>
 
                     <div className="service_description">
                       <p>
-                        We offer training and consulting services to help
-                        clients learn how to use Flutterflow effectively.
+                        Our specialists develop low-code mobile apps that
+                        seamlessly run on both iOS and Android platforms.
                       </p>
                     </div>
                   </div>
@@ -293,7 +295,7 @@ const FlutterflowTechnology = () => {
               <Button
                 innerClassName="flex items-center justify-center gap-2"
                 className="!pr-5"
-                label="Hire a Flutterflow Developer"
+                label="Get a Quote For Your Budget"
                 scrollingButton
                 icon={
                   <svg
@@ -322,9 +324,9 @@ const FlutterflowTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FlutterflowFAQs />
+      <LowCodeNoCodeFAQs />
     </>
   );
 };
 
-export default FlutterflowTechnology;
+export default LowCodeNoCodeTechnology;

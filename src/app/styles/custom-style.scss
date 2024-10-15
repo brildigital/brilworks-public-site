@@ -22,6 +22,16 @@
   }
 }
 
+.button-bg-dark {
+  color: var(--white_color) !important;
+  border: 1px solid var(--theme-color) !important;
+  background: var(--theme-color) !important;
+  &:hover {
+    background: transparent !important;
+    color: var(--white_color) !important;
+  }
+}
+
 .button-white {
   color: var(--color_black) !important;
   background: var(--white_color);
