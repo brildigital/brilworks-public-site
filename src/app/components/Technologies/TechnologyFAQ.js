@@ -354,7 +354,7 @@ const TechnologyFAQ = () => {
 
   return (
     <div className="xl:pb-[6rem] md:pb-[4rem] pb-8 xl:px-[5%] md:px-8 px-4">
-      <div className="container max-w-[1280px] mx-auto">
+      <div className="container max-w-[1440px] mx-auto">
         <div className="px-4 w-full mx-auto faq-bottom">
           <div className="solutions md:text-center text-left">
             <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">

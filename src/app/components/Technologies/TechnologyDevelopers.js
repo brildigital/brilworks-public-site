@@ -53,19 +53,19 @@ const TechnologyDevelopers = () => {
         developerType = "blockchain-developers";
         break;
       case "/hire-flutterflow-developer/":
-        developerType = "react-native-developers";
+        developerType = "flutterflow-developers";
         break;
       case "/hire-bubble-developer/":
-        developerType = "node-developers";
+        developerType = "bubble-developers";
         break;
       case "/hire-adalo-developer/":
-        developerType = "node-developers";
+        developerType = "adalo-developers";
         break;
       case "/hire-low-code-no-code-developer/":
-        developerType = "react-native-developers";
+        developerType = "low-code-no-code-native-developers";
         break;
       case "/hire-mobile-app-developer/":
-        developerType = "react-native-developers";
+        developerType = "mobile-app-developers";
         break;
       default:
         developerType = null;
@@ -84,7 +84,7 @@ const TechnologyDevelopers = () => {
         pathname === "/hire-low-code-no-code-developer/" ||
         pathname === "/hire-mobile-app-developer/" ||
         pathname === "/hire-bubble-developer/"
-          ? "!w-full"
+          ? "!w-full px-4"
           : "service_width"
       } xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end`}
     >

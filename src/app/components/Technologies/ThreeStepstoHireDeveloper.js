@@ -86,8 +86,8 @@ const ThreeStepstoHireDeveloper = () => {
   };
 
   return (
-    <section className="container mx-auto max-w-[1280px]">
-      <div className="xl:py-[6rem] md:py-[4rem] py-[2rem]">
+    <section className="container mx-auto max-w-[1440px]">
+      <div className="xl:py-[6rem] md:py-[4rem] py-[2rem] px-4">
         <div className="md:px-[0px]">
           <div className="service_sec3 solutions md:text-center text-left">
             <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
@@ -212,7 +212,7 @@ const ThreeStepstoHireDeveloper = () => {
       </div>
 
       <div
-        className="mx-auto md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end"
+        className="mx-auto md:py-[6rem] py-[4rem] px-4 workpadd_borderTop end-to-end"
         id="pricing"
       >
         <div className="end-To-end">
