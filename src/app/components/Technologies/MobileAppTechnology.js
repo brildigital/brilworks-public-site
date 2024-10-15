@@ -6,7 +6,7 @@ import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import BenefitOfHiring from "./BenefitOfHiring";
 
-const FlutterflowFAQs = dynamic(() => import("./TechnologyFAQ"));
+const MobileAppFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const WhyShouldHireDevelopers = dynamic(() =>
   import("./WhyShouldHireDevelopers")
@@ -14,11 +14,12 @@ const WhyShouldHireDevelopers = dynamic(() =>
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
+
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
-const FlutterflowTechnology = () => {
+const MobileAppTechnology = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -35,14 +36,14 @@ const FlutterflowTechnology = () => {
           <div className="flex items-center justify-center lg:flex-row flex-col-reverse lg:pt-[6%] pt-[15%] md:pt-[10%]">
             <div className="lg:w-[80%] w-full px-4">
               <h1 className="font-style-solution-head leading-tight lg:mt-[60px] mt-10 mb-5 xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] md:w-[85%] w-full font-medium">
-                Hire Flutterflow Developer to Build Apps Faster
+                Hire Mobile App Developers
               </h1>
               <p className="lg:w-[85%] w-full md:text-[24px] text-xl leading-normal text-colorWhite font-normal lg:!mb-[50px] !mb-5">
-                Hire pre-vetted and highly skilled Flutterflow developers from a
-                Flutterflow Partner Company - Brilworks. As a leading
-                FlutterFlow app development company, we provide top talent with
-                deep expertise in leveraging Flutterflow to develop next-gen
-                solutions.
+                Need a mobile app developer to bring your vision to life? We
+                connect you with skilled professionals who specialize in
+                delivering exceptional mobile apps. Whether you're looking to
+                develop an iOS, Android, or cross-platform app, we've got the
+                talent you need.
               </p>
               <div className="xl:w-[80%] w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:!mb-[50px] !mb-5 gap-4 md:gap-0">
                 <div
@@ -73,7 +74,7 @@ const FlutterflowTechnology = () => {
                   className={`w-full md:min-w-[320px] lg:pl-8 flex justify-start gap-4 items-start md:items-center lg:items-start flex-row lg:pb-0 pb-3 md:!w-fit`}
                 >
                   <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    80+
+                    30+
                   </span>
                   <p
                     className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite`}
@@ -88,7 +89,7 @@ const FlutterflowTechnology = () => {
                     innerClassName="flex items-center justify-center gap-1 uppercase !text-base md:text-lg"
                     className="!pr-5"
                     redirect="#section10_service"
-                    label="Hire Flutterflow Developers"
+                    label="Hire Mobile App Developers"
                     icon="right-arrow"
                     variant="bg-dark"
                     scrollingButton
@@ -110,10 +111,10 @@ const FlutterflowTechnology = () => {
             <div className="lg:w-[20%] md:w-2/5 w-3/5 mx-auto my-auto h-full">
               <Image
                 className=""
-                src="/images/flutterflow-logo.svg"
-                alt="Flutterflow Banner"
-                width="322"
-                height="329"
+                src="/images/mobile-app-liogo.svg"
+                alt="Mobile App Logo"
+                width="320"
+                height="320"
               />
             </div>
           </div>
@@ -124,9 +125,7 @@ const FlutterflowTechnology = () => {
           <div className="xl:py-[6rem] md:py-[4rem] pt-[2rem]">
             <div className="end-To-end">
               <div className="endTO_text solutions uppercase">
-                <h2 className="!w-full p-0">
-                  Explore Our Flutterflow App Development Services
-                </h2>
+                <h2 className="!w-full p-0">Our Services</h2>
               </div>
             </div>
 
@@ -146,13 +145,12 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 01.</div>
                     <div className="service_title">
-                      <h3>Custom App Development</h3>
+                      <h3>Cross-Platform App Development</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Develop stunning custom applications that adjust to fit
-                        your vision, with complete control over the features and
-                        functionalities.
+                        We offer cross-platform app development solutions using
+                        industry-leading frameworks.
                       </p>
                     </div>
                   </div>
@@ -171,13 +169,13 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 02.</div>
                     <div className="service_title">
-                      <h3>App Redesign and Modernization</h3>
+                      <h3>React Native Development</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Modernize and redesign your existing app in less time
-                        with our Flutterflow development services for long-term
-                        success.
+                        React Native is a powerful framework to build
+                        high-performance mobile apps for both iOS and Android
+                        using a single codebase.
                       </p>
                     </div>
                   </div>
@@ -196,13 +194,13 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 03.</div>
                     <div className="service_title">
-                      <h3>Flutterflow Migration</h3>
+                      <h3>iOS App Development</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Migrate your existing apps (both native or hybrid)
-                        effortlessly to Flutterflow to reduce development costs
-                        and time.
+                        Our experienced iOS developers specialize in developing
+                        innovative and visually appealing apps using the latest
+                        technologies and design trends.
                       </p>
                     </div>
                   </div>
@@ -222,66 +220,14 @@ const FlutterflowTechnology = () => {
                   <div className="service_txt basis-[85%]">
                     <div className="service_num">&lt; 04.</div>
                     <div className="service_title">
-                      <h3>App Integration</h3>
+                      <h3>Android App Development</h3>
                     </div>
                     <div className="service_description">
                       <p>
-                        Integrate your Flutterflow app with other systems and
-                        platforms, such as CRM, payment gateways, and social
-                        media.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-285 size-full"
-                      src="/images/AWS-Managed-Services.png"
-                      alt="AWS Managed Services"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 05.</div>
-                    <div className="service_title">
-                      <h3>App Maintenance and Support</h3>
-                    </div>
-
-                    <div className="service_description">
-                      <p>
-                        We provide ongoing maintenance and support for
-                        Flutterflow apps, from addressing bugs, issues, and
-                        security vulnerabilities to implementing updates and
-                        enhancements.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/AWS-Development-Consulting.png"
-                      alt="Flutterflow training"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 06.</div>
-                    <div className="service_title">
-                      <h3> Flutterflow Training and Consulting</h3>
-                    </div>
-
-                    <div className="service_description">
-                      <p>
-                        We offer training and consulting services to help
-                        clients learn how to use Flutterflow effectively.
+                        Our Android app development team is skilled in building
+                        robust and scalable apps, ensuring optimal performance,
+                        compatibility, and a native-like experience across
+                        various Android devices.
                       </p>
                     </div>
                   </div>
@@ -293,7 +239,7 @@ const FlutterflowTechnology = () => {
               <Button
                 innerClassName="flex items-center justify-center gap-2"
                 className="!pr-5"
-                label="Hire a Flutterflow Developer"
+                label="Get a Quote For Your Project"
                 scrollingButton
                 icon={
                   <svg
@@ -322,9 +268,9 @@ const FlutterflowTechnology = () => {
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
-      <FlutterflowFAQs />
+      <MobileAppFAQs />
     </>
   );
 };
 
-export default FlutterflowTechnology;
+export default MobileAppTechnology;

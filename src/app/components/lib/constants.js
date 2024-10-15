@@ -231,10 +231,6 @@ const hireTeamMenuItems = [
         name: "React.JS",
         path: "/hire-reactjs-developer/",
       },
-      {
-        name: "React Native",
-        path: "/hire-react-native-developer/",
-      },
       // {
       //   name: "Flutter",
       //   path: "#",
@@ -271,6 +267,41 @@ const hireTeamMenuItems = [
       },
     ],
   },
+
+  {
+    name: "LOW CODE/ NO CODE DEVELOPMENT",
+    subSections: [
+      {
+        name: "Flutterflow Developers",
+        path: "/hire-flutterflow-developer/",
+      },
+      {
+        name: "Bubble.io Developers",
+        path: "/hire-bubble-developer/",
+      },
+      {
+        name: "Adalo Developers",
+        path: "/hire-adalo-developer/",
+      },
+      {
+        name: "Low Code No Code Developers",
+        path: "/hire-low-code-no-code-developer/",
+      },
+    ],
+  },
+  {
+    name: "MOBILE APP DEVELOPMENT",
+    subSections: [
+      {
+        name: "React Native Developers",
+        path: "/hire-react-native-developer/",
+      },
+      {
+        name: "Mobile App Developers",
+        path: "/hire-mobile-app-developer/",
+      },
+    ],
+  },
   {
     name: "EMERGING TECHNOLOGIES",
     subSections: [
@@ -280,27 +311,6 @@ const hireTeamMenuItems = [
       },
     ],
   },
-  // {
-  //   name: "LOW CODE/ NO CODE DEVELOPMENT",
-  //   subSections: [
-  //     {
-  //       name: "Flutterflow Developers",
-  //       path: "/hire-flutterflow-developer/",
-  //     },
-  //     {
-  //       name: "Bubble io Developers",
-  //       path: "/hire-bubble-io-developer/",
-  //     },
-  //     {
-  //       name: "Adalo Developers",
-  //       path: "/hire-adalo-developer/",
-  //     },
-  //     {
-  //       name: "No Code Low Code Developer",
-  //       path: "/hire-no-code-low-code-developer/",
-  //     },
-  //   ],
-  // },
 ];
 
 export const menuItems = [
@@ -440,6 +450,26 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/hire-blockchain-developer/",
     lastmod: "2024-09-25T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-flutterflow-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-adalo-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-bubble-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-low-code-no-code-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-mobile-app-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
   },
   {
     loc: "https://www.brilworks.com/our-process/",

@@ -1245,6 +1245,13 @@ textarea.form-control-txt {
   padding-top: 8rem;
 }
 
+.hiring-banner {
+  height: 100vh;
+  background: url(/images/hiring-banner.svg);
+  background-position: bottom right;
+  background-size: cover;
+}
+
 .portfolio .sec1_service img {
   border-radius: 30px;
 }
@@ -2544,6 +2551,9 @@ textarea.form-control-txt {
 
   .faq-bottom .accordion-item {
     padding: 1rem !important;
+  }
+  .hiring-banner {
+    height: fit-content;
   }
 }
 

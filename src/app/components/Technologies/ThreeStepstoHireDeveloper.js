@@ -8,45 +8,90 @@ const ThreeStepstoHireDeveloper = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
+  const getTitleText = (pathname) => {
+    switch (pathname) {
+      case "/hire-reactjs-developer/":
+        return {
+          title: "HIRE REACT JS DEVELOPERS",
+          role: "React JS Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-java-developer/":
+        return {
+          title: "HIRE JAVA DEVELOPERS",
+          role: "Java Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-nodejs-developer/":
+        return {
+          title: "HIRE Node JS DEVELOPERS",
+          role: "Node JS Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-react-native-developer/":
+        return {
+          title: "HIRE REACT NATIVE DEVELOPERS",
+          role: "React Native Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-aws-developer/":
+        return {
+          title: "HIRE AWS DEVELOPERS",
+          role: "AWS Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-ui-ux-designer/":
+        return {
+          title: "HIRE UI UX DESIGNERS",
+          role: "UI UX Designer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      case "/hire-flutterflow-developer/":
+        return {
+          title: "HIRE FLUTTERFLOW DEVELOPERS",
+          role: "Flutterflow Developer",
+          buttonText3SimpleStep: " Hire a Flutterflow Developer Now",
+        };
+      case "/hire-bubble-developer/":
+        return {
+          title: "HIRE BUBBLE DEVELOPERS",
+          role: "Bubble Developer",
+          buttonText3SimpleStep: "Hire a Bubble Developer Now",
+        };
+      case "/hire-adalo-developer/":
+        return {
+          title: "HIRE ADALO DEVELOPERS",
+          role: "Adalo Developer",
+          buttonText3SimpleStep: "Hire Adalo Experts",
+        };
+      case "/hire-low-code-no-code-developer/":
+        return {
+          title: "HIRE LOW CODE NO CODE DEVELOPERS",
+          role: "Low code no code Developer",
+          buttonText3SimpleStep: "Hire a Low Code No Code Expert",
+        };
+      case "/hire-mobile-app-developer/":
+        return {
+          title: "HIRE MOBILE APP DEVELOPERS",
+          role: "Mobile App Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+      default:
+        return {
+          title: "HIRE BLOCKCHAIN DEVELOPERS",
+          role: "Blockchain Developer",
+          buttonText3SimpleStep: "Schedule A Developer Interview",
+        };
+    }
+  };
+
   return (
-    <section className="">
+    <section className="container mx-auto max-w-[1280px]">
       <div className="xl:py-[6rem] md:py-[4rem] py-[2rem]">
-        <div className="service_width mx-auto md:px-[0px]">
+        <div className="md:px-[0px]">
           <div className="service_sec3 solutions md:text-center text-left">
             <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-              {pathname === "/hire-reactjs-developer/" ? (
-                "HIRE REACT JS DEVELOPERS"
-              ) : (
-                <>
-                  {pathname === "/hire-java-developer/" ? (
-                    "HIRE JAVA DEVELOPERS"
-                  ) : (
-                    <>
-                      {pathname === "/hire-nodejs-developer/" ? (
-                        "HIRE Node JS DEVELOPERS"
-                      ) : (
-                        <>
-                          {pathname === "/hire-react-native-developer/" ? (
-                            "HIRE REACT NATIVE DEVELOPERS"
-                          ) : (
-                            <>
-                              {pathname === "/hire-aws-developer/" ? (
-                                "HIRE AWS DEVELOPERS"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-ui-ux-designer/"
-                                    ? "HIRE UI UX DESIGNERS"
-                                    : "HIRE BLOCKCHAIN DEVELOPERS"}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              )}
+              {getTitleText(pathname)?.title}
               <p className="md:text-[21px] md:!text-center text-[16px] !text-left">
                 IN 3 SIMPLE STEPS
               </p>
@@ -55,7 +100,7 @@ const ThreeStepstoHireDeveloper = () => {
 
           <div className="grid xl:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0 reveal">
             <div className="contact_box">
-              <div className="mx-auto">
+              <div className="">
                 <img
                   decoding="async"
                   loading="lazy"
@@ -127,42 +172,7 @@ const ThreeStepstoHireDeveloper = () => {
                     </div>
                     <div className="service_description text-center mob_center">
                       <p>
-                        We match you with a{" "}
-                        {pathname === "/hire-reactjs-developer/" ? (
-                          "React js Developer"
-                        ) : (
-                          <>
-                            {pathname === "/hire-java-developer/" ? (
-                              "Java Developer"
-                            ) : (
-                              <>
-                                {pathname === "/hire-nodejs-developer/" ? (
-                                  "Node js Developer"
-                                ) : (
-                                  <>
-                                    {pathname ===
-                                    "/hire-react-native-developer/" ? (
-                                      "React Native Developer"
-                                    ) : (
-                                      <>
-                                        {pathname === "/hire-aws-developer/" ? (
-                                          "AWS Developer"
-                                        ) : (
-                                          <>
-                                            {pathname ===
-                                            "/hire-ui-ux-designer/"
-                                              ? "UI UX Designers"
-                                              : "Blockchain Developer"}
-                                          </>
-                                        )}
-                                      </>
-                                    )}
-                                  </>
-                                )}
-                              </>
-                            )}
-                          </>
-                        )}{" "}
+                        We match you with a {getTitleText(pathname)?.role}
                         from our network within 48 to 72 hours.
                       </p>
                     </div>
@@ -176,7 +186,7 @@ const ThreeStepstoHireDeveloper = () => {
               innerClassName="flex items-center justify-center gap-1"
               className="!pr-5"
               redirect="#section10_service"
-              label="Schedule A Developer Interview"
+              label={getTitleText(pathname).buttonText3SimpleStep}
               scrollingButton
               icon={
                 <svg
@@ -202,45 +212,13 @@ const ThreeStepstoHireDeveloper = () => {
       </div>
 
       <div
-        className="mx-auto service_width md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end"
+        className="mx-auto md:py-[6rem] py-[4rem] workpadd_borderTop end-to-end"
         id="pricing"
       >
         <div className="end-To-end">
           <div className="endTO_text solutions">
             <h2 className="!w-full p-0">
-              {pathname === "/hire-reactjs-developer/" ? (
-                "HIRE REACT.JS DEVELOPERS"
-              ) : (
-                <>
-                  {pathname === "/hire-java-developer/" ? (
-                    "HIRE JAVA DEVELOPERS"
-                  ) : (
-                    <>
-                      {pathname === "/hire-nodejs-developer/" ? (
-                        "HIRE NODE.JS DEVELOPERS"
-                      ) : (
-                        <>
-                          {pathname === "/hire-react-native-developer/" ? (
-                            "HIRE REACT NATIVE DEVELOPERS"
-                          ) : (
-                            <>
-                              {pathname === "/hire-aws-developer/" ? (
-                                "HIRE AWS DEVELOPERS"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-ui-ux-designer/"
-                                    ? " HIRE UI-UX DESIGNERS"
-                                    : "HIRE BLOCKCHAIN DEVELOPERS"}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              )}{" "}
+              {getTitleText(pathname)?.title}
               <br className="hidden md:block" />
               AS PER YOUR NEED
             </h2>
@@ -409,43 +387,7 @@ const ThreeStepstoHireDeveloper = () => {
                           />
                         </p>
                         <p className="pricing-desc-text">
-                          Build a team of 5+{" "}
-                          {pathname === "/hire-reactjs-developer/" ? (
-                            "React js developers"
-                          ) : (
-                            <>
-                              {pathname === "/hire-java-developer/" ? (
-                                "Java developers"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-nodejs-developer/" ? (
-                                    "Node js developers"
-                                  ) : (
-                                    <>
-                                      {pathname ===
-                                      "/hire-react-native-developer/" ? (
-                                        "React Native developers"
-                                      ) : (
-                                        <>
-                                          {pathname ===
-                                          "/hire-aws-developer/" ? (
-                                            "AWS developers"
-                                          ) : (
-                                            <>
-                                              {pathname ===
-                                              "/hire-ui-ux-designer/"
-                                                ? "UI/UX designers"
-                                                : "Blockchain developers"}
-                                            </>
-                                          )}
-                                        </>
-                                      )}
-                                    </>
-                                  )}
-                                </>
-                              )}
-                            </>
-                          )}
+                          Build a team of 5+ {getTitleText(pathname)?.role}
                         </p>
                       </div>
                     </div>
@@ -493,41 +435,7 @@ const ThreeStepstoHireDeveloper = () => {
             innerClassName="flex items-center justify-center gap-2"
             className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
             redirect="#section10_service"
-            label={
-              pathname === "/hire-reactjs-developer/" ? (
-                "Hire React.js Developers"
-              ) : (
-                <>
-                  {pathname === "/hire-java-developer/" ? (
-                    "Hire Java Developers"
-                  ) : (
-                    <>
-                      {pathname === "/hire-nodejs-developer/" ? (
-                        "Hire Node.js Developers"
-                      ) : (
-                        <>
-                          {pathname === "/hire-react-native-developer/" ? (
-                            "Hire React Native Developers"
-                          ) : (
-                            <>
-                              {pathname === "/hire-aws-developer/" ? (
-                                "Hire AWS Developers"
-                              ) : (
-                                <>
-                                  {pathname === "/hire-ui-ux-designer/"
-                                    ? "Hire UI UX Designers"
-                                    : "Hire Blockchain Developers"}
-                                </>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              )
-            }
+            label={"Hire " + getTitleText(pathname)?.role}
             icon={
               <div className="w-[25px]">
                 <img

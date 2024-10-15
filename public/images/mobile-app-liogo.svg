@@ -1,0 +1,9 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M190 230V270C190 281 181 290 170 290H70C59 290 50 281 50 270V50C50 39 59 30 70 30H170C181 30 190 39 190 50V70" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50 70H190" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50 230H190" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M110 260H130" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140 120L110 150L140 180" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M240 120L270 150L240 180" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M210 110L170 190" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="13.056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

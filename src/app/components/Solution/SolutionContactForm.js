@@ -32,35 +32,35 @@ const SolutionContactForm = () => {
     setIsSubmitting(true);
     setRespMessage("Your response is submitted successfully.");
 
-    // try {
-    //   const response = await fetch(
-    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/techSolution`,
-    //     {
-    //       method: "POST",
-    //       header: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ ...formData, page: pathname }),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/techSolution`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...formData, page: pathname }),
+        }
+      );
 
-    //   if (response.ok) {
-    //     setFormData({ name: "", phone: "", email: "" });
-    //     setRespMessage("Your response is submitted successfully.");
-    //     clearMessage();
-    //   } else {
-    //     setRespMessage("Something went wrong!");
-    //   }
-    //   setIsSubmitting(false);
-    // } catch (error) {
-    //   console.error("Error sending email", error);
-    //   setIsSubmitting(false);
-    // }
+      if (response.ok) {
+        setFormData({ name: "", phone: "", email: "" });
+        setRespMessage("Your response is submitted successfully.");
+        clearMessage();
+      } else {
+        setRespMessage("Something went wrong!");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error sending email", error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div
-      className="mx-auto md:px-4 sec3_width_home xl:py-[6rem] md:py-[4rem] py-8"
+      className="mx-auto px-4 lg:px-0 container max-w-[1280px] xl:py-[6rem] md:py-[4rem] py-8"
       id="section10_service"
     >
       <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
