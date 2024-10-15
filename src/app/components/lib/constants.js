@@ -452,6 +452,26 @@ export const sitemapData = [
     lastmod: "2024-09-25T12:04:49.528Z",
   },
   {
+    loc: "https://www.brilworks.com/hire-flutterflow-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-adalo-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-bubble-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-low-code-no-code-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-mobile-app-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
     loc: "https://www.brilworks.com/our-process/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
