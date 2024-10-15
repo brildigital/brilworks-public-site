@@ -13,7 +13,7 @@ const TechnologyFAQ = () => {
   const reactJSFAQData = [
     {
       question:
-        " What is the average work experience of a React.js developer hired through Brilworks?",
+        "What is the average work experience of a React.js developer hired through Brilworks?",
       answer:
         "The average experience of React.js developers hired through us is of mid-senior level, which is 3+ years.",
     },
@@ -192,6 +192,149 @@ const TechnologyFAQ = () => {
     },
   ];
 
+  const flutterflowFAQData = [
+    {
+      question:
+        "What are the key benefits of using FlutterFlow for mobile app development?",
+      answer:
+        "FlutterFlow offers several advantages for mobile app development. It allows for rapid prototyping with a code-free approach that reduces development time and costs. Furthermore, FlutterFlow allows you to build a cross-platform app for both iOS and Android devices. ",
+    },
+    {
+      question: "Why should I choose Brilworks for FlutterFlow development?",
+      answer:
+        "Brilworks offers expertise in FlutterFlow, ensuring efficient and high-quality app development. Their client-centric approach guarantees personalized service and attention to detail. Competitive pricing combined with exceptional quality makes Brilworks a valuable partner.",
+    },
+    {
+      question: "How to Evaluate FlutterFlow Development Companies?",
+      answer:
+        "You should assess a company's technical skills, including proficiency in Flutterflow development and UI/UX design. Evaluate project management methodologies, such as Agile or Waterfall. Additionally, reviewing a company's portfolio and client testimonials can provide valuable insights into its experience and reputation.",
+    },
+    {
+      question: "What are the steps to get started with Brilworks?",
+      answer:
+        "To begin your FlutterFlow development project with Brilworks, simply reach out for a personalized consultation. During this initial meeting, we'll discuss your project goals, requirements, and timeline. Based on this information, we'll provide a tailored proposal outlining the project scope, timeline, and cost. Once you approve the proposal, we'll proceed to project kickoff and begin development.",
+    },
+  ];
+  const bubbleFAQData = [
+    {
+      question: "What is Bubble.io, and why should I use it?",
+      answer:
+        "Bubble.io is a no-code development platform that allows you to build fully functional web applications without extensive programming knowledge. It streamlines the development process, enabling faster deployment and reduced costs.",
+    },
+    {
+      question: "How can a Bubble.io developer benefit my project?",
+      answer:
+        "A skilled Bubble.io developer can leverage the platform's capabilities to create custom applications tailored to your business needs. They can optimize performance, enhance user experience, and ensure that your app is scalable and maintainable.",
+    },
+    {
+      question:
+        "What types of projects are suitable for Bubble.io development?",
+      answer:
+        "Bubble.io is ideal for MVPs, SaaS applications, and interactive web platforms. If you're looking to quickly launch a product with dynamic features and a user-friendly interface, Bubble.io is a great choice.",
+    },
+    {
+      question: "How long does it take to build an application with Bubble.io?",
+      answer:
+        "The timeline for developing an application on Bubble.io can vary based on complexity and features. However, using Bubble.io typically accelerates the development process, allowing for faster iterations and quicker time to market.",
+    },
+    {
+      question: "Can Bubble.io handle high-traffic applications?",
+      answer:
+        "Yes, Bubble.io can support high-traffic applications by utilizing scalable infrastructure and performance optimization techniques. A professional Bubble.io developer can implement best practices to ensure your app runs smoothly under heavy usage.",
+    },
+    {
+      question: "What should I look for when hiring a Bubble.io developer?",
+      answer:
+        "When hiring a Bubble.io developer, consider their experience with the platform, portfolio of past projects, and understanding of best practices. Effective communication and problem-solving skills are also essential for successful collaboration.",
+    },
+  ];
+  const adaloFAQData = [
+    {
+      question: "What is Adalo?",
+      answer:
+        "Adalo is a no-code platform that allows users to build mobile and web applications quickly and easily, without needing to write code. It offers a range of features, including drag-and-drop design tools, database management, and integration capabilities.",
+    },
+    {
+      question: "How long does it take to develop an app using Adalo?",
+      answer:
+        "The development timeline depends on the complexity and features of the app. However, due to Adalo’s no-code nature, we can typically deliver applications much faster than traditional development methods.",
+    },
+    {
+      question: "Can you help with existing Adalo apps?",
+      answer:
+        "We offer services to enhance, update, or troubleshoot existing Adalo applications, ensuring they meet your evolving business needs.",
+    },
+    {
+      question: "What types of applications can you develop with Adalo?",
+      answer:
+        "We can develop various applications, including business apps, e-commerce platforms, community apps, and more. If you have a specific idea, we’d love to discuss it!",
+    },
+    {
+      question: "How does pricing work for your Adalo development services?",
+      answer:
+        "Our pricing is based on the specific services and complexity of the project. We offer customized quotes after an initial consultation to understand your requirements fully.",
+    },
+    {
+      question: "Will I own the app once it's developed?",
+      answer:
+        "Yes, once your application is developed, you will have full ownership and control over it, including the source code and design.",
+    },
+    {
+      question: "Do you provide training on how to use Adalo?",
+      answer:
+        "Yes, we offer training sessions to help you and your team understand how to manage and update your app using Adalo, enabling you to make changes as needed in the future.",
+    },
+    {
+      question: "How can I get started with your Adalo development services?",
+      answer:
+        "Getting started is simple. Contact us through our website or give us a call to schedule a consultation. We’ll discuss your project and outline the next steps.",
+    },
+  ];
+  const lowCodeNoCodeFAQData = [
+    {
+      question: "What is no code app development?",
+      answer:
+        "No code development allows users to create applications without writing any code, using visual interfaces and pre-built components.",
+    },
+    {
+      question: "How quickly can I get my app developed?",
+      answer:
+        "With our low code development services, you can expect a significantly reduced development timeline, often ranging from a few days to weeks, depending on the project scope.",
+    },
+    {
+      question: "Can I customize my app later?",
+      answer:
+        "Absolutely! Both no code and low code platforms allow for easy updates and modifications, ensuring your app can grow with your business.",
+    },
+    {
+      question: "Do I need technical skills to work with no code developers?",
+      answer:
+        "No technical skills are necessary. Our no code developers will guide you through the process and handle the technical aspects.",
+    },
+  ];
+  const mobileAppFAQData = [
+    {
+      question: "How long does it take to develop a mobile app?",
+      answer:
+        "The development timeline varies depending on the app's complexity, features, and the chosen development approach. Factors such as the number of screens, integrations, and customization requirements can significantly impact the project duration. We can provide a more accurate estimate once we have a detailed understanding of your app idea.",
+    },
+    {
+      question: "Can you help with app design and UI/UX?",
+      answer:
+        "Yes, we offer design services to help you develop a captivating user interface and intuitive user experience. We can provide design mockups, wireframes, and prototypes to ensure your app meets your aesthetic and functional requirements.",
+    },
+    {
+      question: "Do you provide post-launch support and maintenance?",
+      answer:
+        "Yes, we offer ongoing support and maintenance services to ensure your app's continued performance and functionality. Our team can provide updates, bug fixes, and enhancements. We also offer ongoing monitoring and optimization.",
+    },
+    {
+      question: "Can you help with app store submission and marketing?",
+      answer:
+        "Yes, we can assist you with the app store submission process. Furthermore, we also provide guidance on app marketing strategies, such as ASO (App Store Optimization) and user acquisition campaigns.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/hire-reactjs-developer/": reactJSFAQData,
     "/hire-java-developer/": javaFAQData,
@@ -200,14 +343,19 @@ const TechnologyFAQ = () => {
     "/hire-aws-developer/": awsFAQData,
     "/hire-ui-ux-designer/": uiuxFAQData,
     "/hire-blockchain-developer/": blockchainFAQData,
+    "/hire-flutterflow-developer/": flutterflowFAQData,
+    "/hire-bubble-developer/": bubbleFAQData,
+    "/hire-adalo-developer/": adaloFAQData,
+    "/hire-mobile-app-developer/": mobileAppFAQData,
+    "/hire-low-code-no-code-developer/": lowCodeNoCodeFAQData,
   };
 
   const technologyFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
     <div className="xl:pb-[6rem] md:pb-[4rem] pb-8 xl:px-[5%] md:px-8 px-4">
-      <div className="container max-w-[1280px] mx-auto">
-        <div className="md:w-[90%] w-full mx-auto faq-bottom">
+      <div className="container max-w-[1440px] mx-auto">
+        <div className="px-4 w-full mx-auto faq-bottom">
           <div className="solutions md:text-center text-left">
             <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">
               FAQs

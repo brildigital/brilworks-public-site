@@ -231,10 +231,6 @@ const hireTeamMenuItems = [
         name: "React.JS",
         path: "/hire-reactjs-developer/",
       },
-      {
-        name: "React Native",
-        path: "/hire-react-native-developer/",
-      },
       // {
       //   name: "Flutter",
       //   path: "#",
@@ -268,6 +264,41 @@ const hireTeamMenuItems = [
       {
         name: "AWS Certified Developers",
         path: "/hire-aws-developer/",
+      },
+    ],
+  },
+
+  {
+    name: "LOW CODE/ NO CODE DEVELOPMENT",
+    subSections: [
+      {
+        name: "Flutterflow Developers",
+        path: "/hire-flutterflow-developer/",
+      },
+      {
+        name: "Bubble.io Developers",
+        path: "/hire-bubble-developer/",
+      },
+      {
+        name: "Adalo Developers",
+        path: "/hire-adalo-developer/",
+      },
+      {
+        name: "Low Code No Code Developers",
+        path: "/hire-low-code-no-code-developer/",
+      },
+    ],
+  },
+  {
+    name: "MOBILE APP DEVELOPMENT",
+    subSections: [
+      {
+        name: "React Native Developers",
+        path: "/hire-react-native-developer/",
+      },
+      {
+        name: "Mobile App Developers",
+        path: "/hire-mobile-app-developer/",
       },
     ],
   },

@@ -16,14 +16,15 @@ const PortfolioSwiper = ({ imagesData }) => {
           pagination={{ clickable: true }}
           slidesPerView={1}
           speed={1500}
+          spaceBetween={20}
         >
           {imagesData.length &&
             imagesData?.map(({ filename }, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="style_sec3_swiper_home !p-0 !w-4/5">
+                  <div className="style_sec3_swiper_home !p-0 !w-full">
                     <Image
-                      className="!pb-14 !w-[90%] mx-auto"
+                      className="lg:!mb-10 mb-8 mx-auto rounded-xl swiper-img-selection"
                       src={filename}
                       width="400"
                       height="300"
