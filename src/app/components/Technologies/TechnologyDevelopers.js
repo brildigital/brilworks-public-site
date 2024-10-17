@@ -1,6 +1,4 @@
 "use client";
-import Link from "next/link";
-import { scrollToSection } from "../lib/commonFunction";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
@@ -54,6 +52,21 @@ const TechnologyDevelopers = () => {
       case "/hire-blockchain-developer/":
         developerType = "blockchain-developers";
         break;
+      case "/hire-flutterflow-developer/":
+        developerType = "flutterflow-developers";
+        break;
+      case "/hire-bubble-developer/":
+        developerType = "bubble-developers";
+        break;
+      case "/hire-adalo-developer/":
+        developerType = "adalo-developers";
+        break;
+      case "/hire-low-code-no-code-developer/":
+        developerType = "low-code-no-code-native-developers";
+        break;
+      case "/hire-mobile-app-developer/":
+        developerType = "mobile-app-developers";
+        break;
       default:
         developerType = null;
     }
@@ -64,7 +77,17 @@ const TechnologyDevelopers = () => {
   }, []);
 
   return (
-    <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+    <div
+      className={`mx-auto ${
+        pathname === "/hire-flutterflow-developer/" ||
+        pathname === "/hire-adalo-developer/" ||
+        pathname === "/hire-low-code-no-code-developer/" ||
+        pathname === "/hire-mobile-app-developer/" ||
+        pathname === "/hire-bubble-developer/"
+          ? "!w-full px-4"
+          : "service_width"
+      } xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end`}
+    >
       <div className="end-To-end">
         {techDeveloperData?.length ? (
           techDeveloperData.map(({ content, id }, index) => (
@@ -218,8 +241,8 @@ const TechnologyDevelopers = () => {
                         </div>
                         <div className="flex items-center justify-center md:py-[2rem] py-[2rem]">
                           <Button
-                            innerClassName="flex items-center justify-center gap-2 !text-colorBlack hover:!text-colorWhite"
-                            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor"
+                            innerClassName="flex items-center justify-center gap-2"
+                            className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
                             redirect="#section10_service"
                             label={` Hire ${content?.Name}`}
                             icon={

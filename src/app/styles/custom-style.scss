@@ -22,10 +22,20 @@
   }
 }
 
+.button-bg-dark {
+  color: var(--white_color) !important;
+  border: 1px solid var(--theme-color) !important;
+  background: var(--theme-color) !important;
+  &:hover {
+    background: transparent !important;
+    color: var(--white_color) !important;
+  }
+}
+
 .button-white {
   color: var(--color_black) !important;
-  background: var(--white_color) !important;
-  border: 1px solid var(--white_color) !important;
+  background: var(--white_color);
+  border: 1px solid var(--white_color);
   &:hover {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -100,6 +110,13 @@
     opacity: 1;
     background: var(--theme-color);
   }
+}
+
+.img-selection-none {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For IE/Edge */
 }
 
 /* Add responsive styles for different screen sizes */
