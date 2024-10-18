@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import Button from "../Common/Button";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
-import { useMediaQuery } from "react-responsive";
 
-const PortfolioContactForm = () => {
+const PortfolioContactForm = ({ description }) => {
   const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
@@ -15,7 +13,6 @@ const PortfolioContactForm = () => {
     name: "",
     company: "",
     email: "",
-    message: "",
   });
 
   const handleChange = (e) => {
@@ -63,7 +60,14 @@ const PortfolioContactForm = () => {
   };
   return (
     <form id="case=study-contact-form" onSubmit={handleSubmit}>
-      <div className="relative w-full h-10 mb-4">
+      {description && (
+        <div>
+          <p className="text-colorGray text-xl !mb-[30px] pl-1">
+            {description}
+          </p>
+        </div>
+      )}
+      <div className="relative w-full h-10 mb-6">
         <input
           className="peer w-full h-full border-t-0 bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
           id="name"
@@ -78,7 +82,7 @@ const PortfolioContactForm = () => {
           Name*
         </label>
       </div>
-      <div className="relative w-full h-10 mb-4">
+      <div className="relative w-full h-10 mb-6">
         <input
           className="peer w-full h-full border-t-0 bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
           id="company"
@@ -93,7 +97,7 @@ const PortfolioContactForm = () => {
           Company*
         </label>
       </div>
-      <div className="relative w-full h-10 mb-4">
+      <div className="relative w-full h-10 mb-6">
         <input
           className="peer w-full h-full border-t-0 bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
           id="email"
@@ -106,21 +110,6 @@ const PortfolioContactForm = () => {
         />
         <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">
           Email*
-        </label>
-      </div>
-
-      <div className="relative w-full mb-3">
-        <textarea
-          className="peer border-t-0 h-full min-h-[100px] w-full resize-none rounded-[7px] border border-blue-gray-200 border-t-blue-gray-200 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:resize-none disabled:border-0 disabled:bg-blue-gray-50"
-          id="message"
-          name="message"
-          value={formData.message}
-          required
-          onChange={handleChange}
-          placeholder=" "
-        ></textarea>
-        <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">
-          Message*
         </label>
       </div>
       <div className="h-4 text-xs font-medium text-themeColor" id="sucess_msg">

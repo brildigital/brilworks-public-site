@@ -7,7 +7,6 @@ import Image from "next/image";
 import { getblogData } from "../lib/getblog";
 import { formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
-import { data } from "autoprefixer";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -30,7 +29,6 @@ const Blog = () => {
   //     lastmod: `${data.published_at}`,
   //   };
   // });
-
   const fetchData = async () => {
     setIsLoading(true);
     try {

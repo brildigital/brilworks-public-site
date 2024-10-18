@@ -472,6 +472,10 @@ export const sitemapData = [
     lastmod: "2024-10-15T12:04:49.528Z",
   },
   {
+    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
+    lastmod: "2024-10-18T12:04:49.528Z",
+  },
+  {
     loc: "https://www.brilworks.com/our-process/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
@@ -611,6 +615,16 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "How Geneative AI transforms Supply Chain Operations",
+    loc: "https://www.brilworks.com/blog/how-geneative-ai-transforms-supply-chain-operations/",
+    lastmod: "2024-10-17T12:36:57.830Z",
+  },
+  {
+    name: "How to Create a Mobile App in 2024 [Easy Steps]",
+    loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
+    lastmod: "2024-10-16T12:00:51.984Z",
+  },
   {
     name: "Is AWS the Right Cloud Solution for Your Small Business?",
     loc: "https://www.brilworks.com/blog/aws-for-small-business/",
