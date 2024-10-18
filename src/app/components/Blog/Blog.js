@@ -7,7 +7,6 @@ import Image from "next/image";
 import { getblogData } from "../lib/getblog";
 import { formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
-import { data } from "autoprefixer";
 
 const Blog = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -23,15 +22,13 @@ const Blog = () => {
   const router = useRouter();
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
-  const staticBlogList = blogDataPerPage.map((data) => {
-    return {
-      name: data.name,
-      loc: `https://www.brilworks.com/${data.full_slug}/`,
-      lastmod: `${data.published_at}`,
-    };
-  });
-  console.log(staticBlogList);
-
+  // const staticBlogList = blogDataPerPage.map((data) => {
+  //   return {
+  //     name: data.name,
+  //     loc: `https://www.brilworks.com/${data.full_slug}/`,
+  //     lastmod: `${data.published_at}`,
+  //   };
+  // });
   const fetchData = async () => {
     setIsLoading(true);
     try {
