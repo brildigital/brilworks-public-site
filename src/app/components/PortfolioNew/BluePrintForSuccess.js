@@ -8,7 +8,7 @@ const BluePrintForSuccess = ({ blueprintForSuccess }) => {
       <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
         <div className="container max-w-[1440px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-[30px]">
-            <div className="lg:w-7/12 w-full">
+            <div className="lg:w-[70%] w-full">
               <Heading
                 type="h2"
                 text={blueprintForSuccess?.[0]?.Title}
@@ -21,8 +21,8 @@ const BluePrintForSuccess = ({ blueprintForSuccess }) => {
                 {blueprintForSuccess?.[0]?.Description2}
               </p>
             </div>
-            <div className="lg:w-5/12  w-full bg-colorWhite p-6 rounded-xl border border-themeColor">
-              <PortfolioContactForm />
+            <div className="lg:w-[30%]  w-full bg-colorWhite p-6 rounded-xl border border-themeColor">
+              <PortfolioContactForm companyNotRequired={true} />
             </div>
           </div>
         </div>

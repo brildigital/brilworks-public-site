@@ -13,6 +13,8 @@ const Storyblok = new StoryblokClient({
 const MoreSuccessStoriesSection = () => {
   const pathname = usePathname();
   const [caseStudyData, setCaseStudyData] = useState();
+  console.log(pathname);
+  console.log(caseStudyData);
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {
@@ -36,25 +38,37 @@ const MoreSuccessStoriesSection = () => {
           text="MORE SUCCESS STORIES"
           className="text-center mb-5"
         />
-        <p className="text-colorGray md:text-xl text-lg text-center md:!mb-[30px] !mb-5">
-          to build a next-generation EdTech app? We know how.
-        </p>
+        {/* ?.filter((data) => data?.full_slug !== pathname)
+  ?.slice(0, 4) */}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
           {caseStudyData?.length &&
             caseStudyData
-              ?.filter((data) => pathname !== data?.slug)
+              ?.filter(({ slug }) => !pathname?.includes(slug))
               ?.slice(0, 4)
               ?.map(({ name, content, full_slug }, index) => {
+                const truncatedText = name
+                  ? name.split(" ").slice(0, 6).join(" ") + "..."
+                  : "";
                 return (
-                  <Link key={name} href={`/${full_slug}/`}>
-                    <Image
-                      className="rounded-2xl"
-                      src={content?.images?.[0]?.filename}
-                      width="302"
-                      height="240"
-                      alt={`casestudy-${index}`}
-                    />
-                  </Link>
+                  <div
+                    key={index}
+                    className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+                  >
+                    <Link key={name} href={`/${full_slug}/`}>
+                      <Image
+                        className="rounded-2xl"
+                        src={content?.images?.[0]?.filename}
+                        width="302"
+                        height="240"
+                        alt={`casestudy-${index}`}
+                      />
+                      <div className="p-[10px]">
+                        <h3 className="xl:text-[24px] font-medium mb-[10px] leading-8">
+                          {truncatedText}
+                        </h3>
+                      </div>
+                    </Link>
+                  </div>
                 );
               })}
         </div>

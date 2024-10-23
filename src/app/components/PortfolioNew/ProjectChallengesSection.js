@@ -9,10 +9,10 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
         <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
           <div className="container max-w-[1440px] mx-auto our-work-list-icon">
             <div className="flex md:flex-row flex-col">
-              <div className="lg:w-3/4 w-full">
+              <div className="lg:w-[95%] w-full">
                 <Heading
                   type="h2"
-                  className="mb-6"
+                  className="mb-6 !text-themeColor"
                   text={projectChallenges?.[0]?.Title}
                 />
                 {projectChallenges?.[0]?.Description1 && (
@@ -32,7 +32,7 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                   </p>
                 )}
               </div>
-              <div className="lg:w-[15%] md:w-2/5 w-4/5 mx-auto md:my-auto">
+              {/* <div className="lg:w-[15%] md:w-2/5 w-4/5 mx-auto md:my-auto">
                 <Image
                   className="lg:w-auto w-full md:!mb-0 mb-6"
                   src={projectChallenges?.[0]?.Image?.filename}
@@ -42,11 +42,11 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                   width="280"
                   height="248"
                 />
-              </div>
+              </div> */}
             </div>
-            <ul>
-              {projectChallenges?.[0]?.ListItem?.length &&
-                projectChallenges?.[0]?.ListItem?.map(
+            {projectChallenges?.[0]?.ListItem?.length ? (
+              <ul>
+                {projectChallenges?.[0]?.ListItem?.map(
                   ({ Display_text }, index) =>
                     Display_text && (
                       <li
@@ -57,7 +57,10 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                       </li>
                     )
                 )}
-            </ul>
+              </ul>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
@@ -65,10 +68,10 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
         <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
           <div className="container max-w-[1440px] mx-auto our-work-list-icon">
             <div className="flex md:flex-row flex-col">
-              <div className="lg:w-3/4 w-full">
+              <div className="lg:w-[95%] w-full">
                 <Heading
                   type="h2"
-                  className="mb-6"
+                  className="mb-6 !text-themeColor"
                   text={projectChallenges?.[1]?.Title}
                 />
                 {projectChallenges?.[1]?.Description1 && (
@@ -88,7 +91,7 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                   </p>
                 )}
               </div>
-              <div className="lg:w-[15%] md:w-2/5 w-4/5 mx-auto md:my-auto">
+              {/* <div className="lg:w-[15%] md:w-2/5 w-4/5 mx-auto md:my-auto">
                 {projectChallenges?.[1]?.Image?.filename && (
                   <Image
                     className="lg:w-auto w-full md:!mb-0 mb-6"
@@ -100,11 +103,11 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                     height="248"
                   />
                 )}
-              </div>
+              </div> */}
             </div>
-            <ul>
-              {projectChallenges?.[1]?.ListItem?.length &&
-                projectChallenges?.[1]?.ListItem?.map(
+            {projectChallenges?.[1]?.ListItem?.length ? (
+              <ul>
+                {projectChallenges?.[1]?.ListItem?.map(
                   ({ Display_text }, index) =>
                     Display_text && (
                       <li
@@ -115,7 +118,10 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                       </li>
                     )
                 )}
-            </ul>
+              </ul>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

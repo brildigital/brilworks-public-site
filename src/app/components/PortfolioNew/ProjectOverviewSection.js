@@ -7,7 +7,7 @@ const ProjectOverviewSection = ({ projectOverview }) => {
       <div className="container max-w-[1440px] mx-auto">
         <Heading
           type="h2"
-          className="mb-6"
+          className="mb-6 !text-themeColor"
           text={projectOverview?.[0]?.Title}
         />
         {projectOverview?.[0]?.Description1 && (

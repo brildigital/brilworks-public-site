@@ -98,8 +98,6 @@ export default async function Page({ params }) {
     description,
     images,
     KeyValueBlock,
-    buttontext,
-    buttonURL,
     ProcessAndEnhanceBlock,
     ProjectOverview,
     ProjectChallenges,
@@ -115,8 +113,6 @@ export default async function Page({ params }) {
         description={description}
         images={images}
         KeyValueBlock={KeyValueBlock}
-        buttontext={buttontext}
-        buttonURL={buttonURL}
       />
       <ProcessAndEnhanceSection
         processAndEnhanceBlock={ProcessAndEnhanceBlock}
@@ -125,8 +121,8 @@ export default async function Page({ params }) {
       <ProjectChallengesSection projectChallenges={ProjectChallenges} />
       {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
       <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
-      <SuccessThroughClientEyes />
-      <PortfolioCTASection ctaData={CTA} />
+      {/* <SuccessThroughClientEyes /> */}
+      {/* <PortfolioCTASection ctaData={CTA} /> */}
       <MoreSuccessStoriesSection />
     </Suspense>
   );

@@ -4,13 +4,12 @@ import Button from "../Common/Button";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioSwiper from "./PortfolioSwiper";
 import Link from "next/link";
+import Image from "next/image";
 
 const PortfolioFirstSection = ({
   title,
   description,
   images,
-  buttontext,
-  buttonURL,
   KeyValueBlock,
 }) => {
   return (
@@ -24,29 +23,47 @@ const PortfolioFirstSection = ({
                 <p className="md:text-xl text-lg text-colorGray !mb-6 lg:w-[90%] w-full">
                   {description}
                 </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-0">
+                <div className="flex flex-wrap gap-x-6 lg:gap-y-0 gap-y-4">
                   {KeyValueBlock?.length &&
-                    KeyValueBlock.map(({ Key, Value }, index) =>
-                      Key && Value && Value?.match(/(.*?)\s*\((.*?)\)/)?.[2] ? (
+                    KeyValueBlock.map(({ link, text, image }, index) =>
+                      link?.url ? (
                         <Link
-                          className="font-medium lg:!mb-4 text-xl hover:!text-themeColor"
+                          className="font-medium flex items-center lg:!mb-4 text-xl hover:!text-themeColor"
                           key={index}
-                          href={Value?.match(/\((.*?)\)/)?.[1]}
+                          href={link?.url}
                           target="_blank"
                         >
-                          <span className="text-themeColor">{Key}</span>
-                          &nbsp;{Value.match(/(.*?)\s*\((.*?)\)/)?.[1]}
+                          <Image
+                            className="w-6 h-6 mr-2"
+                            src={image?.filename}
+                            alt={text}
+                            width="24"
+                            height="24"
+                            priority
+                          />
+                          {/* <span className="text-themeColor">{Key}</span> */}
+                          &nbsp;{text}
                         </Link>
                       ) : (
-                        <p className="font-medium lg:!mb-4 text-xl" key={index}>
-                          <span className="text-themeColor">{Key}</span>
-                          &nbsp;{Value}
+                        <p
+                          className="font-medium flex items-center lg:!mb-4 text-xl"
+                          key={index}
+                        >
+                          <Image
+                            className="w-6 h-6 mr-2"
+                            src={image?.filename}
+                            alt={text}
+                            width="24"
+                            height="24"
+                            priority
+                          />
+                          &nbsp;{text}
                         </p>
                       )
                     )}
                 </div>
               </div>
-              <div className="!mt-auto">
+              {/* <div className="!mt-auto">
                 <Button
                   innerClassName="flex items-center justify-center gap-2"
                   className="mt-3"
@@ -55,7 +72,7 @@ const PortfolioFirstSection = ({
                   icon="right-arrow-next"
                   scrollingButton
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="lg:basis-2/5 lg:w-2/5 w-full">

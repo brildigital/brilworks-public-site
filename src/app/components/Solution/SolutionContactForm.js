@@ -30,7 +30,6 @@ const SolutionContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setRespMessage("Your response is submitted successfully.");
 
     try {
       const response = await fetch(

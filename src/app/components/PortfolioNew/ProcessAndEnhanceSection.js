@@ -5,17 +5,17 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
     switch (num) {
       case 2:
         return {
-          grid: "md:grid-cols-2 grid-col-1",
+          grid: "md:grid-cols-2 grid-cols-1",
           width: "lg:w-[40%] w-[80%]",
         };
       case 3:
         return {
-          grid: "lg:grid-cols-3 md:grid-cols-2 grid-col-1",
+          grid: "lg:grid-cols-3 md:grid-cols-2 grid-cols-1",
           width: "lg:w-[50%] w-[60%]",
         };
       case 4:
         return {
-          grid: "lg:grid-cols-4 md:grid-cols-2 grid-col-1",
+          grid: "lg:grid-cols-4 md:grid-cols-2 grid-cols-1",
           width: "lg:w-[60%] w-[60%]",
         };
       case 5:
@@ -42,18 +42,18 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                   Key &&
                   Value && (
                     <div
-                      className={`w-full md:pl-4 lg:pl-6 mx-auto flex justify-start md:items-start items-center h-full flex-col ${
+                      className={`w-full md:pl-4 lg:pl-6 mx-auto flex justify-start items-start h-full flex-col ${
                         index === processAndEnhanceBlock?.length - 1
                           ? "!border-r-0 md:!border-b-2 lg:!border-b-0"
-                          : "lg:!border-r-2 lg:!border-b-0 border-b-2"
+                          : "lg:!border-r-2 lg:!border-b-0"
                       } border-themeColor`}
                       key={index}
                     >
-                      <span className="text-themeColor lg:text-5xl md:text-[40px] text-3xl leading-tight font-bold lg:mb-4 my-4">
+                      <span className="text-themeColor lg:text-5xl text-[40px] leading-tight font-bold lg:mb-4 mt-4">
                         {Key}
                       </span>
                       <p
-                        className={`!mb-4 md:text-xl text-lg md:text-left text-center text-colorGray ${dynamicCSS.width}`}
+                        className={`!mb-4 md:text-xl text-lg text-left text-colorGray ${dynamicCSS.width}`}
                       >
                         {Value}
                       </p>
