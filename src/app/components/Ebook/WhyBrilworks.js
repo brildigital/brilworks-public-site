@@ -5,14 +5,10 @@ import Image from "next/image";
 const WhyBrilworks = ({ title, description, imageSrc }) => {
   return (
     <div className="lg:px-[70px] px-4 lg:pt-[60px] pt-8">
-      <div className="container max-w-[1440px] mx-auto our-work-list-icon">
+      <div className="container max-w-[1280px] mx-auto our-work-list-icon">
         <div className="lg:mb-[60px] mb-8">
-          <Heading
-            type="h2"
-            className="text-center mb-5 uppercase"
-            text={title || ""}
-          />
-          <p className="md:text-xl text-lg text-colorGray lg:w-4/5 w-full mx-auto text-center">
+          <Heading type="h2" className="text-center mb-5" data={title || ""} />
+          <p className="md:text-xl text-lg text-colorGray w-full mx-auto text-center">
             {description || ""}
           </p>
           <Image

@@ -9,16 +9,12 @@ const OtherEbooksSection = ({ title, description, imageSrc }) => {
   return (
     <div className="bg-themeLight lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
       <div className="container max-w-[1440px] mx-auto">
-        <Heading
-          type="h2"
-          text={title}
-          className="text-center mb-5 uppercase"
-        />
+        <Heading type="h2" data={title} className="text-center mb-5" />
         <p className="text-colorGray md:text-xl text-lg text-center md:!mb-[30px] !mb-5">
           {description}
         </p>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 items-center">
-          <div className="relative mx-auto">
+          {/* <div className="relative mx-auto">
             <div className="relative h-[283px] w-[292px]">
               <Image
                 className="absolute left-10 bottom-24 w-[113px] h-[187px] z-10 img-selection-none"
@@ -129,8 +125,8 @@ const OtherEbooksSection = ({ title, description, imageSrc }) => {
                 </Link>
               </div>
               <div className="absolute bottom-0 w-full h-[193px] border-b border-l-4 border-themeColor rounded-[26px] z-0"></div>
-            </div>
-          </div>
+            </div> 
+          </div>*/}
         </div>
       </div>
     </div>
