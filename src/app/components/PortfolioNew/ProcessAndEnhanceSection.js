@@ -45,7 +45,7 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                       className={`w-full md:pl-4 lg:pl-6 mx-auto flex justify-start items-start h-full flex-col ${
                         index === processAndEnhanceBlock?.length - 1
                           ? "!border-r-0 md:!border-b-2 lg:!border-b-0"
-                          : "lg:!border-r-2 lg:!border-b-0"
+                          : "lg:!border-r-1 lg:!border-b-0"
                       } border-themeColor`}
                       key={index}
                     >
