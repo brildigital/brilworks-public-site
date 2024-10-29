@@ -3,6 +3,19 @@ import Heading from "../HTMLComponents/Heading";
 import PortfolioContactForm from "./PortfolioContactForm";
 
 const BluePrintForSuccess = ({ blueprintForSuccess }) => {
+  const blueprintForSuccessDescription =
+    blueprintForSuccess?.[0]?.Description2 || "";
+
+  const highlightedText = blueprintForSuccessDescription
+    .replace(
+      /sales@brilworks\.com/g,
+      `<span class="font-medium text-themeColor">sales@brilworks.com</span>`
+    )
+    .replace(
+      /\+91 93136 44148/g,
+      `<span class="font-medium text-themeColor">+91 93136 44148</span>`
+    );
+
   return (
     <div id="blueprint-section" className="bg-sectionBG">
       <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
@@ -17,9 +30,12 @@ const BluePrintForSuccess = ({ blueprintForSuccess }) => {
               <p className="text-colorGray md:text-xl text-lg !mb-6 md:!w-full lg:!w-[90%] !w-[90%]">
                 {blueprintForSuccess?.[0]?.Description1}
               </p>
-              <p className="text-colorGray md:text-xl text-lg md:!w-full lg:!w-[90%] !w-[90%]">
-                {blueprintForSuccess?.[0]?.Description2}
-              </p>
+              <p
+                className="text-colorGray md:text-xl text-lg md:!w-full lg:!w-[90%] !w-[90%]"
+                dangerouslySetInnerHTML={{ __html: highlightedText }}
+              />
+              {/* {blueprintForSuccess?.[0]?.Description2} */}
+              {/* </p> */}
             </div>
             <div className="lg:w-[30%]  w-full bg-colorWhite p-6 rounded-xl border border-themeColor">
               <PortfolioContactForm companyNotRequired={true} />

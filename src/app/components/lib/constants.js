@@ -616,9 +616,24 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
+    loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
+    lastmod: "2024-10-25T08:40:06.162Z",
+  },
+  {
+    name: "10 Best Online Business Ideas with Minimal Investment",
+    loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
+    lastmod: "2024-10-28T07:27:24.132Z",
+  },
+  {
+    name: "How to Create An App and Make Money in 2024",
+    loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
+    lastmod: "2024-10-21T13:26:41.345Z",
+  },
+  {
     name: "How Geneative AI transforms Supply Chain Operations",
     loc: "https://www.brilworks.com/blog/how-geneative-ai-transforms-supply-chain-operations/",
-    lastmod: "2024-10-17T12:36:57.830Z",
+    lastmod: "2024-10-25T06:55:31.241Z",
   },
   {
     name: "How to Create a Mobile App in 2024 [Easy Steps]",

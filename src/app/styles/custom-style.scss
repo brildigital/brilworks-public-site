@@ -119,6 +119,15 @@
   -ms-user-select: none; /* For IE/Edge */
 }
 
+.process-enhancement {
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0 !important;
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--theme-color) !important;
+  }
+}
+
 /* Add responsive styles for different screen sizes */
 @media screen and (max-width: 600px) {
   .tech-content {
