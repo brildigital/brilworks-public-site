@@ -36,7 +36,7 @@ const MoreSuccessStoriesSection = () => {
         <Heading
           type="h2"
           text="MORE SUCCESS STORIES"
-          className="text-center mb-5"
+          className="text-center mb-5 text-themeColor"
         />
         {/* ?.filter((data) => data?.full_slug !== pathname)
   ?.slice(0, 4) */}
@@ -47,7 +47,7 @@ const MoreSuccessStoriesSection = () => {
               ?.slice(0, 4)
               ?.map(({ name, content, full_slug }, index) => {
                 const truncatedText = name
-                  ? name.split(" ").slice(0, 6).join(" ") + "..."
+                  ? name.split(" ").slice(0, 5).join(" ") + "..."
                   : "";
                 return (
                   <div

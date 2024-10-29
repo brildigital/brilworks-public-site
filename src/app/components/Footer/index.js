@@ -8,475 +8,568 @@ import Button from "../Common/Button";
 const Footer = () => {
   const pathname = usePathname();
 
+  const getActivePage = (pageURL) => {
+    return pathname === pageURL ? "page-active" : "";
+  };
+  const socialLinks = [
+    {
+      name: "Facebook",
+      linkURL: "https://www.facebook.com/brilwork/",
+      imgSrc: "/images/fb-footer.svg",
+    },
+    {
+      name: "Youtube",
+      linkURL: "https://www.youtube.com/@brilworks",
+      imgSrc: "/images/youtube-footer.svg",
+    },
+    {
+      name: "Instagram",
+      linkURL: "https://www.instagram.com/brilworkssoftware/",
+      imgSrc: "/images/insta-footer.svg",
+    },
+    {
+      name: "LinkedIn",
+      linkURL: "https://www.linkedin.com/company/brilworks/",
+      imgSrc: "/images/linkedin-footer.svg",
+    },
+    {
+      name: "Behance",
+      linkURL: "https://www.behance.net/hellobrilworks",
+      imgSrc: "/images/behance-img.svg",
+    },
+    {
+      name: "Dribbble",
+      linkURL: "https://dribbble.com/Brilworks",
+      imgSrc: "/images/dribble-img.svg",
+    },
+    {
+      name: "Dribbble",
+      linkURL: "https://www.upwork.com/ag/brilworks/",
+      imgSrc: "/images/upwork-footer.svg",
+    },
+  ];
+
+  const footerData = [
+    {
+      title: "Quick Links",
+      links: [
+        {
+          link: "/",
+          text: "Home",
+        },
+        {
+          link: "/contact-us/",
+          text: "Contact Us",
+        },
+        {
+          link: "/portfolio/",
+          text: "Portfolio",
+        },
+        {
+          link: "/about-us/",
+          text: "About",
+        },
+        {
+          link: "/our-process/",
+          text: "Our Process",
+        },
+        {
+          link: "/blog/",
+          text: "Blogs",
+        },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        {
+          link: "/industry/fintech-software-development/",
+          text: "Fintech",
+        },
+        {
+          link: "/industry/fleet-management-software-development/",
+          text: "Fleet Management  + GPS",
+        },
+        {
+          link: "/industry/healthcare-software-development/",
+          text: "Healthcare",
+        },
+        {
+          link: "/industry/media-entertainment-software-development/",
+          text: "Media & Entertainment",
+        },
+      ],
+    },
+    {
+      title: "Technologies",
+      links: [
+        {
+          link: "/hire-java-developer/",
+          text: "Java",
+        },
+        {
+          link: "/hire-nodejs-developer/",
+          text: "Nodejs",
+        },
+        {
+          link: "/hire-reactjs-developer/",
+          text: "Reactjs",
+        },
+        {
+          link: "/hire-react-native-developer/",
+          text: "React Native",
+        },
+        {
+          link: "/hire-aws-developer/",
+          text: "AWS Development",
+        },
+        {
+          link: "/hire-ui-ux-designer//",
+          text: "UI/UX Development",
+        },
+        {
+          link: "/hire-blockchain-developer/",
+          text: "Blockchain Development",
+        },
+      ],
+    },
+    {
+      title: (
+        <>
+          Contact <span className="font-bold text-themeColor">Sales</span>
+        </>
+      ),
+      links: [
+        {
+          link: "tel:919313644148",
+          text: "+ 91 9313644148",
+        },
+        {
+          link: "mailto:sales@brilworks.com",
+          text: "sales@brilworks.com",
+        },
+      ],
+    },
+    {
+      title: (
+        <>
+          Contact <span className="font-bold text-themeColor">Career</span>
+        </>
+      ),
+      links: [
+        {
+          link: "tel:919106810920",
+          text: "+ 91 9106810920",
+        },
+        {
+          link: "mailto:hr@brilworks.com",
+          text: "hr@brilworks.com",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="bg-footerBG">
-      <div className="section-padding !pb-16">
+      <div className="xl:p-[60px] !pb-6 md:pt-10 md:px-6 pt-8 px-4">
         <div className="container max-w-[1280px] mx-auto">
-          <div className="flex flex-col lg:flex-row">
-            {/* <div className="footer_grid border-b border-borderGray"> */}
-            <div className="footer_grid border-b border-borderGray">
-              <div className="grid-area-one sxl:col-span-2">
-                <div className="lg:mb-10 mb-5">
-                  <p className="text-2xl font-semibold !mb-[10px]">
-                    BRILLIANT + WORKS
-                  </p>
-                  <p className="lg:text-[26px] text-2xl lg:leading-[36px] font-semibold sxl:w-[90%] w-full">
-                    Hello, we are
-                    <span className="font-bold text-themeColor">
-                      &nbsp; BRILLIAN’S
-                    </span>
-                    . Trying to make an effort to put the right people for you
-                    to get the best results. Just insight !!
-                  </p>
-                </div>
-                <div className="lg:mb-10 mb-5">
-                  <p className="text-base font-bold !mb-[10px]">
-                    OFFICE LOCATION
-                  </p>
-                  <p className="text-base sxl:w-[70%] w-[90%]">
-                    503, Fortune Business Hub, Science City Road, Near Shell
-                    Petrol Pump, Sola, Ahmedabad, Gujarat 380060
-                  </p>
-                </div>
+          <div className="w-full grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-10 md:gap-8 gap-5 xl:mb-10 md:mb-8 mb-5">
+            <div className="w-full">
+              <p className="text-2xl font-medium !mb-4">Brilliant + Works</p>
+              <p className="text-base w-full !mb-6">
+                Hello, we are
+                <span className="font-medium text-themeColor">
+                  &nbsp; BRILLIAN’S.
+                </span>
+                Trying to make an effort to put the right people for you to get
+                the best results. Just insight !
+              </p>
+              <div className="flex items-center text-xl font-medium mb-4">
+                We are&nbsp;
+                <span className="text-themeColor">Hiring&nbsp;</span>
+                <Image
+                  className="w-6 h-6 ml-2"
+                  src="/images/megaphone.svg"
+                  alt="hiring-voice"
+                  width="24"
+                  height="24"
+                />
               </div>
-              <div className="grid-area-two">
-                <p className="text-base font-bold !mb-5">QUICK LINKS</p>
-                <div>
-                  <ul className="footer_link">
-                    <li>
-                      <Link
-                        href="/"
-                        className={pathname === "/" ? "page-active" : ""}
-                      >
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/contact-us/"
-                        className={
-                          pathname === "/contact-us/" ? "page-active" : ""
-                        }
-                      >
-                        Contact Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/portfolio/"
-                        className={
-                          pathname === "/portfolio/" ? "page-active" : ""
-                        }
-                      >
-                        Portfolio
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/about-us/"
-                        className={
-                          pathname === "/about-us/" ? "page-active" : ""
-                        }
-                      >
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/our-process/"
-                        className={
-                          pathname === "/our-process/" ? "page-active" : ""
-                        }
-                      >
-                        Our Process
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/blog/"
-                        className={pathname === "/blog/" ? "page-active" : ""}
-                      >
-                        Blogs
-                      </Link>
-                    </li>
-                    {process.env.NEXT_PUBLIC_BASE_URL !==
-                      "https://www.brilworks.com/" && (
-                      <li>
-                        <Link
-                          href="/gist/"
-                          className={pathname === "/gist/" ? "page-active" : ""}
-                        >
-                          Gist
-                        </Link>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              </div>
-              <div className="grid-area-three">
-                <p className="text-base font-bold !mb-5">SOLUTIONS</p>
-                <div>
-                  <ul className="footer_link">
-                    <li>
-                      <Link
-                        href="/industry/fintech-software-development/"
-                        className={
-                          pathname === "/industry/fintech-software-development/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Fintech
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/industry/fleet-management-software-development/"
-                        className={
-                          pathname ===
-                          "/industry/fleet-management-software-development/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Fleet Management + GPS
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/industry/healthcare-software-development/"
-                        className={
-                          pathname ===
-                          "/industry/healthcare-software-development/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Health Care
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/industry/media-entertainment-software-development/"
-                        className={
-                          pathname ===
-                          "/industry/media-entertainment-software-development/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Media & Entertainment
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                {process.env.NEXT_PUBLIC_BASE_URL !==
-                  "https://www.brilworks.com/" && (
-                  <div className="footer_btn">
-                    <Button
-                      label="Log In"
-                      redirect="/login/"
-                      className="hidden-xs"
+              <Button
+                innerClassName="flex items-center justify-center gap-2 font-medium"
+                redirect={`/career/`}
+                label="View Positions"
+                icon="right-arrow-next"
+              />
+              <div className="xl:my-10 md:mt-8 mt-6 flex items-center justify-start slg:gap-4 gap-2 flex-wrap">
+                {socialLinks.map(({ name, linkURL, imgSrc }, index) => (
+                  <Link
+                    key={name}
+                    href={linkURL}
+                    target="_blank"
+                    className="md:p-[10px] p-2 !border-borderGray border rounded-full"
+                  >
+                    <Image
+                      className="w-5 h-5"
+                      src={imgSrc}
+                      alt={name}
+                      width="20"
+                      height="20"
                     />
-                  </div>
-                )}
-              </div>
-              <div className="grid-area-four">
-                <p className="text-base font-bold !mb-5">TECHNOLOGIES</p>
-                <div>
-                  <ul className="footer_link">
-                    <li>
-                      <Link
-                        href="/hire-java-developer/"
-                        className={
-                          pathname === "/hire-java-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Java
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-nodejs-developer/"
-                        className={
-                          pathname === "/hire-nodejs-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Nodejs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-reactjs-developer/"
-                        className={
-                          pathname === "/hire-reactjs-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Reactjs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-react-native-developer/"
-                        className={
-                          pathname === "/hire-react-native-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        React Native
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-aws-developer/"
-                        className={
-                          pathname === "/hire-aws-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        AWS Development
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-ui-ux-designer/"
-                        className={
-                          pathname === "/hire-ui-ux-designer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        UI/UX Development
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hire-blockchain-developer/"
-                        className={
-                          pathname === "/hire-blockchain-developer/"
-                            ? "page-active"
-                            : ""
-                        }
-                      >
-                        Blockchain Development
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-b border-borderGray py-6">
-            <p className="pb-6">Partnerships:</p>
-            <div className="footer-award flex items-center flex-wrap justify-between gap-4 xl:gap-6">
-              <Image
-                className="xl:w-fit w-[50px] xl:h-14 h-auto"
-                src="/images/select-tier-service-partner-light-1.png"
-                alt="AWS Partner"
-                width="300"
-                height="118"
-              />
-              <Image
-                className="xl:w-fit w-[80px] xl:h-10 h-auto"
-                src="/images/review-adalo.png"
-                alt="adalo expert"
-                width="300"
-                height="118"
-              />
-              <Image
-                className="xl:w-fit w-[130px] xl:h-10 h-auto"
-                src="/images/Storyblok.svg"
-                alt="Storyblok partner"
-                width="123"
-                height="26"
-              />
-              <Image
-                className="xl:w-fit w-[100px] xl:h-6 h-auto"
-                src="/images/dotCMS-logo.svg"
-                alt="dotCMS logo"
-                width="300"
-                height="118"
-              />
-              <Image
-                className="xl:w-fit md:w-[200px] w-[180px] xl:h-10 h-auto"
-                src="/images/review-liferay.png"
-                alt="Liferay Partner"
-                width="300"
-                height="118"
-              />
-            </div>
-          </div>
-          <div className="border-b border-borderGray py-6">
-            <p className="pb-6">Recognized by:</p>
-            <div className="footer-award flex items-center flex-wrap justify-between xl:gap-6 gap-4">
-              <Link
-                href={"https://clutch.co/profile/brilworks-software#summary"}
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
-                  src="/images/global_award_2023 (1).webp"
-                  alt="global award"
-                  width="150"
-                  height="162"
-                />
-              </Link>
-              <Link
-                href={"https://clutch.co/profile/brilworks-software#highlights"}
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
-                  src="/images/top-clutchco-software-developers-gaming-india.webp"
-                  alt="Gaming India"
-                  width="150"
-                  height="162"
-                />
-              </Link>
-              <Link
-                href={
-                  "https://themanifest.com/in/software-development/java/companies/ahmedabad"
-                }
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
-                  src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
-                  alt="App dev company award"
-                  width="110"
-                  height="160"
-                />
-              </Link>
-              <Link
-                href={
-                  "https://www.designrush.com/agency/profile/brilworks-software"
-                }
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[120px] scale-[0.8]  md:w-[90px] w-[70px]"
-                  src="/images/Top-Mobile-App-Development-Company2.webp"
-                  alt="Top App dev company award"
-                  width="120"
-                  height="130"
-                />
-              </Link>
-              <Link
-                href={
-                  "https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
-                }
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
-                  src="/images/review-top-software-developers.png"
-                  alt="Top software companies logo"
-                  width="150"
-                  height="105"
-                />
-              </Link>
-              <Link
-                href={
-                  "https://themanifest.com/in/software-development/java/companies/ahmedabad"
-                }
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[110px] scale-[0.8]  md:w-[80px] w-[60px]"
-                  src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
-                  alt="Top manifest review"
-                  width="110"
-                  height="160"
-                />
-              </Link>
-              <Link
-                href={"https://clutch.co/profile/brilworks-software#highlights"}
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
-                  src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
-                  alt="GPS, Navigation & GIS India"
-                  width="150"
-                  height="162"
-                />
-              </Link>
-              <Link
-                href={"https://clutch.co/profile/brilworks-software#summary"}
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <Image
-                  className="xl:w-[150px] scale-[0.8]  md:w-[100px] w-[80px]"
-                  src="/images/global_award_spring_2024.webp"
-                  alt="global award"
-                  width="150"
-                  height="162"
-                />
-              </Link>
-            </div>
-          </div>
-          <div className="pt-6">
-            <div className="grid sxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-              <div className="footer-contact border border-borderGray rounded-[14px] p-6">
-                <p className="font-bold md:text-3xl text-xl !mb-[10px]">
-                  CONTACT # <span className="">SALES</span>
-                </p>
-                <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap">
-                  <a href="tel:919313644148">+91 93136 44148 </a>/
-                  <a href="mailto:sales@brilworks.com"> sales@brilworks.com</a>
-                </p>
-              </div>
-              <div className="footer-contact border border-borderGray rounded-[14px] p-6">
-                <p className="font-bold md:text-3xl text-xl !mb-[10px]">
-                  CONTACT # <span className="">CAREER</span>
-                </p>
-                <p className="flex lg:items-center lg:justify-between font-bold text-base flex-wrap md:flex-nowrap md:w-[90%]">
-                  <a href="tel:919106810920">+91 91068 10920 </a>/
-                  <a href="mailto:hr@brilworks.com"> hr@brilworks.com</a>
-                </p>
-              </div>
-              <div className="p-6 border border-borderGray rounded-[14px]">
-                <p className="font-bold !text-themeColor md:text-3xl text-xl !mb-[10px] text-center">
-                  👋 WE ARE HIRING!!!
-                </p>
-                <div className="flex items-center justify-center font-bold text-base bg-themeColor w-fit rounded-[34px] px-5 py-[6px] mx-auto cursor-pointer">
-                  <Link href="/career/" className="!text-colorWhite">
-                    👀 View Positions
                   </Link>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row lg:items-end items-start lg:justify-between justify-center pt-6">
-              <div className="footer_logo">
+            <div className="w-full flex xl:gap-10 md:gap-[30px] gap-4 footer-links">
+              {footerData.slice(0, 2).map(({ title, links }) => (
+                <div
+                  key={title}
+                  className={`${
+                    title === "Quick Links" ? ":w-2/5 w-1/2" : "md:w-3/5 w-1/2"
+                  } flex flex-col gap-[14px]`}
+                >
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <Link
+                      key={text}
+                      href={link}
+                      className={`${getActivePage(
+                        link
+                      )} !text-colorGray md:text-base text-sm font-medium`}
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="w-full flex xl:gap-8 md:gap-[30px] gap-4 footer-links">
+              {footerData.slice(2, 3).map(({ title, links }) => (
+                <div key={title} className="w-1/2 flex flex-col gap-[14px]">
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <Link
+                      key={text}
+                      href={link}
+                      className={`${getActivePage(
+                        link
+                      )} !text-colorGray md:text-base text-sm font-medium`}
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+              <div className="w-1/2 xl:block md:hidden block flex flex-col xl:gap-10 md:gap-8 gap-6">
+                {footerData.slice(3, 5).map(({ title, links }, index) => (
+                  <div
+                    key={title}
+                    className={`${
+                      index === 0 ? "mb-10" : ""
+                    } w-full flex flex-col gap-[14px]`}
+                  >
+                    <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                      {title}
+                    </h3>
+                    {links.map(({ link, text }) => (
+                      <a
+                        key={text}
+                        href={link}
+                        target="_blank"
+                        className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
+                      >
+                        {text.split("").includes("@") ? (
+                          <Image
+                            className="md:w-5 w-4 md:h-5 h-4"
+                            src="/images/sms.svg"
+                            alt="email-now"
+                            width="20"
+                            height="20"
+                          />
+                        ) : (
+                          <Image
+                            className="md:w-5 w-4 md:h-5 h-4"
+                            src="/images/call-calling.svg"
+                            alt="connect-now"
+                            width="20"
+                            height="20"
+                          />
+                        )}
+
+                        {text}
+                      </a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="xl:hidden md:block hidden flex flex-col xl:gap-10 md:gap-8 gap-6">
+              {footerData.slice(3, 5).map(({ title, links }, index) => (
+                <div
+                  key={title}
+                  className={`${
+                    index === 0 ? "mb-10" : ""
+                  } w-full flex flex-col gap-[14px]`}
+                >
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <a
+                      key={text}
+                      href={link}
+                      target="_blank"
+                      className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
+                    >
+                      {text.split("").includes("@") ? (
+                        <Image
+                          className="md:w-5 w-4 md:h-5 h-4"
+                          src="/images/sms.svg"
+                          alt="email-now"
+                          width="20"
+                          height="20"
+                        />
+                      ) : (
+                        <Image
+                          className="md:w-5 w-4 md:h-5 h-4"
+                          src="/images/call-calling.svg"
+                          alt="connect-now"
+                          width="20"
+                          height="20"
+                        />
+                      )}
+
+                      {text}
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex lg:flex-row flex-col gap-8 justify-between xl:mb-10 md:mb-8 mb-5">
+            <div className="">
+              <p className="text-[#000000] uppercase font-medium !mb-4">
+                Partnerships:
+              </p>
+              <div className="footer-award flex items-center flex-wrap gap-5">
+                <Link
+                  href="https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[50px] h-auto"
+                    src="/images/select-tier-service-partner-light-1.png"
+                    alt="AWS Partner"
+                    width="300"
+                    height="118"
+                  />
+                </Link>
+                <Link
+                  href="https://www.adalo.com/experts/brilworks-software"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px] h-auto"
+                    src="/images/review-adalo.png"
+                    alt="adalo expert"
+                    width="300"
+                    height="118"
+                  />
+                </Link>
+                <Link
+                  href="https://www.storyblok.com/pl/brilworks-technology"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[130px] h-auto"
+                    src="/images/Storyblok.svg"
+                    alt="Storyblok partner"
+                    width="123"
+                    height="26"
+                  />
+                </Link>
+                <Link
+                  href="https://www.dotcms.com/partners/brilworks"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[90px] h-auto"
+                    src="/images/dotCMS-logo.svg"
+                    alt="dotCMS logo"
+                    width="300"
+                    height="118"
+                  />
+                </Link>
+
                 <Image
-                  src="/images/brilworks-logo.png"
-                  alt="Brilworks Logo"
-                  width="206"
-                  height="62"
-                  priority
-                  className="size-full wp-image-15"
+                  className="w-[180px] h-auto"
+                  src="/images/review-liferay.png"
+                  alt="Liferay Partner"
+                  width="300"
+                  height="118"
                 />
               </div>
-              <div className="md:py-0 py-1">
+            </div>
+            <div className="">
+              <p className="text-[#000000] uppercase font-medium !mb-4">
+                Recognized by:
+              </p>
+              <div className="footer-award flex items-center justify-between flex-wrap gap-3">
+                <Link
+                  href={"https://clutch.co/profile/brilworks-software#summary"}
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px]"
+                    src="/images/global_award_2023 (1).webp"
+                    alt="global award"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://clutch.co/profile/brilworks-software#highlights"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/top-clutchco-software-developers-gaming-india.webp"
+                    alt="Gaming India"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[50px]"
+                    src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
+                    alt="App dev company award"
+                    width="110"
+                    height="160"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://www.designrush.com/agency/profile/brilworks-software"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[60px]"
+                    src="/images/Top-Mobile-App-Development-Company2.webp"
+                    alt="Top App dev company award"
+                    width="120"
+                    height="130"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/review-top-software-developers.png"
+                    alt="Top software companies logo"
+                    width="150"
+                    height="105"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[50px]"
+                    src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
+                    alt="Top manifest review"
+                    width="110"
+                    height="160"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://clutch.co/profile/brilworks-software#highlights"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
+                    alt="GPS, Navigation & GIS India"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={"https://clutch.co/profile/brilworks-software#summary"}
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px]"
+                    src="/images/global_award_spring_2024.webp"
+                    alt="global award"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex items-center justify-center !text-[#000000] gap-4 font-medium">
+            <Image
+              className="w-6 h-6"
+              src="/images/location.svg"
+              alt="location-icon"
+              width="24"
+              height="24"
+            />
+            503, Fortune Business Hub, Science City Road, Near Petrol Pump,
+            Sola, Ahmedabad, Gujarat - 380060.
+          </div>
+          <hr className="border border-borderGray my-6" />
+          <div className="w-full flex md:flex-row flex-col items-end lg:justify-between justify-start">
+            <div className="lg:w-fit w-full footer_logo flex items-center">
+              <Image
+                src="/images/brilworks-logo.png"
+                alt="Brilworks Logo"
+                width="206"
+                height="62"
+                priority
+                className="mb-5 md:mb-0"
+              />
+            </div>
+            <div className="lg:w-fit w-full flex md:items-center flex-col lg:flex-row lg:gap-20 md:gap-0">
+              <div className="flex">
                 © {new Date().getFullYear()} Brilworks. All Rights Reserved.
               </div>
-              <div className="flex flex-col md:flex-row md:items-center md:gap-8">
+              <div className="flex items-center justify-between lg:gap-20 md:gap-4 gap-0 mt-2 md:!mt-0">
                 <Link href="/terms-and-conditions/" className="transition">
                   Terms of Service
                 </Link>
@@ -487,116 +580,8 @@ const Footer = () => {
                   Sitemap
                 </Link>
               </div>
-              <div className="social_media pt-4">
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.facebook.com/brilwork/"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/fb.png"
-                      alt="Brilworks on Facebook"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.instagram.com/brilworkssoftware/"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/insta.png"
-                      alt="Brilworks on Instagram"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.youtube.com/@brilworks"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/youtube.png"
-                      alt="Brilworks on YouTube"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.linkedin.com/company/brilworks/"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/linkedin.png"
-                      alt="Brilworks on LinkedIn"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link href="https://dribbble.com/Brilworks" target="_blank">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/social.png"
-                      alt="Brilworks on Dribble"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.behance.net/hellobrilworks"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/behance.png"
-                      alt="Brilworks on Behance"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-                <div className="social_media_img">
-                  <Link
-                    href="https://www.upwork.com/ag/brilworks/"
-                    target="_blank"
-                  >
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/up-01.png"
-                      alt="Brilworks on Upwork"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
-          {/* <TawkMessengerReact
-            propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
-            widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
-          /> */}
         </div>
       </div>
     </div>

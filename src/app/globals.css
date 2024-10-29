@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 :root {
-  /* --global-font: "Inter", sans-serif; */
   --font_14: 0.875rem;
   --font_16: 1rem;
   --font_18: 1.125rem;
@@ -90,7 +89,6 @@ a,
 a:focus,
 a:hover {
   text-decoration: none !important;
-  color: inherit !important;
 }
 
 input::-webkit-outer-spin-button,
@@ -123,6 +121,9 @@ input[type="number"] {
   background: var(--color_black);
 }
 
+.font-Inter {
+  font-family: var(--global-font);
+}
 .main-section-padding {
   padding: 6rem 0rem;
 }
@@ -222,7 +223,11 @@ input[type="number"] {
 
 .page-active {
   color: var(--theme-color) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+}
+
+.footer-links a:hover {
+  color: var(--theme-color) !important;
 }
 
 .item-accordion {
@@ -715,7 +720,7 @@ textarea.form-control-txt {
 }
 
 .footer_logo img {
-  max-width: 236px;
+  max-width: 150px;
 }
 
 .marquee {
@@ -804,7 +809,7 @@ textarea.form-control-txt {
 }
 
 .footer_link li .page-active {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .footer_link li a:hover {
@@ -2441,10 +2446,6 @@ textarea.form-control-txt {
 
   .footer_link li {
     font-size: 0.8rem;
-  }
-
-  .footer_logo img {
-    max-width: 180px;
   }
 
   .service_width {
