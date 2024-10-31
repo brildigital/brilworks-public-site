@@ -5,7 +5,7 @@ import PortfolioFirstSection from "@/app/components/PortfolioNew/PortfolioFirstS
 import ProcessAndEnhanceSection from "@/app/components/PortfolioNew/ProcessAndEnhanceSection";
 import ProjectOverviewSection from "@/app/components/PortfolioNew/ProjectOverviewSection";
 import ProjectChallengesSection from "@/app/components/PortfolioNew/ProjectChallengesSection";
-import HowWeDeliverSection from "@/app/components/PortfolioNew/HowWeDeliverSection";
+// import HowWeDeliverSection from "@/app/components/PortfolioNew/HowWeDeliverSection";
 import BluePrintForSuccess from "@/app/components/PortfolioNew/BluePrintForSuccess";
 import SuccessThroughClientEyes from "@/app/components/PortfolioNew/SuccessThroughClientEyes";
 import PortfolioCTASection from "@/app/components/PortfolioNew/PortfolioCTASection";
@@ -98,12 +98,10 @@ export default async function Page({ params }) {
     description,
     images,
     KeyValueBlock,
-    buttontext,
-    buttonURL,
     ProcessAndEnhanceBlock,
     ProjectOverview,
     ProjectChallenges,
-    HowWeDelivered,
+    // HowWeDelivered,
     BlueprintForSuccess,
     CTA,
   } = storyData.story.content;
@@ -115,18 +113,16 @@ export default async function Page({ params }) {
         description={description}
         images={images}
         KeyValueBlock={KeyValueBlock}
-        buttontext={buttontext}
-        buttonURL={buttonURL}
       />
       <ProcessAndEnhanceSection
         processAndEnhanceBlock={ProcessAndEnhanceBlock}
       />
       <ProjectOverviewSection projectOverview={ProjectOverview} />
       <ProjectChallengesSection projectChallenges={ProjectChallenges} />
-      <HowWeDeliverSection howWeDelivered={HowWeDelivered} />
+      {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
       <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
-      <SuccessThroughClientEyes />
-      <PortfolioCTASection ctaData={CTA} />
+      {/* <SuccessThroughClientEyes /> */}
+      {/* <PortfolioCTASection ctaData={CTA} /> */}
       <MoreSuccessStoriesSection />
     </Suspense>
   );

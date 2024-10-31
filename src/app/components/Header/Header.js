@@ -1,23 +1,18 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, IconButton } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
-import { usePathname } from "next/navigation";
-
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
 const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
-  const navbarRef = useRef(null);
-  const pathname = usePathname();
-  const [navbarHeight, setNavbarHeight] = useState(0);
   const [openNav, setOpenNav] = useState(false);
-  const [menuItemSamplecopy, setMegaMenuItem] = useState(menuItems);
+  const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
 
   useEffect(() => {
     window.addEventListener(
@@ -47,7 +42,7 @@ const NewHeader = () => {
           path: "/use-case/" + story.slug + "/",
         }));
         slugList.sort((a, b) => a.name.length - b.name.length);
-        menuItemSamplecopy.map((d, i) => {
+        menuItemSampleCopy.map((d, i) => {
           if (d.name == "INDUSTRY") {
             return d.menuItems.map((d2, i2) => {
               if (d2.name == "USE CASES") {
@@ -63,116 +58,90 @@ const NewHeader = () => {
         });
       } catch (error) {
         console.error("Fetch error:", error);
-      } finally {
       }
-
-      setMegaMenuItem([...menuItemSamplecopy]);
+      setMenuItemSampleCopy([...menuItemSampleCopy]);
     };
 
     fetchSlugs();
   }, []);
 
-  useEffect(() => {
-    if (navbarRef.current) {
-      const height = navbarRef.current.offsetHeight; // Get navbar height
-      setNavbarHeight(height); // Set the height in state
-    }
-  }, []);
-
   return (
-    <>
-      <header>
-        <div className="header header-bg-white">
-          <Navbar
-            ref={navbarRef}
-            className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold"
-          >
-            <div className="flex items-center justify-between text-colorBlack lg:w-[90%] w-[88%] mx-auto">
-              <div className="header_logo">
-                <Link href="/">
-                  <Image
-                    src="/images/brilworks-logo.png"
-                    alt="Brilworks Logo"
-                    width="206"
-                    height="62"
-                    priority="true"
-                  />
-                </Link>
-              </div>
-              <div className="flex items-center">
-                <div className="mr-4 hidden md:block">
-                  <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6">
-                    <div className="we_are_hiring hidden">
-                      <Svgs name="we-are-hiring" />
-                    </div>
-                    {menuItemSamplecopy
-                      ?.filter((menuItem) => !menuItem?.hideInHeader)
-                      ?.map((menu) =>
-                        !menu?.isMegaMenu ? (
-                          <MenuItem
-                            key={menu?.name}
-                            name={menu?.name}
-                            path={menu?.path}
-                            className="header_font"
-                            onClick={() => setOpenNav(false)}
-                          />
-                        ) : (
-                          <MegaMenu
-                            key={menu?.name}
-                            name={menu?.name}
-                            heading={menu?.heading}
-                            setOpenNav={setOpenNav}
-                            menuItems={menu?.menuItems}
-                          />
-                        )
-                      )}
-                    <Button
-                      onClick={() => setOpenNav(false)}
-                      label="Let's Talk"
-                    />
-                  </ul>
-                </div>
-                <IconButton
-                  variant="text"
-                  className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
-                  ripple={false}
-                  onClick={() => setOpenNav(!openNav)}
-                >
-                  <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
-                  </span>
-                </IconButton>
-              </div>
+    <header>
+      <div className="header header-bg-white">
+        <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold">
+          <div className="flex items-center justify-between text-colorBlack lg:w-[90%] w-[88%] mx-auto">
+            <div className="header_logo">
+              <Link href="/">
+                <Image
+                  src="/images/brilworks-logo.png"
+                  alt="Brilworks Logo"
+                  width="206"
+                  height="62"
+                  priority="true"
+                />
+              </Link>
             </div>
-          </Navbar>
-          <SideMenu open={openNav} close={() => setOpenNav(false)} />
-        </div>
-      </header>
-      <div className={pathname === "/" ? "relative" : "hidden"}>
-        <div className="fixed z-10 w-full" style={{ top: `${navbarHeight}px` }}>
-          <Link href="https://www.gitex.com/" target="_blank">
-            <Image
-              src="/images/Gitex Global.webp"
-              alt="upcoming-event"
-              width="1440"
-              height="80"
-            />
-          </Link>
-        </div>
+            <div className="flex items-center">
+              <div className="mr-4 hidden md:block">
+                <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6">
+                  <div className="we_are_hiring hidden">
+                    <Svgs name="we-are-hiring" />
+                  </div>
+                  {menuItemSampleCopy
+                    ?.filter((menuItem) => !menuItem?.hideInHeader)
+                    ?.map((menu) =>
+                      !menu?.isMegaMenu ? (
+                        <MenuItem
+                          key={menu?.name}
+                          name={menu?.name}
+                          path={menu?.path}
+                          className="header_font"
+                          onClick={() => setOpenNav(false)}
+                        />
+                      ) : (
+                        <MegaMenu
+                          key={menu?.name}
+                          name={menu?.name}
+                          heading={menu?.heading}
+                          setOpenNav={setOpenNav}
+                          menuItems={menu?.menuItems}
+                        />
+                      )
+                    )}
+                  <Button
+                    onClick={() => setOpenNav(false)}
+                    label="Let's Talk"
+                  />
+                </ul>
+              </div>
+              <IconButton
+                variant="text"
+                className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
+                ripple={false}
+                onClick={() => setOpenNav(!openNav)}
+              >
+                <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </span>
+              </IconButton>
+            </div>
+          </div>
+        </Navbar>
+        <SideMenu open={openNav} close={() => setOpenNav(false)} />
       </div>
-    </>
+    </header>
   );
 };
 

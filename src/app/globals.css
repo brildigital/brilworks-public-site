@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 :root {
-  /* --global-font: "Inter", sans-serif; */
   --font_14: 0.875rem;
   --font_16: 1rem;
   --font_18: 1.125rem;
@@ -27,7 +26,7 @@
   --font_120: 6.5rem;
   --theme-color: #0d9a9a; /* New color */
   --theme-light: #f3fdff; /* New color */
-  --color_black: #000000;
+  --color_black: #1c1d1e;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
   --color-light-gray: #f1f1f1;
@@ -57,7 +56,7 @@ html {
 body {
   overflow-x: hidden !important;
   background: var(--white_color);
-  text-color: var(--color_black);
+  color: var(--color_black);
   background-repeat: repeat;
   background-size: contain;
   width: 100%;
@@ -90,7 +89,6 @@ a,
 a:focus,
 a:hover {
   text-decoration: none !important;
-  color: inherit !important;
 }
 
 input::-webkit-outer-spin-button,
@@ -123,6 +121,9 @@ input[type="number"] {
   background: var(--color_black);
 }
 
+.font-Inter {
+  font-family: var(--global-font);
+}
 .main-section-padding {
   padding: 6rem 0rem;
 }
@@ -222,7 +223,11 @@ input[type="number"] {
 
 .page-active {
   color: var(--theme-color) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+}
+
+.footer-links a:hover {
+  color: var(--theme-color) !important;
 }
 
 .item-accordion {
@@ -715,7 +720,7 @@ textarea.form-control-txt {
 }
 
 .footer_logo img {
-  max-width: 236px;
+  max-width: 150px;
 }
 
 .marquee {
@@ -804,7 +809,7 @@ textarea.form-control-txt {
 }
 
 .footer_link li .page-active {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .footer_link li a:hover {
@@ -1278,7 +1283,7 @@ textarea.form-control-txt {
 }
 
 .portfolio_sec1_txt2 p {
-  font-size: var(--font_24);
+  font-size: 20px !important;
 }
 
 .fintech-portfolio-sec {
@@ -1294,9 +1299,9 @@ textarea.form-control-txt {
 }
 
 .portfolio_sec1_txt1 p {
-  font-size: 50px;
+  font-size: 40px;
+  line-height: 50px;
   font-weight: 600;
-
   color: var(--color_black);
   padding-bottom: 2rem;
 }
@@ -1938,7 +1943,8 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt1 p {
-    font-size: 46px;
+    font-size: 36px;
+    line-height: 40px !important;
   }
 
   .service_title p,
@@ -2045,11 +2051,12 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt2 p {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
   }
 
   .portfolio_sec1_txt1 p {
-    font-size: 42px;
+    font-size: 32px;
+    line-height: 36px;
   }
 
   .service_title p,
@@ -2148,7 +2155,7 @@ textarea.form-control-txt {
   }
 
   .portfolio_sec1_txt2 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .portfolio_sec1_txt1 p {
@@ -2441,10 +2448,6 @@ textarea.form-control-txt {
     font-size: 0.8rem;
   }
 
-  .footer_logo img {
-    max-width: 180px;
-  }
-
   .service_width {
     width: 90%;
   }
@@ -2561,6 +2564,11 @@ textarea.form-control-txt {
   }
 }
 
+@media only screen and (max-width: 1680px) {
+  .hiring-banner {
+    height: fit-content;
+  }
+}
 @media only screen and (max-width: 991px) {
   .header_font a,
   .header_font p {

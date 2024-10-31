@@ -9,9 +9,10 @@ const EbookFirstSection = ({ title, imageSrc }) => {
         className="container mx-auto max-w-[1440px]"
         id="download-ebook-form"
       >
-        <h1 className="md:text-center text-left lg:w-[90%] mx-auto w-full px-4 uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:py-10 py-8 !font-bold text-themeColor slg:mb-6">
-          {title}
-        </h1>
+        <h1
+          className="md:text-center text-left lg:w-[70%] mx-auto w-full px-4 xl:text-[56px] lg:text-[42px] md:text-[32px] text-[22px] md:py-10 py-8 !font-bold slg:mb-6"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
         <div className="slg:w-[70%] w-[90%] mx-auto flex slg:flex-row flex-col gap-20 items-center justify-center h-full">
           <div className="flex items-center justify-center">
             <Image

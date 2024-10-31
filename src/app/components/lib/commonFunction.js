@@ -129,16 +129,14 @@ export const calculateReadingTime = (content) => {
   const wordsPerMinute = 200;
 
   // Calculate the number of words in the content
-  if(typeof content === 'string'){
+  if (typeof content === "string") {
     const wordCount = content?.split(/\s+/).length / 2;
 
-  // Calculate the reading time in minutes
+    // Calculate the reading time in minutes
     const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
     return readingTime;
   }
-
-
 };
 
 export function convertParamsToString(input) {
@@ -150,4 +148,14 @@ export function convertParamsToString(input) {
       ) => word.charAt(0).toUpperCase() + word.slice(1)
     )
     .join(" "); // Step 3: Join the words back with a space
+}
+
+export function formatPhoneNumber(phoneNumber) {
+  if (!phoneNumber) return ""; // Handle cases where phoneNumber is undefined/null
+
+  const formattedNumber = phoneNumber.replace(
+    /^(\d{2})(\d{5})(\d{5})$/,
+    "+$1 $2 $3"
+  );
+  return formattedNumber;
 }

@@ -5,16 +5,16 @@ import Button from "../Common/Button";
 const PortfolioCTASection = ({ ctaData }) => {
   return (
     <div className="bg-themeColor">
-      <div className="px-[70px] py-[60px]">
+      <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-14 py-8">
         <div className="container max-w-[1440px] mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex lg:flex-row flex-col gap-5 lg:justify-between items-center">
             <div>
               <Heading
                 type="h2"
                 className="!text-colorWhite mb-5"
                 text={ctaData?.[0]?.title}
               />
-              <p className="text-colorWhite text-2xl">
+              <p className="text-colorWhite md:text-2xl text-lg lg:mb-0 !mb-5">
                 {ctaData?.[0]?.description}
               </p>
             </div>

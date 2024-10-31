@@ -55,9 +55,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title, description } = storyData.story?.content.title_section?.[0];
+    const { title, description, og_image, twitter_image } =
+      storyData.story?.content.Metatags;
     return {
-      title: title,
+      title: title || storyData.story?.content.title,
       description: description,
       openGraph: {
         title: title,
@@ -67,15 +68,17 @@ export async function generateMetadata({ params }) {
           "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
         locale: "en-US",
         type: "website",
+        images: [{ url: og_image || storyData.story?.mobile_banner?.filename }],
       },
+
       twitter: {
         title: title,
         description: description,
         card: "summary_large_image",
+        images: [
+          { url: twitter_image || storyData.story?.mobile_banner?.filename },
+        ],
         site: "@_Brilworks",
-      },
-      alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/${params.slug}/`,
       },
     };
   } catch (error) {

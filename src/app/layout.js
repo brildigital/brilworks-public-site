@@ -3,8 +3,8 @@ import "./styles/Homepage.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 // import { NextAuthProvider } from "./provider"
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
+import { Inter } from "next/font/google";
+import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { organization, website } from "./components/lib/schemaCode";
 import dynamic from "next/dynamic";
@@ -65,7 +65,6 @@ export default function RootLayout({ children }) {
             clr={process.env.clearbitScript_URL}
           /> */}
         </body>
-    
       </html>
     </StoryblokProvider>
   );

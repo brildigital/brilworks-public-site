@@ -102,13 +102,15 @@ export default async function Page({ params }) {
   return (
     <Suspense fallback={<FetchDataSpinner />}>
       <EbookFirstSection title={title} imageSrc={ebookImage?.filename} />
-      <WhatIsInsideBookSection bookDescription={insideBookSection} />
+      <WhatIsInsideBookSection
+        bookDescription={insideBookSection}
+        buttontext={reasonToRead?.[1]?.text}
+      />
       <ReasonToReadBook reasonToRead={reasonToRead} />
-      <OtherEbooksSection
+      {/* <OtherEbooksSection
         title={otherEbookSection?.[0]?.Key}
         description={otherEbookSection?.[0]?.Value}
-        imageSrc={ebookImage?.filename}
-      />
+      /> */}
       <WhyBrilworks
         title={whyBrilworks?.[0]?.Key}
         description={whyBrilworks?.[0]?.Value}
