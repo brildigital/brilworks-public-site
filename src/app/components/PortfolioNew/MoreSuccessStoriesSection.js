@@ -1,72 +1,76 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import StoryblokClient from "storyblok-js-client";
+
+const Storyblok = new StoryblokClient({
+  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+});
 
 const MoreSuccessStoriesSection = () => {
   const pathname = usePathname();
-  const suggestedCaseStudies = [
-    {
-      name: "Vugo",
-      imageSrc: "/images/vugo-1.jpg",
-      imageAlt: "Vugo img",
-      hrefUrl: "/portfolio/vugo/",
-    },
-    {
-      name: "Rastrack",
-      imageSrc: "/images/rastrack-mobile.webp",
-      imageAlt: "Rastrack img",
-      hrefUrl: "/portfolio/rastrack/",
-    },
-    {
-      name: "Orokii",
-      imageSrc: "/images/orokii-mobile.webp",
-      imageAlt: "Orokii img",
-      hrefUrl: "/portfolio/orokii/",
-    },
-    {
-      name: "Eccocar",
-      imageSrc: "/images/eccocar-mobile.webp",
-      imageAlt: "Eccocar img",
-      hrefUrl: "/portfolio/eccocar/",
-    },
-    {
-      name: "Trackimo",
-      imageSrc: "/images/gps-trackers-devices-mobile.webp",
-      imageAlt: "Trackimo img",
-      hrefUrl: "/portfolio/trackimo/",
-    },
-  ];
+  const [caseStudyData, setCaseStudyData] = useState();
+  console.log(pathname);
+  console.log(caseStudyData);
+
+  useEffect(() => {
+    Storyblok.get("cdn/stories/", {
+      starts_with: "portfolio/",
+      per_page: 5,
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    })
+      .then((response) => {
+        setCaseStudyData(response.data?.stories);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    <div className="px-[70px] py-[60px]">
+    <div className="lg:px-[70px] md:px-8 px-4 lg:py-[60px] md:py-16 py-8">
       <div className="container max-w-[1440px] mx-auto">
         <Heading
           type="h2"
           text="MORE SUCCESS STORIES"
-          className="text-center mb-5"
+          className="text-center mb-5 text-themeColor"
         />
-        <p className="text-colorGray text-xl text-center !mb-[30px]">
-          to build a next-generation EdTech app? We know how.
-        </p>
-        <div className="grid grid-cols-4 gap-8">
-          {suggestedCaseStudies
-            .filter((data) => pathname !== data.hrefUrl)
-            .map(({ name, imageSrc, imageAlt, hrefUrl }, index) => {
-              return (
-                <Link key={name} href={hrefUrl}>
-                  <Image
-                    className="rounded-2xl"
-                    src={imageSrc}
-                    width="302"
-                    height="240"
-                    alt={imageAlt}
-                  />
-                </Link>
-              );
-            })}
+        {/* ?.filter((data) => data?.full_slug !== pathname)
+  ?.slice(0, 4) */}
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
+          {caseStudyData?.length &&
+            caseStudyData
+              ?.filter(({ slug }) => !pathname?.includes(slug))
+              ?.slice(0, 4)
+              ?.map(({ name, content, full_slug }, index) => {
+                const truncatedText = name
+                  ? name.split(" ").slice(0, 5).join(" ") + "..."
+                  : "";
+                return (
+                  <div
+                    key={index}
+                    className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+                  >
+                    <Link key={name} href={`/${full_slug}/`}>
+                      <Image
+                        className="rounded-2xl"
+                        src={content?.images?.[0]?.filename}
+                        width="302"
+                        height="240"
+                        alt={`casestudy-${index}`}
+                      />
+                      <div className="p-[10px]">
+                        <h3 className="xl:text-[24px] font-medium mb-[10px] leading-8">
+                          {truncatedText}
+                        </h3>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

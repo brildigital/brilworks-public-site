@@ -10,6 +10,7 @@ const InsideBookParts = ({
   Description1,
   Description2,
   ListItem,
+  buttontext,
   className = "",
 }) => {
   return (
@@ -29,8 +30,8 @@ const InsideBookParts = ({
         <div className="lg:w-[95%] w-full">
           <Heading
             type="h3"
-            text={Title}
-            className={`text-themeColor !text-[32px] py-2 mb-6 w-fit`}
+            text={Title || ""}
+            className={`!text-[32px] text-colorBlack font-bold py-2 mb-6 w-fit`}
           />
           {Description1 && (
             <p
@@ -38,7 +39,7 @@ const InsideBookParts = ({
                 Description2 ? "" : "!mb-6"
               }`}
             >
-              {Description1}
+              {Description1 || ""}
             </p>
           )}
           {Description2 && (
@@ -47,7 +48,7 @@ const InsideBookParts = ({
                 Description2 ? "!mb-6" : ""
               }`}
             >
-              {Description2}
+              {Description2 || ""}
             </p>
           )}
           <ul className="">
@@ -70,7 +71,7 @@ const InsideBookParts = ({
               innerClassName="!text-themeColor"
               variant="white"
               redirect="#download-ebook-form"
-              label="Explore"
+              label={buttontext || "Explore"}
               scrollingButton
             />
           </div>
@@ -80,17 +81,17 @@ const InsideBookParts = ({
   );
 };
 
-const WhatIsInsideBookSection = ({ bookDescription }) => {
+const WhatIsInsideBookSection = ({ bookDescription, buttontext }) => {
   return (
     <div className="lg:px-[70px] px-4 lg:pt-[60px] pt-8">
-      <div className="container max-w-[1440px] mx-auto our-work-list-icon">
+      <div className="container max-w-[1280px] mx-auto our-work-list-icon">
         <div className="lg:mb-[60px] mb-8">
           <Heading
             type="h2"
-            className="text-center mb-5 uppercase"
-            text={bookDescription?.[0]?.Key}
+            className="text-center mb-5"
+            data={bookDescription?.[0]?.Key}
           />
-          <p className="md:text-xl text-lg text-colorGray lg:w-4/5 w-full mx-auto text-center">
+          <p className="md:text-xl text-lg text-colorGray px-6 w-full mx-auto text-center">
             {bookDescription?.[0]?.Value}
           </p>
         </div>
@@ -109,6 +110,14 @@ const WhatIsInsideBookSection = ({ bookDescription }) => {
           />
         )}
         {bookDescription?.[5] && <InsideBookParts {...bookDescription?.[5]} />}
+
+        <div className="flex items-center justify-center lg:mt-14 md:mt-10 mt-6">
+          <Button
+            redirect="#download-ebook-form"
+            label={buttontext}
+            scrollingButton
+          />
+        </div>
       </div>
     </div>
   );

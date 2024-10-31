@@ -21,6 +21,6 @@ Disallow: /services-video/*
 Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
 Disallow: /wp-content/*
+Disallow: /teams/*
 
 Sitemap: https://www.brilworks.com/sitemap.xml
-

@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import Button from "../Common/Button";
+import { usePathname } from "next/navigation";
 
 const ContactUsEmailForm = ({ inquiryForm }) => {
+  const pathname = usePathname()
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");

@@ -137,19 +137,18 @@ const Honors = () => {
     },
     {
       link: "https://clutch.co/profile/brilworks-software#summary",
-      imgSrc:"/images/global_award_spring_2024.webp",
+      imgSrc: "/images/global_award_spring_2024.webp",
       imgAlt: "global award spring",
       text: "Global Award Spring",
       imgClass: "w-[150px]",
     },
     {
       link: "https://clutch.co/profile/brilworks-software#summary",
-      imgSrc:"/images/global_award_2023 (1).webp",
+      imgSrc: "/images/global_award_2023 (1).webp",
       imgAlt: "global award fall",
       text: "Global Award Fall",
       imgClass: "w-[150px]",
-    }
-
+    },
   ];
 
   return (

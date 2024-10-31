@@ -10,7 +10,7 @@ export async function GET() {
     title: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     site_url: process.env.NEXT_PUBLIC_BASE_URL,
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
     copyright: `© ${new Date().getFullYear()} BRILWORKS`,
     language: "en",
   });

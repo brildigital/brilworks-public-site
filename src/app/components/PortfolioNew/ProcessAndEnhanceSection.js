@@ -1,55 +1,102 @@
+"use client";
 import React from "react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/virtual";
+import { Pagination, Autoplay, Virtual } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { useMediaQuery } from "react-responsive";
 
 const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
-  function getGridColClass(num) {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
+  function getGridWidth(num) {
     switch (num) {
       case 2:
-        return { grid: "grid-cols-2", width: "w-[40%]" };
+        return "lg:w-[40%] w-[80%]";
       case 3:
-        return { grid: "grid-cols-3", width: "w-[50%]" };
+        return "lg:w-[50%] w-[60%]";
       case 4:
-        return { grid: "grid-cols-4", width: "w-[60%]" };
+        return "lg:w-[60%] w-[60%]";
       case 5:
-        return { grid: "grid-cols-5", width: "w-[65%]" };
+        return "lg:w-[65%] w-[60%]";
       case 6:
-        return { grid: "grid-cols-6", width: "w-[70%]" };
+        return "lg:w-[70%] w-[80%]";
       default:
-        return { grid: "grid-cols-2", width: "w-[40%]" };
+        return "lg:w-[40%] w-[80%]";
     }
   }
 
-  const dynamicCSS = getGridColClass(processAndEnhanceBlock?.length);
+  const dynamicWidthClass = getGridWidth(processAndEnhanceBlock?.length);
 
   return (
-    <div className="bg-sectionBG">
-      <div className="px-[70px] py-[30px]">
+    <div className="bg-sectionBG process-enhancement">
+      <div className="lg:px-[70px] px-4 lg:py-[30px] py-8">
         <div className="container max-w-[1440px] mx-auto">
-          <div className={`w-full items-center grid ${dynamicCSS.grid} `}>
-            {processAndEnhanceBlock?.length &&
+          <Swiper
+            className="!w-[95%] !mx-auto"
+            modules={[Pagination, Autoplay, Virtual]}
+            spaceBetween={isMobile ? 10 : 21}
+            autoplay={{ delay: 500 }}
+            speed={2000}
+            loop={true}
+            virtual={isTablet}
+            shouldswiperupdate="true"
+            pagination={{ clickable: true }}
+            breakpoints={{
+              1600: {
+                slidesPerView: 3,
+              },
+              1475: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              767: {
+                slidesPerView: 2,
+              },
+              575: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            {processAndEnhanceBlock?.length > 0 ? (
               processAndEnhanceBlock?.map(
                 ({ Key, Value }, index) =>
                   Key &&
                   Value && (
-                    <div
-                      className={`w-full pl-6 mx-auto flex justify-start items-start h-full flex-col ${
-                        index === processAndEnhanceBlock?.length - 1
-                          ? "!border-r-0"
-                          : "border-r-2"
-                      } border-themeColor`}
-                      key={index}
-                    >
-                      <span className="text-themeColor text-[48px] leading-tight font-bold mb-4">
-                        {Key}
-                      </span>
-                      <p
-                        className={`!mb-4 text-xl text-colorGray ${dynamicCSS.width}`}
+                    <SwiperSlide key={index}>
+                      <div
+                        className={`w-full ${
+                          index === 0 ? "pl-0" : "md:pl-4 lg:pl-6"
+                        } flex justify-start items-start h-full flex-col ${
+                          index === processAndEnhanceBlock?.length - 1
+                            ? "!border-r-1"
+                            : "lg:!border-r"
+                        } border-themeColor`}
+                        key={index}
                       >
-                        {Value}
-                      </p>
-                    </div>
+                        <span className="text-themeColor lg:text-5xl text-[40px] leading-tight font-bold lg:mb-4 mt-4">
+                          {Key}
+                        </span>
+                        <p
+                          className={`!mb-4 md:text-xl text-lg text-left text-colorGray ${dynamicWidthClass}`}
+                        >
+                          {Value}
+                        </p>
+                      </div>
+                    </SwiperSlide>
                   )
-              )}
-          </div>
+              )
+            ) : (
+              <div className="w-full flex items-center justify-center py-10">
+                <FetchDataSpinner />
+              </div>
+            )}
+          </Swiper>
         </div>
       </div>
     </div>

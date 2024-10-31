@@ -452,6 +452,30 @@ export const sitemapData = [
     lastmod: "2024-09-25T12:04:49.528Z",
   },
   {
+    loc: "https://www.brilworks.com/hire-flutterflow-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-adalo-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-bubble-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-low-code-no-code-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-mobile-app-developer/",
+    lastmod: "2024-10-15T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
+    lastmod: "2024-10-18T12:04:49.528Z",
+  },
+  {
     loc: "https://www.brilworks.com/our-process/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
@@ -467,25 +491,50 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/blog/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/vugo/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/trackimo/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/orokii/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/eccocar/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/portfolio/rastrack/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
+
   {
-    loc: "https://www.brilworks.com/portfolio/vugo/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/trackimo/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/orokii/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/eccocar/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
-    loc: "https://www.brilworks.com/portfolio/rastrack/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/portfolio/ai-powered-platform-to-simplify-podcast-creation/",
+    lastmod: "2024-10-09T13:38:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
+    lastmod: "2024-10-09T13:38:44.468Z",
   },
   {
     loc: "https://www.brilworks.com/staff-augmentation/",
@@ -567,6 +616,56 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
+    loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
+    lastmod: "2024-10-25T08:40:06.162Z",
+  },
+  {
+    name: "10 Best Online Business Ideas with Minimal Investment",
+    loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
+    lastmod: "2024-10-28T07:27:24.132Z",
+  },
+  {
+    name: "How to Create An App and Make Money in 2024",
+    loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
+    lastmod: "2024-10-21T13:26:41.345Z",
+  },
+  {
+    name: "How Geneative AI transforms Supply Chain Operations",
+    loc: "https://www.brilworks.com/blog/how-geneative-ai-transforms-supply-chain-operations/",
+    lastmod: "2024-10-25T06:55:31.241Z",
+  },
+  {
+    name: "How to Create a Mobile App in 2024 [Easy Steps]",
+    loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
+    lastmod: "2024-10-16T12:00:51.984Z",
+  },
+  {
+    name: "Is AWS the Right Cloud Solution for Your Small Business?",
+    loc: "https://www.brilworks.com/blog/aws-for-small-business/",
+    lastmod: "2024-10-09T13:38:44.468Z",
+  },
+  {
+    name: "GITEX Global 2024: The Ultimate Tech Innovations You Can't Miss!",
+    loc: "https://www.brilworks.com/blog/gitex-global-2024/",
+    lastmod: "2024-10-04T11:59:29.844Z",
+  },
+  {
+    name: "9 Popular Architectures for Software Development You Should Know",
+    loc: "https://www.brilworks.com/blog/popular-architectures-for-software-development/",
+    lastmod: "2024-10-09T08:27:52.877Z",
+  },
+  {
+    name: "How AWS Services Streamline Real-time IoT Data Processing",
+    loc: "https://www.brilworks.com/blog/aws-services-streamline-real-time-iot-data-processing/",
+    lastmod: "2024-09-27T10:00:31.989Z",
+  },
+  {
+    name: "The State of Generative AI in 2024",
+    loc: "https://www.brilworks.com/blog/state-of-generative-ai/",
+    lastmod: "2024-09-26T11:51:21.399Z",
+  },
+  {
     name: "AWS IoT Device Management: Features and How It Works",
     loc: "https://www.brilworks.com/blog/aws-iot-device-management-features-and-how-it-works/",
     lastmod: "2024-09-17T06:11:42.185Z",
@@ -624,7 +723,7 @@ export const blogListStaticData = [
   {
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
-    lastmod: "2024-09-04T04:37:56.002Z",
+    lastmod: "2024-09-26T06:07:02.279Z",
   },
   {
     name: "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -824,7 +923,7 @@ export const blogListStaticData = [
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
     loc: "https://www.brilworks.com/blog/nestjs-vs-nextjs/",
-    lastmod: "2024-08-07T06:04:24.987Z",
+    lastmod: "2024-10-08T13:41:44.325Z",
   },
   {
     name: "Amazon S3: A Cloud Storage Solution for Every Business",
@@ -1079,7 +1178,7 @@ export const blogListStaticData = [
   {
     name: "Best Node.js Open Source Projects in GitHub",
     loc: "https://www.brilworks.com/blog/best-node-js-open-source-projects-in-github/",
-    lastmod: "2024-08-09T11:33:54.689Z",
+    lastmod: "2024-09-27T12:08:54.770Z",
   },
   {
     name: "Next.js 13 Drops with Exciting Updates: Find Out What’s New?",
@@ -1109,7 +1208,7 @@ export const blogListStaticData = [
   {
     name: "What are White Label Apps? A Closer Look & Popular Examples",
     loc: "https://www.brilworks.com/blog/what-are-white-label-apps-and-popular-examples/",
-    lastmod: "2024-08-12T09:27:39.857Z",
+    lastmod: "2024-10-02T05:52:38.625Z",
   },
   {
     name: "Top Popular Apps Built With React Native",

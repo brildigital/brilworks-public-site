@@ -22,7 +22,7 @@ const GameChanger = () => {
       <div className="container mx-auto">
         <div className="sec1_txt_position">
           <div className="home_txt1">
-            <h1 className="xl:w-4/5 !w-full leading-tight mt-16">
+            <h1 className="xl:w-4/5 !w-full leading-tight">
               Providing&nbsp;
               <br className="mobile:hidden" />
               <span className="text-themeColor font-bold">

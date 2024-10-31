@@ -83,7 +83,12 @@ const Article = ({ blok }) => {
           }
           if (
             node.attribs.href &&
-            !node.attribs.href.includes("brilworks.com")
+            !(
+              node.attribs.href.includes("brilworks.com") ||
+              node.attribs.href.startsWith("/") || // Handles relative URLs
+              node.attribs.href.includes("www.brilworks.com") ||
+              node.attribs.href.startsWith("..")
+            )
           ) {
             node.attribs.rel = "nofollow noopener";
           } else {
@@ -265,7 +270,9 @@ const Article = ({ blok }) => {
                               handleTableOfContentLinkClick(e, index)
                             }
                             className={`${
-                              index == activeLink ? "page-active" : ""
+                              textToId(heading?.text) == activeLink
+                                ? "page-active"
+                                : ""
                             }`}
                           >
                             {heading.text}
@@ -414,8 +421,8 @@ const Article = ({ blok }) => {
 
                       {/* ********************Author Detail******************************/}
                       {author ? (
-                        <div className="single-author-bio !flex !flex-row !mb-[33px] !mx-0 lg:mb-[75px]">
-                          <div className="img-blk-wrapper  w-[50%] flex-1 lg:flex-[unset] lg:w-auto flex  lg:pb-[0rem] !pb-[2rem]">
+                        <div className="single-author-bio">
+                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                             <div className="img-blk">
                               <img
                                 decoding="async"
@@ -428,10 +435,9 @@ const Article = ({ blok }) => {
                               />
                             </div>
                           </div>
-                          <div className="flex-1  w-[50%] single-author-bio-text">
+                          <div className="single-author-bio-text">
                             <h3>
                               <Link
-                                className="text-[18px] lg:text-[24px]"
                                 href={
                                   author?.name === "Vikas Singh"
                                     ? "/blog/author/vikas-singh/"
@@ -445,12 +451,7 @@ const Article = ({ blok }) => {
                                 {author?.name}
                               </Link>
                             </h3>
-                            <p className="lg:!hidden !block !text-[14px] lg:text-[18px]">
-                              {author?.mobileDesc}
-                            </p>
-                            <p className=" lg:!block !hidden ">
-                              {author?.authorDesc}
-                            </p>
+                            <p className="text-[18px]">{author?.authorDesc}</p>
                           </div>
                         </div>
                       ) : (
@@ -459,7 +460,7 @@ const Article = ({ blok }) => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/4 w-full !float-left hidden lg:block">
+                <div className="md:w-1/4 w-full !float-left">
                   <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                     <div className="h-full flex flex-col">
                       <BlogContactForm />
