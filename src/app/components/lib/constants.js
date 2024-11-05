@@ -616,6 +616,11 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "The Best White Label App builders",
+    loc: "https://www.brilworks.com/blog/best-white-label-app-builders/",
+    lastmod: "2024-10-30T06:00:56.130Z",
+  },
+  {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
     loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
     lastmod: "2024-10-25T08:40:06.162Z",
@@ -623,7 +628,7 @@ export const blogListStaticData = [
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
     loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
-    lastmod: "2024-10-28T07:27:24.132Z",
+    lastmod: "2024-11-05T05:32:54.561Z",
   },
   {
     name: "How to Create An App and Make Money in 2024",
@@ -918,7 +923,7 @@ export const blogListStaticData = [
   {
     name: "AI & Low-Code/No-Code Tools: Reshaping the Workforce (2024 & Beyond)",
     loc: "https://www.brilworks.com/blog/ai-low-code-no-code-tools/",
-    lastmod: "2024-07-30T08:52:37.021Z",
+    lastmod: "2024-10-30T06:05:10.749Z",
   },
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",

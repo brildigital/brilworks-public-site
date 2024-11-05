@@ -127,11 +127,11 @@ const Portfolio = () => {
                     </div>
                     <div className="portfolio_sec1_txt2 portfolio_description_width">
                       <p>
-                        {(content?.description).split(" ").length > 31
-                          ? (content?.description)
-                              .split(" ")
-                              .slice(0, 25)
-                              .join(" ") + "..."
+                        {content?.description?.split(" ")?.length > 31
+                          ? content?.description
+                              ?.split(" ")
+                              ?.slice(0, 25)
+                              ?.join(" ") + "..."
                           : content?.description}
                       </p>
                     </div>

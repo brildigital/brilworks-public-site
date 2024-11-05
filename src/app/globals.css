@@ -26,6 +26,7 @@
   --font_120: 6.5rem;
   --theme-color: #0d9a9a; /* New color */
   --theme-light: #f3fdff; /* New color */
+  --vivid-blue: #017eeb;
   --color_black: #1c1d1e;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
@@ -72,17 +73,14 @@ p {
 }
 
 img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-}
-
-img {
   width: 100%;
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 a,
@@ -124,6 +122,11 @@ input[type="number"] {
 .font-Inter {
   font-family: var(--global-font);
 }
+
+.font-Urbanist {
+  font-family: var(--font-urbanist);
+}
+
 .main-section-padding {
   padding: 6rem 0rem;
 }
@@ -337,12 +340,16 @@ input[type="number"] {
 
 .home_sec2_txt1 p,
 .home_sec2_txt1 h1 {
+  font-size: var(--font_74);
   line-height: var(--line_height_1);
 }
 
 .home_sec2_txt3 p {
   color: var(--color_black);
   line-height: var(--line_height_1);
+  width: 74%;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .gradiant_aerrow {
@@ -444,7 +451,6 @@ input[type="number"] {
   font-family: var(--global-font);
   font-display: swap;
   color: var(--color_black);
-  padding-bottom: 1rem;
   width: fit-content;
   line-height: 2.5rem;
   padding: 1rem 0rem;
@@ -847,6 +853,7 @@ textarea.form-control-txt {
 
 .sec9_service_style .number {
   font-size: 34px;
+  border-bottom: 2px solid var(--white_color);
 }
 
 .sec9_service_style {
@@ -858,10 +865,6 @@ textarea.form-control-txt {
 .sec9_service_style .p-font {
   color: var(--white_color);
   font-size: var(--font_20);
-}
-
-.sec9_service_style .number {
-  border-bottom: 2px solid var(--white_color);
 }
 
 .solution_gradiant {
@@ -890,9 +893,8 @@ textarea.form-control-txt {
 .faq-bottom .accordion-button {
   font-size: var(--font_21);
   font-weight: 700 !important;
-  padding: 1.2rem 2rem;
+  padding: 10px 0;
   color: var(--color_black) !important;
-  padding: 10px 0 !important;
   border: 0 !important;
 }
 
@@ -977,11 +979,6 @@ textarea.form-control-txt {
 
 .contact_form .btn_paddinng {
   padding-top: 1rem;
-}
-
-.contact_btn {
-  margin-left: 0;
-  margin-top: 3rem;
 }
 
 .btn_flex {
@@ -1171,9 +1168,6 @@ textarea.form-control-txt {
 
 .contact_details {
   z-index: 2;
-}
-
-.contact_details {
   padding: 7rem 4rem;
   border-radius: 40px;
   width: 80%;
@@ -1343,10 +1337,6 @@ textarea.form-control-txt {
   transition: all 0.6s ease-in-out;
 }
 
-.icon_logo {
-  transition: all 0.6s ease-in-out;
-}
-
 .icon_logo:hover {
   transform: translateY(-7%);
 }
@@ -1430,12 +1420,6 @@ textarea.form-control-txt {
   line-height: var(--line_height_1_2);
 }
 
-.home_sec2_txt1 p,
-.home_sec2_txt1 h1 {
-  font-size: var(--font_74);
-  line-height: var(--line_height_1);
-}
-
 .home_sec2_txt1 h2 {
   font-size: var(--font_44);
   line-height: 66px;
@@ -1447,12 +1431,6 @@ textarea.form-control-txt {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--color_black);
-}
-
-.home_sec2_txt3 p {
-  width: 74%;
-  margin: 0 auto;
-  padding: 2rem 0;
 }
 
 .about_vision {
@@ -1470,11 +1448,6 @@ textarea.form-control-txt {
 
 .about_sec2 .sec10_txt1 {
   width: 32%;
-}
-
-.about_vision .sec10_txt1,
-.sec10_basis_50 .sec10_txt1 {
-  font-size: var(--font_32);
 }
 
 .about_sec2_img1 img {
@@ -1495,15 +1468,6 @@ textarea.form-control-txt {
 .sign_data {
   color: var(--theme-color);
   font-size: 70px;
-}
-
-.year p {
-  width: 70%;
-}
-
-.about_sec2_grid .number {
-  font-size: 100px;
-  color: var(--color_black);
 }
 
 .about_sec2_grid .year {
@@ -1586,11 +1550,6 @@ textarea.form-control-txt {
 
 .about_sec4 .sec10_txt1 p {
   width: fit-content;
-}
-
-.sec10_txt1 {
-  font-size: var(--font_24);
-  color: var(--color_black);
 }
 
 .about_se4_flex {
@@ -1975,11 +1934,6 @@ textarea.form-control-txt {
     font-size: 3.5rem;
   }
 
-  .sec4_about p,
-  .sec4_about h3 {
-    font-size: 3.5rem;
-  }
-
   .sec9_txt1 p {
     font-size: 1.5rem;
   }
@@ -2025,10 +1979,6 @@ textarea.form-control-txt {
     padding: 1rem 0 !important;
   }
 
-  .sec10_flex_row {
-    gap: 2rem;
-  }
-
   .developer_sec6_title p,
   .developer_sec6_title h3 {
     font-size: 1.2rem;
@@ -2072,15 +2022,6 @@ textarea.form-control-txt {
     font-size: 80px;
   }
 
-  .year p {
-    width: 76%;
-  }
-
-  .sec4_about p,
-  .sec4_about h3 {
-    font-size: 3rem;
-  }
-
   .sec4_about p,
   .sec4_about h3 {
     font-size: 3rem;
@@ -2103,7 +2044,7 @@ textarea.form-control-txt {
   }
 
   .year {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .about_vision .sec10_txt1,
@@ -2118,10 +2059,6 @@ textarea.form-control-txt {
 
   .number {
     font-size: 58px;
-  }
-
-  .year {
-    font-size: 1rem;
   }
 
   .year p {
@@ -2179,11 +2116,6 @@ textarea.form-control-txt {
     width: 110px;
   }
 
-  .sec4_about p,
-  .sec4_about h3 {
-    font-size: 2.75rem;
-  }
-
   .about_sec4_txt4 .sec10_txt1 p {
     font-size: 1.1rem;
   }
@@ -2227,11 +2159,6 @@ textarea.form-control-txt {
   .home_sec2_txt1 h1,
   .sec7_box_style .home_sec2_txt2 p {
     font-size: 3.5rem;
-  }
-
-  .sec4_about p,
-  .sec4_about h3 {
-    font-size: 2.1rem !important;
   }
 
   .sec4_about p,
@@ -2292,9 +2219,6 @@ textarea.form-control-txt {
 
   .header_sec1_txt2 p {
     font-size: 0.8rem;
-  }
-
-  .header_sec1_txt2 p {
     padding: 11px 6px;
   }
 
@@ -2560,6 +2484,12 @@ textarea.form-control-txt {
     height: fit-content;
   }
 }
+
+@media only screen and (max-width: 1680px) {
+  .hiring-banner {
+    height: fit-content;
+  }
+}
 @media only screen and (max-width: 991px) {
   .header_font a,
   .header_font p {
@@ -2703,6 +2633,7 @@ textarea.form-control-txt {
   .footer_grid > div:nth-child(3) {
     padding-left: 0rem;
   }
+
   .footer_grid > div:nth-child(4) {
     padding-left: 0rem;
   }
@@ -2834,7 +2765,6 @@ textarea.form-control-txt {
     width: 100%;
     text-align: left;
     font-size: 1.2rem;
-    width: 100%;
     margin: 0 auto;
   }
 
@@ -2982,9 +2912,6 @@ textarea.form-control-txt {
   .why-card:hover {
     background: url(/images/why-choose-hover-bg.svg) !important;
     width: 100%;
-  }
-  .footer_grid > div:nth-child(3) {
-    padding-left: 0;
   }
 }
 
