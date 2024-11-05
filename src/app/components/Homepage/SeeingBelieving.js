@@ -112,9 +112,9 @@ const SeeingBelieving = () => {
                       <p className="text-colorGray text-base">
                         {(content?.description).split(" ").length > 31
                           ? content?.description
-                              .split(" ")
-                              .slice(0, 25)
-                              .join(" ") + "..."
+                              ?.split(" ")
+                              ?.slice(0, 25)
+                              ?.join(" ") + "..."
                           : content?.description}
                       </p>
                     </div>

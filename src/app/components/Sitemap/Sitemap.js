@@ -351,7 +351,7 @@ const Sitemap = () => {
                   <div key={index}>
                     <li>
                       <Link
-                        as={`/blog/${loc.split("/").filter(Boolean).pop()}/`}
+                        as={`/blog/${loc?.split("/").filter(Boolean).pop()}/`}
                         href={`/blog/[slug]`}
                         className="font-medium"
                       >
