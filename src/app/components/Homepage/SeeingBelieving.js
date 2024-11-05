@@ -88,7 +88,7 @@ const SeeingBelieving = () => {
         <BelievingText />
         <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
           {caseStudyData?.length &&
-            caseStudyData.map(({ content, full_slug }, index) => {
+            caseStudyData?.map(({ content, full_slug }, index) => {
               return (
                 <div
                   className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
@@ -110,7 +110,7 @@ const SeeingBelieving = () => {
                         </div>
                       </div>
                       <p className="text-colorGray text-base">
-                        {(content?.description).split(" ").length > 31
+                        {content?.description?.split(" ")?.length > 31
                           ? content?.description
                               ?.split(" ")
                               ?.slice(0, 25)

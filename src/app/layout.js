@@ -3,7 +3,7 @@ import "./styles/Homepage.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 // import { NextAuthProvider } from "./provider"
-import { Inter } from "next/font/google";
+import { Inter, Urbanist } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { organization, website } from "./components/lib/schemaCode";
@@ -13,6 +13,12 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--global-font",
+});
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-urbanist",
 });
 
 storyblokInit({
@@ -28,7 +34,7 @@ const Footer = dynamic(() => import("./components/Footer"));
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${inter.variable}`}>
+      <html lang="en" className={`${inter.variable} ${urbanist.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
           <meta
