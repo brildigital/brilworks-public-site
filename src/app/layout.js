@@ -28,7 +28,6 @@ storyblokInit({
 
 import Header from "./components/Header/Header";
 import LoadScripts from "./ScriptLoader";
-import Script from "next/script";
 
 const Footer = dynamic(() => import("./components/Footer"));
 
