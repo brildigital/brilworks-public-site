@@ -77,7 +77,7 @@ const Blog = () => {
   const pageNumbers = getPageNumbers();
 
   useEffect(() => {
-    let cat = window.location.href.split("=")[1];
+    let cat = window?.location?.href?.split("=")[1];
     cat ? setBlogCategory(cat?.replaceAll("-", " ")) : setBlogCategory("");
     router.push(`/blog`);
   }, [searchParams]);
