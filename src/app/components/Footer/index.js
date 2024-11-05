@@ -282,7 +282,7 @@ const Footer = () => {
                         target="_blank"
                         className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
                       >
-                        {text.split("").includes("@") ? (
+                        {text?.split("").includes("@") ? (
                           <Image
                             className="md:w-5 w-4 md:h-5 h-4"
                             src="/images/sms.svg"
@@ -325,7 +325,7 @@ const Footer = () => {
                       target="_blank"
                       className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
                     >
-                      {text.split("").includes("@") ? (
+                      {text?.split("").includes("@") ? (
                         <Image
                           className="md:w-5 w-4 md:h-5 h-4"
                           src="/images/sms.svg"

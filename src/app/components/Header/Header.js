@@ -34,9 +34,9 @@ const NewHeader = () => {
           name:
             story.name ||
             story.slug
-              .replaceAll("-", " ")
-              .split(" ")
-              .map(
+              ?.replaceAll("-", " ")
+              ?.split(" ")
+              ?.map(
                 (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length)
               )
               .join(" "),
