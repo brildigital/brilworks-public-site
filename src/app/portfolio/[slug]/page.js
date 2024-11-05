@@ -5,10 +5,7 @@ import PortfolioFirstSection from "@/app/components/PortfolioNew/PortfolioFirstS
 import ProcessAndEnhanceSection from "@/app/components/PortfolioNew/ProcessAndEnhanceSection";
 import ProjectOverviewSection from "@/app/components/PortfolioNew/ProjectOverviewSection";
 import ProjectChallengesSection from "@/app/components/PortfolioNew/ProjectChallengesSection";
-// import HowWeDeliverSection from "@/app/components/PortfolioNew/HowWeDeliverSection";
 import BluePrintForSuccess from "@/app/components/PortfolioNew/BluePrintForSuccess";
-import SuccessThroughClientEyes from "@/app/components/PortfolioNew/SuccessThroughClientEyes";
-import PortfolioCTASection from "@/app/components/PortfolioNew/PortfolioCTASection";
 import MoreSuccessStoriesSection from "@/app/components/PortfolioNew/MoreSuccessStoriesSection";
 
 async function fetchWithErrorHandling(url, options) {
@@ -92,7 +89,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const storyData = await getPortfolioData(params.slug);
+  const storyData = await getPortfolioData(params?.slug);
   const {
     title,
     description,
