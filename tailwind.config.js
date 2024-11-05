@@ -1,3 +1,5 @@
+const { Urbanist } = require("next/font/google");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,9 +13,11 @@ module.exports = {
         mobile: "535px",
         slg: "980px",
         sxl: "1200px",
+        "3xl": "1680px",
       },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
+        Urbanist: ["Urbanist", "sans-serif"],
       },
       colors: {
         themeColor: "#0d9a9a",
