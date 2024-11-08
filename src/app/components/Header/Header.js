@@ -6,11 +6,13 @@ import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
+import { usePathname } from "next/navigation";
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
 const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
+  const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
 
@@ -68,17 +70,35 @@ const NewHeader = () => {
   return (
     <header>
       <div className="header header-bg-white">
-        <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold">
-          <div className="flex items-center justify-between text-colorBlack lg:w-[90%] w-[88%] mx-auto">
+        <Navbar
+          className={`sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold`}
+        >
+          <div
+            className={`flex items-center justify-between text-colorBlack ${
+              pathname.startsWith("/portfolio/")
+                ? "container max-w-[1300px] px-10 mx-auto"
+                : "lg:w-[90%] w-[88%] mx-auto"
+            }`}
+          >
             <div className="header_logo">
               <Link href="/">
-                <Image
-                  src="/images/brilworks-logo.png"
-                  alt="Brilworks Logo"
-                  width="206"
-                  height="62"
-                  priority="true"
-                />
+                {pathname.startsWith("/portfolio/") ? (
+                  <Image
+                    src="/images/logo-black.svg"
+                    alt="Brilworks Logo"
+                    width="155"
+                    height="46"
+                    priority="true"
+                  />
+                ) : (
+                  <Image
+                    src="/images/brilworks-logo.png"
+                    alt="Brilworks Logo"
+                    width="206"
+                    height="62"
+                    priority="true"
+                  />
+                )}
               </Link>
             </div>
             <div className="flex items-center">
@@ -102,6 +122,7 @@ const NewHeader = () => {
                         <MegaMenu
                           key={menu?.name}
                           name={menu?.name}
+                          pathname={pathname}
                           heading={menu?.heading}
                           setOpenNav={setOpenNav}
                           menuItems={menu?.menuItems}

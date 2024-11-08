@@ -7,7 +7,7 @@ import {
 import React from "react";
 import MenuItem from "./MenuItem";
 
-const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
+const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
   return (
     <Menu
       placement="bottom"
@@ -49,7 +49,13 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
         dismissible
         className="flex items-start z-10 w-full pb-20 menu-shadow outline-none overflow-y-auto rounded-none bg-[#f2f5f7]"
       >
-        <div className="flex xl:ml-[15%] p-5 outline-none w-full">
+        <div
+          className={`flex xl:ml-[15%] p-5 outline-none w-full ${
+            pathname?.includes("/portfolio/")
+              ? "container max-w-[1300px] px-10 mx-auto"
+              : ""
+          }`}
+        >
           {heading && (
             <div className="font-semibold text-base w-40 pt-2 font-Inter">
               {heading}

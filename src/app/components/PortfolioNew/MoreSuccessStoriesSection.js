@@ -13,8 +13,6 @@ const Storyblok = new StoryblokClient({
 const MoreSuccessStoriesSection = () => {
   const pathname = usePathname();
   const [caseStudyData, setCaseStudyData] = useState();
-  console.log(pathname);
-  console.log(caseStudyData);
 
   useEffect(() => {
     Storyblok.get("cdn/stories/", {

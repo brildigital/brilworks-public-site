@@ -3,8 +3,13 @@ import React, { useState } from "react";
 import Button from "../Common/Button";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
 
-const PortfolioContactForm = ({ description, companyNotRequired }) => {
+const PortfolioContactForm = ({
+  description,
+  companyNotRequired,
+  newGradient,
+}) => {
   const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -137,15 +142,26 @@ const PortfolioContactForm = ({ description, companyNotRequired }) => {
       <div className="h-4 text-xs font-medium text-themeColor" id="sucess_msg">
         {respMessage}
       </div>
-      <Button
-        className="mt-2 w-full font-bold"
-        id="submit"
-        type="submit"
-        icon={isSubmitting ? <Loader /> : ""}
-        label={isSubmitting ? "Submitting" : "Submit"}
-        variant="primary"
-        disabled={isSubmitting}
-      />
+      {newGradient ? (
+        <BrilworksButton
+          id="submit"
+          type="submit"
+          icon={isSubmitting ? <Loader /> : ""}
+          label={isSubmitting ? "Submitting" : "Submit"}
+          variant="primary"
+          disabled={isSubmitting}
+        />
+      ) : (
+        <Button
+          className="mt-2 w-full font-bold"
+          id="submit"
+          type="submit"
+          icon={isSubmitting ? <Loader /> : ""}
+          label={isSubmitting ? "Submitting" : "Submit"}
+          variant="primary"
+          disabled={isSubmitting}
+        />
+      )}
     </form>
   );
 };
