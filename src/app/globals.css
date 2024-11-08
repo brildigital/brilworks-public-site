@@ -233,6 +233,10 @@ input[type="number"] {
   color: var(--theme-color) !important;
 }
 
+.footer-link-blue a:hover {
+  color: var(--vivid-blue) !important;
+}
+
 .item-accordion {
   border-bottom: transparent;
   border: 1px solid var(--main_color) !important;
@@ -248,7 +252,6 @@ input[type="number"] {
 .header_font a,
 .header_font p {
   font-size: var(--font_16);
-
   color: var(--color_black);
 }
 
