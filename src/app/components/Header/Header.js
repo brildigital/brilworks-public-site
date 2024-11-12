@@ -7,6 +7,7 @@ import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
 import { usePathname } from "next/navigation";
+import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
@@ -69,7 +70,11 @@ const NewHeader = () => {
 
   return (
     <header>
-      <div className="header header-bg-white">
+      <div
+        className={`header header-bg-white ${
+          pathname.startsWith("/portfolio/") ? "font-Urbanist" : ""
+        }`}
+      >
         <Navbar
           className={`sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold`}
         >
@@ -129,12 +134,19 @@ const NewHeader = () => {
                         />
                       )
                     )}
-                  <Button
-                    onClick={() => setOpenNav(false)}
-                    label="Let's Talk"
-                  />
                 </ul>
               </div>
+            </div>
+            <div className="flex items-center gap-5">
+              {pathname.startsWith("/portfolio/") ? (
+                <BrilworksButton
+                  innerClassName="text-base"
+                  onClick={() => setOpenNav(false)}
+                  label="Let's Talk"
+                />
+              ) : (
+                <Button onClick={() => setOpenNav(false)} label="Let's Talk" />
+              )}
               <IconButton
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"

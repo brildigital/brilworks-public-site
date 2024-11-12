@@ -269,6 +269,19 @@ const hireTeamMenuItems = [
   },
 
   {
+    name: "MOBILE APP DEVELOPMENT",
+    subSections: [
+      {
+        name: "React Native Developers",
+        path: "/hire-react-native-developer/",
+      },
+      {
+        name: "Mobile App Developers",
+        path: "/hire-mobile-app-developer/",
+      },
+    ],
+  },
+  {
     name: "LOW CODE/ NO CODE DEVELOPMENT",
     subSections: [
       {
@@ -286,19 +299,6 @@ const hireTeamMenuItems = [
       {
         name: "Low Code No Code Developers",
         path: "/hire-low-code-no-code-developer/",
-      },
-    ],
-  },
-  {
-    name: "MOBILE APP DEVELOPMENT",
-    subSections: [
-      {
-        name: "React Native Developers",
-        path: "/hire-react-native-developer/",
-      },
-      {
-        name: "Mobile App Developers",
-        path: "/hire-mobile-app-developer/",
       },
     ],
   },
@@ -616,6 +616,26 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Best React Native UI Libraries Developers Should Know",
+    loc: "https://www.brilworks.com/blog/best-react-native-ui-libraries/",
+    lastmod: "2024-11-12T05:38:00.654Z",
+  },
+  {
+    name: "The Best Low-Code No Code Platforms in 2024",
+    loc: "https://www.brilworks.com/blog/best-low-code-no-code-platforms/",
+    lastmod: "2024-11-11T05:34:38.850Z",
+  },
+  {
+    name: "React Native for Beginners: Create React Native App in 5 Steps",
+    loc: "https://www.brilworks.com/blog/create-react-native-app/",
+    lastmod: "2024-11-11T05:14:00.964Z",
+  },
+  {
+    name: "White label app development cost: A Straightforward Guide",
+    loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
+    lastmod: "2024-11-08T05:25:52.721Z",
+  },
+  {
     name: "The Best White Label App builders",
     loc: "https://www.brilworks.com/blog/best-white-label-app-builders/",
     lastmod: "2024-10-30T06:00:56.130Z",
@@ -623,12 +643,12 @@ export const blogListStaticData = [
   {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
     loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
-    lastmod: "2024-10-25T08:40:06.162Z",
+    lastmod: "2024-11-08T13:08:21.577Z",
   },
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
     loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
-    lastmod: "2024-11-05T05:32:54.561Z",
+    lastmod: "2024-11-05T05:35:05.503Z",
   },
   {
     name: "How to Create An App and Make Money in 2024",

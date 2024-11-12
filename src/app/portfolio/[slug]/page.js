@@ -94,6 +94,7 @@ export default async function Page({ params }) {
     title,
     description,
     images,
+    buttontext,
     KeyValueBlock,
     ProcessAndEnhanceBlock,
     ProjectOverview,
@@ -105,22 +106,25 @@ export default async function Page({ params }) {
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>
-      <PortfolioFirstSection
-        title={title}
-        description={description}
-        images={images}
-        KeyValueBlock={KeyValueBlock}
-      />
-      <ProcessAndEnhanceSection
-        processAndEnhanceBlock={ProcessAndEnhanceBlock}
-      />
-      <ProjectOverviewSection projectOverview={ProjectOverview} />
-      <ProjectChallengesSection projectChallenges={ProjectChallenges} />
-      {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
-      <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
-      {/* <SuccessThroughClientEyes /> */}
-      {/* <PortfolioCTASection ctaData={CTA} /> */}
-      <MoreSuccessStoriesSection />
+      <div className="font-Urbanist">
+        <PortfolioFirstSection
+          buttontext={buttontext}
+          title={title}
+          description={description}
+          images={images}
+          KeyValueBlock={KeyValueBlock}
+        />
+        <ProcessAndEnhanceSection
+          processAndEnhanceBlock={ProcessAndEnhanceBlock}
+        />
+        <ProjectOverviewSection projectOverview={ProjectOverview} />
+        <ProjectChallengesSection projectChallenges={ProjectChallenges} />
+        {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
+        <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
+        {/* <SuccessThroughClientEyes /> */}
+        {/* <PortfolioCTASection ctaData={CTA} /> */}
+        <MoreSuccessStoriesSection />
+      </div>
     </Suspense>
   );
 }

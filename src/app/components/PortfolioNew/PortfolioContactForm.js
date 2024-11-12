@@ -64,7 +64,7 @@ const PortfolioContactForm = ({
     }
   };
   return (
-    <form id="case=study-contact-form" onSubmit={handleSubmit}>
+    <form id="case-study-contact-form" onSubmit={handleSubmit}>
       {description && (
         <div>
           <p className="text-colorGray text-xl !mb-[30px] pl-1">
