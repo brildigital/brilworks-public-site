@@ -20,7 +20,8 @@ module.exports = {
         Urbanist: ["Urbanist", "sans-serif"],
       },
       colors: {
-        themeColor: "#0d9a9a",
+        // themeColor: "#0d9a9a",
+        themeColor: "#017eeb",
         colorLightGray: "#f1f1f1",
         sectionBG: "#f2f3f3",
         colorYellow: "#FEDC7A",

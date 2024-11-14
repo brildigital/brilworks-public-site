@@ -7,14 +7,14 @@ import ProjectOverviewSection from "@/app/components/PortfolioGradient/ProjectOv
 
 const page = () => {
   return (
-    <div className="font-Urbanist">
+    <>
       <PortfolioGradientHero />
       <PortfolioSection2 />
       <ProjectOverviewSection />
       <ProjectChallengesSection />
       <DownloadCaseStudy />
       <MoreSuccessStory />
-    </div>
+    </>
   );
 };
 

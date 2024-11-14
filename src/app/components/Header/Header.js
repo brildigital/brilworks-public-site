@@ -70,11 +70,7 @@ const NewHeader = () => {
 
   return (
     <header>
-      <div
-        className={`header header-bg-white ${
-          pathname.startsWith("/portfolio/") ? "font-Urbanist" : ""
-        }`}
-      >
+      <div className={`header header-bg-white`}>
         <Navbar
           className={`sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold`}
         >
@@ -87,7 +83,14 @@ const NewHeader = () => {
           >
             <div className="header_logo">
               <Link href="/">
-                {pathname.startsWith("/portfolio/") ? (
+                <Image
+                  src="/images/logo-black.svg"
+                  alt="Brilworks Logo"
+                  width="155"
+                  height="46"
+                  priority="true"
+                />
+                {/* {pathname.startsWith("/portfolio/") ? (
                   <Image
                     src="/images/logo-black.svg"
                     alt="Brilworks Logo"
@@ -103,7 +106,7 @@ const NewHeader = () => {
                     height="62"
                     priority="true"
                   />
-                )}
+                )} */}
               </Link>
             </div>
             <div className="flex items-center">

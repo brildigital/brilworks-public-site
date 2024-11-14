@@ -149,9 +149,11 @@ const SolutionContactForm = () => {
 
                   <Button
                     type="submit"
-                    innerClassName="flex items-center justify-center gap-2"
+                    innerClassName="flex items-center justify-center gap-1"
                     className={
-                      isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8 !pr-5"
+                      isSubmitting
+                        ? "!text-colorBlack !mt-8"
+                        : "!mt-8 !pl-5 !pr-6"
                     }
                     icon={isSubmitting ? <Loader /> : "right-arrow"}
                     label={isSubmitting ? "Submitting" : "Submit"}

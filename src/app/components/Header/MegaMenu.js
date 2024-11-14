@@ -67,13 +67,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
           }`}
         >
           {heading && (
-            <div
-              className={`font-semibold text-base w-40 pt-2  ${
-                pathname?.includes("/portfolio/")
-                  ? "font-Urbanist"
-                  : "font-Inter"
-              }`}
-            >
+            <div className={`font-semibold text-base w-40 pt-2 font-Inter`}>
               {heading}
             </div>
           )}
@@ -85,11 +79,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             {menuItems.map((mainSection) => (
               <div key={mainSection?.name} className="flex flex-col gap-3">
                 <span
-                  className={`font-semibold text-base break-words ${
-                    pathname?.includes("/portfolio/")
-                      ? "font-Urbanist"
-                      : "font-Inter"
-                  }`}
+                  className={`font-semibold text-base break-words font-Inter`}
                 >
                   {mainSection?.name}
                 </span>

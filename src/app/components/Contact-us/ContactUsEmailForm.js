@@ -6,7 +6,7 @@ import Button from "../Common/Button";
 import { usePathname } from "next/navigation";
 
 const ContactUsEmailForm = ({ inquiryForm }) => {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
@@ -159,7 +159,9 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
           <Button
             type="submit"
             innerClassName="flex items-center justify-center gap-2"
-            className={isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8 !pr-5"}
+            className={
+              isSubmitting ? "!text-colorBlack !mt-8" : "!mt-8 !pl-5 !pr-6"
+            }
             icon={isSubmitting ? <Loader /> : "right-arrow"}
             label={isSubmitting ? "Submitting" : "Submit"}
             disabled={isSubmitting}
