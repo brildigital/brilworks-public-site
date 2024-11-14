@@ -251,7 +251,7 @@ const Footer = () => {
   ];
 
   return pathname.startsWith("/portfolio/") ? (
-    <div className="footer-background font-Urbanist text-colorWhite">
+    <div className="footer-background text-colorWhite">
       <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:pt-[60px] md:pt-[40px] pt-[30px] mx-auto">
         <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
           <div className="w-full">
@@ -783,7 +783,7 @@ const Footer = () => {
           <div className="w-full flex md:flex-row flex-col items-end lg:justify-between justify-start">
             <div className="lg:w-fit w-full footer_logo flex items-center">
               <Image
-                src="/images/brilworks-logo.png"
+                src="/images/logo-black.svg"
                 alt="Brilworks Logo"
                 width="206"
                 height="62"

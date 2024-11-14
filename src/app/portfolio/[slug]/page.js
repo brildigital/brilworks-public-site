@@ -106,25 +106,23 @@ export default async function Page({ params }) {
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>
-      <div className="font-Urbanist">
-        <PortfolioFirstSection
-          buttontext={buttontext}
-          title={title}
-          description={description}
-          images={images}
-          KeyValueBlock={KeyValueBlock}
-        />
-        <ProcessAndEnhanceSection
-          processAndEnhanceBlock={ProcessAndEnhanceBlock}
-        />
-        <ProjectOverviewSection projectOverview={ProjectOverview} />
-        <ProjectChallengesSection projectChallenges={ProjectChallenges} />
-        {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
-        <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
-        {/* <SuccessThroughClientEyes /> */}
-        {/* <PortfolioCTASection ctaData={CTA} /> */}
-        <MoreSuccessStoriesSection />
-      </div>
+      <PortfolioFirstSection
+        buttontext={buttontext}
+        title={title}
+        description={description}
+        images={images}
+        KeyValueBlock={KeyValueBlock}
+      />
+      <ProcessAndEnhanceSection
+        processAndEnhanceBlock={ProcessAndEnhanceBlock}
+      />
+      <ProjectOverviewSection projectOverview={ProjectOverview} />
+      <ProjectChallengesSection projectChallenges={ProjectChallenges} />
+      {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
+      <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
+      {/* <SuccessThroughClientEyes /> */}
+      {/* <PortfolioCTASection ctaData={CTA} /> */}
+      <MoreSuccessStoriesSection />
     </Suspense>
   );
 }

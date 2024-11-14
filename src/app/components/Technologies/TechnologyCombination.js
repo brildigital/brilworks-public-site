@@ -10,13 +10,13 @@ const ContentBlock = ({ contentData }) => {
   return (
     <div className="hire_sec1_service_50">
       <div className="react-technology">
-        <div className="relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]">
+        <div className="relative z-10 rounded-[30px] !border-[1px] border-themeColor">
           <div className="dots_flex">
             <div className="dots"></div>
             <div className="dots"></div>
             <div className="dots"></div>
           </div>
-          <div className="background-hover border-t-[1px] border-[#00dfb8]">
+          <div className="background-hover border-t-[1px] border-themeColor">
             <div className="style_sec3_swiper_home">
               <div className="flex gap-[1rem] pb-[2rem]">
                 {contentData.images.map((image, index) => (
