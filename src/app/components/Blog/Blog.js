@@ -22,21 +22,19 @@ const Blog = () => {
   const router = useRouter();
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
-  const staticBlogList = blogDataPerPage.map((data) => {
-    return {
-      name: data.name,
-      loc: `https://www.brilworks.com/${data.full_slug}/`,
-      lastmod: `${data.published_at}`,
-    };
-  });
-
-  console.log(staticBlogList);
+  // const staticBlogList = blogDataPerPage.map((data) => {
+  //   return {
+  //     name: data.name,
+  //     loc: `https://www.brilworks.com/${data.full_slug}/`,
+  //     lastmod: `${data.published_at}`,
+  //   };
+  // });
   const fetchData = async () => {
     setIsLoading(true);
     try {
       const blogData = await getblogData(
-        2 || currentPage,
-        100 || ITEMS_PER_PAGE,
+        currentPage,
+        ITEMS_PER_PAGE,
         blogCategory,
         searchQuery
       );

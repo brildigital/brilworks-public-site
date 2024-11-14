@@ -26,7 +26,7 @@ module.exports = {
         colorYellow: "#FEDC7A",
         footerBG: "#f2f5f7",
         borderGray: "#dedede",
-        vividBlue: "#017eeb;",
+        vividBlue: "#017eeb",
         // colorBlack: "#1c1d1e",
         colorBlack: "#212121",
         colorWhite: "#ffffff",
