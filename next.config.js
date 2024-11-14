@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const nextConfig = {
   trailingSlash: true,
   swcMinify: true,
   experimental: {
     appDir: true,
-    legacyBrowsers: false, 
+    legacyBrowsers: false,
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
   },
   images: {
-    domains: ["a.storyblok.com", "lh3.googleusercontent.com","cdn-icons-png.flaticon.com"],
+    domains: [
+      "a.storyblok.com",
+      "lh3.googleusercontent.com",
+      "cdn-icons-png.flaticon.com",
+    ],
   },
   webpack: (config, { dev, isServer }) => {
     // Only apply Terser in production builds
@@ -39,7 +43,7 @@ const nextConfig = {
             },
           },
           parallel: true,
-        }),
+        })
       );
     }
     return config;
@@ -854,4 +858,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

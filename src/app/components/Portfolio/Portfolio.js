@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import DevelopSuccessStory from "./DevelopSuccessStory";
-import { usePathname } from "next/navigation";
 import StoryblokClient from "storyblok-js-client";
 import Image from "next/image";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -96,7 +96,7 @@ const Portfolio = () => {
               See how our work enable companies to excel in their industry.
             </p>
           </div>
-          {caseStudyData?.length &&
+          {caseStudyData?.length ? (
             caseStudyData?.map(({ name, content, full_slug }, index) => {
               return (
                 <div
@@ -143,7 +143,12 @@ const Portfolio = () => {
                   </div>
                 </div>
               );
-            })}
+            })
+          ) : (
+            <div className="flex items-center justify-center py-20">
+              <FetchDataSpinner />
+            </div>
+          )}
         </section>
       </div>
       <DevelopSuccessStory />

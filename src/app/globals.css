@@ -27,7 +27,8 @@
   --theme-color: #0d9a9a; /* New color */
   --theme-light: #f3fdff; /* New color */
   --vivid-blue: #017eeb;
-  --color_black: #1c1d1e;
+  /* --color_black: #1c1d1e; */
+  --color_black: #212121;
   --color_primary: #00ddb9;
   --color_gray: #504f4f;
   --color-light-gray: #f1f1f1;
@@ -229,6 +230,11 @@ input[type="number"] {
   font-weight: 600 !important;
 }
 
+.page-active-blue {
+  color: var(--vivid-blue) !important;
+  font-weight: 600 !important;
+}
+
 .footer-links a:hover {
   color: var(--theme-color) !important;
 }
@@ -319,6 +325,13 @@ input[type="number"] {
 .mega_menu_txt p {
   font-size: var(--font_16);
   font-family: var(--global-font) !important;
+  font-display: swap;
+  color: var(--color_black);
+  line-height: 2.5;
+}
+.mega_menu_txt p.font-Urbanist {
+  font-size: var(--font_16);
+  font-family: var(--font-urbanist) !important;
   font-display: swap;
   color: var(--color_black);
   line-height: 2.5;

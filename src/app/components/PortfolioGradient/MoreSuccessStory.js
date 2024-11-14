@@ -75,46 +75,6 @@ const MoreSuccessStory = () => {
               );
             })}
       </Splide>
-      {/* <Swiper
-        className="success-story-swiper !w-full !mx-auto"
-        modules={[Navigation]}
-        spaceBetween={isMobile ? 10 : 21}
-        slidesPerView={isMobile ? 1 : 2}
-        speed={isMobile ? 1000 : 1500}
-        loop={true}
-        navigation={true}
-      >
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
-          {caseStudyData?.length &&
-            caseStudyData
-              ?.filter(({ slug }) => !pathname?.includes(slug))
-              ?.map(({ name, content, full_slug }, index) => {
-                const truncatedText = name
-                  ? name.split(" ").slice(0, 5).join(" ") + "..."
-                  : "";
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="blog-box overflow-hidden shadow-none hover:shadow-lg">
-                      <Link key={name} href={`/${full_slug}/`}>
-                        <Image
-                          className="rounded-2xl"
-                          src={content?.images?.[0]?.filename}
-                          width="302"
-                          height="240"
-                          alt={`casestudy-${index}`}
-                        />
-                        <div className="p-[10px]">
-                          <h3 className="xl:text-[24px] font-medium mb-[10px] leading-8">
-                            {truncatedText}
-                          </h3>
-                        </div>
-                      </Link>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-        </div>
-      </Swiper> */}
     </div>
   );
 };
