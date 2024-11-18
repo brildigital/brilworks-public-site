@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../Common/Button";
 
+const CommonUseCases = dynamic(() => import("./CommonUseCaseComponent"));
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
@@ -49,6 +50,7 @@ const AWSService = () => {
 
       <OurServices />
       <ServicesWhyChooseUs />
+      <CommonUseCases />
       <Honors />
       <ContactBlock />
       <TechStackWeUse />

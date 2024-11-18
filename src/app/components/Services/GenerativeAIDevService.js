@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import DevOpsShipFaster from "./DevOpsShipFaster";
 import Button from "../Common/Button";
 
+const CommonUseCases = dynamic(() => import("./CommonUseCaseComponent"));
 const OurServices = dynamic(() => import("./OurServices"));
 const UseCases = dynamic(() => import("./UseCases"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
@@ -51,6 +52,7 @@ const GenerativeAIDevService = () => {
       <OurServices />
       <UseCases />
       <ServicesWhyChooseUs />
+      <CommonUseCases />
       <Honors />
       <ContactBlock />
       <IndustriesWeHelp />

@@ -16,6 +16,9 @@ import Image from "next/image";
 const Honors = () => {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
+  const isWhite =
+    pathname === "/generative-ai-development-services/" ||
+    pathname === "/aws-consulting-services/";
   useEffect(() => {
     const dataFetch = () => {
       setTimeout(() => {
@@ -152,7 +155,7 @@ const Honors = () => {
   ];
 
   return (
-    <div className="bg-sectionBG section-padding">
+    <div className={`${isWhite ? "" : "bg-sectionBG"} section-padding`}>
       <div className="container max-w-[1536px] mx-auto reveal">
         <HonorText />
         <div className="honors-swiper reveal">

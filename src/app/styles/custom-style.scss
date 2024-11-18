@@ -146,7 +146,16 @@
     background: var(--theme-color);
   }
 }
-
+.gradient-text-blue {
+  background: linear-gradient(
+    159.52deg,
+    #007aeb -3.23%,
+    #008ce7 33.69%,
+    #00dbd3 85.35%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .img-selection-none {
   user-select: none;
   -webkit-user-select: none; /* For Safari */
