@@ -5,24 +5,20 @@ import React, { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import { usePathname } from "next/navigation";
 
-export const CommonUseCaseComponent = ({
-  icon,
-  title,
-  description,
-  link = "/",
-}) => {
+export const UseCaseCard = ({ icon, title, description, link = "/" }) => {
   return (
-    <div className=" bg-colorWhite  h-[209px] shadow-md flex flex-col justify-between gap-4 p-3 rounded-[20px]">
-      <div className="flex items-center gap-3">
-        <div className="p-[14px] border-[1px] border-[#EBEBEB] rounded-[10px] bg-[#F7F7F7] h-[60px] w-[60px]">
+    <div className=" bg-colorWhite shadow-md flex flex-col justify-between p-5 pt-[18px] rounded-[20px]">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="p-[14px] border-[1px] border-[#EBEBEB] rounded-[10px] bg-[#F7F7F7] w-[60px]">
           <Image width={32} height={32} alt={title} src={icon}></Image>
         </div>
-        <div className="text-[20px] font-bold">{title}</div>
+        <div className="text-xl font-semibold">{title}</div>
       </div>
-      <div className="text-[#504F4F]">{description}</div>
-      <hr />
+      <div className="text-colorGray">{description}</div>
+      <hr className="my-4" />
+
       <Link
-        className="gradient-text-blue font-semibold text-[20px] flex  justify-center"
+        className="gradient-text-blue font-semibold text-center"
         href={link}
       >
         Read More
@@ -95,6 +91,7 @@ export default function CommonUseCases() {
     "/aws-consulting-services/": AWSconsultingUsecases,
   };
   const data = getMyUseCase[pathname];
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -103,22 +100,29 @@ export default function CommonUseCases() {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
   return (
-    <div className="bg-sectionBG flex items-center flex-col p-10 gap-10 reveal">
-      <h1 className="text-[48px] font-semibold reveal">Industry Use Cases</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 reveal">
-        {data.map((item, index) => {
-          return (
-            <div key={index}>
-              <CommonUseCaseComponent
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                link={item.link}
-              />
-            </div>
-          );
-        })}
+    <div className="bg-sectionBG">
+      <div className="container max-w-[1440px] mx-auto">
+        <div className="w-full mx-auto px-6 xl:py-14 md:py-10 py-8 end-to-end">
+          <div className="endTO_text">
+            <h2 className="text-center">Industry Use Cases</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-7 reveal">
+            {data.map((item, index) => {
+              return (
+                <div key={index}>
+                  <UseCaseCard
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    link={item.link}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
