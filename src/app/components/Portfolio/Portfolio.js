@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import DevelopSuccessStory from "./DevelopSuccessStory";
-import { usePathname } from "next/navigation";
 import StoryblokClient from "storyblok-js-client";
 import Image from "next/image";
+import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -16,7 +16,6 @@ const Storyblok = new StoryblokClient({
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = () => {
-  const pathname = usePathname();
   const words = ["Empower. ", "Create. ", "Progress"];
   const colorSequences = [
     ["text-colorWhite", "text-colorBlack", "text-colorBlack"],
@@ -97,7 +96,7 @@ const Portfolio = () => {
               See how our work enable companies to excel in their industry.
             </p>
           </div>
-          {caseStudyData?.length &&
+          {caseStudyData?.length ? (
             caseStudyData?.map(({ name, content, full_slug }, index) => {
               return (
                 <div
@@ -123,7 +122,10 @@ const Portfolio = () => {
                   </div>
                   <div className="basis-1/2">
                     <div className="portfolio_sec1_txt1">
-                      <p>{content?.title}</p>
+                      <p
+                        className="!leading-normal"
+                        dangerouslySetInnerHTML={{ __html: content?.title }}
+                      ></p>
                     </div>
                     <div className="portfolio_sec1_txt2 portfolio_description_width">
                       <p>
@@ -144,196 +146,12 @@ const Portfolio = () => {
                   </div>
                 </div>
               );
-            })}
-          {/* <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="basis-1/2">
-              <div className="portfolio_color_style">
-                <div className="porfolio_sec1_img relative">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    className="alignnone"
-                    src="/images/vugo-1.jpg"
-                    alt="vugo"
-                  />
-                </div>
-              </div>
+            })
+          ) : (
+            <div className="flex items-center justify-center py-20">
+              <FetchDataSpinner />
             </div>
-            <div className="basis-1/2">
-              <div className="portfolio_sec1_txt1">
-                <p>
-                  A Unique In-car
-                  <br />
-                  Advertising Application
-                </p>
-              </div>
-              <div className="portfolio_sec1_txt2 portfolio_description_width">
-                <p>
-                  Vugo is a seed-stage auto tech infotainment startup, Mobility
-                  Media™ platform is monetizing ridesharing today, and
-                  self-driving mobility services tomorrow.
-                </p>
-              </div>
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                redirect="/portfolio/vugo/"
-                label="Know More"
-                icon="right-arrow-next"
-              />
-            </div>
-          </div>
-          <div className="portflio_flex_row service_width reveal">
-            <div className="basis-1/2 order-2 md:order-1">
-              <div className="portfolio_sec1_txt1">
-                <p>
-                  Improve Fleet’s
-                  <br />
-                  Efficiency Application
-                </p>
-              </div>
-              <div className="portfolio_sec1_txt2 portfolio_description_width">
-                <p>
-                  Rastrack specializes in the control and satellite monitoring
-                  of assets or individuals using networking technologies.
-                </p>
-              </div>
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                redirect="/portfolio/rastrack/"
-                label="Know More"
-                icon="right-arrow-next"
-              />
-            </div>
-            <div className="basis-1/2 order-1 md:order-2">
-              <div className="portfolio_color_style">
-                <div className="porfolio_sec1_img relative">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    className="alignnone"
-                    src="/images/rastrack.webp"
-                    alt="Rastrack"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="basis-1/2">
-              <div className="portfolio_color_style">
-                <div className="porfolio_sec1_img relative">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    className="alignnone"
-                    src="/images/orokii.jpg"
-                    alt="Orokii"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="basis-1/2">
-              <div className="portfolio_sec1_txt1">
-                <p>
-                  A Custom
-                  <br />
-                  Fintech Application
-                </p>
-              </div>
-              <div className="portfolio_sec1_txt2 portfolio_description_width">
-                <p>
-                  Send Cheaper and faster Domestic and Crossborder Payments –
-                  Orokii provides its customers with one of the lowest
-                  transaction fees in the industry.
-                </p>
-              </div>
-
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                redirect="/portfolio/orokii/"
-                label="Know More"
-                icon="right-arrow-next"
-              />
-            </div>
-          </div>
-          <div className="portflio_flex_row service_width reveal">
-            <div className="basis-1/2 order-2 md:order-1">
-              <div className="portfolio_sec1_txt1">
-                <p>
-                  A Payment
-                  <br />
-                  Gateway Application
-                </p>
-              </div>
-              <div className="portfolio_sec1_txt2 portfolio_description_width">
-                <p>
-                  Eccocar is a platform to launch, operate and scale digital
-                  mobility services, designed hand in hand with Rent-a-Cars,
-                  Dealers and Fleet Managers.
-                </p>
-              </div>
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                redirect="/portfolio/eccocar/"
-                label="Know More"
-                icon="right-arrow-next"
-              />
-            </div>
-            <div className="basis-1/2 order-1 md:order-2">
-              <div className="portfolio_color_style">
-                <div className="porfolio_sec1_img relative">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    className="alignnone"
-                    src="/images/Eccocar.webp"
-                    alt="Eccocar"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="portflio_flex_row portfolio_sec service_width reveal">
-            <div className="basis-1/2">
-              <div className="portfolio_color_style">
-                <div className="porfolio_sec1_img relative">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    className="alignnone"
-                    src="/images/gps-trackers-devices-uses2-1.webp"
-                    alt="Trackimo"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="basis-1/2">
-              <div className="portfolio_sec1_txt1">
-                <p>
-                  A Smart
-                  <br />
-                  Software Solution
-                </p>
-              </div>
-              <div className="portfolio_sec1_txt2 portfolio_description_width">
-                <p>
-                  Trackimo is a smart GPS/GSM/Wi-Fi tracker that keeps your
-                  valuables safe and alerts you of troubles. Trackimo works
-                  worldwide, indoors and outdoors.
-                </p>
-              </div>
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                redirect={
-                  pathname === "/case-studies/"
-                    ? "/case-studies/trackimo/"
-                    : "/portfolio/trackimo/"
-                }
-                label="Know More"
-                icon="right-arrow-next"
-              />
-            </div>
-          </div> */}
+          )}
         </section>
       </div>
       <DevelopSuccessStory />

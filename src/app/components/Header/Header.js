@@ -1,17 +1,19 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, IconButton } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
+import { usePathname } from "next/navigation";
+import { BrilworksButton } from "../Common/BrilworksBtn";
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
 const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
-  const navbarRef = useRef(null);
+  const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
 
@@ -68,18 +70,43 @@ const NewHeader = () => {
 
   return (
     <header>
-      <div ref={navbarRef} className="header header-bg-white">
-        <Navbar className="sticky text-black top-0 border-none z-10 h-max max-w-full rounded-none !px-0 shadow-none bg-transparent font-semibold">
-          <div className="flex items-center justify-between text-colorBlack lg:w-[90%] w-[88%] mx-auto">
+      <div className={`header header-bg-white`}>
+        <Navbar
+          className={`sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold`}
+        >
+          <div
+            className={`flex items-center justify-between text-colorBlack ${
+              pathname.startsWith("/portfolio/")
+                ? "container max-w-[1300px] px-10 mx-auto"
+                : "lg:w-[90%] w-[88%] mx-auto"
+            }`}
+          >
             <div className="header_logo">
               <Link href="/">
                 <Image
-                  src="/images/brilworks-logo.png"
+                  src="/images/logo-black.svg"
                   alt="Brilworks Logo"
-                  width="206"
-                  height="62"
+                  width="155"
+                  height="46"
                   priority="true"
                 />
+                {/* {pathname.startsWith("/portfolio/") ? (
+                  <Image
+                    src="/images/logo-black.svg"
+                    alt="Brilworks Logo"
+                    width="155"
+                    height="46"
+                    priority="true"
+                  />
+                ) : (
+                  <Image
+                    src="/images/brilworks-logo.png"
+                    alt="Brilworks Logo"
+                    width="206"
+                    height="62"
+                    priority="true"
+                  />
+                )} */}
               </Link>
             </div>
             <div className="flex items-center">
@@ -103,18 +130,26 @@ const NewHeader = () => {
                         <MegaMenu
                           key={menu?.name}
                           name={menu?.name}
+                          pathname={pathname}
                           heading={menu?.heading}
                           setOpenNav={setOpenNav}
                           menuItems={menu?.menuItems}
                         />
                       )
                     )}
-                  <Button
-                    onClick={() => setOpenNav(false)}
-                    label="Let's Talk"
-                  />
                 </ul>
               </div>
+            </div>
+            <div className="flex items-center gap-5">
+              {pathname.startsWith("/portfolio/") ? (
+                <BrilworksButton
+                  innerClassName="text-base"
+                  onClick={() => setOpenNav(false)}
+                  label="Let's Talk"
+                />
+              ) : (
+                <Button onClick={() => setOpenNav(false)} label="Let's Talk" />
+              )}
               <IconButton
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"

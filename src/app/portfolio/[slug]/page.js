@@ -94,6 +94,7 @@ export default async function Page({ params }) {
     title,
     description,
     images,
+    buttontext,
     KeyValueBlock,
     ProcessAndEnhanceBlock,
     ProjectOverview,
@@ -106,6 +107,7 @@ export default async function Page({ params }) {
   return (
     <Suspense fallback={<FetchDataSpinner />}>
       <PortfolioFirstSection
+        buttontext={buttontext}
         title={title}
         description={description}
         images={images}

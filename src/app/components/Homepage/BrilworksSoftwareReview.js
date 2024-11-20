@@ -140,7 +140,7 @@ const BrilworksSoftwareReview = () => {
               <div className="wpb_wrapper">
                 <div className="clutch-swiper home_sec3_box !mx-[1px] !max-w-[335px]">
                   <div className="dots_flex">
-                    <div className="dots !bg-[#00dfb8]"></div>
+                    <div className="dots !bg-themeColor"></div>
                     <div className="dots"></div>
                     <div className="dots"></div>
                   </div>

@@ -421,8 +421,8 @@ const Article = ({ blok }) => {
 
                       {/* ********************Author Detail******************************/}
                       {author ? (
-                        <div className="single-author-bio !mb-[33px] lg:mb-[75px]">
-                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[2rem]">
+                        <div className="single-author-bio">
+                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
                             <div className="img-blk">
                               <img
                                 decoding="async"
@@ -438,7 +438,6 @@ const Article = ({ blok }) => {
                           <div className="single-author-bio-text">
                             <h3>
                               <Link
-                                className="text-[18px] lg:text-[24px]"
                                 href={
                                   author?.name === "Vikas Singh"
                                     ? "/blog/author/vikas-singh/"
@@ -452,12 +451,7 @@ const Article = ({ blok }) => {
                                 {author?.name}
                               </Link>
                             </h3>
-                            <p className="lg:!hidden !block !text-[14px] lg:text-[18px]">
-                              {author?.mobileDesc}
-                            </p>
-                            <p className=" lg:!block !hidden ">
-                              {author?.authorDesc}
-                            </p>
+                            <p className="text-[18px]">{author?.authorDesc}</p>
                           </div>
                         </div>
                       ) : (
@@ -466,7 +460,7 @@ const Article = ({ blok }) => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/4 w-full !float-left hidden lg:block">
+                <div className="md:w-1/4 w-full !float-left">
                   <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                     <div className="h-full flex flex-col">
                       <BlogContactForm />

@@ -25,36 +25,37 @@ const HomepageBlog = dynamic(() =>
 );
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 
-export async function generateMetadata(){
-  return{
-  title: "AWS Consulting Partner | Gen AI | Product Engineering",
-  description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people. We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
-  openGraph: {
+export async function generateMetadata() {
+  return {
     title: "AWS Consulting Partner | Gen AI | Product Engineering",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.  We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
-    images: [
-      {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/banner.jpg`,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
-  twitter: {
-    title: "AWS Consulting Partner | Gen AI | Product Engineering",
-    description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.  Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
-    card: "summary_large_image",
-    site: "@_Brilworks",
-  },
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL,
-  },
-}}
+      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people. We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
+    openGraph: {
+      title: "AWS Consulting Partner | Gen AI | Product Engineering",
+      description:
+        "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.  We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      siteName: "AWS Consulting Partner | Gen AI | Product Engineering",
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}images/banner.jpg`,
+        },
+      ],
+      locale: "en-US",
+      type: "website",
+    },
+    twitter: {
+      title: "AWS Consulting Partner | Gen AI | Product Engineering",
+      description:
+        "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.  Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.",
+      card: "summary_large_image",
+      site: "@_Brilworks",
+    },
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_BASE_URL,
+    },
+  };
+}
 
 const page = () => {
   const breadCrumbList = {

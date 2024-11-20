@@ -3,8 +3,13 @@ import React, { useState } from "react";
 import Button from "../Common/Button";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
+import { BrilworksButton } from "../Common/BrilworksBtn";
 
-const PortfolioContactForm = ({ description, companyNotRequired }) => {
+const PortfolioContactForm = ({
+  description,
+  companyNotRequired,
+  newGradient,
+}) => {
   const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,7 +64,7 @@ const PortfolioContactForm = ({ description, companyNotRequired }) => {
     }
   };
   return (
-    <form id="case=study-contact-form" onSubmit={handleSubmit}>
+    <form id="case-study-contact-form" onSubmit={handleSubmit}>
       {description && (
         <div>
           <p className="text-colorGray text-xl !mb-[30px] pl-1">
@@ -137,15 +142,26 @@ const PortfolioContactForm = ({ description, companyNotRequired }) => {
       <div className="h-4 text-xs font-medium text-themeColor" id="sucess_msg">
         {respMessage}
       </div>
-      <Button
-        className="mt-2 w-full font-bold"
-        id="submit"
-        type="submit"
-        icon={isSubmitting ? <Loader /> : ""}
-        label={isSubmitting ? "Submitting" : "Submit"}
-        variant="primary"
-        disabled={isSubmitting}
-      />
+      {newGradient ? (
+        <BrilworksButton
+          id="submit"
+          type="submit"
+          icon={isSubmitting ? <Loader /> : ""}
+          label={isSubmitting ? "Submitting" : "Submit"}
+          variant="primary"
+          disabled={isSubmitting}
+        />
+      ) : (
+        <Button
+          className="mt-2 w-full font-bold"
+          id="submit"
+          type="submit"
+          icon={isSubmitting ? <Loader /> : ""}
+          label={isSubmitting ? "Submitting" : "Submit"}
+          variant="primary"
+          disabled={isSubmitting}
+        />
+      )}
     </form>
   );
 };

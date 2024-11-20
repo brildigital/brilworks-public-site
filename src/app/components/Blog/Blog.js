@@ -29,6 +29,7 @@ const Blog = () => {
   //     lastmod: `${data.published_at}`,
   //   };
   // });
+
   const fetchData = async () => {
     setIsLoading(true);
     try {

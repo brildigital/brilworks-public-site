@@ -7,7 +7,7 @@ import {
 import React from "react";
 import MenuItem from "./MenuItem";
 
-const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
+const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
   return (
     <Menu
       placement="bottom"
@@ -22,9 +22,19 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
               e.preventDefault();
               setOpenNav(false);
             }}
-            className="group/item flex items-center header_font hover:text-themeColor"
+            className={`group/item flex items-center header_font ${
+              pathname.includes("/portfolio/")
+                ? "hover:text-vividBlue"
+                : "hover:text-themeColor"
+            }`}
           >
-            <p className="!mb-0 group-hover/item:text-themeColor uppercase">
+            <p
+              className={`!mb-0  ${
+                pathname.includes("/portfolio/")
+                  ? "group-hover/item:text-vividBlue"
+                  : "group-hover/item:text-themeColor"
+              } uppercase`}
+            >
               {name}
             </p>
             <svg
@@ -49,9 +59,15 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
         dismissible
         className="flex items-start z-10 w-full pb-20 menu-shadow outline-none overflow-y-auto rounded-none bg-[#f2f5f7]"
       >
-        <div className="flex xl:ml-[15%] p-5 outline-none w-full">
+        <div
+          className={`flex xl:ml-[15%] p-5 outline-none w-full ${
+            pathname?.includes("/portfolio/")
+              ? "container max-w-[1300px] px-10 mx-auto"
+              : ""
+          }`}
+        >
           {heading && (
-            <div className="font-semibold text-base w-40 pt-2 font-Inter">
+            <div className={`font-semibold text-base w-40 pt-2 font-Inter`}>
               {heading}
             </div>
           )}
@@ -62,7 +78,9 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems }) => {
           >
             {menuItems.map((mainSection) => (
               <div key={mainSection?.name} className="flex flex-col gap-3">
-                <span className="font-semibold text-base break-words font-Inter">
+                <span
+                  className={`font-semibold text-base break-words font-Inter`}
+                >
                   {mainSection?.name}
                 </span>
                 <div className="flex flex-col">
