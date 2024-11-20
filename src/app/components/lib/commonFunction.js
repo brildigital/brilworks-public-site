@@ -84,6 +84,7 @@ export const blogAuthor = (authorName) => {
       authorLinkedIn: "https://www.linkedin.com/in/hitesh-umaletiya-266a6077/",
       authorDesc:
         "Co-founder of Brilworks. As technology futurists, we love helping startups turn their ideas into reality. Our expertise spans startups to SMEs, and we're dedicated to their success.",
+      mobileDesc: "Co-founder of Brilworks"
     },
     {
       name: "Vikas Singh",
@@ -93,7 +94,8 @@ export const blogAuthor = (authorName) => {
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
       authorPageDesc:
-        "Vikas is the Chief Technology Officer (CTO) at Brilworks, leads the company's tech innovations with extensive experience in software development. He drives the team to deliver impactful digital solutions globally​.",
+        "Vikas is the Chief Technology Officer (CTO) at Brilworks, leads the company's tech innovations with extensive experience in software development. He drives the team to deliver impactful digital solutions globally.",
+      mobileDesc: "CTO at Brilworks"
     },
     {
       name: "Lavesh Katariya",
@@ -102,6 +104,7 @@ export const blogAuthor = (authorName) => {
       authorLinkedIn: "https://www.linkedin.com/in/laveshkatariya/",
       authorDesc:
         "With over 8 years of experience in the MERN stack, I specialize in building robust and scalable web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, my passion for clean code and innovative problem-solving ensures high-quality solutions.",
+      mobileDesc: "Sr. MERN Stack Developer"
     },
     {
       name: "Colin Shah",
@@ -110,6 +113,7 @@ export const blogAuthor = (authorName) => {
       authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
       authorDesc:
         "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",
+      mobileDesc: "Sr. Java Developer"
     },
   ];
 

@@ -12,42 +12,59 @@ import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 
-
-
 export async function generateMetadata({ params }) {
-   const { props: data } = await fetchData(params);
+  const { props: data } = await fetchData(params);
   const story = data?.story;
-
 
   if (!story) return {};
 
-  const totalDataWord = story.content.content + story.content.Content_1 + 
-    story.content.Content_2 + story.content.Content_3;
+  const totalDataWord =
+    story.content.content +
+    story.content.Content_1 +
+    story.content.Content_2 +
+    story.content.Content_3;
 
   return {
-    title:`${ story.content.metatags?.title || story?.content?.title } | Brilworks`,
+    title: `${
+      story.content.metatags?.title || story?.content?.title
+    } | Brilworks`,
     description: story.content.metatags?.description,
     authors: [{ name: story.content.BlogAuthor }],
     openGraph: {
       title: story.content.metatags?.og_title || story.content.title,
-      description: story.content.metatags?.og_description || story.content.metatags?.description,
+      description:
+        story.content.metatags?.og_description ||
+        story.content.metatags?.description,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
-      images: [{ url: story.content.metatags?.og_image || story.content?.mobile_banner?.filename }],
+      images: [
+        {
+          url:
+            story.content.metatags?.og_image ||
+            story.content?.mobile_banner?.filename,
+        },
+      ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: story.content.metatags?.og_title || story.content.title,
-      description: story.content.metatags?.og_description || story.content.metatags?.description,
-      images: [story?.content.metatags?.twitter_image || story?.content?.mobile_banner?.filename],
+      description:
+        story.content.metatags?.og_description ||
+        story.content.metatags?.description,
+      images: [
+        story?.content.metatags?.twitter_image ||
+          story?.content?.mobile_banner?.filename,
+      ],
       creator: story.content.BlogAuthor,
-      site: '@_Brilworks',
+      site: "@_Brilworks",
     },
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/` },
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
+    },
     other: {
-      'twitter:label1': 'Written by',
-      'twitter:data1': story.content.BlogAuthor,
-      'twitter:label2': 'Est. reading time',
-      'twitter:data2': `${calculateReadingTime(totalDataWord)} minutes`,
+      "twitter:label1": "Written by",
+      "twitter:data1": story.content.BlogAuthor,
+      "twitter:label2": "Est. reading time",
+      "twitter:data2": `${calculateReadingTime(totalDataWord)} minutes`,
     },
   };
 }
@@ -55,7 +72,7 @@ export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
   if (!data?.story) {
-    return notFound()
+    return notFound();
   }
 
   const totalDataWord =
@@ -77,59 +94,65 @@ export default async function Page(props) {
                   className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
                   aria-label="Breadcrumb"
                 >
-                    <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
-                  <span className="blog-navigation">
-                    <Link title="Brilworks Blog." href="/">
-                      Brilworks
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span className="blog-navigation">
-                    <Link title="Go to Blog." href="/blog">
-                      Blog
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span className="blog-navigation">
-                    <Link
-                      title="Go to the Web App Development category."
-                      href={`/blog?cat=${data?.story?.content?.Category.replaceAll(" ",'-')}`}
-                    >
-                      {data?.story?.content?.Category ===
-                      "Cloud DevOps and Data"
-                        ? "Cloud, DevOps and Data"
-                        : data?.story?.content?.Category}
-                    </Link>
-                  </span>
-                  <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                    <Image
-                      className="!w-[20px]"
-                      src="/images/black_aerrow-1.png"
-                      alt="arrow"
-                      width="20"
-                      height="10"
-                      priority="true"
-                    />
-                  </span>
-                  <span>{data?.story?.content?.title}</span>
+                  <Suspense
+                    fallback={
+                      <div className="scale-[0.5]">
+                        <FetchDataSpinner />
+                      </div>
+                    }
+                  >
+                    <span className="blog-navigation">
+                      <Link title="Brilworks Blog." href="/">
+                        Brilworks
+                      </Link>
+                    </span>
+                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                      <Image
+                        className="!w-[20px]"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="20"
+                        height="10"
+                        priority="true"
+                      />
+                    </span>
+                    <span className="blog-navigation">
+                      <Link title="Go to Blog." href="/blog">
+                        Blog
+                      </Link>
+                    </span>
+                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                      <Image
+                        className="!w-[20px]"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="20"
+                        height="10"
+                        priority="true"
+                      />
+                    </span>
+                    <span className="blog-navigation">
+                      <Link
+                        title="Go to the Web App Development category."
+                        href="#"
+                      >
+                        {data?.story?.content?.Category ===
+                        "Cloud DevOps and Data"
+                          ? "Cloud, DevOps and Data"
+                          : data?.story?.content?.Category}
+                      </Link>
+                    </span>
+                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                      <Image
+                        className="!w-[20px]"
+                        src="/images/black_aerrow-1.png"
+                        alt="arrow"
+                        width="20"
+                        height="10"
+                        priority="true"
+                      />
+                    </span>
+                    <span>{data?.story?.content?.title}</span>
                   </Suspense>
                 </div>
                 <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
@@ -203,37 +226,49 @@ export default async function Page(props) {
           </div>
           <div className="flex flex-wrap -mx-4 ">
             <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
-            <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
-            <Suspense fallback={<div className="scale-[0.5]"><FetchDataSpinner/></div>}>
-                <Image
-                  className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content?.mobile_banner?.filename ||
-                    data?.story?.content?.image?.filename
+              <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
+                <Suspense
+                  fallback={
+                    <div className="scale-[0.5]">
+                      <FetchDataSpinner />
+                    </div>
                   }
-                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
-                  width={828}
-                  quality={30}
-                  height={169}
-                  priority
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  media="(max-width: 767px)"
-                />
-                <Image
-                  className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                  src={
-                    data?.story?.content.image?.filename ||
-                    data?.story?.content.mobile_banner?.filename
-                  }
-                  quality={100}
-               
-                  alt={data?.story?.content.image?.alt || data?.story?.content?.title.replaceAll(' ',"-")+"-banner-image"}
-                  
-                  width={828}
-                  height={169}
-                  priority
-                  sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                />
+                >
+                  <Image
+                    className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
+                    src={
+                      data?.story?.content?.mobile_banner?.filename ||
+                      data?.story?.content?.image?.filename
+                    }
+                    alt={
+                      data?.story?.content.image?.alt ||
+                      data?.story?.content?.title.replaceAll(" ", "-") +
+                        "-banner-image"
+                    }
+                    width={828}
+                    quality={30}
+                    height={169}
+                    priority
+                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                    media="(max-width: 767px)"
+                  />
+                  <Image
+                    className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
+                    src={
+                      data?.story?.content.image?.filename ||
+                      data?.story?.content.mobile_banner?.filename
+                    }
+                    quality={100}
+                    alt={
+                      data?.story?.content.image?.alt ||
+                      data?.story?.content?.title.replaceAll(" ", "-") +
+                        "-banner-image"
+                    }
+                    width={828}
+                    height={169}
+                    priority
+                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                  />
                 </Suspense>
               </div>
               {data?.story?.content?.Quick_Summary ? (
@@ -247,8 +282,10 @@ export default async function Page(props) {
           </div>
         </div>
       </div>
-      <div  className="min-h-[200vh] blog-main">   <StoryblokStory story={data?.story} /></div> 
-
+      <div className="min-h-[200vh] blog-main">
+        {" "}
+        <StoryblokStory story={data?.story} />
+      </div>
     </>
   );
 }
@@ -261,32 +298,34 @@ export async function fetchData(params) {
       resolve_links: "url",
     };
 
-    const storyUrl = new URL('https://api.storyblok.com/v2/cdn/stories');
-    storyUrl.searchParams.append('version', sbParams.version);
-    storyUrl.searchParams.append('resolve_links', sbParams.resolve_links);
-
-    storyUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
+    const storyUrl = new URL("https://api.storyblok.com/v2/cdn/stories");
+    storyUrl.searchParams.append("version", sbParams.version);
+    storyUrl.searchParams.append("resolve_links", sbParams.resolve_links);
+    storyUrl.searchParams.append("token", process.env.NEXT_PUBLIC_ACCESS_TOKEN);
     storyUrl.pathname += `/${slug}`;
 
-    const configUrl = new URL('https://api.storyblok.com/v2/cdn/stories/config');
-    configUrl.searchParams.append('version', sbParams.version);
-    configUrl.searchParams.append('token', process.env.NEXT_PUBLIC_ACCESS_TOKEN);
+    const configUrl = new URL(
+      "https://api.storyblok.com/v2/cdn/stories/config"
+    );
+    configUrl.searchParams.append("version", sbParams.version);
+    configUrl.searchParams.append(
+      "token",
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN
+    );
 
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl.toString(), {next: { revalidate: 3600 }}),
-      fetch(configUrl.toString(), {next: { revalidate: 3600 }}),
+      fetch(storyUrl, { next: { revalidate: 3600 } }),
+      fetch(configUrl, { next: { revalidate: 3600 } }),
     ]);
 
     const storyData = await storyRes.json();
     const configData = await configRes.json();
-
     return {
       props: {
         story: storyData?.story || false,
         key: storyData?.story?.id || false,
         config: configData?.story || false,
       },
-      revalidate: 3600,
     };
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -294,7 +333,6 @@ export async function fetchData(params) {
   }
 }
 export async function generateStaticParams() {
-  const posts = await getblog()
-  return posts.map((post) => ({slug:post.slug}
-  ))
+  const posts = await getblog();
+  return posts.map((post) => ({ slug: post.slug }));
 }

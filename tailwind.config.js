@@ -20,12 +20,16 @@ module.exports = {
         Urbanist: ["Urbanist", "sans-serif"],
       },
       colors: {
-        themeColor: "#0d9a9a",
+        // themeColor: "#0d9a9a",
+        themeColor: "#017eeb",
         colorLightGray: "#f1f1f1",
         sectionBG: "#f2f3f3",
+        colorYellow: "#FEDC7A",
         footerBG: "#f2f5f7",
         borderGray: "#dedede",
-        colorBlack: "#1c1d1e",
+        vividBlue: "#017eeb",
+        // colorBlack: "#1c1d1e",
+        colorBlack: "#212121",
         colorWhite: "#ffffff",
         colorGray: "#504f4f",
         themePrimary: "#00dfb8",
@@ -36,6 +40,8 @@ module.exports = {
         "gradient-custom":
           "linear-gradient(277.16deg, #02e1b8 0.58%, #00b5d4 100%)",
         "gradient-usecase": "linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)",
+        "blue-gradient":
+          "linear-gradient(87.38deg, #0182EA 35.49%, #0182EA 43.25%, #01DBD4 51.02%)",
       },
     },
   },

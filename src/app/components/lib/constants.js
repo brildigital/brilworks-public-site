@@ -269,6 +269,19 @@ const hireTeamMenuItems = [
   },
 
   {
+    name: "MOBILE APP DEVELOPMENT",
+    subSections: [
+      {
+        name: "React Native Developers",
+        path: "/hire-react-native-developer/",
+      },
+      {
+        name: "Mobile App Developers",
+        path: "/hire-mobile-app-developer/",
+      },
+    ],
+  },
+  {
     name: "LOW CODE/ NO CODE DEVELOPMENT",
     subSections: [
       {
@@ -286,19 +299,6 @@ const hireTeamMenuItems = [
       {
         name: "Low Code No Code Developers",
         path: "/hire-low-code-no-code-developer/",
-      },
-    ],
-  },
-  {
-    name: "MOBILE APP DEVELOPMENT",
-    subSections: [
-      {
-        name: "React Native Developers",
-        path: "/hire-react-native-developer/",
-      },
-      {
-        name: "Mobile App Developers",
-        path: "/hire-mobile-app-developer/",
       },
     ],
   },
@@ -616,6 +616,46 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Building Microservices in Java: A Practical Guide",
+    loc: "https://www.brilworks.com/blog/building-microservices-in-java/",
+    lastmod: "2024-11-20T07:50:15.296Z",
+  },
+  {
+    name: "Migrating AWS Resources from an Existing Account to Another",
+    loc: "https://www.brilworks.com/blog/migrate-aws-accounts/",
+    lastmod: "2024-11-17T13:54:22.739Z",
+  },
+  {
+    name: "Top Benefits of Cloud Migration Services",
+    loc: "https://www.brilworks.com/blog/cloud-migration-service-benefits/",
+    lastmod: "2024-11-19T06:17:23.396Z",
+  },
+  {
+    name: "A Step by Step Guide on How to Migrate from AWS to Azure",
+    loc: "https://www.brilworks.com/blog/migrate-from-aws-to-azure/",
+    lastmod: "2024-11-14T06:11:29.085Z",
+  },
+  {
+    name: "Best React Native UI Libraries Developers Should Know",
+    loc: "https://www.brilworks.com/blog/best-react-native-ui-libraries/",
+    lastmod: "2024-11-13T05:30:33.988Z",
+  },
+  {
+    name: "The Best Low-Code No Code Platforms in 2024",
+    loc: "https://www.brilworks.com/blog/best-low-code-no-code-platforms/",
+    lastmod: "2024-11-11T05:34:38.850Z",
+  },
+  {
+    name: "React Native for Beginners: Create React Native App in 5 Steps",
+    loc: "https://www.brilworks.com/blog/create-react-native-app/",
+    lastmod: "2024-11-11T05:14:00.964Z",
+  },
+  {
+    name: "White label app development cost: A Straightforward Guide",
+    loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
+    lastmod: "2024-11-08T05:25:52.721Z",
+  },
+  {
     name: "The Best White Label App builders",
     loc: "https://www.brilworks.com/blog/best-white-label-app-builders/",
     lastmod: "2024-10-30T06:00:56.130Z",
@@ -623,12 +663,12 @@ export const blogListStaticData = [
   {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
     loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
-    lastmod: "2024-10-25T08:40:06.162Z",
+    lastmod: "2024-11-08T13:08:21.577Z",
   },
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
     loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
-    lastmod: "2024-11-05T05:32:54.561Z",
+    lastmod: "2024-11-05T05:35:05.503Z",
   },
   {
     name: "How to Create An App and Make Money in 2024",
@@ -729,6 +769,16 @@ export const blogListStaticData = [
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     lastmod: "2024-09-26T06:07:02.279Z",
+  },
+  {
+    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
+    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
+    lastmod: "null",
+  },
+  {
+    name: "What Makes AWS a Top Choice for Ecommerce Store?",
+    loc: "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
+    lastmod: "null",
   },
   {
     name: "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -938,7 +988,7 @@ export const blogListStaticData = [
   {
     name: "AWS Cloud Cost Optimization: Essential Tools & Strategies for Lower Your AWS Bill",
     loc: "https://www.brilworks.com/blog/aws-cloud-cost-optimization/",
-    lastmod: "2024-07-05T07:58:13.545Z",
+    lastmod: "2024-11-18T13:05:11.010Z",
   },
   {
     name: "What type of application we can build using ChatGPT?",

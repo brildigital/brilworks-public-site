@@ -3,7 +3,7 @@ import "./styles/Homepage.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 // import { NextAuthProvider } from "./provider"
-import { Inter, Urbanist } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { organization, website } from "./components/lib/schemaCode";
@@ -13,12 +13,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--global-font",
-});
-
-const urbanist = Urbanist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-urbanist",
 });
 
 storyblokInit({
@@ -34,7 +28,7 @@ const Footer = dynamic(() => import("./components/Footer"));
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${inter.variable} ${urbanist.variable}`}>
+      <html lang="en" className={`${inter.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
           <meta
@@ -52,7 +46,6 @@ export default function RootLayout({ children }) {
               })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`}</Script>
         </head>
         <body suppressHydrationWarning={true}>
-          {/* vector Script */}
           <Script id="vector-script" strategy="afterInteractive">
             {`
           !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
@@ -69,7 +62,6 @@ export default function RootLayout({ children }) {
             id="chatbot-widget-script"
             src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
           />
-
           <Header />
           {/* <NextAuthProvider> */}
           {children}
@@ -82,18 +74,6 @@ export default function RootLayout({ children }) {
             clr={process.env.clearbitScript_URL}
           />
         </body>
-        {/* {process.env.VERCEL_ENV === "production" && (
-            <>
-              <GoogleTagManager  gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-              <Script src={process.env.NEXT_PUBLIC_CLEARBIT_SCRIPT_URL} strategy="lazyOnload" />
-              <Script id="organization" type="application/ld+json" strategy="lazyOnload">
-                {JSON.stringify(organization)}
-              </Script>
-              <Script id="website" type="application/ld+json" strategy="lazyOnload">
-                {JSON.stringify(website)}
-              </Script>
-            </>
-          )} */}
       </html>
     </StoryblokProvider>
   );

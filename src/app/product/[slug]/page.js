@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 import UsecaseFirstSection from "@/app/components/UseCases/UsecaseFirstSection";
 import UsecaseContentSection from "@/app/components/UseCases/UsecaseContentSection";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
@@ -18,32 +18,34 @@ async function fetchWithErrorHandling(url, options) {
 }
 async function getAllSlugs() {
   const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=product/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-  
-  const options = {
-    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]: 
-      process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } : 'no-store'
-  };
 
+  const options = {
+    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]:
+      process.env.VERCEL_ENV === "production"
+        ? { revalidate: 3600 }
+        : "no-store",
+  };
 
   const data = await fetchWithErrorHandling(url, options);
 
-  return data.stories.map(story => story.slug.replace('use-case/', ''));
+  return data.stories.map((story) => story.slug.replace("use-case/", ""));
 }
 
 async function getAWSInHealthcareData(slug) {
   const url = `https://api.storyblok.com/v2/cdn/stories/product/${slug}?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
   const options = {
-    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]: 
-      process.env.VERCEL_ENV === "production" ? { revalidate: 3600 } : 'no-store'
+    [process.env.VERCEL_ENV === "production" ? "next" : "cache"]:
+      process.env.VERCEL_ENV === "production"
+        ? { revalidate: 3600 }
+        : "no-store",
   };
   return fetchWithErrorHandling(url, options);
 }
 
-
 export async function generateStaticParams() {
   try {
     const slugs = await getAllSlugs();
-    return slugs.map(slug => ({ slug }));
+    return slugs.map((slug) => ({ slug }));
   } catch (error) {
     console.error("Error generating static params:", error);
     return [];
@@ -53,7 +55,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getAWSInHealthcareData(params.slug);
-    const { title,description ,og_image,twitter_image} = storyData.story?.content.Metatags
+    const { title, description, og_image, twitter_image } =
+      storyData.story?.content.Metatags;
     return {
       title: title || storyData.story?.content.title,
       description: description,
@@ -61,17 +64,20 @@ export async function generateMetadata({ params }) {
         title: title,
         description: description,
         url: `${process.env.NEXT_PUBLIC_BASE_URL}product/${params.slug}/`,
-        siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+        siteName:
+          "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
         locale: "en-US",
         type: "website",
-        images:[{ url:og_image || storyData.story?.mobile_banner?.filename }]
+        images: [{ url: og_image || storyData.story?.mobile_banner?.filename }],
       },
-      
+
       twitter: {
         title: title,
         description: description,
         card: "summary_large_image",
-        images:[{ url:twitter_image   || storyData.story?.mobile_banner?.filename }],
+        images: [
+          { url: twitter_image || storyData.story?.mobile_banner?.filename },
+        ],
         site: "@_Brilworks",
       },
       alternates: {
@@ -84,20 +90,14 @@ export async function generateMetadata({ params }) {
   }
 }
 
-
 export default async function Page({ params }) {
+  const storyData = await getAWSInHealthcareData(params.slug);
+  const { title_section, FAQ_section, content } = storyData.story.content;
 
-    const storyData = await getAWSInHealthcareData(params.slug);
-    const { title_section, FAQ_section, content } = storyData.story.content;
-
-    return (
-      <Suspense fallback={<FetchDataSpinner />}>
-        <UsecaseFirstSection data={title_section?.[0]} />
-        <UsecaseContentSection
-          content={content?.content}
-          FAQData={FAQ_section}
-        />
-      </Suspense>
-    );
-
+  return (
+    <Suspense fallback={<FetchDataSpinner />}>
+      <UsecaseFirstSection data={title_section?.[0]} />
+      <UsecaseContentSection content={content?.content} FAQData={FAQ_section} />
+    </Suspense>
+  );
 }

@@ -39,7 +39,7 @@ const ServicesPricingPlans = () => {
         </div>
         <div className="hire_sec1_service_50 reveal">
           <div className="react-technology">
-            <div className="relative z-10 rounded-[30px] !border-[1px] border-[#00dfb8]">
+            <div className="relative z-10 rounded-[30px] !border-[1px] border-themeColor">
               <div className="endTO_text_content home_sec2_txt4 py-6">
                 <p className="!text-[1.2rem]">Plans start with</p>
               </div>

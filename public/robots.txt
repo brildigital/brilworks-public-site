@@ -24,4 +24,3 @@ Disallow: /wp-content/*
 Disallow: /teams/*
 
 Sitemap: https://www.brilworks.com/sitemap.xml
-
