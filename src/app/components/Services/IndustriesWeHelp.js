@@ -289,44 +289,17 @@ const IndustriesWeHelp = () => {
                 className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
                 key={index}
               >
-                {(pathname === "/aws-consulting-services/" &&
-                  title === "Healthcare") ||
-                (pathname === "/generative-ai-development-services/" &&
-                  title === "Healthcare") ? (
-                  <Link
-                    href={
-                      pathname === "/aws-consulting-services/"
-                        ? "/use-case/aws-in-healthcare"
-                        : "/use-case/generative-ai-in-healthcare"
-                    }
-                  >
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className="w-auto mx-auto md:mb-6 mb-4"
-                      width={60}
-                      height={60}
-                    />
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-auto md:mb-6 mb-4"
+                  width={60}
+                  height={60}
+                />
 
-                    <span className="text-center lg:text-2xl md:text-xl text-base">
-                      {title}
-                    </span>
-                  </Link>
-                ) : (
-                  <>
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className="w-auto md:mb-6 mb-4"
-                      width={60}
-                      height={60}
-                    />
-
-                    <span className="text-center lg:text-2xl md:text-xl text-base">
-                      {title}
-                    </span>
-                  </>
-                )}
+                <span className="text-center lg:text-2xl md:text-xl text-base">
+                  {title}
+                </span>
               </div>
             ))}
           </div>
