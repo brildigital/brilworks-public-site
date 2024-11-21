@@ -460,7 +460,7 @@ const Article = ({ blok }) => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/4 w-full !float-left">
+                <div className="md:w-1/4 md:block hidden w-full !float-left">
                   <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                     <div className="h-full flex flex-col">
                       <BlogContactForm />
@@ -474,7 +474,7 @@ const Article = ({ blok }) => {
       </div>
 
       <div className="container mx-auto md:!px-3 !px-4">
-        <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
+        <div className="xl:pb-20 md:pb-14 pb-8">
           <div className="service_sec3">
             <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
               <p className="!ml-0 extra_bold !w-full">You might also like</p>
@@ -585,7 +585,7 @@ const Article = ({ blok }) => {
           </div>
         </div>
       </div> */}
-          <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
+          <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block md:hidden">
             <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
               <div className="h-full flex flex-col">
                 <BlogContactForm />

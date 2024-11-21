@@ -70,7 +70,7 @@ const TabVertical = ({ initialTabValue, data }) => {
             </TabsHeader>
           </div>
         </div>
-        <div className="w-2/3 bg-[#c2f7ee] rounded-r-[30px]">
+        <div className="w-2/3 bg-[#99C5EB] rounded-r-[30px]">
           <TabsBody
             animate={{
               initial: { x: 250 },
@@ -93,7 +93,7 @@ const TabVertical = ({ initialTabValue, data }) => {
                   <h3 className="md:text-2xl text-lg font-bold text-black pb-4 font-Inter">
                     {heading}
                   </h3>
-                  <ul className="md:text-xl text-base text-colorGray list-outside list-disc">
+                  <ul className="md:text-xl text-base text-colorGray list-inside list-disc">
                     {listDescription?.map((listData, index) => (
                       <li key={index} className="pb-1 font-Inter">
                         {listData}
