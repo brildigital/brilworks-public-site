@@ -1,9 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import AccordionCustomIcon from "../Common/AccordionCustomIcon";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const OurServices = () => {
   const pathname = usePathname();
@@ -206,8 +206,18 @@ const OurServices = () => {
     },
     {
       title: "AWS Advisory services",
-      content:
-        "Focus on innovation while we manage your AWS environment, ensuring peak performance, security, and reliability at all times.",
+      content: (
+        <>
+          Focus on innovation while we manage your AWS environment, ensuring
+          peak performance, security, and reliability at all times.{" "}
+          <Link
+            className="gradient-text-blue font-semibold !hover:!underline"
+            href="https://www.brilworks.com/blog/aws-advisory-services/"
+          >
+            Learn More
+          </Link>
+        </>
+      ),
       imageSrc: "/images/aws-advisory-service.webp",
       imageAlt: "AWS Advisory Services img",
     },

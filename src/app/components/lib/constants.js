@@ -618,22 +618,22 @@ export const blogListStaticData = [
   {
     name: "Top IDEs for Java Development on Mac",
     loc: "https://www.brilworks.com/blog/top-ides-for-java-development-on-mac/",
-    lastmod: "2024-12-20T13:44:15.533Z",
+    lastmod: "2024-12-23T08:54:50.761Z",
   },
   {
     name: "Maximize Your AWS Investment with Expert Advisory Services",
     loc: "https://www.brilworks.com/blog/aws-advisory-services/",
-    lastmod: "2024-12-20T05:18:35.297Z",
+    lastmod: "2024-12-23T10:35:35.002Z",
   },
   {
     name: "The Role of Java APIs in Modern Software Development",
     loc: "https://www.brilworks.com/blog/java-apis-development-and-integration/",
-    lastmod: "2024-12-20T05:57:47.339Z",
+    lastmod: "2024-12-23T07:12:39.370Z",
   },
   {
     name: "Java Modernization and Migration ",
     loc: "https://www.brilworks.com/blog/java-modernization-and-migration/",
-    lastmod: "2024-12-18T13:35:02.950Z",
+    lastmod: "2024-12-23T10:27:02.441Z",
   },
   {
     name: "Java Development Best Practices Every Developer Should Follow",
@@ -708,12 +708,12 @@ export const blogListStaticData = [
   {
     name: "Enhancing Cloud Security with Managed Services",
     loc: "https://www.brilworks.com/blog/enhancing-cloud-security-with-managed-services/",
-    lastmod: "2024-11-28T05:29:43.599Z",
+    lastmod: "2024-12-23T09:04:05.190Z",
   },
   {
     name: "Benefits of Managed Services in Cloud Computing",
     loc: "https://www.brilworks.com/blog/benefits-of-managed-services-in-cloud-computing/",
-    lastmod: "2024-11-27T05:30:31.706Z",
+    lastmod: "2024-12-23T07:03:12.165Z",
   },
   {
     name: "Comparing Service-Oriented Architecture and Microservices",
@@ -723,37 +723,37 @@ export const blogListStaticData = [
   {
     name: "Essential Input Strategies in Building Microservices Architecture",
     loc: "https://www.brilworks.com/blog/essential-input-strategies-in-building-microservices-architecture/",
-    lastmod: "2024-11-24T16:48:36.646Z",
+    lastmod: "2024-12-23T07:24:36.861Z",
   },
   {
     name: "Essential Microservices Design Patterns Explained",
     loc: "https://www.brilworks.com/blog/essential-microservices-design-patterns/",
-    lastmod: "2024-11-24T16:36:30.443Z",
+    lastmod: "2024-12-23T07:28:46.286Z",
   },
   {
     name: "Building Microservices in Java: A Practical Guide",
     loc: "https://www.brilworks.com/blog/building-microservices-in-java/",
-    lastmod: "2024-11-24T16:52:22.894Z",
+    lastmod: "2024-12-23T07:39:23.131Z",
   },
   {
     name: "Migrating AWS Resources from an Existing Account to Another",
     loc: "https://www.brilworks.com/blog/migrate-aws-accounts/",
-    lastmod: "2024-11-29T06:07:21.636Z",
+    lastmod: "2024-12-23T07:44:21.601Z",
   },
   {
     name: "Top Benefits of Cloud Migration Services",
     loc: "https://www.brilworks.com/blog/cloud-migration-service-benefits/",
-    lastmod: "2024-11-24T16:56:05.358Z",
+    lastmod: "2024-12-23T07:47:21.378Z",
   },
   {
     name: "A Step by Step Guide on How to Migrate from AWS to Azure",
     loc: "https://www.brilworks.com/blog/migrate-from-aws-to-azure/",
-    lastmod: "2024-11-14T06:11:29.085Z",
+    lastmod: "2024-12-23T07:52:09.618Z",
   },
   {
     name: "Best React Native UI Libraries Developers Should Know",
     loc: "https://www.brilworks.com/blog/best-react-native-ui-libraries/",
-    lastmod: "2024-11-13T05:30:33.988Z",
+    lastmod: "2024-12-23T09:23:57.408Z",
   },
   {
     name: "The Best Low-Code No Code Platforms in 2024",
@@ -768,7 +768,7 @@ export const blogListStaticData = [
   {
     name: "White label app development cost: A Straightforward Guide",
     loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
-    lastmod: "2024-11-08T05:25:52.721Z",
+    lastmod: "2024-12-23T09:26:18.269Z",
   },
   {
     name: "The Best White Label App builders",
@@ -778,27 +778,27 @@ export const blogListStaticData = [
   {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
     loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
-    lastmod: "2024-11-08T13:08:21.577Z",
+    lastmod: "2024-12-23T09:32:52.234Z",
   },
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
     loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
-    lastmod: "2024-11-05T05:35:05.503Z",
+    lastmod: "2024-12-23T09:43:21.672Z",
   },
   {
     name: "How to Create An App and Make Money in 2024",
     loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
-    lastmod: "2024-11-25T06:49:53.339Z",
+    lastmod: "2024-12-23T09:55:07.306Z",
   },
   {
-    name: "How Geneative AI transforms Supply Chain Operations",
-    loc: "https://www.brilworks.com/blog/how-geneative-ai-transforms-supply-chain-operations/",
-    lastmod: "2024-10-25T06:55:31.241Z",
+    name: "How Generative AI transforms Supply Chain Operations",
+    loc: "https://www.brilworks.com/blog/how-generative-ai-transforms-supply-chain-operations/",
+    lastmod: "2024-12-23T10:00:22.939Z",
   },
   {
     name: "How to Create a Mobile App in 2024 [Easy Steps]",
     loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
-    lastmod: "2024-10-16T12:00:51.984Z",
+    lastmod: "2024-12-23T10:08:52.818Z",
   },
   {
     name: "Is AWS the Right Cloud Solution for Your Small Business?",
