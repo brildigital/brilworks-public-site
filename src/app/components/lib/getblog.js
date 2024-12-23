@@ -6,32 +6,25 @@ const Storyblok = new StoryblokClient({
 });
 
 export async function getblog() {
-  let allStories = [];
-  let page = 1;
-  let hasMoreData = true;
-
-  while (hasMoreData) {
-    const response = await Storyblok.get("cdn/stories", {
+  let stories = await Storyblok.get(
+    "cdn/stories",
+    {
       starts_with: "blog/",
       per_page: 100,
-      page,
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      // sort_by: "first_published_at:",
       filter_query: {
         component: {
           in: "article",
         },
       },
-    });
-
-    const storyData = response.data.stories;
-    allStories = [...allStories, ...storyData];
-
-    // Stop if there are fewer than 100 items in the response (last page)
-    hasMoreData = storyData.length === 100;
-    page += 1;
-  }
-
-  return allStories;
+    },
+    {
+      next: { revalidate: 0 },
+    }
+  );
+  const storyData = stories.data.stories;
+  return storyData;
 }
 
 export async function getblogData(
