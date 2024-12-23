@@ -288,14 +288,17 @@ const Footer = () => {
             />
           </div>
           <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
-            {footerData.slice(0, 3).map(({ title, links }) => (
-              <div key={title} className={`flex flex-col flex-wrap gap-[14px]`}>
+            {footerData.slice(0, 3).map(({ title, links }, index) => (
+              <div
+                key={`${title}-${index}`}
+                className={`flex flex-col flex-wrap gap-[14px]`}
+              >
                 <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
                   {title}
                 </h3>
-                {links.map(({ link, text }) => (
+                {links.map(({ link, text }, index) => (
                   <Link
-                    key={text}
+                    key={`${text}-L${index}`}
                     href={link}
                     className={`${getActivePage(
                       link
@@ -313,14 +316,14 @@ const Footer = () => {
       <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] mx-auto">
         <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
           {contactLinks.map(({ title, links }, index) => (
-            <div className="flex flex-col gap-4" key={index}>
+            <div className="flex flex-col gap-4" key={`contact-${index}`}>
               <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
                 {title}
               </h3>
               {links.map(({ text, imgSrc, link }, idx) =>
                 text.includes("503") ? (
                   <div
-                    key={text}
+                    key={`link-${idx}`}
                     className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-start font-medium"
                   >
                     <Image
@@ -335,7 +338,7 @@ const Footer = () => {
                   </div>
                 ) : (
                   <a
-                    key={text}
+                    key={`link-${idx}`}
                     href={link}
                     target="_blank"
                     className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-center font-medium"
@@ -364,7 +367,7 @@ const Footer = () => {
           <div className="flex items-center justify-start gap-2">
             {socialLinksNew.map(({ name, linkURL, imgSrc }, index) => (
               <Link
-                key={name}
+                key={`sociallink-${index}`}
                 href={linkURL}
                 target="_blank"
                 className="p-[6px] bg-[#000000] rounded-full"
@@ -428,7 +431,7 @@ const Footer = () => {
               <div className="xl:my-10 md:mt-8 mt-6 flex items-center justify-start slg:gap-4 gap-2 flex-wrap">
                 {socialLinks.map(({ name, linkURL, imgSrc }, index) => (
                   <Link
-                    key={name}
+                    key={`socialname-${index}`}
                     href={linkURL}
                     target="_blank"
                     className="md:p-[10px] p-2 !border-borderGray border rounded-full"
@@ -445,9 +448,9 @@ const Footer = () => {
               </div>
             </div>
             <div className="w-full flex xl:gap-10 md:gap-[30px] gap-4 footer-links">
-              {footerData.slice(0, 2).map(({ title, links }) => (
+              {footerData.slice(0, 2).map(({ title, links }, index) => (
                 <div
-                  key={title}
+                  key={`footerTitle-${index}`}
                   className={`${
                     title === "Quick Links"
                       ? "md:w-2/5 w-1/2"
@@ -457,9 +460,9 @@ const Footer = () => {
                   <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
-                  {links.map(({ link, text }) => (
+                  {links.map(({ link, text }, indx) => (
                     <Link
-                      key={text}
+                      key={`footerTitleLink-${indx}`}
                       href={link}
                       className={`${getActivePage(
                         link
@@ -472,14 +475,17 @@ const Footer = () => {
               ))}
             </div>
             <div className="w-full flex xl:gap-8 md:gap-[30px] gap-4 footer-links">
-              {footerData.slice(2, 3).map(({ title, links }) => (
-                <div key={title} className="w-1/2 flex flex-col gap-[14px]">
+              {footerData.slice(2, 3).map(({ title, links }, index) => (
+                <div
+                  key={`${title}-${index}`}
+                  className="w-1/2 flex flex-col gap-[14px]"
+                >
                   <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
-                  {links.map(({ link, text }) => (
+                  {links.map(({ link, text }, indx) => (
                     <Link
-                      key={text}
+                      key={`fData-${indx}`}
                       href={link}
                       className={`${getActivePage(
                         link
@@ -493,7 +499,7 @@ const Footer = () => {
               <div className="w-1/2 xl:block md:hidden block flex flex-col xl:gap-10 md:gap-8 gap-6">
                 {footerData.slice(3, 5).map(({ title, links }, index) => (
                   <div
-                    key={title}
+                    key={`fDataLink-${index}`}
                     className={`${
                       index === 0 ? "mb-10" : ""
                     } w-full flex flex-col gap-[14px]`}
@@ -503,7 +509,7 @@ const Footer = () => {
                     </h3>
                     {links.map(({ link, text }) => (
                       <a
-                        key={text}
+                        key={`fData${text}-${index}`}
                         href={link}
                         target="_blank"
                         className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
@@ -536,7 +542,7 @@ const Footer = () => {
             <div className="xl:hidden md:block hidden flex flex-col xl:gap-10 md:gap-8 gap-6">
               {footerData.slice(3, 5).map(({ title, links }, index) => (
                 <div
-                  key={title}
+                  key={`f${title}-${index}`}
                   className={`${
                     index === 0 ? "mb-10" : ""
                   } w-full flex flex-col gap-[14px]`}
@@ -544,9 +550,9 @@ const Footer = () => {
                   <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
-                  {links.map(({ link, text }) => (
+                  {links.map(({ link, text }, idx) => (
                     <a
-                      key={text}
+                      key={`footer-${text}-${idx}`}
                       href={link}
                       target="_blank"
                       className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
