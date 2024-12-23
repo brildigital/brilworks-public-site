@@ -616,19 +616,134 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Top IDEs for Java Development on Mac",
+    loc: "https://www.brilworks.com/blog/top-ides-for-java-development-on-mac/",
+    lastmod: "2024-12-20T13:44:15.533Z",
+  },
+  {
+    name: "Maximize Your AWS Investment with Expert Advisory Services",
+    loc: "https://www.brilworks.com/blog/aws-advisory-services/",
+    lastmod: "2024-12-20T05:18:35.297Z",
+  },
+  {
+    name: "The Role of Java APIs in Modern Software Development",
+    loc: "https://www.brilworks.com/blog/java-apis-development-and-integration/",
+    lastmod: "2024-12-20T05:57:47.339Z",
+  },
+  {
+    name: "Java Modernization and Migration ",
+    loc: "https://www.brilworks.com/blog/java-modernization-and-migration/",
+    lastmod: "2024-12-18T13:35:02.950Z",
+  },
+  {
+    name: "Java Development Best Practices Every Developer Should Follow",
+    loc: "https://www.brilworks.com/blog/java-development-best-practices-every-developer-should-follow/",
+    lastmod: "2024-12-18T11:48:41.875Z",
+  },
+  {
+    name: "Java App Maintenance: How to Ensure Longevity and Performance",
+    loc: "https://www.brilworks.com/blog/java-app-maintenance/",
+    lastmod: "2024-12-18T07:06:54.624Z",
+  },
+  {
+    name: "7 Best Java IDEs for Developers ",
+    loc: "https://www.brilworks.com/blog/best-java-ides/",
+    lastmod: "2024-12-17T05:29:29.246Z",
+  },
+  {
+    name: "Best Practices for Effective Logging Strategies",
+    loc: "https://www.brilworks.com/blog/effective-logging-strategies-practices/",
+    lastmod: "2024-12-13T13:08:57.870Z",
+  },
+  {
+    name: "Java Performance Monitoring: How to & Best Tools to Use",
+    loc: "https://www.brilworks.com/blog/java-performance-monitoring/",
+    lastmod: "2024-12-12T13:16:03.700Z",
+  },
+  {
+    name: "How Exception Handling Works in Java",
+    loc: "https://www.brilworks.com/blog/Java-exception-handling/",
+    lastmod: "2024-12-10T12:48:16.442Z",
+  },
+  {
+    name: "The Best Way to Optimize Garbage Collection for Java Applications",
+    loc: "https://www.brilworks.com/blog/optimize-garbage-collection-for-java-applications/",
+    lastmod: "2024-12-09T13:02:46.275Z",
+  },
+  {
+    name: "Java Garbage Collection: How it Works ",
+    loc: "https://www.brilworks.com/blog/java-garbage-collection/",
+    lastmod: "2024-12-06T13:01:21.001Z",
+  },
+  {
+    name: " 7 Java Profiling Tools That Will Skyrocket Your Productivity",
+    loc: "https://www.brilworks.com/blog/java-profiling-tools/",
+    lastmod: "2024-12-17T12:02:25.745Z",
+  },
+  {
+    name: "What's New in Java 21 ",
+    loc: "https://www.brilworks.com/blog/Java-21-features/",
+    lastmod: "2024-12-10T07:20:44.198Z",
+  },
+  {
+    name: "How to Update Java JDK",
+    loc: "https://www.brilworks.com/blog/how-to-update-java-jdk/",
+    lastmod: "2024-12-05T08:18:31.362Z",
+  },
+  {
+    name: "Building Scalable Java Cloud Applications Efficiently",
+    loc: "https://www.brilworks.com/blog/building-scalable-java-cloud-applications-efficiently/",
+    lastmod: "2024-12-10T07:18:44.303Z",
+  },
+  {
+    name: "Top Programming Languages for the Cloud Computing ",
+    loc: "https://www.brilworks.com/blog/top-programming-languages-for-the-cloud-computing/",
+    lastmod: "2024-12-09T06:16:37.297Z",
+  },
+  {
+    name: "10 Ways to Handle Spring Cloud Dependencies",
+    loc: "https://www.brilworks.com/blog/10-ways-to-handle-spring-cloud-dependencies/",
+    lastmod: "2024-11-28T13:19:56.903Z",
+  },
+  {
+    name: "Enhancing Cloud Security with Managed Services",
+    loc: "https://www.brilworks.com/blog/enhancing-cloud-security-with-managed-services/",
+    lastmod: "2024-11-28T05:29:43.599Z",
+  },
+  {
+    name: "Benefits of Managed Services in Cloud Computing",
+    loc: "https://www.brilworks.com/blog/benefits-of-managed-services-in-cloud-computing/",
+    lastmod: "2024-11-27T05:30:31.706Z",
+  },
+  {
+    name: "Comparing Service-Oriented Architecture and Microservices",
+    loc: "https://www.brilworks.com/blog/service-oriented-architecture-vs-microservices/",
+    lastmod: "2024-11-24T16:32:16.616Z",
+  },
+  {
+    name: "Essential Input Strategies in Building Microservices Architecture",
+    loc: "https://www.brilworks.com/blog/essential-input-strategies-in-building-microservices-architecture/",
+    lastmod: "2024-11-24T16:48:36.646Z",
+  },
+  {
+    name: "Essential Microservices Design Patterns Explained",
+    loc: "https://www.brilworks.com/blog/essential-microservices-design-patterns/",
+    lastmod: "2024-11-24T16:36:30.443Z",
+  },
+  {
     name: "Building Microservices in Java: A Practical Guide",
     loc: "https://www.brilworks.com/blog/building-microservices-in-java/",
-    lastmod: "2024-11-20T07:50:15.296Z",
+    lastmod: "2024-11-24T16:52:22.894Z",
   },
   {
     name: "Migrating AWS Resources from an Existing Account to Another",
     loc: "https://www.brilworks.com/blog/migrate-aws-accounts/",
-    lastmod: "2024-11-17T13:54:22.739Z",
+    lastmod: "2024-11-29T06:07:21.636Z",
   },
   {
     name: "Top Benefits of Cloud Migration Services",
     loc: "https://www.brilworks.com/blog/cloud-migration-service-benefits/",
-    lastmod: "2024-11-19T06:17:23.396Z",
+    lastmod: "2024-11-24T16:56:05.358Z",
   },
   {
     name: "A Step by Step Guide on How to Migrate from AWS to Azure",
@@ -673,7 +788,7 @@ export const blogListStaticData = [
   {
     name: "How to Create An App and Make Money in 2024",
     loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
-    lastmod: "2024-10-21T13:26:41.345Z",
+    lastmod: "2024-11-25T06:49:53.339Z",
   },
   {
     name: "How Geneative AI transforms Supply Chain Operations",
@@ -723,7 +838,7 @@ export const blogListStaticData = [
   {
     name: "7 Emerging AI Technologies to Watch in 2024",
     loc: "https://www.brilworks.com/blog/emerging-ai-technologies/",
-    lastmod: "2024-09-16T07:46:08.382Z",
+    lastmod: "2024-12-16T06:28:22.343Z",
   },
   {
     name: "The Roadmap to Successful AI Implementation",
@@ -753,7 +868,7 @@ export const blogListStaticData = [
   {
     name: "How to Overcome Common Generative AI Challenges [A Straightforward Guide]",
     loc: "https://www.brilworks.com/blog/overcomming-common-generative-ai-challenges/",
-    lastmod: "2024-09-04T07:36:00.712Z",
+    lastmod: "2024-12-02T06:30:11.629Z",
   },
   {
     name: "Beyond the Basics: Advanced Ecommerce Personalization with AWS",
@@ -769,16 +884,6 @@ export const blogListStaticData = [
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     lastmod: "2024-09-26T06:07:02.279Z",
-  },
-  {
-    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
-    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
-    lastmod: "null",
-  },
-  {
-    name: "What Makes AWS a Top Choice for Ecommerce Store?",
-    loc: "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
-    lastmod: "null",
   },
   {
     name: "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -923,7 +1028,7 @@ export const blogListStaticData = [
   {
     name: "Introduction to ReactJS: Learn Components, Usage, and Features",
     loc: "https://www.brilworks.com/blog/introduction-to-reactjs/",
-    lastmod: "2024-04-25T09:28:44.620Z",
+    lastmod: "2024-12-04T13:24:11.420Z",
   },
   {
     name: "A Simple Guide to Using the AWS Pricing Calculator",
@@ -1143,7 +1248,7 @@ export const blogListStaticData = [
   {
     name: "Java Best Practices [Part 1]",
     loc: "https://www.brilworks.com/blog/java-best-practices-part-1/",
-    lastmod: "2024-05-02T15:22:02.939Z",
+    lastmod: "2024-12-18T07:50:40.626Z",
   },
   {
     name: "Brilworks Partners with Storyblok to Deliver Next-Level Content Management Solutions",
@@ -1268,7 +1373,7 @@ export const blogListStaticData = [
   {
     name: "Top Popular Apps Built With React Native",
     loc: "https://www.brilworks.com/blog/top-popular-apps-built-with-react-native/",
-    lastmod: "2024-07-29T13:38:01.626Z",
+    lastmod: "2024-11-25T12:49:26.865Z",
   },
   {
     name: "Top 10 Websites Built Using React.js",

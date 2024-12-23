@@ -156,11 +156,11 @@ const OurServices = () => {
 
   const AWSConsultingAccordionData = [
     {
-      title: "Expert Guidance",
+      title: "AWS Consulting",
       content:
         "Our team of certified AWS professionals possesses deep technical expertise and industry knowledge, enabling us to tailor solutions that meet your unique needs and objectives.",
       imageSrc: "/images/expert-guidance.webp",
-      imageAlt: "Expert guidance img",
+      imageAlt: "AWS Consulting img",
     },
     {
       title: "Cloud Migration & Modernization",
@@ -203,6 +203,13 @@ const OurServices = () => {
         "Let us handle the ongoing management of your AWS environment, freeing you to focus on your core business while we ensure performance and security.",
       imageSrc: "/images/managed-services.webp",
       imageAlt: "Managed Services img",
+    },
+    {
+      title: "AWS Advisory services",
+      content:
+        "Focus on innovation while we manage your AWS environment, ensuring peak performance, security, and reliability at all times.",
+      imageSrc: "/images/aws-advisory-service.webp",
+      imageAlt: "AWS Advisory Services img",
     },
   ];
 
