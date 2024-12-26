@@ -14,7 +14,7 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const ReactJSTechQandA = () => {
+const BubbleIOJSTechQandA = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
@@ -24,13 +24,13 @@ const ReactJSTechQandA = () => {
   useEffect(() => {
     const fetchQandAData = async () => {
       try {
-        const nodeTechData = await getTechQandA(
-          "react",
+        const bubbleIoTechData = await getTechQandA(
+          "bubble-io",
           currentPage,
           ITEMS_PER_PAGE
         );
-        setqueAnsData(nodeTechData.storyData);
-        settotalQandA(nodeTechData.totalData);
+        setqueAnsData(bubbleIoTechData.storyData);
+        settotalQandA(bubbleIoTechData.totalData);
       } catch (error) {
         console.error(error);
       }
@@ -45,20 +45,21 @@ const ReactJSTechQandA = () => {
           className="h-[50vh] rounded-[20px]"
           width={1300}
           height={400}
-          src="/images/react-banner.webp"
-          alt="ReactJS Tech Q&A"
+          src="/images/hiring-banner.svg"
+          alt="Bubble-IO Tech Q&A"
           priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              ReactJS Q & A
+              Bubble.io Q&A
             </h1>
             <p className="md:max-w-[70%]">
-              A group of passionate React enthusiasts committed to assisting
-              fellow React enthusiasts. Discover how Brilworks contributes to
-              uplifting the React community by addressing the most crucial,
-              common, unique, and unprecedented React queries.
+              Running into roadblocks with no-code app development? You’re in
+              the right place. Our Bubble.io team has put together their tips
+              and fixes for common problems. Check out easy-to-follow guides
+              that’ll help you breeze through no-code challenges and build
+              smarter apps.
             </p>
           </div>
         </div>
@@ -74,8 +75,8 @@ const ReactJSTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/react/${slug}`}
-                href={`/gist/react/[slug]`}
+                as={`/gist/bubble-io/${slug}`}
+                href={`/gist/bubble-io/[slug]`}
                 prefetch={true}
                 key={index}
               >
@@ -175,4 +176,4 @@ const ReactJSTechQandA = () => {
   );
 };
 
-export default ReactJSTechQandA;
+export default BubbleIOJSTechQandA;

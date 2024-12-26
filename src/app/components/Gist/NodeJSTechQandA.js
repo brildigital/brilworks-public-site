@@ -52,7 +52,7 @@ const NodeJSTechQandA = () => {
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              NodeJS Q & N
+              NodeJS Q & A
             </h1>
             <p className="md:max-w-[70%]">
               Greetings to the Node.js community! Enhance your efficiency in

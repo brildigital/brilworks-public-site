@@ -45,6 +45,18 @@ const MainGist = () => {
       imageAlt: "ReactJS_image",
       linkUrl: "/gist/react/",
     },
+    {
+      title: "Bubble-IO",
+      imageSrc: "/images/bubble-dark-logo.svg",
+      imageAlt: "BubbleIO_image",
+      linkUrl: "/gist/bubble-io/",
+    },
+    {
+      title: "Java Minecraft",
+      imageSrc: "/images/bubble-dark-logo.svg",
+      imageAlt: "Java_Minecraft_image",
+      linkUrl: "/gist/java-minecraft/",
+    },
   ];
 
   return (
@@ -62,7 +74,7 @@ const MainGist = () => {
         <div className="absolute bottom-1/4 w-full text-center mx-auto">
           <div className="how-we">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Tech Q&N
+              Tech Q&A
             </h1>
             <p className="md:mx-auto mx-4 md:max-w-[70%]">
               Get every mistake you've made fixed in one location. We make an
@@ -91,7 +103,7 @@ const MainGist = () => {
                       {title}
                     </h2>
                     <div className="inline-flex gap-4 why_text font-bold ">
-                      <p className="!text-[#00b6cf]">{title} Q & N</p>
+                      <p className="!text-[#00b6cf]">{title} Q & A</p>
                       <div className="aerrow relative">
                         <img
                           decoding="async"

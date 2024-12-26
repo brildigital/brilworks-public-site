@@ -14,7 +14,7 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const ReactJSTechQandA = () => {
+const JavaMinecraftTechQandA = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
@@ -24,13 +24,13 @@ const ReactJSTechQandA = () => {
   useEffect(() => {
     const fetchQandAData = async () => {
       try {
-        const nodeTechData = await getTechQandA(
-          "react",
+        const javaMinecraftTechData = await getTechQandA(
+          "java-minecraft",
           currentPage,
           ITEMS_PER_PAGE
         );
-        setqueAnsData(nodeTechData.storyData);
-        settotalQandA(nodeTechData.totalData);
+        setqueAnsData(javaMinecraftTechData.storyData);
+        settotalQandA(javaMinecraftTechData.totalData);
       } catch (error) {
         console.error(error);
       }
@@ -45,20 +45,20 @@ const ReactJSTechQandA = () => {
           className="h-[50vh] rounded-[20px]"
           width={1300}
           height={400}
-          src="/images/react-banner.webp"
-          alt="ReactJS Tech Q&A"
+          src="/images/hiring-banner.svg"
+          alt="Java Minecraft Q&A"
           priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              ReactJS Q & A
+              Java Minecraft Q&A
             </h1>
             <p className="md:max-w-[70%]">
-              A group of passionate React enthusiasts committed to assisting
-              fellow React enthusiasts. Discover how Brilworks contributes to
-              uplifting the React community by addressing the most crucial,
-              common, unique, and unprecedented React queries.
+              Running into issues with Minecraft Java Edition? We've got you
+              covered. Our team has put together helpful solutions for the most
+              common problems. Explore easy-to-follow guides that’ll help you
+              troubleshoot and enjoy a smoother gaming experience.
             </p>
           </div>
         </div>
@@ -74,8 +74,8 @@ const ReactJSTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/react/${slug}`}
-                href={`/gist/react/[slug]`}
+                as={`/gist/java-minecraft/${slug}`}
+                href={`/gist/java-minecraft/[slug]`}
                 prefetch={true}
                 key={index}
               >
@@ -175,4 +175,4 @@ const ReactJSTechQandA = () => {
   );
 };
 
-export default ReactJSTechQandA;
+export default JavaMinecraftTechQandA;
