@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import Button from "../Common/Button";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import { BrilworksButton } from "../Common/BrilworksBtn";
+import { handleDownloadFile } from "../lib/commonFunction";
 
 const PortfolioContactForm = ({
   description,
   companyNotRequired,
-  newGradient,
+  downloadFileUrl,
 }) => {
   const pathname = usePathname();
 
@@ -53,6 +53,9 @@ const PortfolioContactForm = ({
       if (response.ok) {
         setFormData({ name: "", company: "", email: "", message: "" });
         setRespMessage("Your response is submitted successfully.");
+        if (downloadFileUrl) {
+          handleDownloadFile(downloadFileUrl);
+        }
         clearMessage();
       } else {
         setRespMessage("Something went wrong!");
@@ -142,26 +145,15 @@ const PortfolioContactForm = ({
       <div className="h-4 text-xs font-medium text-themeColor" id="sucess_msg">
         {respMessage}
       </div>
-      {newGradient ? (
-        <BrilworksButton
-          id="submit"
-          type="submit"
-          icon={isSubmitting ? <Loader /> : ""}
-          label={isSubmitting ? "Submitting" : "Submit"}
-          variant="primary"
-          disabled={isSubmitting}
-        />
-      ) : (
-        <Button
-          className="mt-2 w-full font-bold"
-          id="submit"
-          type="submit"
-          icon={isSubmitting ? <Loader /> : ""}
-          label={isSubmitting ? "Submitting" : "Submit"}
-          variant="primary"
-          disabled={isSubmitting}
-        />
-      )}
+      <BrilworksButton
+        id="submit"
+        type="submit"
+        className="mt-2 w-full font-bold"
+        icon={isSubmitting ? <Loader /> : ""}
+        label={isSubmitting ? "Submitting" : "Submit"}
+        variant="primary"
+        disabled={isSubmitting}
+      />
     </form>
   );
 };

@@ -43,6 +43,9 @@ module.exports = {
         "blue-gradient":
           "linear-gradient(87.38deg, #0182EA 35.49%, #0182EA 43.25%, #01DBD4 51.02%)",
       },
+      dropShadow: {
+        "book-shadow": "10px 10px 15px rgba(0, 0, 0, 0.3)",
+      },
     },
   },
   plugins: [],
