@@ -32,7 +32,7 @@ async function getAllSlugs() {
 
   const data = await fetchWithErrorHandling(url, options);
 
-  return data.stories.map((story) => story.slug.replace("portfolio/", ""));
+  return data.stories.map((story) => story.slug.replace("ebooks/", ""));
 }
 
 async function getEbookData(slug) {
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }) {
         site: "@_Brilworks",
       },
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/${params.slug}/`,
+        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}ebooks/${params.slug}/`,
       },
     };
   } catch (error) {
@@ -93,6 +93,7 @@ export default async function Page({ params }) {
   const {
     title,
     ebookImage,
+    ebookPdfUrl,
     insideBookSection,
     reasonToRead,
     otherEbookSection,
@@ -101,7 +102,11 @@ export default async function Page({ params }) {
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>
-      <EbookFirstSection title={title} imageSrc={ebookImage?.filename} />
+      <EbookFirstSection
+        title={title}
+        imageSrc={ebookImage?.filename}
+        ebookFileUrl={ebookPdfUrl?.url}
+      />
       <WhatIsInsideBookSection
         bookDescription={insideBookSection}
         buttontext={reasonToRead?.[1]?.text}

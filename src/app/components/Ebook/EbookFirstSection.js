@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import PortfolioContactForm from "../PortfolioNew/PortfolioContactForm";
 
-const EbookFirstSection = ({ title, imageSrc }) => {
+const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
   return (
     <div className="lg:mt-[6rem] mt-[4rem]">
       <div
@@ -29,6 +29,7 @@ const EbookFirstSection = ({ title, imageSrc }) => {
               description={
                 "Downloaded by 120+ CTOs from Startups and Enterprises"
               }
+              downloadFileUrl={ebookFileUrl}
             />
           </div>
         </div>

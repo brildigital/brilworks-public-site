@@ -92,7 +92,7 @@ const Blog = () => {
             </h1>
           </div>
           <div className="home_sec2_txt4 ">
-            <p className="md:!text-[19px] !text-[18px]">
+            <p className="!text-[18px]">
               In the realm of software-defined landscapes, the Brilworks Blog
               serves as your guide through the technological renaissance. Our
               platform is dedicated to delivering comprehensive insights into
@@ -130,7 +130,7 @@ const Blog = () => {
                         {popularBlog?.content?.title}
                       </Link>
                     </h2>
-                    <p className="md:!text-[19px] !text-[18px] !mb-3">
+                    <p className="!text-[18px] !mb-3">
                       {parse(popularBlog?.content?.Quick_Summary)
                         .split(" ")
                         .splice(0, 20)
