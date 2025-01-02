@@ -223,7 +223,7 @@ export const industryMenuItems = [
   },
 ];
 
-const hireTeamMenuItems = [
+export const hireTeamMenuItems = [
   {
     name: "FRONTEND DEVELOPMENT",
     subSections: [
@@ -413,7 +413,7 @@ export const sitemapData = [
     lastmod: "2024-09-20T12:04:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/use-case/generative-ai-in-fintech/",
+    loc: "https://www.brilworks.com/use-case/gen-ai-in-fintech/",
     lastmod: "2024-09-20T12:04:49.528Z",
   },
   {
@@ -636,6 +636,16 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "Building High-Performance React Native Apps: Tips for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-app-performance-tips/",
+    lastmod: "2025-01-02T06:08:07.226Z",
+  },
+  {
+    name: "AI vs. Traditional Software Development: Which One Fits Your Business?",
+    loc: "https://www.brilworks.com/blog/ai-vs-traditional-software-development-which-one-fits-your-business-/",
+    lastmod: "2025-01-01T06:06:08.226Z",
+  },
   {
     name: "Streamlining Enterprise Application Development with Java Frameworks",
     loc: "https://www.brilworks.com/blog/application-development-with-java-frameworks/",
