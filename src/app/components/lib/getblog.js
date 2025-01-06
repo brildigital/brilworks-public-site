@@ -39,6 +39,7 @@ export async function getblogData(
     page: page_no || 1,
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    sort_by: "content.Priority:desc",
     filter_query: {
       component: {
         in: "article",

@@ -15,7 +15,7 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const ReactNativeTechQandA = () => {
+const BubbleIOJSTechQandA = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
@@ -25,13 +25,13 @@ const ReactNativeTechQandA = () => {
   useEffect(() => {
     const fetchQandAData = async () => {
       try {
-        const nodeTechData = await getTechQandA(
-          "react-native",
+        const bubbleIoTechData = await getTechQandA(
+          "bubble-io",
           currentPage,
           ITEMS_PER_PAGE
         );
-        setqueAnsData(nodeTechData.storyData);
-        settotalQandA(nodeTechData.totalData);
+        setqueAnsData(bubbleIoTechData.storyData);
+        settotalQandA(bubbleIoTechData.totalData);
       } catch (error) {
         console.error(error);
       }
@@ -48,20 +48,21 @@ const ReactNativeTechQandA = () => {
           className="h-[40vh] max-h-[400px] rounded-[20px]"
           width={1250}
           height={400}
-          src="https://a.storyblok.com/f/219851/1398x780/20378830a8/react-native-banner.webp"
-          alt="React Native Tech Q&A"
+          src="/images/hiring-banner.svg"
+          alt="Bubble-IO Tech Q&A"
           priority
         />
         <div className="absolute bottom-1/4 w-full text-left mx-auto">
           <div className="how-we w-[96%] mx-auto">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              React Native Q & A
+              Bubble.io Q&A
             </h1>
             <p className="md:max-w-[70%]">
-              Greetings to the React Native community! Streamline your
-              problem-solving process by exploring our solutions for all your
-              React Native technical queries. Brilworks's React Native community
-              is on a mission to eliminate errors and bugs from your code.
+              Running into roadblocks with no-code app development? You’re in
+              the right place. Our Bubble.io team has put together their tips
+              and fixes for common problems. Check out easy-to-follow guides
+              that’ll help you breeze through no-code challenges and build
+              smarter apps.
             </p>
           </div>
         </div>
@@ -77,8 +78,8 @@ const ReactNativeTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/react/${slug}`}
-                href={`/gist/react/[slug]`}
+                as={`/gist/bubble-io/${slug}`}
+                href={`/gist/bubble-io/[slug]`}
                 prefetch={true}
                 key={index}
               >
@@ -175,4 +176,4 @@ const ReactNativeTechQandA = () => {
   );
 };
 
-export default ReactNativeTechQandA;
+export default BubbleIOJSTechQandA;

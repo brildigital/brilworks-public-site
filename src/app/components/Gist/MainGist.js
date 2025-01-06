@@ -45,13 +45,19 @@ const MainGist = () => {
       imageAlt: "ReactJS_image",
       linkUrl: "/gist/react/",
     },
+    {
+      title: "Bubble-IO",
+      imageSrc: "/images/bubble-dark-logo.svg",
+      imageAlt: "BubbleIO_image",
+      linkUrl: "/gist/bubble-io/",
+    },
   ];
 
   return (
-    <section className="portfolio mt-[6rem] mx-auto">
-      <div className="service_width relative flex items-center justify-center">
+    <section className="container max-w-[1280px] px-4 mt-[6rem] mx-auto">
+      <div className="w-full relative">
         <Image
-          className="h-[46vh] rounded-[20px]"
+          className="h-[40vh] max-h-[400px] rounded-[20px]"
           src="/images/gist-banner.webp"
           alt="Tech Q&A banner"
           width={isMobile ? 330 : 1300}
@@ -62,7 +68,7 @@ const MainGist = () => {
         <div className="absolute bottom-1/4 w-full text-center mx-auto">
           <div className="how-we">
             <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Tech Q&N
+              Tech Q&A
             </h1>
             <p className="md:mx-auto mx-4 md:max-w-[70%]">
               Get every mistake you've made fixed in one location. We make an
@@ -72,12 +78,12 @@ const MainGist = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 md:p-6 !pt-0">
+      <div className="md:py-[4rem] py-[2rem]">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 !pt-0">
           {techQandNData.map(
             ({ title, imageSrc, imageAlt, linkUrl }, index) => (
               <Link href={linkUrl} key={index}>
-                <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
+                <Card className="shadow-lg shadow-themeColor-500/50 border hover:border-themeColor cursor-pointer">
                   <CardBody className="p-8">
                     <div className="md:w-14 w-10 mb-4">
                       <Image
@@ -91,7 +97,7 @@ const MainGist = () => {
                       {title}
                     </h2>
                     <div className="inline-flex gap-4 why_text font-bold ">
-                      <p className="!text-[#00b6cf]">{title} Q & N</p>
+                      <p className="!text-themeColor">{title} Q & A</p>
                       <div className="aerrow relative">
                         <img
                           decoding="async"

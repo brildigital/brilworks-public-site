@@ -187,3 +187,14 @@ export const handleDownloadFile = async (downloadFileUrl) => {
     console.error("Error downloading the file:", error);
   }
 };
+
+export const getPageNumbers = (currentPage, totalQandA, ITEMS_PER_PAGE) => {
+  const pages = [];
+  for (let i = -2; i <= 2; i++) {
+    const page = currentPage + i;
+    if (page > 0 && page <= Math.ceil(totalQandA / ITEMS_PER_PAGE)) {
+      pages.push(page);
+    }
+  }
+  return pages;
+};
