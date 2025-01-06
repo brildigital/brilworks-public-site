@@ -223,7 +223,7 @@ export const industryMenuItems = [
   },
 ];
 
-const hireTeamMenuItems = [
+export const hireTeamMenuItems = [
   {
     name: "FRONTEND DEVELOPMENT",
     subSections: [
@@ -345,6 +345,11 @@ export const menuItems = [
     hideInHeader: true,
   },
   {
+    name: "EBOOKS",
+    path: "/ebooks/",
+    hideInHeader: true,
+  },
+  {
     name: "OUR PROCESS",
     path: "/our-process/",
     hideInHeader: true,
@@ -408,7 +413,7 @@ export const sitemapData = [
     lastmod: "2024-09-20T12:04:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/use-case/generative-ai-in-fintech/",
+    loc: "https://www.brilworks.com/use-case/gen-ai-in-fintech/",
     lastmod: "2024-09-20T12:04:49.528Z",
   },
   {
@@ -490,6 +495,22 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/blog/",
     lastmod: "2024-09-25T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/",
+    lastmod: "2024-12-30T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
+    lastmod: "2024-12-30T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/mvp-development-idea-to-development/",
+    lastmod: "2024-12-30T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
+    lastmod: "2024-12-30T12:04:49.528Z",
   },
   // {
   //   loc: "https://www.brilworks.com/portfolio/vugo/",
@@ -616,14 +637,39 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Building High-Performance React Native Apps: Tips for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-app-performance-tips/",
+    lastmod: "2025-01-02T06:08:07.226Z",
+  },
+  {
+    name: "AI vs. Traditional Software Development: Which One Fits Your Business?",
+    loc: "https://www.brilworks.com/blog/ai-vs-traditional-software-development-which-one-fits-your-business-/",
+    lastmod: "2025-01-01T06:06:08.226Z",
+  },
+  {
+    name: "Streamlining Enterprise Application Development with Java Frameworks",
+    loc: "https://www.brilworks.com/blog/application-development-with-java-frameworks/",
+    lastmod: "2024-12-31T06:07:02.226Z",
+  },
+  {
+    name: "What You Need to Know About Java Packages",
+    loc: "https://www.brilworks.com/blog/java-packages-explained/",
+    lastmod: "2024-12-27T13:39:52.256Z",
+  },
+  {
+    name: "What’s Changed in Java Versions: New Features and Deprecation",
+    loc: "https://www.brilworks.com/blog/java-versions-new-features-and-deprecation/",
+    lastmod: "2024-12-26T12:00:49.395Z",
+  },
+  {
     name: "Top IDEs for Java Development on Mac",
     loc: "https://www.brilworks.com/blog/top-ides-for-java-development-on-mac/",
-    lastmod: "2024-12-23T08:54:50.761Z",
+    lastmod: "2024-12-24T11:14:24.524Z",
   },
   {
     name: "Maximize Your AWS Investment with Expert Advisory Services",
     loc: "https://www.brilworks.com/blog/aws-advisory-services/",
-    lastmod: "2024-12-23T10:35:35.002Z",
+    lastmod: "2024-12-23T11:03:38.803Z",
   },
   {
     name: "The Role of Java APIs in Modern Software Development",

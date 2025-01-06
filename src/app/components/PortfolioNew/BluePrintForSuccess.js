@@ -39,10 +39,7 @@ const BluePrintForSuccess = ({ blueprintForSuccess }) => {
           </div>
           <div className="lg:w-[42%] w-full bg-colorWhite p-[30px] rounded-[30px]">
             <p className="text-2xl !mb-5">Enter the details.</p>
-            <PortfolioContactForm
-              companyNotRequired={true}
-              newGradient={true}
-            />
+            <PortfolioContactForm companyNotRequired={true} />
           </div>
         </div>
       </div>
