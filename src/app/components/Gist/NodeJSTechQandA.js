@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { getPageNumbers } from "../lib/commonFunction";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -36,14 +37,16 @@ const NodeJSTechQandA = () => {
       }
     };
     fetchQandAData();
-  }, []);
+  }, [currentPage, ITEMS_PER_PAGE]);
+
+  const pageNumbers = getPageNumbers(currentPage, totalQandA, ITEMS_PER_PAGE);
 
   return (
-    <section className="portfolio mt-[6rem]">
-      <div className="service_width relative flex items-left justify-center ">
+    <section className="container max-w-[1280px] px-4 mt-[6rem] mx-auto">
+      <div className="relative">
         <Image
-          className="h-[50vh] rounded-[20px]"
-          width={1300}
+          className="h-[40vh] max-h-[400px] rounded-[20px]"
+          width={1250}
           height={400}
           src="https://a.storyblok.com/f/219851/1398x780/f5221a3182/node-services-banner.webp"
           alt="NodeJS Tech Q&A"
@@ -64,7 +67,7 @@ const NodeJSTechQandA = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
+      <div className="md:py-[4rem] py-[2rem]">
         <div
           className={`grid ${
             !queAnsData?.length
@@ -80,24 +83,26 @@ const NodeJSTechQandA = () => {
                 prefetch={true}
                 key={index}
               >
-                <Card className="shadow-lg shadow-[#00b6cf]-500/50 border border-gray-300 hover:border-[#00b6cf]">
+                <Card className="shadow-lg shadow-themeColor-500/50 border border-gray-300 hover:border-themeColor">
                   <div className="sec9_img1">
                     <Image
                       decoding="async"
                       loading="lazy"
                       className="rounded-t-[12px]"
                       src={content?.banner_image?.filename || ""}
-                      alt={content?.banner_image?.alt || "Tech Q&A banner"}
+                      alt={
+                        content?.banner_image?.alt || `Tech Q&A banner-${index}`
+                      }
                       width="450"
                       height="230"
                     />
                   </div>
-                  <CardBody>
-                    <h2 className="text-xl why_text font-bold mb-7 pl-2">
+                  <CardBody className="p-4">
+                    <h2 className="text-xl text-colorBlack font-bold mb-7 pl-2">
                       {name}
                     </h2>
                     <div className="inline-flex gap-4 !cursor-pointer why_text font-bold pl-2">
-                      <p className="!text-[#00b6cf]">Read More</p>
+                      <p className="!text-themeColor">Read More</p>
                       <div className="aerrow relative">
                         <img
                           decoding="async"
@@ -121,11 +126,11 @@ const NodeJSTechQandA = () => {
           )}
         </div>
 
-        {queAnsData?.length ? (
+        {queAnsData?.length && pageNumbers.length > 1 ? (
           <div className="flex justify-center mt-[5rem]">
             <ul className="list-none flex flex-wrap">
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
                   currentPage === 1 ? "opacity-50 !cursor-not-allowed" : ""
                 }`}
                 onClick={() => {
@@ -136,24 +141,19 @@ const NodeJSTechQandA = () => {
               >
                 {"< PREV"}
               </li>
-
-              {Array.from({
-                length: Math.ceil(totalQandA / ITEMS_PER_PAGE),
-              }).map((_, index) => (
+              {pageNumbers.map((page) => (
                 <li
-                  key={index}
-                  className={`h-[40px] w-[40px] rounded-[20%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                    currentPage === index + 1
-                      ? " bg-[#1a1a1a] text-[#ffffff]"
-                      : ""
+                  key={page}
+                  className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                    currentPage === page ? " bg-colorBlack text-colorWhite" : ""
                   }`}
-                  onClick={() => setCurrentPage(index + 1)}
+                  onClick={() => setCurrentPage(page)}
                 >
-                  {index + 1}
+                  {page}
                 </li>
               ))}
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
                   currentPage === Math.ceil(totalQandA / ITEMS_PER_PAGE)
                     ? "!opacity-50 !cursor-not-allowed"
                     : ""

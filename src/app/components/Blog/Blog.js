@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData } from "../lib/getblog";
-import { formattedDate } from "../lib/commonFunction";
+import { formattedDate, getPageNumbers } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 
 const Blog = () => {
@@ -64,18 +64,7 @@ const Blog = () => {
     setCurrentPage(1);
   }, [blogCategory]);
 
-  const getPageNumbers = () => {
-    const pages = [];
-    for (let i = -2; i <= 2; i++) {
-      const page = currentPage + i;
-      if (page > 0 && page <= Math.ceil(totalBlog / ITEMS_PER_PAGE)) {
-        pages.push(page);
-      }
-    }
-    return pages;
-  };
-
-  const pageNumbers = getPageNumbers();
+  const pageNumbers = getPageNumbers(currentPage, totalBlog, ITEMS_PER_PAGE);
 
   useEffect(() => {
     let cat = window?.location?.href?.split("=")[1];
