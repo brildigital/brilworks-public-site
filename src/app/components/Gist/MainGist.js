@@ -51,6 +51,12 @@ const MainGist = () => {
       imageAlt: "BubbleIO_image",
       linkUrl: "/gist/bubble-io/",
     },
+    {
+      title: "Flutter Flow",
+      imageSrc: "/images/flutterflow-logo2.svg",
+      imageAlt: "FlutterFlow_image",
+      linkUrl: "/gist/flutterflow/",
+    },
   ];
 
   return (
