@@ -7,11 +7,11 @@ const BubbleIoTechQandA = dynamic(() =>
 export const metadata = {
   title: "Bubble.io Q&A - Brilworks",
   description:
-    "A community of devoted Java enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
+    "A community of devoted no code enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
   openGraph: {
     title: "Bubble.io Q&A - Brilworks",
     description:
-      "A community of devoted Java enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
+      "A community of devoted no code  enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}gist/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -21,7 +21,7 @@ export const metadata = {
   twitter: {
     title: "Bubble.io Q&A - Brilworks",
     description:
-      "A community of devoted Java enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
+      "A community of devoted no code  enthusiasts dedicated to assisting fellow no code low code enthusiasts. Explore how Brilworks contributes to uplifting the no code low code community by addressing the most crucial, common, unique, and unparalleled bubble.io questions.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
