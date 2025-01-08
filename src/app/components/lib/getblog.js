@@ -39,7 +39,6 @@ export async function getblogData(
     page: page_no || 1,
     per_page: limit_per_page || 9,
     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    sort_by: "content.Priority:desc",
     filter_query: {
       component: {
         in: "article",
@@ -54,8 +53,15 @@ export async function getblogData(
   }
 
   if (search_query) {
-    // If search_query is present, add search_term to apiParams
-    apiParams.search_term = search_query;
+    apiParams.filter_query = {
+      ...apiParams.filter_query,
+      __or: [
+        { title: { like: `%${search_query}%` } },
+        // { content: { like: `%${search_query}%` } },
+        // { Content_1: { like: `%${search_query}%` } },
+        // { Content_2: { like: `%${search_query}%` } },
+      ],
+    };
   }
 
   // Make the API call with the constructed parameters
