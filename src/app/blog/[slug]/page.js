@@ -314,8 +314,8 @@ export async function fetchData(params) {
     );
 
     const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl, { next: { revalidate: 3600 } }),
-      fetch(configUrl, { next: { revalidate: 3600 } }),
+      fetch(storyUrl, { next: { revalidate: 0 } }),
+      fetch(configUrl, { next: { revalidate: 0 } }),
     ]);
 
     const storyData = await storyRes.json();
