@@ -602,7 +602,11 @@
   }
   p {
     word-wrap: break-word;
-    margin-bottom: 0 !important;
+    margin-bottom: 20px !important;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
 }
 
