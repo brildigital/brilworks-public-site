@@ -13,7 +13,7 @@ import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
-  const { props: data } = await fetchData(params);
+  const { props: data } = await fetchData(params?.slug);
   const story = data?.story;
 
   if (!story) return {};
@@ -70,7 +70,7 @@ export async function generateMetadata({ params }) {
 }
 export default async function Page(props) {
   const { params } = props || {};
-  const { props: data } = await fetchData(params);
+  const { props: data } = await fetchData(params?.slug);
   if (!data?.story) {
     return notFound();
   }
@@ -289,42 +289,32 @@ export default async function Page(props) {
     </>
   );
 }
-export async function fetchData(params) {
+export async function fetchData(slug) {
   try {
-    let slug = params?.slug ? `blog/${params.slug}` : "home";
-
-    let sbParams = {
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      resolve_links: "url",
-    };
-
-    const storyUrl = new URL("https://api.storyblok.com/v2/cdn/stories");
-    storyUrl.searchParams.append("version", sbParams.version);
-    storyUrl.searchParams.append("resolve_links", sbParams.resolve_links);
-    storyUrl.searchParams.append("token", process.env.NEXT_PUBLIC_ACCESS_TOKEN);
-    storyUrl.pathname += `/${slug}`;
-
-    const configUrl = new URL(
-      "https://api.storyblok.com/v2/cdn/stories/config"
+    const storyUrl = new URL(
+      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`
     );
-    configUrl.searchParams.append("version", sbParams.version);
-    configUrl.searchParams.append(
+    storyUrl.searchParams.append(
       "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN || ""
+    );
+    storyUrl.searchParams.append(
+      "version",
+      process.env.NEXT_PUBLIC_STORYBLOK_VERSION
     );
 
-    const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl, { next: { revalidate: 0 } }),
-      fetch(configUrl, { next: { revalidate: 0 } }),
-    ]);
+    storyUrl.pathname += ``;
+
+    const storyRes = await fetch(storyUrl.toString(), {
+      next: { revalidate: 0 },
+      headers: { "Accept-Encoding": "gzip" }, // Enable compression
+    });
 
     const storyData = await storyRes.json();
-    const configData = await configRes.json();
     return {
       props: {
         story: storyData?.story || false,
         key: storyData?.story?.id || false,
-        config: configData?.story || false,
       },
     };
   } catch (error) {
