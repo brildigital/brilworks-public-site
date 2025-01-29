@@ -27,7 +27,6 @@
   /* --theme-color: #0d9a9a; New color */
   --theme-color: #017eeb;
   --theme-light: #f3fdff; /* New color */
-  --vivid-blue: #017eeb;
   /* --color_black: #1c1d1e; */
   --color_black: #212121;
   --color_primary: #00ddb9;
@@ -229,7 +228,7 @@ input[type="number"] {
 }
 
 .page-active-blue {
-  color: var(--vivid-blue) !important;
+  color: var(--theme-color) !important;
   font-weight: 600 !important;
 }
 
@@ -238,7 +237,7 @@ input[type="number"] {
 }
 
 .footer-link-blue a:hover {
-  color: var(--vivid-blue) !important;
+  color: var(--theme-color) !important;
 }
 
 .item-accordion {

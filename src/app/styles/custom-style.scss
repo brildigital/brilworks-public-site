@@ -25,8 +25,8 @@
   line-height: 24px;
   text-align: center;
   color: var(--white_color);
-  border: 1px solid var(--vivid-blue);
-  background: var(--vivid-blue);
+  border: 1px solid var(--theme-color);
+  background: var(--theme-color);
   &:hover {
     background: transparent;
     border-color: var(--color_black);

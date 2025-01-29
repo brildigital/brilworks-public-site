@@ -238,7 +238,7 @@ const Blog = () => {
                   <input
                     type="submit"
                     className="w-auto !mr-2 mt-[2px] blog-search-btn btn-search font-semibold text-base !text-white border !cursor-pointer
-                     hover:border-themeColor focus:ring focus:outline-none focus:border-themeColor focus:!ring-[#00C4C8] active:border-themeColor absolute bg-themeColor"
+                     hover:border-themeColor focus:ring focus:outline-none focus:border-themeColor focus:!ring-themeColor active:border-themeColor absolute bg-themeColor"
                     value="Search"
                   />
                   <div className="w-full">
