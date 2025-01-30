@@ -74,7 +74,8 @@ const Article = ({ blok }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
-          node.attribs.alt = "banner-image";
+          node.attribs.alt = "blog-image";
+          node.attribs.title = "blog-img-title";
         }
 
         if (node.type === "tag" && node.name === "a") {
