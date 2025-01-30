@@ -345,6 +345,11 @@ export const menuItems = [
     hideInHeader: true,
   },
   {
+    name: "EBOOKS",
+    path: "/ebooks/",
+    hideInHeader: true,
+  },
+  {
     name: "OUR PROCESS",
     path: "/our-process/",
     hideInHeader: true,
