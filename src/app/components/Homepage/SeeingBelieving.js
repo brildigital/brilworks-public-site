@@ -11,20 +11,21 @@ const Storyblok = new StoryblokClient({
 });
 
 const SeeingBelieving = () => {
-  const [caseStudyData, setCaseStudyData] = useState();
-  useEffect(() => {
-    Storyblok.get("cdn/stories/", {
-      starts_with: "portfolio/",
-      per_page: 4,
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    })
-      .then((response) => {
-        setCaseStudyData(response.data?.stories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // const [caseStudyData, setCaseStudyData] = useState();
+  // useEffect(() => {
+  //   Storyblok.get("cdn/stories/", {
+  //     starts_with: "portfolio/",
+  //     per_page: 4,
+  //     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+  //   })
+  //     .then((response) => {
+  //       setCaseStudyData(response.data?.stories);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+
   const portfolioItems = [
     {
       title: "VUGO",
@@ -82,49 +83,86 @@ const SeeingBelieving = () => {
     },
   ];
 
+  const portfolioDynamicItems = [
+    {
+      title: "Ultimate Recruitment Referral Platform for Streamlined Hiring",
+      link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+      description:
+        "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit.",
+      image:
+        "https://a.storyblok.com/f/219851/640x455/0b7aa28319/recruitment.webp",
+      alt: "recruitment",
+    },
+    {
+      title: "Innovative Platform for Comprehensive Supply Chain Management",
+      link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+      description:
+        "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry.",
+      image:
+        "https://a.storyblok.com/f/219851/640x427/3c31b2f20f/mahakoshal_logo_screen_1.webp",
+      alt: "mahakoshal_logo_screen_1",
+    },
+    {
+      title: "Boosting App Performance for Cultural Organizations",
+      link: "/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/",
+      description:
+        "Performance optimization of a standalone app featuring high-resolution historical imagery.",
+      image:
+        "https://a.storyblok.com/f/219851/640x455/e29397d6cb/app-for-cultural-institution.webp",
+      alt: "cultural-institution",
+    },
+    {
+      title:
+        "A Powerful Inventory Management App to Reduce Order Processing Time",
+      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+      description:
+        "Developing a mobile inventory management solution for a leading seat manufacturer.",
+      image:
+        "https://a.storyblok.com/f/219851/640x455/41ceadbf42/inventory-management.webp",
+      alt: "inventory-mgmt",
+    },
+  ];
+
   return (
     <div className="bg-sectionBG section-padding">
       <div className="container mx-auto max-w-[1280px] reveal">
         <BelievingText />
         <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
-          {caseStudyData?.length &&
-            caseStudyData?.map(({ content, full_slug }, index) => {
-              return (
-                <div
-                  className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
-                  key={index}
-                >
-                  <Link href={`/${full_slug}/`} prefetch={true}>
-                    <Image
-                      className="rounded-[25px] lg:max-h-[370px]"
-                      src={content?.images?.[0]?.filename}
-                      alt={`casestudy-${index}`}
-                      width="302"
-                      height="240"
-                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                    />
-                    <div className="flex flex-col justify-between flex-1 p-4 items-start">
-                      <div className="w-full flex items-center justify-between">
-                        <div
-                          className="text-2xl font-bold text-themeColor mb-1"
-                          dangerouslySetInnerHTML={{
-                            __html: content?.title?.replace("h1-border-b", " "),
-                          }}
-                        ></div>
+          {portfolioDynamicItems?.length &&
+            portfolioDynamicItems?.map(
+              ({ title, link, description, image }, index) => {
+                return (
+                  <div
+                    className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
+                    key={index}
+                  >
+                    <Link href={`${link}`} prefetch={false}>
+                      <Image
+                        className="rounded-[25px] lg:max-h-[370px]"
+                        src={image}
+                        alt={`casestudy-${index}`}
+                        width="302"
+                        height="240"
+                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      />
+                      <div className="flex flex-col justify-between flex-1 p-4 items-start">
+                        <div className="w-full flex items-center justify-between">
+                          <div className="text-2xl font-bold text-themeColor mb-1">
+                            {title}
+                          </div>
+                        </div>
+                        <p className="text-colorGray text-base">
+                          {description?.split(" ")?.length > 31
+                            ? description?.split(" ")?.slice(0, 25)?.join(" ") +
+                              "..."
+                            : description}
+                        </p>
                       </div>
-                      <p className="text-colorGray text-base">
-                        {content?.description?.split(" ")?.length > 31
-                          ? content?.description
-                              ?.split(" ")
-                              ?.slice(0, 25)
-                              ?.join(" ") + "..."
-                          : content?.description}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
+                    </Link>
+                  </div>
+                );
+              }
+            )}
         </div>
         <div>
           <LinkWithArrow

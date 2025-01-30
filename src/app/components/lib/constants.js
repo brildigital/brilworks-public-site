@@ -637,14 +637,59 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How Much Does It Really Cost to Build an App in 2025?",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-costs/",
+    lastmod: "2025-01-29T11:12:17.441Z",
+  },
+  {
+    name: "A Complete Guide for Mobile App Development in 2025",
+    loc: "https://www.brilworks.com/blog/guide-for-mobile-app-development/",
+    lastmod: "2025-01-30T04:22:05.746Z",
+  },
+  {
+    name: "A Complete Guide to Post-Launch Mobile App Maintenance",
+    loc: "https://www.brilworks.com/blog/mobile-app-maintenance/",
+    lastmod: "2025-01-28T04:56:00.433Z",
+  },
+  {
+    name: "7 Key Reasons to Choose Agile Methodology for Mobile App Development",
+    loc: "https://www.brilworks.com/blog/agile-mobile-app-development/",
+    lastmod: "2025-01-23T05:20:21.452Z",
+  },
+  {
+    name: "What’s Next? 10 Trends Driving Mobile App Development in 2025",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-trends/",
+    lastmod: "2025-01-22T10:15:09.584Z",
+  },
+  {
+    name: "How Microservices Enhances Application Development",
+    loc: "https://www.brilworks.com/blog/how-microservices-enhances-application-development/",
+    lastmod: "2025-01-17T15:27:57.282Z",
+  },
+  {
+    name: "Top React Native Features Startups Should Explore in 2025",
+    loc: "https://www.brilworks.com/blog/top-react-native-features/",
+    lastmod: "2025-01-17T06:04:28.244Z",
+  },
+  {
+    name: "React Native vs Native Development: Pros and Cons.",
+    loc: "https://www.brilworks.com/blog/react-native-vs-native-development/",
+    lastmod: "2025-01-27T08:21:55.603Z",
+  },
+  {
+    name: "Why React Native is Perfect for Cross-Platform Apps",
+    loc: "https://www.brilworks.com/blog/react-native-for-cross-platform-development/",
+    lastmod: "2025-01-29T06:49:56.125Z",
+  },
+  {
     name: "Building High-Performance React Native Apps: Tips for Developers",
     loc: "https://www.brilworks.com/blog/react-native-app-performance-tips/",
-    lastmod: "2025-01-02T06:08:07.226Z",
+    lastmod: "2025-01-13T11:33:43.864Z",
   },
   {
     name: "AI vs. Traditional Software Development: Which One Fits Your Business?",
     loc: "https://www.brilworks.com/blog/ai-vs-traditional-software-development-which-one-fits-your-business-/",
-    lastmod: "2025-01-01T06:06:08.226Z",
+    lastmod: "2025-01-01T06:36:10.410Z",
   },
   {
     name: "Streamlining Enterprise Application Development with Java Frameworks",
@@ -654,7 +699,7 @@ export const blogListStaticData = [
   {
     name: "What You Need to Know About Java Packages",
     loc: "https://www.brilworks.com/blog/java-packages-explained/",
-    lastmod: "2024-12-27T13:39:52.256Z",
+    lastmod: "2025-01-07T05:59:52.938Z",
   },
   {
     name: "What’s Changed in Java Versions: New Features and Deprecation",
@@ -729,7 +774,7 @@ export const blogListStaticData = [
   {
     name: "What's New in Java 21 ",
     loc: "https://www.brilworks.com/blog/Java-21-features/",
-    lastmod: "2024-12-10T07:20:44.198Z",
+    lastmod: "2024-12-23T17:14:03.668Z",
   },
   {
     name: "How to Update Java JDK",
@@ -802,9 +847,9 @@ export const blogListStaticData = [
     lastmod: "2024-12-23T09:23:57.408Z",
   },
   {
-    name: "The Best Low-Code No Code Platforms in 2024",
+    name: "The Best Low-Code No Code Platforms in 2025",
     loc: "https://www.brilworks.com/blog/best-low-code-no-code-platforms/",
-    lastmod: "2024-11-11T05:34:38.850Z",
+    lastmod: "2025-01-09T08:33:28.825Z",
   },
   {
     name: "React Native for Beginners: Create React Native App in 5 Steps",
@@ -832,9 +877,9 @@ export const blogListStaticData = [
     lastmod: "2024-12-23T09:43:21.672Z",
   },
   {
-    name: "How to Create An App and Make Money in 2024",
+    name: "How to Create An App and Make Money in 2025",
     loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
-    lastmod: "2024-12-23T09:55:07.306Z",
+    lastmod: "2025-01-17T07:10:24.976Z",
   },
   {
     name: "How Generative AI transforms Supply Chain Operations",
@@ -842,7 +887,7 @@ export const blogListStaticData = [
     lastmod: "2024-12-23T10:00:22.939Z",
   },
   {
-    name: "How to Create a Mobile App in 2024 [Easy Steps]",
+    name: "How to Create a Mobile App in 2025 [Easy Steps]",
     loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
     lastmod: "2024-12-23T10:08:52.818Z",
   },
@@ -882,9 +927,9 @@ export const blogListStaticData = [
     lastmod: "2024-09-14T10:57:32.336Z",
   },
   {
-    name: "7 Emerging AI Technologies to Watch in 2024",
+    name: "7 Emerging AI Technologies to Watch in 2025",
     loc: "https://www.brilworks.com/blog/emerging-ai-technologies/",
-    lastmod: "2024-12-16T06:28:22.343Z",
+    lastmod: "2025-01-17T07:21:51.116Z",
   },
   {
     name: "The Roadmap to Successful AI Implementation",
@@ -1042,14 +1087,14 @@ export const blogListStaticData = [
     lastmod: "2024-06-07T06:11:26.672Z",
   },
   {
-    name: "The 10 Best Artificial Intelligence Platforms for Busines of 2024",
+    name: "The 10 Best Artificial Intelligence Platforms for Busines of 2025",
     loc: "https://www.brilworks.com/blog/best-artificial-intelligence-platforms/",
-    lastmod: "2024-08-06T09:53:22.015Z",
+    lastmod: "2025-01-17T07:13:25.571Z",
   },
   {
-    name: "Hiring Guide for Node.JS Developers in 2024",
+    name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2024-06-03T15:04:43.171Z",
+    lastmod: "2025-01-17T07:12:31.027Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
@@ -1091,6 +1136,7 @@ export const blogListStaticData = [
     loc: "https://www.brilworks.com/blog/node-js-performance-monitoring/",
     lastmod: "2024-04-25T09:29:13.098Z",
   },
+
   {
     name: "Essential Guide to Node.js Development: Best Practices & Architecutre",
     loc: "https://www.brilworks.com/blog/node-js-architecture-best-practices/",
@@ -1107,9 +1153,9 @@ export const blogListStaticData = [
     lastmod: "2024-04-25T09:35:13.614Z",
   },
   {
-    name: "What Is React Native? A Comprehensive Guide for 2024",
+    name: "What Is React Native? A Comprehensive Guide ",
     loc: "https://www.brilworks.com/blog/what-is-react-native/",
-    lastmod: "2024-04-25T09:27:09.569Z",
+    lastmod: "2025-01-13T07:40:43.190Z",
   },
   {
     name: "Native vs. Cross-Platform: Choosing the Right Mobile App Development Approach",
@@ -1122,9 +1168,9 @@ export const blogListStaticData = [
     lastmod: "2024-04-25T09:23:23.970Z",
   },
   {
-    name: "AI & Low-Code/No-Code Tools: Reshaping the Workforce (2024 & Beyond)",
+    name: "AI & Low-Code/No-Code Tools: Reshaping the Workforce (2025 & Beyond)",
     loc: "https://www.brilworks.com/blog/ai-low-code-no-code-tools/",
-    lastmod: "2024-10-30T06:05:10.749Z",
+    lastmod: "2025-01-17T07:11:26.805Z",
   },
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
@@ -1192,9 +1238,9 @@ export const blogListStaticData = [
     lastmod: "2024-05-02T15:55:31.118Z",
   },
   {
-    name: "Best Front-End Frameworks to Watch in 2024",
+    name: "Best Front-End Frameworks to Watch",
     loc: "https://www.brilworks.com/blog/best-front-end-frameworks/",
-    lastmod: "2024-05-02T16:13:00.039Z",
+    lastmod: "2025-01-17T07:14:31.047Z",
   },
   {
     name: "Java Testing Tools: Essential Tools for Every Java Developer",
@@ -1274,7 +1320,7 @@ export const blogListStaticData = [
   {
     name: "What is Lambda Expression in Java?",
     loc: "https://www.brilworks.com/blog/lambda-expression-java/",
-    lastmod: "2024-05-02T11:43:05.745Z",
+    lastmod: "2025-01-08T09:58:54.440Z",
   },
   {
     name: "Exploring Storyblok's Powerful Visual Editor",
@@ -1327,9 +1373,9 @@ export const blogListStaticData = [
     lastmod: "2024-04-25T13:19:55.371Z",
   },
   {
-    name: "The 6 Best No-Code Tools in 2024",
+    name: "The 6 Best No-Code Tools",
     loc: "https://www.brilworks.com/blog/best-no-code-tools/",
-    lastmod: "2024-07-30T11:56:47.293Z",
+    lastmod: "2025-01-29T07:36:08.616Z",
   },
   {
     name: "The Future of Fintech: Top Trends to Watch in 2023",
@@ -1379,7 +1425,7 @@ export const blogListStaticData = [
   {
     name: "Headless CMS Explained: Simplifying Content Management for Modern Web Development",
     loc: "https://www.brilworks.com/blog/headless-cms-explained-simplifying-content-management-for-modern-web-development/",
-    lastmod: "2024-05-02T16:31:42.137Z",
+    lastmod: "2025-01-15T13:10:41.192Z",
   },
   {
     name: "Best Node.js Open Source Projects in GitHub",
@@ -1417,9 +1463,9 @@ export const blogListStaticData = [
     lastmod: "2024-10-02T05:52:38.625Z",
   },
   {
-    name: "Top Popular Apps Built With React Native",
+    name: "Popular React Native Apps [in 2025]",
     loc: "https://www.brilworks.com/blog/top-popular-apps-built-with-react-native/",
-    lastmod: "2024-11-25T12:49:26.865Z",
+    lastmod: "2025-01-13T10:48:13.917Z",
   },
   {
     name: "Top 10 Websites Built Using React.js",
@@ -1449,7 +1495,7 @@ export const blogListStaticData = [
   {
     name: "Cross Platform App Development: Best Frameworks",
     loc: "https://www.brilworks.com/blog/cross-platform-app-development-best-frameworks/",
-    lastmod: "2024-07-30T13:06:01.355Z",
+    lastmod: "2025-01-13T11:07:17.016Z",
   },
   {
     name: "Top 6 Healthcare Trends to Watch in 2023 and Beyond",
