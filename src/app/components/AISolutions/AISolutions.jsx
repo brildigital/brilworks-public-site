@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+
 import { BrilworksButton } from "../Common/BrilworksBtn";
 import { useMediaQuery } from "react-responsive";
 
@@ -29,23 +28,7 @@ const caseStudies = [
 ];
 
 function AISolutions({ data }) {
-  const videoRef = useRef();
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-    }
-  };
-
-  useEffect(() => {
-    togglePlayPause();
-  }, [isPlaying]);
 
   return (
     <>
@@ -58,20 +41,9 @@ function AISolutions({ data }) {
         </div>
         <BrilworksButton label="Get Started Now" />
 
-        <div className="bg-gradient-to-br from-blue-300 to-white p-2 md:p-12 flex-center-center rounded-3xl relative">
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="!cursor-pointer bg-gradient-to-br z-10 from-[#007AEB] to-blue-100 absolute md:bottom-16 bottom-4 md:right-16 right-4 rounded-[50%] h-12 w-12 md:h-24 md:w-24 text-center"
-          >
-            <div className="flex justify-center items-center scla">
-              <FontAwesomeIcon
-                icon={isPlaying ? faPlay : faPause}
-                style={{ height: "2rem", width: "2rem", color: "white" }}
-              />
-            </div>
-          </button>
+        <div className="bg-gradient-to-br from-blue-300 to-white p-2 md:p-12 flex-center-center rounded-3xl">
           <video
-            ref={videoRef}
+            controls
             width={1100}
             height={534}
             className="!rounded-[20px]"
