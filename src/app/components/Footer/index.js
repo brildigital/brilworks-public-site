@@ -251,7 +251,11 @@ const Footer = () => {
   ];
 
   const renderFooterData = () => {
-    if (pathname.startsWith("/portfolio/")) {
+    if (
+      pathname.startsWith("/portfolio/") ||
+      pathname.startsWith("/ebooks/") ||
+      pathname.startsWith("/ai-solutions/")
+    ) {
       return (
         <div className="footer-background text-colorWhite">
           <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:pt-[60px] md:pt-[40px] pt-[30px] mx-auto">

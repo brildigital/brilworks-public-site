@@ -60,7 +60,7 @@ const Ebooks = () => {
             <div className="flex flex-col gap-3">
               <div className="!font-bold !text-center">
                 <h1 className="!text-center !font-[linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)] md:!text-[2.5rem] !text-[2rem]">
-                  Our E-books
+                  Our <span class="h1-border-b"> E-books</span>
                 </h1>
               </div>
               <div className="md:w-3/5 w-full mx-auto text-center mb-4">
@@ -69,17 +69,16 @@ const Ebooks = () => {
                   and stay ahead of tech trends with our expert-crafted ebooks.
                 </p>
               </div>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 rounded mb-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 rounded mb-8">
                 {ebooksDataPerPage?.map((ebooks, index) => {
                   return (
                     <div
                       key={index}
-                      className="grid sm:grid-cols-2 grid-cols-1 shadow-md
-                       gap-3 p-5 blog-box"
+                      className="flex flex-col shadow-md gap-3 p-5 blog-box"
                     >
-                      <div className="flex justify-center">
+                      <div>
                         <Image
-                          className="w-auto drop-shadow-book-shadow p-4"
+                          className="w-[170px] drop-shadow-book-shadow p-4 py-0 mx-auto"
                           src={ebooks?.content?.ebookImage?.filename}
                           alt={
                             ebooks?.content?.ebookImage?.alt ||
@@ -89,10 +88,13 @@ const Ebooks = () => {
                           height={65}
                         />
                       </div>
-                      <div className="flex flex-col justify-between py-6 gap-2">
-                        <h3 className="md:text-2xl text-xl  font-bold">
+
+                      <div>
+                        <h3 className="md:text-2xl text-xl font-semibold text-center">
                           {ebooks.name}
                         </h3>
+                      </div>
+                      <div className="h-auto mt-auto">
                         <Link
                           className="w-full"
                           as={`/ebooks/${ebooks?.slug}`}
