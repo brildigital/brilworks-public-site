@@ -313,6 +313,18 @@ const hireTeamMenuItems = [
   },
 ];
 
+const AISolutionsMenuItems = [
+  {
+    name: "Solutions",
+    subSections: [
+      {
+        name: "My SQL Chatbot",
+        path: "/ai-solutions/my-sql-chatbot/",
+      },
+    ],
+  },
+];
+
 export const menuItems = [
   {
     name: "OUR WORK",
@@ -337,6 +349,13 @@ export const menuItems = [
     path: "",
     heading: "Technologies",
     menuItems: hireTeamMenuItems,
+    isMegaMenu: true,
+  },
+  {
+    name: "AI SOLUTIONS",
+    path: "",
+    heading: "AI Solutions",
+    menuItems: AISolutionsMenuItems,
     isMegaMenu: true,
   },
   {
