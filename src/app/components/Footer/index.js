@@ -250,89 +250,95 @@ const Footer = () => {
     },
   ];
 
-  return pathname.startsWith("/portfolio/") ? (
-    <div className="footer-background text-colorWhite">
-      <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:pt-[60px] md:pt-[40px] pt-[30px] mx-auto">
-        <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
-          <div className="w-full">
-            <Image
-              className="w-[155px] h-[46px] md:mb-7 mb-5"
-              src="/images/logo-white.svg"
-              alt="Brilworks Logo"
-              width="155"
-              height="46"
-              priority
-            />
-            <p className="text-xl w-full !mb-[30px]">
-              Hello, we are
-              <span className="gradient-text font-medium">
-                &nbsp;BRILLIAN’S.&nbsp;
-              </span>
-              Trying to make an effort to put the right people for you to get
-              the best results. Just insight !
-            </p>
-            <div className="flex items-center text-2xl font-medium mb-4">
-              <span className="gradient-text">We are Hiring!</span>
-              <Image
-                className="w-6 h-6 ml-2"
-                src="/images/group-of-people.png"
-                alt="hiring-voice"
-                width="24"
-                height="24"
-              />
-            </div>
-            <BrilworksButton
-              className="hover:!text-colorWhite hover:!border-colorWhite"
-              redirect={`/career/`}
-              label="View Positions"
-            />
-          </div>
-          <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
-            {footerData.slice(0, 3).map(({ title, links }, index) => (
-              <div
-                key={`${title}-${index}`}
-                className={`flex flex-col flex-wrap gap-[14px]`}
-              >
-                <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
-                  {title}
-                </h3>
-                {links.map(({ link, text }, index) => (
-                  <Link
-                    key={`${text}-L${index}`}
-                    href={link}
-                    className={`${getActivePage(
-                      link
-                    )} md:text-xl text-base font-medium`}
+  const renderFooterData = () => {
+    if (
+      pathname.startsWith("/portfolio/") ||
+      pathname.startsWith("/ebooks/") ||
+      pathname.startsWith("/ai-solutions/")
+    ) {
+      return (
+        <div className="footer-background text-colorWhite">
+          <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:pt-[60px] md:pt-[40px] pt-[30px] mx-auto">
+            <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
+              <div className="w-full">
+                <Image
+                  className="w-[155px] h-[46px] md:mb-7 mb-5"
+                  src="/images/logo-white.svg"
+                  alt="Brilworks Logo"
+                  width="155"
+                  height="46"
+                  priority
+                />
+                <p className="text-xl w-full !mb-[30px]">
+                  Hello, we are
+                  <span className="gradient-text font-medium">
+                    &nbsp;BRILLIAN’S.&nbsp;
+                  </span>
+                  Trying to make an effort to put the right people for you to
+                  get the best results. Just insight !
+                </p>
+                <div className="flex items-center text-2xl font-medium mb-4">
+                  <span className="gradient-text">We are Hiring!</span>
+                  <Image
+                    className="w-6 h-6 ml-2"
+                    src="/images/group-of-people.png"
+                    alt="hiring-voice"
+                    width="24"
+                    height="24"
+                  />
+                </div>
+                <BrilworksButton
+                  className="hover:!text-colorWhite hover:!border-colorWhite"
+                  redirect={`/career/`}
+                  label="View Positions"
+                />
+              </div>
+              <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
+                {footerData.slice(0, 3).map(({ title, links }) => (
+                  <div
+                    key={title}
+                    className={`flex flex-col flex-wrap gap-[14px]`}
                   >
-                    {text}
-                  </Link>
+                    <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
+                      {title}
+                    </h3>
+                    {links.map(({ link, text }) => (
+                      <Link
+                        key={text}
+                        href={link}
+                        className={`${getActivePage(
+                          link
+                        )} md:text-xl text-base font-medium`}
+                      >
+                        {text}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
-      <hr className="border border-[#232323] mt-[30px] mb-5" />
-      <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] mx-auto">
-        <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-          {contactLinks.map(({ title, links }, index) => (
-            <div className="flex flex-col gap-4" key={`contact-${index}`}>
-              <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
-                {title}
-              </h3>
-              {links.map(({ text, imgSrc, link }, idx) =>
-                text.includes("503") ? (
-                  <div
-                    key={`link-${idx}`}
-                    className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-start font-medium"
-                  >
-                    <Image
-                      className="mt-1 w-5"
-                      src={imgSrc}
-                      alt="location"
-                      width="20"
-                      height="20"
-                    />
+          <hr className="border border-[#232323] mt-[30px] mb-5" />
+          <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] mx-auto">
+            <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+              {contactLinks.map(({ title, links }, index) => (
+                <div className="flex flex-col gap-4" key={index}>
+                  <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
+                    {title}
+                  </h3>
+                  {links.map(({ text, imgSrc, link }, idx) =>
+                    text.includes("503") ? (
+                      <div
+                        key={text}
+                        className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-start font-medium"
+                      >
+                        <Image
+                          className="mt-1 w-5"
+                          src={imgSrc}
+                          alt="location"
+                          width="20"
+                          height="20"
+                        />
 
                     {text}
                   </div>

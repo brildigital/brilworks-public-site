@@ -73,8 +73,8 @@
   gap: 2rem 7rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex: 1;
-  @media only screen and (max-width: 1023px) and (min-width: 767px) {
-    gap: 2rem 0 !important;
+  @media only screen and (max-width: 1366px) and (min-width: 767px) {
+    gap: 1rem 0 !important;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }

@@ -325,6 +325,9 @@ input[type="number"] {
   font-display: swap;
   color: var(--color_black);
   line-height: 2.5;
+  @media only screen and (max-width: 1366px) and (min-width: 767px) {
+    line-height: 1.75;
+  }
 }
 .mega_menu_txt p.font-Urbanist {
   font-size: var(--font_16);
@@ -332,6 +335,9 @@ input[type="number"] {
   font-display: swap;
   color: var(--color_black);
   line-height: 2.5;
+  @media only screen and (max-width: 1366px) and (min-width: 767px) {
+    line-height: 1.75;
+  }
 }
 
 .sec1_txt_position {
@@ -923,7 +929,6 @@ textarea.form-control-txt {
 
 .faq-bottom .accordion-item {
   border-radius: 20px !important;
-  /* border: 1px solid #00dfb8 !important; */
   border: 1px solid var(--theme-color) !important;
   padding: 2rem !important;
   margin-bottom: 20px !important;

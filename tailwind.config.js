@@ -42,6 +42,8 @@ module.exports = {
         "gradient-usecase": "linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)",
         "blue-gradient":
           "linear-gradient(87.38deg, #0182EA 35.49%, #0182EA 43.25%, #01DBD4 51.02%)",
+        "new-gradient":
+          "linear-gradient(126.47deg, #0182EA 1.83%, #0182EA 34.84%, #01DBD4 67.84%, #01DBD4 93.78%)",
       },
       dropShadow: {
         "book-shadow": "10px 10px 15px rgba(0, 0, 0, 0.3)",

@@ -77,8 +77,9 @@ const NewHeader = () => {
           <div
             className={`flex items-center justify-between text-colorBlack ${
               pathname.startsWith("/portfolio/") ||
-              pathname.startsWith("/gist/")
-                ? "container max-w-[1300px] px-10 mx-auto"
+              pathname.startsWith("/ai-solutions/") ||
+              pathname.startsWith("/ebooks/")
+                ? "container max-w-[1300px] md:px-10 px-6 mx-auto"
                 : "lg:w-[90%] w-[88%] mx-auto"
             }`}
           >
