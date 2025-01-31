@@ -321,6 +321,22 @@ const AISolutionsMenuItems = [
         name: "My SQL Chatbot",
         path: "/ai-solutions/my-sql-chatbot/",
       },
+      {
+        name: "AI Chat with CSV Excel",
+        path: "/ai-solutions/ai-chat-with-csv-excel/",
+      },
+      {
+        name: "AI Website Chat",
+        path: "/ai-solutions/ai-website-chat/",
+      },
+      {
+        name: "AI Whatsapp Chat Automation",
+        path: "/ai-solutions/ai-whatsapp-chat-automation/",
+      },
+      {
+        name: "AI Powered PRD Generator",
+        path: "/ai-solutions/ai-powered-prd-generator/",
+      },
     ],
   },
 ];
