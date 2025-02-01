@@ -1,10 +1,25 @@
 import { Suspense } from "react";
-import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
-import AISolutions from "@/app/components/AISolutions/AISolutions";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
-import AISolutionsFAQ from "@/app/components/AISolutions/AISolutionsFAQ";
-import WhatUserSays from "@/app/components/AISolutions/WhatUserSays";
-import AISolutionsCTA from "@/app/components/AISolutions/AISolutionsCTA";
+import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
+import AISolutionsFirstSection from "@/app/components/AISolutions/AISolutions";
+import AIWorking from "@/app/components/AISolutions/AIWorking";
+
+const AISeamlessIntegration = dynamic(() =>
+  import("@/app/components/AISolutions/AISeamlessIntegration")
+);
+const AICaseStudies = dynamic(() =>
+  import("@/app/components/AISolutions/AICaseStudies")
+);
+const WhatUserSays = dynamic(() =>
+  import("@/app/components/AISolutions/WhatUserSays")
+);
+const AISolutionsCTA = dynamic(() =>
+  import("@/app/components/AISolutions/AISolutionsCTA")
+);
+const AISolutionsFAQ = dynamic(() =>
+  import("@/app/components/AISolutions/AISolutionsFAQ")
+);
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -106,6 +121,8 @@ export default async function Page({ params }) {
     title,
     videoLink,
     description,
+    buttontext,
+    buttonURL,
     Working,
     what_users_say,
     seamless_integration,
@@ -115,7 +132,16 @@ export default async function Page({ params }) {
   return (
     <Suspense fallback={<FetchDataSpinner />}>
       <div className="portfolio md:mt-32 mt-24 flex flex-col gap-14 md:gap-28 w-full">
-        <AISolutions data={storyData.story} />
+        <AISolutionsFirstSection
+          title={title}
+          description={description}
+          videoLink={videoLink}
+          buttontext={buttontext}
+          buttonURL={buttonURL}
+        />
+        <AIWorking data={Working} />
+        <AISeamlessIntegration data={seamless_integration} />
+        <AICaseStudies />
         <WhatUserSays userSaysData={what_users_say} />
         <AISolutionsCTA CTA={CTA?.[0]} />
         <AISolutionsFAQ faqData={FAQ} />

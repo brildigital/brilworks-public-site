@@ -74,12 +74,14 @@ const page = () => {
     <>
       <Script
         defer
+        id="breadcrumbs"
         strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
       <Script
         defer
+        id="homepage-faq"
         strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}

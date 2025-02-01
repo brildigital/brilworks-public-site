@@ -22,7 +22,6 @@ export async function getEbooksData(page_no, limit_per_page, search_query) {
   let stories = await Storyblok.get("cdn/stories", apiParams, {
     next: { revalidate: 3600 },
   });
-  console.log("Stories", stories);
   return {
     storyData: stories.data.stories,
     totalData: stories.total,
