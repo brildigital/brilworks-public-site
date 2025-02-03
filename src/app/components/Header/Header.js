@@ -143,15 +143,15 @@ const NewHeader = () => {
               </div>
             </div>
             <div className="flex items-center gap-5">
-              {pathname.startsWith("/portfolio/") ? (
+              {/* {pathname.startsWith("/portfolio/") ? (
                 <BrilworksButton
                   innerClassName="text-base"
                   onClick={() => setOpenNav(false)}
                   label="Let's Talk"
                 />
-              ) : (
-                <Button onClick={() => setOpenNav(false)} label="Let's Talk" />
-              )}
+              ) : ( */}
+              <Button onClick={() => setOpenNav(false)} label="Let's Talk" />
+              {/* )} */}
               <IconButton
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"

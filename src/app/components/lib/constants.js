@@ -325,10 +325,10 @@ const AISolutionsMenuItems = [
         name: "AI Website Chat",
         path: "/ai-solutions/ai-website-chat/",
       },
-      {
-        name: "AI Chat with CSV Excel",
-        path: "/ai-solutions/ai-chat-with-csv-excel/",
-      },
+      // {
+      //   name: "AI Chat with CSV Excel",
+      //   path: "/ai-solutions/ai-chat-with-csv-excel/",
+      // },
       {
         name: "AI Powered PRD Generator",
         path: "/ai-solutions/ai-powered-prd-generator/",
