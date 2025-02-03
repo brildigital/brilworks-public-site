@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Heading from "../HTMLComponents/Heading";
 
 const AICaseStudies = () => {
   const caseStudies = [
@@ -23,28 +25,39 @@ const AICaseStudies = () => {
     },
   ];
   return (
-    <section className="p-8 flex flex-col gap-6 md:gap-8 container max-w-[1440px] mx-auto px-6 md:px-14 xl:px-28">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl text-center font-semibold">
-        Case Studies
-      </h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {caseStudies.map((study, index) => (
-          <div
-            key={index}
-            className="p-6 rounded-2xl shadow-md border border-gray-200 flex flex-col justify-between"
-          >
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{study.title}</h3>
-              <p className="text-gray-600 mb-4">{study.description}</p>
-            </div>
-            <Link
-              href="#"
-              className="text-blue-500 font-medium flex items-center hover:underline"
+    <section className="bg-sectionBG md:py-10 lg:py-[60px] py-6">
+      <div className="flex flex-col gap-6 md:gap-8 container max-w-[1440px] mx-auto px-6 md:px-14 xl:px-28">
+        <Heading
+          className="text-center"
+          type="h2"
+          data={`<span class="h1-border-b">Case Studies</span>`}
+        />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {caseStudies.map((study, index) => (
+            <div
+              key={index}
+              className="p-5 rounded-2xl shadow-md border border-borderGray flex flex-col justify-between bg-colorWhite"
             >
-              {study.linkText} <span className="ml-2">&rarr;</span>
-            </Link>
-          </div>
-        ))}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">{study.title}</h3>
+                <p className="!mb-4">{study.description}</p>
+              </div>
+              <Link
+                href="#"
+                className="text-themeColor font-medium flex items-center hover:underline"
+              >
+                {study.linkText}
+                <Image
+                  className="w-4 ml-2"
+                  src="/images/arrow-blue.svg"
+                  width={13}
+                  height={16}
+                  alt="right-arrow"
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

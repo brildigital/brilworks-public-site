@@ -10,6 +10,7 @@ const AISolutionsCTA = ({ CTA }) => {
           <h3 className="text-center !text-colorWhite mb-[30px] text-3xl md:text-5xl font-medium leading-[50px] mx-auto px-4">
             {CTA?.title}
           </h3>
+
           <div className="flex items-center justify-center">
             <BrilworksButton
               className="button-white hover:!text-colorWhite hover:!bg-themeColor"

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import Heading from "../HTMLComponents/Heading";
 
 const AISolutionsFAQ = ({ faqData }) => {
   const [open, setOpen] = useState(1);
@@ -11,9 +12,11 @@ const AISolutionsFAQ = ({ faqData }) => {
       <div className="container max-w-[1280px] mx-auto">
         <div className="md:w-[90%] w-full mx-auto faq-bottom">
           <div className="service_sec3 md:text-center text-left solutions">
-            <h2 className="xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-8">
-              Frequently Asked Questions
-            </h2>
+            <Heading
+              className="text-center md:pb-10 pb-8"
+              type="h2"
+              data={`<span class="h1-border-b">Frequently Asked Questions</span>`}
+            />
           </div>
 
           <div className="">
