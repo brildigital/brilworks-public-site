@@ -8,6 +8,7 @@ import DevelopSuccessStory from "./DevelopSuccessStory";
 import StoryblokClient from "storyblok-js-client";
 import Image from "next/image";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import Heading from "../HTMLComponents/Heading";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -122,10 +123,11 @@ const Portfolio = () => {
                   </div>
                   <div className="basis-1/2">
                     <div className="portfolio_sec1_txt1">
-                      <p
-                        className="!leading-normal"
-                        dangerouslySetInnerHTML={{ __html: content?.title }}
-                      ></p>
+                      <Heading
+                        type="h2"
+                        className="xl:!text-[40px] lg:!text-4xl text-[30px] !font-semibold lg:!leading-normal md:pb-8 pb-1"
+                        data={content?.title}
+                      />
                     </div>
                     <div className="portfolio_sec1_txt2 portfolio_description_width">
                       <p>

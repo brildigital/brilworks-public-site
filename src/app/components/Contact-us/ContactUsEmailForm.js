@@ -82,7 +82,7 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
                 value={formData.name}
                 required
                 onChange={handleChange}
-                autoFocus
+                autoFocus={inquiryForm}
               />
             </span>
           </p>

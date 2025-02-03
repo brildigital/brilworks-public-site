@@ -8,9 +8,6 @@ import AIWorking from "@/app/components/AISolutions/AIWorking";
 const AISeamlessIntegration = dynamic(() =>
   import("@/app/components/AISolutions/AISeamlessIntegration")
 );
-const AICaseStudies = dynamic(() =>
-  import("@/app/components/AISolutions/AICaseStudies")
-);
 const WhatUserSays = dynamic(() =>
   import("@/app/components/AISolutions/WhatUserSays")
 );
@@ -141,7 +138,7 @@ export default async function Page({ params }) {
         />
         <AIWorking data={Working} />
         <AISeamlessIntegration data={seamless_integration} />
-        <AICaseStudies />
+        {/* <AICaseStudies /> */}
         <WhatUserSays userSaysData={what_users_say} />
         <AISolutionsCTA CTA={CTA?.[0]} />
         <AISolutionsFAQ faqData={FAQ} />
