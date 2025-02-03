@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import { BrilworksButton } from "../Common/BrilworksBtn";
 import Heading from "../HTMLComponents/Heading";
+import AIGenerateField from "./AIGenerateField";
+import { usePathname } from "next/navigation";
 
 function AISolutionsFirstSection({
   title,
@@ -11,6 +13,7 @@ function AISolutionsFirstSection({
   buttonURL,
 }) {
   const videoRef = useRef();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -28,11 +31,15 @@ function AISolutionsFirstSection({
         />
         <p className="text-lg md:text-xl text-center">{description || ""}</p>
       </div>
+      {/* {pathname === "/ai-solutions/ai-powered-prd-generator/" ? (
+        <AIGenerateField />
+      ) : ( */}
       <BrilworksButton
         label={buttontext || "Get Started Now"}
         redirect={buttonURL?.url || "/contact-us/"}
         {...(buttonURL?.url ? { target: "_blank" } : {})}
       />
+      {/* )} */}
 
       <div className="bg-gradient-to-br from-blue-300 to-white p-2 md:p-12 flex-center-center rounded-3xl">
         <video
