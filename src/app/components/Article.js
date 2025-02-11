@@ -8,7 +8,11 @@ import { useMediaQuery } from "react-responsive";
 import { getblogData } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
-import { blogAuthor, formattedDate } from "./lib/commonFunction";
+import {
+  blogAuthor,
+  formattedDate,
+  formatTitleFromUrl,
+} from "./lib/commonFunction";
 import BlogContactForm from "./Blog/BlogContactForm";
 import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
@@ -70,12 +74,15 @@ const Article = ({ blok }) => {
     return parse(html, {
       replace: (node, index) => {
         if (node.type === "tag" && node.name === "img") {
-          node.attribs.loading = "lazy";
-          node.attribs.decoding = "async";
-          node.attribs.width = "736";
-          node.attribs.height = "200";
-          node.attribs.alt = "blog-image";
-          node.attribs.title = "blog-img-title";
+          node.attribs = {
+            ...node.attribs,
+            loading: "lazy",
+            decoding: "async",
+            width: node.attribs.width ?? "736",
+            height: node.attribs.height ?? "200",
+            alt: node.attribs.alt ?? formatTitleFromUrl(node.attribs.src),
+            title: formatTitleFromUrl(node.attribs.src),
+          };
         }
 
         if (node.type === "tag" && node.name === "a") {
