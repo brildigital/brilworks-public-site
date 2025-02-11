@@ -276,3 +276,11 @@ export const getPageNumbers = (currentPage, totalQandA, ITEMS_PER_PAGE) => {
   }
   return pages;
 };
+
+export function formatTitleFromUrl(url) {
+  const fileName = url.split("/").pop().split(".")[0]; // Extract filename without extension
+  return fileName
+    .split("-") // Split by hyphen
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter
+    .join(" "); // Join words with spaces
+}
