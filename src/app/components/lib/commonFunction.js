@@ -265,3 +265,22 @@ export const handleDownloadFile = async (downloadFileUrl) => {
     console.error("Error downloading the file:", error);
   }
 };
+
+export const getPageNumbers = (currentPage, totalQandA, ITEMS_PER_PAGE) => {
+  const pages = [];
+  for (let i = -2; i <= 2; i++) {
+    const page = currentPage + i;
+    if (page > 0 && page <= Math.ceil(totalQandA / ITEMS_PER_PAGE)) {
+      pages.push(page);
+    }
+  }
+  return pages;
+};
+
+export function formatTitleFromUrl(url) {
+  const fileName = url.split("/").pop().split(".")[0]; // Extract filename without extension
+  return fileName
+    .split("-") // Split by hyphen
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter
+    .join(" "); // Join words with spaces
+}
