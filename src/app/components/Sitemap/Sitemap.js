@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import {
+  AISolutionsMenuItems,
   blogListStaticData,
   industryMenuItems,
   servicesMenuItems,
@@ -337,6 +338,35 @@ const Sitemap = () => {
               </li>
             </div>
           </div>
+        </div>
+        <div className="mb-4">
+          <h3 className="text-2xl border-b border-b-[#c5ccd0] font-bold pb-2 mb-3">
+            AI SOLUTIONS
+          </h3>
+          {AISolutionsMenuItems.map((mainSection) => (
+            <div key={mainSection.name}>
+              <div
+                className="flex items-center gap-2 w-full my-2"
+                key={mainSection.name}
+              >
+                {renderTickMarkIcon()}
+                <div>
+                  <h2 className="text-base font-bold">{mainSection.name}</h2>
+                </div>
+              </div>
+              <div className="grid gap-2 md:grid-cols-2 grid-cols-1 mb-4">
+                {mainSection.subSections.map((subSection) => (
+                  <div key={subSection.name}>
+                    <li>
+                      <Link href={subSection.path} className="font-medium">
+                        {subSection.name}
+                      </Link>
+                    </li>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mb-4">

@@ -313,7 +313,7 @@ const hireTeamMenuItems = [
   },
 ];
 
-const AISolutionsMenuItems = [
+export const AISolutionsMenuItems = [
   {
     name: "Solutions",
     subSections: [
@@ -547,6 +547,26 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
     lastmod: "2024-12-30T12:04:49.528Z",
   },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-website-chat/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-chat-with-csv-excel/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-powered-prd-generator/",
+    lastmod: "2025-02-09T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-whatsapp-chat-automation/",
+    lastmod: "2025-02-09T12:04:49.528Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/portfolio/vugo/",
   //   lastmod: "2024-09-25T12:04:49.528Z",
@@ -671,6 +691,121 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "15 Best Mobile Application Testing Tools for 2025",
+    loc: "https://www.brilworks.com/blog/mobile-application-testing-tools/",
+    lastmod: "2025-02-11T10:00:48.297Z",
+  },
+  {
+    name: "A Comprehensive Guide to Cross-Platform Development Success",
+    loc: "https://www.brilworks.com/blog/guide-to-cross-platform-mobile-app-development/",
+    lastmod: "2025-02-11T09:09:53.058Z",
+  },
+  {
+    name: "The Role of IoT in Mobile App Development: Shaping the Future",
+    loc: "https://www.brilworks.com/blog/iot-in-mobile-app-development/",
+    lastmod: "2025-02-07T11:28:47.587Z",
+  },
+  {
+    name: "How Mobile Health Apps Improve Patient Engagement",
+    loc: "https://www.brilworks.com/blog/mobile-health-apps-for-patient-engagement/",
+    lastmod: "2025-02-06T11:40:19.449Z",
+  },
+  {
+    name: "Mobile App Security Best Practices [2025]",
+    loc: "https://www.brilworks.com/blog/mobile-app-security-best-practices/",
+    lastmod: "2025-02-06T05:38:13.353Z",
+  },
+  {
+    name: "Why UX/UI Design is Crucial for Mobile App Success",
+    loc: "https://www.brilworks.com/blog/ux-ui-design-for-mobile-app-development/",
+    lastmod: "2025-02-07T07:59:46.614Z",
+  },
+  {
+    name: "11 Most Common App Development Mistakes That Developers Make",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-mistakes/",
+    lastmod: "2025-02-04T05:08:10.659Z",
+  },
+  {
+    name: "HIPAA Compliant App Development: A Complete Guide for Developers",
+    loc: "https://www.brilworks.com/blog/hipaa-compliant-app-development/",
+    lastmod: "2025-02-07T05:13:58.155Z",
+  },
+  {
+    name: "Choosing the Right Tech Stack for Mobile App Development",
+    loc: "https://www.brilworks.com/blog/tech-stack-for-mobile-app-development/",
+    lastmod: "2025-02-03T04:48:06.039Z",
+  },
+  {
+    name: "10 Healthcare App Features Every Developer Should Know [+5 Bonus]",
+    loc: "https://www.brilworks.com/blog/healthcare-app-features/",
+    lastmod: "2025-02-05T04:52:19.436Z",
+  },
+  {
+    name: "Top Features Every Successful Mobile App Must Have",
+    loc: "https://www.brilworks.com/blog/top-features-for-mobile-app/",
+    lastmod: "2025-01-30T11:17:42.408Z",
+  },
+  {
+    name: "Choosing the Right Mobile App Development Partner- 8 Practical Tips",
+    loc: "https://www.brilworks.com/blog/how-to-choose-the-right-mobile-app-development-company/",
+    lastmod: "2025-01-30T09:14:55.326Z",
+  },
+  {
+    name: "How Much Does It Really Cost to Build an App in 2025?",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-costs/",
+    lastmod: "2025-01-29T11:12:17.441Z",
+  },
+  {
+    name: "A Complete Guide for Mobile App Development in 2025",
+    loc: "https://www.brilworks.com/blog/guide-for-mobile-app-development/",
+    lastmod: "2025-01-30T04:22:05.746Z",
+  },
+  {
+    name: "A Complete Guide to Post-Launch Mobile App Maintenance",
+    loc: "https://www.brilworks.com/blog/mobile-app-maintenance/",
+    lastmod: "2025-01-28T04:56:00.433Z",
+  },
+  {
+    name: "7 Key Reasons to Choose Agile Methodology for Mobile App Development",
+    loc: "https://www.brilworks.com/blog/agile-mobile-app-development/",
+    lastmod: "2025-02-05T07:14:36.453Z",
+  },
+  {
+    name: "What’s Next? 10 Trends Driving Mobile App Development in 2025",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-trends/",
+    lastmod: "2025-01-22T10:15:09.584Z",
+  },
+  {
+    name: "How Microservices Enhances Application Development",
+    loc: "https://www.brilworks.com/blog/how-microservices-enhances-application-development/",
+    lastmod: "2025-01-17T15:27:57.282Z",
+  },
+  {
+    name: "Top React Native Features Startups Should Explore in 2025",
+    loc: "https://www.brilworks.com/blog/top-react-native-features/",
+    lastmod: "2025-01-31T06:13:31.640Z",
+  },
+  {
+    name: "React Native vs Native Development: Pros and Cons.",
+    loc: "https://www.brilworks.com/blog/react-native-vs-native-development/",
+    lastmod: "2025-01-27T08:21:55.603Z",
+  },
+  {
+    name: "Why React Native is Perfect for Cross-Platform Apps",
+    loc: "https://www.brilworks.com/blog/react-native-for-cross-platform-development/",
+    lastmod: "2025-01-29T06:49:56.125Z",
+  },
+  {
+    name: "Building High-Performance React Native Apps: Tips for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-app-performance-tips/",
+    lastmod: "2025-01-13T11:33:43.864Z",
+  },
+  {
+    name: "AI vs. Traditional Software Development: Which One Fits Your Business?",
+    loc: "https://www.brilworks.com/blog/ai-vs-traditional-software-development-which-one-fits-your-business-/",
+    lastmod: "2025-01-01T06:36:10.410Z",
+  },
   {
     name: "Streamlining Enterprise Application Development with Java Frameworks",
     loc: "https://www.brilworks.com/blog/application-development-with-java-frameworks/",
@@ -859,7 +994,7 @@ export const blogListStaticData = [
   {
     name: "How to Create An App and Make Money in 2024",
     loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
-    lastmod: "2024-11-25T06:49:53.339Z",
+    lastmod: "2025-01-30T12:42:29.924Z",
   },
   {
     name: "How Geneative AI transforms Supply Chain Operations",
@@ -1144,7 +1279,7 @@ export const blogListStaticData = [
   {
     name: "Build a ChatGPT-Like App on AWS: A Comprehensive Guide to Conversational AI Development",
     loc: "https://www.brilworks.com/blog/build-chatgpt-like-app-on-aws/",
-    lastmod: "2024-04-25T09:23:23.970Z",
+    lastmod: "2025-01-30T09:42:08.012Z",
   },
   {
     name: "AI & Low-Code/No-Code Tools: Reshaping the Workforce (2024 & Beyond)",
@@ -1224,7 +1359,7 @@ export const blogListStaticData = [
   {
     name: "Java Testing Tools: Essential Tools for Every Java Developer",
     loc: "https://www.brilworks.com/blog/java-testing-tools/",
-    lastmod: "2024-04-25T17:03:41.332Z",
+    lastmod: "2025-01-30T12:43:47.990Z",
   },
   {
     name: "What Is Generative AI? Exploring the Future of Creative AI Applications",
@@ -1399,7 +1534,7 @@ export const blogListStaticData = [
   {
     name: "What’s New in Spring Boot 3 for Java Developers in 2023",
     loc: "https://www.brilworks.com/blog/whats-new-in-spring-boot-3-for-java-developers-in-2023/",
-    lastmod: "2024-05-02T11:56:29.942Z",
+    lastmod: "2025-01-30T12:48:30.544Z",
   },
   {
     name: "Headless CMS Explained: Simplifying Content Management for Modern Web Development",
@@ -1449,7 +1584,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 Websites Built Using React.js",
     loc: "https://www.brilworks.com/blog/top-10-websites-built-using-react-js/",
-    lastmod: "2024-04-25T12:08:26.426Z",
+    lastmod: "2025-02-10T08:14:31.236Z",
   },
   {
     name: "Beyond ChatGPT: Trending AI Tools in 2023",

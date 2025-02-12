@@ -22,7 +22,7 @@ const HomePageBlogs = () => {
   //   "/application-development-services": "application-development",
   //   "/kubernetes-consulting-services/": "kubernetes-consulting",
   //   "/generative-ai-development-services/": "generative-ai",
-  //   "/digital-experience-services/": "digital-experience",
+  //   // "/digital-experience-services/": "digital-experience",
   //   // "/low-code-no-code-development-services/": "low-code-no-code",
   //   "/product-engineering-development-services/":
   //     "product-engineering-development",
@@ -55,7 +55,6 @@ const HomePageBlogs = () => {
   //           body: JSON.stringify({ data: newData }),
   //         }
   //       );
-
   //       if (!response.ok) {
   //         throw new Error("Failed to update JSON file");
   //       }
