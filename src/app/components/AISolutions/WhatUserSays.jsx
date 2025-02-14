@@ -21,9 +21,9 @@ const WhatUserSays = ({ userSaysData }) => {
         className="more-success-story"
         options={{
           gap: 24,
-          arrows: true,
+          arrows: isMobile || isTablet ? true : false,
           pagination: false,
-          isNavigation: true,
+          isNavigation: isMobile || isTablet ? true : false,
           perPage: isMobile ? 1 : isTablet ? 2 : 3,
         }}
       >
