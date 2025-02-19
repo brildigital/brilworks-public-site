@@ -512,10 +512,6 @@ export const sitemapData = [
     lastmod: "2024-10-15T12:04:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
-    lastmod: "2024-10-18T12:04:49.528Z",
-  },
-  {
     loc: "https://www.brilworks.com/our-process/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
@@ -587,30 +583,65 @@ export const sitemapData = [
   //   loc: "https://www.brilworks.com/portfolio/rastrack/",
   //   lastmod: "2024-09-25T12:04:49.528Z",
   // },
-
+  {
+    loc: "https://www.brilworks.com/portfolio/art-marketplace-app/",
+    lastmod: "2025-02-19T13:38:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/pet-finding-app/",
+    lastmod: "2025-02-19T12:38:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/educational-game-app/",
+    lastmod: "2025-02-19T12:48:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/crm-solution/",
+    lastmod: "2025-02-19T13:58:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/social-connectivity-app/",
+    lastmod: "2025-02-19T10:38:48.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/mobile-fitness-app/",
+    lastmod: "2025-02-19T11:19:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/react-native-helped-cut-costs/",
+    lastmod: "2025-02-19T13:35:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/healthcare-mobile-app/",
+    lastmod: "2025-02-19T13:31:44.468Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/mobile-app-for-e-commerce-client/",
+    lastmod: "2025-02-19T13:28:44.468Z",
+  },
   {
     loc: "https://www.brilworks.com/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T13:20:44.468Z",
   },
   {
     loc: "https://www.brilworks.com/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T13:38:44.468Z",
   },
   {
     loc: "https://www.brilworks.com/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T13:22:14.468Z",
   },
   {
     loc: "https://www.brilworks.com/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T16:38:41.468Z",
   },
   {
     loc: "https://www.brilworks.com/portfolio/ai-powered-platform-to-simplify-podcast-creation/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T13:48:42.468Z",
   },
   {
     loc: "https://www.brilworks.com/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
-    lastmod: "2024-10-09T13:38:44.468Z",
+    lastmod: "2025-01-09T13:38:44.468Z",
   },
   {
     loc: "https://www.brilworks.com/staff-augmentation/",
@@ -692,6 +723,41 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "React Native for MVP Development: The Smart Choice for Startups",
+    loc: "https://www.brilworks.com/blog/react-native-for-mvp-development/",
+    lastmod: "2025-02-19T07:11:11.164Z",
+  },
+  {
+    name: "How to Speed Up Mobile App Development with Agile",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-with-agile/",
+    lastmod: "2025-02-19T06:00:01.157Z",
+  },
+  {
+    name: "The Benefits of Hiring a Mobile App Development Company",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-company-hiring-benefits/",
+    lastmod: "2025-02-16T08:33:28.279Z",
+  },
+  {
+    name: "Healthcare Mobile App Development Best Practices [Compliance Tips]",
+    loc: "https://www.brilworks.com/blog/healthcare-mobile-app-development-best-practices/",
+    lastmod: "2025-02-17T07:03:56.304Z",
+  },
+  {
+    name: "Building an E-commerce App? Here's What You Need To Know",
+    loc: "https://www.brilworks.com/blog/e-commerce-mobile-app-development/",
+    lastmod: "2025-02-14T11:56:27.363Z",
+  },
+  {
+    name: "7 Key Mobile App Monetization Strategies: A Guide to Earning from Your App",
+    loc: "https://www.brilworks.com/blog/mobile-app-monetization-strategies/",
+    lastmod: "2025-02-12T11:40:28.001Z",
+  },
+  {
+    name: "The Role of Cloud Integration in Mobile Apps",
+    loc: "https://www.brilworks.com/blog/cloud-integration-in-mobile-apps/",
+    lastmod: "2025-02-12T06:27:32.687Z",
+  },
+  {
     name: "15 Best Mobile Application Testing Tools for 2025",
     loc: "https://www.brilworks.com/blog/mobile-application-testing-tools/",
     lastmod: "2025-02-11T10:00:48.297Z",
@@ -714,7 +780,7 @@ export const blogListStaticData = [
   {
     name: "Mobile App Security Best Practices [2025]",
     loc: "https://www.brilworks.com/blog/mobile-app-security-best-practices/",
-    lastmod: "2025-02-06T05:38:13.353Z",
+    lastmod: "2025-02-19T06:06:26.313Z",
   },
   {
     name: "Why UX/UI Design is Crucial for Mobile App Success",

@@ -114,8 +114,8 @@ const Portfolio = () => {
                         <Image
                           className="alignnone"
                           src={content?.images?.[0]?.filename}
-                          width="302"
-                          height="240"
+                          width="550"
+                          height="368"
                           alt={`casestudy-${index}`}
                         />
                       </div>

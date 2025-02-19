@@ -3,7 +3,7 @@ import { getEbooksData } from "../lib/getEbooks";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../Common/Button";
 
 const Ebooks = () => {
   const ITEMS_PER_PAGE = 8;
@@ -95,15 +95,12 @@ const Ebooks = () => {
                         </h3>
                       </div>
                       <div className="h-auto mt-auto">
-                        <Link
-                          className="w-full"
+                        <Button
                           as={`/ebooks/${ebooks?.slug}`}
                           href={`/ebooks/[slug]`}
-                        >
-                          <button className="w-full common-button gap-2 outline-none overflow-hidden whitespace-nowrap transition-all duration-300 button-primary !text-[#fff]">
-                            Download
-                          </button>
-                        </Link>
+                          className="w-full"
+                          label="Download"
+                        />
                       </div>
                     </div>
                   );

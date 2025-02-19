@@ -60,8 +60,8 @@ const MoreSuccessStoriesSection = () => {
                       <Image
                         className="rounded-t-2xl lg:h-[410px] h-auto"
                         src={content?.images?.[0]?.filename}
-                        width="302"
-                        height="240"
+                        width="570"
+                        height="400"
                         alt={`casestudy-${index}`}
                       />
                       <div className="md:px-5 pl-5 pr-2 md:py-7 py-4">

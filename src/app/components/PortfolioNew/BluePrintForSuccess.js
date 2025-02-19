@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioContactForm from "./PortfolioContactForm";
 
-const BluePrintForSuccess = ({ blueprintForSuccess }) => {
+const BluePrintForSuccess = ({ blueprintForSuccess, casestudyFileUrl }) => {
   const blueprintForSuccessDescription =
     blueprintForSuccess?.[0]?.Description2 || "";
 
@@ -39,7 +39,10 @@ const BluePrintForSuccess = ({ blueprintForSuccess }) => {
           </div>
           <div className="lg:w-1/2 w-full bg-colorWhite p-[30px] rounded-[30px]">
             <p className="text-2xl !mb-5">Enter the details.</p>
-            <PortfolioContactForm companyNotRequired={true} />
+            <PortfolioContactForm
+              companyNotRequired={true}
+              downloadFileUrl={casestudyFileUrl}
+            />
           </div>
         </div>
       </div>

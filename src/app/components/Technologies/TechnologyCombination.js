@@ -169,8 +169,8 @@ const TechnologyCombination = () => {
 
       <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
         <Button
-          innerClassName="flex items-center justify-center gap-2 "
-          className="!py-1 !px-4 !bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
+          innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
+          className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
           redirect="#section10_service"
           label={buttonText}
           icon={

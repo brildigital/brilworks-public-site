@@ -105,9 +105,12 @@ const SeeingBelieving = () => {
                     />
                     <div className="flex flex-col justify-between flex-1 p-4 items-start">
                       <div className="w-full flex items-center justify-between">
-                        <div className="text-2xl font-bold text-themeColor mb-1">
-                          {content?.title}
-                        </div>
+                        <div
+                          className="text-2xl font-bold text-themeColor mb-1"
+                          dangerouslySetInnerHTML={{
+                            __html: content?.title.replace("h1-border-b", ""),
+                          }}
+                        />
                       </div>
                       <p className="text-colorGray text-base">
                         {content?.description?.split(" ")?.length > 31
