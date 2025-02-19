@@ -1,12 +1,10 @@
 <svg width="569" height="303" viewBox="0 0 569 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_483_56)">
-<rect x="0.228516" y="0.858887" width="568" height="302" rx="15" fill="#0D9A9A" style="fill:#0D9A9A;fill:color(display-p3 0.0510 0.6039 0.6039);fill-opacity:1;"/>
-<rect x="403.229" y="-10.1437" width="46" height="400.688" transform="rotate(-30 403.229 -10.1437)" fill="#1BA5A5" style="fill:#1BA5A5;fill:color(display-p3 0.1049 0.6458 0.6458);fill-opacity:1;"/>
-<rect x="342.229" y="-10.144" width="46" height="400.688" transform="rotate(-30 342.229 -10.144)" fill="#1BA5A5" style="fill:#1BA5A5;fill:color(display-p3 0.1049 0.6458 0.6458);fill-opacity:1;"/>
+<mask id="mask0_939_1339" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="569" height="303">
+<path d="M553.23 0.859375H15.2305C6.9462 0.859375 0.230469 7.5751 0.230469 15.8594V287.859C0.230469 296.144 6.9462 302.859 15.2305 302.859H553.23C561.515 302.859 568.23 296.144 568.23 287.859V15.8594C568.23 7.5751 561.515 0.859375 553.23 0.859375Z" fill="white" style="fill:white;fill-opacity:1;"/>
+</mask>
+<g mask="url(#mask0_939_1339)">
+<path d="M553.23 0.859375H15.2305C6.9462 0.859375 0.230469 7.5751 0.230469 15.8594V287.859C0.230469 296.144 6.9462 302.859 15.2305 302.859H553.23C561.515 302.859 568.23 296.144 568.23 287.859V15.8594C568.23 7.5751 561.515 0.859375 553.23 0.859375Z" fill="#017EEB" style="fill:#017EEB;fill:color(display-p3 0.0039 0.4941 0.9216);fill-opacity:1;"/>
+<path d="M443.068 -33.1426L403.23 -10.1426L603.574 336.863L643.412 313.863L443.068 -33.1426Z" fill="#3A8FDB" style="fill:#3A8FDB;fill:color(display-p3 0.2275 0.5608 0.8588);fill-opacity:1;"/>
+<path d="M382.068 -33.1426L342.23 -10.1426L542.574 336.863L582.412 313.863L382.068 -33.1426Z" fill="#3A8FDB" style="fill:#3A8FDB;fill:color(display-p3 0.2289 0.5614 0.8583);fill-opacity:1;"/>
 </g>
-<defs>
-<clipPath id="clip0_483_56">
-<rect x="0.228516" y="0.858887" width="568" height="302" rx="15" fill="white" style="fill:white;fill-opacity:1;"/>
-</clipPath>
-</defs>
 </svg>

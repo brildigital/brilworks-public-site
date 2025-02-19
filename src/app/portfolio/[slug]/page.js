@@ -95,6 +95,7 @@ export default async function Page({ params }) {
     description,
     images,
     buttontext,
+    casestudyFileUrl,
     KeyValueBlock,
     ProcessAndEnhanceBlock,
     ProjectOverview,
@@ -119,7 +120,10 @@ export default async function Page({ params }) {
       <ProjectOverviewSection projectOverview={ProjectOverview} />
       <ProjectChallengesSection projectChallenges={ProjectChallenges} />
       {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
-      <BluePrintForSuccess blueprintForSuccess={BlueprintForSuccess} />
+      <BluePrintForSuccess
+        blueprintForSuccess={BlueprintForSuccess}
+        casestudyFileUrl={casestudyFileUrl?.url}
+      />
       {/* <SuccessThroughClientEyes /> */}
       {/* <PortfolioCTASection ctaData={CTA} /> */}
       <MoreSuccessStoriesSection />

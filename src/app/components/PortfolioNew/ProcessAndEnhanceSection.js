@@ -74,7 +74,8 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                       </div>
                       <p
                         className={`${
-                          index === 2
+                          index === 2 &&
+                          description?.trim()?.split(/\s+/)?.length < 3
                             ? "md:w-[30%] w-full"
                             : "md:w-[60%] w-full"
                         } !mb-4 md:text-xl text-lg text-center`}

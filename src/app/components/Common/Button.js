@@ -57,13 +57,14 @@ const Button = ({
       {...props}
     >
       {type === "submit" ? (
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 c-padding">
           {buttonIcon}
           {label}
         </div>
       ) : (
         <Link
-          className={innerClassName}
+          className={`${innerClassName} c-padding`}
+          // className={innerClassName}
           href={redirect ? redirect : "/contact-us/"}
           onClick={
             scrollingButton

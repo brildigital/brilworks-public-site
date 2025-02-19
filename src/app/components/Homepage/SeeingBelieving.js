@@ -26,6 +26,19 @@ const SeeingBelieving = () => {
   //     });
   // }, []);
 
+  // const staticPortfolioList =
+  //   caseStudyData?.length &&
+  //   caseStudyData.map((data) => {
+  //     console.log("object", data);
+  //     return {
+  //       title: data?.content?.title,
+  //       link: `/${data?.full_slug}/`,
+  //       description: data?.content?.description,
+  //       image: data?.content?.images?.[0]?.filename,
+  //       alt: data?.content?.images?.[0]?.meta_data?.alt,
+  //     };
+  //   });
+
   const portfolioItems = [
     {
       title: "VUGO",
@@ -85,41 +98,40 @@ const SeeingBelieving = () => {
 
   const portfolioDynamicItems = [
     {
-      title: "Ultimate Recruitment Referral Platform for Streamlined Hiring",
-      link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+      title: "Building a Swipe-Based Platform Connecting Artists and Buyers",
+      link: "/portfolio/art-marketplace-app/",
       description:
-        "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit.",
+        "We created a dynamic platform that allows art lovers to discover new pieces, communicate directly with artists, and complete purchases with ease, fostering a vibrant art community.",
       image:
-        "https://a.storyblok.com/f/219851/640x455/0b7aa28319/recruitment.webp",
-      alt: "recruitment",
+        "https://a.storyblok.com/f/219851/2000x1333/b7c5823a97/social-marketplace-app.webp",
+      alt: "Social marketplace app",
     },
     {
-      title: "Innovative Platform for Comprehensive Supply Chain Management",
-      link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+      title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
+      link: "/portfolio/pet-finding-app/",
       description:
-        "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry.",
+        "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
       image:
-        "https://a.storyblok.com/f/219851/640x427/3c31b2f20f/mahakoshal_logo_screen_1.webp",
-      alt: "mahakoshal_logo_screen_1",
+        "https://a.storyblok.com/f/219851/2000x1333/72dd9ce8ca/pet-finder-app.webp",
+      alt: "Pet finder app",
     },
     {
-      title: "Boosting App Performance for Cultural Organizations",
-      link: "/portfolio/performance-optimization-of-a-standalone-app-for-a-cultural-institution/",
+      title: "Making Early Learning Fun with An Interactive Educational Game",
+      link: "/portfolio/educational-game-app/",
       description:
-        "Performance optimization of a standalone app featuring high-resolution historical imagery.",
+        "We developed a safe, mobile game for kids aged 2-6, using gamified activities to teach alphabets, numbers, colors, and shapes in an engaging way.",
       image:
-        "https://a.storyblok.com/f/219851/640x455/e29397d6cb/app-for-cultural-institution.webp",
-      alt: "cultural-institution",
+        "https://a.storyblok.com/f/219851/2000x1333/e42efd8c00/educational-mobile-game.webp",
+      alt: "Educational mobile game",
     },
     {
-      title:
-        "A Powerful Inventory Management App to Reduce Order Processing Time",
-      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+      title: "Streamlining Energy Audits with An All-In-One CRM Solution",
+      link: "/portfolio/crm-solution/",
       description:
-        "Developing a mobile inventory management solution for a leading seat manufacturer.",
+        "We built a specialized CRM platform that automates energy auditing, connecting key stakeholders and optimizing workflows from scheduling to invoicing.",
       image:
-        "https://a.storyblok.com/f/219851/640x455/41ceadbf42/inventory-management.webp",
-      alt: "inventory-mgmt",
+        "https://a.storyblok.com/f/219851/2000x1333/d8a21f07f0/consulting-app.webp",
+      alt: "Consulting App",
     },
   ];
 

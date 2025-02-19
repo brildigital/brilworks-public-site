@@ -66,6 +66,10 @@ const PortfolioContactForm = ({
       setIsSubmitting(false);
     }
   };
+
+  const submitText = downloadFileUrl ? "Download" : "Submit";
+  const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
+
   return (
     <form id="case-study-contact-form" onSubmit={handleSubmit}>
       {description && (
@@ -150,7 +154,7 @@ const PortfolioContactForm = ({
         type="submit"
         className="mt-2 w-full font-bold"
         icon={isSubmitting ? <Loader /> : ""}
-        label={isSubmitting ? "Submitting" : "Submit"}
+        label={isSubmitting ? submitLoadingText : submitText}
         variant="primary"
         disabled={isSubmitting}
       />
