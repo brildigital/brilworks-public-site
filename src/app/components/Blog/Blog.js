@@ -303,7 +303,6 @@ const Blog = () => {
                         content?.Image?.alt ||
                         `Blog-List-banner-${index + 1}`
                       }
-                      quality={40}
                       width="300"
                       height="150"
                       priority={index === 0}
