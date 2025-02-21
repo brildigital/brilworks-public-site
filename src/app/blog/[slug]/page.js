@@ -258,7 +258,6 @@ export default async function Page(props) {
                       data?.story?.content.image?.filename ||
                       data?.story?.content.mobile_banner?.filename
                     }
-                    quality={100}
                     alt={
                       data?.story?.content.image?.alt ||
                       data?.story?.content?.title.replaceAll(" ", "-") +
