@@ -248,8 +248,8 @@ export default async function Page(props) {
                     width={828}
                     height={169}
                     priority
+                    unoptimized
                     sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                    media="(max-width: 767px)"
                   />
                   <Image
                     className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
@@ -265,6 +265,7 @@ export default async function Page(props) {
                     width={828}
                     height={169}
                     priority
+                    unoptimized
                     sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   />
                 </Suspense>

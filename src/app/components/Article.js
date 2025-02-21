@@ -520,6 +520,7 @@ const Article = ({ blok }) => {
                         }
                         width={550}
                         height={283}
+                        unoptimized
                       />
                     </div>
                     <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
