@@ -297,7 +297,8 @@ const Blog = () => {
                       height="150"
                       priority={index === 0}
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                      media="(max-width: 767px)"
+                      // media="(max-width: 767px)"
+                      unoptimized
                     />
                     <Image
                       className="hidden md:block rounded-[30px]"
@@ -315,6 +316,7 @@ const Blog = () => {
                       height="230"
                       priority={index === 0}
                       sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      unoptimized
                     />
                   </div>
                   <div className="pt-[1rem] px-[1rem] pb-[1.5rem] sec9_box_home blog-hover">
