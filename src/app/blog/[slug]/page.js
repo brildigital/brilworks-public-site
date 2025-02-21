@@ -246,7 +246,6 @@ export default async function Page(props) {
                         "-banner-image"
                     }
                     width={828}
-                    quality={30}
                     height={169}
                     priority
                     sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
