@@ -11,6 +11,7 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
+import { generateRatingSchema } from "@/app/components/lib/schemaCode";
 
 export async function generateMetadata({ params }) {
   const { props: data } = await fetchData(params);
@@ -68,6 +69,7 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params);
@@ -83,8 +85,46 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
+  const showRatingBasedOnPathname = {
+    "comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: "4.7",
+      ratingCount: "139",
+    },
+    "cross-platform-app-development-best-frameworks": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: "4.6",
+      ratingCount: "110",
+    },
+    "apple-vision-pro-vs-meta-quest-3": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: "4.5",
+      ratingCount: "90",
+    },
+  };
+
+  const { title, pageURL, raingVale, ratingCount } =
+    showRatingBasedOnPathname[params?.slug] || [];
+
   return (
     <>
+      {title && raingVale && ratingCount && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateRatingSchema(
+              title,
+              `${pageURL}/`,
+              raingVale,
+              ratingCount
+            ),
+          }}
+        />
+      )}
       <div className="md:pt-[8rem] pt-[6rem] blog-main">
         <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
           <div className="flex flex-wrap -mx-4">

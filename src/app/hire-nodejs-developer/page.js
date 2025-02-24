@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "../components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateRatingSchema,
+} from "../components/lib/schemaCode";
 import NodejsTechnology from "../components/Technologies/NodejsTechnology";
 
 export const metadata = {
@@ -40,6 +43,18 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBreadcrumb("Hire NodeJS Developers"),
+        }}
+      />
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateRatingSchema(
+            "Hire NodeJS Developers",
+            "hire-nodejs-developer/",
+            "4.9",
+            "141"
+          ),
         }}
       />
       <NodejsTechnology />
