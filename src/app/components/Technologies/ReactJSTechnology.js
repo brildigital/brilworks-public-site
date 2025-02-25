@@ -4,6 +4,8 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
+import { Card } from "@material-tailwind/react";
+import TechStackWeWorkWith from "./TechStackWeWorkWith";
 
 const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -29,6 +31,45 @@ const ReactJSTechnology = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
+  const firstSectionFeatures = [
+    {
+      heading: "No Time Zone Barriers",
+      description:
+        "Our remote React developers work in your hours – Whether you’re in New York or Singapore. Night owls? Early birds? We match your rhythm.",
+      icon: "/images/No-Time-Zone-Barriers.svg",
+    },
+    {
+      heading: "Cross-Platform Mastery",
+      description:
+        "Web, mobile, IoT dashboards – we make React dance across platforms. Hire React developers who build once, deploy everywhere.",
+      icon: "/images/cross-platform.svg",
+    },
+    {
+      heading: "Costs 60% Less Than In-House",
+      description:
+        "Get senior talent at junior rates. No benefits. No turnover. Just React brilliance.",
+      icon: "/images/Cost-Effective.svg",
+    },
+    {
+      heading: "Flexible Engagement Models",
+      description:
+        "Project-based sprints, dedicated teams, or on-demand React developers. Monthly? Hourly? Fixed-scope? We bend to your business needs.",
+      icon: "/images/Flexibility-in-Time.svg",
+    },
+    {
+      heading: "24/7 Support",
+      description:
+        "Our seasoned React experts deliver exceptional support and guidance at every step, ensuring your project achieves success with industry-leading insights.",
+      icon: "/images/cross-platform.svg",
+    },
+    {
+      heading: "Rapid Development",
+      description:
+        "Tight deadlines? No problem. Our React developers ship high-quality code at startup speed, without cutting corners.",
+      icon: "/images/cross-platform.svg",
+    },
+  ];
 
   const richFeatures = [
     {
@@ -138,18 +179,18 @@ const ReactJSTechnology = () => {
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="uppercase !p-0 !ml-[0] !w-full">
-                  Hire ReactJS Developers to Fire Up Your Frontend
+                  Skilled React Developers for Your Next Project
                 </p>
               </div>
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left !text-base lg:!text-xl">
-                  Our experienced Reactjs developers have built and maintained
-                  scalable, intuitive, and interactive applications that have
-                  served millions of users. If you’re planning on using React
-                  software development services, we’re the right partner for
-                  you.
+                  Hire React experts from us. Our expert React developers thrive
+                  in global workflows, working seamlessly across time zones to
+                  keep your project moving 24/7. With a hiring process refined
+                  over 8+ years, we deliver senior talent faster than most
+                  agencies reply to emails.
                 </p>
                 <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
                   <div>
@@ -175,6 +216,48 @@ const ReactJSTechnology = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+          <div className="end-To-end">
+            <div className="endTO_text solutions flex flex-col gap-2">
+              <h2 className="!w-full p-0">Why 90% of Clients Come Back</h2>
+              <p className="md:text-xl text-base md:text-center text-left">
+                We don’t just write React code – we engineer user addiction.
+                Here’s what sets us apart:
+              </p>
+            </div>
+          </div>
+
+          <div className="reveal grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-5">
+            {firstSectionFeatures.map((item, index) => {
+              return (
+                <div
+                  className="p-3 md:p-4 rounded-lg border-2 border-transparent hover:border-gray-200 hover:-translate-y-1 duration-300"
+                  key={index}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="">
+                      <div className="service_title">
+                        <h3 className="w-full flex gap-3 font-bold items-center text-xl text-black">
+                          <Image
+                            className="w-[48px] h-[48px]"
+                            src={item.icon}
+                            alt="icon"
+                            height={48}
+                            width={48}
+                          />
+                          {item.heading}
+                        </h3>
+                      </div>
+                      <div className="service_description">
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
@@ -249,6 +332,7 @@ const ReactJSTechnology = () => {
         <BenefitOfHiringDevelopers />
 
         <TechnologyCombination />
+        <TechStackWeWorkWith />
       </section>
 
       <ThreeStepstoHireDeveloper />
