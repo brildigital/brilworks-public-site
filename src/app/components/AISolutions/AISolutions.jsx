@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { BrilworksButton } from "../Common/BrilworksBtn";
 import Heading from "../HTMLComponents/Heading";
 import AIGenerateField from "./AIGenerateField";
-import { usePathname } from "next/navigation";
 
 function AISolutionsFirstSection({
   title,
@@ -12,15 +11,6 @@ function AISolutionsFirstSection({
   buttontext,
   buttonURL,
 }) {
-  const videoRef = useRef();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  }, []);
-
   return (
     <div className="flex flex-col gap-6 md:gap-8 xl:gap-10 justify-center items-center font-medium container max-w-[1440px] mx-auto px-6 md:px-14 xl:px-28">
       <div>
@@ -35,26 +25,22 @@ function AISolutionsFirstSection({
         <AIGenerateField />
       ) : ( */}
       <BrilworksButton
+        className="!mb-8"
         label={buttontext || "Get Started Now"}
         redirect={buttonURL?.url || "/contact-us/"}
         {...(buttonURL?.url ? { target: "_blank" } : {})}
       />
-      {/* )} */}
 
-      <div className="bg-gradient-to-br from-blue-300 to-white p-2 md:p-12 flex-center-center rounded-3xl">
-        <video
-          ref={videoRef}
-          controls
-          width={1100}
-          height={534}
-          className="!rounded-[20px]"
-          src={videoLink?.url}
-          cautoplay="autoplay"
-          loop="true"
-          muted
-          defaultmuted
-          playsInline
-        />
+      <div className="video-container">
+        <iframe
+          className="rounded-3xl"
+          src={videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   );

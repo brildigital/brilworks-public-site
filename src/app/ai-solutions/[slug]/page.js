@@ -132,7 +132,7 @@ export default async function Page({ params }) {
         <AISolutionsFirstSection
           title={title}
           description={description}
-          videoLink={videoLink}
+          videoLink={videoLink?.url}
           buttontext={buttontext}
           buttonURL={buttonURL}
         />
