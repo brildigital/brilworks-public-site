@@ -10,7 +10,7 @@ const Button = ({
   variant = "primary",
   className,
   scrollingButton,
-  innerClassName,
+  innerClassName = "",
   ...props
 }) => {
   const buttonIcon =

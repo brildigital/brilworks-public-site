@@ -37,6 +37,12 @@
   }
   .c-padding {
     padding: 12px 30px;
+    @media screen and (max-width: 767px) {
+      padding: 10px 24px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
   }
 }
 
@@ -337,4 +343,37 @@
 .content {
   position: relative;
   z-index: 1;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: -32px;
+  right: -32px;
+  bottom: -32px;
+  background: linear-gradient(320.21deg, #edffff 21.31%, #93c5fd 74.53%);
+  border-radius: 24px;
+  z-index: -1;
+  @media screen and (max-width: 767px) {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
