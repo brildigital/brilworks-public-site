@@ -1,21 +1,6 @@
 "use client";
 import { useState } from "react";
 import {
-  faReact,
-  faAngular,
-  faVuejs,
-  faNode,
-  faJava,
-  faPython,
-  faPhp,
-  faJs,
-  faHtml5,
-  faCss3Alt,
-  faAws,
-  faMicrosoft,
-  faDocker,
-} from "@fortawesome/free-brands-svg-icons";
-import {
   Tabs,
   TabsHeader,
   TabsBody,
@@ -26,77 +11,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-function TechStackWeWorkWith() {
-  const [activeTab, setActiveTab] = useState("frontend");
-  const data = [
-    {
-      title: "Frontend",
-      value: "frontend",
-      items: [
-        { label: "ReactJS", icon: faReact, color: "#61DBFB" },
-        { label: "AngularJS", icon: faAngular, color: "#DD0031" },
-        { label: "VueJS", icon: faVuejs, color: "#42B883" },
-      ],
-    },
-    {
-      title: "Backend",
-      value: "backend",
-      items: [
-        { label: "NodeJS", icon: faNode, color: "#68A063" },
-        { label: "Java", iconifyIcon: "/images/java.svg" },
-        { label: "Python", iconifyIcon: "/images/python.svg" },
-        { label: "PHP", icon: faPhp, color: "#777BB4" },
-      ],
-    },
-    {
-      title: "Languages",
-      value: "languages",
-      items: [
-        { label: "JavaScript", icon: faJs, color: "#F7DF1E" },
-        {
-          label: "TypeScript",
-          iconifyIcon: "/images/typescript.svg",
-        },
-        { label: "HTML", icon: faHtml5, color: "#E34F26" },
-        { label: "CSS", icon: faCss3Alt, color: "#1572B6" },
-      ],
-    },
-    {
-      title: "Databases",
-      value: "databases",
-      items: [
-        {
-          label: "MongoDB",
-          iconifyIcon: "/images/mongodb.svg",
-        },
-        {
-          label: "PostgreSQL",
-          iconifyIcon: "/images/postgresql.svg",
-        },
-        { label: "MySQL", iconifyIcon: "/images/mysql.svg" },
-      ],
-    },
-    {
-      title: "Cloud & DevOps",
-      value: "cloud-devops",
-      items: [
-        { label: "AWS", iconifyIcon: "/images/aws.svg" },
-        { label: "Azure", iconifyIcon: "/images/azure.svg" },
-        { label: "Docker", icon: faDocker, color: "#2496ED" },
-        { label: "Kubernetes", iconifyIcon: "/images/kubernetes.svg" },
-      ],
-    },
-  ];
+function TechStackWeWorkWith({ active = "", techStackList = [] }) {
+  const [activeTab, setActiveTab] = useState(active);
 
   return (
     <div className="mx-auto w-[85%] xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end !mt-10 ">
       <div className="end-To-end reveal">
         <div className="endTO_text solutions flex flex-col gap-2">
-          <h2 className="!w-full p-0">Tech Stack We Work With</h2>
-          {/* <p className="md:text-xl text-base md:text-center text-left">
-            We don’t just write React code – we engineer user addiction. Here’s
-            what sets us apart:
-          </p> */}
+          <h2 className="!w-full p-0 uppercase">Tech Stack We Work With</h2>
         </div>
       </div>
       <Tabs className="reveal" value={activeTab}>
@@ -107,7 +29,7 @@ function TechStackWeWorkWith() {
               "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
           }}
         >
-          {data.map(({ title, value }) => (
+          {techStackList.map(({ title, value }) => (
             <Tab
               key={value}
               value={value}
@@ -123,7 +45,7 @@ function TechStackWeWorkWith() {
           ))}
         </TabsHeader>
         <TabsBody>
-          {data.map(({ value, items }) => (
+          {techStackList.map(({ value, items }) => (
             <TabPanel
               className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full"
               key={value}
