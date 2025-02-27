@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-const solutions = [
+const reactJsSolutions = [
   {
     title: "eCommerce",
     description:
@@ -39,6 +40,38 @@ const solutions = [
     icon: "/images/software.png",
   },
 ];
+const nodeJSSolutionsList = [
+  {
+    title: "eCommerce",
+    description:
+      "Scalable platforms with real-time inventory tracking and seamless payment integration.",
+    icon: "/images/eCommerce.svg",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "HIPAA-compliant applications, telemedicine solutions, and secure patient portals.",
+    icon: "/images/Healthcare.svg",
+  },
+  {
+    title: "Fintech",
+    description:
+      "Secure transaction processing, AI-powered fraud detection, and real-time analytics.",
+    icon: "/images/Fintech.svg",
+  },
+  {
+    title: "Real Estate",
+    description:
+      "Advanced listing platforms, AI-powered search, and property management solutions.",
+    icon: "/images/real-estate.svg",
+  },
+  {
+    title: "eLearning",
+    description:
+      "Interactive learning platforms with real-time collaboration and progress tracking.",
+    icon: "/images/eLearning.svg",
+  },
+];
 
 const ServiceItem = ({ description, title, icon }) => (
   <div className="rounded-lg border cursor-pointer dedicated_team_card p-[2px]">
@@ -58,22 +91,34 @@ const ServiceItem = ({ description, title, icon }) => (
   </div>
 );
 
-const ReactJSSolutions = () => {
+const CommonSolutions = () => {
+  const pathname = usePathname();
+  const mapToRender = {
+    "/hire-reactjs-developer/": {
+      title: "ReactJS Solutions Precision-Engineered for Your Industry",
+      description:
+        "Tailored for eCommerce, Healthcare, Fintech & Beyond. We engineer React solutions that solve your industry’s unique challenges 72% of clients see ROI within 12 weeks.",
+      solutions: reactJsSolutions,
+    },
+    "/hire-nodejs-developer/": {
+      title: "Industry-Specific Node.js Solutions",
+      description:
+        "We build Node.js applications tailored for industries like eCommerce, healthcare, fintech, and beyond.",
+      solutions: nodeJSSolutionsList,
+    },
+  };
+  const currentData = mapToRender[pathname];
   return (
     <div className="container mx-auto pb-8 service_width">
       <div className="sm:w-[90%] w-[100%] mx-auto xl:py-[6rem] md:py-[4rem] py-[2rem] end-to-end reveal">
         <div className="endTO_text solutions flex flex-col md:items-center">
-          <h2 className="!w-full p-0 uppercase">
-            ReactJS Solutions Precision-Engineered for Your Industry
-          </h2>
+          <h2 className="!w-full p-0 uppercase">{currentData.title}</h2>
           <p className="md:w-[80%] text-base md:text-lg">
-            Tailored for eCommerce, Healthcare, Fintech & Beyond. We engineer
-            React solutions that solve your industry’s unique challenges 72% of
-            clients see ROI within 12 weeks.
+            {currentData.description}
           </p>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-10 gap-4 reveal">
-          {solutions.map((item) => (
+          {currentData.solutions.map((item) => (
             <ServiceItem
               key={item.title}
               title={item.title}
@@ -87,4 +132,4 @@ const ReactJSSolutions = () => {
   );
 };
 
-export default ReactJSSolutions;
+export default CommonSolutions;
