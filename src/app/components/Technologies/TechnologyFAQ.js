@@ -75,6 +75,21 @@ const TechnologyFAQ = () => {
   ];
   const nodeJSFAQData = [
     {
+      question: "How fast can remote Node.js developers start?",
+      answer:
+        "Typically within 72 hours. Expedited onboarding available for urgent needs.",
+    },
+    {
+      question: "What if the developer isn’t the right fit?",
+      answer:
+        "Free replacement within 14 days. Our process ensures a 92% first-match success rate.",
+    },
+    {
+      question: "Do you provide support after deployment?",
+      answer:
+        "Yes, including bug fixes, security updates, and feature enhancements.",
+    },
+    {
       question: "How does Brilworks vet Node.js developers ?",
       answer:
         "We thoroughly evaluate Node.js developers’ logical reasoning abilities, communication skills, and their ability to write well-documented and clean code before we hire them.",

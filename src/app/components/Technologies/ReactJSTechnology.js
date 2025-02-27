@@ -20,10 +20,10 @@ import {
   faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
-import TechStackWeWorkWith from "./TechStackWeWorkWith";
-const ReactJSSolutions = dynamic(() => import("./ReactJSSolutions"));
-const ReactJSHiringModels = dynamic(() => import("./ReactJSHiringModels"));
-const WhyReact = dynamic(() => import("./WhyReact"));
+const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
+const ReactJSSolutions = dynamic(() => import("./CommonSolutions"));
+const ReactJSHiringModels = dynamic(() => import("./HiringModels"));
+const WhyReact = dynamic(() => import("./WhyThisTech"));
 const Why90ClientComeBack = dynamic(() => import("./WhyFirstSection"));
 const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -76,7 +76,7 @@ const firstSectionFeatures = [
     heading: "Rapid Development",
     description:
       "Tight deadlines? No problem. Our React developers ship high-quality code at startup speed, without cutting corners.",
-    icon: "/images/Development-Sprint.png",
+    icon: "/images/Development.svg",
   },
 ];
 

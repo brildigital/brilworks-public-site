@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Common/Button";
+import { usePathname } from "next/navigation";
 
-const pricingPlans = [
+const reactJsPricingPlans = [
   {
     title: "Fixed Cost Model",
     benefits: [
@@ -32,31 +33,36 @@ const pricingPlans = [
   },
 ];
 
-const ReactJSHiringModels = () => {
+const HiringModels = () => {
+  const pathname = usePathname();
+  const mapToRender = {
+    "/hire-reactjs-developer/": {
+      title: "Hire React JS Developers with These Flexible Hiring Models",
+      description: "",
+      pricingPlans: reactJsPricingPlans,
+    },
+    "/hire-nodejs-developer/": {
+      title: "Flexible Hiring Models for Node.js Developers",
+      description: "",
+      pricingPlans: reactJsPricingPlans,
+    },
+  };
+  const currentData = mapToRender[pathname];
   return (
     <div className="container mx-auto">
       <div className="sm:w-[90%] w-full mx-auto xl:py-24 md:py-16 py-8 px-4 flex items-center flex-col gap-4 md:gap-6 end-to-end">
         <div>
           <div className="endTO_text solutions">
-            <h2 className="!w-full p-0 uppercase">
-              Hire React JS Developers with These Flexible Hiring Models
-            </h2>
+            <h2 className="!w-full p-0 uppercase">{currentData.title}</h2>
           </div>
           <div className="endTO_text_content home_sec2_txt4">
-            <p className="!text-[1.2rem]">
-              Need ReactJS experts who adapt to your workflow? Whether you’re
-              scaling a startup or managing enterprise workloads, our hiring
-              models align with your budget, timeline, and time zone needs. Our
-              hiring process lets you start with hourly support for a legacy app
-              migration, switch to fixed-cost for a new PWA build, then scale to
-              a dedicated team—all under one roof.
-            </p>
+            <p className="!text-[1.2rem]">{currentData.description}</p>
           </div>
         </div>
 
         <div className="hire_sec1_service_50 reveal">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pricingPlans.map((plan, index) => (
+            {currentData.pricingPlans.map((plan, index) => (
               <div
                 key={index}
                 className="p-6 border-2 border-gray-400 rounded-xl shadow-lg bg-white hover:shadow-xl transition duration-300 flex flex-col justify-between"
@@ -112,4 +118,4 @@ const ReactJSHiringModels = () => {
   );
 };
 
-export default ReactJSHiringModels;
+export default HiringModels;
