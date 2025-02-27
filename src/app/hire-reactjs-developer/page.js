@@ -2,11 +2,13 @@ import { generateBreadcrumb } from "../components/lib/schemaCode";
 import ReactJSTechnology from "../components/Technologies/ReactJSTechnology";
 
 export const metadata = {
-  title: "Hire ReactJS Developers | Brilworks",
+  title:
+    "Hire ReactJS Developers in 48 Hours | Expert React Developers for Hire | Brilworks",
   description:
     "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
   openGraph: {
-    title: "Hire ReactJS Developers",
+    title:
+      "Hire ReactJS Developers in 48 Hours | Expert React Developers for Hire",
     description:
       "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-reactjs-developer/`,
@@ -21,7 +23,8 @@ export const metadata = {
     type: "article",
   },
   twitter: {
-    title: "Hire ReactJS Developers",
+    title:
+      "Hire ReactJS Developers in 48 Hours | Expert React Developers for Hire",
     description:
       "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
 

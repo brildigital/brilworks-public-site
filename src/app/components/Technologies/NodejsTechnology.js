@@ -4,7 +4,27 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
+import TechStackWeWorkWith from "./TechStackWeWorkWith";
+import {
+  faReact,
+  faAngular,
+  faVuejs,
+  faNode,
+  faJava,
+  faPython,
+  faPhp,
+  faJs,
+  faHtml5,
+  faCss3Alt,
+  faAws,
+  faMicrosoft,
+  faDocker,
+} from "@fortawesome/free-brands-svg-icons";
 
+const WhyFirstSection = dynamic(() => import("./WhyFirstSection"));
+const CommonSolutions = dynamic(() => import("./CommonSolutions"));
+const WhyThisTech = dynamic(() => import("./WhyThisTech"));
+const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
@@ -20,6 +40,103 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+
+const firstSectionFeatures = [
+  {
+    heading: "No Time Zone Barriers",
+    description:
+      "Our remote Node.js teams work in your time zone for real-time collaboration and daily standups.",
+    icon: "/images/No-Time-Zone-Barriers.svg",
+  },
+  {
+    heading: "Scalable, High-Performance Apps",
+    description:
+      "Build APIs and real-time systems optimized for 50k+ RPM with Redis caching and WebSocket efficiency.",
+    icon: "/images/scalable.svg",
+  },
+  {
+    heading: "Cost-Effective Hiring",
+    description:
+      "Senior Node.js expertise at mid-level rates, with transparent billing and 35-60% cost savings versus in-house.",
+    icon: "/images/Cost-Effective.svg",
+  },
+  {
+    heading: "Flexible Engagement Models",
+    description:
+      "Choose dedicated teams, fixed-scope sprints, or hourly support—scale resources with 48-hour notice.",
+    icon: "/images/Flexibility-in-Time.svg",
+  },
+  {
+    heading: "Reliable 24/7 Support",
+    description:
+      "24/7 support with 40-minute response SLAs, uptime monitoring, and round-the-clock DevOps coverage.",
+    icon: "/images/handSettingIcon.svg",
+  },
+  {
+    heading: "Rapid Development",
+    description:
+      "Accelerate delivery with prebuilt modules, CI/CD pipelines, and 2-week agile sprints for shippable increments.",
+    icon: "/images/Development.svg",
+  },
+];
+const techStackList = [
+  {
+    title: "Backend",
+    value: "backend",
+    items: [
+      { label: "NodeJS", icon: faNode, color: "#68A063" },
+      { label: "ExpressJS", iconifyIcon: "/images/express.svg" },
+      { label: "NestJS", iconifyIcon: "/images/nestjs.svg" },
+    ],
+  },
+  {
+    title: "Frontend",
+    value: "frontend",
+    items: [
+      { label: "ReactJS", icon: faReact, color: "#61DBFB" },
+      { label: "AngularJS", icon: faAngular, color: "#DD0031" },
+      { label: "VueJS", icon: faVuejs, color: "#42B883" },
+    ],
+  },
+  {
+    title: "Languages",
+    value: "languages",
+    items: [
+      { label: "JavaScript", icon: faJs, color: "#F7DF1E" },
+      {
+        label: "TypeScript",
+        iconifyIcon: "/images/typescript.svg",
+      },
+      { label: "HTML", icon: faHtml5, color: "#E34F26" },
+      { label: "CSS", icon: faCss3Alt, color: "#1572B6" },
+    ],
+  },
+  {
+    title: "Databases",
+    value: "databases",
+    items: [
+      {
+        label: "MongoDB",
+        iconifyIcon: "/images/mongodb.svg",
+      },
+      {
+        label: "PostgreSQL",
+        iconifyIcon: "/images/postgresql.svg",
+      },
+      { label: "MySQL", iconifyIcon: "/images/mysql.svg" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    value: "cloud-devops",
+    items: [
+      { label: "AWS", iconifyIcon: "/images/aws.svg" },
+      { label: "Azure", iconifyIcon: "/images/azure.svg" },
+      { label: "Docker", icon: faDocker, color: "#2496ED" },
+      { label: "Kubernetes", iconifyIcon: "/images/kubernetes.svg" },
+    ],
+  },
+];
 const NodejsTechnology = () => {
   useEffect(() => {
     scrollEffect();
@@ -93,18 +210,19 @@ const NodejsTechnology = () => {
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
-                <p className="!p-0 !ml-[0] !w-full">
-                  HIRE OUR NODEJS DEVELOPMENT COMPANY TO POWER UP YOUR BACKEND
+                <p className="!p-0 !ml-[0] !w-full uppercase">
+                  Hire Node.js Developers: Pre-Vetted Experts, Zero Hassle
                 </p>
               </div>
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left !text-[1.2rem]">
-                  Our Node.js developers are specialists in developing
-                  real-time, data-intensive, and scalable web and mobile
-                  applications. Get more for your company through our Node js
-                  development services today!
+                  Add Expert Node.js talent to your team in 72 hours. Get a
+                  pre-vetted, production-ready Node.js developer aligned with
+                  your timezone and workflow. As a leading Node.js development
+                  company, we specialize in crafting lightning-fast, scalable,
+                  and secure applications.
                 </p>
 
                 <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
@@ -133,14 +251,16 @@ const NodejsTechnology = () => {
             </div>
           </div>
         </div>
-
+        <WhyFirstSection
+          title="Why 100+ Companies Trust Us"
+          description="From concept to deployment, we prioritize technical excellence, agile methodologies, and innovative problem-solving to deliver solutions that drive growth. We don't just write Node.js code. We build high-performance backend solutions."
+          firstSectionFeatures={firstSectionFeatures}
+        />
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
-              <h2 className="!w-full p-0">
-                DRIVE TRANSFORMATION CHANGE WITH OUR NODE JS
-                <br />
-                DEVELOPMENT SERVICES
+              <h2 className="!w-full p-0 uppercase">
+                Our Node.js Development Services
               </h2>
             </div>
           </div>
@@ -152,21 +272,20 @@ const NodejsTechnology = () => {
                   <img
                     decoding="async"
                     loading="lazy"
-                    src="/images/consultacy.png"
-                    alt="Node.js Consulting"
+                    src="/images/Web-Development.svg"
+                    alt="Web App Development"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 01.</div>
                   <div className="service_title">
-                    <h3>Node.js Consulting</h3>
+                    <h3>Web App Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
-                      Our Node.js consulting program offers services such as
-                      architecture analysis, code review, and assessment
-                      development processes.
+                      Build fast, scalable web apps with a backend that handles
+                      high traffic efficiently.
                     </p>
                   </div>
                 </div>
@@ -177,22 +296,20 @@ const NodejsTechnology = () => {
                   <img
                     decoding="async"
                     loading="lazy"
-                    src="/images/migration-1.png"
-                    alt="Node.js API Development & Integration"
+                    src="/images/API-Integration.svg"
+                    alt="API Development & Integration"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 02.</div>
                   <div className="service_title">
-                    <h3>Node.js API Development & Integration</h3>
+                    <h3>API Development & Integration</h3>
                   </div>
                   <div className="service_description">
                     <p>
-                      If you’re building an app and you need a custom API, we
-                      can help. We’ve gathered all the relevant expertise in
-                      developing high-performing robust and scalable back-end
-                      solutions.
+                      Develop RESTful and GraphQL APIs that seamlessly integrate
+                      with your systems.
                     </p>
                   </div>
                 </div>
@@ -204,21 +321,20 @@ const NodejsTechnology = () => {
                     decoding="async"
                     loading="lazy"
                     className=""
-                    src="/images/plugin.png"
-                    alt="Node.js Plugin Development"
+                    src="/images/update.svg"
+                    alt="Migration & Modernization"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 03.</div>
                   <div className="service_title">
-                    <h3>Node.js Plugin Development</h3>
+                    <h3>Migration & Modernization</h3>
                   </div>
                   <div className="service_description">
                     <p>
-                      Our team of experts can create and integrate custom
-                      plugins to augment your web app’s functionality and
-                      capabilities.
+                      Upgrade legacy systems to Node.js for better performance
+                      and maintainability.
                     </p>
                   </div>
                 </div>
@@ -230,21 +346,20 @@ const NodejsTechnology = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone wp-image-285 size-full"
-                    src="/images/migration.png"
-                    alt="Node.js Migration"
+                    src="/images/Real-Time-App.svg"
+                    alt="Real-Time Applications"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 04.</div>
                   <div className="service_title">
-                    <h3>Node.js Migration</h3>
+                    <h3>Real-Time Applications</h3>
                   </div>
                   <div className="service_description">
                     <p>
-                      Our team of developers can help you migrate your existing
-                      .Net, PHP, Java, or other apps to NodeJS in a matter of
-                      weeks.
+                      Power chat apps, live streaming, and collaborative tools
+                      with real-time Node.js capabilities.
                     </p>
                   </div>
                 </div>
@@ -256,22 +371,21 @@ const NodejsTechnology = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone wp-image-285 size-full"
-                    src="/images/web.png"
-                    alt="Node.js Enterprise Web Apps"
+                    src="/images/microservices-architecture.svg"
+                    alt="Microservices Architecture"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 05.</div>
                   <div className="service_title">
-                    <h3>Node.js Enterprise Web Apps</h3>
+                    <h3>Microservices Architecture</h3>
                   </div>
 
                   <div className="service_description">
                     <p>
-                      We can help you to build your next-generation web app by
-                      adding custom functionality and enhancing its capabilities
-                      with customizable NodeJS plugins.
+                      Create modular, scalable applications with Node.js-based
+                      microservices.
                     </p>
                   </div>
                 </div>
@@ -283,22 +397,20 @@ const NodejsTechnology = () => {
                     decoding="async"
                     loading="lazy"
                     className="alignnone wp-image-285 size-full"
-                    src="/images/end-to-end-node.png"
-                    alt="Node.js End-to-end Solutions"
+                    src="/images/server-less.svg"
+                    alt="Serverless Development"
                   />
                 </div>
 
                 <div className="service_txt basis-[85%]">
                   <div className="service_num">&lt; 06.</div>
                   <div className="service_title">
-                    <h3>Node.js End-to-end Solutions</h3>
+                    <h3>Serverless Development</h3>
                   </div>
                   <div className="service_description">
                     <p>
-                      We don’t just fix broken code, we offer cost-effective
-                      solutions for your company. With Node, we’ll help you be
-                      more agile, and develop faster with better modules and
-                      transparent architecture.
+                      Build cost-efficient, scalable applications using Node.js
+                      with serverless architectures.
                     </p>
                   </div>
                 </div>
@@ -336,8 +448,11 @@ const NodejsTechnology = () => {
         <BenefitOfHiringDevelopers />
 
         <TechnologyCombination />
+        <TechStackWeWorkWith active="backend" techStackList={techStackList} />
       </section>
-
+      <CommonSolutions />
+      <WhyThisTech />
+      <HiringModels />
       <ThreeStepstoHireDeveloper />
 
       <WhyShouldHireDevelopers />

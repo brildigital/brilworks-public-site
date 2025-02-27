@@ -12,6 +12,21 @@ const TechnologyFAQ = () => {
 
   const reactJSFAQData = [
     {
+      question: "How fast can remote React developers start?",
+      answer:
+        "72 hours for most roles. Need someone yesterday? We’ve onboarded devs in 12 hours for emergencies.",
+    },
+    {
+      question: "What if the developer isn’t perfect?",
+      answer:
+        "Swap them free within 14 days. Our hiring process has a 92% first-match success rate.",
+    },
+    {
+      question: "Cross-platform vs native apps?",
+      answer:
+        "We’ll analyze your users. For most, React Native cuts costs 40% with no UX tradeoff.",
+    },
+    {
       question:
         "What is the average work experience of a React.js developer hired through Brilworks?",
       answer:
@@ -59,6 +74,21 @@ const TechnologyFAQ = () => {
     },
   ];
   const nodeJSFAQData = [
+    {
+      question: "How fast can remote Node.js developers start?",
+      answer:
+        "Typically within 72 hours. Expedited onboarding available for urgent needs.",
+    },
+    {
+      question: "What if the developer isn’t the right fit?",
+      answer:
+        "Free replacement within 14 days. Our process ensures a 92% first-match success rate.",
+    },
+    {
+      question: "Do you provide support after deployment?",
+      answer:
+        "Yes, including bug fixes, security updates, and feature enhancements.",
+    },
     {
       question: "How does Brilworks vet Node.js developers ?",
       answer:

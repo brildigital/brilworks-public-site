@@ -4,7 +4,27 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
+import {
+  faReact,
+  faAngular,
+  faVuejs,
+  faNode,
+  faJava,
+  faPython,
+  faPhp,
+  faJs,
+  faHtml5,
+  faCss3Alt,
+  faAws,
+  faMicrosoft,
+  faDocker,
+} from "@fortawesome/free-brands-svg-icons";
 
+const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
+const ReactJSSolutions = dynamic(() => import("./CommonSolutions"));
+const ReactJSHiringModels = dynamic(() => import("./HiringModels"));
+const WhyReact = dynamic(() => import("./WhyThisTech"));
+const Why90ClientComeBack = dynamic(() => import("./WhyFirstSection"));
 const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
@@ -21,6 +41,149 @@ const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
+const firstSectionFeatures = [
+  {
+    heading: "No Time Zone Barriers",
+    description:
+      "Our remote React developers work in your hours – Whether you’re in New York or Singapore. Night owls? Early birds? We match your rhythm.",
+    icon: "/images/No-Time-Zone-Barriers.svg",
+  },
+  {
+    heading: "Cross-Platform Mastery",
+    description:
+      "Web, mobile, IoT dashboards – we make React dance across platforms. Hire React developers who build once, deploy everywhere.",
+    icon: "/images/cross-platform.svg",
+  },
+  {
+    heading: "Costs 60% Less Than In-House",
+    description:
+      "Get senior talent at junior rates. No benefits. No turnover. Just React brilliance.",
+    icon: "/images/Cost-Effective.svg",
+  },
+  {
+    heading: "Flexible Engagement Models",
+    description:
+      "Project-based sprints, dedicated teams, or on-demand React developers. Monthly? Hourly? Fixed-scope? We bend to your business needs.",
+    icon: "/images/Flexibility-in-Time.svg",
+  },
+  {
+    heading: "24/7 Support",
+    description:
+      "Our seasoned React experts deliver exceptional support and guidance at every step, ensuring your project achieves success with industry-leading insights.",
+    icon: "/images/handSettingIcon.svg",
+  },
+  {
+    heading: "Rapid Development",
+    description:
+      "Tight deadlines? No problem. Our React developers ship high-quality code at startup speed, without cutting corners.",
+    icon: "/images/Development.svg",
+  },
+];
+
+const richFeatures = [
+  {
+    imgSrc: "/images/Web-Development.svg",
+    imgAlt: "Web Development",
+    title: "Web Development",
+    description:
+      "Transform slow, clunky websites into React-powered rockets—3.2s average load time improvement in client projects.",
+  },
+  {
+    imgSrc: "/images/update.svg",
+    imgAlt: "Migration and Updation Services",
+    title: "Migration and Updation Services",
+    description:
+      "Legacy app? We’ll rebuild it in React so smoothly, the only thing users will notice is the improvement.",
+  },
+  {
+    imgSrc: "/images/High-Performing-PWAs.svg",
+    imgAlt: "High-Performing PWAs",
+    title: "High-Performing PWAs",
+    description:
+      "We build PWAs that outpace native apps, 100% offline mode, 0% app store fees, and lightning-fast performance.",
+  },
+  {
+    imgSrc: "/images/ecommerce-development.svg",
+    imgAlt: "eCommerce Development",
+    title: "eCommerce Development",
+    description:
+      "React storefronts built to convert—dynamic hydration, psychology-backed flows, and seamless user experiences that drive sales.",
+  },
+  {
+    imgSrc: "/images/SPA-web-app.svg",
+    imgAlt: "SPA Development",
+    title: "SPA Development",
+    description:
+      "Blazing-fast SPAs, instant interactivity, smooth navigation, and scroll restoration that remembers every pixel.",
+  },
+  {
+    imgSrc: "/images/dashboard-development.svg",
+    imgAlt: "Dashboard Development",
+    title: "Dashboard Development",
+    description:
+      "Transform your data into decisions—sleek, intuitive dashboards that blend real-time analytics with elegant design, turning complex metrics into instant insights.",
+  },
+];
+
+const techStackList = [
+  {
+    title: "Frontend",
+    value: "frontend",
+    items: [
+      { label: "ReactJS", icon: faReact, color: "#61DBFB" },
+      { label: "AngularJS", icon: faAngular, color: "#DD0031" },
+      { label: "VueJS", icon: faVuejs, color: "#42B883" },
+    ],
+  },
+  {
+    title: "Backend",
+    value: "backend",
+    items: [
+      { label: "NodeJS", icon: faNode, color: "#68A063" },
+      { label: "Java", iconifyIcon: "/images/java.svg" },
+      { label: "Python", iconifyIcon: "/images/python.svg" },
+      { label: "PHP", icon: faPhp, color: "#777BB4" },
+    ],
+  },
+  {
+    title: "Languages",
+    value: "languages",
+    items: [
+      { label: "JavaScript", icon: faJs, color: "#F7DF1E" },
+      {
+        label: "TypeScript",
+        iconifyIcon: "/images/typescript.svg",
+      },
+      { label: "HTML", icon: faHtml5, color: "#E34F26" },
+      { label: "CSS", icon: faCss3Alt, color: "#1572B6" },
+    ],
+  },
+  {
+    title: "Databases",
+    value: "databases",
+    items: [
+      {
+        label: "MongoDB",
+        iconifyIcon: "/images/mongodb.svg",
+      },
+      {
+        label: "PostgreSQL",
+        iconifyIcon: "/images/postgresql.svg",
+      },
+      { label: "MySQL", iconifyIcon: "/images/mysql.svg" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    value: "cloud-devops",
+    items: [
+      { label: "AWS", iconifyIcon: "/images/aws.svg" },
+      { label: "Azure", iconifyIcon: "/images/azure.svg" },
+      { label: "Docker", icon: faDocker, color: "#2496ED" },
+      { label: "Kubernetes", iconifyIcon: "/images/kubernetes.svg" },
+    ],
+  },
+];
 const ReactJSTechnology = () => {
   useEffect(() => {
     scrollEffect();
@@ -29,51 +192,6 @@ const ReactJSTechnology = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
-
-  const richFeatures = [
-    {
-      imgSrc: "/images/Enterprise-App-Development.png",
-      imgAlt: "ReactJS for Enterprise App Development",
-      title: "ReactJS for Enterprise App Development",
-      description:
-        "Our react js development services enable you to quickly build powerful web apps that are custom-tailored to address the needs of your enterprise.",
-    },
-    {
-      imgSrc: "/images/Custom-App-Development.png",
-      imgAlt: "ReactJS for Custom App Development",
-      title: "ReactJS for Custom App Development",
-      description:
-        "Build custom web applications that are perfect for your business needs or specific project needs with the help of our ReactJS developers.",
-    },
-    {
-      imgSrc: "/images/frontend.png",
-      imgAlt: "ReactJS for Front-End Development",
-      title: "ReactJS for Front-End Development",
-      description:
-        "Our React rockstars possess a comprehensive understanding of the framework, real-time data exchange, and the best practices to build modern user interfaces with real-time data validation.",
-    },
-    {
-      imgSrc: "/images/migration-1.png",
-      imgAlt: "ReactJS Website Migration & Integration",
-      title: "ReactJS Website Migration & Integration",
-      description:
-        "Our developers will help you move over your current code and all the data in a way that does not lose any information and makes sure everything is migrated smoothly.",
-    },
-    {
-      imgSrc: "/images/ui-ux-1.png",
-      imgAlt: "ReactJS UI/UX Development",
-      title: "ReactJS UI/UX Development",
-      description:
-        "We believe that a great user experience across all devices should be the goal of any developer in the business. Our developers strive to do just that.",
-    },
-    {
-      imgSrc: "/images/support.png",
-      imgAlt: "ReactJS Support & Maintenance",
-      title: "ReactJS Support & Maintenance",
-      description:
-        "Our team of skilled developers is always ready to serve you. We offer ReactJS support and maintenance services to help our clients to stay ahead of the competition, thus increasing their market share.",
-    },
-  ];
 
   return (
     <>
@@ -138,18 +256,18 @@ const ReactJSTechnology = () => {
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="uppercase !p-0 !ml-[0] !w-full">
-                  Hire ReactJS Developers to Fire Up Your Frontend
+                  Skilled React Developers for Your Next Project
                 </p>
               </div>
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left !text-base lg:!text-xl">
-                  Our experienced Reactjs developers have built and maintained
-                  scalable, intuitive, and interactive applications that have
-                  served millions of users. If you’re planning on using React
-                  software development services, we’re the right partner for
-                  you.
+                  Hire React experts from us. Our expert React developers thrive
+                  in global workflows, working seamlessly across time zones to
+                  keep your project moving 24/7. With a hiring process refined
+                  over 8+ years, we deliver senior talent faster than most
+                  agencies reply to emails.
                 </p>
                 <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
                   <div>
@@ -177,6 +295,12 @@ const ReactJSTechnology = () => {
             </div>
           </div>
         </div>
+        <Why90ClientComeBack
+          title="Why 90% of Clients Come Back"
+          description="We don’t just write React code. We engineer user
+            addiction. Here’s what sets us apart"
+          firstSectionFeatures={firstSectionFeatures}
+        />
         <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text solutions">
@@ -206,7 +330,7 @@ const ReactJSTechnology = () => {
                     </div>
 
                     <div className="service_txt basis-[85%]">
-                      <div className="service_num">&lt; 0{index}.</div>
+                      <div className="service_num">&lt; 0{index + 1}.</div>
                       <div className="service_title">
                         <h3>{title}</h3>
                       </div>
@@ -249,12 +373,14 @@ const ReactJSTechnology = () => {
         <BenefitOfHiringDevelopers />
 
         <TechnologyCombination />
+        <TechStackWeWorkWith active="frontend" techStackList={techStackList} />
       </section>
-
+      <ReactJSSolutions />
+      <WhyReact />
+      <ReactJSHiringModels />
       <ThreeStepstoHireDeveloper />
 
       <WhyShouldHireDevelopers />
-
       <SolutionContactForm />
       <ReactJSFAQs />
     </>
