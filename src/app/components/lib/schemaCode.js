@@ -74,10 +74,10 @@ export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
       "@type": "AggregateRating",
       ratingValue: ratingValue,
       reviewCount: ratingCount,
-    },
-    itemReviewed: {
-      "@type": "Service",
-      name: title,
+      itemReviewed: {
+        "@type": "Service",
+        name: title,
+      },
     },
   };
 
