@@ -67,17 +67,14 @@ export function generateBreadcrumb(secondPositionName) {
 export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
   const ratingSchema = {
     "@context": "https://schema.org",
-    "@type": "Review",
+    "@type": "Product",
     name: title,
     url: `https://www.brilworks.com/${pageURL}`,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: ratingValue,
       reviewCount: ratingCount,
-      itemReviewed: {
-        "@type": "Service",
-        name: title,
-      },
+      bestRating: 5,
     },
   };
   return JSON.stringify(ratingSchema);

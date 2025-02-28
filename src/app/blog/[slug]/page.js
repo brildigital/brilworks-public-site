@@ -95,14 +95,14 @@ export default async function Page(props) {
     "cross-platform-app-development-best-frameworks": {
       title: data?.story?.content?.title,
       pageURL: params?.slug,
-      raingVale: "4.6",
-      ratingCount: "110",
+      raingVale: 4.6,
+      ratingCount: 110,
     },
     "apple-vision-pro-vs-meta-quest-3": {
       title: data?.story?.content?.title,
       pageURL: params?.slug,
-      raingVale: "4.5",
-      ratingCount: "90",
+      raingVale: 4.5,
+      ratingCount: 90,
     },
   };
 

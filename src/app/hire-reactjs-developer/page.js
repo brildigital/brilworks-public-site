@@ -55,8 +55,8 @@ const page = () => {
           __html: generateRatingSchema(
             "Hire ReactJS Developers",
             "hire-reactjs-developer/",
-            "4.8",
-            "150"
+            4.8,
+            150
           ),
         }}
       />
