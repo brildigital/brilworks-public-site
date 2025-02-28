@@ -79,6 +79,50 @@ const firstSectionFeatures = [
     icon: "/images/Development.svg",
   },
 ];
+const services = [
+  {
+    title: "Web App Development",
+    description:
+      "Build fast, scalable web apps with a backend that handles high traffic efficiently.",
+    image: "/images/Web-Development.svg",
+    alt: "Web App Development",
+  },
+  {
+    title: "API Development & Integration",
+    description:
+      "Develop RESTful and GraphQL APIs that seamlessly integrate with your systems.",
+    image: "/images/API-Integration.svg",
+    alt: "API Development & Integration",
+  },
+  {
+    title: "Migration & Modernization",
+    description:
+      "Upgrade legacy systems to Node.js for better performance and maintainability.",
+    image: "/images/update.svg",
+    alt: "Migration & Modernization",
+  },
+  {
+    title: "Real-Time Applications",
+    description:
+      "Power chat apps, live streaming, and collaborative tools with real-time Node.js capabilities.",
+    image: "/images/Real-Time-App.svg",
+    alt: "Real-Time Applications",
+  },
+  {
+    title: "Microservices Architecture",
+    description:
+      "Create modular, scalable applications with Node.js-based microservices.",
+    image: "/images/microservices-architecture.svg",
+    alt: "Microservices Architecture",
+  },
+  {
+    title: "Serverless Development",
+    description:
+      "Build cost-efficient, scalable applications using Node.js with serverless architectures.",
+    image: "/images/server-less.svg",
+    alt: "Serverless Development",
+  },
+];
 const techStackList = [
   {
     title: "Backend",
@@ -256,169 +300,48 @@ const NodejsTechnology = () => {
           description="From concept to deployment, we prioritize technical excellence, agile methodologies, and innovative problem-solving to deliver solutions that drive growth. We don't just write Node.js code. We build high-performance backend solutions."
           firstSectionFeatures={firstSectionFeatures}
         />
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
-          <div className="end-To-end">
-            <div className="endTO_text solutions">
-              <h2 className="!w-full p-0 uppercase">
-                Our Node.js Development Services
-              </h2>
+        <div className="mx-auto service_width xl:py-[2rem] py-[1rem] md:pt-[1.5rem] workpadd_borderTop end-to-end">
+          <div className="grid grid-cols-1 md:grid-cols-5 md:flex-row gap-4 justify-between">
+            <div className="end-To-end md:col-span-2">
+              <div className="endTO_text solutions">
+                <h2 className="!w-full p-0 uppercase text-left">
+                  Build Lightning-Fast Solutions With Our Node.js Development
+                  Services
+                </h2>
+              </div>
             </div>
-          </div>
 
-          <div className="service_grid_img reveal">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px]">
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Web-Development.svg"
-                    alt="Web App Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 01.</div>
-                  <div className="service_title">
-                    <h3>Web App Development</h3>
+            <div className="service_grid_img reveal md:col-span-3">
+              <div className="flex flex-col overflow-y-auto custom-scrollbar md:h-[500px] md:gap-[40px] gap-[10px]">
+                {services.map((service, index) => (
+                  <div key={index} className="flex flex-col md:flex-row gap-6">
+                    <div className="basis-[15%]">
+                      <div className="flex md:justify-end">
+                        <img
+                          className="max-w-[48px] object-cover"
+                          decoding="async"
+                          loading="lazy"
+                          src={service.image}
+                          alt={service.alt}
+                        />
+                      </div>
+                    </div>
+                    <div className="service_txt basis-[85%]">
+                      <div className="service_num">&lt; 0{index + 1}.</div>
+                      <div className="service_title">
+                        <h3>{service.title}</h3>
+                      </div>
+                      <div className="py-4">
+                        <p>{service.description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="service_description">
-                    <p>
-                      Build fast, scalable web apps with a backend that handles
-                      high traffic efficiently.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/API-Integration.svg"
-                    alt="API Development & Integration"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 02.</div>
-                  <div className="service_title">
-                    <h3>API Development & Integration</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Develop RESTful and GraphQL APIs that seamlessly integrate
-                      with your systems.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className=""
-                    src="/images/update.svg"
-                    alt="Migration & Modernization"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 03.</div>
-                  <div className="service_title">
-                    <h3>Migration & Modernization</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Upgrade legacy systems to Node.js for better performance
-                      and maintainability.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/Real-Time-App.svg"
-                    alt="Real-Time Applications"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 04.</div>
-                  <div className="service_title">
-                    <h3>Real-Time Applications</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Power chat apps, live streaming, and collaborative tools
-                      with real-time Node.js capabilities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/microservices-architecture.svg"
-                    alt="Microservices Architecture"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 05.</div>
-                  <div className="service_title">
-                    <h3>Microservices Architecture</h3>
-                  </div>
-
-                  <div className="service_description">
-                    <p>
-                      Create modular, scalable applications with Node.js-based
-                      microservices.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/server-less.svg"
-                    alt="Serverless Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 06.</div>
-                  <div className="service_title">
-                    <h3>Serverless Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Build cost-efficient, scalable applications using Node.js
-                      with serverless architectures.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
+          <div className="flex items-center justify-center xl:pt-[2rem] md:pt-[1.5rem] pt-[1rem]">
             <Button
               innerClassName="flex items-center justify-center gap-2"
               className="!pr-5"

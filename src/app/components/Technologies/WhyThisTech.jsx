@@ -60,12 +60,12 @@ const WhyThisTech = () => {
   const pathname = usePathname();
   const mapToRender = {
     "/hire-reactjs-developer/": {
-      title: "ReactJS Solutions Precision-Engineered for Your Industry",
+      title: "Why ReactJS? A Strategic Choice for Modern Development",
       description: "",
       benefits: reactJsBenefits,
     },
     "/hire-nodejs-developer/": {
-      title: "Why Choose Node.js Development",
+      title: "Why Choose Node.js Development?",
       description:
         "Node.js is widely used for real-time applications and scalable microservices, but scaling it properly requires careful management. Our Node.js developers help you navigate these challenges, ensuring smooth performance as your application grows.",
       benefits: nodeJsBenefits,
@@ -74,11 +74,13 @@ const WhyThisTech = () => {
   const currentData = mapToRender[pathname];
   return (
     <section className="bg-sectionBG section-padding">
-      <div className="container mx-auto  flex flex-col md:gap-8 gap-5">
-        <h2 className="text-3xl font-bold text-center reveal">
-          {currentData.title}
-        </h2>
-        <p className="reveal text-center">{currentData.description}</p>
+      <div className="container mx-auto flex flex-col">
+        <div className="endTO_text solutions flex flex-col gap-3">
+          <h2 className="!w-full uppercase reveal">{currentData.title}</h2>
+          <p className="reveal text-left md:text-center">
+            {currentData.description}
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-6 reveal">
           {currentData.benefits.map((benefit, index) => (
             <div

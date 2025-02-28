@@ -7,7 +7,7 @@ function WhyFirstSection({
   firstSectionFeatures = [],
 }) {
   return (
-    <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+    <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] pb-[2rem] workpadd_borderTop end-to-end">
       <div className="end-To-end">
         <div className="endTO_text solutions flex flex-col gap-2">
           <h2 className="!w-full p-0 uppercase">{title}</h2>
