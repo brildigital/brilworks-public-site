@@ -45,13 +45,13 @@ const firstSectionFeatures = [
   {
     heading: "No Time Zone Barriers",
     description:
-      "Our remote React developers work in your hours – Whether you’re in New York or Singapore. Night owls? Early birds? We match your rhythm.",
+      "Our remote React developers work in your hours. Whether you’re in New York or Singapore. Night owls? Early birds? We match your rhythm.",
     icon: "/images/No-Time-Zone-Barriers.svg",
   },
   {
     heading: "Cross-Platform Mastery",
     description:
-      "Web, mobile, IoT dashboards – we make React dance across platforms. Hire React developers who build once, deploy everywhere.",
+      "Web, mobile, IoT dashboards. we make React dance across platforms. Hire React developers who build once, deploy everywhere.",
     icon: "/images/cross-platform.svg",
   },
   {
@@ -301,50 +301,54 @@ const ReactJSTechnology = () => {
             addiction. Here’s what sets us apart"
           firstSectionFeatures={firstSectionFeatures}
         />
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
-          <div className="end-To-end">
-            <div className="endTO_text solutions">
-              <h2 className="!w-full p-0 uppercase">
-                Build Feature-rich Frontend Applications With
-                <br />
-                Our React Development Services
-              </h2>
+        <div className="mx-auto service_width xl:py-[2rem] py-[1rem] workpadd_borderTop end-to-end">
+          <div className="grid md:grid-cols-5 grid-cols-1 gap-6 md:flex-row justify-between">
+            <div className="end-To-end md:col-span-2">
+              <div className="endTO_text solutions">
+                <h2 className="!w-full p-0 uppercase text-left">
+                  Build Feature-rich Frontend Applications With
+                  <br />
+                  Our React Development Services
+                </h2>
+              </div>
+            </div>
+
+            <div className="service_grid_img reveal md:col-span-3">
+              <div className="flex flex-col overflow-y-auto md:h-[500px] custom-scrollbar md:gap-[40px] gap-[10px] ">
+                {richFeatures.map(
+                  ({ imgSrc, imgAlt, title, description }, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col md:flex-row gap-6"
+                    >
+                      <div className="basis-[15%]">
+                        <div className="flex md:justify-end">
+                          <img
+                            className="max-w-[48px] object-cover"
+                            decoding="async"
+                            loading="lazy"
+                            src={imgSrc}
+                            alt={imgAlt}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="service_txt basis-[85%]">
+                        <div className="service_num">&lt; 0{index + 1}.</div>
+                        <div className="service_title">
+                          <h3>{title}</h3>
+                        </div>
+                        <div className="py-4">
+                          <p>{description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
-
-          <div className="service_grid_img reveal">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px] ">
-              {richFeatures.map(
-                ({ imgSrc, imgAlt, title, description }, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]"
-                  >
-                    <div className="basis-[15%]">
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        src={imgSrc}
-                        alt={imgAlt}
-                      />
-                    </div>
-
-                    <div className="service_txt basis-[85%]">
-                      <div className="service_num">&lt; 0{index + 1}.</div>
-                      <div className="service_title">
-                        <h3>{title}</h3>
-                      </div>
-                      <div className="service_description">
-                        <p>{description}</p>
-                      </div>
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
+          <div className="flex items-center justify-center xl:pt-[2rem] md:pt-[1.5rem] pt-[1rem]">
             <Button
               innerClassName="flex items-center justify-center gap-2"
               className="!pr-5"
