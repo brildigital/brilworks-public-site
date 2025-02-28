@@ -75,6 +75,10 @@ export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
       ratingValue: ratingValue,
       reviewCount: ratingCount,
     },
+    itemReviewed: {
+      "@type": "Service",
+      name: title,
+    },
   };
 
   return JSON.stringify(ratingSchema);
