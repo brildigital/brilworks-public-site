@@ -71,6 +71,12 @@ const nodeJSSolutionsList = [
       "Interactive learning platforms with real-time collaboration and progress tracking.",
     icon: "/images/eLearning.svg",
   },
+  {
+    title: "Manufacturing",
+    description:
+      "IoT-enabled smart, predictive maintenance systems and AI-driven supply chain optimization.",
+    icon: "/images/Manufacturing.svg",
+  },
 ];
 
 const ServiceItem = ({ description, title, icon }) => (
@@ -113,7 +119,7 @@ const CommonSolutions = () => {
       <div className="sm:w-[90%] w-[100%] mx-auto xl:py-[6rem] md:py-[4rem] py-[2rem] end-to-end reveal">
         <div className="endTO_text solutions flex flex-col md:items-center">
           <h2 className="!w-full p-0 uppercase">{currentData.title}</h2>
-          <p className="md:w-[80%] text-base md:text-lg">
+          <p className="md:w-[80%] text-left md:text-center text-base md:text-lg">
             {currentData.description}
           </p>
         </div>

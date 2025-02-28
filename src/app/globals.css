@@ -120,6 +120,10 @@ input[type="number"] {
   background: var(--color_black);
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
 .font-Inter,
 .font-Urbanist {
   font-family: var(--global-font);

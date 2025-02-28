@@ -15,7 +15,7 @@ function TechStackWeWorkWith({ active = "", techStackList = [] }) {
   const [activeTab, setActiveTab] = useState(active);
 
   return (
-    <div className="mx-auto w-[85%] xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end !mt-10 ">
+    <div className="mx-auto w-[85%] xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end !mt-10 ">
       <div className="end-To-end reveal">
         <div className="endTO_text solutions flex flex-col gap-2">
           <h2 className="!w-full p-0 uppercase">Tech Stack We Work With</h2>
