@@ -21,7 +21,8 @@ const ContactUs = () => {
     <>
       <section className="flex items-start flex-col md:flex-row gap-4 mt-12 md:mt-0">
         <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-[6rem] md:p-12 !pt-16 p-4 md:basis-6/12 basis-full">
-          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
+          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
+            <h1 className="hidden">Contact Us</h1>
             <h2 className="uppercase m-0 contact_bold-head">
               Let’s discuss your project
             </h2>
