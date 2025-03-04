@@ -851,7 +851,27 @@ const nextConfig = {
         statusCode: 301,
       },
       {
-        source: `/portfolio/portfolio`,
+        source: `portfolio/orokii/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/trackimo/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/rastrack/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/vugo/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/eccocar/`,
         destination: `/portfolio/`,
         statusCode: 301,
       },
