@@ -53,7 +53,7 @@ const nextConfig = {
     return [
       {
         source: `/vugo/`,
-        destination: `/portfolio/vugo/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -148,7 +148,7 @@ const nextConfig = {
       },
       {
         source: `/vugo-portfolio/`,
-        destination: `/portfolio/vugo/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -223,7 +223,7 @@ const nextConfig = {
       },
       {
         source: `/vugo-portfolio`,
-        destination: `/portfolio/vugo/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -278,7 +278,7 @@ const nextConfig = {
       },
       {
         source: `/project-trackimo/`,
-        destination: `/portfolio/trackimo/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -328,7 +328,7 @@ const nextConfig = {
       },
       {
         source: `/portfolio-eccocar/`,
-        destination: `/portfolio/eccocar/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -383,7 +383,7 @@ const nextConfig = {
       },
       {
         source: `/vugo-portfolio/service`,
-        destination: `/portfolio/vugo/`,
+        destination: `/portfolio/`,
         statusCode: 301,
       },
       {
@@ -851,7 +851,7 @@ const nextConfig = {
         statusCode: 301,
       },
       {
-        source: `portfolio/orokii/`,
+        source: `/portfolio/orokii/`,
         destination: `/portfolio/`,
         statusCode: 301,
       },
@@ -872,6 +872,11 @@ const nextConfig = {
       },
       {
         source: `/portfolio/eccocar/`,
+        destination: `/portfolio/`,
+        statusCode: 301,
+      },
+      {
+        source: `/portfolio/portfolio`,
         destination: `/portfolio/`,
         statusCode: 301,
       },
