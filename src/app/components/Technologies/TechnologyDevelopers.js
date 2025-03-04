@@ -18,6 +18,21 @@ const TechnologyDevelopers = () => {
     "bg-[#f7e6ec]",
   ];
 
+  const showTechImgBasedOnPathname = {
+    "/hire-reactjs-developer/": "/images/REACT.JS.svg",
+    "/hire-nodejs-developer/": "/images/NODE.JS.svg",
+    "/hire-java-developer/": "/images/JAVA.svg",
+    "/hire-aws-developer/": "/images/AWS-DEVELOPMENT.svg",
+    "/hire-ui-ux-designer/": "/images/UIUX-DEVELOPMENT.svg",
+    "/hire-react-native-developer/": "/images/REACT-NATIVE.svg",
+    "/hire-blockchain-developer/": "/images/BLOCKCHAIN-DEVELOPMENT.svg",
+    "/hire-flutterflow-developer/": "/images/flutterflow-logo2.svg",
+    "/hire-bubble-developer/": "/images/bubble-dark-logo.svg",
+    "/hire-adalo-developer/": "/images/adalo-logo.png",
+    "/hire-low-code-no-code-developer/": "/images/mobile-app-liogo.svg",
+    "/hire-mobile-app-developer/": "/images/mobile-app-liogo.svg",
+  };
+
   async function fetchDevelopersDetail(developerType) {
     try {
       const developerData = await getDeveloperData(developerType);
@@ -134,20 +149,35 @@ const TechnologyDevelopers = () => {
                         <div className="flex items-center gap-[1rem]">
                           <div className="swiper_sec3_img1">
                             <Image
+                              className={`w-[60px] rounded-xl border p-1 ${
+                                pathname === "/hire-mobile-app-developer/" ||
+                                pathname === "/hire-low-code-no-code-developer/"
+                                  ? "invert"
+                                  : ""
+                              }`}
+                              src={showTechImgBasedOnPathname[pathname]}
+                              alt={"React.js"}
+                              width="300"
+                              height="300"
+                            />
+                            {/* <Image
                               className="w-[75px] rounded-[40px]"
                               src={content?.Image?.filename}
                               alt={content?.Image?.alt}
                               width="300"
                               height="300"
-                            />
+                            /> */}
                           </div>
                           <div className="home_sec3_txt2">
                             <p className="!text-[1.5rem] !font-bold">
-                              {content?.Name}
-                            </p>
-                            <p className="!font-bold !text-lg">
                               {content?.Designation}
                             </p>
+                            {/* <p className="!text-[1.5rem] !font-bold">
+                              {content?.Name}
+                            </p> */}
+                            {/* <p className="!font-bold !text-lg">
+                              {content?.Designation}
+                            </p> */}
                           </div>
                         </div>
                         <div className="service_description border-b-[1px]">
@@ -244,7 +274,7 @@ const TechnologyDevelopers = () => {
                             innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
                             className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
                             redirect="#section10_service"
-                            label={` Hire ${content?.Name}`}
+                            label={` Hire Now`}
                             icon={
                               <div className="w-[25px]">
                                 <img

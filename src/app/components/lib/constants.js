@@ -521,7 +521,7 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/career/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    lastmod: "2024-09-25T14:04:49.528Z",
   },
   {
     loc: "https://www.brilworks.com/blog/",
@@ -529,7 +529,7 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/ebooks/",
-    lastmod: "2024-12-30T12:04:49.528Z",
+    lastmod: "2025-01-30T13:04:49.528Z",
   },
   {
     loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",

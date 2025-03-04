@@ -20,6 +20,7 @@ const AboutUs = () => {
         <div className="flex md:flex-row flex-col items-center gap-[2rem]">
           <div className="basis-3/6 md:!order-1 lg:!order-1 !order-2">
             <div className="home_sec2_txt1 text_left">
+              <h1 className="hidden">About Us</h1>
               <h2>
                 Your tech partner in a{" "}
                 <span className="big-text-stroke">fast changing world.</span>

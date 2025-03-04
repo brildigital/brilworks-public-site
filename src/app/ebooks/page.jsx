@@ -21,7 +21,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}ebooks`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}ebooks/`,
   },
 };
 
