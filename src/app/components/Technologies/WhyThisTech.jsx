@@ -55,6 +55,38 @@ const nodeJsBenefits = [
       "Managing memory leaks, maintaining real-time performance, and handling intensive computations require expertise. Proper optimization and best practices are crucial for sustained performance at scale.",
   },
 ];
+const blockchainBenefits = [
+  {
+    title: "Unbreakable Security",
+    description:
+      "Immutable ledgers and cryptographic hashing reduce breaches by 99%. Ideal for sectors handling sensitive data.",
+  },
+  {
+    title: "Transparent Operations",
+    description:
+      "Every transaction is auditable, building stakeholder trust. Supply chain clients report 40% faster dispute resolution.",
+  },
+  {
+    title: "Cost Efficiency",
+    description:
+      "Automate middlemen processes. Banks using smart contracts cut operational costs by 30%.",
+  },
+  {
+    title: "Future-Proof Scalability",
+    description:
+      "Layer-2 solutions and sharding enable networks to handle 10,000+ TPS, ready for global adoption.",
+  },
+  {
+    title: "Regulatory Compliance",
+    description:
+      "Built-in KYC/AML modules and automated reporting ensure adherence to evolving global standards.",
+  },
+  {
+    title: "Ecosystem Growth",
+    description:
+      "Join a $30B+ industry with interoperability standards like Cosmos and Polkadot, ensuring long-term relevance.",
+  },
+];
 
 const WhyThisTech = () => {
   const pathname = usePathname();
@@ -69,6 +101,11 @@ const WhyThisTech = () => {
       description:
         "Node.js is widely used for real-time applications and scalable microservices, but scaling it properly requires careful management. Our Node.js developers help you navigate these challenges, ensuring smooth performance as your application grows.",
       benefits: nodeJsBenefits,
+    },
+    "/hire-blockchain-developer/": {
+      title: "Why Blockchain? Strategic Advantages for Modern Enterprises",
+      description: "",
+      benefits: blockchainBenefits,
     },
   };
   const currentData = mapToRender[pathname];

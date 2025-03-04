@@ -32,6 +32,32 @@ const reactJsPricingPlans = [
     ],
   },
 ];
+const blockchainPricingPlans = [
+  {
+    title: "Fixed Cost Model",
+    benefits: [
+      "Predictable budgeting",
+      "Milestone-driven delivery",
+      "Ideal for well-defined projects",
+    ],
+  },
+  {
+    title: "Dedicated Team Model",
+    benefits: [
+      "Exclusive developers",
+      "Daily SCRUM meetings",
+      "Monthly billing, flexible terms",
+    ],
+  },
+  {
+    title: "Hourly/Time & Material",
+    benefits: [
+      "Pay per hour",
+      "Scale resources weekly",
+      "Transparent tracking",
+    ],
+  },
+];
 
 const HiringModels = () => {
   const pathname = usePathname();
@@ -45,6 +71,11 @@ const HiringModels = () => {
       title: "Flexible Hiring Models for Node.js Developers",
       description: "",
       pricingPlans: reactJsPricingPlans,
+    },
+    "/hire-blockchain-developer/": {
+      title: "Flexible Hiring Models for Blockchain Developers",
+      description: "",
+      pricingPlans: blockchainPricingPlans,
     },
   };
   const currentData = mapToRender[pathname];

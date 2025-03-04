@@ -79,6 +79,45 @@ const nodeJSSolutionsList = [
   },
 ];
 
+const blockchainSolutions = [
+  {
+    title: "Finance",
+    description:
+      "DeFi platforms, cross-border payment systems, and fraud-proof ledgers that reduce transaction costs by 70%.",
+    icon: "/images/Fintech.svg",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "HIPAA-compliant patient data exchanges, drug traceability networks, and secure EHRs using zero-knowledge proofs.",
+    icon: "/images/Healthcare.svg",
+  },
+  {
+    title: "Supply Chain",
+    description:
+      "End-to-end visibility with smart sensors and blockchain. Cut counterfeit risks by 90% and streamline audits.",
+    icon: "/images/supply-chain.svg",
+  },
+  {
+    title: "Real Estate",
+    description:
+      "Tokenized property ownership, automated escrow, and transparent title transfers reducing legal delays.",
+    icon: "/images/real-estate.svg",
+  },
+  {
+    title: "Government",
+    description:
+      "Tamper-proof voting systems, public record management, and citizen ID platforms with biometric verification.",
+    icon: "/images/government.svg",
+  },
+  {
+    title: "Energy",
+    description:
+      "Peer-to-peer energy trading platforms, carbon credit tracking, and grid management via decentralized ledgers.",
+    icon: "/images/energy.svg",
+  },
+];
+
 const ServiceItem = ({ description, title, icon }) => (
   <div className="rounded-lg border cursor-pointer dedicated_team_card p-[2px]">
     <div className="flex flex-col gap-3 p-4 bg-white h-full rounded-lg">
@@ -111,6 +150,12 @@ const CommonSolutions = () => {
       description:
         "We build Node.js applications tailored for industries like eCommerce, healthcare, fintech, and beyond.",
       solutions: nodeJSSolutionsList,
+    },
+    "/hire-blockchain-developer/": {
+      title: "Blockchain Solutions Tailored to Your Industry",
+      description:
+        "Custom-built for Finance, Healthcare, Supply Chain & More. 68% of clients achieve ROI within 6 months.",
+      solutions: blockchainSolutions,
     },
   };
   const currentData = mapToRender[pathname];
