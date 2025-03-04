@@ -194,6 +194,26 @@ const TechnologyFAQ = () => {
   ];
   const blockchainFAQData = [
     {
+      question: "How quickly can a blockchain developer start?",
+      answer:
+        "A developer can start within 72 hours, with urgent hires onboarding in just 24 hours to meet tight project deadlines.",
+    },
+    {
+      question: "What if the developer isn’t suitable?",
+      answer:
+        "We offer a free replacement within 10 days. With a 94% first-match success rate, most clients find the right fit immediately.",
+    },
+    {
+      question: "Private vs. Public Blockchain?",
+      answer:
+        "We assess your requirements to recommend the best option. Hybrid models often provide an ideal balance of speed, security, and transparency.",
+    },
+    {
+      question: "Do you audit smart contracts?",
+      answer:
+        "Yes, all smart contract projects include third-party audits to ensure security, compliance, and reliability before deployment.",
+    },
+    {
       question:
         "Can I hire Blockchain app developer from Brilworks on a full-time basis?",
       answer:
