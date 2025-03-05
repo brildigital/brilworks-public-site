@@ -4,7 +4,14 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
 import Button from "../Common/Button";
+import { faJs, faDocker } from "@fortawesome/free-brands-svg-icons";
 
+const CommonServices = dynamic(() => import("./CommonServices"));
+const WhyFirstSection = dynamic(() => import("./WhyFirstSection"));
+const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
+const CommonSolutions = dynamic(() => import("./CommonSolutions"));
+const WhyThisTech = dynamic(() => import("./WhyThisTech"));
+const HiringModels = dynamic(() => import("./HiringModels"));
 const BlockChainFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const WhyShouldHireDevelopers = dynamic(() =>
@@ -19,6 +26,135 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+
+const blockchainFeatures = [
+  {
+    heading: "Global Talent, Local Precision",
+    description:
+      "Our remote blockchain developers operate in your time zone. From London to Tokyo, we synchronize with your workflow—night shifts or dawn sprints, we adapt.",
+    icon: "/images/Global.svg",
+  },
+  {
+    heading: "Multi-Chain Mastery",
+    description:
+      "Ethereum, Hyperledger, Solana, or Polkadot. We build cross-chain ecosystems that communicate seamlessly, future-proofing your investments.",
+    icon: "/images/Multi-chain.svg",
+  },
+  {
+    heading: "Cost-Efficient Innovation",
+    description:
+      "Access elite blockchain engineers at 50% less than in-house hires. No overheads, no training—just cutting-edge solutions.",
+    icon: "/images/Cost-Effective.svg",
+  },
+  {
+    heading: "Agile Engagement",
+    description:
+      "Project-based, dedicated teams, or on-demand developers. Monthly, hourly, or fixed-scope—we mold to your needs.",
+    icon: "/images/Engagement.svg",
+  },
+  {
+    heading: "24/7 Protocol Vigilance",
+    description:
+      "Our experts provide round-the-clock support, ensuring your blockchain network remains secure, updated, and optimized.",
+    icon: "/images/handSettingIcon.svg",
+  },
+  {
+    heading: "Rapid Deployment",
+    description:
+      "From concept to mainnet in record time. We deliver robust code without compromising security—even under tight deadlines.",
+    icon: "/images/Development.svg",
+  },
+];
+const blockchainServices = [
+  {
+    imgSrc: "/images/smart-contracts-devlopment.png",
+    title: "Smart Contract Development",
+    description:
+      "Self-executing contracts with zero loopholes. Code audited by third parties for vulnerabilities, ensuring ironclad compliance.",
+  },
+  {
+    imgSrc: "/images/dapp-devlopment.png",
+    title: "DApp Development",
+    description:
+      "Decentralized apps that combine intuitive UX with blockchain’s power. Scalable, secure, and built for mass adoption.",
+  },
+  {
+    imgSrc: "/images/mvp-devlopment.png",
+    title: "Blockchain Migration",
+    description:
+      "Transition legacy systems to blockchain smoothly. We ensure zero downtime, data integrity, and enhanced functionality.",
+  },
+  {
+    imgSrc: "/images/custom-blockchain-solutions.png",
+    title: "Enterprise Blockchain Solutions",
+    description:
+      "Permissioned networks tailored for industries needing privacy and control. Audit trails, role-based access, and GDPR compliance.",
+  },
+  {
+    imgSrc: "/images/nft-marketplace-devlpment.png",
+    title: "Tokenization & DeFi Platforms",
+    description:
+      "Launch tokens, NFTs, or DeFi ecosystems with secure wallets, liquidity pools, and staking mechanisms that drive engagement.",
+  },
+  {
+    imgSrc: "/images/blockchain-app-consultation.png",
+    title: "Blockchain Consulting",
+    description:
+      "From consensus algorithms to governance models—strategic roadmaps that align blockchain with your business goals.",
+  },
+];
+const techStackList = [
+  {
+    title: "Blockchains",
+    value: "blockchains",
+    items: [
+      { label: "Ethereum", iconifyIcon: "/images/ethereum.svg" },
+      { label: "Hyperledger", iconifyIcon: "/images/hyperledger.svg" },
+      { label: "Binance Chain", iconifyIcon: "/images/binance-chain.svg" },
+      { label: "Polkadot", iconifyIcon: "/images/polkadot.svg" },
+    ],
+  },
+  {
+    title: "Languages",
+    value: "languages",
+    items: [
+      { label: "JavaScript", icon: faJs, color: "#F7DF1E" },
+      { label: "Go", iconifyIcon: "/images/go.svg" },
+      { label: "Rust", iconifyIcon: "/images/rust.svg" },
+      { label: "Solidity", iconifyIcon: "/images/solidity.svg" },
+    ],
+  },
+  {
+    title: "Frameworks",
+    value: "frameworks",
+    items: [
+      { label: "Truffle", iconifyIcon: "/images/truffle.svg" },
+      { label: "Hardhat", iconifyIcon: "/images/hardhat.svg" },
+      { label: "Web3.js", iconifyIcon: "/images/web3js.svg" },
+      { label: "Substrate", iconifyIcon: "/images/substrate.svg" },
+    ],
+  },
+  {
+    title: "Tools & Databases",
+    value: "tools-databases",
+    items: [
+      { label: "GraphQL", iconifyIcon: "/images/graphql.svg" },
+      { label: "IPFS", iconifyIcon: "/images/ipfs.svg" },
+      { label: "MongoDB", iconifyIcon: "/images/mongodb.svg" },
+      { label: "PostgreSQL", iconifyIcon: "/images/postgresql.svg" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    value: "cloud-devops",
+    items: [
+      { label: "AWS", iconifyIcon: "/images/aws.svg" },
+      { label: "Azure", iconifyIcon: "/images/azure.svg" },
+      { label: "Docker", icon: faDocker, color: "#2496ED" },
+      { label: "Kubernetes", iconifyIcon: "/images/kubernetes.svg" },
+    ],
+  },
+];
 
 const BlockchainTechnology = () => {
   useEffect(() => {
@@ -93,19 +229,19 @@ const BlockchainTechnology = () => {
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="!p-0 !ml-[0] !w-full uppercase">
-                  Hire Blockchain Developers to Build Next-Gen Decentralized
-                  Applications
+                  Hire Blockchain Developers to Revolutionize Your Digital
+                  Infrastructure
                 </p>
               </div>
             </div>
             <div className="basis-[55%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left !text-[1.2rem]">
-                  Our developers have a thorough understanding of blockchain
-                  technology and are competent in building specialized
-                  blockchains. We use our expertise to custom-design blockchain
-                  tools and services for organizations like yours. Try our
-                  custom blockchain development services today!
+                  Our seasoned blockchain developers engineer secure, scalable,
+                  and decentralized solutions that transform industries. Whether
+                  you’re launching a dApp, integrating smart contracts, or
+                  building enterprise-grade blockchain networks, we’re your
+                  strategic partner.
                 </p>
 
                 <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
@@ -134,215 +270,27 @@ const BlockchainTechnology = () => {
             </div>
           </div>
         </div>
-
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
-          <div className="end-To-end">
-            <div className="endTO_text solutions">
-              <h2 className="!w-full p-0 uppercase">
-                Enhance Your Application With Our Blockchain
-                <br /> Development Services
-              </h2>
-            </div>
-          </div>
-
-          <div className="service_grid_img reveal">
-            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[10px]">
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/blockchain-app-consultation.png"
-                    alt="Blockchain App Consultation"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 01.</div>
-                  <div className="service_title">
-                    <h3>Blockchain App Consultation</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Our experts help businesses get their apps developed on
-                      the most robust platforms that are specifically suited for
-                      business applications including but not limited to
-                      Solidity, Hyperledger, EOS, and Stellar.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/mvp-devlopment.png"
-                    alt="MVP Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 02.</div>
-                  <div className="service_title">
-                    <h3>MVP Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Because it’s important to test early on whether your idea
-                      is truly viable or not, our developers start by building
-                      and launching a DApp MVP before moving on to the
-                      full-fledged development of DApp.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className=""
-                    src="/images/dapp-devlopment.png"
-                    alt="DApp Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 03.</div>
-                  <div className="service_title">
-                    <h3>DApp Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Once you have your DApp concept tested and validated
-                      through MVP, it’s time to launch the real thing. We offer
-                      a range of solutions for launching a new product or
-                      service on blockchain from technical architecture and
-                      development to testing and release.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/smart-contracts-devlopment.png"
-                    alt="Smart Contracts Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 04.</div>
-                  <div className="service_title">
-                    <h3>Smart Contracts Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      Smart contract development for public and private
-                      blockchains is our specialty. Our developers are experts
-                      at building smart contracts for fundraising, supply chain
-                      management, NFT projects, and much more.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/custom-blockchain-solutions.png"
-                    alt="Custom Blockchain Solutions"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 05.</div>
-                  <div className="service_title">
-                    <h3>Custom Blockchain Solutions</h3>
-                  </div>
-
-                  <div className="service_description">
-                    <p>
-                      We can integrate custom applications with the most popular
-                      Blockchain networks. Our engineers are familiar with
-                      designing applications for the latest Blockchain platforms
-                      and will work hand-in-hand with clients to design
-                      solutions that leverage blockchain technology to digitize
-                      business processes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                <div className="basis-[15%]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone wp-image-285 size-full"
-                    src="/images/nft-marketplace-devlpment.png"
-                    alt="NFT Marketplace Development"
-                  />
-                </div>
-
-                <div className="service_txt basis-[85%]">
-                  <div className="service_num">&lt; 06.</div>
-                  <div className="service_title">
-                    <h3>NFT Marketplace Development</h3>
-                  </div>
-                  <div className="service_description">
-                    <p>
-                      You can also use our blockchain development services to
-                      develop decentralized NFT marketplaces, each of which can
-                      manage NFT trading, from token creation to platform
-                      building, software development, and coin exchanges.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
-            <Button
-              innerClassName="flex items-center justify-center gap-2"
-              className="!pr-5"
-              redirect="#section10_service"
-              label="Get A Quote For Your Project"
-              scrollingButton
-              icon={
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  strokeWidth="0"
-                  viewBox="0 0 24 24"
-                  height="24px"
-                  width="24px"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
-                  <path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
-                </svg>
-              }
-            />
-          </div>
-        </div>
-
+        <WhyFirstSection
+          title="Why 95% of Clients Return?"
+          description="We don’t just code blockchains. We architect trust. Here’s what makes us unparalleled:
+Global Talent, Local Precision. Our remote blockchain developers operate in your time zone. From London to Tokyo, we synchronize with your workflow night shifts or dawn sprints, we adapt."
+          firstSectionFeatures={blockchainFeatures}
+        />
+        <CommonServices
+          title="Build Trust-Centric Solutions With Our Blockchain Services"
+          services={blockchainServices}
+        />
         <TechnologyDevelopers />
 
         <BenefitOfHiringDevelopers />
+        <TechStackWeWorkWith
+          active="blockchains"
+          techStackList={techStackList}
+        />
       </section>
-
+      <CommonSolutions />
+      <WhyThisTech />
+      <HiringModels />
       <ThreeStepstoHireDeveloper />
 
       <WhyShouldHireDevelopers />

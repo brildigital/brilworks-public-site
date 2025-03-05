@@ -60,7 +60,7 @@ const Ebooks = () => {
             <div className="flex flex-col gap-3">
               <div className="!font-bold !text-center">
                 <h1 className="!text-center !font-[linear-gradient(180deg, #fffefc 0%, #fff2ef 100%)] md:!text-[2.5rem] !text-[2rem]">
-                  Our <span class="h1-border-b"> E-books</span>
+                  Our <span className="h1-border-b"> E-books</span>
                 </h1>
               </div>
               <div className="md:w-3/5 w-full mx-auto text-center mb-4">

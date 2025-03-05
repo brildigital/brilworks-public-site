@@ -1,5 +1,6 @@
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
@@ -9,6 +10,13 @@ const Svgs = dynamic(() => import("../Svgs"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ContactUs = () => {
+  const [salesEmail, setsalesEmail] = useState("");
+  const [hrEmail, setHrEmail] = useState("");
+
+  useEffect(() => {
+    setsalesEmail("sales@brilworks.com"); // Set email dynamically on client side
+    setHrEmail("hr@brilworks.com"); // Set email dynamically on client side
+  }, []);
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -21,7 +29,8 @@ const ContactUs = () => {
     <>
       <section className="flex items-start flex-col md:flex-row gap-4 mt-12 md:mt-0">
         <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-[6rem] md:p-12 !pt-16 p-4 md:basis-6/12 basis-full">
-          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px] ">
+          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
+            <h1 className="hidden">Contact Us</h1>
             <h2 className="uppercase m-0 contact_bold-head">
               Let’s discuss your project
             </h2>
@@ -94,7 +103,7 @@ const ContactUs = () => {
       <section className="xl:pt-24 lg:pt-16 pt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
         <div className="bg-themeColor w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
           <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
-            For career inquiry email us on <strong>hr@brilworks.com</strong>
+            For career inquiry email us on <strong>{hrEmail}</strong>
           </h2>
           <Link
             href="/career/"
@@ -246,7 +255,7 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
+                    <a href={`mailto:${salesEmail}`}>{salesEmail}</a>
                   </p>
                 </div>
               </div>

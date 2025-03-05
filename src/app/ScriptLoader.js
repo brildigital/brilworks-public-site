@@ -34,6 +34,12 @@ const LoadScripts = ({ organization, website, gtm, clr }) => {
         websiteScript.innerHTML = JSON.stringify(website);
         document.body.appendChild(websiteScript);
 
+        const cdnCloudflareScript = document.createElement("script");
+        cdnCloudflareScript.src =
+          "https://www.brilworks.com/cdn-cgi/scripts/email-decode.min.js-cb/cloudflare-static/email-decode.min.js";
+        cdnCloudflareScript.async = true;
+        document.body.appendChild(cdnCloudflareScript);
+
         // Factors AI Script
         const factorsScript = document.createElement("script");
         factorsScript.innerHTML = `

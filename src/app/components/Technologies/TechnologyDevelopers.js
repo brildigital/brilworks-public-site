@@ -18,6 +18,21 @@ const TechnologyDevelopers = () => {
     "bg-[#f7e6ec]",
   ];
 
+  const showTechImgBasedOnPathname = {
+    "/hire-reactjs-developer/": "/images/REACT.JS.svg",
+    "/hire-nodejs-developer/": "/images/NODE.JS.svg",
+    "/hire-java-developer/": "/images/JAVA.svg",
+    "/hire-aws-developer/": "/images/AWS-DEVELOPMENT.svg",
+    "/hire-ui-ux-designer/": "/images/UIUX-DEVELOPMENT.svg",
+    "/hire-react-native-developer/": "/images/REACT-NATIVE.svg",
+    "/hire-blockchain-developer/": "/images/BLOCKCHAIN-DEVELOPMENT.svg",
+    "/hire-flutterflow-developer/": "/images/flutterflow-logo2.svg",
+    "/hire-bubble-developer/": "/images/bubble-dark-logo.svg",
+    "/hire-adalo-developer/": "/images/adalo-logo.png",
+    "/hire-low-code-no-code-developer/": "/images/mobile-app-liogo.svg",
+    "/hire-mobile-app-developer/": "/images/mobile-app-liogo.svg",
+  };
+
   async function fetchDevelopersDetail(developerType) {
     try {
       const developerData = await getDeveloperData(developerType);
@@ -134,20 +149,35 @@ const TechnologyDevelopers = () => {
                         <div className="flex items-center gap-[1rem]">
                           <div className="swiper_sec3_img1">
                             <Image
+                              className={`w-[60px] rounded-xl border p-1 ${
+                                pathname === "/hire-mobile-app-developer/" ||
+                                pathname === "/hire-low-code-no-code-developer/"
+                                  ? "invert"
+                                  : ""
+                              }`}
+                              src={showTechImgBasedOnPathname[pathname]}
+                              alt={"React.js"}
+                              width="300"
+                              height="300"
+                            />
+                            {/* <Image
                               className="w-[75px] rounded-[40px]"
                               src={content?.Image?.filename}
                               alt={content?.Image?.alt}
                               width="300"
                               height="300"
-                            />
+                            /> */}
                           </div>
                           <div className="home_sec3_txt2">
                             <p className="!text-[1.5rem] !font-bold">
-                              {content?.Name}
-                            </p>
-                            <p className="!font-bold !text-lg">
                               {content?.Designation}
                             </p>
+                            {/* <p className="!text-[1.5rem] !font-bold">
+                              {content?.Name}
+                            </p> */}
+                            {/* <p className="!font-bold !text-lg">
+                              {content?.Designation}
+                            </p> */}
                           </div>
                         </div>
                         <div className="service_description border-b-[1px]">
@@ -213,7 +243,7 @@ const TechnologyDevelopers = () => {
                           <p>
                             <Image
                               className="md:w-[17px] xl:w-full"
-                              src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%2300C4C8'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A"
+                              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23017eeb'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E"
                               alt="right"
                               width="23"
                               height="23"
@@ -244,7 +274,7 @@ const TechnologyDevelopers = () => {
                             innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
                             className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
                             redirect="#section10_service"
-                            label={` Hire ${content?.Name}`}
+                            label={` Hire Now`}
                             icon={
                               <div className="w-[25px]">
                                 <img
