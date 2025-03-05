@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -8,6 +9,13 @@ import { BrilworksButton } from "../Common/BrilworksBtn";
 
 const Footer = () => {
   const pathname = usePathname();
+  const [salesEmail, setsalesEmail] = useState("");
+  const [hrEmail, setHrEmail] = useState("");
+
+  useEffect(() => {
+    setsalesEmail("sales@brilworks.com"); // Set email dynamically on client side
+    setHrEmail("hr@brilworks.com"); // Set email dynamically on client side
+  }, []);
 
   const getActivePage = (pageURL) => {
     return pathname === pageURL ? "page-active" : "";
@@ -183,8 +191,8 @@ const Footer = () => {
           text: "+ 91 9313644148",
         },
         {
-          link: "mailto:sales@brilworks.com",
-          text: "sales@brilworks.com",
+          link: `mailto:${salesEmail}`,
+          text: `${salesEmail}`,
         },
       ],
     },
@@ -200,8 +208,8 @@ const Footer = () => {
           text: "+ 91 9106810920",
         },
         {
-          link: "mailto:hr@brilworks.com",
-          text: "hr@brilworks.com",
+          link: `mailto:${hrEmail}`,
+          text: `${hrEmail}`,
         },
       ],
     },
@@ -217,8 +225,8 @@ const Footer = () => {
           imgSrc: "/images/call-white.svg",
         },
         {
-          link: "mailto:sales@brilworks.com",
-          text: "sales@brilworks.com",
+          link: `mailto:${salesEmail}`,
+          text: `${salesEmail}`,
           imgSrc: "/images/sms-white.svg",
         },
       ],
@@ -232,8 +240,8 @@ const Footer = () => {
           imgSrc: "/images/call-white.svg",
         },
         {
-          link: "mailto:hr@brilworks.com",
-          text: "hr@brilworks.com",
+          link: `mailto:${hrEmail}`,
+          text: `${hrEmail}`,
           imgSrc: "/images/sms-white.svg",
         },
       ],
