@@ -12,42 +12,46 @@ const TechnologyFAQ = () => {
 
   const reactJSFAQData = [
     {
-      question: "How fast can remote React developers start?",
+      question: "How quickly can your remote React developers start working?",
       answer:
-        "72 hours for most roles. Need someone yesterday? We’ve onboarded devs in 12 hours for emergencies.",
+        "Our process moves at the fastest pace in the tech industry. Pre-vetted experts start coding in your time zone within 72 hours. For urgent front-end issues, senior React architects can be ready in just 48 hours. There are no setup delays because developers come pre-trained on your stack, whether it’s Next.js, TypeScript, or specialized UI libraries like Framer Motion.",
     },
     {
-      question: "What if the developer isn’t perfect?",
+      question: "What if the developer doesn’t meet expectations?",
       answer:
-        "Swap them free within 14 days. Our hiring process has a 92% first-match success rate.",
+        "Our 92% first-match success rate is backed by strong guarantees. We offer a 14-day free replacement if the fit isn’t ideal. A dedicated success manager conducts weekly code reviews to ensure UI quality matches your Figma designs. Performance SLAs, tracked via Jira analytics, help maintain high sprint task completion rates.",
     },
     {
-      question: "Cross-platform vs native apps?",
+      question: "Should we build cross-platform or native apps?",
       answer:
-        "We’ll analyze your users. For most, React Native cuts costs 40% with no UX tradeoff.",
+        "Our front-end architects base their advice on data. React Native provides a shared codebase with a unified UI that performs like native apps. However, if your project needs heavy ARKit integrations or precise animation timing, native development may be better. A hybrid approach can also work, using React Native for core features and adding Swift or Kotlin modules for device-specific optimizations.",
     },
     {
-      question:
-        "What is the average work experience of a React.js developer hired through Brilworks?",
+      question: "What experience level do your React.js developers have?",
       answer:
-        "The average experience of React.js developers hired through us is of mid-senior level, which is 3+ years.",
+        "We provide top-rated talent with an average of 4.2 years of experience. Our developers rank among the top 3%, having passed a rigorous five-stage vetting process. They excel in pixel-perfect Figma-to-React implementations, advanced React 18 features like Suspense and Concurrent Mode, and industry-specific expertise in healthcare, fintech, and gaming.",
     },
     {
-      question: "How long will it take to hire Reactjs from Brilworks?",
+      question: "How long does hiring React developers through Brilworks take?",
       answer:
-        "In as few as 2-5 business days, we can quickly and efficiently assign a React js developer to your project.",
+        "Our process is faster than traditional internal HR teams. It takes just two to five business days from contract signing to the first code commit. Our smart matching algorithm evaluates UI complexity, scalability, and compliance requirements. For larger projects, we can deploy pre-built teams in as little as 72 hours.",
+    },
+    {
+      question: "How do you ensure high-quality user interfaces?",
+      answer:
+        "We enforce a minimum Lighthouse score for performance, accessibility, and SEO. We use Storybook components to integrate design systems that match your brand guidelines. Post-launch, we optimize UI flows using real-user monitoring tools like Hotjar heatmaps.",
     },
     {
       question:
         "What is the benefit of hiring dedicated React.js developers from Brilworks?",
       answer:
-        "Hiring dedicated React js developers for your team is a good idea if you want to ensure that tasks are completed on time and with the highest degree of quality, have the option of scaling the team as and when demand increases, and most importantly get someone reliable on board without worrying about retention.",
+        "Hiring dedicated React.js developers ensures tasks are completed on time and with top quality. You can scale the team as needed and bring in reliable talent without worrying about retention.",
     },
     {
       question:
         "Do you provide support and maintenance services after deployment?",
       answer:
-        "Yes, we offer support and maintenance services to help you keep your product running smoothly after it has been deployed. This includes bug fixes, security maintenance, minor changes, module alterations, feature enhancements, upgrades, and resolution of technical glitches.",
+        "Yes, we offer post-deployment support and maintenance to keep your product running smoothly. This includes bug fixes, security maintenance, minor changes, module alterations, feature enhancements, upgrades, and resolution of technical glitches.",
     },
   ];
   const javaFAQData = [

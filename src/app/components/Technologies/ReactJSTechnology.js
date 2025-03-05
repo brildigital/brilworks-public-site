@@ -20,6 +20,7 @@ import {
   faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
+const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const CommonServices = dynamic(() => import("./CommonServices"));
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 const ReactJSSolutions = dynamic(() => import("./CommonSolutions"));
@@ -306,6 +307,7 @@ const ReactJSTechnology = () => {
         <TechnologyCombination />
         <TechStackWeWorkWith active="frontend" techStackList={techStackList} />
       </section>
+      <BrilworksAdvantage />
       <ReactJSSolutions />
       <WhyReact />
       <ReactJSHiringModels />
