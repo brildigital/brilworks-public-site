@@ -104,6 +104,72 @@ export default async function Page(props) {
       raingVale: 4.5,
       ratingCount: 90,
     },
+    "best-node-js-open-source-projects-in-github": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.6,
+      ratingCount: 90,
+    },
+    "optimize-your-nest-js-app-performance-with-these-practices": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.6,
+      ratingCount: 90,
+    },
+    "top-10-websites-built-using-react-js": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.8,
+      ratingCount: 120,
+    },
+    "top-node-js-frameworks-for-web-development": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.7,
+      ratingCount: 100,
+    },
+    "top-popular-apps-built-with-react-native": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.5,
+      ratingCount: 85,
+    },
+    "what-is-custom-web-application-development-how-to-get-started": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.6,
+      ratingCount: 95,
+    },
+    "whats-new-in-spring-boot-3-for-java-developers-in-2023": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.4,
+      ratingCount: 80,
+    },
+    "path-to-become-aws-partner": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.3,
+      ratingCount: 75,
+    },
+    "react-native-vs-kotlin": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.7,
+      ratingCount: 110,
+    },
+    "what-is-rapid-application-development-a-detailed-guide": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.6,
+      ratingCount: 98,
+    },
+    "next-js-13-drops-with-exciting-updates-find-out-whats-new": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      raingVale: 4.8,
+      ratingCount: 130,
+    },
   };
 
   const { title, pageURL, raingVale, ratingCount } =
