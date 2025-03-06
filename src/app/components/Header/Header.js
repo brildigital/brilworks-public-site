@@ -6,12 +6,15 @@ import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
+import SideMenu from "./SideMenu";
+import MenuItem from "./MenuItem";
+import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
 import { BrilworksButton } from "../Common/BrilworksBtn";
 const Svgs = dynamic(() => import("../Svgs"));
-const SideMenu = dynamic(() => import("./SideMenu"));
-const MenuItem = dynamic(() => import("./MenuItem"));
-const MegaMenu = dynamic(() => import("./MegaMenu"));
+// const SideMenu = dynamic(() => import("./SideMenu"));
+// const MenuItem = dynamic(() => import("./MenuItem"));
+// const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);

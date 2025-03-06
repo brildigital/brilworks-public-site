@@ -37,8 +37,14 @@ const LoadScripts = ({ organization, website, gtm, clr }) => {
         const cdnCloudflareScript = document.createElement("script");
         cdnCloudflareScript.src =
           "https://www.brilworks.com/cdn-cgi/scripts/email-decode.min.js-cb/cloudflare-static/email-decode.min.js";
-        cdnCloudflareScript.async = true;
+        cdnCloudflareScript.beforeInteractive = true;
         document.body.appendChild(cdnCloudflareScript);
+
+        const cdnCloudflareRocketScript = document.createElement("script");
+        cdnCloudflareRocketScript.src =
+          "https://www.brilworks.com/cdn-cgi/scripts/rocket-loader.min.js-cb/cloudflare-static/rocket-loader.min.js";
+        cdnCloudflareRocketScript.beforeInteractive = true;
+        document.body.appendChild(cdnCloudflareRocketScript);
 
         // Factors AI Script
         const factorsScript = document.createElement("script");

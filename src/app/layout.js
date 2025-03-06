@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./styles/Homepage.scss";
+import Header from "./components/Header/Header";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 // import { NextAuthProvider } from "./provider"
@@ -20,9 +21,7 @@ storyblokInit({
   use: [apiPlugin],
 });
 
-import Header from "./components/Header/Header";
 import LoadScripts from "./ScriptLoader";
-
 const Footer = dynamic(() => import("./components/Footer"));
 
 export default function RootLayout({ children }) {
