@@ -9,12 +9,16 @@ import { BrilworksButton } from "../Common/BrilworksBtn";
 
 const Footer = () => {
   const pathname = usePathname();
-  const [salesEmail, setsalesEmail] = useState("");
+  const [salesEmail, setSalesEmail] = useState("");
   const [hrEmail, setHrEmail] = useState("");
 
   useEffect(() => {
-    setsalesEmail("sales@brilworks.com"); // Set email dynamically on client side
-    setHrEmail("hr@brilworks.com"); // Set email dynamically on client side
+    const timer = setTimeout(() => {
+      setSalesEmail("sales@brilworks.com");
+      setHrEmail("hr@brilworks.com");
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup timeout on unmount
   }, []);
 
   const getActivePage = (pageURL) => {

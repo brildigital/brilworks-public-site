@@ -31,18 +31,15 @@ const RapidDigitization = () => {
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
-
   }, []);
   async function fetchData() {
     try {
-      const blogData = await getblogData(1, isTablet ? 3 : 4 ,false,"no code");
+      const blogData = await getblogData(1, isTablet ? 3 : 4, false, "no code");
       setBlogData(blogData.storyData);
     } catch (error) {
       console.error(error);
     }
   }
-
-
 
   return (
     <div className="services pt-20">
@@ -97,88 +94,89 @@ const RapidDigitization = () => {
         <div className="bg-themeLight">
           <TechStackWeUse />
         </div>
-    
       </div>
-    <>
-    <div
-      className={
-        pathname === "/" ? "bg-sectionBG section-padding" : "section-padding"
-      }
-    >
-      <div className="container max-w-[1280px] mx-auto reveal">
-        <BlogText />
-        <div className="blog-home reveal">
-          {blogData?.length ? (
-            blogData?.map(({ slug, name, content }, index) => {
-              if (
-                content &&
-                (content.Priority == 1 ||
-                  content.Priority == 2 ||
-                  content.Priority == 3)
-              ) {
-                return (
-                  <div
-                    key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <Image
-                        src={content?.mobile_banner?.filename}
-                        alt={content?.mobile_banner?.alt}
-                        className="vc_gitem-zone-img rounded-[20px]"
-                        width={550}
-                        height={283}
-                      />
-                      <div className="p-[10px]">
-                        <h4 className="xl:text-[24px] mb-[10px] leading-8">
-                          {name}
-                        </h4>
+      <>
+        <div
+          className={
+            pathname === "/"
+              ? "bg-sectionBG section-padding"
+              : "section-padding"
+          }
+        >
+          <div className="container max-w-[1280px] mx-auto reveal">
+            <BlogText />
+            <div className="blog-home reveal">
+              {blogData?.length ? (
+                blogData?.map(({ slug, name, content }, index) => {
+                  if (
+                    content &&
+                    (content.Priority == 1 ||
+                      content.Priority == 2 ||
+                      content.Priority == 3)
+                  ) {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename}
+                            alt={content?.mobile_banner?.alt}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
                       </div>
-                    </Link>
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <Image
-                        src={content?.mobile_banner?.filename || ""}
-                        alt={content?.mobile_banner?.alt || "Blog banner"}
-                        className="vc_gitem-zone-img rounded-[20px]"
-                        width={550}
-                        height={283}
-                        sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                      />
-                      <div className="p-[10px]">
-                        <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                          {name}
-                        </h4>
+                    );
+                  } else {
+                    return (
+                      <div
+                        key={index}
+                        className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                      >
+                        <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                          <Image
+                            src={content?.mobile_banner?.filename || ""}
+                            alt={content?.mobile_banner?.alt || "Blog banner"}
+                            className="vc_gitem-zone-img rounded-[20px]"
+                            width={550}
+                            height={283}
+                            sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                          />
+                          <div className="p-[10px]">
+                            <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
+                              {name}
+                            </h4>
+                          </div>
+                        </Link>
                       </div>
-                    </Link>
-                  </div>
-                );
-              }
-            })
-          ) : (
-            <div className="flex align-middle justify-center">
-              <FetchDataSpinner />
+                    );
+                  }
+                })
+              ) : (
+                <div className="flex align-middle justify-center">
+                  <FetchDataSpinner />
+                </div>
+              )}
             </div>
-          )}
+            {blogData?.length ? (
+              <LinkWithArrow
+                href="/blog/"
+                label="Read More"
+                className="justify-center"
+              />
+            ) : null}
+          </div>
         </div>
-        {blogData?.length ? (
-          <LinkWithArrow
-            href="/blog/"
-            label="Read More"
-            className="justify-center"
-          />
-        ) : null}
-      </div>
-    </div></>
-          <ServicesFAQ />
-      
+      </>
+      <ServicesFAQ />
     </div>
   );
 };
