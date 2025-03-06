@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
@@ -10,18 +10,6 @@ const Svgs = dynamic(() => import("../Svgs"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ContactUs = () => {
-  const [salesEmail, setSalesEmail] = useState("");
-  const [hrEmail, setHrEmail] = useState("");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSalesEmail("sales@brilworks.com");
-      setHrEmail("hr@brilworks.com");
-    }, 3000);
-
-    return () => clearTimeout(timer); // Cleanup timeout on unmount
-  }, []);
-
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -108,7 +96,7 @@ const ContactUs = () => {
       <section className="xl:pt-24 lg:pt-16 pt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
         <div className="bg-themeColor w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
           <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
-            For career inquiry email us on <strong>{hrEmail}</strong>
+            For career inquiry email us on <strong>hr@brilworks.com</strong>
           </h2>
           <Link
             href="/career/"
@@ -260,7 +248,9 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <a href={`mailto:${salesEmail}`}>{salesEmail}</a>
+                    <a href={`mailto:sales@brilworks.com`}>
+                      sales@brilworks.com
+                    </a>
                   </p>
                 </div>
               </div>
