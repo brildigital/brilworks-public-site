@@ -66,16 +66,19 @@ const HiringModels = () => {
       title: "Hire React JS Developers with These Flexible Hiring Models",
       description: "",
       pricingPlans: reactJsPricingPlans,
+      buttonText: "Hire Full Stack React.js Developers",
     },
     "/hire-nodejs-developer/": {
       title: "Flexible Hiring Models for Node.js Developers",
       description: "",
       pricingPlans: reactJsPricingPlans,
+      buttonText: "Hire Node.js Developers",
     },
     "/hire-blockchain-developer/": {
       title: "Flexible Hiring Models for Blockchain Developers",
       description: "",
       pricingPlans: blockchainPricingPlans,
+      buttonText: "Hire Blockchain Developers",
     },
   };
   const currentData = mapToRender[pathname];
@@ -129,7 +132,7 @@ const HiringModels = () => {
           innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
           className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
           redirect="#section10_service"
-          label="Hire Full Stack React.js Developers"
+          label={currentData.buttonText}
           icon={
             <div className="w-[25px]">
               <img
