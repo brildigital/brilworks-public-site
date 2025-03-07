@@ -81,40 +81,52 @@ const TechnologyFAQ = () => {
     {
       question: "How fast can remote Node.js developers start?",
       answer:
-        "Typically within 72 hours. Expedited onboarding available for urgent needs.",
+        "Typically, our developers can begin work within 72 hours. Expedited onboarding is available for urgent needs. With our streamlined process, we ensure that you experience minimal delays and can quickly integrate top talent into your project.",
     },
     {
       question: "What if the developer isn’t the right fit?",
       answer:
-        "Free replacement within 14 days. Our process ensures a 92% first-match success rate.",
+        "We offer a free replacement within 14 days if the developer does not meet your expectations. Our process is designed to achieve a 92% first-match success rate. If there are any issues, we promptly match you with another expert who aligns perfectly with your project requirements.",
     },
     {
       question: "Do you provide support after deployment?",
       answer:
-        "Yes, including bug fixes, security updates, and feature enhancements.",
+        "Yes, our support extends well beyond the initial launch. We offer ongoing maintenance that includes bug fixes, security updates, and feature enhancements. This ensures your Node.js application remains secure, efficient, and up-to-date even as your business evolves.",
     },
     {
-      question: "How does Brilworks vet Node.js developers ?",
+      question: "How do you verify developer expertise?",
       answer:
-        "We thoroughly evaluate Node.js developers’ logical reasoning abilities, communication skills, and their ability to write well-documented and clean code before we hire them.",
+        "Our rigorous screening process involves multiple layers of evaluation. We conduct technical assessments, portfolio reviews, and live coding tests to ensure that each candidate is proficient in Node.js and related frameworks. This thorough verification minimizes risks and guarantees you receive high-quality talent.",
     },
     {
-      question:
-        "How much will it cost to hire a NodeJS developer from Brilworks ?",
+      question: "What is the cost structure?",
       answer:
-        "Hiring a NodeJS developer from us will cost you approximately $2500 a month, depending on the skillset and experience of the candidate.",
+        "We provide competitive hourly rates or fixed project fees, depending on your needs. Our pricing is completely transparent—there are no hidden charges. This clear cost structure allows you to plan your budget with confidence while benefiting from expert development services.",
     },
     {
-      question:
-        "Do you provide a trial period for hiring a Node.js developer ?",
+      question: "Can I request specific technical skills or experience?",
       answer:
-        "Yes, we offer a 48-hour no-risk trial period, so you can test the resource before making a decision.",
+        "Absolutely. We pride ourselves on matching candidates to your precise technical requirements. Whether you need expertise in Express.js, asynchronous programming, API development, or database integrations, we tailor our selection to ensure the developer has the exact skills necessary for your project’s success.",
     },
     {
-      question:
-        "What are the key skills that a Node.js developer should have ?",
+      question: "How do you handle time zone differences?",
       answer:
-        "The Nodejs developer must have a definite knowledge of both relational databases like MySQL, MariaDB, and No SQL databases like MongoDB, and CouchDB.",
+        "Our global talent network means that we have developers available across multiple time zones. This allows for flexible working hours and ensures there is ample overlap with your business hours. We also use robust communication tools and regular check-ins to bridge any time zone gaps, ensuring seamless collaboration.",
+    },
+    {
+      question: "What is the onboarding process like?",
+      answer:
+        "The onboarding process is simple and efficient. It begins with an initial consultation to understand your project’s specific needs, followed by a careful candidate selection. After a brief trial period, we fully integrate the developer into your team, ensuring a smooth transition and immediate productivity.",
+    },
+    {
+      question: "How do you manage project progress and quality?",
+      answer:
+        "We maintain tight control over project progress through regular updates and agile project management methodologies. Milestone tracking, quality control checkpoints, and frequent feedback sessions keep your project on schedule and within scope. This proactive management approach ensures high standards and timely delivery.",
+    },
+    {
+      question: "What happens if my project needs change over time?",
+      answer:
+        "We understand that project requirements can evolve. That’s why our service is highly scalable and flexible. Whether you need to add more developers or pivot your project focus, our team adapts to meet changing demands with minimal disruption. Our ongoing support and agile methodologies ensure your project continues to align with your business goals.",
     },
   ];
   const reactNativeFAQData = [
