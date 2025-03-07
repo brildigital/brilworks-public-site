@@ -44,37 +44,37 @@ const nodeJSSolutionsList = [
   {
     title: "eCommerce",
     description:
-      "Scalable platforms with real-time inventory tracking and seamless payment integration.",
+      "Our Node.js solutions empower eCommerce platforms with scalable architectures, enabling real-time inventory tracking and seamless payment integration. This results in a responsive, reliable online shopping experience even during peak traffic.",
     icon: "/images/eCommerce.svg",
   },
   {
     title: "Healthcare",
     description:
-      "HIPAA-compliant applications, telemedicine solutions, and secure patient portals.",
+      "We develop HIPAA-compliant applications that support telemedicine and secure patient portals. Node.js facilitates the creation of responsive, secure systems designed to protect sensitive patient data while ensuring smooth remote consultations.",
     icon: "/images/Healthcare.svg",
   },
   {
     title: "Fintech",
     description:
-      "Secure transaction processing, AI-powered fraud detection, and real-time analytics.",
+      "Our Node.js development drives secure transaction processing and integrates AI-powered fraud detection with real-time analytics, meeting the high demands of modern financial services.",
     icon: "/images/Fintech.svg",
   },
   {
     title: "Real Estate",
     description:
-      "Advanced listing platforms, AI-powered search, and property management solutions.",
+      "We build advanced listing platforms featuring AI-powered search and efficient property management solutions, streamlining the discovery and administration of real estate assets.",
     icon: "/images/real-estate.svg",
   },
   {
     title: "eLearning",
     description:
-      "Interactive learning platforms with real-time collaboration and progress tracking.",
+      "Interactive platforms developed with Node.js enable real-time collaboration and progress tracking, fostering engaging and efficient online learning experiences.",
     icon: "/images/eLearning.svg",
   },
   {
     title: "Manufacturing",
     description:
-      "IoT-enabled smart, predictive maintenance systems and AI-driven supply chain optimization.",
+      "Our solutions leverage Node.js to integrate IoT-enabled predictive maintenance systems and AI-driven supply chain optimization, helping manufacturers boost efficiency and minimize downtime.",
     icon: "/images/Manufacturing.svg",
   },
 ];

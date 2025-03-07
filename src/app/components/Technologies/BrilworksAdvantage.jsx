@@ -1,6 +1,7 @@
+import { usePathname } from "next/navigation";
 import React from "react";
 
-const cardData = [
+const reactJsAdvantages = [
   {
     title: "Elite Talent, Rigorously Vetted",
     description:
@@ -45,7 +46,67 @@ const cardData = [
   },
 ];
 
+const nodeJsAdvantages = [
+  {
+    title: "Modern Code Brilliance",
+    description:
+      "Our developers are fluent in cutting-edge languages like JavaScript (Node.js), Python, Java, and TypeScript, enabling them to craft high-quality, future-proof solutions tailored to your technical and business needs.",
+    badgeText: "Multi-Language Expertise",
+    badgeColor: "bg-blue-100 text-blue-800",
+  },
+  {
+    title: "Scalable Web Applications",
+    description:
+      "From real-time collaboration tools to enterprise-grade platforms, we engineer web applications that prioritize scalability, security, and performance optimization to handle evolving demands effortlessly.",
+    badgeText: "Scalability Focus",
+    badgeColor: "bg-purple-100 text-purple-800",
+  },
+  {
+    title: "Robust RESTful APIs",
+    description:
+      "Our team designs and optimizes RESTful APIs that act as the backbone of your application, ensuring seamless integration between frontend, backend, and third-party services while maintaining data integrity.",
+    badgeText: "API Excellence",
+    badgeColor: "bg-yellow-100 text-yellow-800",
+  },
+  {
+    title: "Software Development Excellence",
+    description:
+      "By combining Agile methodologies, rigorous testing, and iterative refinement, we deliver software development solutions that align with your goals, reduce time-to-market, and drive measurable ROI.",
+    badgeText: "Quality-Driven",
+    badgeColor: "bg-red-100 text-red-800",
+  },
+  {
+    title: "Performance Optimization",
+    description:
+      "Beyond initial builds, we fine-tune applications for high-quality performance under heavy traffic, addressing bottlenecks, memory leaks, and latency to maintain stability and speed.",
+    badgeText: "High Performance",
+    badgeColor: "bg-green-100 text-green-800",
+  },
+  {
+    title: "Advanced Security Integration",
+    description:
+      "From authentication protocols to data encryption, we embed security best practices into every layer of development, safeguarding your applications against evolving cyber threats.",
+    badgeText: "Security First",
+    badgeColor: "bg-indigo-100 text-indigo-800",
+  },
+];
+
 const BrilworksAdvantage = () => {
+  const pathname = usePathname();
+  const mapToRender = {
+    "/hire-reactjs-developer/": {
+      title: "Engineered Excellence: The Brilworks Advantage",
+      description:
+        "As a top-rated React development company, we’ve redefined what it means to deliver enterprise-grade solutions at startup speed. Here’s why top-rated companies and tech leaders trust us over generic agencies.",
+      advantages: reactJsAdvantages,
+    },
+    "/hire-nodejs-developer/": {
+      title: "Engineered Excellence: The Brilworks Advantage",
+      description: "",
+      advantages: nodeJsAdvantages,
+    },
+  };
+  const currentData = mapToRender[pathname];
   return (
     <div className="xl:!pt-[6rem] md:pt-[4rem] pt-[2rem]">
       <div className="solution_gradiant section-padding">
@@ -54,33 +115,30 @@ const BrilworksAdvantage = () => {
             <div className="endTO_text solutions ">
               <div className="endTO_text solutions flex flex-col gap-3">
                 <h2 className="!w-full uppercase reveal">
-                  Engineered Excellence: The Brilworks Advantage
+                  {currentData?.title}
                 </h2>
                 <p className="reveal text-left md:text-center md:w-[80%] mx-auto etxt md:text-lg">
-                  As a top-rated React development company, we’ve redefined what
-                  it means to deliver enterprise-grade solutions at startup
-                  speed. Here’s why top-rated companies and tech leaders trust
-                  us over generic agencies.
+                  {currentData?.description}
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 reveal">
-              {cardData.map((card, index) => (
+              {currentData?.advantages?.map((advantage, index) => (
                 <div
                   key={index}
                   className="bg-white p-6 md:p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 cursor-pointer h-full flex flex-col justify-between gap-3"
                 >
                   <div className="flex flex-col gap-2">
                     <h2 className="md:text-2xl text-xl font-bold text-gray-900">
-                      {card.title}
+                      {advantage.title}
                     </h2>
-                    <p className="">{card.description}</p>
+                    <p className="">{advantage.description}</p>
                   </div>
                   <div className="">
                     <span
-                      className={`inline-block ${card.badgeColor} px-3 py-1 rounded-full text-sm font-semibold`}
+                      className={`inline-block ${advantage.badgeColor} px-3 py-1 rounded-full text-sm font-semibold`}
                     >
-                      {card.badgeText}
+                      {advantage.badgeText}
                     </span>
                   </div>
                 </div>
