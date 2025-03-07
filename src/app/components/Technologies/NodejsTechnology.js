@@ -21,6 +21,10 @@ import {
   faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
+const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
+const PerformanceOptAccordion = dynamic(() =>
+  import("./PerformanceOptAccordion")
+);
 const CommonServices = dynamic(() => import("./CommonServices"));
 const WhyFirstSection = dynamic(() => import("./WhyFirstSection"));
 const CommonSolutions = dynamic(() => import("./CommonSolutions"));
@@ -85,37 +89,37 @@ const nodeJsServices = [
     imgSrc: "/images/Web-Development.svg",
     title: "Web App Development",
     description:
-      "Build fast, scalable web apps with a backend that handles high traffic efficiently.",
+      "We engineer high-traffic web applications that outperform industry benchmarks. Leveraging Node.js’s event-driven architecture, we build solutions that maintain sub-second response times, even with 10,000+ concurrent users. Our battle-tested approach ensures seamless scalability and 24/7 reliability.",
   },
   {
     imgSrc: "/images/API-Integration.svg",
     title: "API Development & Integration",
     description:
-      "Develop RESTful and GraphQL APIs that seamlessly integrate with your systems.",
+      "Our track record includes 100+ mission-critical API implementations. We design RESTful/GraphQL APIs with military-grade security and 99.99% uptime SLAs, having integrated complex ecosystems spanning fintech platforms, IoT networks, and global ERP systems.",
   },
   {
     imgSrc: "/images/update.svg",
-    title: "Migration & Modernization",
+    title: "Legacy Modernization Leadership",
     description:
-      "Upgrade legacy systems to Node.js for better performance and maintainability.",
+      "We’ve successfully migrated 50+ legacy systems to Node.js with zero business disruption. Our phased modernization approach combines reverse-engineering expertise with future-ready architecture design, typically achieving 3x performance improvements and 40% maintenance cost reductions.",
   },
   {
     imgSrc: "/images/Real-Time-App.svg",
-    title: "Real-Time Applications",
+    title: "Real-Time Solution Specialists",
     description:
-      "Power chat apps, live streaming, and collaborative tools with real-time Node.js capabilities.",
+      "Developers of enterprise-ready real-time systems, we create collaborative platforms and live data solutions using Node.js’s native capabilities. Our implementations power mission-critical communication tools and instant-update interfaces across industries.",
   },
   {
     imgSrc: "/images/microservices-architecture.svg",
-    title: "Microservices Architecture",
+    title: "Microservices Architecture Authority",
     description:
-      "Create modular, scalable applications with Node.js-based microservices.",
+      "Architects of 50+ production-grade Node.js microservices ecosystems, we implement containerized, Kubernetes-optimized solutions that enable true CI/CD. Our modular designs have helped enterprises achieve 5x faster feature deployments.",
   },
   {
     imgSrc: "/images/server-less.svg",
-    title: "Serverless Development",
+    title: "Serverless Development Innovators",
     description:
-      "Build cost-efficient, scalable applications using Node.js with serverless architectures.",
+      "Leaders in serverless Node.js implementations, we optimize cloud costs while maintaining elastic scalability. Our solutions have reduced clients’ infrastructure expenses by 60%+ through intelligent AWS Lambda/Azure Functions architectures.",
   },
 ];
 const techStackList = [
@@ -250,7 +254,7 @@ const NodejsTechnology = () => {
             <div className="basis-[45%]">
               <div className="home_sec2_txt3 like_text">
                 <p className="!p-0 !ml-[0] !w-full uppercase">
-                  Hire Node.js Developers: Pre-Vetted Experts, Zero Hassle
+                  Hire Nodejs Developers: Pre-Vetted Experts, Zero Hassle
                 </p>
               </div>
             </div>
@@ -295,19 +299,18 @@ const NodejsTechnology = () => {
           description="From concept to deployment, we prioritize technical excellence, agile methodologies, and innovative problem-solving to deliver solutions that drive growth. We don't just write Node.js code. We build high-performance backend solutions."
           firstSectionFeatures={firstSectionFeatures}
         />
+        <PerformanceOptAccordion />
         <CommonServices
           title="Build Lightning-Fast Solutions With Our Node.js Development
-                  Services"
+          Services"
           services={nodeJsServices}
         />
-
         <TechnologyDevelopers />
-
         <BenefitOfHiringDevelopers />
-
         <TechnologyCombination />
         <TechStackWeWorkWith active="backend" techStackList={techStackList} />
       </section>
+      <BrilworksAdvantage />
       <CommonSolutions />
       <WhyThisTech />
       <HiringModels />
