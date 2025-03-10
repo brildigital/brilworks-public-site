@@ -915,11 +915,7 @@ export const blogListStaticData = [
   {
     name: "Java Modernization and Migration ",
     loc: "https://www.brilworks.com/blog/java-modernization-and-migration/",
-<<<<<<< HEAD
-    lastmod: "2024-12-18T13:35:02.950Z",
-=======
     lastmod: "2025-03-05T09:03:02.830Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Java Development Best Practices Every Developer Should Follow",
@@ -1009,11 +1005,7 @@ export const blogListStaticData = [
   {
     name: "Essential Input Strategies in Building Microservices Architecture",
     loc: "https://www.brilworks.com/blog/essential-input-strategies-in-building-microservices-architecture/",
-<<<<<<< HEAD
-    lastmod: "2024-11-24T16:48:36.646Z",
-=======
     lastmod: "2025-03-04T10:38:54.734Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Essential Microservices Design Patterns Explained",
@@ -1058,11 +1050,7 @@ export const blogListStaticData = [
   {
     name: "White label app development cost: A Straightforward Guide",
     loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
-<<<<<<< HEAD
-    lastmod: "2024-11-08T05:25:52.721Z",
-=======
     lastmod: "2025-02-28T07:03:05.944Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "The Best White Label App builders",
@@ -1092,11 +1080,7 @@ export const blogListStaticData = [
   {
     name: "How to Create a Mobile App in 2024 [Easy Steps]",
     loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
-<<<<<<< HEAD
-    lastmod: "2024-10-16T12:00:51.984Z",
-=======
     lastmod: "2025-02-27T07:23:54.335Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Is AWS the Right Cloud Solution for Your Small Business?",
@@ -1136,11 +1120,7 @@ export const blogListStaticData = [
   {
     name: "7 Emerging AI Technologies to Watch in 2024",
     loc: "https://www.brilworks.com/blog/emerging-ai-technologies/",
-<<<<<<< HEAD
-    lastmod: "2024-12-16T06:28:22.343Z",
-=======
     lastmod: "2025-03-04T11:22:28.037Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "The Roadmap to Successful AI Implementation",
@@ -1450,11 +1430,7 @@ export const blogListStaticData = [
   {
     name: "Best Front-End Frameworks to Watch in 2024",
     loc: "https://www.brilworks.com/blog/best-front-end-frameworks/",
-<<<<<<< HEAD
-    lastmod: "2024-05-02T16:13:00.039Z",
-=======
     lastmod: "2025-03-05T09:31:38.670Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Java Testing Tools: Essential Tools for Every Java Developer",
@@ -1679,11 +1655,7 @@ export const blogListStaticData = [
   {
     name: "Top Popular Apps Built With React Native",
     loc: "https://www.brilworks.com/blog/top-popular-apps-built-with-react-native/",
-<<<<<<< HEAD
-    lastmod: "2024-11-25T12:49:26.865Z",
-=======
     lastmod: "2025-03-05T09:18:38.596Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Top 10 Websites Built Using React.js",
@@ -1713,11 +1685,7 @@ export const blogListStaticData = [
   {
     name: "Cross Platform App Development: Best Frameworks",
     loc: "https://www.brilworks.com/blog/cross-platform-app-development-best-frameworks/",
-<<<<<<< HEAD
-    lastmod: "2024-07-30T13:06:01.355Z",
-=======
     lastmod: "2025-03-05T06:38:29.561Z",
->>>>>>> c3f8746 (Updated sitemap)
   },
   {
     name: "Top 6 Healthcare Trends to Watch",
