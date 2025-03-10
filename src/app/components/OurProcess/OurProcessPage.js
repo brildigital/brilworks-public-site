@@ -545,7 +545,7 @@ const OurProcessPage = () => {
       </div>
 
       <div className="mx-auto service_width xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
-        <div className="flex !flex-col md:!flex-row items-start gap-[1rem]">
+        <div className="flex !flex-col md:!flex-row items-center justify-center gap-[1rem]">
           <div className="our_img_text_sec relative">
             <div className="our_img">
               <img
