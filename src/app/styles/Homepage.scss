@@ -28,7 +28,6 @@
   p {
     font-size: var(--font_36);
     font-family: var(--global-font);
-    font-display: swap;
     color: var(--color_black);
     width: fit-content;
     font-weight: 400;
@@ -52,7 +51,6 @@
   p {
     font-size: var(--font_32);
     font-family: var(--global-font);
-    font-display: swap;
     width: fit-content;
     font-weight: 400;
     line-height: 2.5rem;
@@ -505,7 +503,6 @@
 .career_review .clutch_position p:nth-child(1) {
   font-size: var(--font_32);
   font-family: var(--global-font);
-  font-display: swap;
   color: var(--color_black);
   min-height: 200px;
 }

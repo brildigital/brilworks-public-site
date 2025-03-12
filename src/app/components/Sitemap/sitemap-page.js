@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Sitemap = dynamic(() => import("../components/Sitemap/Sitemap"));
+const Sitemap = dynamic(() => import("./Sitemap"));
 
 export const metadata = {
   title: "Site Map | Brilworks Software",
