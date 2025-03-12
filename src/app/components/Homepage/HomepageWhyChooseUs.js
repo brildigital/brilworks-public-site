@@ -58,7 +58,7 @@ const HomepageWhyChooseUs = () => {
               className="rounded-[30px] border border-borderGray overflow-visible h-auto"
               key={index}
             >
-              <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-6 transition-all duration-[0.5s]">
+              <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-[0.1rad] transition-all duration-[0.5s]">
                 <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
                   {title}
                 </h4>

@@ -707,10 +707,10 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/low-code-no-code-development-services/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
-  {
-    loc: "https://www.brilworks.com/site-map/",
-    lastmod: "2024-09-25T12:04:49.528Z",
-  },
+  // {
+  //   loc: "https://www.brilworks.com/site-map/",
+  //   lastmod: "2024-09-25T12:04:49.528Z",
+  // },
   {
     loc: "https://www.brilworks.com/privacy-policy/",
     lastmod: "2024-09-25T12:04:49.528Z",

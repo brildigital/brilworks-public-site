@@ -37,8 +37,8 @@ const ContentBlock = ({ contentData }) => {
                 <p
                   className={
                     pathname === "/hire-java-developer/"
-                      ? "md:h-[150px] min-h-[150]"
-                      : "md:h-[120px] min-h-[120]"
+                      ? "md:h-[150px] min-h-[150px]"
+                      : "md:h-[120px] min-h-[120px]"
                   }
                 >
                   {contentData.description}

@@ -397,9 +397,9 @@ const Footer = () => {
                 <Link href="/privacy-policy/" className="transition">
                   Privacy Policy
                 </Link>
-                <Link href="/site-map/" className="transition">
+                {/* <Link href="/site-map/" className="transition">
                   Sitemap
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -819,9 +819,9 @@ const Footer = () => {
                   <Link href="/privacy-policy/" className="transition">
                     Privacy Policy
                   </Link>
-                  <Link href="/site-map/" className="transition">
+                  {/* <Link href="/site-map/" className="transition">
                     Sitemap
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
