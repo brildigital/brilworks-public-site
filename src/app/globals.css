@@ -62,7 +62,6 @@ body {
   background-size: contain;
   width: 100%;
   font-family: var(--global-font) !important;
-  font-optical-sizing: auto;
   font-style: normal;
 }
 
