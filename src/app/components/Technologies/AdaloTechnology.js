@@ -18,6 +18,7 @@ const SolutionContactForm = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const AdaloTechnology = () => {
   useEffect(() => {
@@ -291,7 +292,7 @@ const AdaloTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

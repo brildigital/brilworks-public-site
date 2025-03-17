@@ -43,6 +43,8 @@ const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
+
 const firstSectionFeatures = [
   {
     heading: "No Time Zone Barriers",
@@ -312,7 +314,7 @@ const ReactJSTechnology = () => {
       <WhyReact />
       <ReactJSHiringModels />
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
       <SolutionContactForm />
       <ReactJSFAQs />

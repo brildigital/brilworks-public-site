@@ -19,6 +19,7 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const AWSTechnology = () => {
   useEffect(() => {
@@ -314,7 +315,7 @@ const AWSTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

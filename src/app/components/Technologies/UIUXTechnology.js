@@ -20,6 +20,7 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const UIUXTechnology = () => {
   useEffect(() => {
@@ -315,7 +316,7 @@ const UIUXTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

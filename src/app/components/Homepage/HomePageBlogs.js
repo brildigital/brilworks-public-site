@@ -67,6 +67,28 @@ const HomePageBlogs = () => {
   // useEffect(() => {
   //   fetchData();
   // }, []);
+
+  function getRedirectPath(pathname) {
+    if (!pathname.startsWith("/hire-")) {
+      return pathname; // Return the original pathname if it doesn't start with "hire-"
+    }
+
+    switch (pathname) {
+      case "/hire-adalo-developer/":
+        return "/adalo-development-services/";
+      case "/hire-aws-developer/":
+        return "/aws-consulting-services/";
+      case "/hire-low-code-no-code-developer/":
+        return "/low-code-no-code-development-services/";
+      case "/hire-blockchain-developer/":
+        return "/ai-ml-development-services/";
+      case "/hire-react-native-developer/":
+        return "/application-development-services/";
+      default:
+        return "/"; // Default to "/" for all other "hire-" pages
+    }
+  }
+
   return (
     <div
       className={
@@ -76,60 +98,62 @@ const HomePageBlogs = () => {
       <div className="container max-w-[1280px] mx-auto reveal">
         <BlogText />
         <div className="blog-home reveal">
-          {blogResponse[pathname]?.length ? (
-            blogResponse[pathname].map(({ slug, name, content }, index) => {
-              if (
-                content &&
-                (content.Priority == 1 ||
-                  content.Priority == 2 ||
-                  content.Priority == 3)
-              ) {
-                return (
-                  <div
-                    key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <Image
-                        src={content?.mobile_banner?.filename}
-                        alt={content?.mobile_banner?.alt}
-                        className="vc_gitem-zone-img rounded-[20px]"
-                        width={550}
-                        height={283}
-                      />
-                      <div className="p-[10px]">
-                        <h4 className="xl:text-[24px] mb-[10px] leading-8">
-                          {name}
-                        </h4>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={index}
-                    className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                  >
-                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                      <Image
-                        src={content?.mobile_banner?.filename || ""}
-                        alt={content?.mobile_banner?.alt || "Blog banner"}
-                        className="vc_gitem-zone-img rounded-[20px]"
-                        width={550}
-                        height={283}
-                        sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                      />
-                      <div className="p-[10px]">
-                        <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                          {name}
-                        </h4>
-                      </div>
-                    </Link>
-                  </div>
-                );
+          {blogResponse[getRedirectPath(pathname)]?.length ? (
+            blogResponse[getRedirectPath(pathname)].map(
+              ({ slug, name, content }, index) => {
+                if (
+                  content &&
+                  (content.Priority == 1 ||
+                    content.Priority == 2 ||
+                    content.Priority == 3)
+                ) {
+                  return (
+                    <div
+                      key={index}
+                      className="blog-box overflow-hidden shadow-none hover:shadow-lg"
+                    >
+                      <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                        <Image
+                          src={content?.mobile_banner?.filename}
+                          alt={content?.mobile_banner?.alt}
+                          className="vc_gitem-zone-img rounded-[20px]"
+                          width={550}
+                          height={283}
+                        />
+                        <div className="p-[10px]">
+                          <h4 className="xl:text-[24px] mb-[10px] leading-8">
+                            {name}
+                          </h4>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div
+                      key={index}
+                      className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
+                    >
+                      <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                        <Image
+                          src={content?.mobile_banner?.filename || ""}
+                          alt={content?.mobile_banner?.alt || "Blog banner"}
+                          className="vc_gitem-zone-img rounded-[20px]"
+                          width={550}
+                          height={283}
+                          sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                        />
+                        <div className="p-[10px]">
+                          <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
+                            {name}
+                          </h4>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                }
               }
-            })
+            )
           ) : (
             <div className="flex align-middle justify-center">
               <FetchDataSpinner />

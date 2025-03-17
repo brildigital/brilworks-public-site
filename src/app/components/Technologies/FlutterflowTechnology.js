@@ -17,6 +17,7 @@ const SolutionContactForm = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const FlutterflowTechnology = () => {
   useEffect(() => {
@@ -318,7 +319,7 @@ const FlutterflowTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

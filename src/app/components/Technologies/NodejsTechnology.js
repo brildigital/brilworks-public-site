@@ -45,6 +45,7 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const firstSectionFeatures = [
   {
@@ -315,7 +316,7 @@ const NodejsTechnology = () => {
       <WhyThisTech />
       <HiringModels />
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
