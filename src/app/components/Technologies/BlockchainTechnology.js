@@ -26,6 +26,7 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const blockchainFeatures = [
   {
@@ -292,7 +293,7 @@ Global Talent, Local Precision. Our remote blockchain developers operate in your
       <WhyThisTech />
       <HiringModels />
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

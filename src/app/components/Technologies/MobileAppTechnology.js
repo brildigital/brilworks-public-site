@@ -18,6 +18,7 @@ const SolutionContactForm = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const MobileAppTechnology = () => {
   useEffect(() => {
@@ -264,7 +265,7 @@ const MobileAppTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

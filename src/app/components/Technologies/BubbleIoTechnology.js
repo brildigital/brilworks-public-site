@@ -19,6 +19,8 @@ const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
+
 const BubbleIoTechnology = () => {
   useEffect(() => {
     scrollEffect();
@@ -265,9 +267,9 @@ const BubbleIoTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
-
+      <HomePageBlogs />
       <SolutionContactForm />
       <BubbleIoFAQs />
     </>

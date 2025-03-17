@@ -212,7 +212,7 @@ const ThreeStepstoHireDeveloper = () => {
       </div>
 
       <div
-        className="mx-auto md:py-[6rem] py-[4rem] px-4 workpadd_borderTop end-to-end"
+        className="mx-auto md:pt-[6rem] pt-[4rem] px-4 workpadd_borderTop end-to-end"
         id="pricing"
       >
         <div className="end-To-end">

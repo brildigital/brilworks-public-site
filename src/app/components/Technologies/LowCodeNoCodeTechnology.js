@@ -18,6 +18,7 @@ const SolutionContactForm = dynamic(() =>
 const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const LowCodeNoCodeTechnology = () => {
   useEffect(() => {
@@ -320,7 +321,7 @@ const LowCodeNoCodeTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />

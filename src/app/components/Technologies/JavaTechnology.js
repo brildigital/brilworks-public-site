@@ -22,6 +22,7 @@ const ThreeStepstoHireDeveloper = dynamic(() =>
   import("./ThreeStepstoHireDeveloper")
 );
 
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const JavaTechnology = () => {
   useEffect(() => {
     scrollEffect();
@@ -347,7 +348,7 @@ const JavaTechnology = () => {
       </section>
 
       <ThreeStepstoHireDeveloper />
-
+      <HomePageBlogs />
       <WhyShouldHireDevelopers />
 
       <SolutionContactForm />
