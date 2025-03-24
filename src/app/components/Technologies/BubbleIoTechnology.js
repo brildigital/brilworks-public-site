@@ -269,7 +269,6 @@ const BubbleIoTechnology = () => {
       <ThreeStepstoHireDeveloper />
       <HomePageBlogs />
       <WhyShouldHireDevelopers />
-      <HomePageBlogs />
       <SolutionContactForm />
       <BubbleIoFAQs />
     </>
