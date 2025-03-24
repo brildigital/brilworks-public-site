@@ -75,7 +75,7 @@ const ExtensionOfTeam = () => {
 
   return (
     <div className="section-padding">
-      <div className="container max-w-[1280px] mx-auto reveal">
+      <div className="container max-w-[1440px] mx-auto reveal">
         <TechTeamText />
         <div className="md:px-4 md:pt-12 pt-8 reveal">
           <div className="homepage-extension-team">

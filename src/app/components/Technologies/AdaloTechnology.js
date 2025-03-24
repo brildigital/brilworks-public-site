@@ -294,7 +294,6 @@ const AdaloTechnology = () => {
       <ThreeStepstoHireDeveloper />
       <HomePageBlogs />
       <WhyShouldHireDevelopers />
-
       <SolutionContactForm />
       <AdaloFAQs />
     </>

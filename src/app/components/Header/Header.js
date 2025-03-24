@@ -83,7 +83,7 @@ const NewHeader = () => {
               pathname.startsWith("/ai-solutions/") ||
               pathname.startsWith("/ebooks/")
                 ? "container max-w-[1300px] md:px-10 px-6 mx-auto"
-                : "lg:w-[90%] w-[88%] mx-auto"
+                : "container max-w-[1440px] md:px-10 px-6 mx-auto"
             }`}
           >
             <div className="header_logo">

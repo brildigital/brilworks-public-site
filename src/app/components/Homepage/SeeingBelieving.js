@@ -137,7 +137,7 @@ const SeeingBelieving = () => {
 
   return (
     <div className="bg-sectionBG section-padding">
-      <div className="container mx-auto max-w-[1280px] reveal">
+      <div className="container mx-auto max-w-[1440px] reveal">
         <BelievingText />
         <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
           {portfolioDynamicItems?.length &&

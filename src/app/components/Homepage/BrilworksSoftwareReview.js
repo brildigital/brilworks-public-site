@@ -48,7 +48,7 @@ const BrilworksSoftwareReview = () => {
   }, []);
 
   return (
-    <div className="software-review-container main-section-padding w-full mx-auto">
+    <div className="software-review-container max-w-[1440px] main-section-padding w-full mx-auto">
       <div className="software-review-head !pt-[0rem]">
         <div className="sec4_main_home">
           <div
@@ -113,13 +113,10 @@ const BrilworksSoftwareReview = () => {
         loopfillgroupwithblank
         speed={isMobile ? 1000 : 1500}
         loop={true}
-        shouldswiperupdate="true"
+        shouldswiperupdate={false}
         pagination={{ clickable: true }}
         virtual
         breakpoints={{
-          1600: {
-            slidesPerView: 5,
-          },
           1475: {
             slidesPerView: 4,
           },
