@@ -94,7 +94,7 @@ const ClientReviews = () => {
   return (
     <>
       <div className="section-padding">
-        <div className={`container max-w-[1280px] mx-auto`}>
+        <div className={`container max-w-[1440px] mx-auto`}>
           {showText.includes(pathname) || pathname.includes("services") ? (
             <div className="just_call_sec">
               <div
