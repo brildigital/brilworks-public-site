@@ -24,7 +24,7 @@ const TabVertical = ({ initialTabValue, data }) => {
       className="services"
     >
       <div className="flex w-full md:px-0 px-4">
-        <div className="md:w-1/3 w-[35%] rounded-l-[30px] bg-themeColor lg:pl-[7%] md:pl-6 md:pr-0 pr-4 lg:pr-8 py-8">
+        <div className="md:w-1/3 w-[35%] rounded-l-[30px] bg-themeColor lg:pl-[3%] md:pl-6 md:pr-0 pr-4 lg:pr-8 py-8">
           <div className="flex flex-col">
             <div className="flex md:items-center md:justify-center lg:justify-start md:pr-6 lg:pl-2 pl-2 lg:pr-0">
               <h3 className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-xl font-bold text-center md:my-8 my-2 font-Inter text-colorWhite">
@@ -42,7 +42,7 @@ const TabVertical = ({ initialTabValue, data }) => {
                 >
                   <div className="flex md:items-center items-baseline justify-start lg:mb-10 mb-4 mt-2">
                     {tabValue === value ? (
-                      <div className="lg:w-[60px] w-[20px] h-[2px] bg-colorWhite fixed md:left-0 left-4 md:block hidden"></div>
+                      <div className="lg:w-[35px] w-[20px] h-[2px] bg-colorWhite fixed md:left-0 left-4 md:block hidden"></div>
                     ) : (
                       ""
                     )}
@@ -70,7 +70,7 @@ const TabVertical = ({ initialTabValue, data }) => {
             </TabsHeader>
           </div>
         </div>
-        <div className="w-2/3 bg-[#c2f7ee] rounded-r-[30px]">
+        <div className="w-2/3 bg-themeColor/10 rounded-r-[30px]">
           <TabsBody
             animate={{
               initial: { x: 250 },

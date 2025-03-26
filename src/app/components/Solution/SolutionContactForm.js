@@ -59,14 +59,14 @@ const SolutionContactForm = () => {
 
   return (
     <div
-      className="mx-auto !px-4 lg:px-0 container max-w-[1440px] xl:py-[6rem] md:py-[4rem] py-8"
+      className="container max-w-[1440px] mx-auto main-section-padding"
       id="section10_service"
     >
       <div className="bg_grey rounded-[30px] bg-[#ededed] reveal">
         <div className="like_flex">
-          <div className="like_basis basis-[50%]">
-            <div className="like_text bold home_sec2_txt3 solutions">
-              <h2 className="!w-full py-10">
+          <div className="basis-[40%]">
+            <div className="font-bold leading-tight solutions">
+              <h2 className="md:py-10 py-6">
                 {pathname === "/industry/fintech-software-development/" ||
                 pathname ===
                   "/industry/media-entertainment-software-development/" ||
@@ -78,7 +78,7 @@ const SolutionContactForm = () => {
               </h2>
             </div>
           </div>
-          <div className="like_basis_form basis-[50%]">
+          <div className="basis-[60%]">
             <div className="contact_form">
               <div
                 className="wpcf7 js"

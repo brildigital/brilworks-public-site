@@ -83,20 +83,20 @@ const SeeingBelieving = () => {
   ];
 
   return (
-    <div className="bg-sectionBG section-padding">
-      <div className="container mx-auto max-w-[1440px] reveal">
+    <div className="bg-sectionBG">
+      <div className="container mx-auto max-w-[1440px] main-section-padding reveal">
         <BelievingText />
-        <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
+        <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
           {caseStudyData?.length &&
             caseStudyData?.map(({ content, full_slug }, index) => {
               return (
                 <div
-                  className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
+                  className="min-w-[300px] overflow-hidden h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
                   key={index}
                 >
                   <Link href={`/${full_slug}/`} prefetch={true}>
                     <Image
-                      className="rounded-[25px] lg:max-h-[370px]"
+                      className="rounded-[25px] lg:max-h-[370px] duration-500 hover:scale-[1.05]"
                       src={content?.images?.[0]?.filename}
                       alt={`casestudy-${index}`}
                       width="302"

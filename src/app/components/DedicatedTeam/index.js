@@ -15,10 +15,10 @@ const ServicesFAQ = dynamic(() => import("../Services/ServicesFAQ"));
 
 const DedicatedTeam = () => {
   return (
-    <div className="services pt-20">
+    <div className="services mt-20">
       <DedicatedTeamBanner />
-      <div className="container mx-auto">
-        <div className="sm:w-[90%] w-[100%] mx-auto px-4 xl:pb-24 md:pb-16 pb-8 reveal">
+      <div className="container max-w-[1440px] main-section-padding mx-auto">
+        <div className="reveal">
           <div className="bg-themeColor rounded-3xl py-10 md:px-12 px-4 flex items-center justify-center flex-col">
             <h2 className="md:text-5xl text-3xl !leading-tight md:text-center font-bold md:w-2/3 w-full text-colorWhite">
               Dedicated Team Service: Tailored Solutions, Seamless Collaboration
@@ -41,11 +41,10 @@ const DedicatedTeam = () => {
       <div className="bg-themeLight">
         <WhyDedicatedTeam />
       </div>
-      <div className="lg:px-[70px] px-6">
-        <DedicatedTeamBenefits />
-      </div>
-      <div className="container mx-auto">
-        <div className="sm:w-[90%] w-[100%] mx-auto xl:pb-[6rem] md:pb-[4rem] pb-[2rem]  px-6 end-to-end reveal">
+
+      <DedicatedTeamBenefits />
+      <div className="container max-w-[1440px] main-section-padding mx-auto">
+        <div className="reveal">
           <div className="bg-themeColor rounded-3xl py-10 md:px-12 px-6 flex items-center justify-center flex-col">
             <p className="md:text-5xl text-2xl leading-tight md:text-center md:max-w-7xl text-colorWhite">
               Let us tailor a team to suit your specific needs,

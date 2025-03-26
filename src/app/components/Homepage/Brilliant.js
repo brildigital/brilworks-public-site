@@ -18,7 +18,7 @@ const Brilliant = () => {
   }, []);
 
   return (
-    <div className="container mx-auto md:px-12 max-w-[1440px] main-section-padding">
+    <div className="container mx-auto max-w-[1440px] main-section-padding">
       <div>
         <div className="flex gap-8 lg:flex-row flex-col items-center reveal">
           {/* Left Side Text */}

@@ -90,12 +90,8 @@ const HomePageBlogs = () => {
   }
 
   return (
-    <div
-      className={
-        pathname === "/" ? "bg-sectionBG section-padding" : "section-padding"
-      }
-    >
-      <div className="container max-w-[1280px] md:px-8 px-4 mx-auto reveal">
+    <div className={pathname === "/" ? "bg-sectionBG" : ""}>
+      <div className="container max-w-[1440px] main-section-padding mx-auto reveal">
         <BlogText />
         <div className="blog-home reveal">
           {blogResponse[getRedirectPath(pathname)]?.length ? (

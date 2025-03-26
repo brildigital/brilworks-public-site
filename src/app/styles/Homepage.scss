@@ -509,10 +509,9 @@
 
 .career_review .clutch_content p,
 .career_review .clutch_position p:nth-child(1) {
-  font-size: var(--font_32);
+  font-size: var(--font_24);
   font-family: var(--global-font);
-  color: var(--color_black);
-  min-height: 200px;
+  min-height: 160px;
 }
 .career_review .clutch-swiper {
   .white-background {
@@ -551,7 +550,7 @@
 @media only screen and (max-width: 1700px) {
   .career_review .clutch_content p,
   .career_review .clutch_position p:nth-child(1) {
-    font-size: 1.5rem;
-    min-height: 190px;
+    font-size: 1.25rem;
+    min-height: 160px;
   }
 }

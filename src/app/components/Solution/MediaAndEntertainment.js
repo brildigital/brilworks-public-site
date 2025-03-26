@@ -112,7 +112,7 @@ const MediaAndEntertainment = () => {
   return (
     <>
       <section className="portfolio mt-[6rem] solution-accordion">
-        <div className="mx-auto service_width">
+        <div className="container max-w-[1440px] main-section-padding !py-0 mx-auto">
           <div className="relative">
             <p>
               <Image
@@ -152,17 +152,17 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width  xl:py-[6rem] md:py-[4rem] py-[2rem]">
+        <div className="container max-w-[1440px] main-section-padding lg:!py-[4rem] !py-8 mx-auto">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
-            <div className="basis-[50%]">
-              <div className="home_sec2_txt3 like_text">
-                <p className="uppercase !p-0 !ml-[0] !w-full">
+            <div className="basis-[55%]">
+              <div>
+                <p className="uppercase font-extrabold !leading-tight xl:text-5xl lg:text-[40px] md:text-[1.6rem] text-[1.4rem]">
                   MEDIA AND ENTERTAINMENT APP DEVELOPMENT SERVICES FOR THE
                   ULTIMATE USER EXPERIENCE.
                 </p>
               </div>
             </div>
-            <div className="basis-[55%]">
+            <div className="basis-[45%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left !text-base lg:!text-xl pb-8">
                   We take your customers on a visual delight with our
@@ -186,7 +186,7 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+        <div className="container max-w-[1440px] mx-auto main-section-padding workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -258,7 +258,7 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal">
+        <div className="container max-w-[1440px] mx-auto main-section-padding workpadd_borderTop end-to-end reveal">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions">
               <h2 className="!w-full p-0">
@@ -304,7 +304,7 @@ const MediaAndEntertainment = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-center xl:my-[6rem] md:my-[4rem] my-[2rem]">
+          <div className="flex items-center justify-center xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
             <Button
               innerClassName="flex items-center justify-center gap-1"
               className="!pr-5"
@@ -333,7 +333,7 @@ const MediaAndEntertainment = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end ">
+        <div className="container max-w-[1440px] mx-auto main-section-padding workpadd_borderTop end-to-end ">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions">
               <h2 className="!w-full p-0">
@@ -593,7 +593,7 @@ const MediaAndEntertainment = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center xl:pb-[6rem] md:pb-[4rem] pb-[2rem]">
+          <div className="flex items-center justify-center">
             <Button
               innerClassName="flex items-center justify-center gap-1"
               className="!pr-5"

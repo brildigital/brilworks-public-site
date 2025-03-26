@@ -277,14 +277,14 @@ const ContactUs = () => {
         <div className="mx-auto sec3_width_home xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
           <div className="bg_grey">
             <div className="like_flex">
-              <div className="like_basis">
-                <div className="like_text bold solutions py-8">
+              <div className="basis-[45%]">
+                <div className="font-extrabold !leading-tight solutions py-8">
                   <h2 className="!w-full">
                     LIKE WHAT YOU SEE? LET’S GET STARTED THEN!
                   </h2>
                 </div>
               </div>
-              <div className="like_basis_form">
+              <div className="basis-[55%]">
                 <div className="contact_form">
                   <div
                     className="wpcf7 js"

@@ -35,10 +35,9 @@ const BrilworksCareerReview = () => {
   ];
 
   return (
-    <div className="software-review-container">
-      <div className="xl:!pt-[6rem] md:!pt-[4rem] !pt-[2rem] career_review">
+    <div className="software-review-container container max-w-[1440px] mx-auto main-section-padding !py-0">
+      <div className="career_review">
         <Swiper
-          className="!w-{90%]"
           modules={[Pagination]}
           spaceBetween={isMobile ? 10 : 21}
           slidesPerView={

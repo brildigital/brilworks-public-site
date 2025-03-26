@@ -269,68 +269,54 @@ const IndustriesWeHelp = () => {
   const industriesHelpData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container md:w-[90%] w-full mx-auto">
-      <div className="!rounded-2xl">
-        <h2 className="md:text-center text-left ml-4 !mb-8">
-          Industries We Help
-        </h2>
-        <div className="reveal">
+    <div className="container max-w-[1440px] main-section-padding !py-0 mx-auto">
+      <h2 className="md:text-center text-left !mb-8">Industries We Help</h2>
+      <div className="reveal flex flex-wrap md:gap-5 gap-3 justify-center">
+        {industriesHelpData?.map(({ title, imageSrc, imageAlt }, index) => (
           <div
-            className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] w-full ${
-              pathname === "/devops-consulting-services/" ? "md:w-1/2" : ""
-            } ${
-              pathname === "/saas-application-development-services/"
-                ? "md:w-4/5"
-                : ""
-            }`}
+            className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
+            key={index}
           >
-            {industriesHelpData?.map(({ title, imageSrc, imageAlt }, index) => (
-              <div
-                className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
-                key={index}
+            {(pathname === "/aws-consulting-services/" &&
+              title === "Healthcare") ||
+            (pathname === "/generative-ai-development-services/" &&
+              title === "Healthcare") ? (
+              <Link
+                href={
+                  pathname === "/aws-consulting-services/"
+                    ? "/use-case/aws-in-healthcare"
+                    : "/use-case/generative-ai-in-healthcare"
+                }
               >
-                {(pathname === "/aws-consulting-services/" &&
-                  title === "Healthcare") ||
-                (pathname === "/generative-ai-development-services/" &&
-                  title === "Healthcare") ? (
-                  <Link
-                    href={
-                      pathname === "/aws-consulting-services/"
-                        ? "/use-case/aws-in-healthcare"
-                        : "/use-case/generative-ai-in-healthcare"
-                    }
-                  >
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className="w-auto mx-auto md:mb-6 mb-4"
-                      width={60}
-                      height={60}
-                    />
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-auto mx-auto md:mb-6 mb-4"
+                  width={60}
+                  height={60}
+                />
 
-                    <span className="text-center lg:text-2xl md:text-xl text-base">
-                      {title}
-                    </span>
-                  </Link>
-                ) : (
-                  <>
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className="w-auto md:mb-6 mb-4"
-                      width={60}
-                      height={60}
-                    />
+                <span className="text-center lg:text-2xl md:text-xl text-base">
+                  {title}
+                </span>
+              </Link>
+            ) : (
+              <>
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-auto md:mb-6 mb-4"
+                  width={60}
+                  height={60}
+                />
 
-                    <span className="text-center lg:text-2xl md:text-xl text-base">
-                      {title}
-                    </span>
-                  </>
-                )}
-              </div>
-            ))}
+                <span className="text-center lg:text-2xl md:text-xl text-base">
+                  {title}
+                </span>
+              </>
+            )}
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

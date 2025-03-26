@@ -517,67 +517,57 @@ const ServicesWhyChooseUs = () => {
   const remainingThree = data.slice(data.length === 4 ? 2 : 3, data?.length);
 
   return (
-    <div className="container mx-auto">
-      <div className="md:w-[90%] w-full mx-auto px-6 xl:py-24 md:py-16 py-8 end-to-end">
-        <div className="endTO_text solutions">
-          {pathname === "/application-development-services/" ? (
-            <h2 className="text-center w-2/3 mx-auto">
-              Why Choose Brilworks for your App Development Needs?
-            </h2>
-          ) : (
-            <>
-              {pathname === "/saas-application-development-services/" ||
-              pathname === "/generative-ai-development-services/" ? (
-                <h2 className="text-center w-2/3 mx-auto">
-                  Here's what sets us apart
-                </h2>
-              ) : (
-                <>
-                  {pathname === "/frappe-development-services/" ? (
-                    <h2 className="text-center w-full">
-                      Why Choose Brilworks for Frappe Development?
-                    </h2>
-                  ) : (
-                    <>
-                      {pathname === "/staff-augmentation/" ? (
-                        <h2 className="!w-full p-0">
-                          Why Brilworks For IT Staff Augmentation Service
-                        </h2>
-                      ) : (
-                        <h2 className="text-center w-full">
-                          Why Choose Brilworks?
-                        </h2>
-                      )}
-                    </>
-                  )}
-                </>
-              )}
-            </>
-          )}
+    <div className="container max-w-[1440px] main-section-padding mx-auto">
+      <div className="endTO_text solutions">
+        {pathname === "/application-development-services/" ? (
+          <h2 className="text-center w-2/3 mx-auto">
+            Why Choose Brilworks for your App Development Needs?
+          </h2>
+        ) : (
+          <>
+            {pathname === "/saas-application-development-services/" ||
+            pathname === "/generative-ai-development-services/" ? (
+              <h2 className="text-center w-2/3 mx-auto">
+                Here's what sets us apart
+              </h2>
+            ) : (
+              <>
+                {pathname === "/frappe-development-services/" ? (
+                  <h2 className="text-center w-full">
+                    Why Choose Brilworks for Frappe Development?
+                  </h2>
+                ) : (
+                  <>
+                    {pathname === "/staff-augmentation/" ? (
+                      <h2 className="!w-full p-0">
+                        Why Brilworks For IT Staff Augmentation Service
+                      </h2>
+                    ) : (
+                      <h2 className="text-center w-full">
+                        Why Choose Brilworks?
+                      </h2>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+          </>
+        )}
+      </div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
+        <div className="flex flex-col md:gap-20">
+          {firstThree?.map(({ title, description }) => (
+            <ServiceCard key={title} title={title} description={description} />
+          ))}
         </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-5 md:mt-16 mt-8 reveal">
-          <div className="flex flex-col md:gap-20">
-            {firstThree?.map(({ title, description }) => (
-              <ServiceCard
-                key={title}
-                title={title}
-                description={description}
-              />
-            ))}
-          </div>
-          <div className="m-auto why_staff_augmentation">
-            <Svgs name="staff-augmentation-service" />
-          </div>
+        <div className="m-auto why_staff_augmentation md:py-0 py-4">
+          <Svgs name="staff-augmentation-service" />
+        </div>
 
-          <div className="flex flex-col md:gap-20">
-            {remainingThree?.map(({ title, description }) => (
-              <ServiceCard
-                key={title}
-                title={title}
-                description={description}
-              />
-            ))}
-          </div>
+        <div className="flex flex-col md:gap-20">
+          {remainingThree?.map(({ title, description }) => (
+            <ServiceCard key={title} title={title} description={description} />
+          ))}
         </div>
       </div>
     </div>

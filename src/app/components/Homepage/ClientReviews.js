@@ -93,100 +93,98 @@ const ClientReviews = () => {
 
   return (
     <>
-      <div className="section-padding">
-        <div className={`container max-w-[1440px] mx-auto`}>
-          {showText.includes(pathname) || pathname.includes("services") ? (
-            <div className="just_call_sec">
-              <div
-                className={`solutions text-center ${
-                  pathname === "/contact-us/" ? "py-8" : "pb-8"
+      <div className={`container max-w-[1440px] mx-auto main-section-padding`}>
+        {showText.includes(pathname) || pathname.includes("services") ? (
+          <div className="just_call_sec">
+            <div
+              className={`solutions text-center ${
+                pathname === "/contact-us/" ? "py-8" : "pb-8"
+              }`}
+            >
+              <h2
+                className={`md:!text-center !text-left !w-full ${
+                  pathname === "/contact-us/" ? "uppercase" : ""
                 }`}
               >
-                <h2
-                  className={`md:!text-center !text-left !w-full ${
-                    pathname === "/contact-us/" ? "uppercase" : ""
-                  }`}
-                >
-                  Client Testimonials
-                </h2>
-              </div>
+                Client Testimonials
+              </h2>
             </div>
-          ) : (
-            <BestAdvocateText />
-          )}
+          </div>
+        ) : (
+          <BestAdvocateText />
+        )}
 
-          <div className="relative reveal">
-            <div className="rotate_img">
-              <Image
-                className="rotate_right alignnone"
-                src="/images/Verified-Review-image.png"
-                alt="verified review"
-                width="215"
-                height="215"
-              />
-            </div>
-            <div className="flex flex-wrap items-center gap-6 justify-center video-slider">
-              <div className="cursor-pointer relative">
-                <div className="video-play-icon">
-                  {isVideoPause && !isMobile ? (
-                    <span className="play-icon-img">
-                      <img src="/images/icon_play_new.svg" alt="Play Icon" />
-                    </span>
-                  ) : null}
-                </div>
-
-                <div onClick={() => setVideoPause(!isVideoPause)}>
-                  {videoSrc && (
-                    <video
-                      className="!rounded-[30px]"
-                      src={videoSrc}
-                      controls
-                      loading="lazy"
-                      width="320"
-                      height="200"
-                    />
-                  )}
-                </div>
+        <div className="relative reveal">
+          <div className="rotate_img">
+            <Image
+              className="rotate_right alignnone"
+              src="/images/Verified-Review-image.png"
+              alt="verified review"
+              width="215"
+              height="215"
+            />
+          </div>
+          <div className="flex flex-wrap items-center gap-6 justify-center video-slider">
+            <div className="cursor-pointer relative">
+              <div className="video-play-icon">
+                {isVideoPause && !isMobile ? (
+                  <span className="play-icon-img">
+                    <img src="/images/icon_play_new.svg" alt="Play Icon" />
+                  </span>
+                ) : null}
               </div>
 
-              <div className="md:!w-[50%] !w-full">
-                <div className="home_sec3_box overflow-hidden ">
-                  <div className="dots_flex md:!px-[30px] !mx-4">
-                    <div className="dots md:ml-8 ml-4"></div>
-                    <div className="dots"></div>
-                    <div className="dots"></div>
-                  </div>
-                  <div className="background">
-                    <Swiper
-                      className="client-review-swipers"
-                      modules={[Navigation]}
-                      navigation={isMobile ? false : true}
-                      onSlideChange={handleSlideChange}
-                      slidesPerView={1}
-                      speed={isMobile ? 1000 : 1500}
-                    >
-                      {clientTestimonials.map(
-                        ({ quote, author, position }, index) => {
-                          return (
-                            <SwiperSlide key={index}>
-                              <div className="style_sec3_swiper_home !w-4/5 slg:!my-6 md:!my-2 text-colorWhite">
-                                <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                                  <p className="text-left md:text-xl !leading-9 font-medium">
-                                    "{quote}"
-                                  </p>
-                                </div>
+              <div onClick={() => setVideoPause(!isVideoPause)}>
+                {videoSrc && (
+                  <video
+                    className="!rounded-[30px]"
+                    src={videoSrc}
+                    controls
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                )}
+              </div>
+            </div>
 
-                                <p className="xl:text-[28px] md:text-[24px] text-[20px]">
-                                  {author}
+            <div className="md:!w-[50%] !w-full">
+              <div className="home_sec3_box overflow-hidden ">
+                <div className="dots_flex md:!px-[30px] !mx-4">
+                  <div className="dots md:ml-8 ml-4"></div>
+                  <div className="dots"></div>
+                  <div className="dots"></div>
+                </div>
+                <div className="background">
+                  <Swiper
+                    className="client-review-swipers"
+                    modules={[Navigation]}
+                    navigation={isMobile ? false : true}
+                    onSlideChange={handleSlideChange}
+                    slidesPerView={1}
+                    speed={isMobile ? 1000 : 1500}
+                  >
+                    {clientTestimonials.map(
+                      ({ quote, author, position }, index) => {
+                        return (
+                          <SwiperSlide key={index}>
+                            <div className="style_sec3_swiper_home !w-4/5 slg:!my-6 md:!my-2 text-colorWhite">
+                              <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
+                                <p className="text-left md:text-xl !leading-9 font-medium">
+                                  "{quote}"
                                 </p>
-                                <p className="text-base">{position}</p>
                               </div>
-                            </SwiperSlide>
-                          );
-                        }
-                      )}
-                    </Swiper>
-                  </div>
+
+                              <p className="xl:text-[28px] md:text-[24px] text-[20px]">
+                                {author}
+                              </p>
+                              <p className="text-base">{position}</p>
+                            </div>
+                          </SwiperSlide>
+                        );
+                      }
+                    )}
+                  </Swiper>
                 </div>
               </div>
             </div>

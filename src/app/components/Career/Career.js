@@ -22,7 +22,7 @@ const Career = () => {
   return (
     <>
       <section>
-        <div className="container mx-auto md:pt-[128px] md:px-[0] pt-[90px] px-[15px]">
+        <div className="container max-w-[1440px] mx-auto main-section-padding md:mt-12 lg:mt-8 mt-20">
           <div className="md:text-center">
             <div className="home_sec2_txt1">
               <h1 className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
@@ -35,8 +35,8 @@ const Career = () => {
               </h1>
             </div>
 
-            <div className="home_sec2_txt3 md:w-[80%] md:mx-auto">
-              <p className="xl:text-[40px] lg:text-[32px] sm:text-[26px] text-[22px] !w-[100%]">
+            <div className="py-8">
+              <p className="xl:text-[40px] lg:text-[32px] sm:text-[26px] text-[22px] leading-tight">
                 A place where brilliant minds come together, to collaborate and
                 create products with a common goal of making them innovative,
                 appealing, and efficient while having truckloads of fun!
@@ -108,7 +108,7 @@ const Career = () => {
               </Link>
             </div>
 
-            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] md:!w-5/6 w-full">
+            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] w-full">
               <Image
                 className="md:rounded-[36px] rounded-[20px]"
                 src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
@@ -138,8 +138,8 @@ const Career = () => {
                 </div>
               </div>
 
-              <div className="home_sec2_txt3 md:w-[80%] md:mx-auto">
-                <p className="xl:text-[48px] lg:text-[32px] sm:text-[26px] text-[22px] !w-full">
+              <div className="py-8">
+                <p className="xl:text-[40px] lg:text-[32px] sm:text-[26px] text-[22px] leading-tight !w-full">
                   To us, the people and the collaborative working style are key
                   drivers of engagement. It’s our aim to create a welcoming
                   environment in which employees are empowered to achieve their
@@ -226,7 +226,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="sm:w-[93%] w-full mx-auto px-[15px] reveal">
+      <section className="reveal">
         <div>
           {/* <div className="clutch-widget">
             <iframe
@@ -248,11 +248,11 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
-        <div className="border border-[#80808075] xl:p-[4rem] md::p-[2rem] p-[1rem] rounded-[25px]">
+      <section className="container max-w-[1440px] main-section-padding mx-auto reveal">
+        <div className="border border-[#80808075] xl:p-[2rem] md::p-[2rem] p-[1rem] rounded-[25px]">
           <div className="flex md:flex-row flex-col">
-            <div className="basis-[35%]">
-              <div className="flex items-center gap-[16px]">
+            <div className="basis-[30%]">
+              <div className="flex items-center gap-[16px] pt-4">
                 <p>Powered by</p>
                 <div className="w-[122px]">
                   <img
@@ -265,11 +265,11 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="basis-[65%]">
+            <div className="basis-[70%]">
               <ul>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Overall</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -310,15 +310,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.8</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Culture &amp; Values</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -359,15 +359,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.8</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Diversity &amp; Inclusion</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -408,15 +408,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.6</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Work/Life Balance</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -457,15 +457,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.7</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Senior Management</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -506,15 +506,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.7</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Compensation &amp; Benefits</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -555,15 +555,15 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.5</p>
                       </div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div className="flex justify-between items-center py-[1.5rem]">
-                    <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                  <div className="flex justify-between items-center xl:py-[1.5rem]">
+                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                       <p>Career Opportunities</p>
                     </div>
                     <div className="flex items-center gap-[2rem]">
@@ -604,7 +604,7 @@ const Career = () => {
                           alt="star"
                         />
                       </div>
-                      <div className="lg:text-[32px] xl:text-[48px] text-[16px]">
+                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
                         <p>4.7</p>
                       </div>
                     </div>
@@ -616,8 +616,8 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
-        <div className="home_sec2_txt1 md:text-center text-left md:mb-[80px] mb-[40px]">
+      <section className="container max-w-[1440px] main-section-padding !py-0 mx-auto reveal">
+        <div className="home_sec2_txt1 md:text-center text-left md:mb-16 mb-8">
           <p>
             <span className="text-themeColor font-bold">Why should you</span>{" "}
             join us?
@@ -657,7 +657,7 @@ const Career = () => {
             <div className="absolute top-0 left-0 z-[2]">
               <div className="hover_content_box bg-sectionBG">
                 <div className="join_content">
-                  <p>
+                  <p className>
                     We understand your responsibilities extend beyond your work
                     and so it is important for us
                     <br />
@@ -825,7 +825,7 @@ const Career = () => {
       </section>
 
       <section
-        className="w-[93%] mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal"
+        className="container max-w-[1440px] mx-auto main-section-padding reveal"
         id="section7_career"
       >
         <div className="home_sec2_txt1 md:text-center text-left">
@@ -841,27 +841,22 @@ const Career = () => {
             width="100%"
             height="100%"
             frameborder="0"
-            className="md:w-[80%] w-full mx-auto h-[85vh] md:p-[2rem] p-0"
+            className="w-full mx-auto h-[85vh] md:p-[2rem] p-0"
           ></iframe>
         </div>
       </section>
 
-      <section className="reveal">
-        <div className="container mx-auto px-[15px]">
-          <div className="md:text-center">
-            <div className="home_sec2_txt1">
-              <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                <span className="font-bold text-themeColor">Send in</span> your
-                application
-              </p>
-            </div>
+      <section className="container max-w-[1440px] mx-auto main-section-padding reveal">
+        <div className="md:text-center pb-6">
+          <div className="home_sec2_txt1">
+            <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
+              <span className="font-bold text-themeColor">Send in</span> your
+              application
+            </p>
           </div>
         </div>
 
-        <div
-          className="md:w-[90%] lg:w-[70%] w-[100%] blog-home xl:py-[6rem] md:py-[4rem] py-[2rem] mx-auto md:px-8 px-4"
-          id="section10"
-        >
+        <div id="section10">
           <CareerContactForm />
         </div>
       </section>

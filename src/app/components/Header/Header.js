@@ -70,10 +70,8 @@ const NewHeader = () => {
 
   return (
     <header>
-      <div className={`header header-bg-white`}>
-        <Navbar
-          className={`sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold`}
-        >
+      <div className="header header-bg-white">
+        <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
           <div
             className={`flex items-center justify-between text-colorBlack ${
               pathname.startsWith("/portfolio/") ||
