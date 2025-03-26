@@ -73,25 +73,22 @@ const Blog = () => {
   }, [searchParams]);
 
   return (
-    <section className="md:mt-[8rem] mt-[6rem] px-[16px] !scroll-[unset]">
-      <div className="container !max-w-[1220px] md:w-[94%] blog !mx-auto">
-        <div className="service_sec3 blog-head lg:!mb-10 !mb-5">
-          <div className="home_sec2_txt3 !text-center !mb-4">
-            <h1 className="!text-center md:!text-[2.5rem] !text-[2rem]">
-              Brilworks Blog
-            </h1>
-          </div>
-          <div className="home_sec2_txt4 ">
-            <p className="!text-[18px]">
-              In the realm of software-defined landscapes, the Brilworks Blog
-              serves as your guide through the technological renaissance. Our
-              platform is dedicated to delivering comprehensive insights into
-              cutting-edge research, innovative thinking, and perspectives on
-              technological advancements in the field of software development.
-              We provide a profound context to assist tech leaders in making
-              informed and intelligent decisions.
-            </p>
-          </div>
+    <section className="md:mt-[8rem] mt-[6rem] !scroll-[unset]">
+      <div className="container max-w-[1440px] blog !mx-auto">
+        <div className="service_sec3 lg:!mb-10 !mb-5">
+          <h1 className="font-bold !text-center md:!text-[2.5rem] !text-[2rem] pt-4">
+            Brilworks Blog
+          </h1>
+
+          <p className="md:w-[90%] w-full text-center !text-lg !leading-6 mx-auto !px-4">
+            In the realm of software-defined landscapes, the Brilworks Blog
+            serves as your guide through the technological renaissance. Our
+            platform is dedicated to delivering comprehensive insights into
+            cutting-edge research, innovative thinking, and perspectives on
+            technological advancements in the field of software development. We
+            provide a profound context to assist tech leaders in making informed
+            and intelligent decisions.
+          </p>
         </div>
         {/* {popularBlog?.content ? (
           <div className="md:!mt-5">
@@ -166,7 +163,7 @@ const Blog = () => {
         )} */}
       </div>
 
-      <div className="container md:w-[94%] w-full mx-auto">
+      <div className="container max-w-[1440px] main-section-padding !py-0 mx-auto">
         <div className="flex sxl:flex-row flex-col-reverse !mt-4">
           <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
             <div>
@@ -263,10 +260,10 @@ const Blog = () => {
             isLoading || !blogDataPerPage?.length
               ? "grid-cols-1"
               : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
-          } gap-[2rem]`}
+          } gap-[2rem] min-h-[300px]`}
         >
           {isLoading ? (
-            <div className="flex align-middle justify-center md:!py-52 py-28 min-h-[1000px]">
+            <div className="flex align-middle justify-center md:!py-52 py-28 min-h-[90vh]">
               <FetchDataSpinner />
             </div>
           ) : blogDataPerPage?.length ? (
@@ -344,7 +341,7 @@ const Blog = () => {
               </p>
             </div>
           ) : (
-            <div className="flex align-middle justify-center md:!py-52 py-28 h-[100vh]">
+            <div className="flex align-middle justify-center md:!py-52 py-28 h-[90vh]">
               <FetchDataSpinner />
             </div>
           )}

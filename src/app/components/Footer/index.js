@@ -408,151 +408,104 @@ const Footer = () => {
     }
     return (
       <div className="bg-footerBG">
-        <div className="xl:p-[60px] !pb-6 md:pt-10 md:px-6 pt-8 px-4">
-          <div className="container max-w-[1280px] mx-auto">
-            <div className="w-full grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-10 md:gap-8 gap-5 xl:mb-10 md:mb-8 mb-5">
-              <div className="w-full">
-                <p className="text-2xl font-medium !mb-4">Brilliant + Works</p>
-                <p className="text-base w-full !mb-6">
-                  Hello, we are
-                  <span className="font-medium text-themeColor">
-                    &nbsp; BRILLIAN’S.
-                  </span>
-                  Trying to make an effort to put the right people for you to
-                  get the best results. Just insight !
-                </p>
-                <div className="flex items-center text-xl font-medium mb-4">
-                  We are&nbsp;
-                  <span className="text-themeColor">Hiring&nbsp;</span>
-                  <Image
-                    className="w-6 h-6 ml-2"
-                    src="/images/megaphone.svg"
-                    alt="hiring-voice"
-                    width="24"
-                    height="24"
-                  />
-                </div>
-                <Button
-                  innerClassName="flex items-center justify-center gap-2 font-medium"
-                  redirect={`/career/`}
-                  label="View Positions"
-                  icon="right-arrow-next"
+        <div className="container max-w-[1440px] mx-auto xl:p-[60px] !pb-6 md:pt-10 md:px-6 pt-8 px-4">
+          <div className="w-full grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-10 md:gap-8 gap-5 xl:mb-10 md:mb-8 mb-5">
+            <div className="w-full">
+              <p className="text-2xl font-medium !mb-4">Brilliant + Works</p>
+              <p className="text-base w-full !mb-6">
+                Hello, we are
+                <span className="font-medium text-themeColor">
+                  &nbsp; BRILLIAN’S.
+                </span>
+                Trying to make an effort to put the right people for you to get
+                the best results. Just insight !
+              </p>
+              <div className="flex items-center text-xl font-medium mb-4">
+                We are&nbsp;
+                <span className="text-themeColor">Hiring&nbsp;</span>
+                <Image
+                  className="w-6 h-6 ml-2"
+                  src="/images/megaphone.svg"
+                  alt="hiring-voice"
+                  width="24"
+                  height="24"
                 />
-                <div className="xl:my-10 md:mt-8 mt-6 flex items-center justify-start slg:gap-4 gap-2 flex-wrap">
-                  {socialLinks.map(({ name, linkURL, imgSrc }, index) => (
+              </div>
+              <Button
+                innerClassName="flex items-center justify-center gap-2 font-medium"
+                redirect={`/career/`}
+                label="View Positions"
+                icon="right-arrow-next"
+              />
+              <div className="xl:my-10 md:mt-8 mt-6 flex items-center justify-start slg:gap-4 gap-2 flex-wrap">
+                {socialLinks.map(({ name, linkURL, imgSrc }, index) => (
+                  <Link
+                    key={name}
+                    href={linkURL}
+                    target="_blank"
+                    className="md:p-[10px] p-2 !border-borderGray border rounded-full"
+                  >
+                    <Image
+                      className="w-5 h-5"
+                      src={imgSrc}
+                      alt={name}
+                      width="20"
+                      height="20"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="w-full flex xl:gap-10 md:gap-[30px] gap-4 footer-links">
+              {footerData.slice(0, 2).map(({ title, links }) => (
+                <div
+                  key={title}
+                  className={`${
+                    title === "Quick Links"
+                      ? "md:w-2/5 w-1/2"
+                      : "md:w-3/5 w-1/2"
+                  } flex flex-col gap-[14px]`}
+                >
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
                     <Link
-                      key={`socialname-${index}`}
-                      href={linkURL}
-                      target="_blank"
-                      className="md:p-[10px] p-2 !border-borderGray border rounded-full"
+                      key={text}
+                      href={link}
+                      className={`${getActivePage(
+                        link
+                      )} !text-colorGray md:text-base text-sm font-medium`}
                     >
-                      <Image
-                        className="w-5 h-5"
-                        src={imgSrc}
-                        alt={name}
-                        width="20"
-                        height="20"
-                      />
+                      {text}
                     </Link>
                   ))}
                 </div>
-              </div>
-              <div className="w-full flex xl:gap-10 md:gap-[30px] gap-4 footer-links">
-                {footerData.slice(0, 2).map(({ title, links }, index) => (
-                  <div
-                    key={`footerTitle-${index}`}
-                    className={`${
-                      title === "Quick Links"
-                        ? "md:w-2/5 w-1/2"
-                        : "md:w-3/5 w-1/2"
-                    } flex flex-col gap-[14px]`}
-                  >
-                    <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
-                      {title}
-                    </h3>
-                    {links.map(({ link, text }, indx) => (
-                      <Link
-                        key={`footerTitleLink-${indx}`}
-                        href={link}
-                        className={`${getActivePage(
-                          link
-                        )} !text-colorGray md:text-base text-sm font-medium`}
-                      >
-                        {text}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-              <div className="w-full flex xl:gap-8 md:gap-[30px] gap-4 footer-links">
-                {footerData.slice(2, 3).map(({ title, links }, index) => (
-                  <div
-                    key={`${title}-${index}`}
-                    className="w-1/2 flex flex-col gap-[14px]"
-                  >
-                    <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
-                      {title}
-                    </h3>
-                    {links.map(({ link, text }, indx) => (
-                      <Link
-                        key={`fData-${indx}`}
-                        href={link}
-                        className={`${getActivePage(
-                          link
-                        )} !text-colorGray md:text-base text-sm font-medium`}
-                      >
-                        {text}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-                <div className="w-1/2 xl:block md:hidden block flex flex-col xl:gap-10 md:gap-8 gap-6">
-                  {footerData.slice(3, 5).map(({ title, links }, index) => (
-                    <div
-                      key={`fDataLink-${index}`}
-                      className={`${
-                        index === 0 ? "mb-10" : ""
-                      } w-full flex flex-col gap-[14px]`}
+              ))}
+            </div>
+            <div className="w-full flex xl:gap-8 md:gap-[30px] gap-4 footer-links">
+              {footerData.slice(2, 3).map(({ title, links }) => (
+                <div key={title} className="w-1/2 flex flex-col gap-[14px]">
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <Link
+                      key={text}
+                      href={link}
+                      className={`${getActivePage(
+                        link
+                      )} !text-colorGray md:text-base text-sm font-medium`}
                     >
-                      <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
-                        {title}
-                      </h3>
-                      {links.map(({ link, text }) => (
-                        <a
-                          key={`fData${text}-${index}`}
-                          href={link}
-                          target="_blank"
-                          className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
-                        >
-                          {text?.split("").includes("@") ? (
-                            <Image
-                              className="md:w-5 w-4 md:h-5 h-4"
-                              src="/images/sms.svg"
-                              alt="email-now"
-                              width="20"
-                              height="20"
-                            />
-                          ) : (
-                            <Image
-                              className="md:w-5 w-4 md:h-5 h-4"
-                              src="/images/call-calling.svg"
-                              alt="connect-now"
-                              width="20"
-                              height="20"
-                            />
-                          )}
-
-                          {text}
-                        </a>
-                      ))}
-                    </div>
+                      {text}
+                    </Link>
                   ))}
                 </div>
-              </div>
-              <div className="xl:hidden md:block hidden flex flex-col xl:gap-10 md:gap-8 gap-6">
+              ))}
+              <div className="w-1/2 xl:block md:hidden block flex flex-col xl:gap-10 md:gap-8 gap-6">
                 {footerData.slice(3, 5).map(({ title, links }, index) => (
                   <div
-                    key={`f${title}-${index}`}
+                    key={title}
                     className={`${
                       index === 0 ? "mb-10" : ""
                     } w-full flex flex-col gap-[14px]`}
@@ -560,9 +513,9 @@ const Footer = () => {
                     <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
                       {title}
                     </h3>
-                    {links.map(({ link, text }, idx) => (
+                    {links.map(({ link, text }) => (
                       <a
-                        key={`footer-${text}-${idx}`}
+                        key={text}
                         href={link}
                         target="_blank"
                         className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
@@ -592,247 +545,285 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div className="flex lg:flex-row flex-col gap-8 justify-between xl:mb-10 md:mb-8 mb-5">
-              <div className="">
-                <p className="text-[#000000] uppercase font-medium !mb-4">
-                  Partnerships:
-                </p>
-                <div className="footer-award flex items-center flex-wrap gap-5">
-                  <Link
-                    href="https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[50px] h-auto"
-                      src="/images/select-tier-service-partner-light-1.png"
-                      alt="AWS Partner"
-                      width="300"
-                      height="118"
-                    />
-                  </Link>
-                  <Link
-                    href="https://www.adalo.com/experts/brilworks-software"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[80px] h-auto"
-                      src="/images/review-adalo.png"
-                      alt="adalo expert"
-                      width="300"
-                      height="118"
-                    />
-                  </Link>
-                  <Link
-                    href="https://www.storyblok.com/pl/brilworks-technology"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[130px] h-auto"
-                      src="/images/Storyblok.svg"
-                      alt="Storyblok partner"
-                      width="123"
-                      height="26"
-                    />
-                  </Link>
-                  <Link
-                    href="https://www.dotcms.com/partners/brilworks"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[90px] h-auto"
-                      src="/images/dotCMS-logo.svg"
-                      alt="dotCMS logo"
-                      width="300"
-                      height="118"
-                    />
-                  </Link>
+            <div className="xl:hidden md:block hidden flex flex-col xl:gap-10 md:gap-8 gap-6">
+              {footerData.slice(3, 5).map(({ title, links }, index) => (
+                <div
+                  key={title}
+                  className={`${
+                    index === 0 ? "mb-10" : ""
+                  } w-full flex flex-col gap-[14px]`}
+                >
+                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <a
+                      key={text}
+                      href={link}
+                      target="_blank"
+                      className="!text-colorGray md:text-base text-sm flex items-center slg:gap-2 gap-1 font-medium"
+                    >
+                      {text?.split("").includes("@") ? (
+                        <Image
+                          className="md:w-5 w-4 md:h-5 h-4"
+                          src="/images/sms.svg"
+                          alt="email-now"
+                          width="20"
+                          height="20"
+                        />
+                      ) : (
+                        <Image
+                          className="md:w-5 w-4 md:h-5 h-4"
+                          src="/images/call-calling.svg"
+                          alt="connect-now"
+                          width="20"
+                          height="20"
+                        />
+                      )}
 
+                      {text}
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex lg:flex-row flex-col gap-8 justify-between xl:mb-10 md:mb-8 mb-5">
+            <div className="">
+              <p className="text-[#000000] uppercase font-medium !mb-4">
+                Partnerships:
+              </p>
+              <div className="footer-award flex items-center flex-wrap gap-5">
+                <Link
+                  href="https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
                   <Image
-                    className="w-[180px] h-auto"
-                    src="/images/review-liferay.png"
-                    alt="Liferay Partner"
+                    className="w-[50px] h-auto"
+                    src="/images/select-tier-service-partner-light-1.png"
+                    alt="AWS Partner"
                     width="300"
                     height="118"
                   />
-                </div>
-              </div>
-              <div className="">
-                <p className="text-[#000000] uppercase font-medium !mb-4">
-                  Recognized by:
-                </p>
-                <div className="footer-award flex items-center justify-between flex-wrap gap-3">
-                  <Link
-                    href={
-                      "https://clutch.co/profile/brilworks-software#summary"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[80px]"
-                      src="/images/global_award_2023 (1).webp"
-                      alt="global award"
-                      width="150"
-                      height="162"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://clutch.co/profile/brilworks-software#highlights"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[70px]"
-                      src="/images/top-clutchco-software-developers-gaming-india.webp"
-                      alt="Gaming India"
-                      width="150"
-                      height="162"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://themanifest.com/in/software-development/java/companies/ahmedabad"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[50px]"
-                      src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
-                      alt="App dev company award"
-                      width="110"
-                      height="160"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://www.designrush.com/agency/profile/brilworks-software"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[60px]"
-                      src="/images/Top-Mobile-App-Development-Company2.webp"
-                      alt="Top App dev company award"
-                      width="120"
-                      height="130"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[70px]"
-                      src="/images/review-top-software-developers.png"
-                      alt="Top software companies logo"
-                      width="150"
-                      height="105"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://themanifest.com/in/software-development/java/companies/ahmedabad"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[50px]"
-                      src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
-                      alt="Top manifest review"
-                      width="110"
-                      height="160"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://clutch.co/profile/brilworks-software#highlights"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[70px]"
-                      src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
-                      alt="GPS, Navigation & GIS India"
-                      width="150"
-                      height="162"
-                    />
-                  </Link>
-                  <Link
-                    href={
-                      "https://clutch.co/profile/brilworks-software#summary"
-                    }
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                    <Image
-                      className="w-[80px]"
-                      src="/images/global_award_spring_2024.webp"
-                      alt="global award"
-                      width="150"
-                      height="162"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="w-full flex items-center justify-center !text-[#000000] gap-4 font-medium">
-              <Image
-                className="w-6 h-6"
-                src="/images/location.svg"
-                alt="location-icon"
-                width="24"
-                height="24"
-              />
-              503, Fortune Business Hub, Science City Road, Near Petrol Pump,
-              Sola, Ahmedabad, Gujarat - 380060.
-            </div>
-            <hr className="border border-borderGray my-6" />
-            <div className="w-full flex md:flex-row flex-col items-end lg:justify-between justify-start">
-              <div className="lg:w-fit w-full footer_logo flex items-center">
+                </Link>
+                <Link
+                  href="https://www.adalo.com/experts/brilworks-software"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px] h-auto"
+                    src="/images/review-adalo.png"
+                    alt="adalo expert"
+                    width="300"
+                    height="118"
+                  />
+                </Link>
+                <Link
+                  href="https://www.storyblok.com/pl/brilworks-technology"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[130px] h-auto"
+                    src="/images/Storyblok.svg"
+                    alt="Storyblok partner"
+                    width="123"
+                    height="26"
+                  />
+                </Link>
+                <Link
+                  href="https://www.dotcms.com/partners/brilworks"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[90px] h-auto"
+                    src="/images/dotCMS-logo.svg"
+                    alt="dotCMS logo"
+                    width="300"
+                    height="118"
+                  />
+                </Link>
+
                 <Image
-                  src="/images/logo-black.svg"
-                  alt="Brilworks Logo"
-                  width="206"
-                  height="62"
-                  priority
-                  className="mb-5 md:mb-0"
+                  className="w-[180px] h-auto"
+                  src="/images/review-liferay.png"
+                  alt="Liferay Partner"
+                  width="300"
+                  height="118"
                 />
               </div>
-              <div className="lg:w-fit w-full flex md:items-center flex-col lg:flex-row lg:gap-20 md:gap-0">
-                <div className="flex">
-                  © {new Date().getFullYear()} Brilworks. All Rights Reserved.
-                </div>
-                <div className="flex items-center justify-between lg:gap-20 md:gap-4 gap-0 mt-2 md:!mt-0">
-                  <Link href="/terms-and-conditions/" className="transition">
-                    Terms of Service
-                  </Link>
-                  <Link href="/privacy-policy/" className="transition">
-                    Privacy Policy
-                  </Link>
-                  {/* <Link href="/site-map/" className="transition">
-                    Sitemap
-                  </Link> */}
-                </div>
+            </div>
+            <div className="">
+              <p className="text-[#000000] uppercase font-medium !mb-4">
+                Recognized by:
+              </p>
+              <div className="footer-award flex items-center justify-between flex-wrap gap-3">
+                <Link
+                  href={"https://clutch.co/profile/brilworks-software#summary"}
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px]"
+                    src="/images/global_award_2023 (1).webp"
+                    alt="global award"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://clutch.co/profile/brilworks-software#highlights"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/top-clutchco-software-developers-gaming-india.webp"
+                    alt="Gaming India"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[50px]"
+                    src="/images/top_the_manifest_app_development_company_ahmedabad_award.png"
+                    alt="App dev company award"
+                    width="110"
+                    height="160"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://www.designrush.com/agency/profile/brilworks-software"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[60px]"
+                    src="/images/Top-Mobile-App-Development-Company2.webp"
+                    alt="Top App dev company award"
+                    width="120"
+                    height="130"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://topsoftwarecompanies.co/india/software-development/agencies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/review-top-software-developers.png"
+                    alt="Top software companies logo"
+                    width="150"
+                    height="105"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://themanifest.com/in/software-development/java/companies/ahmedabad"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[50px]"
+                    src="/images/top_the_manifest_software_developers_ahmedabad_2023_award.png"
+                    alt="Top manifest review"
+                    width="110"
+                    height="160"
+                  />
+                </Link>
+                <Link
+                  href={
+                    "https://clutch.co/profile/brilworks-software#highlights"
+                  }
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[70px]"
+                    src="/images/top-clutchco-software-developers-gps-navigation-gis-india.webp"
+                    alt="GPS, Navigation & GIS India"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
+                <Link
+                  href={"https://clutch.co/profile/brilworks-software#summary"}
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <Image
+                    className="w-[80px]"
+                    src="/images/global_award_spring_2024.webp"
+                    alt="global award"
+                    width="150"
+                    height="162"
+                  />
+                </Link>
               </div>
             </div>
-            {/* <TawkMessengerReact
+          </div>
+          <div className="w-full flex items-center justify-center !text-[#000000] gap-4 font-medium">
+            <Image
+              className="w-6 h-6"
+              src="/images/location.svg"
+              alt="location-icon"
+              width="24"
+              height="24"
+            />
+            503, Fortune Business Hub, Science City Road, Near Petrol Pump,
+            Sola, Ahmedabad, Gujarat - 380060.
+          </div>
+          <hr className="border border-borderGray my-6" />
+          <div className="w-full flex md:flex-row flex-col items-end lg:justify-between justify-start">
+            <div className="lg:w-fit w-full footer_logo flex items-center">
+              <Image
+                src="/images/logo-black.svg"
+                alt="Brilworks Logo"
+                width="206"
+                height="62"
+                priority
+                className="mb-5 md:mb-0"
+              />
+            </div>
+            <div className="lg:w-fit w-full flex md:items-center flex-col lg:flex-row lg:gap-20 md:gap-0">
+              <div className="flex">
+                © {new Date().getFullYear()} Brilworks. All Rights Reserved.
+              </div>
+              <div className="flex items-center justify-between lg:gap-20 md:gap-4 gap-0 mt-2 md:!mt-0">
+                <Link href="/terms-and-conditions/" className="transition">
+                  Terms of Service
+                </Link>
+                <Link href="/privacy-policy/" className="transition">
+                  Privacy Policy
+                </Link>
+                {/* <Link href="/site-map/" className="transition">
+                    Sitemap
+                  </Link> */}
+              </div>
+            </div>
+          </div>
+          {/* <TawkMessengerReact
           propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
           widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
         /> */}
-          </div>
         </div>
       </div>
     );

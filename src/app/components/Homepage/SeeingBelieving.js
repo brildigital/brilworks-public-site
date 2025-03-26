@@ -136,45 +136,48 @@ const SeeingBelieving = () => {
   ];
 
   return (
-    <div className="bg-sectionBG section-padding">
-      <div className="container mx-auto max-w-[1440px] reveal">
+    <div className="bg-sectionBG">
+      <div className="container mx-auto max-w-[1440px] main-section-padding reveal">
         <BelievingText />
-        <div className="w-full xl:w-[90%] mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
-          {portfolioDynamicItems?.length &&
-            portfolioDynamicItems?.map(
-              ({ title, link, description, image }, index) => {
-                return (
-                  <div
-                    className="min-w-[300px] h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
-                    key={index}
-                  >
-                    <Link href={`${link}`} prefetch={false}>
-                      <Image
-                        className="rounded-[25px] lg:max-h-[370px]"
-                        src={image}
-                        alt={`casestudy-${index}`}
-                        width="302"
-                        height="240"
-                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                      />
-                      <div className="flex flex-col justify-between flex-1 p-4 items-start">
-                        <div className="w-full flex items-center justify-between">
-                          <div className="text-2xl font-bold text-themeColor mb-1">
-                            {title}
-                          </div>
-                        </div>
-                        <p className="text-colorGray text-base">
-                          {description?.split(" ")?.length > 31
-                            ? description?.split(" ")?.slice(0, 25)?.join(" ") +
-                              "..."
-                            : description}
-                        </p>
+        <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 pt-4">
+          {caseStudyData?.length &&
+            caseStudyData?.map(({ content, full_slug }, index) => {
+              return (
+                <div
+                  className="min-w-[300px] overflow-hidden h-full border border-themeColor shadow-none hover:shadow-lg bg-colorWhite rounded-[25px] w-fit flex flex-col"
+                  key={index}
+                >
+                  <Link href={`/${full_slug}/`} prefetch={true}>
+                    <Image
+                      className="rounded-[25px] lg:max-h-[370px] duration-500 hover:scale-[1.05]"
+                      src={content?.images?.[0]?.filename}
+                      alt={`casestudy-${index}`}
+                      width="302"
+                      height="240"
+                      sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                    />
+                    <div className="flex flex-col justify-between flex-1 p-4 items-start">
+                      <div className="w-full flex items-center justify-between">
+                        <div
+                          className="text-2xl font-bold text-themeColor mb-1"
+                          dangerouslySetInnerHTML={{
+                            __html: content?.title.replace("h1-border-b", ""),
+                          }}
+                        />
                       </div>
-                    </Link>
-                  </div>
-                );
-              }
-            )}
+                      <p className="text-colorGray text-base">
+                        {content?.description?.split(" ")?.length > 31
+                          ? content?.description
+                              ?.split(" ")
+                              ?.slice(0, 25)
+                              ?.join(" ") + "..."
+                          : content?.description}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
         <div>
           <LinkWithArrow

@@ -80,8 +80,8 @@ const DevOpsShipFaster = () => {
   const { heading, para1, para2 } = showDataBasedOnPathname[pathname];
 
   return (
-    <div className="md:mt-[5%] lg:mt-[5%] xl:-mt-[4%] 2xl:-mt-[10%] mt-[30px] mx-auto w-[90%]">
-      <div className="bg-themeLight md:bg-cover md:bg-no-repeat rounded-[38px] xl:p-14 py-8">
+    <div className="md:mt-[5%] lg:mt-[5%] xl:-mt-[4%] 2xl:-mt-[10%] mt-[30px] mx-auto max-w-[1440px] main-section-padding !py-0">
+      <div className="bg-themeColor/10 md:bg-cover md:bg-no-repeat rounded-[38px] xl:p-14 py-8">
         <h2
           className={`${
             pathname === "/product-engineering-development-services/" ||

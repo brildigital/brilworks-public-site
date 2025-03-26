@@ -47,12 +47,10 @@ const HomepageWhyChooseUs = () => {
   ];
 
   return (
-    <div className="container mx-auto md:w-[90%] w-full main-section-padding">
-      <div className="md:p-8 lg:p-12 p-4 reveal rounded-[30px]">
-        <div className="solutions md:pb-8 pb-6 flex md:items-center md:justify-center justify-start items-start font-bold">
-          <WhyChooseText />
-        </div>
-        <div className="w-full xl:w-[80%] mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 xl:grid-cols-2">
+    <div className="container mx-auto max-w-[1440px] main-section-padding">
+      <div className="reveal">
+        <WhyChooseText />
+        <div className="w-full mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 xl:grid-cols-2">
           {whyChooseUscontent?.map(({ title, description }, index) => (
             <div
               className="rounded-[30px] border border-borderGray overflow-visible h-auto"

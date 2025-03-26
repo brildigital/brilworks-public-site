@@ -4,8 +4,8 @@ import Button from "../Common/Button";
 
 const RapidDigitizationBanner = () => {
   return (
-    <div className="container mx-auto">
-      <div className="sm:w-[90%] w-[100%] mx-auto xl:py-24 md:py-16 py-8 flex xl:flex-row flex-col justify-between px-4 gap-10">
+    <div className="container max-w-[1440px] main-section-padding mx-auto">
+      <div className="flex xl:flex-row flex-col justify-between gap-10">
         <div className="flex flex-col gap-10 xl:w-[854px]">
           <h1 className="break-words header-title">
             Unlock Digital Potential with Our Digital Acceleration Services

@@ -44,8 +44,8 @@ const ServiceItem = ({ description, title }) => (
 
 const DedicatedTeamBenefits = () => {
   return (
-    <div className="container mx-auto">
-      <div className="sm:w-[90%] w-[100%] mx-auto xl:py-[6rem] md:py-[4rem] py-[2rem] end-to-end reveal">
+    <div className="container max-w-[1440px] main-section-padding mx-auto">
+      <div className="reveal">
         <div className="endTO_text solutions">
           <h2 className="!w-full p-0">Benefits of Hiring a Dedicated Team</h2>
         </div>

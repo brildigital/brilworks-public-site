@@ -126,7 +126,13 @@ input[type="number"] {
 }
 
 .main-section-padding {
-  padding: 6rem 0rem;
+  padding: 6rem 2.5rem;
+}
+.main-section-padding-top {
+  padding: 6rem 2.5rem 3rem;
+}
+.main-section-padding-bottom {
+  padding: 3rem 2.5rem 6rem;
 }
 .section-padding {
   padding: 6rem 5%;
@@ -893,19 +899,6 @@ textarea.form-control-txt {
   );
 }
 
-.solution_gradiant .contact-p h3 {
-  font-size: var(--font_21);
-  font-weight: 700;
-  color: var(--color_black);
-}
-
-.solution_gradiant .service_description p {
-  font-size: var(--font_21);
-
-  color: var(--color_black);
-  padding-top: 1.5rem;
-}
-
 .faq-bottom .accordion-button {
   font-size: var(--font_21);
   font-weight: 700 !important;
@@ -929,6 +922,9 @@ textarea.form-control-txt {
   border: 1px solid var(--theme-color) !important;
   padding: 2rem !important;
   margin-bottom: 20px !important;
+}
+.faq-bottom .accordion-item:last-child {
+  margin-bottom: 0px !important;
 }
 
 .linear-gradient-bg .number {
@@ -1230,14 +1226,6 @@ textarea.form-control-txt {
   gap: 3rem;
 }
 
-.like_basis {
-  flex-basis: 40%;
-}
-
-.like_basis_form {
-  flex-basis: 60%;
-}
-
 .like_text p {
   font-weight: 800 !important;
   line-height: var(--line_height_1_2);
@@ -1458,7 +1446,7 @@ textarea.form-control-txt {
 .about_sec2_img1 {
   position: absolute;
   right: 3%;
-  top: 12%;
+  top: 8%;
   width: 48%;
 }
 
@@ -1595,11 +1583,6 @@ textarea.form-control-txt {
 
 .sec7_box_style .home_sec2_txt2 p {
   font-size: var(--font_96);
-}
-
-.about_sec1_btn {
-  width: 58px;
-  padding: 2rem 0;
 }
 
 .home_txt3 p {
@@ -2520,6 +2503,12 @@ textarea.form-control-txt {
   .main-section-padding {
     padding: 4rem 2rem;
   }
+  .main-section-padding-top {
+    padding: 4rem 2rem 2rem;
+  }
+  .main-section-padding-bottom {
+    padding: 2rem 2rem 4rem;
+  }
   .section-padding {
     padding: 4rem 2rem;
   }
@@ -2539,7 +2528,13 @@ textarea.form-control-txt {
 
 @media only screen and (max-width: 767px) {
   .main-section-padding {
-    padding: 2rem 1rem;
+    padding: 2rem 1.25rem;
+  }
+  .main-section-padding-top {
+    padding: 2rem 1.25rem 1rem;
+  }
+  .main-section-padding-bottom {
+    padding: 1rem 1.25rem 2rem;
   }
   .section-padding {
     padding: 2rem 1rem;
@@ -2928,6 +2923,9 @@ textarea.form-control-txt {
   .why-card:hover {
     background: url(/images/why-choose-hover-bg.svg) !important;
     width: 100%;
+  }
+  .about_btn_style .sec9_txt1 {
+    padding: 8px 30px;
   }
 }
 

@@ -121,7 +121,7 @@ const HealthCare = () => {
   return (
     <>
       <section className="portfolio mt-[6rem] solution-accordion">
-        <div className="mx-auto service_width">
+        <div className="container max-w-[1440px] main-section-padding !py-0 mx-auto">
           <div className="relative">
             <p>
               <Image
@@ -178,18 +178,18 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
+        <div className="container max-w-[1440px] main-section-padding lg:!py-[4rem] !py-8 mx-auto">
           <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
-            <div className="basis-[50%]">
-              <div className="home_sec2_txt3 like_text">
-                <p className="uppercase !p-0 !ml-[0] !w-full">
+            <div className="basis-[55%]">
+              <div>
+                <p className="uppercase font-extrabold !leading-tight xl:text-5xl lg:text-[40px] md:text-[1.6rem] text-[1.4rem]">
                   CUSTOM HEALTHCARE SOFTWARE DEVELOPMENT THAT{" "}
                   {isMobile ? <br /> : null}
                   PUTS YOUR PATIENTS FIRST.
                 </p>
               </div>
             </div>
-            <div className="basis-[55%]">
+            <div className="basis-[45%]">
               <div className="home_sec2_txt4">
                 <p className="!text-left pb-8">
                   Leverage our healthcare software development services to
@@ -212,7 +212,7 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+        <div className="container max-w-[1440px] main-section-padding mx-auto workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions lg:!mb-[3rem] !mb-0">
               <h2 className="!w-full p-0">
@@ -287,13 +287,12 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end">
+        <div className="container max-w-[1440px] main-section-padding mx-auto workpadd_borderTop end-to-end">
           <div className="end-To-end">
             <div className="endTO_text home_sec2_txt3 solutions">
               <h2 className="!w-full p-0">
-                MEDICAL SOFTWARE DEVELOPMENT SERVICES CATERING
-                <br />
-                TO THE ENTIRE HEALTHCARE ECOSYSTEM
+                MEDICAL SOFTWARE DEVELOPMENT SERVICES
+                <br /> CATERING TO THE ENTIRE HEALTHCARE ECOSYSTEM
               </h2>
             </div>
           </div>
@@ -376,7 +375,7 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal">
+        <div className="container max-w-[1440px] main-section-padding mx-auto workpadd_borderTop end-to-end reveal">
           <div className="lg:pl-[8rem] md:pl-0 lg:w-[90%] md:w-full">
             <div className="end-To-end">
               <div className="endTO_text home_sec2_txt3 solutions">
@@ -511,7 +510,7 @@ const HealthCare = () => {
             />
           </div>
 
-          <div className="lg:pt-[8rem] lg:pb-[6rem] md:py-[6rem] py-[4rem] workpadd_borderTop">
+          <div className="lg:py-[6rem] md:py-[6rem] py-[4rem] workpadd_borderTop">
             <div className="sec9_service_style xl:px-[12rem] sm:px-[4rem] px-[1rem] reveal">
               <div>
                 <div className="end-To-end pt-8">
@@ -585,7 +584,7 @@ const HealthCare = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center xl:pb-[6rem] md:pb-[4rem] pb-[2rem]">
+          <div className="flex items-center justify-center">
             <Button
               innerClassName="flex items-center justify-center gap-1"
               className="!pr-5"
@@ -597,7 +596,7 @@ const HealthCare = () => {
           </div>
         </div>
 
-        <div className="mx-auto xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop service_width end-to-end reveal">
+        <div className="container max-w-[1440px] main-section-padding mx-auto workpadd_borderTop end-to-end reveal">
           <div className="flex md:flex-row flex-col md:gap-[2rem] align-middle mb-0">
             <div className="health_sec1_flex_40 order_2">
               <div className="solutions">

@@ -106,7 +106,7 @@ const BrilworksSoftwareReview = () => {
         </div>
       </div>
       <Swiper
-        className="!w-[95%] !mx-auto reveal"
+        className="reveal"
         modules={[Pagination, Autoplay, Virtual]}
         spaceBetween={isMobile ? 10 : 21}
         autoplay={{ delay: 500 }}
@@ -134,8 +134,8 @@ const BrilworksSoftwareReview = () => {
         {reviewData?.length > 0 ? (
           reviewData?.map((dataItem, index) => (
             <SwiperSlide key={index}>
-              <div className="wpb_wrapper">
-                <div className="clutch-swiper home_sec3_box !mx-[1px] !max-w-[335px]">
+              <div>
+                <div className="clutch-swiper home_sec3_box mx-auto !max-w-[335px]">
                   <div className="dots_flex">
                     <div className="dots !bg-themeColor"></div>
                     <div className="dots"></div>

@@ -23,74 +23,72 @@ const ServicesPricingPlans = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="container mx-auto">
-      <div className="sm:w-[90%] w-full mx-auto xl:py-24 md:py-16 py-8 px-4 end-to-end">
-        <div className="endTO_text solutions">
-          <h2 className="!w-full p-0">
-            Flexible & Predictable Costs: Find the Right IT Staff
-            <br className="hidden md:block" /> Augmentation Solution
-          </h2>
-        </div>
-        <div className="endTO_text_content home_sec2_txt4 xl:mb-24 md:mb-16 mb-8">
-          <p className="!text-[1.2rem]">
-            Transparent pricing  | Top talent | Data Security | Dedicated client
-            support
-          </p>
-        </div>
-        <div className="hire_sec1_service_50 reveal">
-          <div className="react-technology">
-            <div className="relative z-10 rounded-[30px] !border-[1px] border-themeColor">
-              <div className="endTO_text_content home_sec2_txt4 py-6">
-                <p className="!text-[1.2rem]">Plans start with</p>
-              </div>
-              <div className="border-t-[1px] border-t-[#80808085]">
-                <div className="pricing_grid ">
-                  <div
-                    className={`one ${
-                      !isMobile && "!border-r border-r-[#80808085]"
-                    } md:p-4 lg:p-8 p-6`}
-                  >
-                    <div className="md:align-middle">
-                      <p className="pricing-amount">
-                        $20 <br />
-                        Hourly (USD)
-                      </p>
-                    </div>
-                    <PlanBenefit description="We prioritize the privacy of your project." />
-                    <PlanBenefit
-                      description="  We offer a fully signed non-disclosure agreement (NDA)
+    <div className="container max-w-[1440px] main-section-padding mx-auto">
+      <div className="endTO_text solutions">
+        <h2 className="!w-full p-0">
+          Flexible & Predictable Costs: Find the Right IT Staff
+          <br className="hidden md:block" /> Augmentation Solution
+        </h2>
+      </div>
+      <div className="endTO_text_content home_sec2_txt4 xl:mb-12 md:mb-8 mb-5">
+        <p className="!text-[1.2rem]">
+          Transparent pricing  | Top talent | Data Security | Dedicated client
+          support
+        </p>
+      </div>
+      <div className="hire_sec1_service_50 reveal">
+        <div className="react-technology">
+          <div className="relative z-10 rounded-[30px] !border-[1px] border-themeColor">
+            <div className="endTO_text_content home_sec2_txt4 py-6">
+              <p className="!text-[1.2rem]">Plans start with</p>
+            </div>
+            <div className="border-t-[1px] border-t-[#80808085]">
+              <div className="pricing_grid ">
+                <div
+                  className={`one ${
+                    !isMobile && "!border-r border-r-[#80808085]"
+                  } md:p-4 lg:p-8 p-6`}
+                >
+                  <div className="md:align-middle">
+                    <p className="pricing-amount">
+                      $20 <br />
+                      Hourly (USD)
+                    </p>
+                  </div>
+                  <PlanBenefit description="We prioritize the privacy of your project." />
+                  <PlanBenefit
+                    description="  We offer a fully signed non-disclosure agreement (NDA)
                         for your protection."
-                    />
+                  />
+                </div>
+                <div
+                  className={`two ${
+                    isMobile
+                      ? "!border-t border-t-[#80808085]"
+                      : "border-r-[1px] border-r-[#80808085]"
+                  }  md:p-4 lg:p-8 p-6`}
+                >
+                  <div className="sec8_service_txt1 txt_center">
+                    <p className="pricing-amount">
+                      $2500 <br />
+                      Monthly (USD)
+                    </p>
                   </div>
-                  <div
-                    className={`two ${
-                      isMobile
-                        ? "!border-t border-t-[#80808085]"
-                        : "border-r-[1px] border-r-[#80808085]"
-                    }  md:p-4 lg:p-8 p-6`}
-                  >
-                    <div className="sec8_service_txt1 txt_center">
-                      <p className="pricing-amount">
-                        $2500 <br />
-                        Monthly (USD)
-                      </p>
-                    </div>
-                    <PlanBenefit description="Highly skilled developers with 4-6 years of experience." />
+                  <PlanBenefit description="Highly skilled developers with 4-6 years of experience." />
+                </div>
+                <div
+                  className={`three ${
+                    isMobile && "!border-t border-t-[#80808085]"
+                  }  md:p-4 lg:p-8 p-6`}
+                >
+                  <div className="sec8_service_txt1 txt_center">
+                    <p className="pricing-amount">
+                      Request a <br />
+                      quote
+                    </p>
                   </div>
-                  <div
-                    className={`three ${
-                      isMobile && "!border-t border-t-[#80808085]"
-                    }  md:p-4 lg:p-8 p-6`}
-                  >
-                    <div className="sec8_service_txt1 txt_center">
-                      <p className="pricing-amount">
-                        Request a <br />
-                        quote
-                      </p>
-                    </div>
-                    <PlanBenefit description="For a fixed-cost solution" />
-                    <PlanBenefit description="Successful Project Execution within Time Constraints" />
-                  </div>
+                  <PlanBenefit description="For a fixed-cost solution" />
+                  <PlanBenefit description="Successful Project Execution within Time Constraints" />
                 </div>
               </div>
             </div>

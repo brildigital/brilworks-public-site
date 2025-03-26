@@ -364,45 +364,34 @@ const TechStackWeUse = () => {
 
   return (
     <div
-      className={`container md:w-[90%] w-full mx-auto ${
+      className={`container max-w-[1440px] mx-auto ${
         pathname === "/ai-ml-development-services/"
           ? ""
-          : "xl:py-24 md:py-16 py-8"
+          : "main-section-padding"
       }`}
     >
-      <div className="!rounded-2xl">
-        <h2 className="md:text-center text-left ml-4 !mb-8">
-          Tech Stack We Use
-        </h2>
-        <div className="reveal">
-          <div
-            className={`flex flex-wrap md:gap-5 gap-3 justify-center mx-auto mb-[20px] ${
-              pathname === "/devops-consulting-services/" ||
-              pathname === "/digital-experience-services/" ||
-              pathname === "/kubernetes-consulting-services/"
-                ? "w-full md:w-4/5"
-                : ""
-            }`}
-          >
-            {showTechStack[pathname]?.map(({ title, imageSrc }) => (
-              <div
-                className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
-                key={title}
-              >
-                <Image
-                  src={imageSrc}
-                  alt={`${title}-icon`}
-                  className="w-auto md:mb-6 mb-4"
-                  width={60}
-                  height={60}
-                />
+      <div>
+        <h2 className="md:text-center text-left !mb-8">Tech Stack We Use</h2>
 
-                <span className="text-center lg:text-2xl md:text-xl text-base">
-                  {title}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="reveal flex flex-wrap md:gap-5 gap-3 justify-center">
+          {showTechStack[pathname]?.map(({ title, imageSrc }) => (
+            <div
+              className="flex items-center justify-center flex-col border border-[#8F9998] rounded-2xl shadow-none hover:shadow-lg md:p-6 p-4 md:w-[200px] w-[150px]"
+              key={title}
+            >
+              <Image
+                src={imageSrc}
+                alt={`${title}-icon`}
+                className="w-auto md:mb-6 mb-4"
+                width={60}
+                height={60}
+              />
+
+              <span className="text-center lg:text-2xl md:text-xl text-base">
+                {title}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

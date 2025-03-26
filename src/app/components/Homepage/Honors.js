@@ -155,8 +155,8 @@ const Honors = () => {
   ];
 
   return (
-    <div className={`${isWhite ? "" : "bg-sectionBG"} section-padding`}>
-      <div className="container max-w-[1536px] mx-auto reveal">
+    <div className="bg-sectionBG">
+      <div className="container max-w-[1440px] !px-5 main-section-padding mx-auto reveal">
         <HonorText />
         <div className="honors-swiper reveal">
           <Swiper

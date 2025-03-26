@@ -42,9 +42,9 @@ const KeyBenefits = () => {
   ];
 
   return (
-    <div className="container services md:w-[90%] w-full mx-auto xl:py-24 md:py-16 py-8">
+    <div className="container max-w-[1440px] main-section-padding services mx-auto">
       <div>
-        <h2 className="md:text-center text-left ml-4 !mb-8">Key Benefits</h2>
+        <h2 className="md:text-center text-left !mb-8">Key Benefits</h2>
         <div className="reveal md:px-0 px-4">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-5 gap-3 justify-center mx-auto mb-[20px]">
             {AIMLKeyBenefits.map(

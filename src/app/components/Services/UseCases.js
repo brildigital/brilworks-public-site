@@ -195,9 +195,9 @@ const UseCases = () => {
   ];
 
   return (
-    <div className="container services md:w-[90%] w-full mx-auto xl:pt-24 md:pt-16 pt-8">
+    <div className="container main-section-padding max-w-[1440px] services mx-auto">
       <div className="!rounded-2xl">
-        <h2 className="md:text-center text-left ml-4 !mb-8">
+        <h2 className="md:text-center text-left !mb-8">
           {pathname === "/generative-ai-development-services/"
             ? "What are some common generative AI use cases?"
             : "What are the Usecases of AI?"}

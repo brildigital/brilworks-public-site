@@ -472,7 +472,7 @@ const OurProcessPage = () => {
 
   return (
     <section className="portfolio mt-[6rem] our_process_page">
-      <div className="mx-auto service_width">
+      <div className="container max-w-[1440px] main-section-padding !py-0 mx-auto">
         <div className="relative">
           <p>
             <Image
@@ -521,16 +521,16 @@ const OurProcessPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto service_width lg:py-20 py-12">
-        <div className="flex !flex-col lg:!flex-row xl:gap-[3.5rem] gap-[2rem]">
-          <div className="basis-[45%]">
-            <div className="home_sec2_txt3 like_text">
-              <p className="uppercase !p-0 !ml-[0] lg:!w-[92%] !w-[100%]">
+      <div className="container max-w-[1440px] main-section-padding lg:!py-[4rem] !py-8 mx-auto">
+        <div className="flex !flex-col lg:!flex-row md:gap-[1.5rem] lg:gap-10">
+          <div className="basis-[55%]">
+            <div>
+              <p className="uppercase font-extrabold !leading-tight xl:text-5xl lg:text-[40px] md:text-[1.6rem] text-[1.4rem] ">
                 Time Tested Processes for All Your Project Needs
               </p>
             </div>
           </div>
-          <div className="basis-[55%]">
+          <div className="basis-[45%]">
             <div className="home_sec2_txt4">
               <p className="!text-left !text-[1.2rem]">
                 Over the past decade, we’ve developed a flexible production
@@ -544,7 +544,7 @@ const OurProcessPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto service_width xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
+      <div className="container max-w-[1440px] main-section-padding !pt-0 mx-auto reveal">
         <div className="flex !flex-col md:!flex-row items-center justify-center gap-[1rem]">
           <div className="our_img_text_sec relative">
             <div className="our_img">
@@ -616,7 +616,7 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end reveal"
+        className="container max-w-[1440px] main-section-padding mx-auto workpadd_borderTop end-to-end reveal"
         id="workSec4"
       >
         <div className="end-To-end">
@@ -688,7 +688,7 @@ const OurProcessPage = () => {
       </div>
 
       <div
-        className="mx-auto service_width xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end reveal"
+        className="container max-w-[1440px] main-section-padding !pb-0 mx-auto workpadd_borderTop end-to-end reveal"
         id="workSec5"
       >
         <div className="end-To-end">
