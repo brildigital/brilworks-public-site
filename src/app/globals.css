@@ -1193,7 +1193,7 @@ textarea.form-control-txt {
 .contact_text_call p {
   font-weight: 500;
   color: var(--white_color);
-  font-size: 4rem;
+  font-size: 2.75rem;
 }
 
 .contact_icon {
@@ -1851,7 +1851,7 @@ textarea.form-control-txt {
   }
 
   .contact_text_call p {
-    font-size: 3.2rem;
+    font-size: 2.75rem;
   }
 
   .contact_icon {
@@ -2158,7 +2158,7 @@ textarea.form-control-txt {
   }
 
   .contact_text_call p {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   .jira_icon_flex {
@@ -2263,7 +2263,7 @@ textarea.form-control-txt {
   }
 
   .contact_text_call p {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
 
   .contact_details {
@@ -2409,6 +2409,7 @@ textarea.form-control-txt {
     padding: 0.5rem 0;
     align-items: center;
     justify-content: left;
+    gap: 0.5rem;
   }
 
   .sec3_width_home {
