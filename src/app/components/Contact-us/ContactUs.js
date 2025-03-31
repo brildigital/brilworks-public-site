@@ -231,7 +231,9 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <a href="tel:919313644148">+91 93136 44148</a>
+                    Sales:&nbsp;<a href="tel:919313644148">+91 93136 44148</a>
+                    <br />
+                    HR:&nbsp;<a href="tel:919106810920">+91 91068 10920</a>
                   </p>
                 </div>
               </div>
@@ -247,7 +249,13 @@ const ContactUs = () => {
                 </div>
                 <div className="contact_text_call">
                   <p>
-                    <a href="mailto:sales@brilworks.com">sales@brilworks.com</a>
+                    Sales:&nbsp;
+                    <a href={`mailto:sales@brilworks.com`}>
+                      sales@brilworks.com
+                    </a>
+                    <br />
+                    HR:&nbsp;
+                    <a href={`mailto:hr@brilworks.com`}>hr@brilworks.com</a>
                   </p>
                 </div>
               </div>
