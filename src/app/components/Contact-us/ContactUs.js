@@ -260,7 +260,7 @@ const ContactUs = () => {
                   </p>
                 </div>
               </div>
-              <div className="contact_iconText_flex">
+              {/* <div className="contact_iconText_flex">
                 <div className="contact_icon">
                   <img
                     decoding="async"
@@ -277,7 +277,7 @@ const ContactUs = () => {
                     </a>
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
