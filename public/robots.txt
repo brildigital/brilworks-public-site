@@ -22,6 +22,7 @@ Disallow: /ui-ux-services/*
 Disallow: /chat-application/*
 Disallow: /wp-content/*
 Disallow: /teams/*
+Disallow: /ai-solutions/*
 Disallow: /cdn-cgi/
 
 Sitemap: https://www.brilworks.com/sitemap.xml

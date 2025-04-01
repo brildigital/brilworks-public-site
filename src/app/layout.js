@@ -41,9 +41,7 @@ export default function RootLayout({ children }) {
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
           />
-          {process.env.VERCEL_ENV !== "production" && (
-            <meta name="robots" content="noindex,nofollow" />
-          )}
+          <meta name="robots" content="noindex,nofollow" />
           {process.env.VERCEL_ENV !== "production" && (
             <>
               <Script
