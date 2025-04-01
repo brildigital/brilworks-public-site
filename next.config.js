@@ -880,6 +880,26 @@ const nextConfig = {
         destination: `/portfolio/`,
         statusCode: 301,
       },
+      {
+        source: `/blog/how-geneative-ai-transforms-supply-chain-operations/`,
+        destination: `/blog/how-generative-ai-transforms-supply-chain-operations/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/optimize-your-nest-js-app-performance-with-these-practices/`,
+        destination: `/blog/optimize-your-nest-js-app-performance/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/headless-cms-explained-simplifying-content-management-for-modern-web-development/`,
+        destination: `/blog/headless-cms-explained/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/what-are-white-label-apps-and-popular-examples/`,
+        destination: `/blog/white-label-apps-popular-examples/`,
+        statusCode: 301,
+      },
     ];
   },
 };
