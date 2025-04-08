@@ -124,7 +124,9 @@ input[type="number"] {
 .font-Inter {
   font-family: var(--global-font);
 }
-
+.font-Figtree {
+  font-family: var(--global-font);
+}
 .main-section-padding {
   padding: 6rem 2.5rem;
 }
@@ -134,10 +136,7 @@ input[type="number"] {
 .main-section-padding-bottom {
   padding: 3rem 2.5rem 6rem;
 }
-.section-padding {
-  padding: 6rem 5%;
-}
-.font-style-solution-head {
+.section- .font-style-solution-head {
   font-weight: 800;
   color: var(--white_color);
   line-height: inherit !important;
@@ -233,11 +232,6 @@ input[type="number"] {
   font-weight: 600 !important;
 }
 
-.page-active-blue {
-  color: var(--theme-color) !important;
-  font-weight: 600 !important;
-}
-
 .footer-links a:hover {
   color: var(--theme-color) !important;
 }
@@ -260,6 +254,11 @@ input[type="number"] {
 
 .header_font a,
 .header_font p {
+  font-size: var(--font_16);
+  /* color: var(--color_black); */
+}
+.header-font a,
+.header-font p {
   font-size: var(--font_16);
   color: var(--color_black);
 }
@@ -424,9 +423,9 @@ input[type="number"] {
 }
 
 .video-slider video {
-  width: 442px;
-  height: 442px;
-  background: var(--color_black);
+  width: 575px;
+  height: 340px;
+  background: #f7f7f7;
 }
 
 .accordion .accordion-item,
@@ -2509,9 +2508,7 @@ textarea.form-control-txt {
   .main-section-padding-bottom {
     padding: 2rem 2rem 4rem;
   }
-  .section-padding {
-    padding: 4rem 2rem;
-  }
+
   .identifying-understanding {
     padding-bottom: 5rem;
   }
@@ -2535,9 +2532,6 @@ textarea.form-control-txt {
   }
   .main-section-padding-bottom {
     padding: 1rem 1.25rem 2rem;
-  }
-  .section-padding {
-    padding: 2rem 1rem;
   }
   .identifying-understanding {
     padding-bottom: 2.5rem;

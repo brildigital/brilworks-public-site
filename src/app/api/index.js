@@ -38,7 +38,7 @@ export async function createHubSpotContact(payload) {
 }
 
 export async function sendDataToSlack(payload) {
-  const { name, email, phone, message, company } = payload;
+  const { name, email, phone, message, company, page } = payload;
 
   const data = {
     channel: process.env.SLACK_CHANNEL_ID,

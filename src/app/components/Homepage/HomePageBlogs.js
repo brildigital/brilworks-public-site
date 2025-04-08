@@ -9,6 +9,10 @@ import { usePathname } from "next/navigation";
 import FetchDataSpinner from "./FetchDataSpinner";
 // import { getblogDataCategorization } from "../lib/getblog";
 import LinkWithArrow from "../Common/LinkWithArrow";
+import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const HomePageBlogs = () => {
   const pathname = usePathname();
@@ -90,80 +94,101 @@ const HomePageBlogs = () => {
   }
 
   return (
-    <div className={pathname === "/" ? "bg-sectionBG" : ""}>
-      <div className="container max-w-[1440px] main-section-padding mx-auto reveal">
-        <BlogText />
-        <div className="blog-home reveal">
-          {blogResponse[getRedirectPath(pathname)]?.length ? (
-            blogResponse[getRedirectPath(pathname)].map(
-              ({ slug, name, content }, index) => {
-                if (
-                  content &&
-                  (content.Priority == 1 ||
-                    content.Priority == 2 ||
-                    content.Priority == 3)
-                ) {
-                  return (
-                    <div
-                      key={index}
-                      className="blog-box overflow-hidden shadow-none hover:shadow-lg"
-                    >
-                      <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                        <Image
-                          src={content?.mobile_banner?.filename}
-                          alt={content?.mobile_banner?.alt}
-                          className="vc_gitem-zone-img rounded-[20px]"
-                          width={550}
-                          height={283}
-                        />
-                        <div className="p-[10px]">
-                          <h4 className="xl:text-[24px] mb-[10px] leading-8">
-                            {name}
-                          </h4>
-                        </div>
-                      </Link>
-                    </div>
-                  );
-                } else {
-                  return (
-                    <div
-                      key={index}
-                      className="blog-box overflow-hidden shadow-none hover:shadow-lg bg-white"
-                    >
-                      <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
-                        <Image
-                          src={content?.mobile_banner?.filename || ""}
-                          alt={content?.mobile_banner?.alt || "Blog banner"}
-                          className="vc_gitem-zone-img rounded-[20px]"
-                          width={550}
-                          height={283}
-                          sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
-                        />
-                        <div className="p-[10px]">
-                          <h4 className="xl:text-xl mb-[10px] font-semibold leading-8">
-                            {name}
-                          </h4>
-                        </div>
-                      </Link>
-                    </div>
-                  );
-                }
-              }
-            )
-          ) : (
-            <div className="flex align-middle justify-center">
-              <FetchDataSpinner />
-            </div>
-          )}
-        </div>
-        {blogResponse[pathname]?.length ? (
-          <LinkWithArrow
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
+      <div className="flex flex-wrap items-center justify-between lg:pb-10 md:pb-8 pb-5">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl"
+          text="Get Insights from the Brilwork’s Blogs"
+        />
+        <div>
+          <Link
             href="/blog/"
-            label="Read More"
-            className="justify-center"
-          />
-        ) : null}
+            className="md:text-xl text-lg font-medium text-themeColor hover:!underline cursor-pointer pr-2"
+          >
+            Read More Blogs
+          </Link>
+        </div>
       </div>
+      <div className="blog-home reveal">
+        {blogResponse[getRedirectPath(pathname)]?.length ? (
+          blogResponse[getRedirectPath(pathname)]
+            .slice(0, 2)
+            .map(({ slug, name, content }, index) => {
+              if (
+                content &&
+                (content.Priority == 1 ||
+                  content.Priority == 2 ||
+                  content.Priority == 3)
+              ) {
+                return (
+                  <div
+                    key={index}
+                    className="overflow-hidden border border-[#DBDBDB] rounded-2xl"
+                  >
+                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                      <Image
+                        src={content?.mobile_banner?.filename}
+                        alt={content?.mobile_banner?.alt}
+                        width={550}
+                        height={283}
+                      />
+                      <div className="px-5 py-7.5">
+                        <h4 className="lg:text-xl text-lg font-medium mb-3 min-h-[50px]">
+                          {name}
+                        </h4>
+                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor">
+                          Read Complete Blog&nbsp;
+                          <FontAwesomeIcon size="lg" icon={faArrowRight} />
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    key={index}
+                    className="overflow-hidden border border-[#DBDBDB] rounded-2xl"
+                  >
+                    <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                      <Image
+                        src={content?.mobile_banner?.filename || ""}
+                        alt={content?.mobile_banner?.alt || "Blog banner"}
+                        className="vc_gitem-zone-img"
+                        width={550}
+                        height={283}
+                        sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
+                      />
+                      <div className="px-5 py-7.5">
+                        <h4 className="lg:text-xl text-lg font-medium mb-3 min-h-[50px]">
+                          {name}
+                        </h4>
+                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor">
+                          Read Complete Blog&nbsp;
+                          <FontAwesomeIcon size="lg" icon={faArrowRight} />
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              }
+            })
+        ) : (
+          <div className="flex align-middle justify-center">
+            <FetchDataSpinner />
+          </div>
+        )}
+      </div>
+      {blogResponse[pathname]?.length ? (
+        <div className="w-full flex justify-center">
+          <ButtonV2
+            redirect="/blog/"
+            label="Read More Blogs"
+            className="hover:text-themeColor w-fit lg:mt-10 mt-8"
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import FetchDataSpinner from "./FetchDataSpinner";
-import { BestAdvocateText } from "./BigText";
+import Heading from "../HTMLComponents/Heading";
+import Image from "next/image";
 
 const BrilworksSoftwareReview = dynamic(() =>
   import("./BrilworksSoftwareReview")
@@ -18,7 +18,7 @@ const BrilworksSoftwareReview = dynamic(() =>
 
 const ClientReviews = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [isVideoPause, setVideoPause] = useState(true);
+  const [isVideoPause, setIsVideoPause] = useState(true);
   const [reviewIndex, setReviewIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const pathname = usePathname();
@@ -33,7 +33,7 @@ const ClientReviews = () => {
   const handleSlideChange = (swiper) => {
     const activeSlideIndex = swiper.activeIndex;
     setReviewIndex(activeSlideIndex);
-    setVideoPause(true);
+    setIsVideoPause(true);
   };
 
   useEffect(() => {
@@ -93,69 +93,30 @@ const ClientReviews = () => {
 
   return (
     <>
-      <div className={`container max-w-[1440px] mx-auto main-section-padding`}>
+      <div className="container max-w-[1280px] main-section-padding mx-auto">
         {showText.includes(pathname) || pathname.includes("services") ? (
-          <div className="just_call_sec">
-            <div
-              className={`solutions text-center ${
-                pathname === "/contact-us/" ? "py-8" : "pb-8"
-              }`}
-            >
-              <h2
-                className={`md:!text-center !text-left !w-full ${
-                  pathname === "/contact-us/" ? "uppercase" : ""
-                }`}
-              >
-                Client Testimonials
-              </h2>
-            </div>
-          </div>
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
+            text="Client Testimonials"
+          />
         ) : (
-          <BestAdvocateText />
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
+            text="Our Clients Simply Love Our Work"
+          />
         )}
+        <p className="md:text-lg text-base lg:!mb-10 md:!mb-8 !mb-5">
+          We build and transform businesses through strategy, design and
+          development.
+        </p>
 
         <div className="relative reveal">
-          <div className="rotate_img">
-            <Image
-              className="rotate_right alignnone"
-              src="/images/Verified-Review-image.png"
-              alt="verified review"
-              width="215"
-              height="215"
-            />
-          </div>
           <div className="flex flex-wrap items-center gap-6 justify-center video-slider">
-            <div className="cursor-pointer relative">
-              <div className="video-play-icon">
-                {isVideoPause && !isMobile ? (
-                  <span className="play-icon-img">
-                    <img src="/images/icon_play_new.svg" alt="Play Icon" />
-                  </span>
-                ) : null}
-              </div>
-
-              <div onClick={() => setVideoPause(!isVideoPause)}>
-                {videoSrc && (
-                  <video
-                    className="!rounded-[30px]"
-                    src={videoSrc}
-                    controls
-                    loading="lazy"
-                    width="320"
-                    height="200"
-                  />
-                )}
-              </div>
-            </div>
-
             <div className="md:!w-[50%] !w-full">
-              <div className="home_sec3_box overflow-hidden ">
-                <div className="dots_flex md:!px-[30px] !mx-4">
-                  <div className="dots md:ml-8 ml-4"></div>
-                  <div className="dots"></div>
-                  <div className="dots"></div>
-                </div>
-                <div className="background">
+              <div className="overflow-hidden ">
+                <div className="bg-[#F7F7F7] rounded-2xl md:p-7.5 p-5">
                   <Swiper
                     className="client-review-swipers"
                     modules={[Navigation]}
@@ -168,17 +129,34 @@ const ClientReviews = () => {
                       ({ quote, author, position }, index) => {
                         return (
                           <SwiperSlide key={index}>
-                            <div className="style_sec3_swiper_home !w-4/5 slg:!my-6 md:!my-2 text-colorWhite">
-                              <div className="xl:text-[32px] lg:text-[28px] md:text-[24px] text-[16px] mb-[40px]">
-                                <p className="text-left md:text-xl !leading-9 font-medium">
-                                  "{quote}"
-                                </p>
-                              </div>
+                            <div className="">
+                              <Image
+                                className="w-[44px] h-[34px] lg:mb-10 md:mb-8 mb-5"
+                                src="/images/quote.svg"
+                                width={44}
+                                height={34}
+                                alt="quote"
+                              />
+                              <p
+                                className={`${
+                                  index === 1 || index === 3
+                                    ? "w-full"
+                                    : "md:w-11/12 w-full"
+                                } ${
+                                  index === 3
+                                    ? "lg:!mb-[32px]"
+                                    : "lg:!mb-[60px]"
+                                } md:!mb-10 !mb-6 md:!text-lg !text-base`}
+                              >
+                                "{quote}"
+                              </p>
 
-                              <p className="xl:text-[28px] md:text-[24px] text-[20px]">
+                              <p className="lg:text-xl text-lg lg:!mb-2.5 mb-1.5 font-medium">
                                 {author}
                               </p>
-                              <p className="text-base">{position}</p>
+                              <p className="lg:text-base text-sm font-medium">
+                                {position}
+                              </p>
                             </div>
                           </SwiperSlide>
                         );
@@ -186,6 +164,29 @@ const ClientReviews = () => {
                     )}
                   </Swiper>
                 </div>
+              </div>
+            </div>
+
+            <div className="cursor-pointer relative">
+              <div className="video-play-icon">
+                {isVideoPause && !isMobile ? (
+                  <span className="play-icon-img">
+                    <img src="/images/v2/play-theme-icon.svg" alt="Play Icon" />
+                  </span>
+                ) : null}
+              </div>
+
+              <div onClick={() => setIsVideoPause(!isVideoPause)}>
+                {videoSrc && (
+                  <video
+                    className="!rounded-2xl"
+                    src={videoSrc}
+                    controls
+                    loading="lazy"
+                    width="320"
+                    height="200"
+                  />
+                )}
               </div>
             </div>
           </div>

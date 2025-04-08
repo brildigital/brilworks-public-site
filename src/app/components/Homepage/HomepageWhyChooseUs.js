@@ -1,8 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { WhyChooseText } from "./BigText";
+import TabAccordionDark from "../Common/TabAccordionDark";
+import TabVerticalDark from "../Common/TabVerticalDark";
+import Heading from "../HTMLComponents/Heading";
+import { valid } from "uuid4";
+import { useMediaQuery } from "react-responsive";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -13,59 +18,95 @@ const CardBody = dynamic(() =>
 
 const HomepageWhyChooseUs = () => {
   const pathname = usePathname();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [open, setOpen] = useState(1);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
   const whyChooseUscontent = [
     {
       title: "Cost-Effective Excellence",
+      value: "why-choose-1",
+      imageSrc: "/images/v2/Cost-Effective-Excellence.png",
       description:
         "Cost-effective e-solutions that deliver maximum value for your investment.",
     },
     {
       title: "Proven Expertise",
+      value: "why-choose-2",
+      imageSrc: "/images/v2/Proven-Expertise.png",
       description:
         "Proven expertise from our seasoned professionals with over 8 years of experience.",
     },
     {
       title: "Innovative Solution",
+      value: "why-choose-3",
+      imageSrc: "/images/v2/Innovative-Solution.png",
       description:
         "Innovative solutions that leverage emerging technologies to exceed industry standards.",
     },
     {
       title: "Diverse Portfolio",
+      value: "why-choose-4",
+      imageSrc: "/images/v2/Diverse-Portfolio.png",
       description:
         "A diverse portfolio of over 120 successfully developed applications across various industries.",
     },
     {
       title: "Client-Centric Approach",
+      value: "why-choose-5",
+      imageSrc: "/images/v2/Client-Centric-Approach.png",
       description:
         " A client-centric approach that prioritizes your unique needs and fosters long-term partnerships.",
     },
     {
       title: "Dedicated Support",
+      value: "why-choose-6",
+      imageSrc: "/images/v2/Dedicated-Support.png",
       description:
         "  Dedicated support to ensure smooth integration, troubleshooting and updates for optimal software performance.",
     },
   ];
 
   return (
-    <div className="container mx-auto max-w-[1440px] main-section-padding">
+    <div className="bg-navyBlue">
       <div className="reveal">
-        <WhyChooseText />
-        <div className="w-full mx-auto grid slg:grid-cols-2 grid-cols-1 md:gap-6 gap-4 !pt-0 xl:grid-cols-2">
-          {whyChooseUscontent?.map(({ title, description }, index) => (
-            <div
-              className="rounded-[30px] border border-borderGray overflow-visible h-auto"
-              key={index}
-            >
-              <Card className="why-card rounded-[30px] border-none shadow-none xl:px-16 px-6 xl:py-12 py-6  hover:-rotate-[0.1rad] transition-all duration-[0.5s]">
-                <h4 className="md:text-[26px] text-xl font-bold leading-snug p-4 pb-0">
-                  {title}
-                </h4>
-                <CardBody className="desc md:text-xl text-base p-4 lg:w-11/12">
-                  {description}
-                </CardBody>
-              </Card>
+        <div className="bg-building-shadow">
+          <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
+            <div>
+              <Heading
+                type="h2"
+                className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
+                text="Why Choose Brilworks?"
+              />
             </div>
-          ))}
+          </div>
+          <div
+            className={`container max-w-[1280px] mx-auto ${
+              isMobile ? "main-section-padding !px-0" : ""
+            }`}
+          >
+            {isMobile ? (
+              whyChooseUscontent?.map((data, index) => (
+                <div key={data.value}>
+                  <TabAccordionDark
+                    index={index + 1}
+                    key={data?.value}
+                    data={data}
+                    handleOpen={handleOpen}
+                    open={open}
+                  />
+                </div>
+              ))
+            ) : (
+              <TabVerticalDark
+                borderRight={false}
+                initialTabValue={"why-choose-1"}
+                data={whyChooseUscontent}
+                rightSideOnlyImage={true}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

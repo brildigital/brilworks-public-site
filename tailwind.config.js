@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        7.5: "30px",
+      },
       screens: {
         mobile: "535px",
         slg: "980px",
@@ -20,10 +23,10 @@ module.exports = {
         Urbanist: ["Urbanist", "sans-serif"],
       },
       colors: {
-        // themeColor: "#0d9a9a",
         themeColor: "#017eeb",
+        navyBlue: "#000D1E",
         colorLightGray: "#f1f1f1",
-        sectionBG: "#f2f3f3",
+        sectionBG: "#FAFAFA",
         colorYellow: "#FEDC7A",
         footerBG: "#f2f5f7",
         borderGray: "#dedede",
@@ -44,6 +47,11 @@ module.exports = {
           "linear-gradient(87.38deg, #0182EA 35.49%, #0182EA 43.25%, #01DBD4 51.02%)",
         "new-gradient":
           "linear-gradient(126.47deg, #0182EA 1.83%, #0182EA 34.84%, #01DBD4 67.84%, #01DBD4 93.78%)",
+        "theme-gradient":
+          "linear-gradient(180.48deg, #007AEB 5.43%, #008CE7 30.86%, #00DBD3 72.46%)",
+        "tab-gradient": "linear-gradient(90deg, #017EEB 0%, #000D1E 100%)",
+        "text-gradient":
+          "linear-gradient(147.18deg, #007AEB 8.92%, #008CE7 40.42%, #00DBD3 84.49%)",
       },
       dropShadow: {
         "book-shadow": "10px 10px 15px rgba(0, 0, 0, 0.3)",

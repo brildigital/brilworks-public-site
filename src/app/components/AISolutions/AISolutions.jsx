@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { BrilworksButton } from "../Common/BrilworksBtn";
 import Heading from "../HTMLComponents/Heading";
 import AIGenerateField from "./AIGenerateField";
+import Button from "../Common/Button";
 
 function AISolutionsFirstSection({
   title,
@@ -24,7 +25,7 @@ function AISolutionsFirstSection({
       {/* {pathname === "/ai-solutions/ai-powered-prd-generator/" ? (
         <AIGenerateField />
       ) : ( */}
-      <BrilworksButton
+      <Button
         className="!mb-8"
         label={buttontext || "Get Started Now"}
         redirect={buttonURL?.url || "/contact-us/"}

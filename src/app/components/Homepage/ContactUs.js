@@ -18,11 +18,7 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <div
-      className={`container max-w-[1440px] mx-auto main-section-padding ${
-        pathname !== "/" ? "!pt-0" : ""
-      } `}
-    >
+    <div className={`container max-w-[1280px] mx-auto main-section-padding`}>
       <ScalableSolutionText />
       <div className="blog-home mx-auto reveal">
         <HomepageContactForm />

@@ -7,7 +7,6 @@ import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
 import Button from "../Common/Button";
 import { usePathname } from "next/navigation";
-import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
@@ -90,23 +89,6 @@ const NewHeader = () => {
                   height="46"
                   priority="true"
                 />
-                {/* {pathname.startsWith("/portfolio/") ? (
-                  <Image
-                    src="/images/logo-black.svg"
-                    alt="Brilworks Logo"
-                    width="155"
-                    height="46"
-                    priority="true"
-                  />
-                ) : (
-                  <Image
-                    src="/images/brilworks-logo.png"
-                    alt="Brilworks Logo"
-                    width="206"
-                    height="62"
-                    priority="true"
-                  />
-                )} */}
               </Link>
             </div>
             {pathname !== "/posters/" ? (
@@ -146,7 +128,7 @@ const NewHeader = () => {
             )}
             <div className="flex items-center gap-5">
               {pathname.startsWith("/portfolio/") ? (
-                <BrilworksButton
+                <Button
                   innerClassName="text-base"
                   onClick={() => setOpenNav(false)}
                   label="Let's Talk"

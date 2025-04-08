@@ -3,13 +3,18 @@ import "./styles/Homepage.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 // import { NextAuthProvider } from "./provider"
-import { Inter } from "next/font/google";
+import { Inter, Figtree } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import { organization, website } from "./components/lib/schemaCode";
 import dynamic from "next/dynamic";
 
 const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--global-font-v1",
+});
+const figtree = Figtree({
   subsets: ["latin"],
   display: "swap",
   variable: "--global-font",
@@ -27,6 +32,7 @@ storyblokInit({
 });
 
 import Header from "./components/Header/Header";
+import HeaderV2 from "./components/Header/HeaderV2";
 // import LoadScripts from "./ScriptLoader";
 
 const Footer = dynamic(() => import("./components/Footer"));
@@ -34,7 +40,7 @@ const Footer = dynamic(() => import("./components/Footer"));
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${inter.variable}`}>
+      <html lang="en" className={`${figtree.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
           <meta
@@ -57,7 +63,8 @@ export default function RootLayout({ children }) {
           )}
         </head>
         <body suppressHydrationWarning={true}>
-          <Header />
+          {/* <Header /> */}
+          <HeaderV2 />
           {/* <NextAuthProvider> */}
           {children}
           {/* </NextAuthProvider> */}

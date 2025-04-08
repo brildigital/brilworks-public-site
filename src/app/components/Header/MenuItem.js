@@ -9,20 +9,11 @@ const MenuItem = ({ path, onClick, name, className }) => {
     <Link href={path} onClick={onClick} className={className}>
       <p
         className={`!mb-0 w-full whitespace-nowrap ${
-          pathname === path ? "page-active-blue" : "hover:!text-vividBlue"
+          pathname === path ? "page-active" : "hover:!text-vividBlue"
         }`}
       >
         {name}
       </p>
-      {/* ) : (
-        <p
-          className={`!mb-0 w-full whitespace-nowrap ${
-            pathname === path ? "page-active" : "hover:text-themeColor"
-          }`}
-        >
-          {name}
-        </p>
-      )} */}
     </Link>
   );
 };

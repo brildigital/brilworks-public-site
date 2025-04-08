@@ -3,7 +3,7 @@ import React from "react";
 
 const ProjectOverview = () => {
   return (
-    <div className="bg-sectionBG section-padding">
+    <div className="bg-sectionBG main-section-padding">
       <div className="container max-w-[1280px] mx-auto">
         <div className="flex items-center justify-between lg:flex-row flex-col-reverse gap-8">
           <div className="basis-1/5">
