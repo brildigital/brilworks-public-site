@@ -1,0 +1,79 @@
+.stickysection {
+  background: #000d1e;
+  scroll-behavior: smooth;
+  &__sidebar {
+    top: 100px;
+    z-index: unset;
+    position: sticky;
+    min-height: 600px;
+    // min-height: 80vh;
+
+    ul {
+      li {
+        margin-bottom: 15px;
+
+        a {
+          color: #ffffff;
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 32px;
+          transition: all 0.3s ease;
+        }
+
+        &.active {
+          background: linear-gradient(90deg, #017eeb 0%, #000d1e 100%);
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          color: #ffffff;
+          .numeric {
+            background: #ffffff;
+            color: #17283e;
+          }
+        }
+        .numeric {
+          background: #17283e;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: 80vh;
+  }
+
+  &__item {
+    opacity: 0;
+    max-width: 686px;
+    visibility: hidden;
+
+    .title {
+      color: #f2cd00;
+    }
+
+    .media {
+      margin-bottom: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.stickysection__contentappend-explore-our-expertise,
+.stickysection__contentappend-why-choose-brilworks {
+  top: 100px;
+  z-index: unset;
+  position: sticky;
+  //   min-height: 80vh;
+  min-height: 600px;
+  margin-bottom: -750px;
+  // margin-bottom: -80vh;
+
+  .stickysection__item {
+    opacity: 1;
+    visibility: visible;
+  }
+}

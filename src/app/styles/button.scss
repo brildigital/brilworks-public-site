@@ -1,0 +1,40 @@
+.c-button {
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 12px 30px;
+  @media screen and (max-width: 767px) {
+    padding: 8px 20px;
+  }
+}
+
+.c-btn-large {
+  font-size: var(--font_20);
+  line-height: 28px;
+}
+.c-btn-medium {
+  font-size: var(--font_16);
+  line-height: 24px;
+}
+
+.c-btn-primary {
+  border: 1px solid var(--theme-color);
+  background: var(--theme-color);
+  color: var(--white_color);
+  &:hover {
+    background: transparent;
+  }
+}
+
+.c-btn-secondary {
+  color: var(--theme-color);
+  background: white;
+  border: 1px solid var(--theme-color);
+  &:hover {
+    color: white;
+    background: var(--theme-color);
+  }
+}

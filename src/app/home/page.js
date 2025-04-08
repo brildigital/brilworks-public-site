@@ -1,14 +1,24 @@
 import dynamic from "next/dynamic";
 import { homepageFAQ } from "../components/lib/schemaCode";
-import GameChanger from "../components/Homepage/GameChanger";
+// import GameChanger from "../components/Homepage/GameChanger";
+import HeroSection from "../components/Homepage/HeroSection";
 import Script from "next/script";
 
 const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
+const BrilliantInThought = dynamic(() =>
+  import("../components/Homepage/BrilliantInThought")
+);
+const ExploreOurExpertise = dynamic(() =>
+  import("../components/Homepage/ExploreOurExpertise")
+);
 const SeeingBelieving = dynamic(() =>
   import("../components/Homepage/SeeingBelieving")
 );
 const ClientReviews = dynamic(() =>
   import("../components/Homepage/ClientReviews")
+);
+const IndustriesWeServe = dynamic(() =>
+  import("../components/Homepage/IndustriesWeServe")
 );
 const DomainWorking = dynamic(() =>
   import("../components/Homepage/DomainWorking")
@@ -86,12 +96,16 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
-      <GameChanger />
-      <Brilliant />
+      <HeroSection />
+      {/* <GameChanger /> */}
+      <BrilliantInThought />
+      {/* <Brilliant /> */}
       <SeeingBelieving />
+      <ExploreOurExpertise />
       <ClientReviews />
-      <DomainWorking />
-      <ExtensionOfTeam />
+      <IndustriesWeServe />
+      {/* <DomainWorking /> */}
+      {/* <ExtensionOfTeam /> */}
       <Honors />
       <HomepageWhyChooseUs />
       <HomepageBlog />

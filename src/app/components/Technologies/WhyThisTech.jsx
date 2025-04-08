@@ -130,7 +130,7 @@ const WhyThisTech = () => {
   };
   const currentData = mapToRender[pathname];
   return (
-    <section className="bg-sectionBG section-padding">
+    <section className="bg-sectionBG main-section-padding">
       <div className="container mx-auto flex flex-col">
         <div className="endTO_text solutions flex flex-col gap-3">
           <h2 className="!w-full uppercase reveal">{currentData.title}</h2>

@@ -280,7 +280,7 @@
 
 .footer-background {
   width: 100vw;
-  background: url("/images/footer-bg.jpeg");
+  background: url("/images/v2/footer-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -376,4 +376,10 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.casestudy-hover:hover {
+  .read-icon {
+    display: block !important;
+  }
 }

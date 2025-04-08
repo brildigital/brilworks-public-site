@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import { ScalableSolutionText } from "./BigText";
 import { scrollEffect } from "../lib/commonFunction";
 import { usePathname } from "next/navigation";
+import Heading from "../HTMLComponents/Heading";
+import ContactFormV2 from "./ContactFormV2";
 
 const HomepageContactForm = dynamic(() => import("./HomepageContactForm"));
 
@@ -18,14 +20,22 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <div
-      className={`container max-w-[1440px] mx-auto main-section-padding ${
-        pathname !== "/" ? "!pt-0" : ""
-      } `}
-    >
-      <ScalableSolutionText />
-      <div className="blog-home mx-auto reveal">
-        <HomepageContactForm />
+    <div className="bg-[#F2F9FE]">
+      <div className={`container max-w-[1280px] mx-auto main-section-padding`}>
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl mb-5"
+          text="What Can We Help You With?"
+        />
+        <p className="md:text-lg text-base lg:!mb-7.5 !mb-5">
+          If you are interested in finding out more about how we can help your
+          organization, please provide your details and project requirements.
+          We'll get back to you soon.
+        </p>
+        <div className="reveal">
+          <ContactFormV2 />
+          {/* <HomepageContactForm /> */}
+        </div>
       </div>
     </div>
   );

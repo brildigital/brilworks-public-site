@@ -25,9 +25,7 @@ export async function generateMetadata({ params }) {
     story.content.Content_3;
 
   return {
-    title: `${
-      story.content.metatags?.title || story?.content?.title
-    } | Brilworks`,
+    title: `${story.content.metatags?.title || story?.content?.title}`,
     description: story.content.metatags?.description,
     authors: [{ name: story.content.BlogAuthor }],
     openGraph: {

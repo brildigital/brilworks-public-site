@@ -38,7 +38,11 @@ export async function createHubSpotContact(payload) {
 }
 
 export async function sendDataToSlack(payload) {
-  const { name, email, phone, message, company } = payload;
+  const { name, email, phone, message, page } = payload;
+  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(
+    "/",
+    ""
+  )}`;
 
   const data = {
     channel: process.env.SLACK_CHANNEL_ID,
@@ -60,9 +64,9 @@ export async function sendDataToSlack(payload) {
               },
               {
                 type: "text",
-                text: `\nName: ${name || ""}\nCompany: ${
-                  company || ""
-                }\nPhone: ${phone || ""}\nMessage: ${message || ""}`,
+                text: `\nName: ${name || ""}\nPhone: ${phone || ""}\nMessage: ${
+                  message || ""
+                }\nPage: ${pageURL || ""}`,
               },
             ],
           },

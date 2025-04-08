@@ -5,6 +5,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Image from "next/image";
 import Button from "../Common/Button";
 import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
+import ButtonV2 from "../Common/ButtonV2";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -251,161 +252,6 @@ const Footer = () => {
   ];
 
   const renderFooterData = () => {
-    if (
-      pathname.startsWith("/portfolio/") ||
-      pathname.startsWith("/ebooks/") ||
-      pathname.startsWith("/ai-solutions/")
-    ) {
-      return (
-        <div className="footer-background text-colorWhite">
-          <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:pt-[60px] md:pt-[40px] pt-[30px] mx-auto">
-            <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
-              <div className="w-full">
-                <Image
-                  className="w-[155px] h-[46px] md:mb-7 mb-5"
-                  src="/images/logo-white.svg"
-                  alt="Brilworks Logo"
-                  width="155"
-                  height="46"
-                  priority
-                />
-                <p className="text-xl w-full !mb-[30px]">
-                  Hello, we are
-                  <span className="gradient-text font-medium">
-                    &nbsp;BRILLIAN’S.&nbsp;
-                  </span>
-                  Trying to make an effort to put the right people for you to
-                  get the best results. Just insight !
-                </p>
-                <div className="flex items-center text-2xl font-medium mb-4">
-                  <span className="gradient-text">We are Hiring!</span>
-                  <Image
-                    className="w-6 h-6 ml-2"
-                    src="/images/group-of-people.png"
-                    alt="hiring-voice"
-                    width="24"
-                    height="24"
-                  />
-                </div>
-                <BrilworksButton
-                  className="hover:!text-colorWhite hover:!border-colorWhite"
-                  redirect={`/career/`}
-                  label="View Positions"
-                />
-              </div>
-              <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
-                {footerData.slice(0, 3).map(({ title, links }) => (
-                  <div
-                    key={title}
-                    className={`flex flex-col flex-wrap gap-[14px]`}
-                  >
-                    <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
-                      {title}
-                    </h3>
-                    {links.map(({ link, text }) => (
-                      <Link
-                        key={text}
-                        href={link}
-                        className={`${getActivePage(
-                          link
-                        )} md:text-xl text-base font-medium`}
-                      >
-                        {text}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <hr className="border border-[#232323] mt-[30px] mb-5" />
-          <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] mx-auto">
-            <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-              {contactLinks.map(({ title, links }, index) => (
-                <div className="flex flex-col gap-4" key={index}>
-                  <h3 className="md:text-xl text-base mb-[2px] text-[#ABABAB]">
-                    {title}
-                  </h3>
-                  {links.map(({ text, imgSrc, link }, idx) =>
-                    text.includes("503") ? (
-                      <div
-                        key={text}
-                        className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-start font-medium"
-                      >
-                        <Image
-                          className="mt-1 w-5"
-                          src={imgSrc}
-                          alt="location"
-                          width="20"
-                          height="20"
-                        />
-
-                        {text}
-                      </div>
-                    ) : (
-                      <a
-                        key={text}
-                        href={link}
-                        target="_blank"
-                        className="!text-colorWhite md:text-xl text-base flex slg:gap-2 gap-1 items-center font-medium"
-                      >
-                        <Image
-                          className={`${
-                            text.includes("503") ? "mt-1" : ""
-                          } w-5`}
-                          src={imgSrc}
-                          alt="call-email-logo"
-                          width="20"
-                          height="20"
-                        />
-                        {text}
-                      </a>
-                    )
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          <hr className="border border-[#232323] mt-[30px]" />
-          <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] py-5 mx-auto">
-            <div className="w-full flex md:items-center justify-between flex-col lg:flex-row lg:gap-20 gap-4">
-              <div className="flex">
-                © {new Date().getFullYear()} Brilworks. All Rights Reserved.
-              </div>
-              <div className="flex items-center justify-start gap-2">
-                {socialLinksNew.map(({ name, linkURL, imgSrc }, index) => (
-                  <Link
-                    key={name}
-                    href={linkURL}
-                    target="_blank"
-                    className="p-[6px] bg-[#000000] rounded-full"
-                  >
-                    <Image
-                      className="w-5"
-                      src={imgSrc}
-                      alt={name}
-                      width="20"
-                      height="20"
-                    />
-                  </Link>
-                ))}
-              </div>
-              <div className="flex items-center justify-between lg:gap-10 md:gap-4 gap-0 mt-2 md:!mt-0">
-                <Link href="/terms-and-conditions/" className="transition">
-                  Terms of Service
-                </Link>
-                <Link href="/privacy-policy/" className="transition">
-                  Privacy Policy
-                </Link>
-                {/* <Link href="/site-map/" className="transition">
-                  Sitemap
-                </Link> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
     return (
       <div className="bg-footerBG">
         <div className="container max-w-[1440px] mx-auto xl:p-[60px] !pb-6 md:pt-10 md:px-6 pt-8 px-4">
@@ -466,7 +312,7 @@ const Footer = () => {
                       : "md:w-3/5 w-1/2"
                   } flex flex-col gap-[14px]`}
                 >
-                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                  <h3 className="md:text-xl text-lg font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
                   {links.map(({ link, text }) => (
@@ -486,7 +332,7 @@ const Footer = () => {
             <div className="w-full flex xl:gap-8 md:gap-[30px] gap-4 footer-links">
               {footerData.slice(2, 3).map(({ title, links }) => (
                 <div key={title} className="w-1/2 flex flex-col gap-[14px]">
-                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                  <h3 className="md:text-xl text-lg font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
                   {links.map(({ link, text }) => (
@@ -510,7 +356,7 @@ const Footer = () => {
                       index === 0 ? "mb-10" : ""
                     } w-full flex flex-col gap-[14px]`}
                   >
-                    <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                    <h3 className="md:text-xl text-lg font-semibold mb-[2px] uppercase">
                       {title}
                     </h3>
                     {links.map(({ link, text }) => (
@@ -553,7 +399,7 @@ const Footer = () => {
                     index === 0 ? "mb-10" : ""
                   } w-full flex flex-col gap-[14px]`}
                 >
-                  <h3 className="md:text-xl text-base font-semibold mb-[2px] uppercase">
+                  <h3 className="md:text-xl text-lg font-semibold mb-[2px] uppercase">
                     {title}
                   </h3>
                   {links.map(({ link, text }) => (
@@ -829,7 +675,150 @@ const Footer = () => {
     );
   };
 
-  return pathname === "/posters/" ? "" : renderFooterData();
+  return pathname === "/posters/" ? (
+    ""
+  ) : (
+    <div className="footer-background text-colorWhite">
+      <div className="container max-w-[1280px] mx-auto main-section-padding-top !pb-0">
+        <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
+          <div className="w-full">
+            <Image
+              className="w-[155px] h-[46px] md:mb-7 mb-5"
+              src="/images/logo-white.svg"
+              alt="Brilworks Logo"
+              width="155"
+              height="46"
+              priority
+            />
+            <p className="text-xl w-full !mb-[30px]">
+              Hello, we are
+              <span className="gradient-text font-medium">
+                &nbsp;BRILLIAN’S.&nbsp;
+              </span>
+              Trying to make an effort to put the right people for you to get
+              the best results. Just insight !
+            </p>
+            <div className="flex items-center text-2xl font-medium mb-4">
+              <span className="gradient-text">We are Hiring!</span>
+              <Image
+                className="w-6 h-6 ml-2"
+                src="/images/group-of-people.png"
+                alt="hiring-voice"
+                width="24"
+                height="24"
+              />
+            </div>
+            <ButtonV2
+              redirect={`/career/`}
+              label="View Positions"
+              className="w-fit"
+            />
+          </div>
+          <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
+            {footerData.slice(0, 3).map(({ title, links }) => (
+              <div key={title} className={`flex flex-col flex-wrap gap-[14px]`}>
+                <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                  {title}
+                </h3>
+                {links.map(({ link, text }) => (
+                  <Link
+                    key={text}
+                    href={link}
+                    className={`${getActivePage(link)} md:text-base text-sm`}
+                  >
+                    {text}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <hr className="border border-[#232323] mt-[30px] mb-5" />
+      <div className="container max-w-[1280px] !py-0 mx-auto main-section-padding-top">
+        <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+          {contactLinks.map(({ title, links }, index) => (
+            <div className="flex flex-col gap-4" key={index}>
+              <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                {title}
+              </h3>
+              {links.map(({ text, imgSrc, link }, idx) =>
+                text.includes("503") ? (
+                  <div
+                    key={text}
+                    className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-start font-medium"
+                  >
+                    <Image
+                      className="mt-1 w-5"
+                      src={imgSrc}
+                      alt="location"
+                      width="20"
+                      height="20"
+                    />
+
+                    {text}
+                  </div>
+                ) : (
+                  <a
+                    key={text}
+                    href={link}
+                    target="_blank"
+                    className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-center font-medium"
+                  >
+                    <Image
+                      className={`${text.includes("503") ? "mt-1" : ""} w-5`}
+                      src={imgSrc}
+                      alt="call-email-logo"
+                      width="20"
+                      height="20"
+                    />
+                    {text}
+                  </a>
+                )
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <hr className="border border-[#232323] mt-[30px]" />
+      <div className="container max-w-[1280px] main-section-padding-bottom py-0 mx-auto">
+        <div className="w-full flex md:items-center justify-between flex-col lg:flex-row lg:gap-20 gap-4">
+          <div className="flex">
+            © {new Date().getFullYear()} Brilworks. All Rights Reserved.
+          </div>
+          <div className="flex items-center justify-start gap-2">
+            {socialLinksNew.map(({ name, linkURL, imgSrc }, index) => (
+              <Link
+                key={name}
+                href={linkURL}
+                target="_blank"
+                className="p-[6px] bg-[#000000] rounded-full"
+              >
+                <Image
+                  className="w-5"
+                  src={imgSrc}
+                  alt={name}
+                  width="20"
+                  height="20"
+                />
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center justify-between lg:gap-10 md:gap-4 gap-0 mt-2 md:!mt-0">
+            <Link href="/terms-and-conditions/" className="transition">
+              Terms of Service
+            </Link>
+            <Link href="/privacy-policy/" className="transition">
+              Privacy Policy
+            </Link>
+            {/* <Link href="/site-map/" className="transition">
+          Sitemap
+        </Link> */}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;
