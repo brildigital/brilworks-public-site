@@ -233,6 +233,31 @@
   }
 }
 
+.v2-contact-form {
+  .form-field {
+    text: size 18px;
+    line-height: 28px;
+    border-radius: 6px;
+    padding: 15px 20px;
+    border: 1px solid #dbdbdb;
+    @media screen and (max-width: 767px) {
+      padding: 10px 14px;
+    }
+  }
+  input {
+    &:active {
+      border-width: 1px, 1px, 3px, 1px;
+      border-style: solid;
+      border-image-source: linear-gradient(
+        167.42deg,
+        #007aeb -0.42%,
+        #008ce7 42.32%,
+        #00dbd3 102.1%
+      );
+    }
+  }
+}
+
 .work-swiper {
   .swiper {
     width: 90% !important;

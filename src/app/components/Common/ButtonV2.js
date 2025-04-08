@@ -7,11 +7,23 @@ const ButtonV2 = ({
   label,
   redirect,
   className,
+  icon,
   variant = "primary",
   size = "medium",
+  ...props
 }) => {
   return type ? (
-    <button className=""></button>
+    <button
+      type={type}
+      className={[
+        `c-button outline-none overflow-hidden whitespace-nowrap transition-all duration-300`,
+        `c-btn-${variant} c-btn-${size}`,
+        className,
+      ].join(" ")}
+      {...props}
+    >
+      {icon} {label}
+    </button>
   ) : (
     <Link
       href={redirect || "/contact-us/"}

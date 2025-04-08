@@ -8,6 +8,7 @@ import TabVerticalDark from "../Common/TabVerticalDark";
 import Heading from "../HTMLComponents/Heading";
 import { valid } from "uuid4";
 import { useMediaQuery } from "react-responsive";
+import TabVerticalSticky from "../Common/TabVerticalSticky";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -71,42 +72,40 @@ const HomepageWhyChooseUs = () => {
   return (
     <div className="bg-navyBlue">
       <div className="reveal">
-        <div className="bg-building-shadow">
-          <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
-            <div>
-              <Heading
-                type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
-                text="Why Choose Brilworks?"
-              />
-            </div>
+        <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
+          <div>
+            <Heading
+              type="h2"
+              className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
+              text="Why Choose Brilworks?"
+            />
           </div>
-          <div
-            className={`container max-w-[1280px] mx-auto ${
-              isMobile ? "main-section-padding !px-0" : ""
-            }`}
-          >
-            {isMobile ? (
-              whyChooseUscontent?.map((data, index) => (
-                <div key={data.value}>
-                  <TabAccordionDark
-                    index={index + 1}
-                    key={data?.value}
-                    data={data}
-                    handleOpen={handleOpen}
-                    open={open}
-                  />
-                </div>
-              ))
-            ) : (
-              <TabVerticalDark
-                borderRight={false}
-                initialTabValue={"why-choose-1"}
-                data={whyChooseUscontent}
-                rightSideOnlyImage={true}
-              />
-            )}
-          </div>
+        </div>
+        <div
+          className={`container max-w-[1280px] mx-auto ${
+            isMobile ? "main-section-padding !px-0" : ""
+          }`}
+        >
+          {isMobile ? (
+            whyChooseUscontent?.map((data, index) => (
+              <div key={data.value}>
+                <TabAccordionDark
+                  index={index + 1}
+                  key={data?.value}
+                  data={data}
+                  handleOpen={handleOpen}
+                  open={open}
+                />
+              </div>
+            ))
+          ) : (
+            <TabVerticalSticky
+              sectionId="why-choose-brilworks"
+              data={whyChooseUscontent}
+              borderRight={false}
+              rightSideOnlyImage={true}
+            />
+          )}
         </div>
       </div>
     </div>
