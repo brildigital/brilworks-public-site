@@ -64,20 +64,10 @@ const HomepageContactForm = () => {
 
   return (
     <div className="container max-w-[1280px] mx-auto home_sec3_box">
-      <div className="dots_flex !rounded-[30px]">
-        <div className="dots"></div>
-        <div className="dots"></div>
-        <div className="dots"></div>
-      </div>
       <div className="background">
         <div className="style_sec10_swiper_home">
           <div className="sec10_flex_row">
             <div className="sec10_basis_50 order_2">
-              <div className="sec10_txt1">
-                <p>
-                  Contact us to build the right product with the right team.
-                </p>
-              </div>
               <div
                 className="wpcf7 no-js"
                 id="wpcf7-f719-p96-o1"

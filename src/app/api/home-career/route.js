@@ -6,7 +6,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function POST(req, res) {
   if (req.method === "POST") {
     const payload = await req.json();
-    const { name, email, company, message, page } = payload;
+    const { name, email, phone, message, page } = payload;
 
     try {
       if (page === "/career/") {
@@ -18,7 +18,7 @@ export async function POST(req, res) {
             name: name || "",
             email: email || "",
             message: message || "",
-            company: company || "",
+            phone: phone || "",
           },
         };
 

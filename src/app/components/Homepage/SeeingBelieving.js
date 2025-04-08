@@ -103,7 +103,7 @@ const SeeingBelieving = () => {
       description:
         "We created a dynamic platform that allows art lovers to discover new pieces, communicate directly with artists, and complete purchases with ease, fostering a vibrant art community.",
       image:
-        "https://a.storyblok.com/f/219851/2000x1333/b7c5823a97/social-marketplace-app.webp",
+        "https://a.storyblok.com/f/219851/565x400/75ad9804cf/building-swiper-based-mobile-app.webp",
       alt: "Social marketplace app",
       industry: "E-commerce",
       technology: ["iOS", "Android", ".Net"],
@@ -114,7 +114,7 @@ const SeeingBelieving = () => {
       description:
         "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
       image:
-        "https://a.storyblok.com/f/219851/2000x1333/72dd9ce8ca/pet-finder-app.webp",
+        "https://a.storyblok.com/f/219851/565x400/d47ae82eac/connecting-pet-owners.webp",
       alt: "Pet finder app",
       industry: "Social",
       technology: ["iOS", "Android", ".Net"],
@@ -125,7 +125,7 @@ const SeeingBelieving = () => {
       description:
         "We developed a safe, mobile game for kids aged 2-6, using gamified activities to teach alphabets, numbers, colors, and shapes in an engaging way.",
       image:
-        "https://a.storyblok.com/f/219851/2000x1333/e42efd8c00/educational-mobile-game.webp",
+        "https://a.storyblok.com/f/219851/565x400/a8b82fb2a7/early-learning-app.webp",
       alt: "Educational mobile game",
       industry: "Ed-Tech",
       technology: ["iOS", "Android", ".Net"],
@@ -136,7 +136,7 @@ const SeeingBelieving = () => {
       description:
         "We built a specialized CRM platform that automates energy auditing, connecting key stakeholders and optimizing workflows from scheduling to invoicing.",
       image:
-        "https://a.storyblok.com/f/219851/2000x1333/d8a21f07f0/consulting-app.webp",
+        "https://a.storyblok.com/f/219851/565x400/9918cfc298/crm-based-software.webp",
       alt: "Consulting App",
       industry: "Consulting",
       technology: ["iOS", "Android", ".Net"],

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Heading from "../HTMLComponents/Heading";
-import TabVerticalDark from "../Common/TabVerticalDark";
 import { useMediaQuery } from "react-responsive";
 import TabAccordionDark from "../Common/TabAccordionDark";
+import TabVerticalSticky from "../Common/TabVerticalSticky";
 
 const ExploreOurExpertise = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -86,47 +86,51 @@ const ExploreOurExpertise = () => {
       ],
     },
   ];
+
   return (
     <div className="bg-navyBlue">
-      <div className="bg-building-shadow">
-        <div className="border-b border-b-[#2B3138]">
-          <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
-            <div className="lg:mb-10 md:mb-8 mb-6">
-              <Heading
-                type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
-                text="Explore our Expertise"
-              />
-              <p className="md:text-lg text-base text-white">
-                Our services drive sustainable growth.
-              </p>
-            </div>
+      <div className="border-b border-b-[#2B3138]">
+        <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
+          <div className="lg:mb-10 md:mb-8 mb-6">
+            <Heading
+              type="h2"
+              className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
+              text="Explore our Expertise"
+            />
+            <p className="md:text-lg text-base text-white">
+              Our services drive sustainable growth.
+            </p>
           </div>
         </div>
-        <div
-          className={`container max-w-[1280px] mx-auto ${
-            isMobile ? "main-section-padding !px-0" : ""
-          }`}
-        >
-          {isMobile ? (
-            ourExpertiseData?.map((data, index) => (
-              <div key={data.value}>
-                <TabAccordionDark
-                  index={index + 1}
-                  key={data?.value}
-                  data={data}
-                  handleOpen={handleOpen}
-                  open={open}
-                />
-              </div>
-            ))
-          ) : (
-            <TabVerticalDark
-              initialTabValue={"cloud-service"}
-              data={ourExpertiseData}
-            />
-          )}
-        </div>
+      </div>
+      <div
+        className={`container max-w-[1280px] mx-auto ${
+          isMobile ? "main-section-padding !px-0" : ""
+        }`}
+      >
+        {isMobile ? (
+          ourExpertiseData?.map((data, index) => (
+            <div key={data.value}>
+              <TabAccordionDark
+                index={index + 1}
+                key={data?.value}
+                data={data}
+                handleOpen={handleOpen}
+                open={open}
+              />
+            </div>
+          ))
+        ) : (
+          <TabVerticalSticky
+            sectionId="explore-our-expertise"
+            initialTabValue="cloud-service"
+            data={ourExpertiseData}
+          />
+          // <TabVerticalDark
+          //   initialTabValue={"cloud-service"}
+          //   data={ourExpertiseData}
+          // />
+        )}
       </div>
     </div>
   );

@@ -88,7 +88,7 @@ const TabVerticalDark = ({
             </TabsHeader>
           </div>
         </div>
-        <div className="md:w-1/2 main-section-padding md:!pt-10 !pt-6">
+        <div className="md:w-1/2 main-section-padding md:!pt-10 !pt-6 sticky top-0">
           <TabsBody
             animate={{
               initial: { x: 250 },
