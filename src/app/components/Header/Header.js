@@ -10,7 +10,6 @@ import SideMenu from "./SideMenu";
 import MenuItem from "./MenuItem";
 import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
-import { BrilworksButton } from "../Common/BrilworksBtn";
 const Svgs = dynamic(() => import("../Svgs"));
 // const SideMenu = dynamic(() => import("./SideMenu"));
 // const MenuItem = dynamic(() => import("./MenuItem"));
@@ -93,23 +92,6 @@ const NewHeader = () => {
                   height="46"
                   priority="true"
                 />
-                {/* {pathname.startsWith("/portfolio/") ? (
-                  <Image
-                    src="/images/logo-black.svg"
-                    alt="Brilworks Logo"
-                    width="155"
-                    height="46"
-                    priority="true"
-                  />
-                ) : (
-                  <Image
-                    src="/images/brilworks-logo.png"
-                    alt="Brilworks Logo"
-                    width="206"
-                    height="62"
-                    priority="true"
-                  />
-                )} */}
               </Link>
             </div>
             <div className="flex items-center">

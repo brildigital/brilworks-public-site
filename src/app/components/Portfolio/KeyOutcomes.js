@@ -3,7 +3,7 @@ import React from "react";
 
 const KeyOutcomes = () => {
   return (
-    <div className="bg-sectionBG section-padding">
+    <div className="bg-sectionBG main-section-padding">
       <div className="container max-w-[1280px] mx-auto">
         <div className="flex items-center justify-between lg:flex-row flex-col lg:gap-10 md:gap-8 gap-5">
           <div className="lg:basis-2/5">

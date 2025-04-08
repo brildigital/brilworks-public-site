@@ -3,7 +3,7 @@ import React from "react";
 
 const OurSolutionCasestudy = () => {
   return (
-    <div className="section-padding">
+    <div className="main-section-padding">
       <div className="container max-w-[1280px] mx-auto">
         <div className="flex items-center justify-between lg:flex-row flex-col-reverse lg:gap-10 md:gap-8 gap-5">
           <div className="lg:basis-3/5">

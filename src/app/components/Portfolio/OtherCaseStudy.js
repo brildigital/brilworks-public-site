@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const OtherCaseStudy = () => {
   return (
-    <div className="section-padding">
+    <div className="main-section-padding">
       <div className="container max-w-[1280px] mx-auto">
         <h2 className="font-bold 2xl:text-4xl xl:text-3xl lg:text-3xl text-xl !leading-tight md:text-center text-start lg:mb-12 md:mb-8 mb-4">
           Other

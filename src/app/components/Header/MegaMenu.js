@@ -12,11 +12,14 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
     <Menu
       placement="bottom"
       dismiss={{ itemPress: true, ancestorScroll: true }}
-      allowHover
-      // lockScroll
+      allowHover={true}
+      lockScroll
     >
       <MenuHandler>
-        <MaterialMenuItem className="flex items-center !w-[unset] outline-none pt-2 my-1 px-0">
+        <MaterialMenuItem
+          tabIndex={-1}
+          className="flex items-end !w-[unset] outline-none p-0"
+        >
           <div
             onClick={(e) => {
               e.preventDefault();
@@ -57,7 +60,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
       </MenuHandler>
       <MenuList
         dismissible
-        className="flex items-start z-10 w-full pb-20 menu-shadow outline-none overflow-y-auto rounded-none bg-[#f2f5f7]"
+        className="flex items-start z-10 w-full pb-20 menu-shadow outline-none overflow-y-auto rounded-none bg-[#f2f5f7] !top-[70px]"
       >
         <div
           className={`flex xl:ml-[15%] p-5 outline-none w-full ${

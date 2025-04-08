@@ -109,7 +109,7 @@ const BrilworksAdvantage = () => {
   const currentData = mapToRender[pathname];
   return (
     <div className="xl:!pt-[6rem] md:pt-[4rem] pt-[2rem]">
-      <div className="solution_gradiant section-padding">
+      <div className="solution_gradiant main-section-padding">
         <div className="container mx-auto pb-8 service_width">
           <div>
             <div className="endTO_text solutions ">

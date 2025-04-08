@@ -4,21 +4,16 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/virtual";
 import Link from "next/link";
-import { HonorText } from "./BigText";
+import Image from "next/image";
 import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
+import Heading from "../HTMLComponents/Heading";
 
 const Honors = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const pathname = usePathname();
-  const isWhite =
-    pathname === "/generative-ai-development-services/" ||
-    pathname === "/aws-consulting-services/";
   useEffect(() => {
     const dataFetch = () => {
       setTimeout(() => {
@@ -155,73 +150,73 @@ const Honors = () => {
   ];
 
   return (
-    <div className="bg-sectionBG">
-      <div className="container max-w-[1440px] !px-5 main-section-padding mx-auto reveal">
-        <HonorText />
-        <div className="honors-swiper reveal">
-          <Swiper
-            modules={[Pagination, Autoplay, Virtual]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 500 }}
-            loopfillgroupwithblank
-            speed={1500}
-            loop={true}
-            virtual
-            breakpoints={{
-              1475: {
-                slidesPerView: 4,
-              },
-              1028: {
-                slidesPerView: 3,
-              },
-              991: {
-                slidesPerView: 2,
-              },
-              767: {
-                slidesPerView: 2,
-              },
-              575: {
-                slidesPerView: 1,
-              },
-            }}
-          >
-            {isLoading ? (
-              <div className="flex align-middle justify-center">
-                <FetchDataSpinner />
-              </div>
-            ) : (
-              slidesData?.map((data, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="award ng-scope">
-                      <Link
-                        href={data.link ? data.link : "#"}
-                        target="_blank"
-                        rel="nofollow noopener"
-                      >
-                        <div className="award_sec8_img1">
-                          <Image
-                            className={data.imgClass}
-                            src={data.imgSrc}
-                            alt={data.imgAlt}
-                            width="180"
-                            height="120"
-                          />
-                        </div>
+    <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+      <div className="honors-swiper reveal">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl lg:mb-10 md:mb-8 mb-5"
+          text="We’re Pleased to Share Some of the Honors"
+        />
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          // autoplay={{ delay: 500 }}
+          // loopfillgroupwithblank
+          speed={1500}
+          // loop={true}
+          // virtual
+          breakpoints={{
+            1475: {
+              slidesPerView: 4,
+            },
+            1028: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 2,
+            },
+            767: {
+              slidesPerView: 2,
+            },
+            575: {
+              slidesPerView: 1,
+            },
+          }}
+        >
+          {isLoading ? (
+            <div className="flex align-middle justify-center">
+              <FetchDataSpinner />
+            </div>
+          ) : (
+            slidesData?.map((data, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="award">
+                    <Link
+                      href={data.link ? data.link : "#"}
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <div className="award_sec8_img1">
+                        <Image
+                          className={data.imgClass}
+                          src={data.imgSrc}
+                          alt={data.imgAlt}
+                          width="180"
+                          height="120"
+                        />
+                      </div>
 
-                        <div className="review-text">
-                          <p className="xl:text-[20px] lg:text-[18px] text-[1rem]">
-                            {data.text}
-                          </p>
-                        </div>
-                      </Link>
-                    </div>
-                  </SwiperSlide>
-                );
-              })
-            )}
-          </Swiper>
-        </div>
+                      <p className="lg:text-lg text-base pt-4 text-center">
+                        {data.text}
+                      </p>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              );
+            })
+          )}
+        </Swiper>
       </div>
     </div>
   );

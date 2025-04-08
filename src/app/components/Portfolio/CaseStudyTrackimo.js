@@ -13,7 +13,7 @@ const OtherCaseStudy = dynamic(() => import("./OtherCaseStudy"));
 const CaseStudyTrackimo = () => {
   return (
     <>
-      <div className="section-padding !pt-24">
+      <div className="main-section-padding !pt-24">
         <div className="container max-w-[1280px] mx-auto">
           <div className="flex items-center justify-between lg:flex-row flex-col-reverse gap-8">
             <div className="lg:basis-3/5">
