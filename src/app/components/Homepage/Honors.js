@@ -158,13 +158,13 @@ const Honors = () => {
           text="We’re Pleased to Share Some of the Honors"
         />
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay, Virtual]}
           pagination={{ clickable: true }}
-          // autoplay={{ delay: 500 }}
-          // loopfillgroupwithblank
+          autoplay={{ delay: 500 }}
+          loopfillgroupwithblank
           speed={1500}
-          // loop={true}
-          // virtual
+          loop={true}
+          virtual
           breakpoints={{
             1475: {
               slidesPerView: 4,
@@ -191,26 +191,28 @@ const Honors = () => {
             slidesData?.map((data, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className="award">
-                    <Link
-                      href={data.link ? data.link : "#"}
-                      target="_blank"
-                      rel="nofollow noopener"
-                    >
-                      <div className="award_sec8_img1">
-                        <Image
-                          className={data.imgClass}
-                          src={data.imgSrc}
-                          alt={data.imgAlt}
-                          width="180"
-                          height="120"
-                        />
-                      </div>
+                  <div className="honors-card">
+                    <div className="award">
+                      <Link
+                        href={data.link ? data.link : "#"}
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+                        <div className="award_sec8_img1">
+                          <Image
+                            className={data.imgClass}
+                            src={data.imgSrc}
+                            alt={data.imgAlt}
+                            width="180"
+                            height="120"
+                          />
+                        </div>
 
-                      <p className="lg:text-lg text-base pt-4 text-center">
-                        {data.text}
-                      </p>
-                    </Link>
+                        <p className="lg:text-lg text-base pt-4 text-center">
+                          {data.text}
+                        </p>
+                      </Link>
+                    </div>
                   </div>
                 </SwiperSlide>
               );

@@ -1,10 +1,11 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "../../styles/tab-sticky-style.scss";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { scrollToSection } from "../lib/commonFunction";
 
 const TabVerticalSticky = ({
   sectionId, // Add sectionId prop to make each instance unique
@@ -13,6 +14,7 @@ const TabVerticalSticky = ({
   rightSideOnlyImage = false,
 }) => {
   const containerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleScroll = () => {
     // Get the current component container
@@ -34,17 +36,18 @@ const TabVerticalSticky = ({
 
     // Check if we found an active section
     let activeFound = false;
+    let currentActiveIndex = 0;
 
     // Process links in reverse order to ensure the correct section is highlighted
     Array.from(links)
       .reverse()
-      .forEach((link) => {
+      .forEach((link, reverseIndex) => {
         const targetId = link.getAttribute("data-target");
         const targetEl = document.querySelector(targetId);
         if (!targetEl) return;
 
         const topPos = targetEl.getBoundingClientRect().top + window.scrollY;
-
+        const index = links.length - 1 - reverseIndex;
         // If we're scrolled to or past this element
         if (scrollTop >= topPos - 100) {
           // Added offset for better UX
@@ -56,7 +59,7 @@ const TabVerticalSticky = ({
 
             // Set this link as active
             link.parentElement.classList.add("active");
-
+            currentActiveIndex = index;
             // Update content
             sectionItem.innerHTML = targetEl.innerHTML;
 
@@ -64,12 +67,13 @@ const TabVerticalSticky = ({
           }
         }
       });
-
-    // If no section was active, default to the first
-    if (!activeFound && links.length > 0) {
+    if (activeFound) {
+      setActiveIndex(currentActiveIndex);
+    } else if (links.length > 0) {
       container.querySelectorAll(".anchor-links li").forEach((li, idx) => {
         li.classList[idx === 0 ? "add" : "remove"]("active");
       });
+      setActiveIndex(0);
 
       const firstLink = links[0];
       const firstTargetId = firstLink.getAttribute("data-target");
@@ -90,7 +94,7 @@ const TabVerticalSticky = ({
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [sectionId]);
+  }, []);
 
   return (
     <div className="flex w-full" ref={containerRef}>
@@ -101,25 +105,34 @@ const TabVerticalSticky = ({
       >
         <aside className="stickysection__sidebar flex items-start justify-start w-full">
           <ul className="anchor-links w-full">
-            {data.map(({ title, value }, index) => (
+            {data.map(({ title, value, description }, index) => (
               <li
-                className={`${
+                className={`flex ${
                   index === 0 ? "active" : ""
                 } justify-start md:!pl-10 md:!py-7.5 !py-4 rounded-l-2xl md:gap-5 gap-2 !w-full`}
                 key={index}
               >
-                <div
+                <a
+                  href={`#${value}`}
                   data-target={`#${value}`} // Changed from id to data-target
-                  className="anchor-link flex items-center justify-start gap-5 lg:text-2xl md:text-xl text-lg break-words text-start text-colorWhite"
+                  onClick={(e) => scrollToSection(e, value)}
+                  className="anchor-link lg:text-2xl md:text-xl text-lg break-words text-start text-colorWhite"
                 >
-                  <p
-                    className={`numeric flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
-                  >
-                    {index + 1}
-                  </p>
-                  &nbsp;
-                  {title}
-                </div>
+                  <div className="flex items-center justify-start gap-5">
+                    <p
+                      className={`numeric flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
+                    >
+                      {index + 1}
+                    </p>
+                    &nbsp;
+                    {title}
+                  </div>
+                  {rightSideOnlyImage && activeIndex === index && (
+                    <p className="md:text-lg text-base pt-4 text-left text-colorWhite pl-[60px]">
+                      {description}
+                    </p>
+                  )}
+                </a>
               </li>
             ))}
           </ul>
@@ -173,7 +186,7 @@ const TabVerticalSticky = ({
               <div
                 id={value}
                 className="stickysection__item flex items-start justify-start w-full"
-                key={value}
+                key={index}
               >
                 <div className="w-full rounded-2xl lg:mb-10 mb-8 stickysection__item">
                   <Image

@@ -280,7 +280,7 @@
 
 .footer-background {
   width: 100vw;
-  background: url("/images/v2/footer-background.svg");
+  background: url("/images/v2/footer-background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -296,6 +296,32 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+.gradient-text2 {
+  background: linear-gradient(
+    180.78deg,
+    #007aeb 44.88%,
+    #008ce7 52%,
+    #00dbd3 60.96%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.case-study-section {
+  background-image: url("/images/v2/case-study-bg-main.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.cta-background {
+  background-image: url("/images/v2/cta-bg.png");
+  width: 100%;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 .footer-new {
@@ -319,7 +345,7 @@
 .container-cta::before {
   content: "";
   position: absolute;
-  top: -80%;
+  top: -50%;
   left: 0;
   right: 0;
   background: linear-gradient(
