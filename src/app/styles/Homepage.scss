@@ -10,13 +10,13 @@
     cursor: pointer !important;
   }
 }
-.header.header-bg-white {
-  background-color: #ffffff !important;
-  box-shadow: 0 2px 10px -1px rgb(0 0 0 / 20%) !important;
-}
+
 .header.header-bg-dark {
   background-color: #000000e6 !important;
   box-shadow: 0 2px 10px -1px rgb(0 0 0 / 20%) !important;
+}
+.header-hide {
+  top: -150px !important;
 }
 
 .menu-shadow {

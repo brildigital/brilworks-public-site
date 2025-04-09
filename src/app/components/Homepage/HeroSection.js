@@ -1,14 +1,13 @@
 import React from "react";
 import ButtonV2 from "../Common/ButtonV2";
-import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
 
 const HeroSection = () => {
   return (
     <div className="hero-section">
-      <div className="banner-layer h-screen min-h-[600px] max-h-[920px]">
+      <div className="banner-layer h-screen min-h-[600px] max-h-[980px]">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
-          <div className="flex flex-col items-start justify-center min-h-[600px] max-h-[920px] h-screen">
+          <div className="flex flex-col items-start justify-center min-h-[600px] max-h-[980px] h-screen">
             <Heading
               type="h1"
               className="text-white lg:mt-20 mt-10"

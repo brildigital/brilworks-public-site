@@ -15,8 +15,51 @@ const MegaMenu = dynamic(() => import("./MegaMenu"));
 const HeaderV2 = () => {
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newScrollDirection =
+        lastScrolledPosition > window.scrollY ? "up" : "down";
+      setLastScrolledPosition(window.scrollY);
+
+      if (window.scrollY > 150 && newScrollDirection === "down") {
+        if (
+          !document.querySelector(".header").classList.contains("header-hide")
+        ) {
+          document.querySelector(".header").classList.add("header-hide");
+        }
+      }
+
+      if (newScrollDirection === "up") {
+        if (
+          document.querySelector(".header").classList.contains("header-hide")
+        ) {
+          document.querySelector(".header").classList.remove("header-hide");
+        }
+      }
+
+      if (window.scrollY > 50) {
+        document.querySelector(".header").classList.add("header-bg-dark");
+      } else {
+        document.querySelector(".header").classList.remove("header-bg-dark");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrolledPosition]);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 767 && setOpenNav(false)
+    );
+  }, []);
 
   useEffect(() => {
     window.addEventListener(
@@ -69,23 +112,14 @@ const HeaderV2 = () => {
     fetchSlugs();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 120);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const firstSectionTransparency = ["/", "/portfolio/"];
-  const shouldApplyDarkBg =
-    scrolled || !firstSectionTransparency.includes(pathname);
-
   return (
     <header>
-      <div className={`header ${shouldApplyDarkBg ? "header-bg-dark" : ""}`}>
-        <Navbar className="sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
+      <div className={`header`}>
+        <Navbar
+          className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
+            openNav ? "!fixed" : "bg-transparent"
+          }`}
+        >
           <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
             <div className="header_logo">
               <Link href="/">
