@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import Heading from "../HTMLComponents/Heading";
 
 const PortfolioBanner = () => {
   const words = ["Empower. ", "Create. ", "Progress"];
   const colorSequences = [
-    ["text-colorWhite", "text-colorBlack", "text-colorBlack"],
-    ["text-colorBlack", "text-colorWhite", "text-colorBlack"],
-    ["text-colorBlack", "text-colorBlack", "text-colorWhite"],
+    ["gradient-text2", "text-colorWhite", "text-colorWhite"],
+    ["text-colorWhite", "gradient-text2", "text-colorWhite"],
+    ["text-colorWhite", "text-colorWhite", "gradient-text2"],
   ];
 
   const [colorClasses, setColorClasses] = useState(colorSequences[0]);
@@ -35,24 +36,33 @@ const PortfolioBanner = () => {
     };
   }, []);
   return (
-    <div className="service_width relative flex items-center justify-center">
-      <div className="!bg-gradient-custom md:h-[46vh] h-[40vh] rounded-[30px] w-full flex items-center justify-center">
-        <div className="text-center">
-          <p className="font-bold text-colorWhite xl:text-3xl md:text-[26px] text-2xl">
-            Case Studies
-          </p>
-          <h1
-            className={`font-bold xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]`}
-          >
-            {words.map((word, index) => (
-              <span
-                key={index}
-                className={`${colorClasses[index]} transition-all duration-700`}
-              >
-                {word}
-              </span>
-            ))}
-          </h1>
+    <div className="case-study-section">
+      <div className="banner-layer">
+        <div className="container max-w-[1280px] main-section-padding mx-auto min-h-[650px] !h-[60vh] flex items-center justify-center">
+          <div className="w-full flex items-center justify-center pt-[7%]">
+            <div>
+              <p className="text-colorWhite uppercase md:text-2xl text-xl">
+                Case Studies
+              </p>
+              <Heading
+                type="h1"
+                className="text-white lg:mt-7.5 my-5 lg:mb-5"
+                text={words.map((word, index) => (
+                  <span
+                    key={index}
+                    className={`${colorClasses[index]} transition-all duration-700`}
+                  >
+                    {word}
+                  </span>
+                ))}
+              />
+              <h2 className="sxl:text-2xl md:text-xl text-lg text-white my-5">
+                Discover how our innovative solutions empower businesses across
+                various industries, helping them achieve excellence, enhance
+                efficiency, and drive success.
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>

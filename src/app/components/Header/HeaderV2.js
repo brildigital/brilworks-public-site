@@ -71,20 +71,20 @@ const HeaderV2 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 180);
+      setScrolled(window.scrollY > 120);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const firstSectionTransparency = ["/", "/portfolio/"];
+  const shouldApplyDarkBg =
+    scrolled || !firstSectionTransparency.includes(pathname);
+
   return (
     <header>
-      <div
-        className={`header ${
-          scrolled || pathname !== "/" ? "header-bg-dark" : ""
-        }`}
-      >
+      <div className={`header ${shouldApplyDarkBg ? "header-bg-dark" : ""}`}>
         <Navbar className="sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
           <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
             <div className="header_logo">

@@ -6,7 +6,7 @@ import Heading from "../HTMLComponents/Heading";
 const HeroSection = () => {
   return (
     <div className="hero-section">
-      <div className="hero-gradient h-screen min-h-[600px] max-h-[920px]">
+      <div className="banner-layer h-screen min-h-[600px] max-h-[920px]">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div className="flex flex-col items-start justify-center min-h-[600px] max-h-[920px] h-screen">
             <Heading

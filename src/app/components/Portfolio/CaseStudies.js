@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import Button from "../Common/Button";
-import DevelopSuccessStory from "./DevelopSuccessStory";
+import CTASection from "../Common/CTASection";
 import { usePathname } from "next/navigation";
 
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
@@ -275,7 +275,7 @@ const CaseStudies = () => {
           </section>
         </div>
       </div>
-      <DevelopSuccessStory />
+      <CTASection />
       <ToolsAndGetInTouch />
     </>
   );

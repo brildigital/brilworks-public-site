@@ -1,61 +1,62 @@
 /* eslint-disable @next/next/no-img-element */
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
-import DevelopSuccessStory from "./DevelopSuccessStory";
 import Image from "next/image";
+import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioBanner from "./PortfolioBanner";
 
+const CTASection = dynamic(() => import("../Common/CTASection"));
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = ({ caseStudyData }) => {
+  const technology = ["iOS", "Android", ".Net"];
   return (
     <>
-      <div className="container max-w-[1440px] mx-auto">
-        <section className="portfolio md:mt-32 mt-24">
-          <PortfolioBanner />
-          <div className="service_width">
-            <h2 className="xl:!pt-20 md:!pt-16 !pt-8 font-bold xl:text-5xl lg:text-4xl md:text-3xl text-2xl mb-4">
-              Our Recent <span className="text-themeColor">Work</span>
-            </h2>
-            <p className="text-colorGray md:text-2xl text-xl">
-              See how our work enable companies to excel in their industry.
-            </p>
-          </div>
+      <PortfolioBanner />
+      <section className="container max-w-[1280px] main-section-padding mx-auto">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl "
+          text="Our Recent Work"
+        />
+        <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 lg:pt-10 md:pt-8 pt-5">
           {caseStudyData?.length ? (
             caseStudyData?.map(({ name, content, full_slug }, index) => {
               return (
                 <div
-                  className="portflio_flex_row portfolio_sec service_width reveal"
+                  className={`min-w-[300px] overflow-hidden h-full rounded-t-2xl w-fit flex flex-col ${
+                    index % 2 ? "md:mt-18 lg:mt-28 mt-0" : ""
+                  }`}
                   key={index}
                 >
-                  <div
-                    className={`basis-1/2 ${
-                      (index + 1) % 2 === 0 ? "order-2 md:order-1" : ""
-                    }`}
-                  >
-                    <div className="portfolio_color_style">
-                      <div className="porfolio_sec1_img relative">
-                        <Image
-                          className="alignnone"
-                          src={content?.images?.[0]?.filename}
-                          width="550"
-                          height="368"
-                          alt={`casestudy-${index}`}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="basis-1/2">
-                    <div className="portfolio_sec1_txt1">
-                      <Heading
-                        type="h2"
-                        className="xl:!text-[40px] lg:!text-4xl text-[30px] !font-semibold lg:!leading-normal md:pb-8 pb-1"
-                        data={content?.title}
+                  <Link href={`/${full_slug}/`} prefetch={true}>
+                    <div className="relative group">
+                      <Image
+                        className="rounded-2xl lg:max-h-[400px] transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                        src={content?.images?.[0]?.filename}
+                        alt={`casestudy-${index}`}
+                        width="302"
+                        height="240"
+                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      />
+                      <Image
+                        className="w-[56px] absolute bottom-3 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        src="/images/v2/read-icon.svg"
+                        alt="Read Icon"
+                        width="56"
+                        height="56"
                       />
                     </div>
-                    <div className="portfolio_sec1_txt2 portfolio_description_width">
-                      <p>
+                    <div className="flex flex-col justify-between flex-1 py-4 items-start">
+                      <div className="w-full flex items-center justify-between">
+                        <Heading
+                          className="md:!text-xl !text-lg font-medium"
+                          type="h3"
+                          text={content?.title}
+                        />
+                        <div className="md:text-xl text-lg font-bold text-themeColor"></div>
+                      </div>
+                      <p className="text-colorGray md:text-lg text-base">
                         {content?.description?.split(" ")?.length > 31
                           ? content?.description
                               ?.split(" ")
@@ -64,12 +65,22 @@ const Portfolio = ({ caseStudyData }) => {
                           : content?.description}
                       </p>
                     </div>
-                    <Button
-                      innerClassName="flex items-center justify-center gap-2"
-                      redirect={`/${full_slug}/`}
-                      label="Know More"
-                      icon="right-arrow-next"
-                    />
+                  </Link>
+
+                  <div className="flex items-center justify-between">
+                    <p className="bg-clip-text text-transparent bg-theme-gradient md:text-xl text-lg font-medium uppercase">
+                      {content?.industry}
+                    </p>
+                    <div className="flex items-center md:gap-2.5 gap-1.5">
+                      {technology.map((data) => (
+                        <div
+                          className="bg-white md:px-4 px-2.5 py-1.5 md:py-[9px] border rounded-md"
+                          key={data?.[0]}
+                        >
+                          {data}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               );
@@ -79,178 +90,12 @@ const Portfolio = ({ caseStudyData }) => {
               <p>No case studies found.</p>
             </div>
           )}
-        </section>
-      </div>
-      <DevelopSuccessStory />
+        </div>
+      </section>
+      <CTASection />
       <ToolsAndGetInTouch />
     </>
   );
 };
 
 export default Portfolio;
-
-// /* eslint-disable @next/next/no-img-element */
-// "use client";
-// import { useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
-// import { scrollEffect } from "../lib/commonFunction";
-// import Button from "../Common/Button";
-// import DevelopSuccessStory from "./DevelopSuccessStory";
-// import StoryblokClient from "storyblok-js-client";
-// import Image from "next/image";
-// import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-// import Heading from "../HTMLComponents/Heading";
-
-// const Storyblok = new StoryblokClient({
-//   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-// });
-
-// const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
-
-// const Portfolio = () => {
-//   const words = ["Empower. ", "Create. ", "Progress"];
-//   const colorSequences = [
-//     ["text-colorWhite", "text-colorBlack", "text-colorBlack"],
-//     ["text-colorBlack", "text-colorWhite", "text-colorBlack"],
-//     ["text-colorBlack", "text-colorBlack", "text-colorWhite"],
-//   ];
-
-//   const [caseStudyData, setCaseStudyData] = useState();
-//   const [colorClasses, setColorClasses] = useState(colorSequences[0]);
-//   const [currentStep, setCurrentStep] = useState(0);
-
-//   useEffect(() => {
-//     Storyblok.get("cdn/stories/", {
-//       starts_with: "portfolio/",
-//       per_page: 20,
-//       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-//     })
-//       .then((response) => {
-//         setCaseStudyData(response.data?.stories);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }, []);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentStep((prevStep) => {
-//         const nextStep = (prevStep + 1) % colorSequences.length;
-//         setColorClasses(colorSequences[nextStep]);
-//         return nextStep;
-//       });
-//     }, 1000);
-
-//     // Cleanup the interval on component unmount
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   useEffect(() => {
-//     scrollEffect();
-//     window.addEventListener("scroll", scrollEffect);
-//     // Clean up the event listener when the component unmounts
-//     return () => {
-//       window.removeEventListener("scroll", scrollEffect);
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <div className="container max-w-[1440px] mx-auto">
-//         <section className="portfolio md:mt-32 mt-24">
-//           <div className="service_width relative flex items-center justify-center">
-//             <div className="!bg-gradient-custom md:h-[46vh] h-[40vh] rounded-[30px] w-full flex items-center justify-center">
-//               <div className="text-center">
-//                 <p className="font-bold text-colorWhite xl:text-3xl md:text-[26px] text-2xl">
-//                   Case Studies
-//                 </p>
-//                 <h1
-//                   className={`font-bold xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]`}
-//                 >
-//                   {words.map((word, index) => (
-//                     <span
-//                       key={index}
-//                       className={`${colorClasses[index]} transition-all duration-700`}
-//                     >
-//                       {word}
-//                     </span>
-//                   ))}
-//                 </h1>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="service_width">
-//             <h2 className="xl:!pt-20 md:!pt-16 !pt-8 font-bold xl:text-5xl lg:text-4xl md:text-3xl text-2xl mb-4">
-//               Our Recent <span className="text-themeColor">Work</span>
-//             </h2>
-//             <p className="text-colorGray md:text-2xl text-xl">
-//               See how our work enable companies to excel in their industry.
-//             </p>
-//           </div>
-//           {caseStudyData?.length ? (
-//             caseStudyData?.map(({ name, content, full_slug }, index) => {
-//               return (
-//                 <div
-//                   className="portflio_flex_row portfolio_sec service_width reveal"
-//                   key={index}
-//                 >
-//                   <div
-//                     className={`basis-1/2 ${
-//                       (index + 1) % 2 === 0 ? "order-2 md:order-1" : ""
-//                     }`}
-//                   >
-//                     <div className="portfolio_color_style">
-//                       <div className="porfolio_sec1_img relative">
-//                         <Image
-//                           className="alignnone"
-//                           src={content?.images?.[0]?.filename}
-//                           width="550"
-//                           height="368"
-//                           alt={`casestudy-${index}`}
-//                         />
-//                       </div>
-//                     </div>
-//                   </div>
-//                   <div className="basis-1/2">
-//                     <div className="portfolio_sec1_txt1">
-//                       <Heading
-//                         type="h2"
-//                         className="xl:!text-[40px] lg:!text-4xl text-[30px] !font-semibold lg:!leading-normal md:pb-8 pb-1"
-//                         data={content?.title}
-//                       />
-//                     </div>
-//                     <div className="portfolio_sec1_txt2 portfolio_description_width">
-//                       <p>
-//                         {content?.description?.split(" ")?.length > 31
-//                           ? content?.description
-//                               ?.split(" ")
-//                               ?.slice(0, 25)
-//                               ?.join(" ") + "..."
-//                           : content?.description}
-//                       </p>
-//                     </div>
-//                     <Button
-//                       innerClassName="flex items-center justify-center gap-2"
-//                       redirect={`/${full_slug}/`}
-//                       label="Know More"
-//                       icon="right-arrow-next"
-//                     />
-//                   </div>
-//                 </div>
-//               );
-//             })
-//           ) : (
-//             <div className="flex items-center justify-center py-20">
-//               <FetchDataSpinner />
-//             </div>
-//           )}
-//         </section>
-//       </div>
-//       <DevelopSuccessStory />
-//       <ToolsAndGetInTouch />
-//     </>
-//   );
-// };
-
-// export default Portfolio;

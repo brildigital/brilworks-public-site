@@ -102,17 +102,16 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-
-  .hero-gradient {
-    background: linear-gradient(
-      180deg,
-      rgba(18, 18, 18, 0.49) 0%,
-      rgba(9, 9, 9, 0.49) 22.77%,
-      rgba(0, 0, 0, 0.7) 45.54%,
-      rgba(0, 0, 0, 0.7) 75%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-  }
+}
+.banner-layer {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 0.49) 0%,
+    rgba(9, 9, 9, 0.49) 22.77%,
+    rgba(0, 0, 0, 0.7) 45.54%,
+    rgba(0, 0, 0, 0.7) 75%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
 }
 
 .we-serve-bg {
@@ -125,7 +124,16 @@
 .we-serve-dark {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
-
+.gradient-border {
+  border-width: 1px, 1px, 4px, 1px;
+  border-style: solid;
+  border-image-source: linear-gradient(
+    150.51deg,
+    #007aeb 12.91%,
+    #008ce7 45.61%,
+    #00dbd3 91.35%
+  );
+}
 .homepage-work-domain,
 .accordion-tab-section,
 .homepage-extension-team {
@@ -358,17 +366,24 @@
 .award {
   padding: 2rem 0;
   background-color: #fff;
-  -webkit-box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
-  -moz-box-shadow: -9px 10px 5px 0 rgba(117, 117, 117, 0.39);
-  box-shadow: -9px 10px 5px 0 rgb(117 117 117/39%);
-  border-radius: 18px;
-  border: 1px solid #80808040;
+  border-radius: 16px;
+  position: relative;
+}
+.honors-card {
   margin-bottom: 1rem;
+  border-radius: 16px;
+  border: 1px solid #80808040;
   transition: all 0.6s ease;
 }
-
-.award:hover {
-  transform: scale(1.03);
+.honors-card:hover {
+  padding: 1px 1px 4px 1px;
+  border: none;
+  background: linear-gradient(
+    150.51deg,
+    #007aeb 12.91%,
+    #008ce7 45.61%,
+    #00dbd3 91.35%
+  );
 }
 
 .award_sec8_img1 {
