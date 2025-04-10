@@ -326,6 +326,10 @@ export const AISolutionsMenuItems = [
         path: "/ai-solutions/ai-website-chat/",
       },
       {
+        name: "AI MongoDB Chatbot",
+        path: "/ai-solutions/mongodb-chatbot/",
+      },
+      {
         name: "AI Chat with CSV Excel",
         path: "/ai-solutions/ai-chat-with-csv-excel/",
       },
@@ -336,10 +340,6 @@ export const AISolutionsMenuItems = [
       {
         name: "AI Whatsapp Chat Automation",
         path: "/ai-solutions/ai-whatsapp-chat-automation/",
-      },
-      {
-        name: "MongoDB Chatbot",
-        path: "/ai-solutions/mongodb-chatbot/",
       },
     ],
   },
