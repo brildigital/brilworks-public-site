@@ -92,7 +92,7 @@ const Portfolio = ({ caseStudyData }) => {
           )}
         </div>
       </section>
-      <CTASection />
+      <CTASection buttonText="Let’s Discuss" />
       <ToolsAndGetInTouch />
     </>
   );

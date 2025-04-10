@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import { DomainWorkingText } from "./BigText";
 
 const AccordionCustomIcon = dynamic(() =>
   import("../Common/AccordionCustomIcon")
@@ -50,7 +49,6 @@ const DomainWorking = () => {
   return (
     <div className="bg-sectionBG">
       <div className="container max-w-[1440px] main-section-padding mx-auto reveal">
-        <DomainWorkingText />
         <div className="md:px-4 md:pt-12 pt-8 reveal">
           <div className="homepage-work-domain">
             <div className="flex flex-wrap">

@@ -6,11 +6,7 @@ import { scrollEffect } from "../lib/commonFunction";
 import RapidDigitizationBanner from "./RapidDigitizationBanner";
 import { useMediaQuery } from "react-responsive";
 import { getblogData } from "../lib/getblog";
-import Image from "next/image";
-import { BlogText } from "../Homepage/BigText";
 import { usePathname } from "next/navigation";
-import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import LinkWithArrow from "../Common/LinkWithArrow";
 
 const WhyRapidDigitization = dynamic(() => import("./WhyRapidDigitization"));
 const RapidDigitizationBenefits = dynamic(() =>

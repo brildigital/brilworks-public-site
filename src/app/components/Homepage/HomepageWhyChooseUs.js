@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { WhyChooseText } from "./BigText";
 import TabAccordionDark from "../Common/TabAccordionDark";
 import TabVerticalDark from "../Common/TabVerticalDark";
 import Heading from "../HTMLComponents/Heading";

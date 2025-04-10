@@ -1020,10 +1020,6 @@ textarea.form-control-txt {
   color: var(--color_black);
 }
 
-.contact_form.inquiry .contact_btn {
-  border-radius: 0px !important;
-}
-
 .btn_flex:hover {
   background: transparent;
 }

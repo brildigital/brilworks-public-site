@@ -1,13 +1,11 @@
 "use client";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { ScalableSolutionText } from "./BigText";
 import { scrollEffect } from "../lib/commonFunction";
 import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
-import ContactFormV2 from "./ContactFormV2";
 
-const HomepageContactForm = dynamic(() => import("./HomepageContactForm"));
+const ContactFormV2 = dynamic(() => import("./ContactFormV2"));
 
 const ContactUs = () => {
   const pathname = usePathname();
@@ -34,7 +32,6 @@ const ContactUs = () => {
         </p>
         <div className="reveal">
           <ContactFormV2 />
-          {/* <HomepageContactForm /> */}
         </div>
       </div>
     </div>

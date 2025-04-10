@@ -2,27 +2,30 @@ import React from "react";
 import ButtonV2 from "./ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 
-const CTASection = ({ title, descriprtion, buttonText }) => {
+const CTASection = ({ title, description, buttonText }) => {
   return (
     <div className="bg-[#03131C] cta-background pt-10 lg:pt-[60px] overflow-hidden">
       <div className="container-cta">
         <div className="container max-w-[1280px] mx-auto main-section-padding">
-          <div className="flex md:flex-row flex-col items-center justify-between gap-5">
-            <div className="text-colorWhite">
+          <div
+            className={`w-full flex md:flex-row flex-col items-center ${
+              buttonText ? "justify-between" : "justify-start"
+            } gap-5`}
+          >
+            <div className="w-full text-colorWhite">
               <Heading
                 type="h2"
                 className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4 hover:border-colorWhite hover:text-colorWhite"
-                text="Ready to Develop Your Success Story With Us?"
+                text={title || "Ready to Develop Your Success Story With Us?"}
               />
-              <p className="md:!text-lg text-base">
-                {descriprtion ||
+              <div className="w-full flex justify-between sxl:flex-row flex-col md:!text-lg text-base md:gap-4 gap-2">
+                {description ||
                   "Tell us your project idea and get a free consultation to create an outstanding digital product."}
-              </p>
+              </div>
             </div>
-            <ButtonV2
-              className="hover:bg-colorWhite hover:text-themeColor"
-              label={buttonText || "Let’s Discuss"}
-            />
+            {buttonText && (
+              <ButtonV2 className="hover:!text-colorWhite" label={buttonText} />
+            )}
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { homepageFAQ } from "../components/lib/schemaCode";
 import HeroSection from "../components/Homepage/HeroSection";
 import Script from "next/script";
 
-const Brilliant = dynamic(() => import("../components/Homepage/Brilliant"));
 const BrilliantInThought = dynamic(() =>
   import("../components/Homepage/BrilliantInThought")
 );
@@ -99,13 +98,10 @@ const page = () => {
       <HeroSection />
       {/* <GameChanger /> */}
       <BrilliantInThought />
-      {/* <Brilliant /> */}
       <SeeingBelieving />
       <ExploreOurExpertise />
       <ClientReviews />
       <IndustriesWeServe />
-      {/* <DomainWorking /> */}
-      {/* <ExtensionOfTeam /> */}
       <Honors />
       <HomepageWhyChooseUs />
       <HomepageBlog />

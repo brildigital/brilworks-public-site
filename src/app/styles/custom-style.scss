@@ -313,6 +313,23 @@
   background-repeat: no-repeat;
 }
 
+.contact-us-banner {
+  background-image: url("/images/v2/book-free-consultaion.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.brilliant-icon {
+  padding: 1px 1px 2px 1px;
+  background: linear-gradient(
+    150.51deg,
+    #007aeb 12.91%,
+    #008ce7 45.61%,
+    #00dbd3 91.35%
+  );
+}
 .footer-new {
   grid-template-columns: 1fr 2fr;
   @media screen and (max-width: 1024px) {
