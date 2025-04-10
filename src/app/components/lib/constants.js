@@ -337,6 +337,10 @@ export const AISolutionsMenuItems = [
         name: "AI Whatsapp Chat Automation",
         path: "/ai-solutions/ai-whatsapp-chat-automation/",
       },
+      {
+        name: "MongoDB Chatbot",
+        path: "/ai-solutions/mongodb-chatbot/",
+      },
     ],
   },
 ];
