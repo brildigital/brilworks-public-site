@@ -1,11 +1,13 @@
 "use client";
 import { useEffect } from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import ContactUsEmailForm from "./ContactUsEmailForm";
+import ContactFormV2 from "../Homepage/ContactFormV2";
+import Heading from "../HTMLComponents/Heading";
+import Image from "next/image";
+import ButtonV2 from "../Common/ButtonV2";
+import CTASection from "../Common/CTASection";
 
-const Svgs = dynamic(() => import("../Svgs"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ContactUs = () => {
@@ -17,297 +19,261 @@ const ContactUs = () => {
     };
   }, []);
 
+  const steps = [
+    {
+      title: "Initiating Contact",
+      description:
+        "Our team will reach out to you within the next 24 business hours.",
+    },
+    {
+      title: "Share Your Requirement",
+      description:
+        "Share your requirements, and our technical team will review them and respond with a project plan.",
+    },
+    {
+      title: "Sign Non-Disclosure Agreement",
+      description:
+        "Signing an NDA is like putting your idea in a safe deposit box. Be rest assured about privacy concerns.",
+    },
+    {
+      title: "Estimated Budget/Cost",
+      description:
+        "After a detailed analysis, we'll provide the estimated cost and timeline for project completion.",
+    },
+  ];
+
+  const whatMakeUsBrilliant = [
+    {
+      title: "People",
+      imageSrc: "/images/v2/people-icon-vector.svg",
+      description:
+        "With our design & development ninjas by our side, there’s absolutely nothing we can’t achieve.",
+    },
+    {
+      title: "Progress",
+      imageSrc: "/images/v2/medal-star.svg",
+      description:
+        "We’ve built and launched more than 120+ products in 20 countries across the globe.",
+    },
+    {
+      title: "Passion",
+      imageSrc: "/images/v2/star.svg",
+      description:
+        "We turn your product vision from brainstorming to a fully implemented real-world solution.",
+    },
+  ];
+
+  const contactLinks = [
+    {
+      title: "Sales",
+      links: [
+        {
+          link: "tel:919313644148",
+          text: "+ 91 9313644148",
+          imgSrc: "/images/v2/call.svg",
+        },
+        {
+          link: "mailto:sales@brilworks.com",
+          text: "sales@brilworks.com",
+          imgSrc: "/images/sms-white.svg",
+        },
+      ],
+    },
+    {
+      title: "HR",
+      links: [
+        {
+          link: "tel:919106810920",
+          text: "+ 91 9106810920",
+          imgSrc: "/images/v2/call.svg",
+        },
+        {
+          link: "mailto:hr@brilworks.com",
+          text: "hr@brilworks.com",
+          imgSrc: "/images/sms-white.svg",
+        },
+      ],
+    },
+  ];
+
   return (
     <>
-      <section className="flex items-start flex-col md:flex-row gap-4 mt-12 md:mt-0">
-        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-[6rem] md:p-12 !pt-16 p-4 md:basis-6/12 basis-full">
-          <div className="home_sec2_txt3 contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-            <h1 className="hidden">Contact Us</h1>
-            <h2 className="uppercase m-0 contact_bold-head">
-              Let’s discuss your project
-            </h2>
-          </div>
-          <div className="noText md:pt-2">
-            <ul className="!pl-0">
-              <li>No strings attached.</li>
-              <li>No obligation to hire.</li>
-              <li>No commitment from you.</li>
-            </ul>
-          </div>
-          <div className="contact_form inquiry">
-            <ContactUsEmailForm inquiryForm={true} />
-          </div>
-        </div>
-
-        <div className="lg:pr-[5rem] lg:pl-[8rem] md:!pt-24 md:p-12 !pt-8 p-4 md:basis-6/12 basis-full bg-themeColor">
-          <div className="drop_title home_sec2_txt3 solutions contact_bold xl:text-[48px] lg:text-[36px] md:text-[32px] sm:text-[24px] text-[22px]">
-            <h2 className="!text-colorWhite font-extrabold uppercase !w-full md:py-8">
-              Ready to scale your business to new heights?
-            </h2>
-          </div>
-          <div className="ready_content">
-            <div className="home_sec2_txt4 pt-2">
-              <p className="!text-colorWhite !text-left md:!text-xl !text-base p-style">
-                Just fill out the form, and let our experts look after the rest.
-                Here’s what will happen next:
-              </p>
-            </div>
-            <div className="ready_content_list home_sec2_txt4 ">
-              <p className="font-bold md:!text-2xl !text-xl  !text-left">
-                1. Initiating Contact
-              </p>
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
-                We will contact you within 24 business hours.
-              </p>
-            </div>
-            <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
-                2. Share Your Requirement
-              </p>
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
-                Tell us exactly what you’re looking for and how would you like
-                our team to help you further. Our technical team will evaluate
-                your requirement and reach back to you with a project plan
-              </p>
-            </div>
-            <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
-                3. Sign Non-Disclosure Agreement
-              </p>
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
-                Signing an NDA is like putting your idea in a safe deposit box.
-                Be rest assured about any privacy concerns.
-              </p>
-            </div>
-            <div className="ready_content_list home_sec2_txt4">
-              <p className="white_text !text-left md:!text-2xl !text-xl font-bold">
-                4. Estimated Budget/Cost
-              </p>
-              <p className="white_text !text-left md:!text-xl !text-base p-style">
-                After analyzing your requirement in-detail we will get back to
-                you with an estimated budget/cost and estimated time required
-                for successful project completion.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="xl:pt-24 lg:pt-16 pt-8 xl:px-[8rem] lg:px-[8rem] md:px-[3rem] px-[1rem]">
-        <div className="bg-themeColor w-full py-6 rounded-[18px] flex lg:flex-row flex-col items-center justify-center md:gap-8 gap-4 px-[15px]">
-          <h2 className="md:text-4xl text-2xl text-colorWhite text-center">
-            For career inquiry email us on <strong>hr@brilworks.com</strong>
-          </h2>
-          <Link
-            href="/career/"
-            className="flex gap-3 items-center bg-white md:p-4 p-3 font-semibold whitespace-nowrap"
-          >
-            SEARCH OPENINGS <Svgs name="up-right-arrow" />
-          </Link>
-        </div>
-      </section>
-      <section>
-        <div className="service_width mx-auto xl:pt-[6rem] md:pt-[4rem] pt-[2rem] md:px-0 px-4 reveal">
-          <div className="solutions md:text-center text-left py-10">
-            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-              WHAT MAKES US BRILLIANT?
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-[3rem] our-engagement-models md:px-8 lg:px-0">
-            <div className="contact_box">
-              <div className="mx-auto">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  src="/images/people-01.png"
-                  alt="people"
-                  className="md:!w-[92px]"
+      <div className="contact-us-banner">
+        <div className="banner-layer md:h-screen h-full min-h-[600px] md:max-h-[980px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-28 mx-auto">
+            <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
+              <h1 className="hidden">Contact Us</h1>
+              <div className="md:w-[55%] w-full">
+                <Heading
+                  type="h2"
+                  className="text-white g:!text-[34px] md:!text-3xl !text-2xl"
+                  text="Let’s Discuss Your Project"
                 />
-              </div>
-              <div className="steps_service flex items-center justify-center">
-                <div className="no_flex">
-                  <div className="no_flex_height">
-                    <div className="developer_sec6_title text-center mob_center">
-                      <h3>1. People</h3>
-                    </div>
-                    <div className="service_description text-center mob_center">
-                      <p>
-                        With our design &amp; development ninjas by our side,
-                        there’s absolutely nothing we can’t achieve.
-                      </p>
-                    </div>
+                <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-2 pt-5 pb-5 md:pb-7.5 lg:pb-10">
+                  <div className="flex gap-3">
+                    <Image
+                      className="w-6 h-6"
+                      src="/images/v2/white-tick-icon.svg"
+                      alt="tick-mark-white"
+                      width={24}
+                      height={24}
+                    />
+                    No String attached.
+                  </div>
+                  <div className="flex gap-3">
+                    <Image
+                      className="w-6 h-6"
+                      src="/images/v2/white-tick-icon.svg"
+                      alt="tick-mark-white"
+                      width={24}
+                      height={24}
+                    />
+                    No obligation to hire.
+                  </div>
+                  <div className="flex gap-3">
+                    <Image
+                      className="w-6 h-6"
+                      src="/images/v2/white-tick-icon.svg"
+                      alt="tick-mark-white"
+                      width={24}
+                      height={24}
+                    />
+                    No commitment from you.
                   </div>
                 </div>
+                <ContactFormV2 darkMode={true} />
               </div>
-            </div>
-
-            <div className="contact_box">
-              <div className="mx-auto">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  src="/images/progress-01.png"
-                  alt="progress"
-                  className="md:!w-[92px]"
-                />
-              </div>
-
-              <div className="steps_service flex items-center justify-center">
-                <div className="no_flex ">
-                  <div className="no_flex_height">
-                    <div className="developer_sec6_title text-center mob_center">
-                      <h3>2. Progress</h3>
-                    </div>
-                    <div className="service_description text-center mob_center">
-                      <p>
-                        We’ve built and launched more than 120+ products in 20
-                        countries across the globe.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="contact_box">
-              <div className="mx-auto">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  src="/images/passion-01.png"
-                  alt="passion"
-                  className="md:!w-[92px]"
-                />
-              </div>
-              <div className="steps_service flex items-center justify-center">
-                <div className="no_flex">
-                  <div className="no_flex_height">
-                    <div className="developer_sec6_title text-center mob_center">
-                      <h3>3. Passion</h3>
-                    </div>
-                    <div className="service_description text-center mob_center">
-                      <p>
-                        We help you move your product vision from the whiteboard
-                        to the real world.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="service_width xl:pt-[6rem] md:pt[4rem] pt-[2rem] reveal">
-          <div className="just_call_sec">
-            <div className="solutions text-center pt-8">
-              <h2 className="md:!text-center !text-left !w-full">
-                JUST A CALL AWAY
-              </h2>
-            </div>
-          </div>
-          <div className="contact_details background relative">
-            <div className="logowhite">
-              <img
-                decoding="async"
-                loading="lazy"
-                className="alignnone"
-                src="/images/logo-vector-white.png"
-                alt="brilworks logo"
-                width="73"
-                height="124"
-              />
-            </div>
-            <div className="contact_details_list">
-              <div className="contact_iconText_flex">
-                <div className="contact_icon">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone"
-                    src="/images/call.png"
-                    alt="Mobile"
-                  />
-                </div>
-                <div className="contact_text_call">
-                  <p>
-                    Sales:&nbsp;<a href="tel:919313644148">+91 93136 44148</a>
-                    <br />
-                    HR:&nbsp;<a href="tel:919106810920">+91 91068 10920</a>
-                  </p>
-                </div>
-              </div>
-              <div className="contact_iconText_flex">
-                <div className="contact_icon">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone"
-                    src="/images/email.png"
-                    alt="Email"
-                  />
-                </div>
-                <div className="contact_text_call">
-                  <p>
-                    Sales:&nbsp;
-                    <a href={`mailto:sales@brilworks.com`}>
-                      sales@brilworks.com
-                    </a>
-                    <br />
-                    HR:&nbsp;
-                    <a href={`mailto:hr@brilworks.com`}>hr@brilworks.com</a>
-                  </p>
-                </div>
-              </div>
-              {/* <div className="contact_iconText_flex">
-                <div className="contact_icon">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="alignnone"
-                    src="/images/skype.png"
-                    alt="Skype"
-                  />
-                </div>
-                <div className="contact_text_call">
-                  <p>
-                    <a href="skype:cid.d74c89a9ff70ee92">
-                      cid.d74c89a9ff70ee92
-                    </a>
-                  </p>
-                </div>
-              </div> */}
-            </div>
-          </div>
-        </div>
-        <ClientReviews />
-
-        <div className="mx-auto sec3_width_home xl:pb-[6rem] md:pb-[4rem] pb-[2rem] reveal">
-          <div className="bg_grey">
-            <div className="like_flex">
-              <div className="basis-[45%]">
-                <div className="font-extrabold !leading-tight solutions py-8">
-                  <h2 className="!w-full">
-                    LIKE WHAT YOU SEE? LET’S GET STARTED THEN!
-                  </h2>
-                </div>
-              </div>
-              <div className="basis-[55%]">
-                <div className="contact_form">
+              <div className="md:w-[45%] w-full flex flex-col bg-[#081120] rounded-2xl border border-[#2D3540] lg:gap-[50px] md:gap-7.5 gap-4 lg:p-10 md:p-7.5 p-5">
+                {steps.map((step, index) => (
                   <div
-                    className="wpcf7 js"
-                    id="wpcf7-f695-p456-o2"
-                    lang="en-US"
-                    dir="ltr"
+                    key={index}
+                    className="flex gap-4 items-start justify-start"
                   >
-                    <ContactUsEmailForm inquiryForm={false} />
+                    <div className="rounded-full text-white bg-[#17283E] lg:text-2xl md:text-xl text-base">
+                      <span className="md:w-10 md:h-10 w-6 h-6 flex items-center justify-center">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="md:text-xl text-lg text-white font-medium">
+                        {step.title}
+                      </p>
+                      <p className="md:text-base text-sm text-white pt-[10px] font-light">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <section className="container max-w-[1280px] main-section-padding mx-auto">
+        <div className="flex items-center justify-between md:flex-row flex-col gap-4">
+          <Heading
+            type="h2"
+            className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+            text={
+              <>
+                For career inquiry email us on{" "}
+                <a
+                  href="mailto:hr@brilworks.com"
+                  target="_blank"
+                  className="bg-clip-text text-transparent bg-theme-gradient"
+                >
+                  hr@brilworks.com
+                </a>
+              </>
+            }
+          />
+          <ButtonV2
+            size="medium"
+            redirect="/career/"
+            className="hover:text-themeColor"
+            label="Search Openings"
+          />
+        </div>
+      </section>
+      <section className="bg-sectionBG">
+        <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+          <Heading
+            type="h2"
+            className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+            text="What Makes Us Brilliant?"
+          />
+
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-7.5 lg:gap-10 lg:pt-10 md:pt-7.5 pt-5">
+            {whatMakeUsBrilliant.map(({ title, imageSrc, description }) => (
+              <div
+                className="bg-white flex flex-col justify-start items-start border rounded-2xl border-[#DBDBDB] md:p-7.5 p-5"
+                key={title}
+              >
+                <div className="brilliant-icon rounded-md mb-5">
+                  <div className="flex items-center justify-start p-4 bg-white rounded-md">
+                    <Image
+                      className="md:w-8 md:h-8 w-6 h-6"
+                      src={imageSrc}
+                      alt={`${title}-icon`}
+                      width={32}
+                      height={32}
+                    />
                   </div>
                 </div>
+                <Heading
+                  type="h3"
+                  className="text-colorBlack md:!text-xl !text-lg font-medium"
+                  text={title}
+                />
+                <p className="md:text-lg text-base pt-4">{description}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+      <CTASection
+        title="Always Here to Help!"
+        description={
+          <>
+            {contactLinks.map(({ title, links }, index) => (
+              <div
+                className="flex md:flex-row flex-col sxl:justify-center justify-start md:gap-4 gap-2"
+                key={index}
+              >
+                {links.map(({ text, imgSrc, link }, idx) => (
+                  <div
+                    className="flex flex-row items-center sxl:justify-center justify-start"
+                    key={idx}
+                  >
+                    <Image
+                      className="lg:w-8 md:w-6 w-5 pr-1"
+                      src={imgSrc}
+                      alt="call-email-logo"
+                      width="20"
+                      height="20"
+                    />
+                    <Heading
+                      type="h3"
+                      className="text-colorWhite lg:!text-[22px] md:!text-xl !text-lg"
+                      text={title}
+                    />
+                    :&nbsp;&nbsp;
+                    <a
+                      key={text}
+                      href={link}
+                      target="_blank"
+                      className="!text-colorWhite lg:!text-[22px] md:!text-xl !text-lg flex slg:gap-2 gap-1 items-center font-medium"
+                    >
+                      {text}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </>
+        }
+      />
+      <ClientReviews />
     </>
   );
 };

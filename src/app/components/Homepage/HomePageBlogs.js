@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import blogResponse from "../lib/blogResponse.json";
 import Link from "next/link";
 import Image from "next/image";
-import { BlogText } from "./BigText";
 import { usePathname } from "next/navigation";
 // import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./FetchDataSpinner";

@@ -1,6 +1,5 @@
 "use client";
 import dynamic from "next/dynamic";
-import { TechTeamText } from "./BigText";
 import { useEffect, useState } from "react";
 import { Icon, scrollEffect } from "../lib/commonFunction";
 import LinkWithArrow from "../Common/LinkWithArrow";
@@ -75,7 +74,6 @@ const ExtensionOfTeam = () => {
 
   return (
     <div className="container max-w-[1440px] main-section-padding mx-auto reveal">
-      <TechTeamText />
       <div className="md:px-4 md:pt-12 pt-8 reveal">
         <div className="homepage-extension-team">
           <div className="flex flex-wrap">

@@ -74,13 +74,11 @@ const BrilworksSoftwareReview = () => {
               }
             />
             <Link href="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/">
-              <img
-                decoding="async"
-                loading="lazy"
-                className="lg:!w-[100px] !w-[70px] ml-1"
+              <Image
+                className="lg:!w-[100px] !w-[70px] pl-1"
                 width="70"
                 height="26"
-                src="/images/clutch-img.svg"
+                src="/images/clutch-icon.svg"
                 alt="clutch"
               />
             </Link>

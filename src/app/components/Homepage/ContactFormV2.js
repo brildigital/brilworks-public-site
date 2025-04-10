@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 
-const ContactFormV2 = () => {
+const ContactFormV2 = ({ darkMode = false }) => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -66,7 +66,9 @@ const ContactFormV2 = () => {
   return (
     <div className="flex v2-contact-form">
       <form
-        className="w-full flex flex-col md:!gap-5 gap-3"
+        className={`w-full flex flex-col md:!gap-5 gap-3 ${
+          darkMode ? "dark" : ""
+        }`}
         id="homepage-contact-form"
         onSubmit={handleSubmit}
       >
@@ -112,6 +114,7 @@ const ContactFormV2 = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="h-4" id="sucess_msg">
@@ -128,11 +131,19 @@ const ContactFormV2 = () => {
             label={isSubmitting ? "Submitting..." : "Submit"}
             disabled={isSubmitting}
           />
-          <div className="md:text-xl text-lg border-l border-l-[#CFD8DF] !pl-5">
+          <div
+            className={`md:text-xl text-lg border-l border-l-[#CFD8DF] !pl-5 ${
+              darkMode ? "text-colorWhite" : ""
+            }`}
+          >
             Email Us :{" "}
-            <span className="bg-clip-text text-transparent bg-theme-gradient">
+            <a
+              href="mailto:sales@brilworks.com"
+              target="_blank"
+              className="bg-clip-text text-transparent bg-theme-gradient"
+            >
               sales@brilworks.com
-            </span>
+            </a>
           </div>
         </div>
       </form>
