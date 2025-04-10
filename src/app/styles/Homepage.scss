@@ -382,6 +382,29 @@
   );
 }
 
+.honors-card {
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  border: 1px solid #80808040;
+  transition: all 0.6s ease;
+}
+.honors-card:hover {
+  padding: 1px 1px 4px 1px;
+  border: none;
+  background: linear-gradient(
+    150.51deg,
+    #007aeb 12.91%,
+    #008ce7 45.61%,
+    #00dbd3 91.35%
+  );
+  border-image-source: linear-gradient(
+    167.42deg,
+    #007aeb -0.42%,
+    #008ce7 42.32%,
+    #00dbd3 102.1%
+  );
+}
+
 .award_sec8_img1 {
   width: 60%;
   max-height: 140px;

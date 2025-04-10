@@ -21,7 +21,7 @@ const HeroSection = () => {
                 </>
               }
             />
-            <h2 className="sxl:text-2xl text-base text-white my-5">
+            <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
               Accelerating product timelines, optimizing AWS, and delivering Gen
               AI
               <br className="hidden slg:block" />

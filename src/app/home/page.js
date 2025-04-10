@@ -101,7 +101,7 @@ const page = () => {
       <SeeingBelieving />
       <ExploreOurExpertise />
       <ClientReviews />
-      <IndustriesWeServe />
+      <IndustriesWeServe title="Industries We Serve" darkBackground={false} />
       <Honors />
       <HomepageWhyChooseUs />
       <HomepageBlog />

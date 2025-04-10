@@ -3,7 +3,11 @@ import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import Image from "next/image";
 
-const IndustriesWeServe = () => {
+const IndustriesWeServe = ({
+  title = "Industries We Serve",
+  darkBackground = true,
+}) => {
+  const textColor = darkBackground ? "text-white" : "text-colorBlack";
   const industriesWeServeData = [
     {
       title: "Finance",
@@ -86,45 +90,58 @@ const IndustriesWeServe = () => {
     },
   ];
   return (
-    <div className="we-serve-bg">
-      <div className="we-serve-dark">
-        <div className="container max-w-[1280px] mx-auto main-section-padding">
+    <div className={darkBackground ? "we-serve-bg" : "bg-[#F2F9FE]"}>
+      <div className={darkBackground ? "we-serve-dark" : ""}>
+        <div className="container max-w-[1280px] mx-auto main-section-padding reveal">
           <Heading
             type="h2"
-            className="lg:!text-[34px] md:!text-3xl !text-2xl text-white lg:mb-10 md:mb-8 mb-6"
-            text="Industries We Serve"
+            className={`lg:!text-[34px] md:!text-3xl !text-2xl ${textColor} lg:mb-10 md:mb-8 mb-6`}
+            text={title}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industriesWeServeData?.map(
               ({ title, imageSrc, imageAlt, href }, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center border border-[#2D3540] bg-[#081121] rounded-2xl p-5 hover:border-white hover:border-b-2"
-                >
-                  {href ? (
-                    <Link href={href}>
-                      <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        className="w-auto mx-auto mb-4 "
-                        width={32}
-                        height={32}
-                      />
+                <div className="trusted-by-border rounded-2xl" key={index}>
+                  <div
+                    className={`flex flex-col items-center justify-center ${
+                      darkBackground
+                        ? "border border-[#2D3540] bg-[#081121] hover:border-white hover:border-b-2"
+                        : "bg-white"
+                    } p-5 rounded-2xl`}
+                  >
+                    {href ? (
+                      <Link href={href}>
+                        <Image
+                          src={imageSrc}
+                          alt={imageAlt}
+                          className={`w-auto mx-auto mb-4 ${
+                            darkBackground ? "" : "invert"
+                          }`}
+                          width={32}
+                          height={32}
+                        />
 
-                      <p className="text-white md:text-xl text-lg">{title}</p>
-                    </Link>
-                  ) : (
-                    <>
-                      <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        className="w-auto mx-auto mb-4"
-                        width={32}
-                        height={32}
-                      />
-                      <p className="text-white md:text-xl text-lg">{title}</p>
-                    </>
-                  )}
+                        <p className={`${textColor} md:text-xl text-lg `}>
+                          {title}
+                        </p>
+                      </Link>
+                    ) : (
+                      <>
+                        <Image
+                          src={imageSrc}
+                          alt={imageAlt}
+                          className={`w-auto mx-auto mb-4 ${
+                            darkBackground ? "" : "invert"
+                          } `}
+                          width={32}
+                          height={32}
+                        />
+                        <p className={`${textColor} md:text-xl text-lg`}>
+                          {title}
+                        </p>
+                      </>
+                    )}
+                  </div>
                 </div>
               )
             )}

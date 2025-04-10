@@ -1,9 +1,11 @@
 "use client";
-import Link from "next/link";
 import { useEffect } from "react";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
+import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
-import Button from "../Common/Button";
+import Heading from "../HTMLComponents/Heading";
+import IndustriesWeServe from "../Homepage/IndustriesWeServe";
+import CTASection from "../Common/CTASection";
+import MeetOurTeam from "./MeetOurTeam";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -14,497 +16,221 @@ const AboutUs = () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
+
+  const greatnessSkills = [
+    {
+      value: "60%",
+      description: "Professional Employee",
+      color: "#E5F4FF",
+    },
+    {
+      value: "120+",
+      description: "Projects Completed",
+      color: "#E9FFE2",
+    },
+    {
+      value: "8+",
+      description: "Years of Experience",
+      color: "#FFE2E5",
+    },
+    {
+      value: "98%",
+      description: "Project Success Rate",
+      color: "#FFE8FC",
+    },
+  ];
+
+  const brilBeliefData = [
+    {
+      title: "Trustworthy Partnership",
+      imageSrc: "/images/v2/partnership.png",
+      description:
+        "We build lasting, trusted partnerships by providing top talent, expertise, and innovative solutions to tackle complex challenges with confidence.",
+    },
+    {
+      title: "High Caliber Talent",
+      imageSrc: "/images/v2/medal-star.png",
+      description:
+        "We hire top talent to drive our vision, staying ahead with rising technologies to ensure innovation, excellence, & exceptional customer service.",
+    },
+    {
+      title: "Growth Mindset",
+      imageSrc: "/images/v2/growth-midset-img.png",
+      description:
+        "We provide end-to-end solutions, from strategy to execution, crafting intuitive experiences that align with your vision.",
+    },
+  ];
+
   return (
     <>
-      <section className="container max-w-[1440px] main-section-padding mx-auto md:mt-12 mt-20">
-        <div className="flex md:flex-row flex-col items-center gap-[2rem]">
-          <div className="basis-3/6 md:!order-1 lg:!order-1 !order-2">
-            <div className="home_sec2_txt1 text_left">
-              <h1 className="hidden">About Us</h1>
-              <h2>
-                Your tech partner in a{" "}
-                <span className="big-text-stroke">fast changing world.</span>
-              </h2>
-            </div>
-            <div className="lg:text-xl md:text-lg text-base md:!leading-[36px] lg:w-[80%] md:mt-[3rem] mt-[1rem]">
-              <p>
-                We create digital experiences that drive business performance to
-                help organizations adapt to shifts in customer seek behavior and
-                technology.
-              </p>
-            </div>
-            <div className="w-14 md:py-8 py-4">
-              <Link
-                href="#service_sec2"
-                onClick={(e) => scrollToSection(e, "service_sec2")}
-              >
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone wp-image-189 size-full"
-                  src="/images/down-arrow(1).png"
-                  alt="down arrow"
-                  width="62"
-                  height="62"
+      <div className="about-us-banner">
+        <div className="banner-layer md:h-screen h-full min-h-[600px] md:max-h-[980px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-28 mx-auto">
+            <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
+              <div className="md:w-1/2 w-full">
+                <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.25 !mb-5">
+                  About Us
+                </p>
+                <Heading
+                  type="h1"
+                  className="text-white"
+                  text="Your Tech Partner in a Fast Changing World."
                 />
-              </Link>
-            </div>
-          </div>
-          <div className="basis-3/6 md:!order-2 lg:!order-2 !order-1">
-            <div className="about_sec1_img1">
-              <img
-                decoding="async"
-                className="alignnone wp-image-188 size-full"
-                src="/images/banner-1.webp"
-                alt="team working"
-                width="882"
-                height="589"
-                srcSet="
-                    /images/banner-1.webp         882w,
-                    /images/banner-1-300x200.webp 535w,
-                    /images/banner-1-768x513.webp 768w
-                  "
-                sizes="(max-width: 882px) 90vw, 882px"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="service_sec2" className="bg-themeColor">
-        <div className="container max-w-[1440px] main-section-padding mx-auto">
-          <div className="home_sec2_txt1 md:text-center text-left">
-            <h2 className="!text-colorWhite">
-              Our
-              <span className="big-text-stroke !text-colorWhite"> Mission</span>
-            </h2>
-          </div>
-
-          <div className="home_sec2_txt3 text-center">
-            <p className="!w-full md:!w-[74%] !text-colorWhite">
-              To empower businesses and startups with exceptional products that
-              wow customers.
-            </p>
-          </div>
-
-          <div className="xl:pt-[6rem] md:pt-[4rem] pt-[2rem] relative about_sec2 reveal">
-            <div className="">
-              <div className="about_vision">
-                <div className="sec6_title">
-                  <p className="mb-[10px] !text-colorWhite font-bold">
-                    Our Vision
-                  </p>
-                </div>
-                <div className="sec10_txt1">
-                  <p className="text-colorWhite">
-                    To become a technology partner &amp; enabler for global tech
-                    startups &amp; enterprises.
-                  </p>
-                </div>
+                <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                  We create digital experiences that drive business performance
+                  to help organizations adapt to shifts in customer seek
+                  behaviour and technology.
+                </p>
               </div>
-              <div className="about_sec2_img1">
-                <img
-                  decoding="async"
-                  loading="lazy"
-                  className="alignnone wp-image-191 size-full"
-                  src="/images/vision.jpg"
-                  alt="vision"
-                  width="965"
-                  height="625"
-                  srcSet="
-                    /images/vision.jpg 965w,
-                    /images/vision-300x194.jpg 300w,
-                    /images/vision-768x497.jpg 768w
-                  "
-                  sizes="(max-width: 965px) 100vw, 965px"
+              <div className="md:w-1/2 w-full">
+                <Image
+                  src="/images/v2/about-us-hero-img.webp"
+                  width={565}
+                  height={470}
+                  className="w-full"
+                  alt="about-hero-img"
                 />
               </div>
-            </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      <section className="container max-w-[1440px] main-section-padding mx-auto">
-        <div className="home_sec2_txt1 md:text-center text-left">
-          <h2>
-            Enabling greatness through
-            <br className="block md:hidden" />
-            <span className="big-text-stroke"> our expertise.</span>
-          </h2>
-        </div>
-
-        <div>
-          <p className="mx-auto text-center md:!text-3xl !text-base !w-full py-8">
-            Whether you’re looking for products and web applications that
-            excite, energize, and engage your customers or seek to transform
-            your internal processes with seamless tech innovations, we have the
-            right people, the right expertise, and the right insights to serve
-            your business needs.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 grid-cols-2 md:gap-[5rem] gap-[2rem] main-section-padding mx-auto about_sec2_grid reveal">
-          <div>
-            <div className="number">
-              <p data-max="8" className="!text-colorBlack">
-                8<span className="sign_data"> +</span>
-              </p>
-            </div>
-            <div className="year">
-              <p>Years of experience</p>
-            </div>
-          </div>
-          <div>
-            <div className="number">
-              <p data-max="98" className="!text-colorBlack">
-                98<span className="sign_data">%</span>
-              </p>
-            </div>
-            <div className="year">
-              <p>Project Success Rate</p>
-            </div>
-          </div>
-          <div>
-            <div className="number">
-              <p data-max="60" className="!text-colorBlack">
-                60<span className="sign_data">+</span>
-              </p>
-            </div>
-            <div className="year">
-              <p>Experts on board</p>
-            </div>
-          </div>
-          <div>
-            <div className="number">
-              <p data-max="120" className="!text-colorBlack">
-                120<span className="sign_data">+</span>
-              </p>
-            </div>
-            <div className="year">
-              <p>Applications Developed</p>
-            </div>
-          </div>
-          <div>
-            <div className="number">
-              <p data-max="20" className="!text-colorBlack">
-                20<span className="sign_data">+</span>
-              </p>
-            </div>
-            <div className="year">
-              <p>Technologies in use</p>
-            </div>
-          </div>
-          <div>
-            <div className="number">
-              <p data-max="20" className="!text-colorBlack">
-                20
-              </p>
-            </div>
-            <div className="year">
-              <p>Global locations of clients</p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div className="home_sec2_txt1 md:text-center text-left">
-            <p>#BrilBeliefs</p>
-          </div>
-
-          <div className="home_sec2_txt1 md:text-center text-left">
-            <h2>
-              <span className="big-text-stroke">The beliefs of</span> brilworks.
-            </h2>
-          </div>
-        </div>
-
-        <div className="reveal">
-          <div className="gap-4 about_sec4 lg:flex-row flex-col flex xl:mt-[6rem] md:mt-[4rem] mt-[2rem]">
-            <div className="about_sec4_row relative lg:w-1/3 w-full">
-              <div className="about_sec4_3">
-                <div className="about_box_style">
-                  <div className="sec4_about height_about">
-                    <h3>
-                      Trustworthy
-                      <span className="big-text-stroke"> Partnership</span>
-                    </h3>
-                  </div>
-                  <div className="sec6_career_flex">
-                    <div className="sec6_career_img1">
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-208 size-full"
-                        src={"/images/trustworthy.png"}
-                        alt="Trustworthy Partnership"
-                        width="142"
-                        height="142"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="about_sec4_70">
-                  <div className="about_box_style bril-belief">
-                    <div className="about_se4_flex">
-                      <div className="sec4_about">
-                        <h3 className="text-colorWhite">
-                          Trustworthy{" "}
-                          <span className="big-text-stroke">Partnership</span>
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="about_sec4_txt4">
-                      <div className="sec10_txt1">
-                        <p className="text-[1.25rem]">
-                          We’re focused on building long-term, trustworthy
-                          partnerships with our clients by providing them with
-                          the talent and expertise that transcends even the most
-                          complex challenges.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="about_sec4_row relative lg:w-1/3 w-full">
-              <div className="about_sec4_3 relative first_30">
-                <div className="about_box_style">
-                  <div className="sec4_about height_about">
-                    <h3>
-                      High&nbsp;Caliber
-                      <span className="big-text-stroke"> Talent</span>
-                    </h3>
-                  </div>
-                  <div className="sec6_career_flex">
-                    <div className="sec6_career_img1">
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-213 size-full"
-                        src={"/images/high-caliber.png"}
-                        alt="High Caliber Talent"
-                        width="142"
-                        height="142"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="about_sec4_70 second_hover">
-                  <div className="about_box_style bril-belief">
-                    <div className="about_se4_flex">
-                      <div className="sec4_about">
-                        <h3>
-                          High&nbsp;Caliber{" "}
-                          <span className="big-text-stroke">
-                            <br />
-                            Talent
-                          </span>
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="about_sec4_txt4">
-                      <div className="sec10_txt1">
-                        <p className="text-[1.25rem]">
-                          We believe that brilliant people deliver brilliant
-                          outcomes. So we hire the very best to lead us forward,
-                          keep pace with the latest technologies, and deliver
-                          the highest levels of customer service.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="about_sec4_row relative lg:w-1/3 w-full">
-              <div className="about_sec4_3">
-                <div className="about_box_style">
-                  <div className="sec4_about height_about">
-                    <h3>
-                      Growth <span className="big-text-stroke">Mindset </span>
-                    </h3>
-                  </div>
-                  <div className="sec6_career_flex">
-                    <div className="sec6_career_img1">
-                      <img
-                        decoding="async"
-                        loading="lazy"
-                        className="alignnone wp-image-212 size-full"
-                        src="/images/growth.png"
-                        alt="Growth Mindset"
-                        width="142"
-                        height="142"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="about_sec4_70 third_hover">
-                  <div className="about_box_style bril-belief">
-                    <div className="about_se4_flex !pb-1.8rem">
-                      <div className="sec4_about">
-                        <h3>
-                          Growth{" "}
-                          <span className="big-text-stroke mt-0">Mindset </span>
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="about_sec4_txt4">
-                      <div className="sec10_txt1">
-                        <p className="!text-[1.15rem]">
-                          We take a holistic approach to every project to make
-                          sure that their needs are met. From strategy and
-                          detailed design through development, we remain
-                          committed throughout each phase of the process.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
-          <div className="home_sec2_txt1 md:text-center text-left md:pt-0 pt-8">
-            <h2>
-              Trusted by companies
-              <br className="xl:hidden block" />
-              <span className="big-text-stroke"> across industries.</span>
-            </h2>
-          </div>
-
-          <div className="md:w-11/12 w-full md:mt-12 mt-8 mx-auto">
-            <div className="flex item-center md:justify-center justify-start flex-wrap gap-[16px]">
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#dcebff]">
-                  <p>Travel &amp; Hospitality</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1  bg-[#dcf8ef]">
-                  <p>Education</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#ece8ff]">
-                  <p>Fashion</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#f8efde]">
-                  <p>Staffing</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#fbe4d4]">
-                  <p>Retail &amp; FMCG</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#ffe6f4]">
-                  <p>Media &amp; Entertainment</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#cbdbfe]">
-                  <p>Advertising</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#fffbe1]">
-                  <p>Consumer Service</p>
-                </div>
-              </div>
-              <div className="about_btn_style">
-                <div className="sec9_txt1 bg-[#e6ffe7]">
-                  <p>E-Commerce</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="home_sec2_txt1 md:text-center text-left">
-          <h2>
-            Meet the<span className="big-text-stroke"> team</span>
-          </h2>
-        </div>
-
-        <div className="career reveal">
-          <div className="home_sec2_txt3 md:text-center text-left">
-            <p className="!w-full md:!text-[2rem] !text-[1.3rem]">
-              Talent wins games, but teamwork and intelligence win
-              championships.
-            </p>
-          </div>
-
-          <Link
-            href="/career/"
-            className="flex items-center justify-center gap-[20px] about_btn transition"
-            target="_blank"
-            rel="noopener"
-          >
-            <div className="about_txt">
-              <p className="change_link md:text-[32px] text-[20px]">
-                Join Our Team
-              </p>
-            </div>
-            <div className="aerrow relative">
-              <img
-                decoding="async"
-                loading="lazy"
-                className="black_aerrow alignnone wp-image-28 size-full"
-                src="/images/black_aerrow-1.png"
-                alt="arrow"
-                width="46"
-                height="18"
-              />
-              <img
-                decoding="async"
-                loading="lazy"
-                className="gradiant_aerrow alignnone wp-image-29 size-full"
-                src="/images/arrow-gradiant.png"
-                alt="arrow"
-                width="46"
-                height="18"
-              />
-            </div>
-          </Link>
-        </div>
-      </section>
-      <div className="!px-4">
-        <img
-          decoding="async"
-          loading="lazy"
-          className="alignnone wp-image-190 size-full"
-          src={
-            "https://a.storyblok.com/f/219851/1920x1195/e16b4f5cd2/team-image.png"
-          }
-          alt="Brilworks team"
-        />
       </div>
-      <div className="conatiner max-w-[1440px] md:px-6 px-4 mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] reveal">
-        <div className="sec7_box_style md:w-[80%] w-full">
-          <div className="home_sec2_txt1 md:text-center text-left mb-[3rem]">
-            <h2 className="text-colorWhite">
-              Let’s build something
-              <br />{" "}
-              <span className="text-colorWhite font-bold">great together.</span>
-            </h2>
-          </div>
+      <div className="container max-w-[1280px] main-section-padding mx-auto">
+        <section className="flex flex-col md:flex-row items-center justify-start lg:gap-10 md:gap-7.5 gap-6">
+          <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-7.5 gap-5">
+            <div>
+              <div className="md:pb-7.5 pb-5 ">
+                <Image
+                  className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+                  src="/images/v2/our-mission.webp"
+                  alt="mission-icon"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <Heading
+                type="h2"
+                className="lg:!text-[34px] md:!text-3xl !text-2xl "
+                text="Our Mission"
+              />
 
-          <div className="flex items-center justify-center">
-            <Button
-              variant="white"
-              label="Get in touch"
-              target="_blank"
-              rel="noopener"
+              <p className="md:text-lg text-base pt-4">
+                To empower businesses and startups with exceptional products
+                that wow customers.
+              </p>
+            </div>
+            <div>
+              <div className="md:pb-7.5 pb-5 ">
+                <Image
+                  className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+                  src="/images/v2/our-vision.webp"
+                  alt="mission-icon"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <Heading
+                type="h2"
+                className="lg:!text-[34px] md:!text-3xl !text-2xl "
+                text="Our Vision"
+              />
+
+              <p className="md:text-lg text-base pt-4">
+                To empower businesses and startups with exceptional products
+                that wow customers.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="bg-sectionBG">
+        <div className="container max-w-[1280px] main-section-padding mx-auto">
+          <div className="flex flex-col items-start reveal">
+            <Heading
+              type="h2"
+              className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
+              text="Empowering Greatness With Our Skills"
             />
+            <p className="md:text-lg text-base">
+              Whether you’re looking for products and web applications that
+              excite, energize, and engage your customers or seek to transform
+              your internal processes with seamless tech innovations, we have
+              the right people, the right expertise, and the right insights to
+              serve your business needs.
+            </p>
+
+            <div className="w-full lg:pt-10 md:pt-7.5 pt-5">
+              <div className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-5">
+                {greatnessSkills.map(({ value, description, color }, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-start justify-center p-6 rounded-2xl"
+                    style={{ background: color }}
+                  >
+                    <p className="pb-2 lg:!text-[34px] md:!text-3xl !text-2xl">
+                      {value}
+                    </p>
+
+                    <span className="md:text-lg text-base">{description}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+        <p className="uppercase lg:text-2xl md:text-xl text-lg md:!mb-7.5 !mb-5">
+          Brilbelief
+        </p>
+        <Heading
+          type="h2"
+          className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+          text="The Beliefs of Brilworks"
+        />
+
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-7.5 lg:gap-10 lg:pt-10 md:pt-7.5 pt-5">
+          {brilBeliefData.map(({ title, imageSrc, description }) => (
+            <div
+              className="bg-white flex flex-col justify-start items-start border rounded-2xl border-[#DBDBDB] md:p-7.5 p-5"
+              key={title}
+            >
+              <div className="brilliant-icon rounded-md mb-5">
+                <div className="flex items-center justify-start p-4 bg-white rounded-md">
+                  <Image
+                    className="md:w-8 md:h-8 w-6 h-6"
+                    src={imageSrc}
+                    alt={`${title}-icon`}
+                    width={32}
+                    height={32}
+                  />
+                </div>
+              </div>
+              <Heading
+                type="h3"
+                className="text-colorBlack md:!text-xl !text-lg font-medium"
+                text={title}
+              />
+              <p className="md:text-lg text-base pt-4">{description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <IndustriesWeServe
+        title="Trusted by Companies across Industries"
+        darkBackground={false}
+      />
+      <MeetOurTeam />
+
+      <CTASection
+        title="Let’s Build Something Great Together."
+        description="Tell us your project idea and get a free consultation to create an outstanding digital product."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
     </>
   );
 };
