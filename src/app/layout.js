@@ -33,6 +33,7 @@ storyblokInit({
 
 import Header from "./components/Header/Header";
 import HeaderV2 from "./components/Header/HeaderV2";
+import CurrentHeader from "./components/Header/CurrentHeader";
 // import LoadScripts from "./ScriptLoader";
 
 const Footer = dynamic(() => import("./components/Footer"));
@@ -64,7 +65,8 @@ export default function RootLayout({ children }) {
         </head>
         <body suppressHydrationWarning={true}>
           {/* <Header /> */}
-          <HeaderV2 />
+          {/* <HeaderV2 /> */}
+          <CurrentHeader />
           {/* <NextAuthProvider> */}
           {children}
           {/* </NextAuthProvider> */}

@@ -12,7 +12,9 @@ const PortfolioContactForm = ({
 }) => {
   const pathname = usePathname();
 
-  const textToShow = page.startsWith("/portfolio/") ? "Case Study" : "E-Book";
+  const textToShow = pathname.startsWith("/portfolio/")
+    ? "Case Study"
+    : "E-Book";
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");

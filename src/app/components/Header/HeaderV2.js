@@ -114,7 +114,7 @@ const HeaderV2 = () => {
 
   return (
     <header>
-      <div className={`header`}>
+      <div className="header">
         <Navbar
           className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
             openNav ? "!fixed" : "bg-transparent"
