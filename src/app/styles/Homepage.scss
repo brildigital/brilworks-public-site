@@ -326,14 +326,18 @@
 .work-swiper,
 .software-review-container {
   .swiper-pagination-bullet {
-    margin: 0 5px !important;
-    width: 10px;
-    height: 10px;
+    margin-bottom: 4px !important;
+    border-radius: 30px;
+    width: 6px;
+    height: 12px;
   }
 
   .swiper-pagination-bullet-active {
     opacity: 1;
     background: var(--theme-color);
+    width: 8px;
+    height: 20px;
+    margin-bottom: 0px !important;
   }
 }
 

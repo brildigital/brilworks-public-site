@@ -168,9 +168,9 @@ const TabVerticalSticky = ({
                           href={redirect}
                           className="flex items-center justify-start bg-clip-text text-transparent group-hover:text-white bg-theme-gradient duration-300 pb-2"
                         >
-                          {title}&nbsp;&nbsp;
+                          {title}
                           <FontAwesomeIcon
-                            className="group-hover:text-white text-[#00DBD3]"
+                            className="group-hover:text-white text-[#00DBD3] ml-2"
                             size="lg"
                             icon={faArrowRight}
                           />
@@ -210,11 +210,11 @@ const TabVerticalSticky = ({
                         <div className="group" key={index}>
                           <Link
                             href={redirect}
-                            className="flex items-center justify-start bg-clip-text text-transparent group-hover:text-white bg-theme-gradient duration-300 pb-2"
+                            className="flex items-center justify-start bg-clip-text text-transparent text-lg group-hover:text-white bg-theme-gradient duration-300 pb-2"
                           >
-                            {title}&nbsp;
+                            {title}
                             <FontAwesomeIcon
-                              className="group-hover:text-white text-[#00DBD3]"
+                              className="group-hover:text-white text-[#00DBD3] ml-2"
                               size="lg"
                               icon={faArrowRight}
                             />

@@ -71,7 +71,7 @@ export async function POST(req, res) {
                 padding: 20px;
                 border-radius: 8px;
                 background-color:#f2f9fe;">
-            <center><img src="https://sev.brilworks.com/images/v2/logo-text-black.png" alt="logo-icon" width="156" height="47" /></center>
+            <center><img src="https://www.brilworks.com/images/v2/logo-text-black.png" alt="logo-icon" width="156" height="47" /></center>
             <p style="font-size: 14px;">Thank you for submitting form!</p>
             <p style="font-size: 14px;">Click the button below to download ${textToShow}:</p>
             <a href="${process.env.NEXT_PUBLIC_BASE_URL}api/download?url=${downloadLink}" style="display: inline-block;

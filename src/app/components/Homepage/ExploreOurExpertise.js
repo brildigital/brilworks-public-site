@@ -126,10 +126,6 @@ const ExploreOurExpertise = () => {
             initialTabValue="cloud-service"
             data={ourExpertiseData}
           />
-          // <TabVerticalDark
-          //   initialTabValue={"cloud-service"}
-          //   data={ourExpertiseData}
-          // />
         )}
       </div>
     </div>
