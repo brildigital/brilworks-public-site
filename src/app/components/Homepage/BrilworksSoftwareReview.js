@@ -58,7 +58,7 @@ const BrilworksSoftwareReview = () => {
               type="h2"
               className="lg:!text-[34px] md:!text-3xl !text-2xl"
               text={
-                <div className="flex items-center gap-1">
+                <div className="flex md:flex-row flex-col md:items-center items-start gap-1">
                   Reviews/5.0
                   <span className="star_clutch !text-[20px]">
                     {Array.from({ length: 5 }).map((_, index) => (

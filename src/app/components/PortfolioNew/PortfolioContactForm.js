@@ -24,9 +24,7 @@ const PortfolioContactForm = ({
     email: "",
   });
 
-  const submitText = downloadFileUrl
-    ? `Download Case Study ${textToShow}`
-    : "Submit";
+  const submitText = downloadFileUrl ? `Download ${textToShow}` : "Submit";
   const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
 
   const handleChange = (e) => {
