@@ -4,7 +4,7 @@ import React from "react";
 
 const Conclusion = () => {
   return (
-    <div className="bg-themePrimary lg:px-[5rem] md:px-8 px-2">
+    <div className="bg-themeColor lg:px-[5rem] md:px-8 px-2">
       <div className="container mx-auto lg:py-[7rem] md:py-[4rem] py-8 relative lg:w-[80%] px-4 w-full">
         <Image
           className="lg:w-[169px] aspect-auto md:w-[100px] w-[60px] absolute top-0 right-0"

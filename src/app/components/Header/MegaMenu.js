@@ -27,14 +27,14 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             }}
             className={`group/item flex items-center header_font ${
               pathname.includes("/portfolio/")
-                ? "hover:text-vividBlue"
+                ? "hover:text-themeColor"
                 : "hover:text-themeColor"
             }`}
           >
             <p
               className={`!mb-0  ${
                 pathname.includes("/portfolio/")
-                  ? "group-hover/item:text-vividBlue"
+                  ? "group-hover/item:text-themeColor"
                   : "group-hover/item:text-themeColor"
               } uppercase`}
             >

@@ -44,7 +44,7 @@ const UsecasesProblemAndSolution = () => {
             className={`${
               index % 2 === 0
                 ? "bg-colorLightGray flex-row"
-                : "bg-themePrimary flex-row-reverse md:translate-x-[calc(100%_-_94%)]"
+                : "bg-themeColor flex-row-reverse md:translate-x-[calc(100%_-_94%)]"
             } lg:py-20 py-10 lg:px-24 px-8 md:w-[95%] flex`}
             key={index}
           >

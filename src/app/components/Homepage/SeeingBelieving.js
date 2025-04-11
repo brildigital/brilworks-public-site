@@ -5,12 +5,25 @@ import Image from "next/image";
 import StoryblokClient from "storyblok-js-client";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
+import { usePathname } from "next/navigation";
+import { scrollEffect } from "../lib/commonFunction";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-const SeeingBelieving = () => {
+const SeeingBelieving = ({ title, caseStudyToShow }) => {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   // const [caseStudyData, setCaseStudyData] = useState();
   // useEffect(() => {
   //   Storyblok.get("cdn/stories/", {
@@ -38,63 +51,6 @@ const SeeingBelieving = () => {
   //       alt: data?.content?.images?.[0]?.meta_data?.alt,
   //     };
   //   });
-
-  const portfolioItems = [
-    {
-      title: "VUGO",
-      description:
-        "Founded in 2015, Vugo is the first company to develop in-car advertising for the rideshare marketplace. Headquartered in Minneapolis, Minnesota, Vugo develops highly targeted, responsive ads on billboards above vehicles for hire.",
-      link: "/portfolio/vugo/",
-      shortDesc:
-        "150% customer base increase with product engineering services for vugo",
-      image: "https://a.storyblok.com/f/219851/500x375/77c04adb56/vugo.jpg",
-      alt: "vugo",
-      bgColor: "!bg-[#2cbc89]",
-    },
-    {
-      title: "TRACKIMO",
-      description:
-        "Trackimo specializes in highly reliable and effective tracking solutions. The company's end-to-end global IoT platform provides personal safety and tracking solutions to more than 500,000 consumers and more than 50 enterprise clients worldwide.",
-      link: "/portfolio/trackimo/",
-      shortDesc:
-        "Our product engineering and AWS consulting services enable Trackimo to support 60,000 active devices seamlessly.",
-      image: "https://a.storyblok.com/f/219851/500x375/f472daac29/trackimo.jpg",
-      alt: "trackimo",
-      bgColor: "!bg-[#e8eed5]",
-    },
-    {
-      title: "OROKII",
-      description:
-        "Orokii is an on-demand platform that allows you to send cross-border payments anywhere in the world at real-time prices. Orokii is making domestic and cross-border payments cheaper, faster, and safer using blockchain technology.",
-      link: "/portfolio/orokii/",
-      shortDesc:
-        "More than 5000 customers onboarded in a year with product development services for orokii.",
-      image: "/images/orokii1.webp",
-      alt: "orokii",
-      bgColor: "!bg-[#377df8]",
-    },
-    {
-      title: "ECCOCAR",
-      description:
-        "Eccocar is a SaaS Company that provides technology for rental cars to adapt to new mobility trends and offers a mobility service on demand. Eccocar digitizes rent-a-car and new on-demand mobility providers, such as ride-hailing and ride-sharing operators, and generates white-label APPs for them to launch their service.",
-      link: "/portfolio/eccocar/",
-      shortDesc:
-        "Eccocar successfully onboarded 1,000+ fleet managers/users through our product engineering and AWS consulting services",
-      image:
-        "https://a.storyblok.com/f/219851/500x375/8707c8ae6a/eccocar-1.jpg",
-      alt: "eccocar",
-      bgColor: "!bg-[#f13134]",
-    },
-    {
-      title: "RASTRACK",
-      description:
-        "Rastrack is a satellite tracking and real-time monitoring company which helps owners track their vehicles with detailed analysis. Rastrack specializes in the control and satellite monitoring of assets or individuals using networking technologies.",
-      link: "/portfolio/rastrack/",
-      image: "/images/rastrack1.webp",
-      alt: "rastrack",
-      bgColor: "!bg-[#2cbc89]",
-    },
-  ];
 
   const portfolioDynamicItems = [
     {
@@ -150,7 +106,7 @@ const SeeingBelieving = () => {
           <Heading
             type="h2"
             className="lg:!text-[34px] md:!text-3xl !text-2xl"
-            text="Because Seeing is Believing"
+            text={title || "Because Seeing is Believing"}
           />
           <div>
             <Link
@@ -163,73 +119,78 @@ const SeeingBelieving = () => {
         </div>
         <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 lg:pt-10 md:pt-8 pt-5">
           {portfolioDynamicItems?.length &&
-            portfolioDynamicItems?.map(
-              (
-                { title, link, description, image, technology, industry },
-                index
-              ) => {
-                return (
-                  <div
-                    className={`min-w-[300px] overflow-hidden h-full rounded-t-2xl w-fit flex flex-col ${
-                      index % 2 ? "md:mt-18 lg:mt-28 mt-0" : ""
-                    }`}
-                    key={index}
-                  >
-                    <Link href={`${link}`} prefetch={true}>
-                      <div className="relative group">
-                        <Image
-                          className="rounded-2xl lg:max-h-[400px] transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-                          src={image}
-                          alt={`casestudy-${index}`}
-                          width="302"
-                          height="240"
-                          sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                        />
-                        <Image
-                          className="w-[56px] absolute bottom-3 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          src="/images/v2/read-icon.svg"
-                          alt="Read Icon"
-                          width="56"
-                          height="56"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-between flex-1 py-4 items-start">
-                        <div className="w-full flex items-center justify-between">
-                          <Heading
-                            className="md:!text-xl !text-lg font-medium"
-                            type="h3"
-                            text={title}
+            portfolioDynamicItems
+              ?.filter(({ link }) => !pathname?.includes(link))
+              ?.slice(0, caseStudyToShow)
+              ?.map(
+                (
+                  { title, link, description, image, technology, industry },
+                  index
+                ) => {
+                  return (
+                    <div
+                      className={`min-w-[300px] overflow-hidden h-full rounded-t-2xl w-fit flex flex-col ${
+                        index % 2 ? "md:mt-18 lg:mt-28 mt-0" : ""
+                      }`}
+                      key={index}
+                    >
+                      <Link href={`${link}`} prefetch={true}>
+                        <div className="relative group">
+                          <Image
+                            className="rounded-2xl lg:max-h-[400px] transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                            src={image}
+                            alt={`casestudy-${index}`}
+                            width="302"
+                            height="240"
+                            sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                           />
-                          <div className="md:text-xl text-lg font-bold text-themeColor"></div>
+                          <Image
+                            className="w-[56px] absolute bottom-3 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            src="/images/v2/read-icon.svg"
+                            alt="Read Icon"
+                            width="56"
+                            height="56"
+                          />
                         </div>
-                        <p className="text-colorGray md:text-lg text-base">
-                          {description?.split(" ")?.length > 31
-                            ? description?.split(" ")?.slice(0, 25)?.join(" ") +
-                              "..."
-                            : description}
-                        </p>
-                      </div>
-                    </Link>
-
-                    <div className="flex items-center justify-between">
-                      <p className="bg-clip-text text-transparent bg-theme-gradient md:text-xl text-lg font-medium uppercase">
-                        {industry}
-                      </p>
-                      <div className="flex items-center md:gap-2.5 gap-1.5">
-                        {technology.map((data) => (
-                          <div
-                            className="bg-white md:px-4 px-2.5 py-1.5 md:py-[9px] border rounded-md"
-                            key={data?.[0]}
-                          >
-                            {data}
+                        <div className="flex flex-col justify-between flex-1 py-4 items-start">
+                          <div className="w-full flex items-center justify-between">
+                            <Heading
+                              className="md:!text-xl !text-lg font-medium"
+                              type="h3"
+                              text={title}
+                            />
+                            <div className="md:text-xl text-lg font-bold text-themeColor"></div>
                           </div>
-                        ))}
+                          <p className="text-colorGray md:text-lg text-base">
+                            {description?.split(" ")?.length > 31
+                              ? description
+                                  ?.split(" ")
+                                  ?.slice(0, 25)
+                                  ?.join(" ") + "..."
+                              : description}
+                          </p>
+                        </div>
+                      </Link>
+
+                      <div className="flex items-center justify-between">
+                        <p className="bg-clip-text text-transparent bg-theme-gradient md:text-xl text-lg font-medium uppercase">
+                          {industry}
+                        </p>
+                        <div className="flex items-center md:gap-2.5 gap-1.5">
+                          {technology.map((data) => (
+                            <div
+                              className="bg-white md:px-4 px-2.5 py-1.5 md:py-[9px] border rounded-md"
+                              key={data?.[0]}
+                            >
+                              {data}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              }
-            )}
+                  );
+                }
+              )}
         </div>
         <div className="flex justify-center">
           <ButtonV2

@@ -99,14 +99,14 @@ const ContactUs = () => {
   return (
     <>
       <div className="contact-us-banner">
-        <div className="banner-layer md:h-screen h-full min-h-[600px] md:max-h-[980px] max-h-full">
+        <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-28 mx-auto">
             <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
               <h1 className="hidden">Contact Us</h1>
               <div className="md:w-[55%] w-full">
                 <Heading
                   type="h2"
-                  className="text-white g:!text-[34px] md:!text-3xl !text-2xl"
+                  className="text-white lg:!text-[34px] md:!text-3xl !text-2xl"
                   text="Let’s Discuss Your Project"
                 />
                 <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-2 pt-5 pb-5 md:pb-7.5 lg:pb-10">
@@ -173,7 +173,7 @@ const ContactUs = () => {
         <div className="flex items-center justify-between md:flex-row flex-col gap-4">
           <Heading
             type="h2"
-            className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+            className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
             text={
               <>
                 For career inquiry email us on{" "}
@@ -199,14 +199,14 @@ const ContactUs = () => {
         <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
           <Heading
             type="h2"
-            className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+            className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
             text="What Makes Us Brilliant?"
           />
 
           <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-7.5 lg:gap-10 lg:pt-10 md:pt-7.5 pt-5">
             {whatMakeUsBrilliant.map(({ title, imageSrc, description }) => (
               <div
-                className="bg-white flex flex-col justify-start items-start border rounded-2xl border-[#DBDBDB] md:p-7.5 p-5"
+                className="bg-white flex flex-col justify-start items-start border rounded-2xl border-borderGray md:p-7.5 p-5"
                 key={title}
               >
                 <div className="brilliant-icon rounded-md mb-5">

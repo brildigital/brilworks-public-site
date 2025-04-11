@@ -31,7 +31,7 @@
   }
 
   .form-group input:checked + label::before {
-    background-color: var(--main_menu_hover_color);
+    background-color: var(--theme-color);
   }
 
   .form-group input:checked + label:after {

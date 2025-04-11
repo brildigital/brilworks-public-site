@@ -51,7 +51,7 @@ const ProjectChallengesSection = () => {
   return (
     <>
       <div className="bg-sectionBG">
-        <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:py-[60px] md:py-[40px] py-[30px] mx-auto blue-tick-icon">
+        <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:py-[60px] md:py-[40px] py-[30px] mx-auto li-tick-mark">
           <div className="flex md:flex-row flex-col">
             <div className="w-full">
               <Heading
@@ -97,7 +97,7 @@ const ProjectChallengesSection = () => {
         </div>
       </div>
       {projectChallenges?.[1]?.Title && (
-        <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:py-[60px] md:py-[40px] py-[30px] mx-auto blue-tick-icon">
+        <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] lg:py-[60px] md:py-[40px] py-[30px] mx-auto li-tick-mark">
           <div className="flex md:flex-row flex-col">
             <div className="w-full">
               <Heading

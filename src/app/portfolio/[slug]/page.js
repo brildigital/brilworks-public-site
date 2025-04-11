@@ -7,6 +7,7 @@ import ProjectOverviewSection from "@/app/components/PortfolioNew/ProjectOvervie
 import ProjectChallengesSection from "@/app/components/PortfolioNew/ProjectChallengesSection";
 import BluePrintForSuccess from "@/app/components/PortfolioNew/BluePrintForSuccess";
 import MoreSuccessStoriesSection from "@/app/components/PortfolioNew/MoreSuccessStoriesSection";
+import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -126,7 +127,8 @@ export default async function Page({ params }) {
       />
       {/* <SuccessThroughClientEyes /> */}
       {/* <PortfolioCTASection ctaData={CTA} /> */}
-      <MoreSuccessStoriesSection />
+      <SeeingBelieving title="More Success Stories" caseStudyToShow={2} />
+      {/* <MoreSuccessStoriesSection /> */}
     </Suspense>
   );
 }

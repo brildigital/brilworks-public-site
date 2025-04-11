@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
+import ButtonV2 from "../Common/ButtonV2";
+import Heading from "../HTMLComponents/Heading";
 
 const PortfolioFirstSection = ({
   title,
@@ -11,53 +13,35 @@ const PortfolioFirstSection = ({
   KeyValueBlock,
 }) => {
   return (
-    <div className="container max-w-[1440px] md:px-[60px] px-[20px] lg:px-[100px] 3xl:px-[120px] 3xl:py-[100px] py-[60px] md:mt-20 mt-10 mx-auto">
-      <div className="flex items-center lg:flex-row flex-col gap-9">
-        <div className="lg:w-1/2 w-full flex flex-col">
-          <h1
-            className="lg:text-[52px] md:text-[44px] text-4xl font-bold leading-normal mb-5"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-          <p className="text-lg lg:!mb-10 md:!mb-8 !mb-6">{description}</p>
-          <div className="lg:mb-[50px] md:mb-10 mb-8">
-            <BrilworksButton
-              redirect="#blueprint-section"
-              scrollingButton
-              type="button"
-              label={buttontext}
-            />
-          </div>
-          <div className="flex flex-wrap gap-y-4">
-            {KeyValueBlock?.length &&
-              KeyValueBlock.map(({ text, image }, index) => (
-                <div
-                  key={text}
-                  className="flex last:border-r-0 border-r border-spacing-4 border-borderGray mr-5 pr-5"
-                >
-                  <div className="flex items-center gap-[10px] lg:text-[26px] md:text-xl text-lg">
-                    <Image
-                      className="lg:w-8 md:w-6 w-5 lg:h-8 md:h-6 h-5"
-                      src={image?.filename}
-                      alt="person"
-                      width="32"
-                      height="32"
-                      priority
-                    />
-                    {text}
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-        <div className="lg:w-1/2 w-full flex flex-col">
-          <Image
-            className="rounded-[30px]"
-            src={images?.[0]?.filename}
-            alt="portfolio-banner"
-            width="580"
-            height="550"
-            priority
-          />
+    <div className="case-study-detail">
+      <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
+        <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+          <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
+            <div className="md:w-1/2 w-full">
+              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.25 !mb-5">
+                Case study
+              </p>
+              <Heading type="h1" className="text-white" text={title} />
+              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                {description}
+              </p>
+              <ButtonV2
+                size="large"
+                className="w-fit lg:mt-10 md:mt-7.5 mt-5"
+                label="Let’s Build Your App"
+              />
+            </div>
+            <div className="md:w-1/2 w-full">
+              <Image
+                className="rounded-2xl md:h-[650px] object-cover"
+                src={images?.[0]?.filename}
+                alt="portfolio-banner"
+                width="565"
+                height="650"
+                priority
+              />
+            </div>
+          </section>
         </div>
       </div>
     </div>

@@ -24,21 +24,16 @@
   --font_84: 5.25rem;
   --font_96: 6rem;
   --font_120: 6.5rem;
-  /* --theme-color: #0d9a9a; New color */
   --theme-color: #017eeb;
-  --theme-light: #f3fdff; /* New color */
-  /* --color_black: #1c1d1e; */
+  --theme-light: #f2f9fe;
   --color_black: #212121;
-  --navyBlue: "#000D1E";
-  --color_primary: #00ddb9;
+  --navyBlue: #000d1e;
   --color_gray: #504f4f;
   --color-light-gray: #f1f1f1;
   --border-gray: #dedede;
-  --section-bg: #f2f3f3;
+  --section-bg: #fafafa;
   --footer-bg: #f2f5f7;
   --white_color: #ffffff;
-  --main_color: #00dfb8;
-  --main_menu_hover_color: #00b6cf;
   --stars_color: #fbd000;
   --line_height_1: 1;
   --line_height_1_2: 1.2;

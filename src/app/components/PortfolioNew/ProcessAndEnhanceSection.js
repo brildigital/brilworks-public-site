@@ -8,15 +8,13 @@ import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { useMediaQuery } from "react-responsive";
-import Image from "next/image";
 
 const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1024 });
-
   return (
-    <div className="bg-colorYellow process-enhancement">
-      <div className="container max-w-[1440px] lg:px-[70px] px-4 lg:py-[60px] py-8 mx-auto">
+    <div className="bg-themeLight process-enhancement">
+      <div className="container max-w-[1280px] main-section-padding lg:!py-16 mx-auto">
         <Swiper
           className="!w-[95%] !mx-auto"
           modules={[Pagination, Autoplay, Virtual]}
@@ -46,37 +44,46 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
           }}
         >
           {processAndEnhanceBlock?.length > 0 ? (
-            processAndEnhanceBlock?.map(
+            processAndEnhanceBlock?.slice(0, 3)?.map(
               ({ image, title, description }, index) =>
                 title &&
                 description && (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide
+                    className={`${
+                      index === processAndEnhanceBlock?.length - 1
+                        ? "!border-r-1"
+                        : "lg:!border-r"
+                    } border-borderGray mb-4`}
+                    key={index}
+                  >
                     <div
-                      className={`w-full flex justify-start items-center h-full flex-col ${
-                        index === processAndEnhanceBlock?.length - 1
-                          ? "!border-r-1"
-                          : "lg:!border-r"
-                      } border-[#A7A7A7]`}
-                      key={index}
+                      className={`md:max-w-[180px] w-full ${
+                        index === 0
+                          ? "md:mr-auto md:ml-0 mx-auto"
+                          : index === 1
+                          ? "mx-auto"
+                          : "md:ml-auto md:mr-0 mx-auto"
+                      }`}
                     >
-                      <div className="text-black flex items-center lg:text-5xl text-[40px] leading-tight gap-2 font-bold lg:mb-4 mt-4">
-                        <Image
-                          className="w-6 h-6 mr-2"
-                          src={image?.filename}
-                          alt={title}
-                          width="24"
-                          height="24"
-                          priority
-                        />
-                        {title}
-                      </div>
                       <p
-                        className={`${
-                          index === 2 &&
-                          description?.trim()?.split(/\s+/)?.length < 3
-                            ? "md:w-[30%] w-full"
-                            : "md:w-[60%] w-full"
-                        } !mb-4 md:text-xl text-lg text-center`}
+                        className={`text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl leading-tight gap-2 font-medium lg:mb-4 mt-4 ${
+                          index === 0
+                            ? "md:text-left text-center"
+                            : index === 1
+                            ? "text-center"
+                            : "md:text-right text-center"
+                        }`}
+                      >
+                        {title}
+                      </p>
+                      <p
+                        className={`!mb-4 md:text-lg text-base ${
+                          index === 0
+                            ? "md:text-left text-center"
+                            : index === 1
+                            ? "text-center"
+                            : "md:text-right text-center"
+                        }`}
                       >
                         {description}
                       </p>

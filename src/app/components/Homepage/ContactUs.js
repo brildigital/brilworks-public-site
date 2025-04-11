@@ -18,7 +18,7 @@ const ContactUs = () => {
     };
   }, []);
   return (
-    <div className="bg-[#F2F9FE]">
+    <div className="bg-themeLight">
       <div className={`container max-w-[1280px] mx-auto main-section-padding`}>
         <Heading
           type="h2"
