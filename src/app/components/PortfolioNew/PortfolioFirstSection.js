@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 

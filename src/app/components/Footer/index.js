@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Image from "next/image";
 import Button from "../Common/Button";
-import { BrilworksButton } from "../PortfolioGradient/PortfolioGradientHero";
 import ButtonV2 from "../Common/ButtonV2";
 
 const Footer = () => {

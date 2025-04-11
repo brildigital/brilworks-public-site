@@ -101,7 +101,12 @@ const IndustriesWeServe = ({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industriesWeServeData?.map(
               ({ title, imageSrc, imageAlt, href }, index) => (
-                <div className="trusted-by-border rounded-2xl" key={index}>
+                <div
+                  className={
+                    darkBackground ? "" : "trusted-by-border rounded-2xl"
+                  }
+                  key={index}
+                >
                   <div
                     className={`flex flex-col items-center justify-center ${
                       darkBackground
