@@ -94,6 +94,9 @@ export async function POST(req, res) {
           html,
         };
 
+        await createHubSpotContact(payload);
+        await sendDataToSlack(payload);
+
         await sgMail
           .send(msg)
           .then((data) => {
