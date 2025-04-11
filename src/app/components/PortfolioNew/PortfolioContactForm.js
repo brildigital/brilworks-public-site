@@ -11,7 +11,8 @@ const PortfolioContactForm = ({
   darkMode = true,
 }) => {
   const pathname = usePathname();
-  console.log(downloadFileUrl);
+
+  const textToShow = page.startsWith("/portfolio/") ? "Case Study" : "E-Book";
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
@@ -20,6 +21,11 @@ const PortfolioContactForm = ({
     company: "",
     email: "",
   });
+
+  const submitText = downloadFileUrl
+    ? `Download Case Study ${textToShow}`
+    : "Submit";
+  const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -58,9 +64,6 @@ const PortfolioContactForm = ({
       if (response.ok) {
         setFormData({ name: "", company: "", email: "", message: "" });
         setRespMessage("Your response is submitted successfully.");
-        // if (downloadFileUrl) {
-        //   handleDownloadFile(downloadFileUrl);
-        // }
         clearMessage();
       } else {
         setRespMessage("Something went wrong!");
@@ -120,15 +123,7 @@ const PortfolioContactForm = ({
             size="large"
             className="hover:text-themeColor hover:!bg-colorWhite w-fit gap-2"
             icon={isSubmitting ? <Loader /> : ""}
-            label={
-              isSubmitting
-                ? downloadFileUrl
-                  ? "Downloading..."
-                  : "Submit"
-                : downloadFileUrl
-                ? "Downloaded Case Study"
-                : "Submit"
-            }
+            label={isSubmitting ? submitLoadingText : submitText}
             disabled={isSubmitting}
           />
         </div>

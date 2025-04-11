@@ -1,7 +1,5 @@
 export async function GET(request) {
-  console.log("request+++++++++++", request);
   const searchParams = request.nextUrl.searchParams;
-  console.log("searchParams+++++++++++", searchParams);
   const encodedUrl = searchParams.get("url");
 
   try {
