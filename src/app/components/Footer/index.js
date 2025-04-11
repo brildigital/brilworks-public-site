@@ -690,7 +690,7 @@ const Footer = () => {
               height="46"
               priority
             />
-            <p className="text-xl w-full !mb-[30px]">
+            <p className="md:text-xl text-lg w-full !mb-[30px]">
               Hello, we are
               <span className="gradient-text font-medium">
                 &nbsp;BRILLIAN’S.&nbsp;
@@ -698,7 +698,7 @@ const Footer = () => {
               Trying to make an effort to put the right people for you to get
               the best results. Just insight !
             </p>
-            <div className="flex items-center text-2xl font-medium mb-4">
+            <div className="flex items-center md:text-2xl textxl font-medium mb-4">
               <span className="gradient-text">We are Hiring!</span>
               <Image
                 className="w-6 h-6 ml-2"

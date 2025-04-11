@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
+import ButtonV2 from "../Common/ButtonV2";
 
 const MeetOurTeam = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -40,11 +41,11 @@ const MeetOurTeam = () => {
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <Heading
             type="h2"
-            className="text-colorWhite g:!text-[34px] md:!text-3xl !text-2xl"
+            className="text-colorWhite lg:!text-[34px] md:!text-3xl !text-2xl"
             text="Meet Our Team"
           />
           <Splide
-            className="our-team-swiper lg:pt-10 md:pt-7.7 pt-5"
+            className="our-team-swiper lg:py-10 md:py-7.7 py-5"
             options={{
               gap: 15,
               arrows: true,
@@ -78,6 +79,12 @@ const MeetOurTeam = () => {
               );
             })}
           </Splide>
+
+          <ButtonV2
+            redirect="/career/"
+            label="Join Our Team"
+            className="w-fit mx-auto mt-5"
+          />
         </div>
       </div>
     </div>

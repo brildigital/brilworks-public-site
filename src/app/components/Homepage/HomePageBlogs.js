@@ -123,7 +123,7 @@ const HomePageBlogs = () => {
                 return (
                   <div
                     key={index}
-                    className="overflow-hidden border border-[#DBDBDB] rounded-2xl"
+                    className="overflow-hidden border border-borderGray rounded-2xl"
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
@@ -148,7 +148,7 @@ const HomePageBlogs = () => {
                 return (
                   <div
                     key={index}
-                    className="overflow-hidden border border-[#DBDBDB] rounded-2xl"
+                    className="overflow-hidden border border-borderGray rounded-2xl"
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image

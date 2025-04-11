@@ -64,7 +64,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="about-us-banner">
-        <div className="banner-layer md:h-screen h-full min-h-[600px] md:max-h-[980px] max-h-full">
+        <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-28 mx-auto">
             <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
               <div className="md:w-1/2 w-full">
@@ -131,7 +131,7 @@ const AboutUs = () => {
               </div>
               <Heading
                 type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl "
+                className="lg:!text-[34px] md:!text-3xl !text-2xl"
                 text="Our Vision"
               />
 
@@ -187,14 +187,14 @@ const AboutUs = () => {
         </p>
         <Heading
           type="h2"
-          className="text-colorBlack g:!text-[34px] md:!text-3xl !text-2xl"
+          className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
           text="The Beliefs of Brilworks"
         />
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-7.5 lg:gap-10 lg:pt-10 md:pt-7.5 pt-5">
           {brilBeliefData.map(({ title, imageSrc, description }) => (
             <div
-              className="bg-white flex flex-col justify-start items-start border rounded-2xl border-[#DBDBDB] md:p-7.5 p-5"
+              className="bg-white flex flex-col justify-start items-start border rounded-2xl border-borderGray md:p-7.5 p-5"
               key={title}
             >
               <div className="brilliant-icon rounded-md mb-5">

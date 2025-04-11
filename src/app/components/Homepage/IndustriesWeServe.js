@@ -90,7 +90,7 @@ const IndustriesWeServe = ({
     },
   ];
   return (
-    <div className={darkBackground ? "we-serve-bg" : "bg-[#F2F9FE]"}>
+    <div className={darkBackground ? "we-serve-bg" : "bg-themeLight"}>
       <div className={darkBackground ? "we-serve-dark" : ""}>
         <div className="container max-w-[1280px] mx-auto main-section-padding reveal">
           <Heading
