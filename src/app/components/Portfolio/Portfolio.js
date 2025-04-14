@@ -72,10 +72,10 @@ const Portfolio = ({ caseStudyData }) => {
                       {content?.industry}
                     </p>
                     <div className="flex items-center md:gap-2.5 gap-1.5">
-                      {technology.map((data) => (
+                      {content?.technology?.map((data) => (
                         <div
                           className="bg-white md:px-4 px-2.5 py-1.5 md:py-[9px] border rounded-md"
-                          key={data?.[0]}
+                          key={data}
                         >
                           {data}
                         </div>
