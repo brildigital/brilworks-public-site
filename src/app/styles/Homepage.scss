@@ -340,6 +340,21 @@
   }
 }
 
+.swiper-pagination-bullet {
+  margin-bottom: 4px !important;
+  border-radius: 30px !important;
+  width: 6px !important;
+  height: 12px !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: var(--theme-color) !important;
+  width: 8px !important;
+  height: 20px !important;
+  margin-bottom: 0px !important;
+}
+
 .work-swiper,
 .software-review-container {
   .swiper-pagination-bullet {
@@ -405,29 +420,6 @@
     #007aeb 12.91%,
     #008ce7 45.61%,
     #00dbd3 91.35%
-  );
-}
-
-.honors-card {
-  margin-bottom: 1rem;
-  border-radius: 16px;
-  border: 1px solid #80808040;
-  transition: all 0.6s ease;
-}
-.honors-card:hover {
-  padding: 1px 1px 4px 1px;
-  border: none;
-  background: linear-gradient(
-    150.51deg,
-    #007aeb 12.91%,
-    #008ce7 45.61%,
-    #00dbd3 91.35%
-  );
-  border-image-source: linear-gradient(
-    167.42deg,
-    #007aeb -0.42%,
-    #008ce7 42.32%,
-    #00dbd3 102.1%
   );
 }
 

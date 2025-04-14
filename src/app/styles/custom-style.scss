@@ -341,6 +341,23 @@
   border: 3px solid transparent !important;
 }
 
+.splide__pagination__page {
+  width: 6px !important;
+  height: 12px !important;
+  border-radius: 30px !important;
+}
+.splide__pagination {
+  bottom: -1em !important;
+  @media screen and (max-width: 767px) {
+    bottom: -0.5em !important;
+  }
+}
+.splide__pagination__page.is-active {
+  width: 8px !important;
+  height: 20px !important;
+  background: var(--theme-color) !important;
+}
+
 .footer-background {
   width: 100vw;
   background: url("/images/v2/footer-background.png");
@@ -447,6 +464,9 @@
   background-repeat: no-repeat;
 }
 
+.overview-bubble {
+  background: url(/images/v2/vision-bubble.svg);
+}
 .brilliant-icon {
   padding: 1px 1px 2px 1px;
   background: linear-gradient(

@@ -96,53 +96,57 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="container max-w-[1280px] main-section-padding mx-auto">
-        <section className="flex flex-col md:flex-row items-center justify-start lg:gap-10 md:gap-7.5 gap-6">
-          <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-7.5 gap-5">
-            <div>
-              <div className="md:pb-7.5 pb-5 ">
-                <Image
-                  className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
-                  src="/images/v2/our-mission.webp"
-                  alt="mission-icon"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <Heading
-                type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl "
-                text="Our Mission"
-              />
+      <div className="bg-[url(/images/v2/mission-bubble.svg)] bg-no-repeat bg-[0%_60px] md:bg-[0%_110px] sxl:bg-[17.5%_142px] md:bg-[length:211px] bg-[length:110px]">
+        <div className="bg-[url(/images/v2/vision-bubble.svg)] bg-no-repeat bg-[0%_240px] md:bg-[60%_110px] sxl:bg-[54.5%_142px] md:bg-[length:211px] bg-[length:110px]">
+          <div className="container max-w-[1280px] main-section-padding mx-auto">
+            <section className="flex flex-col md:flex-row items-center justify-start lg:gap-10 md:gap-7.5 gap-6">
+              <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-7.5 gap-5">
+                <div>
+                  <div className="md:pb-7.5 pb-5 ">
+                    <Image
+                      className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+                      src="/images/v2/our-mission.webp"
+                      alt="mission-icon"
+                      width={120}
+                      height={120}
+                    />
+                  </div>
+                  <Heading
+                    type="h2"
+                    className="lg:!text-[34px] md:!text-3xl !text-2xl "
+                    text="Our Mission"
+                  />
 
-              <p className="md:text-lg text-base pt-4">
-                To empower businesses and startups with exceptional products
-                that wow customers.
-              </p>
-            </div>
-            <div>
-              <div className="md:pb-7.5 pb-5 ">
-                <Image
-                  className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
-                  src="/images/v2/our-vision.webp"
-                  alt="mission-icon"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <Heading
-                type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl"
-                text="Our Vision"
-              />
+                  <p className="md:text-lg text-base pt-4">
+                    To empower businesses and startups with exceptional products
+                    that wow customers.
+                  </p>
+                </div>
+                <div>
+                  <div className="md:pb-7.5 pb-5 ">
+                    <Image
+                      className="lg:w-28 lg:h-28 md:w-20 md:h-20 w-12 h-12"
+                      src="/images/v2/our-vision.webp"
+                      alt="mission-icon"
+                      width={120}
+                      height={120}
+                    />
+                  </div>
+                  <Heading
+                    type="h2"
+                    className="lg:!text-[34px] md:!text-3xl !text-2xl"
+                    text="Our Vision"
+                  />
 
-              <p className="md:text-lg text-base pt-4">
-                To empower businesses and startups with exceptional products
-                that wow customers.
-              </p>
-            </div>
+                  <p className="md:text-lg text-base pt-4">
+                    To empower businesses and startups with exceptional products
+                    that wow customers.
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
-        </section>
+        </div>
       </div>
 
       <MultipleKeyValueWithBG
