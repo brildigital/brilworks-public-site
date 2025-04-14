@@ -62,7 +62,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
         "https://a.storyblok.com/f/219851/565x400/75ad9804cf/building-swiper-based-mobile-app.webp",
       alt: "Social marketplace app",
       industry: "E-commerce",
-      technology: ["iOS", "Android", ".Net"],
+      technology: ["iOS", "Android", "Flutterflow"],
     },
     {
       title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
@@ -73,7 +73,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
         "https://a.storyblok.com/f/219851/565x400/d47ae82eac/connecting-pet-owners.webp",
       alt: "Pet finder app",
       industry: "Social",
-      technology: ["iOS", "Android", ".Net"],
+      technology: ["iOS", "Android", "Flutterflow"],
     },
     {
       title: "Making Early Learning Fun with An Interactive Educational Game",
@@ -84,7 +84,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
         "https://a.storyblok.com/f/219851/565x400/a8b82fb2a7/early-learning-app.webp",
       alt: "Educational mobile game",
       industry: "Ed-Tech",
-      technology: ["iOS", "Android", ".Net"],
+      technology: ["iOS", "Android", "C#"],
     },
     {
       title: "Streamlining Energy Audits with An All-In-One CRM Solution",
@@ -95,7 +95,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
         "https://a.storyblok.com/f/219851/565x400/9918cfc298/crm-based-software.webp",
       alt: "Consulting App",
       industry: "Consulting",
-      technology: ["iOS", "Android", ".Net"],
+      technology: ["NextJS", "NodeJS", "MySQL"],
     },
   ];
 
