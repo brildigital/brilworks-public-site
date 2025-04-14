@@ -17,7 +17,7 @@ const HeroSection = () => {
                   <span className="bg-clip-text text-transparent bg-theme-gradient">
                     Nextgen
                   </span>
-                  &nbsp; Technology <br /> Solutions for your next leap
+                  &nbsp;Technology <br /> Solutions for your next leap
                 </>
               }
             />
