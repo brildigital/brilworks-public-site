@@ -95,6 +95,7 @@ const Article = ({ blok }) => {
               node.attribs.href.includes("brilworks.com") ||
               node.attribs.href.startsWith("/") || // Handles relative URLs
               node.attribs.href.includes("www.brilworks.com") ||
+              node.attribs.href.includes("www.appypie.com") ||
               node.attribs.href.startsWith("..")
             )
           ) {
