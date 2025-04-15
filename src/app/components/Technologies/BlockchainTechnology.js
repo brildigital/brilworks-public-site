@@ -5,11 +5,17 @@ import dynamic from "next/dynamic";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
 import Button from "../Common/Button";
 import { faJs, faDocker } from "@fortawesome/free-brands-svg-icons";
+import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
+import MultipleCardInGrid from "../Common/MultipleCardInGrid";
+import HireDevelopersInThreeSteps from "../HireTeam/HireDevelopersInThreeSteps";
+import HireDevelopersPricingPlan from "../HireTeam/HireDevelopersPricingPlan";
 
 const CommonServices = dynamic(() => import("./CommonServices"));
 const WhyFirstSection = dynamic(() => import("./WhyFirstSection"));
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
-const CommonSolutions = dynamic(() => import("./CommonSolutions"));
+
+const HireTeamServices = dynamic(() => import("../HireTeam/HireTeamServices"));
+const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const WhyThisTech = dynamic(() => import("./WhyThisTech"));
 const HiringModels = dynamic(() => import("./HiringModels"));
 const BlockChainFAQs = dynamic(() => import("./TechnologyFAQ"));
@@ -28,80 +34,42 @@ const ThreeStepstoHireDeveloper = dynamic(() =>
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
-const blockchainFeatures = [
+const why90PlusClientReturn = [
   {
-    heading: "Global Talent, Local Precision",
+    title: "Global Talent, Local Precision",
     description:
       "Our remote blockchain developers operate in your time zone. From London to Tokyo, we synchronize with your workflow—night shifts or dawn sprints, we adapt.",
-    icon: "/images/Global.svg",
+    icon: "/images/v2/dediated-resource.svg",
   },
   {
-    heading: "Multi-Chain Mastery",
+    title: "Multi-Chain Mastery",
     description:
       "Ethereum, Hyperledger, Solana, or Polkadot. We build cross-chain ecosystems that communicate seamlessly, future-proofing your investments.",
-    icon: "/images/Multi-chain.svg",
+    icon: "/images/v2/laptop.svg",
   },
   {
-    heading: "Cost-Efficient Innovation",
+    title: "Cost-Efficient Innovation",
     description:
       "Access elite blockchain engineers at 50% less than in-house hires. No overheads, no training—just cutting-edge solutions.",
-    icon: "/images/Cost-Effective.svg",
+    icon: "/images/v2/dollar-black.svg",
   },
   {
-    heading: "Agile Engagement",
+    title: "Agile Engagement",
     description:
       "Project-based, dedicated teams, or on-demand developers. Monthly, hourly, or fixed-scope—we mold to your needs.",
-    icon: "/images/Engagement.svg",
+    icon: "/images/v2/partnership.png",
   },
   {
-    heading: "24/7 Protocol Vigilance",
+    title: "24/7 Protocol Vigilance",
     description:
       "Our experts provide round-the-clock support, ensuring your blockchain network remains secure, updated, and optimized.",
-    icon: "/images/handSettingIcon.svg",
+    icon: "/images/v2/24-7-support.svg",
   },
   {
-    heading: "Rapid Deployment",
+    title: "Rapid Deployment",
     description:
       "From concept to mainnet in record time. We deliver robust code without compromising security—even under tight deadlines.",
-    icon: "/images/Development.svg",
-  },
-];
-const blockchainServices = [
-  {
-    imgSrc: "/images/smart-contracts-devlopment.png",
-    title: "Smart Contract Development",
-    description:
-      "Self-executing contracts with zero loopholes. Code audited by third parties for vulnerabilities, ensuring ironclad compliance.",
-  },
-  {
-    imgSrc: "/images/dapp-devlopment.png",
-    title: "DApp Development",
-    description:
-      "Decentralized apps that combine intuitive UX with blockchain’s power. Scalable, secure, and built for mass adoption.",
-  },
-  {
-    imgSrc: "/images/mvp-devlopment.png",
-    title: "Blockchain Migration",
-    description:
-      "Transition legacy systems to blockchain smoothly. We ensure zero downtime, data integrity, and enhanced functionality.",
-  },
-  {
-    imgSrc: "/images/custom-blockchain-solutions.png",
-    title: "Enterprise Blockchain Solutions",
-    description:
-      "Permissioned networks tailored for industries needing privacy and control. Audit trails, role-based access, and GDPR compliance.",
-  },
-  {
-    imgSrc: "/images/nft-marketplace-devlpment.png",
-    title: "Tokenization & DeFi Platforms",
-    description:
-      "Launch tokens, NFTs, or DeFi ecosystems with secure wallets, liquidity pools, and staking mechanisms that drive engagement.",
-  },
-  {
-    imgSrc: "/images/blockchain-app-consultation.png",
-    title: "Blockchain Consulting",
-    description:
-      "From consensus algorithms to governance models—strategic roadmaps that align blockchain with your business goals.",
+    icon: "/images/v2/growth-midset-img.png",
   },
 ];
 const techStackList = [
@@ -168,7 +136,26 @@ const BlockchainTechnology = () => {
 
   return (
     <>
-      <section className="portfolio mt-[6rem]">
+      <HireTeamHeroSection
+        technologyText="Hire Blockchain Developers"
+        title="Hire Blockchain Developers to Revolutionize Your Digital Infrastructure"
+        description="Our seasoned blockchain developers engineer secure, scalable, and decentralized solutions that transform industries. Whether you’re launching a dApp, integrating smart contracts, or building enterprise-grade blockchain networks, we’re your strategic partner."
+        imageSrc="/images/v2/blockchain-banner.webp"
+      />
+      <MultipleCardInGrid
+        title="Why 95% of Clients Return?"
+        description="We don’t just write React code. We engineer user addiction. Here’s what sets us apart."
+        cardData={why90PlusClientReturn}
+      />
+      <HireTeamServices />
+      <TechnologyDevelopers bgClass="bg-white" />
+      <BenefitOfHiringDevelopers bgClass="bg-sectionBG" />
+      <TechStackWeWorkWith
+        bgClass="bg-white"
+        active="blockchains"
+        techStackList={techStackList}
+      />
+      {/* <section className="portfolio mt-[6rem]">
         <div className="mx-auto service_width">
           <div className="relative">
             <p>
@@ -288,14 +275,16 @@ Global Talent, Local Precision. Our remote blockchain developers operate in your
           active="blockchains"
           techStackList={techStackList}
         />
-      </section>
-      <CommonSolutions />
+      </section> */}
+      <HireTeamSolutions />
       <WhyThisTech />
       <HiringModels />
-      <ThreeStepstoHireDeveloper />
+      <HireDevelopersInThreeSteps
+        bgClass="bg-themeLight"
+        title="Blockchain Developers"
+      />
+      <HireDevelopersPricingPlan title="Blockchain Developer" />
       <HomePageBlogs />
-      <WhyShouldHireDevelopers />
-
       <SolutionContactForm />
       <BlockChainFAQs />
     </>

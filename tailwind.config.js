@@ -21,6 +21,7 @@ module.exports = {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Urbanist: ["Urbanist", "sans-serif"],
+        Figtree: "var(--global-font)",
       },
       colors: {
         themeColor: "var(--theme-color)",

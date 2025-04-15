@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import "../../styles/button.scss";
+import { scrollToSection } from "../lib/commonFunction";
 
 const ButtonV2 = ({
   type,
@@ -8,6 +9,7 @@ const ButtonV2 = ({
   redirect,
   className,
   icon,
+  scrollingButton,
   variant = "primary",
   size = "medium",
   ...props
@@ -32,6 +34,12 @@ const ButtonV2 = ({
         `c-btn-${variant} c-btn-${size}`,
         className,
       ].join(" ")}
+      onClick={
+        scrollingButton
+          ? (e) => scrollToSection(e, redirect.replace("#", ""))
+          : ""
+      }
+      {...props}
     >
       {label}
     </Link>

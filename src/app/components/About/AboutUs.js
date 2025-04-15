@@ -6,6 +6,7 @@ import Heading from "../HTMLComponents/Heading";
 import IndustriesWeServe from "../Homepage/IndustriesWeServe";
 import CTASection from "../Common/CTASection";
 import MeetOurTeam from "./MeetOurTeam";
+import MultipleKeyValueWithBG from "../Common/MultipleKeyValueWithBG";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -49,7 +50,7 @@ const AboutUs = () => {
     },
     {
       title: "High Caliber Talent",
-      imageSrc: "/images/v2/medal-star.png",
+      imageSrc: "/images/v2/medal-star.svg",
       description:
         "We hire top talent to drive our vision, staying ahead with rising technologies to ensure innovation, excellence, & exceptional customer service.",
     },
@@ -144,42 +145,11 @@ const AboutUs = () => {
         </section>
       </div>
 
-      <div className="bg-sectionBG">
-        <div className="container max-w-[1280px] main-section-padding mx-auto">
-          <div className="flex flex-col items-start reveal">
-            <Heading
-              type="h2"
-              className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
-              text="Empowering Greatness With Our Skills"
-            />
-            <p className="md:text-lg text-base">
-              Whether you’re looking for products and web applications that
-              excite, energize, and engage your customers or seek to transform
-              your internal processes with seamless tech innovations, we have
-              the right people, the right expertise, and the right insights to
-              serve your business needs.
-            </p>
-
-            <div className="w-full lg:pt-10 md:pt-7.5 pt-5">
-              <div className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-5">
-                {greatnessSkills.map(({ value, description, color }, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-start justify-center p-6 rounded-2xl"
-                    style={{ background: color }}
-                  >
-                    <p className="pb-2 lg:!text-[34px] md:!text-3xl !text-2xl">
-                      {value}
-                    </p>
-
-                    <span className="md:text-lg text-base">{description}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MultipleKeyValueWithBG
+        title="Empowering Greatness With Our Skills"
+        description="Whether you’re looking for products and web applications that excite, energize, and engage your customers or seek to transform your internal processes with seamless tech innovations, we have the right people, the right expertise, and the right insights to serve your business needs."
+        keyValueData={greatnessSkills}
+      />
 
       <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
         <p className="uppercase lg:text-2xl md:text-xl text-lg md:!mb-7.5 !mb-5">

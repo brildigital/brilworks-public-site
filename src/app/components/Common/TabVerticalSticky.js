@@ -6,15 +6,20 @@ import "../../styles/tab-sticky-style.scss";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { scrollToSection } from "../lib/commonFunction";
+import ButtonV2 from "./ButtonV2";
 
 const TabVerticalSticky = ({
-  sectionId, // Add sectionId prop to make each instance unique
+  sectionId,
   data,
+  darkMode = true,
+  buttonText,
   borderRight = true,
   rightSideOnlyImage = false,
 }) => {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const themeBorder = darkMode ? "border-r-[#2B3138]" : "border-r-borderGray";
+  const themeBasesText = darkMode ? "text-white" : "";
 
   const handleScroll = () => {
     // Get the current component container
@@ -99,8 +104,8 @@ const TabVerticalSticky = ({
   return (
     <div className="flex w-full" ref={containerRef}>
       <div
-        className={`md:w-1/2 main-section-padding md:!pt-10 !pt-6 ${
-          borderRight ? "border-r border-r-[#2B3138]" : ""
+        className={`md:w-1/2 main-section-padding md:!pt-10 !pr-0 !pt-6 ${
+          borderRight ? `border-r ${themeBorder}` : ""
         }`}
       >
         <aside className="stickysection__sidebar flex items-start justify-start w-full">
@@ -116,11 +121,15 @@ const TabVerticalSticky = ({
                   href={`#${value}`}
                   data-target={`#${value}`} // Changed from id to data-target
                   onClick={(e) => scrollToSection(e, value)}
-                  className="anchor-link lg:text-2xl md:text-xl text-lg break-words text-start text-colorWhite"
+                  className={`anchor-link lg:text-2xl md:text-xl text-lg break-words text-start ${
+                    darkMode ? "text-colorWhite" : ""
+                  }`}
                 >
                   <div className="flex items-center justify-start gap-5">
                     <p
-                      className={`numeric flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
+                      className={`${
+                        darkMode ? "numeric" : "numeric-l"
+                      } flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
                     >
                       {index + 1}
                     </p>
@@ -155,10 +164,14 @@ const TabVerticalSticky = ({
               />
               {!rightSideOnlyImage && (
                 <>
-                  <h3 className="md:text-2xl text-lg font-medium md:pb-3 pb-2 text-colorWhite">
+                  <h3
+                    className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBasesText}`}
+                  >
                     {data?.[0]?.title}
                   </h3>
-                  <p className="md:text-lg text-base md:pb-5 pb-4 text-colorWhite">
+                  <p
+                    className={`md:text-lg text-base md:pb-5 pb-4 ${themeBasesText}`}
+                  >
                     {data?.[0]?.description}
                   </p>
                   {data?.[0]?.service &&
@@ -177,6 +190,14 @@ const TabVerticalSticky = ({
                         </Link>
                       </div>
                     ))}
+                  {buttonText && (
+                    <ButtonV2
+                      label={buttonText}
+                      className={`!w-fit ${
+                        darkMode ? "" : "hover:text-themeColor"
+                      }`}
+                    />
+                  )}
                 </>
               )}
             </div>
@@ -199,10 +220,14 @@ const TabVerticalSticky = ({
                 </div>
                 {!rightSideOnlyImage && (
                   <div>
-                    <h3 className="md:text-2xl text-lg font-medium md:pb-3 pb-2 text-colorWhite">
+                    <h3
+                      className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBasesText}`}
+                    >
                       {title}
                     </h3>
-                    <p className="md:text-lg text-base md:pb-5 pb-4 text-colorWhite">
+                    <p
+                      className={`md:text-lg text-base md:pb-5 pb-4 ${themeBasesText}`}
+                    >
                       {description}
                     </p>
                     {service &&
@@ -222,6 +247,14 @@ const TabVerticalSticky = ({
                         </div>
                       ))}
                   </div>
+                )}
+                {buttonText && (
+                  <ButtonV2
+                    label={buttonText}
+                    className={`!w-fit ${
+                      darkMode ? "" : "hover:text-themeColor"
+                    }`}
+                  />
                 )}
               </div>
             )

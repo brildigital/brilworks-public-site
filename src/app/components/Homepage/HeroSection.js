@@ -33,7 +33,7 @@ const HeroSection = () => {
             <ButtonV2
               size="large"
               label="Book Free Consultation"
-              className="text-base md:mt-8 mt-4"
+              className="md:mt-8 mt-4"
             />
           </div>
         </div>

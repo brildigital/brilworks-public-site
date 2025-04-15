@@ -51,12 +51,12 @@ const AccordionCustomStyle = ({
               alt={`${title} icon`}
             />
           </div>
-          <h3 className="md:text-[24px] text-[20px] font-Inter">{title}</h3>
+          <h3 className="md:text-[24px] text-[20px] font-Figtree">{title}</h3>
         </div>
       </AccordionHeader>
       <AccordionBody className="py-0">
         <div className="accordion-body">
-          <p className="md:text-[20px] text-[18px] font-Inter">{content}</p>
+          <p className="md:text-[20px] text-[18px] font-Figtree">{content}</p>
           {processTags}
         </div>
       </AccordionBody>

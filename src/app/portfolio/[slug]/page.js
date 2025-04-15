@@ -1,12 +1,11 @@
 import { Suspense } from "react";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { notFound } from "next/navigation";
-import PortfolioFirstSection from "@/app/components/PortfolioNew/PortfolioFirstSection";
-import ProcessAndEnhanceSection from "@/app/components/PortfolioNew/ProcessAndEnhanceSection";
-import ProjectOverviewSection from "@/app/components/PortfolioNew/ProjectOverviewSection";
-import ProjectChallengesSection from "@/app/components/PortfolioNew/ProjectChallengesSection";
-import BluePrintForSuccess from "@/app/components/PortfolioNew/BluePrintForSuccess";
-import MoreSuccessStoriesSection from "@/app/components/PortfolioNew/MoreSuccessStoriesSection";
+import PortfolioFirstSection from "@/app/components/Portfolio/PortfolioFirstSection";
+import ProcessAndEnhanceSection from "@/app/components/Portfolio/ProcessAndEnhanceSection";
+import ProjectOverviewSection from "@/app/components/Portfolio/ProjectOverviewSection";
+import ProjectChallengesSection from "@/app/components/Portfolio/ProjectChallengesSection";
+import BluePrintForSuccess from "@/app/components/Portfolio/BluePrintForSuccess";
 import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
 
 async function fetchWithErrorHandling(url, options) {
@@ -120,15 +119,11 @@ export default async function Page({ params }) {
       />
       <ProjectOverviewSection projectOverview={ProjectOverview} />
       <ProjectChallengesSection projectChallenges={ProjectChallenges} />
-      {/* <HowWeDeliverSection howWeDelivered={HowWeDelivered} /> */}
       <BluePrintForSuccess
         blueprintForSuccess={BlueprintForSuccess}
         casestudyFileUrl={casestudyFileUrl?.url}
       />
-      {/* <SuccessThroughClientEyes /> */}
-      {/* <PortfolioCTASection ctaData={CTA} /> */}
       <SeeingBelieving title="More Success Stories" caseStudyToShow={2} />
-      {/* <MoreSuccessStoriesSection /> */}
     </Suspense>
   );
 }

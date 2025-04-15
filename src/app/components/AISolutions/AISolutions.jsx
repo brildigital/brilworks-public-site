@@ -1,9 +1,7 @@
-"use client";
-import React, { useEffect } from "react";
-import { BrilworksButton } from "../Common/BrilworksBtn";
+import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import AIGenerateField from "./AIGenerateField";
-import Button from "../Common/Button";
+import ButtonV2 from "../Common/ButtonV2";
 
 function AISolutionsFirstSection({
   title,
@@ -25,8 +23,8 @@ function AISolutionsFirstSection({
       {/* {pathname === "/ai-solutions/ai-powered-prd-generator/" ? (
         <AIGenerateField />
       ) : ( */}
-      <Button
-        className="!mb-8"
+      <ButtonV2
+        className="hover:text-themeColor !mb-8"
         label={buttontext || "Get Started Now"}
         redirect={buttonURL?.url || "/contact-us/"}
         {...(buttonURL?.url ? { target: "_blank" } : {})}

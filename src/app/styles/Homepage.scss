@@ -107,6 +107,23 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+    .banner-layer {
+      background: linear-gradient(
+        0deg,
+        rgba(18, 18, 18, 0.49) 0%,
+        rgba(9, 9, 9, 0.49) 22.77%,
+        rgba(0, 0, 0, 0.7) 45.54%,
+        rgba(0, 0, 0, 0.7) 75%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+    }
+  }
 }
 .banner-layer {
   background: linear-gradient(

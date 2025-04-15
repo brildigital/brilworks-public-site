@@ -4,18 +4,19 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { getDeveloperData } from "../lib/getDeveloper";
 import { usePathname } from "next/navigation";
-import Button from "../Common/Button";
+import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
 
-const TechnologyDevelopers = () => {
+const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
   const pathname = usePathname();
   const [techDeveloperData, setTechDeveloperData] = useState([]);
 
   const expertInTechnologyColor = [
-    "bg-[#dcecff]",
-    "bg-[#f9f0de]",
-    "bg-[#dcf9f0]",
-    "bg-[#ede9ff]",
-    "bg-[#f7e6ec]",
+    "bg-[#E5F4FF]",
+    "bg-[#E9FFE2]",
+    "bg-[#FFE8FC]",
+    "bg-[#FFE2E5]",
+    "bg-[#F4ECFF]",
   ];
 
   const showTechImgBasedOnPathname = {
@@ -92,29 +93,17 @@ const TechnologyDevelopers = () => {
   }, []);
 
   return (
-    <div
-      className={`mx-auto ${
-        pathname === "/hire-flutterflow-developer/" ||
-        pathname === "/hire-adalo-developer/" ||
-        pathname === "/hire-low-code-no-code-developer/" ||
-        pathname === "/hire-mobile-app-developer/" ||
-        pathname === "/hire-bubble-developer/"
-          ? "!w-full px-4"
-          : "service_width"
-      } xl:py-[6rem] md:py-[4rem] py-[2rem] workpadd_borderTop end-to-end`}
-    >
-      <div className="end-To-end">
+    <div className={bgClass}>
+      <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
         {techDeveloperData?.length ? (
           techDeveloperData.map(({ content, id }, index) => (
-            <div className="endTO_text solutions" key={id}>
+            <div className="" key={id}>
               {index === 0 && (
-                <h2
-                  className={`${
-                    pathname === "/hire-java-developer/" ? "!w-full" : ""
-                  } p-0`}
-                >
-                  {content?.Display_text}
-                </h2>
+                <Heading
+                  type="h2"
+                  className="lg:!text-[34px] md:!text-3xl !text-2xl mb-3"
+                  text={content?.Display_text}
+                />
               )}
             </div>
           ))
@@ -123,64 +112,42 @@ const TechnologyDevelopers = () => {
             <FetchDataSpinner />
           </div>
         )}
-      </div>
-
-      <div
-        className={`grid ${
-          techDeveloperData?.length ? "xl:grid-cols-3" : ""
-        } md:grid-cols-1 grid-cols-1 gap-[2rem] md:px-[5rem] lg:px-0 reveal`}
-      >
-        {techDeveloperData?.length ? (
-          techDeveloperData.map(
-            ({ content, id }, index) =>
-              index > 0 && (
-                <div
-                  className="border border-[#80808038] rounded-[30px]"
-                  key={id}
-                >
-                  <div className="home_sec3_box1">
-                    <div className="dots_flex !rounded-[30px] w-[85%]">
-                      <div className="dots"></div>
-                      <div className="dots"></div>
-                      <div className="dots"></div>
-                    </div>
-                    <div className="border-t-[1px]">
-                      <div className="style_sec3_swiper_home !pt-4">
-                        <div className="flex items-center gap-[1rem]">
-                          <div className="swiper_sec3_img1">
-                            <Image
-                              className={`w-[60px] rounded-xl border p-1 ${
-                                pathname === "/hire-mobile-app-developer/" ||
-                                pathname === "/hire-low-code-no-code-developer/"
-                                  ? "invert"
-                                  : ""
-                              }`}
-                              src={showTechImgBasedOnPathname[pathname]}
-                              alt={"React.js"}
-                              width="300"
-                              height="300"
-                            />
-                            {/* <Image
-                              className="w-[75px] rounded-[40px]"
-                              src={content?.Image?.filename}
-                              alt={content?.Image?.alt}
-                              width="300"
-                              height="300"
-                            /> */}
-                          </div>
-                          <div className="home_sec3_txt2">
-                            <p className="!text-[1.5rem] !font-bold">
-                              {content?.Designation}
-                            </p>
-                            {/* <p className="!text-[1.5rem] !font-bold">
-                              {content?.Name}
-                            </p> */}
-                            {/* <p className="!font-bold !text-lg">
-                              {content?.Designation}
-                            </p> */}
-                          </div>
+        <p className="md:text-lg text-base lg:!mb-10 md:!mb-7.5 !mb-5">
+          Our services drive sustainable growth.
+        </p>
+        <div
+          className={`grid ${
+            techDeveloperData?.length ? "sxl:grid-cols-3" : ""
+          } md:grid-cols-1 grid-cols-1 sxl:gap-10 md:gap-7.5 gap-5 reveal`}
+        >
+          {techDeveloperData?.length ? (
+            techDeveloperData.map(
+              ({ content, id }, index) =>
+                index > 0 && (
+                  <div
+                    key={id}
+                    className="flex flex-col h-full border border-borderGray rounded-2xl bg-colorWhite"
+                  >
+                    <div className="md:p-7.5 p-5 flex-1">
+                      <div className="flex items-start flex-col gap-4">
+                        <div className="rounded-md border md:p-3 p-2 mb-2">
+                          <Image
+                            className={`w-[58px] ${
+                              pathname === "/hire-mobile-app-developer/" ||
+                              pathname === "/hire-low-code-no-code-developer/"
+                                ? "invert"
+                                : ""
+                            }`}
+                            src={showTechImgBasedOnPathname[pathname]}
+                            alt={"React.js"}
+                            width="300"
+                            height="300"
+                          />
                         </div>
-                        <div className="service_description border-b-[1px]">
+                        <p className="md:text-xl text-lg font-medium">
+                          {content?.Designation}
+                        </p>
+                        <div className="md:text-lg text-base slg:min-h-[161px] mb-1">
                           <p
                             className={`${
                               pathname === "/hire-nodejs-developer/" ||
@@ -194,113 +161,68 @@ const TechnologyDevelopers = () => {
                           </p>
                         </div>
                         {pathname !== "/hire-aws-developer/" && (
-                          <>
-                            <div className="py-[1rem] flex items-center gap-[1rem]">
-                              <p>
-                                <Image
-                                  className="w-[15px] lg:w-[21px]"
-                                  src="/images/icons-06.png"
-                                  alt="star"
-                                  width="22"
-                                  height="22"
-                                />
-                              </p>
-                              <div>
-                                <p className="!text-lg font-semibold">
-                                  Expertise in
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              className={`flex items-center ${
-                                pathname === "/hire-blockchain-developer/"
-                                  ? "gap-[1.4rem]"
-                                  : "gap-[1rem]"
-                              } flex-row flex-wrap`}
-                            >
-                              {content?.Experts_In?.length ? (
-                                content?.Experts_In.map((technology, index) => (
-                                  <div className="flexbasis_idea" key={index}>
-                                    <div
-                                      className={`ideaBg_class ${expertInTechnologyColor[index]}`}
-                                    >
-                                      <div className="idea_title ">
-                                        <p className="!text-lg">{technology}</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                ))
-                              ) : (
-                                <div className="w-full flex align-middle justify-center">
-                                  <FetchDataSpinner />
+                          <div className="flex items-center flex-row flex-wrap gap-4">
+                            {content?.Experts_In?.length ? (
+                              content?.Experts_In.map((technology, index) => (
+                                <div
+                                  className={`rounded-md px-4 py-2 ${expertInTechnologyColor[index]}`}
+                                  key={index}
+                                >
+                                  <p className="md:!text-base !text-sm">
+                                    {technology}
+                                  </p>
                                 </div>
-                              )}
-                            </div>
-                          </>
-                        )}
-
-                        <div className="flex items-center gap-[1rem] pt-[1rem]">
-                          <p>
-                            <Image
-                              className="md:w-[17px] xl:w-full"
-                              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_30_12)'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23017eeb'/%3E%3Cpath d='M8.08102 13.9311C8.18816 14.0217 8.34951 14.0235 8.45897 13.9333C10.8471 11.9585 13.024 9.88733 15.6214 7.7973C15.8456 7.61698 15.9792 7.36482 15.9978 7.08682C16.0551 6.22275 14.9755 5.65693 14.2418 6.23531C12.0196 7.98443 10.1719 9.57103 8.44857 11.2108C8.1099 10.8884 7.65676 10.4271 7.09779 9.83522C6.66554 9.3777 5.88549 9.2986 5.36077 9.79257C4.89989 10.2261 4.8779 10.9221 5.31028 11.3773C6.35388 12.4751 7.00913 13.0229 8.08102 13.9311Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_12'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E"
-                              alt="right"
-                              width="23"
-                              height="23"
-                            />
-                          </p>
-                          <div>
-                            <p className="!text-lg">
-                              {content?.Experience_in_Year}+ Years of Experience
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-[1rem] py-[1rem]">
-                          <p>
-                            <Image
-                              className="md:w-[15px] xl:w-full"
-                              src="/images/icons-08.png"
-                              alt="time"
-                              width="22"
-                              height="22"
-                            />
-                          </p>
-                          <div>
-                            <p className="!text-lg">Full Time Available</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-center md:py-[2rem] py-[2rem]">
-                          <Button
-                            innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
-                            className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
-                            redirect="#section10_service"
-                            label={` Hire Now`}
-                            icon={
-                              <div className="w-[25px]">
-                                <img
-                                  decoding="async"
-                                  loading="lazy"
-                                  src="/images/hire-hand.png"
-                                  alt="hand"
-                                  width="20"
-                                  height="30"
-                                />
+                              ))
+                            ) : (
+                              <div className="w-full flex align-middle justify-center">
+                                <FetchDataSpinner />
                               </div>
-                            }
-                            scrollingButton
+                            )}
+                          </div>
+                        )}
+                        <div className="flex items-center gap-2 pt-1">
+                          <Image
+                            className="w-6"
+                            src="/images/v2/laptop.svg"
+                            alt="experience"
+                            width="24"
+                            height="24"
                           />
+                          <p className="!text-sm">
+                            {content?.Experience_in_Year}+ Years of Experience
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <p>
+                            <Image
+                              className="w-5"
+                              src="/images/v2/clock.svg"
+                              alt="time"
+                              width="20"
+                              height="20"
+                            />
+                          </p>
+                          <p className="!text-sm">Full Time Available</p>
                         </div>
                       </div>
                     </div>
+                    <div className="border-t border-t-borderGray md:py-7 md:px-7.5 p-5 mt-auto">
+                      <ButtonV2
+                        label="Hire Now"
+                        redirect="#section-contact-form"
+                        scrollingButton
+                        className="hover:text-themeColor"
+                      />
+                    </div>
                   </div>
-                </div>
-              )
-          )
-        ) : (
-          <div className="flex align-middle justify-center p-20">
-            <FetchDataSpinner />
-          </div>
-        )}
+                )
+            )
+          ) : (
+            <div className="flex align-middle justify-center p-20">
+              <FetchDataSpinner />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

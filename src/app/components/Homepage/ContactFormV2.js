@@ -117,7 +117,10 @@ const ContactFormV2 = ({ darkMode = false }) => {
             required
           />
         </div>
-        <div className="h-4" id="sucess_msg">
+        <div
+          className={`h-4 ${darkMode ? "text-colorWhite" : "text-colorBlack"}`}
+          id="sucess_msg"
+        >
           {respMessage}
         </div>
         <div className="flex items-center gap-5">

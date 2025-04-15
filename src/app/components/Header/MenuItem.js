@@ -8,7 +8,7 @@ const MenuItem = ({ path, onClick, name, className }) => {
   return (
     <Link href={path} onClick={onClick} className={className}>
       <p
-        className={`!mb-0 w-full whitespace-nowrap ${
+        className={`!mb-0 w-full whitespace-nowrap font-normal ${
           pathname === path ? "page-active" : "hover:!text-themeColor"
         }`}
       >

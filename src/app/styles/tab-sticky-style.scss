@@ -21,7 +21,8 @@
           border-top-left-radius: 1rem;
           border-bottom-left-radius: 1rem;
           color: #ffffff;
-          .numeric {
+          .numeric,
+          .numeric-l {
             background: #ffffff;
             color: #17283e;
           }
@@ -29,6 +30,10 @@
         .numeric {
           background: #17283e;
           color: #ffffff;
+        }
+        .numeric-l {
+          background: #e5f4ff;
+          color: var(--color_black);
         }
       }
     }
@@ -59,7 +64,15 @@
 }
 
 .stickysection__contentappend-explore-our-expertise,
-.stickysection__contentappend-why-choose-brilworks {
+.stickysection__contentappend-why-choose-brilworks,
+.stickysection__contentappend-hire-java-developer,
+.stickysection__contentappend-hire-reactjs-developer,
+.stickysection__contentappend-hire-nodejs-developer,
+.stickysection__contentappend-hire-aws-developer,
+.stickysection__contentappend-hire-react-native-developer,
+.stickysection__contentappend-hire-blockchain-developer,
+.stickysection__contentappend-hire-ui-ux-designer,
+.stickysection__contentappend-empower-digital-tranformation {
   top: 100px;
   z-index: unset;
   position: sticky;

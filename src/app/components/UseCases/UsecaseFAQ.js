@@ -61,7 +61,7 @@ const UsecaseFAQ = () => {
               >
                 <h3
                   itemProp="name"
-                  className="md:!text-2xl !text-xl font-Inter"
+                  className="md:!text-2xl !text-xl font-Figtree"
                 >
                   {question}
                 </h3>
