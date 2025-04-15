@@ -117,9 +117,6 @@ input[type="number"] {
   width: 0px;
 }
 
-.font-Inter {
-  font-family: var(--global-font);
-}
 .font-Figtree {
   font-family: var(--global-font);
 }
@@ -592,7 +589,6 @@ input[type="number"] {
 .benefit-developer-effect:hover {
   transform: translateY(-9%);
   transition: all 0.6s ease-in-out;
-  color: var(--theme-color);
 }
 
 .style_sec10_swiper_home {
@@ -832,7 +828,7 @@ textarea.form-control-txt {
 }
 
 .footer_link li .page-active {
-  font-weight: 600 !important;
+  font-weight: 400 !important;
 }
 
 .footer_link li a:hover {
@@ -894,9 +890,9 @@ textarea.form-control-txt {
   );
 }
 
-.faq-bottom .accordion-button {
+/* .faq-bottom .accordion-button {
   font-size: var(--font_21);
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   padding: 10px 0;
   color: var(--color_black) !important;
   border: 0 !important;
@@ -913,14 +909,16 @@ textarea.form-control-txt {
 }
 
 .faq-bottom .accordion-item {
-  border-radius: 20px !important;
-  border: 1px solid var(--theme-color) !important;
+  border-radius: 6px !important;
+  border-width: 1px 1px 4px 1px;
+  border-style: "solid";
+  border-color: var(--theme-color) !important;
   padding: 2rem !important;
   margin-bottom: 20px !important;
-}
-.faq-bottom .accordion-item:last-child {
+} */
+/* .faq-bottom .accordion-item:last-child {
   margin-bottom: 0px !important;
-}
+} */
 
 .linear-gradient-bg .number {
   font-weight: 700;
@@ -2464,9 +2462,9 @@ textarea.form-control-txt {
     width: 20px;
   }
 
-  .faq-bottom .accordion-item {
+  /* .faq-bottom .accordion-item {
     padding: 1rem !important;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1680px) {
@@ -2834,15 +2832,15 @@ textarea.form-control-txt {
     margin: 0 auto 1rem;
   }
 
-  .faq-bottom .accordion-button,
+  /* .faq-bottom .accordion-button,
   .faq-bottom .accordion-body {
     font-size: 16px;
     line-height: normal;
-  }
+  } */
 
-  .faq-bottom .accordion-button {
+  /* .faq-bottom .accordion-button {
     padding: 10px 0 !important;
-  }
+  } */
 
   .pricing_grid {
     grid-template-areas:
@@ -2884,10 +2882,10 @@ textarea.form-control-txt {
     font-size: var(--font_24) !important;
   }
 
-  .faq-bottom .accordion-item {
+  /* .faq-bottom .accordion-item {
     padding: 1rem !important;
     margin-bottom: 15px !important;
-  }
+  } */
 
   .pricing-desc p img {
     margin-top: 0;

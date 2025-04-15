@@ -95,13 +95,13 @@ const ExtensionOfTeam = () => {
                         open === index + 1 ? "border-none" : ""
                       }`}
                     >
-                      <h3 className="font-Inter">{item.title}</h3>
+                      <h3 className="font-Figtree">{item.title}</h3>
                     </AccordionHeader>
                     <AccordionBody
                       className={`pt-0 ${open === index + 1 ? "border-b" : ""}`}
                     >
                       <div className="accordion-body">
-                        <p className="font-Inter pb-4 pt-0">
+                        <p className="font-Figtree pb-4 pt-0">
                           {item.description}
                         </p>
                         {item.links.map((link, index) => (

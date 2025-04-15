@@ -1,8 +1,8 @@
 "use client";
-
 import { usePathname } from "next/navigation";
-import FAQAccordion from "../Common/FAQAccordion";
 import { useState } from "react";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import Heading from "../HTMLComponents/Heading";
 
 const TechnologyFAQ = () => {
   const pathname = usePathname();
@@ -419,27 +419,25 @@ const TechnologyFAQ = () => {
   const technologyFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="xl:pb-[6rem] md:pb-[4rem] pb-8 xl:px-[5%] md:px-8 px-4">
-      <div className="container max-w-[1440px] mx-auto">
-        <div className="px-4 w-full mx-auto faq-bottom">
-          <div className="solutions md:text-center text-left">
-            <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-4">
-              FAQs
-            </h2>
-          </div>
-          <div className="reveal">
-            <div itemScope="true" itemType="https://schema.org/FAQPage">
-              {technologyFAQData?.map(({ question, answer }, index) => (
-                <FAQAccordion
-                  key={index + 1}
-                  id={index + 1}
-                  question={question}
-                  answer={answer}
-                  open={open}
-                  handleOpen={handleOpen}
-                />
-              ))}
-            </div>
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
+      <div className="w-full mx-auto">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl"
+          text="Frequently Asked Questions"
+        />
+        <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
+          <div itemScope="true" itemType="https://schema.org/FAQPage">
+            {technologyFAQData?.map(({ question, answer }, index) => (
+              <GradientFAQAccordion
+                key={index + 1}
+                id={index + 1}
+                question={question}
+                answer={answer}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ const TabVertical = ({ initialTabValue, data }) => {
         <div className="md:w-1/3 w-[35%] rounded-l-[30px] bg-themeColor lg:pl-[3%] md:pl-6 md:pr-0 pr-4 lg:pr-8 py-8">
           <div className="flex flex-col">
             <div className="flex md:items-center md:justify-center lg:justify-start md:pr-6 lg:pl-2 pl-2 lg:pr-0">
-              <h3 className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-xl font-bold text-center md:my-8 my-2 font-Inter text-colorWhite">
+              <h3 className="xl:!text-5xl lg:!text-4xl md:!text-3xl text-xl font-bold text-center md:my-8 my-2 font-Figtree text-colorWhite">
                 {pathname === "/ai-ml-development-services/" && "Industries"}
               </h3>
             </div>
@@ -58,7 +58,7 @@ const TabVertical = ({ initialTabValue, data }) => {
                       </div>
                     )}
                     <p
-                      className={`lg:text-xl md:text-lg text-base font-Inter break-words text-start text-colorWhite ${
+                      className={`lg:text-xl md:text-lg text-base font-Figtree break-words text-start text-colorWhite ${
                         tabValue === value ? "font-bold" : "font-normal"
                       }`}
                     >
@@ -90,12 +90,12 @@ const TabVertical = ({ initialTabValue, data }) => {
                   />
                 </div>
                 <div className="lg:px-8 md:px-4 px-1">
-                  <h3 className="md:text-2xl text-lg font-bold text-black pb-4 font-Inter">
+                  <h3 className="md:text-2xl text-lg font-bold text-black pb-4 font-Figtree">
                     {heading}
                   </h3>
                   <ul className="md:text-xl text-base text-colorGray list-inside list-disc">
                     {listDescription?.map((listData, index) => (
-                      <li key={index} className="pb-1 font-Inter">
+                      <li key={index} className="pb-1 font-Figtree">
                         {listData}
                       </li>
                     ))}

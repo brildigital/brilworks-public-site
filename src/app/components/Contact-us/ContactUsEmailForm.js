@@ -139,7 +139,7 @@ const ContactUsEmailForm = ({ inquiryForm }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-              ></textarea>
+              />
             </span>
           </p>
         </div>

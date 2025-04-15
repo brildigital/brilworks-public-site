@@ -189,6 +189,9 @@
 
 .li-tick-mark {
   ul {
+    li.small {
+      padding-left: 30px;
+    }
     li {
       padding-left: 40px;
       padding-bottom: 10px;
@@ -217,6 +220,20 @@
         @media screen and (max-width: 767px) {
           background-position: -449px -100px;
         }
+      }
+      &.blue::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='33' viewBox='0 0 32 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9997 2.33301C8.18814 2.33301 1.83301 8.68814 1.83301 16.4997C1.83301 24.3112 8.18814 30.6663 15.9997 30.6663C23.8112 30.6663 30.1663 24.3112 30.1663 16.4997C30.1663 8.68814 23.8112 2.33301 15.9997 2.33301ZM15.9997 28.9997C9.10711 28.9997 3.49967 23.3922 3.49967 16.4997C3.49967 9.60711 9.10711 3.99967 15.9997 3.99967C22.8922 3.99967 28.4997 9.60711 28.4997 16.4997C28.4997 23.3922 22.8922 28.9997 15.9997 28.9997Z' fill='%23017EEB'/%3E%3Cpath d='M22.4645 11.9404L15.112 19.2928L11.3395 15.5206C11.0143 15.1951 10.4863 15.1951 10.1611 15.5206C9.83561 15.846 9.83561 16.3737 10.1611 16.699L14.5228 21.0605C14.6854 21.2233 14.8988 21.3047 15.112 21.3047C15.3252 21.3047 15.5386 21.2233 15.7012 21.0605L23.6429 13.1188C23.9684 12.7934 23.9684 12.2658 23.6429 11.9404C23.3177 11.6149 22.7897 11.6149 22.4645 11.9404Z' fill='%23017EEB'/%3E%3C/svg%3E%0A");
+        background-position: -448px -100px;
+        @media screen and (max-width: 767px) {
+          background-position: -449px -100px;
+        }
+      }
+      &.blue.small::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 1.375C6.14135 1.375 1.375 6.14135 1.375 12C1.375 17.8587 6.14135 22.625 12 22.625C17.8587 22.625 22.625 17.8587 22.625 12C22.625 6.14135 17.8587 1.375 12 1.375ZM12 21.375C6.83057 21.375 2.625 17.1694 2.625 12C2.625 6.83057 6.83057 2.625 12 2.625C17.1694 2.625 21.375 6.83057 21.375 12C21.375 17.1694 17.1694 21.375 12 21.375Z' fill='%23017EEB'/%3E%3Cpath d='M16.8482 8.57958L11.3337 14.0939L8.50441 11.2648C8.26051 11.0206 7.86451 11.0206 7.62061 11.2648C7.37646 11.5088 7.37646 11.9045 7.62061 12.1486L10.8919 15.4197C11.0138 15.5418 11.1738 15.6028 11.3338 15.6028C11.4937 15.6028 11.6537 15.5418 11.7757 15.4197L17.7319 9.46338C17.9761 9.21935 17.9761 8.8236 17.7319 8.57958C17.488 8.33545 17.092 8.33545 16.8482 8.57958Z' fill='%23017EEB'/%3E%3C/svg%3E%0A");
+        width: 22px;
+        height: 22px;
+        background-position: -457px -97px;
+        top: 1px;
       }
     }
   }
@@ -431,6 +448,20 @@
 }
 .download-case-study {
   background-image: url("/images/v2/download-case-study.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.hire-team-section {
+  background-image: url("/images/v2/hire-banner-1.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.hire-team-contact-section {
+  background-image: url("/images/v2/hire-team-contact-banner.webp");
   width: 100%;
   background-size: cover;
   background-position: 50%;

@@ -1,6 +1,5 @@
-import Image from "next/image";
+"use client";
 import React, { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import Loader from "../Homepage/Loader";
 import uuid4 from "uuid4";
 
@@ -9,7 +8,6 @@ const AIGenerateField = () => {
   const [isValidProductName, setIsValidProductName] = useState(true);
   const [respMessage, setRespMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const validateCharacterLimit = (text) => {
     return typeof text === "string" && text.length <= 255;

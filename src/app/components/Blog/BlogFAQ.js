@@ -28,38 +28,42 @@ const BlogFAQ = ({ FAQData }) => {
       <div>
         <div itemScope="true" itemType="https://schema.org/FAQPage">
           {FAQData?.length &&
-            FAQData?.map(({ Question, Answer }, index) => (
-              Question && Answer   && <Accordion
-                key={index + 1}
-                open={open === index + 1}
-                icon={<Icon id={index + 1} open={open} />}
-                className="accordion-item bg-colorWhite"
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
-              >
-                <AccordionHeader
-                  onClick={() => handleOpen(index + 1)}
-                  className="accordion-button"
-                >
-                  <h3 itemProp="name" className="font-Inter">
-                    {Question}
-                  </h3>
-                </AccordionHeader>
-                <AccordionBody>
-                  <div
-                    className="accordion-body"
-                    itemScope="true"
-                    itemProp="acceptedAnswer"
-                    itemType="https://schema.org/Answer"
+            FAQData?.map(
+              ({ Question, Answer }, index) =>
+                Question &&
+                Answer && (
+                  <Accordion
+                    key={index + 1}
+                    open={open === index + 1}
+                    icon={<Icon id={index + 1} open={open} />}
+                    className="accordion-item bg-colorWhite"
+                    itemScope
+                    itemProp="mainEntity"
+                    itemType="https://schema.org/Question"
                   >
-                    <p style={{ whiteSpace: "pre-wrap" }} itemProp="text">
-                      {Answer}
-                    </p>
-                  </div>
-                </AccordionBody>
-              </Accordion>
-            ))}
+                    <AccordionHeader
+                      onClick={() => handleOpen(index + 1)}
+                      className="accordion-button"
+                    >
+                      <h3 itemProp="name" className="font-Figtree">
+                        {Question}
+                      </h3>
+                    </AccordionHeader>
+                    <AccordionBody>
+                      <div
+                        className="accordion-body"
+                        itemScope="true"
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <p style={{ whiteSpace: "pre-wrap" }} itemProp="text">
+                          {Answer}
+                        </p>
+                      </div>
+                    </AccordionBody>
+                  </Accordion>
+                )
+            )}
         </div>
       </div>
     </div>

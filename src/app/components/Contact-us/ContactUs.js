@@ -8,6 +8,7 @@ import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
 import CTASection from "../Common/CTASection";
+import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
@@ -46,19 +47,19 @@ const ContactUs = () => {
   const whatMakeUsBrilliant = [
     {
       title: "People",
-      imageSrc: "/images/v2/people-icon-vector.svg",
+      icon: "/images/v2/people-icon-vector.svg",
       description:
         "With our design & development ninjas by our side, there’s absolutely nothing we can’t achieve.",
     },
     {
       title: "Progress",
-      imageSrc: "/images/v2/medal-star.svg",
+      icon: "/images/v2/medal-star.svg",
       description:
         "We’ve built and launched more than 120+ products in 20 countries across the globe.",
     },
     {
       title: "Passion",
-      imageSrc: "/images/v2/star.svg",
+      icon: "/images/v2/star.svg",
       description:
         "We turn your product vision from brainstorming to a fully implemented real-world solution.",
     },
@@ -196,42 +197,13 @@ const ContactUs = () => {
           />
         </div>
       </section>
-      <section className="bg-sectionBG">
-        <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
-          <Heading
-            type="h2"
-            className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
-            text="What Makes Us Brilliant?"
-          />
+      <MultipleCardInGrid
+        bgClass="bg-sectionBG"
+        title="What Makes Us Brilliant?"
+        description=""
+        cardData={whatMakeUsBrilliant}
+      />
 
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-7.5 lg:gap-10 lg:pt-10 md:pt-7.5 pt-5">
-            {whatMakeUsBrilliant.map(({ title, imageSrc, description }) => (
-              <div
-                className="bg-white flex flex-col justify-start items-start border rounded-2xl border-borderGray md:p-7.5 p-5"
-                key={title}
-              >
-                <div className="brilliant-icon rounded-md mb-5">
-                  <div className="flex items-center justify-start p-4 bg-white rounded-md">
-                    <Image
-                      className="md:w-8 md:h-8 w-6 h-6"
-                      src={imageSrc}
-                      alt={`${title}-icon`}
-                      width={32}
-                      height={32}
-                    />
-                  </div>
-                </div>
-                <Heading
-                  type="h3"
-                  className="text-colorBlack md:!text-xl !text-lg font-medium"
-                  text={title}
-                />
-                <p className="md:text-lg text-base pt-4">{description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       <CTASection
         title="Always Here to Help!"
         description={

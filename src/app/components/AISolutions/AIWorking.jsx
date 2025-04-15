@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { BrilworksButton } from "../Common/BrilworksBtn";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
 
 const AIWorking = ({ data }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -47,10 +47,10 @@ const AIWorking = ({ data }) => {
             })}
           </div>
           <div className="mt-4 mb-2 flex items-center md:justify-start justify-center">
-            <BrilworksButton
+            <ButtonV2
               label={data?.[0]?.button_text}
               redirect={data?.[0]?.youtube_link?.url || "/contact-us/"}
-              type="primary"
+              className="hover:text-themeColor"
               {...(data?.[0]?.youtube_link?.url ? { target: "_blank" } : {})}
             />
           </div>

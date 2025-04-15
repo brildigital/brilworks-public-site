@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/custom-style.scss";
-import { BrilworksButton } from "../Common/BrilworksBtn";
+import ButtonV2 from "../Common/ButtonV2";
 
 const AISolutionsCTA = ({ CTA }) => {
   return (
@@ -12,10 +12,10 @@ const AISolutionsCTA = ({ CTA }) => {
           </h3>
 
           <div className="flex items-center justify-center">
-            <BrilworksButton
+            <ButtonV2
               className="button-white hover:!text-colorWhite hover:!bg-themeColor"
               label={CTA?.button_text}
-              type="white"
+              variant="secondary"
             />
           </div>
         </div>

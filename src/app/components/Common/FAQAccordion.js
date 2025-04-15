@@ -25,7 +25,7 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
       onClick={() => handleOpen(id)}
       className="accordion-button"
     >
-      <h2 itemProp="name" className="font-Inter">
+      <h2 itemProp="name" className="font-Figtree">
         {question}
       </h2>
     </AccordionHeader>
@@ -36,7 +36,7 @@ const FAQAccordion = ({ id, question, answer, open, handleOpen }) => (
         itemProp="acceptedAnswer"
         itemType="https://schema.org/Answer"
       >
-        <div itemProp="text" className="font-Inter">
+        <div itemProp="text" className="font-Figtree">
           {answer}
         </div>
       </div>

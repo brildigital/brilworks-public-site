@@ -8,8 +8,19 @@ import {
   AccordionBody,
   AccordionHeader,
 } from "@material-tailwind/react";
+import ButtonV2 from "./ButtonV2";
+import Heading from "../HTMLComponents/Heading";
 
-const TabAccordionDark = ({ open, handleOpen, index, data }) => {
+const TabAccordionDark = ({
+  open,
+  handleOpen,
+  index,
+  data,
+  buttonText,
+  darkMode = true,
+}) => {
+  const themeBorder = darkMode ? "border-t-[#2B3138]" : "border-t-borderGray";
+  const themeBaseText = darkMode ? "!text-white" : "!text-colorBlack";
   return (
     <Accordion open={open === index}>
       <AccordionHeader
@@ -17,38 +28,37 @@ const TabAccordionDark = ({ open, handleOpen, index, data }) => {
         className={`px-5
         ${
           open === index
-            ? "bg-tab-gradient rounded-l-2xl border-b-0"
+            ? "bg-tab-gradient border-b-0"
             : index === 1
             ? "bordert-t-0 border-b-0"
-            : "border-t border-t-[#2B3138] border-b-0"
+            : `border-t ${themeBorder} border-b-0`
         }`}
       >
-        <div className="w-full font-Figtree flex items-center justify-between gap-4 text-colorWhite text-lg">
+        <div
+          className={`w-full font-Figtree flex items-center justify-between gap-4 ${themeBaseText} text-lg`}
+        >
           <div className="flex items-center gap-4">
             <p
               className={`flex items-center justify-center lg:w-10 lg:h-10 w-8 h-8 font-semibold rounded-full lg:text-2xl md:text-xl ${
                 open === index
-                  ? "bg-white  text-colorBlack"
-                  : "bg-[#17283E] text-colorWhite"
+                  ? `bg-white text-colorBlack`
+                  : `bg-[#17283E] text-colorWhite`
               }`}
             >
               {index}
             </p>
-            <h2>{data?.title}</h2>
-          </div>
-          {open === index && (
-            <Image
-              src="/images/v2/active-tab-pointer.svg"
-              alt="active-pointer"
-              className="w-6 h-6"
-              width="24"
-              height="24"
+            <Heading
+              type="h2"
+              className={`${
+                open === index ? "text-colorWhite" : `${themeBaseText}`
+              } lg:!text-[34px] md:!text-2xl !text-xl`}
+              text={data?.title}
             />
-          )}
+          </div>
         </div>
       </AccordionHeader>
       <AccordionBody
-        className={`font-Figtree text-colorWhite px-5 ${
+        className={`font-Figtree ${themeBaseText} px-5 ${
           open === index ? "border-b-0 border-b-[#2B3138]" : ""
         }`}
       >
@@ -81,6 +91,9 @@ const TabAccordionDark = ({ open, handleOpen, index, data }) => {
                 </Link>
               </div>
             ))}
+          {buttonText && (
+            <ButtonV2 className="hover:text-themeColor" label={buttonText} />
+          )}
         </div>
       </AccordionBody>
     </Accordion>

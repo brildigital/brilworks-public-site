@@ -1,190 +1,154 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
-import { scrollToSection } from "../lib/commonFunction";
-import Button from "../Common/Button";
-
-const ContentBlock = ({ contentData }) => {
-  const pathname = usePathname();
-  return (
-    <div className="hire_sec1_service_50">
-      <div className="react-technology">
-        <div className="relative z-10 rounded-[30px] !border-[1px] border-themeColor">
-          <div className="dots_flex">
-            <div className="dots"></div>
-            <div className="dots"></div>
-            <div className="dots"></div>
-          </div>
-          <div className="background-hover border-t-[1px] border-themeColor">
-            <div className="style_sec3_swiper_home">
-              <div className="flex gap-[1rem] pb-[2rem]">
-                {contentData.images.map((image, index) => (
-                  <img
-                    key={index}
-                    decoding="async"
-                    loading="lazy"
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-[76px]"
-                  />
-                ))}
-              </div>
-              <div className="developer_sec6_title mb-2">
-                <p>{contentData.title}</p>
-              </div>
-              <div className="hire_data_sec">
-                <p
-                  className={
-                    pathname === "/hire-java-developer/"
-                      ? "md:h-[150px] min-h-[150px]"
-                      : "md:h-[120px] min-h-[120px]"
-                  }
-                >
-                  {contentData.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
+import Image from "next/image";
 
 const TechnologyCombination = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const firstContentMap = {
-    "/hire-reactjs-developer/": {
-      images: [
-        { src: "/images/3-1.png", alt: "reactjs" },
-        { src: "/images/js-1.png", alt: "nodejs" },
-      ],
-      title: "1. React Node Developer",
-      description:
-        "React Node is a powerful combination of the two popular JavaScript technologies, Reactjs and Node.js. Hire React Node developer from us to add amazing functionality and scalability to your projects.",
-      minHeight: "120px",
-    },
-    "/hire-java-developer/": {
-      images: [
-        { src: "/images/java_logo.png", alt: "java" },
-        { src: "/images/angular_logo.png", alt: "angularjs" },
-      ],
-      title: "1. Java Angular Developer",
-      description:
-        "With the combination of Angular and Java technologies, you can use end-to-end full-stack development to get a fast and powerful web application in no time. It has been used to create real-world applications in enterprise projects that can handle large amounts of traffic and provide a smooth user experience.",
-      minHeight: "150px",
-    },
-    "/hire-nodejs-developer/": {
-      images: [
-        { src: "/images/js-1.png", alt: "nodejs" },
-        { src: "/images/3-1.png", alt: "reactjs" },
-      ],
-      title: "1. Node React Developer",
-      description:
-        "This master combination of our full stack Node js and React js will help you build complex apps with a clean codebase and great performance. Acquire our front-end + back-end services to receive full support on the development of your project.",
-      minHeight: "120px",
-    },
+  const javaTechCombination = {
+    title: "Full Stack Java Development to Level Up Your Web Apps",
+    buttonText: "Hire Full Stack Java Developers",
+    combinationDataList: [
+      {
+        images: [
+          { src: "/images/v2/java-logo.svg", alt: "java" },
+          { src: "/images/v2/angular-logo.svg", alt: "angularjs" },
+        ],
+        title: "Java Angular Developer",
+        description:
+          "With the combination of Angular and Java technologies, you can use end-to-end full-stack development to get a fast and powerful web application in no time. It has been used to create real-world applications in enterprise projects that can handle large amounts of traffic and provide a smooth user experience.",
+        minHeight: "150px",
+      },
+      {
+        images: [
+          { src: "/images/v2/java-logo.svg", alt: "java" },
+          { src: "/images/v2/react-logo.svg", alt: "reactjs" },
+        ],
+        title: "Java React Developer",
+        description:
+          "We bring you React’s great front-end for your users and provide Java’s robust backend to rapidly build your solution. Our full stack experts are well-versed in bringing you the best of both these technologies.",
+        minHeight: "150px",
+      },
+    ],
+  };
+  const reactTechCombination = {
+    title: "The Right React JS Combination Just for You",
+    buttonText: "Hire Full Stack Reactjs Developers",
+    combinationDataList: [
+      {
+        images: [
+          { src: "/images/v2/react-logo.svg", alt: "reactjs" },
+          { src: "/images/v2/node-logo.svg", alt: "nodejs" },
+        ],
+        title: "React Node Developer",
+        description:
+          "React Node is a powerful combination of the two popular JavaScript technologies, Reactjs and Node.js. Hire React Node developer from us to add amazing functionality and scalability to your projects.",
+        minHeight: "120px",
+      },
+      {
+        images: [
+          { src: "/images/v2/react-logo.svg", alt: "reactjs" },
+          { src: "/images/v2/java-logo.svg", alt: "java" },
+        ],
+        title: "React Java Developer",
+        description:
+          "Modernize your projects with a React-driven website and Java backend. We’ll create an app that’s visually beautiful, full of features, and works on every device. Hire full stack react developers from us to build a feature-rich interface without making the backend unreadable or redundant.",
+        minHeight: "120px",
+      },
+    ],
+  };
+  const nodeTechCombination = {
+    title: "Hire Node JS Developer to AMP It Up A Notch",
+    buttonText: "Hire Full Stack Nodejs Developers",
+    combinationDataList: [
+      {
+        images: [
+          { src: "/images/v2/node-logo.svg", alt: "nodejs" },
+          { src: "/images/v2/react-logo.svg", alt: "reactjs" },
+        ],
+        title: "Node React Developer",
+        description:
+          "This master combination of our full stack Node js and React js will help you build complex apps with a clean codebase and great performance. Acquire our front-end + back-end services to receive full support on the development of your project.",
+        minHeight: "120px",
+      },
+      {
+        images: [
+          { src: "/images/v2/node-logo.svg", alt: "nodejs" },
+          { src: "/images/v2/angular-logo.svg", alt: "angularjs" },
+        ],
+        title: "Node Angular Developer",
+        description:
+          "This powerful duo of full stack Node js + Angular can design an engaging and interactive user interface that interacts with the backend easily. Acquire our highly scalable and robust front-end + backend services to bring your business an edge over your competitors.",
+        minHeight: "120px",
+      },
+    ],
   };
 
-  const secondContentMap = {
-    "/hire-reactjs-developer/": {
-      images: [
-        { src: "/images/3-1.png", alt: "reactjs" },
-        { src: "/images/java_logo.png", alt: "java" },
-      ],
-      title: "2. React Java Developer",
-      description:
-        "Modernize your projects with a React-driven website and Java backend. We’ll create an app that’s visually beautiful, full of features, and works on every device. Hire full stack react developers from us to build a feature-rich interface without making the backend unreadable or redundant.",
-      minHeight: "120px",
-    },
-    "/hire-java-developer/": {
-      images: [
-        { src: "/images/java_logo.png", alt: "java" },
-        { src: "/images/3-1.png", alt: "reactjs" },
-      ],
-      title: "2. Java React Developer",
-      description:
-        "We bring you React’s great front-end for your users and provide Java’s robust backend to rapidly build your solution. Our full stack experts are well-versed in bringing you the best of both these technologies.",
-      minHeight: "150px",
-    },
-    "/hire-nodejs-developer/": {
-      images: [
-        { src: "/images/js-1.png", alt: "nodejs" },
-        { src: "/images/angular_logo.png", alt: "angularjs" },
-      ],
-      title: "2. Node Angular Developer",
-      description:
-        "This powerful duo of full stack Node js + Angular can design an engaging and interactive user interface that interacts with the backend easily. Acquire our highly scalable and robust front-end + backend services to bring your business an edge over your competitors.",
-      minHeight: "120px",
-    },
+  const showDataBasedOnPathname = {
+    "/hire-java-developer/": javaTechCombination,
+    "/hire-reactjs-developer/": reactTechCombination,
+    "/hire-nodejs-developer/": nodeTechCombination,
   };
 
-  const firstCombinationData = firstContentMap[pathname] || {};
-  const secondCombinationData = secondContentMap[pathname] || {};
-
-  const showButtonText = {
-    "/hire-reactjs-developer/": "Hire Full Stack Reactjs Developers",
-    "/hire-nodejs-developer/": "Hire Full Stack Nodejs Developers",
-    "/hire-java-developer/": "Hire Full Stack Java Developers",
-  };
-  const showTitle = {
-    "/hire-reactjs-developer/": (
-      <>
-        THE RIGHT REACT JS COMBINATIONS {!isMobile && <br />}
-        JUST FOR YOU
-      </>
-    ),
-    "/hire-nodejs-developer/": (
-      <>
-        HIRE STACK NODE JS DEVELOPER TO {!isMobile && <br />}
-        AMP IT UP A NOTCH
-      </>
-    ),
-    "/hire-java-developer/": (
-      <>
-        FULL STACK JAVA DEVELOPMENT TO {!isMobile && <br />}
-        LEVEL UP YOUR WEB APPS
-      </>
-    ),
-  };
-
-  const buttonText = showButtonText[pathname] || null;
-  const titleText = showTitle[pathname] || null;
+  const combinationData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="mx-auto service_width">
-      <div className="solutions md:text-center text-left pb-8">
-        <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px]">
-          {titleText}
-        </h2>
-      </div>
+    <div
+      className={pathname === "/hire-reactjs-developer/" ? "" : "bg-themeLight"}
+    >
+      <div className="container max-w-[1280px] mx-auto main-section-padding">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl mb-3"
+          text={combinationData.title}
+        />
 
-      <div className="grid xl:grid-cols-2 md:grid-cols-1 grid-cols-1 gap-[4rem] reveal md:px-[3rem] lg:px-0">
-        <ContentBlock contentData={firstCombinationData} />
-        <ContentBlock contentData={secondCombinationData} />
-      </div>
+        <div className="grid sxl:grid-cols-2 md:grid-cols-1 grid-cols-1 sxl:gap-10 md:gap-7.5 gap-5 slg:py-10 md:py-7.5 py-5 reveal">
+          {combinationData.combinationDataList?.map((contentData, index) => (
+            <div
+              className="rounded-2xl border border-borderGray bg-white md:p-7.5 p-5"
+              key={index}
+            >
+              <div className="flex gap-5 pb-6">
+                {contentData.images.map((image, index) => (
+                  <div className="brilliant-icon rounded-md" key={index}>
+                    <div className="flex items-center justify-center sxl:w-[82px] w-16 sxl:h-[82px] h-16 bg-white rounded-md">
+                      <Image
+                        className="slg:w-auto w-[70%]"
+                        src={image.src}
+                        alt={image.alt}
+                        width={32}
+                        height={32}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-      <div className="flex items-center justify-center xl:pt-[6rem] md:pt-[4rem] pt-[2rem]">
-        <Button
-          innerClassName="flex items-center justify-center gap-2 !py-1 !px-4"
-          className="!bg-colorWhite hover:!bg-themeColor !text-colorBlack hover:!text-colorWhite"
-          redirect="#section10_service"
-          label={buttonText}
-          icon={
-            <div className="w-[25px]">
-              <img
-                decoding="async"
-                loading="lazy"
-                src="/images/hire-hand.png"
-                alt="hand"
-                width="20"
-                height="30"
-              />
+              <p className="md:!text-xl !text-lg font-medium pb-4">
+                {contentData.title}
+              </p>
+              <p
+                className={`text-base ${
+                  pathname === "/hire-java-developer/"
+                    ? "md:h-[150px] min-h-[150px]"
+                    : "md:h-[120px] min-h-[120px]"
+                }`}
+              >
+                {contentData.description}
+              </p>
             </div>
-          }
+          ))}
+        </div>
+
+        <ButtonV2
+          redirect="#section-contact-form"
+          label={combinationData.buttonText}
+          className="md:mt-5 mt-4 hover:!text-themeColor w-fit mx-auto"
           scrollingButton
         />
       </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import PortfolioContactForm from "../PortfolioNew/PortfolioContactForm";
+import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
 const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
   return (

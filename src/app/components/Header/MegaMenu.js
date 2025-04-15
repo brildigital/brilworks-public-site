@@ -31,13 +31,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
                 : "hover:text-themeColor"
             }`}
           >
-            <p
-              className={`!mb-0  ${
-                pathname.includes("/portfolio/")
-                  ? "group-hover/item:text-themeColor"
-                  : "group-hover/item:text-themeColor"
-              } uppercase`}
-            >
+            <p className="!mb-0 group-hover/item:text-themeColor uppercase font-normal">
               {name}
             </p>
             <svg
@@ -70,7 +64,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
           }`}
         >
           {heading && (
-            <div className={`font-semibold text-base w-40 pt-2 font-Inter`}>
+            <div className={`font-semibold text-base w-40 pt-2 font-Figtree`}>
               {heading}
             </div>
           )}
@@ -82,7 +76,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             {menuItems.map((mainSection) => (
               <div key={mainSection?.name} className="flex flex-col gap-3">
                 <span
-                  className={`font-semibold text-base break-words font-Inter`}
+                  className={`font-semibold text-base break-words font-Figtree`}
                 >
                   {mainSection?.name}
                 </span>

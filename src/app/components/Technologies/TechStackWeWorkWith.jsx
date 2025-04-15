@@ -10,70 +10,91 @@ import {
 } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Heading from "../HTMLComponents/Heading";
 
-function TechStackWeWorkWith({ active = "", techStackList = [] }) {
+function TechStackWeWorkWith({
+  bgClass = "bg-themeLight",
+  active = "",
+  techStackList = [],
+}) {
   const [activeTab, setActiveTab] = useState(active);
 
   return (
-    <div className="mx-auto w-[85%] xl:pt-[6rem] md:pt-[4rem] pt-[2rem] workpadd_borderTop end-to-end !mt-10 ">
-      <div className="end-To-end reveal">
-        <div className="endTO_text solutions flex flex-col gap-2">
-          <h2 className="!w-full p-0 uppercase">Tech Stack We Work With</h2>
-        </div>
-      </div>
-      <Tabs className="reveal" value={activeTab}>
-        <TabsHeader
-          className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 sm:flex-row flex-col items-center"
-          indicatorProps={{
-            className:
-              "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
-          }}
+    <div className={bgClass}>
+      <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl"
+          text="Tech Stack We Work With"
+        />
+        <Tabs
+          className="tech-stack-working sxl:pt-10 md:pt-7.5 pt-5 reveal"
+          orientation="horizontal"
+          value={activeTab}
         >
-          {techStackList.map(({ title, value }) => (
-            <Tab
-              key={value}
-              value={value}
-              onClick={() => setActiveTab(value)}
-              className={
-                activeTab === value
-                  ? "bg-gray-200 sm:bg-transparent sm:border-b-2 border-themeColor text-themeColor font-semibold  text-lg md:text-xl"
-                  : " text-lg md:text-xl"
-              }
-            >
-              {title}
-            </Tab>
-          ))}
-        </TabsHeader>
-        <TabsBody>
-          {techStackList.map(({ value, items }) => (
-            <TabPanel
-              className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full"
-              key={value}
-              value={value}
-            >
-              {items.map(({ label, icon, color, iconifyIcon }, index) => (
-                <div
-                  className="flex flex-col gap-2 items-center border-2 border-transparent hover:border-gray-200 hover:-translate-y-1 duration-300 px-3 py-5 rounded-lg"
-                  key={index}
-                >
-                  {iconifyIcon ? (
-                    <Image
-                      className="w-[75px] h-[75px]"
-                      src={iconifyIcon}
-                      alt="icon"
-                      height={75}
-                      width={75}
-                    />
-                  ) : (
-                    <FontAwesomeIcon icon={icon} size="5x" style={{ color }} />
-                  )}
-                  <p className="text-lg sm:text-xl font-semibold">{label}</p>
-                </div>
-              ))}
-            </TabPanel>
-          ))}
-        </TabsBody>
-      </Tabs>
+          <TabsHeader
+            className={`border border-borderGray md:flex-row flex-col ${
+              bgClass === "bg-themeLight"
+                ? "bg-colorWhite rounded-md"
+                : "bg-themeLight rounded-[30px]"
+            }`}
+          >
+            {techStackList.map(({ title, value }) => (
+              <Tab
+                key={value}
+                value={value}
+                onClick={() => setActiveTab(value)}
+                className={`font-Figtree ${
+                  activeTab === value
+                    ? `sm:bg-transparent !bg-themeColor text-white font-medium sxl:text-xl text-lg md:text-xl ${
+                        bgClass === "bg-themeLight"
+                          ? "rounded-md"
+                          : "rounded-[30px]"
+                      }`
+                    : "text-lg md:text-xl"
+                }`}
+              >
+                {title}
+              </Tab>
+            ))}
+          </TabsHeader>
+          <TabsBody>
+            {techStackList.map(({ value, items }) => (
+              <TabPanel
+                className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full p-0 sxl:pt-10 md:pt-7.5 pt-5"
+                key={value}
+                value={value}
+              >
+                {items.map(({ label, icon, color, iconifyIcon }, index) => (
+                  <div
+                    className="flex flex-col gap-4 items-center border bg-white border-borderGray rounded-2xl hover:-translate-y-2 duration-500 sxl:p-10 md:p-7.5 p-5"
+                    key={index}
+                  >
+                    {iconifyIcon ? (
+                      <Image
+                        className="w-[75px] h-[75px]"
+                        src={iconifyIcon}
+                        alt="icon"
+                        height={75}
+                        width={75}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={icon}
+                        size="5x"
+                        style={{ color }}
+                      />
+                    )}
+                    <p className="font-Figtree text-colorBlack md:text-xl text-lg font-medium">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </TabPanel>
+            ))}
+          </TabsBody>
+        </Tabs>
+      </div>
     </div>
   );
 }
