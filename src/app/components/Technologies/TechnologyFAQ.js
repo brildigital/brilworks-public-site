@@ -420,7 +420,7 @@ const TechnologyFAQ = () => {
 
   return (
     <div className="container max-w-[1280px] main-section-padding mx-auto">
-      <div className="w-full mx-auto">
+      <div className="w-full">
         <Heading
           type="h2"
           className="lg:!text-[34px] md:!text-3xl !text-2xl"

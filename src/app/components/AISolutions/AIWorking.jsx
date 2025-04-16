@@ -1,50 +1,38 @@
-"use client";
 import React from "react";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 
 const AIWorking = ({ data }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
-    <div className="bg-sectionBG md:py-10 lg:py-[60px] py-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 container max-w-[1440px] mx-auto px-6 md:px-14 xl:px-28">
-        <div className="flex flex-col gap-3 md:gap-5">
+    <div className="container max-w-[1280px] main-section-padding-top mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 sxl:gap10 md:gap-7.5 gap-5">
+        <div className="">
           <Heading
-            className="xl:!text-[46px]"
             type="h2"
-            data={data?.[0]?.title ?? ""}
+            className="lg:!text-[34px] md:!text-3xl !text-2xl"
+            text={data?.[0]?.title ?? ""}
           />
-          <div className="text-lg md:text-xl">{data?.[0]?.description}</div>
+          <p className="md:text-lg text-base !pt-3 md:pb-7.5 pb-5">
+            {data?.[0]?.description}
+          </p>
 
-          <div className="flex flex-col sm:gap-3 md:gap-5 ">
-            {data?.slice(1, 5).map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`${isMobile ? "flex flex-col gap-2 mb-2" : ""}`}
-                >
-                  <h3 className="flex gap-2 font-semibold text-lg md:text-xl xl:text-2xl">
-                    {item?.Key ? (
-                      <>
-                        <Image
-                          src="/images/AISolutionsTick.svg"
-                          width={28}
-                          height={28}
-                          alt="Tick"
-                          className="h-full w-6 items-center"
-                        />
-                        {item?.Key}
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                  </h3>
-                  <div>{item.Value}</div>
-                </div>
-              );
-            })}
+          <div className="flex flex-col sm:gap-3 md:gap-5 li-tick-mark">
+            <ul>
+              {data?.slice(1, 5).map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="md:!pb-7.5 !pb-4 md:text-xl text-lg font-medium blue"
+                  >
+                    <h3>{item?.Key ? <>{item?.Key}</> : <></>}</h3>
+                    <div className="font-normal md:text-lg text-base md:pt-4 pt-2">
+                      {item.Value}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <div className="mt-4 mb-2 flex items-center md:justify-start justify-center">
             <ButtonV2

@@ -463,6 +463,13 @@
   background-position: 50%;
   background-repeat: no-repeat;
 }
+.ai-solution-section {
+  background-image: url("/images/v2/hire-banner-2.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
 
 .overview-bubble {
   background: url(/images/v2/vision-bubble.svg);
@@ -539,7 +546,7 @@
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   aspect-ratio: 16 / 9;
 }
 
@@ -569,6 +576,9 @@
   left: 0;
 }
 
+.iframe-bg {
+  background: linear-gradient(320.21deg, #edffff 21.31%, #c9f5fc 74.53%);
+}
 .casestudy-hover:hover {
   .read-icon {
     display: block !important;

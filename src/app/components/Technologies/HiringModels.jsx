@@ -82,13 +82,6 @@ const HiringModels = () => {
   return (
     <div className="bg-sectionBG">
       <div className="container max-w-[1280px] main-section-padding mx-auto">
-        {/* <div className="endTO_text solutions">
-          <h2 className="!w-full p-0 uppercase">{currentData.title}</h2>
-        </div>
-        <div className="endTO_text_content home_sec2_txt4">
-          <p className="!text-[1.2rem]">{currentData.description}</p>
-        </div>
-      </div> */}
         <Heading
           type="h2"
           className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"

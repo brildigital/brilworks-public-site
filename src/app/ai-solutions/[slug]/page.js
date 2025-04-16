@@ -4,15 +4,13 @@ import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import AISolutionsFirstSection from "@/app/components/AISolutions/AISolutions";
 import AIWorking from "@/app/components/AISolutions/AIWorking";
+import CTASection from "@/app/components/Common/CTASection";
 
 const AISeamlessIntegration = dynamic(() =>
   import("@/app/components/AISolutions/AISeamlessIntegration")
 );
 const WhatUserSays = dynamic(() =>
   import("@/app/components/AISolutions/WhatUserSays")
-);
-const AISolutionsCTA = dynamic(() =>
-  import("@/app/components/AISolutions/AISolutionsCTA")
 );
 const AISolutionsFAQ = dynamic(() =>
   import("@/app/components/AISolutions/AISolutionsFAQ")
@@ -128,21 +126,23 @@ export default async function Page({ params }) {
   } = storyData.story.content;
   return (
     <Suspense fallback={<FetchDataSpinner />}>
-      <div className="portfolio md:mt-32 mt-24 flex flex-col gap-14 md:gap-28 w-full">
-        <AISolutionsFirstSection
-          title={title}
-          description={description}
-          videoLink={videoLink?.url}
-          buttontext={buttontext}
-          buttonURL={buttonURL}
-        />
-        <AIWorking data={Working} />
-        <AISeamlessIntegration data={seamless_integration} />
-        {/* <AICaseStudies /> */}
-        <WhatUserSays userSaysData={what_users_say} />
-        <AISolutionsCTA CTA={CTA?.[0]} />
-        <AISolutionsFAQ faqData={FAQ} />
-      </div>
+      <AISolutionsFirstSection
+        title={title}
+        description={description}
+        videoLink={videoLink?.url}
+        buttontext={buttontext}
+        buttonURL={buttonURL}
+      />
+      <AIWorking data={Working} />
+      <AISeamlessIntegration data={seamless_integration} />
+      {/* <AICaseStudies /> */}
+      <WhatUserSays userSaysData={what_users_say} />
+      <CTASection
+        title={CTA?.[0]?.title}
+        description=""
+        buttonText={CTA?.[0]?.button_text}
+      />
+      <AISolutionsFAQ faqData={FAQ} />
     </Suspense>
   );
 }
