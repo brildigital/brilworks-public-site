@@ -172,7 +172,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
                         </div>
                       </Link>
 
-                      <div className="flex items-center justify-between">
+                      <div className="flex md:flex-row flex-col md:items-center justify-between items-start gap-2">
                         <p className="bg-clip-text text-transparent bg-theme-gradient md:text-xl text-lg font-medium uppercase">
                           {industry}
                         </p>
