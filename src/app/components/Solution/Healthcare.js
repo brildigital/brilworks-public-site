@@ -149,7 +149,7 @@ const HealthCare = () => {
               <div className="flex self-end justify-between w-[96%] mx-auto">
                 <div className="txt">
                   <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
+                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] text-colorWhite font-bold">
                       <div className="flex items-center">
                         <Image
                           className="w-[auto]"

@@ -4,6 +4,7 @@ import FAQAccordion from "../Common/FAQAccordion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import Heading from "../HTMLComponents/Heading";
 
 const SolutionFAQ = () => {
   const pathname = usePathname();
@@ -147,15 +148,15 @@ const SolutionFAQ = () => {
   const solutionFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container max-w-[1440px] main-section-padding-bottom mx-auto">
-      <div className="faq-bottom">
-        <div className="service_sec3 md:text-center text-left solutions">
-          <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-8">
-            FAQs
-          </h2>
-        </div>
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
+      <div className="w-full mx-auto">
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl"
+          text="Frequently Asked Questions"
+        />
 
-        <div className="reveal">
+        <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
           <div itemScope="true" itemType="https://schema.org/FAQPage">
             {solutionFAQData?.map(({ question, answer }, index) => (
               <GradientFAQAccordion

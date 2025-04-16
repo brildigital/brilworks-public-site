@@ -490,7 +490,7 @@ const OurProcessPage = () => {
             <div className="flex self-end justify-between w-[90%] mx-auto">
               <div className="txt">
                 <div className="how-we flex items-center gap-[1rem]">
-                  <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px]">
+                  <h1 className="font-style-solution-head uppercase xl:text-[96px] lg:text-[86px] md:text-[70px] sm:text-[55px] text-[30px] text-colorWhite font-bold">
                     How We
                     <div className="how-we flex items-center gap-[1rem]">
                       <div className="imgebreakets">
