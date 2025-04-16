@@ -1,5 +1,4 @@
 "use client";
-import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
 
 const WhyShouldHireDevelopers = () => {

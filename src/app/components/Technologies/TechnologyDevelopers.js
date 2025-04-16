@@ -22,12 +22,12 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
   ];
 
   const showTechImgBasedOnPathname = {
-    "/hire-reactjs-developer/": "/images/REACT.JS.svg",
+    "/hire-reactjs-developer/": "/images/v2/react-logo.svg",
     "/hire-nodejs-developer/": "/images/NODE.JS.svg",
     "/hire-java-developer/": "/images/JAVA.svg",
     "/hire-aws-developer/": "/images/AWS-DEVELOPMENT.svg",
     "/hire-ui-ux-designer/": "/images/UIUX-DEVELOPMENT.svg",
-    "/hire-react-native-developer/": "/images/REACT-NATIVE.svg",
+    "/hire-react-native-developer/": "/images/v2/react-logo.svg",
     "/hire-blockchain-developer/": "/images/BLOCKCHAIN-DEVELOPMENT.svg",
     "/hire-flutterflow-developer/": "/images/flutterflow-logo2.svg",
     "/hire-bubble-developer/": "/images/bubble-dark-logo.svg",
