@@ -1,17 +1,12 @@
 "use client";
-import Image from "next/image";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
-import Button from "../Common/Button";
+import { scrollEffect } from "../lib/commonFunction";
 import { faJs, faDocker } from "@fortawesome/free-brands-svg-icons";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import HireDevelopersInThreeSteps from "../HireTeam/HireDevelopersInThreeSteps";
 import HireDevelopersPricingPlan from "../HireTeam/HireDevelopersPricingPlan";
-
-const CommonServices = dynamic(() => import("./CommonServices"));
-const WhyFirstSection = dynamic(() => import("./WhyFirstSection"));
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 
 const HireTeamServices = dynamic(() => import("../HireTeam/HireTeamServices"));
@@ -20,17 +15,11 @@ const WhyThisTech = dynamic(() => import("./WhyThisTech"));
 const HiringModels = dynamic(() => import("./HiringModels"));
 const BlockChainFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const WhyShouldHireDevelopers = dynamic(() =>
-  import("./WhyShouldHireDevelopers")
-);
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 const BenefitOfHiringDevelopers = dynamic(() =>
   import("./BenefitOfHiringDevelopers")
-);
-const ThreeStepstoHireDeveloper = dynamic(() =>
-  import("./ThreeStepstoHireDeveloper")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 

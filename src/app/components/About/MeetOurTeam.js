@@ -37,7 +37,7 @@ const MeetOurTeam = () => {
   ];
   return (
     <div className="contact-us-banner">
-      <div className="banner-layer">
+      <div className="banner-layer-dark">
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <Heading
             type="h2"

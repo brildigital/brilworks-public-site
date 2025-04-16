@@ -2,16 +2,11 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import Button from "../Common/Button";
-import BenefitOfHiring from "./BenefitOfHiring";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import HireTeamServices from "../HireTeam/HireTeamServices";
 
 const LowCodeNoCodeFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const WhyShouldHireDevelopers = dynamic(() =>
-  import("./WhyShouldHireDevelopers")
-);
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
@@ -26,9 +21,6 @@ const MultipleKeyValueWithBG = dynamic(() =>
 );
 const HireDevelopersPricingPlan = dynamic(() =>
   import("../HireTeam/HireDevelopersPricingPlan")
-);
-const ThreeStepstoHireDeveloper = dynamic(() =>
-  import("./ThreeStepstoHireDeveloper")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
