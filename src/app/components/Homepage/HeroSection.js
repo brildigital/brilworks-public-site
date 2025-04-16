@@ -13,11 +13,12 @@ const HeroSection = () => {
               className="text-white lg:mt-20 mt-10"
               text={
                 <>
-                  Providing&nbsp;
+                  Providing{" "}
                   <span className="bg-clip-text text-transparent bg-theme-gradient">
                     Nextgen
-                  </span>
-                  &nbsp;Technology <br /> Solutions for your next leap
+                  </span>{" "}
+                  Technology <br className="hidden md:block" /> Solutions for
+                  your next leap
                 </>
               }
             />
