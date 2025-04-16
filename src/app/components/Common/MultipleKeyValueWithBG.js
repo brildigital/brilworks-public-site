@@ -23,7 +23,7 @@ const MultipleKeyValueWithBG = ({
               {keyValueData.map(({ value, description, color }, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-start justify-center p-6 rounded-2xl"
+                  className="flex flex-col items-start justify-center p-6 !pr-0 rounded-2xl"
                   style={{ background: color }}
                 >
                   <p className="pb-2 lg:!text-[34px] md:!text-3xl !text-2xl">

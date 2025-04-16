@@ -159,7 +159,7 @@ const ReactJSTechnology = () => {
         description="We don’t just write React code. We engineer user addiction. Here’s what sets us apart."
         cardData={why100PlusCompaniesTrust}
       />
-      <HireTeamServices />
+      <HireTeamServices bgClass="bg-themeLight" />
       <BenefitOfHiringDevelopers />
       <TechnologyDevelopers />
       <TechnologyCombination />

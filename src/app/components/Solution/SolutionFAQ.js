@@ -3,6 +3,7 @@ import { useState } from "react";
 import FAQAccordion from "../Common/FAQAccordion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const SolutionFAQ = () => {
   const pathname = usePathname();
@@ -157,7 +158,7 @@ const SolutionFAQ = () => {
         <div className="reveal">
           <div itemScope="true" itemType="https://schema.org/FAQPage">
             {solutionFAQData?.map(({ question, answer }, index) => (
-              <FAQAccordion
+              <GradientFAQAccordion
                 key={index + 1}
                 id={index + 1}
                 question={question}

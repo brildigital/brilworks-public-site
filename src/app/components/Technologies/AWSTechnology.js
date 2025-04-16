@@ -59,7 +59,7 @@ const AWSTechnology = () => {
     {
       value: "48-72",
       description: "Hours to Fill Most Roles",
-      color: "#FFE8FC",
+      color: "#F4ECFF",
     },
     {
       value: "98%",
@@ -93,7 +93,7 @@ const AWSTechnology = () => {
       <HireDevelopersPricingPlan title="AWS Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
-        title="Why Should You Hire AWS Developers from BRILWORKS?"
+        title="Why Should You Hire AWS Developers from Brilworks?"
         description="We understand the need for a stable, cost-effective tech infrastructure. Our AWS experts deliver end-to-end cloud solutions to drive your business growth and innovation."
         keyValueData={awsExperienceShowCase}
       />

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import FAQAccordion from "../Common/FAQAccordion";
 import { usePathname } from "next/navigation";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const ServicesFAQ = () => {
   const pathname = usePathname();
@@ -598,7 +599,7 @@ const ServicesFAQ = () => {
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container max-w-[1440px] main-section-padding mx-auto">
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
       <div className="faq-bottom">
         <div className="service_sec3 text-center solutions">
           <h2 className="uppercase xl:text-[48px] lg:text-[34px] md:text-[32px] text-[22px] md:pb-10 pb-8">
@@ -609,7 +610,7 @@ const ServicesFAQ = () => {
         <div className="reveal">
           <div itemScope="true" itemType="https://schema.org/FAQPage">
             {servicesFAQData?.map(({ question, answer }, index) => (
-              <FAQAccordion
+              <GradientFAQAccordion
                 key={index + 1}
                 id={index + 1}
                 question={question}

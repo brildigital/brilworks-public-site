@@ -3,7 +3,12 @@ import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 
-const BenefitOfHiringDevelopers = ({ bgClass = "bg-white" }) => {
+const BenefitOfHiringDevelopers = ({
+  bgClass = "bg-white",
+  title,
+  description,
+  cardData,
+}) => {
   const pathname = usePathname();
 
   const developerBenefits = [
@@ -48,9 +53,15 @@ const BenefitOfHiringDevelopers = ({ bgClass = "bg-white" }) => {
     "/hire-ui-ux-designer/": "UI UX",
     "/hire-blockchain-developer/": "Blockchain",
     "/hire-flutterflow-developer/": "Flutterflow",
+    "/hire-mobile-app-developer/": "Mobile App",
+    "/hire-adalo-developer/": "Adalo",
+    "/hire-bubble-developer/": "Bubble",
+    "/hire-low-code-no-code-developer/": "Low Code",
   };
 
-  const title = showTitleBasedOnPathname[pathname] || {};
+  const benefitData = cardData || developerBenefits;
+
+  const techTitle = showTitleBasedOnPathname[pathname] || {};
 
   return (
     <div className={bgClass}>
@@ -58,16 +69,17 @@ const BenefitOfHiringDevelopers = ({ bgClass = "bg-white" }) => {
         <Heading
           type="h2"
           className="lg:!text-[34px] md:!text-3xl !text-2xl"
-          text="Benefits of Hiring Dedicated Developers"
+          text={title || "Benefits of Hiring Dedicated Developers"}
         />
         <p className="md:text-lg text-base !pt-[10px] lg:!mb-10 md:!mb-7.5 !mb-5">
-          Hiring a dedicated development team from a {title} Development Company
-          empowers companies across the globe to access expert talent without
-          any limitation of location. It enables you to keep up with the pace of
-          technological change while keeping your costs down.
+          {description ||
+            `Hiring a dedicated development team from a ${techTitle} Development
+          Company empowers companies across the globe to access expert talent
+          without any limitation of location. It enables you to keep up with the
+          pace of technological change while keeping your costs down.`}
         </p>
         <div className="grid md:grid-cols-3 grid-cols-2 lg:gap-10 md:gap-7.5 gap-6 reveal">
-          {developerBenefits.map(({ title, imgSrc, alt }) => (
+          {benefitData.map(({ title, imgSrc, alt }) => (
             <div
               key={title}
               className={`border border-borderGray rounded-2xl benefit-developer-effect md:px-8 md:py-5 p-3 ${

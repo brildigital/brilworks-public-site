@@ -1,22 +1,26 @@
 "use client";
-import Image from "next/image";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import Button from "../Common/Button";
-import BenefitOfHiring from "./BenefitOfHiring";
+import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
+import HireTeamServices from "../HireTeam/HireTeamServices";
 
 const BubbleIoFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const WhyShouldHireDevelopers = dynamic(() =>
-  import("./WhyShouldHireDevelopers")
-);
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
-
-const ThreeStepstoHireDeveloper = dynamic(() =>
-  import("./ThreeStepstoHireDeveloper")
+const BenefitOfHiringDevelopers = dynamic(() =>
+  import("./BenefitOfHiringDevelopers")
+);
+const HireDevelopersInThreeSteps = dynamic(() =>
+  import("../HireTeam/HireDevelopersInThreeSteps")
+);
+const MultipleKeyValueWithBG = dynamic(() =>
+  import("../Common/MultipleKeyValueWithBG")
+);
+const HireDevelopersPricingPlan = dynamic(() =>
+  import("../HireTeam/HireDevelopersPricingPlan")
 );
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -31,244 +35,100 @@ const BubbleIoTechnology = () => {
     };
   }, []);
 
+  const bubbleDeveloperBenefits = [
+    {
+      title: "Expertise",
+      imgSrc: "/images/v2/dediated-resource.svg",
+      alt: "Expert Flutterflow Developers",
+    },
+
+    {
+      title: "Dedicated Resources On-Demand",
+      imgSrc: "/images/v2/extensive-pool.svg",
+      alt: "Dedicated Resources On-Demand",
+    },
+    {
+      title: "Quality Assurance",
+      imgSrc: "/images/v2/regular-compliance.svg",
+      alt: "Quality Assurance",
+    },
+    {
+      title: "Rapid Development",
+      imgSrc: "/images/v2/dedicates-no-distraction.svg",
+      alt: "Rapid Development",
+    },
+
+    {
+      title: "Support and Maintenance",
+      imgSrc: "/images/v2/why-n-2.svg",
+      alt: "Continuous Support",
+    },
+    {
+      title: "Design and User Experience",
+      imgSrc: "/images/v2/user-experience.svg",
+      alt: "Design and User Experience",
+    },
+  ];
+
+  const bubbleExperienceShowCase = [
+    {
+      value: "30+",
+      description: "Experienced Bubble Developers",
+      color: "#E5F4FF",
+    },
+    {
+      value: "20+",
+      description: "Enterprice-level Applications",
+      color: "#FFE2E5",
+    },
+    {
+      value: "98%",
+      description: "Project Success Rate",
+      color: "#E9FFE2",
+    },
+    {
+      value: "48-72",
+      description: "Hours to Fill Roles",
+      color: "#FFE8FC",
+    },
+    {
+      value: "100%",
+      description: "100% On-time Delivery",
+      color: "#FFE8FC",
+    },
+    {
+      value: "+4/-4",
+      description: "Available in Your Timezone",
+      color: "#FEF3E6",
+    },
+  ];
+
   return (
     <>
-      <section className="portfolio hiring-banner lg:mt-[5rem] mt-[4rem]">
-        <div className="container max-w-[1440px] mx-auto">
-          <div className="flex items-center justify-center lg:flex-row flex-col-reverse lg:py-[4%] pt-[14%] md:pt-[8%]">
-            <div className="lg:w-[80%] w-full px-4">
-              <h1 className="font-style-solution-head leading-tight mt-10 mb-5 xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px] md:w-[85%] w-full font-medium">
-                Hire Bubble Developer to Build Apps Faster
-              </h1>
-              <p className="lg:w-[85%] w-full md:text-[24px] text-xl leading-normal text-colorWhite font-normal lg:!mb-[50px] !mb-5">
-                Need top-notch Bubble developers to get your app off the ground
-                faster? We house the best Bubble io developers to hire to help
-                startups and businesses build industry-standard applications in
-                less time.
-              </p>
-              <div className="xl:w-[80%] w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:!mb-[50px] !mb-5 gap-4 md:gap-0">
-                <div
-                  className={`w-full flex justify-start items-start md:items-center lg:items-start gap-4 flex-row lg:!border-r lg:border-b-0 border-b border-[#17353D] lg:pb-0 pb-3 md:!w-fit`}
-                >
-                  <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    10+
-                  </span>
-                  <p
-                    className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite  md:w-full lg:w-3/5 w-3/5`}
-                  >
-                    Years of Experience
-                  </p>
-                </div>
-                <div
-                  className={`w-full md:min-w-[320px] flex justify-start gap-4 items-start md:items-center lg:items-start flex-row lg:!border-r lg:border-b-0 border-b border-[#17353D] lg:pb-0 pb-3`}
-                >
-                  <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    500+
-                  </span>
-                  <p
-                    className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite`}
-                  >
-                    Successfully Delivered Projects
-                  </p>
-                </div>
-                <div
-                  className={`w-full md:min-w-[320px] lg:pl-8 flex justify-start gap-4 items-start md:items-center lg:items-start flex-row lg:pb-0 pb-3 md:!w-fit`}
-                >
-                  <span className="text-colorWhite md:text-[42px] text-3xl leading-tight font-medium">
-                    80+
-                  </span>
-                  <p
-                    className={`md:text-xl font-normal text-lg !leading-normal text-colorWhite`}
-                  >
-                    Highly Experienced Developers
-                  </p>
-                </div>
-              </div>
-              <div className="flex !flex-col md:!flex-row lg:gap-12 gap-4 !mb-5">
-                <div>
-                  <Button
-                    innerClassName="flex items-center justify-center gap-1 uppercase !text-base md:text-lg"
-                    className="!pr-5"
-                    redirect="#section10_service"
-                    label="Hire Bubble Developers"
-                    icon="right-arrow"
-                    variant="bg-dark"
-                    scrollingButton
-                  />
-                </div>
-                <div>
-                  <Button
-                    innerClassName="flex items-center justify-center gap-1 uppercase !text-base md:text-lg"
-                    className="!pr-5"
-                    redirect="#pricing"
-                    label="Plan & Pricing"
-                    icon="right-arrow"
-                    variant="bg-dark"
-                    scrollingButton
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-[20%] md:w-2/5 w-3/5 mx-auto my-auto h-full">
-              <Image
-                className=""
-                src="/images/bubble-logo.svg"
-                alt="Bubble Banner"
-                width="320"
-                height="320"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="portfolio">
-        <div className="container max-w-[1440px] mx-auto">
-          <div className="xl:py-[6rem] md:py-[4rem] pt-[2rem] px-4">
-            <div className="end-To-end">
-              <div className="endTO_text solutions uppercase">
-                <h2 className="!w-full p-0">
-                  Explore Our Bubble App Development Services
-                </h2>
-              </div>
-            </div>
-
-            <div className="service_grid_img reveal">
-              <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-[40px] md:gap-y-0 gap-[10px]">
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-285 size-full"
-                      src="/images/web.png"
-                      alt="Flutterflow custom app development"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 01.</div>
-                    <div className="service_title">
-                      <h3>Database Integration</h3>
-                    </div>
-                    <div className="service_description">
-                      <p>
-                        We seamlessly connect your app to various databases,
-                        ensuring efficient data management and real-time updates
-                        for enhanced functionality.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/AWS-App-Development-Services.png"
-                      alt="AWS App Development Services"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 02.</div>
-                    <div className="service_title">
-                      <h3>Testing and Debugging</h3>
-                    </div>
-                    <div className="service_description">
-                      <p>
-                        Our rigorous testing process identifies and resolves
-                        bugs early, ensuring a smooth user experience and
-                        reliable app performance across all devices.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      src="/images/AWS-Cloud-Migration-Services.png"
-                      alt="AWS Cloud Migration Services"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 03.</div>
-                    <div className="service_title">
-                      <h3>Visual Development</h3>
-                    </div>
-                    <div className="service_description">
-                      <p>
-                        We utilize Bubble's powerful visual development tools to
-                        create intuitive user interfaces, bringing your app
-                        ideas to life without extensive coding knowledge.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:gap-[48px] gap-[1.4rem]">
-                  <div className="basis-[15%]">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone wp-image-285 size-full"
-                      src="/images/DevOps-AWS-Services.png"
-                      alt="DevOps AWS Services"
-                    />
-                  </div>
-
-                  <div className="service_txt basis-[85%]">
-                    <div className="service_num">&lt; 04.</div>
-                    <div className="service_title">
-                      <h3>Maintenance</h3>
-                    </div>
-                    <div className="service_description">
-                      <p>
-                        Our ongoing maintenance services keep your app running
-                        smoothly, providing updates and optimizations to enhance
-                        performance and user engagement over time.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center xl:pt-[4rem] md:pt-[3rem] py-5">
-              <Button
-                innerClassName="flex items-center justify-center gap-2"
-                className="!pr-5"
-                label="Hire Freelance Bubble Developers"
-                scrollingButton
-                icon={
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth="0"
-                    viewBox="0 0 24 24"
-                    height="24px"
-                    width="24px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.515 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path>
-                    <path d="M7 7h10v2H7zm0 4h7v2H7z"></path>
-                  </svg>
-                }
-              />
-            </div>
-          </div>
-          <TechnologyDevelopers />
-          <BenefitOfHiring />
-        </div>
-      </section>
-
-      <ThreeStepstoHireDeveloper />
+      <HireTeamHeroSection
+        technologyText="Hire Bubble Developers"
+        title="Hire Bubble Developer to Build Apps Faster"
+        description="Need top-notch Bubble developers to get your app off the ground faster? We house the best Bubble io developers to hire to help startups and businesses build industry-standard applications in less time."
+        imageSrc="/images/v2/bubble-io-banner.webp"
+      />
+      <HireTeamServices bgClass="bg-themeLight" />
+      <TechnologyDevelopers bgClass="bg-white" />
+      <BenefitOfHiringDevelopers
+        title="Why Choose Brilworks for Bubble Development?"
+        description="Let's build groundbreaking solutions together. Brilworks offers expert Bubble developers and rigorous quality assurance to ensure your app is exceptional."
+        cardData={bubbleDeveloperBenefits}
+      />
+      <HireDevelopersInThreeSteps
+        bgClass="bg-themeLight"
+        title="Bubble Developers"
+      />
+      <HireDevelopersPricingPlan title="Bubble Developer" />
       <HomePageBlogs />
-      <WhyShouldHireDevelopers />
+      <MultipleKeyValueWithBG
+        title="What Makes a Top-Rated Bubble Company?"
+        description="We understand the need for a stable, cost-effective tech infrastructure. Our Bubble experts deliver end-to-end cloud solutions to drive your business growth and innovation."
+        keyValueData={bubbleExperienceShowCase}
+      />
       <SolutionContactForm />
       <BubbleIoFAQs />
     </>

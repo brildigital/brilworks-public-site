@@ -147,7 +147,7 @@ const BlockchainTechnology = () => {
         description="We don’t just write React code. We engineer user addiction. Here’s what sets us apart."
         cardData={why90PlusClientReturn}
       />
-      <HireTeamServices />
+      <HireTeamServices bgClass="bg-themeLight" />
       <TechnologyDevelopers bgClass="bg-white" />
       <BenefitOfHiringDevelopers bgClass="bg-sectionBG" />
       <TechStackWeWorkWith
@@ -155,127 +155,6 @@ const BlockchainTechnology = () => {
         active="blockchains"
         techStackList={techStackList}
       />
-      {/* <section className="portfolio mt-[6rem]">
-        <div className="mx-auto service_width">
-          <div className="relative">
-            <p>
-              <Image
-                className="h-[46vh] md:block hidden rounded-[20px]"
-                src="https://a.storyblok.com/f/219851/1398x780/7ccfffe9b5/block-chain.webp"
-                alt="Blockchain banner"
-                priority
-                width="1398"
-                height="780"
-                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-                media="(min-width: 768px)"
-              />
-              <Image
-                className="h-[300px] block md:hidden rounded-[20px]"
-                src="/images/block-chain-mobile.webp"
-                alt="Blockchain banner"
-                priority
-                width="320"
-                height="250"
-                sizes="(min-width: 1040px) 80vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-                media="(max-width: 767px)"
-              />
-            </p>
-            <div className="service_sec1_position">
-              <div className="flex self-end justify-between w-[96%] mx-auto">
-                <div className="txt">
-                  <div className="how-we flex items-center gap-[1rem]">
-                    <h1 className="font-style-solution-head line-height-normal uppercase xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-                      HIRE
-                      <div className="flex items-center gap-1">
-                        <Image
-                          className="w-[auto]"
-                          src="/images/1.png"
-                          alt="curly bracket"
-                          width="24"
-                          height="94"
-                        />
-                        BLOCKCHAIN
-                        <Image
-                          className="w-[auto]"
-                          src="/images/2.png"
-                          alt="curly bracket"
-                          width="24"
-                          height="94"
-                        />
-                      </div>
-                      DEVELOPERS
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-auto service_width xl:py-[6rem] md:py-[4rem] py-[2rem]">
-          <div className="flex !flex-col lg:!flex-row gap-[1.5rem]">
-            <div className="basis-[45%]">
-              <div className="home_sec2_txt3 like_text">
-                <p className="!p-0 !ml-[0] !w-full uppercase">
-                  Hire Blockchain Developers to Revolutionize Your Digital
-                  Infrastructure
-                </p>
-              </div>
-            </div>
-            <div className="basis-[55%]">
-              <div className="home_sec2_txt4">
-                <p className="!text-left !text-[1.2rem]">
-                  Our seasoned blockchain developers engineer secure, scalable,
-                  and decentralized solutions that transform industries. Whether
-                  you’re launching a dApp, integrating smart contracts, or
-                  building enterprise-grade blockchain networks, we’re your
-                  strategic partner.
-                </p>
-
-                <div className="flex !flex-col md:!flex-row gap-6 mt-8 md:mt-[50px]">
-                  <div>
-                    <Button
-                      innerClassName="flex items-center justify-center gap-1"
-                      className="!pr-5"
-                      redirect="#pricing"
-                      label="Plan & Pricing"
-                      icon="right-arrow"
-                      scrollingButton
-                    />
-                  </div>
-                  <div>
-                    <Button
-                      innerClassName="flex items-center justify-center gap-1"
-                      className="!pr-5"
-                      redirect="#section10_service"
-                      label="Hire Blockchain Developers"
-                      icon="right-arrow"
-                      scrollingButton
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <WhyFirstSection
-          title="Why 95% of Clients Return?"
-          description="We don’t just code blockchains. We architect trust. Here’s what makes us unparalleled:
-Global Talent, Local Precision. Our remote blockchain developers operate in your time zone. From London to Tokyo, we synchronize with your workflow night shifts or dawn sprints, we adapt."
-          firstSectionFeatures={blockchainFeatures}
-        />
-        <CommonServices
-          title="Build Trust-Centric Solutions With Our Blockchain Services"
-          services={blockchainServices}
-        />
-        <TechnologyDevelopers />
-
-        <BenefitOfHiringDevelopers />
-        <TechStackWeWorkWith
-          active="blockchains"
-          techStackList={techStackList}
-        />
-      </section> */}
       <HireTeamSolutions />
       <WhyThisTech />
       <HiringModels />
