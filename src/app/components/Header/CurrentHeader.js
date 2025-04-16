@@ -10,7 +10,9 @@ const CurrentHeader = () => {
   const headerDark = ["/portfolio/", "/about-us/", "/contact-us/"];
 
   const headerNew =
-    headerDark.includes(pathname) || pathname.startsWith("/hire-");
+    headerDark.includes(pathname) ||
+    pathname.startsWith("/hire-") ||
+    pathname.startsWith("/ai-solutions/");
 
   return headerNew || pathname === "/" ? <HeaderV2 /> : <Header />;
 };

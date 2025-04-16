@@ -31,7 +31,7 @@ const HireTeamHeroSection = ({
         <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
           <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
             <div className="md:w-1/2 w-full">
-              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.25 !mb-5">
+              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
                 {technologyText}
               </p>
               <Heading type="h1" className="text-white" text={title} />
