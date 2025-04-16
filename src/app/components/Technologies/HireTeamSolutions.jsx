@@ -99,37 +99,37 @@ const blockchainSolutions = {
       title: "Finance",
       description:
         "DeFi platforms, cross-border payment systems, and fraud-proof ledgers that reduce transaction costs by 70%.",
-      icon: "/images/Fintech.svg",
+      icon: "/images/v2/usd-circle.svg",
     },
     {
       title: "Healthcare",
       description:
         "HIPAA-compliant patient data exchanges, drug traceability networks, and secure EHRs using zero-knowledge proofs.",
-      icon: "/images/Healthcare.svg",
+      icon: "/images/v2/heathcare-icon.svg",
     },
     {
       title: "Supply Chain",
       description:
         "End-to-end visibility with smart sensors and blockchain. Cut counterfeit risks by 90% and streamline audits.",
-      icon: "/images/supply-chain.svg",
+      icon: "/images/v2/shopping-cart-check.svg",
     },
     {
       title: "Real Estate",
       description:
         "Tokenized property ownership, automated escrow, and transparent title transfers reducing legal delays.",
-      icon: "/images/real-estate.svg",
+      icon: "/images/v2/building-white.svg",
     },
     {
       title: "Government",
       description:
         "Tamper-proof voting systems, public record management, and citizen ID platforms with biometric verification.",
-      icon: "/images/government.svg",
+      icon: "/images/v2/real-estate.svg",
     },
     {
       title: "Energy",
       description:
         "Peer-to-peer energy trading platforms, carbon credit tracking, and grid management via decentralized ledgers.",
-      icon: "/images/energy.svg",
+      icon: "/images/v2/star-white.svg",
     },
   ],
 };

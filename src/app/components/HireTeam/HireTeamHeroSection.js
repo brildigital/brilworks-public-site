@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
+import { usePathname } from "next/navigation";
 
 const HireTeamHeroSection = ({
   technologyText,
@@ -9,8 +10,23 @@ const HireTeamHeroSection = ({
   description,
   imageSrc,
 }) => {
+  const pathname = usePathname();
+  const bgBannerSelection = [
+    "/hire-aws-developer/",
+    "/hire-mobile-app-developer/",
+    "/hire-flutterflow-developer/",
+    "/hire-adalo-developer/",
+    "/hire-bubble-developer/",
+    "/hire-low-code-no-code-developer/",
+  ];
   return (
-    <div className="hire-team-section">
+    <div
+      className={
+        bgBannerSelection.includes(pathname)
+          ? "hire-team-section-l"
+          : "hire-team-section"
+      }
+    >
       <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
         <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
           <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">

@@ -17,6 +17,8 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
     "bg-[#FFE8FC]",
     "bg-[#FFE2E5]",
     "bg-[#F4ECFF]",
+    "bg-[#FEF3E6]",
+    "bg-[#EAFFFD]",
   ];
 
   const showTechImgBasedOnPathname = {

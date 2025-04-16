@@ -165,7 +165,7 @@ const NodejsTechnology = () => {
         description="From concept to deployment, we prioritize technical excellence, agile methodologies, and innovative problem-solving to deliver solutions that drive growth. We don't just write Node.js code. We build high-performance backend solutions."
         cardData={why100PlusCompaniesTrust}
       />
-      <HireTeamServices />
+      <HireTeamServices bgClass="bg-themeLight" />
       <TechnologyDevelopers bgClass="bg-white" />
       <HireTeamDigitalTransformation />
       <BenefitOfHiringDevelopers />

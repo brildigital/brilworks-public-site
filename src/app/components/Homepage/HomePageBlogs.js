@@ -4,10 +4,8 @@ import blogResponse from "../lib/blogResponse.json";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-// import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./FetchDataSpinner";
 // import { getblogDataCategorization } from "../lib/getblog";
-import LinkWithArrow from "../Common/LinkWithArrow";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,7 +13,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const HomePageBlogs = () => {
   const pathname = usePathname();
-  // const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
 
   // const blogDataBasedOnPath = {
   //   "/aws-consulting-services/": "aws-consulting",
@@ -37,15 +34,29 @@ const HomePageBlogs = () => {
   //   try {
   //     const blogData = await getblogDataCategorization(
   //       1,
-  //       !isTablet ? 3 : 2,
+  //       2,
   //       pathname === "/" ? null : blogDataBasedOnPath[pathname]
   //     );
-  //     blogResponse[pathname] = blogData.storyData;
+  //     const filteredData =
+  //       blogData.storyData &&
+  //       blogData.storyData.map((post) => ({
+  //         name: post.name,
+  //         slug: post.slug,
+  //         content: {
+  //           Priority: post?.content?.Priority,
+  //           mobile_banner: {
+  //             filename: post?.content?.mobile_banner.filename,
+  //             alt: post?.content?.mobile_banner.alt,
+  //           },
+  //         },
+  //       }));
 
   //     if (blogData.storyData) {
+  //       blogResponse[pathname] = filteredData;
+
   //       const newData = {
   //         ...blogResponse,
-  //         [pathname]: blogData.storyData,
+  //         [pathname]: filteredData,
   //       };
 
   //       const response = await fetch(
@@ -71,27 +82,6 @@ const HomePageBlogs = () => {
   //   fetchData();
   // }, []);
 
-  function getRedirectPath(pathname) {
-    if (!pathname.startsWith("/hire-")) {
-      return pathname; // Return the original pathname if it doesn't start with "hire-"
-    }
-
-    switch (pathname) {
-      case "/hire-adalo-developer/":
-        return "/adalo-development-services/";
-      case "/hire-aws-developer/":
-        return "/aws-consulting-services/";
-      case "/hire-low-code-no-code-developer/":
-        return "/low-code-no-code-development-services/";
-      case "/hire-blockchain-developer/":
-        return "/ai-ml-development-services/";
-      case "/hire-react-native-developer/":
-        return "/application-development-services/";
-      default:
-        return "/"; // Default to "/" for all other "hire-" pages
-    }
-  }
-
   return (
     <div className="container max-w-[1280px] main-section-padding mx-auto">
       <div className="flex flex-wrap items-center justify-between lg:pb-10 md:pb-8 pb-5">
@@ -110,8 +100,8 @@ const HomePageBlogs = () => {
         </div>
       </div>
       <div className="blog-home reveal">
-        {blogResponse[getRedirectPath(pathname)]?.length ? (
-          blogResponse[getRedirectPath(pathname)]
+        {blogResponse[pathname]?.length ? (
+          blogResponse[pathname]
             .slice(0, 2)
             .map(({ slug, name, content }, index) => {
               if (
@@ -128,7 +118,7 @@ const HomePageBlogs = () => {
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
                         src={content?.mobile_banner?.filename}
-                        alt={content?.mobile_banner?.alt}
+                        alt={content?.mobile_banner?.alt || "Blog banner"}
                         width={550}
                         height={283}
                       />
@@ -148,7 +138,7 @@ const HomePageBlogs = () => {
                 return (
                   <div
                     key={index}
-                    className="overflow-hidden border border-borderGray rounded-2xl"
+                    className="overflow-hidden border border-borderGray rounded-2xl group"
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
@@ -163,8 +153,8 @@ const HomePageBlogs = () => {
                         <h4 className="lg:text-xl text-lg font-medium mb-3 min-h-[50px]">
                           {name}
                         </h4>
-                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor">
-                          Read Complete Blog&nbsp;
+                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor hover:text-colorBlack duration-500">
+                          Read Complete Blog&nbsp;&nbsp;
                           <FontAwesomeIcon size="lg" icon={faArrowRight} />
                         </p>
                       </div>
@@ -179,15 +169,13 @@ const HomePageBlogs = () => {
           </div>
         )}
       </div>
-      {blogResponse[pathname]?.length ? (
-        <div className="w-full flex justify-center">
-          <ButtonV2
-            redirect="/blog/"
-            label="Read More Blogs"
-            className="hover:text-themeColor w-fit lg:mt-10 mt-8"
-          />
-        </div>
-      ) : null}
+      <div className="w-full flex justify-center">
+        <ButtonV2
+          redirect="/blog/"
+          label="Read More Blogs"
+          className="hover:text-themeColor w-fit lg:mt-10 mt-8"
+        />
+      </div>
     </div>
   );
 };

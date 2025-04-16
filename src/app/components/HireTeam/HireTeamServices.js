@@ -6,7 +6,7 @@ import TabVerticalSticky from "../Common/TabVerticalSticky";
 import Heading from "../HTMLComponents/Heading";
 import { useMediaQuery } from "react-responsive";
 
-const HireTeamServices = () => {
+const HireTeamServices = ({ bgClass = "" }) => {
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [open, setOpen] = useState(1);
@@ -50,7 +50,7 @@ const HireTeamServices = () => {
       {
         title: "Java App Development",
         value: "java-service-5",
-        imageSrc: "/images/v2/java-app-development.webp",
+        imageSrc: "/images/v2/mobile-app-img.webp",
         description:
           "Have you considered the benefits of hiring an app developer with Java programming skills? Our developers are skilled at java application development and in developing all types of mobile applications from games, and social media applications to enterprise solutions.",
       },
@@ -341,6 +341,218 @@ const HireTeamServices = () => {
       },
     ],
   };
+  const mobileAppService = {
+    title: "Our Services",
+    buttonText: "Get a Quote for your Project",
+    servicesList: [
+      {
+        title: "Cross-Platform App Development",
+        value: "mobile-app-1",
+        imageSrc: "/images/v2/cross-platform-app-dev.webp",
+        description:
+          "We offer cross-platform app development solutions using industry-leading frameworks.",
+      },
+      {
+        title: "React Native Development",
+        value: "mobile-app-2",
+        imageSrc: "/images/v2/react-native-development.webp",
+        description:
+          "React Native is a powerful framework to build high-performance mobile apps for both iOS and Android using a single codebase.",
+      },
+      {
+        title: "iOS App Development",
+        value: "mobile-app-3",
+        imageSrc: "/images/v2/ios-app-development.webp",
+        description:
+          "Our experienced iOS developers specialize in developing innovative and visually appealing apps using the latest technologies and design trends.",
+      },
+      {
+        title: "Android App Development",
+        value: "mobile-app-4",
+        imageSrc: "/images/v2/android-app-development.webp",
+        description:
+          "Our Android app development team is skilled in building robust and scalable apps, ensuring optimal performance, compatibility, and a native-like experience across various Android devices.",
+      },
+    ],
+  };
+  const flutterflowService = {
+    title: "Explore Our Flutterflow App Development Services",
+    buttonText: "Get a Quote for your Project",
+    servicesList: [
+      {
+        title: "Custom App Development",
+        value: "flutterflow-1",
+        imageSrc: "/images/v2/mobile-app-img.webp",
+        description:
+          "Develop stunning custom applications that adjust to fit your vision, with complete control over the features and functionalities.",
+      },
+      {
+        title: "App Redesign and Modernization",
+        value: "flutterflow-2",
+        imageSrc: "/images/v2/cross-platform-app-dev.webp",
+        description:
+          "Modernize and redesign your existing app in less time with our Flutterflow development services for long-term success.",
+      },
+      {
+        title: "Flutterflow Migration",
+        value: "flutterflow-3",
+        imageSrc: "/images/v2/flutterflow-migration.webp",
+        description:
+          "Migrate your existing apps (both native or hybrid) effortlessly to Flutterflow to reduce development costs and time.",
+      },
+      {
+        title: "App Integration",
+        value: "flutterflow-4",
+        imageSrc: "/images/v2/app-integration.webp",
+        description:
+          "Integrate your Flutterflow app with other systems and platforms, such as CRM, payment gateways, and social media.",
+      },
+      {
+        title: "App Maintenance and Support",
+        value: "flutterflow-5",
+        imageSrc: "/images/v2/react-native-app-maintenance.webp",
+        description:
+          "We provide ongoing maintenance and support for Flutterflow apps, from addressing bugs, issues, and security vulnerabilities to implementing updates and enhancements.",
+      },
+      {
+        title: "Flutterflow Training and Consulting",
+        value: "flutterflow-6",
+        imageSrc: "/images/v2/flutterflow-training-and-consulting.webp",
+        description:
+          "We offer training and consulting services to help clients learn how to use Flutterflow effectively.",
+      },
+    ],
+  };
+  const adaloService = {
+    title: "Explore Our Adalo Development Services",
+    buttonText: "Hire Adalo Developer",
+    servicesList: [
+      {
+        title: "Custom App Development",
+        value: "adalo-1",
+        imageSrc: "/images/v2/mobile-app-img.webp",
+        description:
+          "Whether you need a prototype or a fully functional application, our team can develop any kind of custom app using Adalo.",
+      },
+      {
+        title: "UI/UX Design",
+        value: "adalo-2",
+        imageSrc: "/images/v2/ui-ux-img.webp",
+        description:
+          "User experience is at the heart of every successful app. Our design team crafts intuitive and engaging interfaces, ensuring a seamless user journey from start to finish.",
+      },
+      {
+        title: "Integration Services",
+        value: "adalo-3",
+        imageSrc: "/images/v2/integration-services.webp",
+        description:
+          "Integrate your app with third-party services and APIs, from payment gateways to social media platforms, to enhance its functionality.",
+      },
+      {
+        title: "App Maintenance and Support",
+        value: "adalo-4",
+        imageSrc: "/images/v2/maintenance.webp",
+        description:
+          "Our commitment to your success doesn’t end at launch. We offer ongoing maintenance and support services.",
+      },
+      {
+        title: "Adalo Consulting Services",
+        value: "adalo-5",
+        imageSrc: "/images/v2/adalo-consulting-services.webp",
+        description:
+          "Not sure where to start? Our Adalo experts provide consulting services to help you navigate the app development process, from ideation to deployment.",
+      },
+    ],
+  };
+  const bubbleIoService = {
+    title: "Explore Our Bubble App Development Services",
+    buttonText: "Hire Bubble Developer",
+    servicesList: [
+      {
+        title: "Database Integration",
+        value: "bubble-io-1",
+        imageSrc: "/images/v2/databse-integration.webp",
+        description:
+          "We seamlessly connect your app to various databases, ensuring efficient data management and real-time updates for enhanced functionality.",
+      },
+      {
+        title: "Testing and Debugging",
+        value: "bubble-io-2",
+        imageSrc: "/images/v2/testing-and-debugging.webp",
+        description:
+          "Our rigorous testing process identifies and resolves bugs early, ensuring a smooth user experience and reliable app performance across all devices.",
+      },
+      {
+        title: "Visual Development",
+        value: "bubble-io-3",
+        imageSrc: "/images/v2/visual-development.webp",
+        description:
+          "We utilize Bubble's powerful visual development tools to create intuitive user interfaces, bringing your app ideas to life without extensive coding knowledge.",
+      },
+      {
+        title: "App Integration",
+        value: "bubble-io-4",
+        imageSrc: "/images/v2/app-integration.webp",
+        description:
+          "Integrate your Bubble app with other systems and platforms, such as CRM, payment gateways, and social media.",
+      },
+      {
+        title: "Maintenance",
+        value: "bubble-io-5",
+        imageSrc: "/images/v2/maintenance.webp",
+        description:
+          "Our ongoing maintenance services keep your app running smoothly, providing updates and optimizations to enhance performance and user engagement over time.",
+      },
+    ],
+  };
+  const lowCodeNoCodeService = {
+    title: "Explore Our Low Code Development Services",
+    buttonText: "Get a Quote For Your Budget",
+    servicesList: [
+      {
+        title: "No-Code App Development",
+        value: "low-code-1",
+        imageSrc: "/images/v2/no-code-app-development.webp",
+        description:
+          "Build apps quickly with our expert developers, who specialize in building next-level applications with leading no-code platforms like Adalo, Flutterflow, and Bubble.io.",
+      },
+      {
+        title: "Adalo Development",
+        value: "low-code-2",
+        imageSrc: "/images/v2/adalo-consulting-services.webp",
+        description:
+          "Leverage the power of Adalo's intuitive interface. Our experts craft stunning, user-friendly apps, handling all aspects – from design to deployment – for a seamless experience.",
+      },
+      {
+        title: "Flutterflow Development",
+        value: "low-code-3",
+        imageSrc: "/images/v2/flutterflow-migration.webp",
+        description:
+          "Get to market faster with next-level applications built using our Flutterflow development service. Our developers are skilled in building complex apps with this powerful platform.",
+      },
+      {
+        title: "Bubble.io Development",
+        value: "low-code-4",
+        imageSrc: "/images/v2/bubble-development.webp",
+        description:
+          "Our skilled developers use Bubble.io's full-stack capabilities to build complex applications that rival fully coded ones in functionality and quality.",
+      },
+      {
+        title: "Streamlined Low-Code Development",
+        value: "low-code-5",
+        imageSrc: "/images/v2/streamlined-low-code-development.webp",
+        description:
+          "Our team combines coding expertise with low-code platforms to deliver modern apps in record time. Hire a low-code developer today to get started.",
+      },
+      {
+        title: "Low-Code Mobile App Development",
+        value: "low-code-6",
+        imageSrc: "/images/v2/mobile-app-img.webp",
+        description:
+          "Our specialists develop low-code mobile apps that seamlessly run on both iOS and Android platforms.",
+      },
+    ],
+  };
 
   const showDataBasedOnPathname = {
     "/hire-reactjs-developer/": reactJSService,
@@ -350,18 +562,16 @@ const HireTeamServices = () => {
     "/hire-react-native-developer/": reactNativeService,
     "/hire-ui-ux-designer/": uiuxService,
     "/hire-blockchain-developer/": blockchainService,
+    "/hire-mobile-app-developer/": mobileAppService,
+    "/hire-flutterflow-developer/": flutterflowService,
+    "/hire-adalo-developer/": adaloService,
+    "/hire-bubble-developer/": bubbleIoService,
+    "/hire-low-code-no-code-developer/": lowCodeNoCodeService,
   };
 
   const hireServicesTeamData = showDataBasedOnPathname[pathname] || {};
-
-  const bgThemePages = [
-    "/hire-nodejs-developer/",
-    "/hire-reactjs-developer/",
-    "/hire-blockchain-developer/",
-  ];
-
   return (
-    <div className={bgThemePages.includes(pathname) ? "bg-themeLight" : ""}>
+    <div className={bgClass}>
       <div className="border-b border-b-borderGray reveal">
         <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
           <div className="lg:mb-10 md:mb-8 mb-6">
