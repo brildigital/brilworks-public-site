@@ -27,6 +27,19 @@
             color: #17283e;
           }
         }
+        &.active.left-img {
+          background: linear-gradient(270deg, #017eeb 0%, #000d1e 100%);
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          color: #ffffff;
+          .numeric,
+          .numeric-l {
+            background: #ffffff;
+            color: #17283e;
+          }
+        }
         .numeric {
           background: #17283e;
           color: #ffffff;
@@ -77,7 +90,14 @@
 .stickysection__contentappend-hire-bubble-developer,
 .stickysection__contentappend-hire-adalo-developer,
 .stickysection__contentappend-hire-low-code-no-code-developer,
-.stickysection__contentappend-empower-digital-tranformation {
+.stickysection__contentappend-empower-digital-tranformation,
+.stickysection__contentappend-fintech-services-one,
+.stickysection__contentappend-fintech-services-two,
+.stickysection__contentappend-healthcare-one,
+.stickysection__contentappend-healthcare-two,
+.stickysection__contentappend-media,
+.stickysection__contentappend-fleet-one,
+.stickysection__contentappend-fleet-two {
   top: 100px;
   z-index: unset;
   position: sticky;

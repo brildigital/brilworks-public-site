@@ -19,12 +19,6 @@ const ClientReviews = dynamic(() =>
 const IndustriesWeServe = dynamic(() =>
   import("../components/Homepage/IndustriesWeServe")
 );
-const DomainWorking = dynamic(() =>
-  import("../components/Homepage/DomainWorking")
-);
-const ExtensionOfTeam = dynamic(() =>
-  import("../components/Homepage/ExtensionOfTeam")
-);
 const Honors = dynamic(() => import("../components/Homepage/Honors"));
 const HomepageWhyChooseUs = dynamic(() =>
   import("../components/Homepage/HomepageWhyChooseUs")

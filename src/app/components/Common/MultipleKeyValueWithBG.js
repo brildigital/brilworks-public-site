@@ -1,12 +1,16 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "./ButtonV2";
 
 const MultipleKeyValueWithBG = ({
   title,
+  buttonText,
   description,
   keyValueData,
   bgClass = "bg-sectionBG",
 }) => {
+  const gridClass =
+    keyValueData.length === 6 ? "md:grid-cols-3" : "md:grid-cols-4";
   return (
     <div className={bgClass}>
       <div className="container max-w-[1280px] main-section-padding mx-auto">
@@ -18,12 +22,12 @@ const MultipleKeyValueWithBG = ({
           />
           <p className="md:text-lg text-base">{description}</p>
 
-          <div className="w-full lg:pt-10 md:pt-7.5 pt-5">
-            <div className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-5">
+          <div className="w-full lg:py-10 md:pt-7.5 py-5">
+            <div className={`grid grid-cols-2 ${gridClass} md:gap-10 gap-5`}>
               {keyValueData.map(({ value, description, color }, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-start justify-center p-6 !pr-0 rounded-2xl"
+                  className="flex flex-col items-start justify-start p-6 !pr-0 rounded-2xl"
                   style={{ background: color }}
                 >
                   <p className="pb-2 lg:!text-[34px] md:!text-3xl !text-2xl">
@@ -35,6 +39,14 @@ const MultipleKeyValueWithBG = ({
               ))}
             </div>
           </div>
+          {buttonText && (
+            <ButtonV2
+              redirect="#section-contact-form"
+              label={buttonText}
+              className="hover:!text-themeColor w-fit mx-auto"
+              scrollingButton
+            />
+          )}
         </div>
       </div>
     </div>

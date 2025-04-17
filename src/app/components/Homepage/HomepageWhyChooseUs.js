@@ -1,23 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
 import TabAccordionDark from "../Common/TabAccordionDark";
-import TabVerticalDark from "../Common/TabVerticalDark";
 import Heading from "../HTMLComponents/Heading";
-import { valid } from "uuid4";
 import { useMediaQuery } from "react-responsive";
 import TabVerticalSticky from "../Common/TabVerticalSticky";
 
-const Card = dynamic(() =>
-  import("@material-tailwind/react").then((mod) => mod.Card)
-);
-const CardBody = dynamic(() =>
-  import("@material-tailwind/react").then((mod) => mod.CardBody)
-);
-
 const HomepageWhyChooseUs = () => {
-  const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [open, setOpen] = useState(1);
 
@@ -27,7 +15,7 @@ const HomepageWhyChooseUs = () => {
     {
       title: "Cost-Effective Excellence",
       value: "why-choose-1",
-      imageSrc: "/images/v2/Cost-Effective-Excellence.png",
+      imageSrc: "/images/v2/cost-effective-excellence.webp",
       description:
         "Cost-effective e-solutions that deliver maximum value for your investment.",
     },
@@ -57,14 +45,14 @@ const HomepageWhyChooseUs = () => {
       value: "why-choose-5",
       imageSrc: "/images/v2/Client-Centric-Approach.png",
       description:
-        " A client-centric approach that prioritizes your unique needs and fosters long-term partnerships.",
+        "A client-centric approach that prioritizes your unique needs and fosters long-term partnerships.",
     },
     {
       title: "Dedicated Support",
       value: "why-choose-6",
-      imageSrc: "/images/v2/Dedicated-Support.png",
+      imageSrc: "/images/v2/dedicated-support.webp",
       description:
-        "  Dedicated support to ensure smooth integration, troubleshooting and updates for optimal software performance.",
+        "Dedicated support to ensure smooth integration, troubleshooting and updates for optimal software performance.",
     },
   ];
 

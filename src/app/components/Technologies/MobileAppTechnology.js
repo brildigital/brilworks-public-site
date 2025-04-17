@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
-import HireTeamServices from "../HireTeam/HireTeamServices";
+import ServicesSection from "../Common/ServicesSection";
 
 const MobileAppFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -26,6 +26,40 @@ const HireDevelopersPricingPlan = dynamic(() =>
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const MobileAppTechnology = () => {
+  const mobileAppService = {
+    title: "Our Services",
+    buttonText: "Get a Quote for your Project",
+    servicesList: [
+      {
+        title: "Cross-Platform App Development",
+        value: "mobile-app-1",
+        imageSrc: "/images/v2/cross-platform-app-dev.webp",
+        description:
+          "We offer cross-platform app development solutions using industry-leading frameworks.",
+      },
+      {
+        title: "React Native Development",
+        value: "mobile-app-2",
+        imageSrc: "/images/v2/react-native-development.webp",
+        description:
+          "React Native is a powerful framework to build high-performance mobile apps for both iOS and Android using a single codebase.",
+      },
+      {
+        title: "iOS App Development",
+        value: "mobile-app-3",
+        imageSrc: "/images/v2/ios-app-development.webp",
+        description:
+          "Our experienced iOS developers specialize in developing innovative and visually appealing apps using the latest technologies and design trends.",
+      },
+      {
+        title: "Android App Development",
+        value: "mobile-app-4",
+        imageSrc: "/images/v2/android-app-development.webp",
+        description:
+          "Our Android app development team is skilled in building robust and scalable apps, ensuring optimal performance, compatibility, and a native-like experience across various Android devices.",
+      },
+    ],
+  };
   const mobileAppExperienceShowCase = [
     {
       value: "30+",
@@ -120,7 +154,11 @@ const MobileAppTechnology = () => {
         description="Looking for a mobile app developer to realize your vision? We connect you with experts in iOS, Android, and cross-platform app development."
         imageSrc="/images/v2/mobile-app-bannner.webp"
       />
-      <HireTeamServices bgClass="bg-themeLight" />
+      <ServicesSection
+        bgClass="bg-themeLight"
+        sectionId="hire-mobile-app-developer"
+        serviceData={mobileAppService}
+      />
       <TechnologyDevelopers bgClass="bg-white" />
       <BenefitOfHiringDevelopers
         title="Why Choose Us?"

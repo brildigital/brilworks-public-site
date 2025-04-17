@@ -54,12 +54,12 @@ const HeaderV2 = () => {
     };
   }, [lastScrolledPosition]);
 
-  useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 767 && setOpenNav(false)
-    );
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener(
+  //     "resize",
+  //     () => window.innerWidth >= 767 && setOpenNav(false)
+  //   );
+  // }, []);
 
   useEffect(() => {
     window.addEventListener(

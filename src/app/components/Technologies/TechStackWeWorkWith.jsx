@@ -44,7 +44,7 @@ function TechStackWeWorkWith({
                 key={value}
                 value={value}
                 onClick={() => setActiveTab(value)}
-                className={`font-Figtree ${
+                className={`font-Figtree m-1 ${
                   activeTab === value
                     ? `sm:bg-transparent !bg-themeColor text-white font-medium sxl:text-xl text-lg md:text-xl ${
                         bgClass === "bg-themeLight"

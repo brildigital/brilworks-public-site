@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
-import HireTeamServices from "../HireTeam/HireTeamServices";
+import ServicesSection from "../Common/ServicesSection";
 
 const AdaloFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -99,6 +99,48 @@ const AdaloTechnology = () => {
     },
   ];
 
+  const adaloService = {
+    title: "Explore Our Adalo Development Services",
+    buttonText: "Hire Adalo Developer",
+    servicesList: [
+      {
+        title: "Custom App Development",
+        value: "adalo-1",
+        imageSrc: "/images/v2/mobile-app-img.webp",
+        description:
+          "Whether you need a prototype or a fully functional application, our team can develop any kind of custom app using Adalo.",
+      },
+      {
+        title: "UI/UX Design",
+        value: "adalo-2",
+        imageSrc: "/images/v2/ui-ux-img.webp",
+        description:
+          "User experience is at the heart of every successful app. Our design team crafts intuitive and engaging interfaces, ensuring a seamless user journey from start to finish.",
+      },
+      {
+        title: "Integration Services",
+        value: "adalo-3",
+        imageSrc: "/images/v2/integration-services.webp",
+        description:
+          "Integrate your app with third-party services and APIs, from payment gateways to social media platforms, to enhance its functionality.",
+      },
+      {
+        title: "App Maintenance and Support",
+        value: "adalo-4",
+        imageSrc: "/images/v2/maintenance.webp",
+        description:
+          "Our commitment to your success doesn’t end at launch. We offer ongoing maintenance and support services.",
+      },
+      {
+        title: "Adalo Consulting Services",
+        value: "adalo-5",
+        imageSrc: "/images/v2/adalo-consulting-services.webp",
+        description:
+          "Not sure where to start? Our Adalo experts provide consulting services to help you navigate the app development process, from ideation to deployment.",
+      },
+    ],
+  };
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -116,7 +158,11 @@ const AdaloTechnology = () => {
         description="Ready to build an app in less time? As a certified Adalo development company, we provide end-to-end Adalo development services, from design and development to ongoing maintenance and coaching."
         imageSrc="/images/v2/adalo-banner.webp"
       />
-      <HireTeamServices bgClass="bg-themeLight" />
+      <ServicesSection
+        bgClass="bg-themeLight"
+        sectionId="hire-adalo-developer"
+        serviceData={adaloService}
+      />
       <TechnologyDevelopers bgClass="bg-white" />
       <BenefitOfHiringDevelopers
         title="Why Choose Brilworks for Adalo Development?"
@@ -131,7 +177,7 @@ const AdaloTechnology = () => {
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="What Makes a Top-Rated Adalo Development Company?"
-        description="We understand the need for a stable, cost-effective tech infrastructure. Our Adalo experts deliver end-to-end cloud solutions to drive your business growth and innovation."
+        description="We understand the need for a stable, cost-effective tech infrastructure. Our Adalo experts deliver end-to-end solutions to drive your business growth and innovation."
         keyValueData={adaloExperienceShowCase}
       />
       <SolutionContactForm />
