@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
-import HireTeamServices from "../HireTeam/HireTeamServices";
+import ServicesSection from "../Common/ServicesSection";
 
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const SolutionContactForm = dynamic(() =>
@@ -78,6 +78,48 @@ const AWSTechnology = () => {
     },
   ];
 
+  const awsService = {
+    title: "Our AWS Development Services",
+    buttonText: "Get a Quote for your Project",
+    servicesList: [
+      {
+        title: "AWS Development Consulting",
+        value: "aws-1",
+        imageSrc: "/images/v2/AWS-dev-consulting.webp",
+        description:
+          "Our team of AWS consultants helps your business to establish and maintain a high-performance cloud environment. Our consulting services include development, deployment, migration & optimization.",
+      },
+      {
+        title: "AWS App Development Services",
+        value: "aws-2",
+        imageSrc: "/images/v2/AWS-app-development-services.webp",
+        description:
+          "The AWS development experts at Brilworks build cutting-edge web and mobile applications, with custom features that are needed to gain a competitive advantage. Whether it is developing them from scratch or modernizing your legacy applications with AWS, our team can assist you with it all.",
+      },
+      {
+        title: "AWS Cloud Migration Services",
+        value: "aws-3",
+        imageSrc: "/images/v2/AWS-cloud-migration-services.webp",
+        description:
+          "We know that a successful migration to the cloud is about more than just moving your workloads from on-premise applications to public cloud platforms. This is why we take the time to understand your application needs, business objectives, and migration requirements.",
+      },
+      {
+        title: "DevOps AWS Services",
+        value: "aws-4",
+        imageSrc: "/images/v2/DevOps-AWS-services.webp",
+        description:
+          "DevOps on AWS is an end-to-end automation framework that uses AWS services like CodePipeline, AWS CodeBuild & AWSCodeDeploy to develop, test and deploy your applications in AWS. Our experts help you use services like these so that you can easily build and deploy compound cloud architectures on AWS.",
+      },
+      {
+        title: "AWS Managed Services",
+        value: "aws-5",
+        imageSrc: "/images/v2/AWS-managed-services.webp",
+        description:
+          "We offer cost-optimized, seamless managed services that are built for the modern world of IT. Our goal is to help you make more informed decisions about your infrastructure and get more out of what you have.",
+      },
+    ],
+  };
+
   return (
     <>
       <HireTeamHeroSection
@@ -86,7 +128,10 @@ const AWSTechnology = () => {
         description="Our expertise in AWS development services has empowered us to bring the best cloud solutions to your organization’s infrastructure without the cost and hassle of having to build it yourself."
         imageSrc="/images/v2/aws-banner.webp"
       />
-      <HireTeamServices />
+      <ServicesSection
+        serviceData={awsService}
+        sectionId="hire-aws-developer"
+      />
       <TechnologyDevelopers />
       <BenefitOfHiringDevelopers />
       <HireDevelopersInThreeSteps title="AWS Developers" />

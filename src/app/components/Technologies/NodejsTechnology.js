@@ -18,8 +18,10 @@ import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
-const HireTeamServices = dynamic(() => import("../HireTeam/HireTeamServices"));
-const WhyThisTech = dynamic(() => import("./WhyThisTech"));
+const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
+const MultipleCardWithIconBG = dynamic(() =>
+  import("../Common/MultipleCardWithIconBG")
+);
 const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -99,6 +101,111 @@ const techStackList = [
   },
 ];
 
+const nodeJSService = {
+  title: "Build Lightning-Fast Solutions With Our Node.js Development Services",
+  buttonText: "Get a Quote for your Project",
+  servicesList: [
+    {
+      title: "Web App Development",
+      value: "nodejs-1",
+      imageSrc: "/images/v2/web-development.webp",
+      description:
+        "We engineer high-traffic web applications that outperform industry benchmarks. Leveraging Node.js’s event-driven architecture, we build solutions that maintain sub-second response times, even with 10,000+ concurrent users. Our battle-tested approach ensures seamless scalability and 24/7 reliability.",
+    },
+    {
+      title: "API Development & Integration",
+      value: "nodejs-2",
+      imageSrc: "/images/v2/api-dev.webp",
+      description:
+        "Our track record includes 100+ mission-critical API implementations. We design RESTful/GraphQL APIs with military-grade security and 99.99% uptime SLAs, having integrated complex ecosystems spanning fintech platforms, IoT networks, and global ERP systems.",
+    },
+    {
+      title: "Legacy Modernization Leadership",
+      value: "nodejs-3",
+      imageSrc: "/images/v2/legacy-modernization-leadership.webp",
+      description:
+        "We’ve successfully migrated 50+ legacy systems to Node.js with zero business disruption. Our phased modernization approach combines reverse-engineering expertise with future-ready architecture design, typically achieving 3x performance improvements and 40% maintenance cost reductions.",
+    },
+    {
+      title: "Real-Time Solution Specialists",
+      value: "nodejs-4",
+      imageSrc: "/images/v2/real-time-solution-specialists.webp",
+      description:
+        "Developers of enterprise-ready real-time systems, we create collaborative platforms and live data solutions using Node.js’s native capabilities. Our implementations power mission-critical communication tools and instant-update interfaces across industries.",
+    },
+    {
+      title: "Microservices Architecture Authority",
+      value: "nodejs-5",
+      imageSrc: "/images/v2/microservices-architecture-authority.webp",
+      description:
+        "Architects of 50+ production-grade Node.js microservices ecosystems, we implement containerized, Kubernetes-optimized solutions that enable true CI/CD. Our modular designs have helped enterprises achieve 5x faster feature deployments.",
+    },
+    {
+      title: "Serverless Development Innovators",
+      value: "nodejs-6",
+      imageSrc: "/images/v2/serverless-development-innovators.webp",
+      description:
+        "Leaders in serverless Node.js implementations, we optimize cloud costs while maintaining elastic scalability. Our solutions have reduced clients’ infrastructure expenses by 60%+ through intelligent AWS Lambda/Azure Functions architectures.",
+    },
+  ],
+};
+
+const nodeJsBenefits = {
+  title: "Why Choose Node.js Development?",
+  description:
+    "Node.js is widely used for real-time applications and scalable microservices, but scaling it properly requires careful management. Our Node.js developers help you navigate these challenges, ensuring smooth performance as your application grows.",
+  benefits: [
+    {
+      title: "Non-Blocking Architecture for Speed",
+      description:
+        "Node.js processes requests asynchronously, eliminating delays in web applications like real-time chat, live streaming, or RESTful APIs. This ensures fast response times and seamless user experiences.",
+      icon: "/images/v2/why-n-1.svg",
+    },
+    {
+      title: "Lightweight & Resource-Efficient",
+      description:
+        "Its event-driven model minimizes server load, making it ideal for building scalable systems without excessive hardware costs. Perfect for startups and enterprises alike.",
+      icon: "/images/v2/why-n-2.svg",
+    },
+    {
+      title: "Microservices-Ready Ecosystem",
+      description:
+        "Node.js simplifies splitting monolithic apps into modular microservices, enabling independent scaling, faster updates, and easier maintenance in software development cycles.",
+      icon: "/images/v2/why-n-3.svg",
+    },
+    {
+      title: "High Concurrency Handling",
+      description:
+        "Designed to manage thousands of simultaneous connections, Node.js excels in high-quality platforms like gaming, IoT, or collaborative tools with heavy real-time traffic.",
+      icon: "/images/v2/why-n-4.svg",
+    },
+    {
+      title: "Optimized for RESTful API Development",
+      description:
+        "Node.js streamlines creating RESTful APIs, ensuring smooth communication between frontend and backend systems for data-driven web applications.",
+      icon: "/images/v2/why-n-5.svg",
+    },
+    {
+      title: "Unmatched Scalability",
+      description:
+        "Built for horizontal and vertical scaling, Node.js supports building scalable architectures that grow with user demand, from startups to global enterprises.",
+      icon: "/images/v2/scale-project.svg",
+    },
+    {
+      title: "Performance-Centric Design",
+      description:
+        "Node.js prioritizes performance optimization out of the box, reducing latency and CPU bottlenecks even in compute-heavy tasks like data analytics or real-time dashboards.",
+      icon: "/images/v2/why-n-7.svg",
+    },
+    {
+      title: "JavaScript Everywhere",
+      description:
+        "Leverage a unified programming language (JavaScript/TypeScript) across frontend and backend, streamlining software development and reducing context-switching for teams.",
+      icon: "/images/v2/why-n-8.svg",
+    },
+  ],
+};
+
 const why100PlusCompaniesTrust = [
   {
     title: "No Time Zone Barriers",
@@ -165,14 +272,18 @@ const NodejsTechnology = () => {
         description="From concept to deployment, we prioritize technical excellence, agile methodologies, and innovative problem-solving to deliver solutions that drive growth. We don't just write Node.js code. We build high-performance backend solutions."
         cardData={why100PlusCompaniesTrust}
       />
-      <HireTeamServices bgClass="bg-themeLight" />
+      <ServicesSection
+        sectionId="hire-nodejs-developer"
+        bgClass="bg-themeLight"
+        serviceData={nodeJSService}
+      />
       <TechnologyDevelopers bgClass="bg-white" />
       <HireTeamDigitalTransformation />
       <BenefitOfHiringDevelopers />
       <TechStackWeWorkWith active="backend" techStackList={techStackList} />
       <BrilworksAdvantage />
       <HireTeamSolutions />
-      <WhyThisTech />
+      <MultipleCardWithIconBG data={nodeJsBenefits} />
       <HiringModels />
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"

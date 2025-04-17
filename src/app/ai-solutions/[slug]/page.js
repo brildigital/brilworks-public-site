@@ -3,14 +3,16 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import AISolutionsFirstSection from "@/app/components/AISolutions/AISolutions";
-import AIWorking from "@/app/components/AISolutions/AIWorking";
-import CTASection from "@/app/components/Common/CTASection";
 
 const AISeamlessIntegration = dynamic(() =>
   import("@/app/components/AISolutions/AISeamlessIntegration")
 );
 const WhatUserSays = dynamic(() =>
   import("@/app/components/AISolutions/WhatUserSays")
+);
+const CTASection = dynamic(() => import("@/app/components/Common/CTASection"));
+const AIWorking = dynamic(() =>
+  import("@/app/components/AISolutions/AIWorking")
 );
 const AISolutionsFAQ = dynamic(() =>
   import("@/app/components/AISolutions/AISolutionsFAQ")

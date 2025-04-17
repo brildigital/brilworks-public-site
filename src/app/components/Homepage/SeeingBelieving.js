@@ -12,7 +12,12 @@ const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-const SeeingBelieving = ({ title, caseStudyToShow }) => {
+const SeeingBelieving = ({
+  title,
+  bgClass = "bg-SectionBG",
+  caseStudyToShow,
+  buttonText = "Explore all Case Studies",
+}) => {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,7 +33,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
   // useEffect(() => {
   //   Storyblok.get("cdn/stories/", {
   //     starts_with: "portfolio/",
-  //     per_page: 4,
+  //     per_page: 100,
   //     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
   //   })
   //     .then((response) => {
@@ -49,6 +54,8 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
   //       description: data?.content?.description,
   //       image: data?.content?.images?.[0]?.filename,
   //       alt: data?.content?.images?.[0]?.meta_data?.alt,
+  //       industry: data?.content?.industry,
+  //       technology: data?.content?.technology,
   //     };
   //   });
 
@@ -99,8 +106,64 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
     },
   ];
 
+  const fintechPortfolio = [
+    {
+      title:
+        "AI-Driven Stock Prediction Platform to Provide Traders with Insights",
+      link: "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
+      description:
+        "Developing a mobile app for an ultimate AI stock prediction platform, allowing users to trade based on data-driven insights.",
+      image:
+        "https://a.storyblok.com/f/219851/565x400/b1a7a16ed4/stock-view-app.webp",
+      alt: "Fintech App",
+      industry: "Fintech",
+      technology: ["React Native", "Java", "MySQL"],
+    },
+    {
+      title:
+        "A Powerful Inventory Management App to Reduce Order Processing Time",
+      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+      description:
+        "Developing a mobile inventory management solution for a leading seat manufacturer.",
+      image:
+        "https://a.storyblok.com/f/219851/565x400/93672878ad/powerful-inventory-app.webp",
+      alt: "E-commerce App",
+      industry: "E-Commerce",
+      technology: ["ReactJS", "NodeJS", "MongoDB"],
+    },
+  ];
+  const healthcarePortfolio = [
+    {
+      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
+      link: "/portfolio/healthcare-mobile-app/",
+      description:
+        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
+      image:
+        "https://a.storyblok.com/f/219851/565x400/ed7dbf1d9c/healthcare-mobile-app.webp",
+      industry: "Healthcare",
+      technology: ["React Native"],
+    },
+    {
+      title: "Revolutionizing Health with a Smart, Data-Driven Fitness App",
+      link: "/portfolio/mobile-fitness-app/",
+      description:
+        "We built a feature-rich fitness app that combines real-time performance tracking, personalized plans, and expert insights to help users achieve their health goals seamlessly.",
+      image:
+        "https://a.storyblok.com/f/219851/565x400/eeb623385a/revolutionarizing-fitness-app.webp",
+      industry: "Healthcare",
+      technology: ["iOS", "Android", "React Native"],
+    },
+  ];
+
+  const caseStudyData =
+    pathname === "/industry/fintech-software-development/"
+      ? fintechPortfolio
+      : pathname === "/industry/healthcare-software-development/"
+      ? healthcarePortfolio
+      : portfolioDynamicItems;
+
   return (
-    <div className="bg-sectionBG">
+    <div className={bgClass}>
       <div className="container mx-auto max-w-[1280px] main-section-padding reveal">
         <div className="flex items-center justify-between">
           <Heading
@@ -118,8 +181,8 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
           </div>
         </div>
         <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 lg:pt-10 md:pt-8 pt-5">
-          {portfolioDynamicItems?.length &&
-            portfolioDynamicItems
+          {caseStudyData?.length &&
+            caseStudyData
               ?.filter(({ link }) => !pathname?.includes(link))
               ?.slice(0, caseStudyToShow)
               ?.map(
@@ -195,7 +258,7 @@ const SeeingBelieving = ({ title, caseStudyToShow }) => {
         <div className="flex justify-center">
           <ButtonV2
             redirect="/portfolio/"
-            label="Explore all Case Studies"
+            label={buttonText}
             className="hover:text-themeColor w-fit lg:mt-10 mt-8"
           />
         </div>

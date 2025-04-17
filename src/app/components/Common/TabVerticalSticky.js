@@ -15,11 +15,13 @@ const TabVerticalSticky = ({
   buttonText,
   borderRight = true,
   rightSideOnlyImage = false,
+  imageOnLeft = false,
 }) => {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const themeBorder = darkMode ? "border-r-[#2B3138]" : "border-r-borderGray";
   const themeBasesText = darkMode ? "text-white" : "";
+  const borderPosition = imageOnLeft ? "border-l" : "border-r";
 
   const handleScroll = () => {
     // Get the current component container
@@ -102,19 +104,22 @@ const TabVerticalSticky = ({
   }, []);
 
   return (
-    <div className="flex w-full" ref={containerRef}>
+    <div
+      className={`flex w-full ${imageOnLeft ? "flex-row-reverse" : "flex-row"}`}
+      ref={containerRef}
+    >
       <div
-        className={`md:w-1/2 main-section-padding md:!pt-10 !pr-0 !pt-6 ${
-          borderRight ? `border-r ${themeBorder}` : ""
-        }`}
+        className={`md:w-1/2 main-section-padding md:!pt-10 ${
+          imageOnLeft ? "!pl-0" : "!pr-0"
+        } !pt-6 ${borderRight ? `${borderPosition} ${themeBorder}` : ""}`}
       >
         <aside className="stickysection__sidebar flex items-start justify-start w-full">
           <ul className="anchor-links w-full">
             {data.map(({ title, value, description }, index) => (
               <li
-                className={`flex ${
-                  index === 0 ? "active" : ""
-                } justify-start md:!pl-10 md:!py-7.5 !py-4 rounded-l-2xl md:gap-5 gap-2 !w-full`}
+                className={`flex ${index === 0 ? "active" : ""} ${
+                  imageOnLeft ? "left-img" : ""
+                } justify-start md:!pl-10 md:!py-7.5 !py-4 md:gap-5 gap-2 !w-full`}
                 key={index}
               >
                 <a
@@ -203,7 +208,10 @@ const TabVerticalSticky = ({
             </div>
           </div>
           {data.map(
-            ({ title, description, value, imageSrc, service }, index) => (
+            (
+              { title, description, value, imageSrc, imageAlt, service },
+              index
+            ) => (
               <div
                 id={value}
                 className="stickysection__item flex items-start justify-start w-full"
@@ -214,7 +222,7 @@ const TabVerticalSticky = ({
                     src={imageSrc}
                     width={830}
                     height={350}
-                    alt={`${value}-icon`}
+                    alt={imageAlt || `${value}-icon`}
                     sizes="(max-width: 767px) 414px, 830px"
                   />
                 </div>

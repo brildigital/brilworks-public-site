@@ -7,11 +7,13 @@ import Header from "./Header";
 const CurrentHeader = () => {
   const pathname = usePathname();
 
-  const headerDark = ["/portfolio/", "/about-us/", "/contact-us/"];
+  const headerDark = ["/about-us/", "/contact-us/"];
 
   const headerNew =
     headerDark.includes(pathname) ||
     pathname.startsWith("/hire-") ||
+    pathname.startsWith("/portfolio/") ||
+    pathname.startsWith("/industry/") ||
     pathname.startsWith("/ai-solutions/");
 
   return headerNew || pathname === "/" ? <HeaderV2 /> : <Header />;

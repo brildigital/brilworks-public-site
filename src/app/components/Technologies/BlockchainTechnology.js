@@ -5,13 +5,13 @@ import { scrollEffect } from "../lib/commonFunction";
 import { faJs, faDocker } from "@fortawesome/free-brands-svg-icons";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
-import HireDevelopersInThreeSteps from "../HireTeam/HireDevelopersInThreeSteps";
-import HireDevelopersPricingPlan from "../HireTeam/HireDevelopersPricingPlan";
-const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 
-const HireTeamServices = dynamic(() => import("../HireTeam/HireTeamServices"));
+const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
+const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
+const MultipleCardWithIconBG = dynamic(() =>
+  import("../Common/MultipleCardWithIconBG")
+);
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
-const WhyThisTech = dynamic(() => import("./WhyThisTech"));
 const HiringModels = dynamic(() => import("./HiringModels"));
 const BlockChainFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -20,6 +20,12 @@ const SolutionContactForm = dynamic(() =>
 );
 const BenefitOfHiringDevelopers = dynamic(() =>
   import("./BenefitOfHiringDevelopers")
+);
+const HireDevelopersInThreeSteps = dynamic(() =>
+  import("../HireTeam/HireDevelopersInThreeSteps")
+);
+const HireDevelopersPricingPlan = dynamic(() =>
+  import("../HireTeam/HireDevelopersPricingPlan")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -115,6 +121,98 @@ const techStackList = [
 ];
 
 const BlockchainTechnology = () => {
+  const blockchainService = {
+    title: "Build Trust-Centric Solutions With Our Blockchain Services",
+    buttonText: "Get a Quote for your Project",
+    servicesList: [
+      {
+        title: "Smart Contract Development",
+        value: "blockchain-1",
+        imageSrc: "/images/v2/smart-contract-dev.webp",
+        description:
+          "Self-executing contracts with zero loopholes. Code audited by third parties for vulnerabilities, ensuring ironclad compliance.",
+      },
+      {
+        title: "DApp Development",
+        value: "blockchain-2",
+        imageSrc: "/images/v2/dapp-development.webp",
+        description:
+          "Decentralized apps that combine intuitive UX with blockchain’s power. Scalable, secure, and built for mass adoption.",
+      },
+      {
+        title: "Blockchain Migration",
+        value: "blockchain-3",
+        imageSrc: "/images/v2/blockchain-migration.webp",
+        description:
+          "Transition legacy systems to blockchain smoothly. We ensure zero downtime, data integrity, and enhanced functionality.",
+      },
+      {
+        title: "Enterprise Blockchain Solutions",
+        value: "blockchain-4",
+        imageSrc: "/images/v2/enterprise-blockchain-solutions.webp",
+        description:
+          "Permissioned networks tailored for industries needing privacy and control. Audit trails, role-based access, and GDPR compliance.",
+      },
+      {
+        title: "Tokenization & DeFi Platforms",
+        value: "blockchain-5",
+        imageSrc: "/images/v2/tokenization-defi.webp",
+        description:
+          "Launch tokens, NFTs, or DeFi ecosystems with secure wallets, liquidity pools, and staking mechanisms that drive engagement.",
+      },
+      {
+        title: "Blockchain Consulting",
+        value: "blockchain-6",
+        imageSrc: "/images/v2/blockchain-consulting.webp",
+        description:
+          "From consensus algorithms to governance models—strategic roadmaps that align blockchain with your business goals.",
+      },
+    ],
+  };
+
+  const blockchainBenefits = {
+    title: "Why Blockchain? Strategic Advantages for Modern Enterprises",
+    description: "",
+    benefits: [
+      {
+        title: "Unbreakable Security",
+        description:
+          "Immutable ledgers and cryptographic hashing reduce breaches by 99%. Ideal for sectors handling sensitive data.",
+        icon: "/images/v2/adv-security.svg",
+      },
+      {
+        title: "Transparent Operations",
+        description:
+          "Every transaction is auditable, building stakeholder trust. Supply chain clients report 40% faster dispute resolution.",
+        icon: "/images/v2/transparent.svg",
+      },
+      {
+        title: "Cost Efficiency",
+        description:
+          "Automate middlemen processes. Banks using smart contracts cut operational costs by 30%.",
+        icon: "/images/v2/cost-efficient.svg",
+      },
+      {
+        title: "Future-Proof Scalability",
+        description:
+          "Layer-2 solutions and sharding enable networks to handle 10,000+ TPS, ready for global adoption.",
+        icon: "/images/v2/future-proof-scalability.svg",
+      },
+      {
+        title: "Regulatory Compliance",
+        description:
+          "Built-in KYC/AML modules and automated reporting ensure adherence to evolving global standards.",
+        icon: "/images/v2/regular-compliance.svg",
+      },
+      {
+        title: "Ecosystem Growth",
+        description:
+          "Join a $30B+ industry with interoperability standards like Cosmos and Polkadot, ensuring long-term relevance.",
+        icon: "/images/v2/growth.svg",
+      },
+    ],
+  };
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -136,7 +234,11 @@ const BlockchainTechnology = () => {
         description="We don’t just write React code. We engineer user addiction. Here’s what sets us apart."
         cardData={why90PlusClientReturn}
       />
-      <HireTeamServices bgClass="bg-themeLight" />
+      <ServicesSection
+        sectionId="hire-blockchain-developer"
+        serviceData={blockchainService}
+        bgClass="bg-themeLight"
+      />
       <TechnologyDevelopers bgClass="bg-white" />
       <BenefitOfHiringDevelopers bgClass="bg-sectionBG" />
       <TechStackWeWorkWith
@@ -145,7 +247,7 @@ const BlockchainTechnology = () => {
         techStackList={techStackList}
       />
       <HireTeamSolutions />
-      <WhyThisTech />
+      <MultipleCardWithIconBG data={blockchainBenefits} />
       <HiringModels />
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"

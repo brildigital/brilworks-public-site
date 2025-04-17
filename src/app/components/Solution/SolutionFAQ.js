@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import FAQAccordion from "../Common/FAQAccordion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";

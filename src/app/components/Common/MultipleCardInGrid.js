@@ -1,8 +1,15 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
+import ButtonV2 from "./ButtonV2";
 
-const MultipleCardInGrid = ({ bgClass, title, description, cardData }) => {
+const MultipleCardInGrid = ({
+  bgClass,
+  buttonText,
+  title,
+  description,
+  cardData,
+}) => {
   return (
     <section className={bgClass}>
       <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
@@ -52,6 +59,14 @@ const MultipleCardInGrid = ({ bgClass, title, description, cardData }) => {
             )
           )}
         </div>
+        {buttonText && (
+          <ButtonV2
+            label={buttonText}
+            className="hover:text-themeColor sxl:!mt-10 md:!mt-7.5 !mt-5 w-fit mx-auto"
+            redirect="#section-contact-form"
+            scrollingButton
+          />
+        )}
       </div>
     </section>
   );
