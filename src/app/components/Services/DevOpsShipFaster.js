@@ -57,12 +57,6 @@ const DevOpsShipFaster = () => {
       "Our FlutterFlow development services include FlutterFlow web and app development. Hire pre-vetted Flutter developers from Brilworks to work with your own team. Contact us today and hire top-rated Flutter experts in just 48 hours.",
   };
 
-  const adaloDevelopmentData = {
-    heading: "Your Adalo Partner: Our Development Services",
-    para1:
-      "As a leading Adalo development company, we thrive on creating tailored solutions that cater to our clients' diverse needs. Our team of skilled developers combines technical prowess with creative flair to build apps that not only meet but exceed expectations.",
-  };
-
   const showDataBasedOnPathname = {
     "/devops-consulting-services/": devOpsData,
     "/product-engineering-development-services/": productEngineeringData,
@@ -70,11 +64,9 @@ const DevOpsShipFaster = () => {
     "/application-development-services/": applicationDevData,
     "/generative-ai-development-services/": generativeAIData,
     "/erp-next-development-services/": applicationDevData,
-    "/low-code-no-code-development-services/": applicationDevData,
     "/business-intelligence-services/": applicationDevData,
     "/frappe-development-services/": frappeDevelopmentData,
     "/flutterflow-development-services/": flutterFlowDevelopmentData,
-    "/adalo-development-services/": adaloDevelopmentData,
   };
 
   const { heading, para1, para2 } = showDataBasedOnPathname[pathname];

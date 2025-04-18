@@ -6,7 +6,6 @@ import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
@@ -53,7 +52,6 @@ const ERPNextDevService = () => {
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
       <IndustriesWeHelp />
       <ClientReviews />
       <SeeingBelieving />

@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
-const DevOpsShipFaster = dynamic(() => import("./DevOpsShipFaster"));
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,47 +16,35 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const FrappeDevelopmentService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-
-            <Image
-              className="w-full md:block hidden h-auto"
-              src={`/images/frappe-banner.webp`}
-              alt="Frappe Development banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              A Trusted Frappe Development Company
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-[55%]">
-              At Brilworks, we specialize in creating custom Frappe solutions
-              for small and medium-sized businesses. Our experienced team is
-              dedicated to helping startups and SMBs thrive by providing
-              top-notch development services.
-            </p>
-            <Button label="Consult our expert" />
-          </div>
-        </div>
-      </div>
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="A Trusted Frappe Development Company"
+        description="At Brilworks, we specialize in creating custom Frappe solutions for small and medium-sized businesses. Our experienced team is dedicated to helping startups and SMBs thrive by providing top-notch development services."
+        buttonText="Consult our expert"
+        imageSrc="/images/v2/frapee-service-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Frappe Development Solutions by Brilworks"
+        description="Missing a Frappe feature? We'll plug the gap. We're the architects you've been searching for – from customizing existing Frappe applications to developing bespoke solutions from scratch, we have the expertise to meet your unique requirements."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
-      <IndustriesWeHelp />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Ready to take your business to the next level with our Frappe development services?"
+        buttonText="Talk to Our Expert"
+      />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

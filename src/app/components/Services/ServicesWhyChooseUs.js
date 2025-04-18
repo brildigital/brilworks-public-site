@@ -517,7 +517,7 @@ const ServicesWhyChooseUs = () => {
   const remainingThree = data.slice(data.length === 4 ? 2 : 3, data?.length);
 
   return (
-    <div className="container max-w-[1440px] main-section-padding mx-auto">
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
       <div className="endTO_text solutions">
         {pathname === "/application-development-services/" ? (
           <h2 className="text-center w-2/3 mx-auto">

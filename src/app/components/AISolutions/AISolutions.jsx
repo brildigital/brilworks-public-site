@@ -35,7 +35,7 @@ function AISolutionsFirstSection({
                 {...(buttonURL?.url ? { target: "_blank" } : {})}
               />
 
-              <div className="iframe-bg rounded-[30px] sxl:p-10 md:p-7.5 p-5">
+              <div className="iframe-bg rounded-[30px] sxl:p-10 md:p-7.5 p-3">
                 <div className="video-container">
                   <iframe
                     className="rounded-[30px]"

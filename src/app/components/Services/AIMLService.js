@@ -1,13 +1,12 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const UseCases = dynamic(() => import("./UseCases"));
 const KeyBenefits = dynamic(() => import("./KeyBenefits"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -17,46 +16,29 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const AIMLService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]" />
-            <Image
-              className="w-full h-auto md:block hidden"
-              src="https://a.storyblok.com/f/219851/4500x1806/914b64af3d/aiml-banner.webp"
-              alt="ALML banner"
-              width="1440"
-              height="648"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[50%]">
-            <h1 className="mb-[30px] md:mb-[20px] lg:mb-[30px] w-full md:w-1/2">
-              Advance Your Business with AI/ML and Computer Vision
-            </h1>
-            <p className="!text-colorGray w-full md:w-1/2 lg:!mb-10 md:!mb-6 !mb-10">
-              Leverage the power of AI and visual analytics to transform your
-              business operation.
-            </p>
-            <Button label="Let’s Get Started" />
-          </div>
-        </div>
-      </div>
-
+    <>
+      <ServiceHeroSection
+        title="Advance Your Business with AI/ML and Computer Vision"
+        description="We are pioneering the future of AI with our generative AI solutions. We are not just another AI company; we are a team of passionate experts who craft bespoke AI applications tailored to your unique needs."
+        buttonText="Let’s Get Started"
+        imageSrc="/images/v2/ai-ml-service-banner.webp"
+      />
       <OurServices />
       <UseCases />
       <KeyBenefits />
       <Honors />
-      <ContactBlock />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Don't let cost hold you back. Our industry-leading AI/ML services are within reach."
+        buttonText="Let's Get Started"
+      />
       <TechStackWeUse />
       <ServicesWhyChooseUs />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

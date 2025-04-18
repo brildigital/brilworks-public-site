@@ -1,5 +1,5 @@
 import React from "react";
-import DedicatedTeam from "../components/DedicatedTeam";
+import DedicatedTeam from "../components/Services/DedicatedTeam";
 
 export const metadata = {
   title: "Dedicated Team",

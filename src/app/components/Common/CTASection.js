@@ -7,6 +7,8 @@ const CTASection = ({
   description,
   buttonText,
   darkBackground = true,
+  titleClass = "",
+  descriptionClass = "",
 }) => {
   return (
     <div
@@ -26,13 +28,16 @@ const CTASection = ({
             >
               <Heading
                 type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
+                className={`lg:!text-[34px] md:!text-3xl !text-2xl mb-4 md:!leading-snug w-full ${titleClass}`}
                 text={title || "Ready to Develop Your Success Story With Us?"}
               />
-              <div className="w-full flex justify-between sxl:flex-row flex-col md:!text-lg text-base md:gap-4 gap-2">
-                {description ||
-                  "Tell us your project idea and get a free consultation to create an outstanding digital product."}
-              </div>
+              {description && (
+                <div
+                  className={`w-full flex justify-between sxl:flex-row flex-col md:!text-lg text-base md:gap-4 gap-2 ${descriptionClass}`}
+                >
+                  {description}
+                </div>
+              )}
             </div>
             {buttonText && (
               <ButtonV2

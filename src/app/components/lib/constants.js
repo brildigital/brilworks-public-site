@@ -88,23 +88,23 @@ export const servicesMenuItems = [
       // },
     ],
   },
-  {
-    name: "DATA & BI",
-    subSections: [
-      {
-        name: "BI Consulting",
-        path: "/business-intelligence-services/",
-      },
-      // {
-      //   name: "Power BI",
-      //   path: "#",
-      // },
-      // {
-      //   name: "Data Engineering",
-      //   path: "#",
-      // },
-    ],
-  },
+  // {
+  //   name: "DATA & BI",
+  //   subSections: [
+  //     {
+  //       name: "BI Consulting",
+  //       path: "/business-intelligence-services/",
+  //     },
+  // {
+  //   name: "Power BI",
+  //   path: "#",
+  // },
+  // {
+  //   name: "Data Engineering",
+  //   path: "#",
+  // },
+  //   ],
+  // },
   {
     name: "DevOps & Cloud",
     subSections: [

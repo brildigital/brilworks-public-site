@@ -141,7 +141,7 @@ export default async function Page({ params }) {
       <WhatUserSays userSaysData={what_users_say} />
       <CTASection
         title={CTA?.[0]?.title}
-        description=""
+        description="Tell us your project idea and get a free consultation to create an outstanding digital product."
         buttonText={CTA?.[0]?.button_text}
       />
       <AISolutionsFAQ faqData={FAQ} />

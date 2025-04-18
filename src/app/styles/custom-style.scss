@@ -470,6 +470,20 @@
   background-position: 50%;
   background-repeat: no-repeat;
 }
+.service-hero-bg {
+  background-image: url("/images/v2/services-bg.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
+}
 
 .overview-bubble {
   background: url(/images/v2/vision-bubble.svg);

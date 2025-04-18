@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,47 +16,34 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const LowCodeNoCodeDevService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src={`/images/lowcode-banner.webp`}
-              alt="Product engineering banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              Low Code No Code Development Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              Turn ideas into reality faster than ever before with our
-              no-code/low-code development services.  At Brilworks, we're a
-              leading Low-Code No-Code Development Company, empowering
-              businesses to build custom applications without the need for
-              extensive coding knowledge.
-            </p>
-            <Button label="Schedule a call" />
-          </div>
-        </div>
-      </div>
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="Low Code No Code Development Services"
+        description="Turn ideas into reality faster than ever before with our no-code/low-code development services.  At Brilworks, we're a leading Low-Code No-Code Development Company, empowering businesses to build custom applications without the need for extensive coding knowledge."
+        buttonText="Schedule a Call"
+        imageSrc="/images/v2/low-code-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Your Innovation Partner in Cutting-Edge Development"
+        description="We're more than just developers. Our team of elite engineers and strategists become an extension of yours, collaborating to develop groundbreaking solutions on any platform. Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
-      <IndustriesWeHelp />
+      <CTASection
+        title="Build your dream app - Start your free Low-Code No-Code trial today!"
+        buttonText="Get a Free Consultation"
+      />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

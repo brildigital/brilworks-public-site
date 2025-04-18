@@ -7,16 +7,16 @@ import Header from "./Header";
 const CurrentHeader = () => {
   const pathname = usePathname();
 
-  const headerDark = ["/about-us/", "/contact-us/"];
+  const headerLight = ["/our-process/", "/career/"];
 
-  const headerNew =
-    headerDark.includes(pathname) ||
-    pathname.startsWith("/hire-") ||
-    pathname.startsWith("/portfolio/") ||
-    pathname.startsWith("/industry/") ||
-    pathname.startsWith("/ai-solutions/");
+  const headerOld =
+    headerLight.includes(pathname) ||
+    pathname.startsWith("/blog/") ||
+    pathname.startsWith("/use-case/") ||
+    pathname.startsWith("/gist/") ||
+    pathname.startsWith("/ebooks/");
 
-  return headerNew || pathname === "/" ? <HeaderV2 /> : <Header />;
+  return headerOld ? <Header /> : <HeaderV2 />;
 };
 
 export default CurrentHeader;

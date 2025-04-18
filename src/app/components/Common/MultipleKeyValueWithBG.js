@@ -22,7 +22,7 @@ const MultipleKeyValueWithBG = ({
           />
           <p className="md:text-lg text-base">{description}</p>
 
-          <div className="w-full lg:py-10 md:pt-7.5 py-5">
+          <div className="w-full lg:py-10 md:py-7.5 py-5">
             <div className={`grid grid-cols-2 ${gridClass} md:gap-10 gap-5`}>
               {keyValueData.map(({ value, description, color }, index) => (
                 <div

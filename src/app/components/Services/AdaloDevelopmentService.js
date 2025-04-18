@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,45 +16,35 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const AdaloDevelopmentService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full hidden md:block h-auto"
-              src="https://a.storyblok.com/f/219851/1440x796/a1882ce6ef/adalo-banner.webp"
-              alt="Adalo Development banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              Adalo Development Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-[55%]">
-              Empower Your Business with Adalo Development Services. At
-              Brilworks, we specialize in crafting intuitive and dynamic mobile
-              and web applications using the powerful platform – Adalo.
-            </p>
-            <Button label="Tell us about your project" />
-          </div>
-        </div>
-      </div>
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="Adalo Development Services"
+        description="Empower Your Business with Adalo Development Services. At Brilworks, we specialize in crafting intuitive and dynamic mobile and web applications using the powerful platform – Adalo."
+        buttonText="Tell Us About Your Project"
+        imageSrc="/images/v2/adalo-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Your Adalo Partner: Our Development Services"
+        description="As a leading Adalo development company, we thrive on creating tailored solutions that cater to our clients' diverse needs. Our team of skilled developers combines technical prowess with creative flair to build apps that not only meet but exceed expectations."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
-      <IndustriesWeHelp />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Ready to transform your ideas into reality? Contact us today to discuss your project and take the first step toward success."
+        buttonText="Let's Get Started"
+      />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 
