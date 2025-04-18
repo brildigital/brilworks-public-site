@@ -395,6 +395,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .cta-background {
   background-image: url("/images/v2/cta-bg.png");
@@ -410,6 +417,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .about-us-banner {
   background-image: url("/images/v2/about-us-banner.webp");
@@ -417,14 +431,11 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  .banner-layer {
-    background: linear-gradient(
-      180deg,
-      rgba(18, 18, 18, 0.85) 0%,
-      rgba(9, 9, 9, 0.765) 22.77%,
-      rgba(0, 0, 0, 0.85) 45.54%,
-      rgba(0, 0, 0, 0.85) 75%,
-      rgba(0, 0, 0, 0.85) 100%
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
     );
   }
 }
@@ -434,6 +445,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .download-case-study {
   background-image: url("/images/v2/download-case-study.webp");
@@ -441,6 +459,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .hire-team-section {
   background-image: url("/images/v2/hire-banner-1.webp");
@@ -448,6 +473,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .hire-team-section-l {
   background-image: url("/images/v2/hire-banner-2.webp");
@@ -455,6 +487,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .hire-team-contact-section {
   background-image: url("/images/v2/hire-team-contact-banner.webp");
@@ -469,6 +508,13 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
 }
 .service-hero-bg {
   background-image: url("/images/v2/services-bg.webp");

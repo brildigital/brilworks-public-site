@@ -98,7 +98,7 @@ const IndustriesWeServe = ({
             className={`lg:!text-[34px] md:!text-3xl !text-2xl ${textColor} lg:mb-10 md:mb-8 mb-6`}
             text={title}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {industriesWeServeData?.map(
               ({ title, imageSrc, imageAlt, href }, index) => (
                 <div
@@ -108,7 +108,7 @@ const IndustriesWeServe = ({
                   key={index}
                 >
                   <div
-                    className={`flex flex-col items-center justify-center ${
+                    className={`flex flex-col h-full items-center justify-center ${
                       darkBackground
                         ? "border border-[#2D3540] bg-[#081121] hover:border-white hover:border-b-2"
                         : "bg-white"
@@ -126,7 +126,9 @@ const IndustriesWeServe = ({
                           height={32}
                         />
 
-                        <p className={`${textColor} md:text-xl text-lg `}>
+                        <p
+                          className={`${textColor} lg:text-xl md:text-lg text-base`}
+                        >
                           {title}
                         </p>
                       </Link>
@@ -141,7 +143,9 @@ const IndustriesWeServe = ({
                           width={32}
                           height={32}
                         />
-                        <p className={`${textColor} md:text-xl text-lg`}>
+                        <p
+                          className={`${textColor} lg:text-xl md:text-lg text-base`}
+                        >
                           {title}
                         </p>
                       </>
