@@ -42,7 +42,7 @@ const KeyBenefits = () => {
   ];
 
   return (
-    <div className="container max-w-[1440px] main-section-padding services mx-auto">
+    <div className="container max-w-[1280px] main-section-padding services mx-auto">
       <div>
         <h2 className="md:text-center text-left !mb-8">Key Benefits</h2>
         <div className="reveal md:px-0 px-4">

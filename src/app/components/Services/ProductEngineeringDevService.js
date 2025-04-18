@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,47 +16,36 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const ProductEngineeringDevService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src={`/images/product-engineering-banner.webp`}
-              alt="Product engineering banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] md:!top-[45%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              Product Engineering & Development Service
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-7/12">
-              From concept to creation, we partner with you throughout your
-              engineering product development journey. Are you looking for a
-              reliable partner to navigate the complexities of product
-              engineering and development? Our team of experts brings innovative
-              solutions to every stage.
-            </p>
-            <Button label="Get Free Consultation" />
-          </div>
-        </div>
-      </div>
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="Product Engineering & Development Service"
+        description="From concept to creation, we partner with you throughout your engineering product development journey. Are you looking for a reliable partner to navigate the complexities of product engineering and development? Our team of experts brings innovative solutions to every stage."
+        buttonText="Get Free Consultation"
+        imageSrc="/images/v2/product-engineering-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Build High-Performance Products with Our Product Engineering Services"
+        description="We combine cutting-edge technology with a deep understanding of user needs to deliver exceptional solutions that push boundaries and leave a lasting impression. Let's craft an innovative product that stands out in a crowded marketplace."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
-      <IndustriesWeHelp />
+      <CTASection
+        titleClass=""
+        title="Leverage our expertise in product engineering services to optimize your product's performance."
+        description="Get a free consultation to see how our expertise can bring your product vision to life."
+        buttonText="Contact Us Now"
+      />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

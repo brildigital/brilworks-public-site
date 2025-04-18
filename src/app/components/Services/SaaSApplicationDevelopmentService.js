@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,47 +16,35 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const SaaSApplicationDevelopmentService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="/images/product-engineering-banner.webp"
-              alt="Saas Application Dev banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              SaaS Application <br />
-              Development Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              Trusted by industry leaders, we deliver exceptional Sass solutions
-              for forward-thinking companies. Let us help you achieve your
-              design goals with clean, scalable code.
-            </p>
-            <Button label="Get a Quote" />
-          </div>
-        </div>
-      </div>
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="SaaS Application Development Services"
+        description="Trusted by industry leaders, we deliver exceptional Sass solutions for forward-thinking companies. Let us help you achieve your design goals with clean, scalable code."
+        buttonText="Get a Quote"
+        imageSrc="/images/v2/saas-service-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Your Trusted Partner for Next-Gen SaaS Development"
+        description="At Briworks, we’re a team of award-winning SaaS architect and developers with proven track record of building secure, scalable, and user-centric cloud applications. We leverage the latest technology and industry best practices to deliver future proof  solutions that optimize your operations, drive growth, and captivate users. Partner with us and experience the difference - expertise, agility, and dedication to your success."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
-      <IndustriesWeHelp />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Connect with our experts for a no-obligation discussion about your vision and how we can bring it to life."
+        buttonText="Get a Quote"
+      />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

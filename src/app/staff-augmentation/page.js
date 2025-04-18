@@ -1,5 +1,5 @@
 import React from "react";
-import StaffAugmentation from "../components/StaffAugmentation";
+import StaffAugmentation from "../components/Services/StaffAugmentation";
 
 export const metadata = {
   title: "Staff Augmentation | Brilworks",
@@ -28,11 +28,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <StaffAugmentation />
-    </div>
-  );
+  return <StaffAugmentation />;
 };
 
 export default page;

@@ -92,7 +92,10 @@ const Portfolio = ({ caseStudyData }) => {
           )}
         </div>
       </section>
-      <CTASection buttonText="Let’s Discuss" />
+      <CTASection
+        description="Tell us your project idea and get a free consultation to create an outstanding digital product."
+        buttonText="Let’s Discuss"
+      />
       <ToolsAndGetInTouch />
     </>
   );

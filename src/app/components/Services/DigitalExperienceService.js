@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
 const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
@@ -55,7 +54,6 @@ const DigitalExperienceService = () => {
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
       <TechStackWeUse />
       <IndustriesWeHelp />
       <ClientReviews />

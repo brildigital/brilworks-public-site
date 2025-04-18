@@ -1,5 +1,5 @@
 import React from "react";
-import RapidDigitization from "../components/RapidDigitization";
+import RapidDigitalization from "../components/Services/RapidDigitalization";
 
 export const metadata = {
   title: "Rapid Digitalization | Brilworks",
@@ -28,11 +28,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <RapidDigitization />
-    </div>
-  );
+  return <RapidDigitalization />;
 };
 
 export default page;

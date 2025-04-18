@@ -1,9 +1,10 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import AccordionCustomIcon from "../Common/AccordionCustomIcon";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import Heading from "../HTMLComponents/Heading";
 
 const OurServices = () => {
   const pathname = usePathname();
@@ -729,20 +730,13 @@ const OurServices = () => {
   const servicesAccordionData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div
-      className={`container max-w-[1440px] main-section-padding mx-auto ${
-        pathname === "/digital-experience-services/" ||
-        pathname === "/aws-consulting-services/" ||
-        pathname === "/kubernetes-consulting-services/" ||
-        pathname === "/product-enginnering-development-services/"
-          ? "xl:!-mt-[15%]"
-          : ""
-      }`}
-    >
+    <div className="container max-w-[1280px] main-section-padding mx-auto">
       <div className="reveal">
-        <h2 className="md:text-center text-left ml-4 xl:pb-10 md:pb-6 pb-4">
-          {title}
-        </h2>
+        <Heading
+          type="h2"
+          className={`lg:!text-[34px] md:!text-3xl !text-2xl mb-4 md:!leading-snug w-full !text-center`}
+          text={title}
+        />
         <div className="homepage-work-domain">
           <div className="flex flex-wrap">
             <div className="lg:w-6/12 w-full">

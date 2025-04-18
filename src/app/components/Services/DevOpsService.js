@@ -1,14 +1,14 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
-const DevOpsShipFaster = dynamic(() => import("./DevOpsShipFaster"));
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -17,47 +17,36 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const DevOpsService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="/images/DevOps-banner.webp"
-              alt="ALML banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-1/2">
-              DevOps Consulting Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              We build you a smooth-running CI/CD pipeline, so you can ship
-              updates faster, test smarter, deploy smoothly, and gain a
-              competitive edge.
-            </p>
-            <Button label="Let’s Get Started" />
-          </div>
-        </div>
-      </div>
-
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="DevOps Consulting Services"
+        description="We build you a smooth-running CI/CD pipeline, so you can ship updates faster, test smarter, deploy smoothly, and gain a competitive edge."
+        buttonText="Let's Get Started"
+        imageSrc="/images/v2/dev-ops-service-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for Modern Businesses"
+        description="We're a leading DevOps consulting service company dedicated to building high-performing software delivery pipelines that streamline your workflow, accelerate releases, and empower your teams. Our expert consultants work alongside your team to identify your unique challenges and design a pipeline tailored to address your unique needs. We leverage the latest tools and cutting-edge technologies, from GitLab CI/CD to containerization solutions, to create a system that aligns perfectly with your specific needs."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Transform your development, achieve DevOps success - Get your free Brilworks consultation today!"
+        buttonText="Let's Get Started"
+      />
       <TechStackWeUse />
-      <IndustriesWeHelp />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

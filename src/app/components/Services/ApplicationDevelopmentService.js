@@ -1,12 +1,10 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -15,46 +13,34 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const ApplicationDevelopmentService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src={`/images/application-dev-banner.webp`}
-              alt="Digital experience banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-7/12">
-              Application development services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              We're a passionate team of software developers who help businesses
-              turn innovative ideas into reality.  From concept to launch, we
-              design, develop, and maintain custom software solutions that drive
-              results.
-            </p>
-            <Button label="Contact Us" />
-          </div>
-        </div>
-      </div>
-
-      <DevOpsShipFaster />
+    <>
+      <ServiceHeroSection
+        title="Application Development Services"
+        description="We're a passionate team of software developers who help businesses turn innovative ideas into reality.  From concept to launch, we design, develop, and maintain custom software solutions that drive results."
+        buttonText="Contact Us"
+        imageSrc="/images/v2/app-development-service-banner.webp"
+      />
+      <CTASection
+        titleClass="md:w-[70%]"
+        descriptionClass="md:w-4/5"
+        title="Your Innovation Partner in Cutting-Edge Development"
+        description="We're more than just developers. Our team of elite engineers and strategists become an extension of yours, collaborating to develop groundbreaking solutions on any platform. Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch."
+        buttonText="Let’s Discuss"
+        darkBackground={false}
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
+      <CTASection
+        titleClass="md:w-[70%]"
+        title="Contact us today for a free consultation and let's discuss how custom software development can transform your business."
+        buttonText="Get Free Consulatation Now!"
+      />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

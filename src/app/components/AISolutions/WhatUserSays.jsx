@@ -40,7 +40,7 @@ const WhatUserSays = ({ userSaysData }) => {
                       height={32}
                       alt={`quote-${index + 1}`}
                     />
-                    <p className="!mb-4 md:text-lg text-base w-4/5">
+                    <p className="!mb-4 md:text-lg text-base w-11/12">
                       {item.Value || ""}
                     </p>
                   </div>

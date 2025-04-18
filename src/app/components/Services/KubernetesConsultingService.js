@@ -1,13 +1,14 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
+import CTASection from "../Common/CTASection";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const ContactBlock = dynamic(() => import("./ContactBlock"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
+const IndustriesWeServe = dynamic(() =>
+  import("../Homepage/IndustriesWeServe")
+);
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -16,47 +17,28 @@ const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const KubernetesConsultingService = () => {
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden  h-[600px]"></div>
-
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="/images/kubernetes-banner.webp"
-              alt="Kubernetes Consulting banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-1/2">
-              Achieve resilience, scale, and savings
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              Boost your DevOps journey with our Kubernetes consulting service.
-              Our experts plan a roadmap to achieve rapid deployments and
-              seamless upgrades with our proven Kubernetes consulting services.
-            </p>
-            <Button label="Let’s Get Started" />
-          </div>
-        </div>
-      </div>
-
+    <>
+      <ServiceHeroSection
+        title="Achieve resilience, scale, and savings"
+        description="Boost your DevOps journey with our Kubernetes consulting service. Our experts plan a roadmap to achieve rapid deployments and seamless upgrades with our proven Kubernetes consulting services."
+        buttonText="Let's Get Started"
+        imageSrc="/images/v2/kubernates-consulting-banner.webp"
+      />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <ContactBlock />
+      <CTASection
+        title="Transform your operations with Kubernetes expertise."
+        description="Get in touch to discover how we can elevate your efficiency and performance."
+        buttonText="Schedule a Call"
+      />
       <TechStackWeUse />
-      <IndustriesWeHelp />
+      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 
