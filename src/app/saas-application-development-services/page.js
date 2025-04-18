@@ -1,5 +1,4 @@
 import React from "react";
-import ProductEngineeringDevService from "../components/Services/ProductEngineeringDevService";
 import SaaSApplicationDevelopmentService from "../components/Services/SaaSApplicationDevelopmentService";
 
 export const metadata = {
@@ -34,11 +33,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <SaaSApplicationDevelopmentService />
-    </div>
-  );
+  return <SaaSApplicationDevelopmentService />;
 };
 
 export default page;

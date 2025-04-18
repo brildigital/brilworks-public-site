@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import { usePathname } from "next/navigation";
+import Heading from "../HTMLComponents/Heading";
 
 export const UseCaseCard = ({ icon, title, description, link = "/" }) => {
   return (
@@ -103,11 +104,13 @@ export default function CommonUseCases() {
 
   return (
     <div className="bg-sectionBG">
-      <div className="container max-w-[1440px] mx-auto">
-        <div className="w-full mx-auto px-6 xl:py-14 md:py-10 py-8 end-to-end">
-          <div className="endTO_text">
-            <h2 className="text-center">Industry Use Cases</h2>
-          </div>
+      <div className="container max-w-[1280px] main-section-padding mx-auto">
+        <div className="w-full">
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4 md:!leading-snug w-full !text-center"
+            text="Industry Use Cases"
+          />
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-7 reveal">
             {data.map((item, index) => {
               return (

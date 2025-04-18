@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
 import Button from "../Common/Button";
 
 const OurServices = dynamic(() => import("./OurServices"));
@@ -43,7 +42,6 @@ const BusinessDevelopmentService = () => {
           </div>
         </div>
       </div>
-      <DevOpsShipFaster />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />

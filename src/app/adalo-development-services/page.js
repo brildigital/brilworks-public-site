@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <AdaloDevelopmentService />
-    </div>
-  );
+  return <AdaloDevelopmentService />;
 };
 
 export default page;

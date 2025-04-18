@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <ERPNextDevService />
-    </div>
-  );
+  return <ERPNextDevService />;
 };
 
 export default page;

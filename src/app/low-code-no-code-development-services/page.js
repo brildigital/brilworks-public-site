@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <LowCodeNoCodeDevService />
-    </div>
-  );
+  return <LowCodeNoCodeDevService />;
 };
 
 export default page;

@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <FlutterflowDevelopmentService />
-    </div>
-  );
+  return <FlutterflowDevelopmentService />;
 };
 
 export default page;

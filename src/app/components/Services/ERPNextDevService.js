@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
 
 const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
@@ -48,7 +47,6 @@ const ERPNextDevService = () => {
           </div>
         </div>
       </div>
-      <DevOpsShipFaster />
       <OurServices />
       <ServicesWhyChooseUs />
       <Honors />

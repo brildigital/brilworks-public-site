@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import AccordionCustomIcon from "../Common/AccordionCustomIcon";
@@ -734,7 +735,7 @@ const OurServices = () => {
       <div className="reveal">
         <Heading
           type="h2"
-          className={`lg:!text-[34px] md:!text-3xl !text-2xl mb-4 md:!leading-snug w-full !text-center`}
+          className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4 md:!leading-snug w-full !text-center"
           text={title}
         />
         <div className="homepage-work-domain">
