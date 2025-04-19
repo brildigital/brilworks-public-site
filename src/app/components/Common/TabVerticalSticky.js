@@ -16,11 +16,12 @@ const TabVerticalSticky = ({
   borderRight = true,
   rightSideOnlyImage = false,
   imageOnLeft = false,
+  useCaseSection = false,
 }) => {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const themeBorder = darkMode ? "border-r-[#2B3138]" : "border-r-borderGray";
-  const themeBasesText = darkMode ? "text-white" : "";
+  const themeBaseText = darkMode ? "text-white" : "";
   const borderPosition = imageOnLeft ? "border-l" : "border-r";
 
   const handleScroll = () => {
@@ -109,17 +110,27 @@ const TabVerticalSticky = ({
       ref={containerRef}
     >
       <div
-        className={`md:w-1/2 main-section-padding md:!pt-10 ${
+        className={`${
+          useCaseSection ? "md:w-2/5" : "md:w-1/2"
+        } main-section-padding md:!pt-10 ${
           imageOnLeft ? "!pl-0" : "!pr-0"
         } !pt-6 ${borderRight ? `${borderPosition} ${themeBorder}` : ""}`}
       >
-        <aside className="stickysection__sidebar flex items-start justify-start w-full">
+        <aside
+          className={`stickysection__sidebar flex items-start justify-start w-full ${
+            useCaseSection ? "p-4 bg-white rounded-2xl" : ""
+          } `}
+        >
           <ul className="anchor-links w-full">
             {data.map(({ title, value, description }, index) => (
               <li
                 className={`flex ${index === 0 ? "active" : ""} ${
                   imageOnLeft ? "left-img" : ""
-                } justify-start md:!pl-10 md:!py-7.5 !py-4 md:gap-5 gap-2 !w-full`}
+                } ${
+                  useCaseSection
+                    ? "rounded-2xl md:!pl-5 md:!py-6 !py-4"
+                    : "md:!pl-10 md:!py-7.5 !py-4"
+                } justify-start md:gap-5 gap-2 !w-full`}
                 key={index}
               >
                 <a
@@ -130,14 +141,16 @@ const TabVerticalSticky = ({
                     darkMode ? "text-colorWhite" : ""
                   }`}
                 >
-                  <div className="flex items-center justify-start gap-5">
-                    <p
-                      className={`${
-                        darkMode ? "numeric" : "numeric-l"
-                      } flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
-                    >
-                      {index + 1}
-                    </p>
+                  <div className="flex items-center justify-start gap-5 font-medium">
+                    {!useCaseSection && (
+                      <p
+                        className={`${
+                          darkMode ? "numeric" : "numeric-l"
+                        } flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl`}
+                      >
+                        {index + 1}
+                      </p>
+                    )}
                     &nbsp;
                     {title}
                   </div>
@@ -153,7 +166,11 @@ const TabVerticalSticky = ({
         </aside>
       </div>
 
-      <div className="md:w-1/2 main-section-padding md:!pt-10 !pt-6">
+      <div
+        className={`${
+          useCaseSection ? "md:w-3/5" : "md:w-1/2"
+        } main-section-padding md:!pt-10 !pt-6`}
+      >
         <div className="stickysection__content">
           <div
             className={`stickysection__contentappend-${sectionId} flex items-start`}
@@ -170,12 +187,12 @@ const TabVerticalSticky = ({
               {!rightSideOnlyImage && (
                 <>
                   <h3
-                    className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBasesText}`}
+                    className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBaseText}`}
                   >
-                    {data?.[0]?.title}
+                    {data?.[0]?.innerTitle || data?.[0]?.title}
                   </h3>
                   <p
-                    className={`md:text-lg text-base md:pb-5 pb-4 ${themeBasesText}`}
+                    className={`md:text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}
                   >
                     {data?.[0]?.description}
                   </p>
@@ -209,7 +226,15 @@ const TabVerticalSticky = ({
           </div>
           {data.map(
             (
-              { title, description, value, imageSrc, imageAlt, service },
+              {
+                title,
+                description,
+                value,
+                imageSrc,
+                imageAlt,
+                service,
+                innerTitle,
+              },
               index
             ) => (
               <div
@@ -229,15 +254,31 @@ const TabVerticalSticky = ({
                 {!rightSideOnlyImage && (
                   <div>
                     <h3
-                      className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBasesText}`}
+                      className={`md:text-2xl text-lg font-medium md:pb-3 pb-2 ${themeBaseText}`}
                     >
-                      {title}
+                      {innerTitle || title}
                     </h3>
-                    <p
-                      className={`md:text-lg text-base md:pb-5 pb-4 ${themeBasesText}`}
-                    >
-                      {description}
-                    </p>
+
+                    {Array.isArray(description) ? (
+                      <div className="li-tick-mark">
+                        <ul className={`md:pb-5 pb-4`}>
+                          {description.map((item, index) => (
+                            <li
+                              key={index}
+                              className={`blue small before:!top-1 !pb-3 md:text-lg text-base ${themeBaseText}`}
+                            >
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <p
+                        className={`md:text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}
+                      >
+                        {description}
+                      </p>
+                    )}
                     {service &&
                       service.map(({ title, redirect }, index) => (
                         <div className="group" key={index}>
