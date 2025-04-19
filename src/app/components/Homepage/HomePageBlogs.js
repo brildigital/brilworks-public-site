@@ -126,7 +126,7 @@ const HomePageBlogs = () => {
                         <h4 className="lg:text-xl text-lg font-medium mb-3 min-h-[50px]">
                           {name}
                         </h4>
-                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor">
+                        <p className="flex items-center lg:text-xl text-lg font-medium mb-3 text-themeColor hover:text-colorBlack duration-500">
                           Read Complete Blog&nbsp;
                           <FontAwesomeIcon size="lg" icon={faArrowRight} />
                         </p>

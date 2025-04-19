@@ -11,7 +11,9 @@
     ul {
       li {
         margin-bottom: 15px;
-
+        &:last-child {
+          margin-bottom: 0;
+        }
         a {
           transition: all 0.3s ease;
         }
@@ -97,7 +99,21 @@
 .stickysection__contentappend-healthcare-two,
 .stickysection__contentappend-media,
 .stickysection__contentappend-fleet-one,
-.stickysection__contentappend-fleet-two {
+.stickysection__contentappend-fleet-two,
+.stickysection__contentappend-gen-ai-use-case,
+.stickysection__contentappend-ai-use-case,
+.stickysection__contentappend-gen-ai-service,
+.stickysection__contentappend-ai-ml-service,
+.stickysection__contentappend-aws-service,
+.stickysection__contentappend-devops-service,
+.stickysection__contentappend-kubernetes-service,
+.stickysection__contentappend-product-service,
+.stickysection__contentappend-saas-service,
+.stickysection__contentappend-app-dev-service,
+.stickysection__contentappend-frappe-service,
+.stickysection__contentappend-adalo-service,
+.stickysection__contentappend-flutterflow-service,
+.stickysection__contentappend-low-code-service {
   top: 100px;
   z-index: unset;
   position: sticky;

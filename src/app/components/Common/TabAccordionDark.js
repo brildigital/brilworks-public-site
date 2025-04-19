@@ -18,6 +18,7 @@ const TabAccordionDark = ({
   data,
   buttonText,
   darkMode = true,
+  useCaseSection = false,
 }) => {
   const themeBorder = darkMode ? "border-t-[#2B3138]" : "border-t-borderGray";
   const themeBaseText = darkMode ? "!text-white" : "!text-colorBlack";
@@ -38,15 +39,17 @@ const TabAccordionDark = ({
           className={`w-full font-Figtree flex items-center justify-between gap-4 ${themeBaseText} text-lg`}
         >
           <div className="flex items-center gap-4">
-            <p
-              className={`flex items-center justify-center lg:w-10 lg:h-10 w-8 h-8 font-semibold rounded-full lg:text-2xl md:text-xl ${
-                open === index
-                  ? `bg-white text-colorBlack`
-                  : `bg-[#17283E] text-colorWhite`
-              }`}
-            >
-              {index}
-            </p>
+            {!useCaseSection && (
+              <p
+                className={`flex items-center justify-center lg:w-10 lg:h-10 w-8 h-8 font-semibold rounded-full lg:text-2xl md:text-xl ${
+                  open === index
+                    ? `bg-white text-colorBlack`
+                    : `bg-[#17283E] text-colorWhite`
+                }`}
+              >
+                {index}
+              </p>
+            )}
             <Heading
               type="h2"
               className={`${
@@ -72,9 +75,24 @@ const TabAccordionDark = ({
           />
         </div>
         <div>
-          <p className="md:text-lg text-base md:pb-5 pb-4">
-            {data?.description}
-          </p>
+          {Array.isArray(data?.description) ? (
+            <div className="li-tick-mark">
+              <ul className={`md:pb-5 pb-4`}>
+                {data?.description.map((item, index) => (
+                  <li
+                    key={index}
+                    className={`blue small before:!top-1 !pb-3 md:text-lg text-base ${themeBaseText}`}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p className={`md:text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}>
+              {data?.description}
+            </p>
+          )}
           {data?.service &&
             data?.service?.map(({ title, redirect }, index) => (
               <div className="group" key={index}>
