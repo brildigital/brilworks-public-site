@@ -17,7 +17,6 @@ const GradientFAQAccordion = ({ id, question, answer, open, handleOpen }) => {
   return (
     <Accordion
       open={isOpen}
-      // className="accordion-item !border-b-4 border-b-themeColor"
       className={`border rounded-md mb-6 last:mb-0 ${
         isOpen ? "border-themeColor" : "border-borderGray"
       }`}

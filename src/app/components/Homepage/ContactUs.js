@@ -8,7 +8,6 @@ import Heading from "../HTMLComponents/Heading";
 const ContactFormV2 = dynamic(() => import("./ContactFormV2"));
 
 const ContactUs = () => {
-  const pathname = usePathname();
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);

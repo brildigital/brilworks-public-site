@@ -22,6 +22,19 @@ const TabAccordionDark = ({
 }) => {
   const themeBorder = darkMode ? "border-t-[#2B3138]" : "border-t-borderGray";
   const themeBaseText = darkMode ? "!text-white" : "!text-colorBlack";
+
+  const iconBG = [
+    "bg-[#E5F4FF]",
+    "bg-[#E9FFE2]",
+    "bg-[#FFE8FC]",
+    "bg-[#FFE2E5]",
+    "bg-[#EAFFFD]",
+    "bg-[#F4ECFF]",
+    "bg-[#FCFFE3]",
+    "bg-[#FEF3E6]",
+    "bg-[#E5F4FF]",
+    "bg-[#FFE2E5]",
+  ];
   return (
     <Accordion open={open === index}>
       <AccordionHeader
@@ -109,6 +122,18 @@ const TabAccordionDark = ({
                 </Link>
               </div>
             ))}
+          {data?.processTags && (
+            <div className="flex flex-wrap gap-2.5">
+              {data?.processTags?.map((data, index) => (
+                <p
+                  key={index}
+                  className={`${iconBG[index]} px-2.5 !py-2 rounded-md w-fit text-base`}
+                >
+                  {data}
+                </p>
+              ))}
+            </div>
+          )}
           {buttonText && (
             <ButtonV2 className="hover:text-themeColor" label={buttonText} />
           )}

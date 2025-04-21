@@ -24,6 +24,19 @@ const TabVerticalSticky = ({
   const themeBaseText = darkMode ? "text-white" : "";
   const borderPosition = imageOnLeft ? "border-l" : "border-r";
 
+  const iconBG = [
+    "bg-[#E5F4FF]",
+    "bg-[#E9FFE2]",
+    "bg-[#FFE8FC]",
+    "bg-[#FFE2E5]",
+    "bg-[#EAFFFD]",
+    "bg-[#F4ECFF]",
+    "bg-[#FCFFE3]",
+    "bg-[#FEF3E6]",
+    "bg-[#E5F4FF]",
+    "bg-[#FFE2E5]",
+  ];
+
   const handleScroll = () => {
     // Get the current component container
     const container = containerRef.current;
@@ -233,6 +246,7 @@ const TabVerticalSticky = ({
                 imageSrc,
                 imageAlt,
                 service,
+                processTags,
                 innerTitle,
               },
               index
@@ -279,22 +293,33 @@ const TabVerticalSticky = ({
                         {description}
                       </p>
                     )}
-                    {service &&
-                      service.map(({ title, redirect }, index) => (
-                        <div className="group" key={index}>
-                          <Link
-                            href={redirect}
-                            className="flex items-center justify-start bg-clip-text text-transparent text-lg group-hover:text-white bg-theme-gradient duration-300 pb-2"
+                    {service?.map(({ title, redirect }, index) => (
+                      <div className="group" key={index}>
+                        <Link
+                          href={redirect}
+                          className="flex items-center justify-start bg-clip-text text-transparent text-lg group-hover:text-white bg-theme-gradient duration-300 pb-2"
+                        >
+                          {title}
+                          <FontAwesomeIcon
+                            className="group-hover:text-white text-[#00DBD3] ml-2"
+                            size="lg"
+                            icon={faArrowRight}
+                          />
+                        </Link>
+                      </div>
+                    ))}
+                    {processTags && (
+                      <div className="flex flex-wrap gap-2.5">
+                        {processTags.map((data, index) => (
+                          <p
+                            key={index}
+                            className={`${iconBG[index]} md:px-4 py-2.5 rounded-md w-fit text-base`}
                           >
-                            {title}
-                            <FontAwesomeIcon
-                              className="group-hover:text-white text-[#00DBD3] ml-2"
-                              size="lg"
-                              icon={faArrowRight}
-                            />
-                          </Link>
-                        </div>
-                      ))}
+                            {data}
+                          </p>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
                 {buttonText && (

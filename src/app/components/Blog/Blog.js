@@ -7,6 +7,7 @@ import { getblogData } from "../lib/getblog";
 import { formattedDate, getPageNumbers } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
+import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";
 
 const Blog = () => {
   const ITEMS_PER_PAGE = 10;
@@ -89,7 +90,7 @@ const Blog = () => {
   }, [searchParams]);
 
   return (
-    <section className="">
+    <>
       <div className="blog-listing-section">
         <div className="banner-layer-dark h-full min-h-[600px] md:max-h-[700px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
@@ -289,7 +290,7 @@ const Blog = () => {
               </p>
             </div>
           ) : (
-            <div className="flex align-middle justify-center md:!py-52 py-28 h-[90vh]">
+            <div className="flex items-center justify-center md:!py-52 py-28 h-[90vh]">
               <FetchDataSpinner />
             </div>
           )}
@@ -351,7 +352,8 @@ const Blog = () => {
           </div>
         )}
       </div>
-    </section>
+      <SubscribeNewsLetterForm />
+    </>
   );
 };
 

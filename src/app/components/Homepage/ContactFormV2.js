@@ -1,13 +1,11 @@
 "use client";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 
 const ContactFormV2 = ({ darkMode = false }) => {
   const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");

@@ -8,6 +8,7 @@ const ServiceHeroSection = ({
   description,
   buttonText,
   imageSrc,
+  pageTitleText,
   showGridData = false,
 }) => {
   const bgColor = [
@@ -47,6 +48,11 @@ const ServiceHeroSection = ({
             className={`flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] ${dataExistClass} max-h-full lg:gap-16 md:gap-10 gap-6`}
           >
             <div className="md:w-1/2 w-full">
+              {pageTitleText && (
+                <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
+                  {pageTitleText}
+                </p>
+              )}
               <Heading type="h1" className="text-white" text={title} />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 {description}
