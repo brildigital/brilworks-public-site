@@ -137,7 +137,7 @@
   background: var(--theme-color) !important;
   padding: 2rem 2rem;
   text-align: center;
-  border-radius: 33px;
+  border-radius: 16px;
   color: var(--white_color) !important;
   line-height: 32px !important;
   span {
@@ -145,7 +145,7 @@
       font-weight: 700 !important;
       color: var(--color_black) !important;
       text-decoration: underline !important;
-      border-radius: 33px;
+      border-radius: 16px;
       &:hover {
         color: var(--white_color) !important;
       }

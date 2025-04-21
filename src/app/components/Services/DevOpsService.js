@@ -130,7 +130,7 @@ const DevOpsService = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="devops-service"
+        sectionId="service-section"
         serviceData={devOpsServices}
       />
       <MultipleCardWithIconBG

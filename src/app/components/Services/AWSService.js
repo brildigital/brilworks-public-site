@@ -129,7 +129,7 @@ const AWSService = () => {
         buttonText="Let's Get Started"
         imageSrc="/images/v2/aws-service-banner.webp"
       />
-      <ServicesSection sectionId="aws-service" serviceData={awsServices} />
+      <ServicesSection sectionId="service-section" serviceData={awsServices} />
       <MultipleCardWithIconBG
         bgClass="bg-sectionBG"
         data={whyChooseUsAWSData}

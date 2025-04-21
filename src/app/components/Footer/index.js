@@ -274,7 +274,7 @@ const Footer = () => {
       </div>
       <hr className="border-[#232323] mt-7.5 mb-5" />
       <div className="container max-w-[1280px] !py-0 mx-auto main-section-padding-top">
-        <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+        <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-[155px] gap-6">
           {contactLinks.map(({ title, links }, index) => (
             <div className="flex flex-col gap-4" key={index}>
               <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">

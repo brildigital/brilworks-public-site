@@ -168,7 +168,7 @@ const AIMLService = () => {
         buttonText="Let’s Get Started"
         imageSrc="/images/v2/ai-ml-service-banner.webp"
       />
-      <ServicesSection sectionId="ai-ml-service" serviceData={aiMLServices} />
+      <ServicesSection sectionId="service-section" serviceData={aiMLServices} />
       <UseCases />
       <MultipleCardInGrid title="Key Benefits" cardData={aiMLKeyBenefits} />
       <Honors />
