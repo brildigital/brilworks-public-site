@@ -128,7 +128,7 @@ const GenerativeAIDevService = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="gen-ai-service"
+        sectionId="service-section"
         serviceData={generativeAIServices}
       />
       <MultipleCardWithIconBG data={whatSetAsApartData} />

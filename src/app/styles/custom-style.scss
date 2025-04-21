@@ -506,6 +506,20 @@
     );
   }
 }
+.blog-listing-section {
+  background-image: url("/images/v2/blog-page-bg-banner.webp");
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 767px) {
+    background-image: linear-gradient(
+      to top,
+      var(--navyBlue),
+      var(--theme-color)
+    );
+  }
+}
 .hire-team-contact-section {
   background-image: url("/images/v2/hire-team-contact-banner.webp");
   width: 100%;

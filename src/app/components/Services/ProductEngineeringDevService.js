@@ -121,7 +121,7 @@ const ProductEngineeringDevService = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="product-service"
+        sectionId="service-section"
         serviceData={productDevelopmentServices}
       />
       <MultipleCardWithIconBG data={whyChooseUsProductData} />

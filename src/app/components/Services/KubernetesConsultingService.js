@@ -114,7 +114,7 @@ const KubernetesConsultingService = () => {
         imageSrc="/images/v2/kubernates-consulting-banner.webp"
       />
       <ServicesSection
-        sectionId="kubernetes-service"
+        sectionId="service-section"
         serviceData={kubernetesServices}
       />
       <MultipleCardWithIconBG

@@ -9,12 +9,16 @@ const CurrentHeader = () => {
 
   const headerLight = ["/our-process/", "/career/"];
 
+  const isEbooksOrBlogSubpath =
+    (pathname.startsWith("/ebooks/") || pathname.startsWith("/blog/")) &&
+    pathname !== "/ebooks/" &&
+    pathname !== "/blog/";
+
   const headerOld =
     headerLight.includes(pathname) ||
-    pathname.startsWith("/blog/") ||
+    isEbooksOrBlogSubpath ||
     pathname.startsWith("/use-case/") ||
-    pathname.startsWith("/gist/") ||
-    pathname.startsWith("/ebooks/");
+    pathname.startsWith("/gist/");
 
   return headerOld ? <Header /> : <HeaderV2 />;
 };

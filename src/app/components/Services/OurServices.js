@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
@@ -22,7 +21,7 @@ const OurServices = () => {
   const DigitalExperienceAccordionData = [
     {
       title: "Digital Experience Strategy",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "We map your unique path to digital success, defining goals, user personas, and a winning roadmap.",
       imageSrc: "/images/digital-ex-img.webp",
@@ -30,7 +29,7 @@ const OurServices = () => {
     },
     {
       title: "Experience Design & Development",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Craft seamless and captivating interfaces across web, mobile, and emerging platforms.",
       imageSrc: "/images/digital-experience-dev.webp",
@@ -38,7 +37,7 @@ const OurServices = () => {
     },
     {
       title: "Content Management & Personalization",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Deliver dynamic, targeted content that resonates with every individual.",
       imageSrc: "/images/content-mgmt.webp",
@@ -46,7 +45,7 @@ const OurServices = () => {
     },
     {
       title: "Marketing Automation & Analytics",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Streamline your campaigns and measure impact with data-driven insights.",
       imageSrc: "/images/marketing-automation.webp",
@@ -54,7 +53,7 @@ const OurServices = () => {
     },
     {
       title: "Commerce & Payment Integration",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Build frictionless shopping experiences that convert every click.",
       imageSrc: "/images/e-commerce-payment.webp",
@@ -62,7 +61,7 @@ const OurServices = () => {
     },
     {
       title: "Integration & API Development",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Connect your systems seamlessly for a unified customer journey.",
       imageSrc: "/images/integartion-api-dev.webp",
@@ -73,7 +72,7 @@ const OurServices = () => {
   const ERPNextDevAccordionData = [
     {
       title: "Custom Module Development",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Build functionalities unique to your business processes that go beyond ERPNext's default features.",
       imageSrc: "/images/erp-next-1.webp",
@@ -81,7 +80,7 @@ const OurServices = () => {
     },
     {
       title: "Workflow Automation",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Streamline complex workflows and eliminate repetitive tasks with custom automation solutions.",
       imageSrc: "/images/erp-next-2.webp",
@@ -89,7 +88,7 @@ const OurServices = () => {
     },
     {
       title: "Seamless Integrations",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Connect ERPNext to your existing CRM, e-commerce platform, or accounting software for a unified data flow.",
       imageSrc: "/images/erp-next-3.webp",
@@ -97,7 +96,7 @@ const OurServices = () => {
     },
     {
       title: "Data Migration & Security",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Migrate your data smoothly from legacy systems and implement robust security measures to safeguard your information.",
       imageSrc: "/images/erp-next-4.webp",
@@ -105,7 +104,7 @@ const OurServices = () => {
     },
     {
       title: "Custom Reporting & Dashboards",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Gain deeper business insights with custom reports and dashboards tailored to your specific needs.",
       imageSrc: "/images/erp-next-5.webp",
@@ -113,7 +112,7 @@ const OurServices = () => {
     },
     {
       title: "Comprehensive Support & Maintenance",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Benefit from expert guidance during implementation, ongoing technical support, and regular system maintenance for optimal performance.",
       imageSrc: "/images/erp-next-6.webp",
@@ -124,7 +123,7 @@ const OurServices = () => {
   const BusinessIntelligenceAccordionData = [
     {
       title: "BI Strategy & Roadmap Development",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "We work collaboratively to define your BI goals, assess your data landscape, and create a customized roadmap for success.",
       imageSrc: "/images/bi-1.webp",
@@ -132,7 +131,7 @@ const OurServices = () => {
     },
     {
       title: "Data Lake & Data Warehouse Architecture",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "We design and implement robust data storage solutions tailored to your specific needs and scalability requirements.",
       imageSrc: "/images/bi-2.webp",
@@ -140,7 +139,7 @@ const OurServices = () => {
     },
     {
       title: "Advanced Data Integration & Cleansing",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Our experts ensure your data is accurate, consistent, and ready for analysis through cutting-edge integration and cleansing techniques.",
       imageSrc: "https://a.storyblok.com/f/219851/640x505/f19d442ca9/bi-3.webp",
@@ -148,7 +147,7 @@ const OurServices = () => {
     },
     {
       title: "Self-Service BI & Data Governance",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "We empower your users with self-service BI tools while establishing robust data governance frameworks for data security and quality.",
       imageSrc: "/images/bi-4.webp",
@@ -156,7 +155,7 @@ const OurServices = () => {
     },
     {
       title: "Custom Analytics Dashboard Development",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Our team creates interactive dashboards tailored to your KPIs, providing real-time insights at your fingertips.",
       imageSrc: "/images/bi-5.webp",
@@ -164,7 +163,7 @@ const OurServices = () => {
     },
     {
       title: "Predictive Analytics & Machine Learning",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "We leverage advanced analytics and machine learning to uncover hidden patterns, predict future trends, and optimize business processes.",
       imageSrc: "/images/bi-6.webp",
@@ -172,7 +171,7 @@ const OurServices = () => {
     },
     {
       title: "Power BI & Tableau Expertise",
-      icon: "/images/v2/image_name",
+      value: "value-1",
       description:
         "Our team is proficient in leading BI platforms like Power BI and Tableau to deliver the best solution for your organization.",
       imageSrc: "/images/bi-7.webp",

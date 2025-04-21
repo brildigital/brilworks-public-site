@@ -1,17 +1,19 @@
 import Image from "next/image";
 import React from "react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
+import Heading from "../HTMLComponents/Heading";
 
 const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
   return (
     <div className="lg:mt-[6rem] mt-[4rem]">
       <div
-        className="container mx-auto max-w-[1440px]"
+        className="container mx-auto max-w-[1280px] main-sectipn-padding"
         id="download-ebook-form"
       >
-        <h1
-          className="md:text-center text-left lg:w-[70%] mx-auto w-full px-4 xl:text-[56px] lg:text-[42px] md:text-[32px] text-[22px] md:py-10 py-8 !font-bold slg:mb-6"
-          dangerouslySetInnerHTML={{ __html: title }}
+        <Heading
+          className="w-full lg:w-3/4 text-center mx-auto md:py-10 py-7.5 slg:mb-6"
+          type="h1"
+          data={title}
         />
         <div className="slg:w-[70%] w-[90%] mx-auto flex slg:flex-row flex-col gap-20 items-center justify-center h-full">
           <div className="flex items-center justify-center">

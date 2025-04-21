@@ -17,45 +17,6 @@ const ServiceCard = ({ title, description }) => (
 const ServicesWhyChooseUs = () => {
   const pathname = usePathname();
 
-  const whyChooseUscontent = [
-    {
-      title: "Cost-Effective Excellence",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        "Cost-effective e-solutions that deliver maximum value for your investment.",
-    },
-    {
-      title: "Proven Expertise",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        "Proven expertise from our seasoned professionals with over 8 years of experience.",
-    },
-    {
-      title: "Innovative Solution",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        "Innovative solutions that leverage emerging technologies to exceed industry standards.",
-    },
-    {
-      title: "Diverse Portfolio",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        "A diverse portfolio of over 120 successfully developed applications across various industries.",
-    },
-    {
-      title: "Client-Centric Approach",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        " A client-centric approach that prioritizes your unique needs and fosters long-term partnerships.",
-    },
-    {
-      title: "Dedicated Support",
-      icon: "/images/v2/fi_18810346.svg",
-      description:
-        "  Dedicated support to ensure smooth integration, troubleshooting and updates for optimal software performance.",
-    },
-  ];
-
   const whyChooseUsDigitalExperience = [
     {
       title: "Award-Winning Expertise",
@@ -150,7 +111,6 @@ const ServicesWhyChooseUs = () => {
   ];
 
   const showDataBasedOnPathname = {
-    "/ai-ml-development-services/": whyChooseUscontent,
     "/digital-experience-services/": whyChooseUsDigitalExperience,
     "/erp-next-development-services/": whyChooseUsERPNextDev,
     "/business-intelligence-services/": whyChooseUsBusinessIntelligence,
