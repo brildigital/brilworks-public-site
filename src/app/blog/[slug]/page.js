@@ -6,11 +6,11 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
-import QuickSummary from "@/app/components/Blog/QuickSummary";
 import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
+import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
   const { props: data } = await fetchData(params?.slug);
@@ -83,13 +83,14 @@ export default async function Page(props) {
 
   return (
     <>
-      <div className="md:pt-[8rem] pt-[6rem] blog-main">
-        <div className="container max-w-[1280px] mx-auto my-0 !px-4 blog-initial">
-          <div className="flex flex-wrap -mx-4">
-            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] sxl:mb-6 mb-4 !px-4 min-h-[1px] w-full">
-              <div className="slg:w-[calc(100%_-_170px)]">
+      <div className="bg-detail-hero">
+        <div className="h-full min-h-[600px] md:max-h-[700px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+            <div className="text-white flex flex-col items-start justify-between h-full min-h-[500px] md:max-h-[700px] max-h-full">
+              <div></div>
+              <div>
                 <div
-                  className="w-full inline-flex flex-wrap items-center mb-3 min-h-[24px]"
+                  className="w-full inline-flex flex-wrap items-center mb-3 min-h-[36px]"
                   aria-label="Breadcrumb"
                 >
                   <Suspense
@@ -99,67 +100,60 @@ export default async function Page(props) {
                       </div>
                     }
                   >
-                    <span className="blog-navigation">
+                    <span className="sxl:text-2xl md:text-xl text-lg text-white hover:text-themeColor duration-500">
                       <Link title="Brilworks Blog." href="/">
                         Brilworks
                       </Link>
                     </span>
-                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                    <span className="self-center md:mx-2 mx-1.5 mt-[2px]">
                       <Image
-                        className="!w-[20px]"
-                        src="/images/black_aerrow-1.png"
+                        className="md:!w-6 w-5"
+                        src="/images/v2/arrow-right.svg"
                         alt="arrow"
                         width="20"
                         height="10"
                         priority="true"
                       />
                     </span>
-                    <span className="blog-navigation">
+                    <span className="sxl:text-2xl md:text-xl text-lg text-white hover:text-themeColor duration-500 font-medium">
                       <Link title="Go to Blog." href="/blog">
                         Blog
                       </Link>
                     </span>
-                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
+                    <span className="self-center md:mx-2 mx-1.5 mt-[2px]">
                       <Image
-                        className="!w-[20px]"
-                        src="/images/black_aerrow-1.png"
+                        className="md:!w-6 w-5"
+                        src="/images/v2/arrow-right.svg"
                         alt="arrow"
                         width="20"
                         height="10"
                         priority="true"
                       />
                     </span>
-                    <span className="blog-navigation">
-                      <Link
-                        title="Go to the Web App Development category."
-                        href="#"
-                      >
-                        {data?.story?.content?.Category ===
-                        "Cloud DevOps and Data"
-                          ? "Cloud, DevOps and Data"
-                          : data?.story?.content?.Category}
-                      </Link>
+                    <span className="sxl:text-2xl md:text-xl text-lg text-white">
+                      {/* <Link
+                      title="Go to the Web App Development category."
+                      href="#"
+                    > */}
+                      {data?.story?.content?.Category ===
+                      "Cloud DevOps and Data"
+                        ? "Cloud, DevOps and Data"
+                        : data?.story?.content?.Category}
+                      {/* </Link> */}
                     </span>
-                    <span className="self-center md:mx-2 mx-1 mt-[2px]">
-                      <Image
-                        className="!w-[20px]"
-                        src="/images/black_aerrow-1.png"
-                        alt="arrow"
-                        width="20"
-                        height="10"
-                        priority="true"
-                      />
-                    </span>
-                    <span>{data?.story?.content?.title}</span>
                   </Suspense>
                 </div>
-                <h1 className="default-max-width md:!text-[2.5rem] !text-[2rem] !font-bold !mb-5 md:leading-[50px] leading-[44px] -tracking-[.52px] min-h-[50px]">
+                <p className="sxl:text-2xl md:text-xl text-lg md:!mb-5 !mb-4">
                   {data?.story?.content?.title}
-                </h1>
+                </p>
+                <Heading
+                  type="h1"
+                  // className="text-white"
+                  text={data?.story?.content?.title}
+                />
               </div>
-              <div className="slg:w-[calc(100%_-_170px)] flex xl:items-end items-start xl:flex-row flex-col justify-between md:gap-1 gap-2 min-h-[56px]">
-                {/* {author && ( */}
-                <div className="flex items-center justify-between">
+              <div className="w-full md:w-[60%] flex md:items-center items-start md:flex-row flex-col">
+                <div className="flex items-center justify-between md:border-r-2 md:border-[#5C6878] md:mb-0 mb-2">
                   <Image
                     src={author?.authorImage}
                     width="54"
@@ -168,9 +162,9 @@ export default async function Page(props) {
                     className="!rounded-full md:!w-14 md:!h-14 !w-10 !h-10"
                     priority="true"
                   />
-                  <div className="pl-[10px] ">
+                  <div className="pl-[10px] md:pr-10">
                     <Link
-                      className="md:text-[20px] text-base font-bold"
+                      className="sxl:text-2xl md:text-xl text-base font-medium"
                       href={
                         author?.name === "Vikas Singh"
                           ? "/blog/author/vikas-singh/"
@@ -184,19 +178,19 @@ export default async function Page(props) {
                       {author?.name}
                     </Link>
                     <br />
-                    <span>
+                    <span className="sxl:!text-xl md:text-lg text-base">
                       {formattedDate(
                         data?.story?.content?.Published || new Date()
                       )}
                     </span>
                   </div>
                 </div>
-                {/* )} */}
-                <div className="flex sxl:items-center items-start sxl:flex-row flex-col !text-[16px] pb-1 md:mt-4 md:gap-0 gap-2">
-                  <div className="flex sxl:items-center items-start md:mr-5 ">
-                    <span className="!w-5 !h-5 mr-1 !mb-[2px] ml-[2px]">
+                {/* <div className="border border-[#5C6878] sxl:mx-12 md:mx-8 h-[70px]" /> */}
+                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base md:!pl-10">
+                  <div className="flex sxl:items-center items-start">
+                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1 !mb-[2px] ml-[2px]">
                       <Image
-                        src="/images/clock_icon.png"
+                        src="/images/v2/clock-icon.svg"
                         width={32}
                         height={32}
                         alt="Clock icon"
@@ -205,10 +199,10 @@ export default async function Page(props) {
                     </span>
                     {calculateReadingTime(totalDataWord)} mins read
                   </div>
-                  <div className="flex sxl:items-center items-start ">
-                    <span className="!w-6 !h-6 mr-1">
+                  <div className="flex sxl:items-center items-start">
+                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1">
                       <Image
-                        src="/images/calendar_icon.png"
+                        src="/images/v2/calendar-icon.svg"
                         width={32}
                         height={32}
                         alt="Calendar icon"
@@ -222,9 +216,13 @@ export default async function Page(props) {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4 ">
-            <div className="sxl:basis-3/4 sxl:flex-shrink-0 sxl:flex-grow-0 sxl:max-w-[75%] sxl:ml-[20%] !px-4 w-full">
-              <div className="lg:max-h-[200px] relative md:mb-6 mb-4 slg:!w-[calc(100%_-_170px)] md:h-[170px] overflow-hidden !bg-cover !bg-center">
+        </div>
+      </div>
+      <div className="blog-main">
+        <div className="container max-w-[1280px] main-section-padding-top mx-auto">
+          <div className="flex flex-wrap">
+            <div className="w-full">
+              <div className="lg:max-h-[268px] relative md:h-auto overflow-hidden !bg-cover !bg-center">
                 <Suspense
                   fallback={
                     <div className="scale-[0.5]">
@@ -268,13 +266,13 @@ export default async function Page(props) {
                   />
                 </Suspense>
               </div>
-              {data?.story?.content?.Quick_Summary ? (
+              {/* {data?.story?.content?.Quick_Summary ? (
                 <div className="min-h-[80px]">
                   <QuickSummary data={data?.story?.content?.Quick_Summary} />
                 </div>
               ) : (
                 <></>
-              )}
+              )} */}
             </div>
           </div>
         </div>

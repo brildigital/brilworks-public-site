@@ -36,7 +36,11 @@ const BlogFAQ = ({ FAQData }) => {
                     key={index + 1}
                     open={open === index + 1}
                     icon={<Icon id={index + 1} open={open} />}
-                    className="accordion-item bg-colorWhite"
+                    className={`accordion-item border rounded-md mb-6 last:mb-0 ${
+                      open === index + 1
+                        ? "border-themeColor"
+                        : "border-borderGray"
+                    }`}
                     itemScope
                     itemProp="mainEntity"
                     itemType="https://schema.org/Question"
@@ -56,7 +60,11 @@ const BlogFAQ = ({ FAQData }) => {
                         itemProp="acceptedAnswer"
                         itemType="https://schema.org/Answer"
                       >
-                        <p style={{ whiteSpace: "pre-wrap" }} itemProp="text">
+                        <p
+                          className="font-normal"
+                          style={{ whiteSpace: "pre-wrap" }}
+                          itemProp="text"
+                        >
                           {Answer}
                         </p>
                       </div>

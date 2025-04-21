@@ -7,15 +7,11 @@ import Header from "./Header";
 const CurrentHeader = () => {
   const pathname = usePathname();
 
-  const headerLight = ["/our-process/", "/career/"];
-
   const isEbooksOrBlogSubpath =
-    (pathname.startsWith("/ebooks/") || pathname.startsWith("/blog/")) &&
-    pathname !== "/ebooks/" &&
-    pathname !== "/blog/";
+    pathname.startsWith("/ebooks/") && pathname !== "/ebooks/";
 
   const headerOld =
-    headerLight.includes(pathname) ||
+    pathname === "/career/" ||
     isEbooksOrBlogSubpath ||
     pathname.startsWith("/use-case/") ||
     pathname.startsWith("/gist/");

@@ -17,6 +17,8 @@ import BlogContactForm from "./Blog/BlogContactForm";
 import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
+import QuickSummary from "./Blog/QuickSummary";
+import Heading from "./HTMLComponents/Heading";
 
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
@@ -253,9 +255,9 @@ const Article = ({ blok }) => {
 
   return (
     <div className="blog-main ">
-      <div className="container max-w-[1280px] min-h-[400px] mx-auto my-0 !px-4">
+      <div className="container max-w-[1280px] main-section-padding !py-0 min-h-[400px] mx-auto">
         <div className="flex flex-wrap -mx-4">
-          <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !px-4 min-h-[1px] w-full slg:block hidden">
+          <div className="slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
             <div className="sticky top-[110px] !pb-5">
               {isLoading ? (
                 <TableOfContentSkeleton />
@@ -266,11 +268,10 @@ const Article = ({ blok }) => {
                       headings?.length ? "blog-tab-content" : "!hidden"
                     }`}
                   >
-                    <div className="flex justify-between !mb-5">
+                    <div className="flex justify-between border-b border-borderGray font-medium !p-5 !pb-3">
                       <p>Table of Contents</p>
                     </div>
-                    <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
-                      {/* {headings?.length ? ( */}
+                    <ul className="max-h-[calc(100vh_-_300px)] overflow-auto mb-2">
                       {headings?.map((heading, index) => (
                         <li key={index}>
                           <Link
@@ -288,15 +289,10 @@ const Article = ({ blok }) => {
                           </Link>
                         </li>
                       ))}
-                      {/* ) : (
-                        <div className="flex align-middle justify-center py-16">
-                          <FetchDataSpinner />
-                        </div>
-                      )} */}
                     </ul>
                   </div>
                   <div className="!mt-7">
-                    <div className="flex items-start flex-wrap">
+                    <div className="flex items-center justify-center flex-wrap">
                       <Link
                         target="_blank"
                         href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
@@ -350,13 +346,20 @@ const Article = ({ blok }) => {
               )}
             </div>
           </div>
-          <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
+          <div className="slg:basis-[78%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[78%] !px-4 min-h-[1px] w-full">
             <div className="blog-inner items-center">
               <div className="flex -mx-4 md:flex-row flex-col">
-                <div className="md:w-3/4 w-full !float-left">
-                  <div className="h-full w-full box-border !px-4">
+                <div className="md:w-[72%] w-full !float-left">
+                  <div className="h-full w-full box-border !px-3">
                     <div className="h-full flex flex-col">
                       <div className="blog_content" ref={targetRef}>
+                        {blok?.Quick_Summary ? (
+                          <div className="min-h-[80px]">
+                            <QuickSummary data={blok?.Quick_Summary} />
+                          </div>
+                        ) : (
+                          <></>
+                        )}
                         {modifyImagesWithLazyLoading(blok?.content)}
 
                         {blok?.CTA_1 ? (
@@ -469,8 +472,8 @@ const Article = ({ blok }) => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/4 w-full !float-left">
-                  <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                <div className="md:w-[28%] w-full !float-left">
+                  <div className="h-full w-full box-border !pr-3 md:!pl-3 !pl-3">
                     <div className="h-full flex flex-col">
                       <BlogContactForm />
                     </div>
@@ -482,15 +485,15 @@ const Article = ({ blok }) => {
         </div>
       </div>
 
-      <div className="container mx-auto md:!px-3 !px-4">
+      <div className="container max-w-[1280px] mx-auto sxl:!px-10 md:!px-7.5 !px-5">
         <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
-          <div className="service_sec3">
-            <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
-              <p className="!ml-0 extra_bold !w-full">You might also like</p>
-            </p>
-          </div>
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl !my-5"
+            text="You might also like"
+          />
           <div
-            className={`grid  h-full
+            className={`grid h-full
                xl:grid-cols-3 md:grid-cols-2
              grid-cols-1 items-center gap-[2rem]`}
           >
@@ -500,7 +503,7 @@ const Article = ({ blok }) => {
               ?.map(({ slug, name, content }, index) => (
                 <div
                   key={index}
-                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
+                  className="border-[1px] border-[#80808038] rounded-2xl blog_flex_30"
                 >
                   <Link
                     as={`/blog/${slug}`}
@@ -510,7 +513,7 @@ const Article = ({ blok }) => {
                   >
                     <div className="sec9_img1">
                       <Image
-                        className="rounded-[30px]"
+                        className="rounded-t-[15px]"
                         src={
                           content?.mobile_banner?.filename
                             ? content?.mobile_banner?.filename
@@ -540,61 +543,7 @@ const Article = ({ blok }) => {
                 </div>
               ))}
           </div>
-          {/* <div className="container mx-auto md:!px-3 !px-4">
-        <div className="ready_sec !pb-0 !pt-[4rem]">
-          <div className="ready_img relative">
-            <p>
-              <img
-                decoding="async"
-                loading="lazy"
-                className="ready_main hidden md:block alignnone"
-                src="/images/ready.png"
-                width={1408}
-                height={450}
-                alt="get in touch"
-              />
-              <img
-                decoding="async"
-                loading="lazy"
-                className="block md:hidden rounded-[20px] alignnone"
-                src="/images/ready-mobile.webp"
-                width="340"
-                height="720"
-                alt="get in touch"
-              />
-            </p>
-            
 
-            <div className="redy_title home_sec2_txt3">
-              <p className="!w-full font-bold">
-                READY TO DEVELOP YOUR SUCCESS STORY WITH US?
-              </p>
-            </div>
-            <div className="get_touch">
-              <div className="get_flex ml-14">
-                <div className="">
-                  <Link href="/contact-us/">
-                    <img
-                      decoding="async"
-                      loading="lazy"
-                      className="alignnone"
-                      src="/images/right_arrow.png"
-                      alt="right arrow"
-                      width={10}
-                      height={20}
-                    />
-                  </Link>
-                </div>
-                <div className="get_text">
-                  <p>
-                    <Link href="/contact-us/">Get in Touch</Link>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
           <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
             <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
               <div className="h-full flex flex-col">
