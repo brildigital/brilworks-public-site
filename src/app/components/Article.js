@@ -291,7 +291,7 @@ const Article = ({ blok }) => {
                       ))}
                     </ul>
                   </div>
-                  <div className="!mt-7">
+                  <div className="mt-7.5">
                     <div className="flex items-center justify-center flex-wrap">
                       <Link
                         target="_blank"

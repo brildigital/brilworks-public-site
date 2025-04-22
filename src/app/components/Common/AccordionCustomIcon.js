@@ -28,36 +28,34 @@ const AccordionCustomIcon = ({
   open,
 }) => {
   return (
-    <>
-      <Accordion
-        open={open === index}
-        icon={<Icon id={index} open={open} />}
-        animate={CUSTOM_ANIMATION}
+    <Accordion
+      open={open === index}
+      icon={<Icon id={index} open={open} />}
+      animate={CUSTOM_ANIMATION}
+    >
+      <AccordionHeader
+        onClick={() => handleOpen(index)}
+        className={`py-6 border-[#707070] ${
+          open === index ? "border-none" : ""
+        }`}
       >
-        <AccordionHeader
-          onClick={() => handleOpen(index)}
-          className={`py-6 border-[#707070] ${
-            open === index ? "border-none" : ""
-          }`}
-        >
-          <h3 className="font-Figtree">{title}</h3>
-        </AccordionHeader>
-        <AccordionBody
-          className={`pb-4 pt-0 ${
-            open === index ? "border-b border-[#707070]" : ""
-          }`}
-        >
-          <div className="accordion-body font-Figtree">{content}</div>
-          {linkUrl && (
-            <LinkWithArrow
-              href={linkUrl}
-              label="Know More"
-              className="py-3 !mt-0"
-            />
-          )}
-        </AccordionBody>
-      </Accordion>
-    </>
+        <h3 className="font-Figtree">{title}</h3>
+      </AccordionHeader>
+      <AccordionBody
+        className={`pb-4 pt-0 ${
+          open === index ? "border-b border-[#707070]" : ""
+        }`}
+      >
+        <div className="accordion-body font-Figtree">{content}</div>
+        {linkUrl && (
+          <LinkWithArrow
+            href={linkUrl}
+            label="Know More"
+            className="py-3 !mt-0"
+          />
+        )}
+      </AccordionBody>
+    </Accordion>
   );
 };
 

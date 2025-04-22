@@ -111,14 +111,17 @@ const UsecaseContentSection = ({ content, FAQData }) => {
   }, [headings]);
 
   return (
-    <div className="container !max-w-[1420px] main-section-padding-bottom mx-auto">
+    <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
       <div className="flex flex-wrap -mx-4">
-        <div className="slg:basis-1/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[20%] !pr-4 min-h-[1px] w-full slg:block hidden">
+        <div className="slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
           <div className="sticky top-[110px] !pb-5">
             <div className="blog-tab-content  ">
-              <div className="flex justify-between !mb-5">
+              {/* <div className="flex justify-between !mb-5"> */}
+              {/* <p>Table of Contents</p> */}
+              <div className="flex justify-between border-b border-borderGray font-medium !p-5 !pb-3">
                 <p>Table of Contents</p>
               </div>
+              {/* </div> */}
               <ul className="max-h-[calc(100vh_-_300px)] overflow-auto">
                 {headings?.length ? (
                   headings.map((heading, index) => (
@@ -141,8 +144,8 @@ const UsecaseContentSection = ({ content, FAQData }) => {
                 )}
               </ul>
             </div>
-            <div className="!mt-7">
-              <div className="flex items-start flex-wrap">
+            <div className="mt-7.5">
+              <div className="flex items-center justify-center flex-wrap">
                 <Link
                   target="_blank"
                   href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
@@ -191,7 +194,7 @@ const UsecaseContentSection = ({ content, FAQData }) => {
             </div>
           </div>
         </div>
-        <div className="slg:basis-4/5 slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[80%] !px-4 min-h-[1px] w-full">
+        <div className="slg:basis-[78%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[78%] !px-4 min-h-[1px] w-full">
           <div className="blog-inner items-center">
             <div className="flex -mx-4 md:flex-row flex-col">
               <div className="w-full !float-left">
@@ -212,77 +215,12 @@ const UsecaseContentSection = ({ content, FAQData }) => {
             </div>
           </div>
         </div>
-        <div className="container mx-auto md:!px-0 !px-4">
-          <div className="flex flex-wrap flex-col">
-            <div className="service_sec3">
-              <p className="home_sec2_txt3 !pb-0 md:!pt-10 !pt-0">
-                <p className="!ml-0 extra_bold !w-full">You might also like</p>
-              </p>
-            </div>
-            {/* <div
-              className={`grid ${
-                !blogResponse["/aws-consulting-services/"]?.length
-                  ? ""
-                  : "xl:grid-cols-3 md:grid-cols-2"
-              } grid-cols-1 items-center gap-[2rem]`}
-            >
-              {blogResponse[
-                pathname.includes("aws")
-                  ? "/aws-consulting-services/"
-                  : "/generative-ai-development-services/"
-              ]?.length ? (
-                blogResponse[
-                  pathname.includes("aws")
-                    ? "/aws-consulting-services/"
-                    : "/generative-ai-development-services/"
-                ]?.map(({ slug, name, content }, index) => (
-                  <div
-                    key={index}
-                    className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
-                  >
-                    <Link
-                      as={`/blog/${slug}`}
-                      href={`/blog/[slug]`}
-                      target="_blank"
-                      rel="external"
-                    >
-                      <div className="sec9_img1">
-                        <Image
-                          className="rounded-[30px]"
-                          src={content?.mobile_banner?.filename}
-                          alt={content?.mobile_banner?.alt}
-                          width={550}
-                          height={283}
-                        />
-                      </div>
-                      <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                        <div className="border-b-[1px] border-[#80808038] py-[1rem]">
-                          <p className="entry-title default-max-width aspect-[518/116]">
-                            {name}
-                          </p>
-                        </div>
-                        <div className="sec9_txt2 mt-[1.5rem]">
-                          <p className="publish_date">
-                            {formattedDate(content?.Published)}
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))
-              ) : (
-                <div className="flex items-center justify-center p-24">
-                  <FetchDataSpinner />
-                </div>
-              )}
-            </div> */}
-            {pathname.includes("product") ? (
-              <ProductSuggestion />
-            ) : (
-              <UseCaseSuggestion blogResponse={blogResponse} />
-            )}
-          </div>
-        </div>
+
+        {pathname.includes("product") ? (
+          <ProductSuggestion />
+        ) : (
+          <UseCaseSuggestion blogResponse={blogResponse} />
+        )}
       </div>
     </div>
   );

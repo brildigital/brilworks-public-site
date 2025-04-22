@@ -1,24 +1,26 @@
 {
   "/": [
     {
-      "name": "React Native for Web: What It Is and Why Developers Use It",
-      "slug": "react-native-for-web",
+      "name": "Guide to Choose a React Native App Development Company",
+      "slug": "react-native-app-development-company",
       "content": {
         "Priority": "",
+        "Published": "2025-04-21 11:27",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/e12f653a04/mobiile-banner-image-react-native-for-web_-what-it-is-and-why-developers-use-it.webp",
-          "alt": "Banner Image - React Native for Web What It Is and Why Developers Use It"
+          "filename": "https://a.storyblok.com/f/219851/550x283/79fe18ee91/mobile-banner-image-guide-to-choose-a-react-native-app-development-company.webp",
+          "alt": "Banner Image - Guide to Choose a React Native App Development Company"
         }
       }
     },
     {
-      "name": "Does React work for iOS, and how does it perform?",
-      "slug": "does-react-work-for-ios",
+      "name": "Node.js vs Golang",
+      "slug": "node-js-vs-golang",
       "content": {
         "Priority": "",
+        "Published": "2025-04-21 07:27",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/87d7dab5af/mobiile-banner-image-does-react-work-for-ios-and-how-does-it-perform_.webp",
-          "alt": "Mobile Banner Image - Does React work for iOS, and how does it perform_"
+          "filename": "https://a.storyblok.com/f/219851/1100x566/09b2b47d1b/2-banner-image-nodejs-vs-golang-which-one-should-you-choose-in-2025_.webp",
+          "alt": "2 Banner Image - Nodejs vs Golang Which One Should You Choose in 2025_"
         }
       }
     }
@@ -29,6 +31,7 @@
       "slug": "generative-ai-in-healthcare",
       "content": {
         "Priority": "2",
+        "Published": "2024-04-18 18:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/775c1615ad/generative-ai-in-healthcare-mobile-banner.webp",
           "alt": "Generative AI in healthcare mobile banner"
@@ -40,9 +43,22 @@
       "slug": "what-is-llm-and-which-model-you-use",
       "content": {
         "Priority": "3",
+        "Published": "2023-12-01 16:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/884cc2d834/thumbnail-llm.webp",
           "alt": "Thumbnail-LLM"
+        }
+      }
+    },
+    {
+      "name": "What Is Generative AI? Exploring the Future of Creative AI Applications",
+      "slug": "generative-ai-exploring-the-future-of-creative-ai-applications",
+      "content": {
+        "Priority": "1",
+        "Published": "2023-11-18 19:00",
+        "mobile_banner": {
+          "filename": "https://a.storyblok.com/f/219851/550x283/b41eacf5bf/thumbnail-generative-ai.webp",
+          "alt": "Thumbnail-Generative AI"
         }
       }
     }
@@ -53,6 +69,7 @@
       "slug": "ai-for-database-querying",
       "content": {
         "Priority": "",
+        "Published": "2025-02-22 20:05",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/a3e74073dc/mobile-banner-image-6-best-practices-for-using-ai-for-database-querying.webp",
           "alt": "Mobile Banner Image - 6 Best Practices For Using AI for Database Querying"
@@ -64,6 +81,7 @@
       "slug": "how-generative-ai-transforms-supply-chain-operations",
       "content": {
         "Priority": "",
+        "Published": "2024-10-16 17:15",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/ff9288e7ed/banner-image-how-generative-ai-transforms-supply-chain-operations-1.webp",
           "alt": ""
@@ -77,6 +95,7 @@
       "slug": "mobile-app-development-company-hiring-benefits",
       "content": {
         "Priority": "",
+        "Published": "2025-02-16 11:53",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/9f7b5a6b0e/mobile-banner-image-the-benefits-of-hiring-a-mobile-app-development-company-1.webp",
           "alt": "Mobile Banner Image - The Benefits of Hiring a Mobile App Development Company 1"
@@ -88,6 +107,7 @@
       "slug": "cloud-integration-in-mobile-apps",
       "content": {
         "Priority": "",
+        "Published": "2025-02-12 11:08",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/196c4c7bdb/banner-image-the-role-of-cloud-integration-in-mobile-apps-1.webp",
           "alt": "Banner Image - The Role of  Cloud Integration  in Mobile Apps"
@@ -101,6 +121,7 @@
       "slug": "node-js-architecture-best-practices",
       "content": {
         "Priority": "3",
+        "Published": "2024-02-28 15:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/3ccebeddca/thumbnail-node-js-architecture-guides-1.webp",
           "alt": "nodejs architecture and best practices thumbnail"
@@ -112,6 +133,7 @@
       "slug": "what-is-rapid-application-development-a-detailed-guide",
       "content": {
         "Priority": "1",
+        "Published": "2023-06-05 18:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/63d5332b36/thumbnail-rapid-app-development.webp",
           "alt": "thumbnail-rapid-app-development"
@@ -121,24 +143,26 @@
   ],
   "/application-development-services/": [
     {
-      "name": "React Native for Web: What It Is and Why Developers Use It",
-      "slug": "react-native-for-web",
+      "name": "Guide to Choose a React Native App Development Company",
+      "slug": "react-native-app-development-company",
       "content": {
         "Priority": "",
+        "Published": "2025-04-21 11:27",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/e12f653a04/mobiile-banner-image-react-native-for-web_-what-it-is-and-why-developers-use-it.webp",
-          "alt": "Banner Image - React Native for Web What It Is and Why Developers Use It"
+          "filename": "https://a.storyblok.com/f/219851/550x283/79fe18ee91/mobile-banner-image-guide-to-choose-a-react-native-app-development-company.webp",
+          "alt": "Banner Image - Guide to Choose a React Native App Development Company"
         }
       }
     },
     {
-      "name": "Does React work for iOS, and how does it perform?",
-      "slug": "does-react-work-for-ios",
+      "name": "Node.js vs Golang",
+      "slug": "node-js-vs-golang",
       "content": {
         "Priority": "",
+        "Published": "2025-04-21 07:27",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/87d7dab5af/mobiile-banner-image-does-react-work-for-ios-and-how-does-it-perform_.webp",
-          "alt": "Mobile Banner Image - Does React work for iOS, and how does it perform_"
+          "filename": "https://a.storyblok.com/f/219851/1100x566/09b2b47d1b/2-banner-image-nodejs-vs-golang-which-one-should-you-choose-in-2025_.webp",
+          "alt": "2 Banner Image - Nodejs vs Golang Which One Should You Choose in 2025_"
         }
       }
     }
@@ -173,6 +197,7 @@
       "slug": "aws-advisory-services",
       "content": {
         "Priority": "",
+        "Published": "2024-12-19 19:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/21d3f80b48/banner-image-maximize-your-aws-investment-with-expert-advisory-services-1.webp",
           "alt": "Banner Image - Maximize Your AWS Investment with Expert Advisory Services 1"
@@ -184,9 +209,22 @@
       "slug": "top-programming-languages-for-the-cloud-computing",
       "content": {
         "Priority": "",
+        "Published": "2024-12-01 10:48",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/550x283/4269323480/mobile-best-programming-languages-for-cloud-developers-1.webp",
           "alt": ""
+        }
+      }
+    },
+    {
+      "name": "Enhancing Cloud Security with Managed Services",
+      "slug": "enhancing-cloud-security-with-managed-services",
+      "content": {
+        "Priority": "",
+        "Published": "2024-11-27 11:45",
+        "mobile_banner": {
+          "filename": "https://a.storyblok.com/f/219851/1100x566/bdff0652bf/mobile-enhancing-cloud-security-with-managed-services.webp",
+          "alt": "Mobile Banner Enhancing Cloud Security  with Managed Services"
         }
       }
     }
@@ -197,6 +235,7 @@
       "slug": "mobile-app-testing-tools",
       "content": {
         "Priority": "3",
+        "Published": "2023-11-28 10:36",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/b2e41f36e5/thumbnail-mobile-app-testing-tools.webp",
           "alt": "Thumbnail-Mobile app testing tools"
@@ -208,6 +247,7 @@
       "slug": "java-testing-tools",
       "content": {
         "Priority": "2",
+        "Published": "2023-11-20 18:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/91cee1ef60/thumbnail-java-testing-tools.webp",
           "alt": "Thumbnail-Java Testing Tools"
@@ -221,6 +261,7 @@
       "slug": "debugging-react-native-apps-tools-and-techniques",
       "content": {
         "Priority": "2",
+        "Published": "2023-10-27 19:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/2d169a9c07/thumbnail-master-reactnative-debugging.webp",
           "alt": "Thumbnail-Master reactnative debugging"
@@ -232,6 +273,7 @@
       "slug": "everything-you-need-to-know-about-microservices",
       "content": {
         "Priority": "1",
+        "Published": "2023-10-20 19:00",
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1718x884/93302063d2/thumbnail-microservices.webp",
           "alt": "Thumbnail-Microservices"

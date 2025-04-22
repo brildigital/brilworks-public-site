@@ -4,9 +4,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import DevOpsShipFaster from "./DevOpsShipFaster";
 
-const OurServices = dynamic(() => import("./OurServices"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
-const IndustriesWeHelp = dynamic(() => import("./IndustriesWeHelp"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -14,6 +12,56 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const ERPNextDevService = () => {
+  const ERPNextDevServiceData = [
+    {
+      title: "Custom Module Development",
+      value: "value-1",
+      description:
+        "Build functionalities unique to your business processes that go beyond ERPNext's default features.",
+      imageSrc: "/images/erp-next-1.webp",
+      imageAlt: "Custom Module Development img",
+    },
+    {
+      title: "Workflow Automation",
+      value: "value-1",
+      description:
+        "Streamline complex workflows and eliminate repetitive tasks with custom automation solutions.",
+      imageSrc: "/images/erp-next-2.webp",
+      imageAlt: "Automation img",
+    },
+    {
+      title: "Seamless Integrations",
+      value: "value-1",
+      description:
+        "Connect ERPNext to your existing CRM, e-commerce platform, or accounting software for a unified data flow.",
+      imageSrc: "/images/erp-next-3.webp",
+      imageAlt: "Seamless Integrations img",
+    },
+    {
+      title: "Data Migration & Security",
+      value: "value-1",
+      description:
+        "Migrate your data smoothly from legacy systems and implement robust security measures to safeguard your information.",
+      imageSrc: "/images/erp-next-4.webp",
+      imageAlt: "Data Migration img",
+    },
+    {
+      title: "Custom Reporting & Dashboards",
+      value: "value-1",
+      description:
+        "Gain deeper business insights with custom reports and dashboards tailored to your specific needs.",
+      imageSrc: "/images/erp-next-5.webp",
+      imageAlt: "Custom Reporting img",
+    },
+    {
+      title: "Comprehensive Support & Maintenance",
+      value: "value-1",
+      description:
+        "Benefit from expert guidance during implementation, ongoing technical support, and regular system maintenance for optimal performance.",
+      imageSrc: "/images/erp-next-6.webp",
+      imageAlt: "Comprehensive Support dev img",
+    },
+  ];
   return (
     <div className="services pt-[4rem] mx-auto">
       <div>
@@ -48,11 +96,8 @@ const ERPNextDevService = () => {
           </div>
         </div>
       </div>
-      <DevOpsShipFaster />
-      <OurServices />
       <ServicesWhyChooseUs />
       <Honors />
-      <IndustriesWeHelp />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
