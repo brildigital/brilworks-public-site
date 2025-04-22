@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
+import Loader from "../Homepage/Loader";
 
 const SubscribeNewsLetterForm = () => {
   const pathname = usePathname();
@@ -17,7 +18,7 @@ const SubscribeNewsLetterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsSubmitting(true);
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbzwrVwvf5cxoDdqtWtKdF64gv9-JaPUOl6MT11nWaDe9lfuj7Qu6EDwyJketobPXmhE/exec";
 
@@ -34,7 +35,6 @@ const SubscribeNewsLetterForm = () => {
         },
         body: formData,
       });
-      console.log("response", response);
 
       if (response.ok) {
         setEmail("");
@@ -76,17 +76,19 @@ const SubscribeNewsLetterForm = () => {
                 type="email"
                 name="email"
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email address"
                 className="px-4 py-3 w-full text-base text-gray-900 focus:outline-none"
               />
               <button
                 type="submit"
-                className="bg-colorBlack text-white font-semibold px-6 py-3 text-base hover:opacity-90 transition"
+                className="bg-colorBlack text-white font-semibold px-6 py-3 text-base hover:opacity-90 transition flex items-center gap-2"
               >
-                Subscribe
+                {isSubmitting ? <Loader /> : ""}{" "}
+                {isSubmitting ? "Subscribing" : "Subscribe"}
               </button>
             </form>
-            {respMessage && <p className="!ml-1 !mt-2">{respMessage}</p>}
+            <p className="!ml-1 !mt-2 h-5">{respMessage}</p>
           </div>
         </div>
       </div>
