@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 
-const ContactFormV2 = ({ darkMode = false }) => {
+const ContactFormV2 = ({ darkMode = false, hideEmail = false }) => {
   const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -115,12 +115,16 @@ const ContactFormV2 = ({ darkMode = false }) => {
             required
           />
         </div>
-        <div
-          className={`h-4 ${darkMode ? "text-colorWhite" : "text-colorBlack"}`}
-          id="sucess_msg"
-        >
-          {respMessage}
-        </div>
+        {respMessage && (
+          <div
+            className={`h-4 ${
+              darkMode ? "text-colorWhite" : "text-colorBlack"
+            }`}
+            id="sucess_msg"
+          >
+            {respMessage}
+          </div>
+        )}
         <div className="flex items-center gap-5">
           <ButtonV2
             id="submit"
@@ -132,20 +136,22 @@ const ContactFormV2 = ({ darkMode = false }) => {
             label={isSubmitting ? "Submitting..." : "Submit"}
             disabled={isSubmitting}
           />
-          <div
-            className={`md:text-xl text-lg border-l border-l-[#CFD8DF] !pl-5 ${
-              darkMode ? "text-colorWhite" : ""
-            }`}
-          >
-            Email Us :{" "}
-            <a
-              href="mailto:sales@brilworks.com"
-              target="_blank"
-              className="bg-clip-text text-transparent bg-theme-gradient"
+          {!hideEmail && (
+            <div
+              className={`md:text-xl text-lg border-l border-l-[#CFD8DF] !pl-5 ${
+                darkMode ? "text-colorWhite" : ""
+              }`}
             >
-              sales@brilworks.com
-            </a>
-          </div>
+              Email Us :{" "}
+              <a
+                href="mailto:sales@brilworks.com"
+                target="_blank"
+                className="bg-clip-text text-transparent bg-theme-gradient"
+              >
+                sales@brilworks.com
+              </a>
+            </div>
+          )}
         </div>
       </form>
     </div>

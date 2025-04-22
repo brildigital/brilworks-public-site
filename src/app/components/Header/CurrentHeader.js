@@ -11,7 +11,6 @@ const CurrentHeader = () => {
     pathname.startsWith("/ebooks/") && pathname !== "/ebooks/";
 
   const headerOld =
-    pathname === "/career/" ||
     isEbooksOrBlogSubpath ||
     pathname.startsWith("/use-case/") ||
     pathname.startsWith("/gist/");

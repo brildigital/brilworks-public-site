@@ -76,6 +76,7 @@ const SubscribeNewsLetterForm = () => {
               <input
                 type="email"
                 name="email"
+                value={email}
                 placeholder="Enter email address"
                 className="px-4 py-3 w-full text-base text-gray-900 focus:outline-none"
               />
