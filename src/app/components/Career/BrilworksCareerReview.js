@@ -71,7 +71,7 @@ const BrilworksCareerReview = () => {
 
   return (
     <>
-      <div className="container max-w-[1280px] main-section-padding w-full mx-auto">
+      <div className="container max-w-[1280px] main-section-padding w-full mx-auto reveal">
         <div className="flex md:items-center items-start justify-between">
           <Heading
             type="h2"

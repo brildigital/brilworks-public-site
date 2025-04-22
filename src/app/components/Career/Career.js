@@ -1,20 +1,19 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect } from "react";
-import CareerContactForm from "./CareerContactForm";
-import BrilworksCareerReview from "./BrilworksCareerReview";
-import { scrollEffect, scrollToSection } from "../lib/commonFunction";
-import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { scrollEffect } from "../lib/commonFunction";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import CTASection from "../Common/CTASection";
-import MultipleCardInGrid from "../Common/MultipleCardInGrid";
-import ContactFormV2 from "../Homepage/ContactFormV2";
+
+const BrilworksCareerReview = dynamic(() => import("./BrilworksCareerReview"));
+const MultipleCardInGrid = dynamic(() =>
+  import("../Common/MultipleCardInGrid")
+);
+const ContactFormV2 = dynamic(() => import("../Homepage/ContactFormV2"));
 
 const Career = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
   const careerBenefits = [
     {
       title: "Flexible Timings",
@@ -152,7 +151,7 @@ const Career = () => {
       </section>
       <div className="bg-themeLight">
         <div
-          className="container max-w-[1280px] mx-auto main-section-padding"
+          className="container max-w-[1280px] mx-auto main-section-padding reveal"
           id="career-contact-form"
         >
           <Heading
