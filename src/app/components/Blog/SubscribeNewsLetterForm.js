@@ -12,7 +12,6 @@ const SubscribeNewsLetterForm = () => {
 
   const clearMessage = () => {
     setTimeout(() => {
-      setEmail("");
       setRespMessage("");
     }, 4000);
   };
