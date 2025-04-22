@@ -3,8 +3,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/virtual";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Heading from "../HTMLComponents/Heading";
+import { useEffect, useState } from "react";
 import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoryblokClient from "storyblok-js-client";
@@ -14,8 +16,6 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "./FetchDataSpinner";
 import { scrollEffect } from "../lib/commonFunction";
-import Heading from "../HTMLComponents/Heading";
-import Image from "next/image";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,

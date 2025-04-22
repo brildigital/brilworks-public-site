@@ -290,7 +290,7 @@ const Blog = () => {
               </p>
             </div>
           ) : (
-            <div className="flex items-center justify-center md:!py-52 py-28 h-[90vh]">
+            <div className="flex items-center justify-center md:!py-52 py-28">
               <FetchDataSpinner />
             </div>
           )}

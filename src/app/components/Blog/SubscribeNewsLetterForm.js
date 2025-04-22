@@ -38,7 +38,7 @@ const SubscribeNewsLetterForm = () => {
 
       if (response.ok) {
         setEmail("");
-        setRespMessage("Your response is submitted successfully.");
+        setRespMessage("Your subscription request is submitted successfully.");
         clearMessage();
       } else {
         setRespMessage("Something went wrong!");

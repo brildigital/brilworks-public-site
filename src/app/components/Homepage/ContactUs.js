@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
-import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 
 const ContactFormV2 = dynamic(() => import("./ContactFormV2"));

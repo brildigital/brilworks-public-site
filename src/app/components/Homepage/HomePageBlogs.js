@@ -34,7 +34,7 @@ const HomePageBlogs = () => {
   //   try {
   //     const blogData = await getblogDataCategorization(
   //       1,
-  //       2,
+  //       3, // Keep 3 from AWS Consulting Service and Generative AI Develompnet Service
   //       pathname === "/" ? null : blogDataBasedOnPath[pathname]
   //     );
   //     const filteredData =
@@ -44,6 +44,7 @@ const HomePageBlogs = () => {
   //         slug: post.slug,
   //         content: {
   //           Priority: post?.content?.Priority,
+  //           Published: post?.content?.Published,
   //           mobile_banner: {
   //             filename: post?.content?.mobile_banner.filename,
   //             alt: post?.content?.mobile_banner.alt,
