@@ -6,9 +6,52 @@ import BrilworksCareerReview from "./BrilworksCareerReview";
 import { scrollEffect, scrollToSection } from "../lib/commonFunction";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
+import CTASection from "../Common/CTASection";
+import MultipleCardInGrid from "../Common/MultipleCardInGrid";
+import ContactFormV2 from "../Homepage/ContactFormV2";
 
 const Career = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const careerBenefits = [
+    {
+      title: "Flexible Timings",
+      icon: "/images/v2/fi_8718268.svg",
+      imageAlt: "Clock icon representing flexible timings",
+      description:
+        "We understand your responsibilities extend beyond your work and so it is important for us to be flexible.",
+    },
+    {
+      title: "Medical Insurance Cover",
+      icon: "/images/v2/fi_10055327.svg",
+      imageAlt: "Medical icon representing insurance cover",
+      description:
+        "Gain a clear roadmap for digital transformation aligned with your business goals and market demands.",
+    },
+    {
+      title: "Holidays Time Off",
+      icon: "/images/v2/clock.svg",
+      imageAlt: "Calendar icon representing holidays",
+      description:
+        "Gain a clear roadmap for digital transformation aligned with your business goals and market demands.",
+    },
+    {
+      title: "Team Building",
+      icon: "/images/v2/fi_18992293.svg",
+      imageAlt: "Team icon representing team building",
+      description:
+        "Gain a clear roadmap for digital transformation aligned with your business goals and market demands.",
+    },
+    {
+      title: "Learning and Development",
+      icon: "/images/v2/fi_3018864.svg",
+      imageAlt: "Graduation cap icon representing learning",
+      description:
+        "Gain a clear roadmap for digital transformation aligned with your business goals and market demands.",
+    },
+  ];
 
   useEffect(() => {
     scrollEffect();
@@ -21,845 +64,110 @@ const Career = () => {
 
   return (
     <>
-      <section>
-        <div className="container max-w-[1440px] mx-auto main-section-padding md:mt-12 lg:mt-8 mt-20">
-          <div className="md:text-center">
-            <div className="home_sec2_txt1">
-              <h1 className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                Welcome to our
-                <div className={`home_sec2_txt2 ${isMobile ? "my-2" : "my-3"}`}>
-                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor font-bold">
-                    World of Brilliance
-                  </p>
-                </div>
-              </h1>
-            </div>
-
-            <div className="py-8">
-              <p className="xl:text-[40px] lg:text-[32px] sm:text-[26px] text-[22px] leading-tight">
-                A place where brilliant minds come together, to collaborate and
-                create products with a common goal of making them innovative,
-                appealing, and efficient while having truckloads of fun!
-              </p>
-            </div>
-
-            <div className="flex sm:items-center items-start justify-center lg:gap-[80px] gap-[20px] flex-col sm:flex-row">
-              <Link
-                href="#section7_career"
-                onClick={(e) => scrollToSection(e, "section7_career")}
-                className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
-              >
-                <div className="about_txt">
-                  <p className="change_link text-[21px] font-medium">
-                    Explore Open Positions
-                  </p>
-                </div>
-                <div className="aerrow relative">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="black_aerrow alignnone wp-image-28 size-full"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="gradiant_aerrow alignnone wp-image-29 size-full"
-                    src="/images/arrow-gradiant.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-              </Link>
-              <Link
-                href="#section10"
-                onClick={(e) => scrollToSection(e, "section10")}
-                className="flex items-center justify-center md:gap-[20px] gap-[10px] about_btn transition mt-[16px]"
-              >
-                <div className="about_txt">
-                  <p className="change_link text-[21px] font-medium">
-                    Join Our Team
-                  </p>
-                </div>
-                <div className="aerrow relative">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="black_aerrow alignnone wp-image-28 size-full"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    className="gradiant_aerrow alignnone wp-image-29 size-full"
-                    src="/images/arrow-gradiant.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-              </Link>
-            </div>
-
-            <div className="mx-auto xl:my-[6rem] md:my-[4rem] my-[2rem] w-full">
-              <Image
-                className="md:rounded-[36px] rounded-[20px]"
-                src="https://a.storyblok.com/f/219851/1566x682/fef0e645ae/career.jpg"
-                alt="career"
-                width="1566"
-                height="682"
-              />
-            </div>
-            <div className="reveal">
-              <div className="home_sec2_txt1">
-                <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                  At Brilworks,
+      <div className="service-hero-bg">
+        <div
+          className={`banner-layer-dark h-full min-h-[600px] md:max-[980] max-h-full`}
+        >
+          <div className="container max-w-[1280px] main-section-padding sxl:!pt-32 md:!pt-20 !pt-32 mx-auto">
+            <section
+              className={`flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] max-h-full md:max-h-[980px] lg:gap-16 md:gap-10 gap-6`}
+            >
+              <div className="w-full lg:mt-10">
+                <Heading
+                  type="h1"
+                  className="text-white"
+                  text="Welcome to our World of Brilliance"
+                />
+                <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                  A place where brilliant minds come together, to collaborate
+                  and create products with a common goal of making them
+                  innovative, appealing, and efficient while having truckloads
+                  of fun!
                 </p>
-              </div>
 
-              <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
-                <div className="home_sec2_txt2">
-                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] !text-themeColor font-bold">
-                    It’s all about the
-                  </p>
-                  <div className="md:hidden block home_sec2_txt1 w-fit txt_center border-[#000000] border-b-[3px]">
-                    <p>people</p>
-                  </div>
+                <div className="flex md:flex-row flex-col md:items-center items-start justify-start gap-5 sxl:mt-10 sxl:mb-12 md:my-7.5 my-5">
+                  <ButtonV2
+                    size="large"
+                    className="w-fit"
+                    redirect="#explore-open-positions"
+                    label="Explore Open Positions"
+                    scrollingButton
+                  />
+                  <ButtonV2
+                    size="large"
+                    redirect="#career-contact-form"
+                    className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
+                    label="Join Our Team"
+                    scrollingButton
+                  />
                 </div>
-                <div className="md:block hidden home_sec2_txt1 txt_center border-[#000000] border-b-[5px]">
-                  <p>people</p>
-                </div>
+                <Image
+                  className="rounded-2xl w-full max-h-[505px] object-cover"
+                  src="/images/v2/career-banner.webp"
+                  alt="service-banner"
+                  width="1200"
+                  height="505"
+                  priority
+                />
               </div>
-
-              <div className="py-8">
-                <p className="xl:text-[40px] lg:text-[32px] sm:text-[26px] text-[22px] leading-tight !w-full">
-                  To us, the people and the collaborative working style are key
-                  drivers of engagement. It’s our aim to create a welcoming
-                  environment in which employees are empowered to achieve their
-                  fullest potential.
-                </p>
-              </div>
-            </div>
-
-            <div className="xl:my-[6rem] md:my-[4rem] my-[2rem] !mb-0 reveal">
-              <div>
-                <div className="home_sec2_txt1">
-                  <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-                    Hear it
-                  </p>
-                </div>
-                <div className="!flex items-center md:justify-center justify-start md:gap-[2rem] gap-[10px] hidden-xs">
-                  <div className="home_sec2_txt2">
-                    <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px] text-themeColor font-bold">
-                      from our
-                    </p>
-                  </div>
-                  <div className="home_sec2_txt1 text-center border-[#000000] border-b-[3px]">
-                    <p>people</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-[1rem] mt-[2rem] md:flex-row flex-col">
-                <div className="home_txt3">
-                  <p>4.7 / 5.0</p>
-                </div>
-                <div className="flex items-center gap-[12px]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/icons-06.png"
-                    alt="star"
-                    className="w-[25px]"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/icons-06.png"
-                    alt="star"
-                    className="w-[25px]"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/icons-06.png"
-                    alt="star"
-                    className="w-[25px]"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/icons-06.png"
-                    alt="star"
-                    className="w-[25px]"
-                  />
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/icons-6.7.png"
-                    alt="star"
-                    className="w-[17.5px]"
-                  />
-                </div>
-                <div className="header_font">
-                  <p>Powered by</p>
-                </div>
-                <div className="w-[200px]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/ambitions_logo.png"
-                    alt="ambitionbox reviews"
-                    className=""
-                  />
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      <section className="reveal">
-        <div>
-          {/* <div className="clutch-widget">
-            <iframe
-              id="iframe-0.7673398699825025"
-              style={{
-                border: "none",
-                overflow: "hidden",
-                display: "block",
-                height: "357px",
-              }}
-              title="&#091;iFrameSizer&#093;iframe-0.7673398699825025:0:0:mouseleave:674:121812"
-              src="https://widget.clutch.co/widgets/get/12?ref_domain=192.168.50.12&uid=1881351&primary_color=%2308537E&secondary_color=%2308537E&rel_nofollow=true&reviews=2054376%2C2040492%2C2032289%2C2010928%2C1968060%2C1960170%2C1955515%2C1946156%2C1944400%2C1942781%2C1942541%2C1941715&ref_path=/brilworks/home/"
-              height="375px"
-              scrolling="no"
-              className="mx-auto w-[100%]"
-            ></iframe>
-          </div> */}
-          <BrilworksCareerReview />
-        </div>
-      </section>
-
-      <section className="container max-w-[1440px] main-section-padding mx-auto reveal">
-        <div className="border border-[#80808075] xl:p-[2rem] md::p-[2rem] p-[1rem] rounded-[25px]">
-          <div className="flex md:flex-row flex-col">
-            <div className="basis-[30%]">
-              <div className="flex items-center gap-[16px] pt-4">
-                <p>Powered by</p>
-                <div className="w-[122px]">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/svgviewer-output-1.png"
-                    alt="glassdoor reviews"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="basis-[70%]">
-              <ul>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Overall</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.8.png"
-                          className="md:w-[20px] w-[10.5px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.8</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Culture &amp; Values</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.8.png"
-                          className="md:w-[20px] w-[10.5px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.8</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Diversity &amp; Inclusion</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.6.png"
-                          className="md:w-[15px] w-[8px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.6</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Work/Life Balance</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.7.png"
-                          className="md:w-[17.5px] w-[9.1px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.7</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Senior Management</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.7.png"
-                          className="md:w-[17.5px] w-[9.1px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.7</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center border-b-[1px] border-[#80808075] py-4">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Compensation &amp; Benefits</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          className="md:w-[25px] w-[13px]"
-                          alt="star"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.5.png"
-                          className="md:w-[12.5px] w-[6.5px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.5</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-between items-center xl:py-[1.5rem]">
-                    <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                      <p>Career Opportunities</p>
-                    </div>
-                    <div className="flex items-center gap-[2rem]">
-                      <div className="flex items-center gap-[12px]">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          alt="star"
-                          className="md:w-[25px] w-[13px]"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          alt="star"
-                          className="md:w-[25px] w-[13px]"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          alt="star"
-                          className="md:w-[25px] w-[13px]"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-06.png"
-                          alt="star"
-                          className="md:w-[25px] w-[13px]"
-                        />
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/icons-6.7.png"
-                          className="md:w-[17.5px] w-[9.1px]"
-                          alt="star"
-                        />
-                      </div>
-                      <div className="lg:text-[24px] xl:text-[40px] text-[16px]">
-                        <p>4.7</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container max-w-[1440px] main-section-padding !py-0 mx-auto reveal">
-        <div className="home_sec2_txt1 md:text-center text-left md:mb-16 mb-8">
-          <p>
-            <span className="text-themeColor font-bold">Why should you</span>{" "}
-            join us?
-          </p>
-        </div>
-
-        <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 md:gap-[30px] gap-3">
-          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
-              <div className="home_txt3">
-                <p className="min-h-[128px]">
-                  Flexible
-                  <br className="hidden xl:block" /> Timings
-                </p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="aerrow">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-                <div className="sec6_career_img1">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Flexible-Timings-.png"
-                    alt="Flexible Timings"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box bg-sectionBG">
-                <div className="join_content">
-                  <p className>
-                    We understand your responsibilities extend beyond your work
-                    and so it is important for us
-                    <br />
-                    to be flexible
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="!p-[1.5rem] rounded-[40px] border border-[#80808075]">
-              <div className="home_txt3">
-                <p className="min-h-[128px]">Medical Insurance Cover</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="aerrow">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-                <div className="sec6_career_img1">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Medical-Insurance-Cover.png"
-                    alt="Medical Insurance Cover"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box bg-sectionBG">
-                <div className="join_content">
-                  <p>
-                    We have an INR 5 Lac family floater plan that doesn’t
-                    require an annual run-down on your finances or a yearly
-                    premium increase.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
-              <div className="home_txt3">
-                <p className="min-h-[128px]">Holidays & Time off</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="aerrow">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-                <div className="sec6_career_img1">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Holidays-Time-off-.png"
-                    alt="Holidays Time off"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box bg-sectionBG">
-                <div className="join_content">
-                  <p>
-                    No matter what anyone says, your family comes first. We
-                    truly believe you deserve time off to relax.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
-              <div className="home_txt3">
-                <p className="min-h-[128px]">Team Building</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="aerrow">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-                <div className="sec6_career_img1">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Team-Building.png"
-                    alt="Team Building"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box bg-sectionBG">
-                <div className="join_content">
-                  <p>
-                    We offer an assortment of team-building workshops and
-                    team-building events both indoors and outdoors.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${!isMobile ? "hover_class" : ""} relative`}>
-            <div className="p-[2rem] rounded-[40px] border border-[#80808075]">
-              <div className="home_txt3">
-                <p className="min-h-[128px]">Learning & Development</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="aerrow">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/black_aerrow-1.png"
-                    alt="arrow"
-                    width="46"
-                    height="18"
-                  />
-                </div>
-                <div className="sec6_career_img1">
-                  <img
-                    decoding="async"
-                    loading="lazy"
-                    src="/images/Learning-Development.png"
-                    alt="Learning Development"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-0 left-0 z-[2]">
-              <div className="hover_content_box bg-sectionBG">
-                <div className="join_content">
-                  <p>
-                    We conduct in-house trainings, seminars, and webinars to
-                    help our people stay updated with the latest trends in
-                    technology.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+      <CTASection
+        darkBackground={false}
+        title="At Brilworks, It's all about people"
+        descriptionClass="md:w-3/4"
+        description="To us, the people and the collaborative working style are key drivers of engagement. It’s our aim to create a welcoming environment in which employees are empowered to achieve their fullest potential."
+        buttonText="Let's Discuss"
+      />
+      <hr className="border-borderGray" />
+      <BrilworksCareerReview />
+      <MultipleCardInGrid
+        title="Why should you join us?"
+        cardData={careerBenefits}
+      />
 
       <section
-        className="container max-w-[1440px] mx-auto main-section-padding reveal"
-        id="section7_career"
+        className="container max-w-[1280px] mx-auto main-section-padding-bottom reveal"
+        id="explore-open-positions"
       >
-        <div className="home_sec2_txt1 md:text-center text-left">
-          <p>
-            <span className="big-text-stroke">Explore </span> open positions
-          </p>
-        </div>
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl"
+          text="Explore Open Positions"
+        />
 
         <div className="mt-[2rem]">
           <iframe
+            title="current-openings"
             loading="lazy"
             src="https://brilworks.keka.com/careers/api/embedjobs/71b6b7a2-333a-47bc-81ca-11d00c4be18f"
             width="100%"
             height="100%"
-            frameborder="0"
-            className="w-full mx-auto h-[85vh] md:p-[2rem] p-0"
+            frameBorder="0"
+            className="w-full mx-auto h-[85vh]"
           ></iframe>
         </div>
       </section>
-
-      <section className="container max-w-[1440px] mx-auto main-section-padding reveal">
-        <div className="md:text-center pb-6">
-          <div className="home_sec2_txt1">
-            <p className="xl:text-[65px] md:text-[42px] sm:text-[34px] text-[28px]">
-              <span className="font-bold text-themeColor">Send in</span> your
-              application
-            </p>
-          </div>
+      <div className="bg-themeLight">
+        <div
+          className="container max-w-[1280px] mx-auto main-section-padding"
+          id="career-contact-form"
+        >
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl"
+            text="Do you want to work with us? Please fill in your details"
+          />
+          <p className="md:!text-lg text-base py-5">
+            If you are interested in finding out more about how we can help your
+            organization, please provide your details and project requirements.
+            We'll get back to you soon.
+          </p>
+          <ContactFormV2 hideEmail={true} />
         </div>
-
-        <div id="section10">
-          <CareerContactForm />
-        </div>
-      </section>
+      </div>
     </>
   );
 };

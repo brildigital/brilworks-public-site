@@ -143,14 +143,10 @@ export default async function Page(props) {
                     </span>
                   </Suspense>
                 </div>
-                <p className="sxl:text-2xl md:text-xl text-lg md:!mb-5 !mb-4">
+                {/* <p className="sxl:text-2xl md:text-xl text-lg md:!mb-5 !mb-4">
                   {data?.story?.content?.title}
-                </p>
-                <Heading
-                  type="h1"
-                  // className="text-white"
-                  text={data?.story?.content?.title}
-                />
+                </p> */}
+                <Heading type="h1" text={data?.story?.content?.title} />
               </div>
               <div className="w-full md:w-[60%] flex md:items-center items-start md:flex-row flex-col">
                 <div className="flex items-center justify-between md:border-r-2 md:border-[#5C6878] md:mb-0 mb-2">
@@ -185,10 +181,9 @@ export default async function Page(props) {
                     </span>
                   </div>
                 </div>
-                {/* <div className="border border-[#5C6878] sxl:mx-12 md:mx-8 h-[70px]" /> */}
-                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base md:!pl-10">
+                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base md:!pl-10 gap-1">
                   <div className="flex sxl:items-center items-start">
-                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1 !mb-[2px] ml-[2px]">
+                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
                       <Image
                         src="/images/v2/clock-icon.svg"
                         width={32}
@@ -200,7 +195,7 @@ export default async function Page(props) {
                     {calculateReadingTime(totalDataWord)} mins read
                   </div>
                   <div className="flex sxl:items-center items-start">
-                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1">
+                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
                       <Image
                         src="/images/v2/calendar-icon.svg"
                         width={32}
