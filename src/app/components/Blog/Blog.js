@@ -98,7 +98,11 @@ const Blog = () => {
               <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
                 We Write
               </p>
-              <Heading type="h1" className="text-white" text="Brilwork Blogs" />
+              <Heading
+                type="h1"
+                className="text-white"
+                text="Brilworks Blogs"
+              />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 In the realm of software-defined landscapes, the Brilworks Blog
                 serves as your guide through the technological renaissance. Our

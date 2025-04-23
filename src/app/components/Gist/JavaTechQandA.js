@@ -6,7 +6,9 @@ import dynamic from "next/dynamic";
 import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
-import { getPageNumbers } from "../lib/commonFunction";
+import Heading from "../HTMLComponents/Heading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -22,51 +24,62 @@ const JavaTechQandA = () => {
   const [totalQandA, settotalQandA] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageNumbers = getPageNumbers(currentPage, totalQandA, ITEMS_PER_PAGE);
+  const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const pages = [];
+
+    if (totalPages <= 5) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push("...");
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (currentPage < totalPages - 2) pages.push("...");
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
+
+  const fetchQandAData = async () => {
+    try {
+      const nodeTechData = await getTechQandA(
+        "java",
+        currentPage,
+        ITEMS_PER_PAGE
+      );
+      setqueAnsData(nodeTechData.storyData);
+      settotalQandA(nodeTechData.totalData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
-    const fetchQandAData = async () => {
-      try {
-        const nodeTechData = await getTechQandA(
-          "java",
-          currentPage,
-          ITEMS_PER_PAGE
-        );
-        setqueAnsData(nodeTechData.storyData);
-        settotalQandA(nodeTechData.totalData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchQandAData();
   }, [currentPage, ITEMS_PER_PAGE]);
 
   return (
-    <section className="container max-w-[1280px] px-4 mt-[6rem] mx-auto">
-      <div className="relative">
-        <Image
-          className="h-[40vh] max-h-[400px] rounded-[20px]"
-          width={1250}
-          height={400}
-          src="https://a.storyblok.com/f/219851/1398x780/a05c27ff8d/java-services-banner.webp"
-          alt="Java Tech Q&A"
-          priority
-        />
-        <div className="absolute bottom-1/4 w-full text-left mx-auto">
-          <div className="how-we w-[96%] mx-auto">
-            <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Java Q & A
-            </h1>
-            <p className="md:max-w-[70%]">
-              A community of devoted Java enthusiasts dedicated to assisting
-              fellow Java enthusiasts. Explore how Brilworks contributes to
-              uplifting the Java community by addressing the most crucial,
-              common, unique, and unparalleled Java questions.
-            </p>
+    <>
+      <div className="bg-detail-hero">
+        <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px] max-h-full">
+              <Heading type="h1" className="text-white" text="Java Q & N" />
+              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                A community of devoted Java enthusiasts dedicated to assisting
+                fellow Java enthusiasts. Explore how Brilworks contributes to
+                uplifting the Java community by addressing the most crucial,
+                common, unique, and unparalleled Java questions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="md:py-[4rem] py-[2rem]">
+      <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div
           className={`grid ${
             !queAnsData?.length
@@ -82,14 +95,16 @@ const JavaTechQandA = () => {
                 prefetch={true}
                 key={index}
               >
-                <Card className="shadow-lg shadow-themeColor-500/50 border border-gray-300 hover:border-themeColor">
+                <Card className="shadow-none border border-borderGray hover:border-themeColor group duration-500">
                   <div className="sec9_img1">
                     <Image
                       decoding="async"
                       loading="lazy"
                       className="rounded-t-[12px]"
                       src={content?.banner_image?.filename || ""}
-                      alt={content?.banner_image?.alt || `Tech Q&A banner-${index}`}
+                      alt={
+                        content?.banner_image?.alt || `Tech Q&A banner-${index}`
+                      }
                       width="450"
                       height="230"
                     />
@@ -98,19 +113,15 @@ const JavaTechQandA = () => {
                     <h2 className="text-xl font-bold text-colorBlack mb-7 pl-2">
                       {name}
                     </h2>
-                    <div className="inline-flex gap-4 !cursor-pointer font-bold pl-2">
-                      <p className="!text-themeColor">Read More</p>
-                      <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
+                    <div className="inline-flex gap-4 !cursor-pointer why_text font-bold pl-2">
+                      <p className="group-hover:text-colorBlack text-themeColor">
+                        Read More
+                      </p>
+                      <FontAwesomeIcon
+                        className="group-hover:text-colorBlack text-themeColor ml-2"
+                        size="lg"
+                        icon={faArrowRight}
+                      />
                     </div>
                   </CardBody>
                 </Card>
@@ -123,37 +134,52 @@ const JavaTechQandA = () => {
           )}
         </div>
 
-        {queAnsData?.length && pageNumbers.length > 1 ? (
-          <div className="flex justify-center mt-[4rem]">
-            <ul className="list-none flex flex-wrap">
+        {queAnsData?.length && queAnsData?.length > 0 && (
+          <div className="flex justify-center sxl:mt-10 md:mt-7.5 mt-5">
+            <ul className="flex flex-wrap items-center gap-2">
+              {/* Prev */}
               <li
-                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                  currentPage === 1 ? "opacity-50 !cursor-not-allowed" : ""
+                className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
+                  currentPage === 1
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-colorBlack hover:text-themeColor"
                 }`}
                 onClick={() => {
-                  if (currentPage > 1) {
-                    setCurrentPage(currentPage - 1);
-                  }
+                  if (currentPage > 1) setCurrentPage(currentPage - 1);
                 }}
               >
-                {"< PREV"}
+                Prev
               </li>
-              {pageNumbers.map((page) => (
+
+              {/* Page Numbers */}
+              {getPaginationNumbers(
+                currentPage,
+                totalQandA,
+                ITEMS_PER_PAGE
+              ).map((page, index) => (
                 <li
-                  key={page}
-                  className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                    currentPage === page ? " bg-colorBlack text-colorWhite" : ""
+                  key={index}
+                  className={`w-10 h-10 flex items-center justify-center text-base font-medium border rounded-md cursor-pointer ${
+                    currentPage === page
+                      ? "bg-themeColor text-white"
+                      : page === "..."
+                      ? "border-none cursor-default text-colorBlack"
+                      : "text-colorBlack hover:bg-sectionBG"
                   }`}
-                  onClick={() => setCurrentPage(page)}
+                  onClick={() =>
+                    typeof page === "number" && setCurrentPage(page)
+                  }
                 >
                   {page}
                 </li>
               ))}
+
+              {/* Next */}
               <li
-                className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
                   currentPage === Math.ceil(totalQandA / ITEMS_PER_PAGE)
-                    ? "!opacity-50 !cursor-not-allowed"
-                    : ""
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-colorBlack hover:text-themeColor"
                 }`}
                 onClick={() => {
                   if (currentPage < Math.ceil(totalQandA / ITEMS_PER_PAGE)) {
@@ -161,15 +187,13 @@ const JavaTechQandA = () => {
                   }
                 }}
               >
-                {"NEXT >"}
+                Next
               </li>
             </ul>
           </div>
-        ) : (
-          ""
         )}
       </div>
-    </section>
+    </>
   );
 };
 
