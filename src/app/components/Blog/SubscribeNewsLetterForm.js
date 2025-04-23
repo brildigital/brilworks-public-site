@@ -20,7 +20,7 @@ const SubscribeNewsLetterForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzwrVwvf5cxoDdqtWtKdF64gv9-JaPUOl6MT11nWaDe9lfuj7Qu6EDwyJketobPXmhE/exec";
+      "https://script.google.com/macros/s/AKfycbx4V2ZTjKH5gChZL0uGzYfHz-kZSyVR9QBQZUbILrG9NFE2OYe977bE8IHV6HMDU28kDw/exec";
 
     const form = e.target;
     const formData = new FormData(form);
@@ -38,7 +38,7 @@ const SubscribeNewsLetterForm = () => {
 
       if (response.ok) {
         setEmail("");
-        setRespMessage("Your subscription request is submitted successfully.");
+        setRespMessage("Thanks! We’re glad to have you with us.");
         clearMessage();
       } else {
         setRespMessage("Something went wrong!");

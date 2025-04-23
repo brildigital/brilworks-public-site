@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
+import Heading from "../HTMLComponents/Heading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -48,36 +51,30 @@ const MainGist = () => {
   ];
 
   return (
-    <section className="portfolio mt-[6rem] mx-auto">
-      <div className="service_width relative flex items-center justify-center">
-        <Image
-          className="h-[46vh] rounded-[20px]"
-          src="/images/gist-banner.webp"
-          alt="Tech Q&A banner"
-          width={isMobile ? 330 : 1300}
-          height={isMobile ? 200 : 400}
-          priority
-          sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-        />
-        <div className="absolute bottom-1/4 w-full text-center mx-auto">
-          <div className="how-we">
-            <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Tech Q&N
-            </h1>
-            <p className="md:mx-auto mx-4 md:max-w-[70%]">
-              Get every mistake you've made fixed in one location. We make an
-              honest effort to address your technical inquiries, focusing on the
-              developer community. Glory to Tech!
-            </p>
+    <>
+      <div className="bg-detail-hero">
+        <div className="h-full min-h-[600px] md:max-h-[700px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+            <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
+              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
+                We Write
+              </p>
+              <Heading type="h1" className="text-white" text="Tech Q&A" />
+              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                Get every mistake you've made fixed in one location. We make an
+                honest effort to address your technical inquiries, focusing on
+                the developer community. Glory to Tech!
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 md:p-6 !pt-0">
+      <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-6">
           {techQandNData.map(
             ({ title, imageSrc, imageAlt, linkUrl }, index) => (
               <Link href={linkUrl} key={index}>
-                <Card className="shadow-lg shadow-[#00b6cf]-500/50 border hover:border-[#00b6cf] cursor-pointer">
+                <Card className="border border-borderGray shadow-none hover:border-themeColor duration-500 cursor-pointer group">
                   <CardBody className="p-8">
                     <div className="md:w-14 w-10 mb-4">
                       <Image
@@ -87,22 +84,18 @@ const MainGist = () => {
                         height={50}
                       />
                     </div>
-                    <h2 className="text-2xl why_text font-bold mb-7">
+                    <h2 className="text-2xl font-medium mb-7 text-colorBlack">
                       {title}
                     </h2>
                     <div className="inline-flex gap-4 why_text font-bold ">
-                      <p className="!text-[#00b6cf]">{title} Q & N</p>
-                      <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
+                      <p className="group-hover:text-colorBlack text-themeColor">
+                        {title} Q & N
+                      </p>
+                      <FontAwesomeIcon
+                        className="group-hover:text-colorBlack text-themeColor ml-2"
+                        size="lg"
+                        icon={faArrowRight}
+                      />
                     </div>
                   </CardBody>
                 </Card>
@@ -111,7 +104,7 @@ const MainGist = () => {
           )}
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
