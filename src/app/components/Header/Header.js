@@ -74,15 +74,7 @@ const NewHeader = () => {
     <header>
       <div className="header header-bg-white">
         <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
-          <div
-            className={`flex items-center justify-between text-colorBlack ${
-              pathname.startsWith("/portfolio/") ||
-              pathname.startsWith("/ai-solutions/") ||
-              pathname.startsWith("/ebooks/")
-                ? "container max-w-[1300px] md:px-10 px-6 mx-auto"
-                : "container max-w-[1440px] md:px-10 px-6 mx-auto"
-            }`}
-          >
+          <div className="flex items-center justify-between text-colorBlack container max-w-[1280px] md:px-10 px-6 mx-auto">
             <div className="header_logo">
               <Link href="/">
                 <Image

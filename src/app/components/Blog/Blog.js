@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData } from "../lib/getblog";
-import { formattedDate, getPageNumbers } from "../lib/commonFunction";
+import { formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";

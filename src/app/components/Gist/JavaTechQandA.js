@@ -22,6 +22,7 @@ const JavaTechQandA = () => {
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
   const [totalQandA, settotalQandA] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
@@ -45,6 +46,7 @@ const JavaTechQandA = () => {
   };
 
   const fetchQandAData = async () => {
+    setIsLoading(true);
     try {
       const nodeTechData = await getTechQandA(
         "java",
@@ -53,8 +55,10 @@ const JavaTechQandA = () => {
       );
       setqueAnsData(nodeTechData.storyData);
       settotalQandA(nodeTechData.totalData);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
@@ -67,7 +71,7 @@ const JavaTechQandA = () => {
       <div className="bg-detail-hero">
         <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px] max-h-full">
+            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
               <Heading type="h1" className="text-white" text="Java Q & N" />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 A community of devoted Java enthusiasts dedicated to assisting
@@ -127,14 +131,18 @@ const JavaTechQandA = () => {
                 </Card>
               </Link>
             ))
-          ) : (
+          ) : isLoading ? (
             <div className="flex align-middle justify-center p-28">
               <FetchDataSpinner />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center py-20 md:text-2xl text-lg">
+              No data found
             </div>
           )}
         </div>
 
-        {queAnsData?.length && queAnsData?.length > 0 && (
+        {queAnsData?.length && queAnsData?.length > 0 ? (
           <div className="flex justify-center sxl:mt-10 md:mt-7.5 mt-5">
             <ul className="flex flex-wrap items-center gap-2">
               {/* Prev */}
@@ -191,6 +199,8 @@ const JavaTechQandA = () => {
               </li>
             </ul>
           </div>
+        ) : (
+          ""
         )}
       </div>
     </>

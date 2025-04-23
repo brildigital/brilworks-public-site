@@ -9,11 +9,8 @@ const CurrentHeader = () => {
 
   const isEbooksOrBlogSubpath =
     pathname.startsWith("/ebooks/") && pathname !== "/ebooks/";
-  const isGistSubpath = pathname.startsWith("/gist/") && pathname !== "/gist/";
 
-  const headerOld = isEbooksOrBlogSubpath || isGistSubpath;
-
-  return headerOld ? <Header /> : <HeaderV2 />;
+  return isEbooksOrBlogSubpath ? <Header /> : <HeaderV2 />;
 };
 
 export default CurrentHeader;

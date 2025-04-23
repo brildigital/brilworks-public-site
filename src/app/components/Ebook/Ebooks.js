@@ -32,18 +32,26 @@ const Ebooks = () => {
     window.scrollTo({ top: 0 });
   }, [currentPage]);
 
-  const getPageNumbers = () => {
+  const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
     const pages = [];
-    for (let i = -2; i <= 2; i++) {
-      const page = currentPage + i;
-      if (page > 0 && page <= Math.ceil(totalEbook / ITEMS_PER_PAGE)) {
-        pages.push(page);
-      }
+
+    if (totalPages <= 5) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push("...");
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (currentPage < totalPages - 2) pages.push("...");
+      pages.push(totalPages);
     }
+
     return pages;
   };
 
-  const pageNumbers = getPageNumbers();
   if (isLoading)
     return (
       <section className="md:mt-[8rem] mt-[6rem] px-4 !scroll-[unset]">
@@ -123,40 +131,51 @@ const Ebooks = () => {
                 })}
               </div>
               {ebooksDataPerPage.length > ITEMS_PER_PAGE ? (
-                <div className="flex justify-center my-[2rem]">
-                  <ul className="list-none flex flex-wrap">
+                <div className="flex justify-center sxl:mt-10 md:mt-7.5 mt-5">
+                  <ul className="flex flex-wrap items-center gap-2">
+                    {/* Prev */}
                     <li
-                      className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                      className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
                         currentPage === 1
-                          ? "opacity-50 !cursor-not-allowed"
-                          : ""
+                          ? "text-gray-400 cursor-not-allowed"
+                          : "text-colorBlack hover:text-themeColor"
                       }`}
                       onClick={() => {
-                        if (currentPage > 1) {
-                          setCurrentPage(currentPage - 1);
-                        }
+                        if (currentPage > 1) setCurrentPage(currentPage - 1);
                       }}
                     >
-                      {"< PREV"}
+                      Prev
                     </li>
-                    {pageNumbers.map((page) => (
+
+                    {/* Page Numbers */}
+                    {getPaginationNumbers(
+                      currentPage,
+                      totalEbook,
+                      ITEMS_PER_PAGE
+                    ).map((page, index) => (
                       <li
-                        key={page}
-                        className={`h-[40px] w-[40px] rounded-[50%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                        key={index}
+                        className={`w-10 h-10 flex items-center justify-center text-base font-medium border rounded-md cursor-pointer ${
                           currentPage === page
-                            ? " bg-colorBlack text-colorWhite"
-                            : ""
+                            ? "bg-themeColor text-white"
+                            : page === "..."
+                            ? "border-none cursor-default text-colorBlack"
+                            : "text-colorBlack hover:bg-sectionBG"
                         }`}
-                        onClick={() => setCurrentPage(page)}
+                        onClick={() =>
+                          typeof page === "number" && setCurrentPage(page)
+                        }
                       >
                         {page}
                       </li>
                     ))}
+
+                    {/* Next */}
                     <li
-                      className={`h-[40px] w-fit font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                      className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
                         currentPage === Math.ceil(totalEbook / ITEMS_PER_PAGE)
-                          ? "!opacity-50 !cursor-not-allowed"
-                          : ""
+                          ? "text-gray-400 cursor-not-allowed"
+                          : "text-colorBlack hover:text-themeColor"
                       }`}
                       onClick={() => {
                         if (
@@ -166,7 +185,7 @@ const Ebooks = () => {
                         }
                       }}
                     >
-                      {"NEXT >"}
+                      Next
                     </li>
                   </ul>
                 </div>
