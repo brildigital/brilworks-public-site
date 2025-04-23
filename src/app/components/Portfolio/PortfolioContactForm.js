@@ -93,6 +93,7 @@ const PortfolioContactForm = ({
         id="case-study-download-form"
         onSubmit={handleSubmit}
       >
+        {description && <p className="md:text-xl text-lg">{description}</p>}
         <div className="w-full grid grid-cols-1 gap-4">
           <input
             className="form-field"

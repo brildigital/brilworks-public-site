@@ -53,16 +53,15 @@ const SubscribeNewsLetterForm = () => {
 
   return (
     <div className="news-letter-bg">
-      <div className="container max-w-[1280px] mx-auto main-section-padding">
+      <div className="container max-w-[1280px] mx-auto sxl:p-10 md:p-7.5 p-5">
         <div className="w-full flex md:flex-row flex-col items-center justify-between gap-5">
           <div className="w-full">
             <Heading
               type="h2"
-              className={`sxl:!text-[52px] md:!text-[40px] !text-2xl mb-4 md:!leading-snug w-full font-bold`}
-              text={"Subscribe to Our Newsletter"}
+              className="md:!text-2xl text-xl mb-2.5 md:!leading-snug w-full !font-bold"
+              text="Subscribe to Our Newsletter"
             />
-
-            <div className="w-full flex justify-between sxl:flex-row flex-col md:!text-lg text-base md:gap-4 gap-2 font-medium">
+            <div className="w-full flex justify-between sxl:flex-row flex-col text-base md:gap-4 gap-2 font-medium">
               Get smart takes on technology, strategy, and product
               development—delivered to your inbox.
             </div>

@@ -116,6 +116,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <SubscribeNewsLetterForm />
 
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
         <div className="flex sxl:flex-row flex-col-reverse !mt-4">
@@ -356,7 +357,6 @@ const Blog = () => {
           </div>
         )}
       </div>
-      <SubscribeNewsLetterForm />
     </>
   );
 };
