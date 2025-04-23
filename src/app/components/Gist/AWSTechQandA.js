@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import Heading from "../HTMLComponents/Heading";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -19,52 +20,70 @@ const AWSTechQandA = () => {
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
   const [totalQandA, settotalQandA] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const fetchQandAData = async () => {
+    setIsLoading(true);
+    try {
+      const nodeTechData = await getTechQandA(
+        "aws",
+        currentPage,
+        ITEMS_PER_PAGE
+      );
+      setqueAnsData(nodeTechData.storyData);
+      settotalQandA(nodeTechData.totalData);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchQandAData = async () => {
-      try {
-        const nodeTechData = await getTechQandA(
-          "aws",
-          currentPage,
-          ITEMS_PER_PAGE
-        );
-        setqueAnsData(nodeTechData.storyData);
-        settotalQandA(nodeTechData.totalData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchQandAData();
-  }, []);
+  }, [currentPage, ITEMS_PER_PAGE]);
+
+  const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const pages = [];
+
+    if (totalPages <= 5) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push("...");
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (currentPage < totalPages - 2) pages.push("...");
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
 
   return (
-    <section className="portfolio mt-[6rem]">
-      <div className="service_width relative flex items-left justify-center ">
-        <Image
-          className="h-[50vh] rounded-[20px]"
-          width={1300}
-          height={400}
-          src="/images/AWS.webp"
-          alt="AWS Tech Q&A"
-          priority
-        />
-        <div className="absolute bottom-1/4 w-full text-left mx-auto">
-          <div className="how-we w-[96%] mx-auto">
-            <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              AWS Q & N
-            </h1>
-            <p className="md:max-w-[70%]">
-              If you find yourself entangled in complex development scenarios,
-              you've arrived at the perfect destination. Our Cloud developers
-              have documented their experiences in tackling various queries.
-              Discover practical solutions to your Cloud computing errors
-              through our straightforward and well-crafted solutions.
-            </p>
+    <>
+      <div className="bg-detail-hero">
+        <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
+              <Heading type="h1" className="text-white" text="AWS Q & A" />
+              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                If you find yourself entangled in complex development scenarios,
+                you've arrived at the perfect destination. Our Cloud developers
+                have documented their experiences in tackling various queries.
+                Discover practical solutions to your Cloud computing errors
+                through our straightforward and well-crafted solutions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
+
+      <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div
           className={`grid ${
             !queAnsData?.length
@@ -114,49 +133,63 @@ const AWSTechQandA = () => {
                 </Card>
               </Link>
             ))
-          ) : (
+          ) : isLoading ? (
             <div className="flex align-middle justify-center p-28">
               <FetchDataSpinner />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center py-20 md:text-2xl text-lg">
+              No data found
             </div>
           )}
         </div>
 
-        {queAnsData?.length ? (
-          <div className="flex justify-center mt-[5rem]">
-            <ul className="list-none flex flex-wrap">
+        {queAnsData?.length && queAnsData?.length > 0 ? (
+          <div className="flex justify-center sxl:mt-10 md:mt-7.5 mt-5">
+            <ul className="flex flex-wrap items-center gap-2">
+              {/* Prev */}
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                  currentPage === 1 ? "opacity-50 !cursor-not-allowed" : ""
+                className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
+                  currentPage === 1
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-colorBlack hover:text-themeColor"
                 }`}
                 onClick={() => {
-                  if (currentPage > 1) {
-                    setCurrentPage(currentPage - 1);
-                  }
+                  if (currentPage > 1) setCurrentPage(currentPage - 1);
                 }}
               >
-                {"< PREV"}
+                Prev
               </li>
 
-              {Array.from({
-                length: Math.ceil(totalQandA / ITEMS_PER_PAGE),
-              }).map((_, index) => (
+              {/* Page Numbers */}
+              {getPaginationNumbers(
+                currentPage,
+                totalQandA,
+                ITEMS_PER_PAGE
+              ).map((page, index) => (
                 <li
                   key={index}
-                  className={`h-[40px] w-[40px] rounded-[20%]  font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
-                    currentPage === index + 1
-                      ? " bg-[#1a1a1a] text-[#ffffff]"
-                      : ""
+                  className={`w-10 h-10 flex items-center justify-center text-base font-medium border rounded-md cursor-pointer ${
+                    currentPage === page
+                      ? "bg-themeColor text-white"
+                      : page === "..."
+                      ? "border-none cursor-default text-colorBlack"
+                      : "text-colorBlack hover:bg-sectionBG"
                   }`}
-                  onClick={() => setCurrentPage(index + 1)}
+                  onClick={() =>
+                    typeof page === "number" && setCurrentPage(page)
+                  }
                 >
                   {index + 1}
                 </li>
               ))}
+
+              {/* Next */}
               <li
-                className={`h-[40px] w-fit rounded-[50%] font-[700] mr-[1rem] mb-[0.5rem] flex items-center justify-center cursor-pointer ${
+                className={`px-3 py-2 text-base font-medium rounded-md cursor-pointer ${
                   currentPage === Math.ceil(totalQandA / ITEMS_PER_PAGE)
-                    ? "!opacity-50 !cursor-not-allowed"
-                    : ""
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-colorBlack hover:text-themeColor"
                 }`}
                 onClick={() => {
                   if (currentPage < Math.ceil(totalQandA / ITEMS_PER_PAGE)) {
@@ -164,7 +197,7 @@ const AWSTechQandA = () => {
                   }
                 }}
               >
-                {"NEXT >"}
+                Next
               </li>
             </ul>
           </div>
@@ -172,7 +205,7 @@ const AWSTechQandA = () => {
           ""
         )}
       </div>
-    </section>
+    </>
   );
 };
 

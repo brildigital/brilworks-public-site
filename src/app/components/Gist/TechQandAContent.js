@@ -17,7 +17,7 @@ const TechQandAContent = ({ data }) => {
           <FetchDataSpinner />
         </div>
       ) : (
-        <div className="container mx-auto my-0 !px-4">
+        <div className="container max-w-[1280px] mx-auto my-0 sxl:!px-10 md:px-7.5 px-5">
           <div className="flex lg:flex-row-reverse flex-col md:flex-row flex-wrap ">
             <div className="md:w-3/4 w-full md:basis-auto md:px-3 max-w-full">
               <div className="border border-gray-300">

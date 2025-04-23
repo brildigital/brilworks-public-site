@@ -7,8 +7,6 @@ import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -17,7 +15,7 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const JavaTechQandA = () => {
+const BubbleIOJSTechQandA = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
@@ -48,13 +46,13 @@ const JavaTechQandA = () => {
   const fetchQandAData = async () => {
     setIsLoading(true);
     try {
-      const nodeTechData = await getTechQandA(
-        "java",
+      const bubbleIoTechData = await getTechQandA(
+        "bubble-io",
         currentPage,
         ITEMS_PER_PAGE
       );
-      setqueAnsData(nodeTechData.storyData);
-      settotalQandA(nodeTechData.totalData);
+      setqueAnsData(bubbleIoTechData.storyData);
+      settotalQandA(bubbleIoTechData.totalData);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -71,13 +69,14 @@ const JavaTechQandA = () => {
       <div className="bg-detail-hero">
         <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
-              <Heading type="h1" className="text-white" text="Java Q & N" />
+            <div className="flex flex-col items-start justify-center mt-10 sxl:!mt-20 h-full min-h-[300px] md:max-h-[600px] max-h-full">
+              <Heading type="h1" className="text-white" text="Bubble.io Q&A" />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                A community of devoted Java enthusiasts dedicated to assisting
-                fellow Java enthusiasts. Explore how Brilworks contributes to
-                uplifting the Java community by addressing the most crucial,
-                common, unique, and unparalleled Java questions.
+                Running into roadblocks with no-code app development? You’re in
+                the right place. Our Bubble.io team has put together their tips
+                and fixes for common problems. Check out easy-to-follow guides
+                that’ll help you breeze through no-code challenges and build
+                smarter apps.
               </p>
             </div>
           </div>
@@ -94,36 +93,42 @@ const JavaTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/java/${slug}`}
-                href={`/gist/java/[slug]`}
+                as={`/gist/bubble-io/${slug}`}
+                href={`/gist/bubble-io/[slug]`}
                 prefetch={true}
                 key={index}
               >
-                <Card className="shadow-none border border-borderGray hover:border-themeColor group duration-500">
+                <Card className="shadow-lg shadow-themeColor-500/50 border border-gray-300 hover:border-themeColor">
                   <div className="sec9_img1">
                     <Image
                       decoding="async"
                       loading="lazy"
                       className="rounded-t-[12px]"
                       src={content?.banner_image?.filename || ""}
-                      alt={content?.banner_image?.alt || "Tech Q&A banner"}
+                      alt={
+                        content?.banner_image?.alt || `Tech Q&A banner-${index}`
+                      }
                       width="450"
                       height="230"
                     />
                   </div>
-                  <CardBody>
-                    <h2 className="text-xl why_text font-bold mb-7 pl-2">
+                  <CardBody className="p-4">
+                    <h2 className="text-xl text-colorBlack font-bold mb-7 pl-2">
                       {name}
                     </h2>
                     <div className="inline-flex gap-4 !cursor-pointer why_text font-bold pl-2">
-                      <p className="group-hover:text-colorBlack text-themeColor">
-                        Read More
-                      </p>
-                      <FontAwesomeIcon
-                        className="group-hover:text-colorBlack text-themeColor ml-2"
-                        size="lg"
-                        icon={faArrowRight}
-                      />
+                      <p className="!text-themeColor">Read More</p>
+                      <div className="aerrow relative">
+                        <img
+                          decoding="async"
+                          loading="lazy"
+                          className="black_aerrow alignnone wp-image-28 size-full"
+                          src="/images/black_aerrow-1.png"
+                          alt="arrow"
+                          width="46"
+                          height="18"
+                        />
+                      </div>
                     </div>
                   </CardBody>
                 </Card>
@@ -205,4 +210,4 @@ const JavaTechQandA = () => {
   );
 };
 
-export default JavaTechQandA;
+export default BubbleIOJSTechQandA;
