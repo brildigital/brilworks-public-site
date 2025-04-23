@@ -28,6 +28,7 @@ const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
           </div>
           <div className="bg-colorWhite lg:py-14 py-6 lg:px-8 px-4 rounded-xl border border-themeColor flex items-center justify-center max-w-[464px]">
             <PortfolioContactForm
+              darkMode={false}
               description={
                 "Downloaded by 120+ CTOs from Startups and Enterprises"
               }

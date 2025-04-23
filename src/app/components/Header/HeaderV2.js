@@ -12,60 +12,60 @@ const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
 const MegaMenu = dynamic(() => import("./MegaMenu"));
+
 const HeaderV2 = () => {
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
-  const [lastScrolledPosition, setLastScrolledPosition] = useState(0);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
+  const [hasBg, setHasBg] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
+    // Initial state setup based on current scroll position
+    setHasBg(window.scrollY > 50);
+
+    // Optimized scroll handler with throttling
+    let lastY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      const newScrollDirection =
-        lastScrolledPosition > window.scrollY ? "up" : "down";
-      setLastScrolledPosition(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          const isScrollingDown = currentY > lastY;
 
-      if (window.scrollY > 150 && newScrollDirection === "down") {
-        if (
-          !document.querySelector(".header").classList.contains("header-hide")
-        ) {
-          document.querySelector(".header").classList.add("header-hide");
-        }
-      }
+          // Update background state
+          setHasBg(currentY > 50);
 
-      if (newScrollDirection === "up") {
-        if (
-          document.querySelector(".header").classList.contains("header-hide")
-        ) {
-          document.querySelector(".header").classList.remove("header-hide");
-        }
-      }
+          // Update header visibility based on scroll direction and position
+          if (currentY > 150 && isScrollingDown) {
+            setIsHidden(true);
+          } else if (!isScrollingDown) {
+            setIsHidden(false);
+          }
 
-      if (window.scrollY > 50) {
-        document.querySelector(".header").classList.add("header-bg-dark");
-      } else {
-        document.querySelector(".header").classList.remove("header-bg-dark");
+          lastY = currentY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrolledPosition]);
-
-  // useEffect(() => {
-  //   window.addEventListener(
-  //     "resize",
-  //     () => window.innerWidth >= 767 && setOpenNav(false)
-  //   );
-  // }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 767 && setOpenNav(false)
-    );
+    // Close navigation when window resizes to desktop
+    const handleResize = () => {
+      if (window.innerWidth >= 767) {
+        setOpenNav(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
     const fetchSlugs = async () => {
       try {
         const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=use-case/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
@@ -88,36 +88,41 @@ const HeaderV2 = () => {
               .join(" "),
           path: "/use-case/" + story.slug + "/",
         }));
+
         slugList.sort((a, b) => a.name.length - b.name.length);
-        menuItemSampleCopy.map((d, i) => {
-          if (d.name == "INDUSTRY") {
-            return d.menuItems.map((d2, i2) => {
-              if (d2.name == "USE CASES") {
-                d2.subSections = [...slugList];
-                return d2;
-              } else {
-                return d2;
-              }
-            });
-          } else {
-            return d;
+
+        const updatedMenuItems = menuItemSampleCopy.map((menuItem) => {
+          if (menuItem.name === "INDUSTRY") {
+            return {
+              ...menuItem,
+              menuItems: menuItem.menuItems.map((subItem) => {
+                if (subItem.name === "USE CASES") {
+                  return { ...subItem, subSections: slugList };
+                }
+                return subItem;
+              }),
+            };
           }
+          return menuItem;
         });
+
+        setMenuItemSampleCopy(updatedMenuItems);
       } catch (error) {
         console.error("Fetch error:", error);
       }
-      setMenuItemSampleCopy([...menuItemSampleCopy]);
     };
 
     fetchSlugs();
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <header>
-      <div className="header">
+      <div className={`header ${isHidden ? "header-hide" : ""}`}>
         <Navbar
           className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
-            openNav ? "!fixed" : "bg-transparent"
+            openNav ? "!fixed" : hasBg ? "bg-[#000000e6]" : "bg-transparent"
           }`}
         >
           <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
@@ -128,11 +133,11 @@ const HeaderV2 = () => {
                   alt="Brilworks Logo"
                   width="155"
                   height="46"
-                  priority="true"
+                  priority={true}
                 />
               </Link>
             </div>
-            {pathname !== "/posters/" ? (
+            {pathname !== "/posters/" && (
               <div className="flex items-center">
                 <div className="mr-4 hidden md:block">
                   <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6 text-white">
@@ -164,8 +169,6 @@ const HeaderV2 = () => {
                   </ul>
                 </div>
               </div>
-            ) : (
-              ""
             )}
             <div className="flex items-center gap-5">
               <ButtonV2 label="Let's Talk" />
