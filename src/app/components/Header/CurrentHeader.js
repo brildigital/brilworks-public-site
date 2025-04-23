@@ -7,10 +7,22 @@ import Header from "./Header";
 const CurrentHeader = () => {
   const pathname = usePathname();
 
-  const isEbooksOrBlogSubpath =
-    pathname.startsWith("/ebooks/") && pathname !== "/ebooks/";
+  const subpaths = [
+    "/ebooks/",
+    "/gist/java/",
+    "/gist/aws/",
+    "/gist/node/",
+    "/gist/react-native/",
+    "/gist/react/",
+    "/gist/bubble-io/",
+    "/gist/flutterflow/",
+  ];
 
-  return isEbooksOrBlogSubpath ? <Header /> : <HeaderV2 />;
+  const showHeader = subpaths.some(
+    (base) => pathname?.startsWith(base) && pathname !== base
+  );
+
+  return showHeader && pathname !== "/gist/" ? <Header /> : <HeaderV2 />;
 };
 
 export default CurrentHeader;
