@@ -727,6 +727,31 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "React Native Benefits & Limitations: What You Should Know Before You Build",
+    loc: "https://www.brilworks.com/blog/benefits-of-react-native/",
+    lastmod: "2025-04-24T07:43:03.044Z",
+  },
+  {
+    name: "12 Best React Native App Development Tools for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-tools/",
+    lastmod: "2025-04-23T08:43:52.687Z",
+  },
+  {
+    name: "Guide to Choose a React Native App Development Company",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-company/",
+    lastmod: "2025-04-21T06:12:24.771Z",
+  },
+  {
+    name: "Node.js vs Golang",
+    loc: "https://www.brilworks.com/blog/node-js-vs-golang/",
+    lastmod: "2025-04-21T03:15:52.754Z",
+  },
+  {
+    name: "How to Hire Top Node.js Developers",
+    loc: "https://www.brilworks.com/blog/how-to-hire-node-js-developers/",
+    lastmod: "2025-04-18T13:20:28.795Z",
+  },
+  {
     name: "8 Best Node js Project Examples",
     loc: "https://www.brilworks.com/blog/top-node-js-projects/",
     lastmod: "2025-04-18T09:41:59.111Z",

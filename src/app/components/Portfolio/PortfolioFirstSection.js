@@ -29,7 +29,7 @@ const PortfolioFirstSection = ({
                 label={buttontext || "Let’s Build Your App"}
               />
               <div className="flex flex-wrap gap-y-4">
-                {KeyValueBlock?.length &&
+                {KeyValueBlock?.length > 0 &&
                   KeyValueBlock.map(({ text, image }, index) => (
                     <div
                       key={text}
@@ -53,7 +53,11 @@ const PortfolioFirstSection = ({
             <div className="md:w-1/2 w-full">
               <Image
                 className="rounded-2xl md:h-[650px] object-cover"
-                src={images?.[0]?.filename}
+                src={
+                  images.length > 1
+                    ? images?.[1]?.filename
+                    : images?.[0]?.filename
+                }
                 alt="portfolio-banner"
                 width="565"
                 height="650"
