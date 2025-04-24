@@ -65,26 +65,10 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                           : "md:ml-auto md:mr-0 mx-auto"
                       }`}
                     >
-                      <p
-                        className={`text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl leading-tight gap-2 font-medium lg:mb-4 mt-4 ${
-                          index === 0
-                            ? "md:text-left text-center"
-                            : index === 1
-                            ? "text-center"
-                            : "md:text-right text-center"
-                        }`}
-                      >
+                      <p className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl leading-tight gap-2 font-medium lg:mb-4 mt-4 text-center md:text-left">
                         {title}
                       </p>
-                      <p
-                        className={`!mb-4 md:text-lg text-base ${
-                          index === 0
-                            ? "md:text-left text-center"
-                            : index === 1
-                            ? "text-center"
-                            : "md:text-right text-center"
-                        }`}
-                      >
+                      <p className="!mb-4 md:text-lg text-base text-center md:text-left">
                         {description}
                       </p>
                     </div>

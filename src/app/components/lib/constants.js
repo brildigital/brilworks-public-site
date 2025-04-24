@@ -727,6 +727,106 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "React Native Benefits & Limitations: What You Should Know Before You Build",
+    loc: "https://www.brilworks.com/blog/benefits-of-react-native/",
+    lastmod: "2025-04-24T07:43:03.044Z",
+  },
+  {
+    name: "12 Best React Native App Development Tools for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-tools/",
+    lastmod: "2025-04-23T08:43:52.687Z",
+  },
+  {
+    name: "Guide to Choose a React Native App Development Company",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-company/",
+    lastmod: "2025-04-21T06:12:24.771Z",
+  },
+  {
+    name: "Node.js vs Golang",
+    loc: "https://www.brilworks.com/blog/node-js-vs-golang/",
+    lastmod: "2025-04-21T03:15:52.754Z",
+  },
+  {
+    name: "How to Hire Top Node.js Developers",
+    loc: "https://www.brilworks.com/blog/how-to-hire-node-js-developers/",
+    lastmod: "2025-04-18T13:20:28.795Z",
+  },
+  {
+    name: "8 Best Node js Project Examples",
+    loc: "https://www.brilworks.com/blog/top-node-js-projects/",
+    lastmod: "2025-04-18T09:41:59.111Z",
+  },
+  {
+    name: "React Native for Web: What It Is and Why Developers Use It",
+    loc: "https://www.brilworks.com/blog/react-native-for-web/",
+    lastmod: "2025-04-15T12:08:46.248Z",
+  },
+  {
+    name: "Does React work for iOS, and how does it perform?",
+    loc: "https://www.brilworks.com/blog/does-react-work-for-ios/",
+    lastmod: "2025-04-15T07:58:32.270Z",
+  },
+  {
+    name: "React Components Explained: A 2025 Guide for Developers",
+    loc: "https://www.brilworks.com/blog/react-components/",
+    lastmod: "2025-04-14T12:12:20.145Z",
+  },
+  {
+    name: "The Shift From React to React Native Explained",
+    loc: "https://www.brilworks.com/blog/react-to-react-native/",
+    lastmod: "2025-04-15T06:12:16.377Z",
+  },
+  {
+    name: "React Latest Version: Exploring New Features & Updates",
+    loc: "https://www.brilworks.com/blog/react-latest-version/",
+    lastmod: "2025-04-17T06:57:48.161Z",
+  },
+  {
+    name: "Top 9 React JS Frameworks Developers Are Using in 2025",
+    loc: "https://www.brilworks.com/blog/react-js-frameworks/",
+    lastmod: "2025-04-15T05:46:11.415Z",
+  },
+  {
+    name: "Top React Features for Web Developers",
+    loc: "https://www.brilworks.com/blog/top-react-features/",
+    lastmod: "2025-04-11T11:58:25.428Z",
+  },
+  {
+    name: "React for Front End: 7 Reasons That Make It Stand Out",
+    loc: "https://www.brilworks.com/blog/react-for-front-end/",
+    lastmod: "2025-04-15T10:33:51.721Z",
+  },
+  {
+    name: "Breaking down the Difference Between React, ReactJS, and React Native",
+    loc: "https://www.brilworks.com/blog/reactjs-vs-react-native/",
+    lastmod: "2025-03-28T09:56:07.059Z",
+  },
+  {
+    name: "React Native vs Flutter: Which One is Better for Your App in 2025?",
+    loc: "https://www.brilworks.com/blog/react-native-vs-flutter/",
+    lastmod: "2025-03-26T12:00:01.943Z",
+  },
+  {
+    name: "React Native vs Ionic: Mobile App Framework Comparision in 2025",
+    loc: "https://www.brilworks.com/blog/react-native-vs-ionic/",
+    lastmod: "2025-03-24T11:11:13.231Z",
+  },
+  {
+    name: "Reasons To Use ReactJS For Mobile App Development",
+    loc: "https://www.brilworks.com/blog/reactjs-for-mobile-app-development/",
+    lastmod: "2025-03-25T04:52:54.394Z",
+  },
+  {
+    name: "A Straightforward Guide For Android and iOS Development",
+    loc: "https://www.brilworks.com/blog/build-one-app-for-android-and-ios/",
+    lastmod: "2025-03-28T07:43:41.603Z",
+  },
+  {
+    name: "Top Frameworks for JavaScript App Development in 2025",
+    loc: "https://www.brilworks.com/blog/javascript-frameworks-for-mobile-app-development/",
+    lastmod: "2025-04-15T07:18:41.835Z",
+  },
+  {
     name: "6 Best Practices For Using AI for Database Querying",
     loc: "https://www.brilworks.com/blog/ai-for-database-querying/",
     lastmod: "2025-02-22T15:12:04.422Z",
