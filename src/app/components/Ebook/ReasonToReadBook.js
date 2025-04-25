@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
-import Button from "../Common/Button";
+import Heading from "../HTMLComponents/Heading";
 
 const ReasonToReadBook = ({ reasonToRead }) => {
   return (

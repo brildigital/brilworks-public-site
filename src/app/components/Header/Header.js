@@ -11,9 +11,7 @@ import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
 const Svgs = dynamic(() => import("../Svgs"));
-const SideMenu = dynamic(() => import("./SideMenu"));
-const MenuItem = dynamic(() => import("./MenuItem"));
-const MegaMenu = dynamic(() => import("./MegaMenu"));
+
 const NewHeader = () => {
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);

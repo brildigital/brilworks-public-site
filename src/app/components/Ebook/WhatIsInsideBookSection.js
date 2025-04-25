@@ -2,7 +2,7 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
-import Button from "../Common/Button";
+import ButtonV2 from "../Common/ButtonV2";
 
 const InsideBookParts = ({
   Title,
@@ -66,7 +66,7 @@ const InsideBookParts = ({
               )}
           </ul>
           <div className="flex items-center justify-end">
-            <Button
+            <ButtonV2
               className="!border-themeColor !text-themeColor !px-8"
               innerClassName="!text-themeColor"
               variant="white"
@@ -112,7 +112,7 @@ const WhatIsInsideBookSection = ({ bookDescription, buttontext }) => {
         {bookDescription?.[5] && <InsideBookParts {...bookDescription?.[5]} />}
 
         <div className="flex items-center justify-center lg:mt-14 md:mt-10 mt-6">
-          <Button
+          <ButtonV2
             redirect="#download-ebook-form"
             label={buttontext}
             scrollingButton
