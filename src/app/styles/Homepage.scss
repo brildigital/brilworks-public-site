@@ -28,7 +28,7 @@
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1) !important;
 }
 .header_img1 img {
-  border-radius: 30px;
+  border-radius: 16px;
 }
 
 .accordion-title {
@@ -146,32 +146,6 @@
 .we-serve-dark {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
-.gradient-border {
-  border-width: 1px, 1px, 4px, 1px;
-  border-style: solid;
-  border-image-source: linear-gradient(
-    150.51deg,
-    #007aeb 12.91%,
-    #008ce7 45.61%,
-    #00dbd3 91.35%
-  );
-}
-.homepage-work-domain,
-.accordion-tab-section,
-.homepage-extension-team {
-  button {
-    font-weight: 400;
-  }
-  h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-  }
-  .accordion-body,
-  .about_txt_domain {
-    font-size: var(--font_20);
-    line-height: 1.75rem !important;
-  }
-}
 
 .video-play-icon {
   position: absolute;
@@ -204,7 +178,7 @@
   .swiper-button-next::before {
     content: "" !important;
     background: 0 0 !important;
-    background-image: url(/images/blue-right-arrow.png) !important;
+    background-image: url(/images/v2/right-arrow-with-opacity.svg) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     width: 60px;
@@ -235,7 +209,7 @@
   .swiper-button-prev::before {
     content: "" !important;
     background: 0 0 !important;
-    background-image: url(/images/blue-left-arrow.png) !important;
+    background-image: url(/images/v2/left-arrow-with-opacity.svg) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     width: 60px;
@@ -251,12 +225,6 @@
 
   .swiper-button-prev::after {
     display: none;
-  }
-}
-
-.homepage-extension-team {
-  .accordion-body {
-    padding: 0px;
   }
 }
 
@@ -317,62 +285,6 @@
   }
 }
 
-.work-swiper {
-  .swiper {
-    width: 90% !important;
-
-    .swiper-wrapper {
-      padding: 0 0 4rem !important;
-    }
-  }
-
-  .swiper-slide-next {
-    margin-top: 4rem !important;
-  }
-  .slide-style {
-    padding: 3rem 2rem;
-    border-radius: 30px;
-  }
-
-  .portfolio-title {
-    display: none !important;
-    font-size: var(--font_32);
-    color: var(--color_black);
-    padding: 1rem 0;
-  }
-
-  .portfolio-title-new {
-    display: block !important;
-    font-size: var(--font_32);
-    color: var(--color_black);
-    padding: 1rem 0;
-  }
-
-  .portfolio-desc {
-    display: none !important;
-    font-size: var(--font_16);
-    color: var(--color_black);
-  }
-
-  .desc-height {
-    height: 200px !important;
-  }
-}
-
-.portfolio_slides_homepage:hover {
-  .portfolio-desc {
-    display: block !important;
-  }
-
-  .portfolio-title {
-    display: block !important;
-  }
-
-  .portfolio-title-new {
-    display: none !important;
-  }
-}
-
 .swiper-pagination-bullet {
   margin-bottom: 4px !important;
   border-radius: 30px !important;
@@ -386,24 +298,6 @@
   width: 8px !important;
   height: 20px !important;
   margin-bottom: 0px !important;
-}
-
-.work-swiper,
-.software-review-container {
-  .swiper-pagination-bullet {
-    margin-bottom: 4px !important;
-    border-radius: 30px;
-    width: 6px;
-    height: 12px;
-  }
-
-  .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: var(--theme-color);
-    width: 8px;
-    height: 20px;
-    margin-bottom: 0px !important;
-  }
 }
 
 .honors-swiper {
@@ -465,46 +359,11 @@
   min-height: 140px;
 }
 
-.clutch-widget {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
 .success-msg {
   color: var(--color_black);
   font-size: 1rem;
 }
-
-.software-review-head {
-  padding: 8rem 0 0rem;
-
-  .clutch-widget {
-    p {
-      font-size: 2rem;
-    }
-
-    .clutch-power {
-      position: relative;
-      left: 50px;
-    }
-  }
-}
-
 .software-review-container {
-  .clutch_content {
-    min-height: 120px !important;
-  }
-
-  .clutch_position {
-    margin-bottom: 20px;
-    height: 60px;
-  }
-
-  .clutch_position p {
-    font-size: 14px;
-  }
-
   .swiper-wrapper {
     padding-bottom: 4rem !important;
   }
@@ -513,6 +372,7 @@
     margin-top: 10px;
   }
 }
+
 .accordion-item {
   a:hover {
     .aerrow {
@@ -553,19 +413,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .homepage-work-domain,
-  .accordion-tab-section,
-  .homepage-extension-team {
-    h3 {
-      font-size: var(--font_20);
-    }
-    .accordion-body,
-    .about_txt_domain {
-      font-size: var(--font_16);
-      line-height: 1.5rem !important;
-    }
-  }
-
   .work-swiper {
     .swiper-slide-next {
       margin-top: 0 !important;
@@ -603,23 +450,6 @@
     padding: 1.5rem 0;
   }
 
-  .portfolio_slides_homepage:hover {
-    .portfolio-desc {
-      display: block !important;
-    }
-
-    .portfolio-title {
-      display: block !important;
-    }
-
-    .portfolio-title-new {
-      display: none !important;
-    }
-  }
-
-  .software-review-head {
-    padding: 2rem 0 0rem;
-  }
   .accordion-item {
     a:hover {
       .aerrow {

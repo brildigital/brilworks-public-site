@@ -36,7 +36,7 @@ const BlogContactForm = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/blog-contact`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
         {
           method: "POST",
           header: {

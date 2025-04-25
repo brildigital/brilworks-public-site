@@ -4,47 +4,45 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
-  if (req.method === "POST") {
-    const payload = await req.json();
-    const { name, email, phone, message, page, downloadLink } = payload;
+  const payload = await req.json();
+  const { name, email, phone, message, page, downloadLink } = payload;
 
-    try {
-      if (page === "/career/") {
-        const msg = {
-          to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
-          from: `${process.env.SENDGRID_DEFAULT_FROM_EMAIL}`,
-          templateId: `${process.env.SENDGRID_DEFAULT_CAREER_TEMPLATE_ID}`,
-          dynamicTemplateData: {
-            name: name || "",
-            email: email || "",
-            message: message || "",
-            phone: phone || "",
-          },
-        };
+  try {
+    if (page === "/career/") {
+      const msg = {
+        to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
+        from: `${process.env.SENDGRID_DEFAULT_FROM_EMAIL}`,
+        templateId: `${process.env.SENDGRID_DEFAULT_CAREER_TEMPLATE_ID}`,
+        dynamicTemplateData: {
+          name: name || "",
+          email: email || "",
+          message: message || "",
+          phone: phone || "",
+        },
+      };
 
-        await sgMail
-          .send(msg)
-          .then((data) => {
-            return NextResponse.json(
-              { message: "Email sent successfully" },
-              { status: 200 }
-            );
-          })
-          .catch((error) => {
-            console.error(error);
-            return NextResponse.json(
-              { message: "Error sending email" },
-              { status: 500 }
-            );
-          });
-        return NextResponse.json(
-          { message: "Form submitted successfully" },
-          { status: 200 }
-        );
-      } else if (
-        page.startsWith("/portfolio/") ||
-        page.startsWith("/ebooks/")
-      ) {
+      await sgMail
+        .send(msg)
+        .then((data) => {
+          return NextResponse.json(
+            { message: "Email sent successfully" },
+            { status: 200 }
+          );
+        })
+        .catch((error) => {
+          console.error(error);
+          return NextResponse.json(
+            { message: "Error sending email" },
+            { status: 500 }
+          );
+        });
+    } else if (page.startsWith("/portfolio/") || page.startsWith("/ebooks/")) {
+      await Promise.all([
+        createHubSpotContact(payload),
+        sendDataToSlack(payload),
+      ]);
+
+      if (downloadLink) {
         const textToShow = page.startsWith("/portfolio/")
           ? "Case Study"
           : "E-Book";
@@ -94,9 +92,6 @@ export async function POST(req, res) {
           html,
         };
 
-        await createHubSpotContact(payload);
-        await sendDataToSlack(payload);
-
         await sgMail
           .send(msg)
           .then((data) => {
@@ -112,29 +107,22 @@ export async function POST(req, res) {
               { status: 500 }
             );
           });
-        return NextResponse.json(
-          { message: "Form submitted successfully" },
-          { status: 200 }
-        );
-      } else {
-        await createHubSpotContact(payload);
-        await sendDataToSlack(payload);
-        return NextResponse.json(
-          { message: "Form submitted successfully" },
-          { status: 200 }
-        );
       }
-    } catch (error) {
-      console.error("Error creating contact", error);
-      return NextResponse.json(
-        { message: "Error submitting form" },
-        { status: 500 }
-      );
+    } else {
+      await Promise.all([
+        createHubSpotContact(payload),
+        sendDataToSlack(payload),
+      ]);
     }
-  } else {
     return NextResponse.json(
-      { message: "Method not allowed" },
-      { status: 405 }
+      { message: "Form submitted successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error creating contact", error);
+    return NextResponse.json(
+      { message: "Error submitting form" },
+      { status: 500 }
     );
   }
 }

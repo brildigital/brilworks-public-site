@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +15,6 @@ const CardBody = dynamic(() =>
 );
 
 const MainGist = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const techQandNData = [
     {
       title: "AWS",
@@ -99,7 +97,7 @@ const MainGist = () => {
                     <h2 className="text-2xl font-medium mb-7 text-colorBlack">
                       {title}
                     </h2>
-                    <div className="inline-flex gap-4 why_text font-bold ">
+                    <div className="inline-flex gap-2 why_text font-bold ">
                       <p className="group-hover:text-colorBlack text-themeColor">
                         {title} Q & N
                       </p>

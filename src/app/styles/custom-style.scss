@@ -1,81 +1,3 @@
-.common-button {
-  font-size: var(--font_16) !important;
-  font-weight: 600 !important;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30px;
-  .c-padding {
-    padding: 12px 30px;
-    @media screen and (max-width: 1600px) {
-      padding: 10px 14px;
-    }
-  }
-  @media screen and (max-width: 1600px) {
-    font-size: var(--font_18) !important;
-  }
-}
-
-.primary-btn {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30px;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 24px;
-  text-align: center;
-  color: var(--white_color);
-  border: 1px solid var(--theme-color);
-  background: var(--theme-color);
-  &:hover {
-    background: transparent;
-    border-color: var(--color_black);
-    color: var(--color_black);
-  }
-  .c-padding {
-    padding: 12px 30px;
-    @media screen and (max-width: 767px) {
-      padding: 10px 24px;
-    }
-  }
-  @media screen and (max-width: 767px) {
-    font-size: 18px;
-  }
-}
-
-.button-primary {
-  color: var(--white_color) !important;
-  border: 1px solid var(--theme-color) !important;
-  background: var(--theme-color) !important;
-  &:hover {
-    background: transparent !important;
-    color: var(--color_black) !important;
-  }
-}
-
-.button-bg-dark {
-  color: var(--white_color) !important;
-  border: 1px solid var(--theme-color) !important;
-  background: var(--theme-color) !important;
-  &:hover {
-    background: transparent !important;
-    color: var(--white_color) !important;
-  }
-}
-
-.button-white {
-  color: var(--color_black) !important;
-  background: var(--white_color);
-  border: 1px solid var(--white_color);
-  &:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-}
-
 .h1-border-b {
   background-image: linear-gradient(0deg, #ffffff, #ffffff),
     linear-gradient(
@@ -111,20 +33,6 @@
       #0182ea 29.48%,
       #01dbd4 58.95%,
       #f2f3f3 82.12%
-    );
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  border-bottom: 8px solid transparent;
-}
-
-.h2-bg-border-b-yellow {
-  background-image: linear-gradient(0deg, #fedc7a, #fedc7a),
-    linear-gradient(
-      90deg,
-      #0182ea 0%,
-      #0182ea 29.48%,
-      #01dbd4 58.95%,
-      #ffd631 82.12%
     );
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -239,20 +147,6 @@
   }
 }
 
-.portfolio-swipers {
-  position: relative;
-  .swiper-pagination-bullet {
-    margin: 0 5px !important;
-    width: 10px;
-    height: 10px;
-  }
-
-  .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: var(--theme-color);
-  }
-}
-
 .gradient-text-blue {
   background: linear-gradient(
     159.52deg,
@@ -269,49 +163,6 @@
   -webkit-user-select: none; /* For Safari */
   -moz-user-select: none; /* For Firefox */
   -ms-user-select: none; /* For IE/Edge */
-}
-
-.process-enhancement {
-  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 0 !important;
-  }
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: var(--theme-color) !important;
-  }
-}
-
-.more-success-story {
-  .splide__arrow {
-    background: #ffd631 !important;
-    width: 56px !important;
-    height: 56px !important;
-    @media screen and (max-width: 767px) {
-      top: 115% !important;
-      width: 50px !important;
-      height: 50px !important;
-    }
-  }
-  .splide__arrow--next {
-    right: -5em !important;
-    @media screen and (max-width: 1024px) {
-      right: 1em !important;
-    }
-    @media screen and (max-width: 767px) {
-      right: 0em !important;
-    }
-  }
-  .splide__arrow--prev {
-    left: -5em !important;
-    @media screen and (max-width: 1024px) {
-      left: 1em !important;
-    }
-    @media screen and (max-width: 767px) {
-      left: 16em !important;
-    }
-    @media screen and (max-width: 400px) {
-      left: 14em !important;
-    }
-  }
 }
 
 .our-team-swiper {
@@ -663,15 +514,4 @@
 
 .iframe-bg {
   background: linear-gradient(320.21deg, #edffff 21.31%, #c9f5fc 74.53%);
-}
-.casestudy-hover:hover {
-  .read-icon {
-    display: block !important;
-  }
-}
-
-#explore-open-positions {
-  .hiro-job-filters .hiro-search input {
-    border-radius: 6px !important;
-  }
 }

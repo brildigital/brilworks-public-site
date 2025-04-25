@@ -1,12 +1,10 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import dynamic from "next/dynamic";
+import ServiceHeroSection from "./ServiceHeroSection";
 
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
@@ -62,51 +60,55 @@ const DigitalExperienceService = () => {
       imageAlt: "Integration API img",
     },
   ];
-  return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="https://a.storyblok.com/f/219851/4500x2487/ee4ef3dd60/digital-experience-banner.webp"
-              alt="Digital experience banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] !top-[15%]">
-            <h1 className="mb-[30px] w-full md:w-1/2">
-              Digital Experience Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              At Brilworks, we empower startups & businesses to spark and
-              enhance their digital journeys with our comprehensive suite of
-              digital experience services combined with intelligent solutions
-              and engineering expertise.
-            </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">
-                  Let’s Get Started
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
 
-      <ServicesWhyChooseUs />
+  const whyChooseUsDigitalExperience = [
+    {
+      title: "Award-Winning Expertise",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Recognized for innovation and excellence by Clutch, Techreviewer, and more.",
+    },
+    {
+      title: "Human-Centered Approach",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We prioritize understanding your unique needs and building solutions that resonate.",
+    },
+    {
+      title: "Agile & Collaborative",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We work closely with your team, ensuring open communication and swift adjustments.",
+    },
+    {
+      title: "End-to-End Support",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We offer a full spectrum of services, from ideation to implementation and ongoing maintenance.",
+    },
+    {
+      title: "Scalable & Secure",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Our solutions are built with future growth and industry-leading security standards in mind.",
+    },
+  ];
+
+  return (
+    <>
+      <ServiceHeroSection
+        title="Digital Experience Services"
+        description="At Brilworks, we empower startups & businesses to spark and enhance their digital journeys with our comprehensive suite of digital experience services combined with intelligent solutions and engineering expertise."
+        buttonText="Let’s Get Started"
+      />
+
       <Honors />
       <TechStackWeUse />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

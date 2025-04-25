@@ -1,11 +1,9 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import dynamic from "next/dynamic";
+import ServiceHeroSection from "./ServiceHeroSection";
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
@@ -61,47 +59,52 @@ const ERPNextDevService = () => {
       imageAlt: "Comprehensive Support dev img",
     },
   ];
+
+  const whyChooseUsERPNextDev = [
+    {
+      title: "Expert Storytellers",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We're not just data visualization developers; we're data storytellers. We go beyond creating charts and graphs; we craft compelling narratives that resonate with your audience and drive action.",
+    },
+    {
+      title: "Unmatched Tool Expertise",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We are well-versed in industry-leading platforms like Power BI and Tableau, allowing us to tailor solutions that perfectly match your specific needs and data ecosystem.",
+    },
+    {
+      title: "Actionable Insights, Delivered",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Our focus is on delivering actionable insights, not just beautiful dashboards. We work closely with you to understand your business goals and translate data into clear, actionable recommendations.",
+    },
+    {
+      title: "Data Visualization with Impact",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We don't just develop dashboards; we design them for impact. Our team creates visually stunning and interactive dashboards that are easy to understand and navigate, ensuring maximum user engagement.",
+    },
+    {
+      title: "Agile & Collaborative Approach",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We believe in a collaborative approach, working closely with your team throughout the development process to ensure your vision comes to life.",
+    },
+  ];
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="/images/erp-next-dev-banner.webp"
-              alt="Product engineering banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] !top-[10%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              ERPNext Development Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              At Brilworks, we are passionate about helping businesses leverage
-              the full potential of ERPNext. Our team of ERPNext development
-              experts possesses the knowledge, experience, and innovation to
-              transform your business operations.
-            </p>
-            <Link href="/contact-us/">
-              <div className="header_sec1_txt2">
-                <p className="transition uppercase !text-base">Schedule demo</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <ServicesWhyChooseUs />
+    <>
+      <ServiceHeroSection
+        title="ERPNext Development Services"
+        description="At Brilworks, we are passionate about helping businesses leverage the full potential of ERPNext. Our team of ERPNext development experts possesses the knowledge, experience, and innovation to transform your business operations."
+        buttonText="Let’s Get Started"
+      />
       <Honors />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 

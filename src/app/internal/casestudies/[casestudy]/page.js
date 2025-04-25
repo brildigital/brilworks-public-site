@@ -36,12 +36,12 @@ export default async function Page(props) {
         <meta
           property="og:title"
           content={data?.story?.name || data?.story?.content?.title}
-        ></meta>
+        />
 
         <meta
           property="og:url"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}${data?.story?.full_slug}/`}
-        ></meta>
+        />
       </head>
       <CaseStudyContent data={data.story} />
     </>

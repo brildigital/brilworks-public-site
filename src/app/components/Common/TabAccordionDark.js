@@ -1,15 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  Accordion,
-  AccordionBody,
-  AccordionHeader,
-} from "@material-tailwind/react";
-import ButtonV2 from "./ButtonV2";
 import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "./ButtonV2";
+
+const Accordion = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.Accordion)
+);
+const AccordionHeader = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionHeader)
+);
+const AccordionBody = dynamic(() =>
+  import("@material-tailwind/react").then((mod) => mod.AccordionBody)
+);
 
 const TabAccordionDark = ({
   open,
@@ -35,6 +41,7 @@ const TabAccordionDark = ({
     "bg-[#E5F4FF]",
     "bg-[#FFE2E5]",
   ];
+
   return (
     <Accordion open={open === index}>
       <AccordionHeader

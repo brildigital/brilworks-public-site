@@ -7,6 +7,8 @@ import { getTechQandA } from "../lib/getTechQandA";
 import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -15,13 +17,30 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const NodeJSTechQandA = () => {
+const TechnologyGist = ({ title, description, apiKey }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
   const [totalQandA, settotalQandA] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const fetchQandAData = async () => {
+    setIsLoading(true);
+    try {
+      const techData = await getTechQandA(apiKey, currentPage, ITEMS_PER_PAGE);
+      setqueAnsData(techData.storyData);
+      settotalQandA(techData.totalData);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchQandAData();
+  }, [currentPage, ITEMS_PER_PAGE]);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -43,45 +62,21 @@ const NodeJSTechQandA = () => {
     return pages;
   };
 
-  const fetchQandAData = async () => {
-    setIsLoading(true);
-    try {
-      const nodeTechData = await getTechQandA(
-        "node",
-        currentPage,
-        ITEMS_PER_PAGE
-      );
-      setqueAnsData(nodeTechData.storyData);
-      settotalQandA(nodeTechData.totalData);
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchQandAData();
-  }, [currentPage, ITEMS_PER_PAGE]);
-
   return (
     <>
       <div className="bg-detail-hero">
         <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
             <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
-              <Heading type="h1" className="text-white" text="NodeJS Q & A" />
+              <Heading type="h1" className="text-white" text={title} />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                Greetings to the Node.js community! Enhance your efficiency in
-                resolving issues by exploring our comprehensive solutions for
-                all your Node.js technical inquiries. The Brilworks Node
-                community is dedicated to a mission of eliminating errors and
-                bugs from your code.
+                {description}
               </p>
             </div>
           </div>
         </div>
       </div>
+
       <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div
           className={`grid ${
@@ -93,12 +88,12 @@ const NodeJSTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/node/${slug}`}
-                href={`/gist/node/[slug]`}
+                as={`/gist/${apiKey}/${slug}`}
+                href={`/gist/${apiKey}/[slug]`}
                 prefetch={true}
                 key={index}
               >
-                <Card className="shadow-lg shadow-themeColor-500/50 border border-gray-300 hover:border-themeColor">
+                <Card className="group shadow-none border border-borderGray hover:border-themeColor duration-300">
                   <div className="sec9_img1">
                     <Image
                       decoding="async"
@@ -116,26 +111,22 @@ const NodeJSTechQandA = () => {
                     <h2 className="text-xl text-colorBlack font-bold mb-7 pl-2">
                       {name}
                     </h2>
-                    <div className="inline-flex gap-4 !cursor-pointer why_text font-bold pl-2">
-                      <p className="!text-themeColor">Read More</p>
-                      <div className="aerrow relative">
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          className="black_aerrow alignnone wp-image-28 size-full"
-                          src="/images/black_aerrow-1.png"
-                          alt="arrow"
-                          width="46"
-                          height="18"
-                        />
-                      </div>
+                    <div className="inline-flex gap-2 why_text font-bold ">
+                      <p className="group-hover:text-colorBlack text-themeColor">
+                        Read More
+                      </p>
+                      <FontAwesomeIcon
+                        className="group-hover:text-colorBlack text-themeColor ml-2"
+                        size="lg"
+                        icon={faArrowRight}
+                      />
                     </div>
                   </CardBody>
                 </Card>
               </Link>
             ))
           ) : isLoading ? (
-            <div className="flex align-middle justify-center p-28">
+            <div className="flex items-center justify-center p-28">
               <FetchDataSpinner />
             </div>
           ) : (
@@ -144,6 +135,7 @@ const NodeJSTechQandA = () => {
             </div>
           )}
         </div>
+
         {queAnsData?.length && queAnsData?.length > 0 ? (
           <div className="flex justify-center sxl:mt-10 md:mt-7.5 mt-5">
             <ul className="flex flex-wrap items-center gap-2">
@@ -209,4 +201,4 @@ const NodeJSTechQandA = () => {
   );
 };
 
-export default NodeJSTechQandA;
+export default TechnologyGist;

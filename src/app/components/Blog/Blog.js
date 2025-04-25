@@ -289,14 +289,14 @@ const Blog = () => {
               </div>
             ))
           ) : searchQuery.length > 0 ? (
-            <div className="home_sec2_txt4 !py-24 !block">
-              <p className="!text-[24px]">
+            <div className="!py-24 !block">
+              <p className="md:!text-2xl !text-lg">
                 No data match with your search result
               </p>
             </div>
           ) : (
-            <div className="flex items-center justify-center md:!py-52 py-28">
-              <FetchDataSpinner />
+            <div className="flex items-center justify-center py-20 md:text-2xl text-lg">
+              No Blog Found
             </div>
           )}
         </div>

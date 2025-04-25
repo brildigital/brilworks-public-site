@@ -1,6 +1,6 @@
 const CaseStudyContent = ({ data }) => {
   return (
-    <div className="portfolio mt-[6rem] mx-auto h-[100vh]">
+    <div className="portfolio mt-[5.1rem] mx-auto h-screen">
       {data?.content && (
         <iframe
           src={`${data?.content?.content?.filename}#toolbar=0&navpanes=0&scrollbar=0`}

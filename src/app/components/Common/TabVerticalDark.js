@@ -8,8 +8,6 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-import { useMediaQuery } from "react-responsive";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -20,8 +18,6 @@ const TabVerticalDark = ({
   borderRight = true,
   rightSideOnlyImage = false,
 }) => {
-  const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [tabValue, setTabValue] = useState(initialTabValue);
 
   return (

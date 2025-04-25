@@ -96,7 +96,7 @@ const Ebooks = () => {
                   return (
                     <div
                       key={index}
-                      className="flex flex-col gap-5 sxl:py-9 md:p-6 p-5 sxl:px-7.5 blog-box"
+                      className="flex flex-col gap-5 sxl:py-9 md:p-6 p-5 sxl:px-7.5 rounded-2xl border border-borderGray"
                     >
                       <div>
                         <Image

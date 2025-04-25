@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useMediaQuery } from "react-responsive";
-import { getCasestudyData } from "../lib/getStoryblokData";
+import Heading from "../HTMLComponents/Heading";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { getCasestudyData } from "../lib/getStoryblokData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -15,55 +16,45 @@ const CardBody = dynamic(() =>
 );
 
 const CaseStudies = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [caseStudyData, setCaseStudyData] = useState("");
   const [totalCaseStudies, setTotalCaseStudies] = useState(0);
 
+  const fetchData = async () => {
+    try {
+      const caseStudy = await getCasestudyData();
+      setCaseStudyData(caseStudy.storyData);
+      setTotalCaseStudies(caseStudy.totalData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const caseStudy = await getCasestudyData();
-        setCaseStudyData(caseStudy.storyData);
-        setTotalCaseStudies(caseStudy.totalData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchData();
   }, []);
 
   return (
-    <section className="container portfolio mt-[6rem] mx-auto">
-      <div className="service_width relative flex items-center justify-center">
-        <Image
-          className="h-[46vh] rounded-[20px]"
-          src="/images/gist-banner.webp"
-          alt="Case studies"
-          width={isMobile ? 330 : 1300}
-          height={isMobile ? 200 : 400}
-          priority
-          sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 91.84vw, calc(100vw - 30px)"
-        />
-        <div className="absolute bottom-1/4 w-full text-center mx-auto">
-          <div className="how-we">
-            <h1 className="font-style-solution-head xl:text-[4.5rem] lg:text-[66px] md:text-[50px] sm:text-[55px] text-[30px]">
-              Case Studies
-            </h1>
-            <p className="md:mx-auto mx-4 md:max-w-[70%]">
-              Insightful case studies showcase real-world challenges, innovative
-              solutions, and measurable impact, providing invaluable lessons for
-              diverse industries and professionals.
-            </p>
+    <>
+      <div className="bg-detail-hero">
+        <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
+          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
+            <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
+              <Heading type="h1" className="text-white" text="Case Studies" />
+              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+                Insightful case studies showcase real-world challenges,
+                innovative solutions, and measurable impact, providing
+                invaluable lessons for diverse industries and professionals.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[4rem] py-[3rem]">
+      <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div
           className={`grid  ${
             !caseStudyData?.length
               ? "grid-cols-1"
               : "xl:grid-cols-3 md:grid-cols-2 grid-cols-1"
-          } md:gap-8 gap-6 md:p-4`}
+          } md:gap-8 gap-6`}
         >
           {caseStudyData?.length ? (
             caseStudyData
@@ -73,24 +64,21 @@ const CaseStudies = () => {
                   as={`/internal/casestudies/${slug}`}
                   href={`/internal/casestudies/[slug]`}
                   prefetch={true}
+                  className="group"
                   key={index}
                 >
                   <Card className="shadow-lg shadow-themeColor-500/50 border hover:border-themeColor cursor-pointer">
                     <CardBody className="p-8">
                       <h2 className="text-2xl font-bold mb-7">{name}</h2>
-                      <div className="inline-flex gap-4 font-bold ">
-                        <p className="!text-themeColor">Know more</p>
-                        <div className="aerrow relative">
-                          <img
-                            decoding="async"
-                            loading="lazy"
-                            className="black_aerrow alignnone wp-image-28 size-full"
-                            src="/images/black_aerrow-1.png"
-                            alt="arrow"
-                            width="46"
-                            height="18"
-                          />
-                        </div>
+                      <div className="inline-flex gap-2 why_text font-bold ">
+                        <p className="group-hover:text-colorBlack text-themeColor">
+                          Know More
+                        </p>
+                        <FontAwesomeIcon
+                          className="group-hover:text-colorBlack text-themeColor ml-2"
+                          size="lg"
+                          icon={faArrowRight}
+                        />
                       </div>
                     </CardBody>
                   </Card>
@@ -103,7 +91,7 @@ const CaseStudies = () => {
           )}
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

@@ -252,7 +252,7 @@ const Footer = () => {
               className="w-fit"
             />
           </div>
-          <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link-blue">
+          <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link">
             {footerData.slice(0, 3).map(({ title, links }) => (
               <div key={title} className={`flex flex-col flex-wrap gap-[14px]`}>
                 <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
