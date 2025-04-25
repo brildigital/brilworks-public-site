@@ -110,9 +110,9 @@ const IndustriesWeServe = ({
                   <div
                     className={`flex flex-col h-full items-center justify-center ${
                       darkBackground
-                        ? "border border-[#2D3540] bg-[#081121] hover:border-white hover:border-b-2"
+                        ? "border border-[#2D3540] bg-[#081121] hover:border-white hover:border-b-2 hover:!pb-5"
                         : "bg-white"
-                    } p-5 rounded-2xl`}
+                    } p-5 !pb-[22px] rounded-2xl`}
                   >
                     {href ? (
                       <Link href={href}>

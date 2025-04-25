@@ -13,7 +13,7 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isTablet = useMediaQuery({ maxWidth: 1024 });
   return (
-    <div className="bg-themeLight process-enhancement">
+    <div className="bg-themeLight">
       <div className="container max-w-[1280px] main-section-padding lg:!py-16 mx-auto">
         <Swiper
           className="!w-[95%] !mx-auto"

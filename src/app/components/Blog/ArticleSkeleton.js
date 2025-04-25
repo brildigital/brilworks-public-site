@@ -75,9 +75,13 @@ export const TableOfContentSkeleton = () => {
   return (
     <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
       <div className="w-64">
-        <div className="shadow-[4px_4px_0px_0px_#e2e2e2]">
-          <div className="border border-[#e2e2e2] px-3 pt-[10px] pb-4">
-            <Skeleton count={18} />
+        <div>
+          <div className="border border-[#e2e2e2] p-5 rounded-2xl">
+            <Skeleton
+              count={1}
+              className="h-10 border-b border-borderGray mb-3"
+            />
+            <Skeleton count={17} className="h-4" />
           </div>
         </div>
         <div className="!mt-7">

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import Button from "../Common/Button";
+import ButtonV2 from "../Common/ButtonV2";
 
 const GameChanger = () => {
   return (
     <div className="hero-section mt-20 3xl:mt-22 h-full">
       <div className="container max-w-[1440px] md:px-10 px-4 mx-auto">
         <div className="w-full lg:h-screen h-[85vh] flex flex-col items-start justify-center">
-          <div className="home_txt1 flex gap-6 flex-col items-center">
+          <div className="flex gap-6 flex-col items-center">
             <h1 className="xl:w-4/5 !w-full leading-tight">
               Providing&nbsp;
               <br className="mobile:hidden" />
@@ -34,7 +34,7 @@ const GameChanger = () => {
             </div>
           </div>
           <div className="lg:mt-12 mt-5 pb-20">
-            <Button label="Book Free Consultation" />
+            <ButtonV2 label="Book Free Consultation" />
           </div>
           <div className="md:py-5 absolute md:bottom-10 bottom-4">
             <span className="md:!text-2xl flex gap-2 flex-wrap">

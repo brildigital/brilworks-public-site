@@ -5,8 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { menuItems } from "../lib/constants";
 import dynamic from "next/dynamic";
-import Button from "../Common/Button";
+import SideMenu from "./SideMenu";
+import MenuItem from "./MenuItem";
+import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
+import ButtonV2 from "../Common/ButtonV2";
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
 const MenuItem = dynamic(() => import("./MenuItem"));
@@ -119,15 +122,11 @@ const NewHeader = () => {
               ""
             )}
             <div className="flex items-center gap-5">
-              {pathname.startsWith("/portfolio/") ? (
-                <Button
-                  innerClassName="text-base"
-                  onClick={() => setOpenNav(false)}
-                  label="Let's Talk"
-                />
-              ) : (
-                <Button onClick={() => setOpenNav(false)} label="Let's Talk" />
-              )}
+              <ButtonV2
+                onClick={() => setOpenNav(false)}
+                className="hover:text-themeColor"
+                label="Let's Talk"
+              />
               <IconButton
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"

@@ -39,7 +39,7 @@ const UserDashboard = () => {
 
   return (
     <section className="portfolio pt-[6rem]">
-      <div className="service_width relative flex items-left justify-center ">
+      <div className="lg:w-[85%] md:w-[90%] w-[92%] mx-auto relative flex items-left justify-center ">
         <div className="bg-green-300 rounded-lg shadow-lg">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h1 className="text-3xl font-bold mb-4 text-gray-800">
@@ -82,7 +82,7 @@ const UserDashboard = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto service_width md:py-[6rem] py-[4rem]">
+      <div className="lg:w-[85%] md:w-[90%] w-[92%] mx-auto md:py-[6rem] py-[4rem]">
         <div
           className={`grid ${
             !contentData?.length

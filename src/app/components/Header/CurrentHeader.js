@@ -9,6 +9,7 @@ const CurrentHeader = () => {
 
   const subpaths = [
     "/ebooks/",
+    "/internal/casestudies/",
     "/gist/java/",
     "/gist/aws/",
     "/gist/node/",
@@ -22,7 +23,13 @@ const CurrentHeader = () => {
     (base) => pathname?.startsWith(base) && pathname !== base
   );
 
-  return showHeader && pathname !== "/gist/" ? <Header /> : <HeaderV2 />;
+  return showHeader &&
+    pathname !== "/gist/" &&
+    !pathname.startsWith("/authors/") ? (
+    <Header />
+  ) : (
+    <HeaderV2 />
+  );
 };
 
 export default CurrentHeader;

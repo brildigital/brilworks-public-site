@@ -17,13 +17,30 @@ const CardBody = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.CardBody)
 );
 
-const JavaTechQandA = () => {
+const TechnologyGist = ({ title, description, apiKey }) => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
   const ITEMS_PER_PAGE = isTablet ? 8 : 9;
   const [queAnsData, setqueAnsData] = useState([]);
   const [totalQandA, settotalQandA] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const fetchQandAData = async () => {
+    setIsLoading(true);
+    try {
+      const techData = await getTechQandA(apiKey, currentPage, ITEMS_PER_PAGE);
+      setqueAnsData(techData.storyData);
+      settotalQandA(techData.totalData);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchQandAData();
+  }, [currentPage, ITEMS_PER_PAGE]);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -45,44 +62,21 @@ const JavaTechQandA = () => {
     return pages;
   };
 
-  const fetchQandAData = async () => {
-    setIsLoading(true);
-    try {
-      const nodeTechData = await getTechQandA(
-        "java",
-        currentPage,
-        ITEMS_PER_PAGE
-      );
-      setqueAnsData(nodeTechData.storyData);
-      settotalQandA(nodeTechData.totalData);
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchQandAData();
-  }, [currentPage, ITEMS_PER_PAGE]);
-
   return (
     <>
       <div className="bg-detail-hero">
         <div className="h-full min-h-[400px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
             <div className="flex flex-col items-start justify-center h-full min-h-[300px] md:max-h-[600px]  sxl:mt-20 mt-10 max-h-full">
-              <Heading type="h1" className="text-white" text="Java Q & N" />
+              <Heading type="h1" className="text-white" text={title} />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                A community of devoted Java enthusiasts dedicated to assisting
-                fellow Java enthusiasts. Explore how Brilworks contributes to
-                uplifting the Java community by addressing the most crucial,
-                common, unique, and unparalleled Java questions.
+                {description}
               </p>
             </div>
           </div>
         </div>
       </div>
+
       <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div
           className={`grid ${
@@ -94,12 +88,12 @@ const JavaTechQandA = () => {
           {queAnsData?.length ? (
             queAnsData.map(({ name, slug, content }, index) => (
               <Link
-                as={`/gist/java/${slug}`}
-                href={`/gist/java/[slug]`}
+                as={`/gist/${apiKey}/${slug}`}
+                href={`/gist/${apiKey}/[slug]`}
                 prefetch={true}
                 key={index}
               >
-                <Card className="shadow-none border border-borderGray hover:border-themeColor group duration-500">
+                <Card className="group shadow-none border border-borderGray hover:border-themeColor duration-300">
                   <div className="sec9_img1">
                     <Image
                       decoding="async"
@@ -111,11 +105,11 @@ const JavaTechQandA = () => {
                       height="230"
                     />
                   </div>
-                  <CardBody>
-                    <h2 className="text-xl why_text font-bold mb-7 pl-2">
+                  <CardBody className="p-4">
+                    <h2 className="text-xl text-colorBlack font-bold mb-7 pl-2">
                       {name}
                     </h2>
-                    <div className="inline-flex gap-4 !cursor-pointer why_text font-bold pl-2">
+                    <div className="inline-flex gap-2 why_text font-bold ">
                       <p className="group-hover:text-colorBlack text-themeColor">
                         Read More
                       </p>
@@ -130,7 +124,7 @@ const JavaTechQandA = () => {
               </Link>
             ))
           ) : isLoading ? (
-            <div className="flex align-middle justify-center p-28">
+            <div className="flex items-center justify-center p-28">
               <FetchDataSpinner />
             </div>
           ) : (
@@ -205,4 +199,4 @@ const JavaTechQandA = () => {
   );
 };
 
-export default JavaTechQandA;
+export default TechnologyGist;

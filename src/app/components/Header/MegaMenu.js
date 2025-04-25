@@ -25,11 +25,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
               e.preventDefault();
               setOpenNav(false);
             }}
-            className={`group/item flex items-center header_font ${
-              pathname.includes("/portfolio/")
-                ? "hover:text-themeColor"
-                : "hover:text-themeColor"
-            }`}
+            className="group/item flex items-center header_font hover:text-themeColor"
           >
             <p className="!mb-0 group-hover/item:text-themeColor uppercase font-normal">
               {name}

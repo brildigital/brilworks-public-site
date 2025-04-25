@@ -51,7 +51,7 @@ const BrilworksSoftwareReview = () => {
 
   return (
     <div className="software-review-container container max-w-[1280px] main-section-padding w-full mx-auto">
-      <div className="software-review-head !pt-[0rem]">
+      <div className="!pt-[0rem]">
         <div className="lg:mb-10 md:mb-8 mb-5">
           <div className="flex items-center justify-between">
             <Heading

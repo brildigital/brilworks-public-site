@@ -1,12 +1,9 @@
 "use client";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import DevOpsShipFaster from "./DevOpsShipFaster";
-import Button from "../Common/Button";
+import ServiceHeroSection from "./ServiceHeroSection";
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const ServicesWhyChooseUs = dynamic(() => import("./ServicesWhyChooseUs"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
@@ -70,42 +67,47 @@ const BusinessDevelopmentService = () => {
       imageAlt: "Comprehensive Support dev img",
     },
   ];
+
+  const whyChooseUsBusinessIntelligence = [
+    {
+      title: "Advanced Analytics",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "We go beyond basic reporting, employing machine learning and artificial intelligence (AI) to uncover hidden patterns and predict future trends.",
+    },
+    {
+      title: "Stay Ahead of the Curve",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Our team constantly explores and implements the latest BI tools and technologies to ensure you have a future-proof solution.",
+    },
+    {
+      title: "Real-Time Analytics",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Leverage the power of in-memory computing and real-time data pipelines for instant insights that fuel faster decision-making.",
+    },
+    {
+      title: "Exceptional User Experiences",
+      icon: "/images/v2/fi_18810346.svg",
+      description:
+        "Our data visualization experts create intuitive and interactive dashboards that bring your data to life for users of all technical abilities.",
+    },
+  ];
   return (
-    <div className="services pt-[4rem] mx-auto">
-      <div>
-        <div className="relative">
-          <div className="home_sec1_img">
-            <div className="banner-bg w-full block md:hidden h-[600px]"></div>
-            <Image
-              className="w-full md:block hidden h-auto"
-              src="https://a.storyblok.com/f/219851/1440x796/0d87546e9e/business-dev-banner.webp"
-              alt="Business Intelligence banner"
-              width="1440"
-              height="796"
-              priority
-              sizes="(max-width: 767px) 550px, 1440px"
-            />
-          </div>
-          <div className="sec1_txt_position !left-[5%] lg:!top-[40%]">
-            <h1 className="mb-[30px] w-full md:w-3/5">
-              Business Intelligence Services
-            </h1>
-            <p className="!text-colorGray !mb-10 w-full md:w-1/2">
-              We provide a comprehensive suite of business intelligence services
-              to transform your raw data into actionable insights and empower
-              your organization with expert business intelligence (BI) services.
-            </p>
-            <Button label="Talk to an Expert" />
-          </div>
-        </div>
-      </div>
-      <ServicesWhyChooseUs />
+    <>
+      <ServiceHeroSection
+        title="Business Intelligence Services"
+        description="We provide a comprehensive suite of business intelligence services to transform your raw data into actionable insights and empower your organization with expert business intelligence (BI) services."
+        buttonText="Talk to an Expert"
+      />
+
       <Honors />
       <ClientReviews />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />
-    </div>
+    </>
   );
 };
 
