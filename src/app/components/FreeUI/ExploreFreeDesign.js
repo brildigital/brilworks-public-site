@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ContactFormV2 from "../Homepage/ContactFormV2";
+import { scrollEffect } from "../lib/commonFunction";
 
 const ExploreFreeDesign = () => {
   const templates = [
@@ -113,11 +114,20 @@ const ExploreFreeDesign = () => {
     },
   ];
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <section
         id="portfolio"
-        className="container max-w-[1280px] main-section-padding-top mx-auto"
+        className="container max-w-[1280px] main-section-padding-top mx-auto reveal"
       >
         <div className="text-center lg:mb-7.5 mb-5">
           <Heading
@@ -169,7 +179,7 @@ const ExploreFreeDesign = () => {
 
       <section
         id="testimonials"
-        className="container max-w-[1280px] main-section-padding mx-auto"
+        className="container max-w-[1280px] main-section-padding mx-auto reveal"
       >
         <div className="text-center lg:mb-10 md:mb-7.5 mb-5">
           <Heading
@@ -222,7 +232,7 @@ const ExploreFreeDesign = () => {
       </section>
       <div className="bg-themeLight">
         <section
-          className="container max-w-[1280px] main-section-padding mx-auto"
+          className="container max-w-[1280px] main-section-padding mx-auto reveal"
           id="process"
         >
           <div className="text-center lg:mb-10 md:mb-7.5 mb-5">
@@ -293,17 +303,18 @@ const ExploreFreeDesign = () => {
               size="large"
               className="w-fit hover:text-themeColor mx-auto"
               label="Claim Now"
+              redirect="#cta"
+              scrollingButton
             />
           </div>
         </section>
       </div>
 
       <section
-        className="max-w-[1280px] mx-auto main-section-padding"
+        className="max-w-[1280px] mx-auto main-section-padding reveal"
         id="contact"
       >
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Left Section: Contact Info */}
           <div>
             <div className="lg:mb-10 md:mb-7.5 mb-5">
               <Heading
@@ -416,83 +427,11 @@ const ExploreFreeDesign = () => {
             </div>
           </div>
 
-          {/* Right Section: Contact Form */}
           <div className="bg-white rounded-xl shadow-lg p-8" id="cta">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
               Contact Us
             </h3>
             <ContactFormV2 hideEmail={true} showProjectType={true} />
-            {/* <form className="space-y-4" id="contactForm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Your Company"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Project Type
-                </label>
-                <select
-                  name="projectType"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                >
-                  <option value="website">Website</option>
-                  <option value="mobileApp">Mobile App</option>
-                  <option value="dashboard">Dashboard</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Project Details
-                </label>
-                <textarea
-                  name="projectDetails"
-                  rows="5"
-                  placeholder="Tell us about your project and what screens you'd like us to design..."
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                ></textarea>
-              </div>
-
-              <ButtonV2
-                type="submit"
-                size="large"
-                className="w-fit hover:text-themeColor mx-auto"
-                label="Get Free UI"
-              />
-            </form> */}
           </div>
         </div>
       </section>
