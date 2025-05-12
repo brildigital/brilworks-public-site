@@ -4,7 +4,11 @@ import React, { useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 
-const ContactFormV2 = ({ darkMode = false, hideEmail = false }) => {
+const ContactFormV2 = ({
+  darkMode = false,
+  hideEmail = false,
+  showProjectType = false,
+}) => {
   const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,6 +18,7 @@ const ContactFormV2 = ({ darkMode = false, hideEmail = false }) => {
     phone: "",
     email: "",
     message: "",
+    projectType: "",
   });
 
   const handleChange = (e) => {
@@ -90,7 +95,11 @@ const ContactFormV2 = ({ darkMode = false, hideEmail = false }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="w-full grid grid-cols-1">
+        <div
+          className={`w-full grid ${
+            showProjectType ? "md:grid-cols-2 gap-4" : "grid-cols-1"
+          }`}
+        >
           <input
             className="form-field"
             placeholder="Phone Number"
@@ -100,6 +109,23 @@ const ContactFormV2 = ({ darkMode = false, hideEmail = false }) => {
             required
             onChange={handleChange}
           />
+          {showProjectType && (
+            <select
+              className="form-field bg-white"
+              name="projectType"
+              value={formData.projectType}
+              required
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                Select Project Type
+              </option>
+              <option value="website">Website</option>
+              <option value="mobileApp">Mobile App</option>
+              <option value="dashboard">Dashboard</option>
+              <option value="other">Other</option>
+            </select>
+          )}
         </div>
         <div className="w-full grid grid-cols-1">
           <textarea

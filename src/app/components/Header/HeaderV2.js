@@ -171,7 +171,11 @@ const HeaderV2 = () => {
               </div>
             )}
             <div className="flex items-center gap-5">
-              <ButtonV2 label="Let's Talk" />
+              <ButtonV2
+                label={
+                  pathname === "/free-ui/" ? "Claim Free Screens" : "Let's Talk"
+                }
+              />
               <IconButton
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
