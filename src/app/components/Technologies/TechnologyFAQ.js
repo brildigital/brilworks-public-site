@@ -131,33 +131,42 @@ const TechnologyFAQ = () => {
   ];
   const reactNativeFAQData = [
     {
-      question: "What are the responsibilities of React Native developers?",
+      question: "What do React Native developers do?",
       answer:
-        "A React Native developer is responsible for building native applications for Android, iOS, and macOS. They have the ability to create UI that is more responsive than traditional devices including touchscreen phones, tablets, and desktops.",
+        "React Native developers build cross-platform mobile apps for iOS, Android, and macOS using React Native. They create responsive UIs, integrate APIs, and ensure high performance, leveraging tools like Redux and TypeScript.",
     },
     {
-      question:
-        "What is the benefit of choosing react native mobile app development?",
+      question: "Why choose React Native for app development?",
       answer:
-        "It is safe to say that React Native gives you the best of both worlds. Convenient and cross-platform, it will enable you to build for iOS and Android without the complexity of having to learn two languages.",
+        "React Native enables cross-platform mobile app development, reducing costs and time by using a single codebase for iOS and Android. It offers native-like performance and a rich ecosystem of components.",
     },
     {
-      question: "How do I hire React Native developers?",
+      question: "How much does it cost to hire React Native developers?",
       answer:
-        "An easy and convenient way to hire a React Native Developer from Brilworks is by sharing your requirements. Once you fill out the details, we will start shortlisting the top matching candidates for you so that you can interview them and onboard the ones you want to hire.",
+        "Our pricing starts at $18/hour for developers with 2–4 years of experience. Monthly plans are $2500 for 160 hours, and team plans start at $12000 for complex projects. Get a custom quote.",
     },
     {
-      question: "Do you provide NDA and IP protection for my project?",
+      question: "How long does it take to build a React Native app?",
       answer:
-        "You will have 100% ownership of the project and all its resource including NDA, copyright, source code, intellectual property rights, and confidential letters.",
+        "Timelines vary, but a typical MVP takes 3–6 months, depending on complexity. Our Agile approach ensures fast delivery with regular updates.",
     },
     {
-      question:
-        "What if I am not satisfied with the hired React Native developers work?",
+      question: "Do you provide NDA and IP protection?",
       answer:
-        "We understand that every project requires different skills, and we are always looking for ways to bring you the best developers to your team. We work with our clients long-term and will happily provide a new developer if they don’t deliver what you need.",
+        "Yes, we offer 100% ownership of your project, including NDAs, source code, and intellectual property rights, ensuring complete confidentiality.",
+    },
+    {
+      question: "What if I’m not satisfied with the developer?",
+      answer:
+        "We provide a risk-free trial and will replace any developer who doesn’t meet your expectations, ensuring you get the best talent for your project.",
+    },
+    {
+      question: "What industries do you serve?",
+      answer:
+        "We specialize in fintech, healthcare, SaaS, and e-commerce, delivering tailored React Native solutions for startups and enterprises.",
     },
   ];
+
   const awsFAQData = [
     {
       question: "How do I hire AWS developers through Brilworks?",
