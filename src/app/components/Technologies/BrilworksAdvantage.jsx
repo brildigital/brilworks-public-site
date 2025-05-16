@@ -113,12 +113,53 @@ const nodeJsAdvantages = {
   ],
 };
 
+const reactNativeAdvantages = {
+  title: "Engineered Excellence: The Brilworks Advantage",
+  description:
+    "Our React Native development services are built on a foundation of technical expertise and client-focused innovation. Here’s how we deliver unparalleled value:",
+  advantages: [
+    {
+      title: "Cross-Platform Efficiency",
+      description:
+        "Our developers leverage React Native’s single-codebase approach to build apps for iOS and Android, reducing development time by up to 40%. Embrace cross-platform mobile app development that’s cost-effective and scalable.",
+      icon: "/images/v2/Cross_Platform_Efficiency.svg",
+      badgeText: "Single Codebase",
+      badgeColor: "bg-[#E5F4FF]",
+    },
+    {
+      title: "Native-Like Performance",
+      description:
+        "We craft React Native apps with native-like speed and responsiveness, using optimized components and tools like Hermes. We craft seamless user experiences, making us a top choice to hire React Native developers.",
+      icon: "/images/v2/Native_Like_Performance.svg",
+      badgeText: "Optimized Speed",
+      badgeColor: "bg-[#E9FFE2]",
+    },
+    {
+      title: "Rapid Prototyping",
+      description:
+        "Accelerate your time-to-market with our rapid prototyping expertise. Our dedicated React Native developers create functional MVPs in weeks, enabling startups and enterprises to test ideas and iterate quickly while maintaining quality.",
+      icon: "/images/v2/Rapid_Prototyping.svg",
+      badgeText: "Faster MVPs",
+      badgeColor: "bg-[#FFE8FC]",
+    },
+    {
+      title: "Agile Development Excellence",
+      description:
+        "Using Agile methodologies, we deliver React Native app development with iterative sprints, rigorous testing, and client collaboration. This reduces risks, aligns with your vision, and drives measurable ROI for projects of any scale.",
+      icon: "/images/v2/Agile_Development_Excellence.svg",
+      badgeText: "Agile ROI",
+      badgeColor: "bg-[#FFE2E5]",
+    },
+  ],
+};
+
 const BrilworksAdvantage = () => {
   const pathname = usePathname();
 
   const showDataBasedOnPathname = {
     "/hire-reactjs-developer/": reactJsAdvantages,
     "/hire-nodejs-developer/": nodeJsAdvantages,
+    "/hire-react-native-developer/": reactNativeAdvantages,
   };
 
   const currentData = showDataBasedOnPathname[pathname];

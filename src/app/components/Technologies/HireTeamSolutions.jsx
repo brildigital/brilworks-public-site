@@ -134,12 +134,57 @@ const blockchainSolutions = {
   ],
 };
 
+const reactNativeSolutionsList = {
+  title: "Industries We Serve",
+  description:
+    "We build mobile apps with React Native for e-commerce, healthcare, fintech, and beyond.",
+  solutions: [
+    {
+      title: "eCommerce",
+      description:
+        "Build an app with real-time product browsing and secure payment integrations. We create responsive, scalable mobile apps that handle peak traffic, enhancing the shopping experience for iOS and Android users.",
+      icon: "/images/v2/shopping-cart-check.svg",
+    },
+    {
+      title: "Healthcare",
+      description:
+        "Develop HIPAA-compliant React Native apps for telemedicine and patient portals. Our solutions ensure secure data handling and seamless remote consultations, delivering reliable, user-friendly mobile experiences.",
+      icon: "/images/v2/heathcare-icon.svg",
+    },
+    {
+      title: "Fintech",
+      description:
+        "Our React Native development drives fintech apps with secure transaction processing and AI-powered fraud detection. Real-time analytics and cross-platform compatibility meet the demands of modern financial services.",
+      icon: "/images/v2/usd-circle.svg",
+    },
+    {
+      title: "Real Estate",
+      description:
+        "Adopt AI-powered mobile apps for real estate with our React development. Our custom mobile apps simplify listing discovery and administration, optimized for iOS and Android users.",
+      icon: "/images/v2/real-estate.svg",
+    },
+    {
+      title: "eLearning",
+      description:
+        "Build scalable apps for interactive eLearning with real-time collaboration and progress tracking to deliver efficient learning experiences, accessible across devices for students and educators.",
+      icon: "/images/v2/user-graduate.svg",
+    },
+    {
+      title: "Manufacturing",
+      description:
+        "We leverage React Native to create apps integrating IoT-enabled predictive maintenance and supply chain optimization. Our solutions enhance manufacturing efficiency with real-time data.",
+      icon: "/images/v2/manufaturing-icon.svg",
+    },
+  ],
+};
+
 const HireTeamSolutions = () => {
   const pathname = usePathname();
   const showDataBasedOnPathname = {
     "/hire-reactjs-developer/": reactJsSolutions,
     "/hire-nodejs-developer/": nodeJSSolutionsList,
     "/hire-blockchain-developer/": blockchainSolutions,
+    "/hire-react-native-developer/": reactNativeSolutionsList,
   };
 
   const currentData = showDataBasedOnPathname[pathname];
