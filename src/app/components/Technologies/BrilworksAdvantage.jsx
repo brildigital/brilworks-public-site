@@ -119,7 +119,7 @@ const reactNativeAdvantages = {
     "Our React Native development services are built on a foundation of technical expertise and client-focused innovation. Here’s how we deliver unparalleled value:",
   advantages: [
     {
-      title: "Cross-Platform Efficiency",
+      title: "Cross-platform efficiency",
       description:
         "Our developers leverage React Native’s single-codebase approach to build apps for iOS and Android, reducing development time by up to 40%. Embrace cross-platform mobile app development that’s cost-effective and scalable.",
       icon: "/images/v2/Cross_Platform_Efficiency.svg",
@@ -127,7 +127,7 @@ const reactNativeAdvantages = {
       badgeColor: "bg-[#E5F4FF]",
     },
     {
-      title: "Native-Like Performance",
+      title: "Native-like performance",
       description:
         "We craft React Native apps with native-like speed and responsiveness, using optimized components and tools like Hermes. We craft seamless user experiences, making us a top choice to hire React Native developers.",
       icon: "/images/v2/Native_Like_Performance.svg",
@@ -135,7 +135,7 @@ const reactNativeAdvantages = {
       badgeColor: "bg-[#E9FFE2]",
     },
     {
-      title: "Rapid Prototyping",
+      title: "Rapid prototyping",
       description:
         "Accelerate your time-to-market with our rapid prototyping expertise. Our dedicated React Native developers create functional MVPs in weeks, enabling startups and enterprises to test ideas and iterate quickly while maintaining quality.",
       icon: "/images/v2/Rapid_Prototyping.svg",
@@ -143,7 +143,7 @@ const reactNativeAdvantages = {
       badgeColor: "bg-[#FFE8FC]",
     },
     {
-      title: "Agile Development Excellence",
+      title: "Agile development excellence",
       description:
         "Using Agile methodologies, we deliver React Native app development with iterative sprints, rigorous testing, and client collaboration. This reduces risks, aligns with your vision, and drives measurable ROI for projects of any scale.",
       icon: "/images/v2/Agile_Development_Excellence.svg",

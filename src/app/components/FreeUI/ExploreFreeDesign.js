@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ContactFormV2 from "../Homepage/ContactFormV2";
+import FreeUiContactForm from "./FreeUiContactForm";
 
 const ExploreFreeDesign = () => {
   const templates = [
@@ -297,132 +298,164 @@ const ExploreFreeDesign = () => {
           </div>
         </section>
       </div>
+      <div className="contact-us-banner">
+        <div className="banner-layer">
+          <section
+            className="max-w-[1280px] mx-auto main-section-padding text-colorWhite"
+            id="contact"
+          >
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* Left Section: Contact Info */}
+              <div>
+                <div className="lg:mb-10 md:mb-7.5 mb-5">
+                  <Heading
+                    type="h2"
+                    className="lg:!text-[34px] md:!text-3xl !text-2xl"
+                    text="Ready to Claim Your Free UI/UX Screens?"
+                  />
 
-      <section
-        className="max-w-[1280px] mx-auto main-section-padding"
-        id="contact"
-      >
-        <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Left Section: Contact Info */}
-          <div>
-            <div className="lg:mb-10 md:mb-7.5 mb-5">
-              <Heading
-                type="h2"
-                className="lg:!text-[34px] md:!text-3xl !text-2xl"
-                text="Ready to Claim Your Free UI/UX Screens?"
-              />
-
-              <p className="pt-2 mx-auto">
-                Fill out the form and we'll get back to you within 24 hours to
-                discuss your project and how we can create 5 free custom UI/UX
-                screens for your needs.
-              </p>
-            </div>
-
-            {/* Contact Methods */}
-            <div className="space-y-4 lg:mb-8 mb-5">
-              {[
-                {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-themeColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect width="24" height="24" rx="12" fill="#f2f9fe" />
-                      <path
-                        d="M17 8L12 13L7 8M7 8H17V16H7V8Z"
-                        stroke="#017eeb"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ),
-                  title: "Email Us",
-                  value: "sales@brilworks.com",
-                },
-                {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-themeColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect width="24" height="24" rx="12" fill="#f2f9fe" />
-                      <path
-                        d="M14.5 6.5L17.5 9.5M15 14C13.8954 14 13 13.1046 13 12C13 10.8954 13.8954 10 15 10C16.1046 10 17 10.8954 17 12C17 13.1046 16.1046 14 15 14ZM15 14V17.5M9 6.5V10M9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10ZM9 14V17.5"
-                        stroke="#017eeb"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ),
-                  title: "Call Us",
-                  value: "+91 9313644148",
-                },
-                {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-themeColor"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect width="24" height="24" rx="12" fill="#f2f9fe" />
-                      <path
-                        d="M12 12.75C13.6569 12.75 15 11.4069 15 9.75C15 8.09315 13.6569 6.75 12 6.75C10.3431 6.75 9 8.09315 9 9.75C9 11.4069 10.3431 12.75 12 12.75Z"
-                        stroke="#017eeb"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12 12.75V17.25"
-                        stroke="#017eeb"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ),
-                  title: "Visit Us",
-                  value:
-                    "503, Fortune Business Hub, Science City Road, Sola, Ahmedabad, Gujarat, India Pincode- 380060",
-                },
-              ].map((method, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="shrink-0">{method.icon}</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {method.title}
-                    </h4>
-                    <p className="text-sm text-gray-600">{method.value}</p>
-                  </div>
+                  <p className="pt-2 mx-auto">
+                    Fill out the form and we'll get back to you within 24 hours
+                    to discuss your project and how we can create 5 free custom
+                    UI/UX screens for your needs.
+                  </p>
                 </div>
-              ))}
-            </div>
 
-            {/* What Happens Next */}
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h4 className="font-semibold mb-3">What Happens Next?</h4>
-              <ol className="list-decimal list-inside text-sm text-gray-700 space-y-1">
-                <li>We'll review your request within 24 hours</li>
-                <li>
-                  Schedule a quick discovery call to understand your needs
-                </li>
-                <li>You'll receive your 5 custom screens within 7 days</li>
-              </ol>
-            </div>
-          </div>
+                {/* Contact Methods */}
+                <div className="space-y-4 lg:mb-8 mb-5">
+                  {[
+                    {
+                      icon: (
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M22.667 27.3337H9.33366C5.33366 27.3337 2.66699 25.3337 2.66699 20.667V11.3337C2.66699 6.66699 5.33366 4.66699 9.33366 4.66699H22.667C26.667 4.66699 29.3337 6.66699 29.3337 11.3337V20.667C29.3337 25.3337 26.667 27.3337 22.667 27.3337Z"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M22.6663 12L18.493 15.3333C17.1197 16.4267 14.8663 16.4267 13.493 15.3333L9.33301 12"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      ),
+                      title: "Email Us",
+                      value: "sales@brilworks.com",
+                    },
+                    {
+                      icon: (
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M29.2937 24.4403C29.2937 24.9203 29.187 25.4137 28.9603 25.8937C28.7337 26.3737 28.4403 26.827 28.0537 27.2537C27.4003 27.9737 26.6803 28.4937 25.867 28.827C25.067 29.1603 24.2003 29.3337 23.267 29.3337C21.907 29.3337 20.4537 29.0137 18.9203 28.3603C17.387 27.707 15.8537 26.827 14.3337 25.7203C12.8003 24.6003 11.347 23.3603 9.96033 21.987C8.58699 20.6003 7.34699 19.147 6.24033 17.627C5.14699 16.107 4.26699 14.587 3.62699 13.0803C2.98699 11.5603 2.66699 10.107 2.66699 8.72033C2.66699 7.81366 2.82699 6.94699 3.14699 6.14699C3.46699 5.33366 3.97366 4.58699 4.68033 3.92033C5.53366 3.08033 6.46699 2.66699 7.45366 2.66699C7.82699 2.66699 8.20033 2.74699 8.53366 2.90699C8.88033 3.06699 9.18699 3.30699 9.42699 3.65366L12.5203 8.01366C12.7603 8.34699 12.9337 8.65366 13.0537 8.94699C13.1737 9.22699 13.2403 9.50699 13.2403 9.76033C13.2403 10.0803 13.147 10.4003 12.9603 10.707C12.787 11.0137 12.5337 11.3337 12.2137 11.6537L11.2003 12.707C11.0537 12.8537 10.987 13.027 10.987 13.2403C10.987 13.347 11.0003 13.4403 11.027 13.547C11.067 13.6537 11.107 13.7337 11.1337 13.8137C11.3737 14.2537 11.787 14.827 12.3737 15.5203C12.9737 16.2137 13.6137 16.9203 14.307 17.627C15.027 18.3337 15.7203 18.987 16.427 19.587C17.1203 20.1737 17.6937 20.5737 18.147 20.8137C18.2137 20.8403 18.2937 20.8803 18.387 20.9203C18.4937 20.9603 18.6003 20.9737 18.7203 20.9737C18.947 20.9737 19.1203 20.8937 19.267 20.747L20.2803 19.747C20.6137 19.4137 20.9337 19.1603 21.2403 19.0003C21.547 18.8137 21.8537 18.7203 22.187 18.7203C22.4403 18.7203 22.707 18.7737 23.0003 18.8937C23.2937 19.0137 23.6003 19.187 23.9337 19.4137L28.347 22.547C28.6937 22.787 28.9337 23.067 29.0803 23.4003C29.2137 23.7337 29.2937 24.067 29.2937 24.4403Z"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                          />
+                        </svg>
+                      ),
+                      title: "Call Us",
+                      value: "+91 9313644148",
+                    },
+                    {
+                      icon: (
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.0003 29.3337C23.3641 29.3337 29.3337 23.3641 29.3337 16.0003C29.3337 8.63653 23.3641 2.66699 16.0003 2.66699C8.63653 2.66699 2.66699 8.63653 2.66699 16.0003C2.66699 23.3641 8.63653 29.3337 16.0003 29.3337Z"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M10.6665 4H11.9998C9.3998 11.7867 9.3998 20.2133 11.9998 28H10.6665"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M20 4C22.6 11.7867 22.6 20.2133 20 28"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M4 21.3333V20C11.7867 22.6 20.2133 22.6 28 20V21.3333"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M4 11.9998C11.7867 9.3998 20.2133 9.3998 28 11.9998"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      ),
+                      title: "Visit Us",
+                      value:
+                        "503, Fortune Business Hub, Science City Road, Sola, Ahmedabad, Gujarat, India Pincode- 380060",
+                    },
+                  ].map((method, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <div className="shrink-0">{method.icon}</div>
+                      <div>
+                        <h4 className="font-semibold">{method.title}</h4>
+                        <p className="text-sm">{method.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-          {/* Right Section: Contact Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8" id="cta">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">
-              Contact Us
-            </h3>
-            <ContactFormV2 hideEmail={true} showProjectType={true} />
-            {/* <form className="space-y-4" id="contactForm">
+                {/* What Happens Next */}
+                <div className="bg-[#081120] border border-[#2D3540] rounded-lg p-6">
+                  <h4 className="font-semibold mb-3">What Happens Next?</h4>
+                  <ol className="list-decimal list-inside text-sm space-y-1">
+                    <li>We'll review your request within 24 hours</li>
+                    <li>
+                      Schedule a quick discovery call to understand your needs
+                    </li>
+                    <li>You'll receive your 5 custom screens within 7 days</li>
+                  </ol>
+                </div>
+              </div>
+
+              {/* Right Section: Contact Form */}
+              <div
+                className="bg-[#081120] border border-[#2D3540] rounded-xl shadow-lg p-8"
+                id="cta"
+              >
+                <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
+                <FreeUiContactForm />
+                {/* <form className="space-y-4" id="contactForm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -493,9 +526,11 @@ const ExploreFreeDesign = () => {
                 label="Get Free UI"
               />
             </form> */}
-          </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
     </>
   );
 };
