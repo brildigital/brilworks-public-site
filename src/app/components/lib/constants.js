@@ -300,6 +300,10 @@ const hireTeamMenuItems = [
         name: "Low Code No Code Developers",
         path: "/hire-low-code-no-code-developer/",
       },
+      {
+        name: "White Label App Developers",
+        path: "/hire-white-label-developer/",
+      },
     ],
   },
   {
