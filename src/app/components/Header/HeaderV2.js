@@ -175,6 +175,8 @@ const HeaderV2 = () => {
                 label={
                   pathname === "/free-ui/" ? "Claim Free Screens" : "Let's Talk"
                 }
+                {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
+                scrollingButton={pathname === "/free-ui/"}
               />
               <IconButton
                 variant="text"
