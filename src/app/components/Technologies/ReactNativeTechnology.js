@@ -38,7 +38,7 @@ const ReactNativeHiringTable = dynamic(() =>
 
 const why100PlusCompaniesTrustMobile = [
   {
-    title: "Timezone-Aligned Collaboration",
+    title: "Timezone-aligned collaboration",
     description:
       "Our remote mobile development teams work in your time zone for real-time collaboration and daily scrums.",
     icon: "/images/v2/Timezone_Aligned_Collaboration.svg",
@@ -50,13 +50,13 @@ const why100PlusCompaniesTrustMobile = [
     icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
   },
   {
-    title: "Flexible Team Compositions",
+    title: "Flexible team compositions",
     description:
       "Scale from solo React Native developers to full-stack teams (UI/UX + QA included) with 72-hour onboarding.",
     icon: "/images/v2/Flexible_Team_Compositions.svg",
   },
   {
-    title: "App Store-Compliant Development",
+    title: "App store-compliant development",
     description:
       "Strict adherence to Apple/Google guidelines with pre-submission audits for design, security, and performance.",
     icon: "/images/v2/App_Store_Compliant_Development.svg",
@@ -71,7 +71,7 @@ const why100PlusCompaniesTrustMobile = [
 
 const ReactNativeTechnology = () => {
   const reactNativeService = {
-    title: "React Native Development Services for Startups & Enterprises",
+    title: "React Native Development Services For Startups & Enterprises",
     buttonText: "Get a Quote for your Project",
     servicesList: [
       {
@@ -145,25 +145,25 @@ const ReactNativeTechnology = () => {
       "React Native app development offers unmatched advantages for businesses exploring mobile app solutions. Our React Native development services deliver cost-efficient, SEO-friendly apps that rank well and perform flawlessly. Here’s why React Native is the top choice for mobile app development in 2025:",
     benefits: [
       {
-        title: "Cost-Efficient Development",
+        title: "Cost-efficient development",
         description:
           "React Native reduces the cost of mobile app development by up to 40% with a single codebase for iOS and Android. Our developers optimize budgets, making React Native for startups and enterprises a smart, high-ROI investment.",
         icon: "/images/v2/why_rn_1.svg",
       },
       {
-        title: "Faster Time-to-Market",
+        title: "Faster time-to-market",
         description:
           "Launch apps quickly with React Native’s streamlined development process. Our React Native mobile app development delivers MVPs in weeks, helping startups and businesses stay ahead in competitive markets.",
         icon: "/images/v2/why_rn_2.svg",
       },
       {
-        title: "App Store Optimized Apps",
+        title: "App store optimized apps",
         description:
           "React Native apps are built for high app store ranking. Our developers optimize performance and metadata, ensuring your app gains visibility on Google Play and the App Store, driving downloads.",
         icon: "/images/v2/why_rn_3.svg",
       },
       {
-        title: "Strong Developer Community",
+        title: "Strong developer community",
         description:
           "Hire React Native developers backed by a global community of contributors. This ensures continuous updates, robust plugins, and reliable support for React Native mobile app development projects.",
         icon: "/images/v2/why_rn_4.svg",
@@ -183,7 +183,7 @@ const ReactNativeTechnology = () => {
     <>
       <HireTeamHeroSection
         technologyText="Hire React Native Developers"
-        title="Hire React Native Developers for Mobile application development"
+        title="Hire React Native Developers for Mobile Application Development"
         description="Our team is expert in handling the most complex of mobile development. We offer a scalable, responsive and flexible approach toward React Native mobile development, unmatched in the industry. Add vetted React developers to your team in 72 hours."
         imageSrc="/images/v2/react-native-banner.webp"
       />
@@ -195,10 +195,11 @@ const ReactNativeTechnology = () => {
       <ServicesSection
         sectionId="hire-react-native-developer"
         serviceData={reactNativeService}
+        bgClass="mb-[4rem]"
       />
       <TechnologyDevelopers />
       <HireTeamDigitalTransformation />
-      <BenefitOfHiringDevelopers title="Enterprise-Grade Resourcing for React Native Development" />
+      <BenefitOfHiringDevelopers title="Enterprise-Grade Resourcing For React Native Development" />
       <BrilworksAdvantage />
       <HireTeamSolutions />
       <MultipleCardWithIconBG data={reactNativeBenefits} />
