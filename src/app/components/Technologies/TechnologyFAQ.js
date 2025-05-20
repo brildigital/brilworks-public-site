@@ -410,6 +410,39 @@ const TechnologyFAQ = () => {
     },
   ];
 
+  const whiteLabelFAQs = [
+    {
+      question: "What is white label app development?",
+      answer:
+        "White label app development involves creating customizable, pre-built apps that businesses can rebrand and deploy as their own. These solutions include core functionalities and are tailored to reflect your brand’s identity, enabling rapid market entry without building from scratch. Ideal for startups and enterprises, white label apps save time and resources while delivering professional, user-friendly mobile experiences.",
+    },
+    {
+      question: "What are the benefits of white label app development?",
+      answer:
+        "White label app development offers cost savings, faster launch times, and brand consistency. It provides scalable, pre-tested solutions that reduce development risks. Businesses can customize apps to meet specific needs, ensuring a professional user experience. With shared codebases for iOS and Android, maintenance is streamlined, and ongoing support keeps apps competitive, making it ideal for rapid market entry.",
+    },
+    {
+      question: "How do your white label app development services work?",
+      answer:
+        "Our process starts with understanding your brand and goals. We select a suitable white label template, customize features, and design brand-aligned UI/UX. After integrating required functionalities, we test across platforms for performance and compatibility. Post-launch, we provide maintenance and updates. This streamlined approach ensures a tailored, high-quality app delivered quickly, ready for app store submission.",
+    },
+    {
+      question: "How much does it cost to build a white label app?",
+      answer:
+        "Costs vary based on customization, features, and complexity, typically ranging from $10,000 to $50,000. Basic apps with minimal customization are cheaper, while feature-rich apps with advanced integrations cost more. Our transparent pricing ensures no hidden fees. For precise estimates, contact us at Brilworks support page to discuss your project requirements and receive a tailored quote.",
+    },
+    {
+      question: "How do I find the right white label development company?",
+      answer:
+        "Choose a company with proven expertise, a strong portfolio, and positive client reviews. Ensure they offer customization, cross-platform support, and ongoing maintenance. Check their ability to align with your brand and deliver on time. Our team at [Your Company] excels in tailored white label solutions, with flexible engagement models. Contact us to explore our services.",
+    },
+    {
+      question: "How much time does it take to build a white label app?",
+      answer:
+        "Development typically takes 4-12 weeks, depending on customization and complexity. Basic apps with minimal changes launch faster, around 4-6 weeks, while feature-heavy apps may require 8-12 weeks. Our efficient process, from template selection to testing, ensures timely delivery. Discuss your timeline with us at contact page for a precise project schedule.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/hire-reactjs-developer/": reactJSFAQData,
     "/hire-java-developer/": javaFAQData,
@@ -423,6 +456,7 @@ const TechnologyFAQ = () => {
     "/hire-adalo-developer/": adaloFAQData,
     "/hire-mobile-app-developer/": mobileAppFAQData,
     "/hire-low-code-no-code-developer/": lowCodeNoCodeFAQData,
+    "/hire-white-label-developer/": whiteLabelFAQs,
   };
 
   const technologyFAQData = showDataBasedOnPathname[pathname] || {};

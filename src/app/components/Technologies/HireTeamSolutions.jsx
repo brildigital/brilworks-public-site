@@ -178,6 +178,61 @@ const reactNativeSolutionsList = {
   ],
 };
 
+const whiteLabelSolutionsList = {
+  title: "Industries We Empower with White Label Solutions",
+  description: "",
+  solutions: [
+    {
+      title: "Digital Agencies & SaaS Providers",
+      description:
+        "Resell branded tools like CRM platforms, analytics dashboards, or marketing automation software—expand your service offerings without in-house development.",
+      icon: "/images/v2/white_label_digital_agency.svg",
+    },
+    {
+      title: "Fintech & Banking",
+      description:
+        "Offer white-label payment gateways, mobile banking apps, or AI-driven fraud detection tools. Let financial institutions modernize under their brand, not yours.",
+      icon: "/images/v2/white_label_fintech.svg",
+    },
+    {
+      title: "Healthcare & Telemedicine",
+      description:
+        "Rebrandable HIPAA-compliant telehealth platforms, patient portals, and appointment schedulers. Ideal for clinics or healthcare IT providers.",
+      icon: "/images/v2/white_label_healthcare.svg",
+    },
+    {
+      title: "EdTech & Corporate Training",
+      description:
+        "Deliver customizable LMS platforms, certification tools, or virtual classroom software. Schools and enterprises get turnkey solutions; you earn recurring revenue.",
+      icon: "/images/v2/white_label_edtech.svg",
+    },
+    {
+      title: "eCommerce & Retail",
+      description:
+        "White-label marketplace platforms, inventory management systems, or loyalty apps. Retailers scale faster while you monetize seamless, branded tech.",
+      icon: "/images/v2/white_label_ecommerce.svg",
+    },
+    {
+      title: "Real Estate & PropTech",
+      description:
+        "Provide brokers with AI-powered property search tools, tenant portals, or lease management systems. Position your agency as a one-stop tech partner.",
+      icon: "/images/v2/white_label_real_estate.svg",
+    },
+    {
+      title: "Travel & Hospitality",
+      description:
+        "Resell booking engines, reservation systems, or loyalty programs. Hotels and travel agencies keep their branding; you handle the tech.",
+      icon: "/images/v2/white_label_travel.svg",
+    },
+    {
+      title: "Logistics & Supply Chain",
+      description:
+        "Offer branded fleet management tools, IoT-enabled tracking systems, or warehouse optimization platforms, to help clients cut costs without coding.",
+      icon: "/images/v2/white_label_logistics.svg",
+    },
+  ],
+};
+
 const HireTeamSolutions = () => {
   const pathname = usePathname();
   const showDataBasedOnPathname = {
@@ -185,6 +240,7 @@ const HireTeamSolutions = () => {
     "/hire-nodejs-developer/": nodeJSSolutionsList,
     "/hire-blockchain-developer/": blockchainSolutions,
     "/hire-react-native-developer/": reactNativeSolutionsList,
+    "/hire-white-label-developer/": whiteLabelSolutionsList,
   };
 
   const currentData = showDataBasedOnPathname[pathname];

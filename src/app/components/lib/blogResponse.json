@@ -796,5 +796,29 @@
         }
       }
     }
+  ],
+  "/hire-white-label-developer/": [
+    {
+      "name": "What are White Label Apps? A Closer Look & Popular Examples",
+      "slug": "white-label-apps-popular-examples",
+      "content": {
+        "Priority": "",
+        "mobile_banner": {
+          "filename": "https://a.storyblok.com/f/219851/550x283/6f1218f5c2/banner-image-the-best-low-code-no-code-platforms-in-2024-1.webp",
+          "alt": "Desktop Banner Image - What are White Label Apps? A Closer Look & Popular Examples"
+        }
+      }
+    },
+    {
+      "name": "White label app development cost: A Straightforward Guide",
+      "slug": "white-label-app-development-cost",
+      "content": {
+        "Priority": "",
+        "mobile_banner": {
+          "filename": "https://a.storyblok.com/f/219851/1100x566/ffa8872c57/2-banner-image-white-label-app-development-cost-a-straightforward-guide-1.webp",
+          "alt": "White label app development cost: A Straightforward Guide"
+        }
+      }
+    }
   ]
 }

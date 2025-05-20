@@ -7,7 +7,10 @@ import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 
-const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
+const TechnologyDevelopers = ({
+  bgClass = "bg-sectionBG",
+  description = "",
+}) => {
   const pathname = usePathname();
   const [techDeveloperData, setTechDeveloperData] = useState([]);
 
@@ -34,6 +37,7 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
     "/hire-adalo-developer/": "/images/adalo-logo.png",
     "/hire-low-code-no-code-developer/": "/images/mobile-app-liogo.svg",
     "/hire-mobile-app-developer/": "/images/mobile-app-liogo.svg",
+    "/hire-white-label-developer/": "/images/Development-black.svg",
   };
 
   async function fetchDevelopersDetail(developerType) {
@@ -85,6 +89,9 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
       case "/hire-mobile-app-developer/":
         developerType = "mobile-app-developers";
         break;
+      case "/hire-white-label-developer/":
+        developerType = "white-label-app-developer";
+        break;
       default:
         developerType = null;
     }
@@ -115,7 +122,7 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
           </div>
         )}
         <p className="md:text-lg text-base lg:!mb-10 md:!mb-7.5 !mb-5">
-          Our services drive sustainable growth.
+          {description || "Our services drive sustainable growth."}
         </p>
         <div
           className={`grid ${
@@ -162,26 +169,27 @@ const TechnologyDevelopers = ({ bgClass = "bg-sectionBG" }) => {
                             {content?.Description}
                           </p>
                         </div>
-                        {pathname !== "/hire-aws-developer/" && (
-                          <div className="flex items-center flex-row flex-wrap gap-4">
-                            {content?.Experts_In?.length ? (
-                              content?.Experts_In.map((technology, index) => (
-                                <div
-                                  className={`rounded-md px-4 py-2 ${expertInTechnologyColor[index]}`}
-                                  key={index}
-                                >
-                                  <p className="md:!text-base !text-sm">
-                                    {technology}
-                                  </p>
+                        {pathname !== "/hire-aws-developer/" &&
+                          pathname !== "/hire-white-label-developer/" && (
+                            <div className="flex items-center flex-row flex-wrap gap-4">
+                              {content?.Experts_In?.length ? (
+                                content?.Experts_In.map((technology, index) => (
+                                  <div
+                                    className={`rounded-md px-4 py-2 ${expertInTechnologyColor[index]}`}
+                                    key={index}
+                                  >
+                                    <p className="md:!text-base !text-sm">
+                                      {technology}
+                                    </p>
+                                  </div>
+                                ))
+                              ) : (
+                                <div className="w-full flex align-middle justify-center">
+                                  <FetchDataSpinner />
                                 </div>
-                              ))
-                            ) : (
-                              <div className="w-full flex align-middle justify-center">
-                                <FetchDataSpinner />
-                              </div>
-                            )}
-                          </div>
-                        )}
+                              )}
+                            </div>
+                          )}
                         <div className="flex items-center gap-2 pt-1">
                           <Image
                             className="w-6"

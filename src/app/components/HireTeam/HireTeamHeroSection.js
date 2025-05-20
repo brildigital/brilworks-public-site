@@ -9,6 +9,7 @@ const HireTeamHeroSection = ({
   title,
   description,
   imageSrc,
+  hireButtonText = "",
 }) => {
   const pathname = usePathname();
   const bgBannerSelection = [
@@ -48,7 +49,7 @@ const HireTeamHeroSection = ({
                   size="large"
                   redirect="#section-contact-form"
                   className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
-                  label={technologyText}
+                  label={hireButtonText || technologyText}
                   scrollingButton
                 />
               </div>
