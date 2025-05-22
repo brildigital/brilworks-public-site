@@ -17,7 +17,7 @@ const CTASection = ({
       } pt-10 lg:pt-[60px] overflow-hidden`}
     >
       <div className="container-cta">
-        <div className="container max-w-[1280px] mx-auto main-section-padding reveal">
+        <div className="container max-w-[1280px] mx-auto main-section-padding">
           <div
             className={`w-full flex md:flex-row flex-col items-center ${
               buttonText ? "justify-between" : "justify-start"
