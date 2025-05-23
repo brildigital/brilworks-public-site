@@ -48,6 +48,11 @@ const Footer = () => {
       linkURL: "https://www.upwork.com/ag/brilworks/",
       imgSrc: "/images/upwork-logo.svg",
     },
+    {
+      name: "Clutch",
+      linkURL: "https://clutch.co/profile/brilworks-software/",
+      imgSrc: "/images/v2/brilworks-clutch.svg",
+    },
   ];
 
   const footerData = [
