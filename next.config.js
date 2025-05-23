@@ -8,8 +8,6 @@ const nextConfig = {
     appDir: true,
     legacyBrowsers: false,
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
-    // serverActions: true,
-    // serverActionsBodySizeLimit: "100mb",
   },
   images: {
     unoptimized: true,
