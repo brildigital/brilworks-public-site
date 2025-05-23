@@ -106,16 +106,30 @@ export async function POST(req) {
 
     const signedUrl = await getSignedUrl(s3, command, { expiresIn: 60 });
 
-    const response = NextResponse.json({
-      uploadUrl: signedUrl,
-      fileUrl: `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileKey}`,
-    });
-    return response;
+    return new NextResponse(
+      JSON.stringify({
+        uploadUrl: signedUrl,
+        fileUrl: `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileKey}`,
+      }),
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
   } catch (err) {
     console.error("Error generating pre-signed URL:", err);
-    return NextResponse.json(
-      { error: "Failed to generate upload URL" },
-      { status: 500 }
+    return new NextResponse(
+      JSON.stringify({ error: "Failed to fetch documents" }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
   }
 }
