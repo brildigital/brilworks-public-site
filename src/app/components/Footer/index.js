@@ -48,6 +48,11 @@ const Footer = () => {
       linkURL: "https://www.upwork.com/ag/brilworks/",
       imgSrc: "/images/upwork-logo.svg",
     },
+    {
+      name: "Clutch",
+      linkURL: "https://clutch.co/profile/brilworks-software/",
+      imgSrc: "/images/clutch-f-icon.svg",
+    },
   ];
 
   const footerData = [
@@ -330,7 +335,7 @@ const Footer = () => {
                 key={name}
                 href={linkURL}
                 target="_blank"
-                className="p-[6px] bg-[#000000] rounded-full"
+                className="w-8 h-8 flex items-center justify-center bg-[#000000] rounded-full"
               >
                 <Image
                   className="w-5"
