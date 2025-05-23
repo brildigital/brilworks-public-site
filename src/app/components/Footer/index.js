@@ -51,7 +51,7 @@ const Footer = () => {
     {
       name: "Clutch",
       linkURL: "https://clutch.co/profile/brilworks-software/",
-      imgSrc: "/images/v2/brilworks-clutch.svg",
+      imgSrc: "/images/clutch-f-icon.svg",
     },
   ];
 
@@ -335,7 +335,7 @@ const Footer = () => {
                 key={name}
                 href={linkURL}
                 target="_blank"
-                className="p-[6px] bg-[#000000] rounded-full"
+                className="w-8 h-8 flex items-center justify-center bg-[#000000] rounded-full"
               >
                 <Image
                   className="w-5"
