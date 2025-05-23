@@ -36,7 +36,6 @@ async function listAllObjects(Bucket, Prefix = "public") {
     allObjects.push(...objects);
 
     isTruncated = response.IsTruncated ?? false;
-    console.log("response", response);
     ContinuationToken = response.NextContinuationToken;
   }
 
@@ -58,12 +57,24 @@ export async function GET() {
       (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
     );
 
-    return NextResponse.json({ assets: urls });
+    return new NextResponse(JSON.stringify({ assets: urls }), {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // Adjust this if you want specific origins
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.error("Error listing S3 objects:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch documents" },
-      { status: 500 }
+    return new NextResponse(
+      JSON.stringify({ error: "Failed to fetch documents" }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
     );
   }
 }
