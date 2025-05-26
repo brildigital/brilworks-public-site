@@ -5,10 +5,11 @@ export async function GET(request) {
   try {
     const fileUrl = decodeURIComponent(encodedUrl);
     if (
-      !fileUrl.startsWith("https://a.storyblok.com/") &&
-      !fileUrl.startsWith(
+      !fileUrl.endsWith(".pdf") ||
+      (!fileUrl.startsWith(
         "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/"
-      )
+      ) &&
+        !fileUrl.startsWith("https://a.storyblok.com/"))
     ) {
       return new Response("Invalid or untrusted file URL", { status: 400 });
     }
