@@ -4,6 +4,7 @@ import {
   ListObjectsV2Command,
   _Object,
   PutObjectCommand,
+  DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
@@ -123,6 +124,58 @@ export async function POST(req) {
     console.error("Error generating pre-signed URL:", err);
     return new NextResponse(
       JSON.stringify({ error: "Failed to fetch documents" }),
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+}
+export async function DELETE(req) {
+  try {
+    const bucketName = process.env.AWS_S3_BUCKET;
+    const { searchParams } = new URL(req.url);
+    const key = searchParams.get("key");
+    if (!key || typeof key !== "string") {
+      return new NextResponse(
+        JSON.stringify({
+          error: "Missing or invalid 'key' in query parameters",
+        }),
+        {
+          status: 400,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
+    const command = new DeleteObjectCommand({
+      Bucket: bucketName,
+      Key: key,
+    });
+
+    await s3.send(command);
+
+    return new NextResponse(
+      JSON.stringify({ message: "File deleted successfully", deletedKey: key }),
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (error) {
+    console.error("Error deleting S3 object:", error);
+
+    return new NextResponse(
+      JSON.stringify({ error: "Failed to delete file" }),
       {
         status: 500,
         headers: {
