@@ -83,10 +83,10 @@ const ClientReviews = () => {
   ];
 
   const videoSources = [
-    "https://a.storyblok.com/f/219851/x/e590ec4a89/david_ceo_feedback.mp4",
-    "https://a.storyblok.com/f/219851/x/dc5084003a/liz_feedback.mp4",
-    "https://a.storyblok.com/f/219851/x/65478fe5ec/bisi_trim.mp4",
-    "https://a.storyblok.com/f/219851/x/728b8ac755/edwin_feedback.mp4",
+    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/david_ceo_feedback-1748006275337.mp4",
+    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/liz_feedback-1748006294976.mp4",
+    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/bisi_trim-1748006280953.mp4",
+    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/edwin_feedback-1748006271641.mp4",
   ];
 
   const videoSrc = videoSources[reviewIndex];
