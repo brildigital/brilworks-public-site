@@ -67,8 +67,8 @@ export async function sendDataToSlack(payload) {
                 text: `\nName: ${name || ""}\nPhone: ${phone || ""}\nMessage: ${
                   message || ""
                 }\nPage: ${pageURL || ""}\n${
-                  website && `Website: ${website}`
-                }\n${linkedin && `LinkedIn: ${linkedin}`}`,
+                  website ? `Website: ${website}` : ""
+                }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}`,
               },
             ],
           },
