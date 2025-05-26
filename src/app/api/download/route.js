@@ -5,8 +5,7 @@ export async function GET(request) {
   try {
     const fileUrl = decodeURIComponent(encodedUrl);
     if (
-      !fileUrl.endsWith(".pdf") ||
-      !fileUrl.startsWith("https://a.storyblok.com/") ||
+      !fileUrl.startsWith("https://a.storyblok.com/") &&
       !fileUrl.startsWith(
         "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/"
       )
