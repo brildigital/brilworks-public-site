@@ -115,7 +115,7 @@ const whiteLabelService = {
       value: "wl-7",
       imageSrc: "/images/v2/white-label-dev-team.webp",
       description:
-        "Augment your team with our white label app experts. Our developers work as an extension of your team—handling customization, scaling, or feature development with flexible engagement models.",
+        "As a trusted white label app development company, we provide dedicated developers as an extension of your team, providing specialized skills in customization, feature integration, or app scaling, with flexible engagement options.",
     },
   ],
 };
@@ -175,9 +175,14 @@ const WhiteLabelTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-        technologyText="WHITE LABEL DEVELOPMENT SERVICES"
-        title="Brand-Aligned White-Label Solutions"
-        description="Deploy fully white-label software solutions under your brand in 4-6 weeks. Onboard expert app developers who build custom white-label apps, platforms, and tools. As a leading white-label development company, we empower agencies and enterprises to scale their offerings without investing in in-house R&D."
+        technologyText="White Label App Development Services"
+        title={
+          <>
+            Brand-Aligned <br className="md:block hidden" />
+            White-Label Solutions
+          </>
+        }
+        description="Deploy fully white-label software solutions under your brand in 4-6 weeks. Onboard expert app developers who build custom white-label apps, platforms, and tools. As a leading white app label development company, we empower agencies and enterprises to scale their offerings without investing in in-house R&D."
         imageSrc="/images/v2/white-label-solutions-banner.webp"
         hireButtonText="Hire White Label Developers"
       />
