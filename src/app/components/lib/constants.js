@@ -731,6 +731,181 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "15 Best NodeJS Libraries for Backend Development in 2025",
+    loc: "https://www.brilworks.com/blog/top-nodejs-libraries-for-backend-development/",
+    lastmod: "2025-05-28T07:52:06.352Z",
+  },
+  {
+    name: "Cloud Integration in React Native Application Development: A Guide to AWS & Firebase",
+    loc: "https://www.brilworks.com/blog/react-native-cloud-integration-aws-firebase/",
+    lastmod: "2025-05-27T09:37:14.306Z",
+  },
+  {
+    name: "What's New in Node.js 24",
+    loc: "https://www.brilworks.com/blog/node-js-24/",
+    lastmod: "2025-05-25T18:37:13.473Z",
+  },
+  {
+    name: "Manual vs Automated Testing in Mobile App Development",
+    loc: "https://www.brilworks.com/blog/manual-vs-automated-testing-mobile-app-development/",
+    lastmod: "2025-05-28T05:26:55.369Z",
+  },
+  {
+    name: "Why Choose React Native App Development for IoT and Wearable Technology",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-for-iot-and-wearable-technology/",
+    lastmod: "2025-05-23T10:50:56.018Z",
+  },
+  {
+    name: "Developing Microservices with Nodejs",
+    loc: "https://www.brilworks.com/blog/-microservices-with-nodejs/",
+    lastmod: "2025-05-28T06:32:55.418Z",
+  },
+  {
+    name: "How to Integrate AI in React Native Apps (Step by Step Guide)",
+    loc: "https://www.brilworks.com/blog/ai-in-react-native/",
+    lastmod: "2025-05-22T09:40:14.458Z",
+  },
+  {
+    name: "8 Best Node JS IDEs You Should Try This Year",
+    loc: "https://www.brilworks.com/blog/best-node-js-ides/",
+    lastmod: "2025-05-21T11:49:14.546Z",
+  },
+  {
+    name: "React vs Nodejs: A Deep Dive into Their Core Features",
+    loc: "https://www.brilworks.com/blog/react-vs-nodejs/",
+    lastmod: "2025-05-22T08:50:26.499Z",
+  },
+  {
+    name: "Building Secure White Label Software [The Architecture Checklist]",
+    loc: "https://www.brilworks.com/blog/secure-white-label-software-architecture-checklist/",
+    lastmod: "2025-05-27T07:25:28.631Z",
+  },
+  {
+    name: "Why React Native App Development is Perfect for Healthcare Mobile Apps?",
+    loc: "https://www.brilworks.com/blog/react-native-app-development-for-healthcare-mobile-apps/",
+    lastmod: "2025-05-19T07:35:07.291Z",
+  },
+  {
+    name: "The Hidden Economics Behind White Label App Development",
+    loc: "https://www.brilworks.com/blog/hidden-economics-white-label-app-development/",
+    lastmod: "2025-05-27T07:25:22.407Z",
+  },
+  {
+    name: "White Label vs Custom Development",
+    loc: "https://www.brilworks.com/blog/white-label-vs-custom-development/",
+    lastmod: "2025-05-27T07:25:05.648Z",
+  },
+  {
+    name: "A Practical Guide to Healthcare Mobile App Development in 2025",
+    loc: "https://www.brilworks.com/blog/healthcare-mobile-app-development/",
+    lastmod: "2025-05-16T12:34:02.389Z",
+  },
+  {
+    name: "5 Critical Features Your White Label Platform Must Have",
+    loc: "https://www.brilworks.com/blog/white-label-platform-critical-feature/",
+    lastmod: "2025-05-28T06:48:24.260Z",
+  },
+  {
+    name: "Understanding Healthcare App Regulatory Standards (A Straightforward Guide)",
+    loc: "https://www.brilworks.com/blog/understanding-healthcare-app-regulatory-standards-/",
+    lastmod: "2025-05-15T12:57:35.667Z",
+  },
+  {
+    name: "Why Businesses Are Moving Towards White Label Software",
+    loc: "https://www.brilworks.com/blog/why-businesses-are-moving-towards-white-label-software/",
+    lastmod: "2025-05-28T06:18:28.051Z",
+  },
+  {
+    name: "Navigating Key Challenges in Healthcare Mobile Apps",
+    loc: "https://www.brilworks.com/blog/challenges-in-healthcare-mobile-apps/",
+    lastmod: "2025-05-28T06:30:04.327Z",
+  },
+  {
+    name: "A Business Guide to Legacy System Modernization",
+    loc: "https://www.brilworks.com/blog/a-business-guide-to-legacy-system-modernization/",
+    lastmod: "2025-05-12T04:13:08.099Z",
+  },
+  {
+    name: "Fitness App Development: A Simple Guide to Costs, Features, and Trends",
+    loc: "https://www.brilworks.com/blog/fitness-app-development/",
+    lastmod: "2025-05-09T10:58:33.707Z",
+  },
+  {
+    name: "10 Major Mobile App Development Challenges",
+    loc: "https://www.brilworks.com/blog/biggest-mobile-app-development-challenges/",
+    lastmod: "2025-05-28T06:26:54.094Z",
+  },
+  {
+    name: "10 Ways to Speed Up Your Mobile App Development Timeline",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-timeline/",
+    lastmod: "2025-05-08T09:28:55.925Z",
+  },
+  {
+    name: "Getting Started with Flutter AI: A Complete Guide for App Development",
+    loc: "https://www.brilworks.com/blog/getting-started-with-flutter-ai/",
+    lastmod: "2025-05-07T10:06:22.690Z",
+  },
+  {
+    name: "How Long Does It Take to Develop a Mobile App",
+    loc: "https://www.brilworks.com/blog/how-long-does-it-take-to-develop-a-mobile-app/",
+    lastmod: "2025-05-06T13:00:58.984Z",
+  },
+  {
+    name: "Why Businesses Should Invest in Custom Mobile App Development",
+    loc: "https://www.brilworks.com/blog/custom-mobile-app-development/",
+    lastmod: "2025-05-06T07:31:28.412Z",
+  },
+  {
+    name: "How Much Does Mobile App Maintenance Cost in 2025?",
+    loc: "https://www.brilworks.com/blog/mobile-app-maintenance-cost/",
+    lastmod: "2025-05-05T18:06:39.251Z",
+  },
+  {
+    name: "Guide to Integrating AI into Mobile Apps for Advanced Functionality",
+    loc: "https://www.brilworks.com/blog/integrating-ai-in-mobile-apps/",
+    lastmod: "2025-05-28T05:37:00.992Z",
+  },
+  {
+    name: "How to Develop iOS Apps on Windows",
+    loc: "https://www.brilworks.com/blog/develop-iOS-apps-on-windows/",
+    lastmod: "2025-05-02T08:21:10.754Z",
+  },
+  {
+    name: "How Augmented Reality Apps Elevate Mobile App Experience",
+    loc: "https://www.brilworks.com/blog/augmented-reality-apps/",
+    lastmod: "2025-05-02T07:07:45.964Z",
+  },
+  {
+    name: "Steps to Build Cross-Platform Apps Using Low-Code Platforms",
+    loc: "https://www.brilworks.com/blog/build-cross-platform-apps-using-low-code-platforms/",
+    lastmod: "2025-05-01T09:55:17.775Z",
+  },
+  {
+    name: "Steps to Develop an App Using OpenAI’s API",
+    loc: "https://www.brilworks.com/blog/how-to-use-OpenAI-API/",
+    lastmod: "2025-05-01T08:01:57.443Z",
+  },
+  {
+    name: "Low Code vs Traditional Development: A Complete Comparison for Businesses",
+    loc: "https://www.brilworks.com/blog/low-code-vs-traditional-development/",
+    lastmod: "2025-04-30T07:52:41.170Z",
+  },
+  {
+    name: "14 Best Mobile App Development Platforms",
+    loc: "https://www.brilworks.com/blog/best-mobile-app-development-platforms/",
+    lastmod: "2025-05-14T10:01:24.443Z",
+  },
+  {
+    name: "Managing React Native Environment Variables: A Guide for Secure App Development",
+    loc: "https://www.brilworks.com/blog/react-native-environment-variables/",
+    lastmod: "2025-04-28T08:00:41.185Z",
+  },
+  {
+    name: "Scaling ReactJS Applications Effortlessly: A Practical Guide",
+    loc: "https://www.brilworks.com/blog/scaling-reactjs-applications/",
+    lastmod: "2025-05-15T09:30:56.737Z",
+  },
+  {
     name: "React Native Benefits & Limitations: What You Should Know Before You Build",
     loc: "https://www.brilworks.com/blog/benefits-of-react-native/",
     lastmod: "2025-04-24T07:43:03.044Z",
@@ -818,7 +993,7 @@ export const blogListStaticData = [
   {
     name: "Reasons To Use ReactJS For Mobile App Development",
     loc: "https://www.brilworks.com/blog/reactjs-for-mobile-app-development/",
-    lastmod: "2025-03-25T04:52:54.394Z",
+    lastmod: "2025-05-28T05:58:38.749Z",
   },
   {
     name: "A Straightforward Guide For Android and iOS Development",
@@ -918,7 +1093,7 @@ export const blogListStaticData = [
   {
     name: "Choosing the Right Tech Stack for Mobile App Development",
     loc: "https://www.brilworks.com/blog/tech-stack-for-mobile-app-development/",
-    lastmod: "2025-02-03T04:48:06.039Z",
+    lastmod: "2025-05-28T05:42:49.771Z",
   },
   {
     name: "10 Healthcare App Features Every Developer Should Know [+5 Bonus]",
@@ -1153,17 +1328,17 @@ export const blogListStaticData = [
   {
     name: "React Native for Beginners: Create React Native App in 5 Steps",
     loc: "https://www.brilworks.com/blog/create-react-native-app/",
-    lastmod: "2024-11-11T05:14:00.964Z",
+    lastmod: "2025-05-28T05:52:18.065Z",
   },
   {
     name: "White label app development cost: A Straightforward Guide",
     loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
-    lastmod: "2025-02-28T07:03:05.944Z",
+    lastmod: "2025-05-28T06:42:29.170Z",
   },
   {
     name: "The Best White Label App builders",
     loc: "https://www.brilworks.com/blog/best-white-label-app-builders/",
-    lastmod: "2025-03-03T10:36:08.406Z",
+    lastmod: "2025-05-27T07:23:32.881Z",
   },
   {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
@@ -1473,7 +1648,7 @@ export const blogListStaticData = [
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
     loc: "https://www.brilworks.com/blog/nestjs-vs-nextjs/",
-    lastmod: "2024-10-08T13:41:44.325Z",
+    lastmod: "2025-05-28T05:32:11.575Z",
   },
   {
     name: "Amazon S3: A Cloud Storage Solution for Every Business",
@@ -1493,7 +1668,7 @@ export const blogListStaticData = [
   {
     name: "What is a Vector Database? Types, Uses & Why They Matter in AI",
     loc: "https://www.brilworks.com/blog/what-is-vector-database-types-uses/",
-    lastmod: "2024-06-05T07:23:07.953Z",
+    lastmod: "2025-05-21T13:18:30.671Z",
   },
   {
     name: "What is AWS Lambda and How Can It Benefit Your Software Development Company?",
@@ -1513,7 +1688,7 @@ export const blogListStaticData = [
   {
     name: "What is an LLM? And Which One Should You Use?",
     loc: "https://www.brilworks.com/blog/what-is-llm-and-which-model-you-use/",
-    lastmod: "2024-09-09T09:08:15.746Z",
+    lastmod: "2025-05-20T13:10:03.853Z",
   },
   {
     name: "Best Practices for Node.js App Testing",
@@ -1523,7 +1698,7 @@ export const blogListStaticData = [
   {
     name: "Embracing AI: How Artificial Intelligence is Revolutionizing Professional Services",
     loc: "https://www.brilworks.com/blog/how-artificial-intelligence-is-revolutionizing-professional-services/",
-    lastmod: "2025-03-04T10:41:26.871Z",
+    lastmod: "2025-05-28T07:50:23.899Z",
   },
   {
     name: "Top 10 Mobile App Testing Tools",
@@ -1618,7 +1793,7 @@ export const blogListStaticData = [
   {
     name: "What is Lambda Expression in Java?",
     loc: "https://www.brilworks.com/blog/lambda-expression-java/",
-    lastmod: "2024-05-02T11:43:05.745Z",
+    lastmod: "2025-05-22T06:24:21.237Z",
   },
   {
     name: "Exploring Storyblok's Powerful Visual Editor",
@@ -1728,7 +1903,7 @@ export const blogListStaticData = [
   {
     name: "Best Node.js Open Source Projects in GitHub",
     loc: "https://www.brilworks.com/blog/best-node-js-open-source-projects-in-github/",
-    lastmod: "2025-03-05T09:03:13.168Z",
+    lastmod: "2025-05-27T07:42:47.334Z",
   },
   {
     name: "Next.js 13 Drops with Exciting Updates: Find Out What’s New?",
@@ -1757,8 +1932,8 @@ export const blogListStaticData = [
   },
   {
     name: "What are White Label Apps? A Closer Look & Popular Examples",
-    loc: "https://www.brilworks.com/blog/what-are-white-label-apps-and-popular-examples/",
-    lastmod: "2025-03-07T08:32:29.467Z",
+    loc: "https://www.brilworks.com/blog/white-label-apps-popular-examples/",
+    lastmod: "2025-05-27T07:23:50.890Z",
   },
   {
     name: "Top Popular Apps Built With React Native",
