@@ -98,6 +98,9 @@ const Article = ({ blok }) => {
               node.attribs.href.startsWith("/") || // Handles relative URLs
               node.attribs.href.includes("www.brilworks.com") ||
               node.attribs.href.includes("www.appypie.com") ||
+              node.attribs.href.includes(
+                "https://scientificasia.net/artificial-intelligence-ai/"
+              ) ||
               node.attribs.href.startsWith("..")
             )
           ) {
