@@ -9,7 +9,7 @@ import {
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 const s3 = new S3Client({
-  region: process.env.NEXT_PUBLIC_AWS_REGION,
+  region: process.env.AWS_REGION,
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -49,8 +49,8 @@ async function listAllObjects(bucketName, folderName) {
 
 export async function GET() {
   try {
-    const bucketName = process.env.NEXT_PUBLIC_AWS_S3_BUCKET;
-    const region = process.env.NEXT_PUBLIC_AWS_REGION;
+    const bucketName = process.env.AWS_S3_BUCKET;
+    const region = process.env.AWS_REGION;
 
     const assetFolder = "assets";
     const objects = await listAllObjects(bucketName, assetFolder);
@@ -100,7 +100,7 @@ export async function POST(req) {
     const fileKey = `assets/${baseName}-${timestamp}.${fileExtension}`;
 
     const command = new PutObjectCommand({
-      Bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET,
+      Bucket: process.env.AWS_S3_BUCKET,
       Key: fileKey,
       ContentType: type,
     });
@@ -110,7 +110,7 @@ export async function POST(req) {
     return new NextResponse(
       JSON.stringify({
         uploadUrl: signedUrl,
-        fileUrl: `https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${fileKey}`,
+        fileUrl: `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileKey}`,
       }),
       {
         status: 200,
@@ -136,7 +136,7 @@ export async function POST(req) {
 }
 export async function DELETE(req) {
   try {
-    const bucketName = process.env.NEXT_PUBLIC_AWS_S3_BUCKET;
+    const bucketName = process.env.AWS_S3_BUCKET;
     const { searchParams } = new URL(req.url);
     const key = searchParams.get("key");
     if (!key || typeof key !== "string") {
