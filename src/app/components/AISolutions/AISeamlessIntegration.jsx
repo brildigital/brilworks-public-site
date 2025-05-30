@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const AISeamlessIntegration = ({ data }) => {
   const iconBG = [
