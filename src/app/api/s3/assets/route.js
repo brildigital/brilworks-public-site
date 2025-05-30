@@ -16,8 +16,6 @@ const s3 = new S3Client({
   },
 });
 
-const assetFolder = "assets";
-
 async function listAllObjects(bucketName, folderName) {
   let isTruncated = true;
   let ContinuationToken = undefined;
@@ -54,6 +52,7 @@ export async function GET() {
     const bucketName = process.env.NEXT_PUBLIC_AWS_S3_BUCKET;
     const region = process.env.NEXT_PUBLIC_AWS_REGION;
 
+    const assetFolder = "assets";
     const objects = await listAllObjects(bucketName, assetFolder);
 
     const urls = objects.map(
@@ -95,11 +94,10 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-
     const timestamp = Date.now();
     const fileExtension = name.split(".").pop();
     const baseName = name.replace(/\s+/g, "_").replace(/\.[^.]+$/, "");
-    const fileKey = `${assetFolder}/${baseName}-${timestamp}.${fileExtension}`;
+    const fileKey = `assets/${baseName}-${timestamp}.${fileExtension}`;
 
     const command = new PutObjectCommand({
       Bucket: process.env.NEXT_PUBLIC_AWS_S3_BUCKET,
