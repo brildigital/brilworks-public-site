@@ -7,6 +7,7 @@ import Image from "next/image";
 import {
   blogAuthor,
   convertParamsToString,
+  formatSrcUrl,
   formattedDate,
 } from "../lib/commonFunction";
 import Heading from "../HTMLComponents/Heading";
@@ -283,7 +284,7 @@ const Author = ({ authorName }) => {
                       className="block md:hidden rounded-t-[15px]"
                       src={
                         content?.mobile_banner?.filename
-                          ? content?.mobile_banner?.filename
+                          ? formatSrcUrl(content?.mobile_banner?.filename)
                           : "/images/not-found-image.webp"
                       }
                       alt={
@@ -302,7 +303,7 @@ const Author = ({ authorName }) => {
                       className="hidden md:block rounded-t-[15px]"
                       src={
                         content?.mobile_banner?.filename
-                          ? content?.mobile_banner?.filename
+                          ? formatSrcUrl(content?.mobile_banner?.filename)
                           : "/images/not-found-image.webp"
                       }
                       alt={

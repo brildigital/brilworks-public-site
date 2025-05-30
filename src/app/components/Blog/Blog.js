@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData } from "../lib/getblog";
-import { formattedDate } from "../lib/commonFunction";
+import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";
@@ -236,7 +236,7 @@ const Blog = () => {
                       className="block md:hidden rounded-t-[15px]"
                       src={
                         content?.mobile_banner?.filename
-                          ? content?.mobile_banner?.filename
+                          ? formatSrcUrl(content?.mobile_banner?.filename)
                           : "/images/not-found-image.webp"
                       }
                       alt={
@@ -255,7 +255,7 @@ const Blog = () => {
                       className="hidden md:block rounded-t-[15px]"
                       src={
                         content?.mobile_banner?.filename
-                          ? content?.mobile_banner?.filename
+                          ? formatSrcUrl(content?.mobile_banner?.filename)
                           : "/images/not-found-image.webp"
                       }
                       alt={

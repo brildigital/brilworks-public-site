@@ -5,6 +5,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const Ebooks = () => {
   const ITEMS_PER_PAGE = 9;
@@ -101,7 +102,9 @@ const Ebooks = () => {
                       <div>
                         <Image
                           className="w-[170px] drop-shadow-book-shadow p-4 py-0 mx-auto"
-                          src={ebooks?.content?.ebookImage?.filename}
+                          src={formatSrcUrl(
+                            ebooks?.content?.ebookImage?.filename
+                          )}
                           alt={
                             ebooks?.content?.ebookImage?.alt ||
                             `Ebooks-List-${index + 1}`

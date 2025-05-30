@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioBanner from "./PortfolioBanner";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const CTASection = dynamic(() => import("../Common/CTASection"));
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
@@ -33,7 +34,7 @@ const Portfolio = ({ caseStudyData }) => {
                     <div className="relative group">
                       <Image
                         className="rounded-2xl lg:max-h-[400px] transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-                        src={content?.images?.[0]?.filename}
+                        src={formatSrcUrl(content?.images?.[0]?.filename)}
                         alt={`casestudy-${index}`}
                         width="302"
                         height="240"

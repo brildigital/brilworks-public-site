@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const UsecaseFirstSection = ({ data }) => {
   return (
@@ -28,7 +29,7 @@ const UsecaseFirstSection = ({ data }) => {
               <div className="lg:w-1/2 w-full">
                 <Image
                   className="h-full rounded-2xl"
-                  src={data?.banner_image?.filename}
+                  src={formatSrcUrl(data?.banner_image?.filename)}
                   alt={data?.banner_image?.alt}
                   width="650"
                   height="390"

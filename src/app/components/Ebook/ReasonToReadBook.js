@@ -2,6 +2,7 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const ReasonToReadBook = ({ reasonToRead }) => {
   return (
@@ -17,7 +18,7 @@ const ReasonToReadBook = ({ reasonToRead }) => {
         </p>
         <Image
           className="mt-5"
-          src={reasonToRead?.[1]?.image?.filename}
+          src={formatSrcUrl(reasonToRead?.[1]?.image?.filename)}
           alt="reason-to-read"
           width="1200"
           height="480"

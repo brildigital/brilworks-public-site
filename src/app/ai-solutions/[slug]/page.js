@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import AISolutionsFirstSection from "@/app/components/AISolutions/AISolutions";
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 
 const AISeamlessIntegration = dynamic(() =>
   import("@/app/components/AISolutions/AISeamlessIntegration")
@@ -85,8 +86,9 @@ export async function generateMetadata({ params }) {
         type: "website",
         images: [
           {
-            url:
-              og_image || storyData.story?.content?.Working[0]?.image?.filename,
+            url: formatSrcUrl(
+              og_image || storyData.story?.content?.Working[0]?.image?.filename
+            ),
           },
         ],
       },
@@ -97,9 +99,10 @@ export async function generateMetadata({ params }) {
         card: "summary_large_image",
         images: [
           {
-            url:
+            url: formatSrcUrl(
               twitter_image ||
-              storyData.story?.content?.Working[0]?.image?.filename,
+                storyData.story?.content?.Working[0]?.image?.filename
+            ),
           },
         ],
         site: "@_Brilworks",

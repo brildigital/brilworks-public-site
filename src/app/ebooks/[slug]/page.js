@@ -7,6 +7,7 @@ import EbookFirstSection from "@/app/components/Ebook/EbookFirstSection";
 import ReasonToReadBook from "@/app/components/Ebook/ReasonToReadBook";
 import OtherEbooksSection from "@/app/components/Ebook/OtherEbooksSection";
 import WhyBrilworks from "@/app/components/Ebook/WhyBrilworks";
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -104,7 +105,7 @@ export default async function Page({ params }) {
     <Suspense fallback={<FetchDataSpinner />}>
       <EbookFirstSection
         title={title}
-        imageSrc={ebookImage?.filename}
+        imageSrc={formatSrcUrl(ebookImage?.filename)}
         ebookFileUrl={ebookPdfUrl?.url}
       />
       <WhatIsInsideBookSection
@@ -119,7 +120,7 @@ export default async function Page({ params }) {
       <WhyBrilworks
         title={whyBrilworks?.[0]?.Key}
         description={whyBrilworks?.[0]?.Value}
-        imageSrc={whyBrilworks?.[1]?.image?.filename}
+        imageSrc={formatSrcUrl(whyBrilworks?.[1]?.image?.filename)}
       />
     </Suspense>
   );

@@ -3,7 +3,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { formattedDate } from "../lib/commonFunction";
+import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import Heading from "../HTMLComponents/Heading";
 
 const UseCaseSuggestion = ({ blogResponse }) => {
@@ -47,7 +47,7 @@ const UseCaseSuggestion = ({ blogResponse }) => {
                     className="rounded-t-[15px]"
                     src={
                       content?.mobile_banner?.filename
-                        ? content?.mobile_banner?.filename
+                        ? formatSrcUrl(content?.mobile_banner?.filename)
                         : "/images/not-found-image.webp"
                     }
                     alt={content?.mobile_banner?.alt || `Banner-img-${index}`}

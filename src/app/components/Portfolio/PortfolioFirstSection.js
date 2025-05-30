@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const PortfolioFirstSection = ({
   title,
@@ -38,7 +39,7 @@ const PortfolioFirstSection = ({
                       <div className="flex items-center gap-[10px] lg:text-[26px] md:text-xl text-lg text-white">
                         <Image
                           className="lg:w-8 md:w-6 w-5 lg:h-8 md:h-6 h-5 invert"
-                          src={image?.filename}
+                          src={formatSrcUrl(image?.filename)}
                           alt="person"
                           width="32"
                           height="32"
@@ -55,8 +56,8 @@ const PortfolioFirstSection = ({
                 className="rounded-2xl md:h-[650px] object-cover"
                 src={
                   images.length > 1
-                    ? images?.[1]?.filename
-                    : images?.[0]?.filename
+                    ? formatSrcUrl(images?.[1]?.filename)
+                    : formatSrcUrl(images?.[0]?.filename)
                 }
                 alt="portfolio-banner"
                 width="565"

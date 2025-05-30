@@ -9,6 +9,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const Card = dynamic(() =>
   import("@material-tailwind/react").then((mod) => mod.Card)
@@ -99,7 +100,7 @@ const TechnologyGist = ({ title, description, apiKey }) => {
                       decoding="async"
                       loading="lazy"
                       className="rounded-t-[12px]"
-                      src={content?.banner_image?.filename || ""}
+                      src={formatSrcUrl(content?.banner_image?.filename) || ""}
                       alt={
                         content?.banner_image?.alt || `Tech Q&A banner-${index}`
                       }
