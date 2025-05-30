@@ -11,6 +11,7 @@ import Link from "next/link";
 import { Card, CardBody } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const AdminDashboard = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
@@ -212,7 +213,10 @@ const AdminDashboard = () => {
                                     decoding="async"
                                     loading="lazy"
                                     className="rounded-t-[12px]"
-                                    src={content?.Image?.filename || ""}
+                                    src={
+                                      formatSrcUrl(content?.Image?.filename) ||
+                                      ""
+                                    }
                                     alt={content?.Image?.alt || "Banner image"}
                                     width="450"
                                     height="230"

@@ -3,6 +3,7 @@ import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const InsideBookParts = ({
   Title,
@@ -20,7 +21,7 @@ const InsideBookParts = ({
       <div className="lg:flex-[0.25]">
         <Image
           className="w-full h-auto"
-          src={imageData?.filename}
+          src={formatSrcUrl(imageData?.filename)}
           alt={imageData?.alt || "startegy"}
           width="302"
           height="389"

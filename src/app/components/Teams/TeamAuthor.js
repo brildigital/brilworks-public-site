@@ -8,6 +8,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import {
   convertParamsToString,
   formatPhoneNumber,
+  formatSrcUrl,
 } from "../lib/commonFunction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -172,7 +173,7 @@ const TeamAuthor = ({ authorName }) => {
                   <div className="border-[3px] rounded-full border-colorWhite">
                     <div className="xl:w-[150px] w-[100px] xl:h-[150px] h-[100px]">
                       <Image
-                        src={author.Image.filename}
+                        src={formatSrcUrl(author.Image.filename)}
                         width="150"
                         height="150"
                         alt={author.Name}

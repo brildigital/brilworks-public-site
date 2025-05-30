@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const AIWorking = ({ data }) => {
   return (
@@ -46,7 +47,11 @@ const AIWorking = ({ data }) => {
         <div>
           <Image
             className="rounded-[20px]"
-            src={data?.[0]?.banner_image?.filename ?? ""}
+            src={
+              data?.[0]?.banner_image?.filename
+                ? formatSrcUrl(data?.[0]?.banner_image?.filename)
+                : ""
+            }
             alt={data?.[0]?.image?.alt || "Image"}
             width={500}
             height={573}

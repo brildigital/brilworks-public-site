@@ -3,7 +3,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { formattedDate } from "../lib/commonFunction";
+import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { getblogData } from "../lib/getblog";
 
 const ProductSuggestion = () => {
@@ -66,10 +66,11 @@ const ProductSuggestion = () => {
             const isAdditionalProduct = slug === additionalProductSlug;
             const bannerUrl = isAdditionalProduct
               ? additionalProductSlug === "white-label-fitness-app"
-                ? "https://a.storyblok.com/f/219851/7150x4301/7cf016f5d2/white-label-fitness-app.webp"
-                : "https://a.storyblok.com/f/219851/650x391/fba0ee1023/white-label-delivery-app-banner.webp"
-              : content?.mobile_banner?.filename ||
-                "/images/not-found-image.webp";
+                ? "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/7cf016f5d2_white-label-fitness-app.webp"
+                : "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/fba0ee1023_white-label-delivery-app-banner.webp"
+              : content?.mobile_banner?.filename
+              ? formatSrcUrl(content?.mobile_banner?.filename)
+              : "/images/not-found-image.webp";
 
             const productLink = isAdditionalProduct
               ? `/product/${slug}`

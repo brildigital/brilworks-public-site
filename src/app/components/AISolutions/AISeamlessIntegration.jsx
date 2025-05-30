@@ -33,7 +33,7 @@ const AISeamlessIntegration = ({ data }) => {
             >
               <Image
                 className="sxl:w-12 md:w-8 sxl:h-12 md:h-8 w-6 h-6"
-                src={item?.image?.filename}
+                src={formatSrcUrl(item?.image?.filename)}
                 alt={item?.image?.alt}
                 width={52}
                 height={52}

@@ -3,6 +3,7 @@ import UsecaseFirstSection from "@/app/components/UseCases/UsecaseFirstSection";
 import UsecaseContentSection from "@/app/components/UseCases/UsecaseContentSection";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { notFound } from "next/navigation";
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -68,7 +69,13 @@ export async function generateMetadata({ params }) {
           "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
         locale: "en-US",
         type: "website",
-        images: [{ url: og_image || storyData.story?.mobile_banner?.filename }],
+        images: [
+          {
+            url: formatSrcUrl(
+              og_image || storyData.story?.mobile_banner?.filename
+            ),
+          },
+        ],
       },
 
       twitter: {
@@ -76,7 +83,11 @@ export async function generateMetadata({ params }) {
         description: description,
         card: "summary_large_image",
         images: [
-          { url: twitter_image || storyData.story?.mobile_banner?.filename },
+          {
+            url: formatSrcUrl(
+              twitter_image || storyData.story?.mobile_banner?.filename
+            ),
+          },
         ],
         site: "@_Brilworks",
       },

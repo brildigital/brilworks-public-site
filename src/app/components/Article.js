@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import {
   blogAuthor,
+  formatSrcUrl,
   formattedDate,
   formatTitleFromUrl,
 } from "./lib/commonFunction";
@@ -76,6 +77,7 @@ const Article = ({ blok }) => {
     return parse(html, {
       replace: (node, index) => {
         if (node.type === "tag" && node.name === "img") {
+          formatSrcUrl(node.attribs.src);
           node.attribs = {
             ...node.attribs,
             loading: "lazy",
@@ -83,6 +85,7 @@ const Article = ({ blok }) => {
             width: node.attribs.width ?? "736",
             height: node.attribs.height ?? "200",
             alt: node.attribs.alt ?? formatTitleFromUrl(node.attribs.src),
+            src: node.attribs.src ? formatSrcUrl(node.attribs.src) : "",
             title: formatTitleFromUrl(node.attribs.src),
           };
         }
@@ -519,7 +522,7 @@ const Article = ({ blok }) => {
                         className="rounded-t-[15px]"
                         src={
                           content?.mobile_banner?.filename
-                            ? content?.mobile_banner?.filename
+                            ? formatSrcUrl(content?.mobile_banner?.filename)
                             : "/images/not-found-image.webp"
                         }
                         alt={

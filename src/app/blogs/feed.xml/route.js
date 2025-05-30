@@ -1,3 +1,4 @@
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 import { getblog } from "../../components/lib/getblog";
 import { addMinutes } from "date-fns";
 import RSS from "rss";
@@ -39,7 +40,7 @@ export async function GET() {
       date: blog.adjustedDate,
       author: blog?.content?.BlogAuthor,
       enclosure: {
-        url: `${blog?.content?.image?.filename}`,
+        url: `${formatSrcUrl(blog?.content?.image?.filename)}`,
       },
     });
   });

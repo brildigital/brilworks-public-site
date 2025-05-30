@@ -1,6 +1,7 @@
 import {
   blogAuthor,
   calculateReadingTime,
+  formatSrcUrl,
   formattedDate,
 } from "@/app/components/lib/commonFunction";
 import Link from "next/link";
@@ -36,9 +37,10 @@ export async function generateMetadata({ params }) {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
       images: [
         {
-          url:
+          url: formatSrcUrl(
             story.content.metatags?.og_image ||
-            story.content?.mobile_banner?.filename,
+              story.content?.mobile_banner?.filename
+          ),
         },
       ],
     },
@@ -49,8 +51,10 @@ export async function generateMetadata({ params }) {
         story.content.metatags?.og_description ||
         story.content.metatags?.description,
       images: [
-        story?.content.metatags?.twitter_image ||
-          story?.content?.mobile_banner?.filename,
+        formatSrcUrl(
+          story?.content.metatags?.twitter_image ||
+            story?.content?.mobile_banner?.filename
+        ),
       ],
       creator: story.content.BlogAuthor,
       site: "@_Brilworks",
@@ -227,10 +231,10 @@ export default async function Page(props) {
                 >
                   <Image
                     className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                    src={
+                    src={formatSrcUrl(
                       data?.story?.content?.mobile_banner?.filename ||
-                      data?.story?.content?.image?.filename
-                    }
+                        data?.story?.content?.image?.filename
+                    )}
                     alt={
                       data?.story?.content.image?.alt ||
                       data?.story?.content?.title.replaceAll(" ", "-") +
@@ -244,10 +248,10 @@ export default async function Page(props) {
                   />
                   <Image
                     className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                    src={
+                    src={formatSrcUrl(
                       data?.story?.content.image?.filename ||
-                      data?.story?.content.mobile_banner?.filename
-                    }
+                        data?.story?.content.mobile_banner?.filename
+                    )}
                     alt={
                       data?.story?.content.image?.alt ||
                       data?.story?.content?.title.replaceAll(" ", "-") +

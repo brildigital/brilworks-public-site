@@ -10,6 +10,8 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { formToJSON } from "axios";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const HomePageBlogs = () => {
   const pathname = usePathname();
@@ -118,7 +120,7 @@ const HomePageBlogs = () => {
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
-                        src={content?.mobile_banner?.filename}
+                        src={formatSrcUrl(content?.mobile_banner?.filename)}
                         alt={content?.mobile_banner?.alt || "Blog banner"}
                         width={550}
                         height={283}
@@ -143,7 +145,9 @@ const HomePageBlogs = () => {
                   >
                     <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
                       <Image
-                        src={content?.mobile_banner?.filename || ""}
+                        src={
+                          formatSrcUrl(content?.mobile_banner?.filename) || ""
+                        }
                         alt={content?.mobile_banner?.alt || "Blog banner"}
                         className="vc_gitem-zone-img"
                         width={550}
