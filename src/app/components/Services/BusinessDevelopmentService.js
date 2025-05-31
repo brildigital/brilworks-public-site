@@ -31,7 +31,8 @@ const BusinessDevelopmentService = () => {
       value: "value-1",
       description:
         "Our experts ensure your data is accurate, consistent, and ready for analysis through cutting-edge integration and cleansing techniques.",
-      imageSrc: "https://a.storyblok.com/f/219851/640x505/f19d442ca9/bi-3.webp",
+      imageSrc:
+        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/f19d442ca9_bi-3.webp",
       imageAlt: "Seamless Integrations img",
     },
     {

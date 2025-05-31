@@ -13,7 +13,7 @@ export const metadata = {
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
-        url: "https://a.storyblok.com/f/219851/1440x796/a1882ce6ef/adalo-banner.webp",
+        url: "/images/v2/adalo-banner.webp",
       },
     ],
     locale: "en-US",
