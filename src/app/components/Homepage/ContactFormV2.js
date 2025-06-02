@@ -38,8 +38,6 @@ const ContactFormV2 = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    console.log({ ...formData, page: pathname });
-
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
