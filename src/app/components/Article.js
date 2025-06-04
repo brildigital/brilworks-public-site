@@ -77,7 +77,6 @@ const Article = ({ blok }) => {
     return parse(html, {
       replace: (node, index) => {
         if (node.type === "tag" && node.name === "img") {
-          formatSrcUrl(node.attribs.src);
           node.attribs = {
             ...node.attribs,
             loading: "lazy",

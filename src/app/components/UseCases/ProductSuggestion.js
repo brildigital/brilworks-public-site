@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { getblogData } from "../lib/getblog";
+import Heading from "../HTMLComponents/Heading";
 
 const ProductSuggestion = () => {
   const [blogData, setBlogData] = useState([]);
@@ -58,69 +59,80 @@ const ProductSuggestion = () => {
   );
 
   return (
-    <div className="grid h-full xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
-      {filteredBlogData.length ? (
-        filteredBlogData
-          .slice(0, 4)
-          .map(({ slug, name, content, published_at }, index) => {
-            const isAdditionalProduct = slug === additionalProductSlug;
-            const bannerUrl = isAdditionalProduct
-              ? additionalProductSlug === "white-label-fitness-app"
-                ? "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/7cf016f5d2_white-label-fitness-app.webp"
-                : "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/fba0ee1023_white-label-delivery-app-banner.webp"
-              : content?.mobile_banner?.filename
-              ? formatSrcUrl(content?.mobile_banner?.filename)
-              : "/images/not-found-image.webp";
+    <div className="flex flex-col px-4">
+      <div>
+        <Heading
+          type="h2"
+          className="lg:!text-[34px] md:!text-3xl !text-2xl !my-5"
+          text="You might also like"
+        />
+      </div>
+      <div className="grid h-full xl:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center gap-[2rem]">
+        {filteredBlogData.length ? (
+          filteredBlogData
+            .slice(0, 4)
+            .map(({ slug, name, content, published_at }, index) => {
+              const isAdditionalProduct = slug === additionalProductSlug;
+              const bannerUrl = isAdditionalProduct
+                ? additionalProductSlug === "white-label-fitness-app"
+                  ? "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/7cf016f5d2_white-label-fitness-app.webp"
+                  : "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/fba0ee1023_white-label-delivery-app-banner.webp"
+                : content?.mobile_banner?.filename
+                ? formatSrcUrl(content?.mobile_banner?.filename)
+                : "/images/not-found-image.webp";
 
-            const productLink = isAdditionalProduct
-              ? `/product/${slug}`
-              : `/blog/${slug}`;
+              const productLink = isAdditionalProduct
+                ? `/product/${slug}`
+                : `/blog/${slug}`;
 
-            return (
-              <div
-                key={index}
-                className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
-              >
-                <Link
-                  as={productLink}
-                  href={productLink}
-                  target="_blank"
-                  rel="external"
+              return (
+                <div
+                  key={index}
+                  className="border-[1px] border-[#80808038] rounded-[30px] blog_flex_30"
                 >
-                  <div className="sec9_img1">
-                    <Image
-                      className="rounded-[30px]"
-                      src={bannerUrl}
-                      alt={content?.mobile_banner?.alt || `Banner-img-${index}`}
-                      width={550}
-                      height={283}
-                    />
-                  </div>
-                  <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                    <div className="border-b-[1px] border-[#80808038] py-[1rem]">
-                      <p className="entry-title default-max-width aspect-[518/116]">
-                        {name}
-                      </p>
+                  <Link
+                    as={productLink}
+                    href={productLink}
+                    target="_blank"
+                    rel="external"
+                  >
+                    <div className="sec9_img1">
+                      <Image
+                        className="rounded-[30px]"
+                        src={bannerUrl}
+                        alt={
+                          content?.mobile_banner?.alt || `Banner-img-${index}`
+                        }
+                        width={550}
+                        height={283}
+                      />
                     </div>
-                    <div className="sec9_txt2 mt-[1.5rem]">
-                      <p className="publish_date">
-                        {formattedDate(
-                          !isAdditionalProduct
-                            ? content?.Published
-                            : published_at
-                        )}
-                      </p>
+                    <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                      <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                        <p className="entry-title default-max-width aspect-[518/116]">
+                          {name}
+                        </p>
+                      </div>
+                      <div className="sec9_txt2 mt-[1.5rem]">
+                        <p className="publish_date">
+                          {formattedDate(
+                            !isAdditionalProduct
+                              ? content?.Published
+                              : published_at
+                          )}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })
-      ) : (
-        <div className="flex items-center justify-center p-24">
-          <FetchDataSpinner />
-        </div>
-      )}
+                  </Link>
+                </div>
+              );
+            })
+        ) : (
+          <div className="flex items-center justify-center p-24">
+            <FetchDataSpinner />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
