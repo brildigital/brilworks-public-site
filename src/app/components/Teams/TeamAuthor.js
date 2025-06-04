@@ -9,6 +9,7 @@ import {
   convertParamsToString,
   formatPhoneNumber,
   formatSrcUrl,
+  formatTitleFromUrl,
 } from "../lib/commonFunction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -42,7 +43,10 @@ const TeamAuthor = ({ authorName }) => {
           node.attribs.decoding = "async";
           node.attribs.width = "736";
           node.attribs.height = "200";
-          node.attribs.alt = "banner-image";
+          node.attribs.alt =
+            formatTitleFromUrl(node.attribs.src) || "banner-image";
+          node.attribs.src = formatSrcUrl(node.attribs.src) || "";
+          node.attribs.title = formatTitleFromUrl(node.attribs.src);
         }
 
         if (node.type === "tag" && node.name === "a") {

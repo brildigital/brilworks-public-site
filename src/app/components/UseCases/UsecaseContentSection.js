@@ -8,6 +8,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
 import dynamic from "next/dynamic";
+import { formatSrcUrl, formatTitleFromUrl } from "../lib/commonFunction";
 const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
 const UseCaseSuggestion = dynamic(() => import("./UseCaseSuggestion"));
 
@@ -25,6 +26,9 @@ const UsecaseContentSection = ({ content, FAQData }) => {
         if (node.type === "tag" && node.name === "img") {
           node.attribs.loading = "lazy";
           node.attribs.decoding = "async";
+          node.attribs.alt = formatTitleFromUrl(node.attribs.src);
+          node.attribs.src = formatSrcUrl(node.attribs.src) || "";
+          node.attribs.title = formatTitleFromUrl(node.attribs.src);
         }
 
         if (node.type === "tag" && node.name === "a") {
