@@ -62,7 +62,7 @@ const ExploreFreeDesign = () => {
       description:
         "Create scroll-stopping social media posts and chat with your AI creative partner.",
       image: "/images/v2/free_ui_7.webp",
-      link: "https://www.figma.com/design/6smftAOB4XxlfvvzY9SFe4/CreAItive?node-id=0-1&t=zcQKc02TAvhFAusH-1",
+      link: "https://www.figma.com/proto/6smftAOB4XxlfvvzY9SFe4/CreAItive?page-id=0%3A1&node-id=[…]&t=A9t4VnfWY7a0AJoe-1&scaling=scale-down&content-scaling=fixed",
     },
     {
       title: "BookRide",
