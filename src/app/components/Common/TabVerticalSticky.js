@@ -142,7 +142,7 @@ const TabVerticalSticky = ({
                 } ${
                   useCaseSection
                     ? "rounded-2xl md:!pl-5 md:!py-6 !py-4"
-                    : "md:!pl-10 md:!py-7.5 !py-4"
+                    : "md:!pl-10 md:!py-7.5 slg:!py-4 smallDesktop:!py-7.5 !py-4"
                 } justify-start md:gap-5 gap-2 !w-full`}
                 key={index}
               >
@@ -205,7 +205,7 @@ const TabVerticalSticky = ({
                     {data?.[0]?.innerTitle || data?.[0]?.title}
                   </h3>
                   <p
-                    className={`md:text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}
+                    className={`md:text-lg slg:!text-base smallDesktop:!text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}
                   >
                     {data?.[0]?.description}
                   </p>
@@ -256,7 +256,7 @@ const TabVerticalSticky = ({
                 className="stickysection__item flex items-start justify-start w-full"
                 key={index}
               >
-                <div className="w-full rounded-2xl lg:mb-10 mb-8 stickysection__item">
+                <div className="w-full rounded-2xl lg:mb-10 slg:!mb-4 smallDesktop:!mb-10 mb-8 stickysection__item">
                   <Image
                     src={imageSrc}
                     width={830}
@@ -288,7 +288,7 @@ const TabVerticalSticky = ({
                       </div>
                     ) : (
                       <p
-                        className={`md:text-lg text-base md:pb-5 pb-4 ${themeBaseText}`}
+                        className={`md:text-lg slg:!text-base smallDesktop:!text-lg md:pb-5 pb-4 ${themeBaseText}`}
                       >
                         {description}
                       </p>

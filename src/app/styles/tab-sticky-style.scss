@@ -7,6 +7,9 @@
     position: sticky;
     min-height: 600px;
     // min-height: 80vh;
+    @media only screen and (max-width: 1366px) and (min-width: 980px) {
+      top: 50px;
+    }
 
     ul {
       li {
@@ -112,6 +115,11 @@
   min-height: 600px;
   margin-bottom: -750px;
   // margin-bottom: -80vh;
+
+  @media only screen and (max-width: 1366px) and (min-width: 980px) {
+    min-height: 780px;
+    top: 50px;
+  }
 
   .stickysection__item {
     opacity: 1;

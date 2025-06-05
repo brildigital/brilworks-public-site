@@ -16,6 +16,7 @@ module.exports = {
         mobile: "535px",
         slg: "980px",
         sxl: "1200px",
+        smallDesktop: "1366px",
         "3xl": "1680px",
       },
       fontFamily: {
