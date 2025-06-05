@@ -303,3 +303,19 @@ export function formatSrcUrl(url) {
 
   return fileURL;
 }
+
+export const isExternalLink = (href) => {
+  const allowedDomains = [
+    "brilworks.com",
+    "www.brilworks.com",
+    "www.appypie.com",
+    "https://scientificasia.net/artificial-intelligence-ai/",
+    "https://www.adobe.com/express/create/logo",
+  ];
+
+  return (
+    !href.startsWith("/") &&
+    !href.startsWith("..") &&
+    !allowedDomains.some((domain) => href.includes(domain))
+  );
+};

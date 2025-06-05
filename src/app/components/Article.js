@@ -13,6 +13,7 @@ import {
   formatSrcUrl,
   formattedDate,
   formatTitleFromUrl,
+  isExternalLink,
 } from "./lib/commonFunction";
 import BlogContactForm from "./Blog/BlogContactForm";
 import BlogFAQ from "./Blog/BlogFAQ";
@@ -93,22 +94,10 @@ const Article = ({ blok }) => {
           if (!notNewTabRedirect.includes(node.attribs.href)) {
             node.attribs.target = "_blank";
           }
-          if (
-            node.attribs.href &&
-            !(
-              node.attribs.href.includes("brilworks.com") ||
-              node.attribs.href.startsWith("/") || // Handles relative URLs
-              node.attribs.href.includes("www.brilworks.com") ||
-              node.attribs.href.includes("www.appypie.com") ||
-              node.attribs.href.includes(
-                "https://scientificasia.net/artificial-intelligence-ai/"
-              ) ||
-              node.attribs.href.startsWith("..")
-            )
-          ) {
-            node.attribs.rel = "nofollow noopener";
-          } else {
-            node.attribs.rel = "noopener";
+          if (node.attribs.href) {
+            node.attribs.rel = isExternalLink(node.attribs.href)
+              ? "nofollow noopener"
+              : "noopener";
           }
         }
         return node;
