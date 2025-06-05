@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
-import Image from "next/image";
 import { formatSrcUrl } from "../lib/commonFunction";
 
 const ReasonToReadBook = ({ reasonToRead }) => {
@@ -31,7 +30,6 @@ const ReasonToReadBook = ({ reasonToRead }) => {
               scrollingButton
             />
           </div> */}
-        </div>
       </div>
     </div>
   );
