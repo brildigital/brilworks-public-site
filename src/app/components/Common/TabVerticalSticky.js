@@ -258,6 +258,7 @@ const TabVerticalSticky = ({
               >
                 <div className="w-full rounded-2xl lg:mb-10 slg:!mb-4 smallDesktop:!mb-10 mb-8 stickysection__item">
                   <Image
+                    className="lg:w-3/4 smallDesktop:w-full"
                     src={imageSrc}
                     width={830}
                     height={350}
