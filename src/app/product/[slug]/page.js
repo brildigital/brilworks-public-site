@@ -72,7 +72,8 @@ export async function generateMetadata({ params }) {
         images: [
           {
             url: formatSrcUrl(
-              og_image || storyData.story?.mobile_banner?.filename
+              og_image ||
+                storyData.story?.content?.title_section?.banner_image?.filename
             ),
           },
         ],
@@ -85,7 +86,8 @@ export async function generateMetadata({ params }) {
         images: [
           {
             url: formatSrcUrl(
-              twitter_image || storyData.story?.mobile_banner?.filename
+              twitter_image ||
+                storyData.story?.content?.title_section?.banner_image?.filename
             ),
           },
         ],
