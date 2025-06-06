@@ -311,6 +311,7 @@ export const isExternalLink = (href) => {
     "www.appypie.com",
     "https://scientificasia.net/artificial-intelligence-ai/",
     "https://www.adobe.com/express/create/logo",
+    "https://www.veed.io/tools/text-to-speech-video",
   ];
 
   return (
