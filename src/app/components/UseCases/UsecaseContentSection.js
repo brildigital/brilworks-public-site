@@ -8,7 +8,11 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import blogResponse from "../../components/lib/blogResponse.json";
 import { notNewTabRedirect } from "../lib/constants";
 import dynamic from "next/dynamic";
-import { formatSrcUrl, formatTitleFromUrl } from "../lib/commonFunction";
+import {
+  formatSrcUrl,
+  formatTitleFromUrl,
+  isExternalLink,
+} from "../lib/commonFunction";
 const ProductSuggestion = dynamic(() => import("./ProductSuggestion"));
 const UseCaseSuggestion = dynamic(() => import("./UseCaseSuggestion"));
 
@@ -35,13 +39,10 @@ const UsecaseContentSection = ({ content, FAQData }) => {
           if (!notNewTabRedirect.includes(node.attribs.href)) {
             node.attribs.target = "_blank";
           }
-          if (
-            node.attribs.href &&
-            !node.attribs.href.includes("brilworks.com")
-          ) {
-            node.attribs.rel = "nofollow noopener";
-          } else {
-            node.attribs.rel = "noopener";
+          if (node.attribs.href) {
+            node.attribs.rel = isExternalLink(node.attribs.href)
+              ? "nofollow noopener"
+              : "noopener";
           }
         }
         return node;
