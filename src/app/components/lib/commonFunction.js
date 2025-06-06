@@ -285,6 +285,7 @@ export function formatTitleFromUrl(url) {
     .join(" "); // Join words with spaces
 }
 export function formatSrcUrl(url) {
+  if (!url) return "";
   const urlParts = url.split("/");
 
   // Get the asset ID (second last segment)
