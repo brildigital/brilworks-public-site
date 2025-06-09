@@ -313,6 +313,7 @@ export const isExternalLink = (href) => {
     "https://scientificasia.net/artificial-intelligence-ai/",
     "https://www.adobe.com/express/create/logo",
     "https://www.veed.io/tools/text-to-speech-video",
+    "https://www.goodfirms.co/artificial-intelligence/usa",
   ];
 
   return (
