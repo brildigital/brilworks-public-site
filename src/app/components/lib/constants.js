@@ -731,6 +731,36 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "7 Types of Apps You Can Build with NodeJS in 2025",
+    loc: "https://www.brilworks.com/blog/types-of-nodejs-applications/",
+    lastmod: "2025-06-11T07:49:58.548Z",
+  },
+  {
+    name: "Accelerate Your App Development Go-To-Market Strategy ",
+    loc: "https://www.brilworks.com/blog/accelerate-app-development-gtm-strategy/",
+    lastmod: "2025-06-09T13:29:01.201Z",
+  },
+  {
+    name: "Top JavaScript Frameworks Comparison for Web Development in 2025",
+    loc: "https://www.brilworks.com/blog/javascript-web-frameworks-comparison/",
+    lastmod: "2025-06-10T06:19:15.968Z",
+  },
+  {
+    name: "React Native vs Electron: A Developer’s Guide to Cross-Platform App Development",
+    loc: "https://www.brilworks.com/blog/react-native-vs-electron/",
+    lastmod: "2025-06-09T07:45:34.854Z",
+  },
+  {
+    name: "Node.js vs Spring Boot",
+    loc: "https://www.brilworks.com/blog/node-js-vs-spring-boot/",
+    lastmod: "2025-06-09T07:15:39.471Z",
+  },
+  {
+    name: "Agentic vs Generative AI: Which One Fits Your Needs?",
+    loc: "https://www.brilworks.com/blog/generative-ai-vs-agentic-ai/",
+    lastmod: "2025-06-06T13:51:38.068Z",
+  },
+  {
     name: "Why Software Development Projects Fail (And How to Stop Yours from Doing the Same)",
     loc: "https://www.brilworks.com/blog/why-software-projects-fail/",
     lastmod: "2025-06-06T07:48:09.024Z",
@@ -778,7 +808,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 Generative AI Programming Languages",
     loc: "https://www.brilworks.com/blog/top-generative-ai-programming-languages/",
-    lastmod: "2025-05-28T09:55:55.747Z",
+    lastmod: "2025-06-09T10:20:22.139Z",
   },
   {
     name: "15 Best NodeJS Libraries for Backend Development in 2025",
@@ -1438,7 +1468,7 @@ export const blogListStaticData = [
   {
     name: "The State of Generative AI in 2025",
     loc: "https://www.brilworks.com/blog/state-of-generative-ai/",
-    lastmod: "2025-02-20T08:17:43.121Z",
+    lastmod: "2025-06-11T07:31:30.458Z",
   },
   {
     name: "AWS IoT Device Management: Features and How It Works",
