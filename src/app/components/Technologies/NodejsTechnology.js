@@ -103,6 +103,7 @@ const techStackList = [
 
 const nodeJSService = {
   title: "Build Lightning-Fast Solutions With Our Node.js Development Services",
+  desc: "Backed by years of specialized experience, our Node.js developers deliver enterprise-grade solutions that combine technical excellence with strategic business alignment.",
   buttonText: "Get a Quote for your Project",
   servicesList: [
     {
@@ -110,42 +111,42 @@ const nodeJSService = {
       value: "nodejs-1",
       imageSrc: "/images/v2/web-development.webp",
       description:
-        "We engineer high-traffic web applications that outperform industry benchmarks. Leveraging Node.js’s event-driven architecture, we build solutions that maintain sub-second response times, even with 10,000+ concurrent users. Our battle-tested approach ensures seamless scalability and 24/7 reliability.",
+        "We engineer high-traffic web applications that outperform industry benchmarks. Our deep understanding of Node.js’s event-driven architecture enables us to build solutions that maintain sub-second response times.",
     },
     {
       title: "API Development & Integration",
       value: "nodejs-2",
       imageSrc: "/images/v2/api-dev.webp",
       description:
-        "Our track record includes 100+ mission-critical API implementations. We design RESTful/GraphQL APIs with military-grade security and 99.99% uptime SLAs, having integrated complex ecosystems spanning fintech platforms, IoT networks, and global ERP systems.",
+        "Our track record includes 100+ mission-critical API implementations. We design secure RESTful/GraphQL APIs and 99.99% uptime SLAs, having integrated complex ecosystems spanning fintech platforms, IoT networks, and global ERP systems.",
     },
     {
-      title: "Legacy Modernization Leadership",
+      title: "Legacy Application Modernization",
       value: "nodejs-3",
       imageSrc: "/images/v2/legacy-modernization-leadership.webp",
       description:
-        "We’ve successfully migrated 50+ legacy systems to Node.js with zero business disruption. Our phased modernization approach combines reverse-engineering expertise with future-ready architecture design, typically achieving 3x performance improvements and 40% maintenance cost reductions.",
+        "We’ve successfully migrated 50+ legacy systems to Node.js with zero business disruption. Our phased modernization approach combines reverse-engineering expertise with future-ready architecture design.",
     },
     {
-      title: "Real-Time Solution Specialists",
+      title: "Microservices Development",
       value: "nodejs-4",
-      imageSrc: "/images/v2/real-time-solution-specialists.webp",
-      description:
-        "Developers of enterprise-ready real-time systems, we create collaborative platforms and live data solutions using Node.js’s native capabilities. Our implementations power mission-critical communication tools and instant-update interfaces across industries.",
-    },
-    {
-      title: "Microservices Architecture Authority",
-      value: "nodejs-5",
       imageSrc: "/images/v2/microservices-architecture-authority.webp",
       description:
         "Architects of 50+ production-grade Node.js microservices ecosystems, we implement containerized, Kubernetes-optimized solutions that enable true CI/CD. Our modular designs have helped enterprises achieve 5x faster feature deployments.",
     },
     {
-      title: "Serverless Development Innovators",
-      value: "nodejs-6",
+      title: "Serverless Development",
+      value: "nodejs-5",
       imageSrc: "/images/v2/serverless-development-innovators.webp",
       description:
-        "Leaders in serverless Node.js implementations, we optimize cloud costs while maintaining elastic scalability. Our solutions have reduced clients’ infrastructure expenses by 60%+ through intelligent AWS Lambda/Azure Functions architectures.",
+        "We are a top-rated app development company in serverless Node.js implementations. We optimize cloud costs by reducing infrastructure expenses through intelligent cloud management.",
+    },
+    {
+      title: "Node js Consulting",
+      value: "nodejs-6",
+      imageSrc: "/images/v2/node-js-consulting.webp",
+      description:
+        "Run high-performance Node.js applications with precision, backed by expert guidance and strategic support from our team. Whether you're launching your first Node.js project or optimizing for enterprise-scale growth, our consulting services deliver the insights and solutions you need to succeed.",
     },
   ],
 };
