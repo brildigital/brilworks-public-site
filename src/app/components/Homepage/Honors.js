@@ -34,6 +34,12 @@ const Honors = () => {
 
   const slidesData = [
     {
+      link: "https://www.goodfirms.co/company/brilworks-software-llp",
+      imgSrc: "/images/top-software-development-companies-goodfirms.svg",
+      imgAlt: "top software development company goodfirms",
+      text: "Top Software Development Company",
+    },
+    {
       link: "https://www.adalo.com/experts/brilworks-software",
       imgSrc: "/images/review-adalo.png",
       imgAlt: "adalo expert",
