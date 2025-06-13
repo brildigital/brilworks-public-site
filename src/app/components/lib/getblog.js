@@ -198,3 +198,40 @@ export async function getblogDataCategorization(
     totalData: stories.total,
   };
 }
+
+export async function getBlogForSitemap() {
+  let allStories = [];
+  let page = 1;
+  let hasMoreData = true;
+
+  while (hasMoreData) {
+    const response = await Storyblok.get("cdn/stories", {
+      starts_with: "blog/",
+      page,
+      per_page: 100,
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      filter_query: {
+        component: {
+          in: "article",
+        },
+      },
+    });
+
+    const storyData = response.data.stories;
+    allStories = [...allStories, ...storyData];
+
+    // Stop if there are fewer than 100 items in the response (last page)
+    hasMoreData = storyData.length === 100;
+    page += 1;
+  }
+
+  const blogSiteMapData = allStories.map((data) => {
+    return {
+      name: data.name,
+      loc: `https://www.brilworks.com/${data.full_slug}/`,
+      lastmod: `${data.published_at}`,
+    };
+  });
+
+  return blogSiteMapData;
+}

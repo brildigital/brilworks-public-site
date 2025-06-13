@@ -731,6 +731,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Most Popular Backend Frameworks for Web Development ",
+    loc: "https://www.brilworks.com/blog/most-popular-backend-frameworks/",
+    lastmod: "2025-06-12T08:05:16.257Z",
+  },
+  {
+    name: "Exploring The Limitations of React Native Development",
+    loc: "https://www.brilworks.com/blog/react-native-limitations/",
+    lastmod: "2025-06-12T07:54:19.968Z",
+  },
+  {
     name: "7 Types of Apps You Can Build with NodeJS in 2025",
     loc: "https://www.brilworks.com/blog/types-of-nodejs-applications/",
     lastmod: "2025-06-11T07:49:58.548Z",
@@ -1323,7 +1333,7 @@ export const blogListStaticData = [
   {
     name: " 7 Java Profiling Tools That Will Skyrocket Your Productivity",
     loc: "https://www.brilworks.com/blog/java-profiling-tools/",
-    lastmod: "2024-12-17T12:02:25.745Z",
+    lastmod: "2025-06-12T05:56:37.596Z",
   },
   {
     name: "What's New in Java 21 ",
@@ -1778,7 +1788,7 @@ export const blogListStaticData = [
   {
     name: "Embracing AI: How Artificial Intelligence is Revolutionizing Professional Services",
     loc: "https://www.brilworks.com/blog/how-artificial-intelligence-is-revolutionizing-professional-services/",
-    lastmod: "2025-05-28T07:50:23.899Z",
+    lastmod: "2025-06-12T06:05:52.473Z",
   },
   {
     name: "Top 10 Mobile App Testing Tools",
@@ -1803,7 +1813,7 @@ export const blogListStaticData = [
   {
     name: "What Is Generative AI? Exploring the Future of Creative AI Applications",
     loc: "https://www.brilworks.com/blog/generative-ai-exploring-the-future-of-creative-ai-applications/",
-    lastmod: "2024-07-31T16:05:27.003Z",
+    lastmod: "2025-06-12T09:26:18.405Z",
   },
   {
     name: "The Basics of Scrum: A Comprehensive Overview",
