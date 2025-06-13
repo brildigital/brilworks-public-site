@@ -310,6 +310,7 @@ export const isExternalLink = (href) => {
     "brilworks.com",
     "www.brilworks.com",
     "www.appypie.com",
+    "visdum.com",
     "https://scientificasia.net/artificial-intelligence-ai/",
     "https://www.adobe.com/express/create/logo",
     "https://www.veed.io/tools/text-to-speech-video",
