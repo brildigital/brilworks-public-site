@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
-import { getblogData } from "../lib/getblog";
+import { getblogData, getBlogForSitemap } from "../lib/getblog";
 import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
@@ -21,13 +21,15 @@ const Blog = () => {
   const router = useRouter();
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
-  // const staticBlogList = blogDataPerPage.map((data) => {
-  //   return {
-  //     name: data.name,
-  //     loc: `https://www.brilworks.com/${data.full_slug}/`,
-  //     lastmod: `${data.published_at}`,
-  //   };
-  // });
+  // const fetchAllData = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     const blogData = await getBlogForSitemap();
+  //     console.log(blogData);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -51,6 +53,7 @@ const Blog = () => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
+        // fetchAllData();
         window.scrollTo({ top: 0 });
       },
       searchQuery ? 1000 : 0
