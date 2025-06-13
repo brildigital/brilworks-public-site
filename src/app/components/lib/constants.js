@@ -731,6 +731,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Node.js vs PHP: Which Performs Better for Backend Development",
+    loc: "https://www.brilworks.com/blog/nodejs-vs-php/",
+    lastmod: "2025-06-13T12:35:19.969Z",
+  },
+  {
+    name: "Mastering Java Stream API in Java: From Basics to Best Practices",
+    loc: "https://www.brilworks.com/blog/java-stream-api/",
+    lastmod: "2025-06-13T09:20:28.612Z",
+  },
+  {
     name: "Most Popular Backend Frameworks for Web Development ",
     loc: "https://www.brilworks.com/blog/most-popular-backend-frameworks/",
     lastmod: "2025-06-12T08:05:16.257Z",
@@ -1658,7 +1668,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-05-08T05:33:41.798Z",
+    lastmod: "2025-06-13T10:27:26.628Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
@@ -2006,7 +2016,7 @@ export const blogListStaticData = [
     lastmod: "2025-04-15T08:23:25.777Z",
   },
   {
-    name: "Top Node.js Frameworks For Web Development in 2023",
+    name: "Top Node.js Frameworks For Web Development",
     loc: "https://www.brilworks.com/blog/top-node-js-frameworks-for-web-development/",
     lastmod: "2025-05-16T11:34:57.207Z",
   },
