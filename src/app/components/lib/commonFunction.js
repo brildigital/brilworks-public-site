@@ -316,6 +316,7 @@ export const isExternalLink = (href) => {
     "https://www.veed.io/tools/text-to-speech-video",
     "https://www.goodfirms.co/artificial-intelligence/usa",
     "https://www.editpad.org/tool/paraphrasing-tool",
+    "https://middleware.io/product/infrastructure-monitoring/",
   ];
 
   return (
