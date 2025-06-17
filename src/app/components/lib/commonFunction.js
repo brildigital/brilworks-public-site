@@ -315,6 +315,7 @@ export const isExternalLink = (href) => {
     "https://www.adobe.com/express/create/logo",
     "https://www.veed.io/tools/text-to-speech-video",
     "https://www.goodfirms.co/artificial-intelligence/usa",
+    "https://www.editpad.org/tool/paraphrasing-tool",
   ];
 
   return (
