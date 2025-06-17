@@ -731,6 +731,26 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: " How to Build Scalable Rest API with Node.js",
+    loc: "https://www.brilworks.com/blog/how-to-build-rest-api-with-nodejs/",
+    lastmod: "2025-06-16T12:38:16.641Z",
+  },
+  {
+    name: "Jakarta EE vs Spring Boot: A Practical Guide for Java Developers",
+    loc: "https://www.brilworks.com/blog/jakarta-ee-vs-spring-boot/",
+    lastmod: "2025-06-16T07:57:17.666Z",
+  },
+  {
+    name: "Node.js vs PHP: Which Performs Better for Backend Development",
+    loc: "https://www.brilworks.com/blog/nodejs-vs-php/",
+    lastmod: "2025-06-13T12:35:19.969Z",
+  },
+  {
+    name: "Mastering Java Stream API in Java: From Basics to Best Practices",
+    loc: "https://www.brilworks.com/blog/java-stream-api/",
+    lastmod: "2025-06-13T09:20:28.612Z",
+  },
+  {
     name: "Most Popular Backend Frameworks for Web Development ",
     loc: "https://www.brilworks.com/blog/most-popular-backend-frameworks/",
     lastmod: "2025-06-12T08:05:16.257Z",
@@ -1498,7 +1518,7 @@ export const blogListStaticData = [
   {
     name: "The Roadmap to Successful AI Implementation",
     loc: "https://www.brilworks.com/blog/roadmap-to-successful-ai-implementation/",
-    lastmod: "2024-09-11T07:18:10.929Z",
+    lastmod: "2025-06-16T06:24:52.213Z",
   },
   {
     name: "10 Ways to Improve AI Model Efficiency",
