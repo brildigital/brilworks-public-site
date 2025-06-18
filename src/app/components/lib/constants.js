@@ -731,6 +731,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Understanding React Native Fabric and How to Implement It in Your Project",
+    loc: "https://www.brilworks.com/blog/react-native-fabric/",
+    lastmod: "2025-06-18T09:08:25.270Z",
+  },
+  {
+    name: "React Native vs Swift: A Complete Comparison for Developers",
+    loc: "https://www.brilworks.com/blog/react-native-vs-swift/",
+    lastmod: "2025-06-17T06:49:36.571Z",
+  },
+  {
     name: " How to Build Scalable Rest API with Node.js",
     loc: "https://www.brilworks.com/blog/how-to-build-rest-api-with-nodejs/",
     lastmod: "2025-06-16T12:38:16.641Z",
@@ -808,7 +818,7 @@ export const blogListStaticData = [
   {
     name: "How to Build an MVP with React Native [A Guide for Startups]",
     loc: "https://www.brilworks.com/blog/how-to-build-an-mvp-with-react-native-guide/",
-    lastmod: "2025-06-04T10:36:37.625Z",
+    lastmod: "2025-06-17T12:13:16.958Z",
   },
   {
     name: "IT Infrastructure Trends Every CIO Should Know (And How to Act on Them)",
@@ -1153,7 +1163,7 @@ export const blogListStaticData = [
   {
     name: "7 Key Mobile App Monetization Strategies: A Guide to Earning from Your App",
     loc: "https://www.brilworks.com/blog/mobile-app-monetization-strategies/",
-    lastmod: "2025-05-09T09:38:08.713Z",
+    lastmod: "2025-06-18T07:01:28.340Z",
   },
   {
     name: "The Role of Cloud Integration in Mobile Apps",
@@ -1458,7 +1468,7 @@ export const blogListStaticData = [
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
     loc: "https://www.brilworks.com/blog/10-best-online-business-ideas-with-minimal-investment/",
-    lastmod: "2024-12-23T09:43:21.672Z",
+    lastmod: "2025-06-17T10:31:04.451Z",
   },
   {
     name: "How to Create An App and Make Money in 2025",
@@ -1628,7 +1638,7 @@ export const blogListStaticData = [
   {
     name: " A Guide to Building Efficient Solutions with the AWS Well-Architected Framework",
     loc: "https://www.brilworks.com/blog/a-guide-to-aws-well-architected-framework/",
-    lastmod: "2024-08-13T07:10:31.787Z",
+    lastmod: "2025-06-18T12:16:54.852Z",
   },
   {
     name: "Get the Most Out of AWS: Streamline Operations, Reduce Costs with AWS Consulting",
@@ -1663,7 +1673,7 @@ export const blogListStaticData = [
   {
     name: "How Much Does it Cost to Develop a React Native App?",
     loc: "https://www.brilworks.com/blog/react-native-development-cost/",
-    lastmod: "2025-05-12T09:09:57.165Z",
+    lastmod: "2025-06-18T06:56:42.147Z",
   },
   {
     name: "How AWS Development Benefits Businesses",
@@ -1678,7 +1688,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-06-13T10:27:26.628Z",
+    lastmod: "2025-06-18T11:57:50.490Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
@@ -2048,7 +2058,7 @@ export const blogListStaticData = [
   {
     name: "Popular React Native Apps [in 2025]",
     loc: "https://www.brilworks.com/blog/top-popular-apps-built-with-react-native/",
-    lastmod: "2025-03-05T09:18:38.596Z",
+    lastmod: "2025-06-18T10:14:32.805Z",
   },
   {
     name: "Top 10 Websites Built Using React.js",
