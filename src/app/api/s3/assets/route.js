@@ -94,9 +94,20 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+
     const timestamp = Date.now();
+    const sanitizeFileName = (filename) => {
+      return filename
+        .trim()
+        .replace(/\s+/g, "_") // Replace spaces with underscores
+        .replace(/[+,]/g, "") // Remove + and ,
+        .replace(/[^\w.-]/g, "") // Remove other unsafe characters
+        .replace(/__+/g, "_"); // Collapse double underscores
+    };
+
     const fileExtension = name.split(".").pop();
-    const baseName = name.replace(/\s+/g, "_").replace(/\.[^.]+$/, "");
+
+    const baseName = sanitizeFileName(name.replace(/\.[^.]+$/, ""));
     const fileKey = `assets/${baseName}-${timestamp}.${fileExtension}`;
 
     const command = new PutObjectCommand({
