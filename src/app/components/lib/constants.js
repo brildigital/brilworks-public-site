@@ -731,6 +731,11 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
+    loc: "https://www.brilworks.com/blog/nodejs-usage-statistics/",
+    lastmod: "2025-06-18T13:15:29.324Z",
+  },
+  {
     name: "Understanding React Native Fabric and How to Implement It in Your Project",
     loc: "https://www.brilworks.com/blog/react-native-fabric/",
     lastmod: "2025-06-18T09:08:25.270Z",
