@@ -206,6 +206,34 @@ export async function getblogDataCategorization(
   };
 }
 
+export async function getblogForFeed() {
+  let allStories = [];
+  let page = 1;
+  let hasMoreData = true;
+
+  while (hasMoreData) {
+    const response = await Storyblok.get("cdn/stories", {
+      starts_with: "blog/",
+      page,
+      per_page: 100,
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      filter_query: {
+        component: {
+          in: "article",
+        },
+      },
+    });
+
+    const storyData = response.data.stories;
+    allStories.push(...storyData);
+
+    hasMoreData = storyData.length === 100;
+    page++;
+  }
+
+  return allStories;
+}
+
 export async function getBlogForSitemap() {
   let allStories = [];
   let page = 1;
