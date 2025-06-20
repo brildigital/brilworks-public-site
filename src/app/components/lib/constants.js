@@ -731,6 +731,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Strategic Guide to Hire Java Developers for Your Next Project",
+    loc: "https://www.brilworks.com/blog/guide-to-hire-java-developers/",
+    lastmod: "2025-06-20T11:32:58.248Z",
+  },
+  {
+    name: "Vue vs React: The Definitive Comparison for Developers",
+    loc: "https://www.brilworks.com/blog/react-vs-vue/",
+    lastmod: "2025-06-20T06:06:51.492Z",
+  },
+  {
     name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
     loc: "https://www.brilworks.com/blog/nodejs-usage-statistics/",
     lastmod: "2025-06-18T13:15:29.324Z",
@@ -918,7 +928,7 @@ export const blogListStaticData = [
   {
     name: "White Label vs Custom Development",
     loc: "https://www.brilworks.com/blog/white-label-vs-custom-development/",
-    lastmod: "2025-05-27T07:25:05.648Z",
+    lastmod: "2025-06-19T06:13:30.341Z",
   },
   {
     name: "A Practical Guide to Healthcare Mobile App Development in 2025",
@@ -1053,7 +1063,7 @@ export const blogListStaticData = [
   {
     name: "How to Hire Top Node.js Developers",
     loc: "https://www.brilworks.com/blog/how-to-hire-node-js-developers/",
-    lastmod: "2025-06-04T06:07:28.720Z",
+    lastmod: "2025-06-19T06:43:37.912Z",
   },
   {
     name: "8 Best Node js Project Examples",
@@ -1758,7 +1768,7 @@ export const blogListStaticData = [
   {
     name: "Native vs. Cross-Platform: Choosing the Right Mobile App Development Approach",
     loc: "https://www.brilworks.com/blog/native-vs-cross-platform/",
-    lastmod: "2025-04-07T07:35:09.048Z",
+    lastmod: "2025-06-19T08:21:05.900Z",
   },
   {
     name: "Build a ChatGPT-Like App on AWS: A Comprehensive Guide to Conversational AI Development",
@@ -2083,7 +2093,7 @@ export const blogListStaticData = [
   {
     name: "React vs Angular: How to Choose the Right Framework for Your Next Project?",
     loc: "https://www.brilworks.com/blog/react-vs-angular/",
-    lastmod: "2024-04-25T11:17:19.646Z",
+    lastmod: "2025-06-20T05:50:19.780Z",
   },
   {
     name: "Java vs Node",

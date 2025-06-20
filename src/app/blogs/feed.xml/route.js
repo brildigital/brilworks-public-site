@@ -1,11 +1,10 @@
 import { formatSrcUrl } from "@/app/components/lib/commonFunction";
-import { getblog } from "../../components/lib/getblog";
+import { getblogForFeed } from "../../components/lib/getblog";
 import { addMinutes } from "date-fns";
 import RSS from "rss";
 
 export async function GET() {
-  const storyData = await getblog();
-
+  const storyData = await getblogForFeed();
   const feed = new RSS({
     feed_url: `${process.env.NEXT_PUBLIC_BASE_URL}feed.xml/`,
     title: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -33,8 +32,9 @@ export async function GET() {
   // Generate RSS feed items from sorted storyData
   sortedStoryData.map((blog) => {
     feed.item({
-      title: blog?.content?.metatags?.title,
-      description: blog?.content?.metatags?.description,
+      title: blog?.content?.title,
+      description:
+        blog?.content?.Quick_Summary || blog?.content?.metatags?.description,
       guid: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}${blog?.full_slug}/`,
       date: blog.adjustedDate,
