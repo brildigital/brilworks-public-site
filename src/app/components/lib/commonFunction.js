@@ -318,6 +318,7 @@ export const isExternalLink = (href) => {
     "https://www.editpad.org/tool/paraphrasing-tool",
     "https://middleware.io/product/infrastructure-monitoring/",
     "https://www.uniqode.com",
+    "https://www.grammarin.com/punctuation-checker",
   ];
 
   return (
