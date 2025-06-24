@@ -731,9 +731,24 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "7 Reasons to Use Node.js in Healthcare Software Development",
+    loc: "https://www.brilworks.com/blog/node-js-healthcare-software-development-benefits/",
+    lastmod: "2025-06-23T13:37:06.653Z",
+  },
+  {
+    name: "Hiring Java Developers: What Model Fits Your Business Best",
+    loc: "https://www.brilworks.com/blog/hire-java-developers-models/",
+    lastmod: "2025-06-23T12:31:07.338Z",
+  },
+  {
     name: "Strategic Guide to Hire Java Developers for Your Next Project",
     loc: "https://www.brilworks.com/blog/guide-to-hire-java-developers/",
     lastmod: "2025-06-20T11:32:58.248Z",
+  },
+  {
+    name: "Top 10 Nodejs Development Companies [2025]",
+    loc: "https://www.brilworks.com/blog/nodejs-development-companies/",
+    lastmod: "2025-06-20T13:01:10.420Z",
   },
   {
     name: "Vue vs React: The Definitive Comparison for Developers",
@@ -743,7 +758,7 @@ export const blogListStaticData = [
   {
     name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
     loc: "https://www.brilworks.com/blog/nodejs-usage-statistics/",
-    lastmod: "2025-06-18T13:15:29.324Z",
+    lastmod: "2025-06-22T05:59:29.420Z",
   },
   {
     name: "Understanding React Native Fabric and How to Implement It in Your Project",
@@ -1138,7 +1153,7 @@ export const blogListStaticData = [
   {
     name: "Top Frameworks for JavaScript App Development in 2025",
     loc: "https://www.brilworks.com/blog/javascript-frameworks-for-mobile-app-development/",
-    lastmod: "2025-05-09T08:56:32.446Z",
+    lastmod: "2025-06-23T05:50:14.135Z",
   },
   {
     name: "6 Best Practices For Using AI for Database Querying",
@@ -1748,7 +1763,7 @@ export const blogListStaticData = [
   {
     name: "Essential Guide to Node.js Development: Best Practices & Architecutre",
     loc: "https://www.brilworks.com/blog/node-js-architecture-best-practices/",
-    lastmod: "2024-04-25T09:34:29.923Z",
+    lastmod: "2025-06-24T05:38:35.939Z",
   },
   {
     name: "The Future of React Native Development: A Look at its Evolution",
@@ -2083,7 +2098,7 @@ export const blogListStaticData = [
   {
     name: "Beyond ChatGPT: Trending AI Tools",
     loc: "https://www.brilworks.com/blog/beyond-chatgpt-trending-ai-tools/",
-    lastmod: "2025-05-16T11:07:42.217Z",
+    lastmod: "2025-06-24T07:28:36.447Z",
   },
   {
     name: "Brilworks Recognized by Techreviewer.co as One of the Top iOS Development Companies in 2023",
