@@ -731,6 +731,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How to Successfully Outsource Java Development in 2025",
+    loc: "https://www.brilworks.com/blog/outsourcing-java-development/",
+    lastmod: "2025-06-25T12:51:35.146Z",
+  },
+  {
+    name: "The Future of ReactJS: Trends and Predictions for 2025",
+    loc: "https://www.brilworks.com/blog/future-of-reactjs/",
+    lastmod: "2025-06-25T12:42:58.891Z",
+  },
+  {
     name: "7 Reasons to Use Node.js in Healthcare Software Development",
     loc: "https://www.brilworks.com/blog/node-js-healthcare-software-development-benefits/",
     lastmod: "2025-06-23T13:37:06.653Z",

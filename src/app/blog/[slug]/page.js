@@ -85,8 +85,112 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
+  const showRatingBasedOnPathname = {
+    "comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: "4.7",
+      ratingCount: "139",
+    },
+    "cross-platform-app-development-best-frameworks": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.6,
+      ratingCount: 110,
+    },
+    "apple-vision-pro-vs-meta-quest-3": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.5,
+      ratingCount: 90,
+    },
+    "best-node-js-open-source-projects-in-github": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.6,
+      ratingCount: 90,
+    },
+    "optimize-your-nest-js-app-performance-with-these-practices": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.6,
+      ratingCount: 90,
+    },
+    "top-10-websites-built-using-react-js": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.8,
+      ratingCount: 120,
+    },
+    "top-node-js-frameworks-for-web-development": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.7,
+      ratingCount: 100,
+    },
+    "top-popular-apps-built-with-react-native": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.5,
+      ratingCount: 85,
+    },
+    "what-is-custom-web-application-development-how-to-get-started": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.6,
+      ratingCount: 95,
+    },
+    "whats-new-in-spring-boot-3-for-java-developers-in-2023": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.4,
+      ratingCount: 80,
+    },
+    "path-to-become-aws-partner": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.3,
+      ratingCount: 75,
+    },
+    "react-native-vs-kotlin": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.7,
+      ratingCount: 110,
+    },
+    "what-is-rapid-application-development-a-detailed-guide": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.6,
+      ratingCount: 98,
+    },
+    "next-js-13-drops-with-exciting-updates-find-out-whats-new": {
+      title: data?.story?.content?.title,
+      pageURL: params?.slug,
+      ratingValue: 4.8,
+      ratingCount: 130,
+    },
+  };
+
+  const { title, pageURL, ratingValue, ratingCount } =
+    showRatingBasedOnPathname[params?.slug] || [];
+
   return (
     <>
+      {title && ratingValue && ratingCount && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateRatingSchema(
+              title,
+              `${pageURL}/`,
+              ratingValue,
+              ratingCount
+            ),
+          }}
+        />
+      )}
       <div className="bg-detail-hero">
         <div className="h-full min-h-[600px] md:max-h-[700px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
