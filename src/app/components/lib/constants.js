@@ -731,6 +731,41 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Why ReactJS is the Top Choice for Web Development",
+    loc: "https://www.brilworks.com/blog/why-reactjs-top-choice-b2b-web-apps/",
+    lastmod: "2025-06-30T13:18:49.547Z",
+  },
+  {
+    name: "React Native vs Expo: What’s the Difference?",
+    loc: "https://www.brilworks.com/blog/react-native-vs-expo/",
+    lastmod: "2025-07-01T05:46:06.755Z",
+  },
+  {
+    name: "A Straightforward Guide to Enterprise Java Development",
+    loc: "https://www.brilworks.com/blog/enterprise-java-development/",
+    lastmod: "2025-06-30T12:34:19.752Z",
+  },
+  {
+    name: "Top Java Development Technologies & Tools Every Team Should Know",
+    loc: "https://www.brilworks.com/blog/technologies-in-java/",
+    lastmod: "2025-06-27T13:02:39.220Z",
+  },
+  {
+    name: "How to Choose the Right ReactJS Development Company",
+    loc: "https://www.brilworks.com/blog/choose-reactjs-development-partner/",
+    lastmod: "2025-06-30T09:53:49.438Z",
+  },
+  {
+    name: "A Complete Guide to Java Development Services for Modern Businesses",
+    loc: "https://www.brilworks.com/blog/java-development-services/",
+    lastmod: "2025-06-26T12:21:17.713Z",
+  },
+  {
+    name: " A Guide to Lower Website Development Costs for Small Businesses ",
+    loc: "https://www.brilworks.com/blog/reduce-website-development-costs/",
+    lastmod: "2025-06-26T10:54:17.002Z",
+  },
+  {
     name: "How to Successfully Outsource Java Development in 2025",
     loc: "https://www.brilworks.com/blog/outsourcing-java-development/",
     lastmod: "2025-06-25T12:51:35.146Z",
@@ -2011,9 +2046,9 @@ export const blogListStaticData = [
     lastmod: "2025-03-18T06:12:38.545Z",
   },
   {
-    name: "The Future of Fintech: Top Trends to Watch in 2023",
-    loc: "https://www.brilworks.com/blog/fintech-trends-to-watch-in-2023/",
-    lastmod: "2024-05-01T13:10:49.573Z",
+    name: "The Future of Fintech: Top Trends to Watch ",
+    loc: "https://www.brilworks.com/blog/fintech-trends/",
+    lastmod: "2025-06-30T12:06:36.838Z",
   },
   {
     name: "A Comprehensive Comparison: SendGrid vs. Mailgun vs. Amazon SES vs. Mandrill",
