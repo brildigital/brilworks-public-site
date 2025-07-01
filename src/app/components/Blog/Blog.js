@@ -146,7 +146,7 @@ const Blog = () => {
                 </p>
               </button>
               <button
-                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
+                className={`Blog_category_head ease-in-out duration-300 text-re lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
                   blogCategory === "Cloud DevOps and Data"
                     ? "bg-themeColor text-white"
                     : "hover:!text-themeColor"
