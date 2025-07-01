@@ -26,7 +26,7 @@ const ExploreOurExpertise = () => {
       ],
     },
     {
-      title: "Backend Developer",
+      title: "Back End Development",
       value: "backend",
       imageSrc: "/images/v2/backend-img.webp",
       description:
@@ -43,7 +43,7 @@ const ExploreOurExpertise = () => {
       ],
     },
     {
-      title: "Frontend Developer",
+      title: "Front End Development",
       value: "frontend",
       imageSrc: "/images/v2/frontend-img.webp",
       description:
@@ -56,7 +56,7 @@ const ExploreOurExpertise = () => {
       ],
     },
     {
-      title: "Mobile App Developer",
+      title: "Mobile App Development",
       value: "mobile-app",
       imageSrc: "/images/v2/mobile-app-img.webp",
       description:

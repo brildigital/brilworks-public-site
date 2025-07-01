@@ -902,6 +902,11 @@ const nextConfig = {
         destination: `/blog/white-label-apps-popular-examples/`,
         statusCode: 301,
       },
+      {
+        source: `/blog/fintech-trends-to-watch-in-2023/`,
+        destination: `/blog/fintech-trends/`,
+        statusCode: 301,
+      },
     ];
   },
 };
