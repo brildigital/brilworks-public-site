@@ -731,6 +731,31 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "React Server Components Explained",
+    loc: "https://www.brilworks.com/blog/react-server-components-complete-guide/",
+    lastmod: "2025-07-04T13:58:44.734Z",
+  },
+  {
+    name: "What Is Java API? A Complete Guide to Building and Using APIs in Java",
+    loc: "https://www.brilworks.com/blog/what-is-java-api/",
+    lastmod: "2025-07-04T12:13:44.378Z",
+  },
+  {
+    name: "Best React State Management Libraries",
+    loc: "https://www.brilworks.com/blog/react-state-management-libraries/",
+    lastmod: "2025-07-03T13:58:40.782Z",
+  },
+  {
+    name: "React Architecture Debt: What It Is and How to Fix It",
+    loc: "https://www.brilworks.com/blog/react-architecture-debt/",
+    lastmod: "2025-07-03T11:27:16.086Z",
+  },
+  {
+    name: "Top Java Frameworks for Web and Backend Development",
+    loc: "https://www.brilworks.com/blog/top-java-frameworks/",
+    lastmod: "2025-07-02T12:55:24.103Z",
+  },
+  {
     name: "Why ReactJS is the Top Choice for Web Development",
     loc: "https://www.brilworks.com/blog/why-reactjs-top-choice-b2b-web-apps/",
     lastmod: "2025-06-30T13:18:49.547Z",
@@ -788,7 +813,7 @@ export const blogListStaticData = [
   {
     name: "Strategic Guide to Hire Java Developers for Your Next Project",
     loc: "https://www.brilworks.com/blog/guide-to-hire-java-developers/",
-    lastmod: "2025-06-20T11:32:58.248Z",
+    lastmod: "2025-07-02T11:48:20.331Z",
   },
   {
     name: "Top 10 Nodejs Development Companies [2025]",
@@ -1528,7 +1553,7 @@ export const blogListStaticData = [
   {
     name: "White label app development cost: A Straightforward Guide",
     loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
-    lastmod: "2025-05-28T06:42:29.170Z",
+    lastmod: "2025-07-04T10:52:42.248Z",
   },
   {
     name: "The Best White Label App builders",
