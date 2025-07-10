@@ -731,6 +731,26 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "A Practical Guide to Microservices Development with Node.js",
+    loc: "https://www.brilworks.com/blog/node-js-microservices/",
+    lastmod: "2025-07-09T13:16:05.747Z",
+  },
+  {
+    name: "What is Java Programming Language? History, Uses, and How to Start",
+    loc: "https://www.brilworks.com/blog/what-is-java-programming-language/",
+    lastmod: "2025-07-09T12:41:08.797Z",
+  },
+  {
+    name: "Why ReactJS Is the Right Choice for eCommerce Development",
+    loc: "https://www.brilworks.com/blog/reactjs-ecommerce-development/",
+    lastmod: "2025-07-07T14:25:26.750Z",
+  },
+  {
+    name: "React Native 0.80: Is It Time to Make the Switch?",
+    loc: "https://www.brilworks.com/blog/react-native-0-80/",
+    lastmod: "2025-07-07T11:48:22.782Z",
+  },
+  {
     name: "React Server Components Explained",
     loc: "https://www.brilworks.com/blog/react-server-components-complete-guide/",
     lastmod: "2025-07-04T13:58:44.734Z",
@@ -1478,7 +1498,7 @@ export const blogListStaticData = [
   {
     name: "Building Scalable Java Cloud Applications Efficiently",
     loc: "https://www.brilworks.com/blog/building-scalable-java-cloud-applications-efficiently/",
-    lastmod: "2025-04-07T08:06:16.382Z",
+    lastmod: "2025-07-09T10:33:08.516Z",
   },
   {
     name: "Top Programming Languages for the Cloud Computing ",
@@ -1653,7 +1673,7 @@ export const blogListStaticData = [
   {
     name: "How to Overcome Common Generative AI Challenges [A Straightforward Guide]",
     loc: "https://www.brilworks.com/blog/overcomming-common-generative-ai-challenges/",
-    lastmod: "2025-04-05T02:48:24.120Z",
+    lastmod: "2025-07-08T11:14:00.127Z",
   },
   {
     name: "Beyond the Basics: Advanced Ecommerce Personalization with AWS",
@@ -1708,7 +1728,7 @@ export const blogListStaticData = [
   {
     name: "Exploring the Limitations of Generative AI : 5 Key Points ",
     loc: "https://www.brilworks.com/blog/limitations-of-generative-ai/",
-    lastmod: "2025-05-29T07:59:59.343Z",
+    lastmod: "2025-07-10T05:31:39.529Z",
   },
   {
     name: " Debunking Common Misconceptions about Generative AI",
@@ -1848,7 +1868,7 @@ export const blogListStaticData = [
   {
     name: "What Is React Native? A Comprehensive Guide ",
     loc: "https://www.brilworks.com/blog/what-is-react-native/",
-    lastmod: "2025-05-20T05:27:36.143Z",
+    lastmod: "2025-07-08T06:11:55.685Z",
   },
   {
     name: "Native vs. Cross-Platform: Choosing the Right Mobile App Development Approach",
