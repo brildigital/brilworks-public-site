@@ -319,6 +319,7 @@ export const isExternalLink = (href) => {
     "https://middleware.io/product/infrastructure-monitoring/",
     "https://www.uniqode.com",
     "https://www.grammarin.com/punctuation-checker",
+    "https://www.paraphraser.io/ai-humanizer",
   ];
 
   return (
