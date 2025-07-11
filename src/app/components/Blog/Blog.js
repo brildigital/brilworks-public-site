@@ -21,15 +21,15 @@ const Blog = () => {
   const router = useRouter();
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
-  // const fetchAllData = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const blogData = await getBlogForSitemap();
-  //     console.log(blogData);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const fetchAllData = async () => {
+    setIsLoading(true);
+    try {
+      const blogData = await getBlogForSitemap();
+      console.log(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -53,7 +53,7 @@ const Blog = () => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
-        // fetchAllData();
+        fetchAllData();
         window.scrollTo({ top: 0 });
       },
       searchQuery ? 1000 : 0
