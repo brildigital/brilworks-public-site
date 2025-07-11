@@ -217,6 +217,7 @@ const Fintech = () => {
         technologyText="Fintech Software Development Company"
         title="Delivering Secure Fintech Software Development Services"
         description="Step into a new era of financial flexibility with our sophisticated, intuitive & highly-secure fintech applications. Our fintech software development services are built to drive business transformation and maximize ROI."
+        buttonText="Hire Fintech Developer"
         imageSrc="/images/v2/fintech-banner.webp"
       />
       <ServicesSection

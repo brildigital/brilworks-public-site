@@ -136,12 +136,37 @@ const SolutionFAQ = () => {
     },
   ];
 
+  const eCommerceFAQData = [
+    {
+      question: "How much does it cost to develop an eCommerce app?",
+      answer:
+        "The cost of developing an eCommerce app varies based on complexity, features, design, and the development team's location and expertise. While basic apps might start from around $15,000 for an outsourced team in India, a full-fledged solution can range from $30,000 to over $170,000 for a reputable outsourced team. Ongoing maintenance and updates also add to the overall cost.",
+    },
+    {
+      question: "How long does it take to develop an eCommerce app?",
+      answer:
+        "The time to develop an eCommerce app depends on its complexity, ranging from approximately 3-6 months for a basic app to over 10 months for a complex solution. On average, development can take 700-800 working hours, with full-fledged eCommerce products requiring even more time.",
+    },
+    {
+      question: "What key features should an eCommerce mobile app include?",
+      answer:
+        "Essential features for an eCommerce app include easy user onboarding and secure payment options. Key functionalities such as product browsing with smart filters, a shopping cart, and delivery status tracking are crucial for a seamless experience. Additionally, features like product reviews and ratings, personalised recommendations, and multiple payment methods enhance user engagement and conversions.",
+    },
+    {
+      question:
+        "How do you ensure the security of eCommerce mobile applications?",
+      answer:
+        "To ensure security, providers employ comprehensive security protocols and adhere to best practices to maintain data confidentiality and integrity. This often includes ISO 27001-approved security processes and alignment with GDPR standards. Security testing is performed to make solutions shatterproof against cybercrime, alongside continuous performance monitoring for vulnerabilities and timely updates.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/industry/fintech-software-development/": fintechFAQData,
     "/industry/fleet-management-software-development/": fleetManagementFAQData,
     "/industry/media-entertainment-software-development/":
       mediaEntertainmentFAQData,
     "/industry/healthcare-software-development/": healthcareFAQData,
+    "/industry/e-commerce-app-development/": eCommerceFAQData,
   };
 
   const solutionFAQData = showDataBasedOnPathname[pathname] || {};

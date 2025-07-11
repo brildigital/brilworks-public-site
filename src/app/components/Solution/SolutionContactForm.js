@@ -2,7 +2,7 @@ import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
-const SolutionContactForm = () => {
+const SolutionContactForm = ({ title, description }) => {
   return (
     <div className="hire-team-contact-section">
       <div id="section-contact-form" className="banner-layer-dark">
@@ -12,12 +12,13 @@ const SolutionContactForm = () => {
               <Heading
                 type="h2"
                 className="text-colorWhite lg:!text-[34px] md:!text-3xl !text-2xl mb-5"
-                data="Connect With Us to Get a 48 Hours Risk-Free Trial"
+                data={
+                  title || "Connect With Us to Get a 48 Hours Risk-Free Trial"
+                }
               />
               <p className="text-colorWhite md:text-lg text-base !mb-6">
-                You're just a step away from creating exceptional business
-                ideas. This case study reveals how BrilWorks assists successful
-                companies in extending their tech teams.
+                {description ||
+                  "You're just a step away from creating exceptional business ideas. This case study reveals how BrilWorks assists successful companies in extending their tech teams."}
               </p>
               <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                 Enter the details to proceed.

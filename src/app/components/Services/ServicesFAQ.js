@@ -568,6 +568,24 @@ const ServicesFAQ = () => {
     },
   ];
 
+  const WebAppDevelopmentFAQData = [
+    {
+      question: "How long does it typically take to customize ERPNext?",
+      answer:
+        "The timeline for customization depends on the complexity of your needs. However, we provide realistic estimates during the consultation and keep you informed throughout the process. We also offer agile development methodologies to ensure flexibility and adapt to your changing requirements.",
+    },
+    {
+      question: "What if I'm not sure what customizations I need for ERPNext?",
+      answer:
+        "During the consultation, our experienced team will discuss your business processes, challenges, and goals to identify areas where customization can benefit you. Based on our understanding, we'll recommend specific customization options to address your unique needs.",
+    },
+    {
+      question: "How much does ERPNext customization cost?",
+      answer:
+        "The cost of customization depends on the complexity of your needs. However, we offer transparent pricing. You can schedule a free consultation to discuss your requirements and we will provide a detailed quote outlining the specific costs associated with your desired customizations. In addition, we offer flexible engagement models to fit your budget, including hourly rates or fixed-price projects.",
+    },
+  ];
+
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -587,6 +605,7 @@ const ServicesFAQ = () => {
     "/staff-augmentation/": StaffAugmentationFAQData,
     "/hire-dedicated-software-development-team/": DedicatedTeamFAQData,
     "/rapid-digitalization/": RapidDigitalisationFAQData,
+    "/web-app-development-services/": WebAppDevelopmentFAQData,
   };
 
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};
