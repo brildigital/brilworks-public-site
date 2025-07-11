@@ -318,7 +318,7 @@ const ECommerceSolution = () => {
       <SolutionCostAndTimeLine costData={eCommerceCostAndTimeline} />
       <MultipleKeyValueWithBG
         bgClass="bg-white"
-        title="Why Should You Hire AWS Developers from Brilworks?"
+        title="Why Should You Hire E-Commerce Developers from Brilworks?"
         description="We offer next-gen fintech solutions, which allow you to embrace innovation, improve efficiency, and comply with regulations. Our fintech software developers are always ready to help develop innovative solutions that optimize your customers’ experience and better manage risk in the financial industry."
         keyValueData={fintechExperienceShowCase}
       />

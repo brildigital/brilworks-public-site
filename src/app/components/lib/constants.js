@@ -739,6 +739,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Difference Between Java and C++ Explained Simply",
+    loc: "https://www.brilworks.com/blog/java-vs-cpp/",
+    lastmod: "2025-07-10T13:20:47.697Z",
+  },
+  {
+    name: "Dedicated Teams vs. In-House Hiring",
+    loc: "https://www.brilworks.com/blog/dedicated-teams-vs-in-house-hiring/",
+    lastmod: "2025-07-10T13:04:02.645Z",
+  },
+  {
     name: "A Practical Guide to Microservices Development with Node.js",
     loc: "https://www.brilworks.com/blog/node-js-microservices/",
     lastmod: "2025-07-09T13:16:05.747Z",
@@ -1876,7 +1886,7 @@ export const blogListStaticData = [
   {
     name: "What Is React Native? A Comprehensive Guide ",
     loc: "https://www.brilworks.com/blog/what-is-react-native/",
-    lastmod: "2025-07-08T06:11:55.685Z",
+    lastmod: "2025-07-10T06:29:59.649Z",
   },
   {
     name: "Native vs. Cross-Platform: Choosing the Right Mobile App Development Approach",
@@ -1896,7 +1906,7 @@ export const blogListStaticData = [
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
     loc: "https://www.brilworks.com/blog/nestjs-vs-nextjs/",
-    lastmod: "2025-05-28T05:32:11.575Z",
+    lastmod: "2025-07-10T06:15:33.938Z",
   },
   {
     name: "Amazon S3: A Cloud Storage Solution for Every Business",
