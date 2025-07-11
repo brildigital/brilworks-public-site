@@ -72,7 +72,7 @@ function TechStackWeWorkWith({
                   >
                     {iconifyIcon ? (
                       <Image
-                        className="w-[75px] h-[75px]"
+                        className="w-[75px] h-[75px] object-contain"
                         src={iconifyIcon}
                         alt="icon"
                         height={75}

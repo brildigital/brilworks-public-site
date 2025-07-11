@@ -9,6 +9,7 @@ const SolutionHeroSection = ({
   title,
   description,
   imageSrc,
+  buttonText,
 }) => {
   const pathname = usePathname();
 
@@ -30,11 +31,7 @@ const SolutionHeroSection = ({
                   size="large"
                   className="w-fit"
                   redirect="#section-contact-form"
-                  label={
-                    pathname === "/industry/fintech-software-development/"
-                      ? "Hire Fintech Developer"
-                      : "Request for Proposal"
-                  }
+                  label={buttonText || "Request for Proposal"}
                   scrollingButton
                 />
                 {pathname === "/industry/fintech-software-development/" && (

@@ -79,6 +79,10 @@ export const servicesMenuItems = [
         path: "/application-development-services/",
       },
       // {
+      //   name: "Web App Development",
+      //   path: "/web-app-development-services/",
+      // },
+      // {
       //   name: "ERP Next Development",
       //   path: "/erp-next-development-services/",
       // },
@@ -181,6 +185,10 @@ export const industryMenuItems = [
       {
         name: "Healthcare",
         path: "/industry/healthcare-software-development/",
+      },
+      {
+        name: "E-Commerce",
+        path: "/industry/e-commerce-app-development/",
       },
     ],
   },
