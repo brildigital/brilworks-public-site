@@ -570,19 +570,29 @@ const ServicesFAQ = () => {
 
   const WebAppDevelopmentFAQData = [
     {
-      question: "How long does it typically take to customize ERPNext?",
+      question: "What’s the difference between a website and a web app?",
       answer:
-        "The timeline for customization depends on the complexity of your needs. However, we provide realistic estimates during the consultation and keep you informed throughout the process. We also offer agile development methodologies to ensure flexibility and adapt to your changing requirements.",
+        "A website is primarily informational, while a web application offers dynamic interactions, user logins, data processing, and more. Think of web apps as functional tools accessed via the web.",
     },
     {
-      question: "What if I'm not sure what customizations I need for ERPNext?",
+      question: "Which tech stack do you use for web app development?",
       answer:
-        "During the consultation, our experienced team will discuss your business processes, challenges, and goals to identify areas where customization can benefit you. Based on our understanding, we'll recommend specific customization options to address your unique needs.",
+        "We specialize in modern technologies like ReactJS, Node.js, Express, MongoDB, and cloud services to build fast, secure, and scalable web applications.",
     },
     {
-      question: "How much does ERPNext customization cost?",
+      question: "Do you offer post-launch support?",
       answer:
-        "The cost of customization depends on the complexity of your needs. However, we offer transparent pricing. You can schedule a free consultation to discuss your requirements and we will provide a detailed quote outlining the specific costs associated with your desired customizations. In addition, we offer flexible engagement models to fit your budget, including hourly rates or fixed-price projects.",
+        "Yes. We provide full maintenance services, performance monitoring, bug fixes, and feature enhancements to ensure your app evolves with your business.",
+    },
+    {
+      question: "Can you help modernize legacy web applications?",
+      answer:
+        "Absolutely. We help businesses migrate outdated systems to modern, cloud-based architectures without disrupting operations.",
+    },
+    {
+      question: "How much does a custom web app cost?",
+      answer:
+        "Costs vary based on complexity and scope. Get in touch with our team for a free consultation and tailored estimate.",
     },
   ];
 

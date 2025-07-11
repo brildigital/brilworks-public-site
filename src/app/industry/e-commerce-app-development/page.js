@@ -14,7 +14,7 @@ export const metadata = {
     siteName: "Mobile App & Software Development Company | Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/e-commerce-industry-banner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/e-commerce-industry-banner.webp`,
       },
     ],
     locale: "en-US",

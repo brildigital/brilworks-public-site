@@ -78,10 +78,10 @@ export const servicesMenuItems = [
         name: "Application Development",
         path: "/application-development-services/",
       },
-      // {
-      //   name: "Web App Development",
-      //   path: "/web-app-development-services/",
-      // },
+      {
+        name: "Web App Development",
+        path: "/web-app-development-services/",
+      },
       // {
       //   name: "ERP Next Development",
       //   path: "/erp-next-development-services/",
