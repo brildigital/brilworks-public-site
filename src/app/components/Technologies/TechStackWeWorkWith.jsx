@@ -6,7 +6,6 @@ import {
   TabsBody,
   Tab,
   TabPanel,
-  Card,
 } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";

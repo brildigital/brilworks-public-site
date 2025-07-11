@@ -2,8 +2,13 @@
 import dynamic from "next/dynamic";
 import ServiceHeroSection from "./ServiceHeroSection";
 import CTASection from "../Common/CTASection";
+import {
+  faAngular,
+  faJs,
+  faReact,
+  faVuejs,
+} from "@fortawesome/free-brands-svg-icons";
 
-const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 const IndustriesWeServe = dynamic(() =>
@@ -13,141 +18,190 @@ const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const MultipleCardWithIconBG = dynamic(() =>
   import("../Common/MultipleCardWithIconBG")
 );
+const TechStackWeWorkWith = dynamic(() =>
+  import("../Technologies/TechStackWeWorkWith")
+);
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const WebAppDevelopmentService = () => {
-  const devOpsServices = {
-    title: "Our Services",
+  const webAppServices = {
+    title: "Our Web Application Development Services",
     servicesList: [
       {
-        title: "DevOps Implementation",
-        value: "devops-service-1",
+        title: "Custom Web Application Development",
+        value: "web-service-1",
         description:
-          "At Brilworks, our DevOps services are designed to guide you through a successful transformation, ensuring efficiency and reliability in your software development lifecycle.",
-        imageSrc: "/images/v2/devops-implementation.webp",
-        imageAlt: "Devops service img",
+          "We craft bespoke web apps tailored to fit your process. We follow a consultative process to understand your workflow, customer needs, and growth vision before writing a single line of code.",
+        imageSrc: "/images/v2/custom-web-application-development.webp",
+        imageAlt: "Custom web application development image",
       },
       {
-        title: "DevOps Automation",
-        value: "devops-service-2",
+        title: "Frontend and Backend Development",
+        value: "web-service-2",
         description:
-          "Accelerate your testing, deployments, and feedback loops by designing and implementing robust CI/CD pipelines. Our expertise ensures you deliver value to your customers faster than ever before.",
-        imageSrc: "/images/v2/devops-automation.webp",
-        imageAlt: "Devops Automatic img",
+          "We build structured, maintainable systems across both client and server sides. Everything is designed for clarity, consistency, and long-term use, nothing added without purpose.",
+        imageSrc: "/images/v2/frontend-and-backend-development.webp",
+        imageAlt: "Frontend and backend development image",
       },
       {
-        title: "DevOps Services",
-        value: "devops-service-3",
+        title: "Progressive Web App (PWA) Development",
+        value: "web-service-3",
         description:
-          "Address your specific challenges, from infrastructure as code to containerization and cloud adoption. Our expert team deploys tailored solutions that drive tangible results for your unique requirements.",
-        imageSrc: "/images/v2/devops-services.webp",
-        imageAlt: "Devops services img",
+          "Give users a native-app-like experience on the web. Our PWA solutions work offline, load instantly, and provide seamless interactions across devices and browsers.",
+        imageSrc: "/images/v2/progressive-web-app-pwa-development.webp",
+        imageAlt: "PWA development image",
       },
       {
-        title: "DevOps Release Management",
-        value: "devops-service-4",
+        title: "Enterprise Web Development",
+        value: "web-service-4",
         description:
-          "Streamline your release process with automated deployments, rollback plans, and robust testing strategies. We assist you in achieving efficient and reliable releases.",
-        imageSrc: "/images/v2/devops-release-management.webp",
-        imageAlt: "Devops release mgmt img",
+          "For growing organizations and complex ecosystems, we develop enterprise-grade web solutions that scale effortlessly.",
+        imageSrc: "/images/v2/enterprise-web-development.webp",
+        imageAlt: "Enterprise web development image",
       },
       {
-        title: "Continuous Integration & Delivery (CI/CD)",
-        value: "devops-service-5",
+        title: "UI/UX Design for Web Applications",
+        value: "web-service-5",
         description:
-          "Construct a seamless CI/CD pipeline integrating testing, builds, and deployments. Foster a culture of continuous improvement, accelerating your release cycles.",
-        imageSrc: "/images/v2/continuous-integration-delivery.webp",
-        imageAlt: "Devops CICD delivery img",
+          "Design drives engagement. Our UI/UX designers create intuitive, user-friendly interfaces that enhance usability and customer satisfaction.",
+        imageSrc: "/images/v2/ui-ux-design-for-web-applications.webp",
+        imageAlt: "UI/UX web design image",
       },
       {
-        title: "Deployment Services",
-        value: "devops-service-6",
+        title: "Web App Maintenance & Optimization",
+        value: "web-service-6",
         description:
-          "Eliminate manual deployments and ensure consistent, reliable rollouts across all environments. Gain peace of mind knowing that every release is executed flawlessly with our expert guidance.",
-        imageSrc: "/images/v2/deployment-services.webp",
-        imageAlt: "Devops service img",
+          "We provide ongoing support, performance monitoring, updates, and enhancements to ensure your web application runs smoothly and adapts to changing user needs.",
+        imageSrc: "/images/v2/web-app-maintenance-optimization.webp",
+        imageAlt: "Web app maintenance and optimization image",
       },
     ],
   };
+
   const whyChooseUsDevOpsData = {
-    title: "Why Choose Brilworks?",
+    title: "Why Choose Us for Your Web Application Development?",
     benefits: [
       {
-        title: "Streamlined Workflows",
-        icon: "/images/v2/fi_17023504.svg",
+        title: "Full-Cycle Development",
+        icon: "/images/v2/fi_8099605.svg",
         description:
-          "Brilworks helps you automate manual tasks and set up CI/CD pipelines, leading to faster development cycles and fewer errors.",
+          "We handle everything from ideation and design to development and post-launch support. You get a dedicated partner throughout your digital journey.",
       },
       {
-        title: "Scalability and Flexibility",
+        title: "Scalable Architecture",
         icon: "/images/v2/fi_8109512.svg",
         description:
-          "Adapt your infrastructure and processes to dynamic requirements with ease and confidence.",
+          "We architect web apps to grow with your business. From MVP to enterprise-grade scale, our solutions remain adaptable and future-proof.",
       },
       {
-        title: "Expertise Across Technologies",
-        icon: "/images/v2/why-n-2.svg",
+        title: "Expertise in Modern Tech",
+        icon: "/images/v2/fi_780477.svg",
         description:
-          "Regardless of your tools – cloud platforms, containers, IaC – we have the expertise to handle your specific DevOps needs.",
+          "We bring deep expertise in modern frameworks and tools including ReactJS, Node.js, and cloud platforms, ensuring your web app is built on reliable, battle-tested technology.",
       },
       {
-        title: "Cost Optimization",
-        icon: "/images/v2/fi_3621094.svg",
+        title: "Agile & Transparent Process",
+        icon: "/images/v2/fi_2907826.svg",
         description:
-          "Streamline your DevOps practices for reduced waste and improved profitability, maximizing your bottom line.",
+          "We follow agile methodologies with weekly sprints, demos, and continuous feedback cycles. You stay in control while we stay accountable.",
       },
       {
-        title: "Improved Collaboration",
-        icon: "/images/v2/fi_809522.svg",
+        title: "Focus on Security & Performance",
+        icon: "/images/v2/security-per.svg",
         description:
-          "We break down silos between Dev, Ops, and Security teams for smooth collaboration and enhanced efficiency.",
+          "Our development practices include robust data protection, authentication systems, and performance optimization from the ground up.",
       },
       {
-        title: "Proven Track Record",
-        icon: "/images/v2/fi_10227466.svg",
+        title: "On-Time, On-Budget Delivery",
+        icon: "/images/v2/on-timeicon.svg",
         description:
-          "Our expertise delivers demonstrably successful DevOps implementations, giving you peace of mind.",
+          "With clear timelines and proactive communication, we ensure your project progresses without delays or surprises.",
       },
     ],
   };
+
+  const techStackList = [
+    {
+      title: "Frontend",
+      value: "frontend",
+      items: [
+        { label: "ReactJS", icon: faReact, color: "#61DBFB" },
+        { label: "AngularJS", icon: faAngular, color: "#DD0031" },
+        { label: "VueJS", icon: faVuejs, color: "#42B883" },
+        { label: "JavaScript", icon: faJs, color: "#F7DF1E" },
+      ],
+    },
+    {
+      title: "Backend",
+      value: "backend",
+      items: [
+        { label: "Java", iconifyIcon: "/images/java.svg" },
+        { label: "NodeJS", iconifyIcon: "/images/node-icon.svg" },
+        { label: "Python", iconifyIcon: "/images/python.svg" },
+        { label: ".Net", iconifyIcon: "/images/dot-net.svg" },
+      ],
+    },
+    {
+      title: "Mobile",
+      value: "mobile",
+      items: [
+        { label: "Android", iconifyIcon: "/images/android-ui.svg" },
+        { label: "React Native", icon: faReact, color: "#61DBFB" },
+        { label: "Flutter", iconifyIcon: "/images/flutter.svg" },
+      ],
+    },
+    {
+      title: "Cloud",
+      value: "cloud",
+      items: [
+        { label: "AWS", iconifyIcon: "/images/aws.svg" },
+        { label: "Azure", iconifyIcon: "/images/azure.svg" },
+        {
+          label: "Google Cloud Platform",
+          iconifyIcon: "/images/v2/google-cloud-icon.svg",
+        },
+      ],
+    },
+  ];
+
   return (
     <>
       <ServiceHeroSection
-        title="DevOps Consulting Services"
-        description="We build you a smooth-running CI/CD pipeline, so you can ship updates faster, test smarter, deploy smoothly, and gain a competitive edge."
-        buttonText="Let's Get Started"
-        imageSrc="/images/v2/dev-ops-service-banner.webp"
+        title="Web App Development Services"
+        description="We build scalable, high-performance, and intuitive web applications for startups to enterprises alike. As a trusted website development company, we provide end-to-end web development services. We blend robust backend systems with intuitive front-end design to build web apps."
+        buttonText="Get Free Consultation"
+        imageSrc="/images/v2/web-app-development-banner.webp"
       />
-      <CTASection
+      {/* <CTASection
         titleClass="md:w-[70%]"
         descriptionClass="md:w-4/5"
         title="Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for Modern Businesses"
         description="We're a leading DevOps consulting service company dedicated to building high-performing software delivery pipelines that streamline your workflow, accelerate releases, and empower your teams. Our expert consultants work alongside your team to identify your unique challenges and design a pipeline tailored to address your unique needs. We leverage the latest tools and cutting-edge technologies, from GitLab CI/CD to containerization solutions, to create a system that aligns perfectly with your specific needs."
         buttonText="Let’s Discuss"
         darkBackground={false}
-      />
+      /> */}
       <ServicesSection
         bgClass="bg-themeLight"
         sectionId="service-section"
-        serviceData={devOpsServices}
+        serviceData={webAppServices}
       />
       <MultipleCardWithIconBG
         bgClass="bg-sectionBG"
         data={whyChooseUsDevOpsData}
       />
       <Honors />
-      <CTASection
-        titleClass="md:w-[70%]"
-        title="Transform your development, achieve DevOps success - Get your free Brilworks consultation today!"
-        buttonText="Let's Get Started"
-      />
-      <TechStackWeUse />
-      <IndustriesWeServe darkBackground={false} />
       <ClientReviews />
+      <TechStackWeWorkWith active="frontend" techStackList={techStackList} />
       <SeeingBelieving />
+      <IndustriesWeServe darkBackground={false} />
       <HomePageBlogs />
+      <CTASection
+        descriptionClass="md:w-4/5"
+        title="Build your next high-impact web application with a trusted partner. Let’s turn your idea into a responsive, secure, and scalable digital experience."
+        buttonText="Get a Free Consultation"
+      />
       <ServicesFAQ />
     </>
   );

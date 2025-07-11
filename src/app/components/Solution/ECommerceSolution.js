@@ -6,20 +6,7 @@ import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import CTASection from "../Common/CTASection";
 import TechStackWeWorkWith from "../Technologies/TechStackWeWorkWith";
-import {
-  faReact,
-  faAngular,
-  faVuejs,
-  faNode,
-  faPhp,
-  faFigma,
-  faJs,
-  faHtml5,
-  faCss3Alt,
-  faDocker,
-} from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
-import Heading from "../HTMLComponents/Heading";
+import { faReact, faPhp } from "@fortawesome/free-brands-svg-icons";
 import SolutionCostAndTimeLine from "./SolutionCostAndTimeLine";
 
 const MultipleKeyValueWithBG = dynamic(() =>
@@ -231,7 +218,7 @@ const ECommerceSolution = () => {
       "We offer scalable development tiers designed to balance cost, speed, and feature depth.",
     listItems: [
       {
-        title: "For Solo founders and startups",
+        title: "For Solo Founders and Startups",
         icon: "/images/v2/fi_10650262.svg",
         budgetRange: "$15K – $55K",
         includes: [
@@ -243,7 +230,7 @@ const ECommerceSolution = () => {
         engagementModel: "Fixed scope / Agile with capped T&M",
       },
       {
-        title: "For mid-sized businesses",
+        title: "For Mid-Sized Businesses",
         icon: "/images/v2/fi_14991761.svg",
         budgetRange: "$55K – $190K",
         includes: [
@@ -257,7 +244,7 @@ const ECommerceSolution = () => {
         engagementModel: "Agile / T&M with milestone-based billing",
       },
       {
-        title: "For enterprises",
+        title: "For Enterprises",
         icon: "/images/v2/fi_3137795.svg",
         budgetRange: "$190K+",
         includes: [
