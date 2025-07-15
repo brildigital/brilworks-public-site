@@ -195,38 +195,38 @@ export const industryMenuItems = [
   {
     name: "USE CASES",
     subSections: [
-      // {
-      //   name: "eCommerce",
-      //   path: "#",
-      // },
-      // {
-      //   name: "AWS for IoT",
-      //   path: "/use-case/aws-in-IoT/",
-      // },
-      // {
-      //   name: "AWS in healthcare",
-      //   path: "/use-case/aws-in-healthcare/",
-      // },
-      // {
-      //   name: "Generative AI in Retail",
-      //   path: "/use-case/generative-ai-in-retail/",
-      // },
-      // {
-      //   name: "Generative AI in Fintech",
-      //   path: "/use-case/gen-ai-in-fintech/",
-      // },
-      // {
-      //   name: "Generative AI in healthcare",
-      //   path: "/use-case/generative-ai-in-healthcare/",
-      // },
-      // {
-      //   name: "Generative AI in Manufacturing",
-      //   path: "/use-case/generative-ai-in-manufacturing/",
-      // },
-      // {
-      //   name: "Generative Ai in Media and Entertainment",
-      //   path: "/use-case/generative-ai-in-media-and-entertainment/",
-      // },
+      {
+        name: "AWS for IoT",
+        path: "/use-case/aws-in-IoT/",
+      },
+      {
+        name: "AWS in E-Commerce",
+        path: "/use-case/aws-in-ecommerce/",
+      },
+      {
+        name: "AWS in healthcare",
+        path: "/use-case/aws-in-healthcare/",
+      },
+      {
+        name: "Generative AI in Retail",
+        path: "/use-case/generative-ai-in-retail/",
+      },
+      {
+        name: "Generative AI in Fintech",
+        path: "/use-case/gen-ai-in-fintech/",
+      },
+      {
+        name: "Generative AI in healthcare",
+        path: "/use-case/generative-ai-in-healthcare/",
+      },
+      {
+        name: "Generative AI in Manufacturing",
+        path: "/use-case/generative-ai-in-manufacturing/",
+      },
+      {
+        name: "Generative Ai in Media and Entertainment",
+        path: "/use-case/generative-ai-in-media-and-entertainment/",
+      },
     ],
   },
 ];
@@ -445,7 +445,11 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/industry/healthcare-software-development/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    lastmod: "2025-04-25T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/e-commerce-app-development/",
+    lastmod: "2025-07-11T17:02:21.528Z",
   },
   {
     loc: "https://www.brilworks.com/use-case/aws-in-IoT/",
@@ -692,8 +696,8 @@ export const sitemapData = [
     lastmod: "2024-09-25T12:04:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/business-intelligence-services/",
-    lastmod: "2024-09-25T12:04:49.528Z",
+    loc: "https://www.brilworks.com/web-app-development-services/",
+    lastmod: "2025-07-11T17:06:31.528Z",
   },
   {
     loc: "https://www.brilworks.com/aws-consulting-services/",
@@ -738,6 +742,16 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "Top Web Development Challenges and How to Overcome Them",
+    loc: "https://www.brilworks.com/blog/web-development-challenges/",
+    lastmod: "2025-07-14T13:55:48.981Z",
+  },
+  {
+    name: "Native vs React Native: Breaking Down the Modern App Development Choice",
+    loc: "https://www.brilworks.com/blog/native-vs-react-native/",
+    lastmod: "2025-07-14T12:35:26.554Z",
+  },
   {
     name: "Difference Between Java and C++ Explained Simply",
     loc: "https://www.brilworks.com/blog/java-vs-cpp/",
