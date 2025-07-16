@@ -23,13 +23,18 @@ const HeroSection = () => {
               }
             />
             <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
-              Accelerating product timelines, optimizing AWS, and delivering Gen
-              AI
+              We design, build, and scale custom apps including mobile, web,
+              AI-powered software,
+              <br className="hidden slg:block" /> backed by vetted-expertise in
+              cutting-edge technologies and modern frameworks,
+              <br className="hidden slg:block" /> for startups, growing tech
+              teams, and enterprise product groups.
+              {/* Accelerating product timelines, optimizing AWS, and delivering Gen AI
               <br className="hidden slg:block" />
               solutions, White label apps, and Product engineering expertise in
               Next.js,
               <br className="hidden slg:block" /> Java, and low-code/no-code
-              platforms.
+              platforms. */}
             </h2>
             <ButtonV2
               size="large"
