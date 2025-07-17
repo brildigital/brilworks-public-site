@@ -24,11 +24,11 @@ const HeroSection = () => {
             />
             <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
               We design, build, and scale custom apps including mobile, web,
-              AI-powered software,
-              <br className="hidden slg:block" /> backed by vetted-expertise in
-              cutting-edge technologies and modern frameworks,
-              <br className="hidden slg:block" /> for startups, growing tech
-              teams, and enterprise product groups.
+              AI-powered software. <br className="hidden slg:block" /> Backed by
+              vetted-expertise in cutting-edge technologies and modern
+              frameworks,
+              <br className="hidden slg:block" /> we serve startups, growing
+              tech teams, and mid-sized companies.
               {/* Accelerating product timelines, optimizing AWS, and delivering Gen AI
               <br className="hidden slg:block" />
               solutions, White label apps, and Product engineering expertise in
