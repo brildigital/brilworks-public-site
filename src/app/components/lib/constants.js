@@ -743,6 +743,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Business Guide to Build Web Applications with Java",
+    loc: "https://www.brilworks.com/blog/build-web-applications-with-java/",
+    lastmod: "2025-07-16T13:10:32.567Z",
+  },
+  {
+    name: "AI-Powered React Development: Tools, Techniques, and Trends",
+    loc: "https://www.brilworks.com/blog/ai-in-reactjs/",
+    lastmod: "2025-07-16T13:29:01.609Z",
+  },
+  {
     name: "Top Web Development Challenges and How to Overcome Them",
     loc: "https://www.brilworks.com/blog/web-development-challenges/",
     lastmod: "2025-07-14T13:55:48.981Z",
@@ -750,7 +760,7 @@ export const blogListStaticData = [
   {
     name: "Native vs React Native: Breaking Down the Modern App Development Choice",
     loc: "https://www.brilworks.com/blog/native-vs-react-native/",
-    lastmod: "2025-07-14T12:35:26.554Z",
+    lastmod: "2025-07-16T05:42:37.329Z",
   },
   {
     name: "Difference Between Java and C++ Explained Simply",
@@ -1530,7 +1540,7 @@ export const blogListStaticData = [
   {
     name: "Building Scalable Java Cloud Applications Efficiently",
     loc: "https://www.brilworks.com/blog/building-scalable-java-cloud-applications-efficiently/",
-    lastmod: "2025-07-09T10:33:08.516Z",
+    lastmod: "2025-07-15T05:57:06.649Z",
   },
   {
     name: "Top Programming Languages for the Cloud Computing ",
@@ -1840,7 +1850,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-06-18T11:57:50.490Z",
+    lastmod: "2025-07-15T08:03:47.477Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
