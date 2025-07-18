@@ -230,6 +230,25 @@ export const industryMenuItems = [
     ],
   },
 ];
+export const resourcesMenuItems = [
+  {
+    name: "RESOURCES",
+    subSections: [
+      {
+        name: "Our Work",
+        path: "/portfolio/",
+      },
+      {
+        name: "Ebooks",
+        path: "/ebooks/",
+      },
+      {
+        name: "Blogs",
+        path: "/blog/",
+      },
+    ],
+  },
+];
 
 export const hireTeamMenuItems = [
   {
@@ -361,6 +380,7 @@ export const menuItems = [
   {
     name: "OUR WORK",
     path: "/portfolio/",
+    hideInHeader: true,
   },
   {
     name: "SERVICES",
@@ -374,6 +394,13 @@ export const menuItems = [
     path: "",
     heading: "All Industries",
     menuItems: industryMenuItems,
+    isMegaMenu: true,
+  },
+  {
+    name: "RESOURCES",
+    path: "",
+    heading: "All Resources",
+    menuItems: resourcesMenuItems,
     isMegaMenu: true,
   },
   {
