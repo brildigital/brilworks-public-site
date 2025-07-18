@@ -20,6 +20,11 @@ const MeetOurTeam = () => {
       imageSrc: "/images/v2/Team-Member2.png",
     },
     {
+      name: "Dhaval Makwana",
+      role: "Project Manager",
+      imageSrc: "/images/v2/Team-Member5.png",
+    },
+    {
       name: "Colin Shah",
       role: "Technical Project Manager",
       imageSrc: "/images/v2/Team-Member3.png",
@@ -28,11 +33,6 @@ const MeetOurTeam = () => {
       name: "Dinesh Kachhot",
       role: "Team Lead",
       imageSrc: "/images/v2/Team-Member4.png",
-    },
-    {
-      name: "Dhaval Makwana",
-      role: "Project Manager",
-      imageSrc: "/images/v2/Team-Member5.png",
     },
   ];
   return (

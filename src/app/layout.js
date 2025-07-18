@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
           vector.load("1a1e4f1f-0942-4b35-bbad-8ef11726a7e4");
         `}
           </Script>
-          <Script
+          {/* <Script
             defer
             id="chatbot"
           >{`window.chatBotConfig = {agentId:214}`}</Script>
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
             defer
             id="chatbot-widget-script"
             src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
-          />
+          /> */}
           {/* <Header /> */}
           {/* <HeaderV2 /> */}
           <CurrentHeader />

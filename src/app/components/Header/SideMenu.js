@@ -25,66 +25,64 @@ const SideMenu = ({ open, close }) => {
 
   const megaMenuNavList = (
     <ul className="pt-4 flex flex-col md:mb-0 md:mt-0 items-left">
-      {menuItems
-        .filter((menuItem) => menuItem.name !== "RESOURCES")
-        .map((menuItem, index) => (
-          <li key={menuItem.name}>
-            {!menuItem?.isMegaMenu ? (
-              <div
-                className={`menu_txt1 ${
-                  menuItem?.path === "/contact-us/" ? "!border-b-0" : ""
+      {menuItems.map((menuItem, index) => (
+        <li key={menuItem.name}>
+          {!menuItem?.isMegaMenu ? (
+            <div
+              className={`menu_txt1 ${
+                menuItem?.path === "/contact-us/" ? "!border-b-0" : ""
+              }`}
+            >
+              <MenuItem
+                name={menuItem?.name}
+                path={menuItem?.path}
+                onClick={close}
+              />
+            </div>
+          ) : (
+            <Accordion
+              open={openSection === index}
+              icon={<Icon id={index} open={openSection} />}
+            >
+              <AccordionHeader
+                onClick={() => handleOpen(index)}
+                className={`group/item accordion-title py-6 hover:!text-themeColor ${
+                  openSection === index ? "border-none" : ""
                 }`}
               >
-                <MenuItem
-                  name={menuItem?.name}
-                  path={menuItem?.path}
-                  onClick={close}
-                />
-              </div>
-            ) : (
-              <Accordion
-                open={openSection === index}
-                icon={<Icon id={index} open={openSection} />}
+                <p className="group-hover/item:text-themeColor">
+                  {menuItem.name}
+                </p>
+              </AccordionHeader>
+              <AccordionBody
+                className={
+                  openSection === index ? "border-b border-gray-500" : ""
+                }
               >
-                <AccordionHeader
-                  onClick={() => handleOpen(index)}
-                  className={`group/item accordion-title py-6 hover:!text-themeColor ${
-                    openSection === index ? "border-none" : ""
-                  }`}
-                >
-                  <p className="group-hover/item:text-themeColor">
-                    {menuItem.name}
-                  </p>
-                </AccordionHeader>
-                <AccordionBody
-                  className={
-                    openSection === index ? "border-b border-gray-500" : ""
-                  }
-                >
-                  {menuItem?.menuItems?.map((subMenu) => (
-                    <div
-                      key={subMenu.name}
-                      className="menu_mob_flex mega-menu-content flex flex-col gap-3 !items-start"
-                    >
-                      <p>{subMenu.name}</p>
-                      <div className="flex flex-col menu_mob_flex mega-menu-content !items-start gap-2">
-                        {subMenu.subSections.map((subMenuItem) => (
-                          <MenuItem
-                            key={subMenuItem?.name}
-                            name={subMenuItem?.name}
-                            path={subMenuItem?.path}
-                            onClick={close}
-                            className="!text-3xl"
-                          />
-                        ))}
-                      </div>
+                {menuItem?.menuItems?.map((subMenu) => (
+                  <div
+                    key={subMenu.name}
+                    className="menu_mob_flex mega-menu-content flex flex-col gap-3 !items-start"
+                  >
+                    <p>{subMenu.name}</p>
+                    <div className="flex flex-col menu_mob_flex mega-menu-content !items-start gap-2">
+                      {subMenu.subSections.map((subMenuItem) => (
+                        <MenuItem
+                          key={subMenuItem?.name}
+                          name={subMenuItem?.name}
+                          path={subMenuItem?.path}
+                          onClick={close}
+                          className="!text-3xl"
+                        />
+                      ))}
                     </div>
-                  ))}
-                </AccordionBody>
-              </Accordion>
-            )}
-          </li>
-        ))}
+                  </div>
+                ))}
+              </AccordionBody>
+            </Accordion>
+          )}
+        </li>
+      ))}
     </ul>
   );
 

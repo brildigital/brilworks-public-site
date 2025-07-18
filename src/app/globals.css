@@ -191,6 +191,19 @@ input[type="number"] {
   color: var(--theme-color) !important;
 }
 
+.header-btn {
+  background: linear-gradient(
+    159.52deg,
+    #007aeb -3.23%,
+    #008ce7 33.69%,
+    #00dbd3 85.35%
+  ) !important;
+}
+
+.header-btn:hover {
+  background: transparent !important;
+}
+
 .item-accordion {
   border-bottom: transparent;
   border: 1px solid var(--theme-color) !important;
