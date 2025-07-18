@@ -235,16 +235,20 @@ export const resourcesMenuItems = [
     name: "RESOURCES",
     subSections: [
       {
-        name: "Our Work",
-        path: "/portfolio/",
+        name: "Blogs",
+        path: "/blog/",
       },
       {
         name: "Ebooks",
         path: "/ebooks/",
       },
       {
-        name: "Blogs",
-        path: "/blog/",
+        name: "Case Studies",
+        path: "/portfolio/",
+      },
+      {
+        name: "Design Template",
+        path: "/free-ui/",
       },
     ],
   },
@@ -377,9 +381,14 @@ export const AISolutionsMenuItems = [
 ];
 
 export const menuItems = [
+  // {
+  //   name: "OUR WORK",
+  //   path: "/portfolio/",
+  //   hideInHeader: true,
+  // },
   {
-    name: "OUR WORK",
-    path: "/portfolio/",
+    name: "ABOUT",
+    path: "/about-us/",
     hideInHeader: true,
   },
   {
@@ -409,6 +418,7 @@ export const menuItems = [
     heading: "Technologies",
     menuItems: hireTeamMenuItems,
     isMegaMenu: true,
+    hideInHeader: true,
   },
   {
     name: "AI SOLUTIONS",
@@ -417,24 +427,19 @@ export const menuItems = [
     menuItems: AISolutionsMenuItems,
     isMegaMenu: true,
   },
-  {
-    name: "BLOGS",
-    path: "/blog/",
-    hideInHeader: true,
-  },
-  {
-    name: "EBOOKS",
-    path: "/ebooks/",
-    hideInHeader: true,
-  },
+  // {
+  //   name: "BLOGS",
+  //   path: "/blog/",
+  //   hideInHeader: true,
+  // },
+  // {
+  //   name: "EBOOKS",
+  //   path: "/ebooks/",
+  //   hideInHeader: true,
+  // },
   {
     name: "OUR PROCESS",
     path: "/our-process/",
-    hideInHeader: true,
-  },
-  {
-    name: "ABOUT",
-    path: "/about-us/",
     hideInHeader: true,
   },
   {
@@ -457,6 +462,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/contact-us/",
     lastmod: "2024-09-25T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/free-ui/",
+    lastmod: "2025-07-18T11:01:41.528Z",
   },
   {
     loc: "https://www.brilworks.com/industry/fintech-software-development/",

@@ -357,6 +357,10 @@ const Footer = () => {
             {/* <Link href="/site-map/" className="transition">
           Sitemap
         </Link> */}
+            <TawkMessengerReact
+              propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
+              widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
+            />
           </div>
         </div>
       </div>

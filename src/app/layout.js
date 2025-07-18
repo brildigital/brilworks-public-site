@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
             content="https://www.facebook.com/brilwork/"
           />
           <meta name="robots" content="noindex,nofollow" />
-          {process.env.VERCEL_ENV !== "production" && (
+          {/* {process.env.VERCEL_ENV !== "production" && (
             <>
               <Script
                 defer
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
                 src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
               />
             </>
-          )}
+          )} */}
         </head>
         <body suppressHydrationWarning={true}>
           {/* <Header /> */}
