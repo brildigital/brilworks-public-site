@@ -23,11 +23,7 @@ export async function POST(req, res) {
   );
   const result = await verification.json();
 
-  console.log(
-    "********************result score******************",
-    result?.score
-  );
-
+  console.log("********************result******************", result);
   if (!result.success || result.score < 0.5) {
     return NextResponse.json({ message: "Captcha failed" }, { status: 400 });
   }
