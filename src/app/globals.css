@@ -485,6 +485,10 @@ input[type="number"] {
   background-color: rgb(227, 227, 227);
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /* scroll effect */
 .reveal {
   position: relative;

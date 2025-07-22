@@ -907,6 +907,11 @@ const nextConfig = {
         destination: `/blog/fintech-trends/`,
         statusCode: 301,
       },
+      {
+        source: `/blog/how-to-hire-node-js-developers/`,
+        destination: `/blog/hiring-node-js-developers-models/`,
+        statusCode: 301,
+      },
     ];
   },
 };

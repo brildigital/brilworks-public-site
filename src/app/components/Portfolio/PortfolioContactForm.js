@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import React, { useRef, useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
@@ -12,6 +13,8 @@ const PortfolioContactForm = ({
   messageField = false,
 }) => {
   const pathname = usePathname();
+
+  const recaptchaRef = useRef(null);
 
   const textToShow = pathname.startsWith("/portfolio/")
     ? "Case Study"
@@ -48,6 +51,8 @@ const PortfolioContactForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
+    const token = await recaptchaRef.current.executeAsync();
+
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
@@ -60,6 +65,7 @@ const PortfolioContactForm = ({
             ...formData,
             page: pathname,
             downloadLink: downloadFileUrl,
+            token,
           }),
         }
       );
@@ -157,7 +163,13 @@ const PortfolioContactForm = ({
             {respMessage}
           </div>
         )}
+
         <div className="flex items-center gap-5">
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            size="invisible"
+            ref={recaptchaRef}
+          />
           <ButtonV2
             id="submit"
             name="btnSubmit"

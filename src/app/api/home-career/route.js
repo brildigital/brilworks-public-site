@@ -1,11 +1,37 @@
 import { NextResponse } from "next/server";
-import { createHubSpotContact, sendDataToSlack } from "..";
+import {
+  createHubSpotContact,
+  sendDataToSlack,
+  validateContactPayload,
+} from "..";
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
   const payload = await req.json();
-  const { name, email, phone, message, page, downloadLink } = payload;
+  const { name, email, phone, message, page, downloadLink, token } = payload;
+
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+
+  const verification = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${secret}&response=${token}`,
+    }
+  );
+  const result = await verification.json();
+
+  if (!result.success || result.score < 0.5) {
+    return NextResponse.json({ message: "Captcha failed" }, { status: 400 });
+  }
+
+  const errors = validateContactPayload(payload);
+
+  if (errors.length > 0) {
+    return NextResponse.json({ errors }, { status: 400 });
+  }
 
   try {
     if (page === "/career/") {
