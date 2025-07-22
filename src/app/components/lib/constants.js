@@ -783,6 +783,31 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "GraphQL vs REST",
+    loc: "https://www.brilworks.com/blog/graphql-vs-rest/",
+    lastmod: "2025-07-21T13:38:36.667Z",
+  },
+  {
+    name: "Java Security Best Practices For Developers",
+    loc: "https://www.brilworks.com/blog/java-security-best-practices/",
+    lastmod: "2025-07-22T05:01:20.608Z",
+  },
+  {
+    name: "Should You Outsource Java Development or Hire In-House? A Complete Comparison",
+    loc: "https://www.brilworks.com/blog/in-house-vs-freelance-outsource-java-development/",
+    lastmod: "2025-07-21T12:56:28.302Z",
+  },
+  {
+    name: "How to Build APIs with Node.js and Fastify",
+    loc: "https://www.brilworks.com/blog/build-api-with-fastify/",
+    lastmod: "2025-07-21T07:38:36.640Z",
+  },
+  {
+    name: "Why Choose TypeScript for B2B Node.js Projects",
+    loc: "https://www.brilworks.com/blog/typescript-b2b-node-js-development/",
+    lastmod: "2025-07-17T11:14:03.798Z",
+  },
+  {
     name: "Business Guide to Build Web Applications with Java",
     loc: "https://www.brilworks.com/blog/build-web-applications-with-java/",
     lastmod: "2025-07-16T13:10:32.567Z",
@@ -1248,9 +1273,9 @@ export const blogListStaticData = [
     lastmod: "2025-06-04T05:58:07.533Z",
   },
   {
-    name: "How to Hire Top Node.js Developers",
-    loc: "https://www.brilworks.com/blog/how-to-hire-node-js-developers/",
-    lastmod: "2025-06-19T06:43:37.912Z",
+    name: "Hiring Models for Node.js Development: Insights From Brilworks",
+    loc: "https://www.brilworks.com/blog/hiring-node-js-developers-models/",
+    lastmod: "2025-07-22T07:47:45.808Z",
   },
   {
     name: "8 Best Node js Project Examples",
@@ -1890,7 +1915,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-07-15T08:03:47.477Z",
+    lastmod: "2025-07-22T07:16:34.662Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
