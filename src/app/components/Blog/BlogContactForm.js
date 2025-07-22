@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
 
 const BlogContactForm = () => {
   const pathname = usePathname();
+  const recaptchaRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
   const [formData, setFormData] = useState({
@@ -34,6 +36,8 @@ const BlogContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const token = await recaptchaRef.current.executeAsync();
+
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
@@ -42,7 +46,7 @@ const BlogContactForm = () => {
           header: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, page: pathname }),
+          body: JSON.stringify({ ...formData, page: pathname, token }),
         }
       );
 
@@ -128,6 +132,11 @@ const BlogContactForm = () => {
         <div className="success-msg mb-4 !text-xs" id="sucess_msg">
           {respMessage}
         </div>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          size="invisible"
+          ref={recaptchaRef}
+        />
         <ButtonV2
           id="submit"
           name="btnSubmit"

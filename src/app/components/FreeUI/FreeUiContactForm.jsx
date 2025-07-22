@@ -1,12 +1,14 @@
 "use client";
-
+import ReCAPTCHA from "react-google-recaptcha";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "../Homepage/Loader";
 
 const FreeUiContactForm = () => {
   const pathname = usePathname();
+
+  const recaptchaRef = useRef(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
@@ -32,6 +34,8 @@ const FreeUiContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const token = await recaptchaRef.current.executeAsync();
+
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
@@ -40,7 +44,7 @@ const FreeUiContactForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, page: pathname }),
+          body: JSON.stringify({ ...formData, page: pathname, token }),
         }
       );
 
@@ -138,6 +142,11 @@ const FreeUiContactForm = () => {
             {respMessage}
           </div>
         )}
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          size="invisible"
+          ref={recaptchaRef}
+        />
 
         <div className="flex items-center gap-5">
           <ButtonV2

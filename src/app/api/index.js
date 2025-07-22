@@ -100,3 +100,31 @@ export async function sendDataToSlack(payload) {
     );
   }
 }
+
+export function validateContactPayload(payload) {
+  const errors = [];
+
+  const { name, email } = payload;
+
+  // Validate name: required, 2–100 characters, only letters and spaces
+  if (
+    !name ||
+    typeof name !== "string" ||
+    name.trim().length < 2 ||
+    name.trim().length > 50 ||
+    !/^[a-zA-Z\s]+$/.test(name.trim())
+  ) {
+    errors.push("Invalid name");
+  }
+
+  // Validate email: basic pattern
+  if (
+    !email ||
+    typeof email !== "string" ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+  ) {
+    errors.push("Invalid email");
+  }
+
+  return errors;
+}
