@@ -138,7 +138,7 @@ export async function POST(req) {
       {
         status: 500,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "*", // or '*'
           "Content-Type": "application/json",
         },
       }
@@ -158,7 +158,7 @@ export async function DELETE(req) {
         {
           status: 400,
           headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "*", // or '*'
             "Content-Type": "application/json",
           },
         }
@@ -177,7 +177,7 @@ export async function DELETE(req) {
       {
         status: 200,
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "*", // or '*'
           "Content-Type": "application/json",
         },
       }
@@ -191,9 +191,19 @@ export async function DELETE(req) {
         status: 500,
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
         },
       }
     );
   }
+}
+
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*", // or '*'
+      "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }
