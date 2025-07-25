@@ -9,7 +9,16 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
   const payload = await req.json();
-  const { name, email, phone, message, page, downloadLink, token } = payload;
+  const {
+    name,
+    email,
+    phone,
+    message,
+    page,
+    downloadLink,
+    token,
+    previousPage,
+  } = payload;
 
   const secret = process.env.RECAPTCHA_SECRET_KEY;
 

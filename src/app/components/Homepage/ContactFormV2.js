@@ -1,7 +1,7 @@
 "use client";
 import ReCAPTCHA from "react-google-recaptcha";
 import { usePathname } from "next/navigation";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 
@@ -21,6 +21,21 @@ const ContactFormV2 = ({
     message: "",
     projectType: "",
   });
+
+  const [previousPage, setPreviousPage] = useState("");
+
+  useEffect(() => {
+    // Store current page in sessionStorage when component mounts
+    const currentPath = window.location.pathname;
+
+    const storedPreviousPage = sessionStorage.getItem("previousNav");
+    if (storedPreviousPage && storedPreviousPage !== currentPath) {
+      setPreviousPage(storedPreviousPage);
+    }
+
+    // Store current page for next navigation
+    sessionStorage.setItem("previousNav", currentPath);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +64,12 @@ const ContactFormV2 = ({
           header: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, page: pathname, token }),
+          body: JSON.stringify({
+            ...formData,
+            page: pathname,
+            token,
+            previousPage,
+          }),
         }
       );
 
