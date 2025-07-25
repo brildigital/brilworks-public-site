@@ -1,6 +1,6 @@
 "use client";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
