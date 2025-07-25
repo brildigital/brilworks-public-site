@@ -38,7 +38,8 @@ export async function createHubSpotContact(payload) {
 }
 
 export async function sendDataToSlack(payload) {
-  const { name, email, phone, message, page, website, linkedin } = payload;
+  const { name, email, phone, message, page, website, linkedin, previousPage } =
+    payload;
   const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(
     "/",
     ""
@@ -66,6 +67,8 @@ export async function sendDataToSlack(payload) {
                 type: "text",
                 text: `\nName: ${name || ""}\nPhone: ${phone || ""}\nMessage: ${
                   message || ""
+                }\n${
+                  previousPage ? `PreviousPage: ${previousPage}` : ""
                 }\nPage: ${pageURL || ""}\n${
                   website ? `Website: ${website}` : ""
                 }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}`,
