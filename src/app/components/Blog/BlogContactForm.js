@@ -16,6 +16,21 @@ const BlogContactForm = () => {
     message: "",
   });
 
+  const [previousPage, setPreviousPage] = useState("");
+
+  useEffect(() => {
+    // Store current page in sessionStorage when component mounts
+    const currentPath = window.location.pathname;
+
+    const storedPreviousPage = sessionStorage.getItem("previousNav");
+    if (storedPreviousPage && storedPreviousPage !== currentPath) {
+      setPreviousPage(storedPreviousPage);
+    }
+
+    // Store current page for next navigation
+    sessionStorage.setItem("previousNav", currentPath);
+  }, []);
+
   const isBlogPage = pathname.includes("/blog/");
 
   const handleChange = (e) => {
@@ -46,7 +61,12 @@ const BlogContactForm = () => {
           header: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, page: pathname, token }),
+          body: JSON.stringify({
+            ...formData,
+            page: pathname,
+            token,
+            previousPage,
+          }),
         }
       );
 
