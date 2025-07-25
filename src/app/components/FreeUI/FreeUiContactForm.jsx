@@ -21,6 +21,21 @@ const FreeUiContactForm = () => {
     linkedin: "",
   });
 
+  const [previousPage, setPreviousPage] = useState("");
+
+  useEffect(() => {
+    // Store current page in sessionStorage when component mounts
+    const currentPath = window.location.pathname;
+
+    const storedPreviousPage = sessionStorage.getItem("previousNav");
+    if (storedPreviousPage && storedPreviousPage !== currentPath) {
+      setPreviousPage(storedPreviousPage);
+    }
+
+    // Store current page for next navigation
+    sessionStorage.setItem("previousNav", currentPath);
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -44,7 +59,12 @@ const FreeUiContactForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, page: pathname, token }),
+          body: JSON.stringify({
+            ...formData,
+            page: pathname,
+            token,
+            previousPage,
+          }),
         }
       );
 
