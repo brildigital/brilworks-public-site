@@ -779,6 +779,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Famous Companies Using Node.js in 2025",
+    loc: "https://www.brilworks.com/blog/companies-using-nodejs/",
+    lastmod: "2025-07-25T07:07:08.142Z",
+  },
+  {
+    name: "How Much Does It Cost to Develop a Website?",
+    loc: "https://www.brilworks.com/blog/website-development-cost/",
+    lastmod: "2025-07-24T13:15:29.612Z",
+  },
+  {
+    name: "The Role of Java in AI & Machine Learning Applications",
+    loc: "https://www.brilworks.com/blog/java-in-ai-machine-learning/",
+    lastmod: "2025-07-23T12:59:35.923Z",
+  },
+  {
     name: "GraphQL vs REST",
     loc: "https://www.brilworks.com/blog/graphql-vs-rest/",
     lastmod: "2025-07-21T13:38:36.667Z",
@@ -786,12 +801,12 @@ export const blogListStaticData = [
   {
     name: "Java Security Best Practices For Developers",
     loc: "https://www.brilworks.com/blog/java-security-best-practices/",
-    lastmod: "2025-07-22T05:01:20.608Z",
+    lastmod: "2025-07-23T04:49:41.702Z",
   },
   {
     name: "Should You Outsource Java Development or Hire In-House? A Complete Comparison",
     loc: "https://www.brilworks.com/blog/in-house-vs-freelance-outsource-java-development/",
-    lastmod: "2025-07-21T12:56:28.302Z",
+    lastmod: "2025-07-25T08:34:12.494Z",
   },
   {
     name: "How to Build APIs with Node.js and Fastify",
@@ -801,7 +816,7 @@ export const blogListStaticData = [
   {
     name: "Why Choose TypeScript for B2B Node.js Projects",
     loc: "https://www.brilworks.com/blog/typescript-b2b-node-js-development/",
-    lastmod: "2025-07-17T11:14:03.798Z",
+    lastmod: "2025-07-24T06:21:01.782Z",
   },
   {
     name: "Business Guide to Build Web Applications with Java",
@@ -841,7 +856,7 @@ export const blogListStaticData = [
   {
     name: "What is Java Programming Language? History, Uses, and How to Start",
     loc: "https://www.brilworks.com/blog/what-is-java-programming-language/",
-    lastmod: "2025-07-09T12:41:08.797Z",
+    lastmod: "2025-07-25T06:05:01.618Z",
   },
   {
     name: "Why ReactJS Is the Right Choice for eCommerce Development",
@@ -951,7 +966,7 @@ export const blogListStaticData = [
   {
     name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
     loc: "https://www.brilworks.com/blog/nodejs-usage-statistics/",
-    lastmod: "2025-06-22T05:59:29.420Z",
+    lastmod: "2025-07-24T07:39:29.101Z",
   },
   {
     name: "Understanding React Native Fabric and How to Implement It in Your Project",
@@ -1251,7 +1266,7 @@ export const blogListStaticData = [
   {
     name: "React Native Benefits & Limitations: What You Should Know Before You Build",
     loc: "https://www.brilworks.com/blog/benefits-of-react-native/",
-    lastmod: "2025-05-13T09:52:05.769Z",
+    lastmod: "2025-07-25T06:27:16.762Z",
   },
   {
     name: "12 Best React Native App Development Tools for Developers",
@@ -1291,7 +1306,7 @@ export const blogListStaticData = [
   {
     name: "React Components Explained: A 2025 Guide for Developers",
     loc: "https://www.brilworks.com/blog/react-components/",
-    lastmod: "2025-05-09T08:18:16.055Z",
+    lastmod: "2025-07-25T06:36:43.960Z",
   },
   {
     name: "The Shift From React to React Native Explained",
@@ -1386,7 +1401,7 @@ export const blogListStaticData = [
   {
     name: "7 Key Mobile App Monetization Strategies: A Guide to Earning from Your App",
     loc: "https://www.brilworks.com/blog/mobile-app-monetization-strategies/",
-    lastmod: "2025-06-18T07:01:28.340Z",
+    lastmod: "2025-07-25T07:02:56.508Z",
   },
   {
     name: "The Role of Cloud Integration in Mobile Apps",
@@ -1686,7 +1701,7 @@ export const blogListStaticData = [
   {
     name: "Next.js vs Express.js: A Head-to-Head Battle for Your Next Project",
     loc: "https://www.brilworks.com/blog/next-js-vs-express-js:-a-head-to-head-battle-for-your-next-project/",
-    lastmod: "2025-04-15T07:10:50.587Z",
+    lastmod: "2025-07-24T08:57:57.505Z",
   },
   {
     name: "10 Best Online Business Ideas with Minimal Investment",
@@ -1706,7 +1721,7 @@ export const blogListStaticData = [
   {
     name: "How to Create a Mobile App in 2025 [Easy Steps]",
     loc: "https://www.brilworks.com/blog/how-to-create-a-mobile-app/",
-    lastmod: "2025-02-27T07:23:54.335Z",
+    lastmod: "2025-07-24T08:46:43.395Z",
   },
   {
     name: "Is AWS the Right Cloud Solution for Your Small Business?",
@@ -1731,7 +1746,7 @@ export const blogListStaticData = [
   {
     name: "The State of Generative AI in 2025",
     loc: "https://www.brilworks.com/blog/state-of-generative-ai/",
-    lastmod: "2025-06-11T07:31:30.458Z",
+    lastmod: "2025-07-24T07:21:43.344Z",
   },
   {
     name: "AWS IoT Device Management: Features and How It Works",
@@ -1911,7 +1926,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-07-22T07:16:34.662Z",
+    lastmod: "2025-07-24T05:56:22.516Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
@@ -1991,7 +2006,7 @@ export const blogListStaticData = [
   {
     name: "NestJS vs NextJS:  When to Choose Each Framework",
     loc: "https://www.brilworks.com/blog/nestjs-vs-nextjs/",
-    lastmod: "2025-07-10T06:15:33.938Z",
+    lastmod: "2025-07-24T08:45:18.642Z",
   },
   {
     name: "Amazon S3: A Cloud Storage Solution for Every Business",
@@ -2014,9 +2029,9 @@ export const blogListStaticData = [
     lastmod: "2025-05-21T13:18:30.671Z",
   },
   {
-    name: "What is AWS Lambda and How Can It Benefit Your Software Development Company?",
+    name: "AWS Lambda Benefits, Use Cases, Pros & Cons",
     loc: "https://www.brilworks.com/blog/aws-lambda-and-benefit-to-software-development-company/",
-    lastmod: "2024-04-22T10:25:18.315Z",
+    lastmod: "2025-07-24T08:33:52.259Z",
   },
   {
     name: "DynamoDB: The Ultimate NoSQL Database for Modern Applications",
@@ -2256,7 +2271,7 @@ export const blogListStaticData = [
   {
     name: "Discover the Benefits of Using Prisma in Your Next Project",
     loc: "https://www.brilworks.com/blog/discover-the-benefits-of-using-prisma-in-your-next-project/",
-    lastmod: "2025-04-15T08:23:25.777Z",
+    lastmod: "2025-07-24T08:18:27.188Z",
   },
   {
     name: "Top Node.js Frameworks For Web Development",

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TabAccordionDark from "../Common/TabAccordionDark";
 import Heading from "../HTMLComponents/Heading";
 import { useMediaQuery } from "react-responsive";
-import TabVerticalSticky from "../Common/TabVerticalSticky";
+import TabVerticalDark from "../Common/TabVerticalDark";
 
 const HomepageWhyChooseUs = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -86,10 +86,16 @@ const HomepageWhyChooseUs = () => {
               </div>
             ))
           ) : (
-            <TabVerticalSticky
-              sectionId="why-choose-brilworks"
+            // <TabVerticalSticky
+            //   sectionId="why-choose-brilworks"
+            //   data={whyChooseUscontent}
+            //   borderRight={false}
+            //   rightSideOnlyImage={true}
+            // />
+            <TabVerticalDark
+              initialTabValue="why-choose-1"
               data={whyChooseUscontent}
-              borderRight={false}
+              borderRight={true}
               rightSideOnlyImage={true}
             />
           )}
