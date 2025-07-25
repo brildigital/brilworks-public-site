@@ -383,9 +383,8 @@
   }
 }
 
-.big-text-stroke {
-  color: var(--theme-color);
-  font-weight: 700;
+#custom-animation .absolute.inset-0.z-10.h-full.bg-white.rounded-md.shadow {
+  inset: unset !important;
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 768px) {

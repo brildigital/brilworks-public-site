@@ -36,7 +36,7 @@ const TabVerticalDark = ({
                   value={value}
                   onClick={() => setTabValue(value)}
                   className={`flex items-start justify-start p-0 w-full font-Figtree ${
-                    tabValue === value ? "bg-tab-gradient rounded-l-2xl" : ""
+                    tabValue === value ? "tab-bg-gradient rounded-l-2xl" : ""
                   }`}
                 >
                   <div
@@ -48,7 +48,7 @@ const TabVerticalDark = ({
                       <p
                         className={`flex items-center justify-center lg:w-10 lg:h-10 md:w-8 md:h-8 font-semibold rounded-full lg:text-2xl md:text-xl ${
                           tabValue === value
-                            ? "bg-white  text-colorBlack"
+                            ? "bg-white text-colorBlack"
                             : "bg-[#17283E] text-colorWhite"
                         }`}
                       >
@@ -69,7 +69,7 @@ const TabVerticalDark = ({
                       )}
                     </div>
 
-                    {tabValue === value && (
+                    {/* {tabValue === value && (
                       <Image
                         src="/images/v2/active-tab-pointer.svg"
                         alt="active-pointer"
@@ -77,7 +77,7 @@ const TabVerticalDark = ({
                         width="24"
                         height="24"
                       />
-                    )}
+                    )} */}
                   </div>
                 </Tab>
               ))}
