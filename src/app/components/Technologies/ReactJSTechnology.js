@@ -36,9 +36,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const techStackList = [
@@ -271,7 +268,6 @@ const ReactJSTechnology = () => {
         bgClass="bg-themeLight"
         title="ReactJS Developers"
       />
-      <HireDevelopersPricingPlan title="ReactJS Developer" />
       <HomePageBlogs />
       <SolutionContactForm />
       <ReactJSFAQs />

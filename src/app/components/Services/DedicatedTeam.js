@@ -8,7 +8,6 @@ const MultipleCardInGrid = dynamic(() =>
 );
 const WhyDedicatedTeam = dynamic(() => import("./WhyDedicatedTeam"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const ServicesPricingPlans = dynamic(() => import("./ServicesPricingPlans"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 const DedicatedTeam = () => {
@@ -124,7 +123,6 @@ const DedicatedTeam = () => {
         buttonText="Get Started Today"
       />
       <ClientReviews />
-      <ServicesPricingPlans />
       <TechStackWeUse />
       <ServicesFAQ />
     </>

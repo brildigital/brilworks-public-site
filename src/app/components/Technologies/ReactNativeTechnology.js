@@ -16,9 +16,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const MultipleCardInGrid = dynamic(() =>
   import("../Common/MultipleCardInGrid")
@@ -211,7 +208,6 @@ const ReactNativeTechnology = () => {
         title="Join 100+ clients who trust Brilworks for React Native development services. Take advantage of our 48-hour risk-free trial and start building your app today."
         buttonText="Hire React Native Developer"
       />
-      <HireDevelopersPricingPlan title="React Native Developer" />
       <ReactNativeHiringTable />
       <HomePageBlogs />
       <SolutionContactForm />

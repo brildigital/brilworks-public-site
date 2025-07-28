@@ -13,9 +13,6 @@ const SolutionContactForm = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const MultipleCardInGrid = dynamic(() =>
   import("../Common/MultipleCardInGrid")
@@ -202,7 +199,6 @@ const WhiteLabelTechnology = () => {
         bgClass="bg-themeLight"
         title="White Label Developers"
       />
-      <HireDevelopersPricingPlan title="White Label Developer" />
       <HomePageBlogs />
       <SolutionContactForm />
       <WhiteLabelFAQs />

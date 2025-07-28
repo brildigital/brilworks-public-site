@@ -17,9 +17,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const JavaTechnology = () => {
@@ -98,7 +95,6 @@ const JavaTechnology = () => {
       <BenefitOfHiringDevelopers />
       <TechnologyCombination />
       <HireDevelopersInThreeSteps title="Java Developers" />
-      <HireDevelopersPricingPlan title="Java Developer" />
       <HomePageBlogs />
       <SolutionContactForm />
       <JavaFAQs />

@@ -24,9 +24,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const why90PlusClientReturn = [
@@ -253,7 +250,6 @@ const BlockchainTechnology = () => {
         bgClass="bg-themeLight"
         title="Blockchain Developers"
       />
-      <HireDevelopersPricingPlan title="Blockchain Developer" />
       <HomePageBlogs />
       <SolutionContactForm />
       <BlockChainFAQs />

@@ -19,9 +19,6 @@ const HireDevelopersInThreeSteps = dynamic(() =>
 const MultipleKeyValueWithBG = dynamic(() =>
   import("../Common/MultipleKeyValueWithBG")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -168,7 +165,6 @@ const BubbleIoTechnology = () => {
         bgClass="bg-themeLight"
         title="Bubble Developers"
       />
-      <HireDevelopersPricingPlan title="Bubble Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="What Makes a Top-Rated Bubble Company?"
