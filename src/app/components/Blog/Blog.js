@@ -8,6 +8,7 @@ import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";
+import { blogSubCategories } from "../lib/constants";
 
 const Blog = () => {
   const ITEMS_PER_PAGE = 10;
@@ -15,6 +16,7 @@ const Blog = () => {
   const [totalBlog, setTotalBlog] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [blogCategory, setBlogCategory] = useState("");
+  const [blogSubCategory, setBlogSubCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = usePathname();
@@ -38,7 +40,8 @@ const Blog = () => {
         currentPage,
         ITEMS_PER_PAGE,
         blogCategory,
-        searchQuery
+        searchQuery,
+        blogSubCategory
       );
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
@@ -60,11 +63,11 @@ const Blog = () => {
     );
 
     return () => clearTimeout(delayDebounceFn);
-  }, [currentPage, blogCategory, searchQuery]);
+  }, [currentPage, blogCategory, blogSubCategory, searchQuery]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [blogCategory]);
+  }, [blogCategory, blogSubCategory]);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -120,6 +123,7 @@ const Blog = () => {
         </div>
       </div>
 
+      <SubscribeNewsLetterForm />
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
         <div className="flex sxl:flex-row flex-col-reverse !mt-4">
           <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
@@ -210,6 +214,24 @@ const Blog = () => {
               </div>
             </form>
           </div>
+        </div>
+        <div className="w-full sxl:!w-1/3 flex flex-col items-start justify-end">
+          <label className="block text-base font-medium mb-1">
+            Sub Category
+          </label>
+          <select
+            name="subCategory"
+            className="w-fit px-4 py-2 border border-gray-300 rounded-lg text-sm bg-[#F8FAFC]"
+            onChange={(e) => setBlogSubCategory(e.target.value)}
+            value={blogSubCategory}
+          >
+            <option value="">All</option>
+            {blogSubCategories?.map((subCategory, index) => (
+              <option key={index} value={subCategory?.value}>
+                {subCategory.key}
+              </option>
+            ))}
+          </select>
         </div>
         <div
           className={`grid ${
@@ -359,7 +381,6 @@ const Blog = () => {
           </div>
         )}
       </div>
-      <SubscribeNewsLetterForm />
     </>
   );
 };

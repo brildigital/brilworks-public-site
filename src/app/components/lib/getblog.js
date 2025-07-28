@@ -31,7 +31,8 @@ export async function getblogData(
   page_no,
   limit_per_page,
   filter_category,
-  search_query
+  search_query,
+  filter_subcategory
 ) {
   // Define the base parameters for the API call
   let apiParams = {
@@ -46,11 +47,26 @@ export async function getblogData(
     },
   };
 
-  if (filter_category) {
-    apiParams.filter_query.Category = {
-      in: filter_category,
-    };
-  }
+  apiParams.filter_query = {
+    ...(filter_category && {
+      Category: { in: filter_category },
+    }),
+    ...(filter_subcategory && {
+      subcategory: { any_in_array: filter_subcategory },
+    }),
+  };
+
+  // if (filter_category) {
+  //   apiParams.filter_query.Category = {
+  //     in: filter_category,
+  //   };
+  // }
+
+  // if (filter_subcategory) {
+  //   apiParams.filter_query.subcategory = {
+  //     any_in_array: filter_subcategory,
+  //   };
+  // }
 
   if (search_query) {
     // If search_query is present, add search_term to apiParams

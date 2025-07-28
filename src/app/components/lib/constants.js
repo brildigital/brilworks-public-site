@@ -28,6 +28,103 @@ export const notNewTabRedirect = [
   `${process.env.NEXT_PUBLIC_BASE_URL}low-code-no-code-development-services/`,
 ];
 
+export const blogSubCategories = [
+  { key: "Generative AI", value: "generative-ai" },
+  { key: "AI/ML", value: "ai-ml" },
+  {
+    key: "Product Engineering and Development",
+    value: "product-engineering-development",
+  },
+  {
+    key: "Saas Application Development",
+    value: "saas-application-development",
+  },
+  {
+    key: "Application Development",
+    value: "application-development",
+  },
+  {
+    key: "AWS",
+    value: "aws-consulting",
+  },
+  {
+    key: "DevOps",
+    value: "devops-consulting",
+  },
+  {
+    key: "Kubernetes",
+    value: "kubernetes-consulting",
+  },
+  {
+    key: "Frappe Development",
+    value: "frappe-development",
+  },
+  {
+    key: "Flutterflow Development",
+    value: "flutterflow-development",
+  },
+  {
+    key: "Adalo Development",
+    value: "adalo-development",
+  },
+  {
+    key: "Low Code/No code",
+    value: "low-code-no-code",
+  },
+  {
+    key: "Hire ReactJS Developer",
+    value: "hire-reactjs-developer",
+  },
+  {
+    key: "Hire NodeJS Developer",
+    value: "hire-nodejs-developer",
+  },
+  {
+    key: "Hire Java Developer",
+    value: "hire-java-developer",
+  },
+  {
+    key: "Hire AWS Developer",
+    value: "hire-aws-developer",
+  },
+  {
+    key: "Hire Low Code Developers",
+    value: "hire-low-code-no-code-developer",
+  },
+  {
+    key: "Hire Blockchain Developers",
+    value: "hire-blockchain-developer",
+  },
+  {
+    key: "Hire Mobile App Developers",
+    value: "hire-mobile-app-developer",
+  },
+  {
+    key: "Mobile Development",
+    value: "mobile-development",
+  },
+  {
+    key: "Web Development",
+    value: "web-development",
+  },
+  {
+    key: "React",
+    value: "react",
+  },
+  {
+    key: "Nodejs",
+    value: "nodejs",
+  },
+  {
+    key: "Java",
+    value: "java",
+  },
+  {
+    key: "React Native",
+    value: "react-native",
+  },
+];
+
 export const servicesMenuItems = [
   {
     name: "COOPERATION MODEL",
@@ -781,7 +878,7 @@ export const blogListStaticData = [
   {
     name: "Famous Companies Using Node.js in 2025",
     loc: "https://www.brilworks.com/blog/companies-using-nodejs/",
-    lastmod: "2025-07-25T07:07:08.142Z",
+    lastmod: "2025-07-25T10:15:04.769Z",
   },
   {
     name: "How Much Does It Cost to Develop a Website?",
