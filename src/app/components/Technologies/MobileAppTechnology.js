@@ -19,9 +19,6 @@ const HireDevelopersInThreeSteps = dynamic(() =>
 const MultipleKeyValueWithBG = dynamic(() =>
   import("../Common/MultipleKeyValueWithBG")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -169,7 +166,6 @@ const MobileAppTechnology = () => {
         bgClass="bg-themeLight"
         title="Hire Mobile App Developers"
       />
-      <HireDevelopersPricingPlan title="Mobile App Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="Why Should You Hire Mobile App Developers from Brilworks?"

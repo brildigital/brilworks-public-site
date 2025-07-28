@@ -18,9 +18,6 @@ const HireDevelopersInThreeSteps = dynamic(() =>
 const MultipleKeyValueWithBG = dynamic(() =>
   import("../Common/MultipleKeyValueWithBG")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const AWSFAQs = dynamic(() => import("./TechnologyFAQ"));
 
@@ -135,7 +132,6 @@ const AWSTechnology = () => {
       <TechnologyDevelopers />
       <BenefitOfHiringDevelopers />
       <HireDevelopersInThreeSteps title="AWS Developers" />
-      <HireDevelopersPricingPlan title="AWS Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="Why Should You Hire AWS Developers from Brilworks?"

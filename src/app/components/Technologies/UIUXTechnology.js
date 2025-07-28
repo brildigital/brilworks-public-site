@@ -16,9 +16,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const UIUXTechnology = () => {
@@ -92,7 +89,6 @@ const UIUXTechnology = () => {
         title="UI/UX Designers"
         bgClass="bg-themeLight"
       />
-      <HireDevelopersPricingPlan title="UI/UX Designer" />
       <HomePageBlogs />
       <SolutionContactForm />
       <UIUXFAQs />

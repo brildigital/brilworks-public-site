@@ -19,9 +19,6 @@ const HireDevelopersInThreeSteps = dynamic(() =>
 const MultipleKeyValueWithBG = dynamic(() =>
   import("../Common/MultipleKeyValueWithBG")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -173,7 +170,6 @@ const AdaloTechnology = () => {
         bgClass="bg-themeLight"
         title="Adalo Developers"
       />
-      <HireDevelopersPricingPlan title="Adalo Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="What Makes a Top-Rated Adalo Development Company?"

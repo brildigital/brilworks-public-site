@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import ServiceHeroSection from "./ServiceHeroSection";
 import UpskillStaffAugmentation from "./UpskillStaffAugmentation";
 
-const ServicesPricingPlans = dynamic(() => import("./ServicesPricingPlans"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const TechStackWeUse = dynamic(() => import("./TechStackWeUse"));
 const MultipleCardWithIconBG = dynamic(() =>
@@ -66,7 +65,6 @@ const StaffAugmentation = () => {
         data={whyStaffAugmentationData}
       />
       <ClientReviews />
-      <ServicesPricingPlans />
       <TechStackWeUse />
       <ServicesFAQ />
     </>

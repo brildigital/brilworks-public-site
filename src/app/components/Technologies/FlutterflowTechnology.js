@@ -18,9 +18,6 @@ const BenefitOfHiringDevelopers = dynamic(() =>
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
-const HireDevelopersPricingPlan = dynamic(() =>
-  import("../HireTeam/HireDevelopersPricingPlan")
-);
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const FlutterflowTechnology = () => {
@@ -172,7 +169,6 @@ const FlutterflowTechnology = () => {
         bgClass="bg-themeLight"
         title="Flutterflow Developers"
       />
-      <HireDevelopersPricingPlan title="Flutterflow Developer" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG
         title="What Makes a Top-Rated Flutterflow Company?"
