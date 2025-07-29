@@ -320,6 +320,8 @@ export const isExternalLink = (href) => {
     "https://www.uniqode.com",
     "https://www.grammarin.com/punctuation-checker",
     "https://www.paraphraser.io/ai-humanizer",
+    "https://www.aegissofttech.com/insights/best-node-js-web-frameworks/",
+    "https://www.aegissofttech.com/insights/mobile-app-testing-tools/",
   ];
 
   return (
