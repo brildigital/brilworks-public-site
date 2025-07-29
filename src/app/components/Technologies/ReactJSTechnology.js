@@ -241,8 +241,8 @@ const ReactJSTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-        technologyText="Hire ReactJS Developers"
-        title="Hire ReactJS Developers to Fire Up Your Frontend"
+        technologyText="Reactjs Development Services"
+        title="Hire React.js Developers: Dedicated Experts in 72 hours"
         description="Our experienced Reactjs developers have built and maintained scalable, intuitive, and interactive applications that have served millions of users. If you’re planning on using React software development services, we’re the right partner for you."
         imageSrc="/images/v2/reactjs-banner.webp"
       />
