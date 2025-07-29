@@ -5,7 +5,6 @@ import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import ContactFormV2 from "../Homepage/ContactFormV2";
 import { scrollEffect } from "../lib/commonFunction";
 import FreeUiContactForm from "./FreeUiContactForm";
 
@@ -466,77 +465,6 @@ const ExploreFreeDesign = () => {
               >
                 <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
                 <FreeUiContactForm />
-                {/* <form className="space-y-4" id="contactForm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Your Company"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Project Type
-                </label>
-                <select
-                  name="projectType"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                >
-                  <option value="website">Website</option>
-                  <option value="mobileApp">Mobile App</option>
-                  <option value="dashboard">Dashboard</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Project Details
-                </label>
-                <textarea
-                  name="projectDetails"
-                  rows="5"
-                  placeholder="Tell us about your project and what screens you'd like us to design..."
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                ></textarea>
-              </div>
-
-              <ButtonV2
-                type="submit"
-                size="large"
-                className="w-fit hover:text-themeColor mx-auto"
-                label="Get Free UI"
-              />
-            </form> */}
               </div>
             </div>
           </section>
