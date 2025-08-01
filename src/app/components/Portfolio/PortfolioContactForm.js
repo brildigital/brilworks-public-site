@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Loader from "../Homepage/Loader";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
+import { formatSrcUrl } from "../lib/commonFunction";
 
 const PortfolioContactForm = ({
   description,
@@ -69,6 +70,7 @@ const PortfolioContactForm = ({
     const token = await recaptchaRef.current.executeAsync();
 
     try {
+      const downloadURL = formatSrcUrl(downloadFileUrl);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
         {
@@ -79,7 +81,7 @@ const PortfolioContactForm = ({
           body: JSON.stringify({
             ...formData,
             page: pathname,
-            downloadLink: downloadFileUrl,
+            downloadLink: downloadURL,
             token,
             previousPage,
           }),
