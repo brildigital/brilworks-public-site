@@ -35,7 +35,11 @@ const HireTeamHeroSection = ({
               <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
                 {technologyText}
               </p>
-              <Heading type="h1" className="text-white" text={title} />
+              <Heading
+                type="h1"
+                className="text-white bg-green-600"
+                text={title}
+              />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 {description}
               </p>

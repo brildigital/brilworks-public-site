@@ -4,15 +4,30 @@ export async function GET(request) {
 
   try {
     const fileUrl = decodeURIComponent(encodedUrl);
-    if (
-      !fileUrl.endsWith(".pdf") ||
-      (!fileUrl.startsWith(
-        "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/"
-      ) &&
-        !fileUrl.startsWith("https://a.storyblok.com/"))
-    ) {
+    const trustedDomains = [
+      "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/",
+      "https://a.storyblok.com/",
+      "https://d11qzsb0ksp6iz.cloudfront.net/",
+      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/",
+    ];
+
+    const isValidFile =
+      fileUrl.endsWith(".pdf") &&
+      trustedDomains.some((domain) => fileUrl.startsWith(domain));
+
+    if (!isValidFile) {
       return new Response("Invalid or untrusted file URL", { status: 400 });
     }
+
+    // if (
+    //   !fileUrl.endsWith(".pdf") ||
+    //   (!fileUrl.startsWith(
+    //     "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/"
+    //   ) &&
+    //     !fileUrl.startsWith("https://a.storyblok.com/"))
+    // ) {
+    //   return new Response("Invalid or untrusted file URL", { status: 400 });
+    // }
     const res = await fetch(fileUrl);
 
     if (!res.ok) {

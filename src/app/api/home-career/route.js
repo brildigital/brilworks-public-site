@@ -1,24 +1,24 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import {
   createHubSpotContact,
   sendDataToSlack,
   validateContactPayload,
 } from "..";
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// const sgMail = require("@sendgrid/mail");
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
   const payload = await req.json();
-  const {
-    name,
-    email,
-    phone,
-    message,
-    page,
-    downloadLink,
-    token,
-    previousPage,
-  } = payload;
+  const { name, email, phone, message, page, downloadLink, token } = payload;
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.SENDGRID_DEFAULT_FROM_EMAIL,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  });
 
   const secret = process.env.RECAPTCHA_SECRET_KEY;
 
@@ -45,20 +45,47 @@ export async function POST(req, res) {
 
   try {
     if (page === "/career/") {
-      const msg = {
-        to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
+      // const msg = {
+      //   to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
+      //   from: `${process.env.SENDGRID_DEFAULT_FROM_EMAIL}`,
+      //   templateId: `${process.env.SENDGRID_DEFAULT_CAREER_TEMPLATE_ID}`,
+      //   dynamicTemplateData: {
+      //     name: name || "",
+      //     email: email || "",
+      //     message: message || "",
+      //     phone: phone || "",
+      //   },
+      // };
+      const mailOptions = {
         from: `${process.env.SENDGRID_DEFAULT_FROM_EMAIL}`,
-        templateId: `${process.env.SENDGRID_DEFAULT_CAREER_TEMPLATE_ID}`,
-        dynamicTemplateData: {
-          name: name || "",
-          email: email || "",
-          message: message || "",
-          phone: phone || "",
-        },
+        to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
+        subject: `New Inquiry: ${serviceType}`,
+        html: `
+        <h2>New Career Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
+        `,
       };
 
-      await sgMail
-        .send(msg)
+      // await sgMail
+      //   .send(msg)
+      //   .then((data) => {
+      //     return NextResponse.json(
+      //       { message: "Email sent successfully" },
+      //       { status: 200 }
+      //     );
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //     return NextResponse.json(
+      //       { message: "Error sending email" },
+      //       { status: 500 }
+      //     );
+      //   });
+      await transporter
+        .sendMail(mailOptions)
         .then((data) => {
           return NextResponse.json(
             { message: "Email sent successfully" },
@@ -112,7 +139,7 @@ export async function POST(req, res) {
                       color: #ffffff;
                       border-radius: 6px;
                       font-size: 14px;
-                      text-decoration: none; 
+                      text-decoration: none;
                       padding: 8px 16px;
                       font-weight: bold;
                       background-color: #007bff;" target="_blank">Download ${textToShow}</a>
@@ -128,8 +155,24 @@ export async function POST(req, res) {
           html,
         };
 
-        await sgMail
-          .send(msg)
+        // await sgMail
+        //   .send(msg)
+        //   .then((data) => {
+        //     return NextResponse.json(
+        //       { message: "Email sent successfully" },
+        //       { status: 200 }
+        //     );
+        //   })
+        //   .catch((error) => {
+        //     console.error(error);
+        //     console.log("error:", error, "Error sending email");
+        //     return NextResponse.json(
+        //       { message: "Error sending email" },
+        //       { status: 500 }
+        //     );
+        //   });
+        await transporter
+          .sendMail(msg)
           .then((data) => {
             return NextResponse.json(
               { message: "Email sent successfully" },
