@@ -323,6 +323,7 @@ export const isExternalLink = (href) => {
     "https://www.aegissofttech.com/insights/best-node-js-web-frameworks/",
     "https://www.aegissofttech.com/insights/mobile-app-testing-tools/",
     "https://www.cflowapps.com/workflow-automation-healthcare/",
+    "https://facia.io/facial-recognition/",
   ];
 
   return (
