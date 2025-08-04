@@ -233,6 +233,44 @@ const whiteLabelSolutionsList = {
   ],
 };
 
+const reactJSDevelopmentSvervice = {
+  title: "Our Engagement Process",
+  description:
+    "We keep the path from concept to delivery transparent and structured:",
+  solutions: [
+    {
+      title: "Discovery & Alignment",
+      description:
+        "Understand your product vision, user needs, and technical constraints. We define scope, priorities, and measurable outcomes.",
+      icon: "/images/v2/shopping-cart-check.svg",
+    },
+    {
+      title: "Design & Architecture",
+      description:
+        "Translate requirements into component-level designs, state management strategy, and performance plans.",
+      icon: "/images/v2/heathcare-icon.svg",
+    },
+    {
+      title: "Iterative Development",
+      description:
+        "Build in small, reviewable increments. Each sprint delivers visible progress, enabling feedback loops and course correction.",
+      icon: "/images/v2/usd-circle.svg",
+    },
+    {
+      title: "Quality & Optimization",
+      description:
+        "Continuous testing, code reviews, performance profiling, and accessibility checks ensure robustness before launch.",
+      icon: "/images/v2/real-estate.svg",
+    },
+    {
+      title: "Launch & Support",
+      description:
+        "Deploy with observability, monitor real usage, and iterate. Optionally retain us for ongoing feature velocity or team augmentation.",
+      icon: "/images/v2/user-graduate.svg",
+    },
+  ],
+};
+
 const HireTeamSolutions = () => {
   const pathname = usePathname();
   const showDataBasedOnPathname = {
@@ -241,6 +279,7 @@ const HireTeamSolutions = () => {
     "/hire-blockchain-developer/": blockchainSolutions,
     "/hire-react-native-developer/": reactNativeSolutionsList,
     "/hire-white-label-developer/": whiteLabelSolutionsList,
+    "/reactjs-development-services/": reactJSDevelopmentSvervice,
   };
 
   const currentData = showDataBasedOnPathname[pathname];

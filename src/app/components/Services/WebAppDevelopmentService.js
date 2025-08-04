@@ -80,7 +80,7 @@ const WebAppDevelopmentService = () => {
     ],
   };
 
-  const whyChooseUsDevOpsData = {
+  const whyChooseUsDevelopmentData = {
     title: "Why Choose Us for Your Web Application Development?",
     benefits: [
       {
@@ -189,7 +189,7 @@ const WebAppDevelopmentService = () => {
       />
       <MultipleCardWithIconBG
         bgClass="bg-sectionBG"
-        data={whyChooseUsDevOpsData}
+        data={whyChooseUsDevelopmentData}
       />
       <Honors />
       <ClientReviews />
