@@ -17,7 +17,7 @@ const FreeUiContactForm = () => {
     email: "",
     phone: "",
     website: "",
-    idea: "",
+    message: "",
     linkedin: "",
   });
 
@@ -74,7 +74,7 @@ const FreeUiContactForm = () => {
           email: "",
           phone: "",
           website: "",
-          idea: "",
+          message: "",
           linkedin: "",
         });
         setRespMessage("Your response has been submitted successfully.");
@@ -141,9 +141,9 @@ const FreeUiContactForm = () => {
         <textarea
           className="form-field"
           placeholder="Tell us about your idea"
-          name="idea"
+          name="message"
           rows={4}
-          value={formData.idea}
+          value={formData.message}
           onChange={handleChange}
           required
         />
