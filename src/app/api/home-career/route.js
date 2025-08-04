@@ -58,7 +58,7 @@ export async function POST(req, res) {
       const mailOptions = {
         from: `${process.env.SENDGRID_DEFAULT_FROM_EMAIL}`,
         to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
-        subject: `New Inquiry: ${serviceType}`,
+        subject: `New Inquiry: Career`,
         html: `
         <h2>New Career Request</h2>
         <p><strong>Name:</strong> ${name}</p>
