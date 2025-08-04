@@ -33,6 +33,9 @@ const PortfolioContactForm = ({
 
   const submitText = downloadFileUrl ? `Download ${textToShow}` : "Submit";
   const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
+  const submitMessageText = downloadFileUrl
+    ? "Thanks! Download link has been sent to your email."
+    : "Your response is submitted successfully.";
 
   const [previousPage, setPreviousPage] = useState("");
 
@@ -96,7 +99,7 @@ const PortfolioContactForm = ({
           email: "",
           message: "",
         });
-        setRespMessage("Your response is submitted successfully.");
+        setRespMessage(submitMessageText);
         clearMessage();
       } else {
         setRespMessage("Something went wrong!");
@@ -184,11 +187,6 @@ const PortfolioContactForm = ({
         )}
 
         <div className="flex items-center gap-5">
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            size="invisible"
-            ref={recaptchaRef}
-          />
           <ButtonV2
             id="submit"
             name="btnSubmit"
@@ -198,6 +196,11 @@ const PortfolioContactForm = ({
             icon={isSubmitting ? <Loader /> : ""}
             label={isSubmitting ? submitLoadingText : submitText}
             disabled={isSubmitting}
+          />
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            size="invisible"
+            ref={recaptchaRef}
           />
         </div>
       </form>

@@ -10,7 +10,6 @@ const CTASection = dynamic(() => import("../Common/CTASection"));
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = ({ caseStudyData }) => {
-  const technology = ["iOS", "Android", ".Net"];
   return (
     <>
       <PortfolioBanner />
