@@ -853,6 +853,10 @@ export const sitemapData = [
     lastmod: "2025-07-11T17:06:31.528Z",
   },
   {
+    loc: "https://www.brilworks.com/reactjs-development-services/",
+    lastmod: "2025-08-04T18:56:12.328Z",
+  },
+  {
     loc: "https://www.brilworks.com/aws-consulting-services/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },

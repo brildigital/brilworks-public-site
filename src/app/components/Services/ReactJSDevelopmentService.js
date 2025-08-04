@@ -156,7 +156,7 @@ const ReactJSDevelopmentService = () => {
   return (
     <>
       <ServiceHeroSection
-        title="End-to-End ReactJS Development Services for Scalable, High-Performance Web Applications."
+        title="End-to-End ReactJS Development Services"
         description="Looking for a ReactJS development company that delivers fast, scalable, and user-friendly web applications? Our team combines deep frontend expertise with engineering discipline to deliver responsive, performant, and maintainable React solutions."
         buttonText="Get Free Consultation"
         secondaryBtnText="Hire ReactJS Developer"
