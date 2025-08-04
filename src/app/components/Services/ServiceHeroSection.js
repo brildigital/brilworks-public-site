@@ -7,6 +7,8 @@ const ServiceHeroSection = ({
   title,
   description,
   buttonText,
+  secondaryBtnText,
+  secondaryBtnUrl,
   imageSrc,
   pageTitleText,
   showGridData = false,
@@ -57,13 +59,23 @@ const ServiceHeroSection = ({
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 {description}
               </p>
-              {buttonText && (
-                <ButtonV2
-                  size="large"
-                  className="w-fit md:mt-7.5 mt-5"
-                  label={buttonText}
-                />
-              )}
+              <div className="flex md:flex-row flex-col md:items-center items-start justify-start gap-5 md:mt-7.5 mt-5">
+                {buttonText && (
+                  <ButtonV2
+                    size="large"
+                    className="w-fit "
+                    label={buttonText}
+                  />
+                )}
+                {secondaryBtnText && secondaryBtnUrl && (
+                  <ButtonV2
+                    size="large"
+                    redirect={secondaryBtnUrl}
+                    className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
+                    label={secondaryBtnText}
+                  />
+                )}
+              </div>
             </div>
             <div className="md:w-1/2 w-full">
               {showGridData ? (

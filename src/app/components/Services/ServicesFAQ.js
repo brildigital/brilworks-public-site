@@ -595,7 +595,28 @@ const ServicesFAQ = () => {
         "Costs vary based on complexity and scope. Get in touch with our team for a free consultation and tailored estimate.",
     },
   ];
-
+  const ReactJSDevelopmentFAQData = [
+    {
+      question: "Can you integrate React with our current backend stack?",
+      answer:
+        "Yes. React is agnostic about the backend. We integrate with REST, GraphQL, WebSockets, and existing microservice APIs with clear separation between interface and data layers.",
+    },
+    {
+      question: "Do you build with TypeScript?",
+      answer:
+        "We recommend and routinely use TypeScript with React to catch errors early, enforce contract clarity, and improve long-term maintainability.",
+    },
+    {
+      question: "How do you handle state management?",
+      answer:
+        "We choose the appropriate pattern per app: for localized state, React context and hooks; for global or complex state, libraries like Redux, Zustand, or newer abstractions—always tuned for minimal boilerplate and clear traceability.",
+    },
+    {
+      question: "Can you scale your team into our development process?",
+      answer:
+        "Absolutely. Whether you want a dedicated ReactJS developer, a small pod, or full team extension, we tailor engagement to fit your sprints, code review flow, and delivery pipeline.",
+    },
+  ];
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -616,6 +637,7 @@ const ServicesFAQ = () => {
     "/hire-dedicated-software-development-team/": DedicatedTeamFAQData,
     "/rapid-digitalization/": RapidDigitalisationFAQData,
     "/web-app-development-services/": WebAppDevelopmentFAQData,
+    "/reactjs-development-services/": ReactJSDevelopmentFAQData,
   };
 
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};
