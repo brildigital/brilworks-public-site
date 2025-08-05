@@ -900,6 +900,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "The Complete Guide to React JS Development",
+    loc: "https://www.brilworks.com/blog/react-js-development-guide/",
+    lastmod: "2025-08-04T13:52:09.885Z",
+  },
+  {
+    name: "Golang vs Java: A Practical Comparison for Modern Developers",
+    loc: "https://www.brilworks.com/blog/java-vs-go/",
+    lastmod: "2025-08-04T12:42:14.934Z",
+  },
+  {
     name: "Spring Boot vs Quarkus vs Micronaut Performance and Use Case Guide",
     loc: "https://www.brilworks.com/blog/spring-boot-vs-quarkus-vs-micronaut/",
     lastmod: "2025-08-01T09:18:12.436Z",
@@ -917,7 +927,7 @@ export const blogListStaticData = [
   {
     name: "ReactJS for Fintech: Practical Insights for Development Teams",
     loc: "https://www.brilworks.com/blog/reactjs-for-fintech-development/",
-    lastmod: "2025-07-30T13:33:40.001Z",
+    lastmod: "2025-08-05T04:53:50.031Z",
   },
   {
     name: "Java vs Python: Key Differences Developers Should Know",
@@ -1547,7 +1557,7 @@ export const blogListStaticData = [
   {
     name: "Healthcare Mobile App Development Best Practices [Compliance Tips]",
     loc: "https://www.brilworks.com/blog/healthcare-mobile-app-development-best-practices/",
-    lastmod: "2025-02-17T07:03:56.304Z",
+    lastmod: "2025-08-05T04:53:10.304Z",
   },
   {
     name: "Building an E-commerce App? Here's What You Need To Know",
@@ -2267,7 +2277,7 @@ export const blogListStaticData = [
   {
     name: "Debugging React Native Apps: Tools and Techniques",
     loc: "https://www.brilworks.com/blog/debugging-react-native-apps-tools-and-techniques/",
-    lastmod: "2025-04-01T07:09:55.911Z",
+    lastmod: "2025-08-05T07:19:12.741Z",
   },
   {
     name: "Neptune vs Neo4J: A Head-to-Head Comparison",
@@ -2462,7 +2472,7 @@ export const blogListStaticData = [
   {
     name: "Beyond ChatGPT: Trending AI Tools",
     loc: "https://www.brilworks.com/blog/beyond-chatgpt-trending-ai-tools/",
-    lastmod: "2025-06-24T07:28:36.447Z",
+    lastmod: "2025-08-04T06:37:20.105Z",
   },
   {
     name: "Brilworks Recognized by Techreviewer.co as One of the Top iOS Development Companies in 2023",

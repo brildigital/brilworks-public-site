@@ -20,7 +20,7 @@ const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
             <Image
               className="max-w-[300px] md:max-w-[348px] h-auto"
               src={imageSrc}
-              alt={"ebook-image"}
+              alt="ebook-image"
               width="348"
               height="570"
               priority

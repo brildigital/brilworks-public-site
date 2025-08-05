@@ -148,7 +148,7 @@ const TechnologyDevelopers = ({
                                 : ""
                             }`}
                             src={showTechImgBasedOnPathname[pathname]}
-                            alt={"React.js"}
+                            alt="React.js"
                             width="300"
                             height="300"
                           />
