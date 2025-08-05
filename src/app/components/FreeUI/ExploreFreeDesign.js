@@ -5,7 +5,6 @@ import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { scrollEffect } from "../lib/commonFunction";
 import FreeUiContactForm from "./FreeUiContactForm";
 
 const ExploreFreeDesign = () => {
