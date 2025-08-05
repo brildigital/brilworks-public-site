@@ -490,6 +490,10 @@ input[type="number"] {
   right: unset !important;
 }
 
+.hire-team-contact-section .grecaptcha-badge {
+  width: 0 !important;
+}
+
 .tab-bg-gradient {
   background: linear-gradient(90deg, #017eeb 0%, #000d1e 100%);
 }

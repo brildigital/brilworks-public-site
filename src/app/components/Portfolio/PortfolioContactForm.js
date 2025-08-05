@@ -120,6 +120,7 @@ const PortfolioContactForm = ({
         id="case-study-download-form"
         onSubmit={handleSubmit}
       >
+        {description && <p className="md:text-xl text-lg">{description}</p>}
         <div className="w-full grid grid-cols-1 gap-4">
           <input
             className="form-field"
@@ -191,17 +192,17 @@ const PortfolioContactForm = ({
             name="btnSubmit"
             type="submit"
             size="large"
-            className="hover:text-themeColor hover:!bg-colorWhite w-fit gap-2"
+            className="hover:text-themeColor hover:!bg-colorWhite w-full gap-2"
             icon={isSubmitting ? <Loader /> : ""}
             label={isSubmitting ? submitLoadingText : submitText}
             disabled={isSubmitting}
           />
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-            size="invisible"
-            ref={recaptchaRef}
-          />
         </div>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          size="invisible"
+          ref={recaptchaRef}
+        />
       </form>
     </div>
   );
