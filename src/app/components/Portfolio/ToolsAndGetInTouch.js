@@ -68,7 +68,7 @@ const ToolsAndGetInTouch = () => {
             pauseOnHover: true,
             pauseOnFocus: false,
             rewind: false,
-            speed: 1,
+            speed: 0.5,
           },
           breakpoints: {
             1080: {
