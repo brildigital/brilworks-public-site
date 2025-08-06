@@ -325,6 +325,7 @@ export const isExternalLink = (href) => {
     "https://www.cflowapps.com/workflow-automation-healthcare/",
     "https://facia.io/facial-recognition/",
     "https://scientificasia.net/machine-learning-ml/",
+    "https://techtarget.ai/technology/nlp/",
   ];
 
   return (
