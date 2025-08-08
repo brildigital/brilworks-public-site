@@ -807,6 +807,31 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Common Mobile App Security Risks and How to Avoid Them",
+    loc: "https://www.brilworks.com/blog/mobile-app-security-risks/",
+    lastmod: "2025-08-08T12:00:09.008Z",
+  },
+  {
+    name: "Mistakes to Avoid When Hiring Node.js Developers",
+    loc: "https://www.brilworks.com/blog/node-js-hiring-mistakes/",
+    lastmod: "2025-08-07T13:42:16.240Z",
+  },
+  {
+    name: "The Complete React Native Roadmap for Startups to Launch Faster",
+    loc: "https://www.brilworks.com/blog/react-native-roadmap/",
+    lastmod: "2025-08-07T12:45:30.764Z",
+  },
+  {
+    name: "10 Java Trends Developers Should Know",
+    loc: "https://www.brilworks.com/blog/ava-trends/",
+    lastmod: "2025-08-07T12:16:50.865Z",
+  },
+  {
+    name: "Top Frontend Technologies to Use in 2025",
+    loc: "https://www.brilworks.com/blog/top-frontend-technologies/",
+    lastmod: "2025-08-06T14:09:04.377Z",
+  },
+  {
     name: "The Complete Guide to React JS Development",
     loc: "https://www.brilworks.com/blog/react-js-development-guide/",
     lastmod: "2025-08-04T13:52:09.885Z",
@@ -1189,7 +1214,7 @@ export const blogListStaticData = [
   {
     name: "Developing Microservices with Nodejs",
     loc: "https://www.brilworks.com/blog/-microservices-with-nodejs/",
-    lastmod: "2025-05-28T06:32:55.418Z",
+    lastmod: "2025-08-06T05:46:50.143Z",
   },
   {
     name: "How to Integrate AI in React Native Apps (Step by Step Guide)",
@@ -1204,7 +1229,7 @@ export const blogListStaticData = [
   {
     name: "React vs Nodejs: A Deep Dive into Their Core Features",
     loc: "https://www.brilworks.com/blog/react-vs-nodejs/",
-    lastmod: "2025-05-22T08:50:26.499Z",
+    lastmod: "2025-08-06T05:46:36.356Z",
   },
   {
     name: "Building Secure White Label Software [The Architecture Checklist]",
@@ -1324,7 +1349,7 @@ export const blogListStaticData = [
   {
     name: "14 Best Mobile App Development Platforms",
     loc: "https://www.brilworks.com/blog/best-mobile-app-development-platforms/",
-    lastmod: "2025-05-14T10:01:24.443Z",
+    lastmod: "2025-08-06T05:47:18.206Z",
   },
   {
     name: "Managing React Native Environment Variables: A Guide for Secure App Development",
@@ -1354,12 +1379,12 @@ export const blogListStaticData = [
   {
     name: "Node.js vs Golang",
     loc: "https://www.brilworks.com/blog/node-js-vs-golang/",
-    lastmod: "2025-06-04T05:58:07.533Z",
+    lastmod: "2025-08-06T05:47:08.800Z",
   },
   {
     name: "Hiring Models for Node.js Development: Insights From Brilworks",
     loc: "https://www.brilworks.com/blog/hiring-node-js-developers-models/",
-    lastmod: "2025-07-22T07:47:45.808Z",
+    lastmod: "2025-08-06T08:21:40.352Z",
   },
   {
     name: "8 Best Node js Project Examples",
@@ -1439,7 +1464,7 @@ export const blogListStaticData = [
   {
     name: "6 Best Practices For Using AI for Database Querying",
     loc: "https://www.brilworks.com/blog/ai-for-database-querying/",
-    lastmod: "2025-02-22T15:12:04.422Z",
+    lastmod: "2025-08-06T05:48:47.153Z",
   },
   {
     name: "React Native for Enterprise Mobile App Development: Pros and Cons",
@@ -1454,7 +1479,7 @@ export const blogListStaticData = [
   {
     name: "How to Speed Up Mobile App Development with Agile",
     loc: "https://www.brilworks.com/blog/mobile-app-development-with-agile/",
-    lastmod: "2025-02-21T05:15:30.801Z",
+    lastmod: "2025-08-06T05:48:00.706Z",
   },
   {
     name: "The Benefits of Hiring a Mobile App Development Company",
@@ -1489,7 +1514,7 @@ export const blogListStaticData = [
   {
     name: "A Comprehensive Guide to Cross-Platform Development Success",
     loc: "https://www.brilworks.com/blog/guide-to-cross-platform-mobile-app-development/",
-    lastmod: "2025-03-26T12:40:29.369Z",
+    lastmod: "2025-08-06T05:48:18.092Z",
   },
   {
     name: "The Role of IoT in Mobile App Development: Shaping the Future",
@@ -1754,7 +1779,7 @@ export const blogListStaticData = [
   {
     name: "The Best Low-Code No Code Platforms in 2025",
     loc: "https://www.brilworks.com/blog/best-low-code-no-code-platforms/",
-    lastmod: "2025-06-04T05:13:31.417Z",
+    lastmod: "2025-08-06T05:48:58.412Z",
   },
   {
     name: "React Native for Beginners: Create React Native App in 5 Steps",
@@ -1824,7 +1849,7 @@ export const blogListStaticData = [
   {
     name: "AWS IoT Device Management: Features and How It Works",
     loc: "https://www.brilworks.com/blog/aws-iot-device-management-features-and-how-it-works/",
-    lastmod: "2024-09-17T06:11:42.185Z",
+    lastmod: "2025-08-06T05:49:26.735Z",
   },
   {
     name: "Optimizing Test Automation Frameworks Using AI",
@@ -1880,6 +1905,11 @@ export const blogListStaticData = [
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     lastmod: "2025-04-15T10:50:54.099Z",
+  },
+  {
+    name: "What Makes AWS a Top Choice for Ecommerce Store?",
+    loc: "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
+    lastmod: "2025-08-06T05:50:04.511Z",
   },
   {
     name: "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -1994,7 +2024,7 @@ export const blogListStaticData = [
   {
     name: "The 10 Best Artificial Intelligence Platforms for Busines of 2025",
     loc: "https://www.brilworks.com/blog/best-artificial-intelligence-platforms/",
-    lastmod: "2025-06-03T05:41:13.749Z",
+    lastmod: "2025-08-06T07:41:10.419Z",
   },
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
@@ -2209,7 +2239,7 @@ export const blogListStaticData = [
   {
     name: "Node.js Security Best Practices",
     loc: "https://www.brilworks.com/blog/node-js-security-best-practices/",
-    lastmod: "2025-05-08T05:32:09.785Z",
+    lastmod: "2025-08-06T05:51:04.667Z",
   },
   {
     name: "Java vs. Kotlin: Comparing Two Modern JVM Languages",
@@ -2374,7 +2404,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 Websites Built Using React.js",
     loc: "https://www.brilworks.com/blog/top-10-websites-built-using-react-js/",
-    lastmod: "2025-05-16T11:20:17.002Z",
+    lastmod: "2025-08-06T05:51:35.903Z",
   },
   {
     name: "Beyond ChatGPT: Trending AI Tools",
@@ -2394,7 +2424,7 @@ export const blogListStaticData = [
   {
     name: "Java vs Node",
     loc: "https://www.brilworks.com/blog/java-vs-node/",
-    lastmod: "2024-05-01T13:06:06.469Z",
+    lastmod: "2025-08-06T05:51:46.726Z",
   },
   {
     name: "Cross Platform App Development: Best Frameworks",
