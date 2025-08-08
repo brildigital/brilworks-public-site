@@ -1,8 +1,78 @@
 [
   {
+    "name": "Common Mobile App Security Risks and How to Avoid Them",
+    "loc": "https://www.brilworks.com/blog/mobile-app-security-risks/",
+    "lastmod": "2025-08-08T12:00:09.008Z"
+  },
+  {
+    "name": "Mistakes to Avoid When Hiring Node.js Developers",
+    "loc": "https://www.brilworks.com/blog/node-js-hiring-mistakes/",
+    "lastmod": "2025-08-07T13:42:16.240Z"
+  },
+  {
+    "name": "The Complete React Native Roadmap for Startups to Launch Faster",
+    "loc": "https://www.brilworks.com/blog/react-native-roadmap/",
+    "lastmod": "2025-08-07T12:45:30.764Z"
+  },
+  {
+    "name": "10 Java Trends Developers Should Know",
+    "loc": "https://www.brilworks.com/blog/ava-trends/",
+    "lastmod": "2025-08-07T12:16:50.865Z"
+  },
+  {
+    "name": "Top Frontend Technologies to Use in 2025",
+    "loc": "https://www.brilworks.com/blog/top-frontend-technologies/",
+    "lastmod": "2025-08-06T14:09:04.377Z"
+  },
+  {
+    "name": "The Complete Guide to React JS Development",
+    "loc": "https://www.brilworks.com/blog/react-js-development-guide/",
+    "lastmod": "2025-08-04T13:52:09.885Z"
+  },
+  {
+    "name": "Golang vs Java: A Practical Comparison for Modern Developers",
+    "loc": "https://www.brilworks.com/blog/java-vs-go/",
+    "lastmod": "2025-08-04T12:42:14.934Z"
+  },
+  {
+    "name": "Spring Boot vs Quarkus vs Micronaut Performance and Use Case Guide",
+    "loc": "https://www.brilworks.com/blog/spring-boot-vs-quarkus-vs-micronaut/",
+    "lastmod": "2025-08-01T09:18:12.436Z"
+  },
+  {
+    "name": "Reactjs Benefits: Why & When to Choose for Your Next Project",
+    "loc": "https://www.brilworks.com/blog/reactjs-benefits/",
+    "lastmod": "2025-07-31T13:54:43.779Z"
+  },
+  {
+    "name": "Java 25 Features, Changes, and What They Mean",
+    "loc": "https://www.brilworks.com/blog/java-25/",
+    "lastmod": "2025-07-31T10:43:52.186Z"
+  },
+  {
+    "name": "ReactJS for Fintech: Practical Insights for Development Teams",
+    "loc": "https://www.brilworks.com/blog/reactjs-for-fintech-development/",
+    "lastmod": "2025-08-05T04:53:50.031Z"
+  },
+  {
+    "name": "Java vs Python: Key Differences Developers Should Know",
+    "loc": "https://www.brilworks.com/blog/java-vs-python/",
+    "lastmod": "2025-07-30T12:57:27.138Z"
+  },
+  {
+    "name": "How to Build Full Stack Application with React and Node JS",
+    "loc": "https://www.brilworks.com/blog/build-application-with-react-and-node-js/",
+    "lastmod": "2025-07-28T13:21:34.279Z"
+  },
+  {
+    "name": "Top Frameworks in Java for Cloud Native Application Development",
+    "loc": "https://www.brilworks.com/blog/frameworks-for-java-cloud-development/",
+    "lastmod": "2025-07-28T12:49:50.321Z"
+  },
+  {
     "name": "Famous Companies Using Node.js in 2025",
     "loc": "https://www.brilworks.com/blog/companies-using-nodejs/",
-    "lastmod": "2025-07-25T07:07:08.142Z"
+    "lastmod": "2025-07-28T12:31:57.976Z"
   },
   {
     "name": "How Much Does It Cost to Develop a Website?",
@@ -17,7 +87,7 @@
   {
     "name": "GraphQL vs REST",
     "loc": "https://www.brilworks.com/blog/graphql-vs-rest/",
-    "lastmod": "2025-07-21T13:38:36.667Z"
+    "lastmod": "2025-07-28T12:32:15.738Z"
   },
   {
     "name": "Java Security Best Practices For Developers",
@@ -117,7 +187,7 @@
   {
     "name": "Why ReactJS is the Top Choice for Web Development",
     "loc": "https://www.brilworks.com/blog/why-reactjs-top-choice-b2b-web-apps/",
-    "lastmod": "2025-06-30T13:18:49.547Z"
+    "lastmod": "2025-07-29T07:06:42.004Z"
   },
   {
     "name": "React Native vs Expo: What’s the Difference?",
@@ -137,7 +207,7 @@
   {
     "name": "How to Choose the Right ReactJS Development Company",
     "loc": "https://www.brilworks.com/blog/choose-reactjs-development-partner/",
-    "lastmod": "2025-06-30T09:53:49.438Z"
+    "lastmod": "2025-07-29T07:04:47.507Z"
   },
   {
     "name": "A Complete Guide to Java Development Services for Modern Businesses",
@@ -187,7 +257,7 @@
   {
     "name": "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
     "loc": "https://www.brilworks.com/blog/nodejs-usage-statistics/",
-    "lastmod": "2025-07-24T07:39:29.101Z"
+    "lastmod": "2025-07-30T06:47:11.261Z"
   },
   {
     "name": "Understanding React Native Fabric and How to Implement It in Your Project",
@@ -337,7 +407,7 @@
   {
     "name": "Developing Microservices with Nodejs",
     "loc": "https://www.brilworks.com/blog/-microservices-with-nodejs/",
-    "lastmod": "2025-05-28T06:32:55.418Z"
+    "lastmod": "2025-08-06T05:46:50.143Z"
   },
   {
     "name": "How to Integrate AI in React Native Apps (Step by Step Guide)",
@@ -352,7 +422,7 @@
   {
     "name": "React vs Nodejs: A Deep Dive into Their Core Features",
     "loc": "https://www.brilworks.com/blog/react-vs-nodejs/",
-    "lastmod": "2025-05-22T08:50:26.499Z"
+    "lastmod": "2025-08-06T05:46:36.356Z"
   },
   {
     "name": "Building Secure White Label Software [The Architecture Checklist]",
@@ -472,7 +542,7 @@
   {
     "name": "14 Best Mobile App Development Platforms",
     "loc": "https://www.brilworks.com/blog/best-mobile-app-development-platforms/",
-    "lastmod": "2025-05-14T10:01:24.443Z"
+    "lastmod": "2025-08-06T05:47:18.206Z"
   },
   {
     "name": "Managing React Native Environment Variables: A Guide for Secure App Development",
@@ -502,12 +572,12 @@
   {
     "name": "Node.js vs Golang",
     "loc": "https://www.brilworks.com/blog/node-js-vs-golang/",
-    "lastmod": "2025-06-04T05:58:07.533Z"
+    "lastmod": "2025-08-06T05:47:08.800Z"
   },
   {
     "name": "Hiring Models for Node.js Development: Insights From Brilworks",
     "loc": "https://www.brilworks.com/blog/hiring-node-js-developers-models/",
-    "lastmod": "2025-07-22T07:47:45.808Z"
+    "lastmod": "2025-08-06T08:21:40.352Z"
   },
   {
     "name": "8 Best Node js Project Examples",
@@ -587,7 +657,7 @@
   {
     "name": "6 Best Practices For Using AI for Database Querying",
     "loc": "https://www.brilworks.com/blog/ai-for-database-querying/",
-    "lastmod": "2025-02-22T15:12:04.422Z"
+    "lastmod": "2025-08-06T05:48:47.153Z"
   },
   {
     "name": "React Native for Enterprise Mobile App Development: Pros and Cons",
@@ -602,7 +672,7 @@
   {
     "name": "How to Speed Up Mobile App Development with Agile",
     "loc": "https://www.brilworks.com/blog/mobile-app-development-with-agile/",
-    "lastmod": "2025-02-21T05:15:30.801Z"
+    "lastmod": "2025-08-06T05:48:00.706Z"
   },
   {
     "name": "The Benefits of Hiring a Mobile App Development Company",
@@ -612,7 +682,7 @@
   {
     "name": "Healthcare Mobile App Development Best Practices [Compliance Tips]",
     "loc": "https://www.brilworks.com/blog/healthcare-mobile-app-development-best-practices/",
-    "lastmod": "2025-02-17T07:03:56.304Z"
+    "lastmod": "2025-08-05T04:53:10.304Z"
   },
   {
     "name": "Building an E-commerce App? Here's What You Need To Know",
@@ -632,12 +702,12 @@
   {
     "name": "15 Best Mobile Application Testing Tools for 2025",
     "loc": "https://www.brilworks.com/blog/mobile-application-testing-tools/",
-    "lastmod": "2025-05-09T09:32:51.588Z"
+    "lastmod": "2025-07-29T09:55:59.092Z"
   },
   {
     "name": "A Comprehensive Guide to Cross-Platform Development Success",
     "loc": "https://www.brilworks.com/blog/guide-to-cross-platform-mobile-app-development/",
-    "lastmod": "2025-03-26T12:40:29.369Z"
+    "lastmod": "2025-08-06T05:48:18.092Z"
   },
   {
     "name": "The Role of IoT in Mobile App Development: Shaping the Future",
@@ -777,7 +847,7 @@
   {
     "name": "Java Modernization and Migration ",
     "loc": "https://www.brilworks.com/blog/java-modernization-and-migration/",
-    "lastmod": "2025-03-18T11:29:48.601Z"
+    "lastmod": "2025-07-28T07:54:52.843Z"
   },
   {
     "name": "Java Development Best Practices Every Developer Should Follow",
@@ -902,7 +972,7 @@
   {
     "name": "The Best Low-Code No Code Platforms in 2025",
     "loc": "https://www.brilworks.com/blog/best-low-code-no-code-platforms/",
-    "lastmod": "2025-06-04T05:13:31.417Z"
+    "lastmod": "2025-08-06T05:48:58.412Z"
   },
   {
     "name": "React Native for Beginners: Create React Native App in 5 Steps",
@@ -972,7 +1042,7 @@
   {
     "name": "AWS IoT Device Management: Features and How It Works",
     "loc": "https://www.brilworks.com/blog/aws-iot-device-management-features-and-how-it-works/",
-    "lastmod": "2024-09-17T06:11:42.185Z"
+    "lastmod": "2025-08-06T05:49:26.735Z"
   },
   {
     "name": "Optimizing Test Automation Frameworks Using AI",
@@ -1028,6 +1098,11 @@
     "name": "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     "loc": "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     "lastmod": "2025-04-15T10:50:54.099Z"
+  },
+  {
+    "name": "What Makes AWS a Top Choice for Ecommerce Store?",
+    "loc": "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
+    "lastmod": "2025-08-06T05:50:04.511Z"
   },
   {
     "name": "Why Should E-Commerce Businesses Consider AWS Cloud Hosting?",
@@ -1142,7 +1217,7 @@
   {
     "name": "The 10 Best Artificial Intelligence Platforms for Busines of 2025",
     "loc": "https://www.brilworks.com/blog/best-artificial-intelligence-platforms/",
-    "lastmod": "2025-06-03T05:41:13.749Z"
+    "lastmod": "2025-08-06T07:41:10.419Z"
   },
   {
     "name": "Hiring Guide for Node.JS Developers in 2025",
@@ -1312,7 +1387,7 @@
   {
     "name": "Tips to Optimize Performance for Reactjs Apps",
     "loc": "https://www.brilworks.com/blog/optimize-performance-for-reactjs-apps/",
-    "lastmod": "2025-04-07T08:15:35.582Z"
+    "lastmod": "2025-07-29T07:08:05.645Z"
   },
   {
     "name": "The Manifest Recognizes Brilworks as the Most Reviewed Software Development Company",
@@ -1332,7 +1407,7 @@
   {
     "name": "Debugging React Native Apps: Tools and Techniques",
     "loc": "https://www.brilworks.com/blog/debugging-react-native-apps-tools-and-techniques/",
-    "lastmod": "2025-04-01T07:09:55.911Z"
+    "lastmod": "2025-08-05T07:19:12.741Z"
   },
   {
     "name": "Neptune vs Neo4J: A Head-to-Head Comparison",
@@ -1357,7 +1432,7 @@
   {
     "name": "Node.js Security Best Practices",
     "loc": "https://www.brilworks.com/blog/node-js-security-best-practices/",
-    "lastmod": "2025-05-08T05:32:09.785Z"
+    "lastmod": "2025-08-06T05:51:04.667Z"
   },
   {
     "name": "Java vs. Kotlin: Comparing Two Modern JVM Languages",
@@ -1497,7 +1572,7 @@
   {
     "name": "Top Node.js Frameworks For Web Development",
     "loc": "https://www.brilworks.com/blog/top-node-js-frameworks-for-web-development/",
-    "lastmod": "2025-05-16T11:34:57.207Z"
+    "lastmod": "2025-07-29T09:56:12.261Z"
   },
   {
     "name": "React Native vs Kotlin: What Everything You Need To Know",
@@ -1522,12 +1597,12 @@
   {
     "name": "Top 10 Websites Built Using React.js",
     "loc": "https://www.brilworks.com/blog/top-10-websites-built-using-react-js/",
-    "lastmod": "2025-05-16T11:20:17.002Z"
+    "lastmod": "2025-08-06T05:51:35.903Z"
   },
   {
     "name": "Beyond ChatGPT: Trending AI Tools",
     "loc": "https://www.brilworks.com/blog/beyond-chatgpt-trending-ai-tools/",
-    "lastmod": "2025-06-24T07:28:36.447Z"
+    "lastmod": "2025-08-04T06:37:20.105Z"
   },
   {
     "name": "Brilworks Recognized by Techreviewer.co as One of the Top iOS Development Companies in 2023",
@@ -1537,12 +1612,12 @@
   {
     "name": "React vs Angular: How to Choose the Right Framework for Your Next Project?",
     "loc": "https://www.brilworks.com/blog/react-vs-angular/",
-    "lastmod": "2025-06-20T05:50:19.780Z"
+    "lastmod": "2025-07-29T07:51:01.712Z"
   },
   {
     "name": "Java vs Node",
     "loc": "https://www.brilworks.com/blog/java-vs-node/",
-    "lastmod": "2024-05-01T13:06:06.469Z"
+    "lastmod": "2025-08-06T05:51:46.726Z"
   },
   {
     "name": "Cross Platform App Development: Best Frameworks",
@@ -1562,6 +1637,6 @@
   {
     "name": "Optimize Your Nest.js App Performance With These Practices",
     "loc": "https://www.brilworks.com/blog/optimize-your-nest-js-app-performance/",
-    "lastmod": "2025-03-05T08:58:57.925Z"
+    "lastmod": "2025-07-31T07:00:24.899Z"
   }
 ]
