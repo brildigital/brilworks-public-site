@@ -48,6 +48,7 @@ const Article = ({ blok }) => {
           1,
           isTablet ? 3 : 4,
           "",
+          "",
           blok?.subcategory?.[0]
         );
         setBlogData(blogData.storyData);
