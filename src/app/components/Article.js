@@ -49,7 +49,7 @@ const Article = ({ blok }) => {
           isTablet ? 3 : 4,
           "",
           "",
-          blok?.subcategory?.[0]
+          blok?.subcategory?.[0] || ""
         );
         setBlogData(blogData.storyData);
 
