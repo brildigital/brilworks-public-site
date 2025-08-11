@@ -44,7 +44,12 @@ const Article = ({ blok }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const blogData = await getblogData(1, isTablet ? 3 : 4);
+        const blogData = await getblogData(
+          1,
+          isTablet ? 3 : 4,
+          "",
+          blok?.subcategory?.[0]
+        );
         setBlogData(blogData.storyData);
 
         // Use a short timeout to ensure the content is rendered before scrolling
