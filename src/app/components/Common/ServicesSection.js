@@ -6,7 +6,7 @@ import Heading from "../HTMLComponents/Heading";
 import { useMediaQuery } from "react-responsive";
 
 const ServicesSection = ({
-  bgClass = "",
+  bgClass = "bg-white",
   sectionId,
   serviceData,
   imageOnLeft = false,

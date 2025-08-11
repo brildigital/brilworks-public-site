@@ -807,6 +807,11 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Why Node.js Is a Strategic Choice for Healthcare",
+    loc: "https://www.brilworks.com/blog/nodejs-healthcare-strategic-technology-choice/",
+    lastmod: "2025-08-08T13:56:27.492Z",
+  },
+  {
     name: "Common Mobile App Security Risks and How to Avoid Them",
     loc: "https://www.brilworks.com/blog/mobile-app-security-risks/",
     lastmod: "2025-08-08T12:00:09.008Z",
