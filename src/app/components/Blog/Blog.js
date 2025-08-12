@@ -314,13 +314,13 @@ const Blog = () => {
             ))
           ) : searchQuery.length > 0 ? (
             <div className="!py-24 !block">
-              <p className="md:!text-2xl !text-lg">
-                No data match with your search result
+              <p className="md:!text-2xl !text-lg text-center">
+                No data match with your search result.
               </p>
             </div>
           ) : (
             <div className="flex items-center justify-center py-20 md:text-2xl text-lg">
-              No Blog Found
+              No Blog Found.
             </div>
           )}
         </div>

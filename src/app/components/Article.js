@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { memo, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { getblogData } from "./lib/getblog";
+import { getSuggestionblog } from "./lib/getblog";
 import { usePathname } from "next/navigation";
 import { notNewTabRedirect } from "./lib/constants";
 import {
@@ -14,6 +14,7 @@ import {
   formattedDate,
   formatTitleFromUrl,
   isExternalLink,
+  suggestSimilarBlogPosts,
 } from "./lib/commonFunction";
 import BlogContactForm from "./Blog/BlogContactForm";
 import BlogFAQ from "./Blog/BlogFAQ";
@@ -44,11 +45,11 @@ const Article = ({ blok }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const blogData = await getblogData(
+        const blogData = await getSuggestionblog(
           1,
           isTablet ? 3 : 4,
-          "",
-          "",
+          blok?.Category,
+          suggestSimilarBlogPosts(blok?.title),
           blok?.subcategory?.[0] || ""
         );
         setBlogData(blogData.storyData);
