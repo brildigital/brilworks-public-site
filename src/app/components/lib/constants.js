@@ -807,6 +807,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How To Find And Hire Top Node.js Developers In 2025",
+    loc: "https://www.brilworks.com/blog/where-to-find-top-node-js-developers/",
+    lastmod: "2025-08-11T13:14:16.864Z",
+  },
+  {
+    name: "Why Java Is Still the Backbone of Fintech App Development",
+    loc: "https://www.brilworks.com/blog/java-in-fintech-app-development/",
+    lastmod: "2025-08-11T12:50:38.794Z",
+  },
+  {
     name: "Why Node.js Is a Strategic Choice for Healthcare",
     loc: "https://www.brilworks.com/blog/nodejs-healthcare-strategic-technology-choice/",
     lastmod: "2025-08-08T13:56:27.492Z",
@@ -828,8 +838,8 @@ export const blogListStaticData = [
   },
   {
     name: "10 Java Trends Developers Should Know",
-    loc: "https://www.brilworks.com/blog/ava-trends/",
-    lastmod: "2025-08-07T12:16:50.865Z",
+    loc: "https://www.brilworks.com/blog/java-trends/",
+    lastmod: "2025-08-08T12:27:36.630Z",
   },
   {
     name: "Top Frontend Technologies to Use in 2025",
