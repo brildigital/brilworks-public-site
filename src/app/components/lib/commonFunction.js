@@ -305,6 +305,35 @@ export function formatSrcUrl(url) {
   return fileURL;
 }
 
+export const suggestSimilarBlogPosts = (blogTitle = "") => {
+  const title = blogTitle.toLowerCase();
+
+  const keywordMap = [
+    { keywords: ["react native"], value: "react native" },
+    { keywords: ["aws"], value: "aws" },
+    { keywords: ["mobile app"], value: "mobile app" },
+    { keywords: ["java"], value: "java" },
+    {
+      keywords: [
+        "ai",
+        "ml",
+        "generative ai",
+        "artificial intelligence",
+        "machine learning",
+      ],
+      value: "generative ai",
+    },
+    { keywords: ["react", "react.js", "reactjs"], value: "react" },
+    { keywords: ["node", "node.js", "nodejs"], value: "node" },
+  ];
+
+  const match = keywordMap.find(({ keywords }) =>
+    keywords.some((word) => title.includes(word))
+  );
+
+  return match ? match.value : null;
+};
+
 export const isExternalLink = (href) => {
   const allowedDomains = [
     "brilworks.com",

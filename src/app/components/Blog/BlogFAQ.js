@@ -18,7 +18,7 @@ const BlogFAQ = ({ FAQData }) => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div className="container w-full mx-auto faq-bottom">
+    <div className="container w-full mx-auto faq-bottom-blog">
       <div className="service_sec3 text-center solutions">
         <h2 className="text-left lg:text-[32px] md:text-[32px] text-[32px]">
           FAQ
