@@ -104,6 +104,10 @@ const Footer = () => {
           link: "/industry/media-entertainment-software-development/",
           text: "Media & Entertainment",
         },
+        {
+          text: "E-Commerce",
+          link: "/industry/e-commerce-app-development/",
+        },
       ],
     },
     {

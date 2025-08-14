@@ -807,6 +807,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Comparing Node.js with Top Backend Technologies",
+    loc: "https://www.brilworks.com/blog/node-js-vs-top-backend-technologies/",
+    lastmod: "2025-08-14T06:50:19.205Z",
+  },
+  {
+    name: "Top Mobile App Development Frameworks and How They Compare",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-frameworks/",
+    lastmod: "2025-08-13T12:29:33.695Z",
+  },
+  {
     name: "How To Find And Hire Top Node.js Developers In 2025",
     loc: "https://www.brilworks.com/blog/where-to-find-top-node-js-developers/",
     lastmod: "2025-08-11T13:14:16.864Z",
