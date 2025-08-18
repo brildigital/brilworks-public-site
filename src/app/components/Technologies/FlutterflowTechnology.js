@@ -23,7 +23,7 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const FlutterflowTechnology = () => {
   const flutterflowService = {
     title: "Explore Our Flutterflow App Development Services",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Custom App Development",
@@ -160,11 +160,11 @@ const FlutterflowTechnology = () => {
         serviceData={flutterflowService}
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers
+      {/* <BenefitOfHiringDevelopers
         title="Why Choose Brilworks as your Flutterflow App Development Partner?"
         description="As a leading Flutterflow development partner, Brilworks helps you create stunning and functional mobile applications. Our team of skilled developers is dedicated to delivering exceptional results, ensuring your app meets the highest standards of quality and user experience."
         cardData={flutterflowDeveloperBenefits}
-      />
+      /> */}
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
         title="Flutterflow Developers"

@@ -3,6 +3,7 @@ import React from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
+import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
 const HireTeamHeroSection = ({
   technologyText,
@@ -42,18 +43,32 @@ const HireTeamHeroSection = ({
               <div className="flex md:flex-row flex-col md:items-center items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
                 <ButtonV2
                   size="large"
-                  className="w-fit"
-                  label="Plan and Pricing"
-                />
-                <ButtonV2
-                  size="large"
                   redirect="#section-contact-form"
                   className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
-                  label={hireButtonText || technologyText}
+                  // label={hireButtonText || technologyText}
+                  label="Learn More"
                   scrollingButton
                 />
+                <ButtonV2 size="large" className="w-fit" label="Hire Now" />
               </div>
             </div>
+            {/* <div className="lg:w-1/2 w-full">
+              <Heading
+                type="h2"
+                className="text-colorWhite lg:!text-[34px] md:!text-3xl !text-2xl mb-5"
+                data={
+                  title || "Connect With Us to Get a 48 Hours Risk-Free Trial"
+                }
+              />
+              <p className="text-colorWhite md:text-lg text-base !mb-6">
+                {description ||
+                  "You're just a step away from creating exceptional business ideas. This case study reveals how BrilWorks assists successful companies in extending their tech teams."}
+              </p>
+              <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
+                Enter the details to proceed.
+              </p>
+              <PortfolioContactForm phoneRequired={true} messageField={true} />
+            </div> */}
             <div className="md:w-1/2 w-full">
               <Image
                 className="rounded-2xl md:h-[650px] object-cover"

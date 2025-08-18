@@ -69,7 +69,7 @@ const why100PlusCompaniesTrustMobile = [
 const ReactNativeTechnology = () => {
   const reactNativeService = {
     title: "React Native Development Services For Startups & Enterprises",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Custom Mobile App Development",
@@ -196,7 +196,7 @@ const ReactNativeTechnology = () => {
       />
       <TechnologyDevelopers />
       <HireTeamDigitalTransformation />
-      <BenefitOfHiringDevelopers title="Enterprise-Grade Resourcing For React Native Development" />
+      {/* <BenefitOfHiringDevelopers title="Enterprise-Grade Resourcing For React Native Development" /> */}
       <BrilworksAdvantage />
       <HireTeamSolutions />
       <MultipleCardWithIconBG data={reactNativeBenefits} />

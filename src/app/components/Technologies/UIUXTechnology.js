@@ -22,7 +22,7 @@ const UIUXTechnology = () => {
   const uiuxService = {
     title:
       "Experience the Perfect Blend of Creativity & Technology With Our UI/UX Designing Services",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "UI UX Consulting Services",
@@ -84,7 +84,7 @@ const UIUXTechnology = () => {
         sectionId="hire-ui-ux-designer"
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers bgClass="bg-sectionBG" />
+      {/* <BenefitOfHiringDevelopers bgClass="bg-sectionBG" /> */}
       <HireDevelopersInThreeSteps
         title="UI/UX Designers"
         bgClass="bg-themeLight"

@@ -23,7 +23,7 @@ const JavaTechnology = () => {
   const javaServices = {
     title: "Enhance Your Applications with Our Java Development Services.",
     desc: "Our services drive sustainable growth.",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Java Consulting",
@@ -92,7 +92,7 @@ const JavaTechnology = () => {
         serviceData={javaServices}
       />
       <TechnologyDevelopers />
-      <BenefitOfHiringDevelopers />
+      {/* <BenefitOfHiringDevelopers /> */}
       <TechnologyCombination />
       <HireDevelopersInThreeSteps title="Java Developers" />
       <HomePageBlogs />

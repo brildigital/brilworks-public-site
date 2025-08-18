@@ -25,7 +25,8 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const BubbleIoTechnology = () => {
   const bubbleIoService = {
     title: "Explore Our Bubble App Development Services",
-    buttonText: "Hire Bubble Developer",
+    // buttonText: "Hire Bubble Developer",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Database Integration",
@@ -156,11 +157,11 @@ const BubbleIoTechnology = () => {
         serviceData={bubbleIoService}
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers
+      {/* <BenefitOfHiringDevelopers
         title="Why Choose Brilworks for Bubble Development?"
         description="Let's build groundbreaking solutions together. Brilworks offers expert Bubble developers and rigorous quality assurance to ensure your app is exceptional."
         cardData={bubbleDeveloperBenefits}
-      />
+      /> */}
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
         title="Bubble Developers"

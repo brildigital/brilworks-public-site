@@ -63,7 +63,7 @@ const why100PlusAgenciesTrustUs = [
 
 const whiteLabelService = {
   title: "Build Your Brand’s Ecosystem With Our White Label Services",
-  buttonText: "Get a Quote for Your White Label App",
+  buttonText: "Get Quote",
   servicesList: [
     {
       title: "Branded White Label App Solutions",

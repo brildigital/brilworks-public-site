@@ -807,6 +807,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "A Beginner’s Guide to Animations in React Native",
+    loc: "https://www.brilworks.com/blog/react-native-animations/",
+    lastmod: "2025-08-14T13:55:44.719Z",
+  },
+  {
+    name: "Bringing AI into Your Node.js Projects? What You Need to Know",
+    loc: "https://www.brilworks.com/blog/ai-nodejs-integration/",
+    lastmod: "2025-08-14T13:26:52.780Z",
+  },
+  {
     name: "Comparing Node.js with Top Backend Technologies",
     loc: "https://www.brilworks.com/blog/node-js-vs-top-backend-technologies/",
     lastmod: "2025-08-14T06:50:19.205Z",
