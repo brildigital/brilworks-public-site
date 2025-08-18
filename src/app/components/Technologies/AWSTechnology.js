@@ -77,7 +77,7 @@ const AWSTechnology = () => {
 
   const awsService = {
     title: "Our AWS Development Services",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "AWS Development Consulting",
@@ -130,7 +130,7 @@ const AWSTechnology = () => {
         sectionId="hire-aws-developer"
       />
       <TechnologyDevelopers />
-      <BenefitOfHiringDevelopers />
+      {/* <BenefitOfHiringDevelopers /> */}
       <HireDevelopersInThreeSteps title="AWS Developers" />
       <HomePageBlogs />
       <MultipleKeyValueWithBG

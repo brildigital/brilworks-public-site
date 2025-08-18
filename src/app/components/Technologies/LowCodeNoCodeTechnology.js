@@ -91,7 +91,7 @@ const LowCodeNoCodeTechnology = () => {
 
   const lowCodeNoCodeService = {
     title: "Explore Our Low Code Development Services",
-    buttonText: "Get a Quote For Your Budget",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "No-Code App Development",
@@ -161,11 +161,11 @@ const LowCodeNoCodeTechnology = () => {
         bgClass="bg-themeLight"
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers
+      {/* <BenefitOfHiringDevelopers
         title="Why Choose Brilworks for Low Code Development?"
         description="Let's build groundbreaking solutions together. Brilworks offers expert Low Code developers and rigorous quality assurance to ensure your app is exceptional."
         cardData={lowCodeDeveloperBenefits}
-      />
+      /> */}
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
         title="Low Code Developers"

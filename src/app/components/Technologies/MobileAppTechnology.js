@@ -25,7 +25,7 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const MobileAppTechnology = () => {
   const mobileAppService = {
     title: "Our Services",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Cross-Platform App Development",
@@ -157,11 +157,11 @@ const MobileAppTechnology = () => {
         serviceData={mobileAppService}
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers
+      {/* <BenefitOfHiringDevelopers
         title="Why Choose Us?"
         description="Hiring a dedicated development team from a Mobile App Development Company empowers companies across the globe to access expert talent without any limitation of location. It enables you to keep up with the pace of technological change while keeping your costs down."
         cardData={mobileAppDeveloperBenefits}
-      />
+      /> */}
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
         title="Hire Mobile App Developers"

@@ -101,7 +101,7 @@ const techStackList = [
 const nodeJSService = {
   title: "Build Lightning-Fast Solutions With Our Node.js Development Services",
   desc: "Backed by years of specialized experience, our Node.js developers deliver enterprise-grade solutions that combine technical excellence with strategic business alignment.",
-  buttonText: "Get a Quote for your Project",
+  buttonText: "Get Quote",
   servicesList: [
     {
       title: "Web App Development",
@@ -277,7 +277,7 @@ const NodejsTechnology = () => {
       />
       <TechnologyDevelopers bgClass="bg-white" />
       <HireTeamDigitalTransformation />
-      <BenefitOfHiringDevelopers />
+      {/* <BenefitOfHiringDevelopers /> */}
       <TechStackWeWorkWith active="backend" techStackList={techStackList} />
       <BrilworksAdvantage />
       <HireTeamSolutions />

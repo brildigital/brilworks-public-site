@@ -98,7 +98,8 @@ const AdaloTechnology = () => {
 
   const adaloService = {
     title: "Explore Our Adalo Development Services",
-    buttonText: "Hire Adalo Developer",
+    // buttonText: "Hire Adalo Developer",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Custom App Development",
@@ -161,11 +162,11 @@ const AdaloTechnology = () => {
         serviceData={adaloService}
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers
+      {/* <BenefitOfHiringDevelopers
         title="Why Choose Brilworks for Adalo Development?"
         description="Let's build groundbreaking solutions together. Brilworks offers expert Adalo developers and rigorous quality assurance to ensure your app is exceptional."
         cardData={adaloDeveloperBenefits}
-      />
+      /> */}
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
         title="Adalo Developers"

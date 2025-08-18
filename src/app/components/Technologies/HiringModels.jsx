@@ -2,6 +2,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
+import ButtonV2 from "../Common/ButtonV2";
 
 const reactJsPricingPlans = [
   {
@@ -93,7 +94,7 @@ const HiringModels = () => {
           </p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sxl:pt-10 md:pt-7.5 pt-5 reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sxl:py-10 md:py-7.5 py-5 reveal">
           {currentData.pricingPlans.map(({ title, benefits }, index) => (
             <div
               key={index}
@@ -133,6 +134,10 @@ const HiringModels = () => {
             </div>
           ))}
         </div>
+        <ButtonV2
+          label="Hire Now"
+          className="w-fit mx-auto hover:text-themeColor"
+        />
       </div>
     </div>
   );

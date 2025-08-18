@@ -120,7 +120,7 @@ const techStackList = [
 const BlockchainTechnology = () => {
   const blockchainService = {
     title: "Build Trust-Centric Solutions With Our Blockchain Services",
-    buttonText: "Get a Quote for your Project",
+    buttonText: "Get Quote",
     servicesList: [
       {
         title: "Smart Contract Development",
@@ -237,7 +237,7 @@ const BlockchainTechnology = () => {
         bgClass="bg-themeLight"
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <BenefitOfHiringDevelopers bgClass="bg-sectionBG" />
+      {/* <BenefitOfHiringDevelopers bgClass="bg-sectionBG" /> */}
       <TechStackWeWorkWith
         bgClass="bg-white"
         active="blockchains"
