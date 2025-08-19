@@ -41,7 +41,7 @@ const page = () => {
         { time: "10:00 AM", event: "Submit the Keys" },
         { time: "11:00 AM", event: "Leave the Resort" },
         { time: "01:00 PM", event: "Stop for Lunch" },
-        { time: "06:00 PM", event: "Drop off at Ahmedabad" },
+        { time: "06:00 PM (Approx.)", event: "Drop off at Ahmedabad" },
       ],
     },
   ];
@@ -95,7 +95,7 @@ const page = () => {
     // "Company will bear the expenses of food and entry charges for sightseeing.",
     "Looking at the weather conditions it is suggested to carry a raincoat and warm jacket with you.",
     // "It is suggested to wear comfortable shoes as there will be a lot of walking and activities.",
-    // "Considering the weather conditions and other factors, our Agile Volunteers and Organizers may make necessary adjustments. We will keep you informed and updated in a timely manner.",
+    "Considering the weather conditions and other factors, our Agile Volunteers and Organizers may make necessary adjustments. We will keep you informed and updated in a timely manner.",
   ];
 
   return (
