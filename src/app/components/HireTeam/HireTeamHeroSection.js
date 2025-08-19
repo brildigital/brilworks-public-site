@@ -62,7 +62,7 @@ const HireTeamHeroSection = ({
               />
               <p className="text-colorWhite md:text-lg text-base !mb-6">
                 {description ||
-                  "You're just a step away from creating exceptional business ideas. This case study reveals how BrilWorks assists successful companies in extending their tech teams."}
+                  "You're just a step away from creating exceptional business ideas. This case study reveals how Brilworks assists successful companies in extending their tech teams."}
               </p>
               <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                 Enter the details to proceed.

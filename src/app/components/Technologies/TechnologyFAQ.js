@@ -1,12 +1,40 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import Heading from "../HTMLComponents/Heading";
+import ContactFormPopup from "./ContactFormPopup";
 
 const TechnologyFAQ = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(1);
+
+  const [openPopup, setOpenPopup] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (dismissed) return; // 👉 if closed once, never show again
+
+      const pageHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      const scrolled = scrollTop + viewportHeight;
+
+      if (scrolled >= pageHeight / 2) {
+        setOpenPopup(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dismissed]);
+
+  const handleClose = () => {
+    setOpenPopup(false);
+    setDismissed(true); // 👉 permanently dismiss
+  };
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
@@ -457,29 +485,34 @@ const TechnologyFAQ = () => {
   const technologyFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container max-w-[1280px] main-section-padding mx-auto">
-      <div className="w-full">
-        <Heading
-          type="h2"
-          className="lg:!text-[34px] md:!text-3xl !text-2xl"
-          text="Frequently Asked Questions"
-        />
-        <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
-          <div itemScope="true" itemType="https://schema.org/FAQPage">
-            {technologyFAQData?.map(({ question, answer }, index) => (
-              <GradientFAQAccordion
-                key={index + 1}
-                id={index + 1}
-                question={question}
-                answer={answer}
-                open={open}
-                handleOpen={handleOpen}
-              />
-            ))}
+    <>
+      <div className="container max-w-[1280px] main-section-padding mx-auto">
+        <div className="w-full">
+          <Heading
+            type="h2"
+            className="lg:!text-[34px] md:!text-3xl !text-2xl"
+            text="Frequently Asked Questions"
+          />
+          <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
+            <div itemScope="true" itemType="https://schema.org/FAQPage">
+              {technologyFAQData?.map(({ question, answer }, index) => (
+                <GradientFAQAccordion
+                  key={index + 1}
+                  id={index + 1}
+                  question={question}
+                  answer={answer}
+                  open={open}
+                  handleOpen={handleOpen}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {openPopup && (
+        <ContactFormPopup open={openPopup} handleClose={handleClose} />
+      )}
+    </>
   );
 };
 

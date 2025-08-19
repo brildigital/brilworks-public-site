@@ -15,7 +15,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
-// import ContactFormPopup from "./ContactFormPopup";
 
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
@@ -99,34 +98,6 @@ const techStackList = [
   },
 ];
 const ReactJSTechnology = () => {
-  // const [open, setOpen] = useState(false);
-
-  // const [dismissed, setDismissed] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (dismissed) return; // 👉 if closed once, never show again
-
-  //     const pageHeight = document.documentElement.scrollHeight;
-  //     const scrollTop = window.scrollY;
-  //     const viewportHeight = window.innerHeight;
-
-  //     const scrolled = scrollTop + viewportHeight;
-
-  //     if (scrolled >= pageHeight / 2) {
-  //       setOpen(true);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [dismissed]);
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  //   setDismissed(true); // 👉 permanently dismiss
-  // };
-
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -300,7 +271,6 @@ const ReactJSTechnology = () => {
       <HomePageBlogs />
       <SolutionContactForm />
       <ReactJSFAQs />
-      {/* <ContactFormPopup open={open} handleOpen={handleClose} /> */}
     </>
   );
 };
