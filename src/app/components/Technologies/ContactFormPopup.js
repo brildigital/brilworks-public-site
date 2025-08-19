@@ -1,155 +1,80 @@
-import React from "react";
-import {
-  Input,
-  Option,
-  Select,
-  Button,
-  Dialog,
-  Textarea,
-  IconButton,
-  Typography,
-  DialogBody,
-  DialogHeader,
-  DialogFooter,
-} from "@material-tailwind/react";
+import React, { useEffect } from "react";
+import { IconButton } from "@material-tailwind/react";
 import { X } from "lucide-react";
+import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
+import Image from "next/image";
+import Heading from "../HTMLComponents/Heading";
 
-const ContactFormPopup = ({ open, handleOpen }) => {
+const ContactFormPopup = ({ open, handleClose }) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"; // disable background scroll
+    } else {
+      document.body.style.overflow = ""; // reset to default
+    }
+
+    // cleanup if component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
-      {/* <Button onClick={handleOpen} variant="gradient">
-        Add Product
-      </Button> */}
-      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
-        <DialogHeader className="relative m-0 block">
-          <Typography variant="h4" color="blue-gray">
-            Manage Item
-          </Typography>
-          <Typography className="mt-1 font-normal text-gray-600">
-            Keep your records up-to-date and organized.
-          </Typography>
+      <div className="popup fixed inset-0 z-50 flex items-center justify-center px-4">
+        <div className="absolute inset-0 bg-black/50" onClick={handleClose} />
+
+        <div className="relative z-10 w-full max-w-[1200px] rounded-lg bg-white shadow-lg p-6 !pb-3  md:pt-10">
           <IconButton
             size="sm"
             variant="text"
-            className="!absolute right-3.5 top-3.5"
-            onClick={handleOpen}
+            className="!absolute right-1 top-1 outline-none focus:outline-none hover:bg-gray-100 md:hidden flex"
+            onClick={handleClose}
           >
-            <X className="h-4 w-4 stroke-2" />
+            <X className="h-5 w-5" />
           </IconButton>
-        </DialogHeader>
-        <DialogBody className="space-y-4 pb-6">
-          <div>
-            <Typography
-              variant="small"
-              color="blue-gray"
-              className="mb-2 text-left font-medium"
-            >
-              Name
-            </Typography>
-            <Input
-              color="gray"
-              size="lg"
-              placeholder="eg. White Shoes"
-              name="name"
-              className="placeholder:opacity-100 focus:!border-t-gray-900"
-              containerProps={{
-                className: "!min-w-full",
-              }}
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-          </div>
-          <div>
-            <Typography
-              variant="small"
-              color="blue-gray"
-              className="mb-2 text-left font-medium"
-            >
-              Category
-            </Typography>
-            <Select
-              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-800 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
-              placeholder="1"
-              labelProps={{
-                className: "hidden",
-              }}
-            >
-              <Option>Clothing</Option>
-              <Option>Fashion</Option>
-              <Option>Watches</Option>
-            </Select>
-          </div>
-          <div className="flex gap-4">
-            <div className="w-full">
-              <Typography
-                variant="small"
-                color="blue-gray"
-                className="mb-2 text-left font-medium"
-              >
-                Weight
-              </Typography>
-              <Input
-                color="gray"
-                size="lg"
-                placeholder="eg. <8.8oz | 250g"
-                name="weight"
-                className="placeholder:opacity-100 focus:!border-t-gray-900"
-                containerProps={{
-                  className: "!min-w-full",
-                }}
-                labelProps={{
-                  className: "hidden",
-                }}
+
+          <div className="flex flex-col lg:flex-row items-center lg:gap-10 md:gap-6 gap-4">
+            <div className="lg:w-1/2 w-full">
+              <Heading
+                type="h2"
+                className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
+                data="Connect With Us to Get a 48 Hours Risk-Free Trial"
+              />
+              <p className="text-colorBlack md:text-lg text-base !mb-4">
+                You're just a step away from creating exceptional business
+                ideas. This case study reveals how Brilworks assists successful
+                companies in extending their tech teams.
+              </p>
+              <p className="text-colorBlack lg:text-2xl md:text-xl text-lg font-medium !mb-4">
+                Enter the details to proceed.
+              </p>
+              <PortfolioContactForm
+                phoneRequired={true}
+                messageField={true}
+                darkMode={false}
               />
             </div>
-            <div className="w-full">
-              <Typography
-                variant="small"
-                color="blue-gray"
-                className="mb-2 text-left font-medium"
+            <div className="lg:w-1/2 md:w-full hidden md:flex">
+              <IconButton
+                size="sm"
+                variant="text"
+                className="!absolute right-3.5 top-4 outline-none focus:outline-none hover:bg-gray-100 "
+                onClick={handleClose}
               >
-                Size
-              </Typography>
-              <Input
-                color="gray"
-                size="lg"
-                placeholder="eg. US 8"
-                name="size"
-                className="placeholder:opacity-100 focus:!border-t-gray-900"
-                containerProps={{
-                  className: "!min-w-full",
-                }}
-                labelProps={{
-                  className: "hidden",
-                }}
+                <X className="h-5 w-5" />
+              </IconButton>
+              <Image
+                className="rounded-2xl"
+                src="/images/v2/team-contact.webp"
+                alt="img-c"
+                width="565"
+                height="620"
               />
             </div>
           </div>
-          <div>
-            <Typography
-              variant="small"
-              color="blue-gray"
-              className="mb-2 text-left font-medium"
-            >
-              Description (Optional)
-            </Typography>
-            <Textarea
-              rows={7}
-              placeholder="eg. This is a white shoes with a comfortable sole."
-              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
-              labelProps={{
-                className: "hidden",
-              }}
-            />
-          </div>
-        </DialogBody>
-        <DialogFooter>
-          <Button className="ml-auto" onClick={handleOpen}>
-            Add Product
-          </Button>
-        </DialogFooter>
-      </Dialog>
+        </div>
+      </div>
     </>
   );
 };
