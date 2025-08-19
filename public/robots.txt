@@ -23,5 +23,6 @@ Disallow: /chat-application/*
 Disallow: /wp-content/*
 Disallow: /teams/*
 Disallow: /cdn-cgi/
+Disallow: /annual-trip-2025/
 
 Sitemap: https://www.brilworks.com/sitemap.xml

@@ -19,9 +19,9 @@ const CurrentHeader = () => {
     "/gist/flutterflow/",
   ];
 
-  const showHeader = subpaths.some(
-    (base) => pathname?.startsWith(base) && pathname !== base
-  );
+  const showHeader =
+    subpaths.some((base) => pathname?.startsWith(base) && pathname !== base) ||
+    pathname === "/annual-trip-2025/";
 
   return showHeader &&
     pathname !== "/gist/" &&
