@@ -16,7 +16,6 @@ const page = () => {
         { time: "06:00 PM", event: "Hi-Tea" },
         { time: "09:00 PM", event: "Dinner" },
         { time: "10:00 PM", event: "Bon-Fire: B'Town" },
-        { time: "End of Day", event: "End of Day 1" },
       ],
     },
     {
@@ -33,7 +32,6 @@ const page = () => {
         { time: "07:00 PM", event: "Garba (Speaker)" },
         { time: "09:00 PM", event: "Dinner" },
         { time: "10:00 PM", event: "Gatherings to share experience and fun" },
-        { time: "End of Day", event: "End of Day 2" },
       ],
     },
     {
@@ -43,8 +41,7 @@ const page = () => {
         { time: "10:00 AM", event: "Submit the Keys" },
         { time: "11:00 AM", event: "Leave the Resort" },
         { time: "01:00 PM", event: "Stop for Lunch" },
-        { time: "03:00 PM", event: "Drop off at Ahmedabad" },
-        { time: "End of Trip", event: "End of Trip" },
+        { time: "06:00 PM", event: "Drop off at Ahmedabad" },
       ],
     },
   ];
