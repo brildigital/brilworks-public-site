@@ -1,0 +1,282 @@
+.text-cyber-gray {
+  color: hsl(220, 9%, 46%);
+}
+.cyber-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(220, 39%, 11%) 0%,
+    hsl(220, 25%, 15%) 50%,
+    hsl(220, 39%, 11%) 100%
+  );
+}
+
+.glass-morphism {
+  background: hsla(220, 25%, 15%, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(214, 78%, 51%, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.glass-morphism::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    transparent 25%,
+    transparent 75%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px hsl(214, 78%, 51%), 0 0 20px hsl(214, 78%, 51%),
+    0 0 30px hsl(214, 78%, 51%), 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.hologram-text {
+  background: linear-gradient(
+    45deg,
+    hsl(214, 78%, 51%),
+    hsl(262, 83%, 58%),
+    hsl(22, 100%, 50%),
+    hsl(214, 78%, 51%)
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hologram 3s ease-in-out infinite;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, hsl(214, 78%, 51%), hsl(262, 83%, 58%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(193, 100%, 50%);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(193, 100%, 50%), 0 0 40px hsl(193, 100%, 50%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes float-particle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-circuit {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes hologram {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 3D Card Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+}
+
+.card-3d::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  width: 90%;
+  height: 30px;
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(15px);
+  transform: translateZ(-20px);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.card-3d:hover::after {
+  opacity: 1;
+  transform: translateZ(-20px) scale(1.1);
+}
+
+/* Enhanced Floating Animations */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation:nth-child(even) {
+  animation-delay: -3s;
+  animation-duration: 8s;
+}
+
+.float-animation:nth-child(3n) {
+  animation-delay: -1.5s;
+  animation-duration: 7s;
+}
+
+.floating-element {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.neural-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: hsl(214, 78%, 51%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px hsl(214, 78%, 51%);
+}
+
+.neural-connection {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(214, 78%, 51%),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px hsla(214, 78%, 51%, 0.3);
+}
+
+.rain-drop {
+  position: absolute;
+  color: hsl(214, 78%, 51%);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  animation: slide 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Enhanced AI-themed animations */
+.ai-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: hsl(214, 78%, 51%);
+  border-radius: 50%;
+  animation: float-particle 8s ease-in-out infinite;
+}
+
+.circuit-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(214, 78%, 51%, 0.6),
+    transparent
+  );
+  animation: pulse-circuit 3s ease-in-out infinite;
+}
+
+.hologram-text {
+  background: linear-gradient(
+    45deg,
+    hsl(214, 78%, 51%),
+    hsl(25, 95%, 53%),
+    hsl(262, 83%, 58%)
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

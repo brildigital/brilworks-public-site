@@ -95,3 +95,11 @@ export const TableOfContentSkeleton = () => {
     </SkeletonTheme>
   );
 };
+
+export const PriceSkeleton = () => {
+  return (
+    <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
+      <Skeleton count={1} height={46} width={250} />
+    </SkeletonTheme>
+  );
+};
