@@ -173,9 +173,14 @@ const HeaderV2 = () => {
             <div className="flex items-center gap-5">
               <ButtonV2
                 label={
-                  pathname === "/free-ui/" ? "Claim Free Screens" : "Claim Free"
+                  pathname === "/free-ui/"
+                    ? "Claim Free Screens"
+                    : pathname === "/ai-studio/" ||
+                      pathname === "/project-estimate/"
+                    ? "Contact Us"
+                    : "Claim Free"
                 }
-                className="header-btn"
+                className={pathname === "/ai-studio/" ? "" : "header-btn"}
                 redirect={pathname === "/free-ui/" ? "#cta" : "/free-ui/"}
                 // {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
                 scrollingButton={pathname === "/free-ui/"}
