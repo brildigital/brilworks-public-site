@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/ai-solutions/:slug",
-      "destination": "/brilworks/ai-solutions/:slug"
-    }
-  ]
-}
