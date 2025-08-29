@@ -54,8 +54,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/brilworks/ai-solutions/:slug", // user-facing URL
-        destination: "/ai-solutions/:slug", // backend/internal API path
+        source: "/ai-solutions/:slug", // user-facing URL
+        destination: "/brilworks/ai-solutions/:slug", // backend/internal API path
       },
     ];
   },
