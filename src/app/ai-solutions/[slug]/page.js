@@ -33,7 +33,7 @@ async function fetchWithErrorHandling(url, options) {
 }
 
 export async function getAllSlugs() {
-  const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=ai-solutions/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+  const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=/brilworks/ai-solutions/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
 
   const options = {
     [process.env.VERCEL_ENV === "production" ? "next" : "cache"]:
@@ -48,7 +48,7 @@ export async function getAllSlugs() {
 }
 
 async function getAISolutions(slug) {
-  const url = `https://api.storyblok.com/v2/cdn/stories/ai-solutions/${slug}?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+  const url = `https://api.storyblok.com/v2/cdn/stories/brilworks/ai-solutions/${slug}?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
   const options = {
     [process.env.VERCEL_ENV === "production" ? "next" : "cache"]:
       process.env.VERCEL_ENV === "production"

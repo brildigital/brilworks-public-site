@@ -51,6 +51,14 @@ const nextConfig = {
     }
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: "/brilworks/ai-solutions/:slug", // user-facing URL
+        destination: "/ai-solutions/:slug", // backend/internal API path
+      },
+    ];
+  },
   redirects: async () => {
     return [
       {
