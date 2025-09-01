@@ -7,8 +7,11 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
+import PopupContactForm from "../AIStudio/PopupContactForm";
+import { usePathname } from "next/navigation";
 
 const SoftwareDevelopmentCostCalculator = () => {
+  const pathname = usePathname();
   const [inputs, setInputs] = useState({
     platform: "",
     complexity: "",
@@ -22,6 +25,19 @@ const SoftwareDevelopmentCostCalculator = () => {
   const [result, setResult] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [hasVisited, setHasVisited] = useState();
+
+  useEffect(() => {
+    const localStorageData = JSON.parse(localStorage.getItem("hasVisitedPage"));
+    setHasVisited(localStorageData);
+  }, [openPopup]);
+
+  const handleClose = () => {
+    setOpenPopup(false);
+    setDismissed(true); // 👉 permanently dismiss
+  };
 
   const platforms = [
     { value: "ios", label: "iOS Only" },
@@ -100,6 +116,7 @@ const SoftwareDevelopmentCostCalculator = () => {
         inputs
       );
       setResult(calculationResult);
+      setOpenPopup(true);
       setShowLeadForm(true);
 
       toast({
@@ -117,36 +134,20 @@ const SoftwareDevelopmentCostCalculator = () => {
     setIsCalculating(false);
   };
 
-  const calculate = async () => {
-    if (
-      inputs.platform &&
-      inputs.complexity &&
-      inputs.design &&
-      inputs.timeline
-    ) {
-      setIsCalculating(true);
-      const res = await CostCalculationService.calculateCost(inputs);
-      setResult(res);
-      setTimeout(() => {
-        setIsCalculating(false);
-      }, 1000);
-    }
-  };
-
   useEffect(() => {
-    let debounceTimer;
-    // if description is changing, debounce
-    if (inputs.description) {
-      debounceTimer = setTimeout(() => {
-        calculate();
-      }, 1000); // 1000ms debounce
-    } else {
-      // no description or other fields change -> run instantly
-      calculate();
-    }
+    const hasVisitedPage = JSON.parse(localStorage.getItem("hasVisitedPage"));
 
-    return () => clearTimeout(debounceTimer);
-  }, [inputs]);
+    if (!hasVisitedPage?.visited && result) {
+      // First time visitor → show popup
+      setOpenPopup(true);
+
+      // Mark as visited
+      localStorage.setItem(
+        "hasVisitedPage",
+        JSON.stringify({ route: pathname, visited: true })
+      );
+    }
+  }, [result]);
 
   const handleLeadSubmit = () => {
     if (!inputs.email || !inputs.name) {
@@ -372,7 +373,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           </div>
 
           {/* Results */}
-          {result ? (
+          {result && hasVisited?.visited ? (
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
               <div className="text-center mb-8">
                 <div className="flex justify-center mb-4">
@@ -410,14 +411,30 @@ const SoftwareDevelopmentCostCalculator = () => {
               <h2 className="text-3xl font-semibold mb-2">Cost Estimate</h2>
               <div className="text-center py-12">
                 <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                <h2 className="text-xl font-semibold text-gray-800 !mb-2">
+                  No Estimate Yet
+                </h2>
                 <p className="text-gray-500 text-lg">
-                  Please fill in all required fields to see your estimate
+                  Fill out the form on the left and your instant cost estimate
+                  will magically appear here ✨
                 </p>
+
+                <div className="w-fit mx-auto mt-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg shadow-lg animate-bounce">
+                  &lArr; Start by selecting your project details
+                </div>
               </div>
             </div>
           )}
         </div>
       </div>
+      {result && openPopup && !hasVisited?.visited && (
+        <PopupContactForm
+          open={openPopup}
+          handleClose={handleClose}
+          result={result}
+          setResult={setResult}
+        />
+      )}
     </>
   );
 };

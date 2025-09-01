@@ -10,6 +10,7 @@ const CTASection = dynamic(() => import("../Common/CTASection"));
 const ToolsAndGetInTouch = dynamic(() => import("./ToolsAndGetInTouch"));
 
 const Portfolio = ({ caseStudyData }) => {
+  console.log(caseStudyData);
   return (
     <>
       <PortfolioBanner />

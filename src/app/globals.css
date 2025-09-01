@@ -336,6 +336,15 @@ input[type="number"] {
   background: #f0f3f3;
 }
 
+.gradient-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 12px 30px;
+  background: linear-gradient(to right, var(--cyber-blue), var(--cyber-purple));
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -637,6 +646,10 @@ input[type="number"] {
 
   .sec9_txt1 p {
     font-size: 1rem;
+  }
+
+  .gradient-button {
+    padding: 8px 20px;
   }
 }
 
