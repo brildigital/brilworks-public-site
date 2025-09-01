@@ -43,7 +43,7 @@ export function CTA() {
               <button
                 variant="outline"
                 size="lg"
-                className="glass-morphism flex items-center justify-center px-7.5 py-3 text-lg font-bold hover:border-cyber-orange/50 transition-all rounded-full"
+                className="glass-morphism flex items-center justify-center px-7.5 py-3 text-lg font-bold hover:border-cyber-orange/50 transition-all rounded-md"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Strategy Call

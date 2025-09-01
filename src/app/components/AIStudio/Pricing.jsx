@@ -20,7 +20,7 @@ export function Pricing() {
         "Competitive analysis",
       ],
       buttonText: "Get Free Consultation",
-      buttonStyle: "!bg-gradient-to-r from-cyber-blue to-cyber-purple",
+      buttonStyle: "!bg-gradient-to-r from-cyber-pink to-cyber-purple",
     },
     {
       name: "MVP Sprint",

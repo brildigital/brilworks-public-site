@@ -128,7 +128,7 @@ export function SocialProof() {
                 <p className="pl-4">{testimonial.content}</p>
               </blockquote>
 
-              <div className="pt-4 border-t border-cyber-blue/20">
+              <div className="pt-4 border-t border-[#017eeb33]">
                 <div className="inline-flex items-center space-x-2 bg-cyber-blue/10 px-3 py-1 rounded-full">
                   <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
                   <span className="text-sm font-semibold text-cyber-blue">
