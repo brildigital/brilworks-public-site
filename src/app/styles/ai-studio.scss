@@ -1,6 +1,65 @@
-.text-cyber-gray {
-  color: hsl(220, 9%, 46%);
+:root {
+  --background: hsl(220, 39%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(220, 25%, 15%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(220, 39%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(214, 78%, 51%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 25%, 15%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 25%, 15%);
+  --muted-foreground: hsl(220, 9%, 46%);
+  --accent: hsl(220, 25%, 15%);
+  --accent-foreground: hsl(214, 78%, 51%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(214, 78%, 51%, 0.2);
+  --input: hsl(220, 25%, 15%);
+  --ring: hsl(214, 78%, 51%);
+  --chart-1: hsl(214, 78%, 51%);
+  --chart-2: hsl(25, 95%, 53%);
+  --chart-3: hsl(262, 83%, 58%);
+  --chart-4: hsl(214, 78%, 51%);
+  --chart-5: hsl(25, 95%, 53%);
+  --radius: 0.5rem;
+
+  /* Brilworks-inspired cyberpunk color variables */
+  --cyber-navy: hsl(220, 39%, 11%);
+  --cyber-blue: hsl(214, 78%, 51%);
+  --cyber-orange: hsl(25, 95%, 53%);
+  --cyber-purple: hsl(262, 83%, 58%);
+  --cyber-dark: hsl(220, 25%, 15%);
+  --cyber-gray: hsl(220, 9%, 46%);
 }
+
+.dark {
+  --background: hsl(220, 39%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(220, 25%, 15%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(220, 39%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(214, 78%, 51%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 25%, 15%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 25%, 15%);
+  --muted-foreground: hsl(220, 9%, 46%);
+  --accent: hsl(220, 25%, 15%);
+  --accent-foreground: hsl(214, 78%, 51%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(214, 78%, 51%, 0.2);
+  --input: hsl(220, 25%, 15%);
+  --ring: hsl(214, 78%, 51%);
+}
+
+.border {
+  border-color: var(--border) !important;
+}
+
 .cyber-gradient {
   background: linear-gradient(
     135deg,
@@ -11,13 +70,14 @@
 }
 
 .glass-morphism {
-  background: hsla(220, 25%, 15%, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid hsla(214, 78%, 51%, 0.2);
+  background: hsla(220, 25%, 15%, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+
+  border: 1px solid hsla(214, 78%, 51%, 0.2) !important;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);
-  position: relative;
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05) !important;
+  position: relative !important;
 }
 
 .glass-morphism::before {

@@ -41,7 +41,7 @@ const ButtonV2 = ({
       }
       {...props}
     >
-      {label}
+      {icon} {label}
     </Link>
   );
 };

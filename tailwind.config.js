@@ -36,6 +36,15 @@ module.exports = {
         colorWhite: "#ffffff",
         colorGray: "#504f4f",
         themeLight: "var(--theme-light)",
+        // Cyberpunk theme colors
+        "cyber-navy": "var(--cyber-navy)",
+        "cyber-blue": "var(--cyber-blue)",
+        "cyber-orange": "var(--cyber-orange)",
+        "cyber-purple": "var(--cyber-purple)",
+        "cyber-dark": "var(--cyber-dark)",
+        "cyber-gray": "var(--cyber-gray)",
+
+        accent: "	#00ffff",
       },
       backgroundImage: {
         "gradient-custom":
@@ -50,6 +59,8 @@ module.exports = {
         "tab-gradient": "linear-gradient(90deg, #017EEB 0%, #000D1E 100%)",
         "text-gradient":
           "linear-gradient(147.18deg, #007AEB 8.92%, #008CE7 40.42%, #00DBD3 84.49%)",
+        "cyber-gradient":
+          "linear-gradient(135deg, rgb(17, 24, 39), rgb(29, 35, 48), rgb(17, 24, 39))",
       },
       dropShadow: {
         "book-shadow": "10px 10px 15px rgba(0, 0, 0, 0.3)",

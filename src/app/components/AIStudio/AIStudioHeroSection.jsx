@@ -43,7 +43,7 @@ const AIStudioHeroSection = () => {
 
         <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10 max-w-3xl text-center px-6">
+        <div className="relative max-w-3xl text-center px-6">
           <Heading
             type="h1"
             className="text-white !font-bold lg:mt-20 mt-10"
