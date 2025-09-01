@@ -220,7 +220,7 @@ const SoftwareDevelopmentCostCalculator = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Main Form Card */}
-          <div className="bg-white rounded-2xl border !border-gray-100 shadow-lg p-8">
+          <div className="bg-white rounded-2xl border shadow-lg p-8">
             <div className="grid gap-4">
               {/* Platform */}
               <div className="space-y-1">
@@ -233,7 +233,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                       platform: e.target.value,
                     }))
                   }
-                  className="w-full border !border-gray-100 rounded-lg p-3 bg-white"
+                  className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select your target platform</option>
                   {platforms.map((p) => (
@@ -257,7 +257,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                       complexity: e.target.value,
                     }))
                   }
-                  className="w-full border !border-gray-100 rounded-lg p-3 bg-white"
+                  className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select complexity</option>
                   {complexityLevels.map((level) => (
@@ -300,7 +300,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                   onChange={(e) =>
                     setInputs((prev) => ({ ...prev, design: e.target.value }))
                   }
-                  className="w-full border !border-gray-100 rounded-lg p-3 bg-white"
+                  className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select design level</option>
                   {designOptions.map((opt) => (
@@ -322,7 +322,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                       timeline: e.target.value,
                     }))
                   }
-                  className="w-full border !border-gray-100 rounded-lg p-3 bg-white"
+                  className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select timeline</option>
                   {timelines.map((t) => (
@@ -346,7 +346,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                       description: e.target.value,
                     }))
                   }
-                  className="w-full min-h-[120px] border !border-gray-100 rounded-lg p-3 bg-white"
+                  className="w-full min-h-[120px] border rounded-lg p-3 bg-white"
                   placeholder="Describe your app idea..."
                 />
               </div>
@@ -374,7 +374,7 @@ const SoftwareDevelopmentCostCalculator = () => {
 
           {/* Results */}
           {result && hasVisited?.visited ? (
-            <div className="popup bg-white rounded-2xl border !border-gray-100 shadow-lg p-8">
+            <div className="popup bg-white rounded-2xl border shadow-lg p-8">
               <div className="text-center mb-8">
                 <div className="flex justify-center mb-4">
                   <Smartphone className="h-12 w-12 text-indigo-500" />
@@ -407,7 +407,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               )}
             </div>
           ) : (
-            <div className="bg-white rounded-2xl border !border-gray-100 shadow-lg p-8">
+            <div className="bg-white rounded-2xl border shadow-lg p-8">
               <h2 className="text-3xl font-semibold mb-2">Cost Estimate</h2>
               <div className="text-center py-12">
                 <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
