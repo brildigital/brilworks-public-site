@@ -284,10 +284,10 @@ const HeroSectionMVPIn48Hours = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-[#192134] px-4 py-2 rounded-full text-sm text-[#94a3b8]"
+            className="inline-flex items-center md:text-base space-x-2 bg-[#192134] px-4 py-2 rounded-full text-xs text-[#94a3b8]"
             data-testid="text-reassurance"
           >
-            <ShieldHalf className="text-themeColor w-5" />
+            <ShieldHalf className="text-themeColor md:w-8 md:h-8 w-5 h-5" />
             <span>No fluff • Pure build time • Limited weekly slots</span>
           </motion.div>
         </div>

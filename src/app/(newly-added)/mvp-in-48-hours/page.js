@@ -10,10 +10,10 @@ const page = () => {
   return (
     <div className="bg-[#0b111e] text-[#f8fafc] antialiased">
       <HeroSectionMVPIn48Hours />
+      <ProcessSection />
       <OutcomesSection />
       <AboutSection />
       <CalendarSection />
-      <ProcessSection />
     </div>
   );
 };

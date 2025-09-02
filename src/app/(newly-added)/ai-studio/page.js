@@ -13,7 +13,7 @@ const page = () => {
   return (
     <>
       <AIStudioHeroSection />
-      <div className="ai-studio bg-cyber-navy text-white">
+      <div className="ai-studio bg-cyber-navy text-white border-page">
         <OnboardingSteps />
         <SocialProof />
         <WorkGallery />

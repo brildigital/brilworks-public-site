@@ -46,14 +46,15 @@ const PopupContactForm = ({ open, handleClose, result, setResult }) => {
                 className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
                 data="Connect With Us to Get a 48 Hours Risk-Free Trial"
               /> */}
+              <p className="text-colorBlack lg:text-2xl md:text-xl text-lg font-medium !mb-4">
+                Enter the details to get your project estimate.
+              </p>
               <p className="text-colorBlack md:text-lg text-base !mb-4">
                 You're just a step away from turning your vision into reality.
                 Discover how Brilworks helps businesses scale their tech
                 teams—and get your project estimate today.
               </p>
-              <p className="text-colorBlack lg:text-2xl md:text-xl text-lg font-medium !mb-4">
-                Enter the details to get your project estimate.
-              </p>
+
               <PortfolioContactForm
                 phoneRequired={true}
                 messageField={true}

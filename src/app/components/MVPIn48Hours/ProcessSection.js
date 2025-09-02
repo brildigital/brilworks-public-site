@@ -6,6 +6,7 @@ import {
   Code,
   Rocket,
   ArrowRight,
+  Clock,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -93,7 +94,7 @@ export default function ProcessSection() {
             How the <span className="gradient-text">48-hour process</span> works
           </h2>
           <p
-            className="text-lg text-[#94a3b8] max-w-2xl mx-auto"
+            className="text-lg text-[#94a3b8] max-w-3xl mx-auto"
             data-testid="text-process-subtitle"
           >
             From idea to working MVP in just 48 hours. Here's our proven
@@ -180,10 +181,10 @@ export default function ProcessSection() {
           className="text-center mt-16"
         >
           <div
-            className="inline-flex items-center space-x-2 bg-[#017eeb1A] text-themeColor px-6 py-3 rounded-full font-medium border border-[#017eeb33]"
+            className="inline-flex items-center text-xs md:text-base justify-center space-x-2 bg-[#017eeb1A] text-themeColor px-6 py-3 rounded-full font-medium border border-[#017eeb33]"
             data-testid="text-process-guarantee"
           >
-            <i className="fas fa-clock"></i>
+            <Clock className="text-themePrimary w-5 md:w-8 h-5 md:h-8" />
             <span>Total time: 48 hours • Results guaranteed</span>
           </div>
         </motion.div>
