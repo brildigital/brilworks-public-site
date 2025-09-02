@@ -13,6 +13,7 @@ const PortfolioContactForm = ({
   darkMode = true,
   messageField = false,
   setShowPrice,
+  hidePhoneField,
 }) => {
   const pathname = usePathname();
 
@@ -71,56 +72,46 @@ const PortfolioContactForm = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setFormData({
-      name: "",
-      company: "",
-      phone: "",
-      email: "",
-      message: "",
-    });
-    setRespMessage(submitMessageText);
-    clearMessage();
-    setIsSubmitting(false);
 
-    // const token = await recaptchaRef.current.executeAsync();
+    const token = await recaptchaRef.current.executeAsync();
 
-    // try {
-    //   const downloadURL = formatSrcUrl(downloadFileUrl);
-    //   const response = await fetch(
-    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
-    //     {
-    //       method: "POST",
-    //       header: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         ...formData,
-    //         page: pathname,
-    //         downloadLink: downloadURL,
-    //         token,
-    //         previousPage,
-    //       }),
-    //     }
-    //   );
+    try {
+      const downloadURL = formatSrcUrl(downloadFileUrl);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            page: pathname,
+            downloadLink: downloadURL,
+            token,
+            previousPage,
+          }),
+        }
+      );
 
-    //   if (response.ok) {
-    //     setFormData({
-    //       name: "",
-    //       company: "",
-    //       phone: "",
-    //       email: "",
-    //       message: "",
-    //     });
-    //     setRespMessage(submitMessageText);
-    //     clearMessage();
-    //   } else {
-    //     setRespMessage("Something went wrong!");
-    //   }
-    //   setIsSubmitting(false);
-    // } catch (error) {
-    //   console.error("Error sending email", error);
-    //   setIsSubmitting(false);
-    // }
+      if (response.ok) {
+        setFormData({
+          name: "",
+          company: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+        setRespMessage(submitMessageText);
+        clearMessage();
+      } else {
+        setRespMessage("Something went wrong!");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error sending email", error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -143,26 +134,27 @@ const PortfolioContactForm = ({
             required
             onChange={handleChange}
           />
-          {phoneRequired ? (
-            <input
-              className="form-field"
-              type="number"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required={phoneRequired}
-            />
-          ) : (
-            <input
-              className="form-field"
-              placeholder="Organisation Name"
-              type="text"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-            />
-          )}
+          {!hidePhoneField &&
+            (phoneRequired ? (
+              <input
+                className="form-field"
+                type="number"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required={phoneRequired}
+              />
+            ) : (
+              <input
+                className="form-field"
+                placeholder="Organisation Name"
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+              />
+            ))}
           <input
             className="form-field"
             placeholder="Email Address"

@@ -227,7 +227,13 @@ const Footer = () => {
   ) : (
     <div className="footer-background text-colorWhite">
       <div className="container max-w-[1280px] mx-auto main-section-padding-top !pb-0">
-        <div className="footer-new w-full grid xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5">
+        <div
+          className={`footer-new w-full xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5 ${
+            pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/"
+              ? ""
+              : "grid"
+          }`}
+        >
           <div className="w-full">
             <Image
               className="w-[155px] h-[46px] md:mb-7 mb-5"
@@ -245,88 +251,110 @@ const Footer = () => {
               Trying to make an effort to put the right people for you to get
               the best results. Just insight !
             </p>
-            <div className="flex items-center md:text-2xl textxl font-medium mb-4">
-              <span className="gradient-text">We are Hiring!</span>
-              <Image
-                className="w-6 h-6 ml-2"
-                src="/images/group-of-people.png"
-                alt="hiring-voice"
-                width="24"
-                height="24"
-              />
+            {pathname === "/mvp-in-48-hours/" ||
+            pathname === "/free-mockups/" ? (
+              ""
+            ) : (
+              <>
+                <div className="flex items-center md:text-2xl textxl font-medium mb-4">
+                  <span className="gradient-text">We are Hiring!</span>
+                  <Image
+                    className="w-6 h-6 ml-2"
+                    src="/images/group-of-people.png"
+                    alt="hiring-voice"
+                    width="24"
+                    height="24"
+                  />
+                </div>
+                <ButtonV2
+                  redirect={`/career/`}
+                  label="View Positions"
+                  className="w-fit"
+                />
+              </>
+            )}
+          </div>
+          {pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/" ? (
+            ""
+          ) : (
+            <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link">
+              {footerData.slice(0, 3).map(({ title, links }) => (
+                <div
+                  key={title}
+                  className={`flex flex-col flex-wrap gap-[14px]`}
+                >
+                  <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                    {title}
+                  </h3>
+                  {links.map(({ link, text }) => (
+                    <Link
+                      key={text}
+                      href={link}
+                      className={`${getActivePage(link)} md:text-base text-sm`}
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </div>
+              ))}
             </div>
-            <ButtonV2
-              redirect={`/career/`}
-              label="View Positions"
-              className="w-fit"
-            />
-          </div>
-          <div className="w-full grid lg:grid-cols-3 grid-cols-2 xl:gap-12 md:gap-10 gap-6 footer-link">
-            {footerData.slice(0, 3).map(({ title, links }) => (
-              <div key={title} className={`flex flex-col flex-wrap gap-[14px]`}>
-                <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
-                  {title}
-                </h3>
-                {links.map(({ link, text }) => (
-                  <Link
-                    key={text}
-                    href={link}
-                    className={`${getActivePage(link)} md:text-base text-sm`}
-                  >
-                    {text}
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </div>
+          )}
         </div>
       </div>
-      <hr className="border-[#232323] mt-7.5 mb-5" />
-      <div className="container max-w-[1280px] !py-0 mx-auto main-section-padding-top">
-        <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-[155px] gap-6">
-          {contactLinks.map(({ title, links }, index) => (
-            <div className="flex flex-col gap-4" key={index}>
-              <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
-                {title}
-              </h3>
-              {links.map(({ text, imgSrc, link }, idx) =>
-                text.includes("503") ? (
-                  <div
-                    key={text}
-                    className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-start font-medium"
-                  >
-                    <Image
-                      className="mt-1 w-5"
-                      src={imgSrc}
-                      alt="location"
-                      width="20"
-                      height="20"
-                    />
+      {pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/" ? (
+        ""
+      ) : (
+        <>
+          <hr className="border-[#232323] mt-7.5 mb-5" />
+          <div className="container max-w-[1280px] !py-0 mx-auto main-section-padding-top">
+            <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-[155px] gap-6">
+              {contactLinks.map(({ title, links }, index) => (
+                <div className="flex flex-col gap-4" key={index}>
+                  <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                    {title}
+                  </h3>
+                  {links.map(({ text, imgSrc, link }, idx) =>
+                    text.includes("503") ? (
+                      <div
+                        key={text}
+                        className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-start font-medium"
+                      >
+                        <Image
+                          className="mt-1 w-5"
+                          src={imgSrc}
+                          alt="location"
+                          width="20"
+                          height="20"
+                        />
 
-                    {text}
-                  </div>
-                ) : (
-                  <a
-                    key={text}
-                    href={link}
-                    target="_blank"
-                    className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-center font-medium"
-                  >
-                    <Image
-                      className={`${text.includes("503") ? "mt-1" : ""} w-5`}
-                      src={imgSrc}
-                      alt="call-email-logo"
-                      width="20"
-                      height="20"
-                    />
-                    {text}
-                  </a>
-                )
-              )}
+                        {text}
+                      </div>
+                    ) : (
+                      <a
+                        key={text}
+                        href={link}
+                        target="_blank"
+                        className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-center font-medium"
+                      >
+                        <Image
+                          className={`${
+                            text.includes("503") ? "mt-1" : ""
+                          } w-5`}
+                          src={imgSrc}
+                          alt="call-email-logo"
+                          width="20"
+                          height="20"
+                        />
+                        {text}
+                      </a>
+                    )
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
       <hr className="border-[#232323] mt-7.5" />
       <div className="container max-w-[1280px] main-section-padding-bottom py-0 mx-auto">
         <div className="w-full flex md:items-center justify-between flex-col lg:flex-row lg:gap-20 gap-4">

@@ -8,6 +8,7 @@ import {
   UserCheck,
   Rocket,
   Calculator,
+  Lightbulb,
 } from "lucide-react";
 
 const outcomes = [
@@ -144,10 +145,10 @@ export default function OutcomesSection() {
           className="text-center"
         >
           <div
-            className="inline-flex items-center space-x-2 bg-[#017eeb1A] text-themeColor px-4 py-2 rounded-full text-sm font-medium"
+            className="inline-flex items-center text-xs md:text-base space-x-2 bg-[#017eeb1A] text-themeColor px-4 py-2 rounded-full font-medium"
             data-testid="text-outcomes-note"
           >
-            <i className="fas fa-lightbulb"></i>
+            <Lightbulb className="w-5 md:w-8 md:h-8 h-5" />
             <span>Come with an idea or a repo—both work</span>
           </div>
         </motion.div>

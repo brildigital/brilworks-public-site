@@ -75,7 +75,7 @@ export default function CalendarSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[#121a2b33] backdrop-blur-sm border border-[#017eeb33] rounded-2xl p-8 mb-8 shadow-2xl shadow-[#017eeb1A]"
+          className="bg-[#121a2b33] backdrop-blur-sm border border-[#017eeb33] rounded-2xl p-2 md:p-8 mb-8 shadow-2xl shadow-[#017eeb1A]"
           data-testid="card-calendar-widget"
         >
           <div className="flex items-center flex-col text-center mb-6">
@@ -96,7 +96,7 @@ export default function CalendarSection() {
 
           {/* Calendar Widget Integration Point */}
           <div
-            className="bg-[#192134] rounded-xl p-8 min-h-[400px] h-full flex items-center justify-center"
+            className="bg-[#192134] rounded-xl md:pt-8 min-h-[400px] h-full flex items-center justify-center"
             data-testid="calendar-widget-placeholder"
           >
             {/* <div className="flex items-center flex-col">
@@ -117,7 +117,7 @@ export default function CalendarSection() {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -134,11 +134,11 @@ export default function CalendarSection() {
               whileHover={{ x: "100%" }}
               transition={{ duration: 0.6 }}
             />
-            {/* <Calendar  /> */}
+           
             <span className="relative">Book My Free Walkthrough</span>
             <ArrowRight className="m-0 w-5 h-5" />
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

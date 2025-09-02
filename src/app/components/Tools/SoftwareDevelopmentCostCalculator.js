@@ -24,7 +24,7 @@ const SoftwareDevelopmentCostCalculator = () => {
   });
   const [result, setResult] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
-  const [showLeadForm, setShowLeadForm] = useState(false);
+  // const [showLeadForm, setShowLeadForm] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [hasVisited, setHasVisited] = useState();
@@ -117,7 +117,7 @@ const SoftwareDevelopmentCostCalculator = () => {
       );
       setResult(calculationResult);
       setOpenPopup(true);
-      setShowLeadForm(true);
+      // setShowLeadForm(true);
 
       toast({
         title: "Calculation Complete!",
@@ -392,7 +392,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </p>
               </div>
 
-              {showLeadForm && (
+              {/* {showLeadForm && (
                 <div className="">
                   <h3 className="text-xl font-semibold text-center mb-4">
                     Get Your Detailed Quote & Timeline
@@ -404,7 +404,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                     darkMode={false}
                   />
                 </div>
-              )}
+              )} */}
             </div>
           ) : (
             <div className="bg-white rounded-2xl border shadow-lg p-8">
@@ -433,6 +433,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           handleClose={handleClose}
           result={result}
           setResult={setResult}
+          hidePhoneField={true}
         />
       )}
     </>

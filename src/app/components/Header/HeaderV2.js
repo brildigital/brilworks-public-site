@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { menuItems } from "../lib/constants";
 import ButtonV2 from "../Common/ButtonV2";
+import Countdown48h from "./Countdown48h";
 
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
@@ -171,6 +172,14 @@ const HeaderV2 = () => {
               </div>
             )}
             <div className="flex items-center gap-5">
+              {/* {pathname === "/mvp-in-48-hours/" ||
+              pathname === "/free-mockups/" ||
+              pathname === "/ai-studio/" ||
+              pathname === "/project-estimate/" ? (
+                <Countdown48h />
+              ) : (
+                ""
+              )} */}
               <ButtonV2
                 label={
                   pathname === "/free-ui/"
