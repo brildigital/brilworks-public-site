@@ -44,7 +44,7 @@ const HireTeamHeroSection = ({
                 {description}
               </p>
               <Image
-                className="rounded-2xl object-cover"
+                className="rounded-lg object-cover"
                 src="/images/v2/experts-image.webp"
                 alt="hire-banner"
                 width="565"
