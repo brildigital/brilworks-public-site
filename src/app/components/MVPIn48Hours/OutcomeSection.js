@@ -10,6 +10,7 @@ import {
   Calculator,
   Lightbulb,
 } from "lucide-react";
+import Image from "next/image";
 
 const outcomes = [
   {
@@ -18,6 +19,7 @@ const outcomes = [
     description:
       "Crystal clear: what to build now, what to defer. Zero scope creep.",
     iconColor: "text-themeColor",
+    imageSrc: "/images/v2/mvp-scope-map.webp",
   },
   {
     icon: MousePointer,
@@ -25,12 +27,14 @@ const outcomes = [
     description:
       "Fast path using no-code or lightweight code. Show, don't tell.",
     iconColor: "text-accent",
+    imageSrc: "/images/v2/clickable-demo.webp",
   },
   {
     icon: Puzzle,
     title: "Integration Plan",
     description: "Auth, data, payments, analytics. The full stack blueprint.",
     iconColor: "text-themeColor",
+    imageSrc: "/images/v2/integration-plan.webp",
   },
   {
     icon: UserCheck,
@@ -38,18 +42,21 @@ const outcomes = [
     description:
       "5 core flows with acceptance criteria. Development-ready specs.",
     iconColor: "text-accent",
+    imageSrc: "/images/v2/user-story-pack.webp",
   },
   {
     icon: Rocket,
     title: "Go-Live Checklist",
     description: "Deploy, track, iterate. From localhost to production.",
     iconColor: "text-themeColor",
+    imageSrc: "/images/v2/go-live-checklist.webp",
   },
   {
     icon: Calculator,
     title: "Cost & Timeline",
     description: "Realistic resourcing and next milestones. No surprises.",
     iconColor: "text-accent",
+    imageSrc: "/images/v2/cost-timeline.webp",
   },
 ];
 
@@ -114,11 +121,20 @@ export default function OutcomesSection() {
               className="bg-card/80 backdrop-blur-sm p-8 rounded-xl border border-[#017eeb33] hover:shadow-2xl hover:shadow-[#017eeb1A] hover:border-primary/40 transition-all duration-500 group"
               data-testid={`card-outcome-${index}`}
             >
-              <div
+              {/* <div
                 className={`w-12 h-12 ${outcome.bgColor} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-[#017eeb33]`}
               >
                 <outcome.icon
                   className={`${outcome.iconColor} text-xl group-hover:text-accent transition-colors duration-300`}
+                />
+              </div> */}
+              <div className="mb-5">
+                <Image
+                  className="rounded-2xl"
+                  src={outcome?.imageSrc}
+                  alt="img-c"
+                  width="565"
+                  height="600"
                 />
               </div>
 

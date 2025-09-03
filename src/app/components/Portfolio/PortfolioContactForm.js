@@ -8,12 +8,12 @@ import { formatSrcUrl } from "../lib/commonFunction";
 
 const PortfolioContactForm = ({
   description,
-  phoneRequired = false,
   downloadFileUrl,
   darkMode = true,
   messageField = false,
   setShowPrice,
-  hidePhoneField,
+  showPhoneField = true,
+  showCompanyField = true,
 }) => {
   const pathname = usePathname();
 
@@ -134,27 +134,27 @@ const PortfolioContactForm = ({
             required
             onChange={handleChange}
           />
-          {!hidePhoneField &&
-            (phoneRequired ? (
-              <input
-                className="form-field"
-                type="number"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                required={phoneRequired}
-              />
-            ) : (
-              <input
-                className="form-field"
-                placeholder="Organisation Name"
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-              />
-            ))}
+          {showCompanyField && (
+            <input
+              className="form-field"
+              placeholder="Company"
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+            />
+          )}
+          {showPhoneField && (
+            <input
+              className="form-field"
+              type="number"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+          )}
+
           <input
             className="form-field"
             placeholder="Email Address"
@@ -168,7 +168,7 @@ const PortfolioContactForm = ({
             <textarea
               className="form-field"
               cols="1"
-              rows="2"
+              rows="3"
               placeholder="About Your Project"
               id="message"
               aria-invalid="false"

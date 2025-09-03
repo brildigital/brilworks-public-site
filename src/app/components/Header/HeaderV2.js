@@ -172,14 +172,12 @@ const HeaderV2 = () => {
               </div>
             )}
             <div className="flex items-center gap-5">
-              {/* {pathname === "/mvp-in-48-hours/" ||
-              pathname === "/free-mockups/" ||
-              pathname === "/ai-studio/" ||
-              pathname === "/project-estimate/" ? (
+              {pathname === "/mvp-in-48-hours/" ||
+              pathname === "/free-mockups/" ? (
                 <Countdown48h />
               ) : (
                 ""
-              )} */}
+              )}
               <ButtonV2
                 label={
                   pathname === "/free-ui/"

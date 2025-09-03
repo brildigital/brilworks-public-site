@@ -32,6 +32,8 @@ const EbookFirstSection = ({ title, imageSrc, ebookFileUrl }) => {
               description={
                 "Downloaded by 120+ CTOs from Startups and Enterprises"
               }
+              showPhoneField={false}
+              showCompanyField={true}
               downloadFileUrl={ebookFileUrl}
             />
           </div>

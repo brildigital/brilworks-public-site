@@ -38,7 +38,11 @@ const BluePrintForSuccess = ({ blueprintForSuccess, casestudyFileUrl }) => {
               <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                 Enter the details to proceed.
               </p>
-              <PortfolioContactForm downloadFileUrl={casestudyFileUrl} />
+              <PortfolioContactForm
+                showPhoneField={false}
+                showCompanyField={true}
+                downloadFileUrl={casestudyFileUrl}
+              />
             </div>
             <div className="lg:w-1/2 w-full">
               <Image

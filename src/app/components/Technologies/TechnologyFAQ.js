@@ -1,9 +1,13 @@
 "use client";
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import Heading from "../HTMLComponents/Heading";
-import ContactFormPopup from "./ContactFormPopup";
+
+const HireTeamContactFormPopup = dynamic(() =>
+  import("./HireTeamContactFormPopup")
+);
 
 const TechnologyFAQ = () => {
   const pathname = usePathname();
@@ -510,7 +514,7 @@ const TechnologyFAQ = () => {
         </div>
       </div>
       {openPopup && (
-        <ContactFormPopup open={openPopup} handleClose={handleClose} />
+        <HireTeamContactFormPopup open={openPopup} handleClose={handleClose} />
       )}
     </>
   );
