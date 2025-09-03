@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import HeaderV2 from "./HeaderV2";
 import Header from "./Header";
+import HeaderV3 from "./HeaderV3";
 
 const CurrentHeader = () => {
   const pathname = usePathname();
@@ -27,6 +28,8 @@ const CurrentHeader = () => {
     pathname !== "/gist/" &&
     !pathname.startsWith("/authors/") ? (
     <Header />
+  ) : pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/" ? (
+    <HeaderV3 />
   ) : (
     <HeaderV2 />
   );

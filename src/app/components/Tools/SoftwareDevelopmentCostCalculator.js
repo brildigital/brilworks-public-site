@@ -1,5 +1,11 @@
 "use client";
-import { AlertCircle, Calculator, Loader2, Smartphone } from "lucide-react";
+import {
+  AlertCircle,
+  Calculator,
+  Loader2,
+  Smartphone,
+  Wallet,
+} from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
@@ -7,7 +13,7 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
-import PopupContactForm from "../AIStudio/PopupContactForm";
+import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { usePathname } from "next/navigation";
 
 const SoftwareDevelopmentCostCalculator = () => {
@@ -375,20 +381,25 @@ const SoftwareDevelopmentCostCalculator = () => {
           {/* Results */}
           {result && hasVisited?.visited ? (
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
-              <div className="text-center mb-8">
+              <div className=" text-center my-12">
                 <div className="flex justify-center mb-4">
-                  <Smartphone className="h-12 w-12 text-indigo-500" />
+                  <Wallet className="h-12 w-12 text-indigo-500" />
                 </div>
-                <h2 className="text-3xl font-bold mb-2">Your Estimated Cost</h2>
-                <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
+                <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
+                <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
                   {isCalculating ? (
                     <PriceSkeleton />
                   ) : (
                     `$${result.cost.toLocaleString()}`
                   )}
                 </div>
-                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                  This estimate is based on your requirements.
+
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  The platform, design requirement, description, and project
+                  complexity are considered when calculating the cost. This is
+                  an estimate to give you an idea of the possible budget range
+                  for your project. For a more accurate estimate, consult with
+                  our specialist.
                 </p>
               </div>
 
@@ -410,7 +421,23 @@ const SoftwareDevelopmentCostCalculator = () => {
             <div className="bg-white rounded-2xl border shadow-lg p-8">
               <h2 className="text-3xl font-semibold mb-2">Cost Estimate</h2>
               <div className="text-center py-12">
-                <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                {/* <div className="flex justify-center mb-4">
+                  <div className="flex space-x-2">
+                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce"></span>
+                  </div>
+                </div> */}
+                <div className="relative flex justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-pulse"></div>
+                  <span className="absolute top-0 left-1 text-yellow-400 animate-ping">
+                    ✨
+                  </span>
+                  <span className="absolute bottom-0 right-1 text-pink-400 animate-ping">
+                    ✨
+                  </span>
+                </div>
+                {/* <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" /> */}
                 <h2 className="text-xl font-semibold text-gray-800 !mb-2">
                   No Estimate Yet
                 </h2>
@@ -428,12 +455,11 @@ const SoftwareDevelopmentCostCalculator = () => {
         </div>
       </div>
       {result && openPopup && !hasVisited?.visited && (
-        <PopupContactForm
+        <ToolsPopupContactForm
           open={openPopup}
           handleClose={handleClose}
           result={result}
           setResult={setResult}
-          hidePhoneField={true}
         />
       )}
     </>

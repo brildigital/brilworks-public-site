@@ -23,7 +23,10 @@ const SolutionContactForm = ({ title, description }) => {
               <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                 Enter the details to proceed.
               </p>
-              <PortfolioContactForm phoneRequired={true} messageField={true} />
+              <PortfolioContactForm
+                showCompanyField={false}
+                messageField={true}
+              />
             </div>
             <div className="lg:w-1/2 w-full">
               <Image
