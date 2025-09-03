@@ -51,18 +51,18 @@ const HireTeamHeroSection = ({
                 height="310"
                 priority
               />
-              <div className="flex flex-row md:items-center items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
+              <div className="flex flex-row items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
                 <ButtonV2
                   size="large"
                   redirect="#section-contact-form"
-                  className="w-full !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
+                  className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
                   label="Learn More"
                   scrollingButton
                 />
-                <ButtonV2 size="large" className="w-full" label="Hire Now" />
+                {/* <ButtonV2 size="large" className="w-full" label="Hire Now" /> */}
               </div>
             </div>
-            <div className="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full lg:mt-14 mb-auto">
               <div className="glass-effect md:px-6 px-4 lg:py-10 py-5 rounded-md">
                 <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                   Enter the details to proceed.
