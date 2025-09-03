@@ -900,6 +900,16 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Building Progressive Web Apps with React",
+    loc: "https://www.brilworks.com/blog/progressive-web-apps-with-react/",
+    lastmod: "2025-08-19T13:24:53.433Z",
+  },
+  {
+    name: "Guide to Java Performance Tools & Best Practices",
+    loc: "https://www.brilworks.com/blog/guide-to-java-performance-tools/",
+    lastmod: "2025-08-19T12:03:57.776Z",
+  },
+  {
     name: "A Beginner’s Guide to Animations in React Native",
     loc: "https://www.brilworks.com/blog/react-native-animations/",
     lastmod: "2025-08-14T13:55:44.719Z",
@@ -1347,7 +1357,7 @@ export const blogListStaticData = [
   {
     name: "How to Integrate AI in React Native Apps (Step by Step Guide)",
     loc: "https://www.brilworks.com/blog/ai-in-react-native/",
-    lastmod: "2025-05-22T09:40:14.458Z",
+    lastmod: "2025-08-29T10:57:31.215Z",
   },
   {
     name: "8 Best Node JS IDEs You Should Try This Year",
@@ -1482,7 +1492,7 @@ export const blogListStaticData = [
   {
     name: "Managing React Native Environment Variables: A Guide for Secure App Development",
     loc: "https://www.brilworks.com/blog/react-native-environment-variables/",
-    lastmod: "2025-04-28T08:00:41.185Z",
+    lastmod: "2025-08-29T08:48:48.754Z",
   },
   {
     name: "Scaling ReactJS Applications Effortlessly: A Practical Guide",
@@ -1592,7 +1602,7 @@ export const blogListStaticData = [
   {
     name: "6 Best Practices For Using AI for Database Querying",
     loc: "https://www.brilworks.com/blog/ai-for-database-querying/",
-    lastmod: "2025-08-06T05:48:47.153Z",
+    lastmod: "2025-08-27T07:46:34.721Z",
   },
   {
     name: "React Native for Enterprise Mobile App Development: Pros and Cons",
@@ -2012,7 +2022,7 @@ export const blogListStaticData = [
   {
     name: "Adopting AI: What are Technical Roadblocks?",
     loc: "https://www.brilworks.com/blog/technical-roadblocks-in-ai-development/",
-    lastmod: "2025-03-31T09:36:44.157Z",
+    lastmod: "2025-08-29T08:05:03.303Z",
   },
   {
     name: "How to Overcome Common Generative AI Challenges [A Straightforward Guide]",
@@ -2033,6 +2043,11 @@ export const blogListStaticData = [
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     lastmod: "2025-04-15T10:50:54.099Z",
+  },
+  {
+    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
+    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
+    lastmod: "2025-08-06T05:49:47.617Z",
   },
   {
     name: "What Makes AWS a Top Choice for Ecommerce Store?",
@@ -2167,7 +2182,7 @@ export const blogListStaticData = [
   {
     name: "10 Ways AI Platforms Can Boost Your Business Efficiency",
     loc: "https://www.brilworks.com/blog/ai-platforms-to-boost-business-efficiency/",
-    lastmod: "2024-06-03T15:09:18.217Z",
+    lastmod: "2025-08-29T06:25:09.396Z",
   },
   {
     name: "AWS Lambda: A Straightforward Guide For Beginners",
@@ -2347,7 +2362,7 @@ export const blogListStaticData = [
   {
     name: "Neptune vs Neo4J: A Head-to-Head Comparison",
     loc: "https://www.brilworks.com/blog/neptune-vs-neo4j/",
-    lastmod: "2025-05-01T07:25:05.470Z",
+    lastmod: "2025-08-26T08:51:54.620Z",
   },
   {
     name: "Django vs Node.js",
@@ -2382,7 +2397,7 @@ export const blogListStaticData = [
   {
     name: "What is Lambda Expression in Java?",
     loc: "https://www.brilworks.com/blog/lambda-expression-java/",
-    lastmod: "2025-05-22T06:24:21.237Z",
+    lastmod: "2025-08-26T07:12:54.284Z",
   },
   {
     name: "Exploring Storyblok's Powerful Visual Editor",
@@ -2417,7 +2432,7 @@ export const blogListStaticData = [
   {
     name: "What is Express js? A Comprehensive Guide to Beginners",
     loc: "https://www.brilworks.com/blog/what-is-express-js-comprehensive-guide-to-beginners/",
-    lastmod: "2025-04-15T09:23:48.913Z",
+    lastmod: "2025-08-29T07:32:58.048Z",
   },
   {
     name: "Top Features of Buy Now, Pay Later (BNPL) Apps",
@@ -2502,7 +2517,7 @@ export const blogListStaticData = [
   {
     name: "Discover the Benefits of Using Prisma in Your Next Project",
     loc: "https://www.brilworks.com/blog/discover-the-benefits-of-using-prisma-in-your-next-project/",
-    lastmod: "2025-07-24T08:18:27.188Z",
+    lastmod: "2025-08-28T13:08:40.806Z",
   },
   {
     name: "Top Node.js Frameworks For Web Development",
