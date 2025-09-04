@@ -133,6 +133,7 @@ export default function LeadFormSection() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-[#14161a] border border-border rounded-lg focus:ring-2 focus:outline-none focus:ring-[#00b7ff] focus:border-transparent transition-all duration-300"
                   data-testid="input-name"
+                  required
                 />
               </div>
 
@@ -150,6 +151,7 @@ export default function LeadFormSection() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-[#14161a] border border-border rounded-lg focus:ring-2 focus:outline-none focus:ring-[#00b7ff] focus:border-transparent transition-all duration-300"
                   data-testid="input-email"
+                  required
                 />
               </div>
 
@@ -168,6 +170,7 @@ export default function LeadFormSection() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-[#14161a] border border-border rounded-lg focus:ring-2 focus:outline-none focus:ring-[#00b7ff] focus:border-transparent transition-all duration-300 resize-none"
                   data-testid="textarea-app-idea"
+                  required
                 />
               </div>
 

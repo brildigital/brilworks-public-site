@@ -1,53 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Navbar, IconButton } from "@material-tailwind/react";
+import React from "react";
+import { Navbar } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { menuItems } from "../lib/constants";
 import ButtonV2 from "../Common/ButtonV2";
 import Countdown48h from "./Countdown48h";
 
 const HeaderV3 = () => {
   const pathname = usePathname();
-  const [hasBg, setHasBg] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-
-  useEffect(() => {
-    // Initial state setup based on current scroll position
-    setHasBg(window.scrollY > 50);
-
-    // Optimized scroll handler with throttling
-    let lastY = window.scrollY;
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentY = window.scrollY;
-          const isScrollingDown = currentY > lastY;
-
-          // Update background state
-          setHasBg(currentY > 50);
-
-          // Update header visibility based on scroll direction and position
-          if (currentY > 150 && isScrollingDown) {
-            setIsHidden(true);
-          } else if (!isScrollingDown) {
-            setIsHidden(false);
-          }
-
-          lastY = currentY;
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header>
@@ -58,7 +19,13 @@ const HeaderV3 = () => {
           //   hasBg ? "bg-[#000000e6]" : "bg-transparent"
           // }`}
         >
-          <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
+          <div
+            className={`flex justify-between text-white container md:px-10 px-5 mx-auto ${
+              pathname === "/mvp-in-48-hours/"
+                ? "max-w-[980px]"
+                : "max-w-[1280px]"
+            }`}
+          >
             <div className="header_logo">
               <Link href="/">
                 <Image

@@ -5,6 +5,7 @@ import OutcomesSection from "@/app/components/MVPIn48Hours/OutcomeSection";
 import React from "react";
 import ProcessSection from "@/app/components/MVPIn48Hours/ProcessSection";
 import CalendarSection from "@/app/components/MVPIn48Hours/CalendarSection";
+import FAQSection from "@/app/components/MVPIn48Hours/FAQSection";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <OutcomesSection />
       <AboutSection />
       <CalendarSection />
+      <FAQSection />
     </div>
   );
 };
