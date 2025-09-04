@@ -5,6 +5,7 @@ import React from "react";
 import AuthoritySection from "@/app/components/FreeMockups/AuthoritySection";
 import LeadFormSection from "@/app/components/FreeMockups/LeadFormSection";
 import ExamplesOfFreeMockup from "@/app/components/FreeMockups/ExamplesOfFreeMockup";
+import FAQSection from "@/app/components/MVPIn48Hours/FAQSection";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <AuthoritySection />
       <LeadFormSection />
       <ExamplesOfFreeMockup />
+      <FAQSection />
     </div>
   );
 };

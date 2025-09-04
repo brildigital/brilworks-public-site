@@ -33,13 +33,13 @@ export default function DeviceMockups() {
 
       {/* Mobile Mockup */}
       <div
-        className="md:w-48 w-40 md:h-96 h-80 rounded-[30px] my-10 md:my-0 mockup-shadow mx-auto animate-float"
+        className="md:w-56 w-40 md:h-[480px] h-80 rounded-[30px] my-10 md:my-0 mockup-shadow mx-auto animate-float"
         style={{ animationDelay: "1s" }}
         data-testid="mockup-mobile"
       >
         <Image
-          className="rounded-[30px] md:w-48 w-40 md:h-96 h-80"
-          src="/images/v2/hero-mobile-mockup.png"
+          className="rounded-[24px] md:w-56 w-40 md:h-[480px] h-80"
+          src="/images/v2/hero-mobile-mockup-1.jpg"
           alt="mobile-mockup"
           width="565"
           height="900"

@@ -1,41 +1,9 @@
 "use client";
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Calendar,
-  Sparkles,
-  Zap,
-  Code,
-  ArrowRight,
-  ShieldHalf,
-} from "lucide-react";
-import { useEffect, useState } from "react";
-import ButtonV2 from "../Common/ButtonV2";
+import { motion } from "framer-motion";
+import { ArrowRight, ShieldHalf } from "lucide-react";
 import { scrollToSection } from "../lib/commonFunction";
 
 const HeroSectionMVPIn48Hours = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-  const words = ["MVP", "Prototype", "Product", "App", "Solution"];
-
-  const stats = [
-    { value: "180k+", label: "Installs at Zo" },
-    { value: "80k+", label: "Community" },
-    { value: "10k+", label: "Agents Created" },
-    { value: "1st", label: "Solana Hackathon" },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentWord((prev) => (prev + 1) % words.length);
-        setIsVisible(true);
-      }, 300);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     // <section className="hero-gradient text-white relative overflow-hidden min-h-screen flex items-center">
     //   {/* Floating Orbs */}
@@ -208,7 +176,7 @@ const HeroSectionMVPIn48Hours = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h1
-              className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-wide"
               data-testid="text-hero-headline"
             >
               Launch your <span className="gradient-text">MVP in 48 hours</span>
@@ -234,7 +202,7 @@ const HeroSectionMVPIn48Hours = () => {
                 transition={{ duration: 0.6 }}
               />
               {/* <Calendar  /> */}
-              <span className="relative">Start Your Free Walkthrough</span>
+              <span className="">Start Your Free Walkthrough</span>
               <ArrowRight className="m-0 w-5 h-5" />
             </button>
           </motion.div>
