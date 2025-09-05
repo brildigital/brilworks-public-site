@@ -27,5 +27,6 @@ Disallow: /cdn-cgi/
 Disallow: /ai-studio/
 Disallow: /project-estimate/
 Disallow: /mvp-in-48-hours/
+Disallow: /project-estimate/
 
 Sitemap: https://www.brilworks.com/sitemap.xml

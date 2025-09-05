@@ -1,20 +1,16 @@
 "use client";
-import {
-  AlertCircle,
-  Calculator,
-  Loader2,
-  Smartphone,
-  Wallet,
-} from "lucide-react";
+import { Calculator, Loader2, Wallet } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
-import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { usePathname } from "next/navigation";
+import ToolFAQs from "./ToolFAQs";
+import ToolHowToUse from "./ToolHowToUse";
+import ToolFeatures from "./ToolFeatures";
 
 const SoftwareDevelopmentCostCalculator = () => {
   const pathname = usePathname();
@@ -123,19 +119,8 @@ const SoftwareDevelopmentCostCalculator = () => {
       );
       setResult(calculationResult);
       setOpenPopup(true);
-      // setShowLeadForm(true);
-
-      toast({
-        title: "Calculation Complete!",
-        description: "Your custom app development estimate is ready.",
-        duration: 3000,
-      });
     } catch (error) {
-      toast({
-        title: "Calculation Error",
-        description: "Unable to calculate cost. Please try again.",
-        variant: "destructive",
-      });
+      console.log("Error calculating software development cost");
     }
     setIsCalculating(false);
   };
@@ -155,44 +140,19 @@ const SoftwareDevelopmentCostCalculator = () => {
     }
   }, [result]);
 
-  const handleLeadSubmit = () => {
-    if (!inputs.email || !inputs.name) {
-      toast({
-        title: "Contact Information Required",
-        description:
-          "Please enter your name and email to get your detailed quote.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    console.log("Lead captured:", { ...inputs, result });
-
-    toast({
-      title: "Thank you!",
-      description: "We'll send your detailed quote and contact you soon.",
-      duration: 5000,
-    });
-  };
-
   return (
     <>
       {" "}
       <section className="bg-navyBlue">
         <div className="container max-w-[1280px] main-section-padding mx-auto">
-          <div className="pt-20">
+          <div className="pt-20 mx-auto">
             <Heading
               type="h1"
-              className="text-white"
-              text={
-                <>
-                  Software Development
-                  <br /> Cost Calculator
-                </>
-              }
+              className="text-white text-center"
+              text="Software Development Cost Calculator"
             />
           </div>
-          <p className="text-white lg:text-xl md:text-lg text-base !mt-5 lg:w-[70%] w-full">
+          <p className="text-white lg:text-xl md:text-lg text-base text-center !mt-5 lg:w-3/4 mx-auto w-full">
             Estimate the cost and timeline for developing your project using the
             user-friendly software development cost calculator. Answer just five
             questions and get an estimate for your project. Your journey to a
@@ -202,7 +162,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           <ButtonV2
             redirect="#price-estimate"
             label="Get Started"
-            className="mt-5 hover:!text-colorWhite w-fit"
+            className="mt-5 hover:!text-colorWhite w-fit mx-auto"
             scrollingButton
           />
         </div>
@@ -220,7 +180,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
             App Development Cost Calculator
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
             Get an instant estimate for your mobile or web application project.
           </p>
         </div>
@@ -454,6 +414,9 @@ const SoftwareDevelopmentCostCalculator = () => {
           )}
         </div>
       </div>
+      <ToolHowToUse />
+      <ToolFeatures />
+      <ToolFAQs />
       {result && openPopup && !hasVisited?.visited && (
         <ToolsPopupContactForm
           open={openPopup}

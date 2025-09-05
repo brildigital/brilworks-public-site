@@ -78,7 +78,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               </div>
               <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
               <div className="flex items-center justify-center text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
-                {!showPrice ? (
+                {showPrice ? (
                   <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
                     <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
                       ${result.cost.toLocaleString()}
