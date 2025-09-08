@@ -4,6 +4,7 @@ import { Calendar, Clock, Video, Gift, Shield, Sparkles } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ReCAPTCHA } from "react-google-recaptcha";
 import Link from "next/link";
+import Cal from "@calcom/embed-react";
 
 export default function LeadFormSection() {
   const pathname = usePathname();
@@ -91,14 +92,17 @@ export default function LeadFormSection() {
   };
 
   return (
-    <section id="signup-form" className="py-8 md:py-12 lg:py-16 relative">
+    <section
+      id="signup-form"
+      className="max-w-[1280px] py-8 md:py-12 lg:py-16 mx-auto relative"
+    >
       <div className="absolute inset-0 bg-gradient-to-t from-themering-[#00b7ff]/8 via-accent/5 to-transparent"></div>
       <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-40"></div>
       <div
         className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-br from-blue-400/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse opacity-40"
         style={{ animationDelay: "1.5s" }}
       ></div>
-      <div className="max-w-4xl mx-auto px-6 relative">
+      <div className="w-full mx-auto px-6 relative">
         <div className="text-center mb-12 scroll-reveal">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
@@ -116,9 +120,17 @@ export default function LeadFormSection() {
             see, touch, and share. Zero cost. Zero catch.
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="flex lg:flex-row flex-col gap-4 items-stretch">
           {/* Form */}
-          <div className="glass-effect rounded-2xl md:p-8 p-6 scroll-reveal h-full">
+          <div className="glass-effect rounded-2xl md:py-6 md:px-4 p-4 scroll-reveal h-full lg:w-[32%] w-full flex flex-col">
+            <p className="text-lg">
+              You're just a step away from creating exceptional business ideas.
+              This case study reveals how Brilworks assists successful companies
+              in extending their tech teams.
+            </p>
+            <span className="font-semibold text-lg my-4">
+              Enter the details to proceed.
+            </span>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
@@ -204,12 +216,12 @@ export default function LeadFormSection() {
 
           {/* Calendly Embed */}
           <div
-            className="scroll-reveal h-full"
+            className="scroll-reveal h-full lg:w-[68%] w-full"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="glass-effect rounded-2xl md:p-8 p-6 h-full flex flex-col">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-3">
+            <div className="glass-effect rounded-2xl md:pt-6 md:px-4 p-4 h-full flex flex-col">
+              <div className="text-center mb-2">
+                <h3 className="text-2xl font-bold mb-1">
                   Or Book a <span className="text-accent">15-Min</span> Idea
                   Chat
                 </h3>
@@ -218,9 +230,15 @@ export default function LeadFormSection() {
                   instant feedback.
                 </p>
               </div>
+              <div className="w-full">
+                <Cal
+                  calLink="vikas-singh-bril/free-consultation"
+                  config={{ theme: "light" }}
+                />
+              </div>
 
               {/* Calendly placeholder */}
-              <div className="bg-[#14161a] rounded-lg md:p-8 p-6 border border-border flex-1 flex items-center justify-center">
+              {/* <div className="bg-[#14161a] rounded-lg md:p-8 p-6 border border-border flex-1 flex items-center justify-center">
                 <div className="text-center">
                   <div className="md:w-16 w-12 md:h-16 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <Calendar className="text-accent text-2xl" />
@@ -236,9 +254,9 @@ export default function LeadFormSection() {
                     Book Your Slot
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="mt-6 text-center">
+              <div className="text-center">
                 <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[#94a3b8]">
                   <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />

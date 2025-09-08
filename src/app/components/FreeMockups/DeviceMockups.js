@@ -33,12 +33,12 @@ export default function DeviceMockups() {
 
       {/* Mobile Mockup */}
       <div
-        className="md:w-56 w-40 md:h-[480px] h-80 rounded-[30px] my-10 md:my-0 mockup-shadow mx-auto animate-float"
+        className="md:w-56 w-44 md:h-[480px] h-[378px] rounded-[30px] my-10 md:my-0 mockup-shadow mx-auto animate-float"
         style={{ animationDelay: "1s" }}
         data-testid="mockup-mobile"
       >
         <Image
-          className="rounded-[24px] md:w-56 w-40 md:h-[480px] h-80"
+          className="md:rounded-[24px] rounded-2xl md:w-56 w-44 md:h-[480px] h-[378px]"
           src="/images/v2/hero-mobile-mockup-1.jpg"
           alt="mobile-mockup"
           width="565"
@@ -67,7 +67,7 @@ export default function DeviceMockups() {
 
       {/* Tablet Mockup */}
       <div
-        className="absolute -bottom-6 md:-left-12 -left-2 md:w-72 w-56 md:h-48 h-36 mockup-shadow animate-float"
+        className="absolute -bottom-6 md:-left-12 -left-2 md:w-[300px] aspect-auto w-56 md:h-[196px] h-36 mockup-shadow animate-float"
         style={{ animationDelay: "2s" }}
         data-testid="mockup-tablet"
       >
@@ -83,8 +83,8 @@ export default function DeviceMockups() {
           </div>
         </div> */}
         <Image
-          className="rounded-[10px] md:w-72 w-56 md:h-48 h-36 object-fill"
-          src="/images/v2/hero-tablet-mockup.webp"
+          className="md:rounded-xl rounded-[10px] md:w-[300px] aspect-auto w-56 md:h-[196px] h-36 object-fill"
+          src="/images/v2/hero-tablet-mockup-dark.png"
           alt="tablet-mockup"
           width="565"
           height="900"

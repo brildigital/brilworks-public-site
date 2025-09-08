@@ -112,7 +112,7 @@ export default function CalendarSection() {
               <Cal
                 calLink="vikas-singh-bril/free-consultation"
                 config={{ theme: "light" }}
-              ></Cal>
+              />
             </div>
           </div>
         </motion.div>

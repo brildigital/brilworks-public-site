@@ -1,37 +1,37 @@
 :root {
-  --background: #111827;
-  --foreground: #ffffff;
-  --card: #14161a;
-  --card-foreground: #ffffff;
-  --popover: #111827;
-  --popover-foreground: #ffffff;
-  --primary: #00bfff;
-  --primary-foreground: #ffffff;
-  --secondary: #14161a;
-  --secondary-foreground: #ffffff;
-  --muted: #14161a;
-  --muted-foreground: #f8fafc;
-  --accent: #00bfff;
-  --accent-foreground: #0d0f11;
-  --destructive: #ff4d4f;
-  --destructive-foreground: #f8fafc;
-  --border: #2175e4;
-  --input: #14161a;
-  --ring: #00bfff;
-  --chart-1: #00bfff;
-  --chart-2: #ff4d4f;
-  --chart-3: #a855f7;
-  --chart-4: #00bfff;
-  --chart-5: #ff4d4f;
+  --background: hsl(220, 39%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(220, 25%, 15%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(220, 39%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(214, 78%, 51%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 25%, 15%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(220, 25%, 15%);
+  --muted-foreground: hsl(220, 9%, 46%);
+  --accent: hsl(220, 25%, 15%);
+  --accent-foreground: hsl(214, 78%, 51%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(214, 78%, 51%, 0.2);
+  --input: hsl(220, 25%, 15%);
+  --ring: hsl(214, 78%, 51%);
+  --chart-1: hsl(214, 78%, 51%);
+  --chart-2: hsl(25, 95%, 53%);
+  --chart-3: hsl(262, 83%, 58%);
+  --chart-4: hsl(214, 78%, 51%);
+  --chart-5: hsl(25, 95%, 53%);
   --radius: 0.5rem;
 
   /* Brilworks-inspired cyberpunk color variables */
-  --cyber-navy: #0d0f11;
-  --cyber-blue: #00bfff;
-  --cyber-orange: #ff4d4f;
-  --cyber-purple: #a855f7;
-  --cyber-dark: #14161a;
-  --cyber-gray: #f8fafc;
+  --cyber-navy: hsl(220, 39%, 11%);
+  --cyber-blue: hsl(214, 78%, 51%);
+  --cyber-orange: hsl(25, 95%, 53%);
+  --cyber-purple: hsl(262, 83%, 58%);
+  --cyber-dark: hsl(220, 25%, 15%);
+  --cyber-gray: hsl(220, 9%, 46%);
 }
 
 .ai-studio .border {
