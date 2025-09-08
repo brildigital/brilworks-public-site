@@ -108,7 +108,9 @@ export default function Countdown48h({
   const z = (n) => String(n).padStart(2, "0");
 
   return !isMobile ? (
-    <div className="w-full flex items-center gap-3">
+    <div
+      className={`w-full hidden items-center gap-3 ${isMobile ? "" : "!flex"}`}
+    >
       {/* Left Text */}
       <div className="font-semibold text-xl text-white">
         Hurry Up! Free Mockups ends in:&nbsp;

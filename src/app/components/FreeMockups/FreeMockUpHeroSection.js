@@ -2,6 +2,7 @@
 import React from "react";
 import DeviceMockups from "./DeviceMockups";
 import { scrollToSection } from "../lib/commonFunction";
+import Image from "next/image";
 
 const FreeMockUpHeroSection = () => {
   return (
@@ -58,7 +59,7 @@ const FreeMockUpHeroSection = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-6 md:pt-4">
+          {/* <div className="flex items-center gap-6 md:pt-4">
             <div className="flex -space-x-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-themeColor to-accent border-2 border-[#0d0f11]"></div>
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-themeColor border-2 border-[#0d0f11]"></div>
@@ -71,6 +72,43 @@ const FreeMockUpHeroSection = () => {
               <span className="text-accent font-semibold">2,500+</span> founders
               already visualized their ideas
             </p>
+          </div> */}
+          <div className="flex md:flex-row flex-col items-center justify-start gap-4">
+            <div className="md:w-fit w-full flex items-center justify-start md:pt-4">
+              <Image
+                className="w-10 h-10 rounded-full"
+                src="/images/v2/image_avtar-1.svg"
+                alt="image-avtar"
+                width="42"
+                height="42"
+              />
+              <Image
+                className="-ml-[10px] w-10 h-10 rounded-full"
+                src="/images/v2/image_avtar-2.svg"
+                alt="image-avtar"
+                width="42"
+                height="42"
+              />
+              <Image
+                className="-ml-[10px] w-10 h-10 rounded-full"
+                src="/images/v2/image_avtar-3.svg"
+                alt="image-avtar"
+                width="42"
+                height="42"
+              />
+              <div className="flex items-center justify-center w-[42px] h-[42px] bg-gradient-to-br from-[#017eebB3] to-accent/70 rounded-full -ml-[10px] !border-[1px] border-colorWhite">
+                <p className="text-sm text-center">2k+</p>
+              </div>
+            </div>
+            <div>
+              <p
+                className="text-sm md:!mt-3 !mt-0 text-[#94a3b8]"
+                data-testid="text-social-proof"
+              >
+                <span className="text-accent font-semibold">2,500+</span>{" "}
+                founders already visualized their ideas
+              </p>
+            </div>
           </div>
         </div>
 

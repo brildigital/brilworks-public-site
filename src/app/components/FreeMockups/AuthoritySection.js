@@ -1,7 +1,10 @@
+"use client";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function AuthoritySection() {
+  const router = useRouter();
   const achievements = [
     {
       title: "15+ Years Design Experience",
@@ -25,6 +28,8 @@ export default function AuthoritySection() {
       accent: "bg-cyan-500/40",
       image:
         "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/b1a7a16ed4_stock-view-app.webp",
+      redirect:
+        "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
       secondary: "bg-blue-500/30",
     },
     {
@@ -33,6 +38,8 @@ export default function AuthoritySection() {
       accent: "bg-blue-500/40",
       image:
         "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/93672878ad_powerful-inventory-app.webp",
+      redirect:
+        "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
       secondary: "bg-cyan-500/30",
     },
     {
@@ -41,6 +48,7 @@ export default function AuthoritySection() {
       accent: "bg-teal-500/40",
       image:
         "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/d47ae82eac_connecting-pet-owners.webp",
+      redirect: "/portfolio/pet-finding-app/",
       secondary: "bg-cyan-500/30",
     },
     {
@@ -49,6 +57,7 @@ export default function AuthoritySection() {
       accent: "bg-cyan-600/40",
       image:
         "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/ed7dbf1d9c_healthcare-mobile-app.webp",
+      redirect: "/portfolio/healthcare-mobile-app/",
       secondary: "bg-teal-500/30",
     },
   ];
@@ -103,17 +112,18 @@ export default function AuthoritySection() {
           </div>
 
           <div className="scroll-reveal" style={{ animationDelay: "0.2s" }}>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-6">
               <div className="space-y-6">
                 {portfolioItems.slice(0, 2).map((item, index) => (
                   <div
                     key={index}
-                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border p-4`}
+                    onClick={() => router.push(item?.redirect)}
+                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index}`}
                   >
                     <div className="h-full bg-[#14161a] rounded-xl">
                       <Image
-                        className="rounded-xl md:w-56 w-40 md:h-[275px] h-80"
+                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full"
                         src={item.image}
                         alt="tech-image"
                         width="565"
@@ -142,7 +152,8 @@ export default function AuthoritySection() {
                 {portfolioItems.slice(2, 4).map((item, index) => (
                   <div
                     key={index + 2}
-                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border p-4`}
+                    onClick={() => router.push(item?.redirect)}
+                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index + 2}`}
                   >
                     <div className="h-full bg-[#14161a] rounded-xl">
@@ -158,7 +169,7 @@ export default function AuthoritySection() {
                         </div>
                       </div> */}
                       <Image
-                        className="rounded-xl md:w-56 w-40 md:h-[275px] h-80"
+                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full"
                         src={item.image}
                         alt="tech-image"
                         width="565"
