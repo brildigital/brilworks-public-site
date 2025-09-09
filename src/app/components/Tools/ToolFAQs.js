@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
+import Cal from "@calcom/embed-react";
 
 const faqData = [
   {
@@ -54,7 +55,7 @@ const ToolFAQs = () => {
   return (
     <section id="faq">
       <div className="max-w-6xl mx-auto main-section-padding">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-8">
           <Heading
             type="h2"
             className="lg:!text-[34px] md:!text-3xl !text-2xl !font-bold mb-4"
@@ -104,20 +105,26 @@ const ToolFAQs = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="bg-blue-50 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+          <div className="bg-blue-50 rounded-2xl pt-8 px-4 md:pb-0 pb-4">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
               Still have questions?
             </h3>
             <p className="text-gray-600 !mb-6">
               Can't find the answer you're looking for? Please get in touch with
               our team.
             </p>
-            <Link
+            <div className="w-full">
+              <Cal
+                calLink="vikas-singh-bril/free-consultation"
+                config={{ theme: "light" }}
+              />
+            </div>
+            {/* <Link
               href="/contact-us/"
               className="bg-themeColor hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Contact Support
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

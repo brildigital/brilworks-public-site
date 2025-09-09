@@ -187,8 +187,20 @@ const HeaderV2 = () => {
                     ? "Contact Us"
                     : "Claim Free"
                 }
-                className={pathname === "/ai-studio/" ? "" : "header-btn"}
-                redirect={pathname === "/free-ui/" ? "#cta" : "/free-ui/"}
+                className={
+                  pathname === "/ai-studio/" ||
+                  pathname === "/project-estimate/"
+                    ? ""
+                    : "header-btn"
+                }
+                redirect={
+                  pathname === "/free-ui/"
+                    ? "#cta"
+                    : pathname === "/ai-studio/" ||
+                      pathname === "/project-estimate/"
+                    ? ""
+                    : "/free-ui/"
+                }
                 // {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
                 scrollingButton={pathname === "/free-ui/"}
               />
