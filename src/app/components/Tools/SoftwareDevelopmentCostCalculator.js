@@ -1,5 +1,12 @@
 "use client";
-import { Calculator, Loader2, Wallet } from "lucide-react";
+import {
+  ArrowRight,
+  Calculator,
+  CheckCircle,
+  Loader2,
+  Sparkles,
+  Wallet,
+} from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
@@ -11,6 +18,7 @@ import { usePathname } from "next/navigation";
 import ToolFAQs from "./ToolFAQs";
 import ToolHowToUse from "./ToolHowToUse";
 import ToolFeatures from "./ToolFeatures";
+import Image from "next/image";
 
 const SoftwareDevelopmentCostCalculator = () => {
   const pathname = usePathname();
@@ -145,26 +153,53 @@ const SoftwareDevelopmentCostCalculator = () => {
       {" "}
       <section className="bg-navyBlue">
         <div className="container max-w-[1280px] main-section-padding mx-auto">
-          <div className="pt-20 mx-auto">
-            <Heading
-              type="h1"
-              className="text-white text-center"
-              text="Software Development Cost Calculator"
-            />
+          <div className="flex lg:flex-row flex-col gap-10 mt-20">
+            <div className="mx-auto lg:w-3/5 w-full">
+              <Heading
+                type="h1"
+                className="text-white text-left"
+                text="Software Development Cost Calculator"
+              />
+
+              <p className="text-white lg:text-xl md:text-lg text-base text-left !mt-5 md:pr-10 pr-0 w-full">
+                Estimate the cost and timeline for developing your project using
+                the user-friendly software development cost calculator. Answer
+                just five questions and get an estimate for your project. Your
+                journey to a seamlessly executed software project begins with a
+                free, tailored estimation.
+              </p>
+              <ButtonV2
+                redirect="#price-estimate"
+                label="Get Started"
+                className="my-8 hover:!text-colorWhite w-fit"
+                scrollingButton
+              />
+              <div className="flex flex-wrap gap-6 text-gray-300">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm">No Credit Card Required</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm">Instant Results</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm">100% Free Forever</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-2/5 w-full">
+              <Image
+                className="rounded-2xl md:h-[500px] h-[360px] object-cover"
+                src="/images/v2/software-dev-cost-calc-banner.webp"
+                alt="hire-banner"
+                width="565"
+                height="610"
+                priority
+              />
+            </div>
           </div>
-          <p className="text-white lg:text-xl md:text-lg text-base text-center !mt-5 lg:w-3/4 mx-auto w-full">
-            Estimate the cost and timeline for developing your project using the
-            user-friendly software development cost calculator. Answer just five
-            questions and get an estimate for your project. Your journey to a
-            seamlessly executed software project begins with a free, tailored
-            estimation.
-          </p>
-          <ButtonV2
-            redirect="#price-estimate"
-            label="Get Started"
-            className="mt-5 hover:!text-colorWhite w-fit mx-auto"
-            scrollingButton
-          />
         </div>
       </section>
       <div
@@ -237,7 +272,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               {/* Features */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Key Features</label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
                   {availableFeatures.map((feature) => (
                     <label
                       key={feature}
@@ -362,52 +397,41 @@ const SoftwareDevelopmentCostCalculator = () => {
                   our specialist.
                 </p>
               </div>
-
-              {/* {showLeadForm && (
-                <div className="">
-                  <h3 className="text-xl font-semibold text-center mb-4">
-                    Get Your Detailed Quote & Timeline
-                  </h3>
-
-                  <PortfolioContactForm
-                    phoneRequired={true}
-                    messageField={true}
-                    darkMode={false}
-                  />
-                </div>
-              )} */}
             </div>
           ) : (
             <div className="bg-white rounded-2xl border shadow-lg p-8">
-              <h2 className="text-3xl font-semibold mb-2">Cost Estimate</h2>
+              <h2 className="text-center text-3xl font-semibold mb-2">
+                Cost Estimate
+              </h2>
               <div className="text-center py-12">
-                {/* <div className="flex justify-center mb-4">
-                  <div className="flex space-x-2">
-                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                    <span className="w-3 h-3 bg-purple-500 rounded-full animate-bounce"></span>
+                <div className="flex flex-col items-center justify-center space-y-6">
+                  <div className="relative my-12">
+                    <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-3 h-3 text-yellow-800" />
+                    </div>
+                    <div className="animate-ping absolute -bottom-2 -left-2 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-2 h-2 text-yellow-800" />
+                    </div>
                   </div>
-                </div> */}
-                <div className="relative flex justify-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-pulse"></div>
-                  <span className="absolute top-0 left-1 text-yellow-400 animate-ping">
-                    ✨
-                  </span>
-                  <span className="absolute bottom-0 right-1 text-pink-400 animate-ping">
-                    ✨
-                  </span>
-                </div>
-                {/* <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" /> */}
-                <h2 className="text-xl font-semibold text-gray-800 !mb-2">
-                  No Estimate Yet
-                </h2>
-                <p className="text-gray-500 text-lg">
-                  Fill out the form on the left and your instant cost estimate
-                  will magically appear here ✨
-                </p>
 
-                <div className="w-fit mx-auto mt-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg shadow-lg animate-bounce">
-                  &lArr; Start by selecting your project details
+                  <h3 className="text-xl font-semibold text-gray-700">
+                    No Estimate Yet
+                  </h3>
+
+                  <p className="text-gray-600 max-w-sm">
+                    Fill out the form on the left and your instant cost estimate
+                    will magically appear here ✨
+                  </p>
+
+                  <button
+                    onClick={() => document.querySelector("select")?.focus()}
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
+                  >
+                    &lArr; Start by selecting your project details
+                  </button>
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ const ToolFeatures = () => {
   return (
     <section id="features" className="bg-gray-50">
       <div className="max-w-7xl mx-auto main-section-padding">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-8">
           <Heading
             type="h2"
             className="lg:!text-[34px] md:!text-3xl !text-2xl !font-bold mb-4"
