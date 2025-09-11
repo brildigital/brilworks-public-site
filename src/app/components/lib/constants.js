@@ -250,12 +250,33 @@ export const resourcesMenuItems = [
         name: "Case Studies",
         path: "/portfolio/",
       },
+      // {
+      //   name: "Tools",
+      //   path: "/tools/",
+      // },
       {
         name: "Design Template",
         path: "/free-ui/",
       },
     ],
   },
+  // {
+  //   name: "NEW PAGES",
+  //   subSections: [
+  //     {
+  //       name: "MVP in 48 Hours",
+  //       path: "/mvp-in-48-hours/",
+  //     },
+  //     {
+  //       name: "Free Mockups",
+  //       path: "/free-mockups/",
+  //     },
+  //     {
+  //       name: "AI Studio",
+  //       path: "/ai-studio/",
+  //     },
+  //   ],
+  // },
 ];
 
 export const hireTeamMenuItems = [

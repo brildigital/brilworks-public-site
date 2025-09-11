@@ -1,11 +1,15 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import { Lock, Wallet, X } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
-import { PriceSkeleton } from "../Blog/ArticleSkeleton";
+import { usePathname } from "next/navigation";
+import { markFormSubmitted } from "../lib/commonFunction";
 
 const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
+  const pathname = usePathname();
   const [showPrice, setShowPrice] = useState(false);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden"; // disable background scroll
@@ -18,6 +22,12 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    if (showPrice) {
+      markFormSubmitted(pathname);
+    }
+  }, [showPrice]);
 
   return (
     <div className="popup fixed inset-0 z-50 flex items-center justify-center px-4">
@@ -78,10 +88,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               </div>
               <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
               <div className="flex items-center justify-center text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
-                {showPrice ? (
+                {!showPrice ? (
                   <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
                     <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
-                      ${result.cost.toLocaleString()}
+                      $ NaN NaN
                     </span>
                     <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
                   </div>
