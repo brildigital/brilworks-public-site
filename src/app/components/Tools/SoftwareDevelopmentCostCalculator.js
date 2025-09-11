@@ -202,6 +202,8 @@ const SoftwareDevelopmentCostCalculator = () => {
           </div>
         </div>
       </section>
+      <ToolHowToUse />
+      <ToolFeatures />
       <div
         id="price-estimate"
         className="container max-w-[1280px] main-section-padding mx-auto"
@@ -438,8 +440,6 @@ const SoftwareDevelopmentCostCalculator = () => {
           )}
         </div>
       </div>
-      <ToolHowToUse />
-      <ToolFeatures />
       <ToolFAQs />
       {result && openPopup && !hasVisited?.visited && (
         <ToolsPopupContactForm
