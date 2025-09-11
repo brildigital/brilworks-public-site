@@ -5,7 +5,7 @@ import Heading from "../HTMLComponents/Heading";
 const ToolHowToUse = () => {
   return (
     <div className="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
-      <section className="container max-w-6xl mx-auto main-section-padding-bottom">
+      <section className="container max-w-6xl mx-auto main-section-padding">
         <div className="max-w-4xl mx-auto text-center">
           <Heading
             type="h2"
