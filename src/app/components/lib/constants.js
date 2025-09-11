@@ -353,6 +353,27 @@ export const resourcesMenuItems = [
       },
     ],
   },
+  {
+    name: "NEW PAGES",
+    subSections: [
+      {
+        name: "MVP in 48 Hours",
+        path: "/mvp-in-48-hours/",
+      },
+      {
+        name: "Free Mockups",
+        path: "/free-mockups/",
+      },
+      {
+        name: "AI Studio",
+        path: "/ai-studio/",
+      },
+      {
+        name: "Software Development Cost Calculator",
+        path: "/project-estimate/",
+      },
+    ],
+  },
 ];
 
 const hireTeamMenuItems = [
