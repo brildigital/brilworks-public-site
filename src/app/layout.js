@@ -31,8 +31,6 @@ storyblokInit({
   use: [apiPlugin],
 });
 
-import Header from "./components/Header/Header";
-import HeaderV2 from "./components/Header/HeaderV2";
 import CurrentHeader from "./components/Header/CurrentHeader";
 // import LoadScripts from "./ScriptLoader";
 

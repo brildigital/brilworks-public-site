@@ -334,6 +334,32 @@ export const suggestSimilarBlogPosts = (blogTitle = "") => {
   return match ? match.value : null;
 };
 
+const STORAGE_KEY = "hasVisitedPage";
+
+/**
+ * Check if user has already submitted form for given route
+ */
+export function hasSubmittedForm(route) {
+  if (typeof window === "undefined") return false; // SSR-safe
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+  return data?.some((entry) => entry.route === route && entry.visited);
+}
+
+/**
+ * Mark form as submitted for given route
+ */
+export function markFormSubmitted(route) {
+  if (typeof window === "undefined") return; // SSR-safe
+
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+  if (!data.some((entry) => entry.route === route)) {
+    data.push({ route, visited: true });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+}
+
 export const isExternalLink = (href) => {
   const allowedDomains = [
     "brilworks.com",

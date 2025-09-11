@@ -348,6 +348,10 @@ export const resourcesMenuItems = [
         path: "/portfolio/",
       },
       {
+        name: "Tools",
+        path: "/tools/",
+      },
+      {
         name: "Design Template",
         path: "/free-ui/",
       },
@@ -367,10 +371,6 @@ export const resourcesMenuItems = [
       {
         name: "AI Studio",
         path: "/ai-studio/",
-      },
-      {
-        name: "Software Development Cost Calculator",
-        path: "/project-estimate/",
       },
     ],
   },

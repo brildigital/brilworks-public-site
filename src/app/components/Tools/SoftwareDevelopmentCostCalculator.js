@@ -1,24 +1,16 @@
 "use client";
-import {
-  ArrowRight,
-  Calculator,
-  CheckCircle,
-  Loader2,
-  Sparkles,
-  Wallet,
-} from "lucide-react";
+import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
-import Heading from "../HTMLComponents/Heading";
-import ButtonV2 from "../Common/ButtonV2";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
-import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { usePathname } from "next/navigation";
+import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import ToolFAQs from "./ToolFAQs";
 import ToolHowToUse from "./ToolHowToUse";
 import ToolFeatures from "./ToolFeatures";
-import Image from "next/image";
+import ToolHerosection from "./ToolHerosection";
+import { hasSubmittedForm } from "../lib/commonFunction";
 
 const SoftwareDevelopmentCostCalculator = () => {
   const pathname = usePathname();
@@ -34,20 +26,12 @@ const SoftwareDevelopmentCostCalculator = () => {
   });
   const [result, setResult] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
-  // const [showLeadForm, setShowLeadForm] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
-  const [hasVisited, setHasVisited] = useState();
+  const [hasVisited, setHasVisited] = useState(false);
 
   useEffect(() => {
-    const localStorageData = JSON.parse(localStorage.getItem("hasVisitedPage"));
-    setHasVisited(localStorageData);
-  }, [openPopup]);
-
-  const handleClose = () => {
-    setOpenPopup(false);
-    setDismissed(true); // 👉 permanently dismiss
-  };
+    setHasVisited(hasSubmittedForm(pathname));
+  }, [pathname, openPopup]);
 
   const platforms = [
     { value: "ios", label: "iOS Only" },
@@ -91,6 +75,12 @@ const SoftwareDevelopmentCostCalculator = () => {
     { value: "flexible", label: "Flexible (6+ months)" },
   ];
 
+  const authority = [
+    "No Credit Card Required",
+    "Instant Results",
+    "100% Free Forever",
+  ];
+
   const handleFeatureChange = (feature, checked) => {
     setInputs((prev) => ({
       ...prev,
@@ -126,82 +116,33 @@ const SoftwareDevelopmentCostCalculator = () => {
         inputs
       );
       setResult(calculationResult);
-      setOpenPopup(true);
+
+      if (!hasVisited) {
+        setOpenPopup(true);
+      }
     } catch (error) {
       console.log("Error calculating software development cost");
     }
-    setIsCalculating(false);
+    setTimeout(() => {
+      setIsCalculating(false);
+    }, 3000);
   };
 
   useEffect(() => {
-    const hasVisitedPage = JSON.parse(localStorage.getItem("hasVisitedPage"));
-
-    if (!hasVisitedPage?.visited && result) {
-      // First time visitor → show popup
+    const hasVisitedPage = hasSubmittedForm(pathname);
+    if (!hasVisitedPage && result) {
       setOpenPopup(true);
-
-      // Mark as visited
-      localStorage.setItem(
-        "hasVisitedPage",
-        JSON.stringify({ route: pathname, visited: true })
-      );
     }
   }, [result]);
 
   return (
     <>
-      {" "}
-      <section className="bg-navyBlue">
-        <div className="container max-w-[1280px] main-section-padding mx-auto">
-          <div className="flex lg:flex-row flex-col gap-10 mt-20">
-            <div className="mx-auto lg:w-3/5 w-full">
-              <Heading
-                type="h1"
-                className="text-white text-left"
-                text="Software Development Cost Calculator"
-              />
-
-              <p className="text-white lg:text-xl md:text-lg text-base text-left !mt-5 md:pr-10 pr-0 w-full">
-                Estimate the cost and timeline for developing your project using
-                the user-friendly software development cost calculator. Answer
-                just five questions and get an estimate for your project. Your
-                journey to a seamlessly executed software project begins with a
-                free, tailored estimation.
-              </p>
-              <ButtonV2
-                redirect="#price-estimate"
-                label="Get Started"
-                className="my-8 hover:!text-colorWhite w-fit"
-                scrollingButton
-              />
-              <div className="flex flex-wrap gap-6 text-gray-300">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm">No Credit Card Required</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm">Instant Results</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm">100% Free Forever</span>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-2/5 w-full">
-              <Image
-                className="rounded-2xl md:h-[500px] h-[360px] object-cover"
-                src="/images/v2/software-dev-cost-calc-banner.webp"
-                alt="hire-banner"
-                width="565"
-                height="610"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ToolHerosection
+        title="Software Development Cost Calculator"
+        description="Estimate the cost and timeline for developing your project using the user-friendly software development cost calculator. Answer just five questions and get an estimate for your project. Your journey to a seamlessly executed software project begins with a free, tailored estimation."
+        imageSrc="/images/v2/software-dev-cost-calc-banner.webp"
+        authority={authority}
+      />
       <ToolHowToUse />
       <ToolFeatures />
       <div
@@ -376,7 +317,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           </div>
 
           {/* Results */}
-          {result && hasVisited?.visited ? (
+          {result && hasVisited ? (
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
               <div className=" text-center my-12">
                 <div className="flex justify-center mb-4">
@@ -384,7 +325,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </div>
                 <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
                 <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
-                  {isCalculating ? (
+                  {isCalculating || openPopup ? (
                     <PriceSkeleton />
                   ) : (
                     `$${result.cost.toLocaleString()}`
@@ -441,10 +382,10 @@ const SoftwareDevelopmentCostCalculator = () => {
         </div>
       </div>
       <ToolFAQs />
-      {result && openPopup && !hasVisited?.visited && (
+      {result && openPopup && !hasVisited && (
         <ToolsPopupContactForm
           open={openPopup}
-          handleClose={handleClose}
+          handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
         />
