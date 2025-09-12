@@ -20,9 +20,10 @@ const CurrentHeader = () => {
     "/gist/flutterflow/",
   ];
 
-  const showHeader = subpaths.some(
-    (base) => pathname?.startsWith(base) && pathname !== base
-  );
+  const specialHeaderPages = ["/terms-and-conditions/", "/privacy-policy/"];
+  const showHeader =
+    subpaths.some((base) => pathname?.startsWith(base) && pathname !== base) ||
+    specialHeaderPages.includes(pathname || "");
 
   return showHeader &&
     pathname !== "/gist/" &&
