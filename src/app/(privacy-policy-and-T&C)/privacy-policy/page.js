@@ -53,8 +53,8 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <section className="kinderland healthvault mt-[6rem] !mb-8 md:mx-[15px] w-full flex align-middle justify-center">
-        <div className="md:w-4/5 w-full md:px-0 px-4">
+      <section className="kinderland healthvault mt-[6rem] !mb-8 w-full flex align-middle justify-center">
+        <div className="container max-w-[1280px] main-section-padding !py-8 md:px-10 px-6 mx-auto w-full">
           <div className="pb-3">
             <h1 className="md:!text-[3rem] !text-[2rem]  font-semibold">
               Privacy Policy
