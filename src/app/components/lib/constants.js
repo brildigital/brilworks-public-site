@@ -870,7 +870,7 @@ export const blogListStaticData = [
   {
     name: "Why Node.js Is a Strategic Choice for Healthcare",
     loc: "https://www.brilworks.com/blog/nodejs-healthcare-strategic-technology-choice/",
-    lastmod: "2025-08-08T13:56:27.492Z",
+    lastmod: "2025-09-08T13:19:33.566Z",
   },
   {
     name: "Common Mobile App Security Risks and How to Avoid Them",
@@ -895,7 +895,7 @@ export const blogListStaticData = [
   {
     name: "Top Frontend Technologies to Use in 2025",
     loc: "https://www.brilworks.com/blog/top-frontend-technologies/",
-    lastmod: "2025-08-06T14:09:04.377Z",
+    lastmod: "2025-09-09T13:21:33.936Z",
   },
   {
     name: "The Complete Guide to React JS Development",
@@ -920,7 +920,7 @@ export const blogListStaticData = [
   {
     name: "Java 25 Features, Changes, and What They Mean",
     loc: "https://www.brilworks.com/blog/java-25/",
-    lastmod: "2025-07-31T10:43:52.186Z",
+    lastmod: "2025-09-08T12:56:20.686Z",
   },
   {
     name: "ReactJS for Fintech: Practical Insights for Development Teams",
@@ -1060,7 +1060,7 @@ export const blogListStaticData = [
   {
     name: "Why ReactJS is the Top Choice for Web Development",
     loc: "https://www.brilworks.com/blog/why-reactjs-top-choice-b2b-web-apps/",
-    lastmod: "2025-07-29T07:06:42.004Z",
+    lastmod: "2025-09-05T12:27:07.803Z",
   },
   {
     name: "React Native vs Expo: What’s the Difference?",
@@ -1195,7 +1195,7 @@ export const blogListStaticData = [
   {
     name: "Node.js vs Spring Boot",
     loc: "https://www.brilworks.com/blog/node-js-vs-spring-boot/",
-    lastmod: "2025-06-09T07:15:39.471Z",
+    lastmod: "2025-09-09T13:32:14.853Z",
   },
   {
     name: "Agentic vs Generative AI: Which One Fits Your Needs?",
@@ -1530,7 +1530,7 @@ export const blogListStaticData = [
   {
     name: "6 Best Practices For Using AI for Database Querying",
     loc: "https://www.brilworks.com/blog/ai-for-database-querying/",
-    lastmod: "2025-08-27T07:46:34.721Z",
+    lastmod: "2025-09-04T11:59:43.037Z",
   },
   {
     name: "React Native for Enterprise Mobile App Development: Pros and Cons",
@@ -1705,7 +1705,7 @@ export const blogListStaticData = [
   {
     name: "Top IDEs for Java Development on Mac",
     loc: "https://www.brilworks.com/blog/top-ides-for-java-development-on-mac/",
-    lastmod: "2024-12-24T11:14:24.524Z",
+    lastmod: "2025-09-04T12:12:43.288Z",
   },
   {
     name: "Maximize Your AWS Investment with Expert Advisory Services",
@@ -1790,7 +1790,7 @@ export const blogListStaticData = [
   {
     name: "10 Ways to Handle Spring Cloud Dependencies",
     loc: "https://www.brilworks.com/blog/10-ways-to-handle-spring-cloud-dependencies/",
-    lastmod: "2025-03-04T11:13:28.815Z",
+    lastmod: "2025-09-05T11:27:42.445Z",
   },
   {
     name: "Enhancing Cloud Security with Managed Services",
@@ -1950,7 +1950,7 @@ export const blogListStaticData = [
   {
     name: "Adopting AI: What are Technical Roadblocks?",
     loc: "https://www.brilworks.com/blog/technical-roadblocks-in-ai-development/",
-    lastmod: "2025-08-29T08:05:03.303Z",
+    lastmod: "2025-09-09T13:10:36.754Z",
   },
   {
     name: "How to Overcome Common Generative AI Challenges [A Straightforward Guide]",
@@ -2040,7 +2040,7 @@ export const blogListStaticData = [
   {
     name: "Essential Terms in Generative AI Explained You Must Know",
     loc: "https://www.brilworks.com/blog/essential-terms-in-generative-ai/",
-    lastmod: "2024-09-16T07:17:01.606Z",
+    lastmod: "2025-09-08T13:38:40.717Z",
   },
   {
     name: "How Does the Evolution of Generative AI Impact Industries?",
@@ -2125,7 +2125,7 @@ export const blogListStaticData = [
   {
     name: "Introduction to ReactJS: Learn Components, Usage, and Features",
     loc: "https://www.brilworks.com/blog/introduction-to-reactjs/",
-    lastmod: "2025-05-09T06:58:53.537Z",
+    lastmod: "2025-09-03T12:50:22.761Z",
   },
   {
     name: "A Simple Guide to Using the AWS Pricing Calculator",
@@ -2405,7 +2405,7 @@ export const blogListStaticData = [
   {
     name: "Spring vs Nestjs: Which Framework Should You Choose?",
     loc: "https://www.brilworks.com/blog/spring-vs-nestjs/",
-    lastmod: "2025-05-08T13:22:39.432Z",
+    lastmod: "2025-09-03T13:34:33.725Z",
   },
   {
     name: "What is Custom Web Application Development? How to Get Started?",
@@ -2480,7 +2480,7 @@ export const blogListStaticData = [
   {
     name: "Beyond ChatGPT: Trending AI Tools",
     loc: "https://www.brilworks.com/blog/beyond-chatgpt-trending-ai-tools/",
-    lastmod: "2025-08-04T06:37:20.105Z",
+    lastmod: "2025-09-05T12:20:20.792Z",
   },
   {
     name: "Brilworks Recognized by Techreviewer.co as One of the Top iOS Development Companies in 2023",
@@ -2515,6 +2515,6 @@ export const blogListStaticData = [
   {
     name: "Optimize Your Nest.js App Performance With These Practices",
     loc: "https://www.brilworks.com/blog/optimize-your-nest-js-app-performance/",
-    lastmod: "2025-07-31T07:00:24.899Z",
+    lastmod: "2025-09-04T11:24:59.104Z",
   },
 ];
