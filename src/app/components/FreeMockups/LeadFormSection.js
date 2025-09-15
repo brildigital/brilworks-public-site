@@ -109,8 +109,7 @@ export default function LeadFormSection() {
             data-testid="text-form-headline"
             id="form-section"
           >
-            Claim Your Free App Mockups{" "}
-            <span className="gradient-text">Today</span>
+            Turn My Idea Into <span className="gradient-text">Mockups</span>
           </h2>
           <p
             className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mx-auto"
@@ -121,8 +120,7 @@ export default function LeadFormSection() {
           </p>
         </div>
         <div className="flex lg:flex-row flex-col gap-4 items-stretch">
-          {/* Form */}
-          <div className="glass-effect rounded-2xl md:py-6 md:px-4 p-4 scroll-reveal h-full lg:w-[32%] w-full flex flex-col">
+          {/* <div className="glass-effect rounded-2xl md:py-6 md:px-4 p-4 scroll-reveal h-full lg:w-[32%] w-full flex flex-col">
             <p className="text-lg">
               You're just a step away from creating exceptional business ideas.
               This case study reveals how Brilworks assists successful companies
@@ -212,18 +210,18 @@ export default function LeadFormSection() {
                 No spam, no pitching. Just your idea made visual.
               </p>
             </form>
-          </div>
+          </div> */}
 
           {/* Calendly Embed */}
           <div
-            className="scroll-reveal h-full lg:w-[68%] w-full"
+            className="scroll-reveal h-full lg:w-10/12 mx-auto w-full"
             style={{ animationDelay: "0.2s" }}
           >
             <div className="glass-effect rounded-2xl md:pt-6 md:px-4 p-4 h-full flex flex-col">
               <div className="text-center mb-2">
                 <h3 className="text-2xl font-bold mb-1">
                   Or Book a <span className="text-accent">15-Min</span> Idea
-                  Chat
+                  Chat (Free)
                 </h3>
                 <p className="text-[#94a3b8]">
                   Prefer to talk? Let's discuss your idea live and I'll give you

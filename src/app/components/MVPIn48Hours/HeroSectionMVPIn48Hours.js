@@ -169,7 +169,7 @@ const HeroSectionMVPIn48Hours = () => {
       <div className="geometric-shapes"></div>
       <div className="data-streams"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -181,14 +181,14 @@ const HeroSectionMVPIn48Hours = () => {
             >
               Launch your <span className="gradient-text">MVP in 48 hours</span>
               <br />
-              Free one-on-one walkthrough
+              With a Free one-on-one Walkthrough
             </h1>
             <p
               className="text-xl text-[#94a3b8] !mb-8 max-w-3xl mx-auto"
               data-testid="text-hero-subheading"
             >
-              Founder or builder? Bring your idea or rough prototype. Leave with
-              a scoped plan, working slice, and clear next step.
+              From idea to functioning prototype, Brilworks helps you validate
+              fast, build smart, and go live—without the long delays.
             </p>
             <button
               onClick={(e) => scrollToSection(e, "calendar-section")}
@@ -202,7 +202,7 @@ const HeroSectionMVPIn48Hours = () => {
                 transition={{ duration: 0.6 }}
               />
               {/* <Calendar  /> */}
-              <span className="">Start Your Free Walkthrough</span>
+              <span className="">Book Your Free Walkthrough</span>
               <ArrowRight className="m-0 w-5 h-5" />
             </button>
           </motion.div>
@@ -212,38 +212,34 @@ const HeroSectionMVPIn48Hours = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center !mb-8"
+            className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center !mb-8 max-w-3xl mx-auto"
           >
             <div className="text-center group" data-testid="metric-installs">
               <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
                 <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
-                  180k+
+                  120k+
                 </div>
-                <div className="text-sm text-[#94a3b8]">Installs at Zo</div>
+                <div className="text-sm text-[#94a3b8]">Projects Completed</div>
               </div>
             </div>
             <div className="text-center group" data-testid="metric-community">
               <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
                 <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
-                  80k+
+                  8+
                 </div>
-                <div className="text-sm text-[#94a3b8]">Community</div>
+                <div className="text-sm text-[#94a3b8]">
+                  Years of Experience
+                </div>
               </div>
             </div>
             <div className="text-center group" data-testid="metric-agents">
               <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
                 <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
-                  10k+
+                  98+
                 </div>
-                <div className="text-sm text-[#94a3b8]">Agents Created</div>
-              </div>
-            </div>
-            <div className="text-center group" data-testid="metric-hackathon">
-              <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
-                <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
-                  Solana
+                <div className="text-sm text-[#94a3b8]">
+                  Project Success Rate
                 </div>
-                <div className="text-sm text-[#94a3b8]">Hackathon Winner</div>
               </div>
             </div>
           </motion.div>

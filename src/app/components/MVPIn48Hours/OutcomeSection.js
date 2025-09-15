@@ -15,46 +15,51 @@ import Image from "next/image";
 const outcomes = [
   {
     icon: Map,
-    title: "MVP Scope Map",
-    description:
-      "Crystal clear: what to build now, what to defer. Zero scope creep.",
+    title: "MVP Feature Scope & Prioritized List",
+    description: "Clearly labelled must-haves vs optional features.",
     iconColor: "text-themeColor",
     imageSrc: "/images/v2/mvp-scope-map.webp",
   },
   {
     icon: MousePointer,
-    title: "Clickable Demo",
-    description:
-      "Fast path using no-code or lightweight code. Show, don't tell.",
+    title: "Clickable Demo or Prototype:",
+    description: "Usable frontend & basic backend or low-code equivalent.",
     iconColor: "text-accent",
     imageSrc: "/images/v2/clickable-demo.webp",
   },
   {
     icon: Puzzle,
-    title: "Integration Plan",
-    description: "Auth, data, payments, analytics. The full stack blueprint.",
+    title: "Tech Blueprint",
+    description:
+      "Which technology stack, integrations (cloud, payments, authentication, AI/ML if relevant).",
     iconColor: "text-themeColor",
-    imageSrc: "/images/v2/integration-plan.webp",
+    imageSrc: "/images/v2/tech-blueprint.webp",
+  },
+  {
+    icon: Puzzle,
+    title: "UX/UI Mockups",
+    description: "High-fidelity screens for your core flows.",
+    iconColor: "text-themeColor",
+    imageSrc: "/images/v2/UX-UX-Mockups.webp",
   },
   {
     icon: UserCheck,
-    title: "User Story Pack",
-    description:
-      "5 core flows with acceptance criteria. Development-ready specs.",
+    title: "User Stories & Acceptance Criteria",
+    description: "So either your team or we can continue development cleanly.",
     iconColor: "text-accent",
     imageSrc: "/images/v2/user-story-pack.webp",
   },
   {
     icon: Rocket,
-    title: "Go-Live Checklist",
-    description: "Deploy, track, iterate. From localhost to production.",
+    title: "Go-Live / Validation Plan",
+    description: "how to test, launch, collect user feedback",
     iconColor: "text-themeColor",
     imageSrc: "/images/v2/go-live-checklist.webp",
   },
   {
     icon: Calculator,
-    title: "Cost & Timeline",
-    description: "Realistic resourcing and next milestones. No surprises.",
+    title: "Estimate of Costs & Timeline for Full Build",
+    description: "So you know what it’ll take beyond MVP.",
     iconColor: "text-accent",
     imageSrc: "/images/v2/cost-timeline.webp",
   },
@@ -94,31 +99,30 @@ export default function OutcomesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2
             className="text-3xl md:text-5xl font-bold mb-6"
             data-testid="text-outcomes-title"
           >
-            Your 48-hour outcome
+            Your Deliverables After 48 Hours
           </h2>
           <p
             className="text-lg text-[#94a3b8] max-w-2xl mx-auto"
             data-testid="text-outcomes-subtitle"
           >
-            Skip months of planning paralysis. Get a complete roadmap and
-            working prototype.
+            When Brilworks finishes this sprint, here’s what you’ll have:
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {outcomes.map((outcome, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card/80 backdrop-blur-sm p-8 rounded-xl border border-[#017eeb33] hover:shadow-2xl hover:shadow-[#017eeb1A] hover:border-primary/40 transition-all duration-500 group"
+              className="bg-card/80 backdrop-blur-sm p-4 rounded-xl border border-[#017eeb33] hover:shadow-2xl hover:shadow-[#017eeb1A] hover:border-primary/40 transition-all duration-500 group"
               data-testid={`card-outcome-${index}`}
             >
               {/* <div
@@ -128,9 +132,9 @@ export default function OutcomesSection() {
                   className={`${outcome.iconColor} text-xl group-hover:text-accent transition-colors duration-300`}
                 />
               </div> */}
-              <div className="mb-5">
+              <div className="mb-5 h-44">
                 <Image
-                  className="rounded-2xl"
+                  className="rounded-xl w-full h-full object-cover"
                   src={outcome?.imageSrc}
                   alt="img-c"
                   width="565"

@@ -6,76 +6,72 @@ import { usePathname } from "next/navigation";
 
 const mvpIn48HoursFaqs = [
   {
-    question: "What exactly do I get in 48 hours?",
+    question: "Who is this for?",
     answer:
-      "You'll receive a complete MVP scope map, clickable demo/prototype, integration blueprint for auth/payments/analytics, 5 detailed user stories with acceptance criteria, a go-live checklist, and realistic cost & timeline estimates. It's everything you need to move from idea to development-ready specs.",
+      "Entrepreneurs, startups, or businesses with a concept who want to validate quickly. Even if you have limited tech specs, sketch, or no code.",
   },
   {
-    question: "Do I need technical knowledge to participate?",
+    question: "Do I need to pay for the walkthrough?",
     answer:
-      "Not at all! This service is designed for founders and builders of all backgrounds. Whether you have a Figma mockup, a written idea, or just concepts in your head, we'll help you structure and scope your MVP. Technical implementation comes after we define what to build.",
+      "No, the 20-minute walkthrough is completely free. You choose whether to proceed with the full 48-hour MVP sprint.",
   },
   {
-    question: "What if I already have some code or a prototype?",
+    question:
+      "What if I already have some work done (wireframes, prototype, partial code)?",
     answer:
-      "Perfect! Bring your existing repo, prototype, or partial build. We'll audit what you have, identify gaps, and create a roadmap to get you to a launchable MVP. Sometimes existing work can accelerate the process significantly.",
+      "Great! We can incorporate your existing assets, speed up scoping, reduce time where possible.",
   },
   {
-    question: "How do we communicate during the 48 hours?",
+    question: "What technology stacks do you support?",
     answer:
-      "We start with a 20-minute discovery call to understand your vision and goals. Then we work intensively on your project with regular check-ins via your preferred communication method (Slack, email, or scheduled calls) to ensure we're aligned throughout the process.",
+      "We work with ReactJS, NodeJS, React Native, Cloud Infrastructure (AWS), and Low-code/no-code platforms when relevant.",
   },
   {
-    question: "What happens after the 48 hours?",
+    question: "Will I own the IP / code after 48 hours?",
     answer:
-      "You'll have everything needed to start development - whether with your own team, freelancers, or our recommended partners. We provide clear handoff documentation, and you're welcome to book follow-up sessions for ongoing guidance as you build and launch.",
+      "Yes. You get full ownership of whatever is built. We hand over documentation, prototypes, designs.",
   },
   {
-    question: "Is this really free? What's the catch?",
+    question:
+      "What happens after the 48 hours if I want to move into full product development?",
     answer:
-      "The initial 20-minute audit and consultation is completely free with no strings attached. We believe in providing value upfront. If you decide to proceed with the full 48-hour process, we'll discuss pricing transparently based on your project's scope and needs.",
+      "We provide a detailed plan, cost & timeline estimates. You can choose to continue internally, hire, or contract with Brilworks to build the full product.",
   },
 ];
 const freeMockupFaqs = [
   {
     question: "Is it really free?",
     answer:
-      "Yes — 100% free. There are no hidden costs, subscriptions, or upsells. Just share your idea, and you’ll get mockups delivered.",
+      "Yes — 100% free, no hidden fees, no upsells. Just share your idea, get mockups.",
   },
   {
     question: "Do I need design skills?",
     answer:
-      "Not at all. You only need your app idea — even a rough sketch on paper works. I’ll turn it into clean, clickable mockups.",
+      "Not at all. Even a rough sketch or verbal idea is enough. We’ll take it from there.",
   },
   {
     question: "What exactly will I receive?",
     answer:
-      "You’ll get professional mockup screens that visually represent your app idea. These can be shared with developers, investors, or co-founders.",
+      "You’ll get professional mockup screens that visualise your app idea. Typically delivered as clickable prototypes or design files (Figma / PDF etc).",
   },
   {
-    question: "How fast can I get my mockups?",
+    question: "How fast will I get them?",
     answer:
-      "Most mockups are ready within 24–48 hours, depending on the complexity of your idea.",
-  },
-  {
-    question: "What if I only have a rough idea, not a detailed plan?",
-    answer:
-      "That’s totally fine. You don’t need everything figured out — just explain your concept in simple words or share a sketch, and I’ll take it from there.",
-  },
-  {
-    question: "Can I use these mockups to build my app?",
-    answer:
-      "Yes. The mockups can serve as a blueprint for your development team or help you pitch your app idea to investors and partners.",
+      "Usually within 24-48 hours, depending on how complex your concept is.",
   },
   {
     question: "Will my app idea remain private?",
-    answer:
-      "Absolutely. Your idea stays confidential and will never be shared with anyone else.",
+    answer: "Absolutely. Your idea stays confidential. We respect your IP.",
   },
   {
-    question: "Is this offer available worldwide?",
+    question: "Can I use mockups to launch or build the app?",
     answer:
-      "Yes. As long as you can describe your idea in English, you can request free mockups from anywhere in the world.",
+      "Yes. Use mockups as a blueprint for developers or a presentation for investors.",
+  },
+  {
+    question: "Is this available worldwide?",
+    answer:
+      "Yes — as long as you can describe your idea in English, we can work with you.",
   },
 ];
 
@@ -97,7 +93,7 @@ export default function FAQSection() {
     >
       <div className="container max-w-[1280px] mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

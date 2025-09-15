@@ -8,16 +8,16 @@ export default function AuthoritySection() {
   const achievements = [
     {
       title: "15+ Years Design Experience",
-      description:
-        "From Fortune 500 to seed-stage startups—I've seen what works.",
+      description: "From Fortune 500 clients to early stage startups.",
     },
     {
       title: "$50M+ in Funding Raised",
-      description: "My mockups have helped founders secure serious funding.",
+      description: "Founders have used our mockups to secure investor backing.",
     },
     {
-      title: "48-Hour Turnaround",
-      description: "While others take weeks, you'll have mockups by Wednesday.",
+      title: "24-48 Hour Turnaround",
+      description:
+        "Get your mockups fast, ready to share by the next business day.",
     },
   ];
 
@@ -77,9 +77,9 @@ export default function AuthoritySection() {
               className="text-lg md:text-xl text-[#94a3b8] !mb-8"
               data-testid="text-authority-description"
             >
-              I've turned 200+ napkin sketches into funded startups. I know the
-              exact shortcuts that make an idea feel real fast—without the usual
-              designer drama or month-long waits.
+              I've turned <b>200+ napkin sketches into funded startups</b>. We
+              know the shortcuts that make an idea look real fast-without the
+              usual delays or designer bottlenecks.
             </p>
 
             <div className="space-y-6">
@@ -118,12 +118,12 @@ export default function AuthoritySection() {
                   <div
                     key={index}
                     onClick={() => router.push(item?.redirect)}
-                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
+                    className={`group aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index}`}
                   >
                     <div className="h-full bg-[#14161a] rounded-xl">
                       <Image
-                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full"
+                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full group-hover:scale-105 transition-transform duration-300"
                         src={item.image}
                         alt="tech-image"
                         width="565"
@@ -153,7 +153,7 @@ export default function AuthoritySection() {
                   <div
                     key={index + 2}
                     onClick={() => router.push(item?.redirect)}
-                    className={`aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
+                    className={`group aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index + 2}`}
                   >
                     <div className="h-full bg-[#14161a] rounded-xl">
@@ -169,7 +169,7 @@ export default function AuthoritySection() {
                         </div>
                       </div> */}
                       <Image
-                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full"
+                        className="rounded-xl md:w-56 w-auto md:h-[275px] h-full group-hover:scale-105 transition-transform duration-300"
                         src={item.image}
                         alt="tech-image"
                         width="565"

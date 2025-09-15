@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const proofItems = [
@@ -71,6 +72,33 @@ const proofItems = [
 //     alt: "Modern office with financial charts",
 //   },
 // ];
+
+const WhyChooseBrilworks = [
+  {
+    title: "Proven Expertise",
+    description: "120+ successful projects, 98% success rate.",
+  },
+  {
+    title: "Full Stack & Emerging Tech",
+    description:
+      "Mobile (React Native), Web (ReactJS, NodeJS), Cloud Services (AWS), Low-code/no-code when it makes sense",
+  },
+  {
+    title: "Industry Reach",
+    description:
+      "Fintech, Healthcare, E-commerce, Media, Fleet Management, etc.",
+  },
+  {
+    title: "Transparent, Agile Process",
+    description:
+      "You get regular updates, collaborative feedback, clear deliverables.",
+  },
+  {
+    title: "Cost-Effective Solutions",
+    description:
+      "Maximizing ROI, using resources efficiently without sacrificing quality.",
+  },
+];
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -112,64 +140,35 @@ const AboutSection = () => {
               className="text-3xl font-bold mb-4 !bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent"
               data-testid="text-about-name"
             >
-              AI-first growth and product
+              Why Brilworks is the Right Partner
             </h2>
+            <p
+              className="text-lg text-[#94a3b8] max-w-2xl mx-auto"
+              data-testid="text-outcomes-subtitle"
+            >
+              Brilworks brings together technical strength, design thinking, and
+              a client-centric mindset. Some reasons to choose us:
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
-            <div
-              className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
-              data-testid="text-about-experience-1"
-            >
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-              <span className="text-sm text-[#94a3b8]">
-                10+ years shipping and scaling products
-              </span>
-            </div>
-            <div
-              className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
-              data-testid="text-about-experience-2"
-            >
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-              <span className="text-sm text-[#94a3b8]">
-                Head of Growth at Zo Labs → 180k installs, 80k community
-              </span>
-            </div>
-            <div
-              className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
-              data-testid="text-about-experience-3"
-            >
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-              <span className="text-sm text-[#94a3b8]">
-                Solana Hackathon honorable mention
-              </span>
-            </div>
-            <div
-              className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
-              data-testid="text-about-experience-4"
-            >
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-
-              <span className="text-sm text-[#94a3b8]">
-                Built GEOptimer for GEO visibility optimization
-              </span>
-            </div>
-            <div
-              className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
-              data-testid="text-about-experience-5"
-            >
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-
-              <span className="text-sm text-[#94a3b8]">
-                Shipped InboxBites micro-SaaS for email productivity
-              </span>
-            </div>
-            <div className="flex items-start space-x-3 bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]">
-              <CheckCircle className="text-themeColor mt-1 flex-shrink-0" />
-              <span className="text-sm text-[#94a3b8]">
-                Multiple successful MVP launches
-              </span>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto text-left">
+            {WhyChooseBrilworks.map((item, idx) => {
+              return (
+                <div
+                  key={idx}
+                  className="flex items-start flex-col bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
+                  data-testid="text-about-experience-1"
+                >
+                  <div className="flex items-center gap-2 font-semibold text-white mb-2">
+                    <CheckCircle className="text-themeColor flex-shrink-0" />
+                    {item.title}
+                  </div>
+                  <p className="text-sm text-[#94a3b8] pl-8">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -198,7 +197,7 @@ const AboutSection = () => {
                 className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 hover:shadow-2xl border-[#017eeb33] transition-all duration-500 cursor-pointer group overflow-hidden"
                 data-testid={`card-proof-${index}`}
               >
-                <div className="flex flex-col space-y-4">
+                <Link href={item.link} className="flex flex-col space-y-4">
                   <div className="relative">
                     <img
                       src={item.image}
@@ -225,7 +224,7 @@ const AboutSection = () => {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>

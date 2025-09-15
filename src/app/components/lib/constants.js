@@ -358,15 +358,15 @@ export const resourcesMenuItems = [
     ],
   },
   {
-    name: "NEW PAGES",
+    name: "",
     subSections: [
-      {
-        name: "MVP in 48 Hours",
-        path: "/mvp-in-48-hours/",
-      },
       {
         name: "Free Mockups",
         path: "/free-mockups/",
+      },
+      {
+        name: "MVP in 48 Hours",
+        path: "/mvp-in-48-hours/",
       },
       {
         name: "AI Studio",
