@@ -30,7 +30,7 @@ const FreeMockUpHeroSection = () => {
               Got an <span className="gradient-text">app idea?</span>
               <br />
               Get free mockups,
-              <em className="text-accent"> on me.</em>
+              <em className="text-accent"> on us.</em>
             </h1>
             <p
               className="md:text-xl text-lg text-[#94a3b8] max-w-xl"
@@ -47,7 +47,7 @@ const FreeMockUpHeroSection = () => {
               className="px-8 md:py-4 py-2.5 bg-[#00b7ff] text-[#0d0f11] rounded-lg hover:bg-[#00b7ffE6] transition-all duration-300 font-semibold text-lg animate-pulse-glow"
               data-testid="button-get-mockups"
             >
-              Get My Free Mockups
+              Turn My Idea Into Mockups
               <span className="ml-2">→</span>
             </button>
             <button

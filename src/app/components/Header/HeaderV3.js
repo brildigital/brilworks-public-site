@@ -22,7 +22,7 @@ const HeaderV3 = () => {
           <div
             className={`flex justify-between text-white container md:px-10 px-5 mx-auto ${
               pathname === "/mvp-in-48-hours/"
-                ? "max-w-[980px]"
+                ? "max-w-[1200px]"
                 : "max-w-[1280px]"
             }`}
           >
