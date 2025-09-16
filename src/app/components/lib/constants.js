@@ -690,6 +690,18 @@ export const sitemapData = [
     lastmod: "2024-10-15T12:04:49.528Z",
   },
   {
+    loc: "https://www.brilworks.com/tools/",
+    lastmod: "2025-09-16T11:23:29.521Z",
+  },
+  {
+    loc: "https://www.brilworks.com/project-estimate/",
+    lastmod: "2025-09-15T15:21:23.121Z",
+  },
+  {
+    loc: "https://www.brilworks.com/mvp-in-48-hours/",
+    lastmod: "2025-09-15T15:22:34.531Z",
+  },
+  {
     loc: "https://www.brilworks.com/our-process/",
     lastmod: "2024-09-25T12:04:49.528Z",
   },
