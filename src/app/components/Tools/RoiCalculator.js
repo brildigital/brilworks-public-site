@@ -1,12 +1,23 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ToolHerosection from "./ToolHerosection";
 import ToolHowToUse from "./ToolHowToUse";
 import ToolFeatures from "./ToolFeatures";
 import ToolFAQs from "./ToolFAQs";
-import { ArrowRight, FileText, Star } from "lucide-react";
+import { FileText, Sparkles, Star } from "lucide-react";
+import ToolsPopupContactForm from "./ToolsPopupContactForm";
+import { usePathname } from "next/navigation";
+import { hasSubmittedForm } from "../lib/commonFunction";
+import {
+  calculateROI,
+  roiCalculatorFeatures,
+} from "../lib/roiCalculatorService";
 
 const RoiCalculator = () => {
+  const pathname = usePathname();
+  const [openPopup, setOpenPopup] = useState(false);
+  const [hasVisited, setHasVisited] = useState(false);
+  const [isCalculating, setIsCalculating] = useState(false);
   const [formData, setFormData] = useState({
     appType: "",
     complexity: "",
@@ -40,91 +51,41 @@ const RoiCalculator = () => {
     paybackPeriod: 0,
   });
 
+  const isFormValid = () => {
+    return (
+      formData.appType &&
+      formData.complexity &&
+      formData.features.length > 0 &&
+      formData.timeline &&
+      formData.designLevel &&
+      formData.description.trim()
+    );
+  };
+
   const calculatorRef = useRef(null);
 
-  const features = [
-    { id: "auth", label: "User Authentication", cost: 15000 },
-    { id: "payments", label: "Payment Processing", cost: 20000 },
-    { id: "chat", label: "Real-time Chat", cost: 18000 },
-    { id: "geolocation", label: "GPS/Location Services", cost: 14000 },
-    { id: "camera", label: "Camera Integration", cost: 12000 },
-    { id: "push", label: "Push Notifications", cost: 8000 },
-    { id: "social", label: "Social Media Login", cost: 10000 },
-    { id: "admin", label: "Admin Dashboard", cost: 16000 },
-    { id: "analytics", label: "Analytics Dashboard", cost: 12000 },
-    { id: "integrations", label: "Third-party Integrations", cost: 14000 },
-  ];
+  const handleCalculate = async () => {
+    if (!isFormValid()) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields before calculating.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  const complexityMultipliers = {
-    simple: 0.7,
-    medium: 1.0,
-    complex: 1.5,
-    enterprise: 2.0,
-  };
+    setIsCalculating(true);
 
-  const appTypeMultipliers = {
-    native: 1.0,
-    hybrid: 0.8,
-    web: 0.6,
-  };
+    const results = calculateROI(formData);
+    setResults(results);
 
-  const designMultipliers = {
-    basic: 0.8,
-    standard: 1.0,
-    premium: 1.3,
-    custom: 1.6,
-  };
+    if (!hasVisited) {
+      setOpenPopup(true);
+    }
 
-  const calculateROI = () => {
-    const baseHours = parseInt(formData.timeline) * 160; // weeks * 40 hours
-    const teamSize = 5; // Default team size
-    const hourlyRate = parseInt(formData.hourlyRate);
-    const complexityMultiplier = complexityMultipliers[formData.complexity];
-    const appTypeMultiplier = appTypeMultipliers[formData.appType];
-    const designMultiplier = designMultipliers[formData.designLevel];
-
-    const selectedFeatures = formData.features;
-    const featuresCost = selectedFeatures.reduce((total, featureId) => {
-      const feature = features.find((f) => f.id === featureId);
-      return total + (feature ? feature.cost : 0);
-    }, 0);
-
-    const baseDevelopmentCost =
-      baseHours *
-      teamSize *
-      hourlyRate *
-      complexityMultiplier *
-      appTypeMultiplier *
-      designMultiplier;
-    const developmentCost = baseDevelopmentCost + featuresCost;
-
-    const annualMaintenanceCost = developmentCost * 0.2; // 20% of development cost per year
-    const maintenanceCost =
-      annualMaintenanceCost * parseInt(formData.maintenanceYears);
-    const totalCost = developmentCost + maintenanceCost;
-
-    const expectedUsers = parseInt(formData.expectedUsers);
-    const revenuePerUser = parseInt(formData.revenuePerUser);
-    const expectedRevenue =
-      expectedUsers * revenuePerUser * parseInt(formData.maintenanceYears);
-
-    const roi =
-      expectedRevenue > 0
-        ? ((expectedRevenue - totalCost) / totalCost) * 100
-        : 0;
-    const paybackPeriod =
-      expectedRevenue > 0
-        ? totalCost / (expectedRevenue / parseInt(formData.maintenanceYears))
-        : 0;
-
-    setResults({
-      developmentCost: Math.round(developmentCost),
-      maintenanceCost: Math.round(maintenanceCost),
-      totalCost: Math.round(totalCost),
-      expectedRevenue: Math.round(expectedRevenue),
-      roi: Math.round(roi * 100) / 100,
-      paybackPeriod: Math.round(paybackPeriod * 100) / 100,
-    });
+    setTimeout(() => {
+      setIsCalculating(false);
+    }, 3000);
   };
 
   const handleInputChange = (field, value) => {
@@ -140,13 +101,9 @@ const RoiCalculator = () => {
     }));
   };
 
-  const scrollToCalculator = () => {
-    calculatorRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  React.useEffect(() => {
-    calculateROI();
-  }, [formData]);
+  useEffect(() => {
+    setHasVisited(hasSubmittedForm(pathname));
+  }, [pathname, openPopup]);
 
   return (
     <>
@@ -234,7 +191,7 @@ const RoiCalculator = () => {
                   Key Features
                 </label>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
-                  {features.map((feature) => (
+                  {roiCalculatorFeatures.map((feature) => (
                     <label
                       key={feature.id}
                       className="flex items-center space-x-3 cursor-pointer"
@@ -314,10 +271,11 @@ const RoiCalculator = () => {
 
               {/* Get Quote Button */}
               <button
-                onClick={calculateROI}
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-4 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-300 flex items-center justify-center space-x-2"
+                onClick={handleCalculate}
+                disabled={!isFormValid() || isCalculating}
+                className="w-full bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
-                <FileText className="w-5 h-5" />
+                <FileText className="w-5 h-5 mr-2" />
                 <span>Get My Instant Quote</span>
               </button>
             </div>
@@ -325,14 +283,14 @@ const RoiCalculator = () => {
             {/* Cost Estimate */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                Cost Estimate
+                ROI Estimate
               </h3>
 
-              {results.developmentCost > 0 ? (
+              {results?.developmentCost > 0 && hasVisited ? (
                 <div className="space-y-6">
                   {/* Main Cost Display */}
                   <div className="text-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Star className="w-12 h-12 text-white" />
                     </div>
                     <div className="text-4xl font-bold text-gray-900 mb-2">
@@ -374,31 +332,38 @@ const RoiCalculator = () => {
                       </span>
                     </div>
                   </div>
-
-                  {/* Action Button */}
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-300">
-                    Get Detailed Proposal
-                  </button>
                 </div>
               ) : (
                 <div className="text-center py-12">
-                  <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Star className="w-12 h-12 text-purple-500" />
+                  <div className="flex flex-col items-center justify-center space-y-6">
+                    <div className="relative my-12">
+                      <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                        <Star className="w-12 h-12 text-white" />
+                      </div>
+                      <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <Sparkles className="w-3 h-3 text-yellow-800" />
+                      </div>
+                      <div className="animate-ping absolute -bottom-2 -left-2 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <Sparkles className="w-2 h-2 text-yellow-800" />
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-semibold text-gray-700">
+                      No Estimate Yet
+                    </h3>
+
+                    <p className="text-gray-600 max-w-sm">
+                      Fill out the form on the left and your instant cost
+                      estimate will magically appear here ✨
+                    </p>
+
+                    <button
+                      onClick={() => document.querySelector("select")?.focus()}
+                      className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
+                    >
+                      &lArr; Start by selecting your project details
+                    </button>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">
-                    No Estimate Yet
-                  </h4>
-                  <p className="text-gray-600 mb-6">
-                    Fill out the form on the left and your instant cost estimate
-                    will magically appear here ✨
-                  </p>
-                  <button
-                    onClick={scrollToCalculator}
-                    className="bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-300 inline-flex items-center space-x-2"
-                  >
-                    <ArrowRight className="w-4 h-4 rotate-180" />
-                    <span>Start by selecting your project details</span>
-                  </button>
                 </div>
               )}
             </div>
@@ -406,6 +371,14 @@ const RoiCalculator = () => {
         </div>
       </section>
       <ToolFAQs />
+      {results && openPopup && !hasVisited && (
+        <ToolsPopupContactForm
+          open={openPopup}
+          handleClose={() => setOpenPopup(false)}
+          result={results}
+          setResult={setResults}
+        />
+      )}
     </>
   );
 };

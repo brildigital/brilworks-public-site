@@ -299,7 +299,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
-                className="bg-gradient-to-r from-indigo-500 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
+                className="bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
                 {isCalculating ? (
                   <>
