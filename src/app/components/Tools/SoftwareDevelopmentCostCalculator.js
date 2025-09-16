@@ -328,7 +328,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                   {isCalculating || openPopup ? (
                     <PriceSkeleton />
                   ) : (
-                    `$${result.cost.toLocaleString()}`
+                    `$${result?.cost.toLocaleString()}`
                   )}
                 </div>
 
@@ -370,7 +370,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                   </p>
 
                   <button
-                    onClick={() => document.querySelector("select")?.focus()}
+                    // onClick={() => document.querySelector("select")?.focus()}
                     className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                   >
                     &lArr; Start by selecting your project details

@@ -53,12 +53,12 @@ const RoiCalculator = () => {
 
   const isFormValid = () => {
     return (
-      formData.appType &&
-      formData.complexity &&
-      formData.features.length > 0 &&
-      formData.timeline &&
-      formData.designLevel &&
-      formData.description.trim()
+      formData?.appType &&
+      formData?.complexity &&
+      formData?.features.length > 0 &&
+      formData?.timeline &&
+      formData?.designLevel &&
+      formData?.description.trim()
     );
   };
 
@@ -169,7 +169,7 @@ const RoiCalculator = () => {
                 </label>
 
                 <select
-                  value={formData.complexity}
+                  value={formData?.complexity}
                   onChange={(e) =>
                     handleInputChange("complexity", e.target.value)
                   }
@@ -191,19 +191,19 @@ const RoiCalculator = () => {
                   Key Features
                 </label>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
-                  {roiCalculatorFeatures.map((feature) => (
+                  {roiCalculatorFeatures?.map((feature) => (
                     <label
                       key={feature.id}
                       className="flex items-center space-x-3 cursor-pointer"
                     >
                       <input
                         type="checkbox"
-                        checked={formData.features.includes(feature.id)}
-                        onChange={() => handleFeatureChange(feature.id)}
+                        checked={formData.features.includes(feature?.id)}
+                        onChange={() => handleFeatureChange(feature?.id)}
                         className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
                       />
                       <span className="text-sm text-gray-700">
-                        {feature.label}
+                        {feature?.label}
                       </span>
                     </label>
                   ))}
@@ -294,7 +294,7 @@ const RoiCalculator = () => {
                       <Star className="w-12 h-12 text-white" />
                     </div>
                     <div className="text-4xl font-bold text-gray-900 mb-2">
-                      ${results.developmentCost.toLocaleString()}
+                      ${results?.developmentCost?.toLocaleString()}
                     </div>
                     <p className="text-gray-600">Estimated Development Cost</p>
                   </div>
@@ -304,7 +304,7 @@ const RoiCalculator = () => {
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
                       <span className="text-gray-600">Development</span>
                       <span className="font-semibold text-gray-900">
-                        ${results.developmentCost.toLocaleString()}
+                        ${results?.developmentCost.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
@@ -312,23 +312,23 @@ const RoiCalculator = () => {
                       <span className="font-semibold text-gray-900">
                         $
                         {Math.round(
-                          results.maintenanceCost /
-                            parseInt(formData.maintenanceYears)
+                          results?.maintenanceCost /
+                            parseInt(formData?.maintenanceYears)
                         ).toLocaleString()}
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
                       <span className="text-gray-600">
-                        ROI ({formData.maintenanceYears} years)
+                        ROI ({formData?.maintenanceYears} years)
                       </span>
                       <span className="font-semibold text-green-600">
-                        {results.roi}%
+                        {results?.roi}%
                       </span>
                     </div>
                     <div className="flex justify-between items-center py-3">
                       <span className="text-gray-600">Payback Period</span>
                       <span className="font-semibold text-blue-600">
-                        {results.paybackPeriod} years
+                        {results?.paybackPeriod} years
                       </span>
                     </div>
                   </div>
@@ -358,7 +358,7 @@ const RoiCalculator = () => {
                     </p>
 
                     <button
-                      onClick={() => document.querySelector("select")?.focus()}
+                      // onClick={() => document?.querySelector("select")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
                       &lArr; Start by selecting your project details

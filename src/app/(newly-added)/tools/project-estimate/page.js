@@ -1,3 +1,4 @@
+"use client";
 import SoftwareDevelopmentCostCalculator from "@/app/components/Tools/SoftwareDevelopmentCostCalculator";
 import React from "react";
 
