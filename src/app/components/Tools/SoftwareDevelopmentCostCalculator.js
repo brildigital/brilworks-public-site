@@ -145,7 +145,7 @@ const SoftwareDevelopmentCostCalculator = () => {
       />
       <ToolHowToUse />
       <ToolFeatures />
-      {/* <div
+      <div
         id="price-estimate"
         className="container max-w-[1280px] main-section-padding mx-auto"
       >
@@ -163,10 +163,10 @@ const SoftwareDevelopmentCostCalculator = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-
+          {/* Main Form Card */}
           <div className="bg-white rounded-2xl border shadow-lg p-8">
             <div className="grid gap-4">
-
+              {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Platform *</label>
                 <select
@@ -211,6 +211,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </select>
               </div>
 
+              {/* Features */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Key Features</label>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
@@ -232,6 +233,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </div>
               </div>
 
+              {/* Design */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
                   Design Requirements *
@@ -252,6 +254,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </select>
               </div>
 
+              {/* Timeline */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Timeline *</label>
                 <select
@@ -273,6 +276,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </select>
               </div>
 
+              {/* Description */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
                   Project Description *
@@ -290,6 +294,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 />
               </div>
 
+              {/* Button */}
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
@@ -310,7 +315,7 @@ const SoftwareDevelopmentCostCalculator = () => {
             </div>
           </div>
 
-          
+          {/* Results */}
           {result && hasVisited ? (
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
               <div className=" text-center my-12">
@@ -374,7 +379,7 @@ const SoftwareDevelopmentCostCalculator = () => {
             </div>
           )}
         </div>
-      </div> */}
+      </div>
       <ToolFAQs />
       {result && openPopup && !hasVisited && (
         <ToolsPopupContactForm

@@ -127,7 +127,7 @@ const RoiCalculator = () => {
       />
       <ToolHowToUse />
       <ToolFeatures />
-      {/* <section
+      <section
         ref={calculatorRef}
         id="price-estimate"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
@@ -144,9 +144,9 @@ const RoiCalculator = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            
+            {/* Calculator Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-4">
-              
+              {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
                   Platform <span className="text-red-500">*</span>
@@ -163,7 +163,7 @@ const RoiCalculator = () => {
                 </select>
               </div>
 
-            
+              {/* Project Complexity */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
                   Project Complexity <span className="text-red-500">*</span>
@@ -186,7 +186,7 @@ const RoiCalculator = () => {
                 </select>
               </div>
 
-              
+              {/* Key Features */}
               <div className="space-y-1">
                 <label className="text-sm font-medium text-gray-900">
                   Key Features
@@ -211,7 +211,7 @@ const RoiCalculator = () => {
                 </div>
               </div>
 
-              
+              {/* Design Requirements */}
               <div className="space-y-1">
                 <label className="text-sm font-medium text-gray-900">
                   Design Requirements <span className="text-red-500">*</span>
@@ -231,7 +231,7 @@ const RoiCalculator = () => {
                 </select>
               </div>
 
-              
+              {/* Timeline */}
               <div className="space-y-1">
                 <label className="text-sm font-medium text-gray-900">
                   Timeline <span className="text-red-500">*</span>
@@ -254,7 +254,7 @@ const RoiCalculator = () => {
                 </select>
               </div>
 
-              
+              {/* Project Description */}
               <div className="space-y-1">
                 <label className="text-sm font-medium text-gray-900">
                   Project Description <span className="text-red-500">*</span>
@@ -270,7 +270,7 @@ const RoiCalculator = () => {
                 />
               </div>
 
-              
+              {/* Get Quote Button */}
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
@@ -281,7 +281,7 @@ const RoiCalculator = () => {
               </button>
             </div>
 
-            
+            {/* Cost Estimate */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
                 ROI Estimate
@@ -289,7 +289,7 @@ const RoiCalculator = () => {
 
               {results?.developmentCost > 0 && hasVisited ? (
                 <div className="space-y-6">
-                  
+                  {/* Main Cost Display */}
                   <div className="text-center">
                     <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Star className="w-12 h-12 text-white" />
@@ -300,7 +300,7 @@ const RoiCalculator = () => {
                     <p className="text-gray-600">Estimated Development Cost</p>
                   </div>
 
-                  
+                  {/* Cost Breakdown */}
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
                       <span className="text-gray-600">Development</span>
@@ -370,7 +370,7 @@ const RoiCalculator = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       <ToolFAQs />
       {results && openPopup && !hasVisited && (
         <ToolsPopupContactForm
