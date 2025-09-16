@@ -1,19 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ScanSearch,
-  Search,
-  SearchCheck,
-  SearchX,
-} from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Search } from "lucide-react";
+
+const toolsData = [
+  {
+    title: "Software Development Cost Calculator",
+    description:
+      "Estimate software project costs fast. Select platform, complexity, and features to get accurate budget and timeline insights.",
+    image: "/images/ach.png", // replace with your actual image path
+    bg: "bg-blue-200",
+    link: "/tools/project-estimate/",
+    tags: ["DEVELOPMENT", "SALES"],
+  },
+  {
+    title: "ROI Calculator",
+    description:
+      "Quickly measure profitability by calculating return on investment. Enter costs and gains to evaluate business success instantly.",
+    image: "/images/business.png",
+    bg: "bg-indigo-200",
+    link: "/tools/roi-calculator/",
+    tags: ["MARKETING", "SALES", "OTHER"],
+  },
+];
 
 const Tools = () => {
   const [activeTag, setActiveTag] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+
   const categories = [
     "MARKETING",
     "CONTENT",
@@ -24,31 +40,30 @@ const Tools = () => {
     "ENTERTAINMENT",
     "OTHER",
   ];
-  const toolsData = [
-    {
-      title: "Software Development Cost Calculator",
-      description:
-        "Estimate software project costs fast. Select platform, complexity, and features to get accurate budget and timeline insights.",
-      image: "/images/ach.png", // replace with your actual image path
-      bg: "bg-blue-200",
-      link: "/tools/project-estimate/",
-      tags: ["DEVELOPMENT", "SALES"],
-    },
-    {
-      title: "ROI Calculator",
-      description:
-        "Quickly measure profitability by calculating return on investment. Enter costs and gains to evaluate business success instantly.",
-      image: "/images/business.png",
-      bg: "bg-indigo-200",
-      link: "/tools/roi-calculator/",
-      tags: ["MARKETING", "SALES", "OTHER"],
-    },
-  ];
 
-  const filteredTools =
-    activeTag === "" // when ALL is selected
-      ? toolsData
-      : toolsData.filter((tool) => tool.tags.includes(activeTag));
+  // Debounce logic
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(searchTerm);
+    }, 400); // 400ms delay
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+
+  // const filteredTools =
+  //   activeTag === "" // when ALL is selected
+  //     ? toolsData
+  //     : toolsData.filter((tool) => tool.tags.includes(activeTag));
+
+  const filteredTools = toolsData.filter((tool) => {
+    const matchesTag = activeTag === "" || tool.tags.includes(activeTag);
+    const matchesSearch = tool.title
+      .toLowerCase()
+      .includes(debouncedSearch.toLowerCase());
+    return matchesTag && matchesSearch;
+  });
 
   return (
     <>
@@ -63,9 +78,11 @@ const Tools = () => {
               />
               <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
                 Explore our collection of free calculators and tools designed to
-                simplify complex tasks. From business valuations to engineering
-                formulas, get accurate results in seconds and make smarter
-                decisions with confidence.
+                simplify complex tasks.
+                <br className="hidden md:block" /> From business valuations to
+                engineering formulas, get accurate results in seconds and make{" "}
+                <br className="hidden md:block" />
+                smarter decisions with confidence.
               </p>
             </div>
           </div>
@@ -73,7 +90,7 @@ const Tools = () => {
       </div>
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
         <div className="flex flex-col md:flex-row gap-5 md:mb-8 mb-5">
-          <div className="flex flex-wrap md:mb-8 mb-0 gap-2">
+          <div className="flex flex-wrap gap-2">
             <button
               className={`px-4 !py-1.5 !rounded-md cursor-pointer border border-themeColor ${
                 activeTag === ""
@@ -108,23 +125,20 @@ const Tools = () => {
               <div className="relative w-full">
                 <input
                   id="user-search"
-                  className={`w-full bg-[#F8FAFC] font-medium rounded-md py-2 px-2 text-xs md:text-sm appearance-none border !pr-8 focus:outline-none focus:border-themeColor hover:border-themeColor focus:ring-0 focus:ring-themeColor`}
+                  className={`w-full font-medium rounded-md py-2 px-2 text-xs md:text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none`}
                   value={searchTerm}
-                  type="search"
+                  // type="search"
                   placeholder="Search"
                   autoComplete="off"
                   onChange={(e) => setSearchTerm(e.target.value)}
                   disabled={!searchTerm && !toolsData?.length}
                 />
-
-                <Search className="w-5 h-5 absolute top-1/2 transform -translate-y-1/2 right-2.5" />
-                {/* <Image
-                  src="/images/v2/search-normal.svg"
-                  width={24}
-                  height={24}
-                  alt="search-icon"
-                  className="w-5 h-5 absolute top-1/2 transform -translate-y-1/2 right-2.5"
-                /> */}
+                <button
+                  type="submit"
+                  className="bg-themeColor absolute top-1/2 transform -translate-y-1/2 right-0 p-2 rounded-r-md border-y border-themeColor"
+                >
+                  <Search className="text-white w-5 h-5" />
+                </button>
               </div>
             </form>
           </div>
@@ -187,7 +201,7 @@ const Tools = () => {
               </Link>
             ))
           ) : (
-            <div className="text-center text-xl font-medium py-10">
+            <div className="text-center text-gray-500 text-xl font-medium py-10">
               No data found
             </div>
           )}
