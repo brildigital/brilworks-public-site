@@ -32,6 +32,15 @@ const toolsData = [
     link: "/tools/mobility-app-development-calculator/",
     tags: ["DEVELOPMENT", "BUSINESS", "MARKETING"],
   },
+  {
+    title: "Saas Development Cost Calculator",
+    description:
+      "Estimate the cost of building your SaaS platform in minutes. Choose features, complexity, and design to get accurate budget insights.",
+
+    bg: "bg-teal-200",
+    link: "/tools/saas-development-cost-calculator/",
+    tags: ["DEVELOPMENT", "SEO", "OTHER"],
+  },
 ];
 
 const Tools = () => {

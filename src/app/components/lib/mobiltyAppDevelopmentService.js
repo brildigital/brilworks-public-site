@@ -1,5 +1,3 @@
-// costService.js
-
 import { analyzeDescriptionComplexity } from "./costCalculationService";
 
 // 🔹 Config values

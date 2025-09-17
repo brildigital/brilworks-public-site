@@ -1,16 +1,18 @@
 "use client";
-import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
+import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
-import { usePathname } from "next/navigation";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
-import ToolFAQs from "./ToolFAQs";
-import ToolHowToUse from "./ToolHowToUse";
-import ToolFeatures from "./ToolFeatures";
 import ToolHerosection from "./ToolHerosection";
 import { hasSubmittedForm } from "../lib/commonFunction";
+
+const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
+const ToolFeatures = dynamic(() => import("./ToolFeatures"));
+const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
 const SoftwareDevelopmentCostCalculator = () => {
   const pathname = usePathname();
@@ -76,6 +78,10 @@ const SoftwareDevelopmentCostCalculator = () => {
     "Instant Results",
     "100% Free Forever",
   ];
+
+  const handleInputChange = (field, value) => {
+    setInputs((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleFeatureChange = (feature, checked) => {
     setInputs((prev) => ({
@@ -172,10 +178,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <select
                   value={inputs.platform}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      platform: e.target.value,
-                    }))
+                    handleInputChange("platform", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
@@ -195,10 +198,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <select
                   value={inputs.complexity}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      complexity: e.target.value,
-                    }))
+                    handleInputChange("complexity", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
@@ -240,9 +240,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </label>
                 <select
                   value={inputs.design}
-                  onChange={(e) =>
-                    setInputs((prev) => ({ ...prev, design: e.target.value }))
-                  }
+                  onChange={(e) => handleInputChange("design", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select design level</option>
@@ -260,10 +258,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <select
                   value={inputs.timeline}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      timeline: e.target.value,
-                    }))
+                    handleInputChange("timeline", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
@@ -284,11 +279,9 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <textarea
                   value={inputs.description}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      description: e.target.value,
-                    }))
+                    handleInputChange("description", e.target.value)
                   }
+                  rows={3}
                   className="w-full min-h-[120px] border rounded-lg p-3 bg-white"
                   placeholder="Describe your app idea..."
                 />

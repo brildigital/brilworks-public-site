@@ -14,6 +14,8 @@ import {
   MapPin,
   CreditCard,
   Globe,
+  Smartphone,
+  Award,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -190,6 +192,56 @@ const mobilityAppDevCalculatorFeatures = {
   ],
 };
 
+const SaasDevCostCalculatorFeatures = {
+  title: "Why Choose Our SaaS Cost Calculator?",
+  description:
+    "Built by industry experts with years of SaaS development experience",
+  listData: [
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Get accurate cost estimates in seconds, not days. Our algorithm considers all major cost factors.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Industry Accurate",
+      description:
+        "Based on real project data from 1000+ SaaS developments with 95% accuracy rate.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Users,
+      title: "Expert Validated",
+      description:
+        "Calculations reviewed and validated by senior SaaS developers and project managers.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Globe,
+      title: "Multi-Platform",
+      description:
+        "Support for web, mobile, and hybrid platforms with platform-specific cost adjustments.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Smartphone,
+      title: "Feature Rich",
+      description:
+        "Comprehensive feature library covering all modern SaaS functionalities and integrations.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Award,
+      title: "Free to Use",
+      description:
+        "No hidden fees or registration required. Get unlimited estimates for all your projects.",
+      color: "bg-pink-100 text-pink-600",
+    },
+  ],
+};
+
 const ToolFeatures = () => {
   const pathname = usePathname();
 
@@ -198,6 +250,7 @@ const ToolFeatures = () => {
     "/tools/roi-calculator/": roiCalculatorFeatures,
     "/tools/mobility-app-development-calculator/":
       mobilityAppDevCalculatorFeatures,
+    "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

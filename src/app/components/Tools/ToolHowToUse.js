@@ -2,11 +2,13 @@ import React from "react";
 import {
   ArrowRight,
   Calculator,
+  Clock,
   Code,
   DollarSign,
   FileText,
   Settings,
   Smartphone,
+  Target,
   Zap,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
@@ -95,6 +97,45 @@ const mobilityAppDevCalculatorSteps = {
     },
   ],
 };
+const SaasDevCostCalculatorSteps = {
+  title: "How to Calculate SaaS Development Costs",
+  description: (
+    <>
+      Follow our simple 4-step process to get an accurate estimate
+      <br className="hidden md:block" /> for your SaaS project
+    </>
+  ),
+  listData: [
+    {
+      step: "01",
+      icon: Target,
+      title: "Define Requirements",
+      description:
+        "Select your platform, complexity level, and core features needed for your SaaS application.",
+    },
+    {
+      step: "02",
+      icon: Code,
+      title: "Choose Features",
+      description:
+        "Pick from our comprehensive list of SaaS features like authentication, payments, and analytics.",
+    },
+    {
+      step: "03",
+      icon: Clock,
+      title: "Set Timeline",
+      description:
+        "Specify your desired timeline and design requirements to get accurate cost calculations.",
+    },
+    {
+      step: "04",
+      icon: DollarSign,
+      title: "Get Estimate",
+      description:
+        "Receive your instant cost estimate with detailed breakdown and recommendations.",
+    },
+  ],
+};
 const ToolHowToUse = () => {
   const pathname = usePathname();
 
@@ -103,6 +144,7 @@ const ToolHowToUse = () => {
     "/tools/roi-calculator/": roiCalculatorSteps,
     "/tools/mobility-app-development-calculator/":
       mobilityAppDevCalculatorSteps,
+    "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

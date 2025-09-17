@@ -72,46 +72,49 @@ const PortfolioContactForm = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setRespMessage(submitMessageText);
+    clearMessage();
+    setIsSubmitting(false);
 
-    const token = await recaptchaRef.current.executeAsync();
+    // const token = await recaptchaRef.current.executeAsync();
 
-    try {
-      const downloadURL = formatSrcUrl(downloadFileUrl);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
-        {
-          method: "POST",
-          header: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            page: pathname,
-            downloadLink: downloadURL,
-            token,
-            previousPage,
-          }),
-        }
-      );
+    // try {
+    //   const downloadURL = formatSrcUrl(downloadFileUrl);
+    //   const response = await fetch(
+    //     `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
+    //     {
+    //       method: "POST",
+    //       header: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         ...formData,
+    //         page: pathname,
+    //         downloadLink: downloadURL,
+    //         token,
+    //         previousPage,
+    //       }),
+    //     }
+    //   );
 
-      if (response.ok) {
-        setFormData({
-          name: "",
-          company: "",
-          phone: "",
-          email: "",
-          message: "",
-        });
-        setRespMessage(submitMessageText);
-        clearMessage();
-      } else {
-        setRespMessage("Something went wrong!");
-      }
-      setIsSubmitting(false);
-    } catch (error) {
-      console.error("Error sending email", error);
-      setIsSubmitting(false);
-    }
+    //   if (response.ok) {
+    //     setFormData({
+    //       name: "",
+    //       company: "",
+    //       phone: "",
+    //       email: "",
+    //       message: "",
+    //     });
+    //     setRespMessage(submitMessageText);
+    //     clearMessage();
+    //   } else {
+    //     setRespMessage("Something went wrong!");
+    //   }
+    //   setIsSubmitting(false);
+    // } catch (error) {
+    //   console.error("Error sending email", error);
+    //   setIsSubmitting(false);
+    // }
   };
 
   return (

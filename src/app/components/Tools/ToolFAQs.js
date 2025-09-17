@@ -118,6 +118,37 @@ const roiCalculatorFaqData = {
     },
   ],
 };
+const SaasDevCostCalculatorFaqData = {
+  description:
+    "Get answers to common questions about app development costs and ROI calculations",
+  queAns: [
+    {
+      question: "How accurate is the SaaS development cost estimate?",
+      answer:
+        "Our calculator provides a baseline estimate based on industry standards and typical project requirements. The actual cost may vary depending on specific requirements, team location, and additional customizations.",
+    },
+    {
+      question: "What factors influence SaaS development costs the most?",
+      answer:
+        "The main cost drivers include project complexity, number of features, design requirements, platform choice, timeline, and the development team's location and expertise level.",
+    },
+    {
+      question: "Is ongoing maintenance included in the estimate?",
+      answer:
+        "The estimate covers initial development costs. Ongoing maintenance typically costs 15-20% of the initial development cost annually for updates, bug fixes, and server costs.",
+    },
+    {
+      question: "How long does SaaS development typically take?",
+      answer:
+        "Simple SaaS applications take 3-6 months, medium complexity projects take 6-12 months, while complex enterprise solutions can take 12-24 months or more.",
+    },
+    {
+      question: "Can I reduce development costs?",
+      answer:
+        "Yes, you can reduce costs by starting with an MVP (Minimum Viable Product), using pre-built components, choosing standard designs, and having flexible timelines.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -134,6 +165,7 @@ const ToolFAQs = () => {
     "/tools/roi-calculator/": roiCalculatorFaqData,
     "/tools/mobility-app-development-calculator/":
       appLikeUberCostCalculatorFaqData,
+    "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

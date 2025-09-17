@@ -1,15 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
-import ToolFAQs from "./ToolFAQs";
-import ToolHerosection from "./ToolHerosection";
-import ToolHowToUse from "./ToolHowToUse";
-import ToolFeatures from "./ToolFeatures";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
+import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
+import ToolHerosection from "./ToolHerosection";
+import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { calculateMobilityAppCost } from "../lib/mobiltyAppDevelopmentService";
 import { hasSubmittedForm } from "../lib/commonFunction";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
-import ToolsPopupContactForm from "./ToolsPopupContactForm";
+
+const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
+const ToolFeatures = dynamic(() => import("./ToolFeatures"));
+const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
 const MobilityAppDevCostCalculator = () => {
   const pathname = usePathname();
@@ -253,7 +255,7 @@ const MobilityAppDevCostCalculator = () => {
                   handleInputChange("description", e.target.value)
                 }
                 placeholder="Describe your app idea..."
-                rows={4}
+                rows={3}
                 className="w-full border rounded-lg p-3 bg-white"
               />
             </div>
