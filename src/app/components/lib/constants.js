@@ -250,14 +250,14 @@ export const resourcesMenuItems = [
         name: "Case Studies",
         path: "/portfolio/",
       },
-      // {
-      //   name: "Tools",
-      //   path: "/tools/",
-      // },
       {
-        name: "Design Template",
-        path: "/free-ui/",
+        name: "Tools",
+        path: "/tools/",
       },
+      // {
+      //   name: "Design Template",
+      //   path: "/free-ui/",
+      // },
     ],
   },
   {
