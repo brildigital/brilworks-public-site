@@ -1,5 +1,5 @@
-import Tools from "@/app/components/Tools/Tools";
 import React from "react";
+import Tools from "@/app/components/Tools/Tools";
 
 export const metadata = {
   title: "Free Business Tools & Calculators | Simplify Work & Boost Decisions",

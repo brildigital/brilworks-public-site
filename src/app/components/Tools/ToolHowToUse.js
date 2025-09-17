@@ -1,5 +1,14 @@
 import React from "react";
-import { ArrowRight, DollarSign, FileText, Settings } from "lucide-react";
+import {
+  ArrowRight,
+  Calculator,
+  Code,
+  DollarSign,
+  FileText,
+  Settings,
+  Smartphone,
+  Zap,
+} from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
 
@@ -53,12 +62,47 @@ const roiCalculatorSteps = {
     },
   ],
 };
+const mobilityAppDevCalculatorSteps = {
+  title: "How We Calculate Your App Cost",
+  description: (
+    <>
+      Our intelligent algorithm considers multiple factors to provide you with
+      the most
+      <br className="hidden md:block" /> accurate cost estimate
+    </>
+  ),
+  listData: [
+    {
+      icon: Code,
+      title: "Choose Complexity",
+      description:
+        "Select from Basic, Standard, or Premium app complexity levels.",
+    },
+    {
+      icon: Smartphone,
+      title: "Select Platforms",
+      description: "Pick iOS, Android, or both platforms for your app",
+    },
+    {
+      icon: Zap,
+      title: "Pick Features",
+      description: "Choose essential features like GPS, payments, and tracking",
+    },
+    {
+      icon: Calculator,
+      title: "Get Estimate",
+      description: "Receive instant, detailed cost breakdown for your project",
+    },
+  ],
+};
 const ToolHowToUse = () => {
   const pathname = usePathname();
 
   const showDataBasedOnPathname = {
     "/tools/project-estimate/": projectEstimateSteps,
     "/tools/roi-calculator/": roiCalculatorSteps,
+    "/tools/mobility-app-development-calculator/":
+      mobilityAppDevCalculatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
@@ -80,7 +124,13 @@ const ToolHowToUse = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div
+            className={`grid gap-8 ${
+              stepsData?.listData.length === 4
+                ? "md:grid-cols-4 grid-cols-1"
+                : "md:grid-cols-3 grid-cols-1"
+            }`}
+          >
             {stepsData?.listData?.map((step, index) => (
               <div key={index} className="relative group h-full">
                 <div
@@ -117,7 +167,7 @@ const ToolHowToUse = () => {
 
                 {/* Arrow except for last item */}
                 {index < stepsData?.listData?.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-1">
                     <ArrowRight className="w-6 h-6 text-purple-400" />
                   </div>
                 )}

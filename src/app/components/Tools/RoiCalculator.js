@@ -4,7 +4,7 @@ import ToolHerosection from "./ToolHerosection";
 import ToolHowToUse from "./ToolHowToUse";
 import ToolFeatures from "./ToolFeatures";
 import ToolFAQs from "./ToolFAQs";
-import { FileText, Sparkles, Star } from "lucide-react";
+import { Calculator, Loader2, Sparkles, Star } from "lucide-react";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { usePathname } from "next/navigation";
 import { hasSubmittedForm } from "../lib/commonFunction";
@@ -62,8 +62,6 @@ const RoiCalculator = () => {
     );
   };
 
-  const calculatorRef = useRef(null);
-
   const handleCalculate = async () => {
     if (!isFormValid()) {
       toast({
@@ -105,6 +103,13 @@ const RoiCalculator = () => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
 
+  useEffect(() => {
+    const hasVisitedPage = hasSubmittedForm(pathname);
+    if (!hasVisitedPage && results) {
+      setOpenPopup(true);
+    }
+  }, [results]);
+
   return (
     <>
       <ToolHerosection
@@ -128,16 +133,20 @@ const RoiCalculator = () => {
       <ToolHowToUse />
       <ToolFeatures />
       <section
-        ref={calculatorRef}
         id="price-estimate"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <div className="flex justify-center mb-6">
+              <div className="bg-gradient-to-r from-indigo-500 to-themeColor p-4 rounded-full shadow-lg">
+                <Calculator className="h-8 w-8 text-white" />
+              </div>
+            </div>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
               ROI Calculator
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Enter your project details to get an accurate estimate of
               development costs and potential returns
             </p>
@@ -145,7 +154,7 @@ const RoiCalculator = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Calculator Form */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-4">
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-2.5">
               {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
@@ -188,10 +197,8 @@ const RoiCalculator = () => {
 
               {/* Key Features */}
               <div className="space-y-1">
-                <label className="text-sm font-medium text-gray-900">
-                  Key Features
-                </label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
+                <label className="text-lg font-semibold">Key Features</label>
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
                   {roiCalculatorFeatures?.map((feature) => (
                     <label
                       key={feature.id}
@@ -203,9 +210,7 @@ const RoiCalculator = () => {
                         onChange={() => handleFeatureChange(feature?.id)}
                         className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
                       />
-                      <span className="text-sm text-gray-700">
-                        {feature?.label}
-                      </span>
+                      <span>{feature?.label}</span>
                     </label>
                   ))}
                 </div>
@@ -213,7 +218,7 @@ const RoiCalculator = () => {
 
               {/* Design Requirements */}
               <div className="space-y-1">
-                <label className="text-sm font-medium text-gray-900">
+                <label className="text-lg font-semibold">
                   Design Requirements <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -233,7 +238,7 @@ const RoiCalculator = () => {
 
               {/* Timeline */}
               <div className="space-y-1">
-                <label className="text-sm font-medium text-gray-900">
+                <label className="text-lg font-semibold">
                   Timeline <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -256,7 +261,7 @@ const RoiCalculator = () => {
 
               {/* Project Description */}
               <div className="space-y-1">
-                <label className="text-sm font-medium text-gray-900">
+                <label className="text-lg font-semibold">
                   Project Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -276,8 +281,17 @@ const RoiCalculator = () => {
                 disabled={!isFormValid() || isCalculating}
                 className="w-full bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
-                <FileText className="w-5 h-5 mr-2" />
-                <span>Get My Instant Quote</span>
+                {isCalculating ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Calculating...
+                  </>
+                ) : (
+                  <>
+                    <Calculator className="mr-2 h-5 w-5" />
+                    Get My Instant Quote
+                  </>
+                )}
               </button>
             </div>
 
@@ -354,12 +368,12 @@ const RoiCalculator = () => {
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form on the left and your instant cost
+                      Fill out the form on the left and your instant ROI
                       estimate will magically appear here ✨
                     </p>
 
                     <button
-                      // onClick={() => document?.querySelector("select")?.focus()}
+                      onClick={() => document?.querySelector("select")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
                       &lArr; Start by selecting your project details

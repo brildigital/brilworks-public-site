@@ -63,8 +63,17 @@ const appLikeUberCostCalculatorFaqData = {
     },
     {
       question: "How long does it take to develop an Uber-like app?",
-      answer:
-        "Development timeline typically ranges from 6-18 months depending on complexity. Basic version: 6-9 months, Standard: 9-12 months, Premium: 12-18 months.",
+      answer: (
+        <>
+          Development timeline typically ranges from 6-18 months depending on
+          complexity.
+          <ul className="list-disc list-inside mt-1">
+            <li>Basic version: 6-9 months</li>
+            <li>Standard: 9-12 months</li>
+            <li>Premium: 12-18 months</li>
+          </ul>
+        </>
+      ),
     },
     {
       question: "Do I need separate apps for riders and drivers?",
@@ -122,8 +131,9 @@ const ToolFAQs = () => {
 
   const showDataBasedOnPathname = {
     "/tools/project-estimate/": softwareDevelopmentCostCalculatorFaqData,
-    "/tools/app-like-uber-project-estimate/": appLikeUberCostCalculatorFaqData,
     "/tools/roi-calculator/": roiCalculatorFaqData,
+    "/tools/mobility-app-development-calculator/":
+      appLikeUberCostCalculatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};
@@ -169,7 +179,7 @@ const ToolFAQs = () => {
               {openItems.includes(index) && (
                 <div className="px-8 pb-6">
                   <div className="border-t border-gray-200 pt-6">
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                       {faq.answer}
                     </p>
                   </div>

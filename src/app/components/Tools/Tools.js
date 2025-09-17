@@ -9,7 +9,7 @@ const toolsData = [
     title: "Software Development Cost Calculator",
     description:
       "Estimate software project costs fast. Select platform, complexity, and features to get accurate budget and timeline insights.",
-    image: "/images/ach.png", // replace with your actual image path
+
     bg: "bg-blue-200",
     link: "/tools/project-estimate/",
     tags: ["DEVELOPMENT", "SALES"],
@@ -18,10 +18,19 @@ const toolsData = [
     title: "ROI Calculator",
     description:
       "Quickly measure profitability by calculating return on investment. Enter costs and gains to evaluate business success instantly.",
-    image: "/images/business.png",
+
     bg: "bg-indigo-200",
     link: "/tools/roi-calculator/",
     tags: ["MARKETING", "SALES", "OTHER"],
+  },
+  {
+    title: "Mobility App Development Cost Calculator",
+    description:
+      "Estimate the cost of building mobility and transport apps in minutes. Select features, platforms, and design options to get accurate budget and timeline insights.",
+
+    bg: "bg-purple-200",
+    link: "/tools/mobility-app-development-calculator/",
+    tags: ["DEVELOPMENT", "BUSINESS", "MARKETING"],
   },
 ];
 
@@ -45,7 +54,7 @@ const Tools = () => {
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearch(searchTerm);
-    }, 400); // 400ms delay
+    }, 500);
 
     return () => {
       clearTimeout(handler);

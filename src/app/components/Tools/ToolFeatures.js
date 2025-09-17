@@ -11,6 +11,9 @@ import {
   Shield,
   Users,
   Zap,
+  MapPin,
+  CreditCard,
+  Globe,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -66,8 +69,12 @@ const projectEstimateFeatures = {
 };
 const roiCalculatorFeatures = {
   title: "ROI Calculator Features",
-  description:
-    "Comprehensive tools and insights to make informed decisions about your app development investment",
+  description: (
+    <>
+      Comprehensive tools and insights to make informed decisions about
+      <br className="hidden md:block" /> your app development investment
+    </>
+  ),
   listData: [
     {
       icon: Calculator,
@@ -127,6 +134,61 @@ const roiCalculatorFeatures = {
     },
   ],
 };
+const mobilityAppDevCalculatorFeatures = {
+  title: "Essential Features for Your Ride-Hailing App",
+  description:
+    "Discover the core features that make a successful Uber-like application",
+  listData: [
+    {
+      icon: MapPin,
+      title: "GPS & Navigation",
+      description: "Real-time location tracking and route optimization",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: CreditCard,
+      title: "Payment Gateway",
+      description: "Secure payment processing with multiple options",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Users,
+      title: "User Management",
+      description: "Separate interfaces for riders and drivers",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Tracking",
+      description: "Live ride tracking and ETA updates",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Shield,
+      title: "Safety Features",
+      description: "Emergency contacts, ride sharing, and verification",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: DollarSign,
+      title: "Dynamic Pricing",
+      description: "Surge pricing and fare calculation algorithms",
+      color: "bg-violet-100 text-violet-600",
+    },
+    {
+      icon: Globe,
+      title: "Multi-language",
+      description: "Support for multiple languages and regions",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Zap,
+      title: "Push Notifications",
+      description: "Real-time alerts and ride status updates",
+      color: "bg-pink-100 text-pink-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -134,6 +196,8 @@ const ToolFeatures = () => {
   const showDataBasedOnPathname = {
     "/tools/project-estimate/": projectEstimateFeatures,
     "/tools/roi-calculator/": roiCalculatorFeatures,
+    "/tools/mobility-app-development-calculator/":
+      mobilityAppDevCalculatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};
@@ -151,10 +215,16 @@ const ToolFeatures = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className={`grid grid-cols-1 ${
+            features?.listData?.length === 8
+              ? "md:grid-cols-2 lg:grid-cols-4"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          } gap-6`}
+        >
           {features?.listData?.map((feature, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group-hover:-translate-y-1 flex flex-col h-full">
+              <div className="bg-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group-hover:-translate-y-1 flex flex-col h-full">
                 <div
                   className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                 >

@@ -31,18 +31,6 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
 
   const renderPrice = () => {
     switch (pathname) {
-      case "/tools/project-estimate/":
-        return !showPrice ? (
-          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-            <span className="blur-md select-none text-4xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
-              Locked
-            </span>
-            <Lock className="absolute right-[50%] w-5 h-5 text-emerald-600" />
-          </div>
-        ) : (
-          `$${result.cost.toLocaleString()}`
-        );
-
       case "/tools/roi-calculator/":
         return !showPrice ? (
           <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
@@ -106,10 +94,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
       default:
         return !showPrice ? (
           <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
               Hidden
             </span>
-            <Lock className="absolute right-[50%] w-5 h-5 text-gray-600" />
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
           </div>
         ) : (
           `$${result.cost.toLocaleString()}`

@@ -40,7 +40,7 @@ const BASE_COST = 15000;
 
 // ---------------- Functions ----------------
 
-function analyzeDescriptionComplexity(description = "") {
+export function analyzeDescriptionComplexity(description = "") {
   const words = description.toLowerCase().split(/\s+/);
   const complexityKeywords = [
     "ai",

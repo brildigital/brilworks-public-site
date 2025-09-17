@@ -29,10 +29,6 @@ const SoftwareDevelopmentCostCalculator = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
 
-  useEffect(() => {
-    setHasVisited(hasSubmittedForm(pathname));
-  }, [pathname, openPopup]);
-
   const platforms = [
     { value: "ios", label: "iOS Only" },
     { value: "android", label: "Android Only" },
@@ -129,6 +125,10 @@ const SoftwareDevelopmentCostCalculator = () => {
   };
 
   useEffect(() => {
+    setHasVisited(hasSubmittedForm(pathname));
+  }, [pathname, openPopup]);
+
+  useEffect(() => {
     const hasVisitedPage = hasSubmittedForm(pathname);
     if (!hasVisitedPage && result) {
       setOpenPopup(true);
@@ -165,7 +165,7 @@ const SoftwareDevelopmentCostCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Main Form Card */}
           <div className="bg-white rounded-2xl border shadow-lg p-8">
-            <div className="grid gap-4">
+            <div className="grid gap-2.5">
               {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Platform *</label>
@@ -214,7 +214,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               {/* Features */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Key Features</label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
                   {availableFeatures?.map((feature) => (
                     <label
                       key={feature}
@@ -369,7 +369,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                   </p>
 
                   <button
-                    // onClick={() => document.querySelector("select")?.focus()}
+                    onClick={() => document.querySelector("select")?.focus()}
                     className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                   >
                     &lArr; Start by selecting your project details
