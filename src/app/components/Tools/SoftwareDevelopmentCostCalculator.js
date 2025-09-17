@@ -24,7 +24,7 @@ const SoftwareDevelopmentCostCalculator = () => {
     email: "",
     name: "",
   });
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState();
   const [isCalculating, setIsCalculating] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);

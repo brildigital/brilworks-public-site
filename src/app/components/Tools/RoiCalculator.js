@@ -42,14 +42,7 @@ const RoiCalculator = () => {
     revenuePerUser: "5",
   });
 
-  const [results, setResults] = useState({
-    developmentCost: 0,
-    maintenanceCost: 0,
-    totalCost: 0,
-    expectedRevenue: 0,
-    roi: 0,
-    paybackPeriod: 0,
-  });
+  const [results, setResults] = useState();
 
   const isFormValid = () => {
     return (
@@ -103,12 +96,12 @@ const RoiCalculator = () => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
 
-  useEffect(() => {
-    const hasVisitedPage = hasSubmittedForm(pathname);
-    if (!hasVisitedPage && results) {
-      setOpenPopup(true);
-    }
-  }, [results]);
+  // useEffect(() => {
+  //   const hasVisitedPage = hasSubmittedForm(pathname);
+  //   if (!hasVisitedPage && results) {
+  //     setOpenPopup(true);
+  //   }
+  // }, [results]);
 
   return (
     <>

@@ -25,9 +25,8 @@ const MobilityAppDevCostCalculator = () => {
     regions: "",
     description: "",
   });
-  console.log(hasVisited);
 
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
