@@ -107,7 +107,7 @@ const Tools = () => {
         </div>
       </div>
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
-        <div className="flex flex-col md:flex-row gap-5 md:mb-8 mb-5">
+        <div className="flex flex-col md:flex-row justify-between gap-5 md:mb-8 mb-5">
           <div className="flex flex-wrap gap-2">
             <button
               className={`px-4 !py-1.5 !rounded-md cursor-pointer border border-themeColor ${
@@ -136,14 +136,11 @@ const Tools = () => {
             ))}
           </div>
           <div className="w-full sxl:!w-1/5">
-            <form
-              // className="md:pb-0 !pb-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form onSubmit={(e) => e.preventDefault()}>
               <div className="relative w-full">
                 <input
                   id="user-search"
-                  className={`w-full font-medium rounded-md py-2 px-2 text-xs md:text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none`}
+                  className={`w-full font-medium rounded-md py-2 px-2 text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none`}
                   value={searchTerm}
                   // type="search"
                   placeholder="Search"
