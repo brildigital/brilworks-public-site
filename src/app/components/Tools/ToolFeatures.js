@@ -16,6 +16,9 @@ import {
   Globe,
   Smartphone,
   Award,
+  Lightbulb,
+  Target,
+  BarChart,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -241,6 +244,67 @@ const SaasDevCostCalculatorFeatures = {
     },
   ],
 };
+const mvpDevCostCalculatorFeatures = {
+  title: "Why Choose Our MVP Cost Calculator?",
+  description: (
+    <>
+      Our calculator combines industry expertise with cutting-edge technology to
+      provide
+      <br className="hidden md:block" /> the most accurate MVP development cost
+      estimates.
+    </>
+  ),
+  listData: [
+    {
+      icon: Zap,
+      title: "Instant Calculations",
+      description: "Get immediate cost estimates with our advanced algorithm",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Shield,
+      title: "Industry Accurate",
+      description: "Based on real market data and industry standards",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Cost Optimization",
+      description: "Suggestions to optimize your MVP development budget",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Clock,
+      title: "Timeline Estimation",
+      description: "Get development timeline along with cost breakdown",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Users,
+      title: "Team Size Planning",
+      description: "Optimal team composition recommendations",
+      color: "bg-violet-100 text-violet-600",
+    },
+    {
+      icon: Lightbulb,
+      title: "Smart Suggestions",
+      description: "AI-powered recommendations for feature prioritization",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Target,
+      title: "Market Analysis",
+      description: "Competitive analysis and market positioning insights",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: BarChart,
+      title: "Detailed Reports",
+      description: "Comprehensive reports with visual breakdowns",
+      color: "bg-pink-100 text-pink-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -251,6 +315,7 @@ const ToolFeatures = () => {
     "/tools/mobility-app-development-calculator/":
       mobilityAppDevCalculatorFeatures,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFeatures,
+    "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

@@ -149,6 +149,52 @@ const SaasDevCostCalculatorFaqData = {
     },
   ],
 };
+const mvpDevCostCalculatorFaqData = {
+  description:
+    "Get answers to common questions about MVP development costs and our calculator",
+  queAns: [
+    {
+      question: "How accurate are the cost estimates?",
+      answer:
+        "Our calculator provides estimates with 90-95% accuracy based on industry standards and real project data. However, final costs may vary depending on specific requirements, changes during development, and market rates in your region.",
+    },
+    {
+      question: "What's included in the MVP development cost?",
+      answer:
+        "The cost includes planning and analysis, UI/UX design, development, testing, deployment, and basic documentation. It covers a functional MVP with core features but excludes ongoing maintenance, marketing, and advanced integrations.",
+    },
+    {
+      question: "How does the keyword-based pricing work?",
+      answer:
+        "Our algorithm analyzes your project description for specific keywords like 'AI', 'payment', 'blockchain', etc., and adjusts the cost based on the complexity these features typically add to development projects.",
+    },
+    {
+      question: "Can I get a more detailed breakdown?",
+      answer:
+        "Yes! The calculator provides a detailed breakdown including development phases, team composition, timeline, and cost distribution across different aspects of your MVP project.",
+    },
+    {
+      question: "What if my project requirements change?",
+      answer:
+        "You can easily update your project details in the calculator to get a revised estimate. We recommend using the calculator multiple times during your planning phase to explore different scenarios.",
+    },
+    {
+      question: "How long does MVP development typically take?",
+      answer:
+        "Most MVPs take 6-16 weeks depending on complexity. Simple MVPs can be completed in 6-8 weeks, medium complexity in 8-12 weeks, and complex MVPs may take 12-16 weeks or more.",
+    },
+    {
+      question: "What's the difference between web and mobile app costs?",
+      answer:
+        "Mobile apps typically cost 30% more than web apps due to platform-specific development, app store guidelines, and additional testing requirements. Cross-platform solutions can help reduce costs.",
+    },
+    {
+      question: "Do you provide actual development services?",
+      answer:
+        "This is a cost estimation tool. For actual development services, we can connect you with our network of vetted development partners who can bring your MVP to life based on these estimates.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -166,6 +212,7 @@ const ToolFAQs = () => {
     "/tools/mobility-app-development-calculator/":
       appLikeUberCostCalculatorFaqData,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFaqData,
+    "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

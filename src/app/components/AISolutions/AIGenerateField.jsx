@@ -26,8 +26,6 @@ const AIGenerateField = () => {
       "Please keep this page open while we are generating product"
     );
 
-    console.log("object");
-
     try {
       const timestamp = new Date().toISOString();
       let chatId = uuid4();

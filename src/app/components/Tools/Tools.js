@@ -41,6 +41,24 @@ const toolsData = [
     link: "/tools/saas-development-cost-calculator/",
     tags: ["DEVELOPMENT", "SEO", "OTHER"],
   },
+  {
+    title: "MVP Development Cost Calculator",
+    description:
+      "Quickly calculate how much it costs to launch your MVP. Ideal for startups validating ideas with limited budgets.",
+
+    bg: "bg-rose-200",
+    link: "/tools/mvp-development-cost-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  // {
+  //   title: "MVP Development Cost Calculator",
+  //   description:
+  //     "Quickly calculate how much it costs to launch your MVP. Ideal for startups validating ideas with limited budgets.",
+
+  //   bg: "bg-orange-200",
+  //   link: "/tools/mvp-development-cost-calculator/",
+  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  // },
 ];
 
 const Tools = () => {

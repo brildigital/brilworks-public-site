@@ -67,7 +67,7 @@ const RoiCalculator = () => {
 
     setTimeout(() => {
       setIsCalculating(false);
-    }, 3000);
+    }, 1500);
   };
 
   const handleInputChange = (field, value) => {
@@ -89,7 +89,7 @@ const RoiCalculator = () => {
 
   useEffect(() => {
     const hasVisitedPage = hasSubmittedForm(pathname);
-    if (!hasVisitedPage && results) {
+    if (!hasVisitedPage && results && !isCalculating) {
       setOpenPopup(true);
     }
   }, [results]);
@@ -101,7 +101,7 @@ const RoiCalculator = () => {
           <>
             Calculate Your App's
             <br />
-            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
               ROI
             </span>
           </>

@@ -39,6 +39,7 @@ const projectEstimateSteps = {
     },
   ],
 };
+
 const roiCalculatorSteps = {
   title: "Calculate Your App Cost in 3 Simple Steps",
   description:
@@ -64,6 +65,7 @@ const roiCalculatorSteps = {
     },
   ],
 };
+
 const mobilityAppDevCalculatorSteps = {
   title: "How We Calculate Your App Cost",
   description: (
@@ -97,6 +99,7 @@ const mobilityAppDevCalculatorSteps = {
     },
   ],
 };
+
 const SaasDevCostCalculatorSteps = {
   title: "How to Calculate SaaS Development Costs",
   description: (
@@ -107,32 +110,60 @@ const SaasDevCostCalculatorSteps = {
   ),
   listData: [
     {
-      step: "01",
       icon: Target,
       title: "Define Requirements",
       description:
         "Select your platform, complexity level, and core features needed for your SaaS application.",
     },
     {
-      step: "02",
       icon: Code,
       title: "Choose Features",
       description:
         "Pick from our comprehensive list of SaaS features like authentication, payments, and analytics.",
     },
     {
-      step: "03",
       icon: Clock,
       title: "Set Timeline",
       description:
         "Specify your desired timeline and design requirements to get accurate cost calculations.",
     },
     {
-      step: "04",
       icon: DollarSign,
       title: "Get Estimate",
       description:
         "Receive your instant cost estimate with detailed breakdown and recommendations.",
+    },
+  ],
+};
+
+const mvpDevCostCalculatorSteps = {
+  title: "How to Calculate Your MVP Cost",
+  description:
+    "Follow these simple steps to get an accurate estimate for your MVP development project",
+  listData: [
+    {
+      icon: FileText,
+      title: "Describe Your Project",
+      description:
+        "Provide details about your MVP idea, target market, and key features you want to include.",
+    },
+    {
+      icon: Settings,
+      title: "Select Development Type",
+      description:
+        "Choose between web app, mobile app, or both based on your target audience and business needs.",
+    },
+    {
+      icon: Calculator,
+      title: "Configure Features",
+      description:
+        "Select the complexity level, number of features, and any special requirements for your MVP.",
+    },
+    {
+      icon: DollarSign,
+      title: "Get Instant Estimate",
+      description:
+        "Receive a detailed cost breakdown including development time, resources, and budget allocation.",
     },
   ],
 };
@@ -145,6 +176,7 @@ const ToolHowToUse = () => {
     "/tools/mobility-app-development-calculator/":
       mobilityAppDevCalculatorSteps,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorSteps,
+    "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
@@ -168,7 +200,7 @@ const ToolHowToUse = () => {
 
           <div
             className={`grid gap-8 ${
-              stepsData?.listData.length === 4
+              stepsData?.listData?.length === 4
                 ? "md:grid-cols-4 grid-cols-1"
                 : "md:grid-cols-3 grid-cols-1"
             }`}

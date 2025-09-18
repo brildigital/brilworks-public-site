@@ -12,6 +12,7 @@ const ToolHerosection = ({
   imageSrc,
   authority,
   statsGird,
+  highlights,
 }) => {
   return (
     <section className="bg-navyBlue">
@@ -53,6 +54,26 @@ const ToolHerosection = ({
                       </div>
                       <div className="text-sm text-[#94a3b8]">{stat.label}</div>
                     </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            {highlights?.length && (
+              <div className="w-full md:w-[85%] grid grid-cols-1 md:grid-cols-3 justify-start gap-6 text-gray-300">
+                {highlights.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-card/50 border border-[#017eeb33] p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+                  >
+                    <div
+                      className={`flex items-center gap-2 mb-1 ${item.color}`}
+                    >
+                      <item.icon className="w-4 h-4" />
+                      <span className="font-semibold text-sm">
+                        {item.title}
+                      </span>
+                    </div>
+                    <p className="text-[#94a3b8] text-sm">{item.description}</p>
                   </div>
                 ))}
               </div>

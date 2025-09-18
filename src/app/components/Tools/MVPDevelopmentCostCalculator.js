@@ -2,7 +2,15 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
+import {
+  Award,
+  Calculator,
+  Loader2,
+  Sparkles,
+  Star,
+  Users,
+  Wallet,
+} from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
@@ -16,7 +24,7 @@ const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const SaasDevelopmentCostCalculator = () => {
+const MVPDevelopmentCostCalculator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
@@ -58,12 +66,11 @@ const SaasDevelopmentCostCalculator = () => {
     const resultData = calculateSaasDevCostEstimate(formData);
     setResult(resultData);
 
-    if (!hasVisited) {
-      setOpenPopup(true);
-    }
-
     setTimeout(() => {
       setIsCalculating(false);
+      if (!hasVisited) {
+        setOpenPopup(true);
+      }
     }, 1500);
   };
 
@@ -96,17 +103,35 @@ const SaasDevelopmentCostCalculator = () => {
       <ToolHerosection
         title={
           <>
-            SaaS Development
-            <br className="hidden sm:block" /> Cost Calculator
+            MVP Development
+            <br className="hidden sm:block" />{" "}
+            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
+              Cost Calculator
+            </span>
           </>
         }
-        buttonText="Calculate Now"
-        description="Get instant, accurate estimates for your SaaS project. Our advanced calculator considers all key factors to provide you with realistic development costs and timelines."
+        buttonText="Calculate Your MVP Now"
+        description="Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data."
         imageSrc="/images/v2/saas-dev-cost-calculator-banner.webp"
-        statsGird={[
-          { value: "50K+", label: "Projects Analyzed" },
-          { value: "95%", label: "Accuracy Rate" },
-          { value: "2M+", label: "Users Helped" },
+        highlights={[
+          {
+            icon: Star,
+            color: "text-green-600",
+            title: "Industry Leading",
+            description: "98% Accuracy Rate",
+          },
+          {
+            icon: Users,
+            color: "text-orange-600",
+            title: "Trusted by",
+            description: "10,000+ Startups",
+          },
+          {
+            icon: Award,
+            color: "text-indigo-300",
+            title: "Award Winning",
+            description: "Best Tool 2024",
+          },
         ]}
       />
       <ToolHowToUse />
@@ -123,10 +148,10 @@ const SaasDevelopmentCostCalculator = () => {
               </div>
             </div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Calculate Your SaaS Development Cost
+              MVP Development Cost Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below to get your instant cost estimate
+              Get an accurate estimate for your MVP development project
             </p>
           </div>
 
@@ -368,4 +393,4 @@ const SaasDevelopmentCostCalculator = () => {
   );
 };
 
-export default SaasDevelopmentCostCalculator;
+export default MVPDevelopmentCostCalculator;

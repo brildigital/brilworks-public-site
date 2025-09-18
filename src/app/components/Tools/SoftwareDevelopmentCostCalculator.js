@@ -127,7 +127,7 @@ const SoftwareDevelopmentCostCalculator = () => {
     }
     setTimeout(() => {
       setIsCalculating(false);
-    }, 3000);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -136,7 +136,7 @@ const SoftwareDevelopmentCostCalculator = () => {
 
   useEffect(() => {
     const hasVisitedPage = hasSubmittedForm(pathname);
-    if (!hasVisitedPage && result) {
+    if (!hasVisitedPage && result && !isCalculating) {
       setOpenPopup(true);
     }
   }, [result]);

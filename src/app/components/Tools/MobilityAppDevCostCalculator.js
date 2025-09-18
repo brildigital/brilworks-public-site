@@ -64,7 +64,7 @@ const MobilityAppDevCostCalculator = () => {
 
     setTimeout(() => {
       setIsCalculating(false);
-    }, 3000);
+    }, 1500);
   };
 
   const handleInputChange = (field, value) => {
@@ -83,6 +83,13 @@ const MobilityAppDevCostCalculator = () => {
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
+
+  useEffect(() => {
+    const hasVisitedPage = hasSubmittedForm(pathname);
+    if (!hasVisitedPage && result) {
+      setOpenPopup(true);
+    }
+  }, [result]);
 
   return (
     <>
