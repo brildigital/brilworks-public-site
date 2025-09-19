@@ -2,7 +2,7 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
-import { CheckCircle } from "lucide-react";
+import { Calculator, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
 const ToolHerosection = ({
@@ -79,15 +79,21 @@ const ToolHerosection = ({
               </div>
             )}
           </div>
-          <div className="lg:w-2/5 w-full">
-            <Image
-              className="rounded-2xl md:h-[550px] h-[380px] object-cover"
-              src={imageSrc}
-              alt="tool-banner"
-              width="565"
-              height="610"
-              priority
-            />
+          <div className="relative lg:w-2/5 w-full">
+            <div className="relative group">
+              {/* Floating decorative elements */}
+              <Image
+                className="rounded-2xl md:h-[550px] h-[380px] object-cover"
+                src={imageSrc}
+                alt="tool-banner"
+                width="565"
+                height="610"
+                priority
+              />
+              <div className="absolute -top-7 -left-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce delay-200"></div>
+              <div className="absolute -bottom-6 -right-4 w-6 h-6 bg-pink-400 rounded-full animate-bounce delay-700"></div>
+              <div className="absolute top-1/2 -right-8 w-4 h-4 bg-green-400 rounded-full animate-bounce delay-1000"></div>
+            </div>
           </div>
         </div>
       </div>

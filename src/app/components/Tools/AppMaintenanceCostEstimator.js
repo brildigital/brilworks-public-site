@@ -3,9 +3,17 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  AlertCircle,
   Award,
+  BarChart,
+  Bell,
+  Bug,
   Calculator,
+  DollarSign,
+  Headphones,
   Loader2,
+  Shield,
+  Smartphone,
   Sparkles,
   Star,
   Users,
@@ -14,27 +22,25 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  calculateSaasDevCostEstimate,
-  saasDevelopmentFeatures,
-} from "../lib/saasDevCostCalculatorService";
-import { PriceSkeleton } from "../Blog/ArticleSkeleton";
+import { PriceSkeleton, PriceSkeletonSmall } from "../Blog/ArticleSkeleton";
+import { calculateAppMaintenanceCost } from "../lib/appMaintenenceEstimatorService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const MVPDevelopmentCostCalculator = () => {
+const AppMaintenanceCostEstimator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
+
   const [formData, setFormData] = useState({
     platform: "",
     complexity: "",
-    features: [],
-    design: "",
-    timeline: "",
+    userBase: "",
+    maintenanceType: "",
+    updateFrequency: "",
     description: "",
   });
 
@@ -44,9 +50,9 @@ const MVPDevelopmentCostCalculator = () => {
     return (
       formData?.platform &&
       formData?.complexity &&
-      formData?.features.length > 0 &&
-      formData?.timeline &&
-      formData?.design &&
+      formData?.userBase &&
+      formData?.maintenanceType &&
+      formData?.updateFrequency &&
       formData?.description.trim()
     );
   };
@@ -63,7 +69,7 @@ const MVPDevelopmentCostCalculator = () => {
 
     setIsCalculating(true);
 
-    const resultData = calculateSaasDevCostEstimate(formData);
+    const resultData = calculateAppMaintenanceCost(formData);
     setResult(resultData);
 
     setTimeout(() => {
@@ -98,44 +104,136 @@ const MVPDevelopmentCostCalculator = () => {
     }
   }, [result]);
 
+  const maintenanceTypes = [
+    {
+      icon: Bug,
+      title: "Bug Fixes & Issues",
+      description:
+        "Regular identification and resolution of bugs, crashes, and performance issues",
+      cost: "30% of total cost",
+      color: "from-red-500 to-pink-500",
+    },
+    {
+      icon: Shield,
+      title: "Security Updates",
+      description:
+        "Critical security patches, vulnerability fixes, and compliance updates",
+      cost: "20% of total cost",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Smartphone,
+      title: "Platform Updates",
+      description:
+        "iOS, Android, and web platform compatibility updates and new OS support",
+      cost: "25% of total cost",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: BarChart,
+      title: "Performance Optimization",
+      description:
+        "Speed improvements, memory optimization, and resource usage enhancements",
+      cost: "15% of total cost",
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: Bell,
+      title: "Feature Updates",
+      description:
+        "New feature development, UI/UX improvements, and functionality enhancements",
+      cost: "Variable cost",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      icon: Headphones,
+      title: "User Support",
+      description: "Customer support, user assistance, and feedback management",
+      cost: "10% of total cost",
+      color: "from-indigo-500 to-purple-500",
+    },
+  ];
+
   return (
     <>
       <ToolHerosection
         title={
           <>
-            MVP Development
+            App Maintenance &
             <br className="hidden sm:block" />{" "}
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Cost Calculator
+              Update Cost Estimator
             </span>
           </>
         }
-        buttonText="Calculate Your MVP Now"
-        description="Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data."
-        imageSrc="/images/v2/mvp-dev-cost-calculator-banner.webp"
+        buttonText="Calculate Maintenance Cost"
+        description="Calculate accurate maintenance and update costs for your mobile and web applications. Plan your ongoing development budget with confidence."
+        imageSrc="/images/v2/app-maintenance-estimator-banner.webp"
         highlights={[
           {
             icon: Star,
-            color: "text-green-600",
-            title: "Industry Leading",
-            description: "98% Accuracy Rate",
+            color: "text-red-300",
+            title: "Proven Accuracy",
+            description: "95% Cost Precision",
           },
           {
             icon: Users,
-            color: "text-orange-600",
-            title: "Trusted by",
-            description: "10,000+ Startups",
+            color: "text-teal-300",
+            title: "Used by",
+            description: "5,000+ Companies",
           },
           {
             icon: Award,
             color: "text-indigo-300",
-            title: "Award Winning",
-            description: "Best Tool 2024",
+            title: "Industry Leader",
+            description: "Top Rated Tool",
           },
         ]}
       />
       <ToolHowToUse />
       <ToolFeatures />
+      <section>
+        <div className="container max-w-7xl main-section-padding-top mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Types of App Maintenance
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Understanding different types of maintenance helps you plan your
+              budget more effectively
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {maintenanceTypes.map((type, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group border border-gray-100"
+              >
+                <div
+                  className={`w-14 h-14 bg-gradient-to-br ${type.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <type.icon className="w-7 h-7 text-white" />
+                </div>
+
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {type.title}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {type.description}
+                </p>
+
+                <div className="flex items-center justify-between mt-1">
+                  <span className="text-sm font-medium text-blue-800 bg-blue-100 px-3 py-1.5 rounded-md">
+                    {type.cost}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section
         id="price-estimate"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
@@ -148,10 +246,10 @@ const MVPDevelopmentCostCalculator = () => {
               </div>
             </div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              MVP Development Cost Calculator
+              App Maintenance & Update Cost Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Get an accurate estimate for your MVP development project
+              Get accurate estimates for your app maintenance and update costs
             </p>
           </div>
 
@@ -207,74 +305,70 @@ const MVPDevelopmentCostCalculator = () => {
                 </select>
               </div>
 
-              {/* Key Features */}
-              <div className="space-y-1">
-                <label className="text-lg font-semibold">Key Features</label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {saasDevelopmentFeatures?.map((feature) => (
-                    <label
-                      key={feature.id}
-                      className="flex items-center space-x-3 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.features.includes(feature?.id)}
-                        onChange={() => handleFeatureChange(feature?.id)}
-                        className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
-                      />
-                      <span>{feature?.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
               {/* Design Requirements */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Design Requirements <span className="text-red-500">*</span>
+                  User Base Size <span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.designLevel}
-                  onChange={(e) => handleInputChange("design", e.target.value)}
+                  value={formData.userBase}
+                  onChange={(e) =>
+                    handleInputChange("userBase", e.target.value)
+                  }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select design level</option>
-                  <option value="basic">Basic (Template-based design)</option>
-                  <option value="standard">
-                    Standard (Custom with standard UI)
-                  </option>
-                  <option value="premium">
-                    Premium (Modern, polished UI/UX)
-                  </option>
-                  <option value="custom">
-                    Custom (Unique, brand-focused design)
-                  </option>
+                  <option value="">Select user base size</option>
+                  <option value="small">Small (&lt;10K User)</option>
+                  <option value="medium">Medium (10K - 100K Users)</option>
+                  <option value="large">Large (100K - 1M Users)</option>
+                  <option value="enterprise">Enterprise (&gt;1M Users)</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Timeline <span className="text-red-500">*</span>
+                  Maintenance Type <span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.timeline}
+                  value={formData.maintenanceType}
                   onChange={(e) =>
-                    handleInputChange("timeline", e.target.value)
+                    handleInputChange("maintenanceType", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select timeline</option>
-                  <option value="rushed">Rush (Need ASAP - 50% premium)</option>
-                  <option value="normal">Normal (Standard timeline)</option>
-                  <option value="flexible">Flexible (10% discount)</option>
+                  <option value="">Select maintenance type</option>
+                  <option value="basic">Basic (Bug fixes only)</option>
+                  <option value="standard">
+                    Standard (Bug fixes + Updates)
+                  </option>
+                  <option value="premium">Premium (Full maintenance)</option>
+                  <option value="enterprise">Enterprise (24/7 support)</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-lg font-semibold">
+                  Update Frequency <span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.updateFrequency}
+                  onChange={(e) =>
+                    handleInputChange("updateFrequency", e.target.value)
+                  }
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select update frequency</option>
+                  <option value="quarterly">Quarterly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="biweekly">Bi-weekly</option>
+                  <option value="weekly">Weekly</option>
                 </select>
               </div>
 
               {/* Project Description */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Project Description <span className="text-red-500">*</span>
+                  Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   value={formData.description}
@@ -315,28 +409,49 @@ const MVPDevelopmentCostCalculator = () => {
                     <Wallet className="h-12 w-12 text-indigo-500" />
                   </div>
                   <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
-                    {isCalculating || openPopup ? (
-                      <PriceSkeleton />
-                    ) : (
-                      `$${result?.cost.toLocaleString()}`
-                    )}
+                  <div className="bg-gradient-to-r from-indigo-500 to-themeColor rounded-2xl py-2 my-3 text-white shadow-lg">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <DollarSign className="w-6 h-6" />
+                      <h3 className="text-2xl font-bold">Monthly Cost</h3>
+                    </div>
+                    <div className="text-5xl font-bold text-white my-4">
+                      {isCalculating || openPopup ? (
+                        <PriceSkeleton />
+                      ) : (
+                        `$${result?.monthlyTotalCost.toLocaleString()}`
+                      )}
+                    </div>
+                    <p className="text-gray-200 mb-4">
+                      Monthly Maintenance Cost
+                    </p>
+                    <div className="text-lg">
+                      <span className="text-gray-200">Yearly: </span>
+                      <span className="font-bold">
+                        {isCalculating || openPopup ? (
+                          <PriceSkeletonSmall />
+                        ) : (
+                          `$${result.yearlyTotalCost.toLocaleString()}`
+                        )}
+                      </span>
+                    </div>
                   </div>
 
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    The platform, design requirement, description, and project
-                    complexity are considered when calculating the cost. This is
-                    an estimate to give you an idea of the possible budget range
-                    for your project. For a more accurate estimate, consult with
-                    our specialist.
-                  </p>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                  <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> This estimate includes development,
-                    testing, and basic deployment. Additional costs may include
-                    ongoing maintenance, marketing, and third-party services.
-                  </p>
+                  <div className="w-full flex flex-col items-start justify-center bg-amber-50 border border-amber-200 rounded-xl p-6 mt-8">
+                    <div className="flex items-center gap-2 mb-3">
+                      <AlertCircle className="w-5 h-5 text-amber-600" />
+                      <h4 className="text-lg font-semibold text-amber-800">
+                        Cost Optimization Tips
+                      </h4>
+                    </div>
+                    <ul className="flex flex-col items-start justify-center text-amber-700 space-y-1 text-sm">
+                      <li>
+                        • Regular maintenance prevents costly emergency fixes
+                      </li>
+                      <li>• Quarterly updates can reduce costs by 30%</li>
+                      <li>• Automated testing reduces manual QA expenses</li>
+                      <li>• Proactive monitoring prevents major issues</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -393,4 +508,4 @@ const MVPDevelopmentCostCalculator = () => {
   );
 };
 
-export default MVPDevelopmentCostCalculator;
+export default AppMaintenanceCostEstimator;

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { IconButton } from "@material-tailwind/react";
-import { Lock, Star, Wallet, X } from "lucide-react";
+import { AlertCircle, DollarSign, Lock, Star, Wallet, X } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
 import { markFormSubmitted } from "../lib/commonFunction";
@@ -90,6 +90,34 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/app-maintenance-cost-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="bg-gradient-to-r from-indigo-500 to-themeColor rounded-2xl py-2 my-3 text-white shadow-lg">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <DollarSign className="w-6 h-6" />
+              <h3 className="text-2xl font-bold">Monthly Cost</h3>
+            </div>
+            <div className="text-4xl font-bold text-white my-2">
+              ${result?.monthlyTotalCost.toLocaleString()}
+            </div>
+            <p className="text-gray-200 font-medium text-lg mb-4">
+              Monthly Maintenance Cost
+            </p>
+            <div className="text-lg">
+              <span className="text-gray-200">Yearly: </span>
+              <span className="font-bold">
+                ${result.yearlyTotalCost.toLocaleString()}
+              </span>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -169,20 +197,41 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               )}
               <div
                 className={`${
-                  pathname === "/tools/roi-calculator/" && showPrice
+                  (pathname === "/tools/roi-calculator/" ||
+                    pathname === "/tools/app-maintenance-cost-estimator/") &&
+                  showPrice
                     ? "max-w-[80%] mx-auto"
                     : "flex items-center justify-center"
                 } text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4`}
               >
                 {renderPrice()}
               </div>
-
-              <p className="text-gray-600 max-w-md mx-auto">
-                The platform, design requirement, description, and project
-                complexity are considered when calculating the cost. This is an
-                estimate to give you an idea of the possible budget range for
-                your project.
-              </p>
+              {pathname === "/tools/app-maintenance-cost-estimator/" &&
+              showPrice ? (
+                <div className="max-w-[80%] mx-auto flex flex-col items-start justify-center bg-amber-50 border border-amber-200 rounded-xl p-6 mt-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <AlertCircle className="w-5 h-5 text-amber-600" />
+                    <h4 className="text-lg font-semibold text-amber-800">
+                      Cost Optimization Tips
+                    </h4>
+                  </div>
+                  <ul className="flex flex-col items-start justify-center text-amber-700 space-y-1 text-sm">
+                    <li>
+                      • Regular maintenance prevents costly emergency fixes
+                    </li>
+                    <li>• Quarterly updates can reduce costs by 30%</li>
+                    <li>• Automated testing reduces manual QA expenses</li>
+                    <li>• Proactive monitoring prevents major issues</li>
+                  </ul>
+                </div>
+              ) : (
+                <p className="text-gray-600 max-w-md mx-auto">
+                  The platform, design requirement, description, and project
+                  complexity are considered when calculating the cost. This is
+                  an estimate to give you an idea of the possible budget range
+                  for your project.
+                </p>
+              )}
             </div>
           </div>
         </div>

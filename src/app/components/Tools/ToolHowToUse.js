@@ -9,6 +9,7 @@ import {
   Settings,
   Smartphone,
   Target,
+  TrendingUp,
   Zap,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
@@ -167,6 +168,38 @@ const mvpDevCostCalculatorSteps = {
     },
   ],
 };
+const appMaintenanceCostEstimatorSteps = {
+  title: "How to Calculate App Maintenance Costs",
+  description:
+    "Follow these simple steps to get accurate maintenance and update cost estimates for your application",
+  listData: [
+    {
+      icon: FileText,
+      title: "App Information",
+      description:
+        "Provide details about your app type, current version, user base, and maintenance requirements.",
+    },
+    {
+      icon: Smartphone,
+      title: "Platform & Complexity",
+      description:
+        "Select your app platforms (iOS, Android, Web) and specify the complexity level of your application.",
+    },
+    {
+      icon: Calculator,
+      title: "Maintenance Scope",
+      description:
+        "Choose maintenance types: bug fixes, feature updates, security patches, performance optimization.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Get Cost Breakdown",
+      description:
+        "Receive detailed monthly and yearly maintenance costs with timeline and resource allocation.",
+    },
+  ],
+};
+
 const ToolHowToUse = () => {
   const pathname = usePathname();
 
@@ -177,13 +210,18 @@ const ToolHowToUse = () => {
       mobilityAppDevCalculatorSteps,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorSteps,
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorSteps,
+    "/tools/app-maintenance-cost-estimator/": appMaintenanceCostEstimatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
 
   return (
     <div className="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
-      <section className="container max-w-6xl mx-auto main-section-padding">
+      <section
+        className={`container ${
+          stepsData?.listData?.length === 4 ? "max-w-7xl" : "max-w-6xl"
+        } mx-auto main-section-padding`}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <Heading
             type="h2"

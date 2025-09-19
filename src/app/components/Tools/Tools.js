@@ -50,15 +50,15 @@ const toolsData = [
     link: "/tools/mvp-development-cost-calculator/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
-  // {
-  //   title: "MVP Development Cost Calculator",
-  //   description:
-  //     "Quickly calculate how much it costs to launch your MVP. Ideal for startups validating ideas with limited budgets.",
+  {
+    title: "App Maintenance & Update Estimator",
+    description:
+      "Calculate ongoing app upkeep and update costs to plan your budget effectively.",
 
-  //   bg: "bg-orange-200",
-  //   link: "/tools/mvp-development-cost-calculator/",
-  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
-  // },
+    bg: "bg-orange-200",
+    link: "/tools/app-maintenance-cost-estimator/",
+    tags: ["DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

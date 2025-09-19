@@ -19,6 +19,8 @@ import {
   Lightbulb,
   Target,
   BarChart,
+  Bell,
+  Wrench,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -305,6 +307,69 @@ const mvpDevCostCalculatorFeatures = {
     },
   ],
 };
+const appMaintenanceCostEstimatorFeatures = {
+  title: "Why Choose Our App Maintenance Cost Estimator?",
+  description: (
+    <>
+      Our comprehensive tool covers all aspects of app maintenance and provides
+      accurate
+      <br className="hidden md:block" /> cost estimates for sustainable app
+      management.
+    </>
+  ),
+  listData: [
+    {
+      icon: Shield,
+      title: "Security Updates",
+      description:
+        "Calculate costs for security patches and vulnerability fixes",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Clock,
+      title: "Regular Maintenance",
+      description: "Estimate ongoing maintenance and monitoring costs",
+
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: DollarSign,
+      title: "Budget Planning",
+      description: "Plan your annual maintenance budget with precision",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: BarChart,
+      title: "Performance Optimization",
+      description: "Cost analysis for app performance improvements",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Bell,
+      title: "Feature Updates",
+      description: "Estimate costs for new feature development and updates",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Wrench,
+      title: "Bug Fixes",
+      description: "Calculate ongoing bug fixing and issue resolution costs",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Zap,
+      title: "Platform Updates",
+      description: "Costs for iOS, Android, and web platform compatibility",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Users,
+      title: "User Support",
+      description: "Estimate customer support and user assistance costs",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -316,12 +381,14 @@ const ToolFeatures = () => {
       mobilityAppDevCalculatorFeatures,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFeatures,
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFeatures,
+    "/tools/app-maintenance-cost-estimator/":
+      appMaintenanceCostEstimatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};
   return (
     <section id="features" className="bg-gray-50">
-      <div className="max-w-7xl mx-auto main-section-padding">
+      <div className="container max-w-7xl mx-auto main-section-padding">
         <div className="text-center space-y-4 mb-8">
           <Heading
             type="h2"

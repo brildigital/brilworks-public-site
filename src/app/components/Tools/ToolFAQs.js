@@ -195,6 +195,52 @@ const mvpDevCostCalculatorFaqData = {
     },
   ],
 };
+const appMaintenanceCostEstimatorFaqData = {
+  description:
+    "Get answers to common questions about app maintenance costs and planning",
+  queAns: [
+    {
+      question: "What's included in app maintenance costs?",
+      answer:
+        "App maintenance costs typically include bug fixes, security updates, OS compatibility updates, performance optimization, server maintenance, monitoring, user support, and regular feature updates. Our calculator provides a comprehensive breakdown of all these components.",
+    },
+    {
+      question: "How much should I budget for app maintenance annually?",
+      answer:
+        "Generally, you should budget 15-20% of your initial development cost annually for maintenance. However, this varies based on app complexity, user base size, update frequency, and feature requirements. Our calculator provides personalized estimates based on your specific needs.",
+    },
+    {
+      question: "What factors affect app maintenance costs the most?",
+      answer:
+        "The main factors include app complexity, number of platforms (iOS, Android, Web), user base size, update frequency, third-party integrations, security requirements, and the level of support needed. Complex apps with large user bases typically require higher maintenance budgets.",
+    },
+    {
+      question: "How often should I update my app?",
+      answer:
+        "Most successful apps release updates monthly or bi-weekly. Critical security updates should be immediate, while feature updates can follow a regular schedule. More frequent updates generally mean higher costs but better user engagement and security.",
+    },
+    {
+      question: "What's the difference between basic and premium maintenance?",
+      answer:
+        "Basic maintenance covers essential bug fixes and security updates. Premium maintenance includes proactive monitoring, performance optimization, regular feature updates, priority support, and comprehensive analytics. Enterprise plans add 24/7 support and dedicated resources.",
+    },
+    {
+      question: "Do maintenance costs increase over time?",
+      answer:
+        "Yes, maintenance costs typically increase as your app grows. More users mean more server costs, support requests, and scaling challenges. Additionally, as technology evolves, you'll need updates for new OS versions and security standards.",
+    },
+    {
+      question: "Can I reduce maintenance costs without affecting quality?",
+      answer:
+        "Yes, through automation, efficient coding practices, regular preventive maintenance, choosing stable technologies, and planning updates strategically. However, cutting maintenance too much can lead to higher costs later due to technical debt and emergency fixes.",
+    },
+    {
+      question: "What happens if I skip regular maintenance?",
+      answer:
+        "Skipping maintenance can lead to security vulnerabilities, compatibility issues with new OS versions, poor performance, user complaints, app store rejections, and eventually much higher costs for emergency fixes and major overhauls.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -213,6 +259,8 @@ const ToolFAQs = () => {
       appLikeUberCostCalculatorFaqData,
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorFaqData,
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFaqData,
+    "/tools/app-maintenance-cost-estimator/":
+      appMaintenanceCostEstimatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};
