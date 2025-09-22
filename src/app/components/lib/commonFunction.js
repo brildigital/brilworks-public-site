@@ -381,6 +381,7 @@ export const isExternalLink = (href) => {
     "https://facia.io/facial-recognition/",
     "https://scientificasia.net/machine-learning-ml/",
     "https://techtarget.ai/technology/nlp/",
+    "https://www.transvirtual.com/blog/what-is-route-optimisation-software/",
   ];
 
   return (
