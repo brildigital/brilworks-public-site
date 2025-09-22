@@ -877,7 +877,7 @@ export const blogListStaticData = [
   {
     name: "Why Java Is Still the Backbone of Fintech App Development",
     loc: "https://www.brilworks.com/blog/java-in-fintech-app-development/",
-    lastmod: "2025-08-11T12:50:38.794Z",
+    lastmod: "2025-09-22T09:57:35.092Z",
   },
   {
     name: "Why Node.js Is a Strategic Choice for Healthcare",
@@ -902,7 +902,7 @@ export const blogListStaticData = [
   {
     name: "10 Java Trends Developers Should Know",
     loc: "https://www.brilworks.com/blog/java-trends/",
-    lastmod: "2025-08-08T12:27:36.630Z",
+    lastmod: "2025-09-22T10:40:13.080Z",
   },
   {
     name: "Top Frontend Technologies to Use in 2025",
@@ -922,7 +922,7 @@ export const blogListStaticData = [
   {
     name: "Spring Boot vs Quarkus vs Micronaut Performance and Use Case Guide",
     loc: "https://www.brilworks.com/blog/spring-boot-vs-quarkus-vs-micronaut/",
-    lastmod: "2025-08-01T09:18:12.436Z",
+    lastmod: "2025-09-17T09:59:47.336Z",
   },
   {
     name: "Reactjs Benefits: Why & When to Choose for Your Next Project",
@@ -962,7 +962,7 @@ export const blogListStaticData = [
   {
     name: "How Much Does It Cost to Develop a Website?",
     loc: "https://www.brilworks.com/blog/website-development-cost/",
-    lastmod: "2025-07-24T13:15:29.612Z",
+    lastmod: "2025-09-16T12:02:31.054Z",
   },
   {
     name: "The Role of Java in AI & Machine Learning Applications",
@@ -1002,7 +1002,7 @@ export const blogListStaticData = [
   {
     name: "AI-Powered React Development: Tools, Techniques, and Trends",
     loc: "https://www.brilworks.com/blog/ai-in-reactjs/",
-    lastmod: "2025-07-16T13:29:01.609Z",
+    lastmod: "2025-09-15T09:36:33.430Z",
   },
   {
     name: "Top Web Development Challenges and How to Overcome Them",
@@ -1042,7 +1042,7 @@ export const blogListStaticData = [
   {
     name: "React Native 0.80: Is It Time to Make the Switch?",
     loc: "https://www.brilworks.com/blog/react-native-0-80/",
-    lastmod: "2025-07-07T11:48:22.782Z",
+    lastmod: "2025-09-19T12:27:50.044Z",
   },
   {
     name: "React Server Components Explained",
@@ -1057,7 +1057,7 @@ export const blogListStaticData = [
   {
     name: "Best React State Management Libraries",
     loc: "https://www.brilworks.com/blog/react-state-management-libraries/",
-    lastmod: "2025-07-03T13:58:40.782Z",
+    lastmod: "2025-09-22T11:38:01.870Z",
   },
   {
     name: "React Architecture Debt: What It Is and How to Fix It",
@@ -1077,7 +1077,7 @@ export const blogListStaticData = [
   {
     name: "React Native vs Expo: What’s the Difference?",
     loc: "https://www.brilworks.com/blog/react-native-vs-expo/",
-    lastmod: "2025-07-01T05:46:06.755Z",
+    lastmod: "2025-09-15T10:27:31.638Z",
   },
   {
     name: "A Straightforward Guide to Enterprise Java Development",
@@ -1112,17 +1112,17 @@ export const blogListStaticData = [
   {
     name: "The Future of ReactJS: Trends and Predictions for 2025",
     loc: "https://www.brilworks.com/blog/future-of-reactjs/",
-    lastmod: "2025-06-25T12:42:58.891Z",
+    lastmod: "2025-09-17T13:30:01.003Z",
   },
   {
     name: "7 Reasons to Use Node.js in Healthcare Software Development",
     loc: "https://www.brilworks.com/blog/node-js-healthcare-software-development-benefits/",
-    lastmod: "2025-06-23T13:37:06.653Z",
+    lastmod: "2025-09-17T10:29:08.445Z",
   },
   {
     name: "Hiring Java Developers: What Model Fits Your Business Best",
     loc: "https://www.brilworks.com/blog/hire-java-developers-models/",
-    lastmod: "2025-06-23T12:31:07.338Z",
+    lastmod: "2025-09-17T12:57:53.348Z",
   },
   {
     name: "Strategic Guide to Hire Java Developers for Your Next Project",
@@ -1147,7 +1147,7 @@ export const blogListStaticData = [
   {
     name: "Understanding React Native Fabric and How to Implement It in Your Project",
     loc: "https://www.brilworks.com/blog/react-native-fabric/",
-    lastmod: "2025-06-18T09:08:25.270Z",
+    lastmod: "2025-09-22T09:04:42.127Z",
   },
   {
     name: "React Native vs Swift: A Complete Comparison for Developers",
@@ -1162,7 +1162,7 @@ export const blogListStaticData = [
   {
     name: "Jakarta EE vs Spring Boot: A Practical Guide for Java Developers",
     loc: "https://www.brilworks.com/blog/jakarta-ee-vs-spring-boot/",
-    lastmod: "2025-06-16T07:57:17.666Z",
+    lastmod: "2025-09-18T10:24:00.765Z",
   },
   {
     name: "Node.js vs PHP: Which Performs Better for Backend Development",
@@ -1182,7 +1182,7 @@ export const blogListStaticData = [
   {
     name: "Exploring The Limitations of React Native Development",
     loc: "https://www.brilworks.com/blog/react-native-limitations/",
-    lastmod: "2025-06-12T07:54:19.968Z",
+    lastmod: "2025-09-15T11:17:30.506Z",
   },
   {
     name: "7 Types of Apps You Can Build with NodeJS in 2025",
@@ -1197,12 +1197,12 @@ export const blogListStaticData = [
   {
     name: "Top JavaScript Frameworks Comparison for Web Development in 2025",
     loc: "https://www.brilworks.com/blog/javascript-web-frameworks-comparison/",
-    lastmod: "2025-06-10T06:19:15.968Z",
+    lastmod: "2025-09-19T11:33:29.026Z",
   },
   {
     name: "React Native vs Electron: A Developer’s Guide to Cross-Platform App Development",
     loc: "https://www.brilworks.com/blog/react-native-vs-electron/",
-    lastmod: "2025-06-09T07:45:34.854Z",
+    lastmod: "2025-09-16T11:53:52.200Z",
   },
   {
     name: "Node.js vs Spring Boot",
@@ -1232,7 +1232,7 @@ export const blogListStaticData = [
   {
     name: "How to Build an MVP with React Native [A Guide for Startups]",
     loc: "https://www.brilworks.com/blog/how-to-build-an-mvp-with-react-native-guide/",
-    lastmod: "2025-06-17T12:13:16.958Z",
+    lastmod: "2025-09-18T13:14:35.565Z",
   },
   {
     name: "IT Infrastructure Trends Every CIO Should Know (And How to Act on Them)",
@@ -1262,12 +1262,12 @@ export const blogListStaticData = [
   {
     name: "Top 10 Generative AI Programming Languages",
     loc: "https://www.brilworks.com/blog/top-generative-ai-programming-languages/",
-    lastmod: "2025-06-09T10:20:22.139Z",
+    lastmod: "2025-09-19T12:36:39.777Z",
   },
   {
     name: "15 Best NodeJS Libraries for Backend Development in 2025",
     loc: "https://www.brilworks.com/blog/top-nodejs-libraries-for-backend-development/",
-    lastmod: "2025-06-02T13:03:09.525Z",
+    lastmod: "2025-09-22T11:33:50.810Z",
   },
   {
     name: "Cloud Integration in React Native Application Development: A Guide to AWS & Firebase",
@@ -1277,7 +1277,7 @@ export const blogListStaticData = [
   {
     name: "What's New in Node.js 24",
     loc: "https://www.brilworks.com/blog/node-js-24/",
-    lastmod: "2025-06-04T05:53:29.040Z",
+    lastmod: "2025-09-18T09:37:44.889Z",
   },
   {
     name: "Manual vs Automated Testing in Mobile App Development",
@@ -1287,7 +1287,7 @@ export const blogListStaticData = [
   {
     name: "Why Choose React Native App Development for IoT and Wearable Technology",
     loc: "https://www.brilworks.com/blog/react-native-app-development-for-iot-and-wearable-technology/",
-    lastmod: "2025-05-23T10:50:56.018Z",
+    lastmod: "2025-09-19T11:15:44.872Z",
   },
   {
     name: "Developing Microservices with Nodejs",
@@ -1297,7 +1297,7 @@ export const blogListStaticData = [
   {
     name: "How to Integrate AI in React Native Apps (Step by Step Guide)",
     loc: "https://www.brilworks.com/blog/ai-in-react-native/",
-    lastmod: "2025-08-29T10:57:31.215Z",
+    lastmod: "2025-09-22T08:26:46.605Z",
   },
   {
     name: "8 Best Node JS IDEs You Should Try This Year",
@@ -1317,7 +1317,7 @@ export const blogListStaticData = [
   {
     name: "Why React Native App Development is Perfect for Healthcare Mobile Apps?",
     loc: "https://www.brilworks.com/blog/react-native-app-development-for-healthcare-mobile-apps/",
-    lastmod: "2025-05-19T07:35:07.291Z",
+    lastmod: "2025-09-17T12:19:50.914Z",
   },
   {
     name: "The Hidden Economics Behind White Label App Development",
@@ -1352,7 +1352,7 @@ export const blogListStaticData = [
   {
     name: "Navigating Key Challenges in Healthcare Mobile Apps",
     loc: "https://www.brilworks.com/blog/challenges-in-healthcare-mobile-apps/",
-    lastmod: "2025-05-28T06:30:04.327Z",
+    lastmod: "2025-09-17T09:28:16.280Z",
   },
   {
     name: "A Business Guide to Legacy System Modernization",
@@ -1367,7 +1367,7 @@ export const blogListStaticData = [
   {
     name: "10 Major Mobile App Development Challenges",
     loc: "https://www.brilworks.com/blog/biggest-mobile-app-development-challenges/",
-    lastmod: "2025-05-28T06:26:54.094Z",
+    lastmod: "2025-09-18T11:24:30.558Z",
   },
   {
     name: "10 Ways to Speed Up Your Mobile App Development Timeline",
@@ -1377,7 +1377,7 @@ export const blogListStaticData = [
   {
     name: "Getting Started with Flutter AI: A Complete Guide for App Development",
     loc: "https://www.brilworks.com/blog/getting-started-with-flutter-ai/",
-    lastmod: "2025-05-07T10:06:22.690Z",
+    lastmod: "2025-09-22T09:32:32.262Z",
   },
   {
     name: "How Long Does It Take to Develop a Mobile App",
@@ -1417,7 +1417,7 @@ export const blogListStaticData = [
   {
     name: "Steps to Develop an App Using OpenAI’s API",
     loc: "https://www.brilworks.com/blog/how-to-use-OpenAI-API/",
-    lastmod: "2025-05-01T08:01:57.443Z",
+    lastmod: "2025-09-17T13:17:43.115Z",
   },
   {
     name: "Low Code vs Traditional Development: A Complete Comparison for Businesses",
@@ -1432,12 +1432,12 @@ export const blogListStaticData = [
   {
     name: "Managing React Native Environment Variables: A Guide for Secure App Development",
     loc: "https://www.brilworks.com/blog/react-native-environment-variables/",
-    lastmod: "2025-08-29T08:48:48.754Z",
+    lastmod: "2025-09-22T11:07:10.035Z",
   },
   {
     name: "Scaling ReactJS Applications Effortlessly: A Practical Guide",
     loc: "https://www.brilworks.com/blog/scaling-reactjs-applications/",
-    lastmod: "2025-05-15T09:30:56.737Z",
+    lastmod: "2025-09-19T12:03:32.103Z",
   },
   {
     name: "React Native Benefits & Limitations: What You Should Know Before You Build",
@@ -1477,7 +1477,7 @@ export const blogListStaticData = [
   {
     name: "Does React work for iOS, and how does it perform?",
     loc: "https://www.brilworks.com/blog/does-react-work-for-ios/",
-    lastmod: "2025-04-15T07:58:32.270Z",
+    lastmod: "2025-09-19T11:02:08.390Z",
   },
   {
     name: "React Components Explained: A 2025 Guide for Developers",
@@ -1492,7 +1492,7 @@ export const blogListStaticData = [
   {
     name: "React Latest Version: Exploring New Features & Updates",
     loc: "https://www.brilworks.com/blog/react-latest-version/",
-    lastmod: "2025-04-17T06:57:48.161Z",
+    lastmod: "2025-09-18T10:47:41.149Z",
   },
   {
     name: "Top 9 React JS Frameworks Developers Are Using in 2025",
@@ -1562,7 +1562,7 @@ export const blogListStaticData = [
   {
     name: "The Benefits of Hiring a Mobile App Development Company",
     loc: "https://www.brilworks.com/blog/mobile-app-development-company-hiring-benefits/",
-    lastmod: "2025-05-01T09:46:02.919Z",
+    lastmod: "2025-09-22T08:48:09.258Z",
   },
   {
     name: "Healthcare Mobile App Development Best Practices [Compliance Tips]",
@@ -1582,7 +1582,7 @@ export const blogListStaticData = [
   {
     name: "The Role of Cloud Integration in Mobile Apps",
     loc: "https://www.brilworks.com/blog/cloud-integration-in-mobile-apps/",
-    lastmod: "2025-02-12T06:27:32.687Z",
+    lastmod: "2025-09-22T07:16:49.611Z",
   },
   {
     name: "15 Best Mobile Application Testing Tools for 2025",
@@ -1677,12 +1677,12 @@ export const blogListStaticData = [
   {
     name: "Top React Native Features Startups Should Explore in 2025",
     loc: "https://www.brilworks.com/blog/top-react-native-features/",
-    lastmod: "2025-05-09T09:56:43.361Z",
+    lastmod: "2025-09-19T12:11:57.196Z",
   },
   {
     name: "React Native vs Native Development: Pros and Cons.",
     loc: "https://www.brilworks.com/blog/react-native-vs-native-development/",
-    lastmod: "2025-01-27T08:21:55.603Z",
+    lastmod: "2025-09-16T08:07:03.254Z",
   },
   {
     name: "Why React Native is Perfect for Cross-Platform Apps",
@@ -1892,7 +1892,7 @@ export const blogListStaticData = [
   {
     name: "How Generative AI transforms Supply Chain Operations",
     loc: "https://www.brilworks.com/blog/how-generative-ai-transforms-supply-chain-operations/",
-    lastmod: "2025-04-15T07:33:30.120Z",
+    lastmod: "2025-09-19T06:12:32.007Z",
   },
   {
     name: "How to Create a Mobile App in 2025 [Easy Steps]",
@@ -2112,7 +2112,7 @@ export const blogListStaticData = [
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
     loc: "https://www.brilworks.com/blog/best-guide-to-hire-node-js-developers/",
-    lastmod: "2025-07-24T05:56:22.516Z",
+    lastmod: "2025-09-15T09:22:16.037Z",
   },
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
@@ -2132,7 +2132,7 @@ export const blogListStaticData = [
   {
     name: "AI for Business Strategy: A Guide to Implementation and Benefits",
     loc: "https://www.brilworks.com/blog/ai-for-business-strategy/",
-    lastmod: "2025-05-13T10:58:27.359Z",
+    lastmod: "2025-09-15T09:09:20.811Z",
   },
   {
     name: "Introduction to ReactJS: Learn Components, Usage, and Features",

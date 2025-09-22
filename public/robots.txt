@@ -24,9 +24,5 @@ Disallow: /wp-content/*
 Disallow: /teams/*
 Disallow: /cdn-cgi/
 Disallow: /ai-studio/
-Disallow: /project-estimate/
-Disallow: /roi-calculator/
-Disallow: /saas-development-cost-calculator/
-Disallow: /mobility-app-development-calculator/
 
 Sitemap: https://www.brilworks.com/sitemap.xml
