@@ -2,46 +2,56 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { Calculator, Loader2, Sparkles, Star } from "lucide-react";
+import {
+  Award,
+  Calculator,
+  Calendar,
+  DollarSign,
+  Loader2,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
+import { PriceSkeleton } from "../Blog/ArticleSkeleton";
 import {
-  calculateROI,
-  roiCalculatorFeatures,
-} from "../lib/roiCalculatorService";
+  appDevelopmentTimelineEstimate,
+  saasDevelopmentFeatures,
+} from "../lib/saasDevCostCalculatorService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const RoiCalculator = () => {
+const AppDevelopmentTimelineCalculator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
+
   const [formData, setFormData] = useState({
     appType: "",
-    complexity: "",
+    platform: "",
     features: [],
+    complexity: "",
     timeline: "",
-    designLevel: "",
+    budget: "",
     description: "",
-    hourlyRate: "100",
-    maintenanceYears: "3",
-    expectedUsers: "10000",
-    revenuePerUser: "5",
   });
 
-  const [results, setResults] = useState();
+  const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
       formData?.appType &&
+      formData?.platform &&
       formData?.complexity &&
       formData?.features.length > 0 &&
       formData?.timeline &&
-      formData?.designLevel &&
+      formData?.budget &&
       formData?.description.trim()
     );
   };
@@ -58,15 +68,14 @@ const RoiCalculator = () => {
 
     setIsCalculating(true);
 
-    const results = calculateROI(formData);
-    setResults(results);
-
-    if (!hasVisited) {
-      setOpenPopup(true);
-    }
+    const resultData = appDevelopmentTimelineEstimate(formData);
+    setResult(resultData);
 
     setTimeout(() => {
       setIsCalculating(false);
+      if (!hasVisited) {
+        setOpenPopup(true);
+      }
     }, 1500);
   };
 
@@ -89,34 +98,50 @@ const RoiCalculator = () => {
 
   useEffect(() => {
     const hasVisitedPage = hasSubmittedForm(pathname);
-    if (!hasVisitedPage && results && !isCalculating) {
+    if (!hasVisitedPage && result && !isCalculating) {
       setOpenPopup(true);
     }
-  }, [results]);
+  }, [result]);
 
   return (
     <>
       <ToolHerosection
         title={
           <>
-            Calculate Your App's
-            <br />
+            App Development
+            <br className="hidden sm:block" />{" "}
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              ROI
+              Timeline Calculator
             </span>
           </>
         }
-        buttonText="Start Calculating"
-        description="Get accurate estimates for your mobile app development costs and potential return on investment. Make data-driven decisions with our comprehensive calculator."
-        imageSrc="/images/v2/roi-calculator-banner.webp"
-        statsGird={[
-          { value: "$50K+", label: "Apps Calculated" },
-          { value: "95%", label: "Accuracy Rate" },
-          { value: "2M+", label: "Users Helped" },
+        buttonText="Calculate Now"
+        description="Get accurate time and cost estimates for your app development project in seconds. Powered by AI analysis of 10,000+ real projects."
+        imageSrc="/images/v2/app-dev-timeline-calculator.webp"
+        highlights={[
+          {
+            icon: Award,
+            color: "text-indigo-300",
+            title: "Industry Leader",
+            description: "Trusted by 500+ startups and enterprises",
+          },
+          {
+            icon: Users,
+            color: "text-teal-300",
+            title: "Accuracy Rate",
+            description: "Achieve 90% estimation accuracy",
+          },
+          {
+            icon: TrendingUp,
+            color: "text-red-300",
+            title: "Data Driven",
+            description: "Powered by 10,000+ project insights",
+          },
         ]}
       />
       <ToolHowToUse />
       <ToolFeatures />
+
       <section
         id="price-estimate"
         className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
@@ -129,11 +154,12 @@ const RoiCalculator = () => {
               </div>
             </div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              ROI Calculator
+              Calculate Your Project{" "}
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Enter your project details to get an accurate estimate of
-              development costs and potential returns
+              Enter your project details below and get instant timeline and cost
+              estimates. Our AI analyzes your description for complexity
+              indicators.
             </p>
           </div>
 
@@ -143,48 +169,45 @@ const RoiCalculator = () => {
               {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Platform <span className="text-red-500">*</span>
+                  App Type <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={formData.appType}
                   onChange={(e) => handleInputChange("appType", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select your target platform</option>
-                  <option value="native">Native iOS/Android</option>
-                  <option value="hybrid">Hybrid (React Native/Flutter)</option>
-                  <option value="web">Web Application</option>
+                  <option value="">Select your app type</option>
+
+                  <option value="web">Web</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="cross-platform">Cross Platform</option>
                 </select>
               </div>
-
-              {/* Project Complexity */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Project Complexity <span className="text-red-500">*</span>
+                  Platform <span className="text-red-500">*</span>
                 </label>
-
                 <select
-                  value={formData?.complexity}
+                  value={formData.platform}
                   onChange={(e) =>
-                    handleInputChange("complexity", e.target.value)
+                    handleInputChange("platform", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select complexity</option>
-                  <option value="simple">Simple (Basic functionality)</option>
-                  <option value="medium">Medium (Standard features)</option>
-                  <option value="complex">Complex (Advanced features)</option>
-                  <option value="enterprise">
-                    Enterprise (Full-scale solution)
-                  </option>
+                  <option value="">Select your target platform</option>
+
+                  <option value="web">Web Application</option>
+                  <option value="mobile">Mobile App (iOS/Android)</option>
+                  <option value="both">Web + Mobile</option>
                 </select>
               </div>
 
-              {/* Key Features */}
               <div className="space-y-1">
-                <label className="text-lg font-semibold">Key Features</label>
+                <label className="text-lg font-semibold">
+                  Key Features <span className="text-red-500">*</span>
+                </label>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {roiCalculatorFeatures?.map((feature) => (
+                  {saasDevelopmentFeatures?.map((feature) => (
                     <label
                       key={feature.id}
                       className="flex items-center space-x-3 cursor-pointer"
@@ -201,30 +224,33 @@ const RoiCalculator = () => {
                 </div>
               </div>
 
-              {/* Design Requirements */}
+              {/* Project Complexity */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Design Requirements <span className="text-red-500">*</span>
+                  Complexity Level <span className="text-red-500">*</span>
                 </label>
+
                 <select
-                  value={formData.designLevel}
+                  value={formData?.complexity}
                   onChange={(e) =>
-                    handleInputChange("designLevel", e.target.value)
+                    handleInputChange("complexity", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select design level</option>
-                  <option value="basic">Basic Design</option>
-                  <option value="standard">Standard Design</option>
-                  <option value="premium">Premium Design</option>
-                  <option value="custom">Custom Design</option>
+                  <option value="">Select complexity</option>
+                  <option value="simple">Simple - Basic functionality</option>
+                  <option value="medium">Medium - Standard features</option>
+                  <option value="complex">Complex - Advanced features</option>
+                  <option value="enterprise">
+                    Enterprise - Full-scale Solution
+                  </option>
                 </select>
               </div>
 
-              {/* Timeline */}
+              {/* Design Requirements */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Timeline <span className="text-red-500">*</span>
+                  Timeline Preference <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={formData.timeline}
@@ -234,20 +260,36 @@ const RoiCalculator = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select timeline</option>
-                  <option value="4">1 Month (4 weeks)</option>
-                  <option value="8">2 Months (8 weeks)</option>
-                  <option value="12">3 Months (12 weeks)</option>
-                  <option value="16">4 Months (16 weeks)</option>
-                  <option value="24">6 Months (24 weeks)</option>
-                  <option value="36">9 Months (36 weeks)</option>
-                  <option value="48">12 Months (48 weeks)</option>
+                  <option value="urgent">Urgent - Need it ASAP</option>
+                  <option value="standard">Standard - Normal timeline</option>
+                  <option value="flexible">
+                    Flexible - Quality over speed
+                  </option>
+                </select>
+              </div>
+
+              {/* Timeline */}
+              <div className="space-y-1">
+                <label className="text-lg font-semibold">
+                  Budget Range<span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.budget}
+                  onChange={(e) => handleInputChange("budget", e.target.value)}
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select budget range</option>
+                  <option value="0-10000">$0 - $10,000</option>
+                  <option value="10000-50000">$10,000 - $50,000</option>
+                  <option value="50000-100000">$50,000 - $100,000</option>
+                  <option value="100000+">$100,000+</option>
                 </select>
               </div>
 
               {/* Project Description */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
-                  Project Description <span className="text-red-500">*</span>
+                  Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   value={formData.description}
@@ -281,74 +323,44 @@ const RoiCalculator = () => {
             </div>
 
             {/* Cost Estimate */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                ROI Estimate
-              </h3>
-
-              {results?.developmentCost > 0 && hasVisited ? (
-                <div className="space-y-6">
-                  {/* Main Cost Display */}
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Star className="w-12 h-12 text-white" />
-                    </div>
-                    <div className="text-4xl font-bold text-gray-900 mb-2">
-                      ${results?.developmentCost?.toLocaleString()}
-                    </div>
-                    <p className="text-gray-600">Estimated Development Cost</p>
+            {result && hasVisited ? (
+              <div className="popup bg-white rounded-2xl border shadow-lg p-8">
+                <div className="text-center my-12">
+                  <div className="flex justify-center mb-4">
+                    <Calendar className="h-12 w-12 text-indigo-500" />
+                  </div>
+                  <h2 className="text-3xl font-bold">
+                    Your Estimated Timeline
+                  </h2>
+                  <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-6">
+                    {isCalculating || openPopup ? (
+                      <PriceSkeleton />
+                    ) : (
+                      result?.estimatedTime
+                    )}
                   </div>
 
-                  {/* Cost Breakdown */}
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="text-gray-600">Development</span>
-                      <span className="font-semibold text-gray-900">
-                        ${results?.developmentCost.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="text-gray-600">Annual Maintenance</span>
-                      <span className="font-semibold text-gray-900">
-                        $
-                        {Math.round(
-                          results?.maintenanceCost /
-                            parseInt(formData?.maintenanceYears)
-                        ).toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="text-gray-600">
-                        ROI ({formData?.maintenanceYears} years)
-                      </span>
-                      <span className="font-semibold text-green-600">
-                        {results?.roi}%
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-gray-600">Payback Period</span>
-                      <span className="font-semibold text-blue-600">
-                        {results?.paybackPeriod} years
-                      </span>
-                    </div>
-                    <div className="bg-blue-50 p-4 rounded-lg my-6 text-left">
-                      <p className="text-sm font-medium text-blue-800">
-                        <strong>Note:</strong> The application type, platform,
-                        description, and project complexity are considered when
-                        calculating the timeline. This is an estimate to give
-                        you an idea of the possible time range for your project.
-                        For a more accurate estimate, consult with our
-                        specialist.
-                      </p>
-                    </div>
+                  <div className="bg-blue-50 p-4 rounded-lg mb-6 text-left">
+                    <p className="text-sm text-blue-800">
+                      <strong>Note:</strong> The application type, platform,
+                      description, and project complexity are considered when
+                      calculating the timeline. This is an estimate to give you
+                      an idea of the possible time range for your project. For a
+                      more accurate estimate, consult with our specialist.
+                    </p>
                   </div>
                 </div>
-              ) : (
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl border shadow-lg p-8">
+                <h2 className="text-center text-3xl font-semibold mb-2">
+                  Estimate Results
+                </h2>
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                        <Star className="w-12 h-12 text-white" />
+                        <Sparkles className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -363,34 +375,34 @@ const RoiCalculator = () => {
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form on the left and your instant ROI
-                      estimate will magically appear here ✨
+                      Fill out the form on the left and your instant estimate
+                      will magically appear here ✨
                     </p>
 
                     <button
-                      onClick={() => document?.querySelector("select")?.focus()}
+                      onClick={() => document.querySelector("select")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
                       &lArr; Start by selecting your project details
                     </button>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
       <ToolFAQs />
-      {results && openPopup && !hasVisited && (
+      {result && openPopup && !hasVisited && (
         <ToolsPopupContactForm
           open={openPopup}
           handleClose={() => setOpenPopup(false)}
-          result={results}
-          setResult={setResults}
+          result={result}
+          setResult={setResult}
         />
       )}
     </>
   );
 };
 
-export default RoiCalculator;
+export default AppDevelopmentTimelineCalculator;

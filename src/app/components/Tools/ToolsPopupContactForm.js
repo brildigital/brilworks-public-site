@@ -1,7 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { IconButton } from "@material-tailwind/react";
-import { AlertCircle, DollarSign, Lock, Star, Wallet, X } from "lucide-react";
+import {
+  AlertCircle,
+  Calendar,
+  CheckCircle,
+  Clock,
+  DollarSign,
+  Lock,
+  Star,
+  Target,
+  TrendingUp,
+  Wallet,
+  X,
+} from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
 import { markFormSubmitted } from "../lib/commonFunction";
@@ -118,6 +130,93 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/app-development-timeline-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="text-center mb-8">
+            <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-6">
+              {result?.estimatedTime}
+            </div>
+
+            <div className="bg-blue-50 p-4 rounded-lg mb-6 text-left w-full md:w-5/6 mx-auto">
+              <p className="text-sm font-medium text-blue-800">
+                <strong>Note:</strong> The application type, platform,
+                description, and project complexity are considered when
+                calculating the timeline. This is an estimate to give you an
+                idea of the possible time range for your project. For a more
+                accurate estimate, consult with our specialist.
+              </p>
+            </div>
+          </div>
+        );
+      case "/tools/mvp-launch-timeline-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="text-center mb-8">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl p-4 text-center border shadow-md">
+                <Clock className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                <div className="text-2xl font-semibold text-gray-900">
+                  {result.duration}
+                </div>
+                <div className="text-sm text-gray-600 font-medium">
+                  Total Timeline
+                </div>
+              </div>
+              <div className="rounded-2xl p-4 text-center border shadow-md">
+                <TrendingUp className="w-6 h-6 text-green-600 mx-auto mb-2" />
+                <div className="text-2xl font-semibold text-gray-900">
+                  {result.cost}
+                </div>
+                <div className="text-sm font-medium text-gray-600">
+                  Estimated Cost
+                </div>
+              </div>
+            </div>
+            {/* <div className="bg-white rounded-2xl p-4 mt-4 border shadow-md">
+              <h4 className="font-bold text-gray-900 mb-4">
+                Development Phases
+              </h4>
+              <div className="w-full">
+                {result.phases.map((phase, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between p-2 mb-1 bg-gray-50 rounded-lg"
+                  >
+                    <span className="font-medium text-gray-900">
+                      {phase.name}
+                    </span>
+                    <span className="text-blue-600 font-semibold">
+                      {phase.weeks} weeks
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+
+            <div className="bg-blue-50 p-4 rounded-lg mb-6 text-left w-full mt-4 mx-auto">
+              <p className="text-sm font-medium text-blue-800">
+                <strong>Note:</strong> The project type, complexity, team size,
+                budget and project description are considered when calculating
+                the timeline. This is an estimate to give you an idea of the
+                possible time range for your project. For a more accurate
+                estimate, consult with our specialist.
+              </p>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -128,7 +227,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
           </div>
         ) : (
-          `$${result.cost.toLocaleString()}`
+          <p className="text-5xl">${result.cost.toLocaleString()}</p>
         );
     }
   };
@@ -187,22 +286,35 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               ) : (
                 <>
                   <div className="flex justify-center mb-4">
-                    <Wallet className="h-12 w-12 text-indigo-500" />
+                    {pathname ===
+                      "/tools/app-development-timeline-calculator/" ||
+                    pathname === "/tools/mvp-launch-timeline-estimator/" ? (
+                      <Calendar className="h-12 w-12 text-indigo-500" />
+                    ) : (
+                      <Wallet className="h-12 w-12 text-indigo-500" />
+                    )}
                   </div>
                   <h2 className="text-3xl font-bold">
                     Your Estimated{" "}
-                    {pathname === "/tools/roi-calculator/" ? "ROI" : "Cost"}
+                    {pathname === "/tools/roi-calculator/"
+                      ? "ROI"
+                      : pathname ===
+                          "/tools/app-development-timeline-calculator/" ||
+                        pathname === "/tools/mvp-launch-timeline-estimator/"
+                      ? "Timeline"
+                      : "Cost"}
                   </h2>
                 </>
               )}
               <div
                 className={`${
                   (pathname === "/tools/roi-calculator/" ||
-                    pathname === "/tools/app-maintenance-cost-estimator/") &&
+                    pathname === "/tools/app-maintenance-cost-estimator/" ||
+                    pathname === "/tools/mvp-launch-timeline-estimator/") &&
                   showPrice
                     ? "max-w-[80%] mx-auto"
                     : "flex items-center justify-center"
-                } text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4`}
+                } font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4`}
               >
                 {renderPrice()}
               </div>
@@ -224,6 +336,9 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     <li>• Proactive monitoring prevents major issues</li>
                   </ul>
                 </div>
+              ) : pathname === "/tools/app-development-timeline-calculator/" ||
+                pathname === "/tools/mvp-launch-timeline-estimator/" ? (
+                ""
               ) : (
                 <p className="text-gray-600 max-w-md mx-auto">
                   The platform, design requirement, description, and project

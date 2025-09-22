@@ -59,6 +59,30 @@ const toolsData = [
     link: "/tools/app-maintenance-cost-estimator/",
     tags: ["DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "App Development Timeline Calculator",
+    description:
+      "Get accurate time estimates for building your app based on features, complexity, and team size.",
+    bg: "bg-green-200",
+    link: "/tools/app-development-timeline-calculator/",
+    tags: ["SALES", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "MVP Launch Timeline Estimator",
+    description:
+      "Quickly predict how many weeks your MVP will take to design, develop, and launch. Perfect for founders planning budgets, milestones, and product roadmaps.",
+    bg: "bg-yellow-200",
+    link: "/tools/mvp-launch-timeline-estimator/",
+    tags: ["SALES", "BUSINESS", "OTHER"],
+  },
+  // {
+  //   title: "Feature Complexity vs Time Estimator",
+  //   description:
+  //     "Quickly predict how many weeks your MVP will take to design, develop, and launch. Perfect for founders planning budgets, milestones, and product roadmaps.",
+  //   bg: "bg-pink-200",
+  //   link: "/tools/mvp-launch-timeline-estimator/",
+  //   tags: ["SALES", "BUSINESS", "OTHER"],
+  // },
 ];
 
 const Tools = () => {

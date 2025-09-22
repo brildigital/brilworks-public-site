@@ -84,15 +84,6 @@ const AppMaintenanceCostEstimator = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureId) => {
-    setFormData((prev) => ({
-      ...prev,
-      features: prev.features.includes(featureId)
-        ? prev.features.filter((id) => id !== featureId)
-        : [...prev.features, featureId],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);

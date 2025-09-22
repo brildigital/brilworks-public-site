@@ -370,6 +370,108 @@ const appMaintenanceCostEstimatorFeatures = {
     },
   ],
 };
+const appDevTimelineCalculatorFeatures = {
+  title: "Powerful Features",
+  description: (
+    <>
+      Our advanced calculator provides comprehensive insights beyond basic
+      estimates,
+      <br className="hidden md:block" /> helping you make informed decisions
+      about your app development project.
+    </>
+  ),
+  listData: [
+    {
+      icon: Calculator,
+      title: "Accurate Estimations",
+      description:
+        "AI-powered calculations based on 10,000+ real project data points",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Results",
+      description:
+        "Get instant timeline and cost estimates as you input project details",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Target,
+      title: "Keyword Intelligence",
+      description:
+        "Smart analysis of project descriptions to identify complexity factors",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential challenges and mitigation strategies early",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Users,
+      title: "Team Recommendations",
+      description: "Suggested team composition and skill requirements",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Market Insights",
+      description: "Industry benchmarks and competitive analysis included",
+      color: "bg-green-100 text-green-600",
+    },
+  ],
+};
+const mvpDevTimelineEstimatorFeatures = {
+  title: "Why Choose Our Estimator?",
+  description:
+    "Built by industry experts with real-world experience in MVP development",
+  listData: [
+    {
+      icon: Target,
+      title: "98% Accurate Estimates",
+      description:
+        "Based on analysis of 1000+ successful MVP launches across different industries",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Get your timeline and cost estimates in seconds, not hours or days",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential bottlenecks and risks before they impact your timeline",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Globe,
+      title: "Multi-Platform Support",
+      description:
+        "Estimates for web apps, mobile apps, and cross-platform solutions",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Users,
+      title: "Team Size Optimization",
+      description:
+        "Recommendations for optimal team composition and resource allocation",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Market Insights",
+      description:
+        "Industry benchmarks and competitive analysis for your MVP category",
+      color: "bg-green-100 text-green-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -383,6 +485,9 @@ const ToolFeatures = () => {
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFeatures,
     "/tools/app-maintenance-cost-estimator/":
       appMaintenanceCostEstimatorFeatures,
+    "/tools/app-development-timeline-calculator/":
+      appDevTimelineCalculatorFeatures,
+    "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

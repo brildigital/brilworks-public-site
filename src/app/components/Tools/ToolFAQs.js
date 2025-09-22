@@ -241,6 +241,76 @@ const appMaintenanceCostEstimatorFaqData = {
     },
   ],
 };
+const appDevTimelineCalculatorFaqData = {
+  description: "Get answers to common questions about our timeline calculator",
+  queAns: [
+    {
+      question: "How accurate are the timeline estimates?",
+      answer:
+        "Our estimates are based on analysis of over 10,000 completed projects and have an accuracy rate of 85-90%. The tool considers multiple variables including complexity, features, and team experience to provide realistic projections.",
+    },
+    {
+      question: "What factors influence the cost calculation?",
+      answer:
+        "Cost calculations consider app type, target platforms, feature complexity, timeline requirements, team location, and specific keywords in your description that indicate advanced functionality like AI, blockchain, or real-time features.",
+    },
+    {
+      question: "Can I customize the timeline for urgent projects?",
+      answer:
+        "Yes, you can select 'Urgent' timeline which typically increases costs by 30% but reduces delivery time. We'll provide recommendations on team scaling and resource allocation needed to meet tight deadlines.",
+    },
+    {
+      question: "Does the tool account for different development approaches?",
+      answer:
+        "Absolutely. The calculator considers native vs cross-platform development, MVP vs full-featured launches, and agile vs waterfall methodologies to provide tailored estimates for your specific approach.",
+    },
+    {
+      question: "How does keyword analysis affect pricing?",
+      answer:
+        "Our AI analyzes your project description for complexity indicators like 'machine learning', 'real-time', 'blockchain', etc. These keywords trigger multipliers based on historical data showing how such features impact development time and cost.",
+    },
+    {
+      question: "Can I export or share the estimates?",
+      answer:
+        "Yes, you can generate detailed PDF reports with your estimates, recommendations, and project breakdown that can be shared with stakeholders or used for budget planning and proposals.",
+    },
+  ],
+};
+const mvpDevTimelineEstimatorFaqData = {
+  description: "Everything you need to know about MVP timeline estimation",
+  queAns: [
+    {
+      question: "How accurate are the timeline estimates?",
+      answer:
+        "Our estimates are based on analysis of over 1000 successful MVP launches and have a 98% accuracy rate. However, actual timelines may vary based on scope changes, team dynamics, and unforeseen challenges.",
+    },
+    {
+      question: "What factors influence the cost calculation?",
+      answer:
+        "Cost is calculated based on project complexity, feature set, team size, technology stack, and specific keywords in your description that indicate advanced technologies like AI, blockchain, or real-time features.",
+    },
+    {
+      question: "Can I get estimates for different team sizes?",
+      answer:
+        "Yes! Our calculator adjusts timelines and costs based on team size. Smaller teams generally take longer but cost less, while larger teams can deliver faster but at higher cost.",
+    },
+    {
+      question: "Do you provide estimates for specific industries?",
+      answer:
+        "Our algorithm considers industry-specific factors automatically. Keywords in your project description help us adjust estimates for fintech, healthcare, e-commerce, and other regulated industries.",
+    },
+    {
+      question: "What's included in the development phases?",
+      answer:
+        "Each phase includes: Planning & Research (requirements, user stories), Design & Prototyping (UI/UX, wireframes), Development (coding, integration), and Testing & Launch (QA, deployment, monitoring).",
+    },
+    {
+      question: "Can I get a more detailed breakdown?",
+      answer:
+        "Yes! After getting your initial estimate, you can request a detailed project plan that includes specific deliverables, milestones, and resource allocation for each phase.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -261,6 +331,9 @@ const ToolFAQs = () => {
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorFaqData,
     "/tools/app-maintenance-cost-estimator/":
       appMaintenanceCostEstimatorFaqData,
+    "/tools/app-development-timeline-calculator/":
+      appDevTimelineCalculatorFaqData,
+    "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

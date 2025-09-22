@@ -83,7 +83,7 @@ const ToolHerosection = ({
             <div className="relative group">
               {/* Floating decorative elements */}
               <Image
-                className="rounded-2xl md:h-[550px] h-[380px] object-cover"
+                className="rounded-2xl md:h-[565px] h-[380px] object-cover"
                 src={imageSrc}
                 alt="tool-banner"
                 width="565"

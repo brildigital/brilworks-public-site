@@ -199,6 +199,60 @@ const appMaintenanceCostEstimatorSteps = {
     },
   ],
 };
+const appDevTimelineCalculatorSteps = {
+  title: "How It Works",
+  description:
+    "Get accurate app development estimates in 4 simple steps. Our AI-powered calculator analyzes your requirements and provides detailed insights.",
+  listData: [
+    {
+      icon: Settings,
+      title: "Define Your Project",
+      description: "Select app type, target platforms, and core features",
+    },
+    {
+      icon: Target,
+      title: "Specify Requirements",
+      description:
+        "Choose complexity level, timeline preferences, and budget range",
+    },
+    {
+      icon: FileText,
+      title: "Add Description",
+      description:
+        "Describe your app concept with key features and functionality",
+    },
+    {
+      icon: DollarSign,
+      title: "Get Estimates",
+      description:
+        "Receive detailed timeline, cost, and resource recommendations",
+    },
+  ],
+};
+const mvpDevTimelineEstimatorSteps = {
+  title: "How It Works",
+  description: "Get your MVP timeline estimate in 3 simple steps",
+  listData: [
+    {
+      icon: Code,
+      title: "Input Requirements",
+      description:
+        "Tell us about your project type, complexity, and desired features",
+    },
+    {
+      icon: Zap,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your requirements against our database of 1000+ projects",
+    },
+    {
+      icon: TrendingUp,
+      title: "Get Estimates",
+      description:
+        "Receive detailed timeline, cost breakdown, and development phases",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -211,6 +265,9 @@ const ToolHowToUse = () => {
     "/tools/saas-development-cost-calculator/": SaasDevCostCalculatorSteps,
     "/tools/mvp-development-cost-calculator/": mvpDevCostCalculatorSteps,
     "/tools/app-maintenance-cost-estimator/": appMaintenanceCostEstimatorSteps,
+    "/tools/app-development-timeline-calculator/":
+      appDevTimelineCalculatorSteps,
+    "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
