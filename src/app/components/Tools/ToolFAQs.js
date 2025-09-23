@@ -387,6 +387,144 @@ const testingQATimelineEstimatorFaqData = {
     },
   ],
 };
+const goToMarketPlacePlannerFaqData = {
+  description:
+    "Everything you need to know about our Go-to-Market Timeline Planner",
+  queAns: [
+    {
+      question: "How accurate is the Go-to-Market Timeline Planner?",
+      answer:
+        "Our planner uses advanced AI algorithms trained on thousands of successful product launches. It has a 95% accuracy rate in predicting realistic timelines and identifying potential roadblocks. The system continuously learns and improves its predictions based on real-world outcomes.",
+    },
+    {
+      question: "What industries does the planner support?",
+      answer:
+        "The planner supports all major industries including Technology, Healthcare, Finance, Retail, Manufacturing, and more. Our AI adapts the timeline recommendations based on industry-specific patterns, regulations, and market dynamics.",
+    },
+    {
+      question: "Can I modify the timeline after it's generated?",
+      answer:
+        "Absolutely! The generated timeline serves as a starting point. You can adjust milestones, add custom phases, and modify durations based on your specific requirements. The system will automatically recalculate risk assessments and success probabilities.",
+    },
+    {
+      question: "How does the keyword analysis in the description field work?",
+      answer:
+        'Our AI analyzes your project description for complexity indicators, urgency markers, and innovation keywords. Words like "complex," "enterprise," or "compliance" may extend timelines, while "urgent" or "MVP" might compress them. This helps create more accurate, context-aware predictions.',
+    },
+    {
+      question: "Is there team collaboration support?",
+      answer:
+        "Yes! You can share your timeline with team members, assign responsibilities for each phase, and track progress in real-time. Stakeholders can view the timeline, add comments, and receive notifications about milestone completions.",
+    },
+    {
+      question: "What happens if my launch gets delayed?",
+      answer:
+        "The planner includes contingency planning features. If delays occur, you can input the new constraints, and the AI will automatically adjust the remaining timeline, redistribute resources, and suggest recovery strategies to minimize impact on your launch date.",
+    },
+    {
+      question: "Do you provide support during the planning process?",
+      answer:
+        "Yes! We offer comprehensive support including detailed documentation, video tutorials, best practice guides, and direct access to our product launch experts. Our team is available to help you optimize your timeline and strategy.",
+    },
+    {
+      question: "Can I export or integrate the timeline with other tools?",
+      answer:
+        "Absolutely! You can export your timeline to popular project management tools like Asana, Trello, or Jira. We also provide API access for custom integrations with your existing workflow systems.",
+    },
+  ],
+};
+const techStackRecommenderFaqData = {
+  description:
+    "Get answers to common questions about our Testing & QA Timeline Calculator",
+  queAns: [
+    {
+      question: "How accurate is the Testing & QA Timeline Calculator?",
+      answer:
+        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+    },
+    {
+      question: "What factors does the calculator consider?",
+      answer:
+        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+    },
+    {
+      question: "Can I use this calculator for agile projects?",
+      answer:
+        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
+    },
+    {
+      question: "How does the keyword analysis work?",
+      answer:
+        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+    },
+    {
+      question: "What testing types are supported?",
+      answer:
+        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
+    },
+    {
+      question: "Can I export or share my results?",
+      answer:
+        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
+    },
+    {
+      question: "Is there a limit to how many calculations I can perform?",
+      answer:
+        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
+    },
+    {
+      question: "How often is the calculator updated with new data?",
+      answer:
+        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+    },
+  ],
+};
+const databaseSelectorToolFaqData = {
+  description:
+    "Get answers to common questions about our Testing & QA Timeline Calculator",
+  queAns: [
+    {
+      question: "How accurate is the Testing & QA Timeline Calculator?",
+      answer:
+        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+    },
+    {
+      question: "What factors does the calculator consider?",
+      answer:
+        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+    },
+    {
+      question: "Can I use this calculator for agile projects?",
+      answer:
+        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
+    },
+    {
+      question: "How does the keyword analysis work?",
+      answer:
+        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+    },
+    {
+      question: "What testing types are supported?",
+      answer:
+        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
+    },
+    {
+      question: "Can I export or share my results?",
+      answer:
+        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
+    },
+    {
+      question: "Is there a limit to how many calculations I can perform?",
+      answer:
+        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
+    },
+    {
+      question: "How often is the calculator updated with new data?",
+      answer:
+        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -413,6 +551,9 @@ const ToolFAQs = () => {
     "/tools/feature-complexity-vs-time-estimator/":
       featureComplexityVsTimelineEstimatorFaqData,
     "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorFaqData,
+    "/tools/go-to-market-timeline-planner/": goToMarketPlacePlannerFaqData,
+    "/tools/tech-stack-recommender/": techStackRecommenderFaqData,
+    "/tools/database-selector-tool/": databaseSelectorToolFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

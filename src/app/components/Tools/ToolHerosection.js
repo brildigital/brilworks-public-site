@@ -45,11 +45,24 @@ const ToolHerosection = ({
               </div>
             )}
             {statsGird?.length && (
-              <div className="w-full md:w-[85%] grid grid-cols-1 md:grid-cols-3 justify-start gap-6 text-gray-300">
+              <div
+                className={`w-full md:w-[85%] grid grid-cols-1 ${
+                  statsGird?.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+                } justify-start gap-6 text-gray-300`}
+              >
                 {statsGird.map((stat, index) => (
-                  <div key={index} className="text-center group">
+                  <div
+                    key={index}
+                    className={`${
+                      statsGird?.length === 2 ? "text-start" : "text-center"
+                    }  group`}
+                  >
                     <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
-                      <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-2">
+                      <div
+                        className={`${
+                          statsGird?.length === 2 ? "text-xl" : "text-2xl"
+                        } font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-2`}
+                      >
                         {stat.value}
                       </div>
                       <div className="text-sm text-[#94a3b8]">{stat.label}</div>

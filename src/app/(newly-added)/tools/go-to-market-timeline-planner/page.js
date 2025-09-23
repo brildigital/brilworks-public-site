@@ -1,5 +1,5 @@
 import React from "react";
-import TestingQATimelineEstimator from "@/app/components/Tools/TestingQATimelineEstimator";
+import GoToMarketTimelinePlanner from "@/app/components/Tools/GoToMarketTimelinePlanner";
 
 export const metadata = {
   title: "Go-to-Market Timeline Planner",
@@ -23,7 +23,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return <TestingQATimelineEstimator />;
+  return <GoToMarketTimelinePlanner />;
 };
 
 export default page;

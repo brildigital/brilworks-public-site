@@ -23,6 +23,7 @@ import {
   Wrench,
   Layers,
   Brain,
+  CheckCircle,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -572,6 +573,174 @@ const testingQATimelineEstimatorFeatures = {
     },
   ],
 };
+const goToMarketPlacePlannerFeatures = {
+  title: "Powerful Features for Accurate Estimates",
+  description:
+    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  listData: [
+    {
+      icon: Brain,
+      title: "AI-Powered Intelligence",
+      description:
+        "Advanced algorithms analyze market patterns and optimize your timeline for maximum success probability.",
+      color: "bg-blue-100 text-blue-500",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Timeline Adjustment",
+      description:
+        "Dynamic timeline updates based on market changes and milestone completions.",
+      color: "bg-teal-100 text-teal-500",
+    },
+    {
+      icon: Target,
+      title: "Market-Specific Optimization",
+      description:
+        "Tailored strategies for different industries, markets, and product categories.",
+      color: "bg-orange-100 text-orange-500",
+    },
+    {
+      icon: BarChart3,
+      title: "Performance Analytics",
+      description:
+        "Track progress with detailed analytics and predictive success metrics.",
+      color: "bg-green-100 text-green-500",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential roadblocks and receive mitigation strategies before they impact your launch.",
+      color: "bg-purple-100 text-purple-500",
+    },
+    {
+      icon: Users,
+      title: "Team Collaboration",
+      description:
+        "Share timelines with stakeholders and track team progress in real-time.",
+      color: "bg-pink-100 text-pink-500",
+    },
+    {
+      icon: TrendingUp,
+      title: "Success Optimization",
+      description:
+        "Continuous learning from successful launches to improve your timeline accuracy.",
+      color: "bg-indigo-100 text-indigo-500",
+    },
+    {
+      icon: CheckCircle,
+      title: "Milestone Tracking",
+      description:
+        "Clear checkpoints with actionable tasks and success criteria for each phase.",
+      color: "bg-cyan-100 text-cyan-500",
+    },
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Generate comprehensive timelines in seconds, not weeks of planning.",
+      color: "bg-yellow-100 text-yellow-500",
+    },
+  ],
+};
+const techStackRecommenderFeatures = {
+  title: "Powerful Features for Accurate Estimates",
+  description:
+    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  listData: [
+    {
+      icon: Brain,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Calculations",
+      description:
+        "Instant timeline updates as you modify project parameters and requirements.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Historical Data Insights",
+      description:
+        "Leverage industry benchmarks and historical project data for accurate predictions.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and buffer time recommendations for your testing phases.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Target,
+      title: "Precision Planning",
+      description:
+        "Break down testing phases with detailed task allocation and resource planning.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: Layers,
+      title: "Multi-level Testing",
+      description:
+        "Support for unit, integration, system, and acceptance testing timeline calculations.",
+      color: "bg-orange-100 text-orange-600",
+    },
+  ],
+};
+const databaseSelectorToolFeatures = {
+  title: "Powerful Features for Accurate Estimates",
+  description:
+    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  listData: [
+    {
+      icon: Brain,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Calculations",
+      description:
+        "Instant timeline updates as you modify project parameters and requirements.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Historical Data Insights",
+      description:
+        "Leverage industry benchmarks and historical project data for accurate predictions.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and buffer time recommendations for your testing phases.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Target,
+      title: "Precision Planning",
+      description:
+        "Break down testing phases with detailed task allocation and resource planning.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: Layers,
+      title: "Multi-level Testing",
+      description:
+        "Support for unit, integration, system, and acceptance testing timeline calculations.",
+      color: "bg-orange-100 text-orange-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -591,6 +760,9 @@ const ToolFeatures = () => {
     "/tools/feature-complexity-vs-time-estimator/":
       featureComplexityVsTimelineEstimatorFeatures,
     "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorFeatures,
+    "/tools/go-to-market-timeline-planner/": goToMarketPlacePlannerFeatures,
+    "/tools/tech-stack-recommender/": techStackRecommenderFeatures,
+    "/tools/database-selector-tool/": databaseSelectorToolFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

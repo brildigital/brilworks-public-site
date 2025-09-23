@@ -1,6 +1,7 @@
 import React from "react";
 import {
   ArrowRight,
+  BarChart3,
   Calculator,
   CheckCircle,
   Clock,
@@ -8,6 +9,7 @@ import {
   DollarSign,
   FileText,
   Layers,
+  Rocket,
   Settings,
   Smartphone,
   Target,
@@ -316,6 +318,97 @@ const testingQATimelineEstimatorSteps = {
     },
   ],
 };
+const goToMarketPlacePlannerSteps = {
+  title: "How Our Go-to-Market Planner Works",
+  description:
+    "Follow these simple steps to create a comprehensive timeline that ensures your product launch success",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Your Details",
+      description:
+        "Provide information about your product, target market, and business objectives.",
+    },
+    {
+      icon: Settings,
+      title: "AI Analysis",
+      description:
+        "Our advanced algorithm analyzes your inputs and industry benchmarks.",
+    },
+    {
+      icon: BarChart3,
+      title: "Timeline Generation",
+      description:
+        "Receive a customized timeline with milestones and critical path analysis.",
+    },
+    {
+      icon: Rocket,
+      title: "Execute & Launch",
+      description:
+        "Follow your optimized roadmap to achieve a successful market entry.",
+    },
+  ],
+};
+const techStackRecommenderSteps = {
+  title: "How to Calculate Your Testing Timeline",
+  description:
+    "Follow these simple steps to get accurate testing estimates for your project",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Project Details",
+      description:
+        "Enter your project requirements, complexity, and testing scope.",
+    },
+    {
+      icon: Settings,
+      title: "Configure Parameters",
+      description: "Set testing types, team size, and quality requirements.",
+    },
+    {
+      icon: Calculator,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs and industry benchmarks.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Timeline",
+      description:
+        "Receive detailed timeline breakdown with actionable insights.",
+    },
+  ],
+};
+const databaseSelectorToolSteps = {
+  title: "How to Calculate Your Testing Timeline",
+  description:
+    "Follow these simple steps to get accurate testing estimates for your project",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Project Details",
+      description:
+        "Enter your project requirements, complexity, and testing scope.",
+    },
+    {
+      icon: Settings,
+      title: "Configure Parameters",
+      description: "Set testing types, team size, and quality requirements.",
+    },
+    {
+      icon: Calculator,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs and industry benchmarks.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Timeline",
+      description:
+        "Receive detailed timeline breakdown with actionable insights.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -334,6 +427,9 @@ const ToolHowToUse = () => {
     "/tools/feature-complexity-vs-time-estimator/":
       featureComplexityVsTimelineEstimatorSteps,
     "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorSteps,
+    "/tools/go-to-market-timeline-planner/": goToMarketPlacePlannerSteps,
+    "/tools/tech-stack-recommender/": techStackRecommenderSteps,
+    "/tools/database-selector-tool/": databaseSelectorToolSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
