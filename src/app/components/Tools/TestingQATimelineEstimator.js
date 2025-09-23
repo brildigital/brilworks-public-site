@@ -2,38 +2,28 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import {
-  Calculator,
-  CheckCircle,
-  Clock,
-  Loader2,
-  Sparkles,
-  TrendingUp,
-} from "lucide-react";
+import { Award, Calculator, Loader2, Sparkles, Users, Zap } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  mvpDevelopmentTimelineCalculate,
-  saasDevelopmentFeatures,
-} from "../lib/saasDevCostCalculatorService";
+import { calculateTestingTimelineEstimate } from "../lib/featureComplexityVsTimelineEstimatorService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const MVPLaunchTimelineEstimator = () => {
+const TestingQATimelineEstimator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
-    projectType: "",
+    projectSize: "",
     complexity: "",
-    features: [],
+    testingTypes: [],
     teamSize: "",
-    budget: "",
+    experience: "",
     description: "",
   });
 
@@ -41,11 +31,11 @@ const MVPLaunchTimelineEstimator = () => {
 
   const isFormValid = () => {
     return (
-      formData?.projectType &&
+      formData?.projectSize &&
       formData?.complexity &&
-      formData?.features.length > 0 &&
+      formData?.testingTypes.length > 0 &&
       formData?.teamSize &&
-      formData?.budget &&
+      formData?.experience &&
       formData?.description.trim()
     );
   };
@@ -62,7 +52,7 @@ const MVPLaunchTimelineEstimator = () => {
 
     setIsCalculating(true);
 
-    const resultData = mvpDevelopmentTimelineCalculate(formData);
+    const resultData = calculateTestingTimelineEstimate(formData);
     setResult(resultData);
 
     setTimeout(() => {
@@ -77,12 +67,12 @@ const MVPLaunchTimelineEstimator = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureId) => {
+  const handleFeatureChange = (featureName) => {
     setFormData((prev) => ({
       ...prev,
-      features: prev.features.includes(featureId)
-        ? prev.features.filter((id) => id !== featureId)
-        : [...prev.features, featureId],
+      testingTypes: prev.testingTypes.includes(featureName)
+        ? prev.testingTypes.filter((feature) => feature !== featureName)
+        : [...prev.testingTypes, featureName],
     }));
   };
 
@@ -102,28 +92,49 @@ const MVPLaunchTimelineEstimator = () => {
       <ToolHerosection
         title={
           <>
-            Launch Your
+            Testing & QA Timeline
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              &nbsp;MVP&nbsp;
+              &nbsp;Calculator
             </span>
-            <br className="md:block hidden" />
-            on Time & Budget
           </>
         }
         buttonText="Calculate Timeline"
         description={
           <>
-            Get accurate timeline and cost estimates for your MVP launch.{" "}
-            <br className="md:block hidden" />
-            Our AI-powered calculator analyzes your requirements and provides
-            realistic projections based on 1000+ successful launches.
+            Accurately estimate testing timelines for your projects with our
+            intelligent calculator. Save time, improve planning, and deliver
+            quality software on schedule.
           </>
         }
-        imageSrc="/images/v2/mvp-launch-timeline-banner.webp"
+        imageSrc="/images/v2/testing-qa-timeline-estimator-banner.webp"
         statsGird={[
-          { value: "98%", label: "Accuracy Rate" },
-          { value: "15 Days", label: "Average Saved" },
-          { value: "$50K", label: "Cost Saved" },
+          {
+            value: (
+              <p className="flex items-center justify-center text-green-600 text-center gap-1.5">
+                <Award className="h-6 w-6" />
+                99%
+              </p>
+            ),
+            label: "Accuracy",
+          },
+          {
+            value: (
+              <p className="flex items-center justify-center text-yellow-500 text-center gap-1.5">
+                <Users className="h-6 w-6" />
+                10K+
+              </p>
+            ),
+            label: "Users",
+          },
+          {
+            value: (
+              <p className="flex items-center justify-center text-orange-600 text-center gap-1.5">
+                <Zap className="h-6 w-6" />
+                5min
+              </p>
+            ),
+            label: "Setup",
+          },
         ]}
       />
       <ToolHowToUse />
@@ -141,40 +152,41 @@ const MVPLaunchTimelineEstimator = () => {
               </div>
             </div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              MVP Timeline Calculator
+              Testing & QA Timeline Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Enter your project details to get accurate timeline and cost
-              estimates.
+              Get instant timeline estimates based on your project requirements
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Calculator Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-2.5">
-              {/* Platform */}
-
+              <h2 className="text-center text-2xl font-semibold mb-2">
+                Project Details
+              </h2>
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Project Type <span className="text-red-500">*</span>
+                <label className="font-semibold text-gray-600">
+                  Project size <span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.projectType}
+                  value={formData.projectSize}
                   onChange={(e) =>
-                    handleInputChange("projectType", e.target.value)
+                    handleInputChange("projectSize", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select your project type</option>
+                  <option value="">Select your project size</option>
 
-                  <option value="web">Web Application</option>
-                  <option value="mobile">Mobile App (iOS/Android)</option>
-                  <option value="both">Web & Mobile</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="enterprise">Enterprise</option>
                 </select>
               </div>
 
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
+                <label className="font-semibold text-gray-600">
                   Complexity Level <span className="text-red-500">*</span>
                 </label>
 
@@ -186,29 +198,37 @@ const MVPLaunchTimelineEstimator = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select complexity</option>
-                  <option value="simple">Simple (Basic features)</option>
-                  <option value="medium">Moderate (Standard features)</option>
-                  <option value="complex">Complex (Advanced features)</option>
+                  <option value="simple">Simple</option>
+                  <option value="medium">Moderate </option>
+                  <option value="high">High</option>
+                  <option value="critical">Critical</option>
                 </select>
               </div>
 
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Key Features <span className="text-red-500">*</span>
+                <label className="font-semibold text-gray-600">
+                  Testing Types <span className="text-red-500">*</span>
                 </label>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {saasDevelopmentFeatures?.map((feature) => (
+                  {[
+                    "functional",
+                    "performance",
+                    "security",
+                    "usability",
+                    "integration",
+                    "regression",
+                  ]?.map((feature) => (
                     <label
-                      key={feature.id}
+                      key={feature}
                       className="flex items-center space-x-3 cursor-pointer"
                     >
                       <input
                         type="checkbox"
-                        checked={formData.features.includes(feature?.id)}
-                        onChange={() => handleFeatureChange(feature?.id)}
+                        checked={formData.testingTypes.includes(feature)}
+                        onChange={() => handleFeatureChange(feature)}
                         className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
                       />
-                      <span>{feature?.label}</span>
+                      <span className="capitalize">{feature}</span>
                     </label>
                   ))}
                 </div>
@@ -218,7 +238,7 @@ const MVPLaunchTimelineEstimator = () => {
 
               {/* Design Requirements */}
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
+                <label className="font-semibold text-gray-600">
                   Team Size <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -229,41 +249,43 @@ const MVPLaunchTimelineEstimator = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select team size</option>
-                  <option value="small">Small (2-3 developers)</option>
-                  <option value="medium">Medium (4-6 developers)</option>
-                  <option value="large">Large (7+ developers)</option>
+                  <option value="2">Small (2-3 developers)</option>
+                  <option value="4">Medium (4-6 developers)</option>
+                  <option value="7">Large (7+ developers)</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Budget Range<span className="text-red-500">*</span>
+                <label className="font-semibold text-gray-600">
+                  Team Experience<span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.budget}
-                  onChange={(e) => handleInputChange("budget", e.target.value)}
+                  value={formData.experience}
+                  onChange={(e) =>
+                    handleInputChange("experience", e.target.value)
+                  }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select budget range</option>
-                  <option value="under-25k">Under $25,000</option>
-                  <option value="25k-50k">$25,000 - $50,000</option>
-                  <option value="50k-100k">$50,000 - $100,000</option>
-                  <option value="over-100k">Over $100,000</option>
+                  <option value="">Select experience level</option>
+                  <option value="junior">Junior (0-2 years)</option>
+                  <option value="mid">Mid-level (2-5 years)</option>
+                  <option value="senior">Senior (5+ years)</option>
+                  <option value="expert">Expert (10+ years)</option>
                 </select>
               </div>
 
               {/* Project Description */}
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Description <span className="text-red-500">*</span>
+                <label className="font-medium text-gray-600">
+                  Project Description <span className="text-red-500">*</span>
                 </label>
                 <textarea
-                  value={formData.description}
+                  value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your app idea..."
+                  placeholder="Describe your feature..."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
@@ -283,7 +305,7 @@ const MVPLaunchTimelineEstimator = () => {
                 ) : (
                   <>
                     <Calculator className="mr-2 h-5 w-5" />
-                    Calculate Timeline & Cost
+                    Calculate Timeline
                   </>
                 )}
               </button>
@@ -292,82 +314,79 @@ const MVPLaunchTimelineEstimator = () => {
             {/* Cost Estimate */}
             {result && hasVisited ? (
               <div className="popup bg-white rounded-2xl border shadow-lg p-8">
-                <h2 className="text-center text-3xl font-semibold mb-4">
-                  Your MVP Estimate
+                <h2 className="text-center text-2xl font-semibold mb-4">
+                  Timeline Results
                 </h2>
 
                 <div className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-2xl p-6 text-center border shadow-md">
-                      <Clock className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-gray-900">
-                        {result.duration}
+                  <div className="grid grid-cols-3 gap-6">
+                    <div className="text-center p-4 bg-blue-50 rounded-xl">
+                      <div className="text-3xl font-bold text-blue-600">
+                        {result.totalHours}
                       </div>
-                      <div className="text-sm text-gray-600">
-                        Total Timeline
-                      </div>
+                      <div className="text-sm text-gray-600">Total Hours</div>
                     </div>
-                    <div className="rounded-2xl p-6 text-center border shadow-md">
-                      <TrendingUp className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-gray-900">
-                        {result.cost}
+                    <div className="text-center p-4 bg-green-50 rounded-xl">
+                      <div className="text-3xl font-bold text-green-600">
+                        {result.totalDays}
                       </div>
-                      <div className="text-sm text-gray-600">
-                        Estimated Cost
+                      <div className="text-sm text-gray-600">Working Days</div>
+                    </div>
+                    <div className="text-center p-4 bg-purple-50 rounded-xl">
+                      <div className="text-3xl font-bold text-purple-600">
+                        {result.totalWeeks}
                       </div>
+                      <div className="text-sm text-gray-600">Weeks</div>
                     </div>
                   </div>
 
                   {/* Phase Breakdown */}
                   <div className="bg-white rounded-2xl p-6 border shadow-md">
                     <h4 className="font-bold text-gray-900 mb-4">
-                      Development Phases
+                      Phase Breakdown
                     </h4>
                     <div className="space-y-1">
-                      {result.phases.map((phase, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
-                        >
-                          <span className="font-medium text-gray-900">
-                            {phase.name}
-                          </span>
-                          <span className="text-blue-600 font-semibold">
-                            {phase.weeks} weeks
-                          </span>
-                        </div>
-                      ))}
+                      {Object.entries(result?.phases || {}).map(
+                        ([phase, hours]) => (
+                          <div
+                            key={phase}
+                            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                          >
+                            <span className="font-medium text-gray-900 capitalize">
+                              {phase.replace(/([A-Z])/g, " $1")}
+                            </span>
+                            <span className="text-blue-600 font-semibold">
+                              {hours} hours
+                            </span>
+                          </div>
+                        )
+                      )}
                     </div>
                   </div>
-
-                  {/* Next Steps */}
-                  <div className="rounded-2xl p-6 border shadow-md">
-                    <h4 className="font-bold text-gray-900 mb-4">
-                      Recommended Next Steps
-                    </h4>
-                    <div className="space-y-2">
-                      {[
-                        "Create detailed user stories and wireframes",
-                        "Define your MVP feature set and prioritize",
-                        "Set up project management and communication tools",
-                        "Begin technical architecture planning",
-                      ].map((step, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center text-gray-700"
-                        >
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
-                          <span className="text-sm">{step}</span>
-                        </div>
-                      ))}
+                  {result.recommendations.length > 0 && (
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Recommendations
+                      </h4>
+                      <ul className="space-y-2">
+                        {result.recommendations.map((rec, index) => (
+                          <li
+                            key={index}
+                            className="text-sm text-gray-600 flex items-start"
+                          >
+                            <span className="text-blue-600 mr-2">•</span>
+                            {rec}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ) : (
               <div className="bg-white rounded-2xl border shadow-lg p-8">
-                <h2 className="text-center text-3xl font-semibold mb-2">
-                  Your MVP Estimate
+                <h2 className="text-center text-2xl font-semibold mb-2">
+                  Timeline Results
                 </h2>
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
@@ -398,27 +417,6 @@ const MVPLaunchTimelineEstimator = () => {
                     >
                       &lArr; Start by selecting your project details
                     </button>
-                    <div className="bg-white rounded-2xl p-6 border">
-                      <h5 className="font-bold text-gray-900 mb-3">
-                        What you'll get:
-                      </h5>
-                      <div className="space-y-2 text-left">
-                        {[
-                          "Accurate timeline breakdown by development phase",
-                          "Cost estimate based on your specific requirements",
-                          "Risk assessment and potential bottlenecks",
-                          "Team size and resource recommendations",
-                        ].map((item, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center text-gray-700"
-                          >
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
-                            <span className="text-sm">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -439,4 +437,4 @@ const MVPLaunchTimelineEstimator = () => {
   );
 };
 
-export default MVPLaunchTimelineEstimator;
+export default TestingQATimelineEstimator;

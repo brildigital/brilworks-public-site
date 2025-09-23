@@ -6,10 +6,8 @@ import {
   Award,
   Calculator,
   Calendar,
-  DollarSign,
   Loader2,
   Sparkles,
-  Target,
   TrendingUp,
   Users,
 } from "lucide-react";

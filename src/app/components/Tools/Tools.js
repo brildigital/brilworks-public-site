@@ -65,7 +65,7 @@ const toolsData = [
       "Get accurate time estimates for building your app based on features, complexity, and team size.",
     bg: "bg-green-200",
     link: "/tools/app-development-timeline-calculator/",
-    tags: ["SALES", "BUSINESS", "OTHER"],
+    tags: ["DEVELOPMENT", "MARKETING", "OTHER"],
   },
   {
     title: "MVP Launch Timeline Estimator",
@@ -73,15 +73,47 @@ const toolsData = [
       "Quickly predict how many weeks your MVP will take to design, develop, and launch. Perfect for founders planning budgets, milestones, and product roadmaps.",
     bg: "bg-yellow-200",
     link: "/tools/mvp-launch-timeline-estimator/",
+    tags: ["SALES", "OTHER"],
+  },
+  {
+    title: "Feature Complexity vs Time Estimator",
+    description:
+      "Visualize how feature complexity impacts development time. Use our estimator to plan realistic timelines, manage resources effectively, and set accurate delivery expectations for your software projects.",
+    bg: "bg-pink-200",
+    link: "/tools/feature-complexity-vs-time-estimator/",
+    tags: ["SALES", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "Testing & QA Timeline Calculator",
+    description:
+      "Easily forecast testing and QA durations based on project scope. Streamline test planning, optimize resources, and deliver reliable, high-quality software with accurate timeline estimates.",
+    bg: "bg-lime-200",
+    link: "/tools/testing-qa-timeline-estimator/",
     tags: ["SALES", "BUSINESS", "OTHER"],
   },
   // {
-  //   title: "Feature Complexity vs Time Estimator",
+  //   title: "Go-to-Market Timeline Planner",
   //   description:
-  //     "Quickly predict how many weeks your MVP will take to design, develop, and launch. Perfect for founders planning budgets, milestones, and product roadmaps.",
-  //   bg: "bg-pink-200",
-  //   link: "/tools/mvp-launch-timeline-estimator/",
-  //   tags: ["SALES", "BUSINESS", "OTHER"],
+  //     "Create a clear launch roadmap. Estimate key milestones, coordinate teams, and stay on track for a successful product release.",
+  //   bg: "bg-cyan-100",
+  //   link: "/tools/go-to-market-timeline-planner/",
+  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
+  // },
+  // {
+  //   title: "Tech Stack Recommender",
+  //   description:
+  //     "Find the best technologies for your app. Get smart, data-driven stack suggestions to match your goals, budget, and scalability needs.",
+  //   bg: "bg-violet-200",
+  //   link: "/tools/tech-stack-recommender/",
+  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
+  // },
+  // {
+  //   title: "Database Selector Tool",
+  //   description:
+  //     "Quickly identify the best database for your app. Compare features, scalability, and cost to make confident, data-driven technology choices.",
+  //   bg: "bg-fuchsia-200",
+  //   link: "/tools/database-selector-tool/",
+  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
   // },
 ];
 

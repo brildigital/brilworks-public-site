@@ -311,6 +311,82 @@ const mvpDevTimelineEstimatorFaqData = {
     },
   ],
 };
+const featureComplexityVsTimelineEstimatorFaqData = {
+  description: "Get answers to common questions about our estimation tool",
+  queAns: [
+    {
+      question: "How accurate are the time estimations?",
+      answer:
+        "Our estimations have a 95% accuracy rate based on analysis of over 10,000 completed projects. The system factors in multiple complexity variables and uses machine learning to continuously improve accuracy.",
+    },
+    {
+      question: "What factors influence the complexity score?",
+      answer:
+        "The complexity score considers UI complexity, data integration needs, business logic requirements, user interaction patterns, platform requirements, and security needs. Additionally, our AI analyzes your feature description for complexity indicators.",
+    },
+    {
+      question: "Can I use this for different types of projects?",
+      answer:
+        "Yes! Our estimator works for web applications, mobile apps, enterprise software, APIs, and more. The algorithm adapts to different project types and technologies.",
+    },
+    {
+      question: "How should I interpret the difficulty levels?",
+      answer:
+        "Simple features require basic skills, Moderate features need standard development practices, Complex features require experienced developers, and Very Complex features need senior teams with specialized expertise.",
+    },
+    {
+      question: "What if my actual development time differs significantly?",
+      answer:
+        "Some variation is normal due to unforeseen challenges, changing requirements, or team efficiency. We recommend adding a 20-30% buffer for complex projects and tracking actual times to improve future estimates.",
+    },
+  ],
+};
+const testingQATimelineEstimatorFaqData = {
+  description:
+    "Get answers to common questions about our Testing & QA Timeline Calculator",
+  queAns: [
+    {
+      question: "How accurate is the Testing & QA Timeline Calculator?",
+      answer:
+        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+    },
+    {
+      question: "What factors does the calculator consider?",
+      answer:
+        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+    },
+    {
+      question: "Can I use this calculator for agile projects?",
+      answer:
+        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
+    },
+    {
+      question: "How does the keyword analysis work?",
+      answer:
+        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+    },
+    {
+      question: "What testing types are supported?",
+      answer:
+        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
+    },
+    {
+      question: "Can I export or share my results?",
+      answer:
+        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
+    },
+    {
+      question: "Is there a limit to how many calculations I can perform?",
+      answer:
+        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
+    },
+    {
+      question: "How often is the calculator updated with new data?",
+      answer:
+        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -334,6 +410,9 @@ const ToolFAQs = () => {
     "/tools/app-development-timeline-calculator/":
       appDevTimelineCalculatorFaqData,
     "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorFaqData,
+    "/tools/feature-complexity-vs-time-estimator/":
+      featureComplexityVsTimelineEstimatorFaqData,
+    "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

@@ -185,26 +185,6 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 </div>
               </div>
             </div>
-            {/* <div className="bg-white rounded-2xl p-4 mt-4 border shadow-md">
-              <h4 className="font-bold text-gray-900 mb-4">
-                Development Phases
-              </h4>
-              <div className="w-full">
-                {result.phases.map((phase, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-2 mb-1 bg-gray-50 rounded-lg"
-                  >
-                    <span className="font-medium text-gray-900">
-                      {phase.name}
-                    </span>
-                    <span className="text-blue-600 font-semibold">
-                      {phase.weeks} weeks
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div> */}
 
             <div className="bg-blue-50 p-4 rounded-lg mb-6 text-left w-full mt-4 mx-auto">
               <p className="text-sm font-medium text-blue-800">
@@ -214,6 +194,115 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 possible time range for your project. For a more accurate
                 estimate, consult with our specialist.
               </p>
+            </div>
+          </div>
+        );
+      case "/tools/feature-complexity-vs-time-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-4 text-white">
+                <div className="text-sm opacity-90">Complexity Score</div>
+                <div className="text-3xl font-bold">
+                  {result.complexity_score}/5
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl p-4 text-white">
+                <div className="text-sm opacity-90">Estimated Hours</div>
+                <div className="text-3xl font-bold">
+                  {result.estimated_hours}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-4 flex items-center gap-4">
+              <h4 className="font-semibold text-gray-900">Difficulty Level:</h4>
+              <div
+                className={`inline-flex px-4 py-1.5 rounded-full text-sm font-semibold ${
+                  result.difficulty_level === "Very Complex"
+                    ? "bg-red-100 text-red-800"
+                    : result.difficulty_level === "Complex"
+                    ? "bg-orange-100 text-orange-800"
+                    : result.difficulty_level === "Moderate"
+                    ? "bg-yellow-100 text-yellow-800"
+                    : "bg-green-100 text-green-800"
+                }`}
+              >
+                {result.difficulty_level}
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">
+                Recommendations
+              </h4>
+              <ul className="space-y-2">
+                {result.recommendations.map((rec, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 font-normal">{rec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      case "/tools/testing-qa-timeline-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center p-4 bg-blue-50 rounded-xl">
+                <div className="text-3xl font-bold text-blue-600">
+                  {result.totalHours}
+                </div>
+                <div className="text-sm text-gray-600">Total Hours</div>
+              </div>
+              <div className="text-center p-4 bg-green-50 rounded-xl">
+                <div className="text-3xl font-bold text-green-600">
+                  {result.totalDays}
+                </div>
+                <div className="text-sm text-gray-600">Working Days</div>
+              </div>
+              <div className="text-center p-4 bg-purple-50 rounded-xl">
+                <div className="text-3xl font-bold text-purple-600">
+                  {result.totalWeeks}
+                </div>
+                <div className="text-sm text-gray-600">Weeks</div>
+              </div>
+            </div>
+
+            {/* Phase Breakdown */}
+            <div className="bg-white rounded-2xl p-6 border shadow-md">
+              <h4 className="font-bold text-gray-900 mb-4">Phase Breakdown</h4>
+              <div className="space-y-1">
+                {Object.entries(result?.phases || {}).map(([phase, hours]) => (
+                  <div
+                    key={phase}
+                    className="flex items-center justify-between p-2 bg-gray-50 rounded-lg"
+                  >
+                    <span className="font-medium text-gray-900 capitalize">
+                      {phase.replace(/([A-Z])/g, " $1")}
+                    </span>
+                    <span className="text-blue-600 font-semibold">
+                      {hours} hours
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         );
@@ -290,6 +379,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       "/tools/app-development-timeline-calculator/" ||
                     pathname === "/tools/mvp-launch-timeline-estimator/" ? (
                       <Calendar className="h-12 w-12 text-indigo-500" />
+                    ) : pathname ===
+                        "/tools/feature-complexity-vs-time-estimator/" ||
+                      "/tools/testing-qa-timeline-estimator/" ? (
+                      ""
                     ) : (
                       <Wallet className="h-12 w-12 text-indigo-500" />
                     )}
@@ -301,6 +394,11 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       : pathname ===
                           "/tools/app-development-timeline-calculator/" ||
                         pathname === "/tools/mvp-launch-timeline-estimator/"
+                      ? "Timeline"
+                      : pathname ===
+                        "/tools/feature-complexity-vs-time-estimator/"
+                      ? "Results"
+                      : "/tools/feature-complexity-vs-time-estimator/"
                       ? "Timeline"
                       : "Cost"}
                   </h2>
@@ -337,7 +435,9 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   </ul>
                 </div>
               ) : pathname === "/tools/app-development-timeline-calculator/" ||
-                pathname === "/tools/mvp-launch-timeline-estimator/" ? (
+                pathname === "/tools/mvp-launch-timeline-estimator/" ||
+                pathname === "/tools/feature-complexity-vs-time-estimator/" ||
+                pathname === "/tools/testing-qa-timeline-estimator/" ? (
                 ""
               ) : (
                 <p className="text-gray-600 max-w-md mx-auto">

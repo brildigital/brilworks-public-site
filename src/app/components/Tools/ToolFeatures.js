@@ -21,6 +21,8 @@ import {
   BarChart,
   Bell,
   Wrench,
+  Layers,
+  Brain,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -472,6 +474,104 @@ const mvpDevTimelineEstimatorFeatures = {
     },
   ],
 };
+const featureComplexityVsTimelineEstimatorFeatures = {
+  title: "Powerful Features for Accurate Estimation",
+  description:
+    "Our advanced estimation tool combines multiple factors to provide the most accurate development time predictions",
+  listData: [
+    {
+      icon: Zap,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced keyword analysis automatically detects complexity indicators in your feature descriptions.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Clock,
+      title: "Accurate Time Estimates",
+      description:
+        "Get precise hour estimates based on proven methodologies and real project data.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Detailed Complexity Scoring",
+      description:
+        "Comprehensive scoring system evaluates multiple complexity factors for better accuracy.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Users,
+      title: "Team Planning Insights",
+      description:
+        "Receive recommendations on team composition and skill levels required for your project.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and challenges before starting development to avoid surprises.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Continuous Learning",
+      description:
+        "Our algorithm improves over time using feedback from thousands of completed projects.",
+      color: "bg-green-100 text-green-600",
+    },
+  ],
+};
+const testingQATimelineEstimatorFeatures = {
+  title: "Powerful Features for Accurate Estimates",
+  description:
+    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  listData: [
+    {
+      icon: Brain,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Real-time Calculations",
+      description:
+        "Instant timeline updates as you modify project parameters and requirements.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Historical Data Insights",
+      description:
+        "Leverage industry benchmarks and historical project data for accurate predictions.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and buffer time recommendations for your testing phases.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Target,
+      title: "Precision Planning",
+      description:
+        "Break down testing phases with detailed task allocation and resource planning.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: Layers,
+      title: "Multi-level Testing",
+      description:
+        "Support for unit, integration, system, and acceptance testing timeline calculations.",
+      color: "bg-orange-100 text-orange-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -488,6 +588,9 @@ const ToolFeatures = () => {
     "/tools/app-development-timeline-calculator/":
       appDevTimelineCalculatorFeatures,
     "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorFeatures,
+    "/tools/feature-complexity-vs-time-estimator/":
+      featureComplexityVsTimelineEstimatorFeatures,
+    "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

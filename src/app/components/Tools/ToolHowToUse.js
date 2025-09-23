@@ -2,10 +2,12 @@ import React from "react";
 import {
   ArrowRight,
   Calculator,
+  CheckCircle,
   Clock,
   Code,
   DollarSign,
   FileText,
+  Layers,
   Settings,
   Smartphone,
   Target,
@@ -253,6 +255,67 @@ const mvpDevTimelineEstimatorSteps = {
     },
   ],
 };
+const featureComplexityVsTimelineEstimatorSteps = {
+  title: "How to Calculate Feature Complexity",
+  description:
+    "Follow these simple steps to get accurate time estimates for your development projects",
+  listData: [
+    {
+      icon: Target,
+      title: "Define Feature Requirements",
+      description:
+        "Describe your feature in detail including all functional requirements and desired outcomes.",
+    },
+    {
+      icon: Layers,
+      title: "Assess Complexity Factors",
+      description:
+        "Rate different aspects like UI complexity, data integration needs, and business logic requirements.",
+    },
+    {
+      icon: Calculator,
+      title: "Get Time Estimation",
+      description:
+        "Receive accurate time estimates with complexity scores and development recommendations.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Plan Development",
+      description:
+        "Use insights to plan resources, timeline, and development approach for your project.",
+    },
+  ],
+};
+const testingQATimelineEstimatorSteps = {
+  title: "How to Calculate Your Testing Timeline",
+  description:
+    "Follow these simple steps to get accurate testing estimates for your project",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Project Details",
+      description:
+        "Enter your project requirements, complexity, and testing scope.",
+    },
+    {
+      icon: Settings,
+      title: "Configure Parameters",
+      description: "Set testing types, team size, and quality requirements.",
+    },
+    {
+      icon: Calculator,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs and industry benchmarks.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Timeline",
+      description:
+        "Receive detailed timeline breakdown with actionable insights.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -268,6 +331,9 @@ const ToolHowToUse = () => {
     "/tools/app-development-timeline-calculator/":
       appDevTimelineCalculatorSteps,
     "/tools/mvp-launch-timeline-estimator/": mvpDevTimelineEstimatorSteps,
+    "/tools/feature-complexity-vs-time-estimator/":
+      featureComplexityVsTimelineEstimatorSteps,
+    "/tools/testing-qa-timeline-estimator/": testingQATimelineEstimatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
