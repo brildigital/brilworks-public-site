@@ -70,9 +70,9 @@ const AppMaintenanceCostEstimator = () => {
     setIsCalculating(true);
 
     const resultData = calculateAppMaintenanceCost(formData);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

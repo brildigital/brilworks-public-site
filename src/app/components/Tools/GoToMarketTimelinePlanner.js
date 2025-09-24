@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import {
   Award,
   Calculator,
+  Calendar,
   CheckCircle,
   Loader2,
   Sparkles,
+  Target,
   TrendingUp,
   Users,
   Zap,
@@ -15,7 +17,10 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { calculateTestingTimelineEstimate } from "../lib/featureComplexityVsTimelineEstimatorService";
+import {
+  calculateGoToMarketTimeline,
+  calculateTestingTimelineEstimate,
+} from "../lib/featureComplexityVsTimelineEstimatorService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -28,23 +33,31 @@ const GoToMarketTimelinePlanner = () => {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
-    projectSize: "",
-    complexity: "",
-    testingTypes: [],
+    industry: "",
+    targetMarket: "",
     teamSize: "",
-    experience: "",
+    budget: "",
+    launchType: "",
     description: "",
   });
+  // const [formData, setFormData] = useState({
+  //   projectSize: "",
+  //   complexity: "",
+  //   testingTypes: [],
+  //   teamSize: "",
+  //   experience: "",
+  //   description: "",
+  // });
 
   const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
-      formData?.projectSize &&
-      formData?.complexity &&
-      formData?.testingTypes.length > 0 &&
+      formData?.industry &&
+      formData?.targetMarket &&
       formData?.teamSize &&
-      formData?.experience &&
+      formData?.budget &&
+      formData?.launchType &&
       formData?.description.trim()
     );
   };
@@ -61,10 +74,10 @@ const GoToMarketTimelinePlanner = () => {
 
     setIsCalculating(true);
 
-    const resultData = calculateTestingTimelineEstimate(formData);
-    setResult(resultData);
+    const resultData = calculateGoToMarketTimeline(formData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);
@@ -74,15 +87,6 @@ const GoToMarketTimelinePlanner = () => {
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
   };
 
   useEffect(() => {
@@ -173,71 +177,43 @@ const GoToMarketTimelinePlanner = () => {
               </h2>
               <div className="space-y-1">
                 <label className="font-semibold text-gray-600">
-                  Project size <span className="text-red-500">*</span>
+                  Industry
+                  <span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.projectSize}
+                  value={formData.industry}
                   onChange={(e) =>
-                    handleInputChange("projectSize", e.target.value)
+                    handleInputChange("industry", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select your project size</option>
-
-                  <option value="small">Small</option>
-                  <option value="medium">Medium</option>
-                  <option value="large">Large</option>
-                  <option value="enterprise">Enterprise</option>
+                  <option value="">Select Industry</option>
+                  <option value="tech">Technology</option>
+                  <option value="finance">Finance</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="retail">Retail</option>
+                  <option value="manufacturing">Manufacturing</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-semibold text-gray-600">
-                  Complexity Level <span className="text-red-500">*</span>
+                  Target Market <span className="text-red-500">*</span>
                 </label>
 
                 <select
-                  value={formData?.complexity}
+                  value={formData?.targetMarket}
                   onChange={(e) =>
-                    handleInputChange("complexity", e.target.value)
+                    handleInputChange("targetMarket", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select complexity</option>
-                  <option value="simple">Simple</option>
-                  <option value="medium">Moderate </option>
-                  <option value="high">High</option>
-                  <option value="critical">Critical</option>
+                  <option value="">Select Market</option>
+                  <option value="b2b">B2B</option>
+                  <option value="b2c">B2C</option>
+                  <option value="b2b2c">B2B2C</option>
                 </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-semibold text-gray-600">
-                  Testing Types <span className="text-red-500">*</span>
-                </label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {[
-                    "functional",
-                    "performance",
-                    "security",
-                    "usability",
-                    "integration",
-                    "regression",
-                  ]?.map((feature) => (
-                    <label
-                      key={feature}
-                      className="flex items-center space-x-3 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.testingTypes.includes(feature)}
-                        onChange={() => handleFeatureChange(feature)}
-                        className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
-                      />
-                      <span className="capitalize">{feature}</span>
-                    </label>
-                  ))}
-                </div>
               </div>
 
               {/* Project Complexity */}
@@ -254,30 +230,44 @@ const GoToMarketTimelinePlanner = () => {
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select team size</option>
-                  <option value="2">Small (2-3 developers)</option>
-                  <option value="4">Medium (4-6 developers)</option>
-                  <option value="7">Large (7+ developers)</option>
+                  <option value="">Select Size</option>
+                  <option value="small">1-10 people</option>
+                  <option value="medium">11-50 people</option>
+                  <option value="large">50+ people</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
                 <label className="font-semibold text-gray-600">
-                  Team Experience<span className="text-red-500">*</span>
+                  Budget Range<span className="text-red-500">*</span>
                 </label>
                 <select
-                  value={formData.experience}
+                  value={formData.budget}
+                  onChange={(e) => handleInputChange("budget", e.target.value)}
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select Budget</option>
+                  <option value="low">Under $50K</option>
+                  <option value="medium">$50K - $200K</option>
+                  <option value="high">$200K+</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="font-semibold text-gray-600">
+                  Launch Type<span className="text-red-500">*</span>
+                </label>
+                <select
+                  value={formData.launchType}
                   onChange={(e) =>
-                    handleInputChange("experience", e.target.value)
+                    handleInputChange("launchType", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select experience level</option>
-                  <option value="junior">Junior (0-2 years)</option>
-                  <option value="mid">Mid-level (2-5 years)</option>
-                  <option value="senior">Senior (5+ years)</option>
-                  <option value="expert">Expert (10+ years)</option>
+                  <option value="">Select Type</option>
+                  <option value="soft">Soft Launch</option>
+                  <option value="full">Full Market Launch</option>
+                  <option value="global">Global Launch</option>
                 </select>
               </div>
 
@@ -310,7 +300,7 @@ const GoToMarketTimelinePlanner = () => {
                   </>
                 ) : (
                   <>
-                    <Calculator className="mr-2 h-5 w-5" />
+                    <Calendar className="mr-2 h-5 w-5" />
                     Calculate My Timeline
                   </>
                 )}
@@ -324,69 +314,91 @@ const GoToMarketTimelinePlanner = () => {
                   Your Timeline
                 </h2>
 
-                <div className="space-y-6">
-                  <div className="grid grid-cols-3 gap-6">
-                    <div className="text-center p-4 bg-blue-50 rounded-xl">
+                <div className="space-y-4">
+                  {/* Summary */}
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center p-6 bg-blue-50 rounded-2xl">
+                      <Calendar className="w-8 h-8 text-blue-600 mx-auto mb-2" />
                       <div className="text-3xl font-bold text-blue-600">
-                        {result.totalHours}
-                      </div>
-                      <div className="text-sm text-gray-600">Total Hours</div>
-                    </div>
-                    <div className="text-center p-4 bg-green-50 rounded-xl">
-                      <div className="text-3xl font-bold text-green-600">
-                        {result.totalDays}
-                      </div>
-                      <div className="text-sm text-gray-600">Working Days</div>
-                    </div>
-                    <div className="text-center p-4 bg-purple-50 rounded-xl">
-                      <div className="text-3xl font-bold text-purple-600">
                         {result.totalWeeks}
                       </div>
-                      <div className="text-sm text-gray-600">Weeks</div>
+                      <div className="text-sm text-gray-600">
+                        Weeks to Launch
+                      </div>
+                    </div>
+                    <div className="text-center p-6 bg-green-50 rounded-2xl">
+                      <Target className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                      <div className="text-3xl font-bold text-green-600">
+                        {result.successProbability}%
+                      </div>
+                      <div className="text-sm text-gray-600">Success Rate</div>
                     </div>
                   </div>
 
-                  {/* Phase Breakdown */}
-                  <div className="bg-white rounded-2xl p-6 border shadow-md">
-                    <h4 className="font-bold text-gray-900 mb-4">
-                      Phase Breakdown
-                    </h4>
-                    <div className="space-y-1">
-                      {Object.entries(result?.phases || {}).map(
-                        ([phase, hours]) => (
-                          <div
-                            key={phase}
-                            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
-                          >
-                            <span className="font-medium text-gray-900 capitalize">
-                              {phase.replace(/([A-Z])/g, " $1")}
-                            </span>
-                            <span className="text-blue-600 font-semibold">
-                              {hours} hours
-                            </span>
-                          </div>
-                        )
-                      )}
+                  {/* Risk Assessment */}
+                  <div
+                    className={`p-4 rounded-xl border-l-4 ${
+                      result?.riskLevel === "Low"
+                        ? "bg-green-50 border-green-500"
+                        : result?.riskLevel === "Medium"
+                        ? "bg-yellow-50 border-yellow-500"
+                        : "bg-red-50 border-red-500"
+                    }`}
+                  >
+                    <div className="font-semibold text-gray-900 mb-1">
+                      Risk Level:{" "}
+                      <span
+                        className={
+                          result?.riskLevel === "Low"
+                            ? "text-green-600"
+                            : result.riskLevel === "Medium"
+                            ? "text-yellow-600"
+                            : "text-red-600"
+                        }
+                      >
+                        {result?.riskLevel}
+                      </span>
                     </div>
+                    <p className="text-sm text-gray-600">
+                      {result?.riskLevel === "Low" &&
+                        "Your project has favorable conditions for success."}
+                      {result?.riskLevel === "Medium" &&
+                        "Monitor key milestones closely to stay on track."}
+                      {result?.riskLevel === "High" &&
+                        "Consider additional planning and resource allocation."}
+                    </p>
                   </div>
-                  {result.recommendations.length > 0 && (
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                        Recommendations
-                      </h4>
-                      <ul className="space-y-2">
-                        {result.recommendations.map((rec, index) => (
-                          <li
-                            key={index}
-                            className="text-sm text-gray-600 flex items-start"
-                          >
-                            <span className="text-blue-600 mr-2">•</span>
-                            {rec}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+
+                  {/* Phases */}
+                  <div className="space-y-2">
+                    <h4 className="text-lg font-semibold text-gray-900">
+                      Timeline Breakdown
+                    </h4>
+                    {result?.phases.length > 0 &&
+                      result?.phases?.map((phase, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-4 p-2 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+                        >
+                          <div
+                            className={`w-3 h-3 rounded-full ${phase.color} mt-1.5 flex-shrink-0`}
+                          />
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1">
+                              <h5 className="font-semibold text-gray-900">
+                                {phase.name}
+                              </h5>
+                              <span className="text-sm font-medium text-gray-600">
+                                {phase.duration} weeks
+                              </span>
+                            </div>
+                            <p className="text-sm text-gray-600">
+                              {phase.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
                 </div>
               </div>
             ) : (

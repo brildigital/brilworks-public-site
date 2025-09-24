@@ -145,7 +145,7 @@ const SoftwareDevelopmentCostCalculator = () => {
     <>
       <ToolHerosection
         title="Software Development Cost Calculator"
-        description="Estimate the cost and timeline for developing your project using the user-friendly software development cost calculator. Answer just five questions and get an estimate for your project. Your journey to a seamlessly executed software project begins with a free, tailored estimation."
+        description="Quickly estimate the cost of software development with our interactive calculator. Whether you are planning a mobile app, web platform, or enterprise solution, this tool helps you model expenses and timelines with accuracy. Let’s get your project moving. Grab a free, personalized estimate with no strings attached."
         imageSrc="/images/v2/software-dev-cost-calc-banner.webp"
         authority={authority}
       />

@@ -652,6 +652,24 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/ebooks/insiders-guide-hiring-developers/",
     lastmod: "2025-07-23T08:12:49.528Z",
   },
+
+  {
+    loc: "https://www.brilworks.com/tools/",
+    lastmod: "2025-09-24T11:03:27.341Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/project-estimate/",
+    lastmod: "2025-09-24T11:03:27.341Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/roi-calculator/",
+    lastmod: "2025-09-24T11:03:27.341Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/mobility-app-development-calculator/",
+    lastmod: "2025-09-24T11:03:27.341Z",
+  },
+
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
     lastmod: "2025-04-12T12:04:49.528Z",

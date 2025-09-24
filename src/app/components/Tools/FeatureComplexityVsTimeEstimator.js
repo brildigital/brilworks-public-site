@@ -33,9 +33,9 @@ const FeatureComplexityVsTimeEstimator = () => {
     setIsCalculating(true);
 
     const resultData = featureComplexityTimelineEstimator(description, factors);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

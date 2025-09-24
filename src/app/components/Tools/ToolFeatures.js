@@ -24,55 +24,57 @@ import {
   Layers,
   Brain,
   CheckCircle,
+  Cpu,
+  Database,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
 
 const projectEstimateFeatures = {
-  title: "Powerful Features for Accurate Estimates",
+  title: "Why Use Our Cost Estimator?",
   description:
-    "Our cost calculator combines industry expertise with intelligent analysis to provide the most accurate software development estimates based on your specific requirements.",
+    "Our tool combines industry expertise with automated analysis to deliver reliable estimates. Whether you’re calculating software development cost for an MVP or exploring app development cost, you get clarity before making financial commitments.",
   listData: [
     {
       icon: Calculator,
-      title: "Instant Cost Estimation",
+      title: "Instant Estimation",
       description:
-        "Get accurate project cost estimates in seconds. Our algorithm analyzes your platform, complexity, and feature requirements to provide realistic budget projections.",
+        "Get a quick overview of expected project costs. The algorithm processes complexity, platform, and scope in seconds.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Sliders,
-      title: "Platform & Complexity Selection",
+      title: "Platform & Complexity Options",
       description:
-        "Choose from multiple platforms (Web, Mobile, Desktop) and complexity levels. Our calculator adjusts pricing based on your specific technical requirements.",
+        "Choose between web, mobile, or desktop apps. Pricing adjusts according to technical depth.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: CheckSquare,
-      title: "Feature-Based Pricing",
+      title: "Feature-Based Calculation",
       description:
-        "Select from comprehensive feature sets including User Authentication, Payment Processing, Real-time Chat, GPS Services, and more to get precise cost breakdowns.",
+        "Add modules such as user login, payments, chat, or geolocation. Each selection affects the overall estimate.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: FileText,
-      title: "Project Description Analysis",
+      title: "Project Description Inputs",
       description:
-        "Describe your unique project requirements and our intelligent system will factor in custom features and complexity adjustments for more accurate estimates.",
+        "Provide unique requirements to refine your numbers beyond default templates.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Clock,
-      title: "Timeline Considerations",
+      title: "Timeline Sensitivity",
       description:
-        "Select your preferred project timeline and see how it affects the overall cost. Rush projects and extended timelines are factored into the final estimate.",
+        "Understand how a shorter or extended deadline impacts cost.",
       color: "bg-teal-100 text-teal-600",
     },
     {
       icon: DollarSign,
-      title: "Comprehensive Cost Breakdown",
+      title: "Comprehensive Breakdown",
       description:
-        "Receive detailed cost analysis that considers platform requirements, design complexity, feature implementation, and project timeline for transparent pricing.",
+        "Receive a structured report covering platform, features, design, and duration, so you can make informed decisions.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
@@ -145,13 +147,13 @@ const roiCalculatorFeatures = {
   ],
 };
 const mobilityAppDevCalculatorFeatures = {
-  title: "Essential Features for Your Ride-Hailing App",
+  title: "Essential Features for Building an Uber-Like App",
   description:
-    "Discover the core features that make a successful Uber-like application",
+    "Discover the core features that define a successful uber-like app development project. The final cost to build an app like Uber is heavily influenced by the features you include.",
   listData: [
     {
       icon: MapPin,
-      title: "GPS & Navigation",
+      title: "Real-Time GPS & Navigation",
       description: "Real-time location tracking and route optimization",
       color: "bg-blue-100 text-blue-600",
     },
@@ -169,13 +171,13 @@ const mobilityAppDevCalculatorFeatures = {
     },
     {
       icon: Clock,
-      title: "Real-time Tracking",
+      title: "Live Ride Tracking",
       description: "Live ride tracking and ETA updates",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Shield,
-      title: "Safety Features",
+      title: "In-App Safety Features",
       description: "Emergency contacts, ride sharing, and verification",
       color: "bg-red-100 text-red-600",
     },
@@ -187,7 +189,7 @@ const mobilityAppDevCalculatorFeatures = {
     },
     {
       icon: Globe,
-      title: "Multi-language",
+      title: "Multi-Language Support",
       description: "Support for multiple languages and regions",
       color: "bg-teal-100 text-teal-600",
     },
@@ -644,100 +646,122 @@ const goToMarketPlacePlannerFeatures = {
   ],
 };
 const techStackRecommenderFeatures = {
-  title: "Powerful Features for Accurate Estimates",
-  description:
-    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  title: "Why Choose Our Tool?",
+  description: (
+    <>
+      Our Tech Stack Recommender comes packed with intelligent features to help
+      you
+      <br className="md:block hidden" /> make the best technology decisions
+    </>
+  ),
   listData: [
     {
-      icon: Brain,
+      icon: Cpu,
       title: "AI-Powered Analysis",
       description:
-        "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
+        "Machine learning evaluates your requirements to recommend the most suitable technology combinations.",
       color: "bg-purple-100 text-purple-600",
     },
     {
-      icon: Clock,
-      title: "Real-time Calculations",
+      icon: Shield,
+      title: "Security Assessment",
       description:
-        "Instant timeline updates as you modify project parameters and requirements.",
+        "Includes security considerations and best practices for every recommended stack.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: TrendingUp,
-      title: "Historical Data Insights",
+      title: "Market Trends",
       description:
-        "Leverage industry benchmarks and historical project data for accurate predictions.",
+        "Suggestions reflect current market adoption and future technology outlooks.",
       color: "bg-green-100 text-green-600",
     },
     {
-      icon: Shield,
-      title: "Risk Assessment",
+      icon: Users,
+      title: "Team Compatibility",
       description:
-        "Identify potential risks and buffer time recommendations for your testing phases.",
+        "Aligns stack choices with your team’s existing skills and learning curve.",
       color: "bg-red-100 text-red-600",
     },
     {
-      icon: Target,
-      title: "Precision Planning",
+      icon: Clock,
+      title: "Development Speed",
       description:
-        "Break down testing phases with detailed task allocation and resource planning.",
+        "Highlights technologies that accelerate delivery and reduce time-to-market.",
       color: "bg-indigo-100 text-indigo-600",
     },
     {
-      icon: Layers,
-      title: "Multi-level Testing",
+      icon: Target,
+      title: "Performance Focused",
       description:
-        "Support for unit, integration, system, and acceptance testing timeline calculations.",
+        "Prioritizes scalability, reliability, and long-term maintainability.",
       color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Database,
+      title: "Data Architecture",
+      description:
+        "Recommends databases and storage solutions tailored to your data needs.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: Globe,
+      title: "Global Deployment",
+      description:
+        "Considers hosting and deployment strategies for worldwide reach.",
+      color: "bg-violet-100 text-violet-600",
+    },
+    {
+      icon: Smartphone,
+      title: "Cross-Platform",
+      description:
+        "Offers stacks suited for web, mobile, and desktop applications.",
+      color: "bg-lime-100 text-lime-600",
     },
   ],
 };
 const databaseSelectorToolFeatures = {
-  title: "Powerful Features for Accurate Estimates",
-  description:
-    "Our Testing & QA Timeline Calculator comes packed with advanced features to ensure your project planning is precise and reliable",
+  title: "Why Choose Our Tool?",
+  description: "Powerful features that make database selection effortless",
   listData: [
     {
-      icon: Brain,
-      title: "AI-Powered Analysis",
+      icon: Zap,
+      title: "Lightning Fast",
       description:
         "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
-      color: "bg-purple-100 text-purple-600",
-    },
-    {
-      icon: Clock,
-      title: "Real-time Calculations",
-      description:
-        "Instant timeline updates as you modify project parameters and requirements.",
       color: "bg-blue-100 text-blue-600",
     },
     {
-      icon: TrendingUp,
-      title: "Historical Data Insights",
+      icon: Shield,
+      title: "Expert Validated",
       description:
-        "Leverage industry benchmarks and historical project data for accurate predictions.",
+        "Recommendations based on industry best practices and real-world experience.",
       color: "bg-green-100 text-green-600",
     },
     {
-      icon: Shield,
-      title: "Risk Assessment",
+      icon: TrendingUp,
+      title: "Future-Proof",
       description:
-        "Identify potential risks and buffer time recommendations for your testing phases.",
+        "Considers scalability and growth potential in recommendations.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Users,
+      title: "Team Focused",
+      description: "Factors in your team's expertise and learning curve.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Clock,
+      title: "Save Time",
+      description: "Eliminate weeks of research and trial-and-error decisions",
       color: "bg-red-100 text-red-600",
     },
     {
-      icon: Target,
-      title: "Precision Planning",
-      description:
-        "Break down testing phases with detailed task allocation and resource planning.",
+      icon: BarChart3,
+      title: "Data-Driven",
+      description: "Objective analysis based on quantifiable factors.",
       color: "bg-indigo-100 text-indigo-600",
-    },
-    {
-      icon: Layers,
-      title: "Multi-level Testing",
-      description:
-        "Support for unit, integration, system, and acceptance testing timeline calculations.",
-      color: "bg-orange-100 text-orange-600",
     },
   ],
 };

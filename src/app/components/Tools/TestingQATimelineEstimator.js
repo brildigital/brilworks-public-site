@@ -53,9 +53,9 @@ const TestingQATimelineEstimator = () => {
     setIsCalculating(true);
 
     const resultData = calculateTestingTimelineEstimate(formData);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

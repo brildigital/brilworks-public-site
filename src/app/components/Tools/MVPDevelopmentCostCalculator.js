@@ -64,9 +64,9 @@ const MVPDevelopmentCostCalculator = () => {
     setIsCalculating(true);
 
     const resultData = calculateSaasDevCostEstimate(formData);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

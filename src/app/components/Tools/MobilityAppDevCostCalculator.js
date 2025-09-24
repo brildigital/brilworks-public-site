@@ -96,11 +96,11 @@ const MobilityAppDevCostCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Mobility App <br />
-            Development Cost Calculator
+            Build Uber-Like App: <br />
+            Get Your Cost Estimate
           </>
         }
-        description="Get instant, accurate cost estimates for your ride-hailing app development project. From MVP to enterprise-scale solutions."
+        description="Are you ready to create an app like Uber? Get a precise cost estimate for your uber-like app development project with our instant calculator. Our tool provides a detailed cost breakdown, helping you understand what it takes to launch a successful ride-hailing service."
         imageSrc="/images/v2/mobility-app-banner.webp"
         statsGird={[
           { value: "$40K+", label: "Apps Calculated" },

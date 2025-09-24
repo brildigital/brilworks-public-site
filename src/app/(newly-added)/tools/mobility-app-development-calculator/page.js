@@ -2,13 +2,13 @@ import React from "react";
 import MobilityAppDevCostCalculator from "@/app/components/Tools/MobilityAppDevCostCalculator";
 
 export const metadata = {
-  title: "Mobility App Development Cost Calculator | Free Online Estimator",
+  title: "Uber-Like App Development Cost & Breakdown | Get Estimate",
   description:
-    "Estimate mobility app development costs instantly. Select platform, features, and complexity to get accurate budget and timeline insights for your custom mobility app project.",
+    "Ready to build an Uber-like app? Use our instant calculator to get a clear app development cost breakdown for your ride-hailing project. Get started now and get a detailed quote.",
   openGraph: {
-    title: "Mobility App Development Cost Calculator | Free Online Estimator",
+    title: "Uber-Like App Development Cost & Breakdown | Get Estimate",
     description:
-      "Estimate mobility app development costs instantly. Select platform, features, and complexity to get accurate budget and timeline insights for your custom mobility app project.",
+      "Ready to build an Uber-like app? Use our instant calculator to get a clear app development cost breakdown for your ride-hailing project. Get started now and get a detailed quote.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}mobility-app-development-calculator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

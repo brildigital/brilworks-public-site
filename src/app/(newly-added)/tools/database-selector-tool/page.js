@@ -1,5 +1,6 @@
 import React from "react";
-import TestingQATimelineEstimator from "@/app/components/Tools/TestingQATimelineEstimator";
+
+import DatabaseSelectorTool from "@/app/components/Tools/DatabaseSelectorTool";
 
 export const metadata = {
   title: "Tech Stack Recommender",
@@ -24,7 +25,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return <TestingQATimelineEstimator />;
+  return <DatabaseSelectorTool />;
 };
 
 export default page;

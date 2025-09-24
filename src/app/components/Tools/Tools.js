@@ -24,7 +24,7 @@ const toolsData = [
     tags: ["MARKETING", "SALES", "OTHER"],
   },
   {
-    title: "Mobility App Development Cost Calculator",
+    title: "Build Uber-Like App: Get Your Cost Estimate",
     description:
       "Estimate the cost of building mobility and transport apps in minutes. Select features, platforms, and design options to get accurate budget and timeline insights.",
 
@@ -91,22 +91,22 @@ const toolsData = [
     link: "/tools/testing-qa-timeline-estimator/",
     tags: ["SALES", "BUSINESS", "OTHER"],
   },
-  // {
-  //   title: "Go-to-Market Timeline Planner",
-  //   description:
-  //     "Create a clear launch roadmap. Estimate key milestones, coordinate teams, and stay on track for a successful product release.",
-  //   bg: "bg-cyan-100",
-  //   link: "/tools/go-to-market-timeline-planner/",
-  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
-  // },
-  // {
-  //   title: "Tech Stack Recommender",
-  //   description:
-  //     "Find the best technologies for your app. Get smart, data-driven stack suggestions to match your goals, budget, and scalability needs.",
-  //   bg: "bg-violet-200",
-  //   link: "/tools/tech-stack-recommender/",
-  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
-  // },
+  {
+    title: "Go-to-Market Timeline Planner",
+    description:
+      "Create a clear launch roadmap. Estimate key milestones, coordinate teams, and stay on track for a successful product release.",
+    bg: "bg-cyan-100",
+    link: "/tools/go-to-market-timeline-planner/",
+    tags: ["MARKETING", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "Tech Stack Recommender",
+    description:
+      "Find the best technologies for your app. Get smart, data-driven stack suggestions to match your goals, budget, and scalability needs.",
+    bg: "bg-violet-200",
+    link: "/tools/tech-stack-recommender/",
+    tags: ["MARKETING", "BUSINESS", "OTHER"],
+  },
   // {
   //   title: "Database Selector Tool",
   //   description:

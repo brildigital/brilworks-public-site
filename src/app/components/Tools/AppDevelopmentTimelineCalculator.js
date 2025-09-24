@@ -67,9 +67,9 @@ const AppDevelopmentTimelineCalculator = () => {
     setIsCalculating(true);
 
     const resultData = appDevelopmentTimelineEstimate(formData);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

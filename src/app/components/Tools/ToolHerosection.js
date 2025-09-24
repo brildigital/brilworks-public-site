@@ -47,7 +47,11 @@ const ToolHerosection = ({
             {statsGird?.length && (
               <div
                 className={`w-full md:w-[85%] grid grid-cols-1 ${
-                  statsGird?.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+                  statsGird?.length === 2
+                    ? "md:grid-cols-2"
+                    : statsGird?.length === 4
+                    ? "md:!grid-cols-4 !grid-cols-2 !gap-4 md:!w-[95%]"
+                    : "md:grid-cols-3"
                 } justify-start gap-6 text-gray-300`}
               >
                 {statsGird.map((stat, index) => (

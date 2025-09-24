@@ -10,39 +10,24 @@ const softwareDevelopmentCostCalculatorFaqData = {
     "Everything you need to know about our software development cost calculator",
   queAns: [
     {
-      question: "How accurate are the cost estimates?",
+      question: "How much does software development cost?",
       answer:
-        "Our calculator provides estimates based on your selected platform, project complexity, features, and design requirements. While it provides a close estimate, final pricing may vary depending on specific details discussed during consultation.",
+        "On average, simple projects may start around $10,000, while complex enterprise apps can cross six figures. Our software pricing calculator gives a tailored estimate based on your inputs.",
     },
     {
-      question: "What factors influence the cost calculation?",
+      question: "Can I use the calculator to estimate mobile app costs?",
       answer:
-        "Multiple factors affect the estimate including: project complexity, platform requirements (web, mobile, desktop), project features, project timeline, required integrations, security requirements, and post-launch support needs. Our algorithm weighs these factors based on industry benchmarks.",
+        "Yes. Select “Mobile” under platform to see how your mobile app cost calculator results vary by complexity and features.",
     },
     {
-      question: "Can I use this for both web and mobile applications?",
+      question: "How accurate are the estimates?",
       answer:
-        "Yes! Our calculator supports various project types including web applications, mobile apps (iOS/Android), desktop software, APIs, and complex enterprise systems. Each project type has specific considerations that are factored into the cost calculation.",
+        "While no calculator can guarantee final quotes, our approach factors in common industry rates and patterns, making it a strong starting point for budget planning.",
     },
     {
-      question: "Is my project information secure?",
+      question: "Do I need technical knowledge to use the calculator?",
       answer:
-        "Absolutely. We don't store any of your project details on our servers. All calculations happen locally in your browser, and no personal or project information is transmitted or saved. Your data privacy and security are our top priorities.",
-    },
-    {
-      question: "How do different geographic locations affect costs?",
-      answer:
-        "Geographic location significantly impacts development costs. Our calculator includes current market rates for different regions including North America, Europe, Asia, and other markets. You can compare costs across different locations to make informed outsourcing decisions.",
-    },
-    {
-      question: "How often is the pricing data updated?",
-      answer:
-        "We update our pricing database quarterly based on industry surveys, market research, and real project data from development agencies worldwide. This ensures our estimates reflect current market conditions and hiring rates.",
-    },
-    {
-      question: "What if my project has unique requirements?",
-      answer:
-        "Our calculator handles most common project scenarios, but for highly specialized or unique projects, the estimates should be used as a starting point. We recommend consulting with development experts for projects with very specific technical requirements or regulatory compliance needs.",
+        "No. The tool is designed for both business owners and technical teams. Just answer a few guided questions.",
     },
   ],
 };
@@ -84,6 +69,22 @@ const appLikeUberCostCalculatorFaqData = {
       question: "What ongoing costs should I consider?",
       answer:
         "Consider server hosting, third-party API costs (maps, payments), maintenance, updates, customer support, marketing, and compliance costs.",
+    },
+    {
+      question: "How accurate is this app development cost calculator?",
+      answer:
+        "Our tool provides a highly reliable cost estimate based on industry averages and your specific selections. For a final, fixed uber clone app price, we recommend a personalized consultation.",
+    },
+    {
+      question:
+        "What is the most significant factor affecting the cost to build a ride-hailing app?",
+      answer:
+        "The most significant factor is the complexity and number of features you choose. More advanced features, like AI-powered routing or complex payment systems, will increase the overall app development cost breakdown.",
+    },
+    {
+      question: "Does the calculator include the cost of ongoing maintenance?",
+      answer:
+        "The calculator provides an estimate for development. Ongoing costs for maintenance, updates, and server fees will be discussed during a detailed project consultation.",
     },
   ],
 };
@@ -435,93 +436,77 @@ const goToMarketPlacePlannerFaqData = {
 };
 const techStackRecommenderFaqData = {
   description:
-    "Get answers to common questions about our Testing & QA Timeline Calculator",
+    " Get answers to common questions about our Tech Stack Recommender",
   queAns: [
     {
-      question: "How accurate is the Testing & QA Timeline Calculator?",
+      question: "How accurate are the tech stack recommendations?",
       answer:
-        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+        "Our AI-powered system analyzes thousands of successful projects and market data to provide recommendations with 95%+ accuracy. The system continuously learns from new projects and user feedback to improve its suggestions.",
     },
     {
-      question: "What factors does the calculator consider?",
+      question: "What factors does the recommender consider?",
       answer:
-        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+        "We consider project type, scale, team size, timeline, budget, performance requirements, security needs, scalability goals, team expertise, deployment preferences, and current market trends to provide personalized recommendations.",
     },
     {
-      question: "Can I use this calculator for agile projects?",
+      question: "Can I get recommendations for existing projects?",
       answer:
-        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
+        "Yes! You can input details about your existing project to get suggestions for technology upgrades, migration paths, or additional tools to improve your current stack's performance and maintainability.",
     },
     {
-      question: "How does the keyword analysis work?",
+      question: "How often are the recommendations updated?",
       answer:
-        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+        "Our database is updated weekly with the latest technology trends, security patches, performance benchmarks, and community feedback. This ensures you always get current and relevant recommendations.",
     },
     {
-      question: "What testing types are supported?",
+      question: "Do you provide migration guides for recommended stacks?",
       answer:
-        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
+        "Yes, we provide detailed migration guides, best practices, and step-by-step tutorials for implementing recommended technology stacks. This includes code examples and architectural patterns.",
     },
     {
-      question: "Can I export or share my results?",
+      question: "Is there support for enterprise-level projects?",
       answer:
-        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
+        "Absolutely! We have specialized recommendations for enterprise projects, including considerations for compliance, security, scalability, team coordination, and integration with existing enterprise systems.",
     },
     {
-      question: "Is there a limit to how many calculations I can perform?",
+      question: "Can I compare multiple tech stack options?",
       answer:
-        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
+        "Yes, the tool provides detailed comparisons between recommended options, including pros/cons, performance metrics, learning curves, community support, and long-term viability analysis.",
     },
     {
-      question: "How often is the calculator updated with new data?",
+      question: "What if my recommended stack doesn't work for my project?",
       answer:
-        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+        "We offer 24/7 support and consultation services. If a recommendation doesn't meet your needs, our experts will work with you to refine the requirements and provide alternative suggestions.",
     },
   ],
 };
 const databaseSelectorToolFaqData = {
-  description:
-    "Get answers to common questions about our Testing & QA Timeline Calculator",
+  description: "Get answers to common questions about database selection",
   queAns: [
     {
-      question: "How accurate is the Testing & QA Timeline Calculator?",
+      question: "How accurate are the database recommendations?",
       answer:
-        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+        "Our tool uses industry best practices and considers multiple factors including project requirements, data volume, team expertise, and budget constraints to provide highly accurate recommendations.",
     },
     {
-      question: "What factors does the calculator consider?",
+      question: "Can I use multiple databases in one project?",
       answer:
-        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+        "Absolutely! Many modern applications use polyglot persistence, combining different databases for different use cases. Our tool can help you identify the best primary database and suggest complementary options.",
     },
     {
-      question: "Can I use this calculator for agile projects?",
+      question: "What if my project requirements change over time?",
       answer:
-        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
+        "Database migrations are possible but can be complex. We recommend choosing a database that can accommodate your expected growth and changing requirements. Our tool factors in scalability needs.",
     },
     {
-      question: "How does the keyword analysis work?",
+      question: "Do you consider cloud vs on-premises deployment?",
       answer:
-        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+        "Currently, our recommendations are database-agnostic regarding deployment. However, we do consider factors like scalability and budget which often influence cloud vs on-premises decisions.",
     },
     {
-      question: "What testing types are supported?",
+      question: "How often should I reevaluate my database choice?",
       answer:
-        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
-    },
-    {
-      question: "Can I export or share my results?",
-      answer:
-        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
-    },
-    {
-      question: "Is there a limit to how many calculations I can perform?",
-      answer:
-        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
-    },
-    {
-      question: "How often is the calculator updated with new data?",
-      answer:
-        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+        "We recommend reevaluating your database architecture annually or when you experience significant changes in data volume, user base, or business requirements.",
     },
   ],
 };
@@ -609,7 +594,7 @@ const ToolFAQs = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center" id="CTA">
           <div className="bg-blue-50 rounded-2xl pt-8 px-4 md:pb-0 pb-4">
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Still have questions?

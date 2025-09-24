@@ -63,9 +63,9 @@ const MVPLaunchTimelineEstimator = () => {
     setIsCalculating(true);
 
     const resultData = mvpDevelopmentTimelineCalculate(formData);
-    setResult(resultData);
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
       if (!hasVisited) {
         setOpenPopup(true);

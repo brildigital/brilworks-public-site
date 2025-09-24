@@ -306,6 +306,237 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/go-to-market-timeline-planner/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {/* Summary */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center p-4 bg-blue-50 rounded-2xl">
+                <Calendar className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-3xl font-bold text-blue-600">
+                  {result.totalWeeks}
+                </div>
+                <div className="text-sm font-medium text-gray-600">
+                  Weeks to Launch
+                </div>
+              </div>
+              <div className="text-center p-4 bg-green-50 rounded-2xl">
+                <Target className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <div className="text-3xl font-bold text-green-600">
+                  {result.successProbability}%
+                </div>
+                <div className="text-sm font-medium text-gray-600">
+                  Success Rate
+                </div>
+              </div>
+            </div>
+
+            {/* Risk Assessment */}
+            <div
+              className={`p-4 rounded-xl border-l-4 ${
+                result?.riskLevel === "Low"
+                  ? "bg-green-50 border-green-500"
+                  : result?.riskLevel === "Medium"
+                  ? "bg-yellow-50 border-yellow-500"
+                  : "bg-red-50 border-red-500"
+              }`}
+            >
+              <div className="font-semibold text-gray-900 mb-1">
+                Risk Level:{" "}
+                <span
+                  className={
+                    result?.riskLevel === "Low"
+                      ? "text-green-600"
+                      : result.riskLevel === "Medium"
+                      ? "text-yellow-600"
+                      : "text-red-600"
+                  }
+                >
+                  {result?.riskLevel}
+                </span>
+              </div>
+              <p className="text-sm font-medium text-gray-600">
+                {result?.riskLevel === "Low" &&
+                  "Your project has favorable conditions for success."}
+                {result?.riskLevel === "Medium" &&
+                  "Monitor key milestones closely to stay on track."}
+                {result?.riskLevel === "High" &&
+                  "Consider additional planning and resource allocation."}
+              </p>
+            </div>
+          </div>
+        );
+      case "/tools/tech-stack-recommender/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {/* Primary Recommendation */}
+            <div className="bg-white rounded-xl p-4 border-2 border-green-200 shadow-lg">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-xl font-bold text-gray-900">Best Match</h4>
+                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                  {result.primary.match}% Match
+                </div>
+              </div>
+
+              <h5 className="text-lg font-semibold text-gray-800 mb-3">
+                {result.primary.name}
+              </h5>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {result.primary.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h6 className="text-start font-semibold text-green-600 mb-2">
+                    Pros:
+                  </h6>
+                  <ul className="text-start font-medium text-sm text-gray-600 space-y-1">
+                    {result.primary.pros.map((pro, index) => (
+                      <li key={index}>• {pro}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h6 className="text-start font-semibold text-red-600 mb-2">
+                    Cons:
+                  </h6>
+                  <ul className="text-start font-medium text-sm text-gray-600 space-y-1">
+                    {result.primary.cons.map((con, index) => (
+                      <li key={index}>• {con}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Alternative Recommendations */}
+            <div className="space-y-2">
+              <h4 className="text-lg font-semibold text-gray-900">
+                Alternative Options
+              </h4>
+              {result.alternatives
+                .filter((data, index) => index === 1)
+                .map((alt, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl p-3 border border-gray-200 hover:shadow-md transition-shadow"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <h5 className="font-semibold text-gray-800">
+                        {alt.name}
+                      </h5>
+                      <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                        {alt.match}% Match
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {alt.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        );
+      case "/tools/database-selector-tool/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {result.slice(0, 2).map((db, index) => (
+              <div
+                key={db.name}
+                className="bg-white border border-gray-200 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow duration-200"
+              >
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`w-8 h-8 ${db.color} text-white rounded-full flex items-center justify-center text-sm font-bold`}
+                    >
+                      #{index + 1}
+                    </span>
+                    <div>
+                      <h4 className="text-start text-lg font-semibold text-gray-900">
+                        {db.name}
+                      </h4>
+                      <p className="text-start text-sm font-medium text-gray-500">
+                        {db.type}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="ml-auto">
+                    <div className="text-right">
+                      <p className="text-2xl font-bold text-green-600">
+                        {db.score}%
+                      </p>
+                      <p className="font-medium text-sm text-gray-500">
+                        Match Score
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 font-normal">{db.useCase}</p>
+                <hr className="my-2" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 className="text-left font-medium text-green-700 mb-1">
+                      ✅ Pros
+                    </h5>
+                    <ul className="list-disc marker:text-green-600 text-left font-normal text-sm text-gray-600 pl-4">
+                      {db.pros.map((pro, i) => (
+                        <li key={i}>{pro}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-left font-medium text-red-700 mb-1">
+                      ⚠️ Considerations
+                    </h5>
+                    <ul className="list-disc marker:text-red-600 text-left font-normal text-sm text-gray-600 pl-4">
+                      {db.cons.map((con, i) => (
+                        <li key={i}>{con}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -388,19 +619,27 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     )}
                   </div>
                   <h2 className="text-3xl font-bold">
-                    Your Estimated{" "}
-                    {pathname === "/tools/roi-calculator/"
-                      ? "ROI"
-                      : pathname ===
-                          "/tools/app-development-timeline-calculator/" ||
-                        pathname === "/tools/mvp-launch-timeline-estimator/"
-                      ? "Timeline"
-                      : pathname ===
-                        "/tools/feature-complexity-vs-time-estimator/"
-                      ? "Results"
-                      : "/tools/feature-complexity-vs-time-estimator/"
-                      ? "Timeline"
-                      : "Cost"}
+                    {pathname === "/tools/tech-stack-recommender/" ? (
+                      "Recommendations"
+                    ) : pathname === "/tools/database-selector-tool/" ? (
+                      "Your Recommendations"
+                    ) : (
+                      <>
+                        Your Estimated{" "}
+                        {pathname === "/tools/roi-calculator/"
+                          ? "ROI"
+                          : pathname ===
+                              "/tools/app-development-timeline-calculator/" ||
+                            pathname === "/tools/mvp-launch-timeline-estimator/"
+                          ? "Timeline"
+                          : pathname ===
+                            "/tools/feature-complexity-vs-time-estimator/"
+                          ? "Results"
+                          : "/tools/feature-complexity-vs-time-estimator/"
+                          ? "Timeline"
+                          : "Cost"}
+                      </>
+                    )}
                   </h2>
                 </>
               )}
@@ -437,7 +676,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               ) : pathname === "/tools/app-development-timeline-calculator/" ||
                 pathname === "/tools/mvp-launch-timeline-estimator/" ||
                 pathname === "/tools/feature-complexity-vs-time-estimator/" ||
-                pathname === "/tools/testing-qa-timeline-estimator/" ? (
+                pathname === "/tools/testing-qa-timeline-estimator/" ||
+                pathname === "/tools/tech-stack-recommender/" ||
+                pathname === "/tools/database-selector-tool/" ||
+                pathname === "/tools/go-to-market-timeline-planner/" ? (
                 ""
               ) : (
                 <p className="text-gray-600 max-w-md mx-auto">

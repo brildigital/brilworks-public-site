@@ -1,5 +1,5 @@
 import React from "react";
-import TestingQATimelineEstimator from "@/app/components/Tools/TestingQATimelineEstimator";
+import TechStackRecommender from "@/app/components/Tools/TechStackRecommender";
 
 export const metadata = {
   title: "Tech Stack Recommender",
@@ -24,7 +24,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return <TestingQATimelineEstimator />;
+  return <TechStackRecommender />;
 };
 
 export default page;

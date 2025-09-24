@@ -2,8 +2,10 @@ import React from "react";
 import {
   ArrowRight,
   BarChart3,
+  Brain,
   Calculator,
   CheckCircle,
+  ClipboardList,
   Clock,
   Code,
   DollarSign,
@@ -22,25 +24,25 @@ import { usePathname } from "next/navigation";
 const projectEstimateSteps = {
   title: "Get your software cost estimate in 3 steps!",
   description:
-    "Our intelligent calculator provides instant, accurate estimates based on your specific requirements",
+    "Our intelligent software development cost calculator uses proven estimation methods to generate realistic projections.",
   listData: [
     {
       icon: Settings,
       title: "Choose Your Platform & Features",
       description:
-        "Select your target platform, project complexity, and desired features from our comprehensive list",
+        "Building for mobile, web, or desktop? Select the features you need, like chat, GPS, or payments, and get a clear, accurate estimate.",
     },
     {
       icon: FileText,
-      title: "Specify Design & Timeline",
+      title: "Define Design & Timeline",
       description:
-        "Define your design requirements and project timeline to get the most accurate estimate",
+        "Specify your design needs and project duration. Whether you need a simple interface or a complex UI, a short sprint or a long-term build, the calculator adjusts your estimate accordingly.",
     },
     {
       icon: DollarSign,
-      title: "Get Instant Cost Estimate",
+      title: "Receive Instant Estimate",
       description:
-        "Receive a detailed breakdown of your project costs with transparent pricing information",
+        "Get a detailed breakdown with clear pricing. No hidden costs, just a transparent view of your project budget.",
     },
   ],
 };
@@ -77,7 +79,8 @@ const mobilityAppDevCalculatorSteps = {
     <>
       Our intelligent algorithm considers multiple factors to provide you with
       the most
-      <br className="hidden md:block" /> accurate cost estimate
+      <br className="hidden md:block" /> accurate app development cost
+      breakdown.
     </>
   ),
   listData: [
@@ -350,62 +353,57 @@ const goToMarketPlacePlannerSteps = {
   ],
 };
 const techStackRecommenderSteps = {
-  title: "How to Calculate Your Testing Timeline",
+  title: "How It Works",
   description:
-    "Follow these simple steps to get accurate testing estimates for your project",
+    "Get your perfect tech stack recommendation in just 4 simple steps",
   listData: [
     {
-      icon: FileText,
-      title: "Input Project Details",
+      icon: ClipboardList,
+      title: "Fill Out Requirements",
       description:
-        "Enter your project requirements, complexity, and testing scope.",
+        "Provide details about your project type, scale, team size, and specific requirements.",
     },
     {
-      icon: Settings,
-      title: "Configure Parameters",
-      description: "Set testing types, team size, and quality requirements.",
-    },
-    {
-      icon: Calculator,
+      icon: Brain,
       title: "AI Analysis",
       description:
-        "Our algorithm analyzes your inputs and industry benchmarks.",
+        "Our intelligent system analyzes your inputs against thousands of successful project patterns.",
+    },
+    {
+      icon: Zap,
+      title: "Get Recommendations",
+      description:
+        "Receive personalized tech stack suggestions with detailed explanations and alternatives.",
     },
     {
       icon: CheckCircle,
-      title: "Get Timeline",
+      title: "Make Informed Decision",
       description:
-        "Receive detailed timeline breakdown with actionable insights.",
+        "Compare options, view pros/cons, and select the perfect stack for your project success.",
     },
   ],
 };
 const databaseSelectorToolSteps = {
-  title: "How to Calculate Your Testing Timeline",
-  description:
-    "Follow these simple steps to get accurate testing estimates for your project",
+  title: "How It Works",
+  description: "Get your perfect database recommendation in 3 simple steps",
   listData: [
     {
       icon: FileText,
-      title: "Input Project Details",
+      title: "Describe Your Project",
       description:
-        "Enter your project requirements, complexity, and testing scope.",
+        "Tell us about your project type, data volume, scalability needs, and team expertise.",
     },
     {
-      icon: Settings,
-      title: "Configure Parameters",
-      description: "Set testing types, team size, and quality requirements.",
-    },
-    {
-      icon: Calculator,
+      icon: Brain,
       title: "AI Analysis",
       description:
-        "Our algorithm analyzes your inputs and industry benchmarks.",
+        "Our intelligent algorithm analyzes your requirements against database capabilities.",
     },
     {
-      icon: CheckCircle,
-      title: "Get Timeline",
+      icon: Zap,
+      title: "Get Recommendations",
       description:
-        "Receive detailed timeline breakdown with actionable insights.",
+        "Receive ranked database suggestions with detailed pros, cons, and use cases.",
     },
   ],
 };

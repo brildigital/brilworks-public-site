@@ -56,14 +56,13 @@ const SaasDevelopmentCostCalculator = () => {
     setIsCalculating(true);
 
     const resultData = calculateSaasDevCostEstimate(formData);
-    setResult(resultData);
-
-    if (!hasVisited) {
-      setOpenPopup(true);
-    }
 
     setTimeout(() => {
+      setResult(resultData);
       setIsCalculating(false);
+      if (!hasVisited) {
+        setOpenPopup(true);
+      }
     }, 1500);
   };
 
