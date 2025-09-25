@@ -8,14 +8,17 @@ import {
   ClipboardList,
   Clock,
   Code,
+  Cpu,
   DollarSign,
   FileText,
   Layers,
+  Lightbulb,
   Rocket,
   Settings,
   Smartphone,
   Target,
   TrendingUp,
+  Users,
   Zap,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
@@ -48,27 +51,26 @@ const projectEstimateSteps = {
 };
 
 const roiCalculatorSteps = {
-  title: "Calculate Your App Cost in 3 Simple Steps",
-  description:
-    "Our streamlined process makes it easy to get accurate estimates for your mobile app project",
+  title: "How Our ROI Calculator Works",
+  description: "Get your app cost and ROI in 3 simple steps:",
   listData: [
     {
       icon: Settings,
       title: "Define Your App",
       description:
-        "Select your app type, complexity level, and required features. Choose between native, hybrid, or web app development.",
+        "Select your app type, complexity, and essential features. Choose between native, hybrid, or web app development to see how each option impacts your ROI.",
     },
     {
       icon: FileText,
       title: "Input Project Details",
       description:
-        "Provide timeline, team size, rates, and revenue projections to get the most accurate cost and ROI calculations.",
+        "Provide project timeline, team size, development rates, and projected revenue. Our roi calculation software uses this data for accurate cost and ROI estimates.",
     },
     {
       icon: DollarSign,
       title: "Get Instant Results",
       description:
-        "Receive detailed cost breakdown, ROI analysis, and payback period calculations instantly as you update your inputs.",
+        "Receive a detailed breakdown of development costs, ROI, and payback periods in real time. Adjust inputs to explore multiple scenarios and optimize your investment return",
     },
   ],
 };
@@ -407,6 +409,68 @@ const databaseSelectorToolSteps = {
     },
   ],
 };
+const crossPlatformVsNativeAnalyzerSteps = {
+  title: "How It Works",
+  description:
+    "Our intelligent analyzer guides you through a systematic process to determine the best development approach for your mobile app",
+  listData: [
+    {
+      icon: Target,
+      title: "Define Your Requirements",
+      description:
+        "Specify your project type, target platforms, and core requirements",
+    },
+    {
+      icon: Clock,
+      title: "Set Budget & Timeline",
+      description:
+        "Input your budget constraints and development timeline expectations",
+    },
+    {
+      icon: Zap,
+      title: "Analyze Performance Needs",
+      description:
+        "Determine if your app requires high performance or standard functionality",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Recommendation",
+      description:
+        "Receive a detailed analysis with reasoning and implementation guidance",
+    },
+  ],
+};
+const apiIntegrationFeasibiltyCheckerSteps = {
+  title: "How It Works",
+  description:
+    "Follow these simple steps to get a comprehensive feasibility assessment for your API integration project",
+  listData: [
+    {
+      icon: Code,
+      title: "Project Details",
+      description:
+        "Provide information about your API type, complexity, and integration requirements",
+    },
+    {
+      icon: Users,
+      title: "Resource Assessment",
+      description:
+        "Tell us about your timeline, budget constraints, and team expertise level",
+    },
+    {
+      icon: Cpu,
+      title: "AI Analysis",
+      description:
+        "Our advanced algorithm analyzes your inputs against thousands of successful projects",
+    },
+    {
+      icon: BarChart3,
+      title: "Get Results",
+      description:
+        "Receive a detailed feasibility score with personalized recommendations and timeline estimates",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -428,6 +492,10 @@ const ToolHowToUse = () => {
     "/tools/go-to-market-timeline-planner/": goToMarketPlacePlannerSteps,
     "/tools/tech-stack-recommender/": techStackRecommenderSteps,
     "/tools/database-selector-tool/": databaseSelectorToolSteps,
+    "/tools/cross-platform-vs-native-analyzer/":
+      crossPlatformVsNativeAnalyzerSteps,
+    "/tools/api-integration-feasibility-checker/":
+      apiIntegrationFeasibiltyCheckerSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

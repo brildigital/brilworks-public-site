@@ -597,8 +597,16 @@ export const sitemapData = [
     lastmod: "2025-09-16T11:23:29.521Z",
   },
   {
-    loc: "https://www.brilworks.com/project-estimate/",
-    lastmod: "2025-09-15T15:21:23.121Z",
+    loc: "https://www.brilworks.com/tools/project-estimate/",
+    lastmod: "2025-09-23T15:21:23.121Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/roi-calculator/",
+    lastmod: "2025-09-24T15:21:23.121Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/mobility-app-development-calculator/",
+    lastmod: "2025-09-25T15:21:23.121Z",
   },
   {
     loc: "https://www.brilworks.com/mvp-in-48-hours/",

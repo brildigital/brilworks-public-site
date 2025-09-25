@@ -26,6 +26,7 @@ import {
   CheckCircle,
   Cpu,
   Database,
+  Rocket,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -81,67 +82,58 @@ const projectEstimateFeatures = {
 };
 const roiCalculatorFeatures = {
   title: "ROI Calculator Features",
-  description: (
-    <>
-      Comprehensive tools and insights to make informed decisions about
-      <br className="hidden md:block" /> your app development investment
-    </>
-  ),
+  description: "Tools and Insights for Smarter App Investments",
   listData: [
     {
       icon: Calculator,
       title: "Real-time Calculations",
-      description:
-        "Instant updates as you modify inputs, helping you explore different scenarios and optimize your investment.",
+      description: "Instantly see changes as you update your inputs.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: TrendingUp,
       title: "Accurate ROI Analysis",
       description:
-        "Detailed return on investment calculations based on industry standards and market data.",
+        "Industry-standard calculations to forecast potential returns.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: BarChart3,
       title: "Comprehensive Reports",
       description:
-        "Detailed breakdown of development costs, maintenance expenses, and revenue projections.",
+        "Breakdown of development, maintenance, and revenue projections.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Clock,
       title: "Timeline Planning",
-      description:
-        "Calculate payback periods and break-even points to plan your investment timeline effectively.",
+      description: "Plan payback periods and break-even points with ease.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
-      description:
-        "Identify potential risks and mitigation strategies for your app development project.",
+      description: "Identify potential risks and strategies to mitigate them.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Users,
       title: "Team Size Optimization",
       description:
-        "Find the optimal team size and structure for your project timeline and budget constraints.",
+        "Discover the ideal team structure for your timeline and budget.",
       color: "bg-violet-100 text-violet-600",
     },
     {
       icon: Zap,
       title: "Feature Impact Analysis",
-      description:
-        "See how individual features affect your overall development cost and timeline.",
+      description: "Understand how each feature affects cost and ROI.",
       color: "bg-teal-100 text-teal-600",
     },
     {
       icon: DollarSign,
       title: "Revenue Modeling",
       description:
-        "Model different revenue scenarios and user acquisition strategies for better planning.",
+        "Simulate different revenue scenarios and user acquisition strategies.",
       color: "bg-pink-100 text-pink-600",
     },
   ],
@@ -765,6 +757,104 @@ const databaseSelectorToolFeatures = {
     },
   ],
 };
+const crossPlatformVsNativeAnalyzerFeatures = {
+  title: "Powerful Analysis Features",
+  description:
+    "Advanced capabilities that provide comprehensive insights for your mobile development decisions",
+  listData: [
+    {
+      icon: Calculator,
+      title: "Smart Analysis Algorithm",
+      description:
+        "Advanced algorithm considers 15+ factors to provide accurate recommendations",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Cost-Benefit Analysis",
+      description:
+        "Detailed breakdown of development costs, timeline, and long-term maintenance",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identifies potential risks and challenges for each development approach",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Rocket,
+      title: "Implementation Roadmap",
+      description:
+        "Step-by-step guidance for executing your chosen development strategy",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Award,
+      title: "Industry Standards",
+      description:
+        "Recommendations based on current industry best practices and trends",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Users,
+      title: "Team Optimization",
+      description:
+        "Matches development approach with your team's skills and resources",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+  ],
+};
+const apiIntegrationFeasibiltyCheckerFeatures = {
+  title: "Powerful Features",
+  description:
+    "Our comprehensive assessment tool provides everything you need to make informed decisions about your API integration projects",
+  listData: [
+    {
+      icon: Zap,
+      title: "Instant Analysis",
+      description:
+        "Get results in seconds with our AI-powered assessment engine that processes your requirements instantly",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and challenges before they impact your project timeline and budget",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Success Scoring",
+      description:
+        "Receive a numerical score based on industry benchmarks and historical project data",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Timeline Estimation",
+      description:
+        "Get accurate time estimates for your integration project based on complexity and resources",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Optimization Tips",
+      description:
+        "Receive actionable recommendations to improve your project's chances of success",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Best Practices",
+      description:
+        "Access industry best practices and proven methodologies for API integrations",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -787,6 +877,10 @@ const ToolFeatures = () => {
     "/tools/go-to-market-timeline-planner/": goToMarketPlacePlannerFeatures,
     "/tools/tech-stack-recommender/": techStackRecommenderFeatures,
     "/tools/database-selector-tool/": databaseSelectorToolFeatures,
+    "/tools/cross-platform-vs-native-analyzer/":
+      crossPlatformVsNativeAnalyzerFeatures,
+    "/tools/api-integration-feasibility-checker/":
+      apiIntegrationFeasibiltyCheckerFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

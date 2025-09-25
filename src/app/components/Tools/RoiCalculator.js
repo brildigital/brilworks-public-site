@@ -99,15 +99,14 @@ const RoiCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your App's
-            <br />
+            Calculate ROI with Our App
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              ROI
+              &nbsp;ROI Calculator
             </span>
           </>
         }
         buttonText="Start Calculating"
-        description="Get accurate estimates for your mobile app development costs and potential return on investment. Make data-driven decisions with our comprehensive calculator."
+        description="Maximize your mobile app's potential with our app ROI calculator. Get accurate estimates of development costs and potential investment returns to make informed data-driven decisions. weather your a startup exploring your first app or an established company planning your next project, our software ROI calculator provides detailed insights to guide your strategy"
         imageSrc="/images/v2/roi-calculator-banner.webp"
         statsGird={[
           { value: "$50K+", label: "Apps Calculated" },

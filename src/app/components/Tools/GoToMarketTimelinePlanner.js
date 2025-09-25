@@ -40,14 +40,6 @@ const GoToMarketTimelinePlanner = () => {
     launchType: "",
     description: "",
   });
-  // const [formData, setFormData] = useState({
-  //   projectSize: "",
-  //   complexity: "",
-  //   testingTypes: [],
-  //   teamSize: "",
-  //   experience: "",
-  //   description: "",
-  // });
 
   const [result, setResult] = useState();
 
@@ -216,9 +208,6 @@ const GoToMarketTimelinePlanner = () => {
                 </select>
               </div>
 
-              {/* Project Complexity */}
-
-              {/* Design Requirements */}
               <div className="space-y-1">
                 <label className="font-semibold text-gray-600">
                   Team Size <span className="text-red-500">*</span>
@@ -237,7 +226,6 @@ const GoToMarketTimelinePlanner = () => {
                 </select>
               </div>
 
-              {/* Timeline */}
               <div className="space-y-1">
                 <label className="font-semibold text-gray-600">
                   Budget Range<span className="text-red-500">*</span>
@@ -271,7 +259,6 @@ const GoToMarketTimelinePlanner = () => {
                 </select>
               </div>
 
-              {/* Project Description */}
               <div className="space-y-1">
                 <label className="font-medium text-gray-600">
                   Project Description <span className="text-red-500">*</span>
@@ -287,7 +274,6 @@ const GoToMarketTimelinePlanner = () => {
                 />
               </div>
 
-              {/* Get Quote Button */}
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
@@ -307,7 +293,6 @@ const GoToMarketTimelinePlanner = () => {
               </button>
             </div>
 
-            {/* Cost Estimate */}
             {result && hasVisited ? (
               <div className="popup bg-white rounded-2xl border shadow-lg p-8">
                 <h2 className="text-center text-2xl font-semibold mb-4">
@@ -315,7 +300,6 @@ const GoToMarketTimelinePlanner = () => {
                 </h2>
 
                 <div className="space-y-4">
-                  {/* Summary */}
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center p-6 bg-blue-50 rounded-2xl">
                       <Calendar className="w-8 h-8 text-blue-600 mx-auto mb-2" />

@@ -6,13 +6,16 @@ import {
   Calendar,
   CheckCircle,
   Clock,
+  Code,
   DollarSign,
   Lock,
+  Smartphone,
   Star,
   Target,
   TrendingUp,
   Wallet,
   X,
+  Zap,
 } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
@@ -537,6 +540,104 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             ))}
           </div>
         );
+      case "/tools/cross-platform-vs-native-analyzer/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="rounded-xl p-4 border border-blue-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                    result.recommendation === "native"
+                      ? "bg-purple-100 text-purple-600"
+                      : result.recommendation === "cross-platform"
+                      ? "bg-green-100 text-green-600"
+                      : "bg-blue-100 text-blue-600"
+                  }`}
+                >
+                  {result.recommendation === "native" ? (
+                    <Code className="w-6 h-6" />
+                  ) : result.recommendation === "cross-platform" ? (
+                    <Smartphone className="w-6 h-6" />
+                  ) : (
+                    <Zap className="w-6 h-6" />
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-black text-xl font-semibold capitalize">
+                    {result.recommendation.replace("-", " ")} Development
+                  </h4>
+                  <p className="text-left text-gray-600 font-normal">
+                    Recommended approach
+                  </p>
+                </div>
+              </div>
+
+              <div className={`w-full bg-gray-200 rounded-full h-2 mb-4`}>
+                <div
+                  className={`h-2 rounded-full transition-all duration-1000 ${
+                    result.recommendation === "native"
+                      ? "bg-purple-500"
+                      : result.recommendation === "cross-platform"
+                      ? "bg-green-500"
+                      : "bg-blue-500"
+                  }`}
+                  style={{ width: `${result.score}%` }}
+                ></div>
+              </div>
+              <p className="font-normal text-left text-sm text-gray-600">
+                Confidence Score: {result.score}%
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
+                <Clock className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                <div className="font-medium text-gray-900">Timeline</div>
+                <div className="text-sm text-gray-600 font-normal">
+                  {result.timeline}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
+                <DollarSign className="w-6 h-6 text-green-600 mx-auto mb-2" />
+                <div className="font-medium text-gray-900">Budget</div>
+                <div className="text-sm text-gray-600 font-normal">
+                  {result.budget}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
+                <Zap className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
+                <div className="font-medium text-gray-900">Performance</div>
+                <div className="text-sm text-gray-600 font-normal">
+                  {result.performance}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-blue-200">
+              <h5 className="font-semibold text-gray-900 mb-3">
+                Key Reasoning
+              </h5>
+              <ul className="space-y-2">
+                {result.reasoning.map((reason, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-sm text-gray-700 font-normal"
+                  >
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    {reason}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -600,7 +701,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             >
               <X className="h-5 w-5" />
             </IconButton>
-            <div className="text-center mb-8">
+            <div className="text-center mb-4">
               {pathname === "/tools/roi-calculator/" && showPrice ? (
                 ""
               ) : (
@@ -623,6 +724,9 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       "Recommendations"
                     ) : pathname === "/tools/database-selector-tool/" ? (
                       "Your Recommendations"
+                    ) : pathname ===
+                      "/tools/cross-platform-vs-native-analyzer/" ? (
+                      "Analysis Results"
                     ) : (
                       <>
                         Your Estimated{" "}
@@ -679,6 +783,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 pathname === "/tools/testing-qa-timeline-estimator/" ||
                 pathname === "/tools/tech-stack-recommender/" ||
                 pathname === "/tools/database-selector-tool/" ||
+                pathname === "/tools/cross-platform-vs-native-analyzer/" ||
                 pathname === "/tools/go-to-market-timeline-planner/" ? (
                 ""
               ) : (

@@ -105,15 +105,31 @@ const toolsData = [
       "Find the best technologies for your app. Get smart, data-driven stack suggestions to match your goals, budget, and scalability needs.",
     bg: "bg-violet-200",
     link: "/tools/tech-stack-recommender/",
+    tags: ["DEVELOPMENT", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "Database Selector Tool",
+    description:
+      "Quickly identify the best database for your app. Compare features, scalability, and cost to make confident, data-driven technology choices.",
+    bg: "bg-fuchsia-200",
+    link: "/tools/database-selector-tool/",
+    tags: ["DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Cross Platform vs Native Analyzer",
+    description:
+      "Evaluate the pros and cons of cross-platform and native development. Get clear insights to select the right approach for your app’s budget and goals.",
+    bg: "bg-slate-200",
+    link: "/tools/cross-platform-vs-native-analyzer/",
     tags: ["MARKETING", "BUSINESS", "OTHER"],
   },
   // {
-  //   title: "Database Selector Tool",
+  //   title: "API Integration Feasibility Checker",
   //   description:
-  //     "Quickly identify the best database for your app. Compare features, scalability, and cost to make confident, data-driven technology choices.",
-  //   bg: "bg-fuchsia-200",
-  //   link: "/tools/database-selector-tool/",
-  //   tags: ["MARKETING", "BUSINESS", "OTHER"],
+  //     "Analyze API compatibility and integration complexity. Get instant insights to plan secure, cost-effective, and successful third-party API connections for your application.",
+  //   bg: "bg-amber-200",
+  //   link: "/tools/api-integration-feasibility-checker/",
+  //   tags: ["DEVELOPMENT", "BUSINESS", "OTHER"],
   // },
 ];
 
