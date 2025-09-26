@@ -562,6 +562,99 @@ const apiIntegrationFeasibiltyCheckerFaqData = {
     },
   ],
 };
+const cloudServiceCostEstimatorFaqData = {
+  description:
+    "Get answers to common questions about our cloud cost estimator.",
+  queAns: [
+    {
+      question: "How accurate are the cost estimates?",
+      answer:
+        "Our estimates are based on current cloud provider pricing and are typically accurate within 5-10% of actual costs. However, final costs may vary based on specific usage patterns and provider promotions.",
+    },
+    {
+      question: "Which cloud providers are supported?",
+      answer:
+        "We support cost estimation for AWS, Microsoft Azure, Google Cloud Platform, IBM Cloud, and Oracle Cloud. More providers are being added regularly.",
+    },
+    {
+      question: "Can I save and share my estimates?",
+      answer:
+        "Yes, you can save your cost estimates and share them with your team via a unique link. Premium users can also export estimates to PDF or Excel formats.",
+    },
+    {
+      question: "How often are prices updated?",
+      answer:
+        "We update our pricing database daily to ensure you're getting the most current cost information from all supported cloud providers.",
+    },
+    {
+      question: "Do you offer enterprise features?",
+      answer:
+        "Yes, our enterprise plan includes bulk estimation, custom pricing models, API access, and dedicated support for large-scale cloud planning.",
+    },
+  ],
+};
+const saasProfitabilityCalculatorFaqData = {
+  description:
+    "Get answers to common questions about SaaS profitability calculations",
+  queAns: [
+    {
+      question: "What is a good LTV:CAC ratio for SaaS companies?",
+      answer:
+        "A healthy LTV:CAC ratio is typically 3:1 or higher. This means your customer lifetime value should be at least 3 times your customer acquisition cost. Ratios above 5:1 are considered excellent.",
+    },
+    {
+      question: "How do I calculate my SaaS churn rate?",
+      answer:
+        "Monthly churn rate = (Customers lost during month / Customers at start of month) × 100. For annual churn, use the same formula with annual data. A good monthly churn rate is typically below 5% for B2B SaaS.",
+    },
+    {
+      question: "What's considered a good profit margin for SaaS?",
+      answer:
+        "Mature SaaS companies typically aim for 20-30% profit margins. Early-stage companies may have lower margins as they invest in growth. Anything above 20% is considered healthy for established SaaS businesses.",
+    },
+    {
+      question: "How accurate are these calculations?",
+      answer:
+        "Our calculator uses industry-standard formulas and benchmarks. However, results should be used as estimates and starting points for deeper financial analysis. Always consult with financial professionals for critical business decisions.",
+    },
+    {
+      question: "Can I use this for different SaaS business models?",
+      answer:
+        "Yes! The calculator works for B2B SaaS, B2C SaaS, freemium models, and various pricing structures. Just adjust the inputs to match your specific business model and customer segments.",
+    },
+  ],
+};
+const customerAcquisiyionCostEstimatorFaqData = {
+  description:
+    "Get answers to common questions about API integration feasibility and our assessment tool",
+  queAns: [
+    {
+      question: "What factors determine API integration feasibility?",
+      answer:
+        "Key factors include API complexity, team expertise, timeline constraints, budget allocation, documentation quality, and existing system compatibility.",
+    },
+    {
+      question: "How accurate are the feasibility assessments?",
+      answer:
+        "Our assessments are based on industry best practices and historical data. They provide a reliable baseline, but actual results may vary based on specific project requirements.",
+    },
+    {
+      question: "Can I use this tool for multiple API integrations?",
+      answer:
+        "Yes, you can assess multiple APIs separately. For complex multi-API projects, consider the cumulative complexity and interdependencies.",
+    },
+    {
+      question: "What if my feasibility score is low?",
+      answer:
+        "A low score doesn't mean impossible. Review our recommendations, consider phased implementation, or seek additional resources and expertise.",
+    },
+    {
+      question: "How often should I reassess feasibility?",
+      answer:
+        "Reassess when project requirements change, new constraints emerge, or after completing project phases to validate assumptions.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -595,6 +688,10 @@ const ToolFAQs = () => {
       crossPlatformVsNativeAnalyzerFaqData,
     "/tools/api-integration-feasibility-checker/":
       apiIntegrationFeasibiltyCheckerFaqData,
+    "/tools/cloud-service-cost-estimator/": cloudServiceCostEstimatorFaqData,
+    "/tools/saas-profitability-calculator/": saasProfitabilityCalculatorFaqData,
+    "/tools/customer-acquisition-cost-estimator/":
+      customerAcquisiyionCostEstimatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

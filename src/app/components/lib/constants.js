@@ -609,6 +609,10 @@ export const sitemapData = [
     lastmod: "2025-09-25T15:21:23.121Z",
   },
   {
+    loc: "https://www.brilworks.com/free-mockups/",
+    lastmod: "2025-09-17T15:22:34.531Z",
+  },
+  {
     loc: "https://www.brilworks.com/mvp-in-48-hours/",
     lastmod: "2025-09-15T15:22:34.531Z",
   },

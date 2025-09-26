@@ -7,6 +7,7 @@ import {
   CheckCircle,
   ClipboardList,
   Clock,
+  Cloud,
   Code,
   Cpu,
   DollarSign,
@@ -14,6 +15,7 @@ import {
   Layers,
   Lightbulb,
   Rocket,
+  Server,
   Settings,
   Smartphone,
   Target,
@@ -471,6 +473,95 @@ const apiIntegrationFeasibiltyCheckerSteps = {
     },
   ],
 };
+const cloudServiceCostEstimatorSteps = {
+  title: "How to Calculate Cloud Costs",
+  description:
+    "Follow these simple steps to get accurate cost estimates for your cloud infrastructure needs.",
+  listData: [
+    {
+      icon: Cloud,
+      title: "Select Service Type",
+      description: "Choose the cloud service you need to estimate costs for",
+    },
+    {
+      icon: Server,
+      title: "Configure Resources",
+      description: "Specify your compute, storage, and network requirements",
+    },
+    {
+      icon: BarChart3,
+      title: "Add Description",
+      description: "Describe your use case for more accurate pricing",
+    },
+    {
+      icon: DollarSign,
+      title: "Get Estimate",
+      description: "Receive your detailed cost breakdown and recommendations",
+    },
+  ],
+};
+const saasProfitabilityCalculatorSteps = {
+  title: "How to Calculate SaaS Profitability",
+  description:
+    "Follow these simple steps to get comprehensive insights into your SaaS business profitability",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Enter Revenue Data",
+      description:
+        "Input your monthly recurring revenue and key financial metrics",
+    },
+    {
+      icon: Users,
+      title: "Customer Metrics",
+      description:
+        "Add customer acquisition cost, lifetime value, and churn rate",
+    },
+    {
+      icon: BarChart3,
+      title: "Operating Costs",
+      description:
+        "Include your gross margin percentage and operating expenses",
+    },
+    {
+      icon: Target,
+      title: "Get Results",
+      description:
+        "Receive detailed profitability analysis and recommendations",
+    },
+  ],
+};
+const customerAcquisiyionCostEstimatorSteps = {
+  title: "How It Works",
+  description:
+    "Follow these simple steps to get a comprehensive feasibility assessment for your API integration project",
+  listData: [
+    {
+      icon: Code,
+      title: "Project Details",
+      description:
+        "Provide information about your API type, complexity, and integration requirements",
+    },
+    {
+      icon: Users,
+      title: "Resource Assessment",
+      description:
+        "Tell us about your timeline, budget constraints, and team expertise level",
+    },
+    {
+      icon: Cpu,
+      title: "AI Analysis",
+      description:
+        "Our advanced algorithm analyzes your inputs against thousands of successful projects",
+    },
+    {
+      icon: BarChart3,
+      title: "Get Results",
+      description:
+        "Receive a detailed feasibility score with personalized recommendations and timeline estimates",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -496,6 +587,10 @@ const ToolHowToUse = () => {
       crossPlatformVsNativeAnalyzerSteps,
     "/tools/api-integration-feasibility-checker/":
       apiIntegrationFeasibiltyCheckerSteps,
+    "/tools/cloud-service-cost-estimator/": cloudServiceCostEstimatorSteps,
+    "/tools/saas-profitability-calculator/": saasProfitabilityCalculatorSteps,
+    "/tools/customer-acquisition-cost-estimator/":
+      customerAcquisiyionCostEstimatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

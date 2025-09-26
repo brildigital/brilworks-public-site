@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  ArrowRight,
   Award,
-  Database,
+  BarChart3,
+  Calculator,
+  CheckCircle,
   Loader2,
-  Search,
   Sparkles,
   Star,
   Users,
@@ -14,7 +16,7 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { databaseSelectorRecommendations } from "../lib/featureComplexityVsTimelineEstimatorService";
+import { calculateFeasibilityChecker } from "../lib/crossPlatformVsNativeAnalyzerService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -27,26 +29,22 @@ const ApiIntegrationFeasibilityChecker = () => {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
-    projectType: "",
-    dataVolume: "",
+    apiType: "",
     complexity: "",
-    scalability: "",
+    timeline: "",
     budget: "",
     team: "",
     description: "",
   });
-
   const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
-      formData?.projectType &&
-      formData?.dataVolume &&
+      formData?.apiType &&
       formData?.complexity &&
-      formData?.scalability &&
+      formData?.timeline &&
       formData?.budget &&
-      formData?.team &&
-      formData?.description.trim()
+      formData?.team
     );
   };
 
@@ -62,7 +60,7 @@ const ApiIntegrationFeasibilityChecker = () => {
 
     setIsCalculating(true);
 
-    const resultData = databaseSelectorRecommendations(formData);
+    const resultData = calculateFeasibilityChecker(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -102,10 +100,10 @@ const ApiIntegrationFeasibilityChecker = () => {
       <ToolHerosection
         title={
           <>
-            API Integration
+            API Integration&nbsp;
             <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              &nbsp;Feasibility&nbsp;
+              Feasibility&nbsp;
             </span>
             Checker
           </>
@@ -159,48 +157,24 @@ const ApiIntegrationFeasibilityChecker = () => {
                 Project Assessment Form
               </h2>
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Project Type *
-                </label>
+                <label className="font-medium text-gray-700">API Type *</label>
 
                 <select
-                  value={formData.projectType}
-                  onChange={(e) =>
-                    handleInputChange("projectType", e.target.value)
-                  }
+                  value={formData.apiType}
+                  onChange={(e) => handleInputChange("apiType", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select project type</option>
-                  <option value="web">Web Application</option>
-                  <option value="mobile">Mobile App</option>
-                  <option value="enterprise">Enterprise System</option>
-                  <option value="analytics">Analytics Platform</option>
+                  <option value="">Select API type</option>
+                  <option value="rest">REST API</option>
+                  <option value="graphql">GraphQL</option>
+                  <option value="soap">SOAP</option>
+                  <option value="webhooks">Webhooks</option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Expected Data Volume *
-                </label>
-
-                <select
-                  value={formData?.dataVolume}
-                  onChange={(e) =>
-                    handleInputChange("dataVolume", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select data volume</option>
-                  <option value="small">Small (&lt;1GB)</option>
-                  <option value="medium">Medium (1GB-100GB)</option>
-                  <option value="large">Large (100GB-1TB)</option>
-                  <option value="enterprise_vol">Enterprise (&gt;1TB)</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Data Complexity *
+                  Project Complexity *
                 </label>
                 <select
                   value={formData?.complexity}
@@ -209,54 +183,49 @@ const ApiIntegrationFeasibilityChecker = () => {
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select complexity</option>
-                  <option value="simple">Simple (Basic CRUD)</option>
-                  <option value="moderate">Moderate (Relations, Joins)</option>
-                  <option value="complex">
-                    Complex (Analytics, Real-time)
+                  <option value="">Select complexity level</option>
+                  <option value="low">Low - Simple data retrieval</option>
+                  <option value="medium">
+                    Medium - Multi-endpoint integration
                   </option>
+                  <option value="high">High - Complex business logic</option>
                 </select>
               </div>
 
-              {/* Project Complexity */}
-
-              {/* Design Requirements */}
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Scalability Needs *
+                  Timeline Flexibility *
                 </label>
                 <select
-                  value={formData.scalability}
+                  value={formData.timeline}
                   onChange={(e) =>
-                    handleInputChange("scalability", e.target.value)
+                    handleInputChange("timeline", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select scalability needs</option>
-                  <option value="low">Low (Single server)</option>
-                  <option value="medium_scale">Medium (Load balancing)</option>
-                  <option value="high">High (Distributed system)</option>
+                  <option value="">Select timeline preference</option>
+                  <option value="flexible">
+                    Flexible - Quality over speed
+                  </option>
+                  <option value="moderate">Moderate - Balanced approach</option>
+                  <option value="tight">Tight - Need it ASAP</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">Budget *</label>
+                <label className="font-medium text-gray-700">
+                  Budget Range *
+                </label>
                 <select
                   value={formData.budget}
                   onChange={(e) => handleInputChange("budget", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select budget range</option>
-                  <option value="low_budget">
-                    Low (Open source preferred)
-                  </option>
-                  <option value="medium_budget">
-                    Medium (Some licensing OK)
-                  </option>
-                  <option value="high_budget">
-                    High (Enterprise solutions)
-                  </option>
+                  <option value="low">$5,000 - $15,000</option>
+                  <option value="medium">$15,000 - $50,000</option>
+                  <option value="high">$50,000+</option>
                 </select>
               </div>
               <div className="space-y-1">
@@ -268,17 +237,23 @@ const ApiIntegrationFeasibilityChecker = () => {
                   onChange={(e) => handleInputChange("team", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select team expertise</option>
-                  <option value="junior">Junior (Learning curve OK)</option>
-                  <option value="mixed">Mixed (Some experience)</option>
-                  <option value="senior">Senior (Complex solutions OK)</option>
+                  <option value="">Select team expertise level</option>
+                  <option value="beginner">
+                    Beginner - Limited API experience
+                  </option>
+                  <option value="intermediate">
+                    Intermediate - Some API projects
+                  </option>
+                  <option value="expert">
+                    Expert - Extensive API experience
+                  </option>
                 </select>
               </div>
 
               {/* Project Description */}
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Description *
+                  Project Description
                 </label>
                 <textarea
                   value={formData?.description}
@@ -304,8 +279,8 @@ const ApiIntegrationFeasibilityChecker = () => {
                   </>
                 ) : (
                   <>
-                    <Search className="mr-2 h-5 w-5" />
-                    Get My Database Recommendations
+                    <Calculator className="mr-2 h-5 w-5" />
+                    Calculate Feasibility
                   </>
                 )}
               </button>
@@ -319,65 +294,116 @@ const ApiIntegrationFeasibilityChecker = () => {
                 </h2>
 
                 <div className="space-y-4">
-                  {result.map((db, index) => (
-                    <div
-                      key={db.name}
-                      className="bg-white border border-gray-200 rounded-2xl p-3 shadow-lg hover:shadow-xl transition-shadow duration-200"
-                    >
-                      <div className="flex items-center gap-4 mb-1">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className={`w-8 h-8 ${db.color} text-white rounded-full flex items-center justify-center text-sm font-bold`}
-                          >
-                            #{index + 1}
-                          </span>
-                          <div>
-                            <h4 className="text-start text-lg font-semibold text-gray-900">
-                              {db.name}
-                            </h4>
-                            <p className="text-start text-sm font-medium text-gray-500">
-                              {db.type}
-                            </p>
-                          </div>
+                  <div className="text-center font-normal">
+                    <div className="relative inline-flex items-center justify-center w-32 h-32 mb-3">
+                      <svg
+                        className="w-32 h-32 transform -rotate-90"
+                        viewBox="0 0 100 100"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                          fill="none"
+                          stroke="#e5e7eb"
+                          strokeWidth="8"
+                        />
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                          fill="none"
+                          stroke={
+                            result.score >= 70
+                              ? "#22c55e"
+                              : result.score >= 50
+                              ? "#f59e0b"
+                              : "#ef4444"
+                          }
+                          strokeWidth="8"
+                          strokeLinecap="round"
+                          strokeDasharray={`${
+                            (result.score / 100) * 251.2
+                          } 251.2`}
+                        />
+                      </svg>
+                      <div className="absolute text-center">
+                        <div className="text-3xl font-bold text-gray-900">
+                          {result.score}
                         </div>
-                        <div className="ml-auto">
-                          <div className="text-right">
-                            <p className="text-2xl font-bold text-green-600">
-                              {db.score}%
-                            </p>
-                            <p className="font-medium text-sm text-gray-500">
-                              Match Score
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-600 font-normal">{db.useCase}</p>
-                      <hr className="my-2" />
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <h5 className="text-left font-medium text-green-700 mb-1">
-                            ✅ Pros
-                          </h5>
-                          <ul className="list-disc marker:text-green-600 text-left font-normal text-sm text-gray-600 pl-4">
-                            {db.pros.map((pro, i) => (
-                              <li key={i}>{pro}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 className="text-left font-medium text-red-700 mb-1">
-                            ⚠️ Considerations
-                          </h5>
-                          <ul className="list-disc marker:text-red-600 text-left font-normal text-sm text-gray-600 pl-4">
-                            {db.cons.map((con, i) => (
-                              <li key={i}>{con}</li>
-                            ))}
-                          </ul>
-                        </div>
+                        <div className="text-sm text-gray-500">Score</div>
                       </div>
                     </div>
-                  ))}
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-semibold text-gray-900">
+                        Feasibility: {result.feasibility}
+                      </h4>
+                      <p className="text-gray-600">
+                        Risk Level: {result.riskLevel}
+                      </p>
+                      <p className="text-gray-600">
+                        Estimated Timeline: {result.estimatedTime}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Recommendations */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      Recommendations
+                    </h4>
+                    <div className="space-y-2">
+                      {result.recommendations.map((rec, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-3 py-2 px-3 bg-blue-50 rounded-lg"
+                        >
+                          <ArrowRight className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                          <p className="text-sm text-gray-700">{rec}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Success Factors */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                      Key Success Factors
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        {
+                          label: "API Documentation",
+                          status: formData.apiType ? "Good" : "Unknown",
+                        },
+                        {
+                          label: "Team Readiness",
+                          status: formData.team || "Unknown",
+                        },
+                        {
+                          label: "Timeline Realism",
+                          status: formData.timeline || "Unknown",
+                        },
+                        {
+                          label: "Budget Adequacy",
+                          status: formData.budget || "Unknown",
+                        },
+                      ].map((factor, index) => (
+                        <div
+                          key={index}
+                          className="py-2 px-3 bg-gray-50 rounded-lg"
+                        >
+                          <div className="text-sm font-medium text-gray-900">
+                            {factor.label}
+                          </div>
+                          <div className="text-sm text-gray-600 capitalize">
+                            {factor.status}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -389,7 +415,7 @@ const ApiIntegrationFeasibilityChecker = () => {
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                        <Database className="w-12 h-12 text-white" />
+                        <BarChart3 className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -400,19 +426,18 @@ const ApiIntegrationFeasibilityChecker = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      Ready for Recommendations?
+                      Ready for Assessment?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form to get your personalized database
-                      recommendations ✨
+                      Complete the form to see your feasibility assessment ✨
                     </p>
 
                     <button
                       onClick={() => document.querySelector("select")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
-                      &lArr; Start by selecting your project details
+                      &lArr; Start by selecting your project form
                     </button>
                   </div>
                 </div>

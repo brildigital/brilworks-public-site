@@ -123,13 +123,37 @@ const toolsData = [
     link: "/tools/cross-platform-vs-native-analyzer/",
     tags: ["MARKETING", "BUSINESS", "OTHER"],
   },
+  {
+    title: "API Integration Feasibility Checker",
+    description:
+      "Analyze API compatibility and integration complexity. Get instant insights to plan secure, cost-effective, and successful third-party API connections for your application.",
+    bg: "bg-amber-200",
+    link: "/tools/api-integration-feasibility-checker/",
+    tags: ["DEVELOPMENT", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "Cloud Service Cost Estimator",
+    description:
+      "Quickly calculate and compare cloud service expenses. Get accurate cost forecasts to plan budgets and optimize your infrastructure across leading cloud providers.",
+    bg: "bg-neutral-200",
+    link: "/tools/cloud-service-cost-estimator/",
+    tags: ["DEVELOPMENT", "MARKETING", "OTHER"],
+  },
   // {
-  //   title: "API Integration Feasibility Checker",
+  //   title: "SaaS Profitability Calculator",
   //   description:
-  //     "Analyze API compatibility and integration complexity. Get instant insights to plan secure, cost-effective, and successful third-party API connections for your application.",
-  //   bg: "bg-amber-200",
-  //   link: "/tools/api-integration-feasibility-checker/",
-  //   tags: ["DEVELOPMENT", "BUSINESS", "OTHER"],
+  //     "Quickly analyze revenue, costs, and margins to measure SaaS profitability. Plan budgets and forecast growth with clear, data-driven financial insights.",
+  //   bg: "bg-blue-200",
+  //   link: "/tools/saas-profitability-calculator/",
+  //   tags: ["SALES", "BUSINESS", "OTHER"],
+  // },
+  // {
+  //   title: "Customer Acquisition Cost (CAC) Estimator",
+  //   description:
+  //     "Estimate the true cost of acquiring each customer. Analyze marketing spend, conversion rates, and ROI to optimize campaigns and boost profitability.",
+  //   bg: "bg-purple-200",
+  //   link: "/tools/customer-acquisition-cost-estimator/",
+  //   tags: ["SALES", "BUSINESS", "OTHER"],
   // },
 ];
 

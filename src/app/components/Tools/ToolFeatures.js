@@ -855,6 +855,149 @@ const apiIntegrationFeasibiltyCheckerFeatures = {
     },
   ],
 };
+const cloudServiceCostEstimatorFeatures = {
+  title: "Why Choose Our Cost Estimator",
+  description:
+    "Powerful features designed to give you the most accurate and comprehensive cloud cost estimates.",
+  listData: [
+    {
+      icon: Calculator,
+      title: "Accurate Calculations",
+      description:
+        "Get precise cost estimates based on real cloud pricing models and usage patterns.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Zap,
+      title: "Real-time Updates",
+      description:
+        "See cost changes instantly as you modify your configuration parameters.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Multi-Provider Support",
+      description:
+        "Compare costs across AWS, Azure, Google Cloud, and other major providers.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Detailed Breakdown",
+      description:
+        "Understand exactly where your cloud budget goes with comprehensive cost analysis.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Globe,
+      title: "Global Regions",
+      description:
+        "Factor in regional pricing differences for accurate worldwide cost estimates.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Cost Optimization",
+      description:
+        "Receive recommendations to optimize your cloud spending and reduce costs.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+  ],
+};
+const saasProfitabilityCalculatorFeatures = {
+  title: "Powerful Features",
+  description:
+    "Everything you need to analyze and optimize your SaaS profitability",
+  listData: [
+    {
+      icon: Calculator,
+      title: "Real-time Calculations",
+      description: "Get instant profitability metrics as you input your data",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth Projections",
+      description:
+        "See projected growth and profitability trends for your SaaS",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Accurate Metrics",
+      description:
+        "Industry-standard calculations for LTV:CAC, churn impact, and more",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Visual Analytics",
+      description: "Clear visual representation of your SaaS financial health",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Clock,
+      title: "Quick Analysis",
+      description: "Get comprehensive analysis in seconds, not hours",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Zap,
+      title: "Actionable Insights",
+      description: "Receive specific recommendations to improve profitability",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+const customerAcquisiyionCostEstimatorFeatures = {
+  title: "Powerful Features",
+  description:
+    "Our comprehensive assessment tool provides everything you need to make informed decisions about your API integration projects",
+  listData: [
+    {
+      icon: Zap,
+      title: "Instant Analysis",
+      description:
+        "Get results in seconds with our AI-powered assessment engine that processes your requirements instantly",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Identify potential risks and challenges before they impact your project timeline and budget",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Success Scoring",
+      description:
+        "Receive a numerical score based on industry benchmarks and historical project data",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "Timeline Estimation",
+      description:
+        "Get accurate time estimates for your integration project based on complexity and resources",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Optimization Tips",
+      description:
+        "Receive actionable recommendations to improve your project's chances of success",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Best Practices",
+      description:
+        "Access industry best practices and proven methodologies for API integrations",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -881,6 +1024,11 @@ const ToolFeatures = () => {
       crossPlatformVsNativeAnalyzerFeatures,
     "/tools/api-integration-feasibility-checker/":
       apiIntegrationFeasibiltyCheckerFeatures,
+    "/tools/cloud-service-cost-estimator/": cloudServiceCostEstimatorFeatures,
+    "/tools/saas-profitability-calculator/":
+      saasProfitabilityCalculatorFeatures,
+    "/tools/customer-acquisition-cost-estimator/":
+      customerAcquisiyionCostEstimatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

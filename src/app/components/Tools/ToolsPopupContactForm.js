@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import {
   AlertCircle,
+  ArrowRight,
   Calendar,
   CheckCircle,
   Clock,
@@ -43,6 +44,41 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
       markFormSubmitted(pathname);
     }
   }, [showPrice]);
+
+  const TITLE_MAP = {
+    "/tools/tech-stack-recommender/": "Recommendations",
+    "/tools/database-selector-tool/": "Your Recommendations",
+    "/tools/cross-platform-vs-native-analyzer/": "Analysis Results",
+    "/tools/roi-calculator/": "Your Estimated ROI",
+    "/tools/app-development-timeline-calculator/": "Your Estimated Timeline",
+    "/tools/mvp-launch-timeline-estimator/": "Your Estimated Timeline",
+    "/tools/feature-complexity-vs-time-estimator/": "Your Estimated Results",
+    "/tools/api-integration-feasibility-checker/": "Analysis Results",
+    "/tools/cloud-service-cost-estimator/": "Your Estimated Cost",
+  };
+  function PageTitle() {
+    // direct match first
+    if (TITLE_MAP[pathname]) return TITLE_MAP[pathname];
+
+    // shared fallback logic
+    if (pathname.startsWith("/tools/")) {
+      // fallback categories
+      if (
+        [
+          "/tools/app-development-timeline-calculator/",
+          "/tools/mvp-launch-timeline-estimator/",
+        ].includes(pathname)
+      )
+        return "Your Estimated Timeline";
+
+      if (pathname === "/tools/feature-complexity-vs-time-estimator/")
+        return "Your Estimated Results";
+
+      return "Your Estimated Cost";
+    }
+
+    return "Estimated Results";
+  }
 
   const renderPrice = () => {
     switch (pathname) {
@@ -638,6 +674,85 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/api-integration-feasibility-checker/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="text-center font-normal">
+              <div className="relative inline-flex items-center justify-center w-32 h-32 mb-4">
+                <svg
+                  className="w-32 h-32 transform -rotate-90"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="#e5e7eb"
+                    strokeWidth="8"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke={
+                      result.score >= 70
+                        ? "#22c55e"
+                        : result.score >= 50
+                        ? "#f59e0b"
+                        : "#ef4444"
+                    }
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    strokeDasharray={`${(result.score / 100) * 251.2} 251.2`}
+                  />
+                </svg>
+                <div className="absolute text-center">
+                  <div className="text-3xl font-bold text-gray-900">
+                    {result.score}
+                  </div>
+                  <div className="text-sm text-gray-500">Score</div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-xl font-semibold text-gray-900">
+                  Feasibility: {result.feasibility}
+                </h4>
+                <p className="text-gray-600">Risk Level: {result.riskLevel}</p>
+                <p className="text-gray-600">
+                  Estimated Timeline: {result.estimatedTime}
+                </p>
+              </div>
+            </div>
+
+            {/* Recommendations */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                Recommendations
+              </h4>
+              <div className="space-y-2">
+                {result.recommendations.map((rec, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-2 px-3 bg-blue-50 rounded-lg"
+                  >
+                    <ArrowRight className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <p className="font-normal text-sm text-gray-700">{rec}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -709,6 +824,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   <div className="flex justify-center mb-4">
                     {pathname ===
                       "/tools/app-development-timeline-calculator/" ||
+                    "/tools/cloud-service-cost-estimator/" ||
                     pathname === "/tools/mvp-launch-timeline-estimator/" ? (
                       <Calendar className="h-12 w-12 text-indigo-500" />
                     ) : pathname ===
@@ -719,32 +835,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       <Wallet className="h-12 w-12 text-indigo-500" />
                     )}
                   </div>
-                  <h2 className="text-3xl font-bold">
-                    {pathname === "/tools/tech-stack-recommender/" ? (
-                      "Recommendations"
-                    ) : pathname === "/tools/database-selector-tool/" ? (
-                      "Your Recommendations"
-                    ) : pathname ===
-                      "/tools/cross-platform-vs-native-analyzer/" ? (
-                      "Analysis Results"
-                    ) : (
-                      <>
-                        Your Estimated{" "}
-                        {pathname === "/tools/roi-calculator/"
-                          ? "ROI"
-                          : pathname ===
-                              "/tools/app-development-timeline-calculator/" ||
-                            pathname === "/tools/mvp-launch-timeline-estimator/"
-                          ? "Timeline"
-                          : pathname ===
-                            "/tools/feature-complexity-vs-time-estimator/"
-                          ? "Results"
-                          : "/tools/feature-complexity-vs-time-estimator/"
-                          ? "Timeline"
-                          : "Cost"}
-                      </>
-                    )}
-                  </h2>
+                  <h2 className="text-3xl font-bold">{PageTitle()}</h2>
                 </>
               )}
               <div
@@ -784,8 +875,17 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 pathname === "/tools/tech-stack-recommender/" ||
                 pathname === "/tools/database-selector-tool/" ||
                 pathname === "/tools/cross-platform-vs-native-analyzer/" ||
+                pathname === "/tools/api-integration-feasibility-checker/" ||
                 pathname === "/tools/go-to-market-timeline-planner/" ? (
                 ""
+              ) : pathname === "tools/cloud-service-cost-estimator/" ? (
+                <p className="text-gray-600 max-w-md mx-auto">
+                  Service type, region, instance, storage, bandwidth and project
+                  description are considered when calculating the cost. This is
+                  an estimate to give you an idea of the possible budget range
+                  for your cloud service requirements. For a more accurate
+                  estimate, consult with our specialist.
+                </p>
               ) : (
                 <p className="text-gray-600 max-w-md mx-auto">
                   The platform, design requirement, description, and project
