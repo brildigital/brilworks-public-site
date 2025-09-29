@@ -171,3 +171,161 @@ export const cloudServiceCostEstimate = (formData) => {
 
   return { cost: baseCost * multiplier };
 };
+
+const extractFeatures = (description) => {
+  const keywords = description.toLowerCase();
+  const features = [];
+
+  const featureMap = {
+    ai: "AI/Machine Learning",
+    "artificial intelligence": "AI/Machine Learning",
+    "machine learning": "AI/Machine Learning",
+    analytics: "Advanced Analytics",
+    reporting: "Reporting & Dashboards",
+    integration: "Third-party Integrations",
+    automation: "Workflow Automation",
+    crm: "CRM Functionality",
+    payment: "Payment Processing",
+    security: "Enterprise Security",
+    mobile: "Mobile Applications",
+    "real-time": "Real-time Processing",
+    cloud: "Cloud Infrastructure",
+    collaboration: "Team Collaboration",
+  };
+
+  Object.entries(featureMap).forEach(([keyword, feature]) => {
+    if (keywords.includes(keyword) && !features.includes(feature)) {
+      features.push(feature);
+    }
+  });
+
+  return features;
+};
+
+const calculateCostFromKeywords = (description, businessType, teamSize) => {
+  const keywords = description.toLowerCase();
+  let baseCost = 5000; // Base monthly cost
+
+  // Business type multipliers
+  const typeMultipliers = {
+    "B2B SaaS": 1.2,
+    "B2C SaaS": 1.0,
+    Enterprise: 1.8,
+    Startup: 0.7,
+    "E-commerce": 1.1,
+  };
+
+  baseCost *= typeMultipliers[businessType] || 1.0;
+
+  // Team size impact
+  baseCost += teamSize * 200;
+
+  // Feature-based cost additions
+  const featureCosts = {
+    ai: 3000,
+    "artificial intelligence": 3000,
+    "machine learning": 2500,
+    ml: 2500,
+    analytics: 1500,
+    reporting: 1000,
+    dashboard: 800,
+    integration: 1200,
+    api: 1000,
+    webhook: 800,
+    automation: 2000,
+    workflow: 1500,
+    crm: 1800,
+    "customer management": 1500,
+    payment: 1200,
+    billing: 1000,
+    subscription: 1000,
+    security: 2000,
+    encryption: 1500,
+    compliance: 1800,
+    mobile: 1500,
+    ios: 1200,
+    android: 1200,
+    "real-time": 1800,
+    live: 1200,
+    instant: 1000,
+    cloud: 1000,
+    aws: 800,
+    azure: 800,
+    gcp: 800,
+    database: 1200,
+    storage: 800,
+    backup: 600,
+    notification: 800,
+    email: 600,
+    sms: 700,
+    video: 2000,
+    streaming: 1800,
+    conference: 1500,
+    collaboration: 1200,
+    team: 800,
+    chat: 1000,
+  };
+
+  Object.entries(featureCosts).forEach(([keyword, cost]) => {
+    if (keywords.includes(keyword)) {
+      baseCost += cost;
+    }
+  });
+
+  return Math.round(baseCost);
+};
+
+export const getStatusColor = (status) => {
+  switch (status) {
+    case "Excellent":
+      return "text-green-600 bg-green-50 border-green-200";
+    case "Good":
+      return "text-blue-600 bg-blue-50 border-blue-200";
+    case "Fair":
+      return "text-yellow-600 bg-yellow-50 border-yellow-200";
+    default:
+      return "text-red-600 bg-red-50 border-red-200";
+  }
+};
+
+export const saasCalculateProfitability = (formData) => {
+  const estimatedMonthlyCost = calculateCostFromKeywords(
+    formData.description,
+    formData.businessType,
+    formData.teamSize
+  );
+  const competitiveAdvantage = extractFeatures(formData.description);
+
+  const grossRevenue = formData.monthlyRevenue * (formData.grossMargin / 100);
+  const monthlyProfit = grossRevenue - formData.operatingExpenses;
+  const profitMargin = (monthlyProfit / formData.monthlyRevenue) * 100;
+  const ltvcacRatio =
+    formData.customerLifetimeValue / formData.customerAcquisitionCost;
+  const monthsToRecoverCAC =
+    formData.customerAcquisitionCost /
+    ((formData.monthlyRevenue * (formData.grossMargin / 100)) /
+      (formData.monthlyRevenue / formData.customerLifetimeValue));
+  const annualRecurringRevenue = formData.monthlyRevenue * 12;
+  const recommendedPricing = Math.round(
+    (estimatedMonthlyCost * 1.4) /
+      ((formData.monthlyRevenue / formData.customerLifetimeValue) * 12)
+  );
+
+  let profitabilityStatus = "Poor";
+  if (profitMargin > 20 && ltvcacRatio > 3) profitabilityStatus = "Excellent";
+  else if (profitMargin > 10 && ltvcacRatio > 2) profitabilityStatus = "Good";
+  else if (profitMargin > 0 && ltvcacRatio > 1) profitabilityStatus = "Fair";
+
+  return {
+    businessType: formData.businessType,
+    monthlyProfit,
+    profitMargin,
+    ltvcacRatio,
+    monthsToRecoverCAC,
+    annualRecurringRevenue,
+    estimatedMonthlyCost,
+    recommendedPricing,
+    competitiveAdvantage,
+    profitabilityStatus,
+  };
+};

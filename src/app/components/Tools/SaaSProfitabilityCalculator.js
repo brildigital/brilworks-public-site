@@ -20,7 +20,11 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { crossPlatformAnalyzeProject } from "../lib/crossPlatformVsNativeAnalyzerService";
+import {
+  crossPlatformAnalyzeProject,
+  getStatusColor,
+  saasCalculateProfitability,
+} from "../lib/crossPlatformVsNativeAnalyzerService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -31,25 +35,76 @@ const SaaSProfitabilityCalculator = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
+  const [result, setResult] = useState();
   const [formData, setFormData] = useState({
-    projectType: "",
-    budget: "",
-    timeline: "",
-    teamSize: "",
-    platforms: [],
-    performanceNeeds: "",
+    monthlyRevenue: "",
+    customerAcquisitionCost: "",
+    customerLifetimeValue: "",
+    churnRate: "",
+    grossMargin: "",
+    operatingExpenses: "",
     description: "",
+    businessType: "",
+    teamSize: "",
+    features: [],
   });
 
-  const [result, setResult] = useState();
+  const businessTypes = [
+    "B2B SaaS",
+    "B2C SaaS",
+    "Enterprise",
+    "Startup",
+    "E-commerce",
+    "Fintech",
+    "Healthtech",
+    "Edtech",
+    "Marketplace",
+  ];
+
+  const financialMatrics = [
+    {
+      id: "monthlyRevenue",
+      label: "Monthly Revenue* ($)",
+      type: "number",
+    },
+    {
+      id: "customerAcquisitionCost",
+      label: "Customer Acquisition Cost* ($)",
+      type: "number",
+    },
+    {
+      id: "customerLifetimeValue",
+      label: "Customer Lifetime Value* ($)",
+      type: "number",
+    },
+    {
+      id: "churnRate",
+      label: "Monthly Churn Rate* (%)",
+      type: "number",
+    },
+    {
+      id: "grossMargin",
+      label: "Gross Margin* (%)",
+      type: "number",
+    },
+    {
+      id: "operatingExpenses",
+      label: "Operating Expenses* ($)",
+      type: "number",
+    },
+  ];
 
   const isFormValid = () => {
     return (
-      formData?.projectType &&
-      formData?.budget &&
-      formData?.timeline &&
-      formData?.performanceNeeds &&
-      formData?.description.trim()
+      formData.monthlyRevenue &&
+      formData.customerAcquisitionCost &&
+      formData.customerLifetimeValue &&
+      formData.churnRate &&
+      formData.grossMargin &&
+      formData.operatingExpenses &&
+      formData.description &&
+      formData.businessType &&
+      formData.teamSize
     );
   };
 
@@ -65,7 +120,7 @@ const SaaSProfitabilityCalculator = () => {
 
     setIsCalculating(true);
 
-    const resultData = crossPlatformAnalyzeProject(formData);
+    const resultData = saasCalculateProfitability(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -78,15 +133,6 @@ const SaaSProfitabilityCalculator = () => {
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
   };
 
   useEffect(() => {
@@ -131,7 +177,7 @@ const SaaSProfitabilityCalculator = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl font-bold text-themeColor mb-4">
               SaaS Profitability Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -146,97 +192,104 @@ const SaaSProfitabilityCalculator = () => {
               <h2 className="text-center text-2xl font-semibold mb-2">
                 Business Information
               </h2>
-
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Type *
-                </label>
-
-                <select
-                  value={formData.projectType}
-                  onChange={(e) =>
-                    handleInputChange("projectType", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select project type</option>
-                  <option value="business">Business/Productivity App</option>
-                  <option value="ecommerce">E-commerce App</option>
-                  <option value="social">Social Media App</option>
-                  <option value="game">Gaming App</option>
-                  <option value="utility">Utility/Tool App</option>
-                  <option value="educational">Educational App</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Budget Range *
-                </label>
-
-                <select
-                  value={formData?.budget}
-                  onChange={(e) => handleInputChange("budget", e.target.value)}
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select budget range</option>
-                  <option value="low">$50K - $150K</option>
-                  <option value="moderate">$150K - $400K</option>
-                  <option value="high">$400K+</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Timeline *</label>
-                <select
-                  value={formData?.timeline}
-                  onChange={(e) =>
-                    handleInputChange("timeline", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select timeline</option>
-                  <option value="urgent">2-4 months (Urgent)</option>
-                  <option value="moderate">4-8 months (Moderate)</option>
-                  <option value="flexible">8+ months (Flexible)</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Performance Requirements *
-                </label>
-                <select
-                  value={formData.performanceNeeds}
-                  onChange={(e) =>
-                    handleInputChange("performanceNeeds", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select performance needs</option>
-                  <option value="basic">Basic (Standard UI/UX)</option>
-                  <option value="moderate">Moderate (Good Performance)</option>
-                  <option value="critical">Critical (High Performance)</option>
-                </select>
-              </div>
-
-              {/* Project Description */}
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Project Description *
+                  Describe Your SaaS Business(Keywords affect cost calculation)
+                  *
                 </label>
                 <textarea
                   value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your feature..."
+                  placeholder="Describe your business feature..."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
+                <div className="mt-2 text-xs text-gray-500">
+                  💡 Tip: Mention features like AI, analytics, integrations,
+                  automation to get accurate cost estimates
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                <div className="space-y-1">
+                  <label className="font-medium text-gray-700">
+                    Business Type *
+                  </label>
+
+                  <select
+                    value={formData.businessType}
+                    onChange={(e) =>
+                      handleInputChange("businessType", e.target.value)
+                    }
+                    className="w-full border rounded-lg p-3 bg-white"
+                  >
+                    <option value="">Select business type</option>
+
+                    {businessTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-medium text-gray-700">
+                    Team Size *
+                  </label>
+                  <input
+                    id="instances"
+                    type="number"
+                    className="w-full border rounded-lg p-3 bg-white"
+                    value={formData.teamSize}
+                    onChange={(e) =>
+                      handleInputChange("teamSize", e.target.value)
+                    }
+                    min="1"
+                    onKeyDown={(e) => {
+                      if (
+                        e.key === "e" ||
+                        e.key === "E" ||
+                        e.key === "+" ||
+                        e.key === "-"
+                      ) {
+                        e.preventDefault(); // 🚫 block these keys
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              <hr className="!my-5" />
+              <p className="text-xl font-semibold !mb-3">Financial Metrics</p>
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-4 !mb-5">
+                {financialMatrics.map((field) => (
+                  <div key={field.id} className="space-y-1">
+                    <label
+                      htmlFor={field.id}
+                      className="font-medium text-gray-700"
+                    >
+                      {field.label}
+                    </label>
+                    <input
+                      id={field.id}
+                      type="number"
+                      className="w-full border rounded-lg p-3 bg-white"
+                      value={formData[field.id] || ""}
+                      onChange={(e) =>
+                        handleInputChange(field.id, e.target.value)
+                      }
+                      onKeyDown={(e) => {
+                        // 🚫 Prevent e/E/+/- in numeric input
+                        if (["e", "E", "+", "-"].includes(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
 
-              {/* Get Quote Button */}
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
@@ -245,12 +298,12 @@ const SaaSProfitabilityCalculator = () => {
                 {isCalculating ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Analyzing...
+                    Calculating...
                   </>
                 ) : (
                   <>
                     <Search className="mr-2 h-5 w-5" />
-                    Get My Database Recommendations
+                    Calculate Profitability
                   </>
                 )}
               </button>
@@ -263,90 +316,147 @@ const SaaSProfitabilityCalculator = () => {
               </h2>
               {result && hasVisited ? (
                 <div className="space-y-4">
-                  <div className="bg-white rounded-xl p-6 border border-blue-200">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                          result.recommendation === "native"
-                            ? "bg-purple-100 text-purple-600"
-                            : result.recommendation === "cross-platform"
-                            ? "bg-green-100 text-green-600"
-                            : "bg-blue-100 text-blue-600"
-                        }`}
-                      >
-                        {result.recommendation === "native" ? (
-                          <Code className="w-6 h-6" />
-                        ) : result.recommendation === "cross-platform" ? (
-                          <Smartphone className="w-6 h-6" />
-                        ) : (
-                          <Zap className="w-6 h-6" />
-                        )}
+                  <div className="text-center">
+                    <div
+                      className={`inline-block px-4 py-2 rounded-full text-base font-semibold border-2 ${getStatusColor(
+                        result.profitabilityStatus
+                      )}`}
+                    >
+                      {result.profitabilityStatus} Profitability
+                    </div>
+                  </div>
+
+                  {/* Cost Analysis */}
+                  <div className="bg-themeLight p-4 rounded-xl border-l-4 border-blue-500">
+                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                      <DollarSign className="w-5 h-5 mr-2 text-blue-600" />
+                      Cost Analysis Based on Description
+                    </h4>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-blue-600">
+                          ${result.estimatedMonthlyCost.toLocaleString()}
+                        </div>
+                        <div className="text-sm font-normal text-gray-600">
+                          Estimated Monthly Cost
+                        </div>
                       </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">
+                          ${result.recommendedPricing}
+                        </div>
+                        <div className="text-sm font-normal text-gray-600">
+                          Recommended Price/User
+                        </div>
+                      </div>
+                    </div>
+                    {result.competitiveAdvantage.length > 0 && (
                       <div>
-                        <h4 className="text-xl font-semibold capitalize">
-                          {result.recommendation.replace("-", " ")} Development
-                        </h4>
-                        <p className="text-gray-600">Recommended approach</p>
+                        <div className="text-sm font-medium text-gray-700 mb-2">
+                          Detected Features:
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {result.competitiveAdvantage.map((feature, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium"
+                            >
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-
-                    <div className={`w-full bg-gray-200 rounded-full h-2 mb-4`}>
-                      <div
-                        className={`h-2 rounded-full transition-all duration-1000 ${
-                          result.recommendation === "native"
-                            ? "bg-purple-500"
-                            : result.recommendation === "cross-platform"
-                            ? "bg-green-500"
-                            : "bg-blue-500"
-                        }`}
-                        style={{ width: `${result.score}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Confidence Score: {result.score}%
-                    </p>
+                    )}
                   </div>
-
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <Clock className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">Timeline</div>
-                      <div className="text-sm text-gray-600">
-                        {result.timeline}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gray-100 p-3 rounded-xl text-center">
+                      <div className="text-2xl font-bold text-green-600">
+                        ${result.monthlyProfit.toLocaleString()}
+                      </div>
+                      <div className="text-sm font-normal text-gray-600">
+                        Monthly Profit
                       </div>
                     </div>
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <DollarSign className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">Budget</div>
-                      <div className="text-sm text-gray-600">
-                        {result.budget}
+                    <div className="bg-gray-100 p-3 rounded-xl text-center">
+                      <div className="text-2xl font-bold text-blue-600">
+                        {result.profitMargin.toFixed(1)}%
                       </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <Zap className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">
-                        Performance
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        {result.performance}
+                      <div className="text-sm font-normal text-gray-600">
+                        Profit Margin
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border border-blue-200">
-                    <h5 className="font-semibold text-gray-900 mb-3">
-                      Key Reasoning
-                    </h5>
-                    <ul className="space-y-2">
-                      {result.reasoning.map((reason, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm text-gray-700"
-                        >
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          {reason}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gray-100 p-3 rounded-xl text-center">
+                      <div className="text-2xl font-bold text-purple-600">
+                        {result.ltvcacRatio.toFixed(1)}:1
+                      </div>
+                      <div className="text-sm font-normal text-gray-600">
+                        LTV:CAC Ratio
+                      </div>
+                    </div>
+                    <div className="bg-gray-100 p-3 rounded-xl text-center">
+                      <div className="text-2xl font-bold text-orange-600">
+                        {result.monthsToRecoverCAC.toFixed(1)}
+                      </div>
+                      <div className="text-sm font-normal text-gray-600">
+                        Months to Recover CAC
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-themeLight p-3 rounded-xl text-center">
+                    <div className="text-3xl font-bold text-themeColor">
+                      ${result.annualRecurringRevenue.toLocaleString()}
+                    </div>
+                    <div className="text-sm font-normal text-gray-600">
+                      Annual Recurring Revenue
+                    </div>
+                  </div>
+
+                  <div className="pl-0 p-4 rounded-xl">
+                    <h4 className="font-semibold text-gray-900 mb-3">
+                      Key Insights for {result.businessType}
+                    </h4>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      {result.ltvcacRatio >= 3 ? (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          Healthy LTV:CAC ratio
                         </li>
-                      ))}
+                      ) : (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-red-500 mr-2" />
+                          Consider optimizing acquisition costs
+                        </li>
+                      )}
+                      {result.profitMargin > 20 ? (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          Strong profit margins
+                        </li>
+                      ) : (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-orange-500 mr-2" />
+                          Focus on improving margins
+                        </li>
+                      )}
+                      {result.competitiveAdvantage.length > 2 ? (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                          Feature-rich platform with competitive advantages
+                        </li>
+                      ) : (
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                          Consider adding more features to increase value
+                        </li>
+                      )}
+                      <li className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                        Track these metrics monthly for best results
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -387,77 +497,6 @@ const SaaSProfitabilityCalculator = () => {
           </div>
         </div>
       </section>
-
-      <div className="bg-themeLight">
-        <div className="container max-w-7xl mx-auto main-section-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Detailed Comparison
-            </h2>
-            <p className="text-xl text-gray-600">
-              Compare key aspects of different development approaches
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">
-                      Aspect
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Native
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Cross-Platform
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Hybrid
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {[
-                    ["Development Speed", "Slower", "Faster", "Moderate"],
-                    ["Performance", "Excellent", "Good", "Good"],
-                    ["Platform Features", "Full Access", "Limited", "Moderate"],
-                    ["Code Reusability", "None", "High", "Moderate"],
-                    ["Development Cost", "Higher", "Lower", "Moderate"],
-                    ["Maintenance", "Complex", "Simple", "Moderate"],
-                    ["User Experience", "Excellent", "Good", "Good"],
-                    [
-                      "Team Requirements",
-                      "Platform Experts",
-                      "General Devs",
-                      "Mixed Skills",
-                    ],
-                  ].map(([aspect, native, crossPlatform, hybrid], index) => (
-                    <tr
-                      key={index}
-                      className="hover:bg-gray-50 transition-colors"
-                    >
-                      <td className="px-6 py-4 font-medium text-gray-900">
-                        {aspect}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {native}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {crossPlatform}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {hybrid}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
       <ToolFAQs />
       {result && openPopup && !hasVisited && (
         <ToolsPopupContactForm

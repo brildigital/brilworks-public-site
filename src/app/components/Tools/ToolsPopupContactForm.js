@@ -21,6 +21,7 @@ import {
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
 import { markFormSubmitted } from "../lib/commonFunction";
+import { getStatusColor } from "../lib/crossPlatformVsNativeAnalyzerService";
 
 const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
   const pathname = usePathname();
@@ -55,6 +56,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "/tools/feature-complexity-vs-time-estimator/": "Your Estimated Results",
     "/tools/api-integration-feasibility-checker/": "Analysis Results",
     "/tools/cloud-service-cost-estimator/": "Your Estimated Cost",
+    "/tools/saas-profitability-calculator/": "Analysis Result",
   };
   function PageTitle() {
     // direct match first
@@ -753,6 +755,116 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/saas-profitability-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="text-center">
+              <div
+                className={`inline-block px-3 py-1 rounded-full text-base font-semibold border-2 ${getStatusColor(
+                  result.profitabilityStatus
+                )}`}
+              >
+                {result.profitabilityStatus} Profitability
+              </div>
+            </div>
+
+            {/* Cost Analysis */}
+            <div className="bg-themeLight p-4 rounded-xl border-l-4 border-blue-500">
+              <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                <DollarSign className="w-5 h-5 mr-2 text-blue-600" />
+                Cost Analysis Based on Description
+              </h4>
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">
+                    ${result.estimatedMonthlyCost.toLocaleString()}
+                  </div>
+                  <div className="text-sm font-normal text-gray-600">
+                    Estimated Monthly Cost
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600">
+                    ${result.recommendedPricing}
+                  </div>
+                  <div className="text-sm font-normal text-gray-600">
+                    Recommended Price/User
+                  </div>
+                </div>
+              </div>
+              {result.competitiveAdvantage.length > 0 && (
+                <div>
+                  <div className="text-sm font-medium text-gray-700 mb-2">
+                    Detected Features:
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {result.competitiveAdvantage.map((feature, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-100 p-3 rounded-xl text-center">
+                <div className="text-2xl font-bold text-green-600">
+                  ${result.monthlyProfit.toLocaleString()}
+                </div>
+                <div className="text-sm font-normal text-gray-600">
+                  Monthly Profit
+                </div>
+              </div>
+              <div className="bg-gray-100 p-3 rounded-xl text-center">
+                <div className="text-2xl font-bold text-blue-600">
+                  {result.profitMargin.toFixed(1)}%
+                </div>
+                <div className="text-sm font-normal text-gray-600">
+                  Profit Margin
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-100 p-3 rounded-xl text-center">
+                <div className="text-2xl font-bold text-purple-600">
+                  {result.ltvcacRatio.toFixed(1)}:1
+                </div>
+                <div className="text-sm font-normal text-gray-600">
+                  LTV:CAC Ratio
+                </div>
+              </div>
+              <div className="bg-gray-100 p-3 rounded-xl text-center">
+                <div className="text-2xl font-bold text-orange-600">
+                  {result.monthsToRecoverCAC.toFixed(1)}
+                </div>
+                <div className="text-sm font-normal text-gray-600">
+                  Months to Recover CAC
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-themeLight p-3 rounded-xl text-center">
+              <div className="text-3xl font-bold text-themeColor">
+                ${result.annualRecurringRevenue.toLocaleString()}
+              </div>
+              <div className="text-sm font-normal text-gray-600">
+                Annual Recurring Revenue
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -824,15 +936,16 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   <div className="flex justify-center mb-4">
                     {pathname ===
                       "/tools/app-development-timeline-calculator/" ||
-                    "/tools/cloud-service-cost-estimator/" ||
+                    pathname === "/tools/cloud-service-cost-estimator/" ||
                     pathname === "/tools/mvp-launch-timeline-estimator/" ? (
-                      <Calendar className="h-12 w-12 text-indigo-500" />
+                      <Calendar className="h-12 w-12 text-themeColor" />
                     ) : pathname ===
                         "/tools/feature-complexity-vs-time-estimator/" ||
-                      "/tools/testing-qa-timeline-estimator/" ? (
+                      pathname === "/tools/saas-profitability-calculator/" ||
+                      pathname === "/tools/testing-qa-timeline-estimator/" ? (
                       ""
                     ) : (
-                      <Wallet className="h-12 w-12 text-indigo-500" />
+                      <Wallet className="h-12 w-12 text-themeColor" />
                     )}
                   </div>
                   <h2 className="text-3xl font-bold">{PageTitle()}</h2>
@@ -876,6 +989,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 pathname === "/tools/database-selector-tool/" ||
                 pathname === "/tools/cross-platform-vs-native-analyzer/" ||
                 pathname === "/tools/api-integration-feasibility-checker/" ||
+                pathname === "/tools/saas-profitability-calculator/" ||
                 pathname === "/tools/go-to-market-timeline-planner/" ? (
                 ""
               ) : pathname === "tools/cloud-service-cost-estimator/" ? (

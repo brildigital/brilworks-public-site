@@ -14,6 +14,8 @@ import {
   Smartphone,
   Sparkles,
   Star,
+  Target,
+  TrendingUp,
   Users,
   Zap,
 } from "lucide-react";
@@ -105,33 +107,34 @@ const CustomerAcquisitionCostEstimator = () => {
       <ToolHerosection
         title={
           <>
-            Cross-Platform vs Native
+            Customer Acquisition&nbsp;
+            <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              &nbsp;Analyzer
+              Cost Estimator
             </span>
           </>
         }
-        buttonText="Start Analysis"
-        description="Make data-driven decisions for your mobile app development. Get personalized recommendations based on your project requirements, budget, and timeline."
+        buttonText="Calculate you CAS Now"
+        description="Calculate your Customer Acquisition Cost with precision. Make data-driven decisions to optimize your marketing spend and maximize ROI across all channels."
         imageSrc="/images/v2/cac-estimator-banner.webp"
         highlights={[
           {
-            icon: Star,
-            color: "text-green-600",
-            title: "Rating",
-            description: "4.9/5 Rating",
+            icon: TrendingUp,
+            color: "text-yellow-600 !text-xl",
+            title: "95%",
+            description: "Accuracy Rate",
           },
           {
             icon: Users,
-            color: "text-orange-600",
-            title: "50K+",
-            description: "Projects Analyzed",
+            color: "text-orange-600 !text-xl",
+            title: "10k+",
+            description: "Users Trust",
           },
           {
-            icon: Award,
-            color: "text-indigo-300",
-            title: "Trusted By",
-            description: "10K+ Developers",
+            icon: Target,
+            color: "text-green-300 !text-xl",
+            title: "40%",
+            description: "Cost Reduction",
           },
         ]}
       />
@@ -145,11 +148,11 @@ const CustomerAcquisitionCostEstimator = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Analyze Your Project
+              CAC Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below to get a personalized recommendation for
-              your mobile app development approach
+              Calculate your Customer Acquisition Cost with precision and get
+              personalized recommendations
             </p>
           </div>
 
@@ -157,7 +160,7 @@ const CustomerAcquisitionCostEstimator = () => {
             {/* Calculator Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-2.5">
               <h2 className="text-center text-2xl font-semibold mb-2">
-                Project Details
+                Input Your Data
               </h2>
 
               <div className="space-y-1">
@@ -258,12 +261,12 @@ const CustomerAcquisitionCostEstimator = () => {
                 {isCalculating ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Analyzing...
+                    Calculating...
                   </>
                 ) : (
                   <>
                     <Search className="mr-2 h-5 w-5" />
-                    Get My Database Recommendations
+                    Get Result
                   </>
                 )}
               </button>
@@ -383,15 +386,15 @@ const CustomerAcquisitionCostEstimator = () => {
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form to get your personalized recommendation
-                      ✨
+                      Fill in the form on the left to calculate your Customer
+                      Acquisition Cost ✨
                     </p>
 
                     <button
-                      onClick={() => document.querySelector("select")?.focus()}
+                      onClick={() => document.querySelector("input")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
-                      &lArr; Start by selecting your project details
+                      &lArr; Start by entering your data
                     </button>
                   </div>
                 </div>
@@ -401,76 +404,6 @@ const CustomerAcquisitionCostEstimator = () => {
         </div>
       </section>
 
-      <div className="bg-themeLight">
-        <div className="container max-w-7xl mx-auto main-section-padding">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Detailed Comparison
-            </h2>
-            <p className="text-xl text-gray-600">
-              Compare key aspects of different development approaches
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">
-                      Aspect
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Native
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Cross-Platform
-                    </th>
-                    <th className="px-6 py-4 text-center font-semibold">
-                      Hybrid
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {[
-                    ["Development Speed", "Slower", "Faster", "Moderate"],
-                    ["Performance", "Excellent", "Good", "Good"],
-                    ["Platform Features", "Full Access", "Limited", "Moderate"],
-                    ["Code Reusability", "None", "High", "Moderate"],
-                    ["Development Cost", "Higher", "Lower", "Moderate"],
-                    ["Maintenance", "Complex", "Simple", "Moderate"],
-                    ["User Experience", "Excellent", "Good", "Good"],
-                    [
-                      "Team Requirements",
-                      "Platform Experts",
-                      "General Devs",
-                      "Mixed Skills",
-                    ],
-                  ].map(([aspect, native, crossPlatform, hybrid], index) => (
-                    <tr
-                      key={index}
-                      className="hover:bg-gray-50 transition-colors"
-                    >
-                      <td className="px-6 py-4 font-medium text-gray-900">
-                        {aspect}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {native}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {crossPlatform}
-                      </td>
-                      <td className="px-6 py-4 text-center text-gray-700">
-                        {hybrid}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
       <ToolFAQs />
       {result && openPopup && !hasVisited && (
         <ToolsPopupContactForm

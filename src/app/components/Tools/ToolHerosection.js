@@ -85,10 +85,8 @@ const ToolHerosection = ({
                     <div
                       className={`flex items-center gap-2 mb-1 ${item.color}`}
                     >
-                      <item.icon className="w-4 h-4" />
-                      <span className="font-semibold text-sm">
-                        {item.title}
-                      </span>
+                      <item.icon className="w-5 h-5" />
+                      <span className="font-semibold">{item.title}</span>
                     </div>
                     <p className="text-[#94a3b8] text-sm">{item.description}</p>
                   </div>

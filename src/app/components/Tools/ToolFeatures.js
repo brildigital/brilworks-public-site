@@ -27,6 +27,7 @@ import {
   Cpu,
   Database,
   Rocket,
+  RefreshCw,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -949,52 +950,115 @@ const saasProfitabilityCalculatorFeatures = {
     },
   ],
 };
-const customerAcquisiyionCostEstimatorFeatures = {
-  title: "Powerful Features",
+const customerAcquisitionCostEstimatorFeatures = {
+  title: "Powerful Features for Accurate CAC Analysis",
   description:
-    "Our comprehensive assessment tool provides everything you need to make informed decisions about your API integration projects",
+    "Our comprehensive toolkit provides everything you need to calculate, analyze, and optimize your customer acquisition costs",
+  listData: [
+    {
+      icon: BarChart3,
+      title: "Real-time Calculations",
+      description:
+        "Get instant CAC calculations as you input your data, with live updates and visual feedback.",
+      color: "bg-blue-100 text-blue-500",
+    },
+    {
+      icon: Target,
+      title: "Industry Benchmarks",
+      description:
+        "Compare your CAC against industry standards and see how you stack up against competitors.",
+      color: "bg-teal-100 text-teal-500",
+    },
+    {
+      icon: Zap,
+      title: "Keyword-based Estimation",
+      description:
+        "Use industry keywords to get estimated CAC ranges specific to your business sector.",
+      color: "bg-orange-100 text-orange-500",
+    },
+    {
+      icon: Shield,
+      title: "Data Security",
+      description:
+        "Your business data is processed securely with no storage of sensitive information.",
+      color: "bg-green-100 text-green-500",
+    },
+    {
+      icon: RefreshCw,
+      title: "Multi-channel Analysis",
+      description:
+        "Break down CAC by marketing channel to identify your most cost-effective acquisition methods.",
+      color: "bg-purple-100 text-purple-500",
+    },
+    {
+      icon: TrendingUp,
+      title: "Trend Analysis",
+      description:
+        "Track your CAC trends over time to measure the effectiveness of your optimization efforts.",
+      color: "bg-pink-100 text-pink-500",
+    },
+    {
+      icon: Users,
+      title: "Customer Segmentation",
+      description:
+        "Calculate CAC for different customer segments to understand acquisition costs by demographics.",
+      color: "bg-indigo-100 text-indigo-500",
+    },
+    {
+      icon: DollarSign,
+      title: "ROI Integration",
+      description:
+        "See CAC in context with customer lifetime value and return on investment calculations.",
+      color: "bg-cyan-100 text-cyan-500",
+    },
+  ],
+};
+const calculateCustomerLifetimeFeatures = {
+  title: "Powerful Features for Accurate LTV Calculations",
+  description:
+    "Our advanced calculator provides comprehensive insights and tools to help you understand and optimize your customer relationships.",
   listData: [
     {
       icon: Zap,
-      title: "Instant Analysis",
+      title: "Real-time Calculations",
       description:
-        "Get results in seconds with our AI-powered assessment engine that processes your requirements instantly",
+        "Get instant LTV calculations as you input your data with dynamic updates.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Shield,
-      title: "Risk Assessment",
+      title: "Industry Benchmarks",
       description:
-        "Identify potential risks and challenges before they impact your project timeline and budget",
+        "Compare your results against industry standards and best practices.",
       color: "bg-green-100 text-green-600",
     },
     {
-      icon: BarChart3,
-      title: "Success Scoring",
+      icon: Target,
+      title: "Smart Adjustments",
       description:
-        "Receive a numerical score based on industry benchmarks and historical project data",
+        "Our algorithm considers business type and customer segments for accurate results.",
       color: "bg-purple-100 text-purple-600",
     },
     {
-      icon: Clock,
-      title: "Timeline Estimation",
+      icon: BarChart3,
+      title: "Detailed Analytics",
       description:
-        "Get accurate time estimates for your integration project based on complexity and resources",
-      color: "bg-yellow-100 text-yellow-600",
+        "Comprehensive breakdown of LTV components and actionable insights.",
+      color: "bg-orange-100 text-orange-600",
     },
     {
-      icon: TrendingUp,
-      title: "Optimization Tips",
+      icon: Clock,
+      title: "Time-based Analysis",
       description:
-        "Receive actionable recommendations to improve your project's chances of success",
+        "Calculate LTV across different time periods and customer lifecycle stages.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Award,
-      title: "Best Practices",
+      title: "Professional Reports",
       description:
-        "Access industry best practices and proven methodologies for API integrations",
-      color: "bg-indigo-100 text-indigo-600",
+        "Generate detailed reports perfect for stakeholder presentations.",
+      color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
@@ -1028,7 +1092,8 @@ const ToolFeatures = () => {
     "/tools/saas-profitability-calculator/":
       saasProfitabilityCalculatorFeatures,
     "/tools/customer-acquisition-cost-estimator/":
-      customerAcquisiyionCostEstimatorFeatures,
+      customerAcquisitionCostEstimatorFeatures,
+    "/tools/lifetime-value-calculator/": calculateCustomerLifetimeFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

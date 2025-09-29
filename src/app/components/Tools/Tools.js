@@ -139,21 +139,29 @@ const toolsData = [
     link: "/tools/cloud-service-cost-estimator/",
     tags: ["DEVELOPMENT", "MARKETING", "OTHER"],
   },
+  {
+    title: "SaaS Profitability Calculator",
+    description:
+      "Quickly analyze revenue, costs, and margins to measure SaaS profitability. Plan budgets and forecast growth with clear, data-driven financial insights.",
+    bg: "bg-blue-200",
+    link: "/tools/saas-profitability-calculator/",
+    tags: ["SALES", "BUSINESS", "OTHER"],
+  },
+  {
+    title: "Customer Acquisition Cost (CAC) Estimator",
+    description:
+      "Estimate the true cost of acquiring each customer. Analyze marketing spend, conversion rates, and ROI to optimize campaigns and boost profitability.",
+    bg: "bg-purple-200",
+    link: "/tools/customer-acquisition-cost-estimator/",
+    tags: ["SALES", "BUSINESS", "OTHER"],
+  },
   // {
-  //   title: "SaaS Profitability Calculator",
+  //   title: "Lifetime Value (LTV) Calculator",
   //   description:
-  //     "Quickly analyze revenue, costs, and margins to measure SaaS profitability. Plan budgets and forecast growth with clear, data-driven financial insights.",
-  //   bg: "bg-blue-200",
-  //   link: "/tools/saas-profitability-calculator/",
-  //   tags: ["SALES", "BUSINESS", "OTHER"],
-  // },
-  // {
-  //   title: "Customer Acquisition Cost (CAC) Estimator",
-  //   description:
-  //     "Estimate the true cost of acquiring each customer. Analyze marketing spend, conversion rates, and ROI to optimize campaigns and boost profitability.",
-  //   bg: "bg-purple-200",
-  //   link: "/tools/customer-acquisition-cost-estimator/",
-  //   tags: ["SALES", "BUSINESS", "OTHER"],
+  //     "Estimate the long-term revenue each customer brings to your business. Calculate retention impact, predict profitability, and make data-driven decisions to improve marketing strategies and boost overall customer lifetime value.",
+  //   bg: "bg-teal-200",
+  //   link: "/tools/lifetime-value-calculator/",
+  //   tags: ["BUSINESS", "MARKETING", "OTHER"],
   // },
 ];
 

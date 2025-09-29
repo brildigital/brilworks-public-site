@@ -624,34 +624,80 @@ const saasProfitabilityCalculatorFaqData = {
     },
   ],
 };
-const customerAcquisiyionCostEstimatorFaqData = {
+const customerAcquisitionCostEstimatorFaqData = {
   description:
-    "Get answers to common questions about API integration feasibility and our assessment tool",
+    "Get answers to common questions about Customer Acquisition Cost calculations",
   queAns: [
     {
-      question: "What factors determine API integration feasibility?",
+      question: "What is Customer Acquisition Cost (CAC)?",
       answer:
-        "Key factors include API complexity, team expertise, timeline constraints, budget allocation, documentation quality, and existing system compatibility.",
+        "Customer Acquisition Cost (CAC) is the total cost of acquiring a new customer, including all marketing and sales expenses. It's calculated by dividing your total acquisition costs by the number of new customers gained in a specific period.",
     },
     {
-      question: "How accurate are the feasibility assessments?",
+      question: "How accurate is the CAC calculator?",
       answer:
-        "Our assessments are based on industry best practices and historical data. They provide a reliable baseline, but actual results may vary based on specific project requirements.",
+        "Our calculator provides highly accurate estimates based on your input data and industry benchmarks. The keyword-based adjustments help refine calculations based on your specific marketing channels and strategies.",
     },
     {
-      question: "Can I use this tool for multiple API integrations?",
+      question: "What marketing costs should I include in CAC calculation?",
       answer:
-        "Yes, you can assess multiple APIs separately. For complex multi-API projects, consider the cumulative complexity and interdependencies.",
+        "Include all marketing and sales costs: advertising spend, content creation, marketing tools and software, sales team salaries, marketing team salaries, and any other costs directly related to customer acquisition.",
     },
     {
-      question: "What if my feasibility score is low?",
+      question: "How does the keyword-based estimation work?",
       answer:
-        "A low score doesn't mean impossible. Review our recommendations, consider phased implementation, or seek additional resources and expertise.",
+        'Our system analyzes keywords in your marketing description to apply industry-specific multipliers. For example, "paid advertising" has a higher cost multiplier than "SEO" based on typical channel costs.',
     },
     {
-      question: "How often should I reassess feasibility?",
+      question: "What is a good CAC for my industry?",
       answer:
-        "Reassess when project requirements change, new constraints emerge, or after completing project phases to validate assumptions.",
+        "Good CAC varies by industry. Generally, your CAC should be significantly lower than your Customer Lifetime Value (CLV). A healthy CAC:CLV ratio is typically 1:3 or better, meaning your CLV should be at least 3x your CAC.",
+    },
+    {
+      question: "How often should I calculate CAC?",
+      answer:
+        "Calculate CAC monthly or quarterly to track trends and optimization efforts. More frequent calculations help you quickly identify and address issues with your acquisition strategies.",
+    },
+    {
+      question: "Can I calculate CAC for different customer segments?",
+      answer:
+        "Yes! You should calculate CAC for different segments, channels, and time periods. This helps identify your most cost-effective acquisition methods and customer types.",
+    },
+    {
+      question: "What if my CAC is higher than the industry benchmark?",
+      answer:
+        "A higher CAC isn't always bad if your customers have high lifetime value. Focus on optimizing your highest-cost channels, improving conversion rates, and ensuring your CAC:CLV ratio remains healthy.",
+    },
+  ],
+};
+const calculateCustomerLifetimeFaqData = {
+  description:
+    "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
+  queAns: [
+    {
+      question: "What is Customer Lifetime Value (LTV)?",
+      answer:
+        "Customer Lifetime Value (LTV) is the total amount of money a customer is expected to spend on your business during their entire relationship with your company. It's a crucial metric that helps businesses understand the long-term value of acquiring and retaining customers.",
+    },
+    {
+      question: "How is LTV calculated?",
+      answer:
+        "The basic LTV formula is: LTV = (Average Order Value × Purchase Frequency × Customer Lifespan). However, more sophisticated calculations may include factors like retention rates, discount rates, and acquisition costs to provide a more accurate picture.",
+    },
+    {
+      question: "Why is LTV important for my business?",
+      answer:
+        "LTV helps you determine how much you can spend on customer acquisition, identify your most valuable customer segments, optimize marketing campaigns, improve customer retention strategies, and make informed decisions about product development and pricing.",
+    },
+    {
+      question: "What's a good LTV to CAC ratio?",
+      answer:
+        "A healthy LTV to Customer Acquisition Cost (CAC) ratio is typically 3:1 or higher. This means your customer lifetime value should be at least three times your acquisition cost. Ratios below 3:1 may indicate inefficient spending, while ratios above 5:1 might suggest missed growth opportunities.",
+    },
+    {
+      question: "How often should I calculate LTV?",
+      answer:
+        "You should calculate LTV regularly, typically monthly or quarterly, depending on your business cycle. Regular monitoring helps you track trends, measure the impact of retention initiatives, and adjust your customer acquisition strategies accordingly.",
     },
   ],
 };
@@ -691,7 +737,8 @@ const ToolFAQs = () => {
     "/tools/cloud-service-cost-estimator/": cloudServiceCostEstimatorFaqData,
     "/tools/saas-profitability-calculator/": saasProfitabilityCalculatorFaqData,
     "/tools/customer-acquisition-cost-estimator/":
-      customerAcquisiyionCostEstimatorFaqData,
+      customerAcquisitionCostEstimatorFaqData,
+    "/tools/lifetime-value-calculator/": calculateCustomerLifetimeFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

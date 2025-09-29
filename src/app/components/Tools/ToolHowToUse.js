@@ -531,34 +531,89 @@ const saasProfitabilityCalculatorSteps = {
     },
   ],
 };
-const customerAcquisiyionCostEstimatorSteps = {
-  title: "How It Works",
+const customerAcquisitionCostEstimatorSteps = {
+  title: "How to Calculate Customer Acquisition Cost",
   description:
-    "Follow these simple steps to get a comprehensive feasibility assessment for your API integration project",
+    "Follow these simple steps to accurately calculate your CAC and make informed marketing decisions",
   listData: [
     {
-      icon: Code,
-      title: "Project Details",
+      icon: DollarSign,
+      title: "Calculate Total Marketing Spend",
       description:
-        "Provide information about your API type, complexity, and integration requirements",
+        "Sum up all marketing expenses including advertising, content creation, staff costs, and tools for a specific period.",
+      details: [
+        "Paid advertising costs",
+        "Content creation expenses",
+        "Marketing team salaries",
+        "Marketing tools and software",
+      ],
     },
     {
       icon: Users,
-      title: "Resource Assessment",
+      title: "Count New Customers Acquired",
       description:
-        "Tell us about your timeline, budget constraints, and team expertise level",
+        "Identify the total number of new customers gained during the same time period as your marketing spend.",
+      details: [
+        "First-time buyers only",
+        "Exclude returning customers",
+        "Track from all marketing channels",
+        "Use consistent time periods",
+      ],
     },
     {
-      icon: Cpu,
-      title: "AI Analysis",
+      icon: Calculator,
+      title: "Apply the CAC Formula",
       description:
-        "Our advanced algorithm analyzes your inputs against thousands of successful projects",
+        "Divide your total marketing spend by the number of new customers acquired to get your Customer Acquisition Cost.",
+      details: [
+        "CAC = Total Marketing Spend ÷ New Customers",
+        "Use same time period for both metrics",
+        "Include all related costs",
+        "Round to nearest cent",
+      ],
     },
     {
+      icon: TrendingUp,
+      title: "Analyze and Optimize",
+      description:
+        "Compare your CAC against industry benchmarks and customer lifetime value to optimize your marketing strategy.",
+      details: [
+        "Compare with CLV ratio",
+        "Benchmark against competitors",
+        "Track trends over time",
+        "Optimize high-cost channels",
+      ],
+    },
+  ],
+};
+const calculateCustomerLifetimeSteps = {
+  title: "How to Calculate LTV in 4 Simple Steps",
+  description:
+    "Follow our systematic approach to accurately determine your customer lifetime value and make informed business decisions.",
+  listData: [
+    {
+      title: "Gather Customer Data",
+      description:
+        "Collect information about average order value, purchase frequency, and customer behavior patterns.",
+      icon: Users,
+    },
+    {
+      title: "Calculate Base Metrics",
+      description:
+        "Multiply average order value by purchase frequency and customer lifespan period.",
+      icon: Calculator,
+    },
+    {
+      title: "Apply Retention Factors",
+      description:
+        "Adjust calculations based on customer retention rates and churn patterns.",
+      icon: TrendingUp,
+    },
+    {
+      title: "Analyze Results",
+      description:
+        "Compare LTV to acquisition costs and use insights to optimize your marketing strategy.",
       icon: BarChart3,
-      title: "Get Results",
-      description:
-        "Receive a detailed feasibility score with personalized recommendations and timeline estimates",
     },
   ],
 };
@@ -590,7 +645,8 @@ const ToolHowToUse = () => {
     "/tools/cloud-service-cost-estimator/": cloudServiceCostEstimatorSteps,
     "/tools/saas-profitability-calculator/": saasProfitabilityCalculatorSteps,
     "/tools/customer-acquisition-cost-estimator/":
-      customerAcquisiyionCostEstimatorSteps,
+      customerAcquisitionCostEstimatorSteps,
+    "/tools/lifetime-value-calculator/": calculateCustomerLifetimeSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
@@ -632,7 +688,7 @@ const ToolHowToUse = () => {
                   {/* Step number */}
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 text-white w-8 h-8 rounded-full 
+                      className="bg-themeColor text-white w-8 h-8 rounded-full 
                   flex items-center justify-center font-bold text-sm"
                     >
                       {index + 1}
@@ -640,27 +696,33 @@ const ToolHowToUse = () => {
                   </div>
 
                   {/* Icon */}
-                  <div
-                    className="bg-gradient-to-r from-purple-100 to-blue-100 w-16 h-16 rounded-full 
-                flex items-center justify-center mx-auto mb-6 group-hover:scale-110 
-                transition-transform duration-300"
-                  >
-                    <step.icon className="w-8 h-8 text-purple-600" />
+                  <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-8 h-8 text-themeColor" />
                   </div>
-
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed flex-1">
-                    {step.description}
-                  </p>
+                  <div className="flex-1 h-full">
+                    {/* Title & Description */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                  <div className="">
+                    {step.details && (
+                      <ul className="mt-2.5 min-h-[140px] border-t pt-2.5 list-disc marker:text-themeColor text-left font-medium text-sm text-gray-600 pl-4">
+                        {step.details?.map((pro, i) => (
+                          <li key={i}>{pro}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
 
                 {/* Arrow except for last item */}
                 {index < stepsData?.listData?.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-1">
-                    <ArrowRight className="w-6 h-6 text-purple-400" />
+                    <ArrowRight className="w-6 h-6 text-themeColor" />
                   </div>
                 )}
               </div>
