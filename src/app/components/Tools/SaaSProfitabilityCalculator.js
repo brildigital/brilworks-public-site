@@ -3,28 +3,17 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
-  Award,
   CalculatorIcon,
   CheckCircle,
-  Clock,
-  Code,
   DollarSign,
   Loader2,
   Search,
-  Smartphone,
   Sparkles,
-  Star,
-  Users,
-  Zap,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
-import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  crossPlatformAnalyzeProject,
-  getStatusColor,
-  saasCalculateProfitability,
-} from "../lib/crossPlatformVsNativeAnalyzerService";
+import { getStatusColor, hasSubmittedForm } from "../lib/commonFunction";
+import { saasCalculateProfitability } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));

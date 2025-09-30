@@ -8,7 +8,6 @@ import {
   CheckCircle,
   Clock,
   Code,
-  Database,
   DollarSign,
   Loader2,
   Search,
@@ -21,9 +20,7 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { databaseSelectorRecommendations } from "../lib/featureComplexityVsTimelineEstimatorService";
-import axios from "axios";
-import { crossPlatformAnalyzeProject } from "../lib/crossPlatformVsNativeAnalyzerService";
+import { crossPlatformAnalyzeProject } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));

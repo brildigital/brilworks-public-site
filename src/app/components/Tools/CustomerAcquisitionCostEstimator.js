@@ -3,26 +3,18 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
-  Award,
+  Calculator,
   CalculatorIcon,
-  CheckCircle,
-  Clock,
-  Code,
-  DollarSign,
   Loader2,
-  Search,
-  Smartphone,
   Sparkles,
-  Star,
   Target,
   TrendingUp,
   Users,
-  Zap,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { crossPlatformAnalyzeProject } from "../lib/crossPlatformVsNativeAnalyzerService";
+import { calculateCAC } from "../lib/crossPlatformVsNativeAnalyzerService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -34,23 +26,29 @@ const CustomerAcquisitionCostEstimator = () => {
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
   const [formData, setFormData] = useState({
-    projectType: "",
-    budget: "",
-    timeline: "",
-    teamSize: "",
-    platforms: [],
-    performanceNeeds: "",
+    totalSpend: "",
+    newCustomers: "",
+    businessType: "saas",
     description: "",
   });
 
   const [result, setResult] = useState();
 
+  const businessTypes = [
+    { value: "saas", label: "SaaS/Software", benchmark: 205 },
+    { value: "ecommerce", label: "E-commerce", benchmark: 87 },
+    { value: "fintech", label: "Fintech", benchmark: 395 },
+    { value: "healthcare", label: "Healthcare", benchmark: 200 },
+    { value: "education", label: "Education", benchmark: 106 },
+    { value: "marketing", label: "Marketing Agency", benchmark: 141 },
+    { value: "retail", label: "Retail", benchmark: 45 },
+    { value: "real-estate", label: "Real Estate", benchmark: 213 },
+  ];
   const isFormValid = () => {
     return (
-      formData?.projectType &&
-      formData?.budget &&
-      formData?.timeline &&
-      formData?.performanceNeeds &&
+      formData?.totalSpend &&
+      formData?.newCustomers &&
+      formData?.businessType &&
       formData?.description.trim()
     );
   };
@@ -67,7 +65,7 @@ const CustomerAcquisitionCostEstimator = () => {
 
     setIsCalculating(true);
 
-    const resultData = crossPlatformAnalyzeProject(formData);
+    const resultData = calculateCAC(formData, businessTypes);
 
     setTimeout(() => {
       setResult(resultData);
@@ -109,7 +107,7 @@ const CustomerAcquisitionCostEstimator = () => {
           <>
             Customer Acquisition&nbsp;
             <br className="md:block hidden" />
-            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
+            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-themeSecondary">
               Cost Estimator
             </span>
           </>
@@ -147,7 +145,7 @@ const CustomerAcquisitionCostEstimator = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl font-bold text-themeColor mb-4">
               CAC Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -158,95 +156,93 @@ const CustomerAcquisitionCostEstimator = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Calculator Form */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-2.5">
+            <div className="bg-white rounded-2xl border border-gray-200 md:p-8 p-5 space-y-2.5">
               <h2 className="text-center text-2xl font-semibold mb-2">
                 Input Your Data
               </h2>
+              <div className="space-y-1">
+                <label className="font-medium text-gray-700">
+                  Total Marketing Spend* ($)
+                </label>
+                <input
+                  id="totalSpend"
+                  type="number"
+                  className="w-full border rounded-lg p-3 bg-white"
+                  value={formData.totalSpend}
+                  onChange={(e) =>
+                    handleInputChange("totalSpend", e.target.value)
+                  }
+                  min="1"
+                  onKeyDown={(e) => {
+                    if (
+                      e.key === "e" ||
+                      e.key === "E" ||
+                      e.key === "+" ||
+                      e.key === "-"
+                    ) {
+                      e.preventDefault(); // 🚫 block these keys
+                    }
+                  }}
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="font-medium text-gray-700">
+                  New Customers Acquired*
+                </label>
+                <input
+                  id="newCustomers"
+                  type="number"
+                  className="w-full border rounded-lg p-3 bg-white"
+                  value={formData.newCustomers}
+                  onChange={(e) =>
+                    handleInputChange("newCustomers", e.target.value)
+                  }
+                  min="1"
+                  onKeyDown={(e) => {
+                    if (
+                      e.key === "e" ||
+                      e.key === "E" ||
+                      e.key === "+" ||
+                      e.key === "-"
+                    ) {
+                      e.preventDefault();
+                    }
+                  }}
+                />
+              </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Type *
+                  Business Type *
                 </label>
 
                 <select
-                  value={formData.projectType}
+                  value={formData.businessType}
                   onChange={(e) =>
-                    handleInputChange("projectType", e.target.value)
+                    handleInputChange("businessType", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select project type</option>
-                  <option value="business">Business/Productivity App</option>
-                  <option value="ecommerce">E-commerce App</option>
-                  <option value="social">Social Media App</option>
-                  <option value="game">Gaming App</option>
-                  <option value="utility">Utility/Tool App</option>
-                  <option value="educational">Educational App</option>
+                  <option value="">Select business type</option>
+
+                  {businessTypes.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {type.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Budget Range *
-                </label>
-
-                <select
-                  value={formData?.budget}
-                  onChange={(e) => handleInputChange("budget", e.target.value)}
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select budget range</option>
-                  <option value="low">$50K - $150K</option>
-                  <option value="moderate">$150K - $400K</option>
-                  <option value="high">$400K+</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Timeline *</label>
-                <select
-                  value={formData?.timeline}
-                  onChange={(e) =>
-                    handleInputChange("timeline", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select timeline</option>
-                  <option value="urgent">2-4 months (Urgent)</option>
-                  <option value="moderate">4-8 months (Moderate)</option>
-                  <option value="flexible">8+ months (Flexible)</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Performance Requirements *
-                </label>
-                <select
-                  value={formData.performanceNeeds}
-                  onChange={(e) =>
-                    handleInputChange("performanceNeeds", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select performance needs</option>
-                  <option value="basic">Basic (Standard UI/UX)</option>
-                  <option value="moderate">Moderate (Good Performance)</option>
-                  <option value="critical">Critical (High Performance)</option>
-                </select>
-              </div>
-
-              {/* Project Description */}
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Project Description *
+                  Marketing Description*
                 </label>
                 <textarea
                   value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your feature..."
+                  placeholder="e.g. Using Google Ads, Facebook advertising, and content marketing to drive traffic..."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
@@ -256,7 +252,7 @@ const CustomerAcquisitionCostEstimator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
-                className="w-full bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
+                className="w-full bg-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
                 {isCalculating ? (
                   <>
@@ -265,112 +261,96 @@ const CustomerAcquisitionCostEstimator = () => {
                   </>
                 ) : (
                   <>
-                    <Search className="mr-2 h-5 w-5" />
-                    Get Result
+                    <Calculator className="mr-2 h-5 w-5" />
+                    Calculate your CAC
                   </>
                 )}
               </button>
             </div>
 
             {/* Cost Estimate */}
-            <div className="popup bg-white rounded-2xl border shadow-lg p-8">
+            <div className="popup bg-white rounded-2xl border shadow-lg md:p-8 p-5">
               <h2 className="text-center text-2xl font-semibold mb-4">
                 Analysis Results
               </h2>
               {result && hasVisited ? (
-                <div className="space-y-4">
-                  <div className="bg-white rounded-xl p-6 border border-blue-200">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                          result.recommendation === "native"
-                            ? "bg-purple-100 text-purple-600"
-                            : result.recommendation === "cross-platform"
-                            ? "bg-green-100 text-green-600"
-                            : "bg-blue-100 text-blue-600"
-                        }`}
-                      >
-                        {result.recommendation === "native" ? (
-                          <Code className="w-6 h-6" />
-                        ) : result.recommendation === "cross-platform" ? (
-                          <Smartphone className="w-6 h-6" />
+                <div className="space-y-6">
+                  {/* Main Result */}
+                  <div className="bg-gradient-to-br from-themeColor to-navyBlue rounded-xl text-center p-5 text-white">
+                    <div className="lg:text-5xl md:text-4xl text-3xl  font-bold mb-2">
+                      ${result.cac}
+                    </div>
+                    <div className="text-blue-100">per customer acquired</div>
+
+                    <div className="mt-4 p-4 bg-white/20 rounded-lg backdrop-blur-sm">
+                      <div className="flex items-center justify-between">
+                        <span>Industry Benchmark</span>
+                        <span className="font-semibold">
+                          ${result.industryBenchmark}
+                        </span>
+                      </div>
+                      <div className="mt-2">
+                        {result.cac < result.industryBenchmark ? (
+                          <span className="text-green-200">
+                            ✓ Below benchmark (Great!)
+                          </span>
                         ) : (
-                          <Zap className="w-6 h-6" />
+                          <span className="text-yellow-200">
+                            ⚠ Above benchmark
+                          </span>
                         )}
                       </div>
-                      <div>
-                        <h4 className="text-xl font-semibold capitalize">
-                          {result.recommendation.replace("-", " ")} Development
-                        </h4>
-                        <p className="text-gray-600">Recommended approach</p>
-                      </div>
-                    </div>
-
-                    <div className={`w-full bg-gray-200 rounded-full h-2 mb-4`}>
-                      <div
-                        className={`h-2 rounded-full transition-all duration-1000 ${
-                          result.recommendation === "native"
-                            ? "bg-purple-500"
-                            : result.recommendation === "cross-platform"
-                            ? "bg-green-500"
-                            : "bg-blue-500"
-                        }`}
-                        style={{ width: `${result.score}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Confidence Score: {result.score}%
-                    </p>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <Clock className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">Timeline</div>
-                      <div className="text-sm text-gray-600">
-                        {result.timeline}
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <DollarSign className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">Budget</div>
-                      <div className="text-sm text-gray-600">
-                        {result.budget}
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-4 border border-blue-200 text-center">
-                      <Zap className="w-6 h-6 text-yellow-600 mx-auto mb-2" />
-                      <div className="font-medium text-gray-900">
-                        Performance
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        {result.performance}
-                      </div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 border border-blue-200">
-                    <h5 className="font-semibold text-gray-900 mb-3">
-                      Key Reasoning
-                    </h5>
-                    <ul className="space-y-2">
-                      {result.reasoning.map((reason, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm text-gray-700"
-                        >
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          {reason}
-                        </li>
+                  {/* Channel Breakdown */}
+                  {/* <div className="bg-white rounded-xl p-5 border">
+                    <div className="flex items-center mb-4">
+                      <TrendingUp className="w-6 h-6 text-blue-500 mr-3" />
+                      <h3 className="text-xl font-bold text-gray-900">
+                        Channel Breakdown
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-2 gap-y-1 gap-x-4">
+                      {Object.entries(result.cacPerChannel).map(
+                        ([channel, cac]) => (
+                          <div
+                            key={channel}
+                            className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg"
+                          >
+                            <span className="text-gray-700">{channel}</span>
+                            <span className="font-semibold text-gray-900">
+                              ${cac}
+                            </span>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div> */}
+
+                  {/* Recommendations */}
+                  <div className="bg-white rounded-xl p-5 border">
+                    <div className="flex items-center mb-4">
+                      <Users className="w-6 h-6 text-orange-500 mr-3" />
+                      <h3 className="text-xl font-bold text-gray-900">
+                        Recommendations
+                      </h3>
+                    </div>
+                    <div className="space-y-3">
+                      {result.recommendations.map((rec, index) => (
+                        <div key={index} className="flex items-start">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <p className="text-gray-700">{rec}</p>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               ) : (
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
-                      <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                      <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-themeColor to-[#01dbd4] rounded-full flex items-center justify-center">
                         <CalculatorIcon className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -392,7 +372,7 @@ const CustomerAcquisitionCostEstimator = () => {
 
                     <button
                       onClick={() => document.querySelector("input")?.focus()}
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
+                      className="bg-gradient-to-r from-themeColor to-[#01dbd4] text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-themeColor hover:to-[#01dbd4] transition-all animate-bounce"
                     >
                       &lArr; Start by entering your data
                     </button>

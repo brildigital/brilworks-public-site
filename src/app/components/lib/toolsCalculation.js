@@ -1,3 +1,4 @@
+// 14. Cross-Platform vs Native Analyzer
 export const crossPlatformAnalyzeProject = (data) => {
   let nativeScore = 0;
   let crossPlatformScore = 0;
@@ -77,6 +78,7 @@ export const crossPlatformAnalyzeProject = (data) => {
   };
 };
 
+// 15. API Integration Feasibility Checker
 export const calculateFeasibilityChecker = (formData) => {
   let score = 0;
   const recommendations = [];
@@ -139,6 +141,8 @@ export const calculateFeasibilityChecker = (formData) => {
     riskLevel,
   };
 };
+
+// 16. Cloud Service Cost Estimator
 export const cloudServiceCostEstimate = (formData) => {
   let baseCost = 0;
 
@@ -172,6 +176,7 @@ export const cloudServiceCostEstimate = (formData) => {
   return { cost: baseCost * multiplier };
 };
 
+// 17. SaaS Profitability Calculator
 const extractFeatures = (description) => {
   const keywords = description.toLowerCase();
   const features = [];
@@ -201,7 +206,6 @@ const extractFeatures = (description) => {
 
   return features;
 };
-
 const calculateCostFromKeywords = (description, businessType, teamSize) => {
   const keywords = description.toLowerCase();
   let baseCost = 5000; // Base monthly cost
@@ -274,20 +278,6 @@ const calculateCostFromKeywords = (description, businessType, teamSize) => {
 
   return Math.round(baseCost);
 };
-
-export const getStatusColor = (status) => {
-  switch (status) {
-    case "Excellent":
-      return "text-green-600 bg-green-50 border-green-200";
-    case "Good":
-      return "text-blue-600 bg-blue-50 border-blue-200";
-    case "Fair":
-      return "text-yellow-600 bg-yellow-50 border-yellow-200";
-    default:
-      return "text-red-600 bg-red-50 border-red-200";
-  }
-};
-
 export const saasCalculateProfitability = (formData) => {
   const estimatedMonthlyCost = calculateCostFromKeywords(
     formData.description,
@@ -328,4 +318,93 @@ export const saasCalculateProfitability = (formData) => {
     competitiveAdvantage,
     profitabilityStatus,
   };
+};
+
+// 18. Customer Acquisition Cost Estimator
+export const calculateCAC = (formData, businessTypes) => {
+  const spend = parseFloat(formData.totalSpend);
+  const customers = parseInt(formData.newCustomers);
+  const keywords = {
+    "digital marketing": 1.2,
+    "content marketing": 0.8,
+    "social media": 0.9,
+    "paid advertising": 1.5,
+    seo: 0.6,
+    "email marketing": 0.4,
+    "influencer marketing": 1.1,
+    "affiliate marketing": 1.3,
+    ppc: 1.4,
+    "facebook ads": 1.2,
+    "google ads": 1.3,
+    "linkedin ads": 1.6,
+  };
+
+  if (spend > 0 && customers > 0) {
+    const baseCac = spend / customers;
+
+    // Apply keyword multipliers
+    let keywordMultiplier = 1;
+    const description = formData.description.toLowerCase();
+
+    Object.entries(keywords).forEach(([keyword, multiplier]) => {
+      if (description.includes(keyword)) {
+        keywordMultiplier = multiplier;
+      }
+    });
+
+    const adjustedCac = baseCac * keywordMultiplier;
+
+    const selectedBusiness = businessTypes.find(
+      (bt) => bt.value === formData.businessType
+    );
+    const benchmark = selectedBusiness?.benchmark || 150;
+
+    // Generate channel breakdown
+    const channels = [
+      "Organic Search",
+      "Paid Ads",
+      "Social Media",
+      "Email",
+      "Referrals",
+    ];
+    const cacPerChannel = {};
+    channels.forEach((channel, index) => {
+      const variance = (Math.random() - 0.5) * 0.6; // ±30% variance
+      cacPerChannel[channel] = Math.round(adjustedCac * (1 + variance));
+    });
+
+    // Generate recommendations
+    const recommendations = [];
+    if (adjustedCac > benchmark * 1.2) {
+      recommendations.push(
+        "Your CAC is above industry benchmark. Consider optimizing high-cost channels."
+      );
+      recommendations.push(
+        "Focus on organic acquisition methods like SEO and content marketing."
+      );
+    } else if (adjustedCac < benchmark * 0.8) {
+      recommendations.push("Excellent! Your CAC is below industry average.");
+      recommendations.push(
+        "Consider scaling successful channels while maintaining efficiency."
+      );
+    } else {
+      recommendations.push("Your CAC is within healthy industry ranges.");
+      recommendations.push(
+        "Continue monitoring and testing optimization strategies."
+      );
+    }
+
+    if (description.includes("paid") || description.includes("ads")) {
+      recommendations.push(
+        "Optimize ad targeting and creative performance to reduce paid acquisition costs."
+      );
+    }
+
+    return {
+      cac: Math.round(adjustedCac),
+      cacPerChannel,
+      recommendations,
+      industryBenchmark: benchmark,
+    };
+  }
 };

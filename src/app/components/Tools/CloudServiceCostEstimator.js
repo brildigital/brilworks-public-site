@@ -2,30 +2,13 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import {
-  Award,
-  CalculatorIcon,
-  CheckCircle,
-  Clock,
-  Code,
-  DollarSign,
-  Loader2,
-  Search,
-  Smartphone,
-  Sparkles,
-  Star,
-  Users,
-  Wallet,
-  Zap,
-} from "lucide-react";
+import { CalculatorIcon, Loader2, Sparkles, Wallet } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  cloudServiceCostEstimate,
-  crossPlatformAnalyzeProject,
-} from "../lib/crossPlatformVsNativeAnalyzerService";
+
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
+import { cloudServiceCostEstimate } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));

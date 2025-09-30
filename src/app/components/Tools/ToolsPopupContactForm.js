@@ -1,27 +1,31 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { IconButton } from "@material-tailwind/react";
 import {
   AlertCircle,
   ArrowRight,
+  BarChart3,
   Calendar,
   CheckCircle,
   Clock,
+  Cloud,
   Code,
+  Cpu,
+  Database,
   DollarSign,
+  Link,
   Lock,
   Smartphone,
   Star,
   Target,
   TrendingUp,
+  Users,
   Wallet,
   X,
   Zap,
 } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
-import { markFormSubmitted } from "../lib/commonFunction";
-import { getStatusColor } from "../lib/crossPlatformVsNativeAnalyzerService";
+import { getStatusColor, markFormSubmitted } from "../lib/commonFunction";
 
 const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
   const pathname = usePathname();
@@ -46,41 +50,98 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     }
   }, [showPrice]);
 
-  const TITLE_MAP = {
-    "/tools/tech-stack-recommender/": "Recommendations",
-    "/tools/database-selector-tool/": "Your Recommendations",
-    "/tools/cross-platform-vs-native-analyzer/": "Analysis Results",
-    "/tools/roi-calculator/": "Your Estimated ROI",
-    "/tools/app-development-timeline-calculator/": "Your Estimated Timeline",
-    "/tools/mvp-launch-timeline-estimator/": "Your Estimated Timeline",
-    "/tools/feature-complexity-vs-time-estimator/": "Your Estimated Results",
-    "/tools/api-integration-feasibility-checker/": "Analysis Results",
-    "/tools/cloud-service-cost-estimator/": "Your Estimated Cost",
-    "/tools/saas-profitability-calculator/": "Analysis Result",
+  const defaultDesc =
+    "The platform, design requirement, description, and project complexity are considered when calculating the cost. This is an estimate to give you an idea of the possible budget range for your project.";
+
+  const TITLE_ICON_MAP = {
+    "/tools/project-estimate/": {
+      title: "Cost Estimate",
+      icon: Wallet,
+      desc: defaultDesc,
+    },
+    "/tools/roi-calculator/": {
+      title: "Your Estimates ROI",
+      desc: defaultDesc,
+    },
+    "/tools/mobility-app-development-calculator/": {
+      title: "Cost Estimate",
+      icon: BarChart3,
+      desc: defaultDesc,
+    },
+    "/tools/saas-development-cost-calculator/": {
+      title: "Cost Estimate",
+      icon: Wallet,
+      desc: defaultDesc,
+    },
+    "/tools/mvp-development-cost-calculator/": {
+      title: "Cost Estimate",
+      icon: Wallet,
+      desc: defaultDesc,
+    },
+    "/tools/app-maintenance-cost-estimator/": {
+      title: "Cost Estimate",
+      icon: Wallet,
+    },
+    "/tools/app-development-timeline-calculator/": {
+      title: "Your Estimated Timeline",
+      icon: Calendar,
+    },
+    "/tools/mvp-launch-timeline-estimator/": {
+      title: "Your MVP Timeline",
+      icon: Calendar,
+    },
+    "/tools/feature-complexity-vs-time-estimator/": {
+      title: "Your Estimation Results",
+    },
+    "/tools/testing-qa-timeline-estimator/": {
+      title: "Your Timeline Results",
+      icon: Calendar,
+    },
+    "/tools/go-to-market-timeline-planner/": {
+      title: "Your Estimated Timeline",
+      icon: Calendar,
+      desc: defaultDesc,
+    },
+    "/tools/tech-stack-recommender/": { title: "Recommendations", icon: Cpu },
+    "/tools/database-selector-tool/": {
+      title: "Your Recommendations",
+      icon: Database,
+    },
+    "/tools/cross-platform-vs-native-analyzer/": {
+      title: "Analysis Results",
+      icon: Smartphone,
+    },
+    "/tools/api-integration-feasibility-checker/": {
+      title: "Analysis Results",
+      icon: Link,
+    },
+    "/tools/cloud-service-cost-estimator/": {
+      title: "Your Estimated Cost",
+      icon: Cloud,
+      desc: "Service type, region, instance, storage, bandwidth and project description are considered when calculating the cost. This is an estimate to give you an idea of the possible budget range for your cloud service requirements. For a more accurate estimate, consult with our specialist.",
+    },
+    "/tools/saas-profitability-calculator/": {
+      title: "Analysis Result",
+    },
+    "/tools/customer-acquisition-cost-estimator/": {
+      title: "Your CAC Result",
+      icon: Users,
+    },
   };
-  function PageTitle() {
-    // direct match first
-    if (TITLE_MAP[pathname]) return TITLE_MAP[pathname];
 
-    // shared fallback logic
-    if (pathname.startsWith("/tools/")) {
-      // fallback categories
-      if (
-        [
-          "/tools/app-development-timeline-calculator/",
-          "/tools/mvp-launch-timeline-estimator/",
-        ].includes(pathname)
-      )
-        return "Your Estimated Timeline";
+  const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
 
-      if (pathname === "/tools/feature-complexity-vs-time-estimator/")
-        return "Your Estimated Results";
-
-      return "Your Estimated Cost";
-    }
-
-    return "Estimated Results";
-  }
+  const CloseBtn = ({ extraClass = "" }) => (
+    <button
+      className={`p-1 rounded-md absolute right-1 top-1 md:right-3.5 md:top-4 outline-none hover:bg-gray-100 ${extraClass}`}
+      onClick={() => {
+        handleClose();
+        if (!showPrice) setResult(null);
+      }}
+    >
+      <X className="h-5 w-5" />
+    </button>
+  );
 
   const renderPrice = () => {
     switch (pathname) {
@@ -865,6 +926,57 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/customer-acquisition-cost-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-themeColor to-navyBlue rounded-xl p-5 text-white">
+              <div className="text-5xl font-bold mb-2">${result.cac}</div>
+              <div className="text-blue-100">per customer acquired</div>
+
+              <div className="mt-4 p-4 bg-white/20 rounded-lg backdrop-blur-sm">
+                <div className="flex items-center justify-between">
+                  <span>Industry Benchmark</span>
+                  <span className="font-semibold">
+                    ${result.industryBenchmark}
+                  </span>
+                </div>
+                <div className="">
+                  {result.cac < result.industryBenchmark ? (
+                    <span className="text-green-200">
+                      ✓ Below benchmark (Great!)
+                    </span>
+                  ) : (
+                    <span className="text-yellow-200">⚠ Above benchmark</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 border">
+              <div className="flex items-center mb-6">
+                <Users className="w-6 h-6 text-orange-500 mr-3" />
+                <h3 className="text-xl font-bold text-gray-900">
+                  Recommendations
+                </h3>
+              </div>
+              <div className="space-y-1">
+                {result.recommendations.map((rec, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-700 text-left">{rec}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -875,7 +987,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
           </div>
         ) : (
-          <p className="text-5xl">${result.cost.toLocaleString()}</p>
+          <p className="text-5xl font-bold">${result.cost.toLocaleString()}</p>
         );
     }
   };
@@ -885,17 +997,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 w-full max-w-[1200px] rounded-lg bg-white shadow-lg py-6 pl-5 pr-0 md:p-6 !pb-3  md:pt-10">
-        <IconButton
-          size="sm"
-          variant="text"
-          className="!absolute right-1 top-1 outline-none focus:outline-none hover:bg-gray-100 md:hidden flex"
-          onClick={() => {
-            handleClose();
-            showPrice ? "" : setResult(null);
-          }}
-        >
-          <X className="h-5 w-5" />
-        </IconButton>
+        <CloseBtn id="mobile" extraClass="right-1 top-1 md:hidden flex" />
 
         <div className="flex flex-col lg:flex-row items-center overflow-auto md:max-h-[unset] max-h-[500px] lg:gap-10 pr-5 md:gap-6 gap-4">
           <div className="lg:w-1/2 w-full">
@@ -917,40 +1019,20 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             />
           </div>
           <div className="lg:w-1/2 md:w-full mx-auto items-center justify-center">
-            <IconButton
-              size="sm"
-              variant="text"
-              className="!absolute hidden md:flex right-3.5 top-4 outline-none focus:outline-none hover:bg-gray-100 "
-              onClick={() => {
-                handleClose();
-                showPrice ? "" : setResult(null);
-              }}
-            >
-              <X className="h-5 w-5" />
-            </IconButton>
+            <CloseBtn
+              id="desktop"
+              extraClass="hidden md:flex right-3.5 top-4"
+            />
             <div className="text-center mb-4">
-              {pathname === "/tools/roi-calculator/" && showPrice ? (
-                ""
-              ) : (
-                <>
-                  <div className="flex justify-center mb-4">
-                    {pathname ===
-                      "/tools/app-development-timeline-calculator/" ||
-                    pathname === "/tools/cloud-service-cost-estimator/" ||
-                    pathname === "/tools/mvp-launch-timeline-estimator/" ? (
-                      <Calendar className="h-12 w-12 text-themeColor" />
-                    ) : pathname ===
-                        "/tools/feature-complexity-vs-time-estimator/" ||
-                      pathname === "/tools/saas-profitability-calculator/" ||
-                      pathname === "/tools/testing-qa-timeline-estimator/" ? (
-                      ""
-                    ) : (
-                      <Wallet className="h-12 w-12 text-themeColor" />
-                    )}
-                  </div>
-                  <h2 className="text-3xl font-bold">{PageTitle()}</h2>
-                </>
+              {TITLE_ICON_MAP?.[pathname]?.icon && (
+                <div className="flex justify-center mb-4">
+                  <TitleIcon className="h-12 w-12 text-themeColor" />
+                </div>
               )}
+              <h2 className="text-3xl font-bold">
+                {TITLE_ICON_MAP?.[pathname]?.title}
+              </h2>
+
               <div
                 className={`${
                   (pathname === "/tools/roi-calculator/" ||
@@ -959,53 +1041,32 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   showPrice
                     ? "max-w-[80%] mx-auto"
                     : "flex items-center justify-center"
-                } font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4`}
+                } bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4`}
               >
                 {renderPrice()}
               </div>
               {pathname === "/tools/app-maintenance-cost-estimator/" &&
-              showPrice ? (
-                <div className="max-w-[80%] mx-auto flex flex-col items-start justify-center bg-amber-50 border border-amber-200 rounded-xl p-6 mt-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <AlertCircle className="w-5 h-5 text-amber-600" />
-                    <h4 className="text-lg font-semibold text-amber-800">
-                      Cost Optimization Tips
-                    </h4>
+                showPrice && (
+                  <div className="max-w-[80%] mx-auto flex flex-col items-start justify-center bg-amber-50 border border-amber-200 rounded-xl p-6 mt-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <AlertCircle className="w-5 h-5 text-amber-600" />
+                      <h4 className="text-lg font-semibold text-amber-800">
+                        Cost Optimization Tips
+                      </h4>
+                    </div>
+                    <ul className="flex flex-col items-start justify-center text-amber-700 space-y-1 text-sm">
+                      <li>
+                        • Regular maintenance prevents costly emergency fixes
+                      </li>
+                      <li>• Quarterly updates can reduce costs by 30%</li>
+                      <li>• Automated testing reduces manual QA expenses</li>
+                      <li>• Proactive monitoring prevents major issues</li>
+                    </ul>
                   </div>
-                  <ul className="flex flex-col items-start justify-center text-amber-700 space-y-1 text-sm">
-                    <li>
-                      • Regular maintenance prevents costly emergency fixes
-                    </li>
-                    <li>• Quarterly updates can reduce costs by 30%</li>
-                    <li>• Automated testing reduces manual QA expenses</li>
-                    <li>• Proactive monitoring prevents major issues</li>
-                  </ul>
-                </div>
-              ) : pathname === "/tools/app-development-timeline-calculator/" ||
-                pathname === "/tools/mvp-launch-timeline-estimator/" ||
-                pathname === "/tools/feature-complexity-vs-time-estimator/" ||
-                pathname === "/tools/testing-qa-timeline-estimator/" ||
-                pathname === "/tools/tech-stack-recommender/" ||
-                pathname === "/tools/database-selector-tool/" ||
-                pathname === "/tools/cross-platform-vs-native-analyzer/" ||
-                pathname === "/tools/api-integration-feasibility-checker/" ||
-                pathname === "/tools/saas-profitability-calculator/" ||
-                pathname === "/tools/go-to-market-timeline-planner/" ? (
-                ""
-              ) : pathname === "tools/cloud-service-cost-estimator/" ? (
+                )}
+              {TITLE_ICON_MAP?.[pathname]?.desc && (
                 <p className="text-gray-600 max-w-md mx-auto">
-                  Service type, region, instance, storage, bandwidth and project
-                  description are considered when calculating the cost. This is
-                  an estimate to give you an idea of the possible budget range
-                  for your cloud service requirements. For a more accurate
-                  estimate, consult with our specialist.
-                </p>
-              ) : (
-                <p className="text-gray-600 max-w-md mx-auto">
-                  The platform, design requirement, description, and project
-                  complexity are considered when calculating the cost. This is
-                  an estimate to give you an idea of the possible budget range
-                  for your project.
+                  {TITLE_ICON_MAP?.[pathname]?.desc}
                 </p>
               )}
             </div>

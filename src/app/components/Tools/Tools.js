@@ -155,6 +155,14 @@ const toolsData = [
     link: "/tools/customer-acquisition-cost-estimator/",
     tags: ["SALES", "BUSINESS", "OTHER"],
   },
+  {
+    title: "Lifetime Value (LTV) Calculator",
+    description:
+      "Estimate the long-term revenue each customer brings to your business. Calculate retention impact, predict profitability, and make data-driven decisions to improve marketing strategies and boost overall customer lifetime value.",
+    bg: "bg-teal-200",
+    link: "/tools/lifetime-value-calculator/",
+    tags: ["BUSINESS", "MARKETING", "OTHER"],
+  },
   // {
   //   title: "Lifetime Value (LTV) Calculator",
   //   description:

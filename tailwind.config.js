@@ -25,8 +25,9 @@ module.exports = {
         Figtree: "var(--global-font)",
       },
       colors: {
-        themeColor: "var(--theme-color)",
-        navyBlue: "var(--navyBlue)",
+        themeColor: "#017eeb",
+        navyBlue: "#000d1e",
+        themeSecondary: "#00dbd3",
         colorLightGray: "#f1f1f1",
         sectionBG: "var(--section-bg)",
         colorYellow: "#FEDC7A",
@@ -35,7 +36,7 @@ module.exports = {
         colorBlack: "var(--color_black)",
         colorWhite: "#ffffff",
         colorGray: "#504f4f",
-        themeLight: "var(--theme-light)",
+        themeLight: "#f2f9fe",
         // Cyberpunk theme colors
         "cyber-navy": "var(--cyber-navy)",
         "cyber-blue": "var(--cyber-blue)",
