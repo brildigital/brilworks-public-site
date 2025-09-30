@@ -28,6 +28,10 @@ import {
   Database,
   Rocket,
   RefreshCw,
+  Timer,
+  Workflow,
+  Gauge,
+  Bot,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1062,6 +1066,104 @@ const calculateCustomerLifetimeFeatures = {
     },
   ],
 };
+const automationSavingEstimatorFeatures = {
+  title: "Advanced Features for Precise Automation Analysis",
+  description:
+    "Our comprehensive calculator provides detailed insights and projections to help you make informed decisions about automation investments.",
+  listData: [
+    {
+      icon: Bot,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced algorithms analyze your processes and provide intelligent automation recommendations.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Gauge,
+      title: "Real-time ROI Tracking",
+      description:
+        "Monitor your automation investments with live ROI calculations and performance metrics.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Workflow,
+      title: "Process Optimization",
+      description:
+        "Identify the most impactful processes for automation based on cost-benefit analysis.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Timer,
+      title: "Time Savings Calculator",
+      description:
+        "Precise calculations of time savings across different automation scenarios and implementations.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Scalability Projections",
+      description:
+        "Forecast savings growth as your business scales and automation matures over time.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Comprehensive risk analysis including implementation challenges and mitigation strategies.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+const mvpFeatureSelectorQuizFeatures = {
+  title: "Powerful Features for Accurate LTV Calculations",
+  description:
+    "Our advanced calculator provides comprehensive insights and tools to help you understand and optimize your customer relationships.",
+  listData: [
+    {
+      icon: Zap,
+      title: "Real-time Calculations",
+      description:
+        "Get instant LTV calculations as you input your data with dynamic updates.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Industry Benchmarks",
+      description:
+        "Compare your results against industry standards and best practices.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Target,
+      title: "Smart Adjustments",
+      description:
+        "Our algorithm considers business type and customer segments for accurate results.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Detailed Analytics",
+      description:
+        "Comprehensive breakdown of LTV components and actionable insights.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Clock,
+      title: "Time-based Analysis",
+      description:
+        "Calculate LTV across different time periods and customer lifecycle stages.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Professional Reports",
+      description:
+        "Generate detailed reports perfect for stakeholder presentations.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1094,6 +1196,8 @@ const ToolFeatures = () => {
     "/tools/customer-acquisition-cost-estimator/":
       customerAcquisitionCostEstimatorFeatures,
     "/tools/lifetime-value-calculator/": calculateCustomerLifetimeFeatures,
+    "/tools/automation-saving-estimator/": automationSavingEstimatorFeatures,
+    "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

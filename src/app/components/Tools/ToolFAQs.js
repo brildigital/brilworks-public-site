@@ -701,6 +701,68 @@ const calculateCustomerLifetimeFaqData = {
     },
   ],
 };
+const automationSavingEstimatorFaqData = {
+  description:
+    "Get answers to common questions about automation savings and implementation strategies.",
+  queAns: [
+    {
+      question: "What is automation savings estimation?",
+      answer:
+        "Automation savings estimation calculates the potential cost savings and ROI from implementing automated processes in your business. It considers factors like labor costs, time savings, implementation costs, and efficiency gains to provide a comprehensive financial analysis.",
+    },
+    {
+      question: "How accurate are these estimates?",
+      answer:
+        "Our estimates are based on industry standards and proven methodologies. However, actual results may vary depending on specific implementation details, employee adoption rates, and unforeseen challenges. We recommend using these estimates as a starting point for your automation planning.",
+    },
+    {
+      question: "What types of tasks are best for automation?",
+      answer:
+        "Tasks that are repetitive, rule-based, high-volume, and time-consuming are ideal for automation. Examples include data entry, report generation, email responses, invoice processing, and customer onboarding workflows.",
+    },
+    {
+      question: "How long does it typically take to see ROI?",
+      answer:
+        "Most automation projects see positive ROI within 6-18 months, depending on the complexity and scale of implementation. Simple process automations can show returns in as little as 3 months, while complex enterprise solutions may take 12-24 months.",
+    },
+    {
+      question: "What should I consider beyond cost savings?",
+      answer:
+        "While cost savings are important, also consider improved accuracy, reduced errors, better compliance, enhanced employee satisfaction, scalability benefits, and the ability to reallocate human resources to higher-value activities.",
+    },
+  ],
+};
+const mvpFeatureSelectorQuizFaqData = {
+  description:
+    "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
+  queAns: [
+    {
+      question: "What is automation savings estimation?",
+      answer:
+        "Automation savings estimation calculates the potential cost savings and ROI from implementing automated processes in your business. It considers factors like labor costs, time savings, implementation costs, and efficiency gains to provide a comprehensive financial analysis.",
+    },
+    {
+      question: "How accurate are these estimates?",
+      answer:
+        "Our estimates are based on industry standards and proven methodologies. However, actual results may vary depending on specific implementation details, employee adoption rates, and unforeseen challenges. We recommend using these estimates as a starting point for your automation planning.",
+    },
+    {
+      question: "What types of tasks are best for automation?",
+      answer:
+        "Tasks that are repetitive, rule-based, high-volume, and time-consuming are ideal for automation. Examples include data entry, report generation, email responses, invoice processing, and customer onboarding workflows.",
+    },
+    {
+      question: "How long does it typically take to see ROI?",
+      answer:
+        "Most automation projects see positive ROI within 6-18 months, depending on the complexity and scale of implementation. Simple process automations can show returns in as little as 3 months, while complex enterprise solutions may take 12-24 months.",
+    },
+    {
+      question: "What should I consider beyond cost savings?",
+      answer:
+        "While cost savings are important, also consider improved accuracy, reduced errors, better compliance, enhanced employee satisfaction, scalability benefits, and the ability to reallocate human resources to higher-value activities.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -739,6 +801,8 @@ const ToolFAQs = () => {
     "/tools/customer-acquisition-cost-estimator/":
       customerAcquisitionCostEstimatorFaqData,
     "/tools/lifetime-value-calculator/": calculateCustomerLifetimeFaqData,
+    "/tools/automation-saving-estimator/": automationSavingEstimatorFaqData,
+    "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

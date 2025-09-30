@@ -15,6 +15,7 @@ import {
   Link,
   Lock,
   Smartphone,
+  Sparkles,
   Star,
   Target,
   TrendingUp,
@@ -129,8 +130,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     },
     "/tools/lifetime-value-calculator/": {
       title: "Your Results",
-      // icon: TrendingUp,
       desc: "Average Order Value, Purchase Frequency, and other factors including Business description are considered when calculating the estimate. For a more accurate estimate, consult with our specialist.",
+    },
+    "/tools/automation-saving-estimator/": {
+      title: "Savings Analysis",
     },
   };
 
@@ -1051,6 +1054,100 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/automation-saving-estimator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="p-4 rounded-xl border bg-green-50">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">
+                    Annual Savings
+                  </p>
+                  <p className="text-4xl font-bold text-green-600">
+                    ${result.annualSavings.toFixed(0)}
+                  </p>
+                </div>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <DollarSign className="w-8 h-8 text-green-600" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl border bg-gray-100">
+                <p className="text-sm text-gray-600">ROI Timeline</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  {result.roiMonths > 0
+                    ? `${result.roiMonths.toFixed(1)} months`
+                    : "N/A"}
+                </p>
+              </div>
+              <div className="p-4 rounded-xl border bg-gray-100">
+                <p className="text-sm text-gray-600">5-Year Savings</p>
+                <p className="text-2xl font-bold text-purple-600">
+                  ${result.fiveYearSavings.toFixed(0)}
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl border">
+              <p className="text-sm text-gray-600">Weekly Hours Saved</p>
+              <p className="text-2xl font-bold text-indigo-600">
+                {result.weeklyHoursSaved.toFixed(1)} hours
+              </p>
+            </div>
+
+            {result.efficiencyGain !== 0.85 && (
+              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl">
+                <div className="flex items-center">
+                  <Sparkles className="w-5 h-5 text-yellow-600 mr-2" />
+                  <p className="text-sm font-semibold text-yellow-800">
+                    Process Type Adjustment:{" "}
+                    {(result.efficiencyGain * 100).toFixed(0)}% efficiency
+                  </p>
+                </div>
+                <p className="text-xs text-yellow-700 mt-1">
+                  Efficiency rate adjusted based on process description
+                </p>
+              </div>
+            )}
+
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+              <h4 className="font-semibold text-blue-900 mb-2">Key Insights</h4>
+              <div className="space-y-1 text-left text-sm text-blue-800">
+                {result.roiMonths <= 12 && result.roiMonths > 0 ? (
+                  <p className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Excellent ROI - payback within 1 year
+                  </p>
+                ) : result.roiMonths <= 24 && result.roiMonths > 0 ? (
+                  <p className="flex items-center">
+                    <Target className="w-4 h-4 text-orange-500 mr-2" />
+                    Good ROI - consider implementation
+                  </p>
+                ) : result.roiMonths > 0 ? (
+                  <p className="flex items-center">
+                    <Clock className="w-4 h-4 text-red-500 mr-2" />
+                    Long payback period - review costs
+                  </p>
+                ) : (
+                  <p className="text-gray-600">
+                    Enter implementation cost for ROI analysis
+                  </p>
+                )}
+                <p>• Focus on high-volume, repetitive tasks first</p>
+                <p>• Consider employee retraining and change management</p>
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (
@@ -1136,6 +1233,27 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       <li>• Automated testing reduces manual QA expenses</li>
                       <li>• Proactive monitoring prevents major issues</li>
                     </ul>
+                  </div>
+                )}
+              {pathname === "/tools/automation-saving-estimator/" &&
+                !showPrice && (
+                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                    <h4 className="font-semibold text-blue-900 mb-2">
+                      Key Insights
+                    </h4>
+                    <div className="space-y-1 text-sm text-blue-800">
+                      <p className="text-gray-600 text-left pl-1">
+                        Enter details on left to get implementation cost for ROI
+                        analysis
+                      </p>
+
+                      <p className="text-left">
+                        • Focus on high-volume, repetitive tasks first
+                      </p>
+                      <p className="text-left">
+                        • Consider employee retraining and change management
+                      </p>
+                    </div>
                   </div>
                 )}
               {TITLE_ICON_MAP?.[pathname]?.desc && (

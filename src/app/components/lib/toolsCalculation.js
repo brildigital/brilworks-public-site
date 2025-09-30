@@ -449,3 +449,61 @@ export const calculateCustomerLTV = (formData) => {
     multiplier: multiplier,
   };
 };
+
+export const calculateAutomationSavings = (formData) => {
+  const employees = parseFloat(formData.employeeCount) || 0;
+  const hourlyWage = parseFloat(formData.averageHourlyWage) || 0;
+  const hoursPerTask = parseFloat(formData.hoursPerTask) || 0;
+  const tasksPerWeek = parseFloat(formData.tasksPerWeek) || 0;
+  const automationCost = parseFloat(formData.automationCost) || 0;
+  const implementationWeeks = parseFloat(formData.implementationTime) || 0;
+
+  // Base calculations
+  const weeklyHours = hoursPerTask * tasksPerWeek * employees;
+  const weeklyCost = weeklyHours * hourlyWage;
+  const annualCost = weeklyCost * 52;
+
+  // Automation efficiency (assume 80-95% time savings)
+  let efficiencyGain = 0.85;
+
+  // Description-based adjustments
+  const description = formData.description.toLowerCase();
+
+  if (description.includes("simple") || description.includes("basic")) {
+    efficiencyGain = 0.75;
+  }
+  if (description.includes("complex") || description.includes("advanced")) {
+    efficiencyGain = 0.9;
+  }
+  if (description.includes("ai") || description.includes("machine learning")) {
+    efficiencyGain = 0.95;
+  }
+  if (
+    description.includes("data entry") ||
+    description.includes("repetitive")
+  ) {
+    efficiencyGain = 0.9;
+  }
+  if (
+    description.includes("customer service") ||
+    description.includes("support")
+  ) {
+    efficiencyGain = 0.7;
+  }
+
+  const annualSavings = annualCost * efficiencyGain;
+  const totalCost = automationCost;
+  const netSavings = annualSavings - totalCost;
+  const roiMonths = totalCost > 0 ? totalCost / (annualSavings / 12) : 0;
+  const fiveYearSavings = annualSavings * 5 - totalCost;
+
+  return {
+    annualSavings: annualSavings,
+    totalCost: totalCost,
+    netSavings: netSavings,
+    roiMonths: roiMonths,
+    fiveYearSavings: fiveYearSavings,
+    efficiencyGain: efficiencyGain,
+    weeklyHoursSaved: weeklyHours * efficiencyGain,
+  };
+};

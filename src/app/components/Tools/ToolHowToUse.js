@@ -21,6 +21,7 @@ import {
   Target,
   TrendingUp,
   Users,
+  Workflow,
   Zap,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
@@ -617,6 +618,68 @@ const calculateCustomerLifetimeSteps = {
     },
   ],
 };
+const automationSavingEstimatorSteps = {
+  title: "How to Calculate Automation Savings in 4 Steps",
+  description:
+    "Follow our proven methodology to accurately estimate the financial impact of automation on your business operations.",
+  listData: [
+    {
+      title: "Identify Processes",
+      description:
+        "Analyze current manual processes and identify repetitive tasks that consume significant time and resources.",
+      icon: Target,
+    },
+    {
+      title: "Gather Data",
+      description:
+        "Collect metrics on time spent, employee costs, task frequency, and current error rates for baseline measurement.",
+      icon: BarChart3,
+    },
+    {
+      title: "Calculate Potential",
+      description:
+        "Estimate time savings, cost reductions, and efficiency gains from implementing automation solutions.",
+      icon: Calculator,
+    },
+    {
+      title: "Plan Implementation",
+      description:
+        "Develop implementation timeline, budget requirements, and ROI projections for stakeholder approval.",
+      icon: Workflow,
+    },
+  ],
+};
+const mvpFeatureSelectorQuizSteps = {
+  title: "How to Calculate Automation Savings in 4 Steps",
+  description:
+    "Follow our proven methodology to accurately estimate the financial impact of automation on your business operations.",
+  listData: [
+    {
+      title: "Gather Customer Data",
+      description:
+        "Collect information about average order value, purchase frequency, and customer behavior patterns.",
+      icon: Users,
+    },
+    {
+      title: "Calculate Base Metrics",
+      description:
+        "Multiply average order value by purchase frequency and customer lifespan period.",
+      icon: Calculator,
+    },
+    {
+      title: "Apply Retention Factors",
+      description:
+        "Adjust calculations based on customer retention rates and churn patterns.",
+      icon: TrendingUp,
+    },
+    {
+      title: "Analyze Results",
+      description:
+        "Compare LTV to acquisition costs and use insights to optimize your marketing strategy.",
+      icon: BarChart3,
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -647,6 +710,8 @@ const ToolHowToUse = () => {
     "/tools/customer-acquisition-cost-estimator/":
       customerAcquisitionCostEstimatorSteps,
     "/tools/lifetime-value-calculator/": calculateCustomerLifetimeSteps,
+    "/tools/automation-saving-estimator/": automationSavingEstimatorSteps,
+    "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

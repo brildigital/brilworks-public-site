@@ -163,12 +163,20 @@ const toolsData = [
     link: "/tools/lifetime-value-calculator/",
     tags: ["BUSINESS", "MARKETING", "OTHER"],
   },
+  {
+    title: "Automation Savings Estimator",
+    description:
+      "Discover potential cost and time savings through automation. Enter your current process details to instantly see how automation can reduce expenses, increase productivity, and improve ROI for your business.",
+    bg: "bg-yellow-200",
+    link: "/tools/automation-saving-estimator/",
+    tags: ["BUSINESS", "MARKETING", "OTHER"],
+  },
   // {
-  //   title: "Lifetime Value (LTV) Calculator",
+  //   title: "MVP Feature Selector Quiz",
   //   description:
-  //     "Estimate the long-term revenue each customer brings to your business. Calculate retention impact, predict profitability, and make data-driven decisions to improve marketing strategies and boost overall customer lifetime value.",
-  //   bg: "bg-teal-200",
-  //   link: "/tools/lifetime-value-calculator/",
+  //     "Find the essential features for your MVP. Take a quick quiz to prioritize must-have functionalities and launch smarter with reduced cost and risk.",
+  //   bg: "bg-sky-200",
+  //   link: "/tools/mvp-feature-selector-quiz/",
   //   tags: ["BUSINESS", "MARKETING", "OTHER"],
   // },
 ];
