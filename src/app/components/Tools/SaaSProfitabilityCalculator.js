@@ -54,32 +54,26 @@ const SaaSProfitabilityCalculator = () => {
     {
       id: "monthlyRevenue",
       label: "Monthly Revenue* ($)",
-      type: "number",
     },
     {
       id: "customerAcquisitionCost",
       label: "Customer Acquisition Cost* ($)",
-      type: "number",
     },
     {
       id: "customerLifetimeValue",
       label: "Customer Lifetime Value* ($)",
-      type: "number",
     },
     {
       id: "churnRate",
       label: "Monthly Churn Rate* (%)",
-      type: "number",
     },
     {
       id: "grossMargin",
       label: "Gross Margin* (%)",
-      type: "number",
     },
     {
       id: "operatingExpenses",
       label: "Operating Expenses* ($)",
-      type: "number",
     },
   ];
 

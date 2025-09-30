@@ -2,15 +2,18 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
+import {
+  Calculator,
+  CheckCircle,
+  DollarSign,
+  Loader2,
+  Sparkles,
+  Target,
+} from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  calculateSaasDevCostEstimate,
-  saasDevelopmentFeatures,
-} from "../lib/saasDevCostCalculatorService";
-import { PriceSkeleton } from "../Blog/ArticleSkeleton";
+import { calculateCustomerLTV } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -22,11 +25,11 @@ const LifetimeValueCalculator = () => {
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
   const [formData, setFormData] = useState({
-    platform: "",
-    complexity: "",
-    features: [],
-    design: "",
-    timeline: "",
+    averageOrderValue: "",
+    purchaseFrequency: "",
+    customerLifespan: "",
+    retentionRate: "",
+    acquisitionCost: "",
     description: "",
   });
 
@@ -34,11 +37,11 @@ const LifetimeValueCalculator = () => {
 
   const isFormValid = () => {
     return (
-      formData?.platform &&
-      formData?.complexity &&
-      formData?.features.length > 0 &&
-      formData?.timeline &&
-      formData?.design &&
+      formData?.averageOrderValue &&
+      formData?.purchaseFrequency &&
+      formData?.customerLifespan &&
+      formData?.retentionRate &&
+      formData?.acquisitionCost &&
       formData?.description.trim()
     );
   };
@@ -55,7 +58,7 @@ const LifetimeValueCalculator = () => {
 
     setIsCalculating(true);
 
-    const resultData = calculateSaasDevCostEstimate(formData);
+    const resultData = calculateCustomerLTV(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -70,14 +73,24 @@ const LifetimeValueCalculator = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureId) => {
-    setFormData((prev) => ({
-      ...prev,
-      features: prev.features.includes(featureId)
-        ? prev.features.filter((id) => id !== featureId)
-        : [...prev.features, featureId],
-    }));
-  };
+  const calculationMatrics = [
+    {
+      id: "purchaseFrequency",
+      label: "Purchase Frequency* (per year)",
+    },
+    {
+      id: "customerLifespan",
+      label: "Customer Lifespan* (years)",
+    },
+    {
+      id: "retentionRate",
+      label: "Customer Retention Rate* (%)",
+    },
+    {
+      id: "acquisitionCost",
+      label: "Customer Acquisition Cost* ($)",
+    },
+  ];
 
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
@@ -119,146 +132,83 @@ const LifetimeValueCalculator = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="flex justify-center mb-6">
-              <div className="bg-gradient-to-r from-indigo-500 to-themeColor p-4 rounded-full shadow-lg">
-                <Calculator className="h-8 w-8 text-white" />
-              </div>
-            </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Calculate Your SaaS Development Cost
+            <h1 className="text-4xl font-bold text-themeColor mb-4">
+              LTV Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below to get your instant cost estimate
+              Enter your business metrics below to calculate accurate customer
+              lifetime value and gain valuable insights for your growth
+              strategy.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Calculator Form */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 space-y-2.5">
-              {/* Platform */}
+            <div className="bg-white rounded-2xl border border-gray-200 md:p-8 p-5 space-y-2.5">
+              <h2 className="text-center text-2xl font-semibold mb-2">
+                Input Your Data
+              </h2>
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Platform <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.platform}
-                  onChange={(e) =>
-                    handleInputChange("platform", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
+                <label
+                  htmlFor="averageOrderValue"
+                  className="font-medium text-gray-700"
                 >
-                  <option value="">Select your target platform</option>
-
-                  <option value="web">Web Application</option>
-                  <option value="mobile">Mobile App (iOS/Android)</option>
-                  <option value="both">Web + Mobile</option>
-                </select>
-              </div>
-
-              {/* Project Complexity */}
-              <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Project Complexity <span className="text-red-500">*</span>
+                  Average Order Value* ($)
                 </label>
-
-                <select
-                  value={formData?.complexity}
-                  onChange={(e) =>
-                    handleInputChange("complexity", e.target.value)
-                  }
+                <input
+                  id="averageOrderValue"
+                  type="number"
                   className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select complexity</option>
-                  <option value="simple">
-                    Simple (Basic CRUD, few integrations)
-                  </option>
-                  <option value="medium">
-                    Medium (Multiple modules, API integrations)
-                  </option>
-                  <option value="complex">
-                    Complex (Advanced features, complex workflows)
-                  </option>
-                  <option value="enterprise">
-                    Enterprise (Scalable, high-performance)
-                  </option>
-                </select>
+                  value={formData.averageOrderValue || ""}
+                  onChange={(e) =>
+                    handleInputChange("averageOrderValue", e.target.value)
+                  }
+                  onKeyDown={(e) => {
+                    // 🚫 Prevent e/E/+/- in numeric input
+                    if (["e", "E", "+", "-", "."].includes(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
+                />
               </div>
-
-              {/* Key Features */}
-              <div className="space-y-1">
-                <label className="text-lg font-semibold">Key Features</label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {saasDevelopmentFeatures?.map((feature) => (
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-4 !mb-5">
+                {calculationMatrics.map((field) => (
+                  <div key={field.id} className="space-y-1">
                     <label
-                      key={feature.id}
-                      className="flex items-center space-x-3 cursor-pointer"
+                      htmlFor={field.id}
+                      className="font-medium text-gray-700"
                     >
-                      <input
-                        type="checkbox"
-                        checked={formData.features.includes(feature?.id)}
-                        onChange={() => handleFeatureChange(feature?.id)}
-                        className="rounded text-purple-600 focus:ring-purple-500 w-4 h-4"
-                      />
-                      <span>{feature?.label}</span>
+                      {field.label}
                     </label>
-                  ))}
-                </div>
+                    <input
+                      id={field.id}
+                      type="number"
+                      className="w-full border rounded-lg p-3 bg-white"
+                      value={formData[field.id] || ""}
+                      onChange={(e) =>
+                        handleInputChange(field.id, e.target.value)
+                      }
+                      onKeyDown={(e) => {
+                        // 🚫 Prevent e/E/+/- in numeric input
+                        if (["e", "E", "+", "-", "."].includes(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
 
-              {/* Design Requirements */}
               <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Design Requirements <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.designLevel}
-                  onChange={(e) => handleInputChange("design", e.target.value)}
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select design level</option>
-                  <option value="basic">Basic (Template-based design)</option>
-                  <option value="standard">
-                    Standard (Custom with standard UI)
-                  </option>
-                  <option value="premium">
-                    Premium (Modern, polished UI/UX)
-                  </option>
-                  <option value="custom">
-                    Custom (Unique, brand-focused design)
-                  </option>
-                </select>
-              </div>
-
-              {/* Timeline */}
-              <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Timeline <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.timeline}
-                  onChange={(e) =>
-                    handleInputChange("timeline", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select timeline</option>
-                  <option value="rushed">Rush (Need ASAP - 50% premium)</option>
-                  <option value="normal">Normal (Standard timeline)</option>
-                  <option value="flexible">Flexible (10% discount)</option>
-                </select>
-              </div>
-
-              {/* Project Description */}
-              <div className="space-y-1">
-                <label className="text-lg font-semibold">
-                  Project Description <span className="text-red-500">*</span>
+                <label className="font-medium text-gray-700">
+                  Business Description* (affects calculation)
                 </label>
                 <textarea
-                  value={formData.description}
+                  value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your app idea..."
+                  placeholder="e.g., premium subscription SaaS for enterprise customers with loyalty program"
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
@@ -268,7 +218,7 @@ const LifetimeValueCalculator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
-                className="w-full bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
+                className="w-full bg-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
                 {isCalculating ? (
                   <>
@@ -278,53 +228,101 @@ const LifetimeValueCalculator = () => {
                 ) : (
                   <>
                     <Calculator className="mr-2 h-5 w-5" />
-                    Get My Instant Quote
+                    Calculate
                   </>
                 )}
               </button>
             </div>
 
             {/* Cost Estimate */}
-            {result && hasVisited ? (
-              <div className="popup bg-white rounded-2xl border shadow-lg p-8">
-                <div className=" text-center my-12">
-                  <div className="flex justify-center mb-4">
-                    <Wallet className="h-12 w-12 text-indigo-500" />
-                  </div>
-                  <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
-                    {isCalculating || openPopup ? (
-                      <PriceSkeleton />
-                    ) : (
-                      `$${result?.cost.toLocaleString()}`
-                    )}
+            <div className="popup bg-white rounded-2xl border shadow-lg p-8">
+              <h2 className="text-center text-2xl font-semibold mb-4">
+                Your Results
+              </h2>
+              {result && hasVisited ? (
+                <div className="space-y-4">
+                  <div className="bg-white p-6 rounded-xl border">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-gray-600">
+                          Customer Lifetime Value
+                        </p>
+                        <p className="text-4xl font-bold text-green-600">
+                          ${result.ltv.toFixed(2)}
+                        </p>
+                      </div>
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                        <DollarSign className="w-8 h-8 text-green-600" />
+                      </div>
+                    </div>
                   </div>
 
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    The platform, design requirement, description, and project
-                    complexity are considered when calculating the cost. This is
-                    an estimate to give you an idea of the possible budget range
-                    for your project. For a more accurate estimate, consult with
-                    our specialist.
-                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="border p-4 rounded-xl shadow-sm">
+                      <p className="text-sm text-gray-600">Net LTV</p>
+                      <p className="text-2xl font-bold text-blue-600">
+                        ${result.netLTV.toFixed(2)}
+                      </p>
+                    </div>
+                    <div className="border p-4 rounded-xl shadow-sm">
+                      <p className="text-sm text-gray-600">LTV:CAC Ratio</p>
+                      <p className="text-2xl font-bold text-purple-600">
+                        {result.ltvToCac > 0
+                          ? `${result.ltvToCac.toFixed(1)}:1`
+                          : "N/A"}
+                      </p>
+                    </div>
+                  </div>
+
+                  {result.multiplier > 1 && (
+                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl">
+                      <div className="flex items-center">
+                        <Sparkles className="w-5 h-5 text-yellow-600 mr-2" />
+                        <p className="text-sm font-semibold text-yellow-800">
+                          Business Type Boost: +
+                          {((result.multiplier - 1) * 100).toFixed(0)}%
+                        </p>
+                      </div>
+                      <p className="text-xs text-yellow-700 mt-1">
+                        Your business characteristics increase the base LTV
+                        calculation
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                    <h4 className="font-semibold text-blue-900 mb-2">
+                      Interpretation
+                    </h4>
+                    <div className="space-y-1 text-sm text-blue-800">
+                      {result.ltvToCac >= 3 ? (
+                        <p className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          Healthy LTV:CAC ratio - good profitability
+                        </p>
+                      ) : result.ltvToCac > 0 ? (
+                        <p className="flex items-center">
+                          <Target className="w-4 h-4 text-orange-500 mr-2" />
+                          Consider improving retention or reducing acquisition
+                          costs
+                        </p>
+                      ) : (
+                        <p className="text-gray-600">
+                          Enter acquisition cost to see LTV:CAC ratio
+                        </p>
+                      )}
+                      <p>
+                        • Focus on increasing customer retention to boost LTV
+                      </p>
+                      <p>• Consider upselling strategies to increase AOV</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                  <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> This estimate includes development,
-                    testing, and basic deployment. Additional costs may include
-                    ongoing maintenance, marketing, and third-party services.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="bg-white rounded-2xl border shadow-lg p-8">
-                <h2 className="text-center text-3xl font-semibold mb-2">
-                  Cost Estimate
-                </h2>
+              ) : (
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
-                      <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                      <div className="animate-pulse w-24 h-24 bg-themeColor rounded-full flex items-center justify-center">
                         <Sparkles className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -336,24 +334,24 @@ const LifetimeValueCalculator = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      No Estimate Yet
+                      Ready to get Estimate?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form on the left and your instant cost
-                      estimate will magically appear here ✨
+                      Fill out the form on the left and your instant estimate
+                      will magically appear here ✨
                     </p>
 
                     <button
-                      onClick={() => document.querySelector("select")?.focus()}
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
+                      onClick={() => document.querySelector("input")?.focus()}
+                      className="bg-themeColor text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 transition-all animate-bounce"
                     >
                       &lArr; Start by selecting your project details
                     </button>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </section>

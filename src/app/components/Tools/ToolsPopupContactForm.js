@@ -127,6 +127,11 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
       title: "Your CAC Result",
       icon: Users,
     },
+    "/tools/lifetime-value-calculator/": {
+      title: "Your Results",
+      // icon: TrendingUp,
+      desc: "Average Order Value, Purchase Frequency, and other factors including Business description are considered when calculating the estimate. For a more accurate estimate, consult with our specialist.",
+    },
   };
 
   const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
@@ -973,6 +978,75 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     <p className="text-gray-700 text-left">{rec}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/lifetime-value-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="bg-white border p-6 rounded-xl">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600">
+                    Customer Lifetime Value
+                  </p>
+                  <p className="text-4xl font-bold text-green-600">
+                    ${result.ltv.toFixed(2)}
+                  </p>
+                </div>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <DollarSign className="w-8 h-8 text-green-600" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white border p-4 rounded-xl shadow-sm">
+                <p className="text-sm text-gray-600">Net LTV</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  ${result.netLTV.toFixed(2)}
+                </p>
+              </div>
+              <div className="bg-white border p-4 rounded-xl shadow-sm">
+                <p className="text-sm text-gray-600">LTV:CAC Ratio</p>
+                <p className="text-2xl font-bold text-purple-600">
+                  {result.ltvToCac > 0
+                    ? `${result.ltvToCac.toFixed(1)}:1`
+                    : "N/A"}
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+              <h4 className="font-semibold text-blue-900 mb-2">
+                Interpretation
+              </h4>
+              <div className="space-y-1 text-sm text-left text-blue-800">
+                {result.ltvToCac >= 3 ? (
+                  <p className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                    Healthy LTV:CAC ratio - good profitability
+                  </p>
+                ) : result.ltvToCac > 0 ? (
+                  <p className="flex items-center">
+                    <Target className="w-4 h-4 text-orange-500 mr-2" />
+                    Consider improving retention or reducing acquisition costs
+                  </p>
+                ) : (
+                  <p className="text-gray-600">
+                    Enter acquisition cost to see LTV:CAC ratio
+                  </p>
+                )}
+                <p>• Focus on increasing customer retention to boost LTV</p>
+                <p>• Consider upselling strategies to increase AOV</p>
               </div>
             </div>
           </div>

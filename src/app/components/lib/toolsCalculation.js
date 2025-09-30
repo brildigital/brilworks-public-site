@@ -408,3 +408,44 @@ export const calculateCAC = (formData, businessTypes) => {
     };
   }
 };
+
+// 19. Calculate Customer Lifetime Value
+export const calculateCustomerLTV = (formData) => {
+  const aov = parseFloat(formData.averageOrderValue) || 0;
+  const frequency = parseFloat(formData.purchaseFrequency) || 0;
+  const lifespan = parseFloat(formData.customerLifespan) || 0;
+  const retention = parseFloat(formData.retentionRate) || 100;
+  const acquisition = parseFloat(formData.acquisitionCost) || 0;
+
+  // Base LTV calculation
+  let ltv = aov * frequency * lifespan;
+
+  // Adjust based on retention rate
+  ltv = ltv * (retention / 100);
+
+  // Description-based adjustments
+  const description = formData.description.toLowerCase();
+  let multiplier = 1;
+
+  if (description.includes("premium") || description.includes("luxury")) {
+    multiplier += 0.3;
+  }
+  if (description.includes("subscription") || description.includes("saas")) {
+    multiplier += 0.2;
+  }
+  if (description.includes("enterprise") || description.includes("b2b")) {
+    multiplier += 0.4;
+  }
+  if (description.includes("loyalty") || description.includes("repeat")) {
+    multiplier += 0.15;
+  }
+
+  ltv = ltv * multiplier;
+
+  return {
+    ltv: ltv,
+    netLTV: ltv - acquisition,
+    ltvToCac: acquisition > 0 ? ltv / acquisition : 0,
+    multiplier: multiplier,
+  };
+};
