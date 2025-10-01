@@ -114,29 +114,40 @@ const SaasDevCostCalculatorFaqData = {
     "Get answers to common questions about app development costs and ROI calculations",
   queAns: [
     {
-      question: "How accurate is the SaaS development cost estimate?",
+      question: "What is the average cost to build a SaaS product in 2025?",
       answer:
-        "Our calculator provides a baseline estimate based on industry standards and typical project requirements. The actual cost may vary depending on specific requirements, team location, and additional customizations.",
+        "The cost to build a SaaS product ranges from $10K to $100K depending on complexity, features, and platform.",
+    },
+    {
+      question: "How does the SaaS calculator estimate costs?",
+      answer:
+        "Our SaaS calculator uses real project data and AI-powered logic to generate accurate app development cost estimates.",
+    },
+    {
+      question:
+        "Can I use this tool as an App Development Cost Calculator for mobile apps?",
+      answer:
+        "Yes! Our calculator supports mobile app development cost estimation for Android, iOS, and cross-platform builds.",
     },
     {
       question: "What factors influence SaaS development costs the most?",
-      answer:
-        "The main cost drivers include project complexity, number of features, design requirements, platform choice, timeline, and the development team's location and expertise level.",
+      answer: (
+        <>
+          Key factors include:
+          <ul className="list-disc list-inside mt-1">
+            <li>Feature set</li>
+            <li>Platform choice</li>
+            <li>UI/UX design</li>
+            <li>Timeline</li>
+            <li>Team location</li>
+          </ul>
+        </>
+      ),
     },
     {
-      question: "Is ongoing maintenance included in the estimate?",
+      question: "Is this SaaS pricing estimator suitable for MVPs?",
       answer:
-        "The estimate covers initial development costs. Ongoing maintenance typically costs 15-20% of the initial development cost annually for updates, bug fixes, and server costs.",
-    },
-    {
-      question: "How long does SaaS development typically take?",
-      answer:
-        "Simple SaaS applications take 3-6 months, medium complexity projects take 6-12 months, while complex enterprise solutions can take 12-24 months or more.",
-    },
-    {
-      question: "Can I reduce development costs?",
-      answer:
-        "Yes, you can reduce costs by starting with an MVP (Minimum Viable Product), using pre-built components, choosing standard designs, and having flexible timelines.",
+        "Absolutely. You can estimate the cost of building a SaaS MVP with minimal features and scale later.",
     },
   ],
 };

@@ -114,37 +114,35 @@ const mobilityAppDevCalculatorSteps = {
 };
 
 const SaasDevCostCalculatorSteps = {
-  title: "How to Calculate SaaS Development Costs",
+  title: "How Our SaaS Calculator Works",
   description: (
     <>
-      Follow our simple 4-step process to get an accurate estimate
-      <br className="hidden md:block" /> for your SaaS project
+      Our SaaS development cost calculator simplifies the budgeting process.{" "}
+      <br className="hidden md:block" />
+      Whether you're building a SaaS MVP or a full-scale platform, follow these
+      steps:
     </>
   ),
   listData: [
     {
       icon: Target,
       title: "Define Requirements",
-      description:
-        "Select your platform, complexity level, and core features needed for your SaaS application.",
+      description: "Choose your platform, complexity level, and core features.",
     },
     {
       icon: Code,
-      title: "Choose Features",
-      description:
-        "Pick from our comprehensive list of SaaS features like authentication, payments, and analytics.",
+      title: "Select Features",
+      description: "Pick from essential SaaS features.",
     },
     {
       icon: Clock,
       title: "Set Timeline",
-      description:
-        "Specify your desired timeline and design requirements to get accurate cost calculations.",
+      description: "Specify your desired timeline and expectations.",
     },
     {
       icon: DollarSign,
       title: "Get Estimate",
-      description:
-        "Receive your instant cost estimate with detailed breakdown and recommendations.",
+      description: "Receive a detailed breakdown with recommendations.",
     },
   ],
 };
