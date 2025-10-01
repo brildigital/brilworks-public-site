@@ -13,13 +13,21 @@ const HeroSection = () => {
               className="text-white lg:mt-20 mt-10"
               text={
                 <>
-                  AI-Driven{" "}
+                  Future-Ready Apps Powered by
+                  <br className="hidden md:block" />{" "}
                   <span className="bg-clip-text text-transparent bg-theme-gradient">
-                    Product Engineering
+                    AI & AWS
                   </span>{" "}
-                  <br className="hidden md:block" /> for Startups and
-                  Enterprises
+                  Expertise
                 </>
+                // <>
+                //   AI-Driven{" "}
+                //   <span className="bg-clip-text text-transparent bg-theme-gradient">
+                //     Product Engineering
+                //   </span>{" "}
+                //   <br className="hidden md:block" /> for Startups and
+                //   Enterprises
+                // </>
                 // <>
                 //   Providing{" "}
                 //   <span className="bg-clip-text text-transparent bg-theme-gradient">
@@ -31,27 +39,18 @@ const HeroSection = () => {
               }
             />
             <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
-              We build AI-powered mobile and web apps, helping startups launch
+              Transforming ideas into intelligent, scalable applications with
+              <br className="hidden slg:block" /> the perfect mix of AI, product
+              engineering, and cloud expertise.
+              {/* We build AI-powered mobile and web apps, helping startups launch
               faster
               <br className="hidden slg:block" /> and enterprises innovate with
-              future-ready product engineering.
+              future-ready product engineering. */}
               {/* AI-powered software. <br className="hidden slg:block" /> Backed by
               vetted-expertise in cutting-edge technologies and modern
               frameworks,
               <br className="hidden slg:block" /> we serve startups, growing
               tech teams, and mid-sized companies. */}
-              {/* We design, build, and scale custom apps including mobile, web,
-              AI-powered software. <br className="hidden slg:block" /> Backed by
-              vetted-expertise in cutting-edge technologies and modern
-              frameworks,
-              <br className="hidden slg:block" /> we serve startups, growing
-              tech teams, and mid-sized companies. */}
-              {/* Accelerating product timelines, optimizing AWS, and delivering Gen AI
-              <br className="hidden slg:block" />
-              solutions, White label apps, and Product engineering expertise in
-              Next.js,
-              <br className="hidden slg:block" /> Java, and low-code/no-code
-              platforms. */}
             </h2>
             <ButtonV2
               size="large"
