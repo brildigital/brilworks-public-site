@@ -95,12 +95,15 @@ const SaasDevelopmentCostCalculator = () => {
       <ToolHerosection
         title={
           <>
-            SaaS Development
-            <br className="hidden sm:block" /> Cost Calculator
+            Cost to Build a&nbsp;
+            <br className="hidden sm:block" />
+            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
+              SaaS Product
+            </span>
           </>
         }
         buttonText="Calculate Now"
-        description="Get instant, accurate estimates for your SaaS project. Our advanced calculator considers all key factors to provide you with realistic development costs and timelines."
+        description="Get instant, reliable estimates for your SaaS application. Our app development cost calculator helps you plan your budget with precision."
         imageSrc="/images/v2/saas-dev-cost-calculator-banner.webp"
         statsGird={[
           { value: "50K+", label: "Projects Analyzed" },

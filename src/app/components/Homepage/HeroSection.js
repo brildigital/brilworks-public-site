@@ -13,22 +13,39 @@ const HeroSection = () => {
               className="text-white lg:mt-20 mt-10"
               text={
                 <>
-                  Providing{" "}
+                  AI-Driven{" "}
                   <span className="bg-clip-text text-transparent bg-theme-gradient">
-                    Nextgen
+                    Product Engineering
                   </span>{" "}
-                  Technology <br className="hidden md:block" /> Solutions for
-                  your next leap
+                  <br className="hidden md:block" /> for Startups and
+                  Enterprises
                 </>
+                // <>
+                //   Providing{" "}
+                //   <span className="bg-clip-text text-transparent bg-theme-gradient">
+                //     Nextgen
+                //   </span>{" "}
+                //   Technology <br className="hidden md:block" /> Solutions for
+                //   your next leap
+                // </>
               }
             />
             <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
-              We design, build, and scale custom apps including mobile, web,
+              We build AI-powered mobile and web apps, helping startups launch
+              faster
+              <br className="hidden slg:block" /> and enterprises innovate with
+              future-ready product engineering.
+              {/* AI-powered software. <br className="hidden slg:block" /> Backed by
+              vetted-expertise in cutting-edge technologies and modern
+              frameworks,
+              <br className="hidden slg:block" /> we serve startups, growing
+              tech teams, and mid-sized companies. */}
+              {/* We design, build, and scale custom apps including mobile, web,
               AI-powered software. <br className="hidden slg:block" /> Backed by
               vetted-expertise in cutting-edge technologies and modern
               frameworks,
               <br className="hidden slg:block" /> we serve startups, growing
-              tech teams, and mid-sized companies.
+              tech teams, and mid-sized companies. */}
               {/* Accelerating product timelines, optimizing AWS, and delivering Gen AI
               <br className="hidden slg:block" />
               solutions, White label apps, and Product engineering expertise in

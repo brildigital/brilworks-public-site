@@ -2,14 +2,15 @@ import React from "react";
 import SaasDevelopmentCostCalculator from "@/app/components/Tools/SaasDevelopmentCostCalculator";
 
 export const metadata = {
-  title: "SaaS Development Cost Calculator | Free Online Estimator",
+  title:
+    "Cost to Build SaaS Product | SaaS Calculator & App Development Cost Estimator",
   description:
-    "Quickly calculate SaaS development costs with our free online estimator. Select features, complexity, and design to get realistic budget and timeline insights for your SaaS project.",
+    "Use our free SaaS calculator to estimate the cost to build a SaaS product. Get accurate app development cost calculations for web, mobile, and hybrid platforms.",
   openGraph: {
-    title: "SaaS Development Cost Calculator | Free Online Estimator",
+    title:
+      "Cost to Build SaaS Product | SaaS Calculator & App Development Cost Estimator",
     description:
-      "Quickly calculate SaaS development costs with our free online estimator. Select features, complexity, and design to get realistic budget and timeline insights for your SaaS project.",
-
+      "Use our free SaaS calculator to estimate the cost to build a SaaS product. Get accurate app development cost calculations for web, mobile, and hybrid platforms.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-development-cost-calculator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
