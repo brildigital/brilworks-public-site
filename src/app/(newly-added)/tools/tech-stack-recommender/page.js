@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Discover the ideal tech stack for your project. Get tailored recommendations based on platform, scalability, and budget to build reliable, future-ready applications.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}tech-stack-recommender/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/tech-stack-recommender/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tech-stack-recommender/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/tech-stack-recommender/`,
   },
 };
 const page = () => {

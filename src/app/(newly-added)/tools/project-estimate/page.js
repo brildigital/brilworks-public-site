@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Calculate software development costs in minutes. Choose platform, complexity, and features to get accurate budget and timeline estimates for your custom software project.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}project-estimate/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/project-estimate/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}project-estimate/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/project-estimate/`,
   },
 };
 const page = () => {

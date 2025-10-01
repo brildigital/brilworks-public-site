@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Estimate how much time and money your business can save by automating repetitive tasks. Get an instant analysis of potential savings and efficiency gains.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}automation-saving-estimator/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/automation-saving-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}automation-saving-estimator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/automation-saving-estimator/`,
   },
 };
 const page = () => {

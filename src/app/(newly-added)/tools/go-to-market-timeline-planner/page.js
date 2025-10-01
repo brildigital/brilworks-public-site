@@ -2,14 +2,14 @@ import React from "react";
 import GoToMarketTimelinePlanner from "@/app/components/Tools/GoToMarketTimelinePlanner";
 
 export const metadata = {
-  title: "Go-to-Market Timeline Planner",
+  title: "Go-to-Market Timeline Planner | AI-Powered Product Launch Tool",
   description:
-    "Plan and track your product launch schedule with ease. Estimate tasks, align teams, and execute a successful go-to-market strategy with our interactive timeline planner.",
+    "Plan your product launch with precision using our Go-to-Market Timeline Planner. Generate optimized timelines, track milestones, and avoid delays with AI-powered insights.",
   openGraph: {
-    title: "Go-to-Market Timeline Planner",
+    title: "Go-to-Market Timeline Planner | AI-Powered Product Launch Tool",
     description:
-      "Plan and track your product launch schedule with ease. Estimate tasks, align teams, and execute a successful go-to-market strategy with our interactive timeline planner.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}go-to-market-timeline-planner/`,
+      "Plan your product launch with precision using our Go-to-Market Timeline Planner. Generate optimized timelines, track milestones, and avoid delays with AI-powered insights.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/go-to-market-timeline-planner/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -19,7 +19,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}go-to-market-timeline-planner/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/go-to-market-timeline-planner/`,
   },
 };
 const page = () => {

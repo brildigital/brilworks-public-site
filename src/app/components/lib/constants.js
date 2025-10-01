@@ -592,22 +592,7 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/hire-mobile-app-developer/",
     lastmod: "2025-04-21T12:04:49.528Z",
   },
-  {
-    loc: "https://www.brilworks.com/tools/",
-    lastmod: "2025-09-16T11:23:29.521Z",
-  },
-  {
-    loc: "https://www.brilworks.com/tools/project-estimate/",
-    lastmod: "2025-09-23T15:21:23.121Z",
-  },
-  {
-    loc: "https://www.brilworks.com/tools/roi-calculator/",
-    lastmod: "2025-09-24T15:21:23.121Z",
-  },
-  {
-    loc: "https://www.brilworks.com/tools/mobility-app-development-calculator/",
-    lastmod: "2025-09-25T15:21:23.121Z",
-  },
+
   {
     loc: "https://www.brilworks.com/free-mockups/",
     lastmod: "2025-09-17T15:22:34.531Z",
@@ -671,7 +656,7 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/tools/project-estimate/",
-    lastmod: "2025-09-24T11:03:27.341Z",
+    lastmod: "2025-09-23T11:03:27.341Z",
   },
   {
     loc: "https://www.brilworks.com/tools/roi-calculator/",
@@ -681,6 +666,74 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/mobility-app-development-calculator/",
     lastmod: "2025-09-24T11:03:27.341Z",
   },
+  {
+    loc: "https://www.brilworks.com/tools/saas-development-cost-calculator/",
+    lastmod: "2025-09-26T15:22:42.111Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/mvp-development-cost-calculator/",
+    lastmod: "2025-09-26T17:21:13.321Z",
+  },
+  // {
+  //   loc: "https://www.brilworks.com/tools/app-maintenance-cost-estimator/",
+  //   lastmod: "2025-09-27T15:21:23.121Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/app-development-timeline-calculator/",
+  //   lastmod: "2025-09-22T15:21:23.121Z",
+  // },
+  {
+    loc: "https://www.brilworks.com/tools/mvp-launch-timeline-estimator/",
+    lastmod: "2025-09-22T18:31:34.231Z",
+  },
+  // {
+  //   loc: "https://www.brilworks.com/tools/feature-complexity-vs-time-estimator/",
+  //   lastmod: "2025-09-23T13:20:18.731Z",
+  // },
+  {
+    loc: "https://www.brilworks.com/tools/testing-qa-timeline-estimator/",
+    lastmod: "2025-09-23T17:54:09.181Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/go-to-market-timeline-planner/",
+    lastmod: "2025-09-24T15:22:34.531Z",
+  },
+  // {
+  //   loc: "https://www.brilworks.com/tools/tech-stack-recommender/",
+  //   lastmod: "2025-09-24T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/database-selector-tool/",
+  //   lastmod: "2025-09-25T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/cross-platform-vs-native-analyzer/",
+  //   lastmod: "2025-09-25T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/api-integration-feasibility-checker/",
+  //   lastmod: "2025-09-26T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/cloud-service-cost-estimator/",
+  //   lastmod: "2025-09-26T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/saas-profitability-calculator/",
+  //   lastmod: "2025-09-29T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/customer-acquisition-cost-estimator/",
+  //   lastmod: "2025-09-29T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/lifetime-value-calculator/",
+  //   lastmod: "2025-09-30T15:22:34.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/automation-saving-estimator/",
+  //   lastmod: "2025-09-30T15:22:34.531Z",
+  // },
 
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",

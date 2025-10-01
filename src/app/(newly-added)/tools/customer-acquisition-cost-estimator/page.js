@@ -9,7 +9,7 @@ export const metadata = {
     title: "Customer Acquisition Cost (CAC) Estimator",
     description:
       "Calculate your customer acquisition cost instantly. Estimate marketing spend, conversion rates, and ROI to plan smarter growth and improve your CAC efficiency.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}customer-acquisition-cost-estimator/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/customer-acquisition-cost-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -19,7 +19,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}customer-acquisition-cost-estimator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/customer-acquisition-cost-estimator/`,
   },
 };
 const page = () => {

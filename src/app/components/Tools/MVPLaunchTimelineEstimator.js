@@ -102,21 +102,21 @@ const MVPLaunchTimelineEstimator = () => {
       <ToolHerosection
         title={
           <>
-            Launch Your
-            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              &nbsp;MVP&nbsp;
-            </span>
+            MVP Launch&nbsp;
             <br className="md:block hidden" />
-            on Time & Budget
+            <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
+              Timeline Estimator
+            </span>
           </>
         }
         buttonText="Calculate Timeline"
         description={
           <>
-            Get accurate timeline and cost estimates for your MVP launch.{" "}
+            Get accurate projections for your MVP timeline and cost.{" "}
             <br className="md:block hidden" />
-            Our AI-powered calculator analyzes your requirements and provides
-            realistic projections based on 1000+ successful launches.
+            Our AI-powered estimator analyzes your project scope and delivers
+            realistic development phase breakdowns based on 1000+ successful
+            MVPs.
           </>
         }
         imageSrc="/images/v2/mvp-launch-timeline-banner.webp"

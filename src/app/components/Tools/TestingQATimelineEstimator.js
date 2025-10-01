@@ -101,9 +101,10 @@ const TestingQATimelineEstimator = () => {
         buttonText="Calculate Timeline"
         description={
           <>
-            Accurately estimate testing timelines for your projects with our
-            intelligent calculator. Save time, improve planning, and deliver
-            quality software on schedule.
+            Accurately estimate software testing timelines for your projects
+            with our intelligent QA timeline estimator. Save time, improve
+            planning, and deliver quality software on schedule using our testing
+            timeline calculator.
           </>
         }
         imageSrc="/images/v2/testing-qa-timeline-estimator-banner.webp"
@@ -407,8 +408,8 @@ const TestingQATimelineEstimator = () => {
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill out the form on the left and your instant estimate
-                      will magically appear here ✨
+                      Fill out the form on the left and your instant software
+                      testing time estimation will magically appear here ✨
                     </p>
 
                     <button

@@ -9,7 +9,7 @@ export const metadata = {
     title: "SaaS Profitability Calculator",
     description:
       "Estimate your SaaS business profitability in minutes. Calculate revenue, expenses, and profit margins to plan growth and make data-driven financial decisions.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-profitability-calculator/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-profitability-calculator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -19,7 +19,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}saas-profitability-calculator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-profitability-calculator/`,
   },
 };
 const page = () => {

@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Quickly estimate software development timelines based on feature complexity. Plan projects smarter with our interactive estimator tool.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}feature-complexity-vs-time-estimator/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/feature-complexity-vs-time-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +20,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}feature-complexity-vs-time-estimator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/feature-complexity-vs-time-estimator/`,
   },
 };
 const page = () => {

@@ -5,14 +5,13 @@ export const metadata = {
   title:
     "MVP Development Cost Calculator | Estimate Your MVP Build Cost Online",
   description:
-    "Quickly estimate the cost of building your Minimum Viable Product (MVP) with our free calculator. Enter features, platform, and complexity to get accurate budget insights instantly.",
+    "Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data.",
   openGraph: {
     title:
       "MVP Development Cost Calculator | Estimate Your MVP Build Cost Online",
     description:
-      "Quickly estimate the cost of building your Minimum Viable Product (MVP) with our free calculator. Enter features, platform, and complexity to get accurate budget insights instantly.",
-
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}mvp-development-cost-calculator/`,
+      "Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-development-cost-calculator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -22,7 +21,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}mvp-development-cost-calculator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-development-cost-calculator/`,
   },
 };
 const page = () => {

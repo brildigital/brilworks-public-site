@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Estimate your mobile or web app’s maintenance and update costs instantly. Get accurate pricing for bug fixes, security updates, new features, and version upgrades.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}app-maintenance-cost-estimator/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-maintenance-cost-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -22,7 +22,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}app-maintenance-cost-estimator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-maintenance-cost-estimator/`,
   },
 };
 

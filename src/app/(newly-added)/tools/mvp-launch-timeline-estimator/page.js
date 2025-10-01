@@ -2,15 +2,14 @@ import React from "react";
 import MVPLaunchTimelineEstimator from "@/app/components/Tools/MVPLaunchTimelineEstimator";
 
 export const metadata = {
-  title: "MVP Launch Timeline Estimator | Brilworks",
+  title: "MVP Timeline Estimator | Accurate MVP Launch Planning Tool",
   description:
-    "Estimate how long it will take to build and launch your MVP. Get quick, data-driven development timelines to plan your startup’s next steps.",
+    "Estimate your MVP timeline with precision. Use our AI-powered MVP timeline estimator to plan your minimum viable product development phases, cost, and launch strategy.",
   openGraph: {
-    title: "MVP Launch Timeline Estimator | Brilworks",
+    title: "MVP Timeline Estimator | Accurate MVP Launch Planning Tool",
     description:
-      "Estimate how long it will take to build and launch your MVP. Get quick, data-driven development timelines to plan your startup’s next steps.",
-
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}mvp-launch-timeline-estimator/`,
+      "Estimate your MVP timeline with precision. Use our AI-powered MVP timeline estimator to plan your minimum viable product development phases, cost, and launch strategy.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-launch-timeline-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -20,7 +19,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}mvp-launch-timeline-estimator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-launch-timeline-estimator/`,
   },
 };
 

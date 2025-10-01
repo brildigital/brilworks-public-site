@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Choose the right database for your application. Compare SQL and NoSQL options, scalability, and performance to find the perfect fit for your project needs.",
 
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}database-selector-tool/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/database-selector-tool/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -21,7 +21,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}database-selector-tool/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/database-selector-tool/`,
   },
 };
 const page = () => {

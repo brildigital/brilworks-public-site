@@ -148,33 +148,30 @@ const SaasDevCostCalculatorSteps = {
 };
 
 const mvpDevCostCalculatorSteps = {
-  title: "How to Calculate Your MVP Cost",
+  title: "How the MVP Calculator Works",
   description:
-    "Follow these simple steps to get an accurate estimate for your MVP development project",
+    "Follow these simple steps to calculate your MVP development cost:",
   listData: [
     {
       icon: FileText,
-      title: "Describe Your Project",
-      description:
-        "Provide details about your MVP idea, target market, and key features you want to include.",
+      title: "Describe Your MVP",
+      description: "Provide your app idea, target market, and core features. ",
     },
     {
       icon: Settings,
       title: "Select Development Type",
-      description:
-        "Choose between web app, mobile app, or both based on your target audience and business needs.",
+      description: "Choose between web app, mobile app, or both. ",
     },
     {
       icon: Calculator,
       title: "Configure Features",
       description:
-        "Select the complexity level, number of features, and any special requirements for your MVP.",
+        "Pick your complexity level, features, and any special integrations.",
     },
     {
       icon: DollarSign,
-      title: "Get Instant Estimate",
-      description:
-        "Receive a detailed cost breakdown including development time, resources, and budget allocation.",
+      title: "Get Your MVP Cost Estimate",
+      description: "Receive a detailed MVP calculation with budget breakdown.",
     },
   ],
 };
@@ -240,26 +237,26 @@ const appDevTimelineCalculatorSteps = {
   ],
 };
 const mvpDevTimelineEstimatorSteps = {
-  title: "How It Works",
+  title: "How to Create MVP Product in 3 Steps",
   description: "Get your MVP timeline estimate in 3 simple steps",
   listData: [
     {
       icon: Code,
-      title: "Input Requirements",
+      title: "Define MVP Stages",
       description:
-        "Tell us about your project type, complexity, and desired features",
+        "Select your project type, complexity, and essential features to outline your minimum viable product strategy.",
     },
     {
       icon: Zap,
-      title: "AI Analysis",
+      title: "AI-Driven MVP Timeline Analysis",
       description:
-        "Our algorithm analyzes your requirements against our database of 1000+ projects",
+        "Our algorithm compares your inputs with our database of MVP launches to generate a tailored MVP development process.",
     },
     {
       icon: TrendingUp,
-      title: "Get Estimates",
+      title: "Receive Your MVP Timeline & Cost",
       description:
-        "Receive detailed timeline, cost breakdown, and development phases",
+        "Get a detailed breakdown of development phases, estimated cost, and team size recommendations.",
     },
   ],
 };
@@ -297,7 +294,7 @@ const featureComplexityVsTimelineEstimatorSteps = {
 const testingQATimelineEstimatorSteps = {
   title: "How to Calculate Your Testing Timeline",
   description:
-    "Follow these simple steps to get accurate testing estimates for your project",
+    "Follow these simple steps to get accurate software testing time estimation for your project:",
   listData: [
     {
       icon: FileText,
@@ -320,12 +317,12 @@ const testingQATimelineEstimatorSteps = {
       icon: CheckCircle,
       title: "Get Timeline",
       description:
-        "Receive detailed timeline breakdown with actionable insights.",
+        "Receive detailed QA planning calculator breakdown with actionable insights.",
     },
   ],
 };
 const goToMarketPlacePlannerSteps = {
-  title: "How Our Go-to-Market Planner Works",
+  title: "How the Go-to-Market Timeline Planner Works",
   description:
     "Follow these simple steps to create a comprehensive timeline that ensures your product launch success",
   listData: [
@@ -333,25 +330,25 @@ const goToMarketPlacePlannerSteps = {
       icon: FileText,
       title: "Input Your Details",
       description:
-        "Provide information about your product, target market, and business objectives.",
+        "Enter your product type, target market, team size, and budget range.",
     },
     {
       icon: Settings,
-      title: "AI Analysis",
+      title: "AI-Driven Timeline Analysis",
       description:
-        "Our advanced algorithm analyzes your inputs and industry benchmarks.",
+        "Our algorithm benchmarks your inputs against industry data to generate a custom launch roadmap.",
     },
     {
       icon: BarChart3,
-      title: "Timeline Generation",
+      title: "Milestone-Based Execution",
       description:
-        "Receive a customized timeline with milestones and critical path analysis.",
+        "Plan Receive a detailed timeline with critical milestones and actionable tasks.",
     },
     {
       icon: Rocket,
-      title: "Execute & Launch",
+      title: "Launch with Confidence",
       description:
-        "Follow your optimized roadmap to achieve a successful market entry.",
+        "Follow your optimized roadmap to ensure a successful market entry.",
     },
   ],
 };

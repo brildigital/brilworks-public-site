@@ -12,7 +12,7 @@ export const metadata = {
     title: "API Integration Feasibility Checker",
     description:
       "Quickly assess the feasibility of integrating third-party APIs. Evaluate compatibility, complexity, and effort to plan smooth, reliable API integrations for your project.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}api-integration-feasibility-checker/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/api-integration-feasibility-checker/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "article",
@@ -22,7 +22,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}api-integration-feasibility-checker/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/api-integration-feasibility-checker/`,
   },
 };
 const page = () => {

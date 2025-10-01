@@ -97,16 +97,15 @@ const GoToMarketTimelinePlanner = () => {
       <ToolHerosection
         title={
           <>
-            Perfect Your&nbsp;
-            <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
               Go-to-Market&nbsp;
             </span>
-            Timeline
+            <br className="block" />
+            Timeline Planner
           </>
         }
         buttonText="Start Planning Now"
-        description="Plan, optimize, and execute your product launch with precision. Our AI-powered timeline planner helps you identify critical milestones and avoid common pitfalls."
+        description="Plan your product launch with confidence using our Go-to-Market Timeline Planner. Our AI-powered tool helps you build a strategic roadmap, track milestones, and optimize your timeline for faster market entry."
         imageSrc="/images/v2/go-to-market-timeline-banner.webp"
         statsGird={[
           {

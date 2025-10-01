@@ -103,15 +103,15 @@ const MVPDevelopmentCostCalculator = () => {
       <ToolHerosection
         title={
           <>
-            MVP Development
+            MVP Calculator – Get Your
             <br className="hidden sm:block" />{" "}
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Cost Calculator
+              MVP Development Cost Instantly
             </span>
           </>
         }
         buttonText="Calculate Your MVP Now"
-        description="Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data."
+        description="Use our MVP Calculator to get accurate cost estimates for your minimum viable product. Trusted by 10,000+ startups and backed by industry benchmarks, this is the fastest way to plan your MVP budget."
         imageSrc="/images/v2/mvp-dev-cost-calculator-banner.webp"
         highlights={[
           {

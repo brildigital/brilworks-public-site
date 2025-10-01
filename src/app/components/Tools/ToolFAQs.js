@@ -156,29 +156,29 @@ const mvpDevCostCalculatorFaqData = {
     "Get answers to common questions about MVP development costs and our calculator",
   queAns: [
     {
-      question: "How accurate are the cost estimates?",
+      question: "What is the average cost to build an MVP for a startup?",
       answer:
-        "Our calculator provides estimates with 90-95% accuracy based on industry standards and real project data. However, final costs may vary depending on specific requirements, changes during development, and market rates in your region.",
+        "The average MVP cost ranges from $10,000 to $100,000 depending on platform, complexity, and team structure.",
     },
     {
-      question: "What's included in the MVP development cost?",
+      question: "How accurate is the MVP calculation from this tool?",
       answer:
-        "The cost includes planning and analysis, UI/UX design, development, testing, deployment, and basic documentation. It covers a functional MVP with core features but excludes ongoing maintenance, marketing, and advanced integrations.",
+        "Our MVP Calculator uses real-time industry data to deliver highly accurate estimates tailored to your project.",
     },
     {
-      question: "How does the keyword-based pricing work?",
+      question: "What’s included in the minimum viable product cost?",
       answer:
-        "Our algorithm analyzes your project description for specific keywords like 'AI', 'payment', 'blockchain', etc., and adjusts the cost based on the complexity these features typically add to development projects.",
+        "Design, development, testing, deployment, and basic maintenance. Optional features may increase the cost.",
     },
     {
-      question: "Can I get a more detailed breakdown?",
+      question: "Can I calculate MVP cost for both web and mobile apps?",
       answer:
-        "Yes! The calculator provides a detailed breakdown including development phases, team composition, timeline, and cost distribution across different aspects of your MVP project.",
+        "Yes, our calculator supports multi-platform MVP cost estimation including hybrid builds.",
     },
     {
-      question: "What if my project requirements change?",
+      question: "How does MVP cost differ for SaaS vs marketplace apps?",
       answer:
-        "You can easily update your project details in the calculator to get a revised estimate. We recommend using the calculator multiple times during your planning phase to explore different scenarios.",
+        "SaaS MVPs often include user roles and subscriptions, while marketplace MVPs require listings, filters, and payment systems—each affecting cost differently.",
     },
     {
       question: "How long does MVP development typically take?",
@@ -282,24 +282,24 @@ const mvpDevTimelineEstimatorFaqData = {
   description: "Everything you need to know about MVP timeline estimation",
   queAns: [
     {
-      question: "How accurate are the timeline estimates?",
+      question: "How long does it take to build an MVP?",
       answer:
-        "Our estimates are based on analysis of over 1000 successful MVP launches and have a 98% accuracy rate. However, actual timelines may vary based on scope changes, team dynamics, and unforeseen challenges.",
+        "The timeline varies based on complexity, but our estimator provides a range from 10 to 100 days depending on your inputs.",
     },
     {
-      question: "What factors influence the cost calculation?",
+      question: "What are the MVP stages explained in the estimate?",
       answer:
-        "Cost is calculated based on project complexity, feature set, team size, technology stack, and specific keywords in your description that indicate advanced technologies like AI, blockchain, or real-time features.",
+        "We break down the MVP development process into planning, design, development, testing, and launch phases.",
     },
     {
-      question: "Can I get estimates for different team sizes?",
+      question: "Can I use this for MVP timeline for startups?",
       answer:
-        "Yes! Our calculator adjusts timelines and costs based on team size. Smaller teams generally take longer but cost less, while larger teams can deliver faster but at higher cost.",
+        "Absolutely. Our tool is designed to support lean startup MVP strategies and agile development workflows.",
     },
     {
-      question: "Do you provide estimates for specific industries?",
+      question: "How to create MVP product with minimal resources?",
       answer:
-        "Our algorithm considers industry-specific factors automatically. Keywords in your project description help us adjust estimates for fintech, healthcare, e-commerce, and other regulated industries.",
+        "Focus on core features, validate with early users, and iterate based on feedback—our estimator helps you prioritize efficiently.",
     },
     {
       question: "What's included in the development phases?",
@@ -350,42 +350,43 @@ const testingQATimelineEstimatorFaqData = {
     {
       question: "How accurate is the Testing & QA Timeline Calculator?",
       answer:
-        "Our calculator uses advanced algorithms and industry benchmarks to provide estimates with 90-95% accuracy. The keyword analysis feature further refines calculations based on your specific project description, making it one of the most precise estimation tools available.",
+        "Our calculator uses AI and real project data to provide estimates with up to 99% accuracy. It adapts to your project’s specifics for reliable results.",
     },
     {
-      question: "What factors does the calculator consider?",
+      question: "What factors does the QA timeline estimator consider?",
       answer:
-        "The calculator analyzes project size, complexity level, testing types, team size, team experience, and project description keywords. It also considers historical data patterns, industry benchmarks, and specific testing methodologies to provide comprehensive timeline estimates.",
+        "It looks at project size, complexity, testing types, team size, experience, and risk buffers to create a tailored timeline.",
     },
     {
-      question: "Can I use this calculator for agile projects?",
+      question:
+        "Can I use this testing timeline calculator for agile projects?",
       answer:
-        "Absolutely! The calculator works well for both waterfall and agile methodologies. For agile projects, you can calculate timelines for individual sprints or entire releases by adjusting the project size and scope parameters accordingly.",
-    },
-    {
-      question: "How does the keyword analysis work?",
-      answer:
-        "When you describe your project, our AI analyzes keywords like 'automated testing', 'mobile app', 'API testing', 'performance', or 'security' to automatically adjust timeline estimates. This ensures the calculation reflects the specific testing challenges and requirements of your project.",
+        "Yes, it supports agile workflows and adjusts estimates based on sprint cycles and iterative testing.",
     },
     {
       question: "What testing types are supported?",
       answer:
-        "The calculator supports all major testing types including functional, performance, security, usability, integration, regression, unit testing, system testing, user acceptance testing, and more. You can select multiple types for comprehensive timeline planning.",
+        "The tool covers functional, regression, performance, security, usability, and integration testing.",
     },
     {
-      question: "Can I export or share my results?",
+      question: "Can I export or share my QA timeline results?",
       answer:
-        "Yes, you can export your timeline results as PDF reports or share them via direct links. The reports include detailed phase breakdowns, recommendations, and visual timeline charts perfect for stakeholder presentations.",
+        "Currently, you can copy and share results manually. Export options like PDF or CSV are coming soon.",
     },
     {
       question: "Is there a limit to how many calculations I can perform?",
       answer:
-        "No, there are no limits! You can perform unlimited calculations to experiment with different scenarios, compare options, or refine your project estimates. This helps you find the optimal testing approach for your specific needs.",
+        "No limits—you can use the calculator as often as you need for different projects.",
     },
     {
-      question: "How often is the calculator updated with new data?",
+      question: "How often is the calculator updated?",
       answer:
-        "We continuously update our algorithms and industry benchmarks monthly based on the latest testing methodologies, tools, and best practices. User feedback and project outcomes also help improve our accuracy over time.",
+        "We update it regularly with new data and user feedback to keep estimates accurate and relevant.",
+    },
+    {
+      question: "Why use this tool instead of manual estimation?",
+      answer:
+        "It saves time and reduces errors by factoring in hidden risks and complexities that manual methods often miss.",
     },
   ],
 };
@@ -394,29 +395,29 @@ const goToMarketPlacePlannerFaqData = {
     "Everything you need to know about our Go-to-Market Timeline Planner",
   queAns: [
     {
-      question: "How accurate is the Go-to-Market Timeline Planner?",
+      question: "How to create a go-to-market timeline for a SaaS product?",
       answer:
-        "Our planner uses advanced AI algorithms trained on thousands of successful product launches. It has a 95% accuracy rate in predicting realistic timelines and identifying potential roadblocks. The system continuously learns and improves its predictions based on real-world outcomes.",
+        "Use our planner to input your SaaS details, and receive a tailored roadmap with milestones and deadlines.",
     },
     {
-      question: "What industries does the planner support?",
+      question: "What is the best way to plan a product launch using AI?",
       answer:
-        "The planner supports all major industries including Technology, Healthcare, Finance, Retail, Manufacturing, and more. Our AI adapts the timeline recommendations based on industry-specific patterns, regulations, and market dynamics.",
+        "Our AI-powered planner analyzes your inputs and generates a timeline optimized for success.",
     },
     {
-      question: "Can I modify the timeline after it's generated?",
+      question: "Can I adjust my product launch timeline after generation?",
       answer:
-        "Absolutely! The generated timeline serves as a starting point. You can adjust milestones, add custom phases, and modify durations based on your specific requirements. The system will automatically recalculate risk assessments and success probabilities.",
+        "Yes, our tool allows real-time adjustments based on market changes or internal delays.",
     },
     {
-      question: "How does the keyword analysis in the description field work?",
+      question: "Does the planner support healthcare and fintech industries?",
       answer:
-        'Our AI analyzes your project description for complexity indicators, urgency markers, and innovation keywords. Words like "complex," "enterprise," or "compliance" may extend timelines, while "urgent" or "MVP" might compress them. This helps create more accurate, context-aware predictions.',
+        "Absolutely. We offer industry-specific strategies for healthcare, fintech, and more.",
     },
     {
-      question: "Is there team collaboration support?",
+      question: "How accurate is an AI-powered go-to-market planner?",
       answer:
-        "Yes! You can share your timeline with team members, assign responsibilities for each phase, and track progress in real-time. Stakeholders can view the timeline, add comments, and receive notifications about milestone completions.",
+        "Our planner uses historical data and predictive analytics to deliver highly accurate timelines",
     },
     {
       question: "What happens if my launch gets delayed?",
