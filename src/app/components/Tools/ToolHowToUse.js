@@ -178,13 +178,13 @@ const mvpDevCostCalculatorSteps = {
 const appMaintenanceCostEstimatorSteps = {
   title: "How to Calculate App Maintenance Costs",
   description:
-    "Follow these simple steps to get accurate maintenance and update cost estimates for your application",
+    "Follow these simple steps to get a precise estimate for your app’s ongoing upkeep:",
   listData: [
     {
       icon: FileText,
       title: "App Information",
       description:
-        "Provide details about your app type, current version, user base, and maintenance requirements.",
+        "Choose your platforms (iOS, Android, Web) and define the complexity level.",
     },
     {
       icon: Smartphone,
@@ -196,13 +196,13 @@ const appMaintenanceCostEstimatorSteps = {
       icon: Calculator,
       title: "Maintenance Scope",
       description:
-        "Choose maintenance types: bug fixes, feature updates, security patches, performance optimization.",
+        "Select the types of maintenance: bug fixes, updates, performance tuning, security patches.",
     },
     {
       icon: TrendingUp,
       title: "Get Cost Breakdown",
       description:
-        "Receive detailed monthly and yearly maintenance costs with timeline and resource allocation.",
+        "Receive detailed monthly and yearly cost estimates, including resource allocation.",
     },
   ],
 };
@@ -261,33 +261,33 @@ const mvpDevTimelineEstimatorSteps = {
   ],
 };
 const featureComplexityVsTimelineEstimatorSteps = {
-  title: "How to Calculate Feature Complexity",
+  title: "How to Estimate Feature Complexity for Software Projects",
   description:
     "Follow these simple steps to get accurate time estimates for your development projects",
   listData: [
     {
       icon: Target,
-      title: "Define Feature Requirements",
+      title: "Define Feature Scope",
       description:
-        "Describe your feature in detail including all functional requirements and desired outcomes.",
+        "Describe your software feature including core functionality and expected outcomes.",
     },
     {
       icon: Layers,
-      title: "Assess Complexity Factors",
+      title: "Rate Complexity",
       description:
-        "Rate different aspects like UI complexity, data integration needs, and business logic requirements.",
+        "Evaluate UI complexity, data integration, business logic, platform needs, and security.",
     },
     {
       icon: Calculator,
-      title: "Get Time Estimation",
+      title: "Generate Time Estimate",
       description:
-        "Receive accurate time estimates with complexity scores and development recommendations.",
+        "Get AI-powered time predictions with complexity scores and planning",
     },
     {
       icon: CheckCircle,
-      title: "Plan Development",
+      title: "Plan Resources & Timeline",
       description:
-        "Use insights to plan resources, timeline, and development approach for your project.",
+        "Use insights to allocate team resources, set delivery milestones, and reduce risk.",
     },
   ],
 };
@@ -354,32 +354,31 @@ const goToMarketPlacePlannerSteps = {
 };
 const techStackRecommenderSteps = {
   title: "How It Works",
-  description:
-    "Get your perfect tech stack recommendation in just 4 simple steps",
+  description: "Get your ideal technology stack in 4 simple steps:",
   listData: [
     {
       icon: ClipboardList,
       title: "Fill Out Requirements",
       description:
-        "Provide details about your project type, scale, team size, and specific requirements.",
+        "Choose your project type, scale, team size, timeline, and budget.",
     },
     {
       icon: Brain,
       title: "AI Analysis",
       description:
-        "Our intelligent system analyzes your inputs against thousands of successful project patterns.",
+        "Our system compares your inputs with thousands of successful project patterns.",
     },
     {
       icon: Zap,
       title: "Get Recommendations",
       description:
-        "Receive personalized tech stack suggestions with detailed explanations and alternatives.",
+        "Receive personalized suggestions with pros, cons, and alternatives.",
     },
     {
       icon: CheckCircle,
       title: "Make Informed Decision",
       description:
-        "Compare options, view pros/cons, and select the perfect stack for your project success.",
+        "Compare options and select the scalable tech stack that fits your needs.",
     },
   ],
 };

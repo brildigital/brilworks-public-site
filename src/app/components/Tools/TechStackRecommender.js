@@ -139,15 +139,15 @@ const TechStackRecommender = () => {
       <ToolHerosection
         title={
           <>
-            Find Your Perfect &nbsp;
+            Best Tech Stack &nbsp;
             <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Tech Stack
+              Recommender Tool
             </span>
           </>
         }
         buttonText="Start Recommendation"
-        description="Get personalized technology recommendations based on your project requirements, team expertise, and business goals. Make informed decisions with AI-powered insights."
+        description="Use our AI-powered tool to find the best tech stack for your project. Whether you're building a web app, mobile app, or SaaS platform, get personalized recommendations based on your team, timeline, and business goals."
         imageSrc="/images/v2/tech-stack-recommender.webp"
         statsGird={[
           {

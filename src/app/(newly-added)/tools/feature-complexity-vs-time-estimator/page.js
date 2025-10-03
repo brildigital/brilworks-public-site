@@ -2,13 +2,15 @@ import React from "react";
 import FeatureComplexityVsTimeEstimator from "@/app/components/Tools/FeatureComplexityVsTimeEstimator";
 
 export const metadata = {
-  title: "Feature Complexity vs Time Estimator",
+  title:
+    "AI-Powered Feature Complexity Estimator | Software Development Time Calculator",
   description:
-    "Quickly estimate software development timelines based on feature complexity. Plan projects smarter with our interactive estimator tool.",
+    "Estimate software development time with our AI-powered feature complexity calculator. Analyze UI, logic, integrations, and get accurate project timelines instantly.",
   openGraph: {
-    title: "Feature Complexity vs Time Estimator",
+    title:
+      "AI-Powered Feature Complexity Estimator | Software Development Time Calculator",
     description:
-      "Quickly estimate software development timelines based on feature complexity. Plan projects smarter with our interactive estimator tool.",
+      "Estimate software development time with our AI-powered feature complexity calculator. Analyze UI, logic, integrations, and get accurate project timelines instantly.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/feature-complexity-vs-time-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

@@ -2,13 +2,13 @@ import React from "react";
 import TechStackRecommender from "@/app/components/Tools/TechStackRecommender";
 
 export const metadata = {
-  title: "Tech Stack Recommender",
+  title: "Best Tech Stack Recommender Tool for Web, Mobile & SaaS Projects",
   description:
-    "Discover the ideal tech stack for your project. Get tailored recommendations based on platform, scalability, and budget to build reliable, future-ready applications.",
+    "Find the best tech stack for your web, mobile, or SaaS project. Get AI-powered recommendations based on your team, timeline, and goals.",
   openGraph: {
-    title: "Tech Stack Recommender",
+    title: "Best Tech Stack Recommender Tool for Web, Mobile & SaaS Projects",
     description:
-      "Discover the ideal tech stack for your project. Get tailored recommendations based on platform, scalability, and budget to build reliable, future-ready applications.",
+      "Find the best tech stack for your web, mobile, or SaaS project. Get AI-powered recommendations based on your team, timeline, and goals.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/tech-stack-recommender/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

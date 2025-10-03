@@ -3,15 +3,14 @@ import React from "react";
 
 export const metadata = {
   title:
-    "App Maintenance & Update Cost Estimator | Calculate Your App’s Ongoing Costs",
+    "App Maintenance Cost Estimator | Calculate Mobile & Web App Update Costs",
   description:
-    "Estimate your mobile or web app’s maintenance and update costs instantly. Get accurate pricing for bug fixes, security updates, new features, and version upgrades.",
+    "Use our app maintenance cost calculator to estimate annual update costs for mobile and web apps. Get accurate pricing for bug fixes, feature updates, and support.",
   openGraph: {
     title:
-      "App Maintenance & Update Cost Estimator | Calculate Your App’s Ongoing Costs",
+      "App Maintenance Cost Estimator | Calculate Mobile & Web App Update Costs",
     description:
-      "Estimate your mobile or web app’s maintenance and update costs instantly. Get accurate pricing for bug fixes, security updates, new features, and version upgrades.",
-
+      "Use our app maintenance cost calculator to estimate annual update costs for mobile and web apps. Get accurate pricing for bug fixes, feature updates, and support.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-maintenance-cost-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

@@ -158,7 +158,7 @@ const AppMaintenanceCostEstimator = () => {
           </>
         }
         buttonText="Calculate Maintenance Cost"
-        description="Calculate accurate maintenance and update costs for your mobile and web applications. Plan your ongoing development budget with confidence."
+        description="Calculate accurate maintenance and update costs for your mobile and web applications. Plan your ongoing development budget with confidence using our industry-leading estimator."
         imageSrc="/images/v2/app-maintenance-estimator-banner.webp"
         highlights={[
           {
