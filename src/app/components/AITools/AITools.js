@@ -5,19 +5,19 @@ import Link from "next/link";
 
 const tools = [
   {
-    title: "n8n AI Automation",
+    title: "AI Insights & Automation",
     description:
       "Automate workflows with n8n and AI. Connect apps, streamline processes, and reduce manual work with smart, customizable automation.",
     image: "/images/v2/n8n-ai.webp",
-    link: "/ai-tools/n8n-ai-automation",
+    link: "/ai-tools/ai-insights-and-automation",
     bg: "bg-[#EA4B71] text-white",
   },
   {
-    title: "AI Convo Bot",
+    title: "AI Chatbot & Conversational Solution",
     description:
       "Engage customers with intelligent AI-powered chatbots. Deliver human-like conversations for support, sales, and onboarding—available 24/7.",
     image: "/images/ai-bot.png",
-    link: "/ai-tools/ai-convo-bot",
+    link: "/ai-tools/ai-chatbot-conversational-solution",
     bg: "bg-themeColor text-white",
   },
   {
@@ -29,11 +29,11 @@ const tools = [
     bg: "bg-green-600 text-white",
   },
   {
-    title: "AWS Partner",
+    title: "AWS Partner Solution",
     description:
       "Leverage our expertise as an official AWS Partner. Scale applications, optimize cloud infrastructure, and integrate AI solutions with enterprise-grade reliability.",
     image: "/images/aws-partner.png",
-    link: "/ai-tools/aws-partner",
+    link: "/ai-tools/aws-partner-solution",
     bg: "bg-[#ff9900] text-white",
   },
   {
@@ -41,7 +41,7 @@ const tools = [
     description:
       "Validate your startup idea fast. Get a working Minimum Viable Product in just 48 hours, powered by AI and rapid prototyping.",
     image: "/images/mvp.png",
-    link: "/ai-tools/mvp-in-48-hours",
+    link: "/mvp-in-48-hours/",
     bg: "bg-navyBlue text-white",
   },
   {
@@ -49,38 +49,12 @@ const tools = [
     description:
       "Access free, high-quality design mockups to showcase your brand, apps, or websites. Download and use instantly for presentations and pitches.",
     image: "/images/mockups.png",
-    link: "/ai-tools/free-mockups",
+    link: "/free-mockups/",
     bg: "bg-themeSecondary text-white",
   },
 ];
 
 const AITools = () => {
-  const [activeTag, setActiveTag] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
-
-  const categories = [
-    "MARKETING",
-    "CONTENT",
-    "DEVELOPMENT",
-    "SALES",
-    "SEO",
-    "BUSINESS",
-    "ENTERTAINMENT",
-    "OTHER",
-  ];
-
-  // Debounce logic
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedSearch(searchTerm);
-    }, 500);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [searchTerm]);
-
   return (
     <>
       <div className="hire-team-section-l !scroll-[unset]">
@@ -110,57 +84,6 @@ const AITools = () => {
         </div>
       </div>
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
-        {/* <div className="flex flex-col md:flex-row justify-between gap-5 md:mb-8 mb-5">
-          <div className="flex flex-wrap gap-2">
-            <button
-              className={`px-4 !py-1.5 !rounded-md cursor-pointer border border-themeColor ${
-                activeTag === ""
-                  ? "bg-themeColor text-white"
-                  : "hover:!text-white hover:!bg-themeColor"
-              }`}
-              onClick={() => setActiveTag("")}
-            >
-              <p className="text-xs md:text-sm font-medium">ALL</p>
-            </button>
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`transition-all duration-300 lg:!px-3 px-2 !py-1.5 cursor-pointer !rounded-md border border-themeColor ${
-                  activeTag === category
-                    ? "bg-themeColor text-white "
-                    : "hover:!text-white hover:!bg-themeColor"
-                }`}
-                onClick={() =>
-                  setActiveTag(activeTag === category ? "" : category)
-                }
-              >
-                <p className="text-xs md:text-sm font-medium">{category}</p>
-              </button>
-            ))}
-          </div>
-          <div className="w-full sxl:!w-1/5">
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="relative w-full">
-                <input
-                  id="user-search"
-                  className={`w-full font-medium rounded-md py-2 px-2 text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none`}
-                  value={searchTerm}
-                  // type="search"
-                  placeholder="Search"
-                  autoComplete="off"
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  disabled={!searchTerm && !toolsData?.length}
-                />
-                <button
-                  type="submit"
-                  className="bg-themeColor absolute top-1/2 transform -translate-y-1/2 right-0 p-2 rounded-r-md border-y border-themeColor"
-                >
-                  <Search className="text-white w-5 h-5" />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div> */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => (
             <Link

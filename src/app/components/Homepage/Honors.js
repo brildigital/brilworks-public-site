@@ -35,6 +35,12 @@ const Honors = () => {
   const slidesData = [
     {
       link: "https://www.goodfirms.co/company/brilworks-software-llp",
+      imgSrc: "/images/global-leader-top-10-2026.svg",
+      imgAlt: "global-leader",
+      text: "Top 10 Agency 2026",
+    },
+    {
+      link: "https://www.goodfirms.co/company/brilworks-software-llp",
       imgSrc: "/images/top-software-development-companies-goodfirms.svg",
       imgAlt: "top software development company goodfirms",
       text: "Top Software Development Company",
