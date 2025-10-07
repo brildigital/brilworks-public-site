@@ -14,10 +14,6 @@ import {
   Globe,
 } from "lucide-react";
 import Link from "next/link";
-import DatingAppMockup from "./DatingAppMockup";
-import HealthcareAppMockup from "./HealthcareAppMockup";
-import TaxiAppMockup from "./TaxiAppMockup";
-import SocietyAppMockup from "./SocietyAppMockup";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 
@@ -51,7 +47,6 @@ export default function PrebuiltSolutionsPage() {
         "AWS",
         "AI/ML",
       ],
-      mockup: DatingAppMockup,
       imageSrc: "/images/v2/imockup-1.webp",
       highlights: [
         "Advanced AI matching with 95% accuracy",
@@ -88,7 +83,6 @@ export default function PrebuiltSolutionsPage() {
         "AWS",
         "HIPAA Compliance",
       ],
-      mockup: HealthcareAppMockup,
       imageSrc: "/images/v2/imockup-3.webp",
       highlights: [
         "HIPAA compliant platform",
@@ -126,7 +120,6 @@ export default function PrebuiltSolutionsPage() {
         "Stripe",
         "AWS",
       ],
-      mockup: TaxiAppMockup,
       imageSrc: "/images/v2/imockup-2.webp",
       highlights: [
         "Real-time tracking with ETA",
@@ -163,7 +156,6 @@ export default function PrebuiltSolutionsPage() {
         "AWS",
         "SMS Gateway",
       ],
-      mockup: SocietyAppMockup,
       imageSrc: "/images/v2/imockup-4.webp",
       highlights: [
         "Complete society management",
@@ -426,7 +418,7 @@ export default function PrebuiltSolutionsPage() {
                         alt={`mockup-${index}`}
                         width={400}
                         height={700}
-                        className="overflow-hidden max-w-xs mx-auto hover:shadow-3xl transition-all duration-500 hover:scale-105 animate-float"
+                        className="overflow-hidden max-w-xs mx-auto hover:shadow-3xl transition-all duration-500 hover:scale-105"
                       />
                       {/* <solution.mockup /> */}
                     </div>
