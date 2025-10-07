@@ -462,7 +462,7 @@
   ol > li:last-child {
     margin-bottom: 10px;
   }
-  ul {
+  ol {
     a {
       font-family: var(--global-font) !important;
       color: var(--theme-color) !important;
@@ -515,7 +515,7 @@
       font-size: 18px !important;
     }
   }
-  ol {
+  ul {
     padding-left: 1.8em !important;
     list-style: initial !important;
     a {
