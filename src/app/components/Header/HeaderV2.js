@@ -16,19 +16,40 @@ const MegaMenu = dynamic(() => import("./MegaMenu"));
 
 const HeaderV2 = () => {
   const pathname = usePathname();
-  // const navbarRef = useRef(null);
+  const navbarRef = useRef(null);
   const [openNav, setOpenNav] = useState(false);
-  // const [navbarHeight, setNavbarHeight] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(0);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
   const [hasBg, setHasBg] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  useEffect(() => {
+    if (navbarRef.current) {
+      const height = navbarRef.current.offsetHeight; // Get navbar height
+      setNavbarHeight(height); // Set the height in state
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   if (navbarRef.current) {
-  //     const height = navbarRef.current.offsetHeight; // Get navbar height
-  //     setNavbarHeight(height); // Set the height in state
-  //   }
-  // }, []);
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const anyExpanded =
+        Array.from(document.querySelectorAll('button[aria-expanded="true"]'))
+          .length > 0;
+      setIsMegaMenuOpen(anyExpanded);
+    });
+
+    // Watch for changes in aria-expanded on all buttons
+    const buttons = document.querySelectorAll('button[aria-haspopup="menu"]');
+    buttons.forEach((btn) => {
+      observer.observe(btn, {
+        attributes: true,
+        attributeFilter: ["aria-expanded"],
+      });
+    });
+
+    // Cleanup observer on unmount
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Initial state setup based on current scroll position
@@ -131,11 +152,13 @@ const HeaderV2 = () => {
     <>
       <header>
         <div
-          // ref={navbarRef}
+          ref={navbarRef}
           className={`header ${isHidden ? "header-hide" : ""}`}
         >
           <Navbar
             className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
+              pathname === "/" ? "!bg-[#000000e6]" : ""
+            } ${
               openNav ? "!fixed" : hasBg ? "bg-[#000000e6]" : "bg-transparent"
             }`}
           >
@@ -177,6 +200,8 @@ const HeaderV2 = () => {
                               heading={menu?.heading}
                               setOpenNav={setOpenNav}
                               menuItems={menu?.menuItems}
+                              // onOpen={() => setIsMegaMenuOpen(true)}
+                              // onClose={() => setIsMegaMenuOpen(false)}
                             />
                           )
                         )}
@@ -248,22 +273,28 @@ const HeaderV2 = () => {
 
           <SideMenu open={openNav} close={() => setOpenNav(false)} />
         </div>
-        {/* <div
-          className={`${pathname === "/" ? "relative" : "hidden"} bg-navyBlue`}
-        >
+        {!isMegaMenuOpen && (
           <div
-            className="fixed w-full z-20 flex justify-center transition-[top] duration-200 ease-in-out bg-black"
-            style={{ top: `${isHidden ? 0 : navbarHeight}px` }}
+            className={`${
+              pathname === "/" ? "sm:relative" : "hidden"
+            } bg-navyBlue`}
           >
-            <Image
-              src="/images/gitex-global.webp"
-              alt="upcoming-event"
-              width="1440"
-              height="80"
-              className="w-full max-w-[1280px]"
-            />
+            <Link
+              href="https://exhibitors-dwtc.exhibitoronlinemanual.com/expand-north-star-2025/Exhibitor/ExbDetails/brilworks"
+              target="_blank"
+              className="fixed w-full z-10 flex justify-center transition-[top] duration-200 ease-in-out bg-[#000000e6]"
+              style={{ top: `${isHidden ? 0 : navbarHeight}px` }}
+            >
+              <Image
+                src="/images/gitex-banner-2025.webp"
+                alt="upcoming-event"
+                width="1440"
+                height="80"
+                className="w-full md:h-[80px] h-auto"
+              />
+            </Link>
           </div>
-        </div> */}
+        )}
       </header>
     </>
   );
