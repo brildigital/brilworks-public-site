@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
+import { CircleArrowLeft } from "lucide-react";
 
 const tools = [
   {
@@ -26,7 +27,7 @@ const PreBuildSolutions = () => {
   return (
     <>
       <div className="hire-team-section-l !scroll-[unset]">
-        <div className="banner-layer h-full min-h-[600px] md:max-h-[700px] max-h-full">
+        <div className="banner-layer h-full min-h-[600px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
             <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
               <Heading
@@ -45,7 +46,15 @@ const PreBuildSolutions = () => {
           </div>
         </div>
       </div>
-      <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
+      <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
+        <div className="mb-4">
+          <Link
+            href="/ai-tools/"
+            className="flex gap-2 bg-themeLight w-fit p-2 rounded-md"
+          >
+            <CircleArrowLeft /> Back
+          </Link>
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => (
             <Link

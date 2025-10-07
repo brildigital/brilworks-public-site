@@ -8,49 +8,43 @@ const tools = [
     title: "AI Insights & Automation",
     description:
       "Automate workflows with n8n and AI. Connect apps, streamline processes, and reduce manual work with smart, customizable automation.",
-    image: "/images/v2/ai-automation.webp",
+    image: "/images/v2/ai-insights-and-automation.webp",
     link: "/ai-tools/ai-insights-and-automation",
-    bg: "bg-[#EA4B71] text-white",
   },
   {
     title: "AI Chatbot & Conversational Solution",
     description:
       "Engage customers with intelligent AI-powered chatbots. Deliver human-like conversations for support, sales, and onboarding—available 24/7.",
-    image: "/images/v2/ai-conversational.webp",
+    image: "/images/v2/ai-chatbot-conversational-solutions.webp",
     link: "/ai-tools/ai-chatbot-conversational-solution",
-    bg: "bg-themeColor text-white",
   },
   {
     title: "Pre-Build Solutions",
     description:
       "Access ready-to-deploy AI solutions built for speed and efficiency. Save time with pre-configured tools for business, marketing, and productivity.",
-    image: "/images/v2/prebuild-sol.webp",
+    image: "/images/v2/pre-build-ai-automation-solutions.webp",
     link: "/ai-tools/pre-build-solutions",
-    bg: "bg-green-600 text-white",
   },
   {
     title: "AWS Partner Solution",
     description:
       "Leverage our expertise as an official AWS Partner. Scale applications, optimize cloud infrastructure, and integrate AI solutions with enterprise-grade reliability.",
-    image: "/images/v2/aws-partner-sol.webp",
+    image: "/images/v2/aws-partner-solutions.webp",
     link: "/ai-tools/aws-partner-solution",
-    bg: "bg-[#ff9900] text-white",
   },
   {
     title: "MVP in 48 Hours",
     description:
       "Validate your startup idea fast. Get a working Minimum Viable Product in just 48 hours, powered by AI and rapid prototyping.",
-    image: "/images/v2/mvp-in-48-hr.webp",
+    image: "/images/v2/mvp-in-48-hours.webp",
     link: "/mvp-in-48-hours/",
-    bg: "bg-navyBlue text-white",
   },
   {
     title: "Free Mockups",
     description:
       "Access free, high-quality design mockups to showcase your brand, apps, or websites. Download and use instantly for presentations and pitches.",
-    image: "/images/v2/fee-mockups-ai-tool.webp",
+    image: "/images/v2/free-mockups.webp",
     link: "/free-mockups/",
-    bg: "bg-themeSecondary text-white",
   },
 ];
 
@@ -58,7 +52,7 @@ const AITools = () => {
   return (
     <>
       <div className="hire-team-section-l !scroll-[unset]">
-        <div className="banner-layer h-full min-h-[600px] md:max-h-[700px] max-h-full">
+        <div className="banner-layer h-full min-h-[600px] md:max-h-[600px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
             <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
               <Heading

@@ -99,7 +99,7 @@ const SeeingBelieving = ({
       description:
         "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
       image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/syncare-case-study-1759145777968.webp",
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
       alt: "Healthcare App",
       industry: "Healthcare",
       technology: ["React Native"],
