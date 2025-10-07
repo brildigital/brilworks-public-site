@@ -1,5 +1,4 @@
 import React from "react";
-import AIInsightsAndAutomation from "@/app/components/AITools/AIInsightsAndAutomation";
 import PreBuildSolutions from "@/app/components/AITools/PreBuildSolutions";
 
 export const metadata = {

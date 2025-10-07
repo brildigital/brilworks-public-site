@@ -66,7 +66,7 @@ const AIChatbotConversationalSolution = () => {
         <div className="mb-4">
           <Link
             href="/ai-tools/"
-            className="flex gap-2 bg-themeLight w-fit p-2 rounded-md"
+            className="flex gap-2 bg-white hover:bg-themeLight w-fit p-2 rounded-md"
           >
             <CircleArrowLeft /> Back
           </Link>

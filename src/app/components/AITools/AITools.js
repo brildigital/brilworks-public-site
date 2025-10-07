@@ -30,7 +30,7 @@ const tools = [
     description:
       "Leverage our expertise as an official AWS Partner. Scale applications, optimize cloud infrastructure, and integrate AI solutions with enterprise-grade reliability.",
     image: "/images/v2/aws-partner-solutions.webp",
-    link: "/ai-tools/aws-partner-solution",
+    link: "#",
   },
   {
     title: "MVP in 48 Hours",
@@ -88,7 +88,7 @@ const AITools = () => {
               <img
                 src={tool.image}
                 alt={tool.title}
-                className="w-full h-[240px] object-cover group-hover:scale-105 transition-transform"
+                className="w-full h-[240px] object-cover  transition-transform duration-300 ease-in-out transform group-hover:scale-105"
               />
 
               {/* <div
