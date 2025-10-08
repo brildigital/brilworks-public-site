@@ -12,6 +12,7 @@ import {
   Shield,
   Smartphone,
   Globe,
+  Dumbbell,
 } from "lucide-react";
 import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
@@ -57,6 +58,42 @@ export default function PrebuiltSolutionsPage() {
         "End-to-end encrypted messaging",
         "Video dating with real-time filters",
         "Comprehensive safety features",
+      ],
+    },
+    {
+      icon: Dumbbell,
+      title: "Fitness & Wellness App",
+      description:
+        "AI-powered white-label fitness and wellness platform designed for gyms, trainers, and individuals to track workouts, nutrition, and overall well-being.",
+      category: "Health & Fitness",
+      pricing: "From $20,000",
+      timeline: "6-8 weeks",
+      features: [
+        "Personalized Workout Plans",
+        "Diet & Nutrition Tracking",
+        "Progress & Goal Analytics",
+        "Wearable Device Integration",
+        "Real-Time Coaching Dashboard",
+        "Community Challenges",
+        "Live Session Booking",
+        "Push Notifications & Reminders",
+        "Subscription & Payment System",
+        "Admin & Trainer Management Panel",
+      ],
+      technologies: [
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "GraphQL",
+        "Firebase",
+        "AWS",
+      ],
+      imageSrc: "/images/v2/imockup-5.webp",
+      highlights: [
+        "Personalized fitness journeys",
+        "Wearable integration for real-time tracking",
+        "Built-in coaching and community features",
+        "Scalable architecture for large user bases",
       ],
     },
     {
@@ -313,154 +350,158 @@ export default function PrebuiltSolutionsPage() {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${
-                  solution.featured ? "ring-2 ring-blue-500" : ""
-                }`}
+                className={index === 2 ? "lg:col-span-2 w-1/2 mx-auto" : ""}
               >
-                {solution.featured && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                      Featured Platform
-                    </span>
-                  </div>
-                )}
-
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div
-                      className={`w-16 h-16 rounded-xl flex items-center justify-center ${
-                        solution.featured
-                          ? "bg-gradient-to-br from-blue-500 to-cyan-500"
-                          : "bg-slate-200"
-                      }`}
-                    >
-                      <solution.icon
-                        className={`w-8 h-8 ${
-                          solution.featured ? "text-white" : "text-slate-700"
-                        }`}
-                      />
+                <div
+                  className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${
+                    solution.featured ? "ring-2 ring-blue-500" : ""
+                  }`}
+                >
+                  {solution.featured && (
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                        Featured Platform
+                      </span>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm text-themeColor !mt-5">
-                        {solution.category}
-                      </p>
-                      {/* <p className="text-lg font-semibold text-slate-900">
+                  )}
+
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div
+                        className={`w-16 h-16 rounded-xl flex items-center justify-center ${
+                          solution.featured
+                            ? "bg-gradient-to-br from-blue-500 to-cyan-500"
+                            : "bg-slate-200"
+                        }`}
+                      >
+                        <solution.icon
+                          className={`w-8 h-8 ${
+                            solution.featured ? "text-white" : "text-slate-700"
+                          }`}
+                        />
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm text-themeColor !mt-5">
+                          {solution.category}
+                        </p>
+                        {/* <p className="text-lg font-semibold text-slate-900">
                         {solution.pricing}
                       </p> */}
-                    </div>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                    {solution.title}
-                  </h3>
-                  <p className="text-slate-600 !mb-6 leading-relaxed">
-                    {solution.description}
-                  </p>
-
-                  {/* Key Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                      <Star className="w-4 h-4 text-yellow-500" />
-                      Key Highlights
-                    </h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {solution.highlights.map((highlight, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-start gap-2 text-sm text-slate-600"
-                        >
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Features Grid */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-slate-900 mb-3">
-                      Core Features
-                    </h4>
-                    <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
-                      {solution.features.slice(0, 6).map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-start gap-2 text-sm text-slate-600"
-                        >
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-slate-900 mb-3">
-                      Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {solution.technologies.map((tech, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Mockup Preview */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-slate-900 mb-3">
-                      Live Demo Preview
-                    </h4>
-                    <div className="flex justify-center">
-                      <Image
-                        src={solution.imageSrc}
-                        alt={`mockup-${index}`}
-                        width={400}
-                        height={700}
-                        className="overflow-hidden max-w-xs mx-auto hover:shadow-3xl transition-all duration-500 hover:scale-105"
-                      />
-                      {/* <solution.mockup /> */}
-                    </div>
-                  </div>
-
-                  {/* Timeline & Pricing */}
-                  <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Clock className="w-4 h-4 text-blue-500" />
-                        <span className="font-semibold text-slate-900">
-                          Timeline
-                        </span>
                       </div>
-                      <p className="text-sm text-slate-600">
-                        {solution.timeline}
-                      </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Users className="w-4 h-4 text-green-500" />
-                        <span className="font-semibold text-slate-900">
-                          Team Size
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-600">4-6 Developers</p>
-                    </div>
-                  </div>
 
-                  <button
-                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
-                      solution.featured
-                        ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-lg hover:scale-[1.02]"
-                        : "bg-slate-900 text-white hover:bg-slate-800"
-                    }`}
-                  >
-                    View Demo
-                  </button>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                      {solution.title}
+                    </h3>
+                    <p className="text-slate-600 !mb-5 leading-relaxed">
+                      {solution.description}
+                    </p>
+
+                    {/* Mockup Preview */}
+                    <div className="mb-8">
+                      <h4 className="font-semibold text-slate-900 mb-5">
+                        Live Demo Preview
+                      </h4>
+                      <div className="flex justify-center">
+                        <Image
+                          src={solution.imageSrc}
+                          alt={`mockup-${index}`}
+                          width={400}
+                          height={700}
+                          className="overflow-hidden max-w-xs mx-auto hover:shadow-3xl transition-all duration-500 hover:scale-105"
+                        />
+                        {/* <solution.mockup /> */}
+                      </div>
+                    </div>
+
+                    {/* Key Highlights */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                        <Star className="w-4 h-4 text-yellow-500" />
+                        Key Highlights
+                      </h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {solution.highlights.map((highlight, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-2 text-sm text-slate-600"
+                          >
+                            <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                            {highlight}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Features Grid */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-slate-900 mb-3">
+                        Core Features
+                      </h4>
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
+                        {solution.features.slice(0, 6).map((feature, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-2 text-sm text-slate-600"
+                          >
+                            <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-slate-900 mb-3">
+                        Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {solution.technologies.map((tech, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Timeline & Pricing */}
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-6">
+                      <div className="bg-slate-50 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Clock className="w-4 h-4 text-blue-500" />
+                          <span className="font-semibold text-slate-900">
+                            Timeline
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-600">
+                          {solution.timeline}
+                        </p>
+                      </div>
+                      <div className="bg-slate-50 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Users className="w-4 h-4 text-green-500" />
+                          <span className="font-semibold text-slate-900">
+                            Team Size
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-600">4-6 Developers</p>
+                      </div>
+                    </div>
+
+                    <button
+                      className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
+                        solution.featured
+                          ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-lg hover:scale-[1.02]"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
+                      }`}
+                    >
+                      View Demo
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
