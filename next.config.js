@@ -992,11 +992,6 @@ const nextConfig = {
         destination: `/blog/best-guide-to-hire-node-js-developers/`,
         statusCode: 301,
       },
-      {
-        source: `/blog/mobile-app-security-best-practices/https:/www.brilworks.com/blog/mobile-app-security-best-practices/`,
-        destination: `/blog/mobile-app-security-best-practices/`,
-        statusCode: 301,
-      },
     ];
   },
 };
