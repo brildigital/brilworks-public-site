@@ -30,12 +30,61 @@ export async function GET(request) {
 }
 
 // Handle POST webhook and forward to Supabase/Bolt backend
+// export async function POST(request) {
+//   try {
+//     const body = await request.json();
+//     console.log("Incoming WhatsApp message:", JSON.stringify(body, null, 2));
+
+//     // Forward the webhook data to Bolt/Supabase function
+//     const response = await fetch(
+//       "https://jhckqsdepgmrsmwwuour.supabase.co/functions/v1/whatsapp-api",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           authorization:
+//             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoY2txc2RlcGdtcnNtd3d1b3VyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5MTM4MDAsImV4cCI6MjA3NTQ4OTgwMH0.4YkgiyQITZR_TvV9GzNU-go6F36R0aSIfeVoreftJEc",
+//         },
+//         body: JSON.stringify(body),
+//       }
+//     );
+
+//     if (!response.ok) {
+//       console.error("Error from Bolt:", await response.text());
+//       return new NextResponse("Failed to forward to Bolt", { status: 500 });
+//     }
+
+//     return new NextResponse("Forwarded to Bolt successfully", { status: 200 });
+//   } catch (error) {
+//     console.error("Error handling webhook:", error);
+//     return new NextResponse("Error processing webhook", { status: 500 });
+//   }
+// }
+
 export async function POST(request) {
   try {
     const body = await request.json();
-    console.log("Incoming WhatsApp message:", JSON.stringify(body, null, 2));
+    console.log("Incoming WhatsApp webhook:", JSON.stringify(body, null, 2));
 
-    // Forward the webhook data to Bolt/Supabase function
+    // Extract message details safely
+    const entry = body.entry?.[0];
+    const change = entry?.changes?.[0];
+    const message = change?.value?.messages?.[0];
+
+    if (!message || !message.from || !message.text?.body) {
+      console.warn("Invalid message structure");
+      return new NextResponse("No valid message found", { status: 400 });
+    }
+
+    const payload = {
+      from: message.from,
+      message: message.text.body,
+      messageId: message.id || null,
+    };
+
+    console.log("Forwarding to Supabase:", payload);
+
+    // Forward to your Supabase/Bolt endpoint
     const response = await fetch(
       "https://jhckqsdepgmrsmwwuour.supabase.co/functions/v1/whatsapp-api",
       {
@@ -45,16 +94,19 @@ export async function POST(request) {
           authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpoY2txc2RlcGdtcnNtd3d1b3VyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5MTM4MDAsImV4cCI6MjA3NTQ4OTgwMH0.4YkgiyQITZR_TvV9GzNU-go6F36R0aSIfeVoreftJEc",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
       }
     );
 
+    const result = await response.text();
+
     if (!response.ok) {
-      console.error("Error from Bolt:", await response.text());
+      console.error("Error from Bolt:", result);
       return new NextResponse("Failed to forward to Bolt", { status: 500 });
     }
 
-    return new NextResponse("Forwarded to Bolt successfully", { status: 200 });
+    console.log("Bolt response:", result);
+    return new NextResponse("Forwarded successfully", { status: 200 });
   } catch (error) {
     console.error("Error handling webhook:", error);
     return new NextResponse("Error processing webhook", { status: 500 });
