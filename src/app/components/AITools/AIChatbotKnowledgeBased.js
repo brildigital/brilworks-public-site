@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FileText, Loader2 } from "lucide-react";
 import ChatInterface from "./ChatInterface";
 import PDFUpload from "./PDFUpload";
+import { analyzeDocument } from "../lib/pdfKnowldegebasedTool";
 
 const AIChatbotKnowledgeBased = () => {
   const [currentFile, setCurrentFile] = useState(null);
@@ -39,9 +40,9 @@ const AIChatbotKnowledgeBased = () => {
   return (
     <>
       <div className="min-h-screen bg-navyBlue">
-        <div className="container max-w-[1280px] mx-auto  main-section-padding">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="bg-themeColor p-6">
+        <div className="container max-w-[1280px] mx-auto main-section-padding">
+          <div className="bg-white rounded-xl md:mt-10 mt-20 shadow-lg overflow-hidden">
+            <div className="bg-themeColor md:p-6 p-4">
               <div className="flex items-center gap-3">
                 <FileText className="w-8 h-8 text-white" />
                 <div>
@@ -55,7 +56,7 @@ const AIChatbotKnowledgeBased = () => {
               </div>
             </div>
 
-            <div className={!pdfFile ? "px-6 py-10" : "p-6"}>
+            <div className={!pdfFile ? "px-6 py-10" : "md:p-6 p-4"}>
               {!pdfFile ? (
                 <div className="max-w-2xl mx-auto">
                   <PDFUpload

@@ -23,6 +23,7 @@ const CurrentHeader = () => {
   const specialHeaderPages = [
     "/terms-and-conditions/",
     "/privacy-policy/",
+    "/cabuno-privacy-policy/",
     "/encalve-connect-privacy-policy/",
     "/exora-privacy-policy/",
     "/expenseflow-privacy-policy/",
