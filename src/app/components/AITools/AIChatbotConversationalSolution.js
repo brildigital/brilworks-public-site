@@ -18,7 +18,7 @@ const aiInsights = [
     description:
       "Automate WhatsApp conversations with an AI agent that handles queries, support, and customer interactions in real time.",
     image: "/images/v2/ai-whatsapp-agent.webp",
-    // link: "/ai-tools/ai-whatsapp-agent/",
+    link: "/ai-tools/ai-whatsapp-agent/",
     bg: "bg-[#25D366] text-white",
   },
   {
@@ -30,11 +30,19 @@ const aiInsights = [
     bg: "bg-[#F59E0B] text-white",
   },
   {
-    title: "AI Chatbot (Live Database Chat with SQL and MongoDB)",
+    title: "AI Chatbot (Live Database Chat with SQL)",
     description:
-      "Chat directly with your live databases using AI. Query SQL and MongoDB with natural language and get real-time insights.",
+      "Chat directly with your live databases using AI. Query SQL with natural language and get real-time insights.",
     image: "/images/v2/ai-chatbot-database.webp/",
-    // link: "/ai-tools/ai-chatbot-live-database",
+    link: "https://sql-chat-web.vercel.app/",
+    bg: "bg-sky-300 text-white",
+  },
+  {
+    title: "AI Chatbot (Live Database Chat with MongoDB)",
+    description:
+      "Chat directly with your live databases using AI. Query MongoDB with natural language and get real-time insights.",
+    image: "/images/v2/ai-chatbot-database.webp/",
+    link: "https://mongo-db-chat.vercel.app/",
     bg: "bg-[#10B981] text-white",
   },
 ];
