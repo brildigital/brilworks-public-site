@@ -1,14 +1,13 @@
-"use client";
 import parse from "html-react-parser";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
-const ExoraPrivacyPolicy = ({ data }) => {
+const EncalveConnectPrivacyPolicy = ({ data }) => {
   return (
     <section className="kinderland healthvault mt-[6rem] !mb-8 md:mx-[15px] w-full flex align-middle justify-center">
       <div className="max-w-screen-xl mx-auto md:w-4/5 w-full md:px-0 px-4">
         <div className="pb-4">
           <h1 className="md:!text-[3rem] !text-[2rem]  font-semibold">
-            Exora Privacy Policy
+            Encalve Connect Privacy Policy
           </h1>
         </div>
         {data ? (
@@ -23,4 +22,4 @@ const ExoraPrivacyPolicy = ({ data }) => {
   );
 };
 
-export default ExoraPrivacyPolicy;
+export default EncalveConnectPrivacyPolicy;

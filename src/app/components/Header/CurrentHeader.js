@@ -23,9 +23,16 @@ const CurrentHeader = () => {
   const specialHeaderPages = [
     "/terms-and-conditions/",
     "/privacy-policy/",
+    "/encalve-connect-privacy-policy/",
     "/exora-privacy-policy/",
     "/expenseflow-privacy-policy/",
+    "/expenseflow-terms-conditions/",
+    "/habitrise-privacy-policy/",
+    "/habitrise-terms-and-conditions/",
+    "/healthvault-privacy-policy/",
+    "/kinderland-privacy-policy/",
   ];
+
   const showHeader =
     subpaths.some((base) => pathname?.startsWith(base) && pathname !== base) ||
     specialHeaderPages.includes(pathname || "");

@@ -16,8 +16,11 @@ import {
 import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
+import { useState } from "react";
+import Cal from "@calcom/embed-react";
 
 export default function PrebuiltSolutionsPage() {
+  const [schedule, setSchedule] = useState(false);
   const solutions = [
     {
       icon: Heart,
@@ -634,13 +637,21 @@ export default function PrebuiltSolutionsPage() {
               Get Started Today
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
-            <a
-              href="tel:+1234567890"
+            <button
+              onClick={() => setSchedule(true)}
               className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 transition-all duration-200"
             >
               Schedule a Demo
-            </a>
+            </button>
           </div>
+          {schedule && (
+            <div className="w-full mt-10">
+              <Cal
+                calLink="vikas-singh-bril/free-consultation"
+                config={{ theme: "light" }}
+              />
+            </div>
+          )}
         </div>
       </section>
     </div>
