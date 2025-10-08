@@ -8,7 +8,7 @@ export async function GET(request) {
     const verifyToken = searchParams.get("hub.verify_token");
 
     // Optional: verify the token before responding
-    if (verifyToken !== "rohit") {
+    if (verifyToken !== "brilworks") {
       return new NextResponse("Invalid verify token", { status: 403 });
     }
 
