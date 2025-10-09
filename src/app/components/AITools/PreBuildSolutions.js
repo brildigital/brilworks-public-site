@@ -349,7 +349,9 @@ export default function PrebuiltSolutionsPage() {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={index === 2 ? "lg:col-span-2 w-1/2 mx-auto" : ""}
+                className={
+                  index === 2 ? "lg:col-span-2 lg:w-1/2 w-full mx-auto" : ""
+                }
               >
                 <div
                   className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${
