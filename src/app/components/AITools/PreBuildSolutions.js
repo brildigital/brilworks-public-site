@@ -27,8 +27,7 @@ export default function PrebuiltSolutionsPage() {
     {
       icon: Heart,
       title: "Dating & Matchmaking App",
-      description:
-        "AI-powered matching algorithms with real-time chat, video calls, and advanced privacy controls for modern dating platforms.",
+      description: "Match users with AI-powered compatibility algorithms.",
       category: "Social & Lifestyle",
       pricing: "From $15,000",
       timeline: "4-6 weeks",
@@ -64,7 +63,7 @@ export default function PrebuiltSolutionsPage() {
       icon: Dumbbell,
       title: "Fitness & Wellness App",
       description:
-        "AI-powered white-label fitness and wellness platform designed for gyms, trainers, and individuals to track workouts, nutrition, and overall well-being.",
+        "Personalized fitness plans, habit tracking, and progress dashboards.",
       category: "Health & Fitness",
       pricing: "From $20,000",
       timeline: "6-8 weeks",
@@ -98,9 +97,9 @@ export default function PrebuiltSolutionsPage() {
     },
     {
       icon: Stethoscope,
-      title: "Post-Surgery Patients Care",
+      title: "Post-Surgery Care App",
       description:
-        "White-label digital health platform for comprehensive post-surgery monitoring and care coordination with telemedicine integration.",
+        "Monitor recovery and connect patients with healthcare professionals.",
       category: "Healthcare",
       pricing: "From $25,000",
       timeline: "6-8 weeks",
@@ -135,9 +134,9 @@ export default function PrebuiltSolutionsPage() {
     },
     {
       icon: Car,
-      title: "Taxi & Ride Booking App",
+      title: "Taxi Ride App",
       description:
-        "Complete ride-hailing solution with real-time tracking, multiple payment options, and comprehensive driver management system.",
+        "End-to-end ride management with GPS, payments, and driver analytics.",
       category: "Transportation",
       pricing: "From $20,000",
       timeline: "5-7 weeks",
@@ -171,9 +170,9 @@ export default function PrebuiltSolutionsPage() {
     },
     {
       icon: Building,
-      title: "Enclave (Society Management)",
+      title: "Society Management App",
       description:
-        "Comprehensive platform for residential community management with visitor tracking, facility booking, and automated billing.",
+        "Simplify communication, billing, and security for communities.",
       category: "Property Management",
       pricing: "From $12,000",
       timeline: "3-5 weeks",
