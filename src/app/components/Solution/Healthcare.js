@@ -11,6 +11,7 @@ const MultipleKeyValueWithBG = dynamic(() =>
   import("../Common/MultipleKeyValueWithBG")
 );
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const TypesOfAppWeDevelop = dynamic(() => import("./TypesOfAppWeDevelop"));
 const SolutionEngagementAndHowCanStart = dynamic(() =>
   import("./SolutionEngagementAndHowCanStart")
@@ -203,6 +204,7 @@ const HealthCare = () => {
         title="Our Portfolio"
         buttonText="Work With Us"
       />
+      <HomePageBlogs />
       <SolutionEngagementAndHowCanStart />
       <SolutionContactForm />
       <HealthcareFAQs />

@@ -31,6 +31,7 @@ export default function PrebuiltSolutionsPage() {
       category: "Social & Lifestyle",
       pricing: "From $15,000",
       timeline: "4-6 weeks",
+      videoLink: "https://youtube.com/shorts/lXJ-9EghV2c",
       features: [
         "Smart AI Matching Algorithm",
         "Real-time In-app Messaging",
@@ -67,6 +68,7 @@ export default function PrebuiltSolutionsPage() {
       category: "Health & Fitness",
       pricing: "From $20,000",
       timeline: "6-8 weeks",
+      videoLink: "https://youtube.com/shorts/6OsaGiDJPx0",
       features: [
         "Personalized Workout Plans",
         "Diet & Nutrition Tracking",
@@ -176,6 +178,7 @@ export default function PrebuiltSolutionsPage() {
       category: "Property Management",
       pricing: "From $12,000",
       timeline: "3-5 weeks",
+      videoLink: "https://youtu.be/g5gnqXlJ7Hs",
       features: [
         "Visitor Management System",
         "Automated Billing & Payments",
@@ -493,15 +496,17 @@ export default function PrebuiltSolutionsPage() {
                       </div>
                     </div>
 
-                    <button
-                      className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
+                    <Link
+                      href={solution.videoLink || "#"}
+                      target={solution.videoLink ? "_blank" : "_self"}
+                      className={`w-full py-3 flex items-center justify-center rounded-lg font-semibold transition-all duration-200 ${
                         solution.featured
                           ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-lg hover:scale-[1.02]"
                           : "bg-slate-900 text-white hover:bg-slate-800"
                       }`}
                     >
                       View Demo
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -65,25 +65,25 @@
   ],
   "/ai-ml-development-services/": [
     {
-      "name": "6 Best Practices For Using AI for Database Querying",
-      "slug": "ai-for-database-querying",
+      "name": "The Roadmap to Successful AI Implementation",
+      "slug": "roadmap-to-successful-ai-implementation",
       "content": {
         "Priority": "",
-        "Published": "2025-02-22 20:05",
+        "Published": "2024-09-11 20:05",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/a3e74073dc/mobile-banner-image-6-best-practices-for-using-ai-for-database-querying.webp",
-          "alt": "Mobile Banner Image - 6 Best Practices For Using AI for Database Querying"
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/821f4d5d85_banner-image-the-roadmap-to-successful-ai-implementation-1_1x.webp",
+          "alt": "banner image the roadmap to successful ai implementation"
         }
       }
     },
     {
-      "name": "How Generative AI transforms Supply Chain Operations",
-      "slug": "how-generative-ai-transforms-supply-chain-operations",
+      "name": "AI for Business Strategy: A Guide to Implementation and Benefits",
+      "slug": "ai-for-business-strategy",
       "content": {
         "Priority": "",
-        "Published": "2024-10-16 17:15",
+        "Published": "2024-04-08 17:15",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/ff9288e7ed/banner-image-how-generative-ai-transforms-supply-chain-operations-1.webp",
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/d33a6d2051_ai-for-business-strategy-mobile-banner.webp",
           "alt": ""
         }
       }
@@ -440,24 +440,24 @@
   ],
   "/hire-reactjs-developer/": [
     {
+      "name": "Scaling ReactJS Applications Effortlessly: A Practical Guide",
+      "slug": "scaling-reactjs-applications",
+      "content": {
+        "Priority": "",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/3febdbdf28_2-banner-image-scaling-reactjs-applications-effortlessly-a-practical-guide.webp",
+          "alt": "Banner-Scaling ReactJS Applications"
+        }
+      }
+    },
+    {
       "name": "Tips to Optimize the Performance of your React.js App",
       "slug": "optimize-performance-for-reactjs-apps",
       "content": {
         "Priority": "",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/53a9e4e235/thumbnail-react-perfromance-optimization.png",
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/53a9e4e235_thumbnail-react-perfromance-optimization.png",
           "alt": "Banner-React perfromance optimization"
-        }
-      }
-    },
-    {
-      "name": "How to Choose the Right Framework: React vs Angular",
-      "slug": "react-vs-angular",
-      "content": {
-        "Priority": "",
-        "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/1718x884/5dbe4664e9/thumbnail-react-vs-angular.webp",
-          "alt": "Banner-React Vs Angular"
         }
       }
     },
@@ -556,12 +556,12 @@
       }
     },
     {
-      "name": "Top Features Every Successful Mobile App Must Have",
-      "slug": "top-features-for-mobile-app",
+      "name": "Best React Native UI Libraries for Developers",
+      "slug": "best-react-native-ui-libraries",
       "content": {
         "Priority": "",
         "mobile_banner": {
-          "filename": "https://a.storyblok.com/f/219851/550x283/6c79c26179/banner-image-top-features-every-successful-mobile-app-must-have-1.webp",
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/88ca01a05a_2-best-react-native-ui-libraries-developers-should-know-mobile.webp",
           "alt": "Banner Image - Top Features Every Successful Mobile App Must Have"
         }
       }
@@ -878,6 +878,30 @@
         "mobile_banner": {
           "filename": "https://a.storyblok.com/f/219851/1100x566/ffa8872c57/2-banner-image-white-label-app-development-cost-a-straightforward-guide-1.webp",
           "alt": "White label app development cost: A Straightforward Guide"
+        }
+      }
+    }
+  ],
+  "/industry/healthcare-software-development/": [
+    {
+      "name": "Healthcare Mobile App Development Best Practices",
+      "slug": "healthcare-mobile-app-development-best-practices",
+      "content": {
+        "Priority": "",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/d73e884184_mobile-banner-image-healthcare-mobile-app-development-best-practices-1.webp",
+          "alt": "Mobile Banner - Healthcare Mobile App Development"
+        }
+      }
+    },
+    {
+      "name": "Top 6 Healthcare Trends for 2025 and Beyond",
+      "slug": "healthcare-trends-to-watch",
+      "content": {
+        "Priority": "",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/3f6ce9efc4_thumbnail-healthcare-trends.webp",
+          "alt": "Top 6 Healthcare Trends for 2025 - image"
         }
       }
     }

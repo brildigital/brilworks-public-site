@@ -24,6 +24,7 @@ const CurrentHeader = () => {
     "/terms-and-conditions/",
     "/privacy-policy/",
     "/cabuno-privacy-policy/",
+    "/circle-up-privacy-policy/",
     "/encalve-connect-privacy-policy/",
     "/exora-privacy-policy/",
     "/expenseflow-privacy-policy/",
@@ -32,6 +33,7 @@ const CurrentHeader = () => {
     "/habitrise-terms-and-conditions/",
     "/healthvault-privacy-policy/",
     "/kinderland-privacy-policy/",
+    "/mindsync-privacy-policy/",
   ];
 
   const showHeader =
