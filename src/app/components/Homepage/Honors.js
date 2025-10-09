@@ -34,7 +34,7 @@ const Honors = () => {
 
   const slidesData = [
     {
-      link: "https://www.goodfirms.co/company/brilworks-software-llp",
+      // link: "",
       imgSrc: "/images/global-leader-top-10-2026.svg",
       imgAlt: "global-leader",
       text: "Top 10 Agency 2026",
@@ -52,7 +52,7 @@ const Honors = () => {
       text: "Adalo Expert No-Code",
     },
     {
-      link: "https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd",
+      // link: "https://partners.amazonaws.com/partners/0018a00001qmc5PAAQ/Brilworks%20Technology%20Pvt%20Ltd",
       imgSrc: "/images/select-tier-service-partner-light-1.png",
       imgAlt: "AWS Partner",
       imgClass: "w-[120px]",
@@ -172,9 +172,9 @@ const Honors = () => {
         <Swiper
           modules={[Pagination, Autoplay, Virtual]}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 500 }}
+          autoplay={{ delay: 1000 }}
           loopfillgroupwithblank
-          speed={1500}
+          speed={2000}
           loop={true}
           virtual
           breakpoints={{

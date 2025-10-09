@@ -722,22 +722,22 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/cloud-service-cost-estimator/",
     lastmod: "2025-09-26T15:22:34.531Z",
   },
-  // {
-  //   loc: "https://www.brilworks.com/tools/saas-profitability-calculator/",
-  //   lastmod: "2025-09-29T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/customer-acquisition-cost-estimator/",
-  //   lastmod: "2025-09-29T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/lifetime-value-calculator/",
-  //   lastmod: "2025-09-30T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/automation-saving-estimator/",
-  //   lastmod: "2025-09-30T15:22:34.531Z",
-  // },
+  {
+    loc: "https://www.brilworks.com/tools/saas-profitability-calculator/",
+    lastmod: "2025-09-29T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/customer-acquisition-cost-estimator/",
+    lastmod: "2025-09-29T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/lifetime-value-calculator/",
+    lastmod: "2025-09-30T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/automation-saving-estimator/",
+    lastmod: "2025-09-30T15:22:34.531Z",
+  },
 
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
