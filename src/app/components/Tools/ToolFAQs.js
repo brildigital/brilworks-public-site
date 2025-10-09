@@ -622,18 +622,17 @@ const saasProfitabilityCalculatorFaqData = {
   queAns: [
     {
       question: "What is a good LTV:CAC ratio for SaaS companies?",
-      answer:
-        "A healthy LTV:CAC ratio is typically 3:1 or higher. This means your customer lifetime value should be at least 3 times your customer acquisition cost. Ratios above 5:1 are considered excellent.",
+      answer: "A ratio above 3:1 is considered healthy and sustainable.",
     },
     {
-      question: "How do I calculate my SaaS churn rate?",
+      question: "How do I calculate churn rate?",
       answer:
-        "Monthly churn rate = (Customers lost during month / Customers at start of month) × 100. For annual churn, use the same formula with annual data. A good monthly churn rate is typically below 5% for B2B SaaS.",
+        "Divide the number of customers lost by the total number at the start of the month.",
     },
     {
-      question: "What's considered a good profit margin for SaaS?",
+      question: "What’s a good profit margin for SaaS?",
       answer:
-        "Mature SaaS companies typically aim for 20-30% profit margins. Early-stage companies may have lower margins as they invest in growth. Anything above 20% is considered healthy for established SaaS businesses.",
+        "Margins above 70% are strong, but it depends on your business model.",
     },
     {
       question: "How accurate are these calculations?",
@@ -641,9 +640,9 @@ const saasProfitabilityCalculatorFaqData = {
         "Our calculator uses industry-standard formulas and benchmarks. However, results should be used as estimates and starting points for deeper financial analysis. Always consult with financial professionals for critical business decisions.",
     },
     {
-      question: "Can I use this for different SaaS business models?",
+      question: "Can I use this for different SaaS models?",
       answer:
-        "Yes! The calculator works for B2B SaaS, B2C SaaS, freemium models, and various pricing structures. Just adjust the inputs to match your specific business model and customer segments.",
+        "Yes. this calculator supports B2B, B2C, freemium, and enterprise SaaS.",
     },
   ],
 };
@@ -652,19 +651,19 @@ const customerAcquisitionCostEstimatorFaqData = {
     "Get answers to common questions about Customer Acquisition Cost calculations",
   queAns: [
     {
-      question: "What is Customer Acquisition Cost (CAC)?",
+      question: "What is a customer acquisition cost calculator?",
       answer:
-        "Customer Acquisition Cost (CAC) is the total cost of acquiring a new customer, including all marketing and sales expenses. It's calculated by dividing your total acquisition costs by the number of new customers gained in a specific period.",
+        "It’s a tool that helps you estimate how much you spend to acquire each new customer.",
     },
     {
-      question: "How accurate is the CAC calculator?",
+      question: "How accurate is the customer acquisition cost calculator? ",
       answer:
-        "Our calculator provides highly accurate estimates based on your input data and industry benchmarks. The keyword-based adjustments help refine calculations based on your specific marketing channels and strategies.",
+        "Our calculator delivers up to 95% accuracy based on your input data and industry benchmarks.",
     },
     {
-      question: "What marketing costs should I include in CAC calculation?",
+      question: "What marketing costs should I include? ",
       answer:
-        "Include all marketing and sales costs: advertising spend, content creation, marketing tools and software, sales team salaries, marketing team salaries, and any other costs directly related to customer acquisition.",
+        "Include all advertising, content, staff, and tool costs relevant to your acquisition efforts.",
     },
     {
       question: "How does the keyword-based estimation work?",
@@ -682,9 +681,9 @@ const customerAcquisitionCostEstimatorFaqData = {
         "Calculate CAC monthly or quarterly to track trends and optimization efforts. More frequent calculations help you quickly identify and address issues with your acquisition strategies.",
     },
     {
-      question: "Can I calculate CAC for different customer segments?",
+      question: "Can I calculate CAC for different customer segments? ",
       answer:
-        "Yes! You should calculate CAC for different segments, channels, and time periods. This helps identify your most cost-effective acquisition methods and customer types.",
+        "Yes, our customer acquisition cost calculator supports segmentation by demographics and channels.",
     },
     {
       question: "What if my CAC is higher than the industry benchmark?",
@@ -698,19 +697,20 @@ const calculateCustomerLifetimeFaqData = {
     "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
   queAns: [
     {
-      question: "What is Customer Lifetime Value (LTV)?",
+      question:
+        "How can I use a customer lifetime value calculator for SaaS businesses?",
       answer:
-        "Customer Lifetime Value (LTV) is the total amount of money a customer is expected to spend on your business during their entire relationship with your company. It's a crucial metric that helps businesses understand the long-term value of acquiring and retaining customers.",
+        "Our SaaS LTV calculator helps you estimate customer value over time. By factoring in churn rate, retention, and CAC, you can use our ltv to cac ratio calculator to make smarter decisions and improve profitability.",
     },
     {
-      question: "How is LTV calculated?",
+      question: "What’s the best way to estimate LTV for mobile apps?",
       answer:
-        "The basic LTV formula is: LTV = (Average Order Value × Purchase Frequency × Customer Lifespan). However, more sophisticated calculations may include factors like retention rates, discount rates, and acquisition costs to provide a more accurate picture.",
+        "Use our ltv calculator for app to input user behavior metrics, retention rates, and monetization models. It’s ideal for freemium, subscription, and ad-based apps.",
     },
     {
-      question: "Why is LTV important for my business?",
+      question: "Why is LTV important for growth strategy?",
       answer:
-        "LTV helps you determine how much you can spend on customer acquisition, identify your most valuable customer segments, optimize marketing campaigns, improve customer retention strategies, and make informed decisions about product development and pricing.",
+        "Knowing your LTV helps you allocate marketing budgets efficiently, improve customer retention, and scale profitably.",
     },
     {
       question: "What's a good LTV to CAC ratio?",

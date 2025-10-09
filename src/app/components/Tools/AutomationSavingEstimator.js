@@ -119,15 +119,15 @@ const AutomationSavingEstimator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your&nbsp;
+            Calculate Your Process&nbsp;
             <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Automation Savings
+              Automation ROI
             </span>
           </>
         }
         buttonText="Calculate Saving"
-        description="Discover how much time and money you can save by automating repetitive tasks. Get precise ROI calculations and implementation insights for your business."
+        description="Discover how much time and money your business can save by automating repetitive tasks. Our intelligent estimator delivers precise process automation ROI insights, helping you make smarter decisions and accelerate digital transformation."
         imageSrc="/images/v2/automation-savings-banner.webp"
         statsGird={[
           { value: "5K+", label: "Trusted by Companies" },

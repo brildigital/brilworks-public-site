@@ -500,7 +500,7 @@ const cloudServiceCostEstimatorSteps = {
   ],
 };
 const saasProfitabilityCalculatorSteps = {
-  title: "How to Calculate SaaS Profitability",
+  title: "How It Works",
   description:
     "Follow these simple steps to get comprehensive insights into your SaaS business profitability",
   listData: [
@@ -508,38 +508,36 @@ const saasProfitabilityCalculatorSteps = {
       icon: DollarSign,
       title: "Enter Revenue Data",
       description:
-        "Input your monthly recurring revenue and key financial metrics",
+        "Input your monthly recurring revenue and key financial figures",
     },
     {
       icon: Users,
-      title: "Customer Metrics",
+      title: "Add Customer Metrics",
       description:
-        "Add customer acquisition cost, lifetime value, and churn rate",
+        "Include customer acquisition cost (CAC), lifetime value (LTV), and churn rate",
     },
     {
       icon: BarChart3,
-      title: "Operating Costs",
-      description:
-        "Include your gross margin percentage and operating expenses",
+      title: "Include Operating Costs",
+      description: "Add gross margin and monthly operating expenses",
     },
     {
       icon: Target,
-      title: "Get Results",
+      title: "View Your Results",
       description:
-        "Receive detailed profitability analysis and recommendations",
+        "Instantly receive a detailed profitability report with growth projections",
     },
   ],
 };
 const customerAcquisitionCostEstimatorSteps = {
-  title: "How to Calculate Customer Acquisition Cost",
+  title: "How to Calculate CAC",
   description:
-    "Follow these simple steps to accurately calculate your CAC and make informed marketing decisions",
+    "Follow these simple steps using our customer acquisition cost calculator to accurately estimate your CAC and improve your marketing strategy:",
   listData: [
     {
       icon: DollarSign,
       title: "Calculate Total Marketing Spend",
-      description:
-        "Sum up all marketing expenses including advertising, content creation, staff costs, and tools for a specific period.",
+      description: "Include all advertising, content, staff, and tool costs.",
       details: [
         "Paid advertising costs",
         "Content creation expenses",
@@ -550,8 +548,7 @@ const customerAcquisitionCostEstimatorSteps = {
     {
       icon: Users,
       title: "Count New Customers Acquired",
-      description:
-        "Identify the total number of new customers gained during the same time period as your marketing spend.",
+      description: "Track first-time buyers across all channels.",
       details: [
         "First-time buyers only",
         "Exclude returning customers",
@@ -563,7 +560,7 @@ const customerAcquisitionCostEstimatorSteps = {
       icon: Calculator,
       title: "Apply the CAC Formula",
       description:
-        "Divide your total marketing spend by the number of new customers acquired to get your Customer Acquisition Cost.",
+        "Use our customer acquisition cost calculator to divide spend by new customers.",
       details: [
         "CAC = Total Marketing Spend ÷ New Customers",
         "Use same time period for both metrics",
@@ -575,7 +572,7 @@ const customerAcquisitionCostEstimatorSteps = {
       icon: TrendingUp,
       title: "Analyze and Optimize",
       description:
-        "Compare your CAC against industry benchmarks and customer lifetime value to optimize your marketing strategy.",
+        "Compare CAC with industry benchmarks and customer lifetime value.",
       details: [
         "Compare with CLV ratio",
         "Benchmark against competitors",
@@ -586,32 +583,31 @@ const customerAcquisitionCostEstimatorSteps = {
   ],
 };
 const calculateCustomerLifetimeSteps = {
-  title: "How to Calculate LTV in 4 Simple Steps",
-  description:
-    "Follow our systematic approach to accurately determine your customer lifetime value and make informed business decisions.",
+  title: "How to Use the LTV Calculator",
+  description: "Follow these four simple steps to get accurate insights:",
   listData: [
     {
       title: "Gather Customer Data",
       description:
-        "Collect information about average order value, purchase frequency, and customer behavior patterns.",
+        "Input your average order value, purchase frequency, and customer lifespan.",
       icon: Users,
     },
     {
       title: "Calculate Base Metrics",
       description:
-        "Multiply average order value by purchase frequency and customer lifespan period.",
+        "Multiply average order value by purchase frequency and lifespan.",
       icon: Calculator,
     },
     {
       title: "Apply Retention Factors",
       description:
-        "Adjust calculations based on customer retention rates and churn patterns.",
+        "Adjust for churn and retention rates to refine your ltv calculator for app or SaaS model.",
       icon: TrendingUp,
     },
     {
       title: "Analyze Results",
       description:
-        "Compare LTV to acquisition costs and use insights to optimize your marketing strategy.",
+        "Use our ltv to cac ratio calculator to compare LTV with acquisition costs and optimize your ROI.",
       icon: BarChart3,
     },
   ],
@@ -624,25 +620,25 @@ const automationSavingEstimatorSteps = {
     {
       title: "Identify Processes",
       description:
-        "Analyze current manual processes and identify repetitive tasks that consume significant time and resources.",
+        "Analyze manual workflows and pinpoint tasks that consume excessive time and resources.",
       icon: Target,
     },
     {
       title: "Gather Data",
       description:
-        "Collect metrics on time spent, employee costs, task frequency, and current error rates for baseline measurement.",
+        "Collect key metrics: employee costs, task frequency, time spent, and error rates.",
       icon: BarChart3,
     },
     {
-      title: "Calculate Potential",
+      title: "Estimate ROI",
       description:
-        "Estimate time savings, cost reductions, and efficiency gains from implementing automation solutions.",
+        "Use our calculator to determine your process automation ROI based on time saved, cost reduction, and productivity gains.",
       icon: Calculator,
     },
     {
       title: "Plan Implementation",
       description:
-        "Develop implementation timeline, budget requirements, and ROI projections for stakeholder approval.",
+        "Build a roadmap with budget estimates, timelines, and stakeholder-ready ROI projections.",
       icon: Workflow,
     },
   ],

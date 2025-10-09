@@ -143,7 +143,7 @@ const SaaSProfitabilityCalculator = () => {
           </>
         }
         buttonText="Calculate Now"
-        description="Calculate your SaaS profitability, LTV:CAC ratio, and growth metrics instantly. Make data-driven decisions to scale your business effectively."
+        description="Calculate your LTV:CAC ratio, churn rate, and overall SaaS profitability in seconds. This free tool helps subscription-based businesses make smarter financial decisions using real-time metrics."
         imageSrc="/images/v2/saas-profitability-banner.webp"
         authority={[
           "Trusted by 10K+ SaaS companies",

@@ -2,13 +2,13 @@ import React from "react";
 import LifetimeValueCalculator from "@/app/components/Tools/LifetimeValueCalculator";
 
 export const metadata = {
-  title: "Lifetime Value (LTV) Calculator",
+  title: "Customer Lifetime Value Calculator | SaaS LTV & CAC Estimator Tool",
   description:
-    "Calculate your customer lifetime value instantly. Estimate long-term revenue, retention, and profitability to plan smarter growth and maximize ROI.",
+    "Calculate customer lifetime value (LTV) with our advanced SaaS LTV calculator. Estimate LTV to CAC ratio, app LTV, and retention metrics to optimize your growth strategy.",
   openGraph: {
-    title: "Lifetime Value (LTV) Calculator",
+    title: "Customer Lifetime Value Calculator | SaaS LTV & CAC Estimator Tool",
     description:
-      "Calculate your customer lifetime value instantly. Estimate long-term revenue, retention, and profitability to plan smarter growth and maximize ROI.",
+      "Calculate customer lifetime value (LTV) with our advanced SaaS LTV calculator. Estimate LTV to CAC ratio, app LTV, and retention metrics to optimize your growth strategy.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/lifetime-value-calculator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

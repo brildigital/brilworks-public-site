@@ -2,13 +2,13 @@ import React from "react";
 import CustomerAcquisitionCostEstimator from "@/app/components/Tools/CustomerAcquisitionCostEstimator";
 
 export const metadata = {
-  title: "Customer Acquisition Cost (CAC) Estimator",
+  title: "Customer Acquisition Cost Calculator | Brilworks CAC Estimator",
   description:
-    "Calculate your customer acquisition cost instantly. Estimate marketing spend, conversion rates, and ROI to plan smarter growth and improve your CAC efficiency.",
+    "Use Brilworks’ customer acquisition cost calculator to estimate CAC with 95% accuracy. Optimize your marketing spend and boost ROI across all channels.",
   openGraph: {
-    title: "Customer Acquisition Cost (CAC) Estimator",
+    title: "Customer Acquisition Cost Calculator | Brilworks CAC Estimator",
     description:
-      "Calculate your customer acquisition cost instantly. Estimate marketing spend, conversion rates, and ROI to plan smarter growth and improve your CAC efficiency.",
+      "Use Brilworks’ customer acquisition cost calculator to estimate CAC with 95% accuracy. Optimize your marketing spend and boost ROI across all channels.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/customer-acquisition-cost-estimator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

@@ -920,7 +920,7 @@ const cloudServiceCostEstimatorFeatures = {
   ],
 };
 const saasProfitabilityCalculatorFeatures = {
-  title: "Powerful Features",
+  title: "Why Use This Tool?",
   description:
     "Everything you need to analyze and optimize your SaaS profitability",
   listData: [
@@ -939,9 +939,8 @@ const saasProfitabilityCalculatorFeatures = {
     },
     {
       icon: Shield,
-      title: "Accurate Metrics",
-      description:
-        "Industry-standard calculations for LTV:CAC, churn impact, and more",
+      title: "Secure & Private:",
+      description: "Your data stays with you. No storage, no sharing",
       color: "bg-purple-100 text-purple-600",
     },
     {
@@ -952,14 +951,14 @@ const saasProfitabilityCalculatorFeatures = {
     },
     {
       icon: Clock,
-      title: "Quick Analysis",
-      description: "Get comprehensive analysis in seconds, not hours",
+      title: "Instant Results",
+      description: "No waiting. Get your analysis immediately",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Zap,
       title: "Actionable Insights",
-      description: "Receive specific recommendations to improve profitability",
+      description: "Receive tailored recommendations to improve profitability",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
@@ -1077,7 +1076,7 @@ const calculateCustomerLifetimeFeatures = {
   ],
 };
 const automationSavingEstimatorFeatures = {
-  title: "Advanced Features for Precise Automation Analysis",
+  title: "Why Use This Tool?",
   description:
     "Our comprehensive calculator provides detailed insights and projections to help you make informed decisions about automation investments.",
   listData: [
@@ -1085,14 +1084,14 @@ const automationSavingEstimatorFeatures = {
       icon: Bot,
       title: "AI-Powered Analysis",
       description:
-        "Advanced algorithms analyze your processes and provide intelligent automation recommendations.",
+        "Advanced algorithms identify high-impact automation opportunities tailored to your workflows.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Gauge,
-      title: "Real-time ROI Tracking",
+      title: "Real-Time ROI Tracking",
       description:
-        "Monitor your automation investments with live ROI calculations and performance metrics.",
+        "Instantly monitor your process automation ROI with dynamic performance metrics.",
       color: "bg-green-100 text-green-600",
     },
     {
@@ -1111,16 +1110,16 @@ const automationSavingEstimatorFeatures = {
     },
     {
       icon: TrendingUp,
-      title: "Scalability Projections",
+      title: "Scalability Forecasts",
       description:
-        "Forecast savings growth as your business scales and automation matures over time.",
+        "Project long-term savings as automation expands across departments and systems.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
       description:
-        "Comprehensive risk analysis including implementation challenges and mitigation strategies.",
+        "Evaluate implementation challenges and mitigation strategies to ensure smooth adoption.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],

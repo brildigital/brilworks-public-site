@@ -108,15 +108,15 @@ const LifetimeValueCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Customer&nbsp;
-            <br className="md:block hidden" />
+            Calculate &nbsp;
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Lifetime Value
+              Lifetime Value&nbsp;
             </span>
+            Calculator for SaaS
           </>
         }
         buttonText="Start Calculating"
-        description="Unlock the true value of your customers with our advanced LTV calculator. Make data-driven decisions and optimize your marketing ROI with precision."
+        description="Unlock the full potential of your business with our customer lifetime value calculator. Whether you're running a SaaS platform, mobile app, or e-commerce store, understanding your LTV is key to sustainable growth."
         imageSrc="/images/v2/customer-lifetime-value-banner.webp"
         statsGird={[
           { value: "10K+", label: "Trusted by Businesses" },

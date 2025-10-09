@@ -80,15 +80,6 @@ const CustomerAcquisitionCostEstimator = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
@@ -108,12 +99,13 @@ const CustomerAcquisitionCostEstimator = () => {
             Customer Acquisition&nbsp;
             <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-themeSecondary">
-              Cost Estimator
+              Cost Estimator&nbsp;
             </span>
+            for Smarter Marketing Decisions
           </>
         }
         buttonText="Calculate you CAS Now"
-        description="Calculate your Customer Acquisition Cost with precision. Make data-driven decisions to optimize your marketing spend and maximize ROI across all channels."
+        description="Calculate Your Customer Acquisition Cost with Precision. Use our customer acquisition cost calculator to make data-driven decisions, reduce marketing waste, and maximize ROI across every channel. Trusted by 10k+ users with a 95% accuracy rate."
         imageSrc="/images/v2/cac-estimator-banner.webp"
         highlights={[
           {
