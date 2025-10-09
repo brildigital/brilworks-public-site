@@ -4,17 +4,12 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   Award,
-  Calculator,
-  CheckCircle,
-  Code,
   Database,
   Loader2,
   Search,
   Sparkles,
   Star,
-  TrendingUp,
   Users,
-  Zap,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
@@ -82,15 +77,6 @@ const DatabaseSelectorTool = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
@@ -115,7 +101,7 @@ const DatabaseSelectorTool = () => {
           </>
         }
         buttonText="Start My Recommendation"
-        description="Stop guessing and start building with confidence. Our intelligent tool analyzes your project requirements and recommends the optimal database solution in seconds."
+        description="Stop guessing and start building with confidence. Our intelligent tool analyzes your project requirements and recommends the best database for startups, SaaS applications, mobile apps, and web applications—in seconds."
         imageSrc="/images/v2/database-selector-banner.webp"
         highlights={[
           {

@@ -2,13 +2,15 @@ import React from "react";
 import CrossPlatformVsNativeAnalyzer from "@/app/components/Tools/CrossPlatformVsNativeAnalyzer";
 
 export const metadata = {
-  title: "Cross-Platform vs Native Analyzer",
+  title:
+    "Cross-Platform vs Native Mobile App Analyzer | Personalized Development Recommendations",
   description:
-    "Compare cross-platform and native development instantly. Analyze cost, performance, and timeline to choose the best mobile app strategy for your project.",
+    "Get data-driven insights for your mobile app development. Compare native, cross-platform, and hybrid approaches with personalized recommendations based on project requirements, budget, timeline, and performance needs.",
   openGraph: {
-    title: "Cross-Platform vs Native Analyzer",
+    title:
+      "Cross-Platform vs Native Mobile App Analyzer | Personalized Development Recommendations",
     description:
-      "Compare cross-platform and native development instantly. Analyze cost, performance, and timeline to choose the best mobile app strategy for your project.",
+      "Get data-driven insights for your mobile app development. Compare native, cross-platform, and hybrid approaches with personalized recommendations based on project requirements, budget, timeline, and performance needs.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/cross-platform-vs-native-analyzer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

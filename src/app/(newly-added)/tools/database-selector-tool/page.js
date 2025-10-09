@@ -3,13 +3,15 @@ import React from "react";
 import DatabaseSelectorTool from "@/app/components/Tools/DatabaseSelectorTool";
 
 export const metadata = {
-  title: "Tech Stack Recommender",
+  title:
+    "Database Selector Tool | Best Database for Startups, SaaS, Mobile & Web Apps",
   description:
-    "Choose the right database for your application. Compare SQL and NoSQL options, scalability, and performance to find the perfect fit for your project needs.",
+    "Use our database selector tool to find the best database for startups, SaaS platforms, mobile apps, and web applications. Fast, accurate, and tailored to your project needs.",
   openGraph: {
-    title: "Tech Stack Recommender",
+    title:
+      "Database Selector Tool | Best Database for Startups, SaaS, Mobile & Web Apps",
     description:
-      "Choose the right database for your application. Compare SQL and NoSQL options, scalability, and performance to find the perfect fit for your project needs.",
+      "Use our database selector tool to find the best database for startups, SaaS platforms, mobile apps, and web applications. Fast, accurate, and tailored to your project needs.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/database-selector-tool/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

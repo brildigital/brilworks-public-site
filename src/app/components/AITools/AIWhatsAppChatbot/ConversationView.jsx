@@ -153,30 +153,31 @@ export default function ConversationView() {
 
     setIsSending(true);
     try {
-      const supabaseUrl = "https://jhckqsdepgmrsmwwuour.supabase.co";
-      const response = await fetch(
-        `${supabaseUrl}/functions/v1/send-whatsapp`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            conversationId: selectedConversationId,
-            message: replyMessage,
-          }),
-        }
-      );
-      console.log("response+++", response);
+      const response = await fetch("/api/send-whatsapp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          conversationId: selectedConversationId,
+          message: replyMessage,
+        }),
+      });
+
+      console.log("WhatsApp API Response:", response);
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.json();
+        console.error("API Error:", errorData);
+        throw new Error(errorData.error || "Failed to send message");
       }
 
+      const result = await response.json();
+      console.log("Message sent successfully:", result);
       setReplyMessage("");
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again.");
+      alert(`Failed to send message: ${error.message}`);
     } finally {
       setIsSending(false);
     }
