@@ -390,88 +390,91 @@ const databaseSelectorToolSteps = {
       icon: FileText,
       title: "Describe Your Project",
       description:
-        "Tell us about your project type, data volume, scalability needs, and team expertise.",
+        "Select your project type and provide details like data volume, scalability needs, and team expertise.",
     },
     {
       icon: Brain,
       title: "AI Analysis",
-      description:
-        "Our intelligent algorithm analyzes your requirements against database capabilities.",
+      description: (
+        <>
+          Our algorithm compares your inputs with proven database capabilities,
+          including <b>PostgreSQL, MongoDB,</b> and <b>MySQL.</b>
+        </>
+      ),
     },
     {
       icon: Zap,
       title: "Get Recommendations",
       description:
-        "Receive ranked database suggestions with detailed pros, cons, and use cases.",
+        "Receive ranked suggestions tailored to your use case, with pros, cons, and ideal scenarios.",
     },
   ],
 };
 const crossPlatformVsNativeAnalyzerSteps = {
   title: "How It Works",
   description:
-    "Our intelligent analyzer guides you through a systematic process to determine the best development approach for your mobile app",
+    "Our intelligent mobile app development analyzer guides you through a systematic process to determine the best development approach for your app.",
   listData: [
     {
       icon: Target,
       title: "Define Your Requirements",
       description:
-        "Specify your project type, target platforms, and core requirements",
+        "Specify your project type, target platforms, and core app requirements.",
     },
     {
       icon: Clock,
       title: "Set Budget & Timeline",
-      description:
-        "Input your budget constraints and development timeline expectations",
+      description: "Input your budget constraints and development timeline.",
     },
     {
       icon: Zap,
       title: "Analyze Performance Needs",
       description:
-        "Determine if your app requires high performance or standard functionality",
+        "Determine if your app requires high performance or standard functionality.",
     },
     {
       icon: Lightbulb,
       title: "Get Recommendation",
       description:
-        "Receive a detailed analysis with reasoning and implementation guidance",
+        "Receive a detailed analysis with reasoning and implementation guidance.",
     },
   ],
 };
 const apiIntegrationFeasibiltyCheckerSteps = {
   title: "How It Works",
   description:
-    "Follow these simple steps to get a comprehensive feasibility assessment for your API integration project",
+    "Follow these simple steps to perform a comprehensive API integration feasibility assessment:",
   listData: [
     {
       icon: Code,
       title: "Project Details",
       description:
-        "Provide information about your API type, complexity, and integration requirements",
+        "Provide your API type, complexity, and integration requirements.",
     },
     {
       icon: Users,
       title: "Resource Assessment",
       description:
-        "Tell us about your timeline, budget constraints, and team expertise level",
+        "Enter your timeline, budget constraints, and team expertise.",
     },
     {
       icon: Cpu,
       title: "AI Analysis",
       description:
-        "Our advanced algorithm analyzes your inputs against thousands of successful projects",
+        "Our advanced algorithm compares your inputs against thousands of successful API projects.",
     },
     {
       icon: BarChart3,
       title: "Get Results",
       description:
-        "Receive a detailed feasibility score with personalized recommendations and timeline estimates",
+        "Receive a detailed feasibility score with personalized recommendations, timeline estimates, and best practices.",
     },
   ],
 };
 const cloudServiceCostEstimatorSteps = {
   title: "How to Calculate Cloud Costs",
   description:
-    "Follow these simple steps to get accurate cost estimates for your cloud infrastructure needs.",
+    "Follow these simple steps to get precise cost estimates for your cloud services:",
   listData: [
     {
       icon: Cloud,
@@ -486,12 +489,13 @@ const cloudServiceCostEstimatorSteps = {
     {
       icon: BarChart3,
       title: "Add Description",
-      description: "Describe your use case for more accurate pricing",
+      description: "Describe your use case to improve pricing accuracy.",
     },
     {
       icon: DollarSign,
       title: "Get Estimate",
-      description: "Receive your detailed cost breakdown and recommendations",
+      description:
+        "Receive a detailed cost breakdown and recommendations for optimization.",
     },
   ],
 };

@@ -80,15 +80,6 @@ const CrossPlatformVsNativeAnalyzer = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
@@ -107,12 +98,12 @@ const CrossPlatformVsNativeAnalyzer = () => {
           <>
             Cross-Platform vs Native
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              &nbsp;Analyzer
+              &nbsp;Mobile App Analyzer
             </span>
           </>
         }
         buttonText="Start Analysis"
-        description="Make data-driven decisions for your mobile app development. Get personalized recommendations based on your project requirements, budget, and timeline."
+        description="Make data-driven decisions for mobile app development. Get personalized recommendations based on your project requirements, budget, and timeline."
         imageSrc="/images/v2/cross-platform-vs-native-env-banner.webp"
         highlights={[
           {

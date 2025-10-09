@@ -69,15 +69,6 @@ const CloudServiceCostEstimator = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
@@ -102,12 +93,12 @@ const CloudServiceCostEstimator = () => {
           </>
         }
         buttonText="Start Calculating"
-        description="Get accurate, real-time cost estimates for your cloud infrastructure. Compare providers, optimize spending, and make informed decisions with our intelligent cost calculator."
+        description="Get accurate, real-time estimates for your cloud infrastructure costs with our cloud cost analysis tool. Compare providers, optimize spending, and make informed decisions using our intelligent cloud cost estimator."
         imageSrc="/images/v2/cloud-service-cost-estimator.png"
         statsGird={[
           { value: "99.9%", label: "Accuracy Rate" },
           { value: "50K+", label: "Estimates Made" },
-          { value: "5+", label: "Cloud Providers" },
+          { value: "5+", label: "Cloud Providers Supported" },
         ]}
       />
       <ToolHowToUse />

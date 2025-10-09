@@ -42,11 +42,11 @@ const ToolsAndGetInTouch = () => {
       imageSrc: "/images/v2/logos--slack-icon.svg",
       className: "lg:w-[80px] md:w-[60px] w-[50px]",
     },
-    {
-      title: "Skype",
-      imageSrc: "/images/v2/logos--skype.svg",
-      className: "lg:w-[80px] md:w-[60px] w-[50px]",
-    },
+    // {
+    //   title: "Skype",
+    //   imageSrc: "/images/v2/logos--skype.svg",
+    //   className: "lg:w-[80px] md:w-[60px] w-[50px]",
+    // },
   ];
   return (
     <div className="container max-w-[1280px] mx-auto main-section-padding">

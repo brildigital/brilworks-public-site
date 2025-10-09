@@ -1,17 +1,14 @@
 import React from "react";
-
-import DatabaseSelectorTool from "@/app/components/Tools/DatabaseSelectorTool";
-import CrossPlatformVsNativeEnv from "@/app/components/Tools/CrossPlatformVsNativeAnalyzer";
 import ApiIntegrationFeasibilityChecker from "@/app/components/Tools/ApiIntegrationFeasibilityChecker";
 
 export const metadata = {
-  title: "API Integration Feasibility Checker",
+  title: "API Integration Feasibility Checker ",
   description:
-    "Quickly assess the feasibility of integrating third-party APIs. Evaluate compatibility, complexity, and effort to plan smooth, reliable API integrations for your project.",
+    "Evaluate your API integration projects with our AI-powered API integration checker. Access API integration best practices, a complete API integration checklist, and personalized recommendations to ensure project success.",
   openGraph: {
-    title: "API Integration Feasibility Checker",
+    title: "API Integration Feasibility Checker ",
     description:
-      "Quickly assess the feasibility of integrating third-party APIs. Evaluate compatibility, complexity, and effort to plan smooth, reliable API integrations for your project.",
+      "Evaluate your API integration projects with our AI-powered API integration checker. Access API integration best practices, a complete API integration checklist, and personalized recommendations to ensure project success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/api-integration-feasibility-checker/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

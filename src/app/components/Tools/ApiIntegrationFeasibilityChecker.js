@@ -75,15 +75,6 @@ const ApiIntegrationFeasibilityChecker = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleFeatureChange = (featureName) => {
-    setFormData((prev) => ({
-      ...prev,
-      testingTypes: prev.testingTypes.includes(featureName)
-        ? prev.testingTypes.filter((feature) => feature !== featureName)
-        : [...prev.testingTypes, featureName],
-    }));
-  };
-
   useEffect(() => {
     setHasVisited(hasSubmittedForm(pathname));
   }, [pathname, openPopup]);
@@ -109,14 +100,14 @@ const ApiIntegrationFeasibilityChecker = () => {
           </>
         }
         buttonText="Check Feasibility Now"
-        description="Evaluate the viability of your API integration projects before you start. Get data-driven insights, risk assessments, and actionable recommendations to ensure project success."
+        description="Evaluate the feasibility of your API integration projects before you start. Get data-driven insights, risk assessments, and actionable recommendations to ensure project success."
         imageSrc="/images/v2/api-integration-fesiblity-checker-banner.webp"
         highlights={[
           {
             icon: Star,
             color: "text-green-600",
-            title: "Proven Accuracy",
-            description: "98% Accuracy Rate",
+            title: "98%",
+            description: "Accuracy Rate",
           },
           {
             icon: Users,

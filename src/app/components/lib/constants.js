@@ -706,22 +706,22 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/tech-stack-recommender/",
     lastmod: "2025-09-24T15:22:34.531Z",
   },
-  // {
-  //   loc: "https://www.brilworks.com/tools/database-selector-tool/",
-  //   lastmod: "2025-09-25T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/cross-platform-vs-native-analyzer/",
-  //   lastmod: "2025-09-25T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/api-integration-feasibility-checker/",
-  //   lastmod: "2025-09-26T15:22:34.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/cloud-service-cost-estimator/",
-  //   lastmod: "2025-09-26T15:22:34.531Z",
-  // },
+  {
+    loc: "https://www.brilworks.com/tools/database-selector-tool/",
+    lastmod: "2025-09-25T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/cross-platform-vs-native-analyzer/",
+    lastmod: "2025-09-25T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/api-integration-feasibility-checker/",
+    lastmod: "2025-09-26T15:22:34.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/cloud-service-cost-estimator/",
+    lastmod: "2025-09-26T15:22:34.531Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/tools/saas-profitability-calculator/",
   //   lastmod: "2025-09-29T15:22:34.531Z",

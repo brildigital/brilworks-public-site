@@ -719,46 +719,50 @@ const techStackRecommenderFeatures = {
 };
 
 const databaseSelectorToolFeatures = {
-  title: "Why Choose Our Tool?",
-  description: "Powerful features that make database selection effortless",
+  title: "What Makes It Smart",
+  description:
+    "Powerful features that make database selection fast, accurate, and tailored to your needs.",
   listData: [
     {
       icon: Zap,
       title: "Lightning Fast",
       description:
-        "Advanced algorithms analyze your project complexity and provide intelligent timeline estimates.",
+        "Advanced algorithms instantly match your project with the best database for mobile and web apps.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Shield,
       title: "Expert Validated",
       description:
-        "Recommendations based on industry best practices and real-world experience.",
+        "Recommendations follow industry best practices for startups, SaaS platforms, and scalable applications.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: TrendingUp,
       title: "Future-Proof",
       description:
-        "Considers scalability and growth potential in recommendations.",
+        "Considers long-term growth to suggest the best database for startups and SaaS scalability.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Users,
       title: "Team Focused",
-      description: "Factors in your team's expertise and learning curve.",
+      description:
+        "Evaluates your team’s expertise to recommend databases with the right learning curve.",
       color: "bg-yellow-100 text-yellow-600",
     },
     {
       icon: Clock,
       title: "Save Time",
-      description: "Eliminate weeks of research and trial-and-error decisions",
+      description:
+        "Skip weeks of research—get the best database for e-commerce, mobile, and SaaS in seconds.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: BarChart3,
       title: "Data-Driven",
-      description: "Objective analysis based on quantifiable factors.",
+      description:
+        "Objective analysis based on project type, data complexity, and scalability needs.",
       color: "bg-indigo-100 text-indigo-600",
     },
   ],
@@ -766,48 +770,48 @@ const databaseSelectorToolFeatures = {
 const crossPlatformVsNativeAnalyzerFeatures = {
   title: "Powerful Analysis Features",
   description:
-    "Advanced capabilities that provide comprehensive insights for your mobile development decisions",
+    "Advanced capabilities providing comprehensive mobile development insights.",
   listData: [
     {
       icon: Calculator,
       title: "Smart Analysis Algorithm",
       description:
-        "Advanced algorithm considers 15+ factors to provide accurate recommendations",
+        "Advanced algorithm considers 15+ factors for accurate app development recommendations.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: TrendingUp,
       title: "Cost-Benefit Analysis",
       description:
-        "Detailed breakdown of development costs, timeline, and long-term maintenance",
+        "Detailed breakdown of development costs, timeline, and long-term maintenance.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
       description:
-        "Identifies potential risks and challenges for each development approach",
+        "Identifies potential risks and challenges for each development strategy.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Rocket,
       title: "Implementation Roadmap",
       description:
-        "Step-by-step guidance for executing your chosen development strategy",
+        "Step-by-step guidance for executing your chosen app development plan.",
       color: "bg-yellow-100 text-yellow-600",
     },
     {
       icon: Award,
       title: "Industry Standards",
       description:
-        "Recommendations based on current industry best practices and trends",
+        "Recommendations based on current mobile development best practices.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Users,
       title: "Team Optimization",
       description:
-        "Matches development approach with your team's skills and resources",
+        "Matches development approach with your team's skills and resources.",
       color: "bg-indigo-100 text-indigo-600",
     },
   ],
@@ -815,56 +819,61 @@ const crossPlatformVsNativeAnalyzerFeatures = {
 const apiIntegrationFeasibiltyCheckerFeatures = {
   title: "Powerful Features",
   description:
-    "Our comprehensive assessment tool provides everything you need to make informed decisions about your API integration projects",
+    "Our comprehensive API integration checker provides everything you need to make informed project decisions:",
   listData: [
     {
       icon: Zap,
       title: "Instant Analysis",
       description:
-        "Get results in seconds with our AI-powered assessment engine that processes your requirements instantly",
+        "Get feasibility results in seconds with our AI-powered assessment engine.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
       description:
-        "Identify potential risks and challenges before they impact your project timeline and budget",
+        "Identify potential risks and challenges before they impact your project.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: BarChart3,
       title: "Success Scoring",
       description:
-        "Receive a numerical score based on industry benchmarks and historical project data",
+        "Receive a numerical score based on industry benchmarks and historical project data.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Clock,
       title: "Timeline Estimation",
       description:
-        "Get accurate time estimates for your integration project based on complexity and resources",
+        "Accurate time estimates for your integration project based on complexity and resources.",
       color: "bg-yellow-100 text-yellow-600",
     },
     {
       icon: TrendingUp,
       title: "Optimization Tips",
       description:
-        "Receive actionable recommendations to improve your project's chances of success",
+        "Actionable recommendations to improve your project’s chances of success.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Award,
-      title: "Best Practices",
-      description:
-        "Access industry best practices and proven methodologies for API integrations",
+      title: "Best Practices & Checklist",
+      description: (
+        <>
+          Access industry <b>API integration best practices</b> and a complete{" "}
+          <b>API integration checklist</b> to guide your project from start to
+          finish.
+        </>
+      ),
       color: "bg-indigo-100 text-indigo-600",
     },
   ],
 };
 const cloudServiceCostEstimatorFeatures = {
-  title: "Why Choose Our Cost Estimator",
+  title: "Why Choose Our Cloud Cost Estimator",
   description:
-    "Powerful features designed to give you the most accurate and comprehensive cloud cost estimates.",
+    "Our cloud cost analysis tool provides everything you need to make informed decisions:",
   listData: [
     {
       icon: Calculator,
@@ -877,35 +886,35 @@ const cloudServiceCostEstimatorFeatures = {
       icon: Zap,
       title: "Real-time Updates",
       description:
-        "See cost changes instantly as you modify your configuration parameters.",
+        "Instantly see pricing changes as you adjust configurations.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Shield,
       title: "Multi-Provider Support",
       description:
-        "Compare costs across AWS, Azure, Google Cloud, and other major providers.",
+        "Compare costs across AWS, Azure, Google Cloud, and other major providers using our cloud pricing comparison feature.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: BarChart3,
       title: "Detailed Breakdown",
       description:
-        "Understand exactly where your cloud budget goes with comprehensive cost analysis.",
+        "Understand where your cloud budget is allocated with comprehensive cost analysis.",
       color: "bg-yellow-100 text-yellow-600",
     },
     {
       icon: Globe,
       title: "Global Regions",
       description:
-        "Factor in regional pricing differences for accurate worldwide cost estimates.",
+        "Factor in regional pricing differences for accurate worldwide estimates.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: TrendingUp,
       title: "Cost Optimization",
       description:
-        "Receive recommendations to optimize your cloud spending and reduce costs.",
+        "Receive actionable recommendations to optimize your cloud spending and reduce costs",
       color: "bg-indigo-100 text-indigo-600",
     },
   ],
