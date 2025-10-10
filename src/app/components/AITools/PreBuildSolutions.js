@@ -105,6 +105,7 @@ export default function PrebuiltSolutionsPage() {
       category: "Healthcare",
       pricing: "From $25,000",
       timeline: "6-8 weeks",
+      videoLink: "https://www.youtube.com/shorts/OzHKM4TJ43s",
       features: [
         "Patient Monitoring Dashboard",
         "Care Plan Management",
@@ -321,9 +322,8 @@ export default function PrebuiltSolutionsPage() {
                 Explore Solutions
               </Link>
               <Link
-                href="#contact"
+                href="/contact-us/"
                 className="sm:w-fit w-full flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 transition-all duration-200"
-                onClick={(e) => scrollToSection(e, "contcat")}
               >
                 Get Quote
               </Link>

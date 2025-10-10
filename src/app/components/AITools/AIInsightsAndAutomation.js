@@ -9,8 +9,8 @@ const tools = [
     title: "AI Dashboard",
     description:
       "Visualize data and insights with an AI-powered dashboard. Get real-time analytics, trends, and reports in a simple, interactive view.",
-    image: "/images/v2/ai-dashboard.webp",
-    // link: "/ai-tools/ai-dashboard",
+    image: "/images/v2/ai-powered-dashboard-banner.webp",
+    link: "https://nlp-sql-frontend-six.vercel.app/dashboard",
     bg: "bg-[#6366F1] text-white",
   },
   {
@@ -64,27 +64,32 @@ const AIInsightsAndAutomation = () => {
               target="_blank"
               className="cursor-pointer rounded-xl shadow-md hover:shadow-xl transition-shadow bg-white overflow-hidden group"
             >
+              <img
+                src={tool.image}
+                alt={tool.title}
+                className="w-full h-[240px] object-cover  transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+              />
               {/* <img
                 src={tool.image}
                 alt={tool.title}
                 className="w-full h-40 object-cover group-hover:scale-105 transition-transform"
               /> */}
 
-              <div
+              {/*  <div
                 className={`${tool.bg} flex items-center justify-center p-6`}
               >
                 <div className="w-72 h-40 flex items-center justify-center">
-                  {/* <Image
+                   <Image
                     src={tool.image}
                     alt={tool.title}
                     fill
                     className="object-contain"
-                  /> */}
+                  /> 
                   <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center ">
                     {tool?.title}
                   </p>
                 </div>
-              </div>
+              </div>*/}
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {tool.title}

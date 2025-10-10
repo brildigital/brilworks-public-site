@@ -30,21 +30,29 @@ const aiInsights = [
     bg: "bg-[#F59E0B] text-white",
   },
   {
-    title: "AI Chatbot (Live Database Chat with SQL)",
+    title: "AI Chatbot (Live Database Chat with SQL and MongoDB)",
     description:
-      "Chat directly with your live databases using AI. Query SQL with natural language and get real-time insights.",
+      "Chat directly with your live databases using AI. Query SQL and MongoDB with natural language and get real-time insights.",
     image: "/images/v2/ai-chatbot-database.webp/",
     link: "https://sql-chat-web.vercel.app/",
     bg: "bg-sky-300 text-white",
   },
-  {
-    title: "AI Chatbot (Live Database Chat with MongoDB)",
-    description:
-      "Chat directly with your live databases using AI. Query MongoDB with natural language and get real-time insights.",
-    image: "/images/v2/ai-chatbot-database.webp/",
-    link: "https://mongo-db-chat.vercel.app/",
-    bg: "bg-[#10B981] text-white",
-  },
+  // {
+  //   title: "AI Chatbot (Live Database Chat with SQL & MongoDB)",
+  //   description:
+  //     "Chat directly with your live databases using AI. Query SQL with natural language and get real-time insights.",
+  //   image: "/images/v2/ai-chatbot-database.webp/",
+  //   link: "https://sql-chat-web.vercel.app/",
+  //   bg: "bg-sky-300 text-white",
+  // },
+  // {
+  //   title: "AI Chatbot (Live Database Chat with MongoDB)",
+  //   description:
+  //     "Chat directly with your live databases using AI. Query MongoDB with natural language and get real-time insights.",
+  //   image: "/images/v2/ai-chatbot-database.webp/",
+  //   link: "https://mongo-db-chat.vercel.app/",
+  //   bg: "bg-[#10B981] text-white",
+  // },
 ];
 
 const AIChatbotConversationalSolution = () => {
@@ -84,7 +92,7 @@ const AIChatbotConversationalSolution = () => {
             <Link
               key={insight.title}
               href={insight.link || "#"}
-              target="_blank"
+              target={insight.link.includes("https://") ? "_blank" : "_self"}
               className="cursor-pointer rounded-xl shadow-md hover:shadow-xl transition-shadow bg-white overflow-hidden group"
             >
               {/* <img
