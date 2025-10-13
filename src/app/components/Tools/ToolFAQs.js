@@ -755,34 +755,68 @@ const automationSavingEstimatorFaqData = {
     },
   ],
 };
+
 const mvpFeatureSelectorQuizFaqData = {
   description:
     "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
   queAns: [
     {
-      question: "What is automation savings estimation?",
+      question: "What is an MVP Feature Selector Quiz?",
       answer:
-        "Automation savings estimation calculates the potential cost savings and ROI from implementing automated processes in your business. It considers factors like labor costs, time savings, implementation costs, and efficiency gains to provide a comprehensive financial analysis.",
+        "An MVP Feature Selector Quiz is a tool that helps entrepreneurs and product managers identify the most essential features for their Minimum Viable Product. It analyzes your project description, budget, timeline, and goals to recommend which features should be included in your initial launch.",
     },
     {
-      question: "How accurate are these estimates?",
+      question: "How accurate are the feature recommendations?",
       answer:
-        "Our estimates are based on industry standards and proven methodologies. However, actual results may vary depending on specific implementation details, employee adoption rates, and unforeseen challenges. We recommend using these estimates as a starting point for your automation planning.",
+        "Our recommendations are based on proven MVP principles and keyword analysis of successful products. While the suggestions provide excellent starting points, they should be validated with your target users and adapted to your specific market conditions.",
     },
     {
-      question: "What types of tasks are best for automation?",
+      question: "Can I use this for any type of product?",
       answer:
-        "Tasks that are repetitive, rule-based, high-volume, and time-consuming are ideal for automation. Examples include data entry, report generation, email responses, invoice processing, and customer onboarding workflows.",
+        "Yes! The MVP Feature Selector works for web applications, mobile apps, SaaS products, e-commerce platforms, and many other digital products. The recommendations adapt based on the keywords and requirements you provide.",
     },
     {
-      question: "How long does it typically take to see ROI?",
+      question: "How should I use the priority scores?",
       answer:
-        "Most automation projects see positive ROI within 6-18 months, depending on the complexity and scale of implementation. Simple process automations can show returns in as little as 3 months, while complex enterprise solutions may take 12-24 months.",
+        "Priority scores help you rank features by importance. High-priority features (70%+) should be included in your MVP, medium priority (40-69%) can be considered for phase 2, and low priority features should be saved for future iterations.",
     },
     {
-      question: "What should I consider beyond cost savings?",
+      question: "What if I disagree with the recommendations?",
       answer:
-        "While cost savings are important, also consider improved accuracy, reduced errors, better compliance, enhanced employee satisfaction, scalability benefits, and the ability to reallocate human resources to higher-value activities.",
+        "The quiz provides data-driven suggestions, but you know your market best. Use the recommendations as a starting point and adjust based on your specific user research, competitive analysis, and business requirements.",
+    },
+  ],
+};
+
+const whichAppShouldYouBuildFaqData = {
+  description:
+    "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
+  queAns: [
+    {
+      question: "How does the app recommendation system work?",
+      answer:
+        "Our system analyzes your project description using keyword detection and machine learning to identify the most suitable app type and platform. It considers factors like target audience, functionality requirements, budget, and timeline to provide personalized recommendations.",
+    },
+    {
+      question: "Should I build a mobile app or web app?",
+      answer:
+        "The choice depends on your target audience and use case. Mobile apps are better for consumer-focused, location-based, or media-rich applications. Web apps work well for business tools, complex interfaces, and when you need broad accessibility across devices.",
+    },
+    {
+      question:
+        "What's the difference between native and cross-platform development?",
+      answer:
+        "Native apps are built specifically for one platform (iOS or Android) offering best performance and platform-specific features. Cross-platform apps use frameworks like React Native or Flutter to work on multiple platforms with shared code, reducing development time and cost.",
+    },
+    {
+      question: "How accurate are the market potential scores?",
+      answer:
+        "Market potential scores are based on keyword analysis, industry trends, and historical data. While they provide valuable insights, they should be combined with your own market research and validation with potential users for the most accurate assessment.",
+    },
+    {
+      question: "Can I change my app type after getting recommendations?",
+      answer:
+        "Absolutely! Our recommendations are starting points based on your current description. As you refine your idea or gather user feedback, you may discover that a different app type or platform better suits your needs.",
     },
   ],
 };
@@ -826,6 +860,7 @@ const ToolFAQs = () => {
     "/tools/lifetime-value-calculator/": calculateCustomerLifetimeFaqData,
     "/tools/automation-saving-estimator/": automationSavingEstimatorFaqData,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFaqData,
+    "/tools/which-app-should-you-build/": whichAppShouldYouBuildFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

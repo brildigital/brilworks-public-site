@@ -1148,6 +1148,196 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
+      case "/tools/mvp-feature-selector-quiz/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="border shadow-sm rounded-xl p-4">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-lg font-semibold text-gray-900">
+                  MVP Score
+                </h4>
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    result.priority === "High"
+                      ? "bg-green-100 text-green-800"
+                      : result.priority === "Medium"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {result.priority} Priority
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                <div
+                  className={`h-3 rounded-full transition-all duration-500 ${
+                    result.priority === "High"
+                      ? "bg-green-500"
+                      : result.priority === "Medium"
+                      ? "bg-yellow-500"
+                      : "bg-red-500"
+                  }`}
+                  style={{ width: `${result.score}%` }}
+                ></div>
+              </div>
+              <p className="text-gray-600 font-normal">{result.explanation}</p>
+            </div>
+
+            <div className="border shadow-sm rounded-xl p-4">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                Recommended Features
+              </h4>
+              {result.recommendedFeatures.length > 0 ? (
+                <div className="space-y-3">
+                  {result.recommendedFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500">
+                  Add more details to your project description to get specific
+                  feature recommendations.
+                </p>
+              )}
+            </div>
+
+            <div className="border shadow-sm rounded-xl p-4">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                Next Steps
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                    1
+                  </div>
+                  <span className="text-gray-700">
+                    Validate features with target users
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                    2
+                  </div>
+                  <span className="text-gray-700">
+                    Create detailed user stories
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
+                    3
+                  </div>
+                  <span className="text-gray-700">
+                    Plan development sprints
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "/tools/which-app-should-you-build/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className="border shadow-sm rounded-lg p-4">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-lg font-semibold text-gray-900">
+                  Recommended App Type
+                </h4>
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    result.marketPotential === "High"
+                      ? "bg-green-100 text-green-800"
+                      : result.marketPotential === "Medium"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {result.marketPotential} Potential
+                </span>
+              </div>
+              <div className="mb-4">
+                <h5 className="text-2xl font-bold text-themeColor mb-2">
+                  {result.appType}
+                </h5>
+                <p className="text-gray-600 font-normal mb-4">
+                  Platform: {result.platform}
+                </p>
+                <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                  <div
+                    className={`h-3 rounded-full transition-all duration-500 ${
+                      result.marketPotential === "High"
+                        ? "bg-green-500"
+                        : result.marketPotential === "Medium"
+                        ? "bg-yellow-500"
+                        : "bg-red-500"
+                    }`}
+                    style={{ width: `${result.score}%` }}
+                  ></div>
+                </div>
+              </div>
+              <p className="text-gray-600 font-normal">{result.explanation}</p>
+            </div>
+
+            <div className="border shadow-sm rounded-lg p-4">
+              <h4 className="text-lg text-left font-semibold text-gray-900 mb-2">
+                Key Features to Include
+              </h4>
+              {result.recommendedFeatures.length > 0 ? (
+                <div className="space-y-3">
+                  {result.recommendedFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500">
+                  Add more details to your app description to get specific
+                  feature recommendations.
+                </p>
+              )}
+            </div>
+
+            <div className="border shadow-sm rounded-lg p-4">
+              <h4 className="text-left text-lg font-semibold text-gray-900 mb-2">
+                Development Roadmap
+              </h4>
+              <div className="space-y-3">
+                {[
+                  "Create detailed wireframes and user flows",
+                  "Design UI/UX for your target platform",
+                  "Develop MVP with core features",
+                  "Test with target users and iterate",
+                ].map((step, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-themeLight text-themeColor flex items-center justify-center text-sm font-semibold">
+                      {index + 1}
+                    </div>
+                    <span className="text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (

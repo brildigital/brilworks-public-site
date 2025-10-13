@@ -450,6 +450,7 @@ export const calculateCustomerLTV = (formData) => {
   };
 };
 
+// 20. Automation Savings Calculator
 export const calculateAutomationSavings = (formData) => {
   const employees = parseFloat(formData.employeeCount) || 0;
   const hourlyWage = parseFloat(formData.averageHourlyWage) || 0;
@@ -505,5 +506,270 @@ export const calculateAutomationSavings = (formData) => {
     fiveYearSavings: fiveYearSavings,
     efficiencyGain: efficiencyGain,
     weeklyHoursSaved: weeklyHours * efficiencyGain,
+  };
+};
+
+// 21. MVP Feature Selector Quiz
+export const calculateMvpFeatureSelector = (formData) => {
+  const keywords = formData.description.toLowerCase();
+  let score = 0;
+  const features = [];
+
+  // Keyword-based scoring
+  if (keywords.includes("user") || keywords.includes("customer")) {
+    score += 20;
+    features.push("User Authentication");
+  }
+  if (
+    keywords.includes("payment") ||
+    keywords.includes("buy") ||
+    keywords.includes("purchase")
+  ) {
+    score += 25;
+    features.push("Payment Integration");
+  }
+  if (
+    keywords.includes("social") ||
+    keywords.includes("share") ||
+    keywords.includes("community")
+  ) {
+    score += 15;
+    features.push("Social Features");
+  }
+  if (
+    keywords.includes("data") ||
+    keywords.includes("analytics") ||
+    keywords.includes("tracking")
+  ) {
+    score += 20;
+    features.push("Analytics Dashboard");
+  }
+  if (
+    keywords.includes("mobile") ||
+    keywords.includes("app") ||
+    keywords.includes("responsive")
+  ) {
+    score += 18;
+    features.push("Mobile Optimization");
+  }
+  if (
+    keywords.includes("search") ||
+    keywords.includes("filter") ||
+    keywords.includes("find")
+  ) {
+    score += 15;
+    features.push("Search Functionality");
+  }
+  if (
+    keywords.includes("notification") ||
+    keywords.includes("alert") ||
+    keywords.includes("email")
+  ) {
+    score += 12;
+    features.push("Notification System");
+  }
+
+  // Budget and timeline considerations
+  if (formData.budget === "low") score -= 10;
+  if (formData.budget === "high") score += 15;
+  if (formData.timeline === "urgent") score -= 15;
+  if (formData.timeline === "flexible") score += 10;
+
+  const priority = score >= 70 ? "High" : score >= 40 ? "Medium" : "Low";
+
+  return {
+    score: Math.max(0, Math.min(100, score)),
+    priority,
+    recommendedFeatures: features,
+    explanation: `Based on your project description and requirements, we've identified key features that align with your MVP goals. Your ${priority.toLowerCase()} priority score of ${score}% suggests ${
+      priority === "High"
+        ? "a feature-rich MVP with strong market potential"
+        : priority === "Medium"
+        ? "a balanced MVP approach with essential features"
+        : "a lean MVP focusing on core functionality"
+    }.`,
+  };
+};
+// 22. Which App Should You Build Quiz
+export const calculateWhichAppShouldYouBuild = (formData) => {
+  const keywords = formData.description.toLowerCase();
+  let score = 0;
+  let appType = "Web App";
+  let platform = "Web";
+  const features = [];
+
+  // Determine app type based on keywords
+  if (
+    keywords.includes("mobile") ||
+    keywords.includes("phone") ||
+    keywords.includes("ios") ||
+    keywords.includes("android")
+  ) {
+    appType = "Mobile App";
+    platform = "Mobile (iOS/Android)";
+    score += 20;
+  } else if (
+    keywords.includes("web") ||
+    keywords.includes("browser") ||
+    keywords.includes("website")
+  ) {
+    appType = "Web Application";
+    platform = "Web Browser";
+    score += 15;
+  } else if (
+    keywords.includes("desktop") ||
+    keywords.includes("windows") ||
+    keywords.includes("mac")
+  ) {
+    appType = "Desktop App";
+    platform = "Desktop (Windows/Mac)";
+    score += 10;
+  }
+
+  // Feature-based scoring and recommendations
+  if (
+    keywords.includes("social") ||
+    keywords.includes("chat") ||
+    keywords.includes("message") ||
+    keywords.includes("community")
+  ) {
+    score += 25;
+    features.push("Social Features");
+    if (!appType.includes("Mobile")) {
+      appType = "Social Mobile App";
+      platform = "Mobile (iOS/Android)";
+    }
+  }
+
+  if (
+    keywords.includes("ecommerce") ||
+    keywords.includes("shop") ||
+    keywords.includes("buy") ||
+    keywords.includes("sell") ||
+    keywords.includes("payment")
+  ) {
+    score += 30;
+    features.push("E-commerce Integration");
+    appType = "E-commerce App";
+  }
+
+  if (
+    keywords.includes("game") ||
+    keywords.includes("gaming") ||
+    keywords.includes("play")
+  ) {
+    score += 20;
+    features.push("Gaming Features");
+    appType = "Gaming App";
+    platform = "Mobile (iOS/Android)";
+  }
+
+  if (
+    keywords.includes("productivity") ||
+    keywords.includes("task") ||
+    keywords.includes("todo") ||
+    keywords.includes("organize")
+  ) {
+    score += 25;
+    features.push("Productivity Tools");
+    appType = "Productivity App";
+  }
+
+  if (
+    keywords.includes("education") ||
+    keywords.includes("learn") ||
+    keywords.includes("course") ||
+    keywords.includes("study")
+  ) {
+    score += 22;
+    features.push("Educational Content");
+    appType = "Educational App";
+  }
+
+  if (
+    keywords.includes("health") ||
+    keywords.includes("fitness") ||
+    keywords.includes("medical") ||
+    keywords.includes("wellness")
+  ) {
+    score += 28;
+    features.push("Health Tracking");
+    appType = "Health & Fitness App";
+    platform = "Mobile (iOS/Android)";
+  }
+
+  if (
+    keywords.includes("photo") ||
+    keywords.includes("camera") ||
+    keywords.includes("image") ||
+    keywords.includes("video")
+  ) {
+    score += 20;
+    features.push("Media Processing");
+    appType = "Media App";
+    platform = "Mobile (iOS/Android)";
+  }
+
+  if (
+    keywords.includes("music") ||
+    keywords.includes("audio") ||
+    keywords.includes("sound") ||
+    keywords.includes("podcast")
+  ) {
+    score += 18;
+    features.push("Audio Features");
+    appType = "Music/Audio App";
+  }
+
+  if (
+    keywords.includes("business") ||
+    keywords.includes("enterprise") ||
+    keywords.includes("crm") ||
+    keywords.includes("management")
+  ) {
+    score += 25;
+    features.push("Business Tools");
+    appType = "Business App";
+    platform = "Web Browser";
+  }
+
+  // Audience considerations
+  if (formData.targetAudience === "consumers" && !appType.includes("Mobile")) {
+    appType = "Consumer Mobile App";
+    platform = "Mobile (iOS/Android)";
+    score += 15;
+  }
+
+  if (formData.targetAudience === "businesses" && !appType.includes("Web")) {
+    appType = "Business Web App";
+    platform = "Web Browser";
+    score += 10;
+  }
+
+  // Budget and timeline considerations
+  if (formData.budget === "low") score -= 10;
+  if (formData.budget === "high") score += 15;
+  if (formData.timeline === "urgent") score -= 15;
+  if (formData.timeline === "flexible") score += 10;
+
+  // Experience level
+  if (formData.experience === "beginner") score -= 5;
+  if (formData.experience === "expert") score += 10;
+
+  const marketPotential = score >= 70 ? "High" : score >= 40 ? "Medium" : "Low";
+
+  return {
+    score: Math.max(0, Math.min(100, score)),
+    appType,
+    platform,
+    recommendedFeatures: features,
+    marketPotential,
+    explanation: `Based on your project description and requirements, we recommend building a ${appType} for ${platform}. Your ${marketPotential.toLowerCase()} market potential score of ${score}% suggests ${
+      marketPotential === "High"
+        ? "strong market demand and excellent monetization opportunities"
+        : marketPotential === "Medium"
+        ? "good market potential with moderate competition"
+        : "niche market opportunity requiring focused marketing"
+    }.`,
   };
 };

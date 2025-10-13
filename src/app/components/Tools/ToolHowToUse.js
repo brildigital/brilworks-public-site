@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BarChart3,
   Brain,
+  BrainIcon,
   Calculator,
   CheckCircle,
   ClipboardList,
@@ -644,33 +645,48 @@ const automationSavingEstimatorSteps = {
   ],
 };
 const mvpFeatureSelectorQuizSteps = {
-  title: "How to Calculate Automation Savings in 4 Steps",
-  description:
-    "Follow our proven methodology to accurately estimate the financial impact of automation on your business operations.",
+  title: "How It Works",
+  description: "Get your MVP feature recommendations in three simple steps",
   listData: [
     {
-      title: "Gather Customer Data",
+      title: "Define Your Vision",
       description:
         "Collect information about average order value, purchase frequency, and customer behavior patterns.",
-      icon: Users,
+      icon: Target,
     },
     {
-      title: "Calculate Base Metrics",
+      title: "Set Constraints",
       description:
         "Multiply average order value by purchase frequency and customer lifespan period.",
-      icon: Calculator,
+      icon: FileText,
     },
     {
-      title: "Apply Retention Factors",
+      title: "Get Recommendations",
       description:
         "Adjust calculations based on customer retention rates and churn patterns.",
-      icon: TrendingUp,
+      icon: Lightbulb,
+    },
+  ],
+};
+const whichAppShouldYouBuildSteps = {
+  title: "How to Find Your Perfect App",
+  description: "Discover which app you should build in three simple steps",
+  listData: [
+    {
+      title: "Define Your Idea",
+      description: "Describe your app concept and target users",
+      icon: BrainIcon,
     },
     {
-      title: "Analyze Results",
-      description:
-        "Compare LTV to acquisition costs and use insights to optimize your marketing strategy.",
-      icon: BarChart3,
+      title: "Set Parameters",
+      description: "Specify budget, timeline, and experience level",
+      icon: FileText,
+    },
+
+    {
+      title: "Get Recommendation",
+      description: "Receive personalized app type and platform suggestions",
+      icon: Lightbulb,
     },
   ],
 };
@@ -706,6 +722,7 @@ const ToolHowToUse = () => {
     "/tools/lifetime-value-calculator/": calculateCustomerLifetimeSteps,
     "/tools/automation-saving-estimator/": automationSavingEstimatorSteps,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizSteps,
+    "/tools/which-app-should-you-build/": whichAppShouldYouBuildSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

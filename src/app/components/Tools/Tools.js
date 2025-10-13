@@ -171,14 +171,22 @@ const toolsData = [
     link: "/tools/automation-saving-estimator/",
     tags: ["BUSINESS", "MARKETING", "OTHER"],
   },
-  // {
-  //   title: "MVP Feature Selector Quiz",
-  //   description:
-  //     "Find the essential features for your MVP. Take a quick quiz to prioritize must-have functionalities and launch smarter with reduced cost and risk.",
-  //   bg: "bg-sky-200",
-  //   link: "/tools/mvp-feature-selector-quiz/",
-  //   tags: ["BUSINESS", "MARKETING", "OTHER"],
-  // },
+  {
+    title: "MVP Feature Selector Quiz",
+    description:
+      "Find the essential features for your MVP. Take a quick quiz to prioritize must-have functionalities and launch smarter with reduced cost and risk.",
+    bg: "bg-sky-200",
+    link: "/tools/mvp-feature-selector-quiz/",
+    tags: ["BUSINESS", "SALES", "OTHER"],
+  },
+  {
+    title: "Find the Perfect App for Your Business",
+    description:
+      "Not sure what to build next? Take a quick assessment to uncover the ideal app type, features, and tech stack that align with your goals and audience.",
+    bg: "bg-violet-200",
+    link: "/tools/which-app-should-you-build/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

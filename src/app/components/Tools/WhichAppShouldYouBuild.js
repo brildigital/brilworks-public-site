@@ -3,22 +3,25 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  Award,
   Calculator,
   CheckCircle,
   Lightbulb,
   Loader2,
   Sparkles,
+  Star,
+  Users,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { calculateMvpFeatureSelector } from "../lib/toolsCalculation";
+import { calculateWhichAppShouldYouBuild } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const MVPFeatureSelectorQuiz = () => {
+const WhichAppShouldYouBuild = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
@@ -30,6 +33,7 @@ const MVPFeatureSelectorQuiz = () => {
     timeline: "",
     description: "",
     primaryGoal: "",
+    experience: "",
   });
 
   const [result, setResult] = useState();
@@ -40,6 +44,7 @@ const MVPFeatureSelectorQuiz = () => {
       formData?.budget &&
       formData?.timeline &&
       formData?.primaryGoal &&
+      formData?.experience &&
       formData?.description.trim()
     );
   };
@@ -56,7 +61,7 @@ const MVPFeatureSelectorQuiz = () => {
 
     setIsCalculating(true);
 
-    const resultData = calculateMvpFeatureSelector(formData);
+    const resultData = calculateWhichAppShouldYouBuild(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -87,35 +92,34 @@ const MVPFeatureSelectorQuiz = () => {
       <ToolHerosection
         title={
           <>
-            MVP Feature &nbsp;
+            Which App&nbsp;
             <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Selector Quiz
+              Should You Build?
             </span>
           </>
         }
-        buttonText="Start Quiz Now"
-        description="Discover the essential features for your MVP with our intelligent quiz. Get personalized recommendations based on your project goals, audience, and constraints."
-        imageSrc="/images/v2/MVP-feature -selector-banner.webp"
-        statsGird={[
-          { value: "10K+", label: "Trusted by Entrepreneurs" },
+        buttonText="Find Your App Type"
+        description="Discover the perfect app type and platform for your idea with our intelligent recommendation system. Get personalized suggestions based on your goals and target audience."
+        imageSrc="/images/v2/app-selection-visual-banner.webp"
+        highlights={[
           {
-            value: "98%",
-            label: (
-              <>
-                Accuracy
-                <br /> Rate
-              </>
-            ),
+            icon: Star,
+            color: "text-green-600",
+            title: "Used By 15K+",
+            description: "App Creators",
           },
           {
-            value: "Free",
-            label: (
-              <>
-                No Signup
-                <br /> Required
-              </>
-            ),
+            icon: Users,
+            color: "text-orange-600",
+            title: "Free",
+            description: "Instant Results",
+          },
+          {
+            icon: Award,
+            color: "text-indigo-300",
+            title: "Perfect App",
+            description: "Successful Developers",
           },
         ]}
       />
@@ -128,11 +132,11 @@ const MVPFeatureSelectorQuiz = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-themeColor mb-4">
-              MVP Feature Selector Quiz
+              Which App Should You Build?
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Answer a few questions about your project to get personalized
-              feature recommendations
+              Answer a few questions about your app idea to get personalized
+              recommendations
             </p>
           </div>
 
@@ -140,19 +144,17 @@ const MVPFeatureSelectorQuiz = () => {
             {/* Calculator Form */}
             <div className="bg-white rounded-2xl border border-gray-200 md:p-8 p-5 space-y-2.5">
               <h2 className="text-center text-2xl font-semibold mb-2">
-                Tell us about your project
+                Tell us about your app idea
               </h2>
               <div className="space-y-0.5">
-                <label className="font-medium text-gray-700">
-                  Project Name
-                </label>
+                <label className="font-medium text-gray-700">App Name</label>
                 <input
                   type="text"
                   value={formData.projectName}
                   onChange={(e) =>
                     handleInputChange("projectName", e.target.value)
                   }
-                  placeholder="Enter your project name..."
+                  placeholder="Enter your app name..."
                   className="w-full border rounded-lg p-3 bg-white"
                 />
               </div>
@@ -168,16 +170,19 @@ const MVPFeatureSelectorQuiz = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select your target audience</option>
-                  <option value="consumers">Consumers (B2C)</option>
-                  <option value="businesses">Businesses (B2B)</option>
-                  <option value="enterprises">Enterprises</option>
-                  <option value="developers">Developers</option>
+                  <option value="consumers">General Consumers</option>
+                  <option value="businesses">Small Businesses</option>
+                  <option value="enterprises">Large Enterprises</option>
+                  <option value="developers">Developers/Tech</option>
                   <option value="students">Students/Education</option>
+                  <option value="professionals">Working Professionals</option>
+                  <option value="seniors">Senior Citizens</option>
+                  <option value="teens">Teenagers</option>
                 </select>
               </div>
               <div className="space-y-0.5">
                 <label className="font-medium text-gray-700">
-                  Budget Range*
+                  Development Budget*
                 </label>
                 <select
                   value={formData.budget}
@@ -185,13 +190,15 @@ const MVPFeatureSelectorQuiz = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select budget range</option>
-                  <option value="low">Under $10,000</option>
-                  <option value="medium">$10,000 - $50,000</option>
-                  <option value="high">$50,000+</option>
+                  <option value="low">Under $15,000</option>
+                  <option value="medium">$15,000 - $75,000</option>
+                  <option value="high">$75,000+</option>
                 </select>
               </div>
               <div className="space-y-0.5">
-                <label className="font-medium text-gray-700">Timeline*</label>
+                <label className="font-medium text-gray-700">
+                  Development Timeline*
+                </label>
                 <select
                   value={formData.timeline}
                   onChange={(e) =>
@@ -207,6 +214,25 @@ const MVPFeatureSelectorQuiz = () => {
               </div>
               <div className="space-y-0.5">
                 <label className="font-medium text-gray-700">
+                  Your Experience Level*
+                </label>
+                <select
+                  value={formData.experience}
+                  onChange={(e) =>
+                    handleInputChange("experience", e.target.value)
+                  }
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select experience level</option>
+                  <option value="beginner">First-time app creator</option>
+                  <option value="intermediate">
+                    Some development experience
+                  </option>
+                  <option value="expert">Experienced developer</option>
+                </select>
+              </div>
+              <div className="space-y-0.5">
+                <label className="font-medium text-gray-700">
                   Primary Goal*
                 </label>
                 <select
@@ -218,30 +244,34 @@ const MVPFeatureSelectorQuiz = () => {
                 >
                   <option value="">Select primary goal</option>
                   <option value="revenue">Generate Revenue</option>
-                  <option value="users">Acquire Users</option>
-                  <option value="validation">Validate Idea</option>
-                  <option value="funding">Raise Funding</option>
-                  <option value="efficiency">Improve Efficiency</option>
+                  <option value="users">Build User Base</option>
+                  <option value="brand">Build Brand Awareness</option>
+                  <option value="efficiency">
+                    Improve Business Efficiency
+                  </option>
+                  <option value="entertainment">Provide Entertainment</option>
+                  <option value="education">Educate Users</option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Description*
+                  App Description*
                 </label>
                 <textarea
                   value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your project idea, key features you're considering, and what problems it solves. Include keywords like 'user authentication', 'payment', 'social features', 'analytics', etc."
+                  placeholder="Describe your app idea in detail. What problem does it solve? What features will it have? Include keywords like 'social', 'ecommerce', 'gaming', 'productivity', 'health', 'education', etc."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
               </div>
               <p className="text-xs text-gray-500 ">
-                Tip: Include keywords related to features you're considering
-                (e.g., user, payment, social, analytics, mobile)
+                Tip: Include specific keywords related to your app's
+                functionality (e.g., social, shopping, gaming, productivity,
+                health, education)
               </p>
 
               {/* Get Quote Button */}
@@ -267,47 +297,55 @@ const MVPFeatureSelectorQuiz = () => {
             {/* Cost Estimate */}
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
               <h2 className="text-center text-2xl font-semibold mb-4">
-                Your MVP Recommendations
+                Your Results
               </h2>
               {result && hasVisited ? (
                 <div className="space-y-4">
-                  <div className="border shadow-sm rounded-xl p-4">
+                  <div className="border shadow-sm rounded-lg p-4">
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-lg font-semibold text-gray-900">
-                        MVP Score
+                        Recommended App Type
                       </h4>
                       <span
                         className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          result.priority === "High"
+                          result.marketPotential === "High"
                             ? "bg-green-100 text-green-800"
-                            : result.priority === "Medium"
+                            : result.marketPotential === "Medium"
                             ? "bg-yellow-100 text-yellow-800"
                             : "bg-red-100 text-red-800"
                         }`}
                       >
-                        {result.priority} Priority
+                        {result.marketPotential} Potential
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
-                      <div
-                        className={`h-3 rounded-full transition-all duration-500 ${
-                          result.priority === "High"
-                            ? "bg-green-500"
-                            : result.priority === "Medium"
-                            ? "bg-yellow-500"
-                            : "bg-red-500"
-                        }`}
-                        style={{ width: `${result.score}%` }}
-                      ></div>
+                    <div className="mb-4">
+                      <h5 className="text-2xl font-bold text-themeColor mb-2">
+                        {result.appType}
+                      </h5>
+                      <p className="text-gray-600 font-normal mb-4">
+                        Platform: {result.platform}
+                      </p>
+                      <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div
+                          className={`h-3 rounded-full transition-all duration-500 ${
+                            result.marketPotential === "High"
+                              ? "bg-green-500"
+                              : result.marketPotential === "Medium"
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
+                          }`}
+                          style={{ width: `${result.score}%` }}
+                        ></div>
+                      </div>
                     </div>
                     <p className="text-gray-600 font-normal">
                       {result.explanation}
                     </p>
                   </div>
 
-                  <div className="border shadow-sm rounded-xl p-4">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Recommended Features
+                  <div className="border shadow-sm rounded-lg p-4">
+                    <h4 className="text-lg text-left font-semibold text-gray-900 mb-2">
+                      Key Features to Include
                     </h4>
                     {result.recommendedFeatures.length > 0 ? (
                       <div className="space-y-3">
@@ -320,41 +358,30 @@ const MVPFeatureSelectorQuiz = () => {
                       </div>
                     ) : (
                       <p className="text-gray-500">
-                        Add more details to your project description to get
-                        specific feature recommendations.
+                        Add more details to your app description to get specific
+                        feature recommendations.
                       </p>
                     )}
                   </div>
 
-                  <div className="border shadow-sm rounded-xl p-4">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Next Steps
+                  <div className="border shadow-sm rounded-lg p-4">
+                    <h4 className="text-left text-lg font-semibold text-gray-900 mb-2">
+                      Development Roadmap
                     </h4>
                     <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                          1
+                      {[
+                        "Create detailed wireframes and user flows",
+                        "Design UI/UX for your target platform",
+                        "Develop MVP with core features",
+                        "Test with target users and iterate",
+                      ].map((step, index) => (
+                        <div key={index} className="flex items-center gap-3">
+                          <div className="w-6 h-6 rounded-full bg-themeLight text-themeColor flex items-center justify-center text-sm font-semibold">
+                            {index + 1}
+                          </div>
+                          <span className="text-gray-700">{step}</span>
                         </div>
-                        <span className="text-gray-700">
-                          Validate features with target users
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                          2
-                        </div>
-                        <span className="text-gray-700">
-                          Create detailed user stories
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-semibold">
-                          3
-                        </div>
-                        <span className="text-gray-700">
-                          Plan development sprints
-                        </span>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -374,19 +401,19 @@ const MVPFeatureSelectorQuiz = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      Ready to get recommendation?
+                      Ready to get recommendations?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Complete the project details on the left to receive your
-                      personalized MVP feature recommendations. ✨
+                      Complete the form on the left to receive your personalized
+                      app type and platform recommendations. ✨
                     </p>
 
                     <button
                       onClick={() => document.querySelector("input")?.focus()}
                       className="bg-themeColor text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 transition-all animate-bounce"
                     >
-                      &lArr; Fill out the form to get started
+                      &lArr; Describe your app idea to get started
                     </button>
                   </div>
                 </div>
@@ -408,4 +435,4 @@ const MVPFeatureSelectorQuiz = () => {
   );
 };
 
-export default MVPFeatureSelectorQuiz;
+export default WhichAppShouldYouBuild;
