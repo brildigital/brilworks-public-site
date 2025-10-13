@@ -927,6 +927,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How to Choose the Right Mobile Development Framework ",
+    loc: "https://www.brilworks.com/blog/choosing-mobile-development-framework/",
+    lastmod: "2025-10-10T13:06:44.656Z",
+  },
+  {
+    name: "Progressive Web Apps vs Native Apps",
+    loc: "https://www.brilworks.com/blog/progressive-web-apps-vs-native-apps/",
+    lastmod: "2025-10-10T12:01:34.512Z",
+  },
+  {
+    name: "MEAN vs MERN: Which Full-Stack Solution Is Best for Your Application?",
+    loc: "https://www.brilworks.com/blog/MERN-vs-MEAN/",
+    lastmod: "2025-10-09T08:08:38.413Z",
+  },
+  {
     name: "What Is Vibe Coding (And Why It’s Changing How Leaders Build Tech)",
     loc: "https://www.brilworks.com/blog/what-is-vibe-coding/",
     lastmod: "2025-10-07T07:10:28.585Z",
@@ -1579,7 +1594,7 @@ export const blogListStaticData = [
   {
     name: "React Native for Web: What It Is and Why Developers Use It",
     loc: "https://www.brilworks.com/blog/react-native-for-web/",
-    lastmod: "2025-06-04T11:30:43.185Z",
+    lastmod: "2025-10-09T06:14:04.530Z",
   },
   {
     name: "Does React work for iOS, and how does it perform?",
@@ -1689,7 +1704,7 @@ export const blogListStaticData = [
   {
     name: "The Role of Cloud Integration in Mobile Apps",
     loc: "https://www.brilworks.com/blog/cloud-integration-in-mobile-apps/",
-    lastmod: "2025-09-22T07:16:49.611Z",
+    lastmod: "2025-10-09T06:55:06.271Z",
   },
   {
     name: "15 Best Mobile Application Testing Tools for 2025",
@@ -1699,7 +1714,7 @@ export const blogListStaticData = [
   {
     name: "A Comprehensive Guide to Cross-Platform Development Success",
     loc: "https://www.brilworks.com/blog/guide-to-cross-platform-mobile-app-development/",
-    lastmod: "2025-08-06T05:48:18.092Z",
+    lastmod: "2025-10-08T13:34:33.233Z",
   },
   {
     name: "The Role of IoT in Mobile App Development: Shaping the Future",
@@ -1994,7 +2009,7 @@ export const blogListStaticData = [
   {
     name: "How to Create An App and Make Money in 2025",
     loc: "https://www.brilworks.com/blog/how-to-create-an-app-and-make-money/",
-    lastmod: "2025-06-04T05:19:13.864Z",
+    lastmod: "2025-10-09T06:15:28.207Z",
   },
   {
     name: "How Generative AI transforms Supply Chain Operations",
@@ -2029,7 +2044,7 @@ export const blogListStaticData = [
   {
     name: "The State of Generative AI in 2025",
     loc: "https://www.brilworks.com/blog/state-of-generative-ai/",
-    lastmod: "2025-07-24T07:21:43.344Z",
+    lastmod: "2025-10-09T06:23:40.360Z",
   },
   {
     name: "AWS IoT Device Management: Features and How It Works",
@@ -2049,7 +2064,7 @@ export const blogListStaticData = [
   {
     name: "The Roadmap to Successful AI Implementation",
     loc: "https://www.brilworks.com/blog/roadmap-to-successful-ai-implementation/",
-    lastmod: "2025-10-07T09:57:37.215Z",
+    lastmod: "2025-10-09T06:55:30.097Z",
   },
   {
     name: "10 Ways to Improve AI Model Efficiency",
@@ -2064,7 +2079,7 @@ export const blogListStaticData = [
   {
     name: "How Generative AI Applications Enhance Data Management",
     loc: "https://www.brilworks.com/blog/enhance-data-management-with-gen-ai/",
-    lastmod: "2025-04-02T11:41:28.773Z",
+    lastmod: "2025-10-09T06:18:08.062Z",
   },
   {
     name: "Adopting AI: What are Technical Roadblocks?",
@@ -2090,11 +2105,6 @@ export const blogListStaticData = [
     name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
     loc: "https://www.brilworks.com/blog/aws-hosting-to-enhance-ecommerce-performance/",
     lastmod: "2025-04-15T10:50:54.099Z",
-  },
-  {
-    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
-    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
-    lastmod: "2025-08-06T05:49:47.617Z",
   },
   {
     name: "What Makes AWS a Top Choice for Ecommerce Store?",
@@ -2129,7 +2139,7 @@ export const blogListStaticData = [
   {
     name: "Generative AI in Business: Benefits and Integration Challenges",
     loc: "https://www.brilworks.com/blog/generative-ai-in-business-benefits-and-integration-challenges/",
-    lastmod: "2025-04-07T09:22:57.491Z",
+    lastmod: "2025-10-09T06:21:23.851Z",
   },
   {
     name: "How AI is Driving Innovation in Business Across Different Industries",
@@ -2139,7 +2149,7 @@ export const blogListStaticData = [
   {
     name: "Exploring the Limitations of Generative AI : 5 Key Points ",
     loc: "https://www.brilworks.com/blog/limitations-of-generative-ai/",
-    lastmod: "2025-07-10T05:31:39.529Z",
+    lastmod: "2025-10-09T06:20:03.740Z",
   },
   {
     name: " Debunking Common Misconceptions about Generative AI",
@@ -2224,7 +2234,7 @@ export const blogListStaticData = [
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
     loc: "https://www.brilworks.com/blog/generative-ai-in-healthcare/",
-    lastmod: "2024-07-04T08:04:48.846Z",
+    lastmod: "2025-10-09T06:12:36.061Z",
   },
   {
     name: "10 Ways AI Platforms Can Boost Your Business Efficiency",
@@ -2339,7 +2349,7 @@ export const blogListStaticData = [
   {
     name: "What is an LLM? And Which One Should You Use?",
     loc: "https://www.brilworks.com/blog/what-is-llm-and-which-model-you-use/",
-    lastmod: "2025-10-07T09:58:40.885Z",
+    lastmod: "2025-10-09T06:09:36.589Z",
   },
   {
     name: "Best Practices for Node.js App Testing",
@@ -2479,7 +2489,7 @@ export const blogListStaticData = [
   {
     name: "What is Express js? A Comprehensive Guide to Beginners",
     loc: "https://www.brilworks.com/blog/what-is-express-js-comprehensive-guide-to-beginners/",
-    lastmod: "2025-08-29T07:32:58.048Z",
+    lastmod: "2025-10-09T11:19:50.116Z",
   },
   {
     name: "Top Features of Buy Now, Pay Later (BNPL) Apps",

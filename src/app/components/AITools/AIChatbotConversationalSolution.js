@@ -17,7 +17,7 @@ const aiInsights = [
     title: "AI WhatsApp Agent",
     description:
       "Automate WhatsApp conversations with an AI agent that handles queries, support, and customer interactions in real time.",
-    image: "/images/v2/ai-whatsapp-agent.webp",
+    image: "/images/v2/whatsapp-ai-chatbot.webp",
     link: "/ai-tools/ai-whatsapp-agent/",
     bg: "bg-[#25D366] text-white",
   },
@@ -25,7 +25,7 @@ const aiInsights = [
     title: "AI Chatbot (Knowledge Base)",
     description:
       "Deploy an AI chatbot trained on your knowledge base to deliver instant, accurate, and context-aware responses to users.",
-    image: "/images/v2/ai-chatbot-knowledge.webp",
+    image: "/images/v2/ai-knowldege base.webp",
     link: "/ai-tools/ai-chatbot-knowledge-base/",
     bg: "bg-[#F59E0B] text-white",
   },
@@ -33,7 +33,7 @@ const aiInsights = [
     title: "AI Chatbot (Live Database Chat with SQL and MongoDB)",
     description:
       "Chat directly with your live databases using AI. Query SQL and MongoDB with natural language and get real-time insights.",
-    image: "/images/v2/ai-chatbot-database.webp/",
+    image: "/images/v2/ai-chatbot-db.webp",
     link: "https://sql-chat-web.vercel.app/",
     bg: "bg-sky-300 text-white",
   },
@@ -101,21 +101,26 @@ const AIChatbotConversationalSolution = () => {
                 className="w-full h-40 object-cover group-hover:scale-105 transition-transform"
               /> */}
 
-              <div
+              <img
+                src={insight.image}
+                alt={insight.title}
+                className="w-full h-[240px] object-cover  transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+              />
+              {/* <div
                 className={`${insight.bg} flex items-center justify-center p-6`}
               >
                 <div className="w-72 h-40 flex items-center justify-center">
-                  {/* <Image
+                  <Image
                     src={insight.image}
                     alt={insight.title}
                     fill
                     className="object-contain"
-                  /> */}
+                  /> 
                   <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center ">
                     {insight?.title}
                   </p>
                 </div>
-              </div>
+              </div>*/}
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {insight.title}
