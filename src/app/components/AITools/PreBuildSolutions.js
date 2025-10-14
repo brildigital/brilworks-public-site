@@ -32,6 +32,9 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $15,000",
       timeline: "4-6 weeks",
       videoLink: "https://youtube.com/shorts/lXJ-9EghV2c",
+      playstoreLink:
+        "https://play.google.com/store/apps/details?id=com.brilworks.mindsync",
+      // appstoreLink: "",
       features: [
         "Smart AI Matching Algorithm",
         "Real-time In-app Messaging",
@@ -69,6 +72,8 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $20,000",
       timeline: "6-8 weeks",
       videoLink: "https://youtube.com/shorts/6OsaGiDJPx0",
+      // playstoreLink: "",
+      appstoreLink: "https://testflight.apple.com/join/eKnQGFSE",
       features: [
         "Personalized Workout Plans",
         "Diet & Nutrition Tracking",
@@ -106,6 +111,8 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $25,000",
       timeline: "6-8 weeks",
       videoLink: "https://www.youtube.com/shorts/OzHKM4TJ43s",
+      // playstoreLink: "",
+      appstoreLink: "https://testflight.apple.com/join/fG7FBgYQ",
       features: [
         "Patient Monitoring Dashboard",
         "Care Plan Management",
@@ -143,6 +150,9 @@ export default function PrebuiltSolutionsPage() {
       category: "Transportation",
       pricing: "From $20,000",
       timeline: "5-7 weeks",
+      playstoreLink:
+        "https://play.google.com/store/apps/details?id=com.brilworks.cabuno",
+      // appstoreLink: "",
       features: [
         "Real-time GPS Tracking",
         "Multiple Payment Options",
@@ -180,6 +190,9 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $12,000",
       timeline: "3-5 weeks",
       videoLink: "https://youtu.be/g5gnqXlJ7Hs",
+      playstoreLink:
+        "https://play.google.com/store/apps/details?id=com.brilworksdigital.enclaveconnect",
+      appstoreLink: "https://testflight.apple.com/join/jVpUjUXh",
       features: [
         "Visitor Management System",
         "Automated Billing & Payments",
@@ -494,6 +507,28 @@ export default function PrebuiltSolutionsPage() {
                         </div>
                         <p className="text-sm text-slate-600">4-6 Developers</p>
                       </div>
+                    </div>
+                    <div className="flex items-center gap-4 mb-6">
+                      {solution.playstoreLink && (
+                        <Link target="_blank" href={solution.playstoreLink}>
+                          <Image
+                            src="/images/download-from-Google-Play.png"
+                            alt="googleplay image"
+                            width={150}
+                            height={70}
+                          />
+                        </Link>
+                      )}
+                      {solution.appstoreLink && (
+                        <Link target="_blank" href={solution.appstoreLink}>
+                          <Image
+                            src="/images/download-from-App Store.png"
+                            alt="appstore image"
+                            width={150}
+                            height={70}
+                          />
+                        </Link>
+                      )}
                     </div>
 
                     <Link

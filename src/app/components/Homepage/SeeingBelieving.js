@@ -125,7 +125,7 @@ const SeeingBelieving = ({
       description:
         "Developing a mobile app for an ultimate AI stock prediction platform, allowing users to trade based on data-driven insights.",
       image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/b1a7a16ed4_stock-view-app.webp",
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/terrago-1760359156664.webp",
       alt: "Fintech App",
       industry: "Fintech",
       technology: ["React Native", "Java", "MySQL"],
@@ -137,7 +137,7 @@ const SeeingBelieving = ({
       description:
         "Developing a mobile inventory management solution for a leading seat manufacturer.",
       image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/93672878ad_powerful-inventory-app.webp",
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/inventory-management-1760359134476.webp",
       alt: "E-commerce App",
       industry: "E-Commerce",
       technology: ["ReactJS", "NodeJS", "MongoDB"],
@@ -150,7 +150,7 @@ const SeeingBelieving = ({
       description:
         "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
       image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/syncare-case-study-1759145777968.webp",
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
       industry: "Healthcare",
       technology: ["React Native"],
     },
@@ -160,7 +160,7 @@ const SeeingBelieving = ({
       description:
         "We built a feature-rich fitness app that combines real-time performance tracking, personalized plans, and expert insights to help users achieve their health goals seamlessly.",
       image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/eeb623385a_revolutionarizing-fitness-app.webp",
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitnest-app-mockup-1759749065112.webp",
       industry: "Healthcare",
       technology: ["iOS", "Android", "React Native"],
     },
