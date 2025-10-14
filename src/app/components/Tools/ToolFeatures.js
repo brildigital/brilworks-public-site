@@ -1222,6 +1222,104 @@ const whichAppShouldYouBuildFeatures = {
     },
   ],
 };
+const startupTechReadinessQuizFeatures = {
+  title: "Comprehensive Features for Startup Success",
+  description:
+    "Our tech readiness quiz provides detailed analysis across multiple dimensions to help you build a strong technological foundation.",
+  listData: [
+    {
+      icon: Brain,
+      title: "Comprehensive Assessment",
+      description:
+        "Evaluate 8 critical dimensions of tech readiness including team, budget, and strategy alignment.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Gauge,
+      title: "Real-time Scoring",
+      description:
+        "Get instant readiness scores with detailed breakdowns and personalized recommendations.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Target,
+      title: "Gap Analysis",
+      description:
+        "Identify specific areas needing improvement with prioritized action items and timelines.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Rocket,
+      title: "Growth Roadmap",
+      description:
+        "Receive strategic guidance for scaling your technology infrastructure and capabilities.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Understand potential technology risks and get mitigation strategies for common startup challenges.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Investor Ready",
+      description:
+        "Generate reports that demonstrate tech readiness to investors and stakeholders.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+const digitalTransformationReadinessCheckerFeatures = {
+  title: "Comprehensive Features for Digital Transformation Success",
+  description:
+    "Our advanced readiness checker provides detailed analysis across multiple dimensions to ensure your digital transformation initiatives succeed.",
+  listData: [
+    {
+      icon: Brain,
+      title: "Comprehensive Assessment",
+      description:
+        "Evaluate 8 critical dimensions of digital transformation readiness including leadership, skills, and technology.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Gauge,
+      title: "Real-time Scoring",
+      description:
+        "Get instant readiness scores with detailed breakdowns and risk assessments for informed decision-making.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Target,
+      title: "Gap Identification",
+      description:
+        "Pinpoint specific areas requiring attention with prioritized action items and improvement strategies.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Globe,
+      title: "Industry Benchmarks",
+      description:
+        "Compare your readiness against industry standards and best practices for digital transformation.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Understand transformation risks and receive mitigation strategies for common implementation challenges.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Strategic Roadmap",
+      description:
+        "Generate detailed transformation roadmaps with timelines, priorities, and success metrics.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1257,6 +1355,9 @@ const ToolFeatures = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorFeatures,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFeatures,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildFeatures,
+    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFeatures,
+    "/tools/digital-transformation-readiness-checker/":
+      digitalTransformationReadinessCheckerFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

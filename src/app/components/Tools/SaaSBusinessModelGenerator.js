@@ -18,7 +18,7 @@ const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const MVPFeatureSelectorQuiz = () => {
+const SaaSBusinessModelGenerator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
@@ -408,4 +408,4 @@ const MVPFeatureSelectorQuiz = () => {
   );
 };
 
-export default MVPFeatureSelectorQuiz;
+export default SaaSBusinessModelGenerator;

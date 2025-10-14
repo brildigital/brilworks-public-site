@@ -820,6 +820,68 @@ const whichAppShouldYouBuildFaqData = {
     },
   ],
 };
+const startupTechReadinessQuizFaqData = {
+  description:
+    "Get answers to common questions about startup tech readiness and how to improve your assessment score.",
+  queAns: [
+    {
+      question: "What is a Startup Tech Readiness Quiz?",
+      answer:
+        "A Startup Tech Readiness Quiz is a comprehensive assessment tool that evaluates your startup's technological preparedness across multiple dimensions including team capabilities, infrastructure, budget allocation, and strategic planning. It provides actionable insights to help you make informed technology decisions.",
+    },
+    {
+      question: "How accurate is this assessment?",
+      answer:
+        "Our assessment is based on industry best practices and data from thousands of successful startups. While results provide valuable insights, they should be used as guidance alongside professional consultation. The accuracy improves with more detailed and honest responses to all questions.",
+    },
+    {
+      question: "What should I do with my readiness score?",
+      answer:
+        "Use your score to identify strengths and weaknesses in your tech strategy. Scores above 80 indicate strong readiness, 60-80 suggests good foundation with room for improvement, and below 60 indicates areas needing immediate attention before scaling.",
+    },
+    {
+      question: "How often should I retake this quiz?",
+      answer:
+        "We recommend retaking the quiz quarterly during early stages and bi-annually as you mature. Technology needs evolve rapidly in startups, and regular assessment helps ensure your tech strategy aligns with business growth and market changes.",
+    },
+    {
+      question: "Can this quiz help with investor presentations?",
+      answer:
+        "Absolutely! A high tech readiness score demonstrates to investors that you have a solid technical foundation and strategic approach. The detailed breakdown can be valuable supporting material for funding discussions and due diligence processes.",
+    },
+  ],
+};
+const digitalTransformationReadinessCheckerFaqData = {
+  description:
+    "Get answers to common questions about digital transformation readiness and how to improve your assessment score.",
+  queAns: [
+    {
+      question: "What is Digital Transformation Readiness?",
+      answer:
+        "Digital Transformation Readiness measures an organization's preparedness to successfully implement digital technologies and processes. It evaluates factors like leadership commitment, employee skills, technology infrastructure, data maturity, and cultural readiness to ensure successful transformation initiatives.",
+    },
+    {
+      question: "Why is assessing readiness important before transformation?",
+      answer:
+        "Assessing readiness helps identify gaps and risks before investing in transformation initiatives. Organizations with higher readiness scores are 5x more likely to achieve their digital transformation goals and see faster ROI. It prevents costly mistakes and ensures strategic alignment.",
+    },
+    {
+      question: "What score indicates good transformation readiness?",
+      answer:
+        "Scores above 75 indicate strong readiness for digital transformation. Scores between 60-75 suggest good foundation with some areas needing improvement. Scores below 60 indicate significant preparation is needed before major transformation initiatives.",
+    },
+    {
+      question: "How often should we reassess our readiness?",
+      answer:
+        "We recommend quarterly assessments during active transformation periods and bi-annual reviews for ongoing digital maturity monitoring. Technology and market conditions change rapidly, so regular assessment ensures your transformation strategy remains aligned and effective.",
+    },
+    {
+      question: "What are the most critical readiness factors?",
+      answer:
+        "Leadership support and employee skills are the most critical factors, followed by data maturity and technology infrastructure. Cultural readiness and change management capabilities are equally important for sustainable transformation success.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -861,6 +923,9 @@ const ToolFAQs = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorFaqData,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFaqData,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildFaqData,
+    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFaqData,
+    "/tools/digital-transformation-readiness-checker/":
+      digitalTransformationReadinessCheckerFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

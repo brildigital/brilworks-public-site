@@ -187,6 +187,38 @@ const toolsData = [
     link: "/tools/which-app-should-you-build/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "Is Your Startup Tech-Ready?",
+    description:
+      "Take this 2-minute quiz to evaluate your startup’s technical readiness and get personalized insights to move from idea to launch confidently.",
+    bg: "bg-lime-200",
+    link: "/tools/startup-tech-readiness-quiz/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Digital Transformation Readiness Checker",
+    description:
+      "Take this quick readiness check to assess your organization’s digital maturity and uncover the next steps to drive successful transformation.",
+    bg: "bg-rose-200",
+    link: "/tools/digital-transformation-readiness-checker/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  // {
+  //   title: "Build Your SaaS Business Model Instantly",
+  //   description:
+  //     "Turn your SaaS idea into a clear, structured business model with pricing, positioning, and revenue strategy — all generated in seconds.",
+  //   bg: "bg-cyan-100",
+  //   link: "/tools/build-your-saas-business-model/",
+  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  // },
+  // {
+  //   title: "Code Quality Analyzer (Lite)",
+  //   description:
+  //     "Quickly scan your code for issues, style inconsistencies, and optimization opportunities — no setup required.",
+  //   bg: "bg-orange-200",
+  //   link: "/tools/code-quality-analyzer/",
+  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  // },
 ];
 
 const Tools = () => {

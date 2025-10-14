@@ -738,6 +738,14 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/automation-saving-estimator/",
     lastmod: "2025-09-30T15:22:34.531Z",
   },
+  // {
+  //   loc: "https://www.brilworks.com/tools/mvp-feature-selector-quiz/",
+  //   lastmod: "2025-10-13T16:53:24.531Z",
+  // },
+  // {
+  //   loc: "https://www.brilworks.com/tools/which-app-should-you-build/",
+  //   lastmod: "2025-10-13T18:45:53.531Z",
+  // },
 
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import {
   AlertCircle,
+  AlertTriangle,
   ArrowRight,
   BarChart3,
   Calendar,
@@ -12,12 +13,14 @@ import {
   Cpu,
   Database,
   DollarSign,
+  Gauge,
   Link,
   Lock,
   Smartphone,
   Sparkles,
   Star,
   Target,
+  TrendingDown,
   TrendingUp,
   Users,
   Wallet,
@@ -134,6 +137,14 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     },
     "/tools/automation-saving-estimator/": {
       title: "Savings Analysis",
+    },
+    "/tools/startup-tech-readiness-quiz/": {
+      icon: Gauge,
+      title: "Readiness Assessment",
+    },
+    "/tools/digital-transformation-readiness-checker/": {
+      icon: Gauge,
+      title: "Readiness Assessment",
     },
   };
 
@@ -1334,6 +1345,199 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     <span className="text-gray-700">{step}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/startup-tech-readiness-quiz/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full">
+            <div className="border p-5 rounded-xl shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="text-left">
+                  <p className="text-sm text-gray-600">Tech Readiness Score</p>
+
+                  <p className="text-4xl font-bold text-green-600">
+                    {result.score}/100
+                  </p>
+                  <p className="text-lg font-semibold text-gray-700 mt-1">
+                    {result.level}
+                  </p>
+                </div>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  {result.score >= 85 ? (
+                    <Star className="w-8 h-8 text-green-600" />
+                  ) : result.score >= 70 ? (
+                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  ) : result.score >= 55 ? (
+                    <AlertTriangle className="w-8 h-8 text-orange-500" />
+                  ) : (
+                    <TrendingDown className="w-8 h-8 text-red-500" />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {result.bonusPoints > 0 && (
+              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl">
+                <div className="flex items-center">
+                  <Sparkles className="w-5 h-5 text-yellow-600 mr-2" />
+                  <p className="text-sm font-semibold text-yellow-800">
+                    Tech Stack Bonus: +{result.bonusPoints} points
+                  </p>
+                </div>
+                <p className="text-xs text-yellow-700 mt-1">
+                  Your technology choices boost your readiness score
+                </p>
+              </div>
+            )}
+
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+              <h4 className="font-semibold text-blue-900 mb-3">
+                Key Recommendations
+              </h4>
+              <div className="space-y-2">
+                {result.recommendations.map((rec, index) => (
+                  <p
+                    key={index}
+                    className="text-sm text-blue-800 flex items-start"
+                  >
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    {rec}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="border p-4 rounded-xl shadow-sm">
+              <h4 className="font-semibold text-gray-900 mb-3">
+                Score Breakdown
+              </h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Team & Budget</span>
+                  <span className="font-semibold">35 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Development & Expertise</span>
+                  <span className="font-semibold">20 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Strategy & Planning</span>
+                  <span className="font-semibold">30 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Tech Stack Bonus</span>
+                  <span className="font-semibold">15 points max</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/digital-transformation-readiness-checker/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full">
+            <div className="border p-4 rounded-xl shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="text-left">
+                  <p className="text-sm text-gray-600">
+                    Transformation Readiness
+                  </p>
+                  <p className="text-4xl font-bold text-green-600">
+                    {result.score}/100
+                  </p>
+                  <p className="text-lg font-semibold text-gray-700 mt-1">
+                    {result.level}
+                  </p>
+                  <div className="w-full flex items-center justify-between gap-4">
+                    <span className="text-sm text-gray-600">Risk Level:</span>
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        result.riskLevel === "Low"
+                          ? "bg-green-100 text-green-800"
+                          : result.riskLevel === "Medium"
+                          ? "bg-yellow-100 text-yellow-800"
+                          : result.riskLevel === "Medium-High"
+                          ? "bg-orange-100 text-orange-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
+                      {result.riskLevel}
+                    </span>
+                  </div>
+                </div>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  {result.score >= 80 ? (
+                    <Star className="w-8 h-8 text-green-600" />
+                  ) : result.score >= 65 ? (
+                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  ) : result.score >= 45 ? (
+                    <AlertTriangle className="w-8 h-8 text-orange-500" />
+                  ) : (
+                    <TrendingDown className="w-8 h-8 text-red-500" />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+              <h4 className="font-semibold text-blue-900 mb-3">
+                Strategic Recommendations
+              </h4>
+              <div className="space-y-2">
+                {result.recommendations.map((rec, index) => (
+                  <p
+                    key={index}
+                    className="text-sm text-blue-800 flex items-start"
+                  >
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    {rec}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="border p-4 rounded-xl shadow-sm">
+              <h4 className="font-semibold text-gray-900 mb-3">
+                Assessment Breakdown
+              </h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">
+                    Organization & Leadership
+                  </span>
+                  <span className="font-semibold">20 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Technology & Skills</span>
+                  <span className="font-semibold">20 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Data & Customer Focus</span>
+                  <span className="font-semibold">20 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Market & Competition</span>
+                  <span className="font-semibold">10 points max</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Digital Maturity Bonus</span>
+                  <span className="font-semibold">30 points max</span>
+                </div>
               </div>
             </div>
           </div>

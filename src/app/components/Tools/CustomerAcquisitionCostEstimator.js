@@ -244,7 +244,7 @@ const CustomerAcquisitionCostEstimator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
-                className="w-full bg-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
+                className="w-full bg-themeColor text-white rounded-lg py-3 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
                 {isCalculating ? (
                   <>

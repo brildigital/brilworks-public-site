@@ -773,3 +773,229 @@ export const calculateWhichAppShouldYouBuild = (formData) => {
     }.`,
   };
 };
+
+// 23. Startup Tech Readiness Quiz
+export const calculateStartupTechReadiness = (formData) => {
+  const teamSize = parseInt(formData.teamSize) || 0;
+  const budget = parseFloat(formData.techBudget) || 0;
+  const stage = parseInt(formData.developmentStage) || 0;
+  const expertise = parseInt(formData.techExpertise) || 0;
+  const timeToMarket = parseInt(formData.timeToMarket) || 0;
+  const scalability = parseInt(formData.scalabilityNeeds) || 0;
+  const security = parseInt(formData.securityRequirements) || 0;
+
+  // Base scoring system (0-100)
+  let baseScore = 0;
+
+  // Team size scoring (0-15 points)
+  if (teamSize >= 10) baseScore += 15;
+  else if (teamSize >= 5) baseScore += 12;
+  else if (teamSize >= 3) baseScore += 8;
+  else if (teamSize >= 1) baseScore += 5;
+
+  // Budget scoring (0-20 points)
+  if (budget >= 100000) baseScore += 20;
+  else if (budget >= 50000) baseScore += 15;
+  else if (budget >= 25000) baseScore += 10;
+  else if (budget >= 10000) baseScore += 6;
+  else if (budget > 0) baseScore += 3;
+
+  // Development stage, expertise, time to market, scalability, security (each 0-10 points)
+  baseScore += stage + expertise + timeToMarket + scalability + security;
+
+  // Description-based adjustments
+  const description = formData.description.toLowerCase();
+  let multiplier = 1;
+  let bonusPoints = 0;
+
+  if (description.includes("ai") || description.includes("machine learning")) {
+    bonusPoints += 5;
+  }
+  if (
+    description.includes("cloud") ||
+    description.includes("aws") ||
+    description.includes("azure")
+  ) {
+    bonusPoints += 3;
+  }
+  if (description.includes("mobile") || description.includes("app")) {
+    bonusPoints += 2;
+  }
+  if (description.includes("saas") || description.includes("platform")) {
+    bonusPoints += 4;
+  }
+  if (description.includes("mvp") || description.includes("prototype")) {
+    bonusPoints += 2;
+  }
+  if (description.includes("scalable") || description.includes("enterprise")) {
+    bonusPoints += 3;
+  }
+  if (description.includes("security") || description.includes("compliance")) {
+    bonusPoints += 3;
+  }
+
+  const finalScore = Math.min(100, baseScore + bonusPoints);
+
+  // Determine readiness level
+  let readinessLevel = "";
+  let recommendations = [];
+
+  if (finalScore >= 85) {
+    readinessLevel = "Excellent";
+    recommendations = [
+      "Your startup shows exceptional tech readiness",
+      "Focus on execution and market validation",
+      "Consider advanced optimization strategies",
+    ];
+  } else if (finalScore >= 70) {
+    readinessLevel = "Good";
+    recommendations = [
+      "Strong foundation with room for improvement",
+      "Address identified gaps before scaling",
+      "Consider additional technical expertise",
+    ];
+  } else if (finalScore >= 55) {
+    readinessLevel = "Fair";
+    recommendations = [
+      "Basic readiness but needs significant improvement",
+      "Invest in team development and infrastructure",
+      "Seek technical mentorship or advisory support",
+    ];
+  } else {
+    readinessLevel = "Needs Improvement";
+    recommendations = [
+      "Critical gaps in tech readiness identified",
+      "Focus on building core technical capabilities",
+      "Consider technical co-founder or CTO hire",
+    ];
+  }
+
+  return {
+    score: finalScore,
+    level: readinessLevel,
+    recommendations: recommendations,
+    bonusPoints: bonusPoints,
+  };
+};
+// 24. Digital Transformation Readiness Quiz
+export const calculateDigitalTransformationReadiness = (formData) => {
+  const orgSize = parseInt(formData.organizationSize) || 0;
+  const techLevel = parseInt(formData.currentTechLevel) || 0;
+  const budget = parseInt(formData.digitalBudget) || 0;
+  const leadership = parseInt(formData.leadershipSupport) || 0;
+  const skills = parseInt(formData.employeeSkills) || 0;
+  const dataMaturity = parseInt(formData.dataMaturity) || 0;
+  const customerExp = parseInt(formData.customerExpectations) || 0;
+  const competition = parseInt(formData.competitorPressure) || 0;
+
+  // Base scoring system (0-100)
+  let baseScore = 0;
+
+  // Organization size scoring (0-10 points)
+  if (orgSize >= 8) baseScore += 10;
+  else if (orgSize >= 6) baseScore += 8;
+  else if (orgSize >= 4) baseScore += 6;
+  else if (orgSize >= 2) baseScore += 4;
+
+  // Each assessment factor (0-10 points each, total 70 points)
+  baseScore +=
+    techLevel +
+    budget +
+    leadership +
+    skills +
+    dataMaturity +
+    customerExp +
+    competition;
+
+  // Description-based adjustments
+  const description = formData.description.toLowerCase();
+  let bonusPoints = 0;
+
+  if (description.includes("cloud") || description.includes("saas")) {
+    bonusPoints += 5;
+  }
+  if (
+    description.includes("ai") ||
+    description.includes("machine learning") ||
+    description.includes("analytics")
+  ) {
+    bonusPoints += 4;
+  }
+  if (
+    description.includes("mobile") ||
+    description.includes("digital customer")
+  ) {
+    bonusPoints += 3;
+  }
+  if (description.includes("automation") || description.includes("workflow")) {
+    bonusPoints += 3;
+  }
+  if (description.includes("data-driven") || description.includes("insights")) {
+    bonusPoints += 3;
+  }
+  if (description.includes("agile") || description.includes("devops")) {
+    bonusPoints += 2;
+  }
+  if (
+    description.includes("cybersecurity") ||
+    description.includes("compliance")
+  ) {
+    bonusPoints += 2;
+  }
+  if (description.includes("legacy") || description.includes("outdated")) {
+    bonusPoints -= 3;
+  }
+
+  const finalScore = Math.min(100, Math.max(0, baseScore + bonusPoints));
+
+  // Determine readiness level and recommendations
+  let readinessLevel = "";
+  let recommendations = [];
+  let riskLevel = "";
+
+  if (finalScore >= 80) {
+    readinessLevel = "Excellent";
+    riskLevel = "Low";
+    recommendations = [
+      "Your organization shows exceptional digital readiness",
+      "Focus on advanced transformation initiatives",
+      "Consider becoming a digital leader in your industry",
+      "Implement cutting-edge technologies like AI and IoT",
+    ];
+  } else if (finalScore >= 65) {
+    readinessLevel = "Good";
+    riskLevel = "Medium";
+    recommendations = [
+      "Strong foundation with some areas for improvement",
+      "Address identified gaps before major initiatives",
+      "Invest in employee training and change management",
+      "Strengthen data governance and security measures",
+    ];
+  } else if (finalScore >= 45) {
+    readinessLevel = "Fair";
+    riskLevel = "Medium-High";
+    recommendations = [
+      "Basic readiness but significant preparation needed",
+      "Focus on building core digital capabilities",
+      "Secure stronger leadership commitment and budget",
+      "Start with pilot projects to build confidence",
+    ];
+  } else {
+    readinessLevel = "Needs Improvement";
+    riskLevel = "High";
+    recommendations = [
+      "Critical gaps identified - major preparation required",
+      "Build foundational technology infrastructure",
+      "Invest heavily in skills development and training",
+      "Establish clear digital strategy and governance",
+    ];
+  }
+
+  return {
+    score: finalScore,
+    level: readinessLevel,
+    riskLevel: riskLevel,
+    recommendations: recommendations,
+    bonusPoints: bonusPoints,
+  };
+};

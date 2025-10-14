@@ -690,6 +690,68 @@ const whichAppShouldYouBuildSteps = {
     },
   ],
 };
+const startupTechReadinessQuizSteps = {
+  title: "How to Assess Your Tech Readiness in 4 Steps",
+  description:
+    "Follow our systematic approach to evaluate your startup's technology foundation and identify areas for strategic improvement.",
+  listData: [
+    {
+      title: "Assess Current State",
+      description:
+        "Evaluate your existing technology infrastructure, team capabilities, and development processes.",
+      icon: Target,
+    },
+    {
+      title: "Identify Gaps",
+      description:
+        "Analyze weaknesses in your tech stack, skills, budget allocation, and strategic planning.",
+      icon: BarChart3,
+    },
+    {
+      title: "Score Readiness",
+      description:
+        "Calculate comprehensive readiness score based on multiple factors and industry benchmarks.",
+      icon: Calculator,
+    },
+    {
+      title: "Get Recommendations",
+      description:
+        "Receive actionable insights and prioritized recommendations to improve your tech readiness.",
+      icon: Lightbulb,
+    },
+  ],
+};
+const digitalTransformationReadinessCheckerSteps = {
+  title: "How to Assess Digital Transformation Readiness in 4 Steps",
+  description:
+    "Follow our systematic approach to evaluate your organization's digital transformation readiness and identify strategic improvement opportunities.",
+  listData: [
+    {
+      title: "Current State Assessment",
+      description:
+        "Evaluate existing technology infrastructure, processes, and organizational capabilities.",
+      icon: Target,
+    },
+    {
+      title: "Gap Analysis",
+      description:
+        "Identify gaps between current state and desired digital transformation outcomes.",
+      icon: BarChart3,
+    },
+    {
+      title: "Readiness Scoring",
+      description:
+        "Calculate comprehensive readiness score based on multiple transformation factors.",
+      icon: Calculator,
+    },
+    {
+      title: "Strategic Roadmap",
+      description:
+        "Receive prioritized recommendations and implementation roadmap for transformation success.",
+      icon: Lightbulb,
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -723,6 +785,9 @@ const ToolHowToUse = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorSteps,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizSteps,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildSteps,
+    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizSteps,
+    "/tools/digital-transformation-readiness-checker/":
+      digitalTransformationReadinessCheckerSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
