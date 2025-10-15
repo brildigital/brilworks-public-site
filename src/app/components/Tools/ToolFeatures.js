@@ -32,6 +32,8 @@ import {
   Workflow,
   Gauge,
   Bot,
+  Code2,
+  Bug,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1320,6 +1322,105 @@ const digitalTransformationReadinessCheckerFeatures = {
     },
   ],
 };
+const saasBusinessModelGeneratorFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to validate and launch your SaaS business",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Smart Pricing Models",
+      description:
+        "Get AI-recommended pricing tiers based on your market and competitors",
+      color: "bg-blue-100 text-blue-600",
+    },
+
+    {
+      icon: Users,
+      title: "Target Audience Analysis",
+      description: "Identify and understand your ideal customer profiles",
+      color: "bg-green-100 text-green-600",
+    },
+
+    {
+      icon: TrendingUp,
+      title: "Growth Strategies",
+      description:
+        "Receive customized growth tactics for your specific business model",
+      color: "bg-purple-100 text-purple-600",
+    },
+
+    {
+      icon: BarChart3,
+      title: "Revenue Projections",
+      description: "Forecast potential revenue and key business metrics",
+      color: "bg-orange-100 text-orange-600",
+    },
+
+    {
+      icon: Rocket,
+      title: "Go-to-Market Plan",
+      description: "Step-by-step launch strategy tailored to your app",
+      color: "bg-red-100 text-red-600",
+    },
+
+    {
+      icon: Clock,
+      title: "Time & Cost Estimates",
+      description:
+        "Realistic timelines and budget requirements for development",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+
+const codeQualityAnalyzerFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to maintain high-quality, secure code",
+  listData: [
+    {
+      icon: Bug,
+      title: "Bug Detection",
+      description:
+        "Automatically identify potential bugs and logical errors in your code",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Security Analysis",
+      description:
+        "Scan for security vulnerabilities and common attack vectors",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Performance Insights",
+      description:
+        "Get recommendations to optimize code performance and efficiency",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Code2,
+      title: "Code Smells",
+      description:
+        "Detect code smells and anti-patterns that hurt maintainability",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Quality Metrics",
+      description:
+        "Track maintainability, reliability, and technical debt scores",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Clock,
+      title: "Fix Time Estimates",
+      description:
+        "Get realistic time estimates for addressing identified issues",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1358,6 +1459,9 @@ const ToolFeatures = () => {
     "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFeatures,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerFeatures,
+    "/tools/build-your-saas-business-model/":
+      saasBusinessModelGeneratorFeatures,
+    "/tools/code-quality-analyzer/": codeQualityAnalyzerFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

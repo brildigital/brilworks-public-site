@@ -203,22 +203,22 @@ const toolsData = [
     link: "/tools/digital-transformation-readiness-checker/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
-  // {
-  //   title: "Build Your SaaS Business Model Instantly",
-  //   description:
-  //     "Turn your SaaS idea into a clear, structured business model with pricing, positioning, and revenue strategy — all generated in seconds.",
-  //   bg: "bg-cyan-100",
-  //   link: "/tools/build-your-saas-business-model/",
-  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
-  // },
-  // {
-  //   title: "Code Quality Analyzer (Lite)",
-  //   description:
-  //     "Quickly scan your code for issues, style inconsistencies, and optimization opportunities — no setup required.",
-  //   bg: "bg-orange-200",
-  //   link: "/tools/code-quality-analyzer/",
-  //   tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
-  // },
+  {
+    title: "Build Your SaaS Business Model Instantly",
+    description:
+      "Turn your SaaS idea into a clear, structured business model with pricing, positioning, and revenue strategy — all generated in seconds.",
+    bg: "bg-cyan-100",
+    link: "/tools/build-your-saas-business-model/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Code Quality Analyzer (Lite)",
+    description:
+      "Quickly scan your code for issues, style inconsistencies, and optimization opportunities — no setup required.",
+    bg: "bg-orange-200",
+    link: "/tools/code-quality-analyzer/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

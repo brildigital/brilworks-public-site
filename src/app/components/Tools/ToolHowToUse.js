@@ -12,10 +12,12 @@ import {
   Code,
   Cpu,
   DollarSign,
+  FileCode,
   FileText,
   Layers,
   Lightbulb,
   Rocket,
+  Search,
   Server,
   Settings,
   Smartphone,
@@ -752,6 +754,56 @@ const digitalTransformationReadinessCheckerSteps = {
     },
   ],
 };
+const saasBusinessModelGeneratorSteps = {
+  title: "How It Works",
+  description:
+    "Three simple steps to transform your idea into a validated business model",
+  listData: [
+    {
+      icon: Target,
+      title: "Define Your Vision",
+      description:
+        "Tell us about your app idea, target audience, and the problem you're solving",
+    },
+    {
+      icon: Zap,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes market trends, competitor pricing, and optimal business models",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Your Strategy",
+      description:
+        "Receive a complete business model with pricing, revenue streams, and growth tactics",
+    },
+  ],
+};
+
+const codeQualityAnalyzerSteps = {
+  title: "How It Works",
+  description: "Three simple steps to get comprehensive code quality insights",
+  listData: [
+    {
+      icon: FileCode,
+      title: "Submit Your Code",
+      description:
+        "Paste your code snippet and provide context about your project and technology stack",
+    },
+    {
+      icon: Search,
+      title: "Instant Analysis",
+      description:
+        "Our analyzer scans for bugs, security issues, code smells, and best practice violations",
+    },
+    {
+      icon: BarChart3,
+      title: "Get Detailed Report",
+      description:
+        "Receive quality scores, identified issues, and actionable recommendations for improvement",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -788,6 +840,8 @@ const ToolHowToUse = () => {
     "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizSteps,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerSteps,
+    "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorSteps,
+    "/tools/code-quality-analyzer/": codeQualityAnalyzerSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

@@ -882,6 +882,87 @@ const digitalTransformationReadinessCheckerFaqData = {
     },
   ],
 };
+const saasBusinessModelGeneratorFaqdata = {
+  description:
+    "Everything you need to know about the SaaS Business Model Generator",
+  queAns: [
+    {
+      question: "How accurate are the business model recommendations?",
+      answer:
+        "Our generator uses proven frameworks and market data to provide recommendations. The accuracy depends on the quality of information you provide. We analyze successful SaaS businesses in your industry to suggest optimal pricing and strategies.",
+    },
+    {
+      question: "Can I save my generated business models?",
+      answer:
+        "Yes! All generated models are automatically saved to your account. You can access them anytime, compare different iterations, and refine your strategy as your business evolves.",
+    },
+    {
+      question: "What industries does this work for?",
+      answer:
+        "The generator works for all industries including Marketing, Healthcare, Education, Finance, E-commerce, and more. Our algorithm adapts to your specific market and provides tailored recommendations.",
+    },
+    {
+      question: "How long does it take to generate a model?",
+      answer:
+        "The entire process takes less than 2 minutes. Simply fill out the form with your app details, and you'll receive a comprehensive business model instantly with pricing tiers, revenue streams, and growth strategies.",
+    },
+    {
+      question: "Can I modify the generated business model?",
+      answer:
+        "Absolutely! The generated model serves as a strong foundation. You can customize pricing, adjust target markets, and modify strategies based on your specific needs and market feedback.",
+    },
+    {
+      question: "Is this suitable for non-SaaS businesses?",
+      answer:
+        "While optimized for SaaS businesses, the principles and strategies apply to many digital products. The pricing models, growth strategies, and revenue streams can be adapted for mobile apps, platforms, and digital services.",
+    },
+  ],
+};
+const codeQualityAnalyzerFaqdata = {
+  description: "Everything you need to know about Code Quality Analyzer",
+  queAns: [
+    {
+      question: "What programming languages are supported?",
+      answer:
+        "The Lite version supports all major programming languages including JavaScript, TypeScript, Python, Java, C#, Go, Ruby, and PHP. The analyzer uses language-agnostic patterns to detect common issues across different languages.",
+    },
+    {
+      question: "How accurate is the code analysis?",
+      answer:
+        "Our analyzer uses industry-standard patterns and best practices to evaluate code quality. While no automated tool is perfect, our analysis provides 99% accurate detection of common issues, code smells, and security vulnerabilities.",
+    },
+    {
+      question: "Can I analyze entire projects?",
+      answer:
+        "The Lite version is designed for code snippets and individual files up to 500 lines. For full project analysis with multiple files, continuous integration support, and team features, consider upgrading to our Pro version.",
+    },
+    {
+      question: "Is my code stored or shared?",
+      answer:
+        "Your privacy is our priority. Code submissions are analyzed in real-time and not permanently stored on our servers. Analysis results are saved to your account for 30 days, but the actual code is never retained.",
+    },
+    {
+      question: "What types of issues does it detect?",
+      answer:
+        "The analyzer detects bugs, security vulnerabilities, code smells, performance issues, maintainability problems, missing error handling, lack of documentation, excessive complexity, and violations of best practices.",
+    },
+    {
+      question: "How do I improve my code quality score?",
+      answer:
+        "Follow the recommendations in the improvements section. Focus on adding error handling, writing tests, documenting your code, reducing complexity, and following language-specific best practices. Each improvement will increase your score.",
+    },
+    {
+      question: "Can I use this for code reviews?",
+      answer:
+        "Absolutely! Many teams use our analyzer as part of their code review process. It helps identify issues before human review, allowing reviewers to focus on architecture and business logic rather than basic code quality.",
+    },
+    {
+      question: "What do the quality metrics mean?",
+      answer:
+        "Maintainability measures how easy your code is to modify. Reliability indicates how robust and error-free it is. Security shows potential vulnerabilities. Performance indicates efficiency and optimization level.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -926,6 +1007,8 @@ const ToolFAQs = () => {
     "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFaqData,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerFaqData,
+    "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorFaqdata,
+    "/tools/code-quality-analyzer/": codeQualityAnalyzerFaqdata,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

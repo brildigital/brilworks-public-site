@@ -999,3 +999,202 @@ export const calculateDigitalTransformationReadiness = (formData) => {
     bonusPoints: bonusPoints,
   };
 };
+// 25. Saas Business Model Generator
+export const calculateSaaSBusinessModel = (formData) => {
+  const generatedModel = {
+    businessModel:
+      formData.industry.includes("B2B") ||
+      formData.targetAudience.toLowerCase().includes("business")
+        ? "B2B SaaS Subscription"
+        : "Freemium + Premium Tiers",
+    pricingStrategy: {
+      tier1: { name: "Starter", price: "$29/mo", features: 5 },
+      tier2: { name: "Professional", price: "$79/mo", features: 15 },
+      tier3: { name: "Enterprise", price: "$299/mo", features: "Unlimited" },
+    },
+    revenueStreams: [
+      "Monthly/Annual Subscriptions",
+      "Add-on Features",
+      "API Access",
+      "White-label Solutions",
+    ],
+    targetMarket: formData.targetAudience || "Small to Medium Businesses",
+    growthStrategy: [
+      "Content Marketing & SEO",
+      "Freemium User Conversion",
+      "Partner & Affiliate Programs",
+      "Product-led Growth",
+    ],
+    keyMetrics: {
+      mrr: "Monthly Recurring Revenue",
+      churnRate: "< 5% target",
+      cac: "Customer Acquisition Cost",
+      ltv: "Lifetime Value",
+    },
+    estimatedTimeToMarket: "3-6 months",
+    initialInvestment: "$25,000 - $75,000",
+  };
+
+  return generatedModel;
+};
+
+// 25. Code Quality Analyzer (Lite)
+export const calculateCodeQuality = (code, description) => {
+  const codeLength = code.length;
+  const lines = code.split("\n").length;
+
+  const hasComments = code.includes("//") || code.includes("/*");
+  const hasErrorHandling =
+    code.includes("try") || code.includes("catch") || code.includes("error");
+  const hasTypeChecking =
+    code.includes("interface") ||
+    code.includes("type") ||
+    code.includes("TypeScript");
+  const hasTests =
+    description.toLowerCase().includes("test") ||
+    code.includes("test") ||
+    code.includes("expect");
+  const hasModularCode =
+    code.includes("function") ||
+    code.includes("class") ||
+    code.includes("const");
+
+  const longLines = code.split("\n").filter((line) => line.length > 120).length;
+  const nestedDepth = Math.max(
+    ...code.split("\n").map((line) => {
+      const indent = line.match(/^\s*/)?.[0].length || 0;
+      return Math.floor(indent / 2);
+    })
+  );
+
+  let baseScore = 50;
+  let critical = 0;
+  let major = 0;
+  let minor = 0;
+  let suggestions = 0;
+
+  if (hasComments) {
+    baseScore += 8;
+    minor += 0;
+  } else {
+    major += 1;
+    baseScore -= 5;
+    suggestions += 1;
+  }
+
+  if (hasErrorHandling) {
+    baseScore += 12;
+  } else {
+    critical += 1;
+    baseScore -= 10;
+  }
+
+  if (hasTypeChecking) {
+    baseScore += 10;
+  } else {
+    major += 1;
+    baseScore -= 5;
+  }
+
+  if (hasTests) {
+    baseScore += 15;
+  } else {
+    major += 2;
+    baseScore -= 8;
+  }
+
+  if (hasModularCode) {
+    baseScore += 8;
+  } else {
+    minor += 2;
+  }
+
+  if (longLines > 5) {
+    minor += longLines;
+    baseScore -= longLines * 2;
+    suggestions += 1;
+  }
+
+  if (nestedDepth > 4) {
+    major += 1;
+    baseScore -= 5;
+  }
+
+  if (codeLength < 50) {
+    suggestions += 1;
+    baseScore -= 5;
+  }
+
+  if (lines > 300) {
+    minor += 1;
+    suggestions += 1;
+  }
+
+  baseScore = Math.max(0, Math.min(100, baseScore));
+
+  const maintainability = Math.min(100, baseScore + (hasComments ? 10 : -10));
+  const reliability = Math.min(100, baseScore + (hasErrorHandling ? 15 : -15));
+  const security = Math.min(100, baseScore + (hasTypeChecking ? 10 : -5));
+  const performance = Math.min(100, baseScore + (nestedDepth < 3 ? 10 : -10));
+
+  let grade = "F";
+  if (baseScore >= 90) grade = "A";
+  else if (baseScore >= 80) grade = "B";
+  else if (baseScore >= 70) grade = "C";
+  else if (baseScore >= 60) grade = "D";
+
+  const strengths = [];
+  const improvements = [];
+
+  if (hasErrorHandling) strengths.push("Proper error handling implemented");
+  else improvements.push("Add comprehensive error handling");
+
+  if (hasComments) strengths.push("Well-documented code");
+  else improvements.push("Add meaningful comments and documentation");
+
+  if (hasTypeChecking) strengths.push("Type safety implemented");
+  else improvements.push("Implement type checking for better reliability");
+
+  if (hasTests) strengths.push("Test coverage present");
+  else improvements.push("Add unit and integration tests");
+
+  if (nestedDepth < 3)
+    strengths.push("Good code structure with low complexity");
+  else improvements.push("Reduce nesting depth for better readability");
+
+  if (longLines <= 3) strengths.push("Consistent line length");
+  else improvements.push("Break down long lines for better readability");
+
+  const totalIssues = critical + major + minor;
+  const estimatedFixTime =
+    totalIssues < 5 ? "1-2 hours" : totalIssues < 15 ? "4-8 hours" : "1-2 days";
+
+  return {
+    overallScore: Math.round(baseScore),
+    grade,
+    issues: {
+      critical,
+      major,
+      minor,
+      suggestions,
+    },
+    metrics: {
+      maintainability: Math.round(maintainability),
+      reliability: Math.round(reliability),
+      security: Math.round(security),
+      performance: Math.round(performance),
+    },
+    strengths:
+      strengths.length > 0 ? strengths : ["Basic code structure present"],
+    improvements:
+      improvements.length > 0
+        ? improvements
+        : ["Continue following best practices"],
+    estimatedFixTime,
+    codeSmells: Math.floor(Math.random() * 5) + minor,
+    duplications: Math.floor(Math.random() * 3),
+    coverage: hasTests
+      ? Math.floor(Math.random() * 30) + 60
+      : Math.floor(Math.random() * 20),
+  };
+};

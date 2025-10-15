@@ -5,17 +5,21 @@ import {
   AlertTriangle,
   ArrowRight,
   BarChart3,
+  Bug,
   Calendar,
   CheckCircle,
+  CheckCircle2,
   Clock,
   Cloud,
   Code,
+  Code2,
   Cpu,
   Database,
   DollarSign,
   Gauge,
   Link,
   Lock,
+  Shield,
   Smartphone,
   Sparkles,
   Star,
@@ -25,11 +29,16 @@ import {
   Users,
   Wallet,
   X,
+  XCircle,
   Zap,
 } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 import { usePathname } from "next/navigation";
-import { getStatusColor, markFormSubmitted } from "../lib/commonFunction";
+import {
+  getScoreColor,
+  getStatusColor,
+  markFormSubmitted,
+} from "../lib/commonFunction";
 
 const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
   const pathname = usePathname();
@@ -145,6 +154,13 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "/tools/digital-transformation-readiness-checker/": {
       icon: Gauge,
       title: "Readiness Assessment",
+    },
+    "/tools/build-your-saas-business-model/": {
+      icon: CheckCircle,
+      title: "Your Business Model",
+    },
+    "/tools/code-quality-analyzer/": {
+      title: "Analysis Results",
     },
   };
 
@@ -1537,6 +1553,225 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Digital Maturity Bonus</span>
                   <span className="font-semibold">30 points max</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/build-your-saas-business-model/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full animate-fade-in">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-3">
+              <h4 className="font-semibold text-gray-900 mb-1">
+                Recommended Model
+              </h4>
+              <p className="text-blue-700 font-medium">
+                {result.businessModel}
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-3">
+              <h4 className="font-semibold text-gray-900 mb-2">
+                Pricing Strategy
+              </h4>
+              <div className="space-y-1">
+                {Object.values(result.pricingStrategy).map((tier, idx) => (
+                  <div
+                    key={idx}
+                    className="flex justify-between items-center bg-white rounded-lg p-2"
+                  >
+                    <div>
+                      <span className="font-medium text-gray-900">
+                        {tier.name}
+                      </span>
+                      <span className="text-sm text-gray-500 ml-2">
+                        ({tier.features} features)
+                      </span>
+                    </div>
+                    <span className="font-bold text-blue-600">
+                      {tier.price}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-2.5 flex flex-col items-center">
+                <Clock className="w-5 h-5 text-amber-600 mb-2" />
+                <p className="text-sm text-gray-600">Time to Market</p>
+                <p className="font-bold text-gray-900">
+                  {result.estimatedTimeToMarket}
+                </p>
+              </div>
+              <div className="bg-green-50 border border-green-200 rounded-xl p-2.5 flex flex-col items-center">
+                <DollarSign className="w-5 h-5 text-green-600 mb-2" />
+                <p className="text-sm text-gray-600">Initial Investment</p>
+                <p className="font-bold text-gray-900">
+                  {result.initialInvestment}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/code-quality-analyzer/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full animate-fade-in">
+            <div className="flex items-center justify-between pb-4 border-b-2 border-green-600">
+              <h3 className="text-2xl font-bold text-gray-900">
+                Analysis Results
+              </h3>
+              <div
+                className={`w-16 h-16 ${
+                  result.overallScore >= 80
+                    ? "bg-green-100"
+                    : result.overallScore >= 60
+                    ? "bg-yellow-100"
+                    : "bg-red-100"
+                } rounded-full flex items-center justify-center`}
+              >
+                <span
+                  className={`text-2xl font-bold ${getScoreColor(
+                    result.overallScore
+                  )}`}
+                >
+                  {result.grade}
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="font-semibold text-gray-900">Overall Score</h4>
+                <span
+                  className={`text-3xl font-bold ${getScoreColor(
+                    result.overallScore
+                  )}`}
+                >
+                  {result.overallScore}/100
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-3">
+                <div
+                  className={`h-3 rounded-full transition-all duration-500 ${
+                    result.overallScore >= 80
+                      ? "bg-green-500"
+                      : result.overallScore >= 60
+                      ? "bg-yellow-500"
+                      : "bg-red-500"
+                  }`}
+                  style={{ width: `${result.overallScore}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+              <div className="bg-red-50 border border-red-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-red-600">
+                  {result.issues.critical}
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <XCircle className="w-4 h-4 text-red-600" />
+                  Critical
+                </div>
+              </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-orange-600">
+                  {result.issues.major}
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <AlertTriangle className="w-4 h-4 text-orange-600" />
+                  Major
+                </div>
+              </div>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-yellow-600">
+                  {result.issues.minor}
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                  Minor
+                </div>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-blue-600">
+                  {result.issues.suggestions}
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <Target className="w-4 h-4 text-blue-600" />
+                  Tips
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-4">
+              <h4 className="font-semibold text-gray-900 mb-3">
+                Quality Metrics
+              </h4>
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                {Object.entries(result.metrics).map(([key, value]) => (
+                  <div key={key}>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="capitalize text-gray-700">{key}</span>
+                      <span className={`font-semibold ${getScoreColor(value)}`}>
+                        {value}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className={`h-2 rounded-full ${
+                          value >= 80
+                            ? "bg-green-500"
+                            : value >= 60
+                            ? "bg-yellow-500"
+                            : "bg-red-500"
+                        }`}
+                        style={{ width: `${value}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2">
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-gray-900">
+                  {result.codeSmells}
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <Bug className="w-4 h-4 text-slate-600" />
+                  Code Smells
+                </div>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-gray-900">
+                  {result.duplications}%
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <Code2 className="w-4 h-4 text-slate-600" /> Duplication
+                </div>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-xl p-2 text-center">
+                <div className="text-xl font-bold text-gray-900">
+                  {result.coverage}%
+                </div>
+                <div className="text-xs text-gray-600 flex items-center gap-2 justify-center">
+                  <Shield className="w-4 h-4 text-slate-600" /> Coverage
                 </div>
               </div>
             </div>
