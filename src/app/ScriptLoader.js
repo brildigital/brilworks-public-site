@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { generateBreadcrumb } from "./components/lib/schemaCode";
 
-const LoadScripts = ({ organization, website, gtm, clr }) => {
+const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
   const pathname = usePathname();
   useEffect(() => {
     const loadScripts = () => {
@@ -28,6 +28,11 @@ const LoadScripts = ({ organization, website, gtm, clr }) => {
           : JSON.stringify(organization);
         document.body.appendChild(organizationScript);
 
+        // Website Script
+        const localBusinessScript = document.createElement("script");
+        localBusinessScript.type = "application/ld+json";
+        localBusinessScript.innerHTML = JSON.stringify(localBusiness);
+        document.body.appendChild(localBusinessScript);
         // Website Script
         const websiteScript = document.createElement("script");
         websiteScript.type = "application/ld+json";

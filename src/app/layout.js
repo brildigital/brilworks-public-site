@@ -7,7 +7,11 @@ import StoryblokProvider from "./components/StoryblokProvider";
 import { Figtree } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
-import { organization, website } from "./components/lib/schemaCode";
+import {
+  organization,
+  website,
+  localBusiness,
+} from "./components/lib/schemaCode";
 import dynamic from "next/dynamic";
 
 const figtree = Figtree({
@@ -71,6 +75,7 @@ export default function RootLayout({ children }) {
           <LoadScripts
             organization={organization}
             website={website}
+            localBusiness={localBusiness}
             gtm={process.env.googleTagManagerID}
             clr={process.env.clearbitScript_URL}
           />
