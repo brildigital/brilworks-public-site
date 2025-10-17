@@ -2,6 +2,7 @@ import React from "react";
 import {
   Calculator,
   Sliders,
+  Activity,
   CheckSquare,
   FileText,
   Clock,
@@ -34,6 +35,10 @@ import {
   Bot,
   Code2,
   Bug,
+  Server,
+  CheckCircle2,
+  AlertTriangle,
+  Code,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1421,6 +1426,102 @@ const codeQualityAnalyzerFeatures = {
     },
   ],
 };
+const saasScalabilityReadinessCheckerFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to ensure your SaaS can scale",
+  listData: [
+    {
+      icon: Server,
+      title: "Infrastructure Analysis",
+      description:
+        "Comprehensive evaluation of your current tech stack and architecture patterns.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Activity,
+      title: "Performance Metrics",
+      description:
+        "Real-time assessment of response times, throughput, and system efficiency.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Users,
+      title: "User Load Capacity",
+      description:
+        "Determine how many users your system can handle before performance degrades.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Shield,
+      title: "Security Assessment",
+      description:
+        "Evaluate security measures and compliance readiness at scale.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth Projections",
+      description:
+        "Forecast infrastructure needs based on your growth trajectory.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Best Practices",
+      description:
+        "Compare against industry standards and receive expert recommendations.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+const legacySystemModernizationReadinessFeatures = {
+  title: "Comprehensive Analysis Features",
+  description: "Everything you need to plan successful legacy modernization",
+  listData: [
+    {
+      icon: Clock,
+      title: "System Age Analysis",
+      description:
+        "Evaluate how long your system has been in production and its lifecycle stage.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Code,
+      title: "Technology Stack Review",
+      description:
+        "Assess current frameworks, languages, and platforms against modern standards.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Cost Impact Analysis",
+      description:
+        "Calculate maintenance costs and potential savings from modernization.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Risk Identification",
+      description:
+        "Detect security vulnerabilities, technical debt, and operational risks.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: RefreshCw,
+      title: "Migration Strategies",
+      description:
+        "Get recommendations for lift-and-shift, replatform, or full rebuild approaches.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: CheckCircle2,
+      title: "ROI Projections",
+      description:
+        "Understand the business value and return on investment of modernization.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1462,6 +1563,10 @@ const ToolFeatures = () => {
     "/tools/build-your-saas-business-model/":
       saasBusinessModelGeneratorFeatures,
     "/tools/code-quality-analyzer/": codeQualityAnalyzerFeatures,
+    "/tools/saas-scalability-readiness-checker/":
+      saasScalabilityReadinessCheckerFeatures,
+    "/tools/legacy-system-modernization-readiness/":
+      legacySystemModernizationReadinessFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

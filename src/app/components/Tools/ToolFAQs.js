@@ -963,6 +963,77 @@ const codeQualityAnalyzerFaqdata = {
     },
   ],
 };
+const saasScalabilityReadinessCheckerFaqdata = {
+  description: "Everything you need to know about scalability readiness",
+  queAns: [
+    {
+      question: "What is SaaS scalability readiness?",
+      answer:
+        "SaaS scalability readiness refers to your system's ability to handle increased load, user growth, and data volume without degrading performance. It encompasses infrastructure, architecture, monitoring, and operational practices that enable smooth scaling.",
+    },
+    {
+      question: "How accurate is the readiness score?",
+      answer:
+        "Our algorithm analyzes multiple factors including infrastructure patterns, performance metrics, and best practices used by thousands of successful SaaS companies. While the score provides valuable insights, we recommend using it as a starting point for deeper infrastructure assessment.",
+    },
+    {
+      question: "What score should I aim for?",
+      answer:
+        "A score above 80 indicates excellent scalability readiness. Scores between 60-80 show good preparation with room for improvement. Scores below 60 suggest significant architectural or infrastructure improvements are needed before scaling.",
+    },
+    {
+      question: "How do keywords in the description affect my score?",
+      answer:
+        'Keywords help our algorithm understand your architecture patterns and practices. Terms like "distributed," "auto-scaling," "monitoring," and "cloud-native" indicate mature infrastructure, while terms like "monolith," "single server," or "manual" may indicate scalability challenges.',
+    },
+    {
+      question: "Can I improve my score after the assessment?",
+      answer:
+        "Absolutely! The recommendations provided are actionable steps you can take to improve your infrastructure. After implementing improvements, you can reassess to track your progress and get updated recommendations.",
+    },
+    {
+      question: "Do I need to implement all recommendations?",
+      answer:
+        "Not necessarily. Prioritize recommendations based on your current growth stage, budget, and business goals. Start with critical infrastructure issues and gradually implement other improvements as you scale.",
+    },
+  ],
+};
+
+const legacySystemModernizationReadinessFaqdata = {
+  description: "Common questions about legacy system modernization",
+  queAns: [
+    {
+      question: "What is legacy system modernization?",
+      answer:
+        "Legacy system modernization is the process of updating outdated technology infrastructure, applications, and platforms to modern standards. This includes upgrading programming languages, frameworks, databases, and architectures to improve performance, security, maintainability, and scalability while reducing technical debt and operational costs.",
+    },
+    {
+      question: "How do I know if my system needs modernization?",
+      answer:
+        "Key indicators include: system age over 5-7 years, high maintenance costs, frequent downtime, difficulty finding developers for old technologies, security vulnerabilities, poor performance, lack of integration capabilities, and inability to meet modern business requirements. Our assessment tool evaluates these factors to determine urgency.",
+    },
+    {
+      question: "What are the main modernization approaches?",
+      answer:
+        "There are several strategies: Rehost (lift-and-shift to cloud), Replatform (minor optimizations during migration), Refactor (restructure code while maintaining functionality), Rearchitect (significant changes to architecture), Rebuild (complete rewrite), and Replace (switch to commercial solutions). The best approach depends on your specific needs and constraints.",
+    },
+    {
+      question: "How long does modernization typically take?",
+      answer:
+        "Timeline varies significantly based on system complexity, chosen approach, and scope. Simple rehosting might take 3-6 months, while complete rebuilds can take 18-36 months or longer. A phased approach with incremental modernization is often recommended to manage risk and deliver value progressively throughout the transformation.",
+    },
+    {
+      question: "What is the typical ROI of modernization?",
+      answer:
+        "Organizations typically see 40-60% reduction in maintenance costs, 50-70% faster deployment cycles, improved system performance, enhanced security, and better scalability. While initial investment can be significant, most organizations achieve positive ROI within 2-3 years through reduced operational costs, increased efficiency, and new business capabilities.",
+    },
+    {
+      question: "How can I minimize risks during modernization?",
+      answer:
+        "Key risk mitigation strategies include: thorough planning and assessment, starting with pilot projects, maintaining parallel systems during transition, implementing comprehensive testing, training teams on new technologies, maintaining detailed documentation, and having rollback plans. Engaging experienced modernization partners can also significantly reduce risks.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1009,6 +1080,10 @@ const ToolFAQs = () => {
       digitalTransformationReadinessCheckerFaqData,
     "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorFaqdata,
     "/tools/code-quality-analyzer/": codeQualityAnalyzerFaqdata,
+    "/tools/saas-scalability-readiness-checker/":
+      saasScalabilityReadinessCheckerFaqdata,
+    "/tools/legacy-system-modernization-readiness/":
+      legacySystemModernizationReadinessFaqdata,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

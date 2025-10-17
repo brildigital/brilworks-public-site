@@ -162,6 +162,12 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "/tools/code-quality-analyzer/": {
       title: "Analysis Results",
     },
+    "/tools/saas-scalability-readiness-checker/": {
+      title: "Your Results",
+    },
+    "/tools/legacy-system-modernization-readiness/": {
+      title: "Assessment Results",
+    },
   };
 
   const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
@@ -1774,6 +1780,52 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   <Shield className="w-4 h-4 text-slate-600" /> Coverage
                 </div>
               </div>
+            </div>
+          </div>
+        );
+      case "/tools/saas-scalability-readiness-checker/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full animate-fade-in">
+            <div className="bg-white p-4 rounded-xl border border-blue-100 text-center">
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                READINESS SCORE
+              </p>
+              <p className={`text-4xl font-bold ${result.color} mb-2`}>
+                {result.score}
+              </p>
+              <p className={`text-xl font-semibold ${result.color}`}>
+                {result.level}
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border-blue-100">
+              <h4 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                <CheckCircle2 className="w-5 h-5 mr-2 text-blue-600" />
+                Recommendations
+              </h4>
+              <ul className="space-y-1">
+                {result.recommendations.map((rec, idx) => (
+                  <li key={idx} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span className="text-gray-700">{rec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-r from-themeColor to-cyan-600 p-4 rounded-xl text-white">
+              <p className="text-sm font-semibold mb-2">NEXT STEPS</p>
+              <p className="text-base">
+                Based on your score, we recommend focusing on the
+                recommendations above to improve your scalability readiness.
+              </p>
             </div>
           </div>
         );

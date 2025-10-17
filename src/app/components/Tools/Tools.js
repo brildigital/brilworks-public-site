@@ -219,6 +219,22 @@ const toolsData = [
     link: "/tools/code-quality-analyzer/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "SaaS Scalability Readiness Checker",
+    description:
+      "Assess your app’s scalability across tech stack, performance, and architecture — and uncover what’s holding back your growth.",
+    bg: "bg-fuchsia-200",
+    link: "/tools/saas-scalability-readiness-checker/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Legacy System Modernization Readiness Tool",
+    description:
+      "Find out how prepared your business is to upgrade outdated systems and embrace modern, scalable technologies.",
+    bg: "bg-slate-200",
+    link: "/tools/legacy-system-modernization-readiness/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

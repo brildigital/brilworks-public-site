@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Activity,
+  AlertTriangle,
   ArrowRight,
   BarChart3,
   Brain,
@@ -11,6 +13,7 @@ import {
   Cloud,
   Code,
   Cpu,
+  Database,
   DollarSign,
   FileCode,
   FileText,
@@ -779,7 +782,6 @@ const saasBusinessModelGeneratorSteps = {
     },
   ],
 };
-
 const codeQualityAnalyzerSteps = {
   title: "How It Works",
   description: "Three simple steps to get comprehensive code quality insights",
@@ -801,6 +803,60 @@ const codeQualityAnalyzerSteps = {
       title: "Get Detailed Report",
       description:
         "Receive quality scores, identified issues, and actionable recommendations for improvement",
+    },
+  ],
+};
+const saasScalabilityReadinessCheckerSteps = {
+  title: "How It Works",
+  description: "Three simple steps to get comprehensive code quality insights",
+  listData: [
+    {
+      icon: Database,
+      title: "Enter Your Metrics",
+      description:
+        "Provide key information about your current infrastructure, user base, and performance metrics.",
+    },
+    {
+      icon: Activity,
+      title: "AI-Powered Analysis",
+      description:
+        "Our algorithm analyzes your data against industry benchmarks and best practices.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Get Recommendations",
+      description:
+        "Receive a detailed readiness score with actionable recommendations for improvement.",
+    },
+  ],
+};
+const legacySystemModernizationReadinessSteps = {
+  title: "Assessment Process",
+  description: "Four comprehensive steps to evaluate your modernization needs",
+  listData: [
+    {
+      title: "System Analysis",
+      description:
+        "Evaluate current infrastructure age, technology stack, and operational costs.",
+      icon: Code,
+    },
+    {
+      title: "Risk Assessment",
+      description:
+        "Identify technical debt, security vulnerabilities, and maintenance challenges.",
+      icon: AlertTriangle,
+    },
+    {
+      title: "Readiness Scoring",
+      description:
+        "Calculate modernization urgency based on multiple factors and industry standards.",
+      icon: Target,
+    },
+    {
+      title: "Action Plan",
+      description:
+        "Receive prioritized recommendations and a strategic roadmap for transformation.",
+      icon: Rocket,
     },
   ],
 };
@@ -842,6 +898,10 @@ const ToolHowToUse = () => {
       digitalTransformationReadinessCheckerSteps,
     "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorSteps,
     "/tools/code-quality-analyzer/": codeQualityAnalyzerSteps,
+    "/tools/saas-scalability-readiness-checker/":
+      saasScalabilityReadinessCheckerSteps,
+    "/tools/legacy-system-modernization-readiness/":
+      legacySystemModernizationReadinessSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

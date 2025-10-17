@@ -1038,7 +1038,7 @@ export const calculateSaaSBusinessModel = (formData) => {
   return generatedModel;
 };
 
-// 25. Code Quality Analyzer (Lite)
+// 26. Code Quality Analyzer (Lite)
 export const calculateCodeQuality = (code, description) => {
   const codeLength = code.length;
   const lines = code.split("\n").length;
@@ -1197,4 +1197,113 @@ export const calculateCodeQuality = (code, description) => {
       ? Math.floor(Math.random() * 30) + 60
       : Math.floor(Math.random() * 20),
   };
+};
+
+// 27. SaaS Scalability Readiness Checker
+export const calculateSaaSScalability = (formData) => {
+  const users = parseInt(formData.monthlyUsers) || 0;
+  const responseTime = parseFloat(formData.avgResponseTime) || 0;
+  const infrastructure = formData.currentInfrastructure.toLowerCase();
+  const description = formData.description.toLowerCase();
+
+  let score = 50;
+
+  if (users > 100000) score += 15;
+  else if (users > 50000) score += 12;
+  else if (users > 10000) score += 8;
+  else if (users > 1000) score += 5;
+
+  if (responseTime < 200) score += 15;
+  else if (responseTime < 500) score += 10;
+  else if (responseTime < 1000) score += 5;
+  else score -= 5;
+
+  if (infrastructure.includes("kubernetes") || infrastructure.includes("k8s"))
+    score += 15;
+  if (infrastructure.includes("microservices")) score += 10;
+  if (infrastructure.includes("serverless")) score += 10;
+  if (infrastructure.includes("load balancer")) score += 8;
+  if (infrastructure.includes("cdn")) score += 8;
+  if (infrastructure.includes("cache") || infrastructure.includes("redis"))
+    score += 7;
+  if (infrastructure.includes("docker")) score += 5;
+  if (infrastructure.includes("monolith")) score -= 10;
+
+  const positiveKeywords = [
+    "scalable",
+    "distributed",
+    "horizontal",
+    "cloud",
+    "auto-scaling",
+    "redundant",
+    "failover",
+    "monitoring",
+    "optimized",
+    "elastic",
+  ];
+  const negativeKeywords = [
+    "single server",
+    "bottleneck",
+    "slow",
+    "downtime",
+    "manual",
+    "legacy",
+    "outdated",
+    "struggling",
+    "limited",
+  ];
+
+  positiveKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) score += 3;
+  });
+
+  negativeKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) score -= 3;
+  });
+
+  score = Math.max(0, Math.min(100, score));
+
+  let level = "";
+  let color = "";
+  let recommendations = [];
+
+  if (score >= 80) {
+    level = "Excellent";
+    color = "text-green-600";
+    recommendations = [
+      "Your infrastructure is highly scalable",
+      "Continue monitoring performance metrics",
+      "Consider implementing advanced caching strategies",
+      "Explore multi-region deployment for global reach",
+    ];
+  } else if (score >= 60) {
+    level = "Good";
+    color = "text-blue-600";
+    recommendations = [
+      "Solid foundation with room for improvement",
+      "Implement auto-scaling policies",
+      "Add more monitoring and alerting",
+      "Consider containerization if not already implemented",
+    ];
+  } else if (score >= 40) {
+    level = "Moderate";
+    color = "text-yellow-600";
+    recommendations = [
+      "Significant scalability improvements needed",
+      "Migrate to cloud-native architecture",
+      "Implement load balancing and caching",
+      "Break down monolithic structures into microservices",
+    ];
+  } else {
+    level = "Needs Improvement";
+    color = "text-red-600";
+    recommendations = [
+      "Critical scalability issues detected",
+      "Urgent infrastructure modernization required",
+      "Implement basic monitoring and logging",
+      "Consider complete architecture redesign",
+    ];
+  }
+
+  return { score, level, recommendations, color };
 };
