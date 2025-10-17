@@ -17,6 +17,7 @@ import {
   Database,
   DollarSign,
   Gauge,
+  Layers,
   Link,
   Lock,
   Shield,
@@ -1793,7 +1794,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
           </div>
         ) : (
           <div className="space-y-4 lg:w-[80%] w-full animate-fade-in">
-            <div className="bg-white p-4 rounded-xl border border-blue-100 text-center">
+            <div className="bg-white p-4 rounded-xl border text-center">
               <p className="text-sm font-semibold text-gray-600 mb-2">
                 READINESS SCORE
               </p>
@@ -1805,7 +1806,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-xl border border-blue-100">
+            <div className="bg-white p-4 rounded-xl border">
               <h4 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2 text-blue-600" />
                 Recommendations
@@ -1826,6 +1827,71 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 Based on your score, we recommend focusing on the
                 recommendations above to improve your scalability readiness.
               </p>
+            </div>
+          </div>
+        );
+      case "/tools/legacy-system-modernization-readiness/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-4 lg:w-[80%] w-full animate-fade-in">
+            <div className="bg-white p-4 rounded-xl border text-center">
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                MODERNIZATION URGENCY SCORE
+              </p>
+              <p className={`text-4xl font-bold ${result.color} mb-2`}>
+                {result.score}
+              </p>
+              <p className={`text-xl font-semibold ${result.color} mb-1`}>
+                {result.urgency}
+              </p>
+              <p className="text-sm text-gray-600 mt-3 font-medium">
+                {result.priority}
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded-xl border border">
+              <h4 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                <CheckCircle2 className="w-5 h-5 mr-2 text-themeColor" />
+                Recommended Actions
+              </h4>
+              <ul className="space-y-1">
+                {result.recommendations.map((rec, idx) => (
+                  <li key={idx} className="flex items-center space-x-2">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-themeColor">
+                        {idx + 1}
+                      </span>
+                    </div>
+                    <span className="text-gray-700 text-left">{rec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-r from-themeColor to-cyan-600 p-4 rounded-xl text-white">
+              <div className="flex items-start space-x-3">
+                <Layers className="w-6 h-6 flex-shrink-0 mt" />
+                <div>
+                  <p className="text-sm font-semibold mb-2 text-left">
+                    IMPLEMENTATION STRATEGY
+                  </p>
+                  <p className="text-sm leading-relaxed text-left">
+                    {result.score >= 70
+                      ? "Critical systems require immediate attention. Consider engaging modernization experts and planning a rapid, phased migration approach."
+                      : result.score >= 50
+                      ? "High priority modernization. Begin with thorough planning, pilot projects, and secure executive buy-in for transformation initiatives."
+                      : result.score >= 30
+                      ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
+                      : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         );

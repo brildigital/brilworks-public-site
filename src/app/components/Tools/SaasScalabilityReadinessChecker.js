@@ -214,8 +214,8 @@ const SaasScalabilityReadinessChecker = () => {
                 />
               </div>
               <p className="text-xs text-gray-500 ">
-                Keywords like "cloud", "AI", "mobile", "automation",
-                "data-driven", "agile" will boost your readiness score
+                Tip: Mention technologies, patterns, and capabilities for more
+                accurate results
               </p>
 
               {/* Get Quote Button */}

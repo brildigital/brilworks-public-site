@@ -1307,3 +1307,170 @@ export const calculateSaaSScalability = (formData) => {
 
   return { score, level, recommendations, color };
 };
+
+// 28. Legacy System Modernization Readiness
+
+export const calculateLegacySystemModernizationReadiness = (formData) => {
+  const age = parseInt(formData.systemAge) || 0;
+  const cost = parseFloat(formData.maintenanceCost) || 0;
+  const downtime = parseFloat(formData.downtime) || 0;
+  const techStack = formData.techStack.toLowerCase();
+  const description = formData.description.toLowerCase();
+
+  let score = 0;
+
+  // Age scoring (higher age = higher urgency for modernization)
+  if (age > 15) score += 25;
+  else if (age > 10) score += 20;
+  else if (age > 7) score += 15;
+  else if (age > 5) score += 10;
+  else if (age > 3) score += 5;
+
+  // Maintenance cost scoring (higher cost = higher urgency)
+  if (cost > 100000) score += 25;
+  else if (cost > 50000) score += 20;
+  else if (cost > 25000) score += 15;
+  else if (cost > 10000) score += 10;
+  else if (cost > 5000) score += 5;
+
+  // Downtime scoring
+  if (downtime > 20) score += 20;
+  else if (downtime > 10) score += 15;
+  else if (downtime > 5) score += 10;
+  else if (downtime > 2) score += 5;
+
+  // Tech stack analysis (legacy indicators)
+  const legacyIndicators = [
+    "cobol",
+    "fortran",
+    "vb6",
+    "visual basic 6",
+    "mainframe",
+    "as/400",
+    "powerbuilder",
+    "foxpro",
+    "delphi",
+    "perl",
+    "classic asp",
+    "vbscript",
+    "silverlight",
+    "flash",
+  ];
+
+  const oldTech = [
+    "java 6",
+    "java 7",
+    "php 5",
+    "python 2",
+    "angular.js",
+    "backbone",
+    "jquery",
+    "struts",
+    "jsp",
+  ];
+
+  legacyIndicators.forEach((indicator) => {
+    if (techStack.includes(indicator)) score += 5;
+  });
+
+  oldTech.forEach((tech) => {
+    if (techStack.includes(tech)) score += 3;
+  });
+
+  // Description keyword analysis
+  const urgentKeywords = [
+    "outdated",
+    "legacy",
+    "unsupported",
+    "deprecated",
+    "obsolete",
+    "slow",
+    "unreliable",
+    "crashes",
+    "security risk",
+    "vulnerable",
+    "no documentation",
+    "single vendor",
+    "proprietary",
+    "difficult to maintain",
+    "hard to find developers",
+    "bottleneck",
+    "technical debt",
+  ];
+
+  const positiveKeywords = [
+    "modern",
+    "cloud",
+    "scalable",
+    "documented",
+    "secure",
+    "automated",
+    "containerized",
+    "api",
+    "microservices",
+  ];
+
+  urgentKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) score += 3;
+  });
+
+  positiveKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) score -= 2;
+  });
+
+  // Cap score between 0 and 100
+  score = Math.max(0, Math.min(100, score));
+
+  let urgency = "";
+  let priority = "";
+  let color = "";
+  let recommendations = [];
+
+  if (score >= 70) {
+    urgency = "Critical";
+    priority = "Immediate Action Required";
+    color = "text-red-600";
+    recommendations = [
+      "Immediate modernization is critical to avoid system failure",
+      "Assess business continuity risks and create contingency plans",
+      "Start with a pilot modernization project to prove ROI",
+      "Consider cloud-native architecture for long-term benefits",
+      "Implement interim security patches while planning migration",
+    ];
+  } else if (score >= 50) {
+    urgency = "High";
+    priority = "Plan Migration Within 6-12 Months";
+    color = "text-orange-600";
+    recommendations = [
+      "Begin comprehensive modernization planning immediately",
+      "Document current system architecture and dependencies",
+      "Evaluate modern technology alternatives",
+      "Create a phased migration roadmap",
+      "Allocate budget for modernization initiatives",
+    ];
+  } else if (score >= 30) {
+    urgency = "Moderate";
+    priority = "Consider Modernization Within 1-2 Years";
+    color = "text-yellow-600";
+    recommendations = [
+      "Monitor system performance and maintenance costs",
+      "Begin researching modern technology options",
+      "Implement incremental improvements where possible",
+      "Build business case for future modernization",
+      "Train team on modern development practices",
+    ];
+  } else {
+    urgency = "Low";
+    priority = "Maintain Current System";
+    color = "text-green-600";
+    recommendations = [
+      "Your system is relatively modern and maintainable",
+      "Focus on continuous improvement and best practices",
+      "Keep technology stack updated with security patches",
+      "Monitor for emerging technologies that could provide value",
+      "Document architecture for future team members",
+    ];
+  }
+
+  return { score, urgency, recommendations, color, priority };
+};
