@@ -169,6 +169,12 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "/tools/legacy-system-modernization-readiness/": {
       title: "Assessment Results",
     },
+    "/tools/app-security-checklist-generator/": {
+      title: "Your Security Checklist",
+    },
+    "/tools/performance-benchmarking-tool/": {
+      title: "Benchmark Results",
+    },
   };
 
   const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
@@ -1893,6 +1899,73 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 </div>
               </div>
             </div>
+          </div>
+        );
+      case "/tools/performance-benchmarking-tool/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-2 lg:w-[80%] w-full animate-fade-in">
+            <div className="bg-white p-4 rounded-xl border border-violet-100 text-center">
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                OVERALL PERFORMANCE SCORE
+              </p>
+              <p className={`text-4xl font-bold ${result.color} mb-2`}>
+                {result.overallScore}
+              </p>
+              <p className={`text-xxl font-semibold ${result.color}`}>
+                {result.grade}
+              </p>
+            </div>
+
+            {result.benchmarks.map((benchmark, idx) => (
+              <div
+                key={idx}
+                className="bg-white px-4 py-2.5 rounded-xl border border-violet-100"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-lg font-bold text-gray-900">
+                    {benchmark.category}
+                  </h4>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-2xl font-bold text-violet-600">
+                      {benchmark.score}
+                    </span>
+                    <span
+                      className={`px-3 py-1 rounded-lg font-bold ${
+                        benchmark.grade === "A"
+                          ? "bg-green-100 text-green-700"
+                          : benchmark.grade === "B"
+                          ? "bg-blue-100 text-blue-700"
+                          : benchmark.grade === "C"
+                          ? "bg-yellow-100 text-yellow-700"
+                          : benchmark.grade === "D"
+                          ? "bg-orange-100 text-orange-700"
+                          : "bg-red-100 text-red-700"
+                      }`}
+                    >
+                      {benchmark.grade}
+                    </span>
+                  </div>
+                </div>
+                <ul className="space-y-1">
+                  {benchmark.recommendations.map((rec, recIdx) => (
+                    <li
+                      key={recIdx}
+                      className="flex items-start space-x-2 text-sm text-gray-600"
+                    >
+                      <span className="text-violet-600 mt-0.5">•</span>
+                      <span>{rec}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         );
 

@@ -1474,3 +1474,256 @@ export const calculateLegacySystemModernizationReadiness = (formData) => {
 
   return { score, urgency, recommendations, color, priority };
 };
+
+// 29. Performance Benchmarking Tool
+
+export const calculatePerformanceBenchmark = (formData) => {
+  const loadTime = parseFloat(formData.pageLoadTime) || 0;
+  const tti = parseFloat(formData.timeToInteractive) || 0;
+  const apiTime = parseFloat(formData.apiResponseTime) || 0;
+  const throughput = parseFloat(formData.throughput) || 0;
+  const description = formData.description.toLowerCase();
+
+  const benchmarks = [];
+
+  // Page Load Performance
+  let loadScore = 100;
+  let loadGrade = "";
+  const loadRecs = [];
+
+  if (loadTime > 5000) {
+    loadScore = 20;
+    loadGrade = "F";
+    loadRecs.push("Critical: Page load time exceeds 5 seconds");
+    loadRecs.push("Implement aggressive caching strategies");
+    loadRecs.push("Optimize images and reduce file sizes");
+    loadRecs.push("Consider using a CDN for static assets");
+  } else if (loadTime > 3000) {
+    loadScore = 50;
+    loadGrade = "D";
+    loadRecs.push("Page load time is above recommended threshold");
+    loadRecs.push("Optimize critical rendering path");
+    loadRecs.push("Implement lazy loading for images");
+  } else if (loadTime > 2000) {
+    loadScore = 70;
+    loadGrade = "C";
+    loadRecs.push("Page load performance is acceptable but can improve");
+    loadRecs.push("Minimize render-blocking resources");
+    loadRecs.push("Enable compression (Gzip/Brotli)");
+  } else if (loadTime > 1000) {
+    loadScore = 85;
+    loadGrade = "B";
+    loadRecs.push("Good page load performance");
+    loadRecs.push("Fine-tune resource loading priorities");
+  } else {
+    loadScore = 95;
+    loadGrade = "A";
+    loadRecs.push("Excellent page load performance");
+    loadRecs.push("Maintain current optimization strategies");
+  }
+
+  benchmarks.push({
+    category: "Page Load Performance",
+    score: loadScore,
+    grade: loadGrade,
+    recommendations: loadRecs,
+  });
+
+  // Time to Interactive
+  let ttiScore = 100;
+  let ttiGrade = "";
+  const ttiRecs = [];
+
+  if (tti > 7000) {
+    ttiScore = 25;
+    ttiGrade = "F";
+    ttiRecs.push("Critical: Time to Interactive is too high");
+    ttiRecs.push("Reduce JavaScript execution time");
+    ttiRecs.push("Code-split large JavaScript bundles");
+    ttiRecs.push("Defer non-critical JavaScript");
+  } else if (tti > 5000) {
+    ttiScore = 50;
+    ttiGrade = "D";
+    ttiRecs.push("Time to Interactive needs improvement");
+    ttiRecs.push("Optimize third-party scripts");
+    ttiRecs.push("Use web workers for heavy computations");
+  } else if (tti > 3500) {
+    ttiScore = 70;
+    ttiGrade = "C";
+    ttiRecs.push("Time to Interactive is moderate");
+    ttiRecs.push("Minimize main thread work");
+    ttiRecs.push("Optimize JavaScript parsing and compilation");
+  } else if (tti > 2000) {
+    ttiScore = 85;
+    ttiGrade = "B";
+    ttiRecs.push("Good Time to Interactive");
+    ttiRecs.push("Continue monitoring third-party impact");
+  } else {
+    ttiScore = 95;
+    ttiGrade = "A";
+    ttiRecs.push("Excellent Time to Interactive");
+    ttiRecs.push("User experience is highly responsive");
+  }
+
+  benchmarks.push({
+    category: "Time to Interactive",
+    score: ttiScore,
+    grade: ttiGrade,
+    recommendations: ttiRecs,
+  });
+
+  // API Response Time
+  let apiScore = 100;
+  let apiGrade = "";
+  const apiRecs = [];
+
+  if (apiTime > 2000) {
+    apiScore = 30;
+    apiGrade = "F";
+    apiRecs.push("Critical: API response time is unacceptable");
+    apiRecs.push("Optimize database queries and add indexes");
+    apiRecs.push("Implement Redis caching layer");
+    apiRecs.push("Consider database connection pooling");
+  } else if (apiTime > 1000) {
+    apiScore = 55;
+    apiGrade = "D";
+    apiRecs.push("API response time needs optimization");
+    apiRecs.push("Add caching for frequently accessed data");
+    apiRecs.push("Review and optimize slow queries");
+  } else if (apiTime > 500) {
+    apiScore = 75;
+    apiGrade = "C";
+    apiRecs.push("API performance is acceptable");
+    apiRecs.push("Implement pagination for large datasets");
+    apiRecs.push("Use API response compression");
+  } else if (apiTime > 200) {
+    apiScore = 88;
+    apiGrade = "B";
+    apiRecs.push("Good API response time");
+    apiRecs.push("Monitor for performance degradation");
+  } else {
+    apiScore = 96;
+    apiGrade = "A";
+    apiRecs.push("Excellent API performance");
+    apiRecs.push("APIs are well-optimized");
+  }
+
+  benchmarks.push({
+    category: "API Response Time",
+    score: apiScore,
+    grade: apiGrade,
+    recommendations: apiRecs,
+  });
+
+  // Throughput Performance
+  let throughputScore = 100;
+  let throughputGrade = "";
+  const throughputRecs = [];
+
+  if (throughput < 10) {
+    throughputScore = 25;
+    throughputGrade = "F";
+    throughputRecs.push("Critical: Very low throughput capacity");
+    throughputRecs.push("Implement horizontal scaling");
+    throughputRecs.push("Add load balancing");
+    throughputRecs.push("Optimize application architecture");
+  } else if (throughput < 50) {
+    throughputScore = 50;
+    throughputGrade = "D";
+    throughputRecs.push("Throughput capacity needs improvement");
+    throughputRecs.push("Implement caching strategies");
+    throughputRecs.push("Optimize resource utilization");
+  } else if (throughput < 100) {
+    throughputScore = 70;
+    throughputGrade = "C";
+    throughputRecs.push("Moderate throughput capacity");
+    throughputRecs.push("Consider auto-scaling policies");
+    throughputRecs.push("Monitor peak load handling");
+  } else if (throughput < 500) {
+    throughputScore = 85;
+    throughputGrade = "B";
+    throughputRecs.push("Good throughput capacity");
+    throughputRecs.push("Prepare for traffic spikes");
+  } else {
+    throughputScore = 95;
+    throughputGrade = "A";
+    throughputRecs.push("Excellent throughput capacity");
+    throughputRecs.push("Infrastructure is well-scaled");
+  }
+
+  benchmarks.push({
+    category: "Throughput Capacity",
+    score: throughputScore,
+    grade: throughputGrade,
+    recommendations: throughputRecs,
+  });
+
+  // Description-based adjustments
+  const optimizationKeywords = [
+    "cdn",
+    "cache",
+    "redis",
+    "memcached",
+    "optimized",
+    "compressed",
+    "minified",
+    "lazy load",
+    "code split",
+    "tree shaking",
+  ];
+
+  const issueKeywords = [
+    "slow",
+    "sluggish",
+    "timeout",
+    "bottleneck",
+    "unoptimized",
+    "memory leak",
+    "blocking",
+    "heavy",
+  ];
+
+  let descriptionBonus = 0;
+  optimizationKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) descriptionBonus += 2;
+  });
+
+  let descriptionPenalty = 0;
+  issueKeywords.forEach((keyword) => {
+    if (description.includes(keyword)) descriptionPenalty += 3;
+  });
+
+  // Calculate overall score
+  const baseScore = (loadScore + ttiScore + apiScore + throughputScore) / 4;
+  const overallScore = Math.max(
+    0,
+    Math.min(100, baseScore + descriptionBonus - descriptionPenalty)
+  );
+
+  let grade = "";
+  let color = "";
+
+  if (overallScore >= 90) {
+    grade = "A - Excellent";
+    color = "text-green-600";
+  } else if (overallScore >= 80) {
+    grade = "B - Good";
+    color = "text-blue-600";
+  } else if (overallScore >= 70) {
+    grade = "C - Average";
+    color = "text-yellow-600";
+  } else if (overallScore >= 60) {
+    grade = "D - Below Average";
+    color = "text-orange-600";
+  } else {
+    grade = "F - Needs Improvement";
+    color = "text-red-600";
+  }
+
+  return {
+    overallScore: Math.round(overallScore),
+    grade,
+    color,
+    benchmarks,
+  };
+};
