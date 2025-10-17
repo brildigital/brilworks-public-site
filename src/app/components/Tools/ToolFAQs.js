@@ -1034,6 +1034,78 @@ const legacySystemModernizationReadinessFaqdata = {
     },
   ],
 };
+const appSecurityCheckListGeneratorFaqData = {
+  description: "Common questions about application security",
+  queAns: [
+    {
+      question: "Why is application security important?",
+      answer:
+        "Application security is critical to protect sensitive user data, prevent financial losses, maintain customer trust, and comply with regulations. Security breaches can result in data theft, service disruption, legal penalties, and permanent damage to your reputation. Implementing proper security measures from the start is far more cost-effective than dealing with breaches.",
+    },
+    {
+      question: "How often should I review my security checklist?",
+      answer:
+        "Review your security checklist quarterly at minimum, and immediately after significant changes to your application, infrastructure, or compliance requirements. Security threats evolve constantly, so continuous monitoring and regular updates are essential. Major updates, new features, or changes in data handling should trigger immediate security reviews.",
+    },
+    {
+      question: "What are the most critical security items to implement first?",
+      answer:
+        "Prioritize authentication and authorization controls, data encryption (in transit and at rest), input validation to prevent injection attacks, and security logging. These foundational elements protect against the most common and damaging attacks. After these basics, focus on application-specific risks based on your data handling and compliance requirements.",
+    },
+    {
+      question: "Do I need to implement all items in the checklist?",
+      answer:
+        "The checklist is comprehensive and includes items based on your specific application type and requirements. Focus on items relevant to your risk profile, compliance needs, and data sensitivity. Some items may not apply to your situation, but most are industry best practices that significantly reduce security risks.",
+    },
+    {
+      question:
+        "How do I ensure compliance with regulations like GDPR or HIPAA?",
+      answer:
+        "Compliance requires implementing technical controls (encryption, access controls), administrative procedures (policies, training), and documentation (audit logs, data processing records). Our checklist includes compliance-specific items, but we recommend consulting with legal experts and conducting formal audits to ensure full compliance with applicable regulations.",
+    },
+    {
+      question: "What should I do if I discover a security vulnerability?",
+      answer:
+        "Assess the severity immediately and implement temporary mitigations if needed. For critical vulnerabilities, consider taking affected systems offline until fixed. Document the issue, develop a patch, test thoroughly, and deploy quickly. Notify affected users if required by regulations. Learn from each vulnerability to improve your security practices and prevent similar issues.",
+    },
+  ],
+};
+
+const performanceBenchmarkingToolFaqData = {
+  description: "Common questions about performance benchmarking",
+  queAns: [
+    {
+      question: "What is performance benchmarking?",
+      answer:
+        "Performance benchmarking is the process of measuring your application's speed, responsiveness, and efficiency against industry standards and best practices. It includes metrics like page load time, time to interactive, API response times, and throughput capacity. Regular benchmarking helps identify bottlenecks and track the impact of optimizations.",
+    },
+    {
+      question: "What are good performance benchmarks to aim for?",
+      answer:
+        "Industry best practices suggest: Page load time under 2 seconds, Time to Interactive under 3.5 seconds, API response time under 200ms, and throughput capacity of at least 100 requests per second. However, targets vary based on your application type, user base, and business requirements. Mobile applications often need even faster metrics.",
+    },
+    {
+      question: "How often should I benchmark my application?",
+      answer:
+        "Benchmark your application regularly - at least monthly for production apps, and before/after major releases. Run benchmarks after implementing optimizations to measure their impact, and whenever you notice performance degradation. Continuous monitoring with automated benchmarking tools helps catch issues early.",
+    },
+    {
+      question: "What factors affect application performance?",
+      answer:
+        "Many factors influence performance: server response time, database query efficiency, asset size and compression, network latency, CDN usage, caching strategies, code efficiency, third-party scripts, browser rendering, and infrastructure capacity. Frontend and backend optimizations both play crucial roles in overall performance.",
+    },
+    {
+      question: "How can I improve my performance scores?",
+      answer:
+        "Start with high-impact optimizations: enable compression and caching, optimize images, implement a CDN, minimize JavaScript and CSS, lazy load content, optimize database queries, add indexes, use connection pooling, implement code splitting, and reduce third-party script impact. Focus on the lowest-scoring categories first for maximum improvement.",
+    },
+    {
+      question: "Does performance really impact user experience and business?",
+      answer:
+        "Absolutely. Studies show 53% of mobile users abandon sites that take over 3 seconds to load. Every 100ms improvement in load time can increase conversions by 1%. Performance directly affects SEO rankings, user satisfaction, bounce rates, and revenue. For e-commerce, a 1-second delay can reduce conversions by 7%.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1084,6 +1156,9 @@ const ToolFAQs = () => {
       saasScalabilityReadinessCheckerFaqdata,
     "/tools/legacy-system-modernization-readiness/":
       legacySystemModernizationReadinessFaqdata,
+    "/tools/app-security-checklist-generator/":
+      appSecurityCheckListGeneratorFaqData,
+    "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

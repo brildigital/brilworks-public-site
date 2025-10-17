@@ -36,9 +36,12 @@ import {
   Code2,
   Bug,
   Server,
+  Lock,
   CheckCircle2,
   AlertTriangle,
   Code,
+  Network,
+  Eye,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1523,6 +1526,102 @@ const legacySystemModernizationReadinessFeatures = {
   ],
 };
 
+const appSecurityCheckListGeneratorFeatures = {
+  title: "Comprehensive Security Coverage",
+  description: "Everything you need to secure your application",
+  listData: [
+    {
+      icon: Lock,
+      title: "Authentication & Access",
+      description:
+        "Best practices for user authentication, authorization, and session management.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Database,
+      title: "Data Protection",
+      description:
+        "Encryption standards, data handling, and privacy compliance requirements.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Shield,
+      title: "Application Security",
+      description:
+        "Code security, input validation, and protection against common vulnerabilities.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Globe,
+      title: "Network Security",
+      description:
+        "Infrastructure protection, firewalls, and secure communication protocols.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Compliance Standards",
+      description:
+        "GDPR, HIPAA, PCI DSS, SOX, and ISO compliance requirements.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Eye,
+      title: "Monitoring & Response",
+      description:
+        "Security logging, incident detection, and response procedures.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+
+const performanceBenchmarkingToolFeatures = {
+  title: "Comprehensive Performance Analysis",
+  description: "Everything you need to optimize application performance",
+  listData: [
+    {
+      icon: Clock,
+      title: "Load Time Analysis",
+      description:
+        "Measure and optimize page load performance against industry benchmarks.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Timer,
+      title: "Time to Interactive",
+      description:
+        "Evaluate how quickly users can interact with your application.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Network,
+      title: "API Performance",
+      description:
+        "Benchmark API response times and identify optimization opportunities.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Cpu,
+      title: "Resource Utilization",
+      description: "Monitor CPU, memory, and resource consumption patterns.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Throughput Metrics",
+      description: "Assess system capacity and concurrent request handling.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Performance Trends",
+      description:
+        "Track improvements over time and measure optimization impact.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+
 const ToolFeatures = () => {
   const pathname = usePathname();
 
@@ -1567,6 +1666,10 @@ const ToolFeatures = () => {
       saasScalabilityReadinessCheckerFeatures,
     "/tools/legacy-system-modernization-readiness/":
       legacySystemModernizationReadinessFeatures,
+    "/tools/app-security-checklist-generator/":
+      appSecurityCheckListGeneratorFeatures,
+    "/tools/performance-benchmarking-tool/":
+      performanceBenchmarkingToolFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

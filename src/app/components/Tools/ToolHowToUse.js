@@ -8,6 +8,7 @@ import {
   BrainIcon,
   Calculator,
   CheckCircle,
+  CheckCircle2,
   ClipboardList,
   Clock,
   Cloud,
@@ -17,12 +18,14 @@ import {
   DollarSign,
   FileCode,
   FileText,
+  Gauge,
   Layers,
   Lightbulb,
   Rocket,
   Search,
   Server,
   Settings,
+  ShieldCheck,
   Smartphone,
   Target,
   TrendingUp,
@@ -860,6 +863,67 @@ const legacySystemModernizationReadinessSteps = {
     },
   ],
 };
+const appSecurityCheckListGeneratorSteps = {
+  title: "How to Get Your Security Checklist",
+  description:
+    "Four simple steps to generate a comprehensive security checklist",
+  listData: [
+    {
+      title: "Describe Your App",
+      description:
+        "Provide details about your application type, platform, and architecture.",
+      icon: FileText,
+    },
+    {
+      title: "Specify Data Types",
+      description:
+        "Indicate what types of sensitive data your application handles.",
+      icon: Database,
+    },
+    {
+      title: "Define Requirements",
+      description:
+        "Select authentication methods and compliance standards you need to meet.",
+      icon: CheckCircle2,
+    },
+    {
+      title: "Get Checklist",
+      description:
+        "Receive a customized security checklist with actionable recommendations.",
+      icon: ShieldCheck,
+    },
+  ],
+};
+const performanceBenchmarkingToolSteps = {
+  title: "How to Get Your Performance Benchmark",
+  description: "Four simple steps to comprehensive performance analysis",
+  listData: [
+    {
+      title: "Measure Metrics",
+      description:
+        "Collect key performance metrics from your application including load times and API responses.",
+      icon: Gauge,
+    },
+    {
+      title: "Input Data",
+      description:
+        "Enter your performance data into our comprehensive benchmarking form.",
+      icon: BarChart3,
+    },
+    {
+      title: "Analyze Results",
+      description:
+        "Our algorithm compares your metrics against industry standards and best practices.",
+      icon: Target,
+    },
+    {
+      title: "Optimize",
+      description:
+        "Receive detailed recommendations and actionable steps to improve performance.",
+      icon: TrendingUp,
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -902,6 +966,9 @@ const ToolHowToUse = () => {
       saasScalabilityReadinessCheckerSteps,
     "/tools/legacy-system-modernization-readiness/":
       legacySystemModernizationReadinessSteps,
+    "/tools/app-security-checklist-generator/":
+      appSecurityCheckListGeneratorSteps,
+    "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

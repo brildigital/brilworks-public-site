@@ -235,6 +235,22 @@ const toolsData = [
     link: "/tools/legacy-system-modernization-readiness/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "App Security Checklist Generator",
+    description:
+      "Instantly generate a tailored checklist to keep your app secure, compliant, and resilient against threats.",
+    bg: "bg-indigo-200",
+    link: "/tools/app-security-checklist-generator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Performance Benchmarking Tool",
+    description:
+      "Test, compare, and optimize your app’s performance to ensure smooth, fast, and reliable user experiences.",
+    bg: "bg-green-200",
+    link: "/tools/performance-benchmarking-tool/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {
