@@ -16,11 +16,13 @@ import {
   Cpu,
   Database,
   DollarSign,
+  Download,
   FileCode,
   FileText,
   Gauge,
   Layers,
   Lightbulb,
+  ListChecks,
   Rocket,
   Search,
   Server,
@@ -924,6 +926,54 @@ const performanceBenchmarkingToolSteps = {
     },
   ],
 };
+const scopeOfWorkGeneratorSteps = {
+  title: "How it Works",
+  description: "Generate your SOW in three simple steps",
+  listData: [
+    {
+      title: "Enter Project Details",
+      description:
+        "Fill in basic information about your project including name, client, timeline, and budget.",
+      icon: FileText,
+    },
+    {
+      title: "Describe Your Scope",
+      description:
+        "Provide a description with keywords about your project scope and list your deliverables.",
+      icon: ListChecks,
+    },
+    {
+      title: "Generate & Download",
+      description:
+        "Click generate to create your professional SOW document, review it, and download.",
+      icon: Download,
+    },
+  ],
+};
+const softwareProposalGeneratorSteps = {
+  title: "How It Works",
+  description: "Create your winning proposal in three simple steps",
+  listData: [
+    {
+      title: "Enter Project Details",
+      description:
+        "Provide project name, client information, budget, timeline, and technical requirements.",
+      icon: FileText,
+    },
+    {
+      title: "Describe Your Solution",
+      description:
+        "Use keywords to describe the software solution, tech stack, and key features you'll deliver.",
+      icon: ListChecks,
+    },
+    {
+      title: "Generate & Send",
+      description:
+        "Instantly create a professional proposal, customize if needed, and send to your client.",
+      icon: Download,
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -969,6 +1019,8 @@ const ToolHowToUse = () => {
     "/tools/app-security-checklist-generator/":
       appSecurityCheckListGeneratorSteps,
     "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolSteps,
+    "/tools/scope-of-work-generator/": scopeOfWorkGeneratorSteps,
+    "/tools/software-proposal-generator/": softwareProposalGeneratorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

@@ -16,6 +16,7 @@ import {
   Cpu,
   Database,
   DollarSign,
+  FileText,
   Gauge,
   Layers,
   Link,
@@ -175,6 +176,17 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     },
     "/tools/performance-benchmarking-tool/": {
       title: "Benchmark Results",
+    },
+    "/tools/performance-benchmarking-tool/": {
+      title: "Benchmark Results",
+    },
+    "/tools/scope-of-work-generator/": {
+      icon: FileText,
+      title: "Generated SOW",
+    },
+    "/tools/software-proposal-generator/": {
+      icon: Code2,
+      title: "Generated Proposal",
     },
   };
 
@@ -2039,6 +2051,36 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 </ul>
               </div>
             ))}
+          </div>
+        );
+      case "/tools/scope-of-work-generator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="bg-white rounded-lg p-6 min-h-[300px] max-h-[400px] overflow-y-auto shadow-inner border">
+            <pre className="whitespace-pre-wrap font-mono text-sm text-gray-800 leading-relaxed text-left">
+              {result}
+            </pre>
+          </div>
+        );
+      case "/tools/software-proposal-generator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="bg-white rounded-lg p-6 min-h-[300px] max-h-[400px] overflow-y-auto shadow-inner border">
+            <pre className="whitespace-pre-wrap font-mono text-sm text-gray-800 leading-relaxed text-left">
+              {result}
+            </pre>
           </div>
         );
 

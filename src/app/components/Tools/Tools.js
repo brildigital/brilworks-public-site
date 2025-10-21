@@ -251,6 +251,22 @@ const toolsData = [
     link: "/tools/performance-benchmarking-tool/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "Scope of Work (SOW) Generator",
+    description:
+      "Generate precise, client-ready Scopes of Work with AI. Clearly outline goals, deliverables, and timelines for every project—instantly and professionally.",
+    bg: "bg-pink-200",
+    link: "/tools/scope-of-work-generator/",
+    tags: ["BUSINESS", "SALES", "OTHER"],
+  },
+  {
+    title: "Software Proposal Generator",
+    description:
+      "Craft polished software proposals in minutes. Impress clients with clear deliverables, timelines, and pricing using AI-generated proposal templates.",
+    bg: "bg-amber-200",
+    link: "/tools/software-proposal-generator/",
+    tags: ["BUSINESS", "SALES", "OTHER"],
+  },
 ];
 
 const Tools = () => {

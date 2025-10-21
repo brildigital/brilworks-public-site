@@ -1706,7 +1706,6 @@ export const generateSecurityChecklist = (formData) => {
 };
 
 // 30. Performance Benchmarking Tool
-
 export const calculatePerformanceBenchmark = (formData) => {
   const loadTime = parseFloat(formData.pageLoadTime) || 0;
   const tti = parseFloat(formData.timeToInteractive) || 0;
@@ -1956,4 +1955,186 @@ export const calculatePerformanceBenchmark = (formData) => {
     color,
     benchmarks,
   };
+};
+// 31. Scope Of Work Generator
+export const calculateScopeOfWork = (formData) => {
+  const sow = `
+      SCOPE OF WORK (SOW)
+      ${formData.projectName ? `\nProject: ${formData.projectName}` : ""}
+      ${formData.clientName ? `Client: ${formData.clientName}` : ""}
+      ${
+        formData.startDate || formData.endDate
+          ? `\nProject Duration: ${formData.startDate} to ${formData.endDate}`
+          : ""
+      }
+      ${formData.budget ? `Budget: $${formData.budget}` : ""}
+
+      PROJECT OVERVIEW
+      ${
+        formData.description ||
+        "Please provide project description to generate detailed overview."
+      }
+
+      DELIVERABLES
+      ${
+        formData.deliverables
+          ? formData.deliverables
+              .split(",")
+              .map((d, i) => `${i + 1}. ${d.trim()}`)
+              .join("\n")
+          : "Please list deliverables separated by commas."
+      }
+
+      PROJECT PHASES
+      Phase 1: Initial Planning & Discovery
+      - Requirement gathering and analysis
+      - Stakeholder meetings and alignment
+      - Project timeline finalization
+
+      Phase 2: Development & Implementation
+      - Core development work
+      - Regular progress updates
+      - Quality assurance testing
+
+      Phase 3: Delivery & Handover
+      - Final deliverable submission
+      - Documentation and training
+      - Post-project support
+
+      TERMS & CONDITIONS
+      - Payment terms: As per agreement
+      - Intellectual property rights: As per agreement
+      - Confidentiality: All project information will be kept confidential
+      - Changes to scope: Any changes must be documented and approved
+
+      ACCEPTANCE CRITERIA
+      All deliverables must meet the specified requirements and be approved by the client before final acceptance.
+          `.trim();
+
+  return sow;
+};
+
+// 32. Software Proposal Generator
+export const calculateSoftwareProposal = (formData) => {
+  const proposal = `
+      SOFTWARE DEVELOPMENT PROPOSAL
+      ${formData.projectName ? `\nProject: ${formData.projectName}` : ""}
+      ${formData.clientName ? `Prepared for: ${formData.clientName}` : ""}
+      Date: ${new Date().toLocaleDateString()}
+
+      EXECUTIVE SUMMARY
+      ${
+        formData.description ||
+        "Please provide a project description to generate a detailed executive summary."
+      }
+
+      TECHNICAL APPROACH
+      ${
+        formData.techStack
+          ? `Technology Stack: ${formData.techStack}`
+          : "Technology stack to be determined based on project requirements."
+      }
+
+      Our development approach follows industry best practices including:
+      - Agile methodology with 2-week sprints
+      - Test-driven development (TDD)
+      - Continuous integration and deployment (CI/CD)
+      - Code reviews and quality assurance
+      - Regular client communication and demos
+
+      KEY FEATURES & FUNCTIONALITY
+      ${
+        formData.features
+          ? formData.features
+              .split(",")
+              .map((f, i) => `${i + 1}. ${f.trim()}`)
+              .join("\n")
+          : "Please list key features separated by commas."
+      }
+
+      PROJECT TIMELINE
+      ${
+        formData.timeline
+          ? `Estimated Duration: ${formData.timeline}`
+          : "Timeline to be determined after detailed requirement analysis."
+      }
+
+      Phase 1: Discovery & Planning (2 weeks)
+      - Requirement analysis and documentation
+      - Technical architecture design
+      - UI/UX wireframes and mockups
+      - Project roadmap finalization
+
+      Phase 2: Development (varies based on scope)
+      - Sprint planning and execution
+      - Core functionality implementation
+      - Integration with third-party services
+      - Regular testing and bug fixes
+
+      Phase 3: Testing & QA (2 weeks)
+      - Comprehensive testing (unit, integration, E2E)
+      - Performance optimization
+      - Security audit and penetration testing
+      - User acceptance testing (UAT)
+
+      Phase 4: Deployment & Launch (1 week)
+      - Production environment setup
+      - Data migration (if applicable)
+      - Go-live and monitoring
+      - Post-launch support
+
+      INVESTMENT & PRICING
+      ${
+        formData.budget
+          ? `Budget: $${formData.budget}`
+          : "Investment details to be discussed based on project scope."
+      }
+
+      Our pricing includes:
+      - Full-stack development
+      - Quality assurance and testing
+      - Project management
+      - Documentation
+      - 30 days post-launch support
+
+      DELIVERABLES
+      1. Fully functional software application
+      2. Source code repository with version control
+      3. Technical documentation
+      4. User documentation and training materials
+      5. Deployment and hosting setup
+      6. Post-launch support plan
+
+      TEAM EXPERTISE
+      Our development team brings extensive experience in:
+      - Full-stack web and mobile development
+      - Cloud infrastructure and DevOps
+      - UI/UX design and user research
+      - Security and compliance
+      - Performance optimization
+
+      WHY CHOOSE US?
+      ✓ Proven track record with 500+ successful projects
+      ✓ Expert team with 10+ years average experience
+      ✓ Agile methodology for flexibility and transparency
+      ✓ On-time delivery guarantee
+      ✓ Comprehensive post-launch support
+
+      TERMS & CONDITIONS
+      - Payment terms: Milestone-based payments
+      - Intellectual property: Client owns all deliverables
+      - Confidentiality: NDA in place
+      - Change requests: Managed through change control process
+      - Warranty: 90 days bug-fix warranty post-launch
+
+      NEXT STEPS
+      1. Review and approve this proposal
+      2. Sign contract and statement of work
+      3. Kickoff meeting and requirement finalization
+      4. Begin development sprint 1
+
+      We look forward to partnering with you on this exciting project!
+          `.trim();
+
+  return proposal;
 };

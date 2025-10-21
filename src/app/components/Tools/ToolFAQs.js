@@ -1106,6 +1106,87 @@ const performanceBenchmarkingToolFaqData = {
     },
   ],
 };
+const scopeOfWorkGeneratorFaqData = {
+  description: "Everything you need to know about our SOW Generator",
+  queAns: [
+    {
+      question: "What is a Scope of Work (SOW) document?",
+      answer:
+        "A Scope of Work (SOW) is a formal document that outlines the work to be performed in a project. It includes project objectives, deliverables, timelines, milestones, and responsibilities. An SOW helps ensure all parties have a clear understanding of project expectations.",
+    },
+    {
+      question: "How does the keyword-based generation work?",
+      answer:
+        "Our system analyzes the keywords and phrases you provide in the project description field. Based on these keywords, it generates relevant project overview content, suggests appropriate phases, and structures your SOW to match your project type and requirements.",
+    },
+    {
+      question: "Can I edit the generated SOW?",
+      answer:
+        "Absolutely! The generated SOW is fully editable. You can download it and modify any section to match your specific needs. We recommend reviewing and customizing the document before sharing it with clients or stakeholders.",
+    },
+    {
+      question: "Is my data secure and private?",
+      answer:
+        "Yes, we take data security seriously. All information entered into the generator is processed securely and is not stored on our servers. Your project details remain completely private and confidential.",
+    },
+    {
+      question: "What format is the generated SOW in?",
+      answer:
+        "The SOW is generated as a text document that can be downloaded. You can easily copy and paste it into your preferred word processor (Microsoft Word, Google Docs, etc.) and format it further as needed.",
+    },
+    {
+      question: "Do I need to include all fields in the form?",
+      answer:
+        "While not all fields are strictly required, we recommend filling in as many as possible for a more comprehensive SOW. The project name, client name, description, and deliverables are essential for generating a useful document.",
+    },
+    {
+      question: "Can I use this for any type of project?",
+      answer:
+        "Yes! Our SOW generator is versatile and works for various project types including software development, consulting, design, construction, marketing campaigns, and more. The keyword-based system adapts to your specific industry and project needs.",
+    },
+  ],
+};
+const softwareProposalGeneratorFaqData = {
+  description:
+    "Everything you need to know about our Software Proposal Generator",
+  queAns: [
+    {
+      question: "What makes a software proposal effective?",
+      answer:
+        "An effective software proposal clearly communicates your technical expertise, project approach, timeline, and value proposition. It should address the client's pain points, demonstrate understanding of their requirements, and present a clear path to success with realistic timelines and transparent pricing.",
+    },
+    {
+      question: "How does keyword-based generation work?",
+      answer:
+        "The system analyzes technical keywords you provide (like 'React', 'microservices', 'cloud-based') and generates relevant content that demonstrates your understanding of these technologies. It adapts the technical approach, architecture considerations, and deliverables based on your input.",
+    },
+    {
+      question: "Can I customize the generated proposal?",
+      answer:
+        "Absolutely! The generated proposal is a starting point that you can fully customize. Download it and edit any section to match your specific offerings, add case studies, adjust pricing, or include additional terms and conditions.",
+    },
+    {
+      question: "What sections are included in the proposal?",
+      answer:
+        "Our proposals include: Executive Summary, Technical Approach, Key Features, Project Timeline (with phases), Investment & Pricing, Deliverables, Team Expertise, Why Choose Us, Terms & Conditions, and Next Steps. All sections follow industry best practices.",
+    },
+    {
+      question: "Is my project information kept confidential?",
+      answer:
+        "Yes, we take confidentiality seriously. All information you enter is processed in real-time and is not stored on our servers. Your project details and client information remain completely private and secure.",
+    },
+    {
+      question: "Can this work for both small and large projects?",
+      answer:
+        "Yes! The generator adapts to projects of all sizes. Whether you're proposing a simple website or a complex enterprise system, the structure and content scale appropriately based on your inputs about scope, timeline, and features.",
+    },
+    {
+      question: "Do I need all fields filled to generate a proposal?",
+      answer:
+        "The more information you provide, the more comprehensive your proposal will be. However, the minimum required fields are project name, client name, description, and key features. Other fields like budget and timeline can be filled in later when editing the downloaded proposal.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1159,6 +1240,8 @@ const ToolFAQs = () => {
     "/tools/app-security-checklist-generator/":
       appSecurityCheckListGeneratorFaqData,
     "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolFaqData,
+    "/tools/scope-of-work-generator/": scopeOfWorkGeneratorFaqData,
+    "/tools/software-proposal-generator/": softwareProposalGeneratorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

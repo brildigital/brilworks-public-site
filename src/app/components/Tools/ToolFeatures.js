@@ -42,6 +42,8 @@ import {
   Code,
   Network,
   Eye,
+  Download,
+  Sparkles,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1621,6 +1623,102 @@ const performanceBenchmarkingToolFeatures = {
     },
   ],
 };
+const scopeOfWorkGeneratorFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to create professional SOW documents",
+  listData: [
+    {
+      icon: Zap,
+      title: "Lightning Fast",
+      description:
+        "Generate comprehensive SOW documents in under 5 minutes with our optimized system.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Legally Sound",
+      description:
+        "Templates reviewed by legal professionals to ensure compliance and protection.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: FileText,
+      title: "Professional Format",
+      description:
+        "Clean, well-structured documents that look professional and are easy to read.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: CheckCircle,
+      title: "Customizable",
+      description:
+        "Fully editable output that you can tailor to your specific project needs.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Sparkles,
+      title: "Smart Keywords",
+      description:
+        "AI analyzes your keywords to generate relevant and comprehensive scope details.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Download,
+      title: "Export Ready",
+      description:
+        "Download your SOW in multiple formats ready to share with clients and stakeholders.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
+const softwareProposalGeneratorFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to create winning software proposals",
+  listData: [
+    {
+      icon: Rocket,
+      title: "Quick Turnaround",
+      description:
+        "Generate comprehensive proposals in minutes, not hours. Respond to RFPs faster than competitors.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Lock,
+      title: "Industry Best Practices",
+      description:
+        "Templates built on proven methodologies and industry standards for maximum credibility.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Code2,
+      title: "Technical Expertise",
+      description:
+        "Showcase your technical knowledge with detailed architecture and development approach sections.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Layers,
+      title: "Comprehensive Coverage",
+      description:
+        "Includes all essential sections: timeline, deliverables, pricing, team expertise, and more.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Sparkles,
+      title: "Smart Customization",
+      description:
+        "AI adapts content based on your keywords and project requirements for personalized proposals.",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Download,
+      title: "Multiple Formats",
+      description:
+        "Download and share in various formats. Easy to customize further in your preferred editor.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1670,6 +1768,8 @@ const ToolFeatures = () => {
       appSecurityCheckListGeneratorFeatures,
     "/tools/performance-benchmarking-tool/":
       performanceBenchmarkingToolFeatures,
+    "/tools/scope-of-work-generator/": scopeOfWorkGeneratorFeatures,
+    "/tools/software-proposal-generator/": softwareProposalGeneratorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

@@ -61,7 +61,7 @@ const ToolHerosection = ({
                       statsGird?.length === 2 ? "text-start" : "text-center"
                     }  group`}
                   >
-                    <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-[#017eeb33] transition-all duration-300 transform hover:-translate-y-1">
                       <div
                         className={`${
                           statsGird?.length === 2 ? "text-xl" : "text-2xl"
@@ -80,7 +80,7 @@ const ToolHerosection = ({
                 {highlights.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-card/50 border border-[#017eeb33] p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+                    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-[#017eeb33] transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <div
                       className={`flex items-center gap-2 mb-1 ${item.color}`}
