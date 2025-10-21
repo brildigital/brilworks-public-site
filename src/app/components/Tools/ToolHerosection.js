@@ -2,7 +2,7 @@
 import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
-import { Calculator, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 
 const ToolHerosection = ({

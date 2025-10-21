@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
-  Award,
   Calculator,
   Calendar,
   CheckCircle,
@@ -11,16 +10,11 @@ import {
   Sparkles,
   Target,
   TrendingUp,
-  Users,
-  Zap,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  calculateGoToMarketTimeline,
-  calculateTestingTimelineEstimate,
-} from "../lib/featureComplexityVsTimelineEstimatorService";
+import { calculateGoToMarketTimeline } from "../lib/featureComplexityVsTimelineEstimatorService";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));

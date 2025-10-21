@@ -5,12 +5,8 @@ import { usePathname } from "next/navigation";
 import {
   AlertTriangle,
   Bug,
-  Calculator,
-  CheckCircle,
   CheckCircle2,
-  Clock,
   Code2,
-  Lightbulb,
   Loader2,
   Shield,
   Sparkles,
@@ -21,10 +17,7 @@ import {
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { getScoreColor, hasSubmittedForm } from "../lib/commonFunction";
-import {
-  calculateCodeQuality,
-  calculateMvpFeatureSelector,
-} from "../lib/toolsCalculation";
+import { calculateCodeQuality } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));

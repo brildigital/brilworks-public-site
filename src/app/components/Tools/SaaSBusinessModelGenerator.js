@@ -4,11 +4,9 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
-  Calculator,
   CheckCircle,
   Clock,
   DollarSign,
-  Lightbulb,
   Loader2,
   Sparkles,
   TrendingUp,

@@ -4,19 +4,15 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   AlertTriangle,
-  Calculator,
-  CheckCircle,
-  Lightbulb,
+  FileText,
   Loader2,
+  ShieldCheck,
   Sparkles,
-  Star,
-  TrendingDown,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import { calculateStartupTechReadiness } from "../lib/toolsCalculation";
-import Heading from "../HTMLComponents/Heading";
+import { generateSecurityChecklist } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -28,13 +24,10 @@ const AppSecurityChecklistGenerator = () => {
   const [hasVisited, setHasVisited] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
   const [formData, setFormData] = useState({
-    teamSize: "",
-    techBudget: "",
-    developmentStage: "",
-    techExpertise: "",
-    timeToMarket: "",
-    scalabilityNeeds: "",
-    securityRequirements: "",
+    appType: "",
+    dataHandling: "",
+    userAuth: "",
+    compliance: "",
     description: "",
   });
 
@@ -42,13 +35,10 @@ const AppSecurityChecklistGenerator = () => {
 
   const isFormValid = () => {
     return (
-      formData?.teamSize &&
-      formData?.techBudget &&
-      formData?.developmentStage &&
-      formData?.techExpertise &&
-      formData?.timeToMarket &&
-      formData?.scalabilityNeeds &&
-      formData?.securityRequirements &&
+      formData?.appType &&
+      formData?.dataHandling &&
+      formData?.userAuth &&
+      formData?.compliance &&
       formData?.description.trim()
     );
   };
@@ -65,7 +55,7 @@ const AppSecurityChecklistGenerator = () => {
 
     setIsCalculating(true);
 
-    const resultData = calculateStartupTechReadiness(formData);
+    const resultData = generateSecurityChecklist(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -136,173 +126,82 @@ const AppSecurityChecklistGenerator = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Calculator Form */}
-            <div className="bg-white rounded-2xl border border-gray-200 md:p-8 p-5 space-y-2.5">
-              <h2 className="text-center text-2xl font-semibold mb-2">
-                Assessment Questions
-              </h2>
-              <div className="space-y-0.5">
+            <div className="bg-white rounded-2xl border border-gray-200 md:p-8 p-5 space-y-5">
+              <h3 className="text-center text-2xl font-semibold mb-2">
+                Application Information
+              </h3>
+              <div className="space-y-2">
                 <label className="font-medium text-gray-700">
-                  Team Size (including founders)*
+                  Application Type*
                 </label>
                 <input
-                  id="teamSize"
-                  type="number"
+                  type="text"
+                  value={formData.appType}
+                  onChange={(e) => handleInputChange("appType", e.target.value)}
+                  placeholder="e.g., Web App, Mobile App, API, SaaS"
                   className="w-full border rounded-lg p-3 bg-white"
-                  value={formData.teamSize}
-                  onChange={(e) =>
-                    handleInputChange("teamSize", e.target.value)
-                  }
-                  min="1"
-                  onKeyDown={(e) => {
-                    if (
-                      e.key === "e" ||
-                      e.key === "E" ||
-                      e.key === "+" ||
-                      e.key === "-"
-                    ) {
-                      e.preventDefault();
-                    }
-                  }}
                 />
               </div>
-              <div className="space-y-0.5">
+              <div className="space-y-2">
                 <label className="font-medium text-gray-700">
-                  Annual Tech Budget ($)*
+                  Data Handling*
                 </label>
                 <input
-                  id="techBudget"
-                  type="number"
-                  className="w-full border rounded-lg p-3 bg-white"
-                  value={formData.techBudget}
+                  type="text"
+                  value={formData.dataHandling}
                   onChange={(e) =>
-                    handleInputChange("techBudget", e.target.value)
+                    handleInputChange("dataHandling", e.target.value)
                   }
-                  min="1"
-                  onKeyDown={(e) => {
-                    if (
-                      e.key === "e" ||
-                      e.key === "E" ||
-                      e.key === "+" ||
-                      e.key === "-"
-                    ) {
-                      e.preventDefault();
-                    }
-                  }}
+                  placeholder="e.g., Personal data, Payment info, Health records"
+                  className="w-full border rounded-lg p-3 bg-white"
                 />
               </div>
-              <div className="space-y-0.5">
+              <div className="space-y-2">
                 <label className="font-medium text-gray-700">
-                  Development Stage (1-10 scale)*
+                  User Authentication*
                 </label>
-                <select
-                  value={formData.developmentStage}
+                <input
+                  type="text"
+                  value={formData.userAuth}
                   onChange={(e) =>
-                    handleInputChange("developmentStage", e.target.value)
+                    handleInputChange("userAuth", e.target.value)
                   }
+                  placeholder="e.g., JWT, OAuth, MFA, SSO"
                   className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select stage</option>
-                  <option value="2">Idea Stage (1-2)</option>
-                  <option value="4">Prototype/MVP (3-4)</option>
-                  <option value="6">Beta Testing (5-6)</option>
-                  <option value="8">Market Ready (7-8)</option>
-                  <option value="10">Scaling (9-10)</option>
-                </select>
+                />
               </div>
-              <div className="space-y-0.5">
+              <div className="space-y-2">
                 <label className="font-medium text-gray-700">
-                  Technical Expertise Level (1-10 scale)*
+                  Compliance Requirements*
                 </label>
-                <select
-                  value={formData.techExpertise}
+                <input
+                  type="text"
+                  value={formData.compliance}
                   onChange={(e) =>
-                    handleInputChange("techExpertise", e.target.value)
+                    handleInputChange("compliance", e.target.value)
                   }
+                  placeholder="e.g., GDPR, HIPAA, PCI DSS, SOX, ISO 27001"
                   className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select expertise level</option>
-                  <option value="2">Beginner (1-2)</option>
-                  <option value="4">Basic (3-4)</option>
-                  <option value="6">Intermediate (5-6)</option>
-                  <option value="8">Advanced (7-8)</option>
-                  <option value="10">Expert (9-10)</option>
-                </select>
-              </div>
-              <div className="space-y-0.5">
-                <label className="font-medium text-gray-700">
-                  Time to Market Urgency (1-10 scale)*
-                </label>
-                <select
-                  value={formData.timeToMarket}
-                  onChange={(e) =>
-                    handleInputChange("timeToMarket", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select urgency</option>
-                  <option value="2">No Rush (1-2)</option>
-                  <option value="4">Moderate (3-4)</option>
-                  <option value="6">Important (5-6)</option>
-                  <option value="8">Urgent (7-8)</option>
-                  <option value="10">Critical (9-10)</option>
-                </select>
-              </div>
-              <div className="space-y-0.5">
-                <label className="font-medium text-gray-700">
-                  Scalability Requirements (1-10 scale)*
-                </label>
-                <select
-                  value={formData.scalabilityNeeds}
-                  onChange={(e) =>
-                    handleInputChange("scalabilityNeeds", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select scalability needs</option>
-                  <option value="2">Small Scale (1-2)</option>
-                  <option value="4">Regional (3-4)</option>
-                  <option value="6">National (5-6)</option>
-                  <option value="8">Global (7-8)</option>
-                  <option value="10">Massive Scale (9-10)</option>
-                </select>
-              </div>
-              <div className="space-y-0.5">
-                <label className="font-medium text-gray-700">
-                  Security Requirements (1-10 scale)*
-                </label>
-                <select
-                  value={formData.securityRequirements}
-                  onChange={(e) =>
-                    handleInputChange("securityRequirements", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select security level</option>
-                  <option value="2">Basic (1-2)</option>
-                  <option value="4">Standard (3-4)</option>
-                  <option value="6">Enhanced (5-6)</option>
-                  <option value="8">High Security (7-8)</option>
-                  <option value="10">Enterprise Grade (9-10)</option>
-                </select>
+                />
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <label className="font-medium text-gray-700">
-                  Startup Description*
+                  Additional Details & Keywords*
                 </label>
                 <textarea
                   value={formData?.description}
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="e.g., AI-powered SaaS platform for enterprise customers with mobile app and cloud infrastructure"
+                  placeholder="Describe your security concerns and infrastructure. Include keywords like: cloud, encryption, public-facing, containers, AWS, Azure, external API, etc."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
               </div>
               <p className="text-xs text-gray-500 ">
-                Keywords like "cloud", "AI", "mobile", "automation",
-                "data-driven", "agile" will boost your readiness score
+                Tip: Include infrastructure details and security technologies
+                for tailored recommendations
               </p>
 
               {/* Get Quote Button */}
@@ -314,106 +213,82 @@ const AppSecurityChecklistGenerator = () => {
                 {isCalculating ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Calculating...
+                    Generating...
                   </>
                 ) : (
-                  <>
-                    <Calculator className="mr-2 h-5 w-5" />
-                    Calculate
-                  </>
+                  "Generate Checklist"
                 )}
               </button>
             </div>
 
             {/* Cost Estimate */}
             <div className="popup bg-white rounded-2xl border shadow-lg p-8">
-              <h2 className="text-center text-2xl font-semibold mb-4">
-                Readiness Assessment
-              </h2>
+              <h3 className="text-center text-2xl font-semibold mb-4">
+                Your Security Checklist
+              </h3>
               {result && hasVisited ? (
-                <div className="space-y-4">
-                  <div className="border p-4 rounded-xl shadow-sm">
+                <div className="space-y-3 overflow-auto max-h-[630px] pr-1">
+                  <div className="bg-white p-4 rounded-xl border border-emerald-100">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-600">
-                          Tech Readiness Score
+                        <p className="text-sm font-semibold text-gray-600 mb-1">
+                          RISK LEVEL
                         </p>
-                        <p className="text-4xl font-bold text-green-600">
-                          {result.score}/100
-                        </p>
-                        <p className="text-lg font-semibold text-gray-700 mt-1">
-                          {result.level}
+                        <p className={`text-3xl font-bold ${result.color}`}>
+                          {result.riskLevel}
                         </p>
                       </div>
-                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                        {result.score >= 85 ? (
-                          <Star className="w-8 h-8 text-green-600" />
-                        ) : result.score >= 70 ? (
-                          <CheckCircle className="w-8 h-8 text-green-600" />
-                        ) : result.score >= 55 ? (
-                          <AlertTriangle className="w-8 h-8 text-orange-500" />
-                        ) : (
-                          <TrendingDown className="w-8 h-8 text-red-500" />
-                        )}
+                      <div className="text-right">
+                        <p className="text-sm font-semibold text-gray-600 mb-1">
+                          TOTAL CHECKS
+                        </p>
+                        <p className="text-3xl font-bold text-gray-900">
+                          {result.totalItems}
+                        </p>
                       </div>
                     </div>
                   </div>
 
-                  {result.bonusPoints > 0 && (
-                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-xl">
-                      <div className="flex items-center">
-                        <Sparkles className="w-5 h-5 text-yellow-600 mr-2" />
-                        <p className="text-sm font-semibold text-yellow-800">
-                          Tech Stack Bonus: +{result.bonusPoints} points
-                        </p>
-                      </div>
-                      <p className="text-xs text-yellow-700 mt-1">
-                        Your technology choices boost your readiness score
-                      </p>
+                  {result.checklist.map((category, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white p-4 rounded-xl border border-emerald-100"
+                    >
+                      <h4 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                        <ShieldCheck className="w-5 h-5 mr-2 text-emerald-600" />
+                        {category.category}
+                      </h4>
+                      <ul className="space-y-1">
+                        {category.items.map((item, itemIdx) => (
+                          <li
+                            key={itemIdx}
+                            className="flex items-start space-x-2"
+                          >
+                            <div className="flex-shrink-0 mt-0.5">
+                              <div className="w-4 h-4 border border-themeColor rounded"></div>
+                            </div>
+                            <span className="text-gray-700 text-sm">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  )}
+                  ))}
 
-                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl">
-                    <h4 className="font-semibold text-blue-900 mb-3">
-                      Key Recommendations
-                    </h4>
-                    <div className="space-y-2">
-                      {result.recommendations.map((rec, index) => (
-                        <p
-                          key={index}
-                          className="text-sm text-blue-800 flex items-start"
-                        >
-                          <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          {rec}
+                  <div className="bg-gradient-to-r from-themeColor to-themeSecondary p-4 rounded-xl text-white">
+                    <div className="flex items-start space-x-3">
+                      <AlertTriangle className="w-5 h-5 flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold !mb-1">
+                          IMPLEMENTATION PRIORITY
                         </p>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="border p-4 rounded-xl shadow-sm">
-                    <h4 className="font-semibold text-gray-900 mb-3">
-                      Score Breakdown
-                    </h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Team & Budget</span>
-                        <span className="font-semibold">35 points max</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">
-                          Development & Expertise
-                        </span>
-                        <span className="font-semibold">20 points max</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">
-                          Strategy & Planning
-                        </span>
-                        <span className="font-semibold">30 points max</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Tech Stack Bonus</span>
-                        <span className="font-semibold">15 points max</span>
+                        <p className="text-sm leading-relaxed">
+                          Start with Authentication & Authorization items, then
+                          focus on Data Protection. Implement monitoring early
+                          to track security events as you progress through the
+                          checklist.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -423,7 +298,7 @@ const AppSecurityChecklistGenerator = () => {
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-themeColor rounded-full flex items-center justify-center">
-                        <Lightbulb className="w-12 h-12 text-white" />
+                        <FileText className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -434,19 +309,19 @@ const AppSecurityChecklistGenerator = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      Ready to get result?
+                      Ready to get checklist?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Complete the assessment questions on the left to get
-                      readliness result. ✨
+                      Complete the application information on the left to get
+                      checklist. ✨
                     </p>
 
                     <button
                       onClick={() => document.querySelector("input")?.focus()}
                       className="bg-themeColor text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 transition-all animate-bounce"
                     >
-                      &lArr; Fill out the form to get started
+                      &lArr; Fill out the form to get checklist
                     </button>
                   </div>
                 </div>

@@ -1475,7 +1475,237 @@ export const calculateLegacySystemModernizationReadiness = (formData) => {
   return { score, urgency, recommendations, color, priority };
 };
 
-// 29. Performance Benchmarking Tool
+// 29. App Security Checklist Generator
+
+export const generateSecurityChecklist = (formData) => {
+  const appType = formData.appType.toLowerCase();
+  const dataHandling = formData.dataHandling.toLowerCase();
+  const userAuth = formData.userAuth.toLowerCase();
+  const compliance = formData.compliance.toLowerCase();
+  const description = formData.description.toLowerCase();
+
+  const checklist = [];
+
+  // Authentication & Authorization
+  const authItems = [
+    "Implement strong password requirements (minimum 12 characters, complexity rules)",
+    "Enable multi-factor authentication (MFA) for all user accounts",
+    "Use secure session management with proper timeout mechanisms",
+    "Implement account lockout policies after failed login attempts",
+  ];
+
+  if (userAuth.includes("oauth") || userAuth.includes("sso")) {
+    authItems.push(
+      "Validate OAuth tokens and implement proper redirect URI validation"
+    );
+    authItems.push("Use PKCE (Proof Key for Code Exchange) for OAuth flows");
+  }
+
+  if (userAuth.includes("jwt")) {
+    authItems.push("Use strong JWT signing algorithms (RS256 or ES256)");
+    authItems.push("Implement JWT expiration and refresh token rotation");
+  }
+
+  checklist.push({
+    category: "Authentication & Authorization",
+    items: authItems,
+  });
+
+  // Data Protection
+  const dataItems = [
+    "Encrypt sensitive data at rest using AES-256 or equivalent",
+    "Use TLS 1.3 or TLS 1.2 for all data in transit",
+    "Implement proper key management with rotation policies",
+    "Sanitize and validate all user inputs to prevent injection attacks",
+  ];
+
+  if (dataHandling.includes("personal") || dataHandling.includes("pii")) {
+    dataItems.push("Implement data minimization principles");
+    dataItems.push("Provide data export and deletion capabilities for users");
+    dataItems.push("Maintain audit logs for all access to personal data");
+  }
+
+  if (dataHandling.includes("payment") || dataHandling.includes("financial")) {
+    dataItems.push("Achieve PCI DSS compliance for payment data");
+    dataItems.push("Never store CVV or full credit card numbers");
+    dataItems.push("Use tokenization for sensitive payment information");
+  }
+
+  if (dataHandling.includes("health") || dataHandling.includes("medical")) {
+    dataItems.push("Ensure HIPAA compliance for protected health information");
+    dataItems.push("Implement strong access controls for medical records");
+  }
+
+  checklist.push({
+    category: "Data Protection & Privacy",
+    items: dataItems,
+  });
+
+  // Application Security
+  const appSecItems = [
+    "Implement Content Security Policy (CSP) headers",
+    "Use parameterized queries to prevent SQL injection",
+    "Validate and sanitize all file uploads",
+    "Implement rate limiting and DDoS protection",
+    "Use secure coding practices to prevent XSS attacks",
+    "Disable unnecessary HTTP methods and endpoints",
+  ];
+
+  if (appType.includes("web") || appType.includes("browser")) {
+    appSecItems.push("Set HttpOnly and Secure flags on cookies");
+    appSecItems.push("Implement CORS policies correctly");
+    appSecItems.push("Use Subresource Integrity (SRI) for third-party scripts");
+  }
+
+  if (
+    appType.includes("mobile") ||
+    appType.includes("ios") ||
+    appType.includes("android")
+  ) {
+    appSecItems.push("Implement certificate pinning for API calls");
+    appSecItems.push("Obfuscate code to prevent reverse engineering");
+    appSecItems.push("Use secure storage mechanisms (Keychain/Keystore)");
+    appSecItems.push("Implement jailbreak/root detection");
+  }
+
+  if (appType.includes("api")) {
+    appSecItems.push("Implement API versioning and deprecation policies");
+    appSecItems.push("Use API keys with proper rotation policies");
+    appSecItems.push("Implement request signing for sensitive operations");
+  }
+
+  checklist.push({
+    category: "Application Security",
+    items: appSecItems,
+  });
+
+  // Infrastructure & Network Security
+  const infraItems = [
+    "Use Web Application Firewall (WAF) for protection",
+    "Implement network segmentation and least privilege access",
+    "Enable logging and monitoring for security events",
+    "Keep all systems and dependencies updated with security patches",
+    "Use strong encryption for database connections",
+    "Implement backup and disaster recovery procedures",
+  ];
+
+  if (
+    description.includes("cloud") ||
+    description.includes("aws") ||
+    description.includes("azure") ||
+    description.includes("gcp")
+  ) {
+    infraItems.push("Follow cloud provider security best practices");
+    infraItems.push("Implement proper IAM roles and policies");
+    infraItems.push("Enable cloud-native security monitoring tools");
+  }
+
+  if (
+    description.includes("container") ||
+    description.includes("docker") ||
+    description.includes("kubernetes")
+  ) {
+    infraItems.push("Scan container images for vulnerabilities");
+    infraItems.push("Implement pod security policies in Kubernetes");
+    infraItems.push(
+      "Use secrets management solutions (not environment variables)"
+    );
+  }
+
+  checklist.push({
+    category: "Infrastructure & Network Security",
+    items: infraItems,
+  });
+
+  // Compliance & Governance
+  const complianceItems = [
+    "Conduct regular security audits and penetration testing",
+    "Maintain security incident response plan",
+    "Document security policies and procedures",
+    "Provide security awareness training for team members",
+    "Implement change management processes",
+  ];
+
+  if (compliance.includes("gdpr")) {
+    complianceItems.push("Implement GDPR consent mechanisms");
+    complianceItems.push("Appoint Data Protection Officer (DPO) if required");
+    complianceItems.push("Maintain records of processing activities");
+  }
+
+  if (compliance.includes("sox")) {
+    complianceItems.push("Implement SOX controls for financial data");
+    complianceItems.push(
+      "Maintain audit trails for all financial transactions"
+    );
+  }
+
+  if (compliance.includes("iso")) {
+    complianceItems.push("Follow ISO 27001 security standards");
+    complianceItems.push(
+      "Document Information Security Management System (ISMS)"
+    );
+  }
+
+  if (compliance.includes("hipaa")) {
+    complianceItems.push("Sign Business Associate Agreements (BAAs)");
+    complianceItems.push("Conduct HIPAA risk assessments");
+  }
+
+  checklist.push({
+    category: "Compliance & Governance",
+    items: complianceItems,
+  });
+
+  // Monitoring & Response
+  const monitoringItems = [
+    "Implement centralized logging and log retention policies",
+    "Set up real-time security alerts and notifications",
+    "Monitor for suspicious activities and anomalies",
+    "Implement automated vulnerability scanning",
+    "Conduct regular security reviews and code audits",
+    "Maintain security metrics and KPIs",
+  ];
+
+  checklist.push({
+    category: "Monitoring & Incident Response",
+    items: monitoringItems,
+  });
+
+  // Calculate risk level based on inputs
+  const totalItems = checklist.reduce((sum, cat) => sum + cat.items.length, 0);
+  let riskScore = 0;
+
+  if (dataHandling.includes("payment") || dataHandling.includes("health"))
+    riskScore += 30;
+  else if (dataHandling.includes("personal") || dataHandling.includes("pii"))
+    riskScore += 20;
+
+  if (!userAuth.includes("mfa") && !userAuth.includes("2fa")) riskScore += 15;
+  if (description.includes("public") || description.includes("external"))
+    riskScore += 10;
+  if (!description.includes("encryption")) riskScore += 10;
+
+  let riskLevel = "";
+  let color = "";
+
+  if (riskScore >= 50) {
+    riskLevel = "Critical";
+    color = "text-red-600";
+  } else if (riskScore >= 30) {
+    riskLevel = "High";
+    color = "text-orange-600";
+  } else if (riskScore >= 15) {
+    riskLevel = "Moderate";
+    color = "text-yellow-600";
+  } else {
+    riskLevel = "Low";
+    color = "text-green-600";
+  }
+
+  return { checklist, riskLevel, color, totalItems };
+};
+
+// 30. Performance Benchmarking Tool
 
 export const calculatePerformanceBenchmark = (formData) => {
   const loadTime = parseFloat(formData.pageLoadTime) || 0;

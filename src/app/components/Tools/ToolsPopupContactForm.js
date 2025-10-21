@@ -21,6 +21,7 @@ import {
   Link,
   Lock,
   Shield,
+  ShieldCheck,
   Smartphone,
   Sparkles,
   Star,
@@ -1895,6 +1896,78 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       : result.score >= 30
                       ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
                       : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/app-security-checklist-generator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="space-y-2 lg:w-[80%] w-full animate-fade-in overflow-auto max-h-[460px] pr-1 z-0">
+            <div className="bg-white p-4 rounded-xl border border-emerald-100">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 mb-1">
+                    RISK LEVEL
+                  </p>
+                  <p className={`text-3xl font-bold ${result.color}`}>
+                    {result.riskLevel}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-semibold text-gray-600 mb-1">
+                    TOTAL CHECKS
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900">
+                    {result.totalItems}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {result.checklist.map((category, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-4 rounded-xl border border-emerald-100"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+                  <ShieldCheck className="w-5 h-5 mr-2 text-emerald-600" />
+                  {category.category}
+                </h4>
+                <ul className="space-y-1">
+                  {category.items.map((item, itemIdx) => (
+                    <li key={itemIdx} className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 mt-0.5">
+                        <div className="w-4 h-4 border border-themeColor rounded"></div>
+                      </div>
+                      <span className="text-gray-700 text-left text-sm">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            <div className="bg-gradient-to-r from-themeColor to-themeSecondary p-4 rounded-xl text-white">
+              <div className="flex items-start space-x-3">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold !mb-1 text-left">
+                    IMPLEMENTATION PRIORITY
+                  </p>
+                  <p className="text-sm leading-relaxed text-left">
+                    Start with Authentication & Authorization items, then focus
+                    on Data Protection. Implement monitoring early to track
+                    security events as you progress through the checklist.
                   </p>
                 </div>
               </div>
