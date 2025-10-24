@@ -1139,41 +1139,41 @@ const automationSavingEstimatorFeatures = {
 const mvpFeatureSelectorQuizFeatures = {
   title: "Powerful Features for Accurate LTV Calculations",
   description:
-    "Our advanced calculator provides comprehensive insights and tools to help you understand and optimize your customer relationships.",
+    "Our advanced calculator provides insights to help you optimize customer relationships and prioritize MVP features effectively.",
   listData: [
     {
       icon: Target,
       title: "Smart Feature Prioritization",
       description:
-        "AI-powered analysis of your project description to identify the most critical features for your MVP.",
+        "AI-powered analysis of your project description to identify the most critical MVP features.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Users,
       title: "Audience-Centric Approach",
       description:
-        "Tailored recommendations based on your target audience and their specific needs.",
+        "Tailored recommendations based on your target audience and their specific needs for MVP feature selection.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Zap,
       title: "Instant Results",
       description:
-        "Get immediate feedback and feature recommendations as you fill out the form.",
+        "Get immediate feedback and MVP feature recommendations as you fill out the form.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: BarChart3,
       title: "Priority Scoring",
       description:
-        "Each feature gets a priority score helping you make informed decisions about your MVP scope.",
+        "Each feature gets a priority score, helping you make informed decisions about your MVP scope.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Clock,
       title: "Timeline Optimization",
       description:
-        "Recommendations adjusted based on your project timeline and development constraints.",
+        "Recommendations adjusted based on your project timeline and development constraints for MVP planning.",
       color: "bg-red-100 text-red-600",
     },
     {
@@ -1186,36 +1186,42 @@ const mvpFeatureSelectorQuizFeatures = {
   ],
 };
 const whichAppShouldYouBuildFeatures = {
-  title: "Powerful Features for Accurate LTV Calculations",
+  title: "Features of App Idea Generator",
   description:
     "Our advanced calculator provides comprehensive insights and tools to help you understand and optimize your customer relationships.",
   listData: [
     {
       icon: Smartphone,
-      title: "Smart App Type Detection",
+      title: "Smart AI App Type Detection",
       description:
-        "AI-powered analysis of your description to identify the best app category and platform for your idea.",
+        "Instantly match your app idea to the ideal category using advanced keyword analysis.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Users,
-      title: "Audience-Based Recommendations",
+      title: "User Base Growth Tools",
       description:
-        "Tailored suggestions based on your target audience preferences and behavior patterns.",
+        "Discover features to scale user acquisition and maximize ROI.",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+    {
+      icon: Target,
+      title: "Industry-Specific Recommendations",
+      description:
+        "Choose from fintech, healthcare, media, fleet management, and more for custom app solutions.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Zap,
-      title: "Real-Time Analysis",
-      description:
-        "Get instant recommendations as you describe your app idea with dynamic keyword analysis.",
+      title: "App Development Cost Calculator",
+      description: "Estimate your project investment and optimize resources.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: BarChart3,
-      title: "Market Potential Scoring",
+      title: "Market Analysis & Risk Assessment",
       description:
-        "Assess market opportunities and competition levels for your proposed app concept.",
+        "Analyze the market potential, competitor density, and get strategies to minimize app launch risks.",
       color: "bg-orange-100 text-orange-600",
     },
     {
@@ -1224,13 +1230,6 @@ const whichAppShouldYouBuildFeatures = {
       description:
         "Platform recommendations adjusted based on your development timeline and resource constraints.",
       color: "bg-red-100 text-red-600",
-    },
-    {
-      icon: Shield,
-      title: "Risk Assessment",
-      description:
-        "Identify potential challenges and suggest strategies for successful app development and launch.",
-      color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };

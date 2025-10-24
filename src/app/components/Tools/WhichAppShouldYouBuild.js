@@ -95,12 +95,12 @@ const WhichAppShouldYouBuild = () => {
             Which App&nbsp;
             <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Should You Build?
+              Should You Build in 2025?
             </span>
           </>
         }
         buttonText="Find Your App Type"
-        description="Discover the perfect app type and platform for your idea with our intelligent recommendation system. Get personalized suggestions based on your goals and target audience."
+        description="Discover the best app ideas for business growth with our AI-powered app idea generator. Instantly get personalized recommendations for your next mobile or web app based on your goals, target audience, and industry trends."
         imageSrc="/images/v2/app-selection-visual-banner.webp"
         highlights={[
           {

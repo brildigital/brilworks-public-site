@@ -763,27 +763,27 @@ const mvpFeatureSelectorQuizFaqData = {
     {
       question: "What is an MVP Feature Selector Quiz?",
       answer:
-        "An MVP Feature Selector Quiz is a tool that helps entrepreneurs and product managers identify the most essential features for their Minimum Viable Product. It analyzes your project description, budget, timeline, and goals to recommend which features should be included in your initial launch.",
+        "Our MVP feature prioritization tool helps you select the most critical features for your MVP.",
     },
     {
       question: "How accurate are the feature recommendations?",
       answer:
-        "Our recommendations are based on proven MVP principles and keyword analysis of successful products. While the suggestions provide excellent starting points, they should be validated with your target users and adapted to your specific market conditions.",
+        "We use AI-powered analysis to provide highly accurate MVP feature recommendations based on your inputs.",
     },
     {
       question: "Can I use this for any type of product?",
       answer:
-        "Yes! The MVP Feature Selector works for web applications, mobile apps, SaaS products, e-commerce platforms, and many other digital products. The recommendations adapt based on the keywords and requirements you provide.",
+        "Yes, our MVP feature selection tool works for all types of startups and product ideas.",
     },
     {
       question: "How should I use the priority scores?",
       answer:
-        "Priority scores help you rank features by importance. High-priority features (70%+) should be included in your MVP, medium priority (40-69%) can be considered for phase 2, and low priority features should be saved for future iterations.",
+        "Priority scores help with MVP feature prioritization, letting you focus on what matters most for your product.",
     },
     {
       question: "What if I disagree with the recommendations?",
       answer:
-        "The quiz provides data-driven suggestions, but you know your market best. Use the recommendations as a starting point and adjust based on your specific user research, competitive analysis, and business requirements.",
+        "You can adjust features in our MVP planning tool to better align with your project goals.",
     },
   ],
 };
@@ -793,14 +793,14 @@ const whichAppShouldYouBuildFaqData = {
     "Get answers to common questions about customer lifetime value and how to use our calculator effectively.",
   queAns: [
     {
-      question: "How does the app recommendation system work?",
+      question: "How accurate is the app idea recommendation?",
       answer:
-        "Our system analyzes your project description using keyword detection and machine learning to identify the most suitable app type and platform. It considers factors like target audience, functionality requirements, budget, and timeline to provide personalized recommendations.",
+        "Our AI system leverages current market trends and search data to provide highly relevant and actionable app suggestions.",
     },
     {
-      question: "Should I build a mobile app or web app?",
+      question: "Should I build a mobile app or a web app?",
       answer:
-        "The choice depends on your target audience and use case. Mobile apps are better for consumer-focused, location-based, or media-rich applications. Web apps work well for business tools, complex interfaces, and when you need broad accessibility across devices.",
+        "Receive tailored advice based on your audience, budget, and growth strategy—compare mobile app development vs web app development.",
     },
     {
       question:
@@ -809,14 +809,14 @@ const whichAppShouldYouBuildFaqData = {
         "Native apps are built specifically for one platform (iOS or Android) offering best performance and platform-specific features. Cross-platform apps use frameworks like React Native or Flutter to work on multiple platforms with shared code, reducing development time and cost.",
     },
     {
-      question: "How accurate are the market potential scores?",
+      question: "What industries do you support?",
       answer:
-        "Market potential scores are based on keyword analysis, industry trends, and historical data. While they provide valuable insights, they should be combined with your own market research and validation with potential users for the most accurate assessment.",
+        "From fintech and healthcare to e-commerce and entertainment, our tool covers all major industries.",
     },
     {
-      question: "Can I change my app type after getting recommendations?",
+      question: "Can I change my app type later?",
       answer:
-        "Absolutely! Our recommendations are starting points based on your current description. As you refine your idea or gather user feedback, you may discover that a different app type or platform better suits your needs.",
+        "Yes. Our generator adapts your recommendations to evolving business needs and feedback.",
     },
   ],
 };

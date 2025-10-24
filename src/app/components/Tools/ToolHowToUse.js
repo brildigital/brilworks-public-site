@@ -661,41 +661,44 @@ const mvpFeatureSelectorQuizSteps = {
     {
       title: "Define Your Vision",
       description:
-        "Collect information about average order value, purchase frequency, and customer behavior patterns.",
+        "Collect information about average order value, purchase frequency, and customer behavior patterns to help with MVP feature prioritization.",
       icon: Target,
     },
     {
       title: "Set Constraints",
       description:
-        "Multiply average order value by purchase frequency and customer lifespan period.",
+        "Multiply average order value by purchase frequency and customer lifespan period to optimize your MVP planning tool results.",
       icon: FileText,
     },
     {
       title: "Get Recommendations",
       description:
-        "Adjust calculations based on customer retention rates and churn patterns.",
+        "Adjust calculations based on customer retention rates and churn patterns to receive personalized MVP feature recommendations.",
       icon: Lightbulb,
     },
   ],
 };
 const whichAppShouldYouBuildSteps = {
-  title: "How to Find Your Perfect App",
+  title: "How Does the App Idea Generator Work?",
   description: "Discover which app you should build in three simple steps",
   listData: [
     {
-      title: "Define Your Idea",
-      description: "Describe your app concept and target users",
+      title: "Define Your Business Goals",
+      description:
+        "Enter your app concept and select target users, whether you need fintech app ideas, healthcare solutions, or e-commerce platform recommendations.",
       icon: BrainIcon,
     },
     {
-      title: "Set Parameters",
-      description: "Specify budget, timeline, and experience level",
+      title: "Set Parameters for App Development",
+      description:
+        "Choose your development budget, timeline (e.g., MVP in 3 months), and your experience level, from first-time app creator to experienced developer.",
       icon: FileText,
     },
 
     {
-      title: "Get Recommendation",
-      description: "Receive personalized app type and platform suggestions",
+      title: "Get AI-Powered Recommendations",
+      description:
+        "Receive tailored app type suggestions (mobile, web, or cross-platform), platform analysis (React Native, Flutter, SaaS), and market trend scoring for your business.",
       icon: Lightbulb,
     },
   ],

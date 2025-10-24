@@ -95,7 +95,7 @@ const MVPFeatureSelectorQuiz = () => {
           </>
         }
         buttonText="Start Quiz Now"
-        description="Discover the essential features for your MVP with our intelligent quiz. Get personalized recommendations based on your project goals, audience, and constraints."
+        description="Discover the essential MVP features for your project with our intelligent MVP feature selector quiz. Get personalized MVP feature recommendations based on your project goals, audience, and constraints."
         imageSrc="/images/v2/MVP-feature -selector-banner.webp"
         statsGird={[
           { value: "10K+", label: "Trusted by Entrepreneurs" },
