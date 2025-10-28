@@ -1242,7 +1242,7 @@ const startupTechReadinessQuizFeatures = {
       icon: Brain,
       title: "Comprehensive Assessment",
       description:
-        "Evaluate 8 critical dimensions of tech readiness including team, budget, and strategy alignment.",
+        "Evaluate 8 critical dimensions of technology readiness including team expertise, tech infrastructure, budget, and strategic alignment.",
       color: "bg-blue-100 text-blue-600",
     },
     {
@@ -1256,28 +1256,28 @@ const startupTechReadinessQuizFeatures = {
       icon: Target,
       title: "Gap Analysis",
       description:
-        "Identify specific areas needing improvement with prioritized action items and timelines.",
+        "Identify technical debt, infrastructure gaps, and scalability bottlenecks with prioritized action items and implementation timelines.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Rocket,
       title: "Growth Roadmap",
       description:
-        "Receive strategic guidance for scaling your technology infrastructure and capabilities.",
+        "Receive a strategic technology roadmap for scaling your tech stack, infrastructure, and team capabilities.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
       description:
-        "Understand potential technology risks and get mitigation strategies for common startup challenges.",
+        "Understand technology adoption risks, security vulnerabilities, and get mitigation strategies for common startup technical challenges.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Award,
       title: "Investor Ready",
       description:
-        "Generate reports that demonstrate tech readiness to investors and stakeholders.",
+        "Generate technology maturity reports that demonstrate your tech infrastructure readiness and TRL score to investors and stakeholders.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],

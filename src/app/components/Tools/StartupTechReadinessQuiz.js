@@ -96,10 +96,10 @@ const StartupTechReadinessQuiz = () => {
       <ToolHerosection
         title={
           <>
-            Startup Tech &nbsp;
+            Startup Technology &nbsp;
             <br className="md:block hidden" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Readiness Quiz
+              Readiness Assessment
             </span>
           </>
         }

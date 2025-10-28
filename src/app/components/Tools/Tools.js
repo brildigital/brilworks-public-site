@@ -192,7 +192,7 @@ const toolsData = [
     description:
       "Take this 2-minute quiz to evaluate your startup’s technical readiness and get personalized insights to move from idea to launch confidently.",
     bg: "bg-lime-200",
-    link: "/tools/startup-tech-readiness-quiz/",
+    link: "/tools/tech-readiness-assessment-tool/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
   {

@@ -992,6 +992,11 @@ const nextConfig = {
         destination: `/blog/best-guide-to-hire-node-js-developers/`,
         statusCode: 301,
       },
+      {
+        source: `/tools/startup-tech-readiness-quiz/`,
+        destination: `/tools/tech-readiness-assessment-tool/`,
+        statusCode: 301,
+      },
     ];
   },
 };

@@ -840,6 +840,11 @@ const startupTechReadinessQuizFaqData = {
         "Use your score to identify strengths and weaknesses in your tech strategy. Scores above 80 indicate strong readiness, 60-80 suggests good foundation with room for improvement, and below 60 indicates areas needing immediate attention before scaling.",
     },
     {
+      question: "How does this relate to Technology Readiness Levels (TRL)?",
+      answer:
+        "Our assessment evaluates your startup against Technology Readiness Level (TRL) criteria - a globally recognized framework used by NASA, investors, and government agencies to measure technical maturity. Your score maps to TRL 1-9 scale, helping you understand where your technology stands in the development-to-commercialization journey.",
+    },
+    {
       question: "How often should I retake this quiz?",
       answer:
         "We recommend retaking the quiz quarterly during early stages and bi-annually as you mature. Technology needs evolve rapidly in startups, and regular assessment helps ensure your tech strategy aligns with business growth and market changes.",

@@ -711,19 +711,19 @@ const startupTechReadinessQuizSteps = {
     {
       title: "Assess Current State",
       description:
-        "Evaluate your existing technology infrastructure, team capabilities, and development processes.",
+        "Evaluate your existing tech stack infrastructure, team capabilities, development processes, and technical maturity level.",
       icon: Target,
     },
     {
       title: "Identify Gaps",
       description:
-        "Analyze weaknesses in your tech stack, skills, budget allocation, and strategic planning.",
+        "Analyze gaps in your technology stack, technical capabilities, budget allocation, and technology roadmap planning.",
       icon: BarChart3,
     },
     {
       title: "Score Readiness",
       description:
-        "Calculate comprehensive readiness score based on multiple factors and industry benchmarks.",
+        "Calculate your technology readiness level (TRL) score based on infrastructure maturity, scalability, and industry benchmarks.",
       icon: Calculator,
     },
     {
