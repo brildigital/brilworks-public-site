@@ -1010,7 +1010,7 @@ const ToolHowToUse = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorSteps,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizSteps,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildSteps,
-    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizSteps,
+    "/tools/tech-readiness-assessment-tool/": startupTechReadinessQuizSteps,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerSteps,
     "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorSteps,

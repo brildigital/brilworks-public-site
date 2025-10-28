@@ -1753,7 +1753,7 @@ const ToolFeatures = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorFeatures,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFeatures,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildFeatures,
-    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFeatures,
+    "/tools/tech-readiness-assessment-tool/": startupTechReadinessQuizFeatures,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerFeatures,
     "/tools/build-your-saas-business-model/":

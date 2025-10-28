@@ -150,7 +150,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "/tools/automation-saving-estimator/": {
       title: "Savings Analysis",
     },
-    "/tools/startup-tech-readiness-quiz/": {
+    "/tools/tech-readiness-assessment-tool/": {
       icon: Gauge,
       title: "Readiness Assessment",
     },
@@ -1391,7 +1391,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             </div>
           </div>
         );
-      case "/tools/startup-tech-readiness-quiz/":
+      case "/tools/tech-readiness-assessment-tool/":
         return !showPrice ? (
           <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
             <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">

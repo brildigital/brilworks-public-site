@@ -746,10 +746,10 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/which-app-should-you-build/",
     lastmod: "2025-10-13T18:45:53.531Z",
   },
-  // {
-  //   loc: "https://www.brilworks.com/tools/startup-tech-readiness-quiz/",
-  //   lastmod: "2025-10-14T16:53:24.531Z",
-  // },
+  {
+    loc: "https://www.brilworks.com/tools/tech-readiness-assessment-tool/",
+    lastmod: "2025-10-14T16:53:24.531Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/tools/digital-transformation-readiness-checker/",
   //   lastmod: "2025-10-14T18:45:53.531Z",

@@ -1233,7 +1233,7 @@ const ToolFAQs = () => {
     "/tools/automation-saving-estimator/": automationSavingEstimatorFaqData,
     "/tools/mvp-feature-selector-quiz/": mvpFeatureSelectorQuizFaqData,
     "/tools/which-app-should-you-build/": whichAppShouldYouBuildFaqData,
-    "/tools/startup-tech-readiness-quiz/": startupTechReadinessQuizFaqData,
+    "/tools/tech-readiness-assessment-tool/": startupTechReadinessQuizFaqData,
     "/tools/digital-transformation-readiness-checker/":
       digitalTransformationReadinessCheckerFaqData,
     "/tools/build-your-saas-business-model/": saasBusinessModelGeneratorFaqdata,
