@@ -95,7 +95,7 @@ const SaaSBusinessModelGenerator = () => {
           </>
         }
         buttonText="Start Building Your Model"
-        description="Transform your app idea into a complete business model in minutes. Get personalized recommendations on pricing, target markets, and growth strategies."
+        description="Transform your app idea into a complete business model in minutes. Our SaaS business model generator gives you personalized recommendations on pricing, target markets, and growth strategies to help you turn your app idea into a business model that works."
         imageSrc="/images/v2/SaaS-model-generator-banner.webp"
         statsGird={[
           { value: "10K+", label: "Models Generated" },

@@ -737,30 +737,30 @@ const startupTechReadinessQuizSteps = {
 const digitalTransformationReadinessCheckerSteps = {
   title: "How to Assess Digital Transformation Readiness in 4 Steps",
   description:
-    "Follow our systematic approach to evaluate your organization's digital transformation readiness and identify strategic improvement opportunities.",
+    "Follow our systematic approach to evaluate your organization's digital transformation readiness and identify strategic improvement opportunities with our digital readiness quiz.",
   listData: [
     {
       title: "Current State Assessment",
       description:
-        "Evaluate existing technology infrastructure, processes, and organizational capabilities.",
+        "Evaluate existing technology infrastructure, processes, and organizational capabilities using a structured digital maturity assessment framework.",
       icon: Target,
     },
     {
       title: "Gap Analysis",
       description:
-        "Identify gaps between current state and desired digital transformation outcomes.",
+        "Identify gaps between your current state and desired digital transformation outcomes with our business transformation checklist.",
       icon: BarChart3,
     },
     {
       title: "Readiness Scoring",
       description:
-        "Calculate comprehensive readiness score based on multiple transformation factors.",
+        "Calculate a comprehensive readiness score based on multiple transformation factors through our digital transformation scorecard.",
       icon: Calculator,
     },
     {
       title: "Strategic Roadmap",
       description:
-        "Receive prioritized recommendations and implementation roadmap for transformation success.",
+        "Receive prioritized recommendations and a practical roadmap for transformation success using insights from your digital transformation readiness tool.",
       icon: Lightbulb,
     },
   ],
@@ -768,102 +768,105 @@ const digitalTransformationReadinessCheckerSteps = {
 const saasBusinessModelGeneratorSteps = {
   title: "How It Works",
   description:
-    "Three simple steps to transform your idea into a validated business model",
+    "Three simple steps to transform your idea into a validated SaaS business model.",
   listData: [
     {
       icon: Target,
       title: "Define Your Vision",
       description:
-        "Tell us about your app idea, target audience, and the problem you're solving",
+        "Tell us about your app idea, target audience, and the problem you're solving. Our app business model tool captures all the essentials for accurate analysis.",
     },
     {
       icon: Zap,
       title: "AI Analysis",
       description:
-        "Our algorithm analyzes market trends, competitor pricing, and optimal business models",
+        "Our algorithm evaluates market trends, competitor pricing, and optimal models using advanced app pricing strategy insights.",
     },
     {
       icon: CheckCircle,
       title: "Get Your Strategy",
       description:
-        "Receive a complete business model with pricing, revenue streams, and growth tactics",
+        "Receive a complete app business model with detailed pricing, revenue streams, and growth tactics tailored to your market.",
     },
   ],
 };
 const codeQualityAnalyzerSteps = {
   title: "How It Works",
-  description: "Three simple steps to get comprehensive code quality insights",
+  description:
+    "Three simple steps to get a comprehensive code analysis with quality, security, and performance insights.",
   listData: [
     {
       icon: FileCode,
       title: "Submit Your Code",
       description:
-        "Paste your code snippet and provide context about your project and technology stack",
+        "Paste your code snippet and provide context about your project and technology stack.",
     },
     {
       icon: Search,
       title: "Instant Analysis",
       description:
-        "Our analyzer scans for bugs, security issues, code smells, and best practice violations",
+        "Our code analyzer scans for bugs, security vulnerabilities, logical errors, code smells, and anti-patterns.",
     },
     {
       icon: BarChart3,
       title: "Get Detailed Report",
       description:
-        "Receive quality scores, identified issues, and actionable recommendations for improvement",
+        "Receive code quality reports, quality metrics, and actionable recommendations for improving maintainability, reliability, and efficiency.",
     },
   ],
 };
 const saasScalabilityReadinessCheckerSteps = {
   title: "How It Works",
-  description: "Three simple steps to get comprehensive code quality insights",
+  description:
+    "Three simple steps to complete your SaaS scalability readiness evaluation.",
   listData: [
     {
       icon: Database,
       title: "Enter Your Metrics",
       description:
-        "Provide key information about your current infrastructure, user base, and performance metrics.",
+        "Provide key details about your infrastructure, API scalability, user base, and technical performance metrics.",
     },
     {
       icon: Activity,
       title: "AI-Powered Analysis",
       description:
-        "Our algorithm analyzes your data against industry benchmarks and best practices.",
+        "Our automated SaaS readiness checker tool compares your data with SaaS performance testing results and SaaS benchmarking tools.",
     },
     {
       icon: TrendingUp,
       title: "Get Recommendations",
       description:
-        "Receive a detailed readiness score with actionable recommendations for improvement.",
+        "Receive a detailed scalability score, identify SaaS scaling challenges, and get actionable steps to improve fault tolerance, load balancing, and distributed architecture for growth.",
     },
   ],
 };
 const legacySystemModernizationReadinessSteps = {
   title: "Assessment Process",
-  description: "Four comprehensive steps to evaluate your modernization needs",
+  description:
+    "Four comprehensive steps to evaluate your legacy system modernization needs.",
   listData: [
     {
       title: "System Analysis",
       description:
-        "Evaluate current infrastructure age, technology stack, and operational costs.",
+        "Conduct a detailed system analysis to evaluate your infrastructure’s age, technology stack, and operational efficiency.",
       icon: Code,
     },
     {
       title: "Risk Assessment",
       description:
-        "Identify technical debt, security vulnerabilities, and maintenance challenges.",
+        "Identify technical debt, security vulnerabilities, and maintenance challenges that limit scalability and performance.",
       icon: AlertTriangle,
     },
     {
       title: "Readiness Scoring",
       description:
-        "Calculate modernization urgency based on multiple factors and industry standards.",
+        "Measure modernization readiness and modernization urgency using industry-aligned readiness scoring methods.",
       icon: Target,
     },
     {
       title: "Action Plan",
       description:
-        "Receive prioritized recommendations and a strategic roadmap for transformation.",
+        "Receive a clear strategic roadmap and action plan with prioritized steps for enterprise modernization and long-term success.",
       icon: Rocket,
     },
   ],
@@ -871,108 +874,110 @@ const legacySystemModernizationReadinessSteps = {
 const appSecurityCheckListGeneratorSteps = {
   title: "How to Get Your Security Checklist",
   description:
-    "Four simple steps to generate a comprehensive security checklist",
+    "Four simple steps to create your custom app security checklist.",
   listData: [
     {
       title: "Describe Your App",
       description:
-        "Provide details about your application type, platform, and architecture.",
+        "Share details about your application type, platform, and cloud infrastructure—whether it’s a web application, mobile app, or SaaS platform.",
       icon: FileText,
     },
     {
       title: "Specify Data Types",
       description:
-        "Indicate what types of sensitive data your application handles.",
+        "Indicate what sensitive information your app processes. This helps tailor your data protection and encryption standards checklist.",
       icon: Database,
     },
     {
       title: "Define Requirements",
       description:
-        "Select authentication methods and compliance standards you need to meet.",
+        "Select relevant compliance standards such as GDPR, HIPAA, PCI DSS, SOX, or ISO. You can also specify DevOps security, IAM (Identity Access Management), and endpoint security needs.",
       icon: CheckCircle2,
     },
     {
       title: "Get Checklist",
       description:
-        "Receive a customized security checklist with actionable recommendations.",
+        "Receive a personalized application security checklist with best practices for secure app development, incident response, and security monitoring.",
       icon: ShieldCheck,
     },
   ],
 };
 const performanceBenchmarkingToolSteps = {
   title: "How to Get Your Performance Benchmark",
-  description: "Four simple steps to comprehensive performance analysis",
+  description:
+    "Four simple steps to run your performance benchmarking and get a complete analysis.",
   listData: [
     {
       title: "Measure Metrics",
       description:
-        "Collect key performance metrics from your application including load times and API responses.",
+        "Collect key performance metrics from your app, including page load time, API response time, and throughput requests per second.",
       icon: Gauge,
     },
     {
       title: "Input Data",
       description:
-        "Enter your performance data into our comprehensive benchmarking form.",
+        "Enter your application speed data into our performance metrics dashboard. Works seamlessly for web, mobile, and SaaS apps.",
       icon: BarChart3,
     },
     {
       title: "Analyze Results",
       description:
-        "Our algorithm compares your metrics against industry standards and best practices.",
+        "Our algorithm performs API performance benchmarking and compares your results with industry standards and best benchmarking tools for SaaS, fintech, or healthcare applications.",
       icon: Target,
     },
     {
       title: "Optimize",
       description:
-        "Receive detailed recommendations and actionable steps to improve performance.",
+        "Get actionable recommendations on how to optimize app speed in 2025, fix slow APIs, reduce timeouts, and eliminate bottlenecks through caching (Redis, CDN), compression, and lazy loading.",
       icon: TrendingUp,
     },
   ],
 };
 const scopeOfWorkGeneratorSteps = {
   title: "How it Works",
-  description: "Generate your SOW in three simple steps",
+  description: "Generate your professional SOW document in three simple steps.",
   listData: [
     {
       title: "Enter Project Details",
       description:
-        "Fill in basic information about your project including name, client, timeline, and budget.",
+        "Add key project information including name, client, timeline, and budget. Our system performs a quick performance benchmarking of inputs to ensure data accuracy and completeness.",
       icon: FileText,
     },
     {
       title: "Describe Your Scope",
       description:
-        "Provide a description with keywords about your project scope and list your deliverables.",
+        "Provide scope details, keywords, and deliverables. The AI runs a real-time performance comparison across similar projects and suggests improvements to optimize efficiency and user experience.",
       icon: ListChecks,
     },
     {
       title: "Generate & Download",
       description:
-        "Click generate to create your professional SOW document, review it, and download.",
+        "Click generate to create a structured SOW document. Review automated performance recommendations for timelines, deliverables, and resource utilization monitoring before downloading.",
       icon: Download,
     },
   ],
 };
 const softwareProposalGeneratorSteps = {
   title: "How It Works",
-  description: "Create your winning proposal in three simple steps",
+  description:
+    "Create your winning software project proposal in three simple steps.",
   listData: [
     {
       title: "Enter Project Details",
       description:
-        "Provide project name, client information, budget, timeline, and technical requirements.",
+        "Provide your project name, client information, budget, timeline, and technical requirements. The software proposal generator uses this input to structure your proposal automatically.",
       icon: FileText,
     },
     {
       title: "Describe Your Solution",
       description:
-        "Use keywords to describe the software solution, tech stack, and key features you'll deliver.",
+        "Add your project scope keywords to outline the scope of work (SOW), tech stack, and core features. Our AI proposal customization engine tailors each section for clarity and precision.",
       icon: ListChecks,
     },
     {
       title: "Generate & Send",
       description:
-        "Instantly create a professional proposal, customize if needed, and send to your client.",
+        "Click to instantly create your downloadable proposal document. Review, refine, and send it directly to clients through your preferred proposal management software or email platform.",
       icon: Download,
     },
   ],

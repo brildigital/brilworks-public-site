@@ -106,7 +106,7 @@ const DigitalTransformationReadinessChecker = () => {
           </>
         }
         buttonText="Check Your Readiness"
-        description="Assess your organization's readiness for digital transformation with our comprehensive checker. Get strategic insights to ensure successful digital initiatives and competitive advantage."
+        description="Assess your organization's readiness for digital transformation with our comprehensive digital transformation readiness tool. Get strategic insights to ensure successful initiatives, improve your digital maturity assessment, and gain a competitive advantage."
         imageSrc="/images/v2/digital-transformation-checker.webp"
         statsGird={[
           { value: "3K+", label: "Trusted by Organizations" },

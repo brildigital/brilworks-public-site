@@ -103,10 +103,9 @@ const CodeQualityAnalyzer = () => {
         buttonText="Start Analyzing Now"
         description={
           <>
-            Analyze your code instantly and get actionable insights on quality,
-            security, and performance. Identify issues before{" "}
-            <br className="md:block hidden " />
-            they become problems.
+            Analyze your code instantly and get actionable insights on code
+            quality, security, and performance. Identify bugs, security issues
+            and best practice violations before they become problems.
           </>
         }
         imageSrc="/images/v2/MVP-feature -selector-banner.webp"

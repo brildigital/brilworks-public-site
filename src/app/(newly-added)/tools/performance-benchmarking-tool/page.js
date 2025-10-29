@@ -2,13 +2,15 @@ import React from "react";
 import PerformanceBenchmarkingTool from "@/app/components/Tools/PerformanceBenchmarkingTool";
 
 export const metadata = {
-  title: "Performance Benchmarking Tool | Measure & Optimize App Speed",
+  title:
+    "Performance Benchmarking Tool | Optimize App Speed & Compare Industry Standards",
   description:
-    "Analyze your app’s speed, scalability, and efficiency with our Performance Benchmarking Tool. Identify bottlenecks, compare metrics, and optimize for superior user experience.",
+    "Run a complete performance benchmarking test for your web, mobile, or SaaS app. Analyze load time, API performance, throughput, and resource utilization to optimize speed, reduce bottlenecks, and deliver faster user experiences.",
   openGraph: {
-    title: "Performance Benchmarking Tool | Measure & Optimize App Speed",
+    title:
+      "Performance Benchmarking Tool | Optimize App Speed & Compare Industry Standards",
     description:
-      "Analyze your app’s speed, scalability, and efficiency with our Performance Benchmarking Tool. Identify bottlenecks, compare metrics, and optimize for superior user experience.",
+      "Run a complete performance benchmarking test for your web, mobile, or SaaS app. Analyze load time, API performance, throughput, and resource utilization to optimize speed, reduce bottlenecks, and deliver faster user experiences.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/performance-benchmarking-tool/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

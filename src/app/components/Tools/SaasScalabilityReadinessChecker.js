@@ -93,7 +93,7 @@ const SaasScalabilityReadinessChecker = () => {
           </>
         }
         buttonText="Check Your Readiness"
-        description="Evaluate your SaaS infrastructure's ability to handle growth. Get actionable insights and recommendations to scale confidently without compromising performance or user experience."
+        description="Evaluate your SaaS infrastructure’s ability to handle growth with our SaaS scalability assessment tool. Get actionable insights, benchmark your SaaS performance, and receive scalability readiness recommendations to grow confidently without compromising user experience or cloud performance."
         imageSrc="/images/v2/saas-scalability-checker-banner.webp"
         statsGird={[
           { value: "10K+", label: "Companies Analyzed" },

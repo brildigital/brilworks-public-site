@@ -100,7 +100,7 @@ const SoftwareProposalGenerator = () => {
           </>
         }
         buttonText="Create Your Proposal Now"
-        description="Generate comprehensive, professional software development proposals that win clients. Showcase your expertise and close deals faster with AI-powered precision."
+        description="Generate professional software proposals that win clients faster. Our AI-powered proposal builder helps you create comprehensive, error-free, and visually consistent documents in minutes. Save time with project proposal automation and focus on what matters — closing deals."
         imageSrc="/images/v2/Software-Proposal-Design-banner.webp"
         statsGird={[
           { value: "95%", label: "Win Rate" },

@@ -34,6 +34,7 @@ const CurrentHeader = () => {
     "/healthvault-privacy-policy/",
     "/kinderland-privacy-policy/",
     "/mindsync-privacy-policy/",
+    "/pink-signal-privacy-policy/",
   ];
 
   const showHeader =

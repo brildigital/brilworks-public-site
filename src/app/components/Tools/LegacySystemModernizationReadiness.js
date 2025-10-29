@@ -98,7 +98,7 @@ const LegacySystemModernizationReadiness = () => {
           </>
         }
         buttonText="Access Your System"
-        description="Assess your legacy infrastructure's modernization needs with our comprehensive analysis tool. Get actionable insights to transform outdated systems into modern, efficient, and scalable solutions."
+        description="Assess your legacy infrastructure’s modernization readiness with our comprehensive modernization assessment tool. Get actionable insights to transform outdated systems into modern, efficient, and scalable solutions while reducing costs and accelerating deployment."
         imageSrc="/images/v2/modernization-tool-banner.webp"
         highlights={[
           {

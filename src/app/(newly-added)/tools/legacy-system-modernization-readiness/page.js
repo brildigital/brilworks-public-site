@@ -3,14 +3,14 @@ import LegacySystemModernizationReadiness from "@/app/components/Tools/LegacySys
 
 export const metadata = {
   title:
-    "Legacy System Modernization Readiness Tool | Assess Your Upgrade Potential",
+    "Legacy System Modernization Readiness | Enterprise Modernization Assessment Tool",
   description:
-    "Evaluate how ready your organization is to modernize legacy systems. Discover gaps in infrastructure, scalability, and technology to plan a smooth digital transformation journey.",
+    "Evaluate your legacy infrastructure with our modernization readiness tool. Identify technical debt, assess risks, compare modernization strategies, and plan a digital transformation with clear ROI projections.",
   openGraph: {
     title:
-      "Legacy System Modernization Readiness Tool | Assess Your Upgrade Potential",
+      "Legacy System Modernization Readiness | Enterprise Modernization Assessment Tool",
     description:
-      "Evaluate how ready your organization is to modernize legacy systems. Discover gaps in infrastructure, scalability, and technology to plan a smooth digital transformation journey.",
+      "Evaluate your legacy infrastructure with our modernization readiness tool. Identify technical debt, assess risks, compare modernization strategies, and plan a digital transformation with clear ROI projections.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/legacy-system-modernization-readiness/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

@@ -2,13 +2,15 @@ import React from "react";
 import AppSecurityChecklistGenerator from "@/app/components/Tools/AppSecurityChecklistGenerator";
 
 export const metadata = {
-  title: "App Security Checklist Generator | Ensure Your App is Secure",
+  title:
+    "App Security Checklist Generator | Custom Security & Compliance Checklist for Applications",
   description:
-    "Generate a customized app security checklist to identify vulnerabilities, strengthen data protection, and ensure compliance with best security practices before launch.",
+    "Generate a customized application security checklist with our automated tool. Assess vulnerabilities, ensure compliance (GDPR, HIPAA, PCI DSS, ISO), and apply best practices for secure app development across web, mobile, and cloud environments.",
   openGraph: {
-    title: "App Security Checklist Generator | Ensure Your App is Secure",
+    title:
+      "App Security Checklist Generator | Custom Security & Compliance Checklist for Applications",
     description:
-      "Generate a customized app security checklist to identify vulnerabilities, strengthen data protection, and ensure compliance with best security practices before launch.",
+      "Generate a customized application security checklist with our automated tool. Assess vulnerabilities, ensure compliance (GDPR, HIPAA, PCI DSS, ISO), and apply best practices for secure app development across web, mobile, and cloud environments.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-security-checklist-generator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

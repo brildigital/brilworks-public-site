@@ -94,7 +94,7 @@ const AppSecurityChecklistGenerator = () => {
           </>
         }
         buttonText="Generate Your Checklist"
-        description="Generate a customized security checklist tailored to your application's specific needs. Get comprehensive recommendations to protect your users, data, and infrastructure from security threats."
+        description="Generate a custom security checklist for applications designed around your app’s architecture, data sensitivity, and compliance goals. Our application security checklist generator provides actionable recommendations to help you safeguard users, data, and infrastructure against threats."
         imageSrc="/images/v2/app-security-guide-banner.webp"
         statsGird={[
           { value: "50+", label: "Security Checks" },

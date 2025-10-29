@@ -2,13 +2,15 @@ import React from "react";
 import CodeQualityAnalyzer from "@/app/components/Tools/CodeQualityAnalyzer";
 
 export const metadata = {
-  title: "Code Quality Analyzer (Lite) | Check & Improve Your Code Instantly",
+  title:
+    "Code Quality Analyzer | Instant Code Analysis for Bugs, Security & Performance",
   description:
-    "Analyze your code for readability, performance, and best practices in seconds. Get instant insights and improvement tips with the lightweight Code Quality Analyzer (Lite).",
+    "Run instant code analysis with our Code Quality Analyzer. Detect bugs, security issues, code smells, and performance inefficiencies. Get actionable insights and detailed code quality reports in seconds.",
   openGraph: {
-    title: "Code Quality Analyzer (Lite) | Check & Improve Your Code Instantly",
+    title:
+      "Code Quality Analyzer | Instant Code Analysis for Bugs, Security & Performance",
     description:
-      "Analyze your code for readability, performance, and best practices in seconds. Get instant insights and improvement tips with the lightweight Code Quality Analyzer (Lite).",
+      "Run instant code analysis with our Code Quality Analyzer. Detect bugs, security issues, code smells, and performance inefficiencies. Get actionable insights and detailed code quality reports in seconds.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/code-quality-analyzer/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

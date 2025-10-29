@@ -101,7 +101,7 @@ const ScopeOfWorkGenerator = () => {
           </>
         }
         buttonText="Create Your SOW Now"
-        description="Create comprehensive Scope of Work documents with AI-powered precision. Save time, reduce errors, and maintain consistency across all your projects."
+        description="Create comprehensive Scope of Work (SOW) documents in minutes with AI-powered precision. Our platform ensures consistency, accuracy, and efficiency across projects while providing actionable performance insights to streamline delivery and improve outcomes."
         imageSrc="/images/v2/SOW-Generator-banner.webp"
         statsGird={[
           {

@@ -88,7 +88,7 @@ const PerformanceBenchmarkingTool = () => {
           </>
         }
         buttonText="Benchmark Your App"
-        description="Measure and optimize your application's performance with comprehensive benchmarking. Get detailed metrics, industry comparisons, and actionable recommendations to deliver lightning-fast user experiences."
+        description="Measure, compare, and optimize your application’s performance with our performance benchmarking tool. Get detailed app speed insights, industry comparisons, and speed optimization recommendations to deliver lightning-fast, reliable user experiences."
         imageSrc="/images/v2/performance-benchmarking-tool-banner.webp"
         statsGird={[
           { value: "<2s", label: "Avg Load Time" },

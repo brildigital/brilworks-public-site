@@ -3,14 +3,14 @@ import SaasScalabilityReadinessChecker from "@/app/components/Tools/SaasScalabil
 
 export const metadata = {
   title:
-    "SaaS Scalability Readiness Checker | Test Your App’s Growth Potential",
+    "SaaS Scalability Readiness Checker | Cloud Scalability & Performance Assessment Tool",
   description:
-    "Evaluate your SaaS platform’s ability to scale efficiently. Identify performance bottlenecks, infrastructure gaps, and growth readiness with our Scalability Readiness Checker.",
+    "Run a complete SaaS scalability assessment with our automated readiness checker tool. Evaluate SaaS infrastructure, performance, load capacity, and cloud scalability benchmarks to prepare for growth.",
   openGraph: {
     title:
-      "SaaS Scalability Readiness Checker | Test Your App’s Growth Potential",
+      "SaaS Scalability Readiness Checker | Cloud Scalability & Performance Assessment Tool",
     description:
-      "Evaluate your SaaS platform’s ability to scale efficiently. Identify performance bottlenecks, infrastructure gaps, and growth readiness with our Scalability Readiness Checker.",
+      "Run a complete SaaS scalability assessment with our automated readiness checker tool. Evaluate SaaS infrastructure, performance, load capacity, and cloud scalability benchmarks to prepare for growth.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-scalability-readiness-checker/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

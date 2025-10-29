@@ -3,14 +3,14 @@ import ScopeOfWorkGenerator from "@/app/components/Tools/ScopeOfWorkGenerator";
 
 export const metadata = {
   title:
-    "Scope of Work (SOW) Generator | Create Clear & Professional Project SOWs Instantly",
+    "AI SOW Generator | Create Professional Scope of Work Documents in Minutes",
   description:
-    "Easily create detailed and professional Scopes of Work for your projects. Define deliverables, timelines, milestones, and responsibilities in minutes with our AI-powered SOW Generator.",
+    "Generate detailed Scope of Work documents with AI precision. Save time, reduce errors, and maintain consistency with real-time performance benchmarking, automated recommendations, and export-ready professional templates.",
   openGraph: {
     title:
-      "Scope of Work (SOW) Generator | Create Clear & Professional Project SOWs Instantly",
+      "AI SOW Generator | Create Professional Scope of Work Documents in Minutes",
     description:
-      "Easily create detailed and professional Scopes of Work for your projects. Define deliverables, timelines, milestones, and responsibilities in minutes with our AI-powered SOW Generator.",
+      "Generate detailed Scope of Work documents with AI precision. Save time, reduce errors, and maintain consistency with real-time performance benchmarking, automated recommendations, and export-ready professional templates.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/scope-of-work-generator/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",

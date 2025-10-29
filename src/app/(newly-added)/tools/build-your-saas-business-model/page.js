@@ -5,12 +5,12 @@ export const metadata = {
   title:
     "SaaS Business Model Generator | Create a Winning SaaS Strategy in Minutes",
   description:
-    "Generate a complete SaaS business model tailored to your idea. Define pricing, target market, value proposition, and growth strategy instantly with our intelligent SaaS model generator.",
+    "Use our free SaaS business model generator to turn your app idea into a complete business plan. Get AI-powered insights on pricing, target audience, and growth strategy in minutes.",
   openGraph: {
     title:
       "SaaS Business Model Generator | Create a Winning SaaS Strategy in Minutes",
     description:
-      "Generate a complete SaaS business model tailored to your idea. Define pricing, target market, value proposition, and growth strategy instantly with our intelligent SaaS model generator.",
+      "Use our free SaaS business model generator to turn your app idea into a complete business plan. Get AI-powered insights on pricing, target audience, and growth strategy in minutes.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/build-your-saas-business-model/`,
     siteName: "Mobile App & Software Development Company | Brilworks",

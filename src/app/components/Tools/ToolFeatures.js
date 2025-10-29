@@ -1285,68 +1285,70 @@ const startupTechReadinessQuizFeatures = {
 const digitalTransformationReadinessCheckerFeatures = {
   title: "Comprehensive Features for Digital Transformation Success",
   description:
-    "Our advanced readiness checker provides detailed analysis across multiple dimensions to ensure your digital transformation initiatives succeed.",
+    "Our advanced digital transformation readiness tool provides detailed analysis across multiple dimensions to ensure your transformation initiatives succeed.",
   listData: [
     {
       icon: Brain,
       title: "Comprehensive Assessment",
       description:
-        "Evaluate 8 critical dimensions of digital transformation readiness including leadership, skills, and technology.",
+        "Evaluate 8 critical dimensions of digital transformation readiness, including leadership, skills, and technology, with our digital maturity assessment.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Gauge,
       title: "Real-time Scoring",
       description:
-        "Get instant readiness scores with detailed breakdowns and risk assessments for informed decision-making.",
+        "Get instant readiness scores with detailed breakdowns and risk assessments for informed decision-making via the digital transformation scorecard.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Target,
       title: "Gap Identification",
       description:
-        "Pinpoint specific areas requiring attention with prioritized action items and improvement strategies.",
+        "Pinpoint specific areas requiring attention using the business transformation checklist, along with prioritized action items and improvement strategies.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Globe,
       title: "Industry Benchmarks",
       description:
-        "Compare your readiness against industry standards and best practices for digital transformation.",
+        "Compare your readiness against industry standards and best practices with the digital transformation scorecard results.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
       description:
-        "Understand transformation risks and receive mitigation strategies for common implementation challenges.",
+        "Understand transformation risks and receive mitigation strategies for common implementation challenges through our digital readiness quiz insights.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Award,
       title: "Strategic Roadmap",
       description:
-        "Generate detailed transformation roadmaps with timelines, priorities, and success metrics.",
+        "Generate detailed transformation roadmaps with timelines, priorities, and measurable success metrics drawn from your digital transformation readiness tool.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
 const saasBusinessModelGeneratorFeatures = {
   title: "Powerful Features",
-  description: "Everything you need to validate and launch your SaaS business",
+  description:
+    "Everything you need to validate and plan your SaaS business model effectively.",
   listData: [
     {
       icon: DollarSign,
       title: "Smart Pricing Models",
       description:
-        "Get AI-recommended pricing tiers based on your market and competitors",
+        "Get AI-recommended pricing tiers based on market data and competitor benchmarks through our app pricing strategy tool.",
       color: "bg-blue-100 text-blue-600",
     },
 
     {
       icon: Users,
       title: "Target Audience Analysis",
-      description: "Identify and understand your ideal customer profiles",
+      description:
+        "Identify and understand your ideal customer profiles to strengthen your app idea business model.",
       color: "bg-green-100 text-green-600",
     },
 
@@ -1354,21 +1356,23 @@ const saasBusinessModelGeneratorFeatures = {
       icon: TrendingUp,
       title: "Growth Strategies",
       description:
-        "Receive customized growth tactics for your specific business model",
+        "Receive customized tactics designed to accelerate growth and improve your product-market fit.",
       color: "bg-purple-100 text-purple-600",
     },
 
     {
       icon: BarChart3,
       title: "Revenue Projections",
-      description: "Forecast potential revenue and key business metrics",
+      description:
+        "Forecast potential revenue and track key business metrics to validate your app idea to business model transition.",
       color: "bg-orange-100 text-orange-600",
     },
 
     {
       icon: Rocket,
       title: "Go-to-Market Plan",
-      description: "Step-by-step launch strategy tailored to your app",
+      description:
+        "Follow a step-by-step launch roadmap tailored to your app’s audience and monetization approach.",
       color: "bg-red-100 text-red-600",
     },
 
@@ -1376,7 +1380,7 @@ const saasBusinessModelGeneratorFeatures = {
       icon: Clock,
       title: "Time & Cost Estimates",
       description:
-        "Realistic timelines and budget requirements for development",
+        "Get realistic development timelines and budget recommendations to make smarter investment decisions.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
@@ -1384,144 +1388,148 @@ const saasBusinessModelGeneratorFeatures = {
 
 const codeQualityAnalyzerFeatures = {
   title: "Powerful Features",
-  description: "Everything you need to maintain high-quality, secure code",
+  description:
+    "Everything you need to maintain high-quality, secure, and performant code.",
   listData: [
     {
       icon: Bug,
       title: "Bug Detection",
       description:
-        "Automatically identify potential bugs and logical errors in your code",
+        "Automatically identify potential bugs, logical errors, and other code issues.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Shield,
       title: "Security Analysis",
       description:
-        "Scan for security vulnerabilities and common attack vectors",
+        "Scan for security vulnerabilities, attack vectors, and other security issues before deployment.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: TrendingUp,
       title: "Performance Insights",
       description:
-        "Get recommendations to optimize code performance and efficiency",
+        "Get recommendations to improve performance, efficiency, and reduce technical debt.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Code2,
       title: "Code Smells",
       description:
-        "Detect code smells and anti-patterns that hurt maintainability",
+        "Detect code smells and anti-patterns that affect maintainability and code reliability.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: BarChart3,
       title: "Quality Metrics",
       description:
-        "Track maintainability, reliability, and technical debt scores",
+        "Track your code quality, maintainability, reliability, and technical debt scores.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Clock,
       title: "Fix Time Estimates",
       description:
-        "Get realistic time estimates for addressing identified issues",
+        "View realistic time estimates for addressing identified issues and improving overall code quality.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
+
 const saasScalabilityReadinessCheckerFeatures = {
   title: "Powerful Features",
-  description: "Everything you need to ensure your SaaS can scale",
+  description:
+    "Everything you need to ensure your SaaS platform can scale effectively.",
   listData: [
     {
       icon: Server,
       title: "Infrastructure Analysis",
       description:
-        "Comprehensive evaluation of your current tech stack and architecture patterns.",
+        "In-depth SaaS infrastructure evaluation and architecture review to assess cloud scalability and growth capacity.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Activity,
       title: "Performance Metrics",
       description:
-        "Real-time assessment of response times, throughput, and system efficiency.",
+        "Real-time SaaS monitoring analytics and platform performance benchmarks to measure throughput, latency, and efficiency.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Users,
       title: "User Load Capacity",
       description:
-        "Determine how many users your system can handle before performance degrades.",
+        "Simulate growth scenarios with our SaaS load testing tool and determine how your system responds under pressure.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Shield,
       title: "Security Assessment",
       description:
-        "Evaluate security measures and compliance readiness at scale.",
+        "Check your SaaS security compliance and identify gaps that could affect scalability and user trust.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: TrendingUp,
       title: "Growth Projections",
       description:
-        "Forecast infrastructure needs based on your growth trajectory.",
+        "Use SaaS growth forecasting tools to plan your database scaling and microservices scalability roadmap.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: CheckCircle2,
       title: "Best Practices",
       description:
-        "Compare against industry standards and receive expert recommendations.",
+        "Get tailored SaaS best practices for fintech startups and enterprises, aligned with 2025 SaaS platform performance benchmarks.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
 const legacySystemModernizationReadinessFeatures = {
   title: "Comprehensive Analysis Features",
-  description: "Everything you need to plan successful legacy modernization",
+  description:
+    "Everything you need to plan and execute a successful legacy software upgrade or application modernization.",
   listData: [
     {
       icon: Clock,
       title: "System Age Analysis",
       description:
-        "Evaluate how long your system has been in production and its lifecycle stage.",
+        "Understand your system’s lifecycle stage with detailed system age analysis to determine when modernization is due.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Code,
       title: "Technology Stack Review",
       description:
-        "Assess current frameworks, languages, and platforms against modern standards.",
+        "Perform an in-depth technology stack review to compare existing frameworks, platforms, and tools with modern alternatives.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: TrendingUp,
       title: "Cost Impact Analysis",
       description:
-        "Calculate maintenance costs and potential savings from modernization.",
+        "Run a cost impact analysis to calculate ongoing maintenance expenses and potential savings from modernization.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: AlertTriangle,
       title: "Risk Identification",
       description:
-        "Detect security vulnerabilities, technical debt, and operational risks.",
+        "Spot technical debt, security vulnerabilities, and other risks that can delay or inflate modernization costs.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: RefreshCw,
       title: "Migration Strategies",
       description:
-        "Get recommendations for lift-and-shift, replatform, or full rebuild approaches.",
+        "Get expert recommendations for lift and shift, replatform, or full rebuild approaches tailored to your system’s needs.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: CheckCircle2,
       title: "ROI Projections",
       description:
-        "Understand the business value and return on investment of modernization.",
+        "Evaluate ROI projections to understand business value, cost savings, and time-to-value for your digital transformation.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
@@ -1529,48 +1537,48 @@ const legacySystemModernizationReadinessFeatures = {
 
 const appSecurityCheckListGeneratorFeatures = {
   title: "Comprehensive Security Coverage",
-  description: "Everything you need to secure your application",
+  description: "Everything you need to strengthen your app security posture.",
   listData: [
     {
       icon: Lock,
       title: "Authentication & Access",
       description:
-        "Best practices for user authentication, authorization, and session management.",
+        "Follow a secure authentication implementation checklist covering IAM, authorization, and session management for both web and mobile apps.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Database,
       title: "Data Protection",
       description:
-        "Encryption standards, data handling, and privacy compliance requirements.",
+        "Ensure encryption with TLS, HSTS, and content security policy (CSP) standards. Learn how to secure user data in mobile apps and manage data safely in cloud environments.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Shield,
       title: "Application Security",
       description:
-        "Code security, input validation, and protection against common vulnerabilities.",
+        "Use the secure code review checklist to identify vulnerabilities through automated app security audits and app security vulnerability scanners.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Globe,
       title: "Network Security",
       description:
-        "Infrastructure protection, firewalls, and secure communication protocols.",
+        "Review cloud app infrastructure security checklists, firewall rules, and network hardening practices to reduce attack surfaces.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: CheckCircle2,
       title: "Compliance Standards",
       description:
-        "GDPR, HIPAA, PCI DSS, SOX, and ISO compliance requirements.",
+        "Access a complete app security compliance checklist to meet GDPR, HIPAA, PCI DSS, SOX, and ISO requirements.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Eye,
       title: "Monitoring & Response",
       description:
-        "Security logging, incident detection, and response procedures.",
+        "Implement security monitoring, threat assessment, and incident response workflows that align with DevOps security checklists and cloud security solutions.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
@@ -1578,142 +1586,147 @@ const appSecurityCheckListGeneratorFeatures = {
 
 const performanceBenchmarkingToolFeatures = {
   title: "Comprehensive Performance Analysis",
-  description: "Everything you need to optimize application performance",
+  description:
+    "EEverything you need to benchmark and optimize app performance.",
   listData: [
     {
       icon: Clock,
       title: "Load Time Analysis",
       description:
-        "Measure and optimize page load performance against industry benchmarks.",
+        "Use our app load time analyzer to test and improve page load performance with optimized caching, CDN, and code split strategies.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Timer,
       title: "Time to Interactive",
       description:
-        "Evaluate how quickly users can interact with your application.",
+        "Measure how quickly your app becomes usable and track performance trends with real-time data.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Network,
       title: "API Performance",
       description:
-        "Benchmark API response times and identify optimization opportunities.",
+        "Run API performance benchmarking to identify latency issues and improve API response times with cache and timeout optimization.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Cpu,
       title: "Resource Utilization",
-      description: "Monitor CPU, memory, and resource consumption patterns.",
+      description:
+        "Monitor CPU, memory, and other resource utilization metrics to detect inefficiencies that slow performance.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: BarChart3,
       title: "Throughput Metrics",
-      description: "Assess system capacity and concurrent request handling.",
+      description:
+        "Evaluate your app’s throughput metrics and concurrent request handling to ensure scalability and reliability under load.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: TrendingUp,
       title: "Performance Trends",
       description:
-        "Track improvements over time and measure optimization impact.",
+        "Track performance trends over time, visualize optimization impact, and compare results with industry-standard benchmarks.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
 const scopeOfWorkGeneratorFeatures = {
   title: "Powerful Features",
-  description: "Everything you need to create professional SOW documents",
+  description:
+    "Everything you need to create accurate and professional Scope of Work documents.",
   listData: [
     {
       icon: Zap,
       title: "Lightning Fast",
       description:
-        "Generate comprehensive SOW documents in under 5 minutes with our optimized system.",
+        "Generate full SOWs in under five minutes with optimized performance workflows designed for real-time benchmarking.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Shield,
       title: "Legally Sound",
       description:
-        "Templates reviewed by legal professionals to ensure compliance and protection.",
+        "Templates are reviewed by legal experts and aligned with industry performance standards for clarity and compliance.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: FileText,
       title: "Professional Format",
       description:
-        "Clean, well-structured documents that look professional and are easy to read.",
+        "Clean, organized layouts make your SOW easy to read and suitable for benchmarking against competitors.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: CheckCircle,
       title: "Customizable",
       description:
-        "Fully editable output that you can tailor to your specific project needs.",
+        "Fully editable SOWs you can adjust based on client needs, system capacity assessments, or project size.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Sparkles,
       title: "Smart Keywords",
       description:
-        "AI analyzes your keywords to generate relevant and comprehensive scope details.",
+        "The AI uses benchmark SaaS metrics and project data to enhance clarity, performance accuracy, and scalability of deliverables.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Download,
       title: "Export Ready",
       description:
-        "Download your SOW in multiple formats ready to share with clients and stakeholders.",
+        "Download your final SOW in multiple formats—ready to share, present, or integrate into your performance monitoring platform.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
 };
 const softwareProposalGeneratorFeatures = {
   title: "Powerful Features",
-  description: "Everything you need to create winning software proposals",
+  description:
+    "Everything you need to build persuasive, professional software proposals that convert.",
   listData: [
     {
       icon: Rocket,
       title: "Quick Turnaround",
       description:
-        "Generate comprehensive proposals in minutes, not hours. Respond to RFPs faster than competitors.",
+        "Our fast proposal turnaround system lets you respond to RFPs in minutes. Ideal for agencies and software teams that need agility.",
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Lock,
       title: "Industry Best Practices",
       description:
-        "Templates built on proven methodologies and industry standards for maximum credibility.",
+        "Templates follow industry-standard proposal formats and legal compliance guidelines to enhance credibility and trust.",
       color: "bg-green-100 text-green-600",
     },
     {
       icon: Code2,
       title: "Technical Expertise",
       description:
-        "Showcase your technical knowledge with detailed architecture and development approach sections.",
+        "The built-in technical proposal generator allows you to highlight architecture, methodology, and development approaches clearly.",
       color: "bg-purple-100 text-purple-600",
     },
     {
       icon: Layers,
       title: "Comprehensive Coverage",
       description:
-        "Includes all essential sections: timeline, deliverables, pricing, team expertise, and more.",
+        "Includes all essential sections — timeline, deliverables, pricing, SOW details, and team expertise. Perfect for startups or enterprises managing multiple projects.",
       color: "bg-orange-100 text-orange-600",
     },
     {
       icon: Sparkles,
       title: "Smart Customization",
       description:
-        "AI adapts content based on your keywords and project requirements for personalized proposals.",
+        "AI adapts each proposal based on your input and project scope keywords, ensuring personalized and persuasive content every time.",
       color: "bg-red-100 text-red-600",
     },
     {
       icon: Download,
       title: "Multiple Formats",
       description:
-        "Download and share in various formats. Easy to customize further in your preferred editor.",
+        "Download and share in Word or PDF with our proposal editor tool. The proposal sharing formats are easy to customize and integrate with other platforms.",
       color: "bg-yellow-100 text-yellow-600",
     },
   ],
