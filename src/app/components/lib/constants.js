@@ -682,10 +682,10 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/app-maintenance-cost-estimator/",
     lastmod: "2025-09-27T15:21:23.121Z",
   },
-  // {
-  //   loc: "https://www.brilworks.com/tools/app-development-timeline-calculator/",
-  //   lastmod: "2025-09-22T15:21:23.121Z",
-  // },
+  {
+    loc: "https://www.brilworks.com/tools/app-development-timeline-calculator/",
+    lastmod: "2025-09-22T15:21:23.121Z",
+  },
   {
     loc: "https://www.brilworks.com/tools/mvp-launch-timeline-estimator/",
     lastmod: "2025-09-22T18:31:34.231Z",
@@ -750,19 +750,42 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/tools/tech-readiness-assessment-tool/",
     lastmod: "2025-10-14T16:53:24.531Z",
   },
-  // {
-  //   loc: "https://www.brilworks.com/tools/digital-transformation-readiness-checker/",
-  //   lastmod: "2025-10-14T18:45:53.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/build-your-saas-business-model/",
-  //   lastmod: "2025-10-15T16:53:24.531Z",
-  // },
-  // {
-  //   loc: "https://www.brilworks.com/tools/code-quality-analyzer/",
-  //   lastmod: "2025-10-15T18:45:53.531Z",
-  // },
-
+  {
+    loc: "https://www.brilworks.com/tools/digital-transformation-readiness-checker/",
+    lastmod: "2025-10-14T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/build-your-saas-business-model/",
+    lastmod: "2025-10-15T16:53:24.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/code-quality-analyzer/",
+    lastmod: "2025-10-15T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/saas-scalability-readiness-checker/",
+    lastmod: "2025-10-16T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/legacy-system-modernization-readiness/",
+    lastmod: "2025-10-16T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/performance-benchmarking-tool/",
+    lastmod: "2025-10-17T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/app-security-checklist-generator/",
+    lastmod: "2025-10-17T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/scope-of-work-generator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/software-proposal-generator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
     lastmod: "2025-04-12T12:04:49.528Z",
@@ -950,6 +973,11 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "Global SaaS Trends in 2025",
+    loc: "https://www.brilworks.com/blog/global-saas-trends/",
+    lastmod: "2025-10-28T11:58:06.601Z",
+  },
   {
     name: "Top Software Development Outsourcing Companies in 2025",
     loc: "https://www.brilworks.com/blog/top-software-outsourcing-companies/",
