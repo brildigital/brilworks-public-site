@@ -153,7 +153,7 @@ const MobileAppTechnology = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="hire-mobile-app-developer"
+        sectionId="services-one"
         serviceData={mobileAppService}
       />
       <TechnologyDevelopers bgClass="bg-white" />

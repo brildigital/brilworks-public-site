@@ -157,7 +157,7 @@ const LowCodeNoCodeTechnology = () => {
       />
       <ServicesSection
         serviceData={lowCodeNoCodeService}
-        sectionId="hire-low-code-no-code-developer"
+        sectionId="services-one"
         bgClass="bg-themeLight"
       />
       <TechnologyDevelopers bgClass="bg-white" />

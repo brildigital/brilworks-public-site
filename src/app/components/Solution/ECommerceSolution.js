@@ -284,7 +284,7 @@ const ECommerceSolution = () => {
         imageSrc="/images/v2/e-commerce-industry-banner.webp"
       />
       <ServicesSection
-        sectionId="fintech-services-one"
+        sectionId="services-one"
         serviceData={eCommerceService}
       />
 

@@ -182,12 +182,12 @@ const HealthCare = () => {
         imageSrc="/images/v2/helathcare-banner.webp"
       />
       <ServicesSection
-        sectionId="healthcare-one"
+        sectionId="services-one"
         serviceData={healthcareServices1}
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="healthcare-two"
+        sectionId="services-one"
         imageOnLeft={true}
         serviceData={healthcareServices2}
       />

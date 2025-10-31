@@ -221,12 +221,12 @@ const Fintech = () => {
         imageSrc="/images/v2/fintech-banner.webp"
       />
       <ServicesSection
-        sectionId="fintech-services-one"
+        sectionId="services-one"
         serviceData={fintechServices1}
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="fintech-services-two"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={fintechServices2}
       />

@@ -189,7 +189,7 @@ const WhiteLabelTechnology = () => {
         cardData={why100PlusAgenciesTrustUs}
       />
       <ServicesSection
-        sectionId="hire-react-native-developer"
+        sectionId="services-one"
         serviceData={whiteLabelService}
       />
       <TechnologyDevelopers description="Our services deliver customized, scalable white label solutions." />

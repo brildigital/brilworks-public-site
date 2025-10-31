@@ -153,7 +153,7 @@ const BubbleIoTechnology = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="hire-bubble-developer"
+        sectionId="services-one"
         serviceData={bubbleIoService}
       />
       <TechnologyDevelopers bgClass="bg-white" />

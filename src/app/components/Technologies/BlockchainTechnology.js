@@ -232,7 +232,7 @@ const BlockchainTechnology = () => {
         cardData={why90PlusClientReturn}
       />
       <ServicesSection
-        sectionId="hire-blockchain-developer"
+        sectionId="services-one"
         serviceData={blockchainService}
         bgClass="bg-themeLight"
       />

@@ -252,7 +252,7 @@ const ReactJSTechnology = () => {
         cardData={why100PlusCompaniesTrust}
       />
       <ServicesSection
-        sectionId="hire-reactjs-developer"
+        sectionId="services-one"
         bgClass="bg-themeLight"
         serviceData={reactJSService}
       />

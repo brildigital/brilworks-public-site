@@ -14,6 +14,7 @@ import Heading from "../HTMLComponents/Heading";
 function TechStackWeWorkWith({
   bgClass = "bg-themeLight",
   active = "",
+  title,
   techStackList = [],
 }) {
   const [activeTab, setActiveTab] = useState(active);
@@ -24,7 +25,7 @@ function TechStackWeWorkWith({
         <Heading
           type="h2"
           className="lg:!text-[34px] md:!text-3xl !text-2xl"
-          text="Tech Stack We Work With"
+          text={title || "Tech Stack We Work With"}
         />
         <Tabs
           className="tech-stack-working sxl:pt-10 md:pt-7.5 pt-5 reveal"
@@ -77,12 +78,14 @@ function TechStackWeWorkWith({
                         height={75}
                         width={75}
                       />
-                    ) : (
+                    ) : icon ? (
                       <FontAwesomeIcon
                         icon={icon}
                         size="5x"
                         style={{ color }}
                       />
+                    ) : (
+                      ""
                     )}
                     <p className="font-Figtree text-colorBlack md:text-xl text-lg font-medium">
                       {label}

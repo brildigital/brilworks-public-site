@@ -87,10 +87,7 @@ const JavaTechnology = () => {
         description="Scale your application development team with our top-notch Java developers. Choose our Java development company to take your project to unforeseen heights of success."
         imageSrc="/images/v2/java-banner.webp"
       />
-      <ServicesSection
-        sectionId="hire-java-developer"
-        serviceData={javaServices}
-      />
+      <ServicesSection sectionId="services-one" serviceData={javaServices} />
       <TechnologyDevelopers />
       {/* <BenefitOfHiringDevelopers /> */}
       <TechnologyCombination />

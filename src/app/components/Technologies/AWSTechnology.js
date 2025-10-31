@@ -125,10 +125,7 @@ const AWSTechnology = () => {
         description="Our expertise in AWS development services has empowered us to bring the best cloud solutions to your organization’s infrastructure without the cost and hassle of having to build it yourself."
         imageSrc="/images/v2/aws-banner.webp"
       />
-      <ServicesSection
-        serviceData={awsService}
-        sectionId="hire-aws-developer"
-      />
+      <ServicesSection serviceData={awsService} sectionId="services-one" />
       <TechnologyDevelopers />
       {/* <BenefitOfHiringDevelopers /> */}
       <HireDevelopersInThreeSteps title="AWS Developers" />

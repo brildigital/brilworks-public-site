@@ -181,7 +181,7 @@ const MediaAndEntertainment = () => {
         imageSrc="/images/v2/media-and-entertainment-banner.webp"
       />
       <ServicesSection
-        sectionId="media"
+        sectionId="services-one"
         serviceData={mediaEntertainmentService}
       />
       <TypesOfAppWeDevelop

@@ -175,16 +175,12 @@ export const industryMenuItems = [
     name: "INDUSTRY",
     subSections: [
       {
+        name: "EdTech",
+        path: "/industry/edtech-software-development/",
+      },
+      {
         name: "Fintech",
         path: "/industry/fintech-software-development/",
-      },
-      {
-        name: "Media & Entertainment",
-        path: "/industry/media-entertainment-software-development/",
-      },
-      {
-        name: "Fleet Management + GPS",
-        path: "/industry/fleet-management-software-development/",
       },
       {
         name: "Healthcare",
@@ -193,6 +189,14 @@ export const industryMenuItems = [
       {
         name: "E-Commerce",
         path: "/industry/e-commerce-app-development/",
+      },
+      {
+        name: "Media & Entertainment",
+        path: "/industry/media-entertainment-software-development/",
+      },
+      {
+        name: "Fleet Management + GPS",
+        path: "/industry/fleet-management-software-development/",
       },
     ],
   },
@@ -515,6 +519,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/industry/e-commerce-app-development/",
     lastmod: "2025-07-11T17:02:21.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/edtech-software-development/",
+    lastmod: "2025-10-31T18:12:40.528Z",
   },
   {
     loc: "https://www.brilworks.com/use-case/aws-in-IoT/",
