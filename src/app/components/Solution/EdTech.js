@@ -23,7 +23,7 @@ const SolutionEngagementAndHowCanStart = dynamic(() =>
 const EdTech = () => {
   const edTechServices1 = {
     title: "Our EdTech Development Solutions",
-    buttonText: "Build My Fleet Management App",
+    buttonText: "Build My EdTech App",
     servicesList: [
       {
         title: "E-Learning Platform Development",
