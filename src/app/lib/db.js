@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const MONGODB_URI =
-  "mongodb+srv://manish:Manish%40123@clustersso.hsh1rvv.mongodb.net/Brilworks";
+  "mongodb+srv://manish:Manish%40123@clustersso.hsh1rvv.mongodb.net/";
 
 if (!MONGODB_URI) throw new Error("⚠️ Missing MONGODB_URI");
 
@@ -13,7 +13,7 @@ export async function connectDB() {
   if (!cached.promise) {
     cached.promise = mongoose
       .connect(MONGODB_URI, {
-        dbName: "whatsapp",
+        dbName: "Brilworks",
         bufferCommands: false,
       })
       .then((mongoose) => mongoose);
