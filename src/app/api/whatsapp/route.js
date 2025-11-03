@@ -1,7 +1,9 @@
+import { connectDB } from "@/app/lib/db";
 import { NextResponse } from "next/server";
+import ChatSession from "../../../../models/ChatSession";
 
 const WHATSAPP_TOKEN =
-  "EAAWStqMHurEBPZCAa3WhdA1avOyDPlalMoipT7HbvoC3EBUyyJ1SCnAZCQZBUcQcCepxPUUjcYLN3dG95roTZCZBE4tkPvhavkpAQucJU6LHrbm0GtjMcr7zTrMuALzvEirFHzLtsYXx2xcGzLNuvZBD6XATZBmNrtHmf0vVzM3DmZBvZCuVn6KfFb28CONHpqnzIMN3n9Hj16OxiRIfvmZCTYqEfkzi0GBCJoPOzORD9U9MvrzZC77gdIIU39xh6Jn2pyFoyJSW2sgU7fU4H0KwfntaGy5";
+  "EAAWStqMHurEBPwZBt0NXHs32A4wkoXDRedhmhSmyFN3AUBX5eZCRZAWRybbZCJwhvjmUgtrb7uxnlfuFTFfQDMG2pGopKyZAakc1MG5fLLfzURvgwSveDakKHugd2KZCIrP0W6f924wvCLMeFpDZCbd09qso0owytXjgB7vZBuN6S0xF1TINGzZAY3tSB53mZBlqq9AZBeSau7Ks4lYnGhkjcRpxHkDNqWnsZBSUJlMTISlg4tM4lpjnYt7WBJVx8nM8qbY737CfW72fGA5BwnDpn3mYeZBIU";
 const WHATSAPP_PHONE_ID = 428707450320928;
 const VERIFY_TOKEN = "brilworks";
 
@@ -46,15 +48,67 @@ export async function POST(request) {
       const from = message.from; // WhatsApp user number
       const text = message.text.body; // message text
 
-      console.log("Incoming message:", text);
+      await connectDB();
+      let session = await ChatSession.findOne({ id: from });
 
-      // Simple logic-based reply
-      let reply = "I didn’t understand that.";
-      if (text.toLowerCase().includes("hello")) {
-        reply = "Hi there 👋! How can I help you today?";
-      } else if (text.toLowerCase().includes("price")) {
-        reply = "Our plans start from $10/month.";
+      if (!session) {
+        session = await ChatSession.create({
+          id: from,
+          messages: [],
+        });
       }
+
+      // 🔹 Add user's message
+      session.messages.push({
+        role: "user",
+        content: text,
+        parts: [{ type: "text", text }],
+      });
+
+      await session.save();
+
+      // 🔹 Send the entire conversation to MCP
+      const payload = {
+        id: from,
+        messages: session.messages,
+      };
+
+      console.log("📤 Sending to MCP:", JSON.stringify(payload, null, 2));
+
+      const mcpResponse = await fetch("http://168.231.121.196:3001/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const rawText = await mcpResponse.text();
+      console.log("📥 MCP raw response:", rawText);
+
+      let mcpData;
+      try {
+        mcpData = JSON.parse(rawText);
+      } catch {
+        mcpData = { reply: rawText };
+      }
+
+      const replyText =
+        mcpData.reply ||
+        mcpData.output ||
+        mcpData.content ||
+        mcpData.message ||
+        "Sorry, I couldn’t understand that.";
+
+      // 🔹 Add assistant's reply to DB
+      session.messages.push({
+        role: "assistant",
+        content: replyText,
+        parts: [{ type: "text", text: replyText }],
+      });
+
+      await session.save();
 
       // Send reply to WhatsApp user
       await fetch(
@@ -68,7 +122,7 @@ export async function POST(request) {
           body: JSON.stringify({
             messaging_product: "whatsapp",
             to: from,
-            text: { body: reply },
+            text: { body: "success" },
           }),
         }
       );
