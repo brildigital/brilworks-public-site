@@ -10,6 +10,12 @@ export async function GET(req) {
     const id = Number(searchParams.get("id"));
     if (id) {
       const chat = await ChatSession.findOne({ id });
+      if (!chat) {
+        return NextResponse.json(
+          { error: "Error fetch chat" },
+          { status: 500 }
+        );
+      }
       return NextResponse.json(chat);
     }
     const sessions = await ChatSession.find().sort({ updatedAt: -1 });
