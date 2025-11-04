@@ -7,19 +7,17 @@ export async function GET(req) {
   try {
     await connectDB();
     const { searchParams } = new URL(req.url);
-    const id = Number(searchParams.get("id"));
+    const id = searchParams.get("id");
     if (id) {
       const chat = await ChatSession.findOne({ id });
       if (!chat) {
-        return NextResponse.json(
-          { error: "Error fetch chat" },
-          { status: 500 }
-        );
+        return NextResponse.json({});
       }
       return NextResponse.json(chat);
+    } else {
+      const sessions = await ChatSession.find().sort({ updatedAt: -1 });
+      return NextResponse.json(sessions);
     }
-    const sessions = await ChatSession.find().sort({ updatedAt: -1 });
-    return NextResponse.json(sessions);
   } catch (err) {
     console.error(err);
     return NextResponse.json(
