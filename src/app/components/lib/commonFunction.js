@@ -401,6 +401,7 @@ export const isExternalLink = (href) => {
     "https://scientificasia.net/machine-learning-ml/",
     "https://techtarget.ai/technology/nlp/",
     "https://www.transvirtual.com/blog/what-is-route-optimisation-software/",
+    "https://wpwebinfotech.com/node-js-development/",
   ];
 
   return (

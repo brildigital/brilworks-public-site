@@ -22,6 +22,7 @@ import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 import QuickSummary from "./Blog/QuickSummary";
 import Heading from "./HTMLComponents/Heading";
+// import EbookPopup from "./Blog/EbookPopup";
 
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
@@ -32,6 +33,8 @@ const Article = ({ blok }) => {
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  // const [openPopup, setOpenPopup] = useState(false);
+  // const [dismissed, setDismissed] = useState(false);
 
   const [activeLink, setActiveLink] = useState(null);
 
@@ -80,6 +83,30 @@ const Article = ({ blok }) => {
       }, 500);
     }
   }, []);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (dismissed) return; // 👉 if closed once, never show again
+
+  //     const pageHeight = document.documentElement.scrollHeight;
+  //     const scrollTop = window.scrollY;
+  //     const viewportHeight = window.innerHeight;
+
+  //     const scrolled = scrollTop + viewportHeight;
+
+  //     if (scrolled >= pageHeight / 2) {
+  //       setOpenPopup(true);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [dismissed]);
+
+  // const handleEbookPopupClose = () => {
+  //   setOpenPopup(false);
+  //   setDismissed(true); // 👉 permanently dismiss
+  // };
 
   function modifyImagesWithLazyLoading(html) {
     return parse(html, {
@@ -554,6 +581,9 @@ const Article = ({ blok }) => {
           </div>
         </div>
       </div>
+      {/* {openPopup && (
+        <EbookPopup open={openPopup} handleClose={handleEbookPopupClose} />
+      )} */}
     </div>
   );
 };
