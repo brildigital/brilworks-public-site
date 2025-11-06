@@ -258,8 +258,8 @@ export default async function Page(props) {
                 </p> */}
                 <Heading type="h1" text={data?.story?.content?.title} />
               </div>
-              <div className="w-full md:w-[60%] flex md:items-center items-start md:flex-row flex-col">
-                <div className="flex items-center justify-between md:border-r-2 md:border-[#5C6878] md:mb-0 mb-2">
+              <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
+                <div className="flex items-center justify-between slg:border-r-2 slg:border-[#5C6878] slg:mb-0 mb-2">
                   <Image
                     src={author?.authorImage}
                     width="54"
@@ -291,7 +291,7 @@ export default async function Page(props) {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base md:!pl-10 gap-1">
+                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base slg:!pl-10 gap-1">
                   <div className="flex sxl:items-center items-start">
                     <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
                       <Image

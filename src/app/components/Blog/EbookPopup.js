@@ -1,50 +1,81 @@
 "use client";
 import { X } from "lucide-react";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ButtonV2 from "../Common/ButtonV2";
+import Heading from "../HTMLComponents/Heading";
 
 const EbookPopup = ({ open, handleClose }) => {
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden"; // disable background scroll
-    } else {
-      document.body.style.overflow = ""; // reset to default
-    }
-
-    // cleanup if component unmounts
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
-  const CloseBtn = ({ extraClass = "" }) => (
-    <button
-      className={`p-1 rounded-md absolute right-1 top-1 md:right-3.5 md:top-4 outline-none hover:bg-gray-100 ${extraClass}`}
-      onClick={() => handleClose()}
-    >
-      <X className="h-5 w-5" />
-    </button>
-  );
+  const ebookData = {
+    title: (
+      <>
+        How To Launch an <br className="" />
+        AI MVP in 48 Hours
+      </>
+    ),
+    description: "",
+    imageSrc: "/images/v2/launch-ai-mvp-48hr.webp",
+    imageAlt: "launch-ai-mvp-in-48-hours",
+    slug: "launch-ai-mvp-in-48-hours-playbook",
+  };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-end p-2">
-      <div className="absolute inset-0 bg-black/50" />
-
-      <CloseBtn id="mobile" extraClass="right-1 top-1 md:hidden flex" />
-      <div className="relative z-10 w-full max-w-lg rounded-lg bg-white shadow-lg py-6 pl-5 pr-0 md:p-6 !pb-3  md:pt-10">
-        <div className="flex flex-col lg:flex-row items-center overflow-auto md:max-h-[unset] max-h-[500px] lg:gap-10 pr-5 md:gap-6 gap-4">
-          <div className=" w-full">
-            <p className="text-colorBlack lg:text-2xl md:text-xl text-lg font-medium !mb-4">
-              Enter the details to get your project estimate.
-            </p>
-            <p className="text-colorBlack md:text-lg text-base !mb-4">
-              You're just a step away from turning your vision into reality.
-              Discover how Brilworks helps businesses scale their tech teams—and
-              get your project estimate today.
-            </p>
+    <AnimatePresence>
+      <div className="fixed z-50 bottom-2 right-2 p-2">
+        <motion.div
+          key="ebook-popup"
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "100%", opacity: 0 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="relative z-10 w-full md:max-w-lg lg:max-w-xl max-h-[350px] rounded-xl overflow-hidden bg-white shadow-lg border pointer-events-auto"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-[40%] w-[80%]">
+              <Image
+                className="w-full drop-shadow-book-shadow mx-auto"
+                src={ebookData.imageSrc}
+                alt={`${ebookData.imageAlt}-img`}
+                width={300}
+                height={65}
+              />
+            </div>
+            <div className="md:w-[60%] w-[20%]">
+              <button
+                className="p-1 flex rounded-md absolute right-2 top-2 outline-none hover:bg-gray-100"
+                onClick={() => handleClose()}
+              >
+                <X className="h-5 w-5" />
+              </button>
+              <div>
+                <span className="bg-themeLight px-3 py-1.5 rounded-md">
+                  Ebook
+                </span>
+                <Heading
+                  type="h3"
+                  className="md:!text-xl !text-lg font-medium mt-3"
+                  text={ebookData.title}
+                />
+                <p className="!my-3">
+                  Downloaded by 120+ CTOs from
+                  <br /> Startups and Enterprises
+                </p>
+              </div>
+              <div className="flex items-center justify-between gap-5 mt-auto mb-4">
+                <ButtonV2
+                  className="hover:!bg-themeColor/90"
+                  size="small"
+                  as={`/ebooks/${ebookData.slug}/`}
+                  redirect={`/ebooks/${ebookData.slug}`}
+                  label="Unlock what’s inside"
+                />
+              </div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 
