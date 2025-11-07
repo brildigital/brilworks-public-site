@@ -37,6 +37,7 @@ const IndustriesWeServe = ({
       title: "E-commerce",
       imageSrc: "/images/v2/shopping-cart-check.svg",
       imageAlt: "1-commerce-icon",
+      href: "/industry/e-commerce-app-development/",
     },
     {
       title: "SaaS",
@@ -47,6 +48,7 @@ const IndustriesWeServe = ({
       title: "Education",
       imageSrc: "/images/v2/user-graduate.svg",
       imageAlt: "education-icon",
+      href: "/industry/edtech-software-development/",
     },
     {
       title: "Manufacturing",

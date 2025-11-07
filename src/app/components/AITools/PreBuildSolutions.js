@@ -72,7 +72,8 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $20,000",
       timeline: "6-8 weeks",
       videoLink: "https://youtube.com/shorts/6OsaGiDJPx0",
-      // playstoreLink: "",
+      playstoreLink:
+        "https://play.google.com/store/apps/details?id=com.brilworks.fitorbit&hl=en_IN",
       appstoreLink: "https://testflight.apple.com/join/eKnQGFSE",
       features: [
         "Personalized Workout Plans",
@@ -111,7 +112,8 @@ export default function PrebuiltSolutionsPage() {
       pricing: "From $25,000",
       timeline: "6-8 weeks",
       videoLink: "https://www.youtube.com/shorts/OzHKM4TJ43s",
-      // playstoreLink: "",
+      playstoreLink:
+        "https://play.google.com/store/apps/details?id=com.brilworksdigital.exora&hl=en_IN",
       appstoreLink: "https://testflight.apple.com/join/fG7FBgYQ",
       features: [
         "Patient Monitoring Dashboard",
@@ -192,7 +194,8 @@ export default function PrebuiltSolutionsPage() {
       videoLink: "https://youtu.be/g5gnqXlJ7Hs",
       playstoreLink:
         "https://play.google.com/store/apps/details?id=com.brilworksdigital.enclaveconnect",
-      appstoreLink: "https://testflight.apple.com/join/jVpUjUXh",
+      appstoreLink:
+        "https://apps.apple.com/in/app/enclave-connect/id6753797049",
       features: [
         "Visitor Management System",
         "Automated Billing & Payments",

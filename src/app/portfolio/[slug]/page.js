@@ -117,17 +117,21 @@ export default async function Page({ params }) {
         description={description}
         images={images}
         KeyValueBlock={KeyValueBlock}
+        projectPoints={ProcessAndEnhanceBlock}
       />
-      <ProcessAndEnhanceSection
-        processAndEnhanceBlock={ProcessAndEnhanceBlock}
-      />
+      {ProcessAndEnhanceBlock?.[0].title &&
+        ProcessAndEnhanceBlock?.[0].description && (
+          <ProcessAndEnhanceSection
+            processAndEnhanceBlock={ProcessAndEnhanceBlock}
+          />
+        )}
       <ProjectOverviewSection projectOverview={ProjectOverview} />
       {ProjectChallenges?.[0] && (
         <ProjectChallengesSection projectChallenges={ProjectChallenges?.[0]} />
       )}
       {productImage?.filename && (
         <Image
-          className="max-h-[840px]"
+          className="max-h-[1080px]"
           alt={productImage?.alt || "product-img"}
           src={formatSrcUrl(productImage?.filename)}
           width="1440"
@@ -142,7 +146,6 @@ export default async function Page({ params }) {
         blueprintForSuccess={BlueprintForSuccess}
         casestudyFileUrl={casestudyFileUrl?.url}
       />
-
       <SeeingBelieving title="More Success Stories" caseStudyToShow={2} />
     </Suspense>
   );
