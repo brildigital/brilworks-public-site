@@ -7,6 +7,10 @@ import ProjectOverviewSection from "@/app/components/Portfolio/ProjectOverviewSe
 import ProjectChallengesSection from "@/app/components/Portfolio/ProjectChallengesSection";
 import BluePrintForSuccess from "@/app/components/Portfolio/BluePrintForSuccess";
 import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
+import ProjectSolutionSection from "@/app/components/Portfolio/ProjectSolutionSection";
+import Image from "next/image";
+import ProjectDesignView from "@/app/components/Portfolio/ProjectDesignView";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -100,9 +104,9 @@ export default async function Page({ params }) {
     ProcessAndEnhanceBlock,
     ProjectOverview,
     ProjectChallenges,
-    // HowWeDelivered,
+    productImage,
+    designView,
     BlueprintForSuccess,
-    CTA,
   } = storyData.story.content;
 
   return (
@@ -118,11 +122,27 @@ export default async function Page({ params }) {
         processAndEnhanceBlock={ProcessAndEnhanceBlock}
       />
       <ProjectOverviewSection projectOverview={ProjectOverview} />
-      <ProjectChallengesSection projectChallenges={ProjectChallenges} />
+      {ProjectChallenges?.[0] && (
+        <ProjectChallengesSection projectChallenges={ProjectChallenges?.[0]} />
+      )}
+      {productImage?.filename && (
+        <Image
+          className="max-h-[840px]"
+          alt={productImage?.alt || "product-img"}
+          src={formatSrcUrl(productImage?.filename)}
+          width="1440"
+          height="840"
+        />
+      )}
+      {designView?.[0]?.title && <ProjectDesignView designView={designView} />}
+      {ProjectChallenges?.[1] && (
+        <ProjectSolutionSection projectSolutions={ProjectChallenges?.[1]} />
+      )}
       <BluePrintForSuccess
         blueprintForSuccess={BlueprintForSuccess}
         casestudyFileUrl={casestudyFileUrl?.url}
       />
+
       <SeeingBelieving title="More Success Stories" caseStudyToShow={2} />
     </Suspense>
   );

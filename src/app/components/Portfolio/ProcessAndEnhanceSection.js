@@ -53,7 +53,7 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                       index === processAndEnhanceBlock?.length - 1
                         ? "!border-r-1"
                         : "lg:!border-r"
-                    } border-borderGray mb-4`}
+                    } border-borderGray mb-4 sm:mb-0`}
                     key={index}
                   >
                     <div

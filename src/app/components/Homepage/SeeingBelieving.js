@@ -7,6 +7,7 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import { usePathname } from "next/navigation";
 import { scrollEffect } from "../lib/commonFunction";
+import { portfolioDynamicItems } from "../lib/constants";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -58,64 +59,6 @@ const SeeingBelieving = ({
   //       technology: data?.content?.technology,
   //     };
   //   });
-
-  const portfolioDynamicItems = [
-    {
-      title: "Building a Swipe-Based Platform Connecting Artists and Buyers",
-      link: "/portfolio/art-marketplace-app/",
-      description:
-        "We created a dynamic platform that allows art lovers to discover new pieces, communicate directly with artists, and complete purchases with ease, fostering a vibrant art community.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/artistryhub-case-study-1759145783966.webp",
-      alt: "Social marketplace app",
-      industry: "E-commerce",
-      technology: ["iOS", "Android", "Flutterflow"],
-    },
-    {
-      title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
-      link: "/portfolio/pet-finding-app/",
-      description:
-        "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/petly-pet-finder-app-1759145787607.webp",
-      alt: "Pet finder app",
-      industry: "Social",
-      technology: ["iOS", "Android", "Flutterflow"],
-    },
-    {
-      title: "Making Early Learning Fun with An Interactive Educational Game",
-      link: "/portfolio/educational-game-app/",
-      description:
-        "We developed a safe, mobile game for kids aged 2-6, using gamified activities to teach alphabets, numbers, colors, and shapes in an engaging way.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp",
-      alt: "Educational mobile game",
-      industry: "Ed-Tech",
-      technology: ["iOS", "Android", "C#"],
-    },
-    {
-      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
-      link: "/portfolio/healthcare-mobile-app/",
-      description:
-        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
-      alt: "Healthcare App",
-      industry: "Healthcare",
-      technology: ["React Native"],
-    },
-    // {
-    //   title: "Streamlining Energy Audits with An All-In-One CRM Solution",
-    //   link: "/portfolio/crm-solution/",
-    //   description:
-    //     "We built a specialized CRM platform that automates energy auditing, connecting key stakeholders and optimizing workflows from scheduling to invoicing.",
-    //   image:
-    //     "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/9918cfc298_crm-based-software.webp",
-    //   alt: "Consulting App",
-    //   industry: "Consulting",
-    //   technology: ["NextJS", "NodeJS", "MySQL"],
-    // },
-  ];
 
   const fintechPortfolio = [
     {

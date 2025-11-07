@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { portfolioDynamicItems } from "../lib/constants";
 
 const proofItems = [
   {
@@ -172,7 +173,6 @@ const AboutSection = () => {
           </div>
         </motion.div>
 
-        {/* Proof of Work - 2x2 Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -186,7 +186,7 @@ const AboutSection = () => {
             Proof of work
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {proofItems.map((item, index) => (
+            {portfolioDynamicItems.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -202,7 +202,7 @@ const AboutSection = () => {
                     <img
                       src={item.image}
                       alt={item.alt}
-                      className="w-full h-48 rounded-xl object-cover border border-[#017eeb33] shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-500"
+                      className="w-full h-full rounded-xl object-cover border border-[#017eeb33] shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-500"
                       data-testid={`img-proof-${index}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
