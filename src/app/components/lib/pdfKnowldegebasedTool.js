@@ -1,9 +1,9 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const geminiAPIKey = "AIzaSyB4PDzKrb2ObfK7mDRj_CSN6sH9lyZerbI";
+const geminiAPIKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
 export async function analyzeDocument(pdfFile) {
   const genAI = new GoogleGenerativeAI(geminiAPIKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   try {
     const arrayBuffer = await pdfFile.arrayBuffer();
@@ -36,7 +36,7 @@ export async function analyzeDocument(pdfFile) {
 
 export async function askGemini(question, pdfFile) {
   const genAI = new GoogleGenerativeAI(geminiAPIKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   try {
     const arrayBuffer = await pdfFile.arrayBuffer();

@@ -42,16 +42,41 @@ export async function POST(request) {
       );
     }
 
+    const incomingText = messages
+      .map((m) => m.content?.toLowerCase())
+      .join(" ");
     // Check if chat session exists
     let chat = await ChatSession.findOne({ id });
 
-    if (!chat) {
-      chat = await ChatSession.create({ id, messages });
-    } else {
-      // Append new messages
-      chat.messages.push(...messages);
-      await chat.save();
+    // Create new chat if:
+    // 1️⃣ no existing chat
+    // 2️⃣ last message older than 24 hours
+    // 3️⃣ message includes "create new chat"
+    const now = new Date();
+    let createNew =
+      !chat ||
+      now - new Date(chat.updatedAt) > 24 * 60 * 60 * 1000 ||
+      incomingText.includes("create new chat");
+
+    if (createNew) {
+      const newSession = await ChatSession.create({
+        id,
+        sessionId: generateSessionId(),
+        messages,
+      });
+      return NextResponse.json(newSession);
     }
+
+    // if (!chat) {
+    //   chat = await ChatSession.create({ id, messages });
+    // } else {
+    //   // Append new messages
+    //   chat.messages.push(...messages);
+    //   await chat.save();
+    // }
+
+    chat.messages.push(...messages);
+    await chat.save();
 
     return NextResponse.json(chat);
   } catch (err) {
@@ -75,10 +100,21 @@ export async function PUT(req) {
       );
     }
 
-    let chat = await ChatSession.findOne({ id });
+    let chat = await ChatSession.findOne({ id }).sort({ updatedAt: -1 });
+    const now = new Date();
+    let createNew =
+      !chat ||
+      now - new Date(chat.updatedAt) > 24 * 60 * 60 * 1000 ||
+      messages.some((m) =>
+        m.content?.toLowerCase()?.includes("create new chat")
+      );
 
-    if (!chat) {
-      chat = await ChatSession.create({ id, messages });
+    if (createNew) {
+      chat = await ChatSession.create({
+        id,
+        sessionId: generateSessionId(),
+        messages,
+      });
     } else {
       chat.messages.push(...messages);
       await chat.save();

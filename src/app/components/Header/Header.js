@@ -73,7 +73,7 @@ const NewHeader = () => {
   return (
     <header>
       <div className="header header-bg-white">
-        <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
+        <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 !py-3 shadow-none bg-transparent font-semibold">
           <div className="flex items-center justify-between text-colorBlack container max-w-[1280px] px-6 mx-auto">
             <div className="header_logo">
               <Link href="/">

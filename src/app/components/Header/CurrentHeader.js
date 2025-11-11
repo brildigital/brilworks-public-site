@@ -35,6 +35,7 @@ const CurrentHeader = () => {
     "/kinderland-privacy-policy/",
     "/mindsync-privacy-policy/",
     "/pink-signal-privacy-policy/",
+    "/ai-tools/ai-document-compliance-review/",
   ];
 
   const showHeader =
