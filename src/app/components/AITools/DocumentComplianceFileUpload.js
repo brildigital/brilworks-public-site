@@ -36,6 +36,7 @@ export default function DocumentComplianceFileUpload({
 
   const handleFileSelect = (file) => {
     const allowedTypes = [
+      "text/plain",
       "application/pdf",
       "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -97,7 +98,8 @@ export default function DocumentComplianceFileUpload({
               Drop your document here, or browse
             </h3>
             <p className="text-gray-500 mb-4">
-              Supports PDF, DOC, and DOCX files up to 10MB
+              Supports PDF, DOC, and DOCX files text under ~15k for better
+              result
             </p>
           </div>
 

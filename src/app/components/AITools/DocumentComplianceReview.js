@@ -49,12 +49,27 @@ function DocumentComplianceReview() {
 
     try {
       // Extract text from the uploaded file
-      const documentText = await extractTextFromFile(file);
 
-      // Analyze the document with Gemini API
-      const result = await analyzeContract(documentText);
+      // if (file.type !== "application/pdf" || file.type !== "text/plain") {
+      //   const formData = new FormData();
+      //   formData.append("file", file);
+      //   const res = await fetch("/api/extract-text/", {
+      //     method: "POST",
+      //     body: formData,
+      //   });
+      //   const data = await res.json();
+      //   setAnalysisResult(data);
+      // }
 
-      setAnalysisResult(result);
+      if (file.type === "text/plain") {
+        const text = await file.text();
+        const result = await analyzeContract(text);
+        setAnalysisResult(result);
+      } else if (file.type === "application/pdf") {
+        const result = await extractTextFromFile(file);
+        setAnalysisResult(result);
+      }
+
       setActiveSection("dashboard");
     } catch (error) {
       console.error("Error processing document:", error);
@@ -164,6 +179,10 @@ function DocumentComplianceReview() {
           <DocumentComplianceDashboard
             analysisResult={analysisResult}
             fileName={uploadedFileName}
+            setIsActive={(data) => {
+              setActiveSection(data);
+              setUploadedFileName("");
+            }}
           />
         )}
       </main>

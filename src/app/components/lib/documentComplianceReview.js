@@ -1,3 +1,7 @@
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const geminiAPIKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
+
 // Google Gemini API integration
 // Note: You'll need to set up your API key in environment variables
 
@@ -319,43 +323,118 @@ function getMockAnalysisResult() {
 // Document text extraction (demo version for browser compatibility)
 export async function extractTextFromFile(file) {
   try {
-    if (file.type === "text/plain") {
-      // For plain text files, read directly
-      return await file.text();
-    } else if (file.type === "application/pdf") {
-      // For PDF files - in a real implementation, you'd use pdf-parse
-      // For now, we'll try to read as text (works for some simple PDFs)
-      const text = await file.text();
-      if (text.trim().length > 0) {
-        return text;
-      } else {
-        throw new Error(
-          "PDF text extraction not fully supported. Please convert to text format or use a simpler PDF."
-        );
-      }
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    // Convert file to Base64
+    const base64Data = btoa(
+      new Uint8Array(arrayBuffer).reduce(
+        (data, byte) => data + String.fromCharCode(byte),
+        ""
+      )
+    );
+
+    // Common Gemini setup
+    const genAI = new GoogleGenerativeAI(geminiAPIKey);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
+    // Common contract review prompt
+    const prompt = `
+You are a contract review AI assistant. Analyze the following document (PDF, Word, or text)
+and return a structured JSON output with the following fields:
+
+{
+  "summary": "Brief summary of the overall document",
+  "keyPoints": ["List of main points, clauses, or findings"],
+  "riskItems": [
+    {
+      "id": "unique-id",
+      "type": "high | medium | low",
+      "title": "Short title for the risk",
+      "description": "Description of why this clause is risky",
+      "clause": "Exact or paraphrased clause text",
+      "recommendation": "Actionable advice to mitigate this risk"
+    }
+  ],
+  "clauseBreakdown": [
+    {
+      "category": "Clause category (e.g., Payment Terms, Termination, Confidentiality, Liability, Jurisdiction)",
+      "status": "risk | warning | compliant",
+      "details": "Clause analysis or explanation",
+      "recommendation": "Recommendation for improvement, if any"
+    }
+  ],
+  "complianceScore": "A number between 0-100 representing how compliant or balanced the contract is"
+}
+
+Output only valid JSON. Do not include explanations or markdown.
+`;
+
+    // Send to Gemini for structured JSON analysis
+
+    if (file.type === "application/pdf") {
+      // Convert PDF to Base64
+      const base64Data = btoa(
+        new Uint8Array(arrayBuffer).reduce(
+          (data, byte) => data + String.fromCharCode(byte),
+          ""
+        )
+      );
+
+      const result = await model.generateContent([
+        {
+          inlineData: {
+            mimeType: "application/pdf",
+            data: base64Data,
+          },
+        },
+        { text: prompt },
+      ]);
+
+      const text = (await result.response).text();
+      return parseGeminiJSON(text);
     } else if (
       file.type.includes("word") ||
       file.name.endsWith(".docx") ||
       file.name.endsWith(".doc")
     ) {
-      // For Word documents - in a real implementation, you'd use mammoth.js
-      // For now, we'll try to read as text
-      const text = await file.text();
-      if (text.trim().length > 0) {
-        return text;
-      } else {
-        throw new Error(
-          "Word document text extraction not fully supported. Please convert to text format."
-        );
+      // 🧠 DOCX / DOC: Extract text via mammoth first
+      const result = await mammoth.extractRawText({ buffer });
+      const textContent = result.value.trim();
+
+      if (!textContent) {
+        throw new Error("No readable text found in Word file.");
       }
+
+      const result2 = await model.generateContent([
+        { text: `${prompt}\n\nHere is the document content:\n${textContent}` },
+      ]);
+
+      const text = (await result2.response).text();
+      return parseGeminiJSON(text);
+    } else if (file.type === "text/plain") {
+      const textContent = await file.text();
+
+      const result3 = await model.generateContent([
+        { text: `${prompt}\n\nHere is the document content:\n${textContent}` },
+      ]);
+
+      const text = (await result3.response).text();
+      return parseGeminiJSON(text);
     } else {
-      // Try to read as plain text for any other format
-      return await file.text();
+      throw new Error(`Unsupported file type: ${file.type}`);
     }
   } catch (error) {
     console.error("Error extracting text from file:", error);
-    throw new Error(
-      `Unable to extract text from ${file.name}. Please ensure the file contains readable text or try converting to a plain text file.`
-    );
+    return getMockAnalysisResult();
+  }
+}
+
+function parseGeminiJSON(text) {
+  try {
+    return JSON.parse(text.replace(/```json|```/g, "").trim());
+  } catch (err) {
+    console.warn("Invalid JSON returned by Gemini:", err);
+    return { error: "Invalid JSON from Gemini", raw: text };
   }
 }
