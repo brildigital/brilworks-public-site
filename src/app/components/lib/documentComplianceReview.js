@@ -398,16 +398,18 @@ Output only valid JSON. Do not include explanations or markdown.
       file.name.endsWith(".docx") ||
       file.name.endsWith(".doc")
     ) {
-      // 🧠 DOCX / DOC: Extract text via mammoth first
-      const result = await mammoth.extractRawText({ buffer });
-      const textContent = result.value.trim();
+      const mammoth = await import("mammoth/mammoth.browser");
+      const extractedText = await mammoth.extractRawText({ arrayBuffer });
+      const textContent = extractedText.value.trim();
 
       if (!textContent) {
         throw new Error("No readable text found in Word file.");
       }
 
       const result2 = await model.generateContent([
-        { text: `${prompt}\n\nHere is the document content:\n${textContent}` },
+        {
+          text: `${prompt}\n\nHere is the document content:\n${textContent}`,
+        },
       ]);
 
       const text = (await result2.response).text();
