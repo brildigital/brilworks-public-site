@@ -2,11 +2,11 @@ import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import WhiteLabelTechnology from "@/app/components/Technologies/WhiteLabelTechnology";
 
 export const metadata = {
-  title: "White Label App Development Services | Brilworks",
+  title: "White Label Mobile App Development | Brilworks",
   description:
     "Build and deploy an app in 2-4 weeks with Brilworks' app development services. We are a leading white label development company, helping you build custom mobile and desktop apps faster.",
   openGraph: {
-    title: "White Label App Development Services",
+    title: "White Label Mobile App Development",
     description:
       "Build and deploy an app in 2-4 weeks with Brilworks' app development services. We are a leading white label development company, helping you build custom mobile and desktop apps faster.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-white-label-developer/`,
@@ -21,7 +21,7 @@ export const metadata = {
     type: "article",
   },
   twitter: {
-    title: "White Label App Development Services",
+    title: "White Label Mobile App Development",
     description:
       "Build and deploy an app in 2-4 weeks with Brilworks' app development services. We are a leading white label development company, helping you build custom mobile and desktop apps faster.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-white-label-developer/`,
@@ -40,7 +40,7 @@ const page = () => {
         defer
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: generateBreadcrumb("Hire White Label Developers"),
+          __html: generateBreadcrumb("White Label Mobile App Development"),
         }}
       />
       <WhiteLabelTechnology />

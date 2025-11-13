@@ -172,7 +172,7 @@ const WhiteLabelTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-        technologyText="White Label App Development Services"
+        technologyText="White Label Mobile App Development Services"
         title={
           <>
             Brand-Aligned <br className="md:block hidden" />

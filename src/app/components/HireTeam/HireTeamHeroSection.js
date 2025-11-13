@@ -35,9 +35,16 @@ const HireTeamHeroSection = ({
             <div className="md:w-1/2 w-full">
               <Heading
                 type="h1"
-                className="text-white xl:text-5xl lg:text-[42px] md:text-4xl text-3xl"
+                className={`text-white ${
+                  pathname === "/hire-white-label-developer/"
+                    ? "xl:!text-5xl lg:text-[42px] md:text-4xl text-3xl"
+                    : "xl:text-5xl lg:text-[42px] md:text-4xl text-3xl"
+                }`}
                 text={`Talk to our expert ${
-                  pathname === "/hire-reactjs-developer/" ? "for" : "to"
+                  pathname === "/hire-reactjs-developer/" ||
+                  pathname === "/hire-white-label-developer/"
+                    ? "for"
+                    : "to"
                 } ${technologyText}`}
               />
               <p className="text-white lg:text-xl md:text-lg text-base !my-4">
