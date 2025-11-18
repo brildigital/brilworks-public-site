@@ -1048,6 +1048,36 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Top 10 White Label Development Companies (2025)",
+    loc: "https://www.brilworks.com/blog/top-white-label-development-companies/",
+    lastmod: "2025-11-17T06:45:52.838Z",
+  },
+  {
+    name: "Dating App Development Guide for Builders",
+    loc: "https://www.brilworks.com/blog/dating-app-development-overview/",
+    lastmod: "2025-11-17T05:16:07.155Z",
+  },
+  {
+    name: "The Future of Local Ride Hailing and Micro Mobility Apps",
+    loc: "https://www.brilworks.com/blog/future-local-ride-hailing-micro-mobility-apps/",
+    lastmod: "2025-11-14T13:57:02.762Z",
+  },
+  {
+    name: "White-Label Personal Safety Apps: A Complete Guide to Smart Outsourcing",
+    loc: "https://www.brilworks.com/blog/white-label-personal-safety-app-outsourcing/",
+    lastmod: "2025-11-14T13:32:06.105Z",
+  },
+  {
+    name: "Why Housing Societies Are Moving to Digital Management Platforms",
+    loc: "https://www.brilworks.com/blog/society-management-platform-white-label-insight/",
+    lastmod: "2025-11-13T07:33:25.641Z",
+  },
+  {
+    name: "Challenges in Healthcare App UX Development",
+    loc: "https://www.brilworks.com/blog/challenges-in-healthcare-app-ux-development/",
+    lastmod: "2025-11-12T12:54:59.494Z",
+  },
+  {
     name: "Web Apps vs Mobile Apps",
     loc: "https://www.brilworks.com/blog/web-vs-mobile-app/",
     lastmod: "2025-11-10T05:53:38.048Z",
@@ -2175,7 +2205,7 @@ export const blogListStaticData = [
   {
     name: "White label app development cost: A Straightforward Guide",
     loc: "https://www.brilworks.com/blog/white-label-app-development-cost/",
-    lastmod: "2025-11-04T14:06:42.663Z",
+    lastmod: "2025-11-17T07:21:33.949Z",
   },
   {
     name: "The Best White Label App builders",
