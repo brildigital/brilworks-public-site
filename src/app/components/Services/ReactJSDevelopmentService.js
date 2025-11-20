@@ -107,7 +107,7 @@ const ReactJSDevelopmentService = () => {
       },
       {
         title: "Modern Tech Expertise",
-        icon: "/images/v2/security-per.svg",
+        icon: "/images/v2/security.svg",
         description:
           "From React Router and React Query to TypeScript and backend integration, we use best practices that keep your app fast and reliable.",
       },

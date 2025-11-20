@@ -617,6 +617,75 @@ const ServicesFAQ = () => {
         "Absolutely. Whether you want a dedicated ReactJS developer, a small pod, or full team extension, we tailor engagement to fit your sprints, code review flow, and delivery pipeline.",
     },
   ];
+  const MobileAppDevelopmentFAQData = [
+    {
+      question: "What platforms do you build mobile apps for?",
+      answer:
+        "We build applications for both iOS and Android using native and cross-platform technologies. We select the approach that best fits your product requirements, performance needs, and long-term plans.",
+    },
+    {
+      question:
+        "How do you decide between native and cross-platform development?",
+      answer:
+        "We evaluate your feature set, performance expectations, integration needs, and roadmap. If the app relies heavily on device-level capabilities, we recommend native. If speed and shared code are priorities, cross-platform options work well.",
+    },
+    {
+      question: "What does your development process look like?",
+      answer:
+        "Our process includes discovery, UX design, development, QA, deployment, and ongoing maintenance. You receive clear milestones, regular check-ins, and progress updates throughout the project.",
+    },
+    {
+      question: "How long does it take to build a mobile app?",
+      answer:
+        "Timelines depend on scope, complexity, design requirements, and integrations. Simple applications take a shorter time, while feature-rich or multi-role apps require more planning and development.",
+    },
+    {
+      question: "Do you handle UI and UX design as part of the project?",
+      answer:
+        "Yes. We design user flows, screens, and interaction patterns based on your brand guidelines and product goals using modern design tools like Figma.",
+    },
+    {
+      question:
+        "Can you upgrade an existing app instead of building a new one?",
+      answer:
+        "Yes. We can audit your existing application, identify issues, modernize outdated code, and continue development from your current state if the foundation is workable.",
+    },
+    {
+      question: "Do you integrate third-party APIs and external systems?",
+      answer:
+        "Yes. We integrate payment gateways, analytics platforms, geolocation, communication APIs, authentication services, and industry-specific systems as needed.",
+    },
+    {
+      question: "Will you help with app store deployment?",
+      answer:
+        "Yes. We handle preparing builds, meeting platform guidelines, writing technical descriptions, and guiding you through the App Store and Google Play submission process.",
+    },
+    {
+      question: "Do you offer maintenance after the app is live?",
+      answer:
+        "We provide ongoing support that includes bug fixes, updates, performance improvements, OS compatibility updates, and optional new feature development.",
+    },
+    {
+      question: "How do you ensure app security?",
+      answer:
+        "We follow secure coding standards, use encryption where required, manage authentication safely, and implement best practices for data protection across back-end and mobile layers.",
+    },
+    {
+      question: "Can you scale the app if the user base grows quickly?",
+      answer:
+        "Yes. We design scalable architectures and guide you through infrastructure upgrades, caching, load balancing, and database optimizations as your traffic increases.",
+    },
+    {
+      question: "How does pricing work for mobile app development?",
+      answer:
+        "Pricing depends on scope, complexity, and engagement model. We offer fixed-price, time and material, and dedicated team options depending on your needs.",
+    },
+    {
+      question: "Do you work with startups and enterprises?",
+      answer:
+        "Yes. Our team has experience across early-stage products, MVPs, mid-growth companies, and enterprise-grade applications.",
+    },
+  ];
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -638,6 +707,8 @@ const ServicesFAQ = () => {
     "/rapid-digitalization/": RapidDigitalisationFAQData,
     "/web-app-development-services/": WebAppDevelopmentFAQData,
     "/reactjs-development-services/": ReactJSDevelopmentFAQData,
+    "/mobile-app-development-services/": WebAppDevelopmentFAQData,
+    "/mobile-app-development-services/": MobileAppDevelopmentFAQData,
   };
 
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};

@@ -131,7 +131,7 @@ const whiteLabelBenefits = {
       title: "Cost-efficient",
       description:
         "Eliminate R&D costs—scale your offerings with pre-built modules and cloud architectures that grow with your client base.",
-      icon: "/images/v2/white_label_cost_efficient.svg",
+      icon: "/images/v2/why_rn_1.svg",
     },
     {
       title: "Rapid market entry",

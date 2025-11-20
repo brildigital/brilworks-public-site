@@ -36,6 +36,7 @@ const CurrentHeader = () => {
     "/mindsync-privacy-policy/",
     "/pink-signal-privacy-policy/",
     "/ai-tools/ai-document-compliance-review/",
+    "/product/enclave-connect/",
   ];
 
   const showHeader =

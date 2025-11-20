@@ -83,6 +83,10 @@ export const servicesMenuItems = [
         path: "/web-app-development-services/",
       },
       {
+        name: "Mobile App Development",
+        path: "/mobile-app-development-services/",
+      },
+      {
         name: "ReactJS Development",
         path: "/reactjs-development-services/",
       },

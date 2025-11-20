@@ -109,7 +109,7 @@ const WebAppDevelopmentService = () => {
       },
       {
         title: "Focus on Security & Performance",
-        icon: "/images/v2/security-per.svg",
+        icon: "/images/v2/security.svg",
         description:
           "Our development practices include robust data protection, authentication systems, and performance optimization from the ground up.",
       },
