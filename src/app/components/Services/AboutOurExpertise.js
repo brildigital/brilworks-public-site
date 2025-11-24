@@ -21,7 +21,9 @@ const AboutOurExpertise = ({ title, description1, description2 }) => {
 
         {description1 && <p className="md:text-lg text-base">{description1}</p>}
 
-        {description2 && <p className="md:text-lg text-base">{description2}</p>}
+        {description2 && (
+          <p className="md:text-lg text-base !mt-5">{description2}</p>
+        )}
       </div>
     </div>
   );

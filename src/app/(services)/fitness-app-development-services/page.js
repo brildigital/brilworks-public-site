@@ -13,7 +13,7 @@ export const metadata = {
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/mobile-app-dev-banner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/fitness-app-development.webp`,
       },
     ],
     locale: "en-US",

@@ -19,7 +19,7 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const WhiteLabelAppDevelopment = () => {
-  const mobileAppServices = {
+  const whiteAppServices = {
     title: "Core White Label Solutions",
     servicesList: [
       {
@@ -162,11 +162,11 @@ const WhiteLabelAppDevelopment = () => {
       <ServicesSection
         bgClass="bg-themeLight"
         sectionId="service-section"
-        serviceData={mobileAppServices}
+        serviceData={whiteAppServices}
       />
       <MultipleCardInGrid
         // bgClass="bg-themeLight"
-        title="Engagement Models For Mobile App Development"
+        title="Engagement Models For White Label App Development"
         cardData={mobileAppServiceEngagementData}
         buttonText="Know More"
         redirect="/contact-us/"

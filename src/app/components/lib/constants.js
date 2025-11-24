@@ -1036,6 +1036,22 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/low-code-no-code-development-services/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },
+  {
+    loc: "https://www.brilworks.com/mobile-app-development-services/",
+    lastmod: "2025-11-21T17:06:31.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/fitness-app-development-services/",
+    lastmod: "2025-11-24T12:05:21.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/react-native-app-development-services/",
+    lastmod: "2025-11-24T12:05:21.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/white-label-mobile-app-development/",
+    lastmod: "2025-11-24T12:05:21.531Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/site-map/",
   //   lastmod: "2025-05-15T12:04:49.528Z",
@@ -1051,6 +1067,26 @@ export const sitemapData = [
 ];
 
 export const blogListStaticData = [
+  {
+    name: "How to Build a Healthcare App in 2025 ",
+    loc: "https://www.brilworks.com/blog/how-to-build-a-healthcare-app/",
+    lastmod: "2025-11-24T03:21:06.700Z",
+  },
+  {
+    name: "node js vs next js",
+    loc: "https://www.brilworks.com/blog/node-js-vs-next-js/",
+    lastmod: "2025-11-23T17:35:33.256Z",
+  },
+  {
+    name: "AI-driven MVP Development with Node.js",
+    loc: "https://www.brilworks.com/blog/ai-mvp-development-with-nodejs/",
+    lastmod: "2025-11-21T07:08:19.515Z",
+  },
+  {
+    name: "Software Development Trends 2025",
+    loc: "https://www.brilworks.com/blog/software-development-trends/",
+    lastmod: "2025-11-19T12:35:32.520Z",
+  },
   {
     name: "Top 10 White Label Development Companies (2025)",
     loc: "https://www.brilworks.com/blog/top-white-label-development-companies/",
@@ -1144,7 +1180,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 Reasons Why Startups Should Choose Node.js",
     loc: "https://www.brilworks.com/blog/top-benefits-of-nodejs-for-startups/",
-    lastmod: "2025-11-11T12:41:02.419Z",
+    lastmod: "2025-11-21T11:29:58.215Z",
   },
   {
     name: "How to Choose the Right Mobile Development Framework ",
@@ -1564,7 +1600,7 @@ export const blogListStaticData = [
   {
     name: "A Guide to Ideal Tech Stack Selection",
     loc: "https://www.brilworks.com/blog/smart-business-guide-tech-stack-selection/",
-    lastmod: "2025-06-05T12:32:44.132Z",
+    lastmod: "2025-11-21T11:15:55.864Z",
   },
   {
     name: "Beginner’s Guide to AI Application Development: Tools, Steps & Tips to Get Started",
@@ -2234,7 +2270,7 @@ export const blogListStaticData = [
   {
     name: "How Generative AI transforms Supply Chain Operations",
     loc: "https://www.brilworks.com/blog/how-generative-ai-transforms-supply-chain-operations/",
-    lastmod: "2025-09-19T06:12:32.007Z",
+    lastmod: "2025-11-24T08:27:53.100Z",
   },
   {
     name: "How to Create a Mobile App in 2025 [Easy Steps]",

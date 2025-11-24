@@ -34,6 +34,7 @@ const CurrentHeader = () => {
     "/healthvault-privacy-policy/",
     "/kinderland-privacy-policy/",
     "/mindsync-privacy-policy/",
+    "/ordernest-privacy-policy/",
     "/pink-signal-privacy-policy/",
     "/ai-tools/ai-document-compliance-review/",
     "/product/enclave-connect/",

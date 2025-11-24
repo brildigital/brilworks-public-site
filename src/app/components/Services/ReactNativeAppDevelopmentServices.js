@@ -20,7 +20,7 @@ const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
 const ReactNativeAppDevelopmentServices = () => {
-  const mobileAppServices = {
+  const reactnativeAppServices = {
     title: "Our React Native Development Services",
     servicesList: [
       {
@@ -154,11 +154,11 @@ const ReactNativeAppDevelopmentServices = () => {
       <ServicesSection
         bgClass="bg-themeLight"
         sectionId="service-section"
-        serviceData={mobileAppServices}
+        serviceData={reactnativeAppServices}
       />
       <MultipleCardInGrid
         // bgClass="bg-themeLight"
-        title="Engagement Models For Mobile App Development"
+        title="Engagement Models For React Native Mobile App Development"
         cardData={mobileAppServiceEngagementData}
         buttonText="Know More"
         redirect="/contact-us/"
