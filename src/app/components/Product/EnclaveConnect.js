@@ -39,15 +39,16 @@ const EnclaveConnect = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/contact-us/"
+                  href="#download-app"
+                  onClick={(e) => scrollToSection(e, "download-app")}
                   className="group bg-gradient-to-r from-rose-500 to-pink-600 text-white px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
                   Get Started Free
                   <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="#download-app"
-                  onClick={(e) => scrollToSection(e, "download-app")}
+                  href="https://youtu.be/g5gnqXlJ7Hs"
+                  target="_blank"
                   className="bg-white text-gray-900 px-8 py-4 rounded-full font-medium border-2 border-gray-200 hover:border-gray-300 transition-all duration-300"
                 >
                   Watch Demo
