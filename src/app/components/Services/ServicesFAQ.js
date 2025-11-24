@@ -686,6 +686,131 @@ const ServicesFAQ = () => {
         "Yes. Our team has experience across early-stage products, MVPs, mid-growth companies, and enterprise-grade applications.",
     },
   ];
+  const WhiteLabelDevelopmentFAQData = [
+    {
+      question:
+        "What is included in a white label mobile app development service?",
+      answer:
+        "You get a ready-made app foundation, branding and UI adaptation, feature adjustments, backend setup, integrations, testing, and store deployment. We also provide an admin panel and ongoing support if required.",
+    },
+    {
+      question: "How much customization is possible in a white label app?",
+      answer:
+        "You can change the branding, layout, screens, and features. Some clients only need cosmetic changes, while others add entire modules. We adapt the product as long as the requests align with the core architecture.",
+    },
+    {
+      question: "How long does it take to launch a white label application?",
+      answer:
+        "Timelines vary based on customization depth. Simple branding and content updates can be completed quickly, while larger adjustments or new features take more time. We provide a clear timeline during the discovery phase.",
+    },
+    {
+      question: "Can you integrate third-party tools or my existing systems?",
+      answer:
+        "Yes. We integrate payment gateways, CRMs, ERPs, analytics tools, communication APIs, and industry-specific systems as part of the customization process.",
+    },
+    {
+      question: "Do you support both iOS and Android?",
+      answer:
+        "Yes. All white label projects include support for both platforms. You receive separate, branded versions for the App Store and Google Play.",
+    },
+    {
+      question: "Will the app be published under my company’s name?",
+      answer:
+        "Yes. The final app is submitted to the stores under your developer accounts, with your branding, identity, and descriptions.",
+    },
+    {
+      question: "What happens after the app goes live?",
+      answer:
+        "We offer ongoing maintenance, updates, bug fixes, OS compatibility checks, and additional feature development. You choose the level of support you want.",
+    },
+    {
+      question:
+        "Is a white label solution scalable if my user base grows quickly?",
+      answer:
+        "Yes. The architecture is built to handle increasing traffic, more data, and new workflows. If you need deeper scaling later, we guide you through backend upgrades.",
+    },
+    {
+      question:
+        "What if I need features that are not part of the base solution?",
+      answer:
+        "We can build new modules, expand existing features, or integrate external tools. We evaluate each request during the planning phase to ensure it fits the overall structure.",
+    },
+    {
+      question:
+        "How do you ensure quality across different branded versions of the same app?",
+      answer:
+        "We maintain a stable core product and run separate QA for every branded build. This keeps the template consistent while ensuring each client gets a fully tested version.",
+    },
+    {
+      question: "Do you provide the source code?",
+      answer:
+        "It depends on the engagement model and licensing terms. Some clients opt for full ownership, while others prefer a license-based model. Both options are available.",
+    },
+    {
+      question: "How does pricing work for white label app development?",
+      answer:
+        "Costs depend on the level of customization, feature additions, integrations, and long-term support needs. We share a transparent breakdown after understanding your requirements.",
+    },
+    {
+      question: "Can you help us with app store guidelines and compliance?",
+      answer:
+        "Yes. We handle store requirements, content readiness, screenshots, and technical compliance to increase the chances of approval on the first submission.",
+    },
+  ];
+  const ReactNativeAppDevelopmentFAQData = [
+    {
+      question: "Is React Native suitable for my mobile app idea?",
+      answer:
+        "Most business applications work well with React Native. If your idea relies heavily on advanced hardware or complex animations, we give you honest guidance on whether React Native or native code fits better.",
+    },
+    {
+      question: "Will the app look and feel like a native application?",
+      answer:
+        "Yes. We follow platform guidelines and use the right native modules so the experience feels smooth and aligned with iOS and Android expectations.",
+    },
+    {
+      question: "Can React Native scale for large user bases?",
+      answer:
+        "Yes. With the right architecture, backend setup, and optimization strategy, React Native supports apps at scale.",
+    },
+    {
+      question: "Do you support both iOS and Android app store submissions?",
+      answer:
+        "We handle the full submission process, including builds, configuration, and compliance.",
+    },
+    {
+      question: "Can you work with an existing React Native codebase?",
+      answer:
+        "Yes. We can take over existing projects, run a technical audit, and stabilize or extend the app.",
+    },
+  ];
+  const FitnessAppDevelopmentFAQData = [
+    {
+      question: "How long does it take to develop a fitness app?",
+      answer:
+        "Development time varies based on complexity and features. A basic fitness app typically takes 3-4 months, while more complex apps with advanced features like AI coaching, social networking, or wearable integration may take 6-9 months.",
+    },
+    {
+      question: "What is the cost of developing a fitness app?",
+      answer:
+        "Costs depend on features, platform, design complexity, and integrations. Basic apps start around $30,000-$50,000, while comprehensive fitness platforms can range from $80,000-$200,000+. We provide detailed quotes after understanding your specific requirements.",
+    },
+    {
+      question: "Can you integrate wearable devices and fitness trackers?",
+      answer:
+        "Yes, we specialize in integrating popular wearables and fitness trackers including Apple Watch, Fitbit, Garmin, Samsung Galaxy Watch, and more. We can sync data like heart rate, steps, calories, and sleep patterns directly into your app.",
+    },
+    {
+      question: "Do you provide app maintenance and updates?",
+      answer:
+        "Absolutely! We offer comprehensive maintenance packages including bug fixes, OS updates, feature enhancements, security patches, and technical support to ensure your app stays current and performs optimally.",
+    },
+    {
+      question: "Can you add monetization features to the app?",
+      answer:
+        "Yes, we implement various monetization strategies including subscription models, in-app purchases, premium features, ad integration, and payment gateway integration for personal training services or product sales.",
+    },
+  ];
   const showDataBasedOnPathname = {
     "/ai-ml-development-services/": AIMLFAQData,
     "/devops-consulting-services/": DevOpsFAQData,
@@ -709,6 +834,9 @@ const ServicesFAQ = () => {
     "/reactjs-development-services/": ReactJSDevelopmentFAQData,
     "/mobile-app-development-services/": WebAppDevelopmentFAQData,
     "/mobile-app-development-services/": MobileAppDevelopmentFAQData,
+    "/white-label-mobile-app-development/": WhiteLabelDevelopmentFAQData,
+    "/react-native-app-development-services/": ReactNativeAppDevelopmentFAQData,
+    "/fitness-app-development-services/": FitnessAppDevelopmentFAQData,
   };
 
   const servicesFAQData = showDataBasedOnPathname[pathname] || {};

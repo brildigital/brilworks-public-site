@@ -22,7 +22,7 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const MobileAppDevelopmentService = () => {
+const FitnessAppDevelopmentServices = () => {
   const mobileAppServices = {
     title: "Core Mobile Development Services",
     servicesList: [
@@ -226,4 +226,4 @@ const MobileAppDevelopmentService = () => {
   );
 };
 
-export default MobileAppDevelopmentService;
+export default FitnessAppDevelopmentServices;

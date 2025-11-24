@@ -3,11 +3,11 @@ import MobileAppDevelopmentService from "@/app/components/Services/MobileAppDeve
 export const metadata = {
   title: "Mobile App Development Services | Brilworks",
   description:
-    "Build fast, scalable, and secure web applications with our expert web app development services. From custom solutions to enterprise-grade platforms, we deliver reliable digital products that drive growth.",
+    "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets.",
   openGraph: {
     title: "Mobile App Development Services | Brilworks",
     description:
-      "Build fast, scalable, and secure web applications with our expert web app development services. From custom solutions to enterprise-grade platforms, we deliver reliable digital products that drive growth.",
+      "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}web-app-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,7 +22,7 @@ export const metadata = {
   twitter: {
     title: "Mobile App Development Services | Brilworks",
     description:
-      "Build fast, scalable, and secure web applications with our expert web app development services. From custom solutions to enterprise-grade platforms, we deliver reliable digital products that drive growth.",
+      "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },

@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import ServiceHeroSection from "./ServiceHeroSection";
 import CTASection from "../Common/CTASection";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
 import AboutOurExpertise from "./AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
@@ -15,55 +14,61 @@ const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const MultipleCardWithIconBG = dynamic(() =>
   import("../Common/MultipleCardWithIconBG")
 );
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
-);
+
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const MobileAppDevelopmentService = () => {
+const ReactNativeAppDevelopmentServices = () => {
   const mobileAppServices = {
-    title: "Core Mobile Development Services",
+    title: "Our React Native Development Services",
     servicesList: [
       {
-        title: "Native App Development",
+        title: "End-to-End App Development",
         value: "web-service-1",
         description:
-          "Using Swift and Kotlin, we build native apps that integrate fully with device hardware including cameras, sensors, and biometric systems, following platform design guidelines.",
-        imageSrc: "/images/v2/Native-App-Development.webp",
+          "We handle the complete journey. Discovery, UI and UX, development, integrations, testing, deployment, and post-launch support. The result is a stable React Native app designed for growth.",
+        imageSrc: "/images/v2/end-to-end-app-development.webp",
         imageAlt: "Native App Development image",
       },
       {
-        title: "Cross-Platform Development",
+        title: "Custom React Native Features",
         value: "web-service-2",
         description:
-          "We build high-performance cross-platform apps using modern frameworks like React Native and Flutter for both iOS and Android from a single codebase, using standard practices and development guidelines.",
-        imageSrc: "/images/v2/Cross-Platform-Development.webp",
+          "From chat and live tracking to in-app purchases, notifications, and media handling, we build features that require more than basic boilerplate.",
+        imageSrc: "/images/v2/custom-react-native-features.webp",
         imageAlt: "Cross-Platform Development image",
       },
       {
-        title: "Progressive Web App (PWA) Development",
+        title: "React Native Optimization",
         value: "web-service-3",
         description:
-          "Brilworks offers Progressive Web Apps development, combined with our decade of expertise in mobile and mobile development. PWAs deliver application functionality through web browsers while providing features typically associated with native apps.",
-        imageSrc: "/images/v2/Progressive-Web-App-(PWA) Development).webp",
+          "If you already have an app but it feels slow, outdated, or inconsistent, we audit the codebase, fix performance issues, and bring it up to a modern standard.",
+        imageSrc: "/images/v2/react-native-optimization.webp",
         imageAlt: "PWA development image",
       },
       {
-        title: "IoT App Development",
+        title: "React Native Migration",
         value: "web-service-4",
         description:
-          "Our IoT software development services product engineering, architecture design, testing, and post-development support.  Our IoT applications provide mobile interfaces for connected devices and systems.",
-        imageSrc: "/images/v2/IoT-App-Development.webp",
+          "We help teams move from legacy stacks or outdated frameworks into a React Native environment that’s easier to maintain and scale.",
+        imageSrc: "/images/v2/react-native-migration-2.webp",
         imageAlt: "IoT App Development image",
       },
       {
-        title: "Wearable App Development",
+        title: "API Integration",
         value: "web-service-5",
         description:
-          "We design wearable applications for devices like smartwatches and fitness trackers. These applications prioritize essential information and quick interactions, accounting for limited screen space and brief usage sessions.",
-        imageSrc: "/images/v2/Wearable-App-Development.webp",
+          "Our team integrates your backend systems, payment gateways, analytics, auth flows, and third-party services into a stable React Native architecture.",
+        imageSrc: "/images/v2/advanced-api-integrations.webp",
+        imageAlt: "Wearable App Development image",
+      },
+      {
+        title: "Ongoing Maintenance and Support",
+        value: "web-service-6",
+        description:
+          "We update OS compatibility, patch issues, maintain libraries, and help you iterate on new features without disrupting live users.",
+        imageSrc: "/images/v2/ongoing-maintenance-and-support.webp",
         imageAlt: "Wearable App Development image",
       },
     ],
@@ -125,61 +130,17 @@ const MobileAppDevelopmentService = () => {
     ],
   };
 
-  const techStackList = [
-    {
-      title: "Native Platforms",
-      value: "native",
-      items: [
-        { label: "Swift", iconifyIcon: "/images/swift-language.svg" },
-        { label: "Kotlin", iconifyIcon: "/images/kotlin-icon.svg" },
-        {
-          label: "Objective-C",
-          iconifyIcon: "/images/v2/objective-c-icon.png",
-        },
-        { label: "Java", iconifyIcon: "/images/java.svg" },
-      ],
-    },
-    {
-      title: "Cross-Platform",
-      value: "cross-platform",
-      items: [
-        { label: "React Native", icon: faReact, color: "#61DBFB" },
-        { label: "Flutter", iconifyIcon: "/images/flutter.svg" },
-      ],
-    },
-    {
-      title: "Server & Data",
-      value: "server-data",
-      items: [
-        { label: "Python", iconifyIcon: "/images/python.svg" },
-        { label: "NodeJS", iconifyIcon: "/images/node-icon.svg" },
-        { label: "Firebase", iconifyIcon: "/images/firebase-icon.svg" },
-        { label: "AWS", iconifyIcon: "/images/aws.svg" },
-        { label: "Azure", iconifyIcon: "/images/azure.svg" },
-      ],
-    },
-    {
-      title: "Design & UX",
-      value: "design-ux",
-      items: [
-        { label: "Figma", iconifyIcon: "/images/figma.png" },
-        { label: "Sketch", iconifyIcon: "/images/sketch-svgrepo.png" },
-      ],
-    },
-  ];
-
   return (
     <>
       <ServiceHeroSection
-        title="Mobile Application Development Services"
-        description="We build mobile applications for iOS and Android platforms using native and cross-platform technologies, covering the complete lifecycle, from initial requirements through design, development, testing, and ongoing maintenance. Our team has delivered over 100 mobile projects across healthcare, finance, retail, and enterprise sectors."
+        title="React Native Development Services"
+        description="We use React Native to build fast, stable, and scalable mobile applications without doubling the engineering effort. Our focus is simple. We help businesses launch cross-platform apps that look sharp, run smoothly, and are easy to maintain over time. React Native is one of the tools we rely on to achieve that level of speed and consistency."
         buttonText="Start Your App Journey"
-        imageSrc="/images/v2/mobile-app-dev-banner.webp"
+        imageSrc="/images/v2/react-native-development-services-banner.webp"
       />
       <AboutOurExpertise
-        title="Brilwork’s Mobile Application Development Expertise"
-        description1="Brilworks provides mobile development services with a focus on technical quality and project delivery.Our teams consist of experienced developers with expertise in both native and cross-platform development."
-        description2="We build applications designed to scale with your business. Our process includes clear project planning, regular communication, and defined milestones. We provide transparent cost estimates and work within agreed timelines."
+        title="How We Work With React Native"
+        description1="React Native fits when you want both platforms covered without managing two separate codebases. We combine React Native with the right backend setup, design workflows, and QA practices so your app feels polished from the first interaction."
       />
 
       {/* <CTASection
@@ -208,11 +169,7 @@ const MobileAppDevelopmentService = () => {
       />
       <Honors />
       <ClientReviews />
-      <TechStackWeWorkWith
-        title="The Technology Environment We Use"
-        active="native"
-        techStackList={techStackList}
-      />
+
       <SeeingBelieving />
       <IndustriesWeServe darkBackground={false} />
       <HomePageBlogs />
@@ -226,4 +183,4 @@ const MobileAppDevelopmentService = () => {
   );
 };
 
-export default MobileAppDevelopmentService;
+export default ReactNativeAppDevelopmentServices;

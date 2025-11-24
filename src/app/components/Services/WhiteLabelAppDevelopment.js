@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import ServiceHeroSection from "./ServiceHeroSection";
 import CTASection from "../Common/CTASection";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
 import AboutOurExpertise from "./AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
@@ -15,54 +14,67 @@ const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const MultipleCardWithIconBG = dynamic(() =>
   import("../Common/MultipleCardWithIconBG")
 );
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
-);
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
 
-const MobileAppDevelopmentService = () => {
+const WhiteLabelAppDevelopment = () => {
   const mobileAppServices = {
-    title: "Core Mobile Development Services",
+    title: "Core White Label Solutions",
     servicesList: [
       {
-        title: "Native App Development",
+        title: "Fitness and Wellness Apps",
         value: "web-service-1",
         description:
-          "Using Swift and Kotlin, we build native apps that integrate fully with device hardware including cameras, sensors, and biometric systems, following platform design guidelines.",
+          "We build white label fitness platforms with workouts, diet plans, progress tracking, trainer dashboards, community features, and subscription modules. Ideal for coaches, gyms, wellness brands, and digital fitness platforms.",
         imageSrc: "/images/v2/Native-App-Development.webp",
         imageAlt: "Native App Development image",
       },
       {
-        title: "Cross-Platform Development",
+        title: "Delivery and Logistics Apps",
         value: "web-service-2",
         description:
-          "We build high-performance cross-platform apps using modern frameworks like React Native and Flutter for both iOS and Android from a single codebase, using standard practices and development guidelines.",
+          "Our delivery stack includes apps for customer ordering, courier management, live tracking, route optimization, vendor dashboards, and automated dispatching. Suitable for food delivery, parcel delivery, and hyperlocal services.",
         imageSrc: "/images/v2/Cross-Platform-Development.webp",
         imageAlt: "Cross-Platform Development image",
       },
       {
-        title: "Progressive Web App (PWA) Development",
+        title: "Ride Hailing and Mobility Apps",
         value: "web-service-3",
         description:
-          "Brilworks offers Progressive Web Apps development, combined with our decade of expertise in mobile and mobile development. PWAs deliver application functionality through web browsers while providing features typically associated with native apps.",
+          "We provide ready to deploy ride hailing systems with driver and rider apps, trip management, fare calculation, routing, and admin tools for fleet operations.",
         imageSrc: "/images/v2/Progressive-Web-App-(PWA) Development).webp",
         imageAlt: "PWA development image",
       },
       {
-        title: "IoT App Development",
+        title: "Marketplace and E-Commerce Apps",
         value: "web-service-4",
         description:
-          "Our IoT software development services product engineering, architecture design, testing, and post-development support.  Our IoT applications provide mobile interfaces for connected devices and systems.",
+          "Our marketplace templates include multi vendor catalogs, cart and checkout flows, digital payments, order tracking, and seller dashboards. Good for retail brands and niche commerce models.",
         imageSrc: "/images/v2/IoT-App-Development.webp",
         imageAlt: "IoT App Development image",
       },
       {
-        title: "Wearable App Development",
+        title: "On Demand Service Apps",
         value: "web-service-5",
         description:
-          "We design wearable applications for devices like smartwatches and fitness trackers. These applications prioritize essential information and quick interactions, accounting for limited screen space and brief usage sessions.",
+          "We offer service booking apps for home services, beauty, cleaning, repairs, and professional appointments. These include provider profiles, booking systems, schedules, reviews, and in app payments.",
+        imageSrc: "/images/v2/Wearable-App-Development.webp",
+        imageAlt: "Wearable App Development image",
+      },
+      {
+        title: "Learning and Education Apps",
+        value: "web-service-6",
+        description:
+          "Our white label learning platforms include courses, quizzes, assignments, instructor dashboards, student progress, and community interaction.",
+        imageSrc: "/images/v2/Wearable-App-Development.webp",
+        imageAlt: "Wearable App Development image",
+      },
+      {
+        title: "Membership and Community Apps",
+        value: "web-service-7",
+        description:
+          "We create community driven apps for clubs, programs, creators, and organizations with feeds, groups, events, messaging, and content sections.",
         imageSrc: "/images/v2/Wearable-App-Development.webp",
         imageAlt: "Wearable App Development image",
       },
@@ -90,7 +102,7 @@ const MobileAppDevelopmentService = () => {
   ];
 
   const whyChooseUsDevelopmentData = {
-    title: "Why Choose Briworks for Mobile Development Services",
+    title: "Why Choose Briworks for White Label Mobile Development Services",
     benefits: [
       {
         title: "Top 3% Talent",
@@ -125,61 +137,18 @@ const MobileAppDevelopmentService = () => {
     ],
   };
 
-  const techStackList = [
-    {
-      title: "Native Platforms",
-      value: "native",
-      items: [
-        { label: "Swift", iconifyIcon: "/images/swift-language.svg" },
-        { label: "Kotlin", iconifyIcon: "/images/kotlin-icon.svg" },
-        {
-          label: "Objective-C",
-          iconifyIcon: "/images/v2/objective-c-icon.png",
-        },
-        { label: "Java", iconifyIcon: "/images/java.svg" },
-      ],
-    },
-    {
-      title: "Cross-Platform",
-      value: "cross-platform",
-      items: [
-        { label: "React Native", icon: faReact, color: "#61DBFB" },
-        { label: "Flutter", iconifyIcon: "/images/flutter.svg" },
-      ],
-    },
-    {
-      title: "Server & Data",
-      value: "server-data",
-      items: [
-        { label: "Python", iconifyIcon: "/images/python.svg" },
-        { label: "NodeJS", iconifyIcon: "/images/node-icon.svg" },
-        { label: "Firebase", iconifyIcon: "/images/firebase-icon.svg" },
-        { label: "AWS", iconifyIcon: "/images/aws.svg" },
-        { label: "Azure", iconifyIcon: "/images/azure.svg" },
-      ],
-    },
-    {
-      title: "Design & UX",
-      value: "design-ux",
-      items: [
-        { label: "Figma", iconifyIcon: "/images/figma.png" },
-        { label: "Sketch", iconifyIcon: "/images/sketch-svgrepo.png" },
-      ],
-    },
-  ];
-
   return (
     <>
       <ServiceHeroSection
-        title="Mobile Application Development Services"
-        description="We build mobile applications for iOS and Android platforms using native and cross-platform technologies, covering the complete lifecycle, from initial requirements through design, development, testing, and ongoing maintenance. Our team has delivered over 100 mobile projects across healthcare, finance, retail, and enterprise sectors."
+        title="White Label Mobile App Development Services"
+        description="We build ready to launch mobile applications that can be branded, customized, scaled, and shipped quickly. Our white label solutions cover fitness, wellness, delivery, ride hailing, education, marketplace, and on-demand services. Each solution is structured for fast deployment, flexible branding, and long term maintainability."
         buttonText="Start Your App Journey"
-        imageSrc="/images/v2/mobile-app-dev-banner.webp"
+        imageSrc="/images/v2/white-label-mobile-app-development-services-banner.webp"
       />
       <AboutOurExpertise
-        title="Brilwork’s Mobile Application Development Expertise"
-        description1="Brilworks provides mobile development services with a focus on technical quality and project delivery.Our teams consist of experienced developers with expertise in both native and cross-platform development."
-        description2="We build applications designed to scale with your business. Our process includes clear project planning, regular communication, and defined milestones. We provide transparent cost estimates and work within agreed timelines."
+        title="Our White Label App Expertise"
+        description1="We design repeatable app architectures that can adapt to different brands, features, and industries without rebuilding from scratch. You get a foundation that supports quick customization, publishes smoothly to the app stores, and stays stable when new modules are added."
+        description2="Every product is built with clear functionality layers, intuitive workflows, and simple ways to extend the app for new business requirements. Our process includes transparent scoping, steady updates, and predictable delivery."
       />
 
       {/* <CTASection
@@ -208,11 +177,7 @@ const MobileAppDevelopmentService = () => {
       />
       <Honors />
       <ClientReviews />
-      <TechStackWeWorkWith
-        title="The Technology Environment We Use"
-        active="native"
-        techStackList={techStackList}
-      />
+
       <SeeingBelieving />
       <IndustriesWeServe darkBackground={false} />
       <HomePageBlogs />
@@ -226,4 +191,4 @@ const MobileAppDevelopmentService = () => {
   );
 };
 
-export default MobileAppDevelopmentService;
+export default WhiteLabelAppDevelopment;
