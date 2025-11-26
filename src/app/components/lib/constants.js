@@ -1052,6 +1052,10 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/white-label-mobile-app-development/",
     lastmod: "2025-11-24T12:05:21.531Z",
   },
+  {
+    loc: "https://www.brilworks.com/product/encalve-connect/",
+    lastmod: "2025-11-24T12:08:23.211Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/site-map/",
   //   lastmod: "2025-05-15T12:04:49.528Z",

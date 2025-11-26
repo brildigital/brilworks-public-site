@@ -15,6 +15,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
+import ButtonV2 from "../Common/ButtonV2";
+import Cal from "@calcom/embed-react";
+import Heading from "../HTMLComponents/Heading";
 
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
@@ -30,9 +33,7 @@ const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
-);
+
 const HireDevelopersInThreeSteps = dynamic(() =>
   import("../HireTeam/HireDevelopersInThreeSteps")
 );
@@ -107,51 +108,44 @@ const ReactJSTechnology = () => {
   }, []);
 
   const reactJSService = {
-    title:
-      "Build Feature-rich Frontend Applications With Our React Development Services",
+    title: "Our ReactJS Development Services",
+    desc: "Brilworks offers a range of services to help you unlock modern web capabilities—no matter the scale or complexity of your project.",
     buttonText: "Get Quote",
     servicesList: [
       {
-        title: "Web Development",
+        title: "Custom Application Development",
         value: "reactjs-1",
-        imageSrc: "/images/v2/web-development.webp",
+        imageSrc: "/images/v2/custom-application-development-img.webp",
         description:
-          "Transform slow, clunky websites into React-powered rockets—3.2s average load time improvement in client projects.",
+          "We design and deliver dynamic, scalable web and mobile applications with ReactJS and Next.js, ensuring smooth user experiences and solid technical foundations.",
       },
       {
-        title: "Migration and Updation Services",
+        title: "Legacy Modernization",
         value: "reactjs-2",
-        imageSrc: "/images/v2/migration-and-updation-services.webp",
+        imageSrc: "/images/v2/legacy-modernization-img.webp",
         description:
-          "Legacy app? We’ll rebuild it in React so smoothly, the only thing users will notice is the improvement.",
+          "Replace outdated front-ends with fast, SEO-friendly React apps, or migrate from older frameworks to a future-ready stack.",
       },
       {
-        title: "High-Performing PWAs",
+        title: "Real-time Dashboards & PWAs",
         value: "reactjs-3",
-        imageSrc: "/images/v2/high-performing-PWAs.webp",
+        imageSrc: "/images/v2/realtime-dashboards-PWAs-img.webp",
         description:
-          "We build PWAs that outpace native apps, 100% offline mode, 0% app store fees, and lightning-fast performance.",
+          "Build analytics dashboards, PWAs, and live data interfaces using best practices for performance and engagement.",
       },
       {
-        title: "eCommerce Development",
+        title: "eCommerce & SaaS Platforms",
         value: "reactjs-4",
-        imageSrc: "/images/v2/eCommerce-development.webp",
+        imageSrc: "/images/v2/e-eommerce-saas-platforms-img.webp",
         description:
-          "React storefronts built to convert—dynamic hydration, psychology-backed flows, and seamless user experiences that drive sales.",
+          "Develop intuitive dashboards, product catalogs, portals, and user management systems for online businesses.",
       },
       {
-        title: "SPA Development",
+        title: "Mobile with React Native",
         value: "reactjs-5",
-        imageSrc: "/images/v2/SPA-development.webp",
+        imageSrc: "/images/v2/mobile-with-react-native-img.webp",
         description:
-          "Blazing-fast SPAs, instant interactivity, smooth navigation, and scroll restoration that remembers every pixel.",
-      },
-      {
-        title: "Dashboard Development",
-        value: "reactjs-6",
-        imageSrc: "/images/v2/dashboard-development.webp",
-        description:
-          "Transform your data into decisions—sleek, intuitive dashboards that blend real-time analytics with elegant design, turning complex metrics into instant insights.",
+          "Extend your product’s reach with mobile apps using React Native—built for both iOS and Android with a shared codebase.",
       },
     ],
   };
@@ -201,54 +195,58 @@ const ReactJSTechnology = () => {
 
   const why100PlusCompaniesTrust = [
     {
-      title: "No Time Zone Barriers",
+      title: "Top-tier talent",
       description:
-        "Our remote React developers work in your hours. Whether you’re in New York or Singapore. Early birds? We match your rhythm.",
-      icon: "/images/v2/clock.svg",
+        "Each developer is evaluated for React, Next.js, TypeScript, and UI/UX excellence.",
+      icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
     },
     {
-      title: "Cross-Platform Mastery",
+      title: "Reliable results",
       description:
-        "Web, mobile, IoT dashboards. we make React dance across platforms. Hire React developers who build once, deploy everywhere.",
-      icon: "/images/v2/laptop.svg",
+        "200+ successful projects, average 5-star client rating, brands in 12+ countries.",
+      icon: "/images/v2/proven-track-record.svg",
     },
     {
-      title: "Costs 60% Less Than In-House",
+      title: "Flexible models",
       description:
-        "Get senior talent at junior rates. No benefits. No turnover. Just React brilliance.",
-      icon: "/images/v2/dollar-black.svg",
+        "Dedicated experts or on-demand teams that adapt to your preferred workflows.",
+      icon: "/images/v2/flexible-engagement.svg",
     },
     {
-      title: "Flexible Engagement Models",
+      title: "Seamless collaboration",
       description:
-        "Project-based sprints, dedicated teams, or on-demand React developers. We bend to your business needs.",
+        "Work in your timezone, with transparent updates and easy communication.",
       icon: "/images/v2/partnership.png",
     },
     {
-      title: "Reliable 24/7 Support",
+      title: "Client focus",
       description:
-        "Our seasoned React experts deliver exceptional support and guidance at every step, ensuring your project achieves success with industry-leading insights.",
-      icon: "/images/v2/24-7-support.svg",
-    },
-    {
-      title: "Rapid Development",
-      description:
-        "Tight deadlines? No problem. Our React developers ship high-quality code at startup speed, without cutting corners.",
-      icon: "/images/v2/growth-midset-img.png",
+        "Custom solutions, proactive support, and a commitment to your long-term success.",
+      icon: "/images/v2/client-centric-icon.svg",
     },
   ];
 
   return (
     <>
       <HireTeamHeroSection
-        technologyText="Reactjs Development Services"
-        title="Hire React.js Developers: Dedicated Experts in 72 hours"
-        description="Our experienced Reactjs developers have built and maintained scalable, intuitive, and interactive applications that have served millions of users. If you’re planning on using React software development services, we’re the right partner for you."
+        title="Unlock Expert ReactJS Talent for Your Projects"
+        description={
+          <>
+            Looking to build fast, modern web apps that engage users and scale
+            with your business? Build lightning-fast web and mobile applications
+            with India’s top ReactJS engineers.
+            <br /> Brilworks helps you hire ReactJS developers who blend deep
+            expertise with a focus on your ROI. From launching startups to
+            modernizing enterprise SaaS, our team is trusted by digital leaders
+            across industries.
+          </>
+        }
         imageSrc="/images/v2/reactjs-banner.webp"
+        buttonLabel="Explore Reactjs Development"
       />
       <MultipleCardInGrid
-        title="Why 100+ Companies Trust Us"
-        description="We don’t just write React code. We engineer user addiction. Here’s what sets us apart."
+        title="Why Outsource ReactJS Development from Brilworks?"
+        description="At Brilworks, our ReactJS specialists bring proven skills in building interactive, high-performance user interfaces and robust enterprise systems."
         cardData={why100PlusCompaniesTrust}
       />
       <ServicesSection
@@ -256,6 +254,15 @@ const ReactJSTechnology = () => {
         bgClass="bg-themeLight"
         serviceData={reactJSService}
       />
+      <div className="bg-themeLight">
+        <div className="container max-w-7xl mx-auto py-10">
+          <ButtonV2
+            label="Explore More"
+            redirect="/reactjs-development-services/"
+            className="!w-fit mx-auto hover:text-themeColor"
+          />
+        </div>
+      </div>
       {/* <BenefitOfHiringDevelopers /> */}
       <TechnologyDevelopers />
       <TechnologyCombination />
@@ -270,6 +277,28 @@ const ReactJSTechnology = () => {
       />
       <HomePageBlogs />
       <SolutionContactForm />
+      <section className="bg-themeLight">
+        <div className="max-w-7xl main-section-padding-top mx-auto text-center">
+          <Heading
+            type="h2"
+            className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
+            text="Ready to Hire Elite ReactJS Developers?"
+          />
+
+          <p className="max-w-3xl mx-auto md:text-lg text-base !pt-[10px]">
+            Submit Your Requirements or Book a Free 30-Minute Consultation to
+            get expert profiles within 24 hours. Scale your vision with
+            Brilworks today!
+          </p>
+
+          <div className="w-full mt-10">
+            <Cal
+              calLink="vikas-singh-bril/free-consultation"
+              config={{ theme: "light" }}
+            />
+          </div>
+        </div>
+      </section>
       <ReactJSFAQs />
     </>
   );

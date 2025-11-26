@@ -14,6 +14,44 @@ import React from "react";
 import { scrollToSection } from "../lib/commonFunction";
 
 const EnclaveConnect = () => {
+  const enclaveFeatures = [
+    {
+      icon: Lock,
+      title: "Visitor Management",
+      description:
+        "Pre-approve visitors, generate digital passes, and maintain complete security logs with real-time notifications.",
+    },
+    {
+      icon: Bell,
+      title: "Community Updates",
+      description:
+        "Stay informed with instant notifications about events, maintenance schedules, and important announcements.",
+    },
+    {
+      icon: Shield,
+      title: "Security Management",
+      description:
+        "Enhanced security with digital gate passes, incident reporting, and 24/7 surveillance integration.",
+    },
+    {
+      icon: Users,
+      title: "Community Directory",
+      description:
+        "Connect with neighbors, find local services, and build a stronger community network.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Complaint Management",
+      description:
+        "Submit and track maintenance requests with real-time status updates and efficient resolution workflows.",
+    },
+    {
+      icon: Check,
+      title: "Facility Booking",
+      description:
+        "Reserve amenities like clubhouses, sports courts, and community halls with easy scheduling.",
+    },
+  ];
   return (
     <div>
       <section className="">
@@ -41,7 +79,7 @@ const EnclaveConnect = () => {
                 <Link
                   href="#download-app"
                   onClick={(e) => scrollToSection(e, "download-app")}
-                  className="group bg-gradient-to-r from-rose-500 to-pink-600 text-white px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                  className="group bg-gradient-to-r from-rose-500 to-pink-600 text-white px-8 md:py-4 py-3 rounded-full font-medium hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
                   Get Started Free
                   <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -49,12 +87,12 @@ const EnclaveConnect = () => {
                 <Link
                   href="https://youtu.be/g5gnqXlJ7Hs"
                   target="_blank"
-                  className="bg-white text-gray-900 px-8 py-4 rounded-full font-medium border-2 border-gray-200 hover:border-gray-300 transition-all duration-300"
+                  className="bg-white text-gray-900 px-8 md:py-4 py-3 rounded-full font-medium border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 text-center"
                 >
                   Watch Demo
                 </Link>
               </div>
-              <div className="mt-12 flex items-center space-x-8">
+              <div className="mt-12 flex items-center md:space-x-8 space-x-5">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">10K+</div>
                   <div className="text-sm text-gray-600">Active Users</div>
@@ -95,90 +133,29 @@ const EnclaveConnect = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Everything You Need in One Place
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="md:text-xl text-lg text-gray-600 max-w-2xl mx-auto">
               Powerful features designed for residents, security personnel, and
               management committees
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Lock className="w-7 h-7 text-white" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-5">
+            {enclaveFeatures.map((item, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Visitor Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Pre-approve visitors, generate digital passes, and maintain
-                complete security logs with real-time notifications.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Bell className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Community Updates
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Stay informed with instant notifications about events,
-                maintenance schedules, and important announcements.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Shield className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Security Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Enhanced security with digital gate passes, incident reporting,
-                and 24/7 surveillance integration.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Community Directory
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Connect with neighbors, find local services, and build a
-                stronger community network.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MessageSquare className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Complaint Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Submit and track maintenance requests with real-time status
-                updates and efficient resolution workflows.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Check className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Facility Booking
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Reserve amenities like clubhouses, sports courts, and community
-                halls with easy scheduling.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -190,7 +167,7 @@ const EnclaveConnect = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Why Choose Enclave Connect?
               </h2>
-              <p className="text-xl text-gray-600 md:!mb-8 !mb-5">
+              <p className="md:text-xl text-lg text-gray-600 md:!mb-8 !mb-5">
                 Experience the difference with a platform built specifically for
                 modern gated communities.
               </p>
@@ -233,7 +210,7 @@ const EnclaveConnect = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:gap-6 gap-4">
               <div className="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-2xl">
                 <div className="text-4xl font-bold text-gray-900 mb-2">
                   99.9%
@@ -260,12 +237,9 @@ const EnclaveConnect = () => {
           </div>
         </div>
       </section>
-      <section
-        id="download-app"
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="download-app">
+        <div className="container max-w-7xl main-section-padding-bottom mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="flex justify-center">
               <Image
                 src="https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-mockup-1762509498972.webp"
@@ -278,7 +252,7 @@ const EnclaveConnect = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Download the App Today
               </h2>
-              <p className="text-xl text-gray-600 md:!mb-8 !mb-5 leading-relaxed">
+              <p className="md:text-xl text-lg text-gray-600 md:!mb-8 !mb-5 leading-relaxed">
                 Get Enclave Connect on your mobile device and stay connected
                 with your community anytime, anywhere. Available on iOS and
                 Android.
@@ -334,25 +308,25 @@ const EnclaveConnect = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-rose-500 to-pink-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="bg-gradient-to-r from-rose-500 to-pink-600">
+        <div className="container max-w-7xl main-section-padding mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
             Ready to Transform Your Community?
           </h2>
-          <p className="text-xl text-white/90 md:!mb-8 !mb-5">
+          <p className="md:text-xl text-lg text-white/90 md:!mb-8 !mb-5">
             Join thousands of communities already using Enclave Connect to
             simplify their daily operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact-us/"
-              className="bg-white text-rose-600 px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all duration-300"
+              className="bg-white text-rose-600 px-8 md:py-4 py-3 rounded-full font-medium border-2 border-white hover:shadow-xl transition-all duration-300"
             >
               Start Free Trial
             </Link>
             <Link
               href="/contact-us/"
-              className="bg-transparent text-white px-8 py-4 rounded-full font-medium border-2 border-white hover:bg-white/10 transition-all duration-300"
+              className="bg-transparent text-white px-8 md:py-4 py-3 rounded-full font-medium border-2 border-white hover:bg-white/10 hover:shadow-xl transition-all duration-300"
             >
               Schedule Demo
             </Link>

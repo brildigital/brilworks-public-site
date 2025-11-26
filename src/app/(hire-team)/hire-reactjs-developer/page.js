@@ -6,14 +6,13 @@ import ReactJSTechnology from "@/app/components/Technologies/ReactJSTechnology";
 
 export const metadata = {
   title:
-    "Hire ReactJS Developers in 72 Hours | Expert React Developers for Hire | Brilworks",
+    "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent | Brilworks",
   description:
-    "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
+    "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
   openGraph: {
-    title:
-      "Hire ReactJS Developers in 72 Hours | Expert React Developers for Hire",
+    title: "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent",
     description:
-      "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
+      "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-reactjs-developer/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -26,10 +25,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
-    title:
-      "Hire ReactJS Developers in 72 Hours | Expert React Developers for Hire",
+    title: "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent",
     description:
-      "Hire ReactJS Developers for specialized development services including enterprise solutions, custom apps, front-end, migration, integration, and support.",
+      "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
 
     card: "summary_large_image",
     site: "@_Brilworks",
