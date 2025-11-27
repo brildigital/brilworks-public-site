@@ -2,8 +2,10 @@
 import React from "react";
 import { ArrowLeft, User, Hexagon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
-const AIAgentLayout = ({ children, title = "OmniLife", showBack = false }) => {
+const AIAgentLayout = ({ children, title = "", showBack = false }) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -34,15 +36,25 @@ const AIAgentLayout = ({ children, title = "OmniLife", showBack = false }) => {
                 <ArrowLeft size={20} />
               </button>
             ) : (
-              <div className="p-2 -ml-2 text-cyan-400">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_15px_rgba(6,182,212,0.5)]">
-                  <Hexagon
-                    size={18}
-                    fill="currentColor"
-                    className="text-white"
-                  />
-                </div>
-              </div>
+              <Link href="/">
+                <Image
+                  className="w-[140px] h-[40px] mb-1"
+                  src="/images/logo-white.svg"
+                  alt="Brilworks Logo"
+                  width="155"
+                  height="46"
+                  priority
+                />
+              </Link>
+              // <div className="p-2 -ml-2 text-cyan-400">
+              //   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+              //     <Hexagon
+              //       size={18}
+              //       fill="currentColor"
+              //       className="text-white"
+              //     />
+              //   </div>
+              // </div>
             )}
             <h1
               className={`text-lg md:text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 font-display ${
@@ -51,31 +63,12 @@ const AIAgentLayout = ({ children, title = "OmniLife", showBack = false }) => {
             >
               {title.toUpperCase()}
             </h1>
-            {!showBack && (
+            {/* {!showBack && (
               <span className="md:hidden text-lg font-bold tracking-wider text-white">
-                OMNILIFE
+                Brilworks
               </span>
-            )}
+            )} */}
           </div>
-
-          <button
-            onClick={() => router.push("/ai-agents/profile/")}
-            className={`p-2 -mr-2 rounded-full transition-all active:scale-95 flex items-center gap-2 group ${
-              pathname === "/ai-agents/profile"
-                ? "bg-cyan-500/10 text-cyan-400"
-                : "hover:bg-white/5 text-slate-400 hover:text-white"
-            }`}
-            aria-label="User Profile"
-          >
-            <span className="hidden md:inline text-xs font-semibold tracking-widest uppercase group-hover:text-cyan-400 transition-colors">
-              Profile
-            </span>
-            <div
-              className={`p-1 rounded-full border border-transparent group-hover:border-cyan-500/50 transition-all`}
-            >
-              <User size={18} />
-            </div>
-          </button>
         </div>
       </header>
 

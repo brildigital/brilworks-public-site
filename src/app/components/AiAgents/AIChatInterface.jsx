@@ -310,7 +310,7 @@ const ChatInterface = ({
 
       if (diff > 0) {
         setTimeout(() => {
-          new Notification(`OmniLife: ${title}`, {
+          new Notification(`Brilworks: ${title}`, {
             body: notes || "It's time!",
             icon: "https://cdn-icons-png.flaticon.com/512/3239/3239958.png",
             silent: false,
@@ -592,7 +592,7 @@ const ChatInterface = ({
                         e.stopPropagation();
                         const link = document.createElement("a");
                         link.href = msg.image;
-                        link.download = `omnilife-${activeModuleName.toLowerCase()}-${Date.now()}.png`;
+                        link.download = `brilworks-${activeModuleName.toLowerCase()}-${Date.now()}.png`;
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
@@ -825,7 +825,7 @@ const ChatInterface = ({
           )}
 
           <div
-            className={`max-w-5xl mx-auto w-full bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl flex items-end gap-2 transition-all duration-300 ${themeStyle.ring}`}
+            className={`max-w-5xl mx-auto w-full bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl flex items-end md:gap-2 gap-1 transition-all duration-300 ${themeStyle.ring}`}
           >
             {allowImages && (
               <>
@@ -838,7 +838,7 @@ const ChatInterface = ({
                 />
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="p-3 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-colors flex-shrink-0"
+                  className="p-3 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-colors flex-shrink-0 my-1"
                   title="Upload Visual Data"
                 >
                   <ImageIcon size={22} />
@@ -848,7 +848,7 @@ const ChatInterface = ({
 
             <button
               onClick={toggleVoiceInput}
-              className={`p-3 rounded-xl transition-all duration-300 flex-shrink-0 m-1 ${
+              className={`p-3 rounded-xl transition-all duration-300 flex-shrink-0 my-1 ${
                 isListening
                   ? "bg-red-500/20 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.2)]"
                   : "text-slate-400 hover:text-white hover:bg-white/5"

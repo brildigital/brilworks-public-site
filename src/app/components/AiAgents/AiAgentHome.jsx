@@ -39,6 +39,7 @@ import {
 import Link from "next/link";
 import AIAgentLayout from "./AIAgentLayout";
 import { ModuleType } from "../../lib/enums";
+import Image from "next/image";
 
 const categories = {
   "Core Systems": [
@@ -408,7 +409,7 @@ const AiAgentHome = () => {
   );
 
   return (
-    <AIAgentLayout title="OmniLife">
+    <AIAgentLayout>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
         <section className="relative pt-10 pb-12 px-6 text-center">
@@ -496,10 +497,18 @@ const AiAgentHome = () => {
         <footer className="border-t border-slate-900 bg-black/40 py-12 px-6 mt-auto backdrop-blur-sm">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8 flex justify-center">
-              <Zap className="text-yellow-500 fill-yellow-500" size={32} />
+              <Image
+                className="w-[155px] h-[46px]"
+                src="/images/logo-white.svg"
+                alt="Brilworks Logo"
+                width="155"
+                height="46"
+                priority
+              />
+              {/* <Zap className="text-yellow-500 fill-yellow-500" size={32} /> */}
             </div>
-            <p className="text-slate-600 text-xs font-mono uppercase tracking-widest">
-              © 2025 OmniLife Neural Interface. Gemini 2.5 Active.
+            <p className="text-slate-300 text-xs font-mono uppercase tracking-widest">
+              © {new Date().getFullYear()} Brilworks. All Rights Reserved.
             </p>
           </div>
         </footer>
