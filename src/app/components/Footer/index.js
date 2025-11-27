@@ -227,7 +227,7 @@ const Footer = () => {
     },
   ];
 
-  return pathname === "/posters/" ? (
+  return pathname === "/posters/" || pathname.includes("/ai-agents/") ? (
     ""
   ) : (
     <div className="footer-background text-colorWhite">
