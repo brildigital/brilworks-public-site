@@ -111,13 +111,13 @@ const EnclaveConnect = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-rose-200 to-pink-200 rounded-3xl transform rotate-3"></div>
-              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
                 <Image
                   src="https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-connect-mockup-1759756976416.webp"
                   alt="Enclave Connect App"
                   width={610}
                   height={430}
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-2xl"
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import {
   Chat,
   Content,
 } from "@google/genai";
+import { GEMINI_API_KEY } from "../../lib/enums";
 
 export const createChatSession = (
   systemInstruction,
@@ -12,10 +13,8 @@ export const createChatSession = (
   tools,
   history
 ) => {
-  const apiKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
-
   // Create client instance inside function to ensure environment variable is ready
-  const ai = new GoogleGenAI({ apiKey });
+  const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
   const personalizedInstruction = `
     ${systemInstruction}
@@ -59,7 +58,6 @@ export const createChatSession = (
 
 export const sendMessageToGemini = async (chat, message, imageBase64) => {
   // Create client instance inside function
-  const apiKey = process.env.API_KEY || "";
   // Note: We don't need to recreate the 'ai' instance here as 'chat' already has the configuration.
 
   if (imageBase64) {

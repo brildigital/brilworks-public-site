@@ -11,6 +11,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
+import { GEMINI_API_KEY } from "../../lib/enums";
 
 const LiveVoiceModal = ({ isOpen, onClose, moduleName, systemInstruction }) => {
   const [isConnected, setIsConnected] = useState(false);
@@ -276,8 +277,7 @@ const LiveVoiceModal = ({ isOpen, onClose, moduleName, systemInstruction }) => {
   const connectLive = async () => {
     try {
       setError(null);
-      const apiKey = process.env.API_KEY || "";
-      const ai = new GoogleGenAI({ apiKey });
+      const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
       const AudioContextClass =
         window.AudioContext || window.webkitAudioContext;

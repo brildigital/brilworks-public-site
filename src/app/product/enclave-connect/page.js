@@ -1,5 +1,5 @@
-import EnclaveConnect from "@/app/components/Product/EnclaveConnect";
 import React from "react";
+import EnclaveConnect from "@/app/components/Product/EnclaveConnect";
 
 export const metadata = {
   title: "Smart Society Management Platform | Brilworks",
@@ -39,11 +39,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div>
-      <EnclaveConnect />
-    </div>
-  );
+  return <EnclaveConnect />;
 };
 
 export default page;

@@ -1061,6 +1061,135 @@ export const sitemapData = [
   //   lastmod: "2025-05-15T12:04:49.528Z",
   // },
   {
+    loc: "https://www.brilworks.com/ai-agents/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/astrology/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/matchmaking/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/diy/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/fitness/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/nutrition/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/habit/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/wellness/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/dreams/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/scheduling/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/music/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/meme/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/cooking/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/travel/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/learning/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/writing/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/language/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/finance/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/wealth/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/fashion/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/interior/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/gardening/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/pets/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/parenting/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/movies/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/career/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/startup/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/tech/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/trends/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/neuro/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/psych/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agents/vision/",
+    lastmod: "2025-11-28T07:29:53.702Z",
+  },
+
+  {
     loc: "https://www.brilworks.com/privacy-policy/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },

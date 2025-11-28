@@ -38,6 +38,7 @@ const CurrentHeader = () => {
     "/pink-signal-privacy-policy/",
     "/ai-tools/ai-document-compliance-review/",
     "/product/enclave-connect/",
+    "/product/exora/",
   ];
 
   const showHeader =
