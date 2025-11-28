@@ -54,6 +54,7 @@ const IndustriesWeServe = ({
       title: "Manufacturing",
       imageSrc: "/images/v2/manufaturing-icon.svg",
       imageAlt: "manufaturing-icon",
+      href: "/industry/manufacturing-software-development-services/",
     },
     {
       title: "Social",

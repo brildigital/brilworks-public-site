@@ -542,6 +542,58 @@
       }
     }
   ],
+  "/industry/hr-software-development/": [
+    {
+      "name": "The Roadmap to Successful AI Implementation",
+      "slug": "roadmap-to-successful-ai-implementation",
+      "content": {
+        "Priority": "",
+        "Published": "2024-09-11 11:27",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/821f4d5d85_banner-image-the-roadmap-to-successful-ai-implementation-1_1x.webp",
+          "alt": "Banner Image - The Roadmap to Successful AI Implementation"
+        }
+      }
+    },
+    {
+      "name": "IT Infrastructure Trends Every CIO Should Know",
+      "slug": "node-js-vs-golang",
+      "content": {
+        "Priority": "",
+        "Published": "2025-06-04 07:27",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/Mobile_Banner_Image_-_IT_Infrastructure_Trends_Every_CIO_Should_Know_(And_How_to_Act_on_Them)-1749022988394.webp",
+          "alt": "2 Banner Image - IT Infrastructure Trends"
+        }
+      }
+    }
+  ],
+  "/industry/manufacturing-software-development-services/": [
+    {
+      "name": "The Roadmap to Successful AI Implementation",
+      "slug": "roadmap-to-successful-ai-implementation",
+      "content": {
+        "Priority": "",
+        "Published": "2024-09-11 11:27",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/821f4d5d85_banner-image-the-roadmap-to-successful-ai-implementation-1_1x.webp",
+          "alt": "Banner Image - The Roadmap to Successful AI Implementation"
+        }
+      }
+    },
+    {
+      "name": "IT Infrastructure Trends Every CIO Should Know",
+      "slug": "node-js-vs-golang",
+      "content": {
+        "Priority": "",
+        "Published": "2025-06-04 07:27",
+        "mobile_banner": {
+          "filename": "https://d11qzsb0ksp6iz.cloudfront.net/assets/Mobile_Banner_Image_-_IT_Infrastructure_Trends_Every_CIO_Should_Know_(And_How_to_Act_on_Them)-1749022988394.webp",
+          "alt": "2 Banner Image - IT Infrastructure Trends"
+        }
+      }
+    }
+  ],
   "/hire-reactjs-developer/": [
     {
       "name": "Scaling ReactJS Applications Effortlessly: A Practical Guide",

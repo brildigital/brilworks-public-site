@@ -108,10 +108,59 @@ const SeeingBelieving = ({
       technology: ["iOS", "Android", "React Native"],
     },
   ];
+  const hrPortfolio = [
+    {
+      title: "Ultimate Recruitment Referral Platform for Streamlined Hiring",
+      link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+      description:
+        "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit. ",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/talentbase-1760359139239.webp",
+      industry: "Human Resource",
+      technology: ["NextJS", "NodeJS", "MongoDB"],
+    },
+    {
+      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
+      link: "/portfolio/healthcare-mobile-app/",
+      description:
+        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+      industry: "Healthcare",
+      technology: ["React Native"],
+    },
+  ];
+  const manufacturingPortfolio = [
+    {
+      title: "Innovative Platform for Comprehensive Supply Chain Management",
+      link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+      description:
+        "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry. ",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/logistic-app-1760359147499.webp",
+      industry: "Manufacturing",
+      technology: ["ReactJS", "Java", "MySql"],
+    },
+    {
+      title:
+        "A Powerful Inventory Management App to Reduce Order Processing Time",
+      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+      description:
+        "Developing a mobile inventory management solution for a leading seat manufacturer.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/inventory-management-1760359134476.webp",
+      industry: "E-Commerce",
+      technology: ["ReactJS", "NodeJS", "MongoDB"],
+    },
+  ];
 
   const caseStudyData =
     pathname === "/industry/fintech-software-development/"
       ? fintechPortfolio
+      : pathname === "/industry/hr-software-development/"
+      ? hrPortfolio
+      : pathname === "/industry/manufacturing-software-development-services/"
+      ? manufacturingPortfolio
       : pathname === "/industry/healthcare-software-development/"
       ? healthcarePortfolio
       : portfolioDynamicItems;

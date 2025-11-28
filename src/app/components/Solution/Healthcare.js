@@ -187,7 +187,7 @@ const HealthCare = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="services-one"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={healthcareServices2}
       />

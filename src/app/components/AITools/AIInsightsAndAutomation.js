@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
-import { ArrowBigLeft, CircleArrowLeft } from "lucide-react";
+import { CircleArrowLeft } from "lucide-react";
 
 const tools = [
   {

@@ -5,8 +5,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
+import { useMediaQuery } from "react-responsive";
 
 const EbookPopup = ({ open, handleClose }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const ebookData = {
     title: (
       <>
@@ -22,17 +24,23 @@ const EbookPopup = ({ open, handleClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed z-50 bottom-2 right-2 p-2">
+      <div
+        className={`fixed z-50 ${
+          isMobile
+            ? "inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center"
+            : "bottom-2 right-2"
+        } p-2`}
+      >
         <motion.div
           key="ebook-popup"
-          initial={{ x: "100%", opacity: 0 }}
+          initial={{ x: isMobile ? "-20%" : "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: "100%", opacity: 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
+          exit={{ x: isMobile ? "-20%" : "100%", opacity: 0 }}
+          transition={{ duration: isMobile ? 0.6 : 0.9, ease: "easeInOut" }}
           className="relative z-10 w-full md:max-w-lg lg:max-w-xl max-h-[350px] rounded-xl overflow-hidden bg-white shadow-lg border pointer-events-auto"
         >
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-[40%] w-[80%]">
+          <div className="flex md:flex-row items-center md:gap-8 gap-3">
+            <div className="md:w-[40%] w-[50%]">
               <Image
                 className="w-full drop-shadow-book-shadow mx-auto"
                 src={ebookData.imageSrc}
@@ -41,7 +49,7 @@ const EbookPopup = ({ open, handleClose }) => {
                 height={65}
               />
             </div>
-            <div className="md:w-[60%] w-[20%]">
+            <div className="md:w-[60%] w-[50%] mt-3">
               <button
                 className="p-1 flex rounded-md absolute right-2 top-2 outline-none hover:bg-gray-100"
                 onClick={() => handleClose()}
@@ -54,12 +62,12 @@ const EbookPopup = ({ open, handleClose }) => {
                 </span>
                 <Heading
                   type="h3"
-                  className="md:!text-xl !text-lg font-medium mt-3"
+                  className="md:!text-xl !text-lg font-medium md:mt-3 mt-2"
                   text={ebookData.title}
                 />
-                <p className="!my-3">
+                <p className="md:!my-3 !mb-2">
                   Downloaded by 120+ CTOs from
-                  <br /> Startups and Enterprises
+                  <br className="md:block hidden" /> Startups and Enterprises
                 </p>
               </div>
               <div className="flex items-center justify-between gap-5 mt-auto mb-4">
@@ -68,7 +76,7 @@ const EbookPopup = ({ open, handleClose }) => {
                   size="small"
                   as={`/ebooks/${ebookData.slug}/`}
                   redirect={`/ebooks/${ebookData.slug}`}
-                  label="Unlock what’s inside"
+                  label={isMobile ? "See Inside" : "Unlock what’s inside"}
                 />
               </div>
             </div>

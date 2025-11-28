@@ -602,7 +602,7 @@ const Article = ({ blok }) => {
           </div>
         </div>
       </div>
-      {openPopup && !isMobile && (
+      {openPopup && (
         <EbookPopup open={openPopup} handleClose={handleEbookPopupClose} />
       )}
     </>
