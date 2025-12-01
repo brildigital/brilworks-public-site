@@ -745,7 +745,7 @@ export const sitemapData = [
     lastmod: "2025-09-24T11:03:27.341Z",
   },
   {
-    loc: "https://www.brilworks.com/tools/project-estimate/",
+    loc: "https://www.brilworks.com/tools/app-development-cost-calculator/",
     lastmod: "2025-09-23T11:03:27.341Z",
   },
   {
