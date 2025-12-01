@@ -31,7 +31,7 @@ export default function PrebuiltSolutionsPage() {
       category: "Social & Lifestyle",
       pricing: "From $15,000",
       timeline: "4-6 weeks",
-      videoLink: "https://youtube.com/shorts/lXJ-9EghV2c",
+      videoLink: "https://www.youtube.com/shorts/lXJ-9EghV2c",
       playstoreLink:
         "https://play.google.com/store/apps/details?id=com.brilworks.mindsync",
       // appstoreLink: "",

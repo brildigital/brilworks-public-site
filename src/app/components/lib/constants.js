@@ -267,6 +267,10 @@ export const resourcesMenuItems = [
         path: "/portfolio/",
       },
       {
+        name: "AI Agents",
+        path: "/ai-agents/",
+      },
+      {
         name: "AI Tools",
         path: "/ai-tools/",
       },

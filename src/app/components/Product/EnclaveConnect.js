@@ -54,7 +54,7 @@ const EnclaveConnect = () => {
   ];
   return (
     <div>
-      <section className="">
+      <section>
         <div className="container max-w-7xl main-section-padding mx-auto mt-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

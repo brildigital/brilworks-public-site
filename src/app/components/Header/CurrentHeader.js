@@ -18,6 +18,7 @@ const CurrentHeader = () => {
     "/gist/react/",
     "/gist/bubble-io/",
     "/gist/flutterflow/",
+    "/product/",
   ];
 
   const specialHeaderPages = [
@@ -37,8 +38,6 @@ const CurrentHeader = () => {
     "/ordernest-privacy-policy/",
     "/pink-signal-privacy-policy/",
     "/ai-tools/ai-document-compliance-review/",
-    "/product/enclave-connect/",
-    "/product/exora/",
   ];
 
   const showHeader =
