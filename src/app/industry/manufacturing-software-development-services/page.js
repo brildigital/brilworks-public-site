@@ -2,14 +2,13 @@ import ManufaturingSoftwareDevelopmentService from "@/app/components/Solution/Ma
 import React from "react";
 
 export const metadata = {
-  title:
-    "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent | Brilworks",
+  title: "Manufacturing Software Development Services by Brilworks | Brilworks",
   description:
-    "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
+    "Custom manufacturing software for SMBs: order management, inventory, shop floor apps, MES, and warehouse tools, built by a team with deep production-domain experience.",
   openGraph: {
-    title: "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent",
+    title: "Manufacturing Software Development Services by Brilworks",
     description:
-      "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
+      "Custom manufacturing software for SMBs: order management, inventory, shop floor apps, MES, and warehouse tools, built by a team with deep production-domain experience.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/manufacturing-software-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -22,9 +21,9 @@ export const metadata = {
     type: "article",
   },
   twitter: {
-    title: "Hire ReactJS Developers in 72 Hours | Top 3% Vetted Talent",
+    title: "Manufacturing Software Development Services by Brilworks",
     description:
-      "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
+      "Custom manufacturing software for SMBs: order management, inventory, shop floor apps, MES, and warehouse tools, built by a team with deep production-domain experience.",
 
     card: "summary_large_image",
     site: "@_Brilworks",

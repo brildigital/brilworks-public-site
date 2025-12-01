@@ -202,6 +202,14 @@ export const industryMenuItems = [
         name: "Fleet Management + GPS",
         path: "/industry/fleet-management-software-development/",
       },
+      {
+        name: "Human Resource",
+        path: "/industry/hr-software-development/",
+      },
+      {
+        name: "Manufacturing",
+        path: "/industry/manufacturing-software-development-services/",
+      },
     ],
   },
   {
@@ -585,6 +593,14 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/industry/edtech-software-development/",
     lastmod: "2025-10-31T18:12:40.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/hr-software-development/",
+    lastmod: "2025-12-01T04:01:52.321Z",
+  },
+  {
+    loc: "https://www.brilworks.com/industry/manufacturing-software-development-services/",
+    lastmod: "2025-12-01T04:01:52.321Z",
   },
   {
     loc: "https://www.brilworks.com/use-case/aws-in-IoT/",
@@ -1201,6 +1217,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "AWS vs Azure: The Unfiltered Comparison for 2025",
+    loc: "https://www.brilworks.com/blog/aws-vs-azure/",
+    lastmod: "2025-11-28T08:08:06.114Z",
+  },
+  {
+    name: "Swift vs. Kotlin: The Strategic Choice for Modern Mobile Teams",
+    loc: "https://www.brilworks.com/blog/swift-vs-kotlin/",
+    lastmod: "2025-11-28T10:41:25.069Z",
+  },
+  {
+    name: "The Best Vibe Coding Tools ",
+    loc: "https://www.brilworks.com/blog/the-best-vibe-coding-tools/",
+    lastmod: "2025-11-26T06:47:44.274Z",
+  },
+  {
     name: "How to Build a Healthcare App in 2025 ",
     loc: "https://www.brilworks.com/blog/how-to-build-a-healthcare-app/",
     lastmod: "2025-11-24T03:21:06.700Z",
@@ -1223,7 +1254,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 White Label Development Companies (2025)",
     loc: "https://www.brilworks.com/blog/top-white-label-development-companies/",
-    lastmod: "2025-11-17T06:45:52.838Z",
+    lastmod: "2025-11-26T13:40:47.508Z",
   },
   {
     name: "Dating App Development Guide for Builders",
@@ -1833,12 +1864,12 @@ export const blogListStaticData = [
   {
     name: "The Hidden Economics Behind White Label App Development",
     loc: "https://www.brilworks.com/blog/hidden-economics-white-label-app-development/",
-    lastmod: "2025-05-27T07:25:22.407Z",
+    lastmod: "2025-11-26T13:41:15.640Z",
   },
   {
     name: "White Label vs Custom Development",
     loc: "https://www.brilworks.com/blog/white-label-vs-custom-development/",
-    lastmod: "2025-06-19T06:13:30.341Z",
+    lastmod: "2025-11-26T13:41:41.132Z",
   },
   {
     name: "A Practical Guide to Healthcare Mobile App Development in 2025",
