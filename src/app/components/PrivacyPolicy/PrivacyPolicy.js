@@ -2,13 +2,13 @@
 import parse from "html-react-parser";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 
-const CircleUpPrivacyPolicy = ({ data }) => {
+const PrivacyPolicy = ({ data, title = "", subTitle = "Privacy Policy" }) => {
   return (
-    <section className="kinderland healthvault mt-[6rem] !mb-8 md:mx-[15px] w-full flex align-middle justify-center">
-      <div className="max-w-screen-xl mx-auto md:w-4/5 w-full md:px-0 px-4">
+    <section className="kinderland healthvault mt-[4rem] !mb-8 md:mx-[15px] w-full flex align-middle justify-center">
+      <div className="container max-w-[1280px] main-section-padding !py-8 md:px-10 px-6 mx-auto w-full">
         <div className="pb-4">
           <h1 className="md:!text-[3rem] !text-[2rem]  font-semibold">
-            Circle Up Privacy Policy
+            {title} {subTitle}
           </h1>
         </div>
         {data ? (
@@ -23,4 +23,4 @@ const CircleUpPrivacyPolicy = ({ data }) => {
   );
 };
 
-export default CircleUpPrivacyPolicy;
+export default PrivacyPolicy;

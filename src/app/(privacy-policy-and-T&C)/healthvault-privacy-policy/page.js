@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import StoryblokClient from "storyblok-js-client";
 
-const HealthVault = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/HealthVault")
+const PrivacyPolicy = dynamic(() =>
+  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
 );
 
 const Storyblok = new StoryblokClient({
@@ -30,7 +30,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <HealthVault data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} />
     </>
   );
 }

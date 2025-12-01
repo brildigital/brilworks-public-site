@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-const EncalveConnectPrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/EncalveConnectPrivacyPolicy")
+const PrivacyPolicy = dynamic(() =>
+  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
 );
 
 export async function getPrivacyPolicy() {
@@ -24,7 +24,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <EncalveConnectPrivacyPolicy data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} title="Encalve Connect" />
     </>
   );
 }

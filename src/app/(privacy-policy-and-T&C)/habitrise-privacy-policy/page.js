@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import StoryblokClient from "storyblok-js-client";
 
-const HabitRisePrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/HabitRisePrivacyPolicy")
+const PrivacyPolicy = dynamic(() =>
+  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
 );
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -29,7 +29,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <HabitRisePrivacyPolicy data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} title="HabitRise" />
     </>
   );
 }

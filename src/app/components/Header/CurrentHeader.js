@@ -38,6 +38,8 @@ const CurrentHeader = () => {
     "/ordernest-privacy-policy/",
     "/pink-signal-privacy-policy/",
     "/ai-tools/ai-document-compliance-review/",
+    "/service-squard-privacy-policy/",
+    "/service-squard-terms-of-service/",
   ];
 
   const showHeader =

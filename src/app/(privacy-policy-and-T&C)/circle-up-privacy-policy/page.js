@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-const CircleUpPrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/CircleUpPrivacyPolicy")
+const PrivacyPolicy = dynamic(() =>
+  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
 );
 
 export async function getPrivacyPolicy() {
@@ -24,7 +24,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <CircleUpPrivacyPolicy data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} title="Circle Up" />
     </>
   );
 }

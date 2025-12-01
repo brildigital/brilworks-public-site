@@ -9,11 +9,14 @@ const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-async function getPrivacyPolicy() {
+async function getTermsAndConditions() {
   try {
-    const res = await Storyblok.get("cdn/stories/kinderland-privacy-policy", {
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    });
+    const res = await Storyblok.get(
+      "cdn/stories/service-squard-privacy-policy",
+      {
+        version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      }
+    );
     return res?.data?.story;
   } catch (error) {
     console.error("Error fetching terms and conditions:", error);
@@ -22,7 +25,7 @@ async function getPrivacyPolicy() {
 }
 
 export default async function page() {
-  const privacyPolicyData = await getPrivacyPolicy();
+  const termsAndConditionData = await getTermsAndConditions();
   return (
     <>
       {process.env.VERCEL_ENV === "production" ? (
@@ -30,7 +33,11 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <PrivacyPolicy data={privacyPolicyData} title="Kinderland" />
+      <PrivacyPolicy
+        data={termsAndConditionData}
+        title="Service Squard"
+        subTitle="Terms of Service"
+      />
     </>
   );
 }

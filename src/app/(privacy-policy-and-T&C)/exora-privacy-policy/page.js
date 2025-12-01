@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-const ExoraPrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/ExoraPrivacyPolicy")
+const PrivacyPolicy = dynamic(() =>
+  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
 );
 
 export async function getPrivacyPolicy() {
@@ -24,7 +24,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <ExoraPrivacyPolicy data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} title="Exora" />
     </>
   );
 }
