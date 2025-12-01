@@ -997,6 +997,11 @@ const nextConfig = {
         destination: `/tools/tech-readiness-assessment-tool/`,
         statusCode: 301,
       },
+      {
+        source: `/tools/project-estimate/`,
+        destination: `/tools/app-development-cost-calculator/`,
+        statusCode: 301,
+      },
     ];
   },
 };
