@@ -70,7 +70,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
     "The platform, design requirement, description, and project complexity are considered when calculating the cost. This is an estimate to give you an idea of the possible budget range for your project.";
 
   const TITLE_ICON_MAP = {
-    "/tools/project-estimate/": {
+    "/tools/app-development-cost-calculator/": {
       title: "Cost Estimate",
       icon: Wallet,
       desc: defaultDesc,

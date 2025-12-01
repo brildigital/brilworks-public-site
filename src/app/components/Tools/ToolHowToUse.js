@@ -987,7 +987,7 @@ const ToolHowToUse = () => {
   const pathname = usePathname();
 
   const showDataBasedOnPathname = {
-    "/tools/project-estimate/": projectEstimateSteps,
+    "/tools/app-development-cost-calculator/": projectEstimateSteps,
     "/tools/roi-calculator/": roiCalculatorSteps,
     "/tools/mobility-app-development-calculator/":
       mobilityAppDevCalculatorSteps,

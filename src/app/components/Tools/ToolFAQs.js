@@ -1204,7 +1204,8 @@ const ToolFAQs = () => {
   };
 
   const showDataBasedOnPathname = {
-    "/tools/project-estimate/": softwareDevelopmentCostCalculatorFaqData,
+    "/tools/app-development-cost-calculator/":
+      softwareDevelopmentCostCalculatorFaqData,
     "/tools/roi-calculator/": roiCalculatorFaqData,
     "/tools/mobility-app-development-calculator/":
       appLikeUberCostCalculatorFaqData,

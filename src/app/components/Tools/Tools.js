@@ -11,7 +11,7 @@ const toolsData = [
       "Estimate software project costs fast. Select platform, complexity, and features to get accurate budget and timeline insights.",
 
     bg: "bg-blue-200",
-    link: "/tools/project-estimate/",
+    link: "/tools/app-development-cost-calculator/",
     tags: ["DEVELOPMENT", "SALES"],
   },
   {

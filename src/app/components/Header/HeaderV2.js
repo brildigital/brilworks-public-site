@@ -185,14 +185,14 @@ const HeaderV2 = () => {
                     pathname === "/free-ui/"
                       ? "Claim Free Screens"
                       : pathname === "/ai-studio/" ||
-                        pathname === "/project-estimate/" ||
+                        pathname === "/app-development-cost-calculator/" ||
                         pathname === "/roi-calculator/"
                       ? "Contact Us"
                       : "Claim Free"
                   }
                   className={
                     pathname === "/ai-studio/" ||
-                    pathname === "/project-estimate/" ||
+                    pathname === "/app-development-cost-calculator/" ||
                     pathname === "/roi-calculator/"
                       ? ""
                       : "header-btn"
@@ -201,7 +201,7 @@ const HeaderV2 = () => {
                     pathname === "/free-ui/"
                       ? "#cta"
                       : pathname === "/ai-studio/" ||
-                        pathname === "/project-estimate/" ||
+                        pathname === "/app-development-cost-calculator/" ||
                         pathname === "/roi-calculator/"
                       ? ""
                       : "/free-ui/"
