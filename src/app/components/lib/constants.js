@@ -1076,6 +1076,14 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/product/encalve-connect/",
     lastmod: "2025-11-24T12:08:23.211Z",
   },
+  {
+    loc: "https://www.brilworks.com/product/exora/",
+    lastmod: "2025-11-27T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/product/mind-sync/",
+    lastmod: "2025-12-02T12:08:23.211Z",
+  },
   // {
   //   loc: "https://www.brilworks.com/site-map/",
   //   lastmod: "2025-05-15T12:04:49.528Z",

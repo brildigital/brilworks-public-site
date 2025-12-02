@@ -1,15 +1,10 @@
 "use client";
 import {
-  Calendar,
   Check,
   ChevronRight,
-  ClipboardList,
   Heart,
   MessageCircle,
-  Smartphone,
   Users,
-  Video,
-  Activity,
   Brain,
   Zap,
   Sparkles,
@@ -19,40 +14,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { scrollToSection } from "../lib/commonFunction";
 
 const MindSync = () => {
-  const exoraFeatures = [
-    {
-      icon: ClipboardList,
-      title: "Smart Questionnaires",
-      desc: "Interactive health assessments to track symptoms, pain levels, and recovery milestones with intelligent follow-up questions.",
-    },
-    {
-      icon: Video,
-      title: "Exercise Library",
-      desc: "Comprehensive video-guided exercises tailored to each patient's recovery plan with progress tracking and reminders.",
-    },
-    {
-      icon: MessageCircle,
-      title: "Real-Time Chat",
-      desc: "Secure messaging between doctors and patients for quick questions, updates, and continuous support throughout recovery.",
-    },
-    {
-      icon: Activity,
-      title: "Progress Tracking",
-      desc: "Visual dashboards showing recovery progress, completed exercises, and health metrics over time for both patients and doctors.",
-    },
-    {
-      icon: Calendar,
-      title: "Follow-Up Management",
-      desc: "Automated reminders for appointments, medication, exercises, and check-ins to ensure consistent care.",
-    },
-    {
-      icon: Users,
-      title: "Patient Management",
-      desc: "Centralized dashboard for doctors to manage multiple patients, view analytics, and optimize care plans efficiently.",
-    },
-  ];
   return (
     <div>
       <section className="pt-16">
@@ -441,7 +405,10 @@ const MindSync = () => {
       </section>
 
       {/* Download App Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-50 to-white">
+      <section
+        id="download-app"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-50 to-white"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
