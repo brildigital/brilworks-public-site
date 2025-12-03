@@ -255,6 +255,17 @@ export async function getBlogForSitemap() {
     page += 1;
   }
 
+  // function formatBlogData(data) {
+  //   return {
+  //     name: data.name,
+  //     content: data.content ?? "",
+  //     created_at: data.created_at,
+  //     published_at: data.published_at,
+  //     updated_at: data.updated_at,
+  //     blog_url: `https://www.brilworks.com/${data.full_slug}`,
+  //   };
+  // }
+
   const blogSiteMapData = allStories.map((data) => {
     return {
       name: data.name,
@@ -262,6 +273,9 @@ export async function getBlogForSitemap() {
       lastmod: `${data.published_at}`,
     };
   });
+  // const blogData = allStories.map((data) => {
+  //   return formatBlogData(data);
+  // });
 
   return blogSiteMapData;
 }

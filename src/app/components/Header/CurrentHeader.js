@@ -40,6 +40,8 @@ const CurrentHeader = () => {
     "/ai-tools/ai-document-compliance-review/",
     "/service-squard-privacy-policy/",
     "/service-squard-terms-of-service/",
+    "/kindcircle-privacy-policy/",
+    "/kindcircle-terms-and-condition/",
   ];
 
   const showHeader =
