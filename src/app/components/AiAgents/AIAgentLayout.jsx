@@ -11,7 +11,7 @@ const AIAgentLayout = ({ children, title = "", showBack = false }) => {
 
   // Allow scrolling on Home and Profile pages, keep others (Chat) fixed/hidden for their own scroll handling
   const isScrollable =
-    pathname === "/ai-agents/" || pathname === "/ai-agents/profile";
+    pathname === "/ai-agents/" || pathname === "/ai-agents/profile/";
 
   return (
     <div className="h-[100dvh] bg-slate-950 text-slate-100 flex flex-col relative overflow-auto font-sans">
@@ -26,7 +26,7 @@ const AIAgentLayout = ({ children, title = "", showBack = false }) => {
       {/* Header - Floating Glass Pill */}
       <header className="fixed top-4 inset-x-0 z-30 flex justify-center px-4 pointer-events-none">
         <div className="w-full max-w-5xl h-16 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between px-4 pointer-events-auto">
-          <div className="flex items-center gap-3">
+          <div className="w-full flex justify-between items-center gap-3">
             {showBack ? (
               <button
                 onClick={() => router.push("/ai-agents/")}
@@ -68,6 +68,26 @@ const AIAgentLayout = ({ children, title = "", showBack = false }) => {
                 Brilworks
               </span>
             )} */}
+            <div>
+              <button
+                onClick={() => router.push("/ai-agents/profile/")}
+                className={`p-2 -mr-2 rounded-full transition-all active:scale-95 flex items-center gap-2 group ${
+                  pathname === "/ai-agents/profile"
+                    ? "bg-cyan-500/10 text-cyan-400"
+                    : "hover:bg-white/5 text-slate-400 hover:text-white"
+                }`}
+                aria-label="User Profile"
+              >
+                <span className="hidden md:inline text-xs font-semibold tracking-widest uppercase group-hover:text-cyan-400 transition-colors">
+                  Profile
+                </span>
+                <div
+                  className={`p-1 rounded-full border border-transparent group-hover:border-cyan-500/50 transition-all`}
+                >
+                  <User size={18} />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </header>

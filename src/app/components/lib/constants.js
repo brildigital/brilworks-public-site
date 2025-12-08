@@ -1073,7 +1073,7 @@ export const sitemapData = [
     lastmod: "2025-11-24T12:05:21.531Z",
   },
   {
-    loc: "https://www.brilworks.com/product/encalve-connect/",
+    loc: "https://www.brilworks.com/product/enclave-connect/",
     lastmod: "2025-11-24T12:08:23.211Z",
   },
   {
@@ -1229,9 +1229,34 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Cost Breakdown to Build a Custom Logistics Software",
+    loc: "https://www.brilworks.com/blog/custom-logistics-software-cost/",
+    lastmod: "2025-12-08T06:55:07.194Z",
+  },
+  {
+    name: "Top software development companies in USA",
+    loc: "https://www.brilworks.com/blog/top-software-development-companies-in-usa/",
+    lastmod: "2025-12-05T13:21:09.580Z",
+  },
+  {
+    name: "AI App Development Cost in 2025",
+    loc: "https://www.brilworks.com/blog/ai-app-development-cost/",
+    lastmod: "2025-12-05T13:13:20.936Z",
+  },
+  {
+    name: "AI in Wealth Management",
+    loc: "https://www.brilworks.com/blog/ai-in-wealth-management/",
+    lastmod: "2025-12-02T12:42:43.731Z",
+  },
+  {
+    name: "Popular Hiring Models for Software Development",
+    loc: "https://www.brilworks.com/blog/popular-hiring-models-for-software-development/",
+    lastmod: "2025-12-01T08:06:47.856Z",
+  },
+  {
     name: "AWS vs Azure: The Unfiltered Comparison for 2025",
     loc: "https://www.brilworks.com/blog/aws-vs-azure/",
-    lastmod: "2025-11-28T08:08:06.114Z",
+    lastmod: "2025-12-01T03:57:19.069Z",
   },
   {
     name: "Swift vs. Kotlin: The Strategic Choice for Modern Mobile Teams",
@@ -2996,7 +3021,7 @@ export const blogListStaticData = [
   {
     name: "Best Node.js Open Source Projects in GitHub",
     loc: "https://www.brilworks.com/blog/best-node-js-open-source-projects-in-github/",
-    lastmod: "2025-05-27T07:42:47.334Z",
+    lastmod: "2025-12-02T13:23:49.321Z",
   },
   {
     name: "Next.js 13 Drops with Exciting Updates: Find Out What’s New?",
@@ -3036,7 +3061,7 @@ export const blogListStaticData = [
   {
     name: "Top 10 Websites Built Using React.js",
     loc: "https://www.brilworks.com/blog/top-10-websites-built-using-react-js/",
-    lastmod: "2025-10-07T10:20:13.938Z",
+    lastmod: "2025-12-03T05:44:08.959Z",
   },
   {
     name: "Beyond ChatGPT: Trending AI Tools",
