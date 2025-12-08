@@ -93,3 +93,27 @@ export const sendMessageToGemini = async (chat, message, imageBase64) => {
     return await chat.sendMessageStream({ message });
   }
 };
+
+export const generateEventFeatures = async (eventType, audienceSize) => {
+  try {
+    const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+
+    const prompt = `
+      You are an expert event technology consultant for Brilworks.
+      A client is planning a ${eventType} for approximately ${audienceSize} attendees.
+      Suggest 3 specific, high-tech, innovative app features that would increase ROI and engagement for this specific event type.
+      Focus on Data-Driven and AI-powered ideas.
+      Keep the response concise, formatted as a markdown list.
+    `;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: prompt,
+    });
+
+    return response.text || "Unable to generate suggestions at this time.";
+  } catch (error) {
+    console.error("Error generating event features:", error);
+    return "Our AI consultant is momentarily busy. Please try again or contact our team directly.";
+  }
+};

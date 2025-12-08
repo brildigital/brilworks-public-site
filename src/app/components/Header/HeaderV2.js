@@ -125,7 +125,11 @@ const HeaderV2 = () => {
         <div className={`header ${isHidden ? "header-hide" : ""}`}>
           <Navbar
             className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
-              openNav ? "!fixed" : hasBg ? "bg-[#000000e6]" : "bg-transparent"
+              openNav
+                ? "!fixed"
+                : hasBg || pathname === "/event-app-development/"
+                ? "bg-[#000000e6]"
+                : "bg-transparent"
             }`}
           >
             <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
