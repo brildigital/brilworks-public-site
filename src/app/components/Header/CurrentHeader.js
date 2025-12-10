@@ -18,7 +18,7 @@ const CurrentHeader = () => {
     "/gist/react/",
     "/gist/bubble-io/",
     "/gist/flutterflow/",
-    "/product/",
+    "/x/product-listing/",
   ];
 
   const specialHeaderPages = [
@@ -42,6 +42,7 @@ const CurrentHeader = () => {
     "/service-squard-terms-of-service/",
     "/kindcircle-privacy-policy/",
     "/kindcircle-terms-and-condition/",
+    "/x/product-listing/",
   ];
 
   const showHeader =
