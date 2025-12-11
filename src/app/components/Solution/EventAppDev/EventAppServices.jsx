@@ -35,7 +35,7 @@ const EventAppServices = () => {
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
             End-to-End Solutions
           </h2>
-          <p className="!mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="!mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
             Event App Development Services
           </p>
           <p className="!mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
@@ -51,7 +51,7 @@ const EventAppServices = () => {
               className="flex gap-6 p-8 rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 bg-white hover:border-blue-100 group"
             >
               <div className="flex-shrink-0">
-                <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
                 </div>
               </div>

@@ -37,7 +37,7 @@ const AiFeatureDemo = () => {
               <Cpu className="w-4 h-4" />
               Advanced Technology
             </div>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl !mb-6">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl !mb-6">
               Advanced Capabilities for Modern Events
             </h2>
             <p className="text-gray-300 text-lg !mb-8">

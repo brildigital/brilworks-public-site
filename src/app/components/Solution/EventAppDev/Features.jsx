@@ -16,7 +16,7 @@ const Features = () => {
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
             Core Features
           </h2>
-          <p className="!mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="!mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
             Features That Drive Engagement
           </p>
           <p className="!mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
