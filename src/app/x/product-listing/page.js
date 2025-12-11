@@ -46,6 +46,46 @@ const ProductsPage = () => {
       color: "from-green-600 to-teal-600",
       badge: "Healthcare",
     },
+    {
+      title: "Kinderland",
+      slug: "kinder-land",
+      description:
+        "Unlock a world of fun and learning! Educational games for curious young minds that make learning phonics, numbers, alphabets, and shapes an exciting adventure.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-banner.webp",
+      color: "from-sky-400 to-green-400",
+      badge: "Kids Learning",
+    },
+    {
+      title: "Pink Signal",
+      slug: "pink-signal",
+      description:
+        "Women safety app with instant SOS alerts, real-time location tracking, and trusted contacts. Stay safe, stay connected with 24/7 protection.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/pinksignal-banner.webp",
+      color: "from-pink-600 to-rose-600",
+      badge: "Women Safety",
+    },
+    {
+      title: "FitOrbit",
+      slug: "fit-orbit",
+      description:
+        "Your ultimate fitness companion. Build custom workout routines, track progress with detailed analytics, and achieve your fitness goals with an extensive exercise library.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitorbit-banner.webp",
+      color: "from-[#58CBD1] to-[#3da9b0]",
+      badge: "Fitness & Workout",
+    },
+    {
+      title: "ServiceSquad",
+      slug: "service-squad",
+      description:
+        "Professional home services at your doorstep. Book verified professionals for cleaning, repairs, beauty, and more with live tracking and secure payments.",
+      image:
+        "https://d11qzsb0ksp6iz.cloudfront.net/assets/servicesquad-banner.webp",
+      color: "from-[#FF6B35] to-[#004E89]",
+      badge: "Home Services",
+    },
   ];
 
   return (
