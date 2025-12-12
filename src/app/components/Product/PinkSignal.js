@@ -162,7 +162,7 @@ const PinkSignal = () => {
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 !mb-8 leading-relaxed">
                 PinkSignal empowers women with instant SOS alerts, real-time
                 location sharing, and peace of mind for families. Stay safe,
                 stay connected.
@@ -171,7 +171,7 @@ const PinkSignal = () => {
               <div className="flex flex-col gap-4 justify-center lg:justify-start">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://apps.apple.com/us/app/pinksignal-women-safety-app/id6754561696"
+                    href="https://play.google.com/store/apps/details?id=com.brilworksdigital.pinksignal&pcampaignid=web_share"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-center space-x-3 bg-black text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition-all duration-300 hover:shadow-xl"
@@ -190,7 +190,7 @@ const PinkSignal = () => {
                   </a>
 
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.brilworksdigital.pinksignal&pcampaignid=web_share"
+                    href="https://apps.apple.com/us/app/pinksignal-women-safety-app/id6754561696"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-center space-x-3 bg-black text-white px-6 py-3 rounded-2xl hover:bg-gray-800 transition-all duration-300 hover:shadow-xl"
@@ -208,13 +208,6 @@ const PinkSignal = () => {
                     </div>
                   </a>
                 </div>
-
-                <a
-                  href="#features"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-pink-600 hover:bg-pink-50 transition-all duration-300 w-full sm:w-auto"
-                >
-                  Learn More
-                </a>
               </div>
 
               <div className="mt-12 grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">

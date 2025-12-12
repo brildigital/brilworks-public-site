@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/servicesquad-banner.webp",
+        url: "/images/service-squad-banner.webp",
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/servicesquad-banner.webp",
+        url: "/images/service-squad-banner.webp",
       },
     ],
     site: "@_Brilworks",

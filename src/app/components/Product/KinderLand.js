@@ -82,9 +82,9 @@ const KinderLand = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sky-300 to-green-300 rounded-3xl transform rotate-3"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
-                <div className="flex items-center justify-center bg-gradient-to-br from-sky-400 to-green-400 rounded-2xl p-16">
+                <div className="flex items-center justify-center bg-gradient-to-br from-sky-400 to-green-400 rounded-2xl">
                   <Image
-                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-banner.webp"
+                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp"
                     alt="Kinderland App"
                     width={610}
                     height={430}

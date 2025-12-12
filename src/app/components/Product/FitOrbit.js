@@ -144,43 +144,16 @@ const FitOrbit = () => {
                 Available on Google Play Store
               </p>
             </div>
-
-            <div className="relative hidden lg:block">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-1 space-y-4">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#58CBD1] to-[#3da9b0] rounded-3xl transform rotate-3"></div>
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
+                <div className="flex items-center justify-center bg-gradient-to-br  from-[#58CBD1] to-[#3da9b0] rounded-2xl">
                   <Image
-                    src="/images/v2/fitorbit-mockup-1.png"
-                    alt="FitOrbit Workout Tracking"
-                    width={300}
-                    height={600}
-                    className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-                    style={{
-                      boxShadow: "0 25px 50px -12px rgba(88, 203, 209, 0.2)",
-                    }}
-                  />
-                </div>
-                <div className="col-span-1 space-y-4 mt-8">
-                  <Image
-                    src="/images/v2/fitorbit-mockup-2.png"
-                    alt="FitOrbit Exercise Library"
-                    width={300}
-                    height={600}
-                    className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-                    style={{
-                      boxShadow: "0 25px 50px -12px rgba(88, 203, 209, 0.2)",
-                    }}
-                  />
-                </div>
-                <div className="col-span-1 space-y-4 mt-16">
-                  <Image
-                    src="/images/v2/fitorbit-mockup-3.png"
-                    alt="FitOrbit Progress Tracking"
-                    width={300}
-                    height={600}
-                    className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-                    style={{
-                      boxShadow: "0 25px 50px -12px rgba(88, 203, 209, 0.2)",
-                    }}
+                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/fitnest-app-mockup-1759749065112.webp"
+                    alt="Kinderland App"
+                    width={610}
+                    height={430}
+                    className="w-full h-auto rounded-2xl"
                   />
                 </div>
               </div>

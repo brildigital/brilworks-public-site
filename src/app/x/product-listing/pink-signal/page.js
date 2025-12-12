@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/images/v2/pinksignal-logo.png",
+        url: "/images/pin-signap-banner-image.png",
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/images/v2/pinksignal-logo.png",
+        url: "/images/pin-signap-banner-image.png",
       },
     ],
     site: "@_Brilworks",
