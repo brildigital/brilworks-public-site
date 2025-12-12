@@ -1002,6 +1002,21 @@ const nextConfig = {
         destination: `/tools/app-development-cost-calculator/`,
         statusCode: 301,
       },
+      {
+        source: `/product/enclave-connect/`,
+        destination: `/x/product-listing/enclave-connect/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/exora/`,
+        destination: `/x/product-listing/exora/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/mind-sync/`,
+        destination: `/x/product-listing/mind-sync/`,
+        statusCode: 301,
+      },
     ];
   },
 };

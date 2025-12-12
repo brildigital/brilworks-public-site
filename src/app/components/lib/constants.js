@@ -1077,17 +1077,42 @@ export const sitemapData = [
     lastmod: "2025-11-24T12:05:21.531Z",
   },
   {
-    loc: "https://www.brilworks.com/product/enclave-connect/",
+    loc: "https://www.brilworks.com/x/product-listing/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/enclave-connect/",
     lastmod: "2025-11-24T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/product/exora/",
+    loc: "https://www.brilworks.com/x/product-listing/exora/",
     lastmod: "2025-11-27T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/product/mind-sync/",
+    loc: "https://www.brilworks.com/x/product-listing/mind-sync/",
     lastmod: "2025-12-02T12:08:23.211Z",
   },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/fit-orbit/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/kinderland/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/pet-finder/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/pink-signal/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/service-squard/",
+    lastmod: "2025-12-12T12:08:23.211Z",
+  },
+
   // {
   //   loc: "https://www.brilworks.com/site-map/",
   //   lastmod: "2025-05-15T12:04:49.528Z",
