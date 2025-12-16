@@ -59,12 +59,12 @@ export async function GET() {
     const assetFolder = "assets";
     const objects = await listAllObjects(bucketName, assetFolder);
 
-    // const urls = objects.map(
-    //   (obj) => `${process.enev.NEXT_PUBLIC_CLOUDFRONT_URL}/${obj.Key}`
-    // );
     const urls = objects.map(
-      (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+      (obj) => `https://d14lhgoyljo1xt.cloudfront.net/${obj.Key}`
     );
+    // const urls = objects.map(
+    //   (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+    // );
 
     return new NextResponse(JSON.stringify({ assets: urls }), {
       status: 200,
