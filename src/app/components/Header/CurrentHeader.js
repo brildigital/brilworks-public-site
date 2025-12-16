@@ -42,6 +42,7 @@ const CurrentHeader = () => {
     "/service-squard-terms-of-service/",
     "/kindcircle-privacy-policy/",
     "/kindcircle-terms-and-condition/",
+    "/lifepilot-privacy-policy/",
     "/x/product-listing/",
   ];
 

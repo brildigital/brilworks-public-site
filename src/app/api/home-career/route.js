@@ -10,7 +10,16 @@ import {
 
 export async function POST(req, res) {
   const payload = await req.json();
-  const { name, email, phone, message, page, downloadLink, token } = payload;
+  const {
+    name,
+    email,
+    phone,
+    message,
+    page,
+    downloadLink,
+    token,
+    previousPage,
+  } = payload;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
