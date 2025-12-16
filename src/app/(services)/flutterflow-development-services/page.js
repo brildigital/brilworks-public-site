@@ -13,7 +13,7 @@ export const metadata = {
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
-        url: "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/1849c045da_flutterflow-banner.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/1849c045da_flutterflow-banner.webp`,
       },
     ],
     locale: "en-US",

@@ -17,7 +17,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/mindsync-mockup-1759756960049.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mindsync-mockup-1759756960049.webp`,
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/mindsync-mockup-1759756960049.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mindsync-mockup-1759756960049.webp`,
       },
     ],
     site: "@_Brilworks",

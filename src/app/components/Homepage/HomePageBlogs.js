@@ -23,8 +23,7 @@ const HomePageBlogs = () => {
       </>
     ),
     description: "",
-    imageSrc:
-      "https://d11qzsb0ksp6iz.cloudfront.net/assets/Mockup_-_How_To_Launch_an_AI_MVP_in_48_Hours-1758710237296.png",
+    imageSrc: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/Mockup_-_How_To_Launch_an_AI_MVP_in_48_Hours-1758710237296.png`,
     slug: "launch-ai-mvp-in-48-hours-playbook",
   };
 

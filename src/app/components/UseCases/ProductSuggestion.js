@@ -75,8 +75,8 @@ const ProductSuggestion = () => {
               const isAdditionalProduct = slug === additionalProductSlug;
               const bannerUrl = isAdditionalProduct
                 ? additionalProductSlug === "white-label-fitness-app"
-                  ? "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/7cf016f5d2_white-label-fitness-app.webp"
-                  : "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/fba0ee1023_white-label-delivery-app-banner.webp"
+                  ? `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/7cf016f5d2_white-label-fitness-app.webp`
+                  : `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/white-label-delivery-app-banner-1765886455361.webp`
                 : content?.mobile_banner?.filename
                 ? formatSrcUrl(content?.mobile_banner?.filename)
                 : "/images/not-found-image.webp";

@@ -16,7 +16,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-connect-mockup-1759756976416.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/enclave-connect-mockup-1759756976416.webp`,
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-connect-mockup-1759756976416.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/enclave-connect-mockup-1759756976416.webp`,
       },
     ],
     site: "@_Brilworks",

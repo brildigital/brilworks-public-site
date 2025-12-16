@@ -5,44 +5,6 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { portfolioDynamicItems } from "../lib/constants";
 
-const proofItems = [
-  {
-    title: "Building a Swipe-Based Platform Connecting Artists and Buyers",
-    link: "/portfolio/art-marketplace-app/",
-    description:
-      "We created a dynamic platform that allows art lovers to discover new pieces, communicate directly with artists, and complete purchases with ease, fostering a vibrant art community.",
-    image:
-      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/75ad9804cf_building-swiper-based-mobile-app.webp",
-    alt: "Social marketplace app",
-  },
-  {
-    title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
-    link: "/portfolio/pet-finding-app/",
-    description:
-      "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
-    image:
-      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/d47ae82eac_connecting-pet-owners.webp",
-    alt: "Pet finder app",
-  },
-  {
-    title: "Making Early Learning Fun with An Interactive Educational Game",
-    link: "/portfolio/educational-game-app/",
-    description:
-      "We developed a safe, mobile game for kids aged 2-6, using gamified activities to teach alphabets, numbers, colors, and shapes in an engaging way.",
-    image:
-      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/a8b82fb2a7_early-learning-app.webp",
-    alt: "Educational mobile game",
-  },
-  {
-    title: "Streamlining Energy Audits with An All-In-One CRM Solution",
-    link: "/portfolio/crm-solution/",
-    description:
-      "We built a specialized CRM platform that automates energy auditing, connecting key stakeholders and optimizing workflows from scheduling to invoicing.",
-    image:
-      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/9918cfc298_crm-based-software.webp",
-    alt: "Consulting App",
-  },
-];
 // const proofItems = [
 //   {
 //     title: "Zo Labs Growth Engine",

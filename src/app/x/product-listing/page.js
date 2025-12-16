@@ -11,8 +11,7 @@ const ProductsPage = () => {
       slug: "pet-finder",
       description:
         "Discover adoptable pets near you or help reunite lost animals with their families. Browse thousands of listings, filter by breed, age, and location.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/petly-pet-finder-app-1759145787607.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/petly-pet-finder-app-1759145787607.webp`,
       color: "from-[#867aec] to-purple-500",
       badge: "Pet Adoption",
     },
@@ -21,8 +20,7 @@ const ProductsPage = () => {
       slug: "mind-sync",
       description:
         "AI-powered dating app that revolutionizes how you connect with others. Our advanced AI matches you with people who share your values, interests, and personality traits.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/mindsync-mockup-1759756960049.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mindsync-mockup-1759756960049.webp`,
       color: "from-purple-600 to-pink-600",
       badge: "AI Matchmaking",
     },
@@ -31,8 +29,7 @@ const ProductsPage = () => {
       slug: "enclave-connect",
       description:
         "A unified digital platform that simplifies daily society tasks and keeps every resident connected in real time.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-connect-mockup-1759756976416.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/enclave-connect-mockup-1759756976416.webp`,
       color: "from-blue-600 to-cyan-600",
       badge: "Society Management",
     },
@@ -41,8 +38,7 @@ const ProductsPage = () => {
       slug: "exora",
       description:
         "Two-sided healthcare platform that helps doctors manage patients, assign follow-ups, share exercises, and stay in touch through real-time chat.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       color: "from-green-600 to-teal-600",
       badge: "Healthcare",
     },
@@ -51,8 +47,7 @@ const ProductsPage = () => {
       slug: "kinderland",
       description:
         "Unlock a world of fun and learning! Educational games for curious young minds that make learning phonics, numbers, alphabets, and shapes an exciting adventure.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kinderland-case-study-1759145795626.webp`,
       color: "from-sky-400 to-green-400",
       badge: "Kids Learning",
     },
@@ -70,8 +65,7 @@ const ProductsPage = () => {
       slug: "fit-orbit",
       description:
         "Your ultimate fitness companion. Build custom workout routines, track progress with detailed analytics, and achieve your fitness goals with an extensive exercise library.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitnest-app-mockup-1759749065112.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`,
       color: "from-[#58CBD1] to-[#3da9b0]",
       badge: "Fitness & Workout",
     },

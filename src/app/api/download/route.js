@@ -7,8 +7,8 @@ export async function GET(request) {
     const trustedDomains = [
       "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/",
       "https://a.storyblok.com/",
-      "https://d11qzsb0ksp6iz.cloudfront.net/",
-      "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/",
+      `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/`,
+      "https://brilworks-site-assets.s3.eu-central-1.amazonaws.com/",
     ];
 
     const isValidFile =

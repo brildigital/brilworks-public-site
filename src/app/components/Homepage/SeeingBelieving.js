@@ -67,8 +67,7 @@ const SeeingBelieving = ({
       link: "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
       description:
         "Developing a mobile app for an ultimate AI stock prediction platform, allowing users to trade based on data-driven insights.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/terrago-1760359156664.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/terrago-1760359156664.webp`,
       alt: "Fintech App",
       industry: "Fintech",
       technology: ["React Native", "Java", "MySQL"],
@@ -79,8 +78,7 @@ const SeeingBelieving = ({
       link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
       description:
         "Developing a mobile inventory management solution for a leading seat manufacturer.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/inventory-management-1760359134476.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
       alt: "E-commerce App",
       industry: "E-Commerce",
       technology: ["ReactJS", "NodeJS", "MongoDB"],
@@ -92,8 +90,7 @@ const SeeingBelieving = ({
       link: "/portfolio/healthcare-mobile-app/",
       description:
         "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       industry: "Healthcare",
       technology: ["React Native"],
     },
@@ -102,8 +99,7 @@ const SeeingBelieving = ({
       link: "/portfolio/mobile-fitness-app/",
       description:
         "We built a feature-rich fitness app that combines real-time performance tracking, personalized plans, and expert insights to help users achieve their health goals seamlessly.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitnest-app-mockup-1759749065112.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`,
       industry: "Healthcare",
       technology: ["iOS", "Android", "React Native"],
     },
@@ -114,8 +110,7 @@ const SeeingBelieving = ({
       link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
       description:
         "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit. ",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/talentbase-1760359139239.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/talentbase-1760359139239.webp`,
       industry: "Human Resource",
       technology: ["NextJS", "NodeJS", "MongoDB"],
     },
@@ -124,8 +119,7 @@ const SeeingBelieving = ({
       link: "/portfolio/healthcare-mobile-app/",
       description:
         "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       industry: "Healthcare",
       technology: ["React Native"],
     },
@@ -136,8 +130,7 @@ const SeeingBelieving = ({
       link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
       description:
         "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry. ",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/logistic-app-1760359147499.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/logistic-app-1760359147499.webp`,
       industry: "Manufacturing",
       technology: ["ReactJS", "Java", "MySql"],
     },
@@ -147,8 +140,7 @@ const SeeingBelieving = ({
       link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
       description:
         "Developing a mobile inventory management solution for a leading seat manufacturer.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/inventory-management-1760359134476.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
       industry: "E-Commerce",
       technology: ["ReactJS", "NodeJS", "MongoDB"],
     },

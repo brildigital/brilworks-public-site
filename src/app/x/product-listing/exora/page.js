@@ -16,7 +16,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       },
     ],
     site: "@_Brilworks",

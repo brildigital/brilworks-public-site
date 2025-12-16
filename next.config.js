@@ -16,7 +16,8 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "cdn-icons-png.flaticon.com",
       "brilworks-website-asset.s3.ap-south-1.amazonaws.com",
-      "brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com",
+      "brilworks-site-assets.s3.eu-central-1.amazonaws.com",
+      "d14lhgoyljo1xt.cloudfront.net",
     ],
   },
   webpack: (config, { dev, isServer }) => {

@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitorbit-banner.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitorbit-banner.webp`,
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/fitorbit-banner.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitorbit-banner.webp`,
       },
     ],
     site: "@_Brilworks",

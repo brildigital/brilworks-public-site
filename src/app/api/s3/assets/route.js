@@ -56,8 +56,11 @@ export async function GET() {
     const objects = await listAllObjects(bucketName, assetFolder);
 
     const urls = objects.map(
-      (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+      (obj) => `${process.enev.NEXT_PUBLIC_CLOUDFRONT_URL}/${obj.Key}`
     );
+    // const urls = objects.map(
+    //   (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+    // );
 
     return new NextResponse(JSON.stringify({ assets: urls }), {
       status: 200,

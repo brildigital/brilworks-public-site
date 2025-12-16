@@ -157,8 +157,7 @@ export const blogAuthor = (authorName) => {
   const authorData = [
     {
       name: "Hitesh Umaletiya",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/9caa5563dc_hitesh-150x150.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/9caa5563dc_hitesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/hitesh-umaletiya-266a6077/",
       authorDesc:
         "Co-founder of Brilworks. As technology futurists, we love helping startups turn their ideas into reality. Our expertise spans startups to SMEs, and we're dedicated to their success.",
@@ -166,8 +165,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Vikas Singh",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/35b061522a_vikas.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/35b061522a_vikas.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
@@ -177,8 +175,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Lavesh Katariya",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/271c9290a8_lavesh-150x150.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/271c9290a8_lavesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/laveshkatariya/",
       authorDesc:
         "With over 8 years of experience in the MERN stack, I specialize in building robust and scalable web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, my passion for clean code and innovative problem-solving ensures high-quality solutions.",
@@ -186,8 +183,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Colin Shah",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/b9f60bcb6e_colin300x300.jpeg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/b9f60bcb6e_colin300x300.jpeg`,
       authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
       authorDesc:
         "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",
@@ -300,7 +296,7 @@ export function formatSrcUrl(url) {
   // Construct new S3 file name
   const newFileName = shouldPrefix ? `${assetId}_${filename}` : filename;
 
-  const fileURL = `https://d11qzsb0ksp6iz.cloudfront.net/assets/${newFileName}`;
+  const fileURL = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/${newFileName}`;
 
   return fileURL;
 }

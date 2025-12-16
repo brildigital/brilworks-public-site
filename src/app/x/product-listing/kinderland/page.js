@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kinderland-case-study-1759145795626.webp`,
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp",
+        url: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kinderland-case-study-1759145795626.webp`,
       },
     ],
     site: "@_Brilworks",

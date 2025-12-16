@@ -84,7 +84,7 @@ const KinderLand = () => {
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
                 <div className="flex items-center justify-center bg-gradient-to-br from-sky-400 to-green-400 rounded-2xl">
                   <Image
-                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/kinderland-case-study-1759145795626.webp"
+                    src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kinderland-case-study-1759145795626.webp`}
                     alt="Kinderland App"
                     width={610}
                     height={430}

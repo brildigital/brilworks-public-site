@@ -149,7 +149,7 @@ const FitOrbit = () => {
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
                 <div className="flex items-center justify-center bg-gradient-to-br  from-[#58CBD1] to-[#3da9b0] rounded-2xl">
                   <Image
-                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/fitnest-app-mockup-1759749065112.webp"
+                    src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`}
                     alt="Kinderland App"
                     width={610}
                     height={430}
