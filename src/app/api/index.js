@@ -48,6 +48,7 @@ export async function sendDataToSlack(payload) {
     website,
     linkedin,
     previousPage,
+    userData,
   } = payload;
   const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(
     "/",
@@ -80,7 +81,11 @@ export async function sendDataToSlack(payload) {
                   previousPage ? `PreviousPage: ${previousPage}` : ""
                 }\nPage: ${pageURL || ""}\n${
                   website ? `Website: ${website}` : ""
-                }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}`,
+                }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}\nRegion: ${
+                  userData?.region || ""
+                }\nCity: ${userData?.city || ""}\nCountry: ${
+                  userData?.country || ""
+                }\n`,
               },
             ],
           },

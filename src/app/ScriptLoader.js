@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { generateBreadcrumb } from "./components/lib/schemaCode";
+import Cookies from "js-cookie";
 
 const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
   const pathname = usePathname();
@@ -65,6 +66,53 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
       return () => window.removeEventListener("load", loadScripts);
     }
   }, [organization, website, gtm, clr]);
+
+  useEffect(() => {
+    const fetchWithIP = async () => {
+      try {
+        const existingCookie = Cookies.get("user-data");
+        const existingData = existingCookie ? JSON.parse(existingCookie) : {};
+
+        const ipRes = await fetch("https://api.ipify.org?format=json");
+        const { ip } = await ipRes.json();
+
+        const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
+        if (!geoRes.ok) throw new Error("Failed to fetch location data");
+        const geoData = await geoRes.json();
+
+        // Extract required fields
+        const latestData = {
+          city: geoData.city || "",
+          region: geoData.region || "",
+          country: geoData.country_name || "",
+        };
+
+        // Compare each key
+        let hasChanged = false;
+        const updatedData = { ...existingData };
+
+        ["city", "region", "country"].forEach((key) => {
+          if (latestData[key] && latestData[key] !== existingData[key]) {
+            updatedData[key] = latestData[key];
+            hasChanged = true;
+          }
+        });
+
+        // 6️⃣ Update cookie only if something changed
+        if (hasChanged) {
+          Cookies.set("user-data", JSON.stringify(updatedData), {
+            expires: 7,
+            path: "/",
+            sameSite: "lax",
+          });
+        }
+      } catch (error) {
+        console.error("Location fetch error:", error);
+      }
+    };
+
+    fetchWithIP();
+  }, []);
 
   return null;
 };

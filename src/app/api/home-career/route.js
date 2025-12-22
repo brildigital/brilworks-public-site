@@ -5,10 +5,16 @@ import {
   sendDataToSlack,
   validateContactPayload,
 } from "..";
+import { cookies } from "next/headers";
 // const sgMail = require("@sendgrid/mail");
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
+  const cookieStore = cookies();
+  const userDataCookie = cookieStore.get("user-data");
+
+  const userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;
+
   const payload = await req.json();
   const {
     name,
@@ -111,7 +117,7 @@ export async function POST(req, res) {
     } else if (page.startsWith("/portfolio/") || page.startsWith("/ebooks/")) {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack(payload),
+        sendDataToSlack({ ...payload, userData }),
       ]);
 
       if (downloadLink) {
@@ -199,7 +205,7 @@ export async function POST(req, res) {
     } else {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack(payload),
+        sendDataToSlack({ ...payload, userData }),
       ]);
     }
     return NextResponse.json(
