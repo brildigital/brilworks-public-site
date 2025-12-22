@@ -3,7 +3,7 @@ import "./styles/Homepage.scss";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-// import { NextAuthProvider } from "./provider"
+import { PostHogProvider } from "./provider";
 import { Figtree } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
@@ -68,9 +68,7 @@ export default function RootLayout({ children }) {
           {/* <Header /> */}
           {/* <HeaderV2 /> */}
           <CurrentHeader />
-          {/* <NextAuthProvider> */}
-          {children}
-          {/* </NextAuthProvider> */}
+          <PostHogProvider>{children}</PostHogProvider>
           <Footer />
           <LoadScripts
             organization={organization}
