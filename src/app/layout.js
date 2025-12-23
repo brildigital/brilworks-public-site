@@ -1,11 +1,11 @@
 import "./globals.css";
 import "./styles/Homepage.scss";
+import { PostHogProvider } from "./provider";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import { Figtree } from "next/font/google";
 import Script from "next/script";
-import { PostHogProvider } from "posthog-js/react";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import {
   organization,
@@ -28,18 +28,6 @@ storyblokInit({
 import LoadScripts from "./ScriptLoader";
 
 const Footer = dynamic(() => import("./components/Footer"));
-
-const options = {
-  api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-  session_recording: {
-    maskAllInputs: false,
-    maskInputOptions: {
-      password: true,
-    },
-  },
-  capture_pageview: true,
-  capture_pageleave: true,
-};
 
 export default function RootLayout({ children }) {
   return (
@@ -80,12 +68,7 @@ export default function RootLayout({ children }) {
           {/* <Header /> */}
           {/* <HeaderV2 /> */}
           <CurrentHeader />
-          <PostHogProvider
-            apiKey={process.env.NEXT_PUBLIC_POSTHOG_KEY}
-            options={options}
-          >
-            {children}
-          </PostHogProvider>
+          <PostHogProvider>{children}</PostHogProvider>
           <Footer />
           <LoadScripts
             organization={organization}
