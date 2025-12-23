@@ -2634,11 +2634,6 @@ export const blogListStaticData = [
     lastmod: "2025-04-15T10:50:54.099Z",
   },
   {
-    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
-    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
-    lastmod: "2025-08-06T05:49:47.617Z",
-  },
-  {
     name: "What Makes AWS a Top Choice for Ecommerce Store?",
     loc: "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
     lastmod: "2025-08-06T05:50:04.511Z",
