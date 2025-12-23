@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
+import Cookies from "js-cookie";
 
 const toolsData = [
   {
@@ -284,6 +286,19 @@ const Tools = () => {
     "ENTERTAINMENT",
     "OTHER",
   ];
+
+  const posthog = usePostHog();
+
+  useEffect(() => {
+    if (posthog) {
+      posthog.capture("tools_page", {
+        page: "tools",
+        city: JSON.parse(Cookies.get("user-data"))?.city,
+        region: JSON.parse(Cookies.get("user-data"))?.region,
+        country: JSON.parse(Cookies.get("user-data"))?.country,
+      });
+    }
+  }, [posthog]);
 
   // Debounce logic
   useEffect(() => {

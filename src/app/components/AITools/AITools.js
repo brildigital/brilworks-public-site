@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
-import Cookies from "js-cookie";
 
 const tools = [
   {
@@ -51,19 +49,6 @@ const tools = [
 ];
 
 const AITools = () => {
-  const posthog = usePostHog();
-
-  useEffect(() => {
-    if (posthog) {
-      posthog.capture("tools_page", {
-        page: "home",
-        city: JSON.parse(Cookies.get("user-data"))?.city,
-        region: JSON.parse(Cookies.get("user-data"))?.region,
-        country: JSON.parse(Cookies.get("user-data"))?.country,
-      });
-    }
-  }, [posthog]);
-
   return (
     <>
       <div className="hire-team-section-l !scroll-[unset]">

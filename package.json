@@ -21,6 +21,7 @@
     "@google/generative-ai": "^0.24.1",
     "@material-tailwind/react": "2.1.7",
     "@next/third-parties": "^14.2.5",
+    "@posthog/react": "^1.5.2",
     "@prisma/client": "5.8.1",
     "@sendgrid/mail": "7.7.0",
     "@splidejs/react-splide": "^0.7.12",
