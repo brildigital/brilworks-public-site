@@ -1254,54 +1254,99 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "AI in Software Development",
+    loc: "https://www.brilworks.com/blog/ai-in-software-development/",
+    lastmod: "2025-12-23T07:43:40.568Z",
+  },
+  {
+    name: "The Impact & Role of Digital Systems in Changing Post-Surgery Care",
+    loc: "https://www.brilworks.com/blog/digital-systems-changing-post-surgery-care/",
+    lastmod: "2025-12-19T13:25:41.373Z",
+  },
+  {
+    name: "A Practical Guide to Developing AI Mental Health Apps",
+    loc: "https://www.brilworks.com/blog/building-ai-mental-health-apps/",
+    lastmod: "2025-12-19T03:59:00.582Z",
+  },
+  {
+    name: "The Tangible Benefits of Using HR Software",
+    loc: "https://www.brilworks.com/blog/benefits-of-hr-software/",
+    lastmod: "2025-12-18T09:41:10.785Z",
+  },
+  {
+    name: "How Do Businesses Decide Between Automation Tools and Custom Systems?",
+    loc: "https://www.brilworks.com/blog/automation-tools-and-custom-systems-decision-guide/",
+    lastmod: "2025-12-16T13:14:26.843Z",
+  },
+  {
+    name: "Questions Every CTO Should Ask Before Signing an Outsourcing Contract",
+    loc: "https://www.brilworks.com/blog/cto-outsourcing-questions/",
+    lastmod: "2025-12-23T07:45:18.141Z",
+  },
+  {
+    name: "7 Software Outsourcing Trends in 2026 to Watch",
+    loc: "https://www.brilworks.com/blog/software-outsourcing-trends-in-2026/",
+    lastmod: "2025-12-23T07:45:27.279Z",
+  },
+  {
+    name: "When Low-Code / No-Code Fails",
+    loc: "https://www.brilworks.com/blog/when-low-code-no-code-fails/",
+    lastmod: "2025-12-23T07:48:17.526Z",
+  },
+  {
+    name: "Hidden Costs When Migrating Legacy Enterprise Apps to Cloud ",
+    loc: "https://www.brilworks.com/blog/hidden-cloud-migration-cost/",
+    lastmod: "2025-12-11T14:34:24.481Z",
+  },
+  {
     name: "Cost Breakdown to Build a Custom Logistics Software",
     loc: "https://www.brilworks.com/blog/custom-logistics-software-cost/",
-    lastmod: "2025-12-08T06:55:07.194Z",
+    lastmod: "2025-12-11T14:35:09.752Z",
   },
   {
     name: "Top software development companies in USA",
     loc: "https://www.brilworks.com/blog/top-software-development-companies-in-usa/",
-    lastmod: "2025-12-05T13:21:09.580Z",
+    lastmod: "2025-12-11T14:34:34.380Z",
   },
   {
     name: "AI App Development Cost in 2025",
     loc: "https://www.brilworks.com/blog/ai-app-development-cost/",
-    lastmod: "2025-12-05T13:13:20.936Z",
+    lastmod: "2025-12-11T14:34:38.331Z",
   },
   {
     name: "AI in Wealth Management",
     loc: "https://www.brilworks.com/blog/ai-in-wealth-management/",
-    lastmod: "2025-12-02T12:42:43.731Z",
+    lastmod: "2025-12-11T14:34:41.579Z",
   },
   {
     name: "Popular Hiring Models for Software Development",
     loc: "https://www.brilworks.com/blog/popular-hiring-models-for-software-development/",
-    lastmod: "2025-12-01T08:06:47.856Z",
+    lastmod: "2025-12-17T05:55:15.733Z",
   },
   {
     name: "AWS vs Azure: The Unfiltered Comparison for 2025",
     loc: "https://www.brilworks.com/blog/aws-vs-azure/",
-    lastmod: "2025-12-01T03:57:19.069Z",
+    lastmod: "2025-12-11T14:34:48.814Z",
   },
   {
     name: "Swift vs. Kotlin: The Strategic Choice for Modern Mobile Teams",
     loc: "https://www.brilworks.com/blog/swift-vs-kotlin/",
-    lastmod: "2025-11-28T10:41:25.069Z",
+    lastmod: "2025-12-11T14:34:52.294Z",
   },
   {
     name: "The Best Vibe Coding Tools ",
     loc: "https://www.brilworks.com/blog/the-best-vibe-coding-tools/",
-    lastmod: "2025-11-26T06:47:44.274Z",
+    lastmod: "2025-12-11T14:34:59.217Z",
   },
   {
     name: "How to Build a Healthcare App in 2025 ",
     loc: "https://www.brilworks.com/blog/how-to-build-a-healthcare-app/",
-    lastmod: "2025-11-24T03:21:06.700Z",
+    lastmod: "2025-12-11T14:35:02.849Z",
   },
   {
     name: "node js vs next js",
     loc: "https://www.brilworks.com/blog/node-js-vs-next-js/",
-    lastmod: "2025-11-23T17:35:33.256Z",
+    lastmod: "2025-12-11T14:35:06.315Z",
   },
   {
     name: "AI-driven MVP Development with Node.js",
@@ -1321,7 +1366,7 @@ export const blogListStaticData = [
   {
     name: "Dating App Development Guide for Builders",
     loc: "https://www.brilworks.com/blog/dating-app-development-overview/",
-    lastmod: "2025-11-17T05:16:07.155Z",
+    lastmod: "2025-12-22T10:24:33.573Z",
   },
   {
     name: "The Future of Local Ride Hailing and Micro Mobility Apps",
@@ -1736,12 +1781,12 @@ export const blogListStaticData = [
   {
     name: "Top 10 Nodejs Development Companies [2025]",
     loc: "https://www.brilworks.com/blog/nodejs-development-companies/",
-    lastmod: "2025-11-05T08:47:50.228Z",
+    lastmod: "2025-12-15T13:31:17.036Z",
   },
   {
     name: "Vue vs React: The Definitive Comparison for Developers",
     loc: "https://www.brilworks.com/blog/react-vs-vue/",
-    lastmod: "2025-10-14T11:45:57.230Z",
+    lastmod: "2025-12-15T13:31:41.212Z",
   },
   {
     name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
@@ -1906,7 +1951,7 @@ export const blogListStaticData = [
   {
     name: "8 Best Node JS IDEs You Should Try This Year",
     loc: "https://www.brilworks.com/blog/best-node-js-ides/",
-    lastmod: "2025-06-02T12:29:50.825Z",
+    lastmod: "2025-12-19T08:36:48.867Z",
   },
   {
     name: "React vs Nodejs: A Deep Dive into Their Core Features",
@@ -2589,6 +2634,11 @@ export const blogListStaticData = [
     lastmod: "2025-04-15T10:50:54.099Z",
   },
   {
+    name: "How AWS Helps E-Commerce Hosting Sites Enhance Performance",
+    loc: "https://www.brilworks.com/blog/how-aws-helps-e-commerce-hosting-sites-enhance-performance/",
+    lastmod: "2025-08-06T05:49:47.617Z",
+  },
+  {
     name: "What Makes AWS a Top Choice for Ecommerce Store?",
     loc: "https://www.brilworks.com/blog/aws-for-ecommerce-store/",
     lastmod: "2025-08-06T05:50:04.511Z",
@@ -2706,7 +2756,7 @@ export const blogListStaticData = [
   {
     name: "The 10 Best Artificial Intelligence Platforms for Busines of 2025",
     loc: "https://www.brilworks.com/blog/best-artificial-intelligence-platforms/",
-    lastmod: "2025-08-06T07:41:10.419Z",
+    lastmod: "2025-12-22T05:30:48.613Z",
   },
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
