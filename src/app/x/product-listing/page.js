@@ -78,6 +78,15 @@ const ProductsPage = () => {
       color: "from-[#FF6B35] to-[#004E89]",
       badge: "Home Services",
     },
+    {
+      title: "Spine Recovery Pro",
+      slug: "spine-recovery-pro",
+      description:
+        "Enterprise risk management system for post-spine surgery care. Standardize recovery protocols, enforce compliance, and reduce medico-legal risk with objective patient monitoring.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/spine-recovery-pro-banner.webp`,
+      color: "from-blue-700 to-indigo-600",
+      badge: "Healthcare",
+    },
   ];
 
   return (
