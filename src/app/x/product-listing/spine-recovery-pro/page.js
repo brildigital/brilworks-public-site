@@ -11,7 +11,7 @@ export const metadata = {
       "Enterprise Risk Management System for Post-Spine Surgery Care | Brilworks",
     description:
       "SpineRecovery Pro is a B2B SaaS platform that helps hospitals standardize post-op spine care protocols, enforce compliance, and reduce medico-legal risk through objective patient monitoring and automated workflows.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}product/spine-recovery-pro/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/spine-recovery-pro/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",

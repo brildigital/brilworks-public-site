@@ -1,6 +1,7 @@
 "use client";
 import { Activity } from "lucide-react";
 import Link from "next/link";
+import { scrollToSection } from "../lib/commonFunction";
 
 const SpineRecoveryFooter = () => {
   return (
@@ -23,19 +24,31 @@ const SpineRecoveryFooter = () => {
             <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#features" className="hover:text-white">
+                <Link
+                  href="#features"
+                  onClick={(e) => scrollToSection(e, "features")}
+                  className="hover:text-white"
+                >
                   Admin Dashboard
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className="hover:text-white">
+                <Link
+                  href="#features"
+                  onClick={(e) => scrollToSection(e, "features")}
+                  className="hover:text-white"
+                >
                   Clinical Tools
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#security" className="hover:text-white">
+                <Link
+                  href="#security"
+                  onClick={(e) => scrollToSection(e, "security")}
+                  className="hover:text-white"
+                >
                   Compliance
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

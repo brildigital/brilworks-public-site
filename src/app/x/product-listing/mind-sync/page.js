@@ -10,7 +10,7 @@ export const metadata = {
       "Connect Hearts, Sync Minds | Intelligent Tools for Human Connection",
     description:
       "Blend technology with empathy. Our solution helps individuals and teams stay emotionally aligned, think together, and build stronger relationships.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}product/mind-sync/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/mind-sync/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
@@ -36,7 +36,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}product/mind-sync/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/mind-sync/`,
   },
 };
 

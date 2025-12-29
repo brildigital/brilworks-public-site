@@ -478,7 +478,7 @@ const SpineRecoveryPro = () => {
           <div className="relative max-w-2xl w-full mx-auto mt-12">
             <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-white/0 rounded-3xl blur opacity-30"></div>
             <div className="relative bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col items-center justify-between gap-6">
                 <div className="text-left">
                   <h3 className="text-xl font-bold text-white mb-1">
                     Ready to modernize care?
