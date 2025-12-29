@@ -37,7 +37,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}product/spine-recovery-pro/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/spine-recovery-pro/`,
   },
 };
 
