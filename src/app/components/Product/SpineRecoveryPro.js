@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import HospitalContactForm from "./HospitalContactForm";
+import SpineRecoveryFooter from "../Footer/SpineRecoveryFooter";
+import SpineRecoveryPageHeader from "../Header/SpineRecoveryPageHeader";
 
 const SpineRecoveryPro = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
@@ -125,8 +127,11 @@ const SpineRecoveryPro = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <SpineRecoveryPageHeader openContactForm={openContactForm} />
+
       {/* Hero Section */}
-      <section className="pt-20 pb-20 lg:pb-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-white overflow-hidden">
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-white overflow-hidden">
         <div className="container max-w-7xl mx-auto main-section-padding">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -517,6 +522,9 @@ const SpineRecoveryPro = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <SpineRecoveryFooter />
 
       {/* Hospital Contact Form Modal */}
       <HospitalContactForm
