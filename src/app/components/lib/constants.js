@@ -1254,6 +1254,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How Businesses Can Prepare for Generative AI Adoption",
+    loc: "https://www.brilworks.com/blog/how-businesses-can-prepare-for-generative-ai-adoption/",
+    lastmod: "2025-12-26T10:19:33.591Z",
+  },
+  {
+    name: "Tasks You Can Automate Using HR Software",
+    loc: "https://www.brilworks.com/blog/automate-tasks-with-hr-software/",
+    lastmod: "2025-12-26T05:49:56.698Z",
+  },
+  {
+    name: "Challenges of Generative AI",
+    loc: "https://www.brilworks.com/blog/challenges-of-generative-ai/",
+    lastmod: "2025-12-24T13:24:24.946Z",
+  },
+  {
     name: "AI in Software Development",
     loc: "https://www.brilworks.com/blog/ai-in-software-development/",
     lastmod: "2025-12-23T07:43:40.568Z",
@@ -1271,7 +1286,7 @@ export const blogListStaticData = [
   {
     name: "The Tangible Benefits of Using HR Software",
     loc: "https://www.brilworks.com/blog/benefits-of-hr-software/",
-    lastmod: "2025-12-18T09:41:10.785Z",
+    lastmod: "2025-12-26T05:36:24.327Z",
   },
   {
     name: "How Do Businesses Decide Between Automation Tools and Custom Systems?",
@@ -1434,9 +1449,9 @@ export const blogListStaticData = [
     lastmod: "2025-11-10T06:15:50.577Z",
   },
   {
-    name: "Global SaaS Trends in 2025",
+    name: "Global SaaS Trends in 2026",
     loc: "https://www.brilworks.com/blog/global-saas-trends/",
-    lastmod: "2025-11-10T06:22:41.578Z",
+    lastmod: "2026-01-05T10:23:50.184Z",
   },
   {
     name: "Top Software Development Outsourcing Companies in 2025",
@@ -1821,7 +1836,7 @@ export const blogListStaticData = [
   {
     name: "Mastering Java Stream API in Java: From Basics to Best Practices",
     loc: "https://www.brilworks.com/blog/java-stream-api/",
-    lastmod: "2025-06-13T09:20:28.612Z",
+    lastmod: "2026-01-05T08:23:14.945Z",
   },
   {
     name: "Most Popular Backend Frameworks for Web Development ",
@@ -2011,7 +2026,7 @@ export const blogListStaticData = [
   {
     name: "Fitness App Development: A Simple Guide to Costs, Features, and Trends",
     loc: "https://www.brilworks.com/blog/fitness-app-development/",
-    lastmod: "2025-05-09T10:58:33.707Z",
+    lastmod: "2025-12-26T13:23:01.963Z",
   },
   {
     name: "10 Major Mobile App Development Challenges",
@@ -2611,7 +2626,7 @@ export const blogListStaticData = [
   {
     name: "Adopting AI: What are Technical Roadblocks?",
     loc: "https://www.brilworks.com/blog/technical-roadblocks-in-ai-development/",
-    lastmod: "2025-09-09T13:10:36.754Z",
+    lastmod: "2025-12-24T12:54:09.500Z",
   },
   {
     name: "How to Overcome Common Generative AI Challenges [A Straightforward Guide]",
@@ -2674,9 +2689,9 @@ export const blogListStaticData = [
     lastmod: "2025-10-07T10:04:27.556Z",
   },
   {
-    name: "Exploring the Limitations of Generative AI : 5 Key Points ",
+    name: "Generative AI Limitations",
     loc: "https://www.brilworks.com/blog/limitations-of-generative-ai/",
-    lastmod: "2025-10-09T06:20:03.740Z",
+    lastmod: "2026-01-05T12:39:02.092Z",
   },
   {
     name: " Debunking Common Misconceptions about Generative AI",
@@ -2749,9 +2764,9 @@ export const blogListStaticData = [
     lastmod: "2024-06-07T06:11:26.672Z",
   },
   {
-    name: "The 10 Best Artificial Intelligence Platforms for Busines of 2025",
+    name: "The 10 Best Artificial Intelligence Platforms for Busines of 2026",
     loc: "https://www.brilworks.com/blog/best-artificial-intelligence-platforms/",
-    lastmod: "2025-12-22T05:30:48.613Z",
+    lastmod: "2026-01-06T07:24:13.303Z",
   },
   {
     name: "Hiring Guide for Node.JS Developers in 2025",
@@ -2931,7 +2946,7 @@ export const blogListStaticData = [
   {
     name: "Importance of Software Development Best Practices",
     loc: "https://www.brilworks.com/blog/software-development-best-practices/",
-    lastmod: "2024-05-01T13:12:14.635Z",
+    lastmod: "2025-12-24T14:07:42.418Z",
   },
   {
     name: "Brilworks Earns the Title of Top Software Developer Company in India on Clutch",
