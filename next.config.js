@@ -1018,6 +1018,11 @@ const nextConfig = {
         destination: `/x/product-listing/mind-sync/`,
         statusCode: 301,
       },
+      {
+        source: `/snapgen-privacy-policy/`,
+        destination: `/mr-brush-privacy-policy/`,
+        statusCode: 301,
+      },
     ];
   },
 };

@@ -43,7 +43,7 @@ const CurrentHeader = () => {
     "/kindcircle-privacy-policy/",
     "/kindcircle-terms-and-condition/",
     "/lifepilot-privacy-policy/",
-    "/snapgen-privacy-policy/",
+    "/mr-brush-privacy-policy/",
     "/x/product-listing/",
   ];
 

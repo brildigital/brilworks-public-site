@@ -5,7 +5,7 @@ const PrivacyPolicy = dynamic(() =>
 
 export async function getPrivacyPolicy() {
   try {
-    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/snapgen-privacy-policy?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
+    const storyUrl = `https://api.storyblok.com/v2/cdn/stories/mr-brush-privacy-policy?version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
     const storyRes = await fetch(storyUrl, { next: { revalidate: 0 } });
     const storyData = await storyRes.json();
     return storyData?.story;
@@ -24,7 +24,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <PrivacyPolicy data={privacyPolicyData} title="SnapGen" />
+      <PrivacyPolicy data={privacyPolicyData} title="Mr. Brush" />
     </>
   );
 }

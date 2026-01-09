@@ -1254,6 +1254,21 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Agentic AI use cases for software development companies in 2026",
+    loc: "https://www.brilworks.com/blog/agentic-ai-use-cases-software-development-2026/",
+    lastmod: "2026-01-09T06:18:43.877Z",
+  },
+  {
+    name: "7 AI trends to Look for 2026",
+    loc: "https://www.brilworks.com/blog/ai-trends-2026/",
+    lastmod: "2026-01-07T13:53:17.382Z",
+  },
+  {
+    name: "How to Choose the Right AI Platform for Your Business",
+    loc: "https://www.brilworks.com/blog/choosing-ai-platform-business/",
+    lastmod: "2026-01-06T15:08:31.101Z",
+  },
+  {
     name: "How Businesses Can Prepare for Generative AI Adoption",
     loc: "https://www.brilworks.com/blog/how-businesses-can-prepare-for-generative-ai-adoption/",
     lastmod: "2025-12-26T10:19:33.591Z",
@@ -2691,7 +2706,7 @@ export const blogListStaticData = [
   {
     name: "Generative AI Limitations",
     loc: "https://www.brilworks.com/blog/limitations-of-generative-ai/",
-    lastmod: "2026-01-05T12:39:02.092Z",
+    lastmod: "2026-01-06T15:08:04.714Z",
   },
   {
     name: " Debunking Common Misconceptions about Generative AI",
