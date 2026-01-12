@@ -228,7 +228,7 @@ const Footer = () => {
   ];
 
   return pathname === "/posters/" ||
-    pathname === "/x/product-listing/spine-recovery-pro/" ||
+    pathname.includes("/x/product-listing/spine-recovery-pro/") ||
     pathname.includes("/ai-agents/") ? (
     ""
   ) : (
