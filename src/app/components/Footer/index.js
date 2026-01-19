@@ -229,7 +229,8 @@ const Footer = () => {
 
   return pathname === "/posters/" ||
     pathname.includes("/x/product-listing/spine-recovery-pro/") ||
-    pathname.includes("/ai-agents/") ? (
+    pathname.includes("/ai-agents/") ||
+    pathname.includes("/i-remi") ? (
     ""
   ) : (
     <div className="footer-background text-colorWhite">
@@ -354,7 +355,7 @@ const Footer = () => {
                         />
                         {text}
                       </a>
-                    )
+                    ),
                   )}
                 </div>
               ))}

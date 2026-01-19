@@ -52,7 +52,11 @@ const CurrentHeader = () => {
     specialHeaderPages.includes(pathname || "");
 
   // Here we have a special case to hide header on Spine Recovery Pro product page
-  if (pathname.includes("/x/product-listing/spine-recovery-pro/")) return null;
+  if (
+    pathname.includes("/x/product-listing/spine-recovery-pro/") ||
+    pathname.includes("/i-remi")
+  )
+    return null;
 
   return showHeader &&
     pathname !== "/gist/" &&

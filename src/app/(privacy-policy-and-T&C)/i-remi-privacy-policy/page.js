@@ -11,30 +11,36 @@ const page = () => {
           <div>
             <div className="bg-white overflow-hidden text-gray-900 leading-relaxed">
               <header className="p-[clamp(18px,4vw,18px)] border-b border-gray-300">
+                <div
+                  class="inline-flex items-center gap-2 rounded-full bg-blue-600/5 text-blue-600 border border-blue-600 px-2.5 py-1.5 text-sm"
+                  aria-hidden="true"
+                >
+                  I-Remi • Privacy Policy
+                </div>
                 <h1 className="mt-2 mb-1 text-[clamp(22px,5vw,34px)] font-semibold">
                   Privacy Policy
                 </h1>
 
                 <div className="text-sm text-gray-600">
                   Effective Date:&nbsp;
-                  <time datetime="2025-08-29">Jan 9, 2025</time>
+                  <time dateTime="2025-08-29">August 29, 2025</time>
                 </div>
 
                 <p className="mt-3 text-gray-600">
                   We value your privacy and are committed to protecting your
-                  health and personal information in compliance with GDPR,
-                  HIPAA, and EHDS.
+                  health and personal information in compliance with GDPR and
+                  EHDS.
                 </p>
               </header>
 
               <main className="p-[clamp(18px,4vw,24px)] space-y-4">
-                <section id="intro" className="">
+                <section id="intro">
                   <p>
-                    SpineRecoveryPro ("we," "our," or "us") provides a mobile
-                    application ("App") used by patients and healthcare
-                    professionals. This Privacy Policy explains how we collect,
-                    use, store, and share information. By using
-                    SpineRecoveryPro, you consent to this Policy.
+                    I-Remi (“we,” “our,” or “us”) provides a mobile application
+                    (“App”) used by patients and healthcare professionals. This
+                    Privacy Policy explains how we collect, use, store, and
+                    share information. By using I-Remi, you consent to this
+                    Policy.
                   </p>
                 </section>
 
@@ -103,8 +109,7 @@ const page = () => {
                     <li>
                       <strong>Medical purposes:</strong> Processing necessary
                       for preventive or occupational medicine, medical
-                      diagnosis, or healthcare provision (GDPR Art. 9(2)(h) and
-                      HIPAA).
+                      diagnosis, or healthcare provision (GDPR Art. 9(2)(h)).
                     </li>
                     <li>
                       <strong>Legal obligations:</strong> Where processing is
@@ -121,12 +126,9 @@ const page = () => {
                     4. Secondary Use & AI Development
                   </h2>
                   <p>
-                    In compliance with EHDS, we may use
-                    <strong>
-                      {" "}
-                      anonymized or pseudonymized health data
-                    </strong>{" "}
-                    for secondary purposes, such as:
+                    In compliance with EHDS, we may use{" "}
+                    <strong>anonymized or pseudonymized health data</strong> for
+                    secondary purposes, such as:
                   </p>
                   <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
                     <li>
@@ -155,7 +157,7 @@ const page = () => {
                   <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
                     <li>
                       Your data is stored in the EU/EEA (Google Cloud Firebase –
-                      region&nbsp;
+                      region{" "}
                       <code className="bg-gray-100 px-1">
                         europe-west/europe-west3
                       </code>
@@ -169,10 +171,6 @@ const page = () => {
                       (e.g., Firebase Push Notifications, Sentry). In such
                       cases, Standard Contractual Clauses (SCCs) are applied.
                     </li>
-                    <li>
-                      Under HIPAA, we only disclose Protected Health Information
-                      (PHI) as permitted by law.
-                    </li>
                   </ul>
                 </section>
 
@@ -183,10 +181,7 @@ const page = () => {
                   <h2 className="mb-2 text-[clamp(18px,3.8vw,22px)] font-semibold">
                     6. Data Security
                   </h2>
-                  <p>
-                    We implement industry-standard protections in compliance
-                    with GDPR and HIPAA:
-                  </p>
+                  <p>We implement industry-standard protections:</p>
                   <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
                     <li>
                       Encryption in transit (TLS 1.2/1.3) and at rest (AES-256)
@@ -201,10 +196,8 @@ const page = () => {
                   className="pt-4 border-t border-dashed border-gray-300"
                 >
                   <h2 className="mb-2 text-[clamp(18px,3.8vw,22px)] font-semibold">
-                    7. Your GDPR &amp; HIPAA Rights
+                    7. Your GDPR Rights
                   </h2>
-
-                  <p className="font-semibold !my-4">GDPR Rights:</p>
                   <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
                     <li>Right of access, rectification, and erasure</li>
                     <li>
@@ -219,23 +212,6 @@ const page = () => {
                       Right to lodge a complaint with your supervisory authority
                     </li>
                   </ul>
-
-                  <p className="font-semibold !my-4">HIPAA Rights:</p>
-                  <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
-                    <li>
-                      Right to access your Protected Health Information (PHI)
-                    </li>
-                    <li>Right to request amendments to your PHI</li>
-                    <li>Right to receive an accounting of disclosures</li>
-                    <li>
-                      Right to request restrictions on uses and disclosures
-                    </li>
-                    <li>Right to request confidential communications</li>
-                    <li>
-                      Right to file a complaint with the U.S. Department of
-                      Health and Human Services (HHS) Office for Civil Rights
-                    </li>
-                  </ul>
                 </section>
 
                 <section
@@ -247,10 +223,9 @@ const page = () => {
                   </h2>
                   <p>
                     Data is retained as long as necessary for healthcare
-                    purposes or legal requirements (including HIPAA
-                    requirements). Data used for secondary purposes is
-                    anonymized or pseudonymized and may be retained longer for
-                    research and innovation.
+                    purposes or legal requirements. Data used for secondary
+                    purposes is anonymized or pseudonymized and may be retained
+                    longer for research and innovation.
                   </p>
                 </section>
 
@@ -263,7 +238,7 @@ const page = () => {
                   </h2>
                   <ul className="mt-2 pl-4 sm:pl-[18px] list-disc space-y-1">
                     <li>
-                      Health data is stored and exported in standardized formats
+                      Health data is stored/exported in standardized formats
                       (FHIR, HL7)
                     </li>
                     <li>
@@ -278,7 +253,7 @@ const page = () => {
                   className="pt-4 border-t border-dashed border-gray-300"
                 >
                   <h2 className="mb-2 text-[clamp(18px,3.8vw,22px)] font-semibold">
-                    10. Children's Privacy
+                    10. Children’s Privacy
                   </h2>
                   <p>
                     The App is not directed to children under 13. For minors,
@@ -292,7 +267,7 @@ const page = () => {
                   className="pt-4 border-t border-dashed border-gray-300"
                 >
                   <h2 className="mb-2 text-[clamp(18px,3.8vw,22px)] font-semibold">
-                    11. Contact &amp; Data Protection Officer (DPO)
+                    11. Contact & Data Protection Officer (DPO)
                   </h2>
                   <p>
                     If you have questions about this Policy or your data rights:
@@ -300,29 +275,29 @@ const page = () => {
 
                   <p className="mt-2">
                     <strong>Data Protection Officer (DPO): </strong>
-                    dpo@spinerecoverypro.com
+                    dpo@i-remi.com
                   </p>
 
                   <p>
                     <strong>EU Representative: </strong>
-                    privacy@spinerecoverypro.com
+                    privacy@i-remi.com
                   </p>
 
                   <p>
                     Email:&nbsp;
                     <a
-                      href="mailto:support@spinerecoverypro.com"
+                      href="mailto:support@i-remi.com"
                       className="text-blue-600 hover:underline"
                     >
-                      support@spinerecoverypro.com
+                      support@i-remi.com
                     </a>
                   </p>
                 </section>
               </main>
 
               <footer className="border-t border-gray-300 px-[clamp(18px,4vw,28px)] py-4 text-gray-600 text-sm bg-gradient-to-t from-black/5 to-transparent">
-                © <span>{new Date().getFullYear()}</span> SpineRecoveryPro. All
-                rights reserved.
+                © <span>{new Date().getFullYear()}</span> I-Remi. All rights
+                reserved.
               </footer>
             </div>
           </div>
