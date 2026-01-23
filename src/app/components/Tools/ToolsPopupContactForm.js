@@ -43,7 +43,13 @@ import {
   markFormSubmitted,
 } from "../lib/commonFunction";
 
-const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
+const ToolsPopupContactForm = ({
+  open,
+  handleClose,
+  result,
+  setResult,
+  toolFormData,
+}) => {
   const pathname = usePathname();
   const [showPrice, setShowPrice] = useState(false);
 
@@ -392,10 +398,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   result.difficulty_level === "Very Complex"
                     ? "bg-red-100 text-red-800"
                     : result.difficulty_level === "Complex"
-                    ? "bg-orange-100 text-orange-800"
-                    : result.difficulty_level === "Moderate"
-                    ? "bg-yellow-100 text-yellow-800"
-                    : "bg-green-100 text-green-800"
+                      ? "bg-orange-100 text-orange-800"
+                      : result.difficulty_level === "Moderate"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-green-100 text-green-800"
                 }`}
               >
                 {result.difficulty_level}
@@ -507,8 +513,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 result?.riskLevel === "Low"
                   ? "bg-green-50 border-green-500"
                   : result?.riskLevel === "Medium"
-                  ? "bg-yellow-50 border-yellow-500"
-                  : "bg-red-50 border-red-500"
+                    ? "bg-yellow-50 border-yellow-500"
+                    : "bg-red-50 border-red-500"
               }`}
             >
               <div className="font-semibold text-gray-900 mb-1">
@@ -518,8 +524,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result?.riskLevel === "Low"
                       ? "text-green-600"
                       : result.riskLevel === "Medium"
-                      ? "text-yellow-600"
-                      : "text-red-600"
+                        ? "text-yellow-600"
+                        : "text-red-600"
                   }
                 >
                   {result?.riskLevel}
@@ -717,8 +723,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.recommendation === "native"
                       ? "bg-purple-100 text-purple-600"
                       : result.recommendation === "cross-platform"
-                      ? "bg-green-100 text-green-600"
-                      : "bg-blue-100 text-blue-600"
+                        ? "bg-green-100 text-green-600"
+                        : "bg-blue-100 text-blue-600"
                   }`}
                 >
                   {result.recommendation === "native" ? (
@@ -745,8 +751,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.recommendation === "native"
                       ? "bg-purple-500"
                       : result.recommendation === "cross-platform"
-                      ? "bg-green-500"
-                      : "bg-blue-500"
+                        ? "bg-green-500"
+                        : "bg-blue-500"
                   }`}
                   style={{ width: `${result.score}%` }}
                 ></div>
@@ -831,8 +837,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       result.score >= 70
                         ? "#22c55e"
                         : result.score >= 50
-                        ? "#f59e0b"
-                        : "#ef4444"
+                          ? "#f59e0b"
+                          : "#ef4444"
                     }
                     strokeWidth="8"
                     strokeLinecap="round"
@@ -890,7 +896,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
             <div className="text-center">
               <div
                 className={`inline-block px-3 py-1 rounded-full text-base font-semibold border-2 ${getStatusColor(
-                  result.profitabilityStatus
+                  result.profitabilityStatus,
                 )}`}
               >
                 {result.profitabilityStatus} Profitability
@@ -1221,8 +1227,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.priority === "High"
                       ? "bg-green-100 text-green-800"
                       : result.priority === "Medium"
-                      ? "bg-yellow-100 text-yellow-800"
-                      : "bg-red-100 text-red-800"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-red-100 text-red-800"
                   }`}
                 >
                   {result.priority} Priority
@@ -1234,8 +1240,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.priority === "High"
                       ? "bg-green-500"
                       : result.priority === "Medium"
-                      ? "bg-yellow-500"
-                      : "bg-red-500"
+                        ? "bg-yellow-500"
+                        : "bg-red-500"
                   }`}
                   style={{ width: `${result.score}%` }}
                 ></div>
@@ -1318,8 +1324,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.marketPotential === "High"
                       ? "bg-green-100 text-green-800"
                       : result.marketPotential === "Medium"
-                      ? "bg-yellow-100 text-yellow-800"
-                      : "bg-red-100 text-red-800"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : "bg-red-100 text-red-800"
                   }`}
                 >
                   {result.marketPotential} Potential
@@ -1338,8 +1344,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                       result.marketPotential === "High"
                         ? "bg-green-500"
                         : result.marketPotential === "Medium"
-                        ? "bg-yellow-500"
-                        : "bg-red-500"
+                          ? "bg-yellow-500"
+                          : "bg-red-500"
                     }`}
                     style={{ width: `${result.score}%` }}
                   ></div>
@@ -1512,10 +1518,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                         result.riskLevel === "Low"
                           ? "bg-green-100 text-green-800"
                           : result.riskLevel === "Medium"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : result.riskLevel === "Medium-High"
-                          ? "bg-orange-100 text-orange-800"
-                          : "bg-red-100 text-red-800"
+                            ? "bg-yellow-100 text-yellow-800"
+                            : result.riskLevel === "Medium-High"
+                              ? "bg-orange-100 text-orange-800"
+                              : "bg-red-100 text-red-800"
                       }`}
                     >
                       {result.riskLevel}
@@ -1666,13 +1672,13 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                   result.overallScore >= 80
                     ? "bg-green-100"
                     : result.overallScore >= 60
-                    ? "bg-yellow-100"
-                    : "bg-red-100"
+                      ? "bg-yellow-100"
+                      : "bg-red-100"
                 } rounded-full flex items-center justify-center`}
               >
                 <span
                   className={`text-2xl font-bold ${getScoreColor(
-                    result.overallScore
+                    result.overallScore,
                   )}`}
                 >
                   {result.grade}
@@ -1685,7 +1691,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                 <h4 className="font-semibold text-gray-900">Overall Score</h4>
                 <span
                   className={`text-3xl font-bold ${getScoreColor(
-                    result.overallScore
+                    result.overallScore,
                   )}`}
                 >
                   {result.overallScore}/100
@@ -1697,8 +1703,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     result.overallScore >= 80
                       ? "bg-green-500"
                       : result.overallScore >= 60
-                      ? "bg-yellow-500"
-                      : "bg-red-500"
+                        ? "bg-yellow-500"
+                        : "bg-red-500"
                   }`}
                   style={{ width: `${result.overallScore}%` }}
                 />
@@ -1763,8 +1769,8 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                           value >= 80
                             ? "bg-green-500"
                             : value >= 60
-                            ? "bg-yellow-500"
-                            : "bg-red-500"
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
                         }`}
                         style={{ width: `${value}%` }}
                       />
@@ -1904,10 +1910,10 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                     {result.score >= 70
                       ? "Critical systems require immediate attention. Consider engaging modernization experts and planning a rapid, phased migration approach."
                       : result.score >= 50
-                      ? "High priority modernization. Begin with thorough planning, pilot projects, and secure executive buy-in for transformation initiatives."
-                      : result.score >= 30
-                      ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
-                      : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
+                        ? "High priority modernization. Begin with thorough planning, pilot projects, and secure executive buy-in for transformation initiatives."
+                        : result.score >= 30
+                          ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
+                          : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
                   </p>
                 </div>
               </div>
@@ -2026,12 +2032,12 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
                         benchmark.grade === "A"
                           ? "bg-green-100 text-green-700"
                           : benchmark.grade === "B"
-                          ? "bg-blue-100 text-blue-700"
-                          : benchmark.grade === "C"
-                          ? "bg-yellow-100 text-yellow-700"
-                          : benchmark.grade === "D"
-                          ? "bg-orange-100 text-orange-700"
-                          : "bg-red-100 text-red-700"
+                            ? "bg-blue-100 text-blue-700"
+                            : benchmark.grade === "C"
+                              ? "bg-yellow-100 text-yellow-700"
+                              : benchmark.grade === "D"
+                                ? "bg-orange-100 text-orange-700"
+                                : "bg-red-100 text-red-700"
                       }`}
                     >
                       {benchmark.grade}
@@ -2122,6 +2128,7 @@ const ToolsPopupContactForm = ({ open, handleClose, result, setResult }) => {
               setShowPrice={setShowPrice}
               showPhoneField={false}
               showCompanyField={false}
+              toolFormData={toolFormData}
             />
           </div>
           <div className="lg:w-1/2 md:w-full mx-auto items-center justify-center">

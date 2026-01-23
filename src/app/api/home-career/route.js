@@ -25,6 +25,7 @@ export async function POST(req, res) {
     downloadLink,
     token,
     previousPage,
+    toolFormData,
   } = payload;
 
   const transporter = nodemailer.createTransport({
@@ -43,7 +44,7 @@ export async function POST(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `secret=${secret}&response=${token}`,
-    }
+    },
   );
   const result = await verification.json();
 
@@ -104,20 +105,20 @@ export async function POST(req, res) {
         .then((data) => {
           return NextResponse.json(
             { message: "Email sent successfully" },
-            { status: 200 }
+            { status: 200 },
           );
         })
         .catch((error) => {
           console.error(error);
           return NextResponse.json(
             { message: "Error sending email" },
-            { status: 500 }
+            { status: 500 },
           );
         });
     } else if (page.startsWith("/portfolio/") || page.startsWith("/ebooks/")) {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack({ ...payload, userData }),
+        sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
 
       if (downloadLink) {
@@ -191,32 +192,32 @@ export async function POST(req, res) {
           .then((data) => {
             return NextResponse.json(
               { message: "Email sent successfully" },
-              { status: 200 }
+              { status: 200 },
             );
           })
           .catch((error) => {
             console.error(error);
             return NextResponse.json(
               { message: "Error sending email" },
-              { status: 500 }
+              { status: 500 },
             );
           });
       }
     } else {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack({ ...payload, userData }),
+        sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
     }
     return NextResponse.json(
       { message: "Form submitted successfully" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Error creating contact", error);
     return NextResponse.json(
       { message: "Error submitting form" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

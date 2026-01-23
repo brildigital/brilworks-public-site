@@ -14,6 +14,7 @@ const PortfolioContactForm = ({
   setShowPrice,
   showPhoneField = true,
   showCompanyField = true,
+  toolFormData,
 }) => {
   const pathname = usePathname();
 
@@ -89,12 +90,13 @@ const PortfolioContactForm = ({
           },
           body: JSON.stringify({
             ...formData,
+            ...(toolFormData ? toolFormData : {}),
             page: pathname,
             downloadLink: downloadURL,
             token,
             previousPage,
           }),
-        }
+        },
       );
 
       if (response.ok) {

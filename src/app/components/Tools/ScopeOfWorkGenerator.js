@@ -350,6 +350,7 @@ const ScopeOfWorkGenerator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>
