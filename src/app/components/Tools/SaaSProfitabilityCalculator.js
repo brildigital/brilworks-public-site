@@ -302,7 +302,7 @@ const SaaSProfitabilityCalculator = () => {
                   <div className="text-center">
                     <div
                       className={`inline-block px-4 py-2 rounded-full text-base font-semibold border-2 ${getStatusColor(
-                        result.profitabilityStatus
+                        result.profitabilityStatus,
                       )}`}
                     >
                       {result.profitabilityStatus} Profitability
@@ -487,6 +487,7 @@ const SaaSProfitabilityCalculator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

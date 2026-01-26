@@ -51,10 +51,7 @@ export async function sendDataToSlack(payload) {
     userData,
     toolFormData,
   } = payload;
-  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(
-    "/",
-    "",
-  )}`;
+  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(/^\/+/, "")}`;
 
   const formatObjectForSlack = (obj = {}) =>
     Object.entries(obj)
@@ -92,7 +89,11 @@ export async function sendDataToSlack(payload) {
                   userData?.region || ""
                 }\nCity: ${userData?.city || ""}\nCountry: ${
                   userData?.country || ""
-                }\n\nToolFormData:-\n\n ${dynamicFormDataText}\n`,
+                }\n\n${
+                  page.includes("/tools/")
+                    ? `ToolFormData:-\n\n ${dynamicFormDataText}\n`
+                    : ""
+                }`,
               },
             ],
           },

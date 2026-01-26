@@ -61,7 +61,7 @@ const CodeQualityAnalyzer = () => {
 
     const resultData = calculateCodeQuality(
       formData.codeSnippet,
-      formData.description
+      formData.description,
     );
 
     setTimeout(() => {
@@ -255,13 +255,13 @@ const CodeQualityAnalyzer = () => {
                         result.overallScore >= 80
                           ? "bg-green-100"
                           : result.overallScore >= 60
-                          ? "bg-yellow-100"
-                          : "bg-red-100"
+                            ? "bg-yellow-100"
+                            : "bg-red-100"
                       } rounded-full flex items-center justify-center`}
                     >
                       <span
                         className={`text-2xl font-bold ${getScoreColor(
-                          result.overallScore
+                          result.overallScore,
                         )}`}
                       >
                         {result.grade}
@@ -276,7 +276,7 @@ const CodeQualityAnalyzer = () => {
                       </h4>
                       <span
                         className={`text-3xl font-bold ${getScoreColor(
-                          result.overallScore
+                          result.overallScore,
                         )}`}
                       >
                         {result.overallScore}/100
@@ -288,8 +288,8 @@ const CodeQualityAnalyzer = () => {
                           result.overallScore >= 80
                             ? "bg-green-500"
                             : result.overallScore >= 60
-                            ? "bg-yellow-500"
-                            : "bg-red-500"
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
                         }`}
                         style={{ width: `${result.overallScore}%` }}
                       />
@@ -348,7 +348,7 @@ const CodeQualityAnalyzer = () => {
                             </span>
                             <span
                               className={`font-semibold ${getScoreColor(
-                                value
+                                value,
                               )}`}
                             >
                               {value}%
@@ -360,8 +360,8 @@ const CodeQualityAnalyzer = () => {
                                 value >= 80
                                   ? "bg-green-500"
                                   : value >= 60
-                                  ? "bg-yellow-500"
-                                  : "bg-red-500"
+                                    ? "bg-yellow-500"
+                                    : "bg-red-500"
                               }`}
                               style={{ width: `${value}%` }}
                             />
@@ -497,6 +497,7 @@ const CodeQualityAnalyzer = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

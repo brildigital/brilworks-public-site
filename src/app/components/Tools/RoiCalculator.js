@@ -312,7 +312,7 @@ const RoiCalculator = () => {
                         $
                         {Math.round(
                           results?.maintenanceCost /
-                            parseInt(formData?.maintenanceYears)
+                            parseInt(formData?.maintenanceYears),
                         ).toLocaleString()}
                       </span>
                     </div>
@@ -386,6 +386,7 @@ const RoiCalculator = () => {
           handleClose={() => setOpenPopup(false)}
           result={results}
           setResult={setResults}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

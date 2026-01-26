@@ -392,10 +392,10 @@ const DigitalTransformationReadinessChecker = () => {
                           result.riskLevel === "Low"
                             ? "bg-green-100 text-green-800"
                             : result.riskLevel === "Medium"
-                            ? "bg-yellow-100 text-yellow-800"
-                            : result.riskLevel === "Medium-High"
-                            ? "bg-orange-100 text-orange-800"
-                            : "bg-red-100 text-red-800"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : result.riskLevel === "Medium-High"
+                                ? "bg-orange-100 text-orange-800"
+                                : "bg-red-100 text-red-800"
                         }`}
                       >
                         {result.riskLevel}
@@ -577,6 +577,7 @@ const DigitalTransformationReadinessChecker = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

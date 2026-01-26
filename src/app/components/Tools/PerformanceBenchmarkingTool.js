@@ -314,12 +314,12 @@ const PerformanceBenchmarkingTool = () => {
                               benchmark.grade === "A"
                                 ? "bg-green-100 text-green-700"
                                 : benchmark.grade === "B"
-                                ? "bg-blue-100 text-blue-700"
-                                : benchmark.grade === "C"
-                                ? "bg-yellow-100 text-yellow-700"
-                                : benchmark.grade === "D"
-                                ? "bg-orange-100 text-orange-700"
-                                : "bg-red-100 text-red-700"
+                                  ? "bg-blue-100 text-blue-700"
+                                  : benchmark.grade === "C"
+                                    ? "bg-yellow-100 text-yellow-700"
+                                    : benchmark.grade === "D"
+                                      ? "bg-orange-100 text-orange-700"
+                                      : "bg-red-100 text-red-700"
                             }`}
                           >
                             {benchmark.grade}
@@ -401,6 +401,7 @@ const PerformanceBenchmarkingTool = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

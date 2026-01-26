@@ -114,9 +114,8 @@ const SoftwareDevelopmentCostCalculator = () => {
 
     setIsCalculating(true);
     try {
-      const calculationResult = await CostCalculationService.calculateCost(
-        inputs
-      );
+      const calculationResult =
+        await CostCalculationService.calculateCost(inputs);
       setResult(calculationResult);
 
       if (!hasVisited) {
@@ -380,6 +379,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>
