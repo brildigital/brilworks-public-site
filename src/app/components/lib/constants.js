@@ -1256,7 +1256,7 @@ export const blogListStaticData = [
   {
     name: "AI powered MVP Development vs Traditional Software MVP Approaches",
     loc: "https://www.brilworks.com/blog/ai-mvp-vs-traditional-approaches/",
-    lastmod: "2026-01-29T12:56:25.055Z",
+    lastmod: "2026-02-04T09:03:32.149Z",
   },
   {
     name: "Understanding “Vibe Coding” in Early-Stage Startups",
@@ -1361,7 +1361,7 @@ export const blogListStaticData = [
   {
     name: "7 Software Outsourcing Trends in 2026 to Watch",
     loc: "https://www.brilworks.com/blog/software-outsourcing-trends-in-2026/",
-    lastmod: "2025-12-23T07:45:27.279Z",
+    lastmod: "2026-02-02T13:30:22.235Z",
   },
   {
     name: "When Low-Code / No-Code Fails",
@@ -1391,7 +1391,7 @@ export const blogListStaticData = [
   {
     name: "AI in Wealth Management",
     loc: "https://www.brilworks.com/blog/ai-in-wealth-management/",
-    lastmod: "2025-12-11T14:34:41.579Z",
+    lastmod: "2026-02-02T13:31:40.266Z",
   },
   {
     name: "Popular Hiring Models for Software Development",
