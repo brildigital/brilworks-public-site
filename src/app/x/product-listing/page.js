@@ -78,6 +78,87 @@ const ProductsPage = () => {
       color: "from-[#FF6B35] to-[#004E89]",
       badge: "Home Services",
     },
+    {
+      title: "Scaneat",
+      slug: "scaneat",
+      description:
+        "Make informed food choices instantly! Smart food scanner with instant health analysis, ingredient insights, allergen detection, and personalized recommendations for healthier eating.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/scaneat-1770726297202.webp`,
+      color: "from-blue-600 to-green-500",
+      badge: "Health & Nutrition",
+    },
+    {
+      title: "Mr. Brush",
+      slug: "mr-brush",
+      description:
+        "Unleash your creativity with AI-powered image generation! Transform your imagination into stunning visual art with text-to-image and image-to-image modes, 8+ artistic styles, and flexible aspect ratios.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mrbrush-1770726392663.webp`,
+      color: "from-yellow-400 to-orange-500",
+      badge: "AI Art Generation",
+    },
+    {
+      title: "LifePilot AI",
+      slug: "life-pilot",
+      description:
+        "Your AI-powered life companion! Get intelligent assistance across productivity, fitness, wellness, home maintenance, and more with 5+ specialized AI assistants. Cross-platform support with encrypted data.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/lifepilot-1770726381502.webp`,
+      color: "from-blue-500 to-indigo-500",
+      badge: "AI Assistant",
+    },
+    {
+      title: "KindCircle",
+      slug: "kind-circle",
+      description:
+        "Supporting parents of neurodivergent children. Connect with other parents, access verified professionals, browse expert resources, and join community events. Your supportive network is waiting.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kindcircle-1770726348659.webp`,
+      color: "from-teal-700 to-cyan-400",
+      badge: "Community Support",
+    },
+    {
+      title: "OrderNest",
+      slug: "order-nest",
+      description:
+        "Complete restaurant management system. Managers design menus, configure tables, and track sales. Front-of-house handles seatings, kitchen sees live tickets. Real-time updates and cloud sync keep every shift coordinated.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/ordernest-1770726411206.webp`,
+      color: "from-orange-500 to-red-600",
+      badge: "Restaurant Management",
+    },
+    {
+      title: "VectorTrace",
+      slug: "vector-trace",
+      description:
+        "Complete business management platform for manufacturers, service providers, vendors, and customers. Streamline workflow from order placement to delivery with real-time tracking, inventory control, and comprehensive analytics.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/vectortrace-1770726355449.webp`,
+      color: "from-cyan-300 to-blue-500",
+      badge: "Business Management",
+    },
+    {
+      title: "CourseSphere",
+      slug: "course-sphere",
+      description:
+        "Learn without limits! Discover thousands of courses from expert instructors. Build real projects, gain certifications, and grow your career with guided learning paths. Join 50K+ learners worldwide.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/course-sphere-1770795626948.webp`,
+      color: "from-teal-500 to-teal-700",
+      badge: "Online Learning",
+    },
+    {
+      title: "BrowseX",
+      slug: "browsex",
+      description:
+        "Automate any web task with AI-powered intelligence. BrowseX uses advanced AI to understand websites, extract data, fill forms, and complete complex workflows—all through simple natural language commands. No coding required.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/browsex-1770795649689.webp`,
+      color: "from-purple-600 to-purple-400",
+      badge: "Web Automation",
+    },
+    {
+      title: "PageMiner",
+      slug: "page-miner",
+      description:
+        "Browser automation and web scraping extension. Record actions, build custom automation flows, and automate repetitive web tasks. Visual flow builder with integrations for Google Sheets, Slack, Discord, and more.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/pageminer-1770796389079.webp`,
+      color: "from-blue-600 to-blue-400",
+      badge: "Browser Automation",
+    },
   ];
 
   return (
