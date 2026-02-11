@@ -132,6 +132,33 @@ const ProductsPage = () => {
       color: "from-cyan-300 to-blue-500",
       badge: "Business Management",
     },
+    {
+      title: "CourseSphere",
+      slug: "course-sphere",
+      description:
+        "Learn without limits! Discover thousands of courses from expert instructors. Build real projects, gain certifications, and grow your career with guided learning paths. Join 50K+ learners worldwide.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/course-sphere-1770795626948.webp`,
+      color: "from-teal-500 to-teal-700",
+      badge: "Online Learning",
+    },
+    {
+      title: "BrowseX",
+      slug: "browsex",
+      description:
+        "Automate any web task with AI-powered intelligence. BrowseX uses advanced AI to understand websites, extract data, fill forms, and complete complex workflows—all through simple natural language commands. No coding required.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/browsex-1770795649689.webp`,
+      color: "from-purple-600 to-purple-400",
+      badge: "Web Automation",
+    },
+    {
+      title: "PageMiner",
+      slug: "page-miner",
+      description:
+        "Browser automation and web scraping extension. Record actions, build custom automation flows, and automate repetitive web tasks. Visual flow builder with integrations for Google Sheets, Slack, Discord, and more.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/pageminer-1770796389079.webp`,
+      color: "from-blue-600 to-blue-400",
+      badge: "Browser Automation",
+    },
   ];
 
   return (
