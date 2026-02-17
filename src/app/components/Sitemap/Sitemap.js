@@ -6,6 +6,7 @@ import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import {
   AISolutionsMenuItems,
   blogListStaticData,
+  hireTeamMenuItems,
   industryMenuItems,
   servicesMenuItems,
 } from "../lib/constants";
@@ -30,7 +31,7 @@ const Sitemap = () => {
     },
     {
       title: "Generative AI in Finance",
-      slug: "/use-case/generative-ai-in-fintech/",
+      slug: "/use-case/gen-ai-in-fintech/",
     },
     {
       title: "Generative AI in Healthcare",
@@ -217,7 +218,7 @@ const Sitemap = () => {
               </div>
             ))}
           <div className="flex items-center gap-2 w-full mb-2 mt-3">
-            <div>{renderTickMarkIcon()}</div>
+            {renderTickMarkIcon()}
             <div>
               <h2 className="text-base font-bold">USE CASES</h2>
             </div>
@@ -245,7 +246,7 @@ const Sitemap = () => {
                 className="flex items-center gap-2 w-full my-2"
                 key={mainSection.name}
               >
-                <div>{renderTickMarkIcon()}</div>
+                {renderTickMarkIcon()}
                 <div>
                   <h2 className="text-base font-bold">{mainSection.name}</h2>
                 </div>
@@ -276,64 +277,30 @@ const Sitemap = () => {
           <h3 className="text-2xl border-b border-b-[#c5ccd0] font-bold pb-2 mb-3">
             HIRE TEAM
           </h3>
-
-          <div className="grid gap-2 md:grid-cols-3 grid-cols-1">
-            <div>
-              <li>
-                <Link href="/hire-reactjs-developer/" className="font-medium">
-                  ReactJS
-                </Link>
-              </li>
+          {hireTeamMenuItems.map((mainSection) => (
+            <div key={mainSection.name}>
+              <div
+                className="flex items-center gap-2 w-full my-2"
+                key={mainSection.name}
+              >
+                {renderTickMarkIcon()}
+                <div>
+                  <h2 className="text-base font-bold">{mainSection.name}</h2>
+                </div>
+              </div>
+              <div className="grid gap-2 md:grid-cols-2 grid-cols-1 mb-4">
+                {mainSection.subSections.map((subSection) => (
+                  <div key={subSection.name}>
+                    <li>
+                      <Link href={subSection.path} className="font-medium">
+                        {subSection.name}
+                      </Link>
+                    </li>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div>
-              <li>
-                <Link
-                  href="/hire-react-native-developer/"
-                  className="font-medium"
-                >
-                  React Native
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li>
-                <Link
-                  href="/hire-blockchain-developer/"
-                  className="font-medium"
-                >
-                  Blockchain Development
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li>
-                <Link href="/hire-java-developer/" className="font-medium">
-                  Java
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li>
-                <Link href="/hire-aws-developer/" className="font-medium">
-                  AWS Certified Developers
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li>
-                <Link href="/hire-ui-ux-designer/" className="font-medium">
-                  UI/UX Development
-                </Link>
-              </li>
-            </div>
-            <div>
-              <li>
-                <Link href="/hire-nodejs-developer/" className="font-medium">
-                  NodeJS
-                </Link>
-              </li>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="mb-4">
           <h3 className="text-2xl border-b border-b-[#c5ccd0] font-bold pb-2 mb-3">

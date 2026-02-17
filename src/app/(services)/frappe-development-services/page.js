@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <FrappeDevelopmentService />
-    </div>
-  );
+  return <FrappeDevelopmentService />;
 };
 
 export default page;

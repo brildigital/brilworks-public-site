@@ -28,7 +28,7 @@ export async function createHubSpotContact(payload) {
         },
         body: apiPayLoad,
         redirect: "follow",
-      }
+      },
     );
     return response;
   } catch (error) {
@@ -48,11 +48,16 @@ export async function sendDataToSlack(payload) {
     website,
     linkedin,
     previousPage,
+    userData,
+    toolFormData,
   } = payload;
-  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(
-    "/",
-    ""
-  )}`;
+  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(/^\/+/, "")}`;
+
+  const formatObjectForSlack = (obj = {}) =>
+    Object.entries(obj)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join("\n");
+  const dynamicFormDataText = formatObjectForSlack(toolFormData);
 
   const data = {
     channel: process.env.SLACK_CHANNEL_ID,
@@ -80,7 +85,15 @@ export async function sendDataToSlack(payload) {
                   previousPage ? `PreviousPage: ${previousPage}` : ""
                 }\nPage: ${pageURL || ""}\n${
                   website ? `Website: ${website}` : ""
-                }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}`,
+                }\n${linkedin ? `LinkedIn: ${linkedin}` : ""}\nRegion: ${
+                  userData?.region || ""
+                }\nCity: ${userData?.city || ""}\nCountry: ${
+                  userData?.country || ""
+                }\n\n${
+                  page.includes("/tools/")
+                    ? `ToolFormData:-\n\n ${dynamicFormDataText}\n`
+                    : ""
+                }`,
               },
             ],
           },
@@ -108,7 +121,7 @@ export async function sendDataToSlack(payload) {
     console.error("Error:", error);
     return NextResponse.json(
       { error: "An error occurred while sending the message to Slack." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

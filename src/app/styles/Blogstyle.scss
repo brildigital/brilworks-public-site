@@ -48,7 +48,8 @@
   margin-bottom: 20px;
 }
 
-.blog_content {
+.blog_content,
+.tech-content {
   font-family: var(--global-font) !important;
   div {
     p {
@@ -322,7 +323,7 @@
     height: 100%;
     position: absolute;
     left: -18px;
-    top: -35px;
+    top: -47px;
     background: var(--theme-color);
     z-index: 1;
   }
@@ -349,7 +350,8 @@
 // ******************************New style of blog page********************************************
 
 .blog-inner .blog_content_new,
-.blog_content {
+.blog_content,
+.tech-content {
   p {
     font-family: var(--global-font) !important;
     word-wrap: break-word;
@@ -382,7 +384,7 @@
     word-wrap: break-word;
   }
   img {
-    width: 100%;
+    width: auto;
   }
   table {
     width: 100% !important;

@@ -1,16 +1,18 @@
 "use client";
-import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
+import { Calculator, Loader2, Sparkles, Wallet } from "lucide-react";
 import { toast } from "react-toastify";
 import { CostCalculationService } from "../lib/costCalculationService";
 import { PriceSkeleton } from "../Blog/ArticleSkeleton";
-import { usePathname } from "next/navigation";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
-import ToolFAQs from "./ToolFAQs";
-import ToolHowToUse from "./ToolHowToUse";
-import ToolFeatures from "./ToolFeatures";
 import ToolHerosection from "./ToolHerosection";
 import { hasSubmittedForm } from "../lib/commonFunction";
+
+const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
+const ToolFeatures = dynamic(() => import("./ToolFeatures"));
+const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
 const SoftwareDevelopmentCostCalculator = () => {
   const pathname = usePathname();
@@ -24,14 +26,10 @@ const SoftwareDevelopmentCostCalculator = () => {
     email: "",
     name: "",
   });
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState();
   const [isCalculating, setIsCalculating] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
-
-  useEffect(() => {
-    setHasVisited(hasSubmittedForm(pathname));
-  }, [pathname, openPopup]);
 
   const platforms = [
     { value: "ios", label: "iOS Only" },
@@ -81,6 +79,10 @@ const SoftwareDevelopmentCostCalculator = () => {
     "100% Free Forever",
   ];
 
+  const handleInputChange = (field, value) => {
+    setInputs((prev) => ({ ...prev, [field]: value }));
+  };
+
   const handleFeatureChange = (feature, checked) => {
     setInputs((prev) => ({
       ...prev,
@@ -112,9 +114,8 @@ const SoftwareDevelopmentCostCalculator = () => {
 
     setIsCalculating(true);
     try {
-      const calculationResult = await CostCalculationService.calculateCost(
-        inputs
-      );
+      const calculationResult =
+        await CostCalculationService.calculateCost(inputs);
       setResult(calculationResult);
 
       if (!hasVisited) {
@@ -125,12 +126,16 @@ const SoftwareDevelopmentCostCalculator = () => {
     }
     setTimeout(() => {
       setIsCalculating(false);
-    }, 3000);
+    }, 1500);
   };
 
   useEffect(() => {
+    setHasVisited(hasSubmittedForm(pathname));
+  }, [pathname, openPopup]);
+
+  useEffect(() => {
     const hasVisitedPage = hasSubmittedForm(pathname);
-    if (!hasVisitedPage && result) {
+    if (!hasVisitedPage && result && !isCalculating) {
       setOpenPopup(true);
     }
   }, [result]);
@@ -139,7 +144,7 @@ const SoftwareDevelopmentCostCalculator = () => {
     <>
       <ToolHerosection
         title="Software Development Cost Calculator"
-        description="Estimate the cost and timeline for developing your project using the user-friendly software development cost calculator. Answer just five questions and get an estimate for your project. Your journey to a seamlessly executed software project begins with a free, tailored estimation."
+        description="Quickly estimate the cost of software development with our interactive calculator. Whether you are planning a mobile app, web platform, or enterprise solution, this tool helps you model expenses and timelines with accuracy. Let’s get your project moving. Grab a free, personalized estimate with no strings attached."
         imageSrc="/images/v2/software-dev-cost-calc-banner.webp"
         authority={authority}
       />
@@ -151,7 +156,7 @@ const SoftwareDevelopmentCostCalculator = () => {
       >
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
-            <div className="bg-gradient-to-r from-indigo-500 to-themeColor p-4 rounded-full shadow-lg">
+            <div className="bg-gradient-to-r from-themeColor to-themeSecondary p-4 rounded-full shadow-lg">
               <Calculator className="h-8 w-8 text-white" />
             </div>
           </div>
@@ -165,17 +170,14 @@ const SoftwareDevelopmentCostCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Main Form Card */}
           <div className="bg-white rounded-2xl border shadow-lg p-8">
-            <div className="grid gap-4">
+            <div className="grid gap-2.5">
               {/* Platform */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Platform *</label>
                 <select
                   value={inputs.platform}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      platform: e.target.value,
-                    }))
+                    handleInputChange("platform", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
@@ -188,7 +190,6 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </select>
               </div>
 
-              {/* Complexity */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">
                   Project Complexity *
@@ -196,15 +197,12 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <select
                   value={inputs.complexity}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      complexity: e.target.value,
-                    }))
+                    handleInputChange("complexity", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select complexity</option>
-                  {complexityLevels.map((level) => (
+                  {complexityLevels?.map((level) => (
                     <option key={level.value} value={level.value}>
                       {level.label}
                     </option>
@@ -215,15 +213,15 @@ const SoftwareDevelopmentCostCalculator = () => {
               {/* Features */}
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Key Features</label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
-                  {availableFeatures.map((feature) => (
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
+                  {availableFeatures?.map((feature) => (
                     <label
                       key={feature}
                       className="flex items-center space-x-2"
                     >
                       <input
                         type="checkbox"
-                        checked={inputs.features.includes(feature)}
+                        checked={inputs?.features?.includes(feature)}
                         onChange={(e) =>
                           handleFeatureChange(feature, e.target.checked)
                         }
@@ -241,9 +239,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 </label>
                 <select
                   value={inputs.design}
-                  onChange={(e) =>
-                    setInputs((prev) => ({ ...prev, design: e.target.value }))
-                  }
+                  onChange={(e) => handleInputChange("design", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select design level</option>
@@ -261,10 +257,7 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <select
                   value={inputs.timeline}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      timeline: e.target.value,
-                    }))
+                    handleInputChange("timeline", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
@@ -285,11 +278,9 @@ const SoftwareDevelopmentCostCalculator = () => {
                 <textarea
                   value={inputs.description}
                   onChange={(e) =>
-                    setInputs((prev) => ({
-                      ...prev,
-                      description: e.target.value,
-                    }))
+                    handleInputChange("description", e.target.value)
                   }
+                  rows={3}
                   className="w-full min-h-[120px] border rounded-lg p-3 bg-white"
                   placeholder="Describe your app idea..."
                 />
@@ -299,7 +290,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={!isFormValid() || isCalculating}
-                className="bg-gradient-to-r from-indigo-500 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
+                className="bg-gradient-to-r from-indigo-600 to-themeColor text-white rounded-lg py-4 text-lg font-semibold flex items-center justify-center disabled:opacity-50"
               >
                 {isCalculating ? (
                   <>
@@ -324,11 +315,11 @@ const SoftwareDevelopmentCostCalculator = () => {
                   <Wallet className="h-12 w-12 text-indigo-500" />
                 </div>
                 <h2 className="text-3xl font-bold">Your Estimated Cost</h2>
-                <div className="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent my-4">
+                <div className="text-5xl font-bold bg-gradient-to-r from-themeColor to-themeSecondary bg-clip-text text-transparent my-4">
                   {isCalculating || openPopup ? (
                     <PriceSkeleton />
                   ) : (
-                    `$${result.cost.toLocaleString()}`
+                    `$${result?.cost.toLocaleString()}`
                   )}
                 </div>
 
@@ -349,7 +340,7 @@ const SoftwareDevelopmentCostCalculator = () => {
               <div className="text-center py-12">
                 <div className="flex flex-col items-center justify-center space-y-6">
                   <div className="relative my-12">
-                    <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+                    <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-themeColor to-themeSecondary rounded-full flex items-center justify-center">
                       <Sparkles className="w-12 h-12 text-white" />
                     </div>
                     <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -388,6 +379,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

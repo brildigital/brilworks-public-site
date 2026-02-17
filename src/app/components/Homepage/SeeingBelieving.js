@@ -7,6 +7,7 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import { usePathname } from "next/navigation";
 import { scrollEffect } from "../lib/commonFunction";
+import { portfolioDynamicItems } from "../lib/constants";
 
 const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
@@ -59,53 +60,6 @@ const SeeingBelieving = ({
   //     };
   //   });
 
-  const portfolioDynamicItems = [
-    {
-      title: "Building a Swipe-Based Platform Connecting Artists and Buyers",
-      link: "/portfolio/art-marketplace-app/",
-      description:
-        "We created a dynamic platform that allows art lovers to discover new pieces, communicate directly with artists, and complete purchases with ease, fostering a vibrant art community.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/75ad9804cf_building-swiper-based-mobile-app.webp",
-      alt: "Social marketplace app",
-      industry: "E-commerce",
-      technology: ["iOS", "Android", "Flutterflow"],
-    },
-    {
-      title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
-      link: "/portfolio/pet-finding-app/",
-      description:
-        "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/d47ae82eac_connecting-pet-owners.webp",
-      alt: "Pet finder app",
-      industry: "Social",
-      technology: ["iOS", "Android", "Flutterflow"],
-    },
-    {
-      title: "Making Early Learning Fun with An Interactive Educational Game",
-      link: "/portfolio/educational-game-app/",
-      description:
-        "We developed a safe, mobile game for kids aged 2-6, using gamified activities to teach alphabets, numbers, colors, and shapes in an engaging way.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/a8b82fb2a7_early-learning-app.webp",
-      alt: "Educational mobile game",
-      industry: "Ed-Tech",
-      technology: ["iOS", "Android", "C#"],
-    },
-    {
-      title: "Streamlining Energy Audits with An All-In-One CRM Solution",
-      link: "/portfolio/crm-solution/",
-      description:
-        "We built a specialized CRM platform that automates energy auditing, connecting key stakeholders and optimizing workflows from scheduling to invoicing.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/9918cfc298_crm-based-software.webp",
-      alt: "Consulting App",
-      industry: "Consulting",
-      technology: ["NextJS", "NodeJS", "MySQL"],
-    },
-  ];
-
   const fintechPortfolio = [
     {
       title:
@@ -113,8 +67,7 @@ const SeeingBelieving = ({
       link: "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
       description:
         "Developing a mobile app for an ultimate AI stock prediction platform, allowing users to trade based on data-driven insights.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/b1a7a16ed4_stock-view-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/terrago-1760359156664.webp`,
       alt: "Fintech App",
       industry: "Fintech",
       technology: ["React Native", "Java", "MySQL"],
@@ -125,8 +78,7 @@ const SeeingBelieving = ({
       link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
       description:
         "Developing a mobile inventory management solution for a leading seat manufacturer.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/93672878ad_powerful-inventory-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
       alt: "E-commerce App",
       industry: "E-Commerce",
       technology: ["ReactJS", "NodeJS", "MongoDB"],
@@ -138,8 +90,7 @@ const SeeingBelieving = ({
       link: "/portfolio/healthcare-mobile-app/",
       description:
         "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/ed7dbf1d9c_healthcare-mobile-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       industry: "Healthcare",
       technology: ["React Native"],
     },
@@ -148,19 +99,63 @@ const SeeingBelieving = ({
       link: "/portfolio/mobile-fitness-app/",
       description:
         "We built a feature-rich fitness app that combines real-time performance tracking, personalized plans, and expert insights to help users achieve their health goals seamlessly.",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/eeb623385a_revolutionarizing-fitness-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`,
       industry: "Healthcare",
       technology: ["iOS", "Android", "React Native"],
+    },
+  ];
+  const hrPortfolio = [
+    {
+      title: "Ultimate Recruitment Referral Platform for Streamlined Hiring",
+      link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
+      description:
+        "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit. ",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/talentbase-1760359139239.webp`,
+      industry: "Human Resource",
+      technology: ["NextJS", "NodeJS", "MongoDB"],
+    },
+    {
+      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
+      link: "/portfolio/healthcare-mobile-app/",
+      description:
+        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
+      industry: "Healthcare",
+      technology: ["React Native"],
+    },
+  ];
+  const manufacturingPortfolio = [
+    {
+      title: "Innovative Platform for Comprehensive Supply Chain Management",
+      link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
+      description:
+        "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry. ",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/logistic-app-1760359147499.webp`,
+      industry: "Manufacturing",
+      technology: ["ReactJS", "Java", "MySql"],
+    },
+    {
+      title:
+        "A Powerful Inventory Management App to Reduce Order Processing Time",
+      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
+      description:
+        "Developing a mobile inventory management solution for a leading seat manufacturer.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
+      industry: "E-Commerce",
+      technology: ["ReactJS", "NodeJS", "MongoDB"],
     },
   ];
 
   const caseStudyData =
     pathname === "/industry/fintech-software-development/"
       ? fintechPortfolio
-      : pathname === "/industry/healthcare-software-development/"
-      ? healthcarePortfolio
-      : portfolioDynamicItems;
+      : pathname === "/industry/hr-software-development/"
+        ? hrPortfolio
+        : pathname === "/industry/manufacturing-software-development-services/"
+          ? manufacturingPortfolio
+          : pathname === "/industry/healthcare-software-development/"
+            ? healthcarePortfolio
+            : portfolioDynamicItems;
 
   return (
     <div className={bgClass}>
@@ -188,7 +183,7 @@ const SeeingBelieving = ({
               ?.map(
                 (
                   { title, link, description, image, technology, industry },
-                  index
+                  index,
                 ) => {
                   return (
                     <div
@@ -252,7 +247,7 @@ const SeeingBelieving = ({
                       </div>
                     </div>
                   );
-                }
+                },
               )}
         </div>
         <div className="flex justify-center">

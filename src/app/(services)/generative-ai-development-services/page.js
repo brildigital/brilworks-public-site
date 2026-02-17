@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <GenerativeAIDevService />
-    </div>
-  );
+  return <GenerativeAIDevService />;
 };
 
 export default page;

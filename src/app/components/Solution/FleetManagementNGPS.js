@@ -2,6 +2,11 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import {
+  faReact,
+  faAngular,
+  faVuejs,
+} from "@fortawesome/free-brands-svg-icons";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import TypesOfAppWeDevelop from "./TypesOfAppWeDevelop";
@@ -10,75 +15,83 @@ import MultipleKeyValueWithBG from "../Common/MultipleKeyValueWithBG";
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
+);
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const FleetManagementNGPS = () => {
   const fleetServices1 = {
-    title:
-      "Increase Your Fleet’s Efficiency With Our Fleet Management Software Solutions",
+    title: "Our Logistics Solutions",
     buttonText: "Build My Fleet Management App",
     servicesList: [
       {
-        title: "Fleet Telematics Solutions",
+        title: "Fleet Management App Development",
         description:
-          "Our extensive fleet telematics solution is designed for large vehicle fleets and uses real-time sensor data, video analytics, and in-car computers to help you optimize the driving efficiency of your vehicles.",
+          "We build apps that allow you to monitor and optimise your vehicle fleets in real time. Track drivers, plan routes, capture performance data and reduce idle time so your fleet becomes a strategic asset, not just a cost centre.",
         value: "fleet-one-1",
         imageSrc: "/images/v2/fleet-telematics-solutions.webp",
         imageAlt: "Fleet Telematics Solutions",
+        btnText: "Explore Fleet Solutions",
       },
       {
-        title: "GPS Fleet Tracking",
+        title: "Inventory Management App Development",
         description:
-          "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
+          "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You’ll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.",
         value: "fleet-one-2",
-        imageSrc: "/images/v2/gps-fleet-tracking.webp",
-        imageAlt: "Delivery Management Software",
-      },
-      {
-        title: "Fuel Consumption Control Apps",
-        description:
-          "Our fuel consumption control apps can collect and analyze data from your fleet to help you optimize fuel efficiency. Integrations with telematics and vehicle tracking systems let organizations ensure compliance with corporate policies, knowing that the whole supply chain has been accounted for.",
-        value: "fleet-one-3",
-        imageSrc: "/images/v2/fuel-consumption-control-apps.webp",
-        imageAlt: "Fuel Consumption Control Apps",
-      },
-      {
-        title: "Fleet Management Integration",
-        description:
-          "Easily generate reports on mileage to prevent the occurrence of vehicle downtime due to lack of maintenance. CFMS also allows you to record daily expenses, track accurate vehicle utilization history, and promote ride-sharing incentives available in various cities across the country.",
-        value: "fleet-one-4",
-        imageSrc: "/images/v2/fleet-management-integration.webp",
-        imageAlt: "Fleet Management Integration",
-      },
-      {
-        title: "Driver Management & Safety",
-        description:
-          "With its in-vehicle monitoring and reporting system, you can monitor driving behavior, boost safety and efficiency by reducing tailgating, assist drivers to reduce fatigue, and minimize idle-time.",
-        value: "fleet-one-5",
-        imageSrc: "/images/v2/driver-management-and-safety.webp",
-        imageAlt: "Driver Management Safety",
-      },
-      {
-        title: "Fleet Maintenance & Predictions",
-        description:
-          "Aggregate, monitor, and analyze data to trigger timely maintenance reminders, optimize service visits and simplify scheduling routine repairs.",
-        value: "fleet-one-6",
         imageSrc: "/images/v2/fleet-maintenance-and-predictions.webp",
         imageAlt: "Fleet Maintenance Predictions",
+        btnText: "Discover Supply Chain Apps",
+      },
+      {
+        title: "On-Demand Logistics App Development",
+        description:
+          "On-demand logistics apps for dynamic routing, real-time tracking for customers and dispatchers, helping you win in competitive markets.",
+        value: "fleet-one-3",
+        imageSrc: "/images/v2/fleet-management-integration.webp",
+        imageAlt: "Fleet Management Integration",
+        btnText: "Learn More",
+      },
+      {
+        title: "Route Optimisation App Development",
+        description:
+          "For companies managing complex transportation logistics, we build apps that integrate order volumes, traffic data, vehicle capacities and delivery constraints to plan efficient trips, reduce costs and improve reliability.",
+        value: "fleet-one-4",
+        imageSrc: "/images/v2/driver-management-and-safety.webp",
+        imageAlt: "Driver Management Safety",
+        btnText: "Learn More",
+      },
+      {
+        title: "Custom Enterprise Logistics App Development ",
+        description:
+          "Your business is unique. If you need a tailored solution. We design custom logistics apps built to your requirements, with future-proof architecture, data analytics modules and support across mobile and web platforms.",
+        value: "fleet-one-5",
+        imageSrc: "/images/v2/fuel-consumption-control-apps.webp",
+        imageAlt: "Fuel Consumption Control Apps",
+        btnText: "Start a Custom Project",
       },
     ],
   };
+
   const fleetServices2 = {
     title: "Custom Fleet Management Software Services",
     buttonText: "Speak With Our Experts",
     servicesList: [
       {
+        title: "GPS Fleet Tracking",
+        description:
+          "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
+        value: "fleet-two-1",
+        imageSrc: "/images/v2/gps-fleet-tracking.webp",
+        imageAlt: "Delivery Management Software",
+      },
+      {
         title: "Traffic Management Software",
         description:
           "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.",
-        value: "fleet-two-1",
+        value: "fleet-two-2",
         imageSrc: "/images/v2/traffic-mgmt-app.webp",
         imageAlt: "Traffic-Management-Software",
       },
@@ -86,7 +99,7 @@ const FleetManagementNGPS = () => {
         title: "Delivery Management Software",
         description:
           "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
-        value: "fleet-two-2",
+        value: "fleet-two-3",
         imageSrc: "/images/v2/delivery-management-software.webp",
         imageAlt: "GPS-Fleet-Tracking",
       },
@@ -94,7 +107,7 @@ const FleetManagementNGPS = () => {
         title: "Transportation Software",
         description:
           "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
-        value: "fleet-two-3",
+        value: "fleet-two-4",
         imageSrc: "/images/v2/transportation-software.webp",
         imageAlt: "Transportation-Software",
       },
@@ -102,7 +115,7 @@ const FleetManagementNGPS = () => {
         title: "Supply Chain Management Software",
         description:
           "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
-        value: "fleet-two-4",
+        value: "fleet-two-5",
         imageSrc: "/images/v2/supply-chain-management-software.webp",
         imageAlt: "Supply-Chain-Management-Software",
       },
@@ -199,6 +212,78 @@ const FleetManagementNGPS = () => {
     },
   ];
 
+  const techStackList = [
+    {
+      title: "Frontend",
+      value: "frontend",
+      items: [
+        { label: "ReactJS", icon: faReact, color: "#61DBFB" },
+        { label: "AngularJS", icon: faAngular, color: "#DD0031" },
+        { label: "VueJS", icon: faVuejs, color: "#42B883" },
+      ],
+    },
+    {
+      title: "Backend",
+      value: "backend",
+      items: [
+        { label: "Python", iconifyIcon: "/images/python.svg" },
+        { label: "NodeJS", iconifyIcon: "/images/node-icon.svg" },
+        { label: "Java", iconifyIcon: "/images/java.svg" },
+      ],
+    },
+    {
+      title: "Mobile",
+      value: "mobile-development",
+      items: [
+        { label: "React Native", icon: faReact, color: "#61DBFB" },
+        { label: "Flutter", iconifyIcon: "/images/flutter.svg" },
+        { label: "Swift", iconifyIcon: "/images/swift-language.svg" },
+        { label: "Kotlin", iconifyIcon: "/images/kotlin-icon.svg" },
+      ],
+    },
+    {
+      title: "Databases",
+      value: "databases",
+      items: [
+        {
+          label: "MongoDB",
+          iconifyIcon: "/images/mongodb.svg",
+        },
+        {
+          label: "PostgreSQL",
+          iconifyIcon: "/images/postgresql.svg",
+        },
+        { label: "Firebase", iconifyIcon: "/images/firebase-icon.svg" },
+      ],
+    },
+    {
+      title: "Integrations",
+      value: "integrations",
+      items: [
+        { label: "Google Maps API" },
+        { label: "Fleet Telematics" },
+        {
+          label: "IoT Sensors",
+        },
+        {
+          label: "ERP/CRM Connectors",
+        },
+      ],
+    },
+    {
+      title: "Cloud",
+      value: "cloud-devops",
+      items: [
+        { label: "AWS", iconifyIcon: "/images/aws.svg" },
+        { label: "Azure", iconifyIcon: "/images/azure.svg" },
+        {
+          label: "Google Cloud Platform",
+          iconifyIcon: "/images/v2/google-cloud-icon.svg",
+        },
+      ],
+    },
+  ];
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -213,22 +298,27 @@ const FleetManagementNGPS = () => {
       <SolutionHeroSection
         technologyText={
           <>
-            Fleet Management Software
-            <br className="md:block hidden" /> Development Company
+            Fleet Management App
+            <br className="md:block hidden" /> Development Services
           </>
         }
-        title="Enhance your operations with custom fleet management Software Solutions"
-        description="Improve your fleet’s productivity, visibility, and knowledge with the help of our custom fleet management app software development services"
+        title="Custom Fleet Management Mobile & Web App Development"
+        description="At Brilworks, we design and build custom fleet management apps for mobile and web that transform fleet operations. We build smartest solutions for managing fleets, tracking shipments, and optimising last-mile delivery. Our fleet management app development services give you the tools to reduce costs, increase visibility and deliver better service. "
         imageSrc="/images/v2/fleet-mgmt-banner.webp"
       />
-      <ServicesSection sectionId="fleet-one" serviceData={fleetServices1} />
+      <ServicesSection sectionId="services-one" serviceData={fleetServices1} />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="fleet-two"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={fleetServices2}
       />
       <TypesOfAppWeDevelop data={fleetAppWeDevelop} />
+      <TechStackWeWorkWith
+        active="frontend"
+        title="Technologies We Use"
+        techStackList={techStackList}
+      />
       <MultipleCardWithIconBG bgClass="bg-sectionBG" data={fleetMgmtFeature} />
       <MultipleKeyValueWithBG
         bgClass="bg-white"
@@ -238,7 +328,10 @@ const FleetManagementNGPS = () => {
         keyValueData={fleetExperienceShowCase}
       />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
+      <SolutionContactForm
+        title="Start Building Your Fleet Management App Today"
+        description="Modern fleet runs on technology. Let’s build the solution that keeps yours ahead of the curve."
+      />
       <FleetManagmentFAQs />
     </>
   );

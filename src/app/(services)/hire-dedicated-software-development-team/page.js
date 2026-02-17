@@ -2,11 +2,11 @@ import React from "react";
 import DedicatedTeam from "@/app/components/Services/DedicatedTeam";
 
 export const metadata = {
-  title: "Dedicated Team",
+  title: "Hire Dedicated Software Development Team",
   description:
     "Scale your development capabilities with Brilworks' dedicated software teams. Access top-tier talent committed to your long-term success and seamlessly integrated with your business goals.",
   openGraph: {
-    title: "Dedicated Team",
+    title: "Hire Dedicated Software Development Team",
     description:
       "Scale your development capabilities with Brilworks' dedicated software teams. Access top-tier talent committed to your long-term success and seamlessly integrated with your business goals.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-dedicated-software-development-team/`,
@@ -16,7 +16,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Dedicated Team",
+    title: "Hire Dedicated Software Development Team",
     description:
       "Scale your development capabilities with Brilworks' dedicated software teams. Access top-tier talent committed to your long-term success and seamlessly integrated with your business goals.",
     card: "summary_large_image",

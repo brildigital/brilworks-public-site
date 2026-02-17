@@ -43,7 +43,7 @@ async function listAllObjects(bucketName, folderName) {
   // Sort by LastModified descending (latest first)
   return allObjects.sort(
     (a, b) =>
-      (b.LastModified?.getTime() ?? 0) - (a.LastModified?.getTime() ?? 0)
+      (b.LastModified?.getTime() ?? 0) - (a.LastModified?.getTime() ?? 0),
   );
 }
 
@@ -51,13 +51,20 @@ export async function GET() {
   try {
     const bucketName = process.env.AWS_S3_BUCKET;
     const region = process.env.AWS_REGION;
+    console.log({
+      bucket: process.env.AWS_S3_BUCKET,
+      region: process.env.AWS_REGION,
+    });
 
     const assetFolder = "assets";
     const objects = await listAllObjects(bucketName, assetFolder);
 
     const urls = objects.map(
-      (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+      (obj) => `https://d14lhgoyljo1xt.cloudfront.net/${obj.Key}`,
     );
+    // const urls = objects.map(
+    //   (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+    // );
 
     return new NextResponse(JSON.stringify({ assets: urls }), {
       status: 200,
@@ -76,7 +83,7 @@ export async function GET() {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
-      }
+      },
     );
   }
 }
@@ -91,7 +98,7 @@ export async function POST(req) {
     if (!name || !type) {
       return NextResponse.json(
         { error: "Missing name or type in formData" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -129,7 +136,7 @@ export async function POST(req) {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
-      }
+      },
     );
   } catch (err) {
     console.error("Error generating pre-signed URL:", err);
@@ -141,7 +148,7 @@ export async function POST(req) {
           "Access-Control-Allow-Origin": "*", // or '*'
           "Content-Type": "application/json",
         },
-      }
+      },
     );
   }
 }
@@ -161,7 +168,7 @@ export async function DELETE(req) {
             "Access-Control-Allow-Origin": "*", // or '*'
             "Content-Type": "application/json",
           },
-        }
+        },
       );
     }
 
@@ -180,7 +187,7 @@ export async function DELETE(req) {
           "Access-Control-Allow-Origin": "*", // or '*'
           "Content-Type": "application/json",
         },
-      }
+      },
     );
   } catch (error) {
     console.error("Error deleting S3 object:", error);
@@ -192,7 +199,7 @@ export async function DELETE(req) {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
-      }
+      },
     );
   }
 }

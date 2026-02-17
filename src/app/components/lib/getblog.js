@@ -21,7 +21,7 @@ export async function getblog() {
     },
     {
       next: { revalidate: 0 },
-    }
+    },
   );
   const storyData = stories.data.stories;
   return storyData;
@@ -32,7 +32,7 @@ export async function getblogData(
   limit_per_page,
   filter_category,
   search_query,
-  filter_subcategory
+  filter_subcategory,
 ) {
   // Define the base parameters for the API call
   let apiParams = {
@@ -69,8 +69,15 @@ export async function getblogData(
   // }
 
   if (search_query) {
-    // If search_query is present, add search_term to apiParams
-    apiParams.search_term = search_query;
+    apiParams.filter_query = {
+      ...apiParams.filter_query,
+      __or: [
+        { title: { like: `%${search_query}%` } },
+        // { content: { like: `%${search_query}%` } },
+        // { Content_1: { like: `%${search_query}%` } },
+        // { Content_2: { like: `%${search_query}%` } },
+      ],
+    };
   }
 
   // Make the API call with the constructed parameters
@@ -89,7 +96,7 @@ export async function getSuggestionblog(
   limit_per_page,
   filter_category,
   search_query,
-  filter_subcategory
+  filter_subcategory,
 ) {
   const baseParams = {
     starts_with: "blog/",
@@ -154,7 +161,7 @@ export async function getblogSpecificAuthor(
   limit_per_page,
   filter_category,
   search_query,
-  author_name
+  author_name,
 ) {
   // Define the base parameters for the API call
   let apiParams = {
@@ -248,6 +255,17 @@ export async function getBlogForSitemap() {
     page += 1;
   }
 
+  // function formatBlogData(data) {
+  //   return {
+  //     name: data.name,
+  //     content: data.content ?? "",
+  //     created_at: data.created_at,
+  //     published_at: data.published_at,
+  //     updated_at: data.updated_at,
+  //     blog_url: `https://www.brilworks.com/${data.full_slug}`,
+  //   };
+  // }
+
   const blogSiteMapData = allStories.map((data) => {
     return {
       name: data.name,
@@ -255,6 +273,9 @@ export async function getBlogForSitemap() {
       lastmod: `${data.published_at}`,
     };
   });
+  // const blogData = allStories.map((data) => {
+  //   return formatBlogData(data);
+  // });
 
   return blogSiteMapData;
 }

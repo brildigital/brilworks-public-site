@@ -19,23 +19,23 @@ import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG")
 );
 const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm")
 );
-const HireTeamDigitalTransformation = dynamic(() =>
-  import("../HireTeam/HireTeamDigitalTransformation")
+const HireTeamDigitalTransformation = dynamic(
+  () => import("../HireTeam/HireTeamDigitalTransformation")
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers")
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -271,7 +271,7 @@ const NodejsTechnology = () => {
         cardData={why100PlusCompaniesTrust}
       />
       <ServicesSection
-        sectionId="hire-nodejs-developer"
+        sectionId="services-one"
         bgClass="bg-themeLight"
         serviceData={nodeJSService}
       />

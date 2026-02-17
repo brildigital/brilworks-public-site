@@ -33,11 +33,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <SaaSApplicationDevelopmentService />
-    </div>
-  );
+  return <SaaSApplicationDevelopmentService />;
 };
 
 export default page;

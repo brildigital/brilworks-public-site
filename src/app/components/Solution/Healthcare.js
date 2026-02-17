@@ -7,13 +7,14 @@ import ServicesSection from "../Common/ServicesSection";
 
 const HealthcareFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
+const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const TypesOfAppWeDevelop = dynamic(() => import("./TypesOfAppWeDevelop"));
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const HealthCare = () => {
@@ -181,12 +182,12 @@ const HealthCare = () => {
         imageSrc="/images/v2/helathcare-banner.webp"
       />
       <ServicesSection
-        sectionId="healthcare-one"
+        sectionId="services-one"
         serviceData={healthcareServices1}
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="healthcare-two"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={healthcareServices2}
       />
@@ -203,6 +204,7 @@ const HealthCare = () => {
         title="Our Portfolio"
         buttonText="Work With Us"
       />
+      <HomePageBlogs />
       <SolutionEngagementAndHowCanStart />
       <SolutionContactForm />
       <HealthcareFAQs />

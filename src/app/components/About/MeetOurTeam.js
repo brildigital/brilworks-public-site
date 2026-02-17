@@ -12,27 +12,27 @@ const MeetOurTeam = () => {
     {
       name: "Vikas Singh",
       role: "Chief Technology Officer",
-      imageSrc: "/images/v2/Team-Member1.png",
+      imageSrc: "/images/v2/team-member1.webp",
     },
     {
       name: "Hitesh Umaletiya",
       role: "Co-Founder",
-      imageSrc: "/images/v2/Team-Member2.png",
+      imageSrc: "/images/v2/team-member2.webp",
     },
     {
       name: "Dhaval Makwana",
       role: "Project Manager",
-      imageSrc: "/images/v2/Team-Member5.png",
+      imageSrc: "/images/v2/team-member5.webp",
     },
     {
       name: "Colin Shah",
       role: "Technical Project Manager",
-      imageSrc: "/images/v2/Team-Member3.png",
+      imageSrc: "/images/v2/team-member3.webp",
     },
     {
       name: "Dinesh Kachhot",
       role: "Team Lead",
-      imageSrc: "/images/v2/Team-Member4.png",
+      imageSrc: "/images/v2/team-member4.webp",
     },
   ];
   return (

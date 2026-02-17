@@ -89,24 +89,29 @@ const Footer = () => {
       title: "Solutions",
       links: [
         {
+          text: "EdTech",
+          link: "/industry/edtech-software-development/",
+        },
+
+        {
           link: "/industry/fintech-software-development/",
           text: "Fintech",
-        },
-        {
-          link: "/industry/fleet-management-software-development/",
-          text: "Fleet Management  + GPS",
         },
         {
           link: "/industry/healthcare-software-development/",
           text: "Healthcare",
         },
         {
+          text: "E-Commerce",
+          link: "/industry/e-commerce-app-development/",
+        },
+        {
           link: "/industry/media-entertainment-software-development/",
           text: "Media & Entertainment",
         },
         {
-          text: "E-Commerce",
-          link: "/industry/e-commerce-app-development/",
+          link: "/industry/fleet-management-software-development/",
+          text: "Fleet Management  + GPS",
         },
       ],
     },
@@ -222,7 +227,10 @@ const Footer = () => {
     },
   ];
 
-  return pathname === "/posters/" ? (
+  return pathname === "/posters/" ||
+    pathname.includes("/x/product-listing/spine-recovery-pro/") ||
+    pathname.includes("/ai-agents/") ||
+    pathname.includes("/i-remi") ? (
     ""
   ) : (
     <div className="footer-background text-colorWhite">
@@ -347,7 +355,7 @@ const Footer = () => {
                         />
                         {text}
                       </a>
-                    )
+                    ),
                   )}
                 </div>
               ))}

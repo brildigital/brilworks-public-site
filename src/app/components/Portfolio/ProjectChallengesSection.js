@@ -12,27 +12,25 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
               <Heading
                 type="h2"
                 className="lg:!text-[34px] md:!text-3xl !text-2xl mb-4"
-                text={projectChallenges?.[0]?.Title}
+                text={projectChallenges.Title}
               />
-              {projectChallenges?.[0]?.Description1 && (
+              {projectChallenges.Description1 && (
                 <p
                   className={`md:text-lg text-base ${
-                    projectChallenges?.[0]?.Description2
-                      ? "!mb-5"
-                      : "md:!mb-8 !mb-5"
+                    projectChallenges.Description2 ? "!mb-5" : "md:!mb-8 !mb-5"
                   }`}
                 >
-                  {projectChallenges?.[0]?.Description1}
+                  {projectChallenges.Description1}
                 </p>
               )}
-              {projectChallenges?.[0]?.Description2 && (
+              {projectChallenges.Description2 && (
                 <p className="md:text-lg text-base md:!mb-8 !mb-5">
-                  {projectChallenges?.[0]?.Description2}
+                  {projectChallenges.Description2}
                 </p>
               )}
-              {projectChallenges?.[0]?.ListItem?.length ? (
+              {projectChallenges.ListItem?.length ? (
                 <ul>
-                  {projectChallenges?.[0]?.ListItem?.map(
+                  {projectChallenges.ListItem?.map(
                     ({ Display_text }, index) =>
                       Display_text && (
                         <li
@@ -41,7 +39,7 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                         >
                           {Display_text}
                         </li>
-                      )
+                      ),
                   )}
                 </ul>
               ) : (
@@ -106,7 +104,7 @@ const ProjectChallengesSection = ({ projectChallenges }) => {
                         >
                           {Display_text}
                         </li>
-                      )
+                      ),
                   )}
                 </ul>
               ) : (

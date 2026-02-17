@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import StoryblokClient from "storyblok-js-client";
 
-const Kinderland = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/Kinderland")
+const PrivacyPolicy = dynamic(
+  () => import("@/app/components/PrivacyPolicy/PrivacyPolicy"),
 );
 
 const Storyblok = new StoryblokClient({
@@ -30,7 +30,7 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <Kinderland data={privacyPolicyData} />
+      <PrivacyPolicy data={privacyPolicyData} title="Kinderland" />
     </>
   );
 }

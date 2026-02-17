@@ -5,8 +5,8 @@ const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-const ExpenifyTermsAndConditions = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/ExpenifyTermsAndConditions")
+const PrivacyPolicy = dynamic(
+  () => import("@/app/components/PrivacyPolicy/PrivacyPolicy"),
 );
 
 export async function getTermsAndConditions() {
@@ -30,7 +30,11 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <ExpenifyTermsAndConditions data={termsAndConditionData} />
+      <PrivacyPolicy
+        data={termsAndConditionData}
+        title="ExpenseFlow"
+        subTitle="Terms and Conditions"
+      />
     </>
   );
 }

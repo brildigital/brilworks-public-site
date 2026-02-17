@@ -11,6 +11,7 @@ const HireTeamHeroSection = ({
   description,
   imageSrc,
   hireButtonText = "",
+  buttonLabel = "",
 }) => {
   const pathname = usePathname();
   const bgBannerSelection = [
@@ -32,13 +33,29 @@ const HireTeamHeroSection = ({
       <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
         <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
           <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-14 gap-6">
-            <div className="md:w-1/2 w-full">
+            <div
+              className={`${
+                pathname === "/hire-reactjs-developer/"
+                  ? "md:w-3/5"
+                  : "md:w-1/2"
+              } w-full`}
+            >
               <Heading
                 type="h1"
-                className="text-white xl:text-5xl lg:text-[42px] md:text-4xl text-3xl"
-                text={`Talk to our expert ${
-                  pathname === "/hire-reactjs-developer/" ? "for" : "to"
-                } ${technologyText}`}
+                className={`text-white ${
+                  pathname === "/hire-white-label-developer/"
+                    ? "xl:!text-5xl lg:text-[42px] md:text-4xl text-3xl"
+                    : "xl:text-5xl lg:text-[42px] md:text-4xl text-3xl"
+                }`}
+                text={
+                  pathname === "/hire-reactjs-developer/"
+                    ? title
+                    : `Talk to our expert ${
+                        pathname === "/hire-white-label-developer/"
+                          ? "for"
+                          : "to"
+                      } ${technologyText}`
+                }
               />
               <p className="text-white lg:text-xl md:text-lg text-base !my-4">
                 {description}
@@ -56,13 +73,19 @@ const HireTeamHeroSection = ({
                   size="large"
                   redirect="#section-contact-form"
                   className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
-                  label="Learn More"
+                  label={buttonLabel || `Learn More`}
                   scrollingButton
                 />
                 {/* <ButtonV2 size="large" className="w-full" label="Hire Now" /> */}
               </div>
             </div>
-            <div className="lg:w-1/2 w-full lg:mt-14 mb-auto">
+            <div
+              className={`${
+                pathname === "/hire-reactjs-developer/"
+                  ? "md:w-2/5"
+                  : "lg:w-1/2"
+              } w-full lg:mt-14 mb-auto`}
+            >
               <div className="glass-effect md:px-6 px-4 lg:py-10 py-5 rounded-md">
                 <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
                   Enter the details to proceed.

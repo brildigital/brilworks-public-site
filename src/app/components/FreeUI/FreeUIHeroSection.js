@@ -24,10 +24,16 @@ const FreeUIHeroSection = () => {
                 Experience our world-class design services with zero commitment.
               </p>
               <div className="flex flex-row md:items-center items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
-                <ButtonV2 size="large" className="w-fit" label="Claim Now" />
                 <ButtonV2
                   size="large"
-                  redirect="#section-contact-form"
+                  className="w-fit"
+                  label="Claim Now"
+                  redirect="#cta"
+                  scrollingButton
+                />
+                <ButtonV2
+                  size="large"
+                  redirect="#portfolio"
                   className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
                   label="View Portfolio"
                   scrollingButton

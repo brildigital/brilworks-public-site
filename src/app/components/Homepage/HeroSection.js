@@ -13,28 +13,19 @@ const HeroSection = () => {
               className="text-white lg:mt-20 mt-10"
               text={
                 <>
-                  Providing{" "}
+                  Future-Ready Apps Powered by
+                  <br className="hidden md:block" />{" "}
                   <span className="bg-clip-text text-transparent bg-theme-gradient">
-                    Nextgen
+                    AI & AWS
                   </span>{" "}
-                  Technology <br className="hidden md:block" /> Solutions for
-                  your next leap
+                  Expertise
                 </>
               }
             />
             <h2 className="sxl:text-2xl md:text-xl text-base text-white my-5">
-              We design, build, and scale custom apps including mobile, web,
-              AI-powered software. <br className="hidden slg:block" /> Backed by
-              vetted-expertise in cutting-edge technologies and modern
-              frameworks,
-              <br className="hidden slg:block" /> we serve startups, growing
-              tech teams, and mid-sized companies.
-              {/* Accelerating product timelines, optimizing AWS, and delivering Gen AI
-              <br className="hidden slg:block" />
-              solutions, White label apps, and Product engineering expertise in
-              Next.js,
-              <br className="hidden slg:block" /> Java, and low-code/no-code
-              platforms. */}
+              Transforming ideas into intelligent, scalable applications with
+              <br className="hidden slg:block" /> the perfect mix of AI, product
+              engineering, and cloud expertise.
             </h2>
             <ButtonV2
               size="large"

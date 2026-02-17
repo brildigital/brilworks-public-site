@@ -1,5 +1,4 @@
-import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
-import parse from "html-react-parser";
+import PrivacyPolicy from "@/app/components/PrivacyPolicy/PrivacyPolicy";
 import StoryblokClient from "storyblok-js-client";
 
 const Storyblok = new StoryblokClient({
@@ -53,24 +52,11 @@ export default async function page() {
           <meta name="robots" content="noindex, nofollow" />
         </head>
       ) : null}
-      <section className="kinderland mt-[6rem] !mb-8 w-full flex align-middle justify-center">
-        <div className="container max-w-[1280px] main-section-padding !py-8 md:px-10 px-6 mx-auto w-full">
-          <div className="pb-3">
-            <h1 className="md:!text-[3rem] !text-[2rem] font-semibold">
-              Brilworks Terms and Conditions
-            </h1>
-          </div>
-          {termsAndConditionData ? (
-            <div className="brilworks-policy-page">
-              {parse(termsAndConditionData?.content?.content?.content)}
-            </div>
-          ) : (
-            <div className="flex align-middle justify-center p-24">
-              <FetchDataSpinner />
-            </div>
-          )}
-        </div>
-      </section>
+      <PrivacyPolicy
+        data={termsAndConditionData}
+        title="Brilworks"
+        subTitle="Terms and Conditions"
+      />
     </>
   );
 }

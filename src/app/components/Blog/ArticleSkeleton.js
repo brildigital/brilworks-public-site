@@ -96,10 +96,21 @@ export const TableOfContentSkeleton = () => {
   );
 };
 
-export const PriceSkeleton = () => {
+export const PriceSkeleton = (id, height, width) => {
+  return (
+    <SkeletonTheme
+      id={id || "skeleton"}
+      baseColor="#e2e2e2"
+      highlightColor="#e9e9e9"
+    >
+      <Skeleton count={1} height={height || 46} width={width || 250} />
+    </SkeletonTheme>
+  );
+};
+export const PriceSkeletonSmall = () => {
   return (
     <SkeletonTheme baseColor="#e2e2e2" highlightColor="#e9e9e9">
-      <Skeleton count={1} height={46} width={250} />
+      <Skeleton count={1} height={24} width={80} />
     </SkeletonTheme>
   );
 };

@@ -7,14 +7,14 @@ import ServicesSection from "../Common/ServicesSection";
 
 const UIUXFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm")
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers")
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -79,10 +79,7 @@ const UIUXTechnology = () => {
         description="We design intuitive, appealing, aesthetic, and informative experiences that are easy for your customers to engage with, understand and enjoy. Unlock exponential growth with our UI UX design services today!"
         imageSrc="/images/v2/ui-ux-banner.webp"
       />
-      <ServicesSection
-        serviceData={uiuxService}
-        sectionId="hire-ui-ux-designer"
-      />
+      <ServicesSection serviceData={uiuxService} sectionId="services-one" />
       <TechnologyDevelopers bgClass="bg-white" />
       {/* <BenefitOfHiringDevelopers bgClass="bg-sectionBG" /> */}
       <HireDevelopersInThreeSteps

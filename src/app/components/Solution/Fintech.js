@@ -5,17 +5,17 @@ import { scrollEffect } from "../lib/commonFunction";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const Fintech = () => {
@@ -221,12 +221,12 @@ const Fintech = () => {
         imageSrc="/images/v2/fintech-banner.webp"
       />
       <ServicesSection
-        sectionId="fintech-services-one"
+        sectionId="services-one"
         serviceData={fintechServices1}
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="fintech-services-two"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={fintechServices2}
       />

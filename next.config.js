@@ -16,7 +16,8 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "cdn-icons-png.flaticon.com",
       "brilworks-website-asset.s3.ap-south-1.amazonaws.com",
-      "brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com",
+      "brilworks-site-assets.s3.eu-central-1.amazonaws.com",
+      "d14lhgoyljo1xt.cloudfront.net",
     ],
   },
   webpack: (config, { dev, isServer }) => {
@@ -910,6 +911,116 @@ const nextConfig = {
       {
         source: `/blog/how-to-hire-node-js-developers/`,
         destination: `/blog/hiring-node-js-developers-models/`,
+        statusCode: 301,
+      },
+      {
+        source: `/mobility-app-development-calculator/`,
+        destination: `/tools/mobility-app-development-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/app-maintenance-cost-estimator/`,
+        destination: `/tools/app-maintenance-cost-estimator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/roi-calculator/`,
+        destination: `/tools/roi-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/mvp-launch-timeline-estimator/`,
+        destination: `/tools/mvp-launch-timeline-estimator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/mvp-development-cost-calculator/`,
+        destination: `/tools/mvp-development-cost-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/feature-complexity-vs-time-estimator/`,
+        destination: `/tools/feature-complexity-vs-time-estimator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/react-vs-angular/blog/top-10-websites-built-using-react-js/`,
+        destination: `/blog/react-vs-angular/`,
+        statusCode: 301,
+      },
+      {
+        source: `/project-estimate/`,
+        destination: `/tools/project-estimate/`,
+        statusCode: 301,
+      },
+      {
+        source: `/saas-development-cost-calculator/`,
+        destination: `/tools/saas-development-cost-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/go-to-market-timeline-planner/`,
+        destination: `/tools/go-to-market-timeline-planner/`,
+        statusCode: 301,
+      },
+      {
+        source: `/app-development-timeline-calculator/`,
+        destination: `/tools/app-development-timeline-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/database-selector-tool/`,
+        destination: `/tools/database-selector-tool/`,
+        statusCode: 301,
+      },
+      {
+        source: `/testing-qa-timeline-estimator/`,
+        destination: `/tools/testing-qa-timeline-estimator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/tech-stack-recommender/`,
+        destination: `/tools/tech-stack-recommender/`,
+        statusCode: 301,
+      },
+      {
+        source: `/cross-platform-vs-native-analyzer/`,
+        destination: `/tools/cross-platform-vs-native-analyzer/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/best-guide-to-hire-node-js-developers/Node.js%20is%20widely%20used%20in%20B2B%20SaaS%20platforms,%20streaming%20apps,%20API-first%C2%A0backends,%20and%20microservices.%2043%25%20of%20Node.js%20developers%20use%20it%20for%20enterprise%20applications`,
+        destination: `/blog/best-guide-to-hire-node-js-developers/`,
+        statusCode: 301,
+      },
+      {
+        source: `/tools/startup-tech-readiness-quiz/`,
+        destination: `/tools/tech-readiness-assessment-tool/`,
+        statusCode: 301,
+      },
+      {
+        source: `/tools/project-estimate/`,
+        destination: `/tools/app-development-cost-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/enclave-connect/`,
+        destination: `/x/product-listing/enclave-connect/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/exora/`,
+        destination: `/x/product-listing/exora/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/mind-sync/`,
+        destination: `/x/product-listing/mind-sync/`,
+        statusCode: 301,
+      },
+      {
+        source: `/snapgen-privacy-policy/`,
+        destination: `/mr-brush-privacy-policy/`,
         statusCode: 301,
       },
     ];

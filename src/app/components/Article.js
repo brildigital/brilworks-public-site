@@ -22,6 +22,8 @@ import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 import QuickSummary from "./Blog/QuickSummary";
 import Heading from "./HTMLComponents/Heading";
+import EbookPopup from "./Blog/EbookPopup";
+// import EbookPopup from "./Blog/EbookPopup";
 
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 
@@ -29,9 +31,12 @@ const Article = ({ blok }) => {
   const pathname = usePathname();
   const targetRef = useRef();
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1080 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [blogData, setBlogData] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [openPopup, setOpenPopup] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   const [activeLink, setActiveLink] = useState(null);
 
@@ -50,7 +55,7 @@ const Article = ({ blok }) => {
           isTablet ? 3 : 4,
           blok?.Category,
           suggestSimilarBlogPosts(blok?.title),
-          blok?.subcategory?.[0] || ""
+          blok?.subcategory?.[0] || "",
         );
         setBlogData(blogData.storyData);
 
@@ -80,6 +85,40 @@ const Article = ({ blok }) => {
       }, 500);
     }
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (dismissed) return; // 👉 if closed once, never show again
+
+      const lastShown = localStorage.getItem("article-popup");
+      if (lastShown) {
+        const diff = Date.now() - Number(lastShown);
+
+        const sevenDays = 7 * 24 * 60 * 60 * 1000;
+        if (diff < sevenDays) return; // 👈 Not 7 days yet — skip showing
+      }
+
+      const pageHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      const scrolled = scrollTop + viewportHeight;
+      const halfPage = scrolled >= pageHeight / 2;
+
+      if (halfPage) {
+        localStorage.setItem("article-popup", Date.now().toString()); // Save timestamp
+        setOpenPopup(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dismissed]);
+
+  const handleEbookPopupClose = () => {
+    setOpenPopup(false);
+    setDismissed(true); // 👉 permanently dismiss
+  };
 
   function modifyImagesWithLazyLoading(html) {
     return parse(html, {
@@ -123,7 +162,7 @@ const Article = ({ blok }) => {
             const level = parseInt(heading.tagName.slice(1), 10);
             const text = heading.textContent;
             return { level, text };
-          }
+          },
         );
         resolve(headings);
         setIsLoading(false);
@@ -213,7 +252,7 @@ const Article = ({ blok }) => {
 
       // Find the first heading whose offsetTop is greater than or equal to scrollY
       const activeHeadingIndex = headingPositions.find(
-        (position) => position !== null && position.offsetTop >= scrollY
+        (position) => position !== null && position.offsetTop >= scrollY,
       );
       // Set the active link to the ID of the active heading
       if (activeHeadingIndex) {
@@ -255,228 +294,238 @@ const Article = ({ blok }) => {
   // }, []);
 
   return (
-    <div className="blog-main ">
-      <div className="container max-w-[1280px] main-section-padding !py-0 min-h-[400px] mx-auto">
-        <div className="flex flex-wrap -mx-4">
-          <div className="slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
-            <div className="sticky top-[110px] !pb-5">
-              {isLoading ? (
-                <TableOfContentSkeleton />
-              ) : (
-                <>
-                  <div
-                    className={`${
-                      headings?.length ? "blog-tab-content" : "!hidden"
-                    }`}
-                  >
-                    <div className="flex justify-between border-b border-borderGray font-medium !p-5 !pb-3">
-                      <p>Table of Contents</p>
-                    </div>
-                    <ul className="max-h-[calc(100vh_-_300px)] overflow-auto mb-2">
-                      {headings?.map((heading, index) => (
-                        <li key={index}>
-                          <Link
-                            href={`#${textToId(heading?.text)}`}
-                            onClick={(e) =>
-                              handleTableOfContentLinkClick(e, index)
-                            }
-                            className={`${
-                              textToId(heading?.text) == activeLink
-                                ? "page-active"
-                                : ""
-                            }`}
-                          >
-                            {heading.text}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-7.5">
-                    <div className="flex items-center justify-center flex-wrap">
-                      <Link
-                        target="_blank"
-                        href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
-                        className="!mr-4"
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/fb-share.svg"
-                          width="43"
-                          unoptimized
-                          height="43"
-                          alt="Facebook blog share"
-                        />
-                      </Link>
-                      <Link
-                        target="_blank"
-                        className="!mr-4"
-                        href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
-                          .split("")
-                          .splice(0, pathname.length - 1)
-                          .join("")}`}
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/twitter-share.svg"
-                          width="43"
-                          unoptimized
-                          height="43"
-                          alt="Twitter blog share"
-                        />
-                      </Link>
-                      <Link
-                        target="_blank"
-                        href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
-                      >
-                        <img
-                          decoding="async"
-                          loading="lazy"
-                          src="/images/linkedin-share.svg"
-                          width="43"
-                          unoptimized
-                          height="43"
-                          alt="LinkedIn blog share"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-          <div className="slg:basis-[78%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[78%] !px-4 min-h-[1px] w-full">
-            <div className="blog-inner items-center">
-              <div className="flex -mx-4 md:flex-row flex-col">
-                <div className="md:w-[72%] w-full !float-left">
-                  <div className="h-full w-full box-border !px-3">
-                    <div className="h-full flex flex-col">
-                      <div className="blog_content" ref={targetRef}>
-                        {blok?.Quick_Summary ? (
-                          <div className="min-h-[80px]">
-                            <QuickSummary data={blok?.Quick_Summary} />
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {modifyImagesWithLazyLoading(blok?.content)}
-
-                        {blok?.CTA_1 ? (
-                          <div
-                            className={`${
-                              blok?.CTA_1 ? "blog_content_CTA_1" : ""
-                            }`}
-                          >
-                            {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-
-                        {blok?.Content_1 ? (
-                          <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(blok?.Content_1 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {blok?.CTA_2 ? (
-                          <div
-                            className={`${
-                              blok?.CTA_2 ? "blog_content_CTA_2" : ""
-                            }`}
-                          >
-                            {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {blok?.Content_2 ? (
-                          <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(blok?.Content_2 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {blok?.CTA_3 ? (
-                          <div
-                            className={`${
-                              blok?.CTA_3?.includes("<img")
-                                ? ""
-                                : "blog_content_CTA_3"
-                            }`}
-                          >
-                            {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {blok?.Content_3 ? (
-                          <div className="blog_content_new">
-                            {modifyImagesWithLazyLoading(blok?.Content_3 || "")}
-                          </div>
-                        ) : (
-                          <></>
-                        )}
-                        {blok?.FAQ && blok?.FAQ?.length > 0 ? (
-                          <BlogFAQ FAQData={blok?.FAQ} />
-                        ) : (
-                          <></>
-                        )}
-
-                        <Tooltip
-                          blogAuthor={author?.name || ""}
-                          targetRef={targetRef}
-                        />
+    <>
+      <div className="blog-main ">
+        <div className="container max-w-[1280px] main-section-padding !py-0 min-h-[400px] mx-auto">
+          <div className="flex flex-wrap -mx-4">
+            <div className="slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
+              <div className="sticky top-[110px] !pb-5">
+                {isLoading ? (
+                  <TableOfContentSkeleton />
+                ) : (
+                  <>
+                    <div
+                      className={`${
+                        headings?.length ? "blog-tab-content" : "!hidden"
+                      }`}
+                    >
+                      <div className="flex justify-between border-b border-borderGray font-medium !p-5 !pb-3">
+                        <p>Table of Contents</p>
                       </div>
+                      <ul className="max-h-[calc(100vh_-_300px)] overflow-auto mb-2">
+                        {headings?.map((heading, index) => (
+                          <li key={index}>
+                            <Link
+                              href={`#${textToId(heading?.text)}`}
+                              onClick={(e) =>
+                                handleTableOfContentLinkClick(e, index)
+                              }
+                              className={`${
+                                textToId(heading?.text) == activeLink
+                                  ? "page-active"
+                                  : ""
+                              }`}
+                            >
+                              {heading.text}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="mt-7.5">
+                      <div className="flex items-center justify-center flex-wrap">
+                        <Link
+                          target="_blank"
+                          href={`http://www.facebook.com/sharer.php?u=https://www.brilworks.com${pathname}`}
+                          className="!mr-4"
+                        >
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/fb-share.svg"
+                            width="43"
+                            unoptimized
+                            height="43"
+                            alt="Facebook blog share"
+                          />
+                        </Link>
+                        <Link
+                          target="_blank"
+                          className="!mr-4"
+                          href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
+                            .split("")
+                            .splice(0, pathname.length - 1)
+                            .join("")}`}
+                        >
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/twitter-share.svg"
+                            width="43"
+                            unoptimized
+                            height="43"
+                            alt="Twitter blog share"
+                          />
+                        </Link>
+                        <Link
+                          target="_blank"
+                          href={`https://www.linkedin.com/sharing/share-offsite/?mini=true&url=https://www.brilworks.com${pathname}`}
+                        >
+                          <img
+                            decoding="async"
+                            loading="lazy"
+                            src="/images/linkedin-share.svg"
+                            width="43"
+                            unoptimized
+                            height="43"
+                            alt="LinkedIn blog share"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+            <div className="slg:basis-[78%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[78%] !px-4 min-h-[1px] w-full">
+              <div className="blog-inner items-center">
+                <div className="flex -mx-4 md:flex-row flex-col">
+                  <div className="md:w-[72%] w-full !float-left">
+                    <div className="h-full w-full box-border !px-3">
+                      <div className="h-full flex flex-col">
+                        <div className="blog_content" ref={targetRef}>
+                          {blok?.Quick_Summary ? (
+                            <div className="min-h-[80px]">
+                              <QuickSummary data={blok?.Quick_Summary} />
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {modifyImagesWithLazyLoading(blok?.content)}
 
-                      {/* ********************Author Detail******************************/}
-                      {author ? (
-                        <div className="single-author-bio">
-                          <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
-                            <div className="img-blk">
-                              <img
-                                decoding="async"
-                                loading="lazy"
-                                src={author?.authorImage}
-                                width={96}
-                                height={96}
-                                alt={author?.name || "author-Image"}
-                                className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
-                              />
+                          {blok?.CTA_1 ? (
+                            <div
+                              className={`${
+                                blok?.CTA_1 ? "blog_content_CTA_1" : ""
+                              }`}
+                            >
+                              {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+
+                          {blok?.Content_1 ? (
+                            <div className="blog_content_new">
+                              {modifyImagesWithLazyLoading(
+                                blok?.Content_1 || "",
+                              )}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {blok?.CTA_2 ? (
+                            <div
+                              className={`${
+                                blok?.CTA_2 ? "blog_content_CTA_2" : ""
+                              }`}
+                            >
+                              {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {blok?.Content_2 ? (
+                            <div className="blog_content_new">
+                              {modifyImagesWithLazyLoading(
+                                blok?.Content_2 || "",
+                              )}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {blok?.CTA_3 ? (
+                            <div
+                              className={`${
+                                blok?.CTA_3?.includes("<img")
+                                  ? ""
+                                  : "blog_content_CTA_3"
+                              }`}
+                            >
+                              {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {blok?.Content_3 ? (
+                            <div className="blog_content_new">
+                              {modifyImagesWithLazyLoading(
+                                blok?.Content_3 || "",
+                              )}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                          {blok?.FAQ && blok?.FAQ?.length > 0 ? (
+                            <BlogFAQ FAQData={blok?.FAQ} />
+                          ) : (
+                            <></>
+                          )}
+
+                          <Tooltip
+                            blogAuthor={author?.name || ""}
+                            targetRef={targetRef}
+                          />
+                        </div>
+
+                        {/* ********************Author Detail******************************/}
+                        {author ? (
+                          <div className="single-author-bio">
+                            <div className="img-blk-wrapper lg:pb-[0rem] !pb-[3rem]">
+                              <div className="img-blk">
+                                <img
+                                  decoding="async"
+                                  loading="lazy"
+                                  src={author?.authorImage}
+                                  width={96}
+                                  height={96}
+                                  alt={author?.name || "author-Image"}
+                                  className="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo"
+                                />
+                              </div>
+                            </div>
+                            <div className="single-author-bio-text">
+                              <h3>
+                                <Link
+                                  href={
+                                    author?.name === "Vikas Singh"
+                                      ? "/blog/author/vikas-singh/"
+                                      : author?.name === "Hitesh Umaletiya"
+                                        ? "/blog/author/hitesh-umaletiya/"
+                                        : author?.authorLinkedIn
+                                  }
+                                  title={`View ${author?.name} website`}
+                                  rel="author external"
+                                >
+                                  {author?.name}
+                                </Link>
+                              </h3>
+                              <p className="text-[18px]">
+                                {author?.authorDesc}
+                              </p>
                             </div>
                           </div>
-                          <div className="single-author-bio-text">
-                            <h3>
-                              <Link
-                                href={
-                                  author?.name === "Vikas Singh"
-                                    ? "/blog/author/vikas-singh/"
-                                    : author?.name === "Hitesh Umaletiya"
-                                    ? "/blog/author/hitesh-umaletiya/"
-                                    : author?.authorLinkedIn
-                                }
-                                title={`View ${author?.name} website`}
-                                rel="author external"
-                              >
-                                {author?.name}
-                              </Link>
-                            </h3>
-                            <p className="text-[18px]">{author?.authorDesc}</p>
-                          </div>
-                        </div>
-                      ) : (
-                        <></>
-                      )}
+                        ) : (
+                          <></>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-[28%] w-full !float-left">
-                  <div className="h-full w-full box-border !pr-3 md:!pl-3 !pl-3">
-                    <div className="h-full flex flex-col">
-                      <BlogContactForm />
+                  <div className="md:w-1/4 w-full !float-left">
+                    <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                      <div className="h-full flex flex-col">
+                        <BlogContactForm />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -484,77 +533,80 @@ const Article = ({ blok }) => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="container max-w-[1280px] mx-auto sxl:!px-10 md:!px-7.5 !px-5">
-        <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
-          <Heading
-            type="h2"
-            className="lg:!text-[34px] md:!text-3xl !text-2xl !my-5"
-            text="You might also like"
-          />
-          <div
-            className={`grid h-full
+        <div className="container mx-auto md:!px-3 !px-4">
+          <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
+            <div className="service_sec3">
+              <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+                <p className="!ml-0 extra_bold !w-full">You might also like</p>
+              </p>
+            </div>
+            <div
+              className={`grid  h-full
                xl:grid-cols-3 md:grid-cols-2
              grid-cols-1 items-center gap-[2rem]`}
-          >
-            {blogData
-              ?.filter(({ slug }) => !pathname?.includes(slug))
-              ?.slice(0, `${isTablet ? 2 : 3}`)
-              ?.map(({ slug, name, content }, index) => (
-                <div
-                  key={index}
-                  className="border-[1px] border-[#80808038] rounded-2xl blog_flex_30"
-                >
-                  <Link
-                    as={`/blog/${slug}`}
-                    href={`/blog/[slug]`}
-                    target="_blank"
-                    rel="external"
+            >
+              {blogData
+                ?.filter(({ slug }) => !pathname?.includes(slug))
+                ?.slice(0, `${isTablet ? 2 : 3}`)
+                ?.map(({ slug, name, content }, index) => (
+                  <div
+                    key={index}
+                    className="border-[1px] border-[#80808038] rounded-2xl blog_flex_30"
                   >
-                    <div className="sec9_img1">
-                      <Image
-                        className="rounded-t-[15px]"
-                        src={
-                          content?.mobile_banner?.filename
-                            ? formatSrcUrl(content?.mobile_banner?.filename)
-                            : "/images/not-found-image.webp"
-                        }
-                        alt={
-                          content?.mobile_banner?.alt || `Banner-img-${index}`
-                        }
-                        width={550}
-                        height={283}
-                        unoptimized
-                      />
-                    </div>
-                    <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
-                      <div className="border-b-[1px] border-[#80808038] py-[1rem]">
-                        <p className="entry-title default-max-width aspect-[518/116]">
-                          {name}
-                        </p>
+                    <Link
+                      as={`/blog/${slug}`}
+                      href={`/blog/[slug]`}
+                      target="_blank"
+                      rel="external"
+                    >
+                      <div className="sec9_img1">
+                        <Image
+                          className="rounded-t-[15px]"
+                          src={
+                            content?.mobile_banner?.filename
+                              ? formatSrcUrl(content?.mobile_banner?.filename)
+                              : "/images/not-found-image.webp"
+                          }
+                          alt={
+                            content?.mobile_banner?.alt || `Banner-img-${index}`
+                          }
+                          width={550}
+                          height={283}
+                          unoptimized
+                        />
                       </div>
-                      <div className="sec9_txt2 mt-[1.5rem]">
-                        <p className="publish_date">
-                          {formattedDate(content?.Published)}
-                        </p>
+                      <div className="pt-[1rem] px-[1rem] pb-[1.5rem] blog-hover">
+                        <div className="border-b-[1px] border-[#80808038] py-[1rem]">
+                          <p className="entry-title default-max-width aspect-[518/116]">
+                            {name}
+                          </p>
+                        </div>
+                        <div className="sec9_txt2 mt-[1.5rem]">
+                          <p className="publish_date">
+                            {formattedDate(content?.Published)}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-          </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>
 
-          <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
-            <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
-              <div className="h-full flex flex-col">
-                <BlogContactForm />
+            <div className="md:w-1/4 w-full !float-left lg:mt-4 mt-[2rem] block lg:hidden">
+              <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
+                <div className="h-full flex flex-col">
+                  <BlogContactForm />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      {openPopup && (
+        <EbookPopup open={openPopup} handleClose={handleEbookPopupClose} />
+      )}
+    </>
   );
 };
 
