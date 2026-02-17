@@ -1731,6 +1731,55 @@ const softwareProposalGeneratorFeatures = {
     },
   ],
 };
+const calculateAppDevBreakdownCalculatorFeatures = {
+  title: "Why Choose Our Calculator",
+  description:
+    "Built with precision and backed by extensive industry research.",
+  listData: [
+    {
+      icon: Sparkles,
+      title: "AI-Powered Estimation",
+      description:
+        "Advanced algorithms analyze thousands of projects to provide accurate cost predictions",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Shield,
+      title: "Industry Standards",
+      description:
+        "Based on real market rates and current industry benchmarks for reliable estimates",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Get comprehensive cost breakdown in seconds, not days of research",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Detailed Breakdown",
+      description:
+        "See exactly where your budget goes with itemized development phase costs",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Users,
+      title: "Team Size Calculator",
+      description:
+        "Understand optimal team composition and hourly rates for your project",
+      color: "bg-red-100 text-red-600",
+    },
+    {
+      icon: Globe,
+      title: "Multi-Platform Support",
+      description:
+        "Calculate costs for iOS, Android, web, and cross-platform applications",
+      color: "bg-yellow-100 text-yellow-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1782,6 +1831,8 @@ const ToolFeatures = () => {
       performanceBenchmarkingToolFeatures,
     "/tools/scope-of-work-generator/": scopeOfWorkGeneratorFeatures,
     "/tools/software-proposal-generator/": softwareProposalGeneratorFeatures,
+    "/tools/app-development-cost-breakdown-calculator/":
+      calculateAppDevBreakdownCalculatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

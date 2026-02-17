@@ -1192,6 +1192,52 @@ const softwareProposalGeneratorFaqData = {
     },
   ],
 };
+const calculateAppDevBreakdownCalculatorFaqData = {
+  description: "Everything you need to know about app development costs",
+  queAns: [
+    {
+      question: "How accurate is the cost calculator?",
+      answer:
+        "Our calculator provides estimates with approximately 85-95% accuracy based on real market data from thousands of completed projects. However, final costs may vary based on specific requirements, team expertise, and market conditions.",
+    },
+    {
+      question: "What factors influence app development costs the most?",
+      answer:
+        "The primary cost drivers are: complexity level, number and type of features, platform choice (iOS, Android, or both), design requirements, team location, and timeline. Advanced features like AI integration, real-time functionality, or complex backend systems significantly increase costs.",
+    },
+    {
+      question: "Does the estimate include ongoing maintenance?",
+      answer:
+        "The calculator includes first-year maintenance costs (typically 15-20% of development costs). Ongoing maintenance usually runs 15-20% annually for updates, bug fixes, server costs, and feature enhancements.",
+    },
+    {
+      question: "How long does app development typically take?",
+      answer:
+        "Simple apps: 2-3 months, Medium complexity apps: 4-6 months, Complex enterprise apps: 6-12+ months. Timeline depends on features, team size, and project scope. Rush timelines are possible but come with premium costs.",
+    },
+    {
+      question: "Can I reduce costs without sacrificing quality?",
+      answer:
+        "Yes! Consider: starting with an MVP, using cross-platform frameworks, choosing flexible timelines, working with offshore teams, prioritizing essential features first, and using pre-built components where appropriate.",
+    },
+    {
+      question:
+        "What is the difference between native and cross-platform development?",
+      answer:
+        "Native development (separate iOS and Android codebases) offers best performance and platform-specific features but costs more. Cross-platform (React Native, Flutter) shares code between platforms, reducing costs by 30-40% but with some performance trade-offs.",
+    },
+    {
+      question: "Are there any hidden costs not included in the estimate?",
+      answer:
+        "The estimate covers core development, but additional costs may include: app store fees, third-party API subscriptions, SSL certificates, specialized compliance requirements, marketing, and post-launch feature additions.",
+    },
+    {
+      question: "How do team location rates vary?",
+      answer:
+        "North America: $100-200/hr, Western Europe: $80-150/hr, Eastern Europe: $50-100/hr, Asia: $25-80/hr, Latin America: $40-90/hr. Higher rates often correlate with experience, but excellent developers exist at all price points.",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1248,6 +1294,8 @@ const ToolFAQs = () => {
     "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolFaqData,
     "/tools/scope-of-work-generator/": scopeOfWorkGeneratorFaqData,
     "/tools/software-proposal-generator/": softwareProposalGeneratorFaqData,
+    "/tools/app-development-cost-breakdown-calculator/":
+      calculateAppDevBreakdownCalculatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

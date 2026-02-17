@@ -42,6 +42,7 @@ import {
   getStatusColor,
   markFormSubmitted,
 } from "../lib/commonFunction";
+import { formatCurrencyForCostBreakdown } from "../lib/toolsCalculation";
 
 const ToolsPopupContactForm = ({
   open,
@@ -896,7 +897,7 @@ const ToolsPopupContactForm = ({
             <div className="text-center">
               <div
                 className={`inline-block px-3 py-1 rounded-full text-base font-semibold border-2 ${getStatusColor(
-                  result.profitabilityStatus,
+                  result.profitabilityStatus
                 )}`}
               >
                 {result.profitabilityStatus} Profitability
@@ -1678,7 +1679,7 @@ const ToolsPopupContactForm = ({
               >
                 <span
                   className={`text-2xl font-bold ${getScoreColor(
-                    result.overallScore,
+                    result.overallScore
                   )}`}
                 >
                   {result.grade}
@@ -1691,7 +1692,7 @@ const ToolsPopupContactForm = ({
                 <h4 className="font-semibold text-gray-900">Overall Score</h4>
                 <span
                   className={`text-3xl font-bold ${getScoreColor(
-                    result.overallScore,
+                    result.overallScore
                   )}`}
                 >
                   {result.overallScore}/100
@@ -2087,6 +2088,93 @@ const ToolsPopupContactForm = ({
             <pre className="whitespace-pre-wrap font-mono text-sm text-gray-800 leading-relaxed text-left">
               {result}
             </pre>
+          </div>
+        );
+      case "/tools/app-development-cost-breakdown-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-4">
+            <h3 className="text-2xl font-bold text-gray-900">
+              Assessment Results
+            </h3>
+            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-5 text-white shadow-xl">
+              <div className="flex items-center justify-center mb-4">
+                <div>
+                  <p className="text-blue-100 mb-2">Estimated Total Cost</p>
+                  <h3 className="text-3xl sm:text-4xl font-bold">
+                    {formatCurrencyForCostBreakdown(result.total)}
+                  </h3>
+                  <p className="text-blue-100 mt-2">
+                    Range: {formatCurrencyForCostBreakdown(result.minCost)} -{" "}
+                    {formatCurrencyForCostBreakdown(result.maxCost)}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2">
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <Clock className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    {result.timeline}
+                  </p>
+                  <p className="text-sm text-blue-200">Timeline</p>
+                </div>
+
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <Users className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    {result.teamSize}
+                  </p>
+                  <p className="text-sm text-blue-200">Team Size</p>
+                </div>
+
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <TrendingUp className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    ${result.hourlyRate}
+                  </p>
+                  <p className="text-sm text-blue-200">Hourly Rate</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                Cost Breakdown by Phase
+              </h4>
+
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                {Object.entries(result.phases).map(([phase, cost]) => {
+                  const percentage = (cost / result.total) * 100;
+                  return (
+                    <div key={phase}>
+                      <div className="flex justify-between mb-2">
+                        <span className="font-medium text-gray-700 capitalize">
+                          {phase.replace(/([A-Z])/g, " $1").trim()}
+                        </span>
+                        <span className="font-bold text-gray-900">
+                          {formatCurrencyForCostBreakdown(cost)}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-full rounded-full transition-all duration-500"
+                          style={{ width: `${percentage}%` }}
+                        ></div>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {percentage.toFixed(1)}% of total
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         );
 

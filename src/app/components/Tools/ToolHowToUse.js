@@ -982,6 +982,37 @@ const softwareProposalGeneratorSteps = {
     },
   ],
 };
+const calculateAppDevBreakdownCalculatorSteps = {
+  title: "How to Calculate Your App Development Cost",
+  description:
+    "Follow these simple steps to get an accurate estimate for your project.",
+  listData: [
+    {
+      title: "Define Requirements",
+      description:
+        "Select your app type, platform, and desired features from our comprehensive list.",
+      icon: ClipboardList,
+    },
+    {
+      title: "Customize Features",
+      description:
+        "Choose complexity level, design requirements, and additional functionalities.",
+      icon: Settings,
+    },
+    {
+      title: "Get Instant Estimate",
+      description:
+        "Our algorithm calculates accurate costs based on industry standards and market rates.",
+      icon: Calculator,
+    },
+    {
+      title: "Download Report",
+      description:
+        "Receive a detailed breakdown with timeline estimates and recommendations.",
+      icon: FileText,
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -1029,6 +1060,8 @@ const ToolHowToUse = () => {
     "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolSteps,
     "/tools/scope-of-work-generator/": scopeOfWorkGeneratorSteps,
     "/tools/software-proposal-generator/": softwareProposalGeneratorSteps,
+    "/tools/app-development-cost-breakdown-calculator/":
+      calculateAppDevBreakdownCalculatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

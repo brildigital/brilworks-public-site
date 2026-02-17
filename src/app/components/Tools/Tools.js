@@ -269,6 +269,14 @@ const toolsData = [
     link: "/tools/software-proposal-generator/",
     tags: ["BUSINESS", "SALES", "OTHER"],
   },
+  {
+    title: "App Development Cost Breakdown Calculator",
+    description:
+      "Get a detailed breakdown of your app development cost based on features and complexity.",
+    bg: "bg-blue-200",
+    link: "/tools/app-development-cost-breakdown-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

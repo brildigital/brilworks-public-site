@@ -61,20 +61,20 @@ export const crossPlatformAnalyzeProject = (data) => {
       data.timeline === "urgent"
         ? "2-4 months"
         : data.timeline === "moderate"
-        ? "4-8 months"
-        : "8-12 months",
+          ? "4-8 months"
+          : "8-12 months",
     budget:
       data.budget === "low"
         ? "$50K - $150K"
         : data.budget === "moderate"
-        ? "$150K - $400K"
-        : "$400K+",
+          ? "$150K - $400K"
+          : "$400K+",
     performance:
       data.performanceNeeds === "critical"
         ? "High Performance"
         : data.performanceNeeds === "moderate"
-        ? "Good Performance"
-        : "Standard Performance",
+          ? "Good Performance"
+          : "Standard Performance",
   };
 };
 
@@ -585,8 +585,8 @@ export const calculateMvpFeatureSelector = (formData) => {
       priority === "High"
         ? "a feature-rich MVP with strong market potential"
         : priority === "Medium"
-        ? "a balanced MVP approach with essential features"
-        : "a lean MVP focusing on core functionality"
+          ? "a balanced MVP approach with essential features"
+          : "a lean MVP focusing on core functionality"
     }.`,
   };
 };
@@ -768,8 +768,8 @@ export const calculateWhichAppShouldYouBuild = (formData) => {
       marketPotential === "High"
         ? "strong market demand and excellent monetization opportunities"
         : marketPotential === "Medium"
-        ? "good market potential with moderate competition"
-        : "niche market opportunity requiring focused marketing"
+          ? "good market potential with moderate competition"
+          : "niche market opportunity requiring focused marketing"
     }.`,
   };
 };
@@ -2138,3 +2138,183 @@ export const calculateSoftwareProposal = (formData) => {
 
   return proposal;
 };
+
+// 33. App Development Cost Breakdown Calculator
+
+const HOURLY_RATES = {
+  us: 150,
+  eu: 100,
+  asia: 50,
+  latam: 60,
+};
+
+const COMPLEXITY_MULTIPLIERS = {
+  simple: 0.7,
+  medium: 1.0,
+  complex: 1.5,
+};
+
+const PLATFORM_MULTIPLIERS = {
+  ios: 1.0,
+  android: 1.0,
+  "cross-platform": 0.8,
+  both: 1.8,
+};
+
+const FEATURE_COSTS = {
+  "User Authentication": 40,
+  "Push Notifications": 30,
+  "Payment Integration": 80,
+  "Social Media Login": 25,
+  "Real-time Chat": 100,
+  "GPS/Location Services": 50,
+  "Camera Integration": 40,
+  "Offline Mode": 60,
+  Analytics: 35,
+  "Admin Dashboard": 120,
+};
+
+const DESIGN_MULTIPLIERS = {
+  basic: 0.8,
+  medium: 1.0,
+  advanced: 1.4,
+};
+
+const TIMELINE_MULTIPLIERS = {
+  rush: 1.3,
+  standard: 1.0,
+  flexible: 0.9,
+};
+
+function analyzeDescription(description) {
+  const keywords = [
+    {
+      terms: ["e-commerce", "shop", "store", "payment"],
+      name: "E-commerce Features",
+      cost: 15000,
+    },
+    {
+      terms: ["ai", "machine learning", "ml"],
+      name: "AI/ML Integration",
+      cost: 25000,
+    },
+    {
+      terms: ["blockchain", "crypto", "nft"],
+      name: "Blockchain Integration",
+      cost: 30000,
+    },
+    {
+      terms: ["video", "streaming", "live"],
+      name: "Video Streaming",
+      cost: 20000,
+    },
+    {
+      terms: ["social", "network", "feed"],
+      name: "Social Features",
+      cost: 12000,
+    },
+    {
+      terms: ["booking", "reservation", "appointment"],
+      name: "Booking System",
+      cost: 10000,
+    },
+    {
+      terms: ["iot", "hardware", "device"],
+      name: "IoT Integration",
+      cost: 18000,
+    },
+    {
+      terms: ["ar", "augmented reality", "vr"],
+      name: "AR/VR Features",
+      cost: 35000,
+    },
+  ];
+
+  const lowerDesc = description.toLowerCase();
+  const detected = [];
+
+  keywords.forEach((keyword) => {
+    if (keyword.terms.some((term) => lowerDesc.includes(term))) {
+      detected.push({ name: keyword.name, cost: keyword.cost });
+    }
+  });
+
+  return detected;
+}
+
+export const formatCurrencyForCostBreakdown = (amount) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+
+export function calculateAddDevCostBreakdown(formData) {
+  const hourlyRate = HOURLY_RATES[formData.teamLocation];
+  const complexityMultiplier = COMPLEXITY_MULTIPLIERS[formData.complexity];
+  const platformMultiplier = PLATFORM_MULTIPLIERS[formData.platform];
+  const designMultiplier = DESIGN_MULTIPLIERS[formData.designComplexity];
+  const timelineMultiplier = TIMELINE_MULTIPLIERS[formData.timeline];
+
+  let baseHours = 500;
+
+  if (formData.appType === "web") {
+    baseHours = 450;
+  } else if (formData.appType === "both") {
+    baseHours = 800;
+  }
+
+  baseHours *= complexityMultiplier * platformMultiplier * designMultiplier;
+
+  const featuresBreakdown = formData.features.map((feature) => ({
+    name: feature,
+    cost: FEATURE_COSTS[feature] * hourlyRate * 0.01,
+  }));
+
+  const featuresCost = featuresBreakdown.reduce((sum, f) => sum + f.cost, 0);
+
+  const descriptionFeatures = analyzeDescription(formData.description);
+  const descriptionCost = descriptionFeatures.reduce(
+    (sum, f) => sum + f.cost,
+    0
+  );
+
+  const baseCost = baseHours * hourlyRate;
+  const totalBeforeTimeline = baseCost + featuresCost + descriptionCost;
+  const total = Math.round(totalBeforeTimeline * timelineMultiplier);
+
+  const phases = {
+    planning: Math.round(total * 0.1),
+    design: Math.round(total * 0.2),
+    development: Math.round(total * 0.45),
+    testing: Math.round(total * 0.15),
+    deployment: Math.round(total * 0.05),
+    maintenance: Math.round(total * 0.05),
+  };
+
+  const teamSizeMap = {
+    simple: 3,
+    medium: 5,
+    complex: 8,
+  };
+
+  const timelineMap = {
+    simple: "2-3 months",
+    medium: "4-6 months",
+    complex: "6-12 months",
+  };
+
+  return {
+    total,
+    minCost: Math.round(total * 0.85),
+    maxCost: Math.round(total * 1.15),
+    phases,
+    timeline: timelineMap[formData.complexity],
+    teamSize: teamSizeMap[formData.complexity],
+    hourlyRate,
+    featuresBreakdown,
+    additionalCosts: descriptionFeatures,
+  };
+}
