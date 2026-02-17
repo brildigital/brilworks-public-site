@@ -21,15 +21,15 @@ const Blog = () => {
   const router = useRouter();
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
-  // const fetchAllBlogData = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const blogData = await getBlogForSitemap();
-  //     console.log(blogData);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const fetchAllBlogData = async () => {
+    setIsLoading(true);
+    try {
+      const blogData = await getBlogForSitemap();
+      console.log(blogData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -38,7 +38,7 @@ const Blog = () => {
         currentPage,
         ITEMS_PER_PAGE,
         blogCategory,
-        searchQuery
+        searchQuery,
       );
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
@@ -53,10 +53,10 @@ const Blog = () => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
-        // fetchAllBlogData();
+        fetchAllBlogData();
         window.scrollTo({ top: 0 });
       },
-      searchQuery ? 1000 : 0
+      searchQuery ? 1000 : 0,
     );
 
     return () => clearTimeout(delayDebounceFn);
@@ -329,8 +329,8 @@ const Blog = () => {
                       currentPage === page
                         ? "bg-themeColor text-white"
                         : page === "..."
-                        ? "border-none cursor-default text-colorBlack"
-                        : "text-colorBlack hover:bg-sectionBG"
+                          ? "border-none cursor-default text-colorBlack"
+                          : "text-colorBlack hover:bg-sectionBG"
                     }`}
                     onClick={() =>
                       typeof page === "number" && setCurrentPage(page)
@@ -338,7 +338,7 @@ const Blog = () => {
                   >
                     {page}
                   </li>
-                )
+                ),
               )}
 
               {/* Next */}

@@ -1254,6 +1254,31 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Cloud Migration Consultant: Role, Benefits, And Hiring Tips",
+    loc: "https://www.brilworks.com/blog/cloud-migration-consultant/",
+    lastmod: "2026-02-16T07:08:42.021Z",
+  },
+  {
+    name: "Usability Testing Methods: 17 Types And When To Use Each",
+    loc: "https://www.brilworks.com/blog/usability-testing-methods/",
+    lastmod: "2026-02-13T07:45:32.111Z",
+  },
+  {
+    name: "MVP Development Services: What They Include and Cost",
+    loc: "https://www.brilworks.com/blog/mvp-development-services/",
+    lastmod: "2026-02-13T06:51:24.862Z",
+  },
+  {
+    name: "Generative AI Development Company: Services & How To Choose",
+    loc: "https://www.brilworks.com/blog/generative-ai-development-company/",
+    lastmod: "2026-02-11T06:39:07.592Z",
+  },
+  {
+    name: "AWS Cloud Adoption Framework: Perspectives, Phases & Use",
+    loc: "https://www.brilworks.com/blog/aws-cloud-adoption-framework/",
+    lastmod: "2026-02-10T06:55:53.974Z",
+  },
+  {
     name: "AI powered MVP Development vs Traditional Software MVP Approaches",
     loc: "https://www.brilworks.com/blog/ai-mvp-vs-traditional-approaches/",
     lastmod: "2026-02-04T09:03:32.149Z",
@@ -1861,7 +1886,7 @@ export const blogListStaticData = [
   {
     name: "Vue vs React: The Definitive Comparison for Developers",
     loc: "https://www.brilworks.com/blog/react-vs-vue/",
-    lastmod: "2025-12-15T13:31:41.212Z",
+    lastmod: "2026-02-11T10:06:37.084Z",
   },
   {
     name: "50+ Node.js Statistics Covering Usage, Adoption, and Performance",
