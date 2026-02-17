@@ -8,18 +8,18 @@ import ServicesSection from "../Common/ServicesSection";
 const WhiteLabelFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const SolutionContactForm = dynamic(
-  () => import("../Solution/SolutionContactForm"),
+  () => import("../Solution/SolutionContactForm")
 );
 const HireDevelopersInThreeSteps = dynamic(
-  () => import("../HireTeam/HireDevelopersInThreeSteps"),
+  () => import("../HireTeam/HireDevelopersInThreeSteps")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const MultipleCardInGrid = dynamic(
-  () => import("../Common/MultipleCardInGrid"),
+  () => import("../Common/MultipleCardInGrid")
 );
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const MultipleCardWithIconBG = dynamic(
-  () => import("../Common/MultipleCardWithIconBG"),
+  () => import("../Common/MultipleCardWithIconBG")
 );
 
 const why100PlusAgenciesTrustUs = [

@@ -11,7 +11,6 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    unoptimized: true,
     domains: [
       "a.storyblok.com",
       "lh3.googleusercontent.com",
@@ -48,7 +47,7 @@ const nextConfig = {
             },
           },
           parallel: true,
-        }),
+        })
       );
     }
     return config;
