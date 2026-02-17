@@ -8,14 +8,14 @@ import ServicesSection from "../Common/ServicesSection";
 const MediaNEntertainmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
 const TypesOfAppWeDevelop = dynamic(() => import("./TypesOfAppWeDevelop"));
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const MediaAndEntertainment = () => {
@@ -181,7 +181,7 @@ const MediaAndEntertainment = () => {
         imageSrc="/images/v2/media-and-entertainment-banner.webp"
       />
       <ServicesSection
-        sectionId="media"
+        sectionId="services-one"
         serviceData={mediaEntertainmentService}
       />
       <TypesOfAppWeDevelop

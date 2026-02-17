@@ -18,12 +18,45 @@ const CurrentHeader = () => {
     "/gist/react/",
     "/gist/bubble-io/",
     "/gist/flutterflow/",
+    "/x/product-listing/",
   ];
 
-  const specialHeaderPages = ["/terms-and-conditions/", "/privacy-policy/"];
+  const specialHeaderPages = [
+    "/terms-and-conditions/",
+    "/privacy-policy/",
+    "/cabuno-privacy-policy/",
+    "/circle-up-privacy-policy/",
+    "/encalve-connect-privacy-policy/",
+    "/exora-privacy-policy/",
+    "/expenseflow-privacy-policy/",
+    "/expenseflow-terms-conditions/",
+    "/habitrise-privacy-policy/",
+    "/habitrise-terms-and-conditions/",
+    "/healthvault-privacy-policy/",
+    "/kinderland-privacy-policy/",
+    "/mindsync-privacy-policy/",
+    "/ordernest-privacy-policy/",
+    "/pink-signal-privacy-policy/",
+    "/ai-tools/ai-document-compliance-review/",
+    "/service-squard-privacy-policy/",
+    "/service-squard-terms-of-service/",
+    "/kindcircle-privacy-policy/",
+    "/kindcircle-terms-and-condition/",
+    "/lifepilot-privacy-policy/",
+    "/mr-brush-privacy-policy/",
+    "/x/product-listing/",
+  ];
+
   const showHeader =
     subpaths.some((base) => pathname?.startsWith(base) && pathname !== base) ||
     specialHeaderPages.includes(pathname || "");
+
+  // Here we have a special case to hide header on Spine Recovery Pro product page
+  if (
+    pathname.includes("/x/product-listing/spine-recovery-pro/") ||
+    pathname.includes("/i-remi")
+  )
+    return null;
 
   return showHeader &&
     pathname !== "/gist/" &&
@@ -31,6 +64,8 @@ const CurrentHeader = () => {
     <Header />
   ) : pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/" ? (
     <HeaderV3 />
+  ) : pathname.includes("/ai-agents/") ? (
+    ""
   ) : (
     <HeaderV2 />
   );

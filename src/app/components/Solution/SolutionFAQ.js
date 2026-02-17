@@ -37,26 +37,44 @@ const SolutionFAQ = () => {
 
   const fleetManagementFAQData = [
     {
-      question: "What is fleet management software?",
+      question: "How much does it cost to develop a fleet management app?",
       answer:
-        "The fleet management software is a dynamic platform for managing your fleet and its components, including cars, trucks, and vans. It can track vehicle movement, fuel consumption, and maintenance schedules. The software also provides real-time monitoring of drivers and their performance.",
+        "The cost depends on the app’s complexity, features, and integrations. A simple delivery tracking app may cost less, while a full-scale fleet management platform with analytics, route optimization, and multi-user dashboards will require a larger investment. We provide detailed estimates after understanding your requirements.",
     },
     {
-      question:
-        "Do you provide custom fleet management software development services?",
+      question: "How long does it take to build a logistics app?",
       answer:
-        "Yes, we do provide custom development services for fleet management software solutions. We create solutions tailored to the requirements of your organization.",
+        "Most fleet management apps take between 8 to 20 weeks to design, develop, and test. Timelines vary based on project scope, custom integrations, and feedback cycles. We follow an agile approach to ensure you start seeing results early.",
     },
     {
-      question:
-        "What are some of the main features a fleet management system must have?",
+      question: "Can you integrate the app with my existing ERP or CRM?",
       answer:
-        "Fleet management is the backbone of most companies. Fleet management systems should have robust reporting, customizable dashboards, and analytics to generate actionable insights, GPS vehicle tracking fleet maintenance, and dispatch & scheduling features.",
+        "Yes. We specialize in connecting logistics systems with popular ERPs, CRMs, and third-party platforms like SAP, Salesforce, Zoho, or any custom-built system you’re using. This keeps your data connected and workflows efficient.",
     },
     {
-      question: "Why is fleet management a necessity?",
+      question: "Do you offer post-launch maintenance and updates?",
       answer:
-        "Fleet management helps to keep vehicles organized, in good working order, and running as efficiently as possible. Tracking the location of all vehicles in your fleet can help decrease costly breakdowns and increase fuel efficiency.",
+        "Absolutely. Our partnership doesn’t end with deployment. We provide continuous support, performance monitoring, and feature upgrades to keep your logistics app secure and up-to-date.",
+    },
+    {
+      question: "Will my fleet management app work across devices?",
+      answer:
+        "Yes. All our solutions are built to work seamlessly on iOS, Android, and web platforms. Whether it’s for drivers on the road or managers in the office, your team can access data anytime, anywhere.",
+    },
+    {
+      question: "How secure is my fleet management data?",
+      answer:
+        "We follow best practices for data security and compliance, including data encryption, role-based access control, and secure APIs. Your business and customer data stay protected at every stage.",
+    },
+    {
+      question: "Can you help me scale the app later?",
+      answer:
+        "Yes. We build every solution with scalability in mind. As your operations grow, we can expand your app’s capacity, add modules, and integrate new technologies without disrupting performance.",
+    },
+    {
+      question: "Do you build white-label fleet solutions?",
+      answer:
+        "Yes, if you’re a startup or SaaS provider looking to launch a white-label product for fleet management clients, we can create a fully customizable solution that aligns with your brand.",
     },
   ];
 
@@ -159,7 +177,38 @@ const SolutionFAQ = () => {
         "To ensure security, providers employ comprehensive security protocols and adhere to best practices to maintain data confidentiality and integrity. This often includes ISO 27001-approved security processes and alignment with GDPR standards. Security testing is performed to make solutions shatterproof against cybercrime, alongside continuous performance monitoring for vulnerabilities and timely updates.",
     },
   ];
-
+  const edTechFAQData = [
+    {
+      question: "How much does it cost to build an EdTech platform?",
+      answer:
+        "Costs depend on features, design, integrations, and scalability. A small e-learning app might cost less, while a complete learning management system with analytics and AI recommendations will require a higher budget. We share clear estimates after discussing your goals.",
+    },
+    {
+      question: "How long does it take to develop an education app?",
+      answer:
+        "Timelines vary by scope, but most projects range between 10 to 20 weeks from concept to launch. We work in agile sprints to deliver faster without compromising quality.",
+    },
+    {
+      question: "Can you integrate my app with existing systems?",
+      answer:
+        "Yes. We can connect your new platform to CRMs, ERPs, video tools like Zoom, and payment gateways for seamless operation.",
+    },
+    {
+      question: "Do you support both web and mobile platforms?",
+      answer:
+        "Absolutely. We build responsive web platforms and native or cross-platform mobile apps for iOS and Android.",
+    },
+    {
+      question: "Is my users’ data secure?",
+      answer:
+        "We follow strict data security practices, including encryption, secure APIs, and compliance with international privacy standards to protect learners and institutions.",
+    },
+    {
+      question: "Can you help me scale the product later?",
+      answer:
+        "Yes. We build all solutions with scalability in mind so you can easily add new features, courses, or users as your platform grows.",
+    },
+  ];
   const showDataBasedOnPathname = {
     "/industry/fintech-software-development/": fintechFAQData,
     "/industry/fleet-management-software-development/": fleetManagementFAQData,
@@ -167,6 +216,7 @@ const SolutionFAQ = () => {
       mediaEntertainmentFAQData,
     "/industry/healthcare-software-development/": healthcareFAQData,
     "/industry/e-commerce-app-development/": eCommerceFAQData,
+    "/industry/edtech-software-development/": edTechFAQData,
   };
 
   const solutionFAQData = showDataBasedOnPathname[pathname] || {};

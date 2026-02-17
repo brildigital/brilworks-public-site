@@ -7,17 +7,17 @@ import ServicesSection from "../Common/ServicesSection";
 
 const BubbleIoFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -153,7 +153,7 @@ const BubbleIoTechnology = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="hire-bubble-developer"
+        sectionId="services-one"
         serviceData={bubbleIoService}
       />
       <TechnologyDevelopers bgClass="bg-white" />

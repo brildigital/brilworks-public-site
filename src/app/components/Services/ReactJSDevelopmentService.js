@@ -6,14 +6,14 @@ import SolutionContactForm from "../Solution/SolutionContactForm";
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
-const HireTeamSolutions = dynamic(() =>
-  import("../Technologies/HireTeamSolutions")
+const HireTeamSolutions = dynamic(
+  () => import("../Technologies/HireTeamSolutions"),
 );
 const CTASection = dynamic(() => import("../Common/CTASection"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
@@ -107,7 +107,7 @@ const ReactJSDevelopmentService = () => {
       },
       {
         title: "Modern Tech Expertise",
-        icon: "/images/v2/security-per.svg",
+        icon: "/images/v2/security.svg",
         description:
           "From React Router and React Query to TypeScript and backend integration, we use best practices that keep your app fast and reliable.",
       },

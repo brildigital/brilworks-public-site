@@ -11,15 +11,15 @@ import {
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const IndustriesWeServe = dynamic(() =>
-  import("../Homepage/IndustriesWeServe")
+const IndustriesWeServe = dynamic(
+  () => import("../Homepage/IndustriesWeServe"),
 );
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
 );
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -109,7 +109,7 @@ const WebAppDevelopmentService = () => {
       },
       {
         title: "Focus on Security & Performance",
-        icon: "/images/v2/security-per.svg",
+        icon: "/images/v2/security.svg",
         description:
           "Our development practices include robust data protection, authentication systems, and performance optimization from the ground up.",
       },

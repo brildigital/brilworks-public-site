@@ -37,6 +37,7 @@ const IndustriesWeServe = ({
       title: "E-commerce",
       imageSrc: "/images/v2/shopping-cart-check.svg",
       imageAlt: "1-commerce-icon",
+      href: "/industry/e-commerce-app-development/",
     },
     {
       title: "SaaS",
@@ -47,11 +48,13 @@ const IndustriesWeServe = ({
       title: "Education",
       imageSrc: "/images/v2/user-graduate.svg",
       imageAlt: "education-icon",
+      href: "/industry/edtech-software-development/",
     },
     {
       title: "Manufacturing",
       imageSrc: "/images/v2/manufaturing-icon.svg",
       imageAlt: "manufaturing-icon",
+      href: "/industry/manufacturing-software-development-services/",
     },
     {
       title: "Social",
@@ -152,7 +155,7 @@ const IndustriesWeServe = ({
                     )}
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
         </div>

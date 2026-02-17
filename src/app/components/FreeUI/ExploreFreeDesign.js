@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { scrollEffect } from "../lib/commonFunction";
 import FreeUiContactForm from "./FreeUiContactForm";
 
 const ExploreFreeDesign = () => {
@@ -112,11 +113,20 @@ const ExploreFreeDesign = () => {
     },
   ];
 
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
       <section
         id="portfolio"
-        className="container max-w-[1280px] main-section-padding-top mx-auto"
+        className="container max-w-[1280px] main-section-padding-top mx-auto reveal"
       >
         <div className="text-center lg:mb-7.5 mb-5">
           <Heading
@@ -168,7 +178,7 @@ const ExploreFreeDesign = () => {
 
       <section
         id="testimonials"
-        className="container max-w-[1280px] main-section-padding mx-auto"
+        className="container max-w-[1280px] main-section-padding mx-auto reveal"
       >
         <div className="text-center lg:mb-10 md:mb-7.5 mb-5">
           <Heading
@@ -221,7 +231,7 @@ const ExploreFreeDesign = () => {
       </section>
       <div className="bg-themeLight">
         <section
-          className="container max-w-[1280px] main-section-padding mx-auto"
+          className="container max-w-[1280px] main-section-padding mx-auto reveal"
           id="process"
         >
           <div className="text-center lg:mb-10 md:mb-7.5 mb-5">
@@ -292,6 +302,8 @@ const ExploreFreeDesign = () => {
               size="large"
               className="w-fit hover:text-themeColor mx-auto"
               label="Claim Now"
+              redirect="#cta"
+              scrollingButton
             />
           </div>
         </section>

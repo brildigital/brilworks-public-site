@@ -49,7 +49,7 @@ const ServicesSection = ({
                 data={data}
                 handleOpen={handleOpen}
                 open={open}
-                buttonText={serviceData?.buttonText}
+                buttonText={data.btnText || serviceData?.buttonText}
               />
             </div>
           ))

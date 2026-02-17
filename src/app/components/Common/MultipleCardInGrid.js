@@ -6,6 +6,7 @@ import ButtonV2 from "./ButtonV2";
 const MultipleCardInGrid = ({
   bgClass,
   buttonText,
+  redirect,
   title,
   description,
   cardData,
@@ -56,15 +57,15 @@ const MultipleCardInGrid = ({
                   </span>
                 )}
               </div>
-            )
+            ),
           )}
         </div>
         {buttonText && (
           <ButtonV2
             label={buttonText}
             className="hover:text-themeColor sxl:!mt-10 md:!mt-7.5 !mt-5 w-fit mx-auto"
-            redirect="#section-contact-form"
-            scrollingButton
+            redirect={redirect || "#section-contact-form"}
+            scrollingButton={!redirect}
           />
         )}
       </div>

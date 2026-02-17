@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <KubernetesConsultingService />
-    </div>
-  );
+  return <KubernetesConsultingService />;
 };
 
 export default page;

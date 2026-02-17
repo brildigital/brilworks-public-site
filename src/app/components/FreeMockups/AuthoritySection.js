@@ -26,8 +26,7 @@ export default function AuthoritySection() {
       name: "FinTech App",
       colors: "from-cyan-500/20 to-blue-600/20",
       accent: "bg-cyan-500/40",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/b1a7a16ed4_stock-view-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/terrago-banner-1760418871219.webp`,
       redirect:
         "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
       secondary: "bg-blue-500/30",
@@ -36,8 +35,7 @@ export default function AuthoritySection() {
       name: "E-commerce",
       colors: "from-blue-500/20 to-cyan-600/20",
       accent: "bg-blue-500/40",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/93672878ad_powerful-inventory-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-mockup-swiftstock-banner-1760418674626.webp`,
       redirect:
         "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
       secondary: "bg-cyan-500/30",
@@ -46,8 +44,7 @@ export default function AuthoritySection() {
       name: "Social Platform",
       colors: "from-teal-500/20 to-cyan-600/20",
       accent: "bg-teal-500/40",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/d47ae82eac_connecting-pet-owners.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/petly-pet-finder-app-banner-1760360357095.webp`,
       redirect: "/portfolio/pet-finding-app/",
       secondary: "bg-cyan-500/30",
     },
@@ -55,8 +52,7 @@ export default function AuthoritySection() {
       name: "HealthTech",
       colors: "from-cyan-600/20 to-teal-500/20",
       accent: "bg-cyan-600/40",
-      image:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/ed7dbf1d9c_healthcare-mobile-app.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/syncare-patient-app-banner-1760417958745.webp`,
       redirect: "/portfolio/healthcare-mobile-app/",
       secondary: "bg-teal-500/30",
     },

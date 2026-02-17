@@ -157,8 +157,7 @@ export const blogAuthor = (authorName) => {
   const authorData = [
     {
       name: "Hitesh Umaletiya",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/9caa5563dc_hitesh-150x150.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/9caa5563dc_hitesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/hitesh-umaletiya-266a6077/",
       authorDesc:
         "Co-founder of Brilworks. As technology futurists, we love helping startups turn their ideas into reality. Our expertise spans startups to SMEs, and we're dedicated to their success.",
@@ -166,8 +165,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Vikas Singh",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/35b061522a_vikas.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/35b061522a_vikas.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
@@ -177,8 +175,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Lavesh Katariya",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/271c9290a8_lavesh-150x150.jpg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/271c9290a8_lavesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/laveshkatariya/",
       authorDesc:
         "With over 8 years of experience in the MERN stack, I specialize in building robust and scalable web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, my passion for clean code and innovative problem-solving ensures high-quality solutions.",
@@ -186,8 +183,7 @@ export const blogAuthor = (authorName) => {
     },
     {
       name: "Colin Shah",
-      authorImage:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/b9f60bcb6e_colin300x300.jpeg",
+      authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/b9f60bcb6e_colin300x300.jpeg`,
       authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
       authorDesc:
         "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",
@@ -196,7 +192,7 @@ export const blogAuthor = (authorName) => {
   ];
 
   const selectedAuthor = authorData.find(
-    (author) => author?.name === authorName
+    (author) => author?.name === authorName,
   );
 
   return selectedAuthor;
@@ -222,8 +218,8 @@ export function convertParamsToString(input) {
     .split("-") // Step 1: Split the string by hyphen
     .map(
       (
-        word // Step 2: Capitalize the first letter of each word
-      ) => word.charAt(0).toUpperCase() + word.slice(1)
+        word, // Step 2: Capitalize the first letter of each word
+      ) => word.charAt(0).toUpperCase() + word.slice(1),
     )
     .join(" "); // Step 3: Join the words back with a space
 }
@@ -233,7 +229,7 @@ export function formatPhoneNumber(phoneNumber) {
 
   const formattedNumber = phoneNumber.replace(
     /^(\d{2})(\d{5})(\d{5})$/,
-    "+$1 $2 $3"
+    "+$1 $2 $3",
   );
   return formattedNumber;
 }
@@ -300,7 +296,7 @@ export function formatSrcUrl(url) {
   // Construct new S3 file name
   const newFileName = shouldPrefix ? `${assetId}_${filename}` : filename;
 
-  const fileURL = `https://d11qzsb0ksp6iz.cloudfront.net/assets/${newFileName}`;
+  const fileURL = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/${newFileName}`;
 
   return fileURL;
 }
@@ -360,6 +356,25 @@ export function markFormSubmitted(route) {
   }
 }
 
+export const getStatusColor = (status) => {
+  switch (status) {
+    case "Excellent":
+      return "text-green-600 bg-green-50 border-green-200";
+    case "Good":
+      return "text-blue-600 bg-blue-50 border-blue-200";
+    case "Fair":
+      return "text-yellow-600 bg-yellow-50 border-yellow-200";
+    default:
+      return "text-red-600 bg-red-50 border-red-200";
+  }
+};
+
+export const getScoreColor = (score) => {
+  if (score >= 80) return "text-green-600";
+  if (score >= 60) return "text-yellow-600";
+  return "text-red-600";
+};
+
 export const isExternalLink = (href) => {
   const allowedDomains = [
     "brilworks.com",
@@ -381,6 +396,7 @@ export const isExternalLink = (href) => {
     "https://facia.io/facial-recognition/",
     "https://scientificasia.net/machine-learning-ml/",
     "https://techtarget.ai/technology/nlp/",
+    "https://www.transvirtual.com/blog/what-is-route-optimisation-software/",
   ];
 
   return (

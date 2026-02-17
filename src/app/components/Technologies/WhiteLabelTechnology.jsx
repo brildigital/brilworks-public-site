@@ -7,19 +7,19 @@ import ServicesSection from "../Common/ServicesSection";
 
 const WhiteLabelFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
 
 const why100PlusAgenciesTrustUs = [
@@ -131,7 +131,7 @@ const whiteLabelBenefits = {
       title: "Cost-efficient",
       description:
         "Eliminate R&D costs—scale your offerings with pre-built modules and cloud architectures that grow with your client base.",
-      icon: "/images/v2/white_label_cost_efficient.svg",
+      icon: "/images/v2/why_rn_1.svg",
     },
     {
       title: "Rapid market entry",
@@ -172,7 +172,7 @@ const WhiteLabelTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-        technologyText="White Label App Development Services"
+        technologyText="White Label Mobile App Development Services"
         title={
           <>
             Brand-Aligned <br className="md:block hidden" />
@@ -189,7 +189,7 @@ const WhiteLabelTechnology = () => {
         cardData={why100PlusAgenciesTrustUs}
       />
       <ServicesSection
-        sectionId="hire-react-native-developer"
+        sectionId="services-one"
         serviceData={whiteLabelService}
       />
       <TechnologyDevelopers description="Our services deliver customized, scalable white label solutions." />

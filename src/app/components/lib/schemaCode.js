@@ -3,7 +3,7 @@ export const organization = {
   "@type": "Organization",
   name: "Brilworks",
   url: "https://www.brilworks.com",
-  logo: "https://www.brilworks.com/images/brilworks-logo.png",
+  logo: "https://www.brilworks.com/images/logo-black.svg",
   sameAs: [
     "https://www.facebook.com/brilwork",
     "https://www.linkedin.com/company/brilworks",
@@ -15,6 +15,39 @@ export const organization = {
     contactType: "sales",
     email: "<sales@brilworks.com>",
   },
+};
+
+export const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Brilworks",
+  image: "https://www.brilworks.com/images/logo-black.svg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "503, Fortune Business Hub, Science City Road, Sola",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    addressCountry: "IN",
+    postalCode: "380060",
+  },
+  url: "https://www.brilworks.com",
+  telephone: "+91 9313644148",
+  email: "sales@brilworks.com",
+  openingHours: "Mo-Fr 10:00-19:00",
+  priceRange: "$$",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 23.071,
+    longitude: 72.5158,
+    plusCode: "3GH2+JH Ahmedabad, Gujarat, India",
+  },
+  sameAs: [
+    "https://facebook.com/brilwork",
+    "https://x.com/_Brilworks",
+    "https://instagram.com/brilworkssoftware",
+    "https://linkedin.com/company/brilworks",
+    "https://youtube.com/channel/UCKmt-auuz7g8Nc6uUxReRwA",
+  ],
 };
 
 export const website = {

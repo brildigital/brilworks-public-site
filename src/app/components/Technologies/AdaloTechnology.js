@@ -158,7 +158,7 @@ const AdaloTechnology = () => {
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="hire-adalo-developer"
+        sectionId="services-one"
         serviceData={adaloService}
       />
       <TechnologyDevelopers bgClass="bg-white" />

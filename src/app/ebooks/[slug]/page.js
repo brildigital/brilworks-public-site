@@ -60,7 +60,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getEbookData(params.slug);
-    const { title, description } = storyData.story?.content?.SEO;
+    const { title, description } = storyData?.story?.content?.SEO;
     return {
       title: title,
       description: description,

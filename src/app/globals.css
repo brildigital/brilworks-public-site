@@ -14,6 +14,7 @@
   --font_48: 3rem;
   --theme-color: #017eeb;
   --theme-light: #f2f9fe;
+  --theme-secondary: #00dbd3;
   --color_black: #212121;
   --navyBlue: #000d1e;
   --color_gray: #504f4f;
@@ -320,9 +321,21 @@ input[type="number"] {
   padding: 1rem 0rem;
 }
 
-.blog-home {
+/* .blog-home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
+  gap: 20px;
+} */
+
+.blog-home {
+  display: grid;
+  grid-template-columns: 55% 45%; /* left column 60%, right column 40% */
+  gap: 20px;
+}
+
+.blog-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Card 1 + Card 2 side by side */
   gap: 20px;
 }
 
@@ -642,6 +655,12 @@ input[type="number"] {
 
   .blog-home {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .blog-left {
+    display: grid;
+    grid-template-columns: 1fr; /* Card 1  Card 2 Vertically */
+    gap: 20px;
   }
 
   .rotate_img {

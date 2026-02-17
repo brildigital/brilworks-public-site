@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import ServiceHeroSection from "../Services/ServiceHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
-const ToolsAndGetInTouch = dynamic(() =>
-  import("../Portfolio/ToolsAndGetInTouch")
+const ToolsAndGetInTouch = dynamic(
+  () => import("../Portfolio/ToolsAndGetInTouch"),
 );
 
 const OurProcessPage = () => {
@@ -211,12 +211,12 @@ const OurProcessPage = () => {
         imageSrc="/images/v2/our-procee-banner.webp"
       />
       <ServicesSection
-        sectionId="process-one"
+        sectionId="services-one"
         serviceData={ourProcessServices1}
       />
       <ServicesSection
         bgClass="bg-themeLight"
-        sectionId="process-two"
+        sectionId="services-two"
         imageOnLeft={true}
         serviceData={ourProcessServices2}
       />

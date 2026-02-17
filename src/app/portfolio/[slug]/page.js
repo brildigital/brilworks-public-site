@@ -7,6 +7,10 @@ import ProjectOverviewSection from "@/app/components/Portfolio/ProjectOverviewSe
 import ProjectChallengesSection from "@/app/components/Portfolio/ProjectChallengesSection";
 import BluePrintForSuccess from "@/app/components/Portfolio/BluePrintForSuccess";
 import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
+import { formatSrcUrl } from "@/app/components/lib/commonFunction";
+import ProjectSolutionSection from "@/app/components/Portfolio/ProjectSolutionSection";
+import Image from "next/image";
+import ProjectDesignView from "@/app/components/Portfolio/ProjectDesignView";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -59,7 +63,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getPortfolioData(params.slug);
-    const { title, description } = storyData.story?.content?.SEO;
+    const { title, description } = storyData?.story?.content?.SEO;
     return {
       title: title,
       description: description,
@@ -100,9 +104,9 @@ export default async function Page({ params }) {
     ProcessAndEnhanceBlock,
     ProjectOverview,
     ProjectChallenges,
-    // HowWeDelivered,
+    productImage,
+    designView,
     BlueprintForSuccess,
-    CTA,
   } = storyData.story.content;
 
   return (
@@ -113,12 +117,31 @@ export default async function Page({ params }) {
         description={description}
         images={images}
         KeyValueBlock={KeyValueBlock}
+        projectPoints={ProcessAndEnhanceBlock}
       />
-      <ProcessAndEnhanceSection
-        processAndEnhanceBlock={ProcessAndEnhanceBlock}
-      />
+      {ProcessAndEnhanceBlock?.[0].title &&
+        ProcessAndEnhanceBlock?.[0].description && (
+          <ProcessAndEnhanceSection
+            processAndEnhanceBlock={ProcessAndEnhanceBlock}
+          />
+        )}
       <ProjectOverviewSection projectOverview={ProjectOverview} />
-      <ProjectChallengesSection projectChallenges={ProjectChallenges} />
+      {ProjectChallenges?.[0] && (
+        <ProjectChallengesSection projectChallenges={ProjectChallenges?.[0]} />
+      )}
+      {productImage?.filename && (
+        <Image
+          className="max-h-[1080px]"
+          alt={productImage?.alt || "product-img"}
+          src={formatSrcUrl(productImage?.filename)}
+          width="1440"
+          height="840"
+        />
+      )}
+      {designView?.[0]?.title && <ProjectDesignView designView={designView} />}
+      {ProjectChallenges?.[1] && (
+        <ProjectSolutionSection projectSolutions={ProjectChallenges?.[1]} />
+      )}
       <BluePrintForSuccess
         blueprintForSuccess={BlueprintForSuccess}
         casestudyFileUrl={casestudyFileUrl?.url}

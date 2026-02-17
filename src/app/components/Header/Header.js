@@ -11,7 +11,9 @@ import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
 const Svgs = dynamic(() => import("../Svgs"));
-
+// const SideMenu = dynamic(() => import("./SideMenu"));
+// const MenuItem = dynamic(() => import("./MenuItem"));
+// const MegaMenu = dynamic(() => import("./MegaMenu"));
 const NewHeader = () => {
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
@@ -20,7 +22,7 @@ const NewHeader = () => {
   useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 767 && setOpenNav(false)
+      () => window.innerWidth >= 767 && setOpenNav(false),
     );
     const fetchSlugs = async () => {
       try {
@@ -39,7 +41,7 @@ const NewHeader = () => {
               ?.replaceAll("-", " ")
               ?.split(" ")
               ?.map(
-                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length)
+                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length),
               )
               .join(" "),
           path: "/use-case/" + story.slug + "/",
@@ -71,8 +73,8 @@ const NewHeader = () => {
   return (
     <header>
       <div className="header header-bg-white">
-        <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 shadow-none bg-transparent font-semibold">
-          <div className="flex items-center justify-between text-colorBlack container max-w-[1280px] md:px-10 px-6 mx-auto">
+        <Navbar className="sticky text-black top-0 border-none z-10 h-max rounded-none !px-0 !py-3 shadow-none bg-transparent font-semibold">
+          <div className="flex items-center justify-between text-colorBlack container max-w-[1280px] px-6 mx-auto">
             <div className="header_logo">
               <Link href="/">
                 <Image
@@ -111,7 +113,7 @@ const NewHeader = () => {
                             setOpenNav={setOpenNav}
                             menuItems={menu?.menuItems}
                           />
-                        )
+                        ),
                       )}
                   </ul>
                 </div>

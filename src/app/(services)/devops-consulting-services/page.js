@@ -33,11 +33,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <DevOpsService />
-    </div>
-  );
+  return <DevOpsService />;
 };
 
 export default page;

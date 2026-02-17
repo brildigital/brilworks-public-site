@@ -5,12 +5,28 @@ import {
   sendDataToSlack,
   validateContactPayload,
 } from "..";
+import { cookies } from "next/headers";
 // const sgMail = require("@sendgrid/mail");
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
+  const cookieStore = cookies();
+  const userDataCookie = cookieStore.get("user-data");
+
+  const userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;
+
   const payload = await req.json();
-  const { name, email, phone, message, page, downloadLink, token } = payload;
+  const {
+    name,
+    email,
+    phone,
+    message,
+    page,
+    downloadLink,
+    token,
+    previousPage,
+    toolFormData,
+  } = payload;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -28,10 +44,11 @@ export async function POST(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `secret=${secret}&response=${token}`,
-    }
+    },
   );
   const result = await verification.json();
 
+  console.log("********************result******************", result);
   if (!result.success || result.score < 0.5) {
     return NextResponse.json({ message: "Captcha failed" }, { status: 400 });
   }
@@ -88,20 +105,20 @@ export async function POST(req, res) {
         .then((data) => {
           return NextResponse.json(
             { message: "Email sent successfully" },
-            { status: 200 }
+            { status: 200 },
           );
         })
         .catch((error) => {
           console.error(error);
           return NextResponse.json(
             { message: "Error sending email" },
-            { status: 500 }
+            { status: 500 },
           );
         });
     } else if (page.startsWith("/portfolio/") || page.startsWith("/ebooks/")) {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack(payload),
+        sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
 
       if (downloadLink) {
@@ -175,32 +192,32 @@ export async function POST(req, res) {
           .then((data) => {
             return NextResponse.json(
               { message: "Email sent successfully" },
-              { status: 200 }
+              { status: 200 },
             );
           })
           .catch((error) => {
             console.error(error);
             return NextResponse.json(
               { message: "Error sending email" },
-              { status: 500 }
+              { status: 500 },
             );
           });
       }
     } else {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack(payload),
+        sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
     }
     return NextResponse.json(
       { message: "Form submitted successfully" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Error creating contact", error);
     return NextResponse.json(
       { message: "Error submitting form" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

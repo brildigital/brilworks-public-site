@@ -11,6 +11,7 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
+import { generateRatingSchema } from "@/app/components/lib/schemaCode";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }) {
         {
           url: formatSrcUrl(
             story.content.metatags?.og_image ||
-              story.content?.mobile_banner?.filename
+              story.content?.mobile_banner?.filename,
           ),
         },
       ],
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }) {
       images: [
         formatSrcUrl(
           story?.content.metatags?.twitter_image ||
-            story?.content?.mobile_banner?.filename
+            story?.content?.mobile_banner?.filename,
         ),
       ],
       creator: story.content.BlogAuthor,
@@ -70,6 +71,7 @@ export async function generateMetadata({ params }) {
     },
   };
 }
+
 export default async function Page(props) {
   const { params } = props || {};
   const { props: data } = await fetchData(params?.slug);
@@ -186,7 +188,7 @@ export default async function Page(props) {
               title,
               `${pageURL}/`,
               ratingValue,
-              ratingCount
+              ratingCount,
             ),
           }}
         />
@@ -256,8 +258,8 @@ export default async function Page(props) {
                 </p> */}
                 <Heading type="h1" text={data?.story?.content?.title} />
               </div>
-              <div className="w-full md:w-[60%] flex md:items-center items-start md:flex-row flex-col">
-                <div className="flex items-center justify-between md:border-r-2 md:border-[#5C6878] md:mb-0 mb-2">
+              <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
+                <div className="flex items-center justify-between slg:border-r-2 slg:border-[#5C6878] slg:mb-0 mb-2">
                   <Image
                     src={author?.authorImage}
                     width="54"
@@ -273,8 +275,8 @@ export default async function Page(props) {
                         author?.name === "Vikas Singh"
                           ? "/blog/author/vikas-singh/"
                           : author?.name === "Hitesh Umaletiya"
-                          ? "/blog/author/hitesh-umaletiya/"
-                          : author?.authorLinkedIn
+                            ? "/blog/author/hitesh-umaletiya/"
+                            : author?.authorLinkedIn
                       }
                       title={`Posts by ${author?.name}`}
                       rel="author external"
@@ -284,12 +286,12 @@ export default async function Page(props) {
                     <br />
                     <span className="sxl:!text-xl md:text-lg text-base">
                       {formattedDate(
-                        data?.story?.content?.Published || new Date()
+                        data?.story?.content?.Published || new Date(),
                       )}
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base md:!pl-10 gap-1">
+                <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base slg:!pl-10 gap-1">
                   <div className="flex sxl:items-center items-start">
                     <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
                       <Image
@@ -337,7 +339,7 @@ export default async function Page(props) {
                     className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                     src={formatSrcUrl(
                       data?.story?.content?.mobile_banner?.filename ||
-                        data?.story?.content?.image?.filename
+                        data?.story?.content?.image?.filename,
                     )}
                     alt={
                       data?.story?.content.image?.alt ||
@@ -354,7 +356,7 @@ export default async function Page(props) {
                     className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
                     src={formatSrcUrl(
                       data?.story?.content.image?.filename ||
-                        data?.story?.content.mobile_banner?.filename
+                        data?.story?.content.mobile_banner?.filename,
                     )}
                     alt={
                       data?.story?.content.image?.alt ||
@@ -390,15 +392,15 @@ export default async function Page(props) {
 export async function fetchData(slug) {
   try {
     const storyUrl = new URL(
-      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`
+      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
     );
     storyUrl.searchParams.append(
       "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN || ""
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
     );
     storyUrl.searchParams.append(
       "version",
-      process.env.NEXT_PUBLIC_STORYBLOK_VERSION
+      process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     );
 
     storyUrl.pathname += ``;

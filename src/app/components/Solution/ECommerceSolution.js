@@ -9,17 +9,17 @@ import TechStackWeWorkWith from "../Technologies/TechStackWeWorkWith";
 import { faReact, faPhp } from "@fortawesome/free-brands-svg-icons";
 import SolutionCostAndTimeLine from "./SolutionCostAndTimeLine";
 
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const ECommerceSolution = () => {
@@ -284,7 +284,7 @@ const ECommerceSolution = () => {
         imageSrc="/images/v2/e-commerce-industry-banner.webp"
       />
       <ServicesSection
-        sectionId="fintech-services-one"
+        sectionId="services-one"
         serviceData={eCommerceService}
       />
 

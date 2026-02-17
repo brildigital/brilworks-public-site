@@ -271,7 +271,7 @@ const NodejsTechnology = () => {
         cardData={why100PlusCompaniesTrust}
       />
       <ServicesSection
-        sectionId="hire-nodejs-developer"
+        sectionId="services-one"
         bgClass="bg-themeLight"
         serviceData={nodeJSService}
       />

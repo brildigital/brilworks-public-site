@@ -33,11 +33,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <AIMLService />
-    </div>
-  );
+  return <AIMLService />;
 };
 
 export default page;
