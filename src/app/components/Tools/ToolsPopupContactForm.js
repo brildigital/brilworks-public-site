@@ -16,6 +16,7 @@ import {
   Cpu,
   Database,
   DollarSign,
+  Download,
   FileText,
   Gauge,
   Layers,
@@ -2327,6 +2328,108 @@ const ToolsPopupContactForm = ({
                     ))}
                 </div>
               </div>
+            </div>
+          </div>
+        );
+      case "/tools/build-vs-buy-software-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Estimate Cost
+            </h3>
+
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl shadow-lg p-4 text-white">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold">Recommendation</h3>
+                  <TrendingUp className="w-6 h-6" />
+                </div>
+                <p className="text-left text-4xl font-bold !mb-2">
+                  {result.recommendation}
+                </p>
+                <p className="text-left text-emerald-100">
+                  Based on comprehensive cost analysis
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-lg">
+                  <p className="text-sm font-semibold text-gray-600 mb-2">
+                    Build Total
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.buildCosts.total)}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">Year 1 cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-lg">
+                  <p className="text-sm font-semibold text-gray-600 mb-2">
+                    Buy 5-Year Total
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.buyCosts.total5Year)}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Total ownership cost
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-lg">
+                <h4 className="text-left font-bold text-xl text-gray-900 mb-4">
+                  Cost Breakdown
+                </h4>
+                <div className="space-y-2">
+                  {result.breakdown.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="text-left pb-2 border-b border-gray-100 last:border-0"
+                    >
+                      <p className="font-semibold text-gray-800 mb-2">
+                        {item.category}
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-600">
+                            Build:{" "}
+                            {formatCurrencyForCostBreakdown(item.buildCost)}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-gray-600">
+                            Buy: {formatCurrencyForCostBreakdown(item.buyCost)}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {result.keywords.length > 0 && (
+                <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
+                  <p className="text-sm font-semibold text-emerald-900 mb-3">
+                    Detected Keywords
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {result.keywords.map((keyword, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-emerald-200 text-emerald-800 rounded-full text-xs font-medium"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         );

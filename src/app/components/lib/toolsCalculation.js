@@ -3031,3 +3031,139 @@ export const saasPricingModelCalculater = (formData) => {
     recommendations: recomm,
   };
 };
+
+// 35. Build Vs Buy Software Calculator
+
+const complexityMultipliers = {
+  simple: 1,
+  moderate: 1.5,
+  complex: 2.5,
+  enterprise: 4,
+};
+
+const keywordMultipliers = {
+  urgent: 1.5,
+  complex: 2,
+  custom: 1.8,
+  enterprise: 2.5,
+  secure: 1.4,
+  integration: 1.3,
+  api: 1.2,
+  migration: 1.6,
+  realtime: 1.5,
+  ai: 2.2,
+  ml: 2.2,
+  blockchain: 2.8,
+  iot: 1.8,
+  mobile: 1.4,
+  desktop: 1.3,
+  web: 1,
+  cloud: 1.2,
+  hybrid: 1.7,
+  advanced: 1.5,
+  simple: 0.8,
+  startup: 1.1,
+  scaling: 1.6,
+};
+
+export function calculateBuildVsBuy(input) {
+  const teamCostPerMonth = 8000;
+
+  const baseComplexityMultiplier =
+    complexityMultipliers[input.complexity] || 1.5;
+
+  const keywords = extractKeywords(input.description);
+  let keywordMultiplier = 1;
+  keywords.forEach((keyword) => {
+    keywordMultiplier *= keywordMultipliers[keyword] || 1;
+  });
+
+  const developmentCost =
+    teamCostPerMonth *
+    input.developmentMonths *
+    input.teamSize *
+    baseComplexityMultiplier *
+    keywordMultiplier;
+  const infrastructureCost = input.estimatedUsers * 12 + developmentCost * 0.15;
+  const maintenanceCostPerYear = developmentCost * 0.2;
+
+  const buildCosts = {
+    development: Math.round(developmentCost),
+    infrastructure: Math.round(infrastructureCost),
+    maintenance: Math.round(maintenanceCostPerYear),
+    total: 0,
+  };
+  buildCosts.total =
+    buildCosts.development + buildCosts.infrastructure + buildCosts.maintenance;
+
+  const averageAnnualLicense = 5000;
+  const implementationCost = developmentCost * 0.3;
+  const trainingCost = input.teamSize * 1000 + developmentCost * 0.05;
+  const annualSupport = input.teamSize * 500 + developmentCost * 0.1;
+
+  const buyCosts = {
+    licensingPerYear: averageAnnualLicense,
+    implementation: Math.round(implementationCost),
+    training: Math.round(trainingCost),
+    supportPerYear: Math.round(annualSupport),
+    total5Year: 0,
+  };
+
+  buyCosts.total5Year = Math.round(
+    (buyCosts.licensingPerYear + buyCosts.supportPerYear) * 5 +
+      buyCosts.implementation +
+      buyCosts.training
+  );
+
+  const savings = buildCosts.total - buyCosts.total5Year;
+  let recommendation = "Neutral";
+
+  if (savings > buildCosts.total * 0.2) {
+    recommendation = "Build";
+  } else if (savings < -buildCosts.total * 0.2) {
+    recommendation = "Buy";
+  }
+
+  const breakdown = [
+    {
+      category: "Initial Setup",
+      buildCost: buildCosts.development,
+      buyCost: buyCosts.implementation,
+      savings: buildCosts.development - buyCosts.implementation,
+    },
+    {
+      category: "Year 1 Operations",
+      buildCost: buildCosts.infrastructure + buildCosts.maintenance,
+      buyCost:
+        buyCosts.licensingPerYear + buyCosts.supportPerYear + buyCosts.training,
+      savings: 0,
+    },
+    {
+      category: "Year 2-5 (Annual)",
+      buildCost: buildCosts.infrastructure + buildCosts.maintenance,
+      buyCost: buyCosts.licensingPerYear + buyCosts.supportPerYear,
+      savings: 0,
+    },
+  ];
+
+  return {
+    buildCosts,
+    buyCosts,
+    recommendation,
+    keywords,
+    breakdown,
+  };
+}
+
+function extractKeywords(description) {
+  const lowerDesc = description.toLowerCase();
+  const foundKeywords = [];
+
+  Object.keys(keywordMultipliers).forEach((keyword) => {
+    if (lowerDesc.includes(keyword)) {
+      foundKeywords.push(keyword);
+    }
+  });
+
+  return foundKeywords;
+}

@@ -81,26 +81,25 @@ const PortfolioContactForm = ({
 
     try {
       const downloadURL = formatSrcUrl(downloadFileUrl);
-      // const response = await fetch(
-      //   `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
-      //   {
-      //     method: "POST",
-      //     header: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       ...formData,
-      //       ...(toolFormData ? toolFormData : {}),
-      //       page: pathname,
-      //       downloadLink: downloadURL,
-      //       token,
-      //       previousPage,
-      //     }),
-      //   },
-      // );
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            ...(toolFormData ? toolFormData : {}),
+            page: pathname,
+            downloadLink: downloadURL,
+            token,
+            previousPage,
+          }),
+        }
+      );
 
-      // if (response.ok) {
-      if (true) {
+      if (response.ok) {
         setFormData({
           name: "",
           company: "",
