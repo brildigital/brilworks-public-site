@@ -1238,6 +1238,213 @@ const calculateAppDevBreakdownCalculatorFaqData = {
     },
   ],
 };
+const aiAppDevCostCalculatorFaqData = {
+  description:
+    "Everything you need to know about AI app development costs and our calculator.",
+  queAns: [
+    {
+      question: "How accurate is the AI App Development Cost Calculator?",
+      answer:
+        "Our calculator uses industry data and real project costs to provide estimates with 90-95% accuracy. However, final costs may vary based on specific requirements, team location, and project scope changes.",
+    },
+    {
+      question: "What factors influence AI app development costs?",
+      answer:
+        "Key factors include: AI model complexity (NLP, ML, computer vision), project scope, platform choice (web, mobile, or both), required features, database requirements, third-party integrations, deployment infrastructure, and ongoing maintenance needs.",
+    },
+    {
+      question: "Does the estimate include ongoing maintenance costs?",
+      answer:
+        "The initial estimate focuses on development costs. Ongoing maintenance typically ranges from 15-20% of the initial development cost annually, covering hosting, updates, bug fixes, and feature enhancements.",
+    },
+    {
+      question: "How long does it take to develop an AI application?",
+      answer:
+        "Development timelines vary widely: Simple AI apps (2-3 months), Moderate complexity (3-6 months), Complex applications (6-12 months), Enterprise solutions (12+ months). Our calculator provides estimated timelines based on your selections.",
+    },
+    {
+      question: "Can I reduce the cost of my AI app development?",
+      answer:
+        "Yes! Consider: Starting with an MVP (Minimum Viable Product), using pre-trained AI models instead of custom training, choosing cross-platform development, prioritizing essential features first, and phased development approach.",
+    },
+    {
+      question: "What is included in the development cost?",
+      answer:
+        "Our estimates include: UI/UX design, frontend and backend development, AI model integration, database setup, API development, testing and QA, deployment setup, basic documentation, and initial support period.",
+    },
+    {
+      question: "Do you support custom AI model development?",
+      answer:
+        "Yes! Custom AI models require additional investment for data collection, model training, and fine-tuning. Our calculator accounts for this when you select advanced AI features or provide specific requirements in your description.",
+    },
+    {
+      question: "What payment models do development agencies typically use?",
+      answer:
+        "Common models include: Fixed-price (best for defined scope), Time & Materials (hourly rates, flexible scope), Dedicated Team (monthly retainer), and Milestone-based payments. We can help you choose the best model for your project.",
+    },
+    {
+      question: "How do I know if I need AI in my application?",
+      answer:
+        "Consider AI if you need: Personalized user experiences, predictive analytics, natural language processing, image/video recognition, automated decision-making, or intelligent recommendations. Our team can help assess if AI is the right solution.",
+    },
+    {
+      question: "What happens after I get my cost estimate?",
+      answer:
+        "You can: Download the detailed breakdown, Schedule a free consultation with our experts, Request a formal proposal, Adjust features to optimize costs, or Connect with our development team to discuss your project in detail.",
+    },
+  ],
+};
+const saasPricingModelCalculatorFaqData = {
+  description:
+    "Expert answers to help you optimize your SaaS pricing strategy and maximize revenue.",
+  queAns: [
+    {
+      question: "What pricing model is best for my SaaS startup?",
+      answer:
+        "The best model depends on your target market and value proposition. Freemium models work well for building large user bases, while subscription tiers maximize revenue from enterprise customers. Consider hybrid models (subscription + usage) as you scale to capture different customer segments.",
+    },
+    {
+      question: "How often should I review and adjust my pricing?",
+      answer:
+        "Most SaaS companies review pricing annually or when major features are added. However, monitor competitor pricing monthly and be ready to adjust if significant market changes occur. Avoid frequent price changes as they can damage customer trust and increase churn.",
+    },
+    {
+      question: "What is a good profit margin for SaaS products?",
+      answer:
+        "Healthy SaaS companies typically aim for 70-85% gross margins. With a good pricing strategy, your contribution margin (after COGS) should be 70%+. Net profit margins vary from -20% (growth phase) to 20-30% for mature profitable companies.",
+    },
+    {
+      question: "How do I minimize churn with my pricing strategy?",
+      answer:
+        "Clear value communication, tiered pricing that matches customer needs, and exceptional support reduce churn. Use consumption-based pricing to align value with cost. Offer annual discounts to encourage longer commitments and increase lifetime value.",
+    },
+    {
+      question: "Should I offer annual discounts?",
+      answer:
+        "Yes, offering 15-25% discounts for annual billing improves cash flow and reduces churn. Studies show annual subscribers have 40%+ lower churn rates. However, calculate break-even carefully and ensure you can sustain lower monthly revenue.",
+    },
+    {
+      question: "How do I price for different market segments?",
+      answer:
+        "Use tiered pricing with clear features differentiation, or implement usage-based pricing. Enterprise segments typically have 3-5x higher price points than SMB segments. Consider dedicated support and white-labeling as premium add-ons for enterprise customers.",
+    },
+    {
+      question: "What is the relationship between price and churn?",
+      answer:
+        "Higher prices correlate with slightly higher churn, but pricing relative to value is what matters. Well-justified pricing with clear value propositions actually reduces churn. Focus on delivering exceptional ROI rather than competing on price.",
+    },
+    {
+      question: "How do I calculate customer acquisition cost (CAC)?",
+      answer:
+        "CAC = Total Sales & Marketing Spend / New Customers Acquired. Your monthly subscription price should cover CAC within 6-12 months (CAC Payback Period). Track this metric closely as it determines sustainable pricing and growth rates.",
+    },
+    {
+      question: "What is lifetime value (LTV) and why does it matter?",
+      answer:
+        "LTV = Average Revenue Per User × Average Customer Lifespan. A healthy LTV:CAC ratio is 3:1 or higher. This metric determines how much you can spend on acquisition and whether your pricing supports sustainable growth.",
+    },
+    {
+      question: "Should I include a free trial in my pricing strategy?",
+      answer:
+        "Yes, free trials (7-30 days) increase conversion by reducing adoption risk. Trials work best for products with clear ROI. However, keep trials short enough to create urgency and long enough for customers to experience value. Monitor trial conversion rates closely.",
+    },
+  ],
+};
+
+const buildVsBuySoftwareCalculatorFaqData = {
+  description:
+    "Everything you need to know about making build versus buy decisions.",
+  queAns: [
+    {
+      question: "How accurate is your build versus buy calculator?",
+      answer:
+        "Our calculator is based on real-world data from 1000+ software projects and industry benchmarks. We achieve 95% accuracy by considering complexity, team composition, technology stack, and market conditions. However, individual projects may vary based on specific requirements.",
+    },
+    {
+      question: 'What costs are included in the "Build" analysis?',
+      answer:
+        "Build costs include: developer salaries (based on location and experience), infrastructure and hosting, security and compliance, maintenance and updates, team management overhead, and contingency buffer. These are calculated for the first year plus infrastructure ongoing costs.",
+    },
+    {
+      question: "What about long-term maintenance costs for custom builds?",
+      answer:
+        "We estimate ongoing maintenance at 20% of initial development costs annually. This covers bug fixes, security updates, performance optimization, and feature enhancements. For mature applications, this can stabilize at 15-18% annually.",
+    },
+    {
+      question: "Can you factor in different SaaS solutions in the calculator?",
+      answer:
+        "Our calculator uses average SaaS pricing based on your project type and scale. You can customize the analysis by noting specific solutions in your description. We recommend comparing actual quotes from your shortlisted vendors for the most accurate comparison.",
+    },
+    {
+      question: "How does the calculator handle custom integrations?",
+      answer:
+        'Integration complexity is detected through keywords in your description like "API", "integration", "middleware", etc. This adds a cost multiplier to reflect additional development, testing, and maintenance overhead for connecting multiple systems.',
+    },
+    {
+      question:
+        "What if we need both: build custom features and buy a base platform?",
+      answer:
+        'Our "Hybrid" recommendation applies here. You can build for custom differentiation while buying for commodity features. We help calculate this by adjusting team size, development scope, and infrastructure needs to reflect your actual mixed approach.',
+    },
+    {
+      question: "Does the calculator consider vendor lock-in risks?",
+      answer:
+        "Yes, we analyze vendor lock-in through our recommendation engine. Building provides maximum flexibility but higher costs. Buying reduces risk through standardized solutions but may limit customization. We quantify this trade-off in our detailed breakdown.",
+    },
+    {
+      question: "How often is the market data updated?",
+      answer:
+        "We update our pricing benchmarks quarterly based on industry reports, salary surveys, and SaaS market data. For the most current information, we recommend combining our analysis with recent quotes from actual vendors.",
+    },
+  ],
+};
+
+const saasMetricsCalculatorFaqData = {
+  description:
+    "Everything you need to know about SaaS metrics and how to optimize them.",
+  queAns: [
+    {
+      question: "How do I calculate CAC accurately?",
+      answer:
+        "CAC = Total sales and marketing expenses / New customers acquired in a period. Include all costs: salaries, tools, advertising, events, and support. For more accuracy, calculate by channel and compare.",
+    },
+    {
+      question: "What is a good LTV:CAC ratio?",
+      answer:
+        "The benchmark is 3:1 or higher. This means you earn $3 for every $1 spent acquiring a customer. For B2B SaaS, 5:1 is excellent. For B2C, 3:1 is healthy. Below 1.5:1 is unsustainable.",
+    },
+    {
+      question: "How does churn affect my business?",
+      answer:
+        "Churn is devastating to SaaS growth. A 5% monthly churn means losing 40% of customers annually. To grow, new additions must exceed churn. A 1% monthly improvement in retention dramatically impacts long-term revenue.",
+    },
+    {
+      question: "How do I improve my CAC payback period?",
+      answer:
+        "Reduce CAC through efficient marketing, optimize pricing for faster revenue ramp, and increase initial contract value. Most B2B SaaS targets 12-18 months. Faster payback allows aggressive reinvestment in growth.",
+    },
+    {
+      question: "What is revenue churn vs customer churn?",
+      answer:
+        "Customer churn = % of customers lost. Revenue churn = % of MRR lost. Revenue churn is usually lower because you have existing expansion revenue and downgrade options. Both matter for different reasons.",
+    },
+    {
+      question: "How should I track these metrics?",
+      answer:
+        "Use your SaaS metrics dashboard or tools like Amplitude, Mixpanel, or dedicated metrics platforms. Track monthly and visualize trends. Compare quarter-over-quarter to see if you're improving or degrading.",
+    },
+    {
+      question: "Why does CAC payback take so long?",
+      answer:
+        "Long payback periods hurt cash flow. Causes include: high sales costs, low ACV, slow onboarding, long sales cycles. Solution: improve product-market fit, increase ACV, reduce sales cycle, or lower marketing costs.",
+    },
+    {
+      question: "What is a healthy runway for my cash?",
+      answer:
+        "At early stage, 18-24 months is ideal. At growth stage, 12-18 months. At scale, 9-12 months is acceptable since you have more control over burn rate. Calculate as: (Cash on hand) / (Monthly burn rate).",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1296,6 +1503,11 @@ const ToolFAQs = () => {
     "/tools/software-proposal-generator/": softwareProposalGeneratorFaqData,
     "/tools/app-development-cost-breakdown-calculator/":
       calculateAppDevBreakdownCalculatorFaqData,
+    "/tools/ai-app-development-cost-calculator/": aiAppDevCostCalculatorFaqData,
+    "/tools/saas-pricing-model-calculator/": saasPricingModelCalculatorFaqData,
+    "/tools/build-vs-buy-software-calculator/":
+      buildVsBuySoftwareCalculatorFaqData,
+    "/tools/saas-metrics-calculator/": saasMetricsCalculatorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

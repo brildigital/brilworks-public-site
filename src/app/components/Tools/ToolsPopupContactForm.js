@@ -199,6 +199,18 @@ const ToolsPopupContactForm = ({
 
   const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
 
+  const estimatedAIAppDevTimeline =
+    result?.totalCost > 0 ? Math.ceil(result?.totalCost / 5000) : 0;
+  const estimatedAIAppDevTeamSize =
+    result?.totalCost > 30000
+      ? "4-6"
+      : result?.totalCost > 15000
+        ? "2-4"
+        : "1-2";
+
+  const saasPricingModelAnnualRevenue = result?.monthlyRevenue * 12;
+  const saasPricingModelChurnImpact = Math.round(result?.monthlyRevenue * 0.05);
+
   const CloseBtn = ({ extraClass = "" }) => (
     <button
       className={`p-1 rounded-md absolute right-1 top-1 md:right-3.5 md:top-4 outline-none hover:bg-gray-100 ${extraClass}`}
@@ -2173,6 +2185,147 @@ const ToolsPopupContactForm = ({
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/ai-app-development-cost-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-4 text-black">
+            <h3 className="text-2xl font-bold text-gray-900">Estimate Cost</h3>
+            <div className="space-y-4">
+              <div className="rounded-xl p-6 bg-gradient-to-br from-blue-600 to-teal-600 shadow-xl text-white">
+                <div className="text-sm mb-2">Total Estimated Cost</div>
+                <div className="text-5xl font-bold  mb-2">
+                  ${result.totalCost.toLocaleString()}
+                </div>
+                <div className="text-sm opacity-80">
+                  Range: ${Math.round(result.totalCost * 0.8)?.toLocaleString()}{" "}
+                  - ${Math.round(result.totalCost * 1.2)?.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="shadow-xl border rounded-xl p-4">
+                <h4 className="font-semibold text-lg">Cost Breakdown</h4>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {Object.entries(result.breakdown).map(([key, value]) => (
+                    <div
+                      key={key}
+                      className="flex justify-between items-center bg-gray-100 rounded-lg py-1 px-2"
+                    >
+                      <span className="text-sm">{key}</span>
+                      <span className="font-semibold">
+                        ${value.toLocaleString()}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 border-t border-white/20">
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <Clock className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">
+                    {estimatedAIAppDevTimeline}
+                  </div>
+                  <div className="text-xs opacity-80">Months</div>
+                </div>
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <Users className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">
+                    {estimatedAIAppDevTeamSize}
+                  </div>
+                  <div className="text-xs opacity-80">Team Size</div>
+                </div>
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <TrendingUp className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">High</div>
+                  <div className="text-xs opacity-80">ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/saas-pricing-model-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Estimate Cost
+            </h3>
+
+            <div className="flex flex-col gap-3 bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl p-4 text-white">
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-2">
+                  Monthly Revenue (Estimate)
+                </div>
+                <div className="text-5xl font-bold mb-2">
+                  ${result?.monthlyRevenue.toLocaleString()}
+                </div>
+                <div className="text-sm opacity-80">
+                  Annually: ${saasPricingModelAnnualRevenue.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-3">Revenue Metrics</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Monthly Revenue</span>
+                    <span className="font-semibold">
+                      ${result?.monthlyRevenue.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm opacity-80">
+                    <span>Annual Projection</span>
+                    <span>
+                      ${saasPricingModelAnnualRevenue.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm opacity-80">
+                    <span>5% Churn Impact</span>
+                    <span>
+                      -${saasPricingModelChurnImpact.toLocaleString()}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-3">Cost Breakdown</div>
+                <div className="space-y-2 text-sm">
+                  {Object.entries(result?.breakdown)
+                    .slice(0, 3)
+                    .map(([key, value]) => (
+                      <div
+                        key={key}
+                        className="flex justify-between items-center"
+                      >
+                        <span>{key}</span>
+                        <span className="font-semibold">
+                          {typeof value === "number"
+                            ? `$${value.toLocaleString()}`
+                            : JSON.stringify(value)}
+                        </span>
+                      </div>
+                    ))}
+                </div>
               </div>
             </div>
           </div>

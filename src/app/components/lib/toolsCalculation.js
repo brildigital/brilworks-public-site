@@ -2318,3 +2318,716 @@ export function calculateAddDevCostBreakdown(formData) {
     additionalCosts: descriptionFeatures,
   };
 }
+
+// 34 AI App Development Cost Calculator
+
+export const costParameters = {
+  ai_model: [
+    {
+      category: "ai_model",
+      feature_name: "Basic NLP",
+      cost_multiplier: 1,
+      base_cost: 5000,
+      description: "Simple natural language processing capabilities",
+    },
+    {
+      category: "ai_model",
+      feature_name: "Advanced ML",
+      cost_multiplier: 1.5,
+      base_cost: 8000,
+      description: "Machine learning models with training",
+    },
+    {
+      category: "ai_model",
+      feature_name: "Computer Vision",
+      cost_multiplier: 1.8,
+      base_cost: 10000,
+      description: "Image and video recognition",
+    },
+    {
+      category: "ai_model",
+      feature_name: "Deep Learning",
+      cost_multiplier: 2.5,
+      base_cost: 15000,
+      description: "Complex neural networks and deep learning",
+    },
+    {
+      category: "ai_model",
+      feature_name: "Generative AI",
+      cost_multiplier: 2,
+      base_cost: 12000,
+      description: "ChatGPT-like generative capabilities",
+    },
+  ],
+  complexity: [
+    {
+      category: "complexity",
+      feature_name: "Simple",
+      cost_multiplier: 1,
+      base_cost: 3000,
+      description: "Basic features, single functionality",
+    },
+    {
+      category: "complexity",
+      feature_name: "Moderate",
+      cost_multiplier: 1.5,
+      base_cost: 6000,
+      description: "Multiple features, moderate integration",
+    },
+    {
+      category: "complexity",
+      feature_name: "Complex",
+      cost_multiplier: 2,
+      base_cost: 10000,
+      description: "Advanced features, complex workflows",
+    },
+    {
+      category: "complexity",
+      feature_name: "Enterprise",
+      cost_multiplier: 3,
+      base_cost: 20000,
+      description: "Enterprise-grade with scalability",
+    },
+  ],
+  platform: [
+    {
+      category: "platform",
+      feature_name: "Web Only",
+      cost_multiplier: 1,
+      base_cost: 2000,
+      description: "Web application only",
+    },
+    {
+      category: "platform",
+      feature_name: "Mobile (iOS/Android)",
+      cost_multiplier: 1.4,
+      base_cost: 4000,
+      description: "Native mobile applications",
+    },
+    {
+      category: "platform",
+      feature_name: "Cross-Platform",
+      cost_multiplier: 1.2,
+      base_cost: 3000,
+      description: "React Native or Flutter",
+    },
+    {
+      category: "platform",
+      feature_name: "Web + Mobile",
+      cost_multiplier: 1.6,
+      base_cost: 5000,
+      description: "Both web and mobile platforms",
+    },
+  ],
+  features: [
+    {
+      category: "features",
+      feature_name: "User Authentication",
+      cost_multiplier: 1.1,
+      base_cost: 1000,
+      description: "Login, signup, password reset",
+    },
+    {
+      category: "features",
+      feature_name: "Payment Integration",
+      cost_multiplier: 1.2,
+      base_cost: 2000,
+      description: "Stripe, PayPal integration",
+    },
+    {
+      category: "features",
+      feature_name: "Analytics Dashboard",
+      cost_multiplier: 1.3,
+      base_cost: 2500,
+      description: "Custom analytics and reporting",
+    },
+    {
+      category: "features",
+      feature_name: "API Integration",
+      cost_multiplier: 1.15,
+      base_cost: 1500,
+      description: "Third-party API connections",
+    },
+    {
+      category: "features",
+      feature_name: "Real-time Features",
+      cost_multiplier: 1.25,
+      base_cost: 2000,
+      description: "WebSocket, live updates",
+    },
+    {
+      category: "features",
+      feature_name: "Admin Panel",
+      cost_multiplier: 1.2,
+      base_cost: 1800,
+      description: "Content management system",
+    },
+  ],
+  database: [
+    {
+      category: "database",
+      feature_name: "Basic SQL",
+      cost_multiplier: 1,
+      base_cost: 800,
+      description: "PostgreSQL or MySQL",
+    },
+    {
+      category: "database",
+      feature_name: "NoSQL",
+      cost_multiplier: 1.1,
+      base_cost: 1000,
+      description: "MongoDB, Firebase",
+    },
+    {
+      category: "database",
+      feature_name: "Vector Database",
+      cost_multiplier: 1.3,
+      base_cost: 1500,
+      description: "For AI embeddings and similarity search",
+    },
+  ],
+  deployment: [
+    {
+      category: "deployment",
+      feature_name: "Standard Hosting",
+      cost_multiplier: 1,
+      base_cost: 500,
+      description: "Basic cloud hosting",
+    },
+    {
+      category: "deployment",
+      feature_name: "Scalable Cloud",
+      cost_multiplier: 1.3,
+      base_cost: 1200,
+      description: "Auto-scaling infrastructure",
+    },
+    {
+      category: "deployment",
+      feature_name: "Enterprise Infrastructure",
+      cost_multiplier: 1.8,
+      base_cost: 3000,
+      description: "High availability, load balancing",
+    },
+  ],
+};
+
+export const aiAppDevelopmentCalculater = (formData) => {
+  let cost = 0;
+  const newBreakdown = {};
+
+  // 🔹 AI Model
+  const aiModelParam = costParameters.ai_model?.find(
+    (p) => p.feature_name === formData.aiModel
+  );
+  if (aiModelParam) {
+    cost += aiModelParam.base_cost;
+    newBreakdown["AI Model"] = aiModelParam.base_cost;
+  }
+
+  // 🔹 Complexity
+  const complexityParam = costParameters.complexity?.find(
+    (p) => p.feature_name === formData.complexity
+  );
+  if (complexityParam) {
+    cost += complexityParam.base_cost;
+    cost *= complexityParam.cost_multiplier;
+    newBreakdown["Complexity"] = complexityParam.base_cost;
+  }
+
+  // 🔹 Platform
+  const platformParam = costParameters.platform?.find(
+    (p) => p.feature_name === formData.platform
+  );
+  if (platformParam) {
+    cost += platformParam.base_cost;
+    cost *= platformParam.cost_multiplier;
+    newBreakdown["Platform"] = platformParam.base_cost;
+  }
+
+  // 🔹 Features
+  formData.features.forEach((featureName) => {
+    const featureParam = costParameters.features?.find(
+      (p) => p.feature_name === featureName
+    );
+    if (featureParam) {
+      cost += featureParam.base_cost;
+      cost *= featureParam.cost_multiplier;
+      newBreakdown[featureName] = featureParam.base_cost;
+    }
+  });
+
+  // 🔹 Database
+  if (formData.database) {
+    const dbParam = costParameters.database?.find(
+      (p) => p.feature_name === formData.database
+    );
+    if (dbParam) {
+      cost += dbParam.base_cost;
+      cost *= dbParam.cost_multiplier;
+      newBreakdown["Database"] = dbParam.base_cost;
+    }
+  }
+
+  // 🔹 Deployment
+  if (formData.deployment) {
+    const deployParam = costParameters.deployment?.find(
+      (p) => p.feature_name === formData.deployment
+    );
+    if (deployParam) {
+      cost += deployParam.base_cost;
+      cost *= deployParam.cost_multiplier;
+      newBreakdown["Deployment"] = deployParam.base_cost;
+    }
+  }
+
+  // 🔹 Keyword Multipliers
+  const keywords = formData.description.toLowerCase();
+
+  if (
+    keywords.includes("chatgpt") ||
+    keywords.includes("gpt") ||
+    keywords.includes("llm")
+  ) {
+    cost *= 1.2;
+  }
+
+  if (keywords.includes("real-time") || keywords.includes("realtime")) {
+    cost *= 1.15;
+  }
+
+  if (keywords.includes("enterprise") || keywords.includes("scale")) {
+    cost *= 1.3;
+  }
+
+  return {
+    totalCost: Math.round(cost),
+    breakdown: newBreakdown,
+  };
+};
+
+// 35. Saas Pricing Model
+export const saasPricingModelCostParameters = {
+  model_type: [
+    {
+      category: "model_type",
+      parameter_name: "Freemium",
+      base_price: "0",
+      multiplier: "0.5",
+      description: "Free with premium upgrades",
+    },
+    {
+      category: "model_type",
+      parameter_name: "Subscription (Monthly)",
+      base_price: "29",
+      multiplier: "1.0",
+      description: "Recurring monthly billing",
+    },
+    {
+      category: "model_type",
+      parameter_name: "Subscription (Annual)",
+      base_price: "290",
+      multiplier: "0.85",
+      description: "Annual billing with discount",
+    },
+    {
+      category: "model_type",
+      parameter_name: "Usage-Based",
+      base_price: "0",
+      multiplier: "0.8",
+      description: "Pay-per-usage pricing",
+    },
+    {
+      category: "model_type",
+      parameter_name: "Tiered Pricing",
+      base_price: "49",
+      multiplier: "1.2",
+      description: "Multiple tiers for different segments",
+    },
+    {
+      category: "model_type",
+      parameter_name: "Hybrid (Sub + Usage)",
+      base_price: "19",
+      multiplier: "1.1",
+      description: "Base subscription + usage fees",
+    },
+  ],
+  user_tier: [
+    {
+      category: "user_tier",
+      parameter_name: "Startup",
+      base_price: "29",
+      multiplier: "1.0",
+      description: "For 1-50 users",
+    },
+    {
+      category: "user_tier",
+      parameter_name: "Growth",
+      base_price: "99",
+      multiplier: "1.5",
+      description: "For 51-500 users",
+    },
+    {
+      category: "user_tier",
+      parameter_name: "Enterprise",
+      base_price: "499",
+      multiplier: "2.5",
+      description: "For 500+ users with dedicated support",
+    },
+  ],
+  features: [
+    {
+      category: "features",
+      parameter_name: "Basic API",
+      base_price: "0",
+      multiplier: "1.1",
+      description: "Limited API access",
+    },
+    {
+      category: "features",
+      parameter_name: "Advanced API",
+      base_price: "10",
+      multiplier: "1.2",
+      description: "Full API access",
+    },
+    {
+      category: "features",
+      parameter_name: "Webhooks & Real-time",
+      base_price: "15",
+      multiplier: "1.25",
+      description: "Event-driven integration",
+    },
+    {
+      category: "features",
+      parameter_name: "Custom Reports",
+      base_price: "20",
+      multiplier: "1.3",
+      description: "Advanced reporting engine",
+    },
+    {
+      category: "features",
+      parameter_name: "SSO & Security",
+      base_price: "25",
+      multiplier: "1.35",
+      description: "Enterprise security features",
+    },
+    {
+      category: "features",
+      parameter_name: "Analytics Dashboard",
+      base_price: "15",
+      multiplier: "1.2",
+      description: "Real-time analytics",
+    },
+    {
+      category: "features",
+      parameter_name: "White-labeling",
+      base_price: "50",
+      multiplier: "1.4",
+      description: "Full white-label solution",
+    },
+  ],
+  user_volume: [
+    {
+      category: "user_volume",
+      parameter_name: "Low (< 100 users)",
+      base_price: "0",
+      multiplier: "0.8",
+      description: "Small user base",
+    },
+    {
+      category: "user_volume",
+      parameter_name: "Medium (100-1000)",
+      base_price: "0",
+      multiplier: "1.0",
+      description: "Medium user base",
+    },
+    {
+      category: "user_volume",
+      parameter_name: "High (1000-10000)",
+      base_price: "0",
+      multiplier: "1.5",
+      description: "Large user base",
+    },
+    {
+      category: "user_volume",
+      parameter_name: "Very High (10000+)",
+      base_price: "0",
+      multiplier: "2.2",
+      description: "Enterprise scale",
+    },
+  ],
+  market_segment: [
+    {
+      category: "market_segment",
+      parameter_name: "SMB (Small-Medium)",
+      base_price: "0",
+      multiplier: "0.9",
+      description: "Small to medium businesses",
+    },
+    {
+      category: "market_segment",
+      parameter_name: "Mid-Market",
+      base_price: "0",
+      multiplier: "1.2",
+      description: "Medium to large enterprises",
+    },
+    {
+      category: "market_segment",
+      parameter_name: "Enterprise",
+      base_price: "0",
+      multiplier: "1.8",
+      description: "Large enterprises",
+    },
+  ],
+  support: [
+    {
+      category: "support",
+      parameter_name: "Email Support",
+      base_price: "0",
+      multiplier: "1.0",
+      description: "Standard support",
+    },
+    {
+      category: "support",
+      parameter_name: "Priority Support",
+      base_price: "10",
+      multiplier: "1.1",
+      description: "Priority response times",
+    },
+    {
+      category: "support",
+      parameter_name: "24/7 Support",
+      base_price: "50",
+      multiplier: "1.3",
+      description: "Round-the-clock support",
+    },
+    {
+      category: "support",
+      parameter_name: "Dedicated Account Manager",
+      base_price: "100",
+      multiplier: "1.5",
+      description: "Dedicated support team",
+    },
+  ],
+  data_storage: [
+    {
+      category: "data_storage",
+      parameter_name: "Limited (5GB)",
+      base_price: "0",
+      multiplier: "0.9",
+      description: "Up to 5GB storage",
+    },
+    {
+      category: "data_storage",
+      parameter_name: "Standard (100GB)",
+      base_price: "10",
+      multiplier: "1.0",
+      description: "Up to 100GB storage",
+    },
+    {
+      category: "data_storage",
+      parameter_name: "Premium (1TB)",
+      base_price: "30",
+      multiplier: "1.2",
+      description: "Up to 1TB storage",
+    },
+    {
+      category: "data_storage",
+      parameter_name: "Unlimited",
+      base_price: "50",
+      multiplier: "1.4",
+      description: "Unlimited storage",
+    },
+  ],
+  integration: [
+    {
+      category: "integration",
+      parameter_name: "Basic Integrations",
+      base_price: "0",
+      multiplier: "1.0",
+      description: "5-10 integrations",
+    },
+    {
+      category: "integration",
+      parameter_name: "Extended Integrations",
+      base_price: "15",
+      multiplier: "1.15",
+      description: "20+ integrations",
+    },
+    {
+      category: "integration",
+      parameter_name: "Custom Integration",
+      base_price: "100",
+      multiplier: "1.3",
+      description: "Full custom API",
+    },
+  ],
+  competitive_factor: [
+    {
+      category: "competitive_factor",
+      parameter_name: "Low Competition",
+      base_price: "0",
+      multiplier: "1.3",
+      description: "Niche market",
+    },
+    {
+      category: "competitive_factor",
+      parameter_name: "Medium Competition",
+      base_price: "0",
+      multiplier: "1.0",
+      description: "Moderate market competition",
+    },
+    {
+      category: "competitive_factor",
+      parameter_name: "High Competition",
+      base_price: "0",
+      multiplier: "0.7",
+      description: "Highly competitive market",
+    },
+  ],
+};
+
+export const saasPricingModelCalculater = (formData) => {
+  let basePrice = 0;
+  let multiplier = 1;
+  const newBreakdown = {};
+
+  // 🔹 Pricing Model
+  const modelParam = saasPricingModelCostParameters.model_type.find(
+    (p) => p.parameter_name === formData.modelType
+  );
+  if (modelParam) {
+    basePrice += Number(modelParam.base_price);
+    multiplier *= Number(modelParam.multiplier);
+    newBreakdown["Pricing Model"] = modelParam.parameter_name;
+  }
+
+  // 🔹 User Tier
+  const tierParam = saasPricingModelCostParameters.user_tier.find(
+    (p) => p.parameter_name === formData.userTier
+  );
+  if (tierParam) {
+    const tierCost =
+      Number(tierParam.base_price) * Number(tierParam.multiplier);
+    basePrice += tierCost;
+    newBreakdown["User Tier"] = tierCost;
+  }
+
+  // 🔹 User Volume
+  let volumeMultiplier = 1;
+  const volumeParam = saasPricingModelCostParameters.user_volume.find(
+    (p) => p.parameter_name === formData.userVolume
+  );
+  if (volumeParam) {
+    volumeMultiplier = Number(volumeParam.multiplier);
+    newBreakdown["User Volume"] = volumeParam.parameter_name;
+  }
+
+  // 🔹 Market Segment
+  const segmentParam = saasPricingModelCostParameters.market_segment.find(
+    (p) => p.parameter_name === formData.marketSegment
+  );
+  if (segmentParam) {
+    multiplier *= Number(segmentParam.multiplier);
+  }
+
+  // 🔹 Features
+  let featureCost = 0;
+  formData.features.forEach((feature) => {
+    const featureParam = saasPricingModelCostParameters.features.find(
+      (p) => p.parameter_name === feature
+    );
+    if (featureParam) {
+      featureCost +=
+        Number(featureParam.base_price) * Number(featureParam.multiplier);
+    }
+  });
+  newBreakdown["Features"] = featureCost;
+
+  // 🔹 Support
+  const supportParam = saasPricingModelCostParameters.support.find(
+    (p) => p.parameter_name === formData.support
+  );
+  if (supportParam) {
+    basePrice += Number(supportParam.base_price);
+    newBreakdown["Support"] = supportParam.parameter_name;
+  }
+
+  // 🔹 Data Storage
+  const storageParam = saasPricingModelCostParameters.data_storage.find(
+    (p) => p.parameter_name === formData.dataStorage
+  );
+  if (storageParam) {
+    basePrice += Number(storageParam.base_price);
+    newBreakdown["Storage"] = storageParam.parameter_name;
+  }
+
+  // 🔹 Integration
+  const integrationParam = saasPricingModelCostParameters.integration.find(
+    (p) => p.parameter_name === formData.integration
+  );
+  if (integrationParam) {
+    basePrice += Number(integrationParam.base_price);
+    newBreakdown["Integration"] = integrationParam.parameter_name;
+  }
+
+  // 🔹 Competitive Factor
+  let competitiveMultiplier = 1;
+  const competitiveParam =
+    saasPricingModelCostParameters.competitive_factor.find(
+      (p) => p.parameter_name === formData.competitiveFactor
+    );
+  if (competitiveParam) {
+    competitiveMultiplier = Number(competitiveParam.multiplier);
+  }
+
+  // 🔹 Final Price
+  let finalPrice =
+    basePrice * multiplier * volumeMultiplier * competitiveMultiplier +
+    featureCost;
+
+  // 🔹 Keyword Adjustments
+  const keywordBoosts = {
+    marketplace: 1.15,
+    b2b: 1.1,
+    community: 0.9,
+    niche: 1.2,
+    platform: 1.25,
+  };
+
+  const keywords = formData.description.toLowerCase();
+  Object.entries(keywordBoosts).forEach(([key, boost]) => {
+    if (keywords.includes(key)) {
+      finalPrice *= boost;
+    }
+  });
+
+  // 🔹 Estimated Users
+  const estimatedUsers =
+    formData.userVolume === "Low (< 100 users)"
+      ? 50
+      : formData.userVolume === "Medium (100-1000)"
+        ? 500
+        : formData.userVolume === "High (1000-10000)"
+          ? 5000
+          : 50000;
+
+  const revenue = Math.max(Math.round(finalPrice * (estimatedUsers / 10)), 100);
+
+  // 🔹 Recommendations
+  let recomm = "Recommended Strategy: ";
+  if (revenue < 5000) {
+    recomm += "Start with freemium to acquire users.";
+  } else if (revenue < 20000) {
+    recomm += "Use tiered pricing with clear upgrades.";
+  } else if (revenue < 100000) {
+    recomm += "Adopt hybrid pricing for enterprise clients.";
+  } else {
+    recomm += "Enterprise pricing with white-label and dedicated support.";
+  }
+
+  return {
+    monthlyRevenue: revenue,
+    breakdown: newBreakdown,
+    recommendations: recomm,
+  };
+};

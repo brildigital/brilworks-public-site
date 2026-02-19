@@ -3,11 +3,14 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  Award,
   Calculator,
   CheckCircle,
+  CheckCircle2,
   Clock,
   DollarSign,
   Loader2,
+  Rocket,
   Sparkles,
   TrendingUp,
   Users,
@@ -24,7 +27,7 @@ const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const AppDevelopmentCostBreakdownCalculator = () => {
+const BuildvsBuySoftwareCalculator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
@@ -120,34 +123,35 @@ const AppDevelopmentCostBreakdownCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your App Development&nbsp;
+            Build vs Buy &nbsp;
             <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Cost in Minutes
+              Software Decision <br className="md:block hidden" />
             </span>
+            Made Simple
           </>
         }
-        buttonText="Calculate Cost Now"
-        description="Get accurate estimates for your mobile or web app development project. Our intelligent calculator considers all factors to give you a detailed cost breakdown."
-        imageSrc="/images/v2/app-dev-breakdown-cal-banner.webp"
+        buttonText="Start Comparing Now"
+        description="Compare the true costs of building custom software versus buying existing solutions. Make data-driven decisions with our comprehensive analysis tool backed by industry benchmarks."
+        imageSrc="/images/v2/build-vs-buy-software-calculator-banner.webp"
         highlights={[
           {
-            icon: CheckCircle,
+            icon: CheckCircle2,
             color: "text-green-600",
-            title: "98%",
-            description: "Accuracy Rate",
+            title: "95%",
+            description: "Decision Accuracy",
           },
           {
-            icon: Users,
+            icon: Award,
             color: "text-orange-600",
-            title: "10K+",
-            description: "Project Done",
+            title: "1000+",
+            description: "Trusted by Enterprises",
           },
           {
             icon: TrendingUp,
-            color: "text-indigo-300",
-            title: "$2M+",
-            description: "Saved Avg.",
+            color: "text-teal-300",
+            title: "$2.3B+",
+            description: "Total Savings Achieved",
           },
         ]}
       />
@@ -522,4 +526,4 @@ const AppDevelopmentCostBreakdownCalculator = () => {
   );
 };
 
-export default AppDevelopmentCostBreakdownCalculator;
+export default BuildvsBuySoftwareCalculator;

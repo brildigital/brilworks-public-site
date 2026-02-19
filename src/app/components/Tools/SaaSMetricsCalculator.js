@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  Award,
   Calculator,
   CheckCircle,
   Clock,
   DollarSign,
   Loader2,
+  Rocket,
   Sparkles,
   TrendingUp,
   Users,
@@ -24,7 +26,7 @@ const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
 const ToolFAQs = dynamic(() => import("./ToolFAQs"));
 
-const AppDevelopmentCostBreakdownCalculator = () => {
+const SaaSMetricsCalculator = () => {
   const pathname = usePathname();
   const [openPopup, setOpenPopup] = useState(false);
   const [hasVisited, setHasVisited] = useState(false);
@@ -120,34 +122,40 @@ const AppDevelopmentCostBreakdownCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your App Development&nbsp;
+            Understand Your &nbsp;
             <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Cost in Minutes
+              SaaS Metrics&nbsp;
             </span>
+            Instantly
           </>
         }
-        buttonText="Calculate Cost Now"
-        description="Get accurate estimates for your mobile or web app development project. Our intelligent calculator considers all factors to give you a detailed cost breakdown."
-        imageSrc="/images/v2/app-dev-breakdown-cal-banner.webp"
+        buttonText="Calculate Now"
+        description="Used by 2000+ SaaS Companies Understand Your SaaS Metrics Instantly Track, analyze, and optimize your SaaS business metrics including MRR, ARR, CAC, LTV, churn rate, and more. Make data-driven decisions to accelerate growth."
+        imageSrc="/images/v2/saas-metric-calculator-banner.webp"
         highlights={[
           {
-            icon: CheckCircle,
+            icon: TrendingUp,
             color: "text-green-600",
-            title: "98%",
-            description: "Accuracy Rate",
+            title: "30%",
+            description: "Avg Growth Improvement",
+          },
+          {
+            icon: Award,
+            color: "text-orange-600",
+            title: "2000+",
+            description: "Used by SaaS Companies",
           },
           {
             icon: Users,
-            color: "text-orange-600",
-            title: "10K+",
-            description: "Project Done",
-          },
-          {
-            icon: TrendingUp,
             color: "text-indigo-300",
-            title: "$2M+",
-            description: "Saved Avg.",
+            title: "100K+",
+            description: (
+              <>
+                Calculations
+                <br /> Performed
+              </>
+            ),
           },
         ]}
       />
@@ -522,4 +530,4 @@ const AppDevelopmentCostBreakdownCalculator = () => {
   );
 };
 
-export default AppDevelopmentCostBreakdownCalculator;
+export default SaaSMetricsCalculator;

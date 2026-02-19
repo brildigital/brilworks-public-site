@@ -277,6 +277,38 @@ const toolsData = [
     link: "/tools/app-development-cost-breakdown-calculator/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "AI App Development Cost Calculator",
+    description:
+      "Instantly estimate the cost of building your AI-powered mobile or web application.",
+    bg: "bg-violet-200",
+    link: "/tools/ai-app-development-cost-calculator/",
+    tags: ["SALES", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "SaaS Pricing Model Calculator",
+    description:
+      "Estimate SaaS revenue based on pricing tiers and user growth.",
+    bg: "bg-teal-200",
+    link: "/tools/saas-pricing-model-calculator/",
+    tags: ["SALES", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Build vs Buy Software Calculator",
+    description:
+      "Compare custom software development and SaaS costs instantly.",
+    bg: "bg-orange-200",
+    link: "/tools/build-vs-buy-software-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "SaaS Metrics Calculator",
+    description:
+      "Measure revenue performance and customer acquisition efficiency.",
+    bg: "bg-lime-200",
+    link: "/tools/saas-metrics-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

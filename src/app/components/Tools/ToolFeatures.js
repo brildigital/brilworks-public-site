@@ -44,6 +44,9 @@ import {
   Eye,
   Download,
   Sparkles,
+  PieChart,
+  Compass,
+  AlertCircle,
 } from "lucide-react";
 import Heading from "../HTMLComponents/Heading";
 import { usePathname } from "next/navigation";
@@ -1780,6 +1783,258 @@ const calculateAppDevBreakdownCalculatorFeatures = {
     },
   ],
 };
+const aiAppDevCostCalculatorFeatures = {
+  title: "Powerful Features for Accurate Estimates",
+  description:
+    "Our calculator combines industry expertise with cutting-edge technology to deliver the most reliable cost estimates.",
+  listData: [
+    {
+      icon: Brain,
+      title: "AI-Powered Analysis",
+      description:
+        "Advanced algorithms analyze your requirements and market data for accurate estimates.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Target,
+      title: "Precision Pricing",
+      description:
+        "Industry-specific cost factors ensure estimates match real-world development costs.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Shield,
+      title: "No Hidden Costs",
+      description:
+        "Transparent breakdown of all components including development, deployment, and maintenance.",
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Get comprehensive cost estimates in seconds, not days of back-and-forth meetings.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: RefreshCw,
+      title: "Real-Time Updates",
+      description:
+        "Adjust features and see cost changes instantly to find your perfect budget fit.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Detailed Breakdown",
+      description:
+        "View itemized costs for AI models, features, platforms, and infrastructure.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Code,
+      title: "Technology Insights",
+      description:
+        "Understand which tech stack suits your project and how it affects costs.",
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      icon: Users,
+      title: "Team Size Estimates",
+      description:
+        "Get recommendations on team composition and timeline based on your budget.",
+      color: "bg-red-100 text-red-600",
+    },
+  ],
+};
+const saasPricingModelCalculatorFeatures = {
+  title: "Advanced Tools for Pricing Success",
+  description:
+    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  listData: [
+    {
+      icon: Zap,
+      title: "Real-Time Market Analysis",
+      description:
+        "Advanced algorithms analyze competitive pricing and market trends in real-time.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Revenue Optimization",
+      description:
+        "Calculate maximum revenue potential with different pricing strategies.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: Users,
+      title: "Customer Segmentation",
+      description:
+        "Identify optimal pricing tiers for different customer segments.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Lock,
+      title: "Churn Rate Analysis",
+      description:
+        "Predict customer churn based on pricing and recommend mitigation strategies.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Competitor Benchmarking",
+      description:
+        "Compare your pricing with industry competitors and market leaders.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Lightbulb,
+      title: "AI-Powered Insights",
+      description:
+        "Get AI-generated recommendations based on market data and trends.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: PieChart,
+      title: "Financial Projections",
+      description:
+        "Detailed 12-month revenue forecasts with different pricing scenarios.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Compass,
+      title: "Strategy Recommendations",
+      description:
+        "Personalized pricing strategy based on your business model and goals.",
+      color: "bg-rose-100 text-rose-600",
+    },
+  ],
+};
+const buildVsBuySoftwareCalculatorFeatures = {
+  title: "Advanced Tools for Pricing Success",
+  description:
+    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  listData: [
+    {
+      icon: Zap,
+      title: "Real-Time Analysis",
+      description:
+        "Get instant calculations powered by AI and machine learning algorithms.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Brain,
+      title: "Smart Recommendations",
+      description:
+        "Keyword-based analysis from your description for personalized insights.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Understand security, compliance, and vendor lock-in implications.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "ROI Projections",
+      description:
+        "3-year ROI forecast with different scenarios and assumptions.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: Clock,
+      title: "Time to Market",
+      description:
+        "Compare development timeline with immediate deployment options.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Users,
+      title: "Team Impact Analysis",
+      description:
+        "See how each option affects your current and future team structure.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: DollarSign,
+      title: "Total Cost of Ownership",
+      description:
+        "Hidden costs revealed: licensing, integration, training, and support.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Detailed Breakdown",
+      description:
+        "Export detailed reports with cost comparisons and strategic insights.",
+      color: "bg-rose-100 text-rose-600",
+    },
+  ],
+};
+const saasMetricsCalculatorFeatures = {
+  title: "Advanced Tools for Pricing Success",
+  description:
+    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  listData: [
+    {
+      icon: Activity,
+      title: "Real-time MRR/ARR",
+      description:
+        "Calculate Monthly and Annual Recurring Revenue with precision. Track revenue trends instantly.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Target,
+      title: "CAC Analysis",
+      description:
+        "Understand your Customer Acquisition Cost. Know how much you spend to acquire each customer.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "LTV Calculation",
+      description:
+        "Compute Customer Lifetime Value. Determine long-term customer profitability.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Users,
+      title: "Churn Analysis",
+      description:
+        "Monitor churn rate and revenue churn. Identify retention opportunities.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: AlertCircle,
+      title: "Health Metrics",
+      description:
+        "Track CAC payback period, LTV:CAC ratio, and other health indicators.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Growth Tracking",
+      description:
+        "Monitor MoM and YoY growth rates. Benchmark against industry standards.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Clock,
+      title: "Runway Forecast",
+      description:
+        "Calculate how long your cash will last based on burn rate and growth.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Zap,
+      title: "Smart Insights",
+      description:
+        "Get keyword-based recommendations to improve your SaaS metrics.",
+      color: "bg-rose-100 text-rose-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -1833,6 +2088,12 @@ const ToolFeatures = () => {
     "/tools/software-proposal-generator/": softwareProposalGeneratorFeatures,
     "/tools/app-development-cost-breakdown-calculator/":
       calculateAppDevBreakdownCalculatorFeatures,
+    "/tools/ai-app-development-cost-calculator/":
+      aiAppDevCostCalculatorFeatures,
+    "/tools/saas-pricing-model-calculator/": saasPricingModelCalculatorFeatures,
+    "/tools/build-vs-buy-software-calculator/":
+      buildVsBuySoftwareCalculatorFeatures,
+    "/tools/saas-metrics-calculator/": saasMetricsCalculatorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};

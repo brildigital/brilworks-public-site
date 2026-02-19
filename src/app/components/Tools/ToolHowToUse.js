@@ -9,6 +9,7 @@ import {
   Calculator,
   CheckCircle,
   CheckCircle2,
+  CheckSquare2,
   ClipboardList,
   Clock,
   Cloud,
@@ -22,7 +23,10 @@ import {
   Gauge,
   Layers,
   Lightbulb,
+  LineChart,
   ListChecks,
+  PenTool,
+  PieChart,
   Rocket,
   Search,
   Server,
@@ -1013,6 +1017,130 @@ const calculateAppDevBreakdownCalculatorSteps = {
     },
   ],
 };
+const aiAppDevCostCalculatorSteps = {
+  title: " How It Works",
+  description:
+    "Get your AI app cost estimate in four simple steps. No technical expertise required.",
+  listData: [
+    {
+      icon: FileText,
+      title: "Describe Your Project",
+      description:
+        "Tell us about your AI application idea, goals, and target audience.",
+    },
+    {
+      icon: Settings,
+      title: "Select Features",
+      description:
+        "Choose AI models, platforms, integrations, and complexity level.",
+    },
+    {
+      icon: Calculator,
+      title: "Get Instant Estimate",
+      description:
+        "Our algorithm calculates a detailed cost breakdown in real-time.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Review & Refine",
+      description:
+        "Adjust features and see how changes impact your total investment.",
+    },
+  ],
+};
+const saasPricingModelCalculatorSteps = {
+  title: "Find Your Pricing in 4 Steps",
+  description:
+    "Our streamlined process makes it easy to discover your optimal SaaS pricing strategy.",
+  listData: [
+    {
+      icon: PenTool,
+      title: "Describe Your SaaS",
+      description:
+        "Tell us about your product, target market, and current revenue or projections.",
+    },
+    {
+      icon: Layers,
+      title: "Define Your Strategy",
+      description:
+        "Choose pricing model type, user tiers, features, and support level.",
+    },
+    {
+      icon: LineChart,
+      title: "Analyze Market Data",
+      description:
+        "Our AI analyzes competitive landscape and market positioning.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Recommendations",
+      description:
+        "Receive optimal pricing strategy with revenue projections and insights.",
+    },
+  ],
+};
+const buildVsBuySoftwareCalculatorSteps = {
+  title: "How Our Calculator Works",
+  description:
+    "Follow our four-step process to make the perfect build versus buy decision for your business.",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Your Requirements",
+      description:
+        "Tell us about your software needs, team size, timeline, and specific features required.",
+    },
+    {
+      icon: BarChart3,
+      title: "Calculate Build Costs",
+      description:
+        "Our algorithm computes development, maintenance, and infrastructure costs based on complexity.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Compare Market Solutions",
+      description:
+        "We analyze similar SaaS solutions and off-the-shelf software in your category.",
+    },
+    {
+      icon: CheckSquare2,
+      title: "Get Your Recommendation",
+      description:
+        "Receive detailed analysis, ROI projections, and strategic recommendation for your decision.",
+    },
+  ],
+};
+const saasMetricsCalculatorSteps = {
+  title: "How to Calculate Your Metrics",
+  description:
+    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Enter Revenue Data",
+      description:
+        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+    },
+    {
+      icon: BarChart3,
+      title: "Define Key Metrics",
+      description:
+        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+    },
+    {
+      icon: PieChart,
+      title: "Calculate Metrics",
+      description:
+        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Insights",
+      description:
+        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -1062,6 +1190,11 @@ const ToolHowToUse = () => {
     "/tools/software-proposal-generator/": softwareProposalGeneratorSteps,
     "/tools/app-development-cost-breakdown-calculator/":
       calculateAppDevBreakdownCalculatorSteps,
+    "/tools/ai-app-development-cost-calculator/": aiAppDevCostCalculatorSteps,
+    "/tools/saas-pricing-model-calculator/": saasPricingModelCalculatorSteps,
+    "/tools/build-vs-buy-software-calculator/":
+      buildVsBuySoftwareCalculatorSteps,
+    "/tools/saas-metrics-calculator/": saasMetricsCalculatorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};
