@@ -16,7 +16,6 @@ import {
   Cpu,
   Database,
   DollarSign,
-  Download,
   FileText,
   Gauge,
   Layers,
@@ -41,7 +40,7 @@ import { usePathname } from "next/navigation";
 import {
   getScoreColor,
   getStatusColor,
-  markFormSubmitted,
+  getStatusColorForSaasMetric,
 } from "../lib/commonFunction";
 import { formatCurrencyForCostBreakdown } from "../lib/toolsCalculation";
 
@@ -2430,6 +2429,261 @@ const ToolsPopupContactForm = ({
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        );
+      case "/tools/build-vs-buy-software-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Assessment Result
+            </h3>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-xs font-semibold text-purple-700 mb-1">
+                    MRR
+                  </p>
+                  <p className="text-2xl font-bold text-purple-900">
+                    {formatCurrencyForCostBreakdown(result.mrr)}
+                  </p>
+                  <p className="text-xs text-purple-700 mt-2">
+                    Monthly Recurring
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 border border-pink-200">
+                  <p className="text-xs font-semibold text-pink-700 mb-1">
+                    ARR
+                  </p>
+                  <p className="text-2xl font-bold text-pink-900">
+                    {formatCurrencyForCostBreakdown(result.arr)}
+                  </p>
+                  <p className="text-xs text-pink-700 mt-2">Annual Recurring</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    CAC
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.cac)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Acquisition Cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.ltv)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Lifetime Value</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV:CAC Ratio
+                  </p>
+                  <p className="text-2xl font-bold text-purple-600">
+                    {result.ltcRatio}x
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Healthy: 3x+</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Payback Period
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.cacPaybackPeriod}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">months</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Retention Rate
+                  </p>
+                  <p className="text-2xl font-bold text-green-600">
+                    {result.customerRetentionRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Growth Rate
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.monthlyGrowthRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {result.insights.map((insight, idx) => (
+                  <div
+                    key={idx}
+                    className={`rounded-xl p-4 border flex gap-3 ${getStatusColor(insight.status)}`}
+                  >
+                    <div className="flex-shrink-0">
+                      <span
+                        className={`flex items-center justify-center w-6 h-6 rounded-full font-bold text-sm ${
+                          insight.status === "good"
+                            ? "bg-green-500 text-white"
+                            : insight.status === "warning"
+                              ? "bg-yellow-500 text-white"
+                              : "bg-red-500 text-white"
+                        }`}
+                      >
+                        {getStatusIcon(insight.status)}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">
+                        {insight.title}
+                      </p>
+                      <p className="text-sm text-gray-700 mt-1">
+                        {insight.message}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {result.keywords.length > 0 && (
+                <div className="bg-purple-50 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-sm font-semibold text-purple-900 mb-3">
+                    Detected Keywords
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {result.keywords.map((keyword, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-xs font-medium"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      case "/tools/saas-metrics-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Assessment Result
+            </h3>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-xs font-semibold text-purple-700 mb-1">
+                    MRR
+                  </p>
+                  <p className="text-2xl font-bold text-purple-900">
+                    {formatCurrencyForCostBreakdown(result.mrr)}
+                  </p>
+                  <p className="text-xs text-purple-700 mt-2">
+                    Monthly Recurring
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 border border-pink-200">
+                  <p className="text-xs font-semibold text-pink-700 mb-1">
+                    ARR
+                  </p>
+                  <p className="text-2xl font-bold text-pink-900">
+                    {formatCurrencyForCostBreakdown(result.arr)}
+                  </p>
+                  <p className="text-xs text-pink-700 mt-2">Annual Recurring</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    CAC
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.cac)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Acquisition Cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.ltv)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Lifetime Value</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV:CAC Ratio
+                  </p>
+                  <p className="text-2xl font-bold text-purple-600">
+                    {result.ltcRatio}x
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Healthy: 3x+</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Payback Period
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.cacPaybackPeriod}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">months</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Retention Rate
+                  </p>
+                  <p className="text-2xl font-bold text-green-600">
+                    {result.customerRetentionRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Growth Rate
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.monthlyGrowthRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+              </div>
             </div>
           </div>
         );

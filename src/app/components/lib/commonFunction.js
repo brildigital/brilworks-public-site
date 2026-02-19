@@ -405,3 +405,29 @@ export const isExternalLink = (href) => {
     !allowedDomains.some((domain) => href.includes(domain))
   );
 };
+
+export const getStatusColorForSaasMetric = (status) => {
+  switch (status) {
+    case "good":
+      return "bg-green-50 border-green-200";
+    case "warning":
+      return "bg-yellow-50 border-yellow-200";
+    case "critical":
+      return "bg-red-50 border-red-200";
+    default:
+      return "bg-gray-50 border-gray-200";
+  }
+};
+
+export const getStatusIconForSaasMetric = (status) => {
+  switch (status) {
+    case "good":
+      return "✓";
+    case "warning":
+      return "!";
+    case "critical":
+      return "✕";
+    default:
+      return "•";
+  }
+};

@@ -3032,7 +3032,7 @@ export const saasPricingModelCalculater = (formData) => {
   };
 };
 
-// 35. Build Vs Buy Software Calculator
+// 36. Build Vs Buy Software Calculator
 
 const complexityMultipliers = {
   simple: 1,
@@ -3166,4 +3166,188 @@ function extractKeywords(description) {
   });
 
   return foundKeywords;
+}
+
+// 37. SaaS Metrics Calculator
+
+function generateInsights(metrics) {
+  const insights = [];
+
+  if (metrics.ltcRatio >= 3) {
+    insights.push({
+      title: "Excellent LTV:CAC Ratio",
+      status: "good",
+      message: `Your LTV:CAC ratio of ${metrics.ltcRatio}x exceeds the healthy benchmark of 3x. Strong unit economics!`,
+    });
+  } else if (metrics.ltcRatio >= 1.5) {
+    insights.push({
+      title: "Acceptable Unit Economics",
+      status: "warning",
+      message: `Your LTV:CAC ratio is ${metrics.ltcRatio}x. Aim for 3x+ for sustainable growth.`,
+    });
+  } else {
+    insights.push({
+      title: "Unhealthy Unit Economics",
+      status: "critical",
+      message: `Your LTV:CAC ratio of ${metrics.ltcRatio}x is below 1.5x. Review your CAC or improve retention.`,
+    });
+  }
+
+  if (metrics.cacPaybackPeriod <= 12) {
+    insights.push({
+      title: "Good CAC Payback Period",
+      status: "good",
+      message: `Your CAC payback period is ${metrics.cacPaybackPeriod.toFixed(2)} months. Industry average is 12-18 months.`,
+    });
+  } else if (metrics.cacPaybackPeriod <= 24) {
+    insights.push({
+      title: "Acceptable CAC Payback",
+      status: "warning",
+      message: `Your CAC payback period is ${metrics.cacPaybackPeriod.toFixed(2)} months. Consider optimizing acquisition.`,
+    });
+  } else {
+    insights.push({
+      title: "Slow CAC Payback",
+      status: "critical",
+      message: `Your CAC payback period exceeds 24 months. This impacts cash flow significantly.`,
+    });
+  }
+
+  if (metrics.customerRetentionRate >= 95) {
+    insights.push({
+      title: "Excellent Retention",
+      status: "good",
+      message: `Your monthly retention rate of ${metrics.customerRetentionRate}% is excellent for a SaaS business.`,
+    });
+  } else if (metrics.customerRetentionRate >= 90) {
+    insights.push({
+      title: "Good Retention Rate",
+      status: "warning",
+      message: `Your monthly retention is ${metrics.customerRetentionRate}%. Strive for 95%+ for sustainable growth.`,
+    });
+  } else {
+    insights.push({
+      title: "High Churn Risk",
+      status: "critical",
+      message: `Your monthly retention of ${metrics.customerRetentionRate}% indicates high churn. Focus on customer success.`,
+    });
+  }
+
+  return insights;
+}
+
+function generateRecommendations(metrics) {
+  const recommendations = [];
+
+  if (metrics.ltcRatio < 3) {
+    recommendations.push(
+      "Increase customer lifetime value by improving retention and expansion revenue"
+    );
+  }
+
+  if (metrics.cacPaybackPeriod > 12) {
+    recommendations.push(
+      "Optimize customer acquisition channels for faster payback"
+    );
+  }
+
+  if (metrics.customerRetentionRate < 95) {
+    recommendations.push(
+      "Implement customer success initiatives to reduce churn"
+    );
+  }
+
+  if (metrics.monthlyGrowthRate < 5) {
+    recommendations.push(
+      "Accelerate growth with improved marketing and sales efficiency"
+    );
+  }
+
+  recommendations.push(
+    "Regularly monitor cohort retention to identify early churn signals"
+  );
+  recommendations.push(
+    "Implement expansion revenue strategies to increase customer lifetime value"
+  );
+
+  return recommendations.slice(0, 4);
+}
+
+export function calculateSaaSMetrics(input) {
+  const keywords = extractKeywords(input.description);
+  let keywordMultiplier = 1;
+  keywords.forEach((keyword) => {
+    keywordMultiplier *= keywordMultipliers[keyword] || 1;
+  });
+
+  const mrr = input.monthlyRevenue;
+  const arr = mrr * 12;
+
+  const customersChurnedMonthly = input.totalCustomers * input.monthlyChurnRate;
+  const revenueChurnRate =
+    (customersChurnedMonthly * input.averageContractValue) / mrr;
+
+  const cac = input.monthlyAcquisitionCost * keywordMultiplier;
+
+  const monthlyRetention = 1 - input.monthlyChurnRate;
+  const grossMarginAssumption = 0.75;
+
+  const ltv =
+    (input.averageContractValue * grossMarginAssumption) /
+    (input.monthlyChurnRate || 0.05);
+
+  const cacPaybackPeriods =
+    cac > 0 ? cac / (input.averageContractValue * grossMarginAssumption) : 0;
+  const cacPaybackPeriod = Math.max(0, Math.min(cacPaybackPeriods, 100));
+
+  const ltcRatio = cac > 0 ? ltv / cac : 0;
+
+  const newMRRFromAcquisition =
+    (input.monthlyAcquisitionCost / cac) * input.averageContractValue;
+  const monthlyGrowthRate =
+    mrr > 0
+      ? ((newMRRFromAcquisition -
+          input.totalCustomers *
+            input.monthlyChurnRate *
+            input.averageContractValue) /
+          mrr) *
+        100
+      : 0;
+
+  const burnRateAssumption = mrr * 0.3;
+  const annualRunway =
+    burnRateAssumption > 0 ? (arr * 0.4) / burnRateAssumption : 999;
+
+  const customerRetentionRate = (1 - input.monthlyChurnRate) * 100;
+
+  const insights = generateInsights({
+    ltcRatio,
+    cacPaybackPeriod,
+    customerRetentionRate,
+    monthlyGrowthRate,
+    monthlyChurnRate: input.monthlyChurnRate,
+  });
+
+  const recommendations = generateRecommendations({
+    ltcRatio,
+    cacPaybackPeriod,
+    customerRetentionRate,
+    monthlyGrowthRate,
+  });
+
+  return {
+    mrr: Math.round(mrr),
+    arr: Math.round(arr),
+    cac: Math.round(cac),
+    ltv: Math.round(ltv),
+    cacPaybackPeriod: Math.round(cacPaybackPeriod * 10) / 10,
+    ltcRatio: Math.round(ltcRatio * 100) / 100,
+    monthlyGrowthRate: Math.round(monthlyGrowthRate * 100) / 100,
+    annualRunway: Math.round(annualRunway),
+    revenueChurnRate: Math.round(revenueChurnRate * 1000) / 10,
+    customerRetentionRate: Math.round(customerRetentionRate * 100) / 100,
+    keywords,
+    insights,
+    recommendations,
+  };
 }

@@ -877,6 +877,22 @@ export const sitemapData = [
     lastmod: "2025-10-21T18:45:53.531Z",
   },
   {
+    loc: "https://www.brilworks.com/tools/app-development-cost-breakdown-calculator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/saas-pricing-model-calculator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/build-vs-buy-software-calculator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/saas-metrics-calculator/",
+    lastmod: "2025-10-21T18:45:53.531Z",
+  },
+  {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
     lastmod: "2025-04-12T12:04:49.528Z",
   },
