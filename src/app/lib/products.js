@@ -4,6 +4,7 @@ export const brilworksProducts = [
     description: "Smart restaurant management and digital ordering solution.",
     image: "/images/products/restaurant.png",
     link: "https://restaurant.brilworks.com/",
+    image: "/images/asset/restaurant-p.webp",
     bg: "bg-blue-200",
   },
   {
@@ -11,6 +12,7 @@ export const brilworksProducts = [
     description: "Modern HR and recruitment management platform.",
     image: "/images/products/hrtech.png",
     link: "https://hrtech.brilworks.com/",
+    image: "/images/asset/hr-tech-p.webp",
     bg: "bg-indigo-200",
   },
   {
@@ -18,6 +20,7 @@ export const brilworksProducts = [
     description: "Smart contact and communication management system.",
     image: "/images/products/contact.png",
     link: "https://circle.brilworks.com/",
+    image: "/images/asset/circle-contact-p.webp",
     bg: "bg-purple-200",
   },
   {
@@ -25,27 +28,32 @@ export const brilworksProducts = [
     description: "AI-powered personal and productivity assistant.",
     image: "/images/products/lifeai.png",
     link: "https://lifeai.brilworks.com/",
+    image: "/images/asset/life-ai-p.webp",
     bg: "bg-teal-200",
+  },
+
+  {
+    title: "RealEstate",
+    description: "Real estate listing and property management platform.",
+    image: "/images/products/realestate.png",
+    link: "https://realestate.brilworks.com/",
+    image: "/images/asset/real-estate-p.webp",
+    bg: "bg-orange-200",
   },
   {
     title: "VectorTrace",
     description: "Convert raster images into scalable vector graphics.",
     image: "/images/products/vectortrace.png",
     link: "https://vectortrace.brilworks.com/",
+    image: "/images/asset/vector-trace-p.webp",
     bg: "bg-rose-200",
-  },
-  {
-    title: "RealEstate",
-    description: "Real estate listing and property management platform.",
-    image: "/images/products/realestate.png",
-    link: "https://realestate.brilworks.com/",
-    bg: "bg-orange-200",
   },
   {
     title: "ScanEat",
     description: "Scan-based food ordering and smart dining experience.",
     image: "/images/products/scaneat.png",
     link: "https://scaneat.brilworks.com/",
+    image: "/images/asset/scan-eat-p.webp",
     bg: "bg-green-200",
   },
   {
@@ -53,6 +61,7 @@ export const brilworksProducts = [
     description: "Online course management and learning platform.",
     image: "/images/products/courses.png",
     link: "https://coursesphere.brilworks.com/",
+    image: "/images/asset/course-sphere-p.webp",
     bg: "bg-yellow-200",
   },
   {
@@ -60,6 +69,7 @@ export const brilworksProducts = [
     description: "Voice-based AI interaction and automation tool.",
     image: "/images/products/voice.png",
     link: "https://voice.brilworks.com/",
+    image: "/images/asset/voice-p.webp",
     bg: "bg-pink-200",
   },
   {
@@ -67,6 +77,7 @@ export const brilworksProducts = [
     description: "Smart parking and garage management solution.",
     image: "/images/products/garagemap.png",
     link: "https://garagemap.brilworks.com/",
+    image: "/images/asset/garage-map-p.webp",
     bg: "bg-lime-200",
   },
 ];

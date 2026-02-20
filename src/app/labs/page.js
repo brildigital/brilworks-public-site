@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { brilworksProducts } from "../lib/products";
 import Heading from "../components/HTMLComponents/Heading";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -36,28 +37,26 @@ const page = () => {
           </div>
         </div>
         <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
-          <div className={`grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-5`}>
+          <div className={`grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-5`}>
             {brilworksProducts.length > 0 ? (
               brilworksProducts?.map((tool, index) => (
                 <Link
                   href={tool?.link}
                   key={index}
-                  className="bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
+                  className="bg-white border-themeColor/20 border rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
                 >
-                  {/* Top Image Section */}
-                  <div
-                    className={`${tool.bg} flex items-center justify-center p-6`}
-                  >
-                    <div className="w-72 h-40 flex items-center justify-center">
-                      {/* <Image
-                    src={tool.image}
-                    alt={tool.title}
-                    fill
-                    className="object-contain"
-                  /> */}
-                      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center ">
-                        {tool?.title}
-                      </p>
+                  <div className="relative">
+                    <Image
+                      src={tool.image}
+                      alt={tool.title}
+                      width={400}
+                      height={380}
+                      className="w-full h-[380px] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                      <span className="view-template text-white text-sm font-semibold border border-white px-4 py-2 rounded-md">
+                        View Template
+                      </span>
                     </div>
                   </div>
 
@@ -71,7 +70,7 @@ const page = () => {
                     </p>
 
                     <div className="text-blue-600 font-medium mt-4 inline-flex items-center hover:underline">
-                      Use Now &nbsp; <ArrowRight size={16} />
+                      Explore Now &nbsp; <ArrowRight size={16} />
                     </div>
                   </div>
                 </Link>
