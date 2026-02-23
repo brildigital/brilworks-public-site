@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/service-squad-banner.webp",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/service-squad-banner.webp`,
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "/images/service-squad-banner.webp",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/service-squad-banner.webp`,
       },
     ],
     site: "@_Brilworks",

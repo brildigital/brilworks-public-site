@@ -1141,6 +1141,68 @@ const saasMetricsCalculatorSteps = {
     },
   ],
 };
+const appRebuildRefactorCalculatorSteps = {
+  title: "How to Calculate Your Metrics",
+  description:
+    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Enter Revenue Data",
+      description:
+        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+    },
+    {
+      icon: BarChart3,
+      title: "Define Key Metrics",
+      description:
+        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+    },
+    {
+      icon: PieChart,
+      title: "Calculate Metrics",
+      description:
+        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Insights",
+      description:
+        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+    },
+  ],
+};
+const mobileAppMonetizationStrategySelectorSteps = {
+  title: "How to Calculate Your Metrics",
+  description:
+    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Enter Revenue Data",
+      description:
+        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+    },
+    {
+      icon: BarChart3,
+      title: "Define Key Metrics",
+      description:
+        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+    },
+    {
+      icon: PieChart,
+      title: "Calculate Metrics",
+      description:
+        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Insights",
+      description:
+        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -1195,6 +1257,10 @@ const ToolHowToUse = () => {
     "/tools/build-vs-buy-software-calculator/":
       buildVsBuySoftwareCalculatorSteps,
     "/tools/saas-metrics-calculator/": saasMetricsCalculatorSteps,
+    "/tools/app-rebuild-vs-refactor-calculator/":
+      appRebuildRefactorCalculatorSteps,
+    "/tools/mobile-app-monetization-strategy-selector/":
+      mobileAppMonetizationStrategySelectorSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

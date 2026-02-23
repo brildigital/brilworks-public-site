@@ -309,6 +309,22 @@ const toolsData = [
     link: "/tools/saas-metrics-calculator/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "App Rebuild vs Refactor Calculator",
+    description:
+      "Analyze cost, complexity, and long-term scalability to decide whether rebuilding your app or refactoring your existing codebase is the smarter investment.",
+    bg: "bg-rose-200",
+    link: "/tools/app-rebuild-vs-refactor-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Mobile App Monetization Strategy Selector",
+    description:
+      "Identify the ideal revenue model for your app. Compare subscriptions, ads, freemium, and hybrid models to maximize profitability.",
+    bg: "bg-slate-200",
+    link: "/tools/mobile-app-monetization-strategy-selector/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
 ];
 
 const Tools = () => {

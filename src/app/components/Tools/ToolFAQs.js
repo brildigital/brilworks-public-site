@@ -1445,6 +1445,98 @@ const saasMetricsCalculatorFaqData = {
     },
   ],
 };
+const appRebuildRefactorCalculatorFaqData = {
+  description:
+    "Everything you need to know about SaaS metrics and how to optimize them.",
+  queAns: [
+    {
+      question: "How do I calculate CAC accurately?",
+      answer:
+        "CAC = Total sales and marketing expenses / New customers acquired in a period. Include all costs: salaries, tools, advertising, events, and support. For more accuracy, calculate by channel and compare.",
+    },
+    {
+      question: "What is a good LTV:CAC ratio?",
+      answer:
+        "The benchmark is 3:1 or higher. This means you earn $3 for every $1 spent acquiring a customer. For B2B SaaS, 5:1 is excellent. For B2C, 3:1 is healthy. Below 1.5:1 is unsustainable.",
+    },
+    {
+      question: "How does churn affect my business?",
+      answer:
+        "Churn is devastating to SaaS growth. A 5% monthly churn means losing 40% of customers annually. To grow, new additions must exceed churn. A 1% monthly improvement in retention dramatically impacts long-term revenue.",
+    },
+    {
+      question: "How do I improve my CAC payback period?",
+      answer:
+        "Reduce CAC through efficient marketing, optimize pricing for faster revenue ramp, and increase initial contract value. Most B2B SaaS targets 12-18 months. Faster payback allows aggressive reinvestment in growth.",
+    },
+    {
+      question: "What is revenue churn vs customer churn?",
+      answer:
+        "Customer churn = % of customers lost. Revenue churn = % of MRR lost. Revenue churn is usually lower because you have existing expansion revenue and downgrade options. Both matter for different reasons.",
+    },
+    {
+      question: "How should I track these metrics?",
+      answer:
+        "Use your SaaS metrics dashboard or tools like Amplitude, Mixpanel, or dedicated metrics platforms. Track monthly and visualize trends. Compare quarter-over-quarter to see if you're improving or degrading.",
+    },
+    {
+      question: "Why does CAC payback take so long?",
+      answer:
+        "Long payback periods hurt cash flow. Causes include: high sales costs, low ACV, slow onboarding, long sales cycles. Solution: improve product-market fit, increase ACV, reduce sales cycle, or lower marketing costs.",
+    },
+    {
+      question: "What is a healthy runway for my cash?",
+      answer:
+        "At early stage, 18-24 months is ideal. At growth stage, 12-18 months. At scale, 9-12 months is acceptable since you have more control over burn rate. Calculate as: (Cash on hand) / (Monthly burn rate).",
+    },
+  ],
+};
+const mobileAppMonetizationStrategySelectorFaqData = {
+  description:
+    "Everything you need to know about SaaS metrics and how to optimize them.",
+  queAns: [
+    {
+      question: "How do I calculate CAC accurately?",
+      answer:
+        "CAC = Total sales and marketing expenses / New customers acquired in a period. Include all costs: salaries, tools, advertising, events, and support. For more accuracy, calculate by channel and compare.",
+    },
+    {
+      question: "What is a good LTV:CAC ratio?",
+      answer:
+        "The benchmark is 3:1 or higher. This means you earn $3 for every $1 spent acquiring a customer. For B2B SaaS, 5:1 is excellent. For B2C, 3:1 is healthy. Below 1.5:1 is unsustainable.",
+    },
+    {
+      question: "How does churn affect my business?",
+      answer:
+        "Churn is devastating to SaaS growth. A 5% monthly churn means losing 40% of customers annually. To grow, new additions must exceed churn. A 1% monthly improvement in retention dramatically impacts long-term revenue.",
+    },
+    {
+      question: "How do I improve my CAC payback period?",
+      answer:
+        "Reduce CAC through efficient marketing, optimize pricing for faster revenue ramp, and increase initial contract value. Most B2B SaaS targets 12-18 months. Faster payback allows aggressive reinvestment in growth.",
+    },
+    {
+      question: "What is revenue churn vs customer churn?",
+      answer:
+        "Customer churn = % of customers lost. Revenue churn = % of MRR lost. Revenue churn is usually lower because you have existing expansion revenue and downgrade options. Both matter for different reasons.",
+    },
+    {
+      question: "How should I track these metrics?",
+      answer:
+        "Use your SaaS metrics dashboard or tools like Amplitude, Mixpanel, or dedicated metrics platforms. Track monthly and visualize trends. Compare quarter-over-quarter to see if you're improving or degrading.",
+    },
+    {
+      question: "Why does CAC payback take so long?",
+      answer:
+        "Long payback periods hurt cash flow. Causes include: high sales costs, low ACV, slow onboarding, long sales cycles. Solution: improve product-market fit, increase ACV, reduce sales cycle, or lower marketing costs.",
+    },
+    {
+      question: "What is a healthy runway for my cash?",
+      answer:
+        "At early stage, 18-24 months is ideal. At growth stage, 12-18 months. At scale, 9-12 months is acceptable since you have more control over burn rate. Calculate as: (Cash on hand) / (Monthly burn rate).",
+    },
+  ],
+};
 
 const ToolFAQs = () => {
   const pathname = usePathname();
@@ -1508,6 +1600,10 @@ const ToolFAQs = () => {
     "/tools/build-vs-buy-software-calculator/":
       buildVsBuySoftwareCalculatorFaqData,
     "/tools/saas-metrics-calculator/": saasMetricsCalculatorFaqData,
+    "/tools/app-rebuild-vs-refactor-calculator/":
+      appRebuildRefactorCalculatorFaqData,
+    "/tools/mobile-app-monetization-strategy-selector/":
+      mobileAppMonetizationStrategySelectorFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

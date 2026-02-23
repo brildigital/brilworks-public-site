@@ -2035,6 +2035,132 @@ const saasMetricsCalculatorFeatures = {
     },
   ],
 };
+const appRebuildRefactorCalculatorFeatures = {
+  title: "Advanced Tools for Pricing Success",
+  description:
+    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  listData: [
+    {
+      icon: Activity,
+      title: "Real-time MRR/ARR",
+      description:
+        "Calculate Monthly and Annual Recurring Revenue with precision. Track revenue trends instantly.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Target,
+      title: "CAC Analysis",
+      description:
+        "Understand your Customer Acquisition Cost. Know how much you spend to acquire each customer.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "LTV Calculation",
+      description:
+        "Compute Customer Lifetime Value. Determine long-term customer profitability.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Users,
+      title: "Churn Analysis",
+      description:
+        "Monitor churn rate and revenue churn. Identify retention opportunities.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: AlertCircle,
+      title: "Health Metrics",
+      description:
+        "Track CAC payback period, LTV:CAC ratio, and other health indicators.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Growth Tracking",
+      description:
+        "Monitor MoM and YoY growth rates. Benchmark against industry standards.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Clock,
+      title: "Runway Forecast",
+      description:
+        "Calculate how long your cash will last based on burn rate and growth.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Zap,
+      title: "Smart Insights",
+      description:
+        "Get keyword-based recommendations to improve your SaaS metrics.",
+      color: "bg-rose-100 text-rose-600",
+    },
+  ],
+};
+const mobileAppMonetizationStrategySelectorFeatures = {
+  title: "Advanced Tools for Pricing Success",
+  description:
+    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  listData: [
+    {
+      icon: Activity,
+      title: "Real-time MRR/ARR",
+      description:
+        "Calculate Monthly and Annual Recurring Revenue with precision. Track revenue trends instantly.",
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      icon: Target,
+      title: "CAC Analysis",
+      description:
+        "Understand your Customer Acquisition Cost. Know how much you spend to acquire each customer.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "LTV Calculation",
+      description:
+        "Compute Customer Lifetime Value. Determine long-term customer profitability.",
+      color: "bg-teal-100 text-teal-600",
+    },
+    {
+      icon: Users,
+      title: "Churn Analysis",
+      description:
+        "Monitor churn rate and revenue churn. Identify retention opportunities.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+    {
+      icon: AlertCircle,
+      title: "Health Metrics",
+      description:
+        "Track CAC payback period, LTV:CAC ratio, and other health indicators.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: BarChart3,
+      title: "Growth Tracking",
+      description:
+        "Monitor MoM and YoY growth rates. Benchmark against industry standards.",
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      icon: Clock,
+      title: "Runway Forecast",
+      description:
+        "Calculate how long your cash will last based on burn rate and growth.",
+      color: "bg-pink-100 text-pink-600",
+    },
+    {
+      icon: Zap,
+      title: "Smart Insights",
+      description:
+        "Get keyword-based recommendations to improve your SaaS metrics.",
+      color: "bg-rose-100 text-rose-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -2094,6 +2220,10 @@ const ToolFeatures = () => {
     "/tools/build-vs-buy-software-calculator/":
       buildVsBuySoftwareCalculatorFeatures,
     "/tools/saas-metrics-calculator/": saasMetricsCalculatorFeatures,
+    "/tools/app-rebuild-vs-refactor-calculator/":
+      appRebuildRefactorCalculatorFeatures,
+    "/tools/mobile-app-monetization-strategy-selector/":
+      mobileAppMonetizationStrategySelectorFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};
