@@ -24,5 +24,6 @@ Disallow: /wp-content/*
 Disallow: /teams/*
 Disallow: /cdn-cgi/
 Disallow: /ai-studio/
+Disallow: /labs/
 
 Sitemap: https://www.brilworks.com/sitemap.xml

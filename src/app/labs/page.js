@@ -43,6 +43,8 @@ const page = () => {
                 <Link
                   href={tool?.link}
                   key={index}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white border-themeColor/20 border rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
                 >
                   <div className="relative">

@@ -1270,6 +1270,26 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Custom Mobile App Development Services: Scope, Process, Cost",
+    loc: "https://www.brilworks.com/blog/custom-mobile-app-development-services/",
+    lastmod: "2026-02-20T07:17:00.312Z",
+  },
+  {
+    name: "Apple Human Interface Guidelines: Best Practices & UI Kits",
+    loc: "https://www.brilworks.com/blog/apple-human-interface-guidelines/",
+    lastmod: "2026-02-19T06:58:31.206Z",
+  },
+  {
+    name: "7 Best Usability Testing Services for Websites & Apps (2026)",
+    loc: "https://www.brilworks.com/blog/usability-testing-services/",
+    lastmod: "2026-02-18T10:27:58.780Z",
+  },
+  {
+    name: "IBM Carbon Design System: Principles, Figma, And React Docs",
+    loc: "https://www.brilworks.com/blog/ibm-carbon-design-system/",
+    lastmod: "2026-02-17T06:57:14.924Z",
+  },
+  {
     name: "Cloud Migration Consultant: Role, Benefits, And Hiring Tips",
     loc: "https://www.brilworks.com/blog/cloud-migration-consultant/",
     lastmod: "2026-02-16T07:08:42.021Z",
@@ -1587,7 +1607,7 @@ export const blogListStaticData = [
   {
     name: "What Is Vibe Coding (And Why It’s Changing How Leaders Build Tech)",
     loc: "https://www.brilworks.com/blog/what-is-vibe-coding/",
-    lastmod: "2025-11-11T12:57:51.462Z",
+    lastmod: "2026-02-20T16:18:36.328Z",
   },
   {
     name: "The Hidden Costs of Outsourcing Mobile App Development and How to Minimize Them",
