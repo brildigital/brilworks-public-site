@@ -114,30 +114,28 @@ const AppRebuildVsRefactorCalculator = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your &nbsp;
+            App Rebuild vs
             <br className="block" />
+            Refactor&nbsp;
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              AI App Development <br className="md:block hidden" />
+              Calculator <br className="md:block hidden" />
             </span>
-            Cost in Minutes
           </>
         }
         buttonText="Calculate Now"
-        description="Get accurate cost estimates for your AI-powered application. Our intelligent calculator analyzes your requirements and provides detailed pricing breakdowns tailored to your project."
-        imageSrc="/images/v2/ai-app-dev-cost-calculator-banner.webp"
-        highlights={[
-          {
-            icon: Rocket,
-            color: "text-green-600",
-            title: "500+",
-            description: "Projects Estimated",
-          },
-          {
-            icon: TrendingUp,
-            color: "text-orange-600",
-            title: "98%",
-            description: "Accuracy Rate",
-          },
+        description={
+          <>
+            Make data-driven decisions for your legacy application.
+            <br className="md:block hidden" /> Calculate costs, timelines, and
+            ROI to determine whether
+            <br className="md:block hidden" />
+            rebuilding or refactoring is the right choice for your business.
+          </>
+        }
+        imageSrc="/images/v2/app-rebuild-vs-refactor-banner.webp"
+        authority={[
+          "Trusted by 500+ Tech Leader",
+          "Smart Decision Making Tool",
         ]}
       />
       <ToolHowToUse />
@@ -150,11 +148,11 @@ const AppRebuildVsRefactorCalculator = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Calculate Your AI App Cost
+              Calculate Your Costs
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill in your project details below to get an instant cost
-              estimate.
+              Enter your application details to get instant cost and timeline
+              estimates
             </p>
           </div>
 

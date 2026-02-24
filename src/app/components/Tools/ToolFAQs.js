@@ -1447,93 +1447,80 @@ const saasMetricsCalculatorFaqData = {
 };
 const appRebuildRefactorCalculatorFaqData = {
   description:
-    "Everything you need to know about SaaS metrics and how to optimize them.",
+    "Everything you need to know about the rebuild vs refactor decision",
   queAns: [
     {
-      question: "How do I calculate CAC accurately?",
+      question: "What is the difference between rebuilding and refactoring?",
       answer:
-        "CAC = Total sales and marketing expenses / New customers acquired in a period. Include all costs: salaries, tools, advertising, events, and support. For more accuracy, calculate by channel and compare.",
+        "Rebuilding involves creating your application from scratch using modern technologies and architecture, while refactoring means improving the existing codebase incrementally without changing its external behavior. Rebuilding offers a fresh start with modern best practices, while refactoring preserves your existing investment and knowledge.",
     },
     {
-      question: "What is a good LTV:CAC ratio?",
+      question:
+        "How accurate are the cost estimates provided by the calculator?",
       answer:
-        "The benchmark is 3:1 or higher. This means you earn $3 for every $1 spent acquiring a customer. For B2B SaaS, 5:1 is excellent. For B2C, 3:1 is healthy. Below 1.5:1 is unsustainable.",
+        "Our calculator provides estimates with approximately 95% accuracy based on industry standards and data from thousands of completed projects. However, actual costs may vary depending on specific requirements, team expertise, unforeseen technical challenges, and project scope changes. We recommend using these estimates as a starting point for planning and budgeting.",
     },
     {
-      question: "How does churn affect my business?",
+      question: "What factors influence whether I should rebuild or refactor?",
       answer:
-        "Churn is devastating to SaaS growth. A 5% monthly churn means losing 40% of customers annually. To grow, new additions must exceed churn. A 1% monthly improvement in retention dramatically impacts long-term revenue.",
+        "Key factors include: the age and condition of your codebase, technology stack obsolescence, complexity of technical debt, business timeline constraints, budget availability, team expertise, regulatory requirements, and long-term strategic goals. High complexity scores and legacy technology typically favor rebuilding, while lower scores suggest refactoring may be more cost-effective.",
     },
     {
-      question: "How do I improve my CAC payback period?",
+      question: "How long does a typical rebuild or refactor project take?",
       answer:
-        "Reduce CAC through efficient marketing, optimize pricing for faster revenue ramp, and increase initial contract value. Most B2B SaaS targets 12-18 months. Faster payback allows aggressive reinvestment in growth.",
+        "Project timelines vary significantly based on application size and complexity. Small applications may take 2-4 months, medium projects 4-8 months, large applications 8-18 months, and enterprise systems can take 12-36 months. Refactoring typically takes 60% of the time required for a complete rebuild, as it builds upon existing work.",
     },
     {
-      question: "What is revenue churn vs customer churn?",
+      question: "Can I refactor in phases instead of all at once?",
       answer:
-        "Customer churn = % of customers lost. Revenue churn = % of MRR lost. Revenue churn is usually lower because you have existing expansion revenue and downgrade options. Both matter for different reasons.",
+        "Yes, phased refactoring is often the recommended approach. This allows you to modernize your application incrementally, reduce risk, maintain business continuity, and spread costs over time. You can prioritize high-impact areas first, such as critical features or problematic code sections, and gradually improve other parts of your application.",
     },
     {
-      question: "How should I track these metrics?",
+      question: "What happens to my data during a rebuild or refactor?",
       answer:
-        "Use your SaaS metrics dashboard or tools like Amplitude, Mixpanel, or dedicated metrics platforms. Track monthly and visualize trends. Compare quarter-over-quarter to see if you're improving or degrading.",
+        "Data preservation is a critical part of both processes. During refactoring, your data structure typically remains intact. For rebuilds, we implement careful data migration strategies including schema mapping, data validation, parallel running periods, and comprehensive backup procedures to ensure zero data loss. Your data security and integrity are always the top priority.",
     },
     {
-      question: "Why does CAC payback take so long?",
+      question: "Will my application be down during the modernization process?",
       answer:
-        "Long payback periods hurt cash flow. Causes include: high sales costs, low ACV, slow onboarding, long sales cycles. Solution: improve product-market fit, increase ACV, reduce sales cycle, or lower marketing costs.",
+        "Not necessarily. Modern deployment strategies like blue-green deployments, feature flags, and canary releases allow you to modernize with minimal or zero downtime. Refactoring typically has less impact on availability, while rebuilds may require a planned transition period. We can design a deployment strategy that meets your uptime requirements.",
     },
     {
-      question: "What is a healthy runway for my cash?",
+      question: "How do I know which keywords to include in the description?",
       answer:
-        "At early stage, 18-24 months is ideal. At growth stage, 12-18 months. At scale, 9-12 months is acceptable since you have more control over burn rate. Calculate as: (Cash on hand) / (Monthly burn rate).",
+        'Include keywords that describe your technical requirements such as: "microservices", "database migration", "API integration", "authentication", "legacy code", "technical debt", "cloud deployment", "security", "performance optimization", "scalability", "testing", and "monitoring". These keywords help our algorithm better understand your project complexity and provide more accurate estimates.',
     },
   ],
 };
+
 const mobileAppMonetizationStrategySelectorFaqData = {
-  description:
-    "Everything you need to know about SaaS metrics and how to optimize them.",
+  description: "Everything you need to know about mobile app monetization.",
   queAns: [
     {
-      question: "How do I calculate CAC accurately?",
+      question:
+        "How accurate is the Mobile App Monetization Strategy Selector?",
       answer:
-        "CAC = Total sales and marketing expenses / New customers acquired in a period. Include all costs: salaries, tools, advertising, events, and support. For more accuracy, calculate by channel and compare.",
+        "The selector uses industry best practices and data-driven insights to recommend strategies. However, results should be validated with market research and A/B testing specific to your app.",
     },
     {
-      question: "What is a good LTV:CAC ratio?",
+      question: "Can I use multiple monetization strategies together?",
       answer:
-        "The benchmark is 3:1 or higher. This means you earn $3 for every $1 spent acquiring a customer. For B2B SaaS, 5:1 is excellent. For B2C, 3:1 is healthy. Below 1.5:1 is unsustainable.",
+        "Yes! Many successful apps combine strategies (e.g., freemium with ads, or subscription with in-app purchases). The selector identifies your primary strategy, but hybrid models often work well.",
     },
     {
-      question: "How does churn affect my business?",
+      question: "How do I know which user base size category I fall into?",
       answer:
-        "Churn is devastating to SaaS growth. A 5% monthly churn means losing 40% of customers annually. To grow, new additions must exceed churn. A 1% monthly improvement in retention dramatically impacts long-term revenue.",
+        "Small: <10K users, Medium: 10K-100K users, Large: >100K users. If you're pre-launch, estimate based on your marketing plan and target market size.",
     },
     {
-      question: "How do I improve my CAC payback period?",
+      question: "What if my app doesn't fit the standard categories?",
       answer:
-        "Reduce CAC through efficient marketing, optimize pricing for faster revenue ramp, and increase initial contract value. Most B2B SaaS targets 12-18 months. Faster payback allows aggressive reinvestment in growth.",
+        "Use the description field to add specific details about your app. The algorithm analyzes keywords to provide more tailored recommendations for unique app types.",
     },
     {
-      question: "What is revenue churn vs customer churn?",
+      question: "How often should I revisit my monetization strategy?",
       answer:
-        "Customer churn = % of customers lost. Revenue churn = % of MRR lost. Revenue churn is usually lower because you have existing expansion revenue and downgrade options. Both matter for different reasons.",
-    },
-    {
-      question: "How should I track these metrics?",
-      answer:
-        "Use your SaaS metrics dashboard or tools like Amplitude, Mixpanel, or dedicated metrics platforms. Track monthly and visualize trends. Compare quarter-over-quarter to see if you're improving or degrading.",
-    },
-    {
-      question: "Why does CAC payback take so long?",
-      answer:
-        "Long payback periods hurt cash flow. Causes include: high sales costs, low ACV, slow onboarding, long sales cycles. Solution: improve product-market fit, increase ACV, reduce sales cycle, or lower marketing costs.",
-    },
-    {
-      question: "What is a healthy runway for my cash?",
-      answer:
-        "At early stage, 18-24 months is ideal. At growth stage, 12-18 months. At scale, 9-12 months is acceptable since you have more control over burn rate. Calculate as: (Cash on hand) / (Monthly burn rate).",
+        "Review your strategy quarterly or when you see significant changes in user behavior, competition, or app store trends. Monetization optimization is an ongoing process.",
     },
   ],
 };

@@ -2036,128 +2036,99 @@ const saasMetricsCalculatorFeatures = {
   ],
 };
 const appRebuildRefactorCalculatorFeatures = {
-  title: "Advanced Tools for Pricing Success",
+  title: "Powerful Features",
   description:
-    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+    "Everything you need to make an informed decision about your application modernization strategy",
   listData: [
     {
-      icon: Activity,
-      title: "Real-time MRR/ARR",
+      icon: Zap,
+      title: "Instant Calculations",
       description:
-        "Calculate Monthly and Annual Recurring Revenue with precision. Track revenue trends instantly.",
+        "Get real-time cost and timeline estimates in seconds, powered by intelligent algorithms.",
       color: "bg-purple-100 text-purple-600",
     },
     {
-      icon: Target,
-      title: "CAC Analysis",
+      icon: Shield,
+      title: "Data-Driven Insights",
       description:
-        "Understand your Customer Acquisition Cost. Know how much you spend to acquire each customer.",
+        "Recommendations based on industry standards and thousands of successful projects.",
       color: "bg-emerald-100 text-emerald-600",
     },
     {
-      icon: TrendingUp,
-      title: "LTV Calculation",
+      icon: Target,
+      title: "Customized Analysis",
       description:
-        "Compute Customer Lifetime Value. Determine long-term customer profitability.",
+        "Tailored results based on your specific technology stack and business requirements.",
       color: "bg-teal-100 text-teal-600",
     },
     {
-      icon: Users,
-      title: "Churn Analysis",
+      icon: TrendingUp,
+      title: "ROI Projections",
       description:
-        "Monitor churn rate and revenue churn. Identify retention opportunities.",
+        "Understand the long-term financial impact of rebuild vs refactor decisions.",
       color: "bg-cyan-100 text-cyan-600",
     },
     {
-      icon: AlertCircle,
-      title: "Health Metrics",
+      icon: Clock,
+      title: "Timeline Estimates",
       description:
-        "Track CAC payback period, LTV:CAC ratio, and other health indicators.",
-      color: "bg-blue-100 text-blue-600",
-    },
-    {
-      icon: BarChart3,
-      title: "Growth Tracking",
-      description:
-        "Monitor MoM and YoY growth rates. Benchmark against industry standards.",
+        "Accurate project duration predictions to help with resource planning.",
       color: "bg-orange-100 text-orange-600",
     },
     {
-      icon: Clock,
-      title: "Runway Forecast",
+      icon: DollarSign,
+      title: "Cost Breakdown",
       description:
-        "Calculate how long your cash will last based on burn rate and growth.",
+        "Detailed cost analysis including development, testing, and maintenance expenses.",
       color: "bg-pink-100 text-pink-600",
-    },
-    {
-      icon: Zap,
-      title: "Smart Insights",
-      description:
-        "Get keyword-based recommendations to improve your SaaS metrics.",
-      color: "bg-rose-100 text-rose-600",
     },
   ],
 };
 const mobileAppMonetizationStrategySelectorFeatures = {
-  title: "Advanced Tools for Pricing Success",
-  description:
-    "Everything you need to make data-driven pricing decisions and maximize revenue.",
+  title: "Powerful Features",
+  description: "Everything you need to make informed monetization decisions.",
   listData: [
     {
-      icon: Activity,
-      title: "Real-time MRR/ARR",
+      icon: BarChart3,
+      title: "Data-Driven Insights",
       description:
-        "Calculate Monthly and Annual Recurring Revenue with precision. Track revenue trends instantly.",
-      color: "bg-purple-100 text-purple-600",
+        "Recommendations based on analysis of thousands of successful mobile apps across different categories and markets.",
+      color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Target,
-      title: "CAC Analysis",
+      title: "Personalized Results",
       description:
-        "Understand your Customer Acquisition Cost. Know how much you spend to acquire each customer.",
+        "Each recommendation is tailored to your specific app type, audience, and business goals for maximum relevance.",
       color: "bg-emerald-100 text-emerald-600",
     },
     {
       icon: TrendingUp,
-      title: "LTV Calculation",
+      title: "Industry Benchmarks",
       description:
-        "Compute Customer Lifetime Value. Determine long-term customer profitability.",
-      color: "bg-teal-100 text-teal-600",
+        "Compare your strategy against top-performing apps in your category with real market data and trends.",
+      color: "bg-amber-100 text-amber-600",
     },
     {
-      icon: Users,
-      title: "Churn Analysis",
+      icon: CheckCircle2,
+      title: "Implementation Guide",
       description:
-        "Monitor churn rate and revenue churn. Identify retention opportunities.",
-      color: "bg-cyan-100 text-cyan-600",
+        "Step-by-step instructions to implement your chosen monetization strategy effectively from day one.",
+      color: "bg-rose-100 text-rose-600",
     },
     {
-      icon: AlertCircle,
-      title: "Health Metrics",
+      icon: Shield,
+      title: "Risk Assessment",
       description:
-        "Track CAC payback period, LTV:CAC ratio, and other health indicators.",
-      color: "bg-blue-100 text-blue-600",
-    },
-    {
-      icon: BarChart3,
-      title: "Growth Tracking",
-      description:
-        "Monitor MoM and YoY growth rates. Benchmark against industry standards.",
-      color: "bg-orange-100 text-orange-600",
-    },
-    {
-      icon: Clock,
-      title: "Runway Forecast",
-      description:
-        "Calculate how long your cash will last based on burn rate and growth.",
-      color: "bg-pink-100 text-pink-600",
+        "Understand potential challenges and mitigation strategies for your chosen monetization approach.",
+      color: "bg-violet-100 text-violet-600",
     },
     {
       icon: Zap,
-      title: "Smart Insights",
+      title: "Instant Results",
       description:
-        "Get keyword-based recommendations to improve your SaaS metrics.",
-      color: "bg-rose-100 text-rose-600",
+        "Get your monetization strategy recommendation in seconds with detailed reasoning and confidence scores.",
+      color: "bg-cyan-100 text-cyan-600",
     },
   ],
 };

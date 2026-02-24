@@ -1,5 +1,6 @@
 import React from "react";
 import SoftwareDevelopmentCostCalculator from "@/app/components/Tools/SoftwareDevelopmentCostCalculator";
+import MobileAppMonetizationStrategySelector from "@/app/components/Tools/MobileAppMonetizationStrategySelector";
 
 export const metadata = {
   title:
@@ -25,7 +26,7 @@ export const metadata = {
   },
 };
 const page = () => {
-  return <SoftwareDevelopmentCostCalculator />;
+  return <MobileAppMonetizationStrategySelector />;
 };
 
 export default page;

@@ -1142,64 +1142,58 @@ const saasMetricsCalculatorSteps = {
   ],
 };
 const appRebuildRefactorCalculatorSteps = {
-  title: "How to Calculate Your Metrics",
+  title: "How to Use the Calculator",
   description:
-    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+    "Follow these simple steps to get accurate cost estimates and recommendations for your application modernization project",
   listData: [
     {
-      icon: DollarSign,
-      title: "Enter Revenue Data",
+      icon: ClipboardList,
+      title: "Provide App Details",
       description:
-        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+        "Enter information about your application size, technology stack, and complexity level.",
+    },
+    {
+      icon: Calculator,
+      title: "Describe Requirements",
+      description:
+        "Add a detailed description with keywords about features, integrations, and technical debt.",
     },
     {
       icon: BarChart3,
-      title: "Define Key Metrics",
+      title: "Review Analysis",
       description:
-        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+        "Get instant cost estimates, timelines, and recommendations for both rebuild and refactor options.",
     },
     {
-      icon: PieChart,
-      title: "Calculate Metrics",
+      icon: CheckCircle,
+      title: "Make Decision",
       description:
-        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Get Insights",
-      description:
-        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+        "Compare results side-by-side and choose the best approach for your business goals.",
     },
   ],
 };
 const mobileAppMonetizationStrategySelectorSteps = {
-  title: "How to Calculate Your Metrics",
+  title: "How It Works",
   description:
-    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+    "Get your personalized monetization strategy in three simple steps",
   listData: [
     {
-      icon: DollarSign,
-      title: "Enter Revenue Data",
+      icon: FileText,
+      title: "Enter App Details",
       description:
-        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+        "Provide information about your app category, target audience, user base size, and engagement levels. The more detailed, the better the recommendation.",
     },
     {
-      icon: BarChart3,
-      title: "Define Key Metrics",
+      icon: Zap,
+      title: "AI Analysis",
       description:
-        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+        "Our algorithm analyzes your inputs against thousands of successful apps, industry benchmarks, and current market trends to identify the optimal strategy.",
     },
     {
-      icon: PieChart,
-      title: "Calculate Metrics",
+      icon: CheckCircle,
+      title: "Get Strategy",
       description:
-        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Get Insights",
-      description:
-        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+        "Receive a detailed monetization strategy with confidence scores, reasoning, and actionable implementation steps to maximize your app revenue.",
     },
   ],
 };

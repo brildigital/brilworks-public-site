@@ -4,10 +4,10 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
   Calculator,
+  CheckCircle2,
   Clock,
   DollarSign,
   Loader2,
-  Rocket,
   Sparkles,
   TrendingUp,
   Users,
@@ -114,29 +114,34 @@ const MobileAppMonetizationStrategySelector = () => {
       <ToolHerosection
         title={
           <>
-            Calculate Your &nbsp;
+            Choose the Perfect &nbsp;
             <br className="block" />
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              AI App Development <br className="md:block hidden" />
+              Monetization Strategy <br className="md:block hidden" />
             </span>
-            Cost in Minutes
           </>
         }
-        buttonText="Calculate Now"
-        description="Get accurate cost estimates for your AI-powered application. Our intelligent calculator analyzes your requirements and provides detailed pricing breakdowns tailored to your project."
-        imageSrc="/images/v2/ai-app-dev-cost-calculator-banner.webp"
+        buttonText="Try Strategy Selector"
+        description="Make data-driven decisions for your mobile app's revenue model. Our intelligent selector analyzes your app characteristics to recommend the most profitable monetization strategy tailored to your unique needs."
+        imageSrc="/images/v2/mobile-app-monetization-banner.webp"
         highlights={[
           {
-            icon: Rocket,
+            icon: Users,
             color: "text-green-600",
-            title: "500+",
-            description: "Projects Estimated",
+            title: "50L+",
+            description: "Apps Analyzed",
+          },
+          {
+            icon: CheckCircle2,
+            color: "text-orange-600",
+            title: "98%",
+            description: "Accuracy Rate",
           },
           {
             icon: TrendingUp,
             color: "text-orange-600",
-            title: "98%",
-            description: "Accuracy Rate",
+            title: "3.2x",
+            description: "Avg Revenue Boost",
           },
         ]}
       />
@@ -150,11 +155,11 @@ const MobileAppMonetizationStrategySelector = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Calculate Your AI App Cost
+              Strategy Calculator
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill in your project details below to get an instant cost
-              estimate.
+              Fill in your app details to receive a personalized monetization
+              recommendation
             </p>
           </div>
 
