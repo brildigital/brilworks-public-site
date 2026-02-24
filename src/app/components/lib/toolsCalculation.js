@@ -3351,3 +3351,276 @@ export function calculateSaaSMetrics(input) {
     recommendations,
   };
 }
+
+// 38. App Rebuild Vs Refactor Calculator
+export const appRebuildRefactorCalculateCosts = (formData) => {
+  const { appSize, techStack, complexity, teamSize, description } = formData;
+
+  let baseCost = 50000;
+  let baseTime = 3;
+
+  if (appSize === "small") {
+    baseCost = 30000;
+    baseTime = 2;
+  } else if (appSize === "large") {
+    baseCost = 100000;
+    baseTime = 6;
+  } else if (appSize === "enterprise") {
+    baseCost = 200000;
+    baseTime = 12;
+  }
+
+  const complexityMultipliers = {
+    low: 0.8,
+    medium: 1.0,
+    high: 1.3,
+    very_high: 1.6,
+  };
+
+  const techStackMultipliers = {
+    modern: 0.9,
+    mixed: 1.0,
+    legacy: 1.3,
+  };
+
+  let complexityScore = 50;
+  const keywords = {
+    microservices: { cost: 15000, time: 1, score: 15 },
+    database: { cost: 10000, time: 0.5, score: 10 },
+    migration: { cost: 12000, time: 1, score: 12 },
+    api: { cost: 8000, time: 0.5, score: 8 },
+    authentication: { cost: 7000, time: 0.5, score: 7 },
+    integration: { cost: 10000, time: 1, score: 10 },
+    security: { cost: 9000, time: 0.75, score: 9 },
+    performance: { cost: 8000, time: 0.75, score: 8 },
+    legacy: { cost: 15000, time: 1.5, score: 15 },
+    "technical debt": { cost: 12000, time: 1, score: 12 },
+    scalability: { cost: 11000, time: 1, score: 11 },
+    cloud: { cost: 10000, time: 0.75, score: 10 },
+    testing: { cost: 6000, time: 0.5, score: 6 },
+    deployment: { cost: 7000, time: 0.5, score: 7 },
+    monitoring: { cost: 5000, time: 0.25, score: 5 },
+  };
+
+  let additionalCost = 0;
+  let additionalTime = 0;
+
+  const descLower = description.toLowerCase();
+  Object.entries(keywords).forEach(([keyword, values]) => {
+    if (descLower.includes(keyword)) {
+      additionalCost += values.cost;
+      additionalTime += values.time;
+      complexityScore += values.score;
+    }
+  });
+
+  complexityScore = Math.min(complexityScore, 100);
+
+  const teamMultiplier = Math.max(0.7, 1 - (parseInt(teamSize) - 3) * 0.05);
+
+  const rebuildCost = Math.round(
+    (baseCost + additionalCost) *
+      complexityMultipliers[complexity] *
+      techStackMultipliers[techStack] *
+      1.2 *
+      teamMultiplier
+  );
+
+  const refactorCost = Math.round(
+    (baseCost + additionalCost) *
+      complexityMultipliers[complexity] *
+      techStackMultipliers[techStack] *
+      0.7 *
+      teamMultiplier
+  );
+
+  const rebuildTime =
+    (baseTime + additionalTime) *
+    complexityMultipliers[complexity] *
+    teamMultiplier;
+
+  const refactorTime = rebuildTime * 0.6;
+
+  const recommendation =
+    complexityScore > 70 || techStack === "legacy" ? "rebuild" : "refactor";
+
+  const savings = Math.abs(rebuildCost - refactorCost);
+
+  return {
+    rebuildCost,
+    refactorCost,
+    rebuildTime: Math.round(rebuildTime * 10) / 10,
+    refactorTime: Math.round(refactorTime * 10) / 10,
+    recommendation,
+    savings,
+    complexityScore: Math.round(complexityScore),
+  };
+};
+
+// 39. Mobile App Monetization Strategy Calculator
+export const mobileAppMonetizationStrategyCalculate = (formData) => {
+  const strategies = {
+    freemium: { score: 0, reasons: [], impl: [] },
+    subscription: { score: 0, reasons: [], impl: [] },
+    advertising: { score: 0, reasons: [], impl: [] },
+    "in-app-purchase": { score: 0, reasons: [], impl: [] },
+    paid: { score: 0, reasons: [], impl: [] },
+  };
+
+  if (formData.appCategory === "gaming") {
+    strategies["in-app-purchase"].score += 30;
+    strategies["in-app-purchase"].reasons.push(
+      "Gaming apps perform exceptionally well with in-app purchases"
+    );
+    strategies.advertising.score += 20;
+  } else if (formData.appCategory === "productivity") {
+    strategies.subscription.score += 30;
+    strategies.subscription.reasons.push(
+      "Productivity apps benefit from recurring subscription models"
+    );
+    strategies.freemium.score += 25;
+  } else if (formData.appCategory === "entertainment") {
+    strategies.advertising.score += 25;
+    strategies.advertising.reasons.push(
+      "Entertainment apps have high engagement suitable for ads"
+    );
+    strategies.subscription.score += 20;
+  } else if (formData.appCategory === "education") {
+    strategies.subscription.score += 25;
+    strategies.freemium.score += 25;
+    strategies.freemium.reasons.push(
+      "Education apps benefit from free trial then premium content"
+    );
+  }
+
+  if (formData.targetAudience === "consumer") {
+    strategies.advertising.score += 15;
+    strategies.freemium.score += 15;
+  } else if (formData.targetAudience === "business") {
+    strategies.subscription.score += 30;
+    strategies.subscription.reasons.push(
+      "Business users prefer predictable subscription costs"
+    );
+    strategies.paid.score += 15;
+  } else if (formData.targetAudience === "students") {
+    strategies.freemium.score += 20;
+    strategies.advertising.score += 15;
+  }
+
+  if (formData.userBase === "large") {
+    strategies.advertising.score += 25;
+    strategies.advertising.reasons.push(
+      "Large user base maximizes ad revenue potential"
+    );
+    strategies.freemium.score += 20;
+  } else if (formData.userBase === "medium") {
+    strategies.subscription.score += 20;
+    strategies.freemium.score += 20;
+  } else if (formData.userBase === "small") {
+    strategies.paid.score += 20;
+    strategies.subscription.score += 15;
+  }
+
+  if (formData.engagementLevel === "high") {
+    strategies["in-app-purchase"].score += 25;
+    strategies["in-app-purchase"].reasons.push(
+      "High engagement increases in-app purchase conversion"
+    );
+    strategies.advertising.score += 20;
+  } else if (formData.engagementLevel === "medium") {
+    strategies.subscription.score += 15;
+    strategies.freemium.score += 15;
+  } else if (formData.engagementLevel === "low") {
+    strategies.paid.score += 15;
+    strategies.advertising.score += 10;
+  }
+
+  if (formData.appType === "utility") {
+    strategies.subscription.score += 20;
+    strategies.paid.score += 15;
+  } else if (formData.appType === "social") {
+    strategies.advertising.score += 30;
+    strategies.advertising.reasons.push(
+      "Social apps generate high ad impressions"
+    );
+    strategies.freemium.score += 20;
+  } else if (formData.appType === "content") {
+    strategies.subscription.score += 25;
+    strategies.subscription.reasons.push(
+      "Content apps work well with subscription paywalls"
+    );
+    strategies.freemium.score += 20;
+  }
+
+  const descLower = formData.description.toLowerCase();
+  if (descLower.includes("premium") || descLower.includes("exclusive")) {
+    strategies.subscription.score += 15;
+    strategies.paid.score += 10;
+  }
+  if (descLower.includes("free") || descLower.includes("accessible")) {
+    strategies.advertising.score += 15;
+    strategies.freemium.score += 15;
+  }
+  if (descLower.includes("game") || descLower.includes("virtual goods")) {
+    strategies["in-app-purchase"].score += 20;
+  }
+
+  const implementations = {
+    freemium: [
+      "Offer core features for free with premium upgrades",
+      "Create clear value proposition for paid tier",
+      "Implement trial periods for premium features",
+      "Use in-app messaging to promote upgrades",
+    ],
+    subscription: [
+      "Offer monthly and annual billing options",
+      "Provide free trial period (7-30 days)",
+      "Implement tiered pricing for different user segments",
+      "Focus on retention and reducing churn",
+    ],
+    advertising: [
+      "Integrate with ad networks (AdMob, Facebook Audience Network)",
+      "Use rewarded video ads for better user experience",
+      "Implement frequency capping to avoid ad fatigue",
+      "Consider offering ad-free premium option",
+    ],
+    "in-app-purchase": [
+      "Design virtual goods or consumables that add value",
+      "Create limited-time offers and bundles",
+      "Implement multiple price points ($0.99 - $99.99)",
+      "Use analytics to optimize pricing and placement",
+    ],
+    paid: [
+      "Price competitively based on market research",
+      "Offer money-back guarantee period",
+      "Create compelling app store listing with screenshots",
+      "Focus on quality to justify upfront cost",
+    ],
+  };
+
+  const maxScore = Math.max(...Object.values(strategies).map((s) => s.score));
+  const topStrategy = Object.entries(strategies).find(
+    ([, s]) => s.score === maxScore
+  );
+
+  if (topStrategy) {
+    const [name, data] = topStrategy;
+    const strategyNames = {
+      freemium: "Freemium Model",
+      subscription: "Subscription Model",
+      advertising: "Advertising Model",
+      "in-app-purchase": "In-App Purchases",
+      paid: "Paid App Model",
+    };
+
+    return {
+      name: strategyNames[name],
+      confidence: Math.min(Math.round((maxScore / 150) * 100), 98),
+      reasons:
+        data.reasons.length > 0
+          ? data.reasons
+          : ["Best fit based on your app characteristics"],
+      implementation: implementations[name],
+    };
+  }
+};

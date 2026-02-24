@@ -3,22 +3,20 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  BarChart3,
   Calculator,
   CheckCircle2,
-  Clock,
-  DollarSign,
   Loader2,
   Sparkles,
+  Target,
   TrendingUp,
   Users,
+  Zap,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  aiAppDevelopmentCalculater,
-  costParameters,
-} from "../lib/toolsCalculation";
+import { mobileAppMonetizationStrategyCalculate } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -31,24 +29,22 @@ const MobileAppMonetizationStrategySelector = () => {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
+    appCategory: "",
+    targetAudience: "",
+    userBase: "",
+    engagementLevel: "",
+    appType: "",
     description: "",
-    aiModel: "",
-    complexity: "",
-    platform: "",
-    features: [],
-    database: "",
-    deployment: "",
   });
   const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
-      formData?.aiModel &&
-      formData?.complexity &&
-      formData?.platform &&
-      formData?.features.length > 0 &&
-      formData?.database &&
-      formData?.deployment &&
+      formData?.appCategory &&
+      formData?.targetAudience &&
+      formData?.userBase &&
+      formData?.engagementLevel &&
+      formData?.appType &&
       formData?.description
     );
   };
@@ -65,7 +61,7 @@ const MobileAppMonetizationStrategySelector = () => {
 
     setIsCalculating(true);
 
-    const resultData = aiAppDevelopmentCalculater(formData);
+    const resultData = mobileAppMonetizationStrategyCalculate(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -76,26 +72,8 @@ const MobileAppMonetizationStrategySelector = () => {
     }, 1500);
   };
 
-  const estimatedAIAppDevTimeline =
-    result?.totalCost > 0 ? Math.ceil(result?.totalCost / 5000) : 0;
-  const estimatedAIAppDevTeamSize =
-    result?.totalCost > 30000
-      ? "4-6"
-      : result?.totalCost > 15000
-        ? "2-4"
-        : "1-2";
-
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFeatureChange = (feature, checked) => {
-    setFormData((prev) => ({
-      ...prev,
-      features: checked
-        ? [...prev.features, feature]
-        : prev.features.filter((f) => f !== feature),
-    }));
   };
 
   useEffect(() => {
@@ -171,131 +149,103 @@ const MobileAppMonetizationStrategySelector = () => {
               </h2>
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  AI Model Type *
+                  App Category *
                 </label>
 
                 <select
-                  value={formData.aiModel}
-                  onChange={(e) => handleInputChange("aiModel", e.target.value)}
+                  value={formData.appCategory}
+                  onChange={(e) =>
+                    handleInputChange("appCategory", e.target.value)
+                  }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select AI Model</option>
-                  {costParameters.ai_model?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select category...</option>
+                  <option value="gaming">Gaming</option>
+                  <option value="productivity">Productivity</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="education">Education</option>
+                  <option value="health">Health & Fitness</option>
+                  <option value="social">Social Networking</option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Complexity *
+                  Target Audience *
                 </label>
                 <select
-                  value={formData?.complexity}
+                  value={formData?.targetAudience}
                   onChange={(e) =>
-                    handleInputChange("complexity", e.target.value)
+                    handleInputChange("targetAudience", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Complexity</option>
-                  {costParameters.complexity?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select audience...</option>
+                  <option value="consumer">General Consumers</option>
+                  <option value="business">Business/Enterprise</option>
+                  <option value="students">Students/Education</option>
+                  <option value="professionals">Professionals</option>
                 </select>
               </div>
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">Platform *</label>
+                <label className="font-medium text-gray-700">
+                  Current/Expected User Base *
+                </label>
                 <select
-                  value={formData?.platform}
+                  value={formData?.userBase}
                   onChange={(e) =>
-                    handleInputChange("platform", e.target.value)
+                    handleInputChange("userBase", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Platform</option>
-                  {costParameters.platform?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select user base size...</option>
+                  <option value="small">Small (&lt;10K users)</option>
+                  <option value="medium">Medium (10K-100K users)</option>
+                  <option value="large">Large (&gt;100K users)</option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Additional Features
+                  User Engagement Level *
                 </label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {costParameters.features?.map((param) => (
-                    <label
-                      key={param.feature_name}
-                      className="flex items-center space-x-2"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.features.includes(param.feature_name)}
-                        onChange={(e) =>
-                          handleFeatureChange(
-                            param.feature_name,
-                            e.target.checked
-                          )
-                        }
-                      />
-                      <span className="text-sm text-gray-700">
-                        {param.feature_name}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Database *</label>
                 <select
-                  value={formData.database}
+                  value={formData.engagementLevel}
                   onChange={(e) =>
-                    handleInputChange("database", e.target.value)
+                    handleInputChange("engagementLevel", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Database</option>
-                  {costParameters.database?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select engagement level...</option>
+                  <option value="high">High (Daily active users)</option>
+                  <option value="medium">Medium (Weekly active users)</option>
+                  <option value="low">Low (Monthly active users)</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Deployment *
-                </label>
+                <label className="font-medium text-gray-700">App Type *</label>
                 <select
-                  value={formData.deployment}
-                  onChange={(e) =>
-                    handleInputChange("deployment", e.target.value)
-                  }
+                  value={formData.appType}
+                  onChange={(e) => handleInputChange("appType", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Deployment</option>
-                  {costParameters.deployment?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select app type...</option>
+                  <option value="utility">Utility/Tool</option>
+                  <option value="social">Social/Communication</option>
+                  <option value="content">Content/Media</option>
+                  <option value="service">Service-based</option>
                 </select>
               </div>
 
               {/* Project Description */}
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Description
+                  App Description
+                  <span className="text-slate-500 font-normal text-xs ml-2">
+                    (Keywords help improve recommendations)
+                  </span>
                 </label>
                 <textarea
                   value={formData?.description}
@@ -322,7 +272,7 @@ const MobileAppMonetizationStrategySelector = () => {
                 ) : (
                   <>
                     <Calculator className="mr-2 h-5 w-5" />
-                    Calculate
+                    Calculate Strategy
                   </>
                 )}
               </button>
@@ -330,68 +280,75 @@ const MobileAppMonetizationStrategySelector = () => {
 
             {/* Cost Estimate */}
             {result && hasVisited ? (
-              <div className="popup bg-white rounded-2xl border shadow-lg p-8">
+              <div className="popup bg-gradient-to-br from-slate-50 to-emerald-50 rounded-2xl border shadow-lg p-8">
                 <h2 className="text-center text-2xl font-semibold mb-4">
                   Cost Estimate
                 </h2>
-                <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl p-4 text-white">
-                  <div className="space-y-4">
-                    <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20 flex items-center justify-center flex-col">
-                      <div className="text-sm opacity-90 mb-2">
-                        Total Estimated Cost
+                <div className="space-y-4">
+                  <div className="text-center pb-6 border-b border-slate-200">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 shadow-lg">
+                      <CheckCircle2 className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                      {result.name}
+                    </h3>
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="text-sm text-slate-600">
+                        Confidence Score:
                       </div>
-                      <div className="text-5xl font-bold mb-2">
-                        ${result.totalCost.toLocaleString()}
-                      </div>
-                      <div className="text-sm opacity-80">
-                        Range: $
-                        {Math.round(result.totalCost * 0.8)?.toLocaleString()} -
-                        ${Math.round(result.totalCost * 1.2)?.toLocaleString()}
+                      <div className="text-2xl font-bold text-emerald-600">
+                        {result.confidence}%
                       </div>
                     </div>
+                    <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                        style={{ width: `${result.confidence}%` }}
+                      />
+                    </div>
+                  </div>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-lg">Cost Breakdown</h4>
-                      {Object.entries(result.breakdown).map(([key, value]) => (
-                        <div
-                          key={key}
-                          className="flex justify-between items-center bg-white/10 backdrop-blur rounded-lg py-1 px-2"
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                      <Target className="w-5 h-5 text-blue-600" />
+                      <span>Why This Strategy?</span>
+                    </h4>
+                    <ul className="space-y-2">
+                      {result.reasons.map((reason, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start space-x-2 text-slate-700"
                         >
-                          <span className="text-sm">{key}</span>
-                          <span className="font-semibold">
-                            ${value.toLocaleString()}
-                          </span>
-                        </div>
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <span>{reason}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
+                  </div>
 
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/20">
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Clock className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTimeline}
-                        </div>
-                        <div className="text-xs opacity-80">Months</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Users className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTeamSize}
-                        </div>
-                        <div className="text-xs opacity-80">Team Size</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <TrendingUp className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">High</div>
-                        <div className="text-xs opacity-80">ROI</div>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                      <Zap className="w-5 h-5 text-amber-600" />
+                      <span>Implementation Steps</span>
+                    </h4>
+                    <ol className="space-y-3">
+                      {result.implementation.map((step, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                            {idx + 1}
+                          </div>
+                          <span className="text-slate-700 pt-0.5">{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <p className="text-sm text-blue-900">
+                      <strong>Pro Tip:</strong> Consider A/B testing this
+                      strategy with a small user segment before full
+                      implementation to validate results.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -404,7 +361,7 @@ const MobileAppMonetizationStrategySelector = () => {
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-12 h-12 text-white" />
+                        <BarChart3 className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -415,11 +372,13 @@ const MobileAppMonetizationStrategySelector = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      Ready to get estimate?
+                      Ready to Find Your Strategy?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill in the form to see your cost estimate ✨
+                      Complete the form on the left to receive your personalized
+                      monetization strategy recommendation with detailed
+                      implementation guidance. ✨
                     </p>
 
                     <button

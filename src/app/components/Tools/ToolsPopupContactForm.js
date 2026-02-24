@@ -40,7 +40,7 @@ import { usePathname } from "next/navigation";
 import {
   getScoreColor,
   getStatusColor,
-  getStatusColorForSaasMetric,
+  markFormSubmitted,
 } from "../lib/commonFunction";
 import { formatCurrencyForCostBreakdown } from "../lib/toolsCalculation";
 
@@ -2683,6 +2683,206 @@ const ToolsPopupContactForm = ({
                   </p>
                   <p className="text-xs text-gray-600 mt-2">monthly</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/app-rebuild-vs-refactor-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full space-y-4">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Your Result
+              </h3>
+              <div className="px-4 py-2 bg-white rounded-lg shadow border">
+                <span className="text-sm text-gray-600">Complexity:</span>
+                <span className="ml-2 font-bold text-blue-600">
+                  {result?.complexityScore}/100
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm text-gray-600">Rebuild Cost</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  ${result?.rebuildCost.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-gray-600">Refactor Cost</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  ${result?.refactorCost.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm text-gray-600">Rebuild Time</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  {result?.rebuildTime} mo
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Clock className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-gray-600">Refactor Time</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  {result?.refactorTime} mo
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={`p-4 rounded-lg ${
+                result?.recommendation === "rebuild"
+                  ? "bg-blue-100 border-2 border-blue-300"
+                  : "bg-green-100 border-2 border-green-300"
+              }`}
+            >
+              <div className="flex items-start space-x-3">
+                <AlertCircle
+                  className={`w-6 h-6 mt-1 ${
+                    result?.recommendation === "rebuild"
+                      ? "text-blue-600"
+                      : "text-green-600"
+                  }`}
+                />
+                <div>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2 text-left">
+                    Recommendation:{" "}
+                    <span
+                      className={
+                        result?.recommendation === "rebuild"
+                          ? "text-blue-600"
+                          : "text-green-600"
+                      }
+                    >
+                      {result?.recommendation === "rebuild"
+                        ? "Rebuild"
+                        : "Refactor"}
+                    </span>
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed text-left">
+                    {result?.recommendation === "rebuild"
+                      ? "Based on your complexity score and technology stack, a complete rebuild will provide better long-term value. While more expensive initially, you'll benefit from modern architecture and reduced technical debt."
+                      : "Refactoring is the most cost-effective approach for your application. You can modernize incrementally while maintaining existing functionality and minimizing risk."}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-md border">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-sm text-gray-600">
+                    Potential Savings
+                  </span>
+                  <div className="text-2xl font-bold text-green-600 mt-1 text-left">
+                    ${result?.savings.toLocaleString()}
+                  </div>
+                </div>
+                <TrendingUp className="w-8 h-8 text-green-600" />
+              </div>
+              <p className="text-sm text-gray-600 mt-2 text-left">
+                By choosing {result?.recommendation}
+              </p>
+            </div>
+          </div>
+        );
+      case "/tools/mobile-app-monetization-strategy-selector/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full bg-gradient-to-br from-slate-50 to-emerald-50 p-4 rounded-xl">
+            <div className="space-y-4">
+              <div className="text-center pb-6 border-b border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 shadow-lg">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                  {result.name}
+                </h3>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="text-sm text-slate-600">
+                    Confidence Score:
+                  </div>
+                  <div className="text-2xl font-bold text-emerald-600">
+                    {result.confidence}%
+                  </div>
+                </div>
+                <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                    style={{ width: `${result?.confidence}%` }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <Target className="w-5 h-5 text-blue-600" />
+                  <span>Why This Strategy?</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.reasons.map((reason, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-2 text-slate-700"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span>{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <Zap className="w-5 h-5 text-amber-600" />
+                  <span>Implementation Steps</span>
+                </h4>
+                <ol className="space-y-3">
+                  {result.implementation.map((step, idx) => (
+                    <li key={idx} className="flex items-start space-x-2">
+                      <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {idx + 1}
+                      </div>
+                      <span className="text-slate-700">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-900 text-left">
+                  <strong>Pro Tip:</strong> Consider A/B testing this strategy
+                  with a small user segment before full implementation to
+                  validate results.
+                </p>
               </div>
             </div>
           </div>

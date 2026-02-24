@@ -3,22 +3,18 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
+  AlertCircle,
   Calculator,
   Clock,
   DollarSign,
   Loader2,
-  Rocket,
   Sparkles,
   TrendingUp,
-  Users,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  aiAppDevelopmentCalculater,
-  costParameters,
-} from "../lib/toolsCalculation";
+import { appRebuildRefactorCalculateCosts } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -31,24 +27,20 @@ const AppRebuildVsRefactorCalculator = () => {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
-    description: "",
-    aiModel: "",
+    appSize: "",
+    techStack: "",
     complexity: "",
-    platform: "",
-    features: [],
-    database: "",
-    deployment: "",
+    teamSize: "",
+    description: "",
   });
   const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
-      formData?.aiModel &&
+      formData?.appSize &&
+      formData?.techStack &&
       formData?.complexity &&
-      formData?.platform &&
-      formData?.features.length > 0 &&
-      formData?.database &&
-      formData?.deployment &&
+      formData?.teamSize &&
       formData?.description
     );
   };
@@ -65,7 +57,7 @@ const AppRebuildVsRefactorCalculator = () => {
 
     setIsCalculating(true);
 
-    const resultData = aiAppDevelopmentCalculater(formData);
+    const resultData = appRebuildRefactorCalculateCosts(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -76,26 +68,8 @@ const AppRebuildVsRefactorCalculator = () => {
     }, 1500);
   };
 
-  const estimatedAIAppDevTimeline =
-    result?.totalCost > 0 ? Math.ceil(result?.totalCost / 5000) : 0;
-  const estimatedAIAppDevTeamSize =
-    result?.totalCost > 30000
-      ? "4-6"
-      : result?.totalCost > 15000
-        ? "2-4"
-        : "1-2";
-
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFeatureChange = (feature, checked) => {
-    setFormData((prev) => ({
-      ...prev,
-      features: checked
-        ? [...prev.features, feature]
-        : prev.features.filter((f) => f !== feature),
-    }));
   };
 
   useEffect(() => {
@@ -114,12 +88,12 @@ const AppRebuildVsRefactorCalculator = () => {
       <ToolHerosection
         title={
           <>
-            App Rebuild vs
-            <br className="block" />
-            Refactor&nbsp;
+            App{" "}
             <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-themeColor to-[#01dbd4]">
-              Calculator <br className="md:block hidden" />
+              Rebuild vs
+              <br className="md:block hidden" /> Refactor{" "}
             </span>
+            Calculator
           </>
         }
         buttonText="Calculate Now"
@@ -164,26 +138,46 @@ const AppRebuildVsRefactorCalculator = () => {
               </h2>
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  AI Model Type *
+                  Application Size *
                 </label>
 
                 <select
-                  value={formData.aiModel}
-                  onChange={(e) => handleInputChange("aiModel", e.target.value)}
+                  value={formData.appSize}
+                  onChange={(e) => handleInputChange("appSize", e.target.value)}
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select AI Model</option>
-                  {costParameters.ai_model?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select app size</option>
+                  <option value="small">Small (1-10 pages/screens)</option>
+                  <option value="medium">Medium (11-30 pages/screens)</option>
+                  <option value="large">Large (31-100 pages/screens)</option>
+                  <option value="enterprise">
+                    Enterprise (100+ pages/screens)
+                  </option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Project Complexity *
+                  Technology Stack *
+                </label>
+                <select
+                  value={formData?.techStack}
+                  onChange={(e) =>
+                    handleInputChange("techStack", e.target.value)
+                  }
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select technology stack</option>
+                  <option value="modern">Modern (React, Node, etc.)</option>
+                  <option value="mixed">
+                    Mixed (Some legacy, some modern)
+                  </option>
+                  <option value="legacy">Legacy (Outdated frameworks)</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="font-medium text-gray-700">
+                  Complexity Level *
                 </label>
                 <select
                   value={formData?.complexity}
@@ -193,96 +187,39 @@ const AppRebuildVsRefactorCalculator = () => {
                   className="w-full border rounded-lg p-3 bg-white"
                 >
                   <option value="">Select Complexity</option>
-                  {costParameters.complexity?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Platform *</label>
-                <select
-                  value={formData?.platform}
-                  onChange={(e) =>
-                    handleInputChange("platform", e.target.value)
-                  }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select Platform</option>
-                  {costParameters.platform?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="low">Low (Basic CRUD operations)</option>
+                  <option value="medium">Medium (Some integrations)</option>
+                  <option value="high">High (Multiple integrations)</option>
+                  <option value="very_high">
+                    Very High (Complex workflows)
+                  </option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Additional Features
+                  Development Team Size
                 </label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {costParameters.features?.map((param) => (
-                    <label
-                      key={param.feature_name}
-                      className="flex items-center space-x-2"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.features.includes(param.feature_name)}
-                        onChange={(e) =>
-                          handleFeatureChange(
-                            param.feature_name,
-                            e.target.checked
-                          )
-                        }
-                      />
-                      <span className="text-sm text-gray-700">
-                        {param.feature_name}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Database *</label>
-                <select
-                  value={formData.database}
-                  onChange={(e) =>
-                    handleInputChange("database", e.target.value)
-                  }
+                <input
+                  id="teamSize"
+                  type="number"
                   className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select Database</option>
-                  {costParameters.database?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Timeline */}
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  Deployment *
-                </label>
-                <select
-                  value={formData.deployment}
+                  value={formData.teamSize}
                   onChange={(e) =>
-                    handleInputChange("deployment", e.target.value)
+                    handleInputChange("teamSize", e.target.value)
                   }
-                  className="w-full border rounded-lg p-3 bg-white"
-                >
-                  <option value="">Select Deployment</option>
-                  {costParameters.deployment?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
-                </select>
+                  min="1"
+                  onKeyDown={(e) => {
+                    if (
+                      e.key === "e" ||
+                      e.key === "E" ||
+                      e.key === "+" ||
+                      e.key === "-"
+                    ) {
+                      e.preventDefault(); // 🚫 block these keys
+                    }
+                  }}
+                />
               </div>
 
               {/* Project Description */}
@@ -315,7 +252,7 @@ const AppRebuildVsRefactorCalculator = () => {
                 ) : (
                   <>
                     <Calculator className="mr-2 h-5 w-5" />
-                    Calculate
+                    Calculate Estimates
                   </>
                 )}
               </button>
@@ -324,80 +261,136 @@ const AppRebuildVsRefactorCalculator = () => {
             {/* Cost Estimate */}
             {result && hasVisited ? (
               <div className="popup bg-white rounded-2xl border shadow-lg p-8">
-                <h2 className="text-center text-2xl font-semibold mb-4">
-                  Cost Estimate
-                </h2>
-                <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl p-4 text-white">
-                  <div className="space-y-4">
-                    <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20 flex items-center justify-center flex-col">
-                      <div className="text-sm opacity-90 mb-2">
-                        Total Estimated Cost
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-center text-2xl font-semibold mb-4">
+                      Your Result
+                    </h2>
+                    <div className="px-4 py-2 bg-white rounded-lg shadow border">
+                      <span className="text-sm text-gray-600">Complexity:</span>
+                      <span className="ml-2 font-bold text-blue-600">
+                        {result?.complexityScore}/100
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white p-4 rounded-lg shadow-md border">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <DollarSign className="w-5 h-5 text-blue-600" />
+                        <span className="text-sm text-gray-600">
+                          Rebuild Cost
+                        </span>
                       </div>
-                      <div className="text-5xl font-bold mb-2">
-                        ${result.totalCost.toLocaleString()}
-                      </div>
-                      <div className="text-sm opacity-80">
-                        Range: $
-                        {Math.round(result.totalCost * 0.8)?.toLocaleString()} -
-                        ${Math.round(result.totalCost * 1.2)?.toLocaleString()}
+                      <div className="text-3xl font-bold text-gray-900 text-left">
+                        ${result?.rebuildCost.toLocaleString()}
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-lg">Cost Breakdown</h4>
-                      {Object.entries(result.breakdown).map(([key, value]) => (
-                        <div
-                          key={key}
-                          className="flex justify-between items-center bg-white/10 backdrop-blur rounded-lg py-1 px-2"
-                        >
-                          <span className="text-sm">{key}</span>
-                          <span className="font-semibold">
-                            ${value.toLocaleString()}
+                    <div className="bg-white p-4 rounded-lg shadow-md border">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <DollarSign className="w-5 h-5 text-green-600" />
+                        <span className="text-sm text-gray-600">
+                          Refactor Cost
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900 text-left">
+                        ${result?.refactorCost.toLocaleString()}
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Clock className="w-5 h-5 text-blue-600" />
+                        <span className="text-sm text-gray-600">
+                          Rebuild Time
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900 text-left">
+                        {result?.rebuildTime} mo
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Clock className="w-5 h-5 text-green-600" />
+                        <span className="text-sm text-gray-600">
+                          Refactor Time
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900 text-left">
+                        {result?.refactorTime} mo
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`p-4 rounded-lg ${
+                      result?.recommendation === "rebuild"
+                        ? "bg-blue-100 border-2 border-blue-300"
+                        : "bg-green-100 border-2 border-green-300"
+                    }`}
+                  >
+                    <div className="flex items-start space-x-3">
+                      <AlertCircle
+                        className={`w-6 h-6 mt-1 ${
+                          result?.recommendation === "rebuild"
+                            ? "text-blue-600"
+                            : "text-green-600"
+                        }`}
+                      />
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-lg mb-2 text-left">
+                          Recommendation:{" "}
+                          <span
+                            className={
+                              result?.recommendation === "rebuild"
+                                ? "text-blue-600"
+                                : "text-green-600"
+                            }
+                          >
+                            {result?.recommendation === "rebuild"
+                              ? "Rebuild"
+                              : "Refactor"}
                           </span>
-                        </div>
-                      ))}
+                        </h4>
+                        <p className="text-gray-700 leading-relaxed text-left">
+                          {result?.recommendation === "rebuild"
+                            ? "Based on your complexity score and technology stack, a complete rebuild will provide better long-term value. While more expensive initially, you'll benefit from modern architecture and reduced technical debt."
+                            : "Refactoring is the most cost-effective approach for your application. You can modernize incrementally while maintaining existing functionality and minimizing risk."}
+                        </p>
+                      </div>
                     </div>
+                  </div>
 
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/20">
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Clock className="w-6 h-6 mx-auto" />
+                  <div className="bg-white p-4 rounded-lg shadow-md border">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-sm text-gray-600">
+                          Potential Savings
+                        </span>
+                        <div className="text-2xl font-bold text-green-600 mt-1 text-left">
+                          ${result?.savings.toLocaleString()}
                         </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTimeline}
-                        </div>
-                        <div className="text-xs opacity-80">Months</div>
                       </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Users className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTeamSize}
-                        </div>
-                        <div className="text-xs opacity-80">Team Size</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <TrendingUp className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">High</div>
-                        <div className="text-xs opacity-80">ROI</div>
-                      </div>
+                      <TrendingUp className="w-8 h-8 text-green-600" />
                     </div>
+                    <p className="text-sm text-gray-600 mt-2 text-left">
+                      By choosing {result?.recommendation}
+                    </p>
                   </div>
                 </div>
               </div>
             ) : (
               <div className="bg-white rounded-2xl border shadow-lg p-8">
                 <h2 className="text-center text-2xl font-semibold mb-2">
-                  Cost Estimate
+                  Estimate Result
                 </h2>
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-12 h-12 text-white" />
+                        <TrendingUp className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -412,14 +405,15 @@ const AppRebuildVsRefactorCalculator = () => {
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill in the form to see your cost estimate ✨
+                      Fill out the form and click "Calculate Estimates" to see
+                      your customized analysis ✨
                     </p>
 
                     <button
                       onClick={() => document.querySelector("select")?.focus()}
                       className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium flex items-center space-x-2 hover:from-purple-700 hover:to-blue-700 transition-all animate-bounce"
                     >
-                      &lArr; Start by selecting your project form
+                      &lArr; Start by selecting your project details
                     </button>
                   </div>
                 </div>
