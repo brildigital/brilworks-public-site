@@ -1525,6 +1525,37 @@ const mobileAppMonetizationStrategySelectorFaqData = {
   ],
 };
 
+const outsourcingReadinessCheckerFaqData = {
+  description: "Everything you need to know about mobile app monetization.",
+  queAns: [
+    {
+      question: "How accurate is the Outsourcing Readiness Checker?",
+      answer:
+        "The checker uses industry best practices and organizational factors to assess readiness. However, results should be combined with domain expertise and thorough risk assessment specific to your organization.",
+    },
+    {
+      question: "What projects are best for outsourcing?",
+      answer:
+        "Maintenance, testing, data entry, bug fixes, and routine development tasks work well for outsourcing. Complex projects with tight integration needs and business-critical operations should typically stay in-house.",
+    },
+    {
+      question: "How do I define team capacity to manage vendors?",
+      answer:
+        "Consider if you have designated staff to handle vendor communication, quality control, and issue resolution. Good capacity means 1-2 people can effectively oversee external teams.",
+    },
+    {
+      question: "What if my readiness score is low?",
+      answer:
+        "Focus on strengthening your internal capacity, improving documentation practices, and starting with small, low-risk outsourcing projects to build expertise before scaling.",
+    },
+    {
+      question: "Should I outsource business-critical work?",
+      answer:
+        "Generally no. Business-critical projects require deep knowledge and rapid response that outsourced teams often cannot provide. Reserve outsourcing for non-critical or support functions.",
+    },
+  ],
+};
+
 const ToolFAQs = () => {
   const pathname = usePathname();
   const [openItems, setOpenItems] = useState([]);
@@ -1591,6 +1622,7 @@ const ToolFAQs = () => {
       appRebuildRefactorCalculatorFaqData,
     "/tools/mobile-app-monetization-strategy-selector/":
       mobileAppMonetizationStrategySelectorFaqData,
+    "/tools/outsourcing-readiness-checker/": outsourcingReadinessCheckerFaqData,
   };
 
   const toolsFAQData = showDataBasedOnPathname[pathname] || {};

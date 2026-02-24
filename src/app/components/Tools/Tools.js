@@ -325,6 +325,14 @@ const toolsData = [
     link: "/tools/mobile-app-monetization-strategy-selector/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
   },
+  {
+    title: "Outsourcing Readiness Checker",
+    description:
+      "Take this quick assessment to discover whether your business is prepared for outsourcing. Get actionable insights in minutes.",
+    bg: "bg-cyan-100",
+    link: "/tools/outsourcing-readiness-checker/",
+    tags: ["BUSINESS", "SALES", "OTHER"],
+  },
 ];
 
 const Tools = () => {

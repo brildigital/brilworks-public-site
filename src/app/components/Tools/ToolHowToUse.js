@@ -1197,6 +1197,31 @@ const mobileAppMonetizationStrategySelectorSteps = {
     },
   ],
 };
+const outsourcingReadinessCheckerSteps = {
+  title: "How It Works",
+  description:
+    "Get your personalized monetization strategy in three simple steps",
+  listData: [
+    {
+      icon: FileText,
+      title: "Enter App Details",
+      description:
+        "Provide information about your app category, target audience, user base size, and engagement levels. The more detailed, the better the recommendation.",
+    },
+    {
+      icon: Zap,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs against thousands of successful apps, industry benchmarks, and current market trends to identify the optimal strategy.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Strategy",
+      description:
+        "Receive a detailed monetization strategy with confidence scores, reasoning, and actionable implementation steps to maximize your app revenue.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -1255,6 +1280,7 @@ const ToolHowToUse = () => {
       appRebuildRefactorCalculatorSteps,
     "/tools/mobile-app-monetization-strategy-selector/":
       mobileAppMonetizationStrategySelectorSteps,
+    "/tools/outsourcing-readiness-checker/": outsourcingReadinessCheckerSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

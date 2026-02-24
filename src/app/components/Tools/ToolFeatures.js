@@ -2132,6 +2132,54 @@ const mobileAppMonetizationStrategySelectorFeatures = {
     },
   ],
 };
+const outsourcingReadinessCheckerFeatures = {
+  title: "Powerful Features",
+  description: "Everything you need to make informed monetization decisions.",
+  listData: [
+    {
+      icon: BarChart3,
+      title: "Data-Driven Insights",
+      description:
+        "Recommendations based on analysis of thousands of successful mobile apps across different categories and markets.",
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      icon: Target,
+      title: "Personalized Results",
+      description:
+        "Each recommendation is tailored to your specific app type, audience, and business goals for maximum relevance.",
+      color: "bg-emerald-100 text-emerald-600",
+    },
+    {
+      icon: TrendingUp,
+      title: "Industry Benchmarks",
+      description:
+        "Compare your strategy against top-performing apps in your category with real market data and trends.",
+      color: "bg-amber-100 text-amber-600",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Implementation Guide",
+      description:
+        "Step-by-step instructions to implement your chosen monetization strategy effectively from day one.",
+      color: "bg-rose-100 text-rose-600",
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description:
+        "Understand potential challenges and mitigation strategies for your chosen monetization approach.",
+      color: "bg-violet-100 text-violet-600",
+    },
+    {
+      icon: Zap,
+      title: "Instant Results",
+      description:
+        "Get your monetization strategy recommendation in seconds with detailed reasoning and confidence scores.",
+      color: "bg-cyan-100 text-cyan-600",
+    },
+  ],
+};
 
 const ToolFeatures = () => {
   const pathname = usePathname();
@@ -2195,6 +2243,8 @@ const ToolFeatures = () => {
       appRebuildRefactorCalculatorFeatures,
     "/tools/mobile-app-monetization-strategy-selector/":
       mobileAppMonetizationStrategySelectorFeatures,
+    "/tools/outsourcing-readiness-checker/":
+      outsourcingReadinessCheckerFeatures,
   };
 
   const features = showDataBasedOnPathname[pathname] || {};
