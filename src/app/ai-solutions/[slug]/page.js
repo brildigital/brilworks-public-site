@@ -3,20 +3,25 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import AISolutionsFirstSection from "@/app/components/AISolutions/AISolutions";
-import { formatSrcUrl } from "@/app/components/lib/commonFunction";
+import {
+  formatSrcUrl,
+  getYouTubeThumbnail,
+} from "@/app/components/lib/commonFunction";
+import { generateVideoSchema } from "@/app/components/lib/schemaCode";
+import VideoSchema from "@/app/components/Common/VideoSchema";
 
-const AISeamlessIntegration = dynamic(() =>
-  import("@/app/components/AISolutions/AISeamlessIntegration")
+const AISeamlessIntegration = dynamic(
+  () => import("@/app/components/AISolutions/AISeamlessIntegration")
 );
-const WhatUserSays = dynamic(() =>
-  import("@/app/components/AISolutions/WhatUserSays")
+const WhatUserSays = dynamic(
+  () => import("@/app/components/AISolutions/WhatUserSays")
 );
 const CTASection = dynamic(() => import("@/app/components/Common/CTASection"));
-const AIWorking = dynamic(() =>
-  import("@/app/components/AISolutions/AIWorking")
+const AIWorking = dynamic(
+  () => import("@/app/components/AISolutions/AIWorking")
 );
-const AISolutionsFAQ = dynamic(() =>
-  import("@/app/components/AISolutions/AISolutionsFAQ")
+const AISolutionsFAQ = dynamic(
+  () => import("@/app/components/AISolutions/AISolutionsFAQ")
 );
 
 async function fetchWithErrorHandling(url, options) {
@@ -130,8 +135,19 @@ export default async function Page({ params }) {
     FAQ,
     CTA,
   } = storyData.story.content;
+
+  const videoSchema = videoLink?.url
+    ? generateVideoSchema({
+        name: title,
+        description: description,
+        thumbnailUrl: getYouTubeThumbnail(videoLink.url),
+        embedUrl: videoLink.url,
+      })
+    : null;
+
   return (
     <Suspense fallback={<FetchDataSpinner />}>
+      {videoSchema && <VideoSchema schema={videoSchema} />}
       <AISolutionsFirstSection
         title={title}
         description={description}

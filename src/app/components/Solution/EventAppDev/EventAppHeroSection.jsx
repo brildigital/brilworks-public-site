@@ -6,7 +6,7 @@ import React from "react";
 const EventAppHeroSection = () => {
   return (
     <section className="max-w-7xl main-section-padding mx-auto mt-20 overflow-hidden">
-      <div className="relative z-10">
+      <div className="relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium">

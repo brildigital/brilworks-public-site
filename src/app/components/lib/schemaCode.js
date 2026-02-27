@@ -113,6 +113,27 @@ export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
   return JSON.stringify(ratingSchema);
 }
 
+export function generateVideoSchema({
+  name,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  contentUrl,
+  embedUrl,
+}) {
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: name,
+    description: description,
+    thumbnailUrl: thumbnailUrl,
+    uploadDate: uploadDate || new Date().toISOString(),
+    contentUrl: contentUrl,
+    embedUrl: embedUrl,
+  };
+  return JSON.stringify(videoSchema);
+}
+
 export const homepageFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

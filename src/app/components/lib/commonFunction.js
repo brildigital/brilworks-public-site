@@ -431,3 +431,12 @@ export const getStatusIconForSaasMetric = (status) => {
       return "•";
   }
 };
+
+export function getYouTubeThumbnail(url) {
+  if (!url) return "";
+  const regExp =
+    /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  const match = url.match(regExp);
+  const videoId = match && match[7].length === 11 ? match[7] : false;
+  return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : "";
+}

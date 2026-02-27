@@ -604,7 +604,7 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/event-app-development/",
-    lastmod: "2025-12-00T04:18:45.231Z",
+    lastmod: "2025-12-08T04:18:45.231Z",
   },
   {
     loc: "https://www.brilworks.com/use-case/aws-in-IoT/",
