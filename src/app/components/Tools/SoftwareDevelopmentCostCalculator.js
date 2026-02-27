@@ -379,7 +379,7 @@ const SoftwareDevelopmentCostCalculator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
-          toolFormData={{ toolFormData: formData }}
+          toolFormData={{ toolFormData: inputs }}
         />
       )}
     </>
