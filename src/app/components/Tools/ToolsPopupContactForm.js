@@ -2887,6 +2887,101 @@ const ToolsPopupContactForm = ({
             </div>
           </div>
         );
+      case "/tools/outsourcing-readiness-checker/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full bg-gradient-to-br from-slate-50 to-emerald-50 p-4 rounded-xl overflow-auto max-h-[50vh]">
+            <div className="space-y-4">
+              <div className="text-center pb-6 border-b border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 shadow-lg">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                  {result.recommendation}
+                </h3>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="text-sm text-slate-600">Readiness Score:</div>
+                  <div className="text-2xl font-bold text-emerald-600">
+                    {result.readinessScore}%
+                  </div>
+                </div>
+                <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                    style={{ width: `${result.readinessScore}%` }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <TrendingUp className="w-5 h-5 text-emerald-600" />
+                  <span>Benefits</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.benefits.map((benefit, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-1 text-slate-700"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <AlertCircle className="w-5 h-5 text-amber-600" />
+                  <span>Key Risks</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.risks.map((risk, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-1 text-slate-700"
+                    >
+                      <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>{risk}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                  <span>Next Steps</span>
+                </h4>
+                <ol className="space-y-3">
+                  {result.actionItems.map((item, idx) => (
+                    <li key={idx} className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {idx + 1}
+                      </div>
+                      <span className="text-slate-700 pt-0.5">{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-900">
+                  <strong>Important:</strong> Use this assessment as a guide.
+                  Always validate findings with your leadership team and consult
+                  with outsourcing experts.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
 
       default:
         return !showPrice ? (

@@ -3624,3 +3624,134 @@ export const mobileAppMonetizationStrategyCalculate = (formData) => {
     };
   }
 };
+
+// 40. Outsouce Readiness Calculator
+export const calculateOutsourceReadiness = (formData) => {
+  let score = 0;
+  const risks = [];
+  const benefits = [];
+
+  if (formData.teamSize === "large") {
+    score += 25;
+    benefits.push("Large team can absorb outsourced work impact");
+  } else if (formData.teamSize === "medium") {
+    score += 15;
+  } else if (formData.teamSize === "small") {
+    score += 5;
+    risks.push("Small team may struggle with knowledge transfer");
+  }
+
+  if (formData.projectComplexity === "low") {
+    score += 30;
+    benefits.push("Low complexity projects are easier to outsource");
+  } else if (formData.projectComplexity === "medium") {
+    score += 15;
+    risks.push("Medium complexity requires detailed documentation");
+  } else if (formData.projectComplexity === "high") {
+    score += 5;
+    risks.push("High complexity increases communication overhead and errors");
+  }
+
+  if (formData.currentWorkload === "overloaded") {
+    score += 25;
+    benefits.push("Outsourcing can significantly reduce team stress");
+  } else if (formData.currentWorkload === "moderate") {
+    score += 15;
+  } else if (formData.currentWorkload === "light") {
+    score += 0;
+    risks.push("Light workload may not justify outsourcing costs");
+  }
+
+  if (formData.internalCapacity === "manage") {
+    score += 20;
+    benefits.push("Good capacity to manage external teams");
+  } else if (formData.internalCapacity === "challenging") {
+    score += 10;
+    risks.push("Challenging capacity may complicate vendor management");
+  } else if (formData.internalCapacity === "impossible") {
+    score += 0;
+    risks.push(
+      "Lack of capacity to manage vendors could lead to poor outcomes"
+    );
+  }
+
+  if (formData.businessCritical === "low") {
+    score += 20;
+    benefits.push("Non-critical projects are safer to outsource");
+  } else if (formData.businessCritical === "medium") {
+    score += 10;
+    risks.push("Medium-critical work requires robust governance");
+  } else if (formData.businessCritical === "high") {
+    score += 0;
+    risks.push("Business-critical work should remain in-house");
+  }
+
+  if (formData.projectType === "maintenance") {
+    score += 25;
+    benefits.push("Maintenance work is ideal for outsourcing");
+  } else if (formData.projectType === "development") {
+    score += 15;
+    risks.push("Development requires tight integration and oversight");
+  } else if (formData.projectType === "research") {
+    score += 10;
+    risks.push("Research needs close collaboration and feedback loops");
+  }
+
+  const descLower = formData.description.toLowerCase();
+  if (
+    descLower.includes("documentation") ||
+    descLower.includes("clear requirements")
+  ) {
+    score += 15;
+    benefits.push("Well-documented requirements improve outsourcing success");
+  }
+  if (descLower.includes("deadline") || descLower.includes("urgent")) {
+    score -= 10;
+    risks.push("Tight deadlines may complicate external coordination");
+  }
+  if (descLower.includes("proprietary") || descLower.includes("sensitive")) {
+    score -= 15;
+    risks.push("Proprietary or sensitive work poses security risks");
+  }
+  if (descLower.includes("repetitive") || descLower.includes("standardized")) {
+    score += 15;
+    benefits.push("Repetitive work is ideal for outsourcing");
+  }
+
+  score = Math.max(0, Math.min(100, score));
+
+  let recommendation = "";
+  if (score >= 75) {
+    recommendation = "Highly Recommended for Outsourcing";
+  } else if (score >= 50) {
+    recommendation = "Suitable with Proper Planning";
+  } else if (score >= 25) {
+    recommendation = "Proceed with Caution";
+  } else {
+    recommendation = "Not Recommended at This Time";
+  }
+
+  const actionItems = [
+    "Document all requirements and specifications clearly",
+    "Establish communication protocols and timelines",
+    "Create quality assurance and testing procedures",
+    "Plan knowledge transfer and handover process",
+    "Set up monitoring and reporting mechanisms",
+  ];
+
+  if (score < 40) {
+    actionItems.push("Consider strengthening internal capacity first");
+  }
+  if (risks.length > 2) {
+    actionItems.push("Address identified risks before outsourcing");
+  }
+
+  return {
+    readinessScore: score,
+    recommendation,
+    risks: risks.length > 0 ? risks : ["No significant risks identified"],
+    benefits:
+      benefits.length > 0 ? benefits : ["Cost efficiency and flexibility"],
+    actionItems,
+  };
+};

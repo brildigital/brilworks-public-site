@@ -3,22 +3,18 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import {
-  Calculator,
-  Clock,
-  DollarSign,
+  AlertCircle,
+  Briefcase,
+  CheckCircle2,
   Loader2,
   Rocket,
   Sparkles,
   TrendingUp,
-  Users,
 } from "lucide-react";
 import ToolHerosection from "./ToolHerosection";
 import ToolsPopupContactForm from "./ToolsPopupContactForm";
 import { hasSubmittedForm } from "../lib/commonFunction";
-import {
-  aiAppDevelopmentCalculater,
-  costParameters,
-} from "../lib/toolsCalculation";
+import { calculateOutsourceReadiness } from "../lib/toolsCalculation";
 
 const ToolHowToUse = dynamic(() => import("./ToolHowToUse"));
 const ToolFeatures = dynamic(() => import("./ToolFeatures"));
@@ -31,24 +27,24 @@ const OutsourcingReadinessChecker = () => {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const [formData, setFormData] = useState({
+    teamSize: "",
+    projectComplexity: "",
+    currentWorkload: "",
+    internalCapacity: "",
+    businessCritical: "",
+    projectType: "",
     description: "",
-    aiModel: "",
-    complexity: "",
-    platform: "",
-    features: [],
-    database: "",
-    deployment: "",
   });
   const [result, setResult] = useState();
 
   const isFormValid = () => {
     return (
-      formData?.aiModel &&
-      formData?.complexity &&
-      formData?.platform &&
-      formData?.features.length > 0 &&
-      formData?.database &&
-      formData?.deployment &&
+      formData?.teamSize &&
+      formData?.projectComplexity &&
+      formData?.currentWorkload &&
+      formData?.internalCapacity &&
+      formData?.businessCritical &&
+      formData?.projectType &&
       formData?.description
     );
   };
@@ -65,7 +61,7 @@ const OutsourcingReadinessChecker = () => {
 
     setIsCalculating(true);
 
-    const resultData = aiAppDevelopmentCalculater(formData);
+    const resultData = calculateOutsourceReadiness(formData);
 
     setTimeout(() => {
       setResult(resultData);
@@ -87,15 +83,6 @@ const OutsourcingReadinessChecker = () => {
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFeatureChange = (feature, checked) => {
-    setFormData((prev) => ({
-      ...prev,
-      features: checked
-        ? [...prev.features, feature]
-        : prev.features.filter((f) => f !== feature),
-    }));
   };
 
   useEffect(() => {
@@ -149,11 +136,11 @@ const OutsourcingReadinessChecker = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
-              Calculate Your AI App Cost
+              Calculate Your Outsource Readiness
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill in your project details below to get an instant cost
-              estimate.
+              Answer a few questions about your organization to receive a
+              comprehensive outsourcing readiness evaluation.
             </p>
           </div>
 
@@ -164,21 +151,18 @@ const OutsourcingReadinessChecker = () => {
                 Project Details
               </h2>
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">
-                  AI Model Type *
-                </label>
-
+                <label className="font-medium text-gray-700">Team Size *</label>
                 <select
-                  value={formData.aiModel}
-                  onChange={(e) => handleInputChange("aiModel", e.target.value)}
+                  value={formData.teamSize}
+                  onChange={(e) =>
+                    handleInputChange("teamSize", e.target.value)
+                  }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select AI Model</option>
-                  {costParameters.ai_model?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select team size...</option>
+                  <option value="small">Small (1-5 people)</option>
+                  <option value="medium">Medium (6-20 people)</option>
+                  <option value="large">Large (20+ people)</option>
                 </select>
               </div>
 
@@ -187,102 +171,100 @@ const OutsourcingReadinessChecker = () => {
                   Project Complexity *
                 </label>
                 <select
-                  value={formData?.complexity}
+                  value={formData?.projectComplexity}
                   onChange={(e) =>
-                    handleInputChange("complexity", e.target.value)
+                    handleInputChange("projectComplexity", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Complexity</option>
-                  {costParameters.complexity?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select complexity...</option>
+                  <option value="low">Low (maintenance, testing)</option>
+                  <option value="medium">Medium (routine development)</option>
+                  <option value="high">
+                    High (strategic, complex features)
+                  </option>
                 </select>
               </div>
               <div className="space-y-1">
-                <label className="font-medium text-gray-700">Platform *</label>
+                <label className="font-medium text-gray-700">
+                  Current Workload *
+                </label>
                 <select
-                  value={formData?.platform}
+                  value={formData?.currentWorkload}
                   onChange={(e) =>
-                    handleInputChange("platform", e.target.value)
+                    handleInputChange("currentWorkload", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Platform</option>
-                  {costParameters.platform?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select workload...</option>
+                  <option value="light">Light (under-utilized capacity)</option>
+                  <option value="moderate">Moderate (balanced load)</option>
+                  <option value="overloaded">
+                    Overloaded (urgent help needed)
+                  </option>
                 </select>
               </div>
 
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Additional Features
+                  Capacity to Manage Vendors
                 </label>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-1.5">
-                  {costParameters.features?.map((param) => (
-                    <label
-                      key={param.feature_name}
-                      className="flex items-center space-x-2"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={formData.features.includes(param.feature_name)}
-                        onChange={(e) =>
-                          handleFeatureChange(
-                            param.feature_name,
-                            e.target.checked
-                          )
-                        }
-                      />
-                      <span className="text-sm text-gray-700">
-                        {param.feature_name}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label className="font-medium text-gray-700">Database *</label>
                 <select
-                  value={formData.database}
+                  value={formData?.internalCapacity}
                   onChange={(e) =>
-                    handleInputChange("database", e.target.value)
+                    handleInputChange("internalCapacity", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Database</option>
-                  {costParameters.database?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select capacity...</option>
+                  <option value="manage">
+                    Easy to manage (dedicated staff)
+                  </option>
+                  <option value="challenging">
+                    Challenging (limited resources)
+                  </option>
+                  <option value="impossible">
+                    Impossible (no oversight available)
+                  </option>
+                </select>
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-medium text-gray-700">
+                  Business Criticality *
+                </label>
+                <select
+                  value={formData.businessCritical}
+                  onChange={(e) =>
+                    handleInputChange("businessCritical", e.target.value)
+                  }
+                  className="w-full border rounded-lg p-3 bg-white"
+                >
+                  <option value="">Select criticality...</option>
+                  <option value="low">Low (non-critical)</option>
+                  <option value="medium">
+                    Medium (important but not core)
+                  </option>
+                  <option value="high">High (business-critical)</option>
                 </select>
               </div>
 
               {/* Timeline */}
               <div className="space-y-1">
                 <label className="font-medium text-gray-700">
-                  Deployment *
+                  Project Type *
                 </label>
                 <select
-                  value={formData.deployment}
+                  value={formData.projectType}
                   onChange={(e) =>
-                    handleInputChange("deployment", e.target.value)
+                    handleInputChange("projectType", e.target.value)
                   }
                   className="w-full border rounded-lg p-3 bg-white"
                 >
-                  <option value="">Select Deployment</option>
-                  {costParameters.deployment?.map((param) => (
-                    <option key={param.feature_name} value={param.feature_name}>
-                      {param.feature_name} - {param.description}
-                    </option>
-                  ))}
+                  <option value="">Select project type...</option>
+                  <option value="maintenance">Maintenance & Support</option>
+                  <option value="development">New Development</option>
+                  <option value="research">Research & Innovation</option>
                 </select>
               </div>
 
@@ -296,7 +278,7 @@ const OutsourcingReadinessChecker = () => {
                   onChange={(e) =>
                     handleInputChange("description", e.target.value)
                   }
-                  placeholder="Describe your AI application idea, features, and goals.."
+                  placeholder="Describe your project, concerns, documentation status, timeline, and any sensitive data considerations..."
                   rows={3}
                   className="w-full border rounded-lg p-3 bg-white"
                 />
@@ -315,8 +297,8 @@ const OutsourcingReadinessChecker = () => {
                   </>
                 ) : (
                   <>
-                    <Calculator className="mr-2 h-5 w-5" />
-                    Calculate
+                    <Briefcase className="mr-2 h-5 w-5" />
+                    Assess Readiness
                   </>
                 )}
               </button>
@@ -326,79 +308,104 @@ const OutsourcingReadinessChecker = () => {
             {result && hasVisited ? (
               <div className="popup bg-white rounded-2xl border shadow-lg p-8">
                 <h2 className="text-center text-2xl font-semibold mb-4">
-                  Cost Estimate
+                  Assessment Result
                 </h2>
-                <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl p-4 text-white">
-                  <div className="space-y-4">
-                    <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20 flex items-center justify-center flex-col">
-                      <div className="text-sm opacity-90 mb-2">
-                        Total Estimated Cost
+                <div className="space-y-4">
+                  <div className="text-center pb-4 border-b border-slate-200">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-2.5 shadow-lg">
+                      <CheckCircle2 className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                      {result.recommendation}
+                    </h3>
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="text-sm text-slate-600">
+                        Readiness Score:
                       </div>
-                      <div className="text-5xl font-bold mb-2">
-                        ${result.totalCost.toLocaleString()}
-                      </div>
-                      <div className="text-sm opacity-80">
-                        Range: $
-                        {Math.round(result.totalCost * 0.8)?.toLocaleString()} -
-                        ${Math.round(result.totalCost * 1.2)?.toLocaleString()}
+                      <div className="text-2xl font-bold text-emerald-600">
+                        {result.readinessScore}%
                       </div>
                     </div>
+                    <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                        style={{ width: `${result.readinessScore}%` }}
+                      />
+                    </div>
+                  </div>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-lg">Cost Breakdown</h4>
-                      {Object.entries(result.breakdown).map(([key, value]) => (
-                        <div
-                          key={key}
-                          className="flex justify-between items-center bg-white/10 backdrop-blur rounded-lg py-1 px-2"
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                      <TrendingUp className="w-5 h-5 text-emerald-600" />
+                      <span>Benefits</span>
+                    </h4>
+                    <ul className="space-y-2">
+                      {result.benefits.map((benefit, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start space-x-1 text-slate-700"
                         >
-                          <span className="text-sm">{key}</span>
-                          <span className="font-semibold">
-                            ${value.toLocaleString()}
-                          </span>
-                        </div>
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <span>{benefit}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
+                  </div>
 
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/20">
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Clock className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTimeline}
-                        </div>
-                        <div className="text-xs opacity-80">Months</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <Users className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">
-                          {estimatedAIAppDevTeamSize}
-                        </div>
-                        <div className="text-xs opacity-80">Team Size</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="bg-white/10 backdrop-blur rounded-lg p-4 mb-2">
-                          <TrendingUp className="w-6 h-6 mx-auto" />
-                        </div>
-                        <div className="text-2xl font-bold">High</div>
-                        <div className="text-xs opacity-80">ROI</div>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                      <AlertCircle className="w-5 h-5 text-amber-600" />
+                      <span>Key Risks</span>
+                    </h4>
+                    <ul className="space-y-2">
+                      {result.risks.map((risk, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start space-x-1 text-slate-700"
+                        >
+                          <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                          <span>{risk}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                      <span>Next Steps</span>
+                    </h4>
+                    <ol className="space-y-1">
+                      {result.actionItems.map((item, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                            {idx + 1}
+                          </div>
+                          <span className="text-slate-700 pt-0.5">{item}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <p className="text-sm text-blue-900">
+                      <strong>Important:</strong> Use this assessment as a
+                      guide. Always validate findings with your leadership team
+                      and consult with outsourcing experts.
+                    </p>
                   </div>
                 </div>
               </div>
             ) : (
               <div className="bg-white rounded-2xl border shadow-lg p-8">
                 <h2 className="text-center text-2xl font-semibold mb-2">
-                  Cost Estimate
+                  Assessment Result
                 </h2>
                 <div className="text-center py-12">
                   <div className="flex flex-col items-center justify-center space-y-6">
                     <div className="relative my-12">
                       <div className="animate-pulse w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-12 h-12 text-white" />
+                        <Briefcase className="w-12 h-12 text-white" />
                       </div>
                       <div className="animate-ping absolute -top-6 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Sparkles className="w-3 h-3 text-yellow-800" />
@@ -409,11 +416,13 @@ const OutsourcingReadinessChecker = () => {
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-700">
-                      Ready to get estimate?
+                      Ready for Your Assessment?
                     </h3>
 
                     <p className="text-gray-600 max-w-sm">
-                      Fill in the form to see your cost estimate ✨
+                      Complete the form on the left to receive a comprehensive
+                      outsourcing readiness evaluation with detailed risk
+                      analysis and action items. ✨
                     </p>
 
                     <button
