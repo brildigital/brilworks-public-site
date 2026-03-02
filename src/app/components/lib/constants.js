@@ -878,19 +878,31 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/tools/app-development-cost-breakdown-calculator/",
-    lastmod: "2025-10-21T18:45:53.531Z",
+    lastmod: "2026-02-10T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/tools/saas-pricing-model-calculator/",
-    lastmod: "2025-10-21T18:45:53.531Z",
+    lastmod: "2026-02-10T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/tools/build-vs-buy-software-calculator/",
-    lastmod: "2025-10-21T18:45:53.531Z",
+    lastmod: "2026-02-11T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/tools/saas-metrics-calculator/",
-    lastmod: "2025-10-21T18:45:53.531Z",
+    lastmod: "2026-02-11T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/app-rebuild-vs-refactor-calculator/",
+    lastmod: "2026-02-20T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/mobile-app-monetization-strategy-selector/",
+    lastmod: "2026-02-20T18:45:53.531Z",
+  },
+  {
+    loc: "https://www.brilworks.com/tools/outsourcing-readiness-checker/",
+    lastmod: "2026-03-02T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
@@ -1270,49 +1282,94 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "How AI Is Reshaping Fintech: From Fraud Detection to Autonomous Financial Agents (2026)",
+    loc: "https://www.brilworks.com/blog/ai-in-fintech/",
+    lastmod: "2026-02-28T14:47:12.571Z",
+  },
+  {
+    name: "How Agentic AI Is Transforming Healthcare: From Diagnostics to Drug Discovery (2026)",
+    loc: "https://www.brilworks.com/blog/agentic-ai-healthcare/",
+    lastmod: "2026-02-28T14:34:32.050Z",
+  },
+  {
+    name: "How Agentic AI Is Revolutionizing Software Development: From Code Generation to Autonomous Engineering (2026)",
+    loc: "https://www.brilworks.com/blog/agentic-ai-software-development/",
+    lastmod: "2026-02-27T19:22:12.743Z",
+  },
+  {
+    name: "Cloud Migration Strategy: Framework And Checklist",
+    loc: "https://www.brilworks.com/blog/cloud-migration-strategy/",
+    lastmod: "2026-02-27T09:19:32.814Z",
+  },
+  {
+    name: "12 Prompt Engineering Best Practices for Reliable LLM Output",
+    loc: "https://www.brilworks.com/blog/prompt-engineering-best-practices/",
+    lastmod: "2026-02-26T06:33:27.584Z",
+  },
+  {
+    name: "11 Best Flutter App Development Companies To Hire in 2026",
+    loc: "https://www.brilworks.com/blog/flutter-app-development-company/",
+    lastmod: "2026-02-25T07:28:21.072Z",
+  },
+  {
+    name: "What Is OpenClaw? The AI Agent Gateway for Developers and Businesses",
+    loc: "https://www.brilworks.com/blog/what-is-openclaw/",
+    lastmod: "2026-02-25T07:09:33.470Z",
+  },
+  {
+    name: "AWS Cloud Migration Services: Tools, Strategy, And Costs",
+    loc: "https://www.brilworks.com/blog/aws-cloud-migration-services/",
+    lastmod: "2026-02-24T09:44:31.023Z",
+  },
+  {
+    name: "What Is UI UX Design? Differences, Process, And Career Paths",
+    loc: "https://www.brilworks.com/blog/what-is-ui-ux-design/",
+    lastmod: "2026-02-23T07:38:27.259Z",
+  },
+  {
     name: "Custom Mobile App Development Services: Scope, Process, Cost",
     loc: "https://www.brilworks.com/blog/custom-mobile-app-development-services/",
-    lastmod: "2026-02-20T07:17:00.312Z",
+    lastmod: "2026-02-23T08:57:17.989Z",
   },
   {
     name: "Apple Human Interface Guidelines: Best Practices & UI Kits",
     loc: "https://www.brilworks.com/blog/apple-human-interface-guidelines/",
-    lastmod: "2026-02-19T06:58:31.206Z",
+    lastmod: "2026-02-23T09:06:22.961Z",
   },
   {
     name: "7 Best Usability Testing Services for Websites & Apps (2026)",
     loc: "https://www.brilworks.com/blog/usability-testing-services/",
-    lastmod: "2026-02-18T10:27:58.780Z",
+    lastmod: "2026-02-23T08:56:18.000Z",
   },
   {
     name: "IBM Carbon Design System: Principles, Figma, And React Docs",
     loc: "https://www.brilworks.com/blog/ibm-carbon-design-system/",
-    lastmod: "2026-02-17T06:57:14.924Z",
+    lastmod: "2026-02-23T09:05:22.097Z",
   },
   {
     name: "Cloud Migration Consultant: Role, Benefits, And Hiring Tips",
     loc: "https://www.brilworks.com/blog/cloud-migration-consultant/",
-    lastmod: "2026-02-16T07:08:42.021Z",
+    lastmod: "2026-02-25T10:12:55.014Z",
   },
   {
     name: "Usability Testing Methods: 17 Types And When To Use Each",
     loc: "https://www.brilworks.com/blog/usability-testing-methods/",
-    lastmod: "2026-02-13T07:45:32.111Z",
+    lastmod: "2026-02-25T10:10:45.913Z",
   },
   {
     name: "MVP Development Services: What They Include and Cost",
     loc: "https://www.brilworks.com/blog/mvp-development-services/",
-    lastmod: "2026-02-13T06:51:24.862Z",
+    lastmod: "2026-02-25T10:07:18.924Z",
   },
   {
     name: "Generative AI Development Company: Services & How To Choose",
     loc: "https://www.brilworks.com/blog/generative-ai-development-company/",
-    lastmod: "2026-02-11T06:39:07.592Z",
+    lastmod: "2026-02-25T10:05:10.266Z",
   },
   {
     name: "AWS Cloud Adoption Framework: Perspectives, Phases & Use",
     loc: "https://www.brilworks.com/blog/aws-cloud-adoption-framework/",
-    lastmod: "2026-02-10T06:55:53.974Z",
+    lastmod: "2026-02-25T10:03:20.472Z",
   },
   {
     name: "AI powered MVP Development vs Traditional Software MVP Approaches",
@@ -1605,9 +1662,9 @@ export const blogListStaticData = [
     lastmod: "2025-11-11T12:54:50.057Z",
   },
   {
-    name: "What Is Vibe Coding (And Why It’s Changing How Leaders Build Tech)",
+    name: "What Is Vibe Coding? How It Differs from Traditional Software Engineering",
     loc: "https://www.brilworks.com/blog/what-is-vibe-coding/",
-    lastmod: "2026-02-20T16:18:36.328Z",
+    lastmod: "2026-02-23T11:49:46.798Z",
   },
   {
     name: "The Hidden Costs of Outsourcing Mobile App Development and How to Minimize Them",
