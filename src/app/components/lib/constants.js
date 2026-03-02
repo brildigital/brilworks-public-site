@@ -885,12 +885,16 @@ export const sitemapData = [
     lastmod: "2026-02-10T18:45:53.531Z",
   },
   {
+    loc: "https://www.brilworks.com/tools/ai-app-development-cost-calculator/",
+    lastmod: "2026-02-11T18:45:53.531Z",
+  },
+  {
     loc: "https://www.brilworks.com/tools/build-vs-buy-software-calculator/",
     lastmod: "2026-02-11T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/tools/saas-metrics-calculator/",
-    lastmod: "2026-02-11T18:45:53.531Z",
+    lastmod: "2026-02-12T18:45:53.531Z",
   },
   {
     loc: "https://www.brilworks.com/tools/app-rebuild-vs-refactor-calculator/",
