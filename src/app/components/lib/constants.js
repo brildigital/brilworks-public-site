@@ -1286,19 +1286,29 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "what-is-mobile-app-development",
+    loc: "https://www.brilworks.com/blog/what-is-mobile-app-development/",
+    lastmod: "2026-03-03T09:05:22.632Z",
+  },
+  {
+    name: "5 Trusted Places To Hire iOS App Developer Online in 2026",
+    loc: "https://www.brilworks.com/blog/hire-ios-app-developer/",
+    lastmod: "2026-03-02T07:32:40.956Z",
+  },
+  {
     name: "How AI Is Reshaping Fintech: From Fraud Detection to Autonomous Financial Agents (2026)",
     loc: "https://www.brilworks.com/blog/ai-in-fintech/",
-    lastmod: "2026-02-28T14:47:12.571Z",
+    lastmod: "2026-03-02T07:17:09.612Z",
   },
   {
     name: "How Agentic AI Is Transforming Healthcare: From Diagnostics to Drug Discovery (2026)",
     loc: "https://www.brilworks.com/blog/agentic-ai-healthcare/",
-    lastmod: "2026-02-28T14:34:32.050Z",
+    lastmod: "2026-03-02T07:15:49.486Z",
   },
   {
     name: "How Agentic AI Is Revolutionizing Software Development: From Code Generation to Autonomous Engineering (2026)",
     loc: "https://www.brilworks.com/blog/agentic-ai-software-development/",
-    lastmod: "2026-02-27T19:22:12.743Z",
+    lastmod: "2026-03-02T07:14:11.479Z",
   },
   {
     name: "Cloud Migration Strategy: Framework And Checklist",
