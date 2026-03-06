@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/pin-signap-banner-image.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/pin-signap-banner-image.png`,
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "/images/pin-signap-banner-image.png",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/pin-signap-banner-image.png`,
       },
     ],
     site: "@_Brilworks",

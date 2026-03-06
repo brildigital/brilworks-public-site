@@ -42,6 +42,7 @@ import {
   getStatusColor,
   markFormSubmitted,
 } from "../lib/commonFunction";
+import { formatCurrencyForCostBreakdown } from "../lib/toolsCalculation";
 
 const ToolsPopupContactForm = ({
   open,
@@ -197,6 +198,18 @@ const ToolsPopupContactForm = ({
   };
 
   const TitleIcon = TITLE_ICON_MAP[pathname]?.icon;
+
+  const estimatedAIAppDevTimeline =
+    result?.totalCost > 0 ? Math.ceil(result?.totalCost / 5000) : 0;
+  const estimatedAIAppDevTeamSize =
+    result?.totalCost > 30000
+      ? "4-6"
+      : result?.totalCost > 15000
+        ? "2-4"
+        : "1-2";
+
+  const saasPricingModelAnnualRevenue = result?.monthlyRevenue * 12;
+  const saasPricingModelChurnImpact = Math.round(result?.monthlyRevenue * 0.05);
 
   const CloseBtn = ({ extraClass = "" }) => (
     <button
@@ -896,7 +909,7 @@ const ToolsPopupContactForm = ({
             <div className="text-center">
               <div
                 className={`inline-block px-3 py-1 rounded-full text-base font-semibold border-2 ${getStatusColor(
-                  result.profitabilityStatus,
+                  result.profitabilityStatus
                 )}`}
               >
                 {result.profitabilityStatus} Profitability
@@ -1678,7 +1691,7 @@ const ToolsPopupContactForm = ({
               >
                 <span
                   className={`text-2xl font-bold ${getScoreColor(
-                    result.overallScore,
+                    result.overallScore
                   )}`}
                 >
                   {result.grade}
@@ -1691,7 +1704,7 @@ const ToolsPopupContactForm = ({
                 <h4 className="font-semibold text-gray-900">Overall Score</h4>
                 <span
                   className={`text-3xl font-bold ${getScoreColor(
-                    result.overallScore,
+                    result.overallScore
                   )}`}
                 >
                   {result.overallScore}/100
@@ -2087,6 +2100,886 @@ const ToolsPopupContactForm = ({
             <pre className="whitespace-pre-wrap font-mono text-sm text-gray-800 leading-relaxed text-left">
               {result}
             </pre>
+          </div>
+        );
+      case "/tools/app-development-cost-breakdown-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-4">
+            <h3 className="text-2xl font-bold text-gray-900">
+              Assessment Results
+            </h3>
+            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-5 text-white shadow-xl">
+              <div className="flex items-center justify-center mb-4">
+                <div>
+                  <p className="text-blue-100 mb-2">Estimated Total Cost</p>
+                  <h3 className="text-3xl sm:text-4xl font-bold">
+                    {formatCurrencyForCostBreakdown(result.total)}
+                  </h3>
+                  <p className="text-blue-100 mt-2">
+                    Range: {formatCurrencyForCostBreakdown(result.minCost)} -{" "}
+                    {formatCurrencyForCostBreakdown(result.maxCost)}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2">
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <Clock className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    {result.timeline}
+                  </p>
+                  <p className="text-sm text-blue-200">Timeline</p>
+                </div>
+
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <Users className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    {result.teamSize}
+                  </p>
+                  <p className="text-sm text-blue-200">Team Size</p>
+                </div>
+
+                <div className="bg-white/10 flex flex-col items-start backdrop-blur-sm rounded-lg p-2">
+                  <TrendingUp className="w-5 h-5 mb-1 text-blue-200" />
+                  <p className="text-xl font-bold text-start">
+                    ${result.hourlyRate}
+                  </p>
+                  <p className="text-sm text-blue-200">Hourly Rate</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                Cost Breakdown by Phase
+              </h4>
+
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                {Object.entries(result.phases).map(([phase, cost]) => {
+                  const percentage = (cost / result.total) * 100;
+                  return (
+                    <div key={phase}>
+                      <div className="flex justify-between mb-2">
+                        <span className="font-medium text-gray-700 capitalize">
+                          {phase.replace(/([A-Z])/g, " $1").trim()}
+                        </span>
+                        <span className="font-bold text-gray-900">
+                          {formatCurrencyForCostBreakdown(cost)}
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div
+                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-full rounded-full transition-all duration-500"
+                          style={{ width: `${percentage}%` }}
+                        ></div>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {percentage.toFixed(1)}% of total
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/ai-app-development-cost-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-4 text-black">
+            <h3 className="text-2xl font-bold text-gray-900">Estimate Cost</h3>
+            <div className="space-y-4">
+              <div className="rounded-xl p-6 bg-gradient-to-br from-blue-600 to-teal-600 shadow-xl text-white">
+                <div className="text-sm mb-2">Total Estimated Cost</div>
+                <div className="text-5xl font-bold  mb-2">
+                  ${result.totalCost.toLocaleString()}
+                </div>
+                <div className="text-sm opacity-80">
+                  Range: ${Math.round(result.totalCost * 0.8)?.toLocaleString()}{" "}
+                  - ${Math.round(result.totalCost * 1.2)?.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="shadow-xl border rounded-xl p-4">
+                <h4 className="font-semibold text-lg">Cost Breakdown</h4>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {Object.entries(result.breakdown).map(([key, value]) => (
+                    <div
+                      key={key}
+                      className="flex justify-between items-center bg-gray-100 rounded-lg py-1 px-2"
+                    >
+                      <span className="text-sm">{key}</span>
+                      <span className="font-semibold">
+                        ${value.toLocaleString()}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 border-t border-white/20">
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <Clock className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">
+                    {estimatedAIAppDevTimeline}
+                  </div>
+                  <div className="text-xs opacity-80">Months</div>
+                </div>
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <Users className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">
+                    {estimatedAIAppDevTeamSize}
+                  </div>
+                  <div className="text-xs opacity-80">Team Size</div>
+                </div>
+                <div className="border rounded-lg flex items-center justify-center flex-col gap-1.5 py-2">
+                  <TrendingUp className="w-6 h-6 mx-auto" />
+
+                  <div className="text-2xl font-bold">High</div>
+                  <div className="text-xs opacity-80">ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/saas-pricing-model-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Estimate Cost
+            </h3>
+
+            <div className="flex flex-col gap-3 bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl p-4 text-white">
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-2">
+                  Monthly Revenue (Estimate)
+                </div>
+                <div className="text-5xl font-bold mb-2">
+                  ${result?.monthlyRevenue.toLocaleString()}
+                </div>
+                <div className="text-sm opacity-80">
+                  Annually: ${saasPricingModelAnnualRevenue.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-3">Revenue Metrics</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Monthly Revenue</span>
+                    <span className="font-semibold">
+                      ${result?.monthlyRevenue.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm opacity-80">
+                    <span>Annual Projection</span>
+                    <span>
+                      ${saasPricingModelAnnualRevenue.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm opacity-80">
+                    <span>5% Churn Impact</span>
+                    <span>
+                      -${saasPricingModelChurnImpact.toLocaleString()}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+                <div className="text-sm opacity-90 mb-3">Cost Breakdown</div>
+                <div className="space-y-2 text-sm">
+                  {Object.entries(result?.breakdown)
+                    .slice(0, 3)
+                    .map(([key, value]) => (
+                      <div
+                        key={key}
+                        className="flex justify-between items-center"
+                      >
+                        <span>{key}</span>
+                        <span className="font-semibold">
+                          {typeof value === "number"
+                            ? `$${value.toLocaleString()}`
+                            : JSON.stringify(value)}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/build-vs-buy-software-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Estimate Cost
+            </h3>
+
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl shadow-lg p-4 text-white">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold">Recommendation</h3>
+                  <TrendingUp className="w-6 h-6" />
+                </div>
+                <p className="text-left text-4xl font-bold !mb-2">
+                  {result.recommendation}
+                </p>
+                <p className="text-left text-emerald-100">
+                  Based on comprehensive cost analysis
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-lg">
+                  <p className="text-sm font-semibold text-gray-600 mb-2">
+                    Build Total
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.buildCosts.total)}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">Year 1 cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-lg">
+                  <p className="text-sm font-semibold text-gray-600 mb-2">
+                    Buy 5-Year Total
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.buyCosts.total5Year)}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Total ownership cost
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-lg">
+                <h4 className="text-left font-bold text-xl text-gray-900 mb-4">
+                  Cost Breakdown
+                </h4>
+                <div className="space-y-2">
+                  {result.breakdown.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="text-left pb-2 border-b border-gray-100 last:border-0"
+                    >
+                      <p className="font-semibold text-gray-800 mb-2">
+                        {item.category}
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-600">
+                            Build:{" "}
+                            {formatCurrencyForCostBreakdown(item.buildCost)}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-gray-600">
+                            Buy: {formatCurrencyForCostBreakdown(item.buyCost)}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {result.keywords.length > 0 && (
+                <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
+                  <p className="text-sm font-semibold text-emerald-900 mb-3">
+                    Detected Keywords
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {result.keywords.map((keyword, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-emerald-200 text-emerald-800 rounded-full text-xs font-medium"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      case "/tools/build-vs-buy-software-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Assessment Result
+            </h3>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-xs font-semibold text-purple-700 mb-1">
+                    MRR
+                  </p>
+                  <p className="text-2xl font-bold text-purple-900">
+                    {formatCurrencyForCostBreakdown(result.mrr)}
+                  </p>
+                  <p className="text-xs text-purple-700 mt-2">
+                    Monthly Recurring
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 border border-pink-200">
+                  <p className="text-xs font-semibold text-pink-700 mb-1">
+                    ARR
+                  </p>
+                  <p className="text-2xl font-bold text-pink-900">
+                    {formatCurrencyForCostBreakdown(result.arr)}
+                  </p>
+                  <p className="text-xs text-pink-700 mt-2">Annual Recurring</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    CAC
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.cac)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Acquisition Cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.ltv)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Lifetime Value</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV:CAC Ratio
+                  </p>
+                  <p className="text-2xl font-bold text-purple-600">
+                    {result.ltcRatio}x
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Healthy: 3x+</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Payback Period
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.cacPaybackPeriod}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">months</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Retention Rate
+                  </p>
+                  <p className="text-2xl font-bold text-green-600">
+                    {result.customerRetentionRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Growth Rate
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.monthlyGrowthRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {result.insights.map((insight, idx) => (
+                  <div
+                    key={idx}
+                    className={`rounded-xl p-4 border flex gap-3 ${getStatusColor(insight.status)}`}
+                  >
+                    <div className="flex-shrink-0">
+                      <span
+                        className={`flex items-center justify-center w-6 h-6 rounded-full font-bold text-sm ${
+                          insight.status === "good"
+                            ? "bg-green-500 text-white"
+                            : insight.status === "warning"
+                              ? "bg-yellow-500 text-white"
+                              : "bg-red-500 text-white"
+                        }`}
+                      >
+                        {getStatusIcon(insight.status)}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">
+                        {insight.title}
+                      </p>
+                      <p className="text-sm text-gray-700 mt-1">
+                        {insight.message}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {result.keywords.length > 0 && (
+                <div className="bg-purple-50 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-sm font-semibold text-purple-900 mb-3">
+                    Detected Keywords
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {result.keywords.map((keyword, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-xs font-medium"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      case "/tools/saas-metrics-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Assessment Result
+            </h3>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200">
+                  <p className="text-xs font-semibold text-purple-700 mb-1">
+                    MRR
+                  </p>
+                  <p className="text-2xl font-bold text-purple-900">
+                    {formatCurrencyForCostBreakdown(result.mrr)}
+                  </p>
+                  <p className="text-xs text-purple-700 mt-2">
+                    Monthly Recurring
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 border border-pink-200">
+                  <p className="text-xs font-semibold text-pink-700 mb-1">
+                    ARR
+                  </p>
+                  <p className="text-2xl font-bold text-pink-900">
+                    {formatCurrencyForCostBreakdown(result.arr)}
+                  </p>
+                  <p className="text-xs text-pink-700 mt-2">Annual Recurring</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    CAC
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.cac)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Acquisition Cost</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV
+                  </p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {formatCurrencyForCostBreakdown(result.ltv)}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Lifetime Value</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    LTV:CAC Ratio
+                  </p>
+                  <p className="text-2xl font-bold text-purple-600">
+                    {result.ltcRatio}x
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">Healthy: 3x+</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Payback Period
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.cacPaybackPeriod}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">months</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Retention Rate
+                  </p>
+                  <p className="text-2xl font-bold text-green-600">
+                    {result.customerRetentionRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                  <p className="text-xs font-semibold text-gray-600 mb-1">
+                    Growth Rate
+                  </p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {result.monthlyGrowthRate}%
+                  </p>
+                  <p className="text-xs text-gray-600 mt-2">monthly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/app-rebuild-vs-refactor-calculator/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full space-y-4">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Your Result
+              </h3>
+              <div className="px-4 py-2 bg-white rounded-lg shadow border">
+                <span className="text-sm text-gray-600">Complexity:</span>
+                <span className="ml-2 font-bold text-blue-600">
+                  {result?.complexityScore}/100
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm text-gray-600">Rebuild Cost</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  ${result?.rebuildCost.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-gray-600">Refactor Cost</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  ${result?.refactorCost.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm text-gray-600">Rebuild Time</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  {result?.rebuildTime} mo
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md border">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Clock className="w-5 h-5 text-green-600" />
+                  <span className="text-sm text-gray-600">Refactor Time</span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 text-left">
+                  {result?.refactorTime} mo
+                </div>
+              </div>
+            </div>
+
+            <div
+              className={`p-4 rounded-lg ${
+                result?.recommendation === "rebuild"
+                  ? "bg-blue-100 border-2 border-blue-300"
+                  : "bg-green-100 border-2 border-green-300"
+              }`}
+            >
+              <div className="flex items-start space-x-3">
+                <AlertCircle
+                  className={`w-6 h-6 mt-1 ${
+                    result?.recommendation === "rebuild"
+                      ? "text-blue-600"
+                      : "text-green-600"
+                  }`}
+                />
+                <div>
+                  <h4 className="font-bold text-gray-900 text-lg mb-2 text-left">
+                    Recommendation:{" "}
+                    <span
+                      className={
+                        result?.recommendation === "rebuild"
+                          ? "text-blue-600"
+                          : "text-green-600"
+                      }
+                    >
+                      {result?.recommendation === "rebuild"
+                        ? "Rebuild"
+                        : "Refactor"}
+                    </span>
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed text-left">
+                    {result?.recommendation === "rebuild"
+                      ? "Based on your complexity score and technology stack, a complete rebuild will provide better long-term value. While more expensive initially, you'll benefit from modern architecture and reduced technical debt."
+                      : "Refactoring is the most cost-effective approach for your application. You can modernize incrementally while maintaining existing functionality and minimizing risk."}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-md border">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-sm text-gray-600">
+                    Potential Savings
+                  </span>
+                  <div className="text-2xl font-bold text-green-600 mt-1 text-left">
+                    ${result?.savings.toLocaleString()}
+                  </div>
+                </div>
+                <TrendingUp className="w-8 h-8 text-green-600" />
+              </div>
+              <p className="text-sm text-gray-600 mt-2 text-left">
+                By choosing {result?.recommendation}
+              </p>
+            </div>
+          </div>
+        );
+      case "/tools/mobile-app-monetization-strategy-selector/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full bg-gradient-to-br from-slate-50 to-emerald-50 p-4 rounded-xl">
+            <div className="space-y-4">
+              <div className="text-center pb-6 border-b border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 shadow-lg">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                  {result.name}
+                </h3>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="text-sm text-slate-600">
+                    Confidence Score:
+                  </div>
+                  <div className="text-2xl font-bold text-emerald-600">
+                    {result.confidence}%
+                  </div>
+                </div>
+                <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                    style={{ width: `${result?.confidence}%` }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <Target className="w-5 h-5 text-blue-600" />
+                  <span>Why This Strategy?</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.reasons.map((reason, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-2 text-slate-700"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span>{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <Zap className="w-5 h-5 text-amber-600" />
+                  <span>Implementation Steps</span>
+                </h4>
+                <ol className="space-y-3">
+                  {result.implementation.map((step, idx) => (
+                    <li key={idx} className="flex items-start space-x-2">
+                      <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {idx + 1}
+                      </div>
+                      <span className="text-slate-700">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-900 text-left">
+                  <strong>Pro Tip:</strong> Consider A/B testing this strategy
+                  with a small user segment before full implementation to
+                  validate results.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      case "/tools/outsourcing-readiness-checker/":
+        return !showPrice ? (
+          <div className="relative w-96 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+            <span className="blur-md select-none text-5xl font-bold bg-gradient-to-r from-themeColor to-themeColor bg-clip-text text-transparent">
+              $ NaN NaN
+            </span>
+            <Lock className="absolute right-[50%] w-5 h-5 text-themeColor" />
+          </div>
+        ) : (
+          <div className="w-full bg-gradient-to-br from-slate-50 to-emerald-50 p-4 rounded-xl overflow-auto max-h-[50vh]">
+            <div className="space-y-4">
+              <div className="text-center pb-6 border-b border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 shadow-lg">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-2">
+                  {result.recommendation}
+                </h3>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="text-sm text-slate-600">Readiness Score:</div>
+                  <div className="text-2xl font-bold text-emerald-600">
+                    {result.readinessScore}%
+                  </div>
+                </div>
+                <div className="mt-4 bg-slate-200 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-emerald-500 to-emerald-600 h-full transition-all duration-1000 ease-out"
+                    style={{ width: `${result.readinessScore}%` }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <TrendingUp className="w-5 h-5 text-emerald-600" />
+                  <span>Benefits</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.benefits.map((benefit, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-1 text-slate-700"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <AlertCircle className="w-5 h-5 text-amber-600" />
+                  <span>Key Risks</span>
+                </h4>
+                <ul className="space-y-2">
+                  {result.risks.map((risk, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start space-x-1 text-slate-700"
+                    >
+                      <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                      <span>{risk}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-3 flex items-center space-x-2">
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                  <span>Next Steps</span>
+                </h4>
+                <ol className="space-y-3">
+                  {result.actionItems.map((item, idx) => (
+                    <li key={idx} className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {idx + 1}
+                      </div>
+                      <span className="text-slate-700 pt-0.5">{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <p className="text-sm text-blue-900">
+                  <strong>Important:</strong> Use this assessment as a guide.
+                  Always validate findings with your leadership team and consult
+                  with outsourcing experts.
+                </p>
+              </div>
+            </div>
           </div>
         );
 

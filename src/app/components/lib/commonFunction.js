@@ -405,3 +405,38 @@ export const isExternalLink = (href) => {
     !allowedDomains.some((domain) => href.includes(domain))
   );
 };
+
+export const getStatusColorForSaasMetric = (status) => {
+  switch (status) {
+    case "good":
+      return "bg-green-50 border-green-200";
+    case "warning":
+      return "bg-yellow-50 border-yellow-200";
+    case "critical":
+      return "bg-red-50 border-red-200";
+    default:
+      return "bg-gray-50 border-gray-200";
+  }
+};
+
+export const getStatusIconForSaasMetric = (status) => {
+  switch (status) {
+    case "good":
+      return "✓";
+    case "warning":
+      return "!";
+    case "critical":
+      return "✕";
+    default:
+      return "•";
+  }
+};
+
+export function getYouTubeThumbnail(url) {
+  if (!url) return "";
+  const regExp =
+    /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  const match = url.match(regExp);
+  const videoId = match && match[7].length === 11 ? match[7] : false;
+  return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : "";
+}

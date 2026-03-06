@@ -10,16 +10,16 @@ import { faReact, faPhp } from "@fortawesome/free-brands-svg-icons";
 import SolutionCostAndTimeLine from "./SolutionCostAndTimeLine";
 
 const MultipleKeyValueWithBG = dynamic(
-  () => import("../Common/MultipleKeyValueWithBG"),
+  () => import("../Common/MultipleKeyValueWithBG")
 );
 const MultipleCardInGrid = dynamic(
-  () => import("../Common/MultipleCardInGrid"),
+  () => import("../Common/MultipleCardInGrid")
 );
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
 const SolutionEngagementAndHowCanStart = dynamic(
-  () => import("./SolutionEngagementAndHowCanStart"),
+  () => import("./SolutionEngagementAndHowCanStart")
 );
 
 const ECommerceSolution = () => {

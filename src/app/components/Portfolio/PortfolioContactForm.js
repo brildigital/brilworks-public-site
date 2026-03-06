@@ -96,7 +96,7 @@ const PortfolioContactForm = ({
             token,
             previousPage,
           }),
-        },
+        }
       );
 
       if (response.ok) {

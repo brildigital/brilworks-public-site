@@ -269,6 +269,70 @@ const toolsData = [
     link: "/tools/software-proposal-generator/",
     tags: ["BUSINESS", "SALES", "OTHER"],
   },
+  {
+    title: "App Development Cost Breakdown Calculator",
+    description:
+      "Get a detailed breakdown of your app development cost based on features and complexity.",
+    bg: "bg-blue-200",
+    link: "/tools/app-development-cost-breakdown-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "AI App Development Cost Calculator",
+    description:
+      "Instantly estimate the cost of building your AI-powered mobile or web application.",
+    bg: "bg-violet-200",
+    link: "/tools/ai-app-development-cost-calculator/",
+    tags: ["SALES", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "SaaS Pricing Model Calculator",
+    description:
+      "Estimate SaaS revenue based on pricing tiers and user growth.",
+    bg: "bg-teal-200",
+    link: "/tools/saas-pricing-model-calculator/",
+    tags: ["SALES", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Build vs Buy Software Calculator",
+    description:
+      "Compare custom software development and SaaS costs instantly.",
+    bg: "bg-orange-200",
+    link: "/tools/build-vs-buy-software-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "SaaS Metrics Calculator",
+    description:
+      "Measure revenue performance and customer acquisition efficiency.",
+    bg: "bg-lime-200",
+    link: "/tools/saas-metrics-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "App Rebuild vs Refactor Calculator",
+    description:
+      "Analyze cost, complexity, and long-term scalability to decide whether rebuilding your app or refactoring your existing codebase is the smarter investment.",
+    bg: "bg-rose-200",
+    link: "/tools/app-rebuild-vs-refactor-calculator/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Mobile App Monetization Strategy Selector",
+    description:
+      "Identify the ideal revenue model for your app. Compare subscriptions, ads, freemium, and hybrid models to maximize profitability.",
+    bg: "bg-slate-200",
+    link: "/tools/mobile-app-monetization-strategy-selector/",
+    tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+  },
+  {
+    title: "Outsourcing Readiness Checker",
+    description:
+      "Take this quick assessment to discover whether your business is prepared for outsourcing. Get actionable insights in minutes.",
+    bg: "bg-cyan-100",
+    link: "/tools/outsourcing-readiness-checker/",
+    tags: ["BUSINESS", "SALES", "OTHER"],
+  },
 ];
 
 const Tools = () => {

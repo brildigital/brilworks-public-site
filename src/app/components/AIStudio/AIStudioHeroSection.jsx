@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import { ArrowRight, Lightbulb, Sparkles } from "lucide-react";
+import { generateVideoSchema } from "../lib/schemaCode";
+import VideoSchema from "../Common/VideoSchema";
 
 const AIStudioHeroSection = () => {
   const videoRef = useRef(null);
@@ -18,8 +20,17 @@ const AIStudioHeroSection = () => {
     }, 2000);
   }, []);
 
+  const videoSchema = generateVideoSchema({
+    name: "From Idea to MVP in Days, Not Months",
+    description:
+      "Get expert validation, MVP roadmap, and prototype for FREE. Only pay when you’re ready to build your production-ready app with white-glove support.",
+    thumbnailUrl: "/video-img-initial.png",
+    contentUrl: "/design-2.mp4",
+  });
+
   return (
     <>
+      <VideoSchema schema={videoSchema} />
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${

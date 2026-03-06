@@ -20,7 +20,7 @@ const MeetOurTeam = () => {
       imageSrc: "/images/v2/team-member2.webp",
     },
     {
-      name: "Dhaval Makwana",
+      name: "Dhaval Trivedi",
       role: "Project Manager",
       imageSrc: "/images/v2/team-member5.webp",
     },
