@@ -88,7 +88,7 @@
 }
 
 .home_header {
-  background: url("https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/8028e1d772_banner.jpg");
+  background: url("https://d14lhgoyljo1xt.cloudfront.net/assets/8028e1d772_banner.jpg");
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -260,7 +260,8 @@
       padding-bottom: 15px !important;
       border-style: solid;
       border-color: transparent;
-      background: linear-gradient(white, white) padding-box,
+      background:
+        linear-gradient(white, white) padding-box,
         linear-gradient(
             167.42deg,
             #007aeb -0.42%,
@@ -281,7 +282,8 @@
       color: white;
       &:focus {
         border-color: transparent;
-        background: linear-gradient(#081120, #081120) padding-box,
+        background:
+          linear-gradient(#081120, #081120) padding-box,
           linear-gradient(
               167.42deg,
               #007aeb -0.42%,
@@ -343,14 +345,14 @@
   position: relative;
 }
 .honors-card {
+  padding: 1px 1px 4px 1px;
   margin-bottom: 1rem;
   border-radius: 16px;
   border: 1px solid #80808040;
   transition: all 0.6s ease;
 }
 .honors-card:hover {
-  padding: 1px 1px 4px 1px;
-  border: none;
+  border-color: transparent;
   background: linear-gradient(
     150.51deg,
     #007aeb 12.91%,

@@ -1,8 +1,8 @@
+import { GEMINI_API_KEY } from "@/app/lib/enums";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const geminiAPIKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
 export async function analyzeDocument(pdfFile) {
-  const genAI = new GoogleGenerativeAI(geminiAPIKey);
+  const genAI = new GoogleGenerativeAI({ geminiAPIKey: GEMINI_API_KEY });
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   try {
@@ -35,7 +35,7 @@ export async function analyzeDocument(pdfFile) {
 }
 
 export async function askGemini(question, pdfFile) {
-  const genAI = new GoogleGenerativeAI(geminiAPIKey);
+  const genAI = new GoogleGenerativeAI({ geminiAPIKey: GEMINI_API_KEY });
   const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   try {

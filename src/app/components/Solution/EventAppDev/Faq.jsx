@@ -43,7 +43,7 @@ const Faq = () => {
   return (
     <section id="faq">
       <div className="max-w-7xl mx-auto main-section-padding-bottom">
-        <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-12">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
           Frequently Asked Questions
         </h2>
         <div className="slg:pt-10 md:pt-7.5 pt-5">

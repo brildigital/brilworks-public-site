@@ -9,6 +9,7 @@ import {
   Calculator,
   CheckCircle,
   CheckCircle2,
+  CheckSquare2,
   ClipboardList,
   Clock,
   Cloud,
@@ -22,7 +23,10 @@ import {
   Gauge,
   Layers,
   Lightbulb,
+  LineChart,
   ListChecks,
+  PenTool,
+  PieChart,
   Rocket,
   Search,
   Server,
@@ -982,6 +986,242 @@ const softwareProposalGeneratorSteps = {
     },
   ],
 };
+const calculateAppDevBreakdownCalculatorSteps = {
+  title: "How to Calculate Your App Development Cost",
+  description:
+    "Follow these simple steps to get an accurate estimate for your project.",
+  listData: [
+    {
+      title: "Define Requirements",
+      description:
+        "Select your app type, platform, and desired features from our comprehensive list.",
+      icon: ClipboardList,
+    },
+    {
+      title: "Customize Features",
+      description:
+        "Choose complexity level, design requirements, and additional functionalities.",
+      icon: Settings,
+    },
+    {
+      title: "Get Instant Estimate",
+      description:
+        "Our algorithm calculates accurate costs based on industry standards and market rates.",
+      icon: Calculator,
+    },
+    {
+      title: "Download Report",
+      description:
+        "Receive a detailed breakdown with timeline estimates and recommendations.",
+      icon: FileText,
+    },
+  ],
+};
+const aiAppDevCostCalculatorSteps = {
+  title: " How It Works",
+  description:
+    "Get your AI app cost estimate in four simple steps. No technical expertise required.",
+  listData: [
+    {
+      icon: FileText,
+      title: "Describe Your Project",
+      description:
+        "Tell us about your AI application idea, goals, and target audience.",
+    },
+    {
+      icon: Settings,
+      title: "Select Features",
+      description:
+        "Choose AI models, platforms, integrations, and complexity level.",
+    },
+    {
+      icon: Calculator,
+      title: "Get Instant Estimate",
+      description:
+        "Our algorithm calculates a detailed cost breakdown in real-time.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Review & Refine",
+      description:
+        "Adjust features and see how changes impact your total investment.",
+    },
+  ],
+};
+const saasPricingModelCalculatorSteps = {
+  title: "Find Your Pricing in 4 Steps",
+  description:
+    "Our streamlined process makes it easy to discover your optimal SaaS pricing strategy.",
+  listData: [
+    {
+      icon: PenTool,
+      title: "Describe Your SaaS",
+      description:
+        "Tell us about your product, target market, and current revenue or projections.",
+    },
+    {
+      icon: Layers,
+      title: "Define Your Strategy",
+      description:
+        "Choose pricing model type, user tiers, features, and support level.",
+    },
+    {
+      icon: LineChart,
+      title: "Analyze Market Data",
+      description:
+        "Our AI analyzes competitive landscape and market positioning.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Recommendations",
+      description:
+        "Receive optimal pricing strategy with revenue projections and insights.",
+    },
+  ],
+};
+const buildVsBuySoftwareCalculatorSteps = {
+  title: "How Our Calculator Works",
+  description:
+    "Follow our four-step process to make the perfect build versus buy decision for your business.",
+  listData: [
+    {
+      icon: FileText,
+      title: "Input Your Requirements",
+      description:
+        "Tell us about your software needs, team size, timeline, and specific features required.",
+    },
+    {
+      icon: BarChart3,
+      title: "Calculate Build Costs",
+      description:
+        "Our algorithm computes development, maintenance, and infrastructure costs based on complexity.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Compare Market Solutions",
+      description:
+        "We analyze similar SaaS solutions and off-the-shelf software in your category.",
+    },
+    {
+      icon: CheckSquare2,
+      title: "Get Your Recommendation",
+      description:
+        "Receive detailed analysis, ROI projections, and strategic recommendation for your decision.",
+    },
+  ],
+};
+const saasMetricsCalculatorSteps = {
+  title: "How to Calculate Your Metrics",
+  description:
+    "Follow our simple four-step process to understand and optimize your SaaS business metrics.",
+  listData: [
+    {
+      icon: DollarSign,
+      title: "Enter Revenue Data",
+      description:
+        "Input your monthly recurring revenue, annual revenue, customer acquisition costs, and pricing model.",
+    },
+    {
+      icon: BarChart3,
+      title: "Define Key Metrics",
+      description:
+        "Provide customer data: total customers, churn rate, customer lifetime value expectations, and growth targets.",
+    },
+    {
+      icon: PieChart,
+      title: "Calculate Metrics",
+      description:
+        "Our engine computes MRR, ARR, CAC, LTV, CAC payback period, and growth rates from your data.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Get Insights",
+      description:
+        "Receive actionable recommendations to optimize metrics and achieve sustainable growth.",
+    },
+  ],
+};
+const appRebuildRefactorCalculatorSteps = {
+  title: "How to Use the Calculator",
+  description:
+    "Follow these simple steps to get accurate cost estimates and recommendations for your application modernization project",
+  listData: [
+    {
+      icon: ClipboardList,
+      title: "Provide App Details",
+      description:
+        "Enter information about your application size, technology stack, and complexity level.",
+    },
+    {
+      icon: Calculator,
+      title: "Describe Requirements",
+      description:
+        "Add a detailed description with keywords about features, integrations, and technical debt.",
+    },
+    {
+      icon: BarChart3,
+      title: "Review Analysis",
+      description:
+        "Get instant cost estimates, timelines, and recommendations for both rebuild and refactor options.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Make Decision",
+      description:
+        "Compare results side-by-side and choose the best approach for your business goals.",
+    },
+  ],
+};
+const mobileAppMonetizationStrategySelectorSteps = {
+  title: "How It Works",
+  description:
+    "Get your personalized monetization strategy in three simple steps",
+  listData: [
+    {
+      icon: FileText,
+      title: "Enter App Details",
+      description:
+        "Provide information about your app category, target audience, user base size, and engagement levels. The more detailed, the better the recommendation.",
+    },
+    {
+      icon: Zap,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs against thousands of successful apps, industry benchmarks, and current market trends to identify the optimal strategy.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Strategy",
+      description:
+        "Receive a detailed monetization strategy with confidence scores, reasoning, and actionable implementation steps to maximize your app revenue.",
+    },
+  ],
+};
+const outsourcingReadinessCheckerSteps = {
+  title: "How It Works",
+  description:
+    "Get your personalized monetization strategy in three simple steps",
+  listData: [
+    {
+      icon: FileText,
+      title: "Enter App Details",
+      description:
+        "Provide information about your app category, target audience, user base size, and engagement levels. The more detailed, the better the recommendation.",
+    },
+    {
+      icon: Zap,
+      title: "AI Analysis",
+      description:
+        "Our algorithm analyzes your inputs against thousands of successful apps, industry benchmarks, and current market trends to identify the optimal strategy.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Get Strategy",
+      description:
+        "Receive a detailed monetization strategy with confidence scores, reasoning, and actionable implementation steps to maximize your app revenue.",
+    },
+  ],
+};
 
 const ToolHowToUse = () => {
   const pathname = usePathname();
@@ -1029,6 +1269,18 @@ const ToolHowToUse = () => {
     "/tools/performance-benchmarking-tool/": performanceBenchmarkingToolSteps,
     "/tools/scope-of-work-generator/": scopeOfWorkGeneratorSteps,
     "/tools/software-proposal-generator/": softwareProposalGeneratorSteps,
+    "/tools/app-development-cost-breakdown-calculator/":
+      calculateAppDevBreakdownCalculatorSteps,
+    "/tools/ai-app-development-cost-calculator/": aiAppDevCostCalculatorSteps,
+    "/tools/saas-pricing-model-calculator/": saasPricingModelCalculatorSteps,
+    "/tools/build-vs-buy-software-calculator/":
+      buildVsBuySoftwareCalculatorSteps,
+    "/tools/saas-metrics-calculator/": saasMetricsCalculatorSteps,
+    "/tools/app-rebuild-vs-refactor-calculator/":
+      appRebuildRefactorCalculatorSteps,
+    "/tools/mobile-app-monetization-strategy-selector/":
+      mobileAppMonetizationStrategySelectorSteps,
+    "/tools/outsourcing-readiness-checker/": outsourcingReadinessCheckerSteps,
   };
 
   const stepsData = showDataBasedOnPathname[pathname] || {};

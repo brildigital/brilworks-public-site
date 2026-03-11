@@ -43,7 +43,7 @@ const Process = () => {
     <section id="process">
       <div className="max-w-7xl mx-auto main-section-padding">
         <div className="text-center !mb-8 md:!mb-12 slg:!mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900">
+          <h2 className="text-3xl font-bold text-gray-900">
             Our Event App Development Process
           </h2>
           <p className="!mt-4 text-xl text-gray-500">

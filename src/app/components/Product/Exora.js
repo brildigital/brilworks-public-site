@@ -119,7 +119,7 @@ const Exora = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-green-300 to-green-400 rounded-3xl transform rotate-3 opacity-20"></div>
             <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
               <Image
-                src="https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp"
+                src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`}
                 alt="Exora App Interface"
                 width={610}
                 height={430}
@@ -395,7 +395,7 @@ const Exora = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <Image
-                src="https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-mockup-1-1762506623761.webp"
+                src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-mockup-1-1762506623761.webp`}
                 alt="Exora app"
                 width="800"
                 height="400"

@@ -19,7 +19,9 @@ import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 import { useState } from "react";
 import Cal from "@calcom/embed-react";
-import { scrollToSection } from "../lib/commonFunction";
+import { scrollToSection, getYouTubeThumbnail } from "../lib/commonFunction";
+import { generateVideoSchema } from "../lib/schemaCode";
+import VideoSchema from "../Common/VideoSchema";
 
 export default function PrebuiltSolutionsPage() {
   const [schedule, setSchedule] = useState(false);
@@ -363,6 +365,20 @@ export default function PrebuiltSolutionsPage() {
               each designed for rapid deployment and customization
             </p>
           </div>
+
+          {solutions.map((solution, index) => {
+            const videoSchema = solution.videoLink
+              ? generateVideoSchema({
+                  name: solution.title,
+                  description: solution.description,
+                  thumbnailUrl: getYouTubeThumbnail(solution.videoLink),
+                  embedUrl: solution.videoLink,
+                })
+              : null;
+            return videoSchema ? (
+              <VideoSchema key={`schema-${index}`} schema={videoSchema} />
+            ) : null;
+          })}
 
           <div className="grid lg:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (

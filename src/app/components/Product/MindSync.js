@@ -78,7 +78,7 @@ const MindSync = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-300 to-pink-300 rounded-3xl transform rotate-3"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
                 <Image
-                  src="https://d11qzsb0ksp6iz.cloudfront.net/assets/mindsync-mockup-1759756960049.webp"
+                  src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mindsync-mockup-1759756960049.webp`}
                   alt="Mynd Sync App"
                   width={610}
                   height={430}
@@ -413,7 +413,7 @@ const MindSync = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <Image
-                src="https://d11qzsb0ksp6iz.cloudfront.net/assets/mind-sync-mockup-1762509215838.webp"
+                src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mind-sync-mockup-1762509215838.webp`}
                 alt="Mind Sync app"
                 width="800"
                 height="400"

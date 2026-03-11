@@ -27,15 +27,6 @@ const BusinessDevelopmentService = () => {
       imageAlt: "Automation img",
     },
     {
-      title: "Advanced Data Integration & Cleansing",
-      value: "value-1",
-      description:
-        "Our experts ensure your data is accurate, consistent, and ready for analysis through cutting-edge integration and cleansing techniques.",
-      imageSrc:
-        "https://brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com/assets/f19d442ca9_bi-3.webp",
-      imageAlt: "Seamless Integrations img",
-    },
-    {
       title: "Self-Service BI & Data Governance",
       value: "value-1",
       description:

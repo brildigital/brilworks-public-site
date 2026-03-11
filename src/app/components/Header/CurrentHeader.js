@@ -43,12 +43,21 @@ const CurrentHeader = () => {
     "/kindcircle-privacy-policy/",
     "/elara-privacy-policy/",
     "/kindcircle-terms-and-condition/",
+    "/lifepilot-privacy-policy/",
+    "/mr-brush-privacy-policy/",
     "/x/product-listing/",
   ];
 
   const showHeader =
     subpaths.some((base) => pathname?.startsWith(base) && pathname !== base) ||
     specialHeaderPages.includes(pathname || "");
+
+  // Here we have a special case to hide header on Spine Recovery Pro product page
+  if (
+    pathname.includes("/x/product-listing/spine-recovery-pro/") ||
+    pathname.includes("/i-remi")
+  )
+    return null;
 
   return showHeader &&
     pathname !== "/gist/" &&

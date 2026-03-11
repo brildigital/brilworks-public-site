@@ -38,7 +38,7 @@ const Blog = () => {
         currentPage,
         ITEMS_PER_PAGE,
         blogCategory,
-        searchQuery
+        searchQuery,
       );
       setBlogDataPerPage(blogData.storyData);
       setTotalBlog(blogData.totalData);
@@ -56,7 +56,7 @@ const Blog = () => {
         // fetchAllBlogData();
         window.scrollTo({ top: 0 });
       },
-      searchQuery ? 1000 : 0
+      searchQuery ? 1000 : 0,
     );
 
     return () => clearTimeout(delayDebounceFn);
@@ -329,8 +329,8 @@ const Blog = () => {
                       currentPage === page
                         ? "bg-themeColor text-white"
                         : page === "..."
-                        ? "border-none cursor-default text-colorBlack"
-                        : "text-colorBlack hover:bg-sectionBG"
+                          ? "border-none cursor-default text-colorBlack"
+                          : "text-colorBlack hover:bg-sectionBG"
                     }`}
                     onClick={() =>
                       typeof page === "number" && setCurrentPage(page)
@@ -338,7 +338,7 @@ const Blog = () => {
                   >
                     {page}
                   </li>
-                )
+                ),
               )}
 
               {/* Next */}

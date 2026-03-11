@@ -83,10 +83,10 @@ const ClientReviews = () => {
   ];
 
   const videoSources = [
-    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/david_ceo_feedback-1748006275337.mp4",
-    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/liz_feedback-1748006294976.mp4",
-    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/bisi_trim-1748006280953.mp4",
-    "https://brilworks-website-asset.s3.ap-south-1.amazonaws.com/public/edwin_feedback-1748006271641.mp4",
+    `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/david_ceo_feedback-1765886900508.mp4`,
+    `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/liz_feedback-1765886991856.mp4`,
+    `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/bisi_trim-1765886953943.mp4`,
+    `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/edwin_feedback-1765886937451.mp4`,
   ];
 
   const videoSrc = videoSources[reviewIndex];

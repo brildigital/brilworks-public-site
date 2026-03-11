@@ -1,6 +1,5 @@
+import { GEMINI_API_KEY } from "@/app/lib/enums";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const geminiAPIKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
 
 // Google Gemini API integration
 // Note: You'll need to set up your API key in environment variables
@@ -25,7 +24,6 @@ const geminiAPIKey = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
 //   complianceScore: number;
 // }
 
-const GEMINI_API_KEY = "AIzaSyB1tAZLRo3HGubPCZ1IkpyRuEgqFMhXqzg";
 const GEMINI_API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
@@ -335,7 +333,7 @@ export async function extractTextFromFile(file) {
     );
 
     // Common Gemini setup
-    const genAI = new GoogleGenerativeAI(geminiAPIKey);
+    const genAI = new GoogleGenerativeAI({ geminiAPIKey: GEMINI_API_KEY });
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Common contract review prompt

@@ -12,7 +12,7 @@ const EbookPopup = ({ open, handleClose }) => {
   const ebookData = {
     title: (
       <>
-        How To Launch an <br className="" />
+        How To Launch an <br />
         AI MVP in 48 Hours
       </>
     ),

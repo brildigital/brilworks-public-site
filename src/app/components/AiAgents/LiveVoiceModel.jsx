@@ -10,7 +10,7 @@ import {
   Cpu,
   Wifi,
 } from "lucide-react";
-import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
+import { GoogleGenAI, Modality } from "@google/genai";
 import { GEMINI_API_KEY } from "../../lib/enums";
 
 const LiveVoiceModal = ({ isOpen, onClose, moduleName, systemInstruction }) => {

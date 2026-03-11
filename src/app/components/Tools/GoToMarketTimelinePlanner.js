@@ -318,8 +318,8 @@ const GoToMarketTimelinePlanner = () => {
                       result?.riskLevel === "Low"
                         ? "bg-green-50 border-green-500"
                         : result?.riskLevel === "Medium"
-                        ? "bg-yellow-50 border-yellow-500"
-                        : "bg-red-50 border-red-500"
+                          ? "bg-yellow-50 border-yellow-500"
+                          : "bg-red-50 border-red-500"
                     }`}
                   >
                     <div className="font-semibold text-gray-900 mb-1">
@@ -329,8 +329,8 @@ const GoToMarketTimelinePlanner = () => {
                           result?.riskLevel === "Low"
                             ? "text-green-600"
                             : result.riskLevel === "Medium"
-                            ? "text-yellow-600"
-                            : "text-red-600"
+                              ? "text-yellow-600"
+                              : "text-red-600"
                         }
                       >
                         {result?.riskLevel}
@@ -426,6 +426,7 @@ const GoToMarketTimelinePlanner = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

@@ -43,7 +43,7 @@ const TypeOfApps = () => {
             <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">
               Versatile Platforms
             </span>
-            <h2 className="text-3xl font-extrabold text-gray-900 mt-2 !mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mt-2 !mb-6">
               Types of Event Apps We Build
             </h2>
             <p className="text-lg text-gray-600 !mb-8 leading-relaxed">

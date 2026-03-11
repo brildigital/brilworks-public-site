@@ -74,4 +74,4 @@ export const Mood = {
   STRESSED: "Stressed",
 };
 
-export const GEMINI_API_KEY = "AIzaSyDpdU-jgupy4NYXC_jU-rkx863RV9j-EvE";
+export const GEMINI_API_KEY = "AIzaSyDrZimtamWnmHk51x_UOcyBbYn2OJuBReI";

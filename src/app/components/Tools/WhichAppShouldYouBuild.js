@@ -311,8 +311,8 @@ const WhichAppShouldYouBuild = () => {
                           result.marketPotential === "High"
                             ? "bg-green-100 text-green-800"
                             : result.marketPotential === "Medium"
-                            ? "bg-yellow-100 text-yellow-800"
-                            : "bg-red-100 text-red-800"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : "bg-red-100 text-red-800"
                         }`}
                       >
                         {result.marketPotential} Potential
@@ -331,8 +331,8 @@ const WhichAppShouldYouBuild = () => {
                             result.marketPotential === "High"
                               ? "bg-green-500"
                               : result.marketPotential === "Medium"
-                              ? "bg-yellow-500"
-                              : "bg-red-500"
+                                ? "bg-yellow-500"
+                                : "bg-red-500"
                           }`}
                           style={{ width: `${result.score}%` }}
                         ></div>
@@ -429,6 +429,7 @@ const WhichAppShouldYouBuild = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

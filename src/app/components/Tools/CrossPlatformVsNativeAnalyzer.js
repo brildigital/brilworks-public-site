@@ -274,8 +274,8 @@ const CrossPlatformVsNativeAnalyzer = () => {
                           result.recommendation === "native"
                             ? "bg-purple-100 text-purple-600"
                             : result.recommendation === "cross-platform"
-                            ? "bg-green-100 text-green-600"
-                            : "bg-blue-100 text-blue-600"
+                              ? "bg-green-100 text-green-600"
+                              : "bg-blue-100 text-blue-600"
                         }`}
                       >
                         {result.recommendation === "native" ? (
@@ -300,8 +300,8 @@ const CrossPlatformVsNativeAnalyzer = () => {
                           result.recommendation === "native"
                             ? "bg-purple-500"
                             : result.recommendation === "cross-platform"
-                            ? "bg-green-500"
-                            : "bg-blue-500"
+                              ? "bg-green-500"
+                              : "bg-blue-500"
                         }`}
                         style={{ width: `${result.score}%` }}
                       ></div>
@@ -469,6 +469,7 @@ const CrossPlatformVsNativeAnalyzer = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

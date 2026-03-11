@@ -199,10 +199,10 @@ const FeatureComplexityVsTimeEstimator = () => {
                         result.difficulty_level === "Very Complex"
                           ? "bg-red-100 text-red-800"
                           : result.difficulty_level === "Complex"
-                          ? "bg-orange-100 text-orange-800"
-                          : result.difficulty_level === "Moderate"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : "bg-green-100 text-green-800"
+                            ? "bg-orange-100 text-orange-800"
+                            : result.difficulty_level === "Moderate"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : "bg-green-100 text-green-800"
                       }`}
                     >
                       {result.difficulty_level}
@@ -274,6 +274,7 @@ const FeatureComplexityVsTimeEstimator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: { ...factors, description } }}
         />
       )}
     </>

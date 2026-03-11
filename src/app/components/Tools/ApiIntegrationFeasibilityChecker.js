@@ -308,8 +308,8 @@ const ApiIntegrationFeasibilityChecker = () => {
                             result.score >= 70
                               ? "#22c55e"
                               : result.score >= 50
-                              ? "#f59e0b"
-                              : "#ef4444"
+                                ? "#f59e0b"
+                                : "#ef4444"
                           }
                           strokeWidth="8"
                           strokeLinecap="round"
@@ -444,6 +444,7 @@ const ApiIntegrationFeasibilityChecker = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

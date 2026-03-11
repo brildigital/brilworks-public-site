@@ -328,10 +328,10 @@ const LegacySystemModernizationReadiness = () => {
                           {result.score >= 70
                             ? "Critical systems require immediate attention. Consider engaging modernization experts and planning a rapid, phased migration approach."
                             : result.score >= 50
-                            ? "High priority modernization. Begin with thorough planning, pilot projects, and secure executive buy-in for transformation initiatives."
-                            : result.score >= 30
-                            ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
-                            : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
+                              ? "High priority modernization. Begin with thorough planning, pilot projects, and secure executive buy-in for transformation initiatives."
+                              : result.score >= 30
+                                ? "Moderate priority. Focus on incremental improvements while building a long-term modernization roadmap and business case."
+                                : "Low urgency. Maintain current systems with regular updates while monitoring for future modernization opportunities."}
                         </p>
                       </div>
                     </div>
@@ -382,6 +382,7 @@ const LegacySystemModernizationReadiness = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

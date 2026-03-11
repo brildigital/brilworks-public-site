@@ -16,7 +16,8 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "cdn-icons-png.flaticon.com",
       "brilworks-website-asset.s3.ap-south-1.amazonaws.com",
-      "brilworks-storyblok-assets.s3.eu-central-1.amazonaws.com",
+      "brilworks-site-assets.s3.eu-central-1.amazonaws.com",
+      "d14lhgoyljo1xt.cloudfront.net",
     ],
   },
   webpack: (config, { dev, isServer }) => {
@@ -1000,6 +1001,26 @@ const nextConfig = {
       {
         source: `/tools/project-estimate/`,
         destination: `/tools/app-development-cost-calculator/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/enclave-connect/`,
+        destination: `/x/product-listing/enclave-connect/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/exora/`,
+        destination: `/x/product-listing/exora/`,
+        statusCode: 301,
+      },
+      {
+        source: `/product/mind-sync/`,
+        destination: `/x/product-listing/mind-sync/`,
+        statusCode: 301,
+      },
+      {
+        source: `/snapgen-privacy-policy/`,
+        destination: `/mr-brush-privacy-policy/`,
         statusCode: 301,
       },
     ];

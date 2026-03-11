@@ -51,13 +51,20 @@ export async function GET() {
   try {
     const bucketName = process.env.AWS_S3_BUCKET;
     const region = process.env.AWS_REGION;
+    console.log({
+      bucket: process.env.AWS_S3_BUCKET,
+      region: process.env.AWS_REGION,
+    });
 
     const assetFolder = "assets";
     const objects = await listAllObjects(bucketName, assetFolder);
 
     const urls = objects.map(
-      (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+      (obj) => `https://d14lhgoyljo1xt.cloudfront.net/${obj.Key}`
     );
+    // const urls = objects.map(
+    //   (obj) => `https://${bucketName}.s3.${region}.amazonaws.com/${obj.Key}`
+    // );
 
     return new NextResponse(JSON.stringify({ assets: urls }), {
       status: 200,

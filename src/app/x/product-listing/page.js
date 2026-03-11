@@ -11,8 +11,7 @@ const ProductsPage = () => {
       slug: "pet-finder",
       description:
         "Discover adoptable pets near you or help reunite lost animals with their families. Browse thousands of listings, filter by breed, age, and location.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/pet-finder-banner.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/petly-pet-finder-app-1759145787607.webp`,
       color: "from-[#867aec] to-purple-500",
       badge: "Pet Adoption",
     },
@@ -21,8 +20,7 @@ const ProductsPage = () => {
       slug: "mind-sync",
       description:
         "AI-powered dating app that revolutionizes how you connect with others. Our advanced AI matches you with people who share your values, interests, and personality traits.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/mindsync-mockup-1759756960049.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mindsync-mockup-1759756960049.webp`,
       color: "from-purple-600 to-pink-600",
       badge: "AI Matchmaking",
     },
@@ -31,8 +29,7 @@ const ProductsPage = () => {
       slug: "enclave-connect",
       description:
         "A unified digital platform that simplifies daily society tasks and keeps every resident connected in real time.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/enclave-connect-mockup-1759756976416.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/enclave-connect-mockup-1759756976416.webp`,
       color: "from-blue-600 to-cyan-600",
       badge: "Society Management",
     },
@@ -41,18 +38,134 @@ const ProductsPage = () => {
       slug: "exora",
       description:
         "Two-sided healthcare platform that helps doctors manage patients, assign follow-ups, share exercises, and stay in touch through real-time chat.",
-      image:
-        "https://d11qzsb0ksp6iz.cloudfront.net/assets/exora-banner-1759756411673.webp",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
       color: "from-green-600 to-teal-600",
       badge: "Healthcare",
+    },
+    {
+      title: "Kinderland",
+      slug: "kinderland",
+      description:
+        "Unlock a world of fun and learning! Educational games for curious young minds that make learning phonics, numbers, alphabets, and shapes an exciting adventure.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kinderland-case-study-1759145795626.webp`,
+      color: "from-sky-400 to-green-400",
+      badge: "Kids Learning",
+    },
+    {
+      title: "Pink Signal",
+      slug: "pink-signal",
+      description:
+        "Women safety app with instant SOS alerts, real-time location tracking, and trusted contacts. Stay safe, stay connected with 24/7 protection.",
+      image: "/images/pin-signap-banner-image.png",
+      color: "from-pink-600 to-rose-600",
+      badge: "Women Safety",
+    },
+    {
+      title: "FitOrbit",
+      slug: "fit-orbit",
+      description:
+        "Your ultimate fitness companion. Build custom workout routines, track progress with detailed analytics, and achieve your fitness goals with an extensive exercise library.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`,
+      color: "from-[#58CBD1] to-[#3da9b0]",
+      badge: "Fitness & Workout",
+    },
+    {
+      title: "ServiceSquad",
+      slug: "service-squad",
+      description:
+        "Professional home services at your doorstep. Book verified professionals for cleaning, repairs, beauty, and more with live tracking and secure payments.",
+      image: "/images/service-squad-banner.webp",
+      color: "from-[#FF6B35] to-[#004E89]",
+      badge: "Home Services",
+    },
+    {
+      title: "Scaneat",
+      slug: "scaneat",
+      description:
+        "Make informed food choices instantly! Smart food scanner with instant health analysis, ingredient insights, allergen detection, and personalized recommendations for healthier eating.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/scaneat-1770726297202.webp`,
+      color: "from-blue-600 to-green-500",
+      badge: "Health & Nutrition",
+    },
+    {
+      title: "Mr. Brush",
+      slug: "mr-brush",
+      description:
+        "Unleash your creativity with AI-powered image generation! Transform your imagination into stunning visual art with text-to-image and image-to-image modes, 8+ artistic styles, and flexible aspect ratios.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/mrbrush-1770726392663.webp`,
+      color: "from-yellow-400 to-orange-500",
+      badge: "AI Art Generation",
+    },
+    {
+      title: "LifePilot AI",
+      slug: "life-pilot",
+      description:
+        "Your AI-powered life companion! Get intelligent assistance across productivity, fitness, wellness, home maintenance, and more with 5+ specialized AI assistants. Cross-platform support with encrypted data.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/lifepilot-1770726381502.webp`,
+      color: "from-blue-500 to-indigo-500",
+      badge: "AI Assistant",
+    },
+    {
+      title: "KindCircle",
+      slug: "kind-circle",
+      description:
+        "Supporting parents of neurodivergent children. Connect with other parents, access verified professionals, browse expert resources, and join community events. Your supportive network is waiting.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/kindcircle-1770726348659.webp`,
+      color: "from-teal-700 to-cyan-400",
+      badge: "Community Support",
+    },
+    {
+      title: "OrderNest",
+      slug: "order-nest",
+      description:
+        "Complete restaurant management system. Managers design menus, configure tables, and track sales. Front-of-house handles seatings, kitchen sees live tickets. Real-time updates and cloud sync keep every shift coordinated.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/ordernest-1770726411206.webp`,
+      color: "from-orange-500 to-red-600",
+      badge: "Restaurant Management",
+    },
+    {
+      title: "VectorTrace",
+      slug: "vector-trace",
+      description:
+        "Complete business management platform for manufacturers, service providers, vendors, and customers. Streamline workflow from order placement to delivery with real-time tracking, inventory control, and comprehensive analytics.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/vectortrace-1770726355449.webp`,
+      color: "from-cyan-300 to-blue-500",
+      badge: "Business Management",
+    },
+    {
+      title: "CourseSphere",
+      slug: "course-sphere",
+      description:
+        "Learn without limits! Discover thousands of courses from expert instructors. Build real projects, gain certifications, and grow your career with guided learning paths. Join 50K+ learners worldwide.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/course-sphere-1770795626948.webp`,
+      color: "from-teal-500 to-teal-700",
+      badge: "Online Learning",
+    },
+    {
+      title: "BrowseX",
+      slug: "browsex",
+      description:
+        "Automate any web task with AI-powered intelligence. BrowseX uses advanced AI to understand websites, extract data, fill forms, and complete complex workflows—all through simple natural language commands. No coding required.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/browsex-1770795649689.webp`,
+      color: "from-purple-600 to-purple-400",
+      badge: "Web Automation",
+    },
+    {
+      title: "PageMiner",
+      slug: "page-miner",
+      description:
+        "Browser automation and web scraping extension. Record actions, build custom automation flows, and automate repetitive web tasks. Visual flow builder with integrations for Google Sheets, Slack, Discord, and more.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/pageminer-1770796389079.webp`,
+      color: "from-blue-600 to-blue-400",
+      badge: "Browser Automation",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="">
+        <div className="container max-w-7xl mx-auto main-section-padding-top">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
@@ -74,68 +187,66 @@ const ProductsPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="pb-24">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {products.map((product, index) => (
-              <Link
-                key={index}
-                href={`/x/product-listing/${product.slug}`}
-                className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-              >
-                {/* Image Section */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-10`}
-                  ></div>
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className={`inline-block bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-full text-sm font-medium shadow-lg`}
-                    >
-                      {product.badge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="p-8">
-                  <h2
-                    className={`text-3xl font-bold text-gray-900 mb-4 group-hover:text-opacity-60 group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${product.color} transition-all duration-300`}
-                  >
-                    {product.title}
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3">
-                    {product.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div
-                    className={`inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r ${product.color} font-semibold group-hover:gap-2 transition-all duration-300`}
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-
-                {/* Decorative Gradient Border on Hover */}
+      <section className="container max-w-7xl mx-auto main-section-padding-bottom !pt-0">
+        <div className="grid md:grid-cols-2 gap-8">
+          {products.map((product, index) => (
+            <Link
+              key={index}
+              href={`/x/product-listing/${product.slug}`}
+              className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+            >
+              {/* Image Section */}
+              <div className="relative lg:max-h-[400px] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                 <div
-                  className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
-                >
-                  <div
-                    className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${product.color} opacity-5`}
-                  ></div>
+                  className={`absolute inset-0 bg-gradient-to-br ${product.color} opacity-10`}
+                />
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                {/* Badge */}
+                <div className="absolute top-4 left-4">
+                  <span
+                    className={`inline-block bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-full text-sm font-medium shadow-lg`}
+                  >
+                    {product.badge}
+                  </span>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-5">
+                <h2
+                  className={`text-3xl font-bold text-gray-900 mb-4 group-hover:text-opacity-60 group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${product.color} transition-all duration-300`}
+                >
+                  {product.title}
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                  {product.description}
+                </p>
+
+                {/* CTA */}
+                <div
+                  className={`inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r ${product.color} font-semibold group-hover:gap-2 transition-all duration-300`}
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </div>
+
+              {/* Decorative Gradient Border on Hover */}
+              <div
+                className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
+              >
+                <div
+                  className={`absolute inset-0 rounded-xl bg-gradient-to-r ${product.color} opacity-5`}
+                ></div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

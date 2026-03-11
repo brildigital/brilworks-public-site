@@ -12,7 +12,7 @@ const Analytics = () => {
           <h2 className="text-blue-400 font-semibold tracking-wide uppercase text-sm">
             Actionable Insights
           </h2>
-          <h3 className="!mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
+          <h3 className="!mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-white">
             In-Depth Analytics & ROI Tracking
           </h3>
           <p className="!mt-4 text-xl text-gray-400">

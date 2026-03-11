@@ -37,7 +37,7 @@ const WhyChoose = () => {
             <span className="text-blue-600 font-bold uppercase tracking-wide text-sm">
               Differentiation
             </span>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl mb-6 mt-2 text-gray-900">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6 mt-2 text-gray-900">
               Why Teams Choose Brilworks
             </h2>
             <p className="text-gray-600 text-lg !mb-8 leading-relaxed">

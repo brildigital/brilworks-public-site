@@ -263,7 +263,7 @@ const SaaSBusinessModelGenerator = () => {
                               {tier.price}
                             </span>
                           </div>
-                        )
+                        ),
                       )}
                     </div>
                   </div>
@@ -365,6 +365,7 @@ const SaaSBusinessModelGenerator = () => {
           handleClose={() => setOpenPopup(false)}
           result={result}
           setResult={setResult}
+          toolFormData={{ toolFormData: formData }}
         />
       )}
     </>

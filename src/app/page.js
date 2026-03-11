@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
-
-const HomePage = dynamic(() => import("./home/page"));
+import HomePage from "./home/page";
 
 export const metadata = {
   metadataBase: new URL(

@@ -82,7 +82,7 @@ const PetFinder = () => {
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden p-2">
                 <div className="flex items-center justify-center bg-gradient-to-br from-[#867aec] to-purple-500 rounded-2xl p-16">
                   <Image
-                    src="https://d11qzsb0ksp6iz.cloudfront.net/assets/pet-finder-banner.webp"
+                    src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/petly-pet-finder-app-1759145787607.webp`}
                     alt="Pet Finder App"
                     width={610}
                     height={430}
