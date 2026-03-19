@@ -10,10 +10,12 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
     const loadScripts = () => {
       setTimeout(() => {
         // GTM Script
-        const gtmScript = document.createElement("script");
-        gtmScript.async = true;
-        gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
-        document.body.appendChild(gtmScript);
+        if(gtm){
+          const gtmScript = document.createElement("script");
+          gtmScript.async = true;
+          gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
+          document.body.appendChild(gtmScript);
+        }
 
         // Clearbit Script
         const clearbitScript = document.createElement("script");
