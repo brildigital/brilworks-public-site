@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.brilworksdigital.Elara",
+      "sha256_cert_fingerprints": [
+        "B5:DD:6A:90:C0:61:A7:2C:C7:C0:CE:BB:57:1B:45:0B:8C:9A:EA:2A:90:78:7F:50:CC:2D:39:B9:46:79:99:FC"
+      ]
+    }
+  }
+]
