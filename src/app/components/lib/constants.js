@@ -1140,6 +1140,10 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/x/product-listing/service-squard/",
     lastmod: "2025-12-12T12:08:23.211Z",
   },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/elara-pregnancy-tracker/",
+    lastmod: "2026-03-20T11:33:52.252Z",
+  },
 
   // {
   //   loc: "https://www.brilworks.com/site-map/",

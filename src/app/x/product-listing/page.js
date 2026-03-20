@@ -159,6 +159,15 @@ const ProductsPage = () => {
       color: "from-blue-600 to-blue-400",
       badge: "Browser Automation",
     },
+    {
+      title: "Elara Pregnancy Tracker",
+      slug: "elara-pregnancy-tracker",
+      description:
+        "Your personalized maternal wellness companion. Expert-curated prenatal yoga, pregnancy tracking, guided meditations, and wellness journaling. Free, privacy-first, and designed for every stage of motherhood.",
+      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/Gemini_Generated_Image_c54aa5c54aa5c54a_1-1773999215829.webp`,
+      color: "from-amber-600 to-amber-400",
+      badge: "Pregnancy Wellness",
+    },
   ];
 
   return (
