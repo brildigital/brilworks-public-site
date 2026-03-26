@@ -29,6 +29,10 @@ export async function generateMetadata({ params }) {
   return {
     title: `${story.content.metatags?.title || story?.content?.title}`,
     description: story.content.metatags?.description,
+    robots: {
+      index: true,
+      follow: false,
+    },
     authors: [{ name: story.content.BlogAuthor }],
     openGraph: {
       title: story.content.metatags?.og_title || story.content.title,
@@ -40,7 +44,7 @@ export async function generateMetadata({ params }) {
         {
           url: formatSrcUrl(
             story.content.metatags?.og_image ||
-              story.content?.mobile_banner?.filename
+              story.content?.mobile_banner?.filename,
           ),
         },
       ],
@@ -54,7 +58,7 @@ export async function generateMetadata({ params }) {
       images: [
         formatSrcUrl(
           story?.content.metatags?.twitter_image ||
-            story?.content?.mobile_banner?.filename
+            story?.content?.mobile_banner?.filename,
         ),
       ],
       creator: story.content.BlogAuthor,
@@ -188,7 +192,7 @@ export default async function Page(props) {
               title,
               `${pageURL}/`,
               ratingValue,
-              ratingCount
+              ratingCount,
             ),
           }}
         />
@@ -275,8 +279,8 @@ export default async function Page(props) {
                         author?.name === "Vikas Singh"
                           ? "/blog/author/vikas-singh/"
                           : author?.name === "Hitesh Umaletiya"
-                          ? "/blog/author/hitesh-umaletiya/"
-                          : author?.authorLinkedIn
+                            ? "/blog/author/hitesh-umaletiya/"
+                            : author?.authorLinkedIn
                       }
                       title={`Posts by ${author?.name}`}
                       rel="author external"
@@ -286,7 +290,7 @@ export default async function Page(props) {
                     <br />
                     <span className="sxl:!text-xl md:text-lg text-base">
                       {formattedDate(
-                        data?.story?.content?.Published || new Date()
+                        data?.story?.content?.Published || new Date(),
                       )}
                     </span>
                   </div>
@@ -339,7 +343,7 @@ export default async function Page(props) {
                     className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
                     src={formatSrcUrl(
                       data?.story?.content?.mobile_banner?.filename ||
-                        data?.story?.content?.image?.filename
+                        data?.story?.content?.image?.filename,
                     )}
                     alt={
                       data?.story?.content.image?.alt ||
@@ -356,7 +360,7 @@ export default async function Page(props) {
                     className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
                     src={formatSrcUrl(
                       data?.story?.content.image?.filename ||
-                        data?.story?.content.mobile_banner?.filename
+                        data?.story?.content.mobile_banner?.filename,
                     )}
                     alt={
                       data?.story?.content.image?.alt ||
@@ -405,12 +409,12 @@ export async function fetchData(params) {
     storyUrl.pathname += `/${slug}`;
 
     const configUrl = new URL(
-      "https://api.storyblok.com/v2/cdn/stories/config"
+      "https://api.storyblok.com/v2/cdn/stories/config",
     );
     configUrl.searchParams.append("version", sbParams.version);
     configUrl.searchParams.append(
       "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN,
     );
 
     const [storyRes, configRes] = await Promise.all([
