@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
+const { NormalModuleReplacementPlugin } = require("webpack");
 
 const nextConfig = {
   trailingSlash: true,
@@ -40,6 +41,17 @@ const nextConfig = {
         https: false,
         zlib: false,
       };
+
+      // Replace core-js polyfills that are natively supported by all targeted browsers
+      // (Chrome 91+, Firefox 90+, Safari 15+, Edge 91+) with a no-op stub.
+      // Source: @next/polyfill-module and CMS client packages ship these unnecessarily.
+      const emptyPolyfill = path.resolve(__dirname, "src/empty-polyfill.js");
+      config.plugins.push(
+        new NormalModuleReplacementPlugin(
+          /core-js\/modules\/(es\.array\.flat|es\.array\.flat-map|es\.object\.from-entries|es\.string\.trim-end|es\.string\.trim-start|es\.math\.trunc)(\.js)?$/,
+          emptyPolyfill
+        )
+      );
     }
 
     return config;
