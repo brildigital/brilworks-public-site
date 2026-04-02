@@ -48,6 +48,9 @@ export default function RootLayout({ children }) {
           />
           <meta name="robots" content="index, follow" />
           <link rel="preload" href="/images/v2/hero-pg-main.webp" as="image" />
+          <link rel="preconnect" href="https://d14lhgoyljo1xt.cloudfront.net" />
+          <link rel="preconnect" href="https://api.storyblok.com" />
+          <link rel="preconnect" href="https://a.storyblok.com" />
           <Script
             src={`https://www.googletagmanager.com/gtm.js?id=${process.env.googleTagManagerID}`}
             strategy="afterInteractive"

@@ -6,27 +6,34 @@ import Script from "next/script";
 
 const BrilliantInThought = dynamic(
   () => import("../components/Homepage/BrilliantInThought"),
+  { ssr: false }
 );
 const ExploreOurExpertise = dynamic(
   () => import("../components/Homepage/ExploreOurExpertise"),
+  { ssr: false }
 );
 const SeeingBelieving = dynamic(
   () => import("../components/Homepage/SeeingBelieving"),
+  { ssr: false }
 );
 const ClientReviews = dynamic(
   () => import("../components/Homepage/ClientReviews"),
+  { ssr: false }
 );
 const IndustriesWeServe = dynamic(
   () => import("../components/Homepage/IndustriesWeServe"),
+  { ssr: false }
 );
-const Honors = dynamic(() => import("../components/Homepage/Honors"));
+const Honors = dynamic(() => import("../components/Homepage/Honors"), { ssr: false });
 const HomepageWhyChooseUs = dynamic(
   () => import("../components/Homepage/HomepageWhyChooseUs"),
+  { ssr: false }
 );
 const HomepageBlog = dynamic(
   () => import("../components/Homepage/HomePageBlogs"),
+  { ssr: false }
 );
-const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
+const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"), { ssr: false });
 
 export async function generateMetadata() {
   return {
