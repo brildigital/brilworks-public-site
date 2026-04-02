@@ -10,7 +10,7 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
     const loadScripts = () => {
       setTimeout(() => {
         // GTM Script
-        if(gtm){
+        if (gtm) {
           const gtmScript = document.createElement("script");
           gtmScript.async = true;
           gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
@@ -18,10 +18,10 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
         }
 
         // Clearbit Script
-        const clearbitScript = document.createElement("script");
-        clearbitScript.src = clr;
-        clearbitScript.async = true;
-        document.body.appendChild(clearbitScript);
+        // const clearbitScript = document.createElement("script");
+        // clearbitScript.src = clr;
+        // clearbitScript.async = true;
+        // document.body.appendChild(clearbitScript);
 
         // Organization Script
         const organizationScript = document.createElement("script");
@@ -74,6 +74,11 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
       try {
         const existingCookie = Cookies.get("user-data");
         const existingData = existingCookie ? JSON.parse(existingCookie) : {};
+
+        // Skip the entire geo fetch chain if we already have complete location data
+        if (existingData.city && existingData.region && existingData.country) {
+          return;
+        }
 
         const ipRes = await fetch("https://api.ipify.org?format=json");
         const { ip } = await ipRes.json();

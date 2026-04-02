@@ -1,9 +1,12 @@
 "use client";
-import ReCAPTCHA from "react-google-recaptcha";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
+
+// Load reCAPTCHA only after user interacts with the form (saves 363 KiB on initial load)
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
 const ContactFormV2 = ({
   darkMode = false,
@@ -23,17 +26,14 @@ const ContactFormV2 = ({
   });
 
   const [previousPage, setPreviousPage] = useState("");
+  const [captchaLoaded, setCaptchaLoaded] = useState(false);
 
   useEffect(() => {
-    // Store current page in sessionStorage when component mounts
     const currentPath = window.location.pathname;
-
     const storedPreviousPage = sessionStorage.getItem("previousNav");
     if (storedPreviousPage && storedPreviousPage !== currentPath) {
       setPreviousPage(storedPreviousPage);
     }
-
-    // Store current page for next navigation
     sessionStorage.setItem("previousNav", currentPath);
   }, []);
 
@@ -43,6 +43,11 @@ const ContactFormV2 = ({
       ...prevData,
       [name]: value,
     }));
+  };
+
+  // Trigger reCAPTCHA load on first user interaction with the form
+  const handleFirstInteraction = () => {
+    if (!captchaLoaded) setCaptchaLoaded(true);
   };
 
   const clearMessage = () => {
@@ -95,6 +100,7 @@ const ContactFormV2 = ({
         }`}
         id="homepage-contact-form"
         onSubmit={handleSubmit}
+        onFocus={handleFirstInteraction}
       >
         <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-4">
           <input
@@ -172,11 +178,13 @@ const ContactFormV2 = ({
             {respMessage}
           </div>
         )}
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-          size="invisible"
-          ref={recaptchaRef}
-        />
+        {captchaLoaded && (
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            size="invisible"
+            ref={recaptchaRef}
+          />
+        )}
         <div className="flex items-center gap-5">
           <ButtonV2
             id="submit"
