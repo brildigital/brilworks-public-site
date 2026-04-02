@@ -4,6 +4,13 @@
 @import "./styles/Loader.css";
 @tailwind utilities;
 
+/* Pre-declare Tawk's icon font with font-display:swap to prevent invisible text during load */
+@font-face {
+  font-family: "tawk-font-icon-3";
+  src: url("https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728") format("woff");
+  font-display: swap;
+}
+
 :root {
   --font_16: 1rem;
   --font_18: 1.125rem;

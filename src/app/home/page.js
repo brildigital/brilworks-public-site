@@ -4,27 +4,27 @@ import { homepageFAQ } from "../components/lib/schemaCode";
 import HeroSection from "../components/Homepage/HeroSection";
 import Script from "next/script";
 
-const BrilliantInThought = dynamic(() =>
-  import("../components/Homepage/BrilliantInThought")
+const BrilliantInThought = dynamic(
+  () => import("../components/Homepage/BrilliantInThought"),
 );
-const ExploreOurExpertise = dynamic(() =>
-  import("../components/Homepage/ExploreOurExpertise")
+const ExploreOurExpertise = dynamic(
+  () => import("../components/Homepage/ExploreOurExpertise"),
 );
-const SeeingBelieving = dynamic(() =>
-  import("../components/Homepage/SeeingBelieving")
+const SeeingBelieving = dynamic(
+  () => import("../components/Homepage/SeeingBelieving"),
 );
-const ClientReviews = dynamic(() =>
-  import("../components/Homepage/ClientReviews")
+const ClientReviews = dynamic(
+  () => import("../components/Homepage/ClientReviews"),
 );
-const IndustriesWeServe = dynamic(() =>
-  import("../components/Homepage/IndustriesWeServe")
+const IndustriesWeServe = dynamic(
+  () => import("../components/Homepage/IndustriesWeServe"),
 );
 const Honors = dynamic(() => import("../components/Homepage/Honors"));
-const HomepageWhyChooseUs = dynamic(() =>
-  import("../components/Homepage/HomepageWhyChooseUs")
+const HomepageWhyChooseUs = dynamic(
+  () => import("../components/Homepage/HomepageWhyChooseUs"),
 );
-const HomepageBlog = dynamic(() =>
-  import("../components/Homepage/HomePageBlogs")
+const HomepageBlog = dynamic(
+  () => import("../components/Homepage/HomePageBlogs"),
 );
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 

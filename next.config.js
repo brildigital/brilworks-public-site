@@ -20,36 +20,28 @@ const nextConfig = {
       "d14lhgoyljo1xt.cloudfront.net",
     ],
   },
-  webpack: (config, { dev, isServer }) => {
-    // Only apply Terser in production builds
-    if (!dev && !isServer) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-      config.optimization.minimizer.push(
-        new TerserPlugin({
-          terserOptions: {
-            parse: {
-              ecma: 8,
-            },
-            compress: {
-              ecma: 5,
-              warnings: false,
-              comparisons: false,
-              inline: 2,
-            },
-            mangle: {
-              safari10: true,
-            },
-            output: {
-              ecma: 5,
-              comments: false,
-              ascii_only: true,
-            },
-          },
-          parallel: true,
-        })
-      );
+  webpack: (config, { isServer }) => {
+    // Prevent bundling native canvas.node from pdfjs-dist optional dependency
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...(config.resolve?.alias || {}),
+      canvas: false,
+    };
+
+    // Provide safe browser fallbacks for Node core modules when needed
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...(config.resolve.fallback || {}),
+        fs: false,
+        path: false,
+        crypto: false,
+        stream: false,
+        http: false,
+        https: false,
+        zlib: false,
+      };
     }
+
     return config;
   },
   redirects: async () => {

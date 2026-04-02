@@ -1,10 +1,10 @@
 import "./globals.css";
-import "./styles/Homepage.scss";
+// import "./styles/Homepage.scss";
 import { PostHogProvider } from "./provider";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-import { Figtree } from "next/font/google";
+import { Figtree, Roboto } from "next/font/google";
 import Script from "next/script";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import {
@@ -20,6 +20,13 @@ const figtree = Figtree({
   variable: "--global-font",
 });
 
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-roboto",
+});
+
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
   use: [apiPlugin],
@@ -32,7 +39,7 @@ const Footer = dynamic(() => import("./components/Footer"));
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${figtree.variable}`}>
+      <html lang="en" className="scroll-smooth">
         <head>
           <meta name="viewport" content="width=device-width" />
           <meta
@@ -42,15 +49,14 @@ export default function RootLayout({ children }) {
           <meta name="robots" content="index, follow" />
           <link rel="preload" href="/images/v2/hero-pg-main.webp" as="image" />
           <Script
-            id="gtm-config"
-            strategy="lazyOnload"
-          >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${process.env.googleTagManagerID}');`}</Script>
+            src={`https://www.googletagmanager.com/gtm.js?id=${process.env.googleTagManagerID}`}
+            strategy="afterInteractive"
+          />
         </head>
-        <body suppressHydrationWarning={true}>
+        <body
+          suppressHydrationWarning={true}
+          className={`${figtree.variable} ${roboto.variable}`}
+        >
           <Script id="vector-script" strategy="lazyOnload">
             {`
           !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
