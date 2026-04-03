@@ -1,8 +1,4 @@
 "use client";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/virtual";
 import Link from "next/link";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";

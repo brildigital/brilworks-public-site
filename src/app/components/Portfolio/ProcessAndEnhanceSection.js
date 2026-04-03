@@ -1,9 +1,5 @@
 "use client";
 import React from "react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/virtual";
 import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
