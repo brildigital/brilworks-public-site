@@ -66,6 +66,53 @@ module.exports = {
       dropShadow: {
         "book-shadow": "10px 10px 15px rgba(0, 0, 0, 0.3)",
       },
+      animation: {
+        "mvp-neural-pulse": "mvpNeuralPulse 6s ease-in-out infinite",
+        "mvp-circuit-flow": "mvpCircuitFlow 20s linear infinite",
+        "mvp-float-rotate": "mvpFloatRotate 15s ease-in-out infinite",
+        "mvp-float-rotate-reverse": "mvpFloatRotate 12s ease-in-out infinite reverse",
+        "mvp-data-flow": "mvpDataFlow 8s ease-in-out infinite",
+        "mvp-holographic": "mvpHolographic 10s ease-in-out infinite",
+        "mvp-fade-up": "mvpFadeUp 0.6s ease-out forwards",
+        "mvp-fade-in": "mvpFadeIn 0.6s ease-out forwards",
+        "mvp-slide-up": "mvpSlideUp 0.6s ease-out forwards",
+      },
+      keyframes: {
+        mvpNeuralPulse: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        mvpCircuitFlow: {
+          "0%": { transform: "translate(0, 0)" },
+          "100%": { transform: "translate(-100px, -100px)" },
+        },
+        mvpFloatRotate: {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(180deg)" },
+        },
+        mvpDataFlow: {
+          "0%, 100%": { transform: "translateX(-100%)", opacity: "0" },
+          "50%": { transform: "translateX(100%)", opacity: "1" },
+        },
+        mvpHolographic: {
+          "0%, 100%": { opacity: "1" },
+          "25%": { opacity: "0.8" },
+          "50%": { opacity: "0.6" },
+          "75%": { opacity: "0.9" },
+        },
+        mvpFadeUp: {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        mvpFadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        mvpSlideUp: {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
     },
   },
   plugins: [],

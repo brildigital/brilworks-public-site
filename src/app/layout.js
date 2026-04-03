@@ -1,5 +1,9 @@
 import "./globals.css";
-// import "./styles/Homepage.scss";
+import "./styles/Homepage.css";
+import "./styles/button.scss";
+import "./styles/tab-sticky-style.scss";
+import "@splidejs/splide/dist/css/splide.min.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { PostHogProvider } from "./provider";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";

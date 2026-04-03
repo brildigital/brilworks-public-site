@@ -1,0 +1,11 @@
+.healthvault ul {
+  padding-left: 40px !important;
+}
+
+.healthvault ul li {
+  list-style: disc !important;
+}
+
+.healthvault ul li:last-child {
+  margin-bottom: 10px;
+}
