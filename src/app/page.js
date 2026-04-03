@@ -1,5 +1,4 @@
 import HomePage from "./home/page";
-import "./styles/Homepage.scss";
 
 export const metadata = {
   metadataBase: new URL(

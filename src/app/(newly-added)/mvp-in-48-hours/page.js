@@ -1,5 +1,5 @@
 import AboutSection from "@/app/components/MVPIn48Hours/AboutSection";
-import "../../styles/mvp-style.scss";
+import "../../styles/mvp-style.css";
 import HeroSectionMVPIn48Hours from "@/app/components/MVPIn48Hours/HeroSectionMVPIn48Hours";
 import OutcomesSection from "@/app/components/MVPIn48Hours/OutcomeSection";
 import React from "react";

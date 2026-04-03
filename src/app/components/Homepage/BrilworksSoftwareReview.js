@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoryblokClient from "storyblok-js-client";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
