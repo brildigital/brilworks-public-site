@@ -10,12 +10,14 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
     const loadScripts = () => {
       setTimeout(() => {
         // GTM Script
-        if (gtm) {
-          const gtmScript = document.createElement("script");
-          gtmScript.async = true;
-          gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
-          document.body.appendChild(gtmScript);
-        }
+        //commented as we have already this in src/app/layout.js to load it as early as possible for better tracking.
+
+        // if (gtm) {
+        //   const gtmScript = document.createElement("script");
+        //   gtmScript.async = true;
+        //   gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
+        //   document.body.appendChild(gtmScript);
+        // }
 
         // Clearbit Script
         // const clearbitScript = document.createElement("script");

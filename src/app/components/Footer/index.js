@@ -1,12 +1,24 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+
+const TawkMessengerReact = dynamic(
+  () => import("@tawk.to/tawk-messenger-react"),
+  { ssr: false }
+);
 
 const Footer = () => {
   const pathname = usePathname();
+  const [showTawk, setShowTawk] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowTawk(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const getActivePage = (pageURL) => {
     return pathname === pageURL ? "page-active" : "";
@@ -397,10 +409,12 @@ const Footer = () => {
             {/* <Link href="/site-map/" className="transition">
           Sitemap
         </Link> */}
-            <TawkMessengerReact
-              propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
-              widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
-            />
+            {showTawk && (
+              <TawkMessengerReact
+                propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
+                widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
+              />
+            )}
           </div>
         </div>
       </div>
