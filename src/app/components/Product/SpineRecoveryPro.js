@@ -20,6 +20,16 @@ import HospitalContactForm from "./HospitalContactForm";
 import SpineRecoveryFooter from "../Footer/SpineRecoveryFooter";
 import SpineRecoveryPageHeader from "../Header/SpineRecoveryPageHeader";
 
+const colorMap = {
+  blue:    { bg: "bg-blue-100",    text: "text-blue-600"    },
+  emerald: { bg: "bg-emerald-100", text: "text-emerald-600" },
+  purple:  { bg: "bg-purple-100",  text: "text-purple-600"  },
+  amber:   { bg: "bg-amber-100",   text: "text-amber-600"   },
+  cyan:    { bg: "bg-cyan-100",    text: "text-cyan-600"    },
+  pink:    { bg: "bg-pink-100",    text: "text-pink-600"    },
+  red:     { bg: "bg-red-100",     text: "text-red-600"     },
+};
+
 const SpineRecoveryPro = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
@@ -279,10 +289,10 @@ const SpineRecoveryPro = () => {
                 className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow"
               >
                 <div
-                  className={`bg-${problem.color}-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6`}
+                  className={`${colorMap[problem.color].bg} w-12 h-12 rounded-lg flex items-center justify-center mb-6`}
                 >
                   <problem.icon
-                    className={`h-6 w-6 text-${problem.color}-600`}
+                    className={`h-6 w-6 ${colorMap[problem.color].text}`}
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">

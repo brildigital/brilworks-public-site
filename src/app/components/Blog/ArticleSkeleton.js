@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export const ArticleSkeleton = () => {
