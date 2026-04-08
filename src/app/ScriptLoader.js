@@ -20,10 +20,10 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
         // }
 
         // Clearbit Script
-        // const clearbitScript = document.createElement("script");
-        // clearbitScript.src = clr;
-        // clearbitScript.async = true;
-        // document.body.appendChild(clearbitScript);
+        const clearbitScript = document.createElement("script");
+        clearbitScript.src = clr;
+        clearbitScript.async = true;
+        document.body.appendChild(clearbitScript);
 
         // Organization Script
         const organizationScript = document.createElement("script");
