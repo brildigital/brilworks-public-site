@@ -10,20 +10,29 @@ export function scrollToSection(e, sectionId) {
   }
 }
 
+let _revealObserver = null;
+
 export function scrollEffect() {
-  const reveals = document.querySelectorAll(".reveal");
+  if (typeof window === "undefined") return;
 
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 100;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
-    }
+  if (!_revealObserver) {
+    _revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (isIntersecting) {
+            target.classList.add("active");
+          } else {
+            target.classList.remove("active");
+          }
+        });
+      },
+      { rootMargin: "0px 0px -100px 0px", threshold: 0 }
+    );
   }
+
+  document.querySelectorAll(".reveal").forEach((el) => {
+    _revealObserver.observe(el);
+  });
 }
 
 export function Icon({ id, open }) {

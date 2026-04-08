@@ -48,7 +48,7 @@ const nextConfig = {
       const emptyPolyfill = path.resolve(__dirname, "src/empty-polyfill.js");
       config.plugins.push(
         new NormalModuleReplacementPlugin(
-          /core-js\/modules\/(es\.array\.flat|es\.array\.flat-map|es\.object\.from-entries|es\.string\.trim-end|es\.string\.trim-start|es\.math\.trunc)(\.js)?$/,
+          /core-js\/modules\/(es\.array\.(flat|flat-map|from|find|find-index|includes|is-array|of)|es\.object\.(assign|entries|from-entries|keys|values)|es\.string\.(ends-with|includes|starts-with|trim|trim-end|trim-start|pad-end|pad-start|repeat)|es\.math\.(trunc|sign|clz32|hypot|log10|log2)|es\.number\.(is-finite|is-integer|is-nan|is-safe-integer|parse-float|parse-int)|es\.promise\.finally)(\.js)?$/,
           emptyPolyfill
         )
       );
