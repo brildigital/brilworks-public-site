@@ -614,6 +614,8 @@ export const portfolioDynamicItems = [
     alt: "Social marketplace app",
     industry: "E-commerce",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "Orokii · US-based art marketplace",
+    metric: "3.2K artists onboarded in first 60 days",
   },
   {
     title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
@@ -624,6 +626,8 @@ export const portfolioDynamicItems = [
     alt: "Pet finder app",
     industry: "Social",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "US-based pet care platform",
+    metric: "850+ bookings in first 3 months",
   },
   {
     title: "Making Early Learning Fun with An Interactive Educational Game",
@@ -634,6 +638,8 @@ export const portfolioDynamicItems = [
     alt: "Educational mobile game",
     industry: "Ed-Tech",
     technology: ["iOS", "Android", "C#"],
+    clientName: "UK-based EdTech startup",
+    metric: "68% day-30 retention · 12,000+ students",
   },
   {
     title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
@@ -644,6 +650,8 @@ export const portfolioDynamicItems = [
     alt: "Healthcare App",
     industry: "Healthcare",
     technology: ["React Native"],
+    clientName: "Rastrack · CEO David Velasquez (5-year client)",
+    metric: "40% reduction in appointment no-shows",
   },
   // {
   //   title: "Streamlining Energy Audits with An All-In-One CRM Solution",

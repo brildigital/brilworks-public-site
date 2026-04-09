@@ -185,7 +185,7 @@ const ContactFormV2 = ({
             size="large"
             className="hover:text-themeColor hover:!bg-colorWhite w-fit gap-2"
             icon={isSubmitting ? <Loader /> : ""}
-            label={isSubmitting ? "Submitting..." : "Submit"}
+            label={isSubmitting ? "Submitting..." : "Get My Free Consultation"}
             disabled={isSubmitting}
           />
           {!hideEmail && (

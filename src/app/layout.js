@@ -3,7 +3,7 @@ import "./styles/Homepage.scss";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-import { Figtree } from "next/font/google";
+import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 
@@ -11,6 +11,20 @@ const figtree = Figtree({
   subsets: ["latin"],
   display: "swap",
   variable: "--global-font",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heading",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
 });
 
 storyblokInit({
@@ -23,7 +37,7 @@ const Footer = dynamic(() => import("./components/Footer"));
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <html lang="en" className={`${figtree.variable}`}>
+      <html lang="en" className={`${figtree.variable} ${plusJakartaSans.variable} ${inter.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
           <meta

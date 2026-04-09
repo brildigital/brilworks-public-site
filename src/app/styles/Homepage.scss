@@ -101,19 +101,145 @@
   }
 }
 
+/* ── Hero Section ─────────────────────────────────────── */
 .hero-section {
-  background-image: url("/images/v2/hero-pg-main.webp");
+  background: var(--navyBlue, #0d0f1a);
   width: 100%;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  @media screen and (max-width: 767px) {
-    background-image: linear-gradient(
-      to top,
-      var(--navyBlue),
-      var(--theme-color)
-    );
+  position: relative;
+  overflow: hidden;
+}
+/* Hero margin overrides — !important needed to beat Tailwind's p/h1 reset */
+.hero-section .hero-eyebrow {
+  margin-bottom: 28px !important;
+}
+.hero-section .hero-h1 {
+  margin-bottom: 24px !important;
+}
+.hero-section .hero-sub {
+  margin-bottom: 40px !important;
+}
+.hero-section .hero-ctas {
+  margin-bottom: 40px !important;
+}
+.hero-section .banner-layer {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%) !important;
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-glow-orb {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(26,92,204,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: heroGlowPulse 6s ease-in-out infinite;
+}
+@keyframes heroGlowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Hero animations */
+@keyframes heroFloatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes heroBarGrow {
+  from { width: 0; }
+}
+@keyframes heroBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes heroFadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes heroFadeSlideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Testimonials swiper */
+.testimonials-swiper {
+  .swiper {
+    padding-bottom: 3rem;
   }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: rgba(255, 255, 255, 0.5);
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    &::after {
+      font-size: 18px;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+  .swiper-button-prev {
+    left: auto;
+    right: 50px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+  .swiper-pagination {
+    bottom: 4px !important;
+  }
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.3) !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #1A5CCC !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
+  .swiper-slide {
+    height: auto !important;
+  }
+}
+
+.hero-float-main {
+  animation: heroFloatY 5s ease-in-out infinite;
+}
+.hero-float-1 {
+  animation: heroFloatY 6s 1s ease-in-out infinite;
+}
+.hero-float-2 {
+  animation: heroFloatY 7s 2s ease-in-out infinite;
+}
+.hero-bar-fill {
+  background: linear-gradient(90deg, var(--theme-color, #1A5CCC), #00b4d8);
+  animation: heroBarGrow 2s 0.5s ease-out both;
+}
+.hero-blink {
+  animation: heroBlink 2s infinite;
+}
+.hero-fade-down {
+  animation: heroFadeSlideDown 0.8s cubic-bezier(.16,1,.3,1) both;
+}
+.hero-fade-up {
+  animation: heroFadeSlideUp 0.9s 0.2s cubic-bezier(.16,1,.3,1) both;
 }
 .banner-layer {
   background: linear-gradient(

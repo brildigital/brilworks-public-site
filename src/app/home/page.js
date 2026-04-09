@@ -13,8 +13,17 @@ const ExploreOurExpertise = dynamic(() =>
 const SeeingBelieving = dynamic(() =>
   import("../components/Homepage/SeeingBelieving")
 );
+const MidPageCTA = dynamic(() =>
+  import("../components/Homepage/MidPageCTA")
+);
+const AISolutions = dynamic(() =>
+  import("../components/Homepage/AISolutions")
+);
 const ClientReviews = dynamic(() =>
   import("../components/Homepage/ClientReviews")
+);
+const ClutchReviews = dynamic(() =>
+  import("../components/Homepage/ClutchReviews")
 );
 const IndustriesWeServe = dynamic(() =>
   import("../components/Homepage/IndustriesWeServe")
@@ -25,6 +34,9 @@ const HomepageWhyChooseUs = dynamic(() =>
 );
 const HomepageBlog = dynamic(() =>
   import("../components/Homepage/HomePageBlogs")
+);
+const EbookSection = dynamic(() =>
+  import("../components/Homepage/EbookSection")
 );
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 
@@ -93,11 +105,15 @@ const page = () => {
       {/* <GameChanger /> */}
       <BrilliantInThought />
       <SeeingBelieving />
+      <MidPageCTA />
+      <AISolutions />
       <ExploreOurExpertise />
       <ClientReviews />
-      <IndustriesWeServe title="Industries We Serve" darkBackground={true} />
+      <ClutchReviews />
+      <IndustriesWeServe />
       <Honors />
       <HomepageWhyChooseUs />
+      <EbookSection />
       <HomepageBlog />
       <ContactUs />
     </>
