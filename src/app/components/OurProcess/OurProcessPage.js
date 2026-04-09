@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import ServiceHeroSection from "../Services/ServiceHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
-const ToolsAndGetInTouch = dynamic(() =>
-  import("../Portfolio/ToolsAndGetInTouch")
+const ToolsAndGetInTouch = dynamic(
+  () => import("../Portfolio/ToolsAndGetInTouch"),
 );
 
 const OurProcessPage = () => {

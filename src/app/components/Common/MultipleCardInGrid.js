@@ -57,7 +57,7 @@ const MultipleCardInGrid = ({
                   </span>
                 )}
               </div>
-            )
+            ),
           )}
         </div>
         {buttonText && (

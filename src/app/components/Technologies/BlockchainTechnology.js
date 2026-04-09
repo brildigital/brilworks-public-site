@@ -8,21 +8,21 @@ import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const HiringModels = dynamic(() => import("./HiringModels"));
 const BlockChainFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 

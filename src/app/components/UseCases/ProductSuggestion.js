@@ -33,7 +33,7 @@ const ProductSuggestion = () => {
         ]);
 
         const additionalProductData = await getAWSInHealthcareData(
-          additionalProductSlug
+          additionalProductSlug,
         );
 
         // Merge and set data
@@ -55,7 +55,7 @@ const ProductSuggestion = () => {
   // Memoized filtered data
   const filteredBlogData = useMemo(
     () => blogData.filter(({ slug }) => requiredSlugs.includes(slug)),
-    [blogData]
+    [blogData],
   );
 
   return (
@@ -78,8 +78,8 @@ const ProductSuggestion = () => {
                   ? `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/7cf016f5d2_white-label-fitness-app.webp`
                   : `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/white-label-delivery-app-banner-1765886455361.webp`
                 : content?.mobile_banner?.filename
-                ? formatSrcUrl(content?.mobile_banner?.filename)
-                : "/images/not-found-image.webp";
+                  ? formatSrcUrl(content?.mobile_banner?.filename)
+                  : "/images/not-found-image.webp";
 
               const productLink = isAdditionalProduct
                 ? `/product/${slug}`
@@ -118,7 +118,7 @@ const ProductSuggestion = () => {
                           {formattedDate(
                             !isAdditionalProduct
                               ? content?.Published
-                              : published_at
+                              : published_at,
                           )}
                         </p>
                       </div>

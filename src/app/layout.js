@@ -1,10 +1,8 @@
 import "./globals.css";
 import "./styles/Homepage.scss";
-import "./styles/button.scss";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-import { NextAuthProvider } from "./provider";
 import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
@@ -37,10 +35,6 @@ storyblokInit({
 });
 
 const Footer = dynamic(() => import("./components/Footer"));
-const CookieConsent = dynamic(
-  () => import("./components/CookieConsent/CookieConsent"),
-  { ssr: false }
-);
 
 export default function RootLayout({ children }) {
   return (
@@ -68,12 +62,9 @@ export default function RootLayout({ children }) {
           )} */}
         </head>
         <body suppressHydrationWarning={true}>
-          <NextAuthProvider>
-            <CurrentHeader />
-            {children}
-            <Footer />
-            <CookieConsent />
-          </NextAuthProvider>
+          <CurrentHeader />
+          {children}
+          <Footer />
         </body>
       </html>
     </StoryblokProvider>

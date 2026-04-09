@@ -7,11 +7,7 @@
     "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate",
-    "blog:pull": "node scripts/storyblok-blog.js pull",
-    "blog:pull-all": "node scripts/storyblok-blog.js pull-all",
-    "blog:push": "node scripts/storyblok-blog.js push",
-    "blog:diff": "node scripts/storyblok-blog.js diff"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.812.0",
@@ -24,6 +20,7 @@
     "@google/genai": "^1.30.0",
     "@google/generative-ai": "^0.24.1",
     "@material-tailwind/react": "2.1.7",
+    "@next/third-parties": "^14.2.5",
     "@prisma/client": "5.8.1",
     "@sendgrid/mail": "7.7.0",
     "@splidejs/react-splide": "^0.7.12",
@@ -39,6 +36,7 @@
     "eslint-config-next": "13.4.5",
     "framer-motion": "^12.23.12",
     "html-react-parser": "4.0.0",
+    "i": "^0.3.7",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.510.0",
     "mammoth": "^1.11.0",
@@ -46,7 +44,7 @@
     "next": "13.4.5",
     "next-auth": "4.24.5",
     "nodemailer": "6.10.1",
-    "posthog-js": "^1.310.1",
+    "postcss": "8.4.24",
     "prisma": "5.8.1",
     "randomuuid": "1.0.1",
     "react": "18.2.0",
@@ -61,6 +59,7 @@
     "rss": "1.2.2",
     "sass": "1.64.1",
     "storyblok-js-client": "6.0.0",
+    "storyblok-rich-text-react-renderer": "2.8.0",
     "swiper": "10.0.4",
     "tailwindcss": "3.3.2",
     "terser-webpack-plugin": "^5.3.10",
@@ -69,13 +68,5 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.4",
     "@types/react": "19.2.0"
-  },
-  "browserslist": [
-    "chrome >= 91",
-    "firefox >= 90",
-    "safari >= 15",
-    "edge >= 91",
-    "not dead",
-    "not ie 11"
-  ]
+  }
 }

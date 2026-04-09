@@ -2,7 +2,7 @@ import HomePage from "./home/page";
 
 export const metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "https://www.brilworks.com/",
+    process.env.NEXT_PUBLIC_BASE_URL || "https://dev.brilworks.com/",
   ),
   title: "Mobile App and Software Development Company | Brilworks",
   description:

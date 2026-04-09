@@ -7,19 +7,19 @@ import ServicesSection from "../Common/ServicesSection";
 
 const WhiteLabelFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm")
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid")
 );
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG")
 );
 
 const why100PlusAgenciesTrustUs = [
