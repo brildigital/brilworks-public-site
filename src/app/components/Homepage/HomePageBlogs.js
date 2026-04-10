@@ -12,7 +12,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { formatSrcUrl } from "../lib/commonFunction";
 
 const HomePageBlogs = () => {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = rawPathname === "/home" ? "/" : rawPathname;
 
   const ebookData = {
     title: (

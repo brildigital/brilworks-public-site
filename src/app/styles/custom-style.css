@@ -271,17 +271,8 @@
 }
 
 .contact-us-banner {
-  background-image: url("/images/v2/book-free-consultaion.webp");
+  background-image: linear-gradient(to top, var(--navyBlue), var(--theme-color));
   width: 100%;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 767px) {
-  .contact-us-banner {
-    background-image: linear-gradient(to top, var(--navyBlue), var(--theme-color));
-  }
 }
 
 .about-us-banner {
