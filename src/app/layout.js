@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./styles/Homepage.scss";
+import "./styles/button.scss";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
