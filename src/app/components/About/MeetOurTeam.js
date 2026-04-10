@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";

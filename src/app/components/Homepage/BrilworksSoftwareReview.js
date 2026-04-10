@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import { useEffect, useState } from "react";
-import { Pagination, Autoplay, Virtual } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StoryblokClient from "storyblok-js-client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -82,15 +82,12 @@ const BrilworksSoftwareReview = () => {
       </div>
       <Swiper
         className="reveal"
-        modules={[Pagination, Autoplay, Virtual]}
+        modules={[Pagination, Autoplay]}
         spaceBetween={isMobile ? 15 : 30}
         autoplay={{ delay: 500 }}
-        loopfillgroupwithblank
         speed={isMobile ? 1000 : 1500}
         loop={true}
-        shouldswiperupdate={false}
         pagination={{ clickable: true }}
-        virtual
         breakpoints={{
           1475: {
             slidesPerView: 3,

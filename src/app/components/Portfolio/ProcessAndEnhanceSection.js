@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Pagination, Autoplay, Virtual } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,18 +9,16 @@ import { useMediaQuery } from "react-responsive";
 
 const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ maxWidth: 1024 });
   return (
     <div className="bg-themeLight">
       <div className="container max-w-[1280px] main-section-padding lg:!py-16 mx-auto">
         <Swiper
           className="!w-[95%] !mx-auto"
-          modules={[Pagination, Autoplay, Virtual]}
+          modules={[Pagination, Autoplay]}
           spaceBetween={isMobile ? 10 : 21}
           autoplay={{ delay: 500 }}
           speed={2000}
           loop={true}
-          virtual={isTablet}
           shouldswiperupdate="true"
           pagination={{ clickable: true }}
           breakpoints={{
