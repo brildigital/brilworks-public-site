@@ -210,7 +210,7 @@ const EdTech = () => {
       <SolutionHeroSection
         technologyText="EdTech Software Development Company"
         title="EdTech Software Development Services"
-        description="We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences."
+        description="120+ products shipped across 20 countries. We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences."
         imageSrc="/images/v2/EdTech-Software-Development-Services-banner.webp"
         buttonText="Get a Free Consultation"
       />
@@ -222,7 +222,12 @@ const EdTech = () => {
       />
       <MultipleCardWithIconBG bgClass="bg-sectionBG" data={whyChooseUs} />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
+      <SolutionContactForm
+        title="Tell Us About Your EdTech Project"
+        description="Share your requirements and we'll get back with a project plan within 48 hours."
+        messageRequired={false}
+        submitLabel="Get My Free Estimate"
+      />
       <EdTechFAQs />
     </>
   );

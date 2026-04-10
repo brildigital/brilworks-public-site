@@ -11,7 +11,7 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
-import { generateRatingSchema } from "@/app/components/lib/schemaCode";
+import { generateRatingSchema, generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -179,6 +179,27 @@ export default async function Page(props) {
 
   return (
     <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBlogPostingSchema({
+            title: data?.story?.content?.title,
+            description: data?.story?.content?.metatags?.description || "",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${params?.slug}/`,
+            imageUrl: formatSrcUrl(
+              data?.story?.content?.mobile_banner?.filename ||
+                data?.story?.content?.image?.filename,
+            ),
+            datePublished: data?.story?.content?.Published || data?.story?.created_at,
+            dateModified: data?.story?.published_at,
+            authorName: author?.name,
+            authorUrl: author?.authorLinkedIn,
+            category: data?.story?.content?.Category,
+            readingTime: calculateReadingTime(totalDataWord),
+          }),
+        }}
+      />
       {title && ratingValue && ratingCount && (
         <script
           defer

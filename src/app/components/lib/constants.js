@@ -614,11 +614,11 @@ export const portfolioDynamicItems = [
     alt: "Social marketplace app",
     industry: "E-commerce",
     technology: ["iOS", "Android", "Flutterflow"],
-    clientName: "Orokii · US-based art marketplace",
+    clientName: "US-based art marketplace",
     metric: "3.2K artists onboarded in first 60 days",
   },
   {
-    title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
+    title: "Connecting Pet Owners With Trusted Caregivers",
     link: "/portfolio/pet-finding-app/",
     description:
       "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
@@ -650,7 +650,7 @@ export const portfolioDynamicItems = [
     alt: "Healthcare App",
     industry: "Healthcare",
     technology: ["React Native"],
-    clientName: "Rastrack · CEO David Velasquez (5-year client)",
+    clientName: "CEO Gerd, Orthopedic Doctor",
     metric: "40% reduction in appointment no-shows",
   },
   // {
