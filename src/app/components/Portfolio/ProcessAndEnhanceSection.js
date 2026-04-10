@@ -2,6 +2,8 @@
 import React from "react";
 import { Pagination, Autoplay, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { useMediaQuery } from "react-responsive";
 

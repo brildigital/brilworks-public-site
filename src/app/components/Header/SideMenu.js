@@ -16,11 +16,7 @@ const SideMenu = ({ open, close }) => {
   const [openSection, setOpenSection] = React.useState(0);
 
   const handleOpen = (value) => {
-    if (value !== openSection) {
-      setOpenSection(open === value ? 0 : value);
-    } else {
-      setOpenSection(0);
-    }
+    setOpenSection(openSection === value ? 0 : value);
   };
 
   const megaMenuNavList = (
@@ -91,13 +87,13 @@ const SideMenu = ({ open, close }) => {
       open={open}
       placement="right"
       size={"100vw"}
-      className="overflow-y-scroll z-[11] bg-white"
+      className="overflow-y-scroll z-[9999] bg-white"
       onClose={close}
       transition={{
         duration: 1,
       }}
       overlayProps={{
-        className: "bg-transparent",
+        className: "!bg-black/50 z-[9998]",
       }}
     >
       <IconButton
