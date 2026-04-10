@@ -32,13 +32,14 @@ const Honors = dynamic(() => import("../components/Homepage/Honors"));
 const HomepageWhyChooseUs = dynamic(() =>
   import("../components/Homepage/HomepageWhyChooseUs")
 );
-const HomepageBlog = dynamic(() =>
-  import("../components/Homepage/HomePageBlogs")
-);
 const EbookSection = dynamic(() =>
   import("../components/Homepage/EbookSection")
 );
+const HomepageBlog = dynamic(() =>
+  import("../components/Homepage/HomePageBlogs")
+);
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
+const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
 
 export async function generateMetadata() {
   return {
@@ -105,17 +106,18 @@ const page = () => {
       {/* <GameChanger /> */}
       <BrilliantInThought />
       <SeeingBelieving />
+      <HomepageWhyChooseUs />
       <MidPageCTA />
       <AISolutions />
       <ExploreOurExpertise />
       <ClientReviews />
-      <ClutchReviews />
       <IndustriesWeServe />
+      <ClutchReviews />
       <Honors />
-      <HomepageWhyChooseUs />
       <EbookSection />
       <HomepageBlog />
       <ContactUs />
+      <StickyCTA />
     </>
   );
 };

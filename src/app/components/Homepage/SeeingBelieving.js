@@ -72,24 +72,24 @@ const SeeingBelieving = ({
                   {item.technology?.slice(0, 2).map((tech) => (
                     <span
                       key={tech}
-                      className="font-[family-name:var(--font-body)] text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#e8f0fd] text-themeColor"
+                      className="font-Figtree text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#e8f0fd] text-themeColor"
                     >
                       {tech}
                     </span>
                   ))}
-                  <span className="font-[family-name:var(--font-body)] text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#d1fae5] text-[#065f46]">
+                  <span className="font-Figtree text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#d1fae5] text-[#065f46]">
                     {item.industry}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-[family-name:var(--font-heading)] text-[17px] font-bold text-[#0d0f1a] leading-[1.3] mb-2">
+                <h3 className="font-Figtree text-[17px] font-bold text-[#0d0f1a] leading-[1.3] mb-2">
                   {item.title}
                 </h3>
 
                 {/* Client */}
                 {item.clientName && (
-                  <p className="font-[family-name:var(--font-body)] text-[13px] text-[#6b7280] mb-3">
+                  <p className="font-Figtree text-[13px] text-[#6b7280] mb-3">
                     {item.clientName}
                   </p>
                 )}
@@ -97,10 +97,10 @@ const SeeingBelieving = ({
                 {/* Metric */}
                 {item.metric && (
                   <div className="flex items-center gap-2 bg-[#d1fae5] rounded-lg px-3.5 py-2.5">
-                    <span className="font-[family-name:var(--font-heading)] text-[22px] font-extrabold text-[#065f46]">
+                    <span className="font-Figtree text-[22px] font-extrabold text-[#065f46]">
                       {item.metric.split(" ")[0]}
                     </span>
-                    <span className="font-[family-name:var(--font-body)] text-xs text-[#065f46] font-medium">
+                    <span className="font-Figtree text-xs text-[#065f46] font-medium">
                       {item.metric.split(" ").slice(1).join(" ")}
                     </span>
                   </div>

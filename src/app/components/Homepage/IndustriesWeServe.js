@@ -1,13 +1,37 @@
 import React from "react";
 import Link from "next/link";
 
+const SvgIcon = ({ color, children }) => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
 const industries = [
-  { icon: "🏥", name: "Healthcare", count: "8 projects · HIPAA", href: "/industry/healthcare-software-development/" },
-  { icon: "💳", name: "Fintech", count: "12 projects", href: "/industry/fintech-software-development/" },
-  { icon: "🎓", name: "EdTech", count: "7 projects", href: "/industry/edtech-software-development/" },
-  { icon: "🛒", name: "E-Commerce", count: "15 projects", href: "/industry/e-commerce-app-development/" },
-  { icon: "☁️", name: "SaaS", count: "20+ projects" },
-  { icon: "🚚", name: "Logistics", count: "6 projects", href: "/industry/fleet-management-software-development/" },
+  {
+    icon: <SvgIcon color="#dc2626"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></SvgIcon>,
+    name: "Healthcare", count: "8 projects · HIPAA", href: "/industry/healthcare-software-development/",
+  },
+  {
+    icon: <SvgIcon color="#1A5CCC"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" /></SvgIcon>,
+    name: "Fintech", count: "12 projects", href: "/industry/fintech-software-development/",
+  },
+  {
+    icon: <SvgIcon color="#7c3aed"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></SvgIcon>,
+    name: "EdTech", count: "7 projects", href: "/industry/edtech-software-development/",
+  },
+  {
+    icon: <SvgIcon color="#ea580c"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></SvgIcon>,
+    name: "E-Commerce", count: "15 projects", href: "/industry/e-commerce-app-development/",
+  },
+  {
+    icon: <SvgIcon color="#0891b2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></SvgIcon>,
+    name: "SaaS", count: "20+ projects",
+  },
+  {
+    icon: <SvgIcon color="#16a34a"><rect x="1" y="3" width="15" height="13" /><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></SvgIcon>,
+    name: "Logistics", count: "6 projects", href: "/industry/fleet-management-software-development/",
+  },
 ];
 
 const IndustriesWeServe = () => {
@@ -33,11 +57,11 @@ const IndustriesWeServe = () => {
           {industries.map((item, index) => {
             const content = (
               <>
-                <div className="text-[32px] mb-2.5">{item.icon}</div>
-                <div className="font-[family-name:var(--font-heading)] text-[13px] font-bold text-[#0d0f1a] mb-1">
+                <div className="mb-2.5 flex justify-center">{item.icon}</div>
+                <div className="font-Figtree text-[13px] font-bold text-[#0d0f1a] mb-1">
                   {item.name}
                 </div>
-                <div className="font-[family-name:var(--font-body)] text-[11px] text-[#6b7280]">
+                <div className="font-Figtree text-[11px] text-[#6b7280]">
                   {item.count}
                 </div>
               </>
@@ -58,12 +82,19 @@ const IndustriesWeServe = () => {
           })}
         </div>
 
-        <div className="text-center mt-7 reveal">
+        <div className="flex items-center justify-center gap-6 mt-7 reveal">
           <Link
             href="/industry/"
-            className="font-[family-name:var(--font-body)] text-themeColor font-semibold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
+            className="font-Figtree text-themeColor font-semibold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
           >
             +9 more industries we have shipped in →
+          </Link>
+          <span className="text-[#e5e7eb]">|</span>
+          <Link
+            href="/contact-us/"
+            className="font-Figtree text-[#374151] font-semibold text-sm inline-flex items-center gap-1.5 hover:text-themeColor transition-colors duration-200"
+          >
+            Tell us your industry →
           </Link>
         </div>
       </div>

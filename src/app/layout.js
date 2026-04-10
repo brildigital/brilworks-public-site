@@ -7,16 +7,18 @@ import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 
+// FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
+//            and figtree variable back to "--global-font"
 const figtree = Figtree({
   subsets: ["latin"],
   display: "swap",
-  variable: "--global-font",
+  variable: "--font-figtree", // was "--global-font" — kept loaded for easy revert
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-heading",
+  variable: "--global-font", // was "--font-heading" — now the primary site font
   weight: ["400", "500", "600", "700", "800"],
 });
 

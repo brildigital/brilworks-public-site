@@ -1,10 +1,24 @@
 import React from "react";
 import Link from "next/link";
 
+const SvgIcon = ({ color, children }) => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const aiIcons = {
+  support: <SvgIcon color="#0891b2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01" /><path d="M12 10h.01" /><path d="M16 10h.01" /></SvgIcon>,
+  lead: <SvgIcon color="#16a34a"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></SvgIcon>,
+  document: <SvgIcon color="#ea580c"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></SvgIcon>,
+  workflow: <SvgIcon color="#eab308"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></SvgIcon>,
+  coding: <SvgIcon color="#7c3aed"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /><line x1="14" y1="4" x2="10" y2="20" /></SvgIcon>,
+  whitelabel: <SvgIcon color="#1A5CCC"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></SvgIcon>,
+};
+
 const aiSolutions = [
   {
-    icon: "/images/v2/ai-agent-icon.svg",
-    fallbackIcon: "🤖",
+    iconKey: "support",
     proof: "Handles 80% of queries automatically",
     title: "Customer Support Agent",
     description:
@@ -12,8 +26,7 @@ const aiSolutions = [
     link: "/ai-solutions/",
   },
   {
-    icon: "/images/v2/lead-icon.svg",
-    fallbackIcon: "📈",
+    iconKey: "lead",
     proof: "Responds to leads in under 2 minutes",
     title: "Lead Qualification Agent",
     description:
@@ -21,8 +34,7 @@ const aiSolutions = [
     link: "/ai-solutions/",
   },
   {
-    icon: "/images/v2/document-icon.svg",
-    fallbackIcon: "📄",
+    iconKey: "document",
     proof: "Processes invoices in 5 seconds",
     title: "Document Processing Agent",
     description:
@@ -30,8 +42,7 @@ const aiSolutions = [
     link: "/ai-solutions/",
   },
   {
-    icon: "/images/v2/workflow-icon.svg",
-    fallbackIcon: "⚡",
+    iconKey: "workflow",
     proof: "Eliminates 20+ hrs/week of manual work",
     title: "Workflow Automation Agent",
     description:
@@ -39,8 +50,7 @@ const aiSolutions = [
     link: "/ai-solutions/",
   },
   {
-    icon: "/images/v2/coding-icon.svg",
-    fallbackIcon: "💻",
+    iconKey: "coding",
     proof: "One client cut dev time by 50%",
     title: "AI Coding Accelerator",
     description:
@@ -48,8 +58,7 @@ const aiSolutions = [
     link: "/ai-solutions/",
   },
   {
-    icon: "/images/v2/whitelabel-icon.svg",
-    fallbackIcon: "🏢",
+    iconKey: "whitelabel",
     proof: "Your brand. Your margin.",
     title: "White-Label for Agencies",
     description:
@@ -87,7 +96,7 @@ const AISolutions = () => {
               {/* Top gradient bar on hover */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-themeColor to-[#00b4d8] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <div className="text-3xl mb-4">{solution.fallbackIcon}</div>
+              <div className="mb-4">{aiIcons[solution.iconKey]}</div>
 
               <div className="flex items-center gap-1.5 bg-blue-50 rounded-md px-2.5 py-1.5 mb-4 w-fit">
                 <span className="text-themeColor text-xs font-semibold">
@@ -95,10 +104,10 @@ const AISolutions = () => {
                 </span>
               </div>
 
-              <h4 className="font-[family-name:var(--font-heading)] text-base font-bold text-gray-900 mb-2">
+              <h4 className="font-Figtree text-base font-bold text-gray-900 mb-2">
                 {solution.title}
               </h4>
-              <p className="font-[family-name:var(--font-body)] text-[13px] text-colorGray leading-[1.65] mb-4">
+              <p className="font-Figtree text-[13px] text-colorGray leading-[1.65] mb-4">
                 {solution.description}
               </p>
 

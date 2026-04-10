@@ -3,10 +3,10 @@ import React from "react";
 const whyItems = [
   {
     num: "01",
-    stat: "98%",
-    title: "Project Success Rate",
+    stat: "2%",
+    title: "Project Failure Rate",
     description:
-      "Across 120+ projects over 8 years — only 2 in 100 miss the mark. Track record you can verify on Clutch.",
+      "Only 2 in 100 miss the mark across 120+ projects over 8 years. Track record you can verify on Clutch.",
     badge: "Clutch-verified",
   },
   {
@@ -43,8 +43,8 @@ const whyItems = [
   },
   {
     num: "06",
-    stat: "100%",
-    title: "Job Success on Upwork · 4.8★ Clutch",
+    stat: "97%",
+    title: "Job Success on Upwork · 5★ Clutch",
     description:
       "Third-party verified. Two independent platforms agree. You can read every review — nothing is curated or hidden.",
     badge: "Public · Unedited",
@@ -53,7 +53,7 @@ const whyItems = [
 
 const HomepageWhyChooseUs = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#f8f9ff]">
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         {/* Section Header */}
         <div className="mb-14 reveal">
@@ -79,22 +79,22 @@ const HomepageWhyChooseUs = () => {
               } ${index >= 4 ? "border-b-0" : ""}`}
             >
               {/* Number */}
-              <div className="font-[family-name:var(--font-heading)] text-5xl font-extrabold text-[#e5e7eb] leading-none mb-4">
+              <div className="font-Figtree text-5xl font-extrabold text-[#e5e7eb] leading-none mb-4">
                 {item.num}
               </div>
 
               {/* Stat */}
-              <div className="font-[family-name:var(--font-heading)] text-[28px] font-extrabold text-themeColor mb-1.5">
+              <div className="font-Figtree text-[28px] font-extrabold text-themeColor mb-1.5">
                 {item.stat}
               </div>
 
               {/* Title */}
-              <h4 className="font-[family-name:var(--font-heading)] text-[17px] font-bold text-[#0d0f1a] mb-2">
+              <h4 className="font-Figtree text-[17px] font-bold text-[#0d0f1a] mb-2">
                 {item.title}
               </h4>
 
               {/* Description */}
-              <p className="font-[family-name:var(--font-body)] text-[13px] text-[#6b7280] leading-[1.7]">
+              <p className="font-Figtree text-[13px] text-[#6b7280] leading-[1.7]">
                 {item.description}
               </p>
 

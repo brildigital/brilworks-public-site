@@ -2,7 +2,7 @@ import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
-const SolutionContactForm = ({ title, description }) => {
+const SolutionContactForm = ({ title, description, messageRequired = true, submitLabel }) => {
   return (
     <div className="hire-team-contact-section">
       <div id="section-contact-form" className="banner-layer-dark">
@@ -26,6 +26,8 @@ const SolutionContactForm = ({ title, description }) => {
               <PortfolioContactForm
                 showCompanyField={false}
                 messageField={true}
+                messageRequired={messageRequired}
+                submitLabel={submitLabel}
               />
             </div>
             <div className="lg:w-1/2 w-full">
