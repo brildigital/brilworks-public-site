@@ -513,9 +513,11 @@ export const portfolioDynamicItems = [
     alt: "Social marketplace app",
     industry: "E-commerce",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "US-based art marketplace",
+    metric: "3.2K artists onboarded in first 60 days",
   },
   {
-    title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
+    title: "Connecting Pet Owners With Trusted Caregivers",
     link: "/portfolio/pet-finding-app/",
     description:
       "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
@@ -523,6 +525,8 @@ export const portfolioDynamicItems = [
     alt: "Pet finder app",
     industry: "Social",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "US-based pet care platform",
+    metric: "850+ bookings in first 3 months",
   },
   {
     title: "Making Early Learning Fun with An Interactive Educational Game",
@@ -533,6 +537,8 @@ export const portfolioDynamicItems = [
     alt: "Educational mobile game",
     industry: "Ed-Tech",
     technology: ["iOS", "Android", "C#"],
+    clientName: "UK-based EdTech startup",
+    metric: "68% day-30 retention · 12,000+ students",
   },
   {
     title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
@@ -543,6 +549,8 @@ export const portfolioDynamicItems = [
     alt: "Healthcare App",
     industry: "Healthcare",
     technology: ["React Native"],
+    clientName: "CEO Gerd, Orthopedic Doctor",
+    metric: "40% reduction in appointment no-shows",
   },
   // {
   //   title: "Streamlining Energy Audits with An All-In-One CRM Solution",

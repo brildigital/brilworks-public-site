@@ -134,6 +134,50 @@ export function generateVideoSchema({
   return JSON.stringify(videoSchema);
 }
 
+export function generateBlogPostingSchema({
+  title,
+  description,
+  url,
+  imageUrl,
+  datePublished,
+  dateModified,
+  authorName,
+  authorUrl,
+  category,
+  readingTime,
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    url: url,
+    image: imageUrl,
+    datePublished: datePublished,
+    dateModified: dateModified || datePublished,
+    wordCount: readingTime ? readingTime * 250 : undefined,
+    author: {
+      "@type": "Person",
+      name: authorName,
+      url: authorUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    articleSection: category,
+  };
+  return JSON.stringify(schema);
+}
+
 export const homepageFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
