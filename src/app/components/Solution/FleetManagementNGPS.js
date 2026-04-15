@@ -7,28 +7,42 @@ import {
   faAngular,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
+import { ShieldCheck, Truck, MapPin, Zap } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import TypesOfAppWeDevelop from "./TypesOfAppWeDevelop";
 import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
 import MultipleKeyValueWithBG from "../Common/MultipleKeyValueWithBG";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
+  { ssr: false }
 );
 const SolutionEngagementAndHowCanStart = dynamic(() =>
   import("./SolutionEngagementAndHowCanStart")
 );
 
 const FleetManagementNGPS = () => {
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: Truck, label: "20+ Fleet Apps Delivered" },
+    { icon: MapPin, label: "Real-Time GPS Tracking" },
+    { icon: Zap, label: "99.9% Uptime SLA" },
+  ];
+
   const fleetServices1 = {
     title: "Our Logistics Solutions",
     buttonText: "Build My Fleet Management App",
     servicesList: [
       {
         title: "Fleet Management App Development",
+        iconSrc: "/images/v2/logistic-icon.svg",
         description:
           "We build apps that allow you to monitor and optimise your vehicle fleets in real time. Track drivers, plan routes, capture performance data and reduce idle time so your fleet becomes a strategic asset, not just a cost centre.",
         value: "fleet-one-1",
@@ -38,8 +52,9 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Inventory Management App Development",
+        iconSrc: "/images/v2/realtime-gps-icon.svg",
         description:
-          "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You’ll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.",
+          "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You'll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.",
         value: "fleet-one-2",
         imageSrc: "/images/v2/fleet-maintenance-and-predictions.webp",
         imageAlt: "Fleet Maintenance Predictions",
@@ -47,6 +62,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "On-Demand Logistics App Development",
+        iconSrc: "/images/v2/route-history-icon.svg",
         description:
           "On-demand logistics apps for dynamic routing, real-time tracking for customers and dispatchers, helping you win in competitive markets.",
         value: "fleet-one-3",
@@ -56,6 +72,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Route Optimisation App Development",
+        iconSrc: "/images/v2/realtime-icon.svg",
         description:
           "For companies managing complex transportation logistics, we build apps that integrate order volumes, traffic data, vehicle capacities and delivery constraints to plan efficient trips, reduce costs and improve reliability.",
         value: "fleet-one-4",
@@ -65,6 +82,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Custom Enterprise Logistics App Development ",
+        iconSrc: "/images/v2/scalable-architecture-icon.svg",
         description:
           "Your business is unique. If you need a tailored solution. We design custom logistics apps built to your requirements, with future-proof architecture, data analytics modules and support across mobile and web platforms.",
         value: "fleet-one-5",
@@ -81,14 +99,16 @@ const FleetManagementNGPS = () => {
     servicesList: [
       {
         title: "GPS Fleet Tracking",
+        iconSrc: "/images/v2/historical-fleet-icon.svg",
         description:
-          "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
+          "We're smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
         value: "fleet-two-1",
         imageSrc: "/images/v2/gps-fleet-tracking.webp",
         imageAlt: "Delivery Management Software",
       },
       {
         title: "Traffic Management Software",
+        iconSrc: "/images/v2/automates-alert-icon.svg",
         description:
           "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.",
         value: "fleet-two-2",
@@ -97,6 +117,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Delivery Management Software",
+        iconSrc: "/images/v2/offline-tracking-icon.svg",
         description:
           "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
         value: "fleet-two-3",
@@ -105,6 +126,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Transportation Software",
+        iconSrc: "/images/v2/developer-icon.svg",
         description:
           "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
         value: "fleet-two-4",
@@ -113,8 +135,9 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Supply Chain Management Software",
+        iconSrc: "/images/v2/engine-diagonastic-icon.svg",
         description:
-          "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
+          "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you're aware of its location at all times.",
         value: "fleet-two-5",
         imageSrc: "/images/v2/supply-chain-management-software.webp",
         imageAlt: "Supply-Chain-Management-Software",
@@ -126,7 +149,7 @@ const FleetManagementNGPS = () => {
     title: "The Benefits of Having Fleet Management Software",
     description:
       "By utilizing our expertise in working with various players in the healthcare industry, we provide healthcare application development services that make your product a crucial part of the overall healthcare ecosystem. Our services encompass the development of custom apps, designed to meet your business needs.",
-    buttonText: "Let’s Get In Touch",
+    buttonText: "Let's Get In Touch",
     imageSrc: "/images/v2/fleet-mgmt-app-we-develop.webp",
     imageAlt: "fleet-app-type",
     appTypesList: [
@@ -212,6 +235,42 @@ const FleetManagementNGPS = () => {
     },
   ];
 
+  const whyChooseUsDevelopmentData = {
+    title: "Why Choose Brilworks for Fleet Management",
+    benefits: [
+      {
+        title: "Top-Rated Developers",
+        icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
+        description:
+          "Our team members consistently earn top ratings for their technical skills and communication.",
+      },
+      {
+        title: "Fleet & Logistics Experience",
+        icon: "/images/v2/proven-expertise.svg",
+        description:
+          "We have built GPS tracking, route optimisation, and supply chain solutions for logistics companies worldwide.",
+      },
+      {
+        title: "Agile & Transparent",
+        icon: "/images/v2/Agile_Development_Excellence.svg",
+        description:
+          "You see progress regularly through sprints and working software, not after months of silence.",
+      },
+      {
+        title: "Clear Communication",
+        icon: "/images/v2/transparent-comm.svg",
+        description:
+          "We explain technical decisions in plain language without overwhelming you with jargon.",
+      },
+      {
+        title: "Post-Launch Support",
+        icon: "/images/v2/ongoing-support-icon.svg",
+        description:
+          "We provide training, fix bugs, make adjustments, and add features as your needs evolve.",
+      },
+    ],
+  };
+
   const techStackList = [
     {
       title: "Frontend",
@@ -296,16 +355,18 @@ const FleetManagementNGPS = () => {
   return (
     <>
       <SolutionHeroSection
-        technologyText={
-          <>
-            Fleet Management App
-            <br className="md:block hidden" /> Development Services
-          </>
-        }
-        title="Custom Fleet Management Mobile & Web App Development"
+        technologyText="Fleet Management App Development Services"
+        title='Custom <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">Fleet Management</span> Mobile & Web App Development'
         description="At Brilworks, we design and build custom fleet management apps for mobile and web that transform fleet operations. We build smartest solutions for managing fleets, tracking shipments, and optimising last-mile delivery. Our fleet management app development services give you the tools to reduce costs, increase visibility and deliver better service. "
         imageSrc="/images/v2/fleet-mgmt-banner.webp"
+        stats={[
+          { value: "120+", label: "Products Shipped" },
+          { value: "20+", label: "Fleet Apps" },
+          { value: "99.9%", label: "Uptime" },
+          { value: "98%", label: "Client Retention" },
+        ]}
       />
+      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection sectionId="services-one" serviceData={fleetServices1} />
       <ServicesSection
         bgClass="bg-themeLight"
@@ -313,6 +374,12 @@ const FleetManagementNGPS = () => {
         imageOnLeft={true}
         serviceData={fleetServices2}
       />
+
+      <IndustryMidCTA
+        title="Ready to Optimize Your Fleet Operations?"
+        description="Get a free consultation on your fleet management app. We respond within 24 hours."
+      />
+
       <TypesOfAppWeDevelop data={fleetAppWeDevelop} />
       <TechStackWeWorkWith
         active="frontend"
@@ -322,17 +389,26 @@ const FleetManagementNGPS = () => {
       <MultipleCardWithIconBG bgClass="bg-sectionBG" data={fleetMgmtFeature} />
       <MultipleKeyValueWithBG
         bgClass="bg-white"
-        buttonText="Let’s Get In Touch"
+        buttonText="Let's Get In Touch"
         title="What Makes Brilworks The Best Fleet Management Software Development Company?"
         description="We know it can be frustrating to keep track of all your vehicles on the road, but with our fleet management software and GPS tracking system, we make it easier than ever to keep track of all your moves."
         keyValueData={fleetExperienceShowCase}
       />
+      <MultipleCardWithIconBG data={whyChooseUsDevelopmentData} />
+      <ClientReviews />
       <SolutionEngagementAndHowCanStart />
+      <FleetManagmentFAQs />
       <SolutionContactForm
         title="Start Building Your Fleet Management App Today"
-        description="Modern fleet runs on technology. Let’s build the solution that keeps yours ahead of the curve."
+        description="Modern fleets run on technology. Tell us about your fleet size and challenges, and we'll design the right solution."
+        submitLabel="Get My Fleet App Proposal"
+        benefits={[
+          "Real-time GPS tracking and route optimization",
+          "IoT sensor integration for vehicle diagnostics",
+          "Scalable cloud-based architecture",
+          "24/7 monitoring and support",
+        ]}
       />
-      <FleetManagmentFAQs />
     </>
   );
 };

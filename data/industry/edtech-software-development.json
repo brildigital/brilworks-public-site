@@ -1,0 +1,286 @@
+{
+  "slug": "edtech-software-development",
+  "url": "/industry/edtech-software-development/",
+  "industry": "EdTech",
+  "metadata": {
+    "title": "EdTech Software Development Services",
+    "description": "We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences.",
+    "canonical": "{BASE_URL}industry/edtech-software-development/",
+    "ogImage": "{BASE_URL}images/explore-arrow-01.png",
+    "ogTitle": "EdTech Software Development Services",
+    "ogDescription": "We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences.",
+    "breadcrumbLabel": "EdTech Software Development Company",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "locale": "en-US",
+    "ogType": "article",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "Trusted by 120+ companies across 20 countries",
+      "technologyText": "EdTech Software Development Services",
+      "headline": "Build Your EdTech Platform \u2014 Launch in 10-20 Weeks",
+      "headlineHtml": "Build Your <span class=\"bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text\" style=\"--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent\">EdTech Platform</span> \u2014 Launch in 10-20 Weeks",
+      "subheadline": "From MVP to enterprise \u2014 we build custom LMS, e-learning platforms, and AI-powered education apps. Your EdTech startup development partner for scalable, compliant software.",
+      "imageSrc": "/images/v2/EdTech-Software-Development-Services-banner.webp",
+      "ctas": [
+        { "label": "Get My Free Consultation", "href": "#section-contact-form", "style": "primary" },
+        { "label": "View Case Studies", "href": "/portfolio/", "style": "secondary" }
+      ],
+      "stats": [
+        { "value": "120+", "label": "Products Shipped" },
+        { "value": "15+", "label": "EdTech Platforms" },
+        { "value": "500K+", "label": "Learners Served" },
+        { "value": "98%", "label": "Client Retention" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "eyebrow": "What We Build",
+        "title": "Our EdTech Development Solutions",
+        "subtitle": "End-to-end education technology solutions \u2014 from e-learning platforms to AI-driven adaptive learning systems.",
+        "buttonText": "Build My EdTech App",
+        "items": [
+          {
+            "title": "E-Learning Platform Development",
+            "iconSrc": "/images/v2/read-icon.svg",
+            "description": "End-to-end e-learning platforms with online courses, content delivery, video streaming, and student assessments. Built for scale from day one.",
+            "value": "e-learning-platform-development",
+            "btnText": "Build My Platform"
+          },
+          {
+            "title": "Learning Management System (LMS) Development",
+            "iconSrc": "/images/v2/experience-in- education-icon.svg",
+            "description": "Custom LMS with role-based access, gamification, progress tracking, and attendance management. Simplify training for any organization size.",
+            "value": "lms-development",
+            "btnText": "Build My LMS"
+          },
+          {
+            "title": "Mobile Learning App Development",
+            "iconSrc": "/images/v2/interactive-ui-icon.svg",
+            "description": "Cross-platform iOS & Android apps for on-the-go learning, exam preparation, and micro-courses. React Native & Flutter expertise.",
+            "value": "mobile-learning-app-development",
+            "btnText": "Build My App"
+          },
+          {
+            "title": "School & University Management Software",
+            "iconSrc": "/images/v2/calendar-icon.svg",
+            "description": "Automate admissions, scheduling, grading, and teacher-parent-student communication. Replace spreadsheets with a unified platform.",
+            "value": "school-university-management-software",
+            "btnText": "Build My System"
+          },
+          {
+            "title": "Virtual Classroom & Video Learning Platforms",
+            "iconSrc": "/images/v2/play-theme-icon.svg",
+            "description": "Real-time teaching with video conferencing, whiteboard, screen sharing, and recording. Zoom, Twilio, and custom WebRTC integrations.",
+            "value": "virtual-classroom-video-learning-platforms",
+            "btnText": "Build My Classroom"
+          },
+          {
+            "title": "Adaptive & AI-Driven Learning Solutions",
+            "iconSrc": "/images/v2/data-driven-icon.svg",
+            "description": "Intelligent systems that analyze learner behavior and personalize content paths. AI-powered assessments, recommendations, and analytics.",
+            "value": "adaptive-ai-learning-solutions",
+            "btnText": "Explore AI Solutions"
+          },
+          {
+            "title": "Custom EdTech Platform Development",
+            "iconSrc": "/images/v2/developer-icon.svg",
+            "description": "Have a unique EdTech idea? We build tailored solutions from MVP to enterprise. Your vision, our engineering \u2014 EdTech MVP development in 10-20 weeks.",
+            "value": "custom-edtech-platform-development",
+            "btnText": "Start My Project"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to Build an EdTech App?",
+        "description": "Get a free consultation and project estimate. We respond within 24 hours.",
+        "ctas": [
+          { "label": "Get Free Consultation", "href": "#section-contact-form", "style": "primary" },
+          { "label": "See Our Work", "href": "/portfolio/", "style": "secondary" }
+        ]
+      },
+      {
+        "type": "tech-stack",
+        "title": "Technologies We Use",
+        "active": "frontend",
+        "items": [
+          {
+            "title": "Frontend",
+            "value": "frontend",
+            "items": [
+              { "label": "ReactJS", "color": "#61DBFB" },
+              { "label": "AngularJS", "color": "#DD0031" },
+              { "label": "VueJS", "color": "#42B883" }
+            ]
+          },
+          {
+            "title": "Backend",
+            "value": "backend",
+            "items": [
+              { "label": "Python", "iconifyIcon": "/images/python.svg" },
+              { "label": "NodeJS", "iconifyIcon": "/images/node-icon.svg" },
+              { "label": "Java", "iconifyIcon": "/images/java.svg" }
+            ]
+          },
+          {
+            "title": "Mobile",
+            "value": "mobile-development",
+            "items": [
+              { "label": "React Native", "color": "#61DBFB" },
+              { "label": "Flutter", "iconifyIcon": "/images/flutter.svg" },
+              { "label": "Swift", "iconifyIcon": "/images/swift-language.svg" },
+              { "label": "Kotlin", "iconifyIcon": "/images/kotlin-icon.svg" }
+            ]
+          },
+          {
+            "title": "Databases",
+            "value": "databases",
+            "items": [
+              { "label": "MongoDB", "iconifyIcon": "/images/mongodb.svg" },
+              { "label": "PostgreSQL", "iconifyIcon": "/images/postgresql.svg" },
+              { "label": "Firebase", "iconifyIcon": "/images/firebase-icon.svg" }
+            ]
+          },
+          {
+            "title": "Integrations",
+            "value": "integrations",
+            "items": [
+              { "label": "Payment Gateways" },
+              { "label": "Video APIs (Zoom, Twilio)" },
+              { "label": "LMS APIs" },
+              { "label": "AI/ML Models" },
+              { "label": "ERP Connectors" }
+            ]
+          },
+          {
+            "title": "Cloud",
+            "value": "cloud-devops",
+            "items": [
+              { "label": "AWS", "iconifyIcon": "/images/aws.svg" },
+              { "label": "Azure", "iconifyIcon": "/images/azure.svg" },
+              { "label": "Google Cloud Platform", "iconifyIcon": "/images/v2/google-cloud-icon.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "eyebrow": "Why Brilworks",
+        "title": "Why EdTech Founders Choose Us",
+        "items": [
+          {
+            "title": "EdTech Domain Expertise",
+            "description": "15+ EdTech platforms built. We understand learner journeys, educator workflows, and compliance (COPPA, FERPA, GDPR).",
+            "icon": "/images/v2/experience-in- education-icon.svg"
+          },
+          {
+            "title": "Scalable Architecture",
+            "description": "Cloud-native, microservices-based architecture designed for large learner volumes. Auto-scaling from 100 to 1M+ users.",
+            "icon": "/images/v2/scalable-architecture-icon.svg"
+          },
+          {
+            "title": "Data-Driven Design",
+            "description": "Built-in analytics dashboards, learner behavior tracking, and engagement metrics. Data-informed decisions from day one.",
+            "icon": "/images/v2/data-driven-icon.svg"
+          },
+          {
+            "title": "User-First Approach",
+            "description": "UX research with real educators and learners. High adoption rates because we design for how people actually learn.",
+            "icon": "/images/v2/user-first-approach-icon.svg"
+          },
+          {
+            "title": "Ongoing Support",
+            "description": "Post-launch maintenance, performance optimization, and feature iterations. Your platform grows with your user base.",
+            "icon": "/images/v2/ongoing-support-icon.svg"
+          }
+        ]
+      },
+      {
+        "type": "engagementModels",
+        "eyebrow": "How We Work",
+        "title": "Our Engagement Models",
+        "subtitle": "Flexible models to match your stage \u2014 whether you're a solo founder with an idea or a funded startup scaling fast.",
+        "items": [
+          {
+            "iconSrc": "/images/v2/dedicated-dev-team.svg",
+            "title": "Dedicated Development Team",
+            "description": "A full team (devs, QA, PM, designer) working exclusively on your product. Best for funded startups building a core platform."
+          },
+          {
+            "iconSrc": "/images/v2/team-extension.svg",
+            "title": "Team Extension",
+            "description": "Add our engineers to your existing team. They integrate with your processes, tools, and culture. Best for scaling quickly."
+          },
+          {
+            "iconSrc": "/images/v2/project-based-model-icon.svg",
+            "title": "Project-Based Model",
+            "description": "Fixed scope, fixed timeline, fixed price. We handle everything from design to deployment. Best for MVPs and defined projects."
+          }
+        ]
+      },
+      {
+        "type": "process",
+        "eyebrow": "Getting Started",
+        "title": "How to Launch Your Platform",
+        "subtitle": "From first conversation to production \u2014 in as little as 10 weeks.",
+        "items": [
+          { "step": 1, "title": "Contact Us", "description": "Fill out the form. We respond within 24 business hours." },
+          { "step": 2, "title": "Free Consultation", "description": "We discuss your requirements, target users, and build a roadmap together." },
+          { "step": 3, "title": "Proposal & Estimate", "description": "Detailed project proposal with timeline, milestones, and transparent pricing." },
+          { "step": 4, "title": "Project Kickoff", "description": "Your dedicated team starts building. Weekly demos, Slack access, full transparency." }
+        ]
+      },
+      {
+        "type": "faq",
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "q": "How much does it cost to build an EdTech platform?", "a": "Costs depend on features, design, integrations, and scalability. A small e-learning app might cost less, while a complete learning management system with analytics and AI recommendations will require a higher budget. We share clear estimates after discussing your goals." },
+          { "q": "How long does it take to develop an education app?", "a": "Timelines vary by scope, but most projects range between 10 to 20 weeks from concept to launch. We work in agile sprints to deliver faster without compromising quality." },
+          { "q": "Can you integrate my app with existing systems?", "a": "Yes. We can connect your new platform to CRMs, ERPs, video tools like Zoom, and payment gateways for seamless operation." },
+          { "q": "Do you support both web and mobile platforms?", "a": "Absolutely. We build responsive web platforms and native or cross-platform mobile apps for iOS and Android." },
+          { "q": "Is my users\u2019 data secure?", "a": "We follow strict data security practices, including encryption, secure APIs, and compliance with international privacy standards to protect learners and institutions." },
+          { "q": "Can you help me scale the product later?", "a": "Yes. We build all solutions with scalability in mind so you can easily add new features, courses, or users as your platform grows." }
+        ]
+      },
+      {
+        "type": "contactForm",
+        "eyebrow": "Let's Talk",
+        "title": "Ready to Build Your EdTech Platform?",
+        "description": "You're one conversation away from turning your EdTech idea into a scalable platform. Tell us what you're building \u2014 we'll show you how we can help.",
+        "submitLabel": "Get My Free EdTech Consultation",
+        "messageRequired": false,
+        "benefits": [
+          "Free 30-minute consultation with an EdTech specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial \u2014 no commitment",
+          "Response guaranteed within 24 business hours",
+          "COPPA, FERPA & GDPR compliance built in"
+        ],
+        "contact": {
+          "email": "sales@brilworks.com",
+          "phone": "+91 93136 44148"
+        }
+      }
+    ],
+    "faq": [
+      { "q": "How much does it cost to build an EdTech platform?", "a": "Costs depend on features, design, integrations, and scalability. A small e-learning app might cost less, while a complete learning management system with analytics and AI recommendations will require a higher budget. We share clear estimates after discussing your goals." },
+      { "q": "How long does it take to develop an education app?", "a": "Timelines vary by scope, but most projects range between 10 to 20 weeks from concept to launch. We work in agile sprints to deliver faster without compromising quality." },
+      { "q": "Can you integrate my app with existing systems?", "a": "Yes. We can connect your new platform to CRMs, ERPs, video tools like Zoom, and payment gateways for seamless operation." },
+      { "q": "Do you support both web and mobile platforms?", "a": "Absolutely. We build responsive web platforms and native or cross-platform mobile apps for iOS and Android." },
+      { "q": "Is my users\u2019 data secure?", "a": "We follow strict data security practices, including encryption, secure APIs, and compliance with international privacy standards to protect learners and institutions." },
+      { "q": "Can you help me scale the product later?", "a": "Yes. We build all solutions with scalability in mind so you can easily add new features, courses, or users as your platform grows." }
+    ],
+    "stats": [
+      { "value": "120+", "label": "Products Shipped" },
+      { "value": "15+", "label": "EdTech Platforms" },
+      { "value": "500K+", "label": "Learners Served" },
+      { "value": "98%", "label": "Client Retention" }
+    ],
+    "testimonials": []
+  }
+}

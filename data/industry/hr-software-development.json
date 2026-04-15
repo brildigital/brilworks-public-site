@@ -1,0 +1,125 @@
+{
+  "slug": "hr-software-development",
+  "url": "/industry/hr-software-development/",
+  "industry": "HR",
+  "metadata": {
+    "title": "HR Software Development Services | Brilworks",
+    "description": "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
+    "canonical": "{BASE_URL}industy/hr-software-development/",
+    "ogImage": "{BASE_URL}images/v2/hr-software-development.webp",
+    "ogTitle": "HR Software Development Services",
+    "ogDescription": "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
+    "ogType": "website",
+    "ogSiteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "ogLocale": "en-US",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "HR Software Development Services",
+      "headline": "Custom HR Software Development",
+      "headlineHtml": "Custom <span class=\"bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text\" style=\"--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent\">HR Software</span> Development",
+      "subheadline": "Custom software for human resources teams. We build applicant tracking systems, employee management platforms, payroll integrations, performance review tools, and onboarding applications.",
+      "imageSrc": "/images/v2/hr-software-development.webp",
+      "buttonText": "Start Your App Journey",
+      "ctas": [{ "label": "Start Your App Journey" }],
+      "stats": [
+        { "value": "120+", "label": "Products Shipped" },
+        { "value": "25+", "label": "HR Platforms" },
+        { "value": "50K+", "label": "Employees Managed" },
+        { "value": "98%", "label": "Client Retention" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "about",
+        "title": "About Brilworks HR Solutions",
+        "items": [
+          { "text": "For 8 years, we've been building software for HR departments that need technology to match their workflows. Your HR team shouldn't spend half their day updating spreadsheets, chasing signatures, or copying data between systems." },
+          { "text": "Most HR software forces you to change how you work. We do the opposite\u2014we build around your existing processes. Whether you're hiring 5 people a year or 50, managing remote teams across time zones, or just trying to get performance reviews done without the annual scramble, we create tools that fit." },
+          { "text": "We've completed 120+ projects with a 98% success rate. HR teams pick us because we ask about their daily frustrations before writing any code." }
+        ]
+      },
+      {
+        "type": "services",
+        "title": "What We Build for HR Teams",
+        "items": [
+          { "title": "Applicant Tracking Systems", "description": "Post jobs, collect applications, screen candidates, schedule interviews, and manage your hiring pipeline from one dashboard.", "iconSrc": "/images/v2/people-icon-vector.svg", "imageSrc": "/images/v2/applicant-tracking-systems.webp", "imageAlt": "Applicant Tracking Systems image" },
+          { "title": "Employee Onboarding Platforms", "description": "Digital paperwork, training schedules, equipment requests, and first-week tasks that new hires complete before day one.", "iconSrc": "/images/v2/calendar-icon.svg", "imageSrc": "/images/v2/employee-onboarding-platforms.webp", "imageAlt": "Employee Onboarding Platforms image" },
+          { "title": "Performance Management Tools", "description": "Set goals, track progress, schedule reviews, collect 360 feedback, and document performance conversations throughout the year.", "iconSrc": "/images/v2/data-driven-icon.svg", "imageSrc": "/images/v2/performance-management-tools.webp", "imageAlt": "Performance Management Tools image" },
+          { "title": "Time & Attendance Systems", "description": "Clock in/out, PTO requests, shift scheduling, overtime tracking, and attendance reports that sync with payroll.", "iconSrc": "/images/v2/clock-icon.svg", "imageSrc": "/images/v2/time-attendance-systems.webp", "imageAlt": "Time & Attendance Systems image" },
+          { "title": "Employee Self-Service Portals", "description": "Let employees update their information, download pay stubs, request time off, view benefits, and access company documents.", "iconSrc": "/images/v2/interactive-ui-icon.svg", "imageSrc": "/images/v2/employee-self-service-portals.webp", "imageAlt": "Employee Self-Service Portals image" }
+        ]
+      },
+      {
+        "type": "services",
+        "title": "What We Build to Empower HR Teams",
+        "items": [
+          { "title": "Learning Management Systems", "description": "Assign training courses, track completion, test knowledge, manage certifications, and maintain compliance records.", "iconSrc": "/images/v2/read-icon.svg", "imageSrc": "/images/v2/learning-management-systems.webp", "imageAlt": "Learning Management Systems image" },
+          { "title": "Payroll Integration Software", "description": "Connect your HR system to payroll providers so employee data, hours, and deductions flow automatically.", "iconSrc": "/images/v2/api-integration-icon.svg", "imageSrc": "/images/v2/payroll-integration-software.webp", "imageAlt": "Payroll Integration Software image" },
+          { "title": "Benefits Administration Platforms", "description": "Enrollment workflows, plan comparisons, life event changes, and open enrollment that employees can complete online.", "iconSrc": "/images/v2/crm-icon.svg", "imageSrc": "/images/v2/benefits-administration-platforms.webp", "imageAlt": "Benefits Administration Platforms image" },
+          { "title": "Recruitment Marketing Tools", "description": "Career site builders, job board integrations, candidate nurture campaigns, and employer brand content management.", "iconSrc": "/images/v2/social-integration-icon.svg", "imageSrc": "/images/v2/recruitment-marketing-tools.webp", "imageAlt": "Recruitment Marketing Tools image" },
+          { "title": "HR Analytics Dashboards", "description": "Headcount reports, turnover analysis, time-to-hire metrics, diversity data, and compensation insights in real-time.", "iconSrc": "/images/v2/analytics-reporting-icon.svg", "imageSrc": "/images/v2/hr-analytics-dashboards.webp", "imageAlt": "HR Analytics Dashboards image" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to Build Your HR Platform?",
+        "subtitle": "Get a free consultation and project estimate. We respond within 24 hours.",
+        "items": []
+      },
+      {
+        "type": "engagementModels",
+        "title": "How We Work With You",
+        "buttonText": "Know More",
+        "items": [
+          { "title": "Time & Material", "description": "Pay for actual development hours. Works well when you're not entirely sure what features you'll need until you see the first version working.", "icon": "/images/Quick-Turnaround-Time.png" },
+          { "title": "Fixed Cost", "description": "One agreed price for a defined set of features. Best when you know exactly what you want built and the scope won't change.", "icon": "/images/v2/budget-estimate.svg" },
+          { "title": "Staff Augmentation", "description": "Our developers work as part of your existing team, following your sprint cycles and using your project management tools.", "icon": "/images/v2/dedicated-dev-team.svg" },
+          { "title": "Dedicated Development Team", "description": "A complete team assigned only to your project\u2014developers, designers, testers, and a project manager who keeps everything moving.", "icon": "/images/v2/dedicated-dev-team.svg" }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why HR Teams Choose Brilworks",
+        "items": [
+          { "title": "Top-Rated Developers", "description": "Our developers consistently receive top ratings for code quality, communication, and meeting deadlines.", "icon": "/images/v2/Senior_talent_at_competitive_rates.svg" },
+          { "title": "HR Domain Knowledge", "description": "We've built recruitment platforms, employee portals, and management tools. We understand HRIS workflows, compliance needs, and what HR teams actually do all day.", "icon": "/images/v2/proven-expertise.svg" },
+          { "title": "Agile & Transparent", "description": "You see working software every two weeks, not mockups or promises. We adjust based on feedback from your HR team as we build.", "icon": "/images/v2/Agile_Development_Excellence.svg" },
+          { "title": "Clear Communication", "description": "We explain technical tradeoffs in plain English. No jargon, no making you feel stupid for asking questions.", "icon": "/images/v2/transparent-comm.svg" },
+          { "title": "Post-Launch Support", "description": "Your HR needs change as you grow. We stick around to add features, fix issues, train new users, and keep the software working as your team evolves.", "icon": "/images/v2/ongoing-support-icon.svg" }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "note": "SeeingBelieving portfolio/case studies component \u2014 data is dynamic/CMS-driven"
+      },
+      {
+        "type": "contactForm",
+        "title": "Ready to Build Your HR Platform?",
+        "subtitle": "You're one conversation away from automating your HR workflows and freeing your team from manual processes.",
+        "submitLabel": "Get My Free HR Consultation",
+        "items": [
+          "Free 30-minute consultation with an HR tech specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial \u2014 no commitment",
+          "Response guaranteed within 24 business hours",
+          "HRIS integration and compliance guidance included"
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "note": "HomePageBlogs component \u2014 latest blog posts pulled from CMS"
+      }
+    ],
+    "faq": [],
+    "stats": [
+      { "value": "120+", "label": "Products Shipped" },
+      { "value": "25+", "label": "HR Platforms" },
+      { "value": "50K+", "label": "Employees Managed" },
+      { "value": "98%", "label": "Client Retention" }
+    ],
+    "testimonials": []
+  }
+}

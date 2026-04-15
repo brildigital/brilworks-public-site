@@ -1,0 +1,570 @@
+{
+  "$schema": "brilworks-cro-industry-page-template-v1",
+  "_meta": {
+    "templateName": "CRO-Optimized Industry Page",
+    "source": "sessions/marketing/industry/cro-optimized-2026-04-09.html",
+    "version": "2026-04-09",
+    "description": "Reusable template for creating new industry pages. Duplicate this file, rename to <slug>.json, and replace all {{PLACEHOLDER}} tokens.",
+    "placeholders": {
+      "{{SLUG}}": "URL slug (kebab-case, matches folder). e.g. edtech-software-development, fintech-software-development",
+      "{{INDUSTRY}}": "Full industry display name. e.g. EdTech, Fintech, Healthcare, Logistics",
+      "{{INDUSTRY_PRODUCT}}": "Main product noun for this industry. e.g. LMS & E-Learning Platforms, Banking & Payment Apps, Telemedicine Apps",
+      "{{INDUSTRY_KEYWORD}}": "Core gradient keyword in hero headline. e.g. EdTech Platform, Fintech App, Healthcare Platform",
+      "{{META_DESCRIPTION}}": "150-160 char SEO description with primary keyword + outcome",
+      "{{HERO_BADGE_TEXT}}": "Short trust statement above headline. e.g. 'Trusted by 120+ companies across 20 countries'",
+      "{{HERO_OUTCOME}}": "Headline suffix conveying outcome + timeline. e.g. 'Launch in 10-20 Weeks'",
+      "{{HERO_SUBHEADLINE}}": "1-2 sentences expanding on what you build + who it's for",
+      "{{HERO_IMAGE_PATH}}": "/images/v2/{{SLUG}}-banner.webp",
+      "{{FAQ_ITEMS}}": "Industry-specific FAQs (6 recommended) — pricing, timeline, integrations, web/mobile, compliance, scalability",
+      "{{COMPLIANCE_STANDARDS}}": "Industry regulations. e.g. 'COPPA, FERPA & GDPR' for EdTech; 'HIPAA, HL7 & GDPR' for Healthcare; 'PCI DSS, SOC 2 & GDPR' for Fintech"
+    }
+  },
+
+  "slug": "{{SLUG}}",
+  "url": "/industry/{{SLUG}}/",
+  "industry": "{{INDUSTRY}}",
+
+  "metadata": {
+    "title": "{{INDUSTRY}} Software Development Company | Custom {{INDUSTRY_PRODUCT}} — Brilworks",
+    "description": "{{META_DESCRIPTION}}",
+    "canonical": "https://www.brilworks.com/industry/{{SLUG}}/",
+    "openGraph": {
+      "title": "{{INDUSTRY}} Software Development Company | Brilworks",
+      "description": "{{META_DESCRIPTION}}",
+      "url": "https://www.brilworks.com/industry/{{SLUG}}/",
+      "siteName": "Brilworks",
+      "type": "website",
+      "locale": "en_US",
+      "image": "https://www.brilworks.com{{HERO_IMAGE_PATH}}"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@_Brilworks",
+      "title": "{{INDUSTRY}} Software Development | Brilworks",
+      "description": "{{META_DESCRIPTION}}",
+      "image": "https://www.brilworks.com{{HERO_IMAGE_PATH}}"
+    }
+  },
+
+  "schema": {
+    "faqPage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "_note": "Auto-generate from content.sections[type=faq].items — one {@type:Question,name,acceptedAnswer} per FAQ"
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "{{INDUSTRY}} Software Development",
+      "provider": {
+        "@type": "Organization",
+        "name": "Brilworks",
+        "url": "https://www.brilworks.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "503, Fortune Business Hub, Science City Road, Sola",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "380060",
+          "addressCountry": "IN"
+        },
+        "telephone": "+919313644148",
+        "email": "sales@brilworks.com"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "{{INDUSTRY}} Development Services",
+        "_note": "Auto-generate itemListElement from content.sections[type=services].items"
+      }
+    },
+    "howTo": {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Get Started with {{INDUSTRY}} Development",
+      "_note": "Auto-generate step array from content.sections[type=process].steps"
+    }
+  },
+
+  "content": {
+    "hero": {
+      "id": "hero-heading",
+      "layout": "dark",
+      "background": {
+        "style": "hero-bg + hero-grid-overlay (Brilworks standard dark pattern)"
+      },
+      "badge": {
+        "text": "{{HERO_BADGE_TEXT}}",
+        "hasPulseDot": true
+      },
+      "headline": {
+        "prefix": "Build Your ",
+        "gradientKeyword": "{{INDUSTRY_KEYWORD}}",
+        "suffix": " — {{HERO_OUTCOME}}"
+      },
+      "seoSubheading": "{{INDUSTRY}} Software Development Services",
+      "subheadline": "{{HERO_SUBHEADLINE}}",
+      "ctas": [
+        {
+          "label": "Get My Free Consultation",
+          "href": "#section-contact-form",
+          "variant": "primary",
+          "size": "large"
+        },
+        {
+          "label": "View {{INDUSTRY}} Case Studies",
+          "href": "/case-studies/",
+          "variant": "ghost",
+          "size": "large"
+        }
+      ],
+      "stats": [
+        { "number": "120+", "label": "Products Shipped" },
+        { "number": "15+", "label": "{{INDUSTRY}} Platforms" },
+        { "number": "500K+", "label": "Users Served" },
+        { "number": "98%", "label": "Client Retention" }
+      ],
+      "image": {
+        "src": "{{HERO_IMAGE_PATH}}",
+        "alt": "{{INDUSTRY}} software development services illustration",
+        "animation": "heroFloatY 5s ease-in-out infinite"
+      }
+    },
+
+    "sections": [
+      {
+        "type": "trustBar",
+        "label": "Trusted by teams at",
+        "logos": [
+          { "name": "Client 1", "image": "/images/clients/client-1.svg", "alt": "Client 1 logo" },
+          { "name": "Client 2", "image": "/images/clients/client-2.svg", "alt": "Client 2 logo" },
+          { "name": "Client 3", "image": "/images/clients/client-3.svg", "alt": "Client 3 logo" },
+          { "name": "Client 4", "image": "/images/clients/client-4.svg", "alt": "Client 4 logo" },
+          { "name": "Client 5", "image": "/images/clients/client-5.svg", "alt": "Client 5 logo" },
+          { "name": "Client 6", "image": "/images/clients/client-6.svg", "alt": "Client 6 logo" }
+        ]
+      },
+
+      {
+        "type": "services",
+        "id": "solutions",
+        "eyebrow": "What We Build",
+        "title": "Our {{INDUSTRY}} Development Solutions",
+        "subtitle": "End-to-end {{INDUSTRY}} solutions — from {{INDUSTRY_PRODUCT}} to AI-driven systems.",
+        "items": [
+          {
+            "icon": "📚",
+            "title": "{{SERVICE_1_TITLE}}",
+            "description": "{{SERVICE_1_DESCRIPTION}}",
+            "linkText": "Build My {{SERVICE_1_NOUN}}",
+            "linkHref": "#section-contact-form",
+            "featured": false
+          },
+          {
+            "icon": "🎓",
+            "title": "{{SERVICE_2_TITLE}}",
+            "description": "{{SERVICE_2_DESCRIPTION}}",
+            "linkText": "Build My {{SERVICE_2_NOUN}}",
+            "linkHref": "#section-contact-form",
+            "featured": false
+          },
+          {
+            "icon": "📱",
+            "title": "{{SERVICE_3_TITLE}}",
+            "description": "{{SERVICE_3_DESCRIPTION}}",
+            "linkText": "Build My {{SERVICE_3_NOUN}}",
+            "linkHref": "#section-contact-form",
+            "featured": false
+          },
+          {
+            "icon": "🏫",
+            "title": "{{SERVICE_4_TITLE}}",
+            "description": "{{SERVICE_4_DESCRIPTION}}",
+            "linkText": "Build My {{SERVICE_4_NOUN}}",
+            "linkHref": "#section-contact-form",
+            "featured": false
+          },
+          {
+            "icon": "📹",
+            "title": "{{SERVICE_5_TITLE}}",
+            "description": "{{SERVICE_5_DESCRIPTION}}",
+            "linkText": "Build My {{SERVICE_5_NOUN}}",
+            "linkHref": "#section-contact-form",
+            "featured": false
+          },
+          {
+            "icon": "🧠",
+            "title": "{{SERVICE_6_TITLE}}",
+            "description": "{{SERVICE_6_DESCRIPTION}}",
+            "linkText": "Explore AI Solutions",
+            "linkHref": "/ai-solutions/",
+            "featured": false
+          },
+          {
+            "icon": "🚀",
+            "title": "Custom {{INDUSTRY}} Platform Development",
+            "description": "Have a unique {{INDUSTRY}} idea? We build tailored solutions from MVP to enterprise. Your vision, our engineering — MVP in 10-20 weeks.",
+            "linkText": "Start My Project",
+            "linkHref": "#section-contact-form",
+            "featured": true
+          }
+        ]
+      },
+
+      {
+        "type": "midCta",
+        "layout": "dark",
+        "title": "Ready to Build an {{INDUSTRY}} App?",
+        "subtitle": "Get a free consultation and project estimate. We respond within 24 hours.",
+        "ctas": [
+          { "label": "Get Free Consultation", "href": "#section-contact-form", "variant": "primary", "size": "large" },
+          { "label": "See Our Work", "href": "/case-studies/", "variant": "ghost", "size": "large" }
+        ]
+      },
+
+      {
+        "type": "techStack",
+        "id": "tech-stack",
+        "background": "section-bg (light)",
+        "eyebrow": "Technology",
+        "title": "Technologies We Use",
+        "subtitle": "Modern, battle-tested stack chosen for scalability, performance, and developer velocity.",
+        "tabs": ["Frontend", "Backend", "Mobile", "Database", "Cloud", "Integrations"],
+        "items": [
+          { "name": "ReactJS", "icon": "⚛", "category": "Frontend" },
+          { "name": "AngularJS", "icon": "△", "category": "Frontend" },
+          { "name": "VueJS", "icon": "▽", "category": "Frontend" },
+          { "name": "Python", "icon": "🐍", "category": "Backend" },
+          { "name": "NodeJS", "icon": "⬢", "category": "Backend" },
+          { "name": "Java", "icon": "☕", "category": "Backend" },
+          { "name": "React Native", "icon": "📱", "category": "Mobile" },
+          { "name": "Flutter", "icon": "🐦", "category": "Mobile" },
+          { "name": "Swift", "icon": "🍎", "category": "Mobile" },
+          { "name": "Kotlin", "icon": "🅰", "category": "Mobile" },
+          { "name": "MongoDB", "icon": "🍃", "category": "Database" },
+          { "name": "PostgreSQL", "icon": "🐘", "category": "Database" },
+          { "name": "Firebase", "icon": "🔥", "category": "Database" },
+          { "name": "AWS", "icon": "☁", "category": "Cloud" },
+          { "name": "Azure", "icon": "☁", "category": "Cloud" },
+          { "name": "GCP", "icon": "☁", "category": "Cloud" }
+        ]
+      },
+
+      {
+        "type": "whyChooseUs",
+        "id": "why-us",
+        "eyebrow": "Why Brilworks",
+        "title": "Why {{INDUSTRY}} Founders Choose Us",
+        "items": [
+          {
+            "icon": "🎯",
+            "title": "{{INDUSTRY}} Domain Expertise",
+            "description": "15+ {{INDUSTRY}} platforms built. We understand user journeys, industry workflows, and compliance ({{COMPLIANCE_STANDARDS}})."
+          },
+          {
+            "icon": "📈",
+            "title": "Scalable Architecture",
+            "description": "Cloud-native, microservices-based architecture designed for large user volumes. Auto-scaling from 100 to 1M+ users."
+          },
+          {
+            "icon": "📊",
+            "title": "Data-Driven Design",
+            "description": "Built-in analytics dashboards, user behavior tracking, and engagement metrics. Data-informed decisions from day one."
+          },
+          {
+            "icon": "👥",
+            "title": "User-First Approach",
+            "description": "UX research with real users. High adoption rates because we design for how people actually work."
+          },
+          {
+            "icon": "🛠",
+            "title": "Ongoing Support",
+            "description": "Post-launch maintenance, performance optimization, and feature iterations. Your platform grows with your user base."
+          }
+        ]
+      },
+
+      {
+        "type": "testimonials",
+        "id": "testimonials",
+        "background": "section-bg (light)",
+        "eyebrow": "Client Stories",
+        "title": "What {{INDUSTRY}} Founders Say",
+        "_note": "Replace placeholder testimonials with real client quotes before publishing.",
+        "items": [
+          {
+            "stars": 5,
+            "text": "{{TESTIMONIAL_1_TEXT}}",
+            "avatar": "{{T1_INITIALS}}",
+            "name": "{{T1_NAME}}",
+            "role": "{{T1_ROLE_AND_COMPANY}}"
+          },
+          {
+            "stars": 5,
+            "text": "{{TESTIMONIAL_2_TEXT}}",
+            "avatar": "{{T2_INITIALS}}",
+            "name": "{{T2_NAME}}",
+            "role": "{{T2_ROLE_AND_COMPANY}}"
+          },
+          {
+            "stars": 5,
+            "text": "{{TESTIMONIAL_3_TEXT}}",
+            "avatar": "{{T3_INITIALS}}",
+            "name": "{{T3_NAME}}",
+            "role": "{{T3_ROLE_AND_COMPANY}}"
+          }
+        ]
+      },
+
+      {
+        "type": "engagementModels",
+        "id": "engagement",
+        "eyebrow": "How We Work",
+        "title": "Our Engagement Models",
+        "subtitle": "Flexible models to match your stage — whether you're a solo founder with an idea or a funded startup scaling fast.",
+        "items": [
+          {
+            "icon": "👫",
+            "title": "Dedicated Development Team",
+            "description": "A full team (devs, QA, PM, designer) working exclusively on your product. Best for funded startups building a core platform.",
+            "cta": { "label": "Learn More", "href": "#section-contact-form", "variant": "secondary" }
+          },
+          {
+            "icon": "🔗",
+            "title": "Team Extension",
+            "description": "Add our engineers to your existing team. They integrate with your processes, tools, and culture. Best for scaling quickly.",
+            "cta": { "label": "Learn More", "href": "#section-contact-form", "variant": "secondary" }
+          },
+          {
+            "icon": "📋",
+            "title": "Project-Based Model",
+            "description": "Fixed scope, fixed timeline, fixed price. We handle everything from design to deployment. Best for MVPs and defined projects.",
+            "cta": { "label": "Learn More", "href": "#section-contact-form", "variant": "secondary" }
+          }
+        ]
+      },
+
+      {
+        "type": "process",
+        "id": "process",
+        "background": "section-bg (light)",
+        "eyebrow": "Getting Started",
+        "title": "How to Launch Your {{INDUSTRY}} Platform",
+        "subtitle": "From first conversation to production — in as little as 10 weeks.",
+        "steps": [
+          {
+            "number": 1,
+            "title": "Contact Us",
+            "description": "Fill out the form. We respond within 24 business hours."
+          },
+          {
+            "number": 2,
+            "title": "Free Consultation",
+            "description": "We discuss your requirements, target users, and build a roadmap together."
+          },
+          {
+            "number": 3,
+            "title": "Proposal & Estimate",
+            "description": "Detailed project proposal with timeline, milestones, and transparent pricing."
+          },
+          {
+            "number": 4,
+            "title": "Project Kickoff",
+            "description": "Your dedicated team starts building. Weekly demos, Slack access, full transparency."
+          }
+        ]
+      },
+
+      {
+        "type": "faq",
+        "id": "faq",
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "How much does it cost to develop an {{INDUSTRY}} platform?",
+            "a": "Costs vary based on features, integrations, and scalability. A basic MVP starts from $25K-$50K, while full-featured platforms with AI and advanced analytics range from $80K-$200K+. We provide detailed estimates after understanding your requirements.",
+            "open": true
+          },
+          {
+            "q": "How long does {{INDUSTRY}} software development take?",
+            "a": "Typical development takes 10-20 weeks depending on complexity. An MVP can be ready in 8-12 weeks. Full-featured platforms with custom integrations take 16-24 weeks. We use agile sprints with weekly demos.",
+            "open": false
+          },
+          {
+            "q": "Can you integrate with our existing {{INDUSTRY}} systems?",
+            "a": "Yes. We integrate with industry-standard APIs, ERP systems, payment gateways, video APIs, and custom legacy systems.",
+            "open": false
+          },
+          {
+            "q": "Do you build for both web and mobile?",
+            "a": "Yes. We build responsive web apps and native/cross-platform mobile apps (iOS & Android) using React Native, Flutter, Swift, and Kotlin. Most clients start with web and add mobile in Phase 2.",
+            "open": false
+          },
+          {
+            "q": "Is the platform {{COMPLIANCE_STANDARDS}} compliant?",
+            "a": "Yes. We build all {{INDUSTRY}} platforms with {{COMPLIANCE_STANDARDS}} compliance from day one. Data encryption, secure APIs, and role-based access are standard.",
+            "open": false
+          },
+          {
+            "q": "Can the platform scale as our user base grows?",
+            "a": "Absolutely. We use cloud-native infrastructure (AWS, Azure, GCP), microservices, auto-scaling, and CDN distribution. Our platforms serve 500K+ users and scale seamlessly.",
+            "open": false
+          }
+        ]
+      },
+
+      {
+        "type": "contactForm",
+        "id": "section-contact-form",
+        "layout": "dark",
+        "eyebrow": "Let's Talk",
+        "title": "Ready to Build Your {{INDUSTRY}} Platform?",
+        "description": "You're one conversation away from turning your {{INDUSTRY}} idea into a scalable platform. Tell us what you're building — we'll show you how we can help.",
+        "benefits": [
+          "Free 30-minute consultation with a {{INDUSTRY}} specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial — no commitment",
+          "Response guaranteed within 24 business hours",
+          "{{COMPLIANCE_STANDARDS}} compliance built in"
+        ],
+        "contact": {
+          "label": "Or reach us directly:",
+          "email": "sales@brilworks.com",
+          "phone": "+91 93136 44148",
+          "phoneLink": "tel:+919313644148"
+        },
+        "form": {
+          "title": "Get Your Free {{INDUSTRY}} Consultation",
+          "action": "/api/contact",
+          "method": "POST",
+          "layout": "side-by-side name+email, stacked message (CRO pattern — no phone field)",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full Name *",
+              "type": "text",
+              "placeholder": "John Smith",
+              "required": true,
+              "autocomplete": "name",
+              "column": "half"
+            },
+            {
+              "name": "email",
+              "label": "Work Email *",
+              "type": "email",
+              "placeholder": "john@company.com",
+              "required": true,
+              "autocomplete": "email",
+              "column": "half"
+            },
+            {
+              "name": "message",
+              "label": "Tell us about your {{INDUSTRY}} project",
+              "type": "textarea",
+              "placeholder": "E.g., We're building an AI-powered {{INDUSTRY}} platform. We need an MVP in 3 months...",
+              "rows": 4,
+              "required": false,
+              "column": "full"
+            }
+          ],
+          "submitText": "Get My Free {{INDUSTRY}} Consultation →",
+          "submitNote": "No spam. No sales pitch. Just a genuine conversation about your project."
+        },
+        "complianceBadges": [
+          { "icon": "🔒", "label": "{{COMPLIANCE_BADGE_1}}" },
+          { "icon": "🔒", "label": "{{COMPLIANCE_BADGE_2}}" },
+          { "icon": "🔒", "label": "{{COMPLIANCE_BADGE_3}}" },
+          { "icon": "⭐", "label": "4.8/5 on Clutch" }
+        ]
+      }
+    ]
+  },
+
+  "footer": {
+    "brand": {
+      "name": "Brilworks",
+      "description": "We build digital products that scale. 120+ products shipped across 20 countries. Trusted by startups, SMBs, and enterprises."
+    },
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "label": "EdTech", "href": "/industry/edtech-software-development/" },
+          { "label": "Fintech", "href": "/industry/fintech-software-development/" },
+          { "label": "Healthcare", "href": "/industry/healthcare-software-development/" },
+          { "label": "E-Commerce", "href": "/industry/e-commerce-app-development/" },
+          { "label": "Media", "href": "/industry/media-entertainment-software-development/" }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          { "label": "Staff Augmentation", "href": "/staff-augmentation/" },
+          { "label": "Dedicated Team", "href": "/hire-dedicated-software-development-team/" },
+          { "label": "Product Engineering", "href": "/product-engineering-development-services/" },
+          { "label": "AI/ML Development", "href": "/ai-ml-development-services/" },
+          { "label": "DevOps & Cloud", "href": "/devops-consulting-services/" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/about/" },
+          { "label": "Case Studies", "href": "/case-studies/" },
+          { "label": "Blog", "href": "/blog/" },
+          { "label": "Careers", "href": "/career/" },
+          { "label": "Contact", "href": "/contact-us/" }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "© 2026 Brilworks. All rights reserved.",
+      "links": [
+        { "label": "Terms", "href": "/terms-and-conditions/" },
+        { "label": "Privacy", "href": "/privacy-policy/" }
+      ]
+    },
+    "socials": [
+      { "platform": "LinkedIn", "href": "https://www.linkedin.com/company/brilworks/", "icon": "in" },
+      { "platform": "YouTube", "href": "https://www.youtube.com/@brilworks", "icon": "▶" },
+      { "platform": "Instagram", "href": "https://www.instagram.com/brilwork/", "icon": "○" },
+      { "platform": "Facebook", "href": "https://www.facebook.com/brilwork/", "icon": "f" },
+      { "platform": "Clutch", "href": "https://clutch.co/profile/brilworks-software", "icon": "★" }
+    ]
+  },
+
+  "stickyMobileCta": {
+    "label": "Get Free Consultation →",
+    "href": "#section-contact-form",
+    "variant": "gradient",
+    "visibleBreakpoint": "mobile-only"
+  },
+
+  "_sectionOrder": [
+    "hero",
+    "trustBar",
+    "services",
+    "midCta",
+    "techStack",
+    "whyChooseUs",
+    "testimonials",
+    "engagementModels",
+    "process",
+    "faq",
+    "contactForm",
+    "footer",
+    "stickyMobileCta"
+  ],
+
+  "_croNotes": {
+    "fix1": "Hero uses outcome-driven H1 + SEO-keyword H2 (both semantic and scannable).",
+    "fix2": "Contact form has side-by-side name+email, NO phone field (reduces friction).",
+    "fix3": "Submit button is benefit-oriented: 'Get My Free {{INDUSTRY}} Consultation' — not generic 'Submit'.",
+    "fix4": "Testimonials section placed BEFORE engagement models to build trust first.",
+    "fix5": "Hero stats are industry-specific (e.g. '500K+ Learners Served' not generic 'Users').",
+    "fix6": "Compliance badges appear NEAR the form, not in a footer section.",
+    "fix7": "Mid-page CTA breaks long scrolls and catches users mid-read.",
+    "fix8": "Sticky mobile CTA always-visible anchor to the contact form on mobile only."
+  }
+}

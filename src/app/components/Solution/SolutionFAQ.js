@@ -222,15 +222,18 @@ const SolutionFAQ = () => {
   const solutionFAQData = showDataBasedOnPathname[pathname] || {};
 
   return (
-    <div className="container max-w-[1280px] main-section-padding mx-auto">
-      <div className="w-full mx-auto">
-        <Heading
-          type="h2"
-          className="lg:!text-[34px] md:!text-3xl !text-2xl"
-          text="Frequently Asked Questions"
-        />
+    <section className="main-section-padding">
+      <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+        <div className="text-center mb-14">
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor inline-block !mb-3">
+            FAQ
+          </span>
+          <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-[#0d0f1a]">
+            Frequently Asked Questions
+          </h2>
+        </div>
 
-        <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
+        <div className="max-w-[800px] mx-auto">
           <div itemScope="true" itemType="https://schema.org/FAQPage">
             {solutionFAQData?.map(({ question, answer }, index) => (
               <GradientFAQAccordion
@@ -245,7 +248,7 @@ const SolutionFAQ = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
