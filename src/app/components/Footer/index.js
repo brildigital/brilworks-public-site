@@ -239,13 +239,18 @@ const Footer = () => {
     },
   ];
 
+  const isAiAgentsLanding =
+    pathname === "/ai-agents/" || pathname === "/ai-agents";
+  const isAiAgentsSubPage =
+    pathname?.includes("/ai-agents/") && !isAiAgentsLanding;
+
   return pathname === "/posters/" ||
     pathname.includes("/x/product-listing/spine-recovery-pro/") ||
-    pathname.includes("/ai-agents/") ||
+    isAiAgentsSubPage ||
     pathname.includes("/i-remi") ? (
     ""
   ) : (
-    <div className="footer-background text-colorWhite">
+    <div className="footer-background text-colorWhite pb-14 md:pb-14 lg:pb-14">
       <div className="container max-w-[1280px] mx-auto main-section-padding-top !pb-0">
         <div
           className={`footer-new w-full xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5 ${
