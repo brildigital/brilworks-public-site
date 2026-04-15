@@ -65,6 +65,8 @@ const CurrentHeader = () => {
     <Header />
   ) : pathname === "/mvp-in-48-hours/" || pathname === "/free-mockups/" ? (
     <HeaderV3 />
+  ) : pathname === "/ai-agents/" || pathname === "/ai-agents" ? (
+    <HeaderV2 />
   ) : pathname.includes("/ai-agents/") ? (
     ""
   ) : (

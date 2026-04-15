@@ -1,48 +1,111 @@
-import Image from "next/image";
-import Heading from "../HTMLComponents/Heading";
-import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
+"use client";
+import dynamic from "next/dynamic";
 
-const SolutionContactForm = ({ title, description, messageRequired = true, submitLabel }) => {
+const PortfolioContactForm = dynamic(
+  () => import("../Portfolio/PortfolioContactForm"),
+  { ssr: false }
+);
+
+const SolutionContactForm = ({
+  title,
+  description,
+  messageRequired = true,
+  submitLabel,
+  benefits,
+}) => {
+  const defaultBenefits = [
+    "Free 30-minute consultation with a domain specialist",
+    "Detailed project proposal within 48 hours",
+    "48-hour risk-free trial — no commitment",
+    "Response guaranteed within 24 business hours",
+  ];
+
+  const benefitsList = benefits || defaultBenefits;
+
   return (
-    <div className="hire-team-contact-section">
-      <div id="section-contact-form" className="banner-layer-dark">
-        <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
-          <div className="flex flex-col lg:flex-row items-center lg:gap-16 md:gap-10 gap-6">
-            <div className="lg:w-1/2 w-full">
-              <Heading
-                type="h2"
-                className="text-colorWhite lg:!text-[34px] md:!text-3xl !text-2xl mb-5"
-                data={
-                  title || "Connect With Us to Get a 48 Hours Risk-Free Trial"
-                }
-              />
-              <p className="text-colorWhite md:text-lg text-base !mb-6">
-                {description ||
-                  "You're just a step away from creating exceptional business ideas. This case study reveals how Brilworks assists successful companies in extending their tech teams."}
-              </p>
-              <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
-                Enter the details to proceed.
-              </p>
-              <PortfolioContactForm
-                showCompanyField={false}
-                messageField={true}
-                messageRequired={messageRequired}
-                submitLabel={submitLabel}
-              />
+    <section
+      className="main-section-padding bg-[#0d0f1a] relative overflow-hidden"
+      id="section-contact-form"
+    >
+      {/* Glow effects */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_50%_60%_at_30%_40%,rgba(1,126,235,0.12)_0%,transparent_70%)]"></div>
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_40%_40%_at_80%_70%,rgba(0,219,211,0.06)_0%,transparent_60%)]"></div>
+
+      <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center">
+          {/* Left: Info */}
+          <div>
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00b4d8] inline-block !mb-3">
+              Let&apos;s Talk
+            </span>
+            <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-white !mb-4">
+              {title || "Ready to Build Your Platform?"}
+            </h2>
+            <p className="text-[18px] text-white/[0.62] leading-[1.7] !mb-8 max-w-none">
+              {description ||
+                "You're one conversation away from turning your idea into a scalable platform. Tell us what you're building — we'll show you how we can help."}
+            </p>
+
+            <ul className="list-none space-y-4 !mb-8">
+              {benefitsList.map((benefit, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-white/[0.62] text-[15px]"
+                >
+                  <span className="text-[#00dbd3] text-lg flex-shrink-0 mt-0.5">
+                    &#10003;
+                  </span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+
+            <div>
+              <div className="text-[13px] text-white/45 !mb-2">
+                Or reach us directly:
+              </div>
+              <div className="text-white/[0.62]">
+                <a
+                  href="mailto:sales@brilworks.com"
+                  className="text-[#00b4d8] hover:underline"
+                >
+                  sales@brilworks.com
+                </a>
+                &nbsp;|&nbsp;
+                <a
+                  href="tel:+919313644148"
+                  className="text-[#00b4d8] hover:underline"
+                >
+                  +91 93136 44148
+                </a>
+              </div>
             </div>
-            <div className="lg:w-1/2 w-full">
-              <Image
-                className="rounded-2xl"
-                src="/images/v2/team-contact.webp"
-                alt="img-c"
-                width="565"
-                height="620"
-              />
-            </div>
+          </div>
+
+          {/* Right: Form Card */}
+          <div className="bg-white rounded-2xl p-10">
+            <h3 className="text-2xl font-bold text-[#212121] !mb-6">
+              {submitLabel
+                ? submitLabel.replace("Get ", "Get Your ")
+                : "Get Your Free Consultation"}
+            </h3>
+
+            <PortfolioContactForm
+              darkMode={false}
+              showCompanyField={false}
+              messageField={true}
+              messageRequired={messageRequired}
+              submitLabel={submitLabel}
+            />
+
+            <p className="text-[13px] text-[#6b7280] text-center !mt-3">
+              No spam. No sales pitch. Just a genuine conversation about your
+              project.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

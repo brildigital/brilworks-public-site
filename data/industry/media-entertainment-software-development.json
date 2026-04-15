@@ -1,0 +1,166 @@
+{
+  "slug": "media-entertainment-software-development",
+  "url": "/industry/media-entertainment-software-development/",
+  "industry": "Media & Entertainment",
+  "metadata": {
+    "title": "Media and Entertainment Software Development Service",
+    "description": "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
+    "canonical": "{BASE_URL}industry/media-entertainment-software-development/",
+    "ogImage": "{BASE_URL}images/explore-arrow-01.png",
+    "ogTitle": "Media and Entertainment Software Development Service",
+    "ogDescription": "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
+    "ogType": "article",
+    "ogSiteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "ogLocale": "en-US",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks",
+    "breadcrumb": "Media And Entertainment Software Development Company"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "Media And Entertainment",
+      "headline": "Media & Entertainment App Development Services",
+      "headlineHtml": "<span class=\"bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text\" style=\"--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent\">Media & Entertainment</span> App Development Services",
+      "subheadline": "We take your customers on a visual delight with our entertainment software solutions. Create an immersive experience for your users and earn a competitive edge in the entertainment & media industry.",
+      "imageSrc": "/images/v2/media-and-entertainment-banner.webp",
+      "ctas": [],
+      "stats": [
+        { "value": "120+", "label": "Products Shipped" },
+        { "value": "10M+", "label": "Users Served" },
+        { "value": "4K+", "label": "Streaming Ready" },
+        { "value": "98%", "label": "Client Retention" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Our Media And Entertainment Software Solutions",
+        "buttonText": "Build My Entertainment App",
+        "items": [
+          { "title": "OTT Streaming Apps", "description": "Leverage our proven domain expertise along with cutting-edge technologies to create a streaming service that is as fast as it is instantly accessible.", "iconSrc": "/images/v2/play-theme-icon.svg", "imageSrc": "/images/v2/ott-streaming-app.webp", "imageAlt": "OTT Streaming Apps" },
+          { "title": "Music Streaming Apps", "description": "Make the way to the melodies of your music streaming app. Our powerful backend helps you manage thousands of active listeners without any interruption or issue.", "iconSrc": "/images/v2/media-entertainmnet-icon.svg", "imageSrc": "/images/v2/music-streaming-apps.webp", "imageAlt": "Music Streaming Apps" },
+          { "title": "Photo Editing & Sharing Apps", "description": "Become one of the most used photo editing and sharing apps. We help you create an Instagram-like app with your own photo editing and sharing features.", "iconSrc": "/images/v2/social-integration-icon.svg", "imageSrc": "/images/v2/photo-editing-sharing-apps.webp", "imageAlt": "Photo Editing & Sharing Apps" },
+          { "title": "Ticket Booking Portals", "description": "We develop ticket booking portals for all kinds of events including movie theatres, live concerts, sports matches, etc. Our team is focused on providing a seamless ticket-booking experience to eager fans.", "iconSrc": "/images/v2/interactive-ui-icon.svg", "imageSrc": "/images/v2/ticket-booking-portals.webp", "imageAlt": "Ticket Booking Portals" },
+          { "title": "Gaming apps", "description": "We create gaming apps across platforms and genres. In the world of gaming, we are known for our stable infrastructure, technical speed, efficient development process, and cutting-edge technology.", "iconSrc": "/images/v2/developer-icon.svg", "imageSrc": "/images/v2/gaming-apps.webp", "imageAlt": "Gaming apps" },
+          { "title": "Content Aggregation Apps", "description": "These apps are the new way to get quality content and videos. We are a trusted app aggregator providing a one-stop solution for customers and businesses to quickly find high-quality databases on any topic or industry.", "iconSrc": "/images/v2/read-icon.svg", "imageSrc": "/images/v2/content-aggregation-apps.webp", "imageAlt": "Content Aggregation Apps" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to Build Your Media & Entertainment App?",
+        "subtitle": "Get a free consultation and project roadmap. We respond within 24 hours.",
+        "items": []
+      },
+      {
+        "type": "useCases",
+        "title": "Leverage Our Comprehensive Solutions To Develop Media & Entertainment Apps",
+        "subtitle": "Elevate your audience engagement and improve customer retention with ease. We bring extensive knowledge of the media and entertainment industry to help you increase your global reach and grow to new heights.",
+        "buttonText": "Speak With Our Experts",
+        "imageSrc": "/images/v2/media-ent-type-app.webp",
+        "imageAlt": "media-and-entertainment-type",
+        "items": [
+          "Streamlines Business Processes",
+          "Generates Valuable Insights",
+          "Lowers Operational Costs",
+          "Improves Fleet Efficiency",
+          "Extends Vehicle Lifeline",
+          "Maximizes Driver Safety"
+        ]
+      },
+      {
+        "type": "features",
+        "title": "Features That Elevate Our Media And Entertainment Software",
+        "items": [
+          { "title": "Real-time Content Feeds", "icon": "/images/v2/realtime-icon.svg" },
+          { "title": "Multilingual Support", "icon": "/images/v2/multilingual-icon.svg" },
+          { "title": "Live Chatting", "icon": "/images/v2/live-chat-icon.svg" },
+          { "title": "Secure Payment Gateways", "icon": "/images/v2/secure-pymt-icon.svg" },
+          { "title": "IoT Integration", "icon": "/images/v2/iot-integration-icon.svg" },
+          { "title": "Push Notifications", "icon": "/images/v2/push-notification-icon.svg" },
+          { "title": "Interactive UI/UX", "icon": "/images/v2/interactive-ui-icon.svg" },
+          { "title": "Social Media Integration", "icon": "/images/v2/social-integration-icon.svg" }
+        ]
+      },
+      {
+        "type": "benefits",
+        "title": "What Makes Brilworks The Best Entertainment App Company?",
+        "subtitle": "We specialize in creating world-class entertainment apps to help you increase engagement and retain your customers over a longer period of time. Get ready to elevate your app to the next level of success with our media & entertainment software solutions.",
+        "buttonText": "Let's Get In Touch",
+        "items": [
+          { "value": "GDPR", "description": "Compliant Apps", "color": "#FFE2E5" },
+          { "value": "Appealing", "description": "UI/UX Experience", "color": "#E9FFE2" },
+          { "value": "Expert", "description": "Knowledge", "color": "#FFE8FC" },
+          { "value": "Agile", "description": "Centric Model", "color": "#E5F4FF" },
+          { "value": "Un-Paralleled", "description": "Code Quality", "color": "#F4ECFF" },
+          { "value": "Security", "description": "First Approach", "color": "#FCFFE3" }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks for Media & Entertainment",
+        "items": [
+          { "title": "Top-Rated Developers", "description": "Our team members consistently earn top ratings for their technical skills and communication.", "icon": "/images/v2/Senior_talent_at_competitive_rates.svg" },
+          { "title": "Proven Media Expertise", "description": "We have built streaming platforms, gaming apps, and content aggregation solutions for leading media companies.", "icon": "/images/v2/proven-expertise.svg" },
+          { "title": "Agile & Transparent", "description": "You see progress regularly through sprints and working software, not after months of silence.", "icon": "/images/v2/Agile_Development_Excellence.svg" },
+          { "title": "Clear Communication", "description": "We explain technical decisions in plain language without overwhelming you with jargon.", "icon": "/images/v2/transparent-comm.svg" },
+          { "title": "Post-Launch Support", "description": "We provide training, fix bugs, make adjustments, and add features as your needs evolve.", "icon": "/images/v2/ongoing-support-icon.svg" }
+        ]
+      },
+      {
+        "type": "engagementModels",
+        "title": "Our Engagement Models",
+        "subtitle": "Flexible models to match your stage \u2014 whether you're a solo founder with an idea or a funded startup scaling fast.",
+        "eyebrow": "How We Work",
+        "items": [
+          { "title": "Dedicated Development Team", "description": "A full team (devs, QA, PM, designer) working exclusively on your product. Best for funded startups building a core platform.", "iconSrc": "/images/v2/dedicated-dev-team.svg" },
+          { "title": "Team Extension", "description": "Add our engineers to your existing team. They integrate with your processes, tools, and culture. Best for scaling quickly.", "iconSrc": "/images/v2/team-extension.svg" },
+          { "title": "Project-Based Model", "description": "Fixed scope, fixed timeline, fixed price. We handle everything from design to deployment. Best for MVPs and defined projects.", "iconSrc": "/images/v2/project-based-model-icon.svg" }
+        ]
+      },
+      {
+        "type": "process",
+        "title": "How to Launch Your Platform",
+        "subtitle": "From first conversation to production \u2014 in as little as 10 weeks.",
+        "eyebrow": "Getting Started",
+        "items": [
+          { "step": 1, "title": "Contact Us", "description": "Fill out the form. We respond within 24 business hours." },
+          { "step": 2, "title": "Free Consultation", "description": "We discuss your requirements, target users, and build a roadmap together." },
+          { "step": 3, "title": "Proposal & Estimate", "description": "Detailed project proposal with timeline, milestones, and transparent pricing." },
+          { "step": 4, "title": "Project Kickoff", "description": "Your dedicated team starts building. Weekly demos, Slack access, full transparency." }
+        ]
+      },
+      {
+        "type": "contactForm",
+        "title": "Launch Your Media & Entertainment Platform",
+        "subtitle": "Tell us about your streaming, gaming, or content platform vision. Our media tech experts will craft a tailored proposal.",
+        "submitLabel": "Get My Media App Proposal",
+        "items": [
+          "4K-ready streaming architecture",
+          "CDN-optimized content delivery",
+          "Cross-platform mobile and web apps",
+          "24/7 uptime monitoring and support"
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "eyebrow": "FAQ",
+        "items": []
+      }
+    ],
+    "faq": [
+      { "q": "What sorts of media and entertainment software do you develop?", "a": "As a well-known entertainment app development company, we provide our clients with the most sophisticated media & software solutions including Live Video Streaming, VOD Apps, Video Editing Software, Music On-Demand, Photo Editing Software, Digital Asset management, and many more." },
+      { "q": "How long does it take to develop a media & entertainment software app?", "a": "The time it takes to develop a media app is highly dependent on what functionality the app has, what features it will possess, and its use case." },
+      { "q": "Do you provide custom media & entertainment software development?", "a": "Yes, we do provide custom development services for media and entertainment software. We create solutions tailored to the requirements of your organization." },
+      { "q": "What is better for entertainment apps: mobile or web?", "a": "In a world where consumers are always on the go, mobile applications are quickly becoming the standard for entertainment apps. Whether it is social media or messaging apps, gaming, or streaming services, there\u2019s no denying that mobile is where the action is as far as digital trends are concerned." },
+      { "q": "What do I need to build a dating app like Tinder?", "a": "There are many things to consider if you want to build a dating app like Tinder: A strong matching algorithm and geo-location features are two of them." }
+    ],
+    "stats": [
+      { "value": "120+", "label": "Products Shipped" },
+      { "value": "10M+", "label": "Users Served" },
+      { "value": "4K+", "label": "Streaming Ready" },
+      { "value": "98%", "label": "Client Retention" }
+    ],
+    "testimonials": []
+  }
+}

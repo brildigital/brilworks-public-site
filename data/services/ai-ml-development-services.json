@@ -1,0 +1,425 @@
+{
+  "slug": "ai-ml-development-services",
+  "url": "/ai-ml-development-services/",
+  "category": "AI & Agents",
+  "metadata": {
+    "title": "AI and ML Services | Brilworks",
+    "description": "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
+    "canonical": "{NEXT_PUBLIC_BASE_URL}ai-ml-development-services/",
+    "ogImage": "/images/v2/ai-ml-service-banner.webp",
+    "ogTitle": "AI and ML Services",
+    "ogDescription": "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
+    "twitterTitle": "AI and ML Services",
+    "twitterDescription": "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "locale": "en-US",
+    "type": "website"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Advance Your Business with AI/ML and Computer Vision",
+      "subheadline": "We are pioneering the future of AI with our generative AI solutions. We are not just another AI company; we are a team of passionate experts who craft bespoke AI applications tailored to your unique needs.",
+      "imageSrc": "/images/v2/ai-ml-service-banner.webp",
+      "ctas": [
+        { "label": "Let's Get Started", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Our Services",
+        "items": [
+          {
+            "title": "Generative AI Solutions",
+            "description": "With years of experience in Generative AI Development, our team has worked across various industies. At Brilworks, we utilize state-of-the-art tools in generative AI development with one goal in mind: to revolutionize how businesses operate and innovate.",
+            "imageSrc": "/images/v2/gen-ai-solution.webp",
+            "imageAlt": "Generative AI img"
+          },
+          {
+            "title": "AI-Based Product Development",
+            "description": "Optimize operations, drive growth, and stay ahead of the curve with our top-tier AI solutions. Our advanced software, powered by cutting-edge Generative AI Development, solves complex problems and provides invaluable insights.",
+            "imageSrc": "/images/v2/ai-based-product-development.webp",
+            "imageAlt": "AI-Based Product dev img"
+          },
+          {
+            "title": "Machine Learning Expertise",
+            "description": "Move beyond conventional machine learning approaches. We understand that each business is unique, which is why we collaborate closely with you to develop customized ML models that align with your specific objectives and challenges.",
+            "imageSrc": "/images/v2/machine-learning-expertise.webp",
+            "imageAlt": "ML expertise img"
+          },
+          {
+            "title": "Computer Vision Solutions",
+            "description": "With our intelligent computer vision solutions object detection, tracking, and image classification are seamlessly integrated to provide your company with unparalleled vision capabilities.",
+            "imageSrc": "/images/v2/computer-vision-solutions.webp",
+            "imageAlt": "Computer vision img"
+          },
+          {
+            "title": "Natural Language Processing (NLP)",
+            "description": "Our advanced NLP solutions bridge the gap between systems and humans, automate processes. Leverage cutting-edge AI to gain a competitive edge through data-driven insights powered by our sophisticated NLP technologies.",
+            "imageSrc": "/images/v2/natural-language-processing-nlp.webp",
+            "imageAlt": "Natural lan. processing img"
+          },
+          {
+            "title": "AI Chatbot Development",
+            "description": "Enhance your customer support experience effortlessly with AI-powered advanced chatbots. Provide round-the-clock support using state-of-the-art AI technology to ensure personalized assistance and heightened customer satisfaction.",
+            "imageSrc": "/images/v2/ai-chatbot-development.webp",
+            "imageAlt": "AI-chatbot-dev img"
+          }
+        ]
+      },
+      {
+        "type": "useCases",
+        "title": "What are the Usecases of AI?",
+        "items": [
+          {
+            "title": "AI for Fintech",
+            "imageSrc": "/images/v2/finance-in-ai-ml.webp",
+            "innerTitle": "Detect Anomalies, Predict Trends, Get Advice with The All-in-One AI Investment Suite",
+            "description": [
+              "Leverage our best AI software to enable AI-powered anomaly detection to identify suspicious activity in real time.",
+              "Predict market fluctuations and financial trends with intelligent AI solutions, enabling proactive risk mitigation strategies.",
+              "Integrate AI-powered virtual assistants to offer personalized financial advice and provide tailored solutions to individual needs.",
+              "Process vast amounts of market data and media sentiments with precision to help your end customers make informed decisions."
+            ]
+          },
+          {
+            "title": "AI for Healthcare",
+            "imageSrc": "/images/v2/ai-for-healthcare.webp",
+            "innerTitle": "Your Holistic AI Solution for Better Care & Personalized Treatment, and 24/7 Support",
+            "description": [
+              "Improve patient care through predictive analytics, personalized treatment plans, and medical image analysis.",
+              "Empower doctors with AI-driven insights for personalized treatment plans and early diagnosis of diseases.",
+              "Automate patient scheduling, insurance verification, and other processes for improved efficiency.",
+              "Integrate AI-powered healthcare virtual assistants to answer patients' questions, provide information, and offer support round the clock, 365 days a year."
+            ]
+          },
+          {
+            "title": "AI for Media & Entertainment",
+            "imageSrc": "/images/v2/ai-for-media-entertainment.webp",
+            "innerTitle": "Deliver Personalized Experiences, targeted Advertising, AI-Driven Recommendations Your Audience Craves.",
+            "description": [
+              "Recommend content tailored to individual preferences using AI-powered engines, keeping users glued to your platform.",
+              "Leverage AI to understand viewer preferences and anticipate future content consumption patterns.",
+              "Analyze user behavior and preferences to understand trends and predict future content performance.",
+              "Deliver targeted advertising based on user demographics, interests, and behavioral data"
+            ]
+          },
+          {
+            "title": "AI for Retail & e-Commerce",
+            "imageSrc": "/images/v2/ai-for-retail-e-commerce.webp",
+            "innerTitle": "Personalize, Support, Protect, Optimize and provide smarter Deliveries and Services with Smart AI Solutions.",
+            "description": [
+              "Personalize product recommendations with AI, driving targeted purchases and boosting revenue.",
+              "Implement AI-powered chatbots for 24/7 support, resolving inquiries efficiently and improving customer satisfaction.",
+              "Identify fraudulent transactions in real time, protecting businesses from financial losses.",
+              "Optimizes delivery routes, warehouse operations, and picking processes, leading to faster and more efficient deliveries."
+            ]
+          },
+          {
+            "title": "AI for Education",
+            "imageSrc": "/images/v2/ai-for-education.webp",
+            "innerTitle": "Embrace adaptive and Personalized Learning Journeys, Grading & Scheduling, all Powered by AI.",
+            "description": [
+              "Free up educators' time for personalized interaction by automating grading, scheduling, and data analysis.",
+              "Adapt educational content to individual student needs with AI-powered platforms, maximizing learning outcomes.",
+              "With AI-driven insights and tools, swiftly generates personalized learning materials in accordance with each student's progress.",
+              "Implement a virtual tutor powered by AI, providing individualized feedback and guidance to students in real time."
+            ]
+          },
+          {
+            "title": "AI for Logistic",
+            "imageSrc": "/images/v2/ai-for-logistics.webp",
+            "innerTitle": "Deliver Faster, Smarter, and More Efficiently with 24/7 support through AI-optimized logistic service.",
+            "description": [
+              "Reduce transportation costs by 15% with AI-powered route planning algorithms, ensuring timely deliveries.",
+              "Predict demand fluctuations and optimize inventory levels with AI-driven forecasting, minimizing disruptions.",
+              "Utilize AI-powered robots for tasks like sorting, packaging, and inventory management, boosting efficiency and accuracy.",
+              "Build AI-powered chatbots to answer customer queries about their shipments, providing 24/7 support and reducing the workload on human agents."
+            ]
+          },
+          {
+            "title": "AI for Marketing",
+            "imageSrc": "/images/v2/ai-for-marketing.webp",
+            "innerTitle": "Create 20X content for Smarter Targeting & Personalization, Hyper-Targeted Marketing with our AI solutions",
+            "description": [
+              "Identify high-value customer segments with AI, ensuring your marketing efforts reach the right people.",
+              "Utilize AI algorithms to personalize ad creatives and bidding strategies, maximizing ROI for your campaigns.",
+              "Predict customer behavior and personalize marketing messages with AI, fostering deeper relationships and driving repeat business.",
+              "Effortlessly produce diverse content formats, including text, videos, audio, and more, to enhance your brand presence."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "benefits",
+        "title": "Key Benefits",
+        "items": [
+          {
+            "title": "Customized Solutions",
+            "icon": "/images/v2/fi_8869087.svg",
+            "description": "We collaborate closely with you to understand your unique challenges and goals, to develop tailored AI/ML models that address your specific needs."
+          },
+          {
+            "title": "Enhanced Efficiency",
+            "icon": "/images/v2/transparent.svg",
+            "description": "Repetitive tasks become a thing of the past. Our top AI software automate solutions to free up your team's valuable time and resources for higher-level pursuits."
+          },
+          {
+            "title": "Predictive Advantage",
+            "icon": "/images/v2/fi_17976177.svg",
+            "description": "Gain valuable foresight into future trends and customer behaviour. Our models analyze historical data to predict potential risks and opportunities, positioning you for proactive action."
+          },
+          {
+            "title": "Scalability and Adaptability",
+            "icon": "/images/v2/scale-project.svg",
+            "description": "Built with the future in mind, our AI/ML solutions seamlessly adapt to your evolving business needs, ensuring sustained success."
+          },
+          {
+            "title": "Transparent and Ethical Development",
+            "icon": "/images/v2/dedicates-no-distraction.svg",
+            "description": "Committed to responsible practices, we uphold stringent ethical guidelines and maintain transparency throughout the development process."
+          },
+          {
+            "title": "Dedicated Expertise and Support",
+            "icon": "/images/v2/fi_11478510.svg",
+            "description": "Benefit from our team of experienced professionals who provide ongoing support and guidance throughout every stage of the journey."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "eyebrow": "Recognition",
+        "title": "We're Pleased to Share Some of the Honors",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms · 2025–26" },
+          { "title": "Global Award Spring", "org": "Clutch · 2025" },
+          { "title": "Global Award Fall", "org": "Clutch · 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Don't let cost hold you back. Our industry-leading AI/ML services are within reach.",
+        "buttonText": "Let's Get Started"
+      },
+      {
+        "type": "tech-stack",
+        "title": "Tech Stack We Use",
+        "items": [
+          { "title": "Python", "imageSrc": "/images/python-logo.svg" },
+          { "title": "Kubernetes", "imageSrc": "/images/kubernetes-seeklogocom.webp" },
+          { "title": "Big Data", "imageSrc": "/images/big-data-1.webp" },
+          { "title": "Machine Learning", "imageSrc": "/images/machine-learning-tech.webp" },
+          { "title": "AWS", "imageSrc": "/images/aws-tech.webp" },
+          { "title": "OpenCV", "imageSrc": "/images/open-cv.webp" },
+          { "title": "Databricks", "imageSrc": "/images/data-brick-logo.svg" },
+          { "title": "Azure", "imageSrc": "/images/azure-tech.svg" },
+          { "title": "Grafana", "imageSrc": "/images/grafana-tech.webp" },
+          { "title": "DevOps", "imageSrc": "/images/devops-tech.webp" },
+          { "title": "Oracle", "imageSrc": "/images/oracle-tech.webp" },
+          { "title": "TensorFlow", "imageSrc": "/images/tensorflow-tech.svg" },
+          { "title": "Pandas", "imageSrc": "/images/pandas-tech.webp" },
+          { "title": "Tableau", "imageSrc": "/images/tableau.webp" },
+          { "title": "API", "imageSrc": "/images/integration.webp" },
+          { "title": "Jupyter", "imageSrc": "/images/jupyter-tech.webp" },
+          { "title": "Scikit-Learn", "imageSrc": "/images/scikit-learn-tech.webp" },
+          { "title": "ETL", "imageSrc": "/images/etl-tech.webp" }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks?",
+        "items": [
+          {
+            "title": "Cost-Effective Excellence",
+            "icon": "/images/v2/cost-efficient.svg",
+            "description": "Cost-effective e-solutions that deliver maximum value for your investment."
+          },
+          {
+            "title": "Diverse Portfolio",
+            "icon": "/images/v2/fi_942799.svg",
+            "description": "A diverse portfolio of over 120 successfully developed applications across various industries."
+          },
+          {
+            "title": "Proven Expertise",
+            "icon": "/images/v2/dediated-resource.svg",
+            "description": "Proven expertise from our seasoned professionals with over 8 years of experience."
+          },
+          {
+            "title": "Client-Centric Approach",
+            "icon": "/images/v2/client-centric-icon.svg",
+            "description": "A client-centric approach that prioritizes your unique needs and fosters long-term partnerships."
+          },
+          {
+            "title": "Innovative Solution",
+            "icon": "/images/v2/fi_8869087.svg",
+            "description": "Innovative solutions that leverage emerging technologies to exceed industry standards."
+          },
+          {
+            "title": "Dedicated Support",
+            "icon": "/images/v2/fi_8623753.svg",
+            "description": "Dedicated support to ensure smooth integration, troubleshooting and updates for optimal software performance."
+          }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What services does Brilworks offer in AI/ML development?",
+            "a": "Brilworks offers comprehensive AI/ML development services covering generative AI solutions, AI-based product development, machine learning expertise, computer vision solutions, natural language processing (NLP), and AI chatbot development."
+          },
+          {
+            "q": "How does Brilworks approach Generative AI Solutions?",
+            "a": "Brilworks leverages state-of-the-art tools in generative AI development to revolutionize business operations and innovation across various industries, ensuring cutting-edge solutions tailored to each client's needs."
+          },
+          {
+            "q": "Can Brilworks customize AI/ML models for specific business objectives?",
+            "a": "Yes, we collaborate closely with clients to develop customized ML models that align with their unique objectives and challenges, ensuring tailored solutions for maximum impact."
+          },
+          {
+            "q": "What are the key benefits of Brilworks' AI/ML development services?",
+            "a": "Our services offer enhanced efficiency through automation, predictive advantage through data-driven insights, scalability, and adaptability for evolving business needs, and a commitment to transparent and ethical development practices."
+          },
+          {
+            "q": "How does Brilworks support its clients throughout the development process?",
+            "a": "Our team of experienced professionals provides dedicated expertise and support at every stage of the journey, ensuring clients receive ongoing guidance and assistance to achieve their goals."
+          },
+          {
+            "q": "How can I get started with Brilworks' AI/ML development services?",
+            "a": "To get started, simply schedule a consultation with our team to discuss your aspirations and how our industry-leading AI/ML services can transform your business."
+          },
+          {
+            "q": "How does Brilworks ensure ethical AI development practices?",
+            "a": "We uphold stringent ethical guidelines and maintain transparency throughout the development process, ensuring responsible AI solutions that prioritize ethical considerations."
+          },
+          {
+            "q": "Can Brilworks' AI/ML solutions be adapted to different industries?",
+            "a": "Yes, our AI/ML solutions are designed to be adaptable to various industries, including finance, healthcare, media & entertainment, retail & e-commerce, education, logistics, and marketing, among others."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What services does Brilworks offer in AI/ML development?",
+        "a": "Brilworks offers comprehensive AI/ML development services covering generative AI solutions, AI-based product development, machine learning expertise, computer vision solutions, natural language processing (NLP), and AI chatbot development."
+      },
+      {
+        "q": "How does Brilworks approach Generative AI Solutions?",
+        "a": "Brilworks leverages state-of-the-art tools in generative AI development to revolutionize business operations and innovation across various industries, ensuring cutting-edge solutions tailored to each client's needs."
+      },
+      {
+        "q": "Can Brilworks customize AI/ML models for specific business objectives?",
+        "a": "Yes, we collaborate closely with clients to develop customized ML models that align with their unique objectives and challenges, ensuring tailored solutions for maximum impact."
+      },
+      {
+        "q": "What are the key benefits of Brilworks' AI/ML development services?",
+        "a": "Our services offer enhanced efficiency through automation, predictive advantage through data-driven insights, scalability, and adaptability for evolving business needs, and a commitment to transparent and ethical development practices."
+      },
+      {
+        "q": "How does Brilworks support its clients throughout the development process?",
+        "a": "Our team of experienced professionals provides dedicated expertise and support at every stage of the journey, ensuring clients receive ongoing guidance and assistance to achieve their goals."
+      },
+      {
+        "q": "How can I get started with Brilworks' AI/ML development services?",
+        "a": "To get started, simply schedule a consultation with our team to discuss your aspirations and how our industry-leading AI/ML services can transform your business."
+      },
+      {
+        "q": "How does Brilworks ensure ethical AI development practices?",
+        "a": "We uphold stringent ethical guidelines and maintain transparency throughout the development process, ensuring responsible AI solutions that prioritize ethical considerations."
+      },
+      {
+        "q": "Can Brilworks' AI/ML solutions be adapted to different industries?",
+        "a": "Yes, our AI/ML solutions are designed to be adaptable to various industries, including finance, healthcare, media & entertainment, retail & e-commerce, education, logistics, and marketing, among others."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack",
+        "duration": "4+ year relationship",
+        "metric": "Platform scaled to 10K+ active users"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin",
+        "duration": "2+ year relationship",
+        "metric": "MVP delivered in under 4 weeks"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform",
+        "duration": "3+ year relationship",
+        "metric": "3.2K artists onboarded in first 60 days"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride",
+        "duration": "2+ year relationship",
+        "metric": "Shipped 3 major releases on schedule"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo",
+        "duration": "3+ year relationship",
+        "metric": "99.9% API uptime achieved"
+      }
+    ]
+  }
+}

@@ -1,9 +1,14 @@
 "use client";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "../Services/ServiceHeroSection";
+import { ShieldCheck, Users, BarChart3, Lock } from "lucide-react";
+import SolutionHeroSection from "./SolutionHeroSection";
 import AboutOurExpertise from "../Services/AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import SolutionContactForm from "./SolutionContactForm";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 
@@ -14,11 +19,26 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const HRSoftwareDevelopment = () => {
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: Users, label: "8+ Years of HR Software Experience" },
+    { icon: BarChart3, label: "98% Project Success Rate" },
+    { icon: Lock, label: "HRIS & GDPR Compliance" },
+  ];
+
+  const heroStats = [
+    { value: "120+", label: "Products Shipped" },
+    { value: "25+", label: "HR Platforms" },
+    { value: "50K+", label: "Employees Managed" },
+    { value: "98%", label: "Client Retention" },
+  ];
+
   const hrServices1 = {
     title: "What We Build for HR Teams",
     servicesList: [
       {
         title: "Applicant Tracking Systems",
+        iconSrc: "/images/v2/people-icon-vector.svg",
         value: "hr-service1-2",
         description:
           "Post jobs, collect applications, screen candidates, schedule interviews, and manage your hiring pipeline from one dashboard.",
@@ -27,6 +47,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Employee Onboarding Platforms",
+        iconSrc: "/images/v2/calendar-icon.svg",
         value: "hr-service1-3",
         description:
           "Digital paperwork, training schedules, equipment requests, and first-week tasks that new hires complete before day one.",
@@ -35,6 +56,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Performance Management Tools",
+        iconSrc: "/images/v2/data-driven-icon.svg",
         value: "hr-service1-4",
         description:
           "Set goals, track progress, schedule reviews, collect 360 feedback, and document performance conversations throughout the year.",
@@ -43,6 +65,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Time & Attendance Systems",
+        iconSrc: "/images/v2/clock-icon.svg",
         value: "hr-service1-5",
         description:
           "Clock in/out, PTO requests, shift scheduling, overtime tracking, and attendance reports that sync with payroll.",
@@ -51,6 +74,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Employee Self-Service Portals",
+        iconSrc: "/images/v2/interactive-ui-icon.svg",
         value: "hr-service1-6",
         description:
           "Let employees update their information, download pay stubs, request time off, view benefits, and access company documents.",
@@ -64,6 +88,7 @@ const HRSoftwareDevelopment = () => {
     servicesList: [
       {
         title: "Learning Management Systems",
+        iconSrc: "/images/v2/read-icon.svg",
         value: "hr-service2-7",
         description:
           "Assign training courses, track completion, test knowledge, manage certifications, and maintain compliance records.",
@@ -72,6 +97,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Payroll Integration Software",
+        iconSrc: "/images/v2/api-integration-icon.svg",
         value: "hr-service2-8",
         description:
           "Connect your HR system to payroll providers so employee data, hours, and deductions flow automatically.",
@@ -80,6 +106,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Benefits Administration Platforms",
+        iconSrc: "/images/v2/crm-icon.svg",
         value: "hr-service2-9",
         description:
           "Enrollment workflows, plan comparisons, life event changes, and open enrollment that employees can complete online.",
@@ -88,6 +115,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "Recruitment Marketing Tools",
+        iconSrc: "/images/v2/social-integration-icon.svg",
         value: "hr-service2-10",
         description:
           "Career site builders, job board integrations, candidate nurture campaigns, and employer brand content management.",
@@ -96,6 +124,7 @@ const HRSoftwareDevelopment = () => {
       },
       {
         title: "HR Analytics Dashboards",
+        iconSrc: "/images/v2/analytics-reporting-icon.svg",
         value: "hr-service2-11",
         description:
           "Headcount reports, turnover analysis, time-to-hire metrics, diversity data, and compensation insights in real-time.",
@@ -170,12 +199,15 @@ const HRSoftwareDevelopment = () => {
 
   return (
     <>
-      <ServiceHeroSection
-        title="HR Software Development"
+      <SolutionHeroSection
+        technologyText="HR Software Development Services"
+        title='Custom <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">HR Software</span> Development'
         description="Custom software for human resources teams. We build applicant tracking systems, employee management platforms, payroll integrations, performance review tools, and onboarding applications."
-        buttonText="Start Your App Journey"
         imageSrc="/images/v2/hr-software-development.webp"
+        buttonText="Start Your App Journey"
+        stats={heroStats}
       />
+      <IndustryTrustBar items={trustBarItems} />
       <AboutOurExpertise
         title="About Brilworks HR Solutions"
         description1="For 8 years, we've been building software for HR departments that need technology to match their workflows. Your HR team shouldn't spend half their day updating spreadsheets, chasing signatures, or copying data between systems."
@@ -206,6 +238,10 @@ const HRSoftwareDevelopment = () => {
         imageOnLeft={true}
         serviceData={hrServices2}
       />
+      <IndustryMidCTA
+        title="Ready to Build Your HR Platform?"
+        description="Get a free consultation and project estimate. We respond within 24 hours."
+      />
       <MultipleCardInGrid
         title="How We Work With You"
         cardData={hrServiceEngagementData}
@@ -216,21 +252,19 @@ const HRSoftwareDevelopment = () => {
         bgClass="bg-sectionBG"
         data={whyChooseUsDevelopmentData}
       />
-
+      <ClientReviews />
       <SeeingBelieving />
       <SolutionContactForm
-        title="Let's Talk About Your Project"
-        description={
-          <>
-            Tell us which HR processes are eating up your team's time. We'll
-            explain what we'd build, how long it would take, and what it would
-            cost. Most conversations start with "our current process is..." and
-            we go from there. No pressure, no sales pitch. Just a straight
-            discussion about whether custom software makes sense for your
-            situation. Contact us to start the conversation. We respond within
-            one business day.
-          </>
-        }
+        title="Ready to Build Your HR Platform?"
+        description="You're one conversation away from automating your HR workflows and freeing your team from manual processes."
+        submitLabel="Get My Free HR Consultation"
+        benefits={[
+          "Free 30-minute consultation with an HR tech specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial — no commitment",
+          "Response guaranteed within 24 business hours",
+          "HRIS integration and compliance guidance included",
+        ]}
       />
       <HomePageBlogs />
     </>

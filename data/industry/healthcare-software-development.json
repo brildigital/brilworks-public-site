@@ -1,0 +1,267 @@
+{
+  "slug": "healthcare-software-development",
+  "url": "/industry/healthcare-software-development/",
+  "industry": "Healthcare",
+  "metadata": {
+    "title": "Healthcare Software Development Services | Brilworks",
+    "description": "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
+    "canonical": "{BASE_URL}industry/healthcare-software-development/",
+    "ogImage": "{BASE_URL}images/explore-arrow-01.png",
+    "ogTitle": "Healthcare Software Development Services",
+    "ogDescription": "Brilworks is a healthcare software developer that creates medical software for patient monitoring, telemedicine, and prescription apps on the EMR/EHR platform.",
+    "breadcrumbLabel": "Healthcare Software Development Services",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "locale": "en-US",
+    "ogType": "article",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "Trusted by 120+ companies across 20 countries",
+      "technologyText": "Healthcare Software Development Services",
+      "headline": "Build Your Healthcare Platform \u2014 HIPAA Compliant",
+      "headlineHtml": "Build Your <span class=\"bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text\" style=\"--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent\">Healthcare Platform</span> \u2014 HIPAA Compliant",
+      "subheadline": "Leverage our healthcare software development services to improve processes and patient experience. Resolve accessibility issues by offering remote consultations and telehealth solutions.",
+      "imageSrc": "/images/v2/helathcare-banner.webp",
+      "ctas": [
+        { "label": "Get My Free Consultation", "href": "#section-contact-form", "style": "primary" },
+        { "label": "View Case Studies", "href": "/portfolio/", "style": "secondary" }
+      ],
+      "stats": [
+        { "value": "120+", "label": "Products Shipped" },
+        { "value": "HIPAA", "label": "Compliant" },
+        { "value": "500K+", "label": "Patients Served" },
+        { "value": "98%", "label": "Client Retention" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "eyebrow": "What We Build",
+        "title": "Leverage The Power of Technology with Our Healthcare Software Development Services",
+        "buttonText": "Build My Healthcare App",
+        "items": [
+          {
+            "title": "Telemedicine Software Developments",
+            "iconSrc": "/images/v2/heathcare-icon.svg",
+            "value": "healthcare-1-1",
+            "description": "Our custom healthcare software development services include application development, custom reporting, and real-time data interaction.",
+            "imageSrc": "/images/v2/telemedicine-img.webp",
+            "imageAlt": "Telemedicine-Software-Developments"
+          },
+          {
+            "title": "Remote Patient Monitoring Software",
+            "iconSrc": "/images/v2/realtime-icon.svg",
+            "value": "healthcare-1-2",
+            "description": "With remote monitoring software, doctors can monitor patients' health remotely via virtual care or vitals captured through wearable devices and IoT sensors. This improves patient outcomes by providing healthcare professionals with better tools to provide superior care at the most appropriate time.",
+            "imageSrc": "/images/v2/remote-patient-monitoring-software.webp",
+            "imageAlt": "Remote-Patient-Monitoring-Software"
+          },
+          {
+            "title": "mPrescription App Development",
+            "iconSrc": "/images/v2/interactive-ui-icon.svg",
+            "value": "healthcare-1-3",
+            "description": "We help simplify medication management by providing prescription mobile apps to store patient data, medical history, allergies, and prescriptions. Our apps are trusted by both doctors and patients alike.",
+            "imageSrc": "/images/v2/mprescription-app-development.webp",
+            "imageAlt": "mPrescription-App-Development.jpg"
+          },
+          {
+            "title": "Patient Engagement Solutions",
+            "iconSrc": "/images/v2/people-icon-vector.svg",
+            "value": "healthcare-1-4",
+            "description": "Your patients are a priority and we'll help you create systems that deliver great care, improve patient satisfaction and increase revenue. Our patient engagement solutions allow patients and healthcare providers to connect anywhere and anytime with great ease.",
+            "imageSrc": "/images/v2/patient-engagement-solutions.webp",
+            "imageAlt": "Patient-Engagement-Solutions"
+          },
+          {
+            "title": "IoT Healthcare Software",
+            "iconSrc": "/images/v2/iot-integration-icon.svg",
+            "value": "healthcare-1-5",
+            "description": "Our IoT software helps doctors make better decisions faster. It captures relevant patient information through smart sensors, then analyses it in real-time to generate valuable insights. We develop applications that empower doctors and medical staff with accurate and valuable patient data.",
+            "imageSrc": "/images/v2/iot-healthcare-software.webp",
+            "imageAlt": "IoT-Healthcare-Software"
+          },
+          {
+            "title": "Electronic Medical Record Software",
+            "iconSrc": "/images/v2/read-icon.svg",
+            "value": "healthcare-1-6",
+            "description": "Growing patient expectations requires doctors to not just interact with their patients, but also provide them with efficient and comprehensive care. With our software, you can leverage your existing EMR/EHR platform to maximize clinical productivity and interact with patients via patient portals.",
+            "imageSrc": "/images/v2/electronic-medical-record-software.webp",
+            "imageAlt": "Electronic-Medical-Record-Software"
+          }
+        ]
+      },
+      {
+        "type": "services",
+        "eyebrow": "What We Build",
+        "title": "Medical Software Development Services Catering to the Entire Healthcare Ecosystem",
+        "buttonText": "Speak With Our Experts",
+        "items": [
+          {
+            "title": "Healthcare Providers",
+            "iconSrc": "/images/v2/cloud-based-icon.svg",
+            "value": "healthcare-2-1",
+            "description": "We assist healthcare providers to automate medical workflows, simplify tedious tasks and increase patient satisfaction. Improve your hospital efficiency and uptime while streamlining daily processes.",
+            "imageSrc": "/images/v2/healthcare-providers.webp",
+            "imageAlt": "Healthacre Provider"
+          },
+          {
+            "title": "Pharmaceutical Companies",
+            "iconSrc": "/images/v2/developer-icon.svg",
+            "value": "healthcare-2-2",
+            "description": "We believe that bringing together the best software options for pharma research and development can help you achieve your goals. Our team assists you from the outset of your drug development projects to the end of each phase in your clinical trial.",
+            "imageSrc": "/images/v2/pharmaceutical-companies.webp",
+            "imageAlt": "Pharmaceutical Companies"
+          },
+          {
+            "title": "Medical Device Manufacturers",
+            "iconSrc": "/images/v2/data-driven-icon.svg",
+            "value": "healthcare-2-3",
+            "description": "Medical device manufacturers are at the forefront of innovation, rapidly transforming how healthcare is delivered. Our software helps medical device manufacturers bring new functionality to their products.",
+            "imageSrc": "/images/v2/medical-device-manufactures.webp",
+            "imageAlt": "Medical Device Manufacturers"
+          },
+          {
+            "title": "Healthcare Startups",
+            "iconSrc": "/images/v2/scalable-architecture-icon.svg",
+            "value": "healthcare-2-4",
+            "description": "We're committed to helping healthcare startups bring their incredible ideas to life. From medicine to medicine delivery, health technology is changing at an exponential rate. Our team of experts uses their experience and expertise to deliver software solutions that are agile, scalable, reliable, and secure.",
+            "imageSrc": "/images/v2/healthcare-startups.webp",
+            "imageAlt": "Healthcare Startups"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to Build a Healthcare App?",
+        "description": "Get a free consultation and project estimate. We respond within 24 hours.",
+        "ctas": [
+          { "label": "Get Free Consultation", "href": "#section-contact-form", "style": "primary" },
+          { "label": "See Our Work", "href": "/portfolio/", "style": "secondary" }
+        ]
+      },
+      {
+        "type": "useCases",
+        "title": "Types Of Healthcare Apps We Develop",
+        "description": "By utilizing our expertise in working with various players in the healthcare industry, we provide healthcare application development services that make your product a crucial part of the overall healthcare ecosystem. Our services encompass the development of custom apps, designed to meet your business needs.",
+        "buttonText": "Let's Get In Touch",
+        "imageSrc": "/images/v2/healthcare-app-type.webp",
+        "imageAlt": "healthcare-app-type",
+        "items": [
+          "Appointment Scheduling Applications",
+          "Medication Intake Tracking Apps",
+          "Home Health Monitoring Apps",
+          "Caregiver Management Apps",
+          "Drug Inventory Tracking Apps",
+          "Wearable Tech Apps"
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "eyebrow": "Why Brilworks",
+        "title": "Why Healthcare Companies Choose Us",
+        "items": [
+          { "title": "HIPAA and GDPR", "description": "Compliant Apps", "icon": "/images/v2/secure-pymt-icon.svg" },
+          { "title": "Experience", "description": "Proven mHealth", "icon": "/images/v2/heathcare-icon.svg" },
+          { "title": "Agile", "description": "Centric Model", "icon": "/images/v2/fast-turnaround-icon.svg" },
+          { "title": "Security", "description": "First Approach", "icon": "/images/v2/fraud-detection-icon.svg" },
+          { "title": "Un-Paralleled", "description": "Code Quality", "icon": "/images/v2/quality-project-mgmt-icon.svg" },
+          { "title": "Well-Planned", "description": "Architecture", "icon": "/images/v2/scalable-architecture-icon.svg" }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "componentName": "SeeingBelieving",
+        "title": "Our Portfolio",
+        "buttonText": "Work With Us",
+        "note": "Portfolio items rendered dynamically by SeeingBelieving (Homepage component) \u2014 not captured here."
+      },
+      {
+        "type": "dynamic-content",
+        "componentName": "HomePageBlogs",
+        "note": "Blog listing is rendered dynamically by HomePageBlogs (likely CMS-driven) \u2014 not captured here."
+      },
+      {
+        "type": "engagementModels",
+        "eyebrow": "How We Work",
+        "title": "Our Engagement Models",
+        "subtitle": "Flexible models to match your stage \u2014 whether you're a solo founder with an idea or a funded startup scaling fast.",
+        "items": [
+          {
+            "iconSrc": "/images/v2/dedicated-dev-team.svg",
+            "title": "Dedicated Development Team",
+            "description": "A full team (devs, QA, PM, designer) working exclusively on your product. Best for funded startups building a core platform."
+          },
+          {
+            "iconSrc": "/images/v2/team-extension.svg",
+            "title": "Team Extension",
+            "description": "Add our engineers to your existing team. They integrate with your processes, tools, and culture. Best for scaling quickly."
+          },
+          {
+            "iconSrc": "/images/v2/project-based-model-icon.svg",
+            "title": "Project-Based Model",
+            "description": "Fixed scope, fixed timeline, fixed price. We handle everything from design to deployment. Best for MVPs and defined projects."
+          }
+        ]
+      },
+      {
+        "type": "process",
+        "eyebrow": "Getting Started",
+        "title": "How to Launch Your Platform",
+        "subtitle": "From first conversation to production \u2014 in as little as 10 weeks.",
+        "items": [
+          { "step": 1, "title": "Contact Us", "description": "Fill out the form. We respond within 24 business hours." },
+          { "step": 2, "title": "Free Consultation", "description": "We discuss your requirements, target users, and build a roadmap together." },
+          { "step": 3, "title": "Proposal & Estimate", "description": "Detailed project proposal with timeline, milestones, and transparent pricing." },
+          { "step": 4, "title": "Project Kickoff", "description": "Your dedicated team starts building. Weekly demos, Slack access, full transparency." }
+        ]
+      },
+      {
+        "type": "contactForm",
+        "eyebrow": "Let's Talk",
+        "title": "Ready to Build Your Healthcare Platform?",
+        "description": "You're one conversation away from turning your healthcare idea into a HIPAA-compliant, scalable platform.",
+        "submitLabel": "Get My Free Healthcare Consultation",
+        "messageRequired": false,
+        "benefits": [
+          "Free 30-minute consultation with a healthcare specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial \u2014 no commitment",
+          "Response guaranteed within 24 business hours",
+          "HIPAA & GDPR compliance built in"
+        ],
+        "contact": {
+          "email": "sales@brilworks.com",
+          "phone": "+91 93136 44148"
+        }
+      },
+      {
+        "type": "faq",
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "items": [
+          { "q": "What is healthcare software development?", "a": "Healthcare software development is the process of developing mobile apps or web apps for both patients and medical professionals. With our healthcare software development services, you can incorporate e-prescribing, mobile app design and development, clinical data analysis, and real-time patient interaction into a single platform that\u2019s easy to use and available where you need it most." },
+          { "q": "Do you provide custom healthcare software development?", "a": "Yes, we do provide custom healthcare software development services. We create solutions tailored to the requirements of your healthcare organization." },
+          { "q": "How do I choose the right healthcare software development company?", "a": "When in the process of choosing a healthcare software development service, you need to keep in mind your requirements and expectations. You need to choose a company that not only offers great services but has solid experience with projects similar to yours. Choose a company that understands your needs and delivers on time, on budget, and with high-quality end-products every time. Check Brilworks as top." },
+          { "q": "Do your healthcare software development services follow HIPAA compliance?", "a": "Yes, we do follow HIPAA standards. We take security seriously and implement the highest levels of quality assurance." },
+          { "q": "What are the benefits of mHealth apps?", "a": "Implementing mHealth apps in healthcare organizations enables professionals to deliver care more efficiently, reducing costs associated with transportation and hospital admission. They also provide patients and their families with real-time information about their health status and create a direct connection between healthcare providers and patients." }
+        ]
+      }
+    ],
+    "faq": [
+      { "q": "What is healthcare software development?", "a": "Healthcare software development is the process of developing mobile apps or web apps for both patients and medical professionals. With our healthcare software development services, you can incorporate e-prescribing, mobile app design and development, clinical data analysis, and real-time patient interaction into a single platform that\u2019s easy to use and available where you need it most." },
+      { "q": "Do you provide custom healthcare software development?", "a": "Yes, we do provide custom healthcare software development services. We create solutions tailored to the requirements of your healthcare organization." },
+      { "q": "How do I choose the right healthcare software development company?", "a": "When in the process of choosing a healthcare software development service, you need to keep in mind your requirements and expectations. You need to choose a company that not only offers great services but has solid experience with projects similar to yours. Choose a company that understands your needs and delivers on time, on budget, and with high-quality end-products every time. Check Brilworks as top." },
+      { "q": "Do your healthcare software development services follow HIPAA compliance?", "a": "Yes, we do follow HIPAA standards. We take security seriously and implement the highest levels of quality assurance." },
+      { "q": "What are the benefits of mHealth apps?", "a": "Implementing mHealth apps in healthcare organizations enables professionals to deliver care more efficiently, reducing costs associated with transportation and hospital admission. They also provide patients and their families with real-time information about their health status and create a direct connection between healthcare providers and patients." }
+    ],
+    "stats": [
+      { "value": "120+", "label": "Products Shipped" },
+      { "value": "HIPAA", "label": "Compliant" },
+      { "value": "500K+", "label": "Patients Served" },
+      { "value": "98%", "label": "Client Retention" }
+    ],
+    "testimonials": []
+  }
+}

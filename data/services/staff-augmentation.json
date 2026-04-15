@@ -1,0 +1,159 @@
+{
+  "slug": "staff-augmentation",
+  "url": "/staff-augmentation/",
+  "category": "Work With Us",
+  "metadata": {
+    "title": "Staff Augmentation | Brilworks",
+    "description": "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
+    "canonical": "/staff-augmentation/",
+    "ogImage": "",
+    "ogTitle": "Staff Augmentation",
+    "ogDescription": "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "twitterSite": "@_Brilworks",
+    "twitterCard": "summary_large_image"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "IT Staff Augmentation Service",
+      "subheadline": "Access a global pool of experts for the niche skillset you need. Our IT Staff augmentation service offers a strategic solution to bridge the talent gap and incorporate immediate expertise into your team.",
+      "showGridData": true,
+      "stats": [
+        { "value": "8+", "description": "Years of Experience" },
+        { "value": "100+", "description": "Experts" },
+        { "value": "250+", "description": "Projects" },
+        { "value": "98%", "description": "Client Satisfaction" }
+      ],
+      "ctas": [
+        { "label": "Scale Your Team Today", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Upskill Your Workforce with IT Staff Augmentation Service",
+        "subtitle": "With our tailored staff augmentation solutions, you can quickly fill skill gaps and tackle critical projects. Our pre-vetted engineers seamlessly integrate with your existing team.",
+        "items": [
+          { "title": "React.js Developers", "image": "react-icon" },
+          { "title": "Java Developers", "image": "java-icon" },
+          { "title": "Node.js Developers", "image": "javascript-icon" },
+          { "title": "React Native Developers", "image": "react-icon" },
+          { "title": "AWS Developers", "image": "aws-icon" },
+          { "title": "UI/UX Developer", "image": "ui-ux-icon" },
+          { "title": "Blockchain Developer", "image": "blockchain-icon" },
+          { "title": "Python Developers", "image": "python-icon" },
+          { "title": "AI/ML Developer", "image": "ai-ml-icon" },
+          { "title": "Project Manager", "image": "project-manager-icon" },
+          { "title": "DevOps Engineers", "image": "devops-engineer-icon" },
+          { "title": "QA & Test Automation Engineers", "image": "qa-test-engineer-icon" }
+        ],
+        "cta": { "label": "Schedule a Developer Interview", "type": "primary" }
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Brilworks For IT Staff Augmentation Service",
+        "items": [
+          {
+            "title": "Cost-effective",
+            "icon": "/images/v2/fi_1611179.svg",
+            "description": "With our IT staff augmentation services, you gain access to the talent you need without the burden of overhead costs associated with traditional hiring processes."
+          },
+          {
+            "title": "Seamless Staffing",
+            "icon": "/images/v2/fi_17099449.svg",
+            "description": "We connect you with pre-vetted, highly skilled professionals who can seamlessly integrate into your existing team."
+          },
+          {
+            "title": "Highly Skilled Developers",
+            "icon": "/images/v2/fi_18810346.svg",
+            "description": "By choosing us, you gain access to a pool of highly skilled developers, software engineers, business analysts, Scrum Masters, and QA specialists."
+          },
+          {
+            "title": "Flexibility and Scalability",
+            "icon": "/images/v2/scale-project.svg",
+            "description": "Our staff augmentation services provide unmatched flexibility. Scale your IT team up or down seamlessly to meet your project requirements and evolving business needs."
+          },
+          {
+            "title": "Domain Expertise",
+            "icon": "/images/v2/fi_11333971.svg",
+            "description": "Whether you operate in finance, healthcare, e-commerce, or any other sector, we have the expertise to support you."
+          },
+          {
+            "title": "Dedicated Support",
+            "icon": "/images/v2/fi_9759919.svg",
+            "description": "Client satisfaction is our priority. We are committed to providing ongoing support and clear communication throughout your partnership with us."
+          }
+        ]
+      },
+      {
+        "type": "clients",
+        "title": "Client Reviews",
+        "note": "Client testimonials rendered from shared Homepage/ClientReviews component (global)."
+      },
+      {
+        "type": "tech-stack",
+        "title": "Tech Stack We Use",
+        "items": [
+          { "title": "React", "imageSrc": "/images/React-icon.png" },
+          { "title": "Angular", "imageSrc": "/images/Angular.png" },
+          { "title": "Vue.js", "imageSrc": "/images/Vue.png" },
+          { "title": "Node.js", "imageSrc": "/images/Node-logo.png" },
+          { "title": "Python", "imageSrc": "/images/python-logo.svg" },
+          { "title": "MySQL", "imageSrc": "/images/MySql.png" },
+          { "title": "PostgreSQL", "imageSrc": "/images/postgresql-svgrepo.png" },
+          { "title": "MongoDB", "imageSrc": "/images/mongodb-svgrepo.png" },
+          { "title": "AWS", "imageSrc": "/images/aws-tech.webp" },
+          { "title": "Figma", "imageSrc": "/images/figma.png" },
+          { "title": "Adobe XD", "imageSrc": "/images/adobe-xd.png" },
+          { "title": "GitLab", "imageSrc": "/images/machine-learning-tech.png" },
+          { "title": "Github", "imageSrc": "/images/github-svgrepo-com.png" },
+          { "title": "Bitbucket", "imageSrc": "/images/bitbucket-svgrepo-com.png" },
+          { "title": "Kubernetes", "imageSrc": "/images/kubernetes-seeklogocom.webp" },
+          { "title": "DevOps", "imageSrc": "/images/devops-tech.webp" },
+          { "title": "Tableau", "imageSrc": "/images/tableau.webp" },
+          { "title": "DynamoDB", "imageSrc": "/images/aws-dynamodb-svgrepo-com.png" }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What is an IT staff augmentation?",
+            "a": "TIT staff augmentation is the practice of supplementing your existing IT team with temporary or permanent IT professionals. This can help you address specific skill gaps, manage workload fluctuations, and complete projects on time and within budget. By leveraging IT staff augmentation, your business can gain access to a wider talent pool, improve operational efficiency, and achieve your IT goals more effectively."
+          },
+          {
+            "q": "What are the costs associated with IT staff augmentation?",
+            "a": "The cost of IT staff augmentation will vary depending on the experience level of the professionals you need, the duration of the engagement, and your location."
+          },
+          {
+            "q": "What IT staff augmentation models and pricing options do you offer?",
+            "a": "We understand the importance of flexibility. That's why we offer three different IT staff augmentation models to fit your project needs and budget: Dedicated Developer (monthly basis), Hourly Basis (pay-as-you-go), and Time and Material (T&M) Model (transparent cost estimation)."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is an IT staff augmentation?",
+        "a": "TIT staff augmentation is the practice of supplementing your existing IT team with temporary or permanent IT professionals. This can help you address specific skill gaps, manage workload fluctuations, and complete projects on time and within budget. By leveraging IT staff augmentation, your business can gain access to a wider talent pool, improve operational efficiency, and achieve your IT goals more effectively."
+      },
+      {
+        "q": "What are the costs associated with IT staff augmentation?",
+        "a": "The cost of IT staff augmentation will vary depending on the experience level of the professionals you need, the duration of the engagement, and your location."
+      },
+      {
+        "q": "What IT staff augmentation models and pricing options do you offer?",
+        "a": "We understand the importance of flexibility. That's why we offer three different IT staff augmentation models to fit your project needs and budget: Dedicated Developer (monthly basis), Hourly Basis (pay-as-you-go), and Time and Material (T&M) Model (transparent cost estimation)."
+      }
+    ],
+    "stats": [
+      { "value": "8+", "description": "Years of Experience" },
+      { "value": "100+", "description": "Experts" },
+      { "value": "250+", "description": "Projects" },
+      { "value": "98%", "description": "Client Satisfaction" }
+    ],
+    "testimonials": []
+  }
+}

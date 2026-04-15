@@ -1,0 +1,306 @@
+{
+  "slug": "react-native-app-development-services",
+  "url": "/react-native-app-development-services/",
+  "category": "Software Development",
+  "metadata": {
+    "title": "Expert React Native App Development Services",
+    "description": "Brilworks offers expert React Native development with end to end cross platform mobile app builds for businesses in the USA and worldwide.",
+    "canonical": "/react-native-app-development-services/",
+    "ogImage": "/images/v2/react-native-development-services-banner.webp",
+    "ogTitle": "Expert React Native App Development Services",
+    "ogDescription": "Brilworks offers expert React Native development with end to end cross platform mobile app builds for businesses in the USA and worldwide."
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "React Native Development Services",
+      "subheadline": "We use React Native to build fast, stable, and scalable mobile applications without doubling the engineering effort. Our focus is simple. We help businesses launch cross-platform apps that look sharp, run smoothly, and are easy to maintain over time. React Native is one of the tools we rely on to achieve that level of speed and consistency.",
+      "image": "/images/v2/react-native-development-services-banner.webp",
+      "ctas": [
+        { "label": "Start Your App Journey" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "about",
+        "title": "How We Work With React Native",
+        "items": [
+          {
+            "description": "React Native fits when you want both platforms covered without managing two separate codebases. We combine React Native with the right backend setup, design workflows, and QA practices so your app feels polished from the first interaction."
+          }
+        ]
+      },
+      {
+        "type": "services",
+        "title": "Our React Native Development Services",
+        "items": [
+          {
+            "title": "End-to-End App Development",
+            "description": "We handle the complete journey. Discovery, UI and UX, development, integrations, testing, deployment, and post-launch support. The result is a stable React Native app designed for growth.",
+            "image": "/images/v2/end-to-end-app-development.webp",
+            "imageAlt": "Native App Development image"
+          },
+          {
+            "title": "Custom React Native Features",
+            "description": "From chat and live tracking to in-app purchases, notifications, and media handling, we build features that require more than basic boilerplate.",
+            "image": "/images/v2/custom-react-native-features.webp",
+            "imageAlt": "Cross-Platform Development image"
+          },
+          {
+            "title": "React Native Optimization",
+            "description": "If you already have an app but it feels slow, outdated, or inconsistent, we audit the codebase, fix performance issues, and bring it up to a modern standard.",
+            "image": "/images/v2/react-native-optimization.webp",
+            "imageAlt": "PWA development image"
+          },
+          {
+            "title": "React Native Migration",
+            "description": "We help teams move from legacy stacks or outdated frameworks into a React Native environment that\u2019s easier to maintain and scale.",
+            "image": "/images/v2/react-native-migration-2.webp",
+            "imageAlt": "IoT App Development image"
+          },
+          {
+            "title": "API Integration",
+            "description": "Our team integrates your backend systems, payment gateways, analytics, auth flows, and third-party services into a stable React Native architecture.",
+            "image": "/images/v2/advanced-api-integrations.webp",
+            "imageAlt": "Wearable App Development image"
+          },
+          {
+            "title": "Ongoing Maintenance and Support",
+            "description": "We update OS compatibility, patch issues, maintain libraries, and help you iterate on new features without disrupting live users.",
+            "image": "/images/v2/ongoing-maintenance-and-support.webp",
+            "imageAlt": "Wearable App Development image"
+          }
+        ]
+      },
+      {
+        "type": "engagement-models",
+        "title": "Engagement Models For React Native Mobile App Development",
+        "ctaLabel": "Know More",
+        "ctaHref": "/contact-us/",
+        "items": [
+          {
+            "title": "Fixed Price",
+            "icon": "/images/v2/budget-estimate.svg",
+            "description": "For projects with well-defined requirements, we work on a fixed-price model that gives you clarity from day one. We translate your scope into a structured execution plan, outline deliverables, and commit to a predictable budget."
+          },
+          {
+            "title": "Time & Material",
+            "icon": "/images/Quick-Turnaround-Time.png",
+            "description": "When your roadmap is evolving or you\u2019re working through discovery, iterations, and rapid validation, we shift to a time-and-material engagement. It gives you the flexibility to adjust priorities, experiment, and refine features without being locked into a rigid scope."
+          },
+          {
+            "title": "Dedicated Team",
+            "icon": "/images/v2/dedicated-dev-team.svg",
+            "description": "For companies building long-term or scaling multiple product lines, we offer a dedicated team that integrates directly with your internal workflow. You get consistent talent\u2014engineers, designers, PMs\u2014aligned with your goals and committed to your roadmap."
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Briworks for Mobile Development Services",
+        "items": [
+          {
+            "title": "Top 3% Talent",
+            "icon": "/images/v2/talent-availability.svg",
+            "description": "You work with developers who\u2019ve already passed our filters for clarity, discipline, and problem-solving\u2014people who don\u2019t need babysitting to move a product forward."
+          },
+          {
+            "title": "5-Star Rating",
+            "icon": "/images/v2/star.svg",
+            "description": "Our five-star record comes from consistent behaviour: clear communication, steady delivery, and a habit of fixing issues before they turn into excuses."
+          },
+          {
+            "title": "100+ Completed Projects",
+            "icon": "/images/v2/why-n-2.svg",
+            "description": "Over a hundred builds have given us enough mileage to understand patterns, avoid traps, and guide your product without wasting cycles."
+          },
+          {
+            "title": "AI-Driven Approach",
+            "icon": "/images/v2/fi_10644631.svg",
+            "description": "We use AI to cut slow steps, surface issues earlier, and keep engineering focused on the decisions that actually shape your product\u2019s outcome."
+          },
+          {
+            "title": "Real 24/7 Availability",
+            "icon": "/images/v2/24X7-support-mgmt.svg",
+            "description": "We operate across time zones with overlapping teams, so your project doesn\u2019t sit idle\u2014progress continues even when you\u2019re offline."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "subtitle": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "title": "What Our Clients Say",
+        "subtitle": "Our Clients Simply Love Our Work",
+        "description": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "case-studies",
+        "title": "Work That Speaks For Itself",
+        "subtitle": "Because Seeing is Believing",
+        "description": "Named clients. Verified outcomes. Not just pretty screenshots.",
+        "note": "Case studies loaded from portfolioDynamicItems constants (first 4 items)."
+      },
+      {
+        "type": "industries",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Industries We Serve",
+        "description": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects \u00b7 HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "title": "Blog posts (HomePageBlogs)",
+        "note": "Blog cards are loaded dynamically from CMS/Storyblok at runtime."
+      },
+      {
+        "type": "cta",
+        "title": "Build your next high-impact web application with a trusted partner. Let\u2019s turn your idea into a responsive, secure, and scalable digital experience.",
+        "ctas": [
+          { "label": "Get a Free Consultation" }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "Is React Native suitable for my mobile app idea?",
+            "a": "Most business applications work well with React Native. If your idea relies heavily on advanced hardware or complex animations, we give you honest guidance on whether React Native or native code fits better."
+          },
+          {
+            "q": "Will the app look and feel like a native application?",
+            "a": "Yes. We follow platform guidelines and use the right native modules so the experience feels smooth and aligned with iOS and Android expectations."
+          },
+          {
+            "q": "Can React Native scale for large user bases?",
+            "a": "Yes. With the right architecture, backend setup, and optimization strategy, React Native supports apps at scale."
+          },
+          {
+            "q": "Do you support both iOS and Android app store submissions?",
+            "a": "We handle the full submission process, including builds, configuration, and compliance."
+          },
+          {
+            "q": "Can you work with an existing React Native codebase?",
+            "a": "Yes. We can take over existing projects, run a technical audit, and stabilize or extend the app."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is React Native suitable for my mobile app idea?",
+        "a": "Most business applications work well with React Native. If your idea relies heavily on advanced hardware or complex animations, we give you honest guidance on whether React Native or native code fits better."
+      },
+      {
+        "q": "Will the app look and feel like a native application?",
+        "a": "Yes. We follow platform guidelines and use the right native modules so the experience feels smooth and aligned with iOS and Android expectations."
+      },
+      {
+        "q": "Can React Native scale for large user bases?",
+        "a": "Yes. With the right architecture, backend setup, and optimization strategy, React Native supports apps at scale."
+      },
+      {
+        "q": "Do you support both iOS and Android app store submissions?",
+        "a": "We handle the full submission process, including builds, configuration, and compliance."
+      },
+      {
+        "q": "Can you work with an existing React Native codebase?",
+        "a": "Yes. We can take over existing projects, run a technical audit, and stabilize or extend the app."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack",
+        "duration": "4+ year relationship",
+        "metric": "Platform scaled to 10K+ active users"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin",
+        "duration": "2+ year relationship",
+        "metric": "MVP delivered in under 4 weeks"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform",
+        "duration": "3+ year relationship",
+        "metric": "3.2K artists onboarded in first 60 days"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride",
+        "duration": "2+ year relationship",
+        "metric": "Shipped 3 major releases on schedule"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo",
+        "duration": "3+ year relationship",
+        "metric": "99.9% API uptime achieved"
+      }
+    ]
+  }
+}

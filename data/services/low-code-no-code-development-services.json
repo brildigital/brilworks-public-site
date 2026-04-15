@@ -1,0 +1,164 @@
+{
+  "slug": "low-code-no-code-development-services",
+  "url": "/low-code-no-code-development-services/",
+  "category": "Low-Code / No-Code",
+  "metadata": {
+    "title": "Low Code No Code Development Services | Brilworks",
+    "description": "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding.",
+    "canonical": "{BASE_URL}low-code-no-code-development-services/",
+    "ogImage": "{BASE_URL}images/lowcode-banner.webp",
+    "ogTitle": "Low Code No Code Development Services",
+    "ogDescription": "Empower your business with Brilworks' low-code/no-code solutions. Rapidly develop and deploy applications that drive efficiency and innovation, without extensive coding."
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Low Code No Code Development Services",
+      "subheadline": "Turn ideas into reality faster than ever before with our no-code/low-code development services.  At Brilworks, we're a leading Low-Code No-Code Development Company, empowering businesses to build custom applications without the need for extensive coding knowledge.",
+      "ctas": [ { "label": "Schedule a Call" } ],
+      "image": "/images/v2/low-code-banner.webp"
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Your Innovation Partner in Cutting-Edge Development",
+        "subtitle": "We're more than just developers. Our team of elite engineers and strategists become an extension of yours, collaborating to develop groundbreaking solutions on any platform. Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch.",
+        "items": [ { "label": "Let\u2019s Discuss" } ]
+      },
+      {
+        "type": "services",
+        "title": "Our Services",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Low-Code App Development",
+            "description": "Build powerful applications using intuitive visual interfaces and pre-built components.",
+            "image": "/images/v2/streamlined-low-code-development.webp",
+            "imageAlt": "Web dev img"
+          },
+          {
+            "title": "No-Code Development",
+            "description": "Simplify app creation for business users with drag-and-drop functionality and pre-configured workflows.",
+            "image": "/images/v2/no-code-app-development.webp",
+            "imageAlt": "Mobile Application dev img"
+          },
+          {
+            "title": "Low-Code No-Code Platform",
+            "description": "Leverage our comprehensive platform with everything you need to design, develop, and deploy apps seamlessly.",
+            "image": "/images/v2/low-code-no-code-platform.webp",
+            "imageAlt": "Enterprise application dev img"
+          },
+          {
+            "title": "Low-Code No-Code Solutions",
+            "description": "We craft tailored solutions that address your unique business challenges, from process automation to data management.",
+            "image": "/images/v2/low-code-no-code-solutions.webp",
+            "imageAlt": "Saas application dev img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks?",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Unmatched Expertise",
+            "icon": "/images/v2/fi_9631224.svg",
+            "description": "Our team boasts seasoned professionals with deep experience in Low-Code No-Code development."
+          },
+          {
+            "title": "Scalability and Flexibility",
+            "icon": "/images/v2/fi_14677514.svg",
+            "description": "Build applications that adapt and grow alongside your business needs."
+          },
+          {
+            "title": "Agility and Speed",
+            "icon": "/images/v2/fi_2612924.svg",
+            "description": "Get your applications up and running faster than ever before, with minimal coding requirements."
+          },
+          {
+            "title": "User-Friendly Platform",
+            "icon": "/images/v2/fi_4121823.svg",
+            "description": "Our intuitive platform empowers both technical and non-technical users to create powerful applications."
+          },
+          {
+            "title": "Cost-Effectiveness",
+            "icon": "/images/v2/cost-efficient.svg",
+            "description": "Eliminate the high costs associated with traditional software development projects."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "subtitle": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Build your dream app - Start your free Low-Code No-Code trial today!",
+        "subtitle": "",
+        "items": [ { "label": "Get a Free Consultation" } ]
+      },
+      {
+        "type": "industries",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Industries We Serve",
+        "description": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects \u00b7 HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "title": "What Our Clients Say",
+        "subtitle": "Our Clients Simply Love Our Work",
+        "description": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+          { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+          { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+          { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+          { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+        ]
+      },
+      { "type": "dynamic-content", "note": "SeeingBelieving section (shared marketing block)" },
+      { "type": "dynamic-content", "note": "HomePageBlogs section (CMS-driven blog list from Storyblok)" },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "subtitle": "",
+        "items": [
+          { "q": "What is Low-Code No-Code development?", "a": "Low-Code No-Code development allows you to build applications with minimal coding or no coding at all." },
+          { "q": "Is Low-Code No-Code development right for my business?", "a": "Low-Code No-Code is a great fit for businesses of all sizes looking to build custom applications quickly and efficiently." },
+          { "q": "What kind of applications can I build with Low-Code No-Code?", "a": "You can build a wide range of applications, from internal tools to customer-facing solutions." }
+        ]
+      }
+    ],
+    "faq": [
+      { "q": "What is Low-Code No-Code development?", "a": "Low-Code No-Code development allows you to build applications with minimal coding or no coding at all." },
+      { "q": "Is Low-Code No-Code development right for my business?", "a": "Low-Code No-Code is a great fit for businesses of all sizes looking to build custom applications quickly and efficiently." },
+      { "q": "What kind of applications can I build with Low-Code No-Code?", "a": "You can build a wide range of applications, from internal tools to customer-facing solutions." }
+    ],
+    "stats": [],
+    "testimonials": [
+      { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+      { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+      { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+      { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+      { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+    ]
+  }
+}

@@ -124,7 +124,7 @@ const TestimonialCard = ({ testimonial, index }) => (
         <div className="font-Figtree text-sm font-semibold text-white">
           {testimonial.author}
         </div>
-        <div className="font-Figtree text-xs text-white/40">
+        <div className="font-Figtree text-xs text-white/60">
           {testimonial.position}
         </div>
       </div>
@@ -164,7 +164,7 @@ const ClientReviews = () => {
             <h2 className="text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1px] leading-[1.1] text-white">
               What Our Clients Say
             </h2>
-            <p className="text-[17px] text-white/50 mt-3 max-w-[560px]">
+            <p className="text-[17px] text-white/70 mt-3 max-w-[560px]">
               Not curated marketing quotes. Real words from real people who have
               worked with us for years.
             </p>

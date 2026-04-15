@@ -1,0 +1,245 @@
+{
+  "slug": "business-intelligence-services",
+  "url": "/business-intelligence-services/",
+  "category": "Software Development",
+  "metadata": {
+    "title": "Business Development Services | Brilworks",
+    "description": "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
+    "canonical": "/business-intelligence-services/",
+    "ogImage": "/images/v2/fi_18810346.svg",
+    "ogTitle": "Business Development Services",
+    "ogDescription": "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "twitterSite": "@_Brilworks",
+    "twitterCard": "summary_large_image"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Business Intelligence Services",
+      "subheadline": "We provide a comprehensive suite of business intelligence services to transform your raw data into actionable insights and empower your organization with expert business intelligence (BI) services.",
+      "image": "",
+      "ctas": [
+        { "label": "Talk to an Expert", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Business Intelligence Services",
+        "note": "Defined in component as BusinessIntelligenceServiceData but NOT rendered in current component (data present in source but no ServicesSection in JSX).",
+        "items": [
+          {
+            "title": "BI Strategy & Roadmap Development",
+            "description": "We work collaboratively to define your BI goals, assess your data landscape, and create a customized roadmap for success.",
+            "imageSrc": "/images/bi-1.webp",
+            "imageAlt": "Custom Module Development img"
+          },
+          {
+            "title": "Data Lake & Data Warehouse Architecture",
+            "description": "We design and implement robust data storage solutions tailored to your specific needs and scalability requirements.",
+            "imageSrc": "/images/bi-2.webp",
+            "imageAlt": "Automation img"
+          },
+          {
+            "title": "Self-Service BI & Data Governance",
+            "description": "We empower your users with self-service BI tools while establishing robust data governance frameworks for data security and quality.",
+            "imageSrc": "/images/bi-4.webp",
+            "imageAlt": "Data Migration img"
+          },
+          {
+            "title": "Custom Analytics Dashboard Development",
+            "description": "Our team creates interactive dashboards tailored to your KPIs, providing real-time insights at your fingertips.",
+            "imageSrc": "/images/bi-5.webp",
+            "imageAlt": "Custom Reporting img"
+          },
+          {
+            "title": "Predictive Analytics & Machine Learning",
+            "description": "We leverage advanced analytics and machine learning to uncover hidden patterns, predict future trends, and optimize business processes.",
+            "imageSrc": "/images/bi-6.webp",
+            "imageAlt": "Comprehensive Support dev img"
+          },
+          {
+            "title": "Power BI & Tableau Expertise",
+            "description": "Our team is proficient in leading BI platforms like Power BI and Tableau to deliver the best solution for your organization.",
+            "imageSrc": "/images/bi-7.webp",
+            "imageAlt": "Comprehensive Support dev img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks for Business Intelligence",
+        "note": "Defined as whyChooseUsBusinessIntelligence in component but NOT currently rendered in JSX.",
+        "items": [
+          {
+            "title": "Advanced Analytics",
+            "icon": "/images/v2/fi_18810346.svg",
+            "description": "We go beyond basic reporting, employing machine learning and artificial intelligence (AI) to uncover hidden patterns and predict future trends."
+          },
+          {
+            "title": "Stay Ahead of the Curve",
+            "icon": "/images/v2/fi_18810346.svg",
+            "description": "Our team constantly explores and implements the latest BI tools and technologies to ensure you have a future-proof solution."
+          },
+          {
+            "title": "Real-Time Analytics",
+            "icon": "/images/v2/fi_18810346.svg",
+            "description": "Leverage the power of in-memory computing and real-time data pipelines for instant insights that fuel faster decision-making."
+          },
+          {
+            "title": "Exceptional User Experiences",
+            "icon": "/images/v2/fi_18810346.svg",
+            "description": "Our data visualization experts create intuitive and interactive dashboards that bring your data to life for users of all technical abilities."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "eyebrow": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "component": "SeeingBelieving",
+        "note": "Portfolio carousel rendered from CMS-driven portfolioDynamicItems."
+      },
+      {
+        "type": "dynamic-content",
+        "component": "HomePageBlogs",
+        "note": "Latest blog posts fetched from Storyblok CMS at render time."
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "How can your BI services benefit my business?",
+            "a": "Our business intelligence (BI) services can benefit your business in several ways, including: Improved decision-making: By providing real-time insights into your data, BI allows you to make data-driven decisions that are more likely to lead to success. Increased efficiency and productivity: BI can help you identify areas for optimization and streamline processes, leading to a more efficient and productive workforce. Enhanced customer satisfaction: BI can help you gain a deeper understanding of your customers and their needs, enabling you to tailor your products and services for better satisfaction. Reduced costs: BI can help you identify areas for cost savings and improve your return on investment (ROI). Competitive advantage: By leveraging the power of data analytics, you can gain a strategic edge over your competition."
+          },
+          {
+            "q": "Do I need a specific data infrastructure for BI?",
+            "a": "Not necessarily. While a well-defined data warehouse or data lake can be beneficial, many BI solutions can work with existing data sources. We can assess your current infrastructure and propose the best approach for your needs."
+          },
+          {
+            "q": "What kind of data can be used for BI?",
+            "a": "Almost any data relevant to your business operations can be used for BI. This includes sales data, customer data, marketing data, financial data, operational data, and more."
+          },
+          {
+            "q": "What BI tools do you use?",
+            "a": "We have expertise in a wide range of BI tools, including Power BI, Tableau, Qlik, and others. We will choose the best tool or combination of tools to fit your specific needs and budget."
+          },
+          {
+            "q": "How long does it take to implement a BI solution?",
+            "a": "The implementation timeframe varies depending on the scope and complexity of your project. We will work with you to understand your needs and create a realistic timeline."
+          },
+          {
+            "q": "Do you offer ongoing support after implementation?",
+            "a": "Yes, we offer ongoing support and maintenance to ensure your BI solution continues to meet your evolving needs. We can provide training to your staff, help you integrate new data sources, and update your dashboards as your business grows."
+          },
+          {
+            "q": "What are your fees for BI services?",
+            "a": "Our fees are tailored to your specific project requirements. We offer a variety of engagement models, including fixed-fee projects, hourly rates, and retainer agreements."
+          },
+          {
+            "q": "How can I get started with BI?",
+            "a": "Contact us today for a free consultation. We can discuss your business goals and challenges and create a customized BI plan that helps you unlock the power of your data."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "How can your BI services benefit my business?",
+        "a": "Our business intelligence (BI) services can benefit your business in several ways, including: Improved decision-making: By providing real-time insights into your data, BI allows you to make data-driven decisions that are more likely to lead to success. Increased efficiency and productivity: BI can help you identify areas for optimization and streamline processes, leading to a more efficient and productive workforce. Enhanced customer satisfaction: BI can help you gain a deeper understanding of your customers and their needs, enabling you to tailor your products and services for better satisfaction. Reduced costs: BI can help you identify areas for cost savings and improve your return on investment (ROI). Competitive advantage: By leveraging the power of data analytics, you can gain a strategic edge over your competition."
+      },
+      {
+        "q": "Do I need a specific data infrastructure for BI?",
+        "a": "Not necessarily. While a well-defined data warehouse or data lake can be beneficial, many BI solutions can work with existing data sources. We can assess your current infrastructure and propose the best approach for your needs."
+      },
+      {
+        "q": "What kind of data can be used for BI?",
+        "a": "Almost any data relevant to your business operations can be used for BI. This includes sales data, customer data, marketing data, financial data, operational data, and more."
+      },
+      {
+        "q": "What BI tools do you use?",
+        "a": "We have expertise in a wide range of BI tools, including Power BI, Tableau, Qlik, and others. We will choose the best tool or combination of tools to fit your specific needs and budget."
+      },
+      {
+        "q": "How long does it take to implement a BI solution?",
+        "a": "The implementation timeframe varies depending on the scope and complexity of your project. We will work with you to understand your needs and create a realistic timeline."
+      },
+      {
+        "q": "Do you offer ongoing support after implementation?",
+        "a": "Yes, we offer ongoing support and maintenance to ensure your BI solution continues to meet your evolving needs. We can provide training to your staff, help you integrate new data sources, and update your dashboards as your business grows."
+      },
+      {
+        "q": "What are your fees for BI services?",
+        "a": "Our fees are tailored to your specific project requirements. We offer a variety of engagement models, including fixed-fee projects, hourly rates, and retainer agreements."
+      },
+      {
+        "q": "How can I get started with BI?",
+        "a": "Contact us today for a free consultation. We can discuss your business goals and challenges and create a customized BI plan that helps you unlock the power of your data."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack" },
+      { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin" },
+      { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform" },
+      { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride" },
+      { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo" }
+    ]
+  }
+}

@@ -3,18 +3,18 @@ import dynamic from "next/dynamic";
 const Blog = dynamic(() => import("../components/Blog/Blog"));
 
 export const metadata = {
-  title: "Blog - Brilworks Software",
+  title: "Tech Insights & Engineering Blog | Brilworks Software",
   description:
-    "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
+    "Expert insights on product engineering, cloud architecture, DevOps, and software development. Published weekly by Brilworks engineers.",
   openGraph: {
-    title: "Blog - Brilworks Software",
+    title: "Tech Insights & Engineering Blog | Brilworks Software",
     description:
-      "A collection of insights on different technologies, industries, web and software development, mobile app development from our brilliant minds.",
+      "Expert insights on product engineering, cloud architecture, DevOps, and software development. Published weekly by Brilworks engineers.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     locale: "en-US",
-    type: "article",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
