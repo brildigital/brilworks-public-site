@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import WhatIsInsideBookSection from "@/app/components/Ebook/WhatIsInsideBookSection";
 import EbookFirstSection from "@/app/components/Ebook/EbookFirstSection";
 import ReasonToReadBook from "@/app/components/Ebook/ReasonToReadBook";
-import OtherEbooksSection from "@/app/components/Ebook/OtherEbooksSection";
 import WhyBrilworks from "@/app/components/Ebook/WhyBrilworks";
+import EbookFAQ from "@/app/components/Ebook/EbookFAQ";
+import EbookFinalCTA from "@/app/components/Ebook/EbookFinalCTA";
+import EbookFloatingCTA from "@/app/components/Ebook/EbookFloatingCTA";
+import EbookRelatedSection from "@/app/components/Ebook/EbookRelatedSection";
 import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 
 async function fetchWithErrorHandling(url, options) {
@@ -97,9 +100,14 @@ export default async function Page({ params }) {
     ebookPdfUrl,
     insideBookSection,
     reasonToRead,
-    otherEbookSection,
     whyBrilworks,
   } = storyData.story.content;
+
+  const whatsInside = (insideBookSection || [])
+    .slice(1)
+    .map((c) => c?.Title)
+    .filter(Boolean)
+    .slice(0, 4);
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>
@@ -107,21 +115,21 @@ export default async function Page({ params }) {
         title={title}
         imageSrc={formatSrcUrl(ebookImage?.filename)}
         ebookFileUrl={ebookPdfUrl?.url}
+        whatsInside={whatsInside}
       />
       <WhatIsInsideBookSection
         bookDescription={insideBookSection}
         buttontext={reasonToRead?.[1]?.text}
       />
       <ReasonToReadBook reasonToRead={reasonToRead} />
-      {/* <OtherEbooksSection
-        title={otherEbookSection?.[0]?.Key}
-        description={otherEbookSection?.[0]?.Value}
-      /> */}
       <WhyBrilworks
         title={whyBrilworks?.[0]?.Key}
         description={whyBrilworks?.[0]?.Value}
-        imageSrc={formatSrcUrl(whyBrilworks?.[1]?.image?.filename)}
       />
+      <EbookFAQ />
+      <EbookRelatedSection currentSlug={params?.slug} />
+      <EbookFinalCTA title={title} />
+      <EbookFloatingCTA />
     </Suspense>
   );
 }

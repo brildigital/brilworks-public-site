@@ -233,7 +233,7 @@ const Ebooks = () => {
               </span>
               <h1 style={{
                 fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 800,
-                lineHeight: 1.08, letterSpacing: "-1.5px", color: "#fff", margin: "0 0 20px",
+                lineHeight: 1.08, letterSpacing: "-1.5px", color: "#fff", marginBottom: 20,
               }}>
                 Free Expert Guides on{" "}
                 <span style={{
@@ -246,7 +246,7 @@ const Ebooks = () => {
               </h1>
               <p style={{
                 fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.70)",
-                margin: "0 0 28px", maxWidth: 560,
+                marginBottom: 28, maxWidth: 560,
               }}>
                 In-depth playbooks written by engineering leaders who ship AI, AWS, and mobile products daily.
                 Downloaded by <strong style={{ color: "#fff" }}>5,000+ CTOs and engineers</strong> — no fluff, no sales pitch.
@@ -353,7 +353,7 @@ const Ebooks = () => {
                 </div>
                 <h2 style={{
                   color: "#fff", fontSize: 20, fontWeight: 700,
-                  letterSpacing: "-0.3px", margin: "0 0 8px", lineHeight: 1.3,
+                  letterSpacing: "-0.3px", marginBottom: 8, lineHeight: 1.3,
                 }}>{featuredEbook.name}</h2>
                 <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 13, marginBottom: 20 }}>
                   <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Most downloaded this month</strong> · Free expert guide by Brilworks.
@@ -414,7 +414,7 @@ const Ebooks = () => {
             <h2 style={{
               fontSize: "clamp(30px, 3.5vw, 44px)", fontWeight: 800,
               letterSpacing: "-1px", lineHeight: 1.1,
-              color: "#0d0f1a", margin: "0 0 14px",
+              color: "#0d0f1a", marginBottom: 14,
             }}>Browse the Ebook Library</h2>
             <p style={{ fontSize: 17, color: "#6b7280", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
               Every guide is free, written by a Brilworks engineering lead, and rooted in real projects we've shipped for startups and enterprises.
@@ -507,11 +507,11 @@ const Ebooks = () => {
                     </div>
                     <h3 style={{
                       fontSize: 18, fontWeight: 700, letterSpacing: "-0.4px",
-                      lineHeight: 1.35, color: "#0d0f1a", margin: "0 0 8px",
+                      lineHeight: 1.35, color: "#0d0f1a", marginBottom: 8,
                     }}>{ebook.name}</h3>
                     <p style={{
                       fontSize: 14, color: "#6b7280", lineHeight: 1.55,
-                      margin: "0 0 20px", flex: 1,
+                      marginBottom: 20, flex: 1,
                     }}>
                       Expert-crafted guide by Brilworks engineering leads — architecture, tradeoffs, and production-ready patterns.
                     </p>
@@ -581,7 +581,7 @@ const Ebooks = () => {
                 <h3 style={{
                   fontSize: "clamp(22px, 2.3vw, 30px)", fontWeight: 800,
                   letterSpacing: "-0.6px", color: "#fff",
-                  margin: "0 0 10px", lineHeight: 1.2,
+                  marginBottom: 10, lineHeight: 1.2,
                 }}>Get every new ebook, delivered.</h3>
                 <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 15, margin: 0, lineHeight: 1.6 }}>
                   One expert guide every 4–6 weeks. No spam, no sales pitches — just the stuff engineering leaders tell us they wish they had.
@@ -636,7 +636,7 @@ const Ebooks = () => {
             <h2 style={{
               fontSize: "clamp(30px, 3.5vw, 44px)", fontWeight: 800,
               letterSpacing: "-1px", lineHeight: 1.1,
-              color: "#0d0f1a", margin: "0 0 14px",
+              color: "#0d0f1a", marginBottom: 14,
             }}>Why Engineering Leaders Read Brilworks Ebooks</h2>
             <p style={{ fontSize: 17, color: "#6b7280", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
               We write the guides we wish we had five years ago — rooted in real projects, not theory.
@@ -658,7 +658,7 @@ const Ebooks = () => {
                 </div>
                 <h3 style={{
                   fontSize: 18, fontWeight: 700, color: "#0d0f1a",
-                  margin: "0 0 10px", letterSpacing: "-0.3px",
+                  marginBottom: 10, letterSpacing: "-0.3px",
                 }}>{c.title}</h3>
                 <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.6, margin: 0 }}>{c.desc}</p>
               </div>
@@ -683,7 +683,7 @@ const Ebooks = () => {
             <h2 style={{
               fontSize: "clamp(30px, 3.5vw, 44px)", fontWeight: 800,
               letterSpacing: "-1px", lineHeight: 1.1,
-              color: "#fff", margin: "0 0 14px",
+              color: "#fff", marginBottom: 14,
             }}>What Readers Are Saying</h2>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.65)", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
               Honest feedback from CTOs and engineering managers who've applied these playbooks.
@@ -702,7 +702,7 @@ const Ebooks = () => {
                 <blockquote style={{
                   fontSize: 16, lineHeight: 1.65,
                   color: "rgba(255,255,255,0.88)", fontWeight: 400,
-                  margin: "0 0 24px",
+                  marginBottom: 24,
                 }}>"{t.quote}"</blockquote>
                 <div style={{
                   display: "flex", alignItems: "center", gap: 12,
@@ -737,7 +737,7 @@ const Ebooks = () => {
             <h2 style={{
               fontSize: "clamp(30px, 3.5vw, 44px)", fontWeight: 800,
               letterSpacing: "-1px", lineHeight: 1.1,
-              color: "#0d0f1a", margin: "0 0 14px",
+              color: "#0d0f1a", marginBottom: 14,
             }}>Frequently Asked Questions</h2>
             <p style={{ fontSize: 17, color: "#6b7280", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
               Everything you'd want to know before downloading.
@@ -783,9 +783,9 @@ const Ebooks = () => {
             <h2 style={{
               color: "#fff", fontSize: "clamp(28px, 3vw, 40px)",
               fontWeight: 800, letterSpacing: "-0.8px", lineHeight: 1.2,
-              margin: "0 0 14px",
+              marginBottom: 14,
             }}>Start with the most downloaded one.</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 16, margin: "0 0 28px", lineHeight: 1.6 }}>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 16, marginBottom: 28, lineHeight: 1.6 }}>
               Free expert guides on AI, Cloud, and Product Engineering. Pick one, read it in 30 minutes, ship better code this week.
             </p>
             {featuredEbook ? (
