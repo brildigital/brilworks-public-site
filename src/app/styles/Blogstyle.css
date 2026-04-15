@@ -863,3 +863,7 @@
 .news-letter-bg {
   background: linear-gradient(60deg, rgba(61, 140, 250, 0.3) 13.4%, rgba(14, 255, 248, 0.3) 86.6%);
 }
+
+.blog-newsletter-cro {
+  background: linear-gradient(90deg, #017EEB 0%, #000D1E 100%);
+}
