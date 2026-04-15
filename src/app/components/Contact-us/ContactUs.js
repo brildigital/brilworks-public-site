@@ -1,18 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import ContactFormV2 from "../Homepage/ContactFormV2";
-import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
-import CTASection from "../Common/CTASection";
-import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
+const GradientFAQAccordion = dynamic(() =>
+  import("../Common/GradientFAQAccordion")
+);
 
 const ContactUs = () => {
+  const [openFaq, setOpenFaq] = useState(0);
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -23,172 +25,232 @@ const ContactUs = () => {
 
   const steps = [
     {
-      title: "Initiating Contact",
+      title: "We Respond in 24 Hours",
       description:
-        "Our team will reach out to you within the next 24 business hours.",
+        "Our team reaches out within 24 business hours with a project review.",
     },
     {
-      title: "Share Your Requirement",
+      title: "Share Your Requirements",
       description:
-        "Share your requirements, and our technical team will review them and respond with a project plan.",
+        "Discuss your idea with our technical team. NDA signed on request.",
     },
     {
-      title: "Sign Non-Disclosure Agreement",
+      title: "Get a Detailed Proposal",
       description:
-        "Signing an NDA is like putting your idea in a safe deposit box. Be rest assured about privacy concerns.",
+        "Receive a project plan with timeline, cost, and milestones.",
     },
     {
-      title: "Estimated Budget/Cost",
+      title: "Kick Off Your Project",
       description:
-        "After a detailed analysis, we'll provide the estimated cost and timeline for project completion.",
+        "Dedicated team assigned, with weekly demos and full transparency.",
     },
   ];
 
-  const whatMakeUsBrilliant = [
+  const stats = [
+    { value: "120+", label: "Projects Shipped" },
+    { value: "20+", label: "Countries Served" },
+    { value: "5★", label: "Clutch Rating" },
+    { value: "24hr", label: "Response Time" },
+  ];
+
+  const faqs = [
     {
-      title: "People",
-      icon: "/images/v2/people-icon-vector.svg",
-      description:
-        "With our design & development ninjas by our side, there’s absolutely nothing we can’t achieve.",
+      question: "How much does a typical project cost?",
+      answer:
+        "Cost depends on scope, complexity, and features. Small MVPs start at $15K, while enterprise platforms range from $80K-$250K+. We provide detailed estimates after understanding your requirements — free, no obligation.",
     },
     {
-      title: "Progress",
-      icon: "/images/v2/medal-star.svg",
-      description:
-        "We’ve built and launched more than 120+ products in 20 countries across the globe.",
+      question: "How quickly will I hear back after submitting the form?",
+      answer:
+        "Our team responds within 24 business hours with a review of your project and next steps. For urgent inquiries, email sales@brilworks.com or call +91 9313644148.",
     },
     {
-      title: "Passion",
-      icon: "/images/v2/star.svg",
-      description:
-        "We turn your product vision from brainstorming to a fully implemented real-world solution.",
+      question: "Do you sign NDAs before discussing the project?",
+      answer:
+        "Yes. We're happy to sign an NDA before you share any sensitive project details. Just let us know in the form and we'll send one over.",
+    },
+    {
+      question: "What happens after I submit the form?",
+      answer:
+        "1) We respond within 24 hours, 2) Schedule a free 30-minute consultation, 3) Share a detailed proposal with timeline and cost, 4) Sign NDA and begin the project. No commitment required at any stage.",
+    },
+    {
+      question: "Do you work with startups and enterprise clients?",
+      answer:
+        "Yes. We've delivered 120+ projects across 20 countries — from early-stage startups building MVPs to enterprise teams scaling production systems.",
     },
   ];
 
-  const contactLinks = [
-    {
-      title: "Sales",
-      links: [
-        {
-          link: "tel:919313644148",
-          text: "+ 91 9313644148",
-          imgSrc: "/images/v2/call.svg",
-        },
-        {
-          link: "mailto:sales@brilworks.com",
-          text: "sales@brilworks.com",
-          imgSrc: "/images/sms-white.svg",
-        },
-      ],
-    },
-    {
-      title: "HR",
-      links: [
-        {
-          link: "tel:919106810920",
-          text: "+ 91 9106810920",
-          imgSrc: "/images/v2/call.svg",
-        },
-        {
-          link: "mailto:hr@brilworks.com",
-          text: "hr@brilworks.com",
-          imgSrc: "/images/sms-white.svg",
-        },
-      ],
-    },
-  ];
+  const handleFaqOpen = (value) =>
+    setOpenFaq(openFaq === value ? 0 : value);
 
   return (
     <>
-      <div className="contact-us-banner">
-        <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
-          <div className="container max-w-[1280px] main-section-padding !pt-28 mx-auto">
-            <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-16 md:gap-10 gap-6">
-              <h1 className="hidden">Contact Us</h1>
-              <div className="md:w-[55%] w-full">
-                <Heading
-                  type="h2"
-                  className="text-white lg:!text-[34px] md:!text-3xl !text-2xl"
-                  text="Let’s Discuss Your Project"
-                />
-                <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-2 pt-5 pb-5 md:pb-7.5 lg:pb-10">
-                  <div className="flex gap-3">
-                    <Image
-                      className="w-6 h-6"
-                      src="/images/v2/white-tick-icon.svg"
-                      alt="tick-mark-white"
-                      width={24}
-                      height={24}
-                    />
-                    No String attached.
+      {/* Hero with form */}
+      <section className="portfolio-hero">
+        <div className="portfolio-hero-bg"></div>
+        <div className="portfolio-hero-grid"></div>
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] pt-[120px] pb-16">
+          <div className="flex flex-col md:flex-row items-stretch justify-start lg:gap-12 md:gap-10 gap-6">
+            <h1 className="sr-only">Contact Us</h1>
+
+            {/* Left: Copy + Form */}
+            <div className="md:w-[55%] w-full">
+              {/* Badge */}
+              <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+                FREE CONSULTATION
+              </span>
+
+              <h2
+                className="font-extrabold text-white tracking-[-1px] leading-[1.15] !mb-4"
+                style={{ fontSize: "clamp(28px, 3vw, 44px)" }}
+              >
+                Get a Free Project Estimate in 24 Hours
+              </h2>
+              <p className="text-white/[0.62] text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+                Share your idea. We&apos;ll respond with a plan, timeline, and
+                price — no obligation.
+              </p>
+
+              {/* Positive trust items */}
+              <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-3 !mb-8">
+                <div className="flex gap-2 items-center">
+                  <Image
+                    className="w-5 h-5"
+                    src="/images/v2/white-tick-icon.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                  />
+                  <span className="text-sm text-white/80">
+                    24-hour response
+                  </span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <Image
+                    className="w-5 h-5"
+                    src="/images/v2/white-tick-icon.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                  />
+                  <span className="text-sm text-white/80">
+                    Free consultation
+                  </span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <Image
+                    className="w-5 h-5"
+                    src="/images/v2/white-tick-icon.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                  />
+                  <span className="text-sm text-white/80">
+                    NDA on request
+                  </span>
+                </div>
+              </div>
+
+              <ContactFormV2 darkMode={true} />
+            </div>
+
+            {/* Right: What happens next */}
+            <div className="md:w-[45%] w-full flex flex-col justify-center bg-white/[0.03] rounded-2xl border border-white/10 gap-6 md:p-7 p-5 backdrop-blur-[10px]">
+              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00b4d8]">
+                What Happens Next
+              </p>
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="flex gap-3 items-start justify-start"
+                >
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full text-white bg-themeColor text-sm font-bold flex items-center justify-center">
+                    {index + 1}
                   </div>
-                  <div className="flex gap-3">
-                    <Image
-                      className="w-6 h-6"
-                      src="/images/v2/white-tick-icon.svg"
-                      alt="tick-mark-white"
-                      width={24}
-                      height={24}
-                    />
-                    No obligation to hire.
-                  </div>
-                  <div className="flex gap-3">
-                    <Image
-                      className="w-6 h-6"
-                      src="/images/v2/white-tick-icon.svg"
-                      alt="tick-mark-white"
-                      width={24}
-                      height={24}
-                    />
-                    No commitment from you.
+                  <div>
+                    <p className="text-[15px] text-white font-semibold leading-tight">
+                      {step.title}
+                    </p>
+                    <p className="text-[13px] text-white/60 mt-1 leading-[1.5] font-light">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-                <ContactFormV2 darkMode={true} />
-              </div>
-              <div className="md:w-[45%] w-full flex flex-col bg-[#081120] rounded-2xl border border-[#2D3540] lg:gap-[50px] md:gap-7.5 gap-4 lg:p-10 md:p-7.5 p-5">
-                {steps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 items-start justify-start"
-                  >
-                    <div className="rounded-full text-white bg-[#17283E] lg:text-2xl md:text-xl text-base">
-                      <span className="md:w-10 md:h-10 w-6 h-6 flex items-center justify-center">
-                        {index + 1}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="md:text-xl text-lg text-white font-medium">
-                        {step.title}
-                      </p>
-                      <p className="md:text-base text-sm text-white pt-[10px] font-light">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <section className="container max-w-[1280px] main-section-padding mx-auto">
-        <div className="flex items-center justify-between md:flex-row flex-col gap-4">
-          <Heading
-            type="h2"
-            className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl"
-            text={
-              <>
-                For career inquiry email us on{" "}
-                <a
-                  href="mailto:hr@brilworks.com"
-                  target="_blank"
-                  className="bg-clip-text text-transparent bg-theme-gradient"
-                >
-                  hr@brilworks.com
-                </a>
-              </>
-            }
-          />
+      </section>
+
+      {/* Stats bar */}
+      <section className="bg-[#0d0f1a] border-t border-white/10">
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08]">
+            {stats.map(({ value, label }, index) => (
+              <div
+                key={index}
+                className="bg-white/[0.03] py-6 px-5 text-center"
+              >
+                <div className="text-white text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none">
+                  {value}
+                </div>
+                <div className="text-white/50 text-[12px] md:text-[13px] mt-1">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Reviews */}
+      <ClientReviews />
+
+      {/* FAQ */}
+      <section className="main-section-padding bg-[#fafafa]">
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor inline-block !mb-3">
+              FAQ
+            </span>
+            <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-[#0d0f1a]">
+              Common Questions
+            </h2>
+          </div>
+          <div className="max-w-[800px] mx-auto">
+            {faqs.map(({ question, answer }, index) => (
+              <GradientFAQAccordion
+                key={index + 1}
+                id={index + 1}
+                question={question}
+                answer={answer}
+                open={openFaq}
+                handleOpen={handleFaqOpen}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career card */}
+      <section className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
+        <div className="flex items-center justify-between md:flex-row flex-col gap-4 bg-[#f2f9fe] border border-[#e5e7eb] rounded-2xl p-6 md:p-7">
+          <div>
+            <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor !mb-1">
+              Looking for a Job?
+            </p>
+            <p className="text-base md:text-lg text-[#212121]">
+              Career inquiries:{" "}
+              <a
+                href="mailto:hr@brilworks.com"
+                className="text-themeColor font-semibold hover:underline"
+              >
+                hr@brilworks.com
+              </a>
+            </p>
+          </div>
           <ButtonV2
             size="medium"
             redirect="/career/"
@@ -197,56 +259,6 @@ const ContactUs = () => {
           />
         </div>
       </section>
-      <MultipleCardInGrid
-        bgClass="bg-sectionBG"
-        title="What Makes Us Brilliant?"
-        description=""
-        cardData={whatMakeUsBrilliant}
-      />
-
-      <CTASection
-        title="Always Here to Help!"
-        description={
-          <>
-            {contactLinks.map(({ title, links }, index) => (
-              <div
-                className="flex md:flex-row flex-col sxl:justify-center justify-start md:gap-4 gap-2"
-                key={index}
-              >
-                {links.map(({ text, imgSrc, link }, idx) => (
-                  <div
-                    className="flex flex-row items-center sxl:justify-center justify-start"
-                    key={idx}
-                  >
-                    <Image
-                      className="lg:w-8 md:w-6 w-5 pr-1"
-                      src={imgSrc}
-                      alt="call-email-logo"
-                      width="20"
-                      height="20"
-                    />
-                    <Heading
-                      type="h3"
-                      className="text-colorWhite lg:!text-[22px] md:!text-xl !text-lg"
-                      text={title}
-                    />
-                    :&nbsp;&nbsp;
-                    <a
-                      key={text}
-                      href={link}
-                      target="_blank"
-                      className="!text-colorWhite lg:!text-[22px] md:!text-xl !text-lg flex slg:gap-2 gap-1 items-center font-medium"
-                    >
-                      {text}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </>
-        }
-      />
-      <ClientReviews />
     </>
   );
 };

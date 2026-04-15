@@ -1,103 +1,99 @@
 "use client";
 import { useState } from "react";
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Heading from "../HTMLComponents/Heading";
 
 function TechStackWeWorkWith({
-  bgClass = "bg-themeLight",
+  bgClass = "bg-[#fafafa]",
   active = "",
   title,
+  description,
   techStackList = [],
 }) {
-  const [activeTab, setActiveTab] = useState(active);
+  const [activeTab, setActiveTab] = useState("all");
+
+  const allItems = techStackList.flatMap((t) => t.items || []);
+  const activeItems =
+    activeTab === "all"
+      ? allItems
+      : techStackList.find((t) => t.value === activeTab)?.items || [];
 
   return (
-    <div className={bgClass}>
-      <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
-        <Heading
-          type="h2"
-          className="lg:!text-[34px] md:!text-3xl !text-2xl"
-          text={title || "Tech Stack We Work With"}
-        />
-        <Tabs
-          className="tech-stack-working sxl:pt-10 md:pt-7.5 pt-5 reveal"
-          orientation="horizontal"
-          value={activeTab}
-        >
-          <TabsHeader
-            className={`border border-borderGray md:flex-row flex-col ${
-              bgClass === "bg-themeLight"
-                ? "bg-colorWhite rounded-md"
-                : "bg-themeLight rounded-[30px]"
+    <section className={`main-section-padding ${bgClass}`}>
+      <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor inline-block !mb-3">
+            Technology
+          </span>
+          <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-[#0d0f1a]">
+            {title || "Technologies We Use"}
+          </h2>
+          <p className="text-[17px] text-[#6b7280] mt-3 max-w-[560px] mx-auto leading-[1.6]">
+            {description ||
+              "Modern, battle-tested stack chosen for scalability, performance, and developer velocity."}
+          </p>
+        </div>
+
+        {/* Tab Pills */}
+        <div className="flex gap-2 flex-wrap justify-center !mb-8">
+          <button
+            onClick={() => setActiveTab("all")}
+            className={`px-5 py-2.5 rounded-full border text-sm font-medium transition-all duration-300 cursor-pointer ${
+              activeTab === "all"
+                ? "bg-themeColor text-white border-themeColor"
+                : "bg-white text-[#6b7280] border-[#e5e7eb] hover:border-themeColor hover:text-themeColor"
             }`}
           >
-            {techStackList.map(({ title, value }) => (
-              <Tab
-                key={value}
-                value={value}
-                onClick={() => setActiveTab(value)}
-                className={`font-Figtree m-1 ${
-                  activeTab === value
-                    ? `sm:bg-transparent !bg-themeColor text-white font-medium sxl:text-xl text-lg md:text-xl ${
-                        bgClass === "bg-themeLight"
-                          ? "rounded-md"
-                          : "rounded-[30px]"
-                      }`
-                    : "text-lg md:text-xl"
-                }`}
-              >
-                {title}
-              </Tab>
-            ))}
-          </TabsHeader>
-          <TabsBody>
-            {techStackList.map(({ value, items }) => (
-              <TabPanel
-                className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full p-0 sxl:pt-10 md:pt-7.5 pt-5"
-                key={value}
-                value={value}
-              >
-                {items.map(({ label, icon, color, iconifyIcon }, index) => (
-                  <div
-                    className="flex flex-col gap-4 items-center border bg-white border-borderGray rounded-2xl hover:-translate-y-2 duration-500 sxl:p-10 md:p-7.5 p-5"
-                    key={index}
-                  >
-                    {iconifyIcon ? (
-                      <Image
-                        className="w-[75px] h-[75px] object-contain"
-                        src={iconifyIcon}
-                        alt="icon"
-                        height={75}
-                        width={75}
-                      />
-                    ) : icon ? (
-                      <FontAwesomeIcon
-                        icon={icon}
-                        size="5x"
-                        style={{ color }}
-                      />
-                    ) : (
-                      ""
-                    )}
-                    <p className="font-Figtree text-colorBlack md:text-xl text-lg font-medium">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </TabPanel>
-            ))}
-          </TabsBody>
-        </Tabs>
+            All
+          </button>
+          {techStackList.map(({ title: tabTitle, value }) => (
+            <button
+              key={value}
+              onClick={() => setActiveTab(value)}
+              className={`px-5 py-2.5 rounded-full border text-sm font-medium transition-all duration-300 cursor-pointer ${
+                activeTab === value
+                  ? "bg-themeColor text-white border-themeColor"
+                  : "bg-white text-[#6b7280] border-[#e5e7eb] hover:border-themeColor hover:text-themeColor"
+              }`}
+            >
+              {tabTitle}
+            </button>
+          ))}
+        </div>
+
+        {/* Tech Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+          {activeItems.map(({ label, icon, color, iconifyIcon }, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center gap-2.5 py-5 px-4 rounded-2xl bg-white border border-[#e5e7eb] text-sm font-medium transition-all duration-300 hover:border-themeColor"
+            >
+              {iconifyIcon ? (
+                <Image
+                  className="w-8 h-8 object-contain"
+                  src={iconifyIcon}
+                  alt={label}
+                  height={32}
+                  width={32}
+                />
+              ) : icon ? (
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="w-8 h-8"
+                  style={{ color }}
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-[#e8f0fd] flex items-center justify-center text-xs text-themeColor font-bold">
+                  {label?.[0]}
+                </div>
+              )}
+              <span className="text-[#212121] text-center">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
