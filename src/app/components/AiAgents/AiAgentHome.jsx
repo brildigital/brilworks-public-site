@@ -487,7 +487,7 @@ const AiAgentHome = () => {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-white/60 mb-10 max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
                 Brilworks builds and deploys custom AI agents for startups and
                 enterprise teams. Explore our live demos — then let's build
                 yours.
@@ -674,7 +674,7 @@ const AiAgentHome = () => {
                 for Your Product
               </span>
             </h2>
-            <p className="text-[17px] text-white/55 max-w-xl mx-auto mb-9 leading-relaxed">
+            <p className="text-[17px] text-white/55 max-w-xl mx-auto !mb-9 leading-relaxed">
               You've seen what's possible. Now let our team build custom AI
               agents designed for your business — tailored to your data, your
               workflows, and your users.
@@ -697,7 +697,7 @@ const AiAgentHome = () => {
                 View Our Portfolio
               </a>
             </div>
-            <p className="mt-5 text-[13px] text-white/40">
+            <p className="!mt-5 text-[13px] text-white/40">
               We take on{" "}
               <strong style={{ color: "#00dbd3" }}>
                 5 new AI agent projects per month
