@@ -2,15 +2,11 @@ import { Suspense } from "react";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { notFound } from "next/navigation";
 import PortfolioFirstSection from "@/app/components/Portfolio/PortfolioFirstSection";
-import ProcessAndEnhanceSection from "@/app/components/Portfolio/ProcessAndEnhanceSection";
 import ProjectOverviewSection from "@/app/components/Portfolio/ProjectOverviewSection";
 import ProjectChallengesSection from "@/app/components/Portfolio/ProjectChallengesSection";
-import BluePrintForSuccess from "@/app/components/Portfolio/BluePrintForSuccess";
-import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
-import { formatSrcUrl } from "@/app/components/lib/commonFunction";
 import ProjectSolutionSection from "@/app/components/Portfolio/ProjectSolutionSection";
-import Image from "next/image";
-import ProjectDesignView from "@/app/components/Portfolio/ProjectDesignView";
+import BridgeCTA from "@/app/components/Portfolio/BridgeCTA";
+import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
 
 async function fetchWithErrorHandling(url, options) {
   try {
@@ -104,48 +100,46 @@ export default async function Page({ params }) {
     ProcessAndEnhanceBlock,
     ProjectOverview,
     ProjectChallenges,
-    productImage,
-    designView,
-    BlueprintForSuccess,
+    technology,
+    industry,
   } = storyData.story.content;
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>
+      {/* Hero */}
       <PortfolioFirstSection
-        buttontext={buttontext}
+        slug={params?.slug}
         title={title}
         description={description}
         images={images}
+        buttontext={buttontext}
         KeyValueBlock={KeyValueBlock}
-        projectPoints={ProcessAndEnhanceBlock}
+        processAndEnhanceBlock={ProcessAndEnhanceBlock}
+        technology={technology}
+        industry={industry}
       />
-      {ProcessAndEnhanceBlock?.[0].title &&
-        ProcessAndEnhanceBlock?.[0].description && (
-          <ProcessAndEnhanceSection
-            processAndEnhanceBlock={ProcessAndEnhanceBlock}
-          />
-        )}
-      <ProjectOverviewSection projectOverview={ProjectOverview} />
-      {ProjectChallenges?.[0] && (
-        <ProjectChallengesSection projectChallenges={ProjectChallenges?.[0]} />
-      )}
-      {productImage?.filename && (
-        <Image
-          className="max-h-[1080px]"
-          alt={productImage?.alt || "product-img"}
-          src={formatSrcUrl(productImage?.filename)}
-          width="1440"
-          height="840"
-        />
-      )}
-      {designView?.[0]?.title && <ProjectDesignView designView={designView} />}
-      {ProjectChallenges?.[1] && (
-        <ProjectSolutionSection projectSolutions={ProjectChallenges?.[1]} />
-      )}
-      <BluePrintForSuccess
-        blueprintForSuccess={BlueprintForSuccess}
+
+      {/* Overview + Sticky Download Sidebar */}
+      <ProjectOverviewSection
+        projectOverview={ProjectOverview}
+        technology={technology}
         casestudyFileUrl={casestudyFileUrl?.url}
       />
+
+      {/* Challenges */}
+      {ProjectChallenges?.[0] && (
+        <ProjectChallengesSection projectChallenges={ProjectChallenges[0]} />
+      )}
+
+      {/* Solution */}
+      {ProjectChallenges?.[1] && (
+        <ProjectSolutionSection projectSolutions={ProjectChallenges[1]} />
+      )}
+
+      {/* Bridge CTA */}
+      <BridgeCTA />
+
+      {/* Related Projects */}
       <SeeingBelieving title="More Success Stories" caseStudyToShow={2} />
     </Suspense>
   );
