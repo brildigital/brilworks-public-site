@@ -1,0 +1,163 @@
+{
+  "slug": "adalo-development-services",
+  "url": "/adalo-development-services/",
+  "category": "Low-Code / No-Code",
+  "metadata": {
+    "title": "Adalo Development Services | Brilworks",
+    "description": "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
+    "canonical": "{BASE_URL}adalo-development-services/",
+    "ogImage": "{BASE_URL}images/v2/adalo-banner.webp",
+    "ogTitle": "Adalo Development Services",
+    "ogDescription": "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement."
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Adalo Development Services",
+      "subheadline": "Empower Your Business with Adalo Development Services. At Brilworks, we specialize in crafting intuitive and dynamic mobile and web applications using the powerful platform \u2013 Adalo.",
+      "ctas": [ { "label": "Tell Us About Your Project" } ],
+      "image": "/images/v2/adalo-banner.webp"
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Your Adalo Partner: Our Development Services",
+        "subtitle": "As a leading Adalo development company, we thrive on creating tailored solutions that cater to our clients' diverse needs. Our team of skilled developers combines technical prowess with creative flair to build apps that not only meet but exceed expectations.",
+        "items": [ { "label": "Let\u2019s Discuss" } ]
+      },
+      {
+        "type": "services",
+        "title": "Our offerings",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Custom Adalo App Development",
+            "description": "Our experts leverage Adalo, a visual development platform, to create stunning and feature-rich web apps with an expedited development process.",
+            "image": "/images/v2/custom-adalo-app-dev.webp",
+            "imageAlt": "Custom Adalo App Development img"
+          },
+          {
+            "title": "UI/UX Design",
+            "description": "Engaging and user-friendly interfaces that enhance the overall app experience.",
+            "image": "/images/v2/ui-ux-design.webp",
+            "imageAlt": "UI/UX Design img"
+          },
+          {
+            "title": "Integration Services",
+            "description": "Seamlessly integrate third-party services to enhance functionality.",
+            "image": "/images/v2/app-integration.webp",
+            "imageAlt": "Integration Services img"
+          },
+          {
+            "title": "Maintenance and Support",
+            "description": "Continuous support is needed to ensure your app remains up-to-date and optimized.",
+            "image": "/images/v2/maintenance.webp",
+            "imageAlt": "Maintenance and Support img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks?",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Expertise",
+            "icon": "/images/v2/fi_9789607.svg",
+            "description": "Our team consists of experienced Adalo developers who are passionate about delivering excellence."
+          },
+          {
+            "title": "Client-Centric Approach",
+            "icon": "/images/v2/fi_16911996.svg",
+            "description": "Your satisfaction is our top priority, and we strive to exceed your expectations at every step."
+          },
+          {
+            "title": "Creativity",
+            "icon": "/images/v2/user-experience.svg",
+            "description": "We think outside the box to create innovative solutions that set your app apart."
+          },
+          {
+            "title": "Timely Delivery",
+            "icon": "/images/v2/fi_2612924.svg",
+            "description": "We understand the importance of deadlines and work diligently to deliver projects on time and within budget."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "subtitle": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to transform your ideas into reality? Contact us today to discuss your project and take the first step toward success.",
+        "subtitle": "",
+        "items": [ { "label": "Let's Get Started" } ]
+      },
+      {
+        "type": "industries",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Industries We Serve",
+        "description": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects \u00b7 HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "title": "What Our Clients Say",
+        "subtitle": "Our Clients Simply Love Our Work",
+        "description": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+          { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+          { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+          { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+          { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+        ]
+      },
+      { "type": "dynamic-content", "note": "SeeingBelieving section (shared marketing block)" },
+      { "type": "dynamic-content", "note": "HomePageBlogs section (CMS-driven blog list from Storyblok)" },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "subtitle": "",
+        "items": [
+          { "q": "What is Adalo?", "a": "Adalo is a no-code platform that allows users to build powerful mobile and web applications without the need for extensive coding knowledge." },
+          { "q": "How long does it take to develop an Adalo app?", "a": "The timeline for developing an Adalo app depends on various factors, including the complexity of the project and the specific requirements. We work closely with our clients to establish realistic timelines and ensure timely delivery." },
+          { "q": "Do you provide ongoing support for Adalo apps?", "a": "Yes, we offer maintenance and support services to ensure your app remains functional and optimized even after launch. Our team is here to address any issues and implement updates as needed." },
+          { "q": "Can you integrate third-party services into Adalo apps?", "a": "We have extensive experience integrating a wide range of third-party services to enhance the functionality of Adalo apps and meet our client's unique needs." },
+          { "q": "Do you offer UI/UX design services for Adalo apps?", "a": "Yes, we provide comprehensive UI/UX design services to create visually stunning and user-friendly interfaces for Adalo apps. Our goal is to deliver an exceptional user experience that keeps your audience engaged." }
+        ]
+      }
+    ],
+    "faq": [
+      { "q": "What is Adalo?", "a": "Adalo is a no-code platform that allows users to build powerful mobile and web applications without the need for extensive coding knowledge." },
+      { "q": "How long does it take to develop an Adalo app?", "a": "The timeline for developing an Adalo app depends on various factors, including the complexity of the project and the specific requirements. We work closely with our clients to establish realistic timelines and ensure timely delivery." },
+      { "q": "Do you provide ongoing support for Adalo apps?", "a": "Yes, we offer maintenance and support services to ensure your app remains functional and optimized even after launch. Our team is here to address any issues and implement updates as needed." },
+      { "q": "Can you integrate third-party services into Adalo apps?", "a": "We have extensive experience integrating a wide range of third-party services to enhance the functionality of Adalo apps and meet our client's unique needs." },
+      { "q": "Do you offer UI/UX design services for Adalo apps?", "a": "Yes, we provide comprehensive UI/UX design services to create visually stunning and user-friendly interfaces for Adalo apps. Our goal is to deliver an exceptional user experience that keeps your audience engaged." }
+    ],
+    "stats": [],
+    "testimonials": [
+      { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+      { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+      { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+      { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+      { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+    ]
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "slug": "mobile-app-development-services",
+  "url": "/mobile-app-development-services/",
+  "category": "Software Development",
+  "metadata": {
+    "title": "Mobile App Development Services | Brilworks",
+    "description": "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets.",
+    "canonical": "/mobile-app-development-services/",
+    "ogImage": "/images/v2/mobile-app-dev-banner.webp",
+    "ogTitle": "Mobile App Development Services | Brilworks",
+    "ogDescription": "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets."
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Mobile Application Development Services",
+      "subheadline": "We build mobile applications for iOS and Android platforms using native and cross-platform technologies, covering the complete lifecycle, from initial requirements through design, development, testing, and ongoing maintenance. Our team has delivered over 100 mobile projects across healthcare, finance, retail, and enterprise sectors.",
+      "image": "/images/v2/mobile-app-dev-banner.webp",
+      "ctas": [
+        { "label": "Start Your App Journey" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "aboutExpertise",
+        "title": "Brilwork’s Mobile Application Development Expertise",
+        "description1": "Brilworks provides mobile development services with a focus on technical quality and project delivery.Our teams consist of experienced developers with expertise in both native and cross-platform development.",
+        "description2": "We build applications designed to scale with your business. Our process includes clear project planning, regular communication, and defined milestones. We provide transparent cost estimates and work within agreed timelines."
+      },
+      {
+        "type": "services",
+        "title": "Core Mobile Development Services",
+        "items": [
+          {
+            "title": "Native App Development",
+            "description": "Using Swift and Kotlin, we build native apps that integrate fully with device hardware including cameras, sensors, and biometric systems, following platform design guidelines.",
+            "image": "/images/v2/Native-App-Development.webp"
+          },
+          {
+            "title": "Cross-Platform Development",
+            "description": "We build high-performance cross-platform apps using modern frameworks like React Native and Flutter for both iOS and Android from a single codebase, using standard practices and development guidelines.",
+            "image": "/images/v2/Cross-Platform-Development.webp"
+          },
+          {
+            "title": "Progressive Web App (PWA) Development",
+            "description": "Brilworks offers Progressive Web Apps development, combined with our decade of expertise in mobile and mobile development. PWAs deliver application functionality through web browsers while providing features typically associated with native apps.",
+            "image": "/images/v2/Progressive-Web-App-(PWA) Development).webp"
+          },
+          {
+            "title": "IoT App Development",
+            "description": "Our IoT software development services product engineering, architecture design, testing, and post-development support.  Our IoT applications provide mobile interfaces for connected devices and systems.",
+            "image": "/images/v2/IoT-App-Development.webp"
+          },
+          {
+            "title": "Wearable App Development",
+            "description": "We design wearable applications for devices like smartwatches and fitness trackers. These applications prioritize essential information and quick interactions, accounting for limited screen space and brief usage sessions.",
+            "image": "/images/v2/Wearable-App-Development.webp"
+          }
+        ]
+      },
+      {
+        "type": "engagementModels",
+        "title": "Engagement Models For Mobile App Development",
+        "ctaLabel": "Know More",
+        "ctaRedirect": "/contact-us/",
+        "items": [
+          {
+            "title": "Fixed Price",
+            "icon": "/images/v2/budget-estimate.svg",
+            "description": "For projects with well-defined requirements, we work on a fixed-price model that gives you clarity from day one. We translate your scope into a structured execution plan, outline deliverables, and commit to a predictable budget."
+          },
+          {
+            "title": "Time & Material",
+            "icon": "/images/Quick-Turnaround-Time.png",
+            "description": "When your roadmap is evolving or you’re working through discovery, iterations, and rapid validation, we shift to a time-and-material engagement. It gives you the flexibility to adjust priorities, experiment, and refine features without being locked into a rigid scope."
+          },
+          {
+            "title": "Dedicated Team",
+            "icon": "/images/v2/dedicated-dev-team.svg",
+            "description": "For companies building long-term or scaling multiple product lines, we offer a dedicated team that integrates directly with your internal workflow. You get consistent talent—engineers, designers, PMs—aligned with your goals and committed to your roadmap."
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Briworks for Mobile Development Services",
+        "items": [
+          {
+            "title": "Top 3% Talent",
+            "icon": "/images/v2/talent-availability.svg",
+            "description": "You work with developers who’ve already passed our filters for clarity, discipline, and problem-solving—people who don’t need babysitting to move a product forward."
+          },
+          {
+            "title": "5-Star Rating",
+            "icon": "/images/v2/star.svg",
+            "description": "Our five-star record comes from consistent behaviour: clear communication, steady delivery, and a habit of fixing issues before they turn into excuses."
+          },
+          {
+            "title": "100+ Completed Projects",
+            "icon": "/images/v2/why-n-2.svg",
+            "description": "Over a hundred builds have given us enough mileage to understand patterns, avoid traps, and guide your product without wasting cycles."
+          },
+          {
+            "title": "AI-Driven Approach",
+            "icon": "/images/v2/fi_10644631.svg",
+            "description": "We use AI to cut slow steps, surface issues earlier, and keep engineering focused on the decisions that actually shape your product’s outcome."
+          },
+          {
+            "title": "Real 24/7 Availability",
+            "icon": "/images/v2/24X7-support-mgmt.svg",
+            "description": "We operate across time zones with overlapping teams, so your project doesn’t sit idle—progress continues even when you’re offline."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "eyebrow": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms · 2025–26" },
+          { "title": "Global Award Spring", "org": "Clutch · 2025" },
+          { "title": "Global Award Fall", "org": "Clutch · 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "tech-stack",
+        "title": "The Technology Environment We Use",
+        "activeTab": "native",
+        "items": [
+          {
+            "category": "Native Platforms",
+            "technologies": [
+              { "label": "Swift", "icon": "/images/swift-language.svg" },
+              { "label": "Kotlin", "icon": "/images/kotlin-icon.svg" },
+              { "label": "Objective-C", "icon": "/images/v2/objective-c-icon.png" },
+              { "label": "Java", "icon": "/images/java.svg" }
+            ]
+          },
+          {
+            "category": "Cross-Platform",
+            "technologies": [
+              { "label": "React Native", "color": "#61DBFB" },
+              { "label": "Flutter", "icon": "/images/flutter.svg" }
+            ]
+          },
+          {
+            "category": "Server & Data",
+            "technologies": [
+              { "label": "Python", "icon": "/images/python.svg" },
+              { "label": "NodeJS", "icon": "/images/node-icon.svg" },
+              { "label": "Firebase", "icon": "/images/firebase-icon.svg" },
+              { "label": "AWS", "icon": "/images/aws.svg" },
+              { "label": "Azure", "icon": "/images/azure.svg" }
+            ]
+          },
+          {
+            "category": "Design & UX",
+            "technologies": [
+              { "label": "Figma", "icon": "/images/figma.png" },
+              { "label": "Sketch", "icon": "/images/sketch-svgrepo.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "caseStudies",
+        "eyebrow": "Because Seeing is Believing",
+        "title": "Work That Speaks For Itself",
+        "subtitle": "Named clients. Verified outcomes. Not just pretty screenshots."
+      },
+      {
+        "type": "industries",
+        "eyebrow": "Industries We Serve",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects · HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ]
+      },
+      {
+        "type": "blogs",
+        "title": "Homepage Blogs"
+      },
+      {
+        "type": "cta",
+        "title": "Build your next high-impact web application with a trusted partner. Let’s turn your idea into a responsive, secure, and scalable digital experience.",
+        "ctas": [
+          { "label": "Get a Free Consultation" }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What platforms do you build mobile apps for?",
+            "a": "We build applications for both iOS and Android using native and cross-platform technologies. We select the approach that best fits your product requirements, performance needs, and long-term plans."
+          },
+          {
+            "q": "How do you decide between native and cross-platform development?",
+            "a": "We evaluate your feature set, performance expectations, integration needs, and roadmap. If the app relies heavily on device-level capabilities, we recommend native. If speed and shared code are priorities, cross-platform options work well."
+          },
+          {
+            "q": "What does your development process look like?",
+            "a": "Our process includes discovery, UX design, development, QA, deployment, and ongoing maintenance. You receive clear milestones, regular check-ins, and progress updates throughout the project."
+          },
+          {
+            "q": "How long does it take to build a mobile app?",
+            "a": "Timelines depend on scope, complexity, design requirements, and integrations. Simple applications take a shorter time, while feature-rich or multi-role apps require more planning and development."
+          },
+          {
+            "q": "Do you handle UI and UX design as part of the project?",
+            "a": "Yes. We design user flows, screens, and interaction patterns based on your brand guidelines and product goals using modern design tools like Figma."
+          },
+          {
+            "q": "Can you upgrade an existing app instead of building a new one?",
+            "a": "Yes. We can audit your existing application, identify issues, modernize outdated code, and continue development from your current state if the foundation is workable."
+          },
+          {
+            "q": "Do you integrate third-party APIs and external systems?",
+            "a": "Yes. We integrate payment gateways, analytics platforms, geolocation, communication APIs, authentication services, and industry-specific systems as needed."
+          },
+          {
+            "q": "Will you help with app store deployment?",
+            "a": "Yes. We handle preparing builds, meeting platform guidelines, writing technical descriptions, and guiding you through the App Store and Google Play submission process."
+          },
+          {
+            "q": "Do you offer maintenance after the app is live?",
+            "a": "We provide ongoing support that includes bug fixes, updates, performance improvements, OS compatibility updates, and optional new feature development."
+          },
+          {
+            "q": "How do you ensure app security?",
+            "a": "We follow secure coding standards, use encryption where required, manage authentication safely, and implement best practices for data protection across back-end and mobile layers."
+          },
+          {
+            "q": "Can you scale the app if the user base grows quickly?",
+            "a": "Yes. We design scalable architectures and guide you through infrastructure upgrades, caching, load balancing, and database optimizations as your traffic increases."
+          },
+          {
+            "q": "How does pricing work for mobile app development?",
+            "a": "Pricing depends on scope, complexity, and engagement model. We offer fixed-price, time and material, and dedicated team options depending on your needs."
+          },
+          {
+            "q": "Do you work with startups and enterprises?",
+            "a": "Yes. Our team has experience across early-stage products, MVPs, mid-growth companies, and enterprise-grade applications."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What platforms do you build mobile apps for?",
+        "a": "We build applications for both iOS and Android using native and cross-platform technologies. We select the approach that best fits your product requirements, performance needs, and long-term plans."
+      },
+      {
+        "q": "How do you decide between native and cross-platform development?",
+        "a": "We evaluate your feature set, performance expectations, integration needs, and roadmap. If the app relies heavily on device-level capabilities, we recommend native. If speed and shared code are priorities, cross-platform options work well."
+      },
+      {
+        "q": "What does your development process look like?",
+        "a": "Our process includes discovery, UX design, development, QA, deployment, and ongoing maintenance. You receive clear milestones, regular check-ins, and progress updates throughout the project."
+      },
+      {
+        "q": "How long does it take to build a mobile app?",
+        "a": "Timelines depend on scope, complexity, design requirements, and integrations. Simple applications take a shorter time, while feature-rich or multi-role apps require more planning and development."
+      },
+      {
+        "q": "Do you handle UI and UX design as part of the project?",
+        "a": "Yes. We design user flows, screens, and interaction patterns based on your brand guidelines and product goals using modern design tools like Figma."
+      },
+      {
+        "q": "Can you upgrade an existing app instead of building a new one?",
+        "a": "Yes. We can audit your existing application, identify issues, modernize outdated code, and continue development from your current state if the foundation is workable."
+      },
+      {
+        "q": "Do you integrate third-party APIs and external systems?",
+        "a": "Yes. We integrate payment gateways, analytics platforms, geolocation, communication APIs, authentication services, and industry-specific systems as needed."
+      },
+      {
+        "q": "Will you help with app store deployment?",
+        "a": "Yes. We handle preparing builds, meeting platform guidelines, writing technical descriptions, and guiding you through the App Store and Google Play submission process."
+      },
+      {
+        "q": "Do you offer maintenance after the app is live?",
+        "a": "We provide ongoing support that includes bug fixes, updates, performance improvements, OS compatibility updates, and optional new feature development."
+      },
+      {
+        "q": "How do you ensure app security?",
+        "a": "We follow secure coding standards, use encryption where required, manage authentication safely, and implement best practices for data protection across back-end and mobile layers."
+      },
+      {
+        "q": "Can you scale the app if the user base grows quickly?",
+        "a": "Yes. We design scalable architectures and guide you through infrastructure upgrades, caching, load balancing, and database optimizations as your traffic increases."
+      },
+      {
+        "q": "How does pricing work for mobile app development?",
+        "a": "Pricing depends on scope, complexity, and engagement model. We offer fixed-price, time and material, and dedicated team options depending on your needs."
+      },
+      {
+        "q": "Do you work with startups and enterprises?",
+        "a": "Yes. Our team has experience across early-stage products, MVPs, mid-growth companies, and enterprise-grade applications."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo"
+      }
+    ]
+  }
+}
