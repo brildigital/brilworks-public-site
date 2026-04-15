@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Heading from "../HTMLComponents/Heading";
+import ButtonV2 from "../Common/ButtonV2";
 import Link from "next/link";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, CheckCircle, Star } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 import Cookies from "js-cookie";
 
@@ -11,25 +12,24 @@ const toolsData = [
     title: "Software Development Cost Calculator",
     description:
       "Estimate software project costs fast. Select platform, complexity, and features to get accurate budget and timeline insights.",
-
     bg: "bg-blue-200",
     link: "/tools/app-development-cost-calculator/",
     tags: ["DEVELOPMENT", "SALES"],
+    badge: "popular",
   },
   {
     title: "ROI Calculator",
     description:
       "Quickly measure profitability by calculating return on investment. Enter costs and gains to evaluate business success instantly.",
-
     bg: "bg-indigo-200",
     link: "/tools/roi-calculator/",
     tags: ["MARKETING", "SALES", "OTHER"],
+    badge: "popular",
   },
   {
     title: "Build Uber-Like App: Get Your Cost Estimate",
     description:
       "Estimate the cost of building mobility and transport apps in minutes. Select features, platforms, and design options to get accurate budget and timeline insights.",
-
     bg: "bg-purple-200",
     link: "/tools/mobility-app-development-calculator/",
     tags: ["DEVELOPMENT", "BUSINESS", "MARKETING"],
@@ -38,25 +38,24 @@ const toolsData = [
     title: "Saas Development Cost Calculator",
     description:
       "Estimate the cost of building your SaaS platform in minutes. Choose features, complexity, and design to get accurate budget insights.",
-
     bg: "bg-teal-200",
     link: "/tools/saas-development-cost-calculator/",
     tags: ["DEVELOPMENT", "SEO", "OTHER"],
+    badge: "popular",
   },
   {
     title: "MVP Development Cost Calculator",
     description:
       "Quickly calculate how much it costs to launch your MVP. Ideal for startups validating ideas with limited budgets.",
-
     bg: "bg-rose-200",
     link: "/tools/mvp-development-cost-calculator/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
+    badge: "popular",
   },
   {
     title: "App Maintenance & Update Estimator",
     description:
       "Calculate ongoing app upkeep and update costs to plan your budget effectively.",
-
     bg: "bg-orange-200",
     link: "/tools/app-maintenance-cost-estimator/",
     tags: ["DEVELOPMENT", "OTHER"],
@@ -76,6 +75,7 @@ const toolsData = [
     bg: "bg-yellow-200",
     link: "/tools/mvp-launch-timeline-estimator/",
     tags: ["SALES", "OTHER"],
+    badge: "new",
   },
   {
     title: "Feature Complexity vs Time Estimator",
@@ -108,6 +108,7 @@ const toolsData = [
     bg: "bg-violet-200",
     link: "/tools/tech-stack-recommender/",
     tags: ["DEVELOPMENT", "BUSINESS", "OTHER"],
+    badge: "new",
   },
   {
     title: "Database Selector Tool",
@@ -120,7 +121,7 @@ const toolsData = [
   {
     title: "Cross Platform vs Native Analyzer",
     description:
-      "Evaluate the pros and cons of cross-platform and native development. Get clear insights to select the right approach for your app’s budget and goals.",
+      "Evaluate the pros and cons of cross-platform and native development. Get clear insights to select the right approach for your app's budget and goals.",
     bg: "bg-slate-200",
     link: "/tools/cross-platform-vs-native-analyzer/",
     tags: ["MARKETING", "BUSINESS", "OTHER"],
@@ -192,7 +193,7 @@ const toolsData = [
   {
     title: "Is Your Startup Tech-Ready?",
     description:
-      "Take this 2-minute quiz to evaluate your startup’s technical readiness and get personalized insights to move from idea to launch confidently.",
+      "Take this 2-minute quiz to evaluate your startup's technical readiness and get personalized insights to move from idea to launch confidently.",
     bg: "bg-lime-200",
     link: "/tools/tech-readiness-assessment-tool/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
@@ -200,7 +201,7 @@ const toolsData = [
   {
     title: "Digital Transformation Readiness Checker",
     description:
-      "Take this quick readiness check to assess your organization’s digital maturity and uncover the next steps to drive successful transformation.",
+      "Take this quick readiness check to assess your organization's digital maturity and uncover the next steps to drive successful transformation.",
     bg: "bg-rose-200",
     link: "/tools/digital-transformation-readiness-checker/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
@@ -224,7 +225,7 @@ const toolsData = [
   {
     title: "SaaS Scalability Readiness Checker",
     description:
-      "Assess your app’s scalability across tech stack, performance, and architecture — and uncover what’s holding back your growth.",
+      "Assess your app's scalability across tech stack, performance, and architecture — and uncover what's holding back your growth.",
     bg: "bg-fuchsia-200",
     link: "/tools/saas-scalability-readiness-checker/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
@@ -248,7 +249,7 @@ const toolsData = [
   {
     title: "Performance Benchmarking Tool",
     description:
-      "Test, compare, and optimize your app’s performance to ensure smooth, fast, and reliable user experiences.",
+      "Test, compare, and optimize your app's performance to ensure smooth, fast, and reliable user experiences.",
     bg: "bg-green-200",
     link: "/tools/performance-benchmarking-tool/",
     tags: ["BUSINESS", "DEVELOPMENT", "OTHER"],
@@ -284,6 +285,7 @@ const toolsData = [
     bg: "bg-violet-200",
     link: "/tools/ai-app-development-cost-calculator/",
     tags: ["SALES", "DEVELOPMENT", "OTHER"],
+    badge: "new",
   },
   {
     title: "SaaS Pricing Model Calculator",
@@ -335,50 +337,81 @@ const toolsData = [
   },
 ];
 
+const INITIAL_VISIBLE_COUNT = 12;
+
+const featuredToolSlugs = [
+  "/tools/app-development-cost-calculator/",
+  "/tools/roi-calculator/",
+  "/tools/mvp-development-cost-calculator/",
+];
+
+const featuredBadges = ["Most Used", "Top Rated", "Startup Favorite"];
+const featuredIconBgs = ["bg-blue-100", "bg-violet-100", "bg-green-100"];
+
+const categories = [
+  "MARKETING",
+  "DEVELOPMENT",
+  "SALES",
+  "SEO",
+  "BUSINESS",
+  "OTHER",
+];
+
+const testimonials = [
+  {
+    quote:
+      "The cost calculator helped us nail our investor pitch. We had exact budget numbers instead of guesses.",
+    author: "Sarah M.",
+    role: "Startup Founder, FinTech",
+  },
+  {
+    quote:
+      "We used the MVP calculator and timeline estimator to plan our product roadmap. Saved us weeks of back-and-forth with vendors.",
+    author: "James R.",
+    role: "CTO, HealthTech Startup",
+  },
+  {
+    quote:
+      "The ROI calculator is a must-have. Simple, fast, and accurate. I use it before every campaign to justify budget allocation.",
+    author: "Priya K.",
+    role: "Marketing Director, B2B SaaS",
+  },
+];
+
+const stats = [
+  { value: "12,000+", label: "Estimates Generated" },
+  { value: "500+", label: "Startups Using Tools" },
+  { value: "40+", label: "Free Calculators" },
+  { value: "40+", label: "Countries Reached" },
+];
+
 const Tools = () => {
   const [activeTag, setActiveTag] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-
-  const categories = [
-    "MARKETING",
-    "CONTENT",
-    "DEVELOPMENT",
-    "SALES",
-    "SEO",
-    "BUSINESS",
-    "ENTERTAINMENT",
-    "OTHER",
-  ];
+  const [showAll, setShowAll] = useState(false);
 
   const posthog = usePostHog();
 
   useEffect(() => {
     if (posthog) {
+      const rawUserData = Cookies.get("user-data");
+      const userData = rawUserData ? JSON.parse(rawUserData) : {};
       posthog.capture("tools_page", {
         page: "tools",
-        city: JSON.parse(Cookies.get("user-data"))?.city,
-        region: JSON.parse(Cookies.get("user-data"))?.region,
-        country: JSON.parse(Cookies.get("user-data"))?.country,
+        city: userData?.city,
+        region: userData?.region,
+        country: userData?.country,
       });
     }
   }, [posthog]);
 
-  // Debounce logic
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearch(searchTerm);
     }, 500);
-
-    return () => {
-      clearTimeout(handler);
-    };
+    return () => clearTimeout(handler);
   }, [searchTerm]);
-
-  // const filteredTools =
-  //   activeTag === "" // when ALL is selected
-  //     ? toolsData
-  //     : toolsData.filter((tool) => tool.tags.includes(activeTag));
 
   const filteredTools = toolsData.filter((tool) => {
     const matchesTag = activeTag === "" || tool.tags.includes(activeTag);
@@ -388,145 +421,419 @@ const Tools = () => {
     return matchesTag && matchesSearch;
   });
 
+  const isFiltering = activeTag !== "" || debouncedSearch !== "";
+  const visibleTools = isFiltering || showAll
+    ? filteredTools
+    : filteredTools.slice(0, INITIAL_VISIBLE_COUNT);
+  const hasMore = !isFiltering && filteredTools.length > INITIAL_VISIBLE_COUNT && !showAll;
+
+  const featuredTools = toolsData.filter((t) =>
+    featuredToolSlugs.includes(t.link)
+  );
+
   return (
     <>
-      <div className="hire-team-section-l !scroll-[unset]">
-        <div className="banner-layer h-full min-h-[400px] md:max-h-[500px] max-h-full">
-          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[400px] md:max-h-[700px] max-h-full">
-              <Heading
-                type="h1"
-                className="text-white"
-                text="Free tools to run your business"
-              />
-              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                Explore our collection of free calculators and tools designed to
-                simplify complex tasks.
-                <br className="hidden md:block" /> From business valuations to
-                engineering formulas, get accurate results in seconds and make{" "}
-                <br className="hidden md:block" />
-                smarter decisions with confidence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
-        <div className="flex flex-col md:flex-row justify-between gap-5 md:mb-8 mb-5">
-          <div className="flex flex-wrap gap-2">
-            <button
-              className={`px-4 !py-1.5 !rounded-md cursor-pointer border border-themeColor ${
-                activeTag === ""
-                  ? "bg-themeColor text-white"
-                  : "hover:!text-white hover:!bg-themeColor"
-              }`}
-              onClick={() => setActiveTag("")}
+      {/* ═══ HERO SECTION ═══ */}
+      <section className="bg-navyBlue relative overflow-hidden">
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Radial gradients */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
+          }}
+        />
+
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
+          {/* Eyebrow */}
+          <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-3.5 py-1.5 text-[#00b4d8] text-xs font-semibold tracking-widest uppercase mb-7">
+            <Star className="w-3.5 h-3.5" />
+            40+ FREE TOOLS &mdash; NO SIGNUP REQUIRED
+          </span>
+
+          {/* H1 */}
+          <Heading
+            type="h1"
+            className="text-white !font-extrabold max-w-[720px]"
+            text="Free Calculators Built for Software Teams & Startups"
+          />
+
+          {/* Subtitle */}
+          <p className="text-gray-400 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
+            Estimate app development costs, plan your MVP budget, calculate SaaS
+            metrics, and make confident tech decisions &mdash; all in seconds,
+            with zero friction.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            <ButtonV2
+              redirect="/contact-us/"
+              label="Get a Free Project Estimate"
+              className="hover:!text-colorWhite"
+              icon={<ArrowRight className="w-4 h-4" />}
+            />
+            <a
+              href="#all-tools"
+              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("all-tools")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
-              <p className="text-xs md:text-sm font-medium">ALL</p>
-            </button>
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`transition-all duration-300 lg:!px-3 px-2 !py-1.5 cursor-pointer !rounded-md border border-themeColor ${
-                  activeTag === category
-                    ? "bg-themeColor text-white "
-                    : "hover:!text-white hover:!bg-themeColor"
-                }`}
-                onClick={() =>
-                  setActiveTag(activeTag === category ? "" : category)
-                }
+              Browse All Tools
+            </a>
+          </div>
+
+          {/* Trust Strip */}
+          <div className="flex flex-wrap gap-5 mt-10 pt-6 border-t border-white/10">
+            {[
+              "No account required",
+              "100% free, forever",
+              "Instant results",
+              "Built by Brilworks \u2014 10+ years in software",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 text-white/50 text-sm font-medium"
               >
-                <p className="text-xs md:text-sm font-medium">{category}</p>
-              </button>
+                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                {item}
+              </div>
             ))}
           </div>
-          <div className="w-full sxl:!w-1/5">
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="relative w-full">
-                <input
-                  id="user-search"
-                  className={`w-full font-medium rounded-md py-2 px-2 text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none`}
-                  value={searchTerm}
-                  // type="search"
-                  placeholder="Search"
-                  autoComplete="off"
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  disabled={!searchTerm && !toolsData?.length}
-                />
-                <button
-                  type="submit"
-                  className="bg-themeColor absolute top-1/2 transform -translate-y-1/2 right-0 p-2 rounded-r-md border-y border-themeColor"
-                >
-                  <Search className="text-white w-5 h-5" />
-                </button>
+
+          {/* Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="bg-white/[0.03] p-5 text-center"
+              >
+                <div className="text-2xl md:text-[28px] font-extrabold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-1">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-white/50">{stat.label}</div>
               </div>
-            </form>
+            ))}
           </div>
         </div>
-        <div
-          className={`grid ${
-            filteredTools.length > 0
-              ? "md:grid-cols-3 grid-cols-1"
-              : "grid-cols-1"
-          } md:gap-8 gap-5`}
-        >
-          {filteredTools.length > 0 ? (
-            filteredTools?.map((tool, index) => (
-              <Link
-                href={tool?.link}
-                key={index}
-                className="bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
-              >
-                {/* Top Image Section */}
-                <div
-                  className={`${tool.bg} flex items-center justify-center p-6`}
-                >
-                  <div className="w-72 h-40 flex items-center justify-center">
-                    {/* <Image
-                    src={tool.image}
-                    alt={tool.title}
-                    fill
-                    className="object-contain"
-                  /> */}
-                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center ">
-                      {tool?.title}
-                    </p>
-                  </div>
-                </div>
+      </section>
 
-                {/* Bottom Text Section */}
-                <div className="p-4 md:p-6 flex flex-col flex-1">
-                  <h3 className="font-semibold text-lg md:text-xl mb-2">
-                    {tool.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm md:text-[15px] flex-1">
-                    {tool.description}
-                  </p>
-                  {tool.tags && (
-                    <div className="mt-3">
-                      {tool.tags.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="inline-block bg-gray-200 text-gray-800 text-xs font-medium mr-2 px-2.5 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="text-blue-600 font-medium mt-4 inline-flex items-center hover:underline">
-                    Use Tool Now &nbsp; <ArrowRight size={16} />
-                  </div>
+      {/* ═══ BREADCRUMB ═══ */}
+      <div className="bg-white">
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5 py-3">
+          <nav className="text-sm text-gray-400" aria-label="Breadcrumb">
+            <Link href="/" className="text-themeColor hover:underline">
+              Home
+            </Link>
+            <span className="mx-1.5">/</span>
+            <span className="text-gray-600 font-medium">Tools</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* ═══ FEATURED TOOLS ═══ */}
+      <section className="bg-white pt-10 pb-0">
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor block mb-4">
+            Most Popular Tools
+          </span>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+            {featuredTools.map((tool, index) => (
+              <Link
+                href={tool.link}
+                key={tool.link}
+                className="border-2 border-themeColor rounded-2xl p-7 bg-[#f2f9fe] hover:bg-[#e8f0fd] transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden"
+              >
+                <span className="absolute top-3.5 right-3.5 bg-gradient-to-r from-themeColor to-accent text-white text-[10px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full">
+                  {featuredBadges[index]}
+                </span>
+                <div
+                  className={`w-16 h-16 rounded-[14px] ${featuredIconBgs[index]} flex items-center justify-center mb-3`}
+                >
+                  <Star className="w-7 h-7 text-themeColor" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-snug">
+                  {tool.title}
+                </h3>
+                <p className="text-[15px] text-gray-500 leading-relaxed flex-1">
+                  {tool.description}
+                </p>
+                <span className="mt-4 text-themeColor font-semibold text-sm inline-flex items-center gap-1.5">
+                  Use Tool Now <ArrowRight className="w-3.5 h-3.5" />
+                </span>
               </Link>
-            ))
-          ) : (
-            <div className="text-center text-gray-500 text-xl font-medium py-10">
-              No data found
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ ALL TOOLS ═══ */}
+      <section
+        id="all-tools"
+        className="bg-white pt-12 pb-16 md:pb-24"
+      >
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
+          {/* Section Header */}
+          <Heading
+            type="h2"
+            className="!font-extrabold text-gray-900 mb-3"
+            text="All Tools & Calculators"
+          />
+          <p className="text-[17px] text-gray-500 mb-8 max-w-[560px]">
+            Browse by category or search to find the right calculator for your
+            project.
+          </p>
+
+          {/* Filter Bar */}
+          <div className="flex flex-col md:flex-row justify-between gap-5 md:mb-8 mb-5">
+            <div className="flex gap-2 overflow-x-auto md:flex-wrap pb-1 md:pb-0 no-scrollbar">
+              <button
+                className={`px-4 !py-1.5 !rounded-md cursor-pointer border border-themeColor flex-shrink-0 transition-all duration-300 ${
+                  activeTag === ""
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-white hover:!bg-themeColor"
+                }`}
+                onClick={() => setActiveTag("")}
+              >
+                <p className="text-xs md:text-sm font-semibold">ALL</p>
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`transition-all duration-300 lg:!px-3 px-2 !py-1.5 cursor-pointer !rounded-md border border-themeColor flex-shrink-0 ${
+                    activeTag === category
+                      ? "bg-themeColor text-white"
+                      : "hover:!text-white hover:!bg-themeColor"
+                  }`}
+                  onClick={() =>
+                    setActiveTag(activeTag === category ? "" : category)
+                  }
+                >
+                  <p className="text-xs md:text-sm font-semibold">{category}</p>
+                </button>
+              ))}
+            </div>
+            <div className="w-full sxl:!w-1/5">
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div className="relative w-full">
+                  <input
+                    id="user-search"
+                    className="w-full font-medium rounded-md py-2 px-2 text-sm appearance-none border border-gray-300 !pr-10 focus:outline-none focus:border-themeColor"
+                    value={searchTerm}
+                    placeholder="Search tools..."
+                    autoComplete="off"
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="bg-themeColor absolute top-1/2 transform -translate-y-1/2 right-0 p-2 rounded-r-md border-y border-themeColor"
+                  >
+                    <Search className="text-white w-5 h-5" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Tools Grid */}
+          <div
+            className={`grid ${
+              visibleTools.length > 0
+                ? "md:grid-cols-3 grid-cols-1"
+                : "grid-cols-1"
+            } md:gap-5 gap-5`}
+          >
+            {visibleTools.length > 0 ? (
+              visibleTools.map((tool) => (
+                <Link
+                  href={tool.link}
+                  key={tool.link}
+                  className="bg-white rounded-2xl border border-gray-200 hover:border-themeColor transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
+                >
+                  {/* Top Section */}
+                  <div
+                    className={`${tool.bg} flex items-center justify-center p-6 relative min-h-[160px]`}
+                  >
+                    {tool.badge === "popular" && (
+                      <span className="absolute top-3 right-3 bg-amber-100 text-amber-800 text-[10px] font-bold tracking-wide uppercase px-2 py-0.5 rounded-full">
+                        POPULAR
+                      </span>
+                    )}
+                    {tool.badge === "new" && (
+                      <span className="absolute top-3 right-3 bg-green-100 text-green-800 text-[10px] font-bold tracking-wide uppercase px-2 py-0.5 rounded-full">
+                        NEW
+                      </span>
+                    )}
+                    <div className="w-72 h-32 flex items-center justify-center">
+                      <p className="text-xl md:text-2xl lg:text-3xl font-extrabold text-center leading-snug">
+                        {tool.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bottom Section */}
+                  <div className="p-4 md:p-6 flex flex-col flex-1">
+                    <h3 className="font-bold text-lg md:text-xl mb-2 text-gray-900">
+                      {tool.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm md:text-[15px] flex-1 leading-relaxed">
+                      {tool.description}
+                    </p>
+                    {tool.tags && (
+                      <div className="mt-3">
+                        {tool.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-block bg-gray-100 text-gray-600 text-xs font-medium mr-2 px-2.5 py-1 rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="text-themeColor font-semibold mt-4 inline-flex items-center gap-1.5 text-sm">
+                      Use Tool Now <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <div className="text-center text-gray-400 text-xl font-medium py-10">
+                No tools found matching your search.
+              </div>
+            )}
+          </div>
+
+          {/* Load More */}
+          {hasMore && (
+            <div className="text-center mt-10">
+              <button
+                onClick={() => setShowAll(true)}
+                className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 c-btn-secondary mx-auto"
+              >
+                Show All {filteredTools.length} Tools
+              </button>
             </div>
           )}
         </div>
-      </div>
+      </section>
+
+      {/* ═══ MID-PAGE CTA ═══ */}
+      <section className="bg-navyBlue py-16 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 80% at 50% 50%, rgba(26,92,204,0.12) 0%, transparent 70%)",
+          }}
+        />
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5 text-center relative z-10">
+          <Heading
+            type="h2"
+            className="text-white !font-extrabold mb-3"
+            text="Need Custom Software Development?"
+          />
+          <p className="text-white/50 text-base mb-8 max-w-[576px] mx-auto">
+            Our tools give you estimates &mdash; our team turns them into
+            reality. Talk to our experts about your project.
+          </p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <ButtonV2
+              redirect="/contact-us/"
+              label="Book Free Consultation"
+              className="hover:!text-colorWhite"
+            />
+            <Link
+              href="/portfolio/"
+              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+            >
+              See Our Work
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ TESTIMONIALS ═══ */}
+      <section className="bg-[#fafafa] py-16">
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
+          <div className="text-center mb-10">
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor block mb-3">
+              WHAT USERS SAY
+            </span>
+            <Heading
+              type="h2"
+              className="!font-extrabold text-gray-900"
+              text="Trusted by Founders & Product Teams"
+            />
+          </div>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="border border-gray-200 rounded-2xl p-7 bg-white"
+              >
+                <div className="text-amber-400 text-base mb-3 tracking-wider">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p className="text-[15px] text-gray-700 leading-relaxed italic mb-4">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="text-sm font-semibold text-gray-900">
+                  {t.author}
+                </p>
+                <p className="text-xs text-gray-500">{t.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ BOTTOM CTA ═══ */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
+          <div className="bg-[#f2f9fe] border border-gray-200 rounded-2xl py-14 px-6 md:px-12 text-center">
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor block mb-4">
+              READY TO BUILD?
+            </span>
+            <Heading
+              type="h2"
+              className="!font-extrabold text-gray-900 mb-3"
+              text="Turn Your Estimates Into a Real Product"
+            />
+            <p className="text-[17px] text-gray-500 mb-7 max-w-[520px] mx-auto">
+              You&apos;ve done the research. Now let Brilworks bring your vision
+              to life with a dedicated team of engineers, designers, and
+              strategists.
+            </p>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <ButtonV2
+                redirect="/contact-us/"
+                label="Get a Free Project Estimate"
+                className="hover:!text-colorWhite"
+                icon={<ArrowRight className="w-4 h-4" />}
+              />
+              <ButtonV2
+                redirect="/services/"
+                label="Explore Our Services"
+                variant="secondary"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
