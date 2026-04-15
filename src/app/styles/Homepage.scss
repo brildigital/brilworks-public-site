@@ -609,3 +609,28 @@
     }
   }
 }
+
+/* ── Portfolio Detail Page ─────────────────────────────── */
+.portfolio-hero {
+  position: relative;
+  overflow: hidden;
+  background: #0d0f1a;
+}
+.portfolio-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%);
+}
+.portfolio-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
