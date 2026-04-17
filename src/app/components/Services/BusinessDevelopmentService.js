@@ -269,7 +269,7 @@ const INDUSTRIES = [
   },
   {
     label: "Healthcare",
-    href: "/industry/healthcare/",
+    href: "/industry/healthcare-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
@@ -279,7 +279,7 @@ const INDUSTRIES = [
   },
   {
     label: "Manufacturing",
-    href: "/industry/manufacturing/",
+    href: "/industry/manufacturing-software-development-services/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 21H21V10L15 14V10L9 14V10L3 14V21Z" fill="#0d9488" opacity="0.15" />

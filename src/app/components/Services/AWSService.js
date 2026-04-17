@@ -276,7 +276,7 @@ const INDUSTRIES = [
   },
   {
     label: "Manufacturing",
-    href: "/industry/manufacturing/",
+    href: "/industry/manufacturing-software-development-services/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 21H21V10L15 14V10L9 14V10L3 14V21Z" fill="#0d9488" opacity="0.15" />
@@ -286,7 +286,7 @@ const INDUSTRIES = [
   },
   {
     label: "Media",
-    href: "/industry/media/",
+    href: "/industry/media-entertainment-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="5" width="20" height="14" rx="2" fill="#0891b2" opacity="0.15" />

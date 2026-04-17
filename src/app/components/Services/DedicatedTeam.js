@@ -259,7 +259,7 @@ const INDUSTRIES = [
   },
   {
     label: "Healthcare",
-    href: "/industry/healthcare/",
+    href: "/industry/healthcare-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
@@ -269,7 +269,7 @@ const INDUSTRIES = [
   },
   {
     label: "E-commerce",
-    href: "/industry/ecommerce/",
+    href: "/industry/e-commerce-app-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
@@ -299,7 +299,7 @@ const INDUSTRIES = [
   },
   {
     label: "EdTech",
-    href: "/industry/edtech/",
+    href: "/industry/edtech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#0d9488" opacity="0.15" />
