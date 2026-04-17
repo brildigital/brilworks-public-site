@@ -705,8 +705,7 @@ const ReactNativeAppDevelopmentServices = () => {
           {SERVICES.map((svc) => (
             <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
               style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
-                style={{ gridTemplateColumns: typeof window === "undefined" ? "1fr 1fr" : undefined }}>
+              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{

@@ -289,7 +289,7 @@ const INDUSTRIES = [
   },
   {
     label: "Logistics",
-    href: "/industry/logistics/",
+    href: "/industry/fleet-management-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M1 3H15V16H1V3Z M15 8H21L23 11V16H15V8Z" fill="#0891b2" opacity="0.15" />
@@ -718,8 +718,7 @@ const BusinessDevelopmentService = () => {
           {SERVICES.map((svc) => (
             <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
               style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
-                style={{ gridTemplateColumns: typeof window === "undefined" ? "1fr 1fr" : undefined }}>
+              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{
