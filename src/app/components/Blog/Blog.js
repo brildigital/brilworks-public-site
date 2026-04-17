@@ -189,7 +189,7 @@ const Blog = () => {
           {/* Toolbar: Categories + Search */}
           <div className="flex sxl:flex-row flex-col-reverse !mt-4">
             <nav
-              className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4"
+              className="blog_category w-full flex flex-nowrap justify-start items-center overflow-x-auto overflow-y-hidden whitespace-nowrap !mb-4"
               aria-label="Blog categories"
             >
               <div className="bg-[#F8FAFC] p-1 rounded-md border border-borderGray">
@@ -414,9 +414,7 @@ const Blog = () => {
                       : "text-colorBlack hover:text-themeColor"
                   }`}
                   onClick={() => {
-                    if (
-                      currentPage < Math.ceil(totalBlog / ITEMS_PER_PAGE)
-                    ) {
+                    if (currentPage < Math.ceil(totalBlog / ITEMS_PER_PAGE)) {
                       setCurrentPage(currentPage + 1);
                     }
                   }}
@@ -442,12 +440,13 @@ const Blog = () => {
           }}
         />
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-[2] text-center">
-          <h2 className="text-white font-extrabold tracking-tight leading-tight mb-3 text-3xl md:text-4xl lg:text-[40px]"
+          <h2
+            className="text-white font-extrabold tracking-tight leading-tight mb-3 text-3xl md:text-4xl lg:text-[40px]"
             style={{ letterSpacing: "-1px" }}
           >
             Building Something? Let&apos;s Talk.
           </h2>
-          <p className="text-white/55 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
+          <p className="text-white/50 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
             From architecture reviews to full product engineering — our team
             ships production software every day. Book a free consultation.
           </p>

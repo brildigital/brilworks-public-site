@@ -241,7 +241,7 @@ const HONORS = [
 const INDUSTRIES = [
   {
     label: "Fintech",
-    href: "/industry/fintech/",
+    href: "/industry/fintech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
@@ -252,7 +252,7 @@ const INDUSTRIES = [
   },
   {
     label: "Healthcare",
-    href: "/industry/healthcare/",
+    href: "/industry/healthcare-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
@@ -262,7 +262,7 @@ const INDUSTRIES = [
   },
   {
     label: "E-commerce",
-    href: "/industry/ecommerce/",
+    href: "/industry/e-commerce-app-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
@@ -272,7 +272,7 @@ const INDUSTRIES = [
   },
   {
     label: "SaaS",
-    href: "/industry/saas/",
+    href: "/saas-application-development-services/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18 10H6C4.9 10 4 10.9 4 12V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V12C20 10.9 19.1 10 18 10Z" fill="#4f46e5" opacity="0.15" />
@@ -282,7 +282,7 @@ const INDUSTRIES = [
   },
   {
     label: "EdTech",
-    href: "/industry/edtech/",
+    href: "/industry/edtech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#0d9488" opacity="0.15" />
@@ -292,7 +292,7 @@ const INDUSTRIES = [
   },
   {
     label: "Logistics",
-    href: "/industry/logistics/",
+    href: "/industry/fleet-management-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M1 3H15V16H1V3Z M15 8H21L23 11V16H15V8Z" fill="#0891b2" opacity="0.15" />
@@ -594,7 +594,7 @@ const StaffAugmentation = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   Pre-vetted senior engineers across React, Node, Java, Python, AWS, and AI/ML. 100+ engineers on the bench — onboarded in days, not months. 98% client satisfaction, 95% engineer retention.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
@@ -655,8 +655,7 @@ const StaffAugmentation = () => {
           {SERVICES.map((svc) => (
             <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
               style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
-                style={{ gridTemplateColumns: typeof window === "undefined" ? "1fr 1fr" : undefined }}>
+              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{
@@ -693,7 +692,7 @@ const StaffAugmentation = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Need Senior Engineers This Sprint?</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Schedule a free 30-minute call with our staffing team. Share your role brief — get 3 matched CVs within 48 hours and start interviewing within days.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Schedule a Developer Interview
           </Link>
