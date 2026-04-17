@@ -248,7 +248,7 @@ const HONORS = [
 const INDUSTRIES = [
   {
     label: "Fintech",
-    href: "/industry/fintech/",
+    href: "/industry/fintech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
@@ -279,7 +279,7 @@ const INDUSTRIES = [
   },
   {
     label: "Media & Entertainment",
-    href: "/industry/media-entertainment/",
+    href: "/industry/media-entertainment-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2" fill="#4f46e5" opacity="0.15" />
@@ -290,7 +290,7 @@ const INDUSTRIES = [
   },
   {
     label: "Education",
-    href: "/industry/education/",
+    href: "/industry/edtech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#0d9488" opacity="0.15" />

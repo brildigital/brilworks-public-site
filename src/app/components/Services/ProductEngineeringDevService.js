@@ -240,7 +240,7 @@ const HONORS = [
 const INDUSTRIES = [
   {
     label: "Fintech",
-    href: "/industry/fintech/",
+    href: "/industry/fintech-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
