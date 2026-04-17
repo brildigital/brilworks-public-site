@@ -446,7 +446,7 @@ const Blog = () => {
           >
             Building Something? Let&apos;s Talk.
           </h2>
-          <p className="text-white/55 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
+          <p className="text-white/50 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
             From architecture reviews to full product engineering — our team
             ships production software every day. Book a free consultation.
           </p>

@@ -41,7 +41,7 @@ const SolutionContactForm = ({
             <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-white !mb-4">
               {title || "Ready to Build Your Platform?"}
             </h2>
-            <p className="text-[18px] text-white/[0.62] leading-[1.7] !mb-8 max-w-none">
+            <p className="text-[18px] text-white/60 leading-[1.7] !mb-8 max-w-none">
               {description ||
                 "You're one conversation away from turning your idea into a scalable platform. Tell us what you're building — we'll show you how we can help."}
             </p>
@@ -50,7 +50,7 @@ const SolutionContactForm = ({
               {benefitsList.map((benefit, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 text-white/[0.62] text-[15px]"
+                  className="flex items-start gap-3 text-white/60 text-[15px]"
                 >
                   <span className="text-[#00dbd3] text-lg flex-shrink-0 mt-0.5">
                     &#10003;
@@ -61,10 +61,10 @@ const SolutionContactForm = ({
             </ul>
 
             <div>
-              <div className="text-[13px] text-white/45 !mb-2">
+              <div className="text-[13px] text-white/50 !mb-2">
                 Or reach us directly:
               </div>
-              <div className="text-white/[0.62]">
+              <div className="text-white/60">
                 <a
                   href="mailto:sales@brilworks.com"
                   className="text-[#00b4d8] hover:underline"

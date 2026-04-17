@@ -652,7 +652,7 @@ const GenerativeAIDevService = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We build LLM apps, RAG pipelines, AI agents, and fine-tuned models on OpenAI, Anthropic, and AWS Bedrock. 30+ GenAI apps shipped — production-ready from day one, with guardrails, evals, and cost controls built in.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#7c3aed", color: "#fff", border: "1px solid #7c3aed", padding: "16px 32px", fontSize: 16 }}>

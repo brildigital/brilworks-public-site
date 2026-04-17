@@ -276,7 +276,7 @@
   font-family: var(--global-font);
 }
 
-blog_category {
+.blog_category {
   scrollbar-width: thin;
   scrollbar-color: #d1d5db transparent;
 }
