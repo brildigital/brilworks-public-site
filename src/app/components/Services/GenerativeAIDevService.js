@@ -751,7 +751,7 @@ const GenerativeAIDevService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Data is the new oil, but AI is the refinery.</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call. We&apos;ll review your data, prioritize a GenAI use case, and map a production roadmap — no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#7c3aed", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Schedule a Free AI Consultation
           </Link>

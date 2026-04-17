@@ -611,7 +611,7 @@ const SaaSApplicationDevelopmentService = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We engineer multi-tenant SaaS platforms that onboard paying customers in weeks, not quarters. 30+ SaaS products live across FinTech, HRTech, and B2B — 99.9% uptime SLA, subscription billing ready on day one.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
@@ -710,7 +710,7 @@ const SaaSApplicationDevelopmentService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Turn Your SaaS Idea Into Monthly Recurring Revenue?</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute consultation with our SaaS architects. We&apos;ll review your product, map a multi-tenant roadmap, and estimate your MVP timeline — no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Let&apos;s Discuss
           </Link>

@@ -576,7 +576,7 @@ const ApplicationDevelopmentService = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We&apos;re a passionate team of engineers who turn ideas into shipped software. Web, mobile, enterprise and SaaS platforms — designed, built, and maintained end-to-end. 300+ apps delivered across 8+ platforms with 99.9% uptime.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
@@ -675,7 +675,7 @@ const ApplicationDevelopmentService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Build Your Next Application?</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Contact us today for a free consultation and let&apos;s discuss how custom software development can transform your business. Free 30-minute call, no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Get Free Consultation Now
           </Link>
