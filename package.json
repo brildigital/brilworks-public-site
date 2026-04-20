@@ -7,7 +7,11 @@
     "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "blog:pull": "node scripts/storyblok-blog.js pull",
+    "blog:pull-all": "node scripts/storyblok-blog.js pull-all",
+    "blog:push": "node scripts/storyblok-blog.js push",
+    "blog:diff": "node scripts/storyblok-blog.js diff"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.812.0",
