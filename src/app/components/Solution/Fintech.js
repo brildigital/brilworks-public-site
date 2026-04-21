@@ -2,23 +2,36 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import { ShieldCheck, Landmark, Lock, BadgeCheck } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
 
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
-);
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
-);
 const FintechFAQ = dynamic(() => import("./SolutionFAQ"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
 const SolutionEngagementAndHowCanStart = dynamic(() =>
   import("./SolutionEngagementAndHowCanStart")
 );
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const Fintech = () => {
+  const heroStats = [
+    { value: "120+", label: "Products Shipped" },
+    { value: "30+", label: "Fintech Developers" },
+    { value: "100%", label: "Compliance Rate" },
+    { value: "98%", label: "Client Retention" },
+  ];
+
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: Landmark, label: "30+ Fintech Developers" },
+    { icon: Lock, label: "PCI DSS, SOC 2 & GDPR Ready" },
+    { icon: BadgeCheck, label: "100% Compliance Rate" },
+  ];
+
   const fintechServices1 = {
     title: "Our End-to-End Fintech Software Development Services",
     desc: "Our services drive sustainable growth.",
@@ -26,6 +39,7 @@ const Fintech = () => {
     servicesList: [
       {
         title: "Custom Fintech Software Developments",
+        iconSrc: "/images/v2/developer-icon.svg",
         value: "fintech-service1-1",
         description:
           "Our custom fintech software development services include application development, custom reporting, and real-time data interaction.",
@@ -34,6 +48,7 @@ const Fintech = () => {
       },
       {
         title: "Banking App Development",
+        iconSrc: "/images/v2/secure-pymt-icon.svg",
         value: "fintech-service1-2",
         description:
           "Develop applications such as digital wallets or mobile banking apps with our fintech app development services that let you expand your digital footprint by making it easier for your clients to do banking from any device, at any time.",
@@ -42,6 +57,7 @@ const Fintech = () => {
       },
       {
         title: "Insurance App Development",
+        iconSrc: "/images/v2/financial-risk-icon.svg",
         value: "fintech-service1-3",
         description:
           "We know that customer experience is an essential part of building a successful InsurTech app. Our team specializes in custom insurance application development, with no compromises on quality or usability.",
@@ -50,6 +66,7 @@ const Fintech = () => {
       },
       {
         title: "Wallet App Development",
+        iconSrc: "/images/v2/crm-icon.svg",
         value: "fintech-service1-4",
         description:
           "Giving customers the ability to pay with a smartphone-specific digital wallet is an easy way to encourage loyalty and ensure customer satisfaction.",
@@ -58,14 +75,16 @@ const Fintech = () => {
       },
       {
         title: "Fintech Software Security",
+        iconSrc: "/images/v2/fraud-detection-icon.svg",
         value: "fintech-service1-5",
         description:
-          "We work with you to ensure your application remains up and running. Whether it’s in server management, data security, or continuous monitoring.",
+          "We work with you to ensure your application remains up and running. Whether it's in server management, data security, or continuous monitoring.",
         imageSrc: "/images/v2/fintech-software-security.webp",
         imageAlt: "Fintech Software Security",
       },
       {
         title: "FinOps Services",
+        iconSrc: "/images/v2/cloud-based-icon.svg",
         value: "fintech-service1-6",
         description:
           "With the right cloud cost management, your business can scale effectively and avoid cost overheads. From managing your cloud custodian services to proactive detection of technology costs to constructing agile, scalable solutions for you, our fintech software developers manage it all.",
@@ -74,12 +93,14 @@ const Fintech = () => {
       },
     ],
   };
+
   const fintechServices2 = {
     title: "Industry-specific Fintech Software Development",
     buttonText: "Speak With Our Experts",
     servicesList: [
       {
         title: "Wealth Management",
+        iconSrc: "/images/v2/sales-forcating-icon.svg",
         value: "fintech-service2-1",
         description:
           "We build fintech apps to better manage financial assets, seek insight into consumer trends and improve communication.",
@@ -88,6 +109,7 @@ const Fintech = () => {
       },
       {
         title: "Lending",
+        iconSrc: "/images/v2/realtime-icon.svg",
         value: "fintech-service2-2",
         description:
           "We build technology solutions to enhance your operations and automate and improve your lending processes to facilitate instant loan approval, KYC verification, and consumer eligibility checks.",
@@ -96,6 +118,7 @@ const Fintech = () => {
       },
       {
         title: "Consumer Banking",
+        iconSrc: "/images/v2/analytics-reporting-icon.svg",
         value: "fintech-service2-3",
         description:
           "We create and deploy the most advanced and secure banking solutions that enable customers to help customer service, predict the future, and smoothen out operations.",
@@ -104,14 +127,16 @@ const Fintech = () => {
       },
       {
         title: " Personal Finance",
+        iconSrc: "/images/v2/software-as-service-icon.svg",
         value: "fintech-service2-4",
         description:
-          "We develop software for personal finance, in a way that’s both simple and powerful. Our goal is to help users better manage their savings and investments.",
+          "We develop software for personal finance, in a way that's both simple and powerful. Our goal is to help users better manage their savings and investments.",
         imageSrc: "/images/v2/personal-finance.webp",
         imageAlt: "Personal Finance",
       },
       {
         title: "Payment",
+        iconSrc: "/images/v2/api-integration-icon.svg",
         value: "fintech-service2-5",
         description:
           "Our portfolio encompasses a suite of financial technology that is designed to bring transparency, safety, and control to the payments system.",
@@ -120,9 +145,10 @@ const Fintech = () => {
       },
       {
         title: "Insurance",
+        iconSrc: "/images/v2/scalable-architecture-icon.svg",
         value: "fintech-service2-6",
         description:
-          "Fintech is changing the insurance industry, so we’re changing the way it works for you. Our fintech products help insurance companies improve customer engagement, underwriting process, claims processing, and fraud detection.",
+          "Fintech is changing the insurance industry, so we're changing the way it works for you. Our fintech products help insurance companies improve customer engagement, underwriting process, claims processing, and fraud detection.",
         imageSrc: "/images/v2/insurance-app-development.webp",
         imageAlt: "Insurance",
       },
@@ -168,39 +194,10 @@ const Fintech = () => {
     },
   ];
 
-  const fintechExperienceShowCase = [
-    {
-      value: "100%",
-      description: "Safe & Secure Products",
-      color: "#E5F4FF",
-    },
-    {
-      value: "30+",
-      description: "Fintech Developers",
-      color: "#FFE2E5",
-    },
-
-    {
-      value: "100%",
-      description: "Compliance with Financial Standards",
-      color: "#E9FFE2",
-    },
-    {
-      value: "Agile",
-      description: "Development Team",
-      color: "#FFE8FC",
-    },
-    {
-      value: "Expert",
-      description: "Knowledge",
-      color: "#F4ECFF",
-    },
-    {
-      value: "API",
-      description: "Third-party API Development & Integration",
-      color: "#FCFFE3",
-    },
-  ];
+  const whyChooseUs = {
+    title: "Why Fintech Companies Choose Us",
+    benefits: why100PlusCompaniesTrust,
+  };
 
   useEffect(() => {
     scrollEffect();
@@ -215,11 +212,13 @@ const Fintech = () => {
     <>
       <SolutionHeroSection
         technologyText="Fintech Software Development Company"
-        title="Delivering Secure Fintech Software Development Services"
+        title='Build Secure <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">Fintech Software</span> — Drive Business ROI'
         description="Step into a new era of financial flexibility with our sophisticated, intuitive & highly-secure fintech applications. Our fintech software development services are built to drive business transformation and maximize ROI."
         buttonText="Hire Fintech Developer"
         imageSrc="/images/v2/fintech-banner.webp"
+        stats={heroStats}
       />
+      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection
         sectionId="services-one"
         serviceData={fintechServices1}
@@ -230,20 +229,28 @@ const Fintech = () => {
         imageOnLeft={true}
         serviceData={fintechServices2}
       />
-      <MultipleCardInGrid
-        title="How Our Innovative Products Help Fintech Solution Companies"
-        cardData={why100PlusCompaniesTrust}
+      <IndustryMidCTA
+        title="Ready to Build a Fintech App?"
+        description="Get a free consultation and project estimate. We respond within 24 hours."
       />
+      <MultipleCardWithIconBG data={whyChooseUs} />
+      <ClientReviews />
       <SeeingBelieving buttonText="Work With Us" title="Our Portfolio" />
-      <MultipleKeyValueWithBG
-        bgClass="bg-white"
-        title="Why Should You Hire AWS Developers from Brilworks?"
-        description="We offer next-gen fintech solutions, which allow you to embrace innovation, improve efficiency, and comply with regulations. Our fintech software developers are always ready to help develop innovative solutions that optimize your customers’ experience and better manage risk in the financial industry."
-        keyValueData={fintechExperienceShowCase}
-      />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
       <FintechFAQ />
+      <SolutionContactForm
+        title="Ready to Build Your Fintech Platform?"
+        description="You're one conversation away from turning your fintech idea into a secure, scalable platform."
+        messageRequired={false}
+        submitLabel="Get My Free Fintech Consultation"
+        benefits={[
+          "Free 30-minute consultation with a fintech specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial — no commitment",
+          "Response guaranteed within 24 business hours",
+          "PCI-DSS & financial compliance built in",
+        ]}
+      />
     </>
   );
 };

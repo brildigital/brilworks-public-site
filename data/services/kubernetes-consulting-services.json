@@ -1,0 +1,208 @@
+{
+  "slug": "kubernetes-consulting-services",
+  "url": "/kubernetes-consulting-services/",
+  "category": "Cloud & Infrastructure",
+  "metadata": {
+    "title": "Kubernetes Consulting Services | Brilworks",
+    "description": "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
+    "canonical": "/kubernetes-consulting-services/",
+    "ogImage": "/images/kubernetes-banner.webp",
+    "ogTitle": "Kubernetes Consulting Services",
+    "ogDescription": "Optimize your container orchestration with Brilworks' expert Kubernetes consulting. Scale efficiently, reduce downtime, and accelerate deployment for long-term success.",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "twitterSite": "@_Brilworks",
+    "twitterCard": "summary_large_image"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Achieve resilience, scale, and savings",
+      "subheadline": "Boost your DevOps journey with our Kubernetes consulting service. Our experts plan a roadmap to achieve rapid deployments and seamless upgrades with our proven Kubernetes consulting services.",
+      "image": "/images/v2/kubernates-consulting-banner.webp",
+      "ctas": [
+        { "label": "Let's Get Started", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Kubernetes Consulting Services by Brilworks",
+        "sectionId": "service-section",
+        "items": [
+          {
+            "title": "Kubernetes Consultation",
+            "description": "Our expert consultants guide you through every stage, from assessing your readiness to optimizing your deployment. We plan a tailored roadmap, whether it's modernizing legacy apps or building scalable cloud-native solutions.",
+            "imageSrc": "/images/v2/kubernetes-consultation.webp",
+            "imageAlt": "Kubernetes consultation img"
+          },
+          {
+            "title": "Kubernetes Application Development & Migration",
+            "description": "Build and deploy containerized applications on Kubernetes with expert guidance. Streamline your development process and optimize delivery for efficiency.",
+            "imageSrc": "/images/v2/application-development-migration.webp",
+            "imageAlt": "Kubernetes Application img"
+          },
+          {
+            "title": "DevSecOps - Enabling Security & Compliance",
+            "description": "Integrate security and compliance into your DevOps pipeline. Develop secure applications and meet industry regulations with expert assistance, ensuring peace of mind.",
+            "imageSrc": "/images/v2/decsecops-securing-compliance.webp",
+            "imageAlt": "DevSecOps img"
+          },
+          {
+            "title": "Kubernetes Professional Support",
+            "description": "Get 24/7 support from certified Kubernetes professionals. Keep your clusters running smoothly, troubleshoot issues swiftly, and optimize deployments for peak performance.",
+            "imageSrc": "/images/v2/kubernetes-professional-support.webp",
+            "imageAlt": "Development DevOps img"
+          },
+          {
+            "title": "Kubernetes Training",
+            "description": "Equip your developers with the knowledge and skills to master Kubernetes. Comprehensive training programs cover all aspects, from fundamental concepts to advanced topics, fostering success with the platform.",
+            "imageSrc": "/images/v2/kubernetes-training.webp",
+            "imageAlt": "Security compliance img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks?",
+        "items": [
+          {
+            "title": "Transparency and support",
+            "icon": "/images/v2/why-n-2.svg",
+            "description": "We prioritize clear and constant communication throughout the entire process, ensuring you are involved and informed in every step. "
+          },
+          {
+            "title": "Scalable team",
+            "icon": "/images/v2/fi_8109512.svg",
+            "description": "Gain the advantage of a flexible team structure that allows Brilworks to adjust resource allocation based on your specific project requirements."
+          },
+          {
+            "title": "Proven track record",
+            "icon": "/images/v2/fi_10227466.svg",
+            "description": "We have empowered businesses across several domains with tailored Kubernetes solutions, helping them achieve an average 30% improvement and 40% reduction in downtime."
+          },
+          {
+            "title": "Domain Expertise",
+            "icon": "/images/v2/fi_18610115.svg",
+            "description": "Our engineers specialize in architecting, deploying, and optimizing Kubernetes solutions tailored to meet the unique needs of our clients across industries."
+          },
+          {
+            "title": "Certified team",
+            "icon": "/images/v2/fi_12773678.svg",
+            "description": "As a leading Kubernetes consulting service provider, we house a team of certified experts who hold certification from reputed organizations."
+          },
+          {
+            "title": "Agile Development",
+            "icon": "/images/v2/fi_4288807.svg",
+            "description": "Our agile approach to Kubernetes implementation breaks down projects into smaller, interactive cycles, enabling you to gain value from your investment sooner."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "eyebrow": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Transform your operations with Kubernetes expertise.",
+        "description": "Get in touch to discover how we can elevate your efficiency and performance.",
+        "buttonText": "Schedule a Call"
+      },
+      {
+        "type": "tech-stack",
+        "title": "Tech Stack We Use",
+        "items": [
+          { "title": "Kubernetes", "imageSrc": "/images/kubernetes-seeklogocom.webp" },
+          { "title": "Docker", "imageSrc": "/images/docker-svgrepo-com.png" },
+          { "title": "AWS", "imageSrc": "/images/aws-tech.webp" },
+          { "title": "ELK Stack", "imageSrc": "/images/elk-stack.png" },
+          { "title": "Jenkins", "imageSrc": "/images/jenkins-svgrepo-com.png" },
+          { "title": "GitLab CI/CD", "imageSrc": "/images/machine-learning-tech.png" },
+          { "title": "Terraform", "imageSrc": "/images/terraform-svgrepo-com.png" },
+          { "title": "Amazon (ECR)", "imageSrc": "/images/ecr.png" }
+        ]
+      },
+      {
+        "type": "industries",
+        "eyebrow": "Industries We Serve",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects \u00b7 HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ],
+        "footerLinks": [
+          { "label": "+9 more industries we have shipped in \u2192", "href": "/industry/" },
+          { "label": "Tell us your industry \u2192", "href": "/contact-us/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+          { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+          { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+          { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+          { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "component": "SeeingBelieving",
+        "note": "Portfolio carousel rendered from CMS-driven portfolioDynamicItems."
+      },
+      {
+        "type": "dynamic-content",
+        "component": "HomePageBlogs",
+        "note": "Latest blog posts fetched from Storyblok CMS at render time."
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What is Kubernetes?",
+            "a": "Developed by Google for production-grade environments, Kubernetes tackles the challenge of managing multiple containerized applications within complex, multi-infrastructure deployments. Brilworks, a recognized Kubernetes leader, empowers organizations to streamline their CD/CI processes through expert Kubernetes consulting and solutions."
+          },
+          {
+            "q": "Why do you need Kubernetes?",
+            "a": "Kubernetes cuts through container orchestration limitations. It lets DevOps deploy across servers, fine-tune individual containers, schedule and scale them on demand, and build multi-container apps."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is Kubernetes?",
+        "a": "Developed by Google for production-grade environments, Kubernetes tackles the challenge of managing multiple containerized applications within complex, multi-infrastructure deployments. Brilworks, a recognized Kubernetes leader, empowers organizations to streamline their CD/CI processes through expert Kubernetes consulting and solutions."
+      },
+      {
+        "q": "Why do you need Kubernetes?",
+        "a": "Kubernetes cuts through container orchestration limitations. It lets DevOps deploy across servers, fine-tune individual containers, schedule and scale them on demand, and build multi-container apps."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack" },
+      { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin" },
+      { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform" },
+      { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride" },
+      { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo" }
+    ]
+  }
+}

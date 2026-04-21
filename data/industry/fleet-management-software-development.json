@@ -1,0 +1,195 @@
+{
+  "slug": "fleet-management-software-development",
+  "url": "/industry/fleet-management-software-development/",
+  "industry": "Fleet Management",
+  "metadata": {
+    "title": "Fleet Management Software Development Services",
+    "description": "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
+    "canonical": "{BASE_URL}industry/fleet-management-software-development/",
+    "ogImage": "{BASE_URL}images/explore-arrow-01.png",
+    "ogTitle": "Fleet Management Software Development Services",
+    "ogDescription": "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
+    "ogType": "article",
+    "ogSiteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "ogLocale": "en-US",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks",
+    "breadcrumb": "Fleet Manangement Software Development Company"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "Fleet Management App Development Services",
+      "headline": "Custom Fleet Management Mobile & Web App Development",
+      "headlineHtml": "Custom <span class=\"bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text\" style=\"--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent\">Fleet Management</span> Mobile & Web App Development",
+      "subheadline": "At Brilworks, we design and build custom fleet management apps for mobile and web that transform fleet operations. We build smartest solutions for managing fleets, tracking shipments, and optimising last-mile delivery. Our fleet management app development services give you the tools to reduce costs, increase visibility and deliver better service. ",
+      "imageSrc": "/images/v2/fleet-mgmt-banner.webp",
+      "ctas": [],
+      "stats": [
+        { "value": "120+", "label": "Products Shipped" },
+        { "value": "20+", "label": "Fleet Apps" },
+        { "value": "99.9%", "label": "Uptime" },
+        { "value": "98%", "label": "Client Retention" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "services",
+        "title": "Our Logistics Solutions",
+        "buttonText": "Build My Fleet Management App",
+        "items": [
+          { "title": "Fleet Management App Development", "description": "We build apps that allow you to monitor and optimise your vehicle fleets in real time. Track drivers, plan routes, capture performance data and reduce idle time so your fleet becomes a strategic asset, not just a cost centre.", "iconSrc": "/images/v2/logistic-icon.svg", "imageSrc": "/images/v2/fleet-telematics-solutions.webp", "imageAlt": "Fleet Telematics Solutions", "btnText": "Explore Fleet Solutions" },
+          { "title": "Inventory Management App Development", "description": "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You'll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.", "iconSrc": "/images/v2/realtime-gps-icon.svg", "imageSrc": "/images/v2/fleet-maintenance-and-predictions.webp", "imageAlt": "Fleet Maintenance Predictions", "btnText": "Discover Supply Chain Apps" },
+          { "title": "On-Demand Logistics App Development", "description": "On-demand logistics apps for dynamic routing, real-time tracking for customers and dispatchers, helping you win in competitive markets.", "iconSrc": "/images/v2/route-history-icon.svg", "imageSrc": "/images/v2/fleet-management-integration.webp", "imageAlt": "Fleet Management Integration", "btnText": "Learn More" },
+          { "title": "Route Optimisation App Development", "description": "For companies managing complex transportation logistics, we build apps that integrate order volumes, traffic data, vehicle capacities and delivery constraints to plan efficient trips, reduce costs and improve reliability.", "iconSrc": "/images/v2/realtime-icon.svg", "imageSrc": "/images/v2/driver-management-and-safety.webp", "imageAlt": "Driver Management Safety", "btnText": "Learn More" },
+          { "title": "Custom Enterprise Logistics App Development", "description": "Your business is unique. If you need a tailored solution. We design custom logistics apps built to your requirements, with future-proof architecture, data analytics modules and support across mobile and web platforms.", "iconSrc": "/images/v2/scalable-architecture-icon.svg", "imageSrc": "/images/v2/fuel-consumption-control-apps.webp", "imageAlt": "Fuel Consumption Control Apps", "btnText": "Start a Custom Project" }
+        ]
+      },
+      {
+        "type": "services",
+        "title": "Custom Fleet Management Software Services",
+        "buttonText": "Speak With Our Experts",
+        "items": [
+          { "title": "GPS Fleet Tracking", "description": "We're smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.", "iconSrc": "/images/v2/historical-fleet-icon.svg", "imageSrc": "/images/v2/gps-fleet-tracking.webp", "imageAlt": "Delivery Management Software" },
+          { "title": "Traffic Management Software", "description": "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.", "iconSrc": "/images/v2/automates-alert-icon.svg", "imageSrc": "/images/v2/traffic-mgmt-app.webp", "imageAlt": "Traffic-Management-Software" },
+          { "title": "Delivery Management Software", "description": "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!", "iconSrc": "/images/v2/offline-tracking-icon.svg", "imageSrc": "/images/v2/delivery-management-software.webp", "imageAlt": "GPS-Fleet-Tracking" },
+          { "title": "Transportation Software", "description": "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.", "iconSrc": "/images/v2/developer-icon.svg", "imageSrc": "/images/v2/transportation-software.webp", "imageAlt": "Transportation-Software" },
+          { "title": "Supply Chain Management Software", "description": "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you're aware of its location at all times.", "iconSrc": "/images/v2/engine-diagonastic-icon.svg", "imageSrc": "/images/v2/supply-chain-management-software.webp", "imageAlt": "Supply-Chain-Management-Software" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to Optimize Your Fleet Operations?",
+        "subtitle": "Get a free consultation on your fleet management app. We respond within 24 hours.",
+        "items": []
+      },
+      {
+        "type": "useCases",
+        "title": "The Benefits of Having Fleet Management Software",
+        "subtitle": "By utilizing our expertise in working with various players in the healthcare industry, we provide healthcare application development services that make your product a crucial part of the overall healthcare ecosystem. Our services encompass the development of custom apps, designed to meet your business needs.",
+        "buttonText": "Let's Get In Touch",
+        "imageSrc": "/images/v2/fleet-mgmt-app-we-develop.webp",
+        "imageAlt": "fleet-app-type",
+        "items": [
+          "Appointment Scheduling Applications",
+          "Medication Intake Tracking Apps",
+          "Home Health Monitoring Apps",
+          "Caregiver Management Apps",
+          "Drug Inventory Tracking Apps",
+          "Wearable Tech Apps"
+        ],
+        "note": "Source copy appears mismatched (healthcare wording) for this fleet section; preserved verbatim from source."
+      },
+      {
+        "type": "tech-stack",
+        "title": "Technologies We Use",
+        "items": [
+          { "category": "Frontend", "technologies": ["ReactJS", "AngularJS", "VueJS"] },
+          { "category": "Backend", "technologies": ["Python", "NodeJS", "Java"] },
+          { "category": "Mobile", "technologies": ["React Native", "Flutter", "Swift", "Kotlin"] },
+          { "category": "Databases", "technologies": ["MongoDB", "PostgreSQL", "Firebase"] },
+          { "category": "Integrations", "technologies": ["Google Maps API", "Fleet Telematics", "IoT Sensors", "ERP/CRM Connectors"] },
+          { "category": "Cloud", "technologies": ["AWS", "Azure", "Google Cloud Platform"] }
+        ]
+      },
+      {
+        "type": "features",
+        "title": "Count on us to Build Feature-Rich Fleet Tracking System",
+        "items": [
+          { "title": "Real-time GPS vehicle tracking", "icon": "/images/v2/realtime-gps-icon.svg" },
+          { "title": "Route History and Optimization", "icon": "/images/v2/route-history-icon.svg" },
+          { "title": "Accident Detection and Management", "icon": "/images/v2/accident-detection-icon.svg" },
+          { "title": "Automated Alerts", "icon": "/images/v2/automates-alert-icon.svg" },
+          { "title": "Historical Fleet Data", "icon": "/images/v2/historical-fleet-icon.svg" },
+          { "title": "Engine Diagnostics", "icon": "/images/v2/engine-diagonastic-icon.svg" },
+          { "title": "Offline Tracking", "icon": "/images/v2/offline-tracking-icon.svg" },
+          { "title": "API Integration", "icon": "/images/v2/api-integration-icon.svg" },
+          { "title": "Cloud Based", "icon": "/images/v2/cloud-based-icon.svg" },
+          { "title": "Analytics & Reporting", "icon": "/images/v2/analytics-reporting-icon.svg" }
+        ]
+      },
+      {
+        "type": "benefits",
+        "title": "What Makes Brilworks The Best Fleet Management Software Development Company?",
+        "subtitle": "We know it can be frustrating to keep track of all your vehicles on the road, but with our fleet management software and GPS tracking system, we make it easier than ever to keep track of all your moves.",
+        "buttonText": "Let's Get In Touch",
+        "items": [
+          { "value": "Round", "description": "The Clock Availability", "color": "#FFE2E5" },
+          { "value": "Agile", "description": "Development Team", "color": "#E9FFE2" },
+          { "value": "Expert", "description": "Knowledge", "color": "#FFE8FC" },
+          { "value": "User", "description": "Oriented Solution", "color": "#E5F4FF" },
+          { "value": "On Time", "description": "Delivery", "color": "#F4ECFF" },
+          { "value": "Security", "description": "First Approach", "color": "#FCFFE3" }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks for Fleet Management",
+        "items": [
+          { "title": "Top-Rated Developers", "description": "Our team members consistently earn top ratings for their technical skills and communication.", "icon": "/images/v2/Senior_talent_at_competitive_rates.svg" },
+          { "title": "Fleet & Logistics Experience", "description": "We have built GPS tracking, route optimisation, and supply chain solutions for logistics companies worldwide.", "icon": "/images/v2/proven-expertise.svg" },
+          { "title": "Agile & Transparent", "description": "You see progress regularly through sprints and working software, not after months of silence.", "icon": "/images/v2/Agile_Development_Excellence.svg" },
+          { "title": "Clear Communication", "description": "We explain technical decisions in plain language without overwhelming you with jargon.", "icon": "/images/v2/transparent-comm.svg" },
+          { "title": "Post-Launch Support", "description": "We provide training, fix bugs, make adjustments, and add features as your needs evolve.", "icon": "/images/v2/ongoing-support-icon.svg" }
+        ]
+      },
+      {
+        "type": "engagementModels",
+        "title": "Our Engagement Models",
+        "subtitle": "Flexible models to match your stage \u2014 whether you're a solo founder with an idea or a funded startup scaling fast.",
+        "eyebrow": "How We Work",
+        "items": [
+          { "title": "Dedicated Development Team", "description": "A full team (devs, QA, PM, designer) working exclusively on your product. Best for funded startups building a core platform.", "iconSrc": "/images/v2/dedicated-dev-team.svg" },
+          { "title": "Team Extension", "description": "Add our engineers to your existing team. They integrate with your processes, tools, and culture. Best for scaling quickly.", "iconSrc": "/images/v2/team-extension.svg" },
+          { "title": "Project-Based Model", "description": "Fixed scope, fixed timeline, fixed price. We handle everything from design to deployment. Best for MVPs and defined projects.", "iconSrc": "/images/v2/project-based-model-icon.svg" }
+        ]
+      },
+      {
+        "type": "process",
+        "title": "How to Launch Your Platform",
+        "subtitle": "From first conversation to production \u2014 in as little as 10 weeks.",
+        "eyebrow": "Getting Started",
+        "items": [
+          { "step": 1, "title": "Contact Us", "description": "Fill out the form. We respond within 24 business hours." },
+          { "step": 2, "title": "Free Consultation", "description": "We discuss your requirements, target users, and build a roadmap together." },
+          { "step": 3, "title": "Proposal & Estimate", "description": "Detailed project proposal with timeline, milestones, and transparent pricing." },
+          { "step": 4, "title": "Project Kickoff", "description": "Your dedicated team starts building. Weekly demos, Slack access, full transparency." }
+        ]
+      },
+      {
+        "type": "contactForm",
+        "title": "Start Building Your Fleet Management App Today",
+        "subtitle": "Modern fleets run on technology. Tell us about your fleet size and challenges, and we'll design the right solution.",
+        "submitLabel": "Get My Fleet App Proposal",
+        "items": [
+          "Real-time GPS tracking and route optimization",
+          "IoT sensor integration for vehicle diagnostics",
+          "Scalable cloud-based architecture",
+          "24/7 monitoring and support"
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "eyebrow": "FAQ",
+        "items": []
+      }
+    ],
+    "faq": [
+      { "q": "How much does it cost to develop a fleet management app?", "a": "The cost depends on the app\u2019s complexity, features, and integrations. A simple delivery tracking app may cost less, while a full-scale fleet management platform with analytics, route optimization, and multi-user dashboards will require a larger investment. We provide detailed estimates after understanding your requirements." },
+      { "q": "How long does it take to build a logistics app?", "a": "Most fleet management apps take between 8 to 20 weeks to design, develop, and test. Timelines vary based on project scope, custom integrations, and feedback cycles. We follow an agile approach to ensure you start seeing results early." },
+      { "q": "Can you integrate the app with my existing ERP or CRM?", "a": "Yes. We specialize in connecting logistics systems with popular ERPs, CRMs, and third-party platforms like SAP, Salesforce, Zoho, or any custom-built system you\u2019re using. This keeps your data connected and workflows efficient." },
+      { "q": "Do you offer post-launch maintenance and updates?", "a": "Absolutely. Our partnership doesn\u2019t end with deployment. We provide continuous support, performance monitoring, and feature upgrades to keep your logistics app secure and up-to-date." },
+      { "q": "Will my fleet management app work across devices?", "a": "Yes. All our solutions are built to work seamlessly on iOS, Android, and web platforms. Whether it\u2019s for drivers on the road or managers in the office, your team can access data anytime, anywhere." },
+      { "q": "How secure is my fleet management data?", "a": "We follow best practices for data security and compliance, including data encryption, role-based access control, and secure APIs. Your business and customer data stay protected at every stage." },
+      { "q": "Can you help me scale the app later?", "a": "Yes. We build every solution with scalability in mind. As your operations grow, we can expand your app\u2019s capacity, add modules, and integrate new technologies without disrupting performance." },
+      { "q": "Do you build white-label fleet solutions?", "a": "Yes, if you\u2019re a startup or SaaS provider looking to launch a white-label product for fleet management clients, we can create a fully customizable solution that aligns with your brand." }
+    ],
+    "stats": [
+      { "value": "120+", "label": "Products Shipped" },
+      { "value": "20+", "label": "Fleet Apps" },
+      { "value": "99.9%", "label": "Uptime" },
+      { "value": "98%", "label": "Client Retention" }
+    ],
+    "testimonials": []
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "slug": "product-engineering-development-services",
+  "url": "/product-engineering-development-services/",
+  "category": "Software Development",
+  "metadata": {
+    "title": "Product Engineering and Services | Brilworks",
+    "description": "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
+    "canonical": "{NEXT_PUBLIC_BASE_URL}product-engineering-development-services/",
+    "ogImage": "{NEXT_PUBLIC_BASE_URL}images/product-engineering-banner.webp",
+    "ogTitle": "Product Engineering and Services",
+    "ogDescription": "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
+    "twitterTitle": "Product Engineering and Services",
+    "twitterDescription": "Transform ideas into market-ready products with Brilworks' product engineering expertise. We deliver innovative, user-centric solutions that drive business growth and customer satisfaction.",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "locale": "en-US",
+    "type": "website"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Product Engineering & Development Service",
+      "subheadline": "From concept to creation, we partner with you throughout your engineering product development journey. Are you looking for a reliable partner to navigate the complexities of product engineering and development? Our team of experts brings innovative solutions to every stage.",
+      "imageSrc": "/images/v2/product-engineering-banner.webp",
+      "ctas": [
+        { "label": "Get Free Consultation", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Build High-Performance Products with Our Product Engineering Services",
+        "subtitle": "We combine cutting-edge technology with a deep understanding of user needs to deliver exceptional solutions that push boundaries and leave a lasting impression. Let's craft an innovative product that stands out in a crowded marketplace.",
+        "buttonText": "Let's Discuss",
+        "darkBackground": false
+      },
+      {
+        "type": "services",
+        "title": "Our Product Development Services",
+        "items": [
+          {
+            "title": "Product Conceptualization and Ideation",
+            "description": "Innovation is exciting, but the journey from concept to creation can be complex. We'll partner with you to transform your vision into a clear, actionable plan. We analyze technical feasibility and market trends, ensuring your product is viable and successful in the long run.",
+            "imageSrc": "/images/v2/product-conceptualization-ideation.webp",
+            "imageAlt": "Product Conceptualization img"
+          },
+          {
+            "title": "Product Design and Engineering",
+            "description": "We combine user-centric design with robust engineering to create intuitive, scalable, and future-proof software solutions. Our expert designers and engineers collaborate seamlessly to bridge the gap between imagination and innovation.",
+            "imageSrc": "/images/v2/product-design-engineering.webp",
+            "imageAlt": "Product Design img"
+          },
+          {
+            "title": "Quality Assurance and Testing",
+            "description": "Ship with confidence.  We go beyond functionality testing, ensuring exceptional performance, security, and user experience. Our QA and Testing services meticulously examine your software, identifying and eliminating bugs.",
+            "imageSrc": "/images/v2/quality-assurance-testing.webp",
+            "imageAlt": "Quality Assurance img"
+          },
+          {
+            "title": "UI/UX development services",
+            "description": "Don't just build software, create unforgettable experiences. Our UI/UX design alchemists transform ideas into intuitive interfaces and captivating user journeys. We stay ahead of design trends, crafting UIs that are not only beautiful but scalable and adaptable.",
+            "imageSrc": "/images/v2/ux-development-services.webp",
+            "imageAlt": "UI/UX development img"
+          },
+          {
+            "title": "Application development services",
+            "description": "From concept to creation, we're with you every step of the way. We collaborate closely with you to understand your vision, translate it into a concrete plan, and deliver a final product that exceeds expectations.",
+            "imageSrc": "/images/v2/application-development-services.webp",
+            "imageAlt": "Application development img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks?",
+        "items": [
+          {
+            "title": "Expert Team",
+            "icon": "/images/v2/extensive-pool.svg",
+            "description": "Skilled engineers with a wealth of experience to every project, ensuring successful product development from concept to launch."
+          },
+          {
+            "title": "Scalable Solutions",
+            "icon": "/images/v2/fi_8109512.svg",
+            "description": "We build products that can grow with your business. Our solutions are designed to be adaptable and integrate seamlessly with future needs."
+          },
+          {
+            "title": "Agile Approach",
+            "icon": "/images/v2/fi_4288807.svg",
+            "description": "We use a flexible, iterative development process to adapt to your needs and deliver high-quality results quickly."
+          },
+          {
+            "title": "On-Time Delivery",
+            "icon": "/images/v2/fi_2612924.svg",
+            "description": "Our efficient processes and clear communication ensure your project is delivered on time and within budget."
+          },
+          {
+            "title": "Quality Focus",
+            "icon": "/images/v2/fi_10227466.svg",
+            "description": "We are committed to delivering exceptional products. Our rigorous testing processes ensure your product is reliable, bug-free, and exceeds expectations."
+          },
+          {
+            "title": "Transparent Communication",
+            "icon": "/images/v2/live-chat-icon.svg",
+            "description": "We believe in open communication throughout the development process. You'll always be informed and involved in every step of the product's journey."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "eyebrow": "Recognition",
+        "title": "We're Pleased to Share Some of the Honors",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms · 2025–26" },
+          { "title": "Global Award Spring", "org": "Clutch · 2025" },
+          { "title": "Global Award Fall", "org": "Clutch · 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Leverage our expertise in product engineering services to optimize your product's performance.",
+        "subtitle": "Get a free consultation to see how our expertise can bring your product vision to life.",
+        "buttonText": "Contact Us Now"
+      },
+      {
+        "type": "industriesWeServe",
+        "eyebrow": "Industries We Serve",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects · HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ],
+        "links": [
+          { "text": "+9 more industries we have shipped in →", "href": "/industry/" },
+          { "text": "Tell us your industry →", "href": "/contact-us/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What is the difference between product development and product engineering?",
+            "a": "Product development focuses on the big picture, like ideation and planning. Product engineering takes those ideas and turns them into a tangible product through coding, design, and testing."
+          },
+          {
+            "q": "What types of product engineering services do you offer?",
+            "a": "We offer a full range of services, from product conceptualization and prototyping to design, engineering, quality assurance, and post-launch support."
+          },
+          {
+            "q": "How can your product engineering services benefit startups?",
+            "a": "We provide a one-stop shop for startups, offering rapid prototyping, agile development, and cost-effective solutions to bring your innovative ideas to market quickly."
+          },
+          {
+            "q": "Do you offer UI/UX design services as part of your product development process?",
+            "a": "Absolutely! We have a dedicated team of UI/UX designers who ensure your product boasts intuitive interfaces and a captivating user experience."
+          },
+          {
+            "q": "How do you ensure the quality and security of the products you develop?",
+            "a": "We employ rigorous testing practices that go beyond functionality, focusing on performance, security, and user experience.  Our goal is to deliver bug-free, reliable products you can trust."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is the difference between product development and product engineering?",
+        "a": "Product development focuses on the big picture, like ideation and planning. Product engineering takes those ideas and turns them into a tangible product through coding, design, and testing."
+      },
+      {
+        "q": "What types of product engineering services do you offer?",
+        "a": "We offer a full range of services, from product conceptualization and prototyping to design, engineering, quality assurance, and post-launch support."
+      },
+      {
+        "q": "How can your product engineering services benefit startups?",
+        "a": "We provide a one-stop shop for startups, offering rapid prototyping, agile development, and cost-effective solutions to bring your innovative ideas to market quickly."
+      },
+      {
+        "q": "Do you offer UI/UX design services as part of your product development process?",
+        "a": "Absolutely! We have a dedicated team of UI/UX designers who ensure your product boasts intuitive interfaces and a captivating user experience."
+      },
+      {
+        "q": "How do you ensure the quality and security of the products you develop?",
+        "a": "We employ rigorous testing practices that go beyond functionality, focusing on performance, security, and user experience.  Our goal is to deliver bug-free, reliable products you can trust."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack",
+        "duration": "4+ year relationship",
+        "metric": "Platform scaled to 10K+ active users"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin",
+        "duration": "2+ year relationship",
+        "metric": "MVP delivered in under 4 weeks"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform",
+        "duration": "3+ year relationship",
+        "metric": "3.2K artists onboarded in first 60 days"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride",
+        "duration": "2+ year relationship",
+        "metric": "Shipped 3 major releases on schedule"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo",
+        "duration": "3+ year relationship",
+        "metric": "99.9% API uptime achieved"
+      }
+    ]
+  }
+}

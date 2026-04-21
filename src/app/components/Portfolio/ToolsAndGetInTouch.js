@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-// import "@splidejs/splide/dist/css/splide.min.css";
+import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import Heading from "../HTMLComponents/Heading";

@@ -8,12 +8,15 @@ import React from "react";
 import MenuItem from "./MenuItem";
 
 const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
+  const isCompact = true;
+
   return (
     <Menu
-      placement="bottom"
+      placement={isCompact ? "bottom-start" : "bottom"}
       dismiss={{ itemPress: true, ancestorScroll: true }}
       allowHover={true}
-      lockScroll
+      lockScroll={false}
+      offset={isCompact ? 15 : 0}
     >
       <MenuHandler>
         <MaterialMenuItem
@@ -27,7 +30,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             }}
             className="group/item flex items-center header_font hover:text-themeColor"
           >
-            <p className="!mb-0 group-hover/item:text-themeColor uppercase font-normal">
+            <p className="!mb-0 group-hover/item:text-themeColor font-normal">
               {name}
             </p>
             <svg
@@ -50,38 +53,52 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
       </MenuHandler>
       <MenuList
         dismissible
-        className="flex items-start z-10 w-full menu-shadow outline-none overflow-y-auto rounded-none bg-[#f2f5f7] !top-[70px]"
+        className={`z-[9999] outline-none bg-white border border-[#e5e7eb] !p-0 ${
+          isCompact
+            ? "!w-auto rounded-xl shadow-lg"
+            : "w-full rounded-none border-t menu-shadow"
+        }`}
       >
-        <div className="flex xl:ml-[15%] p-5 outline-none w-full container max-w-[1280px] px-10 pl-20 mx-auto">
+        <div
+          className={`outline-none ${
+            isCompact
+              ? "p-6"
+              : "container max-w-[1280px] mx-auto md:px-10 px-5 py-8"
+          }`}
+        >
           {heading && (
-            <div className={`font-semibold text-base w-40 pt-2 font-Figtree`}>
+            <div className="font-bold text-xs tracking-[0.1em] uppercase text-[#6b7280] !mb-6">
               {heading}
             </div>
           )}
           <div
-            className={`mega-menu-items-group p-3 pl-16 ${
-              heading ? "border-l-2" : ""
+            className={`flex gap-y-8 ${
+              isCompact ? "gap-x-12" : "gap-x-16 justify-center flex-wrap"
             }`}
           >
             {menuItems.map((mainSection) => (
-              <div key={mainSection?.name} className="flex flex-col gap-3">
-                <span
-                  className={`font-semibold text-base break-words font-Figtree`}
-                >
-                  {mainSection?.name}
-                </span>
-                <div className="flex flex-col">
+              <div
+                key={mainSection?.name || Math.random()}
+                className="flex flex-col min-w-[140px]"
+              >
+                {mainSection?.name && (
+                  <span className="font-bold text-sm text-[#212121] tracking-[-0.2px] !mb-3">
+                    {mainSection.name}
+                  </span>
+                )}
+                <div className="flex flex-col gap-0.5">
                   {mainSection?.subSections
                     .filter((subSection) => !subSection?.hideInHeader)
                     .map((subSection) => (
                       <MaterialMenuItem
                         key={subSection?.name}
-                        className="mega_menu_txt w-fit !p-0"
+                        className="!p-0 !bg-transparent hover:!bg-transparent"
                       >
                         <MenuItem
                           name={subSection?.name}
                           path={subSection?.path}
                           onClick={() => setOpenNav(false)}
+                          className="text-[15px] text-[#6b7280] hover:text-themeColor transition-colors py-1.5 block"
                         />
                       </MaterialMenuItem>
                     ))}

@@ -1,262 +1,120 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import StoryblokClient from "storyblok-js-client";
-import Heading from "../HTMLComponents/Heading";
-import ButtonV2 from "../Common/ButtonV2";
-import { usePathname } from "next/navigation";
 import { scrollEffect } from "../lib/commonFunction";
 import { portfolioDynamicItems } from "../lib/constants";
 
-const Storyblok = new StoryblokClient({
-  accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
-});
+const gradients = [
+  "bg-gradient-to-br from-[#667eea] to-[#764ba2]",
+  "bg-gradient-to-br from-[#f093fb] to-[#f5576c]",
+  "bg-gradient-to-br from-[#4facfe] to-[#00f2fe]",
+  "bg-gradient-to-br from-[#43e97b] to-[#38f9d7]",
+];
 
 const SeeingBelieving = ({
   title,
-  bgClass = "bg-SectionBG",
-  caseStudyToShow,
+  bgClass,
+  caseStudyToShow = 4,
   buttonText = "Explore all Case Studies",
 }) => {
-  const pathname = usePathname();
-
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", scrollEffect);
     };
   }, []);
 
-  // const [caseStudyData, setCaseStudyData] = useState();
-  // useEffect(() => {
-  //   Storyblok.get("cdn/stories/", {
-  //     starts_with: "portfolio/",
-  //     per_page: 100,
-  //     version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-  //   })
-  //     .then((response) => {
-  //       setCaseStudyData(response.data?.stories);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
-
-  // const staticPortfolioList =
-  //   caseStudyData?.length &&
-  //   caseStudyData.map((data) => {
-  //     console.log("object", data);
-  //     return {
-  //       title: data?.content?.title,
-  //       link: `/${data?.full_slug}/`,
-  //       description: data?.content?.description,
-  //       image: data?.content?.images?.[0]?.filename,
-  //       alt: data?.content?.images?.[0]?.meta_data?.alt,
-  //       industry: data?.content?.industry,
-  //       technology: data?.content?.technology,
-  //     };
-  //   });
-
-  const fintechPortfolio = [
-    {
-      title:
-        "AI-Driven Stock Prediction Platform to Provide Traders with Insights",
-      link: "/portfolio/ai-driven-stock-prediction-platform-to-provide-traders-with-insights/",
-      description:
-        "Developing a mobile app for an ultimate AI stock prediction platform, allowing users to trade based on data-driven insights.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/terrago-1760359156664.webp`,
-      alt: "Fintech App",
-      industry: "Fintech",
-      technology: ["React Native", "Java", "MySQL"],
-    },
-    {
-      title:
-        "A Powerful Inventory Management App to Reduce Order Processing Time",
-      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
-      description:
-        "Developing a mobile inventory management solution for a leading seat manufacturer.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
-      alt: "E-commerce App",
-      industry: "E-Commerce",
-      technology: ["ReactJS", "NodeJS", "MongoDB"],
-    },
-  ];
-  const healthcarePortfolio = [
-    {
-      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
-      link: "/portfolio/healthcare-mobile-app/",
-      description:
-        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
-      industry: "Healthcare",
-      technology: ["React Native"],
-    },
-    {
-      title: "Revolutionizing Health with a Smart, Data-Driven Fitness App",
-      link: "/portfolio/mobile-fitness-app/",
-      description:
-        "We built a feature-rich fitness app that combines real-time performance tracking, personalized plans, and expert insights to help users achieve their health goals seamlessly.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/fitnest-app-mockup-1759749065112.webp`,
-      industry: "Healthcare",
-      technology: ["iOS", "Android", "React Native"],
-    },
-  ];
-  const hrPortfolio = [
-    {
-      title: "Ultimate Recruitment Referral Platform for Streamlined Hiring",
-      link: "/portfolio/an-ultimate-recruitment-referral-platform-to-streamline-recruitment-efforts/",
-      description:
-        "Transforming a job referral platform with our expertise by developing a powerful referral program management solution for Cruit. ",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/talentbase-1760359139239.webp`,
-      industry: "Human Resource",
-      technology: ["NextJS", "NodeJS", "MongoDB"],
-    },
-    {
-      title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
-      link: "/portfolio/healthcare-mobile-app/",
-      description:
-        "We built a healthcare mobile app focused on improving patient outcomes with telemedicine, AI-driven health tracking, and real-time doctor-patient communication, making healthcare more accessible and engaging.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/exora-banner-1759756411673.webp`,
-      industry: "Healthcare",
-      technology: ["React Native"],
-    },
-  ];
-  const manufacturingPortfolio = [
-    {
-      title: "Innovative Platform for Comprehensive Supply Chain Management",
-      link: "/portfolio/innovative-platform-for-comprehensive-supply-chain-management/",
-      description:
-        "Building an order management platform to transform operations and improve efficiency in the brick manufacturing industry. ",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/logistic-app-1760359147499.webp`,
-      industry: "Manufacturing",
-      technology: ["ReactJS", "Java", "MySql"],
-    },
-    {
-      title:
-        "A Powerful Inventory Management App to Reduce Order Processing Time",
-      link: "/portfolio/a-powerful-inventory-management-app-to-reduce-order-processing-time/",
-      description:
-        "Developing a mobile inventory management solution for a leading seat manufacturer.",
-      image: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/inventory-management-1760359134476.webp`,
-      industry: "E-Commerce",
-      technology: ["ReactJS", "NodeJS", "MongoDB"],
-    },
-  ];
-
-  const caseStudyData =
-    pathname === "/industry/fintech-software-development/"
-      ? fintechPortfolio
-      : pathname === "/industry/hr-software-development/"
-      ? hrPortfolio
-      : pathname === "/industry/manufacturing-software-development-services/"
-      ? manufacturingPortfolio
-      : pathname === "/industry/healthcare-software-development/"
-      ? healthcarePortfolio
-      : portfolioDynamicItems;
+  const caseStudies = portfolioDynamicItems?.slice(0, caseStudyToShow);
 
   return (
-    <div className={bgClass}>
-      <div className="container mx-auto max-w-[1280px] main-section-padding reveal">
-        <div className="flex items-center justify-between">
-          <Heading
-            type="h2"
-            className="lg:!text-[34px] md:!text-3xl !text-2xl"
-            text={title || "Because Seeing is Believing"}
-          />
-          <div>
-            <Link
-              href="/portfolio/"
-              className="md:text-xl text-lg font-medium text-themeColor hover:!underline cursor-pointer"
-            >
-              View All Work
-            </Link>
-          </div>
+    <div className="bg-white">
+      <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
+        {/* Section Header */}
+        <div className="mb-14 reveal">
+          <span className="text-[11px] font-bold tracking-[0.12em] uppercase block mb-3 text-themeColor">
+            {title || "Because Seeing is Believing"}
+          </span>
+          <h2 className="text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1px] leading-[1.1] text-[#0d0f1a]">
+            Work That Speaks For Itself
+          </h2>
+          <p className="text-[17px] text-[#6b7280] mt-3 max-w-[560px]">
+            Named clients. Verified outcomes. Not just pretty screenshots.
+          </p>
         </div>
-        <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-10 lg:pt-10 md:pt-8 pt-5">
-          {caseStudyData?.length &&
-            caseStudyData
-              ?.filter(({ link }) => !pathname?.includes(link))
-              ?.slice(0, caseStudyToShow)
-              ?.map(
-                (
-                  { title, link, description, image, technology, industry },
-                  index
-                ) => {
-                  return (
-                    <div
-                      className={`min-w-[300px] overflow-hidden h-full rounded-t-2xl w-fit flex flex-col ${
-                        index % 2 ? "md:mt-18 lg:mt-28 mt-0" : ""
-                      }`}
-                      key={index}
-                    >
-                      <Link href={`${link}`} prefetch={true}>
-                        <div className="relative group">
-                          <Image
-                            className="rounded-2xl lg:max-h-[400px] transition-transform duration-300 ease-in-out transform group-hover:scale-105"
-                            src={image}
-                            alt={`casestudy-${index}`}
-                            width="302"
-                            height="240"
-                            sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                          />
-                          <Image
-                            className="w-[56px] absolute bottom-3 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            src="/images/v2/read-icon.svg"
-                            alt="Read Icon"
-                            width="56"
-                            height="56"
-                          />
-                        </div>
-                        <div className="flex flex-col justify-between flex-1 py-4 items-start">
-                          <div className="w-full flex items-center justify-between">
-                            <Heading
-                              className="md:!text-xl !text-lg font-medium"
-                              type="h3"
-                              text={title}
-                            />
-                            <div className="md:text-xl text-lg font-bold text-themeColor"></div>
-                          </div>
-                          <p className="text-colorGray md:text-lg text-base">
-                            {description?.split(" ")?.length > 31
-                              ? description
-                                  ?.split(" ")
-                                  ?.slice(0, 25)
-                                  ?.join(" ") + "..."
-                              : description}
-                          </p>
-                        </div>
-                      </Link>
 
-                      <div className="flex md:flex-row flex-col md:items-center justify-between items-start gap-2">
-                        <p className="bg-clip-text text-transparent bg-theme-gradient md:text-xl text-lg font-medium uppercase">
-                          {industry}
-                        </p>
-                        <div className="flex items-center md:gap-2.5 gap-1.5">
-                          {technology.map((data) => (
-                            <div
-                              className="bg-white md:px-4 px-2.5 py-1.5 md:py-[9px] border rounded-md"
-                              key={data?.[0]}
-                            >
-                              {data}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                }
-              )}
+        {/* Cases Grid */}
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+          {caseStudies?.map((item, index) => (
+            <Link
+              href={item.link}
+              key={index}
+              className="group border border-[#e5e7eb] rounded-2xl overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_64px_rgba(0,0,0,0.1)] cursor-pointer reveal"
+            >
+              {/* Image Area */}
+              <div
+                className={`h-[200px] flex items-center justify-center relative overflow-hidden ${gradients[index % gradients.length]}`}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.alt || `case-study-${index}`}
+                  fill
+                  className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+
+              {/* Card Body */}
+              <div className="p-6">
+                {/* Tags */}
+                <div className="flex gap-2 mb-3">
+                  {item.technology?.slice(0, 2).map((tech) => (
+                    <span
+                      key={tech}
+                      className="font-Figtree text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#e8f0fd] text-themeColor"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  <span className="font-Figtree text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5 rounded-full bg-[#d1fae5] text-[#065f46]">
+                    {item.industry}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-Figtree text-[17px] font-bold text-[#0d0f1a] leading-[1.3] mb-2">
+                  {item.title}
+                </h3>
+
+                {/* Client */}
+                {item.clientName && (
+                  <p className="font-Figtree text-[13px] text-[#6b7280] mb-3">
+                    {item.clientName}
+                  </p>
+                )}
+
+                {/* Metric */}
+                {item.metric && (
+                  <div className="flex items-center gap-2 bg-[#d1fae5] rounded-lg px-3.5 py-2.5">
+                    <span className="font-Figtree text-[22px] font-extrabold text-[#065f46]">
+                      {item.metric.split(" ")[0]}
+                    </span>
+                    <span className="font-Figtree text-xs text-[#065f46] font-medium">
+                      {item.metric.split(" ").slice(1).join(" ")}
+                    </span>
+                  </div>
+                )}
+
+                {/* Link */}
+                <div className="flex items-center gap-1.5 text-[13px] font-semibold text-themeColor mt-4 group-hover:gap-2.5 transition-all duration-200">
+                  View case study →
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-        <div className="flex justify-center">
-          <ButtonV2
-            redirect="/portfolio/"
-            label={buttonText}
-            className="hover:text-themeColor w-fit lg:mt-10 mt-8"
-          />
-        </div>
+
       </div>
     </div>
   );

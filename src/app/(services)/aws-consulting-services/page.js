@@ -32,11 +32,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="!bg-colorWhite">
-      <AWSService />
-    </div>
-  );
+  return <AWSService />;
 };
 
 export default page;

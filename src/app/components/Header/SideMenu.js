@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import {
   Accordion,
   AccordionBody,
@@ -11,26 +11,25 @@ import {
 import { Icon } from "../lib/commonFunction";
 import { menuItems } from "../lib/constants";
 import MenuItem from "./MenuItem";
+import ButtonV2 from "../Common/ButtonV2";
 
 const SideMenu = ({ open, close }) => {
   const [openSection, setOpenSection] = React.useState(0);
 
   const handleOpen = (value) => {
-    if (value !== openSection) {
-      setOpenSection(open === value ? 0 : value);
-    } else {
-      setOpenSection(0);
-    }
+    setOpenSection(openSection === value ? 0 : value);
   };
+
+  const sideMenuItems = menuItems.filter((item) => !item.hideInSideMenu);
 
   const megaMenuNavList = (
     <ul className="pt-4 flex flex-col md:mb-0 md:mt-0 items-left">
-      {menuItems.map((menuItem, index) => (
+      {sideMenuItems.map((menuItem, index) => (
         <li key={menuItem.name}>
           {!menuItem?.isMegaMenu ? (
             <div
               className={`menu_txt1 ${
-                menuItem?.path === "/contact-us/" ? "!border-b-0" : ""
+                index === sideMenuItems.length - 1 ? "!border-b-0" : ""
               }`}
             >
               <MenuItem
@@ -61,10 +60,10 @@ const SideMenu = ({ open, close }) => {
               >
                 {menuItem?.menuItems?.map((subMenu) => (
                   <div
-                    key={subMenu.name}
+                    key={subMenu.name || Math.random()}
                     className="menu_mob_flex mega-menu-content flex flex-col gap-3 !items-start"
                   >
-                    <p>{subMenu.name}</p>
+                    {subMenu.name && <p>{subMenu.name}</p>}
                     <div className="flex flex-col menu_mob_flex mega-menu-content !items-start gap-2">
                       {subMenu.subSections.map((subMenuItem) => (
                         <MenuItem
@@ -91,13 +90,13 @@ const SideMenu = ({ open, close }) => {
       open={open}
       placement="right"
       size={"100vw"}
-      className="overflow-y-scroll z-[11] bg-white"
+      className="overflow-y-scroll z-[9999] bg-white"
       onClose={close}
       transition={{
         duration: 1,
       }}
       overlayProps={{
-        className: "bg-transparent",
+        className: "!bg-black/50 z-[9998]",
       }}
     >
       <IconButton
@@ -122,46 +121,44 @@ const SideMenu = ({ open, close }) => {
         </svg>
       </IconButton>
       <div className="w-[88%] mx-auto md:pt-8 py-4">
-        <div className="flex md:flex-row flex-col md:gap-12 lg:gap-20 gap-8">
-          <div className="basis-3/5">{megaMenuNavList}</div>
-          <div className="basis-2/5">
-            <div className="header_img1 py-4 hidden-xs">
-              <Image
-                className="block md:hidden"
-                src="/images/blog-2.webp"
-                alt="fintech"
-                width="250"
-                height="150"
-                sizes="(max-width: 767px) 100vw, 250px"
-              />
-              <Image
-                className="hidden md:block"
-                src="/images/blog-2.webp"
-                alt="fintech"
-                width="491"
-                height="276"
-                sizes="(max-width: 767px) 100vw, 491px"
-              />
-            </div>
-            <div className="header_img1">
-              <Image
-                className="block md:hidden"
-                src="/images/blog-1.webp"
-                alt="Healthcare"
-                width="250"
-                height="150"
-                sizes="(max-width: 767px) 100vw, 250px"
-              />
-              <Image
-                className="hidden md:block"
-                src="/images/blog-1.webp"
-                alt="Healthcare"
-                width="491"
-                height="276"
-                sizes="(max-width: 767px) 100vw, 491px"
-              />
-            </div>
-          </div>
+        {/* CTA Button at top */}
+        <div className="pt-10 pb-2">
+          <ButtonV2
+            label="Get Free Estimate"
+            size="large"
+            className="w-full justify-center"
+            redirect="/contact-us/"
+            onClick={close}
+          />
+        </div>
+
+        <div className="flex md:flex-row flex-col md:gap-12 lg:gap-20 gap-4">
+          <div className="w-full">{megaMenuNavList}</div>
+        </div>
+
+        {/* Footer links */}
+        <div className="border-t border-[#e5e7eb] mt-6 pt-6 flex flex-wrap gap-x-6 gap-y-2">
+          <Link
+            href="/our-process/"
+            onClick={close}
+            className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
+          >
+            Our Process
+          </Link>
+          <Link
+            href="/career/"
+            onClick={close}
+            className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
+          >
+            Career
+          </Link>
+          <Link
+            href="/contact-us/"
+            onClick={close}
+            className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </Drawer>

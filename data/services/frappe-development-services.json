@@ -1,0 +1,181 @@
+{
+  "slug": "frappe-development-services",
+  "url": "/frappe-development-services/",
+  "category": "Low-Code / No-Code",
+  "metadata": {
+    "title": "Frappe Development Services | Brilworks",
+    "description": "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
+    "canonical": "{BASE_URL}frappe-development-services/",
+    "ogImage": "{BASE_URL}images/frappe-banner.webp",
+    "ogTitle": "Frappe Development Services",
+    "ogDescription": "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity."
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "A Trusted Frappe Development Company",
+      "subheadline": "At Brilworks, we specialize in creating custom Frappe solutions for small and medium-sized businesses. Our experienced team is dedicated to helping startups and SMBs thrive by providing top-notch development services.",
+      "ctas": [
+        { "label": "Consult our expert" }
+      ],
+      "image": "/images/v2/frapee-service-banner.webp"
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Frappe Development Solutions by Brilworks",
+        "subtitle": "Missing a Frappe feature? We'll plug the gap. We're the architects you've been searching for \u2013 from customizing existing Frappe applications to developing bespoke solutions from scratch, we have the expertise to meet your unique requirements.",
+        "items": [
+          { "label": "Let\u2019s Discuss" }
+        ]
+      },
+      {
+        "type": "services",
+        "title": "Frappe Development Services We Offer",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Frappe Application Development",
+            "description": "Our services cover everything you need for Frappe application development. This includes analyzing your needs, designing custom apps, testing them thoroughly, deploying them smoothly, and providing ongoing support. We'll work closely with you to make sure everything fits your needs perfectly, giving your business efficient and reliable solutions.",
+            "image": "/images/v2/mobile-application-development.webp",
+            "imageAlt": "Custom Frappe Application Development img"
+          },
+          {
+            "title": "Frappe ERP Customization",
+            "description": "Our experts then customize and configure your ERP to match your unique workflows and data requirements. If needed, we'll securely migrate your data from your existing system. Finally, we ensure that your tailored ERP is both secure and optimized for top performance, guaranteeing smooth operations for your business.",
+            "image": "/images/v2/frappe-erp-customization.webp",
+            "imageAlt": "Frappe ERP customization img"
+          },
+          {
+            "title": "Frappe Module Development",
+            "description": "Our comprehensive services start with a Functionality Gap Analysis, where we identify any missing features in your Frappe setup. Our skilled developers then design and develop a custom Frappe module to fill these gaps and meet your specific needs.",
+            "image": "/images/v2/frappe-module-development.webp",
+            "imageAlt": "Frappe Module Dev img"
+          },
+          {
+            "title": "Frappe Integration Services",
+            "description": "Our team focuses on Seamless Integration Development, building secure and effective connections between your Frappe system and chosen applications. We handle Data Mapping & Synchronization to guarantee seamless data flow, eradicating redundancy and silos.",
+            "image": "/images/v2/frappe-integration-services.webp",
+            "imageAlt": "Frappe Integration img"
+          },
+          {
+            "title": "Frappe Support and Maintenance",
+            "description": "Our services include proactive System Monitoring & Updates to maintain performance and security of your Frappe system, with timely implementation of updates. For any issues, our team offers prompt Bug Fixes & Troubleshooting to ensure smooth operation.",
+            "image": "/images/v2/maintenance.webp",
+            "imageAlt": "Frappe Support and Maintenance mg"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks for Frappe Development?",
+        "subtitle": "",
+        "items": [
+          {
+            "title": "Develop custom solutions",
+            "icon": "/images/v2/fi_11448887.svg",
+            "description": "We build custom applications tailored precisely to your workflows, giving your business a leg up."
+          },
+          {
+            "title": "Expertise",
+            "icon": "/images/v2/fi_9789607.svg",
+            "description": "Our team comprises expert Frappe developers with extensive experience in delivering high-quality solutions."
+          },
+          {
+            "title": "Frappe integrations",
+            "icon": "/images/v2/fi_4618560.svg",
+            "description": "We will break down data silos and streamline information flow by integrating your Frappe system with other applications."
+          },
+          {
+            "title": "Client-Centric Approach",
+            "icon": "/images/v2/fi_16911996.svg",
+            "description": "We prioritize client satisfaction and work closely with you to ensure that our solutions meet your expectations."
+          },
+          {
+            "title": "Round-the-clock support",
+            "icon": "/images/v2/fi_2612924.svg",
+            "description": "We'll handle ongoing Frappe support and maintenance so you can focus on running your business with peace of mind."
+          },
+          {
+            "title": "Personalized Attention",
+            "icon": "/images/v2/fi_2684839.svg",
+            "description": "Receive personalized attention from our dedicated support team, who are committed to understanding your specific needs and providing tailored solutions to meet them."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "subtitle": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Ready to take your business to the next level with our Frappe development services?",
+        "subtitle": "",
+        "items": [ { "label": "Talk to Our Expert" } ]
+      },
+      {
+        "type": "industries",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Industries We Serve",
+        "description": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects \u00b7 HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "title": "What Our Clients Say",
+        "subtitle": "Our Clients Simply Love Our Work",
+        "description": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+          { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+          { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+          { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+          { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+        ]
+      },
+      { "type": "dynamic-content", "note": "SeeingBelieving section (CMS/static marketing block rendered from shared component)" },
+      { "type": "dynamic-content", "note": "HomePageBlogs section (CMS-driven blog list from Storyblok)" },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "subtitle": "",
+        "items": [
+          { "q": "What is Frappe?", "a": "Frappe is an open-source framework used for rapid application development, particularly for building ERP (Enterprise Resource Planning) systems." },
+          { "q": "Can you customize Frappe applications to suit our specific business requirements?", "a": "Yes, we specialize in customizing Frappe application development to align with our clients' businesses' unique needs." },
+          { "q": "How do you ensure the security of Frappe applications?", "a": "We follow best practices in software development and employ robust security measures to safeguard our applications against potential threats and vulnerabilities." },
+          { "q": "What kind of support do you offer after the development phase?", "a": "We provide continuous support and maintenance services to ensure the smooth functioning of Frappe applications post-development. Our team is round-the-clock and available to address any issues or concerns that may arise." }
+        ]
+      }
+    ],
+    "faq": [
+      { "q": "What is Frappe?", "a": "Frappe is an open-source framework used for rapid application development, particularly for building ERP (Enterprise Resource Planning) systems." },
+      { "q": "Can you customize Frappe applications to suit our specific business requirements?", "a": "Yes, we specialize in customizing Frappe application development to align with our clients' businesses' unique needs." },
+      { "q": "How do you ensure the security of Frappe applications?", "a": "We follow best practices in software development and employ robust security measures to safeguard our applications against potential threats and vulnerabilities." },
+      { "q": "What kind of support do you offer after the development phase?", "a": "We provide continuous support and maintenance services to ensure the smooth functioning of Frappe applications post-development. Our team is round-the-clock and available to address any issues or concerns that may arise." }
+    ],
+    "stats": [],
+    "testimonials": [
+      { "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.", "author": "David Velasquez", "position": "CEO, Rastrack", "duration": "4+ year relationship", "metric": "Platform scaled to 10K+ active users" },
+      { "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.", "author": "Liz Bullen", "position": "Founder, Lyfecoin", "duration": "2+ year relationship", "metric": "MVP delivered in under 4 weeks" },
+      { "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.", "author": "Orokii Team", "position": "Art Marketplace Platform", "duration": "3+ year relationship", "metric": "3.2K artists onboarded in first 60 days" },
+      { "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.", "author": "Edwin", "position": "Founder, Tekstride", "duration": "2+ year relationship", "metric": "Shipped 3 major releases on schedule" },
+      { "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.", "author": "Golan", "position": "Director of R&D, Trackimo", "duration": "3+ year relationship", "metric": "99.9% API uptime achieved" }
+    ]
+  }
+}

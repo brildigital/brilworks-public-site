@@ -21,8 +21,7 @@ export function scrollEffect() {
         entries.forEach(({ target, isIntersecting }) => {
           if (isIntersecting) {
             target.classList.add("active");
-          } else {
-            target.classList.remove("active");
+            _revealObserver.unobserve(target);
           }
         });
       },

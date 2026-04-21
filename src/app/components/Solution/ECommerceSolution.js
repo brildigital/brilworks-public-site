@@ -5,9 +5,17 @@ import { scrollEffect } from "../lib/commonFunction";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import CTASection from "../Common/CTASection";
-import TechStackWeWorkWith from "../Technologies/TechStackWeWorkWith";
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
+  { ssr: false }
+);
 import { faReact, faPhp } from "@fortawesome/free-brands-svg-icons";
 import SolutionCostAndTimeLine from "./SolutionCostAndTimeLine";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
+import { ShieldCheck, ShoppingBag, DollarSign, Lock } from "lucide-react";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const MultipleKeyValueWithBG = dynamic(
   () => import("../Common/MultipleKeyValueWithBG")
@@ -23,6 +31,13 @@ const SolutionEngagementAndHowCanStart = dynamic(
 );
 
 const ECommerceSolution = () => {
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: ShoppingBag, label: "50+ E-Commerce Apps" },
+    { icon: DollarSign, label: "$10M+ Revenue Generated" },
+    { icon: Lock, label: "PCI DSS & GDPR Ready" },
+  ];
+
   const eCommerceService = {
     title: "Our Comprehensive eCommerce App Development Services",
     desc: "We offer a full suite of services designed to power your growth in the competitive online marketplace:",
@@ -30,6 +45,7 @@ const ECommerceSolution = () => {
     servicesList: [
       {
         title: "Mobile and Web App Development",
+        iconSrc: "/images/v2/interactive-ui-icon.svg",
         value: "fintech-service1-1",
         description:
           "Crafting bespoke applications for iOS and Android, alongside responsive web solutions, to meet your unique business requirements and ensure increased engagement.",
@@ -38,6 +54,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "UI/UX Design and Development",
+        iconSrc: "/images/v2/developer-icon.svg",
         value: "fintech-service1-2",
         description:
           "Developing visually appealing and intuitive designs that provide seamless navigation, enhance user satisfaction, and set your application apart.",
@@ -46,6 +63,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "Platform-Specific Solutions",
+        iconSrc: "/images/v2/software-as-service-icon.svg",
         value: "fintech-service1-3",
         description:
           "Specialising in development for leading eCommerce platforms such as Magento, Shopify, WooCommerce, Adobe Commerce, BigCommerce, and Shopware, to build scalable and customisable online stores.",
@@ -54,6 +72,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "Advanced API Integrations",
+        iconSrc: "/images/v2/api-integration-icon.svg",
         value: "fintech-service1-4",
         description:
           "Seamlessly integrating third-party APIs for payment gateways, shipping, analytics, and other critical functionalities to streamline operations and enhance user convenience.",
@@ -62,6 +81,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "Strategic Consulting and Digital Transformation",
+        iconSrc: "/images/v2/consultant-icon.svg",
         value: "fintech-service1-5",
         description:
           "Providing advisory services to help elaborate on long-term eCommerce roadmaps, including headless commerce architecture, microservices, and AI-driven personalisation.",
@@ -71,6 +91,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "Backend and Frontend Development",
+        iconSrc: "/images/v2/cloud-based-icon.svg",
         value: "fintech-service1-6",
         description:
           "Building robust and unified digital experiences from the ground up, ensuring high security, data privacy, speed, and efficient inventory management.",
@@ -79,6 +100,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "Ongoing Maintenance and Support",
+        iconSrc: "/images/v2/ongoing-support-icon.svg",
         value: "fintech-service1-7",
         description:
           "Delivering continuous 24/7 support, timely updates, and performance monitoring to ensure your eCommerce application remains secure, stable, and up-to-date.",
@@ -273,19 +295,26 @@ const ECommerceSolution = () => {
     <>
       <SolutionHeroSection
         technologyText="E-Commerce App Development"
-        title={
-          <>
-            Elevate Your Online Retail: Custom
-            <br /> E-Commerce App Development
-          </>
-        }
+        title='Elevate Your Online Retail: Custom <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">E-Commerce App Development</span>'
         description="Revolutionise your digital presence with cutting-edge mobile and web solutions tailored for superior performance and growth. Our expert ecommerce app development services empower businesses to connect with customers seamlessly, driving conversions and fostering lasting brand loyalty."
         buttonText="Hire E-Commerce Developer"
         imageSrc="/images/v2/e-commerce-industry-banner.webp"
+        stats={[
+          { value: "120+", label: "Products Shipped" },
+          { value: "50+", label: "E-Commerce Apps" },
+          { value: "$10M+", label: "Revenue Generated" },
+          { value: "98%", label: "Client Retention" },
+        ]}
       />
+      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection
         sectionId="services-one"
         serviceData={eCommerceService}
+      />
+
+      <IndustryMidCTA
+        title="Ready to Build an E-Commerce App?"
+        description="Get a free consultation and project estimate. We respond within 24 hours."
       />
 
       <MultipleCardInGrid
@@ -306,16 +335,24 @@ const ECommerceSolution = () => {
       <MultipleKeyValueWithBG
         bgClass="bg-white"
         title="Why Should You Hire E-Commerce Developers from Brilworks?"
-        description="We offer next-gen fintech solutions, which allow you to embrace innovation, improve efficiency, and comply with regulations. Our fintech software developers are always ready to help develop innovative solutions that optimize your customers’ experience and better manage risk in the financial industry."
+        description="We offer next-gen fintech solutions, which allow you to embrace innovation, improve efficiency, and comply with regulations. Our fintech software developers are always ready to help develop innovative solutions that optimize your customers' experience and better manage risk in the financial industry."
         keyValueData={fintechExperienceShowCase}
       />
 
+      <ClientReviews />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm
-        title="How Can You Get Started?"
-        description="Ready to revolutionise your online retail presence? Connect with our eCommerce App Development experts today to discuss your vision and discover how a tailored solution can drive your business growth. Let's build your next success story together."
-      />
       <FintechFAQ />
+      <SolutionContactForm
+        title="Ready to Launch Your E-Commerce Store?"
+        description="Connect with our eCommerce experts to discuss your project requirements and get a detailed proposal within 48 hours."
+        submitLabel="Get My Free Estimate"
+        benefits={[
+          "Custom storefront tailored to your brand",
+          "PCI-DSS compliance built in",
+          "Scalable architecture for growth",
+          "24/7 post-launch support",
+        ]}
+      />
     </>
   );
 };

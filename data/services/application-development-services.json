@@ -1,0 +1,258 @@
+{
+  "slug": "application-development-services",
+  "url": "/application-development-services/",
+  "category": "Software Development",
+  "metadata": {
+    "title": "Application development Services | Brilworks",
+    "description": "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
+    "canonical": "/application-development-services/",
+    "ogImage": "/images/application-dev-banner.webp",
+    "ogTitle": "Application development Services",
+    "ogDescription": "Elevate your business with Brilworks' custom application development. We build innovative, scalable solutions tailored to your unique needs and long-term goals.",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "twitterSite": "@_Brilworks",
+    "twitterCard": "summary_large_image"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Application Development Services",
+      "subheadline": "We're a passionate team of software developers who help businesses turn innovative ideas into reality.  From concept to launch, we design, develop, and maintain custom software solutions that drive results.",
+      "image": "/images/v2/app-development-service-banner.webp",
+      "ctas": [
+        { "label": "Contact Us", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Your Innovation Partner in Cutting-Edge Development",
+        "description": "We're more than just developers. Our team of elite engineers and strategists become an extension of yours, collaborating to develop groundbreaking solutions on any platform. Your success is paramount. Client satisfaction is woven into every stage of our process, from brainstorming your initial concept to ongoing support after launch.",
+        "buttonText": "Let's Discuss",
+        "darkBackground": false
+      },
+      {
+        "type": "services",
+        "title": "Our Offerings",
+        "sectionId": "service-section",
+        "items": [
+          {
+            "title": "Web Application Development",
+            "description": "Build secure, scalable web apps that streamline your operations and enhance user experiences.",
+            "imageSrc": "/images/v2/web-development.webp",
+            "imageAlt": "Web dev img"
+          },
+          {
+            "title": "Mobile Application Development",
+            "description": "Build secure, scalable web apps that streamline your operations and enhance user experiences.",
+            "imageSrc": "/images/v2/mobile-application-development.webp",
+            "imageAlt": "Mobile Application dev img"
+          },
+          {
+            "title": "Enterprise Application Development",
+            "description": "Robust enterprise-grade solutions to improve efficiency and collaboration within your organization",
+            "imageSrc": "/images/v2/enterprise-application-development.webp",
+            "imageAlt": "Enterprise application dev img"
+          },
+          {
+            "title": "Saas Platform Migration & Support",
+            "description": "Migrate your software smoothly and securely to the cloud with our expert migration services.",
+            "imageSrc": "/images/v2/saas-platform-migration-support.webp",
+            "imageAlt": "Saas application dev img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Why Choose Brilworks for your App Development Needs?",
+        "items": [
+          {
+            "title": "Experienced Team",
+            "icon": "/images/v2/extensive-pool.svg",
+            "description": "Our team of skilled developers possesses a deep understanding of diverse technologies and platforms."
+          },
+          {
+            "title": "Transparent Communication",
+            "icon": "/images/v2/transparent-comm.svg",
+            "description": "We keep you informed throughout the development process, fostering trust and collaboration."
+          },
+          {
+            "title": "Client-Centric Approach",
+            "icon": "/images/v2/client-centric-icon.svg",
+            "description": "We collaborate closely with you to understand your unique vision and business goals."
+          },
+          {
+            "title": "Proven Track Record",
+            "icon": "/images/v2/fi_10227466.svg",
+            "description": "We have a history of successful project completions, delivering exceptional results for clients across various industries."
+          },
+          {
+            "title": "Scalable Solutions",
+            "icon": "/images/v2/fi_8109512.svg",
+            "description": "We build applications that grow with your business, ensuring long-term value."
+          },
+          {
+            "title": "Competitive Rates",
+            "icon": "/images/v2/fi_8071107.svg",
+            "description": "We offer competitive pricing models to fit your budget and project requirements."
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "title": "We're Pleased to Share Some of the Honors",
+        "eyebrow": "Recognition",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms \u00b7 2025\u201326" },
+          { "title": "Global Award Spring", "org": "Clutch \u00b7 2025" },
+          { "title": "Global Award Fall", "org": "Clutch \u00b7 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Contact us today for a free consultation and let's discuss how custom software development can transform your business.",
+        "buttonText": "Get Free Consulatation Now!"
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "dynamic-content",
+        "component": "SeeingBelieving",
+        "note": "Portfolio carousel rendered from CMS-driven portfolioDynamicItems."
+      },
+      {
+        "type": "dynamic-content",
+        "component": "HomePageBlogs",
+        "note": "Latest blog posts fetched from Storyblok CMS at render time."
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "What kind of software development services do you offer?",
+            "a": "We offer a comprehensive range of software development services, including custom application development, web development, mobile app development, enterprise software solutions, and API integration. We can help you bring your software ideas to life, no matter the complexity."
+          },
+          {
+            "q": "Do you work with startups and small businesses?",
+            "a": "We understand the unique needs of startups and small businesses. We offer flexible engagement models and competitive rates to help you achieve your software development goals within your budget."
+          },
+          {
+            "q": "How much does it cost to develop software?",
+            "a": "The cost of software development varies depending on the project's scope, complexity, and features. We offer free consultations to discuss your project requirements and provide a tailored quote."
+          },
+          {
+            "q": "What is the development process like?",
+            "a": "We follow a collaborative and agile development process. We work closely with you throughout the entire development cycle, from initial concept to launch and ongoing maintenance. This ensures your project stays on track and meets your expectations."
+          },
+          {
+            "q": "How long does it take to develop software?",
+            "a": "The development timeline depends on the project's size and complexity. During the initial consultation, we can provide an estimated timeframe based on your specific requirements."
+          },
+          {
+            "q": "Do you offer ongoing maintenance and support?",
+            "a": "Yes, we offer comprehensive maintenance and support plans to ensure your software continues to function smoothly and securely. We can also help you implement new features and updates as needed."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What kind of software development services do you offer?",
+        "a": "We offer a comprehensive range of software development services, including custom application development, web development, mobile app development, enterprise software solutions, and API integration. We can help you bring your software ideas to life, no matter the complexity."
+      },
+      {
+        "q": "Do you work with startups and small businesses?",
+        "a": "We understand the unique needs of startups and small businesses. We offer flexible engagement models and competitive rates to help you achieve your software development goals within your budget."
+      },
+      {
+        "q": "How much does it cost to develop software?",
+        "a": "The cost of software development varies depending on the project's scope, complexity, and features. We offer free consultations to discuss your project requirements and provide a tailored quote."
+      },
+      {
+        "q": "What is the development process like?",
+        "a": "We follow a collaborative and agile development process. We work closely with you throughout the entire development cycle, from initial concept to launch and ongoing maintenance. This ensures your project stays on track and meets your expectations."
+      },
+      {
+        "q": "How long does it take to develop software?",
+        "a": "The development timeline depends on the project's size and complexity. During the initial consultation, we can provide an estimated timeframe based on your specific requirements."
+      },
+      {
+        "q": "Do you offer ongoing maintenance and support?",
+        "a": "Yes, we offer comprehensive maintenance and support plans to ensure your software continues to function smoothly and securely. We can also help you implement new features and updates as needed."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo"
+      }
+    ]
+  }
+}

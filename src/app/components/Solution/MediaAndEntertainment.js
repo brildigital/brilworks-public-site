@@ -2,8 +2,13 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import { ShieldCheck, Clapperboard, Tv2, Globe } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const MediaNEntertainmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -19,12 +24,20 @@ const SolutionEngagementAndHowCanStart = dynamic(() =>
 );
 
 const MediaAndEntertainment = () => {
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: Clapperboard, label: "10M+ Users Served" },
+    { icon: Tv2, label: "4K Streaming Ready" },
+    { icon: Globe, label: "12+ Countries Served" },
+  ];
+
   const mediaEntertainmentService = {
     title: "Our Media And Entertainment Software Solutions",
     buttonText: "Build My Entertainment App",
     servicesList: [
       {
         title: "OTT Streaming Apps",
+        iconSrc: "/images/v2/play-theme-icon.svg",
         value: "media-app-1",
         description:
           "Leverage our proven domain expertise along with cutting-edge technologies to create a streaming service that is as fast as it is instantly accessible.",
@@ -33,6 +46,7 @@ const MediaAndEntertainment = () => {
       },
       {
         title: "Music Streaming Apps",
+        iconSrc: "/images/v2/media-entertainmnet-icon.svg",
         value: "media-app-2",
         description:
           "Make the way to the melodies of your music streaming app. Our powerful backend helps you manage thousands of active listeners without any interruption or issue.",
@@ -41,6 +55,7 @@ const MediaAndEntertainment = () => {
       },
       {
         title: " Photo Editing & Sharing Apps",
+        iconSrc: "/images/v2/social-integration-icon.svg",
         value: "media-app-3",
         description:
           "Become one of the most used photo editing and sharing apps. We help you create an Instagram-like app with your own photo editing and sharing features.",
@@ -49,6 +64,7 @@ const MediaAndEntertainment = () => {
       },
       {
         title: "Ticket Booking Portals",
+        iconSrc: "/images/v2/interactive-ui-icon.svg",
         value: "media-app-4",
         description:
           "We develop ticket booking portals for all kinds of events including movie theatres, live concerts, sports matches, etc. Our team is focused on providing a seamless ticket-booking experience to eager fans.",
@@ -57,6 +73,7 @@ const MediaAndEntertainment = () => {
       },
       {
         title: "Gaming apps",
+        iconSrc: "/images/v2/developer-icon.svg",
         value: "media-app-5",
         description:
           "We create gaming apps across platforms and genres. In the world of gaming, we are known for our stable infrastructure, technical speed, efficient development process, and cutting-edge technology.",
@@ -65,6 +82,7 @@ const MediaAndEntertainment = () => {
       },
       {
         title: "Content Aggregation Apps",
+        iconSrc: "/images/v2/read-icon.svg",
         value: "media-app-6",
         description:
           "These apps are the new way to get quality content and videos. We are a trusted app aggregator providing a one-stop solution for customers and businesses to quickly find high-quality databases on any topic or industry.",
@@ -163,6 +181,42 @@ const MediaAndEntertainment = () => {
     },
   ];
 
+  const whyChooseUsDevelopmentData = {
+    title: "Why Choose Brilworks for Media & Entertainment",
+    benefits: [
+      {
+        title: "Top-Rated Developers",
+        icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
+        description:
+          "Our team members consistently earn top ratings for their technical skills and communication.",
+      },
+      {
+        title: "Proven Media Expertise",
+        icon: "/images/v2/proven-expertise.svg",
+        description:
+          "We have built streaming platforms, gaming apps, and content aggregation solutions for leading media companies.",
+      },
+      {
+        title: "Agile & Transparent",
+        icon: "/images/v2/Agile_Development_Excellence.svg",
+        description:
+          "You see progress regularly through sprints and working software, not after months of silence.",
+      },
+      {
+        title: "Clear Communication",
+        icon: "/images/v2/transparent-comm.svg",
+        description:
+          "We explain technical decisions in plain language without overwhelming you with jargon.",
+      },
+      {
+        title: "Post-Launch Support",
+        icon: "/images/v2/ongoing-support-icon.svg",
+        description:
+          "We provide training, fix bugs, make adjustments, and add features as your needs evolve.",
+      },
+    ],
+  };
+
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
@@ -176,14 +230,27 @@ const MediaAndEntertainment = () => {
     <>
       <SolutionHeroSection
         technologyText="Media And Entertainment"
-        title="Media And Entertainment App Development Services"
+        title='<span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">Media & Entertainment</span> App Development Services'
         description="We take your customers on a visual delight with our entertainment software solutions. Create an immersive experience for your users and earn a competitive edge in the entertainment & media industry."
         imageSrc="/images/v2/media-and-entertainment-banner.webp"
+        stats={[
+          { value: "120+", label: "Products Shipped" },
+          { value: "10M+", label: "Users Served" },
+          { value: "4K+", label: "Streaming Ready" },
+          { value: "98%", label: "Client Retention" },
+        ]}
       />
+      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection
         sectionId="services-one"
         serviceData={mediaEntertainmentService}
       />
+
+      <IndustryMidCTA
+        title="Ready to Build Your Media & Entertainment App?"
+        description="Get a free consultation and project roadmap. We respond within 24 hours."
+      />
+
       <TypesOfAppWeDevelop
         bgClass="bg-sectionBG"
         data={entertainmentAppWeDevelop}
@@ -191,14 +258,26 @@ const MediaAndEntertainment = () => {
       <MultipleCardWithIconBG data={entertainmentFeature} />
       <MultipleKeyValueWithBG
         bgClass="bg-sectionBG"
-        buttonText="Let’s Get In Touch"
+        buttonText="Let's Get In Touch"
         title="What Makes Brilworks The Best Entertainment App Company?"
         description="We specialize in creating world-class entertainment apps to help you increase engagement and retain your customers over a longer period of time. Get ready to elevate your app to the next level of success with our media & entertainment software solutions."
         keyValueData={entertainmentExperienceShowCase}
       />
+      <MultipleCardWithIconBG data={whyChooseUsDevelopmentData} />
+      <ClientReviews />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
       <MediaNEntertainmentFAQs />
+      <SolutionContactForm
+        title="Launch Your Media & Entertainment Platform"
+        description="Tell us about your streaming, gaming, or content platform vision. Our media tech experts will craft a tailored proposal."
+        submitLabel="Get My Media App Proposal"
+        benefits={[
+          "4K-ready streaming architecture",
+          "CDN-optimized content delivery",
+          "Cross-platform mobile and web apps",
+          "24/7 uptime monitoring and support",
+        ]}
+      />
     </>
   );
 };

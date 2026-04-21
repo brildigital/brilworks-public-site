@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Sparkles,
   Hammer,
@@ -19,7 +19,6 @@ import {
   Cpu,
   Users,
   Search,
-  Zap,
   Baby,
   Moon,
   Languages,
@@ -34,12 +33,16 @@ import {
   Brain,
   Activity,
   Eye,
+  Star,
+  Zap,
+  Cloud,
+  ArrowRight,
+  Plus,
 } from "lucide-react";
 
 import Link from "next/link";
 import AIAgentLayout from "./AIAgentLayout";
 import { ModuleType } from "../../lib/enums";
-import Image from "next/image";
 
 const categories = {
   "Core Systems": [
@@ -83,15 +86,15 @@ const categories = {
   ],
 };
 
+const featuredIds = [ModuleType.FITNESS, ModuleType.FINANCE, ModuleType.CAREER];
+
 const allModules = [
   {
     id: ModuleType.ASTROLOGY,
     name: "Astro Core",
     icon: Sparkles,
     color: "text-purple-400",
-    glow: "shadow-purple-500/20",
-    border: "hover:border-purple-500/50",
-    desc: "Cosmic Analysis & Kundli",
+    desc: "Cosmic analysis & Kundli charts",
     path: "/astrology",
   },
   {
@@ -99,9 +102,7 @@ const allModules = [
     name: "Union Sync",
     icon: Users,
     color: "text-rose-400",
-    glow: "shadow-rose-500/20",
-    border: "hover:border-rose-500/50",
-    desc: "Compatibility Engine",
+    desc: "AI-powered compatibility matching",
     path: "/matchmaking",
   },
   {
@@ -109,9 +110,7 @@ const allModules = [
     name: "Repair Bot",
     icon: Hammer,
     color: "text-orange-400",
-    glow: "shadow-orange-500/20",
-    border: "hover:border-orange-500/50",
-    desc: "Structural Fixes",
+    desc: "DIY home repairs & fix guidance",
     path: "/diy",
   },
   {
@@ -119,9 +118,7 @@ const allModules = [
     name: "Bio-Coach",
     icon: Dumbbell,
     color: "text-red-400",
-    glow: "shadow-red-500/20",
-    border: "hover:border-red-500/50",
-    desc: "Physical Optimization",
+    desc: "Personalized workout & fitness plans",
     path: "/fitness",
   },
   {
@@ -129,19 +126,15 @@ const allModules = [
     name: "Nutri-Sci",
     icon: Apple,
     color: "text-green-500",
-    glow: "shadow-green-500/20",
-    border: "hover:border-green-500/50",
-    desc: "Dietary Intelligence",
+    desc: "Smart dietary plans & meal recommendations",
     path: "/nutrition",
   },
   {
     id: ModuleType.HABIT,
     name: "Habit Loop",
     icon: CheckCircle,
-    color: "text-cyan-500",
-    glow: "shadow-cyan-500/20",
-    border: "hover:border-cyan-500/50",
-    desc: "Goal Tracker",
+    color: "text-cyan-400",
+    desc: "Goal tracking & habit building",
     path: "/habit",
   },
   {
@@ -149,9 +142,7 @@ const allModules = [
     name: "Mind Link",
     icon: Heart,
     color: "text-teal-400",
-    glow: "shadow-teal-500/20",
-    border: "hover:border-teal-500/50",
-    desc: "Mental Stability",
+    desc: "Mental wellness & mindfulness guidance",
     path: "/wellness",
   },
   {
@@ -159,9 +150,7 @@ const allModules = [
     name: "Dream State",
     icon: Moon,
     color: "text-indigo-300",
-    glow: "shadow-indigo-500/20",
-    border: "hover:border-indigo-500/50",
-    desc: "Subconscious Analysis",
+    desc: "Dream interpretation & analysis",
     path: "/dreams",
   },
   {
@@ -169,20 +158,15 @@ const allModules = [
     name: "Chronos",
     icon: Calendar,
     color: "text-blue-400",
-    glow: "shadow-blue-500/20",
-    border: "hover:border-blue-500/50",
-    desc: "Time Management",
+    desc: "AI-powered scheduling & time management",
     path: "/scheduling",
   },
-
   {
     id: ModuleType.MUSIC,
     name: "Sonic",
     icon: Music,
     color: "text-fuchsia-400",
-    glow: "shadow-fuchsia-500/20",
-    border: "hover:border-fuchsia-500/50",
-    desc: "Music Discovery",
+    desc: "Music discovery & playlist creation",
     path: "/music",
   },
   {
@@ -190,9 +174,7 @@ const allModules = [
     name: "Meme Gen",
     icon: Laugh,
     color: "text-pink-500",
-    glow: "shadow-pink-500/20",
-    border: "hover:border-pink-500/50",
-    desc: "Humor Generator",
+    desc: "Viral meme & humor generation",
     path: "/meme",
   },
   {
@@ -200,9 +182,7 @@ const allModules = [
     name: "Synthesis",
     icon: Utensils,
     color: "text-yellow-400",
-    glow: "shadow-yellow-500/20",
-    border: "hover:border-yellow-500/50",
-    desc: "Culinary Recipes",
+    desc: "Recipe creation & culinary guidance",
     path: "/cooking",
   },
   {
@@ -210,9 +190,7 @@ const allModules = [
     name: "Teleport",
     icon: Plane,
     color: "text-sky-400",
-    glow: "shadow-sky-500/20",
-    border: "hover:border-sky-500/50",
-    desc: "Expedition Planning",
+    desc: "Travel planning & itinerary builder",
     path: "/travel",
   },
   {
@@ -220,9 +198,7 @@ const allModules = [
     name: "Cortex",
     icon: GraduationCap,
     color: "text-green-400",
-    glow: "shadow-green-500/20",
-    border: "hover:border-green-500/50",
-    desc: "Knowledge Download",
+    desc: "Accelerated learning & knowledge tools",
     path: "/learning",
   },
   {
@@ -230,9 +206,7 @@ const allModules = [
     name: "Scribe",
     icon: PenTool,
     color: "text-indigo-400",
-    glow: "shadow-indigo-500/20",
-    border: "hover:border-indigo-500/50",
-    desc: "Text Generation",
+    desc: "Writing assistance & content generation",
     path: "/writing",
   },
   {
@@ -240,20 +214,15 @@ const allModules = [
     name: "Babel",
     icon: Languages,
     color: "text-blue-500",
-    glow: "shadow-blue-500/20",
-    border: "hover:border-blue-500/50",
-    desc: "Polyglot Tutor",
+    desc: "Multilingual learning & translation",
     path: "/language",
   },
-
   {
     id: ModuleType.FINANCE,
     name: "Credits",
     icon: DollarSign,
     color: "text-emerald-400",
-    glow: "shadow-emerald-500/20",
-    border: "hover:border-emerald-500/50",
-    desc: "Personal Budgeting",
+    desc: "Personal budgeting & financial planning",
     path: "/finance",
   },
   {
@@ -261,9 +230,7 @@ const allModules = [
     name: "Wealth",
     icon: BarChart3,
     color: "text-amber-500",
-    glow: "shadow-amber-500/20",
-    border: "hover:border-amber-500/50",
-    desc: "Investment Strategy",
+    desc: "Investment strategy & portfolio analysis",
     path: "/wealth",
   },
   {
@@ -271,9 +238,7 @@ const allModules = [
     name: "Aesthetics",
     icon: Shirt,
     color: "text-pink-400",
-    glow: "shadow-pink-500/20",
-    border: "hover:border-pink-500/50",
-    desc: "Visual Style",
+    desc: "Personal style & fashion recommendations",
     path: "/fashion",
   },
   {
@@ -281,9 +246,7 @@ const allModules = [
     name: "Habitat",
     icon: Sofa,
     color: "text-orange-300",
-    glow: "shadow-orange-500/20",
-    border: "hover:border-orange-500/50",
-    desc: "Space Design",
+    desc: "Interior design & space planning",
     path: "/interior",
   },
   {
@@ -291,9 +254,7 @@ const allModules = [
     name: "Flora",
     icon: Sprout,
     color: "text-lime-400",
-    glow: "shadow-lime-500/20",
-    border: "hover:border-lime-500/50",
-    desc: "Botany Care",
+    desc: "Plant care & gardening advice",
     path: "/gardening",
   },
   {
@@ -301,9 +262,7 @@ const allModules = [
     name: "Fauna",
     icon: PawPrint,
     color: "text-amber-400",
-    glow: "shadow-amber-500/20",
-    border: "hover:border-amber-500/50",
-    desc: "Creature Support",
+    desc: "Pet care & veterinary guidance",
     path: "/pets",
   },
   {
@@ -311,40 +270,31 @@ const allModules = [
     name: "Guardian",
     icon: Baby,
     color: "text-teal-300",
-    glow: "shadow-teal-500/20",
-    border: "hover:border-teal-500/50",
-    desc: "Child Guidance",
+    desc: "Child guidance & parenting support",
     path: "/parenting",
   },
-
   {
     id: ModuleType.MOVIES,
     name: "Media",
     icon: Clapperboard,
     color: "text-rose-400",
-    glow: "shadow-rose-500/20",
-    border: "hover:border-rose-500/50",
-    desc: "Entertainment Feed",
+    desc: "Movie & entertainment recommendations",
     path: "/movies",
   },
   {
     id: ModuleType.CAREER,
     name: "Guild",
     icon: Briefcase,
-    color: "text-slate-400",
-    glow: "shadow-slate-500/20",
-    border: "hover:border-slate-500/50",
-    desc: "Career Pathing",
+    color: "text-slate-300",
+    desc: "Career guidance & professional growth",
     path: "/career",
   },
   {
     id: ModuleType.STARTUP,
     name: "Founder",
     icon: Rocket,
-    color: "text-purple-500",
-    glow: "shadow-purple-500/20",
-    border: "hover:border-purple-500/50",
-    desc: "Venture Scaling",
+    color: "text-purple-400",
+    desc: "Startup strategy & venture scaling",
     path: "/startup",
   },
   {
@@ -352,19 +302,15 @@ const allModules = [
     name: "Sys-Admin",
     icon: Cpu,
     color: "text-cyan-400",
-    glow: "shadow-cyan-500/20",
-    border: "hover:border-cyan-500/50",
-    desc: "Technical Support",
+    desc: "Technical support & troubleshooting",
     path: "/tech",
   },
   {
     id: ModuleType.TRENDS,
     name: "Trends",
     icon: TrendingUp,
-    color: "text-orange-500",
-    glow: "shadow-orange-500/20",
-    border: "hover:border-orange-500/50",
-    desc: "Viral Analysis",
+    color: "text-orange-400",
+    desc: "Viral trend analysis & market insights",
     path: "/trends",
   },
   {
@@ -372,19 +318,15 @@ const allModules = [
     name: "Neuro",
     icon: Brain,
     color: "text-indigo-400",
-    glow: "shadow-indigo-500/20",
-    border: "hover:border-indigo-500/50",
-    desc: "Brain Science",
+    desc: "Brain science & cognitive training",
     path: "/neuro",
   },
   {
     id: ModuleType.PSYCH,
     name: "Psyche",
     icon: Activity,
-    color: "text-teal-500",
-    glow: "shadow-teal-500/20",
-    border: "hover:border-teal-500/50",
-    desc: "Behavioral Science",
+    color: "text-teal-400",
+    desc: "Behavioral science & psychology insights",
     path: "/psych",
   },
   {
@@ -392,157 +334,487 @@ const allModules = [
     name: "Vision",
     icon: Eye,
     color: "text-cyan-300",
-    glow: "shadow-cyan-500/20",
-    border: "hover:border-cyan-500/50",
-    desc: "Image Analysis",
+    desc: "Image analysis & visual recognition",
     path: "/vision",
   },
 ];
 
+const trustStats = [
+  { number: "30+", label: "AI Agents Live" },
+  { number: "120+", label: "Projects Delivered" },
+  { number: "50+", label: "Happy Clients" },
+  { number: "12+", label: "Countries Served" },
+];
+
+const whyCards = [
+  {
+    icon: Zap,
+    title: "Custom AI Agents",
+    desc: "We build domain-specific AI agents tailored to your industry, workflow, and data — not generic chatbots.",
+  },
+  {
+    icon: Cloud,
+    title: "AWS Consulting Partner",
+    desc: "Production-grade infrastructure on AWS. Scalable, secure, and built to handle enterprise workloads from day one.",
+  },
+  {
+    icon: Rocket,
+    title: "Ship in Weeks, Not Months",
+    desc: "Our team has shipped 120+ projects. We move fast — from concept to deployed AI agents in as few as 4 weeks.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What are AI agents and how are they different from chatbots?",
+    a: "AI agents are intelligent systems that can reason, plan, and take actions autonomously. Unlike simple chatbots that follow scripts, AI agents understand context, make decisions, and execute multi-step tasks — like creating a personalized fitness plan or analyzing your investment portfolio.",
+  },
+  {
+    q: "Can Brilworks build custom AI agents for my product?",
+    a: "Yes. These 30+ agents are live demos of what we build. We design and deploy custom AI agents tailored to your industry, data, and user workflows. Our team handles everything from architecture to deployment on AWS infrastructure.",
+  },
+  {
+    q: "How long does it take to build a custom AI agent?",
+    a: "Typically 4-8 weeks from kickoff to production deployment, depending on complexity. We've delivered 120+ projects and our process is built for speed without sacrificing quality.",
+  },
+  {
+    q: "What technologies power these AI agents?",
+    a: "Our agents are powered by Neural Gemini AI with production-grade infrastructure on AWS. We use a modern stack including Next.js, React, and serverless architecture — built for scale and reliability.",
+  },
+  {
+    q: "Are the demo agents free to use?",
+    a: "Yes, all 30+ agents on this page are free to explore. They're a showcase of what's possible. When you're ready to build custom agents for your product, book a free consultation to discuss your project.",
+  },
+];
+
+const contactUrl = "https://www.brilworks.com/contact-us/";
+const portfolioUrl = "https://www.brilworks.com/portfolio/";
+
 const AiAgentHome = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [openFaq, setOpenFaq] = useState(null);
+  const [stickyVisible, setStickyVisible] = useState(false);
 
-  const filteredModules = allModules.filter(
-    (m) =>
-      m.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      m.desc.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const onScroll = () => {
+      setStickyVisible(window.scrollY > 600);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const term = searchTerm.trim().toLowerCase();
+  const matches = (mod) =>
+    mod.name.toLowerCase().includes(term) ||
+    mod.desc.toLowerCase().includes(term);
+  const filteredModules = allModules.filter(matches);
+  const featuredModules = featuredIds
+    .map((id) => allModules.find((m) => m.id === id))
+    .filter(Boolean);
 
   return (
     <AIAgentLayout>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section */}
-        <section className="relative pt-10 pb-12 px-6 text-center">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full pointer-events-none"></div>
+        {/* ==================== HERO ==================== */}
+        <section className="relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
 
-          <div className="max-w-4xl mx-auto relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-md mb-6 animate-fade-in-up">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-              </span>
-              <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
-                System Online v3.1
-              </span>
-            </div>
+          <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
+            <div className="flex flex-col items-start pt-[100px] pb-20 max-w-3xl">
+              {/* Breadcrumb */}
+              <nav className="mb-8" aria-label="Breadcrumb">
+                <ol className="flex items-center gap-2 text-xs">
+                  <li>
+                    <Link
+                      href="/"
+                      className="text-white/40 hover:text-white transition-colors"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className="text-white/20">/</li>
+                  <li className="text-white/70 font-semibold">AI Agents</li>
+                </ol>
+              </nav>
 
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
-              AUGMENT YOUR <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x">
-                REALITY
-              </span>
-            </h1>
+              {/* Badge */}
+              <div
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 border"
+                style={{
+                  background: "rgba(26,92,204,0.15)",
+                  borderColor: "rgba(26,92,204,0.3)",
+                }}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: "#00dbd3" }}></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#00dbd3" }}></span>
+                </span>
+                <span className="text-xs font-semibold tracking-widest" style={{ color: "#00b4d8" }}>
+                  30+ AGENTS LIVE
+                </span>
+              </div>
 
-            <p className="text-lg md:text-xl text-slate-400 !mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              One interface for all life operations.
-              <span className="text-slate-200">
-                {" "}
-                30+ Specialized AI Agents.
-              </span>
-              <br />
-              Powered by Neural Gemini AI.
-            </p>
+              {/* Headline */}
+              <h1
+                className="font-extrabold text-white tracking-[-1.5px] leading-[1.1] mb-6"
+                style={{ fontSize: "clamp(28px, 3.4vw, 54px)" }}
+              >
+                AI Agents That Actually <br />
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #017eeb, #00dbd3)",
+                  }}
+                >
+                  Work for Your Business
+                </span>
+              </h1>
 
-            {/* Search Bar */}
-            <div className="relative max-w-lg mx-auto group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full opacity-50 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative bg-slate-950 rounded-full flex items-center">
-                <div className="pl-6 text-slate-400">
-                  <Search size={20} />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Initialize command (e.g., 'Habit Tracker', 'Interior Design')..."
-                  className="w-full pl-4 pr-6 py-4 bg-transparent text-white placeholder-slate-500 rounded-full outline-none text-base font-medium"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+              <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
+                Brilworks builds and deploys custom AI agents for startups and
+                enterprise teams. Explore our live demos — then let's build
+                yours.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href={contactUrl}
+                  className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background:
+                      "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+                  }}
+                >
+                  Build AI Agents for My Product <ArrowRight size={18} />
+                </Link>
+                <a
+                  href="#explore"
+                  className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold text-white border border-white/25 hover:bg-white/5 hover:border-white/50 transition-all"
+                >
+                  Explore the Demos
+                </a>
+              </div>
+
+              {/* Trust Bar */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08] mt-10 w-full">
+                {trustStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="bg-white/[0.04] hover:bg-white/[0.08] transition-colors py-[18px] px-5 text-center"
+                  >
+                    <div className="text-white text-[26px] font-extrabold tracking-[-0.5px] leading-none">
+                      {stat.number}
+                    </div>
+                    <div className="text-white/45 text-[11px] mt-1 tracking-[0.04em] uppercase">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tools Grid */}
-        <div className="max-w-7xl mx-auto px-4 py-8 w-full">
-          {searchTerm ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {filteredModules.map((mod) => (
-                <ModuleCard key={mod.id} mod={mod} />
-              ))}
+        {/* ==================== AGENT GRID (Light) ==================== */}
+        <section
+          id="explore"
+          className="pt-16 pb-20"
+          style={{ background: "#ffffff" }}
+        >
+          <div className="container max-w-[1280px] md:px-10 px-5 mx-auto w-full">
+            {/* Search */}
+            <div className="relative mb-12 group">
+              <div className="relative bg-white border border-[#e5e7eb] focus-within:border-[#017eeb] rounded-full flex items-center overflow-hidden transition-colors shadow-sm">
+                <div className="pl-5 text-[#94a3b8]">
+                  <Search size={18} />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search agents — try 'fitness', 'finance', 'travel'..."
+                  className="w-full pl-3 pr-5 py-3.5 bg-transparent text-[#0f172a] placeholder-[#94a3b8] outline-none text-[14px]"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Search AI agents"
+                />
+              </div>
             </div>
-          ) : (
-            <div className="space-y-16">
-              {Object.entries(categories).map(([catName, modIds]) => (
-                <div key={catName}>
-                  <div className="flex items-center gap-4 mb-8">
-                    <h3 className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500 uppercase tracking-widest font-display">
-                      {catName}
-                    </h3>
-                    <div className="h-[1px] flex-1 bg-gradient-to-r from-slate-800 to-transparent"></div>
-                  </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                    {modIds.map((id) => {
-                      const mod = allModules.find((m) => m.id === id);
-                      return mod ? <ModuleCard key={id} mod={mod} /> : null;
-                    })}
+            {term ? (
+              filteredModules.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {filteredModules.map((mod) => (
+                    <ModuleCard key={mod.id} mod={mod} />
+                  ))}
+                </div>
+              ) : (
+                <p className="text-center text-[#475569] py-12">
+                  No agents match "{searchTerm}". Try a different search.
+                </p>
+              )
+            ) : (
+              <div className="space-y-14">
+                {/* Featured */}
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span
+                      className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.12em] whitespace-nowrap"
+                      style={{ color: "#017eeb" }}
+                    >
+                      <Star size={14} fill="currentColor" /> Start Here
+                    </span>
+                    <div className="h-px flex-1 bg-gradient-to-r from-[#e5e7eb] to-transparent"></div>
                   </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {featuredModules.map((mod) => (
+                      <ModuleCard key={`featured-${mod.id}`} mod={mod} />
+                    ))}
+                  </div>
+                </div>
+
+                {Object.entries(categories).map(([catName, modIds]) => (
+                  <div key={catName}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <span className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#475569] whitespace-nowrap">
+                        {catName}
+                      </span>
+                      <div className="h-px flex-1 bg-gradient-to-r from-[#e5e7eb] to-transparent"></div>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {modIds.map((id) => {
+                        const mod = allModules.find((m) => m.id === id);
+                        return mod ? <ModuleCard key={id} mod={mod} /> : null;
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* ==================== WHY BRILWORKS (Light) ==================== */}
+        <section
+          className="py-20 px-6"
+          style={{ background: "#f8f9ff" }}
+        >
+          <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+            <span
+              className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+              style={{ color: "#017eeb" }}
+            >
+              Why Brilworks
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-12 tracking-tight leading-tight max-w-2xl">
+              We Don't Just Demo AI Agents.
+              <br />
+              We Build Them for You.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {whyCards.map((c) => (
+                <div
+                  key={c.title}
+                  className="rounded-2xl p-7 bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
+                >
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                    style={{ background: "rgba(1,126,235,0.12)" }}
+                  >
+                    <c.icon size={18} style={{ color: "#017eeb" }} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0f172a] mb-2 tracking-tight">
+                    {c.title}
+                  </h3>
+                  <p className="text-[15px] text-[#475569] leading-relaxed">
+                    {c.desc}
+                  </p>
                 </div>
               ))}
             </div>
-          )}
-        </div>
+          </div>
+        </section>
 
-        {/* SEO Footer - Minimized style */}
-        <footer className="border-t border-slate-900 bg-black/40 py-12 px-6 mt-auto backdrop-blur-sm">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8 flex justify-center">
-              <Image
-                className="w-[155px] h-[46px]"
-                src="/images/logo-white.svg"
-                alt="Brilworks Logo"
-                width="155"
-                height="46"
-                priority
-              />
-              {/* <Zap className="text-yellow-500 fill-yellow-500" size={32} /> */}
+        {/* ==================== CTA ==================== */}
+        <section
+          className="py-20 px-6 text-center border-t border-white/5"
+          style={{ background: "#000d1e" }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <span
+              className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+              style={{ color: "#00b4d8" }}
+            >
+              Ready to Build?
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+              Let's Build AI Agents
+              <br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
+                }}
+              >
+                for Your Product
+              </span>
+            </h2>
+            <p className="text-[17px] text-white/55 max-w-xl mx-auto !mb-9 leading-relaxed">
+              You've seen what's possible. Now let our team build custom AI
+              agents designed for your business — tailored to your data, your
+              workflows, and your users.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href={contactUrl}
+                className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
+                style={{
+                  background:
+                    "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+                }}
+              >
+                Book a Free AI Consultation <ArrowRight size={18} />
+              </Link>
+              <a
+                href={portfolioUrl}
+                className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold text-white border border-white/25 hover:bg-white/5 hover:border-white/50 transition-all"
+              >
+                View Our Portfolio
+              </a>
             </div>
-            <p className="text-slate-300 text-xs font-mono uppercase tracking-widest">
-              © {new Date().getFullYear()} Brilworks. All Rights Reserved.
+            <p className="!mt-5 text-[13px] text-white/40">
+              We take on{" "}
+              <strong style={{ color: "#00dbd3" }}>
+                5 new AI agent projects per month
+              </strong>{" "}
+              — limited availability.
             </p>
           </div>
-        </footer>
+        </section>
+
+        {/* ==================== FAQ (Light) ==================== */}
+        <section
+          className="py-20 px-6"
+          style={{ background: "#f8f9ff" }}
+        >
+          <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+            <div className="max-w-3xl">
+              <span
+                className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+                style={{ color: "#017eeb" }}
+              >
+                Frequently Asked Questions
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-10 tracking-tight leading-tight">
+                Common Questions About AI Agents
+              </h2>
+              <div>
+                {faqs.map((f, i) => {
+                  const isOpen = openFaq === i;
+                  return (
+                    <div
+                      key={i}
+                      className="border-b border-[#e5e7eb] py-5"
+                    >
+                      <button
+                        onClick={() => setOpenFaq(isOpen ? null : i)}
+                        className="w-full flex items-center justify-between text-left gap-6"
+                        aria-expanded={isOpen}
+                      >
+                        <span className="text-[17px] font-bold text-[#0f172a]">
+                          {f.q}
+                        </span>
+                        <Plus
+                          size={22}
+                          className={`shrink-0 transition-transform duration-300 ${
+                            isOpen ? "rotate-45" : ""
+                          }`}
+                          style={{
+                            color: isOpen ? "#017eeb" : "#94a3b8",
+                          }}
+                        />
+                      </button>
+                      <div
+                        className="overflow-hidden transition-[max-height,padding] duration-300"
+                        style={{
+                          maxHeight: isOpen ? "300px" : "0px",
+                          paddingTop: isOpen ? "12px" : "0px",
+                        }}
+                      >
+                        <p className="text-[15px] text-[#475569] leading-relaxed">
+                          {f.a}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Main site Footer is rendered at the app layout level for the landing page */}
+
+        {/* ==================== STICKY BAR ==================== */}
+        <div
+          className={`fixed bottom-0 inset-x-0 z-40 backdrop-blur-md border-t border-white/10 flex items-center justify-center gap-4 flex-wrap md:flex-nowrap transition-transform duration-500 ${
+            stickyVisible ? "translate-y-0" : "translate-y-full"
+          }`}
+          style={{
+            background: "rgba(13, 15, 26, 0.92)",
+            padding: "12px 20px",
+          }}
+        >
+          <span className="text-sm text-white/70 text-center md:text-left">
+            <strong className="text-white">Impressed?</strong> Let's build AI
+            agents for your business.
+          </span>
+          <Link
+            href={contactUrl}
+            className="inline-flex items-center gap-2 rounded-md px-6 py-2 text-sm font-semibold text-white transition-all hover:opacity-90"
+            style={{
+              background:
+                "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+            }}
+          >
+            Talk to Us <ArrowRight size={16} />
+          </Link>
+        </div>
       </div>
     </AIAgentLayout>
   );
 };
 
-const ModuleCard = ({ mod, navigate }) => (
+const ModuleCard = ({ mod }) => (
   <Link
     href={`/ai-agents${mod.path}`}
-    // onClick={() => navigate(mod.path)}
-    className={`group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:bg-slate-800/60 backdrop-blur-sm transition-all duration-300 h-full w-full overflow-hidden ${mod.border}`}
+    className="group relative flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(1,126,235,0.08)] transition-all duration-300 min-h-[160px]"
+    style={{ textDecoration: "none" }}
   >
-    {/* Hover Glow Background */}
-    <div
-      className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent`}
-    ></div>
-
-    <div
-      className={`relative z-10 p-4 rounded-xl mb-4 bg-slate-950 border border-slate-800 group-hover:scale-110 transition-transform duration-300 shadow-lg ${mod.glow}`}
-    >
-      <mod.icon size={28} className={mod.color} />
+    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3.5 bg-[#f8f9ff] border border-[#e5e7eb] group-hover:scale-110 group-hover:border-[#017eeb]/30 transition-all duration-300">
+      <mod.icon size={22} className={mod.color} />
     </div>
-    <span className="relative z-10 font-bold text-slate-200 text-lg mb-1 tracking-wide group-hover:text-white transition-colors font-display">
+    <span className="text-base font-bold text-[#0f172a] mb-1 tracking-tight">
       {mod.name}
     </span>
-    <span className="relative z-10 text-xs text-slate-500 font-mono text-center group-hover:text-cyan-400 transition-colors">
+    <span className="text-xs text-[#64748b] leading-snug group-hover:text-[#017eeb] transition-colors">
       {mod.desc}
     </span>
-
-    {/* Corner Accents */}
-    <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/10 group-hover:border-cyan-500/50 transition-colors"></div>
-    <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/10 group-hover:border-cyan-500/50 transition-colors"></div>
   </Link>
 );
 

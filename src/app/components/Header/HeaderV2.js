@@ -68,54 +68,6 @@ const HeaderV2 = () => {
 
     window.addEventListener("resize", handleResize);
 
-    const fetchSlugs = async () => {
-      try {
-        const url = `https://api.storyblok.com/v2/cdn/stories?starts_with=use-case/&version=${process.env.NEXT_PUBLIC_STORYBLOK_VERSION}&token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`;
-
-        const res = await fetch(url);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const data = await res.json();
-
-        const slugList = data.stories.map((story) => ({
-          name:
-            story.name ||
-            story.slug
-              ?.replaceAll("-", " ")
-              ?.split(" ")
-              ?.map(
-                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length)
-              )
-              .join(" "),
-          path: "/use-case/" + story.slug + "/",
-        }));
-
-        slugList.sort((a, b) => a.name.length - b.name.length);
-
-        const updatedMenuItems = menuItemSampleCopy.map((menuItem) => {
-          if (menuItem.name === "INDUSTRY") {
-            return {
-              ...menuItem,
-              menuItems: menuItem.menuItems.map((subItem) => {
-                if (subItem.name === "USE CASES") {
-                  return { ...subItem, subSections: slugList };
-                }
-                return subItem;
-              }),
-            };
-          }
-          return menuItem;
-        });
-
-        setMenuItemSampleCopy(updatedMenuItems);
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-    };
-
-    fetchSlugs();
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -185,33 +137,9 @@ const HeaderV2 = () => {
                   ""
                 )}
                 <ButtonV2
-                  label={
-                    pathname === "/free-ui/"
-                      ? "Claim Free Screens"
-                      : pathname === "/ai-studio/" ||
-                        pathname === "/app-development-cost-calculator/" ||
-                        pathname === "/roi-calculator/"
-                      ? "Contact Us"
-                      : "Claim Free"
-                  }
-                  className={
-                    pathname === "/ai-studio/" ||
-                    pathname === "/app-development-cost-calculator/" ||
-                    pathname === "/roi-calculator/"
-                      ? ""
-                      : "header-btn"
-                  }
-                  redirect={
-                    pathname === "/free-ui/"
-                      ? "#cta"
-                      : pathname === "/ai-studio/" ||
-                        pathname === "/app-development-cost-calculator/" ||
-                        pathname === "/roi-calculator/"
-                      ? ""
-                      : "/free-ui/"
-                  }
-                  // {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
-                  scrollingButton={pathname === "/free-ui/"}
+                  label="Get Free Estimate"
+                  className="header-btn"
+                  redirect="/contact-us/"
                 />
                 <IconButton
                   variant="text"

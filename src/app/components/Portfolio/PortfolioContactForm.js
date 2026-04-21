@@ -14,6 +14,8 @@ const PortfolioContactForm = ({
   setShowPrice,
   showPhoneField = true,
   showCompanyField = true,
+  messageRequired,
+  submitLabel,
   toolFormData,
 }) => {
   const pathname = usePathname();
@@ -34,7 +36,7 @@ const PortfolioContactForm = ({
     message: "",
   });
 
-  const submitText = downloadFileUrl ? `Download ${textToShow}` : "Submit";
+  const submitText = downloadFileUrl ? `Download ${textToShow}` : (submitLabel || "Submit");
   const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
   const submitMessageText = downloadFileUrl
     ? "Thanks! Download link has been sent to your email."
@@ -180,7 +182,7 @@ const PortfolioContactForm = ({
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required={messageField}
+              required={messageRequired !== undefined ? messageRequired : messageField}
             />
           )}
         </div>

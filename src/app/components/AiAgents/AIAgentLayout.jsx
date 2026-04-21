@@ -13,17 +13,29 @@ const AIAgentLayout = ({ children, title = "", showBack = false }) => {
   const isScrollable =
     pathname === "/ai-agents/" || pathname === "/ai-agents/profile/";
 
-  return (
-    <div className="h-[100dvh] bg-slate-950 text-slate-100 flex flex-col relative overflow-auto font-sans">
-      {/* Background Ambience */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+  // On the AI agents landing page, the main site header (HeaderV2) is rendered
+  // at the app layout level, so suppress this layout's floating pill header.
+  const isLandingPage = pathname === "/ai-agents/" || pathname === "/ai-agents";
 
-      {/* Header - Floating Glass Pill */}
+  return (
+    <div
+      className={`text-slate-100 flex flex-col relative font-sans ${
+        isLandingPage
+          ? "min-h-screen bg-[#000d1e]"
+          : "h-[100dvh] overflow-auto bg-slate-950"
+      }`}
+    >
+      {/* Background Ambience — subtle Brilworks-themed glow only on non-landing pages */}
+      {!isLandingPage && (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-[#017eeb] rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-[#017eeb] rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob animation-delay-4000"></div>
+        </div>
+      )}
+
+      {/* Header - Floating Glass Pill (hidden on landing page — main site header takes over) */}
+      {!isLandingPage && (
       <header className="fixed top-4 inset-x-0 z-30 flex justify-center px-4 pointer-events-none">
         <div className="w-full max-w-5xl h-16 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between px-4 pointer-events-auto">
           <div className="w-full flex justify-between items-center gap-3">
@@ -91,13 +103,16 @@ const AIAgentLayout = ({ children, title = "", showBack = false }) => {
           </div>
         </div>
       </header>
+      )}
 
       {/* Main Content Area */}
       <main
-        className={`flex-1 pt-24 relative flex flex-col z-10 ${
-          isScrollable
-            ? "overflow-y-auto"
-            : "overflow-hidden max-w-5xl mx-auto w-full"
+        className={`flex-1 relative flex flex-col z-10 ${
+          isLandingPage
+            ? "pt-0"
+            : isScrollable
+            ? "pt-24 overflow-y-auto"
+            : "pt-24 overflow-hidden max-w-5xl mx-auto w-full"
         }`}
       >
         {children}

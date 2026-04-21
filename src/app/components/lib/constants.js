@@ -30,25 +30,12 @@ export const notNewTabRedirect = [
 
 export const servicesMenuItems = [
   {
-    name: "COOPERATION MODEL",
+    name: "AI & Agents",
     subSections: [
       {
-        name: "Staff Augmentation",
-        path: "/staff-augmentation/",
+        name: "AI Agents",
+        path: "/ai-agents/",
       },
-      {
-        name: "Dedicated Team",
-        path: "/hire-dedicated-software-development-team/",
-      },
-      {
-        name: "Rapid Digitalization",
-        path: "/rapid-digitalization/",
-      },
-    ],
-  },
-  {
-    name: "ARTIFICIAL INTELLIGENCE",
-    subSections: [
       {
         name: "Generative AI Development",
         path: "/generative-ai-development-services/",
@@ -57,126 +44,60 @@ export const servicesMenuItems = [
         name: "AI/ML Development",
         path: "/ai-ml-development-services/",
       },
-      // {
-      //   name: "GenAI POC & MVP",
-      //   path: "#",
-      // },
     ],
   },
   {
-    name: "PRODUCT ENGINEERING",
+    name: "Software Development",
     subSections: [
       {
-        name: "Product Engineering & Development",
+        name: "Product Engineering",
         path: "/product-engineering-development-services/",
       },
       {
-        name: "SaaS Application Development",
+        name: "SaaS Development",
         path: "/saas-application-development-services/",
       },
       {
-        name: "Application Development",
-        path: "/application-development-services/",
-      },
-      {
-        name: "Web App Development",
+        name: "Web Apps",
         path: "/web-app-development-services/",
       },
       {
-        name: "Mobile App Development",
+        name: "Mobile Apps",
         path: "/mobile-app-development-services/",
       },
-      {
-        name: "ReactJS Development",
-        path: "/reactjs-development-services/",
-      },
-      // {
-      //   name: "ERP Next Development",
-      //   path: "/erp-next-development-services/",
-      // },
-      // {
-      //   name: "Application Modernization",
-      //   path: "#",
-      // },
     ],
   },
-  // {
-  //   name: "DATA & BI",
-  //   subSections: [
-  //     {
-  //       name: "BI Consulting",
-  //       path: "/business-intelligence-services/",
-  //     },
-  // {
-  //   name: "Power BI",
-  //   path: "#",
-  // },
-  // {
-  //   name: "Data Engineering",
-  //   path: "#",
-  // },
-  //   ],
-  // },
   {
-    name: "DevOps & Cloud",
+    name: "Cloud & Infrastructure",
     subSections: [
       {
         name: "AWS Consulting",
         path: "/aws-consulting-services/",
       },
       {
-        name: "DevOps Consulting",
+        name: "DevOps",
         path: "/devops-consulting-services/",
-      },
-      {
-        name: "Kubernetes Consulting",
-        path: "/kubernetes-consulting-services/",
       },
     ],
   },
   {
-    name: "LOW-CODE/NO-CODE DEVELOPMENT",
+    name: "Work With Us",
     subSections: [
       {
-        name: "Frappe Development",
-        path: "/frappe-development-services/",
+        name: "Dedicated Teams",
+        path: "/hire-dedicated-software-development-team/",
       },
       {
-        name: "Adalo Development",
-        path: "/adalo-development-services/",
-      },
-      {
-        name: "FlutterFlow Development",
-        path: "/flutterflow-development-services/",
-      },
-      {
-        name: "Low-code/No-code Development",
-        path: "/low-code-no-code-development-services/",
+        name: "Staff Augmentation",
+        path: "/staff-augmentation/",
       },
     ],
   },
-  // {
-  //   name: 'Integration',
-  //   subSections: [
-  //     {
-  //       name: 'HubSpot',
-  //       path: '#',
-  //     },
-  //     {
-  //       name: 'Stripe',
-  //       path: '#',
-  //     },
-  //     {
-  //       name: 'Square',
-  //       path: '#',
-  //     },
-  //   ],
-  // },
 ];
 
 export const industryMenuItems = [
   {
-    name: "INDUSTRY",
+    name: "",
     subSections: [
       {
         name: "EdTech",
@@ -194,16 +115,21 @@ export const industryMenuItems = [
         name: "E-Commerce",
         path: "/industry/e-commerce-app-development/",
       },
+    ],
+  },
+  {
+    name: "",
+    subSections: [
       {
         name: "Media & Entertainment",
         path: "/industry/media-entertainment-software-development/",
       },
       {
-        name: "Fleet Management + GPS",
+        name: "Fleet Management",
         path: "/industry/fleet-management-software-development/",
       },
       {
-        name: "Human Resource",
+        name: "HR Software",
         path: "/industry/hr-software-development/",
       },
       {
@@ -212,47 +138,10 @@ export const industryMenuItems = [
       },
     ],
   },
-  {
-    name: "USE CASES",
-    subSections: [
-      {
-        name: "AWS for IoT",
-        path: "/use-case/aws-in-IoT/",
-      },
-      {
-        name: "AWS in E-Commerce",
-        path: "/use-case/aws-in-ecommerce/",
-      },
-      {
-        name: "AWS in healthcare",
-        path: "/use-case/aws-in-healthcare/",
-      },
-      {
-        name: "Generative AI in Retail",
-        path: "/use-case/generative-ai-in-retail/",
-      },
-      {
-        name: "Generative AI in Fintech",
-        path: "/use-case/gen-ai-in-fintech/",
-      },
-      {
-        name: "Generative AI in healthcare",
-        path: "/use-case/generative-ai-in-healthcare/",
-      },
-      {
-        name: "Generative AI in Manufacturing",
-        path: "/use-case/generative-ai-in-manufacturing/",
-      },
-      {
-        name: "Generative Ai in Media and Entertainment",
-        path: "/use-case/generative-ai-in-media-and-entertainment/",
-      },
-    ],
-  },
 ];
 export const resourcesMenuItems = [
   {
-    name: "RESOURCES",
+    name: "Content",
     subSections: [
       {
         name: "Blogs",
@@ -263,13 +152,18 @@ export const resourcesMenuItems = [
         path: "/ebooks/",
       },
       {
-        name: "Case Studies",
-        path: "/portfolio/",
-      },
-      {
         name: "AI Agents",
         path: "/ai-agents/",
       },
+      {
+        name: "Use Cases",
+        path: "/use-case/",
+      },
+    ],
+  },
+  {
+    name: "Free Tools",
+    subSections: [
       {
         name: "AI Tools",
         path: "/ai-tools/",
@@ -278,15 +172,6 @@ export const resourcesMenuItems = [
         name: "Tools",
         path: "/tools/",
       },
-      // {
-      //   name: "Design Template",
-      //   path: "/free-ui/",
-      // },
-    ],
-  },
-  {
-    name: "",
-    subSections: [
       {
         name: "Free Mockups",
         path: "/free-mockups/",
@@ -295,10 +180,6 @@ export const resourcesMenuItems = [
         name: "MVP in 48 Hours",
         path: "/mvp-in-48-hours/",
       },
-      // {
-      //   name: "AI Studio",
-      //   path: "/ai-studio/",
-      // },
     ],
   },
 ];
@@ -430,39 +311,40 @@ export const AISolutionsMenuItems = [
 ];
 
 export const menuItems = [
-  // {
-  //   name: "OUR WORK",
-  //   path: "/portfolio/",
-  //   hideInHeader: true,
-  // },
   {
-    name: "ABOUT",
-    path: "/about-us/",
-    hideInHeader: true,
-  },
-  {
-    name: "SERVICES",
+    name: "Services",
     path: "",
     heading: "",
     menuItems: servicesMenuItems,
     isMegaMenu: true,
   },
   {
-    name: "INDUSTRY",
+    name: "AI Solutions",
     path: "",
-    heading: "All Industries",
+    heading: "",
+    menuItems: AISolutionsMenuItems,
+    isMegaMenu: true,
+  },
+  {
+    name: "Portfolio",
+    path: "/portfolio/",
+  },
+  {
+    name: "Industry",
+    path: "",
+    heading: "",
     menuItems: industryMenuItems,
     isMegaMenu: true,
   },
   {
-    name: "RESOURCES",
+    name: "Resources",
     path: "",
-    heading: "All Resources",
+    heading: "",
     menuItems: resourcesMenuItems,
     isMegaMenu: true,
   },
   {
-    name: "HIRE TEAM",
+    name: "Hire Team",
     path: "",
     heading: "Technologies",
     menuItems: hireTeamMenuItems,
@@ -470,36 +352,27 @@ export const menuItems = [
     hideInHeader: true,
   },
   {
-    name: "AI SOLUTIONS",
-    path: "",
-    heading: "AI Solutions",
-    menuItems: AISolutionsMenuItems,
-    isMegaMenu: true,
-  },
-  // {
-  //   name: "BLOGS",
-  //   path: "/blog/",
-  //   hideInHeader: true,
-  // },
-  // {
-  //   name: "EBOOKS",
-  //   path: "/ebooks/",
-  //   hideInHeader: true,
-  // },
-  {
-    name: "OUR PROCESS",
-    path: "/our-process/",
+    name: "About",
+    path: "/about-us/",
     hideInHeader: true,
   },
   {
-    name: "CAREER",
-    path: "/career/",
-    hideInHeader: true,
-  },
-  {
-    name: "CONTACT",
+    name: "Contact",
     path: "/contact-us/",
     hideInHeader: true,
+    hideInSideMenu: true,
+  },
+  {
+    name: "Our Process",
+    path: "/our-process/",
+    hideInHeader: true,
+    hideInSideMenu: true,
+  },
+  {
+    name: "Career",
+    path: "/career/",
+    hideInHeader: true,
+    hideInSideMenu: true,
   },
 ];
 
@@ -513,9 +386,11 @@ export const portfolioDynamicItems = [
     alt: "Social marketplace app",
     industry: "E-commerce",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "US-based art marketplace",
+    metric: "3.2K artists onboarded in first 60 days",
   },
   {
-    title: "Connecting Pet Owners With Trusted Caregivers and Expert Advice",
+    title: "Connecting Pet Owners With Trusted Caregivers",
     link: "/portfolio/pet-finding-app/",
     description:
       "We built a mobile app that helps pet owners find reliable caregivers, consult veterinarians, and connect with a community of pet lovers-all in one place.",
@@ -523,6 +398,8 @@ export const portfolioDynamicItems = [
     alt: "Pet finder app",
     industry: "Social",
     technology: ["iOS", "Android", "Flutterflow"],
+    clientName: "US-based pet care platform",
+    metric: "850+ bookings in first 3 months",
   },
   {
     title: "Making Early Learning Fun with An Interactive Educational Game",
@@ -533,6 +410,8 @@ export const portfolioDynamicItems = [
     alt: "Educational mobile game",
     industry: "Ed-Tech",
     technology: ["iOS", "Android", "C#"],
+    clientName: "UK-based EdTech startup",
+    metric: "68% day-30 retention · 12,000+ students",
   },
   {
     title: "Building a Healthcare Mobile App for Improved Patient Outcomes",
@@ -543,6 +422,8 @@ export const portfolioDynamicItems = [
     alt: "Healthcare App",
     industry: "Healthcare",
     technology: ["React Native"],
+    clientName: "CEO Gerd, Orthopedic Doctor",
+    metric: "40% reduction in appointment no-shows",
   },
   // {
   //   title: "Streamlining Energy Audits with An All-In-One CRM Solution",

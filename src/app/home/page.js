@@ -4,36 +4,42 @@ import { homepageFAQ } from "../components/lib/schemaCode";
 import HeroSection from "../components/Homepage/HeroSection";
 import Script from "next/script";
 
-const BrilliantInThought = dynamic(
-  () => import("../components/Homepage/BrilliantInThought"),
-  { ssr: false }
+const BrilliantInThought = dynamic(() =>
+  import("../components/Homepage/BrilliantInThought")
 );
-const ExploreOurExpertise = dynamic(
-  () => import("../components/Homepage/ExploreOurExpertise"),
-  { ssr: false }
+const ExploreOurExpertise = dynamic(() =>
+  import("../components/Homepage/ExploreOurExpertise")
 );
-const SeeingBelieving = dynamic(
-  () => import("../components/Homepage/SeeingBelieving"),
-  { ssr: false }
+const SeeingBelieving = dynamic(() =>
+  import("../components/Homepage/SeeingBelieving")
 );
-const ClientReviews = dynamic(
-  () => import("../components/Homepage/ClientReviews"),
-  { ssr: false }
+const MidPageCTA = dynamic(() =>
+  import("../components/Homepage/MidPageCTA")
 );
-const IndustriesWeServe = dynamic(
-  () => import("../components/Homepage/IndustriesWeServe"),
-  { ssr: false }
+const AISolutions = dynamic(() =>
+  import("../components/Homepage/AISolutions")
 );
-const Honors = dynamic(() => import("../components/Homepage/Honors"), { ssr: false });
-const HomepageWhyChooseUs = dynamic(
-  () => import("../components/Homepage/HomepageWhyChooseUs"),
-  { ssr: false }
+const ClientReviews = dynamic(() =>
+  import("../components/Homepage/ClientReviews")
 );
-const HomepageBlog = dynamic(
-  () => import("../components/Homepage/HomePageBlogs"),
-  { ssr: false }
+const ClutchReviews = dynamic(() =>
+  import("../components/Homepage/ClutchReviews")
 );
-const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"), { ssr: false });
+const IndustriesWeServe = dynamic(() =>
+  import("../components/Homepage/IndustriesWeServe")
+);
+const Honors = dynamic(() => import("../components/Homepage/Honors"));
+const HomepageWhyChooseUs = dynamic(() =>
+  import("../components/Homepage/HomepageWhyChooseUs")
+);
+const EbookSection = dynamic(() =>
+  import("../components/Homepage/EbookSection")
+);
+const HomepageBlog = dynamic(() =>
+  import("../components/Homepage/HomePageBlogs")
+);
+const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
+const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
 
 export async function generateMetadata() {
   return {
@@ -100,13 +106,18 @@ const page = () => {
       {/* <GameChanger /> */}
       <BrilliantInThought />
       <SeeingBelieving />
+      <HomepageWhyChooseUs />
+      <MidPageCTA />
+      <AISolutions />
       <ExploreOurExpertise />
       <ClientReviews />
-      <IndustriesWeServe title="Industries We Serve" darkBackground={true} />
+      <IndustriesWeServe />
+      <ClutchReviews />
       <Honors />
-      <HomepageWhyChooseUs />
+      <EbookSection />
       <HomepageBlog />
       <ContactUs />
+      <StickyCTA />
     </>
   );
 };

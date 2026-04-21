@@ -180,9 +180,15 @@ input[type="number"] {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
   transition: all 0.6s ease;
   width: 100%;
+}
+
+/* Material Tailwind Menu/Drawer portals — ensure they sit above all page content */
+[data-floating-ui-portal] {
+  z-index: 9999 !important;
+  position: relative;
 }
 
 .header_logo {

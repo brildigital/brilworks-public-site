@@ -1,0 +1,371 @@
+{
+  "slug": "generative-ai-development-services",
+  "url": "/generative-ai-development-services/",
+  "category": "AI & Agents",
+  "metadata": {
+    "title": "Generative AI Services | Brilworks",
+    "description": "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+    "canonical": "{NEXT_PUBLIC_BASE_URL}generative-ai-development-services/",
+    "ogImage": "{NEXT_PUBLIC_BASE_URL}images/generative-ai-banner.webp",
+    "ogTitle": "Generative AI Services",
+    "ogDescription": "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+    "twitterTitle": "Generative AI Services",
+    "twitterDescription": "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+    "twitterCard": "summary_large_image",
+    "twitterSite": "@_Brilworks",
+    "siteName": "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    "locale": "en-US",
+    "type": "website"
+  },
+  "content": {
+    "hero": {
+      "eyebrow": "",
+      "headline": "Generative AI Development Services",
+      "subheadline": "We are pioneering the future of AI with our generative AI solutions. We are not just another AI company; we are a team of passionate experts who craft bespoke AI applications tailored to your unique needs.",
+      "imageSrc": "/images/v2/generative-ai-banner.webp",
+      "ctas": [
+        { "label": "Let's Build", "type": "primary" }
+      ]
+    },
+    "sections": [
+      {
+        "type": "cta",
+        "title": "Transform Your Business with Generative AI",
+        "subtitle": "Unlock the vast potential of generative AI to creatively revolutionize how your business operates. Whether it's generating original content, designing innovative applications, or creating novel customer experiences, generative AI serves as a catalyst for significant productivity improvements and operational transformation. Utilize Amazon's Bedrock and Foundation Models, available through SageMaker Jumpstart, to train your models using your own internal data while maintaining its confidentiality. At Brilworks, we offer the depth of experience and technical expertise needed to launch or scale your generative AI initiatives effectively. Whether you are beginning your AI journey or seeking to enhance your existing model's infrastructure, our team is equipped to guide you through every step of the process, ensuring tailored solutions that drive real results.",
+        "buttonText": "Let's Discuss",
+        "darkBackground": false
+      },
+      {
+        "type": "services",
+        "title": "Our Generative AI Development Services",
+        "items": [
+          {
+            "title": "Generative AI Consulting",
+            "description": "Feeling overwhelmed by the possibilities of generative AI? Our team of experts can help. We will guide you through a strategic assesment, identifying areas where generative AI can deliver most significant impact for your business.",
+            "imageSrc": "/images/v2/gen-ai-consulting.webp",
+            "imageAlt": "Generative ai img"
+          },
+          {
+            "title": "Generative AI Model Development",
+            "description": "Don't settle for generic solutions.  Our team of engineers and data scientists builds custom generative AI models designed to address your unique challenges.",
+            "imageSrc": "/images/v2/generative-ai-model-development.webp",
+            "imageAlt": "Mobile Application dev img"
+          },
+          {
+            "title": "Generative AI Integration",
+            "description": "Get the most out of your AI investment with seamless integration.  Our team takes care of the technical complexities, ensuring your custom generative AI model integrates smoothly into your existing workflows and systems.",
+            "imageSrc": "/images/v2/generative-ai-integration.webp",
+            "imageAlt": "Generative AI Integration img"
+          },
+          {
+            "title": "Upgrade and maintenance",
+            "description": "Your generative AI model is an investment that needs nurturing.  Our team provides ongoing support and maintenance to ensure your model continues to function at peak performance.",
+            "imageSrc": "/images/v2/upgrade-and-maintenance.webp",
+            "imageAlt": "Upgrade and maintenance img"
+          },
+          {
+            "title": "AI Model fine tuning",
+            "description": "As your business evolves, so should your AI model.  Our experts offer AI model fine-tuning services, meticulously adjusting the model to adapt to new data, user feedback, or changing business objectives.",
+            "imageSrc": "/images/v2/ai-model-fine-tuning.webp",
+            "imageAlt": "Saas application dev img"
+          },
+          {
+            "title": "Generative AI model replication",
+            "description": "Need your groundbreaking AI model in multiple locations or applications?  Our team can handle generative AI model replication, ensuring your custom solution is efficiently deployed across your entire organization.",
+            "imageSrc": "/images/v2/gen-ai-model-replication.webp",
+            "imageAlt": "Generative replication img"
+          }
+        ]
+      },
+      {
+        "type": "whyChooseUs",
+        "title": "Here's what sets us apart",
+        "items": [
+          {
+            "title": "Beyond Automation, Embrace Innovation",
+            "icon": "/images/v2/fi_8365133.svg",
+            "description": "We don't just automate tasks; we empower your AI to generate entirely new content, concepts, and ideas."
+          },
+          {
+            "title": "Scalable AI solutions",
+            "icon": "/images/v2/scale-project.svg",
+            "description": "The world is constantly evolving, and your AI shouldn't be left behind. Our solutions are built to scale and adapt alongside your business."
+          },
+          {
+            "title": "We Speak Your Language, and AI's",
+            "icon": "/images/v2/fi_5403606.svg",
+            "description": "Our team of AI experts bridge the gap between your domain knowledge and the complex world of generative models."
+          },
+          {
+            "title": "AI for Everyone",
+            "icon": "/images/v2/fi_10644631.svg",
+            "description": "We're not just developers; we're your partners in success. Clear communication and collaboration ensure your vision becomes a reality."
+          },
+          {
+            "title": "Agility at the Core",
+            "icon": "/images/v2/fi_9608845.svg",
+            "description": "We stay ahead of the curve, continuously refining our techniques and integrating the latest advancements.  Your project benefits from cutting-edge technology without the learning curve."
+          }
+        ]
+      },
+      {
+        "type": "useCases",
+        "title": "What are some common generative AI use cases?",
+        "items": [
+          {
+            "title": "Image generation",
+            "imageSrc": "/images/v2/image-generation.webp",
+            "innerTitle": "Generate a steady stream of fresh visuals for websites, social media, presentations, and marketing materials.",
+            "description": [
+              "Develop custom imagery that perfectly embodies the essence of your campaigns.",
+              "Showcase your products in a whole new light. Generate product images that only look stunning.",
+              "Generate captivating photos that capture the essence of a location, its culture, and its natural beauty, inspiring them to book their next adventure.",
+              "Create eye-catching posters, trailers, and social media content that reflects the vibrancy and energy of your film, show, or musical event."
+            ]
+          },
+          {
+            "title": "Content creation",
+            "imageSrc": "/images/v2/content-creation.webp",
+            "innerTitle": "Create a powerful marketing strategy that combines human creativity and strategic thinking with AI.",
+            "description": [
+              "Generate personalized product recommendations, targeted ad copy, and dynamic product descriptions.",
+              "Craft targeted ads and marketing materials that resonate with specific demographics and user segments.",
+              "Generate customized proposals, reports, and marketing materials.",
+              "Create personalized tutorials, onboarding experiences, and in-app messages.",
+              "Develop personalized property descriptions, virtual tours, and targeted marketing materials."
+            ]
+          },
+          {
+            "title": "Software development with AI",
+            "imageSrc": "/images/v2/software-development-with-ai.webp",
+            "innerTitle": "Free up your developers' time by automating tedious tasks like code generation, testing, and debugging.",
+            "description": [
+              "Code generation with Gen AI allows developers to focus on complex logic rather than writing repetitive code.",
+              "Gen AI can analyze user data and feedback to identify feature needs and suggest improvements.",
+              "Gen AI automates tasks like regulatory compliance checks and data analysis.",
+              "Gen AI streamlines the creation of medical software by automating code generation and compliance checks."
+            ]
+          },
+          {
+            "title": "Document and image analysis",
+            "imageSrc": "/images/v2/document-image-analysis.webp",
+            "innerTitle": "Extract key information from invoices, receipts, contracts, and other documents with unmatched speed and accuracy.",
+            "description": [
+              "Gen AI can analyze vast amounts of legal documents, including case files, contracts, and litigation research materials. It can identify key information, extract relevant clauses, and summarize complex legal concepts.",
+              "Gen AI can analyze financial documents like loan applications, credit reports, and investment proposals with incredible accuracy. It can identify inconsistencies, flag potential risks, and ensure compliance with complex regulations.",
+              "Gen AI can accurately analyze medical scans, X-rays, and MRIs. It can detect abnormalities, highlight areas of concern, assisting doctors in more precise diagnoses."
+            ]
+          },
+          {
+            "title": "Media translation service",
+            "imageSrc": "/images/v2/media-translation-service.webp",
+            "innerTitle": "Translate your marketing materials, websites, videos, and other content with speed and precision.",
+            "description": [
+              "Go beyond literal translations. Gen AI understands cultural nuances and adapts content (movies, TV shows) to resonate with global audiences.",
+              "Enhance the gaming experience for a global audience. Gen AI can translate game content (text, dialogue).",
+              "Gen AI translates documents (announcements, training materials) while maintaining your brand voice and message integrity.",
+              "Break down language barriers in education. Gen AI translates e-learning materials."
+            ]
+          },
+          {
+            "title": "Round-the-clock customer service",
+            "imageSrc": "/images/v2/round-the-clock-customer-service.webp",
+            "innerTitle": "Offer your customers 24/7, always-on support powered by intelligent AI.",
+            "description": [
+              "AI-powered assistants can answer customer questions about product features, specifications, and compatibility in real-time.",
+              "Gen AI can analyze vast amounts of marketing campaign data in real-time.",
+              "Implement AI-powered chatbots or virtual assistants that can answer basic medical questions.",
+              "Gen AI can personalize learning experiences by generating content tailored to student needs and progress."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "industries",
+        "title": "Industry Use Cases",
+        "items": [
+          {
+            "icon": "/images/v2/healthcare.svg",
+            "title": "Healthcare",
+            "description": "Revolutionizing patient care with secure and scalable solutions.",
+            "link": "/use-case/generative-ai-in-healthcare/"
+          },
+          {
+            "icon": "/images/v2/fintech.svg",
+            "title": "Fintech",
+            "description": "Driving financial innovation with secure, high-performance technology.",
+            "link": "/use-case/gen-ai-in-fintech/"
+          },
+          {
+            "icon": "/images/v2/setting.svg",
+            "title": "Media & Entertainment",
+            "description": "Transforming content delivery and audience engagement seamlessly.",
+            "link": "/use-case/generative-ai-in-media-and-entertainment/"
+          },
+          {
+            "icon": "/images/v2/setting.svg",
+            "title": "Manufacturing",
+            "description": "Streamlining operations and optimizing production processes.",
+            "link": "/use-case/generative-ai-in-manufacturing/"
+          },
+          {
+            "icon": "/images/v2/retail.svg",
+            "title": "Retail",
+            "description": "Enhancing shopping experiences with data-driven solutions.",
+            "link": "/use-case/generative-ai-in-retail/"
+          }
+        ]
+      },
+      {
+        "type": "honors",
+        "eyebrow": "Recognition",
+        "title": "We're Pleased to Share Some of the Honors",
+        "items": [
+          { "title": "Top Software Companies", "org": "GoodFirms · 2025–26" },
+          { "title": "Global Award Spring", "org": "Clutch · 2025" },
+          { "title": "Global Award Fall", "org": "Clutch · 2024" },
+          { "title": "Top 10 Agency 2026", "org": "SelectedFirms" },
+          { "title": "Adalo Expert", "org": "No-Code Certified" },
+          { "title": "AWS Partner", "org": "Advanced Tier" }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Data is the new oil, but AI is the refinery. Extract valuable insights from your data and make smarter business decisions with AI.",
+        "subtitle": "Tell us your project idea and get a free consultation to create an outstanding digital product.",
+        "buttonText": "Schedule a free AI consultation"
+      },
+      {
+        "type": "industriesWeServe",
+        "eyebrow": "Industries We Serve",
+        "title": "Deep Domain Expertise",
+        "subtitle": "Not generalists. We have case studies, clients, and production code in each of these verticals.",
+        "items": [
+          { "name": "Healthcare", "count": "8 projects · HIPAA", "href": "/industry/healthcare-software-development/" },
+          { "name": "Fintech", "count": "12 projects", "href": "/industry/fintech-software-development/" },
+          { "name": "EdTech", "count": "7 projects", "href": "/industry/edtech-software-development/" },
+          { "name": "E-Commerce", "count": "15 projects", "href": "/industry/e-commerce-app-development/" },
+          { "name": "SaaS", "count": "20+ projects" },
+          { "name": "Logistics", "count": "6 projects", "href": "/industry/fleet-management-software-development/" }
+        ],
+        "links": [
+          { "text": "+9 more industries we have shipped in →", "href": "/industry/" },
+          { "text": "Tell us your industry →", "href": "/contact-us/" }
+        ]
+      },
+      {
+        "type": "testimonials",
+        "eyebrow": "Our Clients Simply Love Our Work",
+        "title": "What Our Clients Say",
+        "subtitle": "Not curated marketing quotes. Real words from real people who have worked with us for years.",
+        "items": [
+          {
+            "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+            "author": "David Velasquez",
+            "position": "CEO, Rastrack",
+            "duration": "4+ year relationship",
+            "metric": "Platform scaled to 10K+ active users"
+          },
+          {
+            "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+            "author": "Liz Bullen",
+            "position": "Founder, Lyfecoin",
+            "duration": "2+ year relationship",
+            "metric": "MVP delivered in under 4 weeks"
+          },
+          {
+            "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+            "author": "Orokii Team",
+            "position": "Art Marketplace Platform",
+            "duration": "3+ year relationship",
+            "metric": "3.2K artists onboarded in first 60 days"
+          },
+          {
+            "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+            "author": "Edwin",
+            "position": "Founder, Tekstride",
+            "duration": "2+ year relationship",
+            "metric": "Shipped 3 major releases on schedule"
+          },
+          {
+            "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+            "author": "Golan",
+            "position": "Director of R&D, Trackimo",
+            "duration": "3+ year relationship",
+            "metric": "99.9% API uptime achieved"
+          }
+        ]
+      },
+      {
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "How much does it cost to develop a generative AI solution?",
+            "a": "The cost of generative AI development depends on several factors, like the complexity of the project, the size and expertise of the development team, and the ongoing maintenance needs. However, to give you a ballpark figure, a basic application might range from $50,000 to $150,000, while feature-rich solutions with advanced functionalities can reach $400,000 or more.  We at Brilworks offer free consultations to assess your specific needs and provide a tailored quote."
+          },
+          {
+            "q": "Why choose Brilworks for Generative AI development services?",
+            "a": "There are many reasons to choose Brilworks for your generative AI project. Here are just a few: We focus on building AI solutions that solve real business problems, not just showcase technology. Our team of experienced AI developers and data scientists have a proven track record of success in diverse industries. We prioritize clear communication and transparency throughout the development process. We offer competitive pricing and flexible engagement models to fit your budget. We are committed to building ethical and responsible AI solutions."
+          },
+          {
+            "q": "How much does it cost to develop software?",
+            "a": "The development timeline for a generative AI solution can vary depending on the project's complexity. However, you can expect the process to take anywhere from 3 to 12 months.  This timeframe includes data collection and preparation, model training, testing and refinement, and integration with your existing systems.  We work closely with you to establish realistic timelines and milestones throughout the project."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "How much does it cost to develop a generative AI solution?",
+        "a": "The cost of generative AI development depends on several factors, like the complexity of the project, the size and expertise of the development team, and the ongoing maintenance needs. However, to give you a ballpark figure, a basic application might range from $50,000 to $150,000, while feature-rich solutions with advanced functionalities can reach $400,000 or more.  We at Brilworks offer free consultations to assess your specific needs and provide a tailored quote."
+      },
+      {
+        "q": "Why choose Brilworks for Generative AI development services?",
+        "a": "There are many reasons to choose Brilworks for your generative AI project. Here are just a few: We focus on building AI solutions that solve real business problems, not just showcase technology. Our team of experienced AI developers and data scientists have a proven track record of success in diverse industries. We prioritize clear communication and transparency throughout the development process. We offer competitive pricing and flexible engagement models to fit your budget. We are committed to building ethical and responsible AI solutions."
+      },
+      {
+        "q": "How much does it cost to develop software?",
+        "a": "The development timeline for a generative AI solution can vary depending on the project's complexity. However, you can expect the process to take anywhere from 3 to 12 months.  This timeframe includes data collection and preparation, model training, testing and refinement, and integration with your existing systems.  We work closely with you to establish realistic timelines and milestones throughout the project."
+      }
+    ],
+    "stats": [],
+    "testimonials": [
+      {
+        "quote": "I have been working with Brilworks for more than 4 years and could not be happier with the quality of their work and the support provided. The best part is they're always available.",
+        "author": "David Velasquez",
+        "position": "CEO, Rastrack",
+        "duration": "4+ year relationship",
+        "metric": "Platform scaled to 10K+ active users"
+      },
+      {
+        "quote": "Team Brilworks has been an absolute delight to work with. They were able to take my list of prioritized needs and identify the most pressing ones to solve them quickly and exponentially.",
+        "author": "Liz Bullen",
+        "position": "Founder, Lyfecoin",
+        "duration": "2+ year relationship",
+        "metric": "MVP delivered in under 4 weeks"
+      },
+      {
+        "quote": "Orokii has a special relationship with Brilworks. They treat our project as if it were their own. Exceptional communication, on-time delivery, and they always go the extra mile.",
+        "author": "Orokii Team",
+        "position": "Art Marketplace Platform",
+        "duration": "3+ year relationship",
+        "metric": "3.2K artists onboarded in first 60 days"
+      },
+      {
+        "quote": "I absolutely loving working with the Brilworks team because their communication is top-notch. I really value their partnership, transparency in processes and suggestions that ensure our project comes to fruition.",
+        "author": "Edwin",
+        "position": "Founder, Tekstride",
+        "duration": "2+ year relationship",
+        "metric": "Shipped 3 major releases on schedule"
+      },
+      {
+        "quote": "Brilworks team members are an excellent group of professionals. Excellent knowledge of Java, Spring Boot, DB, and DevOps. Dedicated, available, and communication is excellent! I strongly recommend Brilworks.",
+        "author": "Golan",
+        "position": "Director of R&D, Trackimo",
+        "duration": "3+ year relationship",
+        "metric": "99.9% API uptime achieved"
+      }
+    ]
+  }
+}

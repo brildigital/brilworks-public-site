@@ -1,9 +1,13 @@
 "use client";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "../Services/ServiceHeroSection";
-import AboutOurExpertise from "../Services/AboutOurExpertise";
+import { ShieldCheck, Factory, BarChart3, Wrench } from "lucide-react";
+import SolutionHeroSection from "./SolutionHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import SolutionContactForm from "./SolutionContactForm";
+import IndustryMidCTA from "./IndustryMidCTA";
+import IndustryTrustBar from "./IndustryTrustBar";
+
+const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 
@@ -14,11 +18,26 @@ const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const ManufaturingSoftwareDevelopmentService = () => {
+  const trustBarItems = [
+    { icon: ShieldCheck, label: "AWS Consulting Partner" },
+    { icon: Factory, label: "8+ Years Manufacturing Software" },
+    { icon: BarChart3, label: "98% Project Success Rate" },
+    { icon: Wrench, label: "ERP & Shop Floor Integrations" },
+  ];
+
+  const heroStats = [
+    { value: "120+", label: "Products Shipped" },
+    { value: "15+", label: "Manufacturing Apps" },
+    { value: "99.9%", label: "Uptime" },
+    { value: "98%", label: "Client Retention" },
+  ];
+
   const manufacturingServices1 = {
     title: "What We Build for Manufacturers",
     servicesList: [
       {
         title: "Order Management Platforms",
+        iconSrc: "/images/v2/manufaturing-icon.svg",
         value: "mfg-service-1",
         description:
           "Track customer orders from quote to delivery, with automatic production scheduling and material allocation.",
@@ -27,6 +46,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Inventory Tracking Systems",
+        iconSrc: "/images/v2/realtime-icon.svg",
         value: "mfg-service-2",
         description:
           "Real-time stock levels across multiple locations, with barcode scanning and automated reorder alerts.",
@@ -35,6 +55,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Shop Floor Applications",
+        iconSrc: "/images/v2/developer-icon.svg",
         value: "mfg-service-3",
         description:
           "Digital work instructions, machine monitoring, production counts, and downtime tracking captured in real-time.",
@@ -43,6 +64,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Quality Control Software",
+        iconSrc: "/images/v2/quality-project-mgmt-icon.svg",
         value: "mfg-service-4",
         description:
           "Digital inspection checklists, defect tracking, non-conformance management, and statistical process control.",
@@ -51,6 +73,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Mobile Apps for Production",
+        iconSrc: "/images/v2/interactive-ui-icon.svg",
         value: "mfg-service-5",
         description:
           "Native iOS and Android apps that work offline for warehouse operations, job tracking, and inspections.",
@@ -64,6 +87,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
     servicesList: [
       {
         title: "Manufacturing Execution Systems (MES)",
+        iconSrc: "/images/v2/cloud-based-icon.svg",
         value: "mfg-service-6",
         description:
           "Connect machines and operators to capture production data, monitor OEE, and identify bottlenecks.",
@@ -72,6 +96,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Custom Web Dashboards",
+        iconSrc: "/images/v2/scalable-architecture-icon.svg",
         value: "mfg-service-7",
         description:
           "Browser-based reporting and management interfaces accessible from any device.",
@@ -80,6 +105,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Warehouse Management Solutions",
+        iconSrc: "/images/v2/logistic-icon.svg",
         value: "mfg-service-8",
         description:
           "Receiving, putaway, picking, and shipping workflows with lot and serial number traceability.",
@@ -88,6 +114,7 @@ const ManufaturingSoftwareDevelopmentService = () => {
       },
       {
         title: "Production Planning Tools",
+        iconSrc: "/images/v2/calendar-icon.svg",
         value: "mfg-service-9",
         description:
           "Schedule production runs, calculate material requirements, and manage capacity across your facility.",
@@ -162,17 +189,15 @@ const ManufaturingSoftwareDevelopmentService = () => {
 
   return (
     <>
-      <ServiceHeroSection
-        title="Manufacturing Software Development Services"
-        description="Custom software for production companies. We build order management systems, inventory tracking, shop floor applications, and integrations that connect your existing tools.."
-        buttonText="Start Your App Journey"
+      <SolutionHeroSection
+        technologyText="Manufacturing Software Development Services"
+        title='Custom <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">Manufacturing Software</span> Development'
+        description="Custom software for production companies. We build order management systems, inventory tracking, shop floor applications, and integrations that connect your existing tools."
         imageSrc="/images/v2/manufacturing-software-development-services.webp"
+        buttonText="Start Your App Journey"
+        stats={heroStats}
       />
-      <AboutOurExpertise
-        title="About Brilworks Manufacturing Solutions"
-        description1="We've spent 8 years building software for businesses that make physical products.  We work with SME manufacturers who've outgrown spreadsheets but don't need (or want) a massive enterprise system. Our developers have delivered over 120 projects with a 98% success rate. We're rated as top developers because we listen first, then build what actually solves the problem."
-      />
-
+      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection
         bgClass="bg-themeLight"
         sectionId="services-one"
@@ -184,6 +209,10 @@ const ManufaturingSoftwareDevelopmentService = () => {
         imageOnLeft={true}
         serviceData={manufaturingServices2}
       />
+      <IndustryMidCTA
+        title="Ready to Build Your Manufacturing App?"
+        description="Get a free consultation and project estimate. We respond within 24 hours."
+      />
       <MultipleCardInGrid
         title="How We Work With You"
         cardData={manufaturingHowWeWorkWithYou}
@@ -194,21 +223,19 @@ const ManufaturingSoftwareDevelopmentService = () => {
         bgClass="bg-sectionBG"
         data={whyChooseUsDevelopmentData}
       />
-
+      <ClientReviews />
       <SeeingBelieving />
       <SolutionContactForm
-        title="Let's Talk About Your Project"
-        description={
-          <>
-            Tell us which HR processes are eating up your team's time. We'll
-            explain what we'd build, how long it would take, and what it would
-            cost. Most conversations start with "our current process is..." and
-            we go from there. No pressure, no sales pitch. Just a straight
-            discussion about whether custom software makes sense for your
-            situation. Contact us to start the conversation. We respond within
-            one business day.
-          </>
-        }
+        title="Ready to Build Your Manufacturing Platform?"
+        description="You're one conversation away from streamlining your manufacturing processes and eliminating manual bottlenecks."
+        submitLabel="Get My Free Manufacturing Consultation"
+        benefits={[
+          "Free 30-minute consultation with a manufacturing tech specialist",
+          "Detailed project proposal within 48 hours",
+          "48-hour risk-free trial — no commitment",
+          "Response guaranteed within 24 business hours",
+          "ERP and shop floor integration guidance included",
+        ]}
       />
       <HomePageBlogs />
     </>
