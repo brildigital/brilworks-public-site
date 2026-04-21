@@ -4,6 +4,7 @@ import "./styles/button.scss";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
+import { NextAuthProvider } from "./provider";
 import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
@@ -36,10 +37,15 @@ storyblokInit({
 });
 
 const Footer = dynamic(() => import("./components/Footer"));
+const CookieConsent = dynamic(
+  () => import("./components/CookieConsent/CookieConsent"),
+  { ssr: false }
+);
 
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
+      <NextAuthProvider>
       <html lang="en" className={`${figtree.variable} ${plusJakartaSans.variable} ${inter.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
@@ -66,8 +72,10 @@ export default function RootLayout({ children }) {
           <CurrentHeader />
           {children}
           <Footer />
+          <CookieConsent />
         </body>
       </html>
+      </NextAuthProvider>
     </StoryblokProvider>
   );
 }
