@@ -73,8 +73,8 @@ export const authOptions = {
     error: "/not-found",
   },
   callbacks: {
-    async signIn(user, account, profile) {
-      await saveUserDataToDatabase(user);
+    async signIn({ user, account, profile }) {
+      await saveUserDataToDatabase({ user, account, profile });
       return true;
     },
     jwt: async ({ token, user }) => {

@@ -6,6 +6,7 @@ import React, { useCallback, useState } from "react";
 import Loader from "../Homepage/Loader";
 import Link from "next/link";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
+import { Loader2 } from "lucide-react";
 
 const Login = () => {
   const session = useSession();
@@ -105,14 +106,12 @@ const Login = () => {
 
               <div className="w-full">
                 <button
-                  className="c-button c-btn-primary !rounded-[7px] !text-lg font-bold !py-[6px] !w-full hover:text-black"
-                  type="button"
+                  className={`c-button c-btn-primary !rounded-[7px] !text-lg font-bold !py-[6px] !w-full hover:!bg-blue-600
+                  type=button`}
                   onClick={login}
                 >
                   {isLoading ? (
-                    <div className="py-[4px] px-[30px]">
-                      <FetchDataSpinner size={"la-sm"} />
-                    </div>
+                      <Loader2 className="animate-spin my-0.5"/>
                   ) : (
                     <p>Login</p>
                   )}
