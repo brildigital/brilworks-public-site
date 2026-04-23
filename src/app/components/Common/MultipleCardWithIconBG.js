@@ -31,7 +31,7 @@ const MultipleCardWithIconBG = ({ bgClass = "bg-white", data }) => {
                   <Image
                     className="w-7 h-7"
                     src={icon}
-                    alt={`${title}-icon`}
+                    alt={`${title} service icon`}
                     width={28}
                     height={28}
                   />

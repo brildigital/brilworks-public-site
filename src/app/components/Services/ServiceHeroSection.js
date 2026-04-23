@@ -103,7 +103,7 @@ const ServiceHeroSection = ({
                 <Image
                   className="rounded-2xl md:h-[610px] object-cover"
                   src={imageSrc}
-                  alt="service-banner"
+                  alt={`${pageTitleText || "Custom Software"} Development Services`}
                   width="565"
                   height="610"
                   priority

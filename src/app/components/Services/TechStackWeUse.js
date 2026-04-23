@@ -421,7 +421,7 @@ const TechStackWeUse = () => {
                       src={imageSrc}
                       width={100}
                       height={100}
-                      alt={`${title}-icon`}
+                      alt={`${title} technology logo`}
                     />
                     <p className="md:text-lg text-base font-medium pt-5">
                       {title}
