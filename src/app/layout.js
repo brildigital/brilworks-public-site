@@ -45,7 +45,6 @@ const CookieConsent = dynamic(
 export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
-      <NextAuthProvider>
       <html lang="en" className={`${figtree.variable} ${plusJakartaSans.variable} ${inter.variable}`}>
         <head>
           <meta name="viewport" content="width=device-width" />
@@ -69,13 +68,14 @@ export default function RootLayout({ children }) {
           )} */}
         </head>
         <body suppressHydrationWarning={true}>
-          <CurrentHeader />
-          {children}
-          <Footer />
-          <CookieConsent />
+          <NextAuthProvider>
+            <CurrentHeader />
+            {children}
+            <Footer />
+            <CookieConsent />
+          </NextAuthProvider>
         </body>
       </html>
-      </NextAuthProvider>
     </StoryblokProvider>
   );
 }
