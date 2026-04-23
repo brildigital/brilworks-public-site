@@ -522,7 +522,7 @@ const AiAgentHome = () => {
                     <div className="text-white text-[26px] font-extrabold tracking-[-0.5px] leading-none">
                       {stat.number}
                     </div>
-                    <div className="text-white/45 text-[11px] mt-1 tracking-[0.04em] uppercase">
+                    <div className="text-white/50 text-[11px] mt-1 tracking-[0.04em] uppercase">
                       {stat.label}
                     </div>
                   </div>
@@ -674,7 +674,7 @@ const AiAgentHome = () => {
                 for Your Product
               </span>
             </h2>
-            <p className="text-[17px] text-white/55 max-w-xl mx-auto !mb-9 leading-relaxed">
+            <p className="text-[17px] text-white/50 max-w-xl mx-auto !mb-9 leading-relaxed">
               You've seen what's possible. Now let our team build custom AI
               agents designed for your business — tailored to your data, your
               workflows, and your users.

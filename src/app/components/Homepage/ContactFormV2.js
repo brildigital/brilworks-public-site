@@ -221,7 +221,7 @@ const ContactFormV2 = ({
                 disabled={isSubmitting}
               />
               {!hideEmail && (
-                <p className={`text-xs ${darkMode ? "text-white/35" : "text-[#9ca3af]"}`}>
+                <p className={`text-xs ${darkMode ? "text-white/30" : "text-[#9ca3af]"}`}>
                   Or email us directly at{" "}
                   <a
                     href="mailto:sales@brilworks.com"

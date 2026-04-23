@@ -108,7 +108,7 @@ const ContactUs = () => {
               >
                 Get a Free Project Estimate in 24 Hours
               </h2>
-              <p className="text-white/[0.62] text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+              <p className="text-white/60 text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
                 Share your idea. We&apos;ll respond with a plan, timeline, and
                 price — no obligation.
               </p>
