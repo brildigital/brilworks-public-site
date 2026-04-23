@@ -143,9 +143,18 @@ export function generateBlogPostingSchema({
   dateModified,
   authorName,
   authorUrl,
+  authorJobTitle,
   category,
   readingTime,
 }) {
+  const author = {
+    "@type": "Person",
+    name: authorName,
+    url: authorUrl,
+  };
+  if (authorJobTitle) {
+    author.jobTitle = authorJobTitle;
+  }
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -156,11 +165,7 @@ export function generateBlogPostingSchema({
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     wordCount: readingTime ? readingTime * 250 : undefined,
-    author: {
-      "@type": "Person",
-      name: authorName,
-      url: authorUrl,
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: "Brilworks",
