@@ -746,11 +746,11 @@ const Tools = () => {
             className="text-white !font-extrabold mb-3"
             text="Need Custom Software Development?"
           />
-          <p className="text-white/50 text-base mb-8 max-w-[576px] mx-auto">
+          <p className="text-white/50 text-base mb-0 max-w-[576px] mx-auto">
             Our tools give you estimates &mdash; our team turns them into
             reality. Talk to our experts about your project.
           </p>
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-4 flex-wrap mt-8">
             <ButtonV2
               redirect="/contact-us/"
               label="Book Free Consultation"

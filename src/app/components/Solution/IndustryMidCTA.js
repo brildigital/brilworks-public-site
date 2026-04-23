@@ -16,7 +16,7 @@ const IndustryMidCTA = ({
         >
           {title}
         </h3>
-        <p className="text-white/55 text-base !mb-8 max-w-[576px] mx-auto">
+        <p className="text-white/50 text-base !mb-8 max-w-[576px] mx-auto">
           {description}
         </p>
         <div className="flex justify-center gap-4 flex-wrap">

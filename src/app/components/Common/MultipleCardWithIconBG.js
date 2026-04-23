@@ -20,11 +20,11 @@ const MultipleCardWithIconBG = ({ bgClass = "bg-white", data }) => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+        <div className="flex flex-wrap gap-5">
           {data?.benefits?.map(({ title, description, icon }, index) => (
             <div
               key={index}
-              className="border border-[#e5e7eb] rounded-2xl p-7 bg-white text-center transition-all duration-300 hover:border-themeColor hover:bg-[#e8f0fd]"
+              className="border border-[#e5e7eb] rounded-2xl p-7 bg-white text-center transition-all duration-300 hover:border-themeColor hover:bg-[#e8f0fd] w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
             >
               <div className="w-14 h-14 rounded-full bg-[#e8f0fd] flex items-center justify-center mx-auto !mb-4">
                 {icon ? (

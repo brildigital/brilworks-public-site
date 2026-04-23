@@ -358,7 +358,7 @@ const Ebooks = () => {
                 <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 13, marginBottom: 20 }}>
                   <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Most downloaded this month</strong> · Free expert guide by Brilworks.
                 </p>
-                <Link href={`/ebooks/${featuredEbook.slug}`} style={{
+                <Link href={`/ebooks/${featuredEbook.slug}`} className="mt-5" style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
                   background: "#017eeb", color: "#fff",
                   border: "1px solid #017eeb", borderRadius: 6,
@@ -515,7 +515,7 @@ const Ebooks = () => {
                     }}>
                       Expert-crafted guide by Brilworks engineering leads — architecture, tradeoffs, and production-ready patterns.
                     </p>
-                    <Link href={`/ebooks/${ebook.slug}`} style={{
+                    <Link href={`/ebooks/${ebook.slug}`} className="mt-5" style={{
                       display: "inline-flex", alignItems: "center", gap: 6,
                       color: "#017eeb", fontWeight: 700, fontSize: 14,
                       textDecoration: "none",
@@ -789,7 +789,7 @@ const Ebooks = () => {
               Free expert guides on AI, Cloud, and Product Engineering. Pick one, read it in 30 minutes, ship better code this week.
             </p>
             {featuredEbook ? (
-              <Link href={`/ebooks/${featuredEbook.slug}`} style={{
+              <Link href={`/ebooks/${featuredEbook.slug}`} className="mt-5" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 background: "linear-gradient(135deg, #017eeb, #00dbd3)",
                 color: "#fff", border: "1px solid transparent", borderRadius: 6,

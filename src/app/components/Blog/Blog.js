@@ -189,7 +189,7 @@ const Blog = () => {
           {/* Toolbar: Categories + Search */}
           <div className="flex sxl:flex-row flex-col-reverse !mt-4">
             <nav
-              className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4"
+              className="blog_category w-full flex flex-nowrap justify-start items-center overflow-x-auto overflow-y-hidden whitespace-nowrap !mb-4"
               aria-label="Blog categories"
             >
               <div className="bg-[#F8FAFC] p-1 rounded-md border border-borderGray">
@@ -261,9 +261,9 @@ const Blog = () => {
                     prefetch={true}
                   >
                     {/* Card Image */}
-                    <div className="relative overflow-hidden aspect-[16/9] bg-[#f1f1f1]">
+                    <div className="relative overflow-hidden bg-[#f1f1f1]">
                       <Image
-                        className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]"
+                        className="object-cover transition-transform duration-600 group-hover:scale-[1.04]"
                         src={
                           content?.mobile_banner?.filename
                             ? formatSrcUrl(content?.mobile_banner?.filename)
@@ -277,7 +277,7 @@ const Blog = () => {
                         width="600"
                         height="338"
                         priority={index === 0}
-                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                        // sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                       />
                       {/* Badge: New for first 2, Popular for items with high engagement */}
                       {index < 2 && currentPage === 1 && !searchQuery && (
@@ -318,11 +318,11 @@ const Blog = () => {
                       <div className="flex items-center justify-between border-t border-[#f1f1f1] pt-3.5 mt-auto">
                         <div className="flex items-center gap-2.5">
                           <div className="w-8 h-8 rounded-full bg-[#e8f0fd] flex items-center justify-center text-[13px] font-bold text-themeColor">
-                            {getAuthorInitials(content?.author)}
+                            {getAuthorInitials(content?.BlogAuthor)}
                           </div>
                           <div>
                             <span className="block text-[13px] font-semibold text-colorBlack">
-                              {content?.author || "Brilworks Team"}
+                              {content?.BlogAuthor || "Brilworks Team"}
                             </span>
                             <small className="text-xs text-gray-500">
                               {content.Published
@@ -414,9 +414,7 @@ const Blog = () => {
                       : "text-colorBlack hover:text-themeColor"
                   }`}
                   onClick={() => {
-                    if (
-                      currentPage < Math.ceil(totalBlog / ITEMS_PER_PAGE)
-                    ) {
+                    if (currentPage < Math.ceil(totalBlog / ITEMS_PER_PAGE)) {
                       setCurrentPage(currentPage + 1);
                     }
                   }}
@@ -442,12 +440,13 @@ const Blog = () => {
           }}
         />
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-[2] text-center">
-          <h2 className="text-white font-extrabold tracking-tight leading-tight mb-3 text-3xl md:text-4xl lg:text-[40px]"
+          <h2
+            className="text-white font-extrabold tracking-tight leading-tight mb-3 text-3xl md:text-4xl lg:text-[40px]"
             style={{ letterSpacing: "-1px" }}
           >
             Building Something? Let&apos;s Talk.
           </h2>
-          <p className="text-white/55 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
+          <p className="text-white/50 text-base mb-7 max-w-[520px] mx-auto leading-relaxed">
             From architecture reviews to full product engineering — our team
             ships production software every day. Book a free consultation.
           </p>

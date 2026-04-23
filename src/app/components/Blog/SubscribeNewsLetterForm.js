@@ -68,7 +68,7 @@ const SubscribeNewsLetterForm = () => {
                   R
                 </span>
               </div>
-              <p className="text-[13px] font-semibold text-white/85">
+              <p className="text-[13px] font-semibold text-white/80">
                 Join 3,000+ tech leaders
               </p>
             </div>
@@ -93,7 +93,7 @@ const SubscribeNewsLetterForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
-                className="px-4 py-3 w-full text-[15px] text-white bg-transparent focus:outline-none placeholder:text-white/45"
+                className="px-4 py-3 w-full text-[15px] text-white bg-transparent focus:outline-none placeholder:text-white/50"
               />
               <button
                 type="submit"

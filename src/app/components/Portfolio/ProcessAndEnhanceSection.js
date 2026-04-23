@@ -2,8 +2,6 @@
 import React from "react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import { useMediaQuery } from "react-responsive";
 
@@ -57,8 +55,8 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                         index === 0
                           ? "md:mr-auto md:ml-0 mx-auto"
                           : index === 1
-                          ? "mx-auto"
-                          : "md:ml-auto md:mr-0 mx-auto"
+                            ? "mx-auto"
+                            : "md:ml-auto md:mr-0 mx-auto"
                       }`}
                     >
                       <p className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl leading-tight gap-2 font-medium lg:mb-4 mt-4 text-center md:text-left">
@@ -69,7 +67,7 @@ const ProcessAndEnhanceSection = ({ processAndEnhanceBlock }) => {
                       </p>
                     </div>
                   </SwiperSlide>
-                )
+                ),
             )
           ) : (
             <div className="w-full flex items-center justify-center py-10">
