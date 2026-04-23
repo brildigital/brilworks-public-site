@@ -227,7 +227,7 @@ const ContactUs = () => {
                 <div className="text-white text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none">
                   {value}
                 </div>
-                <div className="text-white/50 text-[12px] md:text-[13px] mt-1">
+                <div className="text-white/70 text-[12px] md:text-[13px] mt-1">
                   {label}
                 </div>
               </div>
