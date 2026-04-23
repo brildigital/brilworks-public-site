@@ -18,7 +18,7 @@ const BridgeCTA = () => {
         >
           We Take on 3-4 New Mobile Projects Per Quarter
         </h3>
-        <p className="text-white/55 text-base mb-8 max-w-[576px] mx-auto">
+        <p className="text-white/50 text-base mb-8 max-w-[576px] mx-auto">
           Tell us about your app idea — we&apos;ll show you how we&apos;d approach
           the architecture, design, and launch.
         </p>

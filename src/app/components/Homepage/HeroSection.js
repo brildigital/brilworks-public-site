@@ -79,7 +79,7 @@ const HeroSection = () => {
               </h1>
 
               {/* Subtitle */}
-              <p className="hero-sub text-[18px] text-white/[0.62] leading-[1.7] max-w-[600px] hero-fade-up">
+              <p className="hero-sub text-[18px] text-white/60 leading-[1.7] max-w-[600px] hero-fade-up">
                 From AI agents to full-stack apps — we build the software that
                 runs your business. Shipped fast, built to last.
               </p>
@@ -120,7 +120,7 @@ const HeroSection = () => {
                     <div className="font-Figtree text-white text-[26px] font-extrabold tracking-[-0.5px] leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-white/[0.65] text-[11px] mt-0.5 tracking-[0.04em]">
+                    <div className="text-white/70 text-[11px] mt-0.5 tracking-[0.04em]">
                       {stat.label}
                     </div>
                   </div>
