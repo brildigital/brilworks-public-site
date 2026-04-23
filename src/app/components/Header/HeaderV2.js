@@ -79,7 +79,7 @@ const HeaderV2 = () => {
             className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
               openNav
                 ? "!fixed"
-                : hasBg || pathname === "/event-app-development/"
+                : hasBg || pathname === "/event-app-development/" || pathname === "/login/" || pathname === "/login"
                 ? "bg-[#000000e6]"
                 : "bg-transparent"
             }`}

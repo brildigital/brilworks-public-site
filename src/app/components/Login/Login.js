@@ -52,7 +52,7 @@ const Login = () => {
     <div className="container pt-[8rem] pb-8 xl:px-32 md:px-16 px-8 mx-auto login-page">
       <div className="flex flex-wrap justify-between">
         <div className="lg:w-1/3 w-full mt-7">
-          <div className="border border-[#00b6cf] rounded-[7px] xl:p-10 lg:p-7 p-5">
+          <div className="bg-white border border-[#00b6cf] rounded-[7px] xl:p-10 lg:p-7 p-5">
             <form
               className="flex flex-col items-center justify-center"
               onSubmit={(e) => e.preventDefault}
@@ -105,7 +105,7 @@ const Login = () => {
 
               <div className="w-full">
                 <button
-                  className="btn_flex ease-in-out !rounded-[7px] !text-lg text-white font-bold !py-[6px] !w-full hover:text-black hover:border hover:border-[#00b6cf]"
+                  className="c-button c-btn-primary !rounded-[7px] !text-lg font-bold !py-[6px] !w-full hover:text-black"
                   type="button"
                   onClick={login}
                 >
