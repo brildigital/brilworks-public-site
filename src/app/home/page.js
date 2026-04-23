@@ -7,9 +7,6 @@ import Script from "next/script";
 const BrilliantInThought = dynamic(() =>
   import("../components/Homepage/BrilliantInThought")
 );
-const ExploreOurExpertise = dynamic(() =>
-  import("../components/Homepage/ExploreOurExpertise")
-);
 const SeeingBelieving = dynamic(() =>
   import("../components/Homepage/SeeingBelieving")
 );
@@ -27,6 +24,9 @@ const ClutchReviews = dynamic(() =>
 );
 const IndustriesWeServe = dynamic(() =>
   import("../components/Homepage/IndustriesWeServe")
+);
+const WhatWeShip = dynamic(() =>
+  import("../components/Homepage/WhatWeShip")
 );
 const Honors = dynamic(() => import("../components/Homepage/Honors"));
 const HomepageWhyChooseUs = dynamic(() =>
@@ -109,7 +109,7 @@ const page = () => {
       <HomepageWhyChooseUs />
       <MidPageCTA />
       <AISolutions />
-      <ExploreOurExpertise />
+      <WhatWeShip />
       <ClientReviews />
       <IndustriesWeServe />
       <ClutchReviews />
