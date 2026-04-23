@@ -5,6 +5,7 @@ import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { hasConsent } from "../CookieConsent/consent";
 
 const TawkMessengerReact = dynamic(
   () => import("@tawk.to/tawk-messenger-react"),
@@ -16,8 +17,18 @@ const Footer = () => {
   const [showTawk, setShowTawk] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowTawk(true), 5000);
-    return () => clearTimeout(timer);
+    const checkAndShow = () => {
+      if (hasConsent("marketing")) {
+        setShowTawk(true);
+      }
+    };
+    const timer = setTimeout(checkAndShow, 5000);
+    const onConsentChange = () => checkAndShow();
+    window.addEventListener("consent-change", onConsentChange);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("consent-change", onConsentChange);
+    };
   }, []);
 
   const getActivePage = (pageURL) => {
@@ -411,6 +422,18 @@ const Footer = () => {
             <Link href="/privacy-policy/" className="transition">
               Privacy Policy
             </Link>
+            <button
+              type="button"
+              onClick={() => {
+                import("js-cookie").then(({ default: Cookies }) => {
+                  Cookies.remove("cookie-consent", { path: "/" });
+                  window.location.reload();
+                });
+              }}
+              className="transition cursor-pointer bg-transparent border-0 p-0 text-inherit"
+            >
+              Manage Cookies
+            </button>
             {/* <Link href="/site-map/" className="transition">
           Sitemap
         </Link> */}

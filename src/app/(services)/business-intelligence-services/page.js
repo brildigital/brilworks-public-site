@@ -1,5 +1,9 @@
 import React from "react";
 import BusinessDevelopmentService from "@/app/components/Services/BusinessDevelopmentService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "Business Development Services | Brilworks",
@@ -34,9 +38,25 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="!bg-colorWhite">
-      <BusinessDevelopmentService />
-    </div>
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "Business Development Services | Brilworks",
+            description:
+              "Unlock data-driven insights with Brilworks' business intelligence services. Transform raw data into actionable strategies for sustainable growth and competitive advantage.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}business-intelligence-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <div className="!bg-colorWhite">
+        <BusinessDevelopmentService />
+      </div>
+    </>
   );
 };
 
