@@ -1,8 +1,4 @@
-import { GEMINI_API_KEY } from "@/app/lib/enums";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-// Google Gemini API integration
-// Note: You'll need to set up your API key in environment variables
+// Google Gemini API integration — calls routed through /api/gemini/* server-side proxy
 
 // interface GeminiResponse {
 //   summary: string;
@@ -23,9 +19,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 //   }>;
 //   complianceScore: number;
 // }
-
-const GEMINI_API_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 export async function analyzeContract(documentText) {
   const prompt = `
@@ -94,30 +87,19 @@ Output *only valid JSON*, with no markdown, commentary, or extra text.
 `;
 
   try {
-    const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+    const response = await fetch("/api/gemini/generate", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-goog-api-key": GEMINI_API_KEY,
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [{ text: prompt }],
-          },
-        ],
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt, model: "gemini-2.0-flash" }),
     });
 
     if (!response.ok) {
-      console.error(
-        `Gemini API error: ${response.status} ${response.statusText}`
-      );
+      console.error(`Gemini API error: ${response.status} ${response.statusText}`);
       return getMockAnalysisResult();
     }
 
     const data = await response.json();
-    const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    const generatedText = data.text || "";
 
     const cleanedResponse = generatedText
       .replace(/```json\s*/g, "")
@@ -322,19 +304,6 @@ function getMockAnalysisResult() {
 export async function extractTextFromFile(file) {
   try {
     const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    // Convert file to Base64
-    const base64Data = btoa(
-      new Uint8Array(arrayBuffer).reduce(
-        (data, byte) => data + String.fromCharCode(byte),
-        ""
-      )
-    );
-
-    // Common Gemini setup
-    const genAI = new GoogleGenerativeAI({ geminiAPIKey: GEMINI_API_KEY });
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Common contract review prompt
     const prompt = `
@@ -368,29 +337,20 @@ and return a structured JSON output with the following fields:
 Output only valid JSON. Do not include explanations or markdown.
 `;
 
-    // Send to Gemini for structured JSON analysis
-
     if (file.type === "application/pdf") {
-      // Convert PDF to Base64
       const base64Data = btoa(
         new Uint8Array(arrayBuffer).reduce(
           (data, byte) => data + String.fromCharCode(byte),
           ""
         )
       );
-
-      const result = await model.generateContent([
-        {
-          inlineData: {
-            mimeType: "application/pdf",
-            data: base64Data,
-          },
-        },
-        { text: prompt },
-      ]);
-
-      const text = (await result.response).text();
-      return parseGeminiJSON(text);
+      const res = await fetch("/api/gemini/analyze-file", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ base64Data, mimeType: "application/pdf", prompt, model: "gemini-2.5-flash" }),
+      });
+      const data = await res.json();
+      return parseGeminiJSON(data.text);
     } else if (
       file.type.includes("word") ||
       file.name.endsWith(".docx") ||
@@ -404,23 +364,22 @@ Output only valid JSON. Do not include explanations or markdown.
         throw new Error("No readable text found in Word file.");
       }
 
-      const result2 = await model.generateContent([
-        {
-          text: `${prompt}\n\nHere is the document content:\n${textContent}`,
-        },
-      ]);
-
-      const text = (await result2.response).text();
-      return parseGeminiJSON(text);
+      const res = await fetch("/api/gemini/analyze-file", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ textContent, prompt, model: "gemini-2.5-flash" }),
+      });
+      const data = await res.json();
+      return parseGeminiJSON(data.text);
     } else if (file.type === "text/plain") {
       const textContent = await file.text();
-
-      const result3 = await model.generateContent([
-        { text: `${prompt}\n\nHere is the document content:\n${textContent}` },
-      ]);
-
-      const text = (await result3.response).text();
-      return parseGeminiJSON(text);
+      const res = await fetch("/api/gemini/analyze-file", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ textContent, prompt, model: "gemini-2.5-flash" }),
+      });
+      const data = await res.json();
+      return parseGeminiJSON(data.text);
     } else {
       throw new Error(`Unsupported file type: ${file.type}`);
     }

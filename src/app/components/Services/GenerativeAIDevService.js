@@ -652,7 +652,7 @@ const GenerativeAIDevService = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We build LLM apps, RAG pipelines, AI agents, and fine-tuned models on OpenAI, Anthropic, and AWS Bedrock. 30+ GenAI apps shipped — production-ready from day one, with guardrails, evals, and cost controls built in.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#7c3aed", color: "#fff", border: "1px solid #7c3aed", padding: "16px 32px", fontSize: 16 }}>
@@ -713,8 +713,7 @@ const GenerativeAIDevService = () => {
           {SERVICES.map((svc) => (
             <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
               style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
-                style={{ gridTemplateColumns: typeof window === "undefined" ? "1fr 1fr" : undefined }}>
+              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{
@@ -751,7 +750,7 @@ const GenerativeAIDevService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Data is the new oil, but AI is the refinery.</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call. We&apos;ll review your data, prioritize a GenAI use case, and map a production roadmap — no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#7c3aed", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Schedule a Free AI Consultation
           </Link>

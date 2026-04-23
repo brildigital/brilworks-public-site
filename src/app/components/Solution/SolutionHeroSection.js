@@ -41,7 +41,7 @@ const SolutionHeroSection = ({
             )}
 
             {/* Subtitle */}
-            <p className="text-[18px] text-white/[0.62] leading-[1.7] max-w-[600px] !mb-10">
+            <p className="text-[18px] text-white/60 leading-[1.7] max-w-[600px] !mb-10">
               {description}
             </p>
 

@@ -63,11 +63,11 @@ function TechStackWeWorkWith({
         </div>
 
         {/* Tech Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {activeItems.map(({ label, icon, color, iconifyIcon }, index) => (
             <div
               key={index}
-              className="flex flex-col items-center gap-2.5 py-5 px-4 rounded-2xl bg-white border border-[#e5e7eb] text-sm font-medium transition-all duration-300 hover:border-themeColor"
+              className="flex flex-col items-center gap-2.5 py-5 px-4 rounded-2xl bg-white border border-[#e5e7eb] text-sm font-medium transition-all duration-300 hover:border-themeColor w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] md:w-[calc(25%-12px)] lg:w-[calc(16.666%-14px)] xl:w-[calc(12.5%-14px)]"
             >
               {iconifyIcon ? (
                 <Image

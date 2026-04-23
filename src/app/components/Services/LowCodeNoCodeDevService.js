@@ -547,7 +547,7 @@ const LowCodeNoCodeDevService = () => {
                 <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   40+ apps shipped on Bubble, Adalo, FlutterFlow, Webflow, and custom low-code stacks. MVP in 3-6 weeks. You own the build — no vendor lock-in, no hidden code.
                 </p>
-                <div className="flex flex-wrap gap-3.5 mb-10">
+                <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
@@ -608,8 +608,7 @@ const LowCodeNoCodeDevService = () => {
           {SERVICES.map((svc) => (
             <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
               style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
-                style={{ gridTemplateColumns: typeof window === "undefined" ? "1fr 1fr" : undefined }}>
+              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{
@@ -646,7 +645,7 @@ const LowCodeNoCodeDevService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Launch Your App in 3-6 Weeks?</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute strategy call with a low-code architect. We&apos;ll evaluate your idea, recommend the right platform (or mix), and share a ballpark timeline — no commitment, no upsell.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a]"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Start My 3-Week MVP
           </Link>
