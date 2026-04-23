@@ -8,11 +8,12 @@ export default function LeadFormSection() {
       id="signup-form"
       className="max-w-[1280px] py-8 md:py-12 lg:py-16 mx-auto relative"
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-themering-[#00b7ff]/8 via-accent/5 to-transparent"></div>
-      <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-themering-[#00b7ff]/8 via-accent/5 to-transparent" aria-hidden="true"></div>
+      <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-40" aria-hidden="true"></div>
       <div
         className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-br from-blue-400/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse opacity-40"
         style={{ animationDelay: "1.5s" }}
+        aria-hidden="true"
       ></div>
       <div className="w-full mx-auto px-6 relative">
         <div className="text-center mb-12 scroll-reveal">

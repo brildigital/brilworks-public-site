@@ -14,6 +14,7 @@ const AccordionBody = dynamic(() =>
 
 const GradientFAQAccordion = ({ id, question, answer, open, handleOpen }) => {
   const isOpen = open === id;
+  const panelId = `faq-answer-${id}`;
   return (
     <Accordion
       open={isOpen}
@@ -29,6 +30,8 @@ const GradientFAQAccordion = ({ id, question, answer, open, handleOpen }) => {
         className={`${
           isOpen ? "md:pt-7.5 pt-4 md:pb-6 pb-4 md:px-7.5 px-4" : "md:p-7.5 p-4"
         } border-0`}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <h2
           itemProp="name"
@@ -39,6 +42,8 @@ const GradientFAQAccordion = ({ id, question, answer, open, handleOpen }) => {
         </h2>
       </AccordionHeader>
       <AccordionBody
+        id={panelId}
+        role="region"
         className={`${isOpen ? "md:pb-7.5 pb-5 pt-0" : ""} md:px-7.5 px-4`}
       >
         <div
