@@ -13,10 +13,17 @@ import "react-loading-skeleton/dist/skeleton.css";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
-import { NextAuthProvider } from "./provider";
+import { NextAuthProvider, PostHogProvider } from "./provider";
 import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
+import LoadScripts from "./ScriptLoader";
+import Script from "next/script";
+import {
+  organization,
+  website,
+  localBusiness,
+} from "./components/lib/schemaCode";
 
 // FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
 //            and figtree variable back to "--global-font"
@@ -65,27 +72,49 @@ export default function RootLayout({ children }) {
             content="https://www.facebook.com/brilwork/"
           />
           <meta name="robots" content="noindex,nofollow" />
-          {/* {process.env.VERCEL_ENV !== "production" && (
-            <>
-              <Script
-                defer
-                id="chatbot"
-              >{`window.chatBotConfig = {agentId:155}`}</Script>
-              <Script
-                defer
-                id="chatbot-widget-script"
-                src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
-              />
-            </>
-          )} */}
+           <link rel="preload" href="/images/v2/hero-pg-main.webp" as="image" />
+          <Script
+            id="gtm-config"
+            strategy="lazyOnload"
+          >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${process.env.googleTagManagerID}');`}</Script>
         </head>
         <body suppressHydrationWarning={true}>
+          <Script id="vector-script" strategy="lazyOnload">
+            {`
+          !function(e,r){try{if(e.vector)return void console.log("Vector snippet included more than once.");var t={};t.q=t.q||[];for(var o=["load","identify","on"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c<o.length;c++){var a=o[c];t[a]=n(a)}if(e.vector=t,!t.loaded){var i=r.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://cdn.vector.co/pixel.js";var l=r.getElementsByTagName("script")[0];l.parentNode.insertBefore(i,l),t.loaded=!0}}catch(e){console.error("Error loading Vector:",e)}}(window,document);
+          vector.load("1a1e4f1f-0942-4b35-bbad-8ef11726a7e4");
+        `}
+          </Script>
+          {/* <Script
+            defer
+            id="chatbot"
+          >{`window.chatBotConfig = {agentId:214}`}</Script>
+          <Script
+            defer
+            id="chatbot-widget-script"
+            src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
+          /> */}
+          {/* <Header /> */}
+          {/* <HeaderV2 /> */}
           <NextAuthProvider>
             <CurrentHeader />
+            <PostHogProvider>
             {children}
+            </PostHogProvider>
             <Footer />
             <CookieConsent />
           </NextAuthProvider>
+          <LoadScripts
+            organization={organization}
+            website={website}
+            localBusiness={localBusiness}
+            gtm={process.env.googleTagManagerID}
+            clr={process.env.clearbitScript_URL}
+          />
         </body>
       </html>
     </StoryblokProvider>
