@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep review · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .review-wrap { max-width: 820px; }
+
+  .draft-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+  }
+  .draft-card h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .draft-preview {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-height: 130px;
+    overflow: hidden;
+    position: relative;
+    padding: 4px 0;
+  }
+  .draft-preview::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, var(--panel));
+    pointer-events: none;
+  }
+  .draft-preview p { margin-bottom: 0.7em; }
+  .draft-meta {
+    display: flex;
+    gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .big-pipeline {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+  .big-pipeline h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .big-stages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .bstage {
+    padding: 14px 10px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: all 200ms;
+  }
+  .bstage.firing {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .bstage.done { border-color: var(--rule); }
+  .bstage-icon {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--ink-faint);
+    margin-bottom: 2px;
+  }
+  .bstage.firing .bstage-icon { color: var(--accent); }
+  .bstage.done .bstage-icon { color: var(--ok); }
+  .bstage-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .bstage-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+  }
+  .bstage-lat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    margin-top: 2px;
+    min-height: 12px;
+  }
+
+  .overall-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .overall-status .v { color: var(--ink); }
+
+  /* Scoring results */
+  .scores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .score-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .score-body { flex: 1; min-width: 0; }
+  .score-dim {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .score-note {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* Advisor */
+  .advisor-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+  }
+  .advisor-card h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .advisor-card h5 .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .advisor-card p {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .advisor-card .rationale {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  /* Rewrite diff */
+  .rewrite-wrap {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .rewrite-head {
+    display: flex;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rewrite-tab {
+    padding: 10px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: var(--panel-deep);
+    border-right: 1px solid var(--rule);
+  }
+  .rewrite-tab.primary {
+    background: var(--paper);
+    color: var(--accent);
+  }
+  .rewrite-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .rewrite-col {
+    padding: 16px 20px;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink);
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .rewrite-col:first-child {
+    color: var(--ink-faint);
+    border-right: 1px solid var(--rule);
+  }
+  .rewrite-col p { margin-bottom: 0.9em; }
+  .rewrite-col p.unchanged { color: var(--ink-faint); }
+  .rewrite-col mark {
+    background: var(--accent-soft);
+    color: var(--ink);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  .rewrite-col ins {
+    background: var(--ok-soft);
+    text-decoration: none;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  .section-kicker-inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 20px 0 10px;
+  }
+
+  .empty-draft {
+    padding: 32px;
+    text-align: center;
+    background: var(--panel);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .empty-draft a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="review-wrap">
+      <div class="page-header">
+        <div class="page-kicker">Step 4 · Deep review · on-demand pipeline</div>
+        <h1 class="page-title">Scoring, advice, and rewrite.</h1>
+        <p class="page-subtitle">
+          Four dimensions score in parallel. The Strategic Advisor reads the scores and proposes
+          two concrete moves. The Editing agent delivers a two-section rewrite you can accept or reject.
+          Total wall-clock: ~20 seconds. Per-run cost: ~$0.38.
+        </p>
+      </div>
+
+      <div id="empty-draft-msg" class="empty-draft" style="display:none">
+        No essay draft found. <a href="3-editor.html">Head back to the editor</a> and write something — or use the "Load sample draft" button there to get started.
+      </div>
+
+      <div id="review-content" style="display:none">
+        <div class="draft-card">
+          <h4>Draft under review</h4>
+          <div class="draft-preview" id="draft-preview"></div>
+          <div class="draft-meta">
+            <span><span style="color:var(--ink)" id="dm-words">0</span> words</span>
+            <span>Prompt: <span style="color:var(--ink)">Kellogg · leadership under uncertainty</span></span>
+            <span style="margin-left:auto">Word budget: <span style="color:var(--ink)">450 max</span></span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-bottom:22px;">
+          <button class="btn" id="run-review-btn">Run deep review <span class="arrow">→</span></button>
+          <a class="btn ghost" href="3-editor.html">Back to editor</a>
+        </div>
+
+        <div class="big-pipeline" id="pipeline-box" style="display:none">
+          <h4>On-demand pipeline</h4>
+          <div class="big-stages">
+            <div class="bstage" id="bs-score">
+              <span class="bstage-icon">S</span>
+              <div class="bstage-name">Scoring</div>
+              <div class="bstage-sub">4 dims · parallel · Sonnet</div>
+              <div class="bstage-lat" id="lat-score"></div>
+            </div>
+            <div class="bstage" id="bs-advisor">
+              <span class="bstage-icon">A</span>
+              <div class="bstage-name">Strategic Advisor</div>
+              <div class="bstage-sub">reads scores + NAO</div>
+              <div class="bstage-lat" id="lat-advisor"></div>
+            </div>
+            <div class="bstage" id="bs-rewrite">
+              <span class="bstage-icon">E</span>
+              <div class="bstage-name">Editing</div>
+              <div class="bstage-sub">2-section rewrite</div>
+              <div class="bstage-lat" id="lat-rewrite"></div>
+            </div>
+          </div>
+          <div class="overall-status" id="pipeline-status">waiting to start…</div>
+        </div>
+
+        <div id="results" style="display:none">
+          <div class="section-kicker-inline">Scoring · 4 dimensions</div>
+          <div class="scores" id="scores"></div>
+
+          <div class="section-kicker-inline">Strategic Advisor · top 2 recommendations</div>
+          <div id="advisor-list"></div>
+
+          <div class="section-kicker-inline">Editing agent · two-section rewrite</div>
+          <div class="rewrite-wrap">
+            <div class="rewrite-head">
+              <div class="rewrite-tab">Current draft</div>
+              <div class="rewrite-tab primary">Proposed rewrite</div>
+            </div>
+            <div class="rewrite-cols">
+              <div class="rewrite-col" id="rewrite-original"></div>
+              <div class="rewrite-col" id="rewrite-proposed"></div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:6px;">
+            <button class="btn" id="accept-rewrite">Accept rewrite into draft</button>
+            <button class="btn secondary" id="reject-rewrite">Keep my version</button>
+            <a class="btn ghost" href="5-gap-analysis.html" style="margin-left:auto">Continue to gap analysis <span class="arrow">→</span></a>
+          </div>
+
+          <div style="margin-top:20px; padding:14px 18px; background:var(--panel); border:1px solid var(--rule); border-radius:8px; display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink-faint);">
+            <span>Total cost: <span style="color:var(--ink)" id="total-cost">—</span></span>
+            <span>Wall-clock: <span style="color:var(--ink)" id="total-time">—</span></span>
+            <span>Cache: <span style="color:var(--ink)" id="total-cache">—</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'deep', crumbs: ['Deep review', 'Kellogg Essay 1'] });
+
+  const ESSAY_KEY = 'admissions_os_essay_draft_v1';
+  const draftHTML = localStorage.getItem(ESSAY_KEY);
+  const draftText = draftHTML ? (new DOMParser().parseFromString(draftHTML, 'text/html')).body.textContent : '';
+
+  if (!draftText || draftText.trim().length < 100) {
+    document.getElementById('empty-draft-msg').style.display = 'block';
+  } else {
+    document.getElementById('review-content').style.display = 'block';
+    document.getElementById('draft-preview').innerHTML = draftHTML;
+    document.getElementById('dm-words').textContent = draftText.trim().split(/\s+/).length;
+    document.getElementById('run-review-btn').addEventListener('click', runReview);
+  }
+
+  const DIMENSIONS = [
+    {
+      key: 'clarity',
+      name: 'Clarity',
+      rubric: 'Does the reader immediately grasp what happened?',
+      score: (t) => scoreClarity(t),
+    },
+    {
+      key: 'specificity',
+      name: 'Specificity',
+      rubric: 'Concrete names, numbers, and moments — not abstractions.',
+      score: (t) => scoreSpecificity(t),
+    },
+    {
+      key: 'reflection',
+      name: 'Reflection',
+      rubric: 'Does the writer think, not just report?',
+      score: (t) => scoreReflection(t),
+    },
+    {
+      key: 'fit',
+      name: 'School fit',
+      rubric: 'Does the story signal the right things for this prompt and program?',
+      score: (t) => scoreFit(t),
+    },
+  ];
+
+  function scoreClarity(t) {
+    // proxy: sentence-length variance and paragraph count
+    const sentences = t.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+    const avg = sentences.reduce((a, s) => a + s.split(/\s+/).length, 0) / (sentences.length || 1);
+    const paragraphs = (t.match(/\n\n/g) || []).length + 1;
+    let score = 72;
+    if (avg > 28) score -= 10;
+    if (avg < 8) score -= 6;
+    if (paragraphs >= 3) score += 8;
+    if (sentences.length >= 10) score += 4;
+    return {
+      value: Math.min(96, Math.max(50, score + Math.floor(Math.random() * 6))),
+      note: paragraphs < 3
+        ? 'Stacked into one long block; break into 3+ paragraphs to help the reader.'
+        : avg > 28
+          ? 'Several sentences drift past 28 words — tighten two or three for rhythm.'
+          : 'Rhythm is serviceable. A mid-essay crisp sentence would lift it further.',
+    };
+  }
+  function scoreSpecificity(t) {
+    const nums = (t.match(/\b\d{1,6}(,\d{3})*(\.\d+)?/g) || []).length;
+    const propNouns = (t.match(/\b[A-Z][a-z]+\b/g) || []).length;
+    let score = 62;
+    score += Math.min(18, nums * 6);
+    score += Math.min(10, propNouns);
+    return {
+      value: Math.min(95, Math.max(40, score + Math.floor(Math.random() * 5))),
+      note: nums < 2
+        ? 'Missing numbers. Add at least one concrete figure per major claim.'
+        : propNouns < 3
+          ? 'Few named people or places. Specific names give the scene a floor.'
+          : 'Solid. The reader can place you in time and space.',
+    };
+  }
+  function scoreReflection(t) {
+    const reflection = /\bi learned\b|\bi realiz|\bi came to see\b|\bwhat struck me\b|\bi noticed\b|\bi changed my mind\b/i;
+    const hedge = /\bmaybe\b|\bsort of\b|\bkind of\b|\bi guess\b/i;
+    let score = 60;
+    if (reflection.test(t)) score += 20;
+    if (hedge.test(t)) score -= 6;
+    const finalPara = t.trim().split(/\n\n+/).pop() || '';
+    if (finalPara.length > 60 && reflection.test(finalPara)) score += 8;
+    return {
+      value: Math.min(96, Math.max(38, score + Math.floor(Math.random() * 6))),
+      note: !reflection.test(t)
+        ? 'No explicit "I learned" moment. The takeaway paragraph is doing the quiet work; make it louder.'
+        : 'Reflection present but generic. Name the thing you used to believe that you no longer do.',
+    };
+  }
+  function scoreFit(t) {
+    // For Kellogg leadership prompt, look for team + collaboration signal
+    const teamWords = (t.toLowerCase().match(/\bteam\b|\btogether\b|\bcolleagues\b|\bpartner\b|\bcross[- ]functional\b/g) || []).length;
+    const iCount = (t.match(/\bI\b/g) || []).length;
+    const weCount = (t.match(/\bwe\b/gi) || []).length;
+    let score = 70;
+    if (teamWords >= 3) score += 10;
+    if (weCount / (iCount + 1) > 0.25) score += 8;
+    if (iCount > 20 && weCount < 5) score -= 10;
+    return {
+      value: Math.min(94, Math.max(45, score + Math.floor(Math.random() * 6))),
+      note: weCount / (iCount + 1) < 0.2
+        ? 'Heavy "I", light "we". Kellogg rewards collaborative ownership — rebalance one or two sentences.'
+        : teamWords >= 3
+          ? 'Collaboration signal is strong. Keep the team texture visible in the opening.'
+          : 'Team is implicit but not visible. Name one specific colleague if you can.',
+    };
+  }
+
+  function ringSVG(pct, color) {
+    const r = 26, c = 2 * Math.PI * r;
+    const offset = c * (1 - pct / 100);
+    return `
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="${r}" fill="none" stroke="var(--rule)" stroke-width="4"/>
+        <circle cx="32" cy="32" r="${r}" fill="none" stroke="${color}" stroke-width="4"
+          stroke-dasharray="${c}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+      </svg>`;
+  }
+  function colorForScore(n) {
+    if (n >= 82) return 'var(--ok)';
+    if (n >= 68) return 'var(--accent)';
+    return 'var(--warn)';
+  }
+
+  let firstRun = true;
+
+  async function runReview() {
+    document.getElementById('run-review-btn').disabled = true;
+    document.getElementById('pipeline-box').style.display = 'block';
+    document.getElementById('results').style.display = 'none';
+
+    const status = document.getElementById('pipeline-status');
+    const t0 = performance.now();
+    let totalCost = 0, warmCalls = 0, totalCalls = 0;
+
+    // ---- Stage 1: Scoring (4 parallel) ----
+    const bs = document.getElementById('bs-score');
+    bs.classList.add('firing');
+    status.innerHTML = `<span class="v">Scoring</span> · 4 dimensions in parallel · shared instruction prefix`;
+    const t1 = performance.now();
+    // Simulate four concurrent API calls — actually one billed 4-dim call with shared cache prefix
+    const call1 = simulateAgentCall('scoring');
+    totalCost += call1.cost; totalCalls++; if (call1.cacheHit) warmCalls++;
+    await sleep(1800 + Math.random() * 600);
+    const scores = DIMENSIONS.map(d => ({ ...d, ...d.score(draftText) }));
+    const latS = Math.round(performance.now() - t1);
+    bs.classList.remove('firing'); bs.classList.add('done');
+    document.getElementById('lat-score').textContent = `${latS}ms · $${call1.cost.toFixed(3)}`;
+
+    // ---- Stage 2: Strategic Advisor ----
+    const ba = document.getElementById('bs-advisor');
+    ba.classList.add('firing');
+    status.innerHTML = `<span class="v">Strategic Advisor</span> · reading scores + NAO context`;
+    const t2 = performance.now();
+    const call2 = simulateAgentCall('advisor');
+    totalCost += call2.cost; totalCalls++; if (call2.cacheHit) warmCalls++;
+    await sleep(1200 + Math.random() * 500);
+    const advice = generateAdvice(scores, draftText);
+    const latA = Math.round(performance.now() - t2);
+    ba.classList.remove('firing'); ba.classList.add('done');
+    document.getElementById('lat-advisor').textContent = `${latA}ms · $${call2.cost.toFixed(3)}`;
+
+    // ---- Stage 3: Editing rewrite ----
+    const br = document.getElementById('bs-rewrite');
+    br.classList.add('firing');
+    status.innerHTML = `<span class="v">Editing agent</span> · rewriting two lowest-scoring sections`;
+    const t3 = performance.now();
+    const call3 = simulateAgentCall('editing-od');
+    totalCost += call3.cost; totalCalls++; if (call3.cacheHit) warmCalls++;
+    await sleep(1600 + Math.random() * 500);
+    const rewrite = generateRewrite(draftText);
+    const latR = Math.round(performance.now() - t3);
+    br.classList.remove('firing'); br.classList.add('done');
+    document.getElementById('lat-rewrite').textContent = `${latR}ms · $${call3.cost.toFixed(3)}`;
+
+    const totalMs = Math.round(performance.now() - t0);
+    status.innerHTML = `<span class="v" style="color:var(--ok)">✓ complete</span> · ${totalMs}ms · $${totalCost.toFixed(3)}`;
+
+    // Populate results
+    populateScores(scores);
+    populateAdvice(advice);
+    populateRewrite(rewrite);
+
+    document.getElementById('total-cost').textContent = `$${totalCost.toFixed(3)}`;
+    document.getElementById('total-time').textContent = `${totalMs}ms`;
+    document.getElementById('total-cache').textContent = `${warmCalls}/${totalCalls} warm`;
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('run-review-btn').disabled = false;
+    document.getElementById('run-review-btn').innerHTML = 'Re-run deep review <span class="arrow">→</span>';
+
+    markStepDone('deep');
+
+    // Accept / reject handlers
+    document.getElementById('accept-rewrite').onclick = () => {
+      const newHTML = rewrite.proposedParagraphs.map(p => `<p>${escapeHTML(p)}</p>`).join('');
+      localStorage.setItem(ESSAY_KEY, newHTML);
+      alert('Rewrite accepted. Your draft has been updated. Return to the editor to see it.');
+    };
+    document.getElementById('reject-rewrite').onclick = () => {
+      alert('Keeping your version. No changes saved.');
+    };
+  }
+
+  function populateScores(scores) {
+    const el = document.getElementById('scores');
+    el.innerHTML = scores.map(s => `
+      <div class="score-card">
+        <div class="score-ring">
+          ${ringSVG(s.value, colorForScore(s.value))}
+          <div class="score-ring-val" style="color:${colorForScore(s.value)}">${s.value}</div>
+        </div>
+        <div class="score-body">
+          <div class="score-dim">${escapeHTML(s.name)}</div>
+          <div class="score-note">${escapeHTML(s.note)}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function generateAdvice(scores, text) {
+    // Rank dimensions by lowest score; advice comes from the two weakest.
+    const weakest = [...scores].sort((a, b) => a.value - b.value).slice(0, 2);
+    const nao = loadNAO();
+    const themes = (nao.themes || []).slice(0, 2).join(' + ') || 'your core arc';
+
+    const playbook = {
+      specificity: {
+        move: 'Replace your three most abstract sentences with one concrete scene.',
+        rationale: `Your ${weakest[0].name.toLowerCase()} score is dragged down by generic claims. Pick the moment the replanning session started — who was in the room, what was said first — and let that carry the paragraph.`,
+      },
+      reflection: {
+        move: 'Name the belief you held before this moment — and the one you hold after.',
+        rationale: `The final paragraph has a takeaway, but it's too neat. Readers respond to visible change. What did you used to think about leadership that this moment overturned?`,
+      },
+      clarity: {
+        move: 'Break the opening paragraph into two — move the team composition to the second one.',
+        rationale: `Front-load the stakes. "We were behind schedule and I had four engineers and a new PM" flattens both. Lead with the tension, land the cast second.`,
+      },
+      fit: {
+        move: 'Rebalance "I" and "we" — at least one decision per section credited to the team.',
+        rationale: `Kellogg reads for collaborative ownership, not just personal impact. Your story already has the cross-functional bones — name one teammate by their contribution.`,
+      },
+    };
+
+    return weakest.map(w => ({
+      dim: w.name,
+      score: w.value,
+      move: playbook[w.key]?.move || 'Tighten and specify.',
+      rationale: playbook[w.key]?.rationale || `Current score suggests this is the lowest-leverage section to improve. NAO themes (${themes}) give you material to draw from.`,
+    }));
+  }
+
+  function populateAdvice(advice) {
+    const el = document.getElementById('advisor-list');
+    el.innerHTML = advice.map((a, i) => `
+      <div class="advisor-card">
+        <h5>Move ${i + 1}: ${escapeHTML(a.move)} <span class="tag">${escapeHTML(a.dim)} · ${a.score}/100</span></h5>
+        <div class="rationale">${escapeHTML(a.rationale)}</div>
+      </div>
+    `).join('');
+  }
+
+  function generateRewrite(text) {
+    // Take the first two paragraphs and produce a tightened version.
+    const paragraphs = text.trim().split(/\n\n+/).map(p => p.trim()).filter(Boolean);
+    if (paragraphs.length < 2) {
+      return {
+        originalParagraphs: paragraphs,
+        proposedParagraphs: paragraphs,
+        rewrittenIndexes: [],
+      };
+    }
+
+    const tightened = paragraphs.map((p, i) => {
+      if (i > 1) return p;
+      // Apply simple transforms that mimic a real rewrite
+      let out = p;
+      out = out.replace(/\bBasically\s+/gi, '');
+      out = out.replace(/\breally\s+/gi, '');
+      out = out.replace(/\bactually\s+/gi, '');
+      out = out.replace(/\bvery\s+/gi, '');
+      out = out.replace(/\bjust\s+/gi, '');
+      out = out.replace(/\ba lot of\b/gi, 'many');
+      out = out.replace(/\bin order to\b/gi, 'to');
+      out = out.replace(/\bI helped\b/gi, 'I coordinated');
+      out = out.replace(/\bI did\b/gi, 'I ran');
+      out = out.replace(/\bI made\b/gi, 'I built');
+      out = out.replace(/\bI got\b/gi, 'I secured');
+      // Tighten leading clauses
+      out = out.replace(/\bIt turns out\s+/gi, '');
+      out = out.replace(/\bwhich was\b/gi, '—');
+      return out;
+    });
+
+    return {
+      originalParagraphs: paragraphs,
+      proposedParagraphs: tightened,
+      rewrittenIndexes: [0, 1],
+    };
+  }
+
+  function populateRewrite(r) {
+    const origEl = document.getElementById('rewrite-original');
+    const propEl = document.getElementById('rewrite-proposed');
+
+    const origHTML = r.originalParagraphs.map((p, i) => {
+      const cls = r.rewrittenIndexes.includes(i) ? '' : 'unchanged';
+      // mark fillers/weak verbs in the original
+      let marked = escapeHTML(p);
+      marked = marked.replace(/\b(Basically|really|actually|very|just|a lot of|in order to|It turns out|which was)\b/gi, '<mark>$1</mark>');
+      marked = marked.replace(/\bI (helped|did|made|got)\b/g, 'I <mark>$1</mark>');
+      return `<p class="${cls}">${marked}</p>`;
+    }).join('');
+
+    const propHTML = r.proposedParagraphs.map((p, i) => {
+      const cls = r.rewrittenIndexes.includes(i) ? '' : 'unchanged';
+      let marked = escapeHTML(p);
+      marked = marked.replace(/\b(coordinated|ran|built|secured|many|to|—)\b/g, '<ins>$1</ins>');
+      return `<p class="${cls}">${marked}</p>`;
+    }).join('');
+
+    origEl.innerHTML = origHTML;
+    propEl.innerHTML = propHTML;
+  }
+</script>
+</body>
+</html>

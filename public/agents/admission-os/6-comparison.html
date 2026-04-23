@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School comparison · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .comp-wrap { max-width: 860px; }
+
+  /* Agent intro card — mirrors other pages */
+  .agent-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 22px;
+  }
+  .agent-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--accent); color: var(--paper);
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .agent-name { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 15px; margin-bottom: 2px; }
+  .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-faint); margin-bottom: 10px; }
+  .agent-desc { font-family: 'Fraunces', serif; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* Input scan bar */
+  .scan-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 22px;
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .scan-summary { font-family: 'Fraunces', serif; font-size: 13px; color: var(--ink-soft); }
+  .scan-summary strong {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 500; color: var(--ink); letter-spacing: 0.04em;
+  }
+  .sources { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .src-chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    padding: 3px 8px; background: var(--paper-deep); border: 1px solid var(--rule);
+    border-radius: 3px; color: var(--ink-soft);
+  }
+
+  /* Run log — terminal style */
+  .run-log {
+    display: none; margin-bottom: 24px;
+    background: #1C1A17; color: #F5F1E8;
+    border-radius: 8px; padding: 18px 22px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    line-height: 1.7; min-height: 120px;
+  }
+  .run-log.active { display: block; }
+  .log-line { opacity: 0; transform: translateY(4px); transition: all 260ms ease; }
+  .log-line.in { opacity: 1; transform: translateY(0); }
+  .log-ok { color: #A9C982; }
+  .log-warn { color: #E9C46A; }
+  .log-accent { color: var(--accent-soft); }
+  .log-caret { color: var(--accent-soft); margin-right: 6px; }
+
+  .results { display: none; }
+  .results.active { display: block; }
+
+  .section-kicker-inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 28px 0 12px;
+  }
+
+  /* Per-school card */
+  .school-list { display: flex; flex-direction: column; gap: 14px; }
+  .school-card {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px;
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 22px;
+    align-items: flex-start;
+  }
+
+  /* Score ring */
+  .score-ring {
+    width: 88px; height: 88px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .score-ring svg { width: 88px; height: 88px; transform: rotate(-90deg); }
+  .score-ring .ring-bg { fill: none; stroke: var(--rule); stroke-width: 6; }
+  .score-ring .ring-fg { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 900ms cubic-bezier(.4,0,.2,1); }
+  .score-ring .score-num {
+    position: absolute;
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 24px; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .score-ring.strong .ring-fg { stroke: var(--ok); }
+  .score-ring.weak .ring-fg { stroke: var(--warn); }
+  .score-ring.poor .ring-fg { stroke: var(--danger); }
+
+  /* School body */
+  .school-body { min-width: 0; }
+  .school-header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+  .school-name {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 19px; letter-spacing: -0.01em;
+  }
+  .school-verdict {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .school-verdict.strong { color: var(--ok); }
+  .school-verdict.weak { color: var(--warn); }
+  .school-verdict.poor { color: var(--danger); }
+  .school-tagline {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 13px; color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  /* Signal rows inside a school */
+  .signal-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px;
+    margin-bottom: 14px;
+  }
+  .signal-row {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Inter', sans-serif; font-size: 12px;
+  }
+  .signal-label { color: var(--ink-soft); min-width: 110px; }
+  .signal-bar {
+    flex: 1; height: 4px; background: var(--paper-deep); border-radius: 2px;
+    position: relative; overflow: hidden;
+  }
+  .signal-fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--accent); border-radius: 2px;
+    transition: width 700ms cubic-bezier(.4,0,.2,1);
+  }
+  .signal-fill.ok { background: var(--ok); }
+  .signal-fill.warn { background: var(--warn); }
+  .signal-fill.danger { background: var(--danger); }
+  .signal-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--ink-faint);
+    min-width: 28px; text-align: right;
+  }
+
+  /* Risk & match callouts */
+  .school-notes {
+    display: flex; flex-direction: column; gap: 8px;
+    margin-top: 8px;
+  }
+  .note {
+    display: grid; grid-template-columns: 20px 1fr;
+    gap: 10px; align-items: flex-start;
+    font-family: 'Fraunces', serif; font-size: 13px; line-height: 1.5;
+    padding: 6px 0;
+  }
+  .note-icon {
+    font-family: 'JetBrains Mono', monospace; font-weight: 600;
+    font-size: 12px; line-height: 1.4;
+    text-align: center; color: var(--ink-faint);
+  }
+  .note.match .note-icon { color: var(--ok); }
+  .note.risk .note-icon { color: var(--danger); }
+  .note.fit .note-icon { color: var(--accent); }
+  .note-text { color: var(--ink-soft); }
+  .note-text strong {
+    font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink); margin-right: 8px;
+  }
+  .note.match .note-text strong { color: var(--ok); }
+  .note.risk .note-text strong { color: var(--danger); }
+  .note.fit .note-text strong { color: var(--accent); }
+
+  /* Matrix compare table */
+  .matrix-wrap {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 6px;
+  }
+  .matrix {
+    width: 100%; border-collapse: collapse;
+    font-family: 'Inter', sans-serif; font-size: 12px;
+  }
+  .matrix th, .matrix td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+  }
+  .matrix thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-faint);
+    font-weight: 500; background: var(--paper-deep);
+  }
+  .matrix td.axis {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: 13px; color: var(--ink);
+    width: 180px;
+    background: var(--paper-deep);
+  }
+  .matrix tr:last-child td { border-bottom: none; }
+  .m-dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--rule); margin-right: 8px; vertical-align: middle;
+  }
+  .m-dot.ok { background: var(--ok); }
+  .m-dot.warn { background: var(--warn); }
+  .m-dot.danger { background: var(--danger); }
+  .m-dot.strong { background: var(--accent); }
+  .m-val {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  /* Cost footer */
+  .cost-footer {
+    display: flex; gap: 22px; flex-wrap: wrap;
+    padding: 14px 20px; margin-top: 24px;
+    background: var(--panel-deep); border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .cost-footer .v { color: var(--ink); font-weight: 500; }
+
+  .next-row {
+    display: flex; gap: 12px; margin-top: 28px;
+    padding-top: 24px; border-top: 1px solid var(--rule);
+  }
+
+  .empty-state {
+    background: var(--warn-soft);
+    border: 1px solid var(--warn); border-radius: 8px;
+    padding: 22px 24px;
+    font-family: 'Fraunces', serif; font-size: 14px;
+    color: var(--ink-soft); line-height: 1.6;
+  }
+  .empty-state a { color: var(--accent); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="comp-wrap">
+      <div class="page-header">
+        <div class="page-kicker">Step 7 · School Comparison agent</div>
+        <h1 class="page-title">Where the story lands harder.</h1>
+        <p class="page-subtitle">
+          This agent scores the applicant against each of their target schools on the dimensions each program actually optimizes for.
+          The output isn't just a ranking. It's a diagnosis of which schools the current narrative is over- or under-tuned for, so
+          you know where to double down and where to hedge.
+        </p>
+      </div>
+
+      <div id="empty-nao" class="empty-state" style="display:none">
+        No target schools on the NAO yet. Run the <a href="2-strategy.html">Strategy agent</a> first, or use demo-fill on the <a href="index.html">overview page</a>.
+      </div>
+
+      <div id="ready-content" style="display:none">
+        <div class="agent-card">
+          <div class="agent-avatar">C</div>
+          <div>
+            <div class="agent-name">School Comparison agent</div>
+            <div class="agent-role">Sonnet 4.6 · per-school rubric · temperature 0.1</div>
+            <div class="agent-desc">
+              Loads a fixed rubric per target school (what the AdCom actually weights) and scores the NAO against it.
+              Returns per-school fit strength, signal-level match/miss, and verdict. Runs once on first pass and again
+              after any major essay or resume change.
+            </div>
+          </div>
+        </div>
+
+        <div class="scan-row">
+          <div class="scan-summary">
+            <strong>INPUT SCAN</strong>
+            <div class="sources" id="source-chips"></div>
+          </div>
+          <button class="btn" id="run-btn">Run comparison <span class="arrow">→</span></button>
+        </div>
+
+        <div class="run-log" id="run-log"></div>
+
+        <div class="results" id="results">
+          <div class="section-kicker-inline">Per-school fit · strongest first</div>
+          <div class="school-list" id="school-list"></div>
+
+          <div class="section-kicker-inline">Side-by-side matrix</div>
+          <div class="matrix-wrap">
+            <table class="matrix" id="matrix"></table>
+          </div>
+
+          <div class="cost-footer">
+            <span>Model: <span class="v">Sonnet 4.6</span></span>
+            <span>Schools evaluated: <span class="v" id="schools-stat">—</span></span>
+            <span>Cache: <span class="v" id="cache-stat">—</span></span>
+            <span>Latency: <span class="v" id="lat-stat">—</span></span>
+            <span>Cost: <span class="v" id="cost-stat">—</span></span>
+          </div>
+
+          <div class="next-row">
+            <a class="btn" href="7-framework.html">Continue to framework gate <span class="arrow">→</span></a>
+            <button class="btn secondary" id="rerun-btn">Re-run comparison</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'schools', crumbs: ['School comparison', 'Per-school fit scoring'] });
+
+  const nao = loadNAO();
+  const hasSchools = nao.version > 0 && Array.isArray(nao.schools) && nao.schools.length > 0;
+
+  if (!hasSchools) {
+    document.getElementById('empty-nao').style.display = 'block';
+  } else {
+    document.getElementById('ready-content').style.display = 'block';
+    initReady();
+  }
+
+  // ---------- school rubrics ----------
+  // Each school exposes five "signals" the AdCom weights. The agent scores
+  // the NAO against each signal and produces an overall fit + verdict.
+  const SCHOOL_RUBRICS = {
+    'Kellogg': {
+      tagline: 'Collaborative leadership, people-first stories, brand builders.',
+      signals: [
+        { k: 'leadership',   label: 'Leadership evidence' },
+        { k: 'teamPlay',     label: 'Team-first framing'  },
+        { k: 'brandBuild',   label: 'Brand / GTM depth'   },
+        { k: 'globalReach',  label: 'Global perspective'  },
+        { k: 'clarity',      label: 'Goal clarity'        },
+      ],
+      themes: ['Founder trajectory', 'Brand builder', 'Emerging markets', 'Climate transition', 'Product builder'],
+      risks: ['Over-weighting technical depth without team context', 'Unclear post-MBA role outside finance'],
+    },
+    'Ross': {
+      tagline: 'Action-based learners, real-world impact, Midwest pragmatism.',
+      signals: [
+        { k: 'action',       label: 'Action orientation' },
+        { k: 'impact',       label: 'Measurable impact'  },
+        { k: 'community',    label: 'Community signal'   },
+        { k: 'analytical',   label: 'Analytical rigor'   },
+        { k: 'clarity',      label: 'Goal clarity'       },
+      ],
+      themes: ['Product builder', 'Emerging markets', 'Climate transition', 'Founder trajectory'],
+      risks: ['Needs quantified impact, not just role', 'Goals should name a specific firm or path'],
+    },
+    'Fuqua': {
+      tagline: 'Team Fuqua — quiet leaders, cross-disciplinary, mission-driven.',
+      signals: [
+        { k: 'teamPlay',     label: 'Team Fuqua values' },
+        { k: 'mission',      label: 'Mission alignment' },
+        { k: 'humility',     label: 'Self-awareness'    },
+        { k: 'impact',       label: 'Measurable impact' },
+        { k: 'clarity',      label: 'Goal clarity'      },
+      ],
+      themes: ['Climate transition', 'Emerging markets', 'Founder trajectory', 'Product builder'],
+      risks: ['Over-assertive voice can undercut Team Fuqua fit', 'Needs explicit community contribution'],
+    },
+    'Stanford GSB': {
+      tagline: 'Change what most matters to you — founder & mission pattern.',
+      signals: [
+        { k: 'changeSig',    label: 'Change / founder'   },
+        { k: 'reflection',   label: 'Reflection depth'   },
+        { k: 'mission',      label: 'Mission alignment'  },
+        { k: 'clarity',      label: 'Goal clarity'       },
+        { k: 'globalReach',  label: 'Global perspective' },
+      ],
+      themes: ['Founder trajectory', 'Climate transition', 'Emerging markets'],
+      risks: ['Needs first-person insight, not just metrics', 'Goals must be outlier-scale'],
+    },
+    'HBS': {
+      tagline: 'Future leaders — results, agency, and case-ready thinking.',
+      signals: [
+        { k: 'leadership',   label: 'Leadership evidence' },
+        { k: 'impact',       label: 'Measurable impact'   },
+        { k: 'agency',       label: 'Individual agency'   },
+        { k: 'analytical',   label: 'Analytical rigor'    },
+        { k: 'clarity',      label: 'Goal clarity'        },
+      ],
+      themes: ['Founder trajectory', 'Product builder', 'Emerging markets'],
+      risks: ['Claims need scale and authority of action', 'Soft goals read weak here'],
+    },
+    'Wharton': {
+      tagline: 'Analytical leaders — finance, scale, and quantified outcomes.',
+      signals: [
+        { k: 'analytical',   label: 'Analytical rigor'  },
+        { k: 'impact',       label: 'Measurable impact' },
+        { k: 'scale',        label: 'Scale of work'     },
+        { k: 'leadership',   label: 'Leadership evidence'},
+        { k: 'clarity',      label: 'Goal clarity'      },
+      ],
+      themes: ['Product builder', 'Emerging markets', 'Brand builder'],
+      risks: ['Qualitative-only stories underperform', 'Goals need dollar / headcount anchors'],
+    },
+    'Booth': {
+      tagline: 'Pay-your-way curriculum — intellectual rigor and first-principles.',
+      signals: [
+        { k: 'analytical',   label: 'Analytical rigor'  },
+        { k: 'firstPrinc',   label: 'First-principles thinking'},
+        { k: 'impact',       label: 'Measurable impact' },
+        { k: 'reflection',   label: 'Reflection depth'  },
+        { k: 'clarity',      label: 'Goal clarity'      },
+      ],
+      themes: ['Product builder', 'Founder trajectory', 'Emerging markets'],
+      risks: ['Narrative should show intellectual curiosity explicitly', 'Not a fit for generic GTM stories'],
+    },
+    'Columbia': {
+      tagline: 'NYC-native — finance, media, global scale, networked.',
+      signals: [
+        { k: 'networkSig',   label: 'Network / NYC fit'  },
+        { k: 'scale',        label: 'Scale of work'      },
+        { k: 'analytical',   label: 'Analytical rigor'   },
+        { k: 'impact',       label: 'Measurable impact'  },
+        { k: 'clarity',      label: 'Goal clarity'       },
+      ],
+      themes: ['Product builder', 'Brand builder', 'Emerging markets', 'Climate transition'],
+      risks: ['Why NYC must be specific', 'Industry pivot must be credible'],
+    },
+  };
+
+  // ---------- scoring ----------
+  // Score = average of signal scores (0-100). Each signal score is a simple
+  // heuristic from the NAO: does this applicant have evidence for this signal?
+  function signalScore(signalKey, nao) {
+    const themesStr = (nao.themes || []).join(' ').toLowerCase();
+    const claimsText = (nao.claims || []).map(c => c.text).join(' ').toLowerCase();
+    const goalsText = [nao.goals?.shortTerm, nao.goals?.longTerm, nao.goals?.whyMba].filter(Boolean).join(' ').toLowerCase();
+    const role = (nao.applicant?.currentRole || '').toLowerCase();
+    const yrs = Number(nao.applicant?.yearsExperience) || 0;
+    const all = `${themesStr} ${claimsText} ${goalsText} ${role}`;
+
+    const has = (re) => re.test(all);
+    const hasNum = /\b\d+([.,]\d+)?\s?(%|x|m|k|bn|cr|lakh|crore)?\b/.test(claimsText);
+
+    switch (signalKey) {
+      case 'leadership':
+        return clamp((has(/lead|manage|mentor|drove|built|founded|head/) ? 70 : 40) + (yrs >= 5 ? 15 : 0) + (has(/team|people|reports/) ? 10 : 0));
+      case 'teamPlay':
+        return clamp((has(/team|collabor|together|we |partner|cross.functional/) ? 75 : 45) + (has(/credit|thank|learned from/) ? 10 : 0));
+      case 'brandBuild':
+        return clamp((has(/brand|marketing|gtm|go.to.market|positioning|growth/) ? 70 : 35) + (has(/customer|segment|launch/) ? 15 : 0));
+      case 'globalReach':
+        return clamp((has(/global|international|cross.border|asia|europe|emerging|markets/) ? 75 : 45));
+      case 'clarity':
+        return clamp((nao.goals?.shortTerm && nao.goals?.longTerm ? 70 : 40) + (has(/\b(?:climate|fintech|payments|healthcare|ai|saas)\b/) ? 15 : 0));
+      case 'action':
+        return clamp((has(/built|shipped|launched|rolled out|drove|delivered/) ? 75 : 45));
+      case 'impact':
+        return clamp((hasNum ? 80 : 40) + (has(/revenue|users|growth|saved|reduced|increased/) ? 10 : 0));
+      case 'community':
+        return clamp((has(/volunteer|mentor|community|non.profit|teach|coach/) ? 70 : 40));
+      case 'analytical':
+        return clamp((has(/data|model|analy|quantitat|experiment|a\/b|metric/) ? 75 : 50) + (hasNum ? 10 : 0));
+      case 'mission':
+        return clamp((has(/climate|impact|mission|underserved|inclusion|sustainab|purpose/) ? 75 : 45));
+      case 'humility':
+        return clamp((has(/failed|learned|wrong|mistake|struggled/) ? 70 : 45));
+      case 'changeSig':
+        return clamp((has(/founded|built from|started|launched|first|category/) ? 75 : 50) + (has(/founder|founding/) ? 10 : 0));
+      case 'reflection':
+        return clamp((has(/realized|came to|understood|shifted|changed my|why it mattered/) ? 70 : 45));
+      case 'agency':
+        return clamp((has(/decided|chose|pushed|convinced|took ownership|drove/) ? 75 : 45));
+      case 'scale':
+        return clamp((has(/million|bn|billion|global|thousands|crore|users|markets/) ? 75 : 40) + (hasNum ? 10 : 0));
+      case 'firstPrinc':
+        return clamp((has(/first.principles|rebuilt|reframed|ground.up|rethought/) ? 70 : 45));
+      case 'networkSig':
+        return clamp((has(/finance|media|fund|investor|nyc|new york|capital/) ? 65 : 45));
+      default:
+        return 55;
+    }
+  }
+  function clamp(v) { return Math.max(0, Math.min(100, Math.round(v))); }
+
+  function verdict(score) {
+    if (score >= 75) return { k: 'strong', label: 'Strong fit' };
+    if (score >= 60) return { k: 'ok',     label: 'Reachable fit' };
+    if (score >= 45) return { k: 'weak',   label: 'Stretch fit' };
+    return                { k: 'poor',   label: 'Low fit' };
+  }
+
+  function scoreSchool(schoolName, nao) {
+    const rubric = SCHOOL_RUBRICS[schoolName];
+    if (!rubric) {
+      // Unknown school — return generic middle score using universal signals
+      return {
+        school: schoolName,
+        tagline: 'Rubric not on file. Scoring on generic signals.',
+        overall: 55,
+        signals: [
+          { label: 'Leadership evidence', score: signalScore('leadership', nao) },
+          { label: 'Measurable impact',   score: signalScore('impact', nao) },
+          { label: 'Goal clarity',        score: signalScore('clarity', nao) },
+          { label: 'Analytical rigor',    score: signalScore('analytical', nao) },
+          { label: 'Global perspective',  score: signalScore('globalReach', nao) },
+        ],
+        matches: [],
+        risks:   [],
+      };
+    }
+
+    const signals = rubric.signals.map(s => ({
+      k: s.k,
+      label: s.label,
+      score: signalScore(s.k, nao),
+    }));
+    const overall = Math.round(signals.reduce((a, s) => a + s.score, 0) / signals.length);
+
+    // Matches: top 2 strongest signals
+    const sorted = [...signals].sort((a, b) => b.score - a.score);
+    const matches = sorted.slice(0, 2).filter(s => s.score >= 65).map(s => ({
+      label: s.label,
+      detail: describeMatch(s.k, nao),
+    }));
+
+    // Theme overlap
+    const naoThemes = new Set(nao.themes || []);
+    const themeHits = rubric.themes.filter(t => naoThemes.has(t));
+    if (themeHits.length) {
+      matches.push({
+        label: 'Theme overlap',
+        detail: `NAO themes land on AdCom priorities: ${themeHits.slice(0, 2).join(', ')}.`,
+      });
+    }
+
+    return {
+      school: schoolName,
+      tagline: rubric.tagline,
+      overall,
+      signals,
+      matches,
+      risks: rubric.risks.slice(0, 2),
+    };
+  }
+
+  function describeMatch(k, nao) {
+    switch (k) {
+      case 'leadership':  return `${nao.applicant?.yearsExperience || 'Several'} yrs of ownership shows; leadership claims exist on the NAO.`;
+      case 'teamPlay':    return 'Claims use "we" framing and name teammates explicitly.';
+      case 'brandBuild':  return 'Product / GTM vocabulary present in role and claims.';
+      case 'globalReach': return 'Cross-border or emerging-markets work is on the NAO.';
+      case 'clarity':     return 'Short- and long-term goals are both named, with a named industry.';
+      case 'action':      return 'Verbs on the NAO skew toward shipped outcomes rather than observed ones.';
+      case 'impact':      return 'Claims carry numeric anchors the AdCom can quickly verify.';
+      case 'community':   return 'Non-work contribution surfaces on the NAO.';
+      case 'analytical':  return 'Quantitative framing and experimentation language are present.';
+      case 'mission':     return 'Goals are tied to a clearly articulated mission, not a title.';
+      case 'humility':    return 'NAO includes a failure or learning moment.';
+      case 'changeSig':   return 'Founder / zero-to-one pattern is legible in the claims.';
+      case 'reflection':  return 'Evidence of shifted thinking, not just executed actions.';
+      case 'agency':      return 'Claims show individual decisions, not just team outcomes.';
+      case 'scale':       return 'Scale markers (headcount, revenue, geography) are present.';
+      case 'firstPrinc':  return 'Rebuild / reframe language shows up on the NAO.';
+      case 'networkSig':  return 'Post-MBA goal aligns with the school\'s regional / industry network.';
+      default:            return 'Signal present on the NAO.';
+    }
+  }
+
+  // ---------- rendering ----------
+  function initReady() {
+    // Input scan chips
+    const chips = document.getElementById('source-chips');
+    const schools = nao.schools || [];
+    const themesCount = (nao.themes || []).length;
+    const claimsCount = (nao.claims || []).length;
+    chips.innerHTML = [
+      ...schools.map(s => `<span class="src-chip">${escapeHTML(s)}</span>`),
+      `<span class="src-chip">${themesCount} themes</span>`,
+      `<span class="src-chip">${claimsCount} claims</span>`,
+      nao.applicant?.name ? `<span class="src-chip">applicant: ${escapeHTML(nao.applicant.name)}</span>` : '',
+    ].filter(Boolean).join('');
+
+    document.getElementById('run-btn').addEventListener('click', runAgent);
+    document.getElementById('rerun-btn').addEventListener('click', runAgent);
+  }
+
+  async function runAgent() {
+    const runBtn = document.getElementById('run-btn');
+    const rerunBtn = document.getElementById('rerun-btn');
+    runBtn.disabled = true;
+    rerunBtn.disabled = true;
+    runBtn.textContent = 'Running...';
+
+    const log = document.getElementById('run-log');
+    log.classList.add('active');
+    log.innerHTML = '';
+
+    const t0 = performance.now();
+
+    await logLine(log, `<span class="log-caret">&gt;</span><span class="log-accent">School Comparison</span> starting...`);
+    await logLine(log, `  loading NAO v${nao.version} · ${nao.schools.length} target schools`);
+    await logLine(log, `  fetching school rubrics from cache...`);
+
+    for (const s of nao.schools) {
+      await logLine(log, `  <span class="log-ok">✓</span> rubric loaded: ${escapeHTML(s)}`);
+    }
+
+    await logLine(log, `  running per-school scoring...`);
+    const results = nao.schools.map(s => scoreSchool(s, nao));
+    results.sort((a, b) => b.overall - a.overall);
+
+    for (const r of results) {
+      const v = verdict(r.overall);
+      const color = v.k === 'strong' ? 'log-ok' : v.k === 'poor' ? 'log-warn' : '';
+      await logLine(log, `  · ${escapeHTML(r.school).padEnd(16, ' ')} <span class="${color}">${r.overall}/100 · ${v.label}</span>`, 110);
+    }
+
+    await logLine(log, `  drafting per-school match & risk notes...`);
+    await logLine(log, `<span class="log-ok">&gt; done.</span>`);
+
+    const latMs = Math.round(performance.now() - t0) + Math.round(1200 + Math.random() * 900);
+    const call = simulateAgentCall('comparison');
+
+    renderResults(results);
+
+    document.getElementById('results').classList.add('active');
+    document.getElementById('schools-stat').textContent = String(results.length);
+    document.getElementById('cache-stat').textContent = call.cacheHit ? 'warm · 92% read' : 'cold · write';
+    document.getElementById('lat-stat').textContent = `${latMs}ms`;
+    document.getElementById('cost-stat').textContent = `$${call.cost.toFixed(3)}`;
+
+    // Write comparison summary back to the NAO so it persists and downstream agents can see it.
+    const updated = loadNAO();
+    if (!updated.comparison) updated.comparison = {};
+    updated.comparison = {
+      runAt: new Date().toISOString(),
+      schools: results.map(r => ({ school: r.school, overall: r.overall, verdict: verdict(r.overall).label })),
+    };
+    saveNAO(updated);
+    markStepDone('schools');
+
+    runBtn.disabled = false;
+    rerunBtn.disabled = false;
+    runBtn.innerHTML = 'Run comparison <span class="arrow">→</span>';
+  }
+
+  async function logLine(logEl, html, delay) {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.innerHTML = html;
+    logEl.appendChild(line);
+    logEl.scrollTop = logEl.scrollHeight;
+    await sleep(20);
+    requestAnimationFrame(() => line.classList.add('in'));
+    await sleep(delay || 180);
+  }
+
+  function renderResults(results) {
+    const list = document.getElementById('school-list');
+    list.innerHTML = results.map(r => {
+      const v = verdict(r.overall);
+      const circ = 2 * Math.PI * 36;
+      const offset = circ * (1 - r.overall / 100);
+
+      const signalsHTML = r.signals.map(s => {
+        const tone = s.score >= 70 ? 'ok' : s.score >= 55 ? '' : s.score >= 40 ? 'warn' : 'danger';
+        return `
+          <div class="signal-row">
+            <div class="signal-label">${escapeHTML(s.label)}</div>
+            <div class="signal-bar"><div class="signal-fill ${tone}" style="width:${s.score}%"></div></div>
+            <div class="signal-val">${s.score}</div>
+          </div>`;
+      }).join('');
+
+      const notesHTML = [
+        ...r.matches.map(m => `
+          <div class="note match">
+            <div class="note-icon">✓</div>
+            <div class="note-text"><strong>${escapeHTML(m.label)}</strong>${escapeHTML(m.detail)}</div>
+          </div>`),
+        ...r.risks.map(x => `
+          <div class="note risk">
+            <div class="note-icon">!</div>
+            <div class="note-text"><strong>Risk</strong>${escapeHTML(x)}</div>
+          </div>`),
+      ].join('');
+
+      return `
+        <div class="school-card">
+          <div class="score-ring ${v.k}">
+            <svg viewBox="0 0 88 88">
+              <circle class="ring-bg" cx="44" cy="44" r="36"></circle>
+              <circle class="ring-fg" cx="44" cy="44" r="36"
+                stroke-dasharray="${circ}" stroke-dashoffset="${offset}"></circle>
+            </svg>
+            <span class="score-num">${r.overall}</span>
+          </div>
+          <div class="school-body">
+            <div class="school-header">
+              <div class="school-name">${escapeHTML(r.school)}</div>
+              <div class="school-verdict ${v.k}">${v.label}</div>
+            </div>
+            <div class="school-tagline">${escapeHTML(r.tagline)}</div>
+            <div class="signal-grid">${signalsHTML}</div>
+            <div class="school-notes">${notesHTML}</div>
+          </div>
+        </div>`;
+    }).join('');
+
+    // Build side-by-side matrix on a shared axis (union of signal labels across schools)
+    const axisLabels = Array.from(new Set(results.flatMap(r => r.signals.map(s => s.label))));
+    const matrix = document.getElementById('matrix');
+    const headHTML = `<thead><tr>
+      <th>Signal</th>
+      ${results.map(r => `<th>${escapeHTML(r.school)}</th>`).join('')}
+    </tr></thead>`;
+    const bodyHTML = '<tbody>' + axisLabels.map(axis => {
+      const cells = results.map(r => {
+        const hit = r.signals.find(s => s.label === axis);
+        if (!hit) return `<td class="m-val" style="opacity:0.35">—</td>`;
+        const tone = hit.score >= 70 ? 'ok' : hit.score >= 55 ? 'strong' : hit.score >= 40 ? 'warn' : 'danger';
+        return `<td><span class="m-dot ${tone}"></span><span class="m-val">${hit.score}</span></td>`;
+      }).join('');
+      return `<tr><td class="axis">${escapeHTML(axis)}</td>${cells}</tr>`;
+    }).join('') + '</tbody>';
+    matrix.innerHTML = headHTML + bodyHTML;
+  }
+</script>
+</body>
+</html>

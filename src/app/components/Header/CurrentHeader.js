@@ -67,7 +67,7 @@ const CurrentHeader = () => {
     <HeaderV3 />
   ) : pathname === "/ai-agents/" || pathname === "/ai-agents" ? (
     <HeaderV2 />
-  ) : pathname.includes("/ai-agents/") ? (
+  ) : pathname.startsWith("/ai-agents/") ? (
     ""
   ) : (
     <HeaderV2 />
