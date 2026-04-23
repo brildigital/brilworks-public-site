@@ -149,7 +149,7 @@ const MobileAppTechnology = () => {
         technologyText="Hire Mobile App Developers"
         title="Skilled Mobile App Developers ready to realize your vision"
         description="Looking for a mobile app developer to realize your vision? We connect you with experts in iOS, Android, and cross-platform app development."
-        imageSrc="/images/v2/mobile-app-bannner.webp"
+        imageSrc="/images/v2/mobile-app-banner.webp"
       />
       <ServicesSection
         bgClass="bg-themeLight"
