@@ -199,6 +199,7 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
+            authorJobTitle: author?.mobileDesc,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
@@ -308,7 +309,11 @@ export default async function Page(props) {
                     >
                       {author?.name}
                     </Link>
-                    <br />
+                    {author?.mobileDesc && (
+                      <span className="sxl:text-base text-sm text-white/70">
+                        {author.mobileDesc}
+                      </span>
+                    )}
                     <span className="sxl:!text-xl md:text-lg text-base">
                       {formattedDate(
                         data?.story?.content?.Published || new Date(),
@@ -411,6 +416,47 @@ export default async function Page(props) {
         {" "}
         <StoryblokStory story={data?.story} />
       </div>
+      {author && (
+        <div className="bg-[#f8fafc] border-t border-[#e5e7eb]">
+          <div className="container max-w-[1280px] mx-auto px-5 md:px-10 py-10 md:py-14">
+            <div className="flex flex-col sm:flex-row items-start gap-5">
+              <Image
+                src={author.authorImage}
+                width={80}
+                height={80}
+                alt={author.name}
+                className="rounded-full w-20 h-20 object-cover flex-shrink-0"
+              />
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-themeColor mb-1">
+                  Written by
+                </p>
+                <Link
+                  href={
+                    author.name === "Vikas Singh"
+                      ? "/blog/author/vikas-singh/"
+                      : author.name === "Hitesh Umaletiya"
+                        ? "/blog/author/hitesh-umaletiya/"
+                        : author.authorLinkedIn
+                  }
+                  className="text-xl font-bold text-[#0d0f1a] hover:text-themeColor transition-colors"
+                  rel="author"
+                >
+                  {author.name}
+                </Link>
+                {author.mobileDesc && (
+                  <p className="text-sm text-[#6b7280] mt-0.5">{author.mobileDesc}</p>
+                )}
+                {author.authorDesc && (
+                  <p className="text-base text-[#4b5563] mt-2 leading-relaxed">
+                    {author.authorDesc}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
+import { serviceStats } from "@/data/serviceStats";
 
 const ServiceHeroSection = ({
   title,
@@ -19,24 +20,7 @@ const ServiceHeroSection = ({
     "bg-[#FFE2E5]",
     "bg-[#FFE8FC]",
   ];
-  const corporateModelFeatures = [
-    {
-      value: "8+",
-      description: "Years of Experience",
-    },
-    {
-      value: "100+",
-      description: "Experts",
-    },
-    {
-      value: "250+",
-      description: "Projects",
-    },
-    {
-      value: "98%",
-      description: "Client Satisfaction",
-    },
-  ];
+  const corporateModelFeatures = serviceStats;
 
   const dataExistClass = showGridData ? "md:max-h-[780px]" : "md:max-h-[980px]";
 
@@ -103,7 +87,7 @@ const ServiceHeroSection = ({
                 <Image
                   className="rounded-2xl md:h-[610px] object-cover"
                   src={imageSrc}
-                  alt="service-banner"
+                  alt={`${pageTitleText || "Custom Software"} Development Services`}
                   width="565"
                   height="610"
                   priority

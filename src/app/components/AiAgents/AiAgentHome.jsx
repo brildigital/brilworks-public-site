@@ -443,7 +443,7 @@ const AiAgentHome = () => {
                   <li>
                     <Link
                       href="/"
-                      className="text-white/40 hover:text-white transition-colors"
+                      className="text-white/65 hover:text-white transition-colors"
                     >
                       Home
                     </Link>
@@ -697,7 +697,7 @@ const AiAgentHome = () => {
                 View Our Portfolio
               </a>
             </div>
-            <p className="!mt-5 text-[13px] text-white/40">
+            <p className="!mt-5 text-[13px] text-white/65">
               We take on{" "}
               <strong style={{ color: "#00dbd3" }}>
                 5 new AI agent projects per month

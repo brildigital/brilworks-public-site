@@ -1,5 +1,9 @@
 import React from "react";
 import ReactJSDevelopmentService from "@/app/components/Services/ReactJSDevelopmentService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "React.js Development Services | Brilworks",
@@ -33,7 +37,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <ReactJSDevelopmentService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "React.js Development Services | Brilworks",
+            description:
+              "Boost your web app with expert React.js development services. Scalable, high-performance solutions tailored to your business needs. Hire an expert today.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}reactjs-development-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <ReactJSDevelopmentService />
+    </>
+  );
 };
 
 export default page;

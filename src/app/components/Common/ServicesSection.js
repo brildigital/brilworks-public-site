@@ -43,7 +43,7 @@ const ServicesSection = ({
                 {service.iconSrc ? (
                   <Image
                     src={service.iconSrc}
-                    alt=""
+                    alt={`${service.title} icon`}
                     width={28}
                     height={28}
                     className={index === serviceData.servicesList.length - 1 ? "invert brightness-200" : ""}

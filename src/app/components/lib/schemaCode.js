@@ -143,9 +143,18 @@ export function generateBlogPostingSchema({
   dateModified,
   authorName,
   authorUrl,
+  authorJobTitle,
   category,
   readingTime,
 }) {
+  const author = {
+    "@type": "Person",
+    name: authorName,
+    url: authorUrl,
+  };
+  if (authorJobTitle) {
+    author.jobTitle = authorJobTitle;
+  }
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -156,11 +165,7 @@ export function generateBlogPostingSchema({
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     wordCount: readingTime ? readingTime * 250 : undefined,
-    author: {
-      "@type": "Person",
-      name: authorName,
-      url: authorUrl,
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: "Brilworks",
@@ -176,6 +181,64 @@ export function generateBlogPostingSchema({
     articleSection: category,
   };
   return JSON.stringify(schema);
+}
+
+export function generateWebPageSchema({ title, description, url, dateModified }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: url,
+    dateModified: dateModified,
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateComparisonSchemas({ title, description, url, faqs, dateModified }) {
+  const schemas = [];
+
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: url,
+    dateModified: dateModified,
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+  });
+
+  if (faqs && faqs.length > 0) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  return schemas.map((s) => JSON.stringify(s));
 }
 
 export const homepageFAQ = {

@@ -6,37 +6,37 @@ const KeyBenefits = () => {
     {
       title: "Customized Solutions",
       imageSrc: "/images/solution (1).png",
-      imageAlt: "customized-icon",
+      imageAlt: "Customized Solutions icon",
       desc: "We collaborate closely with you to understand your unique challenges and goals, to develop tailored AI/ML models that address your specific needs.",
     },
     {
       title: "Enhanced Efficiency",
       imageSrc: "/images/efficiency.png",
-      imageAlt: "efficiency-icon",
+      imageAlt: "Enhanced Efficiency icon",
       desc: "Repetitive tasks become a thing of the past. Our top AI software automate solutions to free up your team's valuable time and resources for higher-level pursuits.",
     },
     {
       title: "Predictive Advantage",
       imageSrc: "/images/advantage.png",
-      imageAlt: "advantage-icon",
+      imageAlt: "Predictive Advantage icon",
       desc: "Gain valuable foresight into future trends and customer behaviour. Our models analyze historical data to predict potential risks and opportunities, positioning you for proactive action.",
     },
     {
       title: "Scalability and Adaptability",
       imageSrc: "/images/Vector.png",
-      imageAlt: "scalability-icon",
+      imageAlt: "Scalability and Adaptability icon",
       desc: "Built with the future in mind, our AI/ML solutions seamlessly adapt to your evolving business needs, ensuring sustained success.",
     },
     {
       title: "Transparent and Ethical Development",
       imageSrc: "/images/Group (3).png",
-      imageAlt: "transparent-icon",
+      imageAlt: "Transparent and Ethical Development icon",
       desc: "Committed to responsible practices, we uphold stringent ethical guidelines and maintain transparency throughout the development process.",
     },
     {
       title: "Dedicated Expertise and Support",
       imageSrc: "/images/call-center (1).png",
-      imageAlt: "dedicated-icon",
+      imageAlt: "Dedicated Expertise and Support icon",
       desc: "Benefit from our team of experienced professionals who provide ongoing support and guidance throughout every stage of the journey.",
     },
   ];

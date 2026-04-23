@@ -24,3 +24,23 @@ model User {
     createdAt                 DateTime  @default(now()) @map("created_at")
     updatedAt                 DateTime  @updatedAt @map("updated_at")
 }
+
+model ConsentLog {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    consentId   String
+    necessary   Boolean
+    analytics   Boolean
+    marketing   Boolean
+    version     Int
+    action      String
+    userAgent   String?
+    ipHash      String?
+    country     String?
+    region      String?
+    city        String?
+    pageUrl     String?
+    createdAt   DateTime @default(now()) @map("created_at")
+
+    @@index([consentId])
+    @@index([createdAt])
+}

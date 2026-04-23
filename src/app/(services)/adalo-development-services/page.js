@@ -1,4 +1,8 @@
 import AdaloDevelopmentService from "@/app/components/Services/AdaloDevelopmentService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "Adalo Development Services | Brilworks",
@@ -32,7 +36,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <AdaloDevelopmentService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "Adalo Development Services | Brilworks",
+            description:
+              "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}adalo-development-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <AdaloDevelopmentService />
+    </>
+  );
 };
 
 export default page;
