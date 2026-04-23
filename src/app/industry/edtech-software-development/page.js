@@ -1,5 +1,8 @@
 import EdTech from "@/app/components/Solution/EdTech";
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "EdTech Software Development Services",
@@ -42,6 +45,20 @@ const page = () => {
           __html: generateBreadcrumb("EdTech Software Development Company"),
         }}
       />
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "EdTech Software Development Services",
+            description:
+              "We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/edtech-software-development/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
       <EdTech />
     </>
   );

@@ -1,4 +1,8 @@
 import AboutUs from "../components/About/AboutUs";
+import LastUpdated from "../components/Common/LastUpdated";
+import { generateWebPageSchema } from "../components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "About Us - Brilworks",
@@ -58,6 +62,20 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "About Us - Brilworks",
+            description:
+              "Software development services and end-to-end solutions at Brilworks.",
+            url: "https://www.brilworks.com/about-us/",
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
       <AboutUs />
     </>
   );

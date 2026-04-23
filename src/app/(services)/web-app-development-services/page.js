@@ -1,4 +1,8 @@
 import WebAppDevelopmentService from "@/app/components/Services/WebAppDevelopmentService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "Web App Development Services | Brilworks",
@@ -32,7 +36,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <WebAppDevelopmentService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "Web App Development Services | Brilworks",
+            description:
+              "Build fast, scalable, and secure web applications with our expert web app development services. From custom solutions to enterprise-grade platforms, we deliver reliable digital products that drive growth.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}web-app-development-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <WebAppDevelopmentService />
+    </>
+  );
 };
 
 export default page;

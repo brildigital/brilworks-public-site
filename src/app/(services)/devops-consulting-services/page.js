@@ -1,5 +1,9 @@
 import React from "react";
 import DevOpsService from "@/app/components/Services/DevOpsService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "DevOps Consulting Services | Brilworks",
@@ -33,7 +37,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <DevOpsService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "DevOps Consulting Services | Brilworks",
+            description:
+              "Accelerate your software delivery with Brilworks' DevOps consulting. Streamline processes, enhance collaboration, and achieve continuous improvement for lasting success.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}devops-consulting-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <DevOpsService />
+    </>
+  );
 };
 
 export default page;

@@ -7,7 +7,7 @@ const page = async () => {
   const session = await getServerSession(authOptions);
   return (
     <div className="bg-white">
-      <Login />
+        <Login />
     </div>
   );
 };

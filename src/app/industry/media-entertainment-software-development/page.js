@@ -1,5 +1,8 @@
 import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "Media and Entertainment Software Development Service",
@@ -44,6 +47,20 @@ const page = () => {
           ),
         }}
       />
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "Media and Entertainment Software Development Service",
+            description:
+              "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
       <MediaAndEntertainment />
     </>
   );

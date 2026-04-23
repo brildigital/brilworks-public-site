@@ -1,11 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import ContactFormV2 from "../Homepage/ContactFormV2";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
+
+const SERVICE_CONTEXT = {
+  "replit-migration": {
+    badge: "MIGRATION SUPPORT",
+    heading: "Let Us Handle Your Replit Migration",
+    subtitle: "Tell us about your app and we'll map the fastest path to production — dependencies, database, secrets, CI/CD, all handled.",
+  },
+  "migration-assessment": {
+    badge: "FREE ASSESSMENT",
+    heading: "Get a Free Migration Assessment",
+    subtitle: "Share your stack details and we'll recommend the right platform — with a clear timeline and cost estimate.",
+  },
+  "migration-cost": {
+    badge: "COST ESTIMATE",
+    heading: "See What Your Migration Would Cost",
+    subtitle: "We'll audit your project, recommend the right platform, and give you a fixed-price migration estimate — free, no strings.",
+  },
+  "cloud-migration": {
+    badge: "CLOUD MIGRATION",
+    heading: "Plan Your Cloud Migration With Experts",
+    subtitle: "From AWS to Vercel to Render — we'll assess your infrastructure needs and build a migration roadmap.",
+  },
+  "mvp-to-production": {
+    badge: "MVP TO PRODUCTION",
+    heading: "Take Your MVP to Production",
+    subtitle: "We've helped 50+ teams move from prototyping tools to production-grade infrastructure. Let's plan yours.",
+  },
+};
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 const GradientFAQAccordion = dynamic(() =>
@@ -14,6 +43,9 @@ const GradientFAQAccordion = dynamic(() =>
 
 const ContactUs = () => {
   const [openFaq, setOpenFaq] = useState(0);
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  const ctx = SERVICE_CONTEXT[serviceParam] || null;
 
   useEffect(() => {
     scrollEffect();
@@ -99,18 +131,17 @@ const ContactUs = () => {
               {/* Badge */}
               <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-                FREE CONSULTATION
+                {ctx?.badge || "FREE CONSULTATION"}
               </span>
 
               <h2
                 className="font-extrabold text-white tracking-[-1px] leading-[1.15] !mb-4"
                 style={{ fontSize: "clamp(28px, 3vw, 44px)" }}
               >
-                Get a Free Project Estimate in 24 Hours
+                {ctx?.heading || "Get a Free Project Estimate in 24 Hours"}
               </h2>
-              <p className="text-white/[0.62] text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
-                Share your idea. We&apos;ll respond with a plan, timeline, and
-                price — no obligation.
+              <p className="text-white/60 text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+                {ctx?.subtitle || "Share your idea. We'll respond with a plan, timeline, and price — no obligation."}
               </p>
 
               {/* Positive trust items */}
@@ -196,7 +227,7 @@ const ContactUs = () => {
                 <div className="text-white text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none">
                   {value}
                 </div>
-                <div className="text-white/50 text-[12px] md:text-[13px] mt-1">
+                <div className="text-white/70 text-[12px] md:text-[13px] mt-1">
                   {label}
                 </div>
               </div>

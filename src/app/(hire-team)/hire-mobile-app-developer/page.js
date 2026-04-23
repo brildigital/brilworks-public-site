@@ -9,12 +9,12 @@ export const metadata = {
     title: "Hire Mobile App Developers",
     description:
       " Build your dream mobile app with our talented developers. We offer expert consultation, design, and development services. Hire us today!",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-mobile-app-developer/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/mobile-app-bannner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/mobile-app-banner.webp`,
       },
     ],
     locale: "en-US",

@@ -25,14 +25,14 @@ const UsecaseFirstSection = ({ data, slug }) => {
             >
               <Link
                 href="/"
-                className="text-white/50 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors"
               >
                 Home
               </Link>
               {" / "}
               <Link
                 href="/use-case/"
-                className="text-white/50 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors"
               >
                 Use Cases
               </Link>
@@ -56,7 +56,7 @@ const UsecaseFirstSection = ({ data, slug }) => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-[18px] text-white/[0.62] leading-[1.7] max-w-[600px] !mb-10">
+            <p className="text-[18px] text-white/60 leading-[1.7] max-w-[600px] !mb-10">
               {data?.description}
             </p>
 
