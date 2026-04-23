@@ -13,7 +13,7 @@ export const metadata = {
     title: "HR Software Development Services",
     description:
       "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/hr-software-development/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/hr-software-development/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
@@ -32,7 +32,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industy/hr-software-development/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/hr-software-development/`,
   },
 };
 
@@ -47,7 +47,7 @@ const page = () => {
             title: "HR Software Development Services | Brilworks",
             description:
               "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/hr-software-development/`,
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/hr-software-development/`,
             dateModified: LAST_UPDATED,
           }),
         }}

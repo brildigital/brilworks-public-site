@@ -13,7 +13,7 @@ export const metadata = {
     title: "Manufacturing Software Development Services by Brilworks",
     description:
       "Custom manufacturing software for SMBs: order management, inventory, shop floor apps, MES, and warehouse tools, built by a team with deep production-domain experience.",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/manufacturing-software-development-services/`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/manufacturing-software-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industy/manufacturing-software-development-services/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}industry/manufacturing-software-development-services/`,
   },
 };
 
@@ -48,7 +48,7 @@ const page = () => {
             title: "Manufacturing Software Development Services by Brilworks | Brilworks",
             description:
               "Custom manufacturing software for SMBs: order management, inventory, shop floor apps, MES, and warehouse tools, built by a team with deep production-domain experience.",
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/manufacturing-software-development-services/`,
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/manufacturing-software-development-services/`,
             dateModified: LAST_UPDATED,
           }),
         }}
