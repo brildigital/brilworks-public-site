@@ -1,5 +1,9 @@
 import React from "react";
 import SaaSApplicationDevelopmentService from "@/app/components/Services/SaaSApplicationDevelopmentService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "Brilworks | Saas Application Development Services",
@@ -33,7 +37,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <SaaSApplicationDevelopmentService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "Brilworks | Saas Application Development Services",
+            description:
+              "Launch powerful SaaS solutions with Brilworks' expert development services. Create scalable, user-centric applications that drive recurring revenue and customer satisfaction.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <SaaSApplicationDevelopmentService />
+    </>
+  );
 };
 
 export default page;

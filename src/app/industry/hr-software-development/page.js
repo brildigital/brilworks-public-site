@@ -1,5 +1,9 @@
 import HRSoftwareDevelopment from "@/app/components/Solution/HRSoftwareDevelopment";
 import React from "react";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "HR Software Development Services | Brilworks",
@@ -33,7 +37,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <HRSoftwareDevelopment />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "HR Software Development Services | Brilworks",
+            description:
+              "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}industy/hr-software-development/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <HRSoftwareDevelopment />
+    </>
+  );
 };
 
 export default page;

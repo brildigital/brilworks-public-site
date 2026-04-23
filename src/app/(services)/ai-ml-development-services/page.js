@@ -1,5 +1,9 @@
 import React from "react";
 import AIMLService from "@/app/components/Services/AIMLService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "AI and ML Services | Brilworks",
@@ -33,7 +37,25 @@ export const metadata = {
 };
 
 const page = () => {
-  return <AIMLService />;
+  return (
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "AI and ML Services | Brilworks",
+            description:
+              "Revolutionize your business with Brilworks' AI/ML development services. Harness the power of artificial intelligence and machine learning for data-driven growth and innovation.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <AIMLService />
+    </>
+  );
 };
 
 export default page;

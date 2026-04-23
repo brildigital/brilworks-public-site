@@ -1,4 +1,8 @@
 import AWSService from "@/app/components/Services/AWSService";
+import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+
+const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
   title: "AWS CONSULTING SERVICES | Brilworks",
@@ -33,9 +37,25 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="!bg-colorWhite">
-      <AWSService />
-    </div>
+    <>
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateWebPageSchema({
+            title: "AWS CONSULTING SERVICES | Brilworks",
+            description:
+              "Harness the full potential of cloud computing with Brilworks' AWS consulting. Optimize performance, reduce costs, and scale your infrastructure for long-term growth.",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}aws-consulting-services/`,
+            dateModified: LAST_UPDATED,
+          }),
+        }}
+      />
+      <LastUpdated date={LAST_UPDATED} />
+      <div className="!bg-colorWhite">
+        <AWSService />
+      </div>
+    </>
   );
 };
 

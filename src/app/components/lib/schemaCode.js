@@ -178,6 +178,26 @@ export function generateBlogPostingSchema({
   return JSON.stringify(schema);
 }
 
+export function generateWebPageSchema({ title, description, url, dateModified }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: url,
+    dateModified: dateModified,
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+  };
+  return JSON.stringify(schema);
+}
+
 export const homepageFAQ = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
