@@ -84,8 +84,8 @@ export const authOptions = {
             email: token.email,
           },
         });
-        return token;
       }
+      return token;
     },
     session: async ({ session, token }) => {
       const userToken = token?.user;
