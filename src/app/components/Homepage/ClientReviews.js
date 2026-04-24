@@ -109,7 +109,7 @@ const TestimonialCard = ({ testimonial, index }) => (
     )}
 
     {/* Quote */}
-    <p className="font-Figtree text-sm text-white/75 leading-[1.75] mb-5 italic flex-1">
+    <p className="font-Figtree text-sm text-white/80 leading-[1.75] mb-5 italic flex-1">
       &ldquo;{testimonial.quote}&rdquo;
     </p>
 

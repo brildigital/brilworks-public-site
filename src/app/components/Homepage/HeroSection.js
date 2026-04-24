@@ -79,7 +79,7 @@ const HeroSection = () => {
               </h1>
 
               {/* Subtitle */}
-              <p className="hero-sub text-[18px] text-white/[0.62] leading-[1.7] max-w-[600px] hero-fade-up">
+              <p className="hero-sub text-[18px] text-white/60 leading-[1.7] max-w-[600px] hero-fade-up">
                 From AI agents to full-stack apps — we build the software that
                 runs your business. Shipped fast, built to last.
               </p>
