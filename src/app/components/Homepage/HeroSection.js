@@ -120,7 +120,7 @@ const HeroSection = () => {
                     <div className="font-Figtree text-white text-[26px] font-extrabold tracking-[-0.5px] leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-white/70 text-[11px] mt-0.5 tracking-[0.04em]">
+                    <div className="text-white/[0.45] text-[11px] mt-0.5 tracking-[0.04em]">
                       {stat.label}
                     </div>
                   </div>
@@ -139,7 +139,7 @@ const HeroSection = () => {
                   <div className="font-Figtree text-[15px] font-bold text-white mb-1.5">
                     Lead Qualifier
                   </div>
-                  <div className="text-xs text-white/70 leading-[1.5]">
+                  <div className="text-xs text-white/50 leading-[1.5]">
                     Responded in 90 secs
                   </div>
                   <div className="h-1 bg-white/10 rounded-full overflow-hidden mt-2.5">
@@ -161,7 +161,7 @@ const HeroSection = () => {
                   <div className="font-Figtree text-[32px] font-extrabold text-[#1A5CCC] my-2">
                     1,247
                   </div>
-                  <div className="text-xs text-white/70 leading-[1.5]">
+                  <div className="text-xs text-white/50 leading-[1.5]">
                     Queries handled today · 82% automated
                   </div>
                   <div className="h-1 bg-white/10 rounded-full overflow-hidden mt-2.5">
@@ -174,7 +174,7 @@ const HeroSection = () => {
                     {["WhatsApp", "Email", "Live Chat", "24/7"].map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-semibold text-[#4d9aff] bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] px-2 py-0.5 rounded-full"
+                        className="text-[10px] font-semibold text-[#1A5CCC] bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] px-2 py-0.5 rounded-full"
                       >
                         {tag}
                       </span>
@@ -193,7 +193,7 @@ const HeroSection = () => {
                   <div className="font-Figtree text-2xl font-extrabold text-[#1A5CCC] my-1">
                     97%
                   </div>
-                  <div className="text-xs text-white/70">
+                  <div className="text-xs text-white/50">
                     Top Rated Agency
                   </div>
                 </div>

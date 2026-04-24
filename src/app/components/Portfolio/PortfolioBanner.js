@@ -1,66 +1,81 @@
 "use client";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import Heading from "../HTMLComponents/Heading";
+import { installScrollDepth, trackEvent } from "../lib/tracking";
 
-const PortfolioBanner = () => {
-  const words = ["Empower. ", "Create. ", "Progress"];
-  const colorSequences = [
-    ["gradient-text2", "text-colorWhite", "text-colorWhite"],
-    ["text-colorWhite", "gradient-text2", "text-colorWhite"],
-    ["text-colorWhite", "text-colorWhite", "gradient-text2"],
-  ];
+// Proof numbers — tune these in one place. The value prop for this page is
+// speed, depth of work, and breadth of industries shipped. Swap `caseStudyCount`
+// in for a live number once we have it; hardcoded only for the hero strip.
+const PROOF = [
+  { value: "10+", label: "Years building software" },
+  { value: "120+", label: "Products shipped" },
+  { value: "AWS", label: "Consulting Partner" },
+  { value: "15", label: "Industries served" },
+];
 
-  const [colorClasses, setColorClasses] = useState(colorSequences[0]);
-  const [currentStep, setCurrentStep] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentStep((prevStep) => {
-        const nextStep = (prevStep + 1) % colorSequences.length;
-        setColorClasses(colorSequences[nextStep]);
-        return nextStep;
-      });
-    }, 1000);
-
-    // Cleanup the interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
-
+const PortfolioBanner = ({ caseStudyCount }) => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    // Clean up the event listener when the component unmounts
+    const removeDepth = installScrollDepth("portfolio");
     return () => {
       window.removeEventListener("scroll", scrollEffect);
+      removeDepth();
     };
   }, []);
+
+  const handleCta = (name) => () => {
+    trackEvent("portfolio_hero_cta_click", { cta: name });
+  };
+
   return (
     <div className="case-study-section">
       <div className="banner-layer">
-        <div className="container max-w-[1280px] main-section-padding mx-auto min-h-[650px] !h-[60vh] flex items-center justify-center">
-          <div className="w-full flex items-center justify-center pt-[7%]">
-            <div>
-              <p className="text-colorWhite uppercase md:text-2xl text-xl">
-                Case Studies
-              </p>
-              <Heading
-                type="h1"
-                className="text-white lg:mt-7.5 my-5 lg:mb-5"
-                text={words.map((word, index) => (
-                  <span
-                    key={index}
-                    className={`${colorClasses[index]} transition-all duration-700`}
-                  >
-                    {word}
+        <div className="container max-w-[1280px] main-section-padding mx-auto flex items-center justify-center pt-[140px] lg:pt-[160px] pb-14 lg:pb-20">
+          <div className="w-full">
+            <h1 className="text-white font-semibold leading-[1.08] tracking-tight text-[32px] md:text-[44px] lg:text-[56px] max-w-[920px] !mb-5">
+              Engineering teams and AI agents that{" "}
+              <span className="gradient-text2">ship at agency speed.</span>
+            </h1>
+
+            <p className="text-white/75 md:text-lg text-base md:max-w-[640px] !mb-8 leading-relaxed">
+              Production-ready MVPs in weeks, not quarters — for founders,
+              product teams, and scaleups.
+            </p>
+
+            <div className="flex flex-wrap gap-3 md:gap-4 !mb-12">
+              <Link
+                href="/contact-us/"
+                prefetch={false}
+                onClick={handleCta("primary_estimate")}
+                className="inline-flex items-center gap-2 bg-white text-[#0A4D8C] hover:bg-white/90 font-medium rounded-md px-5 md:px-6 py-3 text-sm md:text-base transition-colors"
+              >
+                Get a free project estimate
+                <span aria-hidden>→</span>
+              </Link>
+
+              <a
+                href="#recent-work"
+                onClick={handleCta("secondary_scroll_to_work")}
+                className="inline-flex items-center gap-2 border border-white/25 text-white hover:bg-white/10 font-medium rounded-md px-5 md:px-6 py-3 text-sm md:text-base transition-colors"
+              >
+                Explore the work
+                <span aria-hidden>↓</span>
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5 md:gap-x-10 max-w-[820px] pt-6 border-t border-white/20">
+              {PROOF.map((p, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-white font-bold text-2xl md:text-3xl leading-none">
+                    {p.value}
                   </span>
-                ))}
-              />
-              <h2 className="sxl:text-2xl md:text-xl text-lg text-white my-5">
-                Discover how our innovative solutions empower businesses across
-                various industries, helping them achieve excellence, enhance
-                efficiency, and drive success.
-              </h2>
+                  <span className="text-white font-medium text-sm md:text-base leading-snug !mt-2">
+                    {p.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

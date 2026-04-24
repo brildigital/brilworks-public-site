@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essay editor · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  /* Editor uses a narrower main column for writing comfort, and a small
+     right sidebar inside the main column for the pipeline + C-C-A-I panels,
+     independent of the NAO panel on the far right. */
+  .editor-main {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 28px;
+    max-width: 980px;
+  }
+  .prompt-block {
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    background: var(--panel);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+  }
+  .prompt-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .prompt-text {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .word-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .word-bar .n { color: var(--ink); }
+
+  .editor {
+    min-height: 360px;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: var(--ink);
+    outline: none;
+    letter-spacing: -0.005em;
+    padding: 4px 0;
+  }
+  .editor p { margin-bottom: 1em; }
+  .editor[contenteditable=true]:empty::before {
+    content: attr(data-placeholder);
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  .mark-verb {
+    background: rgba(178, 81, 30, 0.12);
+    border-bottom: 1.5px dashed var(--accent);
+    padding: 0 1px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .mark-verb:hover { background: rgba(178, 81, 30, 0.22); }
+  .mark-filler {
+    background: rgba(155, 122, 28, 0.10);
+    border-bottom: 1.5px dotted var(--warn);
+    padding: 0 1px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .mark-filler:hover { background: rgba(155, 122, 28, 0.20); }
+  .mark-verb.active, .mark-filler.active {
+    background: var(--accent-soft) !important;
+  }
+
+  .popover {
+    position: absolute;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 120ms, transform 120ms;
+    z-index: 100;
+    max-width: 320px;
+    min-width: 180px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    display: none;
+  }
+  .popover.show { opacity: 1; transform: translateY(0); pointer-events: auto; display: block; }
+  .pop-label {
+    display: flex;
+    justify-content: space-between;
+    color: var(--accent-soft);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pop-close {
+    background: transparent; border: none; color: var(--accent-soft);
+    cursor: pointer; font-family: inherit; font-size: 14px; opacity: 0.6;
+  }
+  .pop-close:hover { opacity: 1; }
+  .pop-hint {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: #fff;
+    margin-bottom: 8px; line-height: 1.45;
+  }
+  .pop-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    background: rgba(234, 201, 174, 0.14); color: #fff;
+    border: 1px solid rgba(234, 201, 174, 0.35);
+    padding: 4px 9px; border-radius: 4px;
+    font-family: 'Fraunces', serif; font-size: 13px; font-style: italic;
+    cursor: pointer; transition: all 100ms;
+  }
+  .chip:hover { background: var(--accent-soft); color: var(--ink); border-color: var(--accent-soft); }
+  .chip-cut { background: transparent; }
+
+  /* Side panel (pipeline + CCAI + findings) */
+  .side {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .side::-webkit-scrollbar { width: 6px; }
+  .side::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 6px; }
+
+  .pipe-box {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .pipe-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .pipe-head h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .pipe-head .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+  }
+  .timer-bar {
+    height: 3px; background: var(--paper-deep); border-radius: 2px; overflow: hidden; margin-bottom: 10px;
+  }
+  .timer-fill {
+    height: 100%; width: 0%; background: var(--accent); transition: width 60ms linear;
+  }
+  .timer-fill.ready { background: var(--ok); }
+
+  .ccai-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+  }
+  .ccai-slot {
+    background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 5px; padding: 8px 10px; transition: all 180ms;
+  }
+  .ccai-slot.filled { border-color: var(--ok); background: #F1F3E5; }
+  .ccai-slot.empty { opacity: 0.7; }
+  .ccai-letter {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500;
+    line-height: 1; display: block; margin-bottom: 3px; color: var(--ink-faint);
+  }
+  .ccai-slot.filled .ccai-letter { color: var(--ok); }
+  .ccai-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint);
+    margin-bottom: 3px;
+  }
+  .ccai-ev {
+    font-family: 'Fraunces', serif; font-size: 11px;
+    font-style: italic; color: var(--ink-soft); line-height: 1.4; min-height: 15px;
+  }
+
+  .find-list { display: flex; flex-direction: column; gap: 3px; }
+  .find-row {
+    display: flex; gap: 8px; padding: 5px 8px;
+    border-radius: 4px; border-left: 2px solid transparent;
+    font-size: 12px; cursor: pointer; transition: background 100ms;
+  }
+  .find-row:hover { background: var(--paper-deep); }
+  .find-row.verb { border-left-color: var(--accent); }
+  .find-row.filler { border-left-color: var(--warn); }
+  .find-type {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-faint); min-width: 26px; padding-top: 1px;
+  }
+  .find-body {
+    flex: 1; font-family: 'Fraunces', serif; font-size: 12px; line-height: 1.4;
+  }
+  .find-body .struck {
+    text-decoration: line-through; color: var(--ink-faint);
+  }
+  .find-body .sug { color: var(--accent); font-style: italic; }
+  .find-empty {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 12px;
+    color: var(--ink-faint); padding: 4px 0;
+  }
+
+  .debounce-wrap {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-faint);
+    margin-top: 10px;
+  }
+  .debounce-wrap input[type=range] { flex: 1; accent-color: var(--accent); }
+
+  .editor-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .editor-actions .spacer { flex: 1; }
+
+  .stage-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+  }
+  .pstage {
+    padding: 7px 5px;
+  }
+  .pstage-name { font-size: 9px; line-height: 1.25; }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="page-header">
+      <div class="page-kicker">Step 3 · Essay editor · foreground pipeline</div>
+      <h1 class="page-title">Write. Agents watch and react.</h1>
+      <p class="page-subtitle">
+        Story Architect runs a lightweight C-C-A-I checklist on every pause. Editing agent flags
+        weak verbs and fillers inline. Both run on Haiku 4.5 for speed. Pause typing to watch them fire.
+      </p>
+    </div>
+
+    <div class="editor-main">
+      <div>
+        <div class="prompt-block">
+          <div class="prompt-label">Essay prompt · Kellogg · 450 words</div>
+          <div class="prompt-text">
+            Tell us about a time you led a team through uncertainty. What did you learn about yourself as a leader?
+          </div>
+        </div>
+
+        <div class="word-bar">
+          <span><span class="n" id="wc">0</span> words · 450 max</span>
+          <span id="save-state">saved</span>
+        </div>
+
+        <div
+          class="editor"
+          id="editor"
+          contenteditable="true"
+          spellcheck="false"
+          data-placeholder="Start writing. Agents fire after you stop typing. Click underlined words for swap options…"
+        ></div>
+
+        <div class="editor-actions">
+          <button class="btn secondary" id="load-sample">Load sample draft</button>
+          <div class="spacer"></div>
+          <a class="btn" href="4-deep-review.html" id="deep-btn">Run deep review <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="pipe-box">
+          <div class="pipe-head">
+            <h4>Pipeline</h4>
+            <span class="status" id="pipe-status">idle</span>
+          </div>
+          <div class="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+          <div class="stage-row">
+            <div class="pstage" id="stage-arch">
+              <span class="pstage-dot"></span>
+              <div class="pstage-name">story<br>architect</div>
+              <div class="pstage-lat" id="lat-arch"></div>
+            </div>
+            <div class="pstage" id="stage-edit">
+              <span class="pstage-dot"></span>
+              <div class="pstage-name">editing<br>agent</div>
+              <div class="pstage-lat" id="lat-edit"></div>
+            </div>
+            <div class="pstage" id="stage-paint">
+              <span class="pstage-dot"></span>
+              <div class="pstage-name">paint<br>marks</div>
+              <div class="pstage-lat" id="lat-paint"></div>
+            </div>
+          </div>
+          <div class="debounce-wrap">
+            <span>debounce</span>
+            <input type="range" id="debounce-slider" min="400" max="2000" step="100" value="1500">
+            <span id="debounce-val">1500ms</span>
+          </div>
+        </div>
+
+        <div class="pipe-box">
+          <div class="pipe-head">
+            <h4>C-C-A-I check</h4>
+            <span class="status"><span id="ccai-score">0</span>/4</span>
+          </div>
+          <div class="ccai-grid">
+            <div class="ccai-slot empty" id="s-ctx">
+              <span class="ccai-letter">C</span>
+              <div class="ccai-label">Context</div>
+              <div class="ccai-ev">—</div>
+            </div>
+            <div class="ccai-slot empty" id="s-cha">
+              <span class="ccai-letter">C</span>
+              <div class="ccai-label">Challenge</div>
+              <div class="ccai-ev">—</div>
+            </div>
+            <div class="ccai-slot empty" id="s-act">
+              <span class="ccai-letter">A</span>
+              <div class="ccai-label">Action</div>
+              <div class="ccai-ev">—</div>
+            </div>
+            <div class="ccai-slot empty" id="s-imp">
+              <span class="ccai-letter">I</span>
+              <div class="ccai-label">Impact</div>
+              <div class="ccai-ev">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pipe-box">
+          <div class="pipe-head">
+            <h4>Editing findings</h4>
+            <span class="status"><span id="find-n">0</span></span>
+          </div>
+          <div id="find-list" class="find-list">
+            <div class="find-empty">Nothing yet. Start writing.</div>
+          </div>
+        </div>
+
+        <div class="pipe-box">
+          <div class="pipe-head"><h4>Session</h4><span class="status">telemetry</span></div>
+          <div class="telem-row"><span class="k">fg calls</span><span class="v" id="t-calls">0</span></div>
+          <div class="telem-row"><span class="k">calls/min</span><span class="v" id="t-rate">—</span></div>
+          <div class="telem-row"><span class="k">est. cost</span><span class="v" id="t-cost">$0.0000</span></div>
+          <div class="telem-row"><span class="k">cache hit</span><span class="v" id="t-cache">—</span></div>
+          <div class="telem-row"><span class="k">model</span><span class="v">Haiku 4.5</span></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<div class="popover" id="popover"></div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'editor', crumbs: ['Essay editor', 'Why Kellogg?'] });
+
+  const SAMPLE_DRAFT = `Last summer I was the project lead on a cross-functional product launch at my fintech. Basically the team had four engineers, two designers, and a PM who was very new. We really needed to ship by September but we were actually behind schedule by about three weeks.
+
+I helped organize a replanning session. I did a lot of one-on-ones to figure out what was blocking people. It turns out the biggest issue was that the designers and engineers were not really talking. I made a new working agreement that had daily 15-minute syncs. I also got the PM to own the changelog.
+
+We shipped on September 18th, which was eight days late. The product got 12,000 signups in the first two weeks, which was 3x our target. I learned that leadership in uncertainty is mostly about creating cheap feedback loops so problems surface early.`;
+
+  const WEAK_VERBS = {
+    "was": ["served as", "operated as"],
+    "were": ["served as", "stood as"],
+    "did": ["conducted", "ran", "executed"],
+    "made": ["built", "established", "crafted"],
+    "got": ["secured", "obtained", "earned"],
+    "helped": ["coordinated", "drove", "steered"],
+    "used": ["deployed", "applied", "leveraged"],
+    "had": ["held", "maintained", "commanded"],
+    "worked": ["collaborated", "partnered", "operated"],
+    "took": ["assumed", "accepted", "absorbed"],
+  };
+  const FILLERS = {
+    "very": "cut it — the adjective should carry itself",
+    "really": "cut it — rarely adds meaning",
+    "basically": "cut it — signals vague summary",
+    "actually": "cut it — usually redundant",
+    "just": "cut it — softens without adding meaning",
+    "quite": "cut it — hedge word",
+    "somewhat": "cut it — hedge word",
+    "pretty": "cut it — informal hedge",
+    "kind of": "cut it — filler hedge",
+    "sort of": "cut it — filler hedge",
+    "in order to": "use “to”",
+    "the fact that": "cut it — rephrase directly",
+    "a lot of": "replace with a number, or with “many”",
+    "lots of": "replace with a number, or with “many”",
+    "it turns out": "cut it — state the finding directly",
+  };
+
+  const editor = document.getElementById('editor');
+  const wc = document.getElementById('wc');
+  const saveState = document.getElementById('save-state');
+  const debounceSlider = document.getElementById('debounce-slider');
+  const debounceVal = document.getElementById('debounce-val');
+  const timerFill = document.getElementById('timer-fill');
+  const pipeStatus = document.getElementById('pipe-status');
+  const stageArch = document.getElementById('stage-arch');
+  const stageEdit = document.getElementById('stage-edit');
+  const stagePaint = document.getElementById('stage-paint');
+  const latArch = document.getElementById('lat-arch');
+  const latEdit = document.getElementById('lat-edit');
+  const latPaint = document.getElementById('lat-paint');
+  const slotCtx = document.getElementById('s-ctx');
+  const slotCha = document.getElementById('s-cha');
+  const slotAct = document.getElementById('s-act');
+  const slotImp = document.getElementById('s-imp');
+  const ccaiScore = document.getElementById('ccai-score');
+  const findList = document.getElementById('find-list');
+  const findN = document.getElementById('find-n');
+  const tCalls = document.getElementById('t-calls');
+  const tRate = document.getElementById('t-rate');
+  const tCost = document.getElementById('t-cost');
+  const tCache = document.getElementById('t-cache');
+  const popover = document.getElementById('popover');
+
+  let debounceMs = 1500;
+  let debounceTimer = null;
+  let lastKeystroke = null;
+  let firstKeystroke = null;
+  let tickerInterval = null;
+  let pipelineRunning = false;
+  let sessionCalls = 0, sessionWarm = 0;
+  let activeMark = null;
+
+  const ESSAY_KEY = 'admissions_os_essay_draft_v1';
+
+  // Restore draft
+  (function () {
+    const saved = localStorage.getItem(ESSAY_KEY);
+    if (saved) {
+      editor.innerHTML = saved;
+      updateWC();
+    }
+  })();
+
+  editor.addEventListener('input', onInput);
+  debounceSlider.addEventListener('input', () => {
+    debounceMs = parseInt(debounceSlider.value, 10);
+    debounceVal.textContent = `${debounceMs}ms`;
+  });
+  document.getElementById('load-sample').addEventListener('click', () => {
+    editor.innerHTML = SAMPLE_DRAFT.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    onInput();
+  });
+
+  function onInput() {
+    if (!firstKeystroke) firstKeystroke = Date.now();
+    lastKeystroke = Date.now();
+    updateWC();
+    saveState.textContent = 'typing…';
+    localStorage.setItem(ESSAY_KEY, editor.innerHTML);
+    resetStages();
+    pipeStatus.textContent = 'waiting for pause…';
+    clearTimeout(debounceTimer);
+    startTicker();
+    debounceTimer = setTimeout(() => {
+      runPipeline();
+    }, debounceMs);
+  }
+
+  function startTicker() {
+    clearInterval(tickerInterval);
+    tickerInterval = setInterval(() => {
+      if (!lastKeystroke || pipelineRunning) return;
+      const elapsed = Date.now() - lastKeystroke;
+      const pct = Math.min(100, (elapsed / debounceMs) * 100);
+      timerFill.style.width = `${pct}%`;
+      timerFill.classList.toggle('ready', pct >= 100);
+      if (pct >= 100) clearInterval(tickerInterval);
+    }, 60);
+  }
+
+  function resetStages() {
+    timerFill.classList.remove('ready');
+    [stageArch, stageEdit, stagePaint].forEach(s => s.classList.remove('firing', 'done'));
+    [latArch, latEdit, latPaint].forEach(l => l.textContent = '');
+  }
+
+  async function runPipeline() {
+    pipelineRunning = true;
+    pipeStatus.textContent = 'running…';
+    const text = getPlainText();
+
+    // Story Architect
+    stageArch.classList.add('firing');
+    const t1 = performance.now();
+    await sleep(180 + Math.random() * 120);
+    const ccai = analyzeCCAI(text);
+    const latA = Math.round(performance.now() - t1);
+    stageArch.classList.remove('firing'); stageArch.classList.add('done');
+    latArch.textContent = `${latA}ms`;
+    paintCCAI(ccai);
+
+    // Editing
+    stageEdit.classList.add('firing');
+    const t2 = performance.now();
+    await sleep(140 + Math.random() * 100);
+    const findings = analyzeEditing(text);
+    const latE = Math.round(performance.now() - t2);
+    stageEdit.classList.remove('firing'); stageEdit.classList.add('done');
+    latEdit.textContent = `${latE}ms`;
+
+    // Paint
+    stagePaint.classList.add('firing');
+    const t3 = performance.now();
+    await sleep(40 + Math.random() * 40);
+    paintFindings(findings);
+    const latP = Math.round(performance.now() - t3);
+    stagePaint.classList.remove('firing'); stagePaint.classList.add('done');
+    latPaint.textContent = `${latP}ms`;
+
+    pipeStatus.textContent = `synced · ${latA + latE + latP}ms`;
+    saveState.textContent = 'saved';
+    pipelineRunning = false;
+
+    recordTelemetry();
+
+    // Once we have a filled CCAI and real content, stash a draft claim into the NAO.
+    if (ccai.action && ccai.impact && text.length > 300) {
+      maybePushEssayClaim(text);
+    }
+
+    if (!progressMarked && (ccai.context || ccai.action) && text.length > 100) {
+      markStepDone('editor');
+      progressMarked = true;
+    }
+  }
+
+  let progressMarked = false;
+
+  function analyzeCCAI(text) {
+    const t = text.toLowerCase();
+    const out = { context: null, challenge: null, action: null, impact: null };
+    const ctxPat = [/\b(last (summer|year|month|fall|spring|winter))\b/, /\b(in 20\d\d|during my|when i was|as (a|an|the))\b/, /\b(at (my|the) (company|job|internship|firm|team)|while working)\b/];
+    for (const re of ctxPat) { const m = t.match(re); if (m) { out.context = snippet(text, m.index, 60); break; } }
+    const chPat = [/\b(behind schedule|ran out of|was blocking|conflict|failed|stuck|uncertain|risk|broke|lost|crisis|missed)\b/, /\b(but|however|the problem was|we (couldn'?t|didn'?t)|needed to)\b/];
+    for (const re of chPat) { const m = t.match(re); if (m) { out.challenge = snippet(text, m.index, 60); break; } }
+    const actPat = [/\bi (led|ran|built|proposed|shipped|organized|launched|rewrote|redesigned|pitched|rebuilt|negotiated|coordinated|drove|established|designed|implemented|introduced|convinced)\b/, /\bi (made|helped|got|did) (a |an |the |new )?\w+/];
+    for (const re of actPat) { const m = t.match(re); if (m) { out.action = snippet(text, m.index, 60); break; } }
+    const impPat = [/\b(\d{1,4}(,\d{3})*(\.\d+)?\s*(%|x|users|signups|customers|dollars|\$|k|m|million|weeks|days|months))\b/, /\b(shipped on|launched on|grew|doubled|tripled|increased|reduced|cut|saved)\b/, /\bi learned\b/];
+    for (const re of impPat) { const m = t.match(re); if (m) { out.impact = snippet(text, m.index, 60); break; } }
+    return out;
+  }
+
+  function snippet(text, idx, max) {
+    const start = Math.max(0, idx - 6);
+    const end = Math.min(text.length, idx + max);
+    let s = text.slice(start, end).trim();
+    if (start > 0) s = '…' + s;
+    if (end < text.length) s = s + '…';
+    return s;
+  }
+
+  function paintCCAI(ccai) {
+    let score = 0;
+    const entries = [
+      ['context', slotCtx], ['challenge', slotCha],
+      ['action', slotAct], ['impact', slotImp],
+    ];
+    for (const [key, el] of entries) {
+      const v = ccai[key];
+      const ev = el.querySelector('.ccai-ev');
+      el.classList.remove('empty', 'filled');
+      if (v) {
+        el.classList.add('filled');
+        ev.textContent = `"${v}"`;
+        score++;
+      } else {
+        el.classList.add('empty');
+        ev.textContent = '—';
+      }
+    }
+    ccaiScore.textContent = score;
+  }
+
+  function analyzeEditing(text) {
+    const findings = [];
+    const seen = new Set();
+    for (const verb of Object.keys(WEAK_VERBS)) {
+      const re = new RegExp(`\\bI\\s+(${verb})\\b`, 'gi');
+      let m;
+      while ((m = re.exec(text)) !== null) {
+        const key = `v:${m.index}`; if (seen.has(key)) continue; seen.add(key);
+        findings.push({
+          type: 'verb',
+          index: m.index + m[0].indexOf(m[1]),
+          length: m[1].length,
+          text: m[1], suggestions: WEAK_VERBS[verb],
+        });
+        if (findings.length > 60) break;
+      }
+    }
+    for (const filler of Object.keys(FILLERS)) {
+      const re = new RegExp(`\\b${filler.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'gi');
+      let m;
+      while ((m = re.exec(text)) !== null) {
+        const key = `f:${m.index}`; if (seen.has(key)) continue; seen.add(key);
+        findings.push({ type: 'filler', index: m.index, length: m[0].length, text: m[0], suggestion: FILLERS[filler] });
+        if (findings.length > 80) break;
+      }
+    }
+    findings.sort((a, b) => a.index - b.index);
+    return findings;
+  }
+
+  function paintFindings(findings) {
+    closePopover();
+    const caret = saveCaret();
+    const paragraphs = editor.querySelectorAll('p');
+    let cursor = 0;
+    const paraRanges = [];
+    paragraphs.forEach(p => {
+      const t = p.textContent;
+      paraRanges.push({ p, start: cursor, end: cursor + t.length });
+      cursor += t.length + 2;
+    });
+    paraRanges.forEach(({ p, start, end }) => {
+      const segFindings = findings.filter(f => f.index >= start && f.index + f.length <= end)
+        .map(f => ({ ...f, local: f.index - start }));
+      p.innerHTML = buildMarkedHTML(p.textContent, segFindings);
+    });
+    if (paragraphs.length === 0 && editor.textContent.length > 0) {
+      editor.innerHTML = `<p>${buildMarkedHTML(editor.textContent, findings)}</p>`;
+    }
+    restoreCaret(caret);
+    renderFindings(findings);
+    attachMarkHandlers();
+  }
+
+  function buildMarkedHTML(text, findings) {
+    if (!findings.length) return escapeHTML(text);
+    let out = '', pos = 0;
+    for (const f of findings) {
+      if (f.local < pos) continue;
+      out += escapeHTML(text.slice(pos, f.local));
+      const word = escapeHTML(text.slice(f.local, f.local + f.length));
+      if (f.type === 'verb') {
+        const sugs = JSON.stringify(f.suggestions);
+        out += `<span class="mark-verb" data-type="verb" data-word="${word}" data-sugs='${sugs.replace(/'/g, "&#39;")}'>${word}</span>`;
+      } else {
+        out += `<span class="mark-filler" data-type="filler" data-word="${word}" data-sug="${escapeHTML(f.suggestion)}">${word}</span>`;
+      }
+      pos = f.local + f.length;
+    }
+    out += escapeHTML(text.slice(pos));
+    return out;
+  }
+
+  function renderFindings(findings) {
+    findN.textContent = findings.length;
+    if (!findings.length) {
+      findList.innerHTML = '<div class="find-empty">Nothing to flag.</div>';
+      return;
+    }
+    const html = findings.slice(0, 10).map(f => {
+      if (f.type === 'verb') {
+        return `<div class="find-row verb">
+          <span class="find-type">verb</span>
+          <span class="find-body"><span class="struck">${escapeHTML(f.text)}</span> → <span class="sug">${escapeHTML(f.suggestions[0])}</span></span>
+        </div>`;
+      }
+      return `<div class="find-row filler">
+        <span class="find-type">filler</span>
+        <span class="find-body"><span class="struck">${escapeHTML(f.text)}</span></span>
+      </div>`;
+    }).join('');
+    const tail = findings.length > 10 ? `<div class="find-empty">…and ${findings.length - 10} more</div>` : '';
+    findList.innerHTML = html + tail;
+  }
+
+  // ---------- popover ----------
+  function attachMarkHandlers() {
+    editor.querySelectorAll('.mark-verb, .mark-filler').forEach(m => {
+      m.addEventListener('click', (e) => { e.stopPropagation(); openPopover(m); });
+    });
+  }
+  function openPopover(el) {
+    if (activeMark && activeMark !== el) activeMark.classList.remove('active');
+    activeMark = el;
+    el.classList.add('active');
+    const type = el.dataset.type;
+    const word = el.dataset.word;
+    if (type === 'verb') {
+      const sugs = JSON.parse(el.dataset.sugs.replace(/&#39;/g, "'"));
+      const chips = sugs.map(s => `<button class="chip" data-val="${escapeHTML(s)}">${escapeHTML(s)}</button>`).join('');
+      popover.innerHTML = `
+        <div class="pop-label"><span>verb · ${escapeHTML(word)}</span><button class="pop-close">×</button></div>
+        <div class="pop-hint">Swap for a stronger verb:</div>
+        <div class="pop-chips">${chips}</div>`;
+    } else {
+      popover.innerHTML = `
+        <div class="pop-label"><span>filler · ${escapeHTML(word)}</span><button class="pop-close">×</button></div>
+        <div class="pop-hint">${escapeHTML(el.dataset.sug)}</div>
+        <div class="pop-chips"><button class="chip chip-cut" data-val="">cut the word</button></div>`;
+    }
+    const rect = el.getBoundingClientRect();
+    popover.style.top = `${rect.bottom + window.scrollY + 6}px`;
+    popover.style.left = `${rect.left + window.scrollX}px`;
+    popover.classList.add('show');
+    requestAnimationFrame(() => {
+      const pr = popover.getBoundingClientRect();
+      const of = pr.right - (window.innerWidth - 8);
+      if (of > 0) popover.style.left = `${Math.max(8, rect.left + window.scrollX - of)}px`;
+    });
+    popover.querySelector('.pop-close').addEventListener('click', closePopover);
+    popover.querySelectorAll('.chip').forEach(c =>
+      c.addEventListener('click', () => applyReplacement(el, c.dataset.val))
+    );
+  }
+  function closePopover() {
+    popover.classList.remove('show');
+    if (activeMark) { activeMark.classList.remove('active'); activeMark = null; }
+  }
+  function applyReplacement(markEl, replacement) {
+    const parent = markEl.parentNode;
+    if (!parent) { closePopover(); return; }
+    if (replacement && replacement.length) {
+      parent.replaceChild(document.createTextNode(replacement), markEl);
+    } else {
+      const prev = markEl.previousSibling, next = markEl.nextSibling;
+      parent.removeChild(markEl);
+      if (prev && prev.nodeType === Node.TEXT_NODE && next && next.nodeType === Node.TEXT_NODE) {
+        prev.nodeValue = (prev.nodeValue + next.nodeValue).replace(/ {2,}/g, ' ').replace(/ ([,.;:!?])/g, '$1');
+        parent.removeChild(next);
+      }
+    }
+    closePopover();
+    updateWC();
+    localStorage.setItem(ESSAY_KEY, editor.innerHTML);
+    onInput();
+  }
+  document.addEventListener('click', (e) => {
+    if (!popover.classList.contains('show')) return;
+    if (popover.contains(e.target)) return;
+    if (e.target.classList && (e.target.classList.contains('mark-verb') || e.target.classList.contains('mark-filler'))) return;
+    closePopover();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopover(); });
+
+  // ---------- caret save/restore ----------
+  function saveCaret() {
+    const sel = window.getSelection();
+    if (!sel.rangeCount) return null;
+    const range = sel.getRangeAt(0);
+    const pre = range.cloneRange();
+    pre.selectNodeContents(editor);
+    pre.setEnd(range.endContainer, range.endOffset);
+    return pre.toString().length;
+  }
+  function restoreCaret(offset) {
+    if (offset == null) return;
+    let node, remaining = offset;
+    const walker = document.createTreeWalker(editor, NodeFilter.SHOW_TEXT, null);
+    while ((node = walker.nextNode())) {
+      if (remaining <= node.length) {
+        const range = document.createRange();
+        range.setStart(node, remaining);
+        range.collapse(true);
+        const sel = window.getSelection();
+        sel.removeAllRanges(); sel.addRange(range);
+        return;
+      }
+      remaining -= node.length;
+    }
+  }
+
+  function getPlainText() {
+    return Array.from(editor.querySelectorAll('p')).map(p => p.textContent).join('\n\n') || editor.textContent || '';
+  }
+  function updateWC() {
+    const t = getPlainText().trim();
+    const n = t ? t.split(/\s+/).length : 0;
+    wc.textContent = n;
+  }
+
+  function recordTelemetry() {
+    sessionCalls++;
+    const warmProb = Math.min(0.9, 0.2 + sessionCalls * 0.05);
+    if (Math.random() < warmProb) sessionWarm++;
+    tCalls.textContent = sessionCalls;
+    if (firstKeystroke) {
+      const mins = (Date.now() - firstKeystroke) / 60000;
+      if (mins > 0.05) tRate.textContent = (sessionCalls / mins).toFixed(1);
+    }
+    const cost = sessionWarm * 0.0018 + (sessionCalls - sessionWarm) * 0.0053;
+    tCost.textContent = `$${cost.toFixed(4)}`;
+    if (sessionCalls >= 3) tCache.textContent = `${Math.round((sessionWarm / sessionCalls) * 100)}%`;
+  }
+
+  // Stash a claim derived from the essay back into the NAO.
+  // This is the "write-back" that makes the NAO grow across agents.
+  function maybePushEssayClaim(text) {
+    const nao = loadNAO();
+    const existing = nao.claims.map(c => c.text).join(' ');
+    // Extract the strongest numeric impact claim
+    const impMatch = text.match(/\b(\d[\d,]*)\s*(signups|users|customers|%|x|k|M)\b/i);
+    if (impMatch) {
+      const claimText = `Essay 1 impact claim: ${impMatch[0]} outcome from leadership moment.`;
+      if (!existing.includes(impMatch[0])) {
+        nao.claims.push({ text: claimText, evidence: 'Essay 1 draft · Kellogg' });
+        // Also thread the anchor back to the document list
+        if (!nao.documents) nao.documents = { essays: [], resume: null, recLetters: [] };
+        if (!nao.documents.essays.find(e => e.title === 'Kellogg Essay 1')) {
+          nao.documents.essays.push({
+            title: 'Kellogg Essay 1',
+            prompt: 'Time you led a team through uncertainty',
+            wordCount: text.split(/\s+/).filter(Boolean).length,
+            lastUpdated: new Date().toISOString(),
+          });
+        } else {
+          const e = nao.documents.essays.find(e => e.title === 'Kellogg Essay 1');
+          e.wordCount = text.split(/\s+/).filter(Boolean).length;
+          e.lastUpdated = new Date().toISOString();
+        }
+        saveNAO(nao);
+      }
+    }
+  }
+</script>
+</body>
+</html>

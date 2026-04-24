@@ -100,13 +100,13 @@ const ContactFormV2 = ({
       <div className={`w-full ${darkMode ? "dark" : ""}`}>
         {/* Step Indicator */}
         <div className="flex items-center gap-3 mb-6">
-          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 1 ? "text-themeColor" : darkMode ? "text-white/60" : "text-[#9ca3af]"}`}>
+          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 1 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}>
             <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 1 ? "bg-themeColor text-white" : "bg-themeColor/20 text-themeColor"}`}>1</span>
             Project type
           </div>
           <div className={`w-8 h-[1px] ${darkMode ? "bg-white/20" : "bg-[#e5e7eb]"}`} />
-          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 2 ? "text-themeColor" : darkMode ? "text-white/60" : "text-[#9ca3af]"}`}>
-            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 2 ? "bg-themeColor text-white" : darkMode ? "bg-white/10 text-white/60" : "bg-[#f3f4f6] text-[#9ca3af]"}`}>2</span>
+          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 2 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}>
+            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 2 ? "bg-themeColor text-white" : darkMode ? "bg-white/10 text-white/40" : "bg-[#f3f4f6] text-[#9ca3af]"}`}>2</span>
             Your details
           </div>
         </div>
@@ -129,7 +129,7 @@ const ContactFormV2 = ({
                       : "border-[#e5e7eb] hover:border-themeColor hover:bg-[#f0f5ff] text-[#374151]"
                   }`}
                 >
-                  <span className={`${darkMode ? "text-white/65 group-hover:text-themeColor" : "text-[#9ca3af] group-hover:text-themeColor"} transition-colors`}>
+                  <span className={`${darkMode ? "text-white/50 group-hover:text-themeColor" : "text-[#9ca3af] group-hover:text-themeColor"} transition-colors`}>
                     {type.icon}
                   </span>
                   <span className="text-sm font-semibold">{type.label}</span>
@@ -154,7 +154,7 @@ const ContactFormV2 = ({
               <button
                 type="button"
                 onClick={() => setStep(1)}
-                className={`text-xs font-medium underline underline-offset-2 ${darkMode ? "text-white/60 hover:text-white/70" : "text-[#9ca3af] hover:text-[#374151]"} transition-colors`}
+                className={`text-xs font-medium underline underline-offset-2 ${darkMode ? "text-white/40 hover:text-white/70" : "text-[#9ca3af] hover:text-[#374151]"} transition-colors`}
               >
                 Change
               </button>
@@ -221,7 +221,7 @@ const ContactFormV2 = ({
                 disabled={isSubmitting}
               />
               {!hideEmail && (
-                <p className={`text-xs ${darkMode ? "text-white/60" : "text-[#9ca3af]"}`}>
+                <p className={`text-xs ${darkMode ? "text-white/35" : "text-[#9ca3af]"}`}>
                   Or email us directly at{" "}
                   <a
                     href="mailto:sales@brilworks.com"

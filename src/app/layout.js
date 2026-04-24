@@ -53,10 +53,6 @@ storyblokInit({
 });
 
 const Footer = dynamic(() => import("./components/Footer"));
-const CookieConsent = dynamic(
-  () => import("./components/CookieConsent/CookieConsent"),
-  { ssr: false }
-);
 
 export default function RootLayout({ children }) {
   return (

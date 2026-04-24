@@ -5,8 +5,8 @@ const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-const PrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
+const PrivacyPolicy = dynamic(
+  () => import("@/app/components/PrivacyPolicy/PrivacyPolicy"),
 );
 async function getTermsAndConditions() {
   try {
@@ -14,7 +14,7 @@ async function getTermsAndConditions() {
       "cdn/stories/habitrise-terms-and-conditions",
       {
         version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      }
+      },
     );
     return res?.data?.story;
   } catch (error) {

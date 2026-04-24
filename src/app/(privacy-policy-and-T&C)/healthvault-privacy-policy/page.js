@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import StoryblokClient from "storyblok-js-client";
 
-const PrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
+const PrivacyPolicy = dynamic(
+  () => import("@/app/components/PrivacyPolicy/PrivacyPolicy"),
 );
 
 const Storyblok = new StoryblokClient({

@@ -78,7 +78,7 @@ export function analyzeDescriptionComplexity(description = "") {
   let complexityScore = 1.0;
 
   const keywordMatches = words.filter((word) =>
-    complexityKeywords.some((keyword) => word.includes(keyword))
+    complexityKeywords.some((keyword) => word.includes(keyword)),
   ).length;
 
   complexityScore += keywordMatches * 0.08;
@@ -140,7 +140,7 @@ async function calculateCost(inputs) {
 
   // Description factor
   const descriptionFactor = analyzeDescriptionComplexity(
-    inputs.description || ""
+    inputs.description || "",
   );
   totalCost *= descriptionFactor;
 

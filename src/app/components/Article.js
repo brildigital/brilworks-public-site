@@ -55,7 +55,7 @@ const Article = ({ blok }) => {
           isTablet ? 3 : 4,
           blok?.Category,
           suggestSimilarBlogPosts(blok?.title),
-          blok?.subcategory?.[0] || ""
+          blok?.subcategory?.[0] || "",
         );
         setBlogData(blogData.storyData);
 
@@ -162,7 +162,7 @@ const Article = ({ blok }) => {
             const level = parseInt(heading.tagName.slice(1), 10);
             const text = heading.textContent;
             return { level, text };
-          }
+          },
         );
         resolve(headings);
         setIsLoading(false);
@@ -252,7 +252,7 @@ const Article = ({ blok }) => {
 
       // Find the first heading whose offsetTop is greater than or equal to scrollY
       const activeHeadingIndex = headingPositions.find(
-        (position) => position !== null && position.offsetTop >= scrollY
+        (position) => position !== null && position.offsetTop >= scrollY,
       );
       // Set the active link to the ID of the active heading
       if (activeHeadingIndex) {
@@ -418,7 +418,7 @@ const Article = ({ blok }) => {
                           {blok?.Content_1 ? (
                             <div className="blog_content_new">
                               {modifyImagesWithLazyLoading(
-                                blok?.Content_1 || ""
+                                blok?.Content_1 || "",
                               )}
                             </div>
                           ) : (
@@ -438,7 +438,7 @@ const Article = ({ blok }) => {
                           {blok?.Content_2 ? (
                             <div className="blog_content_new">
                               {modifyImagesWithLazyLoading(
-                                blok?.Content_2 || ""
+                                blok?.Content_2 || "",
                               )}
                             </div>
                           ) : (
@@ -460,7 +460,7 @@ const Article = ({ blok }) => {
                           {blok?.Content_3 ? (
                             <div className="blog_content_new">
                               {modifyImagesWithLazyLoading(
-                                blok?.Content_3 || ""
+                                blok?.Content_3 || "",
                               )}
                             </div>
                           ) : (
@@ -501,8 +501,8 @@ const Article = ({ blok }) => {
                                     author?.name === "Vikas Singh"
                                       ? "/blog/author/vikas-singh/"
                                       : author?.name === "Hitesh Umaletiya"
-                                      ? "/blog/author/hitesh-umaletiya/"
-                                      : author?.authorLinkedIn
+                                        ? "/blog/author/hitesh-umaletiya/"
+                                        : author?.authorLinkedIn
                                   }
                                   title={`View ${author?.name} website`}
                                   rel="author external"
@@ -521,8 +521,8 @@ const Article = ({ blok }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="md:w-[28%] w-full !float-left">
-                    <div className="h-full w-full box-border !pr-3 md:!pl-3 !pl-3">
+                  <div className="md:w-1/4 w-full !float-left">
+                    <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                       <div className="h-full flex flex-col">
                         <BlogContactForm />
                       </div>
@@ -533,15 +533,16 @@ const Article = ({ blok }) => {
             </div>
           </div>
         </div>
-        <div className="container max-w-[1280px] mx-auto sxl:!px-10 md:!px-7.5 !px-5">
+
+        <div className="container mx-auto md:!px-3 !px-4">
           <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
-            <Heading
-              type="h2"
-              className="lg:!text-[34px] md:!text-3xl !text-2xl !my-5"
-              text="You might also like"
-            />
+            <div className="service_sec3">
+              <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+                <p className="!ml-0 extra_bold !w-full">You might also like</p>
+              </p>
+            </div>
             <div
-              className={`grid h-full
+              className={`grid  h-full
                xl:grid-cols-3 md:grid-cols-2
              grid-cols-1 items-center gap-[2rem]`}
             >

@@ -28,6 +28,103 @@ export const notNewTabRedirect = [
   `${process.env.NEXT_PUBLIC_BASE_URL}low-code-no-code-development-services/`,
 ];
 
+export const blogSubCategories = [
+  { key: "Generative AI", value: "generative-ai" },
+  { key: "AI/ML", value: "ai-ml" },
+  {
+    key: "Product Engineering and Development",
+    value: "product-engineering-development",
+  },
+  {
+    key: "Saas Application Development",
+    value: "saas-application-development",
+  },
+  {
+    key: "Application Development",
+    value: "application-development",
+  },
+  {
+    key: "AWS",
+    value: "aws-consulting",
+  },
+  {
+    key: "DevOps",
+    value: "devops-consulting",
+  },
+  {
+    key: "Kubernetes",
+    value: "kubernetes-consulting",
+  },
+  {
+    key: "Frappe Development",
+    value: "frappe-development",
+  },
+  {
+    key: "Flutterflow Development",
+    value: "flutterflow-development",
+  },
+  {
+    key: "Adalo Development",
+    value: "adalo-development",
+  },
+  {
+    key: "Low Code/No code",
+    value: "low-code-no-code",
+  },
+  {
+    key: "Hire ReactJS Developer",
+    value: "hire-reactjs-developer",
+  },
+  {
+    key: "Hire NodeJS Developer",
+    value: "hire-nodejs-developer",
+  },
+  {
+    key: "Hire Java Developer",
+    value: "hire-java-developer",
+  },
+  {
+    key: "Hire AWS Developer",
+    value: "hire-aws-developer",
+  },
+  {
+    key: "Hire Low Code Developers",
+    value: "hire-low-code-no-code-developer",
+  },
+  {
+    key: "Hire Blockchain Developers",
+    value: "hire-blockchain-developer",
+  },
+  {
+    key: "Hire Mobile App Developers",
+    value: "hire-mobile-app-developer",
+  },
+  {
+    key: "Mobile Development",
+    value: "mobile-development",
+  },
+  {
+    key: "Web Development",
+    value: "web-development",
+  },
+  {
+    key: "React",
+    value: "react",
+  },
+  {
+    key: "Nodejs",
+    value: "nodejs",
+  },
+  {
+    key: "Java",
+    value: "java",
+  },
+  {
+    key: "React Native",
+    value: "react-native",
+  },
+];
+
 export const servicesMenuItems = [
   {
     name: "AI & Agents",
@@ -135,6 +232,10 @@ export const industryMenuItems = [
       {
         name: "Manufacturing",
         path: "/industry/manufacturing-software-development-services/",
+      },
+      {
+        name: "E-Commerce",
+        path: "/industry/e-commerce-app-development/",
       },
     ],
   },
@@ -446,6 +547,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/contact-us/",
     lastmod: "2025-04-25T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/free-ui/",
+    lastmod: "2025-07-18T11:01:41.528Z",
   },
   {
     loc: "https://www.brilworks.com/free-ui/",
@@ -812,6 +917,58 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/ai-solutions/ai-whatsapp-chat-automation/",
     lastmod: "2025-04-18T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/",
+    lastmod: "2025-05-30T13:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/modernizing-legacy-java-systems-guide/",
+    lastmod: "2025-07-18T12:12:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/ai-integration-in-mobile-and-web-applications/",
+    lastmod: "2025-07-28T09:52:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
+    lastmod: "2025-07-16T06:12:32.228Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/mvp-development-idea-to-development/",
+    lastmod: "2025-03-18T09:12:22.328Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
+    lastmod: "2025-01-30T11:20:29.521Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/genai-reality-check/",
+    lastmod: "2025-07-28T13:32:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ebooks/insiders-guide-hiring-developers/",
+    lastmod: "2025-07-23T08:12:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-website-chat/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-chat-with-csv-excel/",
+    lastmod: "2025-02-12T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-powered-prd-generator/",
+    lastmod: "2025-02-09T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-solutions/ai-whatsapp-chat-automation/",
+    lastmod: "2025-02-09T12:04:49.528Z",
   },
   // {
   //   loc: "https://www.brilworks.com/portfolio/vugo/",

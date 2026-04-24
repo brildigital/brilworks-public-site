@@ -47,7 +47,7 @@ const TabVerticalSticky = ({
 
     // Find the right content append container
     const contentAppend = container.querySelector(
-      `.stickysection__contentappend-${sectionId}`
+      `.stickysection__contentappend-${sectionId}`,
     );
     if (!contentAppend) return;
 
@@ -249,7 +249,7 @@ const TabVerticalSticky = ({
                 innerTitle,
                 btnText,
               },
-              index
+              index,
             ) => (
               <div
                 id={value}
@@ -332,7 +332,7 @@ const TabVerticalSticky = ({
                   />
                 )}
               </div>
-            )
+            ),
           )}
         </div>
       </div>

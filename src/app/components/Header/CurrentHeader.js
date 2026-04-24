@@ -19,9 +19,11 @@ const CurrentHeader = () => {
     "/gist/bubble-io/",
     "/gist/flutterflow/",
     "/x/product-listing/",
+    "/portfolio/ai-agents/",
   ];
 
   const specialHeaderPages = [
+    "/portfolio/ai-agents/",
     "/terms-and-conditions/",
     "/privacy-policy/",
     "/cabuno-privacy-policy/",
@@ -67,7 +69,7 @@ const CurrentHeader = () => {
     <HeaderV3 />
   ) : pathname === "/ai-agents/" || pathname === "/ai-agents" ? (
     <HeaderV2 />
-  ) : pathname.includes("/ai-agents/") ? (
+  ) : pathname.startsWith("/ai-agents/") ? (
     ""
   ) : (
     <HeaderV2 />

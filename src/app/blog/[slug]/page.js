@@ -15,7 +15,7 @@ import { generateRatingSchema, generateBlogPostingSchema } from "@/app/component
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
-  const { props: data } = await fetchData(params);
+  const { props: data } = await fetchData(params?.slug);
   const story = data?.story;
 
   if (!story) return {};
@@ -29,10 +29,6 @@ export async function generateMetadata({ params }) {
   return {
     title: `${story.content.metatags?.title || story?.content?.title}`,
     description: story.content.metatags?.description,
-    robots: {
-      index: true,
-      follow: false,
-    },
     authors: [{ name: story.content.BlogAuthor }],
     openGraph: {
       title: story.content.metatags?.og_title || story.content.title,
@@ -78,7 +74,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page(props) {
   const { params } = props || {};
-  const { props: data } = await fetchData(params);
+  const { props: data } = await fetchData(params?.slug);
   if (!data?.story) {
     return notFound();
   }
@@ -199,7 +195,6 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
-            authorJobTitle: author?.mobileDesc,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
@@ -309,11 +304,7 @@ export default async function Page(props) {
                     >
                       {author?.name}
                     </Link>
-                    {author?.mobileDesc && (
-                      <span className="sxl:text-base text-sm text-white/70">
-                        {author.mobileDesc}
-                      </span>
-                    )}
+                    <br />
                     <span className="sxl:!text-xl md:text-lg text-base">
                       {formattedDate(
                         data?.story?.content?.Published || new Date(),
@@ -416,86 +407,35 @@ export default async function Page(props) {
         {" "}
         <StoryblokStory story={data?.story} />
       </div>
-      {author && (
-        <div className="bg-[#f8fafc] border-t border-[#e5e7eb]">
-          <div className="container max-w-[1280px] mx-auto px-5 md:px-10 py-10 md:py-14">
-            <div className="flex flex-col sm:flex-row items-start gap-5">
-              <Image
-                src={author.authorImage}
-                width={80}
-                height={80}
-                alt={author.name}
-                className="rounded-full w-20 h-20 object-cover flex-shrink-0"
-              />
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-themeColor mb-1">
-                  Written by
-                </p>
-                <Link
-                  href={
-                    author.name === "Vikas Singh"
-                      ? "/blog/author/vikas-singh/"
-                      : author.name === "Hitesh Umaletiya"
-                        ? "/blog/author/hitesh-umaletiya/"
-                        : author.authorLinkedIn
-                  }
-                  className="text-xl font-bold text-[#0d0f1a] hover:text-themeColor transition-colors"
-                  rel="author"
-                >
-                  {author.name}
-                </Link>
-                {author.mobileDesc && (
-                  <p className="text-sm text-[#6b7280] mt-0.5">{author.mobileDesc}</p>
-                )}
-                {author.authorDesc && (
-                  <p className="text-base text-[#4b5563] mt-2 leading-relaxed">
-                    {author.authorDesc}
-                  </p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
-export async function fetchData(params) {
+export async function fetchData(slug) {
   try {
-    let slug = params?.slug ? `blog/${params.slug}` : "home";
-
-    let sbParams = {
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      resolve_links: "url",
-    };
-
-    const storyUrl = new URL("https://api.storyblok.com/v2/cdn/stories");
-    storyUrl.searchParams.append("version", sbParams.version);
-    storyUrl.searchParams.append("resolve_links", sbParams.resolve_links);
-    storyUrl.searchParams.append("token", process.env.NEXT_PUBLIC_ACCESS_TOKEN);
-    storyUrl.pathname += `/${slug}`;
-
-    const configUrl = new URL(
-      "https://api.storyblok.com/v2/cdn/stories/config",
+    const storyUrl = new URL(
+      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
     );
-    configUrl.searchParams.append("version", sbParams.version);
-    configUrl.searchParams.append(
+    storyUrl.searchParams.append(
       "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN,
+      process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
+    );
+    storyUrl.searchParams.append(
+      "version",
+      process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
     );
 
-    const [storyRes, configRes] = await Promise.all([
-      fetch(storyUrl, { next: { revalidate: 3600 } }),
-      fetch(configUrl, { next: { revalidate: 3600 } }),
-    ]);
+    storyUrl.pathname += ``;
+
+    const storyRes = await fetch(storyUrl.toString(), {
+      next: { revalidate: 0 },
+      headers: { "Accept-Encoding": "gzip" }, // Enable compression
+    });
 
     const storyData = await storyRes.json();
-    const configData = await configRes.json();
     return {
       props: {
         story: storyData?.story || false,
         key: storyData?.story?.id || false,
-        config: configData?.story || false,
       },
     };
   } catch (error) {

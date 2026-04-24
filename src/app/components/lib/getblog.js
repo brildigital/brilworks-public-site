@@ -21,7 +21,7 @@ export async function getblog() {
     },
     {
       next: { revalidate: 0 },
-    }
+    },
   );
   const storyData = stories.data.stories;
   return storyData;
@@ -32,7 +32,7 @@ export async function getblogData(
   limit_per_page,
   filter_category,
   search_query,
-  filter_subcategory
+  filter_subcategory,
 ) {
   // Define the base parameters for the API call
   let apiParams = {
@@ -96,7 +96,7 @@ export async function getSuggestionblog(
   limit_per_page,
   filter_category,
   search_query,
-  filter_subcategory
+  filter_subcategory,
 ) {
   const baseParams = {
     starts_with: "blog/",
@@ -161,7 +161,7 @@ export async function getblogSpecificAuthor(
   limit_per_page,
   filter_category,
   search_query,
-  author_name
+  author_name,
 ) {
   // Define the base parameters for the API call
   let apiParams = {

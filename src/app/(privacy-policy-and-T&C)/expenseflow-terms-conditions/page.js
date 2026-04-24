@@ -5,8 +5,8 @@ const Storyblok = new StoryblokClient({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
 });
 
-const PrivacyPolicy = dynamic(() =>
-  import("@/app/components/PrivacyPolicy/PrivacyPolicy")
+const PrivacyPolicy = dynamic(
+  () => import("@/app/components/PrivacyPolicy/PrivacyPolicy"),
 );
 
 export async function getTermsAndConditions() {

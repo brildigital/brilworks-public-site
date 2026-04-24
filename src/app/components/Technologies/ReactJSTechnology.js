@@ -21,8 +21,8 @@ import Heading from "../HTMLComponents/Heading";
 
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG")
 );
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
@@ -30,12 +30,12 @@ const HiringModels = dynamic(() => import("./HiringModels"));
 const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm")
 );
 
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps")
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 

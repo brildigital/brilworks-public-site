@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions OS — Agent Workflow Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .hero {
+    max-width: 720px;
+    margin-bottom: 36px;
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 620px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 28px 0 36px;
+    max-width: 900px;
+  }
+  .pillar {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 7px;
+    padding: 16px;
+  }
+  .pillar-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pillar-h {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .pillar-b {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .journey-list {
+    list-style: none;
+    counter-reset: j;
+    max-width: 720px;
+    margin: 24px 0 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .journey-list li {
+    counter-increment: j;
+    display: grid;
+    grid-template-columns: 44px 160px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 120ms;
+  }
+  .journey-list a { display: contents; }
+  .journey-list li:hover { background: var(--panel); }
+  .journey-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--ink-faint);
+  }
+  .journey-num::before { content: counter(j, decimal-leading-zero); }
+  .journey-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .journey-label .agent {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-faint);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .journey-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .journey-cost {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .honesty {
+    margin-top: 48px;
+    padding: 20px 22px;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    max-width: 720px;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .honesty h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="hero">
+      <div class="page-kicker">Prototype · 7 agents · simulated</div>
+      <h1 class="hero-title">Walk the applicant's journey, one agent at a time.</h1>
+      <p class="hero-sub">
+        Admissions OS orchestrates seven AI agents around a single shared object — the
+        Narrative Anchor. This prototype lets you step through the end-to-end workflow
+        an MBA applicant would experience, from first intake question to final school
+        comparison. The NAO builds as you progress.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">1</div>
+        <div class="pillar-h">One shared object</div>
+        <div class="pillar-b">The NAO travels with the applicant across every agent. Claims made on page 2 are cited on page 7.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">7</div>
+        <div class="pillar-h">Specialized agents</div>
+        <div class="pillar-b">Each does one job well. Foreground agents run on Haiku; the rest use Sonnet.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">~$17</div>
+        <div class="pillar-h">Per-student cost</div>
+        <div class="pillar-b">Blended AI cost with prompt caching on, based on the economics section of the project plan.</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="1-intake.html" class="btn">Start the journey <span class="arrow">→</span></a>
+      <button class="btn secondary" id="demo-fill">Skip intake · demo data</button>
+    </div>
+
+    <h2 class="page-kicker" style="margin-top:48px; margin-bottom:8px;">The seven steps</h2>
+    <ol class="journey-list">
+      <a href="1-intake.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Intake <span class="agent">30 questions · form only</span></div>
+        <div class="journey-desc">Capture the applicant's raw material — background, goals, constraints, voice.</div>
+        <div class="journey-cost">~0 cost</div>
+      </li></a>
+      <a href="2-strategy.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Strategy <span class="agent">Sonnet 4.6 · NAO generator</span></div>
+        <div class="journey-desc">Read the intake, produce the v1 Narrative Anchor — themes, claims, fingerprint.</div>
+        <div class="journey-cost">~$0.05 · 60s</div>
+      </li></a>
+      <a href="3-editor.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Essay editor <span class="agent">Haiku · foreground pipeline</span></div>
+        <div class="journey-desc">Story Architect checks C-C-A-I live. Editing agent flags weak verbs and fillers.</div>
+        <div class="journey-cost">~$0.002 / call</div>
+      </li></a>
+      <a href="4-deep-review.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Deep review <span class="agent">Sonnet · on-demand</span></div>
+        <div class="journey-desc">Four-dim parallel scoring → Strategic Advisor → full 2-section rewrite.</div>
+        <div class="journey-cost">~$0.38 / run</div>
+      </li></a>
+      <a href="7-framework.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Framework gate <span class="agent">Sonnet → Haiku</span></div>
+        <div class="journey-desc">Soft-warn on claims without NAO evidence. Never blocks.</div>
+        <div class="journey-cost">~$0.01 / check</div>
+      </li></a>
+      <a href="5-gap-analysis.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">Gap analysis <span class="agent">Sonnet · cross-doc</span></div>
+        <div class="journey-desc">Reads NAO + every document. Returns ranked list of missing evidence.</div>
+        <div class="journey-cost">~$0.03 / run</div>
+      </li></a>
+      <a href="6-comparison.html"><li>
+        <div class="journey-num"></div>
+        <div class="journey-label">School comparison <span class="agent">Sonnet · multi-school fit</span></div>
+        <div class="journey-desc">Per-school fit scores, signal match, risk callouts against the NAO.</div>
+        <div class="journey-cost">~$0.08 / run</div>
+      </li></a>
+    </ol>
+
+    <div class="honesty">
+      <h3>About this prototype</h3>
+      The agent intelligence in this prototype is simulated — scripted deterministic outputs, not real LLM calls. 
+      The latency, pipeline orchestration, cost telemetry, and NAO schema are production-accurate. 
+      When the real implementation replaces the simulated brains with Anthropic API calls, the UI layer doesn't change.
+      <br><br>
+      All prototype state lives in your browser's local storage and clears when you click <em>Reset journey</em> in the sidebar.
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'home', crumbs: ['Overview'] });
+
+  // Demo-fill button: pre-populate the NAO with a sample applicant, so reviewers
+  // can skip the intake and jump to the more interesting agent steps.
+  document.getElementById('demo-fill').addEventListener('click', () => {
+    if (!confirm('Load demo applicant data and skip the intake?')) return;
+    const demo = {
+      version: 0,
+      applicant: {
+        name: 'Priya Sharma',
+        background: 'Product manager, 5 yrs at a Bangalore fintech scaling cross-border payments.',
+        currentRole: 'Senior PM, Cross-Border Payments',
+        yearsExperience: 5,
+      },
+      goals: {
+        shortTerm: 'Lead product at a growth-stage climate fintech post-MBA.',
+        longTerm: 'Build an emerging-markets climate finance company that makes small-business solar accessible.',
+        whyMba: 'Need the network and finance fluency to cross from PM work into founder-mode.',
+      },
+      schools: ['Kellogg', 'Ross', 'Fuqua'],
+      themes: [],
+      claims: [],
+      voiceFingerprint: {},
+      constraints: {
+        applicationRound: 'R1',
+        gmat: '735',
+      },
+      documents: { essays: [], resume: null, recLetters: [] },
+    };
+    saveNAO(demo);
+    markStepDone('intake');
+    location.href = '2-strategy.html';
+  });
+</script>
+</body>
+</html>

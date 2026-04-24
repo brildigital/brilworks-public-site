@@ -23,7 +23,7 @@ const AIGenerateField = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setRespMessage(
-      "Please keep this page open while we are generating product"
+      "Please keep this page open while we are generating product",
     );
 
     try {
@@ -58,7 +58,7 @@ const AIGenerateField = () => {
               question: productName,
               chat_id: chatId,
             }),
-          }
+          },
         );
 
         const docData = await responseDocGeneration.json();
