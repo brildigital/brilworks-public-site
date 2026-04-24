@@ -173,7 +173,7 @@ export const aiAgentCaseStudies = {
     breadcrumb: "Audit — AI financial compliance agent",
     chip: "Finance · GST compliance automation",
     heroHeadline:
-      "An AI audit assistant that flags GST violations and invoice anomalies the moment a document lands.",
+      "An AI audit agent that catches GST violations and invoice anomalies in seconds.",
     heroSubhead:
       "Upload XLSX financial data, get instant GSTIN validation, duplicate detection, calculation mismatch flags, and a full executive summary — powered by Gemini 2.0 Flash. Hours of manual review compressed into seconds.",
     heroStats: [
@@ -313,7 +313,7 @@ export const aiAgentCaseStudies = {
     breadcrumb: "Invoicify — Neural invoice extraction hub",
     chip: "Finance · AP automation · Zero manual entry",
     heroHeadline:
-      "An invoice processing hub that turns a document stream into structured financial data with zero manual entry.",
+      "A neural invoice hub that converts document streams into structured financial data.",
     heroSubhead:
       "Multi-modal LLM extraction, vendor neural auto-population, IP-based currency localization, and a live cumulative audit dashboard — all in one platform. Powered by Google Gemini 1.5 Flash.",
     heroStats: [
@@ -453,7 +453,7 @@ export const aiAgentCaseStudies = {
     breadcrumb: "StatementFlow — Credit card statement analyzer",
     chip: "Finance · Statement analysis · Spending insights",
     heroHeadline:
-      "An AI statement analyzer that turns a PDF credit card statement into a full spending dashboard.",
+      "An AI analyzer that turns credit card PDFs into interactive dashboards.",
     heroSubhead:
       "Upload any statement — Amex, Chase, or regional banks. Gemini 2.0 Flash extracts every transaction with 99% logic precision, categorizes spending, renders interactive charts, and exports to CSV. No login, no data storage.",
     heroStats: [

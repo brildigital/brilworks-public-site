@@ -101,7 +101,7 @@ const agentDisplayNames = {
   trainer: "Trainer Agent",
   video: "Video Agent",
   admissions: "Admissions OS",
-  audit: "AI Audit",
+  audit: "Tax Audit",
   invoicify: "Invoicify Agent",
   statementflow: "Statement Analyzer",
 };
