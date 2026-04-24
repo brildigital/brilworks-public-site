@@ -52,7 +52,7 @@ const page = () => {
         }}
       />
       <LastUpdated date={LAST_UPDATED} />
-      <div className="!bg-colorWhite">
+      <div className="">
         <AWSService />
       </div>
     </>
