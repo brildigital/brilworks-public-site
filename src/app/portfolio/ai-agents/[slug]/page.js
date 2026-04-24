@@ -175,10 +175,7 @@ export default function Page({ params }) {
                 <a href="#cta" className="btn btn-primary">
                   Book a 30-min scoping call →
                 </a>
-                <a href="#how" className="btn btn-outline">
-                  See how it works
-                </a>
-                {data.prototypeUrl && (
+                {data.prototypeUrl ? (
                   <a
                     href={data.prototypeUrl}
                     className="btn btn-outline"
@@ -187,7 +184,9 @@ export default function Page({ params }) {
                   >
                     View the live prototype →
                   </a>
-                )}
+                ):<a href="#how" className="btn btn-outline">
+                  See how it works
+                </a>}
               </div>
               <div className="hero-stats">
                 {data.heroStats.map((s, i) => (
