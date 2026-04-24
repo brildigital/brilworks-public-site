@@ -1,4 +1,586 @@
 export const aiAgentCaseStudies = {
+  admissions: {
+    accent: "#1D4ED8",
+    accentSoft: "#DBEAFE",
+    accentDeep: "#1E3A8A",
+    prototypeUrl: "/agents/admission-os/index.html",
+    title: "AI Admissions OS · Seven-agent orchestrator for MBA applicants",
+    description:
+      "A workflow orchestrator that runs seven specialized AI agents around a single shared object — the Narrative Anchor — from intake through school comparison, at ~$17 per applicant.",
+    breadcrumb: "Admissions OS — 7-agent applicant workflow",
+    chip: "Education · 7-agent orchestration",
+    heroHeadline:
+      "An admissions OS that runs seven agents around one shared applicant object.",
+    heroSubhead:
+      "Intake, strategy, essay editing, deep review, framework gate, gap analysis, and school comparison — all reading and writing the same Narrative Anchor. Foreground agents on Haiku, deep work on Sonnet, blended at ~$17 per applicant.",
+    heroStats: [
+      { value: "7", label: "Specialized agents in one pipeline" },
+      { value: "1", label: "Shared Narrative Anchor Object" },
+      { value: "~$17", label: "Blended AI cost per applicant" },
+    ],
+    challenge: {
+      eyebrow: "The Challenge",
+      title:
+        "MBA admissions consulting doesn't scale. Generic AI tools produce essays that sound like everyone else's.",
+      lead: `A family pays $15K–$25K for admissions consulting. The consultant meets once a week, remembers last session's context by flipping through notes, and can handle maybe 15 clients before quality drops. Meanwhile, generic AI tools write essays that use the same three opening phrases and cite stats from the wrong school — and every applicant looks the same in the pile.`,
+      paragraphs: [
+        `The failures are specific. A strategic theme from week one gets lost by week four. A claim made in the resume doesn't match the claim in the "why MBA" essay, and nobody notices until an admissions committee does. Seven different tools get opened for seven different steps — essay editor, review service, school-fit calculator — none of which share context. The applicant ends up stitching the story together on their own, badly.`,
+        `The root cause isn't the consultant's skill or the AI's IQ. It's that <strong>there's no shared object that travels with the applicant across every step</strong> — no single source for themes, claims, voice fingerprint, and constraints that every agent reads and writes. Without that, each step is a fresh re-brief, and contradictions become inevitable.`,
+        `Admissions OS exists to make that shared object <strong>the spine of the workflow</strong>. Seven specialized agents, each doing one job well, all reading and writing the same Narrative Anchor — so a claim made on agent 2 is citable on agent 7, and contradictions get flagged before a committee sees them.`,
+      ],
+    },
+    how: {
+      eyebrow: "How the agent handles it",
+      title: "Seven agents. One shared object. Tier-based routing keeps cost predictable.",
+      svgHtml: `<svg viewBox="0 0 1080 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5A6B82"/></marker>
+        </defs>
+        <text class="d-mono" x="540" y="30" text-anchor="middle" style="font-size:11px;font-weight:600;fill:#1E3A8A">7 AGENTS · 1 SHARED OBJECT · 1 JOURNEY</text>
+        <rect class="box-a" x="40" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="105" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 1</text>
+        <text class="d-label" x="105" y="96" text-anchor="middle">Intake</text>
+        <text class="d-sub" x="105" y="114" text-anchor="middle">30 questions</text>
+        <text class="d-sub" x="105" y="129" text-anchor="middle" style="font-style:italic">form only</text>
+        <text class="d-mono" x="105" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0</text>
+        <rect class="box-a" x="188" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="253" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 2</text>
+        <text class="d-label" x="253" y="96" text-anchor="middle">Strategy</text>
+        <text class="d-sub" x="253" y="114" text-anchor="middle">Sonnet</text>
+        <text class="d-sub" x="253" y="129" text-anchor="middle" style="font-style:italic">NAO generator</text>
+        <text class="d-mono" x="253" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.05</text>
+        <rect class="box-a" x="336" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="401" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 3</text>
+        <text class="d-label" x="401" y="96" text-anchor="middle">Essay editor</text>
+        <text class="d-sub" x="401" y="114" text-anchor="middle">Haiku</text>
+        <text class="d-sub" x="401" y="129" text-anchor="middle" style="font-style:italic">foreground</text>
+        <text class="d-mono" x="401" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.002/call</text>
+        <rect class="box-a" x="484" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="549" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 4</text>
+        <text class="d-label" x="549" y="96" text-anchor="middle">Deep review</text>
+        <text class="d-sub" x="549" y="114" text-anchor="middle">Sonnet</text>
+        <text class="d-sub" x="549" y="129" text-anchor="middle" style="font-style:italic">4-dim scoring</text>
+        <text class="d-mono" x="549" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.38/run</text>
+        <rect class="box-a" x="632" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="697" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 5</text>
+        <text class="d-label" x="697" y="96" text-anchor="middle">Framework gate</text>
+        <text class="d-sub" x="697" y="114" text-anchor="middle">Sonnet→Haiku</text>
+        <text class="d-sub" x="697" y="129" text-anchor="middle" style="font-style:italic">soft-warn only</text>
+        <text class="d-mono" x="697" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.01</text>
+        <rect class="box-a" x="780" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="845" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 6</text>
+        <text class="d-label" x="845" y="96" text-anchor="middle">Gap analysis</text>
+        <text class="d-sub" x="845" y="114" text-anchor="middle">Sonnet</text>
+        <text class="d-sub" x="845" y="129" text-anchor="middle" style="font-style:italic">cross-doc</text>
+        <text class="d-mono" x="845" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.03/run</text>
+        <rect class="box-a" x="928" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
+        <text class="d-mono" x="993" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 7</text>
+        <text class="d-label" x="993" y="96" text-anchor="middle">School fit</text>
+        <text class="d-sub" x="993" y="114" text-anchor="middle">Sonnet</text>
+        <text class="d-sub" x="993" y="129" text-anchor="middle" style="font-style:italic">multi-school</text>
+        <text class="d-mono" x="993" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.08/run</text>
+        <path class="arr" d="M 105 155 L 105 240"/>
+        <path class="arr" d="M 253 155 L 253 240"/>
+        <path class="arr" d="M 401 155 L 401 240"/>
+        <path class="arr" d="M 549 155 L 549 240"/>
+        <path class="arr" d="M 697 155 L 697 240"/>
+        <path class="arr" d="M 845 155 L 845 240"/>
+        <path class="arr" d="M 993 155 L 993 240"/>
+        <rect class="box-deep" x="40" y="240" width="1020" height="110" rx="12"/>
+        <text class="d-mono" x="540" y="267" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">NARRATIVE ANCHOR OBJECT (NAO)</text>
+        <text class="d-label" x="540" y="290" text-anchor="middle" style="fill:#fff;font-size:15px">One shared object. Read and written by every agent.</text>
+        <text class="d-sub" x="540" y="310" text-anchor="middle" style="fill:rgba(255,255,255,0.85);font-size:12px">themes · claims · voice fingerprint · applicant constraints · versioned per step</text>
+        <text class="d-sub" x="540" y="328" text-anchor="middle" style="fill:rgba(255,255,255,0.65);font-size:11px;font-style:italic">Claims made on agent 2 are cited on agent 7. Contradictions flagged structurally.</text>
+        <text class="d-mono" x="540" y="390" text-anchor="middle" style="font-size:11px;font-weight:600;fill:#5A6B82">BLENDED COST PER APPLICANT: ~$17 · Haiku foreground + Sonnet deep + prompt caching</text>
+      </svg>`,
+      steps: [
+        {
+          n: 1,
+          title: "The Narrative Anchor is the source of truth. Not a file, not a doc.",
+          body: `Every agent reads the NAO before it acts and writes back when it finishes. Themes, claims, voice fingerprint, applicant constraints — all versioned per step. The contradiction you'd normally catch at final submission gets flagged at agent 3, because the same object is in scope every time.`,
+        },
+        {
+          n: 2,
+          title: "Foreground agents run on Haiku. Deep work runs on Sonnet.",
+          body: `The essay editor fires on every keystroke and must stay under 300ms — <em>Haiku + prompt caching</em> territory. Strategy and deep review run multi-minute with 4-dim scoring — <em>Sonnet</em> handles that. Each agent knows its tier, so the per-applicant cost stays predictable instead of spiralling with usage.`,
+        },
+        {
+          n: 3,
+          title: "Gates warn. They don't block.",
+          body: `The framework gate soft-warns when a claim lacks NAO evidence — it doesn't stop the applicant. Guidance over control. An advisor that blocks the user at every edit gets turned off; one that flags and explains is one that ships. <em>"This claim isn't in your NAO — want to add evidence or rephrase?"</em>`,
+        },
+        {
+          n: 4,
+          title: "UI first. Agents plug in behind it.",
+          body: `The prototype ships with simulated deterministic brains so the latency, pipeline orchestration, cost telemetry, and NAO schema are production-accurate before a single LLM call is wired up. When the simulated brains get replaced with real Anthropic calls, <em>the UI layer doesn't change</em> — and the ~$17 per-applicant economics stay achievable, not aspirational.`,
+        },
+      ],
+    },
+    outcomes: {
+      eyebrow: "What you get",
+      title: "Three things change once the NAO is the spine.",
+      items: [
+        {
+          metric: "7",
+          unit: "agents",
+          title: "Specialized, context-sharing steps",
+          body: "Intake, strategy, essay editing, deep review, framework gate, gap analysis, school fit — each reading and writing the same NAO. No context loss between tools.",
+        },
+        {
+          metric: "~$17",
+          unit: "/applicant",
+          title: "Blended AI cost with prompt caching",
+          body: "Tier-based routing keeps foreground interactions cheap and deep analysis affordable. Compare to $15K–$25K for a single consultant, or generic AI tools that still need human cleanup.",
+        },
+        {
+          metric: "~60",
+          unit: "s",
+          title: "From raw intake to v1 Narrative Anchor",
+          body: "Strategy agent turnaround. Deep-review 4-dim scoring completes in parallel under two minutes. Applicants stay in flow instead of waiting on human reviewers.",
+        },
+      ],
+      note: "Numbers observed in Brilworks' Admissions OS prototype. Actual figures on your stack will depend on applicant volume, essay count per school, and prompt-cache hit rate.",
+    },
+    fit: {
+      eyebrow: "Is this right for you?",
+      title: "Honest fit criteria. We'd rather say no than oversell.",
+      yes: [
+        "You run an MBA, grad-school, or professional-program admissions practice with 50+ applicants per cycle",
+        "Consultants already follow a multi-step process, but context gets lost between sessions and tools",
+        "The applicant's voice, themes, and claims must stay consistent across 3–8 essays per school",
+        "You're willing to model a shared NAO schema first and plug the agents in behind it",
+      ],
+      no: [
+        "You serve fewer than 20 applicants a year — the orchestration overhead isn't earning its keep",
+        "Your consulting process isn't written down yet — start with positioning and curriculum, not orchestration",
+        "You want a one-shot essay generator, not a multi-agent workflow with a shared object",
+        "You're not willing to run two model tiers (Haiku + Sonnet) in the same pipeline",
+      ],
+    },
+    cta: {
+      title: "Book a 30-minute scoping call.",
+      body: "We'll walk through your current admissions process, map it against the 7-agent NAO pattern, and tell you honestly whether it fits your practice — and what it would take to ship.",
+    },
+  },
+  audit: {
+    accent: "#059669",
+    accentSoft: "#D1FAE5",
+    accentDeep: "#065F46",
+    prototypeUrl: "https://ai-audit-compliance-assistant.vercel.app",
+    title: "AI Audit & Compliance Assistant · Automated GST audit and anomaly detection",
+    description:
+      "An intelligent platform that uploads financial documents, validates GST compliance, and surfaces anomalies — delivering an executive-grade audit summary without a single manual check.",
+    breadcrumb: "Audit — AI financial compliance agent",
+    chip: "Finance · GST compliance automation",
+    heroHeadline:
+      "An AI audit assistant that flags GST violations and invoice anomalies the moment a document lands.",
+    heroSubhead:
+      "Upload XLSX financial data, get instant GSTIN validation, duplicate detection, calculation mismatch flags, and a full executive summary — powered by Gemini 2.0 Flash. Hours of manual review compressed into seconds.",
+    heroStats: [
+      { value: "100%", label: "GST records validated automatically" },
+      { value: "0", label: "Manual checks before first anomaly flag" },
+      { value: "~5s", label: "From document upload to audit summary" },
+    ],
+    challenge: {
+      eyebrow: "The Challenge",
+      title:
+        "Financial audits are still manual. GST errors hide in plain sight until a regulator finds them.",
+      lead: `A finance team receives hundreds of invoices a month. An auditor opens each one, cross-checks GSTIN, recalculates rates, hunts for duplicates, and flags mismatches in a spreadsheet. By the time the review is finished, it's the end of the quarter — and three errors still slipped through.`,
+      paragraphs: [
+        `The failures are specific. A GSTIN that looks valid passes human review but fails a registry check. A duplicate invoice with a slightly different date gets approved twice. A calculation mismatch of 0.2% on a ₹10L invoice gets missed because the reviewer was checking the next 40 documents. None of these errors are exotic — they're systematic, and they compound.`,
+        `The root cause isn't auditor skill. It's that <strong>manual review doesn't scale to the volume of financial data modern businesses generate</strong> — and rule-based scripts can't adapt to the variety of invoice formats, edge cases, and regulatory nuance that real documents carry. When an organization grows, the error surface grows faster than the audit team.`,
+        `The AI Audit & Compliance Assistant puts a generative AI model on every document, every time — <strong>GSTIN validation, rate checks, duplicate detection, and summary generation happen in a single pass</strong>, with no reviewer fatigue and no format dependence.`,
+      ],
+    },
+    how: {
+      eyebrow: "How the agent handles it",
+      title: "Upload once. Validate, detect, summarize — in one automated pass.",
+      svgHtml: `<svg viewBox="0 0 1040 340" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5A6B82"/></marker></defs>
+        <rect class="box-soft" x="20" y="60" width="150" height="90" rx="10"/>
+        <text class="d-mono" x="95" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#065F46">INGEST</text>
+        <text class="d-label" x="95" y="104" text-anchor="middle">Document Upload</text>
+        <text class="d-sub" x="95" y="121" text-anchor="middle">Excel / XLSX</text>
+        <text class="d-sub" x="95" y="136" text-anchor="middle">real-time preview</text>
+        <rect class="box-soft" x="200" y="60" width="150" height="90" rx="10"/>
+        <text class="d-mono" x="275" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#065F46">EXTRACT</text>
+        <text class="d-label" x="275" y="104" text-anchor="middle">Gemini 2.0 Flash</text>
+        <text class="d-sub" x="275" y="121" text-anchor="middle">Document analysis</text>
+        <text class="d-sub" x="275" y="136" text-anchor="middle">field extraction</text>
+        <rect class="box-a" x="380" y="60" width="150" height="90" rx="10" stroke="#059669" stroke-width="2"/>
+        <text class="d-mono" x="455" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#065F46">VALIDATE</text>
+        <text class="d-label" x="455" y="104" text-anchor="middle">GST Compliance</text>
+        <text class="d-sub" x="455" y="121" text-anchor="middle">GSTIN · rates</text>
+        <text class="d-sub" x="455" y="136" text-anchor="middle">calculations</text>
+        <rect class="box-a" x="560" y="60" width="150" height="90" rx="10" stroke="#059669" stroke-width="2"/>
+        <text class="d-mono" x="635" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#065F46">DETECT</text>
+        <text class="d-label" x="635" y="104" text-anchor="middle">Anomaly Engine</text>
+        <text class="d-sub" x="635" y="121" text-anchor="middle">duplicates · gaps</text>
+        <text class="d-sub" x="635" y="136" text-anchor="middle">mismatches</text>
+        <rect class="box-soft" x="740" y="60" width="150" height="90" rx="10"/>
+        <text class="d-mono" x="815" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#065F46">REPORT</text>
+        <text class="d-label" x="815" y="104" text-anchor="middle">Audit Summary</text>
+        <text class="d-sub" x="815" y="121" text-anchor="middle">executive view</text>
+        <text class="d-sub" x="815" y="136" text-anchor="middle">flagged issues</text>
+        <path class="arr" d="M 170 105 L 200 105"/>
+        <path class="arr" d="M 350 105 L 380 105"/>
+        <path class="arr" d="M 530 105 L 560 105"/>
+        <path class="arr" d="M 710 105 L 740 105"/>
+        <rect class="box-deep" x="200" y="210" width="640" height="90" rx="12"/>
+        <text class="d-mono" x="520" y="236" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">GEMINI 2.0 FLASH · RULE ENGINE</text>
+        <text class="d-label" x="520" y="260" text-anchor="middle" style="fill:#fff;font-size:14px">AI analysis + deterministic GST rules run in a single pass</text>
+        <text class="d-sub" x="520" y="282" text-anchor="middle" style="fill:rgba(255,255,255,0.8);font-size:12px">LLM handles format variance · Rule engine enforces compliance thresholds</text>
+        <path class="arr" d="M 455 150 L 455 185 L 520 185 L 520 210"/>
+        <path class="arr" d="M 635 150 L 635 185 L 520 185"/>
+      </svg>`,
+      steps: [
+        {
+          n: 1,
+          title: "Gemini 2.0 Flash reads the document. The rule engine enforces GST law.",
+          body: `The AI handles format variance — column headers that move, merged cells, regional formatting quirks. The rule engine handles GST logic: GSTIN registry checks, applicable rate tables, calculation thresholds. Neither replaces the other. Together they cover what neither could alone.`,
+        },
+        {
+          n: 2,
+          title: "Anomaly detection runs on every field, not just flagged ones.",
+          body: `Duplicate detection compares invoice numbers, dates, amounts, and vendor IDs across the full dataset — a duplicate with a single digit changed still gets flagged. Calculation mismatches surface at sub-rupee precision. Missing mandatory fields are caught before the summary is generated, not after.`,
+        },
+        {
+          n: 3,
+          title: "Real-time preview keeps the reviewer in context.",
+          body: `The uploaded XLSX renders as an interactive preview alongside the audit findings. Reviewers see the source document and the flagged rows together — no switching tabs, no downloading files to cross-reference. Every flagged issue links back to the exact row.`,
+        },
+        {
+          n: 4,
+          title: "The executive summary is generated last, not first.",
+          body: `After every check runs, Gemini composes an audit summary: total documents reviewed, compliance rate, anomaly count, and a ranked list of flagged issues by severity. Suitable for a CFO review or a regulatory submission — without a human drafting it.`,
+        },
+      ],
+    },
+    outcomes: {
+      eyebrow: "What you get",
+      title: "Three things change once AI is on every document.",
+      items: [
+        {
+          metric: "~5s",
+          unit: "/document",
+          title: "From upload to full audit findings",
+          body: "Extraction, GST validation, anomaly detection, and executive summary — complete in one automated pass. No queue, no reviewer assignment.",
+        },
+        {
+          metric: "100%",
+          unit: "coverage",
+          title: "Every field checked, every time",
+          body: "No sampling, no fatigue, no missed rows at document 47. The engine applies the same rules to every invoice regardless of volume.",
+        },
+        {
+          metric: "0",
+          unit: "manual checks",
+          title: "Before the first anomaly is surfaced",
+          body: "Flagged issues arrive with source row, violation type, and severity. Reviewers triage exceptions, not documents.",
+        },
+      ],
+      note: "Numbers observed in Brilworks' AI Audit & Compliance Assistant prototype. Actual throughput depends on document size, GSTIN registry latency, and Gemini API response time under load.",
+    },
+    fit: {
+      eyebrow: "Is this right for you?",
+      title: "Honest fit criteria. We'd rather say no than oversell.",
+      yes: [
+        "You process 100+ invoices per month and GST compliance review is a recurring bottleneck",
+        "Your audit team spends more time on data extraction than on exception judgment",
+        "Regulatory submissions require documented compliance checks on every invoice",
+        "You're willing to validate the rule engine against your specific GST jurisdiction before going live",
+      ],
+      no: [
+        "You process fewer than 20 invoices a month — a shared spreadsheet is faster to set up",
+        "Your invoice formats are so non-standard that extraction quality hasn't been validated yet",
+        "You need real-time ERP integration on day one rather than a standalone audit tool",
+        "Your compliance requirement is audit-trail at the transaction level, not document level",
+      ],
+    },
+    cta: {
+      title: "Book a 30-minute scoping call.",
+      body: "We'll walk through your invoice volume, your current review process, and your GST compliance obligations — then tell you whether automated auditing fits and what the integration with your existing stack would require.",
+    },
+  },
+  invoicify: {
+    accent: "#0891B2",
+    accentSoft: "#CFFAFE",
+    accentDeep: "#164E63",
+    prototypeUrl: "https://invoicify.brilworks.com",
+    title: "Invoicify AI · Neural invoice processing hub for modern AP workflows",
+    description:
+      "A high-performance invoice processing platform that transforms raw document streams — PDFs, JPGs, PNGs — into structured financial datasets with zero manual entry, powered by Google Gemini 1.5 Flash.",
+    breadcrumb: "Invoicify — Neural invoice extraction hub",
+    chip: "Finance · AP automation · Zero manual entry",
+    heroHeadline:
+      "An invoice processing hub that turns a document stream into structured financial data with zero manual entry.",
+    heroSubhead:
+      "Multi-modal LLM extraction, vendor neural auto-population, IP-based currency localization, and a live cumulative audit dashboard — all in one platform. Powered by Google Gemini 1.5 Flash.",
+    heroStats: [
+      { value: "0", label: "Manual data entry per invoice" },
+      { value: "Multi", label: "Format support — PDF, JPG, PNG" },
+      { value: "Live", label: "Exchange rate conversion on every document" },
+    ],
+    challenge: {
+      eyebrow: "The Challenge",
+      title:
+        "Accounts payable workflows are still bottlenecked on manual data entry. Invoice volume scales. Headcount doesn't.",
+      lead: `An AP team receives invoices in six different formats from forty vendors across three countries. Someone opens each one, types the vendor name, invoice number, due date, line items, and amount into a system. Then they do it again for the next one. Then the next 200.`,
+      paragraphs: [
+        `The failures are predictable. A vendor sends a PDF with their logo covering the invoice number — the entry clerk guesses. A line item description is ambiguous — it gets categorized wrong and triggers a reconciliation three months later. A currency conversion is done manually with yesterday's rate — the audit finds a systematic 0.8% discrepancy across forty invoices.`,
+        `The root cause isn't process discipline. It's that <strong>human data entry can't match modern invoice volume without proportional headcount growth</strong> — and template-based OCR breaks the moment a vendor changes their invoice layout. When format variance is high and volume is growing, the only path that doesn't break is one where the extraction model can reason about layout, not just pattern-match it.`,
+        `Invoicify uses a multi-modal LLM to read invoices the way a trained analyst would — <strong>understanding context, inferring missing fields, and flagging ambiguous extractions with confidence scores</strong> rather than silently producing wrong data.`,
+      ],
+    },
+    how: {
+      eyebrow: "How the agent handles it",
+      title: "Neural extraction. Vendor sync. Live currency audit. Bulk AI summary.",
+      svgHtml: `<svg viewBox="0 0 1040 360" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5A6B82"/></marker></defs>
+        <rect class="box-soft" x="20" y="50" width="140" height="100" rx="10"/>
+        <text class="d-mono" x="90" y="74" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#164E63">INGEST</text>
+        <text class="d-label" x="90" y="96" text-anchor="middle">Document Stream</text>
+        <text class="d-sub" x="90" y="114" text-anchor="middle">PDF · JPG · PNG</text>
+        <text class="d-sub" x="90" y="130" text-anchor="middle">batch or single</text>
+        <rect class="box-a" x="190" y="50" width="160" height="100" rx="10" stroke="#0891B2" stroke-width="2"/>
+        <text class="d-mono" x="270" y="74" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#164E63">EXTRACT</text>
+        <text class="d-label" x="270" y="96" text-anchor="middle">Neural Engine</text>
+        <text class="d-sub" x="270" y="114" text-anchor="middle">Gemini 1.5 Flash</text>
+        <text class="d-sub" x="270" y="130" text-anchor="middle">confidence scoring</text>
+        <rect class="box-soft" x="380" y="50" width="160" height="100" rx="10"/>
+        <text class="d-mono" x="460" y="74" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#164E63">VENDOR</text>
+        <text class="d-label" x="460" y="96" text-anchor="middle">Neural Sync</text>
+        <text class="d-sub" x="460" y="114" text-anchor="middle">auto-populate</text>
+        <text class="d-sub" x="460" y="130" text-anchor="middle">billing · address</text>
+        <rect class="box-soft" x="570" y="50" width="160" height="100" rx="10"/>
+        <text class="d-mono" x="650" y="74" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#164E63">CURRENCY</text>
+        <text class="d-label" x="650" y="96" text-anchor="middle">Global Audit</text>
+        <text class="d-sub" x="650" y="114" text-anchor="middle">IP localization</text>
+        <text class="d-sub" x="650" y="130" text-anchor="middle">live exchange rates</text>
+        <rect class="box-soft" x="760" y="50" width="160" height="100" rx="10"/>
+        <text class="d-mono" x="840" y="74" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#164E63">DASHBOARD</text>
+        <text class="d-label" x="840" y="96" text-anchor="middle">Stream Buffer</text>
+        <text class="d-sub" x="840" y="114" text-anchor="middle">cumulative spend</text>
+        <text class="d-sub" x="840" y="130" text-anchor="middle">AI exec summary</text>
+        <path class="arr" d="M 160 100 L 190 100"/>
+        <path class="arr" d="M 350 100 L 380 100"/>
+        <path class="arr" d="M 540 100 L 570 100"/>
+        <path class="arr" d="M 730 100 L 760 100"/>
+        <rect class="box-deep" x="190" y="210" width="560" height="110" rx="12"/>
+        <text class="d-mono" x="470" y="237" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">EXTRACTION LAYER</text>
+        <text class="d-label" x="470" y="260" text-anchor="middle" style="fill:#fff;font-size:14px">Merchant Profiling · Dynamic Field Mapping · Granular Line Items</text>
+        <text class="d-sub" x="470" y="282" text-anchor="middle" style="fill:rgba(255,255,255,0.85);font-size:12px">Invoice # · Due Dates · Payment Terms · Quantities · Unit Prices</text>
+        <text class="d-sub" x="470" y="302" text-anchor="middle" style="fill:rgba(255,255,255,0.65);font-size:11px;font-style:italic">Real-time confidence score on every extracted field. Ambiguous extractions flagged, not silently wrong.</text>
+        <path class="arr" d="M 270 150 L 270 180 L 470 180 L 470 210"/>
+      </svg>`,
+      steps: [
+        {
+          n: 1,
+          title: "Multi-modal LLM reads layout, not templates.",
+          body: `Gemini 1.5 Flash processes the document visually and linguistically — it understands that the number below a logo is an invoice number even when the column header is missing, or that "Net 30" in a footer means payment terms. Every extracted field carries a confidence score. Low-confidence fields flag for review; high-confidence fields flow through.`,
+        },
+        {
+          n: 2,
+          title: "Vendor Neural Sync eliminates re-entry for recurring merchants.",
+          body: `Save a vendor's billing email and corporate address once. On every subsequent invoice from that merchant, <em>Neural Sync</em> detects the recurring vendor signature and auto-populates stored fields. AP workflows that today require typing the same vendor data 200 times a year type it once.`,
+        },
+        {
+          n: 3,
+          title: "Currency localization runs on every document, automatically.",
+          body: `IP-based geo-detection sets a default local currency. Live exchange rates pull on each session so every invoice — regardless of origin currency — gets a consolidated local-currency equivalent in the audit. No manual conversion. No stale rates. Currency override is available per session if the reviewer is auditing for a different entity.`,
+        },
+        {
+          n: 4,
+          title: "Bulk AI summary surfaces patterns across the stream.",
+          body: `After processing a batch, the AI Executive Summary identifies spending patterns, flags vendors with anomalous invoice frequency, and surfaces total-spend breakdowns by category. One summary across 200 invoices. Anomaly detection that a per-document review would never surface.`,
+        },
+      ],
+    },
+    outcomes: {
+      eyebrow: "What you get",
+      title: "Three things change once neural extraction runs the AP workflow.",
+      items: [
+        {
+          metric: "0",
+          unit: "manual entry",
+          title: "Per invoice, for every supported format",
+          body: "PDF, JPG, PNG — all processed by the same extraction engine. No template maintenance, no format-specific rules to update when vendors change their layouts.",
+        },
+        {
+          metric: "Live",
+          unit: "FX rates",
+          title: "Currency conversion on every document",
+          body: "IP-localized default currency, live exchange rates per session, override available. Consolidated local-currency audit across multi-currency invoice streams without a separate conversion step.",
+        },
+        {
+          metric: "1×",
+          unit: "per vendor",
+          title: "Data entry for recurring merchants",
+          body: "Neural Sync auto-populates billing email and address for saved vendors. Recurring AP relationships cost one entry, not one per invoice cycle.",
+        },
+      ],
+      note: "Numbers reflect Invoicify AI as deployed at invoicify.brilworks.com. Extraction accuracy depends on document quality and LLM API performance. Confidence scoring ensures low-quality extractions surface for review rather than flowing through silently.",
+    },
+    fit: {
+      eyebrow: "Is this right for you?",
+      title: "Honest fit criteria. We'd rather say no than oversell.",
+      yes: [
+        "Your AP team processes 50+ invoices per month across multiple vendors and formats",
+        "You receive invoices in varied layouts — PDFs, scanned images, different template versions",
+        "Multi-currency invoices require manual conversion steps that slow reconciliation",
+        "You want spending pattern analysis across your invoice stream, not just per-invoice data",
+      ],
+      no: [
+        "You receive fewer than 20 invoices a month from a fixed set of vendors with consistent formats",
+        "Your ERP already has native OCR invoice capture and the bottleneck is approval, not entry",
+        "You need guaranteed 100% extraction accuracy on legally binding documents without human review of flagged fields",
+        "Your compliance policy requires server-side document storage — Invoicify processes in memory and stores metadata only",
+      ],
+    },
+    cta: {
+      title: "Book a 30-minute scoping call.",
+      body: "We'll review a sample of your invoice formats, walk through your current AP process, and tell you whether neural extraction fits — and what the vendor sync and currency audit setup would look like for your stack.",
+    },
+  },
+  statementflow: {
+    accent: "#7C3AED",
+    accentSoft: "#EDE9FE",
+    accentDeep: "#4C1D95",
+    prototypeUrl: "https://statementflow.brilworks.com",
+    title: "StatementFlow · AI credit card statement analyzer with interactive dashboard",
+    description:
+      "An AI-driven platform that transforms complex PDF credit card statements into actionable financial insights — transaction extraction, category-wise spend breakdowns, interactive charts, and CSV export.",
+    breadcrumb: "StatementFlow — Credit card statement analyzer",
+    chip: "Finance · Statement analysis · Spending insights",
+    heroHeadline:
+      "An AI statement analyzer that turns a PDF credit card statement into a full spending dashboard.",
+    heroSubhead:
+      "Upload any statement — Amex, Chase, or regional banks. Gemini 2.0 Flash extracts every transaction with 99% logic precision, categorizes spending, renders interactive charts, and exports to CSV. No login, no data storage.",
+    heroStats: [
+      { value: "99%", label: "Logic precision on transaction extraction" },
+      { value: "Multi-bank", label: "Amex, Chase, and regional formats" },
+      { value: "0", label: "Server-side data storage" },
+    ],
+    challenge: {
+      eyebrow: "The Challenge",
+      title:
+        "Credit card statements are PDF black boxes. Understanding your spending requires extracting data that was never designed to be extracted.",
+      lead: `A person downloads their monthly credit card statement. It's a 12-page PDF: transactions in a formatted table, running totals at the bottom, category labels that differ by bank. To actually analyze their spending, they either read it manually or paste it into a spreadsheet — row by row, 80 transactions, every month.`,
+      paragraphs: [
+        `The failures are structural. Bank PDFs aren't designed for data export — they're designed for printing. Extracting transactions with standard PDF tools produces garbled text when tables span pages, misaligned columns when formatting shifts, and silently dropped rows when the PDF is scanned rather than digital. By the time the data is clean, the insight is stale.`,
+        `The root cause isn't user behavior. It's that <strong>PDF statement format was standardized for human reading, not machine analysis</strong> — and every bank has a different layout, different table structure, and different category taxonomy. A template-based extractor works for one bank and breaks on the next. When multi-bank support is required, templates don't scale.`,
+        `StatementFlow uses Gemini 2.0 Flash to read statements the way a financial analyst would — <strong>understanding layout context, inferring transaction boundaries across page breaks, and classifying spending by merchant semantics</strong>, not column position. No templates. No format-specific rules to maintain.`,
+      ],
+    },
+    how: {
+      eyebrow: "How the agent handles it",
+      title: "PDF in. Transactions extracted. Dashboard rendered. CSV ready.",
+      svgHtml: `<svg viewBox="0 0 1040 340" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5A6B82"/></marker></defs>
+        <rect class="box-soft" x="20" y="60" width="140" height="90" rx="10"/>
+        <text class="d-mono" x="90" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#4C1D95">UPLOAD</text>
+        <text class="d-label" x="90" y="104" text-anchor="middle">PDF Statement</text>
+        <text class="d-sub" x="90" y="121" text-anchor="middle">any bank format</text>
+        <text class="d-sub" x="90" y="136" text-anchor="middle">multi-page</text>
+        <rect class="box-a" x="190" y="60" width="160" height="90" rx="10" stroke="#7C3AED" stroke-width="2"/>
+        <text class="d-mono" x="270" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#4C1D95">PARSE</text>
+        <text class="d-label" x="270" y="104" text-anchor="middle">Gemini 2.0 Flash</text>
+        <text class="d-sub" x="270" y="121" text-anchor="middle">pdfjs extraction</text>
+        <text class="d-sub" x="270" y="136" text-anchor="middle">99% precision</text>
+        <rect class="box-soft" x="380" y="60" width="160" height="90" rx="10"/>
+        <text class="d-mono" x="460" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#4C1D95">CATEGORIZE</text>
+        <text class="d-label" x="460" y="104" text-anchor="middle">Spend Taxonomy</text>
+        <text class="d-sub" x="460" y="121" text-anchor="middle">merchant semantics</text>
+        <text class="d-sub" x="460" y="136" text-anchor="middle">category breakdown</text>
+        <rect class="box-a" x="570" y="60" width="160" height="90" rx="10" stroke="#7C3AED" stroke-width="2"/>
+        <text class="d-mono" x="650" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#4C1D95">VISUALIZE</text>
+        <text class="d-label" x="650" y="104" text-anchor="middle">Interactive Dashboard</text>
+        <text class="d-sub" x="650" y="121" text-anchor="middle">Recharts · charts</text>
+        <text class="d-sub" x="650" y="136" text-anchor="middle">searchable table</text>
+        <rect class="box-soft" x="760" y="60" width="150" height="90" rx="10"/>
+        <text class="d-mono" x="835" y="83" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#4C1D95">EXPORT</text>
+        <text class="d-label" x="835" y="104" text-anchor="middle">CSV Download</text>
+        <text class="d-sub" x="835" y="121" text-anchor="middle">all transactions</text>
+        <text class="d-sub" x="835" y="136" text-anchor="middle">structured data</text>
+        <path class="arr" d="M 160 105 L 190 105"/>
+        <path class="arr" d="M 350 105 L 380 105"/>
+        <path class="arr" d="M 540 105 L 570 105"/>
+        <path class="arr" d="M 730 105 L 760 105"/>
+        <rect class="box-deep" x="190" y="210" width="580" height="90" rx="12"/>
+        <text class="d-mono" x="480" y="237" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">PRIVACY-FIRST PROCESSING</text>
+        <text class="d-label" x="480" y="260" text-anchor="middle" style="fill:#fff;font-size:14px">Documents processed via secure memory buffer. No server-side storage.</text>
+        <text class="d-sub" x="480" y="282" text-anchor="middle" style="fill:rgba(255,255,255,0.8);font-size:12px">Data sent to Gemini API for extraction only · No document retention · All metadata in browser localStorage</text>
+        <path class="arr" d="M 270 150 L 270 185 L 480 185 L 480 210"/>
+      </svg>`,
+      steps: [
+        {
+          n: 1,
+          title: "Gemini reads layout, not column positions. Multi-bank without templates.",
+          body: `pdfjs-dist renders each PDF page for Gemini 2.0 Flash to read as a visual and textual document. The model understands that a transaction boundary is a new row regardless of whether the bank uses lines, spacing, or indentation to separate them. Amex, Chase, regional bank formats — same extraction pipeline, no format-specific rules.`,
+        },
+        {
+          n: 2,
+          title: "Spend categorization uses merchant semantics, not keyword lists.",
+          body: `"Amazon.com*1A2B3C4D" is categorized as Shopping, not Unknown, because the model understands merchant naming conventions. "SQ*BLUE BOTTLE SF" maps to Dining. Category assignments reflect how a financial analyst would read the statement, not how a pattern-matcher would keyword-scan it.`,
+        },
+        {
+          n: 3,
+          title: "The dashboard renders while you review, not after you wait.",
+          body: `Recharts powers dynamic charts that update as transactions load. Category-wise spend breakdowns, monthly trend lines, and a fully searchable transaction table are generated from the extracted data without a page reload. The dashboard is the deliverable — not a data file the user has to chart themselves.`,
+        },
+        {
+          n: 4,
+          title: "CSV export makes the data portable. No lock-in.",
+          body: `Every extracted transaction — date, merchant, amount, category — exports to a clean CSV on demand. Users can take it into Excel, their budgeting app, or their accountant's preferred tool. StatementFlow is the extraction and analysis layer, not a data silo.`,
+        },
+      ],
+    },
+    outcomes: {
+      eyebrow: "What you get",
+      title: "Three things change once AI reads your statement.",
+      items: [
+        {
+          metric: "99%",
+          unit: "precision",
+          title: "Transaction extraction logic accuracy",
+          body: "Gemini 2.0 Flash reads statements the way a trained analyst would — understanding page-spanning tables, merged cells, and multi-line merchant names without a format-specific template.",
+        },
+        {
+          metric: "< 30s",
+          unit: "per statement",
+          title: "From PDF upload to full spending dashboard",
+          body: "Extraction, categorization, and chart rendering complete in a single pass. A 12-page, 80-transaction statement produces a full dashboard faster than opening a spreadsheet.",
+        },
+        {
+          metric: "0",
+          unit: "data stored",
+          title: "Server-side document retention",
+          body: "Documents are processed in memory and sent to the Gemini API for extraction only. No server stores your statement. Extracted metadata lives in your browser's localStorage — private by architecture, not by policy.",
+        },
+      ],
+      note: "Numbers observed in Brilworks' StatementFlow deployment at statementflow.brilworks.com. Extraction precision varies with PDF quality — scanned statements at low DPI perform below the 99% benchmark. Digital PDFs from major banks consistently hit or exceed it.",
+    },
+    fit: {
+      eyebrow: "Is this right for you?",
+      title: "Honest fit criteria. We'd rather say no than oversell.",
+      yes: [
+        "You need to analyze credit card spending across months or multiple cards without manual data entry",
+        "Your statements come from multiple banks with different PDF formats",
+        "You want spending insights in a shareable dashboard format, not a raw data dump",
+        "Privacy is a hard requirement — processing in memory with no server storage is the right architecture for your use case",
+      ],
+      no: [
+        "You need transaction data synced automatically from bank APIs rather than uploaded manually",
+        "Your statements are low-resolution scans where OCR accuracy is already a problem before AI analysis",
+        "You need multi-user access or cloud persistence for extracted data across devices",
+        "You're building a compliance or tax product that requires legally auditable extraction provenance",
+      ],
+    },
+    cta: {
+      title: "Book a 30-minute scoping call.",
+      body: "We'll look at your statement formats, your analysis workflow, and your data privacy constraints — then tell you whether AI-powered extraction fits and what a production deployment for your specific bank coverage would require.",
+    },
+  },
   planner: {
     accent: "#EA580C",
     accentSoft: "#FFEDD5",
@@ -1651,169 +2233,6 @@ export const aiAgentCaseStudies = {
     cta: {
       title: "Book a 30-minute scoping call.",
       body: "We'll walk through your content calendar, your brand identity, and your safety constraints — then tell you honestly whether a character-consistent video pipeline is the right next step.",
-    },
-  },
-  admissions: {
-    accent: "#1D4ED8",
-    accentSoft: "#DBEAFE",
-    accentDeep: "#1E3A8A",
-    prototypeUrl: "/agents/admission-os/index.html",
-    title: "AI Admissions OS · Seven-agent orchestrator for MBA applicants",
-    description:
-      "A workflow orchestrator that runs seven specialized AI agents around a single shared object — the Narrative Anchor — from intake through school comparison, at ~$17 per applicant.",
-    breadcrumb: "Admissions OS — 7-agent applicant workflow",
-    chip: "Education · 7-agent orchestration",
-    heroHeadline:
-      "An admissions OS that runs seven agents around one shared applicant object.",
-    heroSubhead:
-      "Intake, strategy, essay editing, deep review, framework gate, gap analysis, and school comparison — all reading and writing the same Narrative Anchor. Foreground agents on Haiku, deep work on Sonnet, blended at ~$17 per applicant.",
-    heroStats: [
-      { value: "7", label: "Specialized agents in one pipeline" },
-      { value: "1", label: "Shared Narrative Anchor Object" },
-      { value: "~$17", label: "Blended AI cost per applicant" },
-    ],
-    challenge: {
-      eyebrow: "The Challenge",
-      title:
-        "MBA admissions consulting doesn't scale. Generic AI tools produce essays that sound like everyone else's.",
-      lead: `A family pays $15K–$25K for admissions consulting. The consultant meets once a week, remembers last session's context by flipping through notes, and can handle maybe 15 clients before quality drops. Meanwhile, generic AI tools write essays that use the same three opening phrases and cite stats from the wrong school — and every applicant looks the same in the pile.`,
-      paragraphs: [
-        `The failures are specific. A strategic theme from week one gets lost by week four. A claim made in the resume doesn't match the claim in the "why MBA" essay, and nobody notices until an admissions committee does. Seven different tools get opened for seven different steps — essay editor, review service, school-fit calculator — none of which share context. The applicant ends up stitching the story together on their own, badly.`,
-        `The root cause isn't the consultant's skill or the AI's IQ. It's that <strong>there's no shared object that travels with the applicant across every step</strong> — no single source for themes, claims, voice fingerprint, and constraints that every agent reads and writes. Without that, each step is a fresh re-brief, and contradictions become inevitable.`,
-        `Admissions OS exists to make that shared object <strong>the spine of the workflow</strong>. Seven specialized agents, each doing one job well, all reading and writing the same Narrative Anchor — so a claim made on agent 2 is citable on agent 7, and contradictions get flagged before a committee sees them.`,
-      ],
-    },
-    how: {
-      eyebrow: "How the agent handles it",
-      title: "Seven agents. One shared object. Tier-based routing keeps cost predictable.",
-      svgHtml: `<svg viewBox="0 0 1080 420" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="ah" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5A6B82"/></marker>
-        </defs>
-        <text class="d-mono" x="540" y="30" text-anchor="middle" style="font-size:11px;font-weight:600;fill:#1E3A8A">7 AGENTS · 1 SHARED OBJECT · 1 JOURNEY</text>
-        <rect class="box-a" x="40" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="105" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 1</text>
-        <text class="d-label" x="105" y="96" text-anchor="middle">Intake</text>
-        <text class="d-sub" x="105" y="114" text-anchor="middle">30 questions</text>
-        <text class="d-sub" x="105" y="129" text-anchor="middle" style="font-style:italic">form only</text>
-        <text class="d-mono" x="105" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0</text>
-        <rect class="box-a" x="188" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="253" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 2</text>
-        <text class="d-label" x="253" y="96" text-anchor="middle">Strategy</text>
-        <text class="d-sub" x="253" y="114" text-anchor="middle">Sonnet</text>
-        <text class="d-sub" x="253" y="129" text-anchor="middle" style="font-style:italic">NAO generator</text>
-        <text class="d-mono" x="253" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.05</text>
-        <rect class="box-a" x="336" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="401" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 3</text>
-        <text class="d-label" x="401" y="96" text-anchor="middle">Essay editor</text>
-        <text class="d-sub" x="401" y="114" text-anchor="middle">Haiku</text>
-        <text class="d-sub" x="401" y="129" text-anchor="middle" style="font-style:italic">foreground</text>
-        <text class="d-mono" x="401" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.002/call</text>
-        <rect class="box-a" x="484" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="549" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 4</text>
-        <text class="d-label" x="549" y="96" text-anchor="middle">Deep review</text>
-        <text class="d-sub" x="549" y="114" text-anchor="middle">Sonnet</text>
-        <text class="d-sub" x="549" y="129" text-anchor="middle" style="font-style:italic">4-dim scoring</text>
-        <text class="d-mono" x="549" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.38/run</text>
-        <rect class="box-a" x="632" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="697" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 5</text>
-        <text class="d-label" x="697" y="96" text-anchor="middle">Framework gate</text>
-        <text class="d-sub" x="697" y="114" text-anchor="middle">Sonnet→Haiku</text>
-        <text class="d-sub" x="697" y="129" text-anchor="middle" style="font-style:italic">soft-warn only</text>
-        <text class="d-mono" x="697" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.01</text>
-        <rect class="box-a" x="780" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="845" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 6</text>
-        <text class="d-label" x="845" y="96" text-anchor="middle">Gap analysis</text>
-        <text class="d-sub" x="845" y="114" text-anchor="middle">Sonnet</text>
-        <text class="d-sub" x="845" y="129" text-anchor="middle" style="font-style:italic">cross-doc</text>
-        <text class="d-mono" x="845" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.03/run</text>
-        <rect class="box-a" x="928" y="55" width="130" height="100" rx="10" stroke-width="1.5"/>
-        <text class="d-mono" x="993" y="75" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1E3A8A">AGENT 7</text>
-        <text class="d-label" x="993" y="96" text-anchor="middle">School fit</text>
-        <text class="d-sub" x="993" y="114" text-anchor="middle">Sonnet</text>
-        <text class="d-sub" x="993" y="129" text-anchor="middle" style="font-style:italic">multi-school</text>
-        <text class="d-mono" x="993" y="148" text-anchor="middle" style="font-size:9px;fill:#1E3A8A">~$0.08/run</text>
-        <path class="arr" d="M 105 155 L 105 240"/>
-        <path class="arr" d="M 253 155 L 253 240"/>
-        <path class="arr" d="M 401 155 L 401 240"/>
-        <path class="arr" d="M 549 155 L 549 240"/>
-        <path class="arr" d="M 697 155 L 697 240"/>
-        <path class="arr" d="M 845 155 L 845 240"/>
-        <path class="arr" d="M 993 155 L 993 240"/>
-        <rect class="box-deep" x="40" y="240" width="1020" height="110" rx="12"/>
-        <text class="d-mono" x="540" y="267" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">NARRATIVE ANCHOR OBJECT (NAO)</text>
-        <text class="d-label" x="540" y="290" text-anchor="middle" style="fill:#fff;font-size:15px">One shared object. Read and written by every agent.</text>
-        <text class="d-sub" x="540" y="310" text-anchor="middle" style="fill:rgba(255,255,255,0.85);font-size:12px">themes · claims · voice fingerprint · applicant constraints · versioned per step</text>
-        <text class="d-sub" x="540" y="328" text-anchor="middle" style="fill:rgba(255,255,255,0.65);font-size:11px;font-style:italic">Claims made on agent 2 are cited on agent 7. Contradictions flagged structurally.</text>
-        <text class="d-mono" x="540" y="390" text-anchor="middle" style="font-size:11px;font-weight:600;fill:#5A6B82">BLENDED COST PER APPLICANT: ~$17 · Haiku foreground + Sonnet deep + prompt caching</text>
-      </svg>`,
-      steps: [
-        {
-          n: 1,
-          title: "The Narrative Anchor is the source of truth. Not a file, not a doc.",
-          body: `Every agent reads the NAO before it acts and writes back when it finishes. Themes, claims, voice fingerprint, applicant constraints — all versioned per step. The contradiction you'd normally catch at final submission gets flagged at agent 3, because the same object is in scope every time.`,
-        },
-        {
-          n: 2,
-          title: "Foreground agents run on Haiku. Deep work runs on Sonnet.",
-          body: `The essay editor fires on every keystroke and must stay under 300ms — <em>Haiku + prompt caching</em> territory. Strategy and deep review run multi-minute with 4-dim scoring — <em>Sonnet</em> handles that. Each agent knows its tier, so the per-applicant cost stays predictable instead of spiralling with usage.`,
-        },
-        {
-          n: 3,
-          title: "Gates warn. They don't block.",
-          body: `The framework gate soft-warns when a claim lacks NAO evidence — it doesn't stop the applicant. Guidance over control. An advisor that blocks the user at every edit gets turned off; one that flags and explains is one that ships. <em>"This claim isn't in your NAO — want to add evidence or rephrase?"</em>`,
-        },
-        {
-          n: 4,
-          title: "UI first. Agents plug in behind it.",
-          body: `The prototype ships with simulated deterministic brains so the latency, pipeline orchestration, cost telemetry, and NAO schema are production-accurate before a single LLM call is wired up. When the simulated brains get replaced with real Anthropic calls, <em>the UI layer doesn't change</em> — and the ~$17 per-applicant economics stay achievable, not aspirational.`,
-        },
-      ],
-    },
-    outcomes: {
-      eyebrow: "What you get",
-      title: "Three things change once the NAO is the spine.",
-      items: [
-        {
-          metric: "7",
-          unit: "agents",
-          title: "Specialized, context-sharing steps",
-          body: "Intake, strategy, essay editing, deep review, framework gate, gap analysis, school fit — each reading and writing the same NAO. No context loss between tools.",
-        },
-        {
-          metric: "~$17",
-          unit: "/applicant",
-          title: "Blended AI cost with prompt caching",
-          body: "Tier-based routing keeps foreground interactions cheap and deep analysis affordable. Compare to $15K–$25K for a single consultant, or generic AI tools that still need human cleanup.",
-        },
-        {
-          metric: "~60",
-          unit: "s",
-          title: "From raw intake to v1 Narrative Anchor",
-          body: "Strategy agent turnaround. Deep-review 4-dim scoring completes in parallel under two minutes. Applicants stay in flow instead of waiting on human reviewers.",
-        },
-      ],
-      note: "Numbers observed in Brilworks' Admissions OS prototype. Actual figures on your stack will depend on applicant volume, essay count per school, and prompt-cache hit rate.",
-    },
-    fit: {
-      eyebrow: "Is this right for you?",
-      title: "Honest fit criteria. We'd rather say no than oversell.",
-      yes: [
-        "You run an MBA, grad-school, or professional-program admissions practice with 50+ applicants per cycle",
-        "Consultants already follow a multi-step process, but context gets lost between sessions and tools",
-        "The applicant's voice, themes, and claims must stay consistent across 3–8 essays per school",
-        "You're willing to model a shared NAO schema first and plug the agents in behind it",
-      ],
-      no: [
-        "You serve fewer than 20 applicants a year — the orchestration overhead isn't earning its keep",
-        "Your consulting process isn't written down yet — start with positioning and curriculum, not orchestration",
-        "You want a one-shot essay generator, not a multi-agent workflow with a shared object",
-        "You're not willing to run two model tiers (Haiku + Sonnet) in the same pipeline",
-      ],
-    },
-    cta: {
-      title: "Book a 30-minute scoping call.",
-      body: "We'll walk through your current admissions process, map it against the 7-agent NAO pattern, and tell you honestly whether it fits your practice — and what it would take to ship.",
     },
   },
 };

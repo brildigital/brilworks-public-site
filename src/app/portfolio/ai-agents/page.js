@@ -101,6 +101,9 @@ const agentDisplayNames = {
   trainer: "Trainer Agent",
   video: "Video Agent",
   admissions: "Admissions OS",
+  audit: "AI Audit",
+  invoicify: "Invoicify Agent",
+  statementflow: "Statement Analyzer",
 };
 
 export default function Page() {
