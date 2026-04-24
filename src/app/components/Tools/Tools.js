@@ -4,7 +4,7 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import Link from "next/link";
 import { ArrowRight, Search, CheckCircle, Star } from "lucide-react";
-import { usePostHog } from "posthog-js/react";
+// import { usePostHog } from "posthog-js/react";
 import Cookies from "js-cookie";
 
 const toolsData = [
@@ -391,20 +391,20 @@ const Tools = () => {
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
 
-  const posthog = usePostHog();
+  // const posthog = usePostHog();
 
-  useEffect(() => {
-    if (posthog) {
-      const rawUserData = Cookies.get("user-data");
-      const userData = rawUserData ? JSON.parse(rawUserData) : {};
-      posthog.capture("tools_page", {
-        page: "tools",
-        city: userData?.city,
-        region: userData?.region,
-        country: userData?.country,
-      });
-    }
-  }, [posthog]);
+  // useEffect(() => {
+  //   if (posthog) {
+  //     const rawUserData = Cookies.get("user-data");
+  //     const userData = rawUserData ? JSON.parse(rawUserData) : {};
+  //     posthog.capture("tools_page", {
+  //       page: "tools",
+  //       city: userData?.city,
+  //       region: userData?.region,
+  //       country: userData?.country,
+  //     });
+  //   }
+  // }, [posthog]);
 
   useEffect(() => {
     const handler = setTimeout(() => {
