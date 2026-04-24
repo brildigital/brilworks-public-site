@@ -19,9 +19,11 @@ const CurrentHeader = () => {
     "/gist/bubble-io/",
     "/gist/flutterflow/",
     "/x/product-listing/",
+    "/portfolio/ai-agents/",
   ];
 
   const specialHeaderPages = [
+    "/portfolio/ai-agents/",
     "/terms-and-conditions/",
     "/privacy-policy/",
     "/cabuno-privacy-policy/",

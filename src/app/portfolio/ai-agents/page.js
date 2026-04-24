@@ -24,127 +24,140 @@ export const metadata = {
   },
 };
 
-const indexCss = `
-  .aiai { --brand-primary: #0A4D8C; --brand-deep: #0B2545; --brand-soft: #F4F8FC; --brand-line: #D9E3EF; --brand-ink: #0F1724; --brand-muted: #5A6B82; color: var(--brand-ink); line-height: 1.65; }
-  .aiai h1, .aiai h2, .aiai h3, .aiai h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.01em; color: var(--brand-deep); }
-  .aiai h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.08; margin-bottom: 20px !important; }
-  .aiai h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1.2; }
-  .aiai h3 { font-size: 1.3rem; line-height: 1.3; }
-  .aiai p { font-size: 1rem; }
-  .aiai a { color: var(--brand-primary); text-decoration: none; }
-  .aiai .container { max-width: 1280px; margin: 0 auto !important; padding: 0 20px; }
-  @media (min-width: 768px) { .aiai .container { padding: 0 40px; } }
+const pageCss = `
+  .cs-page { color: #0F1724; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-  .aiai .hero { padding: 130px 0 72px; background: linear-gradient(180deg, var(--brand-soft) 0%, #fff 100%); border-bottom: 1px solid var(--brand-line); }
-  @media (min-width: 768px) { .aiai .hero { padding: 150px 0 88px; } }
-  .aiai .hero-inner { max-width: 820px; }
-  .aiai .hero .chip { display: inline-flex; align-items: center; gap: 10px; padding: 7px 15px; background: #fff; border: 1px solid var(--brand-line); color: var(--brand-deep); border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px !important; }
-  .aiai .hero .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-primary); }
-  .aiai .hero .subhead { font-size: 1.15rem; color: var(--brand-muted); max-width: 720px; line-height: 1.55; }
+  /* Hero */
+  .cs-hero { max-width: 1200px; margin: 0 auto; padding: 140px 40px 48px; }
+  @media (max-width: 768px) { .cs-hero { padding: 110px 20px 32px; } }
+  .cs-hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 20px; color: #0F1724; max-width: 820px; }
+  .cs-hero-sub { font-size: 1.1rem; color: #5A6B82; line-height: 1.55; max-width: 720px; margin: 0; }
 
-  .aiai .grid-section { padding: 72px 0 96px; }
-  .aiai .grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
-  @media (min-width: 700px) { .aiai .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .aiai .grid { grid-template-columns: repeat(3, 1fr); gap: 26px; } }
+  /* Section header */
+  .cs-header { max-width: 1200px; margin: 0 auto; padding: 48px 40px 0; }
+  @media (max-width: 768px) { .cs-header { padding: 32px 20px 0; } }
+  .cs-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #0F1724; margin-bottom: 16px; }
+  .cs-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin: 0; color: #0F1724; }
+  .cs-header-row { display: flex; justify-content: space-between; align-items: flex-end; }
+  .cs-browse { font-size: 0.95rem; font-weight: 500; color: #0F1724; text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+  .cs-browse:hover { color: #555; }
+  @media (max-width: 600px) { .cs-header-row { flex-direction: column; align-items: flex-start; gap: 16px; } }
 
-  .aiai .card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--brand-line); border-radius: 14px; padding: 28px 26px; transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s; position: relative; overflow: hidden; }
-  .aiai .card:hover { border-color: var(--card-accent); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11,37,69,0.08); text-decoration: none; }
-  .aiai .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--card-accent); }
-  .aiai .card .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--card-accent-soft); color: var(--card-accent-deep); border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; font-weight: 500; margin-bottom: 18px !important; align-self: flex-start; }
-  .aiai .card .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--card-accent); }
-  .aiai .card h3 { margin-bottom: 14px !important; }
-  .aiai .card p.tag { color: var(--brand-muted); font-size: 0.95rem; line-height: 1.55; margin-bottom: 22px !important; flex: 1; }
-  .aiai .card .stat-row { display: flex; gap: 18px; padding-top: 18px; border-top: 1px solid var(--brand-line); margin-bottom: 18px !important; flex-wrap: wrap; }
-  .aiai .card .stat { display: flex; flex-direction: column; min-width: 0; }
-  .aiai .card .stat .v { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--card-accent-deep); line-height: 1; }
-  .aiai .card .stat .l { font-size: 0.72rem; color: var(--brand-muted); margin-top: 4px !important; line-height: 1.35; }
-  .aiai .card .more { font-size: 0.86rem; font-weight: 500; color: var(--card-accent-deep); display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; }
-  .aiai .card:hover .more { color: var(--card-accent); }
+  /* Case study rows */
+  .cs-list { max-width: 1200px; margin: 0 auto; padding: 48px 40px 80px; }
+  @media (max-width: 768px) { .cs-list { padding: 32px 20px 60px; } }
 
-  .aiai .cta-band { background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-deep) 100%); color: #fff; padding: 72px 0; text-align: center; }
-  .aiai .cta-band h2 { color: #fff; margin-bottom: 14px !important; }
-  .aiai .cta-band p { color: rgba(255,255,255,0.92); font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px !important; }
-  .aiai .cta-band .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; background: #fff; color: var(--brand-deep); border-radius: 8px; font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: transform 0.18s; }
-  .aiai .cta-band .btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .cs-row { display: grid; grid-template-columns: 160px 1fr 160px 160px 160px; align-items: start; gap: 24px; padding: 32px 0; border-top: 1px solid #E5E5E5; text-decoration: none; color: inherit; transition: background 0.15s; }
+  .cs-row:last-child { border-bottom: 1px solid #E5E5E5; }
+  .cs-row:hover { background: #FAFAFA; }
+  @media (max-width: 1024px) {
+    .cs-row { grid-template-columns: 140px 1fr 130px 130px 130px; gap: 16px; }
+  }
+  @media (max-width: 900px) {
+    .cs-row { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+  }
+
+  /* Left column: category + agent name */
+  .cs-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .cs-agent-name { font-size: 1rem; font-weight: 600; color: #0F1724; line-height: 1.3; }
+
+  /* Middle: description */
+  .cs-desc { font-size: 1rem; color: #333; line-height: 1.5; }
+
+  /* Metrics: each in its own grid column */
+  .cs-metric { display: flex; flex-direction: column; align-items: flex-start; }
+  .cs-metric-value { font-size: 1.4rem; font-weight: 700; color: #0F1724; line-height: 1.2; white-space: nowrap; }
+  .cs-metric-label { font-size: 0.7rem; color: #888; margin-top: 2px; line-height: 1.3; }
+
+  /* Mobile: metrics row */
+  @media (max-width: 900px) {
+    .cs-metrics-mobile { display: flex; gap: 24px; flex-wrap: wrap; }
+  }
 `;
+
+/* Extract a short category and agent name from the chip field.
+   chip format: "Planning agent · Forces review before code"
+   → category: "PLANNING", name: first part before " · " */
+function parseChip(chip) {
+  const parts = chip.split(" · ");
+  return {
+    category: (parts[0] || "").replace(/ agent$/i, "").trim(),
+    subtitle: parts[1] || "",
+  };
+}
+
+/* Map of slug → short display name */
+const agentDisplayNames = {
+  planner: "Planner",
+  marketing: "Marketing Agent",
+  research: "Research Agent",
+  xagent: "X/Twitter Agent",
+  lab: "Lab Agent",
+  stock: "Stock Analyst",
+  ideas: "Ideas Agent",
+  finance: "Finance Agent",
+  builder: "Builder Agent",
+  ops: "Ops Agent",
+  trainer: "Trainer Agent",
+  video: "Video Agent",
+  admissions: "Admissions OS",
+};
 
 export default function Page() {
   const entries = Object.entries(aiAgentCaseStudies);
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: indexCss }} />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-      />
-      <main className="aiai">
-        <header className="hero">
-          <div className="container">
-            <div className="hero-inner">
-              <div className="chip">
-                <span className="dot"></span>
-                AI agent solutions · {entries.length} patterns
-              </div>
-              <h1>Production-grade AI agents, engineered for outcomes.</h1>
-              <p className="subhead">
-                {entries.length} patterns Brilworks has built and shipped —
-                planning, content operations, research, finance, engineering,
-                media, and education. Pick a pattern to see the challenge it
-                solves, how it works, what the outcomes look like, and whether
-                it fits.
-              </p>
-            </div>
+      <style dangerouslySetInnerHTML={{ __html: pageCss }} />
+      <main className="cs-page">
+        <section className="cs-hero">
+          <h1>Production-grade AI agents, engineered for outcomes.</h1>
+          <p className="cs-hero-sub">
+            {entries.length} patterns Brilworks has built and shipped —
+            planning, content operations, research, finance, engineering,
+            media, and education. Pick a pattern to see the challenge it
+            solves, how it works, and what the outcomes look like.
+          </p>
+        </section>
+
+        <header className="cs-header">
+          <p className="cs-label">Case Studies</p>
+          <div className="cs-header-row">
+            <h2>Work we&apos;ve shipped.</h2>
+            <Link href="/portfolio/" className="cs-browse">
+              Browse all {entries.length} →
+            </Link>
           </div>
         </header>
 
-        <section className="grid-section">
-          <div className="container">
-            <div className="grid">
-              {entries.map(([slug, data]) => (
-                <Link
-                  key={slug}
-                  href={`/portfolio/ai-agents/${slug}/`}
-                  className="card"
-                  style={{
-                    "--card-accent": data.accent,
-                    "--card-accent-soft": data.accentSoft,
-                    "--card-accent-deep": data.accentDeep,
-                  }}
-                >
-                  <div className="chip">
-                    <span className="dot"></span>
-                    {data.chip}
-                  </div>
-                  <h3>{data.heroHeadline}</h3>
-                  <p className="tag">{data.breadcrumb}</p>
-                  <div className="stat-row">
-                    {data.heroStats.slice(0, 2).map((s, i) => (
-                      <div className="stat" key={i}>
-                        <div className="v">{s.value}</div>
-                        <div className="l">{s.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <span className="more">See the case study →</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="cs-list">
+          {entries.map(([slug, data]) => {
+            const { category } = parseChip(data.chip);
+            const name = agentDisplayNames[slug] || slug;
+            const stats = data.heroStats || [];
 
-        <section className="cta-band">
-          <div className="container">
-            <h2>Not sure which pattern fits?</h2>
-            <p>
-              Book a 30-minute scoping call and we'll map your workflow against
-              the twelve patterns, tell you honestly what fits and what
-              doesn't, and what it would take to ship.
-            </p>
-            <a href="https://www.brilworks.com/contact/" className="btn">
-              Book a scoping call →
-            </a>
-          </div>
+            return (
+              <Link
+                key={slug}
+                href={`/portfolio/ai-agents/${slug}/`}
+                className="cs-row"
+              >
+                <div className="cs-identity">
+                  <div className="cs-category">{category}</div>
+                  <div className="cs-agent-name">{name}</div>
+                </div>
+
+                <div className="cs-desc">{data.heroHeadline}</div>
+
+                {stats.slice(0, 3).map((s, i) => (
+                  <div className="cs-metric" key={i}>
+                    <div className="cs-metric-value">{s.value}</div>
+                    <div className="cs-metric-label">{s.label}</div>
+                  </div>
+                ))}
+              </Link>
+            );
+          })}
         </section>
       </main>
     </>

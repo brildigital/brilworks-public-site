@@ -6,7 +6,7 @@ const SolutionContactForm = ({ title, description, messageRequired = true, submi
   return (
     <div className="hire-team-contact-section">
       <div id="section-contact-form" className="banner-layer-dark">
-        <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+        <div className="container max-w-[1280px] main-section-padding mx-auto">
           <div className="flex flex-col lg:flex-row items-center lg:gap-16 md:gap-10 gap-6">
             <div className="lg:w-1/2 w-full">
               <Heading
