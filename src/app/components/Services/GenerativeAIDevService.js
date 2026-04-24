@@ -285,7 +285,7 @@ const INDUSTRIES = [
   },
   {
     label: "Legal",
-    href: "/industry/legal/",
+    href: "/industry/fleet-management-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 3V21M5 8L12 5L19 8M3 11H9M15 11H21M4 18C4 18 6 16 6 13H2C2 16 4 18 4 18ZM20 18C20 18 22 16 22 13H18C18 16 20 18 20 18Z" fill="#0891b2" opacity="0.15" />
