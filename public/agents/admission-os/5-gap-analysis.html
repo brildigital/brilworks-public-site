@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gap analysis · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .gap-wrap { max-width: 820px; }
+
+  .agent-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 22px;
+  }
+  .agent-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .agent-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .agent-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .agent-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .scan-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .scan-summary {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .scan-summary strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+  .scan-summary .sources {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .src-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+  }
+  .src-chip.empty { opacity: 0.5; }
+  .src-chip::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ok);
+  }
+  .src-chip.empty::before { background: var(--ink-faint); }
+
+  .run-log {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 120px;
+    display: none;
+  }
+  .run-log.active { display: block; }
+  .log-line { opacity: 0; transform: translateY(4px); transition: all 260ms ease; }
+  .log-line.in { opacity: 1; transform: translateY(0); }
+  .log-ok { color: #A9C982; }
+  .log-warn { color: #E9C46A; }
+  .log-accent { color: var(--accent-soft); }
+  .log-caret { color: var(--accent-soft); margin-right: 6px; }
+
+  .results { display: none; }
+  .results.active { display: block; }
+
+  .summary-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .stat-val {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+  .stat-val.warn { color: var(--warn); }
+  .stat-val.ok { color: var(--ok); }
+  .stat-val.danger { color: var(--danger); }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .section-kicker-inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 24px 0 12px;
+  }
+
+  .gap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gap-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--warn);
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .gap-card.high { border-left-color: var(--danger); }
+  .gap-card.low { border-left-color: var(--ink-faint); }
+
+  .gap-priority {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--warn);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2px;
+  }
+  .gap-card.high .gap-priority { color: var(--danger); }
+  .gap-card.low .gap-priority { color: var(--ink-faint); }
+  .gap-priority .num {
+    font-size: 26px;
+    line-height: 1;
+  }
+  .gap-priority .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .gap-body { min-width: 0; }
+  .gap-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .gap-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--paper-deep);
+    color: var(--ink-faint);
+  }
+  .gap-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .gap-anchor {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: var(--paper);
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    border-left: 2px solid var(--rule);
+  }
+  .gap-anchor em {
+    color: var(--ink);
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+  }
+
+  .gap-action {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+  .gap-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 120ms;
+  }
+  .gap-btn:hover { background: var(--paper); color: var(--ink); border-color: var(--ink-soft); }
+  .gap-btn.resolved {
+    background: var(--ok-soft);
+    color: var(--ok);
+    border-color: var(--ok);
+  }
+
+  .cost-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    margin-top: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .cost-footer .v { color: var(--ink); }
+
+  .next-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .empty-state {
+    padding: 32px;
+    text-align: center;
+    background: var(--panel);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .empty-state a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="gap-wrap">
+      <div class="page-header">
+        <div class="page-kicker">Step 6 · Gap Analysis agent</div>
+        <h1 class="page-title">What's missing from your story.</h1>
+        <p class="page-subtitle">
+          This agent reads your NAO and every document together. It returns a ranked list
+          of missing evidence, unsupported claims, and story gaps you need to close
+          before submission. Use it mid-round and again before your final polish.
+        </p>
+      </div>
+
+      <div id="empty-nao" class="empty-state" style="display:none">
+        No NAO yet to analyze. Run the <a href="2-strategy.html">Strategy agent</a> first, or use demo-fill on the <a href="index.html">overview page</a>.
+      </div>
+
+      <div id="ready-content" style="display:none">
+        <div class="agent-card">
+          <div class="agent-avatar">G</div>
+          <div>
+            <div class="agent-name">Gap Analysis agent</div>
+            <div class="agent-role">Sonnet 4.6 · instruction block ~12,000 tokens · temperature 0.1</div>
+            <div class="agent-desc">
+              Cross-document reader. Takes the NAO (claims, themes, goals) and every document
+              the applicant has produced. Returns ranked gaps where the application
+              makes claims the documents don't support, or where key evidence simply doesn't exist yet.
+            </div>
+          </div>
+        </div>
+
+        <div class="scan-row">
+          <div class="scan-summary">
+            <strong>INPUT SCAN</strong>
+            <div class="sources" id="source-chips"></div>
+          </div>
+          <button class="btn" id="run-btn">Run gap analysis <span class="arrow">→</span></button>
+        </div>
+
+        <div class="run-log" id="run-log"></div>
+
+        <div class="results" id="results">
+          <div class="summary-stat-row" id="stat-row"></div>
+
+          <div class="section-kicker-inline">Ranked gaps · highest priority first</div>
+          <div class="gap-list" id="gap-list"></div>
+
+          <div class="cost-footer">
+            <span>Model: <span class="v">Sonnet 4.6</span></span>
+            <span>Cache: <span class="v" id="cache-stat">—</span></span>
+            <span>Latency: <span class="v" id="lat-stat">—</span></span>
+            <span>Cost: <span class="v" id="cost-stat">—</span></span>
+          </div>
+
+          <div class="next-row">
+            <a class="btn" href="6-comparison.html">Continue to school comparison <span class="arrow">→</span></a>
+            <button class="btn secondary" id="rerun-btn">Re-run analysis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'gaps', crumbs: ['Gap analysis', 'Cross-document scan'] });
+
+  const nao = loadNAO();
+  const hasNAO = nao.version > 0;
+
+  if (!hasNAO) {
+    document.getElementById('empty-nao').style.display = 'block';
+  } else {
+    document.getElementById('ready-content').style.display = 'block';
+    renderSourceChips();
+    document.getElementById('run-btn').addEventListener('click', runGapAnalysis);
+    document.getElementById('rerun-btn').addEventListener('click', runGapAnalysis);
+  }
+
+  function renderSourceChips() {
+    const essays = (nao.documents && nao.documents.essays) || [];
+    const resume = nao.documents && nao.documents.resume;
+    const recs = (nao.documents && nao.documents.recLetters) || [];
+    const draftHTML = localStorage.getItem('admissions_os_essay_draft_v1');
+
+    const chips = [
+      { label: 'NAO v' + nao.version, has: true },
+      { label: `${nao.claims.length} claims`, has: nao.claims.length > 0 },
+      { label: `${nao.themes.length} themes`, has: nao.themes.length > 0 },
+      { label: `${essays.length} essay${essays.length === 1 ? '' : 's'}`, has: essays.length > 0 || draftHTML },
+      { label: 'Resume', has: !!resume },
+      { label: `${recs.length} rec letter${recs.length === 1 ? '' : 's'}`, has: recs.length > 0 },
+      { label: `${nao.schools.length} target schools`, has: nao.schools.length > 0 },
+    ];
+
+    document.getElementById('source-chips').innerHTML = chips.map(c =>
+      `<span class="src-chip ${c.has ? '' : 'empty'}">${escapeHTML(c.label)}</span>`
+    ).join('');
+  }
+
+  async function runGapAnalysis() {
+    const logEl = document.getElementById('run-log');
+    const resultsEl = document.getElementById('results');
+
+    logEl.innerHTML = '';
+    logEl.classList.add('active');
+    resultsEl.classList.remove('active');
+    document.getElementById('run-btn').disabled = true;
+    if (document.getElementById('rerun-btn')) document.getElementById('rerun-btn').disabled = true;
+
+    const t0 = performance.now();
+    const call = simulateAgentCall('gap-analysis');
+
+    await logStep(logEl, `loading agent instructions (11,840 tokens, cache_control: ephemeral)…`, 180);
+    await logStep(logEl, `packing NAO (v${nao.version}, ${nao.claims.length} claims, ${nao.themes.length} themes)…`, 140);
+    await logStep(logEl, `packing documents (essays, resume stub, rec stubs)…`, 160);
+    await logStep(logEl, `<span class="log-accent">POST api.anthropic.com/v1/messages</span>`, 100, true);
+    await logStep(logEl, `awaiting response…`, 900 + Math.random() * 500);
+    await logStep(logEl, `cache_read_input_tokens: <span class="log-ok">${call.cacheHit ? 11300 : 0}</span> / 11,840 ${call.cacheHit ? '(warm · 95%)' : '(cold)'}`, 120, true);
+    await logStep(logEl, `cross-referencing claims against document evidence…`, 220);
+    await logStep(logEl, `detecting unanchored assertions…`, 180);
+    await logStep(logEl, `ranking gaps by impact × addressability…`, 180);
+
+    const gaps = detectGaps(nao);
+    const latMs = Math.round(performance.now() - t0);
+
+    await logStep(logEl, `<span class="log-ok">✓ ${gaps.length} gaps identified</span> · ${latMs}ms · $${call.cost.toFixed(3)}`, 80, true);
+
+    populateResults(gaps, call, latMs);
+    resultsEl.classList.add('active');
+    document.getElementById('run-btn').disabled = false;
+    document.getElementById('run-btn').innerHTML = 'Re-run gap analysis <span class="arrow">→</span>';
+    if (document.getElementById('rerun-btn')) document.getElementById('rerun-btn').disabled = false;
+
+    markStepDone('gaps');
+  }
+
+  async function logStep(el, html, delay, immediate) {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.innerHTML = `<span class="log-caret">›</span>${html}`;
+    el.appendChild(line);
+    el.scrollTop = el.scrollHeight;
+    await sleep(immediate ? 40 : delay);
+    line.classList.add('in');
+    await sleep(immediate ? 40 : 80);
+  }
+
+  function detectGaps(n) {
+    const gaps = [];
+    const draftHTML = localStorage.getItem('admissions_os_essay_draft_v1');
+    const draftText = draftHTML ? new DOMParser().parseFromString(draftHTML, 'text/html').body.textContent : '';
+    const hasEssayDraft = draftText && draftText.trim().length > 80;
+    const essays = (n.documents && n.documents.essays) || [];
+    const hasResume = n.documents && n.documents.resume;
+    const hasRecs = n.documents && n.documents.recLetters && n.documents.recLetters.length > 0;
+
+    // ---------- Document gaps ----------
+    if (!hasResume) {
+      gaps.push({
+        priority: 'high',
+        type: 'document',
+        title: 'Resume not yet in the system',
+        desc: 'The resume is the single most cited document across all seven agents. Until it\'s uploaded, fit reasoning and gap analysis run on self-description alone.',
+        anchor: 'Expected document: resume.pdf or resume.docx',
+        impact: 90,
+      });
+    }
+
+    if (!hasRecs) {
+      gaps.push({
+        priority: 'high',
+        type: 'document',
+        title: 'No recommender context yet',
+        desc: 'Without rec letter drafts or recommender profiles, the agent can\'t check whether third-party claims support the applicant\'s self-claims. This is a common late-round source of inconsistency.',
+        anchor: 'Expected: recommender name, relationship, 1–2 anecdotes they might tell',
+        impact: 82,
+      });
+    }
+
+    if (essays.length === 0 && !hasEssayDraft) {
+      gaps.push({
+        priority: 'high',
+        type: 'document',
+        title: 'No essays written yet',
+        desc: 'The Strategy agent has built a NAO, but you haven\'t drafted a single essay. The NAO needs to be pressure-tested against real prose before it holds up.',
+        anchor: 'Expected: at least one draft in the editor (Step 3)',
+        impact: 78,
+      });
+    } else if (essays.length < 2 && n.schools.length > 0) {
+      gaps.push({
+        priority: 'med',
+        type: 'document',
+        title: `Only ${essays.length + (hasEssayDraft && essays.length === 0 ? 1 : 0)} essay in progress for ${n.schools.length} target schools`,
+        desc: `Each school typically requires 2–3 essays. ${n.schools[0]} alone usually asks for two. You\'re materially under-produced.`,
+        anchor: `Target schools: ${n.schools.join(', ')}`,
+        impact: 70,
+      });
+    }
+
+    // ---------- Claim gaps ----------
+    // Look for claims without evidence trail
+    const unanchored = n.claims.filter(c =>
+      !c.evidence || /intake §[12]/.test(c.evidence) || c.evidence === 'self-description · intake §1'
+    );
+    if (unanchored.length >= 2) {
+      gaps.push({
+        priority: 'med',
+        type: 'claim',
+        title: `${unanchored.length} claims rest only on self-description`,
+        desc: 'Admissions officers discount assertions that live only in the applicant\'s own voice. These claims need external anchors — numbers, names, a recommender mention, or a document trail.',
+        anchor: `Weakest: "${truncate(unanchored[0].text, 100)}"`,
+        impact: 65,
+      });
+    }
+
+    // Numeric backing
+    const hasNumericClaim = n.claims.some(c => /\d/.test(c.text));
+    if (!hasNumericClaim && n.claims.length > 0) {
+      gaps.push({
+        priority: 'med',
+        type: 'claim',
+        title: 'No quantitative claims in the NAO',
+        desc: 'Every strong application has at least 3–5 numbers that the reader remembers: team size, revenue impact, users reached, funds raised. Right now the NAO has zero.',
+        anchor: 'Needed: at least one number per major claim',
+        impact: 68,
+      });
+    }
+
+    // ---------- Theme gaps ----------
+    if (n.themes.length < 3) {
+      gaps.push({
+        priority: 'low',
+        type: 'theme',
+        title: 'Thin theme coverage',
+        desc: `The NAO surfaces ${n.themes.length} theme${n.themes.length === 1 ? '' : 's'}. Strong applications typically thread 3–5 themes across the portfolio, so every essay prompt has a distinct angle to answer.`,
+        anchor: `Current themes: ${n.themes.join(', ') || 'none'}`,
+        impact: 45,
+      });
+    }
+
+    // Check goal coherence
+    if (n.themes.includes('Founder trajectory') && !/\bfound|\bstart|\blaunch|\bbuild/i.test(`${n.goals.shortTerm} ${n.goals.longTerm}`)) {
+      gaps.push({
+        priority: 'med',
+        type: 'coherence',
+        title: 'Founder theme without founder goals',
+        desc: 'The Strategy agent tagged you with a "Founder trajectory" theme, but your stated goals don\'t mention founding anything. Either the theme is wrong or your goals are underselling the arc.',
+        anchor: `Short-term: "${truncate(n.goals.shortTerm || 'not stated', 80)}"`,
+        impact: 58,
+      });
+    }
+
+    // School-specific gaps
+    if (n.schools.includes('Kellogg') && hasEssayDraft) {
+      const weText = (draftText.match(/\bwe\b/gi) || []).length;
+      const iText = (draftText.match(/\bI\b/g) || []).length;
+      if (iText > 0 && weText / iText < 0.2) {
+        gaps.push({
+          priority: 'med',
+          type: 'fit',
+          title: 'Kellogg essay is heavy "I", light "we"',
+          desc: 'Kellogg explicitly reads for collaborative ownership. Current draft has ' + weText + ' "we" vs ' + iText + ' "I" — that ratio reads as solo-hero rather than team-leader.',
+          anchor: `Target: at least 1 "we" per 3 "I"s in a leadership essay`,
+          impact: 62,
+        });
+      }
+    }
+
+    // Impact specificity in essay
+    if (hasEssayDraft) {
+      const nums = (draftText.match(/\b\d[\d,]*(\.\d+)?/g) || []).length;
+      if (nums < 2) {
+        gaps.push({
+          priority: 'med',
+          type: 'essay',
+          title: 'Kellogg Essay 1 lacks concrete numbers',
+          desc: `Your draft has ${nums} numeric value${nums === 1 ? '' : 's'}. A 450-word leadership essay should have at least 3 — team size, timeline, outcome magnitude.`,
+          anchor: 'Essay 1 draft · Kellogg',
+          impact: 55,
+        });
+      }
+    }
+
+    // Fit breadth
+    if (n.schools.length >= 3 && n.themes.length >= 2) {
+      const hbs = n.schools.includes('HBS');
+      const gsb = n.schools.includes('Stanford GSB');
+      const wharton = n.schools.includes('Wharton');
+      if ((hbs && gsb && wharton) || n.schools.length >= 5) {
+        gaps.push({
+          priority: 'low',
+          type: 'strategy',
+          title: 'Target list may be top-heavy',
+          desc: `You\'re targeting ${n.schools.length} schools${(hbs && gsb && wharton) ? ', including HBS + GSB + Wharton' : ''}. Without a clearly-differentiated story per school, the portfolio reads as "prestige shopping" rather than "fit-first."`,
+          anchor: `Target list: ${n.schools.join(', ')}`,
+          impact: 40,
+        });
+      }
+    }
+
+    // Sort by impact, highest first
+    gaps.sort((a, b) => b.impact - a.impact);
+
+    return gaps;
+  }
+
+  function truncate(s, n) {
+    if (!s) return '';
+    s = String(s).trim();
+    if (s.length <= n) return s;
+    return s.slice(0, n - 1).replace(/\s*\S*$/, '') + '…';
+  }
+
+  function populateResults(gaps, call, latMs) {
+    // Stats
+    const high = gaps.filter(g => g.priority === 'high').length;
+    const med = gaps.filter(g => g.priority === 'med').length;
+    const low = gaps.filter(g => g.priority === 'low').length;
+
+    document.getElementById('stat-row').innerHTML = `
+      <div class="stat-card">
+        <div class="stat-val ${high > 0 ? 'danger' : 'ok'}">${high}</div>
+        <div class="stat-label">High priority</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val ${med > 0 ? 'warn' : 'ok'}">${med}</div>
+        <div class="stat-label">Medium priority</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">${low}</div>
+        <div class="stat-label">Low priority</div>
+      </div>
+    `;
+
+    // Gap list
+    const listEl = document.getElementById('gap-list');
+    if (!gaps.length) {
+      listEl.innerHTML = '<div class="empty-state" style="color:var(--ok)">No gaps detected. Your application is materially complete — run again after your next revision.</div>';
+    } else {
+      listEl.innerHTML = gaps.map((g, i) => `
+        <div class="gap-card ${g.priority}" data-idx="${i}">
+          <div class="gap-priority">
+            <span class="num">${String(i + 1).padStart(2, '0')}</span>
+            <span class="lbl">${g.priority}</span>
+          </div>
+          <div class="gap-body">
+            <div class="gap-title">
+              ${escapeHTML(g.title)}
+              <span class="gap-type">${g.type}</span>
+            </div>
+            <div class="gap-desc">${escapeHTML(g.desc)}</div>
+            <div class="gap-anchor"><em>${escapeHTML(g.anchor)}</em></div>
+          </div>
+          <div class="gap-action">
+            <button class="gap-btn" data-action="resolve">Mark resolved</button>
+          </div>
+        </div>
+      `).join('');
+
+      // Wire resolve buttons (prototype demo: toggles visual state)
+      listEl.querySelectorAll('.gap-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          btn.classList.toggle('resolved');
+          btn.textContent = btn.classList.contains('resolved') ? '✓ Resolved' : 'Mark resolved';
+        });
+      });
+    }
+
+    document.getElementById('cache-stat').textContent = call.cacheHit ? 'warm · 95% read' : 'cold · write';
+    document.getElementById('lat-stat').textContent = `${latMs}ms`;
+    document.getElementById('cost-stat').textContent = `$${call.cost.toFixed(3)}`;
+  }
+</script>
+</body>
+</html>

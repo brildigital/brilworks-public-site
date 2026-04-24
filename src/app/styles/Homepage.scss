@@ -177,55 +177,42 @@
 /* Testimonials swiper */
 .testimonials-swiper {
   .swiper {
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.5);
     top: auto;
     bottom: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.06);
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    width: auto;
+    height: auto;
     &::after {
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 18px;
     }
     &:hover {
       color: #fff;
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.45);
     }
   }
   .swiper-button-prev {
     left: auto;
-    right: 56px;
+    right: 50px;
   }
   .swiper-button-next {
-    right: 4px;
+    right: 10px;
   }
   .swiper-pagination {
-    bottom: 12px !important;
-    left: 0 !important;
-    width: calc(100% - 112px) !important;
-    text-align: left !important;
-    padding-left: 4px;
+    bottom: 4px !important;
   }
   .swiper-pagination-bullet {
     background: rgba(255, 255, 255, 0.3) !important;
     width: 8px !important;
     height: 8px !important;
     border-radius: 50% !important;
-    margin: 0 4px !important;
   }
   .swiper-pagination-bullet-active {
     background: #1A5CCC !important;
-    width: 24px !important;
+    width: 8px !important;
     height: 8px !important;
-    border-radius: 4px !important;
   }
   .swiper-slide {
     height: auto !important;
@@ -610,7 +597,6 @@
   }
 }
 
-/* ── Portfolio Detail Page ─────────────────────────────── */
 .portfolio-hero {
   position: relative;
   overflow: hidden;

@@ -253,7 +253,7 @@ const Footer = () => {
   const isAiAgentsLanding =
     pathname === "/ai-agents/" || pathname === "/ai-agents";
   const isAiAgentsSubPage =
-    pathname?.includes("/ai-agents/") && !isAiAgentsLanding;
+    pathname?.startsWith("/ai-agents/") && !isAiAgentsLanding;
 
   return pathname === "/posters/" ||
     pathname.includes("/x/product-listing/spine-recovery-pro/") ||

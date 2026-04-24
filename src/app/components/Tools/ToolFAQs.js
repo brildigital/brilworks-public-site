@@ -1562,7 +1562,7 @@ const ToolFAQs = () => {
 
   const toggleItem = (index) => {
     setOpenItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
     );
   };
 

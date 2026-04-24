@@ -56,8 +56,21 @@ const nextConfig = {
 
     return config;
   },
+  rewrites: async () => {
+    return [
+      {
+        source: `/agents/admission-os/`,
+        destination: `/agents/admission-os/index.html`,
+      },
+    ];
+  },
   redirects: async () => {
     return [
+      {
+        source: `/portfolio/ai-agent/`,
+        destination: `/portfolio/ai-agents/`,
+        statusCode: 301,
+      },
       {
         source: `/vugo/`,
         destination: `/portfolio/`,

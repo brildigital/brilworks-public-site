@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intake · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .intake-wrap { max-width: 640px; }
+  .section {
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .section-head {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .q {
+    margin-bottom: 16px;
+  }
+  .q label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .q .hint {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .q input[type=text],
+  .q input[type=number],
+  .q textarea,
+  .q select {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    padding: 9px 12px;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 120ms, background 120ms;
+  }
+  .q input:focus, .q textarea:focus, .q select:focus {
+    border-color: var(--accent);
+    background: var(--paper);
+  }
+  .q textarea {
+    resize: vertical;
+    min-height: 64px;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+  }
+  .chip-opt {
+    padding: 5px 12px;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    user-select: none;
+    transition: all 100ms;
+  }
+  .chip-opt:hover { border-color: var(--ink-soft); }
+  .chip-opt.selected {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  .progress-bar {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    padding: 12px 0 16px;
+    margin: -12px 0 24px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 10;
+  }
+  .pbar {
+    flex: 1;
+    height: 3px;
+    background: var(--panel-deep);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .pbar-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 220ms ease;
+  }
+  .pbar-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .submit-row {
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="intake-wrap">
+      <div class="page-header">
+        <div class="page-kicker">Step 1 · Intake form</div>
+        <h1 class="page-title">Tell us about you.</h1>
+        <p class="page-subtitle">
+          30 questions, about 10 minutes. Everything here feeds the Strategy agent, which builds your Narrative Anchor.
+          Don't over-polish — raw answers produce better NAOs than performative ones.
+        </p>
+      </div>
+
+      <div class="progress-bar">
+        <span class="pbar-count"><span id="pc">0</span> of 30 answered</span>
+        <div class="pbar"><div class="pbar-fill" id="pbar-fill"></div></div>
+      </div>
+
+      <form id="intake-form">
+        <section class="section">
+          <div class="section-kicker">Section 1 · Background</div>
+          <div class="section-head">Who you are right now</div>
+
+          <div class="q two-col">
+            <div><label>Full name</label>
+              <input type="text" name="name" placeholder="e.g. Priya Sharma"></div>
+            <div><label>Age</label>
+              <input type="number" name="age" min="18" max="60" placeholder="e.g. 28"></div>
+          </div>
+          <div class="q two-col">
+            <div><label>Current role</label>
+              <input type="text" name="currentRole" placeholder="e.g. Senior Product Manager"></div>
+            <div><label>Current employer</label>
+              <input type="text" name="currentEmployer" placeholder="e.g. Razorpay"></div>
+          </div>
+          <div class="q two-col">
+            <div><label>Years of full-time experience</label>
+              <input type="number" name="yearsExperience" min="0" max="40" placeholder="e.g. 5"></div>
+            <div><label>Country</label>
+              <input type="text" name="country" placeholder="e.g. India"></div>
+          </div>
+          <div class="q">
+            <label>One sentence describing your career so far</label>
+            <div class="hint">The one you'd give a stranger at a dinner party.</div>
+            <textarea name="careerSummary" rows="2" placeholder="e.g. Product manager who's spent five years building cross-border payments at a Bangalore fintech."></textarea>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-kicker">Section 2 · Goals</div>
+          <div class="section-head">Where you're trying to go</div>
+
+          <div class="q">
+            <label>Short-term goal (role you want immediately post-MBA)</label>
+            <textarea name="shortTerm" rows="2" placeholder="e.g. Lead product at a growth-stage climate fintech."></textarea>
+          </div>
+          <div class="q">
+            <label>Long-term goal (where you want to be in 10 years)</label>
+            <textarea name="longTerm" rows="2" placeholder="e.g. Build an emerging-markets climate finance company."></textarea>
+          </div>
+          <div class="q">
+            <label>Why MBA, why now?</label>
+            <div class="hint">Be specific. "For the network" alone is rarely enough.</div>
+            <textarea name="whyMba" rows="3" placeholder="The fluency gap between PM work and founder-mode is what I want to close."></textarea>
+          </div>
+          <div class="q">
+            <label>Industries you're targeting</label>
+            <div class="chip-group" data-field="industries">
+              <span class="chip-opt">Tech</span><span class="chip-opt">Finance</span><span class="chip-opt">Consulting</span><span class="chip-opt">Healthcare</span><span class="chip-opt">Climate / Energy</span><span class="chip-opt">Social impact</span><span class="chip-opt">Retail / CPG</span><span class="chip-opt">Manufacturing</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-kicker">Section 3 · Programs</div>
+          <div class="section-head">Where you're applying</div>
+
+          <div class="q">
+            <label>Target schools (select up to 5)</label>
+            <div class="chip-group" data-field="schools">
+              <span class="chip-opt">HBS</span><span class="chip-opt">Stanford GSB</span><span class="chip-opt">Wharton</span><span class="chip-opt">Kellogg</span><span class="chip-opt">Booth</span><span class="chip-opt">Columbia</span><span class="chip-opt">MIT Sloan</span><span class="chip-opt">Ross</span><span class="chip-opt">Fuqua</span><span class="chip-opt">Yale SOM</span><span class="chip-opt">Darden</span><span class="chip-opt">INSEAD</span><span class="chip-opt">LBS</span><span class="chip-opt">IESE</span><span class="chip-opt">ISB</span>
+            </div>
+          </div>
+          <div class="q three-col">
+            <div><label>Round</label>
+              <select name="applicationRound">
+                <option value="">—</option><option>R1</option><option>R2</option><option>R3</option>
+              </select></div>
+            <div><label>GMAT / GRE score</label>
+              <input type="text" name="gmat" placeholder="e.g. 735"></div>
+            <div><label>Undergrad GPA</label>
+              <input type="text" name="gpa" placeholder="e.g. 3.7 / 4.0"></div>
+          </div>
+          <div class="q">
+            <label>Most-visited school. What drew you to it?</label>
+            <textarea name="topSchoolReason" rows="2" placeholder="A specific person, class, club, or experience."></textarea>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-kicker">Section 4 · Constraints</div>
+          <div class="section-head">What shapes your decision</div>
+
+          <div class="q two-col">
+            <div><label>Financial constraints</label>
+              <select name="finConstraint">
+                <option value="">—</option><option>Need full scholarship</option><option>Need partial aid</option><option>Can self-fund</option><option>Sponsor / employer funded</option>
+              </select></div>
+            <div><label>Geographic preference</label>
+              <select name="geoPref">
+                <option value="">—</option><option>US only</option><option>Europe only</option><option>Asia only</option><option>No preference</option>
+              </select></div>
+          </div>
+          <div class="q">
+            <label>Family or life constraints the reader should know about</label>
+            <div class="hint">Optional — but useful context for recommenders and fit reasoning.</div>
+            <textarea name="lifeConstraints" rows="2" placeholder="e.g. Caring for an aging parent, partner's career, visa considerations…"></textarea>
+          </div>
+          <div class="q">
+            <label>Things you will not compromise on</label>
+            <textarea name="nonNegotiables" rows="2" placeholder="e.g. Program culture, summer internship quality, specific faculty."></textarea>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-kicker">Section 5 · Voice</div>
+          <div class="section-head">How you actually sound</div>
+
+          <div class="q">
+            <label>A moment you're proud of — in 3–5 sentences, unedited</label>
+            <div class="hint">Your natural register is worth more than your polished one. Don't rewrite.</div>
+            <textarea name="proudMoment" rows="5" placeholder="Tell it like you'd tell a friend."></textarea>
+          </div>
+          <div class="q">
+            <label>A time you failed or changed your mind — in 3–5 sentences, unedited</label>
+            <textarea name="failure" rows="5" placeholder="What happened, what you learned, what you'd do differently."></textarea>
+          </div>
+          <div class="q">
+            <label>Your writing register leans toward…</label>
+            <div class="chip-group" data-field="register" data-single="true">
+              <span class="chip-opt">Plain / direct</span><span class="chip-opt">Warm / narrative</span><span class="chip-opt">Analytical / precise</span><span class="chip-opt">Formal / traditional</span>
+            </div>
+          </div>
+          <div class="q">
+            <label>Sentence length you reach for</label>
+            <div class="chip-group" data-field="sentenceLength" data-single="true">
+              <span class="chip-opt">Short, punchy</span><span class="chip-opt">Medium, varied</span><span class="chip-opt">Long, layered</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="submit-row">
+          <button type="button" class="btn ghost" id="save-draft">Save draft &amp; exit</button>
+          <button type="submit" class="btn">Run Strategy agent <span class="arrow">→</span></button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'intake', crumbs: ['Intake', 'Form'] });
+
+  const INTAKE_KEY = 'admissions_os_intake_v1';
+
+  // ---------- state collection ----------
+  const chipState = {};
+  document.querySelectorAll('.chip-group').forEach(group => {
+    const field = group.dataset.field;
+    const single = group.dataset.single === 'true';
+    chipState[field] = [];
+    group.querySelectorAll('.chip-opt').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (single) {
+          group.querySelectorAll('.chip-opt').forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+          chipState[field] = [chip.textContent];
+        } else {
+          chip.classList.toggle('selected');
+          const v = chip.textContent;
+          const i = chipState[field].indexOf(v);
+          if (i === -1) chipState[field].push(v);
+          else chipState[field].splice(i, 1);
+        }
+        updateProgress();
+        persistDraft();
+      });
+    });
+  });
+
+  const form = document.getElementById('intake-form');
+  const pbarFill = document.getElementById('pbar-fill');
+  const pc = document.getElementById('pc');
+
+  function collectAnswers() {
+    const data = new FormData(form);
+    const answers = {};
+    for (const [k, v] of data.entries()) answers[k] = v.trim();
+    return { ...answers, ...chipState };
+  }
+
+  function countAnswered(answers) {
+    let n = 0;
+    for (const [k, v] of Object.entries(answers)) {
+      if (Array.isArray(v)) { if (v.length) n++; }
+      else if (typeof v === 'string' && v.trim().length) n++;
+    }
+    return n;
+  }
+
+  function updateProgress() {
+    const n = countAnswered(collectAnswers());
+    pc.textContent = n;
+    pbarFill.style.width = `${Math.min(100, (n / 30) * 100)}%`;
+  }
+
+  function persistDraft() {
+    localStorage.setItem(INTAKE_KEY, JSON.stringify(collectAnswers()));
+  }
+
+  // restore draft if present
+  (function restore() {
+    try {
+      const raw = localStorage.getItem(INTAKE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      Object.entries(data).forEach(([k, v]) => {
+        const el = form.elements.namedItem(k);
+        if (el && typeof v === 'string') el.value = v;
+        else if (Array.isArray(v)) {
+          const group = document.querySelector(`.chip-group[data-field="${k}"]`);
+          if (group) {
+            group.querySelectorAll('.chip-opt').forEach(c => {
+              if (v.includes(c.textContent)) c.classList.add('selected');
+            });
+            chipState[k] = [...v];
+          }
+        }
+      });
+      updateProgress();
+    } catch {}
+  })();
+
+  form.addEventListener('input', () => { updateProgress(); persistDraft(); });
+
+  document.getElementById('save-draft').addEventListener('click', () => {
+    persistDraft();
+    alert('Draft saved in this browser. Come back anytime.');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const answers = collectAnswers();
+    if (countAnswered(answers) < 10) {
+      if (!confirm('You\'ve answered fewer than 10 questions. The Strategy agent will produce a thin NAO. Continue anyway?')) return;
+    }
+
+    // Seed the NAO with raw answers — Strategy agent will enrich it.
+    const nao = loadNAO();
+    nao.applicant.name = answers.name || null;
+    nao.applicant.background = answers.careerSummary || null;
+    nao.applicant.currentRole = answers.currentRole || null;
+    nao.applicant.yearsExperience = answers.yearsExperience || null;
+    nao.goals.shortTerm = answers.shortTerm || null;
+    nao.goals.longTerm = answers.longTerm || null;
+    nao.goals.whyMba = answers.whyMba || null;
+    nao.schools = Array.isArray(answers.schools) ? answers.schools : [];
+    nao.constraints.applicationRound = answers.applicationRound || null;
+    nao.constraints.gmat = answers.gmat || null;
+    // stash full raw intake in a private field so Strategy has it all
+    nao._rawIntake = answers;
+    saveNAO(nao);
+
+    markStepDone('intake');
+    location.href = '2-strategy.html';
+  });
+</script>
+</body>
+</html>

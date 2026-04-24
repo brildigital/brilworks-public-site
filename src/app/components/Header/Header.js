@@ -22,7 +22,7 @@ const NewHeader = () => {
   useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 767 && setOpenNav(false)
+      () => window.innerWidth >= 767 && setOpenNav(false),
     );
     const fetchSlugs = async () => {
       try {
@@ -41,7 +41,7 @@ const NewHeader = () => {
               ?.replaceAll("-", " ")
               ?.split(" ")
               ?.map(
-                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length)
+                (d) => d.charAt(0).toLocaleUpperCase() + d.slice(1, d.length),
               )
               .join(" "),
           path: "/use-case/" + story.slug + "/",
@@ -86,37 +86,41 @@ const NewHeader = () => {
                 />
               </Link>
             </div>
-            <div className="flex items-center">
-              <div className="mr-4 hidden md:block">
-                <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6">
-                  <div className="we_are_hiring hidden">
-                    <Svgs name="we-are-hiring" />
-                  </div>
-                  {menuItemSampleCopy
-                    ?.filter((menuItem) => !menuItem?.hideInHeader)
-                    ?.map((menu) =>
-                      !menu?.isMegaMenu ? (
-                        <MenuItem
-                          key={menu?.name}
-                          name={menu?.name}
-                          path={menu?.path}
-                          className="header_font"
-                          onClick={() => setOpenNav(false)}
-                        />
-                      ) : (
-                        <MegaMenu
-                          key={menu?.name}
-                          name={menu?.name}
-                          pathname={pathname}
-                          heading={menu?.heading}
-                          setOpenNav={setOpenNav}
-                          menuItems={menu?.menuItems}
-                        />
-                      )
-                    )}
-                </ul>
+            {pathname !== "/posters/" ? (
+              <div className="flex items-center">
+                <div className="mr-4 hidden md:block">
+                  <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6">
+                    <div className="we_are_hiring hidden">
+                      <Svgs name="we-are-hiring" />
+                    </div>
+                    {menuItemSampleCopy
+                      ?.filter((menuItem) => !menuItem?.hideInHeader)
+                      ?.map((menu) =>
+                        !menu?.isMegaMenu ? (
+                          <MenuItem
+                            key={menu?.name}
+                            name={menu?.name}
+                            path={menu?.path}
+                            className="header_font"
+                            onClick={() => setOpenNav(false)}
+                          />
+                        ) : (
+                          <MegaMenu
+                            key={menu?.name}
+                            name={menu?.name}
+                            pathname={pathname}
+                            heading={menu?.heading}
+                            setOpenNav={setOpenNav}
+                            menuItems={menu?.menuItems}
+                          />
+                        ),
+                      )}
+                  </ul>
+                </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
             <div className="flex items-center gap-5">
               <ButtonV2
                 onClick={() => setOpenNav(false)}
@@ -148,6 +152,7 @@ const NewHeader = () => {
             </div>
           </div>
         </Navbar>
+
         <SideMenu open={openNav} close={() => setOpenNav(false)} />
       </div>
     </header>

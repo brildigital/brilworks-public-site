@@ -7,134 +7,115 @@ import {
   faAngular,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
-import { ShieldCheck, GraduationCap, Users, Lock } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
-import IndustryMidCTA from "./IndustryMidCTA";
-import IndustryTrustBar from "./IndustryTrustBar";
 
 const EdTechFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const TechStackWeWorkWith = dynamic(
-  () => import("../Technologies/TechStackWeWorkWith"),
-  { ssr: false }
+const TechStackWeWorkWith = dynamic(() =>
+  import("../Technologies/TechStackWeWorkWith")
 );
 const SolutionEngagementAndHowCanStart = dynamic(() =>
   import("./SolutionEngagementAndHowCanStart")
 );
-const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
 const EdTech = () => {
-  const heroStats = [
-    { value: "120+", label: "Products Shipped" },
-    { value: "15+", label: "EdTech Platforms" },
-    { value: "500K+", label: "Learners Served" },
-    { value: "98%", label: "Client Retention" },
-  ];
-
-  const trustBarItems = [
-    { icon: ShieldCheck, label: "AWS Consulting Partner" },
-    { icon: GraduationCap, label: "15+ EdTech Platforms" },
-    { icon: Users, label: "500K+ Learners Served" },
-    { icon: Lock, label: "COPPA, FERPA & GDPR Ready" },
-  ];
-
   const edTechServices1 = {
     title: "Our EdTech Development Solutions",
-    desc: "End-to-end education technology solutions — from e-learning platforms to AI-driven adaptive learning systems.",
     buttonText: "Build My EdTech App",
     servicesList: [
       {
         title: "E-Learning Platform Development",
-        iconSrc: "/images/v2/read-icon.svg",
         description:
-          "End-to-end e-learning platforms with online courses, content delivery, video streaming, and student assessments. Built for scale from day one.",
+          "We build end-to-end e-learning platforms that support online courses, content delivery, video streaming, and student assessments. With built-in analytics and user-friendly dashboards, our solutions help educators manage everything from enrollment to performance tracking.",
         value: "e-learning-platform-development",
-        btnText: "Build My Platform",
+        imageSrc: "/images/v2/E-Learning-Platform-Development.webp",
+        imageAlt: "E-Learning Platform Development",
       },
       {
         title: "Learning Management System (LMS) Development",
-        iconSrc: "/images/v2/experience-in- education-icon.svg",
         description:
-          "Custom LMS with role-based access, gamification, progress tracking, and attendance management. Simplify training for any organization size.",
+          "Our LMS development services help schools and enterprises simplify training and upskilling. We design systems with role-based access, gamified learning, attendance tracking, and secure content management — all adaptable to your organization’s workflow.",
         value: "lms-development",
-        btnText: "Build My LMS",
+        imageSrc:
+          "/images/v2/Learning-Management-System-(LMS)-Development.webp",
+        imageAlt: "Learning Management System (LMS) Development",
       },
       {
         title: "Mobile Learning App Development",
-        iconSrc: "/images/v2/interactive-ui-icon.svg",
         description:
-          "Cross-platform iOS & Android apps for on-the-go learning, exam preparation, and micro-courses. React Native & Flutter expertise.",
+          "Reach learners wherever they are. We create cross-platform mobile apps that deliver lessons, tests, and feedback in a clean and interactive format. Ideal for on-the-go learning, exam prep, or personalized tutoring experiences.",
         value: "mobile-learning-app-development",
-        btnText: "Build My App",
+        imageSrc: "/images/v2/Mobile-Learning-App-Development.webp",
+        imageAlt: "Mobile Learning App Development",
       },
       {
         title: "School & University Management Software",
-        iconSrc: "/images/v2/calendar-icon.svg",
         description:
-          "Automate admissions, scheduling, grading, and teacher-parent-student communication. Replace spreadsheets with a unified platform.",
+          "Our school management systems automate administrative tasks like admissions, scheduling, attendance, and communication between teachers, parents, and students. We help educational institutions run efficiently while improving student engagement.",
         value: "school-university-management-software",
-        btnText: "Build My System",
+        imageSrc: "/images/v2/School-University-Management-Software.webp",
+        imageAlt: "School & University Management Software",
       },
       {
         title: "Virtual Classroom & Video Learning Platforms",
-        iconSrc: "/images/v2/play-theme-icon.svg",
         description:
-          "Real-time teaching with video conferencing, whiteboard, screen sharing, and recording. Zoom, Twilio, and custom WebRTC integrations.",
+          "Enable real-time teaching with integrated video conferencing, whiteboard tools, breakout sessions, and recording features. We build virtual classroom software that gives educators full control and learners a seamless experience.",
         value: "virtual-classroom-video-learning-platforms",
-        btnText: "Build My Classroom",
+        imageSrc: "/images/v2/Virtual-Classroom-Video-Learning-Platforms.webp",
+        imageAlt: "Virtual Classroom & Video Learning Platforms",
       },
       {
         title: "Adaptive & AI-Driven Learning Solutions",
-        iconSrc: "/images/v2/data-driven-icon.svg",
         description:
-          "Intelligent systems that analyze learner behavior and personalize content paths. AI-powered assessments, recommendations, and analytics.",
+          "We design intelligent systems that analyze learner behavior, recommend personalized content, and adjust learning paths automatically. Perfect for training platforms, corporate learning, and education startups that want to use data to improve outcomes.",
         value: "adaptive-ai-learning-solutions",
-        btnText: "Explore AI Solutions",
+        imageSrc: "/images/v2/Adaptive-AI-Driven-Learning-Solutions.webp",
+        imageAlt: "Adaptive & AI-Driven Learning Solutions",
       },
       {
         title: "Custom EdTech Platform Development",
-        iconSrc: "/images/v2/developer-icon.svg",
         description:
-          "Have a unique EdTech idea? We build tailored solutions from MVP to enterprise. Your vision, our engineering — EdTech MVP development in 10-20 weeks.",
+          "If you need a tailored solution, we develop custom EdTech products from the ground up — integrating your branding, curriculum logic, and monetization models. From MVPs for startups to enterprise-grade systems, we bring your education technology vision to life.",
         value: "custom-edtech-platform-development",
-        btnText: "Start My Project",
+        imageSrc: "/images/v2/Custom-EdTech-Platform-Development.webp",
+        imageAlt: "Custom EdTech Platform Development",
       },
     ],
   };
 
   const whyChooseUs = {
-    title: "Why EdTech Founders Choose Us",
+    title: "Why Choose Us",
     benefits: [
       {
-        title: "EdTech Domain Expertise",
+        title: "Experience Across Education Sectors",
         description:
-          "15+ EdTech platforms built. We understand learner journeys, educator workflows, and compliance (COPPA, FERPA, GDPR).",
+          "We’ve built software for schools, edtech startups, and enterprise training providers.",
         icon: "/images/v2/experience-in- education-icon.svg",
       },
       {
         title: "Scalable Architecture",
         description:
-          "Cloud-native, microservices-based architecture designed for large learner volumes. Auto-scaling from 100 to 1M+ users.",
+          "Designed to handle large numbers of learners, courses, and interactions.",
         icon: "/images/v2/scalable-architecture-icon.svg",
       },
       {
         title: "Data-Driven Design",
         description:
-          "Built-in analytics dashboards, learner behavior tracking, and engagement metrics. Data-informed decisions from day one.",
+          "Every solution includes reporting and analytics to help you measure performance and engagement.",
         icon: "/images/v2/data-driven-icon.svg",
       },
       {
         title: "User-First Approach",
         description:
-          "UX research with real educators and learners. High adoption rates because we design for how people actually learn.",
+          "Our apps are intuitive for both educators and learners, ensuring adoption and satisfaction.",
         icon: "/images/v2/user-first-approach-icon.svg",
       },
       {
         title: "Ongoing Support",
         description:
-          "Post-launch maintenance, performance optimization, and feature iterations. Your platform grows with your user base.",
+          "We stay with you post-launch to maintain, update, and improve your platform as your audience grows.",
         icon: "/images/v2/ongoing-support-icon.svg",
       },
     ],
@@ -173,8 +154,14 @@ const EdTech = () => {
       title: "Databases",
       value: "databases",
       items: [
-        { label: "MongoDB", iconifyIcon: "/images/mongodb.svg" },
-        { label: "PostgreSQL", iconifyIcon: "/images/postgresql.svg" },
+        {
+          label: "MongoDB",
+          iconifyIcon: "/images/mongodb.svg",
+        },
+        {
+          label: "PostgreSQL",
+          iconifyIcon: "/images/postgresql.svg",
+        },
         { label: "Firebase", iconifyIcon: "/images/firebase-icon.svg" },
       ],
     },
@@ -184,9 +171,15 @@ const EdTech = () => {
       items: [
         { label: "Payment Gateways" },
         { label: "Video APIs (Zoom, Twilio)" },
-        { label: "LMS APIs" },
-        { label: "AI/ML Models" },
-        { label: "ERP Connectors" },
+        {
+          label: "LMS APIs",
+        },
+        {
+          label: "AI/ML Models",
+        },
+        {
+          label: "ERP Connectors",
+        },
       ],
     },
     {
@@ -206,47 +199,36 @@ const EdTech = () => {
   useEffect(() => {
     scrollEffect();
     window.addEventListener("scroll", scrollEffect);
-    return () => window.removeEventListener("scroll", scrollEffect);
+
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
   }, []);
 
   return (
     <>
       <SolutionHeroSection
-        technologyText="EdTech Software Development Services"
-        title='Build Your <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">EdTech Platform</span> — Launch in 10-20 Weeks'
-        description="From MVP to enterprise — we build custom LMS, e-learning platforms, and AI-powered education apps. Your EdTech startup development partner for scalable, compliant software."
+        technologyText="EdTech Software Development Company"
+        title="EdTech Software Development Services"
+        description="120+ products shipped across 20 countries. We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences."
         imageSrc="/images/v2/EdTech-Software-Development-Services-banner.webp"
-        buttonText="Get My Free Consultation"
-        stats={heroStats}
+        buttonText="Get a Free Consultation"
       />
-      <IndustryTrustBar items={trustBarItems} />
       <ServicesSection sectionId="services-one" serviceData={edTechServices1} />
-      <IndustryMidCTA
-        title="Ready to Build an EdTech App?"
-        description="Get a free consultation and project estimate. We respond within 24 hours."
-      />
       <TechStackWeWorkWith
         active="frontend"
         title="Technologies We Use"
         techStackList={techStackList}
       />
-      <MultipleCardWithIconBG data={whyChooseUs} />
-      <ClientReviews />
+      <MultipleCardWithIconBG bgClass="bg-sectionBG" data={whyChooseUs} />
       <SolutionEngagementAndHowCanStart />
-      <EdTechFAQs />
       <SolutionContactForm
-        title="Ready to Build Your EdTech Platform?"
-        description="You're one conversation away from turning your EdTech idea into a scalable platform. Tell us what you're building — we'll show you how we can help."
+        title="Tell Us About Your EdTech Project"
+        description="Share your requirements and we'll get back with a project plan within 48 hours."
         messageRequired={false}
-        submitLabel="Get My Free EdTech Consultation"
-        benefits={[
-          "Free 30-minute consultation with an EdTech specialist",
-          "Detailed project proposal within 48 hours",
-          "48-hour risk-free trial — no commitment",
-          "Response guaranteed within 24 business hours",
-          "COPPA, FERPA & GDPR compliance built in",
-        ]}
+        submitLabel="Get My Free Estimate"
       />
+      <EdTechFAQs />
     </>
   );
 };

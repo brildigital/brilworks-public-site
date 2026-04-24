@@ -10,11 +10,7 @@ const LastUpdated = ({ date }) => {
   });
 
   return (
-    <div className="container max-w-[1280px] mx-auto px-5 md:px-10">
-      <p className="text-sm text-[#6b7280] mt-4">
-        Last updated: {formatted}
-      </p>
-    </div>
+    <p className="sr-only">Last updated: {formatted}</p>
   );
 };
 

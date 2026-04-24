@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework gate · Admissions OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shell.css">
+<style>
+  .fw-wrap { max-width: 860px; }
+
+  /* Agent card */
+  .agent-card {
+    display: flex; gap: 20px; align-items: flex-start;
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 20px 22px; margin-bottom: 22px;
+  }
+  .agent-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--accent); color: var(--paper);
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .agent-name { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 15px; margin-bottom: 2px; }
+  .agent-role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-faint); margin-bottom: 10px; }
+  .agent-desc { font-family: 'Fraunces', serif; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+  .section-kicker-inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 28px 0 12px;
+  }
+
+  /* Rule book */
+  .rule-list { display: flex; flex-direction: column; gap: 10px; }
+  .rule-card {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 14px 18px;
+    display: grid; grid-template-columns: 72px 1fr auto; gap: 16px; align-items: center;
+  }
+  .rule-id {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-faint); letter-spacing: 0.06em;
+  }
+  .rule-body { min-width: 0; }
+  .rule-name {
+    font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: 14px; color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .rule-desc {
+    font-family: 'Fraunces', serif; font-size: 13px;
+    color: var(--ink-soft); line-height: 1.5;
+  }
+  .rule-severity {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px;
+  }
+  .rule-severity.block { background: var(--danger-soft); color: var(--danger); }
+  .rule-severity.warn  { background: var(--warn-soft); color: var(--warn); }
+  .rule-severity.soft  { background: var(--panel-deep); color: var(--ink-faint); }
+
+  /* Live linter */
+  .linter {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 20px 22px;
+  }
+  .linter-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; gap: 16px; }
+  .linter-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  .linter-hint { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; color: var(--ink-faint); }
+  .linter-input {
+    width: 100%; min-height: 120px;
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 14px 16px; resize: vertical;
+    font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.6;
+    color: var(--ink);
+  }
+  .linter-input:focus { outline: none; border-color: var(--accent); }
+
+  .lint-status {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 12px; min-height: 22px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .lint-status.ok   { color: var(--ok); }
+  .lint-status.warn { color: var(--warn); }
+  .lint-status.bad  { color: var(--danger); }
+
+  .lint-findings { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .finding {
+    display: grid; grid-template-columns: 26px 1fr;
+    gap: 12px; align-items: flex-start;
+    padding: 12px 14px; border-radius: 6px;
+    background: var(--paper-deep); border-left: 3px solid var(--warn);
+  }
+  .finding.block { border-left-color: var(--danger); background: var(--danger-soft); }
+  .finding.warn  { border-left-color: var(--warn); background: var(--warn-soft); }
+  .finding.soft  { border-left-color: var(--ink-faint); background: var(--paper-deep); }
+  .finding-icon {
+    font-family: 'JetBrains Mono', monospace; font-weight: 600;
+    text-align: center; color: var(--warn);
+  }
+  .finding.block .finding-icon { color: var(--danger); }
+  .finding.soft  .finding-icon { color: var(--ink-faint); }
+
+  .finding-title {
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 12px;
+    margin-bottom: 3px;
+  }
+  .finding-rule {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.06em; color: var(--ink-faint);
+    margin-right: 8px;
+  }
+  .finding-body {
+    font-family: 'Fraunces', serif; font-size: 13px;
+    color: var(--ink-soft); line-height: 1.55;
+  }
+  .finding-body em { font-style: italic; }
+  .finding-body code {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--paper); padding: 1px 5px; border-radius: 3px;
+    border: 1px solid var(--rule);
+  }
+
+  /* Suggested examples */
+  .ex-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .ex-chip {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    padding: 5px 10px; border: 1px solid var(--rule); border-radius: 3px;
+    background: var(--paper); color: var(--ink-soft);
+    cursor: pointer; transition: all 140ms;
+  }
+  .ex-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--paper); }
+
+  /* Document scan */
+  .scan-card {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 18px 20px; margin-top: 12px;
+  }
+  .scan-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .scan-title { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; }
+  .scan-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-faint); }
+
+  .scan-prose {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 16px 18px; margin-top: 10px;
+    font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.7;
+    color: var(--ink);
+    max-height: 360px; overflow-y: auto;
+  }
+  .scan-prose mark.unanchored {
+    background: var(--warn-soft); color: var(--ink);
+    padding: 0 3px; border-bottom: 2px solid var(--warn);
+    cursor: help;
+  }
+  .scan-prose mark.block {
+    background: var(--danger-soft); color: var(--ink);
+    padding: 0 3px; border-bottom: 2px solid var(--danger);
+  }
+  .scan-legend { display: flex; gap: 18px; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-faint); }
+  .scan-legend .sw {
+    display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .scan-legend .sw.warn { background: var(--warn-soft); border: 1px solid var(--warn); }
+  .scan-legend .sw.block { background: var(--danger-soft); border: 1px solid var(--danger); }
+
+  .empty-state {
+    background: var(--panel); border: 1px dashed var(--rule);
+    border-radius: 8px; padding: 16px 18px; margin-top: 10px;
+    font-family: 'Fraunces', serif; font-size: 13px; font-style: italic;
+    color: var(--ink-faint); text-align: center;
+  }
+
+  .cost-footer {
+    display: flex; gap: 22px; flex-wrap: wrap;
+    padding: 14px 20px; margin-top: 24px;
+    background: var(--panel-deep); border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .cost-footer .v { color: var(--ink); font-weight: 500; }
+
+  .next-row {
+    display: flex; gap: 12px; margin-top: 28px;
+    padding-top: 24px; border-top: 1px solid var(--rule);
+  }
+</style>
+</head>
+<body>
+<div class="workflow">
+  <header class="topbar" id="topbar"></header>
+  <nav class="stepper" id="stepper"></nav>
+  <main class="main">
+    <div class="fw-wrap">
+      <div class="page-header">
+        <div class="page-kicker">Step 5 · Framework Gate</div>
+        <h1 class="page-title">The layer that says "prove it."</h1>
+        <p class="page-subtitle">
+          Every other agent can suggest, rewrite, and score. The Framework Gate is the only
+          layer that can <em>block</em>. It runs against every claim before it's allowed
+          into the applicant's documents, and it runs against every agent output before
+          it reaches the user. Its job is to make sure nothing enters the NAO that the
+          applicant can't defend in an interview.
+        </p>
+      </div>
+
+      <div class="agent-card">
+        <div class="agent-avatar">F</div>
+        <div>
+          <div class="agent-name">Framework Gate</div>
+          <div class="agent-role">Sonnet 4.6 · deterministic rules · temperature 0</div>
+          <div class="agent-desc">
+            Pure rule engine. No creativity, no rewrites, no suggestions — just pass / warn / block
+            on every output. Fires in the editor as you type, and again on every agent response
+            before it reaches the UI. Rules are deterministic so a reviewer can always trace
+            <em>why</em> a line was flagged.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-kicker-inline">Rules currently enforced</div>
+      <div class="rule-list">
+        <div class="rule-card">
+          <div class="rule-id">FG-01</div>
+          <div class="rule-body">
+            <div class="rule-name">Unanchored claim</div>
+            <div class="rule-desc">A sentence asserting an achievement, number, or outcome that does not map to a claim in the NAO with evidence attached.</div>
+          </div>
+          <div class="rule-severity block">block</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-id">FG-02</div>
+          <div class="rule-body">
+            <div class="rule-name">Fabricated metric</div>
+            <div class="rule-desc">A specific number that does not appear anywhere in the raw intake, resume, or any NAO claim's evidence field.</div>
+          </div>
+          <div class="rule-severity block">block</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-id">FG-03</div>
+          <div class="rule-body">
+            <div class="rule-name">Out-of-voice register</div>
+            <div class="rule-desc">Language that drifts from the applicant's voice fingerprint (register, sentence length, vocab tier) by more than the tolerance threshold.</div>
+          </div>
+          <div class="rule-severity warn">warn</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-id">FG-04</div>
+          <div class="rule-body">
+            <div class="rule-name">Unsupported superlative</div>
+            <div class="rule-desc">"Best," "first," "only," "most" assertions without an accompanying comparator or scope. Everyone says this. Nobody proves it.</div>
+          </div>
+          <div class="rule-severity warn">warn</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-id">FG-05</div>
+          <div class="rule-body">
+            <div class="rule-name">Boilerplate phrase</div>
+            <div class="rule-desc">Phrases the AdCom has seen in thousands of essays. <em>"Since I was young," "passionate about," "hit the ground running."</em></div>
+          </div>
+          <div class="rule-severity soft">soft</div>
+        </div>
+        <div class="rule-card">
+          <div class="rule-id">FG-06</div>
+          <div class="rule-body">
+            <div class="rule-name">School name confusion</div>
+            <div class="rule-desc">Referencing a program, professor, or course that is not from the school this essay is being submitted to.</div>
+          </div>
+          <div class="rule-severity block">block</div>
+        </div>
+      </div>
+
+      <div class="section-kicker-inline">Live linter · paste a claim</div>
+      <div class="linter">
+        <div class="linter-head">
+          <span class="linter-label">Try it — type or paste a sentence</span>
+          <span class="linter-hint" id="lint-nao-ver">Reading NAO v—</span>
+        </div>
+        <textarea id="lint-input" class="linter-input" placeholder="e.g. I led the largest cross-border payments launch in Asia and grew revenue by 300% in 6 months, which is what every great founder does."></textarea>
+        <div class="lint-status" id="lint-status"><span>Type to lint.</span><span id="rules-fired">0 rules fired</span></div>
+        <div class="lint-findings" id="lint-findings"></div>
+        <div class="ex-row" id="ex-row"></div>
+      </div>
+
+      <div class="section-kicker-inline">Document scan · Kellogg essay 1 draft</div>
+      <div class="scan-card">
+        <div class="scan-head">
+          <div class="scan-title">Scanning the current essay draft</div>
+          <div class="scan-meta" id="scan-meta">—</div>
+        </div>
+        <div id="scan-container">
+          <div class="empty-state" id="scan-empty">No essay draft yet. Visit the <a href="3-editor.html">essay editor</a> to write one, then come back.</div>
+          <div class="scan-prose" id="scan-prose" style="display:none"></div>
+          <div class="scan-legend" style="display:none" id="scan-legend">
+            <span><span class="sw warn"></span>Unanchored claim · warn</span>
+            <span><span class="sw block"></span>Fabricated metric · block</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cost-footer">
+        <span>Model: <span class="v">Sonnet 4.6 · deterministic</span></span>
+        <span>Latency (typical): <span class="v">180–260ms per gate call</span></span>
+        <span>Runs on: <span class="v">every agent output + inline as you type</span></span>
+      </div>
+
+      <div class="next-row">
+        <a class="btn" href="5-gap-analysis.html">Continue to gap analysis <span class="arrow">→</span></a>
+        <a class="btn secondary" href="index.html">Back to overview</a>
+      </div>
+    </div>
+  </main>
+  <aside class="nao-panel" id="nao-panel"></aside>
+</div>
+
+<script src="_shell.js"></script>
+<script>
+  mountShell({ activeStep: 'framework', crumbs: ['Framework gate', 'Rule-based verification'] });
+
+  const nao = loadNAO();
+  document.getElementById('lint-nao-ver').textContent = nao.version > 0
+    ? `Reading NAO v${nao.version} · ${(nao.claims || []).length} claims`
+    : 'NAO is empty — gate will rely on raw heuristics only.';
+
+  // Mark this step visited
+  markStepDone('framework');
+
+  // ---------- rule implementations ----------
+  // All rules return either null (pass) or a finding object:
+  //   { rule, severity, title, body }
+  // They operate on a single sentence at a time so they can light up inline.
+
+  const BOILERPLATE = [
+    /since i was (a )?(young|child|kid)/i,
+    /passionate about/i,
+    /hit the ground running/i,
+    /think outside the box/i,
+    /at the end of the day/i,
+    /\b(giving|give) (it )?110\s?%/i,
+    /dream(ed|t)? of/i,
+    /\bsynergy\b/i,
+  ];
+
+  // Superlatives that trigger FG-04 unless followed by a comparator / scope
+  const SUPERLATIVES = /\b(best|first|only|largest|biggest|most|greatest)\b/i;
+  const SCOPE_AFTER = /\b(in|among|of|across|within|at)\b/i;
+
+  const NUM_RE = /(\$?\d+(\.\d+)?\s?(%|x|m|k|bn|million|billion|crore|lakh|cr|thousand|pts?|hrs?)?)/gi;
+  const ACHIEVEMENT_VERBS = /\b(led|drove|built|launched|scaled|founded|grew|shipped|delivered|closed|raised|managed)\b/i;
+
+  // FG-06: catch obvious school name mismatches on a Kellogg essay. Prototype sets
+  // the "target school" to Kellogg. Real impl reads this from the essay's metadata.
+  const OTHER_SCHOOLS = /\b(harvard|hbs|stanford|gsb|wharton|booth|mit sloan|sloan|columbia|tuck|ross|fuqua|haas|yale som)\b/i;
+  const CURRENT_SCHOOL_CONTEXT = 'Kellogg';
+
+  function runGate(sentence, { schoolContext } = { schoolContext: CURRENT_SCHOOL_CONTEXT }) {
+    const findings = [];
+    if (!sentence.trim()) return findings;
+
+    const hasAchievementVerb = ACHIEVEMENT_VERBS.test(sentence);
+    const numbers = Array.from(sentence.matchAll(NUM_RE)).map(m => m[0].trim()).filter(n => n.length > 0);
+
+    // FG-01: Unanchored claim
+    if (hasAchievementVerb) {
+      const evidenceForText = findEvidenceForSentence(sentence);
+      if (!evidenceForText) {
+        findings.push({
+          rule: 'FG-01',
+          severity: 'block',
+          title: 'Unanchored claim',
+          body: `This sentence asserts an achievement but doesn't map to a claim on the NAO. Either anchor it to a NAO claim with evidence, or reframe as a scoped observation.`,
+        });
+      }
+    }
+
+    // FG-02: Fabricated metric
+    for (const num of numbers) {
+      if (!numberAppearsInNAO(num)) {
+        findings.push({
+          rule: 'FG-02',
+          severity: 'block',
+          title: 'Fabricated metric',
+          body: `The number <code>${escapeHTML(num)}</code> does not appear in any NAO claim's evidence. Every metric in an essay must be traceable.`,
+        });
+      }
+    }
+
+    // FG-04: Unsupported superlative
+    const supMatch = sentence.match(SUPERLATIVES);
+    if (supMatch) {
+      // look 40 chars after the superlative for a scope word
+      const after = sentence.slice(supMatch.index + supMatch[0].length, supMatch.index + supMatch[0].length + 40);
+      if (!SCOPE_AFTER.test(after)) {
+        findings.push({
+          rule: 'FG-04',
+          severity: 'warn',
+          title: 'Unsupported superlative',
+          body: `"${escapeHTML(supMatch[0])}" without a scope (best <em>what</em>? first <em>among whom</em>?). Either narrow the scope or cut the superlative.`,
+        });
+      }
+    }
+
+    // FG-05: Boilerplate phrase
+    for (const re of BOILERPLATE) {
+      if (re.test(sentence)) {
+        const m = sentence.match(re);
+        findings.push({
+          rule: 'FG-05',
+          severity: 'soft',
+          title: 'Boilerplate phrase',
+          body: `"${escapeHTML(m[0])}" is a phrase the AdCom has read thousands of times. Not fatal, but it reads as filler.`,
+        });
+        break; // one boilerplate flag per sentence is enough
+      }
+    }
+
+    // FG-06: School name confusion — if a non-current school is named in a current-school essay
+    const schoolMatch = sentence.match(OTHER_SCHOOLS);
+    if (schoolMatch && schoolContext) {
+      const mentioned = schoolMatch[0].toLowerCase();
+      const ctx = schoolContext.toLowerCase();
+      if (!ctx.includes(mentioned) && !mentioned.includes(ctx)) {
+        findings.push({
+          rule: 'FG-06',
+          severity: 'block',
+          title: 'School name confusion',
+          body: `This essay is for ${escapeHTML(schoolContext)}, but the sentence references <em>${escapeHTML(schoolMatch[0])}</em>. Swap it or remove before submission.`,
+        });
+      }
+    }
+
+    // FG-03: Out-of-voice register (only if we have a fingerprint to compare)
+    if (nao.voiceFingerprint && nao.voiceFingerprint.register) {
+      const avgLen = avgSentenceWordCount(sentence);
+      const targetLen = Number(nao.voiceFingerprint.sentenceLength) || 16;
+      if (avgLen > targetLen * 1.8 && avgLen > 24) {
+        findings.push({
+          rule: 'FG-03',
+          severity: 'warn',
+          title: 'Out-of-voice sentence length',
+          body: `This sentence runs <code>${avgLen}</code> words; the applicant's voice averages <code>${targetLen}</code>. The AdCom notices the drift.`,
+        });
+      }
+    }
+
+    return findings;
+  }
+
+  // ---------- NAO-aware helpers ----------
+  function numberAppearsInNAO(num) {
+    // Strip common unit formatting for a loose match
+    const normalize = (s) => String(s).replace(/\s+/g, '').toLowerCase();
+    const needle = normalize(num);
+    const haystacks = [];
+    for (const c of nao.claims || []) {
+      haystacks.push(c.text || '');
+      haystacks.push(c.evidence || '');
+    }
+    haystacks.push(JSON.stringify(nao._rawIntake || {}));
+    const hay = normalize(haystacks.join(' '));
+    return hay.includes(needle);
+  }
+
+  function findEvidenceForSentence(sentence) {
+    const tokens = sentence
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length >= 5 && !STOP.has(w));
+    if (tokens.length === 0) return null;
+    for (const c of nao.claims || []) {
+      const text = `${c.text || ''} ${c.evidence || ''}`.toLowerCase();
+      const hits = tokens.filter(t => text.includes(t)).length;
+      if (hits >= 2) return c;
+    }
+    return null;
+  }
+
+  const STOP = new Set(['which','their','there','these','those','about','every','where','would','should','could','because','while','though','still','until','after','before','being','through','within','across','among']);
+
+  function avgSentenceWordCount(s) {
+    return s.trim().split(/\s+/).filter(Boolean).length;
+  }
+
+  // ---------- live linter wiring ----------
+  const input = document.getElementById('lint-input');
+  const findingsEl = document.getElementById('lint-findings');
+  const statusEl = document.getElementById('lint-status');
+  const rulesFired = document.getElementById('rules-fired');
+
+  let debounceT = null;
+  input.addEventListener('input', () => {
+    clearTimeout(debounceT);
+    debounceT = setTimeout(runLintOnInput, 220);
+  });
+
+  function runLintOnInput() {
+    const text = input.value.trim();
+    if (!text) {
+      findingsEl.innerHTML = '';
+      statusEl.innerHTML = '<span>Type to lint.</span><span id="rules-fired">0 rules fired</span>';
+      statusEl.className = 'lint-status';
+      return;
+    }
+    // Split into sentences, lint each, collapse findings
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    const allFindings = [];
+    sentences.forEach(s => allFindings.push(...runGate(s)));
+
+    const blockCount = allFindings.filter(f => f.severity === 'block').length;
+    const warnCount  = allFindings.filter(f => f.severity === 'warn').length;
+    const softCount  = allFindings.filter(f => f.severity === 'soft').length;
+
+    let verdictClass = 'ok';
+    let verdictText = 'All rules pass. This line would be allowed through.';
+    if (blockCount > 0) {
+      verdictClass = 'bad';
+      verdictText = `${blockCount} blocking issue${blockCount > 1 ? 's' : ''} — essay submission would be gated.`;
+    } else if (warnCount > 0) {
+      verdictClass = 'warn';
+      verdictText = `${warnCount} warning${warnCount > 1 ? 's' : ''} — allowed, but flagged for author review.`;
+    } else if (softCount > 0) {
+      verdictClass = 'warn';
+      verdictText = `${softCount} soft finding${softCount > 1 ? 's' : ''} — suggestion only.`;
+    }
+    statusEl.className = `lint-status ${verdictClass}`;
+    statusEl.innerHTML = `<span>${verdictText}</span><span>${allFindings.length} rule${allFindings.length === 1 ? '' : 's'} fired</span>`;
+
+    findingsEl.innerHTML = allFindings.map(f => `
+      <div class="finding ${f.severity}">
+        <div class="finding-icon">${f.severity === 'block' ? '✕' : f.severity === 'warn' ? '!' : '·'}</div>
+        <div>
+          <div class="finding-title"><span class="finding-rule">${f.rule}</span>${escapeHTML(f.title)}</div>
+          <div class="finding-body">${f.body}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  // ---------- seeded examples ----------
+  const EXAMPLES = [
+    'I led the largest cross-border payments launch in Asia and grew revenue by 300% in 6 months.',
+    'Since I was young, I was passionate about finance and dreamt of joining HBS.',
+    'I drove a 47% increase in conversion and hit the ground running on our new GTM motion.',
+    'My team and I reframed payments latency as a merchant problem, not an engineering one.',
+    'I scaled revenue from ₹2 crore to ₹18 crore over two years, with gross margin going from 12% to 34%.',
+  ];
+  const exRow = document.getElementById('ex-row');
+  exRow.innerHTML = EXAMPLES.map((e, i) => `<button class="ex-chip" data-ex="${i}">Try example ${i + 1}</button>`).join('');
+  exRow.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('.ex-chip');
+    if (!btn) return;
+    input.value = EXAMPLES[Number(btn.dataset.ex)];
+    runLintOnInput();
+  });
+
+  // ---------- draft scanner ----------
+  const draft = (() => {
+    try { return localStorage.getItem('admissions_os_essay_draft_v1') || ''; }
+    catch { return ''; }
+  })();
+  renderDraftScan(draft);
+
+  function renderDraftScan(text) {
+    const empty = document.getElementById('scan-empty');
+    const prose = document.getElementById('scan-prose');
+    const legend = document.getElementById('scan-legend');
+    const meta = document.getElementById('scan-meta');
+
+    if (!text || !text.trim()) {
+      empty.style.display = 'block';
+      prose.style.display = 'none';
+      legend.style.display = 'none';
+      meta.textContent = 'no draft';
+      return;
+    }
+
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+    let blockCount = 0, warnCount = 0, softCount = 0;
+
+    const marked = sentences.map((s, i) => {
+      const findings = runGate(s);
+      if (findings.length === 0) return escapeHTML(s);
+      const worst = findings.reduce((acc, f) => {
+        if (f.severity === 'block') return 'block';
+        if (f.severity === 'warn' && acc !== 'block') return 'warn';
+        return acc;
+      }, 'soft');
+      blockCount += findings.filter(f => f.severity === 'block').length;
+      warnCount  += findings.filter(f => f.severity === 'warn').length;
+      softCount  += findings.filter(f => f.severity === 'soft').length;
+      const tooltip = findings.map(f => `${f.rule}: ${f.title}`).join(' · ');
+      const cls = worst === 'block' ? 'block' : 'unanchored';
+      return `<mark class="${cls}" title="${escapeHTML(tooltip)}">${escapeHTML(s)}</mark>`;
+    }).join('');
+
+    empty.style.display = 'none';
+    prose.style.display = 'block';
+    legend.style.display = 'flex';
+    prose.innerHTML = marked || escapeHTML(text);
+    meta.textContent = `${sentences.length} sentences · ${blockCount} block · ${warnCount} warn · ${softCount} soft`;
+  }
+</script>
+</body>
+</html>

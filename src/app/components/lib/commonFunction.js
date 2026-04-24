@@ -200,7 +200,7 @@ export const blogAuthor = (authorName) => {
   ];
 
   const selectedAuthor = authorData.find(
-    (author) => author?.name === authorName
+    (author) => author?.name === authorName,
   );
 
   return selectedAuthor;
@@ -226,8 +226,8 @@ export function convertParamsToString(input) {
     .split("-") // Step 1: Split the string by hyphen
     .map(
       (
-        word // Step 2: Capitalize the first letter of each word
-      ) => word.charAt(0).toUpperCase() + word.slice(1)
+        word, // Step 2: Capitalize the first letter of each word
+      ) => word.charAt(0).toUpperCase() + word.slice(1),
     )
     .join(" "); // Step 3: Join the words back with a space
 }
@@ -237,7 +237,7 @@ export function formatPhoneNumber(phoneNumber) {
 
   const formattedNumber = phoneNumber.replace(
     /^(\d{2})(\d{5})(\d{5})$/,
-    "+$1 $2 $3"
+    "+$1 $2 $3",
   );
   return formattedNumber;
 }
