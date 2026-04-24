@@ -161,6 +161,12 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .what-user-says-section .our-team-swiper .splide__arrow {
+    top: 115% !important;
+  }
+}
+
 .our-team-swiper .splide__arrow--next {
   right: -5em !important;
 }
