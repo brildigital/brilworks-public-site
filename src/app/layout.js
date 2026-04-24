@@ -67,7 +67,10 @@ export default function RootLayout({ children }) {
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
           />
-          <meta name="robots" content="noindex,nofollow" />
+          <meta
+            name="google-site-verification"
+            content="hNJJZ9uUBRBPzUqYVEdl5yrr5nyaY_t6kU6KQyLDU0M"
+          />
            <link rel="preload" href="/images/v2/hero-pg-main.webp" as="image" />
           <Script
             id="gtm-config"
