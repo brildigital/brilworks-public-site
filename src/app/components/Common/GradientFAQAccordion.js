@@ -1,65 +1,67 @@
 "use client";
-import dynamic from "next/dynamic";
-import { CustomIcon } from "../lib/commonFunction";
+import { useRef, useState } from "react";
 
-const Accordion = dynamic(() =>
-  import("@material-tailwind/react").then((mod) => mod.Accordion)
-);
-const AccordionHeader = dynamic(() =>
-  import("@material-tailwind/react").then((mod) => mod.AccordionHeader)
-);
-const AccordionBody = dynamic(() =>
-  import("@material-tailwind/react").then((mod) => mod.AccordionBody)
-);
-
-const GradientFAQAccordion = ({ id, question, answer, open, handleOpen }) => {
-  const isOpen = open === id;
+const GradientFAQAccordion = ({ id, question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
   const panelId = `faq-answer-${id}`;
+
   return (
-    <Accordion
-      open={isOpen}
-      className={`border rounded-md mb-6 last:mb-0 ${
-        isOpen ? "border-themeColor" : "border-borderGray"
-      }`}
+    <div
+      className="mb-3 overflow-hidden"
+      style={{
+        background: "#fff",
+        border: `1px solid ${isOpen ? "#017eeb" : "#e5e7eb"}`,
+        borderRadius: 12,
+        transition: "border-color 0.25s ease",
+      }}
       itemScope
       itemProp="mainEntity"
       itemType="https://schema.org/Question"
     >
-      <AccordionHeader
-        onClick={() => handleOpen(id)}
-        className={`${
-          isOpen ? "md:pt-7.5 pt-4 md:pb-6 pb-4 md:px-7.5 px-4" : "md:p-7.5 p-4"
-        } border-0`}
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="w-full flex items-center justify-between gap-4 text-left"
+        style={{ padding: "22px 28px", fontWeight: 600, fontSize: 16, color: "#0d0f1a", background: "none", border: "none", cursor: "pointer" }}
         aria-expanded={isOpen}
         aria-controls={panelId}
       >
-        <h2
-          itemProp="name"
-          className="font-Figtree flex items-center sxl:gap-5 md:gap-4 gap-3 md:text-xl text-lg text-colorBlack font-medium"
-        >
-          {<CustomIcon id={id} open={open} />}
-          {question}
-        </h2>
-      </AccordionHeader>
-      <AccordionBody
+        <h2 itemProp="name" className="font-Figtree text-left">{question}</h2>
+        <span
+          aria-hidden="true"
+          style={{
+            color: "#017eeb",
+            fontSize: 24,
+            fontWeight: 400,
+            lineHeight: 1,
+            flexShrink: 0,
+            display: "inline-block",
+            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+          }}
+        >+</span>
+      </button>
+      <div
         id={panelId}
         role="region"
-        className={`${isOpen ? "md:pb-7.5 pb-5 pt-0" : ""} md:px-7.5 px-4`}
+        ref={contentRef}
+        style={{
+          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0px",
+          overflow: "hidden",
+          transition: "max-height 0.35s ease",
+        }}
+        itemScope
+        itemProp="acceptedAnswer"
+        itemType="https://schema.org/Answer"
       >
         <div
-          itemScope="true"
-          itemProp="acceptedAnswer"
-          itemType="https://schema.org/Answer"
+          itemProp="text"
+          style={{ padding: "0 28px 24px", color: "#6b7280", fontSize: 15, lineHeight: 1.7 }}
         >
-          <div
-            itemProp="text"
-            className="font-Figtree md:text-lg text-base text-colorBlack font-normal"
-          >
-            {answer}
-          </div>
+          {answer}
         </div>
-      </AccordionBody>
-    </Accordion>
+      </div>
+    </div>
   );
 };
 
