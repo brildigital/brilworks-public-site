@@ -1328,44 +1328,249 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
-    name: "what-is-mobile-app-development",
+    name: "Replit vs Custom Hosting: When Your App Outgrows the Sandbox",
+    loc: "https://www.brilworks.com/blog/replit-vs-custom-hosting/",
+    lastmod: "2026-04-29T04:30:00.562Z",
+  },
+  {
+    name: "Lovable vs Custom Development: When Your MVP Needs Real Engineering",
+    loc: "https://www.brilworks.com/blog/lovable-vs-custom-development/",
+    lastmod: "2026-04-28T05:31:23.766Z",
+  },
+  {
+    name: "Bubble.io vs Custom Development: When to Make the Switch",
+    loc: "https://www.brilworks.com/blog/bubble-io-vs-custom-development/",
+    lastmod: "2026-04-27T05:14:10.178Z",
+  },
+  {
+    name: "The Vibe Coding Agency Model: AI Speed + Senior Engineering Judgment",
+    loc: "https://www.brilworks.com/blog/the-vibe-coding-agency-model/",
+    lastmod: "2026-04-27T05:00:20.950Z",
+  },
+  {
+    name: "We Rebuilt 10 No-Code Apps in Custom Code. Here's What We Learned. (A No-Code App Rebuild Case Study)",
+    loc: "https://www.brilworks.com/blog/no-code-apps-in-custom-code/",
+    lastmod: "2026-04-27T04:59:10.202Z",
+  },
+  {
+    name: "From Prototype to Production App: Everything Vibe Coding Skips That Your App Needs",
+    loc: "https://www.brilworks.com/blog/from-prototype-to-production-app/",
+    lastmod: "2026-04-24T06:27:54.483Z",
+  },
+  {
+    name: "The Smart No-Code Migration Strategy: Why Rebuilding Everything from Scratch Is Usually Wrong",
+    loc: "https://www.brilworks.com/blog/the-smart-no-code-migration-strategy/",
+    lastmod: "2026-04-23T08:02:24.841Z",
+  },
+  {
+    name: "Vibe Coding Migration Services: Pricing, Timelines, and What to Expect",
+    loc: "https://www.brilworks.com/blog/vibe-coding-migration-services/",
+    lastmod: "2026-04-22T06:49:06.917Z",
+  },
+  {
+    name: "The Pre-Migration Audit: How to Run a No-Code App Migration Audit Before Rebuilding",
+    loc: "https://www.brilworks.com/blog/the-pre-migration-audit/",
+    lastmod: "2026-04-21T07:14:23.403Z",
+  },
+  {
+    name: "Migrate from Power Apps to Custom Development: The Enterprise Migration Guide",
+    loc: "https://www.brilworks.com/blog/migrate-from-powerapps-to-custom-development/",
+    lastmod: "2026-04-20T07:20:51.134Z",
+  },
+  {
+    name: "Migrate from Glide to a Custom App: What Gets Rebuilt, What Gets Reused, and What It Costs",
+    loc: "https://www.brilworks.com/blog/how-to-migrate-from-glide/",
+    lastmod: "2026-04-17T06:54:36.998Z",
+  },
+  {
+    name: "How to Migrate from Replit to AWS, Vercel, or Render",
+    loc: "https://www.brilworks.com/blog/how-to-migrate-from-replit/",
+    lastmod: "2026-04-17T07:12:41.448Z",
+  },
+  {
+    name: "From Lovable MVP to Production: A Practical Scaling Roadmap",
+    loc: "https://www.brilworks.com/blog/lovable-mvp-to-production/",
+    lastmod: "2026-04-15T09:15:44.028Z",
+  },
+  {
+    name: "The Complete Guide to Migrate from Bubble.io to Custom React/Next.js",
+    loc: "https://www.brilworks.com/blog/guide-to-migrate-from-bubble/",
+    lastmod: "2026-04-14T09:10:30.297Z",
+  },
+  {
+    name: "Power Apps Limitations That Are Costing Your Business More Than You Think",
+    loc: "https://www.brilworks.com/blog/power-apps-limitations/",
+    lastmod: "2026-04-13T09:45:06.093Z",
+  },
+  {
+    name: "Glide App Builder: What It's Great For (And Where It Breaks Down)",
+    loc: "https://www.brilworks.com/blog/glide-app-builder/",
+    lastmod: "2026-04-10T09:40:51.406Z",
+  },
+  {
+    name: "Built on Replit? Here's When Replit Scaling Limitations Are Holding You Back",
+    loc: "https://www.brilworks.com/blog/replit-scaling-limitations/",
+    lastmod: "2026-04-09T09:51:04.996Z",
+  },
+  {
+    name: "Lovable.dev Limitations: Why It Got You to Launch but Won't Get You to Scale",
+    loc: "https://www.brilworks.com/blog/lovable-dev-limitations/",
+    lastmod: "2026-04-08T08:04:24.206Z",
+  },
+  {
+    name: "7 Signs Your Bubble.io App Has Outgrown the Platform",
+    loc: "https://www.brilworks.com/blog/buuble-io-scaling-issues/",
+    lastmod: "2026-04-07T09:24:25.821Z",
+  },
+  {
+    name: "LLM Fine Tuning vs RAG: Differences, Pros, And Use Cases",
+    loc: "https://www.brilworks.com/blog/llm-fine-tuning-vs-rag/",
+    lastmod: "2026-04-06T10:26:18.177Z",
+  },
+  {
+    name: "Mobile App Development Pricing: Costs, Rates, And Factors",
+    loc: "https://www.brilworks.com/blog/mobile-app-development-pricing/",
+    lastmod: "2026-04-10T06:57:51.719Z",
+  },
+  {
+    name: "How To Test A Mobile App: Step-by-Step QA For iOS & Android",
+    loc: "https://www.brilworks.com/blog/how-to-test-a-mobile-app/",
+    lastmod: "2026-04-09T07:14:17.391Z",
+  },
+  {
+    name: "Apple App Store Review Guidelines: How To Pass On First Try",
+    loc: "https://www.brilworks.com/blog/apple-app-store-review-guidelines/",
+    lastmod: "2026-04-01T10:52:03.507Z",
+  },
+  {
+    name: "Cloud Migration Roadmap: A Step-By-Step Plan for Success Now",
+    loc: "https://www.brilworks.com/blog/cloud-migration-roadmap/",
+    lastmod: "2026-03-31T10:03:40.160Z",
+  },
+  {
+    name: "14 Best Cloud Migration Tools for Apps, Data & Servers",
+    loc: "https://www.brilworks.com/blog/best-cloud-migration-tools/",
+    lastmod: "2026-03-30T10:27:51.993Z",
+  },
+  {
+    name: "Bubble.io Scaling Issues: Causes, Limits And How To Fix Them",
+    loc: "https://www.brilworks.com/blog/bubbleio-scaling-issues/",
+    lastmod: "2026-03-27T09:49:35.427Z",
+  },
+  {
+    name: "Cloud Migration Consulting Services: What They Do & Cost",
+    loc: "https://www.brilworks.com/blog/cloud-migration-consulting-services/",
+    lastmod: "2026-03-26T10:22:51.456Z",
+  },
+  {
+    name: "Hire A Flutter Developer: Rates, Vetting, And Hiring Models",
+    loc: "https://www.brilworks.com/blog/hire-flutter-developer/",
+    lastmod: "2026-03-25T09:29:50.905Z",
+  },
+  {
+    name: "The Complete Guide to Generative AI Consulting Services",
+    loc: "https://www.brilworks.com/blog/generative-ai-consulting-services/",
+    lastmod: "2026-03-24T09:28:08.937Z",
+  },
+  {
+    name: "What Is MVP Development? Benefits, Process, And Examples",
+    loc: "https://www.brilworks.com/blog/what-is-mvp-development/",
+    lastmod: "2026-04-08T09:13:55.304Z",
+  },
+  {
+    name: "UI/UX Design Process: Step-by-Step From Research to Handoff",
+    loc: "https://www.brilworks.com/blog/ui-ux-design-process/",
+    lastmod: "2026-03-19T09:49:55.507Z",
+  },
+  {
+    name: "8 Cloud Migration Best Practices for Secure, Fast Moves",
+    loc: "https://www.brilworks.com/blog/cloud-migration-best-practices/",
+    lastmod: "2026-03-18T10:24:11.851Z",
+  },
+  {
+    name: "Generative AI Vs Machine Learning: Differences & Use Cases",
+    loc: "https://www.brilworks.com/blog/generative-ai-vs-machine-learning/",
+    lastmod: "2026-03-17T10:22:09.731Z",
+  },
+  {
+    name: "6 Mobile App Security Best Practices to Protect User Data",
+    loc: "https://www.brilworks.com/blog/mobile-app-security/",
+    lastmod: "2026-03-16T09:46:10.602Z",
+  },
+  {
+    name: "Cloud Data Migration Best Practices: A Step-by-Step Guide",
+    loc: "https://www.brilworks.com/blog/cloud-data-migration-best-practices/",
+    lastmod: "2026-03-13T09:58:38.963Z",
+  },
+  {
+    name: "Generative AI Explained: How It Works, Uses, And Examples",
+    loc: "https://www.brilworks.com/blog/generative-ai-explained/",
+    lastmod: "2026-04-29T07:52:54.862Z",
+  },
+  {
+    name: "Wireframe vs Prototype: Differences, Fidelity, When To Use",
+    loc: "https://www.brilworks.com/blog/wireframe-vs-prototype/",
+    lastmod: "2026-04-29T07:28:17.763Z",
+  },
+  {
+    name: "What Is Cloud Migration? Benefits, Strategies, And Steps",
+    loc: "https://www.brilworks.com/blog/what-is-cloud-migration/",
+    lastmod: "2026-04-28T12:54:04.673Z",
+  },
+  {
+    name: "6 Use Cases For Generative AI For Software Development",
+    loc: "https://www.brilworks.com/blog/generative-ai-for-software-development/",
+    lastmod: "2026-04-28T12:53:40.488Z",
+  },
+  {
+    name: "11 Best MVP App Development Services for Startups (2026)",
+    loc: "https://www.brilworks.com/blog/mvp-app-development-services/",
+    lastmod: "2026-04-24T07:12:08.464Z",
+  },
+  {
+    name: "What Is Mobile App Development? Types, Process, Tech, Skills",
     loc: "https://www.brilworks.com/blog/what-is-mobile-app-development/",
-    lastmod: "2026-03-03T09:05:22.632Z",
+    lastmod: "2026-03-06T05:31:19.601Z",
   },
   {
     name: "5 Trusted Places To Hire iOS App Developer Online in 2026",
     loc: "https://www.brilworks.com/blog/hire-ios-app-developer/",
-    lastmod: "2026-03-02T07:32:40.956Z",
+    lastmod: "2026-04-23T09:14:42.755Z",
   },
   {
     name: "How AI Is Reshaping Fintech: From Fraud Detection to Autonomous Financial Agents (2026)",
     loc: "https://www.brilworks.com/blog/ai-in-fintech/",
-    lastmod: "2026-03-02T07:17:09.612Z",
+    lastmod: "2026-04-23T08:24:24.085Z",
   },
   {
     name: "How Agentic AI Is Transforming Healthcare: From Diagnostics to Drug Discovery (2026)",
     loc: "https://www.brilworks.com/blog/agentic-ai-healthcare/",
-    lastmod: "2026-03-02T07:15:49.486Z",
+    lastmod: "2026-04-22T09:36:03.610Z",
   },
   {
     name: "How Agentic AI Is Revolutionizing Software Development: From Code Generation to Autonomous Engineering (2026)",
     loc: "https://www.brilworks.com/blog/agentic-ai-software-development/",
-    lastmod: "2026-03-02T07:14:11.479Z",
+    lastmod: "2026-04-22T09:16:16.406Z",
+  },
+  {
+    name: "The Agentic AI Market in 2026: Trends, Opportunities, and What It Means for Your Business",
+    loc: "https://www.brilworks.com/blog/agentic-ai-market-2026/",
+    lastmod: "2026-03-27T09:08:10.771Z",
   },
   {
     name: "Cloud Migration Strategy: Framework And Checklist",
     loc: "https://www.brilworks.com/blog/cloud-migration-strategy/",
-    lastmod: "2026-02-27T09:19:32.814Z",
+    lastmod: "2026-04-21T09:59:12.820Z",
   },
   {
     name: "12 Prompt Engineering Best Practices for Reliable LLM Output",
     loc: "https://www.brilworks.com/blog/prompt-engineering-best-practices/",
-    lastmod: "2026-02-26T06:33:27.584Z",
+    lastmod: "2026-04-21T07:43:07.848Z",
   },
   {
     name: "11 Best Flutter App Development Companies To Hire in 2026",
     loc: "https://www.brilworks.com/blog/flutter-app-development-company/",
-    lastmod: "2026-02-25T07:28:21.072Z",
+    lastmod: "2026-04-20T09:06:58.316Z",
   },
   {
     name: "What Is OpenClaw? The AI Agent Gateway for Developers and Businesses",
@@ -1375,7 +1580,7 @@ export const blogListStaticData = [
   {
     name: "AWS Cloud Migration Services: Tools, Strategy, And Costs",
     loc: "https://www.brilworks.com/blog/aws-cloud-migration-services/",
-    lastmod: "2026-02-24T09:44:31.023Z",
+    lastmod: "2026-04-20T08:02:22.273Z",
   },
   {
     name: "What Is UI UX Design? Differences, Process, And Career Paths",
@@ -1385,47 +1590,47 @@ export const blogListStaticData = [
   {
     name: "Custom Mobile App Development Services: Scope, Process, Cost",
     loc: "https://www.brilworks.com/blog/custom-mobile-app-development-services/",
-    lastmod: "2026-02-23T08:57:17.989Z",
+    lastmod: "2026-04-17T07:17:21.554Z",
   },
   {
     name: "Apple Human Interface Guidelines: Best Practices & UI Kits",
     loc: "https://www.brilworks.com/blog/apple-human-interface-guidelines/",
-    lastmod: "2026-02-23T09:06:22.961Z",
+    lastmod: "2026-04-16T09:41:21.698Z",
   },
   {
     name: "7 Best Usability Testing Services for Websites & Apps (2026)",
     loc: "https://www.brilworks.com/blog/usability-testing-services/",
-    lastmod: "2026-02-23T08:56:18.000Z",
+    lastmod: "2026-04-16T09:24:37.554Z",
   },
   {
     name: "IBM Carbon Design System: Principles, Figma, And React Docs",
     loc: "https://www.brilworks.com/blog/ibm-carbon-design-system/",
-    lastmod: "2026-02-23T09:05:22.097Z",
+    lastmod: "2026-04-15T09:59:30.148Z",
   },
   {
     name: "Cloud Migration Consultant: Role, Benefits, And Hiring Tips",
     loc: "https://www.brilworks.com/blog/cloud-migration-consultant/",
-    lastmod: "2026-02-25T10:12:55.014Z",
+    lastmod: "2026-04-15T09:34:08.964Z",
   },
   {
     name: "Usability Testing Methods: 17 Types And When To Use Each",
     loc: "https://www.brilworks.com/blog/usability-testing-methods/",
-    lastmod: "2026-02-25T10:10:45.913Z",
+    lastmod: "2026-04-14T07:32:19.117Z",
   },
   {
     name: "MVP Development Services: What They Include and Cost",
     loc: "https://www.brilworks.com/blog/mvp-development-services/",
-    lastmod: "2026-02-25T10:07:18.924Z",
+    lastmod: "2026-04-14T06:48:38.865Z",
   },
   {
     name: "Generative AI Development Company: Services & How To Choose",
     loc: "https://www.brilworks.com/blog/generative-ai-development-company/",
-    lastmod: "2026-02-25T10:05:10.266Z",
+    lastmod: "2026-04-13T09:06:44.721Z",
   },
   {
     name: "AWS Cloud Adoption Framework: Perspectives, Phases & Use",
     loc: "https://www.brilworks.com/blog/aws-cloud-adoption-framework/",
-    lastmod: "2026-02-25T10:03:20.472Z",
+    lastmod: "2026-04-13T07:49:30.844Z",
   },
   {
     name: "AI powered MVP Development vs Traditional Software MVP Approaches",
@@ -1485,7 +1690,7 @@ export const blogListStaticData = [
   {
     name: "How to Choose the Right AI Platform for Your Business",
     loc: "https://www.brilworks.com/blog/choosing-ai-platform-business/",
-    lastmod: "2026-01-06T15:08:31.101Z",
+    lastmod: "2026-03-26T07:02:56.076Z",
   },
   {
     name: "How Businesses Can Prepare for Generative AI Adoption",
@@ -1505,7 +1710,7 @@ export const blogListStaticData = [
   {
     name: "AI in Software Development",
     loc: "https://www.brilworks.com/blog/ai-in-software-development/",
-    lastmod: "2025-12-23T07:43:40.568Z",
+    lastmod: "2026-03-26T06:55:53.488Z",
   },
   {
     name: "The Impact & Role of Digital Systems in Changing Post-Surgery Care",
@@ -1545,7 +1750,7 @@ export const blogListStaticData = [
   {
     name: "Hidden Costs When Migrating Legacy Enterprise Apps to Cloud ",
     loc: "https://www.brilworks.com/blog/hidden-cloud-migration-cost/",
-    lastmod: "2025-12-11T14:34:24.481Z",
+    lastmod: "2026-03-26T06:24:33.545Z",
   },
   {
     name: "Cost Breakdown to Build a Custom Logistics Software",
@@ -1705,7 +1910,7 @@ export const blogListStaticData = [
   {
     name: "How to Choose the Right Mobile Development Framework ",
     loc: "https://www.brilworks.com/blog/choosing-mobile-development-framework/",
-    lastmod: "2025-11-11T12:43:32.568Z",
+    lastmod: "2026-03-26T07:03:36.829Z",
   },
   {
     name: "Progressive Web Apps vs Native Apps",
@@ -1745,7 +1950,7 @@ export const blogListStaticData = [
   {
     name: "Guide to Java Performance Tools & Best Practices",
     loc: "https://www.brilworks.com/blog/guide-to-java-performance-tools/",
-    lastmod: "2025-08-19T12:03:57.776Z",
+    lastmod: "2026-03-26T07:08:22.794Z",
   },
   {
     name: "A Beginner’s Guide to Animations in React Native",
@@ -1810,7 +2015,7 @@ export const blogListStaticData = [
   {
     name: "The Complete Guide to React JS Development",
     loc: "https://www.brilworks.com/blog/react-js-development-guide/",
-    lastmod: "2025-08-04T13:52:09.885Z",
+    lastmod: "2026-03-26T06:32:03.219Z",
   },
   {
     name: "Golang vs Java: A Practical Comparison for Modern Developers",
@@ -1880,7 +2085,7 @@ export const blogListStaticData = [
   {
     name: "Should You Outsource Java Development or Hire In-House? A Complete Comparison",
     loc: "https://www.brilworks.com/blog/in-house-vs-freelance-outsource-java-development/",
-    lastmod: "2025-07-25T08:34:12.494Z",
+    lastmod: "2026-03-26T07:10:50.996Z",
   },
   {
     name: "How to Build APIs with Node.js and Fastify",
@@ -1900,7 +2105,7 @@ export const blogListStaticData = [
   {
     name: "AI-Powered React Development: Tools, Techniques, and Trends",
     loc: "https://www.brilworks.com/blog/ai-in-reactjs/",
-    lastmod: "2025-09-15T09:36:33.430Z",
+    lastmod: "2026-03-26T06:55:10.258Z",
   },
   {
     name: "Top Web Development Challenges and How to Overcome Them",
@@ -2190,7 +2395,7 @@ export const blogListStaticData = [
   {
     name: "Developing Microservices with Nodejs",
     loc: "https://www.brilworks.com/blog/-microservices-with-nodejs/",
-    lastmod: "2025-08-06T05:46:50.143Z",
+    lastmod: "2026-03-26T06:22:56.339Z",
   },
   {
     name: "How to Integrate AI in React Native Apps (Step by Step Guide)",
@@ -2225,7 +2430,7 @@ export const blogListStaticData = [
   {
     name: "White Label vs Custom Development",
     loc: "https://www.brilworks.com/blog/white-label-vs-custom-development/",
-    lastmod: "2025-11-26T13:41:41.132Z",
+    lastmod: "2026-03-26T06:33:11.806Z",
   },
   {
     name: "A Practical Guide to Healthcare Mobile App Development in 2026",
@@ -2265,7 +2470,7 @@ export const blogListStaticData = [
   {
     name: "10 Major Mobile App Development Challenges",
     loc: "https://www.brilworks.com/blog/biggest-mobile-app-development-challenges/",
-    lastmod: "2025-09-18T11:24:30.558Z",
+    lastmod: "2026-03-26T07:02:14.513Z",
   },
   {
     name: "10 Ways to Speed Up Your Mobile App Development Timeline",
@@ -2325,7 +2530,7 @@ export const blogListStaticData = [
   {
     name: "14 Best Mobile App Development Platforms",
     loc: "https://www.brilworks.com/blog/best-mobile-app-development-platforms/",
-    lastmod: "2025-08-06T05:47:18.206Z",
+    lastmod: "2026-03-26T06:37:12.323Z",
   },
   {
     name: "Managing React Native Environment Variables: A Guide for Secure App Development",
@@ -2440,7 +2645,7 @@ export const blogListStaticData = [
   {
     name: "6 Best Practices For Using AI for Database Querying",
     loc: "https://www.brilworks.com/blog/ai-for-database-querying/",
-    lastmod: "2025-09-04T11:59:43.037Z",
+    lastmod: "2026-03-26T06:50:35.188Z",
   },
   {
     name: "React Native for Enterprise Mobile App Development: Pros and Cons",
@@ -2480,7 +2685,7 @@ export const blogListStaticData = [
   {
     name: "The Role of Cloud Integration in Mobile Apps",
     loc: "https://www.brilworks.com/blog/cloud-integration-in-mobile-apps/",
-    lastmod: "2025-10-09T06:55:06.271Z",
+    lastmod: "2026-03-26T07:04:17.470Z",
   },
   {
     name: "15 Best Mobile Application Testing Tools for 2026",
@@ -2505,7 +2710,7 @@ export const blogListStaticData = [
   {
     name: "Mobile App Security Best Practices [2026]",
     loc: "https://www.brilworks.com/blog/mobile-app-security-best-practices/",
-    lastmod: "2025-02-19T06:06:26.313Z",
+    lastmod: "2026-03-26T06:26:56.487Z",
   },
   {
     name: "Why UX/UI Design is Crucial for Mobile App Success",
@@ -2580,7 +2785,7 @@ export const blogListStaticData = [
   {
     name: "React Native vs Native Development: Pros and Cons.",
     loc: "https://www.brilworks.com/blog/react-native-vs-native-development/",
-    lastmod: "2025-09-16T08:07:03.254Z",
+    lastmod: "2026-03-26T07:26:55.822Z",
   },
   {
     name: "Why React Native is Perfect for Cross-Platform Apps",
@@ -2700,7 +2905,7 @@ export const blogListStaticData = [
   {
     name: "10 Ways to Handle Spring Cloud Dependencies",
     loc: "https://www.brilworks.com/blog/10-ways-to-handle-spring-cloud-dependencies/",
-    lastmod: "2025-09-05T11:27:42.445Z",
+    lastmod: "2026-03-26T06:46:20.801Z",
   },
   {
     name: "Enhancing Cloud Security with Managed Services",
@@ -2845,7 +3050,7 @@ export const blogListStaticData = [
   {
     name: "10 Ways to Improve AI Model Efficiency",
     loc: "https://www.brilworks.com/blog/improve-ai-model-efficiency/",
-    lastmod: "2024-09-09T09:42:12.010Z",
+    lastmod: "2026-03-26T06:25:42.572Z",
   },
   {
     name: "How to Navigate Generative AI Regulations Effectively",
@@ -2855,7 +3060,7 @@ export const blogListStaticData = [
   {
     name: "How Generative AI Applications Enhance Data Management",
     loc: "https://www.brilworks.com/blog/enhance-data-management-with-gen-ai/",
-    lastmod: "2025-10-09T06:18:08.062Z",
+    lastmod: "2026-03-26T07:05:38.552Z",
   },
   {
     name: "Adopting AI: What are Technical Roadblocks?",
@@ -2973,6 +3178,11 @@ export const blogListStaticData = [
     lastmod: "2024-06-19T07:58:17.170Z",
   },
   {
+    name: "How To Test A Mobile App: Step-by-Step QA For iOS & Android1",
+    loc: "https://www.brilworks.com/blog/how-to-test-a-mobile-app-step-by-step-qa-for-ios-android-1/",
+    lastmod: "2026-04-08T07:56:54.033Z",
+  },
+  {
     name: "What Are The Primary Benefits Of Using AWS Consulting Services?",
     loc: "https://www.brilworks.com/blog/benefits-of-aws-consulting-services/",
     lastmod: "2024-05-29T06:02:50.375Z",
@@ -3010,7 +3220,7 @@ export const blogListStaticData = [
   {
     name: "How is Generative AI Used in the Medical Field? Examples Explained",
     loc: "https://www.brilworks.com/blog/generative-ai-in-healthcare/",
-    lastmod: "2025-10-09T06:12:36.061Z",
+    lastmod: "2026-03-26T07:07:45.534Z",
   },
   {
     name: "10 Ways AI Platforms Can Boost Your Business Efficiency",
@@ -3035,7 +3245,7 @@ export const blogListStaticData = [
   {
     name: "A Simple Guide to Using the AWS Pricing Calculator",
     loc: "https://www.brilworks.com/blog/guide-to-using-aws-calculator/",
-    lastmod: "2025-09-22T12:56:52.214Z",
+    lastmod: "2026-03-26T07:09:30.132Z",
   },
   {
     name: "AWS for Beginners – A Comprehensive Guide on AWS Compute Services",
@@ -3295,7 +3505,7 @@ export const blogListStaticData = [
   {
     name: "A Comprehensive Comparison: SendGrid vs. Mailgun vs. Amazon SES vs. Mandrill",
     loc: "https://www.brilworks.com/blog/comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill/",
-    lastmod: "2025-03-05T06:22:38.404Z",
+    lastmod: "2026-03-26T07:04:56.473Z",
   },
   {
     name: "Choosing the Right Headless CMS: Why Strapi Leads the Pack",
