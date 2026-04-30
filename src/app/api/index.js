@@ -50,6 +50,7 @@ export async function sendDataToSlack(payload) {
     previousPage,
     userData,
     toolFormData,
+    projectType,
   } = payload;
   const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(/^\/+/, "")}`;
 
