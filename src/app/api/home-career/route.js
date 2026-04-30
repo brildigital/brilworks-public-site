@@ -6,6 +6,7 @@ import {
   validateContactPayload,
 } from "..";
 import { cookies } from "next/headers";
+import { saveLead } from "@/app/lib/supabase-leads";
 // const sgMail = require("@sendgrid/mail");
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -26,6 +27,7 @@ export async function POST(req, res) {
     token,
     previousPage,
     toolFormData,
+    projectType,
   } = payload;
 
   const transporter = nodemailer.createTransport({
@@ -60,6 +62,20 @@ export async function POST(req, res) {
   }
 
   try {
+    // Save lead to Supabase (fire-and-forget — never blocks the response)
+    saveLead({
+      name,
+      email,
+      phone,
+      message,
+      page,
+      previousPage,
+      region: userData?.region,
+      city: userData?.city,
+      country: userData?.country,
+      projectType,
+    }).catch((err) => console.error("[supabase-leads] insert failed:", err));
+
     if (page === "/career/") {
       // const msg = {
       //   to: `${process.env.SENDGRID_DEFAULT_TO_EMAIL}`,
