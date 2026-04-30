@@ -37,10 +37,10 @@ import {
   Zap,
   Cloud,
   ArrowRight,
-  Plus,
 } from "lucide-react";
 
 import Link from "next/link";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import AIAgentLayout from "./AIAgentLayout";
 import { ModuleType } from "../../lib/enums";
 
@@ -392,7 +392,6 @@ const portfolioUrl = "https://www.brilworks.com/portfolio/";
 
 const AiAgentHome = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [openFaq, setOpenFaq] = useState(null);
   const [stickyVisible, setStickyVisible] = useState(false);
 
   useEffect(() => {
@@ -724,45 +723,14 @@ const AiAgentHome = () => {
                 Common Questions About AI Agents
               </h2>
               <div>
-                {faqs.map((f, i) => {
-                  const isOpen = openFaq === i;
-                  return (
-                    <div
-                      key={i}
-                      className="border-b border-[#e5e7eb] py-5"
-                    >
-                      <button
-                        onClick={() => setOpenFaq(isOpen ? null : i)}
-                        className="w-full flex items-center justify-between text-left gap-6"
-                        aria-expanded={isOpen}
-                      >
-                        <span className="text-[17px] font-bold text-[#0f172a]">
-                          {f.q}
-                        </span>
-                        <Plus
-                          size={22}
-                          className={`shrink-0 transition-transform duration-300 ${
-                            isOpen ? "rotate-45" : ""
-                          }`}
-                          style={{
-                            color: isOpen ? "#017eeb" : "#94a3b8",
-                          }}
-                        />
-                      </button>
-                      <div
-                        className="overflow-hidden transition-[max-height,padding] duration-300"
-                        style={{
-                          maxHeight: isOpen ? "300px" : "0px",
-                          paddingTop: isOpen ? "12px" : "0px",
-                        }}
-                      >
-                        <p className="text-[15px] text-[#475569] leading-relaxed">
-                          {f.a}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+                {faqs.map((f, i) => (
+                  <GradientFAQAccordion
+                    key={i + 1}
+                    id={i + 1}
+                    question={f.q}
+                    answer={f.a}
+                  />
+                ))}
               </div>
             </div>
           </div>

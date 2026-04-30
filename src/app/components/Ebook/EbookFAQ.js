@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const FAQS = [
   { q: "Is the ebook really free?", a: "Yes — 100% free. Drop your email and we'll send the PDF instantly. No credit card, no paywall." },
@@ -11,8 +12,6 @@ const FAQS = [
 ];
 
 const EbookFAQ = () => {
-  const [openFaq, setOpenFaq] = useState(0);
-
   return (
     <section className="main-section-padding" style={{ background: "#fff" }}>
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
@@ -44,58 +43,14 @@ const EbookFAQ = () => {
           </h2>
         </div>
 
-        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto" }} itemScope itemType="https://schema.org/FAQPage">
           {FAQS.map((f, i) => (
-            <div
-              key={f.q}
-              style={{ borderBottom: "1px solid #e5e7eb", padding: "20px 0" }}
-            >
-              <button
-                onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
-                style={{
-                  width: "100%",
-                  background: "transparent",
-                  border: 0,
-                  padding: 0,
-                  cursor: "pointer",
-                  fontFamily: "inherit",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  fontSize: 17,
-                  fontWeight: 700,
-                  color: "#0d0f1a",
-                  letterSpacing: "-0.2px",
-                  textAlign: "left",
-                }}
-                aria-expanded={openFaq === i}
-              >
-                <span>{f.q}</span>
-                <span
-                  style={{
-                    fontSize: 22,
-                    fontWeight: 400,
-                    color: "#017eeb",
-                    flexShrink: 0,
-                    marginLeft: 16,
-                  }}
-                >
-                  {openFaq === i ? "−" : "+"}
-                </span>
-              </button>
-              {openFaq === i && (
-                <p
-                  style={{
-                    margin: "14px 0 0",
-                    fontSize: 15,
-                    color: "#6b7280",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {f.a}
-                </p>
-              )}
-            </div>
+            <GradientFAQAccordion
+              key={i + 1}
+              id={i + 1}
+              question={f.q}
+              answer={f.a}
+            />
           ))}
         </div>
       </div>

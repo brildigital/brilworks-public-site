@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
@@ -802,15 +803,12 @@ const StaffAugmentation = () => {
           </div>
           <div className="mx-auto" style={{ maxWidth: 860 }}>
             {FAQ.map((item, i) => (
-              <details key={i} className="group overflow-hidden mb-3 transition-all"
-                style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12 }}>
-                <summary className="list-none flex items-center justify-between gap-4 cursor-pointer"
-                  style={{ padding: "22px 28px", fontWeight: 600, fontSize: 16, color: "#0d0f1a" }}>
-                  <span>{item.q}</span>
-                  <span className="transition-transform group-open:rotate-45" style={{ color: "#017eeb", fontSize: 24, fontWeight: 400, lineHeight: 1 }}>+</span>
-                </summary>
-                <div style={{ padding: "0 28px 24px", color: "#6b7280", fontSize: 15, lineHeight: 1.7 }}>{item.a}</div>
-              </details>
+              <GradientFAQAccordion
+                key={i + 1}
+                id={i + 1}
+                question={item.q}
+                answer={item.a}
+              />
             ))}
           </div>
         </div>
