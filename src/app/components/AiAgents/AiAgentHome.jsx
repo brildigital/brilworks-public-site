@@ -461,10 +461,19 @@ const AiAgentHome = () => {
                 }}
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: "#00dbd3" }}></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#00dbd3" }}></span>
+                  <span
+                    className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                    style={{ background: "#00dbd3" }}
+                  ></span>
+                  <span
+                    className="relative inline-flex rounded-full h-2 w-2"
+                    style={{ background: "#00dbd3" }}
+                  ></span>
                 </span>
-                <span className="text-xs font-semibold tracking-widest" style={{ color: "#00b4d8" }}>
+                <span
+                  className="text-xs font-semibold tracking-widest"
+                  style={{ color: "#00b4d8" }}
+                >
                   30+ AGENTS LIVE
                 </span>
               </div>
@@ -609,10 +618,7 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== WHY BRILWORKS (Light) ==================== */}
-        <section
-          className="py-20 px-6"
-          style={{ background: "#f8f9ff" }}
-        >
+        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
@@ -667,7 +673,8 @@ const AiAgentHome = () => {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
+                  backgroundImage:
+                    "linear-gradient(to right, #017eeb, #00dbd3)",
                 }}
               >
                 for Your Product
@@ -707,19 +714,16 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== FAQ (Light) ==================== */}
-        <section
-          className="py-20 px-6"
-          style={{ background: "#f8f9ff" }}
-        >
+        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <span
-                className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+                className="text-center block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
                 style={{ color: "#017eeb" }}
               >
                 Frequently Asked Questions
               </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-10 tracking-tight leading-tight">
+              <h2 className="text-center text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-10 tracking-tight leading-tight">
                 Common Questions About AI Agents
               </h2>
               <div>
