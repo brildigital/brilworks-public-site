@@ -87,7 +87,7 @@ export default function CalendarSection() {
           >
             <div className="w-full">
               <Cal
-                calLink="vikas-singh-bril/free-consultation"
+                calLink="vikas-singh-bril/30-min-product-eng-review"
                 config={{ theme: "light" }}
               />
             </div>
