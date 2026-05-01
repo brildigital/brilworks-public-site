@@ -184,7 +184,7 @@ const HeaderV2 = () => {
                 ) : (
                   ""
                 )}
-                <ButtonV2
+                {/* <ButtonV2
                   label={
                     pathname === "/free-ui/"
                       ? "Claim Free Screens"
@@ -212,7 +212,7 @@ const HeaderV2 = () => {
                   }
                   // {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
                   scrollingButton={pathname === "/free-ui/"}
-                />
+                /> */}
                 <IconButton
                   variant="text"
                   className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
