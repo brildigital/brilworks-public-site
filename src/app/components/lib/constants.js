@@ -130,8 +130,8 @@ export const servicesMenuItems = [
     name: "AI & Agents",
     subSections: [
       {
-        name: "AI Agents",
-        path: "/ai-agents/",
+        name: "AI Agent Development",
+        path: "/ai-agent-development-services/",
       },
       {
         name: "Generative AI Development",
@@ -1314,6 +1314,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/ai-agents/vision/",
     lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agent-development-services/",
+    lastmod: "2026-05-01T00:00:00.000Z",
   },
 
   {
