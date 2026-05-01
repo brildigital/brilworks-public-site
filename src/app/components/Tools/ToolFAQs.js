@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import React from "react";
 import Heading from "../HTMLComponents/Heading";
 import Cal from "@calcom/embed-react";
 import { usePathname } from "next/navigation";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const softwareDevelopmentCostCalculatorFaqData = {
   description:
@@ -1558,13 +1558,6 @@ const outsourcingReadinessCheckerFaqData = {
 
 const ToolFAQs = () => {
   const pathname = usePathname();
-  const [openItems, setOpenItems] = useState([]);
-
-  const toggleItem = (index) => {
-    setOpenItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
-    );
-  };
 
   const showDataBasedOnPathname = {
     "/tools/app-development-cost-calculator/":
@@ -1641,40 +1634,14 @@ const ToolFAQs = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div itemScope="true" itemType="https://schema.org/FAQPage">
           {toolsFAQData?.queAns?.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-2xl overflow-hidden hover:border-themeColor transition-colors duration-200"
-            >
-              <button
-                className="w-full px-8 py-6 text-left hover:bg-gray-50 transition-colors duration-200"
-                onClick={() => toggleItem(index)}
-              >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 pr-4">
-                    {faq.question}
-                  </h3>
-                  <div className="flex-shrink-0">
-                    {openItems.includes(index) ? (
-                      <Minus className="w-5 h-5 text-themeColor" />
-                    ) : (
-                      <Plus className="w-5 h-5 text-gray-400" />
-                    )}
-                  </div>
-                </div>
-              </button>
-
-              {openItems.includes(index) && (
-                <div className="px-8 pb-6">
-                  <div className="border-t border-gray-200 pt-6">
-                    <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
+            <GradientFAQAccordion
+              key={index + 1}
+              id={index + 1}
+              question={faq.question}
+              answer={faq.answer}
+            />
           ))}
         </div>
 

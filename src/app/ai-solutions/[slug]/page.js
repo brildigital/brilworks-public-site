@@ -16,7 +16,6 @@ const AISeamlessIntegration = dynamic(
 const WhatUserSays = dynamic(
   () => import("@/app/components/AISolutions/WhatUserSays")
 );
-const CTASection = dynamic(() => import("@/app/components/Common/CTASection"));
 const AIWorking = dynamic(
   () => import("@/app/components/AISolutions/AIWorking")
 );
@@ -159,11 +158,33 @@ export default async function Page({ params }) {
       <AISeamlessIntegration data={seamless_integration} />
       {/* <AICaseStudies /> */}
       <WhatUserSays userSaysData={what_users_say} />
-      <CTASection
-        title={CTA?.[0]?.title}
-        description="Tell us your project idea and get a free consultation to create an outstanding digital product."
-        buttonText={CTA?.[0]?.button_text}
-      />
+      <section
+        className="relative overflow-hidden text-center"
+        style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }}
+        />
+        <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}
+          >
+            {CTA?.[0]?.title || "Ready to Build Your AI Solution?"}
+          </h3>
+          <p className="" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>
+            Tell us your project idea and get a free consultation to create an outstanding AI product.
+          </p>
+          <a
+            href="/contact-us/"
+            className="mt-7 inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all "
+            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}
+          >
+            {CTA?.[0]?.button_text || "Get Free Consultation"}
+          </a>
+        </div>
+      </section>
       <AISolutionsFAQ faqData={FAQ} />
     </Suspense>
   );

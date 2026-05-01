@@ -1,176 +1,139 @@
 import Image from "next/image";
-import React from "react";
-import ButtonV2 from "../Common/ButtonV2";
-import Heading from "../HTMLComponents/Heading";
-import { usePathname } from "next/navigation";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
+
+const steps = [
+  {
+    title: "We Respond in 24 Hours",
+    desc: "Our team reaches out within 24 business hours with a developer profile matching your requirements.",
+  },
+  {
+    title: "Share Your Requirements",
+    desc: "Discuss your project scope with our technical team. NDA signed on request.",
+  },
+  {
+    title: "Get a Detailed Proposal",
+    desc: "Receive a hiring plan with developer profiles, timeline, and engagement cost.",
+  },
+  {
+    title: "Kick Off Your Project",
+    desc: "Dedicated developer onboarded, with weekly updates and full transparency.",
+  },
+];
 
 const HireTeamHeroSection = ({
   technologyText,
   title,
   description,
-  imageSrc,
-  hireButtonText = "",
-  buttonLabel = "",
+  badge,
+  trustItems = ["Expert Engineers", "Free Consultation", "NDA on Request"],
 }) => {
-  const pathname = usePathname();
-  const bgBannerSelection = [
-    "/hire-aws-developer/",
-    "/hire-mobile-app-developer/",
-    "/hire-flutterflow-developer/",
-    "/hire-adalo-developer/",
-    "/hire-bubble-developer/",
-    "/hire-low-code-no-code-developer/",
-  ];
   return (
-    <div
-      className={
-        bgBannerSelection.includes(pathname)
-          ? "hire-team-section-l"
-          : "hire-team-section"
-      }
-    >
-      <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
-        <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-          <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-14 gap-6">
-            <div
-              className={`${
-                pathname === "/hire-reactjs-developer/"
-                  ? "md:w-3/5"
-                  : "md:w-1/2"
-              } w-full`}
-            >
-              <Heading
-                type="h1"
-                className={`text-white ${
-                  pathname === "/hire-white-label-developer/"
-                    ? "xl:!text-5xl lg:text-[42px] md:text-4xl text-3xl"
-                    : "xl:text-5xl lg:text-[42px] md:text-4xl text-3xl"
-                }`}
-                text={
-                  pathname === "/hire-reactjs-developer/"
-                    ? title
-                    : `Talk to our expert ${
-                        pathname === "/hire-white-label-developer/"
-                          ? "for"
-                          : "to"
-                      } ${technologyText}`
-                }
-              />
-              <p className="text-white lg:text-xl md:text-lg text-base !my-4">
-                {description}
-              </p>
-              <Image
-                className="rounded-lg object-cover"
-                src="/images/v2/experts-image.webp"
-                alt="hire-banner"
-                width="565"
-                height="310"
-                priority
-              />
-              <div className="flex flex-row items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
-                <ButtonV2
-                  size="large"
-                  redirect="#section-contact-form"
-                  className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
-                  label={buttonLabel || `Learn More`}
-                  scrollingButton
-                />
-                {/* <ButtonV2 size="large" className="w-full" label="Hire Now" /> */}
-              </div>
-            </div>
-            <div
-              className={`${
-                pathname === "/hire-reactjs-developer/"
-                  ? "md:w-2/5"
-                  : "lg:w-1/2"
-              } w-full lg:mt-14 mb-auto`}
-            >
-              <div className="glass-effect md:px-6 px-4 lg:py-10 py-5 rounded-md">
-                <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
-                  Enter the details to proceed.
+    <>
+      {/* Hero */}
+      <section className="portfolio-hero">
+        <div className="portfolio-hero-bg"></div>
+        <div className="portfolio-hero-grid"></div>
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] pt-[120px] pb-16">
+          <div className="flex flex-col md:flex-row items-stretch justify-start lg:gap-12 md:gap-10 gap-6">
+            <h1 className="sr-only">{technologyText}</h1>
+
+            {/* Left: Copy + What Happens Next */}
+            <div className="md:w-[55%] w-full flex flex-col justify-between gap-8">
+              <div>
+                <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+                  {badge || technologyText}
+                </span>
+
+                <h2
+                  className="font-extrabold text-white tracking-[-1px] leading-[1.15] !mb-4"
+                  style={{ fontSize: "clamp(28px, 3vw, 44px)" }}
+                >
+                  {title}
+                </h2>
+
+                <p className="text-white/60 text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+                  {description}
                 </p>
-                <PortfolioContactForm
-                  showPhoneField={true}
-                  messageField={true}
-                />
+
+                <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-3">
+                  {trustItems.map((item) => (
+                    <div key={item} className="flex gap-2 items-center">
+                      <Image
+                        className="w-5 h-5"
+                        src="/images/v2/white-tick-icon.svg"
+                        alt=""
+                        width={20}
+                        height={20}
+                      />
+                      <span className="text-sm text-white/80">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What Happens Next */}
+              <div className="bg-white/[0.03] rounded-2xl border border-white/10 md:p-7 p-5 backdrop-blur-[10px]">
+                <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00b4d8] !mb-6">
+                  What Happens Next
+                </p>
+                <div className="flex flex-col gap-5">
+                  {steps.map((step, i) => (
+                    <div
+                      key={i}
+                      className="flex gap-3 items-start justify-start"
+                    >
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full text-white bg-themeColor text-sm font-bold flex items-center justify-center">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <p className="text-[15px] text-white font-semibold leading-tight">
+                          {step.title}
+                        </p>
+                        <p className="text-[13px] text-white/60 mt-1 leading-[1.5] font-light">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            {/* <div className="md:w-1/2 w-full">
-              <Image
-                className="rounded-2xl md:h-[650px] object-cover"
-                src={imageSrc}
-                alt="hire-banner"
-                width="565"
-                height="610"
-                priority
-              />
-            </div> */}
-          </section>
+
+            {/* Right: Form */}
+            <div className="md:w-[45%] w-full flex flex-col justify-center bg-white/[0.04] rounded-2xl border border-white/10 md:p-7 p-5 backdrop-blur-[10px]">
+              <p className="text-white/80 text-[15px] md:text-3xl font-semibold !mb-5">
+                Enter the details to proceed
+              </p>
+              <PortfolioContactForm showPhoneField={true} messageField={true} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    // <div
-    //   className={
-    //     bgBannerSelection.includes(pathname)
-    //       ? "hire-team-section-l"
-    //       : "hire-team-section"
-    //   }
-    // >
-    //   <div className="banner-layer h-full min-h-[600px] md:max-h-[980px] max-h-full">
-    //     <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-    //       <section className="flex flex-col md:flex-row items-center justify-start md:h-screen h-full min-h-[600px] md:max-h-[840px] max-h-full lg:gap-14 md:gap-10 gap-6">
-    //         <div className="md:w-1/2 w-full">
-    //           <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
-    //             {technologyText}
-    //           </p>
-    //           <Heading type="h1" className="text-white" text={title} />
-    //           <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-    //             {description}
-    //           </p>
-    //           <div className="flex md:flex-row flex-col md:items-center items-start justify-start gap-5 lg:mt-10 md:my-7.5 my-5">
-    //             <ButtonV2
-    //               size="large"
-    //               redirect="#section-contact-form"
-    //               className="w-fit !bg-transparent !border-colorWhite hover:!bg-colorWhite hover:text-themeColor"
-    //               // label={hireButtonText || technologyText}
-    //               label="Learn More"
-    //               scrollingButton
-    //             />
-    //             <ButtonV2 size="large" className="w-fit" label="Hire Now" />
-    //           </div>
-    //         </div>
-    //         {/* <div className="lg:w-1/2 w-full">
-    //           <Heading
-    //             type="h2"
-    //             className="text-colorWhite lg:!text-[34px] md:!text-3xl !text-2xl mb-5"
-    //             data={
-    //               title || "Connect With Us to Get a 48 Hours Risk-Free Trial"
-    //             }
-    //           />
-    //           <p className="text-colorWhite md:text-lg text-base !mb-6">
-    //             {description ||
-    //               "You're just a step away from creating exceptional business ideas. This case study reveals how Brilworks assists successful companies in extending their tech teams."}
-    //           </p>
-    //           <p className="text-colorWhite lg:text-2xl md:text-xl text-lg font-medium !mb-5">
-    //             Enter the details to proceed.
-    //           </p>
-    //           <PortfolioContactForm phoneRequired={true} messageField={true} />
-    //         </div> */}
-    //         <div className="md:w-1/2 w-full">
-    //           <Image
-    //             className="rounded-2xl md:h-[650px] object-cover"
-    //             src={imageSrc}
-    //             alt="hire-banner"
-    //             width="565"
-    //             height="610"
-    //             priority
-    //           />
-    //         </div>
-    //       </section>
-    //     </div>
-    //   </div>
-    // </div>
+      </section>
+
+      {/* Stats bar */}
+      {/* <section className="bg-[#0d0f1a] border-t border-white/10">
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08]">
+            {[
+              { value: "120+", label: "Projects Shipped" },
+              { value: "20+", label: "Countries Served" },
+              { value: "5★", label: "Clutch Rating" },
+              { value: "24hr", label: "Response Time" },
+            ].map(({ value, label }, i) => (
+              <div key={i} className="bg-white/[0.03] py-6 px-5 text-center">
+                <div className="text-white text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none">
+                  {value}
+                </div>
+                <div className="text-white/70 text-[12px] md:text-[13px] mt-1">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+    </>
   );
 };
 
