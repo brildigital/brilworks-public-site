@@ -203,8 +203,7 @@ const AboutUs = () => {
                 <ButtonV2
                   size="large"
                   label="Work With Us"
-                  redirect="#section-contact-form"
-                  scrollingButton
+                  redirect="/career/"
                 />
                 <Link
                   href="/portfolio/"
