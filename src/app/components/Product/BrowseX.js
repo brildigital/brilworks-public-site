@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import { scrollToSection } from "../lib/commonFunction";
 import Image from "next/image";
 
@@ -589,7 +590,7 @@ const BrowseX = () => {
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto" itemScope itemType="https://schema.org/FAQPage">
             {[
               {
                 q: "Do I need coding skills to use BrowseX?",
@@ -612,15 +613,12 @@ const BrowseX = () => {
                 a: "For best results, we recommend GPT-4 or Claude 3.5 Sonnet. Vision models are recommended for complex layouts.",
               },
             ].map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  {faq.q}
-                </h3>
-                <p className="text-gray-600">{faq.a}</p>
-              </div>
+              <GradientFAQAccordion
+                key={index + 1}
+                id={index + 1}
+                question={faq.q}
+                answer={faq.a}
+              />
             ))}
           </div>
         </div>

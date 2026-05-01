@@ -1,64 +1,101 @@
 import React from "react";
 import Image from "next/image";
-import Heading from "../HTMLComponents/Heading";
-import ButtonV2 from "../Common/ButtonV2";
+import Link from "next/link";
 import { formatSrcUrl } from "../lib/commonFunction";
+
+const IconCheck = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M20 6L9 17L4 12" stroke="#017eeb" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const AIWorking = ({ data }) => {
   return (
-    <div className="container max-w-[1280px] main-section-padding-top mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 sxl:gap10 md:gap-7.5 gap-5">
-        <div className="">
-          <Heading
-            type="h2"
-            className="lg:!text-[34px] md:!text-3xl !text-2xl"
-            text={data?.[0]?.title ?? ""}
-          />
-          <p className="md:text-lg text-base !pt-3 md:pb-7.5 pb-5">
-            {data?.[0]?.description}
-          </p>
+    <section className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
 
-          <div className="flex flex-col sm:gap-3 md:gap-5 li-tick-mark">
-            <ul>
-              {data?.slice(1, 5).map((item, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="md:!pb-7.5 !pb-4 md:text-xl text-lg font-medium blue"
-                  >
-                    <h3>{item?.Key ? <>{item?.Key}</> : <></>}</h3>
-                    <div className="font-normal md:text-lg text-base md:pt-4 pt-2">
-                      {item.Value}
+        {/* Section header */}
+        <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
+          <span
+            className="inline-block mb-4"
+            style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}
+          >
+            How It Works
+          </span>
+          <h2
+            className="font-extrabold"
+            style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}
+          >
+            {data?.[0]?.title ?? ""}
+          </h2>
+          {data?.[0]?.description && (
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>
+              {data?.[0]?.description}
+            </p>
+          )}
+        </div>
+
+        {/* Content — text left, image right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] items-center">
+
+          {/* Left — feature list */}
+          <div>
+            <ul className="flex flex-col gap-6">
+              {data?.slice(1, 5).map((item, index) => (
+                <li
+                  key={index}
+                  className="rounded-2xl transition-all hover:-translate-y-0.5"
+                  style={{ background: "#fff", border: "1px solid #e5e7eb", padding: "24px 28px" }}
+                >
+                  <div className="flex items-start gap-3">
+                    <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 3 }}>
+                      <IconCheck />
+                    </span>
+                    <div>
+                      <h3 className="font-bold mb-1.5" style={{ fontSize: 16, color: "#0d0f1a" }}>
+                        {item?.Key}
+                      </h3>
+                      <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>
+                        {item?.Value}
+                      </p>
                     </div>
-                  </li>
-                );
-              })}
+                  </div>
+                </li>
+              ))}
             </ul>
+
+            <div className="mt-8">
+              <Link
+                href={data?.[0]?.youtube_link?.url || "/contact-us/"}
+                {...(data?.[0]?.youtube_link?.url ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
+                style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "14px 28px", fontSize: 15 }}
+              >
+                {data?.[0]?.button_text || "Get Started"}
+              </Link>
+            </div>
           </div>
-          <div className="mt-4 mb-2 flex items-center md:justify-start justify-center">
-            <ButtonV2
-              label={data?.[0]?.button_text}
-              redirect={data?.[0]?.youtube_link?.url || "/contact-us/"}
-              className="hover:text-themeColor"
-              {...(data?.[0]?.youtube_link?.url ? { target: "_blank" } : {})}
+
+          {/* Right — image */}
+          <div
+            className="rounded-2xl overflow-hidden"
+            style={{ border: "1px solid #e5e7eb", boxShadow: "0 8px 24px rgba(13,15,26,0.06)" }}
+          >
+            <Image
+              className="w-full h-auto"
+              src={
+                data?.[0]?.banner_image?.filename
+                  ? formatSrcUrl(data?.[0]?.banner_image?.filename)
+                  : ""
+              }
+              alt={data?.[0]?.image?.alt || "How it works"}
+              width={500}
+              height={573}
             />
           </div>
         </div>
-        <div>
-          <Image
-            className="rounded-[20px]"
-            src={
-              data?.[0]?.banner_image?.filename
-                ? formatSrcUrl(data?.[0]?.banner_image?.filename)
-                : ""
-            }
-            alt={data?.[0]?.image?.alt || "Image"}
-            width={500}
-            height={573}
-          />
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

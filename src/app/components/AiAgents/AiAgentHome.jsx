@@ -37,10 +37,10 @@ import {
   Zap,
   Cloud,
   ArrowRight,
-  Plus,
 } from "lucide-react";
 
 import Link from "next/link";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import AIAgentLayout from "./AIAgentLayout";
 import { ModuleType } from "../../lib/enums";
 
@@ -392,7 +392,6 @@ const portfolioUrl = "https://www.brilworks.com/portfolio/";
 
 const AiAgentHome = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [openFaq, setOpenFaq] = useState(null);
   const [stickyVisible, setStickyVisible] = useState(false);
 
   useEffect(() => {
@@ -462,10 +461,19 @@ const AiAgentHome = () => {
                 }}
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: "#00dbd3" }}></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#00dbd3" }}></span>
+                  <span
+                    className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                    style={{ background: "#00dbd3" }}
+                  ></span>
+                  <span
+                    className="relative inline-flex rounded-full h-2 w-2"
+                    style={{ background: "#00dbd3" }}
+                  ></span>
                 </span>
-                <span className="text-xs font-semibold tracking-widest" style={{ color: "#00b4d8" }}>
+                <span
+                  className="text-xs font-semibold tracking-widest"
+                  style={{ color: "#00b4d8" }}
+                >
                   30+ AGENTS LIVE
                 </span>
               </div>
@@ -610,10 +618,7 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== WHY BRILWORKS (Light) ==================== */}
-        <section
-          className="py-20 px-6"
-          style={{ background: "#f8f9ff" }}
-        >
+        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
@@ -668,7 +673,8 @@ const AiAgentHome = () => {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
+                  backgroundImage:
+                    "linear-gradient(to right, #017eeb, #00dbd3)",
                 }}
               >
                 for Your Product
@@ -708,61 +714,27 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== FAQ (Light) ==================== */}
-        <section
-          className="py-20 px-6"
-          style={{ background: "#f8f9ff" }}
-        >
+        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto">
               <span
-                className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+                className="text-center block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
                 style={{ color: "#017eeb" }}
               >
                 Frequently Asked Questions
               </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-10 tracking-tight leading-tight">
+              <h2 className="text-center text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-10 tracking-tight leading-tight">
                 Common Questions About AI Agents
               </h2>
               <div>
-                {faqs.map((f, i) => {
-                  const isOpen = openFaq === i;
-                  return (
-                    <div
-                      key={i}
-                      className="border-b border-[#e5e7eb] py-5"
-                    >
-                      <button
-                        onClick={() => setOpenFaq(isOpen ? null : i)}
-                        className="w-full flex items-center justify-between text-left gap-6"
-                        aria-expanded={isOpen}
-                      >
-                        <span className="text-[17px] font-bold text-[#0f172a]">
-                          {f.q}
-                        </span>
-                        <Plus
-                          size={22}
-                          className={`shrink-0 transition-transform duration-300 ${
-                            isOpen ? "rotate-45" : ""
-                          }`}
-                          style={{
-                            color: isOpen ? "#017eeb" : "#94a3b8",
-                          }}
-                        />
-                      </button>
-                      <div
-                        className="overflow-hidden transition-[max-height,padding] duration-300"
-                        style={{
-                          maxHeight: isOpen ? "300px" : "0px",
-                          paddingTop: isOpen ? "12px" : "0px",
-                        }}
-                      >
-                        <p className="text-[15px] text-[#475569] leading-relaxed">
-                          {f.a}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+                {faqs.map((f, i) => (
+                  <GradientFAQAccordion
+                    key={i + 1}
+                    id={i + 1}
+                    question={f.q}
+                    answer={f.a}
+                  />
+                ))}
               </div>
             </div>
           </div>
