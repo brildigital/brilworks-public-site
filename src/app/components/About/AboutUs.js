@@ -386,6 +386,83 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* ── EMPOWERING GREATNESS STATS ─────────────────────────────────────── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="max-w-3xl mx-auto mb-12">
+            <h2
+              className="font-extrabold mb-4 text-center"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Empowering Greatness With Our Skills
+            </h2>
+            <p
+              className="text-center"
+              style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              Whether you&apos;re looking for products and web applications that
+              excite, energize, and engage your customers or seek to transform
+              your internal processes with seamless tech innovations, we have
+              the right people, the right expertise, and the right insights to
+              serve your business needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              {
+                value: "60%",
+                label: "Professional Employee",
+                tint: "#dbeafe",
+                color: "#1d4ed8",
+              },
+              {
+                value: "120+",
+                label: "Projects Completed",
+                tint: "#dcfce7",
+                color: "#15803d",
+              },
+              {
+                value: "8+",
+                label: "Years of Experience",
+                tint: "#ffe4e6",
+                color: "#be123c",
+              },
+              {
+                value: "98%",
+                label: "Project Success Rate",
+                tint: "#f3e8ff",
+                color: "#7e22ce",
+              },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl p-7 flex flex-col"
+                style={{ background: stat.tint }}
+              >
+                <div
+                  className="text-[42px] font-extrabold leading-none mb-2 tracking-tight"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  className="text-sm font-medium"
+                  style={{ color: stat.color, opacity: 0.75 }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── MID-CTA (blue gradient) ─────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden text-center"
