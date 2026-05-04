@@ -178,6 +178,62 @@ export function generateBlogPostingSchema({
   return JSON.stringify(schema);
 }
 
+export function generateServiceSchema({
+  name,
+  description,
+  url,
+  serviceType,
+  areaServed = "Worldwide",
+  provider = {
+    "@type": "Organization",
+    name: "Brilworks",
+    url: "https://www.brilworks.com/",
+    logo: "https://www.brilworks.com/images/logo-black.svg",
+  },
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url,
+    serviceType,
+    areaServed,
+    provider,
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateFaqPageSchema(faqs) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: (faqs || []).map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateBreadcrumbList(items) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      ...(item.url ? { item: item.url } : {}),
+    })),
+  };
+  return JSON.stringify(schema);
+}
+
 export function generateWebPageSchema({ title, description, url, dateModified }) {
   const schema = {
     "@context": "https://schema.org",
