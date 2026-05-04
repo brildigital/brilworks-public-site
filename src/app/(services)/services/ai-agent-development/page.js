@@ -28,7 +28,10 @@ export const metadata = {
     siteName: "Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/generative-ai-banner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/og-ai-agent-development.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Brilworks AI Agent Development Services",
       },
     ],
     locale: "en-US",
@@ -39,6 +42,9 @@ export const metadata = {
     description: DESCRIPTION,
     card: "summary_large_image",
     site: "@_Brilworks",
+    images: [
+      `${process.env.NEXT_PUBLIC_BASE_URL}images/og-ai-agent-development.webp`,
+    ],
   },
   alternates: {
     canonical: PAGE_URL,
