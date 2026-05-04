@@ -8,6 +8,7 @@ const ServiceHeroSection = ({
   title,
   description,
   buttonText,
+  buttonUrl,
   secondaryBtnText,
   secondaryBtnUrl,
   imageSrc,
@@ -47,6 +48,7 @@ const ServiceHeroSection = ({
                 {buttonText && (
                   <ButtonV2
                     size="large"
+                    redirect={buttonUrl}
                     className="w-fit "
                     label={buttonText}
                   />
