@@ -212,10 +212,11 @@ const pricingTiers = [
       "1 AI agent",
       "1 workflow",
       "Basic setup and deployment",
-      "Week 1 prototype",
+      "Free prototype in Week 1",
     ],
     highlight: false,
     cta: "Get Started",
+    scarcity: "2 slots remaining in May",
   },
   {
     name: "Pro",
@@ -343,36 +344,42 @@ const industries = [
     icon: Heart,
     color: "text-red-500",
     bg: "rgba(239,68,68,0.10)",
+    href: "/industry/healthcare-software-development/",
   },
   {
     label: "Fintech",
     icon: CreditCard,
     color: "text-blue-500",
     bg: "rgba(1,126,235,0.10)",
+    href: "/industry/fintech-software-development/",
   },
   {
     label: "eCommerce",
     icon: ShoppingCart,
     color: "text-green-500",
     bg: "rgba(34,197,94,0.10)",
+    href: "/industry/e-commerce-app-development/",
   },
   {
     label: "EdTech",
     icon: GraduationCap,
     color: "text-teal-500",
     bg: "rgba(0,180,216,0.10)",
+    href: "/industry/edtech-software-development/",
   },
   {
     label: "Manufacturing",
     icon: Factory,
     color: "text-orange-500",
     bg: "rgba(249,115,22,0.10)",
+    href: "/industry/manufacturing-software-development/",
   },
   {
     label: "Agencies",
     icon: Building2,
     color: "text-purple-500",
     bg: "rgba(168,85,247,0.10)",
+    href: "/contact-us/",
   },
 ];
 
@@ -511,7 +518,7 @@ const AiAgentServicePage = () => {
                   className="font-extrabold text-white tracking-[-1.5px] leading-[1.1] mb-6"
                   style={{ fontSize: "clamp(28px, 3.4vw, 54px)" }}
                 >
-                  Custom AI Agent
+                  Get a Working AI Agent
                   <br />
                   <span
                     className="bg-clip-text text-transparent"
@@ -520,17 +527,18 @@ const AiAgentServicePage = () => {
                         "linear-gradient(to right, #017eeb, #00dbd3)",
                     }}
                   >
-                    Development Services
+                    in 7 Days — Built for Your Workflow
                   </span>
                 </h1>
 
                 <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
-                  We build AI agents that take over specific business operations
-                  — so your team can stop doing repetitive work and start doing
-                  work that actually matters.
+                  We build and deploy AI agents that automate lead
+                  qualification, customer support, document processing, and more
+                  — with a working prototype live in 7 days and full deployment
+                  in under 4 weeks.
                 </p>
 
-                <div className="flex flex-wrap gap-4 mb-10">
+                <div className="flex flex-wrap gap-4 mb-5">
                   <Link
                     href={contactUrl}
                     className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
@@ -539,21 +547,44 @@ const AiAgentServicePage = () => {
                         "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
                     }}
                   >
-                    Book Free AI Consultation <ArrowRight size={18} />
+                    Get My Free AI Blueprint <ArrowRight size={18} />
                   </Link>
                   <Link
                     href={agentsUrl}
                     className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold text-white border border-white/25 hover:bg-white/5 hover:border-white/50 transition-all"
                   >
-                    See 30+ Live Agents
+                    Explore 30+ Live Demos
                   </Link>
+                </div>
+
+                <div className="flex items-center gap-2 mb-7">
+                  <span className="relative flex h-2 w-2">
+                    <span
+                      className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                      style={{ background: "#f59e0b" }}
+                    />
+                    <span
+                      className="relative inline-flex rounded-full h-2 w-2"
+                      style={{ background: "#f59e0b" }}
+                    />
+                  </span>
+                  <span
+                    className="text-xs"
+                    style={{ color: "rgba(255,255,255,0.55)" }}
+                  >
+                    Currently accepting{" "}
+                    <strong style={{ color: "rgba(255,255,255,0.85)" }}>
+                      3 new clients
+                    </strong>{" "}
+                    this month
+                  </span>
                 </div>
 
                 <div className="flex flex-wrap gap-5">
                   {[
-                    "Working prototype in 7 days",
-                    "Starting at $2,000",
-                    "Full deployment in 2–4 weeks",
+                    "Free prototype in Week 1",
+                    "No long-term contract",
+                    "ISO 27001 Certified",
                   ].map((t) => (
                     <span
                       key={t}
@@ -852,6 +883,110 @@ const AiAgentServicePage = () => {
         </div>
       </section>
 
+      {/* ==================== LEAD CAPTURE ==================== */}
+      <section
+        className="py-16"
+        style={{ background: "#fff", borderTop: "1px solid #e5e7eb" }}
+      >
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <span
+                className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
+                style={{ color: "#017eeb" }}
+              >
+                Free AI Agent Audit
+              </span>
+              <h2
+                className="font-extrabold mb-4"
+                style={{
+                  fontSize: "clamp(24px, 2.6vw, 36px)",
+                  letterSpacing: "-0.5px",
+                  lineHeight: 1.2,
+                  color: "#0d0f1a",
+                }}
+              >
+                Tell us what to automate.
+                <br />
+                We&apos;ll respond with a{" "}
+                <span style={{ color: "#017eeb" }}>free blueprint</span>.
+              </h2>
+              <p
+                style={{
+                  fontSize: 15,
+                  lineHeight: 1.7,
+                  color: "#6b7280",
+                  marginBottom: 20,
+                }}
+              >
+                Share your use case and we&apos;ll send back a custom plan —
+                what agent to build, how long it takes, and what ROI to expect.
+                No commitment required.
+              </p>
+              <ul className="flex flex-col gap-2.5">
+                {[
+                  "Custom plan for your exact workflow",
+                  "Timeline + estimated ROI included",
+                  "Response within 2 business hours",
+                  "No commitment or credit card needed",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm text-[#475569]"
+                  >
+                    <Check size={14} style={{ color: "#017eeb" }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              className="rounded-2xl p-8"
+              style={{ background: "#f8f9ff", border: "1px solid #e5e7eb" }}
+            >
+              <p
+                className="text-[15px] font-semibold text-[#0f172a] mb-5"
+                style={{ lineHeight: 1.5 }}
+              >
+                What would you like to automate?
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {[
+                  "Lead Qualification",
+                  "Customer Support",
+                  "Document Processing",
+                  "WhatsApp Messaging",
+                  "Workflow Automation",
+                  "Something Else",
+                ].map((use) => (
+                  <Link
+                    key={use}
+                    href={contactUrl}
+                    className="flex items-center justify-center text-center rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 text-[13px] font-semibold text-[#374151] hover:border-[#017eeb] hover:text-[#017eeb] transition-all duration-150"
+                  >
+                    {use}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                href={contactUrl}
+                className="flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 font-semibold text-white text-sm transition-all hover:opacity-90"
+                style={{
+                  background:
+                    "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+                }}
+              >
+                Get My Free AI Blueprint <ArrowRight size={16} />
+              </Link>
+              <p className="text-xs text-[#94a3b8] text-center mt-3">
+                We respond within 2 business hours. No spam, ever.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ==================== MID CTA BANNER ==================== */}
       <section
         className="relative overflow-hidden text-center"
@@ -905,7 +1040,7 @@ const AiAgentServicePage = () => {
               fontSize: 16,
             }}
           >
-            Book Free AI Consultation <ArrowRight size={18} />
+            Start With a Free Prototype <ArrowRight size={18} />
           </Link>
         </div>
       </section>
@@ -1032,6 +1167,18 @@ const AiAgentServicePage = () => {
                     }}
                   >
                     Most Popular
+                  </span>
+                )}
+                {tier.scarcity && (
+                  <span
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold rounded-full px-2.5 py-1 mb-3 self-start"
+                    style={{
+                      background: "rgba(245,158,11,0.10)",
+                      color: "#d97706",
+                    }}
+                  >
+                    <Zap size={10} />
+                    {tier.scarcity}
                   </span>
                 )}
                 <h3
@@ -1300,9 +1447,10 @@ const AiAgentServicePage = () => {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {industries.map((industry) => (
-              <div
+              <Link
                 key={industry.label}
-                className="flex flex-col items-center justify-center text-center rounded-2xl p-5 border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 cursor-default"
+                href={industry.href}
+                className="flex flex-col items-center justify-center text-center rounded-2xl p-5 border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
@@ -1313,7 +1461,7 @@ const AiAgentServicePage = () => {
                 <span className="text-[13px] font-semibold text-[#0f172a]">
                   {industry.label}
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
