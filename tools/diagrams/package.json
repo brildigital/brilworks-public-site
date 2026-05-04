@@ -1,0 +1,22 @@
+{
+  "name": "@brilworks/diagrams",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Brilworks blog/marketing diagram pipeline — JSX templates → static SVG → PNG/WebP via sharp",
+  "type": "module",
+  "scripts": {
+    "render": "tsx src/cli.ts",
+    "verify-bri-61": "tsx src/cli.ts specs/bri-61.json out/bri-61-v3"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.2.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.6.0"
+  }
+}

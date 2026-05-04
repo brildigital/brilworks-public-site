@@ -1,0 +1,131 @@
+{
+  "layout": "criteria-grid",
+  "header": {
+    "kicker": "BRILWORKS · BUYER'S GUIDE 2026",
+    "title": "Evaluating agentic AI code assistants",
+    "subtitle": "Five criteria, ordered roughly by decision blast radius. Higher impact on the left."
+  },
+  "axis": {
+    "left": "HIGHER IMPACT · HARDER TO REVERSE",
+    "right": "LOWER IMPACT · EASIER TO SWAP"
+  },
+  "cards": [
+    {
+      "icon": "slider",
+      "title": "Autonomy level",
+      "sections": [
+        {
+          "kind": "chips",
+          "label": "THE AXIS",
+          "chips": [
+            { "text": "Step-by-step" },
+            { "text": "Run-to-completion" }
+          ]
+        },
+        {
+          "kind": "prose",
+          "label": "WHY IT MATTERS",
+          "lines": [
+            "Higher autonomy multiplies",
+            "output — and the cost of",
+            "a weak review culture."
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "files",
+      "title": "Codebase awareness",
+      "sections": [
+        {
+          "kind": "chips",
+          "label": "THE TEST",
+          "chips": [
+            { "text": "Cross-file refactor" },
+            { "text": "Indexing · Symbols" }
+          ]
+        },
+        {
+          "kind": "prose",
+          "label": "LOOK FOR",
+          "lines": [
+            "Whole-repo awareness,",
+            "not just open-tab context."
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "ladder",
+      "title": "Agent quality",
+      "sections": [
+        {
+          "kind": "chips",
+          "label": "THE LOOP",
+          "chips": [
+            { "text": "Retry → Read error" },
+            { "text": "Revise → Give up", "variant": "warning" }
+          ]
+        },
+        {
+          "kind": "prose",
+          "label": "JUDGE",
+          "lines": [
+            "The harness, not the model.",
+            "Watch iterations 2–4 —",
+            "where most agents fail."
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "shield",
+      "title": "Tooling integration",
+      "sections": [
+        {
+          "kind": "chips",
+          "label": "FIVE SURFACES",
+          "chips": [
+            { "text": "Editor · Terminal" },
+            { "text": "CI · Ticketing · MCP" }
+          ]
+        },
+        {
+          "kind": "prose",
+          "label": "EARN POINTS WHERE",
+          "lines": [
+            "The surface matches the",
+            "team's actual bottleneck."
+          ]
+        }
+      ]
+    },
+    {
+      "icon": "coins",
+      "title": ["Cost per dev", "per month"],
+      "sections": [
+        {
+          "kind": "labelled-chips",
+          "label": "THREE LINE ITEMS",
+          "items": [
+            { "kicker": "LICENSE", "text": "Easy to compare." },
+            { "kicker": "TOKENS", "text": "Scales with usage." },
+            { "kicker": "SHADOW RAMP", "text": "Usually the largest.", "variant": "warning" }
+          ]
+        },
+        {
+          "kind": "prose",
+          "label": "NORMALIZE BY",
+          "lines": [
+            "90 days of output."
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "centerLabel": "Agentic AI Code Assistants in 2026 — Buyer's Guide",
+    "rightLabel": "brilworks.com"
+  },
+  "alt": "Five criteria for evaluating agentic AI code assistants, ordered by decision blast radius: autonomy level, codebase awareness, agent quality, tooling integration, and cost per developer per month."
+}
