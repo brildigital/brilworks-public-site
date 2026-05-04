@@ -479,6 +479,18 @@ export const menuItems = [
 
 export const portfolioDynamicItems = [
   {
+    title: "How We Doubled Coding Speed at Two Anonymized Clients with Claude Code",
+    link: "/portfolio/claude-code-coding-speed-lift/",
+    description:
+      "Anonymized case study of rolling out Claude Code as an in-team coding assistant at HostCo (hospitality tech) and HomeCo (smart-home tech): the four-step playbook, ~2x cycle-time lift, and where the agent does and doesn't compound.",
+    image: "/images/generative-ai-banner.webp",
+    alt: "Claude Code coding-speed case study",
+    industry: "AI Engineering",
+    technology: ["Claude Code"],
+    clientName: "Two anonymized clients (HostCo · HomeCo)",
+    metric: "~2x coding speed across both teams",
+  },
+  {
     title: "Building a Swipe-Based Platform Connecting Artists and Buyers",
     link: "/portfolio/art-marketplace-app/",
     description:
