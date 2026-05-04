@@ -7,86 +7,24 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
-import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 import { generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
-export async function generateMetadata({ params }) {
-  const { props: data } = await fetchData(params?.slug);
-  const story = data?.story;
-
-  if (!story) return {};
-
+export default function ArticleStoryView({ story, slug, urlPrefix = "portfolio" }) {
   const totalDataWord =
-    (story.content.content || "") +
-    (story.content.Content_1 || "") +
-    (story.content.Content_2 || "") +
-    (story.content.Content_3 || "");
+    (story?.content?.content || "") +
+    (story?.content?.Content_1 || "") +
+    (story?.content?.Content_2 || "") +
+    (story?.content?.Content_3 || "");
 
-  return {
-    title: `${story.content.metatags?.title || story?.content?.title}`,
-    description: story.content.metatags?.description,
-    authors: story.content.BlogAuthor
-      ? [{ name: story.content.BlogAuthor }]
-      : undefined,
-    openGraph: {
-      title: story.content.metatags?.og_title || story.content.title,
-      description:
-        story.content.metatags?.og_description ||
-        story.content.metatags?.description,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/${story.slug}/`,
-      images: [
-        {
-          url: formatSrcUrl(
-            story.content.metatags?.og_image ||
-              story.content?.mobile_banner?.filename,
-          ),
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: story.content.metatags?.og_title || story.content.title,
-      description:
-        story.content.metatags?.og_description ||
-        story.content.metatags?.description,
-      images: [
-        formatSrcUrl(
-          story?.content.metatags?.twitter_image ||
-            story?.content?.mobile_banner?.filename,
-        ),
-      ],
-      creator: story.content.BlogAuthor,
-      site: "@_Brilworks",
-    },
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/${story.slug}/`,
-    },
-    other: {
-      "twitter:label1": "Est. reading time",
-      "twitter:data1": `${calculateReadingTime(totalDataWord)} minutes`,
-    },
-  };
-}
-
-export default async function Page(props) {
-  const { params } = props || {};
-  const { props: data } = await fetchData(params?.slug);
-  if (!data?.story) {
-    return notFound();
-  }
-
-  const totalDataWord =
-    (data?.story?.content?.content || "") +
-    (data?.story?.content?.Content_1 || "") +
-    (data?.story?.content?.Content_2 || "") +
-    (data?.story?.content?.Content_3 || "");
-
-  const author = data?.story?.content?.BlogAuthor
-    ? blogAuthor(data?.story?.content?.BlogAuthor)
+  const author = story?.content?.BlogAuthor
+    ? blogAuthor(story.content.BlogAuthor)
     : null;
+
+  const breadcrumbLabel =
+    urlPrefix === "case-studies" ? "Case Studies" : "Portfolio";
 
   return (
     <>
@@ -95,19 +33,18 @@ export default async function Page(props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBlogPostingSchema({
-            title: data?.story?.content?.title,
-            description: data?.story?.content?.metatags?.description || "",
-            url: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/${params?.slug}/`,
+            title: story?.content?.title,
+            description: story?.content?.metatags?.description || "",
+            url: `${process.env.NEXT_PUBLIC_BASE_URL}${urlPrefix}/${slug}/`,
             imageUrl: formatSrcUrl(
-              data?.story?.content?.mobile_banner?.filename ||
-                data?.story?.content?.image?.filename,
+              story?.content?.mobile_banner?.filename ||
+                story?.content?.image?.filename,
             ),
-            datePublished:
-              data?.story?.content?.Published || data?.story?.created_at,
-            dateModified: data?.story?.published_at,
+            datePublished: story?.content?.Published || story?.created_at,
+            dateModified: story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
-            category: data?.story?.content?.Category,
+            category: story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
         }}
@@ -145,9 +82,9 @@ export default async function Page(props) {
                       />
                     </span>
                     <span className="sxl:text-2xl md:text-xl text-lg text-white font-medium">
-                      Case Studies
+                      {breadcrumbLabel}
                     </span>
-                    {data?.story?.content?.Category ? (
+                    {story?.content?.Category ? (
                       <>
                         <span className="self-center md:mx-2 mx-1.5 mt-[2px]">
                           <Image
@@ -160,13 +97,13 @@ export default async function Page(props) {
                           />
                         </span>
                         <span className="sxl:text-2xl md:text-xl text-lg text-white">
-                          {data?.story?.content?.Category}
+                          {story.content.Category}
                         </span>
                       </>
                     ) : null}
                   </Suspense>
                 </div>
-                <Heading type="h1" text={data?.story?.content?.title} />
+                <Heading type="h1" text={story?.content?.title} />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
                 {author ? (
@@ -190,9 +127,7 @@ export default async function Page(props) {
                       </Link>
                       <br />
                       <span className="sxl:!text-xl md:text-lg text-base">
-                        {formattedDate(
-                          data?.story?.content?.Published || new Date(),
-                        )}
+                        {formattedDate(story?.content?.Published || new Date())}
                       </span>
                     </div>
                   </div>
@@ -221,7 +156,7 @@ export default async function Page(props) {
                       />
                     </span>
                     Last updated{" "}
-                    {formattedDate(data?.story?.published_at || new Date())}
+                    {formattedDate(story?.published_at || new Date())}
                   </div>
                 </div>
               </div>
@@ -241,40 +176,45 @@ export default async function Page(props) {
                     </div>
                   }
                 >
-                  <Image
-                    className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
-                    src={formatSrcUrl(
-                      data?.story?.content?.mobile_banner?.filename ||
-                        data?.story?.content?.image?.filename,
-                    )}
-                    alt={
-                      data?.story?.content.image?.alt ||
-                      data?.story?.content?.title.replaceAll(" ", "-") +
-                        "-banner-image"
-                    }
-                    width={828}
-                    height={169}
-                    priority
-                    unoptimized
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  />
-                  <Image
-                    className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
-                    src={formatSrcUrl(
-                      data?.story?.content.image?.filename ||
-                        data?.story?.content.mobile_banner?.filename,
-                    )}
-                    alt={
-                      data?.story?.content.image?.alt ||
-                      data?.story?.content?.title.replaceAll(" ", "-") +
-                        "-banner-image"
-                    }
-                    width={828}
-                    height={169}
-                    priority
-                    unoptimized
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
-                  />
+                  {(story?.content?.mobile_banner?.filename ||
+                    story?.content?.image?.filename) && (
+                    <>
+                      <Image
+                        className="rounded-[15px] block md:hidden !max-h-[288px] !h-auto !object-cover"
+                        src={formatSrcUrl(
+                          story?.content?.mobile_banner?.filename ||
+                            story?.content?.image?.filename,
+                        )}
+                        alt={
+                          story?.content?.image?.alt ||
+                          (story?.content?.title || "")
+                            .replaceAll(" ", "-") + "-banner-image"
+                        }
+                        width={828}
+                        height={169}
+                        priority
+                        unoptimized
+                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      />
+                      <Image
+                        className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
+                        src={formatSrcUrl(
+                          story?.content?.image?.filename ||
+                            story?.content?.mobile_banner?.filename,
+                        )}
+                        alt={
+                          story?.content?.image?.alt ||
+                          (story?.content?.title || "")
+                            .replaceAll(" ", "-") + "-banner-image"
+                        }
+                        width={828}
+                        height={169}
+                        priority
+                        unoptimized
+                        sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                      />
+                    </>
+                  )}
                 </Suspense>
               </div>
             </div>
@@ -282,51 +222,8 @@ export default async function Page(props) {
         </div>
       </div>
       <div className="min-h-[200vh] blog-main">
-        {" "}
-        <StoryblokStory story={data?.story} />
+        <StoryblokStory story={story} />
       </div>
     </>
   );
 }
-
-export async function fetchData(slug) {
-  try {
-    const storyUrl = new URL(
-      `https://api.storyblok.com/v2/cdn/stories/case-studies/${slug}`,
-    );
-    storyUrl.searchParams.append(
-      "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
-    );
-    storyUrl.searchParams.append(
-      "version",
-      process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    );
-
-    const storyRes = await fetch(storyUrl.toString(), {
-      next: { revalidate: 0 },
-      headers: { "Accept-Encoding": "gzip" },
-    });
-
-    if (!storyRes.ok) {
-      return { props: { story: false, key: false } };
-    }
-
-    const storyData = await storyRes.json();
-    return {
-      props: {
-        story: storyData?.story || false,
-        key: storyData?.story?.id || false,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching case study:", error);
-    return { props: { story: false, key: false } };
-  }
-}
-
-export async function generateStaticParams() {
-  return [];
-}
-
-export const dynamicParams = true;
