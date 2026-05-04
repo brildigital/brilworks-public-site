@@ -164,7 +164,7 @@ const Career = () => {
             organization, please provide your details and project requirements.
             We'll get back to you soon.
           </p>
-          <ContactFormV2 hideEmail={true} />
+          <ContactFormV2 hideEmail={true} careerMode={true} />
         </div>
       </div>
     </>
