@@ -340,21 +340,21 @@ const AgenticAISoftwareDevelopmentService = () => {
           </p>
           <ul className="md:text-lg text-base md:!mt-3 !mt-2 list-disc pl-5 space-y-2">
             <li>
-              <strong>EventCo</strong> — eventtech SaaS. Claude Code rollout
-              across the engineering team, custom agent design, and team
-              enablement. Result: roughly 2x coding velocity on the targeted
-              workstream.
+              <strong>HostCo</strong> — hospitality / restaurant-tech SaaS.
+              Claude Code rollout across the engineering team, custom agent
+              design, and team enablement. Result: roughly 2x coding velocity
+              on the targeted workstream.
             </li>
             <li>
-              <strong>TrackerCo</strong> — IoT and asset-tracking platform. Same
-              Claude Code playbook adapted for an embedded-systems-adjacent
-              codebase. Result: similar lift.
+              <strong>HomeCo</strong> — smart-home / connected-device platform.
+              Same Claude Code playbook adapted to a multi-runtime (firmware,
+              cloud, mobile) codebase. Result: similar lift.
             </li>
           </ul>
           <p className="md:text-base text-sm md:!mt-5 !mt-3 text-[#6b7280]">
             <em>
               The full anonymized case study lives at (link added when the
-              EventCo + TrackerCo Claude Code case study publishes).
+              HostCo + HomeCo Claude Code case study publishes).
             </em>
           </p>
         </div>
