@@ -1328,6 +1328,11 @@ export const sitemapData = [
 
 export const blogListStaticData = [
   {
+    name: "Agentic AI in Healthcare: Use Cases, Risks, and How to Deploy It Safely",
+    loc: "https://www.brilworks.com/blog/agentic-ai-in-healthcare/",
+    lastmod: "2026-05-02T07:40:33.125Z",
+  },
+  {
     name: "Replit vs Custom Hosting: When Your App Outgrows the Sandbox",
     loc: "https://www.brilworks.com/blog/replit-vs-custom-hosting/",
     lastmod: "2026-04-29T04:30:00.562Z",
@@ -1541,11 +1546,6 @@ export const blogListStaticData = [
     name: "How AI Is Reshaping Fintech: From Fraud Detection to Autonomous Financial Agents (2026)",
     loc: "https://www.brilworks.com/blog/ai-in-fintech/",
     lastmod: "2026-04-23T08:24:24.085Z",
-  },
-  {
-    name: "How Agentic AI Is Transforming Healthcare: From Diagnostics to Drug Discovery (2026)",
-    loc: "https://www.brilworks.com/blog/agentic-ai-healthcare/",
-    lastmod: "2026-04-22T09:36:03.610Z",
   },
   {
     name: "How Agentic AI Is Revolutionizing Software Development: From Code Generation to Autonomous Engineering (2026)",
@@ -2351,11 +2351,6 @@ export const blogListStaticData = [
     name: "The Complete Guide To Modernizing Legacy Healthcare Systems",
     loc: "https://www.brilworks.com/blog/modernizing-legacy-healthcare-systems/",
     lastmod: "2025-06-03T07:25:26.215Z",
-  },
-  {
-    name: "How Agentic AI Is Solving Critical Healthcare Challenges",
-    loc: "https://www.brilworks.com/blog/agentic-ai-healthcare-sector/",
-    lastmod: "2025-05-30T14:00:02.793Z",
   },
   {
     name: "How to Create a Modern Ecommerce Platform Using ReactJS",

@@ -1040,6 +1040,16 @@ const nextConfig = {
         destination: `/mr-brush-privacy-policy/`,
         statusCode: 301,
       },
+      {
+        source: `/blog/agentic-ai-healthcare/`,
+        destination: `/blog/agentic-ai-in-healthcare/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/agentic-ai-healthcare-sector/`,
+        destination: `/blog/agentic-ai-in-healthcare/`,
+        statusCode: 301,
+      },
     ];
   },
 };
