@@ -15,17 +15,18 @@ const projectTypes = [
 const ContactFormV2 = ({
   darkMode = false,
   hideEmail = false,
+  careerMode = false,
 }) => {
   const pathname = usePathname();
   const recaptchaRef = useRef(null);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(careerMode ? 2 : 1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [respMessage, setRespMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    projectType: "",
+    projectType: careerMode ? "career" : "",
   });
 
   const [previousPage, setPreviousPage] = useState("");
@@ -81,8 +82,13 @@ const ContactFormV2 = ({
       );
 
       if (response.ok) {
-        setFormData({ name: "", email: "", message: "", projectType: "" });
-        setStep(1);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          projectType: careerMode ? "career" : "",
+        });
+        setStep(careerMode ? 2 : 1);
         setRespMessage("Your response is submitted successfully.");
         clearMessage();
       } else {
@@ -99,6 +105,7 @@ const ContactFormV2 = ({
     <div className="flex v2-contact-form">
       <div className={`w-full ${darkMode ? "dark" : ""}`}>
         {/* Step Indicator */}
+        {!careerMode && (
         <div className="flex items-center gap-3 mb-6">
           <div className={`flex items-center gap-2 text-sm font-semibold ${step === 1 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}>
             <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 1 ? "bg-themeColor text-white" : "bg-themeColor/20 text-themeColor"}`}>1</span>
@@ -110,6 +117,7 @@ const ContactFormV2 = ({
             Your details
           </div>
         </div>
+        )}
 
         {/* Step 1: Project Type Selection */}
         {step === 1 && (
@@ -147,18 +155,20 @@ const ContactFormV2 = ({
             onSubmit={handleSubmit}
           >
             {/* Selected project type chip */}
-            <div className="flex items-center gap-2 mb-1">
-              <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${darkMode ? "bg-white/10 text-white/70" : "bg-[#f0f5ff] text-themeColor"}`}>
-                {projectTypes.find((t) => t.value === formData.projectType)?.label}
-              </span>
-              <button
-                type="button"
-                onClick={() => setStep(1)}
-                className={`text-xs font-medium underline underline-offset-2 ${darkMode ? "text-white/40 hover:text-white/70" : "text-[#9ca3af] hover:text-[#374151]"} transition-colors`}
-              >
-                Change
-              </button>
-            </div>
+            {!careerMode && (
+              <div className="flex items-center gap-2 mb-1">
+                <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${darkMode ? "bg-white/10 text-white/70" : "bg-[#f0f5ff] text-themeColor"}`}>
+                  {projectTypes.find((t) => t.value === formData.projectType)?.label}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setStep(1)}
+                  className={`text-xs font-medium underline underline-offset-2 ${darkMode ? "text-white/40 hover:text-white/70" : "text-[#9ca3af] hover:text-[#374151]"} transition-colors`}
+                >
+                  Change
+                </button>
+              </div>
+            )}
 
             <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-4">
               <input
@@ -185,7 +195,7 @@ const ContactFormV2 = ({
                 className="form-field"
                 cols="1"
                 rows="4"
-                placeholder="Tell us what you're building — goals, timeline, budget range..."
+                placeholder={careerMode ? "Tell us about yourself — role you're applying for, experience, and a link to your resume or portfolio..." : "Tell us what you're building — goals, timeline, budget range..."}
                 id="message"
                 aria-invalid="false"
                 name="message"
@@ -217,7 +227,7 @@ const ContactFormV2 = ({
                 size="large"
                 className="hover:text-themeColor hover:!bg-colorWhite w-fit gap-2"
                 icon={isSubmitting ? <Loader /> : ""}
-                label={isSubmitting ? "Submitting..." : "Let's Build This"}
+                label={isSubmitting ? "Submitting..." : careerMode ? "Send Application" : "Let's Build This"}
                 disabled={isSubmitting}
               />
               {!hideEmail && (
