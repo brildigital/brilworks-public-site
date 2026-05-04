@@ -8,6 +8,7 @@ const ServiceHeroSection = ({
   title,
   description,
   buttonText,
+  buttonUrl,
   secondaryBtnText,
   secondaryBtnUrl,
   imageSrc,
@@ -49,6 +50,7 @@ const ServiceHeroSection = ({
                     size="large"
                     className="w-fit "
                     label={buttonText}
+                    redirect={buttonUrl}
                   />
                 )}
                 {secondaryBtnText && secondaryBtnUrl && (

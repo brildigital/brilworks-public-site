@@ -6,6 +6,7 @@ const CTASection = ({
   title,
   description,
   buttonText,
+  buttonRedirect,
   darkBackground = true,
   titleClass = "",
   descriptionClass = "",
@@ -47,6 +48,7 @@ const CTASection = ({
                     : "hover:!text-themeColor"
                 }
                 label={buttonText}
+                redirect={buttonRedirect}
               />
             )}
           </div>

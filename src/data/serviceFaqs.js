@@ -232,6 +232,54 @@ const SaasApplicationDevFAQData = [
   },
 ];
 
+const AgenticAISoftwareDevelopmentFAQData = [
+  {
+    question:
+      "What's the difference between agentic AI software development and traditional AI/ML projects?",
+    answer:
+      "Traditional AI/ML projects produce a model and an inference endpoint. Agentic AI software development produces a system — a model plus tools, planning logic, evaluation, and integration into a real workflow. The deliverable is a working agent that does work, not a notebook with a benchmark score.",
+  },
+  {
+    question:
+      "What's the difference between an agentic AI code assistant and GitHub Copilot?",
+    answer:
+      "Copilot autocompletes inside your editor. An agentic AI code assistant (Claude Code, Cursor in agent mode, custom MCP-driven agents) plans, reads multiple files, runs your tests, fixes its own mistakes, and ships PRs. The autonomy level is the difference.",
+  },
+  {
+    question:
+      "Do you work with our model provider, or do we have to use yours?",
+    answer:
+      "We are model-agnostic. We've shipped projects on Anthropic Claude, OpenAI GPT-4, Amazon Bedrock, and Azure OpenAI. We will tell you the tradeoffs, but the choice is yours and your security team's.",
+  },
+  {
+    question:
+      "How long does an enterprise agentic AI development engagement take?",
+    answer:
+      "Discovery: 1–2 weeks. POC: 3–6 weeks. Production: 8–12 weeks. Most clients have a working agent in a sandboxed environment inside two months and a production deployment inside four.",
+  },
+  {
+    question:
+      "Do you offer custom agentic AI development services for regulated industries?",
+    answer:
+      "Yes. We've worked under NDA in regulated environments and can deploy on Bedrock, Azure, or on-prem inference. We don't claim healthcare-specific case studies we don't have, but the architectural patterns (HIPAA-aware deployment, human-in-the-loop checkpoints, audit trails) are well-trodden ground for our team.",
+  },
+  {
+    question: "Can you work directly in our codebase?",
+    answer:
+      "Yes — most of our agentic AI for developers work happens inside the client's repo, behind their auth, on their infrastructure. We sign NDAs and work to your security review.",
+  },
+  {
+    question: "How is pricing structured?",
+    answer:
+      "Fixed-fee for discovery, POC, and production phases (so you can stop after any phase without a contract dispute). Retainer for ongoing enablement and iteration. Time-and-materials available for novel scope.",
+  },
+  {
+    question: "What's the smallest engagement you take?",
+    answer:
+      "A discovery sprint (1–2 weeks, fixed fee). Sometimes that's all a team needs — a workflow audit and a build-vs-buy recommendation — and we end the engagement there with a written deliverable.",
+  },
+];
+
 const GenerativeAIFAQData = [
   {
     question: "How much does it cost to develop a generative AI solution?",
@@ -817,6 +865,8 @@ export const faqsByPathname = {
   "/application-development-services/": ApplicationDevFAQData,
   "/saas-application-development-services/": SaasApplicationDevFAQData,
   "/generative-ai-development-services/": GenerativeAIFAQData,
+  "/agentic-ai-software-development-services/":
+    AgenticAISoftwareDevelopmentFAQData,
   "/low-code-no-code-development-services/": LowCodeNoCodeFAQData,
   "/erp-next-development-services/": ERPNextFAQData,
   "/business-intelligence-services/": BusinessIntelligenceFAQData,
@@ -844,6 +894,7 @@ export {
   ApplicationDevFAQData,
   SaasApplicationDevFAQData,
   GenerativeAIFAQData,
+  AgenticAISoftwareDevelopmentFAQData,
   LowCodeNoCodeFAQData,
   ERPNextFAQData,
   BusinessIntelligenceFAQData,
