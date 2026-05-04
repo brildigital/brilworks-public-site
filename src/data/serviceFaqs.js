@@ -855,7 +855,56 @@ const FitnessAppDevelopmentFAQData = [
   },
 ];
 
+const AiAgentDevelopmentFAQData = [
+  {
+    question: "How long does it take to build a custom AI agent?",
+    answer:
+      "A typical first agent ships to production in 6–12 weeks from spec lock. Discovery sprints add 2 weeks at the front. Pace depends mostly on integration depth and access to the systems the agent needs to read and write.",
+  },
+  {
+    question: "Do we own the code?",
+    answer:
+      "Yes. Every engagement transfers full IP and source code at completion, including the agent specification, prompts, tool integrations, and evaluation harnesses. No vendor lock-in.",
+  },
+  {
+    question: "Which AI models do you use?",
+    answer:
+      "We are model-agnostic. We commonly ship on Claude (Anthropic), GPT-4 (OpenAI), or Bedrock. Open-weights models (Llama, Mistral) are a fit when latency, cost-per-call, or data residency makes them the right call. We make the recommendation based on your constraints, not on a partner program.",
+  },
+  {
+    question: "How do you measure whether the agent is working?",
+    answer:
+      "Every agent ships with an evaluation suite — a set of representative inputs with expected behavior — plus production observability. We agree on success metrics before kickoff (e.g., resolution rate, escalation rate, cost per resolution, time-to-first-response). You see those metrics on a dashboard from day one in production.",
+  },
+  {
+    question: "Can you work with our existing AI infrastructure?",
+    answer:
+      "Yes. If you already have a model gateway, vector DB, agent framework, or observability stack, we plug in. If you don't, we recommend a minimal stack and you keep it.",
+  },
+  {
+    question: "What's the difference between an AI agent and a chatbot?",
+    answer:
+      "A chatbot answers questions. An agent decides on a sequence of actions, uses tools and data on its own, and produces a result. If your problem is \"answer a question,\" a chatbot is enough. If your problem is \"do the work,\" you want an agent.",
+  },
+  {
+    question: "How do you handle data privacy and compliance?",
+    answer:
+      "We deploy into your environment when compliance requires it (your VPC, on-prem, BYOC). We work with SOC 2, HIPAA, and GDPR-bound clients regularly. We sign MNDAs ahead of any reference call.",
+  },
+  {
+    question: "Do you only build agents on top of one model provider?",
+    answer:
+      "No. We are model- and framework-agnostic. The model is a build-time decision, not a strategic one.",
+  },
+  {
+    question: "What does this cost?",
+    answer:
+      "Discovery sprints are fixed-fee. Build engagements are fixed-fee scoped against the spec. Embedded retainers are monthly. We share rate cards on the scoping call so they're attached to a real scope, not a hypothetical.",
+  },
+];
+
 export const faqsByPathname = {
+  "/services/ai-agent-development/": AiAgentDevelopmentFAQData,
   "/ai-ml-development-services/": AIMLFAQData,
   "/devops-consulting-services/": DevOpsFAQData,
   "/digital-experience-services/": DigitalExperienceFAQData,
@@ -885,6 +934,7 @@ export const faqsByPathname = {
 };
 
 export {
+  AiAgentDevelopmentFAQData,
   AIMLFAQData,
   DevOpsFAQData,
   DigitalExperienceFAQData,

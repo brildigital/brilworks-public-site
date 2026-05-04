@@ -541,6 +541,10 @@ export const portfolioDynamicItems = [
 
 export const sitemapData = [
   {
+    loc: "https://www.brilworks.com/services/ai-agent-development/",
+    lastmod: "2026-05-04T00:00:00.000Z",
+  },
+  {
     loc: "https://www.brilworks.com/portfolio/",
     lastmod: "2025-04-25T12:04:49.528Z",
   },

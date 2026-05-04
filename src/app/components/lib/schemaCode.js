@@ -198,6 +198,47 @@ export function generateWebPageSchema({ title, description, url, dateModified })
   return JSON.stringify(schema);
 }
 
+export function generateServiceSchema({
+  name,
+  description,
+  url,
+  serviceType,
+  areaServed = "Worldwide",
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url,
+    serviceType,
+    areaServed,
+    provider: {
+      "@type": "Organization",
+      name: "Brilworks",
+      url: "https://www.brilworks.com",
+      logo: "https://www.brilworks.com/images/logo-black.svg",
+    },
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateFaqPageSchema(faqs) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  return JSON.stringify(schema);
+}
+
 export function generateComparisonSchemas({ title, description, url, faqs, dateModified }) {
   const schemas = [];
 

@@ -86,11 +86,10 @@ const nextConfig = {
         destination: `/hire-blockchain-developer/`,
         statusCode: 301,
       },
-      {
-        source: `/services/`,
-        destination: `/`,
-        statusCode: 301,
-      },
+      // /services/ no longer redirects — it is now a parent namespace for the
+      // top-of-funnel service pages (e.g. /services/ai-agent-development/).
+      // Decision per BRI-63 CEO triage: drop the redirect, no parent listing.
+      // Revisit only if GSC shows demand for /services/ itself.
       {
         source: `/studyme/`,
         destination: `/`,
