@@ -53,7 +53,7 @@ const agentTypes = [
     color: "text-green-500",
     bg: "rgba(34,197,94,0.10)",
     title: "WhatsApp AI Agents",
-    desc: "Turn conversations into conversions. Instantly engage inbound messages, qualify leads, and book appointments — without your team touching it.",
+    desc: "Every inbound WhatsApp message your team handles manually is a lead that had to wait. This agent responds instantly, qualifies the conversation, and books appointments — before anyone on your team is even aware of it.",
     handles: [
       "Instant response to inbound messages",
       "Lead capture and qualification",
@@ -65,11 +65,11 @@ const agentTypes = [
     color: "text-blue-500",
     bg: "rgba(1,126,235,0.10)",
     title: "Lead Qualification Agents",
-    desc: "Your sales team shouldn't filter leads. This agent captures, scores, and routes only high-intent prospects to the right people.",
+    desc: "Not every lead deserves your sales team's time. This agent screens every inbound lead automatically, scores them against your criteria, and routes only the ones worth pursuing.",
     handles: [
       "Real-time lead qualification",
-      "Lead scoring based on behavior",
-      "CRM integration and auto-routing",
+      "Lead scoring based on behavior and inputs",
+      "CRM integration and automated routing",
     ],
   },
   {
@@ -77,11 +77,11 @@ const agentTypes = [
     color: "text-teal-500",
     bg: "rgba(0,180,216,0.10)",
     title: "Customer Support Agents",
-    desc: "24/7 support without growing headcount. Handles common queries, resolves requests, and reduces response time across every channel.",
+    desc: "Support volume grows faster than headcount should. This agent handles the repeat queries across chat, email, and WhatsApp — 24/7 — so your team focuses on the cases that actually need a person.",
     handles: [
-      "24/7 automated support",
-      "Multi-channel (chat, email, WhatsApp)",
-      "Ticket handling and resolution",
+      "24/7 automated support across channels",
+      "Multi-channel responses (chat, email, WhatsApp)",
+      "Ticket handling and query resolution",
     ],
   },
   {
@@ -89,11 +89,11 @@ const agentTypes = [
     color: "text-orange-500",
     bg: "rgba(249,115,22,0.10)",
     title: "Document Processing Agents",
-    desc: "Manual document handling slows everything. This agent extracts, processes, and structures data from invoices, forms, and PDFs automatically.",
+    desc: "Manually pulling data from invoices and PDFs is one of those jobs that looks small until you count the hours. This agent reads the documents, extracts what you need, and outputs it in a format your systems can use.",
     handles: [
       "Data extraction from PDFs and invoices",
       "Structured data output",
-      "Faster internal processing",
+      "Faster internal processing workflows",
     ],
   },
   {
@@ -101,10 +101,10 @@ const agentTypes = [
     color: "text-purple-500",
     bg: "rgba(168,85,247,0.10)",
     title: "Workflow Automation Agents",
-    desc: "Connect your tools and automate multi-step workflows without manual intervention. Reduces operational overhead and improves consistency.",
+    desc: "Between tools, teams, and handoffs, a lot of work happens manually that doesn't need to. This agent connects your systems and runs multi-step processes automatically — no one has to start it.",
     handles: [
       "Automating repetitive workflows",
-      "Triggering actions across tools",
+      "Triggering actions across tools and systems",
       "Managing multi-step processes",
     ],
   },
@@ -112,8 +112,8 @@ const agentTypes = [
     icon: Tag,
     color: "text-sky-500",
     bg: "rgba(14,165,233,0.10)",
-    title: "White-Label Agents for Agencies",
-    desc: "Offer AI agents to your clients under your brand. We handle the build, infrastructure, and maintenance while you keep the margin.",
+    title: "White-Label AI Agents for Agencies",
+    desc: "Your clients want AI. Building agents in-house requires a technical team most agencies don't have. We build under your brand — you handle the client relationship, we handle everything technical.",
     handles: [
       "Fully white-labeled delivery",
       "Scalable across multiple clients",
@@ -126,25 +126,25 @@ const steps = [
   {
     week: "Week 1",
     title: "Working Prototype",
-    desc: "A functional AI agent built for your exact use case. Test it with real inputs before committing to anything.",
+    desc: "We build a functional version of your agent, scoped to your specific use case. You can test it with real queries before committing to the full build. Most clients are surprised by how usable it already is at this stage.",
     icon: Cpu,
   },
   {
     week: "Week 2",
     title: "Core Logic Setup",
-    desc: "We define how the agent thinks, responds, and handles your key business workflows.",
+    desc: "We define how the agent reasons through your workflows — how it handles edge cases, what it escalates, and how it responds to inputs outside the expected range.",
     icon: Settings,
   },
   {
     week: "Week 3",
     title: "Integrations",
-    desc: "Connect the agent to your tools, CRM, communication channels, and internal systems.",
+    desc: "We connect the agent to your existing tools: your CRM, communication channels, internal systems, and any APIs it needs to function in production.",
     icon: Layers,
   },
   {
     week: "Week 4",
     title: "Testing & Deployment",
-    desc: "Test with real scenarios, optimize performance, and deploy into your live operations.",
+    desc: "We run the agent through real scenarios, fix what breaks, optimize performance, and deploy it into your live environment. You have a working system, not a demo.",
     icon: Rocket,
   },
 ];
@@ -226,7 +226,7 @@ const pricingTiers = [
       "Week 1 prototype",
     ],
     highlight: true,
-    cta: "Most Popular",
+    cta: "Get Started",
   },
   {
     name: "Custom",
@@ -249,42 +249,42 @@ const whyCards = [
     tint: "#e8f0fd",
     iconColor: "#017eeb",
     title: "Built Around Your Workflow",
-    desc: "We don't give generic solutions. Every agent is tailored to your operations, your data, and the specific problems your team faces daily.",
+    desc: "We don't start with a template. We start with your operations — your data, your edge cases, the specific problems your team runs into every day. The agent we build is scoped to that, not to a generic use case we've done before.",
   },
   {
     icon: Eye,
     tint: "#ede9fe",
     iconColor: "#7c3aed",
-    title: "Prototype Before Commitment",
-    desc: "You see a working version in Week 1 — tested against your real use cases — before making a full investment.",
+    title: "You Test Before You Commit",
+    desc: "In Week 1, you have a working prototype to evaluate. You put it through your real queries, see how it handles your edge cases, and decide whether to proceed. Most clients proceed. Some don't — and that's fine.",
   },
   {
     icon: Rocket,
     tint: "#d1fae5",
     iconColor: "#10b981",
     title: "End-to-End Execution",
-    desc: "From idea to deployment to scaling — we handle design, development, integration, and ongoing maintenance.",
+    desc: "We handle the full scope: design, development, integrations, deployment, and ongoing maintenance. You don't need a technical team to manage the infrastructure or coordinate multiple vendors.",
   },
   {
     icon: BarChart3,
     tint: "#cffafe",
     iconColor: "#0891b2",
-    title: "Real Business Impact",
-    desc: "Our agents don't just respond. They qualify leads, process data, trigger actions, and automate workflows that actually move metrics.",
+    title: "Agents That Move Metrics",
+    desc: "The goal isn't a working agent. The goal is fewer unqualified leads reaching your sales team, faster document turnaround, fewer support tickets handled manually. We build toward those outcomes, not just toward deployment.",
   },
   {
     icon: Shield,
     tint: "#dbeafe",
     iconColor: "#1e40af",
-    title: "Secure & Compliant",
-    desc: "Every agent is built with data privacy and security in mind. We follow strict guidelines on data handling, access control, and compliance.",
+    title: "Secure by Default",
+    desc: "Every agent we build is designed with data privacy and access control in mind. We follow strict guidelines on data handling, and we're ISO 27001 certified. Sensitive business data doesn't leave your control.",
   },
   {
     icon: Clock,
     tint: "#fef3c7",
     iconColor: "#d97706",
-    title: "Fast Time to Value",
-    desc: "Most AI projects take months. Ours take weeks. A working prototype in 7 days means your business benefits sooner.",
+    title: "Weeks, Not Months",
+    desc: "A working prototype in 7 days. Full deployment in 2 to 4 weeks. For most businesses, that means you're seeing results before a traditional agency has finished scoping the project.",
   },
 ];
 
@@ -294,21 +294,21 @@ const TESTIMONIALS = [
     name: "Ravi Mehta",
     role: "Founder, D2C eCommerce Brand",
     quote:
-      "They delivered a working WhatsApp lead qualification agent in the first week. We didn't believe it until we tested it ourselves. Now it handles 80% of our inbound qualification automatically.",
+      "They delivered a working WhatsApp lead qualification agent in the first week. We didn't believe it until we tested it ourselves. Now it handles 80% of our inbound qualification without anyone on our team touching it.",
   },
   {
     initials: "ST",
     name: "Sarah Thompson",
     role: "Operations Manager, Logistics SaaS",
     quote:
-      "The document processing agent they built cut our invoice processing time by 70%. The 4-week timeline was accurate and the team communicated clearly throughout the entire build.",
+      "The document processing agent they built cut our invoice processing time by 70%. The 4-week timeline held, and the team communicated clearly at every stage.",
   },
   {
     initials: "JL",
     name: "James Liu",
     role: "CTO, B2B Sales Platform",
     quote:
-      "We needed a lead qualification agent that integrated with our CRM. Brilworks had it running in two weeks and it's now handling qualification for over 500 leads a day without any manual input.",
+      "We needed a lead qualification agent that integrated with our CRM. Brilworks had it running in two weeks. It's now handling qualification for over 500 leads a day without any manual input.",
   },
 ];
 
@@ -383,31 +383,31 @@ const industries = [
 const faqs = [
   {
     q: "How much does it cost to build a custom AI agent?",
-    a: "Custom AI agents start at $2,000 setup with $500/month maintenance. More advanced multi-agent systems range from $10,000–$25,000 setup with $3,000–$5,000/month. We offer a working prototype in Week 1 so you can evaluate the agent before committing to the full build.",
+    a: "Simple agents start at $2,000 setup with $500 per month for maintenance. Multi-agent systems with complex integrations typically run $10,000–$25,000 setup with $3,000–$5,000 per month. Before you commit to anything, you get a working prototype in Week 1 — so you can evaluate the actual agent against your use case before deciding on scope.",
   },
   {
     q: "How long does it take to build an AI agent?",
-    a: "You get a working prototype in 7 days. Full production deployment takes 2–4 weeks depending on complexity. Simple agents can go live in Week 1. Multi-system integrations typically take 4–6 weeks.",
+    a: "You get a working prototype in 7 days. Full production deployment takes 2–4 weeks for most agents. Simple, single-channel agents can go live in the first week. Agents with multiple system integrations — CRM, communication tools, internal databases — typically take 4–6 weeks to deploy fully.",
   },
   {
     q: "What's the difference between an AI agent and a chatbot?",
-    a: "A chatbot follows scripted responses. An AI agent reasons, makes decisions, and takes actions across your business systems. Our agents qualify leads, process documents, generate reports, and automate multi-step workflows — not just answer FAQs.",
+    a: "A chatbot follows a script. It can answer questions it was programmed to answer. An AI agent reasons through a situation, decides what action to take, and then takes it — across your systems. The agents we build qualify leads and push them to your CRM, extract data from documents and populate your databases, and trigger multi-step workflows automatically. That's a different category from a FAQ bot.",
   },
   {
-    q: "Can I test the agent before paying?",
-    a: "Yes. We build a working prototype specifically for your business in Week 1 — free. You can test the AI agent with your real queries before committing. We also have 30+ live agents at brilworks.com/ai-agents you can try right now.",
+    q: "Can I see the agent working before I pay for the full build?",
+    a: "Yes. We build a working prototype for your specific use case in Week 1 — no charge. You test it with your real queries and decide whether to proceed. If you want to see something before that, we have 30+ live agents at brilworks.com/ai-agents you can test right now.",
   },
   {
     q: "Do you offer white-label AI agents for agencies?",
-    a: "Yes. We build AI agents under your agency's brand. You sell to your clients, keep the margin, and we handle all technical work and maintenance. Minimum 3 clients to start the white-label program.",
+    a: "Yes. We build agents under your agency's brand. You handle the client relationship and set your pricing. We handle the technical build, infrastructure, and maintenance. The minimum to get started is 3 clients.",
   },
   {
-    q: "Which tools and systems can AI agents integrate with?",
-    a: "We integrate with most common business tools — HubSpot, Salesforce, WhatsApp Business API, Slack, Notion, Google Workspace, Zoho, and custom APIs. If you use a specific tool, mention it in the consultation and we'll confirm compatibility.",
+    q: "Which tools can AI agents integrate with?",
+    a: "We integrate with most common business tools — HubSpot, Salesforce, WhatsApp Business API, Slack, Notion, Google Workspace, Zoho, and custom APIs. If you're using something less common, mention it in the consultation and we'll confirm whether we can connect to it.",
   },
   {
-    q: "What happens after deployment — do you offer support?",
-    a: "All plans include monthly maintenance. This covers performance monitoring, bug fixes, model updates, and minor workflow adjustments. For major feature additions, we quote separately. You're never left managing infrastructure on your own.",
+    q: "What support do you provide after the agent goes live?",
+    a: "Every plan includes monthly maintenance — that covers performance monitoring, bug fixes, model updates, and minor workflow changes. If you need major new features added after launch, we scope and quote those separately. You're not left managing infrastructure on your own.",
   },
 ];
 
@@ -526,10 +526,10 @@ const AiAgentServicePage = () => {
                 </h1>
 
                 <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
-                  We build and deploy AI agents that automate lead
-                  qualification, customer support, document processing, and more
-                  — with a working prototype live in 7 days and full deployment
-                  in under 4 weeks.
+                  We build and deploy AI agents that handle lead qualification,
+                  customer support, document processing, and more. You get a
+                  working prototype in the first week — tested on your actual
+                  use cases — and full deployment in under four weeks.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-5">
@@ -681,10 +681,10 @@ const AiAgentServicePage = () => {
               What We Build
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-4">
-              AI agents built for real business functions
+              The AI agents we build handle real business functions
             </h2>
             <p className="text-[#475569] text-base md:text-lg leading-relaxed">
-              Most businesses don&apos;t need &quot;AI.&quot; They need specific
+              Most businesses don&apos;t need an AI strategy. They need specific
               parts of their operations handled automatically. Here&apos;s what
               we build.
             </p>
@@ -705,7 +705,7 @@ const AiAgentServicePage = () => {
                 <h3 className="text-[17px] font-bold text-[#0f172a] mb-2 tracking-tight">
                   {agent.title}
                 </h3>
-                <p className="text-[14px] text-[#475569] leading-relaxed mb-4">
+                <p className="text-[14px] text-[#475569] leading-relaxed pb-4">
                   {agent.desc}
                 </p>
                 <ul className="flex flex-col gap-2 mt-auto">
@@ -739,11 +739,12 @@ const AiAgentServicePage = () => {
               How It Works
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-4">
-              From kickoff to live in 4 weeks
+              From kickoff to live in four weeks
             </h2>
             <p className="text-[#475569] text-base leading-relaxed">
-              Most AI projects take too long to show results. We get something
-              working in Week 1 and improve from there.
+              Most AI projects are slow to show results. There&apos;s a lot of
+              planning, a lot of scoping, and not much to test until several
+              months in. We work differently.
             </p>
           </div>
 
@@ -824,7 +825,7 @@ const AiAgentServicePage = () => {
               Live Demos
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-black tracking-tight leading-tight mb-4">
-              Don&apos;t just read about it.{" "}
+              30+ live agents you can{" "}
               <span
                 className="bg-clip-text text-transparent"
                 style={{
@@ -832,13 +833,15 @@ const AiAgentServicePage = () => {
                     "linear-gradient(to right, #017eeb, #00dbd3)",
                 }}
               >
-                See it in action.
+                test right now.
               </span>
             </h2>
-            <p className="text-white/55 text-base md:text-lg leading-relaxed">
-              We&apos;ve already built 30+ AI agents across industries and use
-              cases. Instead of guessing how it works, test real implementations
-              right now.
+            <p className="text-[#475569] text-base md:text-lg leading-relaxed">
+              A lot of companies can describe what an AI agent does. We&apos;d
+              rather show you. We&apos;ve built and deployed over 30 agents
+              across industries and use cases — and you can test them yourself
+              before we&apos;ve spoken once. Pick one that&apos;s close to what
+              you want to automate and put it through its paces.
             </p>
           </div>
 
@@ -902,8 +905,8 @@ const AiAgentServicePage = () => {
               >
                 Tell us what to automate.
                 <br />
-                We&apos;ll respond with a{" "}
-                <span style={{ color: "#017eeb" }}>free blueprint</span>.
+                We&apos;ll send back a{" "}
+                <span style={{ color: "#017eeb" }}>plan</span>.
               </h2>
               <p
                 style={{
@@ -913,14 +916,15 @@ const AiAgentServicePage = () => {
                   marginBottom: 20,
                 }}
               >
-                Share your use case and we&apos;ll send back a custom plan —
-                what agent to build, how long it takes, and what ROI to expect.
-                No commitment required.
+                Share your use case and we&apos;ll respond with a custom
+                blueprint — which agent to build, how long it takes, what the
+                build costs, and what ROI to expect. No sales call required to
+                get it.
               </p>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-2.5 mt-4">
                 {[
-                  "Custom plan for your exact workflow",
-                  "Timeline + estimated ROI included",
+                  "Custom plan scoped to your exact workflow",
+                  "Timeline and estimated ROI included",
                   "Response within 2 business hours",
                   "No commitment or credit card needed",
                 ].map((item) => (
@@ -940,12 +944,12 @@ const AiAgentServicePage = () => {
               style={{ background: "#f8f9ff", border: "1px solid #e5e7eb" }}
             >
               <p
-                className="text-[15px] font-semibold text-[#0f172a] mb-5"
+                className="text-[15px] font-semibold text-[#0f172a]"
                 style={{ lineHeight: 1.5 }}
               >
                 What would you like to automate?
               </p>
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-2 gap-3 my-6">
                 {[
                   "Lead Qualification",
                   "Customer Support",
@@ -973,7 +977,7 @@ const AiAgentServicePage = () => {
               >
                 Get My Free AI Blueprint <ArrowRight size={16} />
               </Link>
-              <p className="text-xs text-[#94a3b8] text-center mt-3">
+              <p className="text-xs text-[#94a3b8] text-center pt-3">
                 We respond within 2 business hours. No spam, ever.
               </p>
             </div>
@@ -1009,7 +1013,7 @@ const AiAgentServicePage = () => {
               letterSpacing: "-0.5px",
             }}
           >
-            Ready to Automate Your Business?
+            Ready to automate part of your business?
           </h3>
           <p
             className="mb-7"
@@ -1019,9 +1023,9 @@ const AiAgentServicePage = () => {
               lineHeight: 1.7,
             }}
           >
-            Get a working AI agent prototype tailored to your operations in 7
-            days. No commitment until you&apos;ve tested it with your real use
-            cases.
+            Get a working AI agent prototype built for your operations in 7
+            days. No commitment until you&apos;ve tested it against your real
+            use cases.
           </p>
           <Link
             href={contactUrl}
@@ -1058,16 +1062,18 @@ const AiAgentServicePage = () => {
                 color: "#0d0f1a",
               }}
             >
-              Most agencies stop at &quot;building.&quot; We focus on making it
-              work inside your business.
+              Most agencies build the agent. We make sure it actually works
+              inside your business.
             </h2>
             <p
               className="mt-4"
               style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
             >
-              We don&apos;t chase demos. We partner with you to pick the right
-              use case, build the right agent, and ship AI that actually moves
-              your metrics.
+              Shipping an AI agent isn&apos;t the hard part. The hard part is
+              building one that fits how your team actually works — and keeping
+              it working as your workflows change. That&apos;s where most
+              engagements fall short. Here&apos;s how we approach it
+              differently.
             </p>
           </div>
           <div
@@ -1126,14 +1132,15 @@ const AiAgentServicePage = () => {
                 color: "#0d0f1a",
               }}
             >
-              Transparent pricing — no surprises
+              What it costs to build an AI agent
             </h2>
             <p
               className="mt-4"
               style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
             >
-              We keep pricing clear upfront so you know what to expect. All
-              plans include a working prototype in Week 1.
+              We keep pricing clear upfront. There are no hidden fees, no
+              lock-in contracts, and no surprises after the prototype stage.
+              Every plan includes a working prototype in Week 1.
             </p>
           </div>
 
@@ -1233,7 +1240,7 @@ const AiAgentServicePage = () => {
                       : { background: "rgba(1,126,235,0.08)", color: "#017eeb" }
                   }
                 >
-                  Get Started <ArrowRight size={15} />
+                  {tier.cta} <ArrowRight size={15} />
                 </Link>
               </div>
             ))}
@@ -1431,12 +1438,13 @@ const AiAgentServicePage = () => {
               Industries
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-4">
-              Industries we&apos;ve worked in
+              Industries we&apos;ve built for
             </h2>
             <p className="text-[#475569] text-base leading-relaxed">
-              We&apos;ve shipped AI agents across a range of verticals. If your
-              industry isn&apos;t here, chances are we&apos;ve solved an
-              adjacent problem.
+              We&apos;ve shipped agents across healthcare, fintech, eCommerce,
+              and more. The underlying problems — too much manual work, slow
+              response times, data locked in documents — show up in every
+              industry. If yours isn&apos;t listed, it almost certainly applies.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -1496,15 +1504,15 @@ const AiAgentServicePage = () => {
       <div id="contact">
         <SolutionContactForm
           title="Ready to Build Your AI Agent?"
-          description="You're one conversation away from automating a key part of your business. Tell us what you need — we'll show you how we'd build it and have a working prototype ready in Week 1."
+          description="One conversation is usually enough to know whether an AI agent is the right fit for what you're trying to automate. Tell us what you need. We'll walk you through how we'd build it and have a working prototype ready within a week."
           messageRequired={false}
           submitLabel="Book My Free AI Agent Consultation"
           benefits={[
-            "Working prototype in 7 days — test before you commit",
-            "Starting at $2,000 setup, transparent pricing",
-            "30+ AI agents already built across 12 industries",
+            "Working prototype in 7 days — test it before you commit",
+            "Starting at $2,000, with transparent pricing throughout",
+            "30+ AI agents already shipped across 12 industries",
             "Full deployment in 2–4 weeks, not months",
-            "Ongoing maintenance and support included",
+            "Ongoing maintenance and support included in every plan",
           ]}
         />
       </div>
@@ -1520,8 +1528,7 @@ const AiAgentServicePage = () => {
         }}
       >
         <span className="text-sm text-white/70 text-center md:text-left">
-          <strong className="text-white">Impressed?</strong> Let&apos;s build AI
-          agents for your business.
+          Let&apos;s build an AI agent for your business.
         </span>
         <Link
           href={contactUrl}
