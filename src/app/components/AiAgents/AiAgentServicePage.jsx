@@ -40,9 +40,6 @@ const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm"),
 );
 
-/* ─────────────────────────────────────────
-   DATA
-───────────────────────────────────────── */
 const trustItems = [
   { number: "30+", label: "AI Agents Built" },
   { number: "Trusted by", label: "Startups & Enterprises" },
@@ -422,9 +419,6 @@ const darkSectionBg = {
     "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
 };
 
-/* ─────────────────────────────────────────
-   COMPONENT
-───────────────────────────────────────── */
 const AiAgentServicePage = () => {
   const [stickyVisible, setStickyVisible] = useState(false);
 
@@ -436,7 +430,7 @@ const AiAgentServicePage = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* ==================== HERO ==================== */}
+      {/* HERO */}
       <section
         className="relative overflow-hidden"
         style={{ background: "#000d1e" }}

@@ -1,0 +1,417 @@
+AI AGENT SERVICE PAGE — CONTENT (Section-wise)
+================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1: HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Breadcrumb:
+  Home / AI Agent Development
+
+Badge:
+  30+ AI AGENTS SHIPPED ACROSS 12 INDUSTRIES
+
+H1:
+  Get a Working AI Agent
+  in 7 Days — Built for Your Workflow
+
+Sub-heading / Description:
+  We build and deploy AI agents that automate lead qualification, customer support,
+  document processing, and more — with a working prototype live in 7 days and full
+  deployment in under 4 weeks.
+
+CTA Buttons:
+  [Get My Free AI Blueprint →]
+  [Explore 30+ Live Demos]
+
+Scarcity Notice:
+  Currently accepting 3 new clients this month
+
+Trust Badges (below buttons):
+  ✓ Free prototype in Week 1
+  ✓ No long-term contract
+  ✓ ISO 27001 Certified
+
+Stats Grid (right side):
+  30+         — AI Agents Built & Deployed
+  7 Days      — Prototype Delivery
+  12+         — Industries Served
+  98%         — Client Satisfaction
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2: TRUST / HONORS BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  🛡 AWS Consulting Partner
+  🏆 Clutch Global Award 2025
+  ⭐ GoodFirms Top AI Developers
+  🛡 ISO 27001 Certified
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3: WHAT WE BUILD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    What We Build
+Heading:  AI agents built for real business functions
+Body:     Most businesses don't need "AI." They need specific parts of their
+          operations handled automatically. Here's what we build.
+
+--- Agent Cards ---
+
+1. WhatsApp AI Agents
+   Turn conversations into conversions. Instantly engage inbound messages,
+   qualify leads, and book appointments — without your team touching it.
+   Handles:
+   • Instant response to inbound messages
+   • Lead capture and qualification
+   • Appointment booking and follow-ups
+
+2. Lead Qualification Agents
+   Your sales team shouldn't filter leads. This agent captures, scores, and
+   routes only high-intent prospects to the right people.
+   Handles:
+   • Real-time lead qualification
+   • Lead scoring based on behavior
+   • CRM integration and auto-routing
+
+3. Customer Support Agents
+   24/7 support without growing headcount. Handles common queries, resolves
+   requests, and reduces response time across every channel.
+   Handles:
+   • 24/7 automated support
+   • Multi-channel (chat, email, WhatsApp)
+   • Ticket handling and resolution
+
+4. Document Processing Agents
+   Manual document handling slows everything. This agent extracts, processes,
+   and structures data from invoices, forms, and PDFs automatically.
+   Handles:
+   • Data extraction from PDFs and invoices
+   • Structured data output
+   • Faster internal processing
+
+5. Workflow Automation Agents
+   Connect your tools and automate multi-step workflows without manual
+   intervention. Reduces operational overhead and improves consistency.
+   Handles:
+   • Automating repetitive workflows
+   • Triggering actions across tools
+   • Managing multi-step processes
+
+6. White-Label Agents for Agencies
+   Offer AI agents to your clients under your brand. We handle the build,
+   infrastructure, and maintenance while you keep the margin.
+   Handles:
+   • Fully white-labeled delivery
+   • Scalable across multiple clients
+   • Ongoing technical support included
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4: HOW IT WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    How It Works
+Heading:  From kickoff to live in 4 weeks
+Body:     Most AI projects take too long to show results. We get something
+          working in Week 1 and improve from there.
+
+--- Steps ---
+
+Week 1 — Working Prototype
+  A functional AI agent built for your exact use case. Test it with real
+  inputs before committing to anything.
+
+Week 2 — Core Logic Setup
+  We define how the agent thinks, responds, and handles your key business
+  workflows.
+
+Week 3 — Integrations
+  Connect the agent to your tools, CRM, communication channels, and internal
+  systems.
+
+Week 4 — Testing & Deployment
+  Test with real scenarios, optimize performance, and deploy into your live
+  operations.
+
+Callout Banner:
+  "You don't wait months to see results. You see it working in the first week."
+  CTA: [Get Your Prototype in Week 1 →]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5: LIVE DEMOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Live Demos
+Heading:  Don't just read about it. See it in action.
+Body:     We've already built 30+ AI agents across industries and use cases.
+          Instead of guessing how it works, test real implementations right now.
+
+--- Agent Showcase ---
+
+1. Bio-Coach       — Personalized workout & fitness plans          /ai-agents/fitness
+2. Credits         — Personal budgeting & financial planning       /ai-agents/finance
+3. Guild           — Career guidance & professional growth         /ai-agents/career
+4. Teleport        — Travel planning & itinerary builder           /ai-agents/travel
+5. Cortex          — Accelerated learning & knowledge tools        /ai-agents/learning
+6. Founder         — Startup strategy & venture scaling            /ai-agents/startup
+
+CTA: [Explore All 30+ AI Agents →]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6: FREE AI AGENT AUDIT (LEAD CAPTURE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Free AI Agent Audit
+Heading:  Tell us what to automate.
+          We'll respond with a free blueprint.
+Body:     Share your use case and we'll send back a custom plan — what agent
+          to build, how long it takes, and what ROI to expect.
+          No commitment required.
+
+Benefits:
+  ✓ Custom plan for your exact workflow
+  ✓ Timeline + estimated ROI included
+  ✓ Response within 2 business hours
+  ✓ No commitment or credit card needed
+
+Use Case Buttons (right panel):
+  "What would you like to automate?"
+  [Lead Qualification]      [Customer Support]
+  [Document Processing]     [WhatsApp Messaging]
+  [Workflow Automation]     [Something Else]
+
+CTA: [Get My Free AI Blueprint →]
+Note: We respond within 2 business hours. No spam, ever.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7: MID-PAGE CTA BANNER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Heading:  Ready to Automate Your Business?
+Body:     Get a working AI agent prototype tailored to your operations in 7 days.
+          No commitment until you've tested it with your real use cases.
+CTA:      [Start With a Free Prototype →]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 8: WHY BRILWORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Why Brilworks
+Heading:  Most agencies stop at "building." We focus on making it work inside
+          your business.
+Body:     We don't chase demos. We partner with you to pick the right use case,
+          build the right agent, and ship AI that actually moves your metrics.
+
+--- Cards ---
+
+1. Built Around Your Workflow
+   We don't give generic solutions. Every agent is tailored to your operations,
+   your data, and the specific problems your team faces daily.
+
+2. Prototype Before Commitment
+   You see a working version in Week 1 — tested against your real use cases —
+   before making a full investment.
+
+3. End-to-End Execution
+   From idea to deployment to scaling — we handle design, development,
+   integration, and ongoing maintenance.
+
+4. Real Business Impact
+   Our agents don't just respond. They qualify leads, process data, trigger
+   actions, and automate workflows that actually move metrics.
+
+5. Secure & Compliant
+   Every agent is built with data privacy and security in mind. We follow strict
+   guidelines on data handling, access control, and compliance.
+
+6. Fast Time to Value
+   Most AI projects take months. Ours take weeks. A working prototype in 7 days
+   means your business benefits sooner.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 9: PRICING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Pricing
+Heading:  Transparent pricing — no surprises
+Body:     We keep pricing clear upfront so you know what to expect. All plans
+          include a working prototype in Week 1.
+
+--- Tiers ---
+
+STARTER
+  Price:       Starting at $2,000
+  Maintenance: $500/month maintenance
+  Scarcity:    ⚡ 2 slots remaining in May
+  Includes:
+    ✓ 1 AI agent
+    ✓ 1 workflow
+    ✓ Basic setup and deployment
+    ✓ Free prototype in Week 1
+  CTA: [Get Started →]
+
+PRO  (Most Popular)
+  Price:       Starting at $5,000
+  Maintenance: $1,500/month maintenance
+  Includes:
+    ✓ 2–3 AI agents
+    ✓ Multi-channel support
+    ✓ CRM and API integrations
+    ✓ Week 1 prototype
+  CTA: [Get Started →]
+
+CUSTOM
+  Price:       $10K–$25K
+  Maintenance: $3,000–$5,000/month
+  Includes:
+    ✓ Multi-agent systems
+    ✓ Complex workflows & integrations
+    ✓ Enterprise-grade deployment
+    ✓ Dedicated account manager
+  CTA: [Talk to Us →]
+
+Footer note: Final pricing depends on your use case, integrations, and scale.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 10: CLIENT STORIES / TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Client Stories
+Heading:  What Our Clients Say
+Body:     Rated 4.8★ on Clutch across 40+ verified reviews. Real outcomes
+          from real businesses.
+
+--- Testimonials ---
+
+1. Ravi Mehta — Founder, D2C eCommerce Brand
+   "They delivered a working WhatsApp lead qualification agent in the first
+   week. We didn't believe it until we tested it ourselves. Now it handles 80%
+   of our inbound qualification automatically."
+
+2. Sarah Thompson — Operations Manager, Logistics SaaS
+   "The document processing agent they built cut our invoice processing time by
+   70%. The 4-week timeline was accurate and the team communicated clearly
+   throughout the entire build."
+
+3. James Liu — CTO, B2B Sales Platform
+   "We needed a lead qualification agent that integrated with our CRM. Brilworks
+   had it running in two weeks and it's now handling qualification for over 500
+   leads a day without any manual input."
+
+--- Proof Stats ---
+  4.8★   Clutch Rating
+  40+    Verified Reviews
+  4.9    Upwork Score
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 11: RECOGNIZED BY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Recognized By
+Heading:  Trusted & Awarded by Industry Leaders
+
+  🛡 AWS Consulting Partner
+  🏆 Clutch Global Award 2025
+  ⭐ GoodFirms Top AI Developers
+  🛡 ISO 27001 Certified
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 12: INDUSTRIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Industries
+Heading:  Industries we've worked in
+Body:     We've shipped AI agents across a range of verticals. If your industry
+          isn't here, chances are we've solved an adjacent problem.
+
+  1. Healthcare    — /industry/healthcare-software-development/
+  2. Fintech       — /industry/fintech-software-development/
+  3. eCommerce     — /industry/e-commerce-app-development/
+  4. EdTech        — /industry/edtech-software-development/
+  5. Manufacturing — /industry/manufacturing-software-development/
+  6. Agencies      — /contact-us/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 13: FAQ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Label:    Frequently Asked Questions
+Heading:  Common Questions About AI Agents
+
+Q1. How much does it cost to build a custom AI agent?
+A:  Custom AI agents start at $2,000 setup with $500/month maintenance. More
+    advanced multi-agent systems range from $10,000–$25,000 setup with
+    $3,000–$5,000/month. We offer a working prototype in Week 1 so you can
+    evaluate the agent before committing to the full build.
+
+Q2. How long does it take to build an AI agent?
+A:  You get a working prototype in 7 days. Full production deployment takes
+    2–4 weeks depending on complexity. Simple agents can go live in Week 1.
+    Multi-system integrations typically take 4–6 weeks.
+
+Q3. What's the difference between an AI agent and a chatbot?
+A:  A chatbot follows scripted responses. An AI agent reasons, makes decisions,
+    and takes actions across your business systems. Our agents qualify leads,
+    process documents, generate reports, and automate multi-step workflows —
+    not just answer FAQs.
+
+Q4. Can I test the agent before paying?
+A:  Yes. We build a working prototype specifically for your business in Week 1 —
+    free. You can test the AI agent with your real queries before committing.
+    We also have 30+ live agents at brilworks.com/ai-agents you can try right now.
+
+Q5. Do you offer white-label AI agents for agencies?
+A:  Yes. We build AI agents under your agency's brand. You sell to your clients,
+    keep the margin, and we handle all technical work and maintenance. Minimum
+    3 clients to start the white-label program.
+
+Q6. Which tools and systems can AI agents integrate with?
+A:  We integrate with most common business tools — HubSpot, Salesforce, WhatsApp
+    Business API, Slack, Notion, Google Workspace, Zoho, and custom APIs. If you
+    use a specific tool, mention it in the consultation and we'll confirm
+    compatibility.
+
+Q7. What happens after deployment — do you offer support?
+A:  All plans include monthly maintenance. This covers performance monitoring, bug
+    fixes, model updates, and minor workflow adjustments. For major feature
+    additions, we quote separately. You're never left managing infrastructure on
+    your own.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 14: CONTACT FORM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Title:       Ready to Build Your AI Agent?
+Description: You're one conversation away from automating a key part of your
+             business. Tell us what you need — we'll show you how we'd build it
+             and have a working prototype ready in Week 1.
+CTA Button:  Book My Free AI Agent Consultation
+
+Benefits shown alongside form:
+  ✓ Working prototype in 7 days — test before you commit
+  ✓ Starting at $2,000 setup, transparent pricing
+  ✓ 30+ AI agents already built across 12 industries
+  ✓ Full deployment in 2–4 weeks, not months
+  ✓ Ongoing maintenance and support included
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 15: STICKY BOTTOM BAR (scroll-triggered)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Text: Impressed? Let's build AI agents for your business.
+CTA:  [Talk to Us →]
