@@ -87,11 +87,6 @@ const nextConfig = {
         statusCode: 301,
       },
       {
-        source: `/services/`,
-        destination: `/`,
-        statusCode: 301,
-      },
-      {
         source: `/studyme/`,
         destination: `/`,
         statusCode: 301,

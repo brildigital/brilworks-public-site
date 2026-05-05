@@ -7,17 +7,22 @@ import ProjectChallengesSection from "@/app/components/Portfolio/ProjectChalleng
 import ProjectSolutionSection from "@/app/components/Portfolio/ProjectSolutionSection";
 import BridgeCTA from "@/app/components/Portfolio/BridgeCTA";
 import SeeingBelieving from "@/app/components/Homepage/SeeingBelieving";
+import ArticleStoryView from "./ArticleStoryView";
+import {
+  calculateReadingTime,
+  formatSrcUrl,
+} from "@/app/components/lib/commonFunction";
 
 async function fetchWithErrorHandling(url, options) {
   try {
     const res = await fetch(url, options);
     if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
+      return null;
     }
     return res.json();
   } catch (error) {
     console.error("Fetch error:", error);
-    return notFound();
+    return null;
   }
 }
 async function getAllSlugs() {
@@ -31,6 +36,7 @@ async function getAllSlugs() {
   };
 
   const data = await fetchWithErrorHandling(url, options);
+  if (!data?.stories) return [];
 
   return data.stories.map((story) => story.slug.replace("portfolio/", ""));
 }
@@ -46,6 +52,10 @@ async function getPortfolioData(slug) {
   return fetchWithErrorHandling(url, options);
 }
 
+function isArticleStory(story) {
+  return story?.content?.component === "article";
+}
+
 export async function generateStaticParams() {
   try {
     const slugs = await getAllSlugs();
@@ -56,16 +66,70 @@ export async function generateStaticParams() {
   }
 }
 
+export const dynamicParams = true;
+
 export async function generateMetadata({ params }) {
   try {
     const storyData = await getPortfolioData(params.slug);
-    const { title, description } = storyData?.story?.content?.SEO;
+    const story = storyData?.story;
+    if (!story) return {};
+
+    if (isArticleStory(story)) {
+      const totalDataWord =
+        (story.content.content || "") +
+        (story.content.Content_1 || "") +
+        (story.content.Content_2 || "") +
+        (story.content.Content_3 || "");
+
+      return {
+        title: story.content.metatags?.title || story.content.title,
+        description: story.content.metatags?.description,
+        authors: story.content.BlogAuthor
+          ? [{ name: story.content.BlogAuthor }]
+          : undefined,
+        openGraph: {
+          title: story.content.metatags?.og_title || story.content.title,
+          description:
+            story.content.metatags?.og_description ||
+            story.content.metatags?.description,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/${params.slug}/`,
+          images: [
+            {
+              url: formatSrcUrl(
+                story.content.metatags?.og_image ||
+                  story.content?.mobile_banner?.filename,
+              ),
+            },
+          ],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: story.content.metatags?.og_title || story.content.title,
+          description:
+            story.content.metatags?.og_description ||
+            story.content.metatags?.description,
+          creator: story.content.BlogAuthor,
+          site: "@_Brilworks",
+        },
+        alternates: {
+          canonical: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/${params.slug}/`,
+        },
+        other: {
+          "twitter:label1": "Est. reading time",
+          "twitter:data1": `${calculateReadingTime(totalDataWord)} minutes`,
+        },
+      };
+    }
+
+    const seo = story?.content?.SEO;
+    const title = seo?.title;
+    const description = seo?.description;
     return {
-      title: title,
-      description: description,
+      title,
+      description,
       openGraph: {
-        title: title,
-        description: description,
+        title,
+        description,
         url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/${params.slug}/`,
         siteName:
           "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -73,8 +137,8 @@ export async function generateMetadata({ params }) {
         type: "website",
       },
       twitter: {
-        title: title,
-        description: description,
+        title,
+        description,
         card: "summary_large_image",
         site: "@_Brilworks",
       },
@@ -90,6 +154,16 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const storyData = await getPortfolioData(params?.slug);
+  const story = storyData?.story;
+
+  if (!story) {
+    return notFound();
+  }
+
+  if (isArticleStory(story)) {
+    return <ArticleStoryView story={story} slug={params?.slug} />;
+  }
+
   const {
     title,
     description,
@@ -102,7 +176,7 @@ export default async function Page({ params }) {
     ProjectChallenges,
     technology,
     industry,
-  } = storyData.story.content;
+  } = story.content;
 
   return (
     <Suspense fallback={<FetchDataSpinner />}>

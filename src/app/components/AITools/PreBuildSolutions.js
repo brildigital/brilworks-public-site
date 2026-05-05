@@ -673,7 +673,7 @@ export default function PrebuiltSolutionsPage() {
           {schedule && (
             <div className="w-full mt-10">
               <Cal
-                calLink="vikas-singh-bril/free-consultation"
+                calLink="vikas-singh-bril/30-min-product-eng-review"
                 config={{ theme: "light" }}
               />
             </div>

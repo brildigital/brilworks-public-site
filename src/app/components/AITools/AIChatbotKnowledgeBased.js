@@ -73,7 +73,7 @@ const AIChatbotKnowledgeBased = () => {
       setDocumentAnalysis(analysis);
     } catch (error) {
       setAnalysisError(
-        error instanceof Error ? error.message : "Failed to analyze document"
+        error instanceof Error ? error.message : "Failed to analyze document",
       );
     } finally {
       setIsAnalyzing(false);
@@ -320,7 +320,7 @@ const AIChatbotKnowledgeBased = () => {
                 </p>
                 <div className="w-full">
                   <Cal
-                    calLink="vikas-singh-bril/free-consultation"
+                    calLink="vikas-singh-bril/30-min-product-eng-review"
                     config={{ theme: "light" }}
                   />
                 </div>
