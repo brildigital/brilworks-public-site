@@ -22,7 +22,7 @@ import Heading from "../HTMLComponents/Heading";
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 const MultipleCardWithIconBG = dynamic(
-  () => import("../Common/MultipleCardWithIconBG")
+  () => import("../Common/MultipleCardWithIconBG"),
 );
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
@@ -31,11 +31,11 @@ const ReactJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
 const SolutionContactForm = dynamic(
-  () => import("../Solution/SolutionContactForm")
+  () => import("../Solution/SolutionContactForm"),
 );
 
 const HireDevelopersInThreeSteps = dynamic(
-  () => import("../HireTeam/HireDevelopersInThreeSteps")
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -293,7 +293,7 @@ const ReactJSTechnology = () => {
 
           <div className="w-full mt-10">
             <Cal
-              calLink="vikas-singh-bril/free-consultation"
+              calLink="vikas-singh-bril/30-min-product-eng-review"
               config={{ theme: "light" }}
             />
           </div>
