@@ -145,13 +145,13 @@ const SideMenu = ({ open, close }) => {
           >
             Our Process
           </Link>
-          <Link
+          {/* <Link
             href="/career/"
             onClick={close}
             className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
           >
             Career
-          </Link>
+          </Link> */}
           <Link
             href="/contact-us/"
             onClick={close}
