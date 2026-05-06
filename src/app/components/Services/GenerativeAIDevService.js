@@ -650,8 +650,15 @@ const GenerativeAIDevService = () => {
                 <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
                   Ship Production-Grade Generative AI — <span style={gradientTextStyle}>In Weeks, Not Quarters</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
+                <p className="mb-4" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We build LLM apps, RAG pipelines, AI agents, and fine-tuned models on OpenAI, Anthropic, and AWS Bedrock. 30+ GenAI apps shipped — production-ready from day one, with guardrails, evals, and cost controls built in.
+                </p>
+                <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", maxWidth: 580 }}>
+                  Start by{" "}
+                  <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "underline", textUnderlineOffset: 4 }}>
+                    comparing AI platforms for generative AI workloads
+                  </Link>{" "}
+                  — then we&apos;ll match the right model and architecture to your use case.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
