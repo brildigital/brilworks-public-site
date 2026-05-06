@@ -130,8 +130,8 @@ export const servicesMenuItems = [
     name: "AI & Agents",
     subSections: [
       {
-        name: "AI Agents",
-        path: "/ai-agents/",
+        name: "AI Agent Development",
+        path: "/ai-agent-development-services/",
       },
       {
         name: "Generative AI Development",
@@ -473,13 +473,14 @@ export const menuItems = [
     name: "Career",
     path: "/career/",
     hideInHeader: true,
-    hideInSideMenu: true,
+    // hideInSideMenu: true,
   },
 ];
 
 export const portfolioDynamicItems = [
   {
-    title: "How We Doubled Coding Speed at Two Anonymized Clients with Claude Code",
+    title:
+      "How We Doubled Coding Speed at Two Anonymized Clients with Claude Code",
     link: "/portfolio/claude-code-coding-speed-lift/",
     description:
       "Anonymized case study of rolling out Claude Code as an in-team coding assistant at HostCo (hospitality tech) and HomeCo (smart-home tech): the four-step playbook, ~2x cycle-time lift, and where the agent does and doesn't compound.",
@@ -1330,6 +1331,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/ai-agents/vision/",
     lastmod: "2025-11-28T07:29:53.702Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-agent-development-services/",
+    lastmod: "2026-05-01T00:00:00.000Z",
   },
 
   {

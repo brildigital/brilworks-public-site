@@ -203,21 +203,18 @@ export async function POST(req, res) {
         //       { status: 500 }
         //     );
         //   });
-        await transporter
-          .sendMail(msg)
-          .then((data) => {
-            return NextResponse.json(
-              { message: "Email sent successfully" },
-              { status: 200 },
-            );
-          })
-          .catch((error) => {
-            console.error(error);
-            return NextResponse.json(
-              { message: "Error sending email" },
-              { status: 500 },
-            );
-          });
+        try {
+          await transporter.sendMail(msg);
+        } catch (emailError) {
+          console.error(
+            "[home-career] Failed to send ebook email:",
+            emailError,
+          );
+          return NextResponse.json(
+            { message: "Error sending email" },
+            { status: 500 },
+          );
+        }
       }
     } else {
       await Promise.all([
