@@ -627,8 +627,15 @@ const AIMLService = () => {
                 <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
                   Ship Production-Ready AI — <span style={gradientTextStyle}>From Model to Measurable ROI</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
+                <p className="mb-4" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
                   We build, deploy, and scale AI/ML systems for founders and data teams. 50+ production models shipped across 20+ industries — pilot in 6 weeks, with measurable ROI from day one.
+                </p>
+                <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", maxWidth: 580 }}>
+                  Not sure{" "}
+                  <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "underline", textUnderlineOffset: 4 }}>
+                    which AI platform fits your stack
+                  </Link>
+                  ? Compare the leading options before we scope your pilot.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"

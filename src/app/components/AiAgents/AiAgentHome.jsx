@@ -495,10 +495,20 @@ const AiAgentHome = () => {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg text-white/60 !mb-6 max-w-xl leading-relaxed">
                 Brilworks builds and deploys custom AI agents for startups and
                 enterprise teams. Explore our live demos — then let's build
                 yours.
+              </p>
+              <p className="text-sm md:text-base text-white/50 !mb-10 max-w-xl leading-relaxed">
+                Curious what models power agents like these? See{" "}
+                <Link
+                  href="/blog/best-artificial-intelligence-platforms/"
+                  className="text-white/80 underline underline-offset-4 hover:text-white"
+                >
+                  our shortlist of the best AI platforms for 2026
+                </Link>
+                .
               </p>
 
               <div className="flex flex-wrap gap-4">
