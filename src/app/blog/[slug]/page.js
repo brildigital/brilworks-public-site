@@ -11,7 +11,12 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
-import { generateRatingSchema, generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateRatingSchema,
+  generateBlogPostingSchema,
+  generateFaqPageSchema,
+  generatePersonSchema,
+} from "@/app/components/lib/schemaCode";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -86,6 +91,18 @@ export default async function Page(props) {
     data?.story?.content?.Content_3;
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
+
+  const authorPageSlugByName = {
+    "Hitesh Umaletiya": "/blog/author/hitesh-umaletiya/",
+    "Vikas Singh": "/blog/author/vikas-singh/",
+  };
+  const authorPageUrl = authorPageSlugByName[author?.name]
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}${authorPageSlugByName[author?.name].replace(/^\//, "")}`
+    : author?.authorLinkedIn;
+
+  const faqEntries = (data?.story?.content?.FAQ || [])
+    .filter((f) => f?.Question && f?.Answer)
+    .map((f) => ({ question: f.Question, answer: f.Answer }));
 
   const showRatingBasedOnPathname = {
     "comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill": {
@@ -214,6 +231,30 @@ export default async function Page(props) {
           }}
         />
       )}
+      {faqEntries.length > 0 && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateFaqPageSchema(faqEntries),
+          }}
+        />
+      )}
+      {author?.name && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generatePersonSchema({
+              name: author.name,
+              url: authorPageUrl,
+              image: author.authorImage,
+              jobTitle: author.mobileDesc,
+              sameAs: [author.authorLinkedIn].filter(Boolean),
+            }),
+          }}
+        />
+      )}
       <div className="bg-detail-hero">
         <div className="h-full min-h-[600px] md:max-h-[700px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
@@ -277,6 +318,10 @@ export default async function Page(props) {
                 {/* <p className="sxl:text-2xl md:text-xl text-lg md:!mb-5 !mb-4">
                   {data?.story?.content?.title}
                 </p> */}
+                <p className="sxl:text-base md:text-sm text-xs text-white/80 mb-3">
+                  Last updated{" "}
+                  {formattedDate(data?.story?.published_at || new Date())}
+                </p>
                 <Heading type="h1" text={data?.story?.content?.title} />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
@@ -324,19 +369,6 @@ export default async function Page(props) {
                       />
                     </span>
                     {calculateReadingTime(totalDataWord)} mins read
-                  </div>
-                  <div className="flex sxl:items-center items-start">
-                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
-                      <Image
-                        src="/images/v2/calendar-icon.svg"
-                        width={32}
-                        height={32}
-                        alt="Calendar icon"
-                        priority="true"
-                      />
-                    </span>
-                    Last updated{" "}
-                    {formattedDate(data?.story?.published_at || new Date())}
                   </div>
                 </div>
               </div>
