@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 import { generateRatingSchema, generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
+import { reviewedForLine } from "@/app/components/lib/reviewedForBlogs";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -290,6 +291,14 @@ export default async function Page(props) {
                   Last updated{" "}
                   {formattedDate(data?.story?.published_at || new Date())}
                 </div>
+                {reviewedForLine(params?.slug) && (
+                  <p
+                    className="reviewed-for text-base sxl:text-lg text-white/80 mb-3 max-w-3xl"
+                    dangerouslySetInnerHTML={{
+                      __html: reviewedForLine(params?.slug),
+                    }}
+                  />
+                )}
                 <Heading type="h1" text={data?.story?.content?.title} />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
