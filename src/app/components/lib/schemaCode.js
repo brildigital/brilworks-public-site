@@ -143,9 +143,25 @@ export function generateBlogPostingSchema({
   dateModified,
   authorName,
   authorUrl,
+  authorJobTitle,
+  authorPageUrl,
   category,
   readingTime,
 }) {
+  const sameAs = [authorUrl, authorPageUrl].filter(Boolean);
+  const author = {
+    "@type": "Person",
+    name: authorName,
+    url: authorPageUrl || authorUrl,
+    ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
+    worksFor: {
+      "@type": "Organization",
+      name: "Brilworks",
+      url: "https://www.brilworks.com/",
+    },
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -156,11 +172,7 @@ export function generateBlogPostingSchema({
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     wordCount: readingTime ? readingTime * 250 : undefined,
-    author: {
-      "@type": "Person",
-      name: authorName,
-      url: authorUrl,
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: "Brilworks",

@@ -167,6 +167,8 @@ export const blogAuthor = (authorName) => {
       name: "Hitesh Umaletiya",
       authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/9caa5563dc_hitesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/hitesh-umaletiya-266a6077/",
+      authorPageUrl: "https://www.brilworks.com/blog/author/hitesh-umaletiya/",
+      jobTitle: "Co-founder, Brilworks",
       authorDesc:
         "Co-founder of Brilworks. As technology futurists, we love helping startups turn their ideas into reality. Our expertise spans startups to SMEs, and we're dedicated to their success.",
       mobileDesc: "Co-founder of Brilworks",
@@ -175,6 +177,8 @@ export const blogAuthor = (authorName) => {
       name: "Vikas Singh",
       authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/35b061522a_vikas.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
+      authorPageUrl: "https://www.brilworks.com/blog/author/vikas-singh/",
+      jobTitle: "Chief Technology Officer, Brilworks",
       authorDesc:
         "Vikas, the visionary CTO at Brilworks, is passionate about sharing tech insights, trends, and innovations. He helps businesses—big and small—improve with smart, data-driven ideas.",
       authorPageDesc:
@@ -185,6 +189,7 @@ export const blogAuthor = (authorName) => {
       name: "Lavesh Katariya",
       authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/271c9290a8_lavesh-150x150.jpg`,
       authorLinkedIn: "https://www.linkedin.com/in/laveshkatariya/",
+      jobTitle: "Senior MERN Stack Developer, Brilworks",
       authorDesc:
         "With over 8 years of experience in the MERN stack, I specialize in building robust and scalable web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, my passion for clean code and innovative problem-solving ensures high-quality solutions.",
       mobileDesc: "Sr. MERN Stack Developer",
@@ -193,6 +198,8 @@ export const blogAuthor = (authorName) => {
       name: "Colin Shah",
       authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/b9f60bcb6e_colin300x300.jpeg`,
       authorLinkedIn: "https://www.linkedin.com/in/colin-shah-java-developer/",
+      authorPageUrl: "https://www.brilworks.com/blog/author/colin-shah/",
+      jobTitle: "Lead Java Developer, Brilworks",
       authorDesc:
         "As a lead Java developer with 8+ years of experience, I design and develop high-performance web applications using Java, Spring Boot, Hibernate, Microservices, RESTful APIs, AWS, and DevOps. I'm dedicated to sharing knowledge through blogs and tutorials.",
       mobileDesc: "Sr. Java Developer",
