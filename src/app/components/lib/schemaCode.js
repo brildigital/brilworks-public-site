@@ -97,22 +97,6 @@ export function generateBreadcrumb(secondPositionName) {
   return JSON.stringify(breadCrumbList);
 }
 
-export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
-  const ratingSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: title,
-    url: `https://www.brilworks.com/${pageURL}`,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: ratingValue,
-      reviewCount: ratingCount,
-      bestRating: 5,
-    },
-  };
-  return JSON.stringify(ratingSchema);
-}
-
 export function generateVideoSchema({
   name,
   description,
