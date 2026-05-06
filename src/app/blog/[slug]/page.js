@@ -148,12 +148,6 @@ export default async function Page(props) {
       ratingValue: 4.4,
       ratingCount: 80,
     },
-    "path-to-become-aws-partner": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.3,
-      ratingCount: 75,
-    },
     "react-native-vs-kotlin": {
       title: data?.story?.content?.title,
       pageURL: params?.slug,
