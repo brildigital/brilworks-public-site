@@ -686,6 +686,7 @@ const AIMLService = () => {
             <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>What We Build</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our AI/ML Development Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end AI delivery — from identifying the right use case to deploying production models that drive measurable business outcomes.</p>
+            <p className="mt-3" style={{ fontSize: 15, lineHeight: 1.7, color: "#6b7280" }}>Curious what production AI looks like outside enterprise dashboards? <Link href="/ai-agents/meme/" style={{ color: "#017eeb", fontWeight: 600 }}>Try our AI meme generator</Link> — same models, lighter use case.</p>
           </div>
 
           {SERVICES.map((svc) => (
