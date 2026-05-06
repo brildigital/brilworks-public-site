@@ -61,6 +61,8 @@ export async function POST(req, res) {
     return NextResponse.json({ errors }, { status: 400 });
   }
 
+  console.log("link", downloadLink);
+
   try {
     // Save lead to Supabase (fire-and-forget — never blocks the response)
     saveLead({
@@ -75,6 +77,7 @@ export async function POST(req, res) {
       country: userData?.country,
       projectType,
     }).catch((err) => console.error("[supabase-leads] insert failed:", err));
+    console.log("link2", downloadLink);
 
     if (page === "/career/") {
       // const msg = {
@@ -136,8 +139,11 @@ export async function POST(req, res) {
         createHubSpotContact(payload),
         sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
+      console.log("link3", downloadLink);
 
       if (downloadLink) {
+        console.log("link4", downloadLink);
+
         const textToShow = page.startsWith("/portfolio/")
           ? "Case Study"
           : "E-Book";
@@ -203,21 +209,18 @@ export async function POST(req, res) {
         //       { status: 500 }
         //     );
         //   });
-        await transporter
-          .sendMail(msg)
-          .then((data) => {
-            return NextResponse.json(
-              { message: "Email sent successfully" },
-              { status: 200 },
-            );
-          })
-          .catch((error) => {
-            console.error(error);
-            return NextResponse.json(
-              { message: "Error sending email" },
-              { status: 500 },
-            );
-          });
+        try {
+          await transporter.sendMail(msg);
+        } catch (emailError) {
+          console.error(
+            "[home-career] Failed to send ebook email:",
+            emailError,
+          );
+          return NextResponse.json(
+            { message: "Error sending email" },
+            { status: 500 },
+          );
+        }
       }
     } else {
       await Promise.all([
