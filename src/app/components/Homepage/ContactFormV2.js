@@ -4,6 +4,12 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
+import {
+  getLeadSource,
+  markLeadSource,
+  pushFormStart,
+  pushGenerateLead,
+} from "../lib/leadSource";
 
 const projectTypes = [
   { value: "ai-solutions", label: "AI Solutions", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z" /><rect x="3" y="8" width="18" height="12" rx="2" /><circle cx="9" cy="14" r="1.5" /><circle cx="15" cy="14" r="1.5" /></svg> },
@@ -29,6 +35,7 @@ const ContactFormV2 = ({
   });
 
   const [previousPage, setPreviousPage] = useState("");
+  const formStartFiredRef = useRef(false);
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -39,8 +46,16 @@ const ContactFormV2 = ({
     sessionStorage.setItem("previousNav", currentPath);
   }, []);
 
+  const markFormFunnel = () => {
+    if (formStartFiredRef.current) return;
+    formStartFiredRef.current = true;
+    markLeadSource("form_funnel");
+    pushFormStart({ form_id: "homepage-contact-form" });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+    markFormFunnel();
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -48,6 +63,7 @@ const ContactFormV2 = ({
   };
 
   const handleProjectSelect = (value) => {
+    markFormFunnel();
     setFormData((prevData) => ({ ...prevData, projectType: value }));
     setStep(2);
   };
@@ -63,6 +79,7 @@ const ContactFormV2 = ({
     setIsSubmitting(true);
 
     const token = await recaptchaRef.current.executeAsync();
+    const leadSource = getLeadSource() === "unknown" ? "form_funnel" : getLeadSource();
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
@@ -76,13 +93,21 @@ const ContactFormV2 = ({
             page: pathname,
             token,
             previousPage,
+            lead_source_funnel: leadSource,
           }),
         }
       );
 
       if (response.ok) {
+        pushGenerateLead({
+          form_id: "homepage-contact-form",
+          page: pathname,
+          project_type: formData.projectType,
+          lead_source_funnel: leadSource,
+        });
         setFormData({ name: "", email: "", message: "", projectType: "" });
         setStep(1);
+        formStartFiredRef.current = false;
         setRespMessage("Your response is submitted successfully.");
         clearMessage();
       } else {

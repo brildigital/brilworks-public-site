@@ -2,10 +2,14 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { generateBreadcrumb } from "./components/lib/schemaCode";
+import { installMailtoListener } from "./components/lib/leadSource";
 import Cookies from "js-cookie";
 
 const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
   const pathname = usePathname();
+  useEffect(() => {
+    installMailtoListener();
+  }, []);
   useEffect(() => {
     const loadScripts = () => {
       setTimeout(() => {
