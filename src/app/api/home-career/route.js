@@ -28,6 +28,7 @@ export async function POST(req, res) {
     previousPage,
     toolFormData,
     projectType,
+    lead_source_funnel,
   } = payload;
 
   const transporter = nodemailer.createTransport({
