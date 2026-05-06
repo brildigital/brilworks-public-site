@@ -61,8 +61,6 @@ export async function POST(req, res) {
     return NextResponse.json({ errors }, { status: 400 });
   }
 
-  console.log("link", downloadLink);
-
   try {
     // Save lead to Supabase (fire-and-forget — never blocks the response)
     saveLead({
@@ -77,7 +75,6 @@ export async function POST(req, res) {
       country: userData?.country,
       projectType,
     }).catch((err) => console.error("[supabase-leads] insert failed:", err));
-    console.log("link2", downloadLink);
 
     if (page === "/career/") {
       // const msg = {
@@ -139,11 +136,8 @@ export async function POST(req, res) {
         createHubSpotContact(payload),
         sendDataToSlack({ ...payload, userData, toolFormData }),
       ]);
-      console.log("link3", downloadLink);
 
       if (downloadLink) {
-        console.log("link4", downloadLink);
-
         const textToShow = page.startsWith("/portfolio/")
           ? "Case Study"
           : "E-Book";
