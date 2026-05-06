@@ -206,6 +206,17 @@ const AiAgentDevelopmentService = () => {
               chatbot. If your problem is &ldquo;triage 200 inbound requests, decide what each one
               needs, and act on most of them,&rdquo; you want an agent.
             </p>
+            <p className="text-sm md:text-base text-[#475569]">
+              Want to feel an agent before you read another spec? Our{" "}
+              <Link
+                href="/ai-agents/meme/"
+                className="text-themeColor underline underline-offset-4"
+              >
+                AI Meme Generator
+              </Link>{" "}
+              runs on the same Gemini image stack we ship to clients — a cheap,
+              one-prompt sandbox of the production pattern.
+            </p>
           </div>
         </div>
       </section>

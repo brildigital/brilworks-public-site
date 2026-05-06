@@ -876,6 +876,16 @@ const AiAgentServicePage = () => {
             >
               Explore All 30+ AI Agents <ArrowRight size={18} />
             </Link>
+            <p className="text-sm md:text-base text-[#475569] mt-4">
+              Or pull up our{" "}
+              <Link
+                href="/ai-agents/meme/"
+                className="text-[#017eeb] underline underline-offset-4 hover:opacity-80"
+              >
+                AI Meme Generator
+              </Link>{" "}
+              for an unhinged roast — same Gemini image stack we ship to clients.
+            </p>
           </div>
         </div>
       </section>

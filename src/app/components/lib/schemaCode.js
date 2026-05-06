@@ -234,6 +234,65 @@ export function generateBreadcrumbList(items) {
   return JSON.stringify(schema);
 }
 
+export function generateWebApplicationSchema({
+  name,
+  description,
+  url,
+  applicationCategory = "MultimediaApplication",
+  operatingSystem = "Web",
+  imageUrl,
+  dateModified,
+  offers = { "@type": "Offer", price: "0", priceCurrency: "USD" },
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory,
+    operatingSystem,
+    browserRequirements: "Requires JavaScript. Requires HTML5.",
+    ...(imageUrl ? { image: imageUrl } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    offers,
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      url: "https://www.brilworks.com/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateImageObjectSchema({
+  contentUrl,
+  caption,
+  width,
+  height,
+  creator = {
+    "@type": "Organization",
+    name: "Brilworks",
+    url: "https://www.brilworks.com/",
+  },
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl,
+    url: contentUrl,
+    ...(caption ? { caption } : {}),
+    ...(width ? { width } : {}),
+    ...(height ? { height } : {}),
+    creator,
+  };
+  return JSON.stringify(schema);
+}
+
 export function generateWebPageSchema({ title, description, url, dateModified }) {
   const schema = {
     "@context": "https://schema.org",
