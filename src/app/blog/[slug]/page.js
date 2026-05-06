@@ -17,6 +17,7 @@ import {
   generateFaqPageSchema,
   generatePersonSchema,
 } from "@/app/components/lib/schemaCode";
+import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -92,14 +93,6 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
-  const authorPageSlugByName = {
-    "Hitesh Umaletiya": "/blog/author/hitesh-umaletiya/",
-    "Vikas Singh": "/blog/author/vikas-singh/",
-  };
-  const authorPageUrl = authorPageSlugByName[author?.name]
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}${authorPageSlugByName[author?.name].replace(/^\//, "")}`
-    : author?.authorLinkedIn;
-
   const faqEntries = (data?.story?.content?.FAQ || [])
     .filter((f) => f?.Question && f?.Answer)
     .map((f) => ({ question: f.Question, answer: f.Answer }));
@@ -165,12 +158,6 @@ export default async function Page(props) {
       ratingValue: 4.4,
       ratingCount: 80,
     },
-    "path-to-become-aws-partner": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.3,
-      ratingCount: 75,
-    },
     "react-native-vs-kotlin": {
       title: data?.story?.content?.title,
       pageURL: params?.slug,
@@ -194,6 +181,8 @@ export default async function Page(props) {
   const { title, pageURL, ratingValue, ratingCount } =
     showRatingBasedOnPathname[params?.slug] || [];
 
+  const seoConfig = getBlogSeoConfig(params?.slug);
+
   return (
     <>
       <script
@@ -212,11 +201,37 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
+            authorJobTitle: author?.jobTitle,
+            authorPageUrl: author?.authorPageUrl,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
         }}
       />
+      {seoConfig.faqSchema && faqEntries.length > 0 && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateFaqPageSchema(faqEntries),
+          }}
+        />
+      )}
+      {seoConfig.personSchema && author?.name && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generatePersonSchema({
+              name: author.name,
+              url: author.authorPageUrl || author.authorLinkedIn,
+              jobTitle: author.jobTitle,
+              image: author.authorImage,
+              sameAs: [author.authorLinkedIn, author.authorPageUrl],
+            }),
+          }}
+        />
+      )}
       {title && ratingValue && ratingCount && (
         <script
           defer
@@ -228,30 +243,6 @@ export default async function Page(props) {
               ratingValue,
               ratingCount,
             ),
-          }}
-        />
-      )}
-      {faqEntries.length > 0 && (
-        <script
-          defer
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: generateFaqPageSchema(faqEntries),
-          }}
-        />
-      )}
-      {author?.name && (
-        <script
-          defer
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: generatePersonSchema({
-              name: author.name,
-              url: authorPageUrl,
-              image: author.authorImage,
-              jobTitle: author.mobileDesc,
-              sameAs: [author.authorLinkedIn].filter(Boolean),
-            }),
           }}
         />
       )}
