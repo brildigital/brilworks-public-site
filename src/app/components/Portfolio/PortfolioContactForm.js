@@ -85,12 +85,11 @@ const PortfolioContactForm = ({
 
     try {
       const downloadURL = formatSrcUrl(downloadFileUrl);
-      console.log("Formatted Download URL:", downloadURL);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
         {
           method: "POST",
-          header: {
+          headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
