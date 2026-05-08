@@ -613,53 +613,51 @@ const AIMLService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
+      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px]">
         <div className="absolute inset-0 -z-10" style={heroBg} />
         <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
-            <div className="lg:grid" style={{ gridTemplateColumns: "1.1fr 0.9fr", display: "grid", gap: "60px", alignItems: "center" }}>
-              <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <IconSparkle /> AI / ML Development Services
-                </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                  Ship Production-Ready AI — <span style={gradientTextStyle}>From Model to Measurable ROI</span>
-                </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                  We build, deploy, and scale AI/ML systems for founders and data teams. 50+ production models shipped across 20+ industries — pilot in 6 weeks, with measurable ROI from day one.
-                </p>
-                <div className="flex flex-wrap gap-3.5 my-10">
-                  <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
-                    Book My Free AI Strategy Call <IconArrowRight />
-                  </Link>
-                  <Link href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
-                    See What We Build
-                  </Link>
-                </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
-                  {["Free 30-min AI strategy call", "Pilot scope in 48 hours", "No commitment"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
-                    </span>
-                  ))}
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
+                style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
+                <IconSparkle /> AI / ML Development Services
+              </span>
+              <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(30px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
+                Ship Production-Ready AI — <span style={gradientTextStyle}>From Model to Measurable ROI</span>
+              </h1>
+              <p className="mb-8" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
+                We build, deploy, and scale AI/ML systems for founders and data teams. 50+ production models shipped across 20+ industries — pilot in 6 weeks, with measurable ROI from day one.
+              </p>
+              <div className="flex flex-wrap gap-3 mt-8 mb-8">
+                <Link href="#contact"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
+                  style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "14px 24px", fontSize: 15 }}>
+                  Book My Free AI Strategy Call <IconArrowRight />
+                </Link>
+                <Link href="#services"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
+                  style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "14px 24px", fontSize: 15 }}>
+                  See What We Build
+                </Link>
               </div>
-              <div>
-                <div className="grid grid-cols-2 gap-4">
-                  {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
-                    </div>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-x-5 gap-y-2.5" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+                {["Free 30-min AI strategy call", "Pilot scope in 48 hours", "No commitment"].map((t) => (
+                  <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
+                    <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="grid grid-cols-2 gap-4">
+                {HERO_STATS.map((s) => (
+                  <div key={s.label} className="rounded-2xl transition-all"
+                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "24px 20px", backdropFilter: "blur(10px)" }}>
+                    <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(28px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
+                    <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -689,10 +687,9 @@ const AIMLService = () => {
           </div>
 
           {SERVICES.map((svc) => (
-            <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
-              style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
+            <div key={svc.title} className="py-10 lg:py-12">
+              <div className="grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2">
+                <div className={svc.reverse ? "lg:order-2" : ""}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
                     style={{
                       aspectRatio: "4 / 3",
@@ -703,7 +700,7 @@ const AIMLService = () => {
                     {svc.mockup}
                   </div>
                 </div>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
+                <div className={svc.reverse ? "lg:order-1" : ""}>
                   <h3 className="font-bold mb-4" style={{ fontSize: "clamp(22px, 2.4vw, 28px)", letterSpacing: "-0.3px", lineHeight: 1.3, color: "#0d0f1a" }}>{svc.title}</h3>
                   <p className="mb-5" style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}>{svc.body}</p>
                   <ul className="list-none">
@@ -728,7 +725,7 @@ const AIMLService = () => {
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Turn AI Into Revenue?</h3>
           <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call with a senior ML engineer. We'll evaluate your data, recommend the right model approach, and map a 6-week pilot — no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5 w-full sm:w-auto"
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Start My AI Pilot
           </Link>

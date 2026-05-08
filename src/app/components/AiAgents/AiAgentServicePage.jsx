@@ -459,8 +459,7 @@ const AiAgentServicePage = () => {
             style={{ gridTemplateColumns: "1fr" }}
           >
             <div
-              className="grid items-center gap-10"
-              style={{ gridTemplateColumns: "1.1fr 0.9fr" }}
+              className="grid items-center gap-10 grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]"
             >
               <div>
                 {/* Breadcrumb */}
@@ -748,20 +747,16 @@ const AiAgentServicePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-0 mb-10">
             {steps.map((step, i) => (
               <div
                 key={step.week}
-                className="relative p-6 bg-white border border-[#e5e7eb] flex flex-col"
-                style={{
-                  borderRadius:
-                    i === 0
-                      ? "16px 0 0 16px"
-                      : i === steps.length - 1
-                        ? "0 16px 16px 0"
-                        : "0",
-                  borderLeft: i > 0 ? "none" : undefined,
-                }}
+                className={`relative p-6 bg-white border border-[#e5e7eb] flex flex-col rounded-2xl
+                  ${i === 0 ? "md:rounded-r-none" : ""}
+                  ${i === steps.length - 1 ? "md:rounded-l-none" : ""}
+                  ${i > 0 && i < steps.length - 1 ? "md:rounded-none" : ""}
+                  ${i > 0 ? "md:border-l-0" : ""}
+                `}
               >
                 <span
                   className="text-[11px] font-bold tracking-[0.08em] uppercase mb-3"
@@ -1350,7 +1345,7 @@ const AiAgentServicePage = () => {
           </div>
 
           {/* Proof stats */}
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
             {[
               { num: "4.8★", lbl: "Clutch Rating" },
               { num: "40+", lbl: "Verified Reviews" },
