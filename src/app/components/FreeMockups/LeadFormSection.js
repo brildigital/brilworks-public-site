@@ -1,8 +1,42 @@
 "use client";
 import { Clock, Video, Gift } from "lucide-react";
-import Cal from "@calcom/embed-react";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
+import { markLeadSource, pushGenerateLead } from "../lib/leadSource";
 
 export default function LeadFormSection() {
+  useEffect(() => {
+    let disposed = false;
+    (async () => {
+      try {
+        const cal = await getCalApi({});
+        if (disposed) return;
+        // Tag any visible engagement with the booker as a calendly-funnel
+        // signal; the booking-success path is the explicit conversion.
+        cal("on", {
+          action: "bookingSuccessful",
+          callback: (e) => {
+            markLeadSource("calendly");
+            pushGenerateLead({
+              source_widget: "cal_com",
+              cal_event: e?.detail?.data?.booking?.uid || "",
+              lead_source_funnel: "calendly",
+            });
+          },
+        });
+        cal("on", {
+          action: "linkReady",
+          callback: () => markLeadSource("calendly"),
+        });
+      } catch {
+        // Cal API unavailable — fail silent; form_funnel default still applies.
+      }
+    })();
+    return () => {
+      disposed = true;
+    };
+  }, []);
+
   return (
     <section
       id="signup-form"

@@ -2,20 +2,28 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function createHubSpotContact(payload) {
-  const { name, email, phone, message, page, company } = payload;
+  const { name, email, phone, message, page, company, lead_source_funnel } =
+    payload;
 
-  const apiPayLoad = JSON.stringify({
-    properties: {
-      email,
-      firstname: name.split(" ")[0],
-      lastname: name.split(" ")[1] || "",
-      company: company || "",
-      phone: phone || "",
-      website: `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace("/", "")}`,
-      lifecyclestage: "marketingqualifiedlead",
-      message: message || "",
-    },
-  });
+  const properties = {
+    email,
+    firstname: name.split(" ")[0],
+    lastname: name.split(" ")[1] || "",
+    company: company || "",
+    phone: phone || "",
+    website: `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace("/", "")}`,
+    lifecyclestage: "marketingqualifiedlead",
+    message: message || "",
+  };
+
+  // BRI-231: surface funnel-of-origin to HubSpot when supplied. The matching
+  // contact-property `lead_source_funnel` must be created in HubSpot Settings
+  // → Properties before this field will be retained.
+  if (lead_source_funnel) {
+    properties.lead_source_funnel = lead_source_funnel;
+  }
+
+  const apiPayLoad = JSON.stringify({ properties });
 
   try {
     const response = await fetch(
@@ -51,6 +59,7 @@ export async function sendDataToSlack(payload) {
     userData,
     toolFormData,
     projectType,
+    lead_source_funnel,
   } = payload;
   const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(/^\/+/, "")}`;
 
@@ -90,7 +99,11 @@ export async function sendDataToSlack(payload) {
                   userData?.region || ""
                 }\nCity: ${userData?.city || ""}\nCountry: ${
                   userData?.country || ""
-                }\n\n${
+                }\n${
+                  lead_source_funnel
+                    ? `LeadSourceFunnel: ${lead_source_funnel}`
+                    : ""
+                }\n${
                   page.includes("/tools/")
                     ? `ToolFormData:-\n\n ${dynamicFormDataText}\n`
                     : ""

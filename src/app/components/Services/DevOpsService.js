@@ -602,7 +602,7 @@ const DevOpsService = () => {
         <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
-            <div className="lg:grid" style={{ gridTemplateColumns: "1.1fr 0.9fr", display: "grid", gap: "60px", alignItems: "center" }}>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                   style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
@@ -634,7 +634,7 @@ const DevOpsService = () => {
                   ))}
                 </div>
               </div>
-              <div>
+              <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
                     <div key={s.label} className="rounded-2xl transition-all"

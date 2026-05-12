@@ -36,7 +36,9 @@ const PortfolioContactForm = ({
     message: "",
   });
 
-  const submitText = downloadFileUrl ? `Download ${textToShow}` : (submitLabel || "Submit");
+  const submitText = downloadFileUrl
+    ? `Download ${textToShow}`
+    : submitLabel || "Submit";
   const submitLoadingText = downloadFileUrl ? "Downloading" : "Submitting";
   const submitMessageText = downloadFileUrl
     ? "Thanks! Download link has been sent to your email."
@@ -66,7 +68,7 @@ const PortfolioContactForm = ({
   };
 
   const clearMessage = () => {
-    setShowPrice(true);
+    if (setShowPrice) setShowPrice(true);
     setTimeout(() => {
       setRespMessage("");
     }, 5000);
@@ -87,7 +89,7 @@ const PortfolioContactForm = ({
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
         {
           method: "POST",
-          header: {
+          headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -98,7 +100,7 @@ const PortfolioContactForm = ({
             token,
             previousPage,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -182,7 +184,9 @@ const PortfolioContactForm = ({
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required={messageRequired !== undefined ? messageRequired : messageField}
+              required={
+                messageRequired !== undefined ? messageRequired : messageField
+              }
             />
           )}
         </div>
