@@ -230,52 +230,38 @@ export async function getblogForFeed() {
 }
 
 export async function getBlogForSitemap() {
-  let allStories = [];
-  let page = 1;
-  let hasMoreData = true;
+  const baseParams = {
+    starts_with: "blog/",
+    per_page: 100,
+    version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+    excluding_fields: "content,Content_1,Content_2,Content_3",
+    filter_query: { component: { in: "article" } },
+  };
 
-  while (hasMoreData) {
-    const response = await Storyblok.get("cdn/stories", {
-      starts_with: "blog/",
-      page,
-      per_page: 100,
-      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-      filter_query: {
-        component: {
-          in: "article",
-        },
-      },
-    });
+  // Fetch page 1 to get total count
+  const firstResponse = await Storyblok.get("cdn/stories", {
+    ...baseParams,
+    page: 1,
+  });
 
-    const storyData = response.data.stories;
-    allStories = [...allStories, ...storyData];
+  const total = parseInt(firstResponse.headers?.total || firstResponse.data?.stories?.length, 10);
+  const totalPages = Math.ceil(total / 100);
 
-    // Stop if there are fewer than 100 items in the response (last page)
-    hasMoreData = storyData.length === 100;
-    page += 1;
+  let allStories = [...firstResponse.data.stories];
+
+  // Fetch remaining pages in parallel
+  if (totalPages > 1) {
+    const remainingPages = await Promise.all(
+      Array.from({ length: totalPages - 1 }, (_, i) =>
+        Storyblok.get("cdn/stories", { ...baseParams, page: i + 2 })
+      )
+    );
+    allStories = allStories.concat(remainingPages.flatMap((r) => r.data.stories));
   }
 
-  // function formatBlogData(data) {
-  //   return {
-  //     name: data.name,
-  //     content: data.content ?? "",
-  //     created_at: data.created_at,
-  //     published_at: data.published_at,
-  //     updated_at: data.updated_at,
-  //     blog_url: `https://www.brilworks.com/${data.full_slug}`,
-  //   };
-  // }
-
-  const blogSiteMapData = allStories.map((data) => {
-    return {
-      name: data.name,
-      loc: `https://www.brilworks.com/${data.full_slug}/`,
-      lastmod: `${data.published_at}`,
-    };
-  });
-  // const blogData = allStories.map((data) => {
-  //   return formatBlogData(data);
-  // });
-
-  return blogSiteMapData;
+  return allStories.map((data) => ({
+    name: data.name,
+    loc: `https://www.brilworks.com/${data.full_slug}/`,
+    lastmod: `${data.published_at}`,
+  }));
 }
