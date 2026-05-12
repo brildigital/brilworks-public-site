@@ -570,10 +570,6 @@ export const sitemapData = [
     lastmod: "2025-07-18T11:01:41.528Z",
   },
   {
-    loc: "https://www.brilworks.com/free-ui/",
-    lastmod: "2025-07-18T11:01:41.528Z",
-  },
-  {
     loc: "https://www.brilworks.com/industry/fintech-software-development/",
     lastmod: "2025-04-25T12:04:49.528Z",
   },
@@ -934,58 +930,6 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/ai-solutions/ai-whatsapp-chat-automation/",
     lastmod: "2025-04-18T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/",
-    lastmod: "2025-05-30T13:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/modernizing-legacy-java-systems-guide/",
-    lastmod: "2025-07-18T12:12:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/ai-integration-in-mobile-and-web-applications/",
-    lastmod: "2025-07-28T09:52:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
-    lastmod: "2025-07-16T06:12:32.228Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/mvp-development-idea-to-development/",
-    lastmod: "2025-03-18T09:12:22.328Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/generative-ai-tools-techniques-use-cases-and-challenges/",
-    lastmod: "2025-01-30T11:20:29.521Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/genai-reality-check/",
-    lastmod: "2025-07-28T13:32:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ebooks/insiders-guide-hiring-developers/",
-    lastmod: "2025-07-23T08:12:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ai-solutions/my-sql-chatbot/",
-    lastmod: "2025-02-12T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ai-solutions/ai-website-chat/",
-    lastmod: "2025-02-12T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ai-solutions/ai-chat-with-csv-excel/",
-    lastmod: "2025-02-12T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ai-solutions/ai-powered-prd-generator/",
-    lastmod: "2025-02-09T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/ai-solutions/ai-whatsapp-chat-automation/",
-    lastmod: "2025-02-09T12:04:49.528Z",
   },
   // {
   //   loc: "https://www.brilworks.com/portfolio/vugo/",
