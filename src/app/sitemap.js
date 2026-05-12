@@ -1,4 +1,8 @@
-import { blogListStaticData, sitemapData } from "./components/lib/constants";
+import { sitemapData } from "./components/lib/constants";
+import { getBlogForSitemap } from "./components/lib/getblog";
+
+export const dynamic = "force-static";
+export const revalidate = false; // only regenerates when Storyblok webhook fires
 
 export default async function sitemap() {
   const staticPagesData = sitemapData.map((data) => {
@@ -7,7 +11,8 @@ export default async function sitemap() {
       lastModified: `${data?.lastmod}`,
     };
   });
-  const blog = blogListStaticData.map((data) => {
+  const blogData = await getBlogForSitemap();
+  const blog = blogData.map((data) => {
     return {
       url: `${data?.loc}`,
       lastModified: `${data?.lastmod}`,
