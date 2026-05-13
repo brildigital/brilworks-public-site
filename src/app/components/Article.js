@@ -22,10 +22,10 @@ import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
 import QuickSummary from "./Blog/QuickSummary";
 import Heading from "./HTMLComponents/Heading";
-import EbookPopup from "./Blog/EbookPopup";
 // import EbookPopup from "./Blog/EbookPopup";
 
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
+const EbookPopup = dynamic(() => import("./Blog/EbookPopup"), { ssr: false });
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
