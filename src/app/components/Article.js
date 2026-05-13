@@ -16,7 +16,7 @@ import {
   isExternalLink,
   suggestSimilarBlogPosts,
 } from "./lib/commonFunction";
-import BlogContactForm from "./Blog/BlogContactForm";
+const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"), { ssr: false });
 import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
@@ -521,7 +521,7 @@ const Article = ({ blok }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="md:w-1/4 w-full !float-left">
+                  <div className="md:w-1/4 w-full !float-left hidden lg:block">
                     <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                       <div className="h-full flex flex-col">
                         <BlogContactForm />
