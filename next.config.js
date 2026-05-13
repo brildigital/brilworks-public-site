@@ -11,7 +11,6 @@ const nextConfig = {
     serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
   },
   images: {
-    unoptimized: true,
     domains: [
       "a.storyblok.com",
       "lh3.googleusercontent.com",

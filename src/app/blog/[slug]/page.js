@@ -361,6 +361,7 @@ export default async function Page(props) {
                     src={formatSrcUrl(
                       data?.story?.content?.mobile_banner?.filename ||
                         data?.story?.content?.image?.filename,
+                      "/m/828x0/filters:format(webp)",
                     )}
                     alt={
                       data?.story?.content.image?.alt ||
@@ -370,8 +371,8 @@ export default async function Page(props) {
                     width={828}
                     height={169}
                     priority
-                    unoptimized
-                    sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
+                    fetchPriority="high"
+                    sizes="calc(100vw - 30px)"
                   />
                   <Image
                     className="rounded-[15px] hidden md:block !max-h-[288px] !h-auto !object-cover"
@@ -387,7 +388,6 @@ export default async function Page(props) {
                     width={828}
                     height={169}
                     priority
-                    unoptimized
                     sizes="(min-width: 1040px) 42.35vw, (min-width: 640px) 60.84vw, calc(100vw - 30px)"
                   />
                 </Suspense>
