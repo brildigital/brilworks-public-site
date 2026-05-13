@@ -288,25 +288,20 @@ export function formatTitleFromUrl(url) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter
     .join(" "); // Join words with spaces
 }
-export function formatSrcUrl(url) {
+export function formatSrcUrl(url, storyblokTransform = null) {
   if (!url) return "";
+
+  if (storyblokTransform && url.includes("a.storyblok.com")) {
+    return `${url}${storyblokTransform}`;
+  }
+
   const urlParts = url.split("/");
-
-  // Get the asset ID (second last segment)
   const assetId = urlParts[urlParts.length - 2];
-
-  // Get the filename (last segment)
   const filename = urlParts[urlParts.length - 1];
-
-  // Avoid prefixing with "assets_" or other generic folder names
   const shouldPrefix = assetId !== "public" && assetId !== "assets";
-
-  // Construct new S3 file name
   const newFileName = shouldPrefix ? `${assetId}_${filename}` : filename;
 
-  const fileURL = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/${newFileName}`;
-
-  return fileURL;
+  return `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/${newFileName}`;
 }
 
 export const suggestSimilarBlogPosts = (blogTitle = "") => {
