@@ -3,16 +3,47 @@ import React from "react";
 import Link from "next/link";
 
 const SvgIcon = ({ color, children }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     {children}
   </svg>
 );
 
 const serviceIcons = {
-  mobile: <SvgIcon color="#7c3aed"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></SvgIcon>,
-  web: <SvgIcon color="#1A5CCC"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></SvgIcon>,
-  cloud: <SvgIcon color="#0891b2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></SvgIcon>,
-  team: <SvgIcon color="#16a34a"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></SvgIcon>,
+  mobile: (
+    <SvgIcon color="#7c3aed">
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+      <line x1="12" y1="18" x2="12.01" y2="18" />
+    </SvgIcon>
+  ),
+  web: (
+    <SvgIcon color="#1A5CCC">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </SvgIcon>
+  ),
+  cloud: (
+    <SvgIcon color="#0891b2">
+      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+    </SvgIcon>
+  ),
+  team: (
+    <SvgIcon color="#16a34a">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </SvgIcon>
+  ),
 };
 
 const serviceCards = [
@@ -30,7 +61,7 @@ const serviceCards = [
     description:
       "Scalable web apps and SaaS platforms built for growth from day one.",
     tags: ["React", "Node.js", "AWS"],
-    link: "/web-application-development-services/",
+    link: "/web-app-development-services/",
   },
   {
     iconKey: "cloud",
@@ -46,7 +77,7 @@ const serviceCards = [
     description:
       "Extend your team with pre-vetted developers — on your timezone.",
     tags: ["Dedicated Team", "Flexible"],
-    link: "/dedicated-development-team/",
+    link: "/hire-dedicated-software-development-team/",
   },
 ];
 

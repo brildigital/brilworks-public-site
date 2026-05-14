@@ -369,7 +369,7 @@ const industries = [
     icon: Factory,
     color: "text-orange-500",
     bg: "rgba(249,115,22,0.10)",
-    href: "/industry/manufacturing-software-development/",
+    href: "/industry/manufacturing-software-development-services/",
   },
   {
     label: "Agencies",

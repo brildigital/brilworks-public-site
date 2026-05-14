@@ -1,5 +1,6 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { SessionProvider } from "next-auth/react";
 import { ArticleSkeleton } from "./Blog/ArticleSkeleton";
 
 /** Import your components */
@@ -17,5 +18,5 @@ storyblokInit({
 
 export default function StoryblokProvider({ children }) {
   if (!children) return <ArticleSkeleton />;
-  return children;
+  return <SessionProvider>{children}</SessionProvider>;
 }
