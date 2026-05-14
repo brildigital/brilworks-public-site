@@ -14,6 +14,7 @@ const PortfolioFirstSection = ({
   title,
   description,
   images,
+  heroImageSrc,
   buttontext,
   KeyValueBlock,
   processAndEnhanceBlock,
@@ -131,9 +132,10 @@ const PortfolioFirstSection = ({
               <Image
                 className="rounded-2xl object-cover w-full"
                 src={
-                  images?.length > 1
+                  heroImageSrc ||
+                  (images?.length > 1
                     ? formatSrcUrl(images[1]?.filename)
-                    : formatSrcUrl(images?.[0]?.filename)
+                    : formatSrcUrl(images?.[0]?.filename))
                 }
                 alt={title || "portfolio-banner"}
                 width={565}

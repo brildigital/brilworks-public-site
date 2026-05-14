@@ -484,7 +484,7 @@ export const portfolioDynamicItems = [
     link: "/portfolio/claude-code-coding-speed-lift/",
     description:
       "Anonymized case study of rolling out Claude Code as an in-team coding assistant at HostCo (hospitality tech) and HomeCo (smart-home tech): the four-step playbook, ~2x cycle-time lift, and where the agent does and doesn't compound.",
-    image: "/images/generative-ai-banner.webp",
+    image: "/images/banner1.png",
     alt: "Claude Code coding-speed case study",
     industry: "AI Engineering",
     technology: ["Claude Code"],
