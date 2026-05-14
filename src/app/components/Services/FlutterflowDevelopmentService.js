@@ -245,7 +245,7 @@ const HONORS = [
 const INDUSTRIES = [
   {
     label: "MVPs & Startups",
-    href: "/industry/mvp-development/",
+    href: "/mvp-in-48-hours/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#017eeb" opacity="0.15" />
@@ -275,7 +275,7 @@ const INDUSTRIES = [
   },
   {
     label: "Marketplace",
-    href: "/industry/marketplace-development/",
+    href: "/industry/e-commerce-app-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="3" y="7" width="18" height="13" rx="1" fill="#f59e0b" opacity="0.15" />

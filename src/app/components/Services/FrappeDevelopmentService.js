@@ -250,7 +250,7 @@ const HONORS = [
 const INDUSTRIES = [
   {
     label: "Manufacturing",
-    href: "/industry/manufacturing-software-development/",
+    href: "/industry/manufacturing-software-development-services/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 21H21V10L15 14V10L9 14V10L3 14V21Z" fill="#0d9488" opacity="0.15" />
@@ -260,7 +260,7 @@ const INDUSTRIES = [
   },
   {
     label: "Retail",
-    href: "/industry/retail-software-development/",
+    href: "/industry/e-commerce-app-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
@@ -270,7 +270,7 @@ const INDUSTRIES = [
   },
   {
     label: "Distribution",
-    href: "/industry/distribution-software-development/",
+    href: "/industry/fleet-management-software-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M1 3H15V16H1V3Z M15 8H21L23 11V16H15V8Z" fill="#0891b2" opacity="0.15" />
@@ -280,7 +280,7 @@ const INDUSTRIES = [
   },
   {
     label: "Professional Services",
-    href: "/industry/professional-services-software/",
+    href: "/contact-us/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="3" y="7" width="18" height="13" rx="2" fill="#4f46e5" opacity="0.15" />
@@ -290,7 +290,7 @@ const INDUSTRIES = [
   },
   {
     label: "Non-Profit",
-    href: "/industry/nonprofit-software-development/",
+    href: "/application-development-services/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#f59e0b" opacity="0.15" />

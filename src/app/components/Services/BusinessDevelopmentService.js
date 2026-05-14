@@ -260,7 +260,7 @@ const INDUSTRIES = [
   },
   {
     label: "Retail",
-    href: "/industry/retail/",
+    href: "/industry/e-commerce-app-development/",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 7H21L19 21H5L3 7Z" fill="#f59e0b" opacity="0.15" />
