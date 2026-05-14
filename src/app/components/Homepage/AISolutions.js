@@ -23,7 +23,7 @@ const aiSolutions = [
     title: "Customer Support Agent",
     description:
       "24/7 support on WhatsApp, website chat, and email. Your AI handles the routine — humans get the complex 20%.",
-    link: "/ai-solutions/",
+    link: "/ai-tools/ai-chatbot-knowledge-base/",
   },
   {
     iconKey: "lead",
@@ -31,7 +31,7 @@ const aiSolutions = [
     title: "Lead Qualification Agent",
     description:
       "New leads get a response before your competitor does. AI qualifies, scores, and books calls automatically.",
-    link: "/ai-solutions/",
+    link: "/ai-tools/ai-chatbot-conversational-solution/",
   },
   {
     iconKey: "document",
@@ -39,7 +39,7 @@ const aiSolutions = [
     title: "Document Processing Agent",
     description:
       "Invoices, contracts, receipts — extracted and pushed into your CRM or spreadsheet without human input.",
-    link: "/ai-solutions/",
+    link: "/ai-tools/ai-document-compliance-review/",
   },
   {
     iconKey: "workflow",
@@ -47,7 +47,7 @@ const aiSolutions = [
     title: "Workflow Automation Agent",
     description:
       "Multi-step business processes on autopilot. Reporting, data entry, CRM updates, email sequences.",
-    link: "/ai-solutions/",
+    link: "/ai-tools/ai-insights-and-automation/",
   },
   {
     iconKey: "coding",
@@ -55,7 +55,7 @@ const aiSolutions = [
     title: "AI Coding Accelerator",
     description:
       "Custom AI skills baked into your dev workflow. Ship features faster without growing the team.",
-    link: "/ai-solutions/",
+    link: "/ai-agents/tech/",
   },
   {
     iconKey: "whitelabel",
@@ -63,7 +63,7 @@ const aiSolutions = [
     title: "White-Label for Agencies",
     description:
       "Your clients want AI. You can't build it. We can. You brand it, you bill it, you keep the margin.",
-    link: "/ai-solutions/",
+    link: "/ai-tools/pre-build-solutions/",
   },
 ];
 
