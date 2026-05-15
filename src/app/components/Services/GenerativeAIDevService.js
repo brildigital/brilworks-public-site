@@ -709,6 +709,7 @@ const GenerativeAIDevService = () => {
             <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>What We Build</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our Generative AI Development Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end GenAI engineering — from strategy and model selection to RAG pipelines, fine-tuning, and scalable deployment.</p>
+            <p className="mt-3" style={{ fontSize: 15, lineHeight: 1.7, color: "#6b7280" }}>For a public-facing showcase of our generative pipelines in action, see our <Link href="/ai-agents/meme/" style={{ color: "#7c3aed", fontWeight: 600 }}>AI meme generator</Link>.</p>
           </div>
 
           {SERVICES.map((svc) => (
