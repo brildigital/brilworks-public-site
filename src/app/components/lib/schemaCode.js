@@ -223,6 +223,32 @@ export function generateServiceSchema({
   return JSON.stringify(schema);
 }
 
+export function generatePersonSchema({
+  name,
+  url,
+  image,
+  jobTitle,
+  organizationName = "Brilworks",
+  organizationUrl = "https://www.brilworks.com/",
+  sameAs = [],
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    url,
+    image,
+    jobTitle,
+    worksFor: {
+      "@type": "Organization",
+      name: organizationName,
+      url: organizationUrl,
+    },
+    sameAs: sameAs.filter(Boolean),
+  };
+  return JSON.stringify(schema);
+}
+
 export function generateFaqPageSchema(faqs) {
   const schema = {
     "@context": "https://schema.org",
