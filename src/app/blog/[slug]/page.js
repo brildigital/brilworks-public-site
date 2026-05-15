@@ -11,12 +11,14 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
+
 import {
   generateRatingSchema,
   generateBlogPostingSchema,
   generateFaqPageSchema,
   generatePersonSchema,
 } from "@/app/components/lib/schemaCode";
+
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -91,6 +93,7 @@ export default async function Page(props) {
     data?.story?.content?.Content_3;
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
+
 
   const authorPageSlugByName = {
     "Hitesh Umaletiya": "/blog/author/hitesh-umaletiya/",
@@ -187,6 +190,7 @@ export default async function Page(props) {
 
   const { title, pageURL, ratingValue, ratingCount } =
     showRatingBasedOnPathname[params?.slug] || [];
+
 
   return (
     <>
