@@ -508,7 +508,14 @@ const AiAgentHome = () => {
                 >
                   AI Meme Generator
                 </Link>
-                {" "}— same Gemini image stack, zero forms.
+                {" "}— same Gemini image stack, zero forms. Curious what models power agents like these? See{" "}
+                <Link
+                  href="/blog/best-artificial-intelligence-platforms/"
+                  className="text-white/80 underline underline-offset-4 hover:text-white"
+                >
+                  our shortlist of the best AI platforms for 2026
+                </Link>
+                .
               </p>
 
               <div className="flex flex-wrap gap-4">
