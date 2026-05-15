@@ -11,7 +11,12 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
-import { generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateBlogPostingSchema,
+  generateFaqPageSchema,
+  generatePersonSchema,
+} from "@/app/components/lib/schemaCode";
+import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -87,6 +92,12 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
+  const faqEntries = (data?.story?.content?.FAQ || [])
+    .filter((f) => f?.Question && f?.Answer)
+    .map((f) => ({ question: f.Question, answer: f.Answer }));
+
+  const seoConfig = getBlogSeoConfig(params?.slug);
+
   return (
     <>
       <script
@@ -105,11 +116,37 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
+            authorJobTitle: author?.jobTitle,
+            authorPageUrl: author?.authorPageUrl,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
         }}
       />
+      {seoConfig.faqSchema && faqEntries.length > 0 && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateFaqPageSchema(faqEntries),
+          }}
+        />
+      )}
+      {seoConfig.personSchema && author?.name && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generatePersonSchema({
+              name: author.name,
+              url: author.authorPageUrl || author.authorLinkedIn,
+              jobTitle: author.jobTitle,
+              image: author.authorImage,
+              sameAs: [author.authorLinkedIn, author.authorPageUrl].filter(Boolean),
+            }),
+          }}
+        />
+      )}
       <div className="bg-detail-hero">
         <div className="h-full min-h-[600px] md:max-h-[700px] max-h-full">
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
