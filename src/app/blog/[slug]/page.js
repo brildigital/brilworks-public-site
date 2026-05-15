@@ -17,7 +17,7 @@ import {
   generateFaqPageSchema,
   generatePersonSchema,
 } from "@/app/components/lib/schemaCode";
-
+import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -93,18 +93,11 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
-
-  const authorPageSlugByName = {
-    "Hitesh Umaletiya": "/blog/author/hitesh-umaletiya/",
-    "Vikas Singh": "/blog/author/vikas-singh/",
-  };
-  const authorPageUrl = authorPageSlugByName[author?.name]
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}${authorPageSlugByName[author?.name].replace(/^\//, "")}`
-    : author?.authorLinkedIn;
-
   const faqEntries = (data?.story?.content?.FAQ || [])
     .filter((f) => f?.Question && f?.Answer)
     .map((f) => ({ question: f.Question, answer: f.Answer }));
+
+  const seoConfig = getBlogSeoConfig(params?.slug);
 
   return (
     <>
@@ -124,12 +117,14 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
+            authorJobTitle: author?.jobTitle,
+            authorPageUrl: author?.authorPageUrl,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
         }}
       />
-      {faqEntries.length > 0 && (
+      {seoConfig.faqSchema && faqEntries.length > 0 && (
         <script
           defer
           type="application/ld+json"
@@ -138,17 +133,17 @@ export default async function Page(props) {
           }}
         />
       )}
-      {author?.name && (
+      {seoConfig.personSchema && author?.name && (
         <script
           defer
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: generatePersonSchema({
               name: author.name,
-              url: authorPageUrl,
+              url: author.authorPageUrl || author.authorLinkedIn,
+              jobTitle: author.jobTitle,
               image: author.authorImage,
-              jobTitle: author.mobileDesc,
-              sameAs: [author.authorLinkedIn].filter(Boolean),
+              sameAs: [author.authorLinkedIn, author.authorPageUrl].filter(Boolean),
             }),
           }}
         />
