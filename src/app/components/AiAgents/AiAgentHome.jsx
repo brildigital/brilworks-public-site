@@ -495,10 +495,20 @@ const AiAgentHome = () => {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg text-white/60 !mb-6 max-w-xl leading-relaxed">
                 Brilworks builds and deploys custom AI agents for startups and
                 enterprise teams. Explore our live demos — then let's build
                 yours.
+              </p>
+              <p className="text-sm md:text-base text-white/50 !mb-10 max-w-xl leading-relaxed">
+                Want a no-signup taste? Try our viral{" "}
+                <Link
+                  href="/ai-agents/meme/"
+                  className="text-white/80 underline underline-offset-4 hover:text-white"
+                >
+                  AI Meme Generator
+                </Link>
+                {" "}— same Gemini image stack, zero forms.
               </p>
 
               <div className="flex flex-wrap gap-4">
