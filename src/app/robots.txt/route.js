@@ -8,6 +8,7 @@ function shouldBlockCrawling(host) {
   if (h.startsWith("dev.")) return true;
   if (h.endsWith(".vercel.app")) return true;
   if (h.startsWith("localhost") || h.startsWith("127.")) return true;
+  if (h === "quotes.brilworks.com") return true;
   return false;
 }
 
