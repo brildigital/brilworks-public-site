@@ -97,22 +97,6 @@ export function generateBreadcrumb(secondPositionName) {
   return JSON.stringify(breadCrumbList);
 }
 
-export function generateRatingSchema(title, pageURL, ratingValue, ratingCount) {
-  const ratingSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: title,
-    url: `https://www.brilworks.com/${pageURL}`,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: ratingValue,
-      reviewCount: ratingCount,
-      bestRating: 5,
-    },
-  };
-  return JSON.stringify(ratingSchema);
-}
-
 export function generateVideoSchema({
   name,
   description,
@@ -143,9 +127,25 @@ export function generateBlogPostingSchema({
   dateModified,
   authorName,
   authorUrl,
+  authorJobTitle,
+  authorPageUrl,
   category,
   readingTime,
 }) {
+  const sameAs = [authorUrl, authorPageUrl].filter(Boolean);
+  const author = {
+    "@type": "Person",
+    name: authorName,
+    url: authorPageUrl || authorUrl,
+    ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
+    worksFor: {
+      "@type": "Organization",
+      name: "Brilworks",
+      url: "https://www.brilworks.com/",
+    },
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -156,11 +156,7 @@ export function generateBlogPostingSchema({
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     wordCount: readingTime ? readingTime * 250 : undefined,
-    author: {
-      "@type": "Person",
-      name: authorName,
-      url: authorUrl,
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: "Brilworks",
@@ -230,6 +226,65 @@ export function generateBreadcrumbList(items) {
       name: item.name,
       ...(item.url ? { item: item.url } : {}),
     })),
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateWebApplicationSchema({
+  name,
+  description,
+  url,
+  applicationCategory = "MultimediaApplication",
+  operatingSystem = "Web",
+  imageUrl,
+  dateModified,
+  offers = { "@type": "Offer", price: "0", priceCurrency: "USD" },
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory,
+    operatingSystem,
+    browserRequirements: "Requires JavaScript. Requires HTML5.",
+    ...(imageUrl ? { image: imageUrl } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    offers,
+    publisher: {
+      "@type": "Organization",
+      name: "Brilworks",
+      url: "https://www.brilworks.com/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.brilworks.com/images/logo-black.svg",
+      },
+    },
+  };
+  return JSON.stringify(schema);
+}
+
+export function generateImageObjectSchema({
+  contentUrl,
+  caption,
+  width,
+  height,
+  creator = {
+    "@type": "Organization",
+    name: "Brilworks",
+    url: "https://www.brilworks.com/",
+  },
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl,
+    url: contentUrl,
+    ...(caption ? { caption } : {}),
+    ...(width ? { width } : {}),
+    ...(height ? { height } : {}),
+    creator,
   };
   return JSON.stringify(schema);
 }

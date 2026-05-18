@@ -1,7 +1,4 @@
-import {
-  generateBreadcrumb,
-  generateRatingSchema,
-} from "@/app/components/lib/schemaCode";
+import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import JavaTechnology from "@/app/components/Technologies/JavaTechnology";
 
 export const metadata = {
@@ -43,18 +40,6 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateBreadcrumb("Hire Java Developers"),
-        }}
-      />
-      <script
-        defer
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: generateRatingSchema(
-            "Hire Java Developers",
-            "hire-java-developer/",
-            4.4,
-            119
-          ),
         }}
       />
       <JavaTechnology />

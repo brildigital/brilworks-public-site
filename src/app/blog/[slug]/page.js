@@ -11,7 +11,12 @@ import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
-import { generateRatingSchema, generateBlogPostingSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateBlogPostingSchema,
+  generateFaqPageSchema,
+  generatePersonSchema,
+} from "@/app/components/lib/schemaCode";
+import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 
 export async function generateMetadata({ params }) {
@@ -87,95 +92,11 @@ export default async function Page(props) {
 
   const author = blogAuthor(data?.story?.content?.BlogAuthor);
 
-  const showRatingBasedOnPathname = {
-    "comprehensive-comparison-sendgrid-vs-mailgun-vs-amazon-ses-vs-mandrill": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: "4.7",
-      ratingCount: "139",
-    },
-    "cross-platform-app-development-best-frameworks": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.6,
-      ratingCount: 110,
-    },
-    "apple-vision-pro-vs-meta-quest-3": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.5,
-      ratingCount: 90,
-    },
-    "best-node-js-open-source-projects-in-github": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.6,
-      ratingCount: 90,
-    },
-    "optimize-your-nest-js-app-performance-with-these-practices": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.6,
-      ratingCount: 90,
-    },
-    "top-10-websites-built-using-react-js": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.8,
-      ratingCount: 120,
-    },
-    "top-node-js-frameworks-for-web-development": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.7,
-      ratingCount: 100,
-    },
-    "top-popular-apps-built-with-react-native": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.5,
-      ratingCount: 85,
-    },
-    "what-is-custom-web-application-development-how-to-get-started": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.6,
-      ratingCount: 95,
-    },
-    "whats-new-in-spring-boot-3-for-java-developers-in-2023": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.4,
-      ratingCount: 80,
-    },
-    "path-to-become-aws-partner": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.3,
-      ratingCount: 75,
-    },
-    "react-native-vs-kotlin": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.7,
-      ratingCount: 110,
-    },
-    "what-is-rapid-application-development-a-detailed-guide": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.6,
-      ratingCount: 98,
-    },
-    "next-js-13-drops-with-exciting-updates-find-out-whats-new": {
-      title: data?.story?.content?.title,
-      pageURL: params?.slug,
-      ratingValue: 4.8,
-      ratingCount: 130,
-    },
-  };
+  const faqEntries = (data?.story?.content?.FAQ || [])
+    .filter((f) => f?.Question && f?.Answer)
+    .map((f) => ({ question: f.Question, answer: f.Answer }));
 
-  const { title, pageURL, ratingValue, ratingCount } =
-    showRatingBasedOnPathname[params?.slug] || [];
+  const seoConfig = getBlogSeoConfig(params?.slug);
 
   return (
     <>
@@ -195,22 +116,34 @@ export default async function Page(props) {
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
+            authorJobTitle: author?.jobTitle,
+            authorPageUrl: author?.authorPageUrl,
             category: data?.story?.content?.Category,
             readingTime: calculateReadingTime(totalDataWord),
           }),
         }}
       />
-      {title && ratingValue && ratingCount && (
+      {seoConfig.faqSchema && faqEntries.length > 0 && (
         <script
           defer
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: generateRatingSchema(
-              title,
-              `${pageURL}/`,
-              ratingValue,
-              ratingCount,
-            ),
+            __html: generateFaqPageSchema(faqEntries),
+          }}
+        />
+      )}
+      {seoConfig.personSchema && author?.name && (
+        <script
+          defer
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generatePersonSchema({
+              name: author.name,
+              url: author.authorPageUrl || author.authorLinkedIn,
+              jobTitle: author.jobTitle,
+              image: author.authorImage,
+              sameAs: [author.authorLinkedIn, author.authorPageUrl].filter(Boolean),
+            }),
           }}
         />
       )}
@@ -277,6 +210,19 @@ export default async function Page(props) {
                 {/* <p className="sxl:text-2xl md:text-xl text-lg md:!mb-5 !mb-4">
                   {data?.story?.content?.title}
                 </p> */}
+                <div className="flex items-center sxl:text-xl md:text-lg text-base mb-3">
+                  <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
+                    <Image
+                      src="/images/v2/calendar-icon.svg"
+                      width={32}
+                      height={32}
+                      alt="Calendar icon"
+                      priority="true"
+                    />
+                  </span>
+                  Last updated{" "}
+                  {formattedDate(data?.story?.published_at || new Date())}
+                </div>
                 <Heading type="h1" text={data?.story?.content?.title} />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
@@ -324,19 +270,6 @@ export default async function Page(props) {
                       />
                     </span>
                     {calculateReadingTime(totalDataWord)} mins read
-                  </div>
-                  <div className="flex sxl:items-center items-start">
-                    <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
-                      <Image
-                        src="/images/v2/calendar-icon.svg"
-                        width={32}
-                        height={32}
-                        alt="Calendar icon"
-                        priority="true"
-                      />
-                    </span>
-                    Last updated{" "}
-                    {formattedDate(data?.story?.published_at || new Date())}
                   </div>
                 </div>
               </div>
