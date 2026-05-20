@@ -7,7 +7,9 @@
     "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "validate:sitemap": "node scripts/validate-sitemap.mjs",
+    "validate:sitemap:structure": "SKIP_NETWORK=1 node scripts/validate-sitemap.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.812.0",

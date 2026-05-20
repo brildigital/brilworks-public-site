@@ -723,10 +723,6 @@ export const sitemapData = [
     lastmod: "2025-07-28T09:52:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
-    lastmod: "2025-07-16T06:12:32.228Z",
-  },
-  {
     loc: "https://www.brilworks.com/ebooks/mvp-development-idea-to-development/",
     lastmod: "2025-03-18T09:12:22.328Z",
   },
@@ -832,10 +828,6 @@ export const sitemapData = [
     lastmod: "2025-10-13T16:53:24.531Z",
   },
   {
-    loc: "https://www.brilworks.com/tools/which-app-should-you-build/",
-    lastmod: "2025-10-13T18:45:53.531Z",
-  },
-  {
     loc: "https://www.brilworks.com/tools/tech-readiness-assessment-tool/",
     lastmod: "2025-10-14T16:53:24.531Z",
   },
@@ -897,10 +889,6 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/tools/app-rebuild-vs-refactor-calculator/",
-    lastmod: "2026-02-20T18:45:53.531Z",
-  },
-  {
-    loc: "https://www.brilworks.com/tools/mobile-app-monetization-strategy-selector/",
     lastmod: "2026-02-20T18:45:53.531Z",
   },
   {
@@ -1108,10 +1096,6 @@ export const sitemapData = [
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/x/product-listing/enclave-connect/",
-    lastmod: "2025-11-24T12:08:23.211Z",
-  },
-  {
     loc: "https://www.brilworks.com/x/product-listing/exora/",
     lastmod: "2025-11-27T12:08:23.211Z",
   },
@@ -1128,15 +1112,11 @@ export const sitemapData = [
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/x/product-listing/pet-finder/",
-    lastmod: "2025-12-12T12:08:23.211Z",
-  },
-  {
     loc: "https://www.brilworks.com/x/product-listing/pink-signal/",
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/x/product-listing/service-squard/",
+    loc: "https://www.brilworks.com/x/product-listing/service-squad/",
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
@@ -1279,15 +1259,6 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/ai-agent-development-services/",
     lastmod: "2026-05-01T00:00:00.000Z",
-  },
-
-  {
-    loc: "https://www.brilworks.com/privacy-policy/",
-    lastmod: "2025-05-15T12:04:49.528Z",
-  },
-  {
-    loc: "https://www.brilworks.com/terms-and-conditions/",
-    lastmod: "2025-05-15T12:04:49.528Z",
   },
 ];
 
