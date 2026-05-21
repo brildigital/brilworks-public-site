@@ -291,8 +291,8 @@ export function formatTitleFromUrl(url) {
 export function formatSrcUrl(url, storyblokTransform = null) {
   if (!url) return "";
 
-  if (storyblokTransform && url.includes("a.storyblok.com")) {
-    return `${url}${storyblokTransform}`;
+  if (url.includes("a.storyblok.com")) {
+    return storyblokTransform ? `${url}${storyblokTransform}` : url;
   }
 
   const urlParts = url.split("/");
