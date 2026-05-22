@@ -90,7 +90,7 @@ const AIInsightsAndAutomation = () => {
             <div className="hidden lg:flex items-center justify-center">
               <div className="w-full rounded-2xl overflow-hidden bg-white/[0.05] border border-white/10 backdrop-blur-[10px]">
                 <Image
-                  src="/images/ai_insights.png"
+                  src="/images/ai_insights.webp"
                   alt="AI Insights and Automation"
                   width={565}
                   height={500}
