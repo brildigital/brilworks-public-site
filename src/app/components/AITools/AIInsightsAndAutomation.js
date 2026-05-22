@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Heading from "../HTMLComponents/Heading";
+import Image from "next/image";
 import Link from "next/link";
 import { CircleArrowLeft } from "lucide-react";
 
@@ -26,27 +26,82 @@ const tools = [
 const AIInsightsAndAutomation = () => {
   return (
     <>
-      <div className="hire-team-section-l !scroll-[unset]">
-        <div className="banner-layer h-full min-h-[600px] md:max-h-[600px] max-h-full">
-          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
-              <Heading
-                type="h1"
-                className="text-white"
-                text={"AI Insights and Automation"}
-              />
-              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
+      <section className="portfolio-hero" aria-labelledby="hero-heading">
+        <div className="portfolio-hero-bg"></div>
+        <div className="portfolio-hero-grid"></div>
+        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] grid-cols-1 gap-10 lg:gap-[60px] items-center pt-[140px] pb-20">
+            <div>
+              <nav
+                className="text-[13px] text-white/70 !mb-5"
+                aria-label="Breadcrumb"
+              >
+                <Link
+                  href="/"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  Home
+                </Link>
+                {" / "}
+                <Link
+                  href="/ai-tools/"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  AI Tools
+                </Link>
+                {" / "}
+                <span>AI Insights and Automation</span>
+              </nav>
+              <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] mb-6">
+                AI TOOLS
+              </span>
+              <h1
+                id="hero-heading"
+                className="font-extrabold tracking-[-1.5px] leading-[1.1] mb-4 bg-gradient-to-r from-white via-white to-[#00ffff] bg-clip-text text-transparent"
+                style={{
+                  fontSize: "clamp(36px, 3.8vw, 54px)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                AI Insights and Automation
+              </h1>
+              <p className="text-[18px] text-white/60 leading-[1.7] max-w-[600px] !mb-10">
                 Unlock the power of AI to automate repetitive tasks and gain
-                real-time insights.
-                <br className="hidden md:block" />
-                From predictive analytics to workflow automation, explore how AI
-                can drive efficiency, <br className="hidden md:block" />{" "}
-                innovation, and growth for your business.
+                real-time insights. From predictive analytics to workflow
+                automation, explore how AI can drive efficiency, innovation, and
+                growth for your business.
               </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact-us/"
+                  className="c-button c-btn-large bg-[#1A5CCC] text-white hover:bg-[#1450b8] transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/ai-tools/"
+                  className="c-button c-btn-large border border-white/20 text-white bg-transparent hover:bg-white/[0.08] hover:border-white/40 transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
+                >
+                  Explore All AI Tools
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="w-full rounded-2xl overflow-hidden bg-white/[0.05] border border-white/10 backdrop-blur-[10px]">
+                <Image
+                  src="/images/ai_insights.png"
+                  alt="AI Insights and Automation"
+                  width={565}
+                  height={500}
+                  className="rounded-2xl object-cover w-full"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <div className="container max-w-[1280px] main-section-padding-bottom mx-auto">
         <div className="mb-4">
           <Link

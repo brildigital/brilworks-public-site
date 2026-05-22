@@ -18,15 +18,12 @@ const BridgeCTA = () => {
         >
           We Take on 3-4 New Mobile Projects Per Quarter
         </h3>
-        <p className="text-white/50 text-base mb-8 max-w-[576px] mx-auto">
-          Tell us about your app idea — we&apos;ll show you how we&apos;d approach
-          the architecture, design, and launch.
+        <p className="text-white/50 text-base max-w-[576px] mx-auto">
+          Tell us about your app idea — we&apos;ll show you how we&apos;d
+          approach the architecture, design, and launch.
         </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <ButtonV2
-            size="large"
-            label="Get a Free App Consultation"
-          />
+        <div className="flex justify-center gap-4 flex-wrap mt-8">
+          <ButtonV2 size="large" label="Get a Free App Consultation" />
           <Link
             href="/portfolio/"
             className="c-button c-btn-large border border-white/20 text-white bg-transparent hover:bg-white/[0.08] hover:border-white/40 transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
