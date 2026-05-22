@@ -89,7 +89,7 @@ const SeeingBelieving = ({
 
                 {/* Client */}
                 {item.clientName && (
-                  <p className="font-Figtree text-[13px] text-[#6b7280] mb-3">
+                  <p className="font-Figtree text-[13px] text-[#6b7280] pb-3">
                     {item.clientName}
                   </p>
                 )}
@@ -114,7 +114,6 @@ const SeeingBelieving = ({
             </Link>
           ))}
         </div>
-
       </div>
     </div>
   );
