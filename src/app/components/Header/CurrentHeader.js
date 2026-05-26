@@ -44,6 +44,7 @@ const CurrentHeader = () => {
     "/service-squard-terms-of-service/",
     "/kindcircle-privacy-policy/",
     "/elara-privacy-policy/",
+    "/turbo-mania-privacy-policy/",
     "/kindcircle-terms-and-condition/",
     "/lifepilot-privacy-policy/",
     "/mr-brush-privacy-policy/",
