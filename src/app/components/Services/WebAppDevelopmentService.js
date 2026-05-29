@@ -8,56 +8,21 @@ import {
   faReact,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
+import { Check, ArrowRight, Globe, ShieldCheck, Star, TrendingUp } from "lucide-react";
 
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
 
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
 
-const IconWebBadge = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" stroke="#00b4d8" strokeWidth="1.5" />
-    <path d="M2 12H22M12 2C9.5 5.5 8 8.5 8 12s1.5 6.5 4 10M12 2c2.5 3.5 4 6.5 4 10s-1.5 6.5-4 10" stroke="#00b4d8" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
+const IconWebBadge = () => <Globe size={14} aria-hidden="true" />;
 
-const IconShieldWeb = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconShieldWeb = ({ color = "#017eeb" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconGlobe = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" fill={color} opacity="0.15" />
-    <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="1.8" />
-    <path d="M2 12H22M12 2C9.5 5.5 8 8.5 8 12s1.5 6.5 4 10M12 2c2.5 3.5 4 6.5 4 10s-1.5 6.5-4 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
+const IconGlobe = ({ color = "#017eeb" }) => <Globe size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconStar = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
+const IconStar = ({ color = "#017eeb" }) => <Star size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconChart = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M3 3H21V21H3V3Z" fill={color} opacity="0.15" />
-    <path d="M3 3H21V21H3V3Z" stroke={color} strokeWidth="1.8" />
-    <path d="M7 14L10 11L13 14L17 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconChart = ({ color = "#017eeb" }) => <TrendingUp size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
 const heroBg = {
   background:

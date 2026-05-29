@@ -1,13 +1,10 @@
 import React from "react";
+import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { formatSrcUrl } from "../lib/commonFunction";
 
-const IconCheck = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="#017eeb" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = () => <Check size={16} color="#017eeb" strokeWidth={2.2} aria-hidden="true" />;
 
 const AIWorking = ({ data }) => {
   return (

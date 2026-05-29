@@ -2,71 +2,28 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import { Check, X, ArrowRight, Star, Smartphone, ShieldCheck, Phone, Zap, UserCheck, TrendingUp, Clock, Award, LayoutDashboard, Heart, Building2, Layers, ShoppingCart, Truck, CheckCircle, Radio } from "lucide-react";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
 
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
 
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
+const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
 
-const IconRNBadge = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="2.5" fill="#00b4d8" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00b4d8" strokeWidth="1.5" fill="none" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00b4d8" strokeWidth="1.5" fill="none" transform="rotate(60 12 12)" />
-    <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00b4d8" strokeWidth="1.5" fill="none" transform="rotate(120 12 12)" />
-  </svg>
-);
+const IconRNBadge = () => <Smartphone size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#017eeb", size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconShield = ({ color = "#017eeb", size = 18 }) => <ShieldCheck size={size} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconPhoneSingle = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="5" y="2" width="14" height="20" rx="3" fill="#017eeb" opacity="0.15" />
-    <rect x="5" y="2" width="14" height="20" rx="3" stroke="#017eeb" strokeWidth="1.8" />
-    <line x1="5" y1="18" x2="19" y2="18" stroke="#017eeb" strokeWidth="1.5" />
-    <circle cx="12" cy="20" r="0.8" fill="#017eeb" />
-  </svg>
-);
+const IconPhoneSingle = ({ color = "#017eeb", size = 18 }) => <Radio size={size} color={color} aria-hidden="true" />;
 
-const IconDualPhone = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="2" y="4" width="8" height="16" rx="1.5" fill="#017eeb" opacity="0.15" />
-    <rect x="2" y="4" width="8" height="16" rx="1.5" stroke="#017eeb" strokeWidth="1.8" />
-    <rect x="14" y="4" width="8" height="16" rx="1.5" fill="#017eeb" opacity="0.15" />
-    <rect x="14" y="4" width="8" height="16" rx="1.5" stroke="#017eeb" strokeWidth="1.8" />
-  </svg>
-);
+const IconDualPhone = ({ color = "#017eeb", size = 18 }) => <Smartphone size={size} color={color} aria-hidden="true" />;
 
-const IconBolt = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M13 2L4 14H11L10 22L20 10H13L13 2Z" fill="#017eeb" opacity="0.15" />
-    <path d="M13 2L4 14H11L10 22L20 10H13L13 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
+const IconBolt = ({ color = "#017eeb", size = 18 }) => <Zap size={size} color={color} aria-hidden="true" />;
 
 // ---------- Style tokens ----------
 const heroBg = {
@@ -118,59 +75,31 @@ const BENEFITS = [
     title: "Top 3% RN Talent",
     tint: "#ccfbf1",
     body: "You work with developers who've shipped multiple RN apps end-to-end — filtered for clarity, discipline, and mobile fluency.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#0d9488" opacity="0.15" />
-        <path d="M9 12C12.31 12 15 9.31 15 6C15 4.69 14.59 3.47 13.91 2.5M3 21V19C3 16.79 4.79 15 7 15H11C13.21 15 15 16.79 15 19V21" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="9" cy="8" r="4" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M17 11L19 13L23 9" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <UserCheck size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "5-Star Rating",
     tint: "#dbeafe",
     body: "Our rating comes from consistent behaviour: clear communication, steady delivery, and fixing issues before they turn into excuses.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" fill="#017eeb" opacity="0.15" />
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Star size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "80+ RN Apps Shipped",
     tint: "#d1fae5",
     body: "Enough mileage across stores to understand submission patterns, avoid rejection traps, and ship without surprises.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="4" y="3" width="16" height="18" rx="2" fill="#10b981" opacity="0.15" />
-        <rect x="4" y="3" width="16" height="18" rx="2" stroke="#10b981" strokeWidth="1.8" />
-        <path d="M8 8H16M8 12H14M8 16H12" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Smartphone size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "AI-Driven Workflow",
     tint: "#ede9fe",
     body: "We use AI to cut slow review cycles, surface issues earlier, and keep engineering focused on the decisions that actually shape your app.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#7c3aed" opacity="0.15" />
-        <path d="M8 12L11 15L16 9M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <CheckCircle size={32} color="#7c3aed" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Real 24/7 Availability",
     tint: "#cffafe",
     body: "Overlapping time zones mean your app project doesn't sit idle — progress continues even when you're offline.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" fill="#0891b2" opacity="0.15" />
-        <path d="M12 7V12L15 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Clock size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Native Feel, Guaranteed",
@@ -206,104 +135,42 @@ const TESTIMONIALS = [
 
 const HONORS = [
   { label: "AWS Partner (Advanced Tier)", icon: <IconShield /> },
-  {
-    label: "Clutch Global 2025",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top Software",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Top 10 Agency 2026",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
-  {
-    label: "Adalo No-Code Certified",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+  { label: "Clutch Global 2025", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "GoodFirms Top Software", icon: <Award size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Top 10 Agency 2026", icon: <LayoutDashboard size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Adalo No-Code Certified", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Healthcare",
     href: "/industry/healthcare-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Fintech",
     href: "/industry/fintech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
-        <rect x="2" y="6" width="20" height="12" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M2 10H22" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <Building2 size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "EdTech",
     href: "/industry/edtech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#4f46e5" opacity="0.15" />
-        <path d="M2 8L12 3L22 8L12 13L2 8ZM6 10V16C6 16 8 18 12 18C16 18 18 16 18 16V10" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Layers size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "E-Commerce",
     href: "/industry/e-commerce-app-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
-        <path d="M3 3H5L8 16H19L21 7H6M9 20C9 20.55 8.55 21 8 21C7.45 21 7 20.55 7 20C7 19.45 7.45 19 8 19C8.55 19 9 19.45 9 20ZM18 20C18 20.55 17.55 21 17 21C16.45 21 16 20.55 16 20C16 19.45 16.45 19 17 19C17.55 19 18 19.45 18 20Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShoppingCart size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "SaaS",
     href: "#",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="14" rx="2" fill="#7c3aed" opacity="0.15" />
-        <rect x="3" y="4" width="18" height="14" rx="2" stroke="#7c3aed" strokeWidth="1.8" />
-        <path d="M8 20H16M12 18V20" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <LayoutDashboard size={32} color="#7c3aed" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Logistics",
     href: "/industry/fleet-management-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M1 3H15V16H1V3Z M15 8H21L23 11V16H15V8Z" fill="#0891b2" opacity="0.15" />
-        <path d="M1 3H15V16H1V3ZM15 8H21L23 11V16H15V8ZM7 19C7 20.1 6.1 21 5 21C3.9 21 3 20.1 3 19C3 17.9 3.9 17 5 17C6.1 17 7 17.9 7 19ZM19 19C19 20.1 18.1 21 17 21C15.9 21 15 20.1 15 19C15 17.9 15.9 17 17 17C18.1 17 19 17.9 19 19Z" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Truck size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -435,11 +302,7 @@ const MockupPerfAudit = () => (
         ].map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.pass ? "#10b981" : "#ef4444" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                {row.pass
-                  ? <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  : <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />}
-              </svg>
+              {row.pass ? <Check size={10} color="white" strokeWidth={3} /> : <X size={10} color="white" strokeWidth={3} />}
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />

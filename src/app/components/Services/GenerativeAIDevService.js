@@ -22,6 +22,7 @@ import {
   Play,
   Award,
   LayoutGrid,
+  X,
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
@@ -355,11 +356,9 @@ const MockupStatsDashboard = ({ stats, rows, label }) => (
         {rows.map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.pass ? "#10b981" : "#ef4444" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                {row.pass
-                  ? <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  : <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />}
-              </svg>
+              {row.pass
+                ? <Check size={10} color="white" strokeWidth={3} />
+                : <X size={10} color="white" strokeWidth={3} />}
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
