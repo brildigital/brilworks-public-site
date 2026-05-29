@@ -13,7 +13,7 @@ import { faReact, faPhp } from "@fortawesome/free-brands-svg-icons";
 import SolutionCostAndTimeLine from "./SolutionCostAndTimeLine";
 import IndustryMidCTA from "./IndustryMidCTA";
 import IndustryTrustBar from "./IndustryTrustBar";
-import { ShieldCheck, ShoppingBag, DollarSign, Lock } from "lucide-react";
+import { ShieldCheck, ShoppingBag, DollarSign, Lock, Award, Target, Smile, LifeBuoy, RefreshCw, Rocket, Building2, Landmark } from "lucide-react";
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
 
@@ -113,37 +113,37 @@ const ECommerceSolution = () => {
   const why100PlusCompaniesTrust = [
     {
       title: "Proven Expertise and Experience",
-      icon: "/images/v2/proven-expertise.svg",
+      icon: <Award size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "We bring extensive experience in mobile app implementation and eCommerce IT, ensuring your project is handled by qualified, experienced specialists.",
     },
     {
       title: "Customised, Goal-Oriented Solutions",
-      icon: "/images/v2/fi_8869087.svg",
+      icon: <Target size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Our services are meticulously designed to future-proof your retail strategy and build bespoke applications that precisely align with your specific business goals.",
     },
     {
       title: "Enhanced User Experience and Engagement",
-      icon: "/images/v2/fi_16743164.svg",
+      icon: <Smile size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "We specialize in creating visually appealing, intuitive, conversion-driven designs, ensuring  seamless navigation, engagement, and a personalized shopping experience.",
     },
     {
       title: "Robust Security and Performance",
-      icon: "/images/v2/security.svg",
+      icon: <ShieldCheck size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "We prioritize the confidentiality and integrity of your data. Our development with ISO 27001-approved security processes and GDPR standards ensures secure data exchange.",
     },
     {
       title: "Comprehensive Service and Support",
-      icon: "/images/v2/fi_8623753.svg",
+      icon: <LifeBuoy size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "From initial strategy and research to design, integration, and deployment, we offer a full suite of end-to-end services, with 24/7 support and maintenance.",
     },
     {
       title: "Agile Methodology and Transparency",
-      icon: "/images/v2/fi_2907826.svg",
+      icon: <RefreshCw size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "We leverage agile development practices to deliver solutions within stipulated timelines without compromising on quality.",
     },
@@ -241,7 +241,7 @@ const ECommerceSolution = () => {
     listItems: [
       {
         title: "For Solo Founders and Startups",
-        icon: "/images/v2/fi_10650262.svg",
+        icon: <Rocket size={32} color="#1A5CCC" strokeWidth={1.75} />,
         budgetRange: "$15K – $55K",
         includes: [
           "Mobile-friendly storefront design",
@@ -253,7 +253,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "For Mid-Sized Businesses",
-        icon: "/images/v2/fi_14991761.svg",
+        icon: <Building2 size={32} color="#1A5CCC" strokeWidth={1.75} />,
         budgetRange: "$55K – $190K",
         includes: [
           "Multi-vendor or personalized catalog logic",
@@ -267,7 +267,7 @@ const ECommerceSolution = () => {
       },
       {
         title: "For Enterprises",
-        icon: "/images/v2/fi_3137795.svg",
+        icon: <Landmark size={32} color="#1A5CCC" strokeWidth={1.75} />,
         budgetRange: "$190K+",
         includes: [
           "Unified web + mobile platforms",

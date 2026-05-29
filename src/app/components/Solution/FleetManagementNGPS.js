@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import { MapPin, Route, AlertTriangle, Bell, History, Settings2, WifiOff, Plug, Cloud, BarChart2 } from "lucide-react";
 import {
   faReact,
   faAngular,
@@ -144,37 +145,37 @@ const FleetManagementNGPS = () => {
     benefits: [
       {
         title: "Real-time GPS vehicle tracking",
-        icon: "/images/v2/realtime-gps-icon.svg",
+        icon: <MapPin size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Route History and Optimization",
-        icon: "/images/v2/route-history-icon.svg",
+        icon: <Route size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Accident Detection and Management",
-        icon: "/images/v2/accident-detection-icon.svg",
+        icon: <AlertTriangle size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Automated Alerts",
-        icon: "/images/v2/automates-alert-icon.svg",
+        icon: <Bell size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Historical Fleet Data",
-        icon: "/images/v2/historical-fleet-icon.svg",
+        icon: <History size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Engine Diagnostics",
-        icon: "/images/v2/engine-diagonastic-icon.svg",
+        icon: <Settings2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Offline Tracking",
-        icon: "/images/v2/offline-tracking-icon.svg",
+        icon: <WifiOff size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
-      { title: "API Integration", icon: "/images/v2/api-integration-icon.svg" },
-      { title: "Cloud Based", icon: "/images/v2/cloud-based-icon.svg" },
+      { title: "API Integration", icon: <Plug size={28} color="#1A5CCC" strokeWidth={1.75} /> },
+      { title: "Cloud Based", icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} /> },
       {
         title: "Analytics & Reporting",
-        icon: "/images/v2/analytics-reporting-icon.svg",
+        icon: <BarChart2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
     ],
   };

@@ -1,63 +1,29 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {
+  Check,
+  ArrowRight,
+  Star,
+  Diamond,
+  ShieldCheck,
+  DollarSign,
+  TrendingUp,
+  Clock,
+  RefreshCw,
+  MessageSquare,
+  Award,
+  BadgeCheck,
+  CreditCard,
+  Heart,
+  ShoppingCart,
+  Server,
+  Factory,
+  Monitor,
+} from "lucide-react";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
-);
-
-// ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
-
-const IconDiamond = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M4 14L12 2L20 14L12 22L4 14Z" fill="#00b4d8" opacity="0.3" />
-    <path d="M4 14L12 2L20 14L12 22L4 14Z" stroke="#00b4d8" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconShield = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconDollar = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2V22M17 5H9.5C7.57 5 6 6.57 6 8.5C6 10.43 7.57 12 9.5 12H14.5C16.43 12 18 13.57 18 15.5C18 17.43 16.43 19 14.5 19H6" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconChartUp = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M3 13L9 7L13 11L21 3" fill="#017eeb" opacity="0.15" />
-    <path d="M3 13L9 7L13 11L21 3M21 3H15M21 3V9M3 21H21" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconClock = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#017eeb" opacity="0.15" />
-    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6V12L16 14" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
 );
 
 // ---------- Style tokens ----------
@@ -92,10 +58,10 @@ const statValueStyle = {
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Advanced Consulting Partner" },
-  { icon: <IconDollar />, label: "$2M+ Saved for Clients" },
-  { icon: <IconChartUp />, label: "100+ Migrations Delivered" },
-  { icon: <IconClock />, label: "99.99% Uptime SLA" },
+  { icon: <ShieldCheck size={18} color="#017eeb" />, label: "AWS Advanced Consulting Partner" },
+  { icon: <DollarSign size={18} color="#017eeb" />, label: "$2M+ Saved for Clients" },
+  { icon: <TrendingUp size={18} color="#017eeb" />, label: "100+ Migrations Delivered" },
+  { icon: <Clock size={18} color="#017eeb" />, label: "99.99% Uptime SLA" },
 ];
 
 const HERO_STATS = [
@@ -110,63 +76,37 @@ const BENEFITS = [
     title: "AWS Advanced Partner",
     tint: "#e8f0fd",
     body: "Certified Solutions Architects, DevOps Engineers, and Security specialists — with real production scars, not just exam badges.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill="#017eeb" opacity="0.15" />
-        <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M9 12L11 14L15 10" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShieldCheck size={32} color="#017eeb" />,
   },
   {
     title: "Measurable Savings",
     tint: "#ede9fe",
     body: "Average client sees 25-40% AWS bill reduction in the first 60 days. Every engagement ends with a documented savings report.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#4f46e5" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#4f46e5" />,
   },
   {
     title: "Zero-Downtime Migrations",
     tint: "#d1fae5",
     body: "Battle-tested playbooks, blue/green cutovers, and fallback plans mean your users never notice the move — even at production scale.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 12C21 16.97 16.97 21 12 21C9.5 21 7.27 20 5.65 18.4M3 12C3 7.03 7.03 3 12 3C14.5 3 16.73 4 18.35 5.6" fill="#10b981" opacity="0.15" />
-        <path d="M21 4V10H15M3 20V14H9M21 12C21 16.97 16.97 21 12 21C9.5 21 7.27 20 5.65 18.4L3 16M3 12C3 7.03 7.03 3 12 3C14.5 3 16.73 4 18.35 5.6L21 8" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <RefreshCw size={32} color="#10b981" />,
   },
   {
     title: "24/7 Managed Ops",
     tint: "#ccfbf1",
     body: "Our global on-call team watches your environment around the clock. 99.99% uptime SLA, mean-time-to-respond under 15 minutes.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#0d9488" opacity="0.15" />
-        <path d="M12 7V12L15 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Clock size={32} color="#0d9488" />,
   },
   {
     title: "Compliance-Ready",
     tint: "#cffafe",
     body: "SOC 2, HIPAA, PCI-DSS, and GDPR landing zones deployed as code. Auditors ask for evidence — we hand it over, already organized.",
-    icon: <IconShield color="#0891b2" />,
+    icon: <ShieldCheck size={32} color="#0891b2" />,
   },
   {
     title: "Transparent Reporting",
     tint: "#dbeafe",
     body: "Monthly dashboards with cost, performance, security posture, and Well-Architected scores. No black boxes. No surprises.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" fill="#1e40af" opacity="0.15" />
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" stroke="#1e40af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <MessageSquare size={32} color="#1e40af" />,
   },
 ];
 
@@ -195,105 +135,43 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Advanced Consulting Partner", icon: <IconShield /> },
-  {
-    label: "Clutch Top B2B 2024",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top Cloud Partner",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "ISO 27001 Certified",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
-  {
-    label: "AWS Well-Architected Partner",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+  { label: "AWS Advanced Consulting Partner", icon: <ShieldCheck size={20} color="#017eeb" /> },
+  { label: "Clutch Top B2B 2024", icon: <Star size={20} color="#017eeb" /> },
+  { label: "GoodFirms Top Cloud Partner", icon: <Award size={20} color="#017eeb" /> },
+  { label: "ISO 27001 Certified", icon: <BadgeCheck size={20} color="#017eeb" /> },
+  { label: "AWS Well-Architected Partner", icon: <Star size={20} color="#017eeb" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "FinTech",
     href: "/industry/fintech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
-        <rect x="2" y="6" width="20" height="12" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M2 10H22" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <CreditCard size={32} color="#017eeb" />,
   },
   {
     label: "Healthcare",
     href: "/use-case/aws-in-healthcare/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" />,
   },
   {
     label: "E-commerce",
     href: "/use-case/aws-in-ecommerce/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
-        <path d="M3 3H5L8 16H19L21 7H6M9 20C9 20.55 8.55 21 8 21C7.45 21 7 20.55 7 20C7 19.45 7.45 19 8 19C8.55 19 9 19.45 9 20ZM18 20C18 20.55 17.55 21 17 21C16.45 21 16 20.55 16 20C16 19.45 16.45 19 17 19C17.55 19 18 19.45 18 20Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShoppingCart size={32} color="#10b981" />,
   },
   {
     label: "SaaS",
     href: "/saas-application-development-services/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M18 10H19C20.66 10 22 11.34 22 13V17C22 18.66 20.66 20 19 20H5C3.34 20 2 18.66 2 17V13C2 11.34 3.34 10 5 10H6" fill="#4f46e5" opacity="0.15" />
-        <path d="M18 10H19C20.66 10 22 11.34 22 13V17C22 18.66 20.66 20 19 20H5C3.34 20 2 18.66 2 17V13C2 11.34 3.34 10 5 10H6M18 10V7C18 5.34 16.66 4 15 4H9C7.34 4 6 5.34 6 7V10M18 10H6" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Server size={32} color="#4f46e5" />,
   },
   {
     label: "Manufacturing",
     href: "/industry/manufacturing-software-development-services/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 21H21V10L15 14V10L9 14V10L3 14V21Z" fill="#0d9488" opacity="0.15" />
-        <path d="M3 21H21V10L15 14V10L9 14V10L3 14V21Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Factory size={32} color="#0d9488" />,
   },
   {
     label: "Media",
     href: "/industry/media-entertainment-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="5" width="20" height="14" rx="2" fill="#0891b2" opacity="0.15" />
-        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#0891b2" strokeWidth="1.8" />
-        <path d="M10 9L15 12L10 15V9Z" fill="#0891b2" stroke="#0891b2" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Monitor size={32} color="#0891b2" />,
   },
 ];
 
@@ -356,9 +234,7 @@ const StatPill = ({ value, label, tone = "ok" }) => {
 const CheckRow = ({ width, pass = true }) => (
   <div className="flex items-center gap-2 py-1.5" style={{ borderBottom: "1px solid #f1f5f9" }}>
     <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: pass ? "#10b981" : "#ef4444" }}>
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-        <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <Check size={10} color="white" strokeWidth={3} />
     </div>
     <b style={{ display: "block", height: 5, width, background: "#475569", borderRadius: 2 }} />
     <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
@@ -627,7 +503,7 @@ const AWSService = () => {
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                   style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <IconDiamond /> AWS Advanced Consulting Partner
+                  <Diamond size={14} color="#00b4d8" /> AWS Advanced Consulting Partner
                 </span>
                 <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
                   Cut Cloud Costs, <span style={gradientTextStyle}>Scale Without Limits</span>
@@ -639,7 +515,7 @@ const AWSService = () => {
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
-                    Get My Free AWS Assessment <IconArrowRight />
+                    Get My Free AWS Assessment <ArrowRight size={16} />
                   </Link>
                   <Link href="#services"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
@@ -650,7 +526,7 @@ const AWSService = () => {
                 <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
                   {["Free AWS Well-Architected review", "48-hour cost analysis", "No commitment"].map((t) => (
                     <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                      <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -714,7 +590,7 @@ const AWSService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><IconCheck /></span>{f}
+                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -776,7 +652,7 @@ const AWSService = () => {
               <div key={t.name} className="rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
+                  {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}
                 </div>
                 <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">

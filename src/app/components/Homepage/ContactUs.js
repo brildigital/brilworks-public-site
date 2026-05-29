@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { Check } from "lucide-react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 
@@ -40,7 +41,7 @@ const ContactUs = () => {
             <div className="flex flex-col gap-3">
               {trustItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-2.5 font-Figtree text-sm text-[#374151]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><polyline points="20 6 9 17 4 12" /></svg>
+                  <Check size={16} color="#10b981" strokeWidth={2.5} className="shrink-0" />
                   {item}
                 </div>
               ))}

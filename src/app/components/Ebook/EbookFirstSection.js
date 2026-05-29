@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Star, Check } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
 const stripHtml = (html = "") => String(html).replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
@@ -94,12 +95,7 @@ const EbookFirstSection = ({
                 marginBottom: 24,
               }}
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2L14.39 8.26L21 9.27L16 14.14L17.18 20.99L12 17.77L6.82 20.99L8 14.14L3 9.27L9.61 8.26L12 2Z"
-                  fill="#00dbd3"
-                />
-              </svg>
+              <Star size={12} color="#00dbd3" fill="#00dbd3" />
               Free Ebook · No Paywall
             </span>
 
@@ -235,15 +231,7 @@ const EbookFirstSection = ({
                       marginTop: 2,
                     }}
                   >
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M5 12L10 17L19 7"
-                        stroke="#00dbd3"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <Check size={10} color="#00dbd3" strokeWidth={2.5} />
                   </span>
                   <span dangerouslySetInnerHTML={{ __html: p }} />
                 </div>
