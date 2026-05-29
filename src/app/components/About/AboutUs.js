@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { ShieldCheck, Star, Users, Check } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import IndustriesWeServe from "../Homepage/IndustriesWeServe";
@@ -8,86 +9,10 @@ import MeetOurTeam from "./MeetOurTeam";
 import Link from "next/link";
 import ButtonV2 from "../Common/ButtonV2";
 
-// ── Inline SVG icons ──────────────────────────────────────────────────────────
-const IconShield = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z"
-      fill="#017eeb"
-      opacity="0.15"
-    />
-    <path
-      d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z"
-      stroke="#017eeb"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9 12L11 14L15 10"
-      stroke="#017eeb"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-const IconStar = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z"
-      stroke="#017eeb"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-const IconTeam = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <circle cx="9" cy="8" r="4" stroke="#017eeb" strokeWidth="1.8" />
-    <circle cx="17" cy="9" r="3" stroke="#017eeb" strokeWidth="1.8" />
-    <path
-      d="M2 21V19C2 16.8 3.8 15 6 15H12C14.2 15 16 16.8 16 19V21M16 21V19C16 17 14.5 15.5 12.5 15.2M22 21V19C22 17 20.5 15.5 18.5 15.2"
-      stroke="#017eeb"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-const IconCheck = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M20 6L9 17L4 12"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const IconShield = () => <ShieldCheck size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconStar = () => <Star size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconTeam = () => <Users size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconCheck = () => <Check size={16} strokeWidth={2.2} aria-hidden="true" />;
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const TRUST = [

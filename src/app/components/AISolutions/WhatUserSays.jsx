@@ -1,13 +1,10 @@
 "use client";
 import React from "react";
+import { Star } from "lucide-react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useMediaQuery } from "react-responsive";
 
-const StarFilled = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
+const StarFilled = () => <Star size={14} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
 
 const WhatUserSays = ({ userSaysData }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });

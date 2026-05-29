@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import { ShieldAlert, Laptop, AlertTriangle, Building2, UserCheck, TrendingUp } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
@@ -132,37 +133,37 @@ const Fintech = () => {
   const why100PlusCompaniesTrust = [
     {
       title: "Fraud Detection Software",
-      icon: "/images/v2/fraud-detection-icon.svg",
+      icon: <ShieldAlert size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Our financial fraud detection software is designed to screen users, accounts, transactions, and reports for money laundering, counterfeiting, embezzlement, and all forms of abuse.",
     },
     {
       title: "Financial Reporting Software",
-      icon: "/images/v2/laptop.svg",
+      icon: <Laptop size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "It helps organizations to complete financial tasks more efficiently by reducing the time taken for manual work by replacing it with automation and providing accurate reports for management decision-making.",
     },
     {
       title: "Financial Risk Management",
-      icon: "/images/v2/financial-risk-icon.svg",
+      icon: <AlertTriangle size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Risk Management software increases the focus on the risk of financial losses to the institution and helps its management mitigate these risks through accurate and timely decisions.",
     },
     {
       title: "Financial CRM Software",
-      icon: "/images/v2/crm-icon.svg",
+      icon: <Building2 size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "It is used by insurance companies and banks to streamline customer communications. Financial CRM software includes features like business intelligence, analytics, dashboards, reports, and much more.",
     },
     {
       title: "Background Check Software",
-      icon: "/images/v2/dedicates-no-distraction.svg",
+      icon: <UserCheck size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "It provides fast and accurate information on the authenticity of confidential information provided by individuals to process any applications like a credit card, mortgage loan, insurance etc.",
     },
     {
       title: "Sales Forecasting Software",
-      icon: "/images/v2/sales-forcating-icon.svg",
+      icon: <TrendingUp size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "It is a powerful tool used by sales managers and business owners to estimate and predict expenses with analysis and modeling tools including, expense reports, customer profitability analysis etc.",
     },

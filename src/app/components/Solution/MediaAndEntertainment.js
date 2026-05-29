@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { ShieldCheck, Clapperboard, Tv2, Globe } from "lucide-react";
+import { ShieldCheck, Clapperboard, Tv2, Globe, Rss, Languages, MessageSquare, CreditCard, Cpu, Bell, Layout, Share2, Star, Award, RefreshCw, MessageCircle, LifeBuoy } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import IndustryMidCTA from "./IndustryMidCTA";
@@ -115,35 +115,35 @@ const MediaAndEntertainment = () => {
     benefits: [
       {
         title: "Real-time Content Feeds",
-        icon: "/images/v2/realtime-icon.svg",
+        icon: <Rss size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Multilingual Support",
-        icon: "/images/v2/multilingual-icon.svg",
+        icon: <Languages size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Live Chatting",
-        icon: "/images/v2/live-chat-icon.svg",
+        icon: <MessageSquare size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Secure Payment Gateways",
-        icon: "/images/v2/secure-pymt-icon.svg",
+        icon: <CreditCard size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "IoT Integration",
-        icon: "/images/v2/iot-integration-icon.svg",
+        icon: <Cpu size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Push Notifications",
-        icon: "/images/v2/push-notification-icon.svg",
+        icon: <Bell size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Interactive UI/UX",
-        icon: "/images/v2/interactive-ui-icon.svg",
+        icon: <Layout size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Social Media Integration",
-        icon: "/images/v2/social-integration-icon.svg",
+        icon: <Share2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
     ],
   };
@@ -186,31 +186,31 @@ const MediaAndEntertainment = () => {
     benefits: [
       {
         title: "Top-Rated Developers",
-        icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
+        icon: <Star size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "Our team members consistently earn top ratings for their technical skills and communication.",
       },
       {
         title: "Proven Media Expertise",
-        icon: "/images/v2/proven-expertise.svg",
+        icon: <Award size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We have built streaming platforms, gaming apps, and content aggregation solutions for leading media companies.",
       },
       {
         title: "Agile & Transparent",
-        icon: "/images/v2/Agile_Development_Excellence.svg",
+        icon: <RefreshCw size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "You see progress regularly through sprints and working software, not after months of silence.",
       },
       {
         title: "Clear Communication",
-        icon: "/images/v2/transparent-comm.svg",
+        icon: <MessageCircle size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We explain technical decisions in plain language without overwhelming you with jargon.",
       },
       {
         title: "Post-Launch Support",
-        icon: "/images/v2/ongoing-support-icon.svg",
+        icon: <LifeBuoy size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We provide training, fix bugs, make adjustments, and add features as your needs evolve.",
       },

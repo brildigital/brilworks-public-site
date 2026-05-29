@@ -26,13 +26,17 @@ const SolutionCostAndTimeLine = ({ costData }) => {
               <div className="flex items-start flex-col justify-start">
                 <div className="w-fit brilliant-icon rounded-md mb-4">
                   <div className="flex items-center justify-start p-4 bg-white rounded-md">
-                    <Image
-                      className="w-14"
-                      src={item.icon}
-                      alt={`${item.title}-icon`}
-                      width={32}
-                      height={32}
-                    />
+                    {typeof item.icon === "string" ? (
+                      <Image
+                        className="w-14"
+                        src={item.icon}
+                        alt={`${item.title}-icon`}
+                        width={32}
+                        height={32}
+                      />
+                    ) : item.icon ? (
+                      item.icon
+                    ) : null}
                   </div>
                 </div>
                 <div className="text-lg md:text-xl font-bold mb-2">

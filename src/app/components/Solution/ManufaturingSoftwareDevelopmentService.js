@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { ShieldCheck, Factory, BarChart3, Wrench } from "lucide-react";
+import { ShieldCheck, Factory, BarChart3, Wrench, Clock, DollarSign, Users, Building2, Star, Award, RefreshCw, MessageCircle, LifeBuoy } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import SolutionContactForm from "./SolutionContactForm";
@@ -127,25 +127,25 @@ const ManufaturingSoftwareDevelopmentService = () => {
   const manufaturingHowWeWorkWithYou = [
     {
       title: "Time & Material",
-      icon: "/images/Quick-Turnaround-Time.png",
+      icon: <Clock size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Pay for the hours we work. Good for projects where requirements will evolve as you learn what works.",
     },
     {
       title: "Fixed Cost",
-      icon: "/images/v2/budget-estimate.svg",
+      icon: <DollarSign size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "One price for defined deliverables. We estimate the work, agree on what you'll get, and deliver it for that budget.",
     },
     {
       title: "Staff Augmentation",
-      icon: "/images/v2/dedicated-dev-team.svg",
+      icon: <Users size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Our developers join your team and work your hours using your tools and processes.",
     },
     {
       title: "Dedicated Development Team",
-      icon: "/images/v2/dedicated-dev-team.svg",
+      icon: <Building2 size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "A full team focused exclusively on your project, including developers, designers, QA testers, and a project manager.",
     },
@@ -156,31 +156,31 @@ const ManufaturingSoftwareDevelopmentService = () => {
     benefits: [
       {
         title: "Top-Rated Developers",
-        icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
+        icon: <Star size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "Our team members consistently earn top ratings for their technical skills and communication.",
       },
       {
         title: "Manufacturing Experience",
-        icon: "/images/v2/proven-expertise.svg",
+        icon: <Award size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We've built software for brick manufacturers, seat makers, and other production companies.",
       },
       {
         title: "Agile & Transparent",
-        icon: "/images/v2/Agile_Development_Excellence.svg",
+        icon: <RefreshCw size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "You see progress regularly through sprints and working software, not after months of silence.",
       },
       {
         title: "Clear Communication",
-        icon: "/images/v2/transparent-comm.svg",
+        icon: <MessageCircle size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We explain technical decisions in plain language without overwhelming you with jargon.",
       },
       {
         title: "Post-Launch Support",
-        icon: "/images/v2/ongoing-support-icon.svg",
+        icon: <LifeBuoy size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We provide training, fix bugs, make adjustments, and add features as your needs evolve.",
       },

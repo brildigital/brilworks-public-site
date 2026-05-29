@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import FetchDataSpinner from "./FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
+import { ArrowRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { formatSrcUrl } from "../lib/commonFunction";
@@ -62,7 +63,7 @@ const HomePageBlogs = () => {
                     </h4>
                     <p className="flex items-center text-base font-medium text-themeColor group-hover:text-colorBlack duration-500">
                       Read article
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                      <ArrowRight size={16} className="ml-2" />
                     </p>
                   </div>
                 </Link>

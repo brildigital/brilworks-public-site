@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { ShieldCheck, Users, BarChart3, Lock } from "lucide-react";
+import { ShieldCheck, Users, BarChart3, Lock, Clock, DollarSign, Building2, Star, Award, RefreshCw, MessageCircle, LifeBuoy } from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import AboutOurExpertise from "../Services/AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
@@ -137,25 +137,25 @@ const HRSoftwareDevelopment = () => {
   const hrServiceEngagementData = [
     {
       title: "Time & Material",
-      icon: "/images/Quick-Turnaround-Time.png",
+      icon: <Clock size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Pay for actual development hours. Works well when you're not entirely sure what features you'll need until you see the first version working.",
     },
     {
       title: "Fixed Cost",
-      icon: "/images/v2/budget-estimate.svg",
+      icon: <DollarSign size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "One agreed price for a defined set of features. Best when you know exactly what you want built and the scope won't change.",
     },
     {
       title: "Staff Augmentation",
-      icon: "/images/v2/dedicated-dev-team.svg",
+      icon: <Users size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "Our developers work as part of your existing team, following your sprint cycles and using your project management tools.",
     },
     {
       title: "Dedicated Development Team",
-      icon: "/images/v2/dedicated-dev-team.svg",
+      icon: <Building2 size={32} color="#1A5CCC" strokeWidth={1.75} />,
       description:
         "A complete team assigned only to your project—developers, designers, testers, and a project manager who keeps everything moving.",
     },
@@ -166,31 +166,31 @@ const HRSoftwareDevelopment = () => {
     benefits: [
       {
         title: "Top-Rated Developers",
-        icon: "/images/v2/Senior_talent_at_competitive_rates.svg",
+        icon: <Star size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "Our developers consistently receive top ratings for code quality, communication, and meeting deadlines.",
       },
       {
         title: "HR Domain Knowledge",
-        icon: "/images/v2/proven-expertise.svg",
+        icon: <Award size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We've built recruitment platforms, employee portals, and management tools. We understand HRIS workflows, compliance needs, and what HR teams actually do all day.",
       },
       {
         title: "Agile & Transparent",
-        icon: "/images/v2/Agile_Development_Excellence.svg",
+        icon: <RefreshCw size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "You see working software every two weeks, not mockups or promises. We adjust based on feedback from your HR team as we build.",
       },
       {
         title: "Clear Communication",
-        icon: "/images/v2/transparent-comm.svg",
+        icon: <MessageCircle size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "We explain technical tradeoffs in plain English. No jargon, no making you feel stupid for asking questions.",
       },
       {
         title: "Post-Launch Support",
-        icon: "/images/v2/ongoing-support-icon.svg",
+        icon: <LifeBuoy size={28} color="#1A5CCC" strokeWidth={1.75} />,
         description:
           "Your HR needs change as you grow. We stick around to add features, fix issues, train new users, and keep the software working as your team evolves.",
       },

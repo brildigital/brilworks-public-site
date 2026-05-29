@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { X } from "lucide-react";
 import Link from "next/link";
 import {
   Accordion,
@@ -105,20 +106,7 @@ const SideMenu = ({ open, close }) => {
         ripple={false}
         onClick={close}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          className="h-8 w-8"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
+        <X className="h-8 w-8" />
       </IconButton>
       <div className="w-[88%] mx-auto md:pt-8 py-4">
         {/* CTA Button at top */}

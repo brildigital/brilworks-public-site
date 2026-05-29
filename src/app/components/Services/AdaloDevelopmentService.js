@@ -2,66 +2,28 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import { Check, ArrowRight, Star, Zap, ShieldCheck, Phone, Clock, UserCheck, TrendingUp, CheckCircle, MessageSquare, Award, Home, LayoutDashboard, Building2, PhoneIcon, Smartphone } from "lucide-react";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
 
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
 
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
+const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
 
-const IconBolt = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#5eead4" opacity="0.3" />
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#5eead4" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
+const IconBolt = () => <Zap size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#0d9488" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconShield = ({ color = "#0d9488" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconBoltSmall = ({ color = "#0d9488" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill={color} opacity="0.15" />
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
+const IconBoltSmall = ({ color = "#0d9488" }) => <Zap size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconPhone = ({ color = "#0d9488" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="6" y="2" width="12" height="20" rx="2" fill={color} opacity="0.15" />
-    <rect x="6" y="2" width="12" height="20" rx="2" stroke={color} strokeWidth="1.8" />
-    <path d="M10 18H14" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
+const IconPhone = ({ color = "#0d9488" }) => <Smartphone size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconClock = ({ color = "#0d9488" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill={color} opacity="0.15" />
-    <path d="M12 7V12L15 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconClock = ({ color = "#0d9488" }) => <Clock size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
 // ---------- Style tokens ----------
 const heroBg = {
@@ -113,69 +75,37 @@ const BENEFITS = [
     title: "Certified Adalo Experts",
     tint: "#ccfbf1",
     body: "Our team is Adalo-certified and builds exclusively on the platform. We know every component, quirk, and performance limit — and how to design around them.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#0d9488" opacity="0.15" />
-        <path d="M9 12C12.31 12 15 9.31 15 6C15 4.69 14.59 3.47 13.91 2.5M3 21V19C3 16.79 4.79 15 7 15H11C13.21 15 15 16.79 15 19V21" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="9" cy="8" r="4" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M17 11L19 13L23 9" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <UserCheck size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "4-Week MVPs",
     tint: "#dcfce7",
     body: "We've shipped MVPs in as little as 28 days. Our sprint-based delivery model gets you in front of users — and into revenue — faster than any code-first agency.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#16a34a" opacity="0.15" />
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#16a34a" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#16a34a" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Founder-First Approach",
     tint: "#ede9fe",
     body: "We speak product, not just tech. You get strategic input on scope, priorities, and monetization — not a team that just ticks off tickets.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#7c3aed" opacity="0.15" />
-        <path d="M12 8V12L14 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Clock size={32} color="#7c3aed" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Scale-Ready Builds",
     tint: "#cffafe",
     body: "We architect Adalo apps with scale in mind — data modeling, lazy-loaded lists, and external-collection patterns that survive past 10K users.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#0891b2" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Fixed-Scope Pricing",
     tint: "#fef3c7",
     body: "Transparent, milestone-based pricing. Know your MVP cost on day one — with no hourly surprises and no scope creep.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" fill="#d97706" opacity="0.15" />
-        <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#d97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <CheckCircle size={32} color="#d97706" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "You Own Everything",
     tint: "#fce7f3",
     body: "Full ownership of your Adalo app, database, and accounts on handover. We train your team and stay on as long as you need — not a day more.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" fill="#be185d" opacity="0.15" />
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" stroke="#be185d" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <MessageSquare size={32} color="#be185d" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -207,99 +137,43 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Consulting Partner", icon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  ) },
-  { label: "Adalo Expert Partner", icon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  ) },
-  { label: "Clutch Global Award 2025", icon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  ) },
-  { label: "GoodFirms Top Developers", icon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="8" r="6" stroke="#0d9488" strokeWidth="1.8" />
-      <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  ) },
-  { label: "SelectedFirms Top 10 · 2026", icon: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  ) },
+  { label: "AWS Consulting Partner", icon: <ShieldCheck size={20} color="#0d9488" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Adalo Expert Partner", icon: <Zap size={20} color="#0d9488" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#0d9488" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "GoodFirms Top Developers", icon: <Award size={20} color="#0d9488" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "SelectedFirms Top 10 · 2026", icon: <Star size={20} color="#0d9488" strokeWidth={1.8} aria-hidden="true" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Startups",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#0d9488" opacity="0.15" />
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "MVPs",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="4" y="4" width="16" height="16" rx="3" fill="#0d9488" opacity="0.15" />
-        <rect x="4" y="4" width="16" height="16" rx="3" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M9 12L11 14L15 10" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <CheckCircle size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Marketplaces",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 21H21L19 11H5L3 21Z" fill="#0d9488" opacity="0.15" />
-        <path d="M3 21H21L19 11H5L3 21Z M8 11V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V11" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Building2 size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Directories",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6H20M4 12H20M4 18H14" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
-        <circle cx="4" cy="6" r="1.5" fill="#0d9488" />
-        <circle cx="4" cy="12" r="1.5" fill="#0d9488" />
-        <circle cx="4" cy="18" r="1.5" fill="#0d9488" />
-      </svg>
-    ),
+    icon: <LayoutDashboard size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Internal Tools",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="14" rx="2" fill="#0d9488" opacity="0.15" />
-        <rect x="3" y="4" width="18" height="14" rx="2" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M8 20H16M12 18V20" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
-        <path d="M7 9H11M7 13H15" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <LayoutDashboard size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "SMB",
     href: "#contact",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 21V9L12 3L21 9V21H3Z" fill="#0d9488" opacity="0.15" />
-        <path d="M3 21V9L12 3L21 9V21H3ZM9 21V13H15V21" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Home size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -442,9 +316,7 @@ const MockupIntegrations = () => (
         ].map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#10b981" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Check size={10} color="white" strokeWidth={3} />
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />

@@ -2,66 +2,29 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import { Check, ArrowRight, Star, Zap, ShieldCheck, Layers, Users, Clock, Code2, CreditCard, ShoppingCart, Award, LayoutDashboard, Heart, Building2, Rocket } from "lucide-react";
+
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
 
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
 
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
+const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
 
-const IconSparkle = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" fill="#00b4d8" opacity="0.3" />
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" stroke="#00b4d8" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
+const IconSparkle = () => <Zap size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconShield = ({ color = "#017eeb" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconStar = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" fill="#017eeb" opacity="0.15" />
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
+const IconStar = ({ color = "#017eeb" }) => <Star size={18} aria-hidden="true" color={color}/>;
 
-const IconLayers = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="14" rx="2" fill="#017eeb" opacity="0.15" />
-    <rect x="3" y="4" width="18" height="14" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-    <path d="M8 9L5 12L8 15M16 9L19 12L16 15M14 7L10 17" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconLayers = ({ color = "#017eeb" }) => <Layers size={18} aria-hidden="true" color={color}/>;
 
-const IconBolt = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill={color} opacity="0.15" />
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconBolt = ({ color = "#017eeb" }) => <Zap size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
 // ---------- Style tokens ----------
 const heroBg = {
@@ -113,70 +76,37 @@ const BENEFITS = [
     title: "Top FlutterFlow Talent",
     tint: "#e8f0fd",
     body: "Senior engineers with rich FlutterFlow web and mobile experience — vetted for both speed and code quality.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="4" fill="#017eeb" opacity="0.15" />
-        <circle cx="12" cy="8" r="4" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M4 21V19C4 16.79 5.79 15 8 15H16C18.21 15 20 16.79 20 19V21" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Users size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Faster Development",
     tint: "#ede9fe",
     body: "Get to market 3x faster with our FlutterFlow mastery — visual building, rapid iteration, and production-ready deploys.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#4f46e5" opacity="0.15" />
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Dedicated Expert in 48 Hours",
     tint: "#d1fae5",
     body: "A vetted FlutterFlow expert becomes an integral part of your team in just 48 hours — not 48 days.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#10b981" opacity="0.15" />
-        <path d="M12 7V12L15 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Clock size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Expert Developers",
     tint: "#ccfbf1",
     body: "Our devs stay current on every FlutterFlow release, best practice, and custom code pattern — so your app is future-proof.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M8 3L3 8L8 13M16 11L21 16L16 21M3 8H14C17 8 20 10 20 13V16" fill="#0d9488" opacity="0.15" />
-        <path d="M8 3L3 8L8 13M16 11L21 16L16 21M3 8H14C17 8 20 10 20 13V16" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Code2 size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Flexible Engagement",
     tint: "#cffafe",
     body: "Fixed fees for predictable costs or hourly billing for evolving scope — pick the model that matches your stage and cash flow.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="6" width="18" height="12" rx="2" fill="#0891b2" opacity="0.15" />
-        <rect x="3" y="6" width="18" height="12" rx="2" stroke="#0891b2" strokeWidth="1.8" />
-        <path d="M3 10H21M7 14H9M13 14H17" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <CreditCard size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Enhanced UX Focus",
     tint: "#dbeafe",
     body: "We prioritize user experience — crafting intuitive, visually stunning UIs that feel native on every platform FlutterFlow ships to.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill="#1e40af" opacity="0.15" />
-        <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke="#1e40af" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M9 12L11 14L15 10" stroke="#1e40af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShieldCheck size={32} color="#1e40af" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -206,103 +136,42 @@ const TESTIMONIALS = [
 
 const HONORS = [
   { label: "AWS Partner · Advanced Tier", icon: <IconShield /> },
-  {
-    label: "Clutch Global Award 2025",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top Software 2025-26",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "SelectedFirms Top 10 Agency 2026",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
-  {
-    label: "No-Code Certified Expert",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "GoodFirms Top Software 2025-26", icon: <Award size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "SelectedFirms Top 10 Agency 2026", icon: <LayoutDashboard size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "No-Code Certified Expert", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "MVPs & Startups",
     href: "/mvp-in-48-hours/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#017eeb" opacity="0.15" />
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "E-commerce",
     href: "/industry/e-commerce-app-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
-        <path d="M3 3H5L8 16H19L21 7H6M9 20C9 20.55 8.55 21 8 21C7.45 21 7 20.55 7 20C7 19.45 7.45 19 8 19C8.55 19 9 19.45 9 20ZM18 20C18 20.55 17.55 21 17 21C16.45 21 16 20.55 16 20C16 19.45 16.45 19 17 19C17.55 19 18 19.45 18 20Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShoppingCart size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "EdTech",
     href: "/industry/edtech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#4f46e5" opacity="0.15" />
-        <path d="M2 8L12 3L22 8L12 13L2 8ZM6 10V16C6 16 8 18 12 18C16 18 18 16 18 16V10" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Layers size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Marketplace",
     href: "/industry/e-commerce-app-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="7" width="18" height="13" rx="1" fill="#f59e0b" opacity="0.15" />
-        <path d="M3 7H21V20H3V7ZM8 7V4H16V7M3 11H21" stroke="#f59e0b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Building2 size={32} color="#f59e0b" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "B2B SaaS",
     href: "#",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="16" rx="2" fill="#0d9488" opacity="0.15" />
-        <rect x="3" y="4" width="18" height="16" rx="2" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M7 9H17M7 13H13M7 17H15" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <LayoutDashboard size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Healthcare",
     href: "/industry/healthcare-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -536,9 +405,7 @@ const MockupQA = () => (
         ].map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#10b981" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Check size={10} color="white" strokeWidth={3} />
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />

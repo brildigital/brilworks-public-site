@@ -2,68 +2,31 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import {
+  Check,
+  ArrowRight,
+  Star,
+  Sparkles,
+  ShieldCheck,
+  Rocket,
+  CircleCheck,
+  Layers,
+  TrendingUp,
+  Workflow,
+  Clock,
+  Users,
+  Award,
+  BadgeCheck,
+  CreditCard,
+  Globe,
+  Heart,
+  ShoppingCart,
+  Monitor,
+  Truck,
+} from "lucide-react";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
-);
-
-// ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
-
-const IconSparkle = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" fill="#00b4d8" opacity="0.3" />
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" stroke="#00b4d8" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconShield = ({ color = "#017eeb", size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconRocket = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M3 12L7 8L11 12L21 2M21 2H15M21 2V8" fill="#017eeb" opacity="0.15" />
-    <path d="M3 12L7 8L11 12L21 2M21 2H15M21 2V8M3 19L7 15L11 19L21 9" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconUptime = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="#017eeb" opacity="0.15" />
-    <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconPipeline = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="6" rx="1" fill="#017eeb" opacity="0.15" />
-    <rect x="3" y="14" width="18" height="6" rx="1" fill="#017eeb" opacity="0.15" />
-    <rect x="3" y="4" width="18" height="6" rx="1" stroke="#017eeb" strokeWidth="1.8" />
-    <rect x="3" y="14" width="18" height="6" rx="1" stroke="#017eeb" strokeWidth="1.8" />
-    <circle cx="7" cy="7" r="0.8" fill="#017eeb" />
-    <circle cx="7" cy="17" r="0.8" fill="#017eeb" />
-  </svg>
 );
 
 // ---------- Style tokens ----------
@@ -98,10 +61,10 @@ const statValueStyle = {
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Consulting Partner" },
-  { icon: <IconRocket />, label: "10x Faster Deployments" },
-  { icon: <IconUptime />, label: "99.99% Uptime" },
-  { icon: <IconPipeline />, label: "100+ Pipelines Built" },
+  { icon: <ShieldCheck size={18} color="#017eeb" />, label: "AWS Consulting Partner" },
+  { icon: <Rocket size={18} color="#017eeb" />, label: "10x Faster Deployments" },
+  { icon: <CircleCheck size={18} color="#017eeb" />, label: "99.99% Uptime" },
+  { icon: <Layers size={18} color="#017eeb" />, label: "100+ Pipelines Built" },
 ];
 
 const HERO_STATS = [
@@ -116,67 +79,37 @@ const BENEFITS = [
     title: "Streamlined Workflows",
     tint: "#e8f0fd",
     body: "We automate manual tasks and build CI/CD pipelines that slash cycle times, reduce errors, and let engineers focus on shipping features.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 4H10V10H4V4Z" fill="#017eeb" opacity="0.15" />
-        <path d="M14 4H20V10H14V4Z" fill="#017eeb" opacity="0.15" />
-        <path d="M4 14H10V20H4V14Z" fill="#017eeb" opacity="0.15" />
-        <path d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 17L16 19L20 15" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Workflow size={32} color="#017eeb" />,
   },
   {
     title: "Scalability & Flexibility",
     tint: "#ede9fe",
     body: "Your infrastructure adapts to traffic spikes, new markets, and product pivots — with IaC-driven architecture designed to scale on demand.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#4f46e5" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#4f46e5" />,
   },
   {
     title: "Expertise Across Technologies",
     tint: "#d1fae5",
     body: "AWS, GCP, Azure, Kubernetes, Terraform, Jenkins, GitHub Actions — we bring deep, battle-tested expertise across the entire DevOps toolchain.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#10b981" opacity="0.15" />
-        <path d="M8 12L11 15L16 9M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <CircleCheck size={32} color="#10b981" />,
   },
   {
     title: "Cost Optimization",
     tint: "#ccfbf1",
     body: "We tune your cloud spend with right-sizing, auto-scaling, and FinOps practices — cutting bills by 30-50% without sacrificing performance.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="#0d9488" opacity="0.15" />
-        <path d="M12 7V12L15 14M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Clock size={32} color="#0d9488" />,
   },
   {
     title: "Improved Collaboration",
     tint: "#cffafe",
     body: "We break down silos between Dev, Ops, QA, and Security teams — aligning everyone on shared goals, shared metrics, and shared accountability.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#0891b2" opacity="0.15" />
-        <circle cx="17" cy="9" r="3" fill="#0891b2" opacity="0.15" />
-        <path d="M2 21V19C2 16.8 3.8 15 6 15H12C14.2 15 16 16.8 16 19V21M16 21V19C16 17 14.5 15.5 12.5 15.2M22 21V19C22 17 20.5 15.5 18.5 15.2" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" />
-        <circle cx="9" cy="8" r="4" stroke="#0891b2" strokeWidth="1.8" />
-        <circle cx="17" cy="9" r="3" stroke="#0891b2" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <Users size={32} color="#0891b2" />,
   },
   {
     title: "Proven Track Record",
     tint: "#dbeafe",
     body: "100+ production pipelines shipped across SaaS, fintech, and enterprise. Track record of successful DevOps transformations, not just tooling swaps.",
-    icon: <IconShield color="#1e40af" size={32} />,
+    icon: <ShieldCheck size={32} color="#1e40af" />,
   },
 ];
 
@@ -205,105 +138,43 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Consulting Partner", icon: <IconShield /> },
-  {
-    label: "Clutch Top DevOps 2024",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top DevOps",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "ISO 27001 Certified",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
-  {
-    label: "Google Cloud Partner",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+  { label: "AWS Consulting Partner", icon: <ShieldCheck size={20} color="#017eeb" /> },
+  { label: "Clutch Top DevOps 2024", icon: <Star size={20} color="#017eeb" /> },
+  { label: "GoodFirms Top DevOps", icon: <Award size={20} color="#017eeb" /> },
+  { label: "ISO 27001 Certified", icon: <BadgeCheck size={20} color="#017eeb" /> },
+  { label: "Google Cloud Partner", icon: <Star size={20} color="#017eeb" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Fintech",
     href: "/industry/fintech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
-        <rect x="2" y="6" width="20" height="12" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M2 10H22" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <CreditCard size={32} color="#017eeb" />,
   },
   {
     label: "SaaS",
     href: "/saas-application-development-services/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12" fill="#4f46e5" opacity="0.15" />
-        <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 2V22M2 12H22" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Globe size={32} color="#4f46e5" />,
   },
   {
     label: "Healthcare",
     href: "/industry/healthcare-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" />,
   },
   {
     label: "E-commerce",
     href: "/industry/e-commerce-app-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H5L8 16H19L21 7H6" fill="#10b981" opacity="0.15" />
-        <path d="M3 3H5L8 16H19L21 7H6M9 20C9 20.55 8.55 21 8 21C7.45 21 7 20.55 7 20C7 19.45 7.45 19 8 19C8.55 19 9 19.45 9 20ZM18 20C18 20.55 17.55 21 17 21C16.45 21 16 20.55 16 20C16 19.45 16.45 19 17 19C17.55 19 18 19.45 18 20Z" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShoppingCart size={32} color="#10b981" />,
   },
   {
     label: "Media & Streaming",
     href: "/industry/media-entertainment-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="5" width="20" height="14" rx="2" fill="#0d9488" opacity="0.15" />
-        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M10 9V15L15 12L10 9Z" stroke="#0d9488" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Monitor size={32} color="#0d9488" />,
   },
   {
     label: "Logistics",
     href: "/industry/fleet-management-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M1 3H15V16H1V3Z M15 8H21L23 11V16H15V8Z" fill="#0891b2" opacity="0.15" />
-        <path d="M1 3H15V16H1V3ZM15 8H21L23 11V16H15V8ZM7 19C7 20.1 6.1 21 5 21C3.9 21 3 20.1 3 19C3 17.9 3.9 17 5 17C6.1 17 7 17.9 7 19ZM19 19C19 20.1 18.1 21 17 21C15.9 21 15 20.1 15 19C15 17.9 15.9 17 17 17C18.1 17 19 17.9 19 19Z" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Truck size={32} color="#0891b2" />,
   },
 ];
 
@@ -371,9 +242,7 @@ const MockupStatsDashboard = ({ label, stats, rows }) => (
         {rows.map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#10b981" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Check size={10} color="white" strokeWidth={3} />
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
@@ -606,7 +475,7 @@ const DevOpsService = () => {
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                   style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <IconSparkle /> DevOps Consulting Services
+                  <Sparkles size={14} color="#00b4d8" /> DevOps Consulting Services
                 </span>
                 <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
                   Ship Faster With <span style={gradientTextStyle}>Bulletproof CI/CD</span>
@@ -618,7 +487,7 @@ const DevOpsService = () => {
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
-                    Get My Free DevOps Audit <IconArrowRight />
+                    Get My Free DevOps Audit <ArrowRight size={16} />
                   </Link>
                   <Link href="#services"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
@@ -629,7 +498,7 @@ const DevOpsService = () => {
                 <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
                   {["Free pipeline audit", "48-hour roadmap", "No commitment"].map((t) => (
                     <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                      <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -693,7 +562,7 @@ const DevOpsService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><IconCheck /></span>{f}
+                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -755,7 +624,7 @@ const DevOpsService = () => {
               <div key={t.name} className="rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
+                  {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}
                 </div>
                 <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">

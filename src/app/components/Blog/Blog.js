@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Search } from "lucide-react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import { getblogData, getBlogForSitemap } from "../lib/getblog";
@@ -193,13 +194,7 @@ const Blog = () => {
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="relative w-full">
-                <Image
-                  src="/images/v2/search-normal.svg"
-                  width={24}
-                  height={24}
-                  alt="search-icon"
-                  className="w-6 h-6 absolute top-1/2 transform -translate-y-1/2 left-2.5"
-                />
+                <Search size={24} className="absolute top-1/2 transform -translate-y-1/2 left-2.5 text-gray-400" />
                 <input
                   id="user-search"
                   className={`w-full bg-[#F8FAFC] font-medium rounded-md py-3 px-4 text-base md:text-lg appearance-none border !pl-10 focus:outline-none focus:border-themeColor hover:border-themeColor focus:ring-0 focus:ring-themeColor`}

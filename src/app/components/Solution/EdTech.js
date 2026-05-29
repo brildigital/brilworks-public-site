@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
+import { GraduationCap, Layers, BarChart2, UserCheck, LifeBuoy } from "lucide-react";
 import {
   faReact,
   faAngular,
@@ -92,31 +93,31 @@ const EdTech = () => {
         title: "Experience Across Education Sectors",
         description:
           "We’ve built software for schools, edtech startups, and enterprise training providers.",
-        icon: "/images/v2/experience-in- education-icon.svg",
+        icon: <GraduationCap size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Scalable Architecture",
         description:
           "Designed to handle large numbers of learners, courses, and interactions.",
-        icon: "/images/v2/scalable-architecture-icon.svg",
+        icon: <Layers size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Data-Driven Design",
         description:
           "Every solution includes reporting and analytics to help you measure performance and engagement.",
-        icon: "/images/v2/data-driven-icon.svg",
+        icon: <BarChart2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "User-First Approach",
         description:
           "Our apps are intuitive for both educators and learners, ensuring adoption and satisfaction.",
-        icon: "/images/v2/user-first-approach-icon.svg",
+        icon: <UserCheck size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
       {
         title: "Ongoing Support",
         description:
           "We stay with you post-launch to maintain, update, and improve your platform as your audience grows.",
-        icon: "/images/v2/ongoing-support-icon.svg",
+        icon: <LifeBuoy size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
     ],
   };
