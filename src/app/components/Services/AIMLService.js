@@ -178,6 +178,78 @@ const INDUSTRIES = [
   },
 ];
 
+const AI_STACK = [
+  {
+    title: "LLMs & Generative AI",
+    tint: "#e8f0fd",
+    icon: <Sparkles size={20} color="#017eeb" />,
+    tools: ["OpenAI GPT-4o", "Claude 3.5", "Llama 3", "Mistral", "Gemini", "Mixtral"],
+  },
+  {
+    title: "Orchestration & RAG",
+    tint: "#ede9fe",
+    icon: <LayoutGrid size={20} color="#4f46e5" />,
+    tools: ["LangChain", "LlamaIndex", "AutoGen", "CrewAI", "Haystack"],
+  },
+  {
+    title: "ML Frameworks",
+    tint: "#d1fae5",
+    icon: <Cpu size={20} color="#10b981" />,
+    tools: ["PyTorch", "TensorFlow", "scikit-learn", "XGBoost", "Hugging Face"],
+  },
+  {
+    title: "Cloud AI Platforms",
+    tint: "#dbeafe",
+    icon: <Shield size={20} color="#1e40af" />,
+    tools: ["AWS SageMaker", "Google Vertex AI", "Azure ML", "AWS Bedrock"],
+  },
+  {
+    title: "Vector Databases",
+    tint: "#ccfbf1",
+    icon: <RefreshCw size={20} color="#0d9488" />,
+    tools: ["Pinecone", "Weaviate", "ChromaDB", "pgvector", "Qdrant"],
+  },
+  {
+    title: "MLOps & Monitoring",
+    tint: "#cffafe",
+    icon: <TrendingUp size={20} color="#0891b2" />,
+    tools: ["MLflow", "Weights & Biases", "Kubeflow", "Prometheus", "Grafana"],
+  },
+];
+
+const HOW_WE_WORK = [
+  {
+    num: "01",
+    title: "Discovery call",
+    meta: "30 min · free",
+    body: "We map your use case, data availability, existing systems, and compliance constraints. At the end of the call, you get a real scope estimate — not a range. About one in four discovery calls ends with us recommending the client doesn't build at all, usually because an off-the-shelf tool already does what they need.",
+  },
+  {
+    num: "02",
+    title: "POC",
+    meta: "3–4 weeks · from $5k",
+    body: "We build a working proof-of-concept against your actual data. Not a mock. Not a slide deck. A system you can run and evaluate. For most clients, this is also the go/no-go decision point before committing to the full build.",
+  },
+  {
+    num: "03",
+    title: "Production build",
+    meta: "6–8 weeks · $15k–$40k typical",
+    body: "Error handling, edge cases, monitoring, load testing, security review. This is what separates a demo from a system. Weekly check-ins — because scope drifts on AI projects more than on traditional software builds, and weekly is the right frequency to catch it.",
+  },
+  {
+    num: "04",
+    title: "Handoff",
+    meta: "1 week · included",
+    body: "Documentation, walkthrough session, and operator-accessible controls. Your team can update prompts and swap data sources without coming back to us.",
+  },
+  {
+    num: "05",
+    title: "Support",
+    meta: "30-day window · then optional retainer",
+    body: "Every project includes 30 days of post-launch support. After that, clients who want ongoing development move to a monthly retainer. Most don't need to — they take the documentation and run it themselves. That outcome is fine with us.",
+  },
+];
+
 const FAQ = [
   {
     q: "What services does Brilworks offer in AI/ML development?",
@@ -601,6 +673,76 @@ const AIMLService = () => {
             style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Start My AI Pilot
           </Link>
+        </div>
+      </section>
+
+      {/* AI STACK */}
+      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Our AI Stack</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>The Tools We've Actually Run in Production</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We pick the stack based on your compliance requirements, existing infrastructure, and budget — not on what we want to learn this quarter. Below is what we've shipped, not what we've read about.</p>
+          </div>
+          <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+            {AI_STACK.map((category) => (
+              <div key={category.title} className="rounded-2xl" style={{ background: "#fff", border: "1px solid #e5e7eb", padding: "28px 24px" }}>
+                <div className="flex items-center gap-2.5 mb-5">
+                  <div className="rounded-[10px] flex items-center justify-center flex-shrink-0" style={{ width: 40, height: 40, background: category.tint }}>
+                    {category.icon}
+                  </div>
+                  <h3 className="font-bold" style={{ fontSize: 16, color: "#0d0f1a" }}>{category.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.tools.map((tool) => (
+                    <span key={tool} className="inline-flex items-center rounded-full px-3 py-1" style={{ background: "#f1f5f9", fontSize: 13, fontWeight: 500, color: "#374151", border: "1px solid #e2e8f0" }}>
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="text-center mx-auto mb-6" style={{ maxWidth: 720 }}>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>How We Work</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Five Steps From &ldquo;Interested&rdquo; to &ldquo;In Production&rdquo;</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280", maxWidth: 660, margin: "16px auto 0" }}>
+              The most common place AI projects fail is scope. Not the model. Not the infrastructure. The scope. We front-load the hard questions so the build doesn&apos;t stall in week six.
+            </p>
+          </div>
+          <div className="mt-14 mx-auto" style={{ maxWidth: 860 }}>
+            {HOW_WE_WORK.map((step, i) => (
+              <div key={step.num} className="flex gap-6 md:gap-10"
+                style={{ paddingBottom: i < HOW_WE_WORK.length - 1 ? 0 : undefined }}>
+                <div className="flex flex-col items-center" style={{ flexShrink: 0 }}>
+                  <div className="flex items-center justify-center rounded-full font-extrabold"
+                    style={{
+                      width: 52, height: 52, flexShrink: 0,
+                      background: "linear-gradient(135deg, #017eeb, #00dbd3)",
+                      color: "#fff", fontSize: 14, letterSpacing: "-0.5px",
+                    }}>
+                    {step.num}
+                  </div>
+                  {i < HOW_WE_WORK.length - 1 && (
+                    <div style={{ width: 2, flex: 1, minHeight: 32, background: "linear-gradient(to bottom, #017eeb22, transparent)", marginTop: 6 }} />
+                  )}
+                </div>
+                <div style={{ paddingBottom: i < HOW_WE_WORK.length - 1 ? 36 : 0, paddingTop: 10 }}>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
+                    <h3 className="font-bold" style={{ fontSize: 20, color: "#0d0f1a", margin: 0 }}>{step.title}</h3>
+                    {/* <span className="rounded-full px-3 py-0.5" style={{ fontSize: 12, fontWeight: 600, color: "#017eeb", background: "#e8f0fd", border: "1px solid #c7dcfb", whiteSpace: "nowrap" }}>{step.meta}</span> */}
+                  </div>
+                  <p style={{ fontSize: 15, lineHeight: 1.75, color: "#6b7280", margin: 0 }}>{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
