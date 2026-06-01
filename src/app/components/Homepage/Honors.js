@@ -1,34 +1,29 @@
 import React from "react";
-
-const SvgIcon = ({ color, children }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-    {children}
-  </svg>
-);
+import { Award, Star, Zap, Cloud } from "lucide-react";
 
 const honors = [
   {
-    icon: <SvgIcon color="#eab308"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" /></SvgIcon>,
+    icon: <Award size={28} color="#eab308" strokeWidth={1.75} className="shrink-0" />,
     title: "Top Software Companies", org: "GoodFirms · 2025–26",
   },
   {
-    icon: <SvgIcon color="#ea580c"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" /></SvgIcon>,
+    icon: <Award size={28} color="#ea580c" strokeWidth={1.75} className="shrink-0" />,
     title: "Global Award Spring", org: "Clutch · 2025",
   },
   {
-    icon: <SvgIcon color="#dc2626"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></SvgIcon>,
+    icon: <Star size={28} color="#dc2626" strokeWidth={1.75} className="shrink-0" />,
     title: "Global Award Fall", org: "Clutch · 2024",
   },
   {
-    icon: <SvgIcon color="#7c3aed"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></SvgIcon>,
+    icon: <Star size={28} color="#7c3aed" strokeWidth={1.75} className="shrink-0" />,
     title: "Top 10 Agency 2026", org: "SelectedFirms",
   },
   {
-    icon: <SvgIcon color="#0891b2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></SvgIcon>,
+    icon: <Zap size={28} color="#0891b2" strokeWidth={1.75} className="shrink-0" />,
     title: "Adalo Expert", org: "No-Code Certified",
   },
   {
-    icon: <SvgIcon color="#1A5CCC"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></SvgIcon>,
+    icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} className="shrink-0" />,
     title: "AWS Partner", org: "Advanced Tier",
   },
 ];

@@ -1,29 +1,12 @@
 import React from "react";
+import { ShieldCheck, Star, Rocket, Check } from "lucide-react";
 import ButtonV2 from "../Common/ButtonV2";
 import Link from "next/link";
 
-const IconShield = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill="#017eeb" opacity="0.15"/>
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round"/>
-    <path d="M9 12L11 14L15 10" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-const IconStar = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round"/>
-  </svg>
-);
-const IconRocket = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M4.5 16.5L3 22L8.5 20.5M15.4 8L13 5.6L9.5 9.1L4 14.5C4 16 5 17.5 6.5 18.5C8 19.5 9.5 19.5 11 19.5L16.4 14C18 12.4 18 10 16.5 8.5C15 7 12.6 7 11 8.6Z" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-const IconCheck = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+const IconShield = () => <ShieldCheck size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconStar = () => <Star size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconRocket = () => <Rocket size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
+const IconCheck = () => <Check size={16} strokeWidth={2.2} aria-hidden="true" />;
 
 const TRUST = [
   { icon: <IconShield />, label: "AWS Consulting Partner" },

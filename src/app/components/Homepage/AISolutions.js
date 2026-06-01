@@ -1,19 +1,14 @@
 import React from "react";
+import { MessageSquare, TrendingUp, FileText, Zap, Code2, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 
-const SvgIcon = ({ color, children }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-    {children}
-  </svg>
-);
-
 const aiIcons = {
-  support: <SvgIcon color="#0891b2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 10h.01" /><path d="M12 10h.01" /><path d="M16 10h.01" /></SvgIcon>,
-  lead: <SvgIcon color="#16a34a"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></SvgIcon>,
-  document: <SvgIcon color="#ea580c"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></SvgIcon>,
-  workflow: <SvgIcon color="#eab308"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></SvgIcon>,
-  coding: <SvgIcon color="#7c3aed"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /><line x1="14" y1="4" x2="10" y2="20" /></SvgIcon>,
-  whitelabel: <SvgIcon color="#1A5CCC"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></SvgIcon>,
+  support: <MessageSquare size={28} color="#0891b2" strokeWidth={1.75} />,
+  lead: <TrendingUp size={28} color="#16a34a" strokeWidth={1.75} />,
+  document: <FileText size={28} color="#ea580c" strokeWidth={1.75} />,
+  workflow: <Zap size={28} color="#eab308" strokeWidth={1.75} />,
+  coding: <Code2 size={28} color="#7c3aed" strokeWidth={1.75} />,
+  whitelabel: <LayoutDashboard size={28} color="#1A5CCC" strokeWidth={1.75} />,
 };
 
 const aiSolutions = [

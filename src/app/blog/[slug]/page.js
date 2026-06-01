@@ -18,6 +18,7 @@ import {
 } from "@/app/components/lib/schemaCode";
 import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
+import { Calendar, Clock } from "lucide-react";
 
 export async function generateMetadata({ params }) {
   const { props: data } = await fetchData(params?.slug);
@@ -212,13 +213,7 @@ export default async function Page(props) {
                 </p> */}
                 <div className="flex items-center sxl:text-xl md:text-lg text-base mb-3">
                   <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
-                    <Image
-                      src="/images/v2/calendar-icon.svg"
-                      width={32}
-                      height={32}
-                      alt="Calendar icon"
-                      priority="true"
-                    />
+                    <Calendar className="w-full h-full" />
                   </span>
                   Last updated{" "}
                   {formattedDate(data?.story?.published_at || new Date())}
@@ -261,13 +256,7 @@ export default async function Page(props) {
                 <div className="flex items-start flex-col sxl:text-xl md:text-lg text-base slg:!pl-10 gap-1">
                   <div className="flex sxl:items-center items-start">
                     <span className="sxl:w-7 sxl:h-7 w-6 h-6 mr-1.5">
-                      <Image
-                        src="/images/v2/clock-icon.svg"
-                        width={32}
-                        height={32}
-                        alt="Clock icon"
-                        priority="true"
-                      />
+                      <Clock className="w-full h-full" />
                     </span>
                     {calculateReadingTime(totalDataWord)} mins read
                   </div>

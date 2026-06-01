@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { ArrowDown } from "lucide-react";
 
 const EbookFloatingCTA = () => {
   const [visible, setVisible] = useState(false);
@@ -39,15 +40,7 @@ const EbookFloatingCTA = () => {
         transition: "transform 0.3s",
       }}
     >
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M12 5V19M5 12L12 19L19 12"
-          stroke="#fff"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <ArrowDown size={14} color="#fff" strokeWidth={2.2} />
       Get Free PDF
     </a>
   );

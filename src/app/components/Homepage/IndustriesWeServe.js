@@ -1,85 +1,40 @@
 import React from "react";
+import { Activity, CreditCard, BookOpen, ShoppingCart, Cloud, Truck } from "lucide-react";
 import Link from "next/link";
-
-const SvgIcon = ({ color, children }) => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke={color}
-    strokeWidth="1.75"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    {children}
-  </svg>
-);
 
 const industries = [
   {
-    icon: (
-      <SvgIcon color="#dc2626">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-      </SvgIcon>
-    ),
+    icon: <Activity size={32} color="#dc2626" strokeWidth={1.75} />,
     name: "Healthcare",
     count: "8 projects · HIPAA",
     href: "/industry/healthcare-software-development/",
   },
   {
-    icon: (
-      <SvgIcon color="#1A5CCC">
-        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-        <line x1="1" y1="10" x2="23" y2="10" />
-      </SvgIcon>
-    ),
+    icon: <CreditCard size={32} color="#1A5CCC" strokeWidth={1.75} />,
     name: "Fintech",
     count: "12 projects",
     href: "/industry/fintech-software-development/",
   },
   {
-    icon: (
-      <SvgIcon color="#7c3aed">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </SvgIcon>
-    ),
+    icon: <BookOpen size={32} color="#7c3aed" strokeWidth={1.75} />,
     name: "EdTech",
     count: "7 projects",
     href: "/industry/edtech-software-development/",
   },
   {
-    icon: (
-      <SvgIcon color="#ea580c">
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-      </SvgIcon>
-    ),
+    icon: <ShoppingCart size={32} color="#ea580c" strokeWidth={1.75} />,
     name: "E-Commerce",
     count: "15 projects",
     href: "/industry/e-commerce-app-development/",
   },
   {
-    icon: (
-      <SvgIcon color="#0891b2">
-        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-      </SvgIcon>
-    ),
+    icon: <Cloud size={32} color="#0891b2" strokeWidth={1.75} />,
     name: "SaaS",
     count: "20+ projects",
     href: "/saas-application-development-services/",
   },
   {
-    icon: (
-      <SvgIcon color="#16a34a">
-        <rect x="1" y="3" width="15" height="13" />
-        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-        <circle cx="5.5" cy="18.5" r="2.5" />
-        <circle cx="18.5" cy="18.5" r="2.5" />
-      </SvgIcon>
-    ),
+    icon: <Truck size={32} color="#16a34a" strokeWidth={1.75} />,
     name: "Logistics",
     count: "6 projects",
     href: "/industry/fleet-management-software-development/",

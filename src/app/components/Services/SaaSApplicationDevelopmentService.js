@@ -1,70 +1,31 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {
+  Check,
+  ArrowRight,
+  Star,
+  Sparkles,
+  Shield,
+  Layers,
+  Network,
+  BadgeCheck,
+  Zap,
+  Palette,
+  TrendingUp,
+  Users,
+  ShieldCheck,
+  RefreshCw,
+  Award,
+  LayoutGrid,
+  CreditCard,
+  Heart,
+  GraduationCap,
+} from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
-);
-
-// ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
-
-const IconSparkle = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" fill="#00b4d8" opacity="0.3" />
-    <path d="M12 2L15 8L21 9L17 14L18 21L12 18L6 21L7 14L3 9L9 8L12 2Z" stroke="#00b4d8" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconShield = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconStack = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M3 3H21V21H3V3Z" fill="#017eeb" opacity="0.15" />
-    <path d="M3 3H21V21H3V3ZM9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
-
-const IconNetwork = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="6" cy="12" r="3" fill="#017eeb" opacity="0.15" />
-    <circle cx="18" cy="6" r="3" fill="#017eeb" opacity="0.15" />
-    <circle cx="18" cy="18" r="3" fill="#017eeb" opacity="0.15" />
-    <circle cx="6" cy="12" r="3" stroke="#017eeb" strokeWidth="1.8" />
-    <circle cx="18" cy="6" r="3" stroke="#017eeb" strokeWidth="1.8" />
-    <circle cx="18" cy="18" r="3" stroke="#017eeb" strokeWidth="1.8" />
-    <path d="M8.6 10.5L15.4 7.5M8.6 13.5L15.4 16.5" stroke="#017eeb" strokeWidth="1.8" />
-  </svg>
-);
-
-const IconUptime = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" fill="#017eeb" opacity="0.15" />
-    <path d="M9 12L11 14L15 10M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
 );
 
 // ---------- Style tokens (inline so nothing shared is touched) ----------
@@ -99,10 +60,10 @@ const statValueStyle = {
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Advanced Tier Partner" },
-  { icon: <IconStack />, label: "30+ SaaS Products Live" },
-  { icon: <IconNetwork />, label: "Multi-Tenant Architecture" },
-  { icon: <IconUptime />, label: "99.9% Uptime SLA" },
+  { icon: <Shield size={18} color="#017eeb" />, label: "AWS Advanced Tier Partner" },
+  { icon: <Layers size={18} color="#017eeb" />, label: "30+ SaaS Products Live" },
+  { icon: <Network size={18} color="#017eeb" />, label: "Multi-Tenant Architecture" },
+  { icon: <BadgeCheck size={18} color="#017eeb" />, label: "99.9% Uptime SLA" },
 ];
 
 const HERO_STATS = [
@@ -117,72 +78,37 @@ const BENEFITS = [
     title: "Fast-Track Your Idea",
     tint: "#e8f0fd",
     body: "We don't just code, we co-create. Our SaaS experts refine your vision and propel it through efficient development — all under one roof.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#017eeb" opacity="0.15" />
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#017eeb" />,
   },
   {
     title: "UX-Obsessed Design",
     tint: "#ede9fe",
     body: "We craft interfaces that captivate users while building fortresses around your data. Your SaaS will be both stunning and secure.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="4" fill="#4f46e5" opacity="0.15" />
-        <path d="M12 2C7.58 2 4 5.58 4 10C4 13.5 6.5 16.5 10 17.5V22H14V17.5C17.5 16.5 20 13.5 20 10C20 5.58 16.42 2 12 2Z" stroke="#4f46e5" strokeWidth="1.8" strokeLinejoin="round" />
-        <circle cx="12" cy="8" r="4" stroke="#4f46e5" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <Palette size={32} color="#4f46e5" />,
   },
   {
     title: "Scalable Architecture from Day One",
     tint: "#d1fae5",
     body: "Forget costly overhauls. Your application seamlessly adapts to your ever-expanding tenant base. We design your SaaS to flex with your growth.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#10b981" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#10b981" />,
   },
   {
     title: "Collaborative Development",
     tint: "#ccfbf1",
     body: "We're not just developers — we're your partners in success. Clear communication and two-week sprint reviews ensure your vision becomes reality.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#0d9488" opacity="0.15" />
-        <circle cx="17" cy="9" r="3" fill="#0d9488" opacity="0.15" />
-        <path d="M2 21V19C2 16.8 3.8 15 6 15H12C14.2 15 16 16.8 16 19V21M16 21V19C16 17 14.5 15.5 12.5 15.2M22 21V19C22 17 20.5 15.5 18.5 15.2" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" />
-        <circle cx="9" cy="8" r="4" stroke="#0d9488" strokeWidth="1.8" />
-        <circle cx="17" cy="9" r="3" stroke="#0d9488" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <Users size={32} color="#0d9488" />,
   },
   {
     title: "Future-Proof Tech Stack",
     tint: "#cffafe",
     body: "We stay ahead of the curve, leveraging cutting-edge SaaS technology to create platforms that never go out of style. Stay competitive.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L2 7V12C2 16.5 6.5 20.5 12 22C17.5 20.5 22 16.5 22 12V7L12 2Z" fill="#0891b2" opacity="0.15" />
-        <path d="M12 2L2 7V12C2 16.5 6.5 20.5 12 22C17.5 20.5 22 16.5 22 12V7L12 2Z" stroke="#0891b2" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M8 12L11 15L16 9" stroke="#0891b2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <ShieldCheck size={32} color="#0891b2" />,
   },
   {
     title: "Continuous Innovation",
     tint: "#dbeafe",
     body: "We offer ongoing support and maintenance — constantly evolving your SaaS to meet changing customer needs and emerging user demands.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 4V10H15M3 20V14H9M21 12C21 16.97 16.97 21 12 21C9.5 21 7.27 20 5.65 18.4M3 12C3 7.03 7.03 3 12 3C14.5 3 16.73 4 18.35 5.6" fill="#1e40af" opacity="0.15" />
-        <path d="M21 4V10H15M3 20V14H9M21 12C21 16.97 16.97 21 12 21C9.5 21 7.27 20 5.65 18.4L3 16M3 12C3 7.03 7.03 3 12 3C14.5 3 16.73 4 18.35 5.6L21 8" stroke="#1e40af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <RefreshCw size={32} color="#1e40af" />,
   },
 ];
 
@@ -211,113 +137,43 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Partner · Advanced Tier", icon: <IconShield /> },
-  {
-    label: "Clutch Global Spring 2025",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Clutch Global Fall 2024",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top 2025\u201326",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "SelectedFirms Top 10 2026",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
+  { label: "AWS Partner · Advanced Tier", icon: <Shield size={20} color="#017eeb" /> },
+  { label: "Clutch Global Spring 2025", icon: <Star size={20} color="#017eeb" /> },
+  { label: "Clutch Global Fall 2024", icon: <Star size={20} color="#017eeb" /> },
+  { label: "GoodFirms Top 2025–26", icon: <Award size={20} color="#017eeb" /> },
+  { label: "SelectedFirms Top 10 2026", icon: <LayoutGrid size={20} color="#017eeb" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "FinTech SaaS",
     href: "/industry/fintech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="20" height="12" rx="2" fill="#017eeb" opacity="0.15" />
-        <rect x="2" y="6" width="20" height="12" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M2 10H22" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <CreditCard size={32} color="#017eeb" />,
   },
   {
     label: "HRTech SaaS",
     href: "/industry/hr-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#4f46e5" opacity="0.15" />
-        <circle cx="17" cy="9" r="3" fill="#4f46e5" opacity="0.15" />
-        <circle cx="9" cy="8" r="4" stroke="#4f46e5" strokeWidth="1.8" />
-        <circle cx="17" cy="9" r="3" stroke="#4f46e5" strokeWidth="1.8" />
-        <path d="M2 21V19C2 16.8 3.8 15 6 15H12C14.2 15 16 16.8 16 19V21M22 21V19C22 17 20.5 15.5 18.5 15.2" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Users size={32} color="#4f46e5" />,
   },
   {
     label: "MarTech SaaS",
     href: "/saas-application-development-services/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#10b981" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#10b981" />,
   },
   {
     label: "EdTech SaaS",
     href: "/industry/edtech-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M2 8L12 3L22 8L12 13L2 8Z" fill="#0d9488" opacity="0.15" />
-        <path d="M2 8L12 3L22 8L12 13L2 8ZM6 10V16C6 16 8 18 12 18C16 18 18 16 18 16V10" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <GraduationCap size={32} color="#0d9488" />,
   },
   {
     label: "HealthTech SaaS",
     href: "/industry/healthcare-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" />,
   },
   {
     label: "B2B SaaS",
     href: "#",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="7" height="7" rx="1" fill="#0891b2" opacity="0.15" />
-        <rect x="14" y="3" width="7" height="7" rx="1" fill="#0891b2" opacity="0.15" />
-        <rect x="3" y="14" width="7" height="7" rx="1" fill="#0891b2" opacity="0.15" />
-        <rect x="14" y="14" width="7" height="7" rx="1" fill="#0891b2" opacity="0.15" />
-        <rect x="3" y="3" width="7" height="7" rx="1" stroke="#0891b2" strokeWidth="1.8" />
-        <rect x="14" y="3" width="7" height="7" rx="1" stroke="#0891b2" strokeWidth="1.8" />
-        <rect x="3" y="14" width="7" height="7" rx="1" stroke="#0891b2" strokeWidth="1.8" />
-        <rect x="14" y="14" width="7" height="7" rx="1" stroke="#0891b2" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <LayoutGrid size={32} color="#0891b2" />,
   },
 ];
 
@@ -446,9 +302,7 @@ const MockupStatsDashboard = ({ label, stats, rows }) => (
         {rows.map((row, i, arr) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#10b981" }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Check size={10} color="white" strokeWidth={3} />
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
@@ -604,7 +458,7 @@ const SaaSApplicationDevelopmentService = () => {
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                   style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <IconSparkle /> SaaS Application Development
+                  <Sparkles size={14} color="#00b4d8" /> SaaS Application Development
                 </span>
                 <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
                   Build SaaS Products That Scale to MRR — <span style={gradientTextStyle}>From First Signup to Enterprise</span>
@@ -616,7 +470,7 @@ const SaaSApplicationDevelopmentService = () => {
                   <Link href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                     style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
-                    Get a Quote <IconArrowRight />
+                    Get a Quote <ArrowRight size={16} />
                   </Link>
                   <Link href="#services"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
@@ -627,7 +481,7 @@ const SaaSApplicationDevelopmentService = () => {
                 <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
                   {["Multi-tenant from day one", "Subscription billing ready", "NDA before first call"].map((t) => (
                     <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                      <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -691,7 +545,7 @@ const SaaSApplicationDevelopmentService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><IconCheck /></span>{f}
+                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -753,7 +607,7 @@ const SaaSApplicationDevelopmentService = () => {
               <div key={t.name} className="rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
+                  {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
                 <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Download } from "lucide-react";
 import Link from "next/link";
 
 const EbookSection = () => {
@@ -22,7 +23,7 @@ const EbookSection = () => {
               How To Launch an AI MVP in 48 Hours
             </h3>
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white mb-7">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+              <Download size={14} strokeWidth={2} className="shrink-0" />
               Downloaded by 120+ CTOs from startups and enterprises
             </div>
             <p className="font-Figtree text-white/[0.65] text-[15px] leading-[1.7] mb-7">

@@ -5,6 +5,7 @@ import {
   MenuList,
 } from "@material-tailwind/react";
 import React from "react";
+import { ChevronDown } from "lucide-react";
 import MenuItem from "./MenuItem";
 
 const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
@@ -33,21 +34,7 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             <p className="!mb-0 group-hover/item:text-themeColor font-normal">
               {name}
             </p>
-            <svg
-              className="w-4 h-2 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 1 4 4 4-4"
-              />
-            </svg>
+            <ChevronDown className="w-4 h-4 ms-2" aria-hidden="true" />
           </div>
         </MaterialMenuItem>
       </MenuHandler>

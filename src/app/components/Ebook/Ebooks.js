@@ -1,6 +1,7 @@
 "use client";
 import { getEbooksData } from "../lib/getEbooks";
 import { useEffect, useMemo, useState } from "react";
+import { Star, Layers, ShieldCheck, Clock, CheckSquare, Zap } from "lucide-react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,64 +30,37 @@ const WHY_CARDS = [
     title: "Written by builders, not marketers",
     desc: "Every ebook is authored by a Brilworks engineering lead who has shipped the system they're writing about.",
     bg: "#e8f0fd",
-    stroke: "#017eeb",
-    path: <>
-      <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" fill="#017eeb" opacity="0.15"/>
-      <path d="M12 2L2 7L12 12L22 7L12 2Z M2 7V17L12 22 M22 7V17L12 22 M12 12V22" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    </>,
+    icon: <Layers size={32} color="#017eeb" strokeWidth={1.8} />,
   },
   {
     title: "Real code, real architecture",
     desc: "Diagrams, snippets, and decision trees you can actually apply — not generic frameworks or vendor talking points.",
     bg: "#eef2ff",
-    stroke: "#4f46e5",
-    path: <>
-      <path d="M3 12L12 3L21 12L12 21L3 12Z" fill="#4f46e5" opacity="0.15"/>
-      <path d="M9 12L11 14L15 10" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <path d="M12 3L21 12L12 21L3 12L12 3Z" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    </>,
+    icon: <ShieldCheck size={32} color="#4f46e5" strokeWidth={1.8} />,
   },
   {
     title: "30-min reads, not 200 pages",
     desc: "Built for engineering leaders with zero time. Every ebook is skimmable, scannable, and ships in under an hour.",
     bg: "#d1fae5",
-    stroke: "#10b981",
-    path: <>
-      <circle cx="12" cy="12" r="10" fill="#10b981" opacity="0.15"/>
-      <path d="M12 6V12L16 14" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <circle cx="12" cy="12" r="9" stroke="#10b981" strokeWidth="1.8" fill="none"/>
-    </>,
+    icon: <Clock size={32} color="#10b981" strokeWidth={1.8} />,
   },
   {
     title: "No paywall, no credit card",
     desc: "100% free. We ask for your email so we can send it — that's it. Unsubscribe anytime, keep the ebook forever.",
     bg: "#ccfbf1",
-    stroke: "#0d9488",
-    path: <>
-      <rect x="3" y="3" width="18" height="18" rx="3" fill="#0d9488" opacity="0.15"/>
-      <path d="M7 12L10 15L17 8" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <rect x="3" y="3" width="18" height="18" rx="3" stroke="#0d9488" strokeWidth="1.8" fill="none"/>
-    </>,
+    icon: <CheckSquare size={32} color="#0d9488" strokeWidth={1.8} />,
   },
   {
     title: "Trusted by 5,000+ engineers",
     desc: "Downloaded by CTOs, engineering managers, and founders across startups, scale-ups, and Fortune 500s.",
     bg: "#f3e8ff",
-    stroke: "#a855f7",
-    path: <>
-      <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="#a855f7" opacity="0.15"/>
-      <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="#a855f7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    </>,
+    icon: <Star size={32} color="#a855f7" strokeWidth={1.8} />,
   },
   {
     title: "Updated for 2026",
     desc: "We retire outdated guides and rewrite for the current stack. Every ebook reflects what's shipping in production today.",
     bg: "#dbeafe",
-    stroke: "#1e40af",
-    path: <>
-      <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#1e40af" opacity="0.15"/>
-      <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#1e40af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    </>,
+    icon: <Zap size={32} color="#1e40af" strokeWidth={1.8} />,
   },
 ];
 
@@ -226,9 +200,7 @@ const Ebooks = () => {
                 fontSize: 12, fontWeight: 600, letterSpacing: "0.12em",
                 textTransform: "uppercase", marginBottom: 24,
               }}>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L14.39 8.26L21 9.27L16 14.14L17.18 20.99L12 17.77L6.82 20.99L8 14.14L3 9.27L9.61 8.26L12 2Z" fill="#00dbd3"/>
-                </svg>
+                <Star size={12} color="#00dbd3" fill="#00dbd3" />
                 Free Resources • No Paywall
               </span>
               <h1 style={{
@@ -319,9 +291,7 @@ const Ebooks = () => {
                   letterSpacing: "0.1em", padding: "5px 12px",
                   borderRadius: 9999, textTransform: "uppercase", marginBottom: 20,
                 }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L14.39 8.26L21 9.27L16 14.14L17.18 20.99L12 17.77L6.82 20.99L8 14.14L3 9.27L9.61 8.26L12 2Z" fill="currentColor"/>
-                  </svg>
+                  <Star size={10} color="currentColor" fill="currentColor" />
                   Most Downloaded
                 </span>
                 <div className="ebk-feature-shadow" style={{
@@ -654,7 +624,7 @@ const Ebooks = () => {
                   display: "flex", alignItems: "center", justifyContent: "center",
                   marginBottom: 20, background: c.bg,
                 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">{c.path}</svg>
+                  {c.icon}
                 </div>
                 <h3 style={{
                   fontSize: 18, fontWeight: 700, color: "#0d0f1a",

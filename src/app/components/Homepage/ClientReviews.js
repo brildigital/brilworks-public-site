@@ -2,6 +2,7 @@
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
+import { Clock, TrendingUp } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
 import FetchDataSpinner from "./FetchDataSpinner";
 
@@ -68,20 +69,7 @@ const TestimonialCard = ({ testimonial, index }) => (
       <div className="text-[#fbbf24] text-sm tracking-[1px]">★★★★★</div>
       {testimonial.duration && (
         <div className="inline-flex items-center gap-1.5 bg-[rgba(16,185,129,0.15)] border border-[rgba(16,185,129,0.3)] rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-[#10b981]">
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="shrink-0"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
+          <Clock size={10} strokeWidth={2.5} className="shrink-0" />
           {testimonial.duration}
         </div>
       )}
@@ -90,20 +78,7 @@ const TestimonialCard = ({ testimonial, index }) => (
     {/* Outcome Metric */}
     {testimonial.metric && (
       <div className="inline-flex items-center gap-1.5 bg-[rgba(26,92,204,0.12)] border border-[rgba(26,92,204,0.25)] rounded-full px-3 py-1 text-[11px] font-semibold text-[#1A5CCC] mb-3">
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="shrink-0"
-        >
-          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-          <polyline points="16 7 22 7 22 13" />
-        </svg>
+        <TrendingUp size={12} strokeWidth={2.5} className="shrink-0" />
         {testimonial.metric}
       </div>
     )}

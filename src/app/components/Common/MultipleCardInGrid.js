@@ -33,13 +33,17 @@ const MultipleCardInGrid = ({
                 <div>
                   <div className="w-fit brilliant-icon rounded-md mb-5">
                     <div className="flex items-center justify-start p-4 bg-white rounded-md">
-                      <Image
-                        className="md:w-8 md:h-8 w-6 h-6"
-                        src={icon}
-                        alt={`${title}-icon`}
-                        width={32}
-                        height={32}
-                      />
+                      {typeof icon === "string" ? (
+                        <Image
+                          className="md:w-8 md:h-8 w-6 h-6"
+                          src={icon}
+                          alt={`${title}-icon`}
+                          width={32}
+                          height={32}
+                        />
+                      ) : icon ? (
+                        icon
+                      ) : null}
                     </div>
                   </div>
                   <Heading

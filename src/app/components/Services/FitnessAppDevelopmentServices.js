@@ -2,66 +2,28 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import { Check, X, ArrowRight, Star, Heart, ShieldCheck, TrendingUp, Watch, UserCheck, Activity, Smartphone, Layers, MessageSquare, Award, LayoutDashboard, Building2, Users, Zap } from "lucide-react";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
 
-const IconArrowRight = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
 
-const IconStarFilled = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" />
-  </svg>
-);
+const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
 
-const IconHeartBadge = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M20.8 4.6C19.5 3.3 17.5 3.3 16.2 4.6L12 8.8L7.8 4.6C6.5 3.3 4.5 3.3 3.2 4.6C1.9 5.9 1.9 7.9 3.2 9.2L12 18L20.8 9.2C22.1 7.9 22.1 5.9 20.8 4.6Z" fill="#00b4d8" opacity="0.3" />
-    <path d="M20.8 4.6C19.5 3.3 17.5 3.3 16.2 4.6L12 8.8L7.8 4.6C6.5 3.3 4.5 3.3 3.2 4.6C1.9 5.9 1.9 7.9 3.2 9.2L12 18L20.8 9.2C22.1 7.9 22.1 5.9 20.8 4.6Z" stroke="#00b4d8" strokeWidth="1.5" strokeLinejoin="round" />
-  </svg>
-);
+const IconHeartBadge = () => <Heart size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#017eeb" }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" fill={color} opacity="0.15" />
-    <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke={color} strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 12L11 14L15 10" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconShield = ({ color = "#017eeb" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
 
-const IconChart = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M20 7L13 14L9 10L4 15" fill="#017eeb" opacity="0.15" />
-    <path d="M20 7L13 14L9 10L4 15M20 7H15M20 7V12" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const IconChart = ({ color = "#017eeb" }) => <TrendingUp size={18} aria-hidden="true" color={color}/>;
 
-const IconWatch = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="7" y="3" width="10" height="18" rx="2" fill="#017eeb" opacity="0.15" />
-    <rect x="7" y="3" width="10" height="18" rx="2" stroke="#017eeb" strokeWidth="1.8" />
-    <path d="M10 7H14M11 17H13" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
+const IconWatch = ({ color = "#017eeb" }) => <Watch size={18} aria-hidden="true" color={color}/>;
 
-const IconStar = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" fill="#017eeb" opacity="0.15" />
-    <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-  </svg>
-);
+const IconStar = ({ color = "#017eeb" }) => <Star size={18} aria-hidden="true" color={color}/>;
 
 // ---------- Style tokens ----------
 const heroBg = {
@@ -113,49 +75,25 @@ const BENEFITS = [
     title: "Fitness-Specialist Team",
     tint: "#e8f0fd",
     body: "Engineers and designers with deep experience across workout, nutrition, yoga, and wearable app domains.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="4" fill="#017eeb" opacity="0.15" />
-        <path d="M9 12C12.31 12 15 9.31 15 6C15 4.69 14.59 3.47 13.91 2.5M3 21V19C3 16.79 4.79 15 7 15H11C13.21 15 15 16.79 15 19V21" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="9" cy="8" r="4" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M17 11L19 13L23 9" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <UserCheck size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Retention-First Architecture",
     tint: "#ede9fe",
     body: "We design for D7, D30, and D90 retention from day one — gamification, streaks, and push at the core.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8" fill="#4f46e5" opacity="0.15" />
-        <path d="M3 3V21H21M7 14L11 10L15 14L21 8M21 8H17M21 8V12" stroke="#4f46e5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Wearable & Health Integrations",
     tint: "#d1fae5",
     body: "Apple Watch, Fitbit, Garmin, Samsung, Whoop — plus Apple Health and Google Fit. We've shipped them all.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="4" y="2" width="10" height="20" rx="2" fill="#10b981" opacity="0.15" />
-        <rect x="4" y="2" width="10" height="20" rx="2" stroke="#10b981" strokeWidth="1.8" />
-        <path d="M16 8H20V16H16M7 6H11M8 18H10" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Watch size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "Cross-Platform Native Feel",
     tint: "#ccfbf1",
     body: "iOS and Android delivered from a single codebase — React Native and Flutter — without sacrificing native UX.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="4" width="7" height="16" rx="1" fill="#0d9488" opacity="0.15" />
-        <rect x="3" y="4" width="7" height="16" rx="1" stroke="#0d9488" strokeWidth="1.8" />
-        <rect x="14" y="4" width="7" height="16" rx="1" stroke="#0d9488" strokeWidth="1.8" />
-      </svg>
-    ),
+    icon: <Layers size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     title: "HIPAA-Ready & Secure",
@@ -167,12 +105,7 @@ const BENEFITS = [
     title: "Post-Launch Support",
     tint: "#dbeafe",
     body: "OS updates, bug fixes, new features, performance tuning — we stay long after launch day.",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" fill="#1e40af" opacity="0.15" />
-        <path d="M21 11.5C21 16.75 16.75 21 11.5 21C10 21 8.5 20.6 7.2 19.9L3 21L4.1 16.8C3.4 15.5 3 14 3 12.5C3 7.25 7.25 3 12.5 3C17.75 3 21 6.75 21 11.5Z" stroke="#1e40af" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <MessageSquare size={32} color="#1e40af" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -201,113 +134,43 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  {
-    label: "AWS Advanced Tier Partner",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L4 5V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Clutch Global Award 2025",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "GoodFirms Top Companies 2025-26",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="8" r="6" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 14L7 22L12 19L17 22L15 14" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "SelectedFirms Top 10 Agency 2026",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 3H21V21H3V3Z" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M9 9H15V15H9V9Z" stroke="#017eeb" strokeWidth="1.8" />
-      </svg>
-    ),
-  },
-  {
-    label: "Adalo Certified Expert",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2L15 8.5L22 9.3L17 14L18.2 21L12 17.7L5.8 21L7 14L2 9.3L9 8.5L12 2Z" stroke="#017eeb" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+  { label: "AWS Advanced Tier Partner", icon: <ShieldCheck size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "GoodFirms Top Companies 2025-26", icon: <Award size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "SelectedFirms Top 10 Agency 2026", icon: <LayoutDashboard size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  { label: "Adalo Certified Expert", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Health & Wellness",
     href: "/industry/healthcare-software-development/",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" fill="#ef4444" opacity="0.15" />
-        <path d="M12 21C12 21 4 14 4 8.5C4 5.5 6.5 3 9.5 3C11 3 12 4 12 4C12 4 13 3 14.5 3C17.5 3 20 5.5 20 8.5C20 14 12 21 12 21Z" stroke="#ef4444" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Gyms & Studios",
     href: "#services",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="8" width="4" height="8" rx="1" fill="#017eeb" opacity="0.15" />
-        <rect x="3" y="8" width="4" height="8" rx="1" stroke="#017eeb" strokeWidth="1.8" />
-        <rect x="17" y="8" width="4" height="8" rx="1" stroke="#017eeb" strokeWidth="1.8" />
-        <path d="M7 12H17M9 10V14M15 10V14" stroke="#017eeb" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Activity size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Corporate Wellness",
     href: "#services",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 21H21V10H3V21Z" fill="#4f46e5" opacity="0.15" />
-        <path d="M3 21H21V10H3V21ZM8 10V6C8 4 9.5 3 12 3C14.5 3 16 4 16 6V10" stroke="#4f46e5" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Building2 size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Nutrition & Diet",
     href: "#services",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 3C8 3 5 6 5 10V14C5 18 8 21 12 21C16 21 19 18 19 14V10C19 6 16 3 12 3Z" fill="#10b981" opacity="0.15" />
-        <path d="M12 3C8 3 5 6 5 10V14C5 18 8 21 12 21C16 21 19 18 19 14V10C19 6 16 3 12 3ZM12 3V21M5 12H19" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Zap size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Sports & Athletics",
     href: "#services",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="7" r="3" fill="#0d9488" opacity="0.15" />
-        <circle cx="12" cy="7" r="3" stroke="#0d9488" strokeWidth="1.8" />
-        <path d="M8 21L10 14H14L16 21M10 14L7 11M14 14L17 11" stroke="#0d9488" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Users size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
   },
   {
     label: "Mental Health & Mindfulness",
     href: "#services",
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 22C8 18 4 14 4 9C4 5 7 3 10 3C11 3 12 4 12 4C12 4 13 3 14 3C17 3 20 5 20 9C20 14 16 18 12 22Z" fill="#8b5cf6" opacity="0.15" />
-        <path d="M12 22C8 18 4 14 4 9C4 5 7 3 10 3C11 3 12 4 12 4C12 4 13 3 14 3C17 3 20 5 20 9C20 14 16 18 12 22Z" stroke="#8b5cf6" strokeWidth="1.8" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <Heart size={32} color="#8b5cf6" strokeWidth={1.8} aria-hidden="true" />,
   },
 ];
 
@@ -414,11 +277,7 @@ const MockupStatsDashboard = ({ label, stats, rows, accent = "#10b981" }) => (
         {rows.map((row, i) => (
           <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === rows.length - 1 ? "none" : "1px solid #f1f5f9" }}>
             <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.fail ? "#ef4444" : accent }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" style={{ color: "white" }}>
-                {row.fail
-                  ? <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                  : <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />}
-              </svg>
+              {row.fail ? <X size={10} color="white" strokeWidth={3} /> : <Check size={10} color="white" strokeWidth={3} />}
             </div>
             <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
             <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />

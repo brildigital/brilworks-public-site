@@ -1,22 +1,17 @@
 import React from "react";
-
-const SvgIcon = ({ color, size = 16, children }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-    {children}
-  </svg>
-);
+import { Award, Star, Target } from "lucide-react";
 
 const clutchBadges = [
   {
-    icon: <SvgIcon color="#eab308"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" /></SvgIcon>,
+    icon: <Award size={16} color="#eab308" strokeWidth={2} className="shrink-0" />,
     text: "Top Development Company 2026",
   },
   {
-    icon: <SvgIcon color="#ea580c"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></SvgIcon>,
+    icon: <Star size={16} color="#ea580c" strokeWidth={2} className="shrink-0" />,
     text: "Global Award Winner 2024 & 2025",
   },
   {
-    icon: <SvgIcon color="#1A5CCC"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></SvgIcon>,
+    icon: <Target size={16} color="#1A5CCC" strokeWidth={2} className="shrink-0" />,
     text: "Top 10 Agency — SelectedFirms",
   },
 ];
