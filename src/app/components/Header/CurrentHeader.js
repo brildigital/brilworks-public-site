@@ -45,6 +45,7 @@ const CurrentHeader = () => {
     "/kindcircle-privacy-policy/",
     "/elara-privacy-policy/",
     "/turbo-mania-privacy-policy/",
+    "/slothy-running-privacy-policy/",
     "/kindcircle-terms-and-condition/",
     "/lifepilot-privacy-policy/",
     "/mr-brush-privacy-policy/",
