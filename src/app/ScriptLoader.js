@@ -13,15 +13,11 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
   useEffect(() => {
     const loadScripts = () => {
       setTimeout(() => {
-        // GTM Script
-        //commented as we have already this in src/app/layout.js to load it as early as possible for better tracking.
-
-        if (gtm) {
-          const gtmScript = document.createElement("script");
-          gtmScript.async = true;
-          gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${gtm}`;
-          document.body.appendChild(gtmScript);
-        }
+        // GTM is bootstrapped in src/app/layout.js (Script id="gtm-config",
+        // strategy="afterInteractive"). Do NOT load it here too: this path was a
+        // redundant, ~3s-deferred second gtm.js load with no gtm.start/dataLayer
+        // bootstrap, which (together with the old lazyOnload) deferred GA4 past most
+        // sessions and broke collection from Apr 22 2026 (BRI-535).
 
         // Clearbit Script
         const clearbitScript = document.createElement("script");
