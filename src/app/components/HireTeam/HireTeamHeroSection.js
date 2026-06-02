@@ -25,6 +25,7 @@ const HireTeamHeroSection = ({
   title,
   description,
   badge,
+  imageSrc,
   trustItems = ["Expert Engineers", "Free Consultation", "NDA on Request"],
 }) => {
   return (
@@ -70,35 +71,20 @@ const HireTeamHeroSection = ({
                     </div>
                   ))}
                 </div>
-              </div>
 
-              {/* What Happens Next */}
-              <div className="bg-white/[0.03] rounded-2xl border border-white/10 md:p-7 p-5 backdrop-blur-[10px]">
-                <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00b4d8] !mb-6">
-                  What Happens Next
-                </p>
-                <div className="flex flex-col gap-5">
-                  {steps.map((step, i) => (
-                    <div
-                      key={i}
-                      className="flex gap-3 items-start justify-start"
-                    >
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full text-white bg-themeColor text-sm font-bold flex items-center justify-center">
-                        {i + 1}
-                      </div>
-                      <div>
-                        <p className="text-[15px] text-white font-semibold leading-tight">
-                          {step.title}
-                        </p>
-                        <p className="text-[13px] text-white/60 mt-1 leading-[1.5] font-light">
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {imageSrc && (
+                  <div className="mt-7 rounded-2xl overflow-hidden border border-white/10">
+                    <Image
+                      src={imageSrc}
+                      alt={title || "Hero image"}
+                      width={620}
+                      height={400}
+                      className="object-cover"
+                    />
+                  </div>
+                )}
               </div>
-            </div>
+              </div>
 
             {/* Right: Form */}
             <div className="md:w-[45%] w-full flex flex-col justify-center bg-white/[0.04] rounded-2xl border border-white/10 md:p-7 p-5 backdrop-blur-[10px]">

@@ -4,45 +4,45 @@ import React from "react";
 import Heading from "../HTMLComponents/Heading";
 
 const reactJsSolutions = {
-  title: "ReactJS Solutions Precision-Engineered for Your Industry",
+  title: "React Developers With Domain Experience",
   description:
-    "Tailored for eCommerce, Healthcare, Fintech & Beyond. We engineer React solutions that solve your industry’s unique challenges 72% of clients see ROI within 12 weeks.",
+    "Hire developers who’ve already shipped production React apps in your industry. No ramp-up tax, no domain learning curve.",
   solutions: [
     {
       title: "eCommerce",
       description:
-        "Power your storefronts with React’s dynamic capabilities. We build performant interfaces featuring AI-driven recommendations, one-click checkouts, and real-time inventory updates.",
+        "Storefronts, checkout flows, product catalogs, and admin dashboards. Experience with Shopify Hydrogen, headless commerce, and high-traffic catalog UIs.",
       icon: "/images/v2/shopping-cart-check.svg",
     },
     {
       title: "Healthcare",
       description:
-        "Deliver HIPAA-compliant platforms that streamline care. Our React-powered telemedicine portals, EHR systems, and AI triage tools reduce administrative workload.",
+        "HIPAA-aware patient portals, telehealth interfaces, and clinical dashboards. Our developers understand PHI handling and audit trails.",
       icon: "/images/v2/heathcare-icon.svg",
     },
     {
       title: "Fintech",
       description:
-        "Build React applications that balance speed with ironclad security. Our solutions include real-time transaction dashboards, biometric KYC workflows, and crypto interfaces audited for ISO 27001 compliance.",
+        "Trading dashboards, KYC flows, and payment UIs. Familiar with PCI-DSS constraints and real-time data streaming.",
       icon: "/images/v2/usd-circle.svg",
     },
     {
       title: "Real Estate",
       description:
-        "Accelerate lead conversion with React tools like 3D virtual tours, AI-powered matching engines, and smart contract integrations.",
+        "Property listing platforms, MLS integrations, and lead capture funnels. Built React UIs for both agent tools and consumer-facing portals.",
       icon: "/images/v2/real-estate.svg",
     },
     {
       title: "eLearning",
       description:
-        "Create React-based learning systems that include interactive VR classrooms, AI tutors, and certification trackers proven to boost learner retention by 41%.",
+        "LMS interfaces, course players, and interactive learning modules. Comfortable with video streaming, quiz engines, and progress tracking.",
       icon: "/images/v2/user-graduate.svg",
     },
     {
       title: "Software & High-Tech",
       description:
-        "Stay ahead with React architectures built for scale. We deliver AI-augmented dashboards, IoT management panels, and legacy modernization strategies.",
-      icon: "/images/v2/manufaturing-icon.svg",
+        "Admin panels, multi-tenant dashboards, and data-heavy interfaces. Experience with Stripe, role-based access, and complex state management.",
+      icon: "/images/v2/software-hightech-icon.svg",
     },
   ],
 };
