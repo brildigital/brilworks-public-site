@@ -19,11 +19,7 @@ import ButtonV2 from "../Common/ButtonV2";
 import Cal from "@calcom/embed-react";
 import Heading from "../HTMLComponents/Heading";
 
-const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const MultipleCardWithIconBG = dynamic(
-  () => import("../Common/MultipleCardWithIconBG"),
-);
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const HiringModels = dynamic(() => import("./HiringModels"));
@@ -36,6 +32,9 @@ const SolutionContactForm = dynamic(
 
 const HireDevelopersInThreeSteps = dynamic(
   () => import("../HireTeam/HireDevelopersInThreeSteps"),
+);
+const HireInFourSteps = dynamic(
+  () => import("../HireTeam/HireInFourSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -150,49 +149,6 @@ const ReactJSTechnology = () => {
     ],
   };
 
-  const reactJsBenefits = {
-    title: "Why ReactJS? A Strategic Choice for Modern Development",
-    description: "",
-    benefits: [
-      {
-        title: "Optimized Performance with Virtual DOM",
-        description:
-          "React’s virtual DOM transforms front-end development by updating only specific User Interface elements instead of entire pages. This precision cuts load times by 40% in data-heavy apps while keeping animations at 60fps. For mobile-first users, this leads to 3x lower bounce rates—crucial since 75% of users abandon sites that take over 3 seconds to load.",
-        icon: "/images/v2/why-n-7.svg",
-      },
-      {
-        title: "Cross-Platform Consistency",
-        description:
-          "React Native ensures a unified UI across platforms, sharing 90% of the code between iOS, Android, and web. This reduces development costs by $78K per year for a mid-sized project and keeps branding consistent. Shopify cut customer training costs by 22% using identical UX patterns.",
-        icon: "/images/v2/cross-platform.svg",
-      },
-      {
-        title: "SEO-Friendly Architecture",
-        description:
-          "React’s server-side rendering (Next.js) improves search rankings by boosting Google crawl speeds 20-35% compared to client-side SPAs. A luxury retailer increased organic traffic by 48% after moving from an AJAX-heavy user interface to React/Next.js.",
-        icon: "/images/v2/seo-friendly.svg",
-      },
-      {
-        title: "Long-Term Scalability",
-        description:
-          "React’s component-based architecture allows Airbnb to handle 100M+ users smoothly. We design UI elements as reusable modules—update a profile card once, deploy globally. Redux Toolkit reduces enterprise app bugs by 63%, ensuring scalable front-end development.",
-        icon: "/images/v2/scale-project.svg",
-      },
-      {
-        title: "Future-Proof Maintenance",
-        description:
-          "React’s one-way data flow keeps codebases easy to manage. A fintech client onboarded 12 developers in 3 days (down from 3 weeks pre-React) using self-documenting UI components, ensuring long-term front-end stability.",
-        icon: "/images/v2/future-proof.svg",
-      },
-      {
-        title: "Talent Availability",
-        description:
-          "React is the standard for 72% of Fortune 500 teams. We access this global talent pool to staff projects 3x faster than Vue or Angular specialists, ensuring expert front-end execution.",
-        icon: "/images/v2/talent-availability.svg",
-      },
-    ],
-  };
-
   const why100PlusCompaniesTrust = [
     {
       title: "Top-tier talent",
@@ -229,19 +185,11 @@ const ReactJSTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-        title="Unlock Expert ReactJS Talent for Your Projects"
-        description={
-          <>
-            Looking to build fast, modern web apps that engage users and scale
-            with your business? Build lightning-fast web and mobile applications
-            with India’s top ReactJS engineers.
-            <br /> Brilworks helps you hire ReactJS developers who blend deep
-            expertise with a focus on your ROI. From launching startups to
-            modernizing enterprise SaaS, our team is trusted by digital leaders
-            across industries.
-          </>
-        }
-        imageSrc="/images/v2/reactjs-banner.webp"
+      technologyText={"Hire ReactJS Developers"}
+      
+        title="Hire ReactJS Developers, Onboarded in 48 Hours"
+        description="Build fast, scalable web apps with India’s top ReactJS engineers. Vetted talent, onboarded in days — not months."
+        imageSrc="/images/v2/hire_reactJS_hero_img.webp"
         buttonLabel="Explore Reactjs Development"
       />
       <MultipleCardInGrid
@@ -263,13 +211,12 @@ const ReactJSTechnology = () => {
           />
         </div>
       </div>
+      <HireInFourSteps />
       {/* <BenefitOfHiringDevelopers /> */}
       <TechnologyDevelopers />
       <TechnologyCombination />
       <TechStackWeWorkWith active="frontend" techStackList={techStackList} />
-      <BrilworksAdvantage />
       <HireTeamSolutions />
-      <MultipleCardWithIconBG data={reactJsBenefits} />
       <HiringModels />
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
