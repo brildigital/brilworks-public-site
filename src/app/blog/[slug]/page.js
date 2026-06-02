@@ -21,7 +21,12 @@ import Heading from "@/app/components/HTMLComponents/Heading";
 import { Calendar, Clock } from "lucide-react";
 
 export async function generateMetadata({ params }) {
-  const { props: data } = await fetchData(params?.slug);
+  let data;
+  try {
+    ({ props: data } = await fetchData(params?.slug));
+  } catch {
+    return {};
+  }
   const story = data?.story;
 
   if (!story) return {};
@@ -333,37 +338,51 @@ export default async function Page(props) {
   );
 }
 export async function fetchData(slug) {
-  try {
-    const storyUrl = new URL(
-      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
-    );
-    storyUrl.searchParams.append(
-      "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
-    );
-    storyUrl.searchParams.append(
-      "version",
-      process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    );
+  const storyUrl = new URL(
+    `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
+  );
+  storyUrl.searchParams.append(
+    "token",
+    process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
+  );
+  storyUrl.searchParams.append(
+    "version",
+    process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+  );
 
-    storyUrl.pathname += ``;
+  // Cache published reads (ISR) so a transient Storyblok hiccup can never
+  // collapse a live article into a soft-404: a failed background revalidation
+  // keeps serving the last good page. Drafts (preview env) stay uncached so
+  // editor changes show up immediately.
+  const isDraft = process.env.NEXT_PUBLIC_STORYBLOK_VERSION === "draft";
 
-    const storyRes = await fetch(storyUrl.toString(), {
-      next: { revalidate: 0 },
-      headers: { "Accept-Encoding": "gzip" }, // Enable compression
-    });
+  const storyRes = await fetch(storyUrl.toString(), {
+    next: { revalidate: isDraft ? 0 : 600 },
+    headers: { "Accept-Encoding": "gzip" }, // Enable compression
+  });
 
-    const storyData = await storyRes.json();
-    return {
-      props: {
-        story: storyData?.story || false,
-        key: storyData?.story?.id || false,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
+  // Genuine "not found": the story does not exist — caller renders the 404.
+  if (storyRes.status === 404) {
+    return { props: { story: false, key: false } };
   }
+
+  // Any other non-OK response is a transient/upstream failure. Throw instead of
+  // returning an empty story: notFound() on a blip is what got these pages
+  // flagged Soft-404. Throwing lets ISR serve the last good page (or surface a
+  // retryable 5xx) rather than baking a "page gone" signal for Googlebot.
+  if (!storyRes.ok) {
+    throw new Error(
+      `Storyblok responded ${storyRes.status} for blog/${slug}`,
+    );
+  }
+
+  const storyData = await storyRes.json();
+  return {
+    props: {
+      story: storyData?.story || false,
+      key: storyData?.story?.id || false,
+    },
+  };
 }
 export async function generateStaticParams() {
   const posts = await getblog();
