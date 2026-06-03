@@ -16,23 +16,13 @@ import {
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
-const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
-const MultipleCardWithIconBG = dynamic(
-  () => import("../Common/MultipleCardWithIconBG")
-);
 const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm")
-);
-const HireTeamDigitalTransformation = dynamic(
-  () => import("../HireTeam/HireTeamDigitalTransformation")
-);
-const BenefitOfHiringDevelopers = dynamic(
-  () => import("./BenefitOfHiringDevelopers")
 );
 const HireDevelopersInThreeSteps = dynamic(
   () => import("../HireTeam/HireDevelopersInThreeSteps")
@@ -98,8 +88,40 @@ const techStackList = [
   },
 ];
 
+const whenToHireData = {
+  title: "When to hire a Node.js developer",
+  subtitle:
+    "Node.js isn't the right call for every project. Here's when bringing on a Node.js engineer pays off — fast.",
+  cards: [
+    {
+      title: "You're building real-time features",
+      description:
+        "Live chat, collaborative editing, multiplayer experiences, streaming dashboards, notification systems. Node.js's event-driven architecture handles thousands of concurrent WebSocket connections without breaking a sweat — which is why Slack, Trello, and Discord run on it.",
+      icon: "/images/v2/why-n-1.svg",
+    },
+    {
+      title: "You need APIs that scale",
+      description:
+        "High-throughput REST and GraphQL APIs, microservices, third-party integrations, mobile app backends. Node.js handles 10,000+ requests per second on modest hardware, making it the default choice for API-first products that need to scale without ballooning infrastructure costs.",
+      icon: "/images/v2/why-n-5.svg",
+    },
+    {
+      title: "You're modernizing a legacy backend",
+      description:
+        "Aging PHP, Java, or .NET systems that are expensive to maintain, slow to deploy, and impossible to hire for. Node.js migrations can be phased — strangler-fig style — so you replace one service at a time without a risky big-bang rewrite. Most of our clients see 3-5x faster deploy cycles within six months.",
+      icon: "/images/v2/why-n-3.svg",
+    },
+    {
+      title: "Your frontend team already writes JavaScript",
+      description:
+        "If your frontend runs on React, Vue, or Angular, putting Node.js on the backend means one language across the stack. Engineers move between frontend and backend without context-switching. Code, types, and validation logic get shared instead of rewritten. Hiring gets easier because your talent pool doubles.",
+      icon: "/images/v2/why-n-8.svg",
+    },
+  ],
+};
+
 const nodeJSService = {
-  title: "Build Lightning-Fast Solutions With Our Node.js Development Services",
+  title: "Our Node.js Development Services",
   desc: "Backed by years of specialized experience, our Node.js developers deliver enterprise-grade solutions that combine technical excellence with strategic business alignment.",
   buttonText: "Get Quote",
   servicesList: [
@@ -148,61 +170,6 @@ const nodeJSService = {
   ],
 };
 
-const nodeJsBenefits = {
-  title: "Why Choose Node.js Development?",
-  description:
-    "Node.js is widely used for real-time applications and scalable microservices, but scaling it properly requires careful management. Our Node.js developers help you navigate these challenges, ensuring smooth performance as your application grows.",
-  benefits: [
-    {
-      title: "Non-Blocking Architecture for Speed",
-      description:
-        "Node.js processes requests asynchronously, eliminating delays in web applications like real-time chat, live streaming, or RESTful APIs. This ensures fast response times and seamless user experiences.",
-      icon: "/images/v2/why-n-1.svg",
-    },
-    {
-      title: "Lightweight & Resource-Efficient",
-      description:
-        "Its event-driven model minimizes server load, making it ideal for building scalable systems without excessive hardware costs. Perfect for startups and enterprises alike.",
-      icon: "/images/v2/why-n-2.svg",
-    },
-    {
-      title: "Microservices-Ready Ecosystem",
-      description:
-        "Node.js simplifies splitting monolithic apps into modular microservices, enabling independent scaling, faster updates, and easier maintenance in software development cycles.",
-      icon: "/images/v2/why-n-3.svg",
-    },
-    {
-      title: "High Concurrency Handling",
-      description:
-        "Designed to manage thousands of simultaneous connections, Node.js excels in high-quality platforms like gaming, IoT, or collaborative tools with heavy real-time traffic.",
-      icon: "/images/v2/why-n-4.svg",
-    },
-    {
-      title: "Optimized for RESTful API Development",
-      description:
-        "Node.js streamlines creating RESTful APIs, ensuring smooth communication between frontend and backend systems for data-driven web applications.",
-      icon: "/images/v2/why-n-5.svg",
-    },
-    {
-      title: "Unmatched Scalability",
-      description:
-        "Built for horizontal and vertical scaling, Node.js supports building scalable architectures that grow with user demand, from startups to global enterprises.",
-      icon: "/images/v2/scale-project.svg",
-    },
-    {
-      title: "Performance-Centric Design",
-      description:
-        "Node.js prioritizes performance optimization out of the box, reducing latency and CPU bottlenecks even in compute-heavy tasks like data analytics or real-time dashboards.",
-      icon: "/images/v2/why-n-7.svg",
-    },
-    {
-      title: "JavaScript Everywhere",
-      description:
-        "Leverage a unified programming language (JavaScript/TypeScript) across frontend and backend, streamlining software development and reducing context-switching for teams.",
-      icon: "/images/v2/why-n-8.svg",
-    },
-  ],
-};
 
 const why100PlusCompaniesTrust = [
   {
@@ -256,14 +223,9 @@ const NodejsTechnology = () => {
     <>
       <HireTeamHeroSection
         technologyText="Hire NodeJS Developers"
-        title={
-          <>
-            Hire Nodejs Developers: <br />
-            Pre-Vetted Experts, Zero Hassle
-          </>
-        }
-        description="Add Expert Node.js talent to your team in 72 hours. Get a pre-vetted, production-ready Node.js developer aligned with your timezone and workflow. As a leading Node.js development company, we specialize in crafting lightning-fast, scalable, and secure applications."
-        imageSrc="/images/v2/nodejs-banner.webp"
+        title="Hire a Node.js developer in 72 hours"
+        description="Add senior Node.js engineers to your team in 72 hours. Every developer is pre-vetted by our engineering team, works in your timezone, and is ready to ship from day one."
+        imageSrc="/images/v2/hire_node_hero_img.webp"
       />
       <MultipleCardInGrid
         title="Why 100+ Companies Trust Us"
@@ -276,12 +238,32 @@ const NodejsTechnology = () => {
         serviceData={nodeJSService}
       />
       <TechnologyDevelopers bgClass="bg-white" />
-      <HireTeamDigitalTransformation />
-      {/* <BenefitOfHiringDevelopers /> */}
       <TechStackWeWorkWith active="backend" techStackList={techStackList} />
-      <BrilworksAdvantage />
       <HireTeamSolutions />
-      <MultipleCardWithIconBG data={nodeJsBenefits} />
+      <section className="bg-white">
+        <div className="container max-w-[1280px] main-section-padding mx-auto reveal text-center">
+          <h2 className="text-colorBlack lg:!text-[34px] md:!text-3xl !text-2xl font-bold !mb-3">
+            {whenToHireData.title}
+          </h2>
+          <p className="md:text-lg text-base text-gray-500 !mb-8 md:!mb-10 max-w-[720px] mx-auto">
+            {whenToHireData.subtitle}
+          </p>
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 md:gap-7">
+            {whenToHireData.cards.map(({ title, description, icon }) => (
+              <div
+                key={title}
+                className="flex flex-col items-center border rounded-2xl border-borderGray md:px-7.5 md:py-6 p-5 text-center"
+              >
+                <img src={icon} alt="" className="w-10 h-10 !mb-4" />
+                <h3 className="text-colorBlack md:!text-xl !text-lg font-semibold !mb-3">
+                  {title}
+                </h3>
+                <p className="md:text-base text-sm text-gray-500 flex-1">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <HiringModels />
       <HireDevelopersInThreeSteps
         bgClass="bg-themeLight"
