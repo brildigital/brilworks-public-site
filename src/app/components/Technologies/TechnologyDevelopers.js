@@ -103,7 +103,7 @@ const TechnologyDevelopers = ({
 
   return (
     <div className={bgClass}>
-      <div className="container max-w-[1280px] main-section-padding mx-auto reveal">
+      <div className="container max-w-[1280px] main-section-padding mx-auto reveal !pb-12">
         {techDeveloperData?.length ? (
           techDeveloperData.map(({ content, id }, index) => (
             <div className="" key={id}>

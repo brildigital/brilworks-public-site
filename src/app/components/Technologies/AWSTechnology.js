@@ -20,6 +20,8 @@ const MultipleKeyValueWithBG = dynamic(() =>
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const AWSFAQs = dynamic(() => import("./TechnologyFAQ"));
+const AWSStackSection = dynamic(() => import("./AWSStackSection"));
+const AWSPartnerBadge = dynamic(() => import("./AWSPartnerBadge"));
 
 const AWSTechnology = () => {
   useEffect(() => {
@@ -127,6 +129,8 @@ const AWSTechnology = () => {
       />
       <ServicesSection serviceData={awsService} sectionId="services-one" />
       <TechnologyDevelopers />
+      <AWSPartnerBadge />
+      <AWSStackSection />
       {/* <BenefitOfHiringDevelopers /> */}
       <HireDevelopersInThreeSteps title="AWS Developers" />
       <HomePageBlogs />
