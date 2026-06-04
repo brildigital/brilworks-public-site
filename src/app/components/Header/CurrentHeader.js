@@ -49,6 +49,7 @@ const CurrentHeader = () => {
     "/kindcircle-terms-and-condition/",
     "/lifepilot-privacy-policy/",
     "/mr-brush-privacy-policy/",
+    "/pet-school-privacy-policy/",
     "/x/product-listing/",
   ];
 

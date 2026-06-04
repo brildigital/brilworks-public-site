@@ -168,6 +168,16 @@ const ProductsPage = () => {
       color: "from-amber-600 to-amber-400",
       badge: "Pregnancy Wellness",
     },
+    {
+      title: "PetSchool",
+      slug: "pet-school",
+      description:
+        "The smart pet training app for dogs and cats. Structured expert-designed lessons, daily streaks, badges across four rarity tiers, a video library, and a community of pet parents. Free on iOS.",
+      image:
+        "/images/petschool.webp",
+      color: "from-[#2A4A30] to-[#3D6645]",
+      badge: "Pet Training",
+    },
   ];
 
   return (
