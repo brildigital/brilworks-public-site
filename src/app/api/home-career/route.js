@@ -11,24 +11,10 @@ import { saveLead } from "@/app/lib/supabase-leads";
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
-  // Prefer Vercel's server-side geo headers (always present on Vercel, no rate limits).
-  // Fall back to the client-set cookie for local dev / non-Vercel environments.
-  const vercelCountry = req.headers.get("x-vercel-ip-country");
-  const vercelRegion = req.headers.get("x-vercel-ip-country-region");
-  const vercelCity = req.headers.get("x-vercel-ip-city");
+  const cookieStore = cookies();
+  const userDataCookie = cookieStore.get("user-data");
 
-  let userData;
-  if (vercelCountry || vercelRegion || vercelCity) {
-    userData = {
-      country: vercelCountry || null,
-      region: vercelRegion || null,
-      city: vercelCity ? decodeURIComponent(vercelCity) : null,
-    };
-  } else {
-    const cookieStore = cookies();
-    const userDataCookie = cookieStore.get("user-data");
-    userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;
-  }
+  const userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;
 
   const payload = await req.json();
   const {
