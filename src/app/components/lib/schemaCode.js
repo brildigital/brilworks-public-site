@@ -289,6 +289,19 @@ export function generateImageObjectSchema({
   return JSON.stringify(schema);
 }
 
+export function generatePersonSchema({ name, url, jobTitle, image, sameAs = [] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle,
+    image,
+    sameAs: sameAs.filter(Boolean),
+  };
+  if (url) schema.url = url;
+  return JSON.stringify(schema);
+}
+
 export function generateWebPageSchema({ title, description, url, dateModified }) {
   const schema = {
     "@context": "https://schema.org",
