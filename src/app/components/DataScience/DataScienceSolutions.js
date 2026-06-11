@@ -18,7 +18,6 @@ const dataSolutions = [
     title: "Data Pipelines & Engineering",
     description:
       "Robust, scalable ETL/ELT pipelines to extract, transform, and load data from multiple sources without latency.",
-    link: "/services/data-engineering/",
   },
   {
     iconKey: "analytics",
@@ -26,7 +25,6 @@ const dataSolutions = [
     title: "Advanced Analytics",
     description:
       "Uncover hidden patterns in your data with predictive and prescriptive analytics to drive strategic decisions.",
-    link: "/services/data-analytics/",
   },
   {
     iconKey: "ml",
@@ -34,7 +32,6 @@ const dataSolutions = [
     title: "Machine Learning Solutions",
     description:
       "From recommendation engines to computer vision, we deploy custom ML models tailored to your business needs.",
-    link: "/services/machine-learning/",
   },
   {
     iconKey: "warehouse",
@@ -42,7 +39,6 @@ const dataSolutions = [
     title: "Data Warehousing & Lakes",
     description:
       "Centralized, secure, and performant data storage architectures using modern cloud technologies like Snowflake & BigQuery.",
-    link: "/services/data-warehousing/",
   },
   {
     iconKey: "bi",
@@ -50,7 +46,6 @@ const dataSolutions = [
     title: "Business Intelligence",
     description:
       "Stunning, interactive dashboards and reports in Tableau, PowerBI, and custom UI that your team actually understands.",
-    link: "/services/business-intelligence/",
   },
   {
     iconKey: "governance",
@@ -58,7 +53,6 @@ const dataSolutions = [
     title: "Data Governance & Quality",
     description:
       "Ensure your data is accurate, secure, and compliant with modern privacy standards (GDPR, HIPAA).",
-    link: "/services/data-governance/",
   },
 ];
 
@@ -104,13 +98,6 @@ const DataScienceSolutions = () => {
               <p className="font-Figtree text-[13px] text-colorGray leading-[1.65] mb-4">
                 {solution.description}
               </p>
-
-              <Link
-                href={solution.link}
-                className="text-sm font-semibold text-themeColor inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
-              >
-                Learn more →
-              </Link>
             </div>
           ))}
         </div>

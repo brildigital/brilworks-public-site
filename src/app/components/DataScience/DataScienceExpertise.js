@@ -17,7 +17,6 @@ const serviceCards = [
     description:
       "Scalable infrastructure designed to handle high-volume data streams securely.",
     tags: ["Snowflake", "BigQuery", "Redshift"],
-    link: "/services/data-architecture/",
   },
   {
     iconKey: "ml",
@@ -25,7 +24,6 @@ const serviceCards = [
     description:
       "Deploy custom machine learning models to forecast trends and automate decisions.",
     tags: ["TensorFlow", "PyTorch", "Scikit-Learn"],
-    link: "/services/predictive-modeling/",
   },
   {
     iconKey: "viz",
@@ -33,7 +31,6 @@ const serviceCards = [
     description:
       "Transform complex data sets into intuitive dashboards that drive action.",
     tags: ["Tableau", "Power BI", "D3.js"],
-    link: "/services/data-visualization/",
   },
   {
     iconKey: "engineer",
@@ -41,7 +38,6 @@ const serviceCards = [
     description:
       "Augment your team with vetted data engineers to build robust pipelines.",
     tags: ["Python", "Spark", "Airflow"],
-    link: "/hire-data-engineers/",
   },
 ];
 
@@ -65,8 +61,7 @@ const DataScienceExpertise = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {serviceCards.map((card, index) => (
-            <Link
-              href={card.link}
+            <div
               key={index}
               className="group border border-[#e5e7eb] rounded-2xl p-7 transition-all duration-300 hover:border-themeColor hover:bg-[#e8f0fd] reveal"
             >
@@ -94,7 +89,7 @@ const DataScienceExpertise = () => {
                   </span>
                 ))}
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
