@@ -2,38 +2,29 @@ import dynamic from "next/dynamic";
 import Script from "next/script";
 
 import DataScienceHeroSection from "../components/DataScience/DataScienceHeroSection";
-const DataScienceSolutions = dynamic(
-  () => import("../components/DataScience/DataScienceSolutions"),
+const DataScienceTrustBar = dynamic(
+  () => import("../components/DataScience/DataScienceTrustBar"),
 );
-const DataScienceExpertise = dynamic(
-  () => import("../components/DataScience/DataScienceExpertise"),
+const DataScienceThesis = dynamic(
+  () => import("../components/DataScience/DataScienceThesis"),
 );
-
-const BrilliantInThought = dynamic(
-  () => import("../components/Homepage/BrilliantInThought"),
+const DataScienceWork = dynamic(
+  () => import("../components/DataScience/DataScienceWork"),
 );
-const SeeingBelieving = dynamic(
-  () => import("../components/Homepage/SeeingBelieving"),
+const DataScienceReasons = dynamic(
+  () => import("../components/DataScience/DataScienceReasons"),
 );
-const MidPageCTA = dynamic(() => import("../components/Homepage/MidPageCTA"));
+const DataSciencePillars = dynamic(
+  () => import("../components/DataScience/DataSciencePillars"),
+);
+const DataScienceAgentsBand = dynamic(
+  () => import("../components/DataScience/DataScienceAgentsBand"),
+);
+const DataScienceIndustries = dynamic(
+  () => import("../components/DataScience/DataScienceIndustries"),
+);
 const ClientReviews = dynamic(
   () => import("../components/Homepage/ClientReviews"),
-);
-const ClutchReviews = dynamic(
-  () => import("../components/Homepage/ClutchReviews"),
-);
-const IndustriesWeServe = dynamic(
-  () => import("../components/Homepage/IndustriesWeServe"),
-);
-const Honors = dynamic(() => import("../components/Homepage/Honors"));
-const HomepageWhyChooseUs = dynamic(
-  () => import("../components/Homepage/HomepageWhyChooseUs"),
-);
-const EbookSection = dynamic(
-  () => import("../components/Homepage/EbookSection"),
-);
-const HomepageBlog = dynamic(
-  () => import("../components/Homepage/HomePageBlogs"),
 );
 const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
@@ -100,18 +91,14 @@ const DataSciencePage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
       <DataScienceHeroSection />
-      <BrilliantInThought />
-      <SeeingBelieving />
-      <HomepageWhyChooseUs />
-      <MidPageCTA />
-      <DataScienceSolutions />
-      <DataScienceExpertise />
+      <DataScienceTrustBar />
+      <DataScienceThesis />
+      <DataScienceWork />
+      <DataScienceReasons />
+      <DataSciencePillars />
+      <DataScienceAgentsBand />
       <ClientReviews />
-      <IndustriesWeServe />
-      <ClutchReviews />
-      <Honors />
-      <EbookSection />
-      <HomepageBlog />
+      <DataScienceIndustries />
       <ContactUs />
       <StickyCTA />
     </>
