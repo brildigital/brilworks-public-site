@@ -77,17 +77,14 @@ const HeroSection = () => {
                 style={{ fontSize: "clamp(26px, 3.2vw, 54px)" }}
               >
                 <span className="whitespace-nowrap">
-                  We Build{" "}
-                  <span className="text-[#1A5CCC]">Software & AI Agents</span>
+                  From Raw Data to{" "}
+                  <span className="text-[#1A5CCC]">Running Agents</span>
                 </span>
-                <br />
-                That Run Your Business
               </h1>
 
               {/* Subtitle */}
               <p className="hero-sub text-[18px] text-white/60 leading-[1.7] max-w-[600px] hero-fade-up">
-                From AI agents to full-stack apps — we build the software that
-                runs your business. Shipped fast, built to last.
+                Data engineering and AI agent development services — one team accountable from pipeline to production
               </p>
 
               {/* CTAs */}

@@ -4,15 +4,15 @@ export const metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL || "https://dev.brilworks.com/",
   ),
-  title: "Mobile App and Software Development Company | Brilworks",
+  title: "Data & AI Engineering Company | Brilworks",
   description:
-    "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people. We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
+    "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
   openGraph: {
-    title: "Mobile App and Software Development Company | Brilworks",
+    title: "Data & AI Engineering Company | Brilworks",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
+      "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    siteName: "Mobile App and Software Development Company | Brilworks",
+    siteName: "Data & AI Engineering Company | Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/hero-pg-main.webp`,
@@ -22,9 +22,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Mobile App and Software Development Company | Brilworks",
+    title: "Data & AI Engineering Company | Brilworks",
     description:
-      "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
+      "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
