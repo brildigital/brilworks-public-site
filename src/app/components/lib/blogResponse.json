@@ -25,6 +25,32 @@
       }
     }
   ],
+  "/data/": [
+    {
+      "name": "The Roadmap to Successful AI Implementation",
+      "slug": "roadmap-to-successful-ai-implementation",
+      "content": {
+        "Priority": "",
+        "Published": "2024-09-11 20:05",
+        "mobile_banner": {
+          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/821f4d5d85_banner-image-the-roadmap-to-successful-ai-implementation-1_1x.webp",
+          "alt": "banner image the roadmap to successful ai implementation"
+        }
+      }
+    },
+    {
+      "name": "AI for Business Strategy: A Guide to Implementation and Benefits",
+      "slug": "ai-for-business-strategy",
+      "content": {
+        "Priority": "",
+        "Published": "2024-04-08 17:15",
+        "mobile_banner": {
+          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/d33a6d2051_ai-for-business-strategy-mobile-banner.webp",
+          "alt": ""
+        }
+      }
+    }
+  ],
   "/generative-ai-development-services/": [
     {
       "name": "How is Generative AI Used in the Medical Field? Examples Explained",
