@@ -24,6 +24,7 @@ import {
   Monitor,
   Truck,
 } from "lucide-react";
+import Image from "next/image";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
@@ -209,81 +210,6 @@ const FAQ = [
   },
 ];
 
-// ---------- Service Mockups ----------
-const MockBar = ({ label }) => (
-  <div className="flex items-center gap-1.5 px-3.5 py-2.5" style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}>
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ef4444" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#10b981" }} />
-    <em className="not-italic ml-3 text-[11px] font-semibold" style={{ color: "#94a3b8", letterSpacing: "0.02em" }}>{label}</em>
-  </div>
-);
-
-// Stats dashboard mockup — used for DevOps pipelines/monitoring (DORA, K8s health, CI/CD pipeline)
-const MockupStatsDashboard = ({ label, stats, rows }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label={label} />
-    <div className="flex-1 p-4">
-      <div className="grid grid-cols-3 gap-2.5 mb-3">
-        {stats.map((s, i) => {
-          const tone = s.tone || "ok";
-          const bg = tone === "warn" ? "#fef3c7" : tone === "err" ? "#fee2e2" : "#f0fdf4";
-          const border = tone === "warn" ? "#fde68a" : tone === "err" ? "#fecaca" : "#bbf7d0";
-          const color = tone === "warn" ? "#a16207" : tone === "err" ? "#b91c1c" : "#047857";
-          return (
-            <div key={i} className="rounded-md py-2.5 px-2 text-center" style={{ background: bg, border: `1px solid ${border}` }}>
-              <div className="text-[18px] font-extrabold leading-none" style={{ color }}>{s.n}</div>
-              <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>{s.lb}</div>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        {rows.map((row, i, arr) => (
-          <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
-            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "#10b981" }}>
-              <Check size={10} color="white" strokeWidth={3} />
-            </div>
-            <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
-            <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-const codeSeg = (cls, w, override) => {
-  const colors = { k: "#c084fc", s: "#86efac", v: "#fbbf24", t: "#67e8f9", x: "#475569" };
-  return <span className="inline-block rounded-sm" style={{ height: 7, width: w, background: override || colors[cls] }} />;
-};
-
-// Code+canvas mockup — used for DevOps pipelines (yaml/IaC) and release management
-const MockupCodeCanvas = ({ label, codeBg = "#0d1117", canvasBg = "#f8fafc", canvasColors, codeOverride, lines }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label={label} />
-    <div className="flex-1 grid grid-cols-2">
-      <div className="p-3.5" style={{ background: codeBg }}>
-        {lines.map((line, i) => (
-          <div key={i} className="flex gap-1.5 items-center mb-[7px]">
-            <b className="text-[9px] font-mono min-w-[14px]" style={{ color: "#94a3b8" }}>{i + 1}</b>
-            {line.map(([c, w], j) => <span key={j}>{codeSeg(c, w, codeOverride && (c === "k" || c === "t") ? codeOverride[c] : undefined)}</span>)}
-          </div>
-        ))}
-      </div>
-      <div className="p-3.5" style={{ background: canvasBg }}>
-        {canvasColors.map((c, i) => (
-          <div key={i} className="bg-white rounded-md p-2 mb-2" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
-            <div style={{ height: 6, width: "60%", background: c.color, borderRadius: 2, marginBottom: 5 }} />
-            <div style={{ height: 4, width: c.w1, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-            {c.w2 && <div style={{ height: 4, width: c.w2, background: "#cbd5e1", borderRadius: 1.5 }} />}
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
 const SERVICES = [
   {
     title: "DevOps Implementation",
@@ -294,17 +220,7 @@ const SERVICES = [
       "Tooling selection & architecture design",
       "Team enablement & knowledge transfer",
     ],
-    mockup: (
-      <MockupStatsDashboard
-        label="DORA Metrics · Last 30 days"
-        stats={[
-          { n: "47", lb: "Deploys/Day" },
-          { n: "8m", lb: "Lead Time" },
-          { n: "0.4%", lb: "Change Fail", tone: "warn" },
-        ]}
-        rows={[{ w: "70%" }, { w: "80%" }, { w: "65%" }, { w: "75%" }]}
-      />
-    ),
+    image:"/images/v2/devops_implementation.webp",
     imageBg: "linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)",
     padMockup: true,
     reverse: false,
@@ -318,26 +234,7 @@ const SERVICES = [
       "Terraform IaC & config management",
       "Automated quality & security gates",
     ],
-    mockup: (
-      <MockupCodeCanvas
-        label=".github/workflows/deploy.yml · terraform.tf"
-        canvasColors={[
-          { color: "#4f46e5", w1: "80%", w2: "60%" },
-          { color: "#7c3aed", w1: "75%", w2: "55%" },
-          { color: "#a855f7", w1: "70%" },
-        ]}
-        lines={[
-          [["k", 24], ["t", 40]],
-          [["x", 8], ["k", 20], ["s", 48]],
-          [["x", 16], ["v", 22], ["s", 34]],
-          [["x", 16], ["k", 26], ["t", 26]],
-          [["x", 24], ["s", 50]],
-          [["k", 22], ["v", 38]],
-          [["x", 24], ["t", 30]],
-          [["x", 32], ["s", 28]],
-        ]}
-      />
-    ),
+    image:"/images/v2/devops_automation.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
     padMockup: true,
     reverse: true,
@@ -351,17 +248,7 @@ const SERVICES = [
       "AWS, GCP, Azure cloud migration",
       "FinOps & cloud cost optimization",
     ],
-    mockup: (
-      <MockupStatsDashboard
-        label="Kubernetes Cluster · prod-us-east-1"
-        stats={[
-          { n: "24/24", lb: "Pods Healthy" },
-          { n: "99.99%", lb: "Uptime" },
-          { n: "62%", lb: "CPU", tone: "warn" },
-        ]}
-        rows={[{ w: "70%" }, { w: "75%" }, { w: "85%" }, { w: "60%" }, { w: "70%" }]}
-      />
-    ),
+    image:"/images/v2/cloud_containerization_services.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
     padMockup: true,
     reverse: false,
@@ -375,29 +262,7 @@ const SERVICES = [
       "Automated rollback & feature flags",
       "Release orchestration across environments",
     ],
-    mockup: (
-      <MockupCodeCanvas
-        label="release-v2.14.0 · Blue/Green"
-        codeBg="#0a1a1a"
-        canvasBg="#f0fdfa"
-        codeOverride={{ k: "#14b8a6", t: "#5eead4" }}
-        canvasColors={[
-          { color: "#0d9488", w1: "80%", w2: "60%" },
-          { color: "#14b8a6", w1: "70%", w2: "55%" },
-          { color: "#5eead4", w1: "65%" },
-        ]}
-        lines={[
-          [["k", 28], ["t", 32]],
-          [["x", 8], ["v", 22], ["s", 44]],
-          [["x", 16], ["k", 18], ["t", 30]],
-          [["x", 16], ["s", 44]],
-          [["x", 8], ["v", 26], ["t", 36]],
-          [["k", 22], ["s", 40]],
-          [["x", 20], ["t", 34]],
-          [["x", 28], ["s", 32]],
-        ]}
-      />
-    ),
+    image:"/images/v2/devops_release_management.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: true,
     reverse: true,
@@ -411,17 +276,7 @@ const SERVICES = [
       "Artifact registries & environment promotion",
       "Shift-left security (SAST, SCA, DAST)",
     ],
-    mockup: (
-      <MockupStatsDashboard
-        label="Pipeline · main → production"
-        stats={[
-          { n: "4m 12s", lb: "Build" },
-          { n: "312", lb: "Tests" },
-          { n: "Pass", lb: "Status" },
-        ]}
-        rows={[{ w: "70%" }, { w: "75%" }, { w: "85%" }, { w: "70%" }, { w: "80%" }]}
-      />
-    ),
+    image:"/images/v2/ci_cd_pipeline.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
     padMockup: true,
     reverse: false,
@@ -435,26 +290,7 @@ const SERVICES = [
       "Monitoring & alerting integration",
       "Environment parity & secrets management",
     ],
-    mockup: (
-      <MockupCodeCanvas
-        label="deploy.yaml · helm release"
-        canvasColors={[
-          { color: "#4f46e5", w1: "80%", w2: "60%" },
-          { color: "#017eeb", w1: "75%", w2: "55%" },
-          { color: "#00b4d8", w1: "70%" },
-        ]}
-        lines={[
-          [["k", 32], ["t", 28]],
-          [["x", 8], ["k", 24], ["s", 42]],
-          [["x", 8], ["v", 20], ["t", 36]],
-          [["x", 16], ["k", 28], ["v", 22]],
-          [["x", 8], ["t", 38]],
-          [["k", 18], ["s", 44]],
-          [["x", 24], ["v", 32]],
-          [["t", 16], ["s", 40]],
-        ]}
-      />
-    ),
+    image:"/images/v2/deployment_services.webp",
     imageBg: "linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)",
     padMockup: true,
     reverse: true,
@@ -547,13 +383,13 @@ const DevOpsService = () => {
               <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+                   > <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
