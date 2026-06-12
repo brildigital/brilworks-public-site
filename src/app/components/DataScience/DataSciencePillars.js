@@ -7,7 +7,7 @@ const dataServices = [
   },
   {
     title: "Data Warehouse & Lakehouse",
-    desc: "Snowflake, BigQuery, Databricks. One source of truth, modeled properly.",
+    desc: "Data warehouse services on Snowflake, BigQuery, and Databricks. One source of truth, modeled properly.",
   },
   {
     title: "ETL / ELT",
@@ -54,7 +54,7 @@ const DataSciencePillars = () => {
         <div className="flex flex-col justify-between gap-2 mb-[38px] reveal">
             <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
               <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
-              What we build
+              Data engineering & AI agent development
             </span>
             <h2
               className="font-Figtree font-extrabold tracking-[-0.02em] leading-[1.06] text-[#0B1020] m-0"
@@ -76,9 +76,7 @@ const DataSciencePillars = () => {
           <div className="border border-[#e4e8f0] rounded-2xl p-7 bg-white overflow-hidden relative reveal">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-themeColor rounded-tl-2xl rounded-tr-2xl"></div>
             <div className="flex items-center gap-3 mb-5">
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.1em] uppercase bg-[#dce7ff] text-[#1b4fd0] px-[9px] py-1 rounded-md">
-                Foundation
-              </span>
+              
               <h3 className="font-Figtree font-semibold text-[21px] text-[#0B1020] tracking-[-0.01em] m-0">
                 Data Engineering
               </h3>
@@ -102,9 +100,6 @@ const DataSciencePillars = () => {
           <div className="border border-[#e4e8f0] rounded-2xl p-7 bg-white overflow-hidden relative reveal">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#34d399] rounded-tl-2xl rounded-tr-2xl"></div>
             <div className="flex items-center gap-3 mb-5">
-              <span className="font-mono text-[10.5px] font-semibold tracking-[0.1em] uppercase bg-[#d6f7ea] text-[#0d9e6a] px-[9px] py-1 rounded-md">
-                Payoff
-              </span>
               <h3 className="font-Figtree font-semibold text-[21px] text-[#0B1020] tracking-[-0.01em] m-0">
                 AI Engineering
               </h3>

@@ -76,10 +76,7 @@ const DataScienceHeroSection = () => {
                 className="text-white/70 hero-fade-up max-w-[58ch] leading-[1.5]"
                 style={{ fontSize: "clamp(15px, 1.8vw, 18px)" }}
               >
-                We engineer the data infrastructure under your business, then
-                build the AI agents that run on top of it. One team owns the
-                whole path: the pipelines, the warehouse, the models, and the
-                agents in production.
+               Data engineering and AI agent development services — one team accountable from pipeline to production
               </p>
 
               {/* CTAs */}

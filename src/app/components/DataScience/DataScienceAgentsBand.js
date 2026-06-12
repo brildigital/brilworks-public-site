@@ -42,7 +42,7 @@ const DataScienceAgentsBand = () => {
             className="font-Figtree text-white/60 leading-[1.55]"
             style={{ fontSize: "17px", maxWidth: "48ch" }}
           >
-            They run because the data underneath them is clean. That is why we build the pipeline before the agent.
+            They run because the data underneath them is clean. Most teams hire an AI agent development company and skip that part. We build the pipeline before the agent.
           </p>
         </div>
 

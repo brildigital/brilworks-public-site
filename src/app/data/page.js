@@ -31,15 +31,15 @@ const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
 
 export async function generateMetadata() {
   return {
-    title: "Data Science Consulting & Engineering | Brilworks",
+    title: "Data & AI Engineering Company | Brilworks",
     description:
-      "Brilworks is a trusted data science and software development company. We excel in delivering data engineering, predictive modeling, machine learning solutions, and advanced analytics.",
+      "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
     openGraph: {
-      title: "Data Science Consulting & Engineering | Brilworks",
+      title: "Data & AI Engineering Company | Brilworks",
       description:
-        "Brilworks is a trusted data science and software development company. We excel in delivering data engineering, predictive modeling, machine learning solutions, and advanced analytics.",
+        "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
       url: `${process.env.NEXT_PUBLIC_BASE_URL}data`,
-      siteName: "Data Science Consulting | Brilworks",
+      siteName: "Data & AI Engineering Company | Brilworks",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/hero-pg-main.webp`,
@@ -49,9 +49,9 @@ export async function generateMetadata() {
       type: "website",
     },
     twitter: {
-      title: "Data Science Consulting & Engineering | Brilworks",
+      title: "Data & AI Engineering Company | Brilworks",
       description:
-        "Brilworks is a trusted data science and software development company. We excel in delivering data engineering, predictive modeling, machine learning solutions, and advanced analytics.",
+        "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
       card: "summary_large_image",
       site: "@_Brilworks",
     },
