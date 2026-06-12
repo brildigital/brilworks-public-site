@@ -23,6 +23,7 @@ import {
   Truck,
   GraduationCap,
 } from "lucide-react";
+import Image from "next/image";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
@@ -319,7 +320,7 @@ const SERVICES = [
       "Sprint rituals aligned to your cadence",
       "Time-zone overlap of 4+ hours guaranteed",
     ],
-    mockup: <MockupStickyBoard />,
+    image:"/images/v2/team_composition.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: true,
     reverse: false,
@@ -333,7 +334,7 @@ const SERVICES = [
       "Dev + design + QA in one pod",
       "Multi-domain expertise across 100+ experts",
     ],
-    mockup: <MockupCodeCanvas />,
+    image:"/images/v2/cross_team_collaboration.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
     padMockup: true,
     reverse: true,
@@ -347,7 +348,7 @@ const SERVICES = [
       "Dedicated delivery manager included",
       "24/7 support & production monitoring",
     ],
-    mockup: <MockupVelocity />,
+    image:"/images/v2/delivery_management.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
     padMockup: true,
     reverse: false,
@@ -440,13 +441,14 @@ const DedicatedTeam = () => {
               <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+                    > 
+                    <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
