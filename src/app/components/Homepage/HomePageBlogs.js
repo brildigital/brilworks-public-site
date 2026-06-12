@@ -14,9 +14,7 @@ import { formatSrcUrl } from "../lib/commonFunction";
 
 const HomePageBlogs = () => {
   const rawPathname = usePathname();
-  console.log("rawpath", rawPathname);
   const pathname = rawPathname === "/home" ? "/" : rawPathname;
-
   const ebookData = {
     title: (
       <>
