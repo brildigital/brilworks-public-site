@@ -52,6 +52,7 @@ const CurrentHeader = () => {
     "/docchat-privacy-policy/",
     "/pet-school-privacy-policy/",
     "/flowist-privacy-policy/",
+    "/unithop-privacy-policy/",
     "/x/product-listing/",
   ];
 

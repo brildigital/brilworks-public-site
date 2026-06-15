@@ -403,13 +403,9 @@ const Article = ({ blok }) => {
                           )}
                           {modifyImagesWithLazyLoading(blok?.content)}
 
-                          {blok?.CTA_1 ? (
-                            <div
-                              className={`${
-                                blok?.CTA_1 ? "blog_content_CTA_1" : ""
-                              }`}
-                            >
-                              {modifyImagesWithLazyLoading(blok?.CTA_1 || "")}
+                          {typeof blok?.CTA_1 === "string" && blok?.CTA_1 ? (
+                            <div className="blog_content_CTA_1">
+                              {modifyImagesWithLazyLoading(blok.CTA_1)}
                             </div>
                           ) : (
                             <></>
@@ -424,13 +420,9 @@ const Article = ({ blok }) => {
                           ) : (
                             <></>
                           )}
-                          {blok?.CTA_2 ? (
-                            <div
-                              className={`${
-                                blok?.CTA_2 ? "blog_content_CTA_2" : ""
-                              }`}
-                            >
-                              {modifyImagesWithLazyLoading(blok?.CTA_2 || "")}
+                          {typeof blok?.CTA_2 === "string" && blok?.CTA_2 ? (
+                            <div className="blog_content_CTA_2">
+                              {modifyImagesWithLazyLoading(blok.CTA_2)}
                             </div>
                           ) : (
                             <></>
@@ -444,15 +436,15 @@ const Article = ({ blok }) => {
                           ) : (
                             <></>
                           )}
-                          {blok?.CTA_3 ? (
+                          {typeof blok?.CTA_3 === "string" && blok?.CTA_3 ? (
                             <div
                               className={`${
-                                blok?.CTA_3?.includes("<img")
+                                blok.CTA_3.includes("<img")
                                   ? ""
                                   : "blog_content_CTA_3"
                               }`}
                             >
-                              {modifyImagesWithLazyLoading(blok?.CTA_3 || "")}
+                              {modifyImagesWithLazyLoading(blok.CTA_3)}
                             </div>
                           ) : (
                             <></>
