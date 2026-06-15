@@ -123,6 +123,10 @@ export const blogSubCategories = [
     key: "React Native",
     value: "react-native",
   },
+  {
+    key: "Data Engineering",
+    value: "data-engineering",
+  },
 ];
 
 export const servicesMenuItems = [
