@@ -19,6 +19,7 @@ import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
 import dynamic from "next/dynamic";
 import LoadScripts from "./ScriptLoader";
 import Script from "next/script";
+import PostHogProvider from "./components/PostHogProvider";
 import {
   organization,
   website,
@@ -93,15 +94,17 @@ export default function RootLayout({ children }) {
           >{`window.chatBotConfig = {agentId:214}`}</Script>
           <Script
             defer
-            id="chatbot-widget-script"
+            id="chatbot-utility-script"
             src="https://app.swiftsupport.ai/ChatbotScripts/chatbotBubble.js"
           /> */}
           {/* <Header /> */}
           {/* <HeaderV2 /> */}
+          <PostHogProvider>
             <CurrentHeader />
             {children}
             <Footer />
             <CookieConsent />
+          </PostHogProvider>
           <LoadScripts
             organization={organization}
             website={website}
