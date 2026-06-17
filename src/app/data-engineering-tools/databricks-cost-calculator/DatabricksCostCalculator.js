@@ -16,13 +16,41 @@ import {
 } from "lucide-react";
 
 const WORKLOAD_TYPES = {
-  jobsCompute: { dbu: 0.15, label: "Jobs Compute", desc: "Batch ETL & scheduled jobs" },
-  allPurpose: { dbu: 0.55, label: "All-Purpose Compute", desc: "Interactive notebooks & dev" },
-  sqlClassic: { dbu: 0.22, label: "SQL Classic", desc: "SQL warehouse queries" },
-  sqlPro: { dbu: 0.55, label: "SQL Pro", desc: "SQL warehouse with advanced features" },
-  sqlServerless: { dbu: 0.7, label: "SQL Serverless", desc: "Serverless SQL warehouse" },
-  deltaLiveTables: { dbu: 0.2, label: "Delta Live Tables", desc: "Streaming & batch pipelines" },
-  modelServing: { dbu: 0.07, label: "Model Serving", desc: "ML model endpoints" },
+  jobsCompute: {
+    dbu: 0.15,
+    label: "Jobs Compute",
+    desc: "Batch ETL & scheduled jobs",
+  },
+  allPurpose: {
+    dbu: 0.55,
+    label: "All-Purpose Compute",
+    desc: "Interactive notebooks & dev",
+  },
+  sqlClassic: {
+    dbu: 0.22,
+    label: "SQL Classic",
+    desc: "SQL warehouse queries",
+  },
+  sqlPro: {
+    dbu: 0.55,
+    label: "SQL Pro",
+    desc: "SQL warehouse with advanced features",
+  },
+  sqlServerless: {
+    dbu: 0.7,
+    label: "SQL Serverless",
+    desc: "Serverless SQL warehouse",
+  },
+  deltaLiveTables: {
+    dbu: 0.2,
+    label: "Delta Live Tables",
+    desc: "Streaming & batch pipelines",
+  },
+  modelServing: {
+    dbu: 0.07,
+    label: "Model Serving",
+    desc: "ML model endpoints",
+  },
 };
 
 const CLUSTER_SIZES = {
@@ -214,16 +242,16 @@ const DatabricksCostCalculator = () => {
             {Object.entries(WORKLOAD_TYPES).map(([key, wl]) => (
               <button
                 key={key}
-                onClick={() =>
-                  setFormData({ ...formData, workloadType: key })
-                }
+                onClick={() => setFormData({ ...formData, workloadType: key })}
                 className={`p-3 rounded-lg border-2 text-left transition-all ${
                   formData.workloadType === key
                     ? "border-themeColor bg-blue-50"
                     : "border-gray-200 hover:border-themeColor/40"
                 }`}
               >
-                <span className={`block font-medium ${formData.workloadType === key ? "text-themeColor" : "text-navyBlue"}`}>
+                <span
+                  className={`block font-medium ${formData.workloadType === key ? "text-themeColor" : "text-navyBlue"}`}
+                >
                   {wl.label}
                 </span>
                 <span className="block text-xs text-gray-400 mt-0.5">
@@ -249,9 +277,7 @@ const DatabricksCostCalculator = () => {
             {CLUSTER_SIZE_KEYS.map((key) => (
               <button
                 key={key}
-                onClick={() =>
-                  setFormData({ ...formData, clusterSize: key })
-                }
+                onClick={() => setFormData({ ...formData, clusterSize: key })}
                 className={`p-3 rounded-lg border-2 text-center transition-all ${
                   formData.clusterSize === key
                     ? "border-themeColor bg-blue-50 text-themeColor font-semibold"
@@ -392,11 +418,8 @@ const DatabricksCostCalculator = () => {
       content: (
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-navyBlue">
-            Where should we send your estimate?
-          </h3>
-          <p className="text-gray-500 text-sm">
             Enter your work email to see your Databricks cost breakdown.
-          </p>
+          </h3>
           <input
             type="email"
             value={email}
@@ -414,9 +437,6 @@ const DatabricksCostCalculator = () => {
           {emailError && (
             <p className="text-red-500 text-xs mt-1.5">{emailError}</p>
           )}
-          <p className="text-xs text-gray-400">
-            We&apos;ll only use this to send your estimate. No spam.
-          </p>
         </div>
       ),
     },
@@ -623,7 +643,9 @@ const DatabricksCostCalculator = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <div
                       className={`w-9 h-9 rounded-lg flex items-center justify-center ${
-                        result.totalWastePercent > 15 ? "bg-red-50" : "bg-green-50"
+                        result.totalWastePercent > 15
+                          ? "bg-red-50"
+                          : "bg-green-50"
                       }`}
                     >
                       {result.totalWastePercent > 15 ? (
@@ -638,7 +660,9 @@ const DatabricksCostCalculator = () => {
                   </div>
                   <p
                     className={`text-4xl font-extrabold tracking-tight ${
-                      result.totalWastePercent > 15 ? "text-red-600" : "text-green-600"
+                      result.totalWastePercent > 15
+                        ? "text-red-600"
+                        : "text-green-600"
                     }`}
                   >
                     ${result.wastedSpend.toLocaleString()}/mo
@@ -711,8 +735,8 @@ const DatabricksCostCalculator = () => {
                     </div>
                     <div>
                       <p className="font-bold text-amber-900">
-                        You could save $
-                        {result.wastedAnnual.toLocaleString()}/year
+                        You could save ${result.wastedAnnual.toLocaleString()}
+                        /year
                       </p>
                       <p className="text-sm text-amber-700 mt-1 leading-relaxed">
                         Common fixes: enable auto-termination, right-size
@@ -739,17 +763,16 @@ const DatabricksCostCalculator = () => {
                   </h3>
                   <p className="text-white/60 text-[15px] max-w-3xl leading-relaxed">
                     Our Databricks Cost Optimization Audit helps you identify
-                    inefficient clusters, unnecessary DBU consumption, and hidden
-                    infrastructure costs so you can lower your monthly cloud
-                    bill.
+                    inefficient clusters, unnecessary DBU consumption, and
+                    hidden infrastructure costs so you can lower your monthly
+                    cloud bill.
                   </p>
                   <div className="flex flex-wrap gap-3 mt-6">
                     <button
                       onClick={async () => {
                         const cal = await getCalApi({});
                         cal("modal", {
-                          calLink:
-                            "vikas-singh-bril/30-min-product-eng-review",
+                          calLink: "vikas-singh-bril/30-min-product-eng-review",
                           config: { theme: "light" },
                         });
                       }}

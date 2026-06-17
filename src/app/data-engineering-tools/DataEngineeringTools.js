@@ -37,7 +37,7 @@ const tools = [
     tags: ["DATABRICKS", "COST"],
   },
   {
-    title: "Ai Readiness Audit",
+    title: "AI Readiness Audit",
     description:
       "10 questions about data quality, pipeline monitoring, and definitions. Get a score out of 100 with a breakdown of what's blocking AI initiatives.",
     icon: Brain,
@@ -287,10 +287,7 @@ const DataEngineeringTools = () => {
       {/* FAQ */}
       <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div
-            className="text-center mx-auto mb-14"
-            style={{ maxWidth: 720 }}
-          >
+          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
               className="inline-block mb-4"
               style={{
